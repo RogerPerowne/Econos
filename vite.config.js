@@ -817,7 +817,11 @@ ${pills}
           boards: Array.from(applicableBoards(fm)),
           keywords: fm.keywords || [],
           read_minutes: fm.read_minutes || 0,
-          status: fm.status || 'live'
+          status: fm.status || 'live',
+          /* Surfaced for the sitemap lastmod + future hub
+             "Updated" badges. */
+          published: fm.published || fm.dates?.published || '',
+          modified:  fm.modified  || fm.dates?.modified  || ''
         });
       }
     }
@@ -841,13 +845,25 @@ ${pills}
     /* Append article URLs to sitemap.xml — the topic-routes plugin
        already wrote it during this same closeBundle (vite runs the
        plugins in the order they appear in the plugins array, and we
-       sit after topic-routes). Read, insert, write back. */
+       sit after topic-routes). Read, insert, write back.
+
+       lastmod uses each article's frontmatter `modified` date
+       (falling back to `published`, then today) so Google sees
+       accurate per-article freshness signals — important for
+       articles where the underlying SPA content has been updated
+       but the markdown source hasn't, or vice versa. */
     const sitemapPath = join(distDir, 'sitemap.xml');
     if (existsSync(sitemapPath)) {
       const today = new Date().toISOString().slice(0, 10);
-      const articleUrls = finalIdx.map((a) =>
-        `  <url>\n    <loc>https://econos.co.uk${a.url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`
-      ).join('\n');
+      const isoDate = (d) => {
+        if (!d) return null;
+        const dt = new Date(d);
+        return isNaN(dt.getTime()) ? null : dt.toISOString().slice(0, 10);
+      };
+      const articleUrls = finalIdx.map((a) => {
+        const lastmod = isoDate(a.modified) || isoDate(a.published) || today;
+        return `  <url>\n    <loc>https://econos.co.uk${a.url}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`;
+      }).join('\n');
       const src = readFileSync(sitemapPath, 'utf8');
       /* Drop the stub /articles/* entries the topic-routes plugin
          injects so we don't double-list them. */

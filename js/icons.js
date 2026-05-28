@@ -148,7 +148,7 @@ window.ECONOS_ICONS = {
      Always ascending left→right · green→yellow→pink in order.
      ============================================================ */
   brandGlyph: `
-    <svg viewBox="0 0 130 56" xmlns="http://www.w3.org/2000/svg" aria-label="econos mark">
+    <svg viewBox="0 0 130 56" xmlns="http://www.w3.org/2000/svg" aria-label="Econos mark">
       <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="2.8" stroke-linecap="round"/>
       <circle cx="14"  cy="46" r="7"   fill="#10B981"/>
       <circle cx="65"  cy="28" r="8.5" fill="#F39E0B"/>

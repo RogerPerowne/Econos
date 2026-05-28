@@ -871,6 +871,34 @@
       .topnav { padding: 0 20px; }
       .hp-container { padding: 0 20px; }
       .hp-features__cards { grid-template-columns: 1fr; }
+
+      /* Keep the Articles nav link visible on mobile — students
+         need a one-tap route to the article library when the rest
+         of the topnav collapses. The .topnav__link--keep modifier
+         is applied to the Articles <li> only. */
+      .topnav__links {
+        display: flex;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .topnav__links > li { display: none; }
+      .topnav__links > li.topnav__link--keep { display: block; }
+      .topnav__links > li.topnav__link--keep a {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ink);
+        padding: 6px 12px;
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        text-decoration: none;
+      }
+      .topnav__links > li.topnav__link--keep a.is-active {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
     }
 
     @media (max-width: 640px) {

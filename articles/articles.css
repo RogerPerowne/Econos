@@ -891,7 +891,33 @@ a:hover { text-decoration: underline; }
 /* ─── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .topnav { padding: 0 20px; }
-  .topnav__links { display: none; }
+  /* Keep the Articles link visible on mobile so students have a
+     one-tap route to the library when the rest of the topnav
+     collapses. .topnav__link--keep is applied to the Articles
+     <li> only (see articles/index.html). */
+  .topnav__links {
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .topnav__links > li { display: none; }
+  .topnav__links > li.topnav__link--keep { display: block; }
+  .topnav__links > li.topnav__link--keep a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    padding: 6px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .topnav__links > li.topnav__link--keep a.is-active {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
 }
 
 @media (max-width: 960px) {

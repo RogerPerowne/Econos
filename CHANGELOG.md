@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.9.1 — 2026-05-28
+
+### Articles: interactive knowledge-check quizzes
+
+The "Check your knowledge" questions are now proper click-to-answer
+multiple-choice quizzes (new `articles/quiz.js`). Each option is a
+button; the verdict — a green tick on the correct answer, a red cross
+on a wrong pick — and the explanation appear only **after** the reader
+picks an option, instead of the correct answer highlighting green as
+soon as the card was revealed. The card locks after the first pick.
+With JS off, the answer + explanation stay visible for accessibility
+and indexing.
+
+Every article question is now multiple choice — the 12 written-answer
+("hard") questions were rewritten as challenging MCQs with plausible
+distractors. The difficulty pill sits on its own line above the
+question (never beside it). SW cache bumped to `econos-v79`.
+
 ## 0.9.0 — 2026-05-28
 
 ### Articles: interactive diagrams, knowledge-check restyle + content review fixes

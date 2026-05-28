@@ -731,26 +731,20 @@ a:hover { text-decoration: underline; }
   font-size: 14.5px;
 }
 .article-qc__card {
-  margin: 10px 0;
+  margin: 14px 0;
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 12px;
-  padding: 0;
-  overflow: hidden;
-}
-.article-qc__card[open] { border-color: var(--ink); }
-.article-qc__card > summary {
-  list-style: none;
-  cursor: pointer;
   padding: 16px 18px;
-  font-size: 15px;
-  color: var(--ink);
 }
-.article-qc__card > summary::-webkit-details-marker { display: none; }
-/* Difficulty sits on its own line above the question. */
+.article-qc__card--easy   { border-left: 4px solid var(--green);  }
+.article-qc__card--medium { border-left: 4px solid var(--yellow); }
+.article-qc__card--hard   { border-left: 4px solid var(--pink);   }
+/* Difficulty pill sits on its own line, with the question stacked
+   beneath it — never side by side. */
 .article-qc__chip {
   display: inline-block;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -762,64 +756,82 @@ a:hover { text-decoration: underline; }
 .article-qc__card--easy   .article-qc__chip { background: var(--green-50);  color: var(--green-700);  }
 .article-qc__card--medium .article-qc__chip { background: var(--yellow-50); color: var(--yellow-700); }
 .article-qc__card--hard   .article-qc__chip { background: var(--pink-50);   color: var(--pink-700);   }
-.article-qc__card--easy   { border-left: 4px solid var(--green);  }
-.article-qc__card--medium { border-left: 4px solid var(--yellow); }
-.article-qc__card--hard   { border-left: 4px solid var(--pink);   }
 .article-qc__q {
   display: block;
+  margin: 0;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.5;
+  color: var(--ink);
 }
-.article-qc__reveal {
-  display: block;
-  margin-top: 12px;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 700;
-}
-.article-qc__card[open] > summary .article-qc__reveal { display: none; }
-.article-qc__body {
-  padding: 8px 18px 18px;
-  font-size: 14.5px;
-  line-height: 1.6;
-  border-top: 1px solid var(--border);
-}
-/* MCQ options are always visible so the reader can attempt the
-   question first; the correct-answer styling + tick stay hidden
-   until the <details> card is opened. */
+
+/* ── Interactive MCQ options ───────────────────────────────────
+   Buttons by default; quiz.js adds .is-quiz on load to enable the
+   click-to-answer behaviour. Nothing is highlighted until the
+   reader picks an option (the card then gets .is-answered). */
 .article-qc__opts {
   list-style: none;
-  margin: 14px 0 0;
+  margin: 16px 0 0;
   padding: 0;
 }
+.article-qc__opts li { margin: 8px 0; }
 .article-qc__opt {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  margin: 6px 0;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 11px 14px;
+  border-radius: 10px;
   background: rgba(0, 0, 0, 0.03);
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   color: var(--ink);
+  font: inherit;
   font-weight: 500;
+  cursor: default;
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
-.article-qc__card[open] .article-qc__opt.is-correct {
+.article-qc__opt-text { flex: 1; }
+.article-qc__icon {
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+  font-weight: 800;
+}
+/* Enhanced (JS on): options are tappable until one is chosen. */
+.article-qc__card.is-quiz .article-qc__opt { cursor: pointer; }
+.article-qc__card.is-quiz:not(.is-answered) .article-qc__opt:hover {
+  border-color: var(--border-strong);
+  background: rgba(0, 0, 0, 0.05);
+}
+/* After answering: green correct, red wrong pick. */
+.article-qc__card.is-answered .article-qc__opt.is-correct {
   background: var(--green-50);
   border-color: var(--green);
   color: var(--green-700);
   font-weight: 700;
 }
-.article-qc__mark {
-  display: none;
-  color: var(--green-700);
-  font-weight: 800;
+.article-qc__card.is-answered .article-qc__opt.is-correct .article-qc__icon::after { content: "✓"; color: var(--green-700); }
+.article-qc__card.is-answered .article-qc__opt.is-chosen:not(.is-correct) {
+  background: var(--pink-50);
+  border-color: var(--pink);
+  color: var(--pink-700);
 }
-.article-qc__card[open] .article-qc__opt.is-correct .article-qc__mark { display: inline; }
-.article-qc__answer { margin: 6px 0 10px; }
+.article-qc__card.is-answered .article-qc__opt.is-chosen:not(.is-correct) .article-qc__icon::after { content: "✗"; color: var(--pink-700); }
+.article-qc__card.is-answered .article-qc__opt { cursor: default; }
+
+/* Feedback: visible by default (no-JS / SEO); hidden by quiz.js until
+   an option is chosen. */
+.article-qc__feedback {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.article-qc__card.is-quiz .article-qc__feedback { display: none; }
+.article-qc__card.is-quiz.is-answered .article-qc__feedback { display: block; }
+.article-qc__answer { margin: 0 0 8px; }
 .article-qc__exp { margin: 0; color: var(--ink-soft); }
 
 @media (max-width: 640px) {

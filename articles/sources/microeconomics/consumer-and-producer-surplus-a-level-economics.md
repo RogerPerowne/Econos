@@ -46,9 +46,11 @@ questions:
     ans: 2
     exp: "Inelastic demand means quantity barely falls when price rises. The tax is mostly passed through to consumers (high CS loss → government revenue), with a small deadweight triangle because few trades are lost. The mirror image holds for elastic demand."
   - difficulty: hard
-    type: short
-    q: "A government introduces a maximum price (price ceiling) below the competitive equilibrium for rented accommodation. Outline the welfare effects on consumer surplus, producer surplus, and total welfare."
-    ans: "The maximum price sets P_max below P*. At P_max planned demand exceeds planned supply — persistent shortage. The quantity actually exchanged falls to Q_max (where the supply curve meets P_max). Consumer surplus on the units that STILL get exchanged rises (lower price per unit), but consumers who can no longer find a flat lose the surplus they would have had — net CS effect is ambiguous. Producer surplus unambiguously FALLS (lower price + lower quantity). Total welfare falls by the deadweight triangle between supply and demand across the lost quantity Q_max to Q*. Add the rent-dissipating costs of non-price rationing (queueing, search, bribery, key money) and the actual welfare loss is larger than the triangle alone. Standard evaluation: distributional gains for current tenants come at the cost of future tenants who can't find a flat — a classic insider/outsider problem."
+    type: mcq
+    q: "A government sets a maximum rent (price ceiling) below the competitive equilibrium for housing. Which statement correctly describes the welfare effects?"
+    opts: ["Consumer surplus unambiguously rises and producer surplus is unchanged", "Both consumer and producer surplus rise because the lower price helps tenants", "Producer surplus falls; consumer surplus is ambiguous, and total welfare falls by the deadweight triangle over the lost quantity", "Total welfare rises because the lower price transfers surplus from landlords to tenants with no loss"]
+    ans: 2
+    exp: "Below-equilibrium price means Q exchanged falls to where supply meets P_max, creating a shortage. Producer surplus clearly falls (lower price and quantity); CS is ambiguous (gainers who still rent vs those priced out), and society loses the deadweight triangle — plus extra losses from non-price rationing like queueing and search."
 
 want_more:
   title: "Want more depth?"

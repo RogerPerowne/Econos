@@ -28,9 +28,11 @@ questions:
     ans: 1
     exp: "Total GDP says nothing about average welfare. GDP per capita = GDP ÷ population. A small population with moderate GDP (Luxembourg) can have higher per-capita output than a large population with bigger headline GDP (India)."
   - difficulty: hard
-    type: short
-    q: "Outline two reasons GDP can rise while average wellbeing falls."
-    ans: "(1) Distributional — GDP measures total output; if the gains accrue to the top 10% while real wages at the median stagnate, headline growth coexists with falling typical wellbeing (US 1980-2019 is the textbook case). (2) Externalised costs — GDP counts the value of cars sold but not the air-quality or congestion costs they impose; growth in extractive industries can rise while environmental degradation lowers welfare. Either point on its own scores AO4 marks; combining them is a Level 4 evaluation."
+    type: mcq
+    q: "Which scenario best explains how measured GDP can rise while average wellbeing falls?"
+    opts: ["Output gains accrue to the top decile while median real wages stagnate, and the growth carries uncounted environmental costs", "Real GDP rises faster than nominal GDP because the price level is falling", "GDP per capita rises because the population is shrinking faster than output", "Total GDP rises while GDP per capita also rises in line with it"]
+    ans: 0
+    exp: "GDP measures total output, not its distribution or external costs. If gains concentrate at the top while median wages stagnate, and growth imposes uncounted pollution or congestion costs, headline GDP can climb even as typical wellbeing falls."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Macroeconomics", href: "/articles/?theme=macro" }

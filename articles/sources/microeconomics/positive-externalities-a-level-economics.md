@@ -46,9 +46,11 @@ questions:
     ans: 1
     exp: "Buyers see only MPB, not the wider MSB. They consume up to where their private benefit meets supply (Q*), short of the socially optimal level (where MSB meets MSC, at Q**). Hence under-consumption — and the policy is to subsidise or state-provide."
   - difficulty: hard
-    type: short
-    q: "Explain why a subsidy to higher education may not deliver the optimal level of consumption, even if it perfectly matches the marginal external benefit."
-    ans: "A subsidy lowers the private price, raising quantity demanded — that's the textbook fix. But three frictions can mean Q** is still not reached: (1) credit constraints — even at a subsidised price, low-income students cannot finance maintenance costs, so the supply-side fix doesn't address the demand-side liquidity problem; (2) information asymmetry — students systematically under-estimate the long-run private return to higher education, especially at low ages, so consumption fails to rise even after the price falls; (3) substitution and signalling — if employers value the EXCLUSIVITY of a degree (positional good), a universal subsidy that raises participation can erode the signal and reduce the private benefit further. The strongest evaluation notes that a Pigouvian subsidy fixes the price wedge but not the structural barriers, and bundling — maintenance grants + targeted outreach + post-graduate income-contingent loans — is more effective than a single subsidy rate."
+    type: mcq
+    q: "A subsidy to higher education is set exactly equal to the marginal external benefit. Why might consumption still fall short of the social optimum Q**?"
+    opts: ["Correcting the external benefit always over-shoots, pushing consumption above Q**", "Matching the MEB guarantees Q** is reached by definition, so it cannot fall short", "The subsidy only raises producer profits and leaves the price students pay unchanged", "Non-price barriers — credit constraints, information failure and signalling effects — block take-up even after the price wedge is closed"]
+    ans: 3
+    exp: "A Pigouvian subsidy fixes the price wedge but not structural barriers: low-income students still face credit/maintenance constraints, many under-estimate the private return, and a universal subsidy can erode a degree's signalling value — so Q** need not be reached."
 
 want_more:
   title: "Want more depth?"

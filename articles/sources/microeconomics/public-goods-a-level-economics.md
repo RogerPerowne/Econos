@@ -46,9 +46,11 @@ questions:
     ans: 1
     exp: "If non-payers can't be excluded, every consumer's best response is to let someone else fund the good and consume it for free. Demand revealed in a private market is far below true social benefit, so the good is under-provided or never appears."
   - difficulty: hard
-    type: short
-    q: "Streetlights, the BBC and the open-source Linux operating system are all sometimes called public goods. Which one fits the textbook definition most cleanly, and why?"
-    ans: "Streetlights are the cleanest fit: my using the light doesn't reduce yours (non-rival), and the council can't easily switch them off for non-paying residents (non-excludable). The BBC was a non-excludable broadcast good in the analogue era but became QUASI-public once encryption + iPlayer logins made exclusion technically feasible — the licence fee preserves a non-excludable model by political choice, not technical necessity. Linux is non-rival (copying costs ~0) and non-excludable in distribution, but its production model is voluntary contribution rather than state provision — it shows that some public goods CAN be supplied privately when contributors derive non-pecuniary returns (reputation, use-value). Streetlights satisfy both technical conditions AND the market-failure prediction; the BBC and Linux are public-good-LIKE under different assumptions."
+    type: mcq
+    q: "Streetlights, the BBC and the open-source Linux operating system are all sometimes called public goods. Which fits the textbook definition (non-rival AND non-excludable) most cleanly, and why?"
+    opts: ["Streetlights — one resident's use doesn't diminish another's and non-payers can't be excluded, satisfying both conditions technically", "The BBC — encryption and iPlayer logins make it the purest non-excludable broadcast good", "Linux — it is free to copy, so it must be a pure public good", "All three are identical pure public goods with no meaningful distinction"]
+    ans: 0
+    exp: "Streetlights are genuinely non-rival and non-excludable as a matter of technology. The BBC became quasi-public once encryption made exclusion feasible (the licence fee is a political choice), and Linux is supplied privately via voluntary contribution — so only streetlights satisfy both conditions and the market-failure prediction cleanly."
 
 want_more:
   title: "Want more depth?"

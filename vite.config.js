@@ -806,6 +806,7 @@ ${footer}
   </main>
 ${renderSiteFooter()}
   <script defer src="/articles/diagram.js"></script>
+  <script defer src="/articles/quiz.js"></script>
 </body>
 </html>
 `;
@@ -956,43 +957,47 @@ ${cta}
     const cards = fm.questions.slice(0, 3).map((q, i) => {
       const diff = QC_DIFFICULTY[q.difficulty] || QC_DIFFICULTY[['easy','medium','hard'][i] || 'medium'];
       const hasOpts = Array.isArray(q.opts) && q.opts.length;
-      /* MCQ options sit in the always-visible summary so the reader can
-         attempt the question first. The correct-answer styling (tick +
-         green) is held back by CSS until the <details> is opened. `ans`
-         is the 0-indexed correct option. */
+      /* Interactive MCQ. Each option is a button carrying data-correct;
+         quiz.js (loaded on every article page) reveals the verdict only
+         after the reader CLICKS an option — green tick on the right
+         answer, red cross on a wrong pick, then the explanation.
+
+         Progressive enhancement: with JS off the feedback block (correct
+         answer + explanation) is visible by default and nothing is
+         pre-highlighted green, so the answer is still reachable and
+         indexable. quiz.js adds `is-quiz` on load, which hides the
+         feedback until a click. `ans` is the 0-indexed correct option. */
       let optsBlock = '';
       if (hasOpts) {
         const items = q.opts.map((opt, oi) => {
           const correct = oi === q.ans;
-          const mark = correct ? '<span class="article-qc__mark" aria-hidden="true">✓</span>' : '';
-          return `<li class="article-qc__opt${correct ? ' is-correct' : ''}">${mark}<span class="article-qc__opt-text">${escapeHtml(String(opt))}</span></li>`;
+          return `<li><button type="button" class="article-qc__opt" data-correct="${correct ? 'true' : 'false'}">`
+            + `<span class="article-qc__opt-text">${escapeHtml(String(opt))}</span>`
+            + `<span class="article-qc__icon" aria-hidden="true"></span>`
+            + `</button></li>`;
         }).join('');
-        optsBlock = `<ul class="article-qc__opts">${items}</ul>`;
+        optsBlock = `<ul class="article-qc__opts" role="list">${items}</ul>`;
       }
-      const ansLine = (!hasOpts && q.ans !== undefined)
-        ? `<p class="article-qc__answer"><strong>Answer:</strong> ${escapeHtml(String(q.ans))}</p>`
-        : '';
+      const correctText = (hasOpts && q.opts[q.ans] !== undefined)
+        ? `<p class="article-qc__answer"><strong>Correct answer:</strong> ${escapeHtml(String(q.opts[q.ans]))}</p>`
+        : (q.ans !== undefined ? `<p class="article-qc__answer"><strong>Answer:</strong> ${escapeHtml(String(q.ans))}</p>` : '');
       const exp = q.exp
         ? `<p class="article-qc__exp">${md.renderInline(String(q.exp))}</p>`
         : '';
-      const revealLabel = hasOpts ? 'Tap to reveal the answer' : 'Tap to reveal the answer';
-      return `        <details class="article-qc__card article-qc__card--${diff.classMod}">
-          <summary>
-            <span class="article-qc__chip">${diff.label}</span>
-            <span class="article-qc__q">${escapeHtml(String(q.q || ''))}</span>
-            ${optsBlock}
-            <span class="article-qc__reveal" aria-hidden="true">${revealLabel}</span>
-          </summary>
-          <div class="article-qc__body">
-            ${ansLine}
+      return `        <div class="article-qc__card article-qc__card--${diff.classMod}" data-qc-card>
+          <span class="article-qc__chip">${diff.label}</span>
+          <p class="article-qc__q">${escapeHtml(String(q.q || ''))}</p>
+          ${optsBlock}
+          <div class="article-qc__feedback" aria-live="polite">
+            ${correctText}
             ${exp}
           </div>
-        </details>`;
+        </div>`;
     }).join('\n');
     return `    <section class="article-qc" aria-labelledby="qc-heading">
       <header class="article-qc__head">
         <h2 id="qc-heading">Check your knowledge</h2>
-        <p>Three short questions — easy, intermediate, hard. Tap each one to reveal the answer.</p>
+        <p>Three multiple-choice questions — easy, intermediate, hard. Pick an option to see the answer.</p>
       </header>
 ${cards}
     </section>`;
@@ -1135,7 +1140,7 @@ ${pills}
     }
     /* Interactive-diagram support: the ported layer state-machine CSS
        and the tab controller. Verbatim copies, same as articles.css. */
-    for (const asset of ['diagram.css', 'diagram.js']) {
+    for (const asset of ['diagram.css', 'diagram.js', 'quiz.js']) {
       if (existsSync(join(articlesSrc, asset))) {
         writeFileSync(join(articlesDist, asset), readFileSync(join(articlesSrc, asset), 'utf8'));
       }

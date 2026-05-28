@@ -28,9 +28,11 @@ questions:
     ans: 2
     exp: "Bigger leakages (saving, tax, imports) shrink the multiplier. A higher propensity to save means a smaller share of each injection passes through to the next round of spending, so k = 1 ÷ (MPS + MPT + MPM) falls."
   - difficulty: hard
-    type: short
-    q: "Explain why the fiscal multiplier in the UK is likely smaller than the textbook value of 5 suggests."
-    ans: "The textbook k = 1 ÷ MPS assumes a closed, untaxed economy with no monetary offset. The UK is small, open and taxed: every round of induced spending leaks to imports (MPM ≈ 0.3+ in the UK), to direct + indirect tax (MPT ≈ 0.3), and to saving (MPS ≈ 0.1). The actual k = 1 ÷ (MPS+MPT+MPM) is around 1.4-1.5. Add monetary offset (the Bank may raise base rate in response, crowding out private spending) and time lags (income reaches the household, savings accumulate before spending), and the realised multiplier shrinks again. The number that matters is the SHORT-RUN OPEN-ECONOMY multiplier, which is far smaller than the closed-economy textbook value."
+    type: mcq
+    q: "The textbook value k = 5 (from k = 1 ÷ MPS with MPS = 0.2) overstates the realised UK fiscal multiplier. Which explanation best accounts for this?"
+    opts: ["The Bank of England prints money to fund spending, which cancels the multiplier entirely", "A high marginal propensity to consume makes the multiplier larger, not smaller", "k = 1 ÷ MPS ignores tax and import leakages; the open-economy k = 1 ÷ (MPS + MPT + MPM) is far smaller, and monetary offset shrinks it further", "Government spending crowds out exactly £1 of private spending per £1 injected, so k = 1"]
+    ans: 2
+    exp: "The simple k = 1 ÷ MPS assumes a closed, untaxed economy. The UK is small, open and taxed, so each round leaks to imports (MPM) and tax (MPT) as well as saving — k = 1 ÷ (MPS + MPT + MPM) is roughly 1.4–1.5, and monetary offset plus time lags shrink the realised figure further."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Macroeconomics", href: "/articles/?theme=macro" }

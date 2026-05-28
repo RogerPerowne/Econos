@@ -27,9 +27,11 @@ questions:
     ans: 0
     exp: "The market sits at D = MPC (too high a Q). The optimum is at MSB = MSC (lower Q). The triangle between MSC and MSB from optimal to market quantity is the social loss from over-production."
   - difficulty: hard
-    type: short
-    q: "Explain why a Pigouvian tax on petrol may fail to deliver the welfare gain its theory predicts."
-    ans: "Three layered reasons: (1) measuring the marginal external cost of CO₂ + congestion + air-quality is contested, so the rate is set by political compromise rather than calibration; (2) demand for petrol is highly inelastic in the short run — commuters cannot quickly switch mode, so a higher price barely reduces quantity, transferring revenue to government but leaving the externality largely unchanged; (3) cross-border carbon leakage and inter-fuel substitution can simply shift the activity elsewhere. The welfare triangle shrinks only if the rate matches MEC and demand responds — both are routinely violated in practice."
+    type: mcq
+    q: "Why might a Pigouvian tax on petrol fail to deliver the welfare gain its theory predicts?"
+    opts: ["Because petrol has many close substitutes, so quantity over-corrects below the optimum", "Short-run demand is highly inelastic and the true marginal external cost is hard to measure, so a higher price barely cuts quantity while the rate is mis-set", "Because a tax raises producer surplus, which always outweighs the external cost", "Because the tax internalises the externality perfectly, leaving no welfare gain to capture"]
+    ans: 1
+    exp: "The welfare triangle only shrinks if the rate matches the marginal external cost and demand responds. In practice the MEC of CO₂/congestion is contested and set by political compromise, while inelastic short-run demand means commuters keep buying — so the tax mostly raises revenue without cutting the externality much."
 spa_topic: negative-externalities
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

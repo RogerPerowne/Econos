@@ -46,9 +46,11 @@ questions:
     ans: 1
     exp: "When the market price doesn't reflect external costs (or benefits), the rationing/signalling/incentive functions misfire — too much is produced at too low a price. That's the negative-externality case, the textbook market-failure example."
   - difficulty: hard
-    type: short
-    q: "Use the price mechanism to explain why the 2022 spike in European wholesale gas prices led to changes across markets that no central planner could have orchestrated."
-    ans: "The price spike RATIONED scarce gas to its highest-value uses (essential heating + critical industry kept buying; aluminium smelters and fertiliser plants curtailed output because at €300/MWh their margin collapsed). The price SIGNALLED scarcity worldwide — LNG cargoes that would have docked in Asia were redirected to Europe because European spot prices were highest. The price INCENTIVISED behaviour change — households turned thermostats down, firms accelerated heat-pump and insulation investments, and producers (Norwegian gas, US LNG export terminals) ramped up. No central planner could have orchestrated these millions of decentralised decisions because no planner had the local cost-and-value information each agent used. Hayek's argument — that the price system communicates dispersed knowledge — explains why the European market re-equilibrated faster than the centrally planned Soviet-bloc energy systems of the 1980s ever did under comparable shocks. The evaluation: prices failed elsewhere (households on fixed contracts saw delayed signals; the cap on Russian oil at $60 distorted the global signal), and the welfare distribution was deeply regressive — speed of adjustment came with social cost."
+    type: mcq
+    q: "When 2022 European wholesale gas prices spiked, markets re-equilibrated faster than any central planner could have managed. Which mechanism BEST explains why a planner could not have replicated this?"
+    opts: ["A planner could match it, since governments hold more data than any single firm", "Prices simultaneously rationed, signalled and incentivised using dispersed local knowledge no planner possesses", "The price system only rations; signalling and incentives require state direction", "Markets adjusted because the EU set the cargo allocations centrally"]
+    ans: 1
+    exp: "The price spike rationed gas to its highest-value uses, signalled scarcity (LNG cargoes redirected to Europe) and incentivised behaviour change (lower thermostats, more LNG supply) — all driven by dispersed local cost-and-value knowledge that, per Hayek, no central planner can aggregate."
 
 want_more:
   title: "Want more depth?"

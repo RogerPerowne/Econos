@@ -72,11 +72,6 @@ function htmlEntries() {
    <link rel=canonical> baked in. Real 200s, per-page SEO.
    ============================================================ */
 
-const STATIONS = {
-  link: ['intro','context','chain','chain-open','calc','data','extract','predict','diagram','depends','judge','complete','quiz'],
-  land: ['intro','a','b','c','complete','quiz'],
-  quiz: ['main','causes']
-};
 const SHELL_HTML = { learn: 'learn.html', link: 'link.html', land: 'land.html', quiz: 'quiz.html' };
 const STANDALONE = new Set(['login','privacy-policy','terms','offline','404']);
 
@@ -91,6 +86,23 @@ function loadTopicRegistry() {
   (new Function('window', src))(sandbox.window);
   return sandbox.window.ECONOS_TOPICS || [];
 }
+
+/* Same trick for js/config/stations.js — single source of truth shared
+   with the runtime routers (link-router / land-router). The build path
+   generator and the routers will never see different station lists. */
+function loadStations() {
+  const src = readFileSync(resolve(ROOT, 'js/config/stations.js'), 'utf8');
+  const sandbox = { window: {} };
+  // eslint-disable-next-line no-new-func
+  (new Function('window', src))(sandbox.window);
+  const s = sandbox.window.ECONOS_STATIONS || {};
+  return {
+    link: Object.keys(s.link || {}),
+    land: Object.keys(s.land || {}),
+    quiz: Array.isArray(s.quizSets) ? s.quizSets : []
+  };
+}
+const STATIONS = loadStations();
 
 function topicRoutes() {
   let registry = [];

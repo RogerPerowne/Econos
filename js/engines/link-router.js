@@ -16,24 +16,12 @@
 (function () {
   'use strict';
 
-  /* station name → { data file, boot function, engine script, title } */
-  var STATIONS = {
-    intro:        { data: 'link-intro.js',    boot: 'bootLinkIntro',     engine: 'js/engines/link-intro.js',             title: 'Intro' },
-    context:      { data: 'link-context.js',  boot: 'bootLinkContext',   engine: 'js/engines/link-engine.js',            title: 'Context' },
-    chain:        { data: 'link-chain.js',    boot: 'bootLinkChain',     engine: 'js/engines/link-chain-engine.js',      title: 'Chain' },
-    'chain-open': { data: 'link-chain.js',    boot: 'bootLinkChainOpen', engine: 'js/engines/link-chain-open-engine.js', title: 'Open chain' },
-    calc:         { data: 'link-calc.js',     boot: 'bootLinkCalc',      engine: 'js/engines/link-calc-engine.js',       title: 'Calculate It'      },
-    data:         { data: 'link-data.js',     boot: 'bootLinkData',      engine: 'js/engines/link-data-engine.js',       title: 'Read the Data'     },
-    extract:      { data: 'link-extract.js',  boot: 'bootLinkExtract',   engine: 'js/engines/link-extract-engine.js',    title: 'Read the Extract'  },
-    predict:      { data: 'link-predict.js',  boot: 'bootLinkPredict',   engine: 'js/engines/link-predict-engine.js',    title: 'Predict Outcome'   },
-    diagram:      { data: 'link-diagram.js',  boot: 'bootLinkDiagram',   engine: 'js/engines/link-diagram-engine.js',    title: 'Diagram' },
-    depends:      { data: 'link-depends.js',  boot: 'bootLinkDepends',   engine: 'js/engines/link-depends-engine.js',    title: 'It depends' },
-    judge:        { data: 'link-judge.js',    boot: 'bootLinkJudge',     engine: 'js/engines/link-judge-engine.js',      title: 'Judge' },
-    complete:     { data: 'link-complete.js', boot: 'bootLinkComplete',  engine: 'js/engines/link-complete-engine.js',   title: 'Complete' },
-    /* Quiz station — lazy-loads quiz-engine + a link-quiz-<set>.js
-       file. The data file is resolved at call time. */
-    quiz:         { title: 'Quiz' }
-  };
+  /* station name → { data file, boot function, engine script, title }
+     Source of truth: js/config/stations.js — the same catalogue the
+     build-time topic-routes plugin reads, so the generated /link/<topic>/
+     <station>/ files can never have a station the router doesn't know
+     about (or vice versa). */
+  var STATIONS = (window.ECONOS_STATIONS && window.ECONOS_STATIONS.link) || {};
 
   var dataLoaded = {};
   var scriptsLoaded = {};

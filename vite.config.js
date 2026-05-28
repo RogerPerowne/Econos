@@ -709,11 +709,14 @@ ${cta}
     return out;
   }
 
-  /* Four-pill row at the top of every article showing which exam
-     boards the article applies to — pills are filled for the
-     boards with a matching spec point, hollow for the rest. The
-     per-board spec number (when present) renders inside the
-     filled pill so a student can spot their reference at a glance. */
+  /* Four-pip row at the top of every article showing which exam
+     boards the article applies to. Mirrors the home-page topic
+     stage-pip visual: pills are filled with that board's palette
+     colour when applicable (green/yellow/pink/purple, the third
+     extending the Learn/Link/Land trio with purple for OCR),
+     hollow grey when not. The per-board spec number (when
+     present) renders inside the filled pip so a student can
+     spot their reference at a glance. */
   function renderBoardPills(fm) {
     const applicable = applicableBoards(fm);
     if (applicable.size === 0) return '';
@@ -723,7 +726,7 @@ ${cta}
       const specHtml = (active && spec)
         ? `<span class="article-boards__spec">${escapeHtml(String(spec))}</span>`
         : '';
-      return `      <span class="article-boards__pill${active ? ' is-active' : ''}"
+      return `      <span class="article-boards__pill article-boards__pill--${id}${active ? ' is-active' : ''}"
         role="listitem"
         aria-label="${escapeHtml(BOARD_LABELS[id])}${active ? ' — applies' : ' — does not apply'}">
         <span class="article-boards__name">${escapeHtml(BOARD_LABELS[id])}</span>${specHtml}

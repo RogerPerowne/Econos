@@ -57,7 +57,26 @@
           autocomplete="off"
         >
       </div>
-      <div class="hub__board-filter" id="hub-board-filter" role="radiogroup" aria-label="Filter by exam board"></div>
+
+      <div class="hub__controls">
+        <div class="hub__controls-row" aria-label="Exam board filter">
+          <span class="hub__controls-label">Board</span>
+          <div class="hub__board-filter" id="hub-board-filter" role="radiogroup" aria-label="Filter by exam board"></div>
+        </div>
+        <div class="hub__controls-row" aria-label="Theme filter and sort">
+          <span class="hub__controls-label">Theme</span>
+          <div class="hub__theme-filter" id="hub-theme-filter" role="radiogroup" aria-label="Filter by theme"></div>
+          <span class="hub__controls-label" style="margin-left:8px;">Sort</span>
+          <select id="hub-sort" class="hub__sort-select" aria-label="Sort articles">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="alpha">A → Z</option>
+            <option value="read_short">Shortest read</option>
+            <option value="read_long">Longest read</option>
+          </select>
+        </div>
+      </div>
+
       <div class="hub__count" id="hub-count" aria-live="polite"></div>
     </header>
 
@@ -79,10 +98,12 @@
     // a build-step index (Pagefind: `npx pagefind --site articles`).
     // ──────────────────────────────────────────────────────────
     (async function () {
-      const input = document.getElementById('hub-search');
-      const grid  = document.getElementById('hub-grid');
-      const count = document.getElementById('hub-count');
-      const filterRow = document.getElementById('hub-board-filter');
+      const input        = document.getElementById('hub-search');
+      const grid         = document.getElementById('hub-grid');
+      const count        = document.getElementById('hub-count');
+      const boardFilter  = document.getElementById('hub-board-filter');
+      const themeFilter  = document.getElementById('hub-theme-filter');
+      const sortSelect   = document.getElementById('hub-sort');
 
       const BOARD_LABELS = {
         edexcel_a: 'Edexcel A',
@@ -104,24 +125,40 @@
       const statusEl = document.getElementById('hub-status');
       if (statusEl) statusEl.textContent = String(articles.length);
 
-      /* Active board: default to the user's saved board from
-         localStorage (same key the rest of the site uses), else
-         'all'. 'all' shows every article; selecting a specific
-         board filters to articles where that board is in
-         `a.boards`. */
+      /* Build the list of available themes from the search index
+         (de-duped, alphabetised). Empty / unset themes are skipped. */
+      const allThemes = Array.from(new Set(
+        articles.map(a => (a.theme || '').trim()).filter(Boolean)
+      )).sort();
+
+      /* Active filter state. The board default carries from the
+         site-wide econos:board localStorage key so a board switch
+         on the homepage flows into the hub. */
       let activeBoard = 'all';
       try {
         const stored = localStorage.getItem('econos:board');
         if (stored && BOARD_LABELS[stored]) activeBoard = stored;
       } catch (e) {}
+      let activeTheme = 'all';
+      let activeSort  = 'newest';
 
-      function renderFilterRow() {
-        const opts = [{ id: 'all', name: 'All boards' }]
+      function renderBoardRow() {
+        const opts = [{ id: 'all', name: 'All' }]
           .concat(BOARD_ORDER.map(id => ({ id, name: BOARD_LABELS[id] })));
-        filterRow.innerHTML = opts.map(o => {
+        boardFilter.innerHTML = opts.map(o => {
           const active = o.id === activeBoard;
           return '<button type="button" role="radio" aria-checked="' + (active ? 'true' : 'false')
             + '" class="' + (active ? 'is-active' : '') + '" data-board="' + o.id + '">' + o.name + '</button>';
+        }).join('');
+      }
+
+      function renderThemeRow() {
+        const opts = [{ id: 'all', name: 'All' }]
+          .concat(allThemes.map(t => ({ id: t, name: t })));
+        themeFilter.innerHTML = opts.map(o => {
+          const active = o.id === activeTheme;
+          return '<button type="button" role="radio" aria-checked="' + (active ? 'true' : 'false')
+            + '" class="' + (active ? 'is-active' : '') + '" data-theme="' + o.id.replace(/"/g, '&quot;') + '">' + o.name + '</button>';
         }).join('');
       }
 
@@ -129,14 +166,15 @@
         const apply = new Set(a.boards || []);
         const pills = BOARD_ORDER.map(id => {
           const on = apply.has(id);
-          return '<span class="article-boards__pill' + (on ? ' is-active' : '') + '"><span class="article-boards__name">' + BOARD_LABELS[id] + '</span></span>';
+          return '<span class="article-boards__pill article-boards__pill--' + id + (on ? ' is-active' : '')
+            + '"><span class="article-boards__name">' + BOARD_LABELS[id] + '</span></span>';
         }).join('');
         return '<div class="article-boards">' + pills + '</div>';
       }
 
       function render(list) {
         if (list.length === 0) {
-          grid.innerHTML = '<p class="hub__empty">No articles match. Try a broader term or switch board.</p>';
+          grid.innerHTML = '<p class="hub__empty">No articles match. Try a broader search or different filter.</p>';
           count.textContent = '';
           return;
         }
@@ -170,18 +208,49 @@
         if (board === 'all') return list;
         return list.filter(a => Array.isArray(a.boards) && a.boards.indexOf(board) !== -1);
       }
+      function filterByTheme(list, theme) {
+        if (theme === 'all') return list;
+        return list.filter(a => (a.theme || '') === theme);
+      }
+      function sortList(list, sort) {
+        const ts = (s) => s ? new Date(s).getTime() : 0;
+        const sorted = list.slice();
+        switch (sort) {
+          case 'newest':     sorted.sort((a, b) => ts(b.modified || b.published) - ts(a.modified || a.published)); break;
+          case 'oldest':     sorted.sort((a, b) => ts(a.modified || a.published) - ts(b.modified || b.published)); break;
+          case 'alpha':      sorted.sort((a, b) => (a.title || '').localeCompare(b.title || '')); break;
+          case 'read_short': sorted.sort((a, b) => (a.read_minutes || 0) - (b.read_minutes || 0)); break;
+          case 'read_long':  sorted.sort((a, b) => (b.read_minutes || 0) - (a.read_minutes || 0)); break;
+        }
+        return sorted;
+      }
       function applyAllFilters() {
         const q = input.value;
-        const list = filterByBoard(filterByQ(articles, q), activeBoard);
+        const list = sortList(
+          filterByTheme(filterByBoard(filterByQ(articles, q), activeBoard), activeTheme),
+          activeSort
+        );
         render(list);
       }
 
-      renderFilterRow();
-      filterRow.addEventListener('click', e => {
+      renderBoardRow();
+      renderThemeRow();
+      boardFilter.addEventListener('click', e => {
         const btn = e.target.closest('button[data-board]');
         if (!btn) return;
         activeBoard = btn.dataset.board;
-        renderFilterRow();
+        renderBoardRow();
+        applyAllFilters();
+      });
+      themeFilter.addEventListener('click', e => {
+        const btn = e.target.closest('button[data-theme]');
+        if (!btn) return;
+        activeTheme = btn.dataset.theme;
+        renderThemeRow();
+        applyAllFilters();
+      });
+      sortSelect.addEventListener('change', e => {
+        activeSort = e.target.value;
         applyAllFilters();
       });
       input.addEventListener('input', applyAllFilters);

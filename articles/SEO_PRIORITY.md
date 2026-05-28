@@ -142,13 +142,15 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - SPA topic: `market_failure`
   - Friction angle: students treat "market failure" as a vague label. Pin it to specific causes (externalities, public goods, asymmetric info, market power).
 
-- [ ] **Externalities - positive, negative, and the policy fix**
+- [L] **Externalities - positive, negative, and the policy fix**
+  (joint overview at `externalities-a-level-economics`, plus
+  dedicated `negative-externalities-` and `positive-externalities-` posts.)
   - Keyword: "externalities a level economics"
   - SPA topic: `neg_externalities`, `pos_externalities`
   - Friction angle: MSC = MPC + MEC; identifying the welfare loss triangle on the diagram.
   - UK example: SDIL, EU ETS, vaccination subsidies.
 
-- [ ] **Public goods - non-rival, non-excludable, and the free-rider problem**
+- [L] **Public goods - non-rival, non-excludable, and the free-rider problem**
   - Keyword: "public goods a level economics"
   - SPA topic: `public_goods`
   - Friction angle: students conflate "public sector" with "public good". Defence vs the NHS distinction.
@@ -159,12 +161,12 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - Friction angle: adverse selection vs moral hazard - students collapse them.
   - UK example: used cars; insurance markets; 2008 sub-prime as adverse-selection-at-scale.
 
-- [ ] **The price mechanism - rationing, signalling, incentives**
+- [L] **The price mechanism - rationing, signalling, incentives**
   - Keyword: "price mechanism a level economics"
   - SPA topic: `price_functions`
   - Friction angle: students name the three functions but cannot trace them through a concrete market shock.
 
-- [ ] **Consumer and producer surplus, and how policy shifts them**
+- [L] **Consumer and producer surplus, and how policy shifts them**
   - Keyword: "consumer surplus producer surplus a level"
   - SPA topic: `consumer_producer_surplus`
   - Friction angle: identifying surplus areas before/after a tax, subsidy, max/min price.

@@ -14,6 +14,23 @@ status: live
 published: 2026-05-28
 modified: 2026-05-28
 spa_topic: measures-of-economic-performance
+questions:
+  - difficulty: easy
+    type: mcq
+    q: "Which measure of GDP strips out inflation so growth can be compared across years?"
+    opts: ["Nominal GDP", "Real GDP", "GNI", "PPP"]
+    ans: 1
+    exp: "Nominal GDP uses current prices and inflates with the price level. Real GDP applies a deflator to express output at constant prices — making period-to-period growth comparable."
+  - difficulty: medium
+    type: mcq
+    q: "Country A has higher total GDP than Country B but a far larger population. What does this imply about average living standards?"
+    opts: ["A has the higher living standards", "B may have the higher living standards", "Both must be identical", "Cannot say without GNI"]
+    ans: 1
+    exp: "Total GDP says nothing about average welfare. GDP per capita = GDP ÷ population. A small population with moderate GDP (Luxembourg) can have higher per-capita output than a large population with bigger headline GDP (India)."
+  - difficulty: hard
+    type: short
+    q: "Outline two reasons GDP can rise while average wellbeing falls."
+    ans: "(1) Distributional — GDP measures total output; if the gains accrue to the top 10% while real wages at the median stagnate, headline growth coexists with falling typical wellbeing (US 1980-2019 is the textbook case). (2) Externalised costs — GDP counts the value of cars sold but not the air-quality or congestion costs they impose; growth in extractive industries can rise while environmental degradation lowers welfare. Either point on its own scores AO4 marks; combining them is a Level 4 evaluation."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Macroeconomics", href: "/articles/?theme=macro" }
@@ -116,6 +133,10 @@ The AO4 marks in any GDP question come from naming the things GDP cannot see:
 
 The Human Development Index combines per-capita GNI (PPP), education and life expectancy and is the cleanest single welfare metric A-level expects you to name.
 
+:::
+
+::: econ-insight portraitKey="economistCoyle" tone="amber" label="Economist insight: Diane Coyle on GDP" attribution="Diane Coyle, <em>GDP: A Brief but Affectionate History</em> (2014)"
+The way we measure the economy shapes the way we think about what economic policy should accomplish. GDP became the dominant metric not because it is the best measure of welfare, but because it was the measure that existed.
 :::
 
 ::: section eyebrow="Exam edge" color="green" icon="cap"

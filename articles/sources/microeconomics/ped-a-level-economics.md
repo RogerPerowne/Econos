@@ -14,6 +14,23 @@ status: live
 published: 2026-05-28
 modified: 2026-05-28
 spa_topic: price-elasticity-of-demand
+questions:
+  - difficulty: easy
+    type: mcq
+    q: "A 10% rise in the price of cinema tickets causes a 25% fall in tickets sold. What is the (absolute) PED?"
+    opts: ["0.4", "2.5", "10", "25"]
+    ans: 1
+    exp: "PED = %ΔQd ÷ %ΔP = 25 ÷ 10 = 2.5. Greater than 1 → elastic. Cinema tickets are a leisure good with close substitutes (streaming), so elastic demand fits."
+  - difficulty: medium
+    type: mcq
+    q: "A firm whose product has inelastic demand wants to increase total revenue. What should it do?"
+    opts: ["Cut price", "Raise price", "Advertise to make demand more elastic", "Leave price unchanged"]
+    ans: 1
+    exp: "If demand is inelastic, %ΔQd < %ΔP. Raising price loses fewer units than the price gain — total revenue rises. The mirror logic (cut price → raise revenue) only works under elastic demand."
+  - difficulty: hard
+    type: short
+    q: "Why did the UK Soft Drinks Industry Levy target producers rather than consumers, and what does this tell us about how policymakers use PED?"
+    ans: "Branded soft-drinks consumption is reasonably price-inelastic in the short run (loyalty, habit), so a passthrough tax would mostly raise revenue without cutting sugar consumption — failing the policy's health goal. Manufacturers face elastic CONSUMER response if they raise price, so they preferred to reformulate to stay below the sugar threshold and avoid the levy entirely. The policy worked because PED differs by side of the market: inelastic for consumers, elastic at the brand level for producers. Policymakers used the elasticity asymmetry to change firm behaviour rather than tax consumption."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics" }
@@ -97,6 +114,13 @@ The mark scheme wants you to name the determinants AND apply them to the specifi
 
 The classic exam essay: a firm facing elastic demand on its main product. Should it cut prices to chase volume, or raise prices to chase margins? The answer depends on PED at the relevant point on the demand curve — and PED varies along the curve (elastic at high prices, inelastic at low prices is the typical pattern for a linear demand curve).
 
+:::
+
+::: econos-diagram svgKey="elasticVsInelasticDiagram" label="Elastic vs inelastic demand curves" caption="A steep curve = inelastic (large price change, small quantity change). A flat curve = elastic. The slope visible in the diagram is the entire intuition behind PED."
+:::
+
+::: econ-insight portraitKey="economistMarshall" tone="amber" label="Economist insight on elasticity" attribution="Alfred Marshall, <em>Principles of Economics</em> (1890)"
+The elasticity of demand in a market is great or small according as the amount demanded increases much or little for a given fall in price, and diminishes much or little for a given rise in price.
 :::
 
 ::: section eyebrow="PED and tax incidence" color="pink" icon="globe"

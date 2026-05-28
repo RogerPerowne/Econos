@@ -6,6 +6,64 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.8.0 — 2026-05-28
+
+### Articles: diagrams, economist insights, knowledge-check Qs + new footer + 5 new Theme 1 articles
+
+A bundle of upgrades to the article engine plus a content push. The
+article render pipeline now reaches feature-parity with the SPA's
+learn-it presentation, and the topnav / footer treatment is now
+consistent site-wide.
+
+- **`:::econos-diagram` directive.** Articles can now embed any
+  SVG from `js/icons.js` by key — the same diagrams used in the
+  Learn It cards. Loaded via `loadIconsLib()` at build time
+  (mirroring `loadTopicRegistry()`), so the article engine has
+  the full `ECONOS_ICONS` map. Wraps the SVG in
+  `.diagram-block.article-diagram` with an aria-label and
+  optional caption.
+- **`:::econ-insight` directive.** Mirrors the SPA's
+  `economistQuote` block (portrait left, eyebrow label, quote,
+  attribution). `portraitKey` looks up an
+  `economistFriedman`/`economistKeynes`/etc. portrait SVG;
+  `tone` modifier matches the section colour palette. Body of
+  the container is the quote (markdown). The inflation +
+  externalities + ped + gdp + multiplier articles now carry
+  matching insights, and every new Theme 1 article ships one.
+- **Knowledge-check section.** Every article with a
+  `questions:` frontmatter array renders a three-card
+  `:::article-qc` panel at the bottom: green (easy), amber
+  (intermediate), rose (hardest). Each card is a native
+  `<details>` element — no JS, fully indexable by Google, and
+  accessible out of the box. Supports MCQ (`opts` + `ans`
+  index) and short-answer (`ans` string) shapes. Six existing
+  articles (inflation, externalities, PED, GDP, multiplier,
+  monopoly) and all five new articles ship questions.
+- **Topnav cleanup + multi-column footer.** The "Articles"
+  link in the homepage and hub topnavs is gone; in its place,
+  a four-column footer (`Learn · Library · Account · Legal`)
+  with the L/L/L legend below ships on every page (homepage,
+  articles hub, every article shell). The article hub's
+  "Library status: N of 70" box is also gone — count was
+  visually heavy and not actionable. CSS lives in `index.css`
+  for the homepage and `articles/articles.css` for everything
+  else.
+- **5 new Theme 1 articles.** Split the joint externalities
+  article into dedicated `negative-externalities-` and
+  `positive-externalities-a-level-economics.md` posts. Plus
+  three more high-volume Theme 1 topics:
+  `public-goods-a-level-economics.md`,
+  `supply-and-demand-a-level-economics.md`,
+  `consumer-and-producer-surplus-a-level-economics.md`, and
+  `price-mechanism-a-level-economics.md`. Each ships
+  per-board spec frontmatter, an `:::econ-insight` block
+  where matching learn-it data has one, an
+  `:::econos-diagram` where the learn-it ships an interactive,
+  and a 3-card knowledge-check.
+- **SW bump to `econos-v77`.** `js/icons.js`, `vite.config.js`,
+  `articles/articles.css`, `index.css` and `sw.js` all
+  changed; cache-first assets must refresh on activation.
+
 ## 0.5.0 — 2026-05-28
 
 ### Articles: board pills + hub filter + theme-folder reorg + 3 new

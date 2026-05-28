@@ -30,7 +30,6 @@
       <li><a href="/#how-it-works">How it works</a></li>
       <li><a href="/#features">Features</a></li>
       <li><a href="/#topics">Topics</a></li>
-      <li class="topnav__link--keep"><a href="/articles/" class="is-active">Articles</a></li>
       <li><a href="/#audience">About</a></li>
     </ul>
     <div class="topnav__actions">
@@ -82,11 +81,55 @@
 
     <div class="hub__grid" id="hub-grid" role="list" aria-label="Article library"></div>
 
-    <div class="hub__coming-soon">
-      <strong>Library status:</strong> <span id="hub-status">…</span> of 70 articles live. The full SEO queue (macro definitions, micro definitions, diagrams, exam technique, UK case studies, misconception pages) is in <code>articles/SEO_PRIORITY.md</code>.
-    </div>
-
   </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <div class="site-footer__brandmark">Econos</div>
+        <p class="site-footer__tagline">Learn it. Link it. Land it. — A-level economics revision built around the frameworks examiners reward.</p>
+      </div>
+      <nav class="site-footer__cols" aria-label="Footer navigation">
+        <div class="site-footer__col">
+          <h3>Learn</h3>
+          <ul>
+            <li><a href="/#topics">All topics</a></li>
+            <li><a href="/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it">Start a session</a></li>
+            <li><a href="/#how-it-works">How it works</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Library</h3>
+          <ul>
+            <li><a href="/articles/">All articles</a></li>
+            <li><a href="/articles/feed.xml">RSS feed</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Account</h3>
+          <ul>
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it">Get started</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy-policy">Privacy policy</a></li>
+            <li><a href="/terms">Terms</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© Econos</span>
+      <span class="site-footer__legend">
+        <span class="site-footer__dot site-footer__dot--green" aria-hidden="true"></span> Learn it
+        <span class="site-footer__dot site-footer__dot--yellow" aria-hidden="true"></span> Link it
+        <span class="site-footer__dot site-footer__dot--pink" aria-hidden="true"></span> Land it
+      </span>
+    </div>
+  </footer>
 
   <script>
     // ──────────────────────────────────────────────────────────
@@ -121,9 +164,6 @@
         grid.innerHTML = '<p class="hub__empty">Could not load article index.</p>';
         return;
       }
-
-      const statusEl = document.getElementById('hub-status');
-      if (statusEl) statusEl.textContent = String(articles.length);
 
       /* Build the list of available themes from the search index
          (de-duped, alphabetised). Empty / unset themes are skipped. */

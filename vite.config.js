@@ -102,28 +102,71 @@ function topicRoutes() {
     return ensureRegistry().find((t) => t.id === id);
   }
 
-  /* Inject topic-specific SEO meta into a shell's HTML source.
-     Idempotent: replaces the canonical / og:url / og:title /
-     <title> if they exist, otherwise leaves the file untouched.
+  /* Human-readable station label for titles and JSON-LD. Land sections
+     get a "Section " prefix because the bare letter reads as filler.
+     Other shells just title-case the slug. */
+  function formatStationLabel(shell, station) {
+    const titled = station.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    if (shell === 'land' && /^[A-C]$/.test(titled)) return 'Section ' + titled;
+    return titled;
+  }
+
+  /* Build the LearningResource JSON-LD body for a generated topic shell.
+     Google's rich-results indexer reads this; it's the strongest single
+     SEO lever after canonical URLs. learningResourceType varies by shell
+     so each stage gets the right intent signal. */
+  function topicJsonLd({ topicName, sub, shell, station, canonical }) {
+    const resourceType =
+      shell === 'learn' ? 'Concept' :
+      shell === 'link'  ? 'ApplicationExercise' :
+      shell === 'land'  ? 'AssessmentExercise' :
+      /* quiz */          'Quiz';
+    const stationStr = station ? ' · ' + formatStationLabel(shell, station) : '';
+    const stageName = shell === 'learn' ? 'Learn It' : shell === 'link' ? 'Link It' : shell === 'land' ? 'Land It' : 'Quiz';
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': shell === 'quiz' ? 'Quiz' : 'LearningResource',
+      name: `${topicName}${stationStr} · ${stageName}`,
+      description: sub
+        ? `${stageName} — ${sub}.`
+        : `${stageName} for ${topicName} (A-Level economics).`,
+      url: canonical,
+      inLanguage: 'en-GB',
+      educationalLevel: 'A-level',
+      educationalUse: 'revision',
+      learningResourceType: resourceType,
+      audience: { '@type': 'EducationalAudience', educationalRole: 'student' },
+      about: { '@type': 'Thing', name: topicName },
+      isPartOf: { '@type': 'Course', name: 'A-Level Economics (Edexcel A)', provider: { '@type': 'Organization', name: 'Econos', url: 'https://econos.co.uk' } },
+      publisher: { '@type': 'Organization', name: 'Econos', url: 'https://econos.co.uk', logo: { '@type': 'ImageObject', url: 'https://econos.co.uk/assets/logo-full.png' } }
+    };
+    return `<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
+  }
+
+  /* Inject topic-specific SEO meta + JSON-LD into a shell's HTML source.
+     Idempotent: replaces the canonical / og:url / og:title / <title> if
+     they exist; appends the JSON-LD block immediately before </head>.
      `path` is the final URL path the file will live at. */
   function injectMeta(html, { topic, shell, station, path }) {
     if (!topic) return html;
     const t = topicById(topic);
     const topicName  = t ? t.name : topic;
     const stageName  = shell === 'learn' ? 'Learn It' : shell === 'link' ? 'Link It' : shell === 'land' ? 'Land It' : 'Quiz';
-    const stationStr = station ? ' · ' + station.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) : '';
+    const stationStr = station ? ' · ' + formatStationLabel(shell, station) : '';
     const title = `${topicName}${stationStr} · ${stageName} · Econos`;
     const desc  = t && t.sub
       ? `${stageName} — ${t.sub}. A-Level economics revision on Econos.`
       : `${stageName} for ${topicName}. A-Level economics revision on Econos.`;
     const canonical = 'https://econos.co.uk' + path;
+    const ld = topicJsonLd({ topicName, sub: t && t.sub, shell, station, canonical });
     return html
       .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
       .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${desc}">`)
       .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${title}">`)
       .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${desc}">`)
       .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${canonical}">`)
-      .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`);
+      .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
+      .replace(/<\/head>/, `${ld}\n</head>`);
   }
 
   /* parseUrl('/link/causes-of-inflation-and-deflation/chain-open') → { shell:'link', topic:'causes-of-inflation-and-deflation', station:'chain-open', file:'link.html' } */
@@ -139,6 +182,8 @@ function topicRoutes() {
     return { shell, topic: parts[1] || null, station: parts[2] || null, file: SHELL_HTML[shell] };
   }
 
+  /* Dev rewrite: no per-topic dist/ files exist yet — point path URLs
+     at the base shell HTML and let TopicLoader read the pathname. */
   function devRewrite(req, _res, next) {
     try {
       const url = req.url || '/';
@@ -147,6 +192,28 @@ function topicRoutes() {
       const query = qIdx >= 0 ? url.slice(qIdx) : '';
       const route = parseUrl(path);
       if (route) {
+        req.url = '/' + route.file + query;
+      }
+    } catch (e) { /* fall through to default handling */ }
+    next();
+  }
+
+  /* Preview rewrite: dist/ has the per-topic generated index.html
+     files. Point /learn/<topic> at /learn/<topic>/index.html (not the
+     base shell) so the preview server delivers the same per-page
+     <title> / <meta> / JSON-LD that production would. */
+  function previewRewrite(req, _res, next) {
+    try {
+      const url = req.url || '/';
+      const qIdx = url.indexOf('?');
+      const path = qIdx >= 0 ? url.slice(0, qIdx) : url;
+      const query = qIdx >= 0 ? url.slice(qIdx) : '';
+      const route = parseUrl(path);
+      if (route && route.topic) {
+        const indexPath = path.replace(/\/$/, '') + '/index.html';
+        const indexFile = resolve(ROOT, 'dist' + indexPath);
+        req.url = (existsSync(indexFile) ? indexPath : '/' + route.file) + query;
+      } else if (route) {
         req.url = '/' + route.file + query;
       }
     } catch (e) { /* fall through to default handling */ }
@@ -215,7 +282,7 @@ function topicRoutes() {
   return {
     name: 'topic-routes',
     configureServer:        (server) => { server.middlewares.use(devRewrite); },
-    configurePreviewServer: (server) => { server.middlewares.use(devRewrite); },
+    configurePreviewServer: (server) => { server.middlewares.use(previewRewrite); },
     closeBundle: generateBuildOutputs
   };
 }

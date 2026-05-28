@@ -44,6 +44,49 @@ test.describe('Home page', () => {
   });
 });
 
+test.describe('Per-topic SEO metadata', () => {
+  test('Learn shell ships LearningResource JSON-LD', async ({ page }) => {
+    await login(page);
+    await page.goto('/learn/causes-of-inflation-and-deflation');
+    const ld = await page.evaluate(() => {
+      const n = document.querySelector('script[type="application/ld+json"]');
+      return n ? JSON.parse(n.textContent) : null;
+    });
+    expect(ld).toMatchObject({
+      '@type': 'LearningResource',
+      learningResourceType: 'Concept',
+      educationalLevel: 'A-level',
+      inLanguage: 'en-GB',
+      url: 'https://econos.co.uk/learn/causes-of-inflation-and-deflation'
+    });
+    expect(ld.name).toMatch(/Causes of Inflation/);
+  });
+
+  test('Land section ships AssessmentExercise JSON-LD with Section label', async ({ page }) => {
+    await login(page);
+    await page.goto('/land/causes-of-inflation-and-deflation/a');
+    const ld = await page.evaluate(() => {
+      const n = document.querySelector('script[type="application/ld+json"]');
+      return n ? JSON.parse(n.textContent) : null;
+    });
+    expect(ld).toMatchObject({
+      '@type': 'LearningResource',
+      learningResourceType: 'AssessmentExercise'
+    });
+    expect(ld.name).toMatch(/Section A/);
+  });
+
+  test('Quiz ships Quiz JSON-LD', async ({ page }) => {
+    await login(page);
+    await page.goto('/quiz/causes-of-inflation-and-deflation/main');
+    const ld = await page.evaluate(() => {
+      const n = document.querySelector('script[type="application/ld+json"]');
+      return n ? JSON.parse(n.textContent) : null;
+    });
+    expect(ld).toMatchObject({ '@type': 'Quiz' });
+  });
+});
+
 test.describe('Learn It shell', () => {
   test('inflation renders chrome + stage widget', async ({ page }) => {
     await login(page);

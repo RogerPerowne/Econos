@@ -13,6 +13,23 @@ read_minutes: 12
 status: live
 published: 2026-05-28
 modified: 2026-05-28
+questions:
+  - difficulty: easy
+    type: mcq
+    q: "Which UK index does the Bank of England use for its 2% inflation target?"
+    opts: ["RPI", "CPI", "CPIH", "PPI"]
+    ans: 1
+    exp: "The MPC has targeted CPI since 2003. RPI persists in older contracts (rail fares, index-linked gilts) but the BoE's mandate is CPI-based."
+  - difficulty: medium
+    type: mcq
+    q: "In 2022 Russia's invasion of Ukraine pushed UK CPI to 11.1%. Which type of inflation does that primarily illustrate?"
+    opts: ["Demand-pull inflation", "Cost-push inflation", "Monetary inflation", "Disinflation"]
+    ans: 1
+    exp: "An external shock to input prices (gas, food via fertiliser) shifts SRAS left — output falls, prices rise. That signature is cost-push, not demand-pull."
+  - difficulty: hard
+    type: short
+    q: "Explain why raising base rate is a less effective response to cost-push inflation than to demand-pull inflation."
+    ans: "Higher interest rates reduce AD by raising the cost of borrowing — that closes the demand–supply gap when the gap was caused by excess demand. Cost-push inflation comes from a supply shock the central bank cannot fix; tightening risks pushing output further below trend (recession) while inflation remains elevated. The instrument addresses the wrong side of the diagram."
 spa_topic: causes-of-inflation-and-deflation
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
@@ -80,6 +97,10 @@ Each cause leaves a different signature on the AD/AS diagram, and that signature
 
 The exam move is to use the **direction of output** as the diagnostic. Rising output + rising prices = demand-pull. Falling output + rising prices = cost-push. Rising output + accelerating prices with a long lag = monetary.
 
+:::
+
+::: econ-insight portraitKey="economistFriedman" tone="amber" label="Economist insight: Friedman and the monetarist view" attribution="Milton Friedman, <em>The Counter-Revolution in Monetary Theory</em> (1970)"
+Inflation is always and everywhere a monetary phenomenon in the sense that it is and can be produced only by a more rapid increase in the quantity of money than in output.
 :::
 
 ::: section eyebrow="Real world example" color="blue" icon="globe"

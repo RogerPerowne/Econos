@@ -14,6 +14,23 @@ status: live
 published: 2026-05-27
 modified: 2026-05-28
 spa_topic: monopoly
+questions:
+  - difficulty: easy
+    type: mcq
+    q: "A profit-maximising monopolist produces where..."
+    opts: ["AR = MC", "MR = MC", "AR = AC", "MR = AR"]
+    ans: 1
+    exp: "Every profit-maximising firm sets MR = MC. The DIFFERENCE for a monopoly is that the price (read from AR) is then HIGHER than MC — the source of the deadweight loss."
+  - difficulty: medium
+    type: mcq
+    q: "Why does marginal revenue lie below average revenue for a monopoly but not for a perfectly competitive firm?"
+    opts: ["Monopolies use absorption costing", "The monopolist faces the downward-sloping market demand curve", "MR is always negative for a monopolist", "MR is set by the regulator"]
+    ans: 1
+    exp: "A perfectly competitive firm is a price-taker — it can sell more at the going price, so MR = P = AR. A monopolist must cut price on ALL units to sell more, so MR < AR. The wedge widens as quantity rises."
+  - difficulty: hard
+    type: short
+    q: "Briefly explain why a natural monopoly may be more efficient than splitting it into competing firms — and why regulation is then needed."
+    ans: "A natural monopoly has very high fixed costs and low marginal costs (water pipes, rail track), so long-run average cost falls steadily over the relevant output range. One large firm can supply at lower AC than two smaller competing firms — splitting it forces every firm to duplicate fixed costs. Productive efficiency favours the single firm. But left alone, the monopolist sets P > MC and generates deadweight loss + supernormal profit. Regulation (Ofwat-style price caps via RPI−X or similar) lets society capture the cost advantage while constraining the rent — the regulator becomes the substitute for the missing competitor."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics", href: "/articles/?theme=micro" }

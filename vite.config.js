@@ -110,6 +110,25 @@ function loadStations() {
 }
 const STATIONS = loadStations();
 
+/* Load js/icons.js the same way to extract window.ECONOS_ICONS — the
+   key → SVG-string map that powers every learn-it visualKey. Articles
+   can now opt into the same diagrams via :::econos-diagram { svgKey="…" }.
+   Done once at build / server-start. */
+function loadIconsLib() {
+  try {
+    const src = readFileSync(resolve(ROOT, 'js/icons.js'), 'utf8');
+    const sandbox = { window: {} };
+    // eslint-disable-next-line no-new-func
+    (new Function('window', src))(sandbox.window);
+    return sandbox.window.ECONOS_ICONS || {};
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.warn('[article-routes] could not load js/icons.js:', e.message);
+    return {};
+  }
+}
+const ICONS_LIB = loadIconsLib();
+
 function topicRoutes() {
   let registry = [];
   function ensureRegistry() {
@@ -503,6 +522,63 @@ function articleRoutes() {
     }
   });
 
+  /* :::econos-diagram { svgKey="adDemandPullInteractive" caption="…" } —
+     wraps a learn-it SVG (looked up in ECONOS_ICONS) in the same
+     .diagram-block markup the :::diagram directive uses. Lets articles
+     reuse the canonical diagrams from the SPA without duplicating SVGs. */
+  const econDiagramStack = [];
+  md.use(mdContainer, 'econos-diagram', {
+    validate: (params) => params.trim().startsWith('econos-diagram'),
+    render: (tokens, idx) => {
+      if (tokens[idx].nesting === 1) {
+        const raw = tokens[idx].info.trim().slice('econos-diagram'.length).trim();
+        const attrs = parseAttrs(raw);
+        econDiagramStack.push(attrs);
+        const svg = (attrs.svgKey && ICONS_LIB[attrs.svgKey]) || '';
+        const ariaLabel = attrs.label || attrs.svgKey || 'diagram';
+        return `<div class="diagram-block article-diagram" role="img" aria-label="${escapeAttr(ariaLabel)}">\n${svg}\n`;
+      }
+      const attrs = econDiagramStack.pop() || {};
+      const captionHtml = attrs.caption ? md.renderInline(attrs.caption) : '';
+      const caption = captionHtml
+        ? `<p class="diagram-block__caption">${captionHtml}</p>\n`
+        : '';
+      return `${caption}</div>\n`;
+    }
+  });
+
+  /* :::econ-insight { portraitKey="economistFriedman" tone="amber" label="…"
+                       attribution="Milton Friedman, …" } — mirrors the
+     learn-it engine's economistQuote block: portrait left, quote right,
+     small-caps eyebrow label, attribution after the quote. Body of the
+     container is the quote text (markdown). Tone palette matches the
+     section eyebrow colours (green/amber/blue/pink/purple/rose). */
+  const insightStack = [];
+  md.use(mdContainer, 'econ-insight', {
+    validate: (params) => params.trim().startsWith('econ-insight'),
+    render: (tokens, idx) => {
+      if (tokens[idx].nesting === 1) {
+        const raw = tokens[idx].info.trim().slice('econ-insight'.length).trim();
+        const attrs = parseAttrs(raw);
+        insightStack.push(attrs);
+        const tone = attrs.tone ? ` article-econ-insight--${escapeAttr(attrs.tone)}` : '';
+        const portrait = (attrs.portraitKey && ICONS_LIB[attrs.portraitKey]) || '';
+        const portraitCell = portrait
+          ? `<div class="article-econ-insight__portrait" aria-hidden="true">${portrait}</div>\n`
+          : '';
+        const label = attrs.label
+          ? `<div class="article-econ-insight__label">${escapeHtml(attrs.label)}</div>\n`
+          : '<div class="article-econ-insight__label">Economist insight</div>\n';
+        return `<aside class="article-econ-insight${tone}">\n${portraitCell}<div class="article-econ-insight__body">\n${label}<blockquote class="article-econ-insight__quote">\n`;
+      }
+      const attrs = insightStack.pop() || {};
+      const attribution = attrs.attribution
+        ? `<footer class="article-econ-insight__attr">${md.renderInline(attrs.attribution)}</footer>\n`
+        : '';
+      return `</blockquote>\n${attribution}</div>\n</aside>\n`;
+    }
+  });
+
   /* Parse "key=value key2=\"quoted value\"" attribute strings off a
      directive opening line. Returns an object. Keeps the surface small
      — no nested quotes, no escaping — because directive params should
@@ -589,6 +665,7 @@ function articleRoutes() {
     const footer = renderArticleFooter(fm);
     const specMeta = renderSpecMeta(fm);
     const boardPills = renderBoardPills(fm);
+    const knowledgeCheck = renderKnowledgeCheck(fm);
 
     return `<!DOCTYPE html>
 <html lang="en-GB">
@@ -631,15 +708,21 @@ ${friction}
 ${glance}
     </div>
 ${renderedBody}
+${knowledgeCheck}
 ${wantMore}
 ${footer}
   </main>
+${renderSiteFooter()}
 </body>
 </html>
 `;
   }
 
   function renderTopnav() {
+    /* Articles moved to the footer in v0.8 — the homepage CTA + the
+       generated article pages all link to /articles/ from the
+       Footer's Library column. Keeps the topnav focused on the
+       three Learn-It funnel anchors. */
     return `  <nav class="topnav" role="navigation" aria-label="Main navigation">
     <a href="/" class="topnav__logo" aria-label="Econos home">
       <img src="/assets/logo-wordmark-mark.png" alt="Econos — Learn it. Link it. Land it." height="44">
@@ -648,14 +731,67 @@ ${footer}
       <li><a href="/#how-it-works">How it works</a></li>
       <li><a href="/#features">Features</a></li>
       <li><a href="/#topics">Topics</a></li>
-      <li class="topnav__link--keep"><a href="/articles/" class="is-active">Articles</a></li>
       <li><a href="/#audience">About</a></li>
     </ul>
     <div class="topnav__actions">
       <a href="/login" class="btn btn--outline">Log in</a>
-      <a href="/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn" class="btn btn--solid">Get started</a>
+      <a href="/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it" class="btn btn--solid">Get started</a>
     </div>
   </nav>`;
+  }
+
+  /* Site footer with multi-column link grid + brand strip.
+     Shared across every article page AND the articles hub. The
+     homepage has its own richer hp-footer (with the L/L/L legend)
+     so we don't render the article variant there. */
+  function renderSiteFooter() {
+    return `  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <div class="site-footer__brandmark">Econos</div>
+        <p class="site-footer__tagline">Learn it. Link it. Land it. — A-level economics revision built around the frameworks examiners reward.</p>
+      </div>
+      <nav class="site-footer__cols" aria-label="Footer navigation">
+        <div class="site-footer__col">
+          <h3>Learn</h3>
+          <ul>
+            <li><a href="/#topics">All topics</a></li>
+            <li><a href="/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it">Start a session</a></li>
+            <li><a href="/#how-it-works">How it works</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Library</h3>
+          <ul>
+            <li><a href="/articles/">All articles</a></li>
+            <li><a href="/articles/feed.xml">RSS feed</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Account</h3>
+          <ul>
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it">Get started</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy-policy">Privacy policy</a></li>
+            <li><a href="/terms">Terms</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© Econos</span>
+      <span class="site-footer__legend">
+        <span class="site-footer__dot site-footer__dot--green"></span> Learn it
+        <span class="site-footer__dot site-footer__dot--yellow"></span> Link it
+        <span class="site-footer__dot site-footer__dot--pink"></span> Land it
+      </span>
+    </div>
+  </footer>`;
   }
 
   function renderBreadcrumb(fm) {
@@ -708,6 +844,60 @@ ${footer}
 ${facts}
 ${cta}
       </aside>`;
+  }
+
+  /* Knowledge-check section appended to every article that ships a
+     `questions:` array in its frontmatter. Three cards (easy / medium /
+     hard) coloured green / amber / rose to match the home-page
+     Learn It / Link It / Land It palette. Each card is a native
+     <details> element — no JS required, indexable by Google, accessible
+     out of the box. Question shape matches the per-topic learn-it.js
+     quiz pool format so authors can lift questions wholesale. */
+  const QC_DIFFICULTY = {
+    easy:   { label: 'Easy',         classMod: 'easy',   emoji: '🟢' },
+    medium: { label: 'Intermediate', classMod: 'medium', emoji: '🟡' },
+    hard:   { label: 'Hardest',      classMod: 'hard',   emoji: '🔴' }
+  };
+  function renderKnowledgeCheck(fm) {
+    if (!Array.isArray(fm.questions) || fm.questions.length === 0) return '';
+    const cards = fm.questions.slice(0, 3).map((q, i) => {
+      const diff = QC_DIFFICULTY[q.difficulty] || QC_DIFFICULTY[['easy','medium','hard'][i] || 'medium'];
+      /* MCQ option list. `ans` is the 0-indexed correct answer. */
+      let optsBlock = '';
+      if (Array.isArray(q.opts) && q.opts.length) {
+        const items = q.opts.map((opt, oi) => {
+          const correct = oi === q.ans;
+          const mark = correct ? '<span class="article-qc__mark" aria-hidden="true">✓</span>' : '';
+          return `<li class="article-qc__opt${correct ? ' is-correct' : ''}">${mark}${escapeHtml(String(opt))}</li>`;
+        }).join('');
+        optsBlock = `<ul class="article-qc__opts">${items}</ul>`;
+      }
+      const ansLine = (!q.opts && q.ans !== undefined)
+        ? `<p class="article-qc__answer"><strong>Answer:</strong> ${escapeHtml(String(q.ans))}</p>`
+        : '';
+      const exp = q.exp
+        ? `<p class="article-qc__exp">${md.renderInline(String(q.exp))}</p>`
+        : '';
+      return `        <details class="article-qc__card article-qc__card--${diff.classMod}">
+          <summary>
+            <span class="article-qc__chip">${diff.emoji} ${diff.label}</span>
+            <span class="article-qc__q">${escapeHtml(String(q.q || ''))}</span>
+            <span class="article-qc__reveal" aria-hidden="true">Tap to reveal answer</span>
+          </summary>
+          <div class="article-qc__body">
+            ${optsBlock}
+            ${ansLine}
+            ${exp}
+          </div>
+        </details>`;
+    }).join('\n');
+    return `    <section class="article-qc" aria-labelledby="qc-heading">
+      <header class="article-qc__head">
+        <h2 id="qc-heading">Check your knowledge</h2>
+        <p>Three short questions — easy, intermediate, hard. Tap each one to reveal the answer.</p>
+      </header>
+${cards}
+    </section>`;
   }
 
   function renderWantMore(fm) {

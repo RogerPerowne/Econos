@@ -604,6 +604,317 @@ a:hover { text-decoration: underline; }
   margin-top: 14px;
 }
 
+/* ════════════════════════════════════════════════════════════
+   Economist insight aside — surfaces the same economistQuote
+   block the Learn It cards render. Portrait left, label +
+   blockquote + attribution right, accent border on the left.
+══════════════════════════════════════════════════════════════ */
+.article-econ-insight {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin: 36px 0;
+  padding: 22px 24px;
+  border-radius: 14px;
+  background: var(--yellow-50);
+  border-left: 4px solid var(--yellow);
+}
+.article-econ-insight__portrait {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.article-econ-insight__portrait svg,
+.article-econ-insight__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.article-econ-insight__body { min-width: 0; }
+.article-econ-insight__label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--yellow-700);
+  margin: 0 0 8px;
+}
+.article-econ-insight__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--ink);
+}
+.article-econ-insight__attr {
+  margin-top: 12px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.article-econ-insight__attr em { font-style: italic; }
+
+.article-econ-insight--green  { background: var(--green-50);  border-left-color: var(--green);  }
+.article-econ-insight--green  .article-econ-insight__label { color: var(--green-700);  }
+.article-econ-insight--blue   { background: var(--blue-50);   border-left-color: var(--blue);   }
+.article-econ-insight--blue   .article-econ-insight__label { color: var(--blue-700);   }
+.article-econ-insight--pink   { background: var(--pink-50);   border-left-color: var(--pink);   }
+.article-econ-insight--pink   .article-econ-insight__label { color: var(--pink-700);   }
+.article-econ-insight--purple { background: var(--purple-50); border-left-color: var(--purple); }
+.article-econ-insight--purple .article-econ-insight__label { color: var(--purple-700); }
+.article-econ-insight--rose   { background: var(--pink-50);   border-left-color: var(--pink);   }
+.article-econ-insight--rose   .article-econ-insight__label { color: var(--pink-700);   }
+
+@media (max-width: 640px) {
+  .article-econ-insight {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 14px;
+    padding: 16px 18px;
+  }
+  .article-econ-insight__portrait { width: 64px; height: 64px; }
+  .article-econ-insight__quote { font-size: 17px; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   Article-diagram wrapper — used by :::econos-diagram so the
+   Learn It SVGs (looked up in ECONOS_ICONS) sit in the same
+   .diagram-block frame the standalone :::diagram directive
+   already uses. Extra padding because Learn It SVGs are sized
+   for the right-rail; articles want a tighter frame.
+══════════════════════════════════════════════════════════════ */
+.article-diagram {
+  margin: 32px 0;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--cream);
+  text-align: center;
+}
+.article-diagram svg { max-width: 100%; height: auto; }
+.article-diagram .diagram-block__caption {
+  text-align: left;
+  margin: 14px 4px 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   "Check your knowledge" — three difficulty-coloured cards
+   surfaced from the matching Learn It quiz pool (or written
+   inline). Native <details> so it's accessible + indexable
+   without JS. Green / amber / rose palette mirrors the home
+   page Learn / Link / Land trio.
+══════════════════════════════════════════════════════════════ */
+.article-qc {
+  margin: 48px 0 32px;
+  padding: 28px 28px 32px;
+  background: var(--cream);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+.article-qc__head { margin: 0 0 20px; }
+.article-qc__head h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 0 0 6px;
+}
+.article-qc__head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+.article-qc__card {
+  margin: 10px 0;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+}
+.article-qc__card[open] { border-color: var(--ink); }
+.article-qc__card > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.article-qc__card > summary::-webkit-details-marker { display: none; }
+.article-qc__chip {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.article-qc__card--easy   .article-qc__chip { background: var(--green-50);  color: var(--green-700);  }
+.article-qc__card--medium .article-qc__chip { background: var(--yellow-50); color: var(--yellow-700); }
+.article-qc__card--hard   .article-qc__chip { background: var(--pink-50);   color: var(--pink-700);   }
+.article-qc__card--easy   { border-left: 4px solid var(--green);  }
+.article-qc__card--medium { border-left: 4px solid var(--yellow); }
+.article-qc__card--hard   { border-left: 4px solid var(--pink);   }
+.article-qc__q { line-height: 1.45; }
+.article-qc__reveal {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.article-qc__card[open] > summary .article-qc__reveal { display: none; }
+.article-qc__body {
+  padding: 8px 18px 18px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+}
+.article-qc__opts {
+  list-style: none;
+  margin: 4px 0 12px;
+  padding: 0;
+}
+.article-qc__opt {
+  padding: 7px 12px;
+  border-radius: 8px;
+  margin: 4px 0;
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--muted);
+}
+.article-qc__opt.is-correct {
+  background: var(--green-50);
+  color: var(--green-700);
+  font-weight: 600;
+}
+.article-qc__mark {
+  color: var(--green-700);
+  font-weight: 800;
+  margin-right: 8px;
+}
+.article-qc__answer { margin: 6px 0 10px; }
+.article-qc__exp { margin: 0; color: var(--ink-soft); }
+
+@media (max-width: 640px) {
+  .article-qc { padding: 22px 18px 24px; }
+  .article-qc__card > summary {
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+  }
+  .article-qc__reveal { grid-column: 1 / -1; padding-top: 4px; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   Multi-column site footer — replaces the old .hp-footer on
+   the homepage AND ships on every article page + the hub.
+══════════════════════════════════════════════════════════════ */
+.site-footer {
+  margin-top: 64px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 32px 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 2.4fr);
+  gap: 48px;
+}
+.site-footer__brand { max-width: 360px; }
+.site-footer__brandmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-footer__tagline {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+.site-footer__col h3 {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+.site-footer__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-footer__col li { margin: 8px 0; }
+.site-footer__col a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+.site-footer__col a:hover { color: var(--ink); text-decoration: underline; }
+.site-footer__bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 32px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+.site-footer__legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.site-footer__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 2px 0 12px;
+}
+.site-footer__dot--green  { background: var(--green);  }
+.site-footer__dot--yellow { background: var(--yellow); }
+.site-footer__dot--pink   { background: var(--pink);   }
+
+@media (max-width: 768px) {
+  .site-footer__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 40px 22px 22px;
+  }
+  .site-footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-footer__bottom { padding: 16px 22px 28px; }
+}
+
 /* Mechanism chain */
 .chain {
   display: grid;

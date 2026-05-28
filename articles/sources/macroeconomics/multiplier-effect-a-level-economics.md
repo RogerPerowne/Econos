@@ -14,6 +14,23 @@ status: live
 published: 2026-05-28
 modified: 2026-05-28
 spa_topic: multiplier
+questions:
+  - difficulty: easy
+    type: mcq
+    q: "If the marginal propensity to consume (MPC) is 0.8, what is the value of the simple Keynesian multiplier (k)?"
+    opts: ["1.25", "5", "8", "0.2"]
+    ans: 1
+    exp: "k = 1 ÷ (1 − MPC) = 1 ÷ (1 − 0.8) = 1 ÷ 0.2 = 5. A £1bn injection raises national income by £5bn at full multiplier action."
+  - difficulty: medium
+    type: mcq
+    q: "Which of the following would REDUCE the size of the UK fiscal multiplier?"
+    opts: ["A fall in the marginal propensity to import", "A fall in the marginal rate of tax", "A rise in the average propensity to save", "A fall in the marginal propensity to save"]
+    ans: 2
+    exp: "Bigger leakages (saving, tax, imports) shrink the multiplier. A higher propensity to save means a smaller share of each injection passes through to the next round of spending, so k = 1 ÷ (MPS + MPT + MPM) falls."
+  - difficulty: hard
+    type: short
+    q: "Explain why the fiscal multiplier in the UK is likely smaller than the textbook value of 5 suggests."
+    ans: "The textbook k = 1 ÷ MPS assumes a closed, untaxed economy with no monetary offset. The UK is small, open and taxed: every round of induced spending leaks to imports (MPM ≈ 0.3+ in the UK), to direct + indirect tax (MPT ≈ 0.3), and to saving (MPS ≈ 0.1). The actual k = 1 ÷ (MPS+MPT+MPM) is around 1.4-1.5. Add monetary offset (the Bank may raise base rate in response, crowding out private spending) and time lags (income reaches the household, savings accumulate before spending), and the realised multiplier shrinks again. The number that matters is the SHORT-RUN OPEN-ECONOMY multiplier, which is far smaller than the closed-economy textbook value."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Macroeconomics", href: "/articles/?theme=macro" }
@@ -113,6 +130,10 @@ Empirical UK multiplier estimates from the OBR, IMF and Bank of England cluster 
 
 The state of the cycle matters more than any of the above in isolation. The IMF's review of 2008-09 stimulus packages found multipliers were **larger than 1** in deep recession (slack capacity meant little crowding out, accommodative monetary policy) but **smaller than 1** in normal times. The same fiscal expansion has very different multipliers depending on whether the output gap is open or closed.
 
+:::
+
+::: econ-insight portraitKey="economistKeynes" tone="amber" label="Economist insight: Keynes and the multiplier" attribution="John Maynard Keynes, <em>The General Theory of Employment, Interest and Money</em> (1936)"
+If the Treasury were to fill old bottles with banknotes, bury them at suitable depths in disused coalmines… and leave it to private enterprise to dig the notes up again, there need be no more unemployment and… the real income of the community… would probably become a good deal greater than it actually is.
 :::
 
 ::: section eyebrow="Real world example" color="blue" icon="globe"

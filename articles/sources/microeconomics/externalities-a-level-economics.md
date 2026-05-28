@@ -13,6 +13,23 @@ read_minutes: 11
 status: live
 published: 2026-05-28
 modified: 2026-05-28
+questions:
+  - difficulty: easy
+    type: mcq
+    q: "Which is a negative externality of CONSUMPTION (not production)?"
+    opts: ["Factory CO₂ emissions", "Passive smoking", "Traffic congestion from a delivery lorry", "Industrial wastewater"]
+    ans: 1
+    exp: "Passive smoking is the canonical negative consumption externality — the smoker's USE imposes a cost on third parties. Factory pollution and lorries are production externalities."
+  - difficulty: medium
+    type: mcq
+    q: "On a negative-production-externality diagram, where does the deadweight welfare loss appear?"
+    opts: ["Between MSC and MSB, from market Q to social-optimum Q", "At the new equilibrium after a Pigouvian tax", "Below the supply curve", "Wherever MPC = MPB"]
+    ans: 0
+    exp: "The market sits at D = MPC (too high a Q). The optimum is at MSB = MSC (lower Q). The triangle between MSC and MSB from optimal to market quantity is the social loss from over-production."
+  - difficulty: hard
+    type: short
+    q: "Explain why a Pigouvian tax on petrol may fail to deliver the welfare gain its theory predicts."
+    ans: "Three layered reasons: (1) measuring the marginal external cost of CO₂ + congestion + air-quality is contested, so the rate is set by political compromise rather than calibration; (2) demand for petrol is highly inelastic in the short run — commuters cannot quickly switch mode, so a higher price barely reduces quantity, transferring revenue to government but leaving the externality largely unchanged; (3) cross-border carbon leakage and inter-fuel substitution can simply shift the activity elsewhere. The welfare triangle shrinks only if the rate matches MEC and demand responds — both are routinely violated in practice."
 spa_topic: negative-externalities
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
@@ -85,6 +102,13 @@ For positive consumption externalities (vaccination), the diagram flips: MSB sit
 
 Drawing the diagram correctly — with axes labelled, curves named, equilibria marked, and the deadweight triangle shaded — earns roughly half the marks on a typical question. Don't skip it.
 
+:::
+
+::: econos-diagram svgKey="negExternalityInteractive" label="Negative externality of production — MSC vs MPC" caption="The MSC curve sits above the MPC supply curve by the value of the external cost. Market output Q* exceeds the social optimum Q**; the shaded triangle between MSC and MSB is the deadweight welfare loss."
+:::
+
+::: econ-insight portraitKey="economistPigou" tone="amber" label="Economist insight on externalities" attribution="Arthur Pigou, <em>The Economics of Welfare</em> (1920)"
+…one person A, in the course of rendering some service for which payment is made to a second person B, incidentally also renders services or disservices to other persons, of such a sort that payment cannot be exacted from the benefited parties or compensation enforced on behalf of the injured parties.
 :::
 
 ::: section eyebrow="Negative externalities — the SDIL case study" color="purple" icon="scale"

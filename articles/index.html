@@ -57,6 +57,7 @@
           autocomplete="off"
         >
       </div>
+      <div class="hub__board-filter" id="hub-board-filter" role="radiogroup" aria-label="Filter by exam board"></div>
       <div class="hub__count" id="hub-count" aria-live="polite"></div>
     </header>
 
@@ -81,6 +82,15 @@
       const input = document.getElementById('hub-search');
       const grid  = document.getElementById('hub-grid');
       const count = document.getElementById('hub-count');
+      const filterRow = document.getElementById('hub-board-filter');
+
+      const BOARD_LABELS = {
+        edexcel_a: 'Edexcel A',
+        edexcel_b: 'Edexcel B',
+        aqa:       'AQA',
+        ocr:       'OCR'
+      };
+      const BOARD_ORDER = ['edexcel_a', 'edexcel_b', 'aqa', 'ocr'];
 
       let articles = [];
       try {
@@ -94,9 +104,39 @@
       const statusEl = document.getElementById('hub-status');
       if (statusEl) statusEl.textContent = String(articles.length);
 
+      /* Active board: default to the user's saved board from
+         localStorage (same key the rest of the site uses), else
+         'all'. 'all' shows every article; selecting a specific
+         board filters to articles where that board is in
+         `a.boards`. */
+      let activeBoard = 'all';
+      try {
+        const stored = localStorage.getItem('econos:board');
+        if (stored && BOARD_LABELS[stored]) activeBoard = stored;
+      } catch (e) {}
+
+      function renderFilterRow() {
+        const opts = [{ id: 'all', name: 'All boards' }]
+          .concat(BOARD_ORDER.map(id => ({ id, name: BOARD_LABELS[id] })));
+        filterRow.innerHTML = opts.map(o => {
+          const active = o.id === activeBoard;
+          return '<button type="button" role="radio" aria-checked="' + (active ? 'true' : 'false')
+            + '" class="' + (active ? 'is-active' : '') + '" data-board="' + o.id + '">' + o.name + '</button>';
+        }).join('');
+      }
+
+      function pillRowHtml(a) {
+        const apply = new Set(a.boards || []);
+        const pills = BOARD_ORDER.map(id => {
+          const on = apply.has(id);
+          return '<span class="article-boards__pill' + (on ? ' is-active' : '') + '"><span class="article-boards__name">' + BOARD_LABELS[id] + '</span></span>';
+        }).join('');
+        return '<div class="article-boards">' + pills + '</div>';
+      }
+
       function render(list) {
         if (list.length === 0) {
-          grid.innerHTML = '<p class="hub__empty">No articles match that search yet. Try a broader term.</p>';
+          grid.innerHTML = '<p class="hub__empty">No articles match. Try a broader term or switch board.</p>';
           count.textContent = '';
           return;
         }
@@ -106,28 +146,46 @@
             <span class="hub-card__theme">${a.theme}</span>
             <span class="hub-card__title">${a.title}</span>
             <span class="hub-card__desc">${a.description}</span>
+            ${pillRowHtml(a)}
             <span class="hub-card__meta">
               <span>${a.read_minutes} min read</span>
-              <span>${a.spec}</span>
+              <span>${a.spec || ''}</span>
             </span>
           </a>
         `).join('');
       }
 
-      function filter(q) {
-        if (!q || !q.trim()) return articles;
+      function filterByQ(list, q) {
+        if (!q || !q.trim()) return list;
         const needle = q.toLowerCase().trim();
-        return articles.filter(a => {
+        return list.filter(a => {
           const haystack = [
-            a.title, a.description, a.theme, a.spec,
+            a.title, a.description, a.theme, a.spec || '',
             (a.keywords || []).join(' ')
           ].join(' ').toLowerCase();
           return haystack.includes(needle);
         });
       }
+      function filterByBoard(list, board) {
+        if (board === 'all') return list;
+        return list.filter(a => Array.isArray(a.boards) && a.boards.indexOf(board) !== -1);
+      }
+      function applyAllFilters() {
+        const q = input.value;
+        const list = filterByBoard(filterByQ(articles, q), activeBoard);
+        render(list);
+      }
 
-      render(articles);
-      input.addEventListener('input', e => render(filter(e.target.value)));
+      renderFilterRow();
+      filterRow.addEventListener('click', e => {
+        const btn = e.target.closest('button[data-board]');
+        if (!btn) return;
+        activeBoard = btn.dataset.board;
+        renderFilterRow();
+        applyAllFilters();
+      });
+      input.addEventListener('input', applyAllFilters);
+      applyAllFilters();
     })();
   </script>
 </body>

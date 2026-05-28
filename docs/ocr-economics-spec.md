@@ -8,6 +8,18 @@ This is the canonical OCR spec point map used across Econos. Every OCR topic on 
 
 ---
 
+## Subject content overview
+
+OCR splits the qualification into two content components and one synoptic application component, with equal weight (33.3% each) and explicit `Explain` / `Explain, with the aid of a diagram` / `Explain and calculate` / `Evaluate` verbs throughout the spec — the verb tells students exactly what cognitive demand each sub-section sets:
+
+- **Component 1 — Microeconomics (H460/01)** — five sections covering the economic problem + opportunity cost, the role of markets (specialisation, demand, supply, surplus, elasticity, the margin, externalities, information failure, public goods, government intervention), business objectives + costs + revenue + profit, the four market structures (perfect competition, monopoly with explicit dynamic efficiency + X-inefficiency, monopolistic competition, oligopoly with concentration ratios, contestable markets) and the labour market (demand + supply of labour, wage determination including monopsony, trade unions, bilateral monopoly).
+- **Component 2 — Macroeconomics (H460/02)** — five sections covering aggregate demand + supply (with explicit multiplier + accelerator content), economic policy objectives (growth, sustainable development, employment, inflation — explicit hyperinflation, BoP, trends in macro indicators, income distribution, the Phillips Curve including NAIRU), implementing policy (fiscal, monetary, supply-side, policy conflicts), the global context (international trade, exchange rates, globalisation with Marshall-Lerner + J-curve, trade policies) and the financial sector (money + interest rates with Fisher equation, the financial sector + Harrod-Domar model + microfinance, financial regulation + the IMF / World Bank).
+- **Component 3 — Themes in economics (H460/03)** — fully synoptic. No additional content. Students draw on the whole micro + macro spec and apply it to a pre-released unseen theme.
+
+The OCR distinctive content not directly examined the same way elsewhere: **hyperinflation as a fourth explicit price-level state** alongside inflation / deflation / disinflation (2.4 (a)), the **Harrod-Domar model + microfinance** in the financial-sector / development crossover (5.2 (c)–(d)), the explicit **Marshall-Lerner condition and J-curve** as named content (4.3 (e)), the **AS / neo-classical vs Keynesian aggregate-supply distinction tied to the Phillips Curve** (2.8 (b)), the **bilateral monopoly** in labour markets (5.3 (d)) and the **role of the IMF and World Bank in regulating the global financial system** (5.3 (e)).
+
+---
+
 ## Component 1 — Microeconomics (H460/01)
 
 ### 1. Introduction to Microeconomics

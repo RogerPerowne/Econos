@@ -6,6 +6,77 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.5.0 — 2026-05-28
+
+### Articles: board pills + hub filter + theme-folder reorg + 3 new
+
+Per the user directive — board pills at the top of every article,
+a hub-wide board filter, an organisation system that scales past
+five articles, AND new article content.
+
+- **Board pills at the top of every article.** New
+  `renderBoardPills(fm)` helper in `vite.config.js` emits a
+  four-pill row (Edexcel A / Edexcel B / AQA / OCR) above the
+  article header. Pills for boards the article applies to (a
+  spec point exists in the frontmatter) are filled solid; the
+  rest render hollow. The per-board spec number appears inside
+  each filled pill so a student can spot their reference at a
+  glance. Legacy string-shaped `spec:` frontmatter treats the
+  article as Edexcel A only.
+- **Hub board filter.** `articles/index.html` ships a new
+  radio-group row above the search box (`All boards` plus the
+  four board pills). The default reads from `localStorage`
+  (`econos:board`) so a board switch on the homepage carries
+  into the hub. Selecting a board narrows the grid to articles
+  where that board is listed in the search-index `boards`
+  field. Search + board filter compose.
+- **Each hub card shows its board pills.** The runtime hub
+  renderer emits a `.article-boards` row on every card so a
+  student can scan the grid and see which articles touch their
+  board at a glance.
+- **Search-index extended.** Per-article entries in
+  `dist/articles/search-index.json` now include `boards`
+  (array of board ids the article applies to) and
+  `board_specs` (object keyed by board id → spec number) on
+  top of the existing flattened display `spec` string.
+- **Theme-folder reorg.** Sources moved from flat
+  `articles/sources/*.md` into `articles/sources/<theme>/*.md`
+  (`microeconomics/` + `macroeconomics/` today; finance / global
+  / development can follow). The build plugin's source walker
+  now recurses, so authors can drop articles into any depth
+  without touching `vite.config.js`. URLs stay flat at
+  `/articles/<slug>/`.
+- **Three new articles.** Tranche-1 priorities from
+  `articles/SEO_PRIORITY.md`:
+  - **What is GDP?** — real vs nominal, GDP vs GNI, the
+    three measurement approaches, what GDP misses; funnels into
+    `/learn/measures-of-economic-performance`.
+  - **Unemployment explained: types, measures, and why the
+    figures disagree** — the four types, claimant count vs
+    LFS, NAIRU + natural rate, the inactivity hidden category;
+    funnels into `/learn/employment-and-unemployment`.
+  - **Monetary policy and the Bank of England's MPC** — the
+    five-link transmission mechanism, the toolkit (Bank Rate,
+    QE, forward guidance, TFS, QT), the 2022–24 case study;
+    funnels into `/learn/demand-side-policies-monetary`.
+
+  Each article ships per-board spec frontmatter so the pill row
+  fills correctly across all four boards.
+- **Spec-markdown content overviews.** Per user follow-up —
+  added a content-focused (not exam-format) "Subject content
+  overview" block to each of `docs/{edexcel-a,edexcel-b,aqa,ocr}-spec.md`
+  summarising what each board's themes / sections / components
+  actually cover and naming each board's distinctive content
+  (e.g. Fisher's MV = PQ in AQA, hyperinflation + Harrod-Domar
+  in OCR, behavioural economics + the financial sector in
+  Edexcel A, business-stakeholder framing throughout Edexcel B).
+- **CSS.** `articles/articles.css` gains `.article-boards`
+  (full pill row for article pages) + `.hub-card .article-boards`
+  (compact variant for hub cards) + `.hub__board-filter`
+  (the hub's radio-group row).
+- **SW cache** bumped `econos-v66` → `econos-v67`.
+- **Version** 0.4.1 → 0.5.0.
+
 ## 0.4.1 — 2026-05-28
 
 ### Per-board themes on the homepage + folder restructure into board/theme

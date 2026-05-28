@@ -171,6 +171,14 @@ function topicRoutes() {
       : `${stageName} for ${topicName}. A-Level economics revision on Econos.`;
     const canonical = 'https://econos.co.uk' + path;
     const ld = topicJsonLd({ topicName, sub: t && t.sub, shell, station, canonical });
+    /* Per-topic stage availability — emitted as a meta tag so the
+       runtime stages widget can lock unavailable stages instead of
+       offering broken click targets. */
+    const avail = (t && t.available) || {};
+    const availList = ['learn', 'link', 'land', 'quiz']
+      .filter((s) => avail[s] !== false)
+      .join(',');
+    const availMeta = `<meta name="econos-availability" content="${availList}">`;
     return html
       .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
       .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${desc}">`)
@@ -178,7 +186,7 @@ function topicRoutes() {
       .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${desc}">`)
       .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${canonical}">`)
       .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
-      .replace(/<\/head>/, `${ld}\n</head>`);
+      .replace(/<\/head>/, `${availMeta}\n${ld}\n</head>`);
   }
 
   /* parseUrl('/link/causes-of-inflation-and-deflation/chain-open') → { shell:'link', topic:'causes-of-inflation-and-deflation', station:'chain-open', file:'link.html' } */

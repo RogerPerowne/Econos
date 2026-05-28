@@ -41,8 +41,19 @@
 </head>
 <body>
 
-  <!-- mobile-nav is auto-injected by js/engines/shell.js -->
-  <div id="app-root"></div>
+  <!-- Initial-load skeleton — replaced by LinkRouter once a station boots. -->
+  <div id="app-root">
+    <div class="app theme--link" aria-busy="true">
+      <div class="skeleton skeleton--sidebar"></div>
+      <div class="skeleton__main">
+        <div class="skeleton skeleton--topbar"></div>
+        <div class="skeleton__page">
+          <div class="skeleton skeleton--card"></div>
+          <div class="skeleton skeleton--card"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -46,9 +46,11 @@ questions:
     ans: 1
     exp: "Pigouvian taxes set the price of the externality. Permits set the QUANTITY (cap and trade). Regulation sets a binding limit. All can deliver the optimum; only the tax internalises by changing the marginal cost the producer faces."
   - difficulty: hard
-    type: short
-    q: "Compare a Pigouvian tax with a tradable permit scheme as responses to industrial CO₂ emissions. Which would you choose for the UK?"
-    ans: "Both can in principle deliver the socially optimal quantity. A tax fixes the carbon PRICE and lets the market discover the QUANTITY; permits fix the quantity and let the market discover the price. Tax: simpler to administer, easier to adjust, gives firms a stable investment signal — but the regulator must guess the right rate, and politically it tends to be set too low (UK carbon price ~£40/tCO₂ vs social cost ~£150). Permits (EU ETS): the cap directly delivers the climate target — but volatile prices make long-run abatement investment riskier. For the UK, given the binding net-zero quantity target, a permit scheme with a price floor (combining the certainty of both) is the standard policy-economist answer."
+    type: mcq
+    q: "Comparing a Pigouvian tax with a tradable permit scheme for industrial CO₂, which statement is correct given the UK's binding net-zero target?"
+    opts: ["A tax fixes the quantity of emissions directly, which best delivers a net-zero cap", "Permits fix the carbon price, giving firms the most stable long-run investment signal", "A tax fixes the price and lets quantity vary, while permits fix the quantity and let price vary — so a capped scheme more directly hits a quantity target", "Only a tax can reach the social optimum; permits always over-pollute"]
+    ans: 2
+    exp: "A tax sets the carbon price and lets the market find the quantity; permits set the quantity (the cap) and let the price emerge. Because net zero is a binding quantity target, a permit scheme — ideally with a price floor for investment certainty — maps onto it most directly."
 
 want_more:
   title: "Want more depth?"

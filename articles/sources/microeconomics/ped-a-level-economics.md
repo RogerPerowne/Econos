@@ -28,9 +28,11 @@ questions:
     ans: 1
     exp: "If demand is inelastic, %ΔQd < %ΔP. Raising price loses fewer units than the price gain — total revenue rises. The mirror logic (cut price → raise revenue) only works under elastic demand."
   - difficulty: hard
-    type: short
-    q: "Why did the UK Soft Drinks Industry Levy target producers rather than consumers, and what does this tell us about how policymakers use PED?"
-    ans: "Branded soft-drinks consumption is reasonably price-inelastic in the short run (loyalty, habit), so a passthrough tax would mostly raise revenue without cutting sugar consumption — failing the policy's health goal. Manufacturers face elastic CONSUMER response if they raise price, so they preferred to reformulate to stay below the sugar threshold and avoid the levy entirely. The policy worked because PED differs by side of the market: inelastic for consumers, elastic at the brand level for producers. Policymakers used the elasticity asymmetry to change firm behaviour rather than tax consumption."
+    type: mcq
+    q: "The UK Soft Drinks Industry Levy was levied on producers and tiered by sugar content, prompting widespread reformulation. What does this reveal about how policymakers exploit PED?"
+    opts: ["Consumer demand for sugary drinks is highly elastic, so taxing consumers would have cut consumption sharply", "Producer supply is perfectly inelastic, so firms simply absorbed the levy with no change in behaviour", "Both consumers and producers face identical elasticities, so the side taxed makes no difference", "Branded consumption is fairly inelastic, but firms faced an elastic consumer response to higher shelf prices — so they reformulated to dodge the levy rather than pass it on"]
+    ans: 3
+    exp: "A passthrough tax on inelastic branded demand would mainly raise revenue, missing the health goal. Because consumers respond elastically to a higher shelf price, manufacturers reformulated below the sugar threshold instead — policymakers used the elasticity asymmetry to change firm behaviour rather than tax consumption."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics" }

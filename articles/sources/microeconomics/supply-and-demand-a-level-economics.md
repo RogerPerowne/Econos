@@ -46,9 +46,11 @@ questions:
     ans: 1
     exp: "Supply shifts left. At the old price, planned demand now exceeds planned supply. Suppliers ration by raising price; consumers exit the market as price rises. New equilibrium is at a higher price and lower quantity."
   - difficulty: hard
-    type: short
-    q: "A government imposes a minimum price on alcohol above the market equilibrium. Use a supply-and-demand diagram in words to explain who gains and who loses, and one limitation of the policy."
-    ans: "At the minimum price (above equilibrium), planned supply exceeds planned demand — persistent excess supply. Producers serving the new lower quantity gain from higher revenue per unit; consumers who still buy lose from higher prices; consumers priced out lose access entirely. The welfare loss is the deadweight triangle between supply and demand across the lost quantity. Distributionally, minimum alcohol pricing (introduced in Scotland 2018) is regressive — the price floor binds hardest on heavy drinkers with lower incomes, while wealthier moderate drinkers barely notice. One limitation: cross-border substitution. Scottish drinkers can purchase in England or online, eroding the policy's reach. The strongest evaluation links the welfare loss to PED — inelastic problem-drinker demand means the policy raises spending more than it reduces consumption."
+    type: mcq
+    q: "A government sets a minimum alcohol price above the market equilibrium (as Scotland did in 2018). Which statement best captures the effects and a key limitation?"
+    opts: ["Excess supply emerges; consumers still buying pay more, those priced out lose access, and cross-border buying erodes the policy's reach", "A shortage emerges and the price floor is non-binding, so nothing changes", "Producer surplus falls to zero because the higher price cuts all sales", "The policy is progressive, hitting wealthy moderate drinkers hardest"]
+    ans: 0
+    exp: "Above equilibrium, planned supply exceeds demand (excess supply); remaining buyers pay more while priced-out consumers lose access, and the welfare loss is the deadweight triangle. A key limitation is cross-border substitution — Scottish drinkers can buy in England or online — and the floor is regressive, binding hardest on low-income heavy drinkers."
 
 want_more:
   title: "Want more depth?"

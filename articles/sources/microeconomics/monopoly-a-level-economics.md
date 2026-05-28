@@ -28,9 +28,11 @@ questions:
     ans: 1
     exp: "A perfectly competitive firm is a price-taker — it can sell more at the going price, so MR = P = AR. A monopolist must cut price on ALL units to sell more, so MR < AR. The wedge widens as quantity rises."
   - difficulty: hard
-    type: short
-    q: "Briefly explain why a natural monopoly may be more efficient than splitting it into competing firms — and why regulation is then needed."
-    ans: "A natural monopoly has very high fixed costs and low marginal costs (water pipes, rail track), so long-run average cost falls steadily over the relevant output range. One large firm can supply at lower AC than two smaller competing firms — splitting it forces every firm to duplicate fixed costs. Productive efficiency favours the single firm. But left alone, the monopolist sets P > MC and generates deadweight loss + supernormal profit. Regulation (Ofwat-style price caps via RPI−X or similar) lets society capture the cost advantage while constraining the rent — the regulator becomes the substitute for the missing competitor."
+    type: mcq
+    q: "Why may a natural monopoly be more efficient than splitting it into competing firms, and why is regulation then needed?"
+    opts: ["Competition always lowers average cost, so splitting it is efficient and no regulation is required", "A single firm faces rising long-run average cost, so it must be broken up and then price-capped", "One firm is more productively efficient, and being a monopoly it automatically sets P = MC", "Falling long-run AC over the relevant range means one firm supplies at lower cost than rivals duplicating fixed costs, but unregulated it sets P > MC, so a price cap captures the cost saving"]
+    ans: 3
+    exp: "High fixed and low marginal costs mean LRAC falls across the relevant output, so one firm avoids the wasteful duplication of fixed costs that competition would force. Left alone it sets P > MC with deadweight loss and supernormal profit, so price-cap regulation (e.g. RPI−X) substitutes for the missing competitor."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics", href: "/articles/?theme=micro" }

@@ -27,9 +27,11 @@ questions:
     ans: 1
     exp: "An external shock to input prices (gas, food via fertiliser) shifts SRAS left — output falls, prices rise. That signature is cost-push, not demand-pull."
   - difficulty: hard
-    type: short
-    q: "Explain why raising base rate is a less effective response to cost-push inflation than to demand-pull inflation."
-    ans: "Higher interest rates reduce AD by raising the cost of borrowing — that closes the demand–supply gap when the gap was caused by excess demand. Cost-push inflation comes from a supply shock the central bank cannot fix; tightening risks pushing output further below trend (recession) while inflation remains elevated. The instrument addresses the wrong side of the diagram."
+    type: mcq
+    q: "Why is raising base rate a less effective response to cost-push inflation than to demand-pull inflation?"
+    opts: ["Higher rates raise firms' borrowing costs, which directly worsens cost-push inflation", "Cost-push inflation is always temporary, so any monetary response is unnecessary", "Higher rates increase aggregate demand, fuelling the supply shock further", "A rate rise works on AD, but cost-push inflation stems from an SRAS shock — tightening risks deepening the output fall while prices stay high"]
+    ans: 3
+    exp: "Higher rates curb inflation by reducing AD, which fits a demand-pull gap. Cost-push inflation comes from a leftward SRAS shift the central bank cannot reverse, so tightening pushes output further below trend (recession) while inflation persists — the instrument addresses the wrong side of the diagram."
 spa_topic: causes-of-inflation-and-deflation
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

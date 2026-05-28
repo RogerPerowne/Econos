@@ -79,6 +79,9 @@ The mark scheme rewards naming all five links AND naming the lag.
 
 :::
 
+::: econos-diagram svgKey="adAsMonetary" interactive="true" label="How monetary policy shifts aggregate demand" caption="Step through how the Bank of England moves AD — a rate hike to cool inflation, or QE at the zero lower bound to lift it back to target."
+:::
+
 ::: section eyebrow="Beyond Bank Rate — the rest of the toolkit" color="purple" icon="scale"
 
 ## QE, forward guidance, credit easing

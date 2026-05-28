@@ -137,6 +137,9 @@ The strongest essay names crowding out AND time lags AND debt sustainability —
 
 :::
 
+::: econos-diagram svgKey="crowdingOutLoanableFunds" label="Crowding out in the loanable funds market" caption="Crowding out — higher government borrowing shifts demand for loanable funds right, raising the real interest rate and squeezing private investment."
+:::
+
 ::: section eyebrow="Exam edge" color="green" icon="cap"
 
 ## What the mark scheme actually rewards

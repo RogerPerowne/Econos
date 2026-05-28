@@ -99,6 +99,9 @@ In practice the three diverge slightly due to measurement timing and the statist
 
 :::
 
+::: econos-diagram svgKey="nationalIncomeFlow" label="The circular flow of income between households and firms" caption="The circular flow of income — firms pay households for factors of production, households spend on goods and services, so output, income and expenditure measure the same flow."
+:::
+
 ::: section eyebrow="Real vs nominal in practice" color="purple" icon="scale"
 
 ## Why the headline GDP figure can mislead

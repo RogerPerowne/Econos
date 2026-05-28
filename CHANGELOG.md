@@ -6,6 +6,44 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.10.0 — 2026-05-28
+
+### Articles: diagram build-out, 5 new drafts, portrait fix, tables + mobile
+
+**Diagrams on every existing article.** Added a diagram to the 8 that
+lacked one. Two reuse the SPA's `ad-svg` state machine interactively via
+new `INTERACTIVE_PRESETS` entries — balance of payments (the J-curve)
+and monetary policy (Bank Rate / QE moving AD-AS). Five use clean static
+SVGs — inflation (demand-pull), aggregate supply (demand- vs supply-
+side), fiscal policy (crowding out), the multiplier (round-by-round
+ripple) and GDP (circular flow). Public goods gets a bespoke inline
+2×2 rivalry × excludability matrix authored for it (no fitting icon
+existed).
+
+**Portrait bug fixed.** Economist portraits embedded a *relative*
+`src="assets/economists/x.png"`, which 404'd from an article URL at
+`/articles/<slug>/`. The build now absolutises injected `assets/` paths
+(portraits and diagram SVGs), so the portraits load.
+
+**5 new draft articles** (status: draft, skipped by the build until
+reviewed): the Phillips curve, perfect competition, oligopoly & the
+kinked demand curve, income & cross elasticity (YED/XED), and asymmetric
+information / the Akerlof lemons model — each to the house shape with
+diagrams where a real SVG fits and three MCQ knowledge-checks. Queue
+items ticked `[~]`.
+
+**Want-more CTA** trimmed to a single "Explore the full topic" action
+(the "Sign up free" button was removed).
+
+**Tables** in article bodies are now styled (card frame, tinted header,
+zebra rows) and wrapped so they scroll within the column on phones.
+
+**Smartphone polish.** Tightened the sticky topnav so it no longer
+overflows a 360px viewport; inline diagrams and tables scale/scroll in
+frame. Verified no horizontal overflow at 360px across sampled articles.
+
+SW cache → `econos-v81`.
+
 ## 0.9.2 — 2026-05-28
 
 ### Articles: smartphone layout for interactive diagrams

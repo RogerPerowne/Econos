@@ -92,7 +92,7 @@ in Google when a panicking sixth former types it the night before Paper 2.
   - Friction angle: current account vs capital account vs financial account - students mash all three.
   - UK example: UK persistent current account deficit, services surplus.
 
-- [ ] **The Phillips curve - short run, long run, and the 1970s break**
+- [~] **The Phillips curve - short run, long run, and the 1970s break**
   - Keyword: "phillips curve a level economics"
   - SPA topic: `unemployment`, `inflation`
   - Friction angle: SRPC vs LRPC; expectations-augmented; NAIRU.
@@ -115,12 +115,12 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - Friction angle: students draw MR = MC but forget to read price off AR. The "where does the price come from?" question.
   - Differentiation: Schumpeterian defence, CMA 25% threshold.
 
-- [ ] **Perfect competition - the model and why it's a benchmark**
+- [~] **Perfect competition - the model and why it's a benchmark**
   - Keyword: "perfect competition a level economics"
   - SPA topic: `perfect_competition`
   - Friction angle: confusion between short-run (supernormal profit possible) and long-run (normal profit only).
 
-- [ ] **Oligopoly, the kinked demand curve, and game theory basics**
+- [~] **Oligopoly, the kinked demand curve, and game theory basics**
   - Keyword: "oligopoly a level economics"
   - SPA topic: `oligopoly`, `game_theory`, `collusion_cartels`
   - Friction angle: students recite "interdependence" without showing the price rigidity it implies.
@@ -132,7 +132,7 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - Friction angle: PED -> total revenue logic; the sign convention; perfect elasticity edge cases.
   - UK example: SDIL incidence analysis.
 
-- [ ] **YED and XED - income and cross elasticity**
+- [~] **YED and XED - income and cross elasticity**
   - Keyword: "income elasticity of demand a level"
   - SPA topic: `yed_xed`
   - Friction angle: positive vs negative YED interpretation; necessities vs luxuries vs inferior goods.
@@ -155,7 +155,7 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - SPA topic: `public_goods`
   - Friction angle: students conflate "public sector" with "public good". Defence vs the NHS distinction.
 
-- [ ] **Asymmetric information and the Akerlof lemons model**
+- [~] **Asymmetric information and the Akerlof lemons model**
   - Keyword: "asymmetric information a level economics"
   - SPA topic: `info_gaps`, `financial_market_failure`
   - Friction angle: adverse selection vs moral hazard - students collapse them.

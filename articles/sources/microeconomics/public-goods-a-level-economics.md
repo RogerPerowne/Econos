@@ -96,6 +96,38 @@ Draw this matrix in your exam answer. It's worth 2 marks for the framework and p
 
 :::
 
+::: diagram caption="The defining 2×2: a good's two technical properties — rivalry and excludability — place it in one of four cells. Only the bottom-right cell, **non-rival and non-excludable**, is a pure public good the market won't provide."
+<svg class="pubgoods-matrix" viewBox="0 0 680 472" width="680" height="472" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-label="A two by two matrix of rivalry against excludability. Rival and excludable: private goods. Non-rival and excludable: club goods. Rival and non-excludable: common resources. Non-rival and non-excludable: public goods.">
+  <rect width="680" height="472" fill="#F8FAFC" rx="12"/>
+  <text x="282" y="40" text-anchor="middle" font-size="14" font-weight="800" fill="#334155" letter-spacing="1.5">RIVAL</text>
+  <text x="537" y="40" text-anchor="middle" font-size="14" font-weight="800" fill="#334155" letter-spacing="1.5">NON-RIVAL</text>
+  <text transform="translate(34,160) rotate(-90)" text-anchor="middle" font-size="14" font-weight="800" fill="#334155" letter-spacing="1.5">EXCLUDABLE</text>
+  <text transform="translate(34,360) rotate(-90)" text-anchor="middle" font-size="12.5" font-weight="800" fill="#334155" letter-spacing="1">NON-EXCLUDABLE</text>
+
+  <rect x="156" y="60" width="250" height="196" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="178" y="96" font-size="17" font-weight="800" fill="#0B1426">Private goods</text>
+  <text x="178" y="124" font-size="13" fill="#475569">A sandwich · a car · a haircut</text>
+  <text x="178" y="236" font-size="12" font-style="italic" fill="#64748B">Markets provide it efficiently</text>
+
+  <rect x="411" y="60" width="250" height="196" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="433" y="96" font-size="17" font-weight="800" fill="#0B1426">Club goods</text>
+  <text x="433" y="124" font-size="13" fill="#475569">Netflix · a toll road</text>
+  <text x="433" y="144" font-size="13" fill="#475569">a cinema seat</text>
+  <text x="433" y="236" font-size="12" font-style="italic" fill="#64748B">Excludable → a market forms</text>
+
+  <rect x="156" y="262" width="250" height="196" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="178" y="298" font-size="17" font-weight="800" fill="#0B1426">Common resources</text>
+  <text x="178" y="326" font-size="13" fill="#475569">Ocean fish · a busy road</text>
+  <text x="178" y="438" font-size="12" font-style="italic" fill="#64748B">Risk: over-use of the commons</text>
+
+  <rect x="411" y="262" width="250" height="196" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="433" y="298" font-size="17" font-weight="800" fill="#065F46">Public goods</text>
+  <text x="433" y="326" font-size="13" fill="#047857">Street lighting</text>
+  <text x="433" y="346" font-size="13" fill="#047857">national defence · flood defences</text>
+  <text x="433" y="438" font-size="12" font-weight="700" fill="#047857">Market fails → state provides</text>
+</svg>
+:::
+
 ::: section eyebrow="The free-rider problem in detail" color="purple" icon="scale"
 
 ## Why voluntary funding can't sustain a public good

@@ -101,6 +101,9 @@ The exam move is to use the **direction of output** as the diagnostic. Rising ou
 
 :::
 
+::: econos-diagram svgKey="demandPullDiagram" label="Demand-pull inflation on the AD-AS diagram" caption="Demand-pull inflation — aggregate demand shifts right along SRAS, so the price level and real output both rise."
+:::
+
 ::: econ-insight portraitKey="economistFriedman" tone="amber" label="Economist insight: Friedman and the monetarist view" attribution="Milton Friedman, <em>The Counter-Revolution in Monetary Theory</em> (1970)"
 Inflation is always and everywhere a monetary phenomenon in the sense that it is and can be produced only by a more rapid increase in the quantity of money than in output.
 :::

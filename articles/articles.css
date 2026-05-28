@@ -379,6 +379,10 @@ a:hover { text-decoration: underline; }
    row label sits above them instead of beside, giving the
    pip groups full horizontal width. */
 @media (max-width: 640px) {
+  /* Tighten the sticky topnav so the logo + actions fit a narrow
+     phone without a sliver of horizontal overflow. */
+  .topnav { padding: 0 16px; gap: 12px; }
+  .topnav__actions { gap: 8px; }
   .hub__controls { margin-top: 24px; gap: 16px; }
   .hub__controls-row {
     flex-direction: column;
@@ -550,6 +554,45 @@ a:hover { text-decoration: underline; }
 .section p:last-child { margin-bottom: 0; }
 .section strong { font-weight: 600; }
 
+/* Tables — markdown tables in article bodies. Card-framed, zebra rows,
+   tinted header; scrolls horizontally inside its own frame on phones
+   rather than forcing the page to scroll. */
+.section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 22px 0;
+  font-size: 15px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.section thead th {
+  background: var(--cream);
+  font-weight: 800;
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.section th,
+.section td {
+  padding: 11px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+.section tbody tr:nth-child(even) { background: rgba(0, 0, 0, 0.018); }
+.section tbody tr:last-child td { border-bottom: 0; }
+.section td strong, .section th strong { font-weight: 700; }
+/* Wrapper so a wide table scrolls inside the content column on mobile. */
+.section .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0; }
+.section .table-wrap table { margin: 0; }
+@media (max-width: 560px) {
+  .section table { font-size: 14px; }
+  .section th, .section td { padding: 9px 12px; }
+}
+
 /* Two-column "Big picture" layout */
 .two-col {
   display: grid;
@@ -595,6 +638,8 @@ a:hover { text-decoration: underline; }
   padding: 22px;
   margin-top: 14px;
 }
+.diagram-block svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+@media (max-width: 560px) { .diagram-block { padding: 14px; } }
 .diagram-block__caption {
   font-size: 14px;
   color: var(--ink-soft);

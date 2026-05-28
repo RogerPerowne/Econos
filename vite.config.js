@@ -493,6 +493,16 @@ const INTERACTIVE_PRESETS = {
     { state: 'extension', label: 'Movement along AD', desc: 'A change in the general price level slides you along AD — a change in the quantity of real output demanded, not a change in AD itself.' },
     { state: 'shift',     label: 'AD shifts',        desc: 'A change in any component of AD — consumption, investment, government spending or net exports — shifts the whole curve left or right.' }
   ],
+  bopJCurveInteractive: [
+    { state: 'base',      label: 'Before the depreciation', desc: 'The current account runs a modest, stable deficit; export and import prices and volumes are all at their starting levels.' },
+    { state: 'extension', label: 'Short run — deficit widens', desc: 'Depreciation raises import costs immediately, but contracted volumes are sticky, so the deficit gets worse before it gets better.' },
+    { state: 'shift',     label: 'Long run — recovery',      desc: 'Once volumes respond — exports gain share, importers substitute away — the balance improves, provided the Marshall–Lerner condition is met.' }
+  ],
+  adAsMonetary: [
+    { state: 'base',      label: 'Inflation at target',     desc: 'AD meets short-run AS at full-employment output, with inflation sitting on the Bank of England’s 2% target.' },
+    { state: 'extension', label: 'Rate hike',               desc: 'With inflation too high, the Bank raises Bank Rate; the transmission channels pull AD left, so both the price level and output fall.' },
+    { state: 'shift',     label: 'QE at the zero lower bound', desc: 'With inflation too low and rates already at zero, the Bank buys bonds; AD shifts right and the economy recovers from below target.' }
+  ],
   cpsSvg: [
     { state: 'base',  label: 'Equilibrium',      desc: 'Demand and supply cross at the market price P* and quantity Q*.' },
     { state: 'cs',    label: 'Consumer surplus', desc: 'The area below demand and above the price: what buyers were willing to pay minus what they actually paid.' },
@@ -596,7 +606,8 @@ function articleRoutes() {
       if (tokens[idx].nesting === 1) {
         const raw = tokens[idx].info.trim().slice('econos-diagram'.length).trim();
         const attrs = parseAttrs(raw);
-        const svg = (attrs.svgKey && ICONS_LIB[attrs.svgKey]) || '';
+        const svg = ((attrs.svgKey && ICONS_LIB[attrs.svgKey]) || '')
+          .replace(/(src|href)="assets\//g, '$1="/assets/');
         const ariaLabel = attrs.label || attrs.svgKey || 'diagram';
         const preset = attrs.interactive === 'true' ? INTERACTIVE_PRESETS[attrs.svgKey] : null;
 
@@ -653,7 +664,11 @@ function articleRoutes() {
         const attrs = parseAttrs(raw);
         insightStack.push(attrs);
         const tone = attrs.tone ? ` article-econ-insight--${escapeAttr(attrs.tone)}` : '';
-        const portrait = (attrs.portraitKey && ICONS_LIB[attrs.portraitKey]) || '';
+        /* Economist portraits embed <img src="assets/economists/x.png">
+           with a RELATIVE path — fine on the SPA at "/", but it 404s
+           from an article page at /articles/<slug>/. Absolutise it. */
+        const portrait = ((attrs.portraitKey && ICONS_LIB[attrs.portraitKey]) || '')
+          .replace(/(src|href)="assets\//g, '$1="/assets/');
         const portraitCell = portrait
           ? `<div class="article-econ-insight__portrait" aria-hidden="true">${portrait}</div>\n`
           : '';
@@ -713,7 +728,11 @@ function articleRoutes() {
     const url = `https://econos.co.uk/articles/${slug}/`;
     const title = `${fm.title} | Econos`;
     const desc  = fm.description || '';
-    const renderedBody = md.render(body);
+    /* Wrap markdown tables so they scroll inside the content column on
+       phones instead of forcing the whole page to scroll sideways. */
+    const renderedBody = md.render(body)
+      .replace(/<table>/g, '<div class="table-wrap"><table>')
+      .replace(/<\/table>/g, '</table></div>');
 
     /* JSON-LD: always Article schema; FAQPage too when frontmatter
        supplies a faq array. Both are emitted as separate <script>
@@ -1009,16 +1028,14 @@ ${cards}
     const primary = wm.primary_href
       ? `<a href="${escapeAttrUrl(wm.primary_href)}" class="cta-primary">${escapeHtml(wm.primary_label || 'Explore the full topic →')}</a>`
       : '';
-    const secondary = wm.secondary_href
-      ? `<a href="${escapeAttrUrl(wm.secondary_href)}" class="cta-secondary">${escapeHtml(wm.secondary_label || 'Sign up free')}</a>`
-      : '';
+    /* The secondary "Sign up free" CTA was removed — the want-more
+       block now funnels to a single "Explore the full topic" action. */
     return `    <section class="want-more" aria-labelledby="more">
       <div>
         <h2 id="more">${escapeHtml(wm.title || 'Want more depth?')}</h2>
         ${wm.subtitle ? `<p class="want-more__sub">${escapeHtml(wm.subtitle)}</p>` : ''}
         <div class="want-more__ctas">
           ${primary}
-          ${secondary}
         </div>
       </div>
     </section>`;

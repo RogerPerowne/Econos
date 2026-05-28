@@ -87,6 +87,32 @@ test.describe('Per-topic SEO metadata', () => {
   });
 });
 
+test.describe('Content Security Policy', () => {
+  /* Lock in the script-src 'unsafe-inline' removal on the protected
+     shells. The home page + articles still ship looser CSPs because
+     their inline <script> blocks haven't been externalised yet. */
+  const TIGHTENED = [
+    '/learn/causes-of-inflation-and-deflation',
+    '/link/causes-of-inflation-and-deflation/intro',
+    '/land/causes-of-inflation-and-deflation/intro',
+    '/quiz/causes-of-inflation-and-deflation/main',
+    '/login'
+  ];
+  for (const path of TIGHTENED) {
+    test(`${path} ships script-src 'self' (no unsafe-inline)`, async ({ page }) => {
+      await login(page);
+      await page.goto(path);
+      const csp = await page.evaluate(() => {
+        const m = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
+        return m ? m.getAttribute('content') : null;
+      });
+      expect(csp).toBeTruthy();
+      expect(csp).toContain("script-src 'self';");
+      expect(csp).not.toContain("script-src 'self' 'unsafe-inline'");
+    });
+  }
+});
+
 test.describe('Account menu', () => {
   test('topbar avatar opens the menu and Escape closes it', async ({ page }) => {
     await login(page);

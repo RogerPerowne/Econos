@@ -57,27 +57,27 @@ test('home page is accessible', async ({ page }) => {
 
 test('Learn It shell is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
+  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it');
   /* Wait for the engine to paint #main-content, then for the
      interactive-widget init RAF to settle. */
   await page.waitForSelector('#main-content', { state: 'attached' });
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(500);
-  await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
+  await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it');
 });
 
 test('Link It intro is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
+  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
-  await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
+  await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
 });
 
 test('Land It intro is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land/intro');
+  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/intro');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
-  await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/land/intro');
+  await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/intro');
 });

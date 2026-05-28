@@ -1,15 +1,22 @@
 /* ============================================================
    ECONOS – content data for aggregate_demand
-   8 cards on AD as a system. Each component (C, I, G, X−M)
-   has its own deep-dive topic – see js/data/consumption,
-   investment, government_spending, net_trade.
-   Edexcel Theme 2.2.1
+   8 cards · AQA variant · AQA 3.2.2.2 / 4.2.2.2
+   ─────────────────────────────────────────────────────────────
+   AQA frames AD/AS together as one sub-section (3.2.2.2 at AS,
+   4.2.2.2 at A-level): the factors that shift the AD curve and
+   the short-run AS curve, how both demand-side and supply-side
+   shocks affect the macroeconomy, and how global events feed
+   through to the domestic economy. Layout + diagrams identical
+   to the Edexcel A baseline; copy tilts toward AQA's emphasis
+   on the accelerator process (3.2.2.3 (c)) and the
+   distinction between determinants of AD and the AD/AS
+   equilibrium diagram itself (3.2.2.2 (e)).
    ============================================================ */
 
 window.ECONOS_TOPIC = {
   id: 'aggregate_demand',
-  topicNum: '2.1',
-  theme: 'Theme 2 · The National and Global Economy',
+  topicNum: '3.2.2.2',
+  theme: 'Section 2 · The national economy in a global context',
   title: 'Aggregate Demand',
   estTime: '10-12 minutes',
   goal: 'Lock in AD as a system – formula, slope, shifts, multiplier, real-world application',
@@ -30,8 +37,8 @@ window.ECONOS_TOPIC = {
     tip: 'Each component (C, I, G, X−M) has its own dedicated topic for the deep dive on determinants and policy.',
     stages: [
       { num: 1, name: 'Learn',  sub: '8 concept cards',                  state: 'current' },
-      { num: 2, name: 'Master', sub: 'Apply in exam-style questions',    state: 'locked' },
-      { num: 3, name: 'Review', sub: 'See your progress and next steps', state: 'locked' }
+      { num: 2, name: 'Link it', sub: 'Apply in exam-style questions',    state: 'locked' },
+      { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
   },
 
@@ -112,7 +119,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge',
+        title: 'Exam edge (AQA)',
         text: 'A strong answer defines AD first, then identifies which component – C, I, G or (X − M) – is changing.'
       }
     },
@@ -177,7 +184,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge',
+        title: 'Exam edge (AQA)',
         text: 'Always separate the reasons for the AD curve from the reasons for an individual demand curve.'
       }
     },
@@ -235,7 +242,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge',
+        title: 'Exam edge (AQA)',
         text: 'Write the diagnosis first – for example, "This is a rightward shift of AD because consumer confidence raises C at every price level."'
       }
     },
@@ -306,7 +313,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge',
+        title: 'Exam edge (AQA)',
         text: 'Organise determinants by C, I, G and (X − M). That instantly gives essays better structure.'
       }
     },
@@ -370,7 +377,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge',
+        title: 'Exam edge (AQA)',
         text: 'Always state the mechanism – spending becomes income, then becomes more spending.'
       }
     },
@@ -451,7 +458,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge',
+        title: 'Exam edge (AQA)',
         text: 'Name the three leakages explicitly – MPS, MRT and MRM. Quote a realistic UK multiplier (~1.5) rather than the textbook 2.5.'
       }
     },
@@ -536,7 +543,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge',
+        title: 'Exam edge (AQA)',
         text: 'The best application names which engine was hit – not just that "demand fell".'
       }
     },
@@ -603,153 +610,10 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge',
+        title: 'Exam edge (AQA)',
         text: 'Strong essays start with AD, then qualify with lags, spare capacity, crowding out and animal spirits.'
       }
     }
 
   ]
 };
-
-/* ============================================================
-   End-of-Learn-It quiz pool · folded in at v0.4.0
-   These questions used to live at /quiz/<topic>/<set> as a
-   standalone shell. They now ride along with the Learn It data
-   under the same window.ECONOS_QUIZ global. The /quiz/ URL
-   contract is gone; the quiz is the natural finisher to the
-   Learn It journey, so the data lives next to learn cards.
-   ============================================================ */
-/* ---- quiz-main.js (quiz pool, preserved from former /quiz/ shell) ---- */
-(function () {
-
-  window.ECONOS_QUIZ = {
-    title:    'Aggregate Demand',
-    subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.routes.learn('aggregate-demand'),
-    backLabel:'Back to Learn It',
-    lede:     '10 questions · ~8 minutes · covers AD components, shifts, the multiplier, and macroeconomic equilibrium',
-    shortNames: [
-      'AD formula','AD slope','Consumption drivers','Investment','Multiplier',
-      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
-    ],
-    questions: [
-      {
-        type: 'mcq',
-        q:    'The correct formula for Aggregate Demand is:',
-        opts: ['AD = C + I + G + (X – M)','AD = C + I + G – (X + M)','AD = C – I + G + (X + M)','AD = C + I – G + (X – M)'],
-        ans:  0,
-        exp:  'AD = Consumption + Investment + Government spending + (Exports − Imports). The net export term (X − M) is added because exports inject spending into the economy while imports represent a withdrawal.'
-      },
-      {
-        type: 'mcq',
-        q:    'The AD curve slopes downward because:',
-        opts: [
-          'Higher prices reduce the real value of money holdings and make exports less competitive',
-          'Higher prices always reduce wages',
-          'Firms supply less at higher prices',
-          'Investment always falls when prices rise'
-        ],
-        ans:  0,
-        exp:  'Three effects explain the downward slope: (1) the wealth effect – higher prices erode real wealth; (2) the interest rate effect – higher prices raise money demand and interest rates; (3) the international competitiveness effect – exports become dearer, imports cheaper.'
-      },
-      {
-        type: 'mcq',
-        q:    'Which of the following would shift the AD curve to the RIGHT?',
-        opts: [
-          'A rise in income tax rates',
-          'An increase in consumer confidence',
-          'A fall in government spending',
-          'An appreciation of the exchange rate'
-        ],
-        ans:  1,
-        exp:  'Higher consumer confidence encourages more spending (rising C). This shifts the entire AD curve to the right – more real output is demanded at every price level.'
-      },
-      {
-        type: 'mcq',
-        q:    'The Keynesian multiplier is defined as:',
-        opts: [
-          'The change in AD divided by the change in government spending',
-          '1 ÷ (1 − MPC) or equivalently 1 ÷ MPS',
-          'The change in investment divided by the change in saving',
-          'MPC ÷ (1 − MPS)'
-        ],
-        ans:  1,
-        exp:  'The multiplier = 1/(1−MPC) = 1/MPS. An initial injection of spending is re-spent round after round, each time losing a fraction (MPS) as leakages. The final increase in national income is a multiple of the initial injection.'
-      },
-      {
-        type: 'numeric_input',
-        q:    'The MPC = 0.75. The government increases spending by £200m. What is the total increase in national income (£m)?',
-        answer: 800,
-        tolerance: 0,
-        unit: '£m',
-        hint: 'Multiplier = 1/(1−MPC). Total change = multiplier × injection.',
-        workingSteps: ['Multiplier = 1/(1−0.75) = 1/0.25 = 4','Total change = 4 × £200m = £800m']
-      },
-      {
-        type: 'categorise',
-        q:    'Categorise each factor as a determinant of Consumption or Investment.',
-        categories: ['Consumption','Investment'],
-        items: [
-          { item: 'Consumer confidence',                         category: 'Consumption' },
-          { item: 'Expected rate of return on a project',        category: 'Investment' },
-          { item: 'Household real disposable income',            category: 'Consumption' },
-          { item: 'Cost of borrowing (interest rate)',           category: 'Investment' },
-          { item: 'Wealth effects from rising house prices',     category: 'Consumption' },
-          { item: 'Business confidence (animal spirits)',        category: 'Investment' }
-        ]
-      },
-      {
-        type: 'cause_effect',
-        q:    'Match each cause to its effect on Aggregate Demand.',
-        pairs: [
-          { cause: 'Government cuts income tax',           effect: 'Household disposable income rises; C increases' },
-          { cause: 'Interest rates fall',                  effect: 'Borrowing cheaper; C and I both increase' },
-          { cause: 'Exchange rate appreciates',            effect: 'Exports become less competitive; X falls, M rises; AD falls' },
-          { cause: 'Consumer confidence collapses',        effect: 'C falls sharply; AD shifts left' },
-          { cause: 'Government increases infrastructure spending', effect: 'G rises; multiplier effect boosts AD further' },
-          { cause: 'Trading partner economies grow rapidly',effect: 'Demand for exports rises; X increases; AD shifts right' }
-        ]
-      },
-      {
-        type: 'odd_one_out',
-        q:    'Which is the odd one out in the AD formula?',
-        opts: ['Consumption (C)','Investment (I)','Taxation (T)','Government spending (G)'],
-        ans:  2,
-        exp:  'C, I, and G are all direct components in the AD = C + I + G + (X−M) formula. Taxation affects AD indirectly by influencing consumption – but T itself does not appear as a component of AD.'
-      },
-      {
-        type: 'data_table',
-        q:    'Use the data to calculate the multiplier and the final change in national income from a £50bn investment injection.',
-        tableHeaders: ['MPC','MPS','Multiplier','Change in Y (£bn) from £50bn injection'],
-        tableData: [
-          ['0.5','0.5','?','?'],
-          ['0.6','0.4','?','?'],
-          ['0.8','0.2','?','?'],
-          ['0.9','0.1','?','?']
-        ],
-        opts: [
-          'MPC=0.8 gives multiplier of 5 and ΔY = £250bn',
-          'MPC=0.9 gives multiplier of 10 and ΔY = £500bn',
-          'MPC=0.6 gives multiplier of 2.5 and ΔY = £125bn',
-          'MPC=0.5 gives multiplier of 2 and ΔY = £100bn'
-        ],
-        ans:  0,
-        exp:  'Multiplier = 1/MPS. For MPC=0.8, MPS=0.2, multiplier = 1/0.2 = 5, ΔY = 5 × £50bn = £250bn. Option A is correct.'
-      },
-      {
-        type: 'match_pairs',
-        q:    'Match each AD concept to its correct description.',
-        pairs: [
-          { a: 'Multiplier',             b: 'The amplified effect of an injection on final national income' },
-          { a: 'MPC',                    b: 'Fraction of additional income that is spent rather than saved' },
-          { a: 'Wealth effect',          b: 'Rising asset prices boost consumer spending and AD' },
-          { a: 'Injection',              b: 'Spending added to the circular flow: G, I, or X' },
-          { a: 'Leakage',                b: 'Withdrawal from the circular flow: S, T, or M' },
-          { a: 'Animal spirits',         b: 'Keynes\'s term for business confidence driving investment' }
-        ]
-      }
-    ]
-  };
-
-})();
-

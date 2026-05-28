@@ -19,7 +19,7 @@ async function boot(page, url) {
 }
 
 test('routes emit path-based URLs with hyphenated slugs', async ({ page }) => {
-  await boot(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
+  await boot(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it');
 
   const cases = await page.evaluate(() => {
     const T = window.TopicLoader;
@@ -34,26 +34,26 @@ test('routes emit path-based URLs with hyphenated slugs', async ({ page }) => {
   });
 
   expect(cases.home).toBe('/');
-  expect(cases.learn).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
-  expect(cases.learnArg).toBe('/edexcel_a/theme-1/positive-externalities/learn');
-  expect(cases.linkDef).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
-  expect(cases.linkOpen).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/chain-open');
-  expect(cases.land).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land/a');
+  expect(cases.learn).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it');
+  expect(cases.learnArg).toBe('/edexcel_a/theme-1/positive-externalities/learn-it');
+  expect(cases.linkDef).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
+  expect(cases.linkOpen).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/chain-open');
+  expect(cases.land).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/a');
 });
 
 test('parsePath round-trips canonical URLs', async ({ page }) => {
-  await boot(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
+  await boot(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it');
 
   const cases = await page.evaluate(() => {
     const p = window.TopicLoader.parsePath;
     return {
       home:   p('/'),
-      learn:  p('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn'),
-      link:   p('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/chain'),
-      open:   p('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/chain-open'),
-      land:   p('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land/a'),
+      learn:  p('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it'),
+      link:   p('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/chain'),
+      open:   p('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/chain-open'),
+      land:   p('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/a'),
       quiz:   p('/quiz/causes-of-inflation-and-deflation/main'),
-      slug:   p('/edexcel_a/theme-1/positive-externalities/learn'),
+      slug:   p('/edexcel_a/theme-1/positive-externalities/learn-it'),
       bogus:  p('/some/random/path')
     };
   });
@@ -70,7 +70,7 @@ test('parsePath round-trips canonical URLs', async ({ page }) => {
 });
 
 test('getTopic / getStation read the current pathname', async ({ page }) => {
-  await boot(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/chain-open');
+  await boot(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/chain-open');
   const state = await page.evaluate(() => ({
     topic:   window.TopicLoader.getTopic(),
     station: window.TopicLoader.getStation(),

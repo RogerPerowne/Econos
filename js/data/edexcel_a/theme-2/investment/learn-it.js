@@ -28,8 +28,8 @@ window.ECONOS_TOPIC = {
     tip: 'I is small in level (~17% of AD) but huge in volatility – it amplifies AD changes far beyond its share.',
     stages: [
       { num: 1, name: 'Learn',  sub: '8 concept cards',                  state: 'current' },
-      { num: 2, name: 'Master', sub: 'Apply in exam-style questions',    state: 'locked' },
-      { num: 3, name: 'Review', sub: 'See your progress and next steps', state: 'locked' }
+      { num: 2, name: 'Link it', sub: 'Apply in exam-style questions',    state: 'locked' },
+      { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
   },
 

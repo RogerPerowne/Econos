@@ -28,27 +28,27 @@
   window.ECONOS_STATIONS = {
     /* Link It stations — order is the canonical funnel. */
     link: {
-      intro:        { data: 'link.js', boot: 'bootLinkIntro',     engine: 'js/engines/link-intro.js',             title: 'Intro' },
-      context:      { data: 'link.js', boot: 'bootLinkContext',   engine: 'js/engines/link-engine.js',            title: 'Context' },
-      chain:        { data: 'link.js', boot: 'bootLinkChain',     engine: 'js/engines/link-chain-engine.js',      title: 'Chain' },
-      'chain-open': { data: 'link.js', boot: 'bootLinkChainOpen', engine: 'js/engines/link-chain-open-engine.js', title: 'Open chain' },
-      calc:         { data: 'link.js', boot: 'bootLinkCalc',      engine: 'js/engines/link-calc-engine.js',       title: 'Calculate It' },
-      data:         { data: 'link.js', boot: 'bootLinkData',      engine: 'js/engines/link-data-engine.js',       title: 'Read the Data' },
-      extract:      { data: 'link.js', boot: 'bootLinkExtract',   engine: 'js/engines/link-extract-engine.js',    title: 'Read the Extract' },
-      predict:      { data: 'link.js', boot: 'bootLinkPredict',   engine: 'js/engines/link-predict-engine.js',    title: 'Predict Outcome' },
-      diagram:      { data: 'link.js', boot: 'bootLinkDiagram',   engine: 'js/engines/link-diagram-engine.js',    title: 'Diagram' },
-      depends:      { data: 'link.js', boot: 'bootLinkDepends',   engine: 'js/engines/link-depends-engine.js',    title: 'It depends' },
-      judge:        { data: 'link.js', boot: 'bootLinkJudge',     engine: 'js/engines/link-judge-engine.js',      title: 'Judge' },
-      complete:     { data: 'link.js', boot: 'bootLinkComplete',  engine: 'js/engines/link-complete-engine.js',   title: 'Complete' }
+      intro:        { data: 'link-it.js', boot: 'bootLinkIntro',     engine: 'js/engines/link-intro.js',             title: 'Intro' },
+      context:      { data: 'link-it.js', boot: 'bootLinkContext',   engine: 'js/engines/link-engine.js',            title: 'Context' },
+      chain:        { data: 'link-it.js', boot: 'bootLinkChain',     engine: 'js/engines/link-chain-engine.js',      title: 'Chain' },
+      'chain-open': { data: 'link-it.js', boot: 'bootLinkChainOpen', engine: 'js/engines/link-chain-open-engine.js', title: 'Open chain' },
+      calc:         { data: 'link-it.js', boot: 'bootLinkCalc',      engine: 'js/engines/link-calc-engine.js',       title: 'Calculate It' },
+      data:         { data: 'link-it.js', boot: 'bootLinkData',      engine: 'js/engines/link-data-engine.js',       title: 'Read the Data' },
+      extract:      { data: 'link-it.js', boot: 'bootLinkExtract',   engine: 'js/engines/link-extract-engine.js',    title: 'Read the Extract' },
+      predict:      { data: 'link-it.js', boot: 'bootLinkPredict',   engine: 'js/engines/link-predict-engine.js',    title: 'Predict Outcome' },
+      diagram:      { data: 'link-it.js', boot: 'bootLinkDiagram',   engine: 'js/engines/link-diagram-engine.js',    title: 'Diagram' },
+      depends:      { data: 'link-it.js', boot: 'bootLinkDepends',   engine: 'js/engines/link-depends-engine.js',    title: 'It depends' },
+      judge:        { data: 'link-it.js', boot: 'bootLinkJudge',     engine: 'js/engines/link-judge-engine.js',      title: 'Judge' },
+      complete:     { data: 'link-it.js', boot: 'bootLinkComplete',  engine: 'js/engines/link-complete-engine.js',   title: 'Complete' }
     },
 
     /* Land It sections + complete. */
     land: {
-      intro:    { data: 'land.js', boot: 'bootLandIntro',    engine: 'js/engines/land-intro-engine.js',     title: 'Intro' },
-      a:        { data: 'land.js', boot: 'bootLandSectionA', engine: 'js/engines/land-section-a-engine.js', title: 'Section A' },
-      b:        { data: 'land.js', boot: 'bootLandSectionB', engine: 'js/engines/land-section-b-engine.js', title: 'Section B' },
-      c:        { data: 'land.js', boot: 'bootLandSectionC', engine: 'js/engines/land-section-c-engine.js', title: 'Section C' },
-      complete: { data: 'land.js', boot: 'bootLandComplete', engine: 'js/engines/land-complete-engine.js',  title: 'Complete' }
+      intro:    { data: 'land-it.js', boot: 'bootLandIntro',    engine: 'js/engines/land-intro-engine.js',     title: 'Intro' },
+      a:        { data: 'land-it.js', boot: 'bootLandSectionA', engine: 'js/engines/land-section-a-engine.js', title: 'Section A' },
+      b:        { data: 'land-it.js', boot: 'bootLandSectionB', engine: 'js/engines/land-section-b-engine.js', title: 'Section B' },
+      c:        { data: 'land-it.js', boot: 'bootLandSectionC', engine: 'js/engines/land-section-c-engine.js', title: 'Section C' },
+      complete: { data: 'land-it.js', boot: 'bootLandComplete', engine: 'js/engines/land-complete-engine.js',  title: 'Complete' }
     }
   };
 })();

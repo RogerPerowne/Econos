@@ -74,7 +74,12 @@ function htmlEntries() {
    <link rel=canonical> baked in. Real 200s, per-page SEO.
    ============================================================ */
 
-const SHELL_HTML = { learn: 'learn.html', link: 'link.html', land: 'land.html' };
+/* URL segments for each shell. Topic registry uses the short
+   form (`available: { learn, link, land }`) — the URL form
+   adds the imperative suffix the user-facing branding uses. */
+const SHELL_URL = { learn: 'learn-it', link: 'link-it', land: 'land-it' };
+const URL_SHELL = { 'learn-it': 'learn', 'link-it': 'link', 'land-it': 'land' };
+const SHELL_HTML = { 'learn-it': 'learn-it.html', 'link-it': 'link-it.html', 'land-it': 'land-it.html' };
 const STANDALONE = new Set(['login','privacy-policy','terms','offline','404']);
 
 /* Load js/topics.js as plain text and extract the registry. The
@@ -159,6 +164,8 @@ function topicRoutes() {
      SEO lever after canonical URLs. learningResourceType varies by shell
      so each stage gets the right intent signal. */
   function topicJsonLd({ topicName, sub, shell, station, canonical }) {
+    /* `shell` here is the short form (learn / link / land); the URL
+       segment uses the suffixed form (learn-it / link-it / land-it). */
     const resourceType =
       shell === 'learn' ? 'Concept' :
       shell === 'link'  ? 'ApplicationExercise' :
@@ -220,11 +227,15 @@ function topicRoutes() {
   }
 
   /* Canonical form: /<board>/<theme>/<topic>/<shell>(/<sub>).
-       parseUrl('/aqa/macro/causes-of-inflation-and-deflation/link/chain-open')
-         → { board:'aqa', theme:'macro', topic:'causes-...', shell:'link',
-             station:'chain-open', file:'link.html' }
-     Standalone routes (/login, /privacy-policy, …) still take precedence
-     so /<board>/<theme>/<topic>/<shell> can never shadow them. */
+       parseUrl('/aqa/macro/causes-of-inflation-and-deflation/link-it/chain-open')
+         → { board:'aqa', theme:'macro', topic:'causes-...',
+             shell:'link', urlShell:'link-it',
+             station:'chain-open', file:'link-it.html' }
+     `shell` is the short form used internally (`available.link`
+     in the registry); `urlShell` is what appeared in the URL.
+     Standalone routes (/login, /privacy-policy, …) still take
+     precedence so /<board>/<theme>/<topic>/<shell> can never
+     shadow them. */
   const BOARDS_FOR_URLS = ['edexcel_a', 'edexcel_b', 'aqa', 'ocr'];
   function parseUrl(rawPath) {
     if (!rawPath || rawPath === '/' || rawPath.includes('.')) return null;
@@ -237,10 +248,11 @@ function topicRoutes() {
     /* Must start with a known board id. */
     if (!BOARDS_FOR_URLS.includes(first)) return null;
     if (parts.length < 4) return null;
-    const [board, theme, topic, shell] = parts;
-    if (!SHELL_HTML[shell]) return null;
+    const [board, theme, topic, urlShell] = parts;
+    if (!SHELL_HTML[urlShell]) return null;
+    const shell = URL_SHELL[urlShell];
     const sub = parts[4] || null;
-    return { board, theme, topic, shell, station: sub, file: SHELL_HTML[shell] };
+    return { board, theme, topic, shell, urlShell, station: sub, file: SHELL_HTML[urlShell] };
   }
 
   /* Dev rewrite: no per-topic dist/ files exist yet — point path URLs
@@ -287,12 +299,15 @@ function topicRoutes() {
     const written = [];
 
     function writeRoute(board, theme, topicId, shell, station) {
-      const sourcePath = resolve(distDir, SHELL_HTML[shell]);
+      /* `shell` is the registry short-form (learn / link / land);
+         the URL segment is the suffixed form via SHELL_URL. */
+      const urlShell = SHELL_URL[shell];
+      const sourcePath = resolve(distDir, SHELL_HTML[urlShell]);
       if (!existsSync(sourcePath)) return;
       const html = readFileSync(sourcePath, 'utf8');
       const urlPath = station
-        ? `/${board}/${theme}/${topicId}/${shell}/${station}`
-        : `/${board}/${theme}/${topicId}/${shell}`;
+        ? `/${board}/${theme}/${topicId}/${urlShell}/${station}`
+        : `/${board}/${theme}/${topicId}/${urlShell}`;
       const out = injectMeta(html, { topic: topicId, shell, station, path: urlPath });
       const dest = join(distDir, urlPath, 'index.html');
       mkdirSync(dirname(dest), { recursive: true });
@@ -338,7 +353,7 @@ function topicRoutes() {
         const boardEntry = topic.boards && topic.boards[board];
         if (boardEntry && boardEntry.included === false) continue;
         const theme = themeForBoard(topic, board);
-        urls.push({ loc: `/${board}/${theme}/${topic.id}/learn`, priority: '0.8', freq: 'weekly' });
+        urls.push({ loc: `/${board}/${theme}/${topic.id}/learn-it`, priority: '0.8', freq: 'weekly' });
       }
     }
     const xml = [

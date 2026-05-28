@@ -36,22 +36,25 @@
 
   var DEFAULT_TOPIC = 'causes-of-inflation-and-deflation';
 
-  /* Recognised shell tokens. Used by the parser to validate the
-     trailing /<shell>(/<sub>) segment of every topic URL. */
-  var SHELLS = { learn: true, link: true, land: true };
+  /* Recognised shell tokens. The URL uses the suffixed form
+     (learn-it / link-it / land-it); existing engine code matches
+     on the short form (learn / link / land). The parser maps URL
+     → short and returns the short form so callers don't have to
+     change. */
+  var URL_TO_SHELL = { 'learn-it': 'learn', 'link-it': 'link', 'land-it': 'land' };
 
-  /* parsePath canonical form (v0.6.0+):
-       /<board>/<theme>/<topic>/learn
-       /<board>/<theme>/<topic>/link/<station>
-       /<board>/<theme>/<topic>/land/<section>
+  /* parsePath canonical form (v0.7.0+):
+       /<board>/<theme>/<topic>/learn-it
+       /<board>/<theme>/<topic>/link-it/<station>
+       /<board>/<theme>/<topic>/land-it/<section>
 
      Example:
-       parsePath('/aqa/macro/causes-of-inflation-and-deflation/link/chain-open')
+       parsePath('/aqa/macro/causes-of-inflation-and-deflation/link-it/chain-open')
          → {
              board:   'aqa',
              theme:   'macro',
              topic:   'causes-of-inflation-and-deflation',
-             shell:   'link',
+             shell:   'link-it',
              station: 'chain-open'
            }
 
@@ -69,9 +72,10 @@
     var board = parts[0];
     var theme = parts[1];
     var topic = parts[2];
-    var shell = parts[3];
-    if (!SHELLS[shell]) { return null; }
+    var urlShell = parts[3];
+    if (!URL_TO_SHELL.hasOwnProperty(urlShell)) { return null; }
     if (!window.ECONOS_BOARDS || !window.ECONOS_BOARDS[board]) { return null; }
+    var shell = URL_TO_SHELL[urlShell];
     var sub = parts[4] || null;
     return {
       board:   board,
@@ -93,11 +97,13 @@
   /* Canonical session labels — single source of truth so data files
      don't all need to repeat 'Session N of 3: …'. Engines should pass
      `T.sessionLabel || TopicLoader.sessionLabel('link')` when rendering
-     the topbar. Stage is one of 'learn' | 'link' | 'land'. */
+     the topbar. Stage is the SHORT form 'learn' | 'link' | 'land' —
+     the same that parsePath returns. Display labels carry the
+     full "Learn it / Link it / Land it" branding. */
   var SESSION_LABELS = {
-    learn: 'Session 1 of 3: Learn',
-    link:  'Session 2 of 3: Link',
-    land:  'Session 3 of 3: Land'
+    learn: 'Session 1 of 3: Learn it',
+    link:  'Session 2 of 3: Link it',
+    land:  'Session 3 of 3: Land it'
   };
   function sessionLabel(stage) { return SESSION_LABELS[stage] || ''; }
 
@@ -154,12 +160,12 @@
   }
   var routes = {
     home:  function ()             { return '/'; },
-    learn: function (topic)        { return urlBase(topic) + '/learn'; },
+    learn: function (topic)        { return urlBase(topic) + '/learn-it'; },
     link:  function (station, topic) {
-      return urlBase(topic) + '/link/' + (station || 'intro');
+      return urlBase(topic) + '/link-it/' + (station || 'intro');
     },
     land:  function (section, topic) {
-      return urlBase(topic) + '/land/' + (section || 'intro');
+      return urlBase(topic) + '/land-it/' + (section || 'intro');
     },
     /* Legacy compat shim — the /quiz/ standalone shell was retired in
        v0.4.0 but existing learn.js files still reference quizCta

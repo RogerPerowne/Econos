@@ -45,7 +45,7 @@ function loadLoaderAndProgress(initialPath) {
 describe('Progress.getLinkUnlocked / setLinkUnlocked', () => {
   beforeEach(() => {
     window.localStorage.clear();
-    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn');
+    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn-it');
   });
 
   it('returns -1 before anything is set (no legacy fallback)', () => {
@@ -65,14 +65,14 @@ describe('Progress.getLinkUnlocked / setLinkUnlocked', () => {
   });
 
   it('isolates state across topics', () => {
-    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn');
+    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn-it');
     window.Progress.setLinkUnlocked(3);
 
-    loadLoaderAndProgress('/edexcel_a/theme-1/demand/learn');
+    loadLoaderAndProgress('/edexcel_a/theme-1/demand/learn-it');
     expect(window.Progress.getLinkUnlocked()).toBe(-1);
     window.Progress.setLinkUnlocked(5);
 
-    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn');
+    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn-it');
     expect(window.Progress.getLinkUnlocked()).toBe(3);
   });
 });
@@ -80,7 +80,7 @@ describe('Progress.getLinkUnlocked / setLinkUnlocked', () => {
 describe('Progress.markStation / hasVisited', () => {
   beforeEach(() => {
     window.localStorage.clear();
-    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/link/chain');
+    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/link-it/chain');
   });
 
   it('records a visit and reads it back', () => {

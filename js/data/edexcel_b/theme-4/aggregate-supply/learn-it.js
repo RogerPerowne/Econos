@@ -1,12 +1,21 @@
 /* ============================================================
    ECONOS – content data for agg_supply
-   8 cards · ad-interactive template · Edexcel Theme 2.3
+   8 cards · Edexcel B variant · Edexcel B 9EB0 § 4.4.1 + 4.4.3
+   ─────────────────────────────────────────────────────────────
+   Edexcel B's AS content lives in Theme 4 ("Making markets
+   work"): 4.4.1 introduces changes in AS as part of the AD/AS
+   model, and 4.4.3 covers supply-side policies (market-based
+   vs interventionist; incentives, competition, labour-market
+   reform, skills, infrastructure). The framing is firm-facing:
+   AS shifts because something changes <em>about how firms can
+   produce</em>. Layout + diagrams identical to the Edexcel A
+   baseline; copy tilts toward stakeholder + firm impact.
    ============================================================ */
 
 window.ECONOS_TOPIC = {
   id: 'aggregate-supply',
-  topicNum: '2.3',
-  theme: 'Theme 2 \xb7 The National and Global Economy',
+  topicNum: '4.4.1',
+  theme: 'Theme 4 · Making markets work',
   title: 'Aggregate Supply',
   estTime: '20 min',
   goal: 'Master SRAS, LRAS and the Classical vs Keynesian debate',
@@ -24,8 +33,8 @@ window.ECONOS_TOPIC = {
     tip: 'Draw the diagram as you go – seeing SRAS, LRAS, and AD interact makes the logic stick.',
     stages: [
       { num: 1, name: 'Learn',  sub: '8 cards \xb7 20 min', state: 'current' },
-      { num: 2, name: 'Master', sub: 'Apply in exam-style questions', state: 'locked' },
-      { num: 3, name: 'Review', sub: 'See your progress and next steps', state: 'locked' }
+      { num: 2, name: 'Link it', sub: 'Apply in exam-style questions', state: 'locked' },
+      { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
   },
 
@@ -588,146 +597,3 @@ window.ECONOS_TOPIC = {
 
   ]
 };
-
-/* ============================================================
-   End-of-Learn-It quiz pool · folded in at v0.4.0
-   These questions used to live at /quiz/<topic>/<set> as a
-   standalone shell. They now ride along with the Learn It data
-   under the same window.ECONOS_QUIZ global. The /quiz/ URL
-   contract is gone; the quiz is the natural finisher to the
-   Learn It journey, so the data lives next to learn cards.
-   ============================================================ */
-/* ---- quiz-main.js (quiz pool, preserved from former /quiz/ shell) ---- */
-(function () {
-
-  window.ECONOS_QUIZ = {
-    title:    'Aggregate Supply',
-    subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.routes.learn('aggregate-supply'),
-    backLabel:'Back to Learn It',
-    lede:     '10 questions · ~8 minutes · covers SRAS vs LRAS, Classical vs Keynesian AS, and output gaps',
-    shortNames: [
-      'SRAS vs LRAS','Classical LRAS','Keynesian AS','SRAS shift','Output gap',
-      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
-    ],
-    questions: [
-      {
-        type: 'mcq',
-        q:    'The Short-Run Aggregate Supply (SRAS) curve slopes upward because:',
-        opts: [
-          'Higher prices attract more workers and capital into the economy',
-          'Higher prices make it profitable for firms to increase output, even though some costs are fixed',
-          'In the short run, all factor prices are perfectly flexible',
-          'Higher prices reduce the cost of imports'
-        ],
-        ans:  1,
-        exp:  'In the short run, some costs (especially wages) are sticky. When the price level rises, firms receive higher revenue but face unchanged costs – so they expand output. This gives an upward-sloping SRAS.'
-      },
-      {
-        type: 'mcq',
-        q:    'In the Classical model, the Long-Run Aggregate Supply (LRAS) curve is:',
-        opts: [
-          'Upward sloping like SRAS',
-          'Downward sloping like AD',
-          'Perfectly vertical at the full-employment output level',
-          'Perfectly horizontal at a fixed price level'
-        ],
-        ans:  2,
-        exp:  'Classical economists argue that in the long run, all prices and wages are fully flexible, so the economy always returns to full employment (potential output, Yf). LRAS is vertical – output is fixed by supply-side capacity.'
-      },
-      {
-        type: 'mcq',
-        q:    'In the Keynesian model, the AS curve is horizontal at low output levels because:',
-        opts: [
-          'All resources are fully employed and fully flexible',
-          'There is so much spare capacity that output can rise without any upward price pressure',
-          'The government controls all prices below potential output',
-          'Investment determines prices rather than output'
-        ],
-        ans:  1,
-        exp:  'Keynes argued that during a recession (with mass unemployment and idle capital), firms can expand output by hiring unemployed resources without bidding up wages or prices. The AS curve is flat in this range.'
-      },
-      {
-        type: 'mcq',
-        q:    'Which of the following would shift SRAS to the LEFT (upward)?',
-        opts: [
-          'A fall in oil prices',
-          'An improvement in labour productivity',
-          'A sharp rise in raw material costs',
-          'A fall in corporation tax'
-        ],
-        ans:  2,
-        exp:  'A rise in raw material costs (a negative supply shock) increases the cost of production at every level of output. Firms produce less at any given price – SRAS shifts left, pushing prices up and output down (stagflation risk).'
-      },
-      {
-        type: 'numeric_input',
-        q:    'Potential output is £2,000bn. Actual output is £1,700bn. What is the output gap (£bn) and state the sign (negative for a deflationary gap).',
-        answer: -300,
-        tolerance: 0,
-        unit: '£bn',
-        hint: 'Output gap = Actual output − Potential output.',
-        workingSteps: ['Output gap = £1,700bn − £2,000bn = −£300bn (negative / deflationary gap)']
-      },
-      {
-        type: 'categorise',
-        q:    'Categorise each factor as shifting SRAS or shifting LRAS.',
-        categories: ['Shifts SRAS','Shifts LRAS'],
-        items: [
-          { item: 'Rise in wages (nominal)',                    category: 'Shifts SRAS' },
-          { item: 'Improvement in technology and productivity', category: 'Shifts LRAS' },
-          { item: 'Fall in commodity prices',                   category: 'Shifts SRAS' },
-          { item: 'Net immigration increasing labour force',    category: 'Shifts LRAS' },
-          { item: 'Oil price spike',                            category: 'Shifts SRAS' },
-          { item: 'Investment in infrastructure',               category: 'Shifts LRAS' }
-        ]
-      },
-      {
-        type: 'cause_effect',
-        q:    'Match each cause to its effect on aggregate supply.',
-        pairs: [
-          { cause: 'Oil prices fall sharply',                   effect: 'SRAS shifts right; prices fall, output rises' },
-          { cause: 'Labour productivity improves',              effect: 'LRAS shifts right; potential output increases' },
-          { cause: 'Cost-push inflation hits wages and inputs', effect: 'SRAS shifts left; stagflation risk' },
-          { cause: 'Economy produces above potential output',   effect: 'Positive output gap; upward wage and price pressure' },
-          { cause: 'Government invests in worker training',     effect: 'Human capital rises; LRAS shifts right over time' },
-          { cause: 'Recession leaves large negative output gap',effect: 'Deflationary pressure; unemployment above natural rate' }
-        ]
-      },
-      {
-        type: 'odd_one_out',
-        q:    'Which is the odd one out in the context of SRAS shifters?',
-        opts: ['Change in input costs','Change in commodity prices','Change in potential output','Change in nominal wages'],
-        ans:  2,
-        exp:  'Changes in input costs, commodity prices, and nominal wages all shift SRAS by changing the cost of production in the short run. A change in potential output shifts LRAS – it is a long-run supply-side concept.'
-      },
-      {
-        type: 'data_table',
-        q:    'Use the data to identify which scenario involves stagflation.',
-        tableHeaders: ['Scenario','Change in Price Level','Change in Real Output','Cause'],
-        tableData: [
-          ['A','Rises','Rises','AD increases'],
-          ['B','Falls','Rises','AS increases'],
-          ['C','Rises','Falls','SRAS shifts left (cost-push)'],
-          ['D','Falls','Falls','AD decreases (recession)']
-        ],
-        opts: ['Scenario A','Scenario B','Scenario C','Scenario D'],
-        ans:  2,
-        exp:  'Stagflation is the combination of rising prices AND falling output – the worst of both worlds. Scenario C shows rising prices with falling output caused by a leftward SRAS shift (negative supply shock).'
-      },
-      {
-        type: 'match_pairs',
-        q:    'Match each aggregate supply concept to its description.',
-        pairs: [
-          { a: 'SRAS',              b: 'Short-run supply where some costs are fixed; upward sloping' },
-          { a: 'LRAS (Classical)',  b: 'Vertical supply at full employment; determined by supply-side factors' },
-          { a: 'Keynesian AS',      b: 'Horizontal range at low output; upward range; then vertical' },
-          { a: 'Output gap',        b: 'Difference between actual and potential output' },
-          { a: 'Stagflation',       b: 'Simultaneous rise in prices and fall in real output' },
-          { a: 'Supply-side shock', b: 'Unexpected change in production costs that shifts SRAS' }
-        ]
-      }
-    ]
-  };
-
-})();
-

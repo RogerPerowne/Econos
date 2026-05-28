@@ -28,8 +28,8 @@ window.ECONOS_TOPIC = {
     tip: 'Net trade is small in level (~3% of AD) but punches above its weight when the exchange rate or world income moves.',
     stages: [
       { num: 1, name: 'Learn',  sub: '8 cards · 20 min',                  state: 'current' },
-      { num: 2, name: 'Master', sub: 'Apply in exam-style questions',     state: 'locked' },
-      { num: 3, name: 'Review', sub: 'See your progress and next steps',  state: 'locked' }
+      { num: 2, name: 'Link it', sub: 'Apply in exam-style questions',     state: 'locked' },
+      { num: 3, name: 'Land it', sub: 'See your progress and next steps',  state: 'locked' }
     ]
   },
 

@@ -29,7 +29,7 @@ glance:
   - { label: "Slope", value: "Downward-sloping: real-balances, interest-rate, and international-trade effects." }
   - { label: "Why it matters", value: "Demand-side shocks shift AD; supply-side shocks shift AS. Diagnosing which is the first move in any macro essay." }
 glance_cta:
-  href: /edexcel_a/theme-2/aggregate-demand/learn
+  href: /edexcel_a/theme-2/aggregate-demand/learn-it
   label: "Want more depth? Explore the full topic →"
 
 faq:
@@ -43,9 +43,9 @@ faq:
 want_more:
   title: "Want more depth?"
   subtitle: "Master aggregate demand with Econos."
-  primary_href: /edexcel_a/theme-2/aggregate-demand/learn
+  primary_href: /edexcel_a/theme-2/aggregate-demand/learn-it
   primary_label: "Explore the full Aggregate Demand topic"
-  secondary_href: /edexcel_a/theme-2/aggregate-demand/learn
+  secondary_href: /edexcel_a/theme-2/aggregate-demand/learn-it
   secondary_label: "Sign up free"
 ---
 

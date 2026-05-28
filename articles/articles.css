@@ -222,25 +222,33 @@ a:hover { text-decoration: underline; }
 }
 
 /* The four active states — one per board, matching the home-page
-   pip is-on palette + the new purple for OCR. */
+   pip is-on palette + the new purple for OCR. Each border-color
+   ships an rgba fallback before the color-mix() declaration so
+   Safari < 16.2 (and other browsers without color-mix support)
+   still get the right tint instead of falling all the way back
+   to the .article-boards__pill default grey. */
 .article-boards__pill.is-active.article-boards__pill--edexcel_a {
   background: var(--green-50);
   color: var(--green-700);
+  border-color: rgba(16, 185, 129, 0.35);
   border-color: color-mix(in oklab, var(--green) 35%, transparent);
 }
 .article-boards__pill.is-active.article-boards__pill--edexcel_b {
   background: var(--yellow-50);
   color: var(--yellow-700);
+  border-color: rgba(243, 158, 11, 0.40);
   border-color: color-mix(in oklab, var(--yellow) 40%, transparent);
 }
 .article-boards__pill.is-active.article-boards__pill--aqa {
   background: var(--pink-50);
   color: var(--pink-700);
+  border-color: rgba(225, 29, 72, 0.35);
   border-color: color-mix(in oklab, var(--pink) 35%, transparent);
 }
 .article-boards__pill.is-active.article-boards__pill--ocr {
   background: var(--purple-50);
   color: var(--purple-700);
+  border-color: rgba(125, 35, 203, 0.40);
   border-color: color-mix(in oklab, var(--purple) 40%, transparent);
 }
 
@@ -259,20 +267,23 @@ a:hover { text-decoration: underline; }
 
 /* Hub control row (above the article grid) — board filter,
    theme filter, sort. Centred chip-style controls that share
-   the same shape as the article pips but in muted greys. */
+   the same shape as the article pips but in muted greys.
+   Sits visually separate from the search bar with breathing
+   room above + below so they don't read as one unit. */
 .hub__controls {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
-  margin: 0 0 32px;
+  margin: 36px 0 28px;
 }
 .hub__controls-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px 12px;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
 }
 .hub__controls-label {
   font-size: 10px;
@@ -280,6 +291,7 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
+  white-space: nowrap;
 }
 .hub__board-filter,
 .hub__theme-filter {
@@ -287,6 +299,7 @@ a:hover { text-decoration: underline; }
   flex-wrap: wrap;
   gap: 6px;
   justify-content: center;
+  align-items: center;
 }
 .hub__board-filter button,
 .hub__theme-filter button {
@@ -303,7 +316,8 @@ a:hover { text-decoration: underline; }
   border: 1.5px solid var(--border);
   border-radius: 999px;
   padding: 0 12px;
-  height: 26px;
+  height: 28px;
+  line-height: 1;
   transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
 }
 .hub__board-filter button:hover,
@@ -314,22 +328,30 @@ a:hover { text-decoration: underline; }
   color: #fff;
   border-color: var(--ink);
 }
-/* Board-filter buttons use the matching board palette when active. */
+
+/* Board-filter buttons adopt the matching board palette when
+   active. Border colours use plain rgba fallbacks so Safari <
+   16.2 (no color-mix support) still gets the right tint
+   instead of an invisible 1px border. */
 .hub__board-filter button.is-active[data-board="edexcel_a"] {
   background: var(--green-50); color: var(--green-700);
-  border-color: color-mix(in oklab, var(--green) 35%, transparent);
+  border-color: rgba(16, 185, 129, 0.40);
+  border-color: color-mix(in oklab, var(--green) 40%, transparent);
 }
 .hub__board-filter button.is-active[data-board="edexcel_b"] {
   background: var(--yellow-50); color: var(--yellow-700);
-  border-color: color-mix(in oklab, var(--yellow) 40%, transparent);
+  border-color: rgba(243, 158, 11, 0.45);
+  border-color: color-mix(in oklab, var(--yellow) 45%, transparent);
 }
 .hub__board-filter button.is-active[data-board="aqa"] {
   background: var(--pink-50); color: var(--pink-700);
-  border-color: color-mix(in oklab, var(--pink) 35%, transparent);
+  border-color: rgba(225, 29, 72, 0.40);
+  border-color: color-mix(in oklab, var(--pink) 40%, transparent);
 }
 .hub__board-filter button.is-active[data-board="ocr"] {
   background: var(--purple-50); color: var(--purple-700);
-  border-color: color-mix(in oklab, var(--purple) 40%, transparent);
+  border-color: rgba(125, 35, 203, 0.45);
+  border-color: color-mix(in oklab, var(--purple) 45%, transparent);
 }
 
 .hub__sort-select {
@@ -352,6 +374,27 @@ a:hover { text-decoration: underline; }
   background-position: right 10px center;
 }
 .hub__sort-select:hover { border-color: var(--ink); }
+
+/* Mobile: each row stacks; the chips stay wrapped but the
+   row label sits above them instead of beside, giving the
+   pip groups full horizontal width. */
+@media (max-width: 640px) {
+  .hub__controls { margin-top: 24px; gap: 16px; }
+  .hub__controls-row {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  .hub__controls-row > .hub__controls-label[style] {
+    margin-left: 0 !important;
+  }
+  .hub__board-filter,
+  .hub__theme-filter {
+    gap: 6px;
+    width: 100%;
+  }
+  .hub__sort-select { width: auto; min-width: 180px; }
+}
 
 .article-grid {
   display: grid;

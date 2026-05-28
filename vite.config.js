@@ -601,9 +601,7 @@ ${cta}
   function renderArticleFooter(fm) {
     const updated = fm.modified || fm.dates?.modified || fm.published || fm.dates?.published || '';
     return `    <footer class="article-footer">
-      <div class="article-footer__item">${ICONS.check} Written by teachers, not AI</div>
       ${fm.spec ? `<div class="article-footer__item">${ICONS.cap} Mapped to ${escapeHtml(fm.spec)}</div>` : ''}
-      <div class="article-footer__item">${ICONS.check} Built by an A-level teacher at Wycombe Abbey</div>
       ${updated ? `<div class="article-footer__item">Last updated: ${escapeHtml(formatDate(updated))}</div>` : ''}
     </footer>`;
   }

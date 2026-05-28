@@ -8,49 +8,9 @@ This is the canonical AQA spec point map used across Econos. Every AQA topic on 
 
 ---
 
-## Qualification at a glance
-
-The AS (one-year, 7135) and the linear A-level (two-year, 7136) are stand-alone qualifications that can be taught together or independently.
-
-### AS — two papers
-
-- **Section 1 (AS) — The operation of markets and market failure** (microeconomics)
-- **Section 2 (AS) — The national economy in a global context** (macroeconomics)
-
-| Paper | Coverage | Format | Weight |
-|---|---|---|---|
-| Paper 1 — The operation of markets and market failure | AS Section 1 (sub-sections 1–5) | 1h 30 · 70 marks · 20 MCQs (Section A) + data response from a choice of two contexts (Section B, 50 marks) | 50% |
-| Paper 2 — The national economy in a global context | AS Section 2 (sub-sections 6–9) | 1h 30 · 70 marks · 20 MCQs (Section A) + data response from a choice of two contexts (Section B, 50 marks) | 50% |
-
-### A-level — three papers
-
-- **Section 1 (A-level) — Individuals, firms, markets and market failure** (microeconomics)
-- **Section 2 (A-level) — The national and international economy** (macroeconomics)
-
-| Paper | Coverage | Format | Weight |
-|---|---|---|---|
-| Paper 1 — Markets and market failure | Section 1 (sub-sections 1–8) | 2h · 80 marks · data response from a choice of two contexts (Section A, 40 marks) + essay from a choice of three (Section B, 40 marks) | 33.3% |
-| Paper 2 — National and international economy | Section 2 (sub-sections 9–14) | 2h · 80 marks · data response from a choice of two contexts (Section A, 40 marks) + essay from a choice of three (Section B, 40 marks) | 33.3% |
-| Paper 3 — Economic principles and issues | All content 1–14 (synoptic) | 2h · 80 marks · 30 MCQs (Section A) + case-study questions (Section B, 50 marks) | 33.3% |
-
-### Assessment Objectives
-
-Set by Ofqual and identical across boards. AQA's component weightings differ between AS and A-level.
-
-| AO | Demand | AS weight | A-level weight |
-|---|---|---|---|
-| AO1 | Knowledge of terms / concepts / theories / models, and how economic agents are affected by and respond to economic issues | 29–31% | 20–23% |
-| AO2 | Application of knowledge and understanding to various economic contexts | 31–33% | 26–29% |
-| AO3 | Analysis of issues within economics, showing impact on economic agents | 21–23% | 26–29% |
-| AO4 | Evaluation of economic arguments using qualitative and quantitative evidence to support informed judgements | 15–17% | 22–25% |
-
----
-
 ## Section 3 — Subject content (AS)
 
 ### 3.1 The operation of markets and market failure
-
-Primarily microeconomics. Students apply microeconomic models (demand and supply, the price mechanism, market failure) to current problems and issues, with critical awareness of model assumptions and their limitations — including environmental market failures and the influence of macroeconomic developments on individual markets.
 
 #### 3.1.1 Economic methodology and the economic problem
 
@@ -99,8 +59,6 @@ Primarily microeconomics. Students apply microeconomic models (demand and supply
 
 ### 3.2 The national economy in a global context
 
-Primarily macroeconomics, but underpinned by microeconomic principles (e.g. PED is essential when analysing how a fall in the exchange rate affects exports). Students should know UK developments and government policies over the past fifteen years and understand external influences on the UK economy.
-
 #### 3.2.1 The measurement of macroeconomic performance
 
 - **3.2.1.1 The objectives of government economic policy** — (a) main objectives: economic growth, price stability, minimising unemployment, a stable balance of payments on current account. (b) possibility of conflict, at least in the short run, when pursuing these objectives. (c) other possible objectives — balancing the budget, achieving an equitable distribution of income; the relative importance of objectives changes over time.
@@ -134,11 +92,7 @@ Primarily macroeconomics, but underpinned by microeconomic principles (e.g. PED 
 
 ## Section 4 — Subject content (A-level)
 
-The A-level extends and deepens the AS content. Section 4.1 is primarily microeconomics; Section 4.2 is primarily macroeconomics. Students should appreciate that micro and macro are not entirely distinct — microeconomic principles often provide fundamental insights into the macroeconomy, and many economic issues contain both dimensions.
-
 ### 4.1 Individuals, firms, markets and market failure
-
-Microeconomic models — demand and supply, perfect competition, monopoly, the price mechanism, causes of market failure — are central. Students need a realistic understanding of firms' decisions and how behaviour is shaped by industry structure. Other key models cover labour-market operation, wage determination and inequality. Students must engage with traditional rational-agent theory and with behavioural models that recognise more complex influences on consumers and firms. They should assess the impact of EU and global developments on UK microeconomic behaviour and apply their knowledge to environmental and labour-market failures.
 
 #### 4.1.1 Economic methodology and the economic problem
 
@@ -219,8 +173,6 @@ Microeconomic models — demand and supply, perfect competition, monopoly, the p
 - **4.1.8.10 Government failure** — (a) government failure occurs when intervention leads to a misallocation of resources. (b) inadequate information, conflicting objectives and administrative costs as possible sources. (c) governments may create, rather than remove, market distortions. (d) intervention can lead to unintended consequences; even when there is market failure, intervention will not necessarily improve economic welfare.
 
 ### 4.2 The national and international economy
-
-Primarily macroeconomics, with microeconomic principles underpinning macroeconomic behaviour (e.g. PED is essential for analysing exchange-rate effects). Students should know UK developments and government policies of the past fifteen years, be aware of world economy developments including the EU and how these have affected the UK, and appreciate that different macro models offer different insights — with critical awareness of assumptions and limitations. They should propose, analyse and evaluate solutions to macroeconomic problems and assess current and alternative government policies.
 
 #### 4.2.1 The measurement of macroeconomic performance
 

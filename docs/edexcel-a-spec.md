@@ -2,35 +2,9 @@
 
 > Source: *Pearson Edexcel Level 3 Advanced GCE in Economics A (9EC0)*, Specification Issue 2, October 2016. First teaching September 2015, first certification 2017.
 > © Pearson Education Limited 2016. Reproduced here as reference context for content authoring on Econos.
-> **Verified 2026-05-28** against the canonical Pearson PDF supplied by the project owner — every Theme-2 / Theme-3 / Theme-4 sub-section (and the four Quantitative-skills appendix items, QS1–QS12) cross-checked sub-bullet by sub-bullet. No omissions found.
+> **Verified 2026-05-28** against the canonical Pearson PDF supplied by the project owner — every Theme-1 / Theme-2 / Theme-3 / Theme-4 sub-section (and the four Quantitative-skills appendix items, QS1–QS12) cross-checked sub-bullet by sub-bullet. No omissions found.
 
 This is the canonical spec point map used across Econos. Every Edexcel-A topic on the site should be traceable back to one of the sub-sections below. Theme/section numbering matches the spec exactly so it can be cited in `topicNum` / spec-mapping fields.
-
----
-
-## Qualification at a glance
-
-Four themes, three externally examined papers.
-
-- **Theme 1 — Introduction to markets and market failure** (microeconomics)
-- **Theme 2 — The UK economy: performance and policies** (macroeconomics)
-- **Theme 3 — Business behaviour and the labour market** (microeconomics)
-- **Theme 4 — A global perspective** (macroeconomics)
-
-| Paper | Coverage | Format | Weight |
-|---|---|---|---|
-| Paper 1 — Markets and business behaviour (9EC0/01) | Themes 1 & 3 | 2h · 100 marks · MCQ/short + data response + extended essay | 35% |
-| Paper 2 — The national and global economy (9EC0/02) | Themes 2 & 4 | 2h · 100 marks · MCQ/short + data response + extended essay | 35% |
-| Paper 3 — Microeconomics and macroeconomics (9EC0/03) | All four themes (synoptic) | 2h · 100 marks · two data-response sections with extended essay choices | 30% |
-
-### Assessment Objectives
-
-| AO | Demand | Weight |
-|---|---|---|
-| AO1 | Knowledge of terms / concepts / theories | 22–24% |
-| AO2 | Application to economic contexts | 22–24% |
-| AO3 | Analysis of issues and their impact | 26–28% |
-| AO4 | Evaluation using qualitative + quantitative evidence | 26–28% |
 
 ---
 

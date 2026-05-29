@@ -66,6 +66,9 @@ Three things can push it up, and they need very different responses.
 
 :::
 
+::: econos-diagram svgKey="demandPullDiagram" label="Demand-pull inflation" caption="Demand-pull inflation: aggregate demand shifts right along the AS curve, raising the price level and real output."
+:::
+
 ::: section eyebrow="The big picture · the three causes" color="purple" icon="target"
 
 ## Demand-pull, cost-push, and monetary
@@ -80,9 +83,6 @@ Each cause leaves a different signature on the AD/AS diagram, and that signature
 
 The exam move is to use the **direction of output** as the diagnostic. Rising output + rising prices = demand-pull. Falling output + rising prices = cost-push. Rising output + accelerating prices with a long lag = monetary.
 
-:::
-
-::: econos-diagram svgKey="demandPullDiagram" label="Demand-pull inflation on the AD-AS diagram" caption="Demand-pull inflation — aggregate demand shifts right along SRAS, so the price level and real output both rise."
 :::
 
 ::: econ-insight portraitKey="economistFriedman" tone="amber" label="Economist insight: Friedman and the monetarist view" attribution="Milton Friedman, <em>The Counter-Revolution in Monetary Theory</em> (1970)"

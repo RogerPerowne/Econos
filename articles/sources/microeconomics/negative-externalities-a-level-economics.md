@@ -56,6 +56,9 @@ The exam tell: **production externalities shift the cost curves; consumption ext
 
 :::
 
+::: econos-diagram svgKey="negExternalityInteractive" state="efficiency" label="The negative production externality" caption="The negative production externality: MSC sits above MPC, so the free market over-produces and the shaded triangle is the welfare loss."
+:::
+
 ::: section eyebrow="The diagram every essay needs" color="blue" icon="target"
 
 ## MSC, MPC, and the deadweight triangle
@@ -71,9 +74,6 @@ For a negative production externality (the workhorse case):
 
 Drawing this correctly — axes labelled (P, Q), four curves named (D = MSB = MPB, S = MPC, MSC), two equilibria marked, deadweight triangle shaded — is worth half the marks on any 9- or 12-mark question. Skip the diagram, lose the marks.
 
-:::
-
-::: econos-diagram svgKey="negExternalityInteractive" interactive="true" label="Negative externality diagram — MSC above MPC, deadweight loss triangle" caption="The shaded triangle between MSC and MSB from Q** to Q* is the welfare loss the market creates by ignoring the external cost. A Pigouvian tax of MEC shifts MPC up to coincide with MSC, eliminating the triangle."
 :::
 
 ::: econ-insight portraitKey="economistPigou" tone="amber" label="Economist insight: Pigou on externalities" attribution="Arthur Pigou, <em>The Economics of Welfare</em> (1920)"

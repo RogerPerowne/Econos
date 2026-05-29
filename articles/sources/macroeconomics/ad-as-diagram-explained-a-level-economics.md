@@ -10,7 +10,7 @@ spec:
   ocr: "1.2"
 keywords: [AD-AS diagram, aggregate demand and supply, how to draw AD-AS, macroeconomic equilibrium, AD shift, SRAS shift, A-level economics diagram, exam technique]
 read_minutes: 7
-status: live
+status: draft
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: aggregate-demand

@@ -59,6 +59,9 @@ The exam tell: positive externalities shift the BENEFIT curve up (consumption ca
 
 :::
 
+::: econos-diagram svgKey="posExternalityInteractive" state="efficiency" label="The positive consumption externality" caption="The positive consumption externality: MSB sits above MPB, so the market under-consumes and the triangle is the welfare gain forgone."
+:::
+
 ::: section eyebrow="The diagram every essay needs" color="blue" icon="target"
 
 ## MSB, MPB, and the welfare gain that never happens
@@ -74,9 +77,6 @@ For a positive consumption externality (the workhorse case):
 
 Drawing this correctly — with axes labelled (P, Q), three curves named (MPB, MSB, S = MSC), two equilibria marked, and the deadweight triangle shaded BETWEEN MSB and MSC ACROSS the Q\*–Q\*\* range — is what the diagram marks reward. The most common error is shading the triangle BELOW MPB instead of BETWEEN MSB and MSC. Practise this.
 
-:::
-
-::: econos-diagram svgKey="posExternalityInteractive" interactive="true" label="Positive externality diagram — MSB above MPB, under-consumption welfare loss" caption="The market lands at Q* where supply meets private demand. The social optimum Q** lies further right, where MSB meets MSC. The triangle between MSB and MSC across the gap is the welfare gain the unaided market misses."
 :::
 
 ::: econ-insight portraitKey="economistPigou" tone="amber" label="Economist insight: Pigou on externalities" attribution="Arthur Pigou, <em>The Economics of Welfare</em> (1920)"

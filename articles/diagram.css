@@ -145,8 +145,15 @@
 }
 
 /* ──────────────────────────────────────────────────────────
-   Ported from styles.css (interactive diagram state machine)
    ────────────────────────────────────────────────────────── */
+/* FULL diagram rule set extracted from styles.css so every curated
+   Learn It diagram renders faithfully in static articles. */
+.ad-interactive {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
 .ad-interactive__diagram {
   background: #FFFFFF;
   border: 1px solid var(--econ-gray-200);
@@ -160,20 +167,12 @@
   height: auto;
   display: block;
 }
-
-/* --- Layer visibility — CSS state machine ---
-   The container holds one of: .show-base, .show-extension, .show-shift.
-   Layers fade in/out via opacity for smooth transitions. */
-
-/* Visible in BASE state */
 .ad-svg .layer-curve-solid,
 .ad-svg .layer-e1,
 .ad-svg .layer-legend-base {
   opacity: 1;
   transition: opacity 0.32s ease;
 }
-
-/* Hidden by default */
 .ad-svg .layer-curve-dashed,
 .ad-svg .layer-extension,
 .ad-svg .layer-shift,
@@ -183,13 +182,9 @@
   opacity: 0;
   transition: opacity 0.32s ease;
 }
-
-/* EXTENSION state */
 .show-extension .ad-svg .layer-legend-base { opacity: 0; }
 .show-extension .ad-svg .layer-legend-extension { opacity: 1; }
 .show-extension .ad-svg .layer-extension { opacity: 1; }
-
-/* SHIFT state */
 .show-shift .ad-svg .layer-curve-solid > line { stroke: #94A3B8; stroke-dasharray: 6 4; transition: stroke 0.32s ease; }
 .show-shift .ad-svg .layer-curve-solid > text { opacity: 0; }
 .show-shift .ad-svg .layer-curve-label-shift { opacity: 1; }
@@ -197,9 +192,6 @@
 .show-shift .ad-svg .layer-legend-base { opacity: 0; }
 .show-shift .ad-svg .layer-legend-shift { opacity: 1; }
 .show-shift .ad-svg .layer-shift { opacity: 1; }
-
-/* ===== PPF INTERACTIVE — layer visibility ===== */
-/* Visible by default (base state) */
 .ppf-svg .layer-axes,
 .ppf-svg .layer-ppf-base,
 .ppf-svg .layer-base-points,
@@ -207,7 +199,6 @@
   opacity: 1;
   transition: opacity 0.32s ease;
 }
-/* Hidden by default */
 .ppf-svg .layer-opp-cost,
 .ppf-svg .layer-legend-extension,
 .ppf-svg .layer-shift-curves,
@@ -217,24 +208,19 @@
   opacity: 0;
   transition: opacity 0.32s ease;
 }
-/* show-extension */
 .show-extension .ppf-svg .layer-base-points { opacity: 0; }
 .show-extension .ppf-svg .layer-legend-base { opacity: 0; }
 .show-extension .ppf-svg .layer-opp-cost { opacity: 1; }
 .show-extension .ppf-svg .layer-legend-extension { opacity: 1; }
-/* show-shift */
 .show-shift .ppf-svg .layer-ppf-base { opacity: 0.3; }
 .show-shift .ppf-svg .layer-base-points { opacity: 0; }
 .show-shift .ppf-svg .layer-legend-base { opacity: 0; }
 .show-shift .ppf-svg .layer-shift-curves { opacity: 1; }
 .show-shift .ppf-svg .layer-legend-shift { opacity: 1; }
-/* show-efficiency */
 .show-efficiency .ppf-svg .layer-base-points { opacity: 0; }
 .show-efficiency .ppf-svg .layer-legend-base { opacity: 0; }
 .show-efficiency .ppf-svg .layer-efficiency { opacity: 1; }
 .show-efficiency .ppf-svg .layer-legend-efficiency { opacity: 1; }
-
-/* ===== PPF MOVES INTERACTIVE ===== */
 .ppf-moves-svg .layer-axes,
 .ppf-moves-svg .layer-ppf1 { opacity: 1; transition: opacity 0.32s ease; }
 .ppf-moves-svg .layer-along,
@@ -247,24 +233,18 @@
 .ppf-moves-svg .layer-ppf3,
 .ppf-moves-svg .layer-inward,
 .ppf-moves-svg .layer-legend-inward { opacity: 0; transition: opacity 0.32s ease; }
-/* show-along */
 .show-along .ppf-moves-svg .layer-along { opacity: 1; }
 .show-along .ppf-moves-svg .layer-legend-along { opacity: 1; }
-/* show-recovery */
 .show-recovery .ppf-moves-svg .layer-recovery { opacity: 1; }
 .show-recovery .ppf-moves-svg .layer-legend-recovery { opacity: 1; }
-/* show-outward */
 .show-outward .ppf-moves-svg .layer-ppf1 { opacity: 0.3; }
 .show-outward .ppf-moves-svg .layer-ppf2 { opacity: 1; }
 .show-outward .ppf-moves-svg .layer-outward { opacity: 1; }
 .show-outward .ppf-moves-svg .layer-legend-outward { opacity: 1; }
-/* show-inward */
 .show-inward .ppf-moves-svg .layer-ppf1 { opacity: 0.3; }
 .show-inward .ppf-moves-svg .layer-ppf3 { opacity: 1; }
 .show-inward .ppf-moves-svg .layer-inward { opacity: 1; }
 .show-inward .ppf-moves-svg .layer-legend-inward { opacity: 1; }
-
-/* ===== DEMAND INTERACTIVE ===== */
 .demand-svg .layer-axes,
 .demand-svg .layer-demand-base,
 .demand-svg .layer-e1,
@@ -282,8 +262,6 @@
 .show-shift .demand-svg .layer-legend-base { opacity: 0; }
 .show-shift .demand-svg .layer-shift { opacity: 1; }
 .show-shift .demand-svg .layer-legend-shift { opacity: 1; }
-
-/* ===== SUPPLY INTERACTIVE ===== */
 .supply-svg .layer-axes,
 .supply-svg .layer-supply-base,
 .supply-svg .layer-e1,
@@ -301,8 +279,6 @@
 .show-shift .supply-svg .layer-legend-base { opacity: 0; }
 .show-shift .supply-svg .layer-shift { opacity: 1; }
 .show-shift .supply-svg .layer-legend-shift { opacity: 1; }
-
-/* ===== DISEQUILIBRIUM INTERACTIVE ===== */
 .disequilibrium-svg .layer-axes,
 .disequilibrium-svg .layer-demand,
 .disequilibrium-svg .layer-supply,
@@ -314,30 +290,24 @@
 .show-shortage .disequilibrium-svg .layer-shortage { opacity: 1; }
 .show-surplus .disequilibrium-svg .layer-base { opacity: 0; }
 .show-surplus .disequilibrium-svg .layer-surplus { opacity: 1; }
-
-/* ===== SHIFTS INTERACTIVE (4 states) ===== */
 .shifts-svg .layer-axes { opacity: 1; transition: opacity 0.32s ease; }
 .shifts-svg .layer-demand-right,
 .shifts-svg .layer-demand-left,
 .shifts-svg .layer-supply-right,
 .shifts-svg .layer-supply-left { opacity: 0; transition: opacity 0.32s ease; }
 .show-demand-right .shifts-svg .layer-demand-right { opacity: 1; }
-.show-demand-left  .shifts-svg .layer-demand-left  { opacity: 1; }
+.show-demand-left  .shifts-svg .layer-demand-left { opacity: 1; }
 .show-supply-right .shifts-svg .layer-supply-right { opacity: 1; }
-.show-supply-left  .shifts-svg .layer-supply-left  { opacity: 1; }
-
-/* ===== SIMULTANEOUS SHIFTS INTERACTIVE (4 states) ===== */
+.show-supply-left  .shifts-svg .layer-supply-left { opacity: 1; }
 .sim-shifts-svg .layer-axes { opacity: 1; transition: opacity 0.32s ease; }
 .sim-shifts-svg .layer-both-up,
 .sim-shifts-svg .layer-d-up-s-down,
 .sim-shifts-svg .layer-d-down-s-up,
 .sim-shifts-svg .layer-both-down { opacity: 0; transition: opacity 0.32s ease; }
-.show-both-up      .sim-shifts-svg .layer-both-up      { opacity: 1; }
-.show-d-up-s-down  .sim-shifts-svg .layer-d-up-s-down  { opacity: 1; }
-.show-d-down-s-up  .sim-shifts-svg .layer-d-down-s-up  { opacity: 1; }
-.show-both-down    .sim-shifts-svg .layer-both-down    { opacity: 1; }
-
-/* ===== MARKET INTERACTIVE ===== */
+.show-both-up      .sim-shifts-svg .layer-both-up { opacity: 1; }
+.show-d-up-s-down  .sim-shifts-svg .layer-d-up-s-down { opacity: 1; }
+.show-d-down-s-up  .sim-shifts-svg .layer-d-down-s-up { opacity: 1; }
+.show-both-down    .sim-shifts-svg .layer-both-down { opacity: 1; }
 .market-svg .layer-axes,
 .market-svg .layer-demand-base,
 .market-svg .layer-supply-base,
@@ -357,8 +327,6 @@
 .show-shift .market-svg .layer-legend-base { opacity: 0; }
 .show-shift .market-svg .layer-shift { opacity: 1; }
 .show-shift .market-svg .layer-legend-shift { opacity: 1; }
-
-/* ===== DEMAND CS INTERACTIVE ===== */
 .demand-cs-svg .layer-axes,
 .demand-cs-svg .layer-demand { opacity: 1; transition: opacity 0.35s ease; }
 .demand-cs-svg .layer-eq,
@@ -367,15 +335,12 @@
 .demand-cs-svg .layer-pfall,
 .demand-cs-svg .layer-pfall-cs,
 .demand-cs-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
-
 .show-base .demand-cs-svg .layer-legend-base { opacity: 1; }
 .show-cs .demand-cs-svg .layer-eq { opacity: 1; }
 .show-cs .demand-cs-svg .layer-cs { opacity: 1; }
 .show-cs .demand-cs-svg .layer-cs-label { opacity: 1; }
 .show-pfall .demand-cs-svg .layer-pfall-cs { opacity: 1; }
 .show-pfall .demand-cs-svg .layer-pfall { opacity: 1; }
-
-/* ===== SUPPLY PS INTERACTIVE ===== */
 .supply-ps-svg .layer-axes,
 .supply-ps-svg .layer-supply { opacity: 1; transition: opacity 0.35s ease; }
 .supply-ps-svg .layer-eq,
@@ -384,19 +349,14 @@
 .supply-ps-svg .layer-prise,
 .supply-ps-svg .layer-prise-ps,
 .supply-ps-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
-
 .show-base .supply-ps-svg .layer-legend-base { opacity: 1; }
 .show-ps .supply-ps-svg .layer-eq { opacity: 1; }
 .show-ps .supply-ps-svg .layer-ps { opacity: 1; }
 .show-ps .supply-ps-svg .layer-ps-label { opacity: 1; }
 .show-prise .supply-ps-svg .layer-prise-ps { opacity: 1; }
 .show-prise .supply-ps-svg .layer-prise { opacity: 1; }
-
-/* ===== CPS (CONSUMER / PRODUCER SURPLUS) INTERACTIVE ===== */
-/* Always visible */
 .cps-svg .layer-axes,
 .cps-svg .layer-curves { opacity: 1; transition: opacity 0.35s ease; }
-/* Hidden by default */
 .cps-svg .layer-cs,
 .cps-svg .layer-ps,
 .cps-svg .layer-eq,
@@ -405,35 +365,23 @@
 .cps-svg .layer-welfare-label,
 .cps-svg .layer-dwl,
 .cps-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
-
-/* show-base: diagram only + intro panel */
 .show-base .cps-svg .layer-legend-base { opacity: 1; }
-
-/* show-cs: equilibrium + CS triangle + CS explanation */
 .show-cs .cps-svg .layer-eq { opacity: 1; }
 .show-cs .cps-svg .layer-cs { opacity: 1; }
 .show-cs .cps-svg .layer-cs-label { opacity: 1; }
-
-/* show-ps: CS fades, PS appears + PS explanation */
 .show-ps .cps-svg .layer-eq { opacity: 1; }
 .show-ps .cps-svg .layer-cs { opacity: 0.3; }
 .show-ps .cps-svg .layer-cs-label { opacity: 0.3; }
 .show-ps .cps-svg .layer-ps { opacity: 1; }
 .show-ps .cps-svg .layer-ps-label { opacity: 1; }
-
-/* show-total: both triangles full + welfare explanation */
 .show-total .cps-svg .layer-eq { opacity: 1; }
 .show-total .cps-svg .layer-cs { opacity: 1; }
 .show-total .cps-svg .layer-ps { opacity: 1; }
 .show-total .cps-svg .layer-welfare-label { opacity: 1; }
-
-/* show-dwl: faded CS/PS + tax wedge + DWL explanation */
 .show-dwl .cps-svg .layer-eq { opacity: 1; }
 .show-dwl .cps-svg .layer-cs { opacity: 0.18; }
 .show-dwl .cps-svg .layer-ps { opacity: 0.18; }
 .show-dwl .cps-svg .layer-dwl { opacity: 1; }
-
-/* ===== PHILLIPS INTERACTIVE ===== */
 .phillips-svg .layer-axes,
 .phillips-svg .layer-srpc1,
 .phillips-svg .layer-point-a,
@@ -459,8 +407,6 @@
 .show-shift .phillips-svg .layer-legend-base { opacity: 0; }
 .show-shift .phillips-svg .layer-stagflation { opacity: 1; }
 .show-shift .phillips-svg .layer-legend-shift { opacity: 1; }
-
-/* ===== LORENZ INTERACTIVE ===== */
 .lorenz-svg .layer-axes,
 .lorenz-svg .layer-equality,
 .lorenz-svg .layer-lorenz-uk,
@@ -481,8 +427,6 @@
 .show-shift .lorenz-svg .layer-lorenz-uk-dashed { opacity: 1; }
 .show-shift .lorenz-svg .layer-compare { opacity: 1; }
 .show-shift .lorenz-svg .layer-legend-shift { opacity: 1; }
-
-/* ===== NEGATIVE EXTERNALITY INTERACTIVE ===== */
 .negext-svg .layer-axes,
 .negext-svg .layer-base-curves,
 .negext-svg .layer-market-eq,
@@ -507,8 +451,6 @@
 .show-efficiency .negext-svg .layer-optimal { opacity: 1; }
 .show-efficiency .negext-svg .layer-dwl { opacity: 1; }
 .show-efficiency .negext-svg .layer-legend-efficiency { opacity: 1; }
-
-/* ===== POSITIVE EXTERNALITY INTERACTIVE ===== */
 .posext-svg .layer-axes,
 .posext-svg .layer-base-curves,
 .posext-svg .layer-market-eq,
@@ -533,8 +475,6 @@
 .show-efficiency .posext-svg .layer-optimal { opacity: 1; }
 .show-efficiency .posext-svg .layer-wfg { opacity: 1; }
 .show-efficiency .posext-svg .layer-legend-efficiency { opacity: 1; }
-
-/* ===== PRICE CONTROLS INTERACTIVE ===== */
 .pc-svg .layer-axes,
 .pc-svg .layer-base-curves,
 .pc-svg .layer-equilibrium,
@@ -551,8 +491,6 @@
 .show-shift .pc-svg .layer-legend-base { opacity: 0; }
 .show-shift .pc-svg .layer-floor { opacity: 1; }
 .show-shift .pc-svg .layer-legend-shift { opacity: 1; }
-
-/* ===== J-CURVE INTERACTIVE ===== */
 .jcurve-svg .layer-axes,
 .jcurve-svg .layer-baseline,
 .jcurve-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
@@ -567,8 +505,6 @@
 .show-shift .jcurve-svg .layer-jcurve { opacity: 1; }
 .show-shift .jcurve-svg .layer-failed { opacity: 1; }
 .show-shift .jcurve-svg .layer-legend-shift { opacity: 1; }
-
-/* ===== PRISONER'S DILEMMA INTERACTIVE ===== */
 .pd-svg .layer-matrix-base,
 .pd-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
 .pd-svg .layer-br-a,
@@ -587,7 +523,6 @@
 .show-efficiency .pd-svg .layer-nash { opacity: 1; }
 .show-efficiency .pd-svg .layer-pareto { opacity: 1; }
 .show-efficiency .pd-svg .layer-legend-efficiency { opacity: 1; }
-/* === Firm-level PC vs Monopoly === */
 .fpcm-svg .layer-axes,
 .fpcm-svg .layer-cost-curves,
 .fpcm-svg .layer-pc-demand,
@@ -605,7 +540,6 @@
 .show-shift .fpcm-svg .layer-monopoly-demand { opacity: 1; }
 .show-shift .fpcm-svg .layer-comparison { opacity: 1; }
 .show-shift .fpcm-svg .layer-panel-shift { opacity: 1; }
-/* === Market-level welfare (corrected DWL) === */
 .mlw-svg .layer-axes,
 .mlw-svg .layer-base-curves,
 .mlw-svg .layer-cs-competition,
@@ -627,7 +561,6 @@
 .show-shift .mlw-svg .layer-monopoly-eq { opacity: 1; }
 .show-shift .mlw-svg .layer-welfare-decomp { opacity: 1; }
 .show-shift .mlw-svg .layer-panel-shift { opacity: 1; }
-/* === Contestability Spectrum (2D plot) === */
 .cspec-svg .layer-axes,
 .cspec-svg .layer-markers,
 .cspec-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
@@ -644,7 +577,6 @@
 .show-shift .cspec-svg .layer-regions { opacity: 1; }
 .show-shift .cspec-svg .layer-highlight { opacity: 1; }
 .show-shift .cspec-svg .layer-panel-shift { opacity: 1; }
-/* === Contestability Frames (P falls as barriers fall) === */
 .cfra-svg .layer-axes,
 .cfra-svg .layer-cost-curves,
 .cfra-svg .layer-state-monopoly,
@@ -661,7 +593,6 @@
 .show-shift .cfra-svg .layer-panel-base { opacity: 0; }
 .show-shift .cfra-svg .layer-state-perfect { opacity: 1; }
 .show-shift .cfra-svg .layer-panel-shift { opacity: 1; }
-/* === Short-run cost stack === */
 .sr-svg .layer-axes,
 .sr-svg .layer-afc,
 .sr-svg .layer-avc,
@@ -678,7 +609,6 @@
 .show-shift .sr-svg .layer-mc { opacity: 1; }
 .show-shift .sr-svg .layer-crossings { opacity: 1; }
 .show-shift .sr-svg .layer-panel-shift { opacity: 1; }
-/* === Kinked Demand Curve Interactive === */
 .kink-svg .layer-axes,
 .kink-svg .layer-kink-point,
 .kink-svg .layer-elastic-d,
@@ -701,17 +631,14 @@
 .show-efficiency .kink-svg .layer-mr { opacity: 1; }
 .show-efficiency .kink-svg .layer-mc { opacity: 1; }
 .show-efficiency .kink-svg .layer-panel-eff { opacity: 1; }
-
-/* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* default; overridden by inline style for 4 tabs */
   gap: var(--sp-2);
 }
 @media (max-width: 760px) {
-  .ad-interactive__tabs { grid-template-columns: 1fr; }
+.ad-interactive__tabs { grid-template-columns: 1fr; }
 }
-
 .ad-tab {
   display: flex;
   align-items: center;
@@ -735,7 +662,6 @@
   background: var(--econ-blue-50);
   box-shadow: 0 2px 10px rgba(37, 99, 235, 0.18);
 }
-
 .ad-tab__num {
   width: 30px; height: 30px;
   border-radius: var(--r-full);
@@ -753,7 +679,6 @@
   background: var(--econ-blue);
   color: #FFFFFF;
 }
-
 .ad-tab__label {
   flex: 1;
   font-size: var(--fs-sm);
@@ -764,12 +689,9 @@
 .ad-tab.is-active .ad-tab__label {
   color: var(--econ-blue-700);
 }
-
-/* --- 3. Content panel below tabs --- */
 .ad-interactive__panels {
   position: relative;
 }
-
 .ad-panel {
   background: var(--econ-white);
   border: 1px solid var(--econ-gray-200);
@@ -783,22 +705,45 @@
   display: block;
   animation: ad-panel-rise 0.32s ease;
 }
-
-@keyframes ad-panel-rise {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 .ad-panel__title {
   font-size: var(--fs-md);
   font-weight: var(--fw-extrabold);
   color: var(--econ-blue-700);
   margin-bottom: var(--sp-3);
 }
-
 .ad-panel__body {
   font-size: var(--fs-base);
   color: var(--econ-ink);
   line-height: var(--lh-relaxed);
 }
-
+.gf-diagram.show-stage2 .gf-stage-2,
+.gf-diagram.show-stage3 .gf-stage-2,
+.gf-diagram.show-stage4 .gf-stage-2 { display: block; }
+.gf-diagram.show-stage3 .gf-stage-3,
+.gf-diagram.show-stage4 .gf-stage-3 { display: block; }
+.gf-diagram.show-stage4 .gf-stage-4 { display: block; }
+.rc-explorer.show-stage1 .rc-stage-1,
+.rc-explorer.show-stage2 .rc-stage-2,
+.rc-explorer.show-stage3 .rc-stage-3,
+.rc-explorer.show-stage4 .rc-stage-4 { display: block; }
+.diag-svg {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: var(--r-lg);
+}
+.ee-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ad-tab.is-active {
+  border-color: var(--econ-slate);
+  background: var(--econ-slate-50);
+  box-shadow: 0 2px 10px rgba(71, 85, 105, 0.18);
+}

@@ -68,6 +68,9 @@ Each type has its own diagram (MSB vs MPB or MSC vs MPC, shifted in opposite dir
 
 :::
 
+::: econos-diagram svgKey="negExternalityInteractive" state="efficiency" label="A negative production externality" caption="A negative production externality: MSC above MPC, market output beyond the social optimum, and the deadweight welfare loss."
+:::
+
 ::: section eyebrow="The diagram every essay needs" color="blue" icon="target"
 
 ## MSC, MPC, and the deadweight triangle
@@ -85,9 +88,6 @@ For positive consumption externalities (vaccination), the diagram flips: MSB sit
 
 Drawing the diagram correctly — with axes labelled, curves named, equilibria marked, and the deadweight triangle shaded — earns roughly half the marks on a typical question. Don't skip it.
 
-:::
-
-::: econos-diagram svgKey="negExternalityInteractive" interactive="true" label="Negative externality of production — MSC vs MPC" caption="The MSC curve sits above the MPC supply curve by the value of the external cost. Market output Q* exceeds the social optimum Q**; the shaded triangle between MSC and MSB is the deadweight welfare loss."
 :::
 
 ::: econ-insight portraitKey="economistPigou" tone="amber" label="Economist insight on externalities" attribution="Arthur Pigou, <em>The Economics of Welfare</em> (1920)"

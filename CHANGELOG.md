@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.14.0 — 2026-05-29
+
+### Articles: use the exact curated Learn It diagrams
+
+Replaced article diagrams across Theme 1, 2 and 3 with the exact diagrams
+the core Learn It modules use, so they are consistent and correct
+(previously many were mismatched, mis-stated or missing). Built the
+infrastructure for this: the full SVG layer/state CSS is now ported into
+`articles/diagram.css`, and the `:::econos-diagram` directive gained a
+static `state="<step>"` mode that renders a curated diagram in one fixed
+fully-built composition (no step tabs). Most curated diagrams are static
+full SVGs embedded directly; the layer-based ones (externalities, PPF,
+Phillips, AD-AS recession, kinked demand, cost stack, prisoner's
+dilemma) render at their final state. Every diagram was verified by
+rendering at desktop and mobile.
+
+Unpublished 7 "diagram explainer" articles that duplicated a canonical
+topic article (AD-AS, Phillips, PPF/opportunity cost, negative & positive
+externalities, monopoly, PED) — set to `status: draft` so nothing is lost;
+the canonical topic articles now carry the curated diagrams. SW cache →
+`econos-v88`.
+
 ## 0.13.2 — 2026-05-29
 
 ### Articles: drop "diagram" from titles

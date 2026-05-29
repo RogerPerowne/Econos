@@ -66,6 +66,9 @@ That four-way distinction is what separates a Level 2 GDP paragraph from a Level
 
 :::
 
+::: econos-diagram svgKey="nationalIncomeFlow" label="The circular flow of income" caption="The circular flow of income: firms pay households for factors, households spend on goods, so income = output = expenditure."
+:::
+
 ::: section eyebrow="The three measurement approaches" color="blue" icon="target"
 
 ## Output, income, expenditure — same total, three angles
@@ -78,9 +81,6 @@ National income accounting says GDP can be measured three ways and the three mus
 
 In practice the three diverge slightly due to measurement timing and the statistical discrepancy; the ONS publishes all three and reconciles them.
 
-:::
-
-::: econos-diagram svgKey="nationalIncomeFlow" label="The circular flow of income between households and firms" caption="The circular flow of income — firms pay households for factors of production, households spend on goods and services, so output, income and expenditure measure the same flow."
 :::
 
 ::: section eyebrow="Real vs nominal in practice" color="purple" icon="scale"

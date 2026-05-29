@@ -10,7 +10,7 @@ spec:
   ocr: "4.2"
 keywords: [monopoly diagram, profit maximisation, MC=MR, supernormal profit, deadweight loss, average revenue, marginal revenue, A-level economics, how to draw monopoly]
 read_minutes: 8
-status: live
+status: draft
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: monopoly

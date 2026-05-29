@@ -56,6 +56,9 @@ The crucial phrase is *ceteris paribus* — "other things equal". When other thi
 
 :::
 
+::: econos-diagram svgKey="demandInteractive" state="shift" label="Demand" caption="Demand: a movement along the curve (own-price change) versus a shift of the whole curve (a non-price determinant)."
+:::
+
 ::: section eyebrow="Movement vs shift — the single biggest error" color="purple" icon="target"
 
 ## Conditions of demand and supply
@@ -99,9 +102,6 @@ Every market-mechanism question follows the same four-step structure. Memorise i
 
 A mark scheme rewards the four-step chain. A bare "supply falls, price rises" is worth a single mark; the chain through disequilibrium is worth three or four.
 
-:::
-
-::: econos-diagram svgKey="demandInteractive" interactive="true" label="Supply and demand equilibrium" caption="Demand slopes down, supply slopes up. They cross at the market-clearing price and quantity. Any other price creates excess demand or excess supply — and the price moves until the imbalance closes."
 :::
 
 ::: econ-insight portraitKey="economistMarshall" tone="amber" label="Economist insight: Marshall and the scissors metaphor" attribution="Alfred Marshall, <em>Principles of Economics</em> (1890)"

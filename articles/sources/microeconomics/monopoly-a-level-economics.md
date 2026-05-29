@@ -121,6 +121,9 @@ Cutting price to sell one more unit also cuts revenue on every previous unit. Th
 
 :::
 
+::: econos-diagram svgKey="monopolySupernormalProfit" label="Monopoly profit maximisation at MC = MR, the price read up on AR, and the supernormal-profit rectangle." caption="Monopoly profit maximisation at MC = MR, the price read up on AR, and the supernormal-profit rectangle."
+:::
+
 ::: card variant="ar" title="The demand-curve view"
 
 The monopolist *is* the market — it faces the whole market demand curve. To sell more it must move down that curve, accepting a lower price for everyone. There's no separate "next customer" to charge.

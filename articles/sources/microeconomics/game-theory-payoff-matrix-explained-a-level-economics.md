@@ -52,36 +52,7 @@ That's the whole structure. Reading the matrix means asking, for each firm: *giv
 
 :::
 
-::: diagram caption="A duopoly payoff matrix. Each cell shows (**Firm A**, **Firm B**) profits in £m. Competing is a **dominant strategy** for both firms, so the **Nash equilibrium** is the highlighted bottom-right cell — even though both colluding would earn more."
-<svg class="gametheory-svg" viewBox="0 0 680 470" width="680" height="470" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-label="A two by two game theory payoff matrix for Firm A and Firm B, each choosing to collude or compete. Payoffs in millions of pounds are: both collude 10 and 10; A colludes B competes 2 and 14; A competes B colludes 14 and 2; both compete 5 and 5. The both-compete cell is the highlighted Nash equilibrium.">
-  <rect width="680" height="470" fill="#F8FAFC" rx="12"/>
-  <text x="340" y="34" text-anchor="middle" font-size="17" font-weight="800" fill="#0B1426">Duopoly payoff matrix (profits, £m)</text>
-  <text x="340" y="56" text-anchor="middle" font-size="12.5" font-style="italic" fill="#64748B">Each cell: (Firm A payoff, Firm B payoff)</text>
-  <text x="455" y="88" text-anchor="middle" font-size="14" font-weight="800" fill="#2563EB" letter-spacing="0.5">FIRM B</text>
-  <text x="350" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">Collude</text>
-  <text x="560" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">Compete</text>
-  <text transform="translate(40,300) rotate(-90)" text-anchor="middle" font-size="14" font-weight="800" fill="#10B981" letter-spacing="0.5">FIRM A</text>
-  <text x="95" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="#047857">Collude</text>
-  <text x="95" y="350" text-anchor="middle" font-size="13" font-weight="700" fill="#047857">Compete</text>
-  <rect x="245" y="130" width="210" height="140" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
-  <text x="350" y="195" text-anchor="middle" font-size="22" font-weight="800" fill="#047857">10</text>
-  <text x="350" y="222" text-anchor="middle" font-size="12.5" fill="#64748B">,</text>
-  <text x="350" y="248" text-anchor="middle" font-size="22" font-weight="800" fill="#1D4ED8">10</text>
-  <rect x="455" y="130" width="210" height="140" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
-  <text x="560" y="195" text-anchor="middle" font-size="22" font-weight="800" fill="#047857">2</text>
-  <text x="560" y="222" text-anchor="middle" font-size="12.5" fill="#64748B">,</text>
-  <text x="560" y="248" text-anchor="middle" font-size="22" font-weight="800" fill="#1D4ED8">14</text>
-  <rect x="245" y="270" width="210" height="140" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
-  <text x="350" y="335" text-anchor="middle" font-size="22" font-weight="800" fill="#047857">14</text>
-  <text x="350" y="362" text-anchor="middle" font-size="12.5" fill="#64748B">,</text>
-  <text x="350" y="388" text-anchor="middle" font-size="22" font-weight="800" fill="#1D4ED8">2</text>
-  <rect x="455" y="270" width="210" height="140" rx="8" fill="#FEF3C7" stroke="#F39E0B" stroke-width="3"/>
-  <text x="560" y="330" text-anchor="middle" font-size="22" font-weight="800" fill="#047857">5</text>
-  <text x="560" y="357" text-anchor="middle" font-size="12.5" fill="#64748B">,</text>
-  <text x="560" y="383" text-anchor="middle" font-size="22" font-weight="800" fill="#1D4ED8">5</text>
-  <text x="560" y="403" text-anchor="middle" font-size="11.5" font-weight="800" fill="#B45309">Nash equilibrium</text>
-  <text x="340" y="445" text-anchor="middle" font-size="12.5" fill="#475569">Both could earn 10 by colluding — but cheating pays more for each, so both compete and earn 5.</text>
-</svg>
+::: econos-diagram svgKey="prisonersDilemmaInteractive" state="efficiency" label="The prisoner's dilemma payoff matrix and the Nash equilibrium two firms reach by each acting in self-interest." caption="The prisoner's dilemma payoff matrix and the Nash equilibrium two firms reach by each acting in self-interest."
 :::
 
 ::: section eyebrow="How to read it" color="blue" icon="target"

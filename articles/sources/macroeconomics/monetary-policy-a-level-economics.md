@@ -61,6 +61,9 @@ The chain takes 6 to 18 months end-to-end. Monetary policy is always forecasting
 
 :::
 
+::: econos-diagram svgKey="adAsMonetary" label="Monetary policy on the AD-AS diagram" caption="Monetary policy on the AD-AS diagram: a change in Bank Rate shifts aggregate demand and moves the price level and output."
+:::
+
 ::: section eyebrow="The transmission mechanism" color="blue" icon="target"
 
 ## The five-link chain examiners want named
@@ -77,9 +80,6 @@ Rate **cuts** work the chain in reverse: cheaper borrowing, more spending, AD sh
 
 The mark scheme rewards naming all five links AND naming the lag.
 
-:::
-
-::: econos-diagram svgKey="adAsMonetary" interactive="true" label="How monetary policy shifts aggregate demand" caption="Step through how the Bank of England moves AD — a rate hike to cool inflation, or QE at the zero lower bound to lift it back to target."
 :::
 
 ::: section eyebrow="Beyond Bank Rate — the rest of the toolkit" color="purple" icon="scale"

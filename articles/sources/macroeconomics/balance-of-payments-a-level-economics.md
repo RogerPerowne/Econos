@@ -66,6 +66,9 @@ Total = persistent UK current-account deficit, roughly 2–4% of GDP year on yea
 
 :::
 
+::: econos-diagram svgKey="netTradeMechanism" label="How net trade feeds into aggregate demand and the current account." caption="How net trade feeds into aggregate demand and the current account."
+:::
+
 ::: section eyebrow="Why deficits matter (sometimes)" color="blue" icon="target"
 
 ## When a current-account deficit is fine — and when it isn't
@@ -111,9 +114,6 @@ The graph: trade balance starts at zero, falls into a J-curve trough, then climb
 
 UK 2008–2009: sterling fell ~25% against the dollar after the financial crisis. The UK current account did improve — but with a 12-to-18-month lag and only partially. Marshall-Lerner held; the J-curve played out roughly as predicted.
 
-:::
-
-::: econos-diagram svgKey="bopJCurveInteractive" interactive="true" label="The J-curve: how depreciation affects the current account over time" caption="Step through the J-curve — a depreciation worsens the current account in the short run before improving it once trade volumes respond."
 :::
 
 ::: section eyebrow="Exam edge" color="green" icon="cap"

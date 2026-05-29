@@ -635,6 +635,20 @@ function articleRoutes() {
             + `  ${caption}</figure>\n`;
         }
 
+        /* Static final-state: render the exact curated Learn It diagram in
+           one fixed `show-<state>` composition — no step tabs, no JS. Used
+           so every Theme article shows the same diagram as its core
+           Learn It module. The state name matches the .show-<state> class
+           the SPA uses for that diagram's fully-built step. */
+        if (attrs.state && svg) {
+          econDiagramStack.push({ interactive: true });
+          const captionHtml = attrs.caption ? md.renderInline(attrs.caption) : '';
+          const caption = captionHtml ? `<p class="article-interactive__caption">${captionHtml}</p>` : '';
+          return `<figure class="article-diagram article-interactive article-diagram--static" aria-label="${escapeAttr(ariaLabel)}">\n`
+            + `  <div class="ad-interactive__diagram show-${escapeAttr(attrs.state)}" data-ad-state="${escapeAttr(attrs.state)}" role="img">${svg}</div>\n`
+            + `  ${caption}</figure>\n`;
+        }
+
         econDiagramStack.push({ attrs });
         return `<div class="diagram-block article-diagram" role="img" aria-label="${escapeAttr(ariaLabel)}">\n${svg}\n`;
       }

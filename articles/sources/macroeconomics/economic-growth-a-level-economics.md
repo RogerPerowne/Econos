@@ -59,6 +59,9 @@ But "growth" hides a distinction examiners insist on, and it is the spine of the
 
 :::
 
+::: econos-diagram svgKey="ppfMovesInteractive" state="outward" label="Economic growth as an outward shift of the production possibility frontier — more can be produced of both goods." caption="Economic growth as an outward shift of the production possibility frontier — more can be produced of both goods."
+:::
+
 ::: section eyebrow="The big picture · two kinds of growth" color="purple" icon="target"
 
 ## Actual growth and potential growth are different things
@@ -71,9 +74,6 @@ The exam tell is the diagram. A move towards the frontier means you were produci
 
 The drivers of potential growth are worth naming as a chain: investment in capital → higher labour productivity → more output per worker → the PPF shifts outward → sustainable rises in real income.
 
-:::
-
-::: econos-diagram svgKey="ppfInteractive" interactive="true" label="Potential growth as an outward shift of the PPF" caption="Potential growth shifts the production possibility frontier outward — the economy can now produce more of both goods. Drag to see capacity rise."
 :::
 
 ::: econ-insight portraitKey="economistSchumpeter" tone="amber" label="Economist insight: Schumpeter and creative destruction" attribution="Joseph Schumpeter, <em>Capitalism, Socialism and Democracy</em> (1942)"

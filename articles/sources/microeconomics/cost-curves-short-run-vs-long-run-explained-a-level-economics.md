@@ -60,53 +60,7 @@ The recurring exam error sits in both diagrams: in the short run, drawing SMC cr
 
 :::
 
-::: diagram caption="Left: the short-run cost diagram. SAC is U-shaped and SMC cuts it at its minimum (the only point where marginal equals average). Right: the long-run envelope. The LRAC just touches a family of short-run average cost curves, one per plant size, and reaches its minimum at the minimum efficient scale (MES)."
-<svg viewBox="0 0 720 420" class="cost-curves-svg" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-label="Two panels of cost curves. Left panel shows a U-shaped short-run average cost curve SAC and a short-run marginal cost curve SMC that crosses SAC at the bottom of the U. Right panel shows three short-run average cost curves of increasing plant size and a long-run average cost LRAC envelope that lies just below and tangent to each of them, reaching its minimum at the minimum efficient scale labelled MES.">
-  <rect width="720" height="420" fill="#F8FAFC" rx="12"/>
-  <!-- LEFT PANEL: short run -->
-  <text x="180" y="34" text-anchor="middle" font-size="14" font-weight="800" fill="#0B1426">Short run</text>
-  <line x1="60" y1="50" x2="60" y2="350" stroke="#CBD5E1" stroke-width="2"/>
-  <line x1="60" y1="350" x2="340" y2="350" stroke="#CBD5E1" stroke-width="2"/>
-  <text transform="translate(34,210) rotate(-90)" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">Cost per unit (£)</text>
-  <text x="330" y="376" text-anchor="end" font-size="12" font-weight="700" fill="#475569">Output</text>
-  <!-- SAC U-shaped -->
-  <path d="M90,150 Q190,330 210,250 T320,120" fill="none" stroke="#2563EB" stroke-width="3"/>
-  <text x="300" y="118" font-size="13" font-weight="800" fill="#2563EB">SAC</text>
-  <!-- SMC steeper U, cuts SAC at its min -->
-  <path d="M95,300 Q170,290 200,250 T310,80" fill="none" stroke="#E11D48" stroke-width="3"/>
-  <text x="298" y="84" font-size="13" font-weight="800" fill="#E11D48">SMC</text>
-  <!-- min of SAC at approx (200,250); SMC passes through same point -->
-  <circle cx="200" cy="250" r="4.5" fill="#0B1426"/>
-  <line x1="60" y1="250" x2="200" y2="250" stroke="#475569" stroke-width="1" stroke-dasharray="3 4"/>
-  <line x1="200" y1="250" x2="200" y2="350" stroke="#475569" stroke-width="1" stroke-dasharray="3 4"/>
-  <text x="208" y="244" font-size="11" font-weight="700" fill="#0B1426">SMC cuts SAC</text>
-  <text x="208" y="258" font-size="11" font-weight="700" fill="#0B1426">at min SAC</text>
-  <text x="200" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Q&#8321;</text>
-  <!-- divider -->
-  <line x1="372" y1="50" x2="372" y2="360" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4 5"/>
-  <!-- RIGHT PANEL: long run -->
-  <text x="545" y="34" text-anchor="middle" font-size="14" font-weight="800" fill="#0B1426">Long run</text>
-  <line x1="410" y1="50" x2="410" y2="350" stroke="#CBD5E1" stroke-width="2"/>
-  <line x1="410" y1="350" x2="700" y2="350" stroke="#CBD5E1" stroke-width="2"/>
-  <text transform="translate(384,210) rotate(-90)" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">Cost per unit (£)</text>
-  <text x="690" y="376" text-anchor="end" font-size="12" font-weight="700" fill="#475569">Output</text>
-  <!-- family of SAC curves (small, medium, large plant) -->
-  <path d="M430,150 Q470,250 490,210 T540,170" fill="none" stroke="#CBD5E1" stroke-width="2"/>
-  <path d="M500,160 Q545,240 560,200 T620,165" fill="none" stroke="#CBD5E1" stroke-width="2"/>
-  <path d="M580,165 Q625,250 645,210 T695,185" fill="none" stroke="#CBD5E1" stroke-width="2"/>
-  <text x="445" y="145" font-size="10" font-weight="700" fill="#64748B">SAC&#8321;</text>
-  <text x="555" y="155" font-size="10" font-weight="700" fill="#64748B">SAC&#8322;</text>
-  <text x="640" y="160" font-size="10" font-weight="700" fill="#64748B">SAC&#8323;</text>
-  <!-- LRAC envelope, tangent below the family, min around x=560 -->
-  <path d="M430,180 Q500,230 560,210 Q630,222 695,210" fill="none" stroke="#10B981" stroke-width="3.5"/>
-  <text x="612" y="240" font-size="13" font-weight="800" fill="#047857">LRAC</text>
-  <!-- MES at min of LRAC approx (560,210) -->
-  <circle cx="560" cy="210" r="4.5" fill="#047857"/>
-  <line x1="560" y1="210" x2="560" y2="350" stroke="#475569" stroke-width="1" stroke-dasharray="3 4"/>
-  <text x="560" y="368" text-anchor="middle" font-size="11" font-weight="800" fill="#0B1426">MES</text>
-  <text x="430" y="300" font-size="11" font-weight="700" fill="#047857">economies</text>
-  <text x="430" y="314" font-size="11" font-weight="700" fill="#047857">of scale</text>
-</svg>
+::: econos-diagram svgKey="shortRunCostStack" state="shift" label="Short-run cost curves" caption="Short-run cost curves: the U-shaped SAC and SMC, with SMC cutting SAC at its minimum."
 :::
 
 ::: section eyebrow="Why SAC is U-shaped" color="purple" icon="target"

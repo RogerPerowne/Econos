@@ -66,6 +66,9 @@ The shorthand: **AD = C + I + G + (X − M)**. Examiners love a student who quot
 
 :::
 
+::: econos-diagram svgKey="adMovementShift" label="Aggregate demand" caption="Aggregate demand: a movement along AD (a price-level change) versus a shift of the whole curve when a component of AD changes."
+:::
+
 ::: section eyebrow="The big picture · why AD slopes down" color="purple" icon="target"
 
 ## Three reasons, ranked by exam frequency
@@ -99,9 +102,6 @@ The diagnostic for any macro essay: "what changed *first*?" If the answer is "th
 
 Drawing the wrong move is the most common Level-2 paper-loss in AD/AS essays.
 
-:::
-
-::: econos-diagram svgKey="adInteractive" interactive="true" label="The aggregate demand curve — why it slopes down, movement along it, and shifts" caption="The distinction examiners reward: why AD slopes down, what makes you move along it (a price-level change), and what shifts the whole curve (a change in C, I, G or net exports)."
 :::
 
 ::: section eyebrow="Real world example" color="blue" icon="globe"

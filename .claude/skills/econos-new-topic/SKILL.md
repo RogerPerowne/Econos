@@ -7,6 +7,18 @@ description: Use when adding a new topic to Econos from scratch, or when stubbin
 
 Econos is a static SPA with **exactly six HTML files at the repo root** (`index.html`, `learn.html`, `link.html`, `land.html`, `quiz.html`, `login.html`). Adding a topic never requires a new HTML file — only new data files + a register entry.
 
+## Plan the patterns first
+
+Before any data file is written, the topic plan must list the **storytelling pattern** assigned to each card, drawn from the 10 patterns in the `econos-card-template` skill. Format:
+
+> Card 1: *Decompose a diagram* — the wave with phase bands.
+> Card 2: *Side-by-side pair* — positive vs negative AD shock.
+> Card 3: *Worked example walkthrough* — £10bn green-infrastructure calculation.
+
+Two non-negotiable rules: (1) no two consecutive cards use the same pattern without explicit justification; (2) if three or more cards use *Tile grid*, the plan is defaulted — rework.
+
+Get user sign-off on the pattern list before writing data files. This is the single highest-leverage step for variety and engagement.
+
 ## File layout
 
 A topic lives in `js/data/<topic-id>/`. The minimum viable topic is a single file:

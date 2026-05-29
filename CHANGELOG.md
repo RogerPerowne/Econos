@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.1 — 2026-05-29
+
+### Impact of Economic Growth · Card 1 redesign
+
+Rebuilt the "Beyond GDP" hero (`growthScorecard`) as an HTML+SVG hub-and-spoke
+scorecard. Each of the four satellite dimensions (Distribution, Composition,
+Sustainability, Wellbeing) now carries its own gauge dial, a one-line
+description, and a tone-coloured *Exam note:* with a concrete UK statistic.
+The centre is a circular Real GDP card that sits in the column gutter rather
+than overlapping a satellite. Scoped `<style>` block stacks the 2×2 grid to
+single-column on viewports under 560 px. Added a closing "Growth is
+multi-dimensional" 5-tile row to anchor the framework verbally as well as
+visually. Cache bumped to `econos-v109`.
+
 ## 0.17.0 — 2026-05-29
 
 ### Universalised routing + full exam-board separation + per-board placeholders
@@ -71,7 +85,6 @@ topic.
   (the new URL-prefers-board logic would otherwise pollute later
   cases). E2E updated for the `section-a` rename + the new
   board-picker navigation flow.
-
 ## 0.16.0 — 2026-05-29
 
 ### Articles: clean-slate teardown of all markdown sources

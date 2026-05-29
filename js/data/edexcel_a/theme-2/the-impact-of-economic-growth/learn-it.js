@@ -60,6 +60,17 @@ window.ECONOS_TOPIC = {
 
       bottomTip: { tone: 'amber', icon: '\u{1F4A1}', text: '<strong>The Easterlin paradox:</strong> past roughly £30,000 of GDP per capita, self-reported life satisfaction stops tracking GDP. More money beyond that point buys more <em>stuff</em> but not more reported happiness. That’s why the wellbeing dimension exists on the scorecard.' },
 
+      causes2Label: 'Growth is multi-dimensional',
+      causes2Emoji: '\u{1F4CA}',
+      causes2Cols: 5,
+      causes2: [
+        { tone: 'blue',   icon: '1\u{FE0F}\u{20E3}', head: 'The headline',          body: '<strong>Real GDP per capita growth</strong> — the single number quoted in the news.' },
+        { tone: 'purple', icon: '2\u{FE0F}\u{20E3}', head: 'But who it lands on',   body: '<strong>Distribution</strong> — bottom decile vs top 1%, regional spread, age cohorts.' },
+        { tone: 'amber',  icon: '3\u{FE0F}\u{20E3}', head: 'And what it buys',     body: '<strong>Composition</strong> — health, education and R&amp;D vs arms or fossil fuels.' },
+        { tone: 'green',  icon: '4\u{FE0F}\u{20E3}', head: 'And whether it lasts', body: '<strong>Sustainability</strong> — natural capital, carbon budget, financial stability.' },
+        { tone: 'rose',   icon: '5\u{FE0F}\u{20E3}', head: 'And how it feels',     body: '<strong>Wellbeing</strong> — life satisfaction, work-life balance, social trust.' }
+      ],
+
       conclusionPosition: 'end',
       conclusion: {
         title: 'Big idea',

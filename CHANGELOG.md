@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.15.5 — 2026-05-29
+
+### Articles: real PC-firm diagram for the perfect-competition SR-vs-LR article
+
+The "perfect competition: short run vs long run" article's only diagram was
+the decorative `heroCostCurves` (coin stacks) under an analytical caption
+("the competitive firm's cost and revenue curves, profit-max where MC = MR").
+Swapped it for `firmLevelPcVsMonopoly` at its base state — a correct PC-firm
+chart: horizontal AR = MR = P, U-shaped MC/AC, profit-maximising output at
+MC = MR (P = min AC in the long run).
+
 ## 0.15.4 — 2026-05-29
 
 ### Diagrams: spec sheet, hardened audit, label-clash & clipping sweep

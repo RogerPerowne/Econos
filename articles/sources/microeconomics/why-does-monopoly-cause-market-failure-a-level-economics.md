@@ -10,7 +10,7 @@ spec:
   ocr: "4.2"
 keywords: [monopoly market failure, allocative inefficiency, productive inefficiency, deadweight loss, P greater than MC, restricted output, X-inefficiency, monopoly]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: monopoly

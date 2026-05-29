@@ -10,7 +10,7 @@ spec:
   ocr: "4.3"
 keywords: [absolute advantage, comparative advantage, difference between absolute and comparative advantage, opportunity cost, gains from trade, specialisation, Ricardo, terms of trade]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

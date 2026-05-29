@@ -10,7 +10,7 @@ spec:
   ocr: "2.1"
 keywords: [economic growth, real GDP, actual growth, potential growth, production possibility frontier, trade cycle, recession, GDP limitations, sustainable growth]
 read_minutes: 12
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

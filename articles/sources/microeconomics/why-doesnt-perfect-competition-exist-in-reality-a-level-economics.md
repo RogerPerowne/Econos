@@ -10,7 +10,7 @@ spec:
   ocr: "4.1"
 keywords: [perfect competition, why perfect competition doesn't exist, assumptions of perfect competition, allocative efficiency, productive efficiency, benchmark, price taker, market structure]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

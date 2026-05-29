@@ -10,7 +10,7 @@ spec:
   ocr: "2.11"
 keywords: [national minimum wage, National Living Wage, minimum wage, Low Pay Commission, monopsony, labour market, government intervention, price floor, A-level economics]
 read_minutes: 9
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

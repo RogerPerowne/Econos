@@ -10,7 +10,7 @@ spec:
   ocr: "4.2"
 keywords: [Thames Water, natural monopoly, regulatory capture, Ofwat, Stigler, price cap regulation, RPI-X, water industry, privatisation, monopoly A-level economics]
 read_minutes: 10
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: monopoly

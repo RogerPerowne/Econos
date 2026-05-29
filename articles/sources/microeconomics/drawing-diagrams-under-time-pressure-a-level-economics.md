@@ -10,7 +10,7 @@ spec:
   ocr: "4.2"
 keywords: [monopoly diagram, drawing diagrams economics, A-level economics exam technique, time pressure, AR MR AC MC, labelling diagrams, AO3, supernormal profit, allocative efficiency]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

@@ -10,7 +10,7 @@ spec:
   ocr: "2.11"
 keywords: [SDIL, soft drinks industry levy, sugar tax, indirect tax, specific tax, reformulation, tax incidence, negative externality, A-level economics]
 read_minutes: 9
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

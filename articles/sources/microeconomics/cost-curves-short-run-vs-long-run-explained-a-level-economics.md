@@ -10,7 +10,7 @@ spec:
   ocr: "3.2"
 keywords: [cost curves, short run long run, SAC, SMC, LRAC envelope, minimum efficient scale, average cost, marginal cost, returns to scale, A-level economics]
 read_minutes: 8
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: costs

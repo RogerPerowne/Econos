@@ -10,7 +10,7 @@ spec:
   ocr: "2.8"
 keywords: [positive consumption externality diagram, how to draw externality diagram, MPB MSB diagram, welfare loss under-consumption, merit good diagram, market failure diagram, A-level economics diagram, exam technique]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

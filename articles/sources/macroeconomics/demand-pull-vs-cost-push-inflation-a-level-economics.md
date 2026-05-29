@@ -10,7 +10,7 @@ spec:
   ocr: "2.4"
 keywords: [demand-pull inflation, cost-push inflation, aggregate demand, aggregate supply, AD-AS diagram, stagflation, inflation policy, Bank of England, cost-push vs demand-pull]
 read_minutes: 11
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

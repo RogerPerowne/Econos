@@ -10,7 +10,7 @@ spec:
   ocr: "2.4"
 keywords: [inflation, deflation, disinflation, price level, CPI, falling inflation, negative inflation, rate of change, A-level economics]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: causes-of-inflation-and-deflation

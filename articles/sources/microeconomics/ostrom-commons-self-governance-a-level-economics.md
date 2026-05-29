@@ -10,7 +10,7 @@ spec:
   ocr: "2.10"
 keywords: [Ostrom, tragedy of the commons, common-pool resources, public goods, self-governance, Hardin, free rider problem, common access resources, government failure, A-level economics]
 read_minutes: 9
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: public-goods

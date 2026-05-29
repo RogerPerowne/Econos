@@ -10,7 +10,7 @@ spec:
   ocr: "2.1"
 keywords: [economic growth, economic development, difference between growth and development, GDP, HDI, living standards, human development index, real GDP per capita]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

@@ -10,7 +10,7 @@ spec:
   ocr: "1.2"
 keywords: [behavioural economics, bounded rationality, nudge theory, cognitive biases, choice architecture, Richard Thaler, Daniel Kahneman, default options, Behavioural Insights Team]
 read_minutes: 11
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

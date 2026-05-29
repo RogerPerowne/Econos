@@ -10,7 +10,7 @@ spec:
   ocr: "2.11"
 keywords: [Uber Supreme Court, Uber v Aslam, gig economy, worker status, labour market regulation, minimum wage, monopsony, government intervention, A-level economics]
 read_minutes: 9
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

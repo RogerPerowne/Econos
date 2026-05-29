@@ -10,7 +10,7 @@ spec:
   ocr: "Paper 2"
 keywords: [Paper 2 economics, Edexcel A-level economics, the UK economy paper, macroeconomics exam technique, data response, evaluation marks, AO3, AO4, common mistakes]
 read_minutes: 8
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

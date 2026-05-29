@@ -162,9 +162,18 @@ You do **not** need to bump for changes to topic data files (`js/data/<topic>/..
 
 ## Adding a new topic
 
-1. Create `js/data/<topic-id>/` with at minimum `data-topic.js`.
-2. Add `data-land-*.js`, `data-link-*.js`, `data-quiz-*.js` files as the content matures.
-3. Register the topic in `js/topics.js`.
+1. **Plan the patterns first.** Before writing any data file, list each
+   card's storytelling pattern from the 10-pattern catalogue in the
+   `econos-card-template` skill (Sequential flow chain, Side-by-side
+   pair, Spectrum/regime grid, Comparison table, Worked example
+   walkthrough, Predict-then-reveal, Interactive multi-state diagram,
+   Decompose a diagram, Evidence-then-verdict, Tile grid). Get user
+   sign-off on the pattern list. Two rules enforced at planning time:
+   no two consecutive cards use the same pattern, and *Tile grid*
+   appears on at most two cards per topic.
+2. Create `js/data/<topic-id>/` with at minimum `data-topic.js`.
+3. Add `data-land-*.js`, `data-link-*.js`, `data-quiz-*.js` files as the content matures.
+4. Register the topic in `js/topics.js`.
 
 No new HTML, no engine changes. The shells discover the data through
 `TopicLoader.loadData(...)` at runtime.

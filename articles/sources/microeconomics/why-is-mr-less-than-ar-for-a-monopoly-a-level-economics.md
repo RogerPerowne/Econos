@@ -102,10 +102,6 @@ For a price taker, by contrast, there is no price effect — the firm never has 
 
 :::
 
-::: econ-insight portraitKey="economistRobinson" tone="amber" label="Economist insight: Joan Robinson and imperfect competition" attribution="Joan Robinson, <em>The Economics of Imperfect Competition</em> (1933)"
-The marginal revenue curve will lie below the demand curve, since to sell an extra unit the price must be lowered upon all the units that could have been sold at the higher price.
-:::
-
 ::: section eyebrow="What examiners actually want" color="purple" icon="cap"
 
 ## Name the price effect, then use it

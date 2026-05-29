@@ -17078,55 +17078,57 @@ window.ECONOS_ICONS = {
      Base = axes + actual GDP wave only.
      Layers (cumulative via i < vi):
        .idl-trend       = potential GDP line + Booms/Recessions markers
-       .idl-drivers     = 5 trend-driver labels with upward arrows on the trend
-       .idl-hysteresis  = trend-bends-down arrow at the recession trough */
+       .idl-drivers     = 5 trend-driver labels with upward triangles
+       .idl-hysteresis  = trend-bends-down arrow at the recession trough
+     viewBox widened to 720 so right-edge labels fit; arrows drawn as
+     inline polygons rather than markers (markers were scaling oddly). */
   actualVsPotentialGrowth: `
     <div style="background:#fff;border-radius:14px;padding:14px 16px;">
-      <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <text x="14" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real GDP</text>
-        <line x1="60" y1="240" x2="610" y2="240" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="60" y1="240" x2="690" y2="240" stroke="#0B1426" stroke-width="1.4"/>
         <line x1="60" y1="240" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
-        <polygon points="610,240 603,236 603,244" fill="#0B1426"/>
+        <polygon points="690,240 683,236 683,244" fill="#0B1426"/>
         <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
-        <text x="588" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time</text>
+        <text x="668" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time</text>
         <!-- Actual GDP wave (base — always visible) -->
         <path d="M60 195 C100 175 150 110 220 100 C280 92 320 195 380 195 C430 195 460 100 530 80 C560 72 575 80 580 85" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-        <text x="586" y="118" font-size="11" fill="#1E3A8A" font-family="Inter,sans-serif" font-weight="700">Actual GDP</text>
+        <text x="588" y="90" font-size="11" fill="#1E3A8A" font-family="Inter,sans-serif" font-weight="700">Actual GDP</text>
         <!-- LAYER 1: Potential trend + Booms/Recessions markers -->
         <g class="idl-trend" style="display:none">
           <line x1="60" y1="200" x2="580" y2="90" stroke="#16A34A" stroke-width="2.4"/>
-          <text x="586" y="92" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Potential GDP</text>
+          <text x="588" y="110" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Potential GDP</text>
           <circle cx="220" cy="100" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
           <line x1="220" y1="100" x2="280" y2="58" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
           <text x="286" y="55" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Booms sit</text>
           <text x="286" y="69" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">above trend</text>
           <circle cx="380" cy="195" r="5" fill="#C2410C" stroke="#fff" stroke-width="2"/>
-          <line x1="380" y1="195" x2="430" y2="223" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-          <text x="436" y="220" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">Recessions sit</text>
-          <text x="436" y="234" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">below trend</text>
+          <line x1="380" y1="195" x2="440" y2="222" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="448" y="220" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">Recessions sit</text>
+          <text x="448" y="234" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">below trend</text>
         </g>
-        <!-- LAYER 2: Trend drivers — 5 upward arrows + labels nudging the trend up -->
+        <!-- LAYER 2: Trend drivers — 5 small upward triangles + labels below.
+             Triangle apex sits on the trend line; label sits ~14 px below.
+             Trend equation: trend_y = 200 − 0.2115·(x − 60). -->
         <g class="idl-drivers" style="display:none">
-          <path d="M120 200 L120 175" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
-          <text x="120" y="216" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Labour</text>
-          <path d="M230 175 L230 150" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
-          <text x="230" y="191" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Capital</text>
-          <path d="M340 150 L340 125" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
-          <text x="340" y="166" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Productivity</text>
-          <path d="M450 124 L450 99" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
-          <text x="450" y="140" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Skills</text>
-          <path d="M540 100 L540 75" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
-          <text x="540" y="116" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Tech</text>
+          <polygon points="116,195 124,195 120,187" fill="#16A34A"/>
+          <text x="120" y="211" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Labour</text>
+          <polygon points="226,172 234,172 230,164" fill="#16A34A"/>
+          <text x="230" y="188" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Capital</text>
+          <polygon points="336,149 344,149 340,141" fill="#16A34A"/>
+          <text x="340" y="165" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Productivity</text>
+          <polygon points="446,126 454,126 450,118" fill="#16A34A"/>
+          <text x="450" y="142" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Skills</text>
+          <polygon points="546,103 554,103 550,95" fill="#16A34A"/>
+          <text x="550" y="119" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Tech</text>
         </g>
-        <!-- LAYER 3: Hysteresis — trend bends DOWN at the recession trough -->
+        <!-- LAYER 3: Hysteresis — dashed line from trough bending down,
+             ending in a small downward triangle, with a caption to the side. -->
         <g class="idl-hysteresis" style="display:none">
-          <path d="M380 195 C400 205 420 215 445 222" stroke="#C2410C" stroke-width="1.8" fill="none" stroke-dasharray="4 3" marker-end="url(#tcg-arr-down)"/>
-          <text x="396" y="278" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif">Hysteresis: trend can bend down</text>
+          <path d="M380 195 C400 205 420 215 440 222" stroke="#C2410C" stroke-width="1.8" fill="none" stroke-dasharray="4 3"/>
+          <polygon points="436,218 444,218 440,228" fill="#C2410C"/>
+          <text x="396" y="290" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif">Hysteresis: trend can bend down</text>
         </g>
-        <defs>
-          <marker id="tcg-arr-up" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto"><path d="M0 8 L4 0 L8 8 Z" fill="#16A34A"/></marker>
-          <marker id="tcg-arr-down" markerWidth="8" markerHeight="8" refX="6" refY="6" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#C2410C"/></marker>
-        </defs>
       </svg>
     </div>
   `,

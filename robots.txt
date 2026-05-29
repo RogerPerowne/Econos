@@ -1,5 +1,12 @@
+# Econos — robots.txt
+# Plain-English A-level economics revision · https://econos.co.uk
+#
+# All crawlers are welcome. Search engines, AI assistants, archival
+# bots, link checkers — every URL on this site is intended for indexing.
+# If you're scraping, please be reasonable with rate; we're a static
+# site on a small budget.
+
 User-agent: *
 Allow: /
-Disallow: /login.html
 
 Sitemap: https://econos.co.uk/sitemap.xml

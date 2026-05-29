@@ -59,6 +59,9 @@ This article describes that order in words. There is no picture here on purpose 
 
 :::
 
+::: econos-diagram svgKey="monopolySupernormalProfit" label="The monopoly diagram — the worked example for drawing a complex diagram fast" caption="The monopoly diagram — the worked example for drawing a complex diagram fast."
+:::
+
 ::: section eyebrow="The sequence" color="purple" icon="target"
 
 ## The 90-second order of strokes

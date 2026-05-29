@@ -59,6 +59,9 @@ So before the mistakes, hold one idea: on Paper 2, the data is the application. 
 
 :::
 
+::: econos-diagram svgKey="adInteractive" state="shift" label="The AD-AS diagram at the centre of most Paper 2 macro answers" caption="The AD-AS diagram at the centre of most Paper 2 macro answers."
+:::
+
 ::: section eyebrow="Mistake 1" color="purple" icon="target"
 
 ## Writing past the extract

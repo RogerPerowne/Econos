@@ -50,6 +50,9 @@ That price cut on the existing units is the missing piece. It is why MR is dragg
 
 :::
 
+::: econos-diagram svgKey="monopolySupernormalProfit" label="Monopoly" caption="Monopoly: AR (demand) above MR, profit-max at MC = MR, price read up on AR."
+:::
+
 ::: section eyebrow="The definitions, tightly" color="purple" icon="target"
 
 ## AR is the price; MR is the change in total revenue

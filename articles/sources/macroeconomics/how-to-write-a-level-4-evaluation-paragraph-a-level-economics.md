@@ -57,6 +57,9 @@ Evaluation means *weighing* an argument you have already built: how big is the e
 
 :::
 
+::: econos-diagram svgKey="adInteractive" state="shift" label="Evaluation hangs off a clear diagram — here AD shifting on the AD-AS model" caption="Evaluation hangs off a clear diagram — here AD shifting on the AD-AS model."
+:::
+
 ::: section eyebrow="The diagnostic" color="purple" icon="bulb"
 
 ## The tell of a weak evaluation

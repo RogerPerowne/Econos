@@ -55,6 +55,9 @@ The trap is to look at the cash amount. A higher earner usually pays more *pound
 
 :::
 
+::: econos-diagram svgKey="taxTypesInteractive" label="Progressive, proportional and regressive taxes" caption="Progressive, proportional and regressive taxes: how the average rate changes with income."
+:::
+
 ::: section eyebrow="The big picture · the three in UK terms" color="purple" icon="target"
 
 ## Income tax, a flat tax, and VAT

@@ -59,6 +59,9 @@ Stack these through the mortgage chain — borrower, lender, securitiser, invest
 
 :::
 
+::: econos-diagram svgKey="lemonMarketDiagram" label="The market for lemons" caption="The market for lemons: asymmetric information drives good quality out of the market."
+:::
+
 ::: section eyebrow="The mechanism · the chain of information gaps" color="purple" icon="target"
 
 ## From the borrower's kitchen table to a frozen market

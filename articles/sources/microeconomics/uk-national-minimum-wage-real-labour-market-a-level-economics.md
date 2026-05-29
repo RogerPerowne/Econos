@@ -59,6 +59,9 @@ That gap between the textbook prediction and the real outcome is the whole point
 
 :::
 
+::: econos-diagram svgKey="priceFloorDiagramInteractive" label="The national minimum wage as a price floor in the labour market" caption="The national minimum wage as a price floor in the labour market."
+:::
+
 ::: section eyebrow="The mechanism" color="blue" icon="target"
 
 ## Two diagrams, two opposite predictions

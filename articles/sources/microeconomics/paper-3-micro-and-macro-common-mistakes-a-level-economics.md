@@ -57,6 +57,9 @@ That word — synoptic — is the whole exam. It means the paper is testing whet
 
 :::
 
+::: econos-diagram svgKey="adInteractive" state="shift" label="The AD-AS diagram, a Paper 3 staple" caption="The AD-AS diagram, a Paper 3 staple."
+:::
+
 ::: section eyebrow="Mistake 1" color="purple" icon="target"
 
 ## Answering in silos and missing the synoptic link

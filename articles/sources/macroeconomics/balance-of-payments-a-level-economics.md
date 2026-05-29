@@ -66,7 +66,7 @@ Total = persistent UK current-account deficit, roughly 2–4% of GDP year on yea
 
 :::
 
-::: econos-diagram svgKey="jCurveStatic" label="The J-curve" caption="The J-curve: after a currency depreciation the current account first worsens, then improves once trade volumes respond (Marshall-Lerner)."
+::: econos-diagram svgKey="jCurveInteractive" label="The J-curve" caption="The J-curve: after a depreciation the current account worsens before it improves as trade volumes respond."
 :::
 
 ::: section eyebrow="Why deficits matter (sometimes)" color="blue" icon="target"

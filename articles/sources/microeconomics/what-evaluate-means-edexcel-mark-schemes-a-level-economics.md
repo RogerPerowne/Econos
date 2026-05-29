@@ -57,6 +57,9 @@ The problem is that "evaluate" does not mean "give both sides". On the Edexcel A
 
 :::
 
+::: econos-diagram svgKey="adInteractive" state="shift" label="Evaluation built on a diagram — AD shifting on the AD-AS model" caption="Evaluation built on a diagram — AD shifting on the AD-AS model."
+:::
+
 ::: section eyebrow="The criteria" color="purple" icon="target"
 
 ## Magnitude, time lag, context

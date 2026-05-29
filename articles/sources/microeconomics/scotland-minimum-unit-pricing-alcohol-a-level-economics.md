@@ -59,6 +59,9 @@ And crucially, because it is a minimum price rather than a tax, the extra money 
 
 :::
 
+::: econos-diagram svgKey="priceFloorDiagramInteractive" label="Minimum unit pricing as a price floor" caption="Minimum unit pricing as a price floor: set above the market price, it cuts quantity demanded."
+:::
+
 ::: section eyebrow="The mechanism" color="blue" icon="target"
 
 ## Why per-unit pricing targets the harm

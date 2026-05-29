@@ -59,6 +59,9 @@ That last point is what turned behavioural economics from a critique into a tool
 
 :::
 
+::: econos-diagram svgKey="prospectTheoryDiagram" label="Prospect theory" caption="Prospect theory: losses loom larger than equivalent gains (loss aversion)."
+:::
+
 ::: section eyebrow="The big picture · biases and nudges" color="purple" icon="target"
 
 ## From biases to choice architecture

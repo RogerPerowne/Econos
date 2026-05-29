@@ -59,6 +59,9 @@ The exam consequence: you cannot apply the standard "competition will discipline
 
 :::
 
+::: econos-diagram svgKey="naturalMonopolyDiagram" label="A natural monopoly" caption="A natural monopoly: falling long-run average cost makes one firm the efficient scale."
+:::
+
 ::: section eyebrow="The big picture · why regulate at all" color="purple" icon="target"
 
 ## An unregulated natural monopoly overcharges and underinvests

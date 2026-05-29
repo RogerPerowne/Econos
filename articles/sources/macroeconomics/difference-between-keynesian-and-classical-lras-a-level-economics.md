@@ -50,6 +50,9 @@ The shape is not a stylistic choice. It encodes whether the economy can sit belo
 
 :::
 
+::: econos-diagram svgKey="lrasShiftDiagram" label="Long-run aggregate supply — the Classical vertical view versus the Keynesian curved view" caption="Long-run aggregate supply — the Classical vertical view versus the Keynesian curved view."
+:::
+
 ::: section eyebrow="The Classical view" color="purple" icon="target"
 
 ## A vertical line — markets clear, output returns to capacity

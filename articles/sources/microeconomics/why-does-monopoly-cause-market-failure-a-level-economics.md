@@ -48,6 +48,9 @@ The real failure is precise and it is the source of the marks: a monopoly sets *
 
 :::
 
+::: econos-diagram svgKey="monopolyDwl" label="Monopoly deadweight loss" caption="Monopoly deadweight loss: output below, and price above, the competitive level."
+:::
+
 ::: section eyebrow="The mechanism" color="purple" icon="target"
 
 ## Allocative inefficiency: price above marginal cost

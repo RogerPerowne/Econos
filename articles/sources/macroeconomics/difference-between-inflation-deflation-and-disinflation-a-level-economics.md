@@ -54,6 +54,9 @@ Only deflation means prices are actually falling. Inflation slowing is disinflat
 
 :::
 
+::: econos-diagram svgKey="demandPullDiagram" label="Demand-pull inflation" caption="Demand-pull inflation: AD shifts right along AS, raising the price level."
+:::
+
 ::: section eyebrow="The definitions, side by side" color="purple" icon="target"
 
 ## Level versus rate of change

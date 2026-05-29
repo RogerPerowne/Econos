@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.15.0 — 2026-05-29
+
+### Articles: a curated diagram on every article
+
+Every live article now carries a diagram. Fixed two that were still blank
+(balance of payments → the J-curve; market failure → the negative-
+externality diagram, both previously pointing at invalid/JS-only keys),
+and added curated diagrams to the ~31 articles that had none — natural
+monopoly (Thames Water), contestability (Octopus), the lemons model
+(2008 crisis), price floors (minimum wage / MUP), tax-type curves, PPF
+trade, prospect theory (behavioural), and AD-AS / demand worked examples
+on the exam-technique pieces. Built a render-score harness that counts
+visible geometry per diagram to catch blanks automatically; every key
+used is verified to render as a static image.
+
 ## 0.14.1 — 2026-05-29
 
 ### Articles: fix blank diagrams

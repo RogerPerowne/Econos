@@ -59,6 +59,9 @@ The standard A-level response offers two fixes — privatise the resource (creat
 
 :::
 
+::: econos-diagram svgKey="negExternalityInteractive" state="efficiency" label="The tragedy of the commons as a negative externality — over-use beyond the social optimum" caption="The tragedy of the commons as a negative externality — over-use beyond the social optimum."
+:::
+
 ::: section eyebrow="The mechanism · why the tragedy happens" color="purple" icon="target"
 
 ## Private gain, shared cost

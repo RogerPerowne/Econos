@@ -57,6 +57,9 @@ Students go wrong in two opposite directions. Some ignore the extract entirely a
 
 :::
 
+::: econos-diagram svgKey="demandInteractive" state="shift" label="A demand diagram of the kind a data-response extract asks you to apply" caption="A demand diagram of the kind a data-response extract asks you to apply."
+:::
+
 ::: section eyebrow="The move" color="purple" icon="target"
 
 ## Select, interpret, attach

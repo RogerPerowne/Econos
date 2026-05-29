@@ -55,6 +55,9 @@ The reason this matters is that the two can disagree. A country can be more prod
 
 :::
 
+::: econos-diagram svgKey="ppfTradeInteractive" label="Comparative advantage and the gains from trade on the production possibility frontier" caption="Comparative advantage and the gains from trade on the production possibility frontier."
+:::
+
 ::: section eyebrow="The big picture · the two-country example" color="purple" icon="target"
 
 ## A worked example: cloth and wine

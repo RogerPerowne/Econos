@@ -55,6 +55,9 @@ The clean way to separate them is to ask three questions: *Who controls it? What
 
 :::
 
+::: econos-diagram svgKey="adInteractive" state="shift" label="Both fiscal and monetary policy work by shifting aggregate demand" caption="Both fiscal and monetary policy work by shifting aggregate demand."
+:::
+
 ::: section eyebrow="The big picture · the transmission routes" color="purple" icon="target"
 
 ## How each one reaches aggregate demand

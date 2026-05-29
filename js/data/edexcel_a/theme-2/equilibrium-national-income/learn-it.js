@@ -329,7 +329,8 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  icon: '\u{1F465}', head: 'Per capita',   body: 'Divide by population to see what happens per person.' },
         { tone: 'purple', icon: '⚖️', head: 'Distribution', body: 'Averages can hide inequality and weak median incomes.' },
         { tone: 'green',  icon: '\u{1F343}', head: 'Sustainability', body: 'Depletion and pollution can make GDP look better than welfare.' },
-        { tone: 'blue',   icon: '\u{1F310}', head: 'PPP',          body: 'Use purchasing power parity for fairer cross-country comparisons.' }
+        { tone: 'blue',   icon: '\u{1F310}', head: 'PPP',          body: 'Use purchasing power parity for fairer cross-country comparisons.' },
+        { tone: 'rose',   icon: '\u{1F91D}', head: 'Non-market',   body: 'GDP misses unpaid work, household production and subsistence – welfare may be bigger than the number.' }
       ],
 
       flowTitle: 'Turn GDP into a judgement',

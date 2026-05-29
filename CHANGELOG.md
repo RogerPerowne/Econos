@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.15.3 — 2026-05-29
+
+### Articles: systematic diagram-review workflow + first fixes
+
+Replaced the ad-hoc spot-check with a repeatable workflow under `scripts/`:
+
+- `scripts/audit-diagrams.mjs` — renders every diagram in all 67 built
+  articles in a real browser (with CSS, honouring inherited opacity so
+  hidden interactive states do not false-positive) and flags blanks,
+  colliding `<text>` labels, and labels clipped outside the frame.
+- `scripts/render-charts.mjs` — renders each unique article diagram
+  (deduped by svgKey) in every interactive state to PNG for vision review.
+
+First fixes from the review, both swapping in the validated Learn It charts:
+
+- **Demand-pull inflation** — `demandPullDiagram` placed the second
+  equilibrium point off the AD₂∩SRAS intersection. Swapped the three
+  articles that used it (inflation; demand-pull vs cost-push; inflation
+  vs deflation vs disinflation) to the Learn It `adAsDemandPull`, where
+  both equilibria sit on their intersections.
+- **Keynesian vs Classical LRAS** — both the aggregate-supply article
+  (which showed an unrelated SRAS cross) and the dedicated
+  keynesian-vs-classical article (which showed only the Classical view)
+  now use the Learn It `lrasViewsInteractive` as an interactive
+  two-state chart (Classical vertical ↔ Keynesian reverse-L). Bridged the
+  SPA's `sv-show` layer scheme to the static-article `show-<state>`
+  scheme so the same SVG drives both. Bumped `sw.js` cache (icons.js).
+
 ## 0.15.2 — 2026-05-29
 
 ### Articles: monopoly cost-curve fix + monetary-policy interactive

@@ -59,7 +59,7 @@ The whole skill is reading the AD-AS diagram. Here is the difference.
 
 :::
 
-::: econos-diagram svgKey="demandPullDiagram" label="Demand-pull inflation" caption="Demand-pull inflation: AD shifts right, so the price level and output both rise."
+::: econos-diagram svgKey="adAsDemandPull" label="Demand-pull inflation" caption="Demand-pull inflation: AD shifts right, so the price level and output both rise."
 :::
 
 ::: section eyebrow="The big picture · two diagrams" color="purple" icon="target"

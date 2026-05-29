@@ -2748,7 +2748,7 @@
 
   /* === Card 4: diagnose === */
   function renderCardDiagnose(c) {
-    const tableRows = c.table.rows.map(row => `
+    const tableRows = (c.table && c.table.rows ? c.table.rows : []).map(row => `
       <tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>
     `).join('');
 
@@ -5528,7 +5528,7 @@
 
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'pes-five-frames' || c.template === 'worked-example' || c.template === 'ped-calculation' || c.template === 'pes-calculation' || c.template === 'yed-calculation' || c.template === 'xed-calculation' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold' || c.template === 'regulatory-capture-explorer' || c.template === 'welfare-gf-explorer') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'pes-five-frames' || c.template === 'worked-example' || c.template === 'ped-calculation' || c.template === 'pes-calculation' || c.template === 'yed-calculation' || c.template === 'xed-calculation' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold' || c.template === 'regulatory-capture-explorer' || c.template === 'welfare-gf-explorer' || c.template === 'diagnose' || c.template === 'puzzle') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows – they fall through to the switch and get dedicated renderers.
     return !!(

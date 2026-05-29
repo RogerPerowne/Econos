@@ -59,6 +59,9 @@ Get the structure right once and every 25-marker becomes the same shape with dif
 
 :::
 
+::: econos-diagram svgKey="adInteractive" state="shift" label="A worked AD-AS diagram of the kind a 25-mark macro answer builds its analysis around" caption="A worked AD-AS diagram of the kind a 25-mark macro answer builds its analysis around."
+:::
+
 ::: section eyebrow="The plan" color="purple" icon="bulb"
 
 ## Five minutes of planning saves the whole answer

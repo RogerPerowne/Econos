@@ -59,6 +59,9 @@ The trap is to treat the BCR as objective. The number is only as good as the val
 
 :::
 
+::: econos-diagram svgKey="posExternalityInteractive" state="efficiency" label="Infrastructure with positive externalities" caption="Infrastructure with positive externalities: the social optimum lies beyond the private market output."
+:::
+
 ::: section eyebrow="The mechanism · how the appraisal moves" color="purple" icon="target"
 
 ## Why the same project gets a different verdict over time

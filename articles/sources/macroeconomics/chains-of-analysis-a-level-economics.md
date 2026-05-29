@@ -57,6 +57,9 @@ A chain of analysis links a *cause* to a final *outcome* by spelling out the ste
 
 :::
 
+::: econos-diagram svgKey="adInteractive" state="shift" label="A chain of analysis traced on the AD-AS diagram" caption="A chain of analysis traced on the AD-AS diagram."
+:::
+
 ::: section eyebrow="Why the links matter" color="purple" icon="bulb"
 
 ## Marks live in the links, not the destination

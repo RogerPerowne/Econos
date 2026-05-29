@@ -59,6 +59,9 @@ So a market with only a handful of big firms — an oligopoly on the headcount �
 
 :::
 
+::: econos-diagram svgKey="contestabilityDiagram" label="Contestable markets" caption="Contestable markets: the threat of entry disciplines incumbent pricing."
+:::
+
 ::: section eyebrow="The mechanism · how the threat works" color="purple" icon="target"
 
 ## Hit-and-run entry disciplines incumbents

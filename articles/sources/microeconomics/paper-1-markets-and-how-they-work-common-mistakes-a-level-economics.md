@@ -57,6 +57,9 @@ This guide is not new theory. It is the list of recurring Paper 1 mistakes and t
 
 :::
 
+::: econos-diagram svgKey="demandInteractive" state="shift" label="A demand diagram — the kind Paper 1 expects you to draw and label correctly" caption="A demand diagram — the kind Paper 1 expects you to draw and label correctly."
+:::
+
 ::: section eyebrow="Mistake 1" color="purple" icon="scale"
 
 ## Shift versus movement — the diagram error

@@ -59,6 +59,9 @@ In economic terms, a regulator decided the gig labour market was not a clean mee
 
 :::
 
+::: econos-diagram svgKey="priceFloorDiagramInteractive" label="A wage floor in the labour market" caption="A wage floor in the labour market: set above equilibrium, it creates excess supply of labour."
+:::
+
 ::: section eyebrow="The mechanism" color="blue" icon="target"
 
 ## Competitive market or monopsony?

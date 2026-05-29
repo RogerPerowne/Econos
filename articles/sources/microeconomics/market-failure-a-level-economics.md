@@ -70,7 +70,7 @@ A complete market-failure answer names which cause is at work, draws the welfare
 
 :::
 
-::: econos-diagram svgKey="marketFailureOverview" label="The main forms of market failure and where the price mechanism misallocates resources." caption="The main forms of market failure and where the price mechanism misallocates resources."
+::: econos-diagram svgKey="negExternalityInteractive" state="efficiency" label="A negative externality — the classic market failure" caption="A negative externality — the classic market failure: MSC above MPC, over-production, and the deadweight welfare loss."
 :::
 
 ::: section eyebrow="Externalities — the most-examined cause" color="blue" icon="target"

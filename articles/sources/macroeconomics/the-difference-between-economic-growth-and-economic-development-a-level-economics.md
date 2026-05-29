@@ -53,6 +53,9 @@ Growth feeds development — more output can fund schools, hospitals and infrast
 
 :::
 
+::: econos-diagram svgKey="ppfMovesInteractive" state="outward" label="Economic growth as an outward shift of the PPF (development is broader than this)" caption="Economic growth as an outward shift of the PPF (development is broader than this)."
+:::
+
 ::: section eyebrow="The big picture · measuring development" color="purple" icon="globe"
 
 ## Why one number isn't enough — and the HDI

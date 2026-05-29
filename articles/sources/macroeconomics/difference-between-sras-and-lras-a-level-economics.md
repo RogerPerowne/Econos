@@ -52,6 +52,9 @@ Because they answer different questions, different things shift them. A spike in
 
 :::
 
+::: econos-diagram svgKey="srasShiftInteractive" label="Short-run aggregate supply and how it shifts, distinct from long-run AS" caption="Short-run aggregate supply and how it shifts, distinct from long-run AS."
+:::
+
 ::: section eyebrow="SRAS — the cost curve" color="purple" icon="target"
 
 ## Short-run aggregate supply slopes up because costs are sticky

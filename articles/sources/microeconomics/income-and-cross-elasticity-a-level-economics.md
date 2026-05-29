@@ -63,6 +63,9 @@ The single most important habit on this topic is to **read the sign before the s
 
 :::
 
+::: econos-diagram svgKey="shiftsInteractive" label="Income and cross elasticity work through shifts of the demand curve" caption="Income and cross elasticity work through shifts of the demand curve."
+:::
+
 ::: section eyebrow="The big picture · YED" color="purple" icon="target"
 
 ## Normal, inferior, luxury — all set by the sign and size

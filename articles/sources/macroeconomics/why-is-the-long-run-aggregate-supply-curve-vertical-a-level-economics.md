@@ -53,6 +53,9 @@ So the vertical LRAS is really a claim about cause and effect: in the long run, 
 
 :::
 
+::: econos-diagram svgKey="lrasShiftDiagram" label="The Classical long-run aggregate supply curve, vertical at the full-employment level of output" caption="The Classical long-run aggregate supply curve, vertical at the full-employment level of output."
+:::
+
 ::: section eyebrow="The big picture · the Classical argument" color="purple" icon="target"
 
 ## Why the long run forces the curve upright

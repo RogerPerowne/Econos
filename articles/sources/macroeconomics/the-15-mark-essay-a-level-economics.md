@@ -57,6 +57,9 @@ So the structure does not change. What changes is *scope*. You have fewer marks,
 
 :::
 
+::: econos-diagram svgKey="adInteractive" state="shift" label="The AD-AS diagram underpinning a 15-mark macro answer" caption="The AD-AS diagram underpinning a 15-mark macro answer."
+:::
+
 ::: section eyebrow="What changes" color="purple" icon="bulb"
 
 ## Cut the breadth, keep the depth

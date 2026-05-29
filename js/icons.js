@@ -17139,44 +17139,112 @@ window.ECONOS_ICONS = {
      ============================================================ */
 
   /* Card 1 — Beyond GDP: hub-and-spoke scorecard.
-     Central GDP card with 4 satellite cards (Distribution, Composition,
-     Sustainability, Wellbeing) connected by short dashed lines. The
-     central GDP card is visually emphasised; satellites are tone-coded
-     by their dimension. */
+     HTML grid for layout, inline SVG for the gauge dials and the
+     central connector lines. The four corner tiles carry a full
+     dimension story (title + gauge + description + exam note); the
+     centre overlay carries the headline measure. Set line-height
+     back to 1.5 because the engine wraps visualKey HTML in a
+     line-height:0 div. A scoped <style> block handles the mobile
+     fallback — below 560 px the 2x2 grid collapses to a single
+     column and the centre circle stops floating absolutely. */
   growthScorecard: `
-    <div style="background:#fff;border-radius:14px;padding:14px;">
-      <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- Connector lines (drawn first so cards sit on top) -->
-        <line x1="320" y1="82" x2="320" y2="130" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
-        <line x1="320" y1="258" x2="320" y2="210" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
-        <line x1="190" y1="170" x2="235" y2="170" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
-        <line x1="405" y1="170" x2="450" y2="170" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
-        <!-- Top: Sustainability (amber) -->
-        <rect x="250" y="18" width="140" height="64" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
-        <text x="320" y="40" font-size="11" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">SUSTAINABILITY</text>
-        <text x="320" y="58" font-size="20" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">\u{1F343}</text>
-        <text x="320" y="75" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Will it last?</text>
-        <!-- Left: Distribution (purple) -->
-        <rect x="50" y="138" width="140" height="64" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
-        <text x="120" y="160" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">DISTRIBUTION</text>
-        <text x="120" y="178" font-size="20" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">\u{2696}\u{FE0F}</text>
-        <text x="120" y="195" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Who gets the gains?</text>
-        <!-- Centre: Real GDP per capita (blue, emphasised) -->
-        <rect x="235" y="130" width="170" height="80" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
-        <text x="320" y="153" font-size="11.5" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">REAL GDP PER CAPITA</text>
-        <text x="320" y="180" font-size="22" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">+2.0% / yr</text>
-        <text x="320" y="198" font-size="11" font-style="italic" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">the headline rate</text>
-        <!-- Right: Composition (slate) -->
-        <rect x="450" y="138" width="140" height="64" rx="10" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
-        <text x="520" y="160" font-size="11" font-weight="800" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">COMPOSITION</text>
-        <text x="520" y="178" font-size="20" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle">\u{1F3E5}</text>
-        <text x="520" y="195" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">What does GDP buy?</text>
-        <!-- Bottom: Wellbeing (rose) -->
-        <rect x="250" y="258" width="140" height="64" rx="10" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
-        <text x="320" y="280" font-size="11" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">WELLBEING</text>
-        <text x="320" y="298" font-size="20" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">\u{1F60A}</text>
-        <text x="320" y="315" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Does life feel better?</text>
-      </svg>
+    <div class="growth-scorecard" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .growth-scorecard .gs-grid { display:grid; grid-template-columns:1fr 1fr; column-gap:170px; row-gap:18px; position:relative; z-index:1; }
+        .growth-scorecard .gs-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .growth-scorecard .gs-connectors { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        @media (max-width: 560px) {
+          .growth-scorecard .gs-grid { grid-template-columns:1fr; column-gap:0; row-gap:14px; }
+          .growth-scorecard .gs-center { position:static; transform:none; margin:6px auto; width:140px !important; height:140px !important; }
+          .growth-scorecard .gs-center-wrap { order:99; display:flex; justify-content:center; }
+          .growth-scorecard .gs-connectors { display:none; }
+        }
+      </style>
+      <div style="position:relative;max-width:720px;margin:0 auto;">
+        <!-- Dashed connector lines (background layer) -->
+        <svg class="gs-connectors" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="32" y1="32" x2="50" y2="50" stroke="#CBD5E1" stroke-width="0.25" stroke-dasharray="0.8 0.8"/>
+          <line x1="68" y1="32" x2="50" y2="50" stroke="#CBD5E1" stroke-width="0.25" stroke-dasharray="0.8 0.8"/>
+          <line x1="32" y1="68" x2="50" y2="50" stroke="#CBD5E1" stroke-width="0.25" stroke-dasharray="0.8 0.8"/>
+          <line x1="68" y1="68" x2="50" y2="50" stroke="#CBD5E1" stroke-width="0.25" stroke-dasharray="0.8 0.8"/>
+        </svg>
+        <!-- 2x2 grid of corner tiles. Large horizontal gap leaves a clear gutter
+             for the central circle so it never overlaps the corner exam-notes. -->
+        <div class="gs-grid">
+          <!-- TL: Distribution (purple) -->
+          <div style="background:#FAF5FF;border:1.5px solid #C4B5FD;border-radius:12px;padding:12px 14px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+              <svg viewBox="0 0 80 50" width="60" height="38" style="flex:none;">
+                <path d="M8 42 A 32 32 0 0 1 24 14" stroke="#FCA5A5" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M24 14 A 32 32 0 0 1 56 14" stroke="#FCD34D" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M56 14 A 32 32 0 0 1 72 42" stroke="#86EFAC" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <line x1="40" y1="42" x2="16.5" y2="33.5" stroke="#5B21B6" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="40" cy="42" r="3" fill="#5B21B6"/>
+              </svg>
+              <div style="font-size:13px;font-weight:800;color:#5B21B6;letter-spacing:0.04em;text-transform:uppercase;">Distribution</div>
+            </div>
+            <div style="font-size:12.5px;color:#334155;margin-bottom:6px;">Who gets the gains?</div>
+            <div style="font-size:11.5px;font-style:italic;color:#5B21B6;line-height:1.4;"><strong style="font-style:normal;">Exam note:</strong> UK top-1% share rose 12% &rarr; 14% (2010-19) while bottom-decile real wages rose just 4%.</div>
+          </div>
+          <!-- TR: Composition (amber) -->
+          <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:12px;padding:12px 14px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+              <svg viewBox="0 0 80 50" width="60" height="38" style="flex:none;">
+                <path d="M8 42 A 32 32 0 0 1 24 14" stroke="#FCA5A5" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M24 14 A 32 32 0 0 1 56 14" stroke="#FCD34D" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M56 14 A 32 32 0 0 1 72 42" stroke="#86EFAC" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <line x1="40" y1="42" x2="40" y2="17" stroke="#B45309" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="40" cy="42" r="3" fill="#B45309"/>
+              </svg>
+              <div style="font-size:13px;font-weight:800;color:#B45309;letter-spacing:0.04em;text-transform:uppercase;">Composition</div>
+            </div>
+            <div style="font-size:12.5px;color:#334155;margin-bottom:6px;">What does GDP buy?</div>
+            <div style="font-size:11.5px;font-style:italic;color:#B45309;line-height:1.4;"><strong style="font-style:normal;">Exam note:</strong> Healthcare, education and R&amp;D vs. arms or fossil-fuel spend produce very different welfare per &pound;.</div>
+          </div>
+          <!-- BL: Sustainability (green) -->
+          <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:12px;padding:12px 14px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+              <svg viewBox="0 0 80 50" width="60" height="38" style="flex:none;">
+                <path d="M8 42 A 32 32 0 0 1 24 14" stroke="#FCA5A5" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M24 14 A 32 32 0 0 1 56 14" stroke="#FCD34D" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M56 14 A 32 32 0 0 1 72 42" stroke="#86EFAC" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <line x1="40" y1="42" x2="18.4" y2="29.5" stroke="#065F46" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="40" cy="42" r="3" fill="#065F46"/>
+              </svg>
+              <div style="font-size:13px;font-weight:800;color:#065F46;letter-spacing:0.04em;text-transform:uppercase;">Sustainability</div>
+            </div>
+            <div style="font-size:12.5px;color:#334155;margin-bottom:6px;">Will it last?</div>
+            <div style="font-size:11.5px;font-style:italic;color:#065F46;line-height:1.4;"><strong style="font-style:normal;">Exam note:</strong> Growth that depletes natural capital or breaches the carbon budget borrows welfare from the future.</div>
+          </div>
+          <!-- BR: Wellbeing (rose) -->
+          <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:12px;padding:12px 14px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+              <svg viewBox="0 0 80 50" width="60" height="38" style="flex:none;">
+                <path d="M8 42 A 32 32 0 0 1 24 14" stroke="#FCA5A5" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M24 14 A 32 32 0 0 1 56 14" stroke="#FCD34D" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M56 14 A 32 32 0 0 1 72 42" stroke="#86EFAC" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <line x1="40" y1="42" x2="31.4" y2="18.5" stroke="#9F1239" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="40" cy="42" r="3" fill="#9F1239"/>
+              </svg>
+              <div style="font-size:13px;font-weight:800;color:#9F1239;letter-spacing:0.04em;text-transform:uppercase;">Wellbeing</div>
+            </div>
+            <div style="font-size:12.5px;color:#334155;margin-bottom:6px;">Does life feel better?</div>
+            <div style="font-size:11.5px;font-style:italic;color:#9F1239;line-height:1.4;"><strong style="font-style:normal;">Exam note:</strong> Easterlin paradox &mdash; past ~&pound;30k GDP/capita, life-satisfaction stops tracking GDP.</div>
+          </div>
+        </div>
+        <!-- Central overlay: Real GDP card (sits in the column gutter, no overlap). -->
+        <div class="gs-center-wrap"><div class="gs-center" style="background:#fff;border:2.4px solid #2563EB;border-radius:50%;width:160px;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 14px rgba(37,99,235,0.18);">
+          <div style="font-size:10.5px;font-weight:800;color:#1E3A8A;letter-spacing:0.06em;text-transform:uppercase;text-align:center;line-height:1.25;">Real GDP per capita growth</div>
+          <svg viewBox="0 0 80 50" width="76" height="46" style="margin:6px 0 4px;">
+            <path d="M8 42 A 32 32 0 0 1 24 14" stroke="#FCA5A5" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M24 14 A 32 32 0 0 1 56 14" stroke="#FCD34D" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M56 14 A 32 32 0 0 1 72 42" stroke="#86EFAC" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <line x1="40" y1="42" x2="44.3" y2="17.4" stroke="#1E3A8A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="40" cy="42" r="3.2" fill="#1E3A8A"/>
+          </svg>
+          <div style="font-size:10px;font-style:italic;color:#475569;text-align:center;line-height:1.3;">The headline measure</div>
+        </div></div>
+      </div>
     </div>
   `,
 

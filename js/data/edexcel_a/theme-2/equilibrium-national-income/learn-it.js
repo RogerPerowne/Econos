@@ -5,13 +5,15 @@
    Spec: Edexcel A 2.4.3 + 2.5.2
    ============================================================ */
 
-/* Mini chart: AD shifts right (boom, green theme).
+/* Mini chart: AD shifts right (boom).
+   House rules: AD always BLUE; shift keeps colour, only old=dashed/new=solid.
    Plot x:[40,300] y:[20,170].
    SRAS BLACK upward (55,165)→(290,35) slope -0.553.
    AD₁ BLUE DASHED (55% opacity) downward (50,50)→(250,170) slope +0.6.
-   AD₂ GREEN SOLID, parallel-shifted +50: (100,50)→(300,170) slope +0.6.
+   AD₂ BLUE SOLID, parallel-shifted +50: (100,50)→(300,170) slope +0.6.
    Old eq (SRAS×AD₁): (152, 111). New eq (SRAS×AD₂): (178, 97).
-   Y₂ > Y₁ ✓, P₂ > P₁ ✓ (lower SVG y = higher visually). */
+   Y₂ > Y₁ ✓, P₂ > P₁ ✓ (lower SVG y = higher visually).
+   Shift arrow stays green as a section-theme accent (not a curve). */
 const ENI_MINI_CHART_BOOM = `
   <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
     <line x1="40" y1="170" x2="305" y2="170" stroke="#94A3B8" stroke-width="1.2"/>
@@ -23,15 +25,15 @@ const ENI_MINI_CHART_BOOM = `
     <line x1="55" y1="165" x2="290" y2="35" stroke="#0B1426" stroke-width="2"/>
     <text x="294" y="38" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
     <line x1="50" y1="50" x2="250" y2="170" stroke="#2563EB" stroke-width="2" stroke-dasharray="4 3" opacity="0.55"/>
-    <text x="230" y="180" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.7">AD₁</text>
-    <line x1="100" y1="50" x2="300" y2="170" stroke="#16A34A" stroke-width="2.4"/>
-    <text x="282" y="180" font-size="10" fill="#16A34A" font-family="Inter,sans-serif" font-weight="700">AD₂</text>
+    <text x="245" y="158" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">AD₁</text>
+    <line x1="100" y1="50" x2="300" y2="170" stroke="#2563EB" stroke-width="2.2"/>
+    <text x="298" y="160" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD₂</text>
     <line x1="152" y1="111" x2="152" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
     <line x1="152" y1="111" x2="40" y2="111" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
     <line x1="178" y1="97" x2="178" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
     <line x1="178" y1="97" x2="40" y2="97" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
     <circle cx="152" cy="111" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-    <circle cx="178" cy="97" r="3.8" fill="#fff" stroke="#16A34A" stroke-width="2"/>
+    <circle cx="178" cy="97" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
     <text x="22" y="115" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₁</text>
     <text x="22" y="100" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₂</text>
     <text x="146" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₁</text>
@@ -42,13 +44,15 @@ const ENI_MINI_CHART_BOOM = `
     </defs>
   </svg>`;
 
-/* Mini chart: SRAS shifts left (oil shock, amber theme).
+/* Mini chart: SRAS shifts left (oil shock).
+   House rules: SRAS always BLACK; shift keeps colour, only old=dashed/new=solid.
    Plot x:[40,300] y:[20,170].
    AD BLUE solid downward (50,50)→(290,170) slope +0.5 (unchanged).
    SRAS₁ BLACK DASHED upward (100,165)→(290,35) slope -0.684.
-   SRAS₂ AMBER SOLID, shifted -50: (50,165)→(240,35) slope -0.684.
+   SRAS₂ BLACK SOLID, shifted -50: (50,165)→(240,35) slope -0.684.
    Old eq (AD×SRAS₁): (176, 113). New eq (AD×SRAS₂): (147, 99).
-   Y₂ < Y₁ ✓, P₂ > P₁ ✓. */
+   Y₂ < Y₁ ✓, P₂ > P₁ ✓.
+   Shift arrow stays amber as a section-theme accent (not a curve). */
 const ENI_MINI_CHART_OIL = `
   <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
     <line x1="40" y1="170" x2="305" y2="170" stroke="#94A3B8" stroke-width="1.2"/>
@@ -58,9 +62,9 @@ const ENI_MINI_CHART_OIL = `
     <text x="22" y="30" font-size="11" fill="#475569" font-family="Inter,sans-serif">P</text>
     <text x="298" y="188" font-size="11" fill="#475569" font-family="Inter,sans-serif">Y</text>
     <line x1="100" y1="165" x2="290" y2="35" stroke="#0B1426" stroke-width="2" stroke-dasharray="4 3" opacity="0.55"/>
-    <text x="290" y="38" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="600" opacity="0.7">SRAS₁</text>
-    <line x1="50" y1="165" x2="240" y2="35" stroke="#F59E0B" stroke-width="2.4"/>
-    <text x="244" y="38" font-size="10" fill="#F59E0B" font-family="Inter,sans-serif" font-weight="700">SRAS₂</text>
+    <text x="292" y="28" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">SRAS₁</text>
+    <line x1="50" y1="165" x2="240" y2="35" stroke="#0B1426" stroke-width="2.2"/>
+    <text x="244" y="28" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS₂</text>
     <line x1="50" y1="50" x2="290" y2="170" stroke="#2563EB" stroke-width="2"/>
     <text x="294" y="178" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
     <line x1="176" y1="113" x2="176" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
@@ -68,7 +72,7 @@ const ENI_MINI_CHART_OIL = `
     <line x1="147" y1="99" x2="147" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
     <line x1="147" y1="99" x2="40" y2="99" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
     <circle cx="176" cy="113" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-    <circle cx="147" cy="99" r="3.8" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="147" cy="99" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
     <text x="22" y="117" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₁</text>
     <text x="22" y="103" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₂</text>
     <text x="141" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₂</text>

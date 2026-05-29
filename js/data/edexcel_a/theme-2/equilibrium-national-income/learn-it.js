@@ -5,63 +5,77 @@
    Spec: Edexcel A 2.4.3 + 2.5.2
    ============================================================ */
 
+/* Mini chart: AD shifts right (boom, green theme).
+   Plot x:[40,300] y:[20,170].
+   SRAS BLACK upward (55,165)→(290,35) slope -0.553.
+   AD₁ BLUE DASHED (55% opacity) downward (50,50)→(250,170) slope +0.6.
+   AD₂ GREEN SOLID, parallel-shifted +50: (100,50)→(300,170) slope +0.6.
+   Old eq (SRAS×AD₁): (152, 111). New eq (SRAS×AD₂): (178, 97).
+   Y₂ > Y₁ ✓, P₂ > P₁ ✓ (lower SVG y = higher visually). */
 const ENI_MINI_CHART_BOOM = `
-  <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-    <line x1="40" y1="170" x2="300" y2="170" stroke="#94A3B8" stroke-width="1.2"/>
+  <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+    <line x1="40" y1="170" x2="305" y2="170" stroke="#94A3B8" stroke-width="1.2"/>
     <line x1="40" y1="170" x2="40" y2="20" stroke="#94A3B8" stroke-width="1.2"/>
-    <polygon points="300,170 295,167 295,173" fill="#94A3B8"/>
-    <polygon points="40,20 37,25 43,25" fill="#94A3B8"/>
-    <text x="20" y="30" font-size="11" fill="#475569" font-family="Inter,sans-serif">P</text>
-    <text x="295" y="190" font-size="11" fill="#475569" font-family="Inter,sans-serif">Y</text>
-    <line x1="60" y1="40" x2="280" y2="160" stroke="#0B1426" stroke-width="2"/>
-    <text x="282" y="158" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="600">SRAS</text>
-    <line x1="60" y1="40" x2="240" y2="170" stroke="#2563EB" stroke-width="2" stroke-dasharray="3 3" opacity="0.55"/>
-    <text x="120" y="155" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.7">AD₁</text>
-    <line x1="110" y1="40" x2="290" y2="170" stroke="#16A34A" stroke-width="2.2"/>
-    <text x="270" y="60" font-size="11" fill="#16A34A" font-family="Inter,sans-serif" font-weight="600">AD₂</text>
-    <circle cx="148" cy="113" r="3.5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-    <circle cx="186" cy="95"  r="3.5" fill="#fff" stroke="#16A34A" stroke-width="2"/>
-    <line x1="148" y1="113" x2="148" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-    <line x1="186" y1="95"  x2="186" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-    <line x1="148" y1="113" x2="40" y2="113" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-    <line x1="186" y1="95"  x2="40" y2="95"  stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-    <text x="22" y="116" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₁</text>
-    <text x="22" y="98"  font-size="10" fill="#475569" font-family="Inter,sans-serif">P₂</text>
-    <text x="142" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₁</text>
-    <text x="180" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₂</text>
-    <path d="M170 50 L210 50" stroke="#16A34A" stroke-width="2" marker-end="url(#eni-arrow-green)"/>
+    <polygon points="305,170 298,167 298,173" fill="#94A3B8"/>
+    <polygon points="40,20 36,27 44,27" fill="#94A3B8"/>
+    <text x="22" y="30" font-size="11" fill="#475569" font-family="Inter,sans-serif">P</text>
+    <text x="298" y="188" font-size="11" fill="#475569" font-family="Inter,sans-serif">Y</text>
+    <line x1="55" y1="165" x2="290" y2="35" stroke="#0B1426" stroke-width="2"/>
+    <text x="294" y="38" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
+    <line x1="50" y1="50" x2="250" y2="170" stroke="#2563EB" stroke-width="2" stroke-dasharray="4 3" opacity="0.55"/>
+    <text x="230" y="180" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.7">AD₁</text>
+    <line x1="100" y1="50" x2="300" y2="170" stroke="#16A34A" stroke-width="2.4"/>
+    <text x="282" y="180" font-size="10" fill="#16A34A" font-family="Inter,sans-serif" font-weight="700">AD₂</text>
+    <line x1="152" y1="111" x2="152" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="152" y1="111" x2="40" y2="111" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="178" y1="97" x2="178" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="178" y1="97" x2="40" y2="97" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="152" cy="111" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+    <circle cx="178" cy="97" r="3.8" fill="#fff" stroke="#16A34A" stroke-width="2"/>
+    <text x="22" y="115" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₁</text>
+    <text x="22" y="100" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₂</text>
+    <text x="146" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₁</text>
+    <text x="172" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₂</text>
+    <path d="M155 68 L200 68" stroke="#16A34A" stroke-width="2.2" marker-end="url(#eni-arrow-green-boom)"/>
     <defs>
-      <marker id="eni-arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#16A34A"/></marker>
+      <marker id="eni-arrow-green-boom" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#16A34A"/></marker>
     </defs>
   </svg>`;
 
+/* Mini chart: SRAS shifts left (oil shock, amber theme).
+   Plot x:[40,300] y:[20,170].
+   AD BLUE solid downward (50,50)→(290,170) slope +0.5 (unchanged).
+   SRAS₁ BLACK DASHED upward (100,165)→(290,35) slope -0.684.
+   SRAS₂ AMBER SOLID, shifted -50: (50,165)→(240,35) slope -0.684.
+   Old eq (AD×SRAS₁): (176, 113). New eq (AD×SRAS₂): (147, 99).
+   Y₂ < Y₁ ✓, P₂ > P₁ ✓. */
 const ENI_MINI_CHART_OIL = `
-  <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-    <line x1="40" y1="170" x2="300" y2="170" stroke="#94A3B8" stroke-width="1.2"/>
+  <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+    <line x1="40" y1="170" x2="305" y2="170" stroke="#94A3B8" stroke-width="1.2"/>
     <line x1="40" y1="170" x2="40" y2="20" stroke="#94A3B8" stroke-width="1.2"/>
-    <polygon points="300,170 295,167 295,173" fill="#94A3B8"/>
-    <polygon points="40,20 37,25 43,25" fill="#94A3B8"/>
-    <text x="20" y="30" font-size="11" fill="#475569" font-family="Inter,sans-serif">P</text>
-    <text x="295" y="190" font-size="11" fill="#475569" font-family="Inter,sans-serif">Y</text>
-    <line x1="80" y1="40" x2="290" y2="160" stroke="#0B1426" stroke-width="1.8" opacity="0.5"/>
-    <text x="285" y="156" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" opacity="0.55">SRAS₁</text>
-    <line x1="40" y1="40" x2="250" y2="160" stroke="#F59E0B" stroke-width="2.2"/>
-    <text x="232" y="48" font-size="11" fill="#F59E0B" font-family="Inter,sans-serif" font-weight="600">SRAS₂</text>
-    <line x1="60" y1="40" x2="290" y2="170" stroke="#2563EB" stroke-width="2"/>
-    <text x="265" y="180" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600">AD</text>
-    <circle cx="188" cy="115" r="3.5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-    <circle cx="158" cy="98"  r="3.5" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
-    <line x1="188" y1="115" x2="188" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-    <line x1="158" y1="98"  x2="158" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-    <line x1="188" y1="115" x2="40" y2="115" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-    <line x1="158" y1="98"  x2="40" y2="98"  stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-    <text x="22" y="118" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₁</text>
-    <text x="22" y="101" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₂</text>
-    <text x="152" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₂</text>
-    <text x="182" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₁</text>
-    <path d="M155 55 L115 55" stroke="#F59E0B" stroke-width="2" marker-end="url(#eni-arrow-amber)"/>
+    <polygon points="305,170 298,167 298,173" fill="#94A3B8"/>
+    <polygon points="40,20 36,27 44,27" fill="#94A3B8"/>
+    <text x="22" y="30" font-size="11" fill="#475569" font-family="Inter,sans-serif">P</text>
+    <text x="298" y="188" font-size="11" fill="#475569" font-family="Inter,sans-serif">Y</text>
+    <line x1="100" y1="165" x2="290" y2="35" stroke="#0B1426" stroke-width="2" stroke-dasharray="4 3" opacity="0.55"/>
+    <text x="290" y="38" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="600" opacity="0.7">SRAS₁</text>
+    <line x1="50" y1="165" x2="240" y2="35" stroke="#F59E0B" stroke-width="2.4"/>
+    <text x="244" y="38" font-size="10" fill="#F59E0B" font-family="Inter,sans-serif" font-weight="700">SRAS₂</text>
+    <line x1="50" y1="50" x2="290" y2="170" stroke="#2563EB" stroke-width="2"/>
+    <text x="294" y="178" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+    <line x1="176" y1="113" x2="176" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="176" y1="113" x2="40" y2="113" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="147" y1="99" x2="147" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="147" y1="99" x2="40" y2="99" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="176" cy="113" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+    <circle cx="147" cy="99" r="3.8" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+    <text x="22" y="117" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₁</text>
+    <text x="22" y="103" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₂</text>
+    <text x="141" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₂</text>
+    <text x="170" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₁</text>
+    <path d="M195 68 L150 68" stroke="#F59E0B" stroke-width="2.2" marker-end="url(#eni-arrow-amber-oil)"/>
     <defs>
-      <marker id="eni-arrow-amber" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#F59E0B"/></marker>
+      <marker id="eni-arrow-amber-oil" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#F59E0B"/></marker>
     </defs>
   </svg>`;
 
@@ -124,6 +138,7 @@ window.ECONOS_TOPIC = {
       visualLabel: 'Two diagrams – same answer',
       visualEmoji: '⚖️',
 
+      pairFirst: true,
       pairLabel: 'What if the economy is off equilibrium?',
       pairEmoji: '\u{1F53A}',
       left: {
@@ -184,6 +199,7 @@ window.ECONOS_TOPIC = {
       visualLabel: 'The core diagram',
       visualEmoji: '⚖️',
 
+      pairFirst: true,
       pairLabel: 'Two shocks, two outcomes',
       pairEmoji: '\u{1F53A}',
       left: {
@@ -246,6 +262,7 @@ window.ECONOS_TOPIC = {
       visualLabel: 'Two types of gap',
       visualEmoji: '⚖️',
 
+      pairFirst: true,
       pairLabel: 'Classical vs Keynesian',
       pairEmoji: '\u{1F465}',
       left: {
@@ -312,7 +329,14 @@ window.ECONOS_TOPIC = {
         { tone: 'blue', icon: '3', title: 'Make a welfare judgement', sub: '' }
       ],
 
-      bottomTip: { tone: 'slate', icon: '\u{1F50D}', text: '<strong>Quick example – Country A: GDP up 4%.</strong> Inflation high → real growth ≈ 1%. Population rising → per-capita growth ≈ 0.2%. Gains concentrated at the top → median incomes barely move. <strong>Conclusion:</strong> welfare may have improved by much less than 4%.' },
+      causes2Label: 'Quick example',
+      causes2Emoji: '\u{1F50D}',
+      causes2Cols: 3,
+      causes2: [
+        { tone: 'slate',  icon: '\u{1F4CA}', head: 'Country A: GDP up 4%', body: 'Headline figure – needs unpacking by the filters.' },
+        { tone: 'blue',   icon: '\u{1F4C8}', head: 'Real growth ≈ 1%',     body: 'Inflation is high. Population is rising, so per capita ≈ 0.2%.' },
+        { tone: 'purple', icon: '\u{279C}',  head: 'Welfare ≪ 4%',    body: 'Gains concentrated at the top mean median incomes barely move – welfare improved by much less than 4%.' }
+      ],
 
       conclusionPosition: 'end',
       conclusion: {

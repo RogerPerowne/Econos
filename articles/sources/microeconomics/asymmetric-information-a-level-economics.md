@@ -10,7 +10,7 @@ spec:
   ocr: "2.9"
 keywords: [asymmetric information, market for lemons, Akerlof, adverse selection, moral hazard, information gap, market failure, information failure]
 read_minutes: 11
-status: draft
+status: live
 published: 2026-05-28
 modified: 2026-05-28
 questions:

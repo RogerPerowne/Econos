@@ -10,7 +10,7 @@ spec:
   ocr: "4.2"
 keywords: [marginal revenue, average revenue, monopoly, MR below AR, downward sloping demand, price maker, MR curve, total revenue, profit maximisation]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: monopoly

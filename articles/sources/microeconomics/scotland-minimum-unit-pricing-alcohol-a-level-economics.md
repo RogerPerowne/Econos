@@ -10,7 +10,7 @@ spec:
   ocr: "2.11"
 keywords: [minimum unit pricing, MUP, alcohol, minimum price, price floor, Scotland, government intervention, negative externality, demerit good, A-level economics]
 read_minutes: 9
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

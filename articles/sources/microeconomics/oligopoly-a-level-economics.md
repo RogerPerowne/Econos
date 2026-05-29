@@ -10,7 +10,7 @@ spec:
   ocr: "4.4"
 keywords: [oligopoly, kinked demand curve, price rigidity, interdependence, game theory, prisoner's dilemma, collusion, non-price competition]
 read_minutes: 12
-status: draft
+status: live
 published: 2026-05-28
 modified: 2026-05-28
 questions:

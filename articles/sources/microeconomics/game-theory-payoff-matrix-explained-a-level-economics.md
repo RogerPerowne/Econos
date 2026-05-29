@@ -10,7 +10,7 @@ spec:
   ocr: null
 keywords: [game theory payoff matrix, prisoner's dilemma, Nash equilibrium, dominant strategy, collusion, oligopoly, cartel breakdown, A-level economics diagram, reading a payoff matrix]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: game-theory

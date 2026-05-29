@@ -10,7 +10,7 @@ spec:
   ocr: "AO1-AO4"
 keywords: [25 mark question, Edexcel A economics essay, KAA, evaluation, supported judgement, AO3, AO4, exam technique, A-level economics, mark scheme levels]
 read_minutes: 8
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

@@ -10,7 +10,7 @@ spec:
   ocr: "3.2"
 keywords: [Bank of England, Bank Rate, monetary policy, interest rates, 2022, 2023, CPI inflation, transmission mechanism, time lag, MPC, A-level economics]
 read_minutes: 10
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

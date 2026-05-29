@@ -10,7 +10,7 @@ spec:
   ocr: "4.1"
 keywords: [perfect competition, price taker, horizontal demand curve, allocative efficiency, productive efficiency, normal profit, long-run equilibrium, market structure]
 read_minutes: 11
-status: draft
+status: live
 published: 2026-05-28
 modified: 2026-05-28
 questions:

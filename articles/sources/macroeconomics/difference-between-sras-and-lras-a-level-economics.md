@@ -10,7 +10,7 @@ spec:
   ocr: "1.3"
 keywords: [SRAS, LRAS, aggregate supply, short run aggregate supply, long run aggregate supply, productive capacity, cost-push, supply-side policy, sticky wages]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: aggregate-supply

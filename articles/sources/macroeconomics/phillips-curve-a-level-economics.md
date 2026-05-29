@@ -10,7 +10,7 @@ spec:
   ocr: "3.4"
 keywords: [Phillips curve, short-run Phillips curve, long-run Phillips curve, NAIRU, stagflation, inflation expectations, Friedman, unemployment]
 read_minutes: 12
-status: draft
+status: live
 published: 2026-05-28
 modified: 2026-05-28
 questions:

@@ -10,7 +10,7 @@ spec:
   ocr: "2.5"
 keywords: [movement along demand curve, shift in demand, change in quantity demanded, change in demand, conditions of demand, ceteris paribus, demand curve, price determination]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: price-determination

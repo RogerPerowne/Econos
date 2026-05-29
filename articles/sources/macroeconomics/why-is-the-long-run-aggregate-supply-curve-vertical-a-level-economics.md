@@ -10,7 +10,7 @@ spec:
   ocr: "1.3"
 keywords: [long-run aggregate supply, LRAS, vertical LRAS, Classical view, SRAS, full capacity output, productive potential, aggregate supply]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

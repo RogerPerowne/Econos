@@ -10,7 +10,7 @@ spec:
   ocr: "2.6"
 keywords: [PED diagram, price elasticity of demand, elastic demand, inelastic demand, demand curve slope, total revenue test, A-level economics diagram, exam technique]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: price-elasticity-of-demand

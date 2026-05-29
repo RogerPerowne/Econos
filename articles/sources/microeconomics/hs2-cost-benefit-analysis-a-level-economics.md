@@ -10,7 +10,7 @@ spec:
   ocr: "2.11"
 keywords: [HS2, cost-benefit analysis, benefit-cost ratio, optimism bias, government intervention, infrastructure, opportunity cost, political economy, sunk cost, A-level economics]
 read_minutes: 10
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: government-intervention-in-markets

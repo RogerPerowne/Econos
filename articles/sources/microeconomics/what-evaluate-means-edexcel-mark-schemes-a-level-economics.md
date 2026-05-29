@@ -10,7 +10,7 @@ spec:
   ocr: "AO4"
 keywords: [evaluate economics, AO4 evaluation, Edexcel mark scheme, A-level economics command words, supported judgement, magnitude time lag, exam technique, evaluation marks]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

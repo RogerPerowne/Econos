@@ -10,7 +10,7 @@ spec:
   ocr: "3.1"
 keywords: [fiscal policy, monetary policy, difference between fiscal and monetary policy, interest rates, government spending, taxation, Bank of England, aggregate demand]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

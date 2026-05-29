@@ -10,7 +10,7 @@ spec:
   ocr: "AO4"
 keywords: [Level 4 evaluation, AO4, evaluation paragraph, A-level economics, exam technique, magnitude, time lag, conditional reasoning, supported judgement, mark scheme]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

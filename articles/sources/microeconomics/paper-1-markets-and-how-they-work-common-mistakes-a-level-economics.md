@@ -10,7 +10,7 @@ spec:
   ocr: "AO1-AO4"
 keywords: [Paper 1 economics, markets and how they work, common mistakes, A-level economics, shift vs movement, ceteris paribus, elasticity, diagram labelling, exam technique, Edexcel A]
 read_minutes: 8
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

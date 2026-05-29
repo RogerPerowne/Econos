@@ -10,7 +10,7 @@ spec:
   ocr: "2.8"
 keywords: [EU ETS, emissions trading system, tradable permits, cap and trade, carbon price, negative externality, pollution permits, government intervention, A-level economics]
 read_minutes: 9
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

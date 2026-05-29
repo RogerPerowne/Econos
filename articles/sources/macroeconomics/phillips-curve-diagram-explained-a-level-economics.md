@@ -10,7 +10,7 @@ spec:
   ocr: "3.4"
 keywords: [Phillips curve diagram, how to draw the Phillips curve, short-run Phillips curve, long-run Phillips curve, inflation unemployment trade-off, NAIRU, A-level economics diagram, exam technique]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

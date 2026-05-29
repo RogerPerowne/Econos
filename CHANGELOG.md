@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.13.0 — 2026-05-29
+
+### Articles: publish the full library (54 drafts → live)
+
+Flipped all 54 reviewed draft articles to `status: live` and ticked the
+remaining `SEO_PRIORITY.md` entries to `[L]`. The article library is now
+**74 live articles** with the whole queue (Tranches 1-6) shipped — diagram
+explainers, exam-technique guides, UK case studies and misconception
+pages alongside the original topic articles. Build emits 74 article pages
+and a 74-entry search index / sitemap.
+
 ## 0.12.0 — 2026-05-29
 
 ### Articles: SEO queue fully drafted (parallel-workflow batch)

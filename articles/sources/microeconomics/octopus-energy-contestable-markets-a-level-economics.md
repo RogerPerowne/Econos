@@ -10,7 +10,7 @@ spec:
   ocr: "4.2"
 keywords: [Octopus Energy, contestable markets, Big Six, barriers to entry, hit-and-run competition, sunk costs, retail energy market, Baumol, market structure, A-level economics]
 read_minutes: 9
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: monopoly

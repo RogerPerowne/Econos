@@ -10,7 +10,7 @@ spec:
   ocr: "2.11"
 keywords: [progressive tax, proportional tax, regressive tax, difference between progressive and regressive tax, average tax rate, VAT regressive, income tax, indirect tax]
 read_minutes: 6
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

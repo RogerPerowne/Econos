@@ -10,7 +10,7 @@ spec:
   ocr: "2.9"
 keywords: [2008 financial crisis, asymmetric information, adverse selection, moral hazard, sub-prime mortgages, Northern Rock, Akerlof, market for lemons, information gaps, A-level economics]
 read_minutes: 11
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: information-gaps

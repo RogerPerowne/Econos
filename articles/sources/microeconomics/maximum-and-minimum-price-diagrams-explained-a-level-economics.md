@@ -10,7 +10,7 @@ spec:
   ocr: "2.11"
 keywords: [maximum price diagram, minimum price diagram, price ceiling, price floor, price controls, excess demand, excess supply, shortage, surplus, A-level economics diagram]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: government-intervention-in-markets

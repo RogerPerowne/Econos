@@ -10,7 +10,7 @@ spec:
   ocr: "Data response"
 keywords: [data response economics, using the extract, A-level economics exam technique, AO2 application, quoting data, data response skills, Edexcel economics, calculation marks]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

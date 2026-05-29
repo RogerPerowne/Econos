@@ -10,7 +10,7 @@ spec:
   ocr: "2.6"
 keywords: [income elasticity of demand, YED, cross elasticity of demand, XED, normal good, inferior good, luxury good, substitutes, complements]
 read_minutes: 11
-status: draft
+status: live
 published: 2026-05-28
 modified: 2026-05-28
 questions:

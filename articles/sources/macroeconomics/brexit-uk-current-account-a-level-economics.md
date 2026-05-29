@@ -10,7 +10,7 @@ spec:
   ocr: "2.5"
 keywords: [Brexit, current account, balance of payments, trade friction, J-curve, sterling depreciation, non-tariff barriers, UK trade, structural deficit, A-level economics]
 read_minutes: 10
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: balance-of-payments

@@ -10,7 +10,7 @@ spec:
   ocr: "Paper 3"
 keywords: [Paper 3 economics, Edexcel A-level economics, synoptic paper, microeconomics and macroeconomics, case study, exam technique, time management, evaluation marks, AO3, AO4]
 read_minutes: 8
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

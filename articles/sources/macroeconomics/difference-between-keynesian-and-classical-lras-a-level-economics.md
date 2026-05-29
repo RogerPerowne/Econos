@@ -10,7 +10,7 @@ spec:
   ocr: "1.3"
 keywords: [Keynesian LRAS, Classical LRAS, long run aggregate supply, vertical LRAS, reverse L, spare capacity, full employment, demand-side policy, output gap]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: aggregate-supply

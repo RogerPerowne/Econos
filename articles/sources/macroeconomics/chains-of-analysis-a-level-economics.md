@@ -10,7 +10,7 @@ spec:
   ocr: "AO3"
 keywords: [chain of analysis, AO3, logical chain of reasoning, A-level economics, exam technique, analysis marks, mechanism chain, cause and effect, mark scheme, KAA]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

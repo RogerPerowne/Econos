@@ -10,7 +10,7 @@ spec:
   ocr: "4.1"
 keywords: [perfect competition diagram, short run long run, AR=MR=P, supernormal profit, normal profit, price taker, entry and exit, A-level economics, how to draw perfect competition]
 read_minutes: 8
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: perfect-competition

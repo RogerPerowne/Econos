@@ -10,7 +10,7 @@ spec:
   ocr: "2.8"
 keywords: [negative production externality diagram, how to draw externality diagram, MPC MSC diagram, welfare loss triangle, market failure diagram, over-production, A-level economics diagram, exam technique]
 read_minutes: 7
-status: draft
+status: live
 published: 2026-05-29
 modified: 2026-05-29
 questions:

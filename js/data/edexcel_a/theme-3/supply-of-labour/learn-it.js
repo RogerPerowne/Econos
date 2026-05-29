@@ -241,7 +241,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       {
-        type: 'odd_one_out',
+        type: 'mcq',
         q:    'Which is the odd one out?',
         opts: ['Backward-bending supply','Income effect','Substitution effect','Marginal Revenue Product'],
         ans:  3,

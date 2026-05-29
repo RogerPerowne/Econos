@@ -5613,14 +5613,13 @@
     let cardFoot;
     if (isLast) {
       const quizBtn  = hasQuiz     ? `<button class="btn btn--primary" data-action="take-quiz">Take the quiz ${I.arrowRight}</button>` : '';
-      /* Next-stage CTA (Link it / Land it). Primary when there's no quiz,
-         ghost when the quiz is the primary action. */
-      const stageCls = hasQuiz
-        ? 'btn btn--ghost" style="text-decoration:none;border:1.5px solid #CBD5E1;'
-        : 'btn btn--primary" style="text-decoration:none;';
-      const nextBtn  = stageHref
-        ? `<a href="${stageHref}" class="${stageCls}">${stageLabel} ${I.arrowRight}</a>`
-        : (nextTopicId ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '');
+      /* When a quiz exists, "Take the quiz" is the only forward action —
+         the quiz's own results screen handles moving on. Otherwise offer
+         the next stage of this topic (Link it / Land it), falling back to
+         the next topic's Learn It. */
+      const nextBtn  = (!hasQuiz && stageHref)
+        ? `<a href="${stageHref}" class="btn btn--primary" style="text-decoration:none;">${stageLabel} ${I.arrowRight}</a>`
+        : (!hasQuiz && nextTopicId ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '');
       const fallback = (!quizBtn && !nextBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
       cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${quizBtn}${nextBtn}${fallback}</div></div>`;
     } else {

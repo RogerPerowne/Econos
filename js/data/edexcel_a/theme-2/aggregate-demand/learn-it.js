@@ -711,7 +711,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       {
-        type: 'odd_one_out',
+        type: 'mcq',
         q:    'Which is the odd one out in the AD formula?',
         opts: ['Consumption (C)','Investment (I)','Taxation (T)','Government spending (G)'],
         ans:  2,

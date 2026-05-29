@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.10.3 — 2026-05-29
+
+### Learn It quiz: fix the blank screen + simplify the end-of-cards CTA
+
+The end-of-Learn-It quiz was showing a blank screen on several topics.
+Two causes, both fixed:
+
+- **A single malformed question blanked the whole quiz.** A question
+  whose shape didn't match its declared type (e.g. an `odd_one_out`
+  carrying `opts` instead of `items`) threw during boot, wiping the card
+  area with nothing to replace it. The engine is now defensive:
+  `shuffleQuestion` guards every array access, `bootQuiz` drops any
+  question it can't prepare, and `renderQ` catches a failed render
+  (or unknown type) and skips that question instead of leaving the
+  screen empty. Three mislabelled `odd_one_out` questions (aggregate
+  demand, employment & unemployment, supply of labour) were corrected to
+  `mcq` so they're kept rather than skipped.
+- **Question stems rendered as "undefined".** Quiz pools are
+  inconsistent about the stem field — some use `stem`, some `q` — and the
+  renderers only read `stem`. `bootQuiz` now normalises `q` → `stem`.
+
+Also: finishing the Learn It cards now shows just **"Take the quiz"** when
+a quiz exists (the "Link it" button was removed there); the quiz's own
+results screen carries the learner onward. Topics without a quiz still
+offer the next stage. SW cache → `econos-v84`.
+
 ## 0.10.2 — 2026-05-28
 
 ### Mobile stage bar: per-stage colours

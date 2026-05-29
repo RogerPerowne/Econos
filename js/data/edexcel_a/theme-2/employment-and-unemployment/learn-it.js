@@ -665,7 +665,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       {
-        type: 'odd_one_out',
+        type: 'mcq',
         q:    'Which is the odd one out?',
         opts: ['Frictional unemployment','Structural unemployment','Cyclical unemployment','Deflation'],
         ans:  3,

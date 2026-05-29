@@ -57,29 +57,52 @@ window.ECONOS_TOPIC = {
         text: 'You met this as <em>the ripple</em> in the Aggregate Demand topic. Here we open the box: where the geometric series comes from, and why it converges to <strong>1/(1−MPC)</strong> times the original injection.'
       },
 
-      visualKey: 'multiplierRounds',
-      visualLabel: 'Round-by-round contributions',
-      visualEmoji: '\u{1F4CA}',
-
-      pairFirst: true,
-      pairLabel: 'Two ways to read the chart',
-      pairEmoji: '\u{1F50D}',
-      left: {
-        tone: 'blue',
-        icon: '\u{1F4E5}',
-        iconStyle: 'circle',
-        label: 'The bars',
-        text: '<strong>Each bar is the income added in one round.</strong> R1 = £100m (the injection itself). R2 = MPC × R1 = £80m. R3 = 0.8² × £100m = £64m. The slice that leaks out at each round is what stops the next bar from being the same size as the last.'
+      interactiveDiagram: {
+        svgKey: 'multiplierRounds',
+        wide: true,
+        maxWidth: '100%',
+        label: 'Click through the rounds',
+        emoji: '\u{1F501}',
+        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
+        views: [
+          {
+            label: 'R1: £100m',
+            tone: 'blue',
+            head: 'Round 1 — the headline injection',
+            body: 'The government injects £100m into the economy – say a green-infrastructure programme. That money becomes direct income for the businesses, workers, and suppliers paid by the project.',
+            analysis: '<strong>Cumulative income so far: £100m.</strong> Only the headline injection has reached the economy. The multiplier hasn’t kicked in yet – this is just £1 of spending creating £1 of income.'
+          },
+          {
+            label: '+ R2: £80m',
+            tone: 'blue',
+            head: 'Round 2 — spending becomes income',
+            body: 'Of that £100m, MPC = 0.8 → £80m gets re-spent on goods and services. The other £20m leaks into saving and never comes back. The £80m becomes income for a fresh set of households.',
+            analysis: '<strong>Cumulative income so far: £180m.</strong> The £80m extra appears because <em>spending becomes income</em>. The £20m that leaked is gone for good – it won’t feature in any later round. Already, the economy has felt 1.8× the headline shock.'
+          },
+          {
+            label: '+ R3: £64m',
+            tone: 'blue',
+            head: 'Round 3 — the chain narrows',
+            body: 'Of round 2’s £80m, MPC = 0.8 → £64m is re-spent. The other £16m leaks. The pattern is now clear: each round is exactly <strong>MPC × the previous round</strong>.',
+            analysis: '<strong>Cumulative income so far: £244m.</strong> Each round contributes a smaller slice because more income has leaked at each prior step. This is the geometric series in action: ΔJ × (1 + MPC + MPC² + …).'
+          },
+          {
+            label: '+ R4: £51m',
+            tone: 'blue',
+            head: 'Round 4 — diminishing returns',
+            body: 'Round 4 adds £51.2m. Round 5 will add £40.96m. The rounds keep coming forever but each one is 80% of the last.',
+            analysis: '<strong>Cumulative income so far: £295.2m.</strong> We’re past the halfway mark to the £500m ceiling but the rounds are getting much smaller now. After round 10 each new round is contributing less than £15m.'
+          },
+          {
+            label: '+ R5 onward → £500m',
+            tone: 'rose',
+            head: 'The full geometric sum',
+            body: 'Round 5 adds £41m. Round 6 adds £33m. Round 7 adds £26m. The series continues for ever, but the total converges – it doesn’t grow without limit.',
+            analysis: '<strong>The infinite sum converges to £100m × 1/(1−0.8) = £500m</strong> – exactly where the dashed purple line meets the red ceiling. With k = 5, the £100m injection has become £500m of national income. The multiplier is just <em>the limit of this shrinking chain</em>.'
+          }
+        ]
       },
-      right: {
-        tone: 'purple',
-        icon: '\u{1F4C8}',
-        iconStyle: 'circle',
-        label: 'The dashed line',
-        text: '<strong>The dashed line is cumulative income</strong> – running total of all the bars. It climbs fast at first, then flattens as each new round adds less and less. It asymptotically approaches <strong>k × ΔJ = £500m</strong> – the multiplier ceiling.'
-      },
-
-      flowTitle: 'The geometric series',
+      flowTitle: 'The geometric series in symbols',
       flowEmoji: '\u{2207}',
       flowSep: '+',
       flow: [

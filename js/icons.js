@@ -16648,9 +16648,13 @@ window.ECONOS_ICONS = {
      ============================================================ */
 
   /* Card 1 — round-by-round contributions, MPC=0.8, £100m injection.
-     Plot x[70,560] y[50,255]. y-scale: £500m → y=50, £0 → y=255
-     (so 1m = 0.41 px). Bars width 60, gap 20. Cumulative dashed
-     line through bar centres traces the geometric-series limit. */
+     Layered for the interactiveDiagram block:
+       BASE     = axes, ticks, R1 bar + labels, legend swatch for bars
+       .idl-1   = R2 bar + labels
+       .idl-2   = R3 bar + labels
+       .idl-3   = R4 bar + labels
+       .idl-4   = R5 bar + ellipsis + cumulative line + £500m ceiling
+                  + the cumulative/ceiling legend swatches */
   multiplierRounds: `
     <div style="background:#fff;border-radius:14px;padding:14px 16px;">
       <div style="text-align:center;color:#2563EB;font-weight:700;font-size:14px;margin-bottom:6px;">£100m injection at MPC = 0.8</div>
@@ -16674,48 +16678,59 @@ window.ECONOS_ICONS = {
         <text x="46" y="136" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">300</text>
         <text x="46" y="95" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">400</text>
         <text x="46" y="54" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">500</text>
-        <!-- Multiplier ceiling at £500m -->
-        <line x1="70" y1="50" x2="560" y2="50" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="6 4" opacity="0.7"/>
-        <text x="566" y="54" font-size="10" fill="#BE123C" font-family="Inter,sans-serif" font-weight="700">£500m ceiling</text>
-        <!-- 5 round bars (decreasing by factor MPC=0.8). r1=100m h=41, r2=80m h=33, r3=64m h=26, r4=51m h=21, r5=41m h=17 -->
+
+        <!-- BASE: Round 1 bar + labels (always visible) -->
         <rect x="85" y="214" width="55" height="41" fill="#2563EB" rx="3"/>
-        <rect x="165" y="222" width="55" height="33" fill="#2563EB" rx="3" opacity="0.92"/>
-        <rect x="245" y="229" width="55" height="26" fill="#2563EB" rx="3" opacity="0.84"/>
-        <rect x="325" y="234" width="55" height="21" fill="#2563EB" rx="3" opacity="0.76"/>
-        <rect x="405" y="238" width="55" height="17" fill="#2563EB" rx="3" opacity="0.68"/>
-        <!-- Ellipsis indicating further rounds -->
-        <rect x="485" y="242" width="55" height="13" fill="#2563EB" rx="3" opacity="0.55"/>
-        <text x="513" y="234" font-size="14" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">…</text>
-        <!-- Round labels under bars -->
         <text x="112" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R1</text>
-        <text x="192" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R2</text>
-        <text x="272" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R3</text>
-        <text x="352" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R4</text>
-        <text x="432" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R5</text>
-        <text x="512" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">…</text>
-        <!-- Value labels above bars -->
         <text x="112" y="208" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">100</text>
-        <text x="192" y="216" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">80</text>
-        <text x="272" y="223" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">64</text>
-        <text x="352" y="228" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">51</text>
-        <text x="432" y="232" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">41</text>
-        <!-- Cumulative line through bar tops: (112,214)→(192,181)→(272,155)→(352,134)→(432,118)→approach (560,55) -->
-        <path d="M112 214 L192 181 L272 155 L352 134 L432 118 Q500 90 560 55" stroke="#7C3AED" stroke-width="2.2" fill="none" stroke-dasharray="5 3"/>
-        <circle cx="112" cy="214" r="3" fill="#7C3AED"/>
-        <circle cx="192" cy="181" r="3" fill="#7C3AED"/>
-        <circle cx="272" cy="155" r="3" fill="#7C3AED"/>
-        <circle cx="352" cy="134" r="3" fill="#7C3AED"/>
-        <circle cx="432" cy="118" r="3" fill="#7C3AED"/>
-        <text x="345" y="106" font-size="10" fill="#7C3AED" font-family="Inter,sans-serif" font-weight="700">Cumulative ΔY</text>
-        <!-- Legend swatches below x-axis -->
+        <!-- Legend: 'Income per round' swatch (always visible) -->
         <rect x="80" y="290" width="14" height="10" fill="#2563EB" rx="2"/>
         <text x="100" y="299" font-size="10.5" fill="#0B1426" font-family="Inter,sans-serif">Income per round</text>
-        <line x1="240" y1="295" x2="262" y2="295" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4 2"/>
-        <text x="266" y="299" font-size="10.5" fill="#0B1426" font-family="Inter,sans-serif">Cumulative income</text>
-        <line x1="416" y1="295" x2="438" y2="295" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="4 2"/>
-        <text x="442" y="299" font-size="10.5" fill="#0B1426" font-family="Inter,sans-serif">Multiplier ceiling = k × ΔJ</text>
+
+        <!-- LAYER 1: Round 2 -->
+        <g class="idl-1" style="display:none">
+          <rect x="165" y="222" width="55" height="33" fill="#2563EB" rx="3" opacity="0.92"/>
+          <text x="192" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R2</text>
+          <text x="192" y="216" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">80</text>
+        </g>
+
+        <!-- LAYER 2: Round 3 -->
+        <g class="idl-2" style="display:none">
+          <rect x="245" y="229" width="55" height="26" fill="#2563EB" rx="3" opacity="0.84"/>
+          <text x="272" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R3</text>
+          <text x="272" y="223" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">64</text>
+        </g>
+
+        <!-- LAYER 3: Round 4 -->
+        <g class="idl-3" style="display:none">
+          <rect x="325" y="234" width="55" height="21" fill="#2563EB" rx="3" opacity="0.76"/>
+          <text x="352" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R4</text>
+          <text x="352" y="228" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">51</text>
+        </g>
+
+        <!-- LAYER 4: Round 5 + ellipsis + cumulative line + ceiling + extra legends -->
+        <g class="idl-4" style="display:none">
+          <rect x="405" y="238" width="55" height="17" fill="#2563EB" rx="3" opacity="0.68"/>
+          <text x="432" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R5</text>
+          <text x="432" y="232" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">41</text>
+          <rect x="485" y="242" width="55" height="13" fill="#2563EB" rx="3" opacity="0.55"/>
+          <text x="513" y="234" font-size="14" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">…</text>
+          <text x="512" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">…</text>
+          <line x1="70" y1="50" x2="560" y2="50" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="6 4" opacity="0.7"/>
+          <text x="566" y="54" font-size="10" fill="#BE123C" font-family="Inter,sans-serif" font-weight="700">£500m ceiling</text>
+          <path d="M112 214 L192 181 L272 155 L352 134 L432 118 Q500 90 560 55" stroke="#7C3AED" stroke-width="2.2" fill="none" stroke-dasharray="5 3"/>
+          <circle cx="112" cy="214" r="3" fill="#7C3AED"/>
+          <circle cx="192" cy="181" r="3" fill="#7C3AED"/>
+          <circle cx="272" cy="155" r="3" fill="#7C3AED"/>
+          <circle cx="352" cy="134" r="3" fill="#7C3AED"/>
+          <circle cx="432" cy="118" r="3" fill="#7C3AED"/>
+          <text x="345" y="106" font-size="10" fill="#7C3AED" font-family="Inter,sans-serif" font-weight="700">Cumulative ΔY</text>
+          <line x1="240" y1="295" x2="262" y2="295" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4 2"/>
+          <text x="266" y="299" font-size="10.5" fill="#0B1426" font-family="Inter,sans-serif">Cumulative income</text>
+          <line x1="416" y1="295" x2="438" y2="295" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="4 2"/>
+          <text x="442" y="299" font-size="10.5" fill="#0B1426" font-family="Inter,sans-serif">Multiplier ceiling = k × ΔJ</text>
+        </g>
       </svg>
-      <div style="font-size:12px;color:#475569;text-align:center;margin-top:8px;line-height:1.5;">Each round delivers 0.8 × the previous round's income. The infinite sum converges to <strong>ΔJ × 1/(1−MPC) = £500m</strong>.</div>
     </div>
   `,
 

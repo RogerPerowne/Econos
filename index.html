@@ -663,11 +663,12 @@
           return parts[1] === '1' ? 'micro' : 'macro';
         }
         if (board === 'ocr') {
-          var ea = topic.boards.edexcel_a && topic.boards.edexcel_a.spec;
-          if (!ea) return null;
-          var d = String(ea).charAt(0);
-          if (d === '1' || d === '3') return 'micro';
-          if (d === '2' || d === '4') return 'macro';
+          /* OCR's own spec carries the component number as the
+             leading digit (1.x → Component 1 / micro, 2.x →
+             Component 2 / macro). No cross-board fallback. */
+          var d = String(spec).charAt(0);
+          if (d === '1') return 'micro';
+          if (d === '2') return 'macro';
         }
         return null;
       }
@@ -752,12 +753,26 @@
          sophisticated stage-picker will return once the menu UX
          is reworked. Stage pips below still reflect availability. */
       function bestHref(topic) {
+        /* Non-Edexcel-A boards are placeholder-only — Learn It cover
+           still renders, so the topic card stays clickable. */
+        if (currentBoard !== 'edexcel_a') return TopicLoader.routes.learn(topic.id);
         if (topic.available.learn) return TopicLoader.routes.learn(topic.id);
         return '#';
       }
 
       /* ────────── Stage pips ────────── */
-      function pipsHtml(avail) {
+      /* Per-board effective availability: non-Edexcel-A boards
+         ship placeholder cover-only content for every topic, so
+         only Learn lights up (Link / Land are locked until the
+         board's content is authored). */
+      function effectiveAvail(topic) {
+        if (currentBoard !== 'edexcel_a') {
+          return { learn: true, link: false, land: false };
+        }
+        return topic.available || {};
+      }
+      function pipsHtml(topic) {
+        var avail = effectiveAvail(topic);
         function pip(num, kind, on) {
           var name = kind === 'learn' ? 'Learn' : kind === 'link' ? 'Link' : 'Land';
           return '<span class="pip pip--' + kind + (on ? ' is-on' : '') +
@@ -788,7 +803,7 @@
              +   '</div>'
              +   '<div class="topic__title">' + topic.name + '</div>'
              +   '<div class="topic__sub">' + topic.sub + '</div>'
-             +   pipsHtml(topic.available)
+             +   pipsHtml(topic)
              + '</a>';
       }
 
@@ -805,10 +820,13 @@
           visibleTopics.push({ entry: e, topic: t });
         }
         if (!visibleTopics.length) return '';
+        /* Top-level division label is per-board: Theme (Edexcel A/B),
+           Paper (AQA), Component (OCR). Read from the boards registry. */
+        var divisionWord = ((window.ECONOS_BOARDS || {})[currentBoard] || {}).divisionLabel || 'Theme';
         var html = '<div class="theme-section">'
                  + '<div class="theme-header">'
                  +   '<div>'
-                 +     '<span class="theme-num__theme">Theme</span>'
+                 +     '<span class="theme-num__theme">' + divisionWord + '</span>'
                  +     '<div class="theme-num">' + theme.num + '</div>'
                  +   '</div>'
                  +   '<div class="theme-name">' + theme.name + '</div>'

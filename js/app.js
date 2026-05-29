@@ -8,7 +8,55 @@
   const I = window.ECONOS_ICONS;
 
   const root = document.getElementById('app-root');
-  let currentView = 'intro'; // 'intro' | 0..6
+  let currentView = 'intro'; // 'intro' | 0..(cards.length-1)
+
+  /* ──────────────────────────────────────────────────────────────
+     Card-slug ↔ index mapping.
+     ─────────────────────────────────────────────────────────────
+     Learn It URLs carry the card position as a self-describing
+     token (e.g. `/learn-it/demand-pull-inflation`). The slug is
+     derived from each card's title via window.ECONOS_CARD_SLUG —
+     the same helper the build-time route generator uses, so the
+     URLs round-trip. Computed once on boot. */
+  const CARDS = (T && Array.isArray(T.cards)) ? T.cards : [];
+  const CARD_SLUGS = (function () {
+    const slugFn = window.ECONOS_CARD_SLUG || function (c, i) { return 'card-' + (i + 1); };
+    const claimed = { intro: true };
+    return CARDS.map(function (c, i) { return slugFn(c, i, claimed); });
+  })();
+  function slugForView(view) {
+    if (view === 'intro') return 'intro';
+    return CARD_SLUGS[view] || ('card-' + (view + 1));
+  }
+  function viewForSlug(slug) {
+    if (!slug || slug === 'intro') return 'intro';
+    const idx = CARD_SLUGS.indexOf(slug);
+    return idx >= 0 ? idx : 'intro';
+  }
+
+  /* Seed currentView from the URL when a card slug is present.
+     Anything we can't resolve (unknown slug, no slug, …) defaults
+     to the intro view. */
+  try {
+    if (window.TopicLoader && typeof window.TopicLoader.getCard === 'function') {
+      currentView = viewForSlug(window.TopicLoader.getCard());
+    }
+  } catch (e) { /* keep default */ }
+
+  /* Push the current view's slug back into the URL via
+     replaceState — no history entry, no flash, bookmarks
+     work. Called after every navigation that changes
+     currentView. */
+  function syncUrlToView() {
+    try {
+      if (!window.TopicLoader || !window.TopicLoader.routes) return;
+      const sub = slugForView(currentView);
+      const url = window.TopicLoader.routes.learn(sub, T && T.id);
+      if (url && url !== window.location.pathname) {
+        window.history.replaceState(null, '', url + window.location.search + window.location.hash);
+      }
+    } catch (e) { /* not fatal */ }
+  }
 
   /* ============================================================
      SHELL (sidebar + topbar)
@@ -67,7 +115,7 @@
           <div class="sidebar__user-avatar">AB</div>
           <div class="sidebar__user-info">
             <div class="sidebar__user-name">Alex Brown</div>
-            <div class="sidebar__user-role">A-Level Economics</div>
+            <div class="sidebar__user-role">A-Level Economics · <span class="sidebar__user-board">${(window.TopicLoader && TopicLoader.getBoardName && TopicLoader.getBoardName()) || 'Edexcel A'}</span></div>
           </div>
           <div class="sidebar__user-chev">${I.chevDown}</div>
         </div>
@@ -5845,17 +5893,25 @@
     const cardIdx = target.dataset.cardIdx;
 
     if (action === 'start-session') {
+      /* Placeholder topics (non-Edexcel-A boards on topics with no
+         real content yet) ship cards: []. Don't try to render
+         card 0 — there isn't one. The user's instruction was
+         "nothing loads" when there are no cards. */
+      if (!T.cards || !T.cards.length) return;
       currentView = 0;
       render();
+      syncUrlToView();
     } else if (action === 'back-to-intro') {
       currentView = 'intro';
       render();
+      syncUrlToView();
     } else if (action === 'next') {
       if (currentView === T.cards.length - 1) {
         alert('Quick Check coming next session 🎯');
       } else {
         currentView = currentView + 1;
         render();
+        syncUrlToView();
       }
     } else if (action === 'take-quiz') {
       /* Inline quiz: swap the main card area for a #quiz-root and
@@ -5872,6 +5928,11 @@
       if (currentView > 0) {
         currentView = currentView - 1;
         render();
+        syncUrlToView();
+      } else if (currentView === 0) {
+        currentView = 'intro';
+        render();
+        syncUrlToView();
       }
     } else if (action === 'download-deck') {
       if (window.EconosPdf && window.ECONOS_TOPIC) {
@@ -6118,8 +6179,13 @@
     } else if (cardIdx !== undefined) {
       currentView = parseInt(cardIdx, 10);
       render();
+      syncUrlToView();
     }
   }
 
   render();
+  /* Normalise the URL on first paint so a bookmark to `/learn-it`
+     (no sub-route) becomes `/learn-it/intro` — and any URL slug
+     we couldn't resolve falls back cleanly to intro. */
+  syncUrlToView();
 })();

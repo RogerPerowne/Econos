@@ -108,6 +108,11 @@ describe('TopicLoader exam-board selection', () => {
       aqa:       { id: 'aqa',       name: 'AQA' },
       ocr:       { id: 'ocr',       name: 'OCR' }
     };
+    /* Reset URL to '/' so getBoard() doesn't read a board from
+       the URL (the previous describe block pinned the URL to
+       /aqa/...). v0.16+ getBoard prefers a valid board pinned
+       in the URL over localStorage. */
+    window.history.replaceState(null, '', '/');
     window.localStorage.clear();
     const src = readFileSync(resolve(process.cwd(), 'js/topic-loader.js'), 'utf8');
     // eslint-disable-next-line no-new-func

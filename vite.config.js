@@ -105,10 +105,31 @@ function loadStations() {
   const s = sandbox.window.ECONOS_STATIONS || {};
   return {
     link: Object.keys(s.link || {}),
-    land: Object.keys(s.land || {})
+    land: Object.keys(s.land || {}),
+    cardSlug: sandbox.window.ECONOS_CARD_SLUG
   };
 }
 const STATIONS = loadStations();
+
+/* Per-board top-level division labels — mirror of
+   window.ECONOS_BOARD_DIVISIONS in js/config/boards.js. Used by
+   the placeholder generator + the SEO meta injector to display
+   the official syllabus wording per board. */
+function loadBoardDivisions() {
+  try {
+    const src = readFileSync(resolve(ROOT, 'js/config/boards.js'), 'utf8');
+    const sandbox = { window: {} };
+    // eslint-disable-next-line no-new-func
+    (new Function('window', src))(sandbox.window);
+    return {
+      boards: sandbox.window.ECONOS_BOARDS || {},
+      divisions: sandbox.window.ECONOS_BOARD_DIVISIONS || {}
+    };
+  } catch (e) {
+    return { boards: {}, divisions: {} };
+  }
+}
+const BOARD_CFG = loadBoardDivisions();
 
 /* Load js/icons.js the same way to extract window.ECONOS_ICONS — the
    key → SVG-string map that powers every learn-it visualKey. Articles
@@ -159,23 +180,29 @@ function topicRoutes() {
       return parts[1] === '1' ? 'micro' : 'macro';
     }
     if (board === 'ocr') {
-      const ea = topic.boards.edexcel_a && topic.boards.edexcel_a.spec;
-      if (!ea) return 'misc';
-      const d = String(ea).charAt(0);
-      if (d === '1' || d === '3') return 'micro';
-      if (d === '2' || d === '4') return 'macro';
+      /* OCR's own spec carries the component number as the
+         leading digit: 1.x → Component 1 (micro), 2.x →
+         Component 2 (macro). No cross-board fallback. */
+      if (!spec) return 'misc';
+      const d = String(spec).charAt(0);
+      if (d === '1') return 'micro';
+      if (d === '2') return 'macro';
       return 'misc';
     }
     return 'misc';
   }
 
-  /* Human-readable station label for titles and JSON-LD. Land sections
-     get a "Section " prefix because the bare letter reads as filler.
-     Other shells just title-case the slug. */
+  /* Human-readable station label for titles and JSON-LD. Land
+     sections already carry the `section-` prefix in their slugs
+     (v0.16+); title-case the rest. Learn cards use their slug
+     (often title-derived) so they read naturally as-is. */
   function formatStationLabel(shell, station) {
-    const titled = station.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-    if (shell === 'land' && /^[A-C]$/.test(titled)) return 'Section ' + titled;
-    return titled;
+    if (!station) return '';
+    /* Land section tokens land-it/section-a → "Section A". */
+    if (shell === 'land' && /^section-[a-c]$/.test(station)) {
+      return 'Section ' + station.charAt(station.length - 1).toUpperCase();
+    }
+    return station.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   }
 
   /* Build the LearningResource JSON-LD body for a generated topic shell.
@@ -312,9 +339,172 @@ function topicRoutes() {
     next();
   }
 
+  /* Read a topic's Learn It cards from its data file. Used by
+     the per-card route generator + the placeholder skip logic.
+     Returns [] on missing file / parse error so the caller falls
+     back gracefully. */
+  function loadTopicCards(board, theme, topicId) {
+    const file = resolve(ROOT, 'js/data', board, theme, topicId, 'learn-it.js');
+    if (!existsSync(file)) return [];
+    try {
+      const src = readFileSync(file, 'utf8');
+      const noop = () => '';
+      const sandbox = {
+        window: {},
+        TopicLoader: {
+          routes: { home: noop, learn: noop, link: noop, land: noop, quiz: noop },
+          getBoard: () => board, getTopic: () => topicId, sessionLabel: noop,
+          divisionLabelFor: noop, getBoardName: () => board
+        }
+      };
+      // eslint-disable-next-line no-new-func
+      (new Function('window', 'TopicLoader', src))(sandbox.window, sandbox.TopicLoader);
+      const T = sandbox.window.ECONOS_TOPIC;
+      return (T && Array.isArray(T.cards)) ? T.cards : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  /* Mirror of window.ECONOS_CARD_SLUG (defined in stations.js). The
+     runtime helper from `loadStations()` ships as `STATIONS.cardSlug`
+     — but stations.js's IIFE only assigns globals when window is the
+     real DOM window. Inline the algorithm here so the build doesn't
+     depend on the IIFE's side-effects. */
+  function cardSlug(card, index, claimed) {
+    const raw = (card && (card.slug || card.title)) || '';
+    let slug = String(raw)
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, ' ')
+      .replace(/[\s_]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .replace(/-{2,}/g, '-')
+      .slice(0, 50);
+    if (!slug) slug = 'card-' + (index + 1);
+    if (claimed) {
+      const base = slug;
+      let n = 2;
+      while (claimed[slug]) { slug = base + '-' + n; n++; }
+      claimed[slug] = true;
+    }
+    return slug;
+  }
+
+  /* Per-shell sub-route generator. Mirror of
+     window.ECONOS_STATION_GENERATORS — kept here as a plain object so
+     the build doesn't have to load stations.js's IIFE side-effects. */
+  const SHELL_SUBROUTES = {
+    learn: function (cards) {
+      const out = ['intro'];
+      const claimed = { intro: true };
+      const list = Array.isArray(cards) ? cards : [];
+      for (let i = 0; i < list.length; i++) {
+        out.push(cardSlug(list[i], i, claimed));
+      }
+      return out;
+    },
+    link: function () { return STATIONS.link.slice(); },
+    land: function () { return STATIONS.land.slice(); }
+  };
+
+  /* Effective availability per (topic, board). Non-Edexcel-A boards
+     are placeholder-only until real content ships — only Learn It
+     (intro view) is offered; Link/Land are locked. Edexcel A uses
+     the topic's declared `available` map as-is. */
+  function effectiveAvailability(topic, board) {
+    if (board === 'edexcel_a') return topic.available || {};
+    return { learn: true, link: false, land: false };
+  }
+
+  /* Render a placeholder learn-it.js for a non-Edexcel-A topic.
+     The file carries the leading PLACEHOLDER comment so the
+     generator can recognise it and overwrite it on later runs;
+     hand-written learn-it.js files (which start with anything
+     else) are NEVER touched. */
+  function renderPlaceholder(topic, board, theme) {
+    const boardCfg = BOARD_CFG.boards[board] || { name: board };
+    const boardName = boardCfg.name || board;
+    const divisionMap = (BOARD_CFG.divisions && BOARD_CFG.divisions[board]) || {};
+    const divisionLabel = divisionMap[theme] || theme;
+    const boardEntry = (topic.boards && topic.boards[board]) || {};
+    const specPoint = boardEntry.spec ? String(boardEntry.spec) : '';
+    return `/* PLACEHOLDER — auto-generated.
+   This topic doesn't yet ship real Learn It content for ${boardName}.
+   The cover view (intro) renders normally; clicking Start session
+   no-ops because cards is empty. Generated by vite.config.js's
+   generatePlaceholders() — delete this file (or replace its header)
+   to ship real content.
+*/
+window.ECONOS_TOPIC = {
+  id:          ${JSON.stringify(topic.id)},
+  topicNum:    ${JSON.stringify(specPoint)},
+  theme:       ${JSON.stringify(divisionLabel)},
+  title:       ${JSON.stringify(topic.name)},
+  estTime:     '—',
+  goal:        'Coming soon.',
+  intro: {
+    summary:  ${JSON.stringify(topic.name + ' on ' + boardName + '.')},
+    doInThis: ${JSON.stringify('Full Learn It content for this topic is not yet available on ' + boardName + '.')},
+    outcomes: [],
+    tip:      'Switch board in the account menu (top-right) to access the same topic on Edexcel A.',
+    stages: [
+      { num: 1, name: 'Learn it', sub: 'Coming soon', state: 'current' },
+      { num: 2, name: 'Link it',  sub: 'Coming soon', state: 'locked' },
+      { num: 3, name: 'Land it',  sub: 'Coming soon', state: 'locked' }
+    ]
+  },
+  cards: []
+};
+`;
+  }
+
+  /* Write placeholder learn-it.js files for every non-Edexcel-A
+     (board × included-topic) pair. Idempotent — only writes when
+     the file is missing OR carries the placeholder header. Hand-
+     written board content is never overwritten. */
+  function generatePlaceholders() {
+    const PLACEHOLDER_TAG = '/* PLACEHOLDER — auto-generated.';
+    let created = 0;
+    let refreshed = 0;
+    for (const topic of ensureRegistry()) {
+      for (const board of BOARDS_FOR_URLS) {
+        if (board === 'edexcel_a') continue;
+        const boardEntry = topic.boards && topic.boards[board];
+        if (!boardEntry || boardEntry.included === false) continue;
+        const theme = themeForBoard(topic, board);
+        if (theme === 'misc') continue;
+        const dir = resolve(ROOT, 'js/data', board, theme, topic.id);
+        const file = resolve(dir, 'learn-it.js');
+        if (existsSync(file)) {
+          const existing = readFileSync(file, 'utf8');
+          if (!existing.startsWith(PLACEHOLDER_TAG)) continue;
+          /* Refresh placeholders on every build so registry edits
+             (renamed topics, updated specs) flow through. */
+          const next = renderPlaceholder(topic, board, theme);
+          if (next !== existing) {
+            writeFileSync(file, next);
+            refreshed++;
+          }
+        } else {
+          mkdirSync(dir, { recursive: true });
+          writeFileSync(file, renderPlaceholder(topic, board, theme));
+          created++;
+        }
+      }
+    }
+    // eslint-disable-next-line no-console
+    console.log(`[topic-routes] placeholders: ${created} created, ${refreshed} refreshed`);
+  }
+
   function generateBuildOutputs() {
     const distDir = resolve(ROOT, 'dist');
     if (!existsSync(distDir)) return;
+
+    /* Generate placeholders BEFORE route generation so every
+       included (board, topic) has at least a learn-it.js to read.
+       Idempotent; safe to run every build. */
+    generatePlaceholders();
+
     const written = [];
 
     function writeRoute(board, theme, topicId, shell, station) {
@@ -334,16 +524,28 @@ function topicRoutes() {
       written.push(urlPath);
     }
 
-    /* Every available (board × topic × shell × station) combination
-       gets a real generated page. Topic stays the same across boards
-       — only the URL prefix changes. */
+    /* Every available (board × topic × shell × sub-route) combination
+       gets a real generated page. Edexcel A uses the topic's declared
+       availability + reads cards out of the data file for per-card
+       Learn It URLs. Non-Edexcel-A boards are forced to learn-only
+       placeholders (just learn-it/intro). */
     for (const topic of ensureRegistry()) {
-      const avail = topic.available || {};
       for (const board of BOARDS_FOR_URLS) {
         const boardEntry = topic.boards && topic.boards[board];
         if (boardEntry && boardEntry.included === false) continue;
         const theme = themeForBoard(topic, board);
-        if (avail.learn) writeRoute(board, theme, topic.id, 'learn');
+        if (theme === 'misc') continue;
+        const avail = effectiveAvailability(topic, board);
+        const cards = avail.learn ? loadTopicCards(board, theme, topic.id) : [];
+        if (avail.learn) {
+          /* Base /learn-it (no sub) renders the intro by default —
+             belt-and-braces compatibility with bookmarks that
+             predate the per-card URL contract. */
+          writeRoute(board, theme, topic.id, 'learn');
+          for (const sub of SHELL_SUBROUTES.learn(cards)) {
+            writeRoute(board, theme, topic.id, 'learn', sub);
+          }
+        }
         if (avail.link)  STATIONS.link.forEach((s) => writeRoute(board, theme, topic.id, 'link', s));
         if (avail.land)  STATIONS.land.forEach((s) => writeRoute(board, theme, topic.id, 'land', s));
       }
@@ -367,11 +569,13 @@ function topicRoutes() {
       { loc: '/articles/',       priority: '0.7', freq: 'weekly'  }
     ];
     for (const topic of ensureRegistry()) {
-      if (!(topic.available && topic.available.learn)) continue;
       for (const board of BOARDS_FOR_URLS) {
         const boardEntry = topic.boards && topic.boards[board];
         if (boardEntry && boardEntry.included === false) continue;
         const theme = themeForBoard(topic, board);
+        if (theme === 'misc') continue;
+        const avail = effectiveAvailability(topic, board);
+        if (!avail.learn) continue;
         urls.push({ loc: `/${board}/${theme}/${topic.id}/learn-it`, priority: '0.8', freq: 'weekly' });
       }
     }

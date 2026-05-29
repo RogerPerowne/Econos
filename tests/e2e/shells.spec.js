@@ -67,7 +67,7 @@ test.describe('Per-topic SEO metadata', () => {
 
   test('Land section ships AssessmentExercise JSON-LD with Section label', async ({ page }) => {
     await login(page);
-    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/a');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/section-a');
     const ld = await page.evaluate(() => {
       const n = document.querySelector('script[type="application/ld+json"]');
       return n ? JSON.parse(n.textContent) : null;
@@ -135,7 +135,11 @@ test.describe('Content Security Policy', () => {
 test.describe('Exam-board picker', () => {
   test('picker is in the account menu and selecting a board persists across reload', async ({ page }) => {
     await login(page);
-    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
+    /* Switch board from inside the Learn It shell. Non-Edexcel-A
+       boards ship placeholder learn-it pages for every topic (cover
+       view only); switching board navigates to the equivalent
+       learn-it page on the new board. */
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it/intro');
     await page.waitForLoadState('networkidle');
 
     /* Open the menu and confirm the four boards render. */
@@ -149,15 +153,14 @@ test.describe('Exam-board picker', () => {
     const active = menu.locator('.account-menu__board.is-active');
     await expect(active).toHaveAttribute('data-board', 'edexcel_a');
 
-    /* Select AQA — the click triggers a reload (so the picker close
-       race doesn't fail the visibility assertion, we wait for the
-       URL to settle then check storage + the sidebar pill). */
+    /* Select AQA — the click navigates to the AQA equivalent URL. */
     await Promise.all([
       page.waitForLoadState('load'),
       menu.locator('.account-menu__board[data-board="aqa"]').click()
     ]);
 
-    /* The stored board is now AQA and the sidebar pill confirms it. */
+    /* The URL now begins with /aqa/ and the stored board is AQA. */
+    await expect(page).toHaveURL(/^https?:\/\/[^/]+\/aqa\//);
     const stored = await page.evaluate(() => localStorage.getItem('econos:board'));
     expect(stored).toBe('aqa');
     await expect(page.locator('.sidebar__user-board')).toHaveText('AQA');

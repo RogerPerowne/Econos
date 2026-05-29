@@ -1,6 +1,6 @@
 ---
 title: "Ostrom and the commons — self-governance case studies"
-description: "Ostrom and the commons for A-level economics: the tragedy of the commons, common-pool resources, and how communities self-govern shared resources without the state or markets."
+description: "Ostrom and the commons for A-level economics: the tragedy of the commons, common-pool resources, and how communities self-govern shared resources."
 lede: "Why the tragedy of the commons isn't inevitable — Elinor Ostrom's case studies of communities governing fisheries, pastures and irrigation, and what they add to the public-goods toolkit."
 theme: "Microeconomics"
 spec:

@@ -1,6 +1,6 @@
 ---
 title: "The 2008 crisis as an asymmetric information story"
-description: "The 2008 financial crisis for A-level economics: asymmetric information, adverse selection, moral hazard, sub-prime mortgages, Northern Rock and Akerlof's market for lemons."
+description: "The 2008 crisis for A-level economics: asymmetric information, adverse selection, moral hazard, sub-prime mortgages, Northern Rock and Akerlof's lemons."
 lede: "Sub-prime mortgages, securitisation and Northern Rock retold through asymmetric information — how hidden quality, adverse selection and moral hazard turned an information gap into a financial crisis."
 theme: "Microeconomics"
 spec:

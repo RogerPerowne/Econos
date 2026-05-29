@@ -103,23 +103,19 @@ Draw this matrix in your exam answer. It's worth 2 marks for the framework and p
   <text x="537" y="40" text-anchor="middle" font-size="14" font-weight="800" fill="#334155" letter-spacing="1.5">NON-RIVAL</text>
   <text transform="translate(34,160) rotate(-90)" text-anchor="middle" font-size="14" font-weight="800" fill="#334155" letter-spacing="1.5">EXCLUDABLE</text>
   <text transform="translate(34,360) rotate(-90)" text-anchor="middle" font-size="12.5" font-weight="800" fill="#334155" letter-spacing="1">NON-EXCLUDABLE</text>
-
   <rect x="156" y="60" width="250" height="196" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
   <text x="178" y="96" font-size="17" font-weight="800" fill="#0B1426">Private goods</text>
   <text x="178" y="124" font-size="13" fill="#475569">A sandwich · a car · a haircut</text>
   <text x="178" y="236" font-size="12" font-style="italic" fill="#64748B">Markets provide it efficiently</text>
-
   <rect x="411" y="60" width="250" height="196" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
   <text x="433" y="96" font-size="17" font-weight="800" fill="#0B1426">Club goods</text>
   <text x="433" y="124" font-size="13" fill="#475569">Netflix · a toll road</text>
   <text x="433" y="144" font-size="13" fill="#475569">a cinema seat</text>
   <text x="433" y="236" font-size="12" font-style="italic" fill="#64748B">Excludable → a market forms</text>
-
   <rect x="156" y="262" width="250" height="196" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
   <text x="178" y="298" font-size="17" font-weight="800" fill="#0B1426">Common resources</text>
   <text x="178" y="326" font-size="13" fill="#475569">Ocean fish · a busy road</text>
   <text x="178" y="438" font-size="12" font-style="italic" fill="#64748B">Risk: over-use of the commons</text>
-
   <rect x="411" y="262" width="250" height="196" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
   <text x="433" y="298" font-size="17" font-weight="800" fill="#065F46">Public goods</text>
   <text x="433" y="326" font-size="13" fill="#047857">Street lighting</text>

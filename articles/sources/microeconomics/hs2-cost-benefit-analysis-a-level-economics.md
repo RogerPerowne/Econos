@@ -1,6 +1,6 @@
 ---
 title: "HS2 — cost-benefit analysis and big-project economics"
-description: "HS2 for A-level economics: cost-benefit analysis, benefit-cost ratios, optimism bias and the political economy of why large infrastructure projects overrun and get cut."
+description: "HS2 for A-level economics: cost-benefit analysis, benefit-cost ratios, optimism bias and the political economy of why big projects overrun and get cut."
 lede: "How cost-benefit analysis is meant to appraise a railway, why HS2's benefit-cost ratio kept falling, and the political-economy reasons big projects overrun, get rescoped and end up half-built."
 theme: "Microeconomics"
 spec:

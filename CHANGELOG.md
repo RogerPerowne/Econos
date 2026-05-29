@@ -6,6 +6,39 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.12.0 — 2026-05-29
+
+### Articles: SEO queue fully drafted (parallel-workflow batch)
+
+Created the remaining ~46 articles in `articles/SEO_PRIORITY.md` as drafts
+via a 9-subagent parallel workflow, taking the queue to **0 not-started**
+(54 drafted, awaiting review):
+- **Diagram explainers** (12) — AD-AS, Phillips, PPF, neg/pos externality,
+  PED, indirect-tax incidence, max/min price, game-theory payoff matrix,
+  monopoly profit-max, SR-vs-LR cost curves, perfect competition SR-vs-LR.
+- **Exam technique** (10) — 25-mark structure, Level-4 evaluation, chains
+  of analysis, the 15-mark essay, Paper 1/2/3 mistakes, data response,
+  diagrams under time pressure, what "evaluate" means.
+- **UK case studies** (12) — SDIL, Scottish MUP, Uber 2021, EU ETS, NMW,
+  BoE rates 2022-24, Thames Water, HS2, Octopus Energy, 2008 crisis,
+  Ostrom & the commons, Brexit & the current account.
+- **Misconception pages** (12) — MR<AR, SRAS vs LRAS, Keynesian vs
+  Classical LRAS, inflation/deflation/disinflation, movement vs shift,
+  why monopoly fails, vertical LRAS, fiscal vs monetary, growth vs
+  development, why perfect competition is a benchmark, absolute vs
+  comparative advantage, progressive/proportional/regressive taxes.
+
+Diagrams reuse existing learn-it presets where one fits (interactive) or
+existing/authored static SVGs; all `svgKey`/`portraitKey` references were
+validated against the icon library and all 54 drafts were verified to
+parse/render by building them live once. Fixed a rendering bug in the
+authored inline SVGs (blank lines inside `<svg>` made markdown-it spill
+the markup as stray text) by stripping intra-SVG blank lines — this also
+hardened the live public-goods matrix.
+
+All new articles are `status: draft` (skipped by the build) pending
+editorial review before going live.
+
 ## 0.11.2 — 2026-05-29
 
 ### Articles: complete the topic tranche of the SEO queue

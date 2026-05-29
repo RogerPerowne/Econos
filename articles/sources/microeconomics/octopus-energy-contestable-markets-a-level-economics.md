@@ -1,6 +1,6 @@
 ---
 title: "Octopus Energy and the Big Six — contestable markets"
-description: "Octopus Energy for A-level economics: contestable market theory, low barriers to entry, hit-and-run competition and how a new entrant reshaped the UK retail energy market."
+description: "Octopus Energy for A-level economics: contestable markets, low barriers to entry, hit-and-run competition and how an entrant reshaped UK retail energy."
 lede: "How a single new entrant disrupted the Big Six, what contestable market theory actually predicts, and why low barriers to entry discipline incumbents even before anyone enters."
 theme: "Microeconomics"
 spec:

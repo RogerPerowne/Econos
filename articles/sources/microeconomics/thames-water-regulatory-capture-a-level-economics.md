@@ -1,6 +1,6 @@
 ---
 title: "Thames Water — natural monopoly and regulatory capture"
-description: "Thames Water for A-level economics: why water is a natural monopoly, how Ofwat regulates it, the debt and dividends row, and Stigler's theory of regulatory capture."
+description: "Thames Water for A-level economics: why water is a natural monopoly, how Ofwat regulates it, the debt-and-dividends row, and Stigler's regulatory capture."
 lede: "Why a single set of pipes makes water a natural monopoly, how Ofwat is meant to mimic competition through price caps, and why Thames Water's debt-and-dividends crisis is a live case study in regulatory capture."
 theme: "Microeconomics"
 spec:

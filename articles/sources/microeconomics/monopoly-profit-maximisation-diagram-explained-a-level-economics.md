@@ -71,21 +71,18 @@ Everything else — the profit rectangle, the deadweight loss — is read off th
   <text x="64" y="46" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">£</text>
   <text transform="translate(30,225) rotate(-90)" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">Price / Cost</text>
   <text x="640" y="438" text-anchor="end" font-size="13" font-weight="700" fill="#475569">Quantity</text>
-
   <!-- AR = D demand curve -->
   <line x1="110" y1="70" x2="600" y2="400" stroke="#2563EB" stroke-width="3"/>
   <text x="560" y="372" font-size="14" font-weight="800" fill="#2563EB">AR = D</text>
   <!-- MR: twice the gradient, hits axis halfway -->
   <line x1="110" y1="70" x2="355" y2="400" stroke="#0EA5E9" stroke-width="2.5" stroke-dasharray="2 0"/>
   <text x="300" y="330" font-size="14" font-weight="800" fill="#0EA5E9">MR</text>
-
   <!-- AC U-shaped -->
   <path d="M120,250 Q260,360 360,300 T600,200" fill="none" stroke="#F39E0B" stroke-width="3"/>
   <text x="600" y="195" font-size="14" font-weight="800" fill="#B45309">AC</text>
   <!-- MC cuts AC at its minimum -->
   <path d="M150,360 Q280,340 360,250 T560,90" fill="none" stroke="#E11D48" stroke-width="3"/>
   <text x="540" y="92" font-size="14" font-weight="800" fill="#E11D48">MC</text>
-
   <!-- key coordinates -->
   <!-- Q* where MC=MR. MC=MR intersection approx (300,300). Q* x=300 -->
   <!-- P* read up on AR=D at x=300: AR y at x=300 => slope (400-70)/(600-110)=330/490=0.673; y=70+0.673*(300-110)=70+128=198 -->
@@ -94,25 +91,21 @@ Everything else — the profit rectangle, the deadweight loss — is read off th
   <rect x="90" y="198" width="210" height="102" fill="#10B981" fill-opacity="0.22" stroke="#10B981" stroke-width="1.5"/>
   <text x="150" y="252" font-size="13" font-weight="800" fill="#047857">Supernormal</text>
   <text x="150" y="270" font-size="13" font-weight="800" fill="#047857">profit</text>
-
   <!-- vertical from Q* -->
   <line x1="300" y1="198" x2="300" y2="410" stroke="#0B1426" stroke-width="1.5" stroke-dasharray="5 4"/>
   <!-- horizontal P* -->
   <line x1="90" y1="198" x2="300" y2="198" stroke="#0B1426" stroke-width="1.5" stroke-dasharray="5 4"/>
   <!-- horizontal AC level -->
   <line x1="90" y1="300" x2="300" y2="300" stroke="#475569" stroke-width="1" stroke-dasharray="3 4"/>
-
   <!-- MC=MR marker -->
   <circle cx="300" cy="300" r="4.5" fill="#0B1426"/>
   <text x="312" y="296" font-size="12" font-weight="700" fill="#0B1426">MC = MR</text>
   <!-- P* marker on AR -->
   <circle cx="300" cy="198" r="4.5" fill="#2563EB"/>
-
   <!-- labels P*, Q*, AC -->
   <text x="84" y="202" text-anchor="end" font-size="14" font-weight="800" fill="#0B1426">P*</text>
   <text x="84" y="304" text-anchor="end" font-size="13" font-weight="700" fill="#475569">AC</text>
   <text x="300" y="430" text-anchor="middle" font-size="14" font-weight="800" fill="#0B1426">Q*</text>
-
   <!-- allocatively efficient output where MC=AR (price=MC), approx (430,260) -->
   <circle cx="430" cy="260" r="4.5" fill="#E11D48"/>
   <line x1="430" y1="260" x2="430" y2="410" stroke="#E11D48" stroke-width="1.2" stroke-dasharray="4 4"/>

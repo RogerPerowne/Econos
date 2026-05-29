@@ -63,14 +63,12 @@ The recurring error is treating the firm like a monopoly and giving it a downwar
 ::: diagram caption="The dual perfect competition diagram. Left (short run): the firm is a price-taker on a horizontal AR=MR=P line; output is at MC=MR, and because P lies above AC the firm earns supernormal profit (shaded green). Right (long run): free entry has lowered the market price until P=AC=MC at the bottom of AC, so only normal profit is earned."
 <svg viewBox="0 0 720 420" class="perfect-comp-svg" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-label="Two panels for a firm in perfect competition. Left panel, short run: a horizontal average-revenue-equals-marginal-revenue-equals-price line above a U-shaped average cost curve and a marginal cost curve; output is where marginal cost crosses the price line; the price is above average cost so a shaded rectangle marks supernormal profit. Right panel, long run: the horizontal price line has fallen to just touch the minimum of the average cost curve where price equals average cost equals marginal cost, so only normal profit is earned and the profit rectangle has disappeared.">
   <rect width="720" height="420" fill="#F8FAFC" rx="12"/>
-
   <!-- LEFT PANEL: short run -->
   <text x="180" y="34" text-anchor="middle" font-size="14" font-weight="800" fill="#0B1426">Short run — supernormal profit</text>
   <line x1="60" y1="50" x2="60" y2="350" stroke="#CBD5E1" stroke-width="2"/>
   <line x1="60" y1="350" x2="340" y2="350" stroke="#CBD5E1" stroke-width="2"/>
   <text transform="translate(34,205) rotate(-90)" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">Price / Cost (£)</text>
   <text x="330" y="376" text-anchor="end" font-size="12" font-weight="700" fill="#475569">Output</text>
-
   <!-- AC U-shaped (min around (215,230)) -->
   <path d="M90,150 Q200,310 215,230 T320,130" fill="none" stroke="#F39E0B" stroke-width="3"/>
   <text x="300" y="128" font-size="13" font-weight="800" fill="#B45309">AC</text>
@@ -91,17 +89,14 @@ The recurring error is treating the firm like a monopoly and giving it a downwar
   <!-- supernormal profit rectangle P (170) to AC (215), x 60..273 -->
   <rect x="60" y="170" width="213" height="45" fill="#10B981" fill-opacity="0.25" stroke="#10B981" stroke-width="1.5"/>
   <text x="120" y="198" font-size="12" font-weight="800" fill="#047857">Supernormal profit</text>
-
   <!-- divider -->
   <line x1="372" y1="50" x2="372" y2="360" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4 5"/>
-
   <!-- RIGHT PANEL: long run -->
   <text x="545" y="34" text-anchor="middle" font-size="14" font-weight="800" fill="#0B1426">Long run — normal profit</text>
   <line x1="410" y1="50" x2="410" y2="350" stroke="#CBD5E1" stroke-width="2"/>
   <line x1="410" y1="350" x2="700" y2="350" stroke="#CBD5E1" stroke-width="2"/>
   <text transform="translate(384,205) rotate(-90)" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">Price / Cost (£)</text>
   <text x="690" y="376" text-anchor="end" font-size="12" font-weight="700" fill="#475569">Output</text>
-
   <!-- AC U-shaped, min around (565,235) -->
   <path d="M440,155 Q550,315 565,235 T670,135" fill="none" stroke="#F39E0B" stroke-width="3"/>
   <text x="650" y="133" font-size="13" font-weight="800" fill="#B45309">AC</text>

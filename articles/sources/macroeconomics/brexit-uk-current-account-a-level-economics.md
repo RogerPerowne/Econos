@@ -1,6 +1,6 @@
 ---
 title: "Brexit and the UK current account — trade shifts"
-description: "Brexit and the UK current account for A-level economics: trade friction, the J-curve, structural shifts in goods and services trade, and what changed for the balance of payments."
+description: "Brexit and the UK current account for A-level economics: trade friction, the J-curve, and the structural shift in goods and services trade flows."
 lede: "How leaving the EU added friction to UK trade, what the J-curve predicts after a currency move, and why the goods-versus-services split makes the UK current account a structural story."
 theme: "Macroeconomics"
 spec:

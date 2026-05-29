@@ -180,13 +180,24 @@ function topicRoutes() {
       return parts[1] === '1' ? 'micro' : 'macro';
     }
     if (board === 'ocr') {
-      /* OCR's own spec carries the component number as the
-         leading digit: 1.x → Component 1 (micro), 2.x →
-         Component 2 (macro). No cross-board fallback. */
-      if (!spec) return 'misc';
-      const d = String(spec).charAt(0);
-      if (d === '1') return 'micro';
-      if (d === '2') return 'macro';
+      /* OCR's spec values in js/topics.js use a compact `X.Y` form
+         that doesn't reliably encode the component. Until those
+         values are audited, classify by Edexcel A's theme (themes
+         1+3 → micro / Component 1; themes 2+4 → macro / Component 2).
+         Data files are still board-isolated; this only affects the
+         theme SLUG in URLs. Mirror of TopicLoader.themeFor's OCR
+         branch — keep both in sync. */
+      const ea = topic.boards.edexcel_a && topic.boards.edexcel_a.spec;
+      if (ea) {
+        const d = String(ea).charAt(0);
+        if (d === '1' || d === '3') return 'micro';
+        if (d === '2' || d === '4') return 'macro';
+      }
+      if (spec) {
+        const od = String(spec).charAt(0);
+        if (od === '1') return 'micro';
+        if (od === '2') return 'macro';
+      }
       return 'misc';
     }
     return 'misc';

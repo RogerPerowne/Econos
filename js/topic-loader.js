@@ -308,14 +308,25 @@
       return parts[1] === '1' ? 'micro' : 'macro';
     }
     if (board === 'ocr') {
-      if (!spec) return 'misc';
-      /* OCR's own spec carries the component number as the
-         leading digit: 1.x → Component 1 (micro), 2.x →
-         Component 2 (macro). Falling back to Edexcel A's
-         theme was a cross-board link we no longer make. */
-      var d = String(spec).charAt(0);
-      if (d === '1') return 'micro';
-      if (d === '2') return 'macro';
+      /* OCR's spec values in js/topics.js use a compact `X.Y` form
+         that doesn't reliably encode the component (Component 1 =
+         Microeconomics, Component 2 = Macroeconomics). Until the
+         OCR specs are audited and rewritten in `<component>.X.Y`
+         form (a separate content task), we classify by Edexcel A's
+         theme as the structural source of truth: themes 1+3 → micro,
+         themes 2+4 → macro. Data files are still board-isolated
+         (no fallback); this only affects the theme SLUG in URLs. */
+      var ea = t.boards.edexcel_a && t.boards.edexcel_a.spec;
+      if (ea) {
+        var d = String(ea).charAt(0);
+        if (d === '1' || d === '3') return 'micro';
+        if (d === '2' || d === '4') return 'macro';
+      }
+      if (spec) {
+        var od = String(spec).charAt(0);
+        if (od === '1') return 'micro';
+        if (od === '2') return 'macro';
+      }
       return 'misc';
     }
     return 'misc';

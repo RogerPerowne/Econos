@@ -499,8 +499,19 @@
                 var parts = spec ? String(spec).split('.') : [];
                 theme = parts[1] === '1' ? 'micro' : (spec ? 'macro' : 'misc');
               } else if (newBoard === 'ocr') {
-                var d = spec ? String(spec).charAt(0) : '';
-                theme = (d === '1') ? 'micro' : (d === '2') ? 'macro' : 'misc';
+                /* Mirror of TopicLoader.themeFor for OCR — uses
+                   Edexcel A's theme as the structural source until
+                   OCR specs are properly numbered. */
+                var ea = topicEntry && topicEntry.boards && topicEntry.boards.edexcel_a && topicEntry.boards.edexcel_a.spec;
+                if (ea) {
+                  var ed = String(ea).charAt(0);
+                  if (ed === '1' || ed === '3') theme = 'micro';
+                  else if (ed === '2' || ed === '4') theme = 'macro';
+                  else theme = 'misc';
+                } else if (spec) {
+                  var od = String(spec).charAt(0);
+                  theme = (od === '1') ? 'micro' : (od === '2') ? 'macro' : 'misc';
+                }
               }
               if (theme !== 'misc') {
                 window.location.href = '/' + newBoard + '/' + theme + '/' + route.topic + '/learn-it';

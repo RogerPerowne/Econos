@@ -56,7 +56,7 @@ Each assumption is demanding on its own. Requiring all four to hold *at once* is
 
 :::
 
-::: econos-diagram svgKey="profitsShutdownDiagram" label="The perfectly competitive firm" caption="The perfectly competitive firm: price-taker, profit-max where MC = MR, and the shut-down point."
+::: econos-diagram svgKey="heroCostCurves" label="The perfectly competitive firm's cost and revenue curves — the benchmark model" caption="The perfectly competitive firm's cost and revenue curves — the benchmark model."
 :::
 
 ::: section eyebrow="The big picture · why each assumption fails" color="purple" icon="target"

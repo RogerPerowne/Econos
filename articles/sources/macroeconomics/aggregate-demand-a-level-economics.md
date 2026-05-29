@@ -66,7 +66,7 @@ The shorthand: **AD = C + I + G + (X − M)**. Examiners love a student who quot
 
 :::
 
-::: econos-diagram svgKey="adMovementShift" label="Aggregate demand" caption="Aggregate demand: a movement along AD (a price-level change) versus a shift of the whole curve when a component of AD changes."
+::: econos-diagram svgKey="demandLawCurve" label="The aggregate demand curve slopes downward; a price-level change is a movement along it, a component change shifts it" caption="The aggregate demand curve slopes downward; a price-level change is a movement along it, a component change shifts it."
 :::
 
 ::: section eyebrow="The big picture · why AD slopes down" color="purple" icon="target"

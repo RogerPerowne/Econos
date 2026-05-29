@@ -60,7 +60,7 @@ The recurring error is treating the firm like a monopoly and giving it a downwar
 
 :::
 
-::: econos-diagram svgKey="profitsShutdownDiagram" label="The competitive firm's cost and revenue curves, profit-maximising output, and the shut-down point." caption="The competitive firm's cost and revenue curves, profit-maximising output, and the shut-down point."
+::: econos-diagram svgKey="heroCostCurves" label="The competitive firm's cost and revenue curves" caption="The competitive firm's cost and revenue curves: profit-maximising output where MC = MR."
 :::
 
 ::: section eyebrow="Why the demand curve is flat" color="purple" icon="target"

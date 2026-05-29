@@ -1,5 +1,5 @@
 ---
-title: "Negative production externality diagram explained for A-level economics"
+title: "Negative production externalities explained for A-level economics"
 description: "How to draw the negative production externality diagram for A-level economics: MPC, MSC, the welfare loss triangle, over-production, and how to earn the diagram marks."
 lede: "The exam-skill guide to the negative production externality diagram — where MPC and MSC sit, why the market over-produces, how to shade the welfare loss, and how to label it for full marks."
 theme: "Microeconomics"

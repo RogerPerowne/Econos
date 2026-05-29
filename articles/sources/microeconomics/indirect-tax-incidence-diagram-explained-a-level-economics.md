@@ -1,5 +1,5 @@
 ---
-title: "Indirect tax incidence diagram explained — how to draw and read it (A-level economics)"
+title: "Indirect tax incidence explained for A-level economics"
 description: "Draw the indirect tax diagram for A-level economics. Shifting supply by the tax, splitting consumer and producer incidence, the revenue box, and how PED decides the split."
 lede: "How to shift supply by the tax, split the burden between consumer and producer correctly, draw the government revenue box, and let elasticity decide who really pays."
 theme: "Microeconomics"

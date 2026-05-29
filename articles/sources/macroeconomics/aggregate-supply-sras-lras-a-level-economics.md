@@ -1,5 +1,5 @@
 ---
-title: "SRAS vs LRAS — the aggregate supply diagram, properly"
+title: "SRAS vs LRAS — aggregate supply, properly"
 description: "Aggregate supply for A-level economics. The difference between SRAS and LRAS, why Keynesian and Classical LRAS look different, and which curve to draw for which essay."
 lede: "Short-run vs long-run, Keynesian vs Classical — four curves examiners want you to keep straight, and the single question that tells you which to draw."
 theme: "Macroeconomics"

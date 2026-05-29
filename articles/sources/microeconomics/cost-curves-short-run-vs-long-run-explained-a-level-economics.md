@@ -1,5 +1,5 @@
 ---
-title: "Cost curves — short-run vs long-run diagram explained for A-level economics"
+title: "Cost curves — short-run vs long-run explained for A-level economics"
 description: "How to draw and read cost curves for A-level economics: U-shaped SAC and SMC, why SMC cuts SAC at its minimum, the LRAC envelope and minimum efficient scale."
 lede: "Why short-run average cost is U-shaped, why the marginal curve always cuts the average at its lowest point, how the long-run envelope wraps a family of SAC curves, and the labels that earn the marks."
 theme: "Microeconomics"

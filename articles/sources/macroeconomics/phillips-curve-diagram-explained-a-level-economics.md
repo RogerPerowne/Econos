@@ -1,5 +1,5 @@
 ---
-title: "Phillips curve diagram explained: how to draw it for A-level economics"
+title: "Phillips curve explained: how to draw it for A-level economics"
 description: "How to draw and read the Phillips curve for A-level economics: label the axes, show the short-run trade-off, the vertical long-run curve, shifts, and the diagram marks."
 lede: "The exam-skill guide to the Phillips curve — which variable goes on which axis, why the short-run curve slopes down, why the long-run curve is vertical, and how to label a shift cleanly."
 theme: "Macroeconomics"

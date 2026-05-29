@@ -1,5 +1,5 @@
 ---
-title: "Aggregate demand (AD) explained with diagram"
+title: "Aggregate demand (AD) explained"
 description: "Aggregate demand for A-level economics. The four components, why the curve slopes down, the difference between movement along AD and shifts in AD, and the UK examples examiners reward."
 lede: "The four components, why the curve slopes down, and the one distinction that separates a Level 2 answer from a Level 4: movement along AD vs shifts in AD."
 theme: "Macroeconomics"

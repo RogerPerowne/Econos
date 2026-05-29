@@ -1,5 +1,5 @@
 ---
-title: "The monopoly profit-maximisation diagram explained — A-level economics"
+title: "Monopoly profit maximisation explained — A-level economics"
 description: "How to draw and read the monopoly diagram for A-level economics: AR=D, MR, MC, AC, the MC=MR rule, the supernormal profit rectangle and the deadweight loss."
 lede: "Where the curves go, why MR is steeper than AR, the MC=MR rule that fixes Q* then P*, how to shade supernormal profit correctly, and the diagram slips that cost marks."
 theme: "Microeconomics"

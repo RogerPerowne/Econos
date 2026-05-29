@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.13.2 — 2026-05-29
+
+### Articles: drop "diagram" from titles
+
+Removed the word "diagram"/"diagrams" from all 12 article titles that
+carried it (e.g. "AD-AS diagram explained" → "AD-AS explained"), so titles
+read cleanly. (A diagram-overhaul to use the exact curated Learn It
+diagrams follows separately.)
+
 ## 0.13.1 — 2026-05-29
 
 ### Articles: remove the knowledge-check questions

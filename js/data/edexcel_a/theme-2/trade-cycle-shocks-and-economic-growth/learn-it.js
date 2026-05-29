@@ -277,47 +277,75 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 5 – Pattern: Evidence-then-verdict
-       Benefits + costs as evidence, then a verdict block that judges
-       growth-as-quality rather than growth-as-rate. Replaces the prior
-       two-pair-plus-tile-grid layout.
+       CARD 5 – Pattern: Side-by-side pair (richly populated 5+5 columns)
+       + supporting Sustainable-vs-Unsustainable pair + Who-Wins tile grid
+       + Evidence-then-verdict conclusion. Restores the original mockup's
+       three-block evaluation structure — visually richer than a single
+       evidence stack, and faithful to what made the mockup compelling.
        ============================================================ */
     {
       id: 'impact-of-growth',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 5',
       title: 'The impact of growth',
-      lede: 'Growth raises living standards – but its costs depend on who gains and on whether it lasts. The evaluation framework: weigh the benefits, weigh the costs, then judge growth on quality not just rate.',
+      lede: 'Economic growth can raise living standards and create opportunities. But its effects depend on <strong>who gains, who loses, and whether growth is sustainable</strong> over the long run.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{1F512}', tone: 'green', text: 'Growth is necessary but not sufficient – its quality and distribution matter as much as its rate.' },
+      tip: { icon: '\u{1F512}', tone: 'green', text: 'Growth is necessary but not sufficient – its quality and distribution matter too.' },
 
-      causesFirst: true,
-      causesLabel: 'The case FOR growth',
-      causesEmoji: '\u{2B06}\u{FE0F}',
-      causesCols: 3,
-      causes: [
-        { tone: 'green', icon: '\u{1F4C8}', head: 'Higher living standards',          body: 'More goods and services, better health and education outcomes, longer life expectancy.' },
-        { tone: 'green', icon: '\u{1F3DB}\u{FE0F}', head: 'Stronger public finances', body: 'Higher tax revenue funds schools, hospitals, infrastructure without raising tax rates.' },
-        { tone: 'green', icon: '\u{1F465}', head: 'Jobs and poverty reduction',       body: 'Expanding economies create work; rising wages lift households out of poverty.' }
-      ],
+      pairFirst: true,
+      pairLabel: 'Benefits vs costs',
+      pairEmoji: '\u{2696}\u{FE0F}',
+      left: {
+        tone: 'green',
+        icon: '\u{2B06}\u{FE0F}',
+        iconStyle: 'circle',
+        label: 'Benefits',
+        text: '<div style="display:flex;flex-direction:column;gap:12px;">' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{1F4C8}</span><div><strong style="color:#065F46;">Higher living standards</strong><br/><span style="color:#475569;font-size:12.5px;">More goods and services improve health, education and quality of life.</span></div></div>' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{1F3DB}\u{FE0F}</span><div><strong style="color:#065F46;">More tax revenue and public services</strong><br/><span style="color:#475569;font-size:12.5px;">Stronger public finances support schools, hospitals and infrastructure.</span></div></div>' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{1F465}</span><div><strong style="color:#065F46;">Lower poverty</strong><br/><span style="color:#475569;font-size:12.5px;">More income and jobs help lift people out of poverty.</span></div></div>' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{1F4B0}</span><div><strong style="color:#065F46;">Higher profits and investment</strong><br/><span style="color:#475569;font-size:12.5px;">Firms earn more and invest in new machines, ideas and capacity.</span></div></div>' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{1F4BC}</span><div><strong style="color:#065F46;">More jobs and opportunity</strong><br/><span style="color:#475569;font-size:12.5px;">Expanding economies create work and open new career paths.</span></div></div>' +
+        '</div>'
+      },
+      right: {
+        tone: 'amber',
+        icon: '\u{2B07}\u{FE0F}',
+        iconStyle: 'circle',
+        label: 'Costs / limits',
+        text: '<div style="display:flex;flex-direction:column;gap:12px;">' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{1F4B7}</span><div><strong style="color:#C2410C;">Inflation pressure</strong><br/><span style="color:#475569;font-size:12.5px;">Strong demand can push up prices, eroding living standards.</span></div></div>' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{1F464}</span><div><strong style="color:#C2410C;">Income inequality</strong><br/><span style="color:#475569;font-size:12.5px;">Gains may be concentrated, leaving some people and regions behind – the Kuznets curve.</span></div></div>' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{1F343}</span><div><strong style="color:#C2410C;">Environmental damage and resource depletion</strong><br/><span style="color:#475569;font-size:12.5px;">Pollution, habitat loss and finite resources impose long-run costs.</span></div></div>' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{2764}\u{FE0F}</span><div><strong style="color:#C2410C;">Stress and well-being concerns</strong><br/><span style="color:#475569;font-size:12.5px;">Long hours, congestion and housing pressure can reduce well-being.</span></div></div>' +
+          '<div style="display:flex;align-items:flex-start;gap:12px;"><span style="font-size:20px;flex-shrink:0;line-height:1;">\u{231B}</span><div><strong style="color:#C2410C;">Current-vs-future-generations trade-off</strong><br/><span style="color:#475569;font-size:12.5px;">Today’s growth can reduce tomorrow’s options and living standards.</span></div></div>' +
+        '</div>'
+      },
 
-      causes2Label: 'The case AGAINST (or in qualification)',
-      causes2Emoji: '\u{2B07}\u{FE0F}',
-      causes2Cols: 3,
+      causes2Label: 'Sustainable vs unsustainable',
+      causes2Emoji: '\u{1F343}',
+      causes2Cols: 2,
       causes2: [
-        { tone: 'amber', icon: '\u{1F4B7}', head: 'Inflation pressure',     body: 'Strong demand can push up prices, especially near full capacity – eroding real living standards.' },
-        { tone: 'amber', icon: '\u{1F464}', head: 'Inequality',             body: 'Gains often concentrated at the top – the Kuznets curve flags this as a normal feature of fast growth, not an aberration.' },
-        { tone: 'amber', icon: '\u{1F343}', head: 'Environmental cost',     body: 'Pollution, resource depletion, climate impact – the Environmental Kuznets Curve suggests these worsen before they improve as countries develop.' }
+        { tone: 'amber',  icon: '\u{26A0}\u{FE0F}', head: 'High growth + high environmental damage', body: 'Short-term gains, long-term losses. Depleted resources and carbon costs reduce future prosperity. The Environmental Kuznets Curve flags this risk in fast-growing developing economies.' },
+        { tone: 'green',  icon: '\u{1F343}',         head: 'Moderate growth + green investment',    body: 'Cleaner air, resilient ecosystems and efficient technology support stronger, lasting living standards.' }
       ],
 
-      bottomTip: { tone: 'rose', icon: '\u{231B}', text: '<strong>The current-vs-future-generations trade-off</strong> sits beneath every evaluation. Growth that depletes natural capital or builds carbon liabilities transfers cost from today to tomorrow. Sustainability is the long-run version of distributional concern.' },
+      causes3Label: 'Who wins?',
+      causes3Emoji: '\u{1F465}',
+      causes3Cols: 4,
+      causes3: [
+        { tone: 'blue', icon: '\u{1F3E0}', head: 'Households',         body: 'Higher incomes, if prices and jobs improve.' },
+        { tone: 'blue', icon: '\u{1F3E2}', head: 'Firms',              body: 'Higher profits, if costs and risks are managed.' },
+        { tone: 'blue', icon: '\u{1F3DB}\u{FE0F}', head: 'Government', body: 'More revenue, but must manage stability and equity.' },
+        { tone: 'blue', icon: '\u{1F30D}', head: 'Future generations', body: 'Benefit only if growth is sustainable and responsible.' }
+      ],
 
       conclusionPosition: 'end',
       conclusion: {
-        title: 'The verdict — growth quality matters more than growth rate',
-        text: 'The benefits of growth are real and material. The costs are also real and material, and they fall on different groups and different time horizons than the benefits. <strong>The best growth is broad-based (most households gain), productivity-driven (not built on debt or resource depletion), and sustainable (does not transfer cost to future generations).</strong> A* answers structure around this: short-run AD stimulus can lift the rate; only supply-side investment that respects environmental and distributional limits lifts the <em>quality</em>.'
+        title: 'Big idea',
+        text: 'The best growth is broad-based, productivity-driven and sustainable. It lifts living standards today without limiting tomorrow.'
       },
-      examEdge: '<strong>Strong evaluation distinguishes the rate of growth from its quality, distribution and sustainability.</strong> Use the Environmental Kuznets Curve as the canonical evaluation tool for "fast growth in developing economies" questions. Use the UK productivity puzzle as the canonical evaluation tool for "why does the UK lag" questions.',
+      examEdge: '<strong>Strong evaluation distinguishes the rate of growth from the quality, distribution and sustainability of growth.</strong> A* answers structure around this: short-run AD stimulus can drive growth; in the long run sustainable growth needs supply-side investment that shifts the PPF outward. The Environmental Kuznets Curve is the canonical evaluation tool for "fast growth in developing economies" questions; the UK productivity puzzle for "why does the UK lag".',
 
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }

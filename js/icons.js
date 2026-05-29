@@ -16842,36 +16842,43 @@ window.ECONOS_ICONS = {
      → slowdown decline → recession trough (440,200) → recovery rise
      to (580,105). */
   /* Card 1 — Interactive multi-state diagram.
-     Base = axes + trend + wave (always visible, no phase highlight).
-     Layers (explicit show per view, NOT cumulative):
-       .phase-boom      = vivid green band over the boom segment
-       .phase-slowdown  = vivid amber band
-       .phase-recession = vivid rose band
-       .phase-recovery  = vivid teal band
-     Each phase layer also carries that phase's name as an overlay label. */
+     Base = axes + 4 subtle phase bands (always visible at low opacity)
+          + smooth 3-segment Bezier wave + trend.
+     Layers (explicit show per view): each phase layer adds a
+     stronger band overlay on top of the base tint + the phase label,
+     so clicking a phase makes it pop without removing the global
+     context of all four. */
   tradeWaveCycle: `
     <div style="background:#fff;border-radius:14px;padding:14px 16px;">
       <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- Axes (base) -->
+        <!-- Base: 4 subtle phase tints always visible -->
+        <rect x="60" y="40" width="135" height="200" fill="#16A34A" opacity="0.10" rx="2"/>
+        <rect x="195" y="40" width="135" height="200" fill="#F59E0B" opacity="0.10"/>
+        <rect x="330" y="40" width="135" height="200" fill="#F97316" opacity="0.10"/>
+        <rect x="465" y="40" width="135" height="200" fill="#14B8A6" opacity="0.10" rx="2"/>
+        <!-- Axes -->
         <text x="14" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real GDP</text>
         <line x1="60" y1="240" x2="610" y2="240" stroke="#0B1426" stroke-width="1.4"/>
         <line x1="60" y1="240" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
         <polygon points="610,240 603,236 603,244" fill="#0B1426"/>
         <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
         <text x="588" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time</text>
-        <!-- Long-run trend dashed (base) -->
+        <!-- Long-run trend dashed -->
         <line x1="60" y1="180" x2="600" y2="100" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="6 4"/>
         <text x="606" y="100" font-size="11" fill="#475569" font-family="Inter,sans-serif">Long-run</text>
         <text x="606" y="112" font-size="11" fill="#475569" font-family="Inter,sans-serif">trend</text>
-        <!-- The wave (base) -->
-        <path d="M60 165 C100 145 150 105 200 100 C260 95 290 165 360 180 C410 192 430 200 440 200 C490 200 530 150 580 105" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-        <!-- Phase layers (one shown per active view) -->
+        <!-- Smooth 3-segment Bezier wave around the trend.
+             Seg 1: (60,180) → boom peak (130,138)
+             Seg 2: (130,138) → recession trough (400,160) via slowdown
+             Seg 3: (400,160) → recovery high (580,70) -->
+        <path d="M60 180 C90 175 115 140 130 138 C230 138 320 160 400 160 C450 160 530 80 580 70" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <!-- Phase highlight layers (one revealed per active view) -->
         <g class="phase-boom" style="display:none">
-          <rect x="60" y="40" width="135" height="200" fill="#16A34A" opacity="0.18" rx="2"/>
+          <rect x="60" y="40" width="135" height="200" fill="#16A34A" opacity="0.20" rx="2"/>
           <text x="127" y="62" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Boom</text>
         </g>
         <g class="phase-slowdown" style="display:none">
-          <rect x="195" y="40" width="135" height="200" fill="#F59E0B" opacity="0.18"/>
+          <rect x="195" y="40" width="135" height="200" fill="#F59E0B" opacity="0.20"/>
           <text x="262" y="62" font-size="14" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">Slowdown</text>
         </g>
         <g class="phase-recession" style="display:none">
@@ -16879,7 +16886,7 @@ window.ECONOS_ICONS = {
           <text x="397" y="62" font-size="14" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Recession</text>
         </g>
         <g class="phase-recovery" style="display:none">
-          <rect x="465" y="40" width="135" height="200" fill="#14B8A6" opacity="0.18" rx="2"/>
+          <rect x="465" y="40" width="135" height="200" fill="#14B8A6" opacity="0.20" rx="2"/>
           <text x="532" y="62" font-size="14" font-weight="800" fill="#0F766E" font-family="Inter,sans-serif" text-anchor="middle">Recovery</text>
         </g>
       </svg>

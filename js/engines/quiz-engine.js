@@ -66,29 +66,34 @@
     return { arr: a, perm: perm };
   }
 
+  /* Every array access is guarded: a question whose shape doesn't match
+     its declared type (e.g. an `odd_one_out` carrying `opts` instead of
+     `items`) is returned un-shuffled rather than throwing — a single
+     malformed question must never blank the whole quiz. */
   function shuffleQuestion(q) {
     if (!SHUFFLE_CONFIG[q.type]) return q;
     var nq = {}; for (var k in q) nq[k] = q[k];
-    if (q.type === 'mcq' || q.type === 'confidence_mcq' || q.type === 'calculation' ||
-        q.type === 'data_table' || q.type === 'diagram_interp') {
+    if ((q.type === 'mcq' || q.type === 'confidence_mcq' || q.type === 'calculation' ||
+        q.type === 'data_table' || q.type === 'diagram_interp') && Array.isArray(q.opts)) {
       var s = shuffleArr(q.opts);
       nq.opts = s.arr; nq.ans = s.perm.indexOf(q.ans);
-    } else if (q.type === 'multi_select') {
+    } else if (q.type === 'multi_select' && Array.isArray(q.opts) && Array.isArray(q.correct)) {
       var ms = shuffleArr(q.opts);
       nq.opts = ms.arr;
       nq.correct = q.correct.map(function (o) { return ms.perm.indexOf(o); })
                             .sort(function (a, b) { return a - b; });
-    } else if (q.type === 'odd_one_out') {
+    } else if (q.type === 'odd_one_out' && Array.isArray(q.items)) {
       var oo = shuffleArr(q.items);
       nq.items = oo.arr; nq.ans = oo.perm.indexOf(q.ans);
-    } else if (q.type === 'diagnostic_pair') {
+    } else if (q.type === 'diagnostic_pair' && Array.isArray(q.students)) {
       var dp = shuffleArr(q.students);
       nq.students = dp.arr; nq.ans = dp.perm.indexOf(q.ans);
-    } else if (q.type === 'elastic_sort') {
+    } else if (q.type === 'elastic_sort' && Array.isArray(q.goods)) {
       var es = shuffleArr(q.goods);
       nq.goods = es.arr;
-    } else if (q.type === 'para_fill') {
+    } else if (q.type === 'para_fill' && Array.isArray(q.blanks)) {
       nq.blanks = q.blanks.map(function (b) {
+        if (!b || !Array.isArray(b.opts)) return b;
         var bs = shuffleArr(b.opts);
         var nb = {}; for (var kk in b) nb[kk] = b[kk];
         nb.opts = bs.arr; nb.ans = bs.perm.indexOf(b.ans);
@@ -100,10 +105,27 @@
 
   /* ── Boot ── */
   window.bootQuiz = function (questions, topicConfig) {
-    Qs = questions.map(shuffleQuestion).map(function (q, i) { q.n = i + 1; return q; });
+    /* Shuffle defensively — drop any question that can't be prepared so a
+       bad entry can't take the whole quiz down. */
+    Qs = [];
+    (questions || []).forEach(function (q) {
+      try { Qs.push(shuffleQuestion(q)); } catch (e) { /* skip malformed */ }
+    });
+    Qs = Qs.map(function (q, i) {
+      /* Quiz pools are inconsistent about the stem field — some use
+         `stem`, some `q`. The renderers read `stem`, so normalise here
+         (otherwise the question text renders as "undefined"). */
+      if (!q.stem && q.q) q.stem = q.q;
+      q.n = i + 1; return q;
+    });
     TOPIC = Object.assign({}, TOPIC, topicConfig || {});
     if (TOPIC.title) document.title = TOPIC.title + ' · econos';
     S.startedAt = Date.now();
+    if (!Qs.length) {
+      document.getElementById('quiz-root').innerHTML =
+        '<div class="quiz-card" style="padding:24px;text-align:center;">This quiz could not be loaded.</div>';
+      return;
+    }
     renderQ(0);
   };
 
@@ -172,23 +194,39 @@
   function renderQ(qi) {
     S.answered = false;
     var q = Qs[qi];
-    if      (q.type === 'elastic_sort')    renderElasticSort(q);
-    else if (q.type === 'calculation')     renderCalculation(q);
-    else if (q.type === 'diagnostic_pair') renderDiagnosticPair(q);
-    else if (q.type === 'mcq')             renderMCQ(q);
-    else if (q.type === 'confidence_mcq')  renderConfidenceMCQ(q);
-    else if (q.type === 'odd_one_out')     renderOddOneOut(q);
-    else if (q.type === 'multi_select')    renderMultiSelect(q);
-    else if (q.type === 'rank')            renderRank(q);
-    else if (q.type === 'para_fill')       renderParaFill(q);
-    else if (q.type === 'data_table')      renderDataTable(q);
-    else if (q.type === 'diagram_interp')  renderDiagramInterp(q);
-    else if (q.type === 'chain')           renderChain(q);
-    else if (q.type === 'cause_effect')  renderCauseEffect(q);
-    else if (q.type === 'numeric_input') renderNumericInput(q);
-    else if (q.type === 'match_pairs')   renderMatchPairs(q);
-    else if (q.type === 'sequence')      renderChain(q);
-    else if (q.type === 'categorise')    renderCategorise(q);
+    /* A render that throws (or an unknown type that renders nothing) used
+       to leave #quiz-root blank. Instead, drop the offending question and
+       carry on, so the rest of the quiz still works. */
+    try {
+      if (!q) throw new Error('no question at index ' + qi);
+      if      (q.type === 'elastic_sort')    renderElasticSort(q);
+      else if (q.type === 'calculation')     renderCalculation(q);
+      else if (q.type === 'diagnostic_pair') renderDiagnosticPair(q);
+      else if (q.type === 'mcq')             renderMCQ(q);
+      else if (q.type === 'confidence_mcq')  renderConfidenceMCQ(q);
+      else if (q.type === 'odd_one_out')     renderOddOneOut(q);
+      else if (q.type === 'multi_select')    renderMultiSelect(q);
+      else if (q.type === 'rank')            renderRank(q);
+      else if (q.type === 'para_fill')       renderParaFill(q);
+      else if (q.type === 'data_table')      renderDataTable(q);
+      else if (q.type === 'diagram_interp')  renderDiagramInterp(q);
+      else if (q.type === 'chain')           renderChain(q);
+      else if (q.type === 'cause_effect')  renderCauseEffect(q);
+      else if (q.type === 'numeric_input') renderNumericInput(q);
+      else if (q.type === 'match_pairs')   renderMatchPairs(q);
+      else if (q.type === 'sequence')      renderChain(q);
+      else if (q.type === 'categorise')    renderCategorise(q);
+      else throw new Error('unhandled question type: ' + q.type);
+    } catch (e) {
+      Qs.splice(qi, 1);
+      Qs.forEach(function (qq, i) { qq.n = i + 1; });
+      if (!Qs.length) {
+        r(cardWrap('<p style="text-align:center;">This quiz could not be loaded.</p>'));
+        return;
+      }
+      S.qi = qi = Math.min(qi, Qs.length - 1);
+      renderQ(qi);
+    }
   }
 
   /* ── Elastic sort ── */

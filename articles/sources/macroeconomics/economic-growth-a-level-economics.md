@@ -59,7 +59,7 @@ But "growth" hides a distinction examiners insist on, and it is the spine of the
 
 :::
 
-::: econos-diagram svgKey="ppfMovesInteractive" state="outward" label="Economic growth as an outward shift of the production possibility frontier — more can be produced of both goods." caption="Economic growth as an outward shift of the production possibility frontier — more can be produced of both goods."
+::: econos-diagram svgKey="ppfMovesInteractive" state="outward" label="Economic growth as an outward shift of the production possibility frontier — more output of both goods becomes attainable." caption="Economic growth as an outward shift of the production possibility frontier — more output of both goods becomes attainable."
 :::
 
 ::: section eyebrow="The big picture · two kinds of growth" color="purple" icon="target"

@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.14.1 — 2026-05-29
+
+### Articles: fix blank diagrams
+
+Five diagrams shipped blank in 0.14.0 because the curated key I picked was
+a JS-populated shell that renders empty as a static image. Replaced them
+with verified static-rendering curated diagrams: aggregate supply
+(SRAS shift), balance of payments (the J-curve), the price mechanism
+(market clearing a surplus), economic growth (outward PPF shift) and
+monetary policy (AD-AS). Added a build-time render-score check to catch
+blank diagrams in future.
+
 ## 0.14.0 — 2026-05-29
 
 ### Articles: use the exact curated Learn It diagrams

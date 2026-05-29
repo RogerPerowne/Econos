@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.13.1 — 2026-05-29
+
+### Articles: remove the knowledge-check questions
+
+Removed the "Check your knowledge" MCQ section from every article and from
+the build engine entirely: deleted `renderKnowledgeCheck`/`QC_DIFFICULTY`
+and its call site in `vite.config.js`, removed `articles/quiz.js` (and its
+script tag + copy step), dropped the `.article-qc*` CSS from
+`articles.css`, and stripped the `questions:` frontmatter block from all
+63 article sources. Articles now run body → want-more → footer. SW cache
+→ `econos-v87`.
+
 ## 0.13.0 — 2026-05-29
 
 ### Articles: publish the full library (54 drafts → live)

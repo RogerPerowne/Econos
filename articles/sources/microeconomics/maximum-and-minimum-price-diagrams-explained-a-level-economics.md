@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-1/government-intervention-in-markets/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "For a maximum price (price ceiling) to have any effect, where must it be set relative to the free-market equilibrium price?"
-    opts: ["Above the equilibrium price", "Below the equilibrium price", "Exactly at the equilibrium price", "It does not matter where it is set"]
-    ans: 1
-    exp: "A maximum price only bites if it is below equilibrium. Set above equilibrium the market simply trades at the equilibrium price and the cap is non-binding — there is no shortage to analyse."
-  - difficulty: medium
-    type: mcq
-    q: "On a minimum price diagram with the floor set above equilibrium, what does the horizontal gap along the control line represent?"
-    opts: ["A shortage (excess demand)", "A surplus (excess supply)", "The deadweight loss triangle", "Producer surplus"]
-    ans: 1
-    exp: "Above equilibrium, quantity supplied exceeds quantity demanded. The horizontal distance between the two curves at the minimum price is the surplus — excess supply — which the diagram should label clearly."
-  - difficulty: hard
-    type: mcq
-    q: "A government sets a maximum price on rented housing. Reading the diagram, why does the size of the resulting shortage depend on the elasticities of demand and supply?"
-    opts: ["Elasticity has no effect — the shortage is fixed by the price gap alone", "Flatter (more elastic) demand and supply curves widen the horizontal gap between Qd and Qs at the capped price, so the shortage is larger", "Steeper curves always produce the biggest shortage regardless of the price", "The shortage equals the deadweight loss triangle on every diagram"]
-    ans: 1
-    exp: "The shortage is the horizontal distance between quantity demanded and quantity supplied at the controlled price. The more elastic (flatter) the curves, the more Qd rises and Qs falls for the same price cap, so the gap — the shortage — is wider. Inelastic curves produce a narrower shortage."
 
 want_more:
   title: "Want more depth?"

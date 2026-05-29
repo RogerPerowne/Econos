@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-1/price-elasticity-of-demand/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On a PED diagram, which curve represents relatively inelastic demand?"
-    opts: ["The flatter (more horizontal) curve", "The steeper (more vertical) curve", "Any curve passing through the origin", "The curve furthest to the right"]
-    ans: 1
-    exp: "A steep demand curve means a large price change produces only a small quantity change — that is relatively inelastic demand. The flatter curve is the elastic one: quantity reacts strongly to price."
-  - difficulty: medium
-    type: mcq
-    q: "A firm raises price along a relatively inelastic demand curve. Reading the diagram, what happens to total revenue?"
-    opts: ["It falls, because quantity drops sharply", "It stays exactly the same", "It rises, because quantity falls only slightly", "It cannot be determined from the diagram"]
-    ans: 2
-    exp: "With inelastic demand the proportionate fall in quantity is smaller than the proportionate rise in price, so the price × quantity rectangle grows. The diagram shows the revenue rectangle getting larger after the price rise."
-  - difficulty: hard
-    type: mcq
-    q: "Two students draw the same downward-sloping straight-line demand curve. One labels the top section 'elastic' and the bottom 'inelastic'. Why is this correct even though the slope never changes?"
-    opts: ["The slope does change near the axes; they have drawn it wrongly", "Elasticity is the percentage responsiveness, and the same absolute change is a larger percentage at the high-price/low-quantity top than at the low-price/high-quantity bottom", "A straight line is always unit elastic at every point", "Slope and elasticity are identical, so the labelling must be a mistake"]
-    ans: 1
-    exp: "Slope is the absolute change in P over the absolute change in Q and is constant on a straight line. Elasticity is the proportionate change, so the same step is a bigger percentage where P is high and Q is low (top) than where P is low and Q is high (bottom). The midpoint is unit elastic."
 
 want_more:
   title: "Want more depth?"

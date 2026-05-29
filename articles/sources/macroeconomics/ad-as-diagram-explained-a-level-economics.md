@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On a standard AD-AS diagram, what do the two axes measure?"
-    opts: ["Price and quantity of a single good", "The general price level (vertical) and real national output (horizontal)", "Interest rate and money supply", "Unemployment and inflation"]
-    ans: 1
-    exp: "AD-AS is a whole-economy diagram. The vertical axis is the general price level (often shown as the price index, not a money price), and the horizontal axis is real GDP / real national output — not the quantity of one good."
-  - difficulty: medium
-    type: mcq
-    q: "A fall in the exchange rate makes exports cheaper and imports dearer. On the AD-AS diagram, how should you show this?"
-    opts: ["A movement up along the existing AD curve", "A leftward shift of SRAS", "A rightward shift of AD (higher net exports)", "A rightward shift of LRAS"]
-    ans: 2
-    exp: "Net exports (X−M) are a component of AD. A cheaper currency raises X and lowers M, so the whole AD curve shifts right. A movement along AD only happens when the price level itself changes — not when a determinant of AD changes."
-  - difficulty: hard
-    type: mcq
-    q: "Why does the SHAPE of the SRAS curve change whether an AD rightward shift mostly raises output or mostly raises the price level?"
-    opts: ["Because AD always crosses SRAS at the same point", "Because near full capacity SRAS is steep, so extra AD bids up prices with little extra output; with spare capacity SRAS is shallow, so output rises with little price effect", "Because the price level cannot change in the short run", "Because LRAS is always vertical regardless of AD"]
-    ans: 1
-    exp: "The slope of SRAS is the whole story. With spare capacity (shallow SRAS) an AD shift right mostly raises real output. Near full capacity (steep SRAS) the same AD shift mostly bids up the price level. Stating which region you are in is the analysis examiners reward."
 spa_topic: aggregate-demand
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

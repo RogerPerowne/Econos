@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On the Phillips curve diagram, what is measured on each axis?"
-    opts: ["Price level (vertical) and real output (horizontal)", "Inflation rate (vertical) and unemployment rate (horizontal)", "Interest rate (vertical) and money supply (horizontal)", "Wages (vertical) and productivity (horizontal)"]
-    ans: 1
-    exp: "The Phillips curve plots the inflation rate on the vertical axis against the unemployment rate on the horizontal axis. Confusing it with the AD-AS axes (price level vs output) is the most common labelling slip."
-  - difficulty: medium
-    type: mcq
-    q: "Why is the LONG-run Phillips curve drawn as a vertical line?"
-    opts: ["Because unemployment is always zero in the long run", "Because inflation cannot change in the long run", "Because in the long run unemployment returns to the natural rate (NAIRU) regardless of the inflation rate", "Because the short-run curve does not exist"]
-    ans: 2
-    exp: "Once expectations adjust, any attempt to hold unemployment below the natural rate just raises inflation with no lasting fall in unemployment. So the long-run curve is vertical at the natural rate of unemployment (NAIRU)."
-  - difficulty: hard
-    type: mcq
-    q: "Stagflation in the 1970s appeared to break the original Phillips curve. How is it shown on the diagram?"
-    opts: ["A movement down the short-run curve", "An outward (rightward) shift of the whole short-run Phillips curve, as higher inflation expectations raised both inflation and unemployment", "A leftward shift of the long-run curve", "The diagram cannot represent stagflation"]
-    ans: 1
-    exp: "Rising inflation expectations shift the short-run Phillips curve outward, so the economy can face higher inflation AND higher unemployment at once — stagflation. This expectations-augmented version is why a single stable trade-off failed in the 1970s."
 spa_topic: macro-conflicts-and-trade-offs
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

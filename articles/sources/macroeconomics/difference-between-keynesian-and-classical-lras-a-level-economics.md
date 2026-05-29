@@ -31,25 +31,6 @@ glance_cta:
   href: /edexcel_a/theme-2/aggregate-supply/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On the Classical long-run aggregate supply curve, what happens to real output when aggregate demand rises?"
-    opts: ["Real output rises permanently", "Only the price level rises; real output is unchanged in the long run", "Both output and prices fall", "The LRAS curve shifts left"]
-    ans: 1
-    exp: "Classical LRAS is vertical at full-employment output. A rightward AD shift cannot raise output beyond capacity in the long run, so it bids up the price level only — the basis of the Classical case against demand management."
-  - difficulty: medium
-    type: mcq
-    q: "An economy is deep in recession with large spare capacity. On a Keynesian LRAS curve, a rise in aggregate demand will mainly..."
-    opts: ["Raise the price level with little change in output", "Raise real output with little change in the price level", "Shift LRAS left", "Have no effect on either output or prices"]
-    ans: 1
-    exp: "On the horizontal segment of the Keynesian curve, idle resources mean firms can expand output without bidding up costs. Higher AD raises real output and employment with negligible inflation — the case for fiscal stimulus in a slump."
-  - difficulty: hard
-    type: mcq
-    q: "Why does the Classical view imply demand-side stimulus is at best temporary, while the Keynesian view can justify it for a sustained period?"
-    opts: ["Because the Classical view assumes prices are permanently fixed", "Because the Classical view holds that flexible wages and prices return the economy to Yfe quickly, so stimulus only raises prices, whereas the Keynesian view holds an economy can be stuck below capacity, leaving room for AD to raise output", "Because the Keynesian curve is always vertical", "Because supply-side policy is irrelevant on both views"]
-    ans: 1
-    exp: "Classical economists assume flexible wages and prices clear markets, pulling output back to Yfe — so stimulus is absorbed by inflation. Keynesians argue wages are sticky downward and an economy can settle at an underemployment equilibrium, so AD can raise real output until spare capacity is used up. The shape of the curve is the disagreement made visible."
 want_more:
   title: "Want more depth?"
   subtitle: "Master aggregate supply with Econos."

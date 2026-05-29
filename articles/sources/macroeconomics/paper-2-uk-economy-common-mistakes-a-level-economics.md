@@ -13,25 +13,6 @@ read_minutes: 8
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Edexcel A-level economics Paper 2 is built around which body of content?"
-    opts: ["Microeconomic markets and firms", "The national and global economy", "Behavioural economics only", "Research methods"]
-    ans: 1
-    exp: "Paper 2, 'The UK economy — performance and policies', is the macro paper. It draws on Themes 2 and 4 and is always built around a data-rich context."
-  - difficulty: medium
-    type: mcq
-    q: "On the longer Paper 2 questions, what most reliably separates a Level 3 chain from a Level 2 one?"
-    opts: ["More technical terms listed", "A neat diagram with no labels", "Each link in the chain explicitly causing the next, applied to the context", "A longer introduction"]
-    ans: 2
-    exp: "AO3 marks reward connected logic — each step caused by the one before and tied to the data, not a list of facts with the connective tissue missing."
-  - difficulty: hard
-    type: mcq
-    q: "A 25-mark Paper 2 answer presents two strong arguments and two counters but never states which is more convincing. What is the most likely consequence?"
-    opts: ["Full marks — both sides are covered", "It caps in the lower evaluation levels because no supported judgement is reached", "It loses all AO1 marks", "It is marked as a Level 1 response"]
-    ans: 1
-    exp: "AO4 rewards a reasoned, supported judgement — magnitude, time lag or context. Balanced points with no prioritised conclusion stall in the middle bands however fluent they are."
 spa_topic: measures-of-economic-performance
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

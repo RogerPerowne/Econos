@@ -14,25 +14,6 @@ status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: information-gaps
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "What does 'asymmetric information' mean?"
-    opts: ["Everyone in a market has the same information", "One party to a transaction has more or better information than the other", "There is no information available in the market", "Information is free to obtain"]
-    ans: 1
-    exp: "Asymmetric information exists when one side of a transaction knows more than the other — for example a borrower knowing more about their own creditworthiness than the lender. This information gap is the root of both adverse selection and moral hazard."
-  - difficulty: medium
-    type: mcq
-    q: "How does moral hazard apply to banks that expect to be rescued?"
-    opts: ["Banks lend more carefully when they fear failure", "Banks take greater risks because they expect to keep the gains but have losses absorbed by others — the 'too big to fail' problem", "Banks stop lending altogether", "Moral hazard only affects borrowers, not banks"]
-    ans: 1
-    exp: "Moral hazard is the change in behaviour when someone is insulated from the consequences of risk. A bank that believes it will be bailed out has a weakened incentive to manage risk prudently — it captures the upside while expecting others to absorb the downside. 'Too big to fail' is the textbook case."
-  - difficulty: hard
-    type: mcq
-    q: "How does Akerlof's 'market for lemons' logic explain the freezing of markets for mortgage-backed securities in 2008?"
-    opts: ["Buyers had perfect information about each security", "Because buyers could not tell good securities from bad ('lemons'), they discounted all of them or refused to trade, so even sound assets became unsellable and the market seized up", "The securities were all of identical quality", "Sellers knew less than buyers"]
-    ans: 1
-    exp: "Akerlof showed that when buyers cannot verify quality, they price for the average — driving out good products and, in the extreme, collapsing the market. In 2008, opacity about what was inside mortgage-backed securities meant buyers could not separate sound from toxic assets, so trading froze and even good assets could not find a price."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics" }

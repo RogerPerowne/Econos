@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "How does the structure of a 15-mark essay differ from a 25-mark essay in Edexcel A economics?"
-    opts: ["It needs no evaluation at all", "It uses the same KAA + EV structure but with tighter scope — fewer, sharper chains", "It is marked on AO1 only", "It must always include three diagrams"]
-    ans: 1
-    exp: "The 15-marker keeps the same KAA + EV bones as the 25-marker. The difference is scope: fewer developed chains and tighter evaluation, because the marks and the time available are smaller. Evaluation is still required."
-  - difficulty: medium
-    type: mcq
-    q: "On a 15-marker, a student spends so long on two long KAA chains that there is no time for evaluation. What is the likely result?"
-    opts: ["Full marks for strong analysis", "The script is capped below the top level because the AO4 marks are unreachable", "It moves up a grade automatically", "Nothing — EV is optional at 15 marks"]
-    ans: 1
-    exp: "Evaluation marks are part of the 15-mark scheme, so an answer with no EV cannot reach the top level however strong the analysis. The fix is fewer or shorter chains to protect time for a sharp evaluation and judgement."
-  - difficulty: hard
-    type: mcq
-    q: "Given the tighter scope of a 15-marker, what is the most efficient way to still access the AO4 marks?"
-    opts: ["Write a separate long evaluation section listing every possible counter", "Evaluate the single chain you built with one well-chosen lever — magnitude, time lag or a key assumption — then judge", "Skip analysis and only evaluate", "Add a second diagram"]
-    ans: 1
-    exp: "With less time, depth beats breadth. Pick the one evaluation lever that bites hardest on your chain, develop it, and reach a conditional judgement. A focused single-lever evaluation plus a supported judgement is enough to access the top AO4 marks at 15 marks."
 spa_topic: causes-of-inflation-and-deflation
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

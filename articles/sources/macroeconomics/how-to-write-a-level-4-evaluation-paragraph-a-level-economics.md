@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which assessment objective do evaluation marks fall under in A-level economics?"
-    opts: ["AO1 (knowledge)", "AO2 (application)", "AO3 (analysis)", "AO4 (evaluation)"]
-    ans: 3
-    exp: "Evaluation is AO4. AO1 is knowledge, AO2 is applying it to the context, AO3 is the analytical chain, and AO4 is weighing that chain — magnitude, likelihood, assumptions and judgement."
-  - difficulty: medium
-    type: mcq
-    q: "Which of these is genuine evaluation rather than just a second analysis point?"
-    opts: ["A subsidy lowers price, so quantity demanded rises.", "However, the size of the effect depends on price elasticity of demand — if demand is inelastic the quantity change is small, so the policy achieves little.", "A subsidy is money paid by the government to producers.", "The subsidy shifts the supply curve to the right."]
-    ans: 1
-    exp: "Real AO4 weighs the chain — here, conditioning the effect on elasticity and judging the consequence ('achieves little'). The other options are definition (AO1) or analysis (AO3), not evaluation."
-  - difficulty: hard
-    type: mcq
-    q: "A student writes: 'However, this might not work. It could be different. There are other factors to consider.' Why does this score poorly for AO4?"
-    opts: ["It is too long", "It is generic — it names no specific factor, condition or magnitude, so it could be pasted onto any answer", "It uses the word 'however', which is banned", "It belongs in the introduction"]
-    ans: 1
-    exp: "Mark schemes reward evaluation that is anchored to the specific argument — naming the factor, the condition or the magnitude. Generic hedging that would fit any essay ('other factors', 'it could be different') earns little because it shows no real weighing."
 spa_topic: macroeconomic-objectives-and-trade-offs
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

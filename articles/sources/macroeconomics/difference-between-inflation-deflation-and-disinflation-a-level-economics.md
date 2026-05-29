@@ -31,25 +31,6 @@ glance_cta:
   href: /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "UK CPI inflation slows from 6.0% to 3.5% over a year. What is happening to the general price level?"
-    opts: ["It is falling", "It is still rising, just more slowly", "It is constant", "It is impossible to say"]
-    ans: 1
-    exp: "A positive inflation rate of 3.5% means prices are still rising — just at a slower pace than before. A fall in the rate of inflation while it stays positive is disinflation, not deflation."
-  - difficulty: medium
-    type: mcq
-    q: "Which scenario describes deflation?"
-    opts: ["Inflation falls from 4% to 2%", "The price level falls; the inflation rate is negative", "Inflation rises from 2% to 4%", "Wages rise faster than prices"]
-    ans: 1
-    exp: "Deflation is a sustained fall in the general price level — a negative inflation rate. A falling-but-positive rate is disinflation; deflation requires the index itself to drop year on year."
-  - difficulty: hard
-    type: mcq
-    q: "Why do central banks generally treat deflation as more dangerous than mild inflation, even though falling prices sound good for consumers?"
-    opts: ["Because deflation always causes the exchange rate to collapse", "Because deflation can trigger deferred spending, a rising real debt burden, and downward pressure on wages — a self-reinforcing spiral that monetary policy struggles to escape near the zero lower bound", "Because deflation is illegal under the Bank of England's mandate", "Because deflation raises the real value of money, which firms cannot tolerate"]
-    ans: 1
-    exp: "Falling prices encourage households to delay purchases (deflationary spiral), raise the real value of existing debts (debt deflation, as Irving Fisher argued), and put downward pressure on wages. With nominal rates near zero the central bank loses room to cut, making deflation far harder to reverse than mild inflation — which is why a symmetric 2% target sits comfortably above zero."
 want_more:
   title: "Want more depth?"
   subtitle: "Master inflation with Econos."

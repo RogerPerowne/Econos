@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-1/public-goods/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which is the textbook example of a pure public good?"
-    opts: ["NHS appointments", "Public transport", "National defence", "State primary schools"]
-    ans: 2
-    exp: "Defence is both non-rival (one resident's protection doesn't reduce another's) and non-excludable (you can't defend Camden without also defending Islington). NHS appointments and schools are PRIVATELY consumed but PUBLICLY provided — different concept."
-  - difficulty: medium
-    type: mcq
-    q: "Why does the free-rider problem cause market failure for pure public goods?"
-    opts: ["The good is too expensive for private firms", "Non-excludability means rational consumers refuse to pay", "Public goods are always loss-making", "Consumers don't value them"]
-    ans: 1
-    exp: "If non-payers can't be excluded, every consumer's best response is to let someone else fund the good and consume it for free. Demand revealed in a private market is far below true social benefit, so the good is under-provided or never appears."
-  - difficulty: hard
-    type: mcq
-    q: "Streetlights, the BBC and the open-source Linux operating system are all sometimes called public goods. Which fits the textbook definition (non-rival AND non-excludable) most cleanly, and why?"
-    opts: ["Streetlights — one resident's use doesn't diminish another's and non-payers can't be excluded, satisfying both conditions technically", "The BBC — encryption and iPlayer logins make it the purest non-excludable broadcast good", "Linux — it is free to copy, so it must be a pure public good", "All three are identical pure public goods with no meaningful distinction"]
-    ans: 0
-    exp: "Streetlights are genuinely non-rival and non-excludable as a matter of technology. The BBC became quasi-public once encryption made exclusion feasible (the licence fee is a political choice), and Linux is supplied privately via voluntary contribution — so only streetlights satisfy both conditions and the market-failure prediction cleanly."
 
 want_more:
   title: "Want more depth?"

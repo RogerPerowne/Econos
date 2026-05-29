@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-1/consumer-and-producer-surplus/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Consumer surplus on a standard supply-and-demand diagram is shown by..."
-    opts: ["The area below the supply curve up to equilibrium quantity", "The area above the demand curve and below the price", "The area below the demand curve and above the market price, up to equilibrium quantity", "The full rectangle Price × Quantity"]
-    ans: 2
-    exp: "Consumer surplus is what consumers WOULD have paid (under the demand curve) minus what they DID pay (the market price), summed across all units bought up to equilibrium. The triangle below D and above P*."
-  - difficulty: medium
-    type: mcq
-    q: "An indirect tax is imposed on cigarettes. Demand is inelastic. What happens to the surplus areas?"
-    opts: ["Consumer surplus is unchanged", "Producers bear most of the tax burden", "Consumers bear most of the tax burden; the deadweight triangle is small", "The deadweight triangle is unusually large"]
-    ans: 2
-    exp: "Inelastic demand means quantity barely falls when price rises. The tax is mostly passed through to consumers (high CS loss → government revenue), with a small deadweight triangle because few trades are lost. The mirror image holds for elastic demand."
-  - difficulty: hard
-    type: mcq
-    q: "A government sets a maximum rent (price ceiling) below the competitive equilibrium for housing. Which statement correctly describes the welfare effects?"
-    opts: ["Consumer surplus unambiguously rises and producer surplus is unchanged", "Both consumer and producer surplus rise because the lower price helps tenants", "Producer surplus falls; consumer surplus is ambiguous, and total welfare falls by the deadweight triangle over the lost quantity", "Total welfare rises because the lower price transfers surplus from landlords to tenants with no loss"]
-    ans: 2
-    exp: "Below-equilibrium price means Q exchanged falls to where supply meets P_max, creating a shortage. Producer surplus clearly falls (lower price and quantity); CS is ambiguous (gainers who still rent vs those priced out), and society loses the deadweight triangle — plus extra losses from non-price rationing like queueing and search."
 
 want_more:
   title: "Want more depth?"

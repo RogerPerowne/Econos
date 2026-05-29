@@ -13,25 +13,6 @@ read_minutes: 6
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A progressive tax is one where, as income rises, the average rate of tax does what?"
-    opts: ["Falls", "Stays the same", "Rises", "Becomes zero"]
-    ans: 2
-    exp: "Under a progressive tax the average tax rate rises with income, so higher earners pay a larger proportion of their income. UK income tax, with its rising marginal bands, is the standard example."
-  - difficulty: medium
-    type: mcq
-    q: "Why is VAT generally described as a regressive tax?"
-    opts: ["Because the rate rises with income", "Because lower-income households spend a larger share of their income on taxed goods, so VAT takes a larger proportion of their income", "Because it is a direct tax", "Because higher earners pay it at a higher rate"]
-    ans: 1
-    exp: "VAT is a flat rate on spending, but lower-income households spend a larger fraction of their income (they save less). So VAT absorbs a bigger share of a poor household's income than a rich one's — the definition of regressive."
-  - difficulty: hard
-    type: mcq
-    q: "A flat tax charges every household 20% of income. Why is this proportional rather than progressive, even though higher earners pay more in cash terms?"
-    opts: ["Because the average tax rate is constant across all income levels", "Because the marginal rate falls as income rises", "Because it raises less revenue than a banded system", "Because it exempts low earners"]
-    ans: 0
-    exp: "Progressivity is about the average rate, not the cash amount. A flat 20% means every household pays the same proportion, so the average rate is constant — proportional. Higher earners pay more pounds, but not a higher share."
 spa_topic: indirect-taxes-and-subsidies
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On a monopoly diagram, the profit-maximising output is found where:"
-    opts: ["AR = AC", "MC = MR", "AR = 0", "MC = AC"]
-    ans: 1
-    exp: "Profit is maximised where marginal cost equals marginal revenue (MC = MR). The price is then read up to the AR (demand) curve at that output."
-  - difficulty: medium
-    type: mcq
-    q: "Why must you read price up to the AR curve rather than off the MC = MR point?"
-    opts: ["Because MR sets the price", "Because consumers pay the price shown on the demand (AR) curve at the chosen output", "Because AC sets the price", "Because MC equals price in monopoly"]
-    ans: 1
-    exp: "MC = MR fixes the quantity. The price is whatever consumers will pay for that quantity — read vertically up to the AR (demand) curve, not off the MR line below it."
-  - difficulty: hard
-    type: mcq
-    q: "A student draws a fully correct monopoly diagram but never refers to it in the prose. What is the likely outcome?"
-    opts: ["Full diagram and analysis marks regardless", "The diagram earns little, because AO3 rewards the explanation the diagram supports, not the picture alone", "Automatic top band", "The prose marks are cancelled"]
-    ans: 1
-    exp: "A diagram is a tool for analysis. Unreferenced, it earns minimal credit — the marks come from explaining the mechanism it shows, so the diagram and the prose must work together."
 spa_topic: monopoly
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

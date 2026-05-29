@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-1/price-determination/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A new study links red meat to heart disease, reducing demand for beef. The price of beef has not changed. What happens on the diagram?"
-    opts: ["Movement DOWN the beef demand curve", "Movement UP the beef demand curve", "The demand curve shifts LEFT", "The supply curve shifts LEFT"]
-    ans: 2
-    exp: "Tastes are a condition of demand — and a change in conditions SHIFTS the curve, not moves along it. Price hasn't changed but quantity demanded at every price has fallen. Shift left."
-  - difficulty: medium
-    type: mcq
-    q: "A poor wheat harvest cuts UK wheat supply. In the short run, at the OLD market price..."
-    opts: ["The market is in equilibrium", "There is excess demand — price rises", "There is excess supply — price falls", "Demand falls"]
-    ans: 1
-    exp: "Supply shifts left. At the old price, planned demand now exceeds planned supply. Suppliers ration by raising price; consumers exit the market as price rises. New equilibrium is at a higher price and lower quantity."
-  - difficulty: hard
-    type: mcq
-    q: "A government sets a minimum alcohol price above the market equilibrium (as Scotland did in 2018). Which statement best captures the effects and a key limitation?"
-    opts: ["Excess supply emerges; consumers still buying pay more, those priced out lose access, and cross-border buying erodes the policy's reach", "A shortage emerges and the price floor is non-binding, so nothing changes", "Producer surplus falls to zero because the higher price cuts all sales", "The policy is progressive, hitting wealthy moderate drinkers hardest"]
-    ans: 0
-    exp: "Above equilibrium, planned supply exceeds demand (excess supply); remaining buyers pay more while priced-out consumers lose access, and the welfare loss is the deadweight triangle. A key limitation is cross-border substitution — Scottish drinkers can buy in England or online — and the floor is regressive, binding hardest on low-income heavy drinkers."
 
 want_more:
   title: "Want more depth?"

@@ -13,25 +13,6 @@ read_minutes: 12
 status: live
 published: 2026-05-28
 modified: 2026-05-28
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "What does the short-run Phillips curve plot against each other?"
-    opts: ["Inflation and economic growth", "Inflation and unemployment", "Unemployment and interest rates", "Wages and productivity"]
-    ans: 1
-    exp: "The Phillips curve plots the rate of inflation on one axis against the rate of unemployment on the other, showing an inverse short-run relationship."
-  - difficulty: medium
-    type: mcq
-    q: "Why is the long-run Phillips curve drawn as vertical at the NAIRU?"
-    opts: ["Because unemployment can never fall in the long run", "Because once inflation expectations adjust, any attempt to hold unemployment below the natural rate only accelerates inflation", "Because inflation always returns to zero in the long run", "Because the central bank fixes unemployment by law"]
-    ans: 1
-    exp: "Friedman argued workers eventually anticipate inflation and bargain for higher nominal wages, so the only stable unemployment rate is the NAIRU — any inflation rate is compatible with it."
-  - difficulty: hard
-    type: mcq
-    q: "1970s stagflation — high inflation alongside high unemployment — challenged the original Phillips curve because it showed that:"
-    opts: ["The trade-off was always stronger than economists thought", "A stable, exploitable inverse relationship between inflation and unemployment does not hold once expectations and supply shocks are accounted for", "Unemployment causes inflation directly", "The curve only applies to the United States"]
-    ans: 1
-    exp: "Simultaneous high inflation and high unemployment cannot sit on a single downward-sloping curve. Adaptive expectations plus the OPEC supply shocks shifted the short-run curve outward, breaking the simple trade-off."
 spa_topic: macro-conflicts-and-trade-offs
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

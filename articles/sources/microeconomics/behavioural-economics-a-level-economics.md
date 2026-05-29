@@ -13,25 +13,6 @@ read_minutes: 11
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "What does the term 'bounded rationality' describe?"
-    opts: ["People always make perfectly rational decisions", "People intend to be rational but are limited by time, information and mental capacity", "People never use any logic when choosing", "The boundary of a firm's production possibilities"]
-    ans: 1
-    exp: "Bounded rationality, a term associated with Herbert Simon, means people try to choose well but face limits on information, time and processing power, so they settle for good-enough decisions rather than perfectly optimal ones."
-  - difficulty: medium
-    type: mcq
-    q: "Switching workplace pensions from opt-in to automatic enrolment is an example of changing which thing?"
-    opts: ["The price of the product", "A subsidy on saving", "The default option, a form of choice architecture", "A tax on consumption"]
-    ans: 2
-    exp: "Auto-enrolment changes the default: people are signed up unless they actively opt out. Because of inertia and present bias, most stay enrolled. This is choice architecture, not a change in price or incentive."
-  - difficulty: hard
-    type: mcq
-    q: "Why might a nudge be preferred to a tax or a ban to change behaviour?"
-    opts: ["A nudge guarantees everyone changes their behaviour", "A nudge preserves freedom of choice and is usually cheaper, though its effect can be smaller and easier to ignore", "A nudge raises more government revenue than a tax", "A nudge removes the option people would otherwise choose"]
-    ans: 1
-    exp: "Nudges work with biases while leaving the original options open and tend to be low-cost, but they rely on people not actively resisting, so their effect is often smaller and less certain than a tax or a ban."
 spa_topic: behavioural-economics
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

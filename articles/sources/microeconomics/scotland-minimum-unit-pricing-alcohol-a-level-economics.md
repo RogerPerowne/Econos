@@ -13,25 +13,6 @@ read_minutes: 9
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Minimum unit pricing for alcohol is an example of which intervention?"
-    opts: ["A price ceiling", "A price floor (minimum price)", "An indirect tax", "A subsidy"]
-    ans: 1
-    exp: "MUP sets a legal floor below which a unit of alcohol cannot be sold. A binding price floor sits above the free-market equilibrium price, raising price and reducing quantity demanded."
-  - difficulty: medium
-    type: mcq
-    q: "How does the revenue effect of MUP differ from an equivalent alcohol tax?"
-    opts: ["MUP revenue goes to the government; tax revenue goes to firms", "Under MUP the higher price is retained by retailers and producers; under a tax the extra revenue goes to the government", "Both raise the same revenue for the government", "Neither raises any revenue"]
-    ans: 1
-    exp: "A minimum price simply forces a higher price; the gap above the old price accrues to sellers. A tax of the same size would instead transfer that gap to the government as revenue. This is the key distinction examiners reward."
-  - difficulty: hard
-    type: mcq
-    q: "Why is MUP often argued to target harmful drinkers more precisely than an ad valorem tax?"
-    opts: ["Harmful drinkers buy mostly premium products", "MUP bites hardest on cheap, high-strength alcohol, which is disproportionately bought by the heaviest drinkers", "An ad valorem tax cannot apply to alcohol", "MUP raises the price of all alcohol equally"]
-    ans: 1
-    exp: "By pricing per unit of alcohol, MUP raises the price of cheap, strong drinks the most, leaving moderately priced products less affected. Since the heaviest drinkers tend to favour the cheapest strong alcohol, the policy is argued to be better targeted than a percentage tax."
 spa_topic: government-intervention-in-markets
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

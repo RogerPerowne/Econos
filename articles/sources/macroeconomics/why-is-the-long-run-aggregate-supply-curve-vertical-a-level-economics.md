@@ -13,25 +13,6 @@ read_minutes: 6
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "In the Classical model, what does the position of the vertical LRAS curve represent?"
-    opts: ["The current level of aggregate demand", "The economy's full-capacity (potential) output", "The natural rate of inflation", "The short-run profit-maximising output"]
-    ans: 1
-    exp: "Classical LRAS is vertical at the economy's productive potential — the output the economy produces when all factor markets clear. It is fixed by the quantity and productivity of factors, not by demand."
-  - difficulty: medium
-    type: mcq
-    q: "According to the Classical view, what happens to real output in the long run if aggregate demand rises?"
-    opts: ["Real output rises permanently", "Real output is unchanged; only the price level rises", "Real output falls as costs rise", "Real output rises then falls below potential"]
-    ans: 1
-    exp: "With LRAS vertical, a rightward AD shift raises the price level but leaves real output at potential. Higher demand is fully absorbed by higher prices once wages and prices have adjusted."
-  - difficulty: hard
-    type: mcq
-    q: "Why does the Classical model conclude that demand-side policy cannot raise long-run growth, while supply-side policy can?"
-    opts: ["Demand-side policy is always inflationary, but supply-side policy never is", "Only demand-side policy shifts SRAS, and SRAS sets long-run output", "Long-run output is fixed by the position of LRAS, which only supply-side measures that raise productive potential can move rightward", "Supply-side policy works instantly while demand-side policy works with a lag"]
-    ans: 2
-    exp: "Because LRAS is vertical at potential output, AD changes only move the price level in the long run. Trend growth requires shifting LRAS right — more or more-productive factors — which is the job of supply-side policy."
 spa_topic: aggregate-supply
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

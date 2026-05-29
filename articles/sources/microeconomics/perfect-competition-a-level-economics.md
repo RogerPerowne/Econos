@@ -13,25 +13,6 @@ read_minutes: 11
 status: live
 published: 2026-05-28
 modified: 2026-05-28
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "In perfect competition, the individual firm's demand curve is:"
-    opts: ["Downward-sloping and steep", "Horizontal (perfectly elastic) at the market price", "Vertical", "Upward-sloping"]
-    ans: 1
-    exp: "Each firm is so small relative to the market that it can sell any quantity at the going price but nothing above it — so its demand curve is horizontal at the market price."
-  - difficulty: medium
-    type: mcq
-    q: "Why does a perfectly competitive firm make only normal profit in the long run?"
-    opts: ["Because the government caps prices", "Because no barriers to entry exist, so supernormal profit attracts entrants until price is driven down to minimum average cost", "Because firms collude to limit output", "Because demand is inelastic"]
-    ans: 1
-    exp: "Freedom of entry and exit means any supernormal profit attracts new firms, increasing supply and lowering price until only normal profit remains. Losses cause exit until price recovers."
-  - difficulty: hard
-    type: mcq
-    q: "Perfect competition is treated as a benchmark mainly because, in long-run equilibrium, it achieves:"
-    opts: ["Maximum supernormal profit for firms", "Both allocative efficiency (P = MC) and productive efficiency (production at minimum ATC)", "The widest possible range of differentiated products", "The lowest possible level of output"]
-    ans: 1
-    exp: "In long-run equilibrium P = MC = minimum ATC, so the model delivers both allocative and productive efficiency simultaneously — the standard against which other market structures are judged."
 spa_topic: perfect-competition
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

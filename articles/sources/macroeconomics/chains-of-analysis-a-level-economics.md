@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A 'chain of analysis' in A-level economics earns marks for which assessment objective?"
-    opts: ["AO1 (knowledge)", "AO2 (application)", "AO3 (analysis)", "AO4 (evaluation)"]
-    ans: 2
-    exp: "A chain of analysis is AO3 — the logical sequence of cause and effect that links a starting cause to a final economic outcome. Each developed link is a point the mark scheme can credit."
-  - difficulty: medium
-    type: mcq
-    q: "Which is the better-developed chain of analysis for a fall in interest rates?"
-    opts: ["Lower interest rates increase economic growth.", "Lower interest rates → borrowing is cheaper → consumption and investment rise → aggregate demand shifts right → real output and the price level rise.", "Lower interest rates are set by the Bank of England.", "Lower interest rates are good for the economy."]
-    ans: 1
-    exp: "A chain spells out the intermediate steps so the logic is visible. 'Increase growth' jumps from cause to outcome with no mechanism; the second option links each step, which is exactly what AO3 rewards."
-  - difficulty: hard
-    type: mcq
-    q: "Why does skipping the middle of a chain — writing 'a weaker pound boosts growth' — cost analysis marks even when the conclusion is correct?"
-    opts: ["The conclusion is wrong", "Mark schemes credit the developed links, not the endpoint — without the X-M, AD and output steps there are no intermediate points to reward", "You must always draw a diagram", "Growth is not an AO3 concept"]
-    ans: 1
-    exp: "AO3 marks attach to the links, not the destination. 'A weaker pound boosts growth' is a true statement but collapses several steps (cheaper exports, dearer imports, higher net exports, AD shift, output rise) into one assertion, so only one point can be credited instead of several."
 spa_topic: aggregate-demand
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

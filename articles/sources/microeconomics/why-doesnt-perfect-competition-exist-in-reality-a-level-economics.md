@@ -13,25 +13,6 @@ read_minutes: 6
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "In perfect competition, each firm is a price taker. What does that mean?"
-    opts: ["The firm sets its own price above marginal cost", "The firm accepts the market price and cannot influence it", "The firm pays a fixed price for all its inputs", "The firm matches the price of the largest competitor"]
-    ans: 1
-    exp: "A price taker is so small relative to the market that it has no power over price and must accept the going market price, selling as much as it likes at that price but nothing above it."
-  - difficulty: medium
-    type: mcq
-    q: "Which assumption of perfect competition is most clearly violated by branding and advertising?"
-    opts: ["A large number of buyers and sellers", "Freedom of entry and exit", "Homogeneous (identical) products", "No single firm can influence price"]
-    ans: 2
-    exp: "Branding exists precisely to make products feel different. That breaks the homogeneous-product assumption and gives firms some price-setting power, which is why most real markets are monopolistically competitive at best."
-  - difficulty: hard
-    type: mcq
-    q: "Why do economists still teach perfect competition even though no real market fully satisfies it?"
-    opts: ["Because it accurately describes most modern industries", "Because it is the only model with a profit-maximisation rule", "Because it is a benchmark for allocative and productive efficiency against which real, imperfect markets can be judged", "Because firms in it earn supernormal profit in the long run"]
-    ans: 2
-    exp: "Perfect competition delivers allocative (P=MC) and productive (lowest-AC) efficiency in the long run. It is used as an idealised benchmark to measure how far real-world structures fall short, not as a description of reality."
 spa_topic: perfect-competition
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

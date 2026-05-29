@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-1/indirect-taxes-and-subsidies/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On an indirect tax diagram, what does the imposition of a specific tax do to the supply curve?"
-    opts: ["Shifts demand to the left", "Shifts supply up/left by the tax per unit", "Pivots demand to become more elastic", "Leaves both curves unchanged and only moves price"]
-    ans: 1
-    exp: "An indirect tax raises sellers' costs at every output, so the supply curve shifts vertically upward by the amount of the tax per unit. Demand is unaffected — the demand curve does not move."
-  - difficulty: medium
-    type: mcq
-    q: "Reading the diagram, the consumer's share of an indirect tax is shown by which distance?"
-    opts: ["The whole vertical gap between the two supply curves", "The gap between the new (higher) price and the original equilibrium price", "The gap between the original price and the price the producer now receives", "The horizontal fall in quantity"]
-    ans: 1
-    exp: "The total tax per unit is the vertical gap between S and S+tax. The portion above the original equilibrium price — from the old price up to the new, higher price consumers pay — is the consumer's share of the burden. The portion below is the producer's."
-  - difficulty: hard
-    type: mcq
-    q: "A specific tax is placed on a good with very inelastic demand and elastic supply. Reading the incidence split off the diagram, who bears most of the tax and why?"
-    opts: ["The producer, because supply is elastic and adjusts easily", "The consumer, because inelastic demand means buyers keep buying despite the higher price, so sellers can pass most of the tax on", "It is always split exactly 50/50 regardless of elasticity", "Neither — the tax is fully absorbed by the government"]
-    ans: 1
-    exp: "Incidence falls more heavily on the more inelastic side. With inelastic demand, quantity barely falls when price rises, so sellers can pass most of the tax through as a higher price — the consumer's rectangle dominates. This is why taxes on cigarettes and fuel raise so much revenue."
 
 want_more:
   title: "Want more depth?"

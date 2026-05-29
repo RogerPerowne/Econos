@@ -13,25 +13,6 @@ read_minutes: 8
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A new health scare cuts demand for a food. On a supply-and-demand diagram, how should this be shown?"
-    opts: ["A movement down along the demand curve", "A leftward shift of the whole demand curve", "A rightward shift of supply", "A movement along the supply curve only"]
-    ans: 1
-    exp: "A change in a determinant of demand (here, tastes) shifts the whole demand curve. A movement ALONG demand happens only when the good's own price changes. Confusing the two is the most-flagged Paper 1 diagram error."
-  - difficulty: medium
-    type: mcq
-    q: "A student writes that a tax on producers 'shifts the demand curve left'. Why is this a Paper 1 mistake?"
-    opts: ["A producer tax raises costs and shifts SUPPLY left, not demand", "Taxes never appear on diagrams", "Demand curves cannot shift", "The tax shifts demand right, not left"]
-    ans: 0
-    exp: "An indirect tax raises producers' costs, shifting the supply curve left (up by the tax). Demand only shifts if a determinant of demand changes. Mislabelling which curve a policy moves is a classic application error."
-  - difficulty: hard
-    type: mcq
-    q: "On a 'markets' question, why does stating that demand is price inelastic CHANGE the predicted effect of an indirect tax on consumers?"
-    opts: ["It doesn't — incidence is always shared equally", "With inelastic demand, consumers bear a larger share of the tax because quantity barely falls when price rises, so producers can pass more of it on", "Inelastic demand means the tax has no effect", "Elasticity only matters for supply"]
-    ans: 1
-    exp: "Tax incidence depends on relative elasticities. When demand is more inelastic than supply, the consumer's share of the burden is larger, because buyers keep buying as price rises so producers can pass more of the tax forward. Bringing elasticity into the answer is exactly the application examiners reward."
 spa_topic: price-determination
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

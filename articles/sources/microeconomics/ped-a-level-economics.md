@@ -14,25 +14,6 @@ status: live
 published: 2026-05-28
 modified: 2026-05-28
 spa_topic: price-elasticity-of-demand
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A 10% rise in the price of cinema tickets causes a 25% fall in tickets sold. What is the (absolute) PED?"
-    opts: ["0.4", "2.5", "10", "25"]
-    ans: 1
-    exp: "PED = %ΔQd ÷ %ΔP = 25 ÷ 10 = 2.5. Greater than 1 → elastic. Cinema tickets are a leisure good with close substitutes (streaming), so elastic demand fits."
-  - difficulty: medium
-    type: mcq
-    q: "A firm whose product has inelastic demand wants to increase total revenue. What should it do?"
-    opts: ["Cut price", "Raise price", "Advertise to make demand more elastic", "Leave price unchanged"]
-    ans: 1
-    exp: "If demand is inelastic, %ΔQd < %ΔP. Raising price loses fewer units than the price gain — total revenue rises. The mirror logic (cut price → raise revenue) only works under elastic demand."
-  - difficulty: hard
-    type: mcq
-    q: "The UK Soft Drinks Industry Levy was levied on producers and tiered by sugar content, prompting widespread reformulation. What does this reveal about how policymakers exploit PED?"
-    opts: ["Consumer demand for sugary drinks is highly elastic, so taxing consumers would have cut consumption sharply", "Producer supply is perfectly inelastic, so firms simply absorbed the levy with no change in behaviour", "Both consumers and producers face identical elasticities, so the side taxed makes no difference", "Branded consumption is fairly inelastic, but firms faced an elastic consumer response to higher shelf prices — so they reformulated to dodge the levy rather than pass it on"]
-    ans: 3
-    exp: "A passthrough tax on inelastic branded demand would mainly raise revenue, missing the health goal. Because consumers respond elastically to a higher shelf price, manufacturers reformulated below the sugar threshold instead — policymakers used the elasticity asymmetry to change firm behaviour rather than tax consumption."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics" }

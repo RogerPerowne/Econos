@@ -13,25 +13,6 @@ read_minutes: 6
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Economic growth is most precisely defined as an increase in what?"
-    opts: ["A country's Human Development Index", "Real gross domestic product over time", "The average length of schooling", "Life expectancy at birth"]
-    ans: 1
-    exp: "Economic growth is an increase in real GDP (output) over time. The other options are components or measures of development, which is a broader concept than output alone."
-  - difficulty: medium
-    type: mcq
-    q: "Which three dimensions does the Human Development Index combine?"
-    opts: ["Income, inflation and unemployment", "GDP, exports and investment", "Health, education and income", "Health, equality and freedom"]
-    ans: 2
-    exp: "The HDI combines life expectancy (health), schooling measures (education) and gross national income per capita (income). It was designed to capture development beyond output alone."
-  - difficulty: hard
-    type: mcq
-    q: "Why can an economy record strong economic growth without much economic development?"
-    opts: ["Growth always reduces inequality automatically", "Rising GDP can be concentrated among a few, or driven by resource extraction, leaving health, education and broad living standards little changed", "Development is measured in nominal terms while growth is real", "GDP and HDI always move together"]
-    ans: 1
-    exp: "Growth measures total output; development measures broad-based improvements in living standards. If the gains accrue to a narrow group, or come from extraction that does not fund health and education, output can rise while development stalls."
 spa_topic: the-impact-of-economic-growth
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

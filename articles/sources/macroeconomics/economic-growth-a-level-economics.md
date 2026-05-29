@@ -13,25 +13,6 @@ read_minutes: 12
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which measure best captures economic growth after stripping out the effect of rising prices?"
-    opts: ["Nominal GDP", "Real GDP", "GDP at current prices", "The CPI"]
-    ans: 1
-    exp: "Real GDP adjusts nominal output for inflation, so it isolates the change in the actual quantity of goods and services produced rather than the change in their money value."
-  - difficulty: medium
-    type: mcq
-    q: "An outward shift of the production possibility frontier represents which kind of growth?"
-    opts: ["Actual growth from using spare capacity", "Potential growth from rising productive capacity", "A movement along the frontier", "A fall in aggregate demand"]
-    ans: 1
-    exp: "The PPF marks the economy's maximum capacity, so shifting it outward shows potential growth. Using existing spare capacity is actual growth and appears as a move towards the frontier, not a shift of it."
-  - difficulty: hard
-    type: mcq
-    q: "Why can a rise in real GDP overstate the improvement in living standards?"
-    opts: ["Real GDP already adjusts for population, so it cannot overstate anything", "GDP counts the output but ignores how it is distributed, what it costs the environment, and unpaid work", "Real GDP only measures the public sector", "Higher real GDP always means lower inequality"]
-    ans: 1
-    exp: "GDP is a total, not a per-head or welfare measure. Growth concentrated among a few, or bought with pollution and resource depletion, can raise GDP while typical living standards stagnate or fall."
 spa_topic: trade-cycle-shocks-and-economic-growth
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

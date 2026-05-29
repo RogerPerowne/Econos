@@ -13,25 +13,6 @@ read_minutes: 8
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On a 25-mark Edexcel A question, what does the 'KAA' stand for?"
-    opts: ["Knowledge, Argument, Analysis", "Knowledge, Application, Analysis", "Key Assessment Aim", "Knowledge, Accuracy, Application"]
-    ans: 1
-    exp: "KAA bundles AO1 (knowledge), AO2 (application to the context) and AO3 (analysis — the chain of reasoning). The other half of the question, EV, is the AO4 evaluation. A 25-marker splits roughly evenly between KAA and EV marks."
-  - difficulty: medium
-    type: mcq
-    q: "A student writes three fully developed KAA paragraphs but no evaluation at all. What is the most likely outcome?"
-    opts: ["Full marks — analysis is what matters most", "Capped well below the top level, because the EV (AO4) marks are unreachable", "An automatic Level 1", "It depends only on the diagram"]
-    ans: 1
-    exp: "On a 25-marker the marks are split between KAA and EV strands. Brilliant analysis with no evaluation cannot access the AO4 marks, so the script is capped — typically in the lower-middle levels. You need both strands to reach Level 4/5."
-  - difficulty: hard
-    type: mcq
-    q: "Which sentence shows a genuine SUPPORTED judgement rather than a generic conclusion?"
-    opts: ["In conclusion, there are arguments on both sides and it depends on the situation.", "Overall, the policy is good because it helps the economy grow in the long run.", "On balance, the rate rise is the right call IF inflation is demand-pull, because the cost it imposes on borrowers is outweighed by anchoring expectations — but the judgement reverses if the inflation is cost-push.", "In conclusion, the government should think carefully before acting."]
-    ans: 2
-    exp: "A supported judgement states a clear position AND the condition it depends on, weighing one effect against another. 'It depends' with no stated condition, and unqualified 'it's good', are exactly what mark schemes flag as unsupported."
 spa_topic: macro-conflicts-and-trade-offs
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

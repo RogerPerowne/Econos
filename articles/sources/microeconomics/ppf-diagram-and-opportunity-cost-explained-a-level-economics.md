@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On a production possibility frontier (PPF) diagram, what does a point INSIDE the curve represent?"
-    opts: ["An unattainable level of output", "An efficient use of all resources", "Unused or under-employed resources (productive inefficiency)", "Economic growth"]
-    ans: 2
-    exp: "A point inside the PPF means the economy is not using all its resources fully — there is spare capacity or unemployment, so production is inefficient. Points on the curve are efficient; points beyond it are currently unattainable."
-  - difficulty: medium
-    type: mcq
-    q: "How do you read the opportunity cost of producing more of good X off a PPF?"
-    opts: ["By reading the total output of X", "By the amount of good Y given up to gain the extra X", "By the distance from the origin", "Opportunity cost cannot be shown on a PPF"]
-    ans: 1
-    exp: "Opportunity cost is what you sacrifice. Moving along the PPF to produce more X means producing less Y — the quantity of Y given up IS the opportunity cost of the extra X. A bowed-out (concave) PPF shows this cost rising as you specialise."
-  - difficulty: hard
-    type: mcq
-    q: "An economy invests heavily in education and new capital. How is the long-run effect shown on the PPF, and why?"
-    opts: ["A movement along the existing curve, because output rises", "A point inside the curve, because resources are diverted to investment", "An outward shift of the whole PPF, because productive capacity has increased", "A pivot of one axis only, with no change in the other"]
-    ans: 2
-    exp: "Investment in human and physical capital raises the economy's productive potential, so the whole PPF shifts outward (economic growth). A movement along the curve only reallocates between goods; only a change in the quantity or quality of resources shifts the frontier itself."
 spa_topic: production-possibility-frontiers
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

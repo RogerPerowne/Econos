@@ -13,25 +13,6 @@ read_minutes: 10
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Roughly what range did the Bank of England's Bank Rate move across between late 2021 and 2023?"
-    opts: ["From 5% to 0.1%", "From 0.1% to 5.25%", "From 2% to 2.5%", "From 10% to 5%"]
-    ans: 1
-    exp: "The MPC lifted Bank Rate from a record low of 0.1% in late 2021 to 5.25% by August 2023 — one of the fastest tightening cycles in the Bank's modern history, in response to surging inflation."
-  - difficulty: medium
-    type: mcq
-    q: "UK CPI inflation peaked at around 11.1% in October 2022. Which tool was the MPC's main response?"
-    opts: ["Cutting income tax", "Raising Bank Rate", "Increasing government spending", "Devaluing the pound directly"]
-    ans: 1
-    exp: "Monetary policy is the MPC's responsibility, and its main lever is Bank Rate. Raising it works through the transmission mechanism to cool aggregate demand and bring inflation back toward the 2% target."
-  - difficulty: hard
-    type: mcq
-    q: "Why did inflation keep rising for months even after the MPC began raising Bank Rate in late 2021?"
-    opts: ["Rate rises increase inflation", "The transmission mechanism operates with a lag of roughly 6 to 18 months, and much of the inflation came from a supply shock rate rises cannot reverse", "The MPC cut rates by mistake", "Higher rates raised the money supply"]
-    ans: 1
-    exp: "Monetary policy affects inflation only with a long lag, so early hikes had not yet bitten. Much of the 2022 inflation was a cost-push energy shock that a demand-side tool cannot directly reverse — so prices kept climbing while the tightening worked its way through."
 spa_topic: demand-side-policies-monetary
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

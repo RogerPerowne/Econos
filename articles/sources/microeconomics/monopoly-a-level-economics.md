@@ -14,25 +14,6 @@ status: live
 published: 2026-05-27
 modified: 2026-05-28
 spa_topic: monopoly
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A profit-maximising monopolist produces where..."
-    opts: ["AR = MC", "MR = MC", "AR = AC", "MR = AR"]
-    ans: 1
-    exp: "Every profit-maximising firm sets MR = MC. The DIFFERENCE for a monopoly is that the price (read from AR) is then HIGHER than MC — the source of the deadweight loss."
-  - difficulty: medium
-    type: mcq
-    q: "Why does marginal revenue lie below average revenue for a monopoly but not for a perfectly competitive firm?"
-    opts: ["Monopolies use absorption costing", "The monopolist faces the downward-sloping market demand curve", "MR is always negative for a monopolist", "MR is set by the regulator"]
-    ans: 1
-    exp: "A perfectly competitive firm is a price-taker — it can sell more at the going price, so MR = P = AR. A monopolist must cut price on ALL units to sell more, so MR < AR. The wedge widens as quantity rises."
-  - difficulty: hard
-    type: mcq
-    q: "Why may a natural monopoly be more efficient than splitting it into competing firms, and why is regulation then needed?"
-    opts: ["Competition always lowers average cost, so splitting it is efficient and no regulation is required", "A single firm faces rising long-run average cost, so it must be broken up and then price-capped", "One firm is more productively efficient, and being a monopoly it automatically sets P = MC", "Falling long-run AC over the relevant range means one firm supplies at lower cost than rivals duplicating fixed costs, but unregulated it sets P > MC, so a price cap captures the cost saving"]
-    ans: 3
-    exp: "High fixed and low marginal costs mean LRAC falls across the relevant output, so one firm avoids the wasteful duplication of fixed costs that competition would force. Left alone it sets P > MC with deadweight loss and supernormal profit, so price-cap regulation (e.g. RPI−X) substitutes for the missing competitor."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics", href: "/articles/?theme=micro" }

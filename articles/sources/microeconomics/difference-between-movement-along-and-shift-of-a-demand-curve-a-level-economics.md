@@ -31,25 +31,6 @@ glance_cta:
   href: /edexcel_a/theme-1/price-determination/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "The price of coffee rises and shoppers buy less of it. Nothing else changes. On the demand diagram this is..."
-    opts: ["A shift of the demand curve to the left", "A movement up along the demand curve", "A shift of the demand curve to the right", "A movement along the supply curve only"]
-    ans: 1
-    exp: "A change in the good's OWN price causes a movement along its demand curve — a change in quantity demanded. Higher price, lower quantity demanded: you slide up the existing curve. The curve itself does not move."
-  - difficulty: medium
-    type: mcq
-    q: "A successful advertising campaign makes consumers want more of a product at every price. This is best shown as..."
-    opts: ["A movement down the demand curve", "A movement up the demand curve", "A rightward shift of the demand curve", "A leftward shift of the demand curve"]
-    ans: 2
-    exp: "Advertising is a non-price condition of demand. A change in any non-price condition shifts the whole curve — and 'more demanded at every price' is a rightward shift, a change in demand rather than in quantity demanded."
-  - difficulty: hard
-    type: mcq
-    q: "The price of petrol falls. Which statement correctly separates the effects on the petrol market and the market for large cars (a complement)?"
-    opts: ["Both curves shift right", "Movement DOWN the petrol demand curve (own-price change) and a RIGHTWARD shift of the demand curve for large cars (a non-price condition for that market)", "A leftward shift of petrol demand and movement along car demand", "Both are movements along their respective curves"]
-    ans: 1
-    exp: "For petrol, its own price changed, so it is a movement along petrol's demand curve. For large cars, the change is in the price of a complement — a non-price condition for the car market — so the car demand curve shifts right. The same event is a movement in one market and a shift in another, depending on whose own price moved."
 want_more:
   title: "Want more depth?"
   subtitle: "Master demand and supply with Econos."

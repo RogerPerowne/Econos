@@ -31,25 +31,6 @@ glance_cta:
   href: /edexcel_a/theme-3/monopoly/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "For a single-price firm, the average revenue curve is the same as which curve?"
-    opts: ["The marginal cost curve", "The demand curve", "The total revenue curve", "The marginal revenue curve"]
-    ans: 1
-    exp: "AR = total revenue ÷ quantity = (price × quantity) ÷ quantity = price. Since the demand curve plots price against quantity, AR and demand are the same line."
-  - difficulty: medium
-    type: mcq
-    q: "A monopoly sells 10 units at £10 each. To sell an 11th unit it must drop the price to £9 on all units. Roughly what is the marginal revenue of the 11th unit?"
-    opts: ["£9 — the price of the extra unit", "£0", "Less than £9, because it loses £1 on each of the first 10 units", "£10 — unchanged"]
-    ans: 2
-    exp: "TR rises from £100 to £99 × 11 = £99... actually 11 × £9 = £99, a fall of £1, so MR is negative here. More generally MR is below the new price because the £1 cut applies to every unit already being sold — that revenue loss is netted off the gain from the extra sale."
-  - difficulty: hard
-    type: mcq
-    q: "Why does the straight-line MR curve hit the horizontal axis at exactly half the output where AR (demand) does?"
-    opts: ["Because marginal cost is constant", "Because the price elasticity of demand is always one", "Because for a linear demand curve MR has the same intercept but twice the slope, so it reaches zero at half the quantity", "Because the firm maximises total revenue at that point"]
-    ans: 2
-    exp: "If demand is P = a − bQ, then TR = aQ − bQ², so MR = a − 2bQ. MR shares the intercept a but its slope (2b) is double, meaning it cuts the axis at Q = a/(2b) — exactly half of demand's a/b. MR is zero at the revenue-maximising output, where PED = 1."
 want_more:
   title: "Want more depth?"
   subtitle: "Master monopoly with Econos."

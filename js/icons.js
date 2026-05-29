@@ -16867,17 +16867,14 @@ window.ECONOS_ICONS = {
         <line x1="60" y1="180" x2="600" y2="100" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="6 4"/>
         <text x="606" y="100" font-size="11" fill="#475569" font-family="Inter,sans-serif">Long-run</text>
         <text x="606" y="112" font-size="11" fill="#475569" font-family="Inter,sans-serif">trend</text>
-        <!-- Smooth 3-segment Bezier wave around the trend, with G1
-             continuity at the turning points (control points horizontal
-             either side of each peak/trough so the curve flattens).
-             Key points (matching the mockup's amplitude):
-               start  (60, 190)  — slightly below trend (recovery tail)
-               peak   (125, 110) — well above trend, mid-boom
-               trough (400, 195) — well below trend, mid-recession
-               end    (580, 75)  — above trend, recovery overshoot
-             Wave crosses the trend roughly at x=260 (slowdown midpoint)
-             and x=500 (recovery midpoint). -->
-        <path d="M60 190 C95 185 105 110 125 110 C180 110 340 195 400 195 C450 195 540 80 580 75" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <!-- Programmed sine wave around the trend.
+             wave_y(x) = trend_y(x) − 60·sin(2π·(x+7.5)/540)
+             with trend_y(x) = 180 − 0.14815·(x−60). Period 540, phase
+             shifted so the peak sits at x≈146 (mid-boom) and the trough
+             at x≈400 (mid-recession). 27 samples at every 20 px joined
+             with line segments + stroke-linejoin="round" — visually
+             indistinguishable from a true smooth sinusoid at this scale. -->
+        <path d="M60 138 L80 126 L100 117 L120 111 L140 109 L160 110 L180 113 L200 120 L220 128 L240 138 L260 149 L280 160 L300 170 L320 179 L340 186 L360 190 L380 192 L400 190 L420 184 L440 176 L460 165 L480 152 L500 137 L520 121 L540 104 L560 87 L580 70" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         <!-- Phase highlight layers (one revealed per active view) -->
         <g class="phase-boom" style="display:none">
           <rect x="60" y="40" width="135" height="200" fill="#16A34A" opacity="0.20" rx="2"/>

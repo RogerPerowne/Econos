@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.11.1 — 2026-05-29
+
+### New favicon set
+
+Replaced the six favicon images (SVG, 96×96 PNG, `.ico`, apple-touch,
+and the 192/512 web-app-manifest PNGs) with the supplied set — the
+Econos pinwheel-"e" with an opaque white centre. Kept the existing
+`site.webmanifest` (brand description, lang, start_url, scope,
+orientation and the green/cream theme) since it already references these
+filenames. SW cache → `econos-v86`.
+
 ## 0.11.0 — 2026-05-29
 
 ### Full-width shell, favicons on every page, Articles in the top bar

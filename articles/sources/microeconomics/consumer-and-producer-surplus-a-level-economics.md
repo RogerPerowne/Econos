@@ -57,7 +57,7 @@ The total of the two is **total surplus** (or social welfare) and it's maximised
 
 :::
 
-::: econos-diagram svgKey="cpsSvg" interactive="true" label="Consumer and producer surplus on the supply-and-demand diagram" caption="Build the welfare picture step by step: the equilibrium, the consumer-surplus triangle, the producer-surplus triangle, total surplus, and the deadweight loss when output is restricted below Q*."
+::: econos-diagram svgKey="cpsDiagram" label="Consumer surplus (below demand, above price) and producer surplus (above supply, below price) at the competitive equilibrium." caption="Consumer surplus (below demand, above price) and producer surplus (above supply, below price) at the competitive equilibrium."
 :::
 
 ::: section eyebrow="Indirect taxes — surplus changes hands" color="purple" icon="target"
@@ -75,9 +75,6 @@ Track the surplus changes:
 
 The split between consumer and producer loss depends on relative ELASTICITIES. Inelastic demand (cigarettes, fuel) means consumers bear most of the tax — the SDIL case for soft drinks is the textbook policy designed around this. Inelastic supply (residential land) means producers bear most of the tax — the case Henry George built for land-value taxation.
 
-:::
-
-::: econos-diagram svgKey="taxIncidenceInteractive" label="Tax incidence and surplus areas" caption="The tax wedge separates the price consumers pay from the price producers receive. The rectangle is government revenue (a transfer); the triangle is deadweight loss (a true social cost)."
 :::
 
 ::: section eyebrow="Subsidies — the mirror image" color="blue" icon="scale"

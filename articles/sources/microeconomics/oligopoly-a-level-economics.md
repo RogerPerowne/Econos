@@ -61,8 +61,7 @@ Two tools unlock the topic. The **kinked demand curve** explains the sticky pric
 
 :::
 
-::: econos-diagram svgKey="kinkedDemandInteractive" label="The kinked demand curve" caption="Above the current price, demand is elastic (rivals ignore a price rise, so the firm loses many customers). Below it, demand is inelastic (rivals match a price cut). The kink explains why oligopoly prices stay rigid."
-
+::: econos-diagram svgKey="kinkedDemandInteractive" state="efficiency" label="The kinked demand curve" caption="The kinked demand curve: rivals match price cuts but not rises, giving a kink at the going price and sticky prices."
 :::
 
 ::: section eyebrow="The big picture · the kinked demand curve" color="purple" icon="target"

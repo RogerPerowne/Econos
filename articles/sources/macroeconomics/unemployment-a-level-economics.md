@@ -66,6 +66,9 @@ Diagnose the type first; the policy follows.
 
 :::
 
+::: econos-diagram svgKey="adAsRecession" state="shift" label="A demand-side (cyclical) recession" caption="A demand-side (cyclical) recession: AD shifts left, output falls below the full-employment level and cyclical unemployment opens up."
+:::
+
 ::: section eyebrow="The two UK measures" color="blue" icon="target"
 
 ## Claimant count vs Labour Force Survey
@@ -130,9 +133,6 @@ The **NAIRU** (non-accelerating inflation rate of unemployment) is the related c
 
 AQA examines the natural rate / NAIRU directly (4.2.3.2 (f)); Edexcel A treats it more loosely under the Phillips curve content in Theme 2.6.4.
 
-:::
-
-::: econos-diagram svgKey="phillipsInteractive" interactive="true" label="The Phillips curve — short-run trade-off, long-run vertical, and the 1970s breakdown" caption="The unemployment–inflation trade-off and why it shifts: the original short-run curve, the vertical long-run curve at the natural rate, and the 1970s stagflation that broke the simple relationship."
 :::
 
 ::: section eyebrow="Exam edge" color="green" icon="cap"

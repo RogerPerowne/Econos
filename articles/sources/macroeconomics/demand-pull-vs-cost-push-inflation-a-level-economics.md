@@ -59,6 +59,9 @@ The whole skill is reading the AD-AS diagram. Here is the difference.
 
 :::
 
+::: econos-diagram svgKey="demandPullDiagram" label="Demand-pull inflation" caption="Demand-pull inflation: AD shifts right, so the price level and output both rise."
+:::
+
 ::: section eyebrow="The big picture · two diagrams" color="purple" icon="target"
 
 ## Demand-pull pushes AD right; cost-push pushes SRAS left
@@ -69,9 +72,6 @@ The whole skill is reading the AD-AS diagram. Here is the difference.
 
 The diagnostic that ties it together is the **direction of output**. Rising output with rising prices means demand-pull. Falling output with rising prices means cost-push. That single observation tells you which diagram to draw and which policy to recommend — and it is the move examiners reward.
 
-:::
-
-::: econos-diagram svgKey="adInteractive" interactive="true" label="Aggregate demand on the AD-AS diagram" caption="Demand-pull inflation shifts aggregate demand to the right — output and the price level both rise. Drag the AD curve to see the effect."
 :::
 
 ::: econ-insight portraitKey="economistKeynes" tone="amber" label="Economist insight: Keynes on the inflationary gap" attribution="John Maynard Keynes, <em>How to Pay for the War</em> (1940)"

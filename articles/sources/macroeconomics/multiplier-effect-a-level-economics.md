@@ -69,6 +69,9 @@ That formula is what every Edexcel mark scheme rewards in the AO1 mark.
 
 :::
 
+::: econos-diagram svgKey="multiplierRipple" label="The multiplier ripple" caption="The multiplier ripple: an initial injection is re-spent round after round, so the final rise in income is a multiple of it."
+:::
+
 ::: section eyebrow="Worked example" color="purple" icon="target"
 
 ## £10bn of government investment, with realistic UK leakages
@@ -97,9 +100,6 @@ Sum the series: 10 + 3 + 0.9 + 0.27 + 0.08 + … = 10 × (1 / 0.70) = £14.3bn. 
 
 The exam mark for this section: show the iterations explicitly, then derive the formula. Don't just write *k* = 1.43 and the answer.
 
-:::
-
-::: econos-diagram svgKey="multiplierChart" label="The multiplier ripple across spending rounds" caption="The multiplier ripple — each round re-spends the MPC fraction of the last, and the rounds sum to the multiplier times the initial injection (here MPC = 0.6, so k = 2.5)."
 :::
 
 ::: section eyebrow="The friction · what makes the multiplier smaller in practice" color="pink" icon="scale"

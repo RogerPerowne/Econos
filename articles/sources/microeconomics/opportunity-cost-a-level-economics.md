@@ -67,6 +67,9 @@ The concept is the same in all three — the application differs.
 
 :::
 
+::: econos-diagram svgKey="ppfInteractive" state="efficiency" label="The production possibility frontier" caption="The production possibility frontier: opportunity cost along the curve, plus productive and allocative efficiency."
+:::
+
 ::: section eyebrow="Why opportunity cost rises along the PPF" color="blue" icon="target"
 
 ## The bow-shape exists because opportunity cost grows
@@ -83,9 +86,6 @@ That's why opportunity cost RISES along the PPF — and why the curve bows outwa
 
 A* tip: never describe the PPF without naming WHY it's concave.
 
-:::
-
-::: econos-diagram svgKey="ppfInteractive" interactive="true" label="Production possibility frontier — construction, opportunity cost, shifts and efficiency" caption="The PPF is the cleanest picture of opportunity cost: step through how it's built, why moving along it costs output, what shifts it, and where efficiency sits."
 :::
 
 ::: section eyebrow="The three economic agents" color="purple" icon="scale"

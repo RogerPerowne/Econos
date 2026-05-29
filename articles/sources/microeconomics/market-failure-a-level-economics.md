@@ -70,6 +70,9 @@ A complete market-failure answer names which cause is at work, draws the welfare
 
 :::
 
+::: econos-diagram svgKey="marketFailureOverview" label="The main forms of market failure and where the price mechanism misallocates resources." caption="The main forms of market failure and where the price mechanism misallocates resources."
+:::
+
 ::: section eyebrow="Externalities — the most-examined cause" color="blue" icon="target"
 
 ## Why MSC ≠ MPC produces a wedge
@@ -87,9 +90,6 @@ Policy responses for negative externalities: indirect tax on the polluter (Pigou
 
 For positive externalities (vaccination, education) the welfare loss is the opposite direction — too little produced. Policy: subsidy, state provision, mandatory provision.
 
-:::
-
-::: econos-diagram svgKey="negExternalityInteractive" interactive="true" label="Negative externality diagram — the wedge between MSC and MPC" caption="Step through the build: the free-market equilibrium, the MSC/MEC wedge, the social optimum, and the deadweight welfare loss the unaided market creates."
 :::
 
 ::: section eyebrow="Public goods and the free-rider problem" color="purple" icon="scale"

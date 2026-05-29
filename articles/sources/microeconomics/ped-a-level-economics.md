@@ -68,6 +68,9 @@ The exam isn't testing whether you can calculate. It's testing whether you can a
 
 :::
 
+::: econos-diagram svgKey="elasticVsInelasticDiagram" label="Elastic versus inelastic demand" caption="Elastic versus inelastic demand: a steep curve means a small quantity response to a price change; a flat curve means a large one."
+:::
+
 ::: section eyebrow="The four determinants" color="blue" icon="target"
 
 ## What makes a good elastic or inelastic
@@ -97,9 +100,6 @@ The mark scheme wants you to name the determinants AND apply them to the specifi
 
 The classic exam essay: a firm facing elastic demand on its main product. Should it cut prices to chase volume, or raise prices to chase margins? The answer depends on PED at the relevant point on the demand curve — and PED varies along the curve (elastic at high prices, inelastic at low prices is the typical pattern for a linear demand curve).
 
-:::
-
-::: econos-diagram svgKey="elasticVsInelasticDiagram" label="Elastic vs inelastic demand curves" caption="A steep curve = inelastic (large price change, small quantity change). A flat curve = elastic. The slope visible in the diagram is the entire intuition behind PED."
 :::
 
 ::: econ-insight portraitKey="economistMarshall" tone="amber" label="Economist insight on elasticity" attribution="Alfred Marshall, <em>Principles of Economics</em> (1890)"

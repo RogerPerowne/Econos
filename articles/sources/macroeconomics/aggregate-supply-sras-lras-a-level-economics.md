@@ -79,6 +79,9 @@ The policy implication: in a recession, demand-side stimulus (lower rates, highe
 
 :::
 
+::: econos-diagram svgKey="lrasViewsInteractive" label="The two views of long-run aggregate supply" caption="The two views of long-run aggregate supply: the Keynesian (curved) LRAS and the Classical (vertical) LRAS."
+:::
+
 ::: card variant="ar" title="Classical LRAS — vertical at Y_FE"
 
 A single vertical line at the full-employment level of real output (Y_FE). The price level can vary, but real GDP in the long run is fixed by supply-side factors — productivity, factor quantities, institutions. Wages and prices adjust quickly enough that the economy snaps back to Y_FE after any demand shock.
@@ -132,9 +135,6 @@ The implication for policy: a demand-side stimulus large enough to push UK outpu
 The exam move: when you cite UK productivity, frame it as an *LRAS* shift (or slower drift), not an SRAS one. Confusing those two is the same diagnostic error as confusing AD shifts with movements along AD.
 
 :::::
-
-::: econos-diagram svgKey="adVsSupplySideDiagram" label="Demand-side stimulus versus a supply-side improvement" caption="Demand-side stimulus shifts AD right and raises the price level; a supply-side improvement shifts SRAS right, lifting output with stable or lower prices."
-:::
 
 ::::: section eyebrow="What examiners actually want" color="purple" icon="cap"
 

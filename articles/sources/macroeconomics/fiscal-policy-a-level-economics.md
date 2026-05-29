@@ -69,6 +69,9 @@ The mark scheme rewards naming both flavours AND both delivery mechanisms.
 
 :::
 
+::: econos-diagram svgKey="adAsDemandPull" label="Expansionary fiscal policy" caption="Expansionary fiscal policy: higher government spending shifts AD right, raising output (and the price level)."
+:::
+
 ::: section eyebrow="The multiplier" color="blue" icon="target"
 
 ## £1 of spending, £X of GDP — and why X matters
@@ -135,9 +138,6 @@ The AO4 marks in a fiscal-policy essay come from naming the constraints.
 
 The strongest essay names crowding out AND time lags AND debt sustainability — then evaluates which constraint dominates in the specific case being analysed.
 
-:::
-
-::: econos-diagram svgKey="crowdingOutLoanableFunds" label="Crowding out in the loanable funds market" caption="Crowding out — higher government borrowing shifts demand for loanable funds right, raising the real interest rate and squeezing private investment."
 :::
 
 ::: section eyebrow="Exam edge" color="green" icon="cap"

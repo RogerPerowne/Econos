@@ -61,8 +61,7 @@ That gives policymakers an apparent menu: accept a bit more inflation to buy low
 
 :::
 
-::: econos-diagram svgKey="phillipsInteractive" interactive="true" label="The short-run and long-run Phillips curve" caption="The short-run curve slopes downward — a trade-off between inflation and unemployment. The long-run curve is vertical at the NAIRU: once expectations adjust, there is no permanent trade-off."
-
+::: econos-diagram svgKey="phillipsInteractive" state="shift" label="The Phillips curve" caption="The Phillips curve: the short-run inflation–unemployment trade-off, the vertical long-run curve, and the 1970s shift."
 :::
 
 ::: section eyebrow="The big picture · short run vs long run" color="purple" icon="target"

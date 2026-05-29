@@ -10,7 +10,7 @@ spec:
   ocr: "1.3"
 keywords: [PPF diagram, production possibility frontier, how to draw a PPF, opportunity cost diagram, economic growth PPF, productive efficiency, A-level economics diagram, exam technique]
 read_minutes: 7
-status: live
+status: draft
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: production-possibility-frontiers

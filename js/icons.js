@@ -15902,6 +15902,10 @@ window.ECONOS_ICONS = {
       .idl-1{display:none}.idl-2{display:none}
       .sv-show-1 .idl-1{display:block}
       .sv-show-2 .idl-2{display:block}
+      /* article-page bridge: the static-article engine swaps show-&lt;state&gt;
+         on the wrapper (SPA uses sv-show-N); map the two LRAS views to it. */
+      .show-classical .idl-1{display:block}
+      .show-keynesian .idl-2{display:block}
     </style></defs>
     <!-- Base: Axes -->
     <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>

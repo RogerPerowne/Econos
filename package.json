@@ -1,6 +1,6 @@
 {
   "name": "econos",
-  "version": "0.15.2",
+  "version": "0.15.3",
   "private": true,
   "description": "A-Level economics revision — bite-sized topics around the frameworks examiners reward.",
   "type": "module",
@@ -17,6 +17,8 @@
     "test:unit:watch": "vitest",
     "test:e2e": "playwright test",
     "test:e2e:install": "playwright install --with-deps chromium",
+    "audit:diagrams": "node scripts/audit-diagrams.mjs",
+    "render:charts": "node scripts/render-charts.mjs",
     "prepare": "husky"
   },
   "devDependencies": {

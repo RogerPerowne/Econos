@@ -50,7 +50,7 @@ The shape is not a stylistic choice. It encodes whether the economy can sit belo
 
 :::
 
-::: econos-diagram svgKey="lrasShiftDiagram" label="Long-run aggregate supply — the Classical vertical view versus the Keynesian curved view" caption="Long-run aggregate supply — the Classical vertical view versus the Keynesian curved view."
+::: econos-diagram svgKey="lrasViewsInteractive" interactive="true" label="Long-run aggregate supply — the Classical vertical view versus the Keynesian curved view" caption="Long-run aggregate supply — the Classical vertical view versus the Keynesian curved view. Switch between the two to compare their shapes and policy implications."
 :::
 
 ::: section eyebrow="The Classical view" color="purple" icon="target"

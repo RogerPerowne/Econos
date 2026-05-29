@@ -509,6 +509,10 @@ const INTERACTIVE_PRESETS = {
     { state: 'ps',    label: 'Producer surplus', desc: 'The area above supply and below the price: what sellers received minus their minimum acceptable price.' },
     { state: 'total', label: 'Total surplus',    desc: 'Consumer plus producer surplus — the total welfare a competitive market generates at equilibrium.' },
     { state: 'dwl',   label: 'Deadweight loss',  desc: 'Restrict output below Q* and the shaded triangle of mutually beneficial trades that no longer happen is lost.' }
+  ],
+  lrasViewsInteractive: [
+    { state: 'classical', label: 'Classical LRAS', desc: 'A single vertical line at full-employment output (Yf): in the long run real GDP is fixed by supply-side factors, so the price level can vary but output cannot.' },
+    { state: 'keynesian', label: 'Keynesian LRAS', desc: 'A reverse-L / hockey-stick: flat with spare capacity (output can rise with no price pressure), steepening as the economy nears Yf, then vertical at full capacity.' }
   ]
 };
 

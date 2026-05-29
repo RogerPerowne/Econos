@@ -79,7 +79,7 @@ The policy implication: in a recession, demand-side stimulus (lower rates, highe
 
 :::
 
-::: econos-diagram svgKey="srasShiftInteractive" state="shift" label="Short-run aggregate supply" caption="Short-run aggregate supply: an SRAS shift (e.g. an input-cost or productivity change) moves the price level and output."
+::: econos-diagram svgKey="lrasViewsInteractive" interactive="true" label="Keynesian versus Classical LRAS" caption="The two LRAS shapes: the Classical vertical curve at full-employment output, and the Keynesian reverse-L that is flat with spare capacity and turns vertical only at full capacity. Switch between them to compare."
 :::
 
 ::: card variant="ar" title="Classical LRAS — vertical at Y_FE"

@@ -66,7 +66,7 @@ Three things can push it up, and they need very different responses.
 
 :::
 
-::: econos-diagram svgKey="demandPullDiagram" label="Demand-pull inflation" caption="Demand-pull inflation: aggregate demand shifts right along the AS curve, raising the price level and real output."
+::: econos-diagram svgKey="adAsDemandPull" label="Demand-pull inflation" caption="Demand-pull inflation: aggregate demand shifts right along the AS curve, raising the price level and real output."
 :::
 
 ::: section eyebrow="The big picture · the three causes" color="purple" icon="target"

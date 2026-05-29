@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.16.0 — 2026-05-29
+
+### Articles: clean-slate teardown of all markdown sources
+
+Removed all 74 article markdown sources under `articles/sources/`. A diagram
+review across the library surfaced enough content/diagram mismatches that
+patching article-by-article was the wrong use of time. Instead we reset:
+finish the core topic content carefully, build a vetted **library of named
+diagrams** against `docs/diagram-spec.md` (validated by `npm run
+audit:diagrams`), then rebuild the article set fresh so every piece matches
+the quality bar of the rest of the site.
+
+What was kept: the article **build pipeline** (`article-routes` plugin, the
+`:::econos-diagram` directive + interactive-stepper baking), the hub
+(`articles/index.html`), `articles.css` / `diagram.css`, the SEO roadmap
+(`articles/SEO_PRIORITY.md`), and the diagram tooling shipped earlier this
+cycle (spec doc, `audit:diagrams`, `render:charts`). The build emits zero
+article pages and an empty article sitemap/search-index until the rebuild
+begins — the hub's "N of 70 live" counter reads 0 accordingly.
+
 ## 0.15.5 — 2026-05-29
 
 ### Articles: real PC-firm diagram for the perfect-competition SR-vs-LR article

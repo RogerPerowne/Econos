@@ -16459,56 +16459,64 @@ window.ECONOS_ICONS = {
   /* ============================================================
      Equilibrium National Income (Theme 2 · 4.4 / 5.2)
      Twin J=W view + 45° diagram, AD/AS core, twin output gaps.
-     All charts use viewBox so they scale; preserveAspectRatio
-     defaults so axes stay square.
+     House rules:
+       – AD always #2563EB, SRAS/AS always #0B1426.
+       – Old curve = dashed + 55% opacity; new curve = solid.
+       – Equilibrium = open circle, white fill, stroke = the curve
+         that moved (or AD for "current" equilibria).
+       – Dashed leaders (grey, 1px, dash 3-3) from every equilibrium
+         to both axes.
      ============================================================ */
   eniTwinJW45: `
     <div style="background:#fff;border-radius:14px;padding:12px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <!-- LEFT: J = W view -->
+        <!-- LEFT: J = W view. Plot area x:[60,340] y:[40,210].
+             J upward (75,175)→(325,65); W downward (75,65)→(325,175).
+             Intersection (200,120). -->
         <div style="border:1px solid #BFDBFE;border-radius:12px;background:#F8FAFF;padding:14px;">
           <div style="text-align:center;color:#2563EB;font-weight:700;font-size:14px;margin-bottom:8px;">J = W view</div>
-          <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-            <text x="14" y="18" font-size="10" fill="#475569" font-family="Inter,sans-serif">Injections (J)</text>
-            <text x="14" y="30" font-size="10" fill="#475569" font-family="Inter,sans-serif">and</text>
-            <text x="14" y="42" font-size="10" fill="#475569" font-family="Inter,sans-serif">Withdrawals (W)</text>
+          <svg viewBox="0 0 360 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <text x="14" y="20" font-size="10" fill="#475569" font-family="Inter,sans-serif">Injections (J)</text>
+            <text x="14" y="32" font-size="10" fill="#475569" font-family="Inter,sans-serif">and</text>
+            <text x="14" y="44" font-size="10" fill="#475569" font-family="Inter,sans-serif">Withdrawals (W)</text>
             <line x1="60" y1="210" x2="340" y2="210" stroke="#0B1426" stroke-width="1.4"/>
             <line x1="60" y1="210" x2="60" y2="40" stroke="#0B1426" stroke-width="1.4"/>
             <polygon points="340,210 333,206 333,214" fill="#0B1426"/>
             <polygon points="60,40 56,47 64,47" fill="#0B1426"/>
-            <line x1="60" y1="180" x2="335" y2="60" stroke="#2563EB" stroke-width="2.2"/>
-            <text x="338" y="62" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">J</text>
-            <line x1="60" y1="60" x2="335" y2="190" stroke="#0B1426" stroke-width="2.2"/>
-            <text x="338" y="195" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">W</text>
-            <line x1="190" y1="124" x2="190" y2="210" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-            <circle cx="190" cy="124" r="5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-            <text x="56" y="226" font-size="11" fill="#475569" font-family="Inter,sans-serif">0</text>
-            <text x="184" y="226" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y*</text>
-            <text x="180" y="240" font-size="9" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle"></text>
-            <text x="200" y="240" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">National income / Output (Y)</text>
+            <line x1="75" y1="175" x2="325" y2="65" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="330" y="65" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">J</text>
+            <line x1="75" y1="65" x2="325" y2="175" stroke="#0B1426" stroke-width="2.2"/>
+            <text x="330" y="178" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">W</text>
+            <line x1="200" y1="120" x2="200" y2="210" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="200" cy="120" r="5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <text x="52" y="226" font-size="11" fill="#475569" font-family="Inter,sans-serif">0</text>
+            <text x="194" y="226" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y*</text>
+            <text x="200" y="244" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">National income / Output (Y)</text>
           </svg>
           <div style="font-size:12px;color:#475569;text-align:center;margin-top:6px;line-height:1.45;">At Y*, leakages are exactly matched by injections.</div>
         </div>
-        <!-- RIGHT: 45° diagram -->
+        <!-- RIGHT: 45° diagram. 45° line (60,210)→(230,40) [slope -1].
+             E line BLUE from (60,140) to (280,48) [slope -0.418].
+             Intersection at (175, 95) — verified on 45° (270-175=95). -->
         <div style="border:1px solid #BFDBFE;border-radius:12px;background:#F8FAFF;padding:14px;">
           <div style="text-align:center;color:#2563EB;font-weight:700;font-size:14px;margin-bottom:8px;">45° diagram</div>
-          <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-            <text x="14" y="20" font-size="10" fill="#475569" font-family="Inter,sans-serif">Planned</text>
-            <text x="14" y="32" font-size="10" fill="#475569" font-family="Inter,sans-serif">expenditure (E)</text>
+          <svg viewBox="0 0 360 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Planned</text>
+            <text x="14" y="34" font-size="10" fill="#475569" font-family="Inter,sans-serif">expenditure (E)</text>
             <line x1="60" y1="210" x2="340" y2="210" stroke="#0B1426" stroke-width="1.4"/>
             <line x1="60" y1="210" x2="60" y2="40" stroke="#0B1426" stroke-width="1.4"/>
             <polygon points="340,210 333,206 333,214" fill="#0B1426"/>
             <polygon points="60,40 56,47 64,47" fill="#0B1426"/>
-            <line x1="60" y1="210" x2="270" y2="50" stroke="#0B1426" stroke-width="1.8"/>
-            <text x="270" y="48" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">45° line</text>
-            <line x1="60" y1="150" x2="335" y2="80" stroke="#2563EB" stroke-width="2.2"/>
-            <text x="285" y="95" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">E = C + I + G</text>
-            <text x="297" y="108" font-size="10" fill="#2563EB" font-family="Inter,sans-serif">(+ X - M)</text>
-            <circle cx="180" cy="115" r="5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-            <line x1="180" y1="115" x2="180" y2="210" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-            <text x="56" y="226" font-size="11" fill="#475569" font-family="Inter,sans-serif">0</text>
-            <text x="174" y="226" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y*</text>
-            <text x="200" y="240" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Actual output (Y)</text>
+            <line x1="60" y1="210" x2="230" y2="40" stroke="#0B1426" stroke-width="2"/>
+            <text x="200" y="34" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">45° line</text>
+            <line x1="60" y1="140" x2="295" y2="42" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="240" y="55" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">E = C + I + G</text>
+            <text x="252" y="68" font-size="10" fill="#2563EB" font-family="Inter,sans-serif">(+ X - M)</text>
+            <circle cx="175" cy="95" r="5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <line x1="175" y1="95" x2="175" y2="210" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <text x="52" y="226" font-size="11" fill="#475569" font-family="Inter,sans-serif">0</text>
+            <text x="169" y="226" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y*</text>
+            <text x="200" y="244" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Actual output (Y)</text>
           </svg>
           <div style="font-size:12px;color:#475569;text-align:center;margin-top:6px;line-height:1.45;">At Y*, planned spending equals actual output.</div>
         </div>
@@ -16519,24 +16527,28 @@ window.ECONOS_ICONS = {
   eniAdAsCore: `
     <div style="background:#fff;border-radius:14px;padding:14px;">
       <div style="display:grid;grid-template-columns:2fr 1fr;gap:18px;align-items:center;">
+        <!-- Plot area x:[60,450] y:[40,240].
+             SRAS BLACK upward (90,220)→(430,60) slope SVG -0.471.
+             AD BLUE downward (90,70)→(440,230) slope SVG +0.457.
+             Intersection (252, 144) — both equations verified. -->
         <svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
           <text x="16" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Price level (P)</text>
           <line x1="60" y1="240" x2="450" y2="240" stroke="#0B1426" stroke-width="1.4"/>
           <line x1="60" y1="240" x2="60" y2="40" stroke="#0B1426" stroke-width="1.4"/>
           <polygon points="450,240 443,236 443,244" fill="#0B1426"/>
           <polygon points="60,40 56,47 64,47" fill="#0B1426"/>
-          <line x1="80" y1="60" x2="430" y2="220" stroke="#0B1426" stroke-width="2.2"/>
-          <text x="432" y="60" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
-          <line x1="80" y1="80" x2="440" y2="230" stroke="#2563EB" stroke-width="2.2"/>
-          <text x="402" y="222" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
-          <circle cx="240" cy="140" r="5.5" fill="#fff" stroke="#2563EB" stroke-width="2.2"/>
-          <text x="232" y="132" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">E</text>
-          <line x1="240" y1="140" x2="240" y2="240" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-          <line x1="240" y1="140" x2="60" y2="140" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-          <text x="36" y="144" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P*</text>
-          <text x="234" y="258" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y*</text>
-          <text x="56" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">0</text>
-          <text x="310" y="262" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
+          <line x1="90" y1="220" x2="430" y2="60" stroke="#0B1426" stroke-width="2.2"/>
+          <text x="436" y="60" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
+          <line x1="90" y1="70" x2="440" y2="230" stroke="#2563EB" stroke-width="2.2"/>
+          <text x="442" y="234" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+          <circle cx="252" cy="144" r="5.5" fill="#fff" stroke="#2563EB" stroke-width="2.2"/>
+          <text x="244" y="134" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">E</text>
+          <line x1="252" y1="144" x2="252" y2="240" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="252" y1="144" x2="60" y2="144" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="36" y="148" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P*</text>
+          <text x="246" y="258" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y*</text>
+          <text x="52" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">0</text>
+          <text x="334" y="262" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
         </svg>
         <div style="background:#F1F5FF;border:1px solid #BFDBFE;border-radius:12px;padding:14px 16px;font-size:13.5px;color:#0B1426;line-height:1.55;">
           At <strong>E</strong>, the price level is <strong><em>P*</em></strong> and real output is <strong><em>Y*</em></strong>.
@@ -16548,30 +16560,33 @@ window.ECONOS_ICONS = {
   eniOutputGapsTwin: `
     <div style="background:#fff;border-radius:14px;padding:12px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <!-- LEFT: Recessionary gap -->
+        <!-- LEFT: Recessionary gap. Plot x:[60,340] y:[30,180].
+             Intersection (140, 100). Y_FE marker at x=230.
+             AS through (140,100) slope SVG -0.45: (60,136)→(273,40).
+             AD through (140,100) slope SVG +0.45: (60,64)→(318,180). -->
         <div style="border:1px solid #A6E0C4;border-radius:12px;background:#F1FBF5;padding:14px;">
           <div style="text-align:center;color:#16A34A;font-weight:700;font-size:14px;margin-bottom:8px;">Recessionary gap</div>
-          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-            <text x="14" y="20" font-size="10" fill="#475569" font-family="Inter,sans-serif">Price</text>
-            <text x="14" y="32" font-size="10" fill="#475569" font-family="Inter,sans-serif">level</text>
-            <text x="14" y="44" font-size="10" fill="#475569" font-family="Inter,sans-serif">(P)</text>
+          <svg viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Price</text>
+            <text x="14" y="34" font-size="10" fill="#475569" font-family="Inter,sans-serif">level</text>
+            <text x="14" y="46" font-size="10" fill="#475569" font-family="Inter,sans-serif">(P)</text>
             <line x1="60" y1="180" x2="340" y2="180" stroke="#0B1426" stroke-width="1.4"/>
             <line x1="60" y1="180" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
             <polygon points="340,180 333,176 333,184" fill="#0B1426"/>
             <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
-            <line x1="80" y1="50" x2="310" y2="170" stroke="#0B1426" stroke-width="2"/>
-            <text x="312" y="50" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">AS</text>
-            <line x1="80" y1="70" x2="320" y2="180" stroke="#2563EB" stroke-width="2"/>
-            <text x="296" y="174" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
-            <circle cx="160" cy="113" r="4.5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-            <line x1="160" y1="113" x2="160" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-            <line x1="240" y1="40" x2="240" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-            <path d="M168 162 L232 162" stroke="#16A34A" stroke-width="1.8" marker-start="url(#eni-arrow-green-l)" marker-end="url(#eni-arrow-green-r)"/>
-            <text x="180" y="155" font-size="11" fill="#16A34A" font-family="Inter,sans-serif" font-weight="700">Gap</text>
-            <text x="56" y="196" font-size="10" fill="#475569" font-family="Inter,sans-serif">0</text>
-            <text x="156" y="196" font-size="11" fill="#475569" font-family="Inter,sans-serif" font-weight="700">Y</text>
-            <text x="226" y="196" font-size="11" fill="#16A34A" font-family="Inter,sans-serif" font-weight="700">Y₀ₑ</text>
-            <text x="276" y="210" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
+            <line x1="60" y1="136" x2="273" y2="40" stroke="#0B1426" stroke-width="2"/>
+            <text x="278" y="44" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">AS</text>
+            <line x1="60" y1="64" x2="318" y2="180" stroke="#2563EB" stroke-width="2"/>
+            <text x="298" y="174" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+            <circle cx="140" cy="100" r="4.5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <line x1="140" y1="100" x2="140" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="230" y1="30" x2="230" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <path d="M148 167 L222 167" stroke="#16A34A" stroke-width="1.8" marker-start="url(#eni-arrow-green-l)" marker-end="url(#eni-arrow-green-r)"/>
+            <text x="178" y="160" font-size="11" fill="#16A34A" font-family="Inter,sans-serif" font-weight="700">Gap</text>
+            <text x="52" y="196" font-size="10" fill="#475569" font-family="Inter,sans-serif">0</text>
+            <text x="134" y="196" font-size="11" fill="#475569" font-family="Inter,sans-serif" font-weight="700">Y</text>
+            <text x="219" y="196" font-size="11" fill="#16A34A" font-family="Inter,sans-serif" font-weight="700">Y<tspan font-size="8" dy="3">FE</tspan></text>
+            <text x="270" y="214" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
             <defs>
               <marker id="eni-arrow-green-l" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><path d="M8 0 L0 4 L8 8 Z" fill="#16A34A"/></marker>
               <marker id="eni-arrow-green-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#16A34A"/></marker>
@@ -16584,30 +16599,32 @@ window.ECONOS_ICONS = {
           </div>
           <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#16A34A;border:1px solid #A6E0C4;border-radius:8px;padding:6px 12px;background:#fff;font-weight:600;">Case for stimulus</span></div>
         </div>
-        <!-- RIGHT: Inflationary gap -->
+        <!-- RIGHT: Inflationary gap. Intersection (220, 100). Y_FE x=150.
+             AS through (220,100) slope SVG -0.45: (60,172)→(340,46).
+             AD through (220,100) slope SVG +0.45: (87,40)→(340,154). -->
         <div style="border:1px solid #F7D19A;border-radius:12px;background:#FFF8EC;padding:14px;">
           <div style="text-align:center;color:#F59E0B;font-weight:700;font-size:14px;margin-bottom:8px;">Inflationary gap</div>
-          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-            <text x="14" y="20" font-size="10" fill="#475569" font-family="Inter,sans-serif">Price</text>
-            <text x="14" y="32" font-size="10" fill="#475569" font-family="Inter,sans-serif">level</text>
-            <text x="14" y="44" font-size="10" fill="#475569" font-family="Inter,sans-serif">(P)</text>
+          <svg viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Price</text>
+            <text x="14" y="34" font-size="10" fill="#475569" font-family="Inter,sans-serif">level</text>
+            <text x="14" y="46" font-size="10" fill="#475569" font-family="Inter,sans-serif">(P)</text>
             <line x1="60" y1="180" x2="340" y2="180" stroke="#0B1426" stroke-width="1.4"/>
             <line x1="60" y1="180" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
             <polygon points="340,180 333,176 333,184" fill="#0B1426"/>
             <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
-            <line x1="80" y1="50" x2="310" y2="170" stroke="#0B1426" stroke-width="2"/>
-            <text x="312" y="50" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">AS</text>
-            <line x1="80" y1="70" x2="320" y2="180" stroke="#2563EB" stroke-width="2"/>
-            <text x="296" y="174" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
-            <circle cx="240" cy="155" r="4.5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-            <line x1="240" y1="155" x2="240" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-            <line x1="160" y1="40" x2="160" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-            <path d="M168 162 L232 162" stroke="#F59E0B" stroke-width="1.8" marker-start="url(#eni-arrow-amber-l)" marker-end="url(#eni-arrow-amber-r)"/>
-            <text x="180" y="155" font-size="11" fill="#F59E0B" font-family="Inter,sans-serif" font-weight="700">Gap</text>
-            <text x="56" y="196" font-size="10" fill="#475569" font-family="Inter,sans-serif">0</text>
-            <text x="148" y="196" font-size="11" fill="#F59E0B" font-family="Inter,sans-serif" font-weight="700">Y₀ₑ</text>
-            <text x="236" y="196" font-size="11" fill="#475569" font-family="Inter,sans-serif" font-weight="700">Y</text>
-            <text x="276" y="210" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
+            <line x1="60" y1="172" x2="340" y2="46" stroke="#0B1426" stroke-width="2"/>
+            <text x="320" y="38" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">AS</text>
+            <line x1="87" y1="40" x2="340" y2="154" stroke="#2563EB" stroke-width="2"/>
+            <text x="320" y="166" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+            <circle cx="220" cy="100" r="4.5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <line x1="220" y1="100" x2="220" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="150" y1="30" x2="150" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <path d="M158 167 L212 167" stroke="#F59E0B" stroke-width="1.8" marker-start="url(#eni-arrow-amber-l)" marker-end="url(#eni-arrow-amber-r)"/>
+            <text x="175" y="160" font-size="11" fill="#F59E0B" font-family="Inter,sans-serif" font-weight="700">Gap</text>
+            <text x="52" y="196" font-size="10" fill="#475569" font-family="Inter,sans-serif">0</text>
+            <text x="139" y="196" font-size="11" fill="#F59E0B" font-family="Inter,sans-serif" font-weight="700">Y<tspan font-size="8" dy="3">FE</tspan></text>
+            <text x="214" y="196" font-size="11" fill="#475569" font-family="Inter,sans-serif" font-weight="700">Y</text>
+            <text x="270" y="214" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
             <defs>
               <marker id="eni-arrow-amber-l" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><path d="M8 0 L0 4 L8 8 Z" fill="#F59E0B"/></marker>
               <marker id="eni-arrow-amber-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#F59E0B"/></marker>

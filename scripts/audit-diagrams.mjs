@@ -2,21 +2,25 @@
    scripts/audit-diagrams.mjs — automated article-diagram audit.
 
    Renders every diagram in every built article in a real browser
-   (with its CSS), then runs deterministic checks that catch the
-   error classes manual review keeps surfacing:
+   (with its CSS) and runs deterministic checks against docs/diagram-spec.md
+   for the error classes manual review keeps surfacing:
 
-     • blank        — diagram is just axes / near-empty
+     • blank        — diagram is empty / just axes (decorative or unbaked)
      • overlap      — two visible <text> labels collide (e.g. "ADP")
      • clipped      — a visible label runs outside the SVG frame
 
-   CRITICAL: every check honours *effective* opacity/visibility up
-   the ancestor chain, so the layer-based interactive diagrams (which
-   stack hidden states at opacity:0 / display:none) are not counted.
-   That is the exact mistake a naive bare-SVG check makes.
+   Hardening notes:
+     • Honours *effective* opacity/visibility up the ancestor chain, so the
+       layer-based interactive diagrams (hidden states at opacity:0 /
+       display:none) are not counted — the mistake a naive check makes.
+     • Walks EVERY interactive tab state, not just the baked default, so a
+       clash that only appears on a non-default tab is still caught.
+     • Blank check counts shapes AND <rect>/<text>, so matrix / payoff-grid
+       diagrams (built from rects+text) are not false-flagged as blank.
 
-   Usage:  node scripts/audit-diagrams.mjs
-   Assumes `npm run build` has produced dist/. Serves dist on a
-   throwaway port, audits, prints a report, exits non-zero on findings.
+   Usage:  node scripts/audit-diagrams.mjs   (needs dist/ built)
+   Serves dist on a throwaway port, audits, prints a report, exits
+   non-zero on findings.
    ============================================================ */
 import { chromium } from 'playwright';
 import http from 'node:http';
@@ -53,8 +57,8 @@ function articleSlugs() {
   });
 }
 
-// In-browser audit of one page. Returns findings per diagram.
-const PAGE_AUDIT = `(() => {
+// Per-figure audit, evaluated in-page against a figure element handle.
+const CHECK_FIG = (fig) => {
   const eff = (el) => {
     let o = 1, n = el;
     while (n && n.nodeType === 1) {
@@ -72,43 +76,43 @@ const PAGE_AUDIT = `(() => {
     const y = Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top));
     return x * y;
   };
-  const figs = [...document.querySelectorAll('.article-diagram, .diagram-block, figure')]
-    .filter((f) => f.querySelector('svg'));
-  const out = [];
-  figs.forEach((fig, i) => {
-    const svg = fig.querySelector('svg');
-    const svgR = svg.getBoundingClientRect();
-    const findings = [];
-    // visible drawing primitives (exclude the bg rect that fills the frame)
-    const prims = [...svg.querySelectorAll('path,line,polyline,polygon,circle')]
-      .filter((e) => eff(e) > 0.05)
-      .filter((e) => { const r = e.getBoundingClientRect(); return area(r) > 4; });
-    if (prims.length < 5) findings.push('blank:' + prims.length + '-primitives');
-    // visible text labels
-    const texts = [...svg.querySelectorAll('text')]
-      .filter((t) => eff(t) > 0.05 && t.textContent.trim())
-      .map((t) => ({ s: t.textContent.trim(), r: t.getBoundingClientRect() }))
-      .filter((x) => area(x.r) > 1);
-    // text-text overlaps (different strings, heavy overlap)
-    for (let a = 0; a < texts.length; a++) {
-      for (let b = a + 1; b < texts.length; b++) {
-        const ov = inter(texts[a].r, texts[b].r);
-        const min = Math.min(area(texts[a].r), area(texts[b].r));
-        if (min > 0 && ov / min > 0.55 && texts[a].s !== texts[b].s) {
-          findings.push('overlap:"' + texts[a].s + '"x"' + texts[b].s + '"');
-        }
+  const svg = fig.querySelector('svg');
+  if (!svg) return [];
+  const svgR = svg.getBoundingClientRect();
+  const findings = [];
+  // visible drawing shapes (exclude any rect that fills ~the whole frame = bg)
+  const shapes = [...svg.querySelectorAll('path,line,polyline,polygon,circle')]
+    .filter((e) => eff(e) > 0.05)
+    .filter((e) => area(e.getBoundingClientRect()) > 4);
+  const rects = [...svg.querySelectorAll('rect')]
+    .filter((e) => eff(e) > 0.05)
+    .filter((e) => { const r = e.getBoundingClientRect(); return area(r) > 16 && area(r) < area(svgR) * 0.9; });
+  const texts = [...svg.querySelectorAll('text')]
+    .filter((t) => eff(t) > 0.05 && t.textContent.trim())
+    .map((t) => ({ s: t.textContent.trim(), r: t.getBoundingClientRect() }))
+    .filter((x) => area(x.r) > 1);
+  // blank: almost no content of any kind (shapes + rects + labels)
+  if (shapes.length + rects.length + texts.length < 6) {
+    findings.push('blank:' + shapes.length + 's/' + rects.length + 'r/' + texts.length + 't');
+  }
+  // overlapping labels (different strings, heavy overlap)
+  for (let a = 0; a < texts.length; a++) {
+    for (let b = a + 1; b < texts.length; b++) {
+      const ov = inter(texts[a].r, texts[b].r);
+      const min = Math.min(area(texts[a].r), area(texts[b].r));
+      if (min > 0 && ov / min > 0.55 && texts[a].s !== texts[b].s) {
+        findings.push('overlap:"' + texts[a].s + '"x"' + texts[b].s + '"');
       }
     }
-    // labels clipped outside the frame
-    for (const t of texts) {
-      if (t.r.right > svgR.right + 2 || t.r.left < svgR.left - 2) {
-        findings.push('clipped:"' + t.s + '"');
-      }
+  }
+  // labels clipped outside the frame
+  for (const t of texts) {
+    if (t.r.right > svgR.right + 2 || t.r.left < svgR.left - 2) {
+      findings.push('clipped:"' + t.s + '"');
     }
-    if (findings.length) out.push({ i, findings: [...new Set(findings)] });
-  });
-  return out;
-})()`;
+  }
+  return [...new Set(findings)];
+};
 
 const srv = await serve();
 const browser = await chromium.launch();
@@ -119,11 +123,26 @@ for (const slug of slugs) {
   const page = await browser.newPage({ viewport: { width: 1100, height: 1600 } });
   await page.goto(`http://127.0.0.1:${PORT}/articles/${slug}/`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(150);
-  const res = await page.evaluate(PAGE_AUDIT);
+  const figs = await page.$$('.article-diagram, .diagram-block, figure');
+  const figFindings = [];
+  for (let i = 0; i < figs.length; i++) {
+    const fig = figs[i];
+    if (!(await fig.$('svg'))) continue;
+    const tabs = await fig.$$('.ad-tab');
+    const states = tabs.length ? tabs.length : 1;
+    const seen = new Set();
+    for (let s = 0; s < states; s++) {
+      if (tabs.length) { await tabs[s].click(); await page.waitForTimeout(480); }
+      const f = await page.evaluate(CHECK_FIG, fig);
+      const tag = tabs.length ? ` @state${s}` : '';
+      for (const item of f) seen.add(item + tag);
+    }
+    if (seen.size) figFindings.push({ i, findings: [...seen] });
+  }
   await page.close();
-  if (res.length) {
-    report.push({ slug, res });
-    total += res.reduce((n, d) => n + d.findings.length, 0);
+  if (figFindings.length) {
+    report.push({ slug, figs: figFindings });
+    total += figFindings.reduce((n, d) => n + d.findings.length, 0);
   }
 }
 await browser.close();
@@ -133,9 +152,9 @@ console.log(`\n=== diagram audit: ${slugs.length} articles scanned ===`);
 if (!report.length) {
   console.log('✓ no findings');
 } else {
-  for (const { slug, res } of report) {
+  for (const { slug, figs } of report) {
     console.log(`\n${slug}`);
-    for (const d of res) console.log(`  [diagram ${d.i}] ${d.findings.join('  ')}`);
+    for (const d of figs) console.log(`  [diagram ${d.i}] ${d.findings.join('  ')}`);
   }
   console.log(`\n${total} finding(s) across ${report.length} article(s)`);
 }

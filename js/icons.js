@@ -3584,7 +3584,7 @@ window.ECONOS_ICONS = {
   `,
 
   phillipsInteractive: `
-    <svg class="phillips-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg class="phillips-svg" viewBox="-34 0 934 440" width="934" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <marker id="ph-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
@@ -4684,7 +4684,7 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend efficiency ===== -->
       <g class="layer-legend-efficiency">
         <circle cx="612" cy="32" r="7" fill="#059669"/>
-        <text x="626" y="37" font-size="12" font-weight="600" fill="#334155">Nash ≠ Pareto: individual rationality, collective suboptimality</text>
+        <text x="626" y="37" font-size="12" font-weight="600" fill="#334155">Nash ≠ Pareto</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">THE DILEMMA</text>
         <text x="620" y="100" font-size="13" fill="#334155">Nash equilibrium: 5 years each.</text>
         <text x="620" y="118" font-size="13" fill="#334155">Pareto optimum: 1 year each.</text>
@@ -4983,7 +4983,7 @@ window.ECONOS_ICONS = {
       <g class="layer-extension">
         <!-- AD₂ -->
         <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
-        <text x="34" y="50" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
+        <text x="88" y="64" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
 
         <!-- Green AD shift arrow showing AD₁ → AD₂ -->
         <path d="M 350 155 L 280 155" stroke="#10B981" stroke-width="3" stroke-linecap="round" marker-end="url(#recv2-shift)"/>
@@ -5008,7 +5008,7 @@ window.ECONOS_ICONS = {
       <g class="layer-shift">
         <!-- AD₂ still left-shifted -->
         <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
-        <text x="34" y="50" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
+        <text x="88" y="64" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
 
         <!-- E₂ still at (371, 209) -->
         <line x1="60" y1="209" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
@@ -5403,7 +5403,7 @@ window.ECONOS_ICONS = {
       <g class="layer-extension">
         <!-- AD₂ shifted left by 130: from (50, 48) to (450, 248) -->
         <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4"/>
-        <text x="34" y="50" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
+        <text x="88" y="64" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
 
         <!-- Red shift arrow -->
         <path d="M 350 155 L 280 155" stroke="#E11D48" stroke-width="3" stroke-linecap="round" marker-end="url(#mpv2-shift-down)"/>
@@ -7743,7 +7743,7 @@ window.ECONOS_ICONS = {
   `,
 
   priceFloorDiagramInteractive: `
-    <svg viewBox="0 0 470 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 545 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- LAYER 2 rendered first so shaded regions sit behind curves -->
       <g class="idl-2" style="display:none">
         <!-- CS after floor: (100,40)(100,160)(228,160) -->
@@ -11150,7 +11150,7 @@ window.ECONOS_ICONS = {
 
   /* ── Monopoly supernormal profit ─────────────────────────────────────── */
   monopolySupernormalProfit: `
-    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Geometry: AR (60,80)→(640,380), slope=300/580≈0.517/px.
@@ -12196,7 +12196,7 @@ window.ECONOS_ICONS = {
   `,
 
   lemonMarketDiagram: `
-    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Title -->
@@ -13224,7 +13224,7 @@ window.ECONOS_ICONS = {
   `,
 
   prospectTheoryDiagram: `
-    <svg viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 752 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 

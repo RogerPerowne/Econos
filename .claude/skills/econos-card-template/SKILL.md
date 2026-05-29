@@ -26,6 +26,8 @@ Two rules:
 
 When the rule is broken, the topic feels flat — that's the signal to step back, not push through.
 
+**The rules are about cards, not blocks within a single card.** A single rich card with `pair + causes2 + causes3 + conclusion` is fine if each block does distinct evaluative work (e.g. Benefits vs Costs + Sustainable vs Unsustainable + Who Wins + Verdict). I gutted exactly that card once by over-applying the rule to within-card structure; the visual richness was the whole point. Apply the rules across cards in the topic, not across blocks in a card.
+
 ## The 10 storytelling patterns
 
 Each pattern has: the mental model it creates, the renderer wiring, a canonical example you can read for reference, the content shape it suits, and the content shape it does not.
@@ -94,9 +96,17 @@ Avoid when: the formula has one step and the working would distract from the con
 
 The mental model: *predict, then check*. User reads a scenario or a list of items, predicts the answer or verdict, then clicks to see reasoning.
 
-Renderer wiring: `template: 'diagnose'` for single-scenario classification (read the case → reveal the type); or `productExamples: [{ icon, name, verdict, verdictTone, reasoning }, ...]` for a list of items each predicting their classification.
+Renderer wiring: `template: 'diagnose'` with `scenarios: { title, items: [{ tone, label, text, answer }, ...] }`. Optionally `diagramKey` puts a shared chart above the scenarios. For elasticity-style "predict the type" lists, `productExamples: [{ icon, name, verdict, verdictTone, reasoning }, ...]`.
 
-Canonical example: `js/data/edexcel_a/theme-1/price-elasticity-of-demand/learn-it.js` Card 5 (salt, petrol, holidays, designer trainers — predict PED, then reveal); Market Failure cards using the diagnose template.
+**`diagnose` template constraint — the `label` field is rendered as a 28×28 px circular badge.** It's designed for single-character indicators ("1"–"5" or "A"–"E"), not multi-word case titles. If you pass "2008 Global Financial Crisis" as the label it overflows the circle and reads as an empty badge. Pass the number in `label` and prepend the case title to the `text` field in bold:
+
+```js
+{ tone: 'rose', label: '1', text: '<strong>2008 Global Financial Crisis.</strong> US sub-prime …', answer: '<strong>Negative demand shock.</strong> …' }
+```
+
+Also: `diagnose` and `puzzle` are in the `isGenericCard` bypass list at the top of `app.js` so they reach their dedicated renderers even when `diagramKey` is set. If you add a new specialised template that needs the same treatment, add its name to the bypass list.
+
+Canonical example: `js/data/edexcel_a/theme-1/price-elasticity-of-demand/learn-it.js` Card 5 (salt, petrol, holidays, designer trainers — predict PED, then reveal); `js/data/edexcel_a/theme-2/trade-cycle-shocks-and-economic-growth/learn-it.js` Card 2 (five historical shocks to diagnose).
 
 Use for: building diagnostic pattern recognition, classification practice, "spot the type of X in unseen contexts".
 
@@ -107,6 +117,10 @@ Avoid when: the answer is genuinely contested or context-dependent — ambiguous
 The mental model: *click to explore*. One SVG that responds to step buttons by either revealing layers cumulatively or swapping between scenario states. Often paired with an analysis panel below that updates per step.
 
 Renderer wiring: `interactiveDiagram: { svgKey, wide, label, emoji, layers: ['idl-1', 'idl-2', ...], views: [{ label, tone, head, body, analysis, show?: ['idl-N', ...] }, ...] }`. The SVG itself wraps reveal content in `<g class="idl-N" style="display:none">...</g>` groups.
+
+**Two reveal modes — pick one explicitly per topic:**
+- **Cumulative build-up (default).** The renderer's `i < vi` rule reveals layers 0..vi-1 inclusive as views advance. Use when each view builds on the previous (Round 1, +Round 2, +Round 3 of the multiplier).
+- **Mutually exclusive swap.** Pass an explicit `show: ['some-layer']` on each view to control exactly which layers appear. Use when clicking a step shows ONE thing in isolation (click a phase → only that band lights up; click another phase → previous fades). Layer classes can be anything — use `.phase-boom`, `.phase-slowdown` etc. for readability.
 
 Canonical example: `js/data/edexcel_a/theme-2/national-income-and-the-multiplier/learn-it.js` Card 1 (round-by-round multiplier build-up); `js/data/edexcel_a/theme-1/indirect-taxes-and-subsidies/learn-it.js` Cards 1-4 (tax mechanic + ad valorem + incidence + subsidy mirror).
 
@@ -152,7 +166,9 @@ Avoid when (this is the rule): the content has order (use #1), contrast (use #2)
 
 ## The anti-pattern
 
-If a card has three or more tile-grid-style blocks (`causes` + `causes2` + `causes3`, or `causes` + `keyPoints` + `productExamples`), you've defaulted. Step back. Pick one tile grid + one distinctive pattern. The cards I built in mid-2026 under this rule were the ones that lacked engagement — the rebuilds replaced extra tile grids with patterns 1, 2, 4, 6, 9.
+When a *topic* has three or more cards where the **primary** pattern is *Tile grid*, you've defaulted. Replace at least two of those cards with patterns 1-9.
+
+This rule is about the **dominant pattern of each card**, not about the count of tile-grid-like blocks within a single card. A card whose main job is "weigh benefits against costs, then judge" might legitimately use a pair block (Benefits vs Costs) + a causes2 block (Sustainable vs Unsustainable) + a causes3 block (Who Wins) + a verdict conclusion — that's an *Evidence-then-verdict* card, and the multiple tile-style blocks all serve the evaluation. I once gutted exactly that card by deleting two of the three blocks in the name of "consolidation"; the visual richness was the whole point. The rule that matters is variety **across cards in the topic**, not minimalism within any one card.
 
 ## Field reference (for the `ad-interactive` renderer)
 

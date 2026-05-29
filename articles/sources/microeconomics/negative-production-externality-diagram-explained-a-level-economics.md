@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On the negative production externality diagram, where does the marginal social cost (MSC) curve sit relative to the marginal private cost (MPC) curve?"
-    opts: ["Below MPC", "Exactly on top of MPC", "Above MPC, because society bears extra costs the producer ignores", "MSC is downward sloping while MPC is upward sloping"]
-    ans: 2
-    exp: "A negative production externality means production imposes costs on third parties (e.g. pollution). So the marginal social cost lies ABOVE the marginal private cost — the vertical gap between them is the external cost per unit."
-  - difficulty: medium
-    type: mcq
-    q: "Why does a free market over-produce a good with a negative production externality?"
-    opts: ["Because the firm produces where MSC = MSB", "Because the firm maximises welfare", "Because the firm produces where MPC = MPB, ignoring the external cost, so output exceeds the social optimum", "Because demand is perfectly inelastic"]
-    ans: 2
-    exp: "The firm sets output where its private cost equals private benefit (MPC = MPB), ignoring the external cost. The social optimum is where MSC = MSB, which lies at a lower quantity. The market quantity therefore exceeds the optimum — over-production."
-  - difficulty: hard
-    type: mcq
-    q: "On the diagram, the welfare loss (deadweight loss) triangle from over-production lies between which curves, and over which range of output?"
-    opts: ["Between MPB and MSB, from zero to the optimum", "Between MSC and MSB, from the social optimum quantity up to the free-market quantity", "Between MPC and MPB, over the whole range", "There is no welfare loss with a negative externality"]
-    ans: 1
-    exp: "Over the units produced beyond the social optimum, marginal social cost exceeds marginal social benefit. The triangle bounded by MSC and MSB (or the demand curve) between the optimum quantity and the market quantity is the welfare loss — society would be better off not producing those units."
 spa_topic: negative-externalities
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

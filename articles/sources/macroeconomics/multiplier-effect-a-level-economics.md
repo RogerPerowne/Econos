@@ -14,25 +14,6 @@ status: live
 published: 2026-05-28
 modified: 2026-05-28
 spa_topic: national-income-and-the-multiplier
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "If the marginal propensity to consume (MPC) is 0.8, what is the value of the simple Keynesian multiplier (k)?"
-    opts: ["1.25", "5", "8", "0.2"]
-    ans: 1
-    exp: "k = 1 ÷ (1 − MPC) = 1 ÷ (1 − 0.8) = 1 ÷ 0.2 = 5. A £1bn injection raises national income by £5bn at full multiplier action."
-  - difficulty: medium
-    type: mcq
-    q: "Which of the following would REDUCE the size of the UK fiscal multiplier?"
-    opts: ["A fall in the marginal propensity to import", "A fall in the marginal rate of tax", "A rise in the average propensity to save", "A fall in the marginal propensity to save"]
-    ans: 2
-    exp: "Bigger leakages (saving, tax, imports) shrink the multiplier. A higher propensity to save means a smaller share of each injection passes through to the next round of spending, so k = 1 ÷ (MPS + MPT + MPM) falls."
-  - difficulty: hard
-    type: mcq
-    q: "The textbook value k = 5 (from k = 1 ÷ MPS with MPS = 0.2) overstates the realised UK fiscal multiplier. Which explanation best accounts for this?"
-    opts: ["The Bank of England prints money to fund spending, which cancels the multiplier entirely", "A high marginal propensity to consume makes the multiplier larger, not smaller", "k = 1 ÷ MPS ignores tax and import leakages; the open-economy k = 1 ÷ (MPS + MPT + MPM) is far smaller, and monetary offset shrinks it further", "Government spending crowds out exactly £1 of private spending per £1 injected, so k = 1"]
-    ans: 2
-    exp: "The simple k = 1 ÷ MPS assumes a closed, untaxed economy. The UK is small, open and taxed, so each round leaks to imports (MPM) and tax (MPT) as well as saving — k = 1 ÷ (MPS + MPT + MPM) is roughly 1.4–1.5, and monetary offset plus time lags shrink the realised figure further."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Macroeconomics", href: "/articles/?theme=macro" }

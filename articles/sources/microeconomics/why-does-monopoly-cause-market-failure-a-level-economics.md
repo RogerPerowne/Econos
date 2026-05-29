@@ -31,25 +31,6 @@ glance_cta:
   href: /edexcel_a/theme-3/monopoly/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "At a monopoly's profit-maximising output, what is the relationship between price and marginal cost?"
-    opts: ["Price equals marginal cost", "Price is below marginal cost", "Price is above marginal cost", "Price equals average cost"]
-    ans: 2
-    exp: "A monopoly produces where MR = MC, but because MR < AR (price), the price read off the demand curve at that output lies above MC. P > MC is the signature of allocative inefficiency."
-  - difficulty: medium
-    type: mcq
-    q: "Why does P > MC mean resources are misallocated?"
-    opts: ["Because the firm makes a loss", "Because consumers value an extra unit (shown by price) more than it costs society to produce it (MC), yet that unit is not made", "Because marginal cost is rising", "Because the firm is productively efficient"]
-    ans: 1
-    exp: "Where price exceeds marginal cost, the value consumers place on another unit (its price) is greater than the resource cost of making it (MC). Society would gain from producing it, but the monopoly restricts output to protect its margin — the unmade units are the deadweight welfare loss."
-  - difficulty: hard
-    type: mcq
-    q: "Which argument most strongly qualifies the claim that monopoly always causes market failure?"
-    opts: ["Monopolies never make supernormal profit", "Economies of scale and the funding of dynamic efficiency (R&D, innovation) can mean a monopoly produces at lower cost and delivers more long-run gains than a fragmented competitive industry", "Monopolies always produce where P = MC", "Consumers prefer fewer choices"]
-    ans: 1
-    exp: "A natural monopoly can exploit economies of scale unavailable to small firms, so its costs and even its prices may be lower than under fragmentation. Supernormal profit can fund R&D and innovation (Schumpeter's dynamic efficiency). Whether monopoly is a net failure therefore depends on weighing static inefficiency against scale and dynamic gains — the core evaluation."
 want_more:
   title: "Want more depth?"
   subtitle: "Master monopoly with Econos."

@@ -13,25 +13,6 @@ read_minutes: 6
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which body sets monetary policy in the UK?"
-    opts: ["HM Treasury", "The Bank of England's Monetary Policy Committee", "The Office for Budget Responsibility", "Parliament"]
-    ans: 1
-    exp: "Monetary policy — the bank rate and asset purchases — is set by the Bank of England's MPC, operationally independent of government since 1997. Fiscal policy (tax and spending) is the Treasury's job."
-  - difficulty: medium
-    type: mcq
-    q: "Which of the following is a fiscal policy instrument, not a monetary one?"
-    opts: ["Changing the bank rate", "Quantitative easing", "Changing the rate of income tax", "Forward guidance on interest rates"]
-    ans: 2
-    exp: "Income tax is a government revenue tool, so it is fiscal. Bank rate, QE and forward guidance are all instruments of the central bank, so they are monetary."
-  - difficulty: hard
-    type: mcq
-    q: "Why might fiscal policy be more effective than monetary policy in a deep recession with interest rates near zero?"
-    opts: ["Fiscal policy has no time lags", "With rates near the lower bound, further rate cuts have little room to stimulate demand, whereas government spending can inject demand directly", "Monetary policy increases the budget deficit, but fiscal policy does not", "Fiscal policy is set by an independent body, so it is more credible"]
-    ans: 1
-    exp: "Near the zero lower bound, conventional rate cuts are largely exhausted, weakening monetary policy. Direct government spending still adds to AD, so fiscal policy can do the heavy lifting — the standard liquidity-trap argument."
 spa_topic: demand-side-policies-fiscal
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

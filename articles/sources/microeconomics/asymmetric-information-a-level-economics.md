@@ -13,25 +13,6 @@ read_minutes: 11
 status: live
 published: 2026-05-28
 modified: 2026-05-28
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Asymmetric information exists when:"
-    opts: ["Both parties to a transaction have the same information", "One party to a transaction has more or better information than the other", "Neither party has any information", "The government sets all prices"]
-    ans: 1
-    exp: "Asymmetric information means one side of a transaction knows more than the other — for example, a used-car seller knowing the car's true condition while the buyer does not."
-  - difficulty: medium
-    type: mcq
-    q: "In Akerlof's market for lemons, why can the market for good used cars partly collapse?"
-    opts: ["Because the government bans the sale of used cars", "Because buyers cannot tell good cars from bad ones, so they only offer an average price, driving good cars out of the market", "Because sellers always have less information than buyers", "Because demand for cars is perfectly elastic"]
-    ans: 1
-    exp: "Unable to distinguish quality, buyers offer only an average price. Owners of good cars refuse to sell at that price and withdraw, leaving disproportionately bad cars (lemons) — adverse selection."
-  - difficulty: hard
-    type: mcq
-    q: "A driver takes more risks after buying fully comprehensive car insurance. This is an example of:"
-    opts: ["Adverse selection", "Moral hazard", "A positive externality", "Allocative efficiency"]
-    ans: 1
-    exp: "Moral hazard is a change in behaviour after a contract is agreed, because one party no longer bears the full consequences of their actions — here, the insurer rather than the driver bears the cost of an accident."
 spa_topic: information-gaps
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

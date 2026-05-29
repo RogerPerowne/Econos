@@ -14,25 +14,6 @@ status: live
 published: 2026-05-28
 modified: 2026-05-28
 spa_topic: measures-of-economic-performance
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which measure of GDP strips out inflation so growth can be compared across years?"
-    opts: ["Nominal GDP", "Real GDP", "GNI", "PPP"]
-    ans: 1
-    exp: "Nominal GDP uses current prices and inflates with the price level. Real GDP applies a deflator to express output at constant prices — making period-to-period growth comparable."
-  - difficulty: medium
-    type: mcq
-    q: "Country A has higher total GDP than Country B but a far larger population. What does this imply about average living standards?"
-    opts: ["A has the higher living standards", "B may have the higher living standards", "Both must be identical", "Cannot say without GNI"]
-    ans: 1
-    exp: "Total GDP says nothing about average welfare. GDP per capita = GDP ÷ population. A small population with moderate GDP (Luxembourg) can have higher per-capita output than a large population with bigger headline GDP (India)."
-  - difficulty: hard
-    type: mcq
-    q: "Which scenario best explains how measured GDP can rise while average wellbeing falls?"
-    opts: ["Output gains accrue to the top decile while median real wages stagnate, and the growth carries uncounted environmental costs", "Real GDP rises faster than nominal GDP because the price level is falling", "GDP per capita rises because the population is shrinking faster than output", "Total GDP rises while GDP per capita also rises in line with it"]
-    ans: 0
-    exp: "GDP measures total output, not its distribution or external costs. If gains concentrate at the top while median wages stagnate, and growth imposes uncounted pollution or congestion costs, headline GDP can climb even as typical wellbeing falls."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Macroeconomics", href: "/articles/?theme=macro" }

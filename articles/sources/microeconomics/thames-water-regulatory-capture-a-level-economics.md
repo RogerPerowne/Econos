@@ -14,25 +14,6 @@ status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: monopoly
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Why is water distribution described as a natural monopoly?"
-    opts: ["The government banned competition in the water industry", "One firm can supply the whole market at lower average cost than several firms could, because of huge fixed network costs", "Water companies collude to fix prices", "Consumers prefer to buy from a single supplier"]
-    ans: 1
-    exp: "A natural monopoly arises from cost structure: the fixed cost of the pipe network is so large, and the marginal cost of an extra unit so small, that average cost keeps falling over the whole market. Duplicating the network would raise total costs, so one firm is the least-cost arrangement."
-  - difficulty: medium
-    type: mcq
-    q: "Under the RPI-X price-cap model, what gives a regulated water company an incentive to cut costs?"
-    opts: ["Ofwat pays a bonus for every cost saving", "If the firm beats the assumed efficiency factor X, it keeps the difference as profit until the next review", "Customers vote on the price each year", "The firm is fined if its costs fall"]
-    ans: 1
-    exp: "RPI-X lets prices rise by inflation minus an efficiency factor X. A firm that cuts costs faster than X assumed keeps the gain as profit between price reviews, so the cap mimics the cost discipline competition would otherwise impose."
-  - difficulty: hard
-    type: mcq
-    q: "Which observation would most strongly support Stigler's regulatory-capture interpretation of Thames Water, rather than a simple 'weak regulator' interpretation?"
-    opts: ["Thames Water's bills rose roughly in line with inflation", "Ofwat's price settlements were repeatedly shaped by the industry's own cost claims in ways that favoured shareholders over the required network investment", "Thames Water had high fixed costs", "Customers could not switch supplier"]
-    ans: 1
-    exp: "Capture in Stigler's sense means regulation operated primarily for the industry's benefit. Evidence that settlements were systematically shaped by the firms' interests — favouring returns to capital over mandated investment — goes beyond mere leniency and supports capture specifically. High fixed costs and captive customers are features of any natural monopoly, not evidence of capture."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics" }

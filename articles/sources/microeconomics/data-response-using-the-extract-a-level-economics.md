@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On a data response question, what is the main purpose of referring to the extract?"
-    opts: ["To fill space", "To earn AO2 application marks by grounding analysis in the context", "To replace the need for analysis", "To show you can copy accurately"]
-    ans: 1
-    exp: "The extract exists to be applied. Quoting and using its detail is how you earn AO2 application marks — the part of the answer a generic essay can never reach."
-  - difficulty: medium
-    type: mcq
-    q: "Which use of a figure from the extract is most likely to earn marks?"
-    opts: ["Copying a whole sentence verbatim", "Listing every number in the table", "Selecting one figure and explaining what it implies for the analysis", "Ignoring the numbers and writing theory"]
-    ans: 2
-    exp: "Selective, purposeful use beats wholesale copying. A single figure attached to a piece of reasoning ('the 12% fall implies...') does analytical work; a copied sentence does not."
-  - difficulty: hard
-    type: mcq
-    q: "An extract shows demand falling 8% after a 20% price rise. A student writes 'demand is price elastic'. What is wrong?"
-    opts: ["Nothing — the conclusion is correct", "An 8% fall from a 20% price rise gives a PED below 1, so demand is price inelastic, not elastic", "The figures can't be used for elasticity", "Elasticity is irrelevant to data response"]
-    ans: 1
-    exp: "PED = %ΔQd ÷ %ΔP = 8 ÷ 20 = 0.4, which is less than 1 — inelastic. Misreading the data the wrong way round is a classic data response error that examiners penalise."
 spa_topic: market-failure
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

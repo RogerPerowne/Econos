@@ -13,25 +13,6 @@ read_minutes: 12
 status: live
 published: 2026-05-28
 modified: 2026-05-28
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which UK index does the Bank of England use for its 2% inflation target?"
-    opts: ["RPI", "CPI", "CPIH", "PPI"]
-    ans: 1
-    exp: "The MPC has targeted CPI since 2003. RPI persists in older contracts (rail fares, index-linked gilts) but the BoE's mandate is CPI-based."
-  - difficulty: medium
-    type: mcq
-    q: "In 2022 Russia's invasion of Ukraine pushed UK CPI to 11.1%. Which type of inflation does that primarily illustrate?"
-    opts: ["Demand-pull inflation", "Cost-push inflation", "Monetary inflation", "Disinflation"]
-    ans: 1
-    exp: "An external shock to input prices (gas, food via fertiliser) shifts SRAS left — output falls, prices rise. That signature is cost-push, not demand-pull."
-  - difficulty: hard
-    type: mcq
-    q: "Why is raising base rate a less effective response to cost-push inflation than to demand-pull inflation?"
-    opts: ["Higher rates raise firms' borrowing costs, which directly worsens cost-push inflation", "Cost-push inflation is always temporary, so any monetary response is unnecessary", "Higher rates increase aggregate demand, fuelling the supply shock further", "A rate rise works on AD, but cost-push inflation stems from an SRAS shock — tightening risks deepening the output fall while prices stay high"]
-    ans: 3
-    exp: "Higher rates curb inflation by reducing AD, which fits a demand-pull gap. Cost-push inflation comes from a leftward SRAS shift the central bank cannot reverse, so tightening pushes output further below trend (recession) while inflation persists — the instrument addresses the wrong side of the diagram."
 spa_topic: causes-of-inflation-and-deflation
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

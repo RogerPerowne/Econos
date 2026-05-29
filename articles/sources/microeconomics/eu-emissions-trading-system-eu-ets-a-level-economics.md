@@ -13,25 +13,6 @@ read_minutes: 9
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "The EU Emissions Trading System works on what basic principle?"
-    opts: ["A fixed tax on every tonne of carbon", "A cap on total emissions with tradable permits", "A ban on all polluting industries", "A subsidy for clean energy"]
-    ans: 1
-    exp: "The ETS sets an overall cap on emissions and issues permits up to that cap. Firms that can cut emissions cheaply sell spare permits; firms that cannot buy them — so a market price for carbon emerges."
-  - difficulty: medium
-    type: mcq
-    q: "Under cap-and-trade, what sets the price of a permit?"
-    opts: ["The government fixes it directly", "Supply (the cap) and demand (firms' need to emit) in the permit market", "The cost of renewable energy alone", "The number of firms in the scheme"]
-    ans: 1
-    exp: "The cap fixes permit supply; demand comes from firms needing to cover their emissions. Where supply meets demand sets the carbon price, which rises as the cap tightens or demand grows."
-  - difficulty: hard
-    type: mcq
-    q: "Why is cap-and-trade said to achieve a given emissions cut at lower total cost than a uniform regulation requiring every firm to cut by the same amount?"
-    opts: ["It allows firms with low abatement costs to cut more and sell permits, while high-cost firms buy permits, equalising marginal abatement cost across firms", "It removes the need for any firm to cut emissions", "It guarantees every firm the same profit", "It sets the carbon price to zero"]
-    ans: 0
-    exp: "Trading lets cuts happen wherever they are cheapest. Firms abate up to the point where their marginal abatement cost equals the permit price, so marginal cost is equalised across the system — the least-cost way to hit a given total cap."
 spa_topic: negative-externalities
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-1/the-price-mechanism/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "The price of a good rises sharply, encouraging existing firms to produce more and new firms to enter the market. This best illustrates which function of the price mechanism?"
-    opts: ["Rationing", "Signalling", "Incentive", "Redistribution"]
-    ans: 2
-    exp: "Higher price → behaviour change (existing firms produce more; entry occurs). That's the INCENTIVE function. Signalling is about INFORMATION carried; incentive is about BEHAVIOUR caused. Often they happen together but the mark scheme distinguishes them."
-  - difficulty: medium
-    type: mcq
-    q: "Which of the following is a situation where the price mechanism FAILS to allocate resources efficiently?"
-    opts: ["A profitable supermarket adjusts prices weekly", "Pollution from a factory imposes uncompensated costs on residents", "Consumers compare prices using comparison websites", "Firms raise prices during a shortage"]
-    ans: 1
-    exp: "When the market price doesn't reflect external costs (or benefits), the rationing/signalling/incentive functions misfire — too much is produced at too low a price. That's the negative-externality case, the textbook market-failure example."
-  - difficulty: hard
-    type: mcq
-    q: "When 2022 European wholesale gas prices spiked, markets re-equilibrated faster than any central planner could have managed. Which mechanism BEST explains why a planner could not have replicated this?"
-    opts: ["A planner could match it, since governments hold more data than any single firm", "Prices simultaneously rationed, signalled and incentivised using dispersed local knowledge no planner possesses", "The price system only rations; signalling and incentives require state direction", "Markets adjusted because the EU set the cargo allocations centrally"]
-    ans: 1
-    exp: "The price spike rationed gas to its highest-value uses, signalled scarcity (LNG cargoes redirected to Europe) and incentivised behaviour change (lower thermostats, more LNG supply) — all driven by dispersed local cost-and-value knowledge that, per Hayek, no central planner can aggregate."
 
 want_more:
   title: "Want more depth?"

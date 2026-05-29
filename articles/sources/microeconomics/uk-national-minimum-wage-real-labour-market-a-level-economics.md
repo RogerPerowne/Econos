@@ -13,25 +13,6 @@ read_minutes: 9
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which body advises the UK government on the level of the minimum wage?"
-    opts: ["The Bank of England", "The Low Pay Commission", "HM Treasury", "The Office for National Statistics"]
-    ans: 1
-    exp: "The independent Low Pay Commission recommends the minimum wage and National Living Wage rates to the government, drawing on evidence about pay, employment and the wider economy."
-  - difficulty: medium
-    type: mcq
-    q: "In a perfectly competitive labour market, a minimum wage set above equilibrium is predicted to cause what?"
-    opts: ["Higher employment", "Excess supply of labour — unemployment", "A shortage of labour", "No change in employment"]
-    ans: 1
-    exp: "Above the market-clearing wage, the quantity of labour supplied exceeds the quantity demanded. The gap is excess supply — unemployment — the standard competitive-market prediction."
-  - difficulty: hard
-    type: mcq
-    q: "Why has the UK minimum wage often raised pay without the large job losses the competitive model predicts?"
-    opts: ["Firms ignore the law", "Many low-wage markets have monopsony features, so a wage floor can raise pay and even employment toward the competitive level", "Labour supply is perfectly inelastic", "The minimum wage is always set below equilibrium"]
-    ans: 1
-    exp: "Where employers have wage-setting power, they hold the wage below the competitive level. A floor caps the marginal cost of labour, letting firms raise wages and hire more, up to the competitive point — so employment need not fall, consistent with much UK evidence."
 spa_topic: government-intervention-in-markets
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

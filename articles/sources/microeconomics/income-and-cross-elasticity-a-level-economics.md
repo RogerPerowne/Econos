@@ -13,25 +13,6 @@ read_minutes: 11
 status: live
 published: 2026-05-28
 modified: 2026-05-28
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A good with a negative income elasticity of demand (YED) is classified as:"
-    opts: ["A luxury good", "A normal good", "An inferior good", "A complement"]
-    ans: 2
-    exp: "A negative YED means demand falls as income rises — the signature of an inferior good, such as a supermarket value range or bus travel."
-  - difficulty: medium
-    type: mcq
-    q: "Two goods have a cross elasticity of demand (XED) of +1.5. They are best described as:"
-    opts: ["Complements", "Unrelated goods", "Strong substitutes", "Inferior goods"]
-    ans: 2
-    exp: "A positive XED means a rise in one good's price increases demand for the other — they are substitutes. A value of +1.5 indicates a strong substitute relationship."
-  - difficulty: hard
-    type: mcq
-    q: "A luxury good is best defined as one whose income elasticity of demand is:"
-    opts: ["Negative", "Between 0 and 1 (positive but inelastic)", "Greater than 1 (positive and elastic)", "Exactly zero"]
-    ans: 2
-    exp: "Luxuries are income-elastic normal goods: YED above 1, so demand rises proportionately faster than income. Necessities are normal goods with YED between 0 and 1."
 spa_topic: income-and-cross-price-elasticity
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-3/game-theory/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "In a standard payoff matrix written as (Row firm, Column firm), what does the first number in each cell represent?"
-    opts: ["The column firm's payoff", "The row firm's payoff", "The combined industry payoff", "The probability of that outcome"]
-    ans: 1
-    exp: "By convention the first number is the row firm's payoff and the second is the column firm's. Reading the pair in the right order is the first step to finding dominant strategies and the Nash equilibrium."
-  - difficulty: medium
-    type: mcq
-    q: "A firm has a dominant strategy to 'compete' when which condition holds?"
-    opts: ["Competing gives a higher payoff only if the rival also competes", "Competing gives a higher payoff whatever the rival chooses to do", "Competing maximises the combined payoff of both firms", "Competing is chosen at random with 50% probability"]
-    ans: 1
-    exp: "A dominant strategy yields a higher payoff regardless of the rival's choice. You test it by comparing the firm's payoffs in each of the rival's two possible columns (or rows) — if one strategy wins in both, it dominates."
-  - difficulty: hard
-    type: mcq
-    q: "In the classic duopoly prisoner's dilemma, both firms colluding gives the highest joint payoff, yet the Nash equilibrium is both competing. Why is the worse-for-both outcome the stable one?"
-    opts: ["Colluding is illegal, so the matrix forbids it", "Each firm's dominant strategy is to compete — whatever the rival does, cheating pays more — so both rationally compete and neither can gain by switching alone", "The Nash equilibrium always gives the highest joint payoff", "Firms cannot read the payoff matrix accurately"]
-    ans: 1
-    exp: "Because competing dominates for each firm individually, both compete. From that cell neither can raise its own payoff by unilaterally switching to collude (the rival would still be competing), so it is the Nash equilibrium — stable, even though both would be better off colluding. That tension is the prisoner's dilemma and explains why cartels are unstable without enforcement."
 
 want_more:
   title: "Want more depth?"

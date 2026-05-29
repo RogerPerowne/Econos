@@ -775,7 +775,6 @@ function articleRoutes() {
     const footer = renderArticleFooter(fm);
     const specMeta = renderSpecMeta(fm);
     const boardPills = renderBoardPills(fm);
-    const knowledgeCheck = renderKnowledgeCheck(fm);
 
     return `<!DOCTYPE html>
 <html lang="en-GB">
@@ -821,13 +820,11 @@ ${friction}
 ${glance}
     </div>
 ${renderedBody}
-${knowledgeCheck}
 ${wantMore}
 ${footer}
   </main>
 ${renderSiteFooter()}
   <script defer src="/articles/diagram.js"></script>
-  <script defer src="/articles/quiz.js"></script>
 </body>
 </html>
 `;
@@ -958,69 +955,6 @@ ${renderSiteFooter()}
 ${facts}
 ${cta}
       </aside>`;
-  }
-
-  /* Knowledge-check section appended to every article that ships a
-     `questions:` array in its frontmatter. Three cards (easy / medium /
-     hard) coloured green / amber / rose to match the home-page
-     Learn It / Link It / Land It palette. Each card is a native
-     <details> element — no JS required, indexable by Google, accessible
-     out of the box. Question shape matches the per-topic learn-it.js
-     quiz pool format so authors can lift questions wholesale. */
-  const QC_DIFFICULTY = {
-    easy:   { label: 'Easy',         classMod: 'easy'   },
-    medium: { label: 'Intermediate', classMod: 'medium' },
-    hard:   { label: 'Hardest',      classMod: 'hard'   }
-  };
-  function renderKnowledgeCheck(fm) {
-    if (!Array.isArray(fm.questions) || fm.questions.length === 0) return '';
-    const cards = fm.questions.slice(0, 3).map((q, i) => {
-      const diff = QC_DIFFICULTY[q.difficulty] || QC_DIFFICULTY[['easy','medium','hard'][i] || 'medium'];
-      const hasOpts = Array.isArray(q.opts) && q.opts.length;
-      /* Interactive MCQ. Each option is a button carrying data-correct;
-         quiz.js (loaded on every article page) reveals the verdict only
-         after the reader CLICKS an option — green tick on the right
-         answer, red cross on a wrong pick, then the explanation.
-
-         Progressive enhancement: with JS off the feedback block (correct
-         answer + explanation) is visible by default and nothing is
-         pre-highlighted green, so the answer is still reachable and
-         indexable. quiz.js adds `is-quiz` on load, which hides the
-         feedback until a click. `ans` is the 0-indexed correct option. */
-      let optsBlock = '';
-      if (hasOpts) {
-        const items = q.opts.map((opt, oi) => {
-          const correct = oi === q.ans;
-          return `<li><button type="button" class="article-qc__opt" data-correct="${correct ? 'true' : 'false'}">`
-            + `<span class="article-qc__opt-text">${escapeHtml(String(opt))}</span>`
-            + `<span class="article-qc__icon" aria-hidden="true"></span>`
-            + `</button></li>`;
-        }).join('');
-        optsBlock = `<ul class="article-qc__opts" role="list">${items}</ul>`;
-      }
-      const correctText = (hasOpts && q.opts[q.ans] !== undefined)
-        ? `<p class="article-qc__answer"><strong>Correct answer:</strong> ${escapeHtml(String(q.opts[q.ans]))}</p>`
-        : (q.ans !== undefined ? `<p class="article-qc__answer"><strong>Answer:</strong> ${escapeHtml(String(q.ans))}</p>` : '');
-      const exp = q.exp
-        ? `<p class="article-qc__exp">${md.renderInline(String(q.exp))}</p>`
-        : '';
-      return `        <div class="article-qc__card article-qc__card--${diff.classMod}" data-qc-card>
-          <span class="article-qc__chip">${diff.label}</span>
-          <p class="article-qc__q">${escapeHtml(String(q.q || ''))}</p>
-          ${optsBlock}
-          <div class="article-qc__feedback" aria-live="polite">
-            ${correctText}
-            ${exp}
-          </div>
-        </div>`;
-    }).join('\n');
-    return `    <section class="article-qc" aria-labelledby="qc-heading">
-      <header class="article-qc__head">
-        <h2 id="qc-heading">Check your knowledge</h2>
-        <p>Three multiple-choice questions — easy, intermediate, hard. Pick an option to see the answer.</p>
-      </header>
-${cards}
-    </section>`;
   }
 
   function renderWantMore(fm) {
@@ -1158,7 +1092,7 @@ ${pills}
     }
     /* Interactive-diagram support: the ported layer state-machine CSS
        and the tab controller. Verbatim copies, same as articles.css. */
-    for (const asset of ['diagram.css', 'diagram.js', 'quiz.js']) {
+    for (const asset of ['diagram.css', 'diagram.js']) {
       if (existsSync(join(articlesSrc, asset))) {
         writeFileSync(join(articlesDist, asset), readFileSync(join(articlesSrc, asset), 'utf8'));
       }

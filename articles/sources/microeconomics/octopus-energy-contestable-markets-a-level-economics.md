@@ -14,25 +14,6 @@ status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: monopoly
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "In contestable market theory, what is the key determinant of how a market behaves?"
-    opts: ["The number of firms currently in the market", "The freedom of entry and exit, especially the level of sunk costs", "Whether the firms are publicly owned", "The price of the product"]
-    ans: 1
-    exp: "Contestability theory says behaviour is driven by the threat of entry, not the current number of firms. What matters is how easy it is to enter and exit — above all, how low sunk costs are — because that determines whether outsiders can credibly threaten incumbents."
-  - difficulty: medium
-    type: mcq
-    q: "What is 'hit-and-run' competition in a contestable market?"
-    opts: ["Firms colluding to raise prices", "An entrant coming in to capture supernormal profit, then exiting cheaply if incumbents respond, because sunk costs are low", "A regulator fining firms", "Firms permanently leaving the industry"]
-    ans: 1
-    exp: "Hit-and-run entry is possible when entry and exit are cheap. A firm can enter to grab abnormal profit and leave again at little cost if conditions change. The mere possibility disciplines incumbents into pricing closer to normal profit even without actual entry."
-  - difficulty: hard
-    type: mcq
-    q: "Why might the UK retail energy market be only imperfectly contestable, despite new entrants like Octopus succeeding?"
-    opts: ["Energy is a public good", "Building a customer base, meeting regulatory and capital requirements, and the risk of insolvency in volatile wholesale markets are partial barriers and partly sunk costs", "There are no incumbents", "The product is differentiated"]
-    ans: 1
-    exp: "Perfect contestability needs costless entry and exit with no sunk costs. Retail energy has partial barriers — regulatory compliance, capital buffers, customer acquisition costs, exposure to volatile wholesale prices that bankrupted many small suppliers in 2021. So it is contestable enough to discipline incumbents, but not perfectly so."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics" }

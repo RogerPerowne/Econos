@@ -13,25 +13,6 @@ read_minutes: 9
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "What did the 2021 UK Supreme Court ruling decide about Uber drivers?"
-    opts: ["They were self-employed contractors", "They were 'workers' entitled to minimum wage and holiday pay", "They were full employees with redundancy rights", "They could not bring a claim at all"]
-    ans: 1
-    exp: "In Uber BV v Aslam (2021) the Supreme Court held that the drivers were 'workers', an intermediate status under UK law that carries entitlements including the national minimum wage and paid holiday."
-  - difficulty: medium
-    type: mcq
-    q: "Reclassifying gig workers as 'workers' is most directly a form of which intervention?"
-    opts: ["A maximum price", "Labour-market regulation that raises the effective price floor for labour", "A subsidy to firms", "A reduction in income tax"]
-    ans: 1
-    exp: "Granting minimum-wage and holiday entitlements imposes a regulatory floor on the cost of labour, similar in effect to a minimum wage applied to a group previously outside its scope."
-  - difficulty: hard
-    type: mcq
-    q: "In a monopsonistic labour market, why might a minimum wage raise both wages and employment?"
-    opts: ["Because firms always hire more when costs rise", "Because a monopsonist restricts hiring to hold wages down, so a floor that removes that wage-setting power can raise the wage and the quantity hired up to the competitive level", "Because demand for labour is perfectly elastic", "Because labour supply is fixed"]
-    ans: 1
-    exp: "A monopsonist hires where marginal cost of labour equals marginal revenue product, setting a wage below the competitive level and employing fewer workers. A binding wage floor caps the marginal cost of labour, so the firm can hire more at the higher wage — the standard monopsony case for a minimum wage."
 spa_topic: government-intervention-in-markets
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

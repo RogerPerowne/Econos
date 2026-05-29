@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On the positive consumption externality diagram, where does the marginal social benefit (MSB) curve sit relative to the marginal private benefit (MPB) curve?"
-    opts: ["Below MPB", "Above MPB, because consumption brings extra benefits to third parties", "Exactly on top of MPB", "MSB is upward sloping while MPB is downward sloping"]
-    ans: 1
-    exp: "A positive consumption externality means consuming the good benefits others too (e.g. vaccination, education). So marginal social benefit lies ABOVE marginal private benefit — the vertical gap is the external benefit per unit."
-  - difficulty: medium
-    type: mcq
-    q: "Why does a free market under-consume a good with a positive consumption externality?"
-    opts: ["Because consumers buy where MSB = MSC", "Because consumers value the good at its full social benefit", "Because consumers buy where MPB = MPC, ignoring the external benefit, so consumption falls short of the social optimum", "Because supply is perfectly elastic"]
-    ans: 2
-    exp: "Consumers buy where their private benefit equals price/cost (MPB = MPC), ignoring the extra benefit to third parties. The social optimum is where MSB = MSC, at a HIGHER quantity. The market quantity therefore falls short of the optimum — under-consumption."
-  - difficulty: hard
-    type: mcq
-    q: "On the diagram, the welfare loss triangle from under-consumption lies between which curves, and over which range of output?"
-    opts: ["Between MPB and the supply curve, from zero to the market quantity", "Between MSB and MSC (supply), from the free-market quantity up to the social optimum quantity", "Between MPB and MSB over the whole range", "There is no welfare loss with a positive externality"]
-    ans: 1
-    exp: "Over the units between the free-market quantity and the social optimum, marginal social benefit exceeds marginal social cost — society would gain from consuming them but does not. The triangle bounded by MSB and the supply curve (MSC) over that range is the welfare loss from under-consumption."
 spa_topic: positive-externalities
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

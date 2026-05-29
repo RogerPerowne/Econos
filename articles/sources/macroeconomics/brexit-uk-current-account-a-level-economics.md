@@ -14,25 +14,6 @@ status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: balance-of-payments
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which of these is part of the UK current account?"
-    opts: ["Foreign direct investment inflows", "Trade in goods and trade in services", "Purchases of UK government bonds by foreigners", "Changes in foreign exchange reserves"]
-    ans: 1
-    exp: "The current account records trade in goods, trade in services, primary income and secondary income. FDI inflows, bond purchases and reserve changes belong to the financial account, which is the mirror image of the current account by accounting identity."
-  - difficulty: medium
-    type: mcq
-    q: "What does the J-curve effect predict after a depreciation of sterling?"
-    opts: ["The current account improves immediately", "The current account first worsens, then improves once trade volumes adjust to the new prices", "The current account is unaffected by exchange rates", "Exports fall and imports rise permanently"]
-    ans: 1
-    exp: "In the short run, trade volumes are price-inelastic, so a weaker pound mainly raises the value of imports — worsening the current account. Over time volumes adjust (exports rise, imports fall) and the balance improves, tracing a J-shape. The condition for eventual improvement is the Marshall-Lerner condition."
-  - difficulty: hard
-    type: mcq
-    q: "Why might Brexit-related trade friction have a different effect on the UK current account than a simple sterling depreciation?"
-    opts: ["Friction only affects services, not goods", "Non-tariff barriers raise the cost and reduce the volume of trade in both directions structurally, rather than changing relative prices the way a depreciation does, so the J-curve framework doesn't straightforwardly apply", "Trade friction always improves the current account", "Friction has no effect on trade"]
-    ans: 1
-    exp: "A depreciation changes relative prices and the J-curve traces the volume response. Non-tariff barriers (customs checks, paperwork, rules-of-origin) act more like a persistent increase in trade costs that dampens trade volumes in both directions — a structural shift, not a price-driven adjustment, so it isn't captured by the J-curve story alone."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Macroeconomics" }

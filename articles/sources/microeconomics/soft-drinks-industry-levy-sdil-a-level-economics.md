@@ -13,25 +13,6 @@ read_minutes: 9
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "The Soft Drinks Industry Levy is best classified as which kind of tax?"
-    opts: ["An ad valorem tax (a percentage of price)", "A specific tax (a fixed amount per unit)", "A direct tax on producer profits", "A progressive income tax"]
-    ans: 1
-    exp: "SDIL charges a set amount per litre depending on sugar content, not a percentage of the sale price. A fixed charge per unit is a specific (per-unit) indirect tax, which shifts the supply curve up by a constant vertical distance."
-  - difficulty: medium
-    type: mcq
-    q: "Why did many manufacturers cut the sugar in their drinks rather than simply pass the SDIL on to consumers?"
-    opts: ["The tax was illegal to pass on to consumers", "The tiered design meant cutting sugar below a threshold removed the tax liability entirely", "Reformulation was subsidised by the government", "Consumers preferred sweeter drinks"]
-    ans: 1
-    exp: "Because the levy applied only above sugar thresholds, dropping a drink below 5g per 100ml escaped the charge altogether. The tax was deliberately built to reward reformulation, so the rational response was to change the product, not just the price."
-  - difficulty: hard
-    type: mcq
-    q: "A common evaluation point against the SDIL is that sugary drinks are only one source of dietary sugar. In welfare terms, what does this imply about the policy?"
-    opts: ["The tax fully internalises the externality", "The tax may leave a residual external cost because consumers substitute toward untaxed sources of sugar", "The tax is regressive and therefore efficient", "The tax raises too much revenue to be justified"]
-    ans: 1
-    exp: "If consumers switch to untaxed sweets, juices or other sugar sources, the social marginal cost of sugar consumption is only partly corrected. The wedge between private and social cost narrows for drinks but persists elsewhere, so the optimum is not fully restored."
 spa_topic: indirect-taxes-and-subsidies
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

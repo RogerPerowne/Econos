@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Which assessment objective does the command word 'evaluate' primarily target?"
-    opts: ["AO1 knowledge", "AO2 application", "AO3 analysis", "AO4 evaluation"]
-    ans: 3
-    exp: "'Evaluate' is the AO4 command word. AO4 rewards a reasoned, supported judgement — not the recall, application or analysis tested by AO1–AO3."
-  - difficulty: medium
-    type: mcq
-    q: "An answer gives three strong arguments, three counter-arguments, and stops. Why does this typically not reach the top evaluation band?"
-    opts: ["Too few arguments", "It balances but never reaches a supported judgement, which is what AO4 rewards", "It uses no diagram", "It is too short"]
-    ans: 1
-    exp: "Balance is not evaluation. AO4 wants a judgement supported by reasoning — which side is stronger and why — so a perfectly balanced answer with no conclusion stalls in the middle bands."
-  - difficulty: hard
-    type: mcq
-    q: "Which sentence shows the strongest evaluation?"
-    opts: ["It depends on lots of factors.", "Both the benefits and costs are significant.", "The policy's effect depends on PED: with inelastic demand the tax barely cuts consumption, so the revenue motive dominates the health motive here.", "This is a complex issue with no clear answer."]
-    ans: 2
-    exp: "Strong evaluation says what the outcome depends ON and reaches a judgement. The elasticity point identifies the decisive condition and uses it to prioritise one effect over the other — that is AO4."
 spa_topic: market-failure
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

@@ -13,25 +13,6 @@ read_minutes: 8
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "What makes Edexcel A-level economics Paper 3 distinctive?"
-    opts: ["It is multiple choice only", "It is synoptic — drawing on both micro and macro across two case studies", "It tests Theme 1 alone", "It has no extracts"]
-    ans: 1
-    exp: "Paper 3, 'Microeconomics and macroeconomics', is the synoptic paper. Built around two case studies, it expects you to draw on content from all four themes."
-  - difficulty: medium
-    type: mcq
-    q: "A Paper 3 question on a single firm sits inside a wider economy. What does a strong answer do that a weak one misses?"
-    opts: ["Sticks strictly to micro and ignores the macro context", "Links the firm-level point to its macro consequence where the case invites it", "Writes about macro only", "Avoids the case study to stay general"]
-    ans: 1
-    exp: "Paper 3 rewards synoptic linking — e.g. a firm's pricing power (micro) feeding through to inflation or competitiveness (macro) when the case study sets that up."
-  - difficulty: hard
-    type: mcq
-    q: "On Paper 3 a student writes a brilliant answer to the first 25-marker and leaves the second one half-finished. Why is this so costly?"
-    opts: ["The second essay carries no marks", "Marks are roughly balanced across the two case studies, so a missed essay forfeits a large, easily-won block", "Examiners only mark the first essay", "It triggers an automatic Level 1 cap"]
-    ans: 1
-    exp: "The marks are spread across both case studies. A polished first essay cannot compensate for an unfinished second — the easiest marks lost on the paper are the ones you never reached because of poor timing."
 spa_topic: monopoly
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

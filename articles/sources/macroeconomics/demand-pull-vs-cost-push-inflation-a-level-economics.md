@@ -13,25 +13,6 @@ read_minutes: 11
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "Demand-pull inflation is best shown on the AD-AS diagram by which movement?"
-    opts: ["A leftward shift of SRAS", "A rightward shift of aggregate demand", "A leftward shift of aggregate demand", "A vertical LRAS shifting left"]
-    ans: 1
-    exp: "Demand-pull inflation comes from aggregate demand outpacing supply, so AD shifts right along the SRAS curve — both the price level and real output rise."
-  - difficulty: medium
-    type: mcq
-    q: "An economy sees rising prices and falling output at the same time. Which cause does this signature point to?"
-    opts: ["Demand-pull inflation", "Cost-push inflation", "Disinflation", "Deflation"]
-    ans: 1
-    exp: "Falling output combined with rising prices (stagflation) is the diagnostic tell of a leftward SRAS shift — cost-push inflation. Demand-pull would raise output and prices together."
-  - difficulty: hard
-    type: mcq
-    q: "Why is raising the base rate a weaker tool against cost-push inflation than against demand-pull inflation?"
-    opts: ["Cost-push inflation always corrects itself, so no policy is ever needed", "Higher rates raise aggregate demand, worsening the supply shock", "A rate rise works through AD, but cost-push stems from an SRAS shift — tightening risks deepening the output fall while prices stay high", "Higher rates directly increase firms' input costs, which is the only driver of cost-push inflation"]
-    ans: 2
-    exp: "Monetary tightening curbs inflation by cooling aggregate demand, which suits a demand-pull gap. Cost-push inflation comes from a leftward SRAS shift the central bank cannot reverse, so tightening pushes output further below trend while inflation persists."
 spa_topic: causes-of-inflation-and-deflation
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

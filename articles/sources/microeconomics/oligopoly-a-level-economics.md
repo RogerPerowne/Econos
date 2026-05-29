@@ -13,25 +13,6 @@ read_minutes: 12
 status: live
 published: 2026-05-28
 modified: 2026-05-28
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "The defining feature of an oligopoly is that the market is dominated by:"
-    opts: ["A single firm", "Many small firms selling identical goods", "A few large interdependent firms", "The government"]
-    ans: 2
-    exp: "An oligopoly is a market dominated by a few large firms whose decisions are interdependent — each must anticipate how rivals will react."
-  - difficulty: medium
-    type: mcq
-    q: "The kinked demand curve model explains why oligopoly prices tend to be:"
-    opts: ["Constantly falling", "Sticky, or rigid, even when costs change", "Set by the government", "Always rising"]
-    ans: 1
-    exp: "The model assumes rivals match price cuts but ignore price rises, so demand is elastic above the current price and inelastic below it. Firms therefore have little incentive to change price."
-  - difficulty: hard
-    type: mcq
-    q: "In a one-shot prisoner's dilemma between two firms deciding whether to collude or compete, the Nash equilibrium is for both to:"
-    opts: ["Collude, because joint profit is highest", "Compete (e.g. cut price), because each firm's dominant strategy is to defect", "Exit the market", "Set identical prices by law"]
-    ans: 1
-    exp: "Whatever the rival does, each firm is better off defecting, so competing is the dominant strategy. The result is a Nash equilibrium that leaves both worse off than if they had colluded — the dilemma."
 spa_topic: oligopoly
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

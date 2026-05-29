@@ -14,25 +14,6 @@ status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: public-goods
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "What characterises a common-pool resource (or common access resource)?"
-    opts: ["Non-rival and non-excludable", "Rival but non-excludable — one person's use reduces what's left, but it's hard to stop anyone using it", "Excludable and rival", "Provided only by the state"]
-    ans: 1
-    exp: "A common-pool resource is rival (a fish caught is gone for others) but non-excludable (hard to fence off). That combination is what drives the tragedy of the commons: each user has an incentive to take more, while the cost of depletion is shared by all."
-  - difficulty: medium
-    type: mcq
-    q: "What is the standard 'tragedy of the commons' argument associated with Hardin?"
-    opts: ["Common resources are always efficiently used", "Because users individually gain from taking more while sharing the cost of depletion, an unmanaged common resource tends to be over-exploited", "Markets always solve resource problems", "Public goods are over-provided"]
-    ans: 1
-    exp: "Hardin's argument: with a shared, rival, non-excludable resource, each user reaps the full private benefit of extra use but bears only a fraction of the cost of depletion. Individually rational behaviour leads collectively to over-exploitation and ruin of the resource."
-  - difficulty: hard
-    type: mcq
-    q: "What did Ostrom's empirical work add to the standard 'privatise it or nationalise it' response to the commons?"
-    opts: ["She proved the tragedy of the commons never happens", "She showed that, under certain design conditions, communities can sustainably self-govern common-pool resources without either full privatisation or state control", "She argued only governments can manage commons", "She rejected the idea of common-pool resources"]
-    ans: 1
-    exp: "Ostrom documented real communities — fisheries, pastures, irrigation systems — that sustainably managed shared resources through local rules, monitoring and graduated sanctions. Her contribution was a third option between the market and the state, valid when conditions like clear boundaries, local rule-making and enforcement are met."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics" }

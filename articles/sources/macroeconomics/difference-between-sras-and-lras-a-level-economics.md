@@ -31,25 +31,6 @@ glance_cta:
   href: /edexcel_a/theme-2/aggregate-supply/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A sharp rise in world oil prices raises firms' production costs across the economy. Which curve shifts, and in which direction?"
-    opts: ["LRAS shifts left", "SRAS shifts left", "SRAS shifts right", "LRAS shifts right"]
-    ans: 1
-    exp: "A cost shock changes the cost of producing today's output without changing the economy's capacity. That is an SRAS shift, and higher costs shift it left — the classic cost-push picture."
-  - difficulty: medium
-    type: mcq
-    q: "A government raises investment in skills and infrastructure, expanding the economy's productive potential. Which curve shifts?"
-    opts: ["SRAS shifts right only", "LRAS shifts right (and, on the Classical view, SRAS too over time)", "Neither — supply-side policy affects only AD", "LRAS shifts left"]
-    ans: 1
-    exp: "Raising the quantity or quality of factors of production expands capacity, shifting LRAS right. This is the target of supply-side policy: more output possible at full employment, not just cheaper output today."
-  - difficulty: hard
-    type: mcq
-    q: "Why can a leftward SRAS shift raise the price level without changing LRAS, yet a leftward LRAS shift implies a permanently lower sustainable output?"
-    opts: ["Because SRAS shifts are always temporary by definition and reverse automatically within a year", "Because SRAS reflects current production costs while LRAS reflects the economy's productive capacity — a cost shock makes today's output dearer, whereas lost capacity lowers the maximum output achievable at full employment", "Because the price level cannot change in the long run", "Because LRAS is vertical only on the Keynesian view"]
-    ans: 1
-    exp: "SRAS captures the cost of producing current output; a cost shock raises prices and can cut output in the short run but leaves potential intact. LRAS captures potential itself; losing factors of production (capital scrapped, skills lost in long-term unemployment) lowers the output achievable even at full employment — a permanent loss, not a price effect."
 want_more:
   title: "Want more depth?"
   subtitle: "Master aggregate supply with Econos."

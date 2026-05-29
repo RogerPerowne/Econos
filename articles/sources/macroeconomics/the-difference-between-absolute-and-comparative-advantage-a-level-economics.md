@@ -13,25 +13,6 @@ read_minutes: 7
 status: live
 published: 2026-05-29
 modified: 2026-05-29
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "A country has an absolute advantage in a good when it can produce that good using what?"
-    opts: ["A lower opportunity cost than another country", "Fewer resources (more output per unit of input) than another country", "A higher price than another country", "A larger total economy than another country"]
-    ans: 1
-    exp: "Absolute advantage is about productivity: producing more output from the same inputs, or the same output from fewer inputs. Comparative advantage, by contrast, is about lower opportunity cost."
-  - difficulty: medium
-    type: mcq
-    q: "Comparative advantage is determined by which of the following?"
-    opts: ["Total output of a good", "The opportunity cost of producing a good", "The market price of a good", "The number of workers employed"]
-    ans: 1
-    exp: "A country has a comparative advantage in the good it can produce at a lower opportunity cost — the amount of the other good it must give up. This is the basis for mutually beneficial specialisation and trade."
-  - difficulty: hard
-    type: mcq
-    q: "Country A is more productive than Country B at making both cloth and wine. Why can trade still benefit both?"
-    opts: ["Because absolute advantage guarantees gains for the stronger country only", "Because comparative advantage depends on relative opportunity costs, so each country can specialise where its opportunity cost is lower and trade for the rest", "Because Country B will lower its prices below cost", "Because trade eliminates opportunity cost entirely"]
-    ans: 1
-    exp: "Even with an absolute advantage in both goods, Country A cannot have the lower opportunity cost in both. Each country specialises where its opportunity cost is lower, raising combined output — the core insight of comparative advantage."
 spa_topic: specialisation-and-trade
 breadcrumb:
   - { label: "Articles", href: "/articles/" }

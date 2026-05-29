@@ -14,25 +14,6 @@ status: live
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: government-intervention-in-markets
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "What does a benefit-cost ratio (BCR) of 1.5 mean in a cost-benefit analysis?"
-    opts: ["The project costs 1.5 times its benefits", "Every £1 of cost generates £1.50 of measured benefit", "The project takes 1.5 years to build", "The discount rate is 1.5%"]
-    ans: 1
-    exp: "A BCR expresses present-value benefits divided by present-value costs. A BCR of 1.5 means each £1 spent yields £1.50 of quantified benefit. Above 1 means benefits exceed costs on the figures used; below 1 means the appraisal does not justify the spend on those numbers alone."
-  - difficulty: medium
-    type: mcq
-    q: "Why does cost-benefit analysis of a project like HS2 tend to understate the true difficulty of the decision?"
-    opts: ["It ignores construction entirely", "Many costs and benefits — environmental damage, regional rebalancing, agglomeration — are hard to value, so the headline ratio rests on contestable assumptions", "It only counts financial profit", "It is legally binding"]
-    ans: 1
-    exp: "CBA tries to monetise externalities and wider economic benefits, but valuing things like carbon, severance of countryside, time savings and agglomeration relies on assumptions that reasonable analysts dispute. The single BCR number hides that uncertainty, which is why the same project can be appraised very differently over time."
-  - difficulty: hard
-    type: mcq
-    q: "A government has already spent billions on HS2 and is deciding whether to complete a later phase. Which reasoning is economically correct?"
-    opts: ["The money already spent should be counted as a benefit of finishing", "Past spending is a sunk cost and should be ignored; the decision should compare the remaining costs with the remaining benefits", "The project must be finished because cancelling wastes the money already spent", "Sunk costs double the benefit-cost ratio"]
-    ans: 1
-    exp: "Sunk costs are unrecoverable and irrelevant to a forward-looking decision. The rational test is whether the benefits still to come exceed the costs still to be incurred. 'We have spent too much to stop now' is the sunk-cost fallacy — a recurring trap in big-project political economy."
 breadcrumb:
   - { label: "Articles", href: "/articles/" }
   - { label: "Microeconomics" }

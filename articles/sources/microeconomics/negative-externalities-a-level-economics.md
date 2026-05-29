@@ -32,25 +32,6 @@ glance_cta:
   href: /edexcel_a/theme-1/negative-externalities/learn-it
   label: "Want more depth? Explore the full topic →"
 
-questions:
-  - difficulty: easy
-    type: mcq
-    q: "On a negative production externality diagram, which curve sits ABOVE the other?"
-    opts: ["MPC sits above MSC", "MSC sits above MPC", "MSB sits above MPB", "MSC sits above MSB"]
-    ans: 1
-    exp: "MSC = MPC + MEC. The external cost adds to the private cost, so the curve society pays sits above the one the producer sees. Market output (where D = MPC) exceeds the social optimum (where MSB = MSC)."
-  - difficulty: medium
-    type: mcq
-    q: "Which policy directly internalises the externality by making the polluter pay a price equal to the marginal external cost?"
-    opts: ["Tradable pollution permits", "Pigouvian tax", "Regulation banning the activity", "An information campaign"]
-    ans: 1
-    exp: "Pigouvian taxes set the price of the externality. Permits set the QUANTITY (cap and trade). Regulation sets a binding limit. All can deliver the optimum; only the tax internalises by changing the marginal cost the producer faces."
-  - difficulty: hard
-    type: mcq
-    q: "Comparing a Pigouvian tax with a tradable permit scheme for industrial CO₂, which statement is correct given the UK's binding net-zero target?"
-    opts: ["A tax fixes the quantity of emissions directly, which best delivers a net-zero cap", "Permits fix the carbon price, giving firms the most stable long-run investment signal", "A tax fixes the price and lets quantity vary, while permits fix the quantity and let price vary — so a capped scheme more directly hits a quantity target", "Only a tax can reach the social optimum; permits always over-pollute"]
-    ans: 2
-    exp: "A tax sets the carbon price and lets the market find the quantity; permits set the quantity (the cap) and let the price emerge. Because net zero is a binding quantity target, a permit scheme — ideally with a price floor for investment certainty — maps onto it most directly."
 
 want_more:
   title: "Want more depth?"

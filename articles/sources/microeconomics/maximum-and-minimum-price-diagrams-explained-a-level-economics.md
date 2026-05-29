@@ -1,5 +1,5 @@
 ---
-title: "Maximum and minimum price diagrams explained — how to draw price controls (A-level economics)"
+title: "Maximum and minimum prices explained for A-level economics"
 description: "Draw price ceiling and price floor diagrams for A-level economics. Where to put P_max and P_min, why one causes shortage and the other surplus, and the marks examiners reward."
 lede: "Where to draw a price ceiling versus a price floor, why a max price below equilibrium creates a shortage and a min price above it creates a surplus, and how to label the gap."
 theme: "Microeconomics"

@@ -1,5 +1,5 @@
 ---
-title: "PED diagrams explained — how to draw elastic vs inelastic demand (A-level economics)"
+title: "PED explained for A-level economics — elastic vs inelastic"
 description: "Draw and read the PED diagram for A-level economics. Steep vs flat demand curves, how to label the axes, the revenue test, and the mistakes that lose marks."
 lede: "How to draw elastic and inelastic demand the way examiners want, why the slope alone doesn't prove elasticity, and the two-line revenue test that earns the diagram marks."
 theme: "Microeconomics"

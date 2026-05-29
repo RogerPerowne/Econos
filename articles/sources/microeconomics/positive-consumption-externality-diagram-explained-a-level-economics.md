@@ -1,5 +1,5 @@
 ---
-title: "Positive consumption externality diagram explained for A-level economics"
+title: "Positive consumption externalities explained for A-level economics"
 description: "How to draw the positive consumption externality diagram for A-level economics: MPB, MSB, the welfare loss triangle, under-consumption, and how to earn the diagram marks."
 lede: "The exam-skill guide to the positive consumption externality diagram — where MPB and MSB sit, why the market under-consumes, where to shade the welfare loss, and how to label it for full marks."
 theme: "Microeconomics"

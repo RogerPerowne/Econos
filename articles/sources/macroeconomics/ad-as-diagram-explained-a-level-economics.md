@@ -1,5 +1,5 @@
 ---
-title: "AD-AS diagram explained: how to draw it for A-level economics"
+title: "AD-AS explained: how to draw it for A-level economics"
 description: "How to draw and read the AD-AS diagram for A-level economics: label the axes, place AD and AS, show shifts, avoid the classic mistakes, and earn the diagram marks."
 lede: "The exam-skill guide to the AD-AS diagram — what each axis means, what shifts AD versus AS, how to label a new equilibrium, and the small labelling moves that bank the marks."
 theme: "Macroeconomics"

@@ -1,5 +1,5 @@
 ---
-title: "PPF diagram and opportunity cost explained for A-level economics"
+title: "PPF and opportunity cost explained for A-level economics"
 description: "How to draw and read the PPF diagram for A-level economics: label the axes, show opportunity cost, points inside and outside, shifts versus movements, and the diagram marks."
 lede: "The exam-skill guide to the production possibility frontier — what each axis shows, how to read opportunity cost off the curve, what a point inside or beyond it means, and how to label a shift."
 theme: "Microeconomics"

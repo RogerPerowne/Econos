@@ -16917,12 +16917,12 @@ window.ECONOS_ICONS = {
             <!-- SRAS black -->
             <line x1="60" y1="200" x2="280" y2="60" stroke="#0B1426" stroke-width="2"/>
             <text x="282" y="60" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
-            <!-- AD₁ dashed blue -->
+            <!-- AD₁ dashed blue. Label sits ABOVE the line near its right end (per house rule). -->
             <line x1="60" y1="80" x2="260" y2="220" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3" opacity="0.55"/>
-            <text x="247" y="232" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">AD₁</text>
-            <!-- AD₂ solid blue, shifted +50 right -->
+            <text x="240" y="200" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">AD₁</text>
+            <!-- AD₂ solid blue, shifted +50 right. Label above the line. -->
             <line x1="110" y1="80" x2="300" y2="216" stroke="#2563EB" stroke-width="2.2"/>
-            <text x="290" y="232" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="800">AD₂</text>
+            <text x="280" y="196" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="800">AD₂</text>
             <!-- Equilibria + dashed leaders to both axes.
                  SRAS slope -0.636; AD slope +0.7. E₁ (152,143) E₂ (185,121). -->
             <line x1="152" y1="143" x2="152" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
@@ -16952,12 +16952,12 @@ window.ECONOS_ICONS = {
             <text x="270" y="238" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output</text>
             <line x1="60" y1="200" x2="280" y2="60" stroke="#0B1426" stroke-width="2"/>
             <text x="282" y="60" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
-            <!-- AD₁ dashed blue (original, right position) -->
+            <!-- AD₁ dashed blue (original, right position). Label above the line. -->
             <line x1="110" y1="80" x2="300" y2="216" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3" opacity="0.55"/>
-            <text x="290" y="232" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">AD₁</text>
-            <!-- AD₂ solid blue, shifted LEFT -->
+            <text x="280" y="196" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">AD₁</text>
+            <!-- AD₂ solid blue, shifted LEFT. Label above the line. -->
             <line x1="60" y1="80" x2="260" y2="220" stroke="#2563EB" stroke-width="2.2"/>
-            <text x="247" y="232" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="800">AD₂</text>
+            <text x="240" y="200" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="800">AD₂</text>
             <!-- Old eq (right): E₁ at AD₁ × SRAS ≈ (185, 121). New eq (left): E₂ at AD₂ × SRAS ≈ (152, 143) -->
             <line x1="185" y1="121" x2="185" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
             <line x1="185" y1="121" x2="40" y2="121" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
@@ -17008,9 +17008,9 @@ window.ECONOS_ICONS = {
             <!-- SRAS₁ solid black, shifted LEFT -->
             <line x1="50" y1="200" x2="240" y2="60" stroke="#0B1426" stroke-width="2.2"/>
             <text x="242" y="62" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="800">SRAS₁</text>
-            <!-- AD blue (unchanged) -->
+            <!-- AD blue (unchanged). Label ABOVE the line near its right end (per house rule). -->
             <line x1="60" y1="80" x2="290" y2="220" stroke="#2563EB" stroke-width="2"/>
-            <text x="294" y="232" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+            <text x="270" y="198" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
             <!-- Old eq E₀ at AD × SRAS₀: solve. SRAS₀: y=200-0.737(x-100); AD: y=80+0.609(x-60).
                  Equal: 200-0.737(x-100) = 80+0.609(x-60) → 273.7-0.737x = 43.46+0.609x → 230.24 = 1.346x → x=171.1, y=80+0.609*111.1=147.6 -->
             <line x1="171" y1="148" x2="171" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
@@ -17045,9 +17045,9 @@ window.ECONOS_ICONS = {
             <!-- SRAS₁ solid black, shifted RIGHT -->
             <line x1="100" y1="200" x2="290" y2="60" stroke="#0B1426" stroke-width="2.2"/>
             <text x="293" y="62" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="800">SRAS₁</text>
-            <!-- AD blue (unchanged) -->
+            <!-- AD blue (unchanged). Label ABOVE the line near its right end (per house rule). -->
             <line x1="60" y1="80" x2="290" y2="220" stroke="#2563EB" stroke-width="2"/>
-            <text x="294" y="232" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+            <text x="270" y="198" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
             <!-- Old eq E₀ at AD × SRAS₀ ≈ (144, 131). New eq E₁ at AD × SRAS₁ ≈ (171, 148) -->
             <line x1="144" y1="131" x2="144" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
             <line x1="144" y1="131" x2="40" y2="131" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>

@@ -185,18 +185,18 @@ Students literally type "monopoly diagram" or "AD AS diagram" - then click the
 top image result. These pages need a clean SVG hero (commission via the
 `econos-visual-diagram` skill) plus prose that walks the diagram step-by-step.
 
-- [ ] Monopoly profit-maximisation diagram explained
-- [ ] AD-AS diagram explained
-- [ ] Externalities diagram (negative production)
-- [ ] Externalities diagram (positive consumption)
-- [ ] Price elasticity of demand diagrams
-- [ ] Long-run vs short-run cost curves
-- [ ] Perfect competition - short run vs long run
-- [ ] Indirect tax incidence diagram
-- [ ] Maximum and minimum price diagrams
-- [ ] Production possibility frontier (PPF) and opportunity cost
-- [ ] Game theory payoff matrix (Prisoner's Dilemma applied to oligopoly)
-- [ ] Phillips curve - SRPC, LRPC, and the shift
+- [~] Monopoly profit-maximisation diagram explained
+- [~] AD-AS diagram explained
+- [~] Externalities diagram (negative production)
+- [~] Externalities diagram (positive consumption)
+- [~] Price elasticity of demand diagrams
+- [~] Long-run vs short-run cost curves
+- [~] Perfect competition - short run vs long run
+- [~] Indirect tax incidence diagram
+- [~] Maximum and minimum price diagrams
+- [~] Production possibility frontier (PPF) and opportunity cost
+- [~] Game theory payoff matrix (Prisoner's Dilemma applied to oligopoly)
+- [~] Phillips curve - SRPC, LRPC, and the shift
 
 ---
 
@@ -205,16 +205,16 @@ top image result. These pages need a clean SVG hero (commission via the
 These pages compete head-on with Tutor2u and SaveMyExams. Win by giving the
 exact moves examiners reward, with worked extracts from real past papers.
 
-- [ ] How to answer a 25-mark question (Edexcel A) - KAA + EV structure
-- [ ] How to write a Level 4 evaluation paragraph
-- [ ] Chains of analysis - what examiners mean and how to build one
-- [ ] The 15-mark essay - tighter scope, same structure
-- [ ] Paper 1 (Markets and how they work) - common mistakes
-- [ ] Paper 2 (The UK economy) - common mistakes
-- [ ] Paper 3 (Microeconomics and macroeconomics) - common mistakes
-- [ ] Data response questions - how to use the extract properly
-- [ ] Drawing diagrams under time pressure - the 90-second monopoly diagram
-- [ ] What "evaluate" actually means in Edexcel mark schemes
+- [~] How to answer a 25-mark question (Edexcel A) - KAA + EV structure
+- [~] How to write a Level 4 evaluation paragraph
+- [~] Chains of analysis - what examiners mean and how to build one
+- [~] The 15-mark essay - tighter scope, same structure
+- [~] Paper 1 (Markets and how they work) - common mistakes
+- [~] Paper 2 (The UK economy) - common mistakes
+- [~] Paper 3 (Microeconomics and macroeconomics) - common mistakes
+- [~] Data response questions - how to use the extract properly
+- [~] Drawing diagrams under time pressure - the 90-second monopoly diagram
+- [~] What "evaluate" actually means in Edexcel mark schemes
 
 ---
 
@@ -224,18 +224,18 @@ Each of these doubles as a worked example reusable inside other articles, and
 ranks for its own long-tail search ("sugar tax economics a level", "Scottish
 minimum unit pricing economics").
 
-- [ ] The Sugar Drinks Industry Levy (SDIL) - a worked indirect tax case
-- [ ] Scotland's minimum unit pricing for alcohol - a minimum price case study
-- [ ] The 2021 Uber Supreme Court ruling - labour market regulation
-- [ ] EU Emissions Trading System (EU ETS) - tradable permits in practice
-- [ ] UK national minimum wage - Card-Krueger meets the real labour market
-- [ ] Bank of England rate decisions 2022-2024 - monetary policy in real time
-- [ ] Thames Water - regulatory capture, natural monopoly, and Stigler
-- [ ] HS2 - cost-benefit analysis and the political economy of large projects
-- [ ] Octopus Energy and the Big Six - contestable markets in action
-- [ ] The 2008 financial crisis as an asymmetric information story
-- [ ] Ostrom and the commons - case studies in self-governance
-- [ ] Brexit and the UK current account - structural shifts in trade
+- [~] The Sugar Drinks Industry Levy (SDIL) - a worked indirect tax case
+- [~] Scotland's minimum unit pricing for alcohol - a minimum price case study
+- [~] The 2021 Uber Supreme Court ruling - labour market regulation
+- [~] EU Emissions Trading System (EU ETS) - tradable permits in practice
+- [~] UK national minimum wage - Card-Krueger meets the real labour market
+- [~] Bank of England rate decisions 2022-2024 - monetary policy in real time
+- [~] Thames Water - regulatory capture, natural monopoly, and Stigler
+- [~] HS2 - cost-benefit analysis and the political economy of large projects
+- [~] Octopus Energy and the Big Six - contestable markets in action
+- [~] The 2008 financial crisis as an asymmetric information story
+- [~] Ostrom and the commons - case studies in self-governance
+- [~] Brexit and the UK current account - structural shifts in trade
 
 ---
 
@@ -244,18 +244,18 @@ minimum unit pricing economics").
 These rank fast because Google rewards exact-question matching. Each page is
 short (600-900 words), one misconception per page, one diagram if needed.
 
-- [ ] Why is MR less than AR for a monopoly?
-- [ ] Difference between SRAS and LRAS
-- [ ] Difference between Keynesian and Classical LRAS
-- [ ] Difference between inflation, deflation, and disinflation
-- [ ] Difference between movement along and shift of a demand curve
-- [ ] Why does monopoly cause market failure?
-- [ ] Why is the long-run aggregate supply curve vertical (Classical view)?
-- [ ] Difference between fiscal and monetary policy
-- [ ] Difference between economic growth and economic development
-- [ ] Why doesn't perfect competition exist in reality? (and why we still teach it)
-- [ ] Difference between absolute and comparative advantage
-- [ ] Difference between progressive, proportional, and regressive taxes
+- [~] Why is MR less than AR for a monopoly?
+- [~] Difference between SRAS and LRAS
+- [~] Difference between Keynesian and Classical LRAS
+- [~] Difference between inflation, deflation, and disinflation
+- [~] Difference between movement along and shift of a demand curve
+- [~] Why does monopoly cause market failure?
+- [~] Why is the long-run aggregate supply curve vertical (Classical view)?
+- [~] Difference between fiscal and monetary policy
+- [~] Difference between economic growth and economic development
+- [~] Why doesn't perfect competition exist in reality? (and why we still teach it)
+- [~] Difference between absolute and comparative advantage
+- [~] Difference between progressive, proportional, and regressive taxes
 
 ---
 

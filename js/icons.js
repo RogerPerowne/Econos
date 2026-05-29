@@ -16509,13 +16509,13 @@ window.ECONOS_ICONS = {
             <polygon points="60,40 56,47 64,47" fill="#0B1426"/>
             <line x1="60" y1="210" x2="230" y2="40" stroke="#0B1426" stroke-width="2"/>
             <text x="200" y="34" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">45° line</text>
-            <line x1="60" y1="140" x2="295" y2="42" stroke="#2563EB" stroke-width="2.2"/>
-            <text x="240" y="55" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">E = C + I + G</text>
-            <text x="252" y="68" font-size="10" fill="#2563EB" font-family="Inter,sans-serif">(+ X - M)</text>
-            <circle cx="175" cy="95" r="5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-            <line x1="175" y1="95" x2="175" y2="210" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="60" y1="140" x2="270" y2="52" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="275" y="52" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">E = C + I + G</text>
+            <text x="282" y="64" font-size="10" fill="#2563EB" font-family="Inter,sans-serif">(+ X - M)</text>
+            <circle cx="180" cy="90" r="5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <line x1="180" y1="90" x2="180" y2="210" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
             <text x="52" y="226" font-size="11" fill="#475569" font-family="Inter,sans-serif">0</text>
-            <text x="169" y="226" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y*</text>
+            <text x="174" y="226" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y*</text>
             <text x="200" y="244" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Actual output (Y)</text>
           </svg>
           <div style="font-size:12px;color:#475569;text-align:center;margin-top:6px;line-height:1.45;">At Y*, planned spending equals actual output.</div>
@@ -16577,7 +16577,7 @@ window.ECONOS_ICONS = {
             <line x1="60" y1="136" x2="273" y2="40" stroke="#0B1426" stroke-width="2"/>
             <text x="278" y="44" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">AS</text>
             <line x1="60" y1="64" x2="318" y2="180" stroke="#2563EB" stroke-width="2"/>
-            <text x="298" y="174" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+            <text x="302" y="168" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
             <circle cx="140" cy="100" r="4.5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
             <line x1="140" y1="100" x2="140" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
             <line x1="230" y1="30" x2="230" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>

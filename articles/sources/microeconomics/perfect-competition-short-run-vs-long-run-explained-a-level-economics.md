@@ -1,5 +1,5 @@
 ---
-title: "Perfect competition — short-run vs long-run diagram explained for A-level economics"
+title: "Perfect competition — short-run vs long-run explained for A-level economics"
 description: "How to draw and read the perfect competition diagram for A-level economics: the horizontal AR=MR=P price line, short-run supernormal profit, and entry to normal profit."
 lede: "Why the firm's demand curve is horizontal, how to shade short-run supernormal profit, why entry drives price down to the bottom of AC, and the labels that earn the marks."
 theme: "Microeconomics"

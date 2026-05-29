@@ -16831,4 +16831,249 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     Trade Cycle, Shocks & Economic Growth (Theme 2 · 2.5)
+     Four hero charts.
+     ============================================================ */
+
+  /* Card 1 — the wave. 4 phase background bands of equal width 135 each
+     starting at x=60. Long-run trend dashed grey from (60,180) to
+     (600,100). Wave: cubic Bezier from (60,165) → boom peak (200,100)
+     → slowdown decline → recession trough (440,200) → recovery rise
+     to (580,105). */
+  tradeWaveCycle: `
+    <div style="background:#fff;border-radius:14px;padding:14px 16px;">
+      <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Phase background bands -->
+        <rect x="60" y="40" width="135" height="200" fill="#ECFDF5" rx="2"/>
+        <rect x="195" y="40" width="135" height="200" fill="#FFFBEB"/>
+        <rect x="330" y="40" width="135" height="200" fill="#FFEDD5"/>
+        <rect x="465" y="40" width="135" height="200" fill="#CCFBF1" rx="2"/>
+        <!-- Phase labels at top of bands -->
+        <text x="127" y="62" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Boom</text>
+        <text x="262" y="62" font-size="14" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">Slowdown</text>
+        <text x="397" y="62" font-size="14" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Recession</text>
+        <text x="532" y="62" font-size="14" font-weight="800" fill="#0F766E" font-family="Inter,sans-serif" text-anchor="middle">Recovery</text>
+        <!-- Axes -->
+        <text x="14" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real GDP</text>
+        <line x1="60" y1="240" x2="610" y2="240" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="60" y1="240" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
+        <polygon points="610,240 603,236 603,244" fill="#0B1426"/>
+        <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
+        <text x="588" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time</text>
+        <!-- Long-run trend dashed -->
+        <line x1="60" y1="180" x2="600" y2="100" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="6 4"/>
+        <text x="606" y="100" font-size="11" fill="#475569" font-family="Inter,sans-serif">Long-run</text>
+        <text x="606" y="112" font-size="11" fill="#475569" font-family="Inter,sans-serif">trend</text>
+        <!-- The wave (cubic Bezier oscillating around trend) -->
+        <path d="M60 165 C100 145 150 105 200 100 C260 95 290 165 360 180 C410 192 430 200 440 200 C490 200 530 150 580 105" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  `,
+
+  /* Card 2 — demand shocks twin. Two panels side-by-side.
+     House rules: AD blue (AD₁ dashed 55% + AD₂ solid), SRAS black,
+     equilibrium dots blue. Dashed grey leaders both axes.
+     LEFT (positive shock) AD shifts right: E₁ (152,153) → E₂ (178,134)
+     RIGHT (negative shock) AD shifts left: E₁ (494,123) → E₂ (467,142) */
+  demandShocksTwin: `
+    <div style="background:#fff;border-radius:14px;padding:12px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <!-- LEFT panel: positive AD shock -->
+        <div style="border:1px solid #A6E0C4;border-radius:12px;background:#F1FBF5;padding:14px;">
+          <div style="text-align:center;color:#065F46;font-weight:700;font-size:14px;margin-bottom:8px;">Positive AD shock</div>
+          <svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Price level</text>
+            <line x1="40" y1="220" x2="305" y2="220" stroke="#0B1426" stroke-width="1.4"/>
+            <line x1="40" y1="220" x2="40" y2="30" stroke="#0B1426" stroke-width="1.4"/>
+            <polygon points="305,220 298,217 298,223" fill="#0B1426"/>
+            <polygon points="40,30 36,37 44,37" fill="#0B1426"/>
+            <text x="270" y="238" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output</text>
+            <!-- SRAS black -->
+            <line x1="60" y1="200" x2="280" y2="60" stroke="#0B1426" stroke-width="2"/>
+            <text x="282" y="60" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
+            <!-- AD₁ dashed blue -->
+            <line x1="60" y1="80" x2="260" y2="220" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3" opacity="0.55"/>
+            <text x="247" y="232" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">AD₁</text>
+            <!-- AD₂ solid blue, shifted +50 right -->
+            <line x1="110" y1="80" x2="300" y2="216" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="290" y="232" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="800">AD₂</text>
+            <!-- Equilibria + dashed leaders to both axes.
+                 SRAS slope -0.636; AD slope +0.7. E₁ (152,143) E₂ (185,121). -->
+            <line x1="152" y1="143" x2="152" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="152" y1="143" x2="40" y2="143" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="185" y1="121" x2="185" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="185" y1="121" x2="40" y2="121" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="152" cy="143" r="4" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <circle cx="185" cy="121" r="4" fill="#fff" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="22" y="147" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₁</text>
+            <text x="22" y="125" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₂</text>
+            <text x="146" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₁</text>
+            <text x="179" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₂</text>
+            <!-- Shift arrow indicating AD₁→AD₂ -->
+            <path d="M140 96 L180 96" stroke="#16A34A" stroke-width="2" marker-end="url(#tc-arr-green)"/>
+          </svg>
+          <div style="font-size:12px;color:#475569;text-align:center;margin-top:8px;line-height:1.45;">AD shifts right → higher P and higher Y.</div>
+        </div>
+        <!-- RIGHT panel: negative AD shock -->
+        <div style="border:1px solid #F7D19A;border-radius:12px;background:#FFF8EC;padding:14px;">
+          <div style="text-align:center;color:#C2410C;font-weight:700;font-size:14px;margin-bottom:8px;">Negative AD shock</div>
+          <svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Price level</text>
+            <line x1="40" y1="220" x2="305" y2="220" stroke="#0B1426" stroke-width="1.4"/>
+            <line x1="40" y1="220" x2="40" y2="30" stroke="#0B1426" stroke-width="1.4"/>
+            <polygon points="305,220 298,217 298,223" fill="#0B1426"/>
+            <polygon points="40,30 36,37 44,37" fill="#0B1426"/>
+            <text x="270" y="238" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output</text>
+            <line x1="60" y1="200" x2="280" y2="60" stroke="#0B1426" stroke-width="2"/>
+            <text x="282" y="60" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
+            <!-- AD₁ dashed blue (original, right position) -->
+            <line x1="110" y1="80" x2="300" y2="216" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3" opacity="0.55"/>
+            <text x="290" y="232" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">AD₁</text>
+            <!-- AD₂ solid blue, shifted LEFT -->
+            <line x1="60" y1="80" x2="260" y2="220" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="247" y="232" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="800">AD₂</text>
+            <!-- Old eq (right): E₁ at AD₁ × SRAS ≈ (185, 121). New eq (left): E₂ at AD₂ × SRAS ≈ (152, 143) -->
+            <line x1="185" y1="121" x2="185" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="185" y1="121" x2="40" y2="121" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="152" y1="143" x2="152" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="152" y1="143" x2="40" y2="143" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="185" cy="121" r="4" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <circle cx="152" cy="143" r="4" fill="#fff" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="22" y="125" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₁</text>
+            <text x="22" y="147" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₂</text>
+            <text x="146" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₂</text>
+            <text x="179" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₁</text>
+            <!-- Shift arrow AD₁→AD₂ (leftward) -->
+            <path d="M170 96 L130 96" stroke="#F59E0B" stroke-width="2" marker-end="url(#tc-arr-amber)"/>
+          </svg>
+          <div style="font-size:12px;color:#475569;text-align:center;margin-top:8px;line-height:1.45;">AD shifts left → lower P and lower Y.</div>
+        </div>
+      </div>
+      <svg width="0" height="0" style="position:absolute;">
+        <defs>
+          <marker id="tc-arr-green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#16A34A"/></marker>
+          <marker id="tc-arr-amber" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#F59E0B"/></marker>
+        </defs>
+      </svg>
+    </div>
+  `,
+
+  /* Card 3 — supply shocks twin. House rule: shift keeps colour, only
+     dashed/solid changes — so SRAS₀ dashed BLACK + SRAS₁ solid BLACK.
+     AD stays blue solid unchanged. Equilibrium dots blue.
+     LEFT (negative): SRAS₀ dashed (right) → SRAS₁ solid (left).
+     RIGHT (positive): SRAS₀ dashed (left) → SRAS₁ solid (right). */
+  supplyShocksTwin: `
+    <div style="background:#fff;border-radius:14px;padding:12px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <!-- LEFT: Negative SRAS shock -->
+        <div style="border:1px solid #F7D19A;border-radius:12px;background:#FFF8EC;padding:14px;">
+          <div style="text-align:center;color:#C2410C;font-weight:700;font-size:14px;margin-bottom:8px;">Negative SRAS shock</div>
+          <svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Price level</text>
+            <line x1="40" y1="220" x2="305" y2="220" stroke="#0B1426" stroke-width="1.4"/>
+            <line x1="40" y1="220" x2="40" y2="30" stroke="#0B1426" stroke-width="1.4"/>
+            <polygon points="305,220 298,217 298,223" fill="#0B1426"/>
+            <polygon points="40,30 36,37 44,37" fill="#0B1426"/>
+            <text x="270" y="238" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output</text>
+            <!-- SRAS₀ dashed black (original, right) -->
+            <line x1="100" y1="200" x2="290" y2="60" stroke="#0B1426" stroke-width="2" stroke-dasharray="5 3" opacity="0.55"/>
+            <text x="293" y="62" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">SRAS₀</text>
+            <!-- SRAS₁ solid black, shifted LEFT -->
+            <line x1="50" y1="200" x2="240" y2="60" stroke="#0B1426" stroke-width="2.2"/>
+            <text x="242" y="62" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="800">SRAS₁</text>
+            <!-- AD blue (unchanged) -->
+            <line x1="60" y1="80" x2="290" y2="220" stroke="#2563EB" stroke-width="2"/>
+            <text x="294" y="232" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+            <!-- Old eq E₀ at AD × SRAS₀: solve. SRAS₀: y=200-0.737(x-100); AD: y=80+0.609(x-60).
+                 Equal: 200-0.737(x-100) = 80+0.609(x-60) → 273.7-0.737x = 43.46+0.609x → 230.24 = 1.346x → x=171.1, y=80+0.609*111.1=147.6 -->
+            <line x1="171" y1="148" x2="171" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="171" y1="148" x2="40" y2="148" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <!-- New eq E₁ at AD × SRAS₁: SRAS₁: y=200-0.737(x-50); AD: y=80+0.609(x-60). 200-0.737(x-50) = 80+0.609(x-60) → 236.85-0.737x = 43.46+0.609x → 193.39 = 1.346x → x=143.7, y=80+0.609*83.7=130.97 -->
+            <line x1="144" y1="131" x2="144" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="144" y1="131" x2="40" y2="131" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="171" cy="148" r="4" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <circle cx="144" cy="131" r="4" fill="#fff" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="22" y="152" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₀</text>
+            <text x="22" y="134" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₁</text>
+            <text x="138" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₁</text>
+            <text x="165" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₀</text>
+            <!-- Shift arrow (leftward) -->
+            <path d="M195 50 L155 50" stroke="#F59E0B" stroke-width="2" marker-end="url(#tc-arr-amber)"/>
+          </svg>
+          <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#C2410C;border:1px solid #F7D19A;border-radius:8px;padding:6px 14px;background:#fff;font-weight:700;">Stagflation</span></div>
+        </div>
+        <!-- RIGHT: Positive SRAS shock -->
+        <div style="border:1px solid #A6E0C4;border-radius:12px;background:#F1FBF5;padding:14px;">
+          <div style="text-align:center;color:#065F46;font-weight:700;font-size:14px;margin-bottom:8px;">Positive SRAS shock</div>
+          <svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Price level</text>
+            <line x1="40" y1="220" x2="305" y2="220" stroke="#0B1426" stroke-width="1.4"/>
+            <line x1="40" y1="220" x2="40" y2="30" stroke="#0B1426" stroke-width="1.4"/>
+            <polygon points="305,220 298,217 298,223" fill="#0B1426"/>
+            <polygon points="40,30 36,37 44,37" fill="#0B1426"/>
+            <text x="270" y="238" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output</text>
+            <!-- SRAS₀ dashed black (original, left) -->
+            <line x1="50" y1="200" x2="240" y2="60" stroke="#0B1426" stroke-width="2" stroke-dasharray="5 3" opacity="0.55"/>
+            <text x="242" y="62" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">SRAS₀</text>
+            <!-- SRAS₁ solid black, shifted RIGHT -->
+            <line x1="100" y1="200" x2="290" y2="60" stroke="#0B1426" stroke-width="2.2"/>
+            <text x="293" y="62" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="800">SRAS₁</text>
+            <!-- AD blue (unchanged) -->
+            <line x1="60" y1="80" x2="290" y2="220" stroke="#2563EB" stroke-width="2"/>
+            <text x="294" y="232" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
+            <!-- Old eq E₀ at AD × SRAS₀ ≈ (144, 131). New eq E₁ at AD × SRAS₁ ≈ (171, 148) -->
+            <line x1="144" y1="131" x2="144" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="144" y1="131" x2="40" y2="131" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="171" y1="148" x2="171" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="171" y1="148" x2="40" y2="148" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="144" cy="131" r="4" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+            <circle cx="171" cy="148" r="4" fill="#fff" stroke="#2563EB" stroke-width="2.2"/>
+            <text x="22" y="134" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₀</text>
+            <text x="22" y="152" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₁</text>
+            <text x="138" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₀</text>
+            <text x="165" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₁</text>
+            <!-- Shift arrow (rightward) -->
+            <path d="M150 50 L195 50" stroke="#16A34A" stroke-width="2" marker-end="url(#tc-arr-green)"/>
+          </svg>
+          <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#065F46;border:1px solid #A6E0C4;border-radius:8px;padding:6px 14px;background:#fff;font-weight:700;">Favourable supply shock</span></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* Card 4 — actual vs potential growth. Single chart viewBox 640×280.
+     Potential GDP: green straight diagonal (60,200)→(600,90).
+     Actual GDP: blue undulating wave around potential, with peak marker
+     and trough marker labelled. */
+  actualVsPotentialGrowth: `
+    <div style="background:#fff;border-radius:14px;padding:14px 16px;">
+      <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real GDP</text>
+        <line x1="60" y1="240" x2="610" y2="240" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="60" y1="240" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
+        <polygon points="610,240 603,236 603,244" fill="#0B1426"/>
+        <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
+        <text x="588" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time</text>
+        <!-- Potential GDP straight line (green) -->
+        <line x1="60" y1="200" x2="580" y2="90" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="586" y="92" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Potential GDP</text>
+        <!-- Actual GDP wave (blue) — undulates around potential -->
+        <path d="M60 195 C100 175 150 110 220 100 C280 92 320 195 380 195 C430 195 460 100 530 80 C560 72 575 80 580 85" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <text x="586" y="118" font-size="11" fill="#1E3A8A" font-family="Inter,sans-serif" font-weight="700">Actual GDP</text>
+        <!-- Peak marker (boom above trend) at approx (220, 100). Potential at x=220: 200 - (220-60)*(110/520) = 200 - 33.8 = 166.2. So at x=220 trend is at 166.2 and actual is at 100 (visually higher = above trend). -->
+        <circle cx="220" cy="100" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+        <line x1="220" y1="100" x2="290" y2="65" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="296" y="62" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Booms sit</text>
+        <text x="296" y="76" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">above trend</text>
+        <!-- Trough marker (recession below trend) at approx (380, 195). Potential at x=380: 200 - (380-60)*(110/520) = 200 - 67.7 = 132.3. Actual at 195 (visually lower = below trend). -->
+        <circle cx="380" cy="195" r="5" fill="#C2410C" stroke="#fff" stroke-width="2"/>
+        <line x1="380" y1="195" x2="445" y2="225" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="451" y="222" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">Recessions sit</text>
+        <text x="451" y="236" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">below trend</text>
+      </svg>
+    </div>
+  `,
+
 };

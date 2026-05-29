@@ -4744,7 +4744,26 @@
           </div>`;
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
-        return `${label2}<div style="display:grid;grid-template-columns:${gridColumnsFor(items2.length, 155)};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
+        const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, minmax(0, 1fr))` : gridColumnsFor(items2.length, 155);
+        return `${label2}<div style="display:grid;grid-template-columns:${cols2};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
+      })() : ''}
+
+      ${c.causes3 && c.causes3.length ? (() => {
+        const items3 = c.causes3;
+        const tiles3 = items3.map((item, i) => {
+          const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['blue','green','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
+              <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:12.5px;color:#0B1426;line-height:1.55;">${item.body}</div>
+          </div>`;
+        }).join('');
+        const label3 = c.causes3Label === null ? '' : genSecLabel(c.causes3Emoji || '🔗', c.causes3Label || 'More to know');
+        const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, minmax(0, 1fr))` : gridColumnsFor(items3.length, 155);
+        return `${label3}<div style="display:grid;grid-template-columns:${cols3};gap:12px;margin:0 0 20px;">${tiles3}</div>`;
       })() : ''}
 
       ${c.versusRows && c.versusRows.rows && c.versusRows.rows.length && c.versusRowsFirst !== false ? (() => {

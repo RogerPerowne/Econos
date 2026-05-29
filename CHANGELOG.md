@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.15.4 — 2026-05-29
+
+### Diagrams: spec sheet, hardened audit, label-clash & clipping sweep
+
+- **`docs/diagram-spec.md`** — the canonical reference (web-seeded from
+  authoritative A-level sources + standard exam conventions) for every
+  diagram family: required elements, geometry rules, label conventions,
+  common errors. The ground truth the audit and review check against.
+- **Hardened `audit:diagrams`** — now walks *every* interactive tab state
+  (waiting past the 0.32s layer cross-fade so it doesn't sample mid-
+  transition) and counts `<rect>`/`<text>` so payoff-matrix diagrams are no
+  longer false-flagged as blank. This turned a noisy 100+ list into an
+  accurate 16-finding worklist.
+- **Cleared all 16 findings** at source in `js/icons.js` (shared by Learn It
+  and articles): widened viewBoxes so right-edge curve labels stop clipping
+  (`monopolySupernormalProfit`, `lemonMarketDiagram`, `prospectTheoryDiagram`,
+  `priceFloorDiagramInteractive`); added a left margin to `phillipsInteractive`
+  ("Inflation %"); shortened the over-long `prisonersDilemmaInteractive`
+  subtitle; and moved the `AD₂` label off the `P` axis label in
+  `adAsMonetary` and `adAsRecession` (the "ADP" collision). Audit now ✓ clean.
+  Bumped `sw.js` cache (icons.js).
+
 ## 0.15.3 — 2026-05-29
 
 ### Articles: systematic diagram-review workflow + first fixes

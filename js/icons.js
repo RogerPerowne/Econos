@@ -17133,4 +17133,126 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     The Impact of Economic Growth (Theme 2 · 2.5.4)
+     Two hero charts.
+     ============================================================ */
+
+  /* Card 1 — Beyond GDP: hub-and-spoke scorecard.
+     Central GDP card with 4 satellite cards (Distribution, Composition,
+     Sustainability, Wellbeing) connected by short dashed lines. The
+     central GDP card is visually emphasised; satellites are tone-coded
+     by their dimension. */
+  growthScorecard: `
+    <div style="background:#fff;border-radius:14px;padding:14px;">
+      <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Connector lines (drawn first so cards sit on top) -->
+        <line x1="320" y1="82" x2="320" y2="130" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <line x1="320" y1="258" x2="320" y2="210" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <line x1="190" y1="170" x2="235" y2="170" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <line x1="405" y1="170" x2="450" y2="170" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <!-- Top: Sustainability (amber) -->
+        <rect x="250" y="18" width="140" height="64" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+        <text x="320" y="40" font-size="11" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">SUSTAINABILITY</text>
+        <text x="320" y="58" font-size="20" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">\u{1F343}</text>
+        <text x="320" y="75" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Will it last?</text>
+        <!-- Left: Distribution (purple) -->
+        <rect x="50" y="138" width="140" height="64" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+        <text x="120" y="160" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">DISTRIBUTION</text>
+        <text x="120" y="178" font-size="20" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">\u{2696}\u{FE0F}</text>
+        <text x="120" y="195" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Who gets the gains?</text>
+        <!-- Centre: Real GDP per capita (blue, emphasised) -->
+        <rect x="235" y="130" width="170" height="80" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="320" y="153" font-size="11.5" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">REAL GDP PER CAPITA</text>
+        <text x="320" y="180" font-size="22" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">+2.0% / yr</text>
+        <text x="320" y="198" font-size="11" font-style="italic" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">the headline rate</text>
+        <!-- Right: Composition (slate) -->
+        <rect x="450" y="138" width="140" height="64" rx="10" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+        <text x="520" y="160" font-size="11" font-weight="800" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">COMPOSITION</text>
+        <text x="520" y="178" font-size="20" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle">\u{1F3E5}</text>
+        <text x="520" y="195" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">What does GDP buy?</text>
+        <!-- Bottom: Wellbeing (rose) -->
+        <rect x="250" y="258" width="140" height="64" rx="10" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
+        <text x="320" y="280" font-size="11" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">WELLBEING</text>
+        <text x="320" y="298" font-size="20" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">\u{1F60A}</text>
+        <text x="320" y="315" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Does life feel better?</text>
+      </svg>
+    </div>
+  `,
+
+  /* Card 5 — Sustainability trade-off, 3 mutually-exclusive views.
+     Each layer (.idl-kuznets / .idl-natural / .idl-carbon) is a
+     complete mini-chart shown by explicit `show: ['idl-X']` per view.
+     Shared canvas size for clean swap; one chart at a time. */
+  growthSustainability3View: `
+    <div style="background:#fff;border-radius:14px;padding:14px;">
+      <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- LAYER 1: Environmental Kuznets Curve (inverted-U pollution intensity vs GDP per capita) -->
+        <g class="idl-kuznets" style="display:none">
+          <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Pollution</text>
+          <text x="14" y="34" font-size="10" fill="#475569" font-family="Inter,sans-serif">intensity</text>
+          <line x1="60" y1="260" x2="600" y2="260" stroke="#0B1426" stroke-width="1.4"/>
+          <line x1="60" y1="260" x2="60" y2="40" stroke="#0B1426" stroke-width="1.4"/>
+          <polygon points="600,260 593,256 593,264" fill="#0B1426"/>
+          <polygon points="60,40 56,47 64,47" fill="#0B1426"/>
+          <text x="450" y="278" font-size="11" fill="#475569" font-family="Inter,sans-serif">GDP per capita →</text>
+          <!-- Inverted-U curve (Kuznets) -->
+          <path d="M80 250 C140 240 200 90 320 80 C440 70 520 200 580 250" stroke="#16A34A" stroke-width="2.4" fill="none"/>
+          <!-- Country markers -->
+          <circle cx="115" cy="245" r="5" fill="#C2410C"/>
+          <text x="115" y="232" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Niger</text>
+          <text x="115" y="296" font-size="9" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">low income</text>
+          <circle cx="270" cy="100" r="5" fill="#F59E0B"/>
+          <text x="270" y="87" font-size="10" font-weight="700" fill="#F59E0B" font-family="Inter,sans-serif" text-anchor="middle">China</text>
+          <text x="270" y="296" font-size="9" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">industrialising</text>
+          <circle cx="500" cy="200" r="5" fill="#16A34A"/>
+          <text x="500" y="187" font-size="10" font-weight="700" fill="#16A34A" font-family="Inter,sans-serif" text-anchor="middle">UK</text>
+          <text x="500" y="296" font-size="9" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">post-industrial</text>
+          <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Environmental Kuznets Curve</text>
+        </g>
+        <!-- LAYER 2: Natural-capital depletion (GDP vs Green GDP over time) -->
+        <g class="idl-natural" style="display:none">
+          <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">GDP (£)</text>
+          <line x1="60" y1="260" x2="600" y2="260" stroke="#0B1426" stroke-width="1.4"/>
+          <line x1="60" y1="260" x2="60" y2="40" stroke="#0B1426" stroke-width="1.4"/>
+          <polygon points="600,260 593,256 593,264" fill="#0B1426"/>
+          <polygon points="60,40 56,47 64,47" fill="#0B1426"/>
+          <text x="540" y="278" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time →</text>
+          <!-- Shaded depletion gap between the two curves -->
+          <path d="M80 230 C200 195 350 150 580 80 L580 150 C350 200 200 235 80 250 Z" fill="#FCA5A5" opacity="0.35"/>
+          <!-- Standard GDP (blue, rising fast) -->
+          <path d="M80 230 C200 195 350 150 580 80" stroke="#1E3A8A" stroke-width="2.6" fill="none"/>
+          <text x="586" y="84" font-size="11" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">Standard GDP</text>
+          <!-- Green GDP (green, rising slower) -->
+          <path d="M80 250 C200 235 350 200 580 150" stroke="#16A34A" stroke-width="2.6" fill="none"/>
+          <text x="586" y="154" font-size="11" font-weight="700" fill="#16A34A" font-family="Inter,sans-serif">Green GDP</text>
+          <!-- Gap annotation -->
+          <text x="380" y="195" font-size="11" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Natural-capital depletion</text>
+          <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">GDP vs Green GDP — the depletion gap</text>
+        </g>
+        <!-- LAYER 3: Carbon debt — cumulative CO₂ over time vs remaining budget -->
+        <g class="idl-carbon" style="display:none">
+          <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Cumulative</text>
+          <text x="14" y="34" font-size="10" fill="#475569" font-family="Inter,sans-serif">CO₂ (Gt)</text>
+          <line x1="60" y1="260" x2="600" y2="260" stroke="#0B1426" stroke-width="1.4"/>
+          <line x1="60" y1="260" x2="60" y2="40" stroke="#0B1426" stroke-width="1.4"/>
+          <polygon points="600,260 593,256 593,264" fill="#0B1426"/>
+          <polygon points="60,40 56,47 64,47" fill="#0B1426"/>
+          <text x="540" y="278" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time →</text>
+          <!-- Carbon budget horizontal red dashed -->
+          <line x1="60" y1="120" x2="600" y2="120" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="6 4"/>
+          <text x="606" y="124" font-size="11" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif">1.5°C budget</text>
+          <!-- Cumulative emissions curve, exceeds budget -->
+          <path d="M80 250 C200 220 350 170 450 120 C530 80 570 65 580 60" stroke="#1E3A8A" stroke-width="2.6" fill="none"/>
+          <text x="586" y="64" font-size="11" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">Emissions path</text>
+          <!-- Shaded region of debt (above budget line) -->
+          <path d="M450 120 C530 80 570 65 580 60 L580 120 Z" fill="#FCA5A5" opacity="0.45"/>
+          <!-- Annotation -->
+          <text x="515" y="105" font-size="11" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif" text-anchor="middle">debt to future</text>
+          <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Carbon debt — the bill the future inherits</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
 };

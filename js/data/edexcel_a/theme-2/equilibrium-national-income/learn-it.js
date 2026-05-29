@@ -138,6 +138,14 @@ window.ECONOS_TOPIC = {
       ledeStyle: 'plain',
       tip: { icon: '✓', tone: 'green', text: 'When injections equal withdrawals, planned spending equals output.' },
 
+      notePosition: 'top',
+      note: {
+        tone: 'blue',
+        icon: '\u{1F4D0}',
+        head: 'What is the 45° line?',
+        text: 'It\'s the line where <strong>planned expenditure equals actual output</strong> (E = Y). Anywhere on it, what households and firms plan to spend exactly matches what the economy produces. Equilibrium national income is therefore wherever the <strong>E line crosses the 45° line</strong> – the only output level where plans and reality match.'
+      },
+
       visualKey: 'eniTwinJW45',
       visualLabel: 'Two diagrams – same answer',
       visualEmoji: '⚖️',

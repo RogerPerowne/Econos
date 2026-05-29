@@ -4392,6 +4392,21 @@
         return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${tipText}</div></div>` : '';
       })() : ''}
 
+      ${c.note && c.notePosition === 'top' ? (() => {
+        const notes = Array.isArray(c.note) ? c.note : [c.note];
+        return notes.map(note => {
+          const noteText = typeof note === 'object' ? note.text : note;
+          const noteIcon = (typeof note === 'object' && note.icon) || 'ℹ️';
+          const noteTone = (typeof note === 'object' && note.tone) || 'blue';
+          const noteHead = (typeof note === 'object' && note.head) || null;
+          const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
+          const bodyHtml = noteHead
+            ? `<div style="display:flex;flex-direction:column;gap:4px;min-width:0;"><div style="font-size:14px;font-weight:800;color:${t.label};">${noteHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div></div>`
+            : `<div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div>`;
+          return `<div style="display:flex;align-items:flex-start;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
+        }).join('');
+      })() : ''}
+
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
 
       ${buildInteractiveDiagramHtml(c)}

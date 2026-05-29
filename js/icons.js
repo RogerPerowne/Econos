@@ -16592,12 +16592,12 @@ window.ECONOS_ICONS = {
               <marker id="eni-arrow-green-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#16A34A"/></marker>
             </defs>
           </svg>
-          <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#0B1426;">
-            <div style="display:flex;align-items:center;gap:8px;"><span>\u{1F3ED}</span>Spare capacity</div>
-            <div style="display:flex;align-items:center;gap:8px;"><span>\u{1F465}</span>Unemployment</div>
-            <div style="display:flex;align-items:center;gap:8px;"><span>\u{1F4C9}</span>Weak inflation pressure</div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:#0B1426;">
+            <div style="display:flex;align-items:center;gap:10px;line-height:1.4;min-height:22px;"><span style="font-size:15px;line-height:1;flex-shrink:0;width:22px;display:inline-flex;justify-content:center;">\u{1F3ED}</span><span>Spare capacity</span></div>
+            <div style="display:flex;align-items:center;gap:10px;line-height:1.4;min-height:22px;"><span style="font-size:15px;line-height:1;flex-shrink:0;width:22px;display:inline-flex;justify-content:center;">\u{1F465}</span><span>Unemployment</span></div>
+            <div style="display:flex;align-items:center;gap:10px;line-height:1.4;min-height:22px;"><span style="font-size:15px;line-height:1;flex-shrink:0;width:22px;display:inline-flex;justify-content:center;">\u{1F4C9}</span><span>Weak inflation pressure</span></div>
           </div>
-          <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#16A34A;border:1px solid #A6E0C4;border-radius:8px;padding:6px 12px;background:#fff;font-weight:600;">Case for stimulus</span></div>
+          <div style="margin-top:14px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#16A34A;border:1px solid #A6E0C4;border-radius:8px;padding:6px 12px;background:#fff;font-weight:600;">Case for stimulus</span></div>
         </div>
         <!-- RIGHT: Inflationary gap. Intersection (220, 100). Y_FE x=150.
              AS through (220,100) slope SVG -0.45: (60,172)→(340,46).
@@ -16630,12 +16630,12 @@ window.ECONOS_ICONS = {
               <marker id="eni-arrow-amber-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#F59E0B"/></marker>
             </defs>
           </svg>
-          <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#0B1426;">
-            <div style="display:flex;align-items:center;gap:8px;"><span>\u{1F6D2}</span>Excess demand</div>
-            <div style="display:flex;align-items:center;gap:8px;"><span>\u{1F4C8}</span>Inflation pressure</div>
-            <div style="display:flex;align-items:center;gap:8px;"><span>\u{1F321}️</span>Overheating</div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:#0B1426;">
+            <div style="display:flex;align-items:center;gap:10px;line-height:1.4;min-height:22px;"><span style="font-size:15px;line-height:1;flex-shrink:0;width:22px;display:inline-flex;justify-content:center;">\u{1F6D2}</span><span>Excess demand</span></div>
+            <div style="display:flex;align-items:center;gap:10px;line-height:1.4;min-height:22px;"><span style="font-size:15px;line-height:1;flex-shrink:0;width:22px;display:inline-flex;justify-content:center;">\u{1F4C8}</span><span>Inflation pressure</span></div>
+            <div style="display:flex;align-items:center;gap:10px;line-height:1.4;min-height:22px;"><span style="font-size:15px;line-height:1;flex-shrink:0;width:22px;display:inline-flex;justify-content:center;">\u{1F321}️</span><span>Overheating</span></div>
           </div>
-          <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#F59E0B;border:1px solid #F7D19A;border-radius:8px;padding:6px 12px;background:#fff;font-weight:600;">Case for tightening</span></div>
+          <div style="margin-top:14px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#F59E0B;border:1px solid #F7D19A;border-radius:8px;padding:6px 12px;background:#fff;font-weight:600;">Case for tightening</span></div>
         </div>
       </div>
     </div>

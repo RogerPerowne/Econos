@@ -16868,13 +16868,16 @@ window.ECONOS_ICONS = {
         <text x="606" y="100" font-size="11" fill="#475569" font-family="Inter,sans-serif">Long-run</text>
         <text x="606" y="112" font-size="11" fill="#475569" font-family="Inter,sans-serif">trend</text>
         <!-- Smooth 3-segment Bezier wave around the trend, with G1
-             continuity at the boom peak (130,138) and recession trough
-             (400,160) — control points are horizontal at each joint so
-             the curve flattens through each turning point.
-             Seg 1: (60,180) → boom peak (130,138)
-             Seg 2: (130,138) → recession trough (400,160) via slowdown
-             Seg 3: (400,160) → recovery high (580,70) -->
-        <path d="M60 180 C90 178 110 138 130 138 C180 138 340 160 400 160 C440 160 540 75 580 70" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+             continuity at the turning points (control points horizontal
+             either side of each peak/trough so the curve flattens).
+             Key points (matching the mockup's amplitude):
+               start  (60, 190)  — slightly below trend (recovery tail)
+               peak   (125, 110) — well above trend, mid-boom
+               trough (400, 195) — well below trend, mid-recession
+               end    (580, 75)  — above trend, recovery overshoot
+             Wave crosses the trend roughly at x=260 (slowdown midpoint)
+             and x=500 (recovery midpoint). -->
+        <path d="M60 190 C95 185 105 110 125 110 C180 110 340 195 400 195 C450 195 540 80 580 75" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
         <!-- Phase highlight layers (one revealed per active view) -->
         <g class="phase-boom" style="display:none">
           <rect x="60" y="40" width="135" height="200" fill="#16A34A" opacity="0.20" rx="2"/>

@@ -16841,32 +16841,47 @@ window.ECONOS_ICONS = {
      (600,100). Wave: cubic Bezier from (60,165) → boom peak (200,100)
      → slowdown decline → recession trough (440,200) → recovery rise
      to (580,105). */
+  /* Card 1 — Interactive multi-state diagram.
+     Base = axes + trend + wave (always visible, no phase highlight).
+     Layers (explicit show per view, NOT cumulative):
+       .phase-boom      = vivid green band over the boom segment
+       .phase-slowdown  = vivid amber band
+       .phase-recession = vivid rose band
+       .phase-recovery  = vivid teal band
+     Each phase layer also carries that phase's name as an overlay label. */
   tradeWaveCycle: `
     <div style="background:#fff;border-radius:14px;padding:14px 16px;">
       <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- Phase background bands -->
-        <rect x="60" y="40" width="135" height="200" fill="#ECFDF5" rx="2"/>
-        <rect x="195" y="40" width="135" height="200" fill="#FFFBEB"/>
-        <rect x="330" y="40" width="135" height="200" fill="#FFEDD5"/>
-        <rect x="465" y="40" width="135" height="200" fill="#CCFBF1" rx="2"/>
-        <!-- Phase labels at top of bands -->
-        <text x="127" y="62" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Boom</text>
-        <text x="262" y="62" font-size="14" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">Slowdown</text>
-        <text x="397" y="62" font-size="14" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Recession</text>
-        <text x="532" y="62" font-size="14" font-weight="800" fill="#0F766E" font-family="Inter,sans-serif" text-anchor="middle">Recovery</text>
-        <!-- Axes -->
+        <!-- Axes (base) -->
         <text x="14" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real GDP</text>
         <line x1="60" y1="240" x2="610" y2="240" stroke="#0B1426" stroke-width="1.4"/>
         <line x1="60" y1="240" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
         <polygon points="610,240 603,236 603,244" fill="#0B1426"/>
         <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
         <text x="588" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time</text>
-        <!-- Long-run trend dashed -->
+        <!-- Long-run trend dashed (base) -->
         <line x1="60" y1="180" x2="600" y2="100" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="6 4"/>
         <text x="606" y="100" font-size="11" fill="#475569" font-family="Inter,sans-serif">Long-run</text>
         <text x="606" y="112" font-size="11" fill="#475569" font-family="Inter,sans-serif">trend</text>
-        <!-- The wave (cubic Bezier oscillating around trend) -->
+        <!-- The wave (base) -->
         <path d="M60 165 C100 145 150 105 200 100 C260 95 290 165 360 180 C410 192 430 200 440 200 C490 200 530 150 580 105" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <!-- Phase layers (one shown per active view) -->
+        <g class="phase-boom" style="display:none">
+          <rect x="60" y="40" width="135" height="200" fill="#16A34A" opacity="0.18" rx="2"/>
+          <text x="127" y="62" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Boom</text>
+        </g>
+        <g class="phase-slowdown" style="display:none">
+          <rect x="195" y="40" width="135" height="200" fill="#F59E0B" opacity="0.18"/>
+          <text x="262" y="62" font-size="14" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">Slowdown</text>
+        </g>
+        <g class="phase-recession" style="display:none">
+          <rect x="330" y="40" width="135" height="200" fill="#F97316" opacity="0.22"/>
+          <text x="397" y="62" font-size="14" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Recession</text>
+        </g>
+        <g class="phase-recovery" style="display:none">
+          <rect x="465" y="40" width="135" height="200" fill="#14B8A6" opacity="0.18" rx="2"/>
+          <text x="532" y="62" font-size="14" font-weight="800" fill="#0F766E" font-family="Inter,sans-serif" text-anchor="middle">Recovery</text>
+        </g>
       </svg>
     </div>
   `,
@@ -17043,35 +17058,59 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 4 — actual vs potential growth. Single chart viewBox 640×280.
-     Potential GDP: green straight diagonal (60,200)→(600,90).
-     Actual GDP: blue undulating wave around potential, with peak marker
-     and trough marker labelled. */
+  /* Card 4 — Interactive multi-state diagram (cumulative reveal).
+     Base = axes + actual GDP wave only.
+     Layers (cumulative via i < vi):
+       .idl-trend       = potential GDP line + Booms/Recessions markers
+       .idl-drivers     = 5 trend-driver labels with upward arrows on the trend
+       .idl-hysteresis  = trend-bends-down arrow at the recession trough */
   actualVsPotentialGrowth: `
     <div style="background:#fff;border-radius:14px;padding:14px 16px;">
-      <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <text x="14" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real GDP</text>
         <line x1="60" y1="240" x2="610" y2="240" stroke="#0B1426" stroke-width="1.4"/>
         <line x1="60" y1="240" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
         <polygon points="610,240 603,236 603,244" fill="#0B1426"/>
         <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
         <text x="588" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time</text>
-        <!-- Potential GDP straight line (green) -->
-        <line x1="60" y1="200" x2="580" y2="90" stroke="#16A34A" stroke-width="2.4"/>
-        <text x="586" y="92" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Potential GDP</text>
-        <!-- Actual GDP wave (blue) — undulates around potential -->
+        <!-- Actual GDP wave (base — always visible) -->
         <path d="M60 195 C100 175 150 110 220 100 C280 92 320 195 380 195 C430 195 460 100 530 80 C560 72 575 80 580 85" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
         <text x="586" y="118" font-size="11" fill="#1E3A8A" font-family="Inter,sans-serif" font-weight="700">Actual GDP</text>
-        <!-- Peak marker (boom above trend) at approx (220, 100). Potential at x=220: 200 - (220-60)*(110/520) = 200 - 33.8 = 166.2. So at x=220 trend is at 166.2 and actual is at 100 (visually higher = above trend). -->
-        <circle cx="220" cy="100" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-        <line x1="220" y1="100" x2="290" y2="65" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-        <text x="296" y="62" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Booms sit</text>
-        <text x="296" y="76" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">above trend</text>
-        <!-- Trough marker (recession below trend) at approx (380, 195). Potential at x=380: 200 - (380-60)*(110/520) = 200 - 67.7 = 132.3. Actual at 195 (visually lower = below trend). -->
-        <circle cx="380" cy="195" r="5" fill="#C2410C" stroke="#fff" stroke-width="2"/>
-        <line x1="380" y1="195" x2="445" y2="225" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-        <text x="451" y="222" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">Recessions sit</text>
-        <text x="451" y="236" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">below trend</text>
+        <!-- LAYER 1: Potential trend + Booms/Recessions markers -->
+        <g class="idl-trend" style="display:none">
+          <line x1="60" y1="200" x2="580" y2="90" stroke="#16A34A" stroke-width="2.4"/>
+          <text x="586" y="92" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Potential GDP</text>
+          <circle cx="220" cy="100" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="220" y1="100" x2="280" y2="58" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="286" y="55" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Booms sit</text>
+          <text x="286" y="69" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">above trend</text>
+          <circle cx="380" cy="195" r="5" fill="#C2410C" stroke="#fff" stroke-width="2"/>
+          <line x1="380" y1="195" x2="430" y2="223" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="436" y="220" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">Recessions sit</text>
+          <text x="436" y="234" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">below trend</text>
+        </g>
+        <!-- LAYER 2: Trend drivers — 5 upward arrows + labels nudging the trend up -->
+        <g class="idl-drivers" style="display:none">
+          <path d="M120 200 L120 175" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
+          <text x="120" y="216" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Labour</text>
+          <path d="M230 175 L230 150" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
+          <text x="230" y="191" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Capital</text>
+          <path d="M340 150 L340 125" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
+          <text x="340" y="166" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Productivity</text>
+          <path d="M450 124 L450 99" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
+          <text x="450" y="140" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Skills</text>
+          <path d="M540 100 L540 75" stroke="#16A34A" stroke-width="1.6" marker-end="url(#tcg-arr-up)"/>
+          <text x="540" y="116" font-size="9.5" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Tech</text>
+        </g>
+        <!-- LAYER 3: Hysteresis — trend bends DOWN at the recession trough -->
+        <g class="idl-hysteresis" style="display:none">
+          <path d="M380 195 C400 205 420 215 445 222" stroke="#C2410C" stroke-width="1.8" fill="none" stroke-dasharray="4 3" marker-end="url(#tcg-arr-down)"/>
+          <text x="396" y="278" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif">Hysteresis: trend can bend down</text>
+        </g>
+        <defs>
+          <marker id="tcg-arr-up" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto"><path d="M0 8 L4 0 L8 8 Z" fill="#16A34A"/></marker>
+          <marker id="tcg-arr-down" markerWidth="8" markerHeight="8" refX="6" refY="6" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#C2410C"/></marker>
+        </defs>
       </svg>
     </div>
   `,

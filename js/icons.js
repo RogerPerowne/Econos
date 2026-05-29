@@ -16641,4 +16641,179 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     National Income and the Multiplier (Theme 2 · 4.4)
+     Three hero charts. Coordinates derived from the spec-first
+     plan; every label position verified against line equations.
+     ============================================================ */
+
+  /* Card 1 — round-by-round contributions, MPC=0.8, £100m injection.
+     Plot x[70,560] y[50,255]. y-scale: £500m → y=50, £0 → y=255
+     (so 1m = 0.41 px). Bars width 60, gap 20. Cumulative dashed
+     line through bar centres traces the geometric-series limit. */
+  multiplierRounds: `
+    <div style="background:#fff;border-radius:14px;padding:14px 16px;">
+      <div style="text-align:center;color:#2563EB;font-weight:700;font-size:14px;margin-bottom:6px;">£100m injection at MPC = 0.8</div>
+      <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="24" font-size="10" fill="#475569" font-family="Inter,sans-serif">Income</text>
+        <text x="14" y="36" font-size="10" fill="#475569" font-family="Inter,sans-serif">(£m)</text>
+        <line x1="70" y1="255" x2="600" y2="255" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="70" y1="255" x2="70" y2="40" stroke="#0B1426" stroke-width="1.4"/>
+        <polygon points="600,255 593,251 593,259" fill="#0B1426"/>
+        <polygon points="70,40 66,47 74,47" fill="#0B1426"/>
+        <!-- y-axis ticks + labels at 0, 100, 200, 300, 400, 500 -->
+        <line x1="66" y1="255" x2="70" y2="255" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="66" y1="214" x2="70" y2="214" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="66" y1="173" x2="70" y2="173" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="66" y1="132" x2="70" y2="132" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="66" y1="91" x2="70" y2="91" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="66" y1="50" x2="70" y2="50" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="46" y="259" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">0</text>
+        <text x="46" y="218" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">100</text>
+        <text x="46" y="177" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">200</text>
+        <text x="46" y="136" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">300</text>
+        <text x="46" y="95" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">400</text>
+        <text x="46" y="54" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">500</text>
+        <!-- Multiplier ceiling at £500m -->
+        <line x1="70" y1="50" x2="560" y2="50" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="6 4" opacity="0.7"/>
+        <text x="566" y="54" font-size="10" fill="#BE123C" font-family="Inter,sans-serif" font-weight="700">£500m ceiling</text>
+        <!-- 5 round bars (decreasing by factor MPC=0.8). r1=100m h=41, r2=80m h=33, r3=64m h=26, r4=51m h=21, r5=41m h=17 -->
+        <rect x="85" y="214" width="55" height="41" fill="#2563EB" rx="3"/>
+        <rect x="165" y="222" width="55" height="33" fill="#2563EB" rx="3" opacity="0.92"/>
+        <rect x="245" y="229" width="55" height="26" fill="#2563EB" rx="3" opacity="0.84"/>
+        <rect x="325" y="234" width="55" height="21" fill="#2563EB" rx="3" opacity="0.76"/>
+        <rect x="405" y="238" width="55" height="17" fill="#2563EB" rx="3" opacity="0.68"/>
+        <!-- Ellipsis indicating further rounds -->
+        <rect x="485" y="242" width="55" height="13" fill="#2563EB" rx="3" opacity="0.55"/>
+        <text x="513" y="234" font-size="14" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">…</text>
+        <!-- Round labels under bars -->
+        <text x="112" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R1</text>
+        <text x="192" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R2</text>
+        <text x="272" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R3</text>
+        <text x="352" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R4</text>
+        <text x="432" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">R5</text>
+        <text x="512" y="272" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">…</text>
+        <!-- Value labels above bars -->
+        <text x="112" y="208" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">100</text>
+        <text x="192" y="216" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">80</text>
+        <text x="272" y="223" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">64</text>
+        <text x="352" y="228" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">51</text>
+        <text x="432" y="232" font-size="9.5" fill="#1E40AF" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">41</text>
+        <!-- Cumulative line through bar tops: (112,214)→(192,181)→(272,155)→(352,134)→(432,118)→approach (560,55) -->
+        <path d="M112 214 L192 181 L272 155 L352 134 L432 118 Q500 90 560 55" stroke="#7C3AED" stroke-width="2.2" fill="none" stroke-dasharray="5 3"/>
+        <circle cx="112" cy="214" r="3" fill="#7C3AED"/>
+        <circle cx="192" cy="181" r="3" fill="#7C3AED"/>
+        <circle cx="272" cy="155" r="3" fill="#7C3AED"/>
+        <circle cx="352" cy="134" r="3" fill="#7C3AED"/>
+        <circle cx="432" cy="118" r="3" fill="#7C3AED"/>
+        <text x="345" y="106" font-size="10" fill="#7C3AED" font-family="Inter,sans-serif" font-weight="700">Cumulative ΔY</text>
+        <!-- Legend swatches below x-axis -->
+        <rect x="80" y="290" width="14" height="10" fill="#2563EB" rx="2"/>
+        <text x="100" y="299" font-size="10.5" fill="#0B1426" font-family="Inter,sans-serif">Income per round</text>
+        <line x1="240" y1="295" x2="262" y2="295" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4 2"/>
+        <text x="266" y="299" font-size="10.5" fill="#0B1426" font-family="Inter,sans-serif">Cumulative income</text>
+        <line x1="416" y1="295" x2="438" y2="295" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="4 2"/>
+        <text x="442" y="299" font-size="10.5" fill="#0B1426" font-family="Inter,sans-serif">Multiplier ceiling = k × ΔJ</text>
+      </svg>
+      <div style="font-size:12px;color:#475569;text-align:center;margin-top:8px;line-height:1.5;">Each round delivers 0.8 × the previous round's income. The infinite sum converges to <strong>ΔJ × 1/(1−MPC) = £500m</strong>.</div>
+    </div>
+  `,
+
+  /* Card 2 — where £1 of extra income goes: one stacked horizontal
+     bar split MPC 0.6 / MPS 0.1 / MPT 0.2 / MPM 0.1. Bracket above
+     the MPC slice = "stays in the loop"; bracket below the three
+     leakage slices = "MPW = 0.4". */
+  multiplierPropensities: `
+    <div style="background:#fff;border-radius:14px;padding:18px 20px;">
+      <div style="text-align:center;color:#0B1426;font-weight:700;font-size:14px;margin-bottom:14px;">Where does an extra £1 of income go?</div>
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Top bracket: 'Stays in the loop' over the MPC slice -->
+        <path d="M80 38 V30 H368 V38" stroke="#2563EB" stroke-width="1.6" fill="none"/>
+        <text x="224" y="22" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">Stays in the loop</text>
+        <!-- Stacked bar at y=50..110 -->
+        <rect x="80" y="50" width="288" height="60" fill="#2563EB"/>
+        <rect x="368" y="50" width="48" height="60" fill="#7C3AED"/>
+        <rect x="416" y="50" width="96" height="60" fill="#F59E0B"/>
+        <rect x="512" y="50" width="48" height="60" fill="#16A34A"/>
+        <!-- Outer bar border -->
+        <rect x="80" y="50" width="480" height="60" stroke="#0B1426" stroke-width="1.4" fill="none"/>
+        <!-- In-segment labels (white) -->
+        <text x="224" y="78" font-size="14" fill="#fff" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">MPC = 0.60</text>
+        <text x="224" y="94" font-size="10.5" fill="#fff" font-family="Inter,sans-serif" text-anchor="middle" opacity="0.92">Consumption</text>
+        <text x="392" y="78" font-size="11" fill="#fff" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">MPS</text>
+        <text x="392" y="92" font-size="9.5" fill="#fff" font-family="Inter,sans-serif" text-anchor="middle" opacity="0.92">0.10</text>
+        <text x="464" y="78" font-size="12" fill="#fff" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">MPT = 0.20</text>
+        <text x="464" y="92" font-size="9.5" fill="#fff" font-family="Inter,sans-serif" text-anchor="middle" opacity="0.92">Tax</text>
+        <text x="536" y="78" font-size="11" fill="#fff" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">MPM</text>
+        <text x="536" y="92" font-size="9.5" fill="#fff" font-family="Inter,sans-serif" text-anchor="middle" opacity="0.92">0.10</text>
+        <!-- Bottom bracket: 'MPW = 0.40' under the three leakages -->
+        <path d="M368 122 V130 H560 V122" stroke="#BE123C" stroke-width="1.6" fill="none"/>
+        <text x="464" y="148" font-size="13" fill="#BE123C" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">MPW = 0.40 (leakages)</text>
+        <text x="464" y="164" font-size="10.5" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Income that leaks out of the circular flow at each round</text>
+        <!-- Identity at bottom -->
+        <text x="320" y="190" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">MPC + MPS + MPT + MPM = 1 &#160; · &#160; MPW = MPS + MPT + MPM</text>
+      </svg>
+    </div>
+  `,
+
+  /* Card 4 — multiplier amplifies an AD shift. Plot x[80,580]
+     y[60,320]. House rules: AD blue (AD₁ dashed 55%, AD₂ solid),
+     SRAS black, equilibria AD-blue open circles, dashed grey
+     leaders to both axes from each equilibrium.
+     SRAS slope -0.467: (110,290)→(560,80).
+     AD₁ slope +0.6875: (110,100)→(430,320). E₁ at (275, 213).
+     AD₂ shifted +150 right: (260,100)→(580,320). E₂ at (364, 171). */
+  multiplierAdAs: `
+    <div style="background:#fff;border-radius:14px;padding:14px 16px;">
+      <div style="text-align:center;color:#2563EB;font-weight:700;font-size:14px;margin-bottom:6px;">A £10bn injection becomes a £k × 10bn AD shift</div>
+      <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="14" y="34" font-size="11" fill="#475569" font-family="Inter,sans-serif">level (P)</text>
+        <line x1="80" y1="320" x2="610" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="80" y1="320" x2="80" y2="50" stroke="#0B1426" stroke-width="1.4"/>
+        <polygon points="610,320 603,316 603,324" fill="#0B1426"/>
+        <polygon points="80,50 76,57 84,57" fill="#0B1426"/>
+        <!-- SRAS black upward -->
+        <line x1="110" y1="290" x2="560" y2="80" stroke="#0B1426" stroke-width="2.2"/>
+        <text x="566" y="78" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
+        <!-- AD₁ blue dashed (old). Label moved to y=108 — line at x=138 is at y=119, so text bottom (108) sits 11 above the line. -->
+        <line x1="110" y1="100" x2="430" y2="320" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3" opacity="0.55"/>
+        <text x="138" y="108" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700" opacity="0.75">AD₁</text>
+        <!-- AD₂ blue solid (new, +150 shift). Same vertical clearance. -->
+        <line x1="260" y1="100" x2="580" y2="320" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="288" y="108" font-size="12" fill="#2563EB" font-family="Inter,sans-serif" font-weight="800">AD₂</text>
+        <!-- Equilibria + dashed leaders to both axes -->
+        <line x1="275" y1="213" x2="275" y2="320" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="275" y1="213" x2="80" y2="213" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="364" y1="171" x2="364" y2="320" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="364" y1="171" x2="80" y2="171" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <circle cx="275" cy="213" r="5" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+        <circle cx="364" cy="171" r="5" fill="#fff" stroke="#2563EB" stroke-width="2.2"/>
+        <!-- E₁ label upper-left of circle so it clears the dot + both curves -->
+        <text x="251" y="200" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="800">E₁</text>
+        <!-- E₂ label upper-right of circle -->
+        <text x="372" y="158" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="800">E₂</text>
+        <!-- Axis labels for P/Y at equilibria -->
+        <text x="56" y="217" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₁</text>
+        <text x="56" y="175" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">P₂</text>
+        <text x="269" y="338" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₁</text>
+        <text x="358" y="338" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₂</text>
+        <text x="72" y="338" font-size="11" fill="#475569" font-family="Inter,sans-serif">0</text>
+        <text x="490" y="346" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
+        <!-- Two comparison arrows below x-axis, both anchored at Y₁ (x=275)
+             so their relative lengths show the multiplier visually. Labels
+             centred BELOW each arrow with clear vertical gap. -->
+        <path d="M275 360 L295 360" stroke="#475569" stroke-width="1.8" marker-end="url(#mult-arr-small)"/>
+        <text x="285" y="378" font-size="10.5" fill="#475569" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">ΔJ = £10bn</text>
+        <path d="M275 396 L364 396" stroke="#16A34A" stroke-width="2.4" marker-end="url(#mult-arr-big)"/>
+        <text x="319" y="414" font-size="11" fill="#16A34A" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">ΔY = k × ΔJ</text>
+        <defs>
+          <marker id="mult-arr-small" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#475569"/></marker>
+          <marker id="mult-arr-big" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#16A34A"/></marker>
+        </defs>
+      </svg>
+      <div style="font-size:12px;color:#475569;text-align:center;margin-top:6px;line-height:1.55;">The grey arrow is the headline injection. The green arrow is the AD shift the economy actually feels, <strong>k times bigger</strong>.</div>
+    </div>
+  `,
+
 };

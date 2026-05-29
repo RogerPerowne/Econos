@@ -83,7 +83,7 @@ Draw this matrix in your exam answer. It's worth 2 marks for the framework and p
   <text x="282" y="40" text-anchor="middle" font-size="14" font-weight="800" fill="#334155" letter-spacing="1.5">RIVAL</text>
   <text x="537" y="40" text-anchor="middle" font-size="14" font-weight="800" fill="#334155" letter-spacing="1.5">NON-RIVAL</text>
   <text transform="translate(34,160) rotate(-90)" text-anchor="middle" font-size="14" font-weight="800" fill="#334155" letter-spacing="1.5">EXCLUDABLE</text>
-  <text transform="translate(34,360) rotate(-90)" text-anchor="middle" font-size="12.5" font-weight="800" fill="#334155" letter-spacing="1">NON-EXCLUDABLE</text>
+  <text transform="translate(34,372) rotate(-90)" text-anchor="middle" font-size="12.5" font-weight="800" fill="#334155" letter-spacing="1">NON-EXCLUDABLE</text>
   <rect x="156" y="60" width="250" height="196" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
   <text x="178" y="96" font-size="17" font-weight="800" fill="#0B1426">Private goods</text>
   <text x="178" y="124" font-size="13" fill="#475569">A sandwich · a car · a haircut</text>

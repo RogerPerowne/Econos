@@ -63,7 +63,7 @@ The single most important habit on this topic is to **read the sign before the s
 
 :::
 
-::: econos-diagram svgKey="shiftsInteractive" label="Income and cross elasticity work through shifts of the demand curve" caption="Income and cross elasticity work through shifts of the demand curve."
+::: econos-diagram svgKey="heroDemand" label="Income (YED) and cross (XED) elasticity both work by shifting the whole demand curve" caption="Income (YED) and cross (XED) elasticity both work by shifting the whole demand curve."
 :::
 
 ::: section eyebrow="The big picture · YED" color="purple" icon="target"

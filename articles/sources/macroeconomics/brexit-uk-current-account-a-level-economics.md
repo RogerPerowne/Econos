@@ -61,6 +61,9 @@ Keep these apart and add the UK's goods-versus-services split, and you can expla
 
 :::
 
+::: econos-diagram svgKey="adAsTwoOutcomes" state="shift" label="Trade shifts feed into aggregate demand and the current account" caption="Trade shifts feed into aggregate demand and the current account."
+:::
+
 ::: section eyebrow="The mechanism · the J-curve for the 2016 fall" color="purple" icon="target"
 
 ## Why a weaker pound worsens the balance before it helps
@@ -71,9 +74,6 @@ The reason is **elasticity over time**. Immediately after a depreciation, trade 
 
 As time passes, volumes adjust. Foreign buyers respond to cheaper UK exports by buying more; UK buyers respond to dearer imports by buying fewer. Once those volume responses are large enough, the balance improves — tracing the **J-shape**: down first, then up. Whether it ultimately improves at all depends on the **Marshall-Lerner condition**: the combined price elasticities of demand for exports and imports must exceed one. If demand is too inelastic, the depreciation never delivers the improvement.
 
-:::
-
-::: econos-diagram svgKey="bopJCurveInteractive" interactive="true" label="The J-curve: how a depreciation affects the current account over time" caption="Step through the J-curve — a fall in sterling worsens the current account at first, then improves it once trade volumes respond, provided the Marshall-Lerner condition holds."
 :::
 
 ::: section eyebrow="Real world example" color="blue" icon="globe"

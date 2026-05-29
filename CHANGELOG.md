@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.15.1 — 2026-05-29
+
+### Articles: diagram-correctness pass
+
+Audited all 67 article diagrams by rendering each (a checker that honours
+inherited opacity so hidden diagram-states are not counted as visible)
+and fixed every genuine defect: blank/axes-only diagrams on income &
+cross elasticity, balance of payments and Brexit (the keys were JS-only
+shells that render empty as static — replaced with verified static
+curves), the all-states-at-once clash on the two perfect-competition
+pieces, the two-panel label clash on aggregate demand, and the
+overlapping rotated axis labels on the public-goods matrix. Final audit:
+67 ok, 0 blank, 0 clash.
+
 ## 0.15.0 — 2026-05-29
 
 ### Articles: a curated diagram on every article

@@ -66,7 +66,7 @@ Total = persistent UK current-account deficit, roughly 2–4% of GDP year on yea
 
 :::
 
-::: econos-diagram svgKey="jCurveInteractive" label="The J-curve" caption="The J-curve: after a depreciation the current account worsens before it improves as trade volumes respond."
+::: econos-diagram svgKey="adAsTwoOutcomes" state="shift" label="Net trade and the current account feed into aggregate demand" caption="Net trade and the current account feed into aggregate demand: a change in exports or imports shifts AD."
 :::
 
 ::: section eyebrow="Why deficits matter (sometimes)" color="blue" icon="target"

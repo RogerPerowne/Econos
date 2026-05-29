@@ -56,7 +56,7 @@ The exam-ready trick: every market shock makes all three functions visible at on
 
 :::
 
-::: econos-diagram svgKey="priceMechanismFlow" label="The price mechanism at work" caption="The price mechanism at work: rationing, signalling and incentivising reallocate resources."
+::: econos-diagram svgKey="disequilibriumInteractive" state="surplus" label="The price mechanism clearing a market" caption="The price mechanism clearing a market: a price above equilibrium creates a surplus that pushes the price back down."
 :::
 
 ::: section eyebrow="A worked example — the 2021 chip shortage" color="blue" icon="target"

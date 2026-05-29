@@ -10,7 +10,7 @@ spec:
   ocr: null
 keywords: [game theory payoff matrix, prisoner's dilemma, Nash equilibrium, dominant strategy, collusion, oligopoly, cartel breakdown, A-level economics diagram, reading a payoff matrix]
 read_minutes: 7
-status: live
+status: draft
 published: 2026-05-29
 modified: 2026-05-29
 spa_topic: game-theory
@@ -76,37 +76,24 @@ That's the whole structure. Reading the matrix means asking, for each firm: *giv
   <rect width="680" height="470" fill="#F8FAFC" rx="12"/>
   <text x="340" y="34" text-anchor="middle" font-size="17" font-weight="800" fill="#0B1426">Duopoly payoff matrix (profits, £m)</text>
   <text x="340" y="56" text-anchor="middle" font-size="12.5" font-style="italic" fill="#64748B">Each cell: (Firm A payoff, Firm B payoff)</text>
-
-  <!-- Column header: Firm B -->
   <text x="455" y="88" text-anchor="middle" font-size="14" font-weight="800" fill="#2563EB" letter-spacing="0.5">FIRM B</text>
   <text x="350" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">Collude</text>
   <text x="560" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#1D4ED8">Compete</text>
-
-  <!-- Row header: Firm A -->
   <text transform="translate(40,300) rotate(-90)" text-anchor="middle" font-size="14" font-weight="800" fill="#10B981" letter-spacing="0.5">FIRM A</text>
   <text x="95" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="#047857">Collude</text>
   <text x="95" y="350" text-anchor="middle" font-size="13" font-weight="700" fill="#047857">Compete</text>
-
-  <!-- grid cells -->
-  <!-- top-left: both collude -->
   <rect x="245" y="130" width="210" height="140" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
   <text x="350" y="195" text-anchor="middle" font-size="22" font-weight="800" fill="#047857">10</text>
   <text x="350" y="222" text-anchor="middle" font-size="12.5" fill="#64748B">,</text>
   <text x="350" y="248" text-anchor="middle" font-size="22" font-weight="800" fill="#1D4ED8">10</text>
-
-  <!-- top-right: A collude, B compete -->
   <rect x="455" y="130" width="210" height="140" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
   <text x="560" y="195" text-anchor="middle" font-size="22" font-weight="800" fill="#047857">2</text>
   <text x="560" y="222" text-anchor="middle" font-size="12.5" fill="#64748B">,</text>
   <text x="560" y="248" text-anchor="middle" font-size="22" font-weight="800" fill="#1D4ED8">14</text>
-
-  <!-- bottom-left: A compete, B collude -->
   <rect x="245" y="270" width="210" height="140" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
   <text x="350" y="335" text-anchor="middle" font-size="22" font-weight="800" fill="#047857">14</text>
   <text x="350" y="362" text-anchor="middle" font-size="12.5" fill="#64748B">,</text>
   <text x="350" y="388" text-anchor="middle" font-size="22" font-weight="800" fill="#1D4ED8">2</text>
-
-  <!-- bottom-right: both compete = Nash equilibrium (highlighted) -->
   <rect x="455" y="270" width="210" height="140" rx="8" fill="#FEF3C7" stroke="#F39E0B" stroke-width="3"/>
   <text x="560" y="330" text-anchor="middle" font-size="22" font-weight="800" fill="#047857">5</text>
   <text x="560" y="357" text-anchor="middle" font-size="12.5" fill="#64748B">,</text>

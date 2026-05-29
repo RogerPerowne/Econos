@@ -40,7 +40,7 @@ in Google when a panicking sixth former types it the night before Paper 2.
   - Friction angle: students confuse inflation, deflation, disinflation, and falling inflation rates. Lead on this.
   - UK example: ONS CPI series, BoE 2% target, 2022-23 inflation spike causes.
 
-- [ ] **GDP explained - what it measures and what it misses**
+- [L] **GDP explained - what it measures and what it misses**
   - Keyword: "what is gdp a level economics"
   - SPA topic: `national_income`, `growth_measure`, `sol_wellbeing`
   - Friction angle: GDP vs GNI vs real vs nominal. Limitations as welfare measure.
@@ -63,30 +63,30 @@ in Google when a panicking sixth former types it the night before Paper 2.
   - SPA topic: `multiplier`
   - Friction angle: students quote the formula but cannot apply it to an injection. Worked example with MPC/MPS/MPT/MPM.
 
-- [ ] **Fiscal policy - tools, limits, and when it works**
+- [L] **Fiscal policy - tools, limits, and when it works**
   - Keyword: "what is fiscal policy a level economics"
   - SPA topic: `fiscal_policy`, `taxation`, `government_spending`
   - Friction angle: expansionary vs contractionary, automatic stabilisers vs discretionary.
   - UK example: 2020 furlough scheme as discretionary fiscal expansion.
 
-- [ ] **Monetary policy and the Bank of England's MPC**
+- [L] **Monetary policy and the Bank of England's MPC**
   - Keyword: "monetary policy a level economics"
   - SPA topic: `monetary`, `central_banks`
   - Friction angle: interest rate transmission mechanism - the full chain, not just "rates up, spending down".
   - UK example: BoE Bank Rate path 2021-2024.
 
-- [ ] **Unemployment - types, measures, and why the figures disagree**
+- [L] **Unemployment - types, measures, and why the figures disagree**
   - Keyword: "types of unemployment a level economics"
   - SPA topic: `unemployment`
   - Friction angle: claimant count vs ILO; structural vs cyclical vs frictional.
   - UK example: ONS Labour Market Statistics release.
 
-- [ ] **Economic growth - causes, measurement, and limits**
+- [~] **Economic growth - causes, measurement, and limits**
   - Keyword: "what is economic growth a level economics"
   - SPA topic: `growth_measure`, `factors_growth_development`
   - Friction angle: actual vs potential, short-run vs long-run, growth vs development.
 
-- [ ] **The balance of payments explained**
+- [L] **The balance of payments explained**
   - Keyword: "balance of payments a level economics"
   - SPA topic: `balance_of_payments`, `bop_t2`
   - Friction angle: current account vs capital account vs financial account - students mash all three.
@@ -97,7 +97,7 @@ in Google when a panicking sixth former types it the night before Paper 2.
   - SPA topic: `unemployment`, `inflation`
   - Friction angle: SRPC vs LRPC; expectations-augmented; NAIRU.
 
-- [ ] **Demand-pull vs cost-push inflation**
+- [~] **Demand-pull vs cost-push inflation**
   - Keyword: "demand pull vs cost push inflation"
   - SPA topic: `inflation`
   - Friction angle: students label every inflation episode "demand-pull" by default. Walk through both AD-shift and SRAS-shift cases.
@@ -126,7 +126,7 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - Friction angle: students recite "interdependence" without showing the price rigidity it implies.
   - UK example: UK supermarket pricing; the Big Four energy retailers pre-Octopus.
 
-- [ ] **Price elasticity of demand (PED) - how to use it, not just calculate it**
+- [L] **Price elasticity of demand (PED) - how to use it, not just calculate it**
   - Keyword: "price elasticity of demand a level"
   - SPA topic: `ped`
   - Friction angle: PED -> total revenue logic; the sign convention; perfect elasticity edge cases.
@@ -137,7 +137,7 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - SPA topic: `yed_xed`
   - Friction angle: positive vs negative YED interpretation; necessities vs luxuries vs inferior goods.
 
-- [ ] **Market failure - the four big causes**
+- [L] **Market failure - the four big causes**
   - Keyword: "market failure a level economics"
   - SPA topic: `market_failure`
   - Friction angle: students treat "market failure" as a vague label. Pin it to specific causes (externalities, public goods, asymmetric info, market power).
@@ -171,7 +171,7 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - SPA topic: `consumer_producer_surplus`
   - Friction angle: identifying surplus areas before/after a tax, subsidy, max/min price.
 
-- [ ] **Behavioural economics - nudges, biases, and Thaler in plain English**
+- [~] **Behavioural economics - nudges, biases, and Thaler in plain English**
   - Keyword: "behavioural economics a level"
   - SPA topic: `behavioural_econ`
   - Friction angle: students list biases without using them to explain why a standard rational-agent prediction fails.

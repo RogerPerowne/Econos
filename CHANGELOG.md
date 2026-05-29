@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.11.2 — 2026-05-29
+
+### Articles: complete the topic tranche of the SEO queue
+
+Created the 3 remaining topic articles from `SEO_PRIORITY.md` as drafts:
+**economic growth** (PPF outward-shift interactive diagram, Schumpeter),
+**demand-pull vs cost-push inflation** (AD interactive diagram, Keynes),
+and **behavioural economics** (Kahneman; no diagram — the behavioural
+SVGs depend on learn-it JS and don't port to the static article stepper).
+Each follows the house shape with three MCQ knowledge-checks.
+
+Reconciled the queue: the topic tranche is now fully accounted for —
+15 live, 9 drafted, 0 not-started. (Seven entries were already live but
+still ticked `[ ]`; corrected to `[L]`.) Two further tranches remain for
+later batches: single-diagram explainers and exam-technique guides.
+
 ## 0.11.1 — 2026-05-29
 
 ### New favicon set

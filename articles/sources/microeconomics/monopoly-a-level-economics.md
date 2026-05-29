@@ -57,44 +57,8 @@ Strip away the textbook language and the model says one thing. A monopolist is a
 
 A firm in perfect competition takes the market price as given — it can sell as much as it likes at that price, so its marginal revenue equals the price. A monopolist cannot. To sell one more unit it has to lower the price on every unit it sells, so the revenue from that extra sale is the new price *minus* the income lost on all the units it could previously have sold at the higher price. That gap is why **marginal revenue lies below average revenue** on the diagram, and it is the source of every interesting result in the chapter.
 
-:::: diagram caption="**Reading the diagram.** Find the quantity where MR meets MC (Q*). Go straight up to the AR curve. Read the price off the vertical axis (P*). The rectangle between P* and AC* over Q* is supernormal profit. The triangle between the monopoly point, the demand curve, and the competitive equilibrium where MC = AR is the deadweight loss."
-
-<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;" role="img" aria-label="Monopoly profit-maximisation diagram showing AR, MR, MC and AC curves with the deadweight loss triangle">
-  <defs>
-    <pattern id="grid" width="50" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 50 0 L 0 0 0 40" fill="none" stroke="#F0EEE8" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect width="700" height="400" fill="url(#grid)"/>
-  <line x1="80" y1="60" x2="80" y2="340" stroke="#0B1426" stroke-width="2"/>
-  <line x1="80" y1="340" x2="640" y2="340" stroke="#0B1426" stroke-width="2"/>
-  <text x="80" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0B1426">Price, Cost</text>
-  <text x="650" y="358" text-anchor="end" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0B1426">Quantity</text>
-  <line x1="80" y1="100" x2="600" y2="340" stroke="#2563EB" stroke-width="3"/>
-  <text x="608" y="340" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2563EB">AR = D</text>
-  <line x1="80" y1="100" x2="340" y2="340" stroke="#7D23CB" stroke-width="3" stroke-dasharray="6 4"/>
-  <text x="252" y="328" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#7D23CB">MR</text>
-  <path d="M 100 270 Q 200 230 280 220 Q 380 215 480 240 Q 560 260 600 290" stroke="#0B1426" stroke-width="2.5" fill="none"/>
-  <text x="610" y="295" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#0B1426">MC</text>
-  <path d="M 100 305 Q 200 270 290 255 Q 380 250 460 268 Q 540 285 600 310" stroke="#6B7280" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
-  <text x="610" y="316" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6B7280">AC</text>
-  <line x1="260" y1="340" x2="260" y2="220" stroke="#E11D48" stroke-width="1.5" stroke-dasharray="4 4"/>
-  <line x1="80" y1="180" x2="260" y2="180" stroke="#E11D48" stroke-width="1.5" stroke-dasharray="4 4"/>
-  <line x1="80" y1="245" x2="260" y2="245" stroke="#6B7280" stroke-width="1" stroke-dasharray="3 3"/>
-  <rect x="80" y="180" width="180" height="65" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1" stroke-dasharray="3 3"/>
-  <text x="170" y="218" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#047857">Supernormal profit</text>
-  <polygon points="260,220 260,180 400,255" fill="#E11D48" fill-opacity="0.2" stroke="#E11D48" stroke-width="1"/>
-  <text x="320" y="225" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#9F1239">DWL</text>
-  <circle cx="260" cy="220" r="5" fill="#7D23CB"/>
-  <circle cx="260" cy="180" r="5" fill="#2563EB"/>
-  <circle cx="400" cy="255" r="5" fill="#0B1426"/>
-  <text x="72" y="184" text-anchor="end" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#0B1426">P*</text>
-  <text x="72" y="249" text-anchor="end" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#6B7280">AC*</text>
-  <text x="260" y="358" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#0B1426">Q*</text>
-  <text x="400" y="358" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#6B7280">Q_pc</text>
-</svg>
-
-::::
+::: econos-diagram svgKey="monopolyDwl" label="The monopoly outcome versus the competitive benchmark" caption="**Reading the diagram.** The monopolist sets output where MR = MC (Q_m) and reads the price up on the AR curve (P_m). A competitive industry would produce where MC = demand (Q_c) at the lower price P_c. The shaded red triangle between the two is the deadweight welfare loss — the mutually beneficial trades the monopoly never makes."
+:::
 
 :::::
 

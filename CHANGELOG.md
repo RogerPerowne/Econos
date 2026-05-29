@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.15.2 — 2026-05-29
+
+### Articles: monopoly cost-curve fix + monetary-policy interactive
+
+Caught by rendering each diagram in a real browser with its CSS (not the
+bare SVG):
+
+- **Monopoly hero diagram** — the hand-rolled inline SVG had inverted,
+  ∩-shaped ("hill") MC and AC curves and an MR=MC dot that did not sit on
+  the MR line. Replaced it with the curated `monopolyDwl` diagram, which
+  shows the monopoly-vs-competitive outcome with a correct upward-sloping
+  MC and the deadweight-loss triangle. The supernormal-profit half is
+  already covered lower in the article by `monopolySupernormalProfit`
+  (verified U-shaped / Nike-tick costs).
+- **`monopolyDwl` label clipping** — widened its viewBox (700→840) so the
+  right-edge "MC (= S under competition)" and "D = AR (= MB)" labels no
+  longer run off the frame. Benefits both articles that embed it.
+- **Monetary-policy diagram** — was baking the QE-at-the-zero-lower-bound
+  edge case as a static snapshot with a generic caption that did not
+  match the picture. Switched it to the interactive `adAsMonetary`
+  walkthrough (inflation at target → rate hike → QE at the ZLB), matching
+  the Bank-of-England article.
+
+Bumped `sw.js` cache (icons.js changed).
+
 ## 0.15.1 — 2026-05-29
 
 ### Articles: diagram-correctness pass

@@ -11215,7 +11215,7 @@ window.ECONOS_ICONS = {
 
   /* ── Monopoly DWL (welfare analysis) ────────────────────────────────── */
   monopolyDwl: `
-    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 840 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Y axis -->

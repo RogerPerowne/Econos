@@ -130,6 +130,12 @@ These conventions are enforced across every chart in the codebase:
 - New curve = solid, full opacity, slightly thicker `stroke-width` (2.2 vs 2 is enough)
 - Subscript labels (`AD₁` / `AD₂`, `SRAS₁` / `SRAS₂`) at the right-end of each curve, **off the line**
 
+**Curve labels (the default position):**
+- **Always label a curve ABOVE it** unless the curve runs to the top edge or another label clashes there
+- "Above" means: for an upward-sloping curve, position the label so the text baseline sits ~10–14 px above the curve at the label's x; for a downward-sloping curve, same — above the curve
+- Exceptions in priority order: (1) the curve exits the top of the plot area — label inline at the right endpoint, just past where the curve stops; (2) another label already occupies the space above — move the new label below the curve with the same 10–14 px clearance; (3) the curve is at the chart edge and there's no room above — label below
+- When two curves cross, place each label on the side of its own curve, never in the wedge between them where it could read as belonging to either
+
 **Equilibrium markers:**
 - Open circle, `fill="#fff"`, `stroke-width="2"`, radius 4–5
 - Stroke colour `#2563EB` (AD-blue) for every equilibrium, both old and new — they're "equilibrium" markers, not "curve-X" markers, and using one colour keeps the visual grammar tight

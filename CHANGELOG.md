@@ -6,6 +6,72 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.0 — 2026-05-29
+
+### Universalised routing + full exam-board separation + per-board placeholders
+
+A coordinated three-job ship covering routing, the per-board data
+layer, and the topic registry display. The shell URL contract is
+now consistent across Learn It / Link It / Land It; each exam
+board reads only its own data files (no Edexcel A fallback); every
+non-Edexcel-A board ships a placeholder cover for every included
+topic.
+
+- **Card tokens in Learn It URLs.** Every Learn It URL now carries
+  a self-describing sub-route: `/<board>/<theme>/<topic>/learn-it/<card>`
+  where `<card>` is `intro` (cover) or a title-derived slug
+  (e.g. `demand-pull-inflation`, deduped within a topic by suffixing
+  `-2`/`-3`). Falls back to `card-<n>` when the title is empty.
+  Card-slug generation lives in `js/config/stations.js` as
+  `window.ECONOS_CARD_SLUG`; the build-time route generator and
+  `app.js` share it so URLs round-trip. `app.js` reads the card
+  slug at boot to seed the current view, and calls
+  `history.replaceState` on next/prev/start-session.
+- **Land It section tokens self-describing.** `/land-it/a` →
+  `/land-it/section-a` (same for `b`/`c`). Legacy URLs redirect
+  in place via `history.replaceState`.
+- **Unified route-builder factory.** `routes.learn` / `routes.link`
+  / `routes.land` share a single `makeShellRoute(shellSegment)`
+  factory; the build-time `topicRoutes()` writeRoute loop iterates
+  a station generator per shell from one source of truth. Adding
+  a fourth shell (e.g. `quiz-it`) is one line in each file.
+- **`getBoard()` reads URL first.** A board pinned in the
+  pathname wins over `localStorage`. The account-menu picker
+  navigates to the equivalent Learn It page on the new board
+  rather than reloading the current URL.
+- **No more cross-board data fallback.** `ECONOS_BOARD_OVERRIDES`
+  removed; `dataPath()` builds `/js/data/<board>/<theme>/<topic>/<file>`
+  unconditionally.
+- **Per-board placeholder generator** in `vite.config.js` writes
+  a minimal cover-only `learn-it.js` for every non-Edexcel-A
+  (board × included-topic) pair. Idempotent — only writes when
+  missing or carrying the `/* PLACEHOLDER — auto-generated. */`
+  header. **221 placeholder files committed** across Edexcel B
+  / AQA / OCR.
+- **Non-Edexcel-A boards clamped to Learn-only availability.** Link
+  / Land pips render as "Coming soon". Start-session click is
+  guarded with `if (!T.cards.length) return;` — the cover renders
+  normally, clicking does nothing per the user's instruction
+  "normal cover just when you click start session nothing loads".
+- **Per-board top-level division labels.** New `divisionLabel`
+  per board (Theme / Paper / Component) + `ECONOS_BOARD_DIVISIONS`
+  map (slug → official syllabus wording, e.g. AQA `micro` →
+  "Paper 1 — Individuals, firms, markets and market failure").
+  Homepage grid section headers and the sidebar role pill use
+  the right label per board.
+- **OCR theme classification.** Uses Edexcel A's theme as a
+  structural fallback (the OCR specs in `js/topics.js` are compact
+  `X.Y` form that doesn't reliably encode the component — a
+  separate content task to audit). Data layer is still
+  board-isolated.
+- **SW bump to `econos-v108`.** `topic-loader.js`, `stations.js`,
+  `boards.js`, `app.js`, `shell.js` and all shell HTML files
+  change.
+- **Tests.** Unit tests reset the URL between describe blocks
+  (the new URL-prefers-board logic would otherwise pollute later
+  cases). E2E updated for the `section-a` rename + the new
+  board-picker navigation flow.
+
 ## 0.16.0 — 2026-05-29
 
 ### Articles: clean-slate teardown of all markdown sources

@@ -472,9 +472,57 @@
       if (boardBtn) {
         var newBoard = boardBtn.dataset.board;
         if (window.TopicLoader && TopicLoader.setBoard && TopicLoader.setBoard(newBoard)) {
-          /* Persist + reload so every display surface picks up the new
-             board. The reload is one line; subscribing every render-
-             site to a runtime board change would be its own framework. */
+          /* Persist + navigate to the equivalent learn-it page on the
+             new board. Non-Edexcel-A boards don't ship link-it /
+             land-it pages today (placeholder cover only), so we
+             land on the universal learn-it intro and let the user
+             go from there. Build the URL manually rather than via
+             routes.learn() because routes.learn reads getBoard()
+             which prefers the URL — and the URL still has the OLD
+             board until we navigate. */
+          try {
+            var route = TopicLoader.parsePath && TopicLoader.parsePath(window.location.pathname);
+            if (route && route.topic) {
+              /* Look up the topic's theme on the new board from the
+                 registry. Mirror of themeFor() but with a forced
+                 board argument. */
+              var reg = window.ECONOS_TOPICS || [];
+              var topicEntry = null;
+              for (var i = 0; i < reg.length; i++) {
+                if (reg[i].id === route.topic) { topicEntry = reg[i]; break; }
+              }
+              var spec = topicEntry && topicEntry.boards && topicEntry.boards[newBoard] && topicEntry.boards[newBoard].spec;
+              var theme = 'misc';
+              if (newBoard === 'edexcel_a' || newBoard === 'edexcel_b') {
+                theme = spec ? 'theme-' + String(spec).charAt(0) : 'misc';
+              } else if (newBoard === 'aqa') {
+                var parts = spec ? String(spec).split('.') : [];
+                theme = parts[1] === '1' ? 'micro' : (spec ? 'macro' : 'misc');
+              } else if (newBoard === 'ocr') {
+                /* Mirror of TopicLoader.themeFor for OCR — uses
+                   Edexcel A's theme as the structural source until
+                   OCR specs are properly numbered. */
+                var ea = topicEntry && topicEntry.boards && topicEntry.boards.edexcel_a && topicEntry.boards.edexcel_a.spec;
+                if (ea) {
+                  var ed = String(ea).charAt(0);
+                  if (ed === '1' || ed === '3') theme = 'micro';
+                  else if (ed === '2' || ed === '4') theme = 'macro';
+                  else theme = 'misc';
+                } else if (spec) {
+                  var od = String(spec).charAt(0);
+                  theme = (od === '1') ? 'micro' : (od === '2') ? 'macro' : 'misc';
+                }
+              }
+              if (theme !== 'misc') {
+                window.location.href = '/' + newBoard + '/' + theme + '/' + route.topic + '/learn-it';
+                return;
+              }
+              /* The topic isn't in the new board's spec — send the
+                 user home so they can pick a topic that IS available. */
+              window.location.href = '/';
+              return;
+            }
+          } catch (e1) { /* fall through to plain reload */ }
           window.location.reload();
         }
         closeAccountMenu();

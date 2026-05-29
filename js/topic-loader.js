@@ -4,31 +4,39 @@
    Single source of truth for the site's URL contract. The
    public form is path-based and human-readable:
 
-       /                          home (topic index)
-       /learn/<topic>             Learn It
-       /link/<topic>/<station>    Link It (intro|context|chain|
-                                  chain-open|calc|data|extract|
-                                  predict|diagram|depends|judge|
-                                  complete)
-       /land/<topic>/<section>    Land It (intro|a|b|c|complete)
+       /                                                home (topic index)
+       /<board>/<theme>/<topic>/learn-it/<card>          Learn It
+       /<board>/<theme>/<topic>/link-it/<station>        Link It
+       /<board>/<theme>/<topic>/land-it/<section>        Land It
 
-   `<topic>` is the topic's slug — derived from its display title
-   (e.g. "Negative Externalities" → `negative-externalities`). The
-   slug IS the directory name under `/js/data/`, the registry `id`
-   field in `js/topics.js`, and the URL segment. No conversion
-   layer — the same string everywhere.
+   Sub-routes per shell:
+     Learn  — 'intro' or a title-derived card slug (e.g.
+              'demand-pull-inflation'); fallback 'card-<n>'.
+     Link   — intro | context | chain | chain-open | calc | data |
+              extract | predict | diagram | depends | judge | complete.
+     Land   — intro | section-a | section-b | section-c | complete.
 
-   Stations are short tokens, all lowercase, dashes for multi-word
-   (only `chain-open` is multi-word today). Same identity rule.
+   `<topic>` is the topic slug — derived from its display title
+   (e.g. "Negative Externalities" → `negative-externalities`).
+   The slug IS the directory name under `/js/data/<board>/<theme>/`,
+   the registry `id` field in `js/topics.js`, and the URL segment.
+   One string everywhere — no conversion layer.
 
    Path parsing happens once in `parsePath()` and is exposed via
-   `getTopic`, `getStation`, `getShell`. URL building goes through
-   `routes.<shell>(...)` — these are the canonical builders used
-   by every engine, every shell, every data file.
+   `getTopic`, `getStation`, `getCard`, `getShell`. URL building
+   goes through `routes.<shell>(...)` — these are the canonical
+   builders used by every engine, every shell, every data file.
+   Builders share a `makeShellRoute(shellSegment)` factory so
+   adding a fourth shell (e.g. `quiz-it`) is one line.
 
    `go(url)` performs an in-place SPA navigation if the target is
    a station inside the currently-loaded Link or Land shell,
    otherwise a full page nav.
+
+   Data layer: each board reads ONLY its own files at
+   /js/data/<board>/<theme>/<topic>/<file>. No cross-board
+   fallback. Non-Edexcel-A topics ship a placeholder learn-it.js
+   with an empty cards array (just the cover view).
    ============================================================ */
 
 (function () {
@@ -43,23 +51,12 @@
      change. */
   var URL_TO_SHELL = { 'learn-it': 'learn', 'link-it': 'link', 'land-it': 'land' };
 
-  /* parsePath canonical form (v0.7.0+):
-       /<board>/<theme>/<topic>/learn-it
-       /<board>/<theme>/<topic>/link-it/<station>
-       /<board>/<theme>/<topic>/land-it/<section>
+  /* Legacy land-it section tokens. v0.16 renamed bare letters
+     (`/land-it/a`) to self-describing (`/land-it/section-a`).
+     parsePath transparently rewrites the legacy form via
+     history.replaceState so existing bookmarks self-heal once. */
+  var LEGACY_LAND_TOKENS = { a: 'section-a', b: 'section-b', c: 'section-c' };
 
-     Example:
-       parsePath('/aqa/macro/causes-of-inflation-and-deflation/link-it/chain-open')
-         → {
-             board:   'aqa',
-             theme:   'macro',
-             topic:   'causes-of-inflation-and-deflation',
-             shell:   'link-it',
-             station: 'chain-open'
-           }
-
-     parsePath('/') → { shell: 'home' }
-     Returns null for paths that don't fit the contract. */
   function parsePath(pathname) {
     var p = String(pathname || window.location.pathname || '/');
     if (p.length > 1 && p.charAt(p.length - 1) === '/') {
@@ -86,6 +83,27 @@
     };
   }
 
+  /* One-shot legacy URL rewriter — runs at module load.
+     Rewrites /land-it/a → /land-it/section-a in place via
+     history.replaceState (no flash, no reload). The shell is
+     rendered against the new path. */
+  function rewriteLegacyUrl() {
+    try {
+      var path = window.location.pathname;
+      var route = parsePath(path);
+      if (route && route.shell === 'land' && route.station && LEGACY_LAND_TOKENS[route.station]) {
+        var newSub = LEGACY_LAND_TOKENS[route.station];
+        var parts = path.replace(/\/$/, '').split('/');
+        parts[5] = newSub;
+        var newPath = parts.join('/') + (window.location.search || '') + (window.location.hash || '');
+        window.history.replaceState(null, '', newPath);
+      }
+    } catch (e) { /* not fatal */ }
+  }
+  if (typeof window !== 'undefined' && window.history && typeof window.history.replaceState === 'function') {
+    rewriteLegacyUrl();
+  }
+
   function getRoute() {
     return parsePath(window.location.pathname) || { shell: null };
   }
@@ -93,6 +111,11 @@
   function getTopic()    { return getRoute().topic    || DEFAULT_TOPIC; }
   function getStation()  { return getRoute().station  || null; }
   function getShell()    { return getRoute().shell    || null; }
+  /* Friendly alias for Learn-It callers — the sub-route there
+     is a card slug, not a station. parsePath returns it under
+     `station` either way; getCard() reads more naturally on
+     learn-it call sites. */
+  function getCard()     { return getStation(); }
 
   /* Canonical session labels — single source of truth so data files
      don't all need to repeat 'Session N of 3: …'. Engines should pass
@@ -125,6 +148,16 @@
     return 'edexcel_a';
   }
   function getBoard() {
+    /* Prefer the board pinned in the URL when present — that's
+       the source of truth for the current page. localStorage is
+       only the user's default for navigation away from a URL
+       that didn't pin one. */
+    try {
+      var route = parsePath(window.location.pathname);
+      if (route && route.board && window.ECONOS_BOARDS && window.ECONOS_BOARDS[route.board]) {
+        return route.board;
+      }
+    } catch (e) { /* fall through */ }
     var stored;
     try { stored = window.localStorage.getItem(BOARD_STORAGE_KEY); }
     catch (e) { stored = null; }
@@ -143,13 +176,22 @@
     var b = (window.ECONOS_BOARDS || {})[id];
     return (b && b.name) || id;
   }
+  /* Per-board top-level division label for the active theme slug.
+     Reads ECONOS_BOARD_DIVISIONS — falls back to the bare slug
+     when no entry is registered. Used by the topbar chip and
+     topic-grid section headers. */
+  function divisionLabelFor(board, themeSlug) {
+    var map = (window.ECONOS_BOARD_DIVISIONS || {})[board] || {};
+    return map[themeSlug] || themeSlug;
+  }
 
   /* URL builders. Every internal href, every JS string used as a
      URL, every router pushState — they all flow through these.
      Canonical form is /<board>/<theme>/<topic>/<shell>(/<sub>):
-       routes.learn('inflation')               → '/aqa/macro/inflation/learn'
-       routes.link('chain', 'inflation')        → '/aqa/macro/inflation/link/chain'
-       routes.land('a',    'inflation')         → '/aqa/macro/inflation/land/a'
+       routes.learn('inflation')               → '/aqa/macro/inflation/learn-it'
+       routes.learn('demand-pull', 'inflation') → '/aqa/macro/inflation/learn-it/demand-pull'
+       routes.link('chain', 'inflation')        → '/aqa/macro/inflation/link-it/chain'
+       routes.land('section-a', 'inflation')    → '/aqa/macro/inflation/land-it/section-a'
      Board comes from getBoard(); theme comes from the registry
      via themeFor(topic, board). Topic defaults to the current
      topic from the URL so most callers don't need to pass it. */
@@ -158,22 +200,48 @@
     var b = getBoard();
     return '/' + b + '/' + themeFor(t, b) + '/' + t;
   }
+
+  /* Route builder factory. One source of truth so every shell
+     emits URLs with the same shape. Adding a fourth shell
+     (e.g. quiz-it) is now `routes.quiz = makeShellRoute('quiz-it')`
+     and one line in vite.config.js's writeRoute loop. */
+  function makeShellRoute(shellSegment) {
+    return function (subOrTopic, topic) {
+      /* allow (sub) or (sub, topic) or () or (topic) — second-arg
+         is ALWAYS the topic. First arg is treated as a sub-route
+         when it's a non-empty string AND it's not a known topic
+         id. We accept either ordering so existing call sites
+         that pass `routes.learn(topicId)` keep working. */
+      var sub = null;
+      var t = null;
+      if (typeof subOrTopic === 'string') {
+        if (topic !== undefined) {
+          /* explicit (sub, topic) */
+          sub = subOrTopic;
+          t = topic;
+        } else if (topicEntry(subOrTopic)) {
+          /* one arg, looks like a topic id */
+          t = subOrTopic;
+        } else {
+          /* one arg, not a known topic id — treat as sub */
+          sub = subOrTopic;
+        }
+      }
+      return urlBase(t) + '/' + shellSegment + (sub ? '/' + sub : '');
+    };
+  }
   var routes = {
-    home:  function ()             { return '/'; },
-    learn: function (topic)        { return urlBase(topic) + '/learn-it'; },
-    link:  function (station, topic) {
-      return urlBase(topic) + '/link-it/' + (station || 'intro');
-    },
-    land:  function (section, topic) {
-      return urlBase(topic) + '/land-it/' + (section || 'intro');
-    },
+    home:  function () { return '/'; },
+    learn: makeShellRoute('learn-it'),
+    link:  makeShellRoute('link-it'),
+    land:  makeShellRoute('land-it'),
     /* Legacy compat shim — the /quiz/ standalone shell was retired in
        v0.4.0 but existing learn.js files still reference quizCta
        fields built with this expression. Returns '' so the data file
        parses; the app.js renderer no longer reads quizCta so the
        value is never surfaced. Remove this shim once every learn.js
        file is rewritten to drop quizCta. */
-    quiz:  function ()             { return ''; }
+    quiz:  function () { return ''; }
   };
 
   /* Programmatic navigation. If the URL is a station inside the
@@ -213,12 +281,11 @@
      AQA / OCR use `micro` / `macro`. Topics with no registry
      entry land in `misc`.
 
-     Falls back to the Edexcel A baseline path when the current
-     board has no listed override for the requested file (see
-     `window.ECONOS_BOARD_OVERRIDES` in `js/config/boards.js` for
-     the per-file flags). Per-file granularity matters: a board
-     can ship a custom learn.js while still inheriting the
-     Edexcel A baseline for link.js / land.js on the same topic. */
+     Each board reads ONLY its own files — no cross-board
+     fallback. When a non-Edexcel-A board doesn't yet ship real
+     content for a topic, a placeholder learn-it.js (just the
+     cover view, empty cards array) is generated at build time
+     by vite.config.js. */
   function topicEntry(topic) {
     var reg = window.ECONOS_TOPICS;
     if (!Array.isArray(reg)) return null;
@@ -241,11 +308,25 @@
       return parts[1] === '1' ? 'micro' : 'macro';
     }
     if (board === 'ocr') {
+      /* OCR's spec values in js/topics.js use a compact `X.Y` form
+         that doesn't reliably encode the component (Component 1 =
+         Microeconomics, Component 2 = Macroeconomics). Until the
+         OCR specs are audited and rewritten in `<component>.X.Y`
+         form (a separate content task), we classify by Edexcel A's
+         theme as the structural source of truth: themes 1+3 → micro,
+         themes 2+4 → macro. Data files are still board-isolated
+         (no fallback); this only affects the theme SLUG in URLs. */
       var ea = t.boards.edexcel_a && t.boards.edexcel_a.spec;
-      if (!ea) return 'misc';
-      var d = String(ea).charAt(0);
-      if (d === '1' || d === '3') return 'micro';
-      if (d === '2' || d === '4') return 'macro';
+      if (ea) {
+        var d = String(ea).charAt(0);
+        if (d === '1' || d === '3') return 'micro';
+        if (d === '2' || d === '4') return 'macro';
+      }
+      if (spec) {
+        var od = String(spec).charAt(0);
+        if (od === '1') return 'micro';
+        if (od === '2') return 'macro';
+      }
       return 'misc';
     }
     return 'misc';
@@ -253,17 +334,7 @@
 
   function dataPath(topic, file) {
     var board = getBoard();
-    if (board && board !== 'edexcel_a') {
-      var overrides = window.ECONOS_BOARD_OVERRIDES || {};
-      var topicOverrides = (overrides[board] || {})[topic];
-      if (topicOverrides) {
-        var stem = String(file).replace(/\.js$/, '');
-        if (topicOverrides[stem]) {
-          return '/js/data/' + board + '/' + themeFor(topic, board) + '/' + topic + '/' + file;
-        }
-      }
-    }
-    return '/js/data/edexcel_a/' + themeFor(topic, 'edexcel_a') + '/' + topic + '/' + file;
+    return '/js/data/' + board + '/' + themeFor(topic, board) + '/' + topic + '/' + file;
   }
 
   function loadData(dataFiles, callback, sectionLabel) {
@@ -307,6 +378,7 @@
     parsePath:           parsePath,
     getTopic:            getTopic,
     getStation:          getStation,
+    getCard:             getCard,
     getShell:            getShell,
     /* URL building — the canonical entry points */
     routes:              routes,
@@ -316,6 +388,7 @@
     getBoard:            getBoard,
     setBoard:            setBoard,
     getBoardName:        getBoardName,
+    divisionLabelFor:    divisionLabelFor,
     /* Misc */
     sessionLabel:        sessionLabel,
     /* Data loading */

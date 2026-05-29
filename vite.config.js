@@ -786,8 +786,10 @@ function articleRoutes() {
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="theme-color" content="#FAF8F4">
   <link rel="canonical" href="${url}">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Econos">
   <meta property="og:url" content="${url}">
@@ -832,10 +834,8 @@ ${renderSiteFooter()}
   }
 
   function renderTopnav() {
-    /* Articles moved to the footer in v0.8 — the homepage CTA + the
-       generated article pages all link to /articles/ from the
-       Footer's Library column. Keeps the topnav focused on the
-       three Learn-It funnel anchors. */
+    /* The top bar carries an Articles link on desktop so the library is
+       reachable from every article (it also lives in the footer). */
     return `  <nav class="topnav" role="navigation" aria-label="Main navigation">
     <a href="/" class="topnav__logo" aria-label="Econos home">
       <img src="/assets/logo-wordmark-mark.png" alt="Econos — Learn it. Link it. Land it." height="44">
@@ -844,6 +844,7 @@ ${renderSiteFooter()}
       <li><a href="/#how-it-works">How it works</a></li>
       <li><a href="/#features">Features</a></li>
       <li><a href="/#topics">Topics</a></li>
+      <li><a href="/articles/">Articles</a></li>
       <li><a href="/#audience">About</a></li>
     </ul>
     <div class="topnav__actions">
@@ -1434,6 +1435,7 @@ export default defineConfig({
         { src: 'assets/**/*', dest: 'assets' },
         { src: 'fonts/**/*',  dest: 'fonts' },
         { src: 'favicon.*',                  dest: '.' },
+        { src: 'favicon-*.png',              dest: '.' },
         { src: 'apple-touch-icon.png',       dest: '.' },
         { src: 'web-app-manifest-*.png',     dest: '.' },
         { src: 'site.webmanifest',           dest: '.' },

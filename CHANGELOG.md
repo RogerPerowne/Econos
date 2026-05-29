@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.11.0 — 2026-05-29
+
+### Full-width shell, favicons on every page, Articles in the top bar
+
+- **Large-screen layout.** The whole app shell (sidebar + content) was
+  capped at 1400px and centred, so wide monitors got big empty gutters
+  and a cramped feel. The shell now fills the viewport — sidebar pinned
+  left, top bar spanning — and only the scrolling content column is
+  capped (`--page-max-w`, 1640px) and centred. Narrow/normal screens are
+  unchanged.
+- **Favicons everywhere.** Article pages referenced `/favicon-96x96.png`,
+  which the `favicon.*` static-copy glob never matched — so it 404'd and
+  articles effectively had no favicon. Added a `favicon-*.png` copy rule
+  and gave article pages the full icon set (SVG first, then PNG, `.ico`
+  and apple-touch), matching the homepage, which renders the white-middle
+  SVG.
+- **Articles in the desktop top bar.** Added an "Articles" link to the
+  top navigation on the homepage and on every article page (it remains in
+  the footer too).
+
+SW cache → `econos-v85`.
+
 ## 0.10.3 — 2026-05-29
 
 ### Learn It quiz: fix the blank screen + simplify the end-of-cards CTA

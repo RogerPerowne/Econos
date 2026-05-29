@@ -17025,7 +17025,10 @@ window.ECONOS_ICONS = {
             <text x="138" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₁</text>
             <text x="165" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₀</text>
             <!-- Shift arrow (leftward) -->
-            <path d="M195 50 L155 50" stroke="#F59E0B" stroke-width="2" marker-end="url(#tc-arr-amber)"/>
+            <path d="M195 50 L155 50" stroke="#F59E0B" stroke-width="2" marker-end="url(#tcg-arr-amber-l)"/>
+            <defs>
+              <marker id="tcg-arr-amber-l" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#F59E0B"/></marker>
+            </defs>
           </svg>
           <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#C2410C;border:1px solid #F7D19A;border-radius:8px;padding:6px 14px;background:#fff;font-weight:700;">Stagflation</span></div>
         </div>
@@ -17060,7 +17063,10 @@ window.ECONOS_ICONS = {
             <text x="138" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₀</text>
             <text x="165" y="234" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">Y₁</text>
             <!-- Shift arrow (rightward) -->
-            <path d="M150 50 L195 50" stroke="#16A34A" stroke-width="2" marker-end="url(#tc-arr-green)"/>
+            <path d="M150 50 L195 50" stroke="#16A34A" stroke-width="2" marker-end="url(#tcg-arr-green-r)"/>
+            <defs>
+              <marker id="tcg-arr-green-r" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#16A34A"/></marker>
+            </defs>
           </svg>
           <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#065F46;border:1px solid #A6E0C4;border-radius:8px;padding:6px 14px;background:#fff;font-weight:700;">Favourable supply shock</span></div>
         </div>

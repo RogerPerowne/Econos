@@ -125,32 +125,32 @@ window.ECONOS_TOPIC = {
         items: [
           {
             tone: 'rose',
-            label: '2008 Global Financial Crisis',
-            text: 'US sub-prime mortgages turned toxic; banking system seized up; credit froze; consumer and business confidence collapsed. Across 2008-09 UK real GDP fell 6%, unemployment rose from 5% to 8%, inflation fell from 5% to negative briefly. Both <strong>output and prices fell</strong>.',
+            label: '1',
+            text: '<strong>2008 Global Financial Crisis.</strong> US sub-prime mortgages turned toxic; banking system seized up; credit froze; consumer and business confidence collapsed. Across 2008-09 UK real GDP fell 6%, unemployment rose from 5% to 8%, inflation fell from 5% to negative briefly. Both <strong>output and prices fell</strong>.',
             answer: '<strong>Negative demand shock.</strong> P and Y both fell – they moved together – so AD shifted left, not SRAS. The trigger was the credit channel: banks cut lending → I and C collapsed → AD collapsed. Automatic stabilisers (tax fell, welfare rose) softened the blow; discretionary stimulus (QE, VAT cut, scrappage) added on top.'
           },
           {
             tone: 'amber',
-            label: '1973-74 OPEC oil shock',
-            text: 'OPEC quadrupled oil prices. UK inflation jumped from 7% to 24% over two years; real GDP fell 2.5% in 1974; unemployment rose. Energy was a critical input to almost every UK firm – production costs surged. <strong>Prices rose sharply while output fell.</strong>',
+            label: '2',
+            text: '<strong>1973-74 OPEC oil shock.</strong> OPEC quadrupled oil prices. UK inflation jumped from 7% to 24% over two years; real GDP fell 2.5% in 1974; unemployment rose. Energy was a critical input to almost every UK firm – production costs surged. <strong>Prices rose sharply while output fell.</strong>',
             answer: '<strong>Negative supply shock (the textbook stagflation case).</strong> P up and Y down – they moved in opposite directions – so SRAS shifted left, not AD. The Heath government tried wage and price controls; they failed. The Thatcher response a few years later (1979-83) chose the Fight-inflation stance – very high sacrifice ratio but it anchored expectations.'
           },
           {
             tone: 'rose',
-            label: 'COVID lockdown March 2020',
-            text: 'Government ordered most non-essential activity to stop. UK real GDP fell ~10% in Q2 2020 – the deepest quarterly fall on record. Most prices fell or held flat (oil briefly went negative); a few categories (food, electronics) saw spikes. <strong>Output collapsed; prices on balance fell.</strong>',
+            label: '3',
+            text: '<strong>COVID lockdown March 2020.</strong> Government ordered most non-essential activity to stop. UK real GDP fell ~10% in Q2 2020 – the deepest quarterly fall on record. Most prices fell or held flat (oil briefly went negative); a few categories (food, electronics) saw spikes. <strong>Output collapsed; prices on balance fell.</strong>',
             answer: '<strong>Primarily a negative demand shock.</strong> Demand fell across services, restaurants, travel, retail – P and Y both fell together in the affected sectors. There was a supply-side component (factories shut) but the demand collapse dominated. Furlough scheme and Bank of England cut to 0.1% were the policy response.'
           },
           {
             tone: 'green',
-            label: '2021 re-opening boom',
-            text: 'Vaccines rolled out, restrictions lifted, households had built up £170bn of excess savings, fiscal support continued. UK real GDP grew ~7% in 2021 – fastest in G7. Inflation rose from 0.7% to 5% over the year as spending raced ahead of supply. <strong>Output and prices both rose.</strong>',
+            label: '4',
+            text: '<strong>2021 re-opening boom.</strong> Vaccines rolled out, restrictions lifted, households had built up £170bn of excess savings, fiscal support continued. UK real GDP grew ~7% in 2021 – fastest in G7. Inflation rose from 0.7% to 5% over the year as spending raced ahead of supply. <strong>Output and prices both rose.</strong>',
             answer: '<strong>Positive demand shock.</strong> P and Y both rose – moved together – so AD shifted right. Pent-up demand plus fiscal support lifted spending; supply chains couldn’t respond fast enough; inflation rose. The mirror of the 2020 lockdown collapse.'
           },
           {
             tone: 'green',
-            label: 'AI productivity revolution (ongoing)',
-            text: 'Large-language-model AI from 2023 onward is being deployed across knowledge work. Early estimates suggest 10-30% productivity gains in coding, writing, and routine analytics. Real output per worker rising; goods and services made more cheaply; prices in affected sectors easing.',
+            label: '5',
+            text: '<strong>AI productivity revolution (ongoing).</strong> Large-language-model AI from 2023 onward is being deployed across knowledge work. Early estimates suggest 10-30% productivity gains in coding, writing, and routine analytics. Real output per worker rising; goods and services made more cheaply; prices in affected sectors easing.',
             answer: '<strong>Positive supply shock.</strong> Higher productivity shifts SRAS (and over time LRAS) right. P falls (or rises less) while Y rises – they move in opposite directions, the supply-shock signature, but the favourable direction. The rare "free lunch" shock that lifts the trend without inflation.'
           }
         ]

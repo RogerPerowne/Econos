@@ -61,7 +61,7 @@ The chain takes 6 to 18 months end-to-end. Monetary policy is always forecasting
 
 :::
 
-::: econos-diagram svgKey="adAsMonetary" label="Monetary policy on the AD-AS diagram" caption="Monetary policy on the AD-AS diagram: a change in Bank Rate shifts aggregate demand, moving the price level and output."
+::: econos-diagram svgKey="adAsMonetary" state="shift" label="Monetary policy on the AD-AS diagram" caption="Monetary policy on the AD-AS diagram: a change in Bank Rate shifts aggregate demand, moving the price level and output."
 :::
 
 ::: section eyebrow="The transmission mechanism" color="blue" icon="target"

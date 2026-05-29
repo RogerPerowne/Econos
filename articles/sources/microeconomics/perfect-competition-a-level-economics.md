@@ -61,7 +61,7 @@ Stack those together and a striking result falls out: the individual firm is a *
 
 :::
 
-::: econos-diagram svgKey="firmLevelPcVsMonopoly" label="The perfectly competitive firm versus a monopolist" caption="The perfectly competitive firm faces a horizontal demand curve (price taker); the monopolist faces a downward-sloping one. Comparing the two is the heart of the benchmark argument."
+::: econos-diagram svgKey="firmLevelPcVsMonopoly" state="shift" label="The perfectly competitive firm versus a monopolist" caption="The perfectly competitive firm faces a horizontal demand curve (price taker); the monopolist faces a downward-sloping one. Comparing the two is the heart of the benchmark argument."
 
 :::
 

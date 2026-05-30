@@ -40,15 +40,22 @@ nor a query string for the topic / station / quiz set:
 
 ```
 /                                                       home (topic picker)
-/<board>/<theme>/<topic>/learn-it/<card>                Learn It           e.g. /aqa/macro/causes-of-inflation-and-deflation/learn-it/intro
-/<board>/<theme>/<topic>/link-it/<station>              Link It            e.g. /edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/chain
-/<board>/<theme>/<topic>/land-it/<section>              Land It            e.g. /ocr/macro/causes-of-inflation-and-deflation/land-it/section-a
+/<board>/<theme>/<topic>/learn-it                       Learn It cover     e.g. /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it
+/<board>/<theme>/<topic>/learn-it/<card>                Learn It card      e.g. /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it/demand-pull-inflation
+/<board>/<theme>/<topic>/link-it                        Link It intro      e.g. /edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it
+/<board>/<theme>/<topic>/link-it/<station>              Link It station    e.g. /edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/chain
+/<board>/<theme>/<topic>/land-it                        Land It intro      e.g. /ocr/macro/causes-of-inflation-and-deflation/land-it
+/<board>/<theme>/<topic>/land-it/<section>              Land It section    e.g. /ocr/macro/causes-of-inflation-and-deflation/land-it/section-a
 /articles/                                              article hub
 /articles/<slug>                                        single article
 /login /privacy-policy /terms /offline /404             standalone shells
 ```
 
 URL grammar:
+- The **bare shell URL renders the intro / cover** — `/learn-it`,
+  `/link-it`, `/land-it` are themselves the entry points. There is no
+  separate `/intro` sub-route; `routes.<shell>('intro')` collapses to
+  the bare URL via `makeShellRoute`.
 - `<board>` is one of `edexcel_a` / `edexcel_b` / `aqa` / `ocr`. Each board
   reads ONLY its own data files; there is no cross-board fallback.
 - `<theme>` is `theme-1`..`theme-4` for the Edexcel boards (from the
@@ -60,11 +67,11 @@ URL grammar:
   `window.ECONOS_BOARD_DIVISIONS` in `js/config/boards.js`.
 - `<topic>` is the topic id from `js/topics.js` (and the directory name
   under `js/data/<board>/<theme>/<topic>/`).
-- `<card>` is `intro` (cover view) or a title-derived slug per Learn
-  It card. Deduped within a topic; falls back to `card-<n>` when the
-  title is empty. Slug generation lives in `window.ECONOS_CARD_SLUG`
-  in `js/config/stations.js`; the build-time route generator and
-  `app.js` share it.
+- `<card>` is a title-derived slug per Learn It card (e.g.
+  `demand-pull-inflation`). Deduped within a topic; falls back to
+  `card-<n>` when the title is empty. Slug generation lives in
+  `window.ECONOS_CARD_SLUG` in `js/config/stations.js`; the
+  build-time route generator and `app.js` share it.
 - `<station>` and `<section>` are the short-token forms used in
   `js/config/stations.js`. Land It sections are `section-a` /
   `section-b` / `section-c` (legacy `/land-it/a` rewrites in place via
@@ -82,9 +89,12 @@ time and writes, for each available (board, topic, shell, station)
 combination:
 
 ```
-dist/<board>/<theme>/<topic>/learn-it/<card>/index.html
-dist/<board>/<theme>/<topic>/link-it/<station>/index.html
-dist/<board>/<theme>/<topic>/land-it/<section>/index.html
+dist/<board>/<theme>/<topic>/learn-it/index.html                     <!-- cover -->
+dist/<board>/<theme>/<topic>/learn-it/<card>/index.html              <!-- per-card -->
+dist/<board>/<theme>/<topic>/link-it/index.html                      <!-- intro -->
+dist/<board>/<theme>/<topic>/link-it/<station>/index.html            <!-- per-station -->
+dist/<board>/<theme>/<topic>/land-it/index.html                      <!-- intro -->
+dist/<board>/<theme>/<topic>/land-it/<section>/index.html            <!-- per-section -->
 ```
 
 For non-Edexcel-A boards every topic ships a placeholder Learn It

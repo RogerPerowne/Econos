@@ -6,6 +6,38 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.9 — 2026-05-30
+
+### Routing cleanup: bare shell URL = cover, drop legacy redirects
+
+A small follow-up to v0.17.0 — cleaner URLs, less legacy code:
+
+- **`/learn-it/intro` → `/learn-it`** (and the same for `/link-it`
+  and `/land-it`). The cover/intro view of every shell is now
+  addressed by the BARE shell URL. The previous `/<...>/learn-it/intro`,
+  `/<...>/link-it/intro` and `/<...>/land-it/intro` distinct pages
+  are gone — the build no longer emits them.
+- **`routes.<shell>('intro', topic)` collapses to bare URL.**
+  One line in `makeShellRoute` (`if (sub === 'intro') sub = null;`)
+  means every existing call site — engines, data files, UI links —
+  emits the new canonical URL without per-caller changes.
+- **`/land-it/a` legacy redirect deleted.** Removed
+  `LEGACY_LAND_TOKENS`, `rewriteLegacyUrl()` and the bootstrap call
+  from `js/topic-loader.js`. Old bookmarks now 404; that's
+  intentional.
+- **`'intro'` stays as an engine boot key.** `stations.js`'s
+  `linkStations.intro` / `landStations.intro` entries are
+  retained so `link-router` / `land-router`'s default
+  (`getStation() || 'intro'`) still finds the right boot when
+  the URL is bare. URL emission drops `'intro'` from the iteration.
+- **Per-card Learn It URLs unchanged.** Title-derived card slugs
+  (`/learn-it/demand-pull-inflation`) ship as before.
+- **SW bump to `econos-v117`.** `topic-loader.js`, `stations.js`,
+  `vite.config.js`, `app.js` all change.
+- **Tests.** `tests/e2e/topic-loader.spec.js` updated for the new
+  `routes.link('intro')` shape; `tests/e2e/mobile.spec.js` updated
+  for the bare `/link-it` URL in the stages strip.
+
 ## 0.17.8 — 2026-05-30
 
 ### Card 6 · A* framework tiles · icon-top layout

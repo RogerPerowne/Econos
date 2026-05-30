@@ -64,12 +64,14 @@ test('mobile stages strip gives Learn/Link/Land jump points', async ({ page }) =
   /* Learn is the current stage; Link and Land should be reachable links. */
   await expect(strip.locator('.mobile-stages__item.is-current')).toHaveAttribute('data-stage-pos', '1');
   const linkPill = strip.locator('a.mobile-stages__item[data-stage-pos="2"]');
-  await expect(linkPill).toHaveAttribute('href', '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
+  /* `routes.link('intro')` now emits the bare URL — `intro` is the
+     cover, addressed by /link-it directly. */
+  await expect(linkPill).toHaveAttribute('href', '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it');
 });
 
 test('Link station renders on mobile with stacked rail', async ({ page }) => {
   await login(page);
-  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
+  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
 

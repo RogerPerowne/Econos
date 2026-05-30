@@ -36,7 +36,10 @@ test('routes emit path-based URLs with hyphenated slugs', async ({ page }) => {
   expect(cases.home).toBe('/');
   expect(cases.learn).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it');
   expect(cases.learnArg).toBe('/edexcel_a/theme-1/positive-externalities/learn-it');
-  expect(cases.linkDef).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
+  /* `routes.link('intro')` collapses to the bare URL — `intro` is
+     the cover view, addressed by the BARE shell URL, not a
+     distinct sub-route. */
+  expect(cases.linkDef).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it');
   expect(cases.linkOpen).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/chain-open');
   expect(cases.land).toBe('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/a');
 });

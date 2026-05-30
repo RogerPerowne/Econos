@@ -405,17 +405,23 @@ function topicRoutes() {
      window.ECONOS_STATION_GENERATORS — kept here as a plain object so
      the build doesn't have to load stations.js's IIFE side-effects. */
   const SHELL_SUBROUTES = {
+    /* learn: cover lives at the bare /learn-it URL (no sub).
+       Per-card sub-routes follow. */
     learn: function (cards) {
-      const out = ['intro'];
-      const claimed = { intro: true };
+      const out = [];
+      const claimed = { intro: true };   // reserve so cardSlug never collides
       const list = Array.isArray(cards) ? cards : [];
       for (let i = 0; i < list.length; i++) {
         out.push(cardSlug(list[i], i, claimed));
       }
       return out;
     },
-    link: function () { return STATIONS.link.slice(); },
-    land: function () { return STATIONS.land.slice(); }
+    /* link / land: drop the `intro` station — the bare /link-it
+       and /land-it URLs render the intro view. The engine's
+       STATIONS.intro entry is kept for the boot lookup
+       (link-router defaults `station` to 'intro' when null). */
+    link: function () { return STATIONS.link.filter((s) => s !== 'intro'); },
+    land: function () { return STATIONS.land.filter((s) => s !== 'intro'); }
   };
 
   /* Effective availability per (topic, board). Non-Edexcel-A boards
@@ -549,16 +555,26 @@ window.ECONOS_TOPIC = {
         const avail = effectiveAvailability(topic, board);
         const cards = avail.learn ? loadTopicCards(board, theme, topic.id) : [];
         if (avail.learn) {
-          /* Base /learn-it (no sub) renders the intro by default —
-             belt-and-braces compatibility with bookmarks that
-             predate the per-card URL contract. */
+          /* Bare /learn-it renders the cover; the per-card pages
+             follow at /learn-it/<card-slug>. No separate /intro. */
           writeRoute(board, theme, topic.id, 'learn');
           for (const sub of SHELL_SUBROUTES.learn(cards)) {
             writeRoute(board, theme, topic.id, 'learn', sub);
           }
         }
-        if (avail.link)  STATIONS.link.forEach((s) => writeRoute(board, theme, topic.id, 'link', s));
-        if (avail.land)  STATIONS.land.forEach((s) => writeRoute(board, theme, topic.id, 'land', s));
+        if (avail.link) {
+          /* Bare /link-it renders the link intro; the engine's
+             link-router defaults station to 'intro' when there's
+             no sub-route in the URL. Per-station pages follow. */
+          writeRoute(board, theme, topic.id, 'link');
+          SHELL_SUBROUTES.link().forEach((s) => writeRoute(board, theme, topic.id, 'link', s));
+        }
+        if (avail.land) {
+          /* Bare /land-it renders the land intro (same pattern as
+             link above — router defaults to the intro engine). */
+          writeRoute(board, theme, topic.id, 'land');
+          SHELL_SUBROUTES.land().forEach((s) => writeRoute(board, theme, topic.id, 'land', s));
+        }
       }
     }
     // eslint-disable-next-line no-console

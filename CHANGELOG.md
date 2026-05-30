@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.19.0 — 2026-05-30
+
+### Renderer Phase 0 — composition-as-data block foundation
+
+Adds a new, **additive** block-rendering layer that coexists with the
+existing `ad-interactive` / template renderers — the first phase of the
+image-faithful renderer overhaul. No existing card changes behaviour.
+
+- `js/render-blocks.js` — `window.ECONOS_BLOCKS` registry + `renderBlocks(card)`.
+  When a card carries a `blocks: [...]` array it is composed from a starter
+  block set (sectionHeader, calloutStrip/tip, heroVisual, grid with
+  col/row span, tile, bigIdea, examEdge, warning) with HTML-escaped output
+  and a recursive grid. Cards without `blocks` are untouched.
+- `css/econ-tokens.css` + `css/econ-blocks.css` — design tokens (6-tone
+  scale, density modes, title/text-fit/clamp utilities, section header,
+  icon shapes, overflow-warning) and class-based block styling. Block
+  styles that share legacy names (`exam-edge`, `big-idea`, `warning`) are
+  scoped under `.econ-blocks` so existing cards are unaffected.
+- `renderCard()` gains a one-line `blocks` branch that takes precedence and
+  falls through to the existing paths otherwise. Linked into the three card
+  shells via `<script defer>`; `CACHE_NAME` bumped to `econos-v120`.
+- Dev-only (`?dev=1` or `localStorage.econosDev='1'`) overflow detector and
+  `EconosDebug.inspectCard()`. `docs/RENDER_BLOCKS.md` documents the schema;
+  `js/data/_fixtures/blocks-demo.js` is a local-only demo fixture.
+
 ## 0.18.0 — 2026-05-30
 
 ### Macroeconomic Objectives & Trade-offs — full 6-card rebuild from mockups

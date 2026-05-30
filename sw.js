@@ -2,12 +2,18 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v119';
+  const CACHE_NAME = 'econos-v120';
 
   const PRECACHE_ASSETS = [
     '/',
     '/offline.html',
     '/fonts.css',
+    '/styles.css',
+    '/css/econ-tokens.css',
+    '/css/econ-blocks.css',
+    '/js/app.js',
+    '/js/icons.js',
+    '/js/render-blocks.js',
     '/fonts/inter-variable.woff2',
     '/favicon.svg',
     '/assets/logo-full.png',

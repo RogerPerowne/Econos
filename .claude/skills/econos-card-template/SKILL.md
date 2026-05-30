@@ -170,6 +170,105 @@ When a *topic* has three or more cards where the **primary** pattern is *Tile gr
 
 This rule is about the **dominant pattern of each card**, not about the count of tile-grid-like blocks within a single card. A card whose main job is "weigh benefits against costs, then judge" might legitimately use a pair block (Benefits vs Costs) + a causes2 block (Sustainable vs Unsustainable) + a causes3 block (Who Wins) + a verdict conclusion — that's an *Evidence-then-verdict* card, and the multiple tile-style blocks all serve the evaluation. I once gutted exactly that card by deleting two of the three blocks in the name of "consolidation"; the visual richness was the whole point. The rule that matters is variety **across cards in the topic**, not minimalism within any one card.
 
+## Design decision framework
+
+The single biggest failure mode is defaulting to `visualKey + causes + flow + bottomTip + conclusion + examEdge` regardless of what the card is actually trying to teach. Use this framework to pick deliberately. Run through it in order: lesson job → pattern → blocks → block style → anti-pattern audit.
+
+### Step 1 · Pattern selection by lesson's job
+
+Ask: *"What is the student supposed to come away knowing or able to do?"* That sentence maps to a pattern:
+
+| If the lesson is fundamentally about… | Pattern | Tell-tale you've picked wrong |
+|---|---|---|
+| What happens next as a result of X | **Sequential flow chain** | Tiles could be reordered without losing meaning → it's Tile grid |
+| Choosing between two opposing things | **Side-by-side pair** | One side has 3× the content of the other → use Evidence-then-verdict |
+| Where on a continuum each example sits | **Spectrum / regime grid** | You can't name the dimension being graded → use Tile grid (or rethink) |
+| Which option wins on which criterion | **Comparison table** | Criteria differ between alternatives → the matrix has empty cells |
+| How to apply a formula procedurally | **Worked example** | Step 1 IS the whole calculation → use Decompose instead |
+| Spotting the type in unseen cases | **Predict-then-reveal** | The "answer" is genuinely contested → ambiguous reveals undermine learning |
+| Manipulating the diagram IS the lesson | **Interactive multi-state** | A static image says the same thing → interaction is theatre |
+| Anatomy of one diagram | **Decompose a diagram** | More than ~8 labels → split into Interactive multi-state |
+| Weighing pros and cons to a judgement | **Evidence-then-verdict** | There's no real verdict, just a list → it's Tile grid |
+| Equal-weight, unordered components | **Tile grid** | Any of the above 9 applies → pick the matching pattern |
+
+### Step 2 · Block composition by pattern
+
+Each pattern has a *core block set*. Add other blocks only when each does distinct work — and resist adding more.
+
+| Pattern | Core blocks | Common additions |
+|---|---|---|
+| Sequential flow chain | `flow` | `tip` (intro), `bottomTip` (caveat), `conclusion` |
+| Side-by-side pair | `left`/`right` + `pairLabel` (+ `pairFirst: true`) | `bottomTip`, `causes2` (worked cases) |
+| Spectrum / regime grid | `causes` with `causesCols: 4-5` + `'numbered'`/`'numbered-rows'` | Static `visualKey` (continuum diagram), `bottomTip` |
+| Comparison table | `versusRows` | `causes2` (case studies), `conclusion` |
+| Worked example | `template: 'worked-example'` + `scenario` + `steps` + `conclusion` | `examEdge` (mark-scheme link) |
+| Predict-then-reveal | `template: 'diagnose'` / `'puzzle'` + scenarios | Shared `diagramKey` above scenarios |
+| Interactive multi-state | `interactiveDiagram` (svgKey + layers + views) | Closing `causes` (5-tile summary), `conclusion` |
+| Decompose a diagram | `visualKey` + `visualLabel` + `visualCaption` | `causes` (annotation panels), `bottomTip` (sub-concept) |
+| Evidence-then-verdict | `pair` + `causes2` + (`causes3`?) + `conclusion` ✦ | The kitchen-sink card — be generous here |
+| Tile grid | `causes` (default style) | Resist additions — extras are a sign you wanted a different pattern |
+
+✦ Evidence-then-verdict is the ONE card where 3+ tile-style blocks legitimately co-exist, because each block does distinct evaluative work (Benefits vs Costs + Sustainable vs Unsustainable + Who Wins + Verdict).
+
+### Step 3 · `causes` block style by content shape
+
+Pick by *item count* × *body density per item* × *column constraint*:
+
+| Items | Body length per item | Column constraint | → Style | Why |
+|---|---|---|---|---|
+| 2-3 | 1 sentence | Wide columns | *default* (no `causesFirst`) | Lightweight side-by-side; no styling overhead |
+| 3-5 | 1 sentence | 4-5 columns | `'numbered'` | Outlined numbered circle on top; reads as "N parallel categories" |
+| **4-7** | **Rich (3-4 sentences + data + stats)** | **Full row width** | **`'numbered-rows'`** | Stacked rows; each item gets the full body width it needs |
+| 3-6 | Short, but **titles are long** | 4-up tile grid | `'icon-top'` (or `causes3Style: 'icon-top'`) | Title moves to its own line; no overflow |
+| 3-4 | Medium body | Standard | `'tinted-flat'` | Flatter aesthetic, less colour weight |
+| Any | Technical/numerical (tone is distracting) | Standard | `'plain-white'` | White card, tone only in title; clean for formulas |
+
+**Hard-won rules:**
+- **`causesStyle` is silently ignored without `causesFirst: true`.** The unstyled branch of the renderer takes over. Symptom: "I set numbered-rows and nothing changed." Always set `causesFirst: true` when you use a style.
+- **5-item rows are the sweet spot for `numbered`/`numbered-rows`.** Six numbered items feels arbitrary; three feels like a tile grid pretending to be sequential.
+- **Long titles in 4-up grids almost always need `icon-top`.** Side-by-side icon+title only works for one-word titles in 4-up.
+
+### Step 4 · Specialised template, or `ad-interactive`?
+
+Reach for a specialised template only when the content shape genuinely fights against `ad-interactive`:
+
+| Template | Reach for it when |
+|---|---|
+| `worked-example` | The reveal sequence IS the pedagogy — hidden steps + reveal-on-click |
+| `diagnose` / `puzzle` | Fast-feedback classification practice (predict the type, click for verdict) |
+| `ped-/pes-/yed-/xed-calculation` | An elasticity formula with input boxes and live result |
+| `ped-/pes-five-frames` | The 5 elasticity regimes specifically — don't reuse for non-elasticity spectrums |
+| `transmission-chain` | 5+ step transmission with channel selector — too rich for `flow` |
+| `market-structures-comparison` | The canonical PC/Mon/Oligopoly/MC comparison grid |
+| `paired` | Standalone two-column comparison (rare — the `pair` block inside `ad-interactive` usually works) |
+| `framing` | Topic-intro card with a single big-idea hero |
+
+**Never reach for**: `monetary`, `impacts`, `deflation`, `inflation`, `regulatory-capture-explorer`, `welfare-gf-explorer`. These are bespoke one-offs that don't generalise — extend `ad-interactive` with a new field instead.
+
+### Step 5 · Pre-ship anti-pattern audit
+
+Before opening the PR, scan the topic for these flags:
+
+| Symptom | Likely real problem | Fix |
+|---|---|---|
+| 3+ cards in a row use `visualKey + causes` | Defaulted to Decompose-then-Tile | Replace 1-2 with Pair, Flow, Comparison, or Evidence-then-verdict |
+| Same emoji vocabulary across 5 cards | Pattern hasn't actually varied | Pattern audit — name each card's pattern explicitly |
+| Card has 4+ tile blocks but no `conclusion` | Tile grid masquerading as evaluation | Add a verdict, or restructure to Evidence-then-verdict |
+| `causesStyle` set but tiles look unstyled | `causesFirst: true` missing | Add the flag |
+| Long titles overflowing 4-up tile rows | Side-by-side icon+title wrong here | Switch to `icon-top` (or `causes3Style: 'icon-top'`) |
+| Bars in a chart vary by 50× | Linear axis renders smaller bars as unreadable slivers | Broken-axis convention (see `econos-visual-diagram`) |
+| Right-edge SVG labels clipped | viewBox too narrow | Widen viewBox horizontally |
+| Consecutive cards feel disconnected when they cover the same dimensions | No visual rhyme — different tones, different layouts | Reuse tone palette and tile shape across the related cards |
+
+### Quick mental flowchart
+
+1. **Is the lesson testing a specific procedure** (calculate, classify, walk-through)? → specialised template (`worked-example`, `diagnose`, calculator)
+2. **Otherwise, name the lesson's job in one sentence.** Match Step 1 → pattern
+3. **What blocks does that pattern need at minimum?** (Step 2.) Add others only when each does distinct work
+4. **Within tile blocks, what's the item count × body density?** (Step 3.) → block style
+5. **Does this card need to echo an adjacent card** because they cover the same dimensions in different lenses? Reuse tones and tile layouts
+6. **Run the anti-pattern audit** (Step 5) before opening the PR
+
 ## Field reference (for the `ad-interactive` renderer)
 
 The renderer at `renderCardAdInteractive` (`js/app.js` around line 4321) reads these fields. Add only what the pattern needs.
@@ -222,13 +321,15 @@ The renderer at `renderCardAdInteractive` (`js/app.js` around line 4321) reads t
 
 `causesFirst: true` also shifts both `causes` and `causes2` upward in the render order (above the flow / steps / equation / letterFormula blocks). If you want the styled causes to appear later in the card, you need to place other content (interactiveDiagram, equation etc.) before the causes definition in the data object and accept that the renderer dictates the position regardless.
 
-### Choosing between `numbered`, `numbered-rows`, and `icon-top`
+### Canonical examples of each style
 
-All three put the styling cue (number or icon) ABOVE the title rather than beside it. Pick by content shape:
+For copy-paste reference when picking a style (the decision rubric lives in *Design decision framework · Step 3*):
 
-- **`numbered`** (outlined numbered circle on top, then icon, then title, then body) — for 3–5 *parallel categories* shown as a column grid. Use when each item gets ~1 sentence of body and the categories are equal-weight (not a sequence). Canonical example: Card 2 income spectrum was originally numbered before switching to numbered-rows.
-- **`numbered-rows`** (single stacked column; each row is numbered circle + icon + title + full-width body, with a tone-coloured left bar) — for 4–7 items with *rich body content* (3–4 sentences, includes data points, stat citations). The full row width lets the substance breathe. Canonical examples: `inflation-measurement-and-costs` card 4, `causes-of-inflation-and-deflation` cards 2 and 6, `the-impact-of-economic-growth` card 2 (income spectrum).
-- **`icon-top`** (icon as a white square on top, title below, body below) — for *tile grids where titles risk overflow* in narrow columns (4-up or denser). Mirrors causesStyle:'numbered' visually but without the number circle. Use when the category labels are long ("Sustainability", "Distribution") and a side-by-side icon+title would clip.
+- **`numbered`** — `the-impact-of-economic-growth` card 2 (income spectrum, pre-switch); good for 3–5 equal-weight numbered categories in a column grid
+- **`numbered-rows`** — `inflation-measurement-and-costs` card 4; `causes-of-inflation-and-deflation` cards 2 and 6; `the-impact-of-economic-growth` card 2 (income spectrum, final form). 4–7 items with rich body content
+- **`icon-top`** — `the-impact-of-economic-growth` card 6 A* framework (via `causes3Style`). 4-up tile rows where titles risk overflow
+- **`tinted-flat`** — `equilibrium-national-income` card 3 (Classical vs Keynesian)
+- **`plain-white`** — `measures-of-economic-performance` cards 2/3/4/5/6 (nominal-vs-real, output gap, etc. — technical/numerical content)
 
 ### Visual rhyming across cards
 

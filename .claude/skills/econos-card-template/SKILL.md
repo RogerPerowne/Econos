@@ -217,6 +217,7 @@ When the user shares a mockup image, scan it region by region against this table
 | Two coloured cards side-by-side with a "vs" badge between, one positive/green, one negative/rose | `pair` with `vsLabel: 'vs'` |
 | A row of 3–6 same-shape tiles with no order (parallel categories) | `grid` of `tile` children; if 5+ tiles use `cycleTones: true` to skip per-tile `tone:` |
 | A static SVG diagram with a caption | `heroVisual` (legacy svgKey) or `diagram` (generator spec) |
+| An interactive AD/AS diagram with stepped shocks (E₀ → E₁ → E₂…) | `econDiagram` with `chart: 'adas'` and shifts per view — engine auto-computes equilibria |
 | One big highlighted statement, often green or rose | `bigIdea` (always green) or `calloutStrip` (any tone) |
 | A purple "exam edge" callout near the bottom | `examEdge` |
 | An amber caveat / "don't confuse this with…" | `warning` |
@@ -234,7 +235,7 @@ When the user shares a mockup image, scan it region by region against this table
 | Big LHS = RHS equation, possibly with terms underneath | `equationHero` |
 | A small inline fact chip (e.g. "UK CPI 2022: 11.1%") | `factChip` |
 
-If a region doesn't fit any block cleanly, that's usually a sign the card belongs on the legacy `ad-interactive` path (interactive multi-state, calculation widgets, etc.).
+If a region doesn't fit any block cleanly, that's usually a sign the card belongs on the legacy `ad-interactive` path (interactive multi-state, calculation widgets, etc.) — or that it's time to add a new block type. The 9-step recipe for adding one lives in [`docs/ADDING_NEW_BLOCKS.md`](../../docs/ADDING_NEW_BLOCKS.md). The whole dev tooling around this — Library, Editor, validator, schemas — is collectively the **Card Studio**; see [`docs/CARD_STUDIO.md`](../../docs/CARD_STUDIO.md) for naming + future direction.
 
 ### Block component catalogue
 

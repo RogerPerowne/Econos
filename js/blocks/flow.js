@@ -211,12 +211,14 @@
      stepChain
      { steps: [{ head, body, tone?, icon? }, ...], cycleTones?: true }
      Rich numbered tile chain with arrow separators between steps.
-     Each step renders as a tile with a numbered badge in the top-left.
+     Each step renders as a tile with a numbered badge in the top-centre.
+     Layout uses CSS grid `repeat(N, 1fr)` so all tiles stay on ONE row
+     and align flush at top + bottom regardless of count. Arrows render
+     as ::after pseudo-elements in the grid gap (not separate list items)
+     so wrap behaviour stays clean. On mobile (<720px) the grid collapses
+     to a single column and arrows rotate 90°.
      If `cycleTones: true` (default) and a step omits `tone`, tones are
-     cycled green → amber → blue → purple → rose. If a step has an
-     explicit `icon`, it overrides the auto-number badge.
-     Covers the "5-step mechanism" mockup pattern (e.g. stagflation chain)
-     that previously required hand-rolled SVG.
+     cycled blue → amber → green → purple → rose.
   ───────────────────────────────────────────────────────────── */
   var STEP_TONE_CYCLE = ['blue', 'amber', 'green', 'purple', 'rose'];
 
@@ -236,20 +238,16 @@
         : '<span class="step-chain__badge" aria-hidden="true">' + (i + 1) + '</span>';
       var head = step.head != null ? '<h3 class="step-chain__head">' + U.escapeHtml(step.head) + '</h3>' : '';
       var body = step.body != null ? '<p class="step-chain__body text-fit-1">' + U.escapeHtml(step.body) + '</p>' : '';
-      var arrow = i < steps.length - 1
-        ? '<span class="step-chain__arrow" aria-hidden="true">&#8594;</span>'
-        : '';
       return (
         '<li class="step-chain__step ' + toneCls + '" data-overflow-watch>' +
           badge + head + body +
-        '</li>' +
-        (arrow ? '<li class="step-chain__arrow-cell" aria-hidden="true">' + arrow + '</li>' : '')
+        '</li>'
       );
     }).join('');
 
     return (
       '<div class="step-chain" data-overflow-watch>' +
-        '<ol class="step-chain__list" role="list">' + stepsHtml + '</ol>' +
+        '<ol class="step-chain__list" role="list" style="--step-count:' + steps.length + ';">' + stepsHtml + '</ol>' +
       '</div>'
     );
   };

@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v134';
+  const CACHE_NAME = 'econos-v136';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -16,6 +16,7 @@
     '/js/render-validate.js',
     '/js/screenshot-mode.js',
     '/js/icons.js',
+    '/js/blocks/_schema.js',
     '/js/render-blocks.js',
     '/js/blocks/compare.js',
     '/js/blocks/flow.js',
@@ -25,6 +26,7 @@
     '/css/blocks/flow.css',
     '/css/blocks/structure.css',
     '/css/blocks/data.css',
+    '/css/blocks/econ-diagram.css',
     '/js/diagrams/econ-svg.js',
     '/js/diagrams/generators/adas.js',
     '/js/diagrams/generators/ppf.js',
@@ -53,6 +55,7 @@
     '/js/diagrams/static/trade-bop.js',
     '/js/diagrams/static/welfare-tax.js',
     '/js/blocks/diagram.js',
+    '/js/blocks/econ-diagram.js',
     '/fonts/inter-variable.woff2',
     '/favicon.svg',
     '/assets/logo-full.png',

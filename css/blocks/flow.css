@@ -391,20 +391,24 @@
 }
 
 /* ----------------------------------------------------------------
-   stepChain — numbered tile chain with arrow separators
+   stepChain — numbered tile chain with arrow separators between
+   steps. Layout: CSS grid `repeat(N, 1fr)` so all tiles share the
+   row equally and align flush top + bottom regardless of count.
+   Arrows are ::after pseudo-elements positioned in the gap, not
+   separate list items — so they can't cause wrap mismatches.
 ---------------------------------------------------------------- */
 .econ-blocks .step-chain {
   background: var(--econ-block-panel);
   border: 1px solid var(--econ-block-line);
   border-radius: 14px;
-  padding: 18px 16px;
+  padding: 26px 18px 18px;
 }
 
 .econ-blocks .step-chain__list {
   align-items: stretch;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(var(--step-count, 5), minmax(0, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
@@ -416,9 +420,9 @@
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(11, 20, 38, 0.06);
   display: flex;
-  flex: 1 1 140px;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
   padding: 20px 12px 14px;
   position: relative;
   text-align: center;
@@ -430,6 +434,26 @@
 .econ-blocks .step-chain__step.econ-tone--purple { --step-chain-bg: var(--econ-tone-purple-50); --step-chain-border: var(--econ-tone-purple-100); }
 .econ-blocks .step-chain__step.econ-tone--rose   { --step-chain-bg: var(--econ-tone-rose-50);   --step-chain-border: var(--econ-tone-rose-100); }
 .econ-blocks .step-chain__step.econ-tone--slate  { --step-chain-bg: var(--econ-tone-slate-50);  --step-chain-border: var(--econ-tone-slate-100); }
+
+/* Arrow between adjacent steps — positioned in the 24px grid gap,
+   centred vertically against the tile. The arrow span (18px) sits
+   inside the gap (24px), leaving 3px of breathing room each side. */
+.econ-blocks .step-chain__step:not(:last-child)::after {
+  align-items: center;
+  color: var(--econ-tone-slate);
+  content: '→';
+  display: flex;
+  font-size: 1.15rem;
+  font-weight: 700;
+  height: 24px;
+  justify-content: center;
+  left: calc(100% + 3px);
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+}
 
 .econ-blocks .step-chain__badge {
   align-items: center;
@@ -463,24 +487,15 @@
   margin: 0;
 }
 
-.econ-blocks .step-chain__arrow-cell {
-  align-items: center;
-  color: var(--econ-tone-slate);
-  display: flex;
-  flex: 0 0 18px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  justify-content: center;
-  list-style: none;
-}
-
+/* Mobile: single column stack with arrow rotated 90° between rows. */
 @media (max-width: 720px) {
   .econ-blocks .step-chain__list {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
-  .econ-blocks .step-chain__arrow-cell {
-    flex: 0 0 auto;
-    padding: 4px 0;
-    transform: rotate(90deg);
+  .econ-blocks .step-chain__step:not(:last-child)::after {
+    left: 50%;
+    top: calc(100% + 4px);
+    transform: translateX(-50%) rotate(90deg);
   }
 }

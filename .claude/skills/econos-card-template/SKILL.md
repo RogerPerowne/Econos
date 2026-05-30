@@ -234,6 +234,16 @@ When the user shares a mockup image, scan it region by region against this table
 | A numeric metric card with delta / context | `metricCard` |
 | Big LHS = RHS equation, possibly with terms underneath | `equationHero` |
 | A small inline fact chip (e.g. "UK CPI 2022: 11.1%") | `factChip` |
+| A triangular tier / hierarchy (Maslow, Bloom, priority stack) | `pyramid` (structural graphic) |
+| A narrowing conversion / pipeline funnel (awareness → conversion) | `funnel` (structural graphic) |
+| A repeating circular flow of phases (business cycle, circular economy) | `cycle` (structural graphic) |
+| Overlapping concept circles (Venn diagram, 2 or 3 sets) | `venn` (structural graphic) |
+| A comparison table where cells carry tone + optional icon — richer than decisionMatrix | `richTable` (structural graphic) |
+| A directed process / transmission flow (A→B→C, decision branches) | `flowChart` (structural graphic) |
+| A horizontal bar chart of ranked data (league table, income deciles) | `dataChart` with `kind: 'bar'` |
+| A vertical column chart (time series, small-n comparison by height) | `dataChart` with `kind: 'column'` |
+| A line chart trend over time; optionally multi-series | `dataChart` with `kind: 'line'` |
+| A pie or donut chart showing part-of-whole breakdown | `dataChart` with `kind: 'pie'` (add `innerRadius: 0.55` for donut) |
 | An AD/AS diagram — any shift, gap, or shock sequence | `econDiagram` with `chart: 'adas'` |
 | A Phillips curve (SRPC/LRPC, NAIRU) | `econDiagram` with `chart: 'phillips'` |
 | A PPF/PPC (opportunity cost, growth shift, trade) | `econDiagram` with `chart: 'ppf'` |

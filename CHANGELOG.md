@@ -6,6 +6,49 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.34.0 — 2026-05-31
+
+### Structural-graphics catalogue + the dataChart system
+
+Extends the container-query structural engine and adds a separate data-driven
+chart system. Every block screenshot-verified at desktop **and** narrow-container
+widths.
+
+- **6 more structural layouts** (`group: graphics`): `pyramid`, `funnel`,
+  `cycle` (loop-back on mobile), `venn` (3-set circles on desktop → clean
+  Sets/Overlaps list on mobile), `richTable` (the responsive successor to
+  decisionMatrix — stacks as labelled cards on mobile), `flowChart`
+  (linear/branching/parallel/loop topologies → vertical chain on mobile).
+- **`dataChart`** — a NEW block, deliberately separate from `econDiagram`:
+  curve-driven and data-driven charts never share a schema. `js/blocks/data-chart.js`
+  + `window.ECONOS_DATACHART` kind-registry + kinds `bar` (with broken-axis for
+  outlier data), `line` (multi-series), `pie`/donut, `column`. Auto-scaling, the
+  6 tones, container-query mobile fallbacks (pie → % bar chart; bar/line →
+  card-list). `docs/DATA_CHARTS.md`.
+- Wired into the shells + Library gallery + Editor presets + the
+  `econos-card-template` cheat sheet + `econos-econ-diagram` (dataChart vs
+  econDiagram). `CACHE_NAME` → `econos-v143`.
+
+## 0.33.0 — 2026-05-30
+
+### Structural-graphics engine (container-query responsive)
+
+A unified engine for non-chart relationship layouts (hub-and-spoke, matrices,
+quadrants, …), with **mobile responsiveness guaranteed by construction**.
+
+- **Architecture decision:** reflow is driven by CSS **container queries**
+  (`@container gfx (max-width: 520px)`), not viewport `@media` — so every
+  structural graphic reflows on *its own* width, correct inside any narrow slot
+  regardless of screen size. One breakpoint token (`--econ-gfx-bp`), all spacing/
+  tone from the design tokens. (`docs/STRUCTURAL_GRAPHICS.md`.)
+- `js/blocks/graphics/engine.js` — `window.ECONOS_GFX` primitives (`node`,
+  `badge`, `arrow`, `connectorSvg`, `radialCoords`, …) that every layout block
+  delegates to. `css/blocks/graphics.css` — shared responsive primitives.
+- First three layouts (`group: graphics`): **hubSpoke** (subsumes
+  satelliteDiagram), **matrix** (stacks as labelled cards on mobile, not a
+  cramped scroll), **quadrant** (2×2 with axis labels → 1-column stack). Wired
+  into the shells + Library + Editor presets. `CACHE_NAME` → `econos-v142`.
+
 ## 0.32.1 — 2026-05-30
 
 ### Skills — the mockup→card pipeline

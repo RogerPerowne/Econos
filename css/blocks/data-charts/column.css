@@ -1,0 +1,159 @@
+/* ==========================================================================
+   css/blocks/data-charts/column.css — 'column' kind styles
+   --------------------------------------------------------------------------
+   Horizontal-bar chart: categories on the y-axis, bars extending rightward.
+   Scoped under `.econ-blocks` to match the rest of the dataChart styles.
+
+   Responsive via @container dc (max-width: 520px) — no layout flip needed
+   because the design is already stacked rows; narrow widths just shrink
+   font sizes and reduce ruler-tick density (handled by the ticks themselves
+   becoming crowded and CSS hiding alternates if desired).
+
+   All selectors scoped under `.econ-blocks`.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Outer wrapper — horizontal equivalent of .dc-bars
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-hbars {
+  position: relative;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Ruler / gridlines — vertical tick marks across the top of the chart
+   Each .dc-hgrid__line is positioned at the tick's left% inside the track
+   area. The tick label sits above the line.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-hgrid {
+  /* sits over the bar rows; pointer-events off so labels remain clickable */
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.econ-blocks .dc-hgrid__line {
+  border-left: 1px dashed var(--econ-block-line);
+  bottom: 0;
+  position: absolute;
+  /* top offset leaves room for the label row */
+  top: 0;
+}
+
+.econ-blocks .dc-hgrid__tick {
+  color: var(--econ-block-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  /* hang above the ruler line */
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, calc(-100% - 4px));
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Bar rows
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-hcols {
+  /* pad-top so tick labels have room above the first bar */
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 1cqw, 10px);
+  list-style: none;
+  margin: 0;
+  padding: 1.6em 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.econ-blocks .dc-hrow {
+  align-items: center;
+  display: grid;
+  gap: 0 8px;
+  grid-template-columns: minmax(80px, 22%) 1fr;
+  min-height: 26px;
+}
+
+.econ-blocks .dc-hrow__label {
+  color: var(--econ-block-navy);
+  font-weight: 750;
+  min-width: 0;
+  text-align: right;
+}
+
+/* The track fills the remaining width; bars are absolutely positioned in it. */
+.econ-blocks .dc-hrow__track {
+  flex: 1 1 0;
+  min-width: 0;
+  position: relative;
+  height: 26px;
+}
+
+.econ-blocks .dc-hrow__bar {
+  background: var(--econ-block-tone, var(--econ-tone-slate));
+  border-radius: 0 4px 4px 0;
+  height: 100%;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+}
+
+/* Value label — sits to the right of the bar end by default; tucks inside
+   on bars that are ≥ 40% wide (handled purely by CSS overflow; the label
+   text is always present). */
+.econ-blocks .dc-hrow__value {
+  color: var(--econ-block-navy);
+  font-size: 0.74rem;
+  font-weight: 850;
+  left: calc(100% + 5px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+/* Zero-line rule — visible only when the scale includes negative values. */
+.econ-blocks .dc-hrow__zero {
+  background: var(--econ-block-line);
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 2px;
+  /* hide when zero aligns exactly at left edge (all-positive data) */
+}
+
+/* When scale min is 0 the zero line is at left:0 and overlaps the label gap;
+   we keep it present but make it invisible — looks cleaner than display:none
+   flickering on re-render. */
+.econ-blocks .dc-hrow__zero[style*="left:0%"],
+.econ-blocks .dc-hrow__zero[style*="left: 0%"] {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   @container dc (max-width: 520px) — narrow: shrink text, widen label col
+   (520px == --econ-gfx-bp; keep in sync with econ-tokens.css)
+   -------------------------------------------------------------------------- */
+
+@container dc (max-width: 520px) {
+  .econ-blocks .dc-hrow {
+    /* Give the label a bit less space; bar track stays */
+    grid-template-columns: minmax(56px, 28%) 1fr;
+  }
+
+  .econ-blocks .dc-hrow__label {
+    font-size: 0.78rem;
+  }
+
+  .econ-blocks .dc-hrow__value {
+    font-size: 0.7rem;
+  }
+
+  .econ-blocks .dc-hgrid__tick {
+    font-size: 0.62rem;
+  }
+}

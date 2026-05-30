@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v141';
+  const CACHE_NAME = 'econos-v143';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -70,6 +70,35 @@
     '/js/blocks/charts/public-goods.js',
     '/js/blocks/game.js',
     '/css/blocks/game.css',
+    '/css/blocks/graphics.css',
+    '/css/blocks/graphics/hubSpoke.css',
+    '/css/blocks/graphics/matrix.css',
+    '/css/blocks/graphics/quadrant.css',
+    '/css/blocks/graphics/pyramid.css',
+    '/css/blocks/graphics/funnel.css',
+    '/css/blocks/graphics/cycle.css',
+    '/css/blocks/graphics/venn.css',
+    '/css/blocks/graphics/richTable.css',
+    '/css/blocks/graphics/flowChart.css',
+    '/css/blocks/data-chart.css',
+    '/css/blocks/data-charts/line.css',
+    '/css/blocks/data-charts/pie.css',
+    '/css/blocks/data-charts/column.css',
+    '/js/blocks/graphics/engine.js',
+    '/js/blocks/graphics/hubSpoke.js',
+    '/js/blocks/graphics/matrix.js',
+    '/js/blocks/graphics/quadrant.js',
+    '/js/blocks/graphics/pyramid.js',
+    '/js/blocks/graphics/funnel.js',
+    '/js/blocks/graphics/cycle.js',
+    '/js/blocks/graphics/venn.js',
+    '/js/blocks/graphics/richTable.js',
+    '/js/blocks/graphics/flowChart.js',
+    '/js/blocks/data-chart.js',
+    '/js/blocks/data-charts/bar.js',
+    '/js/blocks/data-charts/line.js',
+    '/js/blocks/data-charts/pie.js',
+    '/js/blocks/data-charts/column.js',
     '/fonts/inter-variable.woff2',
     '/favicon.svg',
     '/assets/logo-full.png',

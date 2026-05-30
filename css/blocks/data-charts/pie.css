@@ -1,0 +1,170 @@
+/* ==========================================================================
+   css/blocks/data-charts/pie.css — PIE / DONUT kind styles
+   --------------------------------------------------------------------------
+   Extends data-chart.css (which owns the shared .dc-root, .dc-legend,
+   .dc-caption, and the @container dc breakpoint). This file adds ONLY the
+   pie-specific layout, SVG presentation, and mobile bar fallback.
+
+   RESPONSIVE — same container query as the bar kind:
+     @container dc (max-width: 520px) → hide SVG, show horizontal bar list.
+
+   TOKENS ONLY — no hard-coded colours; all colours via:
+     --econ-block-tone / --econ-block-tone-50 / --econ-block-tone-700
+     --econ-block-navy / --econ-block-muted / --econ-block-panel
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Pie wrapper — centre the SVG and the legend vertically
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-pie {
+  width: 100%;
+}
+
+.econ-blocks .dc-pie__chart-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--econ-gap);
+}
+
+/* --------------------------------------------------------------------------
+   SVG — fills available width up to a sensible maximum, keeps aspect ratio
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-pie__svg {
+  display: block;
+  height: auto;
+  max-width: min(320px, 100%);
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Slice paths — toned fill; subtle white border to separate touching slices;
+   hover/focus lift via drop-shadow and slight scale.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-pie__slice {
+  fill: var(--econ-block-tone, var(--econ-tone-slate));
+  stroke: var(--econ-block-panel, #fff);
+  stroke-width: 2;
+  transition: filter 0.15s ease, transform 0.15s ease;
+  transform-origin: center;
+}
+
+.econ-blocks .dc-pie__slice:focus-visible {
+  outline: none;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.35));
+}
+
+/* --------------------------------------------------------------------------
+   Slice percentage labels — small, bold, white (legible on any tone)
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-pie__label {
+  fill: #fff;
+  font-size: 14px;
+  font-weight: 850;
+  pointer-events: none;
+  /* subtle shadow so labels read on both light and dark slices */
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+}
+
+/* --------------------------------------------------------------------------
+   Donut centre labels (shown when innerRadius is large enough)
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-pie__centre-pct {
+  fill: var(--econ-block-navy);
+  font-size: 22px;
+  font-weight: 850;
+}
+
+.econ-blocks .dc-pie__centre-sub {
+  fill: var(--econ-block-muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   Legend — inherits .dc-legend from data-chart.css; these rules only adjust
+   the pie-specific percentage annotation inside each legend label.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-pie__legend {
+  /* Already centred by .dc-legend; no overrides needed for layout. */
+}
+
+.econ-blocks .dc-pie__legend-pct {
+  color: var(--econ-block-muted);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile horizontal-bar list (hidden on desktop — shown by @container below)
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-pie__mobile {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.econ-blocks .dc-pie__mb-row {
+  align-items: center;
+  display: grid;
+  gap: 0 10px;
+  /* label · bar · pct */
+  grid-template-columns: minmax(0, 1fr) minmax(80px, 2fr) auto;
+  padding: 7px 0;
+}
+
+.econ-blocks .dc-pie__mb-row + .dc-pie__mb-row {
+  border-top: 1px solid var(--econ-block-line);
+}
+
+.econ-blocks .dc-pie__mb-label {
+  color: var(--econ-block-navy);
+  font-weight: 750;
+  min-width: 0;
+}
+
+.econ-blocks .dc-pie__mb-bar {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.econ-blocks .dc-pie__mb-fill {
+  background: var(--econ-block-tone, var(--econ-tone-slate));
+  border-radius: 999px;
+  display: block;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.econ-blocks .dc-pie__mb-pct {
+  color: var(--econ-block-navy);
+  font-size: 0.86rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   @container dc (max-width: 520px) — SVG → horizontal bar list
+   (520px == --econ-gfx-bp; keep in sync with econ-tokens.css)
+   -------------------------------------------------------------------------- */
+
+@container dc (max-width: 520px) {
+  .econ-blocks .dc-pie__chart-wrap {
+    display: none;
+  }
+
+  .econ-blocks .dc-pie__mobile {
+    display: block;
+  }
+}

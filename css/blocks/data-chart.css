@@ -1,0 +1,341 @@
+/* ==========================================================================
+   data-chart.css — dataChart ENGINE + 'bar' kind styles
+   --------------------------------------------------------------------------
+   Shared chrome for every dataChart kind (root container, axis labels,
+   caption, legend) PLUS the bar kind's vertical-bar plot and its mobile
+   card-list fallback.
+
+   RESPONSIVE BY CONSTRUCTION
+   --------------------------
+   `.dc-root` sets `container-type: inline-size` + `container-name: dc`, so a
+   chart reflows on ITS OWN width (correct inside a narrow slot regardless of
+   screen width) — mirrors the structural-graphics engine's `.gfx-root`. Every
+   reflow rule is keyed on `@container dc (max-width: 520px)`, NEVER a viewport
+   `@media`. The literal `520px` is the --econ-gfx-bp token (econ-tokens.css);
+   CSS can't interpolate a custom prop into a container condition, so keep it in
+   sync with that token.
+
+   BARS ARE HTML/CSS, NOT SVG
+   --------------------------
+   Each bar is a <div> with a `height:%`; bars sit in a flex row so they reflow
+   naturally. Gridlines + ticks are absolutely-positioned rows. The mobile
+   card-list is a separate markup the JS always emits; CSS shows exactly one of
+   {bars, card-list} per width — no horizontal scroll, no overflow.
+
+   TOKENS ONLY: --econ-gap / --econ-pad / --econ-body-size + the six tones'
+   -50/-100/-700 scales. The only hard numbers are the breakpoint constant and
+   small geometric radii / line-weights.
+
+   All selectors scoped under `.econ-blocks`.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Root container — the responsive context
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-root {
+  container-type: inline-size;
+  container-name: dc;
+  display: flex;
+  flex-direction: column;
+  gap: var(--econ-gap);
+  margin: 0;
+  width: 100%;
+}
+
+.econ-blocks .dc-plotwrap {
+  display: grid;
+  /* y-label column · plot; x-label spans under the plot */
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'ylabel plot'
+    '.      xlabel';
+  gap: 6px 8px;
+  align-items: stretch;
+}
+
+.econ-blocks .dc-plot {
+  grid-area: plot;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Axis caption labels (xLabel / yLabel)
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-axislabel {
+  color: var(--econ-block-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.econ-blocks .dc-axislabel--y {
+  grid-area: ylabel;
+  align-self: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+.econ-blocks .dc-axislabel--x {
+  grid-area: xlabel;
+  text-align: center;
+}
+
+.econ-blocks .dc-caption {
+  color: var(--econ-block-muted);
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Legend (used by pie / multi-series kinds; bar relies on the category axis)
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.econ-blocks .dc-legend__item {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 700;
+  gap: 6px;
+}
+
+.econ-blocks .dc-legend__swatch {
+  background: var(--econ-block-tone, var(--econ-tone-slate));
+  border-radius: 3px;
+  height: 12px;
+  width: 12px;
+}
+
+/* ==========================================================================
+   BAR KIND — vertical bars
+   ========================================================================== */
+
+.econ-blocks .dc-bars {
+  height: 240px;
+  position: relative;
+  width: 100%;
+}
+
+/* Gridlines layer — absolutely-positioned full-width rules with a tick label
+   hanging off the left edge. */
+.econ-blocks .dc-grid {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.econ-blocks .dc-grid__line {
+  border-top: 1px dashed var(--econ-block-line);
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.econ-blocks .dc-grid__tick {
+  color: var(--econ-block-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  left: 0;
+  position: absolute;
+  transform: translate(calc(-100% - 6px), -50%);
+  white-space: nowrap;
+}
+
+/* Columns row — sits above the gridlines, leaves room on the left for ticks. */
+.econ-blocks .dc-cols {
+  align-items: flex-end;
+  display: flex;
+  gap: clamp(4px, 2cqw, 18px);
+  height: 100%;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.econ-blocks .dc-col {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+}
+
+/* Track is the full-height channel; the bar grows from its bottom. */
+.econ-blocks .dc-col__track {
+  display: flex;
+  align-items: flex-end;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-height: 0;
+  position: relative;
+}
+
+.econ-blocks .dc-col__bar {
+  background: var(--econ-block-tone, var(--econ-tone-slate));
+  border-radius: 6px 6px 0 0;
+  max-width: 64px;
+  min-height: 2px;
+  position: relative;
+  width: 100%;
+}
+
+/* Value label — above the bar by default; tucks inside on very tall bars via
+   the container query below isn't needed: keep it above, it never overflows
+   because the track reserves headroom. */
+.econ-blocks .dc-col__value {
+  color: var(--econ-block-navy);
+  font-size: 0.74rem;
+  font-weight: 850;
+  left: 50%;
+  position: absolute;
+  top: -1.35em;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.econ-blocks .dc-col__label {
+  color: var(--econ-block-muted);
+  font-weight: 700;
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Broken axis — the zig-zag discontinuity
+   -------------------------------------------------------------------------- */
+
+/* Axis-wide break strip: a white band with a zig-zag top + bottom edge drawn
+   with repeating linear-gradients, masking the gridlines underneath. */
+.econ-blocks .dc-axisbreak {
+  left: 0;
+  position: absolute;
+  right: 0;
+  background:
+    linear-gradient(135deg, var(--econ-block-panel) 50%, transparent 50%) 0 0 / 8px 8px repeat-x,
+    var(--econ-block-panel);
+  border-bottom: 1.5px solid var(--econ-block-line);
+  border-top: 1.5px solid var(--econ-block-line);
+  z-index: 2;
+}
+
+/* Per-bar break decoration: a small zig-zag notch across the bar at the break
+   height, so the discontinuity is visible on the bar itself. */
+.econ-blocks .dc-col__break {
+  height: 8px;
+  left: -2px;
+  position: absolute;
+  right: -2px;
+  transform: translateY(50%);
+  background:
+    linear-gradient(135deg, var(--econ-block-bg) 50%, transparent 50%) 0 0 / 7px 7px repeat-x,
+    linear-gradient(-45deg, var(--econ-block-bg) 50%, transparent 50%) 0 100% / 7px 7px repeat-x;
+  z-index: 3;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile card-list — hidden on desktop, shown at the breakpoint
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-cardlist {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.econ-blocks .dc-card__row {
+  align-items: center;
+  display: grid;
+  gap: 0 10px;
+  grid-template-columns: minmax(0, 1fr) minmax(80px, 2fr) auto;
+  padding: 7px 0;
+}
+
+.econ-blocks .dc-card__row + .dc-card__row {
+  border-top: 1px solid var(--econ-block-line);
+}
+
+.econ-blocks .dc-card__label {
+  color: var(--econ-block-navy);
+  font-weight: 750;
+  min-width: 0;
+}
+
+.econ-blocks .dc-card__minibar {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.econ-blocks .dc-card__minifill {
+  background: var(--econ-block-tone, var(--econ-tone-slate));
+  border-radius: 999px;
+  display: block;
+  height: 100%;
+}
+
+/* An outlier in card mode: flag the mini-bar so a clamped fill reads as ">". */
+.econ-blocks .dc-card__row--over .dc-card__minifill {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      var(--econ-block-tone, var(--econ-tone-slate)) 0 6px,
+      var(--econ-block-tone-700, var(--econ-tone-slate-700)) 6px 12px
+    );
+}
+
+.econ-blocks .dc-card__value {
+  color: var(--econ-block-navy);
+  font-size: 0.86rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   @container dc (max-width: 520px) — bars too dense → card list
+   (520px == --econ-gfx-bp; keep in sync with econ-tokens.css)
+   -------------------------------------------------------------------------- */
+
+@container dc (max-width: 520px) {
+  .econ-blocks .dc-bars {
+    display: none;
+  }
+
+  .econ-blocks .dc-cardlist {
+    display: block;
+  }
+
+  /* On narrow widths the vertical y-axis label wastes a whole column; fold it
+     in line above the plot instead. */
+  .econ-blocks .dc-plotwrap {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'ylabel'
+      'plot'
+      'xlabel';
+  }
+
+  .econ-blocks .dc-axislabel--y {
+    writing-mode: horizontal-tb;
+    transform: none;
+    align-self: start;
+  }
+}

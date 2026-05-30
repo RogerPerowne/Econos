@@ -1,0 +1,80 @@
+/* ==========================================================================
+   graphics/pyramid.css — layout-specific styles for the pyramid graphic.
+   Engine primitives + container context come from css/blocks/graphics.css.
+   Reflow is driven by @container gfx (max-width: 520px) — the documented
+   --econ-gfx-bp constant. NEVER a viewport @media.
+   ========================================================================== */
+
+/* Desktop: a vertical stack of trapezoid bands widening from top to bottom.
+   Each tier uses clip-path (injected as --pyr-clip by the JS renderer) to
+   create the tapered silhouette.  The tier's width is set via --pyr-pct so
+   the band is centred and grows wider each step. */
+
+.econ-blocks .gfx-pyramid__stack {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;            /* tiers abut — the clip creates the visual separation */
+  width: 100%;
+}
+
+.econ-blocks .gfx-pyramid__tier {
+  /* Width widens top → bottom via the per-tier custom property. */
+  clip-path: var(--pyr-clip);
+  display: flex;
+  width: calc(var(--pyr-pct) * 1%);
+}
+
+/* The gfx-node inside the tier fills the full band width and stays centred.
+   Remove the default border-radius on the sides that are clipped — the
+   clip-path already provides the trapezoid shape; visible corners on the
+   clipped edges would look odd. Use a smaller radius only on the top edge. */
+.econ-blocks .gfx-pyramid__tier .gfx-node {
+  border-radius: 0;
+  flex: 1 1 auto;
+  min-height: 52px;
+  padding-block: calc(var(--econ-pad) * 0.75);
+  width: 100%;
+}
+
+/* Give the top tier a rounded top-edge and the bottom tier a rounded
+   bottom-edge so the overall shape feels finished without fighting the clip. */
+.econ-blocks .gfx-pyramid__tier:first-child .gfx-node {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.econ-blocks .gfx-pyramid__tier:last-child .gfx-node {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Thin divider line between tiers so bands read as distinct layers even when
+   adjacent tones are similar.  A 1 px bottom-border on the node suffices;
+   only suppress it on the last tier. */
+.econ-blocks .gfx-pyramid__tier:not(:last-child) .gfx-node {
+  border-bottom: 1px solid var(--econ-block-line);
+}
+
+/* --------------------------------------------------------------------------
+   Narrow: remove the clip-path and let every tier be a full-width card.
+   Tier order (top → bottom) is preserved by DOM order. A small gap between
+   cards makes the hierarchy readable as a ranked list.
+   -------------------------------------------------------------------------- */
+
+@container gfx (max-width: 520px) {
+  .econ-blocks .gfx-pyramid__tier {
+    clip-path: none;
+    width: 100%;
+  }
+
+  .econ-blocks .gfx-pyramid__stack {
+    gap: var(--econ-gap);
+  }
+
+  /* Restore full border-radius on every node so each card looks complete. */
+  .econ-blocks .gfx-pyramid__tier .gfx-node {
+    border-radius: 12px;
+    border-bottom: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  }
+}

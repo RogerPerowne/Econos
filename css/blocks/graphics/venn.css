@@ -1,0 +1,223 @@
+/* ==========================================================================
+   graphics/venn.css — layout-specific styles for the venn graphic.
+   Engine primitives + container context come from css/blocks/graphics.css.
+   Reflow is driven by @container gfx (max-width: 520px) — the documented
+   --econ-gfx-bp constant. NEVER a viewport @media.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Stage — the relative-positioned area that holds the absolutely-placed
+   circles, set labels, and intersection labels.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-venn__stage {
+  position: relative;
+  width: 100%;
+  /* Height adapts to the set count via the modifier class below. */
+  aspect-ratio: 16 / 9;
+  overflow: visible;
+}
+
+/* Three-set needs a taller stage to give the triangle room. */
+.econ-blocks .gfx-venn--3set .gfx-venn__stage {
+  aspect-ratio: 4 / 3;
+}
+
+/* --------------------------------------------------------------------------
+   Circles — translucent tone-filled discs.
+   CSS custom prop --venn-r controls the radius (50% of stage width).
+   Each circle is centred on (left, top) via translate(-50%, -50%).
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-venn__circle {
+  --venn-r: 38%;           /* radius as % of stage width */
+  border-radius: 50%;
+  height: calc(var(--venn-r) * 2);
+  width: calc(var(--venn-r) * 2);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /* Translucent fill via tone-50 + reduced opacity; border from tone-100. */
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 2px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  opacity: 0.72;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Three-set circles are slightly smaller so the triple overlap stays visible. */
+.econ-blocks .gfx-venn--3set .gfx-venn__circle {
+  --venn-r: 34%;
+}
+
+/* --------------------------------------------------------------------------
+   Set labels — float near the outer pole of each circle.
+   data-venn-pos drives position via attribute selectors.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-venn__set-label {
+  position: absolute;
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 30%;
+  pointer-events: none;
+  /* Default: hide until a pos attribute overrides (safety fallback). */
+  display: none;
+}
+
+/* Two-set positions */
+.econ-blocks .gfx-venn--2set .gfx-venn__set-label[data-venn-pos="left"] {
+  display: block;
+  left: 6%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.econ-blocks .gfx-venn--2set .gfx-venn__set-label[data-venn-pos="right"] {
+  display: block;
+  right: 6%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+/* Three-set positions */
+.econ-blocks .gfx-venn--3set .gfx-venn__set-label[data-venn-pos="top"] {
+  display: block;
+  left: 50%;
+  top: 2%;
+  transform: translateX(-50%);
+}
+
+.econ-blocks .gfx-venn--3set .gfx-venn__set-label[data-venn-pos="bottom-left"] {
+  display: block;
+  bottom: 2%;
+  left: 4%;
+  transform: none;
+}
+
+.econ-blocks .gfx-venn--3set .gfx-venn__set-label[data-venn-pos="bottom-right"] {
+  display: block;
+  bottom: 2%;
+  right: 4%;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Intersection labels — centred in each overlap zone.
+   Each is absolutely positioned via a JS-supplied data-venn-ix key that maps
+   to a CSS rule below. They sit above the circles (z-index > 0).
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-venn__ix-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--econ-block-navy);
+  max-width: 22%;
+  z-index: 2;
+  pointer-events: none;
+  /* Default: hide until a data-venn-ix position overrides. */
+  display: none;
+}
+
+/* Two-set — single pairwise overlap at centre (50 50). */
+.econ-blocks .gfx-venn--2set .gfx-venn__ix-label[data-venn-ix="0,1"] {
+  display: block;
+  left: 50%;
+  top: 50%;
+}
+
+/* Three-set — pairwise overlaps and the triple centre. */
+.econ-blocks .gfx-venn--3set .gfx-venn__ix-label[data-venn-ix="0,1"] {
+  display: block;
+  left: 40%;
+  top: 48%;
+}
+
+.econ-blocks .gfx-venn--3set .gfx-venn__ix-label[data-venn-ix="0,2"] {
+  display: block;
+  left: 60%;
+  top: 48%;
+}
+
+.econ-blocks .gfx-venn--3set .gfx-venn__ix-label[data-venn-ix="1,2"] {
+  display: block;
+  left: 50%;
+  top: 76%;
+}
+
+.econ-blocks .gfx-venn--3set .gfx-venn__ix-label[data-venn-ix="0,1,2"] {
+  display: block;
+  left: 50%;
+  top: 58%;
+}
+
+/* --------------------------------------------------------------------------
+   Narrow-mode chip list — shown instead of the stage intersection labels.
+   On desktop this list is hidden; at narrow it becomes the readable fallback.
+   -------------------------------------------------------------------------- */
+
+/* The whole stacked list lives in __mobile, hidden on desktop, shown at narrow. */
+.econ-blocks .gfx-venn__mobile { display: none; }
+
+.econ-blocks .gfx-venn__mlabel {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--econ-block-muted, #64748B);
+  margin: 10px 0 6px;
+}
+.econ-blocks .gfx-venn__mlabel:first-child { margin-top: 0; }
+
+.econ-blocks .gfx-venn__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px var(--econ-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.econ-blocks .gfx-venn__chips--ix { flex-direction: column; gap: 6px; }
+
+.econ-blocks .gfx-venn__chip-of {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  opacity: 0.75;
+}
+.econ-blocks .gfx-venn__chip-label { display: block; }
+.econ-blocks .gfx-venn__chips--ix .gfx-venn__chip {
+  border-radius: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.econ-blocks .gfx-venn__chip {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 999px;
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.8rem;
+  font-weight: 850;
+  line-height: 1.25;
+  padding: 4px 12px;
+}
+
+/* --------------------------------------------------------------------------
+   @container gfx (max-width: 520px) — narrow reflow
+   Circles scale down to 60%; intersection overlay labels hide; chip list shown.
+   -------------------------------------------------------------------------- */
+
+@container gfx (max-width: 520px) {
+  /* The overlapping circles can't stay legible when narrow — drop them and
+     show the stacked Sets + Overlaps list instead. */
+  .econ-blocks .gfx-venn__stage { display: none; }
+  .econ-blocks .gfx-venn__mobile { display: block; }
+}

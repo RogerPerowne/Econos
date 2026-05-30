@@ -1,0 +1,196 @@
+/* ==========================================================================
+   graphics/richTable.css — layout styles for the richTable graphic block.
+   Engine primitives + container context come from css/blocks/graphics.css.
+
+   RESPONSIVE BY CONSTRUCTION:
+   .gfx-root (in graphics.css) sets container-type:inline-size +
+   container-name:gfx on the root. ALL reflow below is keyed on
+   @container gfx (max-width: 520px) — NEVER a viewport @media.
+
+   Desktop: a real CSS grid — column headers across the top, optional row
+   labels down the left side, rich cells filling the interior.
+
+   Narrow (≤ 520px): each row becomes a self-describing card. The shared
+   column-header strip is hidden. Each cell becomes a labelled line:
+   "COLUMN HEADER · cell body" — no horizontal scroll needed.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Shared grid template helper
+   --gfx-rt-cols  : number of data columns (set inline by renderer)
+   --gfx-rt-has-rowhead : 1 → prepend a row-header column; 0 → data only
+   -------------------------------------------------------------------------- */
+
+/* The head strip and every data row share the SAME column template so
+   columns stay aligned. Default: N equal data columns, no row-header column.
+   When the renderer emits row headers it adds .gfx-rt__row--labelled on
+   every row and a .gfx-rt__corner cell in the head; the overrides below
+   prepend the row-header track in both cases. */
+.econ-blocks .gfx-rt__head,
+.econ-blocks .gfx-rt__row {
+  display: grid;
+  gap: var(--econ-gap);
+  grid-template-columns: repeat(var(--gfx-rt-cols, 1), minmax(0, 1fr));
+}
+
+/* Row-header column present: both the head strip (identified by .gfx-rt__corner)
+   and every labelled body row get the extra leading track. */
+.econ-blocks .gfx-rt__head:has(.gfx-rt__corner),
+.econ-blocks .gfx-rt__row--labelled {
+  grid-template-columns:
+    minmax(88px, 0.75fr)
+    repeat(var(--gfx-rt-cols, 1), minmax(0, 1fr));
+}
+
+/* --------------------------------------------------------------------------
+   Column header strip
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-rt__head {
+  margin-bottom: calc(var(--econ-gap) * 0.25);
+}
+
+.econ-blocks .gfx-rt__corner {
+  /* blank spacer aligned with the row-header column */
+}
+
+.econ-blocks .gfx-rt__colhead {
+  color: var(--econ-block-muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Row header
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-rt__body {
+  display: grid;
+  gap: var(--econ-gap);
+}
+
+.econ-blocks .gfx-rt__rowhead {
+  align-items: center;
+  color: var(--econ-block-navy);
+  display: flex;
+  font-size: 0.88rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   Rich cell — tone-aware, icon + body inline
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-rt__cell {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: var(--econ-pad);
+}
+
+.econ-blocks .gfx-rt__cell-inner {
+  align-items: flex-start;
+  display: flex;
+  gap: 6px;
+}
+
+.econ-blocks .gfx-rt__cell-icon {
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.econ-blocks .gfx-rt__cell-body {
+  color: var(--econ-block-navy);
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+  min-width: 0;
+}
+
+/* Narrow-view column label — hidden on desktop; shown as a tag in card view */
+.econ-blocks .gfx-rt__cell-label {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  display: none;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   NARROW REFLOW — @container gfx (max-width: 520px)
+   Each row stacks as a self-describing card. Column-header strip disappears.
+   Each cell shows its own column label so the card is fully readable alone.
+   This is the key win over decisionMatrix / horizontal scroll.
+   -------------------------------------------------------------------------- */
+
+@container gfx (max-width: 520px) {
+  /* Hide the shared desktop column-header strip */
+  .econ-blocks .gfx-rt__head {
+    display: none;
+  }
+
+  /* Each row becomes a card */
+  .econ-blocks .gfx-rt__row,
+  .econ-blocks .gfx-rt__row--labelled {
+    background: var(--econ-block-panel);
+    border: 1px solid var(--econ-block-line);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--econ-pad);
+  }
+
+  /* Row header becomes the card title */
+  .econ-blocks .gfx-rt__rowhead {
+    border-bottom: 1px solid var(--econ-block-line);
+    font-size: 0.96rem;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+
+  /* Each cell becomes a labelled line within the card */
+  .econ-blocks .gfx-rt__cell {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    padding: 5px 0;
+  }
+
+  /* Divider between cells for readability */
+  .econ-blocks .gfx-rt__cell + .gfx-rt__cell {
+    border-top: 1px solid var(--econ-block-line);
+  }
+
+  /* Show the column label as an inline tag */
+  .econ-blocks .gfx-rt__cell-label {
+    display: inline-block;
+    flex: 0 0 auto;
+    min-width: 64px;
+    max-width: 40%;
+  }
+
+  /* Inner content sits inline after the label */
+  .econ-blocks .gfx-rt__cell-inner {
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .econ-blocks .gfx-rt__cell-body {
+    font-size: var(--econ-body-size);
+  }
+}

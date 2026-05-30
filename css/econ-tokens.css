@@ -33,6 +33,16 @@
   --econ-gap: 14px;
   --econ-pad: 16px;
   --econ-body-size: 0.96rem;
+
+  /* Structural-graphics reflow breakpoint. The graphics engine
+     (css/blocks/graphics.css + css/blocks/graphics/*.css) reflows every
+     named layout based on the graphic's OWN width via CSS container queries
+     (`@container gfx (max-width: 520px)`), not the viewport. This token is the
+     documented source of truth for that breakpoint. NOTE: CSS cannot
+     interpolate a custom property into a media / container *condition*, so the
+     `520px` literal is repeated in each @container query — keep them in sync
+     with this value. See docs/STRUCTURAL_GRAPHICS.md. */
+  --econ-gfx-bp: 520px;
 }
 
 [data-density="airy"] {

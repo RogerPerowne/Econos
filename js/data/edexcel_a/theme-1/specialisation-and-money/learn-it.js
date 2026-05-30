@@ -32,24 +32,22 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Specialisation & money: the big picture',
-      tip: { icon: '💡', tone: 'blue', text: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest.' },
-      flow: [
-        { icon: '🛠️', title: 'Specialisation',     sub: 'Focus on what you do relatively well.' },
-        { icon: '📈', title: 'Higher productivity', sub: 'You produce more with the same resources.' },
-        { icon: '🤝', title: 'Exchange',           sub: 'You trade for the goods and services you don\'t produce.' },
-        { icon: '💵', title: 'Money',              sub: 'Money is accepted in exchange, making trade much easier.' },
-        { icon: '🏡', title: 'Higher living standards', sub: 'More goods, more choice, better lives.' }
-      ],
-      flowTitle: 'The big-picture chain',
-      flowEmoji: '🔗',
-      keyTerms: [
-        { term: '📈 More output',  def: 'We can produce more with the resources we have.' },
-        { term: '🛒 More choice',  def: 'Trade lets us enjoy a wider variety of goods and services.' },
-        { term: '🤝 Easier trade', def: 'Money removes the "double coincidence of wants" and simplifies exchange.' }
-      ],
-      keyTermsLabel: 'Why this matters',
-      keyTermsEmoji: '⭐',
-      examEdge: 'Specialisation only works well when exchange is possible – and money makes exchange far easier than barter. Make this link explicit in any answer that touches on productivity, trade or development.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest.' },
+        { type: 'sectionHeader', icon: '🔗', label: 'The big-picture chain' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Specialisation',        detail: 'Focus on what you do relatively well.' },
+          { label: 'Higher productivity',   detail: 'You produce more with the same resources.' },
+          { label: 'Exchange',              detail: 'You trade for the goods and services you don\'t produce.' },
+          { label: 'Money',                 detail: 'Money is accepted in exchange, making trade much easier.' },
+          { label: 'Higher living standards', detail: 'More goods, more choice, better lives.' }
+        ]},
+        { type: 'sectionHeader', icon: '⭐', label: 'Why this matters' },
+        { type: 'glossaryRow', term: '📈 More output',  def: 'We can produce more with the resources we have.' },
+        { type: 'glossaryRow', term: '🛒 More choice',  def: 'Trade lets us enjoy a wider variety of goods and services.' },
+        { type: 'glossaryRow', term: '🤝 Easier trade', def: 'Money removes the "double coincidence of wants" and simplifies exchange.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Specialisation only works well when exchange is possible – and money makes exchange far easier than barter. Make this link explicit in any answer that touches on productivity, trade or development.' }
+      ]
     },
 
     /* ================================================================

@@ -148,11 +148,44 @@
     return `<aside class="warning" data-overflow-watch>${renderIcon(block.icon || '!', 'disc')}<div class="warning__text text-fit-1">${escapeHtml(block.text || '')}</div></aside>`;
   };
 
+  const VALID_DENSITIES = new Set(['airy', 'standard', 'compact', 'exam']);
+
   function renderBlocks(card) {
     const blocks = card && Array.isArray(card.blocks) ? card.blocks : [];
     const html = blocks.map(renderBlockWrapper).join('');
     if (isDevMode()) window.setTimeout(scanRenderedBlocks, 0);
-    return `<div class="econ-blocks" data-render-blocks="1">${html}</div>`;
+
+    // ── Card-level metadata that drives layout ────────────────────────────
+    // density → [data-density] attribute (matches css/econ-tokens.css selectors)
+    const densityAttr = card && VALID_DENSITIES.has(card.density)
+      ? ` data-density="${escapeAttr(card.density)}"`
+      : '';
+    // layoutPreset → extra class econ-preset--<value>
+    const presetClass = card && typeof card.layoutPreset === 'string' && card.layoutPreset
+      ? ` econ-preset--${escapeAttr(card.layoutPreset)}`
+      : '';
+
+    // ── Dev-mode notes for non-rendering build-guidance fields ────────────
+    if (isDevMode()) {
+      if (card && card.preserveMockupLayout) {
+        console.info('[Econos blocks] preserveMockupLayout is set on card:', card.id || card.title || card);
+      }
+      if (card && card.layoutLock) {
+        console.info('[Econos blocks] layoutLock is set on card:', card.id || card.title || card);
+      }
+    }
+
+    // ── Card chrome (step label / title / lede) ───────────────────────────
+    // The legacy template renderers each emit these themselves; the block
+    // path must do the same so a migrated card keeps its heading. Authored
+    // content is trusted (ledes may contain <strong> etc.), so not escaped —
+    // matching the existing templates.
+    const chrome =
+      (card && card.stepLabel ? `<div class="card__step-label">${card.stepLabel}</div>` : '') +
+      (card && card.title ? `<h1 class="card__title">${card.title}</h1>` : '') +
+      (card && card.lede ? `<p class="card__lede">${card.lede}</p>` : '');
+
+    return `${chrome}<div class="econ-blocks${presetClass}" data-render-blocks="1"${densityAttr}>${html}</div>`;
   }
 
   function overflowSummary() {

@@ -43,56 +43,27 @@ window.ECONOS_TOPIC = {
       lede: 'Inflation is a sustained rise in the general price level. Over time, money buys fewer goods and services – affecting wages, savings, living standards, and policy decisions.',
       ledeStyle: 'plain',
 
-      keyDistinction: {
-        icon: '🔎',
-        title: 'The key distinction',
-        items: [
-          { term: 'Inflation',    color: '#059669', text: 'prices are rising and the general price level is going up.' },
-          { term: 'Disinflation', color: '#7C3AED', text: 'inflation is still positive, but the rate of inflation is falling.' },
-          { term: 'Deflation',    color: '#E11D48', text: 'the general price level is falling (negative inflation).' }
-        ]
-      },
-
-      causesFirst: true,
-      causesLabel: null,
-      causes: [
-        {
-          tone: 'green',
-          head: 'Inflation',
-          svgKey: 'trendCurveUp',
-          body: 'Prices are rising and the price level is going up.',
-          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £105</strong>' }
-        },
-        {
-          tone: 'purple',
-          head: 'Disinflation',
-          svgKey: 'trendCurveWavy',
-          body: 'Prices are still rising, but more slowly.',
-          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £102</strong>' }
-        },
-        {
-          tone: 'rose',
-          head: 'Deflation',
-          svgKey: 'trendCurveDown',
-          body: 'The general price level is falling.',
-          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £98</strong>' }
-        }
-      ],
-
-      whyItMatters: {
-        title: 'Why it matters',
-        items: [
-          { tone: 'green',  icon: '👥', label: 'Households',  text: 'Affects purchasing power, wages, and the value of savings.' },
-          { tone: 'purple', icon: '🏭', label: 'Firms',       text: 'Affects costs, pricing decisions, investment, and profits.' },
-          { tone: 'amber',  icon: '🏛️', label: 'Government',  text: 'Affects tax revenues, welfare costs, debt and living standards.' },
-          { tone: 'blue',   icon: '🏦', label: 'Central bank', text: 'Monitors inflation to achieve price stability and support growth.' }
-        ]
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Examiners love the precise distinction between disinflation and deflation – use the terms accurately. State that inflation is measured as the <strong>rate of change of a price index</strong>, not the price level itself.'
-      }
+      blocks: [
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'Inflation',    body: 'Prices are rising and the price level is going up.\n\n🧺 Example: Basket from <strong>£100 → £105</strong>' },
+          { type: 'tile', tone: 'purple', icon: '〰️', head: 'Disinflation', body: 'Prices are still rising, but more slowly.\n\n🧺 Example: Basket from <strong>£100 → £102</strong>' },
+          { type: 'tile', tone: 'rose',   icon: '📉', head: 'Deflation',    body: 'The general price level is falling.\n\n🧺 Example: Basket from <strong>£100 → £98</strong>' }
+        ]},
+        { type: 'sectionHeader', icon: '🔎', label: 'THE KEY DISTINCTION' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  head: 'Inflation',    body: 'Prices are rising and the general price level is going up.' },
+          { type: 'tile', tone: 'purple', head: 'Disinflation', body: 'Inflation is still positive, but the rate of inflation is falling.' },
+          { type: 'tile', tone: 'rose',   head: 'Deflation',    body: 'The general price level is falling (negative inflation).' }
+        ]},
+        { type: 'sectionHeader', icon: '💡', label: 'WHY IT MATTERS' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '👥', head: 'Households',   body: 'Affects purchasing power, wages, and the value of savings.' },
+          { type: 'tile', tone: 'purple', icon: '🏭', head: 'Firms',        body: 'Affects costs, pricing decisions, investment, and profits.' },
+          { type: 'tile', tone: 'amber',  icon: '🏛️', head: 'Government',   body: 'Affects tax revenues, welfare costs, debt and living standards.' },
+          { type: 'tile', tone: 'blue',   icon: '🏦', head: 'Central bank', body: 'Monitors inflation to achieve price stability and support growth.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Examiners love the precise distinction between disinflation and deflation – use the terms accurately. State that inflation is measured as the <strong>rate of change of a price index</strong>, not the price level itself.' }
+      ]
     },
 
     /* ====================================================================
@@ -310,7 +281,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 4 – Costs of inflation
+       CARD 5 – Costs of inflation
        Five main costs. Winners and losers. The chain of impact.
        ==================================================================== */
     {
@@ -320,56 +291,36 @@ window.ECONOS_TOPIC = {
       title: 'Costs of inflation',
       lede: 'The harm depends on how high and how unpredictable inflation is – mild, anticipated inflation is manageable, but unstable inflation creates wider economic costs.',
 
-      causesFirst: true,
-      causesLabel: 'The main costs',
-      causesStyle: 'numbered-rows',
-      causes: [
-        { svgKey: 'receiptPound',  head: 'Menu costs',                  body: 'Firms must keep changing prices, menus, catalogues and systems.' },
-        { svgKey: 'shoeRun',       head: 'Shoe-leather costs',          body: 'People spend time and effort managing cash balances and seeking the best rates.' },
-        { svgKey: 'peopleArrow',   head: 'Redistribution',              body: 'Creditors lose and debtors gain; fixed incomes fall behind variable incomes.' },
-        { svgKey: 'cloudQuestion', head: 'Uncertainty',                 body: 'Harder planning reduces investment, confidence and long-term spending.' },
-        { svgKey: 'globeNet',      head: 'Lost competitiveness',        body: 'If UK inflation is higher than rivals, exports become less competitive and (X−M) deteriorates.' }
-      ],
-
-      pairLabel: 'Winners and losers',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'green',
-        icon: '✅',
-        iconStyle: 'circle',
-        label: 'May gain',
-        text: 'Debtors (real value of debt erodes). Owners of real assets (land, property). Governments with large nominal debt. Firms with pricing power that adjust prices quickly.'
-      },
-      right: {
-        tone: 'rose',
-        icon: '❌',
-        iconStyle: 'circle',
-        label: 'May lose',
-        text: 'Savers and creditors on fixed nominal rates. Workers on fixed wages. Pensioners on fixed incomes. Holders of cash. Exporters in competitive markets.'
-      },
-
-      flowTitle: 'The chain of impact',
-      flow: [
-        { tone: 'amber',  icon: '📈', title: 'Higher inflation',  sub: 'Especially if high and volatile.' },
-        { tone: 'amber',  icon: '❓', title: 'Uncertainty',        sub: 'Firms and households cannot plan.' },
-        { tone: 'rose',   icon: '📉', title: 'Weaker investment',  sub: 'Long-term decisions get delayed.' },
-        { tone: 'rose',   icon: '🐌', title: 'Slower growth',       sub: 'Reduced productive potential.' }
-      ],
-
-      tip: {
-        icon: '⚠️',
-        tone: 'rose',
-        text: '<strong>Common trap:</strong> not all inflation is equally damaging – the biggest problems come when inflation is <em>high, volatile or unexpected</em>. Mild, anticipated inflation is manageable.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Evaluation should distinguish between <strong>anticipated low inflation</strong> (largely benign) and <strong>high, unpredictable inflation</strong> (the latter causes the bigger welfare losses through uncertainty, lost investment and misallocation).'
-      }
+      blocks: [
+        { type: 'sectionHeader', label: 'The main costs' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'slate', icon: '🧾', head: 'Menu costs',         body: 'Firms must keep changing prices, menus, catalogues and systems.' },
+          { type: 'tile', tone: 'slate', icon: '👟', head: 'Shoe-leather costs',  body: 'People spend time and effort managing cash balances and seeking the best rates.' },
+          { type: 'tile', tone: 'slate', icon: '👥', head: 'Redistribution',      body: 'Creditors lose and debtors gain; fixed incomes fall behind variable incomes.' },
+          { type: 'tile', tone: 'slate', icon: '❓', head: 'Uncertainty',          body: 'Harder planning reduces investment, confidence and long-term spending.' },
+          { type: 'tile', tone: 'slate', icon: '🌐', head: 'Lost competitiveness', body: 'If UK inflation is higher than rivals, exports become less competitive and (X−M) deteriorates.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'Winners and losers' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '✅', head: 'May gain',
+            body: 'Debtors (real value of debt erodes). Owners of real assets (land, property). Governments with large nominal debt. Firms with pricing power that adjust prices quickly.' },
+          { type: 'tile', tone: 'rose', icon: '❌', head: 'May lose',
+            body: 'Savers and creditors on fixed nominal rates. Workers on fixed wages. Pensioners on fixed incomes. Holders of cash. Exporters in competitive markets.' }
+        ]},
+        { type: 'sectionHeader', label: 'The chain of impact' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Higher inflation',  detail: 'Especially if high and volatile.' },
+          { label: 'Uncertainty',       detail: 'Firms and households cannot plan.' },
+          { label: 'Weaker investment', detail: 'Long-term decisions get delayed.' },
+          { label: 'Slower growth',     detail: 'Reduced productive potential.' }
+        ]},
+        { type: 'calloutStrip', tone: 'rose', icon: '⚠️', text: 'Common trap: not all inflation is equally damaging – the biggest problems come when inflation is high, volatile or unexpected. Mild, anticipated inflation is manageable.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Evaluation should distinguish between anticipated low inflation (largely benign) and high, unpredictable inflation (the latter causes the bigger welfare losses through uncertainty, lost investment and misallocation).' }
+      ]
     },
 
     /* ====================================================================
-       CARD 5 – Fiscal drag and real vs nominal
+       CARD 6 – Fiscal drag and real vs nominal
        The gap between nominal and real. Frozen thresholds = stealth tax rise.
        ==================================================================== */
     {
@@ -379,75 +330,42 @@ window.ECONOS_TOPIC = {
       title: 'Fiscal drag and real vs nominal',
       lede: 'Inflation changes money values on paper – what matters for living standards is the <strong>real value after inflation</strong>.',
 
-      flowChart: {
-        label: 'A 5-year example',
-        emoji: '📊',
-        svgKey: 'fiscalDragChart',
-        caption: 'Year 1 wage of £49,000 sits in the basic-rate band. Five years of inflation-matching pay rises lift it to £58,000 – but because tax thresholds are frozen, the same real wage is now pulled into the higher-rate band.'
-      },
-
-      causesFirst: true,
-      causesLabel: 'Nominal vs real – three worked examples',
-      causes: [
-        {
-          tone: 'green',
-          icon: '💷',
-          head: 'Real wage growth',
-          body: 'Nominal pay rises <strong>6%</strong> − inflation <strong>4%</strong> = <strong>real pay rises ~2%</strong>. Real growth shows the change in purchasing power.'
-        },
-        {
-          tone: 'blue',
-          icon: '🏦',
-          head: 'Real interest rate',
-          body: 'Nominal interest <strong>5%</strong> − inflation <strong>3%</strong> = <strong>real interest ~2%</strong>. The real rate shows the true return after inflation.'
-        },
-        {
-          tone: 'amber',
-          icon: '🏠',
-          head: 'Real cost of debt',
-          body: 'Mortgage rate <strong>5%</strong> − inflation <strong>4%</strong> = <strong>real cost ~1%</strong>. Inflation erodes the real burden of nominal debt.'
-        }
-      ],
-
-      flowTitle: 'How fiscal drag works',
-      flow: [
-        { tone: 'slate',  icon: '❄️', title: 'Tax thresholds frozen',  sub: 'Personal allowance and bands held fixed in nominal terms.' },
-        { tone: 'amber',  icon: '💷', title: 'Nominal wages rise',      sub: 'Pay rises with inflation, but thresholds do not.' },
-        { tone: 'rose',   icon: '⬆️', title: 'More income above thresholds', sub: 'A larger share of pay falls into higher tax bands.' },
-        { tone: 'rose',   icon: '🪙', title: 'Stealth tax rise',         sub: 'Workers pay more tax without any real pay increase.' }
-      ],
-
-      whyItMatters: {
-        title: 'Why it matters',
-        items: [
-          { tone: 'green',  icon: '👥', label: 'Households',          text: 'Real income can fall even when your payslip shows a nominal rise.' },
-          { tone: 'purple', icon: '🏛️', label: 'Government revenue', text: 'Frozen brackets mean more income is taxed at higher rates – fiscal drag.' },
-          { tone: 'amber',  icon: '💼', label: 'Wage bargaining',     text: 'Negotiations target nominal rises, often chasing inflation rather than gaining real ground.' },
-          { tone: 'blue',   icon: '🗣️', label: 'Policy debate',       text: 'Pressure grows to uprate thresholds and reduce the stealth tax rise.' }
-        ]
-      },
-
-      keyTerms: [
-        { term: 'Nominal value',  def: 'A money amount stated in today\'s prices, ignoring inflation.' },
-        { term: 'Real value',      def: 'A money amount adjusted for inflation – the change in actual purchasing power.' },
-        { term: 'Fiscal drag',     def: 'Frozen tax thresholds plus rising nominal wages → more income taxed at higher rates → a stealth tax rise.' },
-        { term: 'Real interest rate', def: 'Nominal interest rate minus the inflation rate.' }
-      ],
-
-      tip: {
-        icon: '⚠️',
-        tone: 'rose',
-        text: '<strong>Common trap:</strong> a rise in <em>nominal</em> wages does not mean living standards have improved. Always compare with inflation to get the real change.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Always compare wages, interest or tax thresholds with inflation. Examiners reward the phrase <em>real value after adjusting for inflation</em> – and the explicit identification of fiscal drag as a stealth tax rise when thresholds are frozen.'
-      }
+      blocks: [
+        { type: 'sectionHeader', icon: '🧮', label: 'NOMINAL VS REAL – THREE WORKED EXAMPLES' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '💷', head: 'Real wage growth',   body: 'Nominal pay rises <strong>6%</strong> − inflation <strong>4%</strong> = <strong>real pay rises ~2%</strong>. Real growth shows the change in purchasing power.' },
+          { type: 'tile', tone: 'blue',  icon: '🏦', head: 'Real interest rate', body: 'Nominal interest <strong>5%</strong> − inflation <strong>3%</strong> = <strong>real interest ~2%</strong>. The real rate shows the true return after inflation.' },
+          { type: 'tile', tone: 'amber', icon: '🏠', head: 'Real cost of debt',  body: 'Mortgage rate <strong>5%</strong> − inflation <strong>4%</strong> = <strong>real cost ~1%</strong>. Inflation erodes the real burden of nominal debt.' }
+        ]},
+        { type: 'calloutStrip', tone: 'slate', icon: '📊', text: 'A 5-year example: Year 1 wage of £49,000 sits in the basic-rate band. Five years of inflation-matching pay rises lift it to £58,000 – but because tax thresholds are frozen, the same real wage is now pulled into the higher-rate band.' },
+        { type: 'sectionHeader', icon: '❄️', label: 'HOW FISCAL DRAG WORKS' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Tax thresholds frozen',        detail: 'Personal allowance and bands held fixed in nominal terms.' },
+          { label: 'Nominal wages rise',           detail: 'Pay rises with inflation, but thresholds do not.' },
+          { label: 'More income above thresholds', detail: 'A larger share of pay falls into higher tax bands.' },
+          { label: 'Stealth tax rise',             detail: 'Workers pay more tax without any real pay increase.' }
+        ]},
+        { type: 'sectionHeader', icon: '💡', label: 'WHY IT MATTERS' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '👥', head: 'Households',          body: 'Real income can fall even when your payslip shows a nominal rise.' },
+          { type: 'tile', tone: 'purple', icon: '🏛️', head: 'Government revenue',  body: 'Frozen brackets mean more income is taxed at higher rates – fiscal drag.' },
+          { type: 'tile', tone: 'amber',  icon: '💼', head: 'Wage bargaining',      body: 'Negotiations target nominal rises, often chasing inflation rather than gaining real ground.' },
+          { type: 'tile', tone: 'blue',   icon: '🗣️', head: 'Policy debate',        body: 'Pressure grows to uprate thresholds and reduce the stealth tax rise.' }
+        ]},
+        { type: 'sectionHeader', icon: '📖', label: 'KEY TERMS' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'slate', head: 'Nominal value',       body: 'A money amount stated in today\'s prices, ignoring inflation.' },
+          { type: 'tile', tone: 'slate', head: 'Real value',          body: 'A money amount adjusted for inflation – the change in actual purchasing power.' },
+          { type: 'tile', tone: 'slate', head: 'Fiscal drag',         body: 'Frozen tax thresholds plus rising nominal wages → more income taxed at higher rates → a stealth tax rise.' },
+          { type: 'tile', tone: 'slate', head: 'Real interest rate',  body: 'Nominal interest rate minus the inflation rate.' }
+        ]},
+        { type: 'calloutStrip', tone: 'rose', icon: '⚠️', text: '<strong>Common trap:</strong> a rise in <em>nominal</em> wages does not mean living standards have improved. Always compare with inflation to get the real change.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always compare wages, interest or tax thresholds with inflation. Examiners reward the phrase <em>real value after adjusting for inflation</em> – and the explicit identification of fiscal drag as a stealth tax rise when thresholds are frozen.' }
+      ]
     },
 
     /* ====================================================================
-       CARD 6 – Costs of deflation
+       CARD 7 – Costs of deflation
        The deflationary spiral. Why central banks fear it.
        ==================================================================== */
     {

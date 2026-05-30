@@ -255,66 +255,35 @@ window.ECONOS_TOPIC = {
       lede: 'A shift happens when something changes one of the four engines at every price level.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Think in four engines – C, I, G and (X − M). If one changes, the whole AD curve shifts.' },
-
-      causesFirst: true,
-      causesLabel: 'THE FOUR ENGINES',
-      causesEmoji: '⚙️',
-      causesStyle: 'numbered',
-      causesCols: 2,
-      causes: [
-        {
-          tone: 'blue', icon: '🛒', head: 'Consumption (C)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;">' +
-            '<div><div style="font-weight:800;color:#1E40AF;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Disposable income up</li><li>Interest rates down</li><li>Wealth up</li><li>Confidence up</li><li>Debt easier to get</li></ul></div>' +
-            '<div><div style="font-weight:800;color:#1E40AF;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Disposable income down</li><li>Interest rates up</li><li>Wealth down</li><li>Confidence down</li><li>Debt harder to get</li></ul></div>' +
-            '</div>'
-        },
-        {
-          tone: 'amber', icon: '🏭', head: 'Investment (I)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;">' +
-            '<div><div style="font-weight:800;color:#B45309;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Business confidence / animal spirits up</li><li>Interest rates down</li><li>Corporate tax down</li><li>Accelerator up</li></ul></div>' +
-            '<div><div style="font-weight:800;color:#B45309;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Business confidence / animal spirits down</li><li>Interest rates up</li><li>Corporate tax up</li><li>Accelerator down</li></ul></div>' +
-            '</div>'
-        },
-        {
-          tone: 'purple', icon: '🏛️', head: 'Government spending (G)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;">' +
-            '<div><div style="font-weight:800;color:#6D28D9;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Fiscal stance expansionary</li><li>Election cycle spending up</li><li>Automatic stabilisers kick in (recession)</li></ul></div>' +
-            '<div><div style="font-weight:800;color:#6D28D9;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Fiscal stance contractionary</li><li>Election cycle spending down</li><li>Austerity / debt-rule tightening</li></ul></div>' +
-            '</div>'
-        },
-        {
-          tone: 'green', icon: '🚢', head: 'Net trade (X − M)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;">' +
-            '<div><div style="font-weight:800;color:#047857;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Exchange rate depreciation</li><li>World income up</li><li>UK competitiveness up</li><li>Foreign trade barriers fall</li></ul></div>' +
-            '<div><div style="font-weight:800;color:#047857;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Exchange rate appreciation</li><li>World income down</li><li>UK competitiveness down</li><li>Foreign trade barriers rise</li></ul></div>' +
-            '</div>'
-        }
-      ],
-
-      pairLabel: 'RIGHT OR LEFT?',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue', icon: '→', iconStyle: 'circle',
-        label: 'AD shifts right when…',
-        text: '<ol style="margin:0;padding:0 0 0 18px;font-size:13px;line-height:1.7;color:#0B1426;"><li>Consumers feel wealthier and spend more.</li><li>Firms invest more in new capacity.</li><li>The government spends or transfers more.</li></ol>'
-      },
-      right: {
-        tone: 'amber', icon: '←', iconStyle: 'circle',
-        label: 'AD shifts left when…',
-        text: '<ol style="margin:0;padding:0 0 0 18px;font-size:13px;line-height:1.7;color:#0B1426;"><li>Consumers feel worse off and spend less.</li><li>Firms invest less in new capacity.</li><li>The government cuts spending or raises taxes.</li></ol>'
-      },
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'A change in any one engine can shift AD – but in reality several often move together.'
-      },
-
-      examEdge: {
-        title: 'Exam edge (OCR)',
-        text: 'Organise determinants by C, I, G and (X − M). That instantly gives essays better structure.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Think in four engines – C, I, G and (X − M). If one changes, the whole AD curve shifts.' },
+        { type: 'sectionHeader', icon: '⚙️', label: 'THE FOUR ENGINES' },
+        { type: 'grid', cols: 2, children: [
+          {
+            type: 'tile', tone: 'blue', icon: '🛒', head: 'Consumption (C)',
+            body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;"><div><div style="font-weight:800;color:#1E40AF;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Disposable income up</li><li>Interest rates down</li><li>Wealth up</li><li>Confidence up</li><li>Debt easier to get</li></ul></div><div><div style="font-weight:800;color:#1E40AF;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Disposable income down</li><li>Interest rates up</li><li>Wealth down</li><li>Confidence down</li><li>Debt harder to get</li></ul></div></div>'
+          },
+          {
+            type: 'tile', tone: 'amber', icon: '🏭', head: 'Investment (I)',
+            body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;"><div><div style="font-weight:800;color:#B45309;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Business confidence / animal spirits up</li><li>Interest rates down</li><li>Corporate tax down</li><li>Accelerator up</li></ul></div><div><div style="font-weight:800;color:#B45309;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Business confidence / animal spirits down</li><li>Interest rates up</li><li>Corporate tax up</li><li>Accelerator down</li></ul></div></div>'
+          },
+          {
+            type: 'tile', tone: 'purple', icon: '🏛️', head: 'Government spending (G)',
+            body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;"><div><div style="font-weight:800;color:#6D28D9;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Fiscal stance expansionary</li><li>Election cycle spending up</li><li>Automatic stabilisers kick in (recession)</li></ul></div><div><div style="font-weight:800;color:#6D28D9;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Fiscal stance contractionary</li><li>Election cycle spending down</li><li>Austerity / debt-rule tightening</li></ul></div></div>'
+          },
+          {
+            type: 'tile', tone: 'green', icon: '🚢', head: 'Net trade (X − M)',
+            body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;"><div><div style="font-weight:800;color:#047857;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Exchange rate depreciation</li><li>World income up</li><li>UK competitiveness up</li><li>Foreign trade barriers fall</li></ul></div><div><div style="font-weight:800;color:#047857;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Exchange rate appreciation</li><li>World income down</li><li>UK competitiveness down</li><li>Foreign trade barriers rise</li></ul></div></div>'
+          }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'RIGHT OR LEFT?' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  icon: '→', head: 'AD shifts right when…', body: '<ol style="margin:0;padding:0 0 0 18px;font-size:13px;line-height:1.7;color:#0B1426;"><li>Consumers feel wealthier and spend more.</li><li>Firms invest more in new capacity.</li><li>The government spends or transfers more.</li></ol>' },
+          { type: 'tile', tone: 'amber', icon: '←', head: 'AD shifts left when…',  body: '<ol style="margin:0;padding:0 0 0 18px;font-size:13px;line-height:1.7;color:#0B1426;"><li>Consumers feel worse off and spend less.</li><li>Firms invest less in new capacity.</li><li>The government cuts spending or raises taxes.</li></ol>' }
+        ]},
+        { type: 'bigIdea', text: 'A change in any one engine can shift AD – but in reality several often move together.' },
+        { type: 'examEdge', title: 'Exam edge (OCR)', text: 'Organise determinants by C, I, G and (X − M). That instantly gives essays better structure.' }
+      ]
     },
 
     /* ── CARD 5 ── The multiplier – the ripple ───────────────────── */

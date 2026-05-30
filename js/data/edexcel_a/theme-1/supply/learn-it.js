@@ -168,45 +168,42 @@ window.ECONOS_TOPIC = {
       id: 'supply_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Supply in Context: Key Markets',
-      tip: { icon: '💡', tone: 'blue', text: 'Supply behaves differently across markets because time, capacity, stock levels and nature all affect how easily producers can respond. In the short run supply is often less responsive; in the long run firms can adjust capacity more fully.' },
-      causesStyle: 'plain-white',
-      causesLabel: null,
-      causes: [
-        { tone: 'green', icon: '🌱', head: 'Agriculture',                  body: 'Supply is strongly affected by weather and growing seasons.<br><br>Bad weather or pests can sharply reduce output in the short run.' },
-        { tone: 'green', icon: '🏠', head: 'Housing',                      body: 'Supply is slow to respond in the short run due to planning, approvals and construction lags.<br><br>More responsive in the long run.' },
-        { tone: 'green', icon: '🛢️', head: 'Energy / oil',                 body: 'Supply requires large capital investment and infrastructure.<br><br>Global shocks, geopolitics and OPEC decisions can shift supply.' },
-        { tone: 'green', icon: '🛒', head: 'Manufactured consumer goods', body: 'Supply can often respond more quickly if spare capacity exists.<br><br>Firms can increase output with existing machinery and labour.' }
-      ],
-      examEdge: 'PES (price elasticity of supply) determines how much of a supply shift becomes price vs quantity change. Very inelastic supply (housing): demand shift → mainly price rise, little quantity change. Elastic supply (manufacturing): demand shift → mainly quantity change, small price change.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Supply behaves differently across markets because time, capacity, stock levels and nature all affect how easily producers can respond. In the short run supply is often less responsive; in the long run firms can adjust capacity more fully.' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🌱', head: 'Agriculture',                  body: 'Supply is strongly affected by weather and growing seasons.<br><br>Bad weather or pests can sharply reduce output in the short run.' },
+          { type: 'tile', tone: 'green', icon: '🏠', head: 'Housing',                      body: 'Supply is slow to respond in the short run due to planning, approvals and construction lags.<br><br>More responsive in the long run.' },
+          { type: 'tile', tone: 'green', icon: '🛢️', head: 'Energy / oil',                 body: 'Supply requires large capital investment and infrastructure.<br><br>Global shocks, geopolitics and OPEC decisions can shift supply.' },
+          { type: 'tile', tone: 'green', icon: '🛒', head: 'Manufactured consumer goods', body: 'Supply can often respond more quickly if spare capacity exists.<br><br>Firms can increase output with existing machinery and labour.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'PES (price elasticity of supply) determines how much of a supply shift becomes price vs quantity change. Very inelastic supply (housing): demand shift → mainly price rise, little quantity change. Elastic supply (manufacturing): demand shift → mainly quantity change, small price change.' }
+      ]
     },
     {
       id: 'supply_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Supply and the Profit Motive',
-      tip: { icon: '💡', tone: 'blue', text: 'The law of supply is rooted in incentives: when selling becomes more profitable, firms usually want to produce more.' },
-      flowTitle: 'How the profit motive drives supply',
-      flowEmoji: '➡️',
-      flow: [
-        { tone: 'green',  icon: '🏷️', title: 'Higher market price',                     sub: 'When the market price rises, each unit sold is worth more.' },
-        { tone: 'amber',  icon: '📈', title: 'Higher potential revenue / profit',        sub: 'With costs unchanged in the short run, higher price raises potential profit per unit.' },
-        { tone: 'purple', icon: '🏭', title: 'Firms expand output or enter the market',  sub: 'Existing firms produce more and/or new firms are attracted by higher profits.' },
-        { tone: 'green',  icon: '🛒', title: 'Quantity supplied rises',                  sub: 'More total output is available at each price level.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'The law of supply is rooted in incentives: when selling becomes more profitable, firms usually want to produce more.' },
+        { type: 'sectionHeader', icon: '➡️', label: 'How the profit motive drives supply' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Higher market price',                    detail: 'When the market price rises, each unit sold is worth more.' },
+          { label: 'Higher potential revenue / profit',      detail: 'With costs unchanged in the short run, higher price raises potential profit per unit.' },
+          { label: 'Firms expand output or enter the market', detail: 'Existing firms produce more and/or new firms are attracted by higher profits.' },
+          { label: 'Quantity supplied rises',                detail: 'More total output is available at each price level.' }
+        ]},
+        { type: 'sectionHeader', icon: '🔍', label: 'What shapes the response' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '⚖️', head: 'Revenue vs cost',   body: 'Firms care about profit, not just price. They compare expected revenue with the cost of production.' },
+          { type: 'tile', tone: 'amber',  icon: '📢', head: 'Profit signals',     body: 'Rising profit is a signal that attracts expansion (investing more resources) and entry by other firms.' },
+          { type: 'tile', tone: 'purple', icon: '🕐', head: 'Limits',             body: 'Capacity constraints, time lags, regulation and firm objectives can weaken or slow the response.' }
+        ]},
+        { type: 'bigIdea', text: 'The profit motive is the engine of supply: In a free market, producers supply what is profitable – not what society necessarily needs. This is simultaneously supply\'s greatest strength (efficient resource allocation) and its greatest weakness (ignores externalities and public goods). Theme 1\'s market failure section explores precisely when and why this breaks down.' },
+        { type: 'glossaryRow', term: 'Profit motive', def: 'The incentive for firms to produce goods and services where price exceeds cost – the engine of market supply.' },
+        { type: 'glossaryRow', term: 'Entry and exit', def: 'New firms entering a profitable market increases supply; firms exiting an unprofitable market reduces it – key to long-run equilibrium.' },
+        { type: 'glossaryRow', term: 'Sunk costs', def: 'Costs already incurred that cannot be recovered – relevant to exit decisions; high sunk costs create barriers to exit and sustain supply even when unprofitable.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'The link between supply and profit connects to market structures (Theme 3). In perfect competition, long-run profits are driven to zero by entry – supply is perfectly elastic in the long run. Monopoly restricts supply to maintain supernormal profit. Oligopoly collude to restrict supply. The supply model underpins all of this.' }
       ],
-      causesStyle: 'plain-white',
-      causesLabel: 'What shapes the response',
-      causesEmoji: '🔍',
-      causes: [
-        { tone: 'green',  icon: '⚖️', head: 'Revenue vs cost',   body: 'Firms care about profit, not just price. They compare expected revenue with the cost of production.' },
-        { tone: 'amber',  icon: '📢', head: 'Profit signals',     body: 'Rising profit is a signal that attracts expansion (investing more resources) and entry by other firms.' },
-        { tone: 'purple', icon: '🕐', head: 'Limits',             body: 'Capacity constraints, time lags, regulation and firm objectives can weaken or slow the response.' }
-      ],
-      conclusion: { title: 'The profit motive is the engine of supply', text: 'In a free market, producers supply what is profitable – not what society necessarily needs. This is simultaneously supply\'s greatest strength (efficient resource allocation) and its greatest weakness (ignores externalities and public goods). Theme 1\'s market failure section explores precisely when and why this breaks down.' },
-      keyTerms: [
-        { term: 'Profit motive', def: 'The incentive for firms to produce goods and services where price exceeds cost – the engine of market supply.' },
-        { term: 'Entry and exit', def: 'New firms entering a profitable market increases supply; firms exiting an unprofitable market reduces it – key to long-run equilibrium.' },
-        { term: 'Sunk costs', def: 'Costs already incurred that cannot be recovered – relevant to exit decisions; high sunk costs create barriers to exit and sustain supply even when unprofitable.' }
-      ],
-      examEdge: 'The link between supply and profit connects to market structures (Theme 3). In perfect competition, long-run profits are driven to zero by entry – supply is perfectly elastic in the long run. Monopoly restricts supply to maintain supernormal profit. Oligopoly collude to restrict supply. The supply model underpins all of this.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]

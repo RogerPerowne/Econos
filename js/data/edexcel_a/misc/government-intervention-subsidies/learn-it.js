@@ -29,7 +29,6 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Subsidies: the big picture',
       lede: 'Subsidies shift supply right to boost production and consumption – but who really benefits depends on elasticities, not intent.',
-      tip: 'Who benefits? The less elastic side. Inelastic demand → consumers keep most of the benefit (lower price). Inelastic supply → producers keep most (higher received price). This is the mirror of tax incidence.',
       branches: [
         { tone: 'green',  label: 'How they work',         sub: 'Government pays per unit → supply shifts right → price falls, quantity rises. The mirror image of a tax.' },
         { tone: 'blue',   label: 'Correcting externalities', sub: 'Pigouvian logic in reverse: subsidy = MEB internalises positive spillover and moves output to social optimum.' },
@@ -43,7 +42,10 @@ window.ECONOS_TOPIC = {
         { term: 'Producer subsidy', def: 'Payment to firms per unit of output – lowers MPC, shifts supply right, reduces price to consumers.' },
         { term: 'Consumer subsidy', def: 'Payment to consumers (voucher or credit) for a specific good – increases effective demand, shifts demand right.' }
       ],
-      examEdge: 'Producer subsidy vs consumer subsidy achieve different outcomes: producer subsidy → price falls (consumers benefit); consumer subsidy → price rises (producers benefit more). For correcting a positive externality (underconsumption), both work. Producer subsidy corrects underproduction; consumer subsidy corrects underconsumption. Match the tool to the source of market failure.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: 'check', text: 'Who benefits? The less elastic side. Inelastic demand → consumers keep most of the benefit (lower price). Inelastic supply → producers keep most (higher received price). This is the mirror of tax incidence.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Producer subsidy vs consumer subsidy achieve different outcomes: producer subsidy → price falls (consumers benefit); consumer subsidy → price rises (producers benefit more). For correcting a positive externality (underconsumption), both work. Producer subsidy corrects underproduction; consumer subsidy corrects underconsumption. Match the tool to the source of market failure.' }
+      ]
     },
     {
       id: 'govt_intervention_subsidies_2',
@@ -69,22 +71,24 @@ window.ECONOS_TOPIC = {
         { term: 'Feed-in Tariff', def: 'UK scheme (2010-2019) paying households a guaranteed price for solar electricity generated – subsidy to correct underproduction of renewable energy.' },
         { term: 'R&D spillovers', def: 'Knowledge created by firms\' research spills over to other firms – a positive externality justifying R&D subsidies.' }
       ],
-      examEdge: 'Subsidy size calibration problem: optimal subsidy = MEB at Q*. But MEB is hard to measure. Over-subsidy → more than socially optimal production → government failure. Under-subsidy → insufficient correction → market failure persists. This is the same problem as Pigouvian taxes – information requirement is the key limitation.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Subsidy size calibration problem: optimal subsidy = MEB at Q*. But MEB is hard to measure. Over-subsidy → more than socially optimal production → government failure. Under-subsidy → insufficient correction → market failure persists. This is the same problem as Pigouvian taxes – information requirement is the key limitation.' }
+      ]
     },
     {
       id: 'govt_intervention_subsidies_4',
       template: 'cause',
       title: 'Real-World Subsidy Examples',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '💰',
-      causesLabel: 'Four major UK subsidy contexts',
-      causes: [
-        { icon: '🌾', head: 'Agricultural subsidies', body: 'EU Common Agricultural Policy (CAP): ~€50bn/year in farm subsidies. Justification: food security, rural communities, income stabilisation. Criticism: distorts trade (WTO disputes), benefits large farms disproportionately, environmentally damaging intensive farming incentivised.' },
-        { icon: '⚡', head: 'Electric vehicle grants', body: 'UK Plug-in Vehicle Grant (up to £5,000) to correct positive externality of reduced emissions. Also corrects information failure – consumers may underestimate long-run fuel savings. Phased out 2022 as EV market matured and costs fell.' },
-        { icon: '🌬️', head: 'Renewable energy (Contracts for Difference)', body: 'Government guarantees a "strike price" for electricity from renewables – effectively a subsidy when market price falls below the strike price. Has driven massive expansion of offshore wind.' },
-        { icon: '😷', head: 'COVID-19 furlough scheme', body: 'Government paid 80% of wages of furloughed workers – a labour market subsidy. Cost: ~£70bn. Prevented mass unemployment during lockdowns. Not correcting market failure – emergency stabilisation policy.' }
-      ],
-      examEdge: 'Agricultural subsidies are a classic example of a subsidy that may have been justified initially (post-WWII food security) but which now persists due to political economy (farmers are a powerful lobby). This illustrates how subsidies, once established, become politically very difficult to remove – a key government failure risk.'
+      blocks: [
+        { type: 'sectionHeader', icon: '💰', label: 'Four major UK subsidy contexts' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🌾', head: 'Agricultural subsidies', body: 'EU Common Agricultural Policy (CAP): ~€50bn/year in farm subsidies. Justification: food security, rural communities, income stabilisation. Criticism: distorts trade (WTO disputes), benefits large farms disproportionately, environmentally damaging intensive farming incentivised.' },
+          { type: 'tile', tone: 'blue', icon: '⚡', head: 'Electric vehicle grants', body: 'UK Plug-in Vehicle Grant (up to £5,000) to correct positive externality of reduced emissions. Also corrects information failure – consumers may underestimate long-run fuel savings. Phased out 2022 as EV market matured and costs fell.' },
+          { type: 'tile', tone: 'green', icon: '🌬️', head: 'Renewable energy (Contracts for Difference)', body: 'Government guarantees a "strike price" for electricity from renewables – effectively a subsidy when market price falls below the strike price. Has driven massive expansion of offshore wind.' },
+          { type: 'tile', tone: 'amber', icon: '😷', head: 'COVID-19 furlough scheme', body: 'Government paid 80% of wages of furloughed workers – a labour market subsidy. Cost: ~£70bn. Prevented mass unemployment during lockdowns. Not correcting market failure – emergency stabilisation policy.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Agricultural subsidies are a classic example of a subsidy that may have been justified initially (post-WWII food security) but which now persists due to political economy (farmers are a powerful lobby). This illustrates how subsidies, once established, become politically very difficult to remove – a key government failure risk.' }
+      ]
     },
     {
       id: 'govt_intervention_subsidies_5',
@@ -115,7 +119,9 @@ window.ECONOS_TOPIC = {
         { label: 'Policy implication', colA: 'Subsidy is efficient at reducing consumer prices – correct instrument if goal is affordability. Subsidy mostly benefits consumers (inelastic demand side).', colB: 'Subsidy mostly benefits producers – may not achieve consumption goal. Alternative (direct consumer voucher) more effective at targeting consumption.' }
       ],
       footer: 'Rule: the more elastic side of the market passes more of the subsidy to the other side. Policymakers should consider who they want to benefit when choosing producer vs consumer subsidy and setting the size.',
-      examEdge: 'Agricultural subsidy incidence: demand for food is inelastic; supply is moderately elastic. Result: much of the CAP subsidy is retained by farmers (less elastic side) rather than passed to consumers as lower food prices. This partly explains why CAP is costly but does not dramatically reduce food prices for EU consumers.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Agricultural subsidy incidence: demand for food is inelastic; supply is moderately elastic. Result: much of the CAP subsidy is retained by farmers (less elastic side) rather than passed to consumers as lower food prices. This partly explains why CAP is costly but does not dramatically reduce food prices for EU consumers.' }
+      ]
     },
     {
       id: 'govt_intervention_subsidies_7',
@@ -127,7 +133,9 @@ window.ECONOS_TOPIC = {
         { term: 'Sunset clause', def: 'Predetermined end date for a policy or subsidy – forces reassessment and reduces risk of permanent distortion.' },
         { term: 'Crowding out', def: 'Government subsidy may displace private investment if it subsidises activities the private sector would have undertaken anyway.' }
       ],
-      examEdge: 'Additionality problem with subsidies: did the subsidy cause additional activity, or would it have happened anyway? If firms were going to install solar panels without the Feed-in Tariff, the subsidy is pure windfall with no externality benefit. Measuring additionality is difficult – another information challenge for policymakers.',
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Additionality problem with subsidies: did the subsidy cause additional activity, or would it have happened anyway? If firms were going to install solar panels without the Feed-in Tariff, the subsidy is pure windfall with no externality benefit. Measuring additionality is difficult – another information challenge for policymakers.' }
+      ],
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
@@ -306,4 +314,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

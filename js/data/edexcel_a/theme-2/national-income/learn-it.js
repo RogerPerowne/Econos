@@ -42,49 +42,25 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 5',
       title: 'The circular flow of income',
       lede: 'Households and firms are linked by <strong>real flows</strong> and <strong>money flows</strong>. The same economic activity can be measured as income, output, and expenditure.',
-      ledeStyle: 'plain',
-      tip: { icon: '✓', tone: 'green', text: 'Income = output = expenditure – three ways of measuring the same flow.' },
-
-      visualKey: 'nationalIncomeFlow',
-      visualLabel: 'The two-sector loop',
-      visualEmoji: '\u{1F501}',
-
-      causesFirst: true,
-      causesLabel: 'The three measures',
-      causesEmoji: '⚖️',
-      causesStyle: 'numbered',
-      causes: [
-        {
-          tone: 'green', icon: '\u{1F4B0}', head: 'Income',
-          body: 'Wages, rent, interest, profit earned from production.'
-        },
-        {
-          tone: 'blue', icon: '\u{1F4E6}', head: 'Output',
-          body: 'The value of goods and services produced.'
-        },
-        {
-          tone: 'purple', icon: '\u{1F6D2}', head: 'Expenditure',
-          body: 'Spending on final goods and services.'
-        }
-      ],
-
-      causesNote: { tone: 'slate', text: 'National income can be measured from the income, output, or expenditure side – the totals should match.' },
-
-      flowTitle: 'Why they are equal',
-      flowEmoji: '\u{1F517}',
-      flowSep: '→',
-      flow: [
-        { tone: 'blue',   icon: '\u{1F3ED}', title: 'Production', sub: 'creates income.' },
-        { tone: 'green',  icon: '\u{1F465}', title: 'Income',     sub: 'funds spending.' },
-        { tone: 'purple', icon: '\u{1F6CD}️', title: 'Spending',   sub: 'buys output.' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'The circular flow is the core model behind national income. Follow the flow and the logic of later macro topics becomes much easier.'
-      },
-      examEdge: 'When asked how national income is measured, state clearly that the same economic activity can be counted as income, output, or expenditure – and that, by accounting identity, the three totals must be equal.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'Income = output = expenditure – three ways of measuring the same flow.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'The three measures' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '\u{1F4B0}', head: 'Income', body: 'Wages, rent, interest, profit earned from production.' },
+          { type: 'tile', tone: 'blue', icon: '\u{1F4E6}', head: 'Output', body: 'The value of goods and services produced.' },
+          { type: 'tile', tone: 'purple', icon: '\u{1F6D2}', head: 'Expenditure', body: 'Spending on final goods and services.' }
+        ]},
+        { type: 'calloutStrip', tone: 'slate', icon: undefined, text: 'National income can be measured from the income, output, or expenditure side – the totals should match.' },
+        { type: 'diagram', svgKey: 'nationalIncomeFlow', caption: 'The two-sector loop' },
+        { type: 'sectionHeader', icon: '\u{1F517}', label: 'Why they are equal' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Production', detail: 'creates income.' },
+          { label: 'Income', detail: 'funds spending.' },
+          { label: 'Spending', detail: 'buys output.' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: The circular flow is the core model behind national income. Follow the flow and the logic of later macro topics becomes much easier.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'When asked how national income is measured, state clearly that the same economic activity can be counted as income, output, or expenditure – and that, by accounting identity, the three totals must be equal.' }
+      ]
     },
 
     /* ============================================================

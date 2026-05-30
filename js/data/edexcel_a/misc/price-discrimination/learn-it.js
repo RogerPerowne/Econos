@@ -41,12 +41,13 @@ window.ECONOS_TOPIC = {
         { term: 'Consumer surplus', def: 'Difference between what consumers are willing to pay and what they actually pay – price discrimination transfers this to the producer.' },
         { term: 'Arbitrage', def: 'Buying in the cheap market and reselling in the expensive market – firms must prevent this for discrimination to work.' }
       ],
-      examEdge: 'The key phrase is "not justified by cost differences." Charging more for first-class rail travel that costs more to operate is NOT price discrimination – it reflects higher costs. Charging more for the same train ticket on peak services IS price discrimination – the marginal cost of carrying one more passenger is near zero regardless of time. Always check: is the price difference cost-based or demand-based?'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'The key phrase is "not justified by cost differences." Charging more for first-class rail travel that costs more to operate is NOT price discrimination – it reflects higher costs. Charging more for the same train ticket on peak services IS price discrimination – the marginal cost of carrying one more passenger is near zero regardless of time. Always check: is the price difference cost-based or demand-based?' }
+      ]
     },
     {
       id: 'price_discrimination_2',
       template: 'framing',
-      diagramKey: 'firstDegreePd',
       title: 'First-Degree Price Discrimination',
       body: '<strong>First-degree (perfect) price discrimination:</strong> the firm charges every consumer exactly their maximum willingness to pay (their reservation price). Every unit sold at a different price equal to the marginal benefit to that consumer.<br><br><strong>Welfare effects:</strong><br>• Producer captures <em>all</em> consumer surplus – zero consumer surplus remains<br>• BUT: output is higher than standard monopoly – firm produces up to Q<sub>c</sub> (the competitive output), because it is profitable to sell even the last unit at a price just above MC<br>• Result: no deadweight welfare loss (output is allocatively efficient) but all welfare goes to the producer<br>• Allocatively efficient (P = MC for last unit) but distributionally very unequal<br><br><strong>Real-world approximations:</strong> haggling markets, salary negotiations, some professional services (lawyer fees), personalised pricing algorithms.',
       keyTerms: [
@@ -54,7 +55,10 @@ window.ECONOS_TOPIC = {
         { term: 'Reservation price', def: 'The maximum a consumer is willing to pay for a unit – first-degree discrimination extracts this entirely.' },
         { term: 'Personalised pricing', def: 'Digital economy version of first-degree discrimination – using data and algorithms to set individual prices.' }
       ],
-      examEdge: 'First-degree discrimination is "allocatively efficient" in the sense that there is no deadweight loss – all mutually beneficial trades occur. But "efficient" here does not mean "good for consumers." All surplus goes to the producer – it is the maximum possible wealth transfer from consumers to producers. This is a crucial distinction: efficiency and equity are completely different criteria.'
+      blocks: [
+        { type: 'diagram', svgKey: 'firstDegreePd' },
+        { type: 'examEdge', title: 'Exam edge', text: 'First-degree discrimination is "allocatively efficient" in the sense that there is no deadweight loss – all mutually beneficial trades occur. But "efficient" here does not mean "good for consumers." All surplus goes to the producer – it is the maximum possible wealth transfer from consumers to producers. This is a crucial distinction: efficiency and equity are completely different criteria.' }
+      ]
     },
     {
       id: 'price_discrimination_3',
@@ -66,12 +70,13 @@ window.ECONOS_TOPIC = {
         { term: 'Block pricing', def: 'Different prices for different quantities of the same good – unit price falls with volume.' },
         { term: 'Versioning', def: 'Offering different product versions (basic/premium) at different prices to segment consumers by willingness to pay.' }
       ],
-      examEdge: 'Versioning (premium vs economy products) is technically second-degree discrimination only if the cost difference is small relative to the price gap. Airlines: business class seat costs marginally more to provide than economy, but charges 3–4x the price – the premium far exceeds the cost difference, so this is price discrimination. Contrast with genuine product differentiation where higher price fully reflects higher cost.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Versioning (premium vs economy products) is technically second-degree discrimination only if the cost difference is small relative to the price gap. Airlines: business class seat costs marginally more to provide than economy, but charges 3–4x the price – the premium far exceeds the cost difference, so this is price discrimination. Contrast with genuine product differentiation where higher price fully reflects higher cost.' }
+      ]
     },
     {
       id: 'price_discrimination_4',
       template: 'framing',
-      diagramKey: 'thirdDegreePd',
       title: 'Third-Degree Price Discrimination',
       body: '<strong>Third-degree price discrimination:</strong> the firm charges different prices to identifiable groups of consumers who have different price elasticities of demand. The most common and most examinable form.<br><br><strong>Pricing rule:</strong> charge higher price to the group with lower PED (less price-sensitive) and lower price to the group with higher PED (more price-sensitive). Profit-maximising condition: MR<sub>A</sub> = MR<sub>B</sub> = MC.<br><br><strong>Classic examples:</strong><br>• Rail: peak (inelastic business travellers) vs off-peak (elastic leisure travellers)<br>• Cinema: adult vs student/senior tickets<br>• Pharmaceuticals: same drug priced higher in USA (inelastic, insured) vs India (elastic, price-sensitive)<br>• International price discrimination: textbooks cheaper in developing markets<br>• Age-based pricing: gym memberships, insurance',
       keyTerms: [
@@ -79,7 +84,10 @@ window.ECONOS_TOPIC = {
         { term: 'MRₐ = MRₙ = MC', def: 'Profit-maximising condition: equalise marginal revenue across all market segments, set equal to marginal cost.' },
         { term: 'Elasticity-based pricing', def: 'Lower PED group → higher price; higher PED group → lower price. The firm extracts more surplus from less elastic demand.' }
       ],
-      examEdge: 'The MR = MR = MC rule is the key analytical framework. In a two-segment market: draw two demand curves (steep for inelastic, flat for elastic); draw corresponding MR curves; find where each MR = MC. The inelastic segment gets higher price, elastic segment gets lower price. Total output is higher than single-price monopoly, and revenue is higher. This diagram approach is essential for the highest-mark answers.'
+      blocks: [
+        { type: 'diagram', svgKey: 'thirdDegreePd' },
+        { type: 'examEdge', title: 'Exam edge', text: 'The MR = MR = MC rule is the key analytical framework. In a two-segment market: draw two demand curves (steep for inelastic, flat for elastic); draw corresponding MR curves; find where each MR = MC. The inelastic segment gets higher price, elastic segment gets lower price. Total output is higher than single-price monopoly, and revenue is higher. This diagram approach is essential for the highest-mark answers.' }
+      ]
     },
     {
       id: 'price_discrimination_5',
@@ -98,27 +106,17 @@ window.ECONOS_TOPIC = {
       id: 'price_discrimination_6',
       template: 'paired',
       title: 'Price Discrimination: For and Against',
-      left: {
-        label: 'Arguments in favour',
-        points: [
-          'Can increase total output – serves market segments that single-price monopoly would exclude',
-          'Cross-subsidy: high prices from inelastic consumers subsidise access for elastic (poorer) consumers',
-          'Pharmaceutical example: funds R&D via high prices in rich markets; enables access in poor markets',
-          'May enable firms to cover high fixed costs that justify production at all (natural monopoly case)',
-          'Rail pricing: peak fares fund off-peak/rural services that would otherwise be unviable'
-        ]
-      },
-      right: {
-        label: 'Arguments against',
-        points: [
-          'Transfers consumer surplus to producers – income redistribution away from consumers',
-          'Requires market power – only possible when competition is already restricted',
-          'Consumer groups with inelastic demand (often lower-income, less mobile) pay highest prices',
-          'Requires costly segmentation and enforcement – resources wasted on discrimination machinery',
-          'Dynamic concern: high prices in protected markets reduce pressure to cut costs or innovate'
-        ]
-      },
-      examEdge: 'The strongest argument FOR price discrimination is the cross-subsidy case: rail operators use peak business fares (inelastic demand, higher price) to subsidise off-peak rural services (elastic demand, lower price). Without peak pricing, rural routes would close. This shows that the welfare effect depends entirely on how the discriminatory profit is used – evaluating price discrimination requires knowing what the firm does with the extra profit.'
+      blocks: [
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            { type: 'tile', tone: 'green', head: 'Arguments in favour', body: 'Can increase total output – serves market segments that single-price monopoly would exclude; Cross-subsidy: high prices from inelastic consumers subsidise access for elastic (poorer) consumers; Pharmaceutical example: funds R&D via high prices in rich markets; enables access in poor markets; May enable firms to cover high fixed costs that justify production at all (natural monopoly case); Rail pricing: peak fares fund off-peak/rural services that would otherwise be unviable' },
+            { type: 'tile', tone: 'rose', head: 'Arguments against', body: 'Transfers consumer surplus to producers – income redistribution away from consumers; Requires market power – only possible when competition is already restricted; Consumer groups with inelastic demand (often lower-income, less mobile) pay highest prices; Requires costly segmentation and enforcement – resources wasted on discrimination machinery; Dynamic concern: high prices in protected markets reduce pressure to cut costs or innovate' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'The strongest argument FOR price discrimination is the cross-subsidy case: rail operators use peak business fares (inelastic demand, higher price) to subsidise off-peak rural services (elastic demand, lower price). Without peak pricing, rural routes would close. This shows that the welfare effect depends entirely on how the discriminatory profit is used – evaluating price discrimination requires knowing what the firm does with the extra profit.' }
+      ]
     },
     {
       id: 'price_discrimination_7',
@@ -130,7 +128,9 @@ window.ECONOS_TOPIC = {
         { term: 'Personalised pricing', def: 'Individual-level pricing based on collected data about willingness to pay – approximates first-degree discrimination.' },
         { term: 'Algorithmic pricing', def: 'Automated price-setting using machine learning – enables discrimination at scale without human intervention.' }
       ],
-      examEdge: 'Digital price discrimination is the contemporary frontier of competition policy. The CMA and EU are grappling with whether algorithmic pricing is a new form of predatory or discriminatory behaviour. Key issue: is personalised pricing a normal commercial response to different consumer preferences, or is it exploitative extraction of data-revealed willingness to pay? The policy response is still evolving – this uncertainty is itself an exam-worthy evaluation point.',
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Digital price discrimination is the contemporary frontier of competition policy. The CMA and EU are grappling with whether algorithmic pricing is a new form of predatory or discriminatory behaviour. Key issue: is personalised pricing a normal commercial response to different consumer preferences, or is it exploitative extraction of data-revealed willingness to pay? The policy response is still evolving – this uncertainty is itself an exam-worthy evaluation point.' }
+      ],
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

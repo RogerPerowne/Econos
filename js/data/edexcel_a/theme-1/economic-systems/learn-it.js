@@ -29,19 +29,8 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'economic_systems_1',
-      template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Economic systems: the big picture',
-      tip: { icon: '💡', tone: 'blue', text: 'Every economy faces the same three questions: What to produce? How to produce it? For whom? The difference between systems is simply who decides the answers.' },
-      flow: [
-        { icon: '⚠️', title: 'Scarcity',            sub: 'Resources are limited. Choices must be made.',                     tone: 'rose'   },
-        { icon: '❓', title: 'Three questions',      sub: 'What? How? For whom?',                                            tone: 'amber'  },
-        { icon: '🏛️', title: 'An economic system',  sub: 'A set of rules for answering those questions.',                   tone: 'blue'   },
-        { icon: '⚖️', title: 'Allocate resources',  sub: 'Land, labour, capital directed to their highest-value uses.',     tone: 'purple' },
-        { icon: '📊', title: 'Outcomes',             sub: 'Efficiency, equity, growth – the goals every system pursues.',   tone: 'green'  }
-      ],
-      flowTitle: 'From scarcity to outcomes',
-      flowEmoji: '🔗',
       branches: [
         { tone: 'green',  label: 'The free market',          sub: 'Prices and self-interest coordinate millions of decentralised decisions. Adam Smith\'s invisible hand at work.' },
         { tone: 'rose',   label: 'The command economy',      sub: 'The state owns resources and plans production. Equity is prioritised, but information and incentive problems bite hard.' },
@@ -50,7 +39,18 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  label: 'Transition &amp; hybrids', sub: 'Russia\'s shock therapy, China\'s gradualism: different paths from plan to market, with very different outcomes.' }
       ],
       branchesLabel: 'The five big ideas – tap each to recall',
-      examEdge: 'The invisible hand is not magic – it works only when prices reflect all costs and benefits. Market failure occurs precisely when prices don\'t capture external costs (externalities) or when public goods are non-excludable. This is why Theme 1 moves from free markets to market failure.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Every economy faces the same three questions: What to produce? How to produce it? For whom? The difference between systems is simply who decides the answers.' },
+        { type: 'sectionHeader', icon: '🔗', label: 'From scarcity to outcomes' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Scarcity',           detail: 'Resources are limited. Choices must be made.' },
+          { label: 'Three questions',    detail: 'What? How? For whom?' },
+          { label: 'An economic system', detail: 'A set of rules for answering those questions.' },
+          { label: 'Allocate resources', detail: 'Land, labour, capital directed to their highest-value uses.' },
+          { label: 'Outcomes',           detail: 'Efficiency, equity, growth – the goals every system pursues.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'The invisible hand is not magic – it works only when prices reflect all costs and benefits. Market failure occurs precisely when prices don\'t capture external costs (externalities) or when public goods are non-excludable. This is why Theme 1 moves from free markets to market failure.' }
+      ]
     },
 
     /* ================================================================
@@ -58,10 +58,8 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'economic_systems_2',
-      template: 'paired',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Free Market: Advantages vs Disadvantages',
-      tip: { icon: '💡', tone: 'blue', text: 'The free market\'s strengths and weaknesses are two sides of the same coin: the profit motive drives efficiency but ignores social costs.' },
       left: {
         label: 'Advantages of free markets',
         tone: 'green',
@@ -86,7 +84,14 @@ window.ECONOS_TOPIC = {
           { icon: '🌊', title: 'Instability',       text: 'Unregulated markets are prone to boom-bust cycles and speculative bubbles.' }
         ]
       },
-      examEdge: 'Market failure is the bridge between the free market ideal and the need for government intervention. A perfect market (no externalities, full information, no public goods, no monopoly) would achieve optimal outcomes. Real markets fail on all four counts.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'The free market\'s strengths and weaknesses are two sides of the same coin: the profit motive drives efficiency but ignores social costs.' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '✅', head: 'Advantages of free markets', body: 'Efficient allocation via price signals · Dynamic efficiency through competition · Consumer sovereignty · Decentralised knowledge · Profit incentive drives effort and investment' },
+          { type: 'tile', tone: 'rose',  icon: '⚠️', head: 'Disadvantages of free markets', body: 'Market failure (externalities, public goods, info asymmetry) · Inequality in outcomes · Short-termism · Under-provision of public goods · Boom-bust instability' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Market failure is the bridge between the free market ideal and the need for government intervention. A perfect market (no externalities, full information, no public goods, no monopoly) would achieve optimal outcomes. Real markets fail on all four counts.' }
+      ]
     },
 
     /* ================================================================
@@ -94,21 +99,21 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'economic_systems_3',
-      template: 'framing',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'The Command Economy',
-      tip: { icon: '💡', tone: 'blue', text: 'In a command economy, the state answers all three economic questions. Prices don\'t signal scarcity – directives do.' },
-      causes: [
-        { icon: '🏛️', head: 'State ownership',      body: 'The government owns the means of production – land, factories, capital. No private property in the means of production.' },
-        { icon: '📋', head: 'Central planning',      body: 'Government agencies (e.g. Soviet Gosplan) set production targets, input allocation, and price levels across the whole economy.' },
-        { icon: '🚫', head: 'No price signals',      body: 'Prices are set by planners, not supply and demand. They cannot reflect relative scarcity or consumer preferences.' },
-        { icon: '🎯', head: 'Production targets',    body: 'Firms are told what to produce and how much. Output quotas replace profit as the incentive for production.' },
-        { icon: '⚖️', head: 'Equity priority',       body: 'Resources can be directed to social priorities – healthcare, defence, literacy – regardless of ability to pay.' },
-        { icon: '🌍', head: 'Historical examples',   body: 'Soviet Union (1917–1991), Maoist China, North Korea. Rapid early industrialisation (USSR 1930s–50s), but chronic inefficiency later.' }
-      ],
-      causesLabel: 'Key features',
-      causesEmoji: '🏛️',
-      examEdge: 'Hayek\'s "knowledge problem" is the killer critique: no central authority can possess the dispersed, local knowledge that millions of price signals aggregate. Price signals are an information system; removing them causes chronic misallocation. This is an exam-quality analytical point.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'In a command economy, the state answers all three economic questions. Prices don\'t signal scarcity – directives do.' },
+        { type: 'sectionHeader', icon: '🏛️', label: 'Key features' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '🏛️', head: 'State ownership',    body: 'The government owns the means of production – land, factories, capital. No private property in the means of production.' },
+          { type: 'tile', tone: 'blue',   icon: '📋', head: 'Central planning',    body: 'Government agencies (e.g. Soviet Gosplan) set production targets, input allocation, and price levels across the whole economy.' },
+          { type: 'tile', tone: 'blue',   icon: '🚫', head: 'No price signals',    body: 'Prices are set by planners, not supply and demand. They cannot reflect relative scarcity or consumer preferences.' },
+          { type: 'tile', tone: 'blue',   icon: '🎯', head: 'Production targets',  body: 'Firms are told what to produce and how much. Output quotas replace profit as the incentive for production.' },
+          { type: 'tile', tone: 'blue',   icon: '⚖️', head: 'Equity priority',     body: 'Resources can be directed to social priorities – healthcare, defence, literacy – regardless of ability to pay.' },
+          { type: 'tile', tone: 'blue',   icon: '🌍', head: 'Historical examples', body: 'Soviet Union (1917–1991), Maoist China, North Korea. Rapid early industrialisation (USSR 1930s–50s), but chronic inefficiency later.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Hayek\'s "knowledge problem" is the killer critique: no central authority can possess the dispersed, local knowledge that millions of price signals aggregate. Price signals are an information system; removing them causes chronic misallocation. This is an exam-quality analytical point.' }
+      ]
     },
 
     /* ================================================================
@@ -116,10 +121,8 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'economic_systems_4',
-      template: 'paired',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Command Economy: Advantages vs Disadvantages',
-      tip: { icon: '💡', tone: 'blue', text: 'The command economy\'s theoretical strengths are real – but Hayek\'s knowledge problem means they rarely survived contact with reality.' },
       left: {
         label: 'Potential advantages',
         tone: 'purple',
@@ -145,7 +148,14 @@ window.ECONOS_TOPIC = {
         ]
       },
       balancedNote: 'The Soviet collapse (1991) is the definitive real-world test: by 1991, Soviet productivity growth was near zero, innovation had stalled, and consumer goods were scarce despite nominally full employment. Not ideology – empirical evidence for Hayek\'s knowledge problem.',
-      examEdge: 'Contrast the Soviet "big bang" decline with China\'s gradualist success. China retained state control while introducing market elements from 1978 – suggesting the knowledge problem can be partially mitigated by allowing price signals to operate in some sectors.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'The command economy\'s theoretical strengths are real – but Hayek\'s knowledge problem means they rarely survived contact with reality.' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'purple', icon: '✅', head: 'Potential advantages', body: 'Social priorities directed regardless of ability to pay · Greater equality in distribution · Rapid resource mobilisation in crisis · No boom-bust instability · Long-run investment planning possible' },
+          { type: 'tile', tone: 'rose',   icon: '❌', head: 'Disadvantages – why it failed', body: 'Hayek\'s knowledge problem: planners cannot replicate price signals · No profit motive → weak incentives · Chronic shortages when prices don\'t equilibrate · Corruption and rent-seeking · No consumer choice or sovereignty' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Contrast the Soviet "big bang" decline with China\'s gradualist success. China retained state control while introducing market elements from 1978 – suggesting the knowledge problem can be partially mitigated by allowing price signals to operate in some sectors.' }
+      ]
     },
 
     /* ================================================================
@@ -153,22 +163,21 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'economic_systems_5',
-      template: 'framing',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'The Mixed Economy',
-      tip: { icon: '💡', tone: 'blue', text: 'All real-world economies are mixed. The debate is never "market vs state" – it\'s always "what degree of each, and where?"' },
       body: 'A <strong>mixed economy</strong> combines private market allocation with government intervention. Markets handle most goods efficiently – but they fail in specific, well-defined ways. Government intervenes in those areas while leaving markets to function elsewhere.<br><br>The UK is a textbook mixed economy: private markets for most goods and services; NHS (public provision); state education; regulated utilities; progressive taxation; welfare state.',
-      causes: [
-        { icon: '🏭', head: 'Externalities',           body: 'Pollution and congestion are not priced by markets – government taxes, caps, or regulates to correct this.', tone: 'rose'   },
-        { icon: '🛡️', head: 'Public goods',            body: 'Defence and street lighting are non-excludable and non-rival – markets under-provide them, so the state steps in.', tone: 'blue'   },
-        { icon: '🔍', head: 'Information gaps',        body: 'Patients can\'t evaluate medical care; students can\'t assess education quality. Government provides or regulates.', tone: 'amber'  },
-        { icon: '⚖️', head: 'Inequality',              body: 'Market outcomes depend on factor endowments. Progressive taxation and transfers redistribute towards equity.', tone: 'purple' },
-        { icon: '📉', head: 'Market instability',      body: 'Boom-bust cycles and financial crises justify macroeconomic stabilisation – fiscal and monetary policy.', tone: 'green'  }
-      ],
-      causesLabel: 'Why government intervenes',
-      causesEmoji: '🏛️',
-      causesStyle: 'tinted-flat',
-      examEdge: 'The debate is not "market vs state" but "which mix?" Thatcher (1979–90) shifted the UK rightward – privatisation, deregulation, lower taxes. Post-2008 and COVID reversed some of this – bailouts, furlough, QE. Acknowledging this spectrum earns evaluation credit.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'All real-world economies are mixed. The debate is never "market vs state" – it\'s always "what degree of each, and where?"' },
+        { type: 'sectionHeader', icon: '🏛️', label: 'Why government intervenes' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'rose',   icon: '🏭', head: 'Externalities',      body: 'Pollution and congestion are not priced by markets – government taxes, caps, or regulates to correct this.' },
+          { type: 'tile', tone: 'blue',   icon: '🛡️', head: 'Public goods',       body: 'Defence and street lighting are non-excludable and non-rival – markets under-provide them, so the state steps in.' },
+          { type: 'tile', tone: 'amber',  icon: '🔍', head: 'Information gaps',   body: 'Patients can\'t evaluate medical care; students can\'t assess education quality. Government provides or regulates.' },
+          { type: 'tile', tone: 'purple', icon: '⚖️', head: 'Inequality',         body: 'Market outcomes depend on factor endowments. Progressive taxation and transfers redistribute towards equity.' },
+          { type: 'tile', tone: 'green',  icon: '📉', head: 'Market instability', body: 'Boom-bust cycles and financial crises justify macroeconomic stabilisation – fiscal and monetary policy.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'The debate is not "market vs state" but "which mix?" Thatcher (1979–90) shifted the UK rightward – privatisation, deregulation, lower taxes. Post-2008 and COVID reversed some of this – bailouts, furlough, QE. Acknowledging this spectrum earns evaluation credit.' }
+      ]
     },
 
     /* ================================================================
@@ -176,44 +185,24 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'economic_systems_6',
-      template: 'mechanisms',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'The Price Mechanism as Allocator',
-      tip: { icon: '💡', tone: 'blue', text: 'Prices perform three simultaneous functions – signal, incentive, ration – all without any central coordination.' },
-      flow: [
-        {
-          icon: '📡',
-          title: 'Signalling',
-          sub: 'Rising price → scarcity signal. Producers expand; consumers economise.',
-          tone: 'blue'
-        },
-        {
-          icon: '💰',
-          title: 'Incentive',
-          sub: 'High prices raise profit margins. Firms enter and supply more. Low prices squeeze margins and drive exit.',
-          tone: 'green'
-        },
-        {
-          icon: '⚖️',
-          title: 'Rationing',
-          sub: 'When demand > supply, price rises until QD = QS. No queues – prices allocate to those who value most.',
-          tone: 'amber'
-        },
-        {
-          icon: '🔗',
-          title: 'Transmission',
-          sub: 'A shortage of one component ripples up the supply chain automatically – coordinating thousands of decisions.',
-          tone: 'purple'
-        }
-      ],
-      flowTitle: 'Three functions, one price',
-      flowEmoji: '📡',
       keyTerms: [
         { term: '📡 Signal',    def: 'Price changes communicate information about relative scarcity and value across the whole economy.' },
         { term: '💰 Incentive', def: 'Higher prices increase profit margins, drawing more supply into a market without any central instruction.' },
         { term: '⚖️ Ration',   def: 'Prices clear markets by making scarce goods unaffordable to lower-value uses – allocating to highest willingness to pay.' }
       ],
-      examEdge: 'All three functions must work for the price mechanism to allocate efficiently. Market failures disrupt each one: externalities mean prices don\'t signal true social costs; information gaps distort signals; monopoly pricing exceeds true scarcity cost.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Prices perform three simultaneous functions – signal, incentive, ration – all without any central coordination.' },
+        { type: 'sectionHeader', icon: '📡', label: 'Three functions, one price' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Signalling',    detail: 'Rising price → scarcity signal. Producers expand; consumers economise.' },
+          { label: 'Incentive',     detail: 'High prices raise profit margins. Firms enter and supply more. Low prices squeeze margins and drive exit.' },
+          { label: 'Rationing',     detail: 'When demand > supply, price rises until QD = QS. No queues – prices allocate to those who value most.' },
+          { label: 'Transmission',  detail: 'A shortage of one component ripples up the supply chain automatically – coordinating thousands of decisions.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'All three functions must work for the price mechanism to allocate efficiently. Market failures disrupt each one: externalities mean prices don\'t signal true social costs; information gaps distort signals; monopoly pricing exceeds true scarcity cost.' }
+      ]
     },
 
     /* ================================================================
@@ -221,10 +210,8 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'economic_systems_7',
-      template: 'framing',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Transition Economies: Russia vs China',
-      tip: { icon: '💡', tone: 'blue', text: 'The contrast between Russia (shock therapy) and China (gradualism) is one of the most important natural experiments in modern economics.' },
       verdict: {
         title: 'Two routes from plan to market',
         emoji: '🌍',
@@ -256,13 +243,20 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
-      conclusion: 'The China model challenges the binary "market vs command" framing – markets and state can coexist productively. But critics argue success depends on institutional specifics (property rights, contract law) rather than ownership per se.',
       keyTerms: [
         { term: '⚡ Shock therapy',    def: 'Rapid, simultaneous liberalisation of prices, privatisation, and trade – Russia\'s approach, with chaotic results.' },
         { term: '🐢 Gradualism',       def: 'Incremental market reforms while maintaining state oversight – China\'s approach, with more stable outcomes.' },
         { term: '🏭 State capitalism', def: 'Significant state ownership of key industries alongside market competition – China\'s current model.' }
       ],
-      examEdge: 'Evaluating transition economies: institutional quality matters as much as speed. Russia lacked property rights enforcement and contract law when it liberalised – markets without institutions produce disorder. This nuance earns evaluation marks.',
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'The contrast between Russia (shock therapy) and China (gradualism) is one of the most important natural experiments in modern economics.' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'rose',  icon: '⚡', head: 'Russia – Shock Therapy', body: 'Rapid simultaneous liberalisation from 1991 · GDP fell ~45% (1990–1998) · State assets seized by oligarchs · Hyperinflation destroyed savings' },
+          { type: 'tile', tone: 'green', icon: '🐢', head: 'China – Gradualism',     body: 'Incremental reforms from 1978 under state oversight · GDP per capita rose ~30× (1980–2020) · State retained control of finance and key industries · Market competition introduced sector by sector' }
+        ]},
+        { type: 'bigIdea', text: 'The China model challenges the binary "market vs command" framing – markets and state can coexist productively. But critics argue success depends on institutional specifics (property rights, contract law) rather than ownership per se.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Evaluating transition economies: institutional quality matters as much as speed. Russia lacked property rights enforcement and contract law when it liberalised – markets without institutions produce disorder. This nuance earns evaluation marks.' }
+      ],
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
@@ -444,4 +438,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

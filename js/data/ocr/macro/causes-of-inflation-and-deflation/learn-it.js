@@ -54,63 +54,31 @@ window.ECONOS_TOPIC = {
       lede: 'Inflation does not have a single cause. It can arise from demand pressures, supply shocks or from money and expectations spiralling together. Diagnosing the source is essential because each cause calls for a different policy.',
       ledeStyle: 'plain',
 
-      tip: {
-        icon: '✅',
-        tone: 'green',
-        text: '<strong>The same inflation figure can require opposite policy responses depending on its origin.</strong>'
-      },
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>The same inflation figure can require opposite policy responses depending on its origin.</strong>' },
 
-      causesFirst: true,
-      causesLabel: null,
-      causes: [
-        {
-          tone: 'blue',
-          head: 'Demand-pull inflation',
-          icon: '🛒',
-          body: 'Too much spending chasing too little output.',
-          example: { icon: '📈', label: 'Cue', text: 'AD rising faster than AS.' }
-        },
-        {
-          tone: 'amber',
-          head: 'Cost-push inflation',
-          icon: '🏭',
-          body: 'Firms face higher costs and pass them on.',
-          example: { icon: '↩️', label: 'Cue', text: 'AS shifts left.' }
-        },
-        {
-          tone: 'purple',
-          head: 'Monetary & hyperinflation',
-          icon: '💭',
-          body: 'Money growth out-runs output – at the extreme, expectations collapse and hyperinflation sets in (OCR 2.4 (a)).',
-          example: { icon: '∞', label: 'Cue', text: 'Weimar Germany 1923, Zimbabwe 2008, Venezuela 2018.' }
-        }
-      ],
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '🛒', head: 'Demand-pull inflation',     body: 'Too much spending chasing too little output. Cue: AD rising faster than AS.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'Cost-push inflation',       body: 'Firms face higher costs and pass them on. Cue: AS shifts left.' },
+          { type: 'tile', tone: 'purple', icon: '💭', head: 'Monetary & hyperinflation', body: 'Money growth out-runs output – at the extreme, expectations collapse and hyperinflation sets in (OCR 2.4 (a)). Cue: Weimar Germany 1923, Zimbabwe 2008, Venezuela 2018.' }
+        ]},
 
-      flowTitle: 'The big idea',
-      flowEmoji: '💡',
-      flow: [
-        { tone: 'blue',   icon: '📊', title: 'Headline inflation',  sub: 'A single CPI figure.' },
-        { tone: 'green',  icon: '🔎', title: 'Ask what caused it',   sub: 'Demand, costs or money?' },
-        { tone: 'purple', icon: '🎯', title: 'Choose the right policy', sub: 'Diagnosis drives the cure.' }
-      ],
+        { type: 'mechanismChain', steps: [
+          { label: 'Headline inflation',     detail: 'A single CPI figure.' },
+          { label: 'Ask what caused it',     detail: 'Demand, costs or money?' },
+          { label: 'Choose the right policy', detail: 'Diagnosis drives the cure.' }
+        ]},
 
-      causes2Label: 'Treatment depends on the diagnosis',
-      causes2Emoji: '🩺',
-      causes2: [
-        { tone: 'blue',   icon: '❄️', head: 'Demand problem',     body: 'Cool demand with tighter monetary or fiscal policy.' },
-        { tone: 'amber',  icon: '🏭', head: 'Supply shock',       body: 'Ease costs or boost supply – supply-side measures.' },
-        { tone: 'purple', icon: '🛡️', head: 'Expectations problem', body: 'Restore credibility through forward guidance and anchoring.' }
-      ],
+        { type: 'sectionHeader', icon: '🩺', label: 'Treatment depends on the diagnosis' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '❄️', head: 'Demand problem',      body: 'Cool demand with tighter monetary or fiscal policy.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'Supply shock',        body: 'Ease costs or boost supply – supply-side measures.' },
+          { type: 'tile', tone: 'purple', icon: '🛡️', head: 'Expectations problem', body: 'Restore credibility through forward guidance and anchoring.' }
+        ]},
 
-      conclusion: {
-        title: '"Rising prices" is not a cause of inflation',
-        text: 'Rising prices are the <strong>symptom</strong>. The <strong>cause</strong> is the underlying driver – demand, costs, money or expectations – that puts upward pressure on prices.'
-      },
-
-      examEdge: {
-        title: 'Exam edge (OCR)',
-        text: 'OCR extended-response questions reward explicit <em>evaluate</em> verbs in the answer. Diagnose the source first, then evaluate the policy. The same CPI figure may hide three different macroeconomic stories – plus the hyperinflation extreme OCR 2.4 (a) lists.'
-      }
+        { type: 'bigIdea', text: '"Rising prices" is not a cause of inflation — Rising prices are the symptom. The cause is the underlying driver – demand, costs, money or expectations – that puts upward pressure on prices.' },
+        { type: 'examEdge', title: 'Exam edge (OCR)', text: 'OCR extended-response questions reward explicit evaluate verbs in the answer. Diagnose the source first, then evaluate the policy. The same CPI figure may hide three different macroeconomic stories – plus the hyperinflation extreme OCR 2.4 (a) lists.' }
+      ]
     },
 
     /* ====================================================================
@@ -317,43 +285,32 @@ window.ECONOS_TOPIC = {
       lede: 'The key diagnostic is output direction. Demand-pull inflation raises output because demand outpaces supply. Cost-push inflation lowers output because higher costs squeeze supply.',
       ledeStyle: 'plain',
 
-      tip: {
-        icon: '✅',
-        tone: 'green',
-        text: '<strong>Output is the tell.</strong>'
-      },
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>Output is the tell.</strong>' },
 
-      comparisonTable: {
-        title: 'Comparison table',
-        emoji: '📊',
-        columns: ['🛒 Demand-pull inflation', '🏭 Cost-push inflation'],
-        columnTones: ['blue', 'amber'],
-        rows: [
-          { label: '🎯 Main cause',          values: ['Demand rises faster than the economy can supply.', 'Input costs rise, pushing firms\' costs and prices up.'], highlights: [true, true] },
-          { label: '↔️ AD/AS movement',      values: ['AD shifts right. AS unchanged.',                    'AS shifts left. AD unchanged.'] },
-          { label: '📈 Output effect',       values: ['Output increases (above potential).',               'Output decreases (below potential).'] },
-          { label: '£ Inflation clue',       values: ['Prices rise alongside stronger output.',            'Prices rise while output falls.'] },
-          { label: '🛡️ Typical policy',      values: ['Tighten demand – raise rates or cut spending.',     'Relieve supply pressures – reduce costs or boost supply.'] }
-        ]
-      },
+        { type: 'versusRows',
+          left:  { label: '🛒 Demand-pull inflation', tone: 'blue' },
+          right: { label: '🏭 Cost-push inflation',   tone: 'amber' },
+          rows: [
+            { criterion: '🎯 Main cause',      left: 'Demand rises faster than the economy can supply.',  right: 'Input costs rise, pushing firms\' costs and prices up.' },
+            { criterion: '↔️ AD/AS movement',  left: 'AD shifts right. AS unchanged.',                     right: 'AS shifts left. AD unchanged.' },
+            { criterion: '📈 Output effect',   left: 'Output increases (above potential).',                right: 'Output decreases (below potential).' },
+            { criterion: '£ Inflation clue',   left: 'Prices rise alongside stronger output.',             right: 'Prices rise while output falls.' },
+            { criterion: '🛡️ Typical policy',  left: 'Tighten demand – raise rates or cut spending.',      right: 'Relieve supply pressures – reduce costs or boost supply.' }
+          ]
+        },
 
-      causes2Label: 'Classify the case',
-      causes2Emoji: '✏️',
-      causes2: [
-        { tone: 'amber', icon: '⚡', head: '2021 energy shock',     body: 'Global gas prices surged, lifting energy bills and production costs. Output fell as firms cut back. <strong style="display:block;margin-top:8px;color:#D97706;letter-spacing:0.08em;">→ COST-PUSH</strong>' },
-        { tone: 'blue',  icon: '📈', head: '2020 lockdown release boom', body: 'Households spent savings as lockdowns ended. Demand jumped and output rose above potential. <strong style="display:block;margin-top:8px;color:#2563EB;letter-spacing:0.08em;">→ DEMAND-PULL</strong>' },
-        { tone: 'amber', icon: '🏭', head: '1970s stagflation',     body: 'Oil shocks pushed prices up while output stalled. Unemployment rose at the same time. <strong style="display:block;margin-top:8px;color:#D97706;letter-spacing:0.08em;">→ COST-PUSH</strong>' }
-      ],
+        { type: 'sectionHeader', icon: '✏️', label: 'Classify the case' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'amber', icon: '⚡', head: '2021 energy shock',          body: 'Global gas prices surged, lifting energy bills and production costs. Output fell as firms cut back. → COST-PUSH' },
+          { type: 'tile', tone: 'blue',  icon: '📈', head: '2020 lockdown release boom', body: 'Households spent savings as lockdowns ended. Demand jumped and output rose above potential. → DEMAND-PULL' },
+          { type: 'tile', tone: 'amber', icon: '🏭', head: '1970s stagflation',          body: 'Oil shocks pushed prices up while output stalled. Unemployment rose at the same time. → COST-PUSH' }
+        ]},
 
-      conclusion: {
-        title: 'Fast test',
-        text: 'Prices up + output up = <strong>demand-pull</strong>. Prices up + output down = <strong>cost-push</strong>.'
-      },
-
-      examEdge: {
-        title: 'Exam edge (OCR)',
-        text: 'The highest-mark answers diagnose <em>before</em> recommending policy. Identify the cause using output direction first.'
-      }
+        { type: 'sectionHeader', icon: '⚡', label: 'Fast test' },
+        { type: 'bigIdea', text: 'Prices up + output up = demand-pull. Prices up + output down = cost-push.' },
+        { type: 'examEdge', title: 'Exam edge (OCR)', text: 'The highest-mark answers diagnose before recommending policy. Identify the cause using output direction first.' }
+      ]
     },
 
     /* ====================================================================
@@ -438,67 +395,36 @@ window.ECONOS_TOPIC = {
       lede: 'Inflation redistributes purchasing power. It does not simply make everyone worse off. Who gains and who loses depends especially on whether inflation is <strong>anticipated</strong> or <strong>unanticipated</strong>.',
       ledeStyle: 'plain',
 
-      tip: {
-        icon: '✅',
-        tone: 'green',
-        text: '<strong>Inflation is not neutral – it redistributes.</strong>'
-      },
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>Inflation is not neutral – it redistributes.</strong>' },
 
-      versusRows: {
-        title: 'Who benefits? Who loses?',
-        emoji: '👥',
-        leftTone: 'green',
-        rightTone: 'rose',
-        rows: [
-          {
-            left:  { icon: '🐖', head: 'Savers and lenders',     sub: 'Real value of savings falls.' },
-            right: { icon: '£',  head: 'Borrowers and debtors',  sub: 'Repay with cheaper money.' }
-          },
-          {
-            left:  { icon: '👤', head: 'Fixed-wage workers',     sub: 'Real wages fall behind prices.' },
-            right: { icon: '📈', head: 'Flexible-pay workers',    sub: 'Wages can rise with prices.' }
-          },
-          {
-            left:  { icon: '🚢', head: 'Exporters',              sub: 'Home goods become cheaper abroad.' },
-            right: { icon: '🛒', head: 'Importers',              sub: 'Imported inputs and goods become more expensive.' }
-          },
-          {
-            left:  { icon: '🧓', head: 'Pensioners on fixed incomes', sub: 'Purchasing power is eroded.' },
-            right: { icon: '🛡️', head: 'Those with index-linked incomes', sub: 'Payments rise with inflation.' }
-          },
-          {
-            left:  { icon: '🏠', head: 'Holders of real assets', sub: 'Property and other assets rise in value.' },
-            right: { icon: '💵', head: 'Holders of cash',         sub: 'Cash loses purchasing power.' }
-          }
-        ]
-      },
+        { type: 'versusRows',
+          title: 'Who benefits? Who loses?',
+          leftTone: 'green',
+          rightTone: 'rose',
+          rows: [
+            { left:  { icon: '🐖', head: 'Savers and lenders',          sub: 'Real value of savings falls.' },
+              right: { icon: '£',  head: 'Borrowers and debtors',        sub: 'Repay with cheaper money.' } },
+            { left:  { icon: '👤', head: 'Fixed-wage workers',           sub: 'Real wages fall behind prices.' },
+              right: { icon: '📈', head: 'Flexible-pay workers',          sub: 'Wages can rise with prices.' } },
+            { left:  { icon: '🚢', head: 'Exporters',                    sub: 'Home goods become cheaper abroad.' },
+              right: { icon: '🛒', head: 'Importers',                    sub: 'Imported inputs and goods become more expensive.' } },
+            { left:  { icon: '🧓', head: 'Pensioners on fixed incomes',  sub: 'Purchasing power is eroded.' },
+              right: { icon: '🛡️', head: 'Those with index-linked incomes', sub: 'Payments rise with inflation.' } },
+            { left:  { icon: '🏠', head: 'Holders of real assets',       sub: 'Property and other assets rise in value.' },
+              right: { icon: '💵', head: 'Holders of cash',               sub: 'Cash loses purchasing power.' } }
+          ]
+        },
 
-      pairLabel: 'The big evaluation',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue',
-        icon: '🔮',
-        iconStyle: 'circle',
-        label: 'Anticipated inflation',
-        text: 'People can plan ahead, set wages and prices, and use index-linking. <strong style="color:#2563EB;">Distributional effects are smaller.</strong>'
-      },
-      right: {
-        tone: 'amber',
-        icon: '🔎',
-        iconStyle: 'circle',
-        label: 'Unanticipated inflation',
-        text: 'Price rises outpace expectations. Some gain and others lose. <strong style="color:#D97706;">Distributional effects are larger.</strong>'
-      },
+        { type: 'sectionHeader', icon: '⚖️', label: 'The big evaluation' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  icon: '🔮', head: 'Anticipated inflation',   body: 'People can plan ahead, set wages and prices, and use index-linking. Distributional effects are smaller.' },
+          { type: 'tile', tone: 'amber', icon: '🔎', head: 'Unanticipated inflation', body: 'Price rises outpace expectations. Some gain and others lose. Distributional effects are larger.' }
+        ]},
 
-      conclusion: {
-        title: 'Governments and mortgage-holders',
-        text: 'Governments and mortgage-holders can <strong>benefit</strong> when the real value of debt erodes, lowering the real cost of servicing and repaying debt.'
-      },
-
-      examEdge: {
-        title: 'Exam edge (OCR)',
-        text: 'The strongest evaluation of winners and losers depends on <strong>expectations</strong> – and on how quickly incomes and contracts adjust to higher prices.'
-      }
+        { type: 'bigIdea', text: 'Governments and mortgage-holders — Governments and mortgage-holders can benefit when the real value of debt erodes, lowering the real cost of servicing and repaying debt.' },
+        { type: 'examEdge', title: 'Exam edge (OCR)', text: 'The strongest evaluation of winners and losers depends on expectations – and on how quickly incomes and contracts adjust to higher prices.' }
+      ]
     },
 
     /* ====================================================================

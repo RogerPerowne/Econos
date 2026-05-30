@@ -29,7 +29,6 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Indirect taxes: the big picture',
       lede: 'Taxes shift supply left to curb consumption and raise revenue – but the real burden falls where elasticity allows it.',
-      tip: 'Specific tax → parallel leftward shift. Ad valorem tax → supply pivots (gap widens at higher prices). Either way: new equilibrium has higher consumer price and lower producer price – the tax creates a wedge between them.',
       branches: [
         { tone: 'green',  label: 'How they work',     sub: 'Specific (per unit) or ad valorem (% of price). Supply shifts left → higher price, lower quantity.' },
         { tone: 'blue',   label: 'Pigouvian taxes',   sub: 'Set tax = MEC to internalise the externality and move output to the social optimum.' },
@@ -43,7 +42,10 @@ window.ECONOS_TOPIC = {
         { term: 'Specific tax', def: 'Fixed money amount per unit – parallel leftward shift of supply curve.' },
         { term: 'Ad valorem tax', def: 'Percentage of price per unit – supply curve pivots (bigger shift at higher prices).' }
       ],
-      examEdge: 'For diagram questions: specific tax → parallel shift. Ad valorem → pivot. Most exam questions use specific taxes for simplicity. Always shift the supply curve LEFT (decrease in supply) by the amount of the tax. Do not shift the demand curve – tax affects supply, not demand (assuming tax is on sellers).'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: 'check', text: 'Specific tax → parallel leftward shift. Ad valorem tax → supply pivots (gap widens at higher prices). Either way: new equilibrium has higher consumer price and lower producer price – the tax creates a wedge between them.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'For diagram questions: specific tax → parallel shift. Ad valorem → pivot. Most exam questions use specific taxes for simplicity. Always shift the supply curve LEFT (decrease in supply) by the amount of the tax. Do not shift the demand curve – tax affects supply, not demand (assuming tax is on sellers).' }
+      ]
     },
     {
       id: 'govt_intervention_tax_2',
@@ -69,22 +71,24 @@ window.ECONOS_TOPIC = {
         { term: 'Optimal tax rate', def: 'The tax rate that makes private cost = social cost, achieving socially optimal output.' },
         { term: 'Internalise', def: 'To incorporate external costs into the private price mechanism – so that decision-makers face the full social cost of their actions.' }
       ],
-      examEdge: 'The ideal Pigouvian tax is elegant in theory but faces three key limitations: (1) measuring MEC accurately is difficult (different estimates for social cost of carbon vary by 4x); (2) MEC may vary by firm/location (one tax rate may not fit all); (3) the tax may be regressive. These limitations are essential evaluation points.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'The ideal Pigouvian tax is elegant in theory but faces three key limitations: (1) measuring MEC accurately is difficult (different estimates for social cost of carbon vary by 4x); (2) MEC may vary by firm/location (one tax rate may not fit all); (3) the tax may be regressive. These limitations are essential evaluation points.' }
+      ]
     },
     {
       id: 'govt_intervention_tax_4',
       template: 'cause',
       title: 'Real-World Tax Examples',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '🏛️',
-      causesLabel: 'Four key UK indirect taxes',
-      causes: [
-        { icon: '⛽', head: 'UK Fuel Duty', body: 'Currently ~53p per litre of petrol/diesel. Corrects for CO2 emissions, local air pollution, and congestion. Partially Pigouvian – not perfectly calibrated to the social cost. Raises ~£28bn/year. Frozen since 2010 – has fallen in real terms.' },
-        { icon: '🥤', head: 'Sugar Levy (SDIL)', body: 'Soft drinks industry levy (2018): 18p/litre for drinks with 5-8g sugar per 100ml; 24p/litre above 8g. Led to significant reformulation by manufacturers (firms chose to reduce sugar content rather than pay tax). Revenue earmarked for school sports.' },
-        { icon: '🚬', head: 'Cigarette Taxes', body: 'UK tobacco duty: £4.14 per pack plus 16.5% ad valorem. Total tax ~75% of retail price. Inelastic demand means large revenue; significant price signal to deter smoking. Evidence: smoking rates fell sharply with rising tax, especially among younger and lower-income groups.' },
-        { icon: '🗑️', head: 'Landfill Tax', body: 'Tax on waste deposited at landfill sites. Incentivises firms to reduce waste, recycle, and use alternative disposal. UK rate: £102.10/tonne (active waste). Has driven significant reduction in landfill use and increased recycling rates.' }
-      ],
-      examEdge: 'Sugar levy is the best exam case for an "effective" tax: demand was elastic (producers reformulated to avoid the tax rather than pass it on to consumers) → significant public health benefit without large consumer price rise. This shows tax design matters – a well-designed tax can change behaviour even without being fully passed on.'
+      blocks: [
+        { type: 'sectionHeader', icon: '🏛️', label: 'Four key UK indirect taxes' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'slate', icon: '⛽', head: 'UK Fuel Duty', body: 'Currently ~53p per litre of petrol/diesel. Corrects for CO2 emissions, local air pollution, and congestion. Partially Pigouvian – not perfectly calibrated to the social cost. Raises ~£28bn/year. Frozen since 2010 – has fallen in real terms.' },
+          { type: 'tile', tone: 'slate', icon: '🥤', head: 'Sugar Levy (SDIL)', body: 'Soft drinks industry levy (2018): 18p/litre for drinks with 5-8g sugar per 100ml; 24p/litre above 8g. Led to significant reformulation by manufacturers (firms chose to reduce sugar content rather than pay tax). Revenue earmarked for school sports.' },
+          { type: 'tile', tone: 'slate', icon: '🚬', head: 'Cigarette Taxes', body: 'UK tobacco duty: £4.14 per pack plus 16.5% ad valorem. Total tax ~75% of retail price. Inelastic demand means large revenue; significant price signal to deter smoking. Evidence: smoking rates fell sharply with rising tax, especially among younger and lower-income groups.' },
+          { type: 'tile', tone: 'slate', icon: '🗑️', head: 'Landfill Tax', body: 'Tax on waste deposited at landfill sites. Incentivises firms to reduce waste, recycle, and use alternative disposal. UK rate: £102.10/tonne (active waste). Has driven significant reduction in landfill use and increased recycling rates.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Sugar levy is the best exam case for an "effective" tax: demand was elastic (producers reformulated to avoid the tax rather than pass it on to consumers) → significant public health benefit without large consumer price rise. This shows tax design matters – a well-designed tax can change behaviour even without being fully passed on.' }
+      ]
     },
     {
       id: 'govt_intervention_tax_5',
@@ -98,7 +102,9 @@ window.ECONOS_TOPIC = {
         { label: 'Who bears the burden', colA: 'Consumers: they pay substantially higher prices. Incidence falls on the less elastic side.', colB: 'Producers: their net price falls substantially. They bear the burden because they are less elastic.' }
       ],
       footer: 'General rule: the less price-elastic side of the market bears more of the tax burden. This is why sin taxes (cigarettes, alcohol) on inelastic goods raise large revenue and fall mainly on consumers.',
-      examEdge: 'Fuel duty incidence: demand is inelastic (few alternatives for most journeys), supply is elastic (global oil market). Consumers bear most of the burden – the tax is regressive (low-income households spend a higher proportion of income on fuel). This is a key equity criticism of Pigouvian taxes even when they correct externalities.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Fuel duty incidence: demand is inelastic (few alternatives for most journeys), supply is elastic (global oil market). Consumers bear most of the burden – the tax is regressive (low-income households spend a higher proportion of income on fuel). This is a key equity criticism of Pigouvian taxes even when they correct externalities.' }
+      ]
     },
     {
       id: 'govt_intervention_tax_6',
@@ -127,7 +133,9 @@ window.ECONOS_TOPIC = {
         { term: 'Command-and-control', def: 'Regulations setting standards (e.g. emission limits) – certain outcome but less flexible and potentially less efficient.' },
         { term: 'Polluter pays principle', def: 'The idea that those who generate pollution should bear the full cost – the philosophical foundation for Pigouvian taxes.' }
       ],
-      examEdge: 'Exam essays often ask to "compare two policies." Tax vs regulation structure: tax = flexibility, efficiency, revenue generation, but uncertain quantity outcome and regressive. Regulation = certainty, simplicity, but inflexibility, no revenue, may be inefficient. Both have a role – hybrid approaches (set a regulatory floor + carbon tax above it) often optimal.',
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Exam essays often ask to "compare two policies." Tax vs regulation structure: tax = flexibility, efficiency, revenue generation, but uncertain quantity outcome and regressive. Regulation = certainty, simplicity, but inflexibility, no revenue, may be inefficient. Both have a role – hybrid approaches (set a regulatory floor + carbon tax above it) often optimal.' }
+      ],
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
@@ -312,4 +320,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

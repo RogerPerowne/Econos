@@ -416,51 +416,38 @@ window.ECONOS_TOPIC = {
       title: 'Supply-side policies',
       lede: 'Supply-side policies aim to raise productive capacity or improve incentives and efficiency. Present both market-based and interventionist approaches.',
 
-      tip: { icon: '✅', tone: 'green', text: 'Supply-side policy targets the economy\'s capacity, costs and efficiency.' },
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Supply-side policy targets the economy\'s capacity, costs and efficiency.' },
 
-      causesFirst: true,
-      causesLabel: 'MARKET-BASED POLICIES',
-      causesEmoji: '🔧',
-      causesStyle: 'tinted-flat',
-      causesCols: 2,
-      causes: [
-        { tone: 'blue', icon: '💹', head: 'Tax cuts',               body: 'Lower taxes to raise work incentives and investment. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast · Low cost · Mixed evidence</span>' },
-        { tone: 'blue', icon: '📋', head: 'Deregulation',           body: 'Remove barriers to entry and reduce red tape. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast · Low cost · Mixed evidence</span>' },
-        { tone: 'blue', icon: '🏛️', head: 'Privatisation',          body: 'Transfer state ownership to the private sector. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Medium speed · Medium cost · Mixed evidence</span>' },
-        { tone: 'blue', icon: '👥', head: 'Flexible labour markets', body: 'Easier hiring and firing to improve labour allocation. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast · Low cost · Mixed evidence</span>' }
-      ],
+        { type: 'sectionHeader', icon: '🔧', label: 'MARKET-BASED POLICIES' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '💹', head: 'Tax cuts',               body: 'Lower taxes to raise work incentives and investment. Fast · Low cost · Mixed evidence' },
+          { type: 'tile', tone: 'blue', icon: '📋', head: 'Deregulation',           body: 'Remove barriers to entry and reduce red tape. Fast · Low cost · Mixed evidence' },
+          { type: 'tile', tone: 'blue', icon: '🏛️', head: 'Privatisation',          body: 'Transfer state ownership to the private sector. Medium speed · Medium cost · Mixed evidence' },
+          { type: 'tile', tone: 'blue', icon: '👥', head: 'Flexible labour markets', body: 'Easier hiring and firing to improve labour allocation. Fast · Low cost · Mixed evidence' }
+        ]},
 
-      causes2Label: 'INTERVENTIONIST POLICIES',
-      causes2Emoji: '🏗️',
-      causes2Cols: 2,
-      causes2: [
-        { tone: 'amber', icon: '🎓', head: 'Education and training', body: 'Improve skills to lift productivity and earning potential. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow · High cost · Strong evidence</span>' },
-        { tone: 'amber', icon: '🛣️', head: 'Infrastructure',         body: 'Invest in transport, energy and digital networks. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow · High cost · Strong evidence</span>' },
-        { tone: 'amber', icon: '🔬', head: 'R&D subsidies',          body: 'Support research and innovation through grants or tax relief. <span style="color:#D97706;font-size:11px;font-weight:700;">Medium speed · Medium cost · Mixed evidence</span>' },
-        { tone: 'amber', icon: '🏭', head: 'Industrial strategy',    body: 'Target support for strategic sectors and clusters. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow · High cost · Mixed evidence</span>' }
-      ],
+        { type: 'sectionHeader', icon: '🏗️', label: 'INTERVENTIONIST POLICIES' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'amber', icon: '🎓', head: 'Education and training', body: 'Improve skills to lift productivity and earning potential. Slow · High cost · Strong evidence' },
+          { type: 'tile', tone: 'amber', icon: '🛣️', head: 'Infrastructure',         body: 'Invest in transport, energy and digital networks. Slow · High cost · Strong evidence' },
+          { type: 'tile', tone: 'amber', icon: '🔬', head: 'R&D subsidies',          body: 'Support research and innovation through grants or tax relief. Medium speed · Medium cost · Mixed evidence' },
+          { type: 'tile', tone: 'amber', icon: '🏭', head: 'Industrial strategy',    body: 'Target support for strategic sectors and clusters. Slow · High cost · Mixed evidence' }
+        ]},
 
-      pairLabel: 'WHEN EACH WORKS BEST',
-      pairEmoji: '🎯',
-      left: {
-        tone: 'blue', icon: '👥', iconStyle: 'circle',
-        label: 'Market-based',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Improves incentives and flexibility.</p>'
-      },
-      right: {
-        tone: 'amber', icon: '👥', iconStyle: 'circle',
-        label: 'Interventionist',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Builds human and physical capital.</p>'
-      },
+        { type: 'sectionHeader', icon: '🎯', label: 'WHEN EACH WORKS BEST' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  icon: '👥', head: 'Market-based',   body: 'Improves incentives and flexibility.' },
+          { type: 'tile', tone: 'amber', icon: '👥', head: 'Interventionist', body: 'Builds human and physical capital.' }
+        ]},
 
-      summaryRow: [
-        { tone: 'blue',   icon: '⏱️', title: 'Speed',              text: 'Market-based is faster. Interventionist takes time.' },
-        { tone: 'amber',  icon: '£',        title: 'Fiscal cost',        text: 'Market-based is cheaper. Interventionist is costlier.' },
-        { tone: 'purple', icon: '👥', title: 'Distributional impact', text: 'Market-based can widen gaps. Interventionist can reduce them.' }
-      ],
+        { type: 'calloutStrip', tone: 'blue',   icon: '⏱️', text: 'Speed — Market-based is faster. Interventionist takes time.' },
+        { type: 'calloutStrip', tone: 'amber',  icon: '£',  text: 'Fiscal cost — Market-based is cheaper. Interventionist is costlier.' },
+        { type: 'calloutStrip', tone: 'purple', icon: '👥', text: 'Distributional impact — Market-based can widen gaps. Interventionist can reduce them.' },
 
-      conclusion: { title: 'Big idea', text: 'The best supply-side strategy depends on the problem – incentives, skills, infrastructure or innovation.' },
-      examEdge: 'Strong evaluation avoids saying \'supply-side\' as if it is one policy – split the answer into market-based and interventionist measures.'
+        { type: 'bigIdea', text: 'The best supply-side strategy depends on the problem – incentives, skills, infrastructure or innovation.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Strong evaluation avoids saying \'supply-side\' as if it is one policy – split the answer into market-based and interventionist measures.' }
+      ]
     },
 
     /* ----- CARD 7 – AS in the AD/AS model ----- */
@@ -553,43 +540,32 @@ window.ECONOS_TOPIC = {
       title: 'Evaluating supply-side policy',
       lede: 'Supply-side policy can raise long-run growth, but its success depends on time, cost, politics and context. This is the evaluative card.',
 
-      tip: { icon: '✅', tone: 'green', text: 'Supply-side policy can be powerful – but usually slowly, unevenly and at a cost.' },
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Supply-side policy can be powerful – but usually slowly, unevenly and at a cost.' },
 
-      causesFirst: true,
-      causesLabel: 'SIX EVALUATION TESTS',
-      causesEmoji: '⚖️',
-      causesStyle: 'icon-top',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue',   icon: '⏱️', head: '1. Time lags',           body: 'Effects are often very slow. Strengthens evaluation if reforms have long payback periods.' },
-        { tone: 'amber',  icon: '£',        head: '2. Funding cost',        body: 'Infrastructure and education are expensive. Weakens if fiscal space is limited.' },
-        { tone: 'purple', icon: '👥',  head: '3. Political feasibility', body: 'Reforms create losers as well as winners. Weakens if opposition is strong.' },
-        { tone: 'green',  icon: '⚖️',  head: '4. Distributional effects', body: 'Some reforms can be regressive. Weakens if inequality worsens.' },
-        { tone: 'blue',   icon: '🔗',  head: '5. Fits demand policy', body: 'Supply-side works best combined with demand management. Strengthens when macro conditions are favourable.' },
-        { tone: 'amber',  icon: '🌍',  head: '6. Global context',    body: 'Global conditions matter. Weakens if trading partners also improve their supply-side.' }
+        { type: 'sectionHeader', icon: '⚖️', label: 'SIX EVALUATION TESTS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '⏱️', head: '1. Time lags',             body: 'Effects are often very slow. Strengthens evaluation if reforms have long payback periods.' },
+          { type: 'tile', tone: 'amber',  icon: '£',  head: '2. Funding cost',           body: 'Infrastructure and education are expensive. Weakens if fiscal space is limited.' },
+          { type: 'tile', tone: 'purple', icon: '👥', head: '3. Political feasibility',  body: 'Reforms create losers as well as winners. Weakens if opposition is strong.' },
+          { type: 'tile', tone: 'green',  icon: '⚖️', head: '4. Distributional effects', body: 'Some reforms can be regressive. Weakens if inequality worsens.' },
+          { type: 'tile', tone: 'blue',   icon: '🔗', head: '5. Fits demand policy',    body: 'Supply-side works best combined with demand management. Strengthens when macro conditions are favourable.' },
+          { type: 'tile', tone: 'amber',  icon: '🌍', head: '6. Global context',         body: 'Global conditions matter. Weakens if trading partners also improve their supply-side.' }
+        ]},
+
+        { type: 'calloutStrip', tone: 'blue', icon: '⭐', text: 'Overall judgement — Supply-side policy is most effective when it targets binding constraints – such as skills shortages, poor infrastructure or regulatory barriers – and when it is financed sustainably and given time to work.' },
+
+        { type: 'sectionHeader', icon: '✅', label: 'HOW TO JUDGE' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Speed',    detail: 'Will it work fast enough?' },
+          { label: 'Scale',    detail: 'Will it be large enough?' },
+          { label: 'Fairness', detail: 'Who gains and who loses?' },
+          { label: 'Evidence', detail: 'What does experience show?' }
+        ]},
+
+        { type: 'bigIdea', text: 'The right supply-side policy depends on the bottleneck – skills, incentives, infrastructure, innovation or regulation.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'The strongest judgement balances long-run benefits against short-run limits – especially time lags, cost and distributional trade-offs.' }
       ],
-
-      summaryRow: [
-        {
-          tone: 'blue',
-          icon: '⭐',
-          title: 'Overall judgement',
-          text: 'Supply-side policy is most effective when it targets binding constraints – such as skills shortages, poor infrastructure or regulatory barriers – and when it is financed sustainably and given time to work.'
-        }
-      ],
-
-      flow2Title: 'HOW TO JUDGE',
-      flow2Emoji: '✅',
-      flow2Sep: '→',
-      flow2: [
-        { tone: 'blue',   icon: '⚡', title: 'Speed',    sub: 'Will it work fast enough?' },
-        { tone: 'amber',  icon: '📏', title: 'Scale',    sub: 'Will it be large enough?' },
-        { tone: 'green',  icon: '⚖️', title: 'Fairness', sub: 'Who gains and who loses?' },
-        { tone: 'purple', icon: '📊', title: 'Evidence', sub: 'What does experience show?' }
-      ],
-
-      conclusion: { title: 'Big idea', text: 'The right supply-side policy depends on the bottleneck – skills, incentives, infrastructure, innovation or regulation.' },
-      examEdge: 'The strongest judgement balances long-run benefits against short-run limits – especially time lags, cost and distributional trade-offs.',
 
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }

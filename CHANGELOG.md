@@ -6,6 +6,85 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.29.0 — 2026-05-30
+
+### Migration round 2 + orphaned-template cleanup
+
+- Migrated 21 more convertible cards to the block system (203 total), under
+  strict anti-invention rules after round 1 had hallucinated 5 diagram blocks;
+  `scripts/check-diagram-refs.mjs` passes 74/74 with no invented diagrams.
+- Removed 8 orphaned legacy template renderers from `js/app.js` (zero card
+  uses): `demand-side-policies-monetary`, `impacts`, `transmission-chain`,
+  `elasticity-explorer`, `essay-scaffold`, `yed-explorer`, `xed-explorer`,
+  `pes-explorer` (switch cases + renderCard* functions). The 18 still-used
+  templates (incl. ad-interactive + the interactive calculators/explorers
+  behind preserved cards) are kept. `CACHE_NAME` → `econos-v131`.
+
+## 0.28.0 — 2026-05-30
+
+### Merge: integrate team #794 + fix migration hallucinations
+
+Merged the latest `main` (#794 "Conflicts polish") into the renderer overhaul,
+keeping the team's content (took their `icons.js` and re-ran the relocation
+codemod over it). Removed 5 hallucinated diagram blocks introduced by the first
+migration pass. `CACHE_NAME` → `econos-v130`.
+
+## 0.27.0 — 2026-05-30
+
+### Renderer Phase 5 — migrate Learn It cards to the block system
+
+Migrated the static, convertible Learn It cards across all real-content topics
+to the `blocks:[...]` system (by a 22-shard Claude-agent workflow). **182 cards
+migrated, 269 preserved.** Cards that use an `interactiveDiagram`, tabbed
+`steps`, or a specialised template (calculation / five-frames / explorer /
+essay-scaffold / transmission-chain / market-structures-comparison) are kept on
+their existing renderer — the block system can't replicate those yet, and
+coexistence renders mixed topics fine.
+
+- `renderBlocks` now emits the card's step-label / title / lede chrome (the
+  template renderers did this themselves), so migrated cards keep their heading.
+- Legacy presentation fields (tip, causes*, flow*, left/right, conclusion,
+  examEdge, visualKey, …) on migrated cards are replaced by their block
+  equivalents (calloutStrip, grid+tile, mechanismChain, versusRows/grid,
+  bigIdea, examEdge, diagram). Top-level topic fields and preserved cards are
+  untouched.
+- Verified structurally: node --check on all 337 data files, lint, unit 26/26,
+  build all pass; a migrated card renders correctly end-to-end. (Not exhaustively
+  screenshot-reviewed — a visual pass is worthwhile.)
+
+## 0.26.0 — 2026-05-30
+
+### Renderer Phase 4 — image-to-data skill + mockup metadata
+
+- New skill `.claude/skills/econos-image-to-data/SKILL.md` + `docs/MOCKUP_SCHEMA.md`:
+  turning a ChatGPT mockup into a block-based `blocks:[...]` card (mockup is the
+  source of truth; reuse blocks + diagram generators; verify in the renderer-lab).
+- Card-level metadata fields: `density` drives the `[data-density]` token modes
+  and `layoutPreset` adds an `econ-preset--<value>` class on the `.econ-blocks`
+  wrapper; `mockupMap`/`visualBrief`/`buildNotes`/`layoutLock`/`hierarchy`/
+  `preserveMockupLayout` are agent-only and ignored by the renderer. The validator
+  recognises them all. Backward-compatible: cards without these render unchanged.
+
+## 0.25.0 — 2026-05-30
+
+### Renderer Phase 3 — dev validator, renderer-lab, screenshot mode
+
+Developer tooling for the block/diagram system. All dev-only or additive.
+
+- `js/render-validate.js` — `window.EconosDebug.validate()`, auto-running in
+  dev mode (`?dev=1`). Flags missing/duplicate card ids, unknown template/tone,
+  unknown block types, unknown `diagram` spec types / `svgKey`s, content-length
+  budget overruns (tile/flow/callout/examEdge), and pattern anti-patterns.
+- `dev/renderer-lab.html` — a standalone QA page rendering every block type and
+  every diagram generator on one page (replaces the throwaway harnesses). Served
+  from the repo root by `npm run dev`; not shipped in the production build.
+- `js/screenshot-mode.js` + `css/screenshot.css` — `?screenshot=1` (centre card
+  only, neutral background, for clean capture/mockup comparison) and
+  `?preview=center-panel`.
+- Wired into the three shells; `sw.js` `CACHE_NAME` → `econos-v129`.
+  `docs/RENDER_BLOCKS.md` documents the dev tooling. (Fixed a broken ternary in
+  the lab's inline render script that had blanked the page.)
+
 ## 0.24.0 — 2026-05-30
 
 ### Diagram relocation — every diagram now lives in the diagram library

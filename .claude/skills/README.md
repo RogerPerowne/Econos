@@ -9,7 +9,7 @@ This plugin bundles five skills that together cover the full lifecycle of econos
 | **`econos-build-from-mockup`** | End-to-end topic builder: GPT Image 2 mockups → vision extraction → schema-correct `data-topic.js` → SVGs → validation → shipping handoff. |
 | **`econos-new-topic`**         | The `data-topic.js` shape, the URL contract (no new HTML), and registration in `js/topics.js`.       |
 | **`econos-card-template`**     | The card template catalogue. Picks the right template (default `ad-interactive`) and lists every field on it. |
-| **`econos-visual-diagram`**    | The SVG diagram language: tone palette, `viewBox 0 0 640 H` convention, `visualKey` wiring into `js/icons.js`, named recipes. |
+| **`econos-visual-diagram`**    | The diagram system: generator-first decision tree (`window.ECONOS_DIAGRAMS` via `'diagram'` block), one-off statics in `js/diagrams/static/`, hand-authored SVG recipes. Tone palette, viewBox conventions, spec-first workflow. |
 | **`run-econos`**               | Headless Playwright driver that launches the static SPA in this container and screenshots a card by index. |
 | **`econos-ship-changes`**      | The shipping flow: backup `main` first, push, PR, squash-merge, dev-branch reset. The single source of truth for any git operation that ends on `main`. |
 
@@ -31,8 +31,9 @@ This plugin bundles five skills that together cover the full lifecycle of econos
                                                                 ▼
                                                   ┌────────────────────────┐
                                                   │  econos-visual-diagram │   when a card
-                                                  │  (SVG into js/icons.js)│   needs a hero
-                                                  └──────────┬─────────────┘   visual
+                                                  │  (generator / static / │   needs a diagram
+                                                  │   hand-authored SVG)   │   or visual
+                                                  └──────────┬─────────────┘
                                                              │
                                                              ▼
                                                    ┌────────────────────┐
@@ -52,7 +53,7 @@ This plugin bundles five skills that together cover the full lifecycle of econos
 - **`econos-build-from-mockup` is the orchestrator.** It runs end-to-end and calls every other skill. Use it when starting a new topic from a brief or a set of mockup images.
 - **Schema lives in `econos-new-topic`.** Anything to do with the `window.ECONOS_TOPIC` global, file layout, URL contract, or `js/topics.js` registration is owned there. Other skills reference it, never re-state it.
 - **Card fields live in `econos-card-template`.** Template names, field lists, tone values — all there. The build-from-mockup and new-topic skills both link to it.
-- **SVGs live in `econos-visual-diagram`.** `viewBox`, tone hexes, recipes (`tile-grid-6`, `hub-and-spoke`, `comparison-row`), `visualKey` wiring. Never inline an SVG into a card body field.
+- **Diagrams live in `econos-visual-diagram`.** Generator-first: use `window.ECONOS_DIAGRAMS` via the `'diagram'` block. One-off statics in `js/diagrams/static/`. Only hand-author a new SVG when no generator or static fits. `viewBox`, tone hexes, named recipes. `js/icons.js` is now UI/hero/scene icons only.
 - **Verification lives in `run-econos`.** The Playwright driver navigates by card index, not URL params. Use it after any topic, SVG, or card edit.
 - **All git work that ends on `main` goes through `econos-ship-changes`.** Backup `main` first, push, PR, squash-merge, reset the dev branch. Never duplicate this logic in another skill — and never force-push `main`.
 

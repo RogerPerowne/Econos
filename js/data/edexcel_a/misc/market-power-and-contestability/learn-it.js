@@ -138,45 +138,43 @@ window.ECONOS_TOPIC = {
         { term: 'Schumpeterian hypothesis', def: 'Market power and supernormal profit are prerequisites for significant innovation; pure competition under-invests in R&D.' },
         { term: 'Inverted-U hypothesis (Aghion)', def: 'Innovation peaks at intermediate market concentration – neither pure competition nor pure monopoly is optimal for dynamic efficiency.' }
       ],
-      examEdge: 'In evaluation, push back against the static welfare diagram with these three arguments. Natural monopoly is the strongest rebuttal – for water and rail track, breaking up genuinely raises costs. Schumpeter is weaker as a general principle (mixed evidence) but strong for specific industries (pharma, where patents are essential). Contestability is the modern framework: regulate barriers, not concentration.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'In evaluation, push back against the static welfare diagram with these three arguments. Natural monopoly is the strongest rebuttal – for water and rail track, breaking up genuinely raises costs. Schumpeter is weaker as a general principle (mixed evidence) but strong for specific industries (pharma, where patents are essential). Contestability is the modern framework: regulate barriers, not concentration.' }
+      ]
     },
     {
       id: 'mvc_6',
       template: 'cause',
       title: 'Where Real Markets Sit',
-      causes: [
-        { head: 'Big Tech – high barriers, market power', body: 'Google search (92% share), Meta (Facebook + Instagram + WhatsApp), Apple (App Store control), Amazon (marketplace + own products). <strong>High barriers</strong>: network effects (more users → better service → more users), data accumulation, switching costs. Entry by new search engines or social networks consistently fails. CMA Digital Markets Unit (2021) targets these specifically with conduct codes.' },
-        { head: 'Airlines – contestable on routes', body: 'Aircraft are <strong>mobile capital</strong> – low route-specific sunk costs. Even a monopoly route is contestable: rivals can redeploy aircraft when profits attract them. Ryanair and easyJet entering legacy carrier routes systematically eroded margins. Outcome: prices closer to AC than route-level concentration suggests.' },
-        { head: 'Utilities – natural monopoly + regulation', body: 'Water, gas pipes, electricity grid, rail track (Network Rail). Distribution is a <strong>natural monopoly</strong> – duplicate networks waste resources. UK approach: separate the network (regulated monopoly, e.g. Network Rail, National Grid) from competitive layers (train operators, energy retailers). Access regulation prevents the network owner from abusing dominance.' },
-        { head: 'Supermarkets – oligopoly, contestable in segments', body: 'Tesco, Sainsbury\'s, Asda, Morrisons control most volume but face entry pressure from Aldi and Lidl, which roughly doubled share between 2013 and 2024. Online grocery is contestable; physical big-box stores less so (planning constraints). CMA studies on fuel pricing and loyalty schemes target specific conduct issues rather than overall structure.' }
-      ],
-      examEdge: 'Use specific real-world examples in essays – they earn application marks. "Tech platforms" and "utilities" are over-cited; pick something specific like "the UK retail energy market post-Ofgem reforms" or "the Microsoft/Activision merger CMA decision". Always mention CONTESTABILITY status alongside concentration: e.g. "UK groceries: top-4 concentration ratio ~65%, but contestable due to Aldi/Lidl expansion and low consumer switching costs."'
+      blocks: [
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            { type: 'tile', head: 'Big Tech – high barriers, market power', body: 'Google search (92% share), Meta (Facebook + Instagram + WhatsApp), Apple (App Store control), Amazon (marketplace + own products). <strong>High barriers</strong>: network effects (more users → better service → more users), data accumulation, switching costs. Entry by new search engines or social networks consistently fails. CMA Digital Markets Unit (2021) targets these specifically with conduct codes.' },
+            { type: 'tile', head: 'Airlines – contestable on routes', body: 'Aircraft are <strong>mobile capital</strong> – low route-specific sunk costs. Even a monopoly route is contestable: rivals can redeploy aircraft when profits attract them. Ryanair and easyJet entering legacy carrier routes systematically eroded margins. Outcome: prices closer to AC than route-level concentration suggests.' },
+            { type: 'tile', head: 'Utilities – natural monopoly + regulation', body: 'Water, gas pipes, electricity grid, rail track (Network Rail). Distribution is a <strong>natural monopoly</strong> – duplicate networks waste resources. UK approach: separate the network (regulated monopoly, e.g. Network Rail, National Grid) from competitive layers (train operators, energy retailers). Access regulation prevents the network owner from abusing dominance.' },
+            { type: 'tile', head: 'Supermarkets – oligopoly, contestable in segments', body: 'Tesco, Sainsbury\'s, Asda, Morrisons control most volume but face entry pressure from Aldi and Lidl, which roughly doubled share between 2013 and 2024. Online grocery is contestable; physical big-box stores less so (planning constraints). CMA studies on fuel pricing and loyalty schemes target specific conduct issues rather than overall structure.' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'Use specific real-world examples in essays – they earn application marks. "Tech platforms" and "utilities" are over-cited; pick something specific like "the UK retail energy market post-Ofgem reforms" or "the Microsoft/Activision merger CMA decision". Always mention CONTESTABILITY status alongside concentration: e.g. "UK groceries: top-4 concentration ratio ~65%, but contestable due to Aldi/Lidl expansion and low consumer switching costs."' }
+      ]
     },
     {
       id: 'mvc_7',
       template: 'paired',
       title: 'Modern Competition Policy: Targeting Barriers, Not Structure',
-      left: {
-        label: 'The contestability-based approach works',
-        points: [
-          'CMA Digital Markets Unit: ex-ante codes of conduct for SMS-designated firms (Google, Apple, Meta) – targets behaviour, not break-up',
-          'Merger control prevents concentration-INCREASING deals that raise entry barriers (Microsoft/Activision CMA scrutiny)',
-          'Market investigations target SPECIFIC barriers: loyalty schemes, data portability, switching costs, fuel margin opacity',
-          'Access regulation in utilities preserves natural monopoly cost advantages while preventing exploitation',
-          'Fines deter abuse: up to 10% of global turnover (Google Shopping €2.4bn, 2017)'
-        ]
-      },
-      right: {
-        label: 'Limitations and tensions',
-        points: [
-          'Defining "contestable" is contentious – incumbents always claim more contestability than entrants experience',
-          'Information asymmetry: firms know their cost structures and strategies; regulators rely on submitted evidence',
-          'Speed: digital markets evolve in months; investigations take years (Google Shopping appeal: 5 years)',
-          'Cross-border platforms evade single-jurisdiction regulators; international coordination is slow',
-          'Risk of regulatory capture as agencies repeatedly engage the same firms'
-        ]
-      },
-      examEdge: 'The modern framework is genuinely different from textbook PC vs Monopoly. Don\'t evaluate competition policy as if its goal is to force PC – its goal is to ensure CONTESTABILITY. Strong evaluation: "While breaking up Big Tech may seem appealing under the static welfare model, the contestability framework prefers conduct codes that preserve scale benefits while preventing entry-barrier abuse – the approach embedded in the UK Digital Markets, Competition and Consumers Act 2024."'
+      blocks: [
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            { type: 'tile', head: 'The contestability-based approach works', body: 'CMA Digital Markets Unit: ex-ante codes of conduct for SMS-designated firms (Google, Apple, Meta) – targets behaviour, not break-up; Merger control prevents concentration-INCREASING deals that raise entry barriers (Microsoft/Activision CMA scrutiny); Market investigations target SPECIFIC barriers: loyalty schemes, data portability, switching costs, fuel margin opacity; Access regulation in utilities preserves natural monopoly cost advantages while preventing exploitation; Fines deter abuse: up to 10% of global turnover (Google Shopping €2.4bn, 2017)' },
+            { type: 'tile', head: 'Limitations and tensions', body: 'Defining "contestable" is contentious – incumbents always claim more contestability than entrants experience; Information asymmetry: firms know their cost structures and strategies; regulators rely on submitted evidence; Speed: digital markets evolve in months; investigations take years (Google Shopping appeal: 5 years); Cross-border platforms evade single-jurisdiction regulators; international coordination is slow; Risk of regulatory capture as agencies repeatedly engage the same firms' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'The modern framework is genuinely different from textbook PC vs Monopoly. Don\'t evaluate competition policy as if its goal is to force PC – its goal is to ensure CONTESTABILITY. Strong evaluation: "While breaking up Big Tech may seem appealing under the static welfare model, the contestability framework prefers conduct codes that preserve scale benefits while preventing entry-barrier abuse – the approach embedded in the UK Digital Markets, Competition and Consumers Act 2024."' }
+      ]
     },
     {
       id: 'mvc_8',

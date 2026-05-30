@@ -54,27 +54,22 @@ window.ECONOS_TOPIC = {
       title: 'The cockpit',
       lede: 'We judge the UK economy by a whole set of objectives, not just one number. Here is the dashboard — seven gauges, seven targets, the UK\'s current reading on each.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{1F3AF}', tone: 'green', text: 'Good policy balances the whole scorecard — improving one objective can worsen another. Read the dashboard before you act.' },
 
-      visualKey: 'macroCockpit',
-      visualLabel: 'UK macro dashboard',
-      visualEmoji: '\u{1F4CA}',
-
-      causesPosition: 'top',
-      causesLabel: 'The seven objectives',
-      causesEmoji: '\u{1F4CB}',
-      causesStyle: 'numbered-rows',
-      causes: [
-        { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation',      body: 'Low and stable price growth — the BoE\'s 2% CPI symmetric target.' },
-        { tone: 'blue',   icon: '\u{1F465}', head: 'Unemployment',    body: 'Low joblessness — UK NAIRU around 4–5%.' },
-        { tone: 'green',  icon: '\u{1F4C8}', head: 'Growth',          body: 'Real GDP growth of around 2–2.5% per year.' },
-        { tone: 'purple', icon: '\u{1F310}', head: 'Balance of payments', body: 'A sustainable current-account position with the rest of the world.' },
-        { tone: 'amber',  icon: '\u{1F3DB}', head: 'Fiscal sustainability', body: 'Government debt on a stable or falling path.' },
-        { tone: 'green',  icon: '\u{1F343}', head: 'Environment',     body: 'Decarbonisation compatible with net zero by 2050.' },
-        { tone: 'slate',  icon: '\u{2696}',  head: 'Income equality', body: 'A falling, or at least stable, Gini coefficient.' }
-      ],
-
-      examEdge: 'Strong macro answers cite the whole dashboard — not just growth. Identify which objective the policy advances, which it strains, by how much, and over what time horizon.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '\u{1F3AF}', text: 'Good policy balances the whole scorecard — improving one objective can worsen another. Read the dashboard before you act.' },
+        { type: 'diagram', svgKey: 'macroCockpit' },
+        { type: 'sectionHeader', icon: '\u{1F4CB}', label: 'The seven objectives' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation',          body: 'Low and stable price growth — the BoE\'s 2% CPI symmetric target.' },
+          { type: 'tile', tone: 'blue',   icon: '\u{1F465}', head: 'Unemployment',       body: 'Low joblessness — UK NAIRU around 4–5%.' },
+          { type: 'tile', tone: 'green',  icon: '\u{1F4C8}', head: 'Growth',             body: 'Real GDP growth of around 2–2.5% per year.' },
+          { type: 'tile', tone: 'purple', icon: '\u{1F310}', head: 'Balance of payments', body: 'A sustainable current-account position with the rest of the world.' },
+          { type: 'tile', tone: 'amber',  icon: '\u{1F3DB}', head: 'Fiscal sustainability', body: 'Government debt on a stable or falling path.' },
+          { type: 'tile', tone: 'green',  icon: '\u{1F343}', head: 'Environment',        body: 'Decarbonisation compatible with net zero by 2050.' },
+          { type: 'tile', tone: 'slate',  icon: '\u{2696}',  head: 'Income equality',    body: 'A falling, or at least stable, Gini coefficient.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Strong macro answers cite the whole dashboard — not just growth. Identify which objective the policy advances, which it strains, by how much, and over what time horizon.' }
+      ]
     },
 
     /* ============================================================
@@ -89,15 +84,13 @@ window.ECONOS_TOPIC = {
       title: 'The headline three',
       lede: 'Three objectives are the headline numbers reported every quarter. Inflation moves fast and loud. Unemployment moves slowly with a fierce floor. Growth is the headline you read first.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{2705}', tone: 'green', text: 'For each: know the target, the measure, and the why. That trio is the A* anchor in every answer.' },
 
-      visualKey: 'macroHeadlineCards',
-      visualLabel: 'Meet the headline three',
-      visualEmoji: '\u{1F4F0}',
-
-      bottomTip: { tone: 'blue', icon: '\u{1F4D3}', text: 'These three are the <strong>flow</strong> measures of the economy — they update every quarter, and central banks and Treasury respond to their movement in real time. The next card covers the four <strong>constraint</strong> objectives that operate on longer time horizons.' },
-
-      examEdge: 'Cite all three numbers from memory in any policy essay. "Inflation 2.8%, unemployment 5.0%, growth ~1.4%" is the kind of opener that signals real-economy literacy — and lets you reach for the right policy lever.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '\u{2705}', text: 'For each: know the target, the measure, and the why. That trio is the A* anchor in every answer.' },
+        { type: 'diagram', svgKey: 'macroHeadlineCards' },
+        { type: 'calloutStrip', tone: 'blue', icon: '\u{1F4D3}', text: 'These three are the flow measures of the economy — they update every quarter, and central banks and Treasury respond to their movement in real time. The next card covers the four constraint objectives that operate on longer time horizons.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Cite all three numbers from memory in any policy essay. "Inflation 2.8%, unemployment 5.0%, growth ~1.4%" is the kind of opener that signals real-economy literacy — and lets you reach for the right policy lever.' }
+      ]
     },
 
     /* ============================================================
@@ -113,36 +106,23 @@ window.ECONOS_TOPIC = {
       title: 'The four constraints',
       lede: 'Beyond the headline numbers, four more objectives shape whether growth genuinely improves lives — and whether today\'s outcomes can be sustained. Think of them as boundaries the economy must stay within.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{1F9ED}', tone: 'green', text: 'These are the objectives examiners reach for when they ask you to evaluate. The "yes growth was 2%, but..." pivot lives here.' },
 
-      visualKey: 'macroConstraintCompass',
-      visualLabel: 'The four supporting objectives',
-      visualEmoji: '\u{1F9ED}',
-
-      causesFirst: true,
-      causesLabel: 'Each constraint in one line',
-      causesEmoji: '\u{1F4D0}',
-      causesStyle: 'numbered-rows',
-      causes: [
-        {
-          tone: 'purple', icon: '\u{1F310}', head: 'Balance of payments',
-          body: '<strong>Target</strong> sustainable current-account position. <strong>Measure</strong> current account % of GDP. <strong>UK current</strong> &minus;2.4% (Q4 2025). Persistent large deficits require foreign financing; the country is effectively borrowing demand from the rest of the world.'
-        },
-        {
-          tone: 'amber', icon: '\u{1F3DB}', head: 'Fiscal sustainability',
-          body: '<strong>Target</strong> debt on a stable or falling path. <strong>Measure</strong> public sector net debt % of GDP. <strong>UK current</strong> 93.8% (Mar 2026). Fiscal headroom is the buffer for the next crisis — rising debt narrows future policy choices.'
-        },
-        {
-          tone: 'green', icon: '\u{1F343}', head: 'Protection of the environment',
-          body: '<strong>Target</strong> decarbonisation path to net zero by 2050. <strong>Measure</strong> annual CO₂ emissions and the gap to the carbon budget. <strong>UK current</strong> mixed progress. Growth that breaches the budget transfers cost to people who haven’t been born yet.'
-        },
-        {
-          tone: 'slate', icon: '\u{2696}', head: 'Greater income equality',
-          body: '<strong>Target</strong> falling Gini coefficient. <strong>Measure</strong> Gini coefficient (ONS / HBAI). <strong>UK current</strong> Gini ≈ 0.36. Growth that lifts only the top deciles raises the average without raising the median — the headline is misleading.'
-        }
-      ],
-
-      examEdge: 'These constraints are where the marks live. In every essay, after stating the growth/inflation/unemployment effects, pivot to: "however, this also acts on [BoP / debt / emissions / Gini] in the following way..." That pivot is the difference between a B and an A*.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '\u{1F9ED}', text: 'These are the objectives examiners reach for when they ask you to evaluate. The "yes growth was 2%, but..." pivot lives here.' },
+        { type: 'diagram', svgKey: 'macroConstraintCompass' },
+        { type: 'sectionHeader', icon: '\u{1F4D0}', label: 'Each constraint in one line' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'purple', icon: '\u{1F310}', head: 'Balance of payments',
+            body: 'Target: sustainable current-account position. Measure: current account % of GDP. UK current: −2.4% (Q4 2025). Persistent large deficits require foreign financing; the country is effectively borrowing demand from the rest of the world.' },
+          { type: 'tile', tone: 'amber', icon: '\u{1F3DB}', head: 'Fiscal sustainability',
+            body: 'Target: debt on a stable or falling path. Measure: public sector net debt % of GDP. UK current: 93.8% (Mar 2026). Fiscal headroom is the buffer for the next crisis — rising debt narrows future policy choices.' },
+          { type: 'tile', tone: 'green', icon: '\u{1F343}', head: 'Protection of the environment',
+            body: 'Target: decarbonisation path to net zero by 2050. Measure: annual CO₂ emissions and the gap to the carbon budget. UK current: mixed progress. Growth that breaches the budget transfers cost to people who haven\'t been born yet.' },
+          { type: 'tile', tone: 'slate', icon: '\u{2696}', head: 'Greater income equality',
+            body: 'Target: falling Gini coefficient. Measure: Gini coefficient (ONS / HBAI). UK current: Gini ≈ 0.36. Growth that lifts only the top deciles raises the average without raising the median — the headline is misleading.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'These constraints are where the marks live. In every essay, after stating the growth/inflation/unemployment effects, pivot to: "however, this also acts on [BoP / debt / emissions / Gini] in the following way..." That pivot is the difference between a B and an A*.' }
+      ]
     },
 
     /* ============================================================
@@ -159,24 +139,21 @@ window.ECONOS_TOPIC = {
       title: 'The Phillips curve — the prototypical trade-off',
       lede: 'The inflation–unemployment trade-off is the prototypical example of how two objectives can pull against each other. It also illustrates the most important point about every trade-off: <strong>they can break down in the long run.</strong>',
       ledeStyle: 'plain',
-      tip: { icon: '\u{2705}', tone: 'green', text: 'Lower unemployment can come with higher inflation in the short run — but the relationship is unstable once expectations adjust. Press play on the diagram to watch why.' },
 
-      visualKey: 'macroPhillipsWorkstation',
-      visualLabel: 'Phillips workstation',
-      visualEmoji: '\u{1F52C}',
-
-      causesFirst: true,
-      causesLabel: 'Three things you need to know',
-      causesEmoji: '\u{1F9E0}',
-      causesStyle: 'icon-top',
-      causesCols: 3,
-      causes: [
-        { tone: 'green', icon: '\u{2696}', head: 'NAIRU', body: 'The unemployment rate consistent with stable inflation — where the long-run Phillips curve is vertical. UK estimate ~4–4.5%.' },
-        { tone: 'amber', icon: '\u{1F4AD}', head: 'Adaptive expectations', body: 'Workers and firms build recent inflation into wage and price setting. That feedback is what shifts the short-run curve up.' },
-        { tone: 'rose',  icon: '\u{26A0}', head: 'No long-run trade-off', body: 'Attempts to keep U below the NAIRU produce ever-accelerating inflation, not lower joblessness.' }
-      ],
-
-      examEdge: 'Always draw BOTH the SRPC and the vertical LRPC on the same axes; name the NAIRU; explain that adaptive expectations are what shift the SRPC up. The dynamic version of the diagram is what scores marks — a static SRPC alone is a B-grade answer.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '\u{2705}', text: 'Lower unemployment can come with higher inflation in the short run — but the relationship is unstable once expectations adjust. Press play on the diagram to watch why.' },
+        { type: 'diagram', svgKey: 'macroPhillipsWorkstation' },
+        { type: 'sectionHeader', icon: '\u{1F9E0}', label: 'Three things you need to know' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '\u{2696}', head: 'NAIRU',
+            body: 'The unemployment rate consistent with stable inflation — where the long-run Phillips curve is vertical. UK estimate ~4–4.5%.' },
+          { type: 'tile', tone: 'amber', icon: '\u{1F4AD}', head: 'Adaptive expectations',
+            body: 'Workers and firms build recent inflation into wage and price setting. That feedback is what shifts the short-run curve up.' },
+          { type: 'tile', tone: 'rose',  icon: '\u{26A0}', head: 'No long-run trade-off',
+            body: 'Attempts to keep U below the NAIRU produce ever-accelerating inflation, not lower joblessness.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Always draw BOTH the SRPC and the vertical LRPC on the same axes; name the NAIRU; explain that adaptive expectations are what shift the SRPC up. The dynamic version of the diagram is what scores marks — a static SRPC alone is a B-grade answer.' }
+      ]
     },
 
     /* ============================================================
@@ -192,15 +169,13 @@ window.ECONOS_TOPIC = {
       title: 'Four more structural trade-offs',
       lede: 'Beyond Phillips, four more pairs of objectives pull against each other in theory. Each is a structural mechanism — a chain that runs from a policy through one objective to the next. Read each chain left-to-right.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{1F501}', tone: 'green', text: 'Every macro trade-off is a chain. A policy raises objective X via some mechanism, and the SAME chain reduces objective Y as a side-effect.' },
 
-      visualKey: 'macroTradeoffChains',
-      visualLabel: 'Four structural trade-offs',
-      visualEmoji: '\u{2696}',
-
-      bottomTip: { tone: 'slate', icon: '\u{1F4DD}', text: '<strong>These are theoretical mechanisms, not historical events.</strong> Real-world examples — 1970s stagflation, the 2008 GFC, 2021&ndash;23 inflation, the UK\'s persistent current-account deficit &mdash; live in the sister topic, <em>Macro Conflicts &amp; Trade-offs</em>.' },
-
-      examEdge: 'When evaluating any policy, name <em>which</em> trade-off it activates — Phillips, growth&ndash;inflation, growth&ndash;BoP, growth&ndash;environment, or spending&ndash;fiscal. The named mechanism is what scores the marks; the example just illustrates it.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '\u{1F501}', text: 'Every macro trade-off is a chain. A policy raises objective X via some mechanism, and the SAME chain reduces objective Y as a side-effect.' },
+        { type: 'diagram', svgKey: 'macroTradeoffChains' },
+        { type: 'calloutStrip', tone: 'slate', icon: '\u{1F4DD}', text: 'These are theoretical mechanisms, not historical events. Real-world examples — 1970s stagflation, the 2008 GFC, 2021–23 inflation, the UK\'s persistent current-account deficit — live in the sister topic, Macro Conflicts & Trade-offs.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'When evaluating any policy, name which trade-off it activates — Phillips, growth–inflation, growth–BoP, growth–environment, or spending–fiscal. The named mechanism is what scores the marks; the example just illustrates it.' }
+      ]
     },
 
     /* ============================================================
@@ -216,18 +191,13 @@ window.ECONOS_TOPIC = {
       title: 'Why no objective stands alone',
       lede: 'The objectives don\'t sit in isolation. Every one of them is connected to at least one other through a structural trade-off mechanism. That\'s why we score the whole scorecard, not just one number — and why every macro essay needs a framework, not a verdict.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{2705}', tone: 'green', text: 'In every macro answer, name the objective being advanced AND the objective being compromised. That pair is the structure of the argument.' },
 
-      visualKey: 'macroConstraintWeb',
-      visualLabel: 'The constraint web + A* framework',
-      visualEmoji: '\u{1F578}',
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'The theory verdict',
-        text: 'Macroeconomic policy is never the optimisation of one number; it is a choice along a constraint set. A good policy is one whose gains on the advanced objective outweigh its losses on the compromised one, evaluated at the right time horizon. <strong>The next topic shows you how to apply this framework to real UK conflicts.</strong>'
-      },
-      examEdge: 'Structure every macro policy essay around the four-dimensional framework: <em>advanced × compromised × magnitude × time horizon</em>. The framework is the difference between a B answer and an A*.',
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '\u{2705}', text: 'In every macro answer, name the objective being advanced AND the objective being compromised. That pair is the structure of the argument.' },
+        { type: 'diagram', svgKey: 'macroConstraintWeb' },
+        { type: 'bigIdea', text: 'The theory verdict: Macroeconomic policy is never the optimisation of one number; it is a choice along a constraint set. A good policy is one whose gains on the advanced objective outweigh its losses on the compromised one, evaluated at the right time horizon. The next topic shows you how to apply this framework to real UK conflicts.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Structure every macro policy essay around the four-dimensional framework: advanced × compromised × magnitude × time horizon. The framework is the difference between a B answer and an A*.' }
+      ],
 
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }

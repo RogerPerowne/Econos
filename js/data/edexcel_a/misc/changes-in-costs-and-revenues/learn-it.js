@@ -41,7 +41,9 @@ window.ECONOS_TOPIC = {
         { term: 'Profit rectangle', def: '(P − AC) \xd7 Q* – the area showing supernormal profit or loss on a diagram.' },
         { term: 'Fixed cost change', def: 'Shifts AC but NOT MC. Does not change Q* or P – only changes the profit rectangle area.' }
       ],
-      examEdge: 'A lump-sum tax (fixed cost) does not change the profit-maximising output or price because it does not change MC. The firm cannot pass it on to consumers by raising price – the MR = MC intersection is unchanged. A per-unit tax (variable cost) DOES change MC → shifts Q* and P → can be partially passed on to consumers. This distinction is the most commonly tested tax incidence point in profit analysis questions.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'A lump-sum tax (fixed cost) does not change the profit-maximising output or price because it does not change MC. The firm cannot pass it on to consumers by raising price – the MR = MC intersection is unchanged. A per-unit tax (variable cost) DOES change MC → shifts Q* and P → can be partially passed on to consumers. This distinction is the most commonly tested tax incidence point in profit analysis questions.' }
+      ]
     },
     {
       id: 'profit_cost_changes_2',
@@ -79,7 +81,9 @@ window.ECONOS_TOPIC = {
         { term: 'Lump-sum tax', def: 'Fixed tax independent of output – shifts AC but not MC. No change in Q* or P. Fully borne by producer.' },
         { term: 'Tax incidence', def: 'The division of a tax burden between producers and consumers – determined by relative PED.' }
       ],
-      examEdge: 'Petrol duty (per-unit tax): MC shifts up → price rises → consumers pay more. Retailer\'s margin is squeezed → producer bears some. PED for petrol is inelastic ≈ −0.3, so most of duty is passed to consumers. UK petrol duty is ≈ 53p/litre – approximately 50% of the pump price. Corporation tax (lump-sum tax for a given profit level): does not affect MC → no change in output or price → fully borne by shareholders through lower post-tax profit. This distinction is why economists prefer per-unit Pigouvian taxes on externalities (they do change behaviour) over lump-sum taxes (which don\'t).'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Petrol duty (per-unit tax): MC shifts up → price rises → consumers pay more. Retailer\'s margin is squeezed → producer bears some. PED for petrol is inelastic ≈ −0.3, so most of duty is passed to consumers. UK petrol duty is ≈ 53p/litre – approximately 50% of the pump price. Corporation tax (lump-sum tax for a given profit level): does not affect MC → no change in output or price → fully borne by shareholders through lower post-tax profit. This distinction is why economists prefer per-unit Pigouvian taxes on externalities (they do change behaviour) over lump-sum taxes (which don\'t).' }
+      ]
     },
     {
       id: 'profit_cost_changes_5',
@@ -91,7 +95,9 @@ window.ECONOS_TOPIC = {
         { term: 'Cost advantage', def: 'A firm with lower MC than rivals can undercut on price, increase output, or earn higher profit – strategic competitive tool.' },
         { term: 'Learning by doing', def: 'Unit costs fall as cumulative production experience grows – dynamic cost reduction from scale and learning.' }
       ],
-      examEdge: 'Cost reduction through innovation has different effects in competitive vs non-competitive markets. Perfect competition: cost reduction → price falls (competed to consumers by rivals entering if incumbent earns supernormal profit). Monopoly: cost reduction → profit rises (monopolist need not cut price since no rivals can enter). This shows why innovation incentives differ: competitive firms share benefits with consumers; monopolists retain them. Another dimension of the static vs dynamic efficiency trade-off.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'Cost reduction through innovation has different effects in competitive vs non-competitive markets. Perfect competition: cost reduction → price falls (competed to consumers by rivals entering if incumbent earns supernormal profit). Monopoly: cost reduction → profit rises (monopolist need not cut price since no rivals can enter). This shows why innovation incentives differ: competitive firms share benefits with consumers; monopolists retain them. Another dimension of the static vs dynamic efficiency trade-off.' }
+      ]
     },
     {
       id: 'profit_cost_changes_6',
@@ -104,33 +110,21 @@ window.ECONOS_TOPIC = {
         { label: 'Monopoly', colA: 'MC shifts up → new MR = MC at lower Q*, higher P. Firm reduces output and raises price (partially). Profit falls. No risk of exit (monopolist maintains market even at lower profit if covering AVC).', colB: 'AR and MR shift right → new MR = MC at higher Q*, higher P. Output and price both rise. Profit increases substantially. No entry, so supernormal profit persists.' }
       ],
       footer: 'Oligopoly: depends on strategic response. If rivals match cost increase – all raise prices together (tacit coordination). If one firm faces cost increase alone – complex strategic response. Game theory framework applies.',
-      examEdge: 'The key difference between perfect competition and monopoly response to demand increase: in perfect competition, entry erodes the profit and price returns to min AC. In monopoly, no entry → supernormal profit persists. This is the same long-run difference that justifies competition policy – the ability to sustain profit in the face of demand growth is the mark of persistent market power.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'The key difference between perfect competition and monopoly response to demand increase: in perfect competition, entry erodes the profit and price returns to min AC. In monopoly, no entry → supernormal profit persists. This is the same long-run difference that justifies competition policy – the ability to sustain profit in the face of demand growth is the mark of persistent market power.' }
+      ]
     },
     {
       id: 'profit_cost_changes_7',
       template: 'paired',
       title: 'Evaluation: How Firms Respond to Cost Changes',
-      left: {
-        label: 'Pass on to consumers (price rise)',
-        points: [
-          'More feasible when demand is inelastic (consumers less responsive to price)',
-          'Possible when the firm has market power (can set price above MC)',
-          'Prevents profit margin being eroded – protects shareholders',
-          'Risk: if demand is elastic, higher price loses significant sales → revenue falls',
-          'Example: energy companies raised prices sharply during 2022 gas crisis – inelastic demand'
-        ]
-      },
-      right: {
-        label: 'Absorb the cost (margin squeeze)',
-        points: [
-          'Necessary when demand is elastic – raising price would lose too many customers',
-          'Competitive markets: rival firms hold price → cannot pass on without losing market share',
-          'Strategic: accept lower short-run profit to maintain market share and long-run position',
-          'May trigger cost-cutting internally (efficiency improvements)',
-          'Example: supermarkets during 2022 inflation initially absorbed costs to maintain price positioning'
-        ]
-      },
-      examEdge: 'The supermarket response to 2022-23 food inflation illustrates both strategies in one industry. Discounters (Aldi, Lidl) with lower cost bases held prices more effectively. Premium supermarkets (Waitrose) absorbed more cost to protect brand positioning. Mid-market (Tesco, Sainsbury\'s) mixed strategies – selective price holding in visible categories, passing costs elsewhere. The strategic response depends on competitive position, brand identity, and demand elasticity – not just market structure.',
+      blocks: [
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: null, head: 'Pass on to consumers (price rise)', body: 'More feasible when demand is inelastic (consumers less responsive to price); Possible when the firm has market power (can set price above MC); Prevents profit margin being eroded – protects shareholders; Risk: if demand is elastic, higher price loses significant sales → revenue falls; Example: energy companies raised prices sharply during 2022 gas crisis – inelastic demand' },
+          { type: 'tile', tone: 'amber', icon: null, head: 'Absorb the cost (margin squeeze)', body: 'Necessary when demand is elastic – raising price would lose too many customers; Competitive markets: rival firms hold price → cannot pass on without losing market share; Strategic: accept lower short-run profit to maintain market share and long-run position; May trigger cost-cutting internally (efficiency improvements); Example: supermarkets during 2022 inflation initially absorbed costs to maintain price positioning' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'The supermarket response to 2022-23 food inflation illustrates both strategies in one industry. Discounters (Aldi, Lidl) with lower cost bases held prices more effectively. Premium supermarkets (Waitrose) absorbed more cost to protect brand positioning. Mid-market (Tesco, Sainsbury\'s) mixed strategies – selective price holding in visible categories, passing costs elsewhere. The strategic response depends on competitive position, brand identity, and demand elasticity – not just market structure.' }
+      ],
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
@@ -314,4 +308,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

@@ -1,0 +1,62 @@
+/* ============================================================
+   screenshot.css — clean card capture and mockup comparison
+   Activated by js/screenshot-mode.js:
+     ?screenshot=1      → body.screenshot-mode  (static, no chrome)
+     ?preview=center-panel → body.preview-center (interactive, no chrome)
+   ============================================================ */
+
+/* ------------------------------------------------------------------
+   Shared: strip page chrome and show ONLY the centre card panel
+   ------------------------------------------------------------------ */
+.screenshot-mode,
+.preview-center {
+  background: #F7F8FA !important;
+}
+
+/* Hide sidebar */
+.screenshot-mode .sidebar,
+.preview-center .sidebar {
+  display: none !important;
+}
+
+/* Collapse the app grid to a single column so the main area fills the viewport */
+.screenshot-mode .app,
+.preview-center .app {
+  grid-template-columns: 1fr !important;
+}
+
+/* Hide topbar */
+.screenshot-mode .topbar,
+.preview-center .topbar {
+  display: none !important;
+}
+
+/* Collapse the page grid to a single column (hides right-rail by removing its column) */
+.screenshot-mode .page,
+.preview-center .page {
+  grid-template-columns: 1fr !important;
+  padding: 32px 40px !important;
+  max-width: 900px !important;
+  margin-inline: auto !important;
+  background: #F7F8FA !important;
+}
+
+/* Hide the right-rail explicitly in case it is not a grid child (e.g. sticky) */
+.screenshot-mode .right-rail,
+.preview-center .right-rail {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------
+   screenshot-mode only: additionally disable pointer events and
+   suppress interactive affordances so the capture is fully static
+   ------------------------------------------------------------------ */
+.screenshot-mode * {
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+/* ------------------------------------------------------------------
+   preview-center: keep interactivity — no extra rules needed
+   ------------------------------------------------------------------ */

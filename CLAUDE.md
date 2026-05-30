@@ -181,18 +181,195 @@ detail, not a substitute.
 
 ## Service worker cache — BUMP IT when you change cache-first assets
 
-`sw.js` caches `js/app.js`, `js/icons.js`, `styles.css` and other static assets
-**cache-first**. Topic data files under `js/data/...` are network-first and refresh
-themselves, but app.js / icons.js / styles.css do not — users on the old cache
-keep seeing stale renderers and SVGs even after a hard refresh, because the SW
-intercepts requests before the browser cache.
+`sw.js` caches app shell assets **cache-first** via `PRECACHE_ASSETS`
+(currently `CACHE_NAME = 'econos-v129'`). Topic data files under `js/data/...`
+are network-first and refresh themselves; everything else does not.
 
-**Whenever you change `js/app.js`, `js/icons.js`, or `styles.css`, bump
-`CACHE_NAME` in `sw.js`** (e.g. `econos-v10` → `econos-v11`). The activate
-handler deletes any cache that isn't the current one, forcing a full refresh.
+**Bump `CACHE_NAME` whenever you change any of:**
+
+- `js/app.js`, `js/icons.js`, `styles.css`
+- `js/render-blocks.js`, `js/blocks/*.js`, `css/econ-blocks.css`,
+  `css/econ-tokens.css`, `css/blocks/*.css`
+- `js/diagrams/econ-svg.js`, `js/diagrams/generators/*.js`,
+  `js/diagrams/static/*.js`, `js/diagrams/index.js`
+- `js/render-validate.js`, `js/screenshot-mode.js`, `css/screenshot.css`
+
+The activate handler deletes any cache whose name differs from the current one,
+forcing a full refresh for all connected clients.
 
 You do **not** need to bump for changes to topic data files (`js/data/<topic>/...`)
 — those are network-first.
+
+## Block rendering system
+
+Cards with a `blocks: [...]` array are rendered by the **block system**
+(`js/render-blocks.js`). Full schema and block reference: `docs/RENDER_BLOCKS.md`.
+
+### Dispatch
+
+`renderCard` in `js/app.js` checks blocks first:
+
+```js
+if (Array.isArray(c.blocks) && c.blocks.length) { body = window.renderBlocks(c); }
+```
+
+If `blocks` is absent or empty the card falls through to the legacy renderers
+(see [Coexistence](#block-vs-legacy-coexistence) below). The surrounding card
+chrome — progress bar, footer, navigation — is always owned by `renderCard`.
+
+### Globals
+
+| Global | Purpose |
+|---|---|
+| `window.ECONOS_BLOCKS` | Registry object. Keys are block `type` strings; values are renderer functions that receive the block object and return HTML. |
+| `window.renderBlocks(card)` | Renders all blocks in `card.blocks`, prepends the card chrome, and returns the full HTML string. |
+| `window.ECONOS_BLOCK_UTILS` | Shared helpers (`escapeHtml`, `toneClass`, `renderIcon`, `renderChild`, `blockStyle`, `safeGridCols`, `safeGap`, `safeSpan`, `isDevMode`, `VALID_TONES`) exposed so component modules in `js/blocks/*.js` can reuse them without duplicating logic. |
+
+### Card chrome
+
+`renderBlocks` emits three heading elements before the block wrapper when the
+card carries them:
+
+```js
+card.stepLabel  → <div class="card__step-label">…</div>
+card.title      → <h1 class="card__title">…</h1>
+card.lede       → <p class="card__lede">…</p>
+```
+
+These match what the legacy template renderers emit, so a migrated card keeps
+its heading without any HTML changes.
+
+### Component block modules
+
+Phase 1 blocks live in separate files that self-register into `window.ECONOS_BLOCKS`:
+
+| File | Block types |
+|---|---|
+| `js/blocks/compare.js` | `versusRows`, `decisionMatrix`, `trafficLight`, `glossaryRow` |
+| `js/blocks/flow.js` | `mechanismChain`, `rippleCascade`, `opposingFlows`, `timeline` |
+| `js/blocks/structure.js` | `spectrum`, `caseStudies`, `satelliteDiagram`, `policyToolkit` |
+| `js/blocks/data.js` | `metricCard`, `targetGauge`, `equationHero`, `workedExampleStrip`, `factChip` |
+| `js/blocks/diagram.js` | `diagram` (see [Diagram library](#diagram-library) below) |
+
+Each module is loaded as a deferred `<script>` in the shell HTML files
+(`learn-it.html`, `link-it.html`, `land-it.html`) after `render-blocks.js`.
+
+### CSS
+
+| File | Scope |
+|---|---|
+| `css/econ-tokens.css` | Design tokens, density overrides (`[data-density="…"]`), layout custom properties |
+| `css/econ-blocks.css` | Core block styles (`.econ-blocks`, `.econ-block`, `.econ-tile`, `.econ-grid`, `.calloutStrip`, `.hero-visual`, `.big-idea`, `.exam-edge`, `.warning`, `.econ-section`) |
+| `css/blocks/compare.css` | Compare-group block styles |
+| `css/blocks/flow.css` | Flow-group block styles |
+| `css/blocks/structure.css` | Structure-group block styles |
+| `css/blocks/data.css` | Data-group block styles |
+
+## Diagram library
+
+Three-layer system for SVG diagrams inside cards. Full reference: `docs/DIAGRAM_LIBRARY.md`.
+
+### Load order (deferred scripts in each shell)
+
+```
+js/diagrams/econ-svg.js           → window.EconSvg (SVG primitives)
+js/diagrams/generators/*.js       → window.ECONOS_DIAGRAMS (generator functions)
+js/diagrams/static/*.js           → static SVGs registered into both
+                                    window.ECONOS_DIAGRAMS and window.ECONOS_ICONS
+js/diagrams/index.js              → ECONOS_DIAGRAMS.resolve(keyOrSpec)
+js/blocks/diagram.js              → registers the 'diagram' block type
+```
+
+### Globals
+
+| Global | Purpose |
+|---|---|
+| `window.EconSvg` | Stateless SVG-primitive helpers (`svg`, `defs`, `axes`, `curve`, `line`, `label`, `callout`, `equilibrium`, `TONES`, `_scale`). All return SVG fragment strings. |
+| `window.ECONOS_DIAGRAMS` | High-level generator functions (e.g. `adasDiagram`, `ppfDiagram`, `taxSubsidyDiagram`, `priceControlDiagram`, `multiplierDiagram`, `elasticityDiagram`, `costCurvesDiagram`, `marketStructureDiagram`, `labourMarketDiagram`, `phillipsCurve`, `jCurveDiagram`, `fortyFiveDiagram`, `growthDiagram`). Each returns a complete `<svg>` string. |
+| `window.ECONOS_DIAGRAMS.resolve(keyOrSpec)` | Accepts a generator-key string or a `{ type, ...config }` spec object. Falls back to `ECONOS_ICONS[key]` for legacy SVG keys. |
+
+### The `'diagram'` block type
+
+Use inside any `blocks` array:
+
+```js
+{ type: 'diagram', spec: { type: 'adasDiagram', mode: 'demand-pull' }, caption: '…' }
+// — or —
+{ type: 'diagram', svgKey: 'adShiftRight', caption: '…' }
+```
+
+`spec` generates from the diagram system; `svgKey` falls back to a legacy icon.
+Both support `caption` and `height`.
+
+### `js/icons.js` scope
+
+`icons.js` now holds **UI, hero, and scene icons only** (navigation, topic-picker,
+brand marks, small inline decorators). Economics diagram SVGs have been relocated
+to `js/diagrams/static/` and are registered there into both `window.ECONOS_DIAGRAMS`
+and `window.ECONOS_ICONS`. The `inline-extracted.js` static file additionally
+back-fills into `window.ECONOS_ICONS` so that existing `svgKey` look-ups and
+inline `${…}` references in data files continue to work unchanged.
+
+Adding a new generator: create `js/diagrams/generators/<name>.js` as an IIFE
+that registers onto `global.ECONOS_DIAGRAMS`, add `<script defer>` tags to all
+three shells, and add the path to `PRECACHE_ASSETS` in `sw.js` (then bump
+`CACHE_NAME`).
+
+## Dev tooling
+
+Three dev-only scripts are loaded as deferred `<script>` tags in every shell
+and are included in `PRECACHE_ASSETS` so offline use is unaffected.
+
+### `js/render-validate.js` — topic validator
+
+Enable via `?dev=1` or `localStorage.setItem('econosDev', '1')`.
+
+- Auto-runs on `DOMContentLoaded` and logs errors/warnings under `[EconosDebug]`.
+- `window.EconosDebug.validate()` — validates `window.ECONOS_TOPIC`; returns
+  `{ errors, warnings }`.
+- `window.EconosDebug.validate(myTopic)` — validates an arbitrary topic object.
+- Reads `window.ECONOS_BLOCKS` and `window.ECONOS_DIAGRAMS` when available;
+  falls back to hard-coded baselines.
+
+### `dev/renderer-lab.html` — QA sandbox
+
+Standalone page (not served in production). Paste a raw card object into the
+textarea and see it rendered in isolation — no topic load required. Open
+directly from the repo; no build step needed.
+
+### `js/screenshot-mode.js` — screenshot and preview modes
+
+| Query param | Body class | Purpose |
+|---|---|---|
+| `?screenshot=1` | `screenshot-mode` | Strip UI chrome for Playwright / GPT Image captures |
+| `?preview=center-panel` | `preview-center` | Isolate the centre panel for in-browser preview |
+
+Styles live in `css/screenshot.css`.
+
+## Block vs legacy coexistence
+
+Both rendering paths coexist and are supported long-term. `renderCard` dispatches
+**blocks-first**: if `card.blocks` is a non-empty array, the block system handles
+the card entirely. Otherwise the card falls through to the legacy renderer switch.
+
+**Use blocks** for new cards and migrated cards where composition-as-data is a
+good fit.
+
+**Use legacy renderers** for cards that require specialised interactivity or
+layout that the block system does not yet cover:
+
+| Template / renderer | When to keep it |
+|---|---|
+| `ad-interactive` | Interactive diagram with step-by-step highlight + analysis panel |
+| `transmission-chain` | Animated horizontal mechanism chain |
+| `elasticity-explorer`, `yed-xed-explorer`, `pes-explorer` | Draggable interactive curve widgets |
+| `market-structures-comparison` | Multi-panel side-by-side market structure comparison |
+| `essay-scaffold` | Structured essay-writing template |
+| `welfare-gf-explorer` | Welfare / deadweight loss interactive |
+| Tabbed-steps / five-frames / calculation strips | Any card using `interactiveDiagram`, tabbed steps, or scaffolded calculation reveal |
+
+Legacy template cards still use `js/app.js`'s existing renderer functions; no
+changes to those paths are implied by the block system's presence.
 
 ## Adding a new topic
 

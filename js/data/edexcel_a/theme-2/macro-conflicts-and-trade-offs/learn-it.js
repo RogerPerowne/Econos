@@ -50,24 +50,17 @@ window.ECONOS_TOPIC = {
       lede: 'Macroeconomic objectives often pull in different directions. Policy is the art of managing these trade-offs to deliver the best possible outcome.',
       ledeStyle: 'plain',
 
-      visualKey: 'conflictLensMap',
-      visualLabel: 'When objectives collide',
-      visualEmoji: '\u{1F9ED}',
-
-      flowTitle: 'Conflict analysis',
-      flowEmoji: '\u{1F4CA}',
-      flow: [
-        { tone: 'blue',   icon: '\u{2696}', title: 'The trade-off',     sub: 'Which objectives collide and why?' },
-        { tone: 'amber',  icon: '\u{1F4DD}', title: 'The policy choice', sub: 'What can policy do about it?' },
-        { tone: 'purple', icon: '\u{2696}\u{FE0F}', title: 'The legacy',  sub: 'Who wins, who loses, and for how long?' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'Good macro analysis identifies both the gain and the sacrifice.'
-      },
-      examEdge: 'Strong essays identify the conflict before judging the policy.'
+      blocks: [
+        { type: 'diagram', svgKey: 'conflictLensMap' },
+        { type: 'sectionHeader', icon: '📊', label: 'Conflict analysis' },
+        { type: 'mechanismChain', steps: [
+          { label: 'The trade-off',     detail: 'Which objectives collide and why?' },
+          { label: 'The policy choice', detail: 'What can policy do about it?' },
+          { label: 'The legacy',        detail: 'Who wins, who loses, and for how long?' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: Good macro analysis identifies both the gain and the sacrifice.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Strong essays identify the conflict before judging the policy.' }
+      ]
     },
 
     /* CARD 2 — Diagnose the trade-off (Predict-then-reveal). */
@@ -333,34 +326,25 @@ window.ECONOS_TOPIC = {
       lede: 'No policy delivers every objective at once. Great answers evaluate the trade-offs, weigh evidence and judge across time.',
       ledeStyle: 'plain',
 
-      causesPosition: 'top',
-      causesLabel: 'Evidence pile &mdash; four real-world cases',
-      causesEmoji: '\u{1F4DA}',
-      causesStyle: 'numbered-rows',
-      causes: [
-        { tone: 'blue', icon: '\u{1F3DB}\u{FE0F}', head: '2010&ndash;12 austerity',                 body: 'Growth slowed, deficit control improved only gradually.' },
-        { tone: 'blue', icon: '\u{1F4C8}',         head: '2021&ndash;23 inflation surge',            body: 'Inflation fell after rate rises, but real incomes and growth were squeezed.' },
-        { tone: 'blue', icon: '\u{1F465}',         head: 'Sub-NAIRU wages 2022',                     body: 'Very low unemployment met stronger wage inflation.' },
-        { tone: 'blue', icon: '\u{1F310}',         head: 'Persistent current account deficit in the 2010s', body: 'Growth coexisted with an external imbalance.' }
+      blocks: [
+        { type: 'sectionHeader', icon: '\u{1F4DA}', label: 'Evidence pile — four real-world cases' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '\u{1F3DB}\u{FE0F}', head: '2010–12 austerity',                 body: 'Growth slowed, deficit control improved only gradually.' },
+          { type: 'tile', tone: 'blue', icon: '\u{1F4C8}',         head: '2021–23 inflation surge',            body: 'Inflation fell after rate rises, but real incomes and growth were squeezed.' },
+          { type: 'tile', tone: 'blue', icon: '\u{1F465}',         head: 'Sub-NAIRU wages 2022',                    body: 'Very low unemployment met stronger wage inflation.' },
+          { type: 'tile', tone: 'blue', icon: '\u{1F310}',         head: 'Persistent current account deficit in the 2010s', body: 'Growth coexisted with an external imbalance.' }
+        ]},
+        { type: 'sectionHeader', icon: '\u{2696}\u{FE0F}', label: 'Four-dimensional judgement framework' },
+        { type: 'grid', cols: 4, children: [
+          { type: 'tile', tone: 'blue',   icon: '\u{1F3AF}',         head: 'Objective advanced',    body: 'Which objective did the policy prioritise?' },
+          { type: 'tile', tone: 'amber',  icon: '\u{1F6E1}\u{FE0F}', head: 'Objective compromised', body: 'What was sacrificed?' },
+          { type: 'tile', tone: 'green',  icon: '\u{1F4CA}',         head: 'Magnitude',             body: 'How large were the gains and losses?' },
+          { type: 'tile', tone: 'purple', icon: '\u{23F0}',          head: 'Time horizon',          body: 'Short run, medium run, long run.' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: '\u{2B50}', text: 'How to structure the judgement. Short-run trade-offs are real, so good policy names the sacrifice openly. The long-run answer usually lies in stronger potential growth and supply-side reform. Most A* essays mix demand-side stabilisation with a long-run supply-side strategy.' },
+        { type: 'calloutStrip', tone: 'green', icon: '\u{2705}', text: 'Every policy win usually carries a cost elsewhere.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Structure the conclusion around trade-offs: state the conflict, evaluate the sacrifice, and judge over time.' }
       ],
-
-      causes3Label: 'Four-dimensional judgement framework',
-      causes3Emoji: '\u{2696}\u{FE0F}',
-      causes3Cols: 4,
-      causes3Style: 'icon-top',
-      causes3: [
-        { tone: 'blue',   icon: '\u{1F3AF}',         head: 'Objective advanced',    body: 'Which objective did the policy prioritise?' },
-        { tone: 'amber',  icon: '\u{1F6E1}\u{FE0F}', head: 'Objective compromised', body: 'What was sacrificed?' },
-        { tone: 'green',  icon: '\u{1F4CA}',         head: 'Magnitude',             body: 'How large were the gains and losses?' },
-        { tone: 'purple', icon: '\u{23F0}',          head: 'Time horizon',          body: 'Short run, medium run, long run.' }
-      ],
-
-      bottomTip: [
-        { tone: 'blue', icon: '\u{2B50}', text: '<strong>How to structure the judgement.</strong> Short-run trade-offs are real, so good policy names the sacrifice openly. The long-run answer usually lies in stronger potential growth and supply-side reform. Most A* essays mix demand-side stabilisation with a long-run supply-side strategy.' },
-        { tone: 'green', icon: '\u{2705}', text: 'Every policy win usually carries a cost elsewhere.' }
-      ],
-
-      examEdge: 'Structure the conclusion around trade-offs: state the conflict, evaluate the sacrifice, and judge over time.',
 
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself \u{2192}' }
     }

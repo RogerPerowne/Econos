@@ -159,61 +159,27 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Determinants of Exports',
       lede: 'Exports rise when UK goods become more attractive or world demand becomes stronger.',
-      ledeStyle: 'plain',
-
-      tip: { icon: '✅', tone: 'green', text: 'Exports depend on competitiveness, demand abroad and the trading environment.' },
-
-      causesFirst: true,
-      causesLabel: 'FIVE DRIVERS',
-      causesEmoji: '📊',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue', icon: '£', head: 'Real exchange rate',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">A weaker sterling makes UK exports cheaper abroad.</div>' +
-                '<div style="margin-top:8px;background:#DBEAFE;border:1px solid #93C5FD;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#1D4ED8;">↑ Positive</div>' },
-        { tone: 'amber', icon: '🌍', head: 'World income',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">When global growth rises, foreign demand for UK exports rises.</div>' +
-                '<div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">↑ Positive</div>' },
-        { tone: 'purple', icon: '🏷️', head: 'Relative price competitiveness',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Lower UK costs and prices help firms win sales.</div>' +
-                '<div style="margin-top:8px;background:#EDE9FE;border:1px solid #C4B5FD;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#6D28D9;">↑ Positive</div>' },
-        { tone: 'green', icon: '🏅', head: 'Non-price competitiveness',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Quality, brand, innovation and reliability matter.</div>' +
-                '<div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">↑ Positive</div>' },
-        { tone: 'rose', icon: '🚧', head: 'Trade barriers',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Tariffs, quotas and regulations can restrict exports.</div>' +
-                '<div style="margin-top:8px;background:#FFF1F2;border:1px solid #FDA4AF;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#BE123C;">↓ Negative</div>' }
-      ],
-
-      flowTitle: 'THE EXPORT CHAIN',
-      flowEmoji: '🔗',
-      flow: [
-        { icon: '🎯', title: 'Better competitiveness', sub: 'Price and non-price advantages improve' },
-        { icon: '👥', title: 'More foreign demand',    sub: 'Buyers abroad shift towards UK goods' },
-        { icon: '📦', title: 'Exports rise',            sub: 'X volumes and revenue climb' },
-        { icon: '📈', title: 'AD rises',                sub: 'Higher X boosts aggregate demand' }
-      ],
-
-      summaryRow: [
-        { tone: 'blue', icon: '🇬🇧', title: 'UK examples',
-          text: '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:6px;min-width:0;">' +
-                  '<div style="min-width:0;"><strong style="color:#2563EB;">✈️ Service exports</strong><div style="font-size:11.5px;color:#475569;margin-top:2px;">Financial, education and business services in high demand worldwide.</div></div>' +
-                  '<div style="min-width:0;"><strong style="color:#F97316;">🚗 Car exports</strong><div style="font-size:11.5px;color:#475569;margin-top:2px;">UK-made cars go to Europe, the US and emerging markets.</div></div>' +
-                  '<div style="min-width:0;"><strong style="color:#8B5CF6;">💊 Pharmaceuticals</strong><div style="font-size:11.5px;color:#475569;margin-top:2px;">UK medicines and biotech products are exported globally.</div></div>' +
-                '</div>'
-        }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Exports are driven by both price and non-price factors – firms need to be competitive in more ways than one.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'A lower exchange rate helps, but only if firms can actually supply attractive products.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Exports depend on competitiveness, demand abroad and the trading environment.' },
+        { type: 'sectionHeader', icon: '📊', label: 'FIVE DRIVERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '£',  head: 'Real exchange rate',            body: '<div style="font-size:13px;color:#475569;line-height:1.5;">A weaker sterling makes UK exports cheaper abroad.</div><div style="margin-top:8px;background:#DBEAFE;border:1px solid #93C5FD;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#1D4ED8;">↑ Positive</div>' },
+          { type: 'tile', tone: 'amber',  icon: '🌍', head: 'World income',                  body: '<div style="font-size:13px;color:#475569;line-height:1.5;">When global growth rises, foreign demand for UK exports rises.</div><div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">↑ Positive</div>' },
+          { type: 'tile', tone: 'purple', icon: '🏷️', head: 'Relative price competitiveness', body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Lower UK costs and prices help firms win sales.</div><div style="margin-top:8px;background:#EDE9FE;border:1px solid #C4B5FD;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#6D28D9;">↑ Positive</div>' },
+          { type: 'tile', tone: 'green',  icon: '🏅', head: 'Non-price competitiveness',     body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Quality, brand, innovation and reliability matter.</div><div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">↑ Positive</div>' },
+          { type: 'tile', tone: 'rose',   icon: '🚧', head: 'Trade barriers',                body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Tariffs, quotas and regulations can restrict exports.</div><div style="margin-top:8px;background:#FFF1F2;border:1px solid #FDA4AF;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#BE123C;">↓ Negative</div>' }
+        ]},
+        { type: 'sectionHeader', icon: '🔗', label: 'THE EXPORT CHAIN' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Better competitiveness', detail: 'Price and non-price advantages improve' },
+          { label: 'More foreign demand',    detail: 'Buyers abroad shift towards UK goods' },
+          { label: 'Exports rise',           detail: 'X volumes and revenue climb' },
+          { label: 'AD rises',              detail: 'Higher X boosts aggregate demand' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: '🇬🇧', text: 'UK examples — <strong>✈️ Service exports:</strong> Financial, education and business services in high demand worldwide. <strong>🚗 Car exports:</strong> UK-made cars go to Europe, the US and emerging markets. <strong>💊 Pharmaceuticals:</strong> UK medicines and biotech products are exported globally.' },
+        { type: 'bigIdea', text: 'Big idea: Exports are driven by both price and non-price factors – firms need to be competitive in more ways than one.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'A lower exchange rate helps, but only if firms can actually supply attractive products.' }
+      ]
     },
 
     /* ── CARD 4 ── Determinants of Imports ───────────────────────── */
@@ -223,51 +189,27 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Determinants of Imports',
       lede: 'Imports rise when households and firms in the UK buy more from abroad.',
-      ledeStyle: 'plain',
-
-      tip: { icon: '✅', tone: 'green', text: 'Imports are shaped by UK demand, the exchange rate and the attractiveness of foreign goods.' },
-
-      causesFirst: true,
-      causesLabel: 'FIVE DRIVERS',
-      causesEmoji: '⚙️',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue',   icon: '£',  head: 'Real exchange rate',     body: '<div style="font-size:13px;color:#475569;line-height:1.5;">A stronger sterling makes imports cheaper.</div>' },
-        { tone: 'amber',  icon: '📈', head: 'Domestic income',        body: '<div style="font-size:13px;color:#475569;line-height:1.5;">When UK incomes rise, import demand often rises.</div>' },
-        { tone: 'purple', icon: '🏷️', head: 'Relative prices',         body: '<div style="font-size:13px;color:#475569;line-height:1.5;">If foreign goods are cheaper than domestic alternatives, imports rise.</div>' },
-        { tone: 'green',  icon: '🛍️', head: 'Non-price factors',      body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Quality, design, variety and delivery can pull in imports.</div>' },
-        { tone: 'rose',   icon: '🛡️', head: 'Tariffs and quotas',      body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Barriers can reduce imports.</div>' }
-      ],
-
-      flowTitle: 'THE IMPORT CHAIN',
-      flowEmoji: '🔗',
-      flow: [
-        { icon: '👥', title: 'Higher UK demand',          sub: 'Households and firms have more spending power' },
-        { icon: '🛒', title: 'More spending on foreign goods', sub: 'Domestic supply does not fully meet demand' },
-        { icon: '🌐', title: 'Imports rise',               sub: 'M volumes and value climb' },
-        { icon: '↗️', title: 'AD leaks abroad',            sub: 'Spending leaves the domestic circular flow' }
-      ],
-
-      summaryRow: [
-        { tone: 'blue', icon: '🏷️', title: 'UK examples',
-          text: '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:6px;">' +
-                  '<div><strong style="color:#2563EB;">📱 Consumer electronics</strong><div style="font-size:11.5px;color:#475569;margin-top:2px;">Mostly imported from Asia.</div></div>' +
-                  '<div><strong style="color:#F97316;">⛽ Energy</strong><div style="font-size:11.5px;color:#475569;margin-top:2px;">Oil and gas imports remain significant.</div></div>' +
-                  '<div><strong style="color:#059669;">🍎 Food</strong><div style="font-size:11.5px;color:#475569;margin-top:2px;">Fruit, coffee and other imports.</div></div>' +
-                '</div>'
-        }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Strong growth often raises imports as well as domestic demand.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Imports are a leakage from AD – not a sign of failure on their own.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Imports are shaped by UK demand, the exchange rate and the attractiveness of foreign goods.' },
+        { type: 'sectionHeader', icon: '⚙️', label: 'FIVE DRIVERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '£',  head: 'Real exchange rate', body: '<div style="font-size:13px;color:#475569;line-height:1.5;">A stronger sterling makes imports cheaper.</div>' },
+          { type: 'tile', tone: 'amber',  icon: '📈', head: 'Domestic income',    body: '<div style="font-size:13px;color:#475569;line-height:1.5;">When UK incomes rise, import demand often rises.</div>' },
+          { type: 'tile', tone: 'purple', icon: '🏷️', head: 'Relative prices',    body: '<div style="font-size:13px;color:#475569;line-height:1.5;">If foreign goods are cheaper than domestic alternatives, imports rise.</div>' },
+          { type: 'tile', tone: 'green',  icon: '🛍️', head: 'Non-price factors',  body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Quality, design, variety and delivery can pull in imports.</div>' },
+          { type: 'tile', tone: 'rose',   icon: '🛡️', head: 'Tariffs and quotas',  body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Barriers can reduce imports.</div>' }
+        ]},
+        { type: 'sectionHeader', icon: '🔗', label: 'THE IMPORT CHAIN' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Higher UK demand',              detail: 'Households and firms have more spending power' },
+          { label: 'More spending on foreign goods', detail: 'Domestic supply does not fully meet demand' },
+          { label: 'Imports rise',                  detail: 'M volumes and value climb' },
+          { label: 'AD leaks abroad',               detail: 'Spending leaves the domestic circular flow' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: '🏷️', text: 'UK examples — <strong>📱 Consumer electronics:</strong> Mostly imported from Asia. <strong>⛽ Energy:</strong> Oil and gas imports remain significant. <strong>🍎 Food:</strong> Fruit, coffee and other imports.' },
+        { type: 'bigIdea', text: 'Big idea: Strong growth often raises imports as well as domestic demand.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Imports are a leakage from AD – not a sign of failure on their own.' }
+      ]
     },
 
     /* ── CARD 5 ── Exchange rate and net trade ───────────────────── */
@@ -461,51 +403,21 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Evaluating net trade as a policy lever',
       lede: 'Net trade matters – but it is not something the UK can control directly.',
-      ledeStyle: 'plain',
-
-      tip: { icon: '✅', tone: 'green', text: 'Attempts to improve X − M depend on exchange rates, elasticities and competitiveness.' },
-
-      causesFirst: true,
-      causesLabel: 'SIX TESTS',
-      causesEmoji: '⚖️',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue', icon: '1', head: 'Exchange-rate regime',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Floating rates help adjustment automatically.</div>' +
-                '<div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">✓ Favourable</div>' },
-        { tone: 'amber', icon: '2', head: 'Marshall-Lerner condition',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Depreciation works only if demand is elastic enough.</div>' +
-                '<div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">– Conditional</div>' },
-        { tone: 'purple', icon: '3', head: 'Trading partners\' growth',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Exports depend on foreign income.</div>' +
-                '<div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">– Conditional</div>' },
-        { tone: 'rose', icon: '4', head: 'Retaliation risk',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Protectionism can provoke responses.</div>' +
-                '<div style="margin-top:8px;background:#FFF1F2;border:1px solid #FDA4AF;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#BE123C;">↓ Unfavourable</div>' },
-        { tone: 'green', icon: '5', head: 'Supply-side competitiveness',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Productivity, quality and innovation matter.</div>' +
-                '<div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">✓ Favourable</div>' },
-        { tone: 'blue', icon: '6', head: 'Long-run sustainability',
-          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Durable improvement needs stronger competitiveness, not just a weaker currency.</div>' +
-                '<div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">✓ Favourable</div>' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Attempts to improve X − M depend on exchange rates, elasticities and competitiveness.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'SIX TESTS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '1', head: 'Exchange-rate regime',       body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Floating rates help adjustment automatically.</div><div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">✓ Favourable</div>' },
+          { type: 'tile', tone: 'amber',  icon: '2', head: 'Marshall-Lerner condition',  body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Depreciation works only if demand is elastic enough.</div><div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">– Conditional</div>' },
+          { type: 'tile', tone: 'purple', icon: '3', head: 'Trading partners\' growth',  body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Exports depend on foreign income.</div><div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">– Conditional</div>' },
+          { type: 'tile', tone: 'rose',   icon: '4', head: 'Retaliation risk',           body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Protectionism can provoke responses.</div><div style="margin-top:8px;background:#FFF1F2;border:1px solid #FDA4AF;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#BE123C;">↓ Unfavourable</div>' },
+          { type: 'tile', tone: 'green',  icon: '5', head: 'Supply-side competitiveness', body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Productivity, quality and innovation matter.</div><div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">✓ Favourable</div>' },
+          { type: 'tile', tone: 'blue',   icon: '6', head: 'Long-run sustainability',    body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Durable improvement needs stronger competitiveness, not just a weaker currency.</div><div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">✓ Favourable</div>' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: '⚖️', text: 'Depreciation can help, but only as part of a wider strategy — It is a short-term tool. Lasting gains depend on competitiveness and strong demand abroad.' },
+        { type: 'bigIdea', text: 'Big idea: Net trade is influenced more effectively in the long run than controlled in the short run.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'The best answers combine exchange-rate analysis, Marshall-Lerner and supply-side evaluation.' }
       ],
-
-      summaryRow: [
-        { tone: 'blue', icon: '⚖️', title: 'Depreciation can help, but only as part of a wider strategy',
-          text: 'It is a short-term tool. Lasting gains depend on competitiveness and strong demand abroad.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Net trade is influenced more effectively in the long run than controlled in the short run.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'The best answers combine exchange-rate analysis, Marshall-Lerner and supply-side evaluation.'
-      },
-
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

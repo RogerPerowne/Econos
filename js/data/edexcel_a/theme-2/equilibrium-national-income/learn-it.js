@@ -64,63 +64,35 @@ window.ECONOS_TOPIC = {
       title: 'Equilibrium national income',
       lede: 'Income settles where <strong>injections equal withdrawals</strong> – and the same equilibrium can be shown on both the J = W view and the 45° diagram.',
       ledeStyle: 'plain',
-      tip: { icon: '✓', tone: 'green', text: 'When injections equal withdrawals, planned spending equals output.' },
 
-      notePosition: 'top',
-      note: {
-        tone: 'blue',
-        icon: '\u{1F4D0}',
-        head: 'What is the 45° line?',
-        text: 'It\'s the line where <strong>planned expenditure equals actual output</strong> (E = Y). Anywhere on it, what households and firms plan to spend exactly matches what the economy produces. Equilibrium national income is therefore wherever the <strong>E line crosses the 45° line</strong> – the only output level where plans and reality match.'
-      },
-
-      visualKey: 'eniTwinJW45',
-      visualLabel: 'Two diagrams – same answer',
-      visualEmoji: '⚖️',
-
-      pairFirst: true,
-      pairLabel: 'What if the economy is off equilibrium?',
-      pairEmoji: '\u{1F53A}',
-      left: {
-        tone: 'amber',
-        icon: '\u{2B07}️',
-        iconStyle: 'circle',
-        label: 'Below equilibrium',
-        text: ENI_STEP_ROW('#F59E0B', [
-          { icon: '\u{1F4CA}', label: 'Y too low', arrow: true },
-          { icon: '\u{1F4E6}', label: 'Stocks fall', arrow: true },
-          { icon: '\u{1F3ED}', label: 'Firms raise output', arrow: true },
-          { icon: '\u{1F4C8}', label: 'Income rises back toward Y*', arrow: false }
-        ])
-      },
-      right: {
-        tone: 'blue',
-        icon: '\u{2B06}️',
-        iconStyle: 'circle',
-        label: 'Above equilibrium',
-        text: ENI_STEP_ROW('#2563EB', [
-          { icon: '\u{1F4CA}', label: 'Y too high', arrow: true },
-          { icon: '\u{1F4E6}', label: 'Stocks pile up', arrow: true },
-          { icon: '\u{1F3ED}', label: 'Firms cut output', arrow: true },
-          { icon: '\u{1F4C9}', label: 'Income falls back toward Y*', arrow: false }
-        ])
-      },
-
-      flowTitle: 'The big idea',
-      flowEmoji: '\u{1F4A1}',
-      flowSep: '→',
-      flow: [
-        { tone: 'blue',   icon: '1', title: 'Compare J with W',  sub: '' },
-        { tone: 'blue',   icon: '2', title: 'Watch inventories', sub: '' },
-        { tone: 'blue',   icon: '3', title: 'Firms adjust output', sub: '' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Inventory movements are the adjustment mechanism.',
-        text: 'If planned spending exceeds output, firms respond by producing more. If planned spending falls short, they cut back.'
-      },
-      examEdge: 'In strong essays, state that the equilibrium level of national income is where injections equal withdrawals – which is the same equilibrium shown where planned expenditure crosses the 45° line.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'When injections equal withdrawals, planned spending equals output.' },
+        { type: 'calloutStrip', tone: 'blue', icon: '\u{1F4D0}', text: 'What is the 45° line? — It\'s the line where <strong>planned expenditure equals actual output</strong> (E = Y). Anywhere on it, what households and firms plan to spend exactly matches what the economy produces. Equilibrium national income is therefore wherever the <strong>E line crosses the 45° line</strong> – the only output level where plans and reality match.' },
+        { type: 'diagram', svgKey: 'eniTwinJW45', caption: 'Two diagrams – same answer' },
+        { type: 'sectionHeader', icon: '\u{1F53A}', label: 'What if the economy is off equilibrium?' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'amber', icon: '\u{2B07}️', head: 'Below equilibrium', body: ENI_STEP_ROW('#F59E0B', [
+            { icon: '\u{1F4CA}', label: 'Y too low', arrow: true },
+            { icon: '\u{1F4E6}', label: 'Stocks fall', arrow: true },
+            { icon: '\u{1F3ED}', label: 'Firms raise output', arrow: true },
+            { icon: '\u{1F4C8}', label: 'Income rises back toward Y*', arrow: false }
+          ]) },
+          { type: 'tile', tone: 'blue', icon: '\u{2B06}️', head: 'Above equilibrium', body: ENI_STEP_ROW('#2563EB', [
+            { icon: '\u{1F4CA}', label: 'Y too high', arrow: true },
+            { icon: '\u{1F4E6}', label: 'Stocks pile up', arrow: true },
+            { icon: '\u{1F3ED}', label: 'Firms cut output', arrow: true },
+            { icon: '\u{1F4C9}', label: 'Income falls back toward Y*', arrow: false }
+          ]) }
+        ]},
+        { type: 'sectionHeader', icon: '\u{1F4A1}', label: 'The big idea' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Compare J with W',    detail: '' },
+          { label: 'Watch inventories',   detail: '' },
+          { label: 'Firms adjust output', detail: '' }
+        ]},
+        { type: 'bigIdea', text: 'Inventory movements are the adjustment mechanism. If planned spending exceeds output, firms respond by producing more. If planned spending falls short, they cut back.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'In strong essays, state that the equilibrium level of national income is where injections equal withdrawals – which is the same equilibrium shown where planned expenditure crosses the 45° line.' }
+      ]
     },
 
     /* ============================================================
@@ -133,57 +105,24 @@ window.ECONOS_TOPIC = {
       title: 'AD/AS view of equilibrium',
       lede: 'The <strong>AD/AS model</strong> shows equilibrium where aggregate demand meets aggregate supply, giving both the equilibrium price level and real output.',
       ledeStyle: 'plain',
-      tip: { icon: '✓', tone: 'green', text: 'Equilibrium in AD/AS gives both P* and Y*.' },
 
-      visualKey: 'eniAdAsCore',
-      visualLabel: 'The core diagram',
-      visualEmoji: '⚖️',
-
-      pairFirst: true,
-      pairLabel: 'Two shocks, two outcomes',
-      pairEmoji: '\u{1F53A}',
-      left: {
-        tone: 'green',
-        icon: '\u{2B06}️',
-        iconStyle: 'circle',
-        label: 'AD shifts right – confidence boom',
-        text: `${ENI_MINI_CHART_BOOM}
-          <ul style="margin:10px 0 0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;">
-            <li><strong>P rises</strong></li>
-            <li><strong>Y rises</strong></li>
-            <li><strong>Demand is stronger</strong></li>
-          </ul>
-          <div style="font-size:12.5px;color:#475569;margin-top:6px;">Consumer confidence, spending and investment rise.</div>`
-      },
-      right: {
-        tone: 'amber',
-        icon: '\u{2B07}️',
-        iconStyle: 'circle',
-        label: 'SRAS shifts left – oil shock',
-        text: `${ENI_MINI_CHART_OIL}
-          <ul style="margin:10px 0 0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;">
-            <li><strong>P rises</strong></li>
-            <li><strong>Y falls</strong></li>
-            <li><strong>Stagflation risk</strong></li>
-          </ul>
-          <div style="font-size:12.5px;color:#475569;margin-top:6px;">Higher input costs squeeze output and raise prices.</div>`
-      },
-
-      flowTitle: 'Read the axes',
-      flowEmoji: '\u{1F50D}',
-      flowSep: '→',
-      flow: [
-        { tone: 'blue', icon: '1', title: 'Find the curves', sub: '' },
-        { tone: 'blue', icon: '2', title: 'Read off P*',     sub: '' },
-        { tone: 'blue', icon: '3', title: 'Read off Y*',     sub: '' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'The same economy can reach inflation in different ways. If AD rises, output usually rises too. If SRAS falls, prices rise while output falls.'
-      },
-      examEdge: 'Always identify which curve shifts. An AD shift and an SRAS shift can both raise inflation, but they imply different output effects and different policies.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'Equilibrium in AD/AS gives both P* and Y*.' },
+        { type: 'diagram', svgKey: 'eniAdAsCore', caption: 'The core diagram' },
+        { type: 'sectionHeader', icon: '\u{1F53A}', label: 'Two shocks, two outcomes' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '\u{2B06}️', head: 'AD shifts right – confidence boom', body: ENI_MINI_CHART_BOOM + '<ul style="margin:10px 0 0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;"><li><strong>P rises</strong></li><li><strong>Y rises</strong></li><li><strong>Demand is stronger</strong></li></ul><div style="font-size:12.5px;color:#475569;margin-top:6px;">Consumer confidence, spending and investment rise.</div>' },
+          { type: 'tile', tone: 'amber', icon: '\u{2B07}️', head: 'SRAS shifts left – oil shock', body: ENI_MINI_CHART_OIL + '<ul style="margin:10px 0 0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;"><li><strong>P rises</strong></li><li><strong>Y falls</strong></li><li><strong>Stagflation risk</strong></li></ul><div style="font-size:12.5px;color:#475569;margin-top:6px;">Higher input costs squeeze output and raise prices.</div>' }
+        ]},
+        { type: 'sectionHeader', icon: '\u{1F50D}', label: 'Read the axes' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Find the curves', detail: '' },
+          { label: 'Read off P*',     detail: '' },
+          { label: 'Read off Y*',     detail: '' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: The same economy can reach inflation in different ways. If AD rises, output usually rises too. If SRAS falls, prices rise while output falls.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always identify which curve shifts. An AD shift and an SRAS shift can both raise inflation, but they imply different output effects and different policies.' }
+      ]
     },
 
     /* ============================================================
@@ -196,45 +135,24 @@ window.ECONOS_TOPIC = {
       title: 'Recessionary and inflationary gaps',
       lede: 'Equilibrium is <strong>not always at full employment output</strong>.',
       ledeStyle: 'plain',
-      tip: { icon: '✓', tone: 'green', text: 'A gap shows the distance between current equilibrium and full-employment output Y₀ₑ.' },
 
-      visualKey: 'eniOutputGapsTwin',
-      visualLabel: 'Two types of gap',
-      visualEmoji: '⚖️',
-
-      pairFirst: true,
-      pairLabel: 'Classical vs Keynesian',
-      pairEmoji: '\u{1F465}',
-      left: {
-        tone: 'blue',
-        icon: '\u{1F3DB}️',
-        iconStyle: 'circle',
-        label: 'Classical view',
-        text: 'Wages and prices are flexible, so the economy tends back toward full employment in the long run.'
-      },
-      right: {
-        tone: 'purple',
-        icon: '\u{1F9E0}',
-        iconStyle: 'circle',
-        label: 'Keynesian view',
-        text: 'Wages and prices can be sticky, so equilibrium can persist below Y₀ₑ and policy may be needed.'
-      },
-
-      flowTitle: 'Policy logic',
-      flowEmoji: '⚙️',
-      flowSep: '→',
-      flow: [
-        { tone: 'blue', icon: '1', title: 'Spot the gap',                          sub: '' },
-        { tone: 'blue', icon: '2', title: 'Diagnose spare capacity or overheating', sub: '' },
-        { tone: 'blue', icon: '3', title: 'Choose stimulus or restraint',           sub: '' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'Below Y₀ₑ the problem is weak demand or sticky adjustment. Above Y₀ₑ the problem is overheating and inflation pressure.'
-      },
-      examEdge: 'Use the phrase <em>recessionary gap</em> for below-full-employment equilibrium and <em>inflationary gap</em> for above-full-employment equilibrium. Then state why the policy response differs.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'A gap shows the distance between current equilibrium and full-employment output Y₀ₑ.' },
+        { type: 'diagram', svgKey: 'eniOutputGapsTwin', caption: 'Two types of gap' },
+        { type: 'sectionHeader', icon: '\u{1F465}', label: 'Classical vs Keynesian' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '\u{1F3DB}️', head: 'Classical view',  body: 'Wages and prices are flexible, so the economy tends back toward full employment in the long run.' },
+          { type: 'tile', tone: 'purple', icon: '\u{1F9E0}',  head: 'Keynesian view', body: 'Wages and prices can be sticky, so equilibrium can persist below Y₀ₑ and policy may be needed.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚙️', label: 'Policy logic' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Spot the gap',                          detail: '' },
+          { label: 'Diagnose spare capacity or overheating', detail: '' },
+          { label: 'Choose stimulus or restraint',           detail: '' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: Below Y₀ₑ the problem is weak demand or sticky adjustment. Above Y₀ₑ the problem is overheating and inflation pressure.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Use the phrase <em>recessionary gap</em> for below-full-employment equilibrium and <em>inflationary gap</em> for above-full-employment equilibrium. Then state why the policy response differs.' }
+      ]
     },
 
     /* ============================================================
@@ -247,44 +165,33 @@ window.ECONOS_TOPIC = {
       title: 'Reading national-income data',
       lede: 'GDP data only becomes meaningful for welfare after a series of <strong>adjustments and judgements</strong>.',
       ledeStyle: 'plain',
-      tip: { icon: '✓', tone: 'green', text: 'A bigger GDP number is not automatically a bigger welfare gain.' },
 
-      causesFirst: true,
-      causesLabel: 'The five filters',
-      causesEmoji: '\u{1F50D}',
-      causes: [
-        { tone: 'blue',   icon: '\u{1F4C8}', head: 'Real',         body: 'Strip out inflation so growth is measured in volume, not just prices.' },
-        { tone: 'amber',  icon: '\u{1F465}', head: 'Per capita',   body: 'Divide by population to see what happens per person.' },
-        { tone: 'purple', icon: '⚖️', head: 'Distribution', body: 'Averages can hide inequality and weak median incomes.' },
-        { tone: 'green',  icon: '\u{1F343}', head: 'Sustainability', body: 'Depletion and pollution can make GDP look better than welfare.' },
-        { tone: 'blue',   icon: '\u{1F310}', head: 'PPP',          body: 'Use purchasing power parity for fairer cross-country comparisons.' },
-        { tone: 'rose',   icon: '\u{1F91D}', head: 'Non-market',   body: 'GDP misses unpaid work, household production and subsistence – welfare may be bigger than the number.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'A bigger GDP number is not automatically a bigger welfare gain.' },
+        { type: 'sectionHeader', icon: '\u{1F50D}', label: 'The five filters' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '\u{1F4C8}', head: 'Real',          body: 'Strip out inflation so growth is measured in volume, not just prices.' },
+          { type: 'tile', tone: 'amber',  icon: '\u{1F465}', head: 'Per capita',    body: 'Divide by population to see what happens per person.' },
+          { type: 'tile', tone: 'purple', icon: '⚖️',        head: 'Distribution',  body: 'Averages can hide inequality and weak median incomes.' },
+          { type: 'tile', tone: 'green',  icon: '\u{1F343}', head: 'Sustainability', body: 'Depletion and pollution can make GDP look better than welfare.' },
+          { type: 'tile', tone: 'blue',   icon: '\u{1F310}', head: 'PPP',           body: 'Use purchasing power parity for fairer cross-country comparisons.' },
+          { type: 'tile', tone: 'rose',   icon: '\u{1F91D}', head: 'Non-market',    body: 'GDP misses unpaid work, household production and subsistence – welfare may be bigger than the number.' }
+        ]},
+        { type: 'sectionHeader', icon: '\u{1F3AF}', label: 'Turn GDP into a judgement' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Start with GDP',           detail: '' },
+          { label: 'Apply the 5 filters',      detail: '' },
+          { label: 'Make a welfare judgement', detail: '' }
+        ]},
+        { type: 'sectionHeader', icon: '\u{1F50D}', label: 'Quick example' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'slate',  icon: '\u{1F4CA}', head: 'Country A: GDP up 4%', body: 'Headline figure – needs unpacking by the filters.' },
+          { type: 'tile', tone: 'blue',   icon: '\u{1F4C8}', head: 'Real growth ≈ 1%',     body: 'Inflation is high. Population is rising, so per capita ≈ 0.2%.' },
+          { type: 'tile', tone: 'purple', icon: '\u{279C}',  head: 'Welfare ≪ 4%',         body: 'Gains concentrated at the top mean median incomes barely move – welfare improved by much less than 4%.' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: National income is a useful starting point, but welfare analysis needs context, adjustment and judgement.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Strong evaluation moves beyond raw GDP. Mention real terms, per capita data, distribution and sustainability before concluding whether living standards truly improved.' }
       ],
-
-      flowTitle: 'Turn GDP into a judgement',
-      flowEmoji: '\u{1F3AF}',
-      flowSep: '→',
-      flow: [
-        { tone: 'blue', icon: '1', title: 'Start with GDP',        sub: '' },
-        { tone: 'blue', icon: '2', title: 'Apply the 5 filters',   sub: '' },
-        { tone: 'blue', icon: '3', title: 'Make a welfare judgement', sub: '' }
-      ],
-
-      causes2Label: 'Quick example',
-      causes2Emoji: '\u{1F50D}',
-      causes2Cols: 3,
-      causes2: [
-        { tone: 'slate',  icon: '\u{1F4CA}', head: 'Country A: GDP up 4%', body: 'Headline figure – needs unpacking by the filters.' },
-        { tone: 'blue',   icon: '\u{1F4C8}', head: 'Real growth ≈ 1%',     body: 'Inflation is high. Population is rising, so per capita ≈ 0.2%.' },
-        { tone: 'purple', icon: '\u{279C}',  head: 'Welfare ≪ 4%',    body: 'Gains concentrated at the top mean median incomes barely move – welfare improved by much less than 4%.' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'National income is a useful starting point, but welfare analysis needs context, adjustment and judgement.'
-      },
-      examEdge: 'Strong evaluation moves beyond raw GDP. Mention real terms, per capita data, distribution and sustainability before concluding whether living standards truly improved.',
 
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }

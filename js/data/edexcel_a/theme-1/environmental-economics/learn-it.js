@@ -25,11 +25,9 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'environmental_econ_1',
-      template: 'framing',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Environmental economics: the big picture',
       lede: 'The environment is the ultimate under-priced resource – and climate change is the largest market failure in history.',
-      tip: 'Frame environmental problems as economic problems: the atmosphere is running out of waste-sink capacity and the price signal is absent. Carbon pricing is the attempt to create that missing price signal.',
       branches: [
         { tone: 'green',  label: 'The environment as resource', sub: 'Three services markets under-price: raw inputs, waste sink capacity, and amenity value.' },
         { tone: 'rose',   label: 'Climate as market failure',   sub: 'Stern: global, long-horizon, irreversible, pervasive – every textbook failure compounded.' },
@@ -37,25 +35,41 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  label: 'Cap-and-trade',               sub: 'Set total emissions, let firms trade permits. Quantity-certain, price-volatile – the EU ETS model.' },
         { tone: 'purple', label: 'Sustainability & growth',     sub: 'Can growth be decoupled from environmental harm? International agreements, free-riding, and the equity question.' }
       ],
-      body: 'The natural environment provides three distinct economic services, each of which the market systematically under-prices:<br><br>1. <strong>Resource inputs:</strong> raw materials, energy, water, food. Markets price these but often below full social cost (depletion externalities, subsidy distortions).<br>2. <strong>Waste sink:</strong> the atmosphere, rivers, and soils absorb waste (CO2, chemicals, plastics). Markets treat this as a free service – but capacity is finite.<br>3. <strong>Amenity value:</strong> biodiversity, landscapes, clean air, recreational spaces – valued by people but poorly captured in market prices.<br><br>Environmental economics seeks to internalise these values into market prices – making environmental degradation economically costly.',
       keyTerms: [
         { term: 'Natural capital', def: 'The stock of natural resources and ecosystems that provide economic services – equivalent to man-made capital.' },
         { term: 'Ecosystem services', def: 'Benefits provided by nature: pollination, carbon sequestration, flood regulation, clean water – largely unpriced by markets.' },
         { term: 'Waste sink capacity', def: 'The finite ability of the environment to absorb pollution without permanent degradation – treated as a free good by markets.' }
       ],
-      examEdge: 'Environmental economics reframes environmental problems as economic ones: the planet is running out of waste sink capacity (atmosphere for CO2) and the price signal for this scarcity is absent. Carbon pricing is the attempt to create that price signal. This framing is analytically powerful for essays.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: 'check', text: 'Frame environmental problems as economic problems: the atmosphere is running out of waste-sink capacity and the price signal is absent. Carbon pricing is the attempt to create that missing price signal.' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '🌿', head: 'Resource inputs',   body: 'Raw materials, energy, water, food. Markets price these but often below full social cost (depletion externalities, subsidy distortions).' },
+          { type: 'tile', tone: 'blue',   icon: '🏭', head: 'Waste sink',         body: 'The atmosphere, rivers, and soils absorb waste (CO2, chemicals, plastics). Markets treat this as a free service – but capacity is finite.' },
+          { type: 'tile', tone: 'purple', icon: '🌄', head: 'Amenity value',      body: 'Biodiversity, landscapes, clean air, recreational spaces – valued by people but poorly captured in market prices.' },
+          { type: 'tile', tone: 'amber',  icon: '💡', head: 'Policy objective',   body: 'Environmental economics seeks to internalise these values into market prices – making environmental degradation economically costly.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Environmental economics reframes environmental problems as economic ones: the planet is running out of waste sink capacity (atmosphere for CO2) and the price signal for this scarcity is absent. Carbon pricing is the attempt to create that price signal. This framing is analytically powerful for essays.' }
+      ]
     },
     {
       id: 'environmental_econ_2',
-      template: 'framing',
       title: 'Climate Change: The Greatest Market Failure',
-      body: 'Sir Nicholas Stern (2006): "Climate change is the greatest market failure the world has ever seen." Why?<br><br>1. <strong>Massive externality:</strong> carbon emissions impose costs on all, but emitters bear little of the cost.<br>2. <strong>Global spillover:</strong> emissions anywhere affect climate everywhere – no national government can internalise the cost alone.<br>3. <strong>Long time horizon:</strong> costs of climate change fall heavily on future generations who have no current market voice.<br>4. <strong>Irreversibility:</strong> some climate tipping points (ice sheet collapse, permafrost thaw) are irreversible – precautionary principle applies.<br>5. <strong>Scale:</strong> virtually all economic activity generates emissions – the market failure is pervasive, not isolated.',
       keyTerms: [
         { term: 'Stern Review', def: '2006 UK government report concluding climate change is the largest market failure ever – advocating urgent carbon pricing and international cooperation.' },
         { term: 'Social cost of carbon', def: 'The economic cost of one additional tonne of CO2 in the atmosphere – estimated at $51-$185/tonne. The optimal carbon tax equals this.' },
         { term: 'Tipping point', def: 'A threshold in the climate system beyond which change becomes self-reinforcing and irreversible – creates case for precautionary action.' }
       ],
-      examEdge: 'Stern vs Nordhaus: key debate is the discount rate applied to future climate damages. Stern (low 1.4% discount rate) → act now aggressively. Nordhaus (higher 4-5% discount rate) → gradual action cheaper. This is a positive/normative debate – discount rate reflects value judgement about how much future generations matter.'
+      blocks: [
+        { type: 'sectionHeader', icon: '🌍', label: 'Why climate change is the greatest market failure' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'rose',   icon: '💨', head: 'Massive externality',   body: 'Carbon emissions impose costs on all, but emitters bear little of the cost. Classic negative externality of production and consumption.' },
+          { type: 'tile', tone: 'blue',   icon: '🌐', head: 'Global spillover',       body: 'Emissions anywhere affect climate everywhere – no national government can internalise the cost alone.' },
+          { type: 'tile', tone: 'amber',  icon: '⏳', head: 'Long time horizon',      body: 'Costs of climate change fall heavily on future generations who have no current market voice.' },
+          { type: 'tile', tone: 'purple', icon: '⚠️', head: 'Irreversibility',        body: 'Some climate tipping points (ice sheet collapse, permafrost thaw) are irreversible – precautionary principle applies.' },
+          { type: 'tile', tone: 'slate',  icon: '📊', head: 'Pervasive scale',        body: 'Virtually all economic activity generates emissions – the market failure is pervasive, not isolated.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Stern vs Nordhaus: key debate is the discount rate applied to future climate damages. Stern (low 1.4% discount rate) → act now aggressively. Nordhaus (higher 4-5% discount rate) → gradual action cheaper. This is a positive/normative debate – discount rate reflects value judgement about how much future generations matter.' }
+      ]
     },
     {
       id: 'environmental_econ_3',
@@ -85,19 +99,23 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'environmental_econ_5',
-      template: 'framing',
       title: 'Sustainability',
-      body: '<strong>Sustainable development</strong> (Brundtland Commission, 1987): "Development that meets the needs of the present without compromising the ability of future generations to meet their own needs."<br><br>Economic sustainability requires maintaining the total stock of capital:<br>• <strong>Weak sustainability:</strong> natural capital can be substituted by man-made capital – OK to deplete oil reserves if the proceeds are invested in renewable energy infrastructure.<br>• <strong>Strong sustainability:</strong> natural capital is not fully substitutable – some ecosystem services (biodiversity, climate stability) cannot be replaced by man-made capital. Must preserve natural capital stocks.<br><br>The debate between weak and strong sustainability is central to environmental policy design.',
       keyTerms: [
         { term: 'Sustainable development', def: 'Development meeting present needs without compromising future generations\' ability to meet theirs – Brundtland definition.' },
         { term: 'Weak sustainability', def: 'Natural and man-made capital are substitutable – total capital stock maintained regardless of composition.' },
         { term: 'Strong sustainability', def: 'Natural capital must be preserved; man-made capital cannot fully substitute – some natural systems are irreplaceable.' }
       ],
-      examEdge: 'Weak vs strong sustainability is a genuine policy debate. North Sea oil depletion: UK used revenues for tax cuts (weak sustainability – converted natural to financial capital, but not preserved). Norway used revenues for sovereign wealth fund (Norges Bank – converted natural capital to man-made financial capital). Norway represents closer to weak sustainability in action.'
+      blocks: [
+        { type: 'bigIdea', text: 'Sustainable development (Brundtland Commission, 1987): "Development that meets the needs of the present without compromising the ability of future generations to meet their own needs."' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '🔄', head: 'Weak sustainability',  body: 'Natural capital can be substituted by man-made capital – OK to deplete oil reserves if proceeds are invested in renewable energy infrastructure. Total capital stock is maintained.' },
+          { type: 'tile', tone: 'blue',   icon: '🌿', head: 'Strong sustainability', body: 'Natural capital is not fully substitutable – some ecosystem services (biodiversity, climate stability) cannot be replaced by man-made capital. Natural capital stocks must be preserved.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Weak vs strong sustainability is a genuine policy debate. North Sea oil depletion: UK used revenues for tax cuts (weak sustainability – converted natural to financial capital, but not preserved). Norway used revenues for sovereign wealth fund (Norges Bank – converted natural capital to man-made financial capital). Norway represents closer to weak sustainability in action.' }
+      ]
     },
     {
       id: 'environmental_econ_6',
-      template: 'framing',
       title: 'Growth vs Environmental Protection',
       verdict: {
         leftLabel: '🌱 Growth and environment can coexist',
@@ -110,19 +128,31 @@ window.ECONOS_TOPIC = {
           { aspect: 'Policy', left: 'Carbon pricing internalises cost → innovation → clean growth without sacrificing prosperity', right: 'Doughnut economics (Kate Raworth): growth beyond planetary boundaries is destructive regardless of income level' }
         ]
       },
-      examEdge: 'The Environmental Kuznets Curve is key exam content: the inverted-U relationship between income and environmental degradation. Supporting evidence: rich countries have cleaner local environments (air, water). Counter-evidence: global carbon emissions still track with global income. Evaluation: EKC may describe pollution shift, not reduction – manufacturing exported to developing countries.'
+      blocks: [
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🌱', head: 'Growth and environment can coexist', body: 'Environmental Kuznets Curve: rich countries invest in clean tech · UK: GDP +22% (2000-2020), CO2 −44% · Green growth sectors (renewables, EVs, circular economy) · Carbon pricing drives clean innovation' },
+          { type: 'tile', tone: 'rose',  icon: '⛔', head: 'Case for constraining growth',     body: 'EKC may just export pollution to developing countries · 1.5°C targets may require consumption reduction · Rebound effect offsets efficiency gains · Doughnut economics: growth beyond planetary boundaries is destructive' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'The Environmental Kuznets Curve is key exam content: the inverted-U relationship between income and environmental degradation. Supporting evidence: rich countries have cleaner local environments (air, water). Counter-evidence: global carbon emissions still track with global income. Evaluation: EKC may describe pollution shift, not reduction – manufacturing exported to developing countries.' }
+      ]
     },
     {
       id: 'environmental_econ_7',
-      template: 'framing',
       title: 'International Environmental Agreements',
-      body: '<strong>Paris Agreement (2015):</strong> 196 parties agreed to limit global warming to well below 2°C, pursuing 1.5°C. Nationally Determined Contributions (NDCs) – voluntary national pledges. Mechanism: no enforcement; pledges are politically binding, not legally. Assessment: current NDCs put world on track for ~2.5-3°C warming – insufficient.<br><br><strong>Kyoto Protocol (1997):</strong> binding targets for developed countries; US withdrew; did not include China or India. Limited effectiveness.<br><br><strong>Economic problem:</strong> global commons (the atmosphere) = classic free rider problem at international level. Countries benefit from others\' abatement without reducing their own emissions. Coase solution impossible (too many parties, no enforcement mechanism).',
       keyTerms: [
         { term: 'Paris Agreement', def: '2015 multilateral climate deal – voluntary national pledges to limit warming; no binding enforcement mechanism.' },
         { term: 'Global commons', def: 'Resources shared by all (atmosphere, oceans) – subject to the tragedy of the commons when unregulated.' },
         { term: 'Tragedy of the commons', def: 'Shared resources are over-exploited because each individual gains the full benefit but bears only a fraction of the cost.' }
       ],
-      examEdge: 'International environmental agreements face the collective action problem at the global level: no supranational authority can compel compliance. This is the fundamental reason climate policy is harder than domestic environmental policy – the externality is global but governance is national. Use the term "international public good" for a stable climate – reinforces why market failure is so intractable.',
+      blocks: [
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '🌐', head: 'Paris Agreement (2015)',       body: '196 parties agreed to limit warming to below 2°C, pursuing 1.5°C. Nationally Determined Contributions (NDCs) – voluntary national pledges. No enforcement; current NDCs put world on track for ~2.5-3°C.' },
+          { type: 'tile', tone: 'amber',  icon: '📜', head: 'Kyoto Protocol (1997)',         body: 'Binding targets for developed countries; US withdrew; did not include China or India. Limited effectiveness.' },
+          { type: 'tile', tone: 'rose',   icon: '🐟', head: 'Global commons problem',        body: 'Global commons (the atmosphere) = classic free rider problem at international level. Countries benefit from others\' abatement without reducing their own emissions.' },
+          { type: 'tile', tone: 'purple', icon: '🤝', head: 'Why Coase fails globally',      body: 'Coasian solution impossible for climate: too many parties, no enforcement mechanism, no clear property rights to the atmosphere.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'International environmental agreements face the collective action problem at the global level: no supranational authority can compel compliance. This is the fundamental reason climate policy is harder than domestic environmental policy – the externality is global but governance is national. Use the term "international public good" for a stable climate – reinforces why market failure is so intractable.' }
+      ],
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
@@ -297,11 +327,10 @@ window.ECONOS_TOPIC = {
           'International carbon pricing faces an inherent free-rider problem at the global level: countries that decarbonise gain cleaner air but bear the full cost, while countries that continue to emit benefit from others\' reductions without cost – suggesting unilateral carbon taxes may impose competitive disadvantage without achieving the global reduction needed, and that multilateral mechanisms (Paris Agreement, carbon border adjustments) are necessary but face severe coordination difficulties'
         ],
         correct: [1, 3, 5],
-        exp: '<strong>Options B, D, and F are genuine evaluation.</strong> B: identifies the regressive distributional problem with carbon taxes and connects it to the political economy of setting the optimal rate – a multi-step evaluation with a policy direction. D: evaluates the EU ETS in practice, identifying the government failure (over-generous caps) that undermined the mechanism – a real-world case study that qualifies the theoretical superiority of cap-and-trade. F: identifies the global free-rider problem as the fundamental challenge and evaluates available solutions (multilateral agreements, border adjustments) while acknowledging their coordination difficulties – a sophisticated multi-level evaluation. A, C, and E are descriptions.'
+        exp: '<strong>Options B, D, and F are genuine evaluation.</strong> B: identifies the regressive distributive problem with carbon taxes and connects it to the political economy of setting the optimal rate – a multi-step evaluation with a policy direction. D: evaluates the EU ETS in practice, identifying the government failure (over-generous caps) that undermined the mechanism – a real-world case study that qualifies the theoretical superiority of cap-and-trade. F: identifies the global free-rider problem as the fundamental challenge and evaluates available solutions (multilateral agreements, border adjustments) while acknowledging their coordination difficulties – a sophisticated multi-level evaluation. A, C, and E are descriptions.'
       }
 
     ]
   };
 
 })();
-

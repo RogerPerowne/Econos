@@ -27,34 +27,27 @@ window.ECONOS_TOPIC = {
       id: 'market_equilibrium_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Market equilibrium: the big picture',
-      tip: { icon: '💡', tone: 'blue', text: 'When the plans of buyers and sellers match, the market settles at an equilibrium price and quantity.' },
-      diagramPanel: {
-        diagramKey: 'equilibriumBasic',
-        title: 'Market equilibrium',
-        intro: 'At point E:',
-        bullets: [
-          'quantity demanded equals quantity supplied',
-          'there is no pressure for price to rise or fall',
-          'the equilibrium price clears the market'
-        ]
-      },
-      pairLabel: null,
-      left:  { tone: 'blue',  icon: '🛒', iconStyle: 'circle', label: 'Demand', text: 'The demand curve shows how much consumers are willing and able to buy at each price.' },
-      right: { tone: 'amber', icon: '🏭', iconStyle: 'circle', label: 'Supply', text: 'The supply curve shows how much producers are willing and able to sell at each price.' },
-      flowTitle: 'How the market gets there',
-      flowEmoji: '➡️',
-      flow: [
-        { tone: 'blue',  icon: '🔺', title: 'Price too high', sub: 'Surplus appears. Sellers cut price.' },
-        { tone: 'amber', icon: '🔻', title: 'Price too low',  sub: 'Shortage appears. Sellers raise price.' },
-        { tone: 'green', icon: '🎯', title: 'Price adjusts towards equilibrium', sub: 'Market moves back to balance at E.' }
-      ],
-      conclusion: { title: 'Key takeaway', text: 'Equilibrium is the meeting point of demand and supply – not the point that is automatically best for everyone.' },
       keyTerms: [
         { term: 'Equilibrium', def: 'The price at which quantity demanded equals quantity supplied – the market clears.' },
         { term: 'Market clearing', def: 'All goods produced are sold and all buyers willing to pay the market price can purchase – no shortage, no surplus.' },
         { term: 'Disequilibrium', def: 'Any price where quantity demanded ≠ quantity supplied – creates pressure for price adjustment.' }
       ],
-      examEdge: 'Always define equilibrium precisely and refer to both price and quantity. When drawing, label the intersection clearly, then drop dashed lines to both axes labelled P* and Q*. Diagram technique earns marks reliably.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'When the plans of buyers and sellers match, the market settles at an equilibrium price and quantity.' },
+        { type: 'diagram', svgKey: 'equilibriumBasic', caption: 'Market equilibrium' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  icon: '🛒', head: 'Demand', body: 'The demand curve shows how much consumers are willing and able to buy at each price.' },
+          { type: 'tile', tone: 'amber', icon: '🏭', head: 'Supply', body: 'The supply curve shows how much producers are willing and able to sell at each price.' }
+        ]},
+        { type: 'sectionHeader', icon: '➡️', label: 'How the market gets there' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Price too high',                          detail: 'Surplus appears. Sellers cut price.' },
+          { label: 'Price too low',                           detail: 'Shortage appears. Sellers raise price.' },
+          { label: 'Price adjusts towards equilibrium', detail: 'Market moves back to balance at E.' }
+        ]},
+        { type: 'bigIdea', text: 'Key takeaway: Equilibrium is the meeting point of demand and supply – not the point that is automatically best for everyone.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always define equilibrium precisely and refer to both price and quantity. When drawing, label the intersection clearly, then drop dashed lines to both axes labelled P* and Q*. Diagram technique earns marks reliably.' }
+      ]
     },
     {
       id: 'market_equilibrium_2',
@@ -197,50 +190,40 @@ window.ECONOS_TOPIC = {
       id: 'market_equilibrium_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Allocative Efficiency of Market Equilibrium',
-      tip: { icon: '💡', tone: 'blue', text: 'In a competitive market, equilibrium allocates output to the consumers who value it most and the producers who can supply it at the lowest cost.' },
-      diagramPanel: {
-        diagramKey: 'welfareSurplusDiagram',
-        title: 'Why equilibrium can be efficient',
-        bullets: [
-          'Consumers reveal their willingness to pay through demand.',
-          'Producers reveal their costs through supply.',
-          'At Q<sub>e</sub>, marginal benefit (MB) equals marginal cost (MC).',
-          'Reallocating resources away from E would reduce total welfare.'
-        ]
-      },
-      causesStyle: 'plain-white',
-      causesEmoji: '📐',
-      causesLabel: 'Key welfare concepts',
-      causes: [
-        { tone: 'blue',   icon: '👥', head: 'Consumer surplus',                body: 'The benefit consumers get from paying less than their willingness to pay.' },
-        { tone: 'amber',  icon: '📊', head: 'Producer surplus',                body: 'The benefit producers get from receiving more than their minimum cost.' },
-        { tone: 'purple', icon: '📉', head: 'Deadweight loss off equilibrium', body: 'Moving away from E means some mutually beneficial trades are lost.' }
-      ],
-      note: { icon: 'ℹ️', tone: 'blue', text: 'Allocative efficiency assumes a competitive market with many buyers and sellers and no externalities. When these assumptions do not hold, equilibrium may not be allocatively efficient.' },
-      conclusion: { title: 'Key takeaway', text: 'Market equilibrium can be allocatively efficient because, at E, marginal benefit equals marginal cost (MB = MC).' },
       keyTerms: [
         { term: 'Allocative efficiency', def: 'P = MC for every good – resources allocated to highest-value uses; no reallocation can increase total welfare.' },
         { term: 'Total surplus', def: 'Consumer surplus + producer surplus – the measure of total welfare from market exchange.' },
         { term: 'Deadweight loss', def: 'The reduction in total surplus from producing a quantity different from the efficient level.' }
       ],
-      examEdge: 'Do not confuse allocative efficiency with equity or fairness – these are separate concepts. P = MC is also why monopoly (which charges P &gt; MC) is allocatively inefficient.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'In a competitive market, equilibrium allocates output to the consumers who value it most and the producers who can supply it at the lowest cost.' },
+        { type: 'diagram', svgKey: 'welfareSurplusDiagram', caption: 'Why equilibrium can be efficient' },
+        { type: 'sectionHeader', icon: '📐', label: 'Key welfare concepts' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '👥', head: 'Consumer surplus',                body: 'The benefit consumers get from paying less than their willingness to pay.' },
+          { type: 'tile', tone: 'amber',  icon: '📊', head: 'Producer surplus',                body: 'The benefit producers get from receiving more than their minimum cost.' },
+          { type: 'tile', tone: 'purple', icon: '📉', head: 'Deadweight loss off equilibrium', body: 'Moving away from E means some mutually beneficial trades are lost.' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: 'ℹ️', text: 'Allocative efficiency assumes a competitive market with many buyers and sellers and no externalities. When these assumptions do not hold, equilibrium may not be allocatively efficient.' },
+        { type: 'bigIdea', text: 'Key takeaway: Market equilibrium can be allocatively efficient because, at E, marginal benefit equals marginal cost (MB = MC).' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Do not confuse allocative efficiency with equity or fairness – these are separate concepts. P = MC is also why monopoly (which charges P &gt; MC) is allocatively inefficient.' }
+      ]
     },
     {
       id: 'market_equilibrium_6',
-      template: 'cause',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'When Markets Fail to Reach Equilibrium',
-      tip: { icon: '💡', tone: 'blue', text: 'Real markets do not always clear smoothly – controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
-      causesStyle: 'tinted-flat',
-      causesEmoji: '⚠️',
-      causesLabel: 'Obstacles to market clearing',
-      causes: [
-        { icon: '🚧', head: 'Price controls', body: 'Price ceilings (maximum prices) below equilibrium → chronic excess demand (shortage). Rent controls cause housing shortages. Price floors above equilibrium → chronic excess supply (surplus). Minimum wage above equilibrium → unemployment.' },
-        { icon: '🔒', head: 'Sticky prices', body: 'In some markets, prices do not adjust freely. Labour markets: wages are "sticky downward" (workers resist cuts) → unemployment can persist. This is a Keynesian insight – markets don\'t always self-correct.' },
-        { icon: '❓', head: 'Information failures', body: 'Buyers or sellers lack information about prices in other markets – cannot respond to price signals. Markets in remote areas, illiquid asset markets, and monopoly-information markets may not clear.' },
-        { icon: '🏛️', head: 'Government intervention', body: 'Minimum prices, maximum prices, subsidies, and taxes all prevent the market from reaching the free-market equilibrium – intentionally or as side effects.' }
-      ],
-      examEdge: 'Price controls cause predictable distortions. Rent control (price ceiling): housing shortage; black markets; quality deterioration; no new supply. Minimum wage (price floor above equilibrium): unemployment; firms substitute capital for labour; some workers better off, others lose jobs. Both are standard exam contexts.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Real markets do not always clear smoothly – controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
+        { type: 'sectionHeader', icon: '⚠️', label: 'Obstacles to market clearing' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'rose',   icon: '🚧', head: 'Price controls',         body: 'Price ceilings (maximum prices) below equilibrium → chronic excess demand (shortage). Rent controls cause housing shortages. Price floors above equilibrium → chronic excess supply (surplus). Minimum wage above equilibrium → unemployment.' },
+          { type: 'tile', tone: 'amber',  icon: '🔒', head: 'Sticky prices',          body: 'In some markets, prices do not adjust freely. Labour markets: wages are "sticky downward" (workers resist cuts) → unemployment can persist. This is a Keynesian insight – markets don\'t always self-correct.' },
+          { type: 'tile', tone: 'blue',   icon: '❓', head: 'Information failures',   body: 'Buyers or sellers lack information about prices in other markets – cannot respond to price signals. Markets in remote areas, illiquid asset markets, and monopoly-information markets may not clear.' },
+          { type: 'tile', tone: 'purple', icon: '🏛️', head: 'Government intervention', body: 'Minimum prices, maximum prices, subsidies, and taxes all prevent the market from reaching the free-market equilibrium – intentionally or as side effects.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Price controls cause predictable distortions. Rent control (price ceiling): housing shortage; black markets; quality deterioration; no new supply. Minimum wage (price floor above equilibrium): unemployment; firms substitute capital for labour; some workers better off, others lose jobs. Both are standard exam contexts.' }
+      ]
     },
     {
       id: 'market_equilibrium_7',
@@ -495,4 +478,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

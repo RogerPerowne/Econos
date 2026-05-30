@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Econos Renderer Lab — Dev QA</title>
+
+  <!-- Styles: same stack as the real card panel, absolute paths from repo root -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/econ-tokens.css">
+  <link rel="stylesheet" href="/css/econ-blocks.css">
+  <link rel="stylesheet" href="/css/blocks/compare.css">
+  <link rel="stylesheet" href="/css/blocks/flow.css">
+  <link rel="stylesheet" href="/css/blocks/structure.css">
+  <link rel="stylesheet" href="/css/blocks/data.css">
+
+  <style>
+    /* ── Lab page chrome — not part of the card system ── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 32px 16px 80px;
+      background: #F1F5F9;
+      font-family: Inter, system-ui, sans-serif;
+      color: #1E293B;
+    }
+
+    .lab-header {
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .lab-header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin: 0 0 6px;
+    }
+
+    .lab-header p {
+      font-size: 0.875rem;
+      color: #64748B;
+      margin: 0 0 12px;
+    }
+
+    .lab-header .dev-badge {
+      display: inline-block;
+      background: #7C3AED;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+
+    /* ── Section heading (one per logical lab section) ── */
+    .lab-section {
+      max-width: 720px;
+      margin: 48px auto 0;
+    }
+
+    .lab-section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #94A3B8;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 6px;
+      margin: 0 0 4px;
+    }
+
+    .lab-section-subtitle {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin: 0 0 16px;
+    }
+
+    /* ── Individual block specimen ── */
+    .lab-specimen {
+      margin-bottom: 20px;
+    }
+
+    .lab-specimen-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #94A3B8;
+      font-family: ui-monospace, 'Cascadia Code', Menlo, monospace;
+      margin-bottom: 6px;
+    }
+
+    /* Card panel: white 720px column matching the real card renderer */
+    .lab-card-panel {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+    }
+
+    /* ── Dev-mode overflow indicator (used by render-blocks.js) ── */
+    .overflow-warning {
+      outline: 2px solid #F43F5E !important;
+      outline-offset: 2px;
+    }
+
+    /* ── TOC nav ── */
+    .lab-toc {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      border: 1px solid #E2E8F0;
+    }
+
+    .lab-toc h2 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      margin: 0 0 10px;
+    }
+
+    .lab-toc ol {
+      margin: 0;
+      padding: 0 0 0 18px;
+    }
+
+    .lab-toc li {
+      font-size: 0.875rem;
+      margin-bottom: 4px;
+    }
+
+    .lab-toc a {
+      color: #2563EB;
+      text-decoration: none;
+    }
+
+    .lab-toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Fixture card title styling ── */
+    .lab-fixture-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin: 0 0 4px;
+    }
+
+    .lab-fixture-lede {
+      font-size: 0.875rem;
+      color: #64748B;
+      margin: 0 0 16px;
+    }
+
+    /* ── Status bar (bottom overlay shows overflow count) ── */
+    #lab-status-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0F172A;
+      color: #94A3B8;
+      font-size: 0.75rem;
+      font-family: ui-monospace, 'Cascadia Code', Menlo, monospace;
+      padding: 6px 16px;
+      z-index: 9999;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    #lab-status-bar .status-ok  { color: #34D399; }
+    #lab-status-bar .status-err { color: #F87171; }
+    #lab-status-bar .status-dev { color: #A78BFA; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- PAGE HEADER                                                    -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-header">
+  <h1>Econos Renderer Lab</h1>
+  <p>
+    Standalone dev QA surface. Renders every block type, every diagram
+    generator, and all fixture cards. Add <code>?dev=1</code> to the URL
+    (or set <code>localStorage.econosDev = '1'</code>) to activate the
+    overflow detector and validator.
+  </p>
+  <span class="dev-badge">Dev only — not in dist build</span>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- TABLE OF CONTENTS                                              -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<nav class="lab-toc" aria-label="Lab sections">
+  <h2>Sections</h2>
+  <ol>
+    <li><a href="#section-blocks-core">1. Core blocks (render-blocks.js)</a></li>
+    <li><a href="#section-blocks-compare">2. Compare blocks</a></li>
+    <li><a href="#section-blocks-flow">3. Flow blocks</a></li>
+    <li><a href="#section-blocks-structure">4. Structure blocks</a></li>
+    <li><a href="#section-blocks-data">5. Data blocks</a></li>
+    <li><a href="#section-diagrams-adas">6. Diagram — AD/AS (adasDiagram)</a></li>
+    <li><a href="#section-diagrams-ppf">7. Diagram — PPF (ppfDiagram)</a></li>
+    <li><a href="#section-diagrams-tax">8. Diagram — Tax / Price Controls</a></li>
+    <li><a href="#section-diagrams-multelas">9. Diagram — Multiplier &amp; Elasticity</a></li>
+    <li><a href="#section-diagrams-firm">10. Diagram — Cost Curves &amp; Market Structure</a></li>
+    <li><a href="#section-diagrams-labour">11. Diagram — Labour Market</a></li>
+    <li><a href="#section-diagrams-macro">12. Diagram — Macro Misc (Phillips, J-Curve, 45°, Growth)</a></li>
+    <li><a href="#section-fixture-demo">13. Fixture — ECONOS_BLOCKS_DEMO_CARD</a></li>
+    <li><a href="#section-fixture-phase1">14. Fixture — ECONOS_BLOCKS_PHASE1_CARD</a></li>
+    <li><a href="#section-fixture-diagrams">15. Fixture — ECONOS_DIAGRAMS_DEMO_CARD</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: CORE BLOCKS (render-blocks.js)                     -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-blocks-core">
+  <div class="lab-section-title">Section 1 — Core blocks (render-blocks.js)</div>
+  <p class="lab-section-subtitle">
+    sectionHeader · calloutStrip / tip · heroVisual · grid · tile · bigIdea · examEdge · warning
+  </p>
+  <div id="render-blocks-core" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: COMPARE BLOCKS                                     -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-blocks-compare">
+  <div class="lab-section-title">Section 2 — Compare blocks (js/blocks/compare.js)</div>
+  <p class="lab-section-subtitle">
+    versusRows · decisionMatrix · trafficLight · glossaryRow
+  </p>
+  <div id="render-blocks-compare" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: FLOW BLOCKS                                        -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-blocks-flow">
+  <div class="lab-section-title">Section 3 — Flow blocks (js/blocks/flow.js)</div>
+  <p class="lab-section-subtitle">
+    mechanismChain · rippleCascade · opposingFlows · timeline
+  </p>
+  <div id="render-blocks-flow" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: STRUCTURE BLOCKS                                   -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-blocks-structure">
+  <div class="lab-section-title">Section 4 — Structure blocks (js/blocks/structure.js)</div>
+  <p class="lab-section-subtitle">
+    spectrum · caseStudies · satelliteDiagram · policyToolkit
+  </p>
+  <div id="render-blocks-structure" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: DATA BLOCKS                                        -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-blocks-data">
+  <div class="lab-section-title">Section 5 — Data blocks (js/blocks/data.js)</div>
+  <p class="lab-section-subtitle">
+    metricCard · targetGauge · equationHero · workedExampleStrip · factChip
+  </p>
+  <div id="render-blocks-data" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: DIAGRAM — AD/AS                                    -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-diagrams-adas">
+  <div class="lab-section-title">Section 6 — adasDiagram</div>
+  <p class="lab-section-subtitle">
+    demand-pull · cost-push · recession · lras-shift-right · recessionary-gap · inflationary-gap
+  </p>
+  <div id="render-diagrams-adas" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: DIAGRAM — PPF                                      -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-diagrams-ppf">
+  <div class="lab-section-title">Section 7 — ppfDiagram</div>
+  <p class="lab-section-subtitle">
+    basic · opportunity-cost · consumer-vs-capital · trade · efficiency-gap · growth-shift
+  </p>
+  <div id="render-diagrams-ppf" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: DIAGRAM — TAX / PRICE CONTROLS                     -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-diagrams-tax">
+  <div class="lab-section-title">Section 8 — taxSubsidyDiagram &amp; priceControlDiagram</div>
+  <p class="lab-section-subtitle">
+    taxSubsidy (tax · subsidy) · priceControl (price-ceiling · price-floor)
+  </p>
+  <div id="render-diagrams-tax" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 9: DIAGRAM — MULTIPLIER & ELASTICITY                  -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-diagrams-multelas">
+  <div class="lab-section-title">Section 9 — multiplierDiagram &amp; elasticityDiagram</div>
+  <p class="lab-section-subtitle">
+    multiplier (rounds · ripple · adShift) · elasticity (demand inelastic · elastic · supply inelastic · elastic)
+  </p>
+  <div id="render-diagrams-multelas" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 10: DIAGRAM — COST CURVES & MARKET STRUCTURE          -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-diagrams-firm">
+  <div class="lab-section-title">Section 10 — costCurvesDiagram &amp; marketStructureDiagram</div>
+  <p class="lab-section-subtitle">
+    costCurves (short-run · lrac · mc-mr) · marketStructure (perfect-competition · monopoly · monopolistic · oligopoly · natural-monopoly)
+  </p>
+  <div id="render-diagrams-firm" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 11: DIAGRAM — LABOUR MARKET                           -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-diagrams-labour">
+  <div class="lab-section-title">Section 11 — labourMarketDiagram</div>
+  <p class="lab-section-subtitle">
+    competitive · monopsony · trade-union · min-wage · backward-bending-supply
+  </p>
+  <div id="render-diagrams-labour" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 12: DIAGRAM — MACRO MISC                              -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-diagrams-macro">
+  <div class="lab-section-title">Section 12 — phillipsCurve · jCurveDiagram · fortyFiveDiagram · growthDiagram</div>
+  <p class="lab-section-subtitle">
+    phillipsCurve (original · expectations-shift · friedman-phelps) · jCurve · fortyFive · growth (sources-of-growth · kuznets)
+  </p>
+  <div id="render-diagrams-macro" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 13: FIXTURE — BLOCKS DEMO                             -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-fixture-demo">
+  <div class="lab-section-title">Section 13 — Fixture: ECONOS_BLOCKS_DEMO_CARD</div>
+  <p class="lab-section-subtitle">
+    The Phase 0 composition-as-data demo card — exercises starter block types.
+  </p>
+  <div id="render-fixture-demo" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 14: FIXTURE — BLOCKS PHASE 1                          -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-fixture-phase1">
+  <div class="lab-section-title">Section 14 — Fixture: ECONOS_BLOCKS_PHASE1_CARD</div>
+  <p class="lab-section-subtitle">
+    Exercises every Phase 1 block type across compare / flow / structure / data groups.
+  </p>
+  <div id="render-fixture-phase1" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 15: FIXTURE — DIAGRAMS DEMO                           -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-fixture-diagrams">
+  <div class="lab-section-title">Section 15 — Fixture: ECONOS_DIAGRAMS_DEMO_CARD</div>
+  <p class="lab-section-subtitle">
+    One diagram block per generator — the canonical diagram regression card.
+  </p>
+  <div id="render-fixture-diagrams" class="lab-card-panel"></div>
+</div>
+
+<!-- ── Status bar ── -->
+<div id="lab-status-bar">
+  <span class="status-dev">Econos Renderer Lab</span>
+  <span id="status-blocks">blocks: loading…</span>
+  <span id="status-diagrams">diagrams: loading…</span>
+  <span id="status-overflow">overflow: —</span>
+  <span id="status-dev-mode"></span>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SCRIPT LOAD ORDER (dependency order, all regular scripts)     -->
+<!--                                                               -->
+<!--  1. js/icons.js                — window.ECONOS_ICONS          -->
+<!--  2. js/render-blocks.js        — window.ECONOS_BLOCKS         -->
+<!--                                  window.ECONOS_BLOCK_UTILS    -->
+<!--                                  window.renderBlocks          -->
+<!--  3. js/blocks/compare.js       — adds compare block types     -->
+<!--  4. js/blocks/flow.js          — adds flow block types        -->
+<!--  5. js/blocks/structure.js     — adds structure block types   -->
+<!--  6. js/blocks/data.js          — adds data block types        -->
+<!--  7. js/diagrams/econ-svg.js    — window.EconSvg               -->
+<!--  8. js/diagrams/generators/adas.js                            -->
+<!--  9. js/diagrams/generators/ppf.js                             -->
+<!-- 10. js/diagrams/generators/tax-controls.js                    -->
+<!-- 11. js/diagrams/generators/mult-elas.js                       -->
+<!-- 12. js/diagrams/generators/firm-labour.js                     -->
+<!-- 13. js/diagrams/generators/macro-misc.js                      -->
+<!-- 14. js/diagrams/index.js       — resolve() helper             -->
+<!-- 15. js/blocks/diagram.js       — ECONOS_BLOCKS.diagram        -->
+<!-- 16. Fixture data files         — ECONOS_BLOCKS_DEMO_CARD etc. -->
+<!-- 17. lab-init (inline)          — render everything            -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+
+<script src="/js/icons.js"></script>
+<script src="/js/render-blocks.js"></script>
+<script src="/js/blocks/compare.js"></script>
+<script src="/js/blocks/flow.js"></script>
+<script src="/js/blocks/structure.js"></script>
+<script src="/js/blocks/data.js"></script>
+<script src="/js/diagrams/econ-svg.js"></script>
+<script src="/js/diagrams/generators/adas.js"></script>
+<script src="/js/diagrams/generators/ppf.js"></script>
+<script src="/js/diagrams/generators/tax-controls.js"></script>
+<script src="/js/diagrams/generators/mult-elas.js"></script>
+<script src="/js/diagrams/generators/firm-labour.js"></script>
+<script src="/js/diagrams/generators/macro-misc.js"></script>
+<script src="/js/diagrams/index.js"></script>
+<script src="/js/blocks/diagram.js"></script>
+<script src="/js/data/_fixtures/blocks-demo.js"></script>
+<script src="/js/data/_fixtures/blocks-phase1.js"></script>
+<script src="/js/data/_fixtures/diagrams-demo.js"></script>
+
+<script>
+/* ── Renderer Lab initialiser ──────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  /* ── Dev mode: active when ?dev=1 OR localStorage 'econosDev' === '1'
+        Matches exactly the gate in render-blocks.js                       */
+  function isDevMode() {
+    try {
+      return (
+        window.localStorage.getItem('econosDev') === '1' ||
+        new URLSearchParams(window.location.search).get('dev') === '1'
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+
+  var devMode = isDevMode();
+
+  /* ── Helpers ─────────────────────────────────────────────────────────── */
+
+  /**
+   * Wrap a card-definition object in renderBlocks() output and inject
+   * into el, optionally prepending a title + lede.
+   */
+  function renderCard(card, el) {
+    var headerHtml = '';
+    if (card.title) {
+      headerHtml +=
+        '<div class="lab-fixture-title">' + escHtml(card.title) + '</div>';
+    }
+    if (card.lede) {
+      headerHtml +=
+        '<div class="lab-fixture-lede">' + escHtml(card.lede) + '</div>';
+    }
+    el.innerHTML = headerHtml + window.renderBlocks(card);
+  }
+
+  function escHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  /**
+   * Render a list of block definitions straight into el, wrapping in a
+   * minimal card object so renderBlocks() is happy.
+   */
+  function renderBlocks(blocks, el) {
+    el.innerHTML = window.renderBlocks({ blocks: blocks });
+  }
+
+  /**
+   * Inject a single diagram specimen: a labelled heading + the rendered block.
+   */
+  function appendDiagramSpec(parentEl, label, spec, captionOverride) {
+    var wrapper = document.createElement('div');
+    wrapper.className = 'lab-specimen';
+
+    var lbl = document.createElement('div');
+    lbl.className = 'lab-specimen-label';
+    lbl.textContent = label;
+    wrapper.appendChild(lbl);
+
+    var blockDef = {
+      type: 'diagram',
+      spec: spec,
+      caption: captionOverride !== undefined ? captionOverride : label,
+    };
+
+    var inner = document.createElement('div');
+    inner.innerHTML = window.renderBlocks({ blocks: [blockDef] });
+    wrapper.appendChild(inner);
+    parentEl.appendChild(wrapper);
+  }
+
+  /* ── SECTION 1: Core blocks ───────────────────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'sectionHeader — with icon' },
+    { type: 'sectionHeader', label: 'sectionHeader — no icon, no rule', rule: false },
+    { type: 'sectionHeader', icon: '!', label: 'sectionHeader — exclamation icon' },
+
+    { type: 'calloutStrip', tone: 'blue',   icon: 'i', text: 'calloutStrip (tone: blue) — informational strip with icon. Wraps long text gracefully across the panel width.' },
+    { type: 'calloutStrip', tone: 'amber',  icon: '!', text: 'calloutStrip (tone: amber) — caution variant.' },
+    { type: 'calloutStrip', tone: 'green',  icon: '+', text: 'calloutStrip (tone: green) — positive/success variant.' },
+    { type: 'calloutStrip', tone: 'rose',   icon: 'x', text: 'calloutStrip (tone: rose) — warning/danger variant.' },
+    { type: 'tip', tone: 'purple', icon: '*', text: 'tip — alias for calloutStrip. Rendered identically.' },
+
+    { type: 'bigIdea', text: 'bigIdea — This is the one sentence takeaway that defines the entire card.' },
+
+    { type: 'examEdge', title: 'Exam edge', text: 'examEdge — Always state the direction of causation: higher AD → higher P and Y only when below full capacity.' },
+    { type: 'examEdge', title: 'Common mistake', text: 'examEdge with custom title — Students confuse movement along a curve with a shift of the curve.' },
+
+    { type: 'warning', icon: '!', text: 'warning — Beware: this approach only works under the assumption of perfectly competitive markets.' },
+
+    {
+      type: 'heroVisual',
+      svgKey: 'fiscalDragChart',
+      height: 200,
+      caption: 'heroVisual — resolves via window.ECONOS_ICONS["fiscalDragChart"].',
+    },
+
+    {
+      type: 'grid',
+      cols: 3,
+      gap: '12px',
+      children: [
+        { type: 'tile', tone: 'green',  icon: 'C', head: 'Consumption',  body: 'Household spending on goods and services — largest component of AD.' },
+        { type: 'tile', tone: 'blue',   icon: 'I', head: 'Investment',   body: 'Business spending on capital — sensitive to interest rates.' },
+        { type: 'tile', tone: 'amber',  icon: 'G', head: 'Government',   body: 'Public spending on services and infrastructure.' },
+        { type: 'tile', tone: 'purple', icon: 'X', head: 'Net Exports',  body: 'Exports minus imports — affected by exchange rates.' },
+        { type: 'tile', tone: 'rose',   icon: '!', head: 'Constraints',  body: 'Multiplier limited by leakages: taxes, saving, imports.' },
+        { type: 'tile', tone: 'slate',  icon: '*', head: 'Slate tile',   body: 'Slate tone for neutral / non-tonal content.' },
+      ],
+    },
+
+    { type: 'sectionHeader', label: 'grid — 2 columns' },
+    {
+      type: 'grid',
+      cols: 2,
+      gap: '14px',
+      children: [
+        { type: 'tile', tone: 'blue', icon: 'A', head: 'Tile A', body: 'Two-column grid specimen.' },
+        { type: 'tile', tone: 'rose', icon: 'B', head: 'Tile B', body: 'Second column tile.' },
+      ],
+    },
+  ], document.getElementById('render-blocks-core'));
+
+  /* ── SECTION 2: Compare blocks ────────────────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'versusRows' },
+    {
+      type: 'versusRows',
+      left:  { label: 'Demand-side policy', tone: 'blue' },
+      right: { label: 'Supply-side policy',  tone: 'green' },
+      rows: [
+        { criterion: 'Speed',       left: 'Faster (6–18 months)',  right: 'Slow (years or decades)' },
+        { criterion: 'Target',      left: 'AD (spending)',          right: 'LRAS (productive capacity)' },
+        { criterion: 'Inflation',   left: 'Risk of demand-pull',   right: 'Tends to reduce cost-push' },
+        { criterion: 'Example',     left: 'Cut interest rates',    right: 'Deregulation / privatisation' },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'decisionMatrix' },
+    {
+      type: 'decisionMatrix',
+      columns: ['Policy',           'Short-run effect', 'Long-run effect', 'Inflation risk'],
+      rows: [
+        { cells: ['Rate cut',       'AD rises',         'Investment rises', 'Medium'] },
+        { cells: ['QE',             'Liquidity rises',  'Asset prices rise','High']   },
+        { cells: ['Tax cut',        'Disposable income','Higher borrowing', 'Medium'] },
+        { cells: ['Deregulation',   'Cost falls',       'LRAS shifts right','Low']    },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '3', label: 'trafficLight' },
+    {
+      type: 'trafficLight',
+      green: 'Fiscal stimulus works well when there is a large negative output gap and low debt-to-GDP ratio.',
+      amber: 'Stimulus may work if capacity constraints are limited and credibility can be maintained.',
+      red:   'Stimulus is counterproductive when the economy is at full capacity — purely inflationary.',
+    },
+
+    { type: 'sectionHeader', icon: '4', label: 'glossaryRow' },
+    {
+      type: 'glossaryRow',
+      terms: [
+        { term: 'MPC',  definition: 'Marginal propensity to consume — the fraction of each extra £1 of income spent.' },
+        { term: 'MPS',  definition: 'Marginal propensity to save — the fraction saved from each additional £1 of income.' },
+        { term: 'MPT',  definition: 'Marginal propensity to tax — the fraction taken in tax from additional income.' },
+        { term: 'MPM',  definition: 'Marginal propensity to import — the fraction spent on imports from additional income.' },
+      ],
+    },
+  ], document.getElementById('render-blocks-compare'));
+
+  /* ── SECTION 3: Flow blocks ───────────────────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'mechanismChain — with breakpoints' },
+    {
+      type: 'mechanismChain',
+      steps: [
+        { label: 'Interest rates fall',       detail: 'Bank of England cuts base rate' },
+        { label: 'Borrowing cheapens',        detail: 'Mortgages and business loans fall' },
+        { label: 'Spending rises',            detail: 'Consumer and investment demand increase' },
+        { label: 'AD shifts right',           detail: 'Demand-pull pressure builds' },
+        { label: 'Output and prices rise',    detail: 'GDP and inflation increase' },
+      ],
+      breakpoints: [
+        { label: 'Liquidity trap?', tone: 'amber' },
+        { label: 'Confidence effect', tone: 'blue' },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'mechanismChain — minimal, no breakpoints' },
+    {
+      type: 'mechanismChain',
+      steps: [
+        { label: 'Cost-push shock' },
+        { label: 'SRAS shifts left' },
+        { label: 'Higher P, lower Y' },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '3', label: 'rippleCascade' },
+    {
+      type: 'rippleCascade',
+      initial: '£100m',
+      rounds: [
+        { round: 'Round 1', amount: '£80m' },
+        { round: 'Round 2', amount: '£64m' },
+        { round: 'Round 3', amount: '£51.2m' },
+        { round: 'Round 4', amount: '£41m' },
+      ],
+      leakageArrows: ['20% savings', '20% savings', '20% savings', '20% savings'],
+    },
+
+    { type: 'sectionHeader', icon: '4', label: 'opposingFlows' },
+    {
+      type: 'opposingFlows',
+      positive: { label: 'Exports (X)',  value: '£750bn', tone: 'green' },
+      negative: { label: 'Imports (M)',  value: '£820bn', tone: 'rose'  },
+      result:   { label: 'Trade balance', value: '−£70bn' },
+    },
+
+    { type: 'sectionHeader', icon: '5', label: 'timeline' },
+    {
+      type: 'timeline',
+      events: [
+        { year: '2008', title: 'Global Financial Crisis', tone: 'rose',   body: 'Lehman Brothers collapses; UK GDP falls 4.2%; Bank Rate cut to 0.5%.' },
+        { year: '2009', title: 'QE begins',               tone: 'amber',  body: 'Bank of England launches £75bn asset purchase scheme to inject liquidity.' },
+        { year: '2013', title: 'Recovery',                tone: 'green',  body: 'UK GDP returns to pre-crisis level; unemployment begins sustained fall.' },
+        { year: '2021', title: 'Post-COVID rebound',      tone: 'blue',   body: 'GDP grows 7.5%; supply-chain bottlenecks drive cost-push inflation.' },
+        { year: '2022', title: 'Rate hiking cycle',       tone: 'purple', body: 'Bank Rate raised from 0.1% to 5.25% as CPI hits 11.1%.' },
+      ],
+    },
+  ], document.getElementById('render-blocks-flow'));
+
+  /* ── SECTION 4: Structure blocks ──────────────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'spectrum — 5 bands' },
+    {
+      type: 'spectrum',
+      axis: { left: 'Free market', right: 'Command economy', label: 'Degree of government intervention' },
+      bands: [
+        { label: 'Pure market',      tone: 'green',  body: 'No government — prices allocate all resources.' },
+        { label: 'Laissez-faire',    tone: 'blue',   body: 'Light regulation; mostly price-led.' },
+        { label: 'Mixed economy',    tone: 'amber',  body: 'Public and private sectors coexist.' },
+        { label: 'Heavy regulation', tone: 'purple', body: 'State sets prices and quantities in key markets.' },
+        { label: 'Command',          tone: 'rose',   body: 'Central planning determines all allocation decisions.' },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'caseStudies' },
+    {
+      type: 'caseStudies',
+      cols: 3,
+      cases: [
+        { title: 'UK — 2022 energy crisis', cause: 'Russian gas supply cut; global commodity shock', outcome: 'CPI hit 11.1%; real wages fell 2.5%', verdict: 'Cost-push stagflation', tone: 'rose'   },
+        { title: 'Japan — 1990s deflation', cause: 'Asset bubble burst; private-sector deleveraging', outcome: 'Lost decade; GDP stagnated; prices fell', verdict: 'Demand-deficiency trap', tone: 'amber'  },
+        { title: 'Ireland — 2010 boom',     cause: 'Low rates + construction credit bubble', outcome: 'GDP +7% → banking crisis → IMF bailout', verdict: 'Unsustainable demand-pull', tone: 'purple' },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '3', label: 'satelliteDiagram' },
+    {
+      type: 'satelliteDiagram',
+      centre: { label: 'Aggregate Demand', value: 'AD = C+I+G+(X−M)' },
+      satellites: [
+        { label: 'Consumption (C)',  metric: '~60%', tone: 'green' },
+        { label: 'Investment (I)',   metric: '~18%', tone: 'blue'  },
+        { label: 'Government (G)',   metric: '~20%', tone: 'amber' },
+        { label: 'Net Exports (X−M)',metric: '−2%',  tone: 'rose'  },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '4', label: 'policyToolkit' },
+    {
+      type: 'policyToolkit',
+      tools: [
+        { label: 'Monetary policy',  tone: 'blue',   bestFor: 'Controlling demand-pull inflation quickly', risk: 'Can trigger recession if overtightened' },
+        { label: 'Fiscal policy',    tone: 'green',  bestFor: 'Closing a large negative output gap',       risk: 'Government borrowing and crowding-out' },
+        { label: 'Supply-side',      tone: 'amber',  bestFor: 'Long-run growth and competitiveness',       risk: 'Slow to take effect; regressive impact' },
+        { label: 'Exchange rate',    tone: 'purple', bestFor: 'Correcting a current-account deficit',      risk: 'Import cost inflation (J-curve lag)' },
+      ],
+    },
+  ], document.getElementById('render-blocks-structure'));
+
+  /* ── SECTION 5: Data blocks ───────────────────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'metricCard — number display (default)' },
+    {
+      type: 'grid',
+      cols: 3,
+      gap: '12px',
+      children: [
+        { type: 'metricCard', tone: 'blue',   label: 'UK CPI inflation',   value: '11.1%',  target: '2%',     status: 'Above target' },
+        { type: 'metricCard', tone: 'green',  label: 'GDP growth (2023)',  value: '0.1%',   target: '2%',     status: 'Below trend'  },
+        { type: 'metricCard', tone: 'amber',  label: 'Unemployment rate',  value: '4.2%',   target: '4–5%',   status: 'On target'    },
+        { type: 'metricCard', tone: 'rose',   label: 'Current account',    value: '−£70bn', display: 'badge', status: 'Deficit'      },
+        { type: 'metricCard', tone: 'purple', label: 'Bank rate',          value: '5.25%',  target: '2% CPI target implied'          },
+        { type: 'metricCard', tone: 'slate',  label: 'Debt-to-GDP',        value: '98%',    status: 'High'                           },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'targetGauge' },
+    {
+      type: 'targetGauge',
+      label: 'UK CPI inflation',
+      value: 11.1,
+      min: 0,
+      max: 15,
+      targetRange: [1, 3],
+      tone: 'rose',
+    },
+
+    { type: 'sectionHeader', icon: '3', label: 'equationHero' },
+    {
+      type: 'equationHero',
+      equation: [
+        { token: 'AD', tone: 'blue' },
+        '=',
+        { token: 'C', tone: 'green' },
+        '+',
+        { token: 'I', tone: 'blue' },
+        '+',
+        { token: 'G', tone: 'amber' },
+        '+',
+        { token: '(X − M)', tone: 'purple' },
+      ],
+      caption: 'Aggregate Demand identity: the four components of spending in a circular flow.',
+    },
+
+    { type: 'sectionHeader', icon: '4', label: 'workedExampleStrip' },
+    {
+      type: 'workedExampleStrip',
+      scenario: 'Calculate the multiplier when MPC = 0.8',
+      steps: [
+        { label: 'MPC',       value: '0.8' },
+        { label: 'MPS',       value: '1 − 0.8 = 0.2' },
+        { label: 'Multiplier', value: '1 ÷ MPS = 1 ÷ 0.2' },
+      ],
+      result: '5',
+    },
+
+    { type: 'sectionHeader', icon: '5', label: 'factChip' },
+    {
+      type: 'grid',
+      cols: 3,
+      gap: '10px',
+      children: [
+        { type: 'factChip', tone: 'blue',   label: 'UK GDP (2023)',         value: '£2.27tn',  date: '2023 ONS' },
+        { type: 'factChip', tone: 'rose',   label: 'Peak UK CPI',           value: '11.1%',    date: 'Oct 2022' },
+        { type: 'factChip', tone: 'green',  label: 'Unemployment low',      value: '3.5%',     date: 'Jan 2023' },
+        { type: 'factChip', tone: 'amber',  label: 'Bank Rate peak',        value: '5.25%',    date: 'Aug 2023' },
+        { type: 'factChip', tone: 'purple', label: 'Debt-to-GDP',           value: '98.6%',    date: 'Nov 2023' },
+        { type: 'factChip', tone: 'slate',  label: 'Current acct deficit',  value: '£70bn',    date: '2023'     },
+      ],
+    },
+  ], document.getElementById('render-blocks-data'));
+
+  /* ── SECTION 6: adasDiagram ───────────────────────────────────────────── */
+  (function () {
+    var el = document.getElementById('render-diagrams-adas');
+    var modes = [
+      'demand-pull',
+      'cost-push',
+      'recession',
+      'lras-shift-right',
+      'recessionary-gap',
+      'inflationary-gap',
+    ];
+    modes.forEach(function (mode) {
+      appendDiagramSpec(el,
+        'adasDiagram — mode: ' + mode,
+        { type: 'adasDiagram', mode: mode }
+      );
+    });
+  }());
+
+  /* ── SECTION 7: ppfDiagram ────────────────────────────────────────────── */
+  (function () {
+    var el = document.getElementById('render-diagrams-ppf');
+    var modes = [
+      'basic',
+      'opportunity-cost',
+      'consumer-vs-capital',
+      'trade',
+      'efficiency-gap',
+      'growth-shift',
+    ];
+    modes.forEach(function (mode) {
+      appendDiagramSpec(el,
+        'ppfDiagram — mode: ' + mode,
+        { type: 'ppfDiagram', mode: mode }
+      );
+    });
+  }());
+
+  /* ── SECTION 8: taxSubsidyDiagram & priceControlDiagram ──────────────── *
+   * Note: spec.type is consumed by the diagram-block resolver as the generator
+   * key, so passing a second cfg.type for 'tax'|'subsidy' would collide.
+   * We call the generator directly here and inject via the hero-visual frame.  */
+  (function () {
+    var el = document.getElementById('render-diagrams-tax');
+    var D = window.ECONOS_DIAGRAMS;
+
+    function appendDirectSvg(parentEl, label, svgHtml) {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'lab-specimen';
+
+      var lbl = document.createElement('div');
+      lbl.className = 'lab-specimen-label';
+      lbl.textContent = label;
+      wrapper.appendChild(lbl);
+
+      var inner = document.createElement('div');
+      /* Reuse hero-visual frame for consistent sizing */
+      inner.innerHTML =
+        '<figure class="hero-visual diagram-block" data-overflow-watch>' +
+          '<div class="hero-visual__media">' + (svgHtml || '') + '</div>' +
+          '<div class="hero-visual__caption text-fit-1">' + label + '</div>' +
+        '</figure>';
+      wrapper.appendChild(inner);
+      parentEl.appendChild(wrapper);
+    }
+
+    if (D && D.taxSubsidyDiagram) {
+      appendDirectSvg(el, 'taxSubsidyDiagram — type: tax (default)',   D.taxSubsidyDiagram({ type: 'tax'     }));
+      appendDirectSvg(el, 'taxSubsidyDiagram — type: subsidy',         D.taxSubsidyDiagram({ type: 'subsidy' }));
+    }
+    if (D && D.priceControlDiagram) {
+      appendDirectSvg(el, 'priceControlDiagram — type: ceiling (default)', D.priceControlDiagram({ type: 'ceiling' }));
+      appendDirectSvg(el, 'priceControlDiagram — type: floor',             D.priceControlDiagram({ type: 'floor'   }));
+    }
+  }());
+
+  /* ── SECTION 9: multiplierDiagram & elasticityDiagram ────────────────── */
+  (function () {
+    var el = document.getElementById('render-diagrams-multelas');
+    [
+      { label: 'multiplierDiagram — view: rounds',   spec: { type: 'multiplierDiagram',  view: 'rounds'                                    } },
+      { label: 'multiplierDiagram — view: ripple',   spec: { type: 'multiplierDiagram',  view: 'ripple'                                    } },
+      { label: 'multiplierDiagram — view: adShift',  spec: { type: 'multiplierDiagram',  view: 'adShift'                                   } },
+      { label: 'elasticityDiagram — demand inelastic',  spec: { type: 'elasticityDiagram', curve: 'demand', elasticity: 'inelastic'        } },
+      { label: 'elasticityDiagram — demand elastic',    spec: { type: 'elasticityDiagram', curve: 'demand', elasticity: 'elastic'          } },
+      { label: 'elasticityDiagram — supply inelastic',  spec: { type: 'elasticityDiagram', curve: 'supply', elasticity: 'inelastic'        } },
+      { label: 'elasticityDiagram — supply elastic',    spec: { type: 'elasticityDiagram', curve: 'supply', elasticity: 'elastic'          } },
+      { label: 'elasticityDiagram — perfectly inelastic', spec: { type: 'elasticityDiagram', elasticity: 'perfectly-inelastic'             } },
+      { label: 'elasticityDiagram — perfectly elastic',   spec: { type: 'elasticityDiagram', elasticity: 'perfectly-elastic'              } },
+    ].forEach(function (item) {
+      appendDiagramSpec(el, item.label, item.spec);
+    });
+  }());
+
+  /* ── SECTION 10: costCurvesDiagram & marketStructureDiagram ──────────── */
+  (function () {
+    var el = document.getElementById('render-diagrams-firm');
+    [
+      { label: 'costCurvesDiagram — variant: short-run',          spec: { type: 'costCurvesDiagram',      variant: 'short-run'           } },
+      { label: 'costCurvesDiagram — variant: lrac',               spec: { type: 'costCurvesDiagram',      variant: 'lrac'                } },
+      { label: 'costCurvesDiagram — variant: mc-mr',              spec: { type: 'costCurvesDiagram',      variant: 'mc-mr'               } },
+      { label: 'marketStructureDiagram — perfect-competition',    spec: { type: 'marketStructureDiagram', structure: 'perfect-competition'} },
+      { label: 'marketStructureDiagram — monopoly',               spec: { type: 'marketStructureDiagram', structure: 'monopoly'           } },
+      { label: 'marketStructureDiagram — monopolistic',           spec: { type: 'marketStructureDiagram', structure: 'monopolistic'       } },
+      { label: 'marketStructureDiagram — oligopoly (kinked)',     spec: { type: 'marketStructureDiagram', structure: 'oligopoly'          } },
+      { label: 'marketStructureDiagram — natural-monopoly',       spec: { type: 'marketStructureDiagram', structure: 'natural-monopoly'   } },
+      { label: 'marketStructureDiagram — contestable',            spec: { type: 'marketStructureDiagram', structure: 'contestable'        } },
+    ].forEach(function (item) {
+      appendDiagramSpec(el, item.label, item.spec);
+    });
+  }());
+
+  /* ── SECTION 11: labourMarketDiagram ──────────────────────────────────── */
+  (function () {
+    var el = document.getElementById('render-diagrams-labour');
+    [
+      { label: 'labourMarketDiagram — competitive',              spec: { type: 'labourMarketDiagram', variant: 'competitive'             } },
+      { label: 'labourMarketDiagram — monopsony',                spec: { type: 'labourMarketDiagram', variant: 'monopsony'               } },
+      { label: 'labourMarketDiagram — trade-union',              spec: { type: 'labourMarketDiagram', variant: 'trade-union'             } },
+      { label: 'labourMarketDiagram — min-wage',                 spec: { type: 'labourMarketDiagram', variant: 'min-wage'                } },
+      { label: 'labourMarketDiagram — backward-bending-supply',  spec: { type: 'labourMarketDiagram', variant: 'backward-bending-supply' } },
+    ].forEach(function (item) {
+      appendDiagramSpec(el, item.label, item.spec);
+    });
+  }());
+
+  /* ── SECTION 12: macro-misc generators ───────────────────────────────── */
+  (function () {
+    var el = document.getElementById('render-diagrams-macro');
+    [
+      { label: 'phillipsCurve — view: original',              spec: { type: 'phillipsCurve',    view: 'original'           } },
+      { label: 'phillipsCurve — view: expectations-shift',    spec: { type: 'phillipsCurve',    view: 'expectations-shift' } },
+      { label: 'phillipsCurve — view: friedman-phelps',       spec: { type: 'phillipsCurve',    view: 'friedman-phelps'    } },
+      { label: 'phillipsCurve — view: stagflation',           spec: { type: 'phillipsCurve',    view: 'stagflation'        } },
+      { label: 'jCurveDiagram',                               spec: { type: 'jCurveDiagram'                                } },
+      { label: 'fortyFiveDiagram',                            spec: { type: 'fortyFiveDiagram'                             } },
+      { label: 'growthDiagram — view: sources-of-growth',     spec: { type: 'growthDiagram',    view: 'sources-of-growth'  } },
+      { label: 'growthDiagram — view: kuznets',               spec: { type: 'growthDiagram',    view: 'kuznets'            } },
+      { label: 'growthDiagram — view: sustainability',        spec: { type: 'growthDiagram',    view: 'sustainability'     } },
+    ].forEach(function (item) {
+      appendDiagramSpec(el, item.label, item.spec);
+    });
+  }());
+
+  /* ── SECTION 13–15: Fixtures ──────────────────────────────────────────── */
+  if (window.ECONOS_BLOCKS_DEMO_CARD) {
+    renderCard(window.ECONOS_BLOCKS_DEMO_CARD, document.getElementById('render-fixture-demo'));
+  } else {
+    document.getElementById('render-fixture-demo').textContent =
+      'ECONOS_BLOCKS_DEMO_CARD not loaded.';
+  }
+
+  if (window.ECONOS_BLOCKS_PHASE1_CARD) {
+    renderCard(window.ECONOS_BLOCKS_PHASE1_CARD, document.getElementById('render-fixture-phase1'));
+  } else {
+    document.getElementById('render-fixture-phase1').textContent =
+      'ECONOS_BLOCKS_PHASE1_CARD not loaded.';
+  }
+
+  if (window.ECONOS_DIAGRAMS_DEMO_CARD) {
+    renderCard(window.ECONOS_DIAGRAMS_DEMO_CARD, document.getElementById('render-fixture-diagrams'));
+  } else {
+    document.getElementById('render-fixture-diagrams').textContent =
+      'ECONOS_DIAGRAMS_DEMO_CARD not loaded.';
+  }
+
+  /* ── Status bar ───────────────────────────────────────────────────────── */
+  function updateStatusBar() {
+    var blocks = window.ECONOS_BLOCKS ? Object.keys(window.ECONOS_BLOCKS).length : 0;
+    var diagrams = window.ECONOS_DIAGRAMS
+      ? Object.keys(window.ECONOS_DIAGRAMS).filter(function (k) {
+          return typeof window.ECONOS_DIAGRAMS[k] === 'function' && k !== 'resolve';
+        }).length
+      : 0;
+
+    document.getElementById('status-blocks').innerHTML =
+      '<span class="status-ok">blocks: ' + blocks + ' registered</span>';
+    document.getElementById('status-diagrams').innerHTML =
+      '<span class="status-ok">diagram generators: ' + diagrams + ' registered</span>';
+
+    if (devMode) {
+      document.getElementById('status-dev-mode').innerHTML =
+        '<span class="status-dev">dev mode ON — overflow detector active</span>';
+
+      /* Overflow count (deferred so renders are painted first) */
+      window.setTimeout(function () {
+        var overflows = Array.from(
+          document.querySelectorAll('[data-overflow-watch], .econ-section__label')
+        ).filter(function (n) {
+          return n.scrollHeight > n.clientHeight || n.scrollWidth > n.clientWidth;
+        });
+        var overflowEl = document.getElementById('status-overflow');
+        if (overflows.length === 0) {
+          overflowEl.innerHTML = '<span class="status-ok">overflow: 0 detected</span>';
+        } else {
+          overflowEl.innerHTML =
+            '<span class="status-err">overflow: ' + overflows.length + ' detected</span>';
+        }
+      }, 200);
+    } else {
+      document.getElementById('status-dev-mode').innerHTML =
+        '<span style="color:#475569">dev mode OFF — add ?dev=1 to enable overflow scan</span>';
+      document.getElementById('status-overflow').textContent = 'overflow: (dev mode off)';
+    }
+  }
+
+  /* Run status update after the current call stack so all blocks are painted */
+  window.setTimeout(updateStatusBar, 0);
+
+}());
+</script>
+
+</body>
+</html>

@@ -3013,99 +3013,6 @@
     `;
   }
 
-  /* === Card 5 (merged): monetary theory + QE === */
-  function renderCardMonetary(c) {
-    const tiles = c.mechanisms.map(m => `
-      <div class="mech-tile mech-tile--${m.tone}">
-        <div class="mech-tile__head">
-          <div class="mech-tile__num">${m.num}</div>
-          <div class="mech-tile__title">${m.title}</div>
-        </div>
-        <div class="mech-tile__text">${m.text}</div>
-      </div>
-    `).join('');
-
-    const bullets = c.puzzle.bullets.map(b => `<div class="puzzle-bullet">${b}</div>`).join('');
-
-    return `
-      <div class="card__step-label">${c.stepLabel}</div>
-      <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
-
-      <div class="classical-box">
-        <div class="classical-box__head">
-          <span class="classical-box__icon">📐</span>
-          <span class="classical-box__title">${c.classical.title}</span>
-        </div>
-        <div class="classical-formula">
-          <div class="classical-formula__main">${c.classical.formula}</div>
-          <div class="classical-formula__sub">${c.classical.formulaSub}</div>
-        </div>
-        <div class="classical-quote">${c.classical.quote}</div>
-        <div class="classical-examples">${c.classical.examples}</div>
-      </div>
-
-      <div class="puzzle-bullets" style="margin: var(--sp-5) 0;">${bullets}</div>
-
-      <div class="mech-grid">${tiles}</div>
-
-      ${renderExamEdge(c.examEdge)}
-    `;
-  }
-
-  /* === Card 6 (new): impacts of inflation === */
-  function renderCardImpacts(c) {
-    const groups = c.groups.map(g => `
-      <div class="impact-group impact-group--${g.tone}">
-        <div class="impact-group__head">
-          <span class="impact-group__icon">${g.icon}</span>
-          <span class="impact-group__label">${g.label}</span>
-        </div>
-        <ul class="impact-group__list">
-          ${g.bullets.map(b => `<li>${b}</li>`).join('')}
-        </ul>
-      </div>
-    `).join('');
-
-    const wItems = c.winnersLosers.winners.items.map(i => `<li>${i}</li>`).join('');
-    const lItems = c.winnersLosers.losers.items.map(i => `<li>${i}</li>`).join('');
-
-    return `
-      <div class="card__step-label">${c.stepLabel}</div>
-      <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
-
-      <div class="impact-groups">${groups}</div>
-
-      <div class="wl-row">
-        <div class="wl-panel wl-panel--win">
-          <div class="wl-panel__head">
-            <span class="wl-panel__icon">↑</span>
-            <span class="wl-panel__label">${c.winnersLosers.winners.label}</span>
-          </div>
-          <ul class="wl-panel__list">${wItems}</ul>
-        </div>
-        <div class="wl-panel wl-panel--lose">
-          <div class="wl-panel__head">
-            <span class="wl-panel__icon">↓</span>
-            <span class="wl-panel__label">${c.winnersLosers.losers.label}</span>
-          </div>
-          <ul class="wl-panel__list">${lItems}</ul>
-        </div>
-      </div>
-
-      <div class="callout callout--info" style="margin-top: var(--sp-5); margin-bottom: var(--sp-5);">
-        <div class="callout__icon">📊</div>
-        <div class="callout__body">
-          <div class="callout__title">Example</div>
-          <div class="callout__text">${c.example}</div>
-        </div>
-      </div>
-
-      ${renderExamEdge(c.examEdge)}
-    `;
-  }
-
   /* === Card 7: deflation === */
   function renderCardDeflation(c) {
     const mechs = c.mechanisms.map((m, i) => `
@@ -3147,31 +3054,6 @@
       ${renderExamEdge(c.examEdge)}
 
       ${c.bridge ? `<div class="bridge"><div class="bridge__icon">→</div><div><div class="bridge__title">${c.bridge.title}</div><div class="bridge__text">${c.bridge.text}</div></div></div>` : ''}
-    `;
-  }
-
-  /* === AD-INTERACTIVE template: full-width diagram + horizontal tabs + content panel ===
-       Diagram is data-driven via diagramKey; defaults to adInteractive.
-       Layout: diagram (full-width), tabs strip, then active tab's panel. */
-  /* === ELASTICITY EXPLORER: interactive draggable demand curve ===
-       Self-contained widget rendered + wired by js/elasticity-explorer.js.
-       This renderer just emits the host div + the surrounding card chrome. */
-  function renderCardElasticityExplorer(c) {
-    return `
-      <div class="card__step-label">${c.stepLabel || ''}</div>
-      <h1 class="card__title">${c.title || ''}</h1>
-      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-
-      <div class="ee-root" data-ee-mount></div>
-
-      ${c.howItWorks ? `
-        <div style="background:#F8FAFC;border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-blue);margin-bottom:8px;">How to read it</div>
-          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
-        </div>
-      ` : ''}
-
-      ${renderExamEdge(c.examEdge)}
     `;
   }
 
@@ -4160,107 +4042,6 @@
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
       <div style="overflow-x:auto;border-radius:12px;border:1px solid #E7E7EA;margin-bottom:20px;">${header}${rows}</div>
       ${c.footer ? `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>` : ''}
-      ${renderExamEdge(c.examEdge)}
-    `;
-  }
-
-  /* -------------------------------------------------------------------------
-     Essay Scaffold – paragraph-by-paragraph exam essay builder with reveals.
-     ------------------------------------------------------------------------- */
-  function renderCardEssayScaffold(c) {
-    const TYPE_STYLE = {
-      intro:      { color: '#0EA5E9', bg: '#F0F9FF', label: 'Introduction' },
-      analysis:   { color: '#1E3A5F', bg: '#EFF6FF', label: 'Analysis' },
-      counter:    { color: '#D97706', bg: '#FFFBEB', label: 'Counter-argument' },
-      evaluation: { color: '#7C3AED', bg: '#F5F3FF', label: 'Evaluation' },
-      conclusion: { color: '#059669', bg: '#F0FDF4', label: 'Conclusion' }
-    };
-    const paras = (c.paragraphs || []).map(p => {
-      const s = TYPE_STYLE[p.type] || TYPE_STYLE.analysis;
-      return `
-        <div style="border-radius:10px;border:1.5px solid ${s.color}40;background:${s.bg};margin-bottom:14px;overflow:hidden;">
-          <div style="background:${s.color};padding:10px 16px;display:flex;align-items:center;gap:10px;">
-            <span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;">${s.label}</span>
-            ${p.label ? `<span style="font-size:12px;color:rgba(255,255,255,0.75);">– ${p.label}</span>` : ''}
-          </div>
-          <div style="padding:14px 16px;">
-            <div style="font-size:13px;color:#334155;line-height:1.65;margin-bottom:12px;">${p.prompt}</div>
-            ${p.hint ? `<div style="font-size:12px;color:#64748B;font-style:italic;margin-bottom:12px;">💡 ${p.hint}</div>` : ''}
-            <button class="we-step__btn" data-action="we-reveal" style="margin:0;" type="button">Show model paragraph →</button>
-            <div class="we-step__answer is-hidden" style="margin-top:10px;">
-              <div style="background:#fff;border-left:4px solid ${s.color};border-radius:0 8px 8px 0;padding:12px 14px;font-size:13px;line-height:1.7;color:#0B1426;">${p.model}</div>
-            </div>
-          </div>
-        </div>`;
-    }).join('');
-    return `
-      <div class="card__step-label">${c.stepLabel || ''}</div>
-      <h1 class="card__title">${c.title || ''}</h1>
-      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      <div style="background:#0B1426;border-radius:12px;padding:16px 20px;margin-bottom:20px;">
-        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;margin-bottom:8px;">Exam question · ${c.marks || 25} marks${c.timeGuide ? ' · ' + c.timeGuide : ''}</div>
-        <div style="font-size:15px;font-weight:600;color:#F1F5F9;line-height:1.5;">${c.question || ''}</div>
-      </div>
-      ${paras}
-      ${renderExamEdge(c.examEdge)}
-    `;
-  }
-
-  /* -------------------------------------------------------------------------
-     YED Explorer & XED Explorer – Engel-curve and cross-price widgets.
-     Both registered as globals by js/yed-xed-explorer.js.
-     ------------------------------------------------------------------------- */
-  function renderCardYedExplorer(c) {
-    return `
-      <div class="card__step-label">${c.stepLabel || ''}</div>
-      <h1 class="card__title">${c.title || ''}</h1>
-      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      <div class="yed-root" data-yed-mount></div>
-      ${c.howItWorks ? `
-        <div style="background:#F5F3FF;border-left:4px solid #7C3AED;border-radius:10px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#7C3AED;margin-bottom:8px;">How to read it</div>
-          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
-        </div>
-      ` : ''}
-      ${renderExamEdge(c.examEdge)}
-    `;
-  }
-
-  function renderCardXedExplorer(c) {
-    return `
-      <div class="card__step-label">${c.stepLabel || ''}</div>
-      <h1 class="card__title">${c.title || ''}</h1>
-      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      <div class="xed-root" data-xed-mount></div>
-      ${c.howItWorks ? `
-        <div style="background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#2563EB;margin-bottom:8px;">How to read it</div>
-          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
-        </div>
-      ` : ''}
-      ${renderExamEdge(c.examEdge)}
-    `;
-  }
-
-  /* -------------------------------------------------------------------------
-     PES Explorer: interactive supply-curve widget (mirror of elasticity-explorer
-     but for upward-sloping supply; registered as window.EconosPes).
-     ------------------------------------------------------------------------- */
-  function renderCardPesExplorer(c) {
-    return `
-      <div class="card__step-label">${c.stepLabel || ''}</div>
-      <h1 class="card__title">${c.title || ''}</h1>
-      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-
-      <div class="pes-root" data-pes-mount></div>
-
-      ${c.howItWorks ? `
-        <div style="background:#F0FDF4;border-left:4px solid var(--econ-green);border-radius:10px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-green);margin-bottom:8px;">How to read it</div>
-          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
-        </div>
-      ` : ''}
-
       ${renderExamEdge(c.examEdge)}
     `;
   }
@@ -5301,58 +5082,6 @@
     `;
   }
 
-  /* === TRANSMISSION-CHAIN template: 5 channels, tap to expand chain ===
-       Action on left, channel pills in middle, outcome on right. Tapping
-       a channel reveals its causal chain below + highlights the path. */
-  function renderCardTransmissionChain(c) {
-    const channels = c.channels.map((ch, i) => `
-      <button class="tc-channel tc-channel--${ch.tone} ${i === 0 ? 'is-active' : ''}"
-              type="button" data-action="tc-channel" data-channel-key="${ch.key}">
-        <span class="tc-channel__dot"></span>
-        <span class="tc-channel__label">${ch.label}</span>
-        <span class="tc-channel__chev">▸</span>
-      </button>
-    `).join('');
-
-    const panels = c.channels.map((ch, i) => `
-      <div class="tc-panel tc-panel--${ch.tone} ${i === 0 ? 'is-active' : ''}" data-panel-key="${ch.key}">
-        <div class="tc-panel__header">
-          <div class="tc-panel__title">${ch.label} channel</div>
-        </div>
-        <ol class="tc-chain">
-          ${ch.chain.map(step => `<li class="tc-chain__step">${step}</li>`).join('')}
-        </ol>
-        ${ch.micro ? `<div class="tc-panel__micro"><strong>When it's strong:</strong> ${ch.micro}</div>` : ''}
-      </div>
-    `).join('');
-
-    return `
-      <div class="card__step-label">${c.stepLabel}</div>
-      <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
-
-      <div class="tc-flow">
-        <div class="tc-action">
-          <div class="tc-action__eyebrow">ACTION</div>
-          <div class="tc-action__text">${c.action}</div>
-        </div>
-        <div class="tc-channels">
-          ${channels}
-        </div>
-        <div class="tc-outcome">
-          <div class="tc-outcome__eyebrow">OUTCOME</div>
-          <div class="tc-outcome__text">${c.outcome}</div>
-        </div>
-      </div>
-
-      <div class="tc-panels">
-        ${panels}
-      </div>
-
-      ${renderExamEdge(c.examEdge)}
-    `;
-  }
-
   /* === Paired template: two components side-by-side (e.g. Gov + Net Trade) === */
   function renderCardPaired(c) {
     const banner = c.bannerLabel
@@ -5793,13 +5522,9 @@
         case 'diagnose':           body = renderCardDiagnose(c);         break;
         case 'puzzle':             body = renderCardPuzzle(c);           break;
         case 'mechanisms':         body = renderCardMechanisms(c);       break;
-        case 'demand-side-policies-monetary':           body = renderCardMonetary(c);         break;
-        case 'impacts':            body = renderCardImpacts(c);          break;
         case 'deflation':          body = renderCardDeflation(c);        break;
         case 'paired':             body = renderCardPaired(c);           break;
         case 'ad-interactive':     body = renderCardAdInteractive(c);    break;
-        case 'transmission-chain': body = renderCardTransmissionChain(c); break;
-        case 'elasticity-explorer':body = renderCardElasticityExplorer(c); break;
         case 'ped-five-frames':    body = renderCardPedFiveFrames(c);      break;
         case 'pes-five-frames':    body = renderCardPesFiveFrames(c);      break;
         case 'worked-example':     body = renderCardWorkedExample(c);      break;
@@ -5807,11 +5532,7 @@
         case 'pes-calculation':    body = renderCardPesCalculation(c);     break;
         case 'yed-calculation':    body = renderCardYedCalculation(c);     break;
         case 'xed-calculation':    body = renderCardXedCalculation(c);     break;
-        case 'pes-explorer':       body = renderCardPesExplorer(c);        break;
-        case 'yed-explorer':       body = renderCardYedExplorer(c);        break;
-        case 'xed-explorer':       body = renderCardXedExplorer(c);        break;
         case 'market-structures-comparison':      body = renderCardMarketStructuresComparison(c);      break;
-        case 'essay-scaffold':                     body = renderCardEssayScaffold(c);                     break;
         case 'welfare-gf-explorer':                body = renderCardWelfareGFExplorer(c);                break;
         case 'regulatory-capture-explorer':        body = renderCardRegulatoryCaptureExplorer(c);        break;
       }

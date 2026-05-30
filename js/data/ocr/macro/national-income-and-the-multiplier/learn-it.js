@@ -47,19 +47,15 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 9',
       title: 'The circular flow of income',
       lede: 'Income circulates between households and firms. Injections add to the flow; leakages remove from it. Equilibrium is where injections equal leakages.',
-      branches: [
-        { tone: 'green',  label: 'Injections (J)',   sub: '<strong>Investment (I) + Government spending (G) + Exports (X)</strong> – money flowing INTO the circular flow from outside. Each raises national income.' },
-        { tone: 'rose',   label: 'Leakages (W)',     sub: '<strong>Savings (S) + Taxation (T) + Imports (M)</strong> – money leaving the circular flow. Each reduces the multiplied effect of any injection.' },
-        { tone: 'blue',   label: 'Equilibrium',      sub: '<strong>J = W</strong> – national income is stable when total injections equal total leakages. If J > W, income rises; if W > J, income falls.' }
-      ],
-      examEdge: {
-        title: 'Paradox of thrift',
-        text: 'If every household saves more (rational individually), total leakages rise → income falls → saving falls back to where it started. <strong>The paradox of thrift:</strong> individually rational saving is collectively self-defeating. A* answers cite this in recession contexts to argue against austerity when households are already saving heavily.'
-      },
-      keyTakeaway: {
-        title: 'National income accounting identity',
-        text: 'At equilibrium: Y = C + I + G + (X−M). This is the same as the expenditure approach to GDP – confirming that the circular flow and the GDP accounts are two perspectives on the same thing.'
-      }
+      blocks: [
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', head: 'Injections (J)', body: '<strong>Investment (I) + Government spending (G) + Exports (X)</strong> – money flowing INTO the circular flow from outside. Each raises national income.' },
+          { type: 'tile', tone: 'rose',  head: 'Leakages (W)',   body: '<strong>Savings (S) + Taxation (T) + Imports (M)</strong> – money leaving the circular flow. Each reduces the multiplied effect of any injection.' },
+          { type: 'tile', tone: 'blue',  head: 'Equilibrium',    body: '<strong>J = W</strong> – national income is stable when total injections equal total leakages. If J > W, income rises; if W > J, income falls.' }
+        ]},
+        { type: 'examEdge', title: 'Paradox of thrift', text: 'If every household saves more (rational individually), total leakages rise → income falls → saving falls back to where it started. <strong>The paradox of thrift:</strong> individually rational saving is collectively self-defeating. A* answers cite this in recession contexts to argue against austerity when households are already saving heavily.' },
+        { type: 'bigIdea', text: 'National income accounting identity: At equilibrium: Y = C + I + G + (X−M). This is the same as the expenditure approach to GDP – confirming that the circular flow and the GDP accounts are two perspectives on the same thing.' }
+      ]
     },
 
     /* ----- CARD 2 – Equilibrium national income ----- */
@@ -69,40 +65,16 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 9',
       title: 'Equilibrium national income',
       lede: 'The economy reaches equilibrium when planned expenditure equals actual output – and when injections equal leakages. Knowing what moves it is the foundation of macro policy analysis.',
-      mechanisms: [
-        {
-          num: '1',
-          tone: 'green',
-          title: '45-degree diagram',
-          text: '<strong>Planned expenditure (E) vs national income (Y).</strong> The 45° line shows all points where Y = E. Equilibrium: where the expenditure line crosses the 45° line. Below: Y < E → firms run down stocks → output rises. Above: Y > E → stocks build → output falls.'
-        },
-        {
-          num: '2',
-          tone: 'blue',
-          title: 'Injection-leakage diagram',
-          text: '<strong>J and W plotted against Y.</strong> Leakages (S + T + M) rise with income (they\'re income-dependent). Injections (I + G + X) are broadly autonomous – horizontal. Equilibrium: where the two lines cross. Injection ↑ → equilibrium income rises.'
-        },
-        {
-          num: '3',
-          tone: 'amber',
-          title: 'Recessionary and inflationary gaps',
-          text: '<strong>Recessionary gap:</strong> equilibrium income < full employment income – Keynesian case for stimulus. <strong>Inflationary gap:</strong> equilibrium income > full employment income – case for fiscal tightening or monetary tightening.'
-        },
-        {
-          num: '4',
-          tone: 'rose',
-          title: 'Automatic stabilisers',
-          text: 'In a recession, tax revenues fall and welfare spending rises automatically – injections rise and leakages fall – pushing equilibrium income back up without discretionary policy. A* answers cite this as the first line of macro defence before active fiscal policy.'
-        }
-      ],
-      examEdge: {
-        title: 'Full employment equilibrium vs Keynesian equilibrium',
-        text: 'The Classical view: equilibrium always occurs at full employment (flexible prices/wages). The Keynesian view: equilibrium can occur <strong>below</strong> full employment – a deficiency of AD that requires intervention to fix. Stating this as the core disagreement between schools is analytically precise.'
-      },
-      connection: {
-        title: 'Link to output gaps',
-        text: 'A recessionary gap in the Keynesian model is identical to a negative output gap in the AD/AS model. Both describe an economy operating below potential. The multiplier is the tool that explains how a given injection closes that gap.'
-      }
+      blocks: [
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', head: '45-degree diagram',                body: '<strong>Planned expenditure (E) vs national income (Y).</strong> The 45° line shows all points where Y = E. Equilibrium: where the expenditure line crosses the 45° line. Below: Y < E → firms run down stocks → output rises. Above: Y > E → stocks build → output falls.' },
+          { type: 'tile', tone: 'blue',  head: 'Injection-leakage diagram',        body: '<strong>J and W plotted against Y.</strong> Leakages (S + T + M) rise with income (they\'re income-dependent). Injections (I + G + X) are broadly autonomous – horizontal. Equilibrium: where the two lines cross. Injection ↑ → equilibrium income rises.' },
+          { type: 'tile', tone: 'amber', head: 'Recessionary and inflationary gaps', body: '<strong>Recessionary gap:</strong> equilibrium income < full employment income – Keynesian case for stimulus. <strong>Inflationary gap:</strong> equilibrium income > full employment income – case for fiscal tightening or monetary tightening.' },
+          { type: 'tile', tone: 'rose',  head: 'Automatic stabilisers',            body: 'In a recession, tax revenues fall and welfare spending rises automatically – injections rise and leakages fall – pushing equilibrium income back up without discretionary policy. A* answers cite this as the first line of macro defence before active fiscal policy.' }
+        ]},
+        { type: 'examEdge', title: 'Full employment equilibrium vs Keynesian equilibrium', text: 'The Classical view: equilibrium always occurs at full employment (flexible prices/wages). The Keynesian view: equilibrium can occur <strong>below</strong> full employment – a deficiency of AD that requires intervention to fix. Stating this as the core disagreement between schools is analytically precise.' },
+        { type: 'calloutStrip', tone: 'blue', text: 'Link to output gaps — A recessionary gap in the Keynesian model is identical to a negative output gap in the AD/AS model. Both describe an economy operating below potential. The multiplier is the tool that explains how a given injection closes that gap.' }
+      ]
     },
 
     /* ----- CARD 3 – The multiplier formula ----- */
@@ -244,40 +216,16 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 6 of 9',
       title: 'The accelerator principle',
       lede: "The multiplier says an injection raises income. The accelerator says rising income raises investment further. Together they create boom-bust cycles. The interaction is the A* insight.",
-      mechanisms: [
-        {
-          num: '1',
-          tone: 'green',
-          title: 'The accelerator relationship',
-          text: '<strong>I = v \xd7 ΔY</strong> – investment is a function of the <em>change</em> in national income, not its level. If output grows, firms need more capacity → investment rises. If growth slows (output still rising, but more slowly), investment falls.'
-        },
-        {
-          num: '2',
-          tone: 'blue',
-          title: 'Why it amplifies cycles',
-          text: 'Multiplier: injection → income rises. Accelerator: rising income → investment rises → more income (multiplier again). The <strong>multiplier-accelerator interaction</strong> amplifies booms and deepens recessions beyond what either mechanism alone would produce.'
-        },
-        {
-          num: '3',
-          tone: 'amber',
-          title: 'Why investment collapses in recessions',
-          text: 'If GDP growth slows from 3% to 1%, output is still rising – but the <em>change</em> in output (ΔY) has fallen. The accelerator means investment falls sharply. This explains why investment is the most volatile component of AD despite being \'only\' ~17% of GDP.'
-        },
-        {
-          num: '4',
-          tone: 'rose',
-          title: 'Limitations of the accelerator',
-          text: 'Assumes firms always invest to expand capacity (ignores spare capacity, confidence). Ignores interest rates and credit conditions. Real-world: firms may respond to rising demand by using overtime before investing. The accelerator is a tendency, not a mechanical rule.'
-        }
-      ],
-      examEdge: {
-        title: 'The multiplier-accelerator link',
-        text: "A* answers don't treat the multiplier and accelerator as separate topics – they link them: <em>'The fiscal injection raises income via the multiplier, which stimulates investment via the accelerator, generating further income rounds. This interaction explains why economic cycles are more volatile than the initial shock.'</em>"
-      },
-      connection: {
-        title: 'Cycle connection',
-        text: 'The multiplier-accelerator interaction is the theoretical explanation for the trade cycle. Expansions overshoot because rising income accelerates investment; downturns deepen because falling growth collapses investment. Government policy can break the cycle by stabilising the income path.'
-      }
+      blocks: [
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', head: 'The accelerator relationship',      body: '<strong>I = v \xd7 ΔY</strong> – investment is a function of the <em>change</em> in national income, not its level. If output grows, firms need more capacity → investment rises. If growth slows (output still rising, but more slowly), investment falls.' },
+          { type: 'tile', tone: 'blue',  head: 'Why it amplifies cycles',           body: 'Multiplier: injection → income rises. Accelerator: rising income → investment rises → more income (multiplier again). The <strong>multiplier-accelerator interaction</strong> amplifies booms and deepens recessions beyond what either mechanism alone would produce.' },
+          { type: 'tile', tone: 'amber', head: 'Why investment collapses in recessions', body: 'If GDP growth slows from 3% to 1%, output is still rising – but the <em>change</em> in output (ΔY) has fallen. The accelerator means investment falls sharply. This explains why investment is the most volatile component of AD despite being \'only\' ~17% of GDP.' },
+          { type: 'tile', tone: 'rose',  head: 'Limitations of the accelerator',   body: 'Assumes firms always invest to expand capacity (ignores spare capacity, confidence). Ignores interest rates and credit conditions. Real-world: firms may respond to rising demand by using overtime before investing. The accelerator is a tendency, not a mechanical rule.' }
+        ]},
+        { type: 'examEdge', title: 'The multiplier-accelerator link', text: "A* answers don't treat the multiplier and accelerator as separate topics – they link them: <em>'The fiscal injection raises income via the multiplier, which stimulates investment via the accelerator, generating further income rounds. This interaction explains why economic cycles are more volatile than the initial shock.'</em>" },
+        { type: 'calloutStrip', tone: 'blue', text: 'Cycle connection — The multiplier-accelerator interaction is the theoretical explanation for the trade cycle. Expansions overshoot because rising income accelerates investment; downturns deepen because falling growth collapses investment. Government policy can break the cycle by stabilising the income path.' }
+      ]
     },
 
     /* ----- CARD 7 – Multiplier and fiscal policy types ----- */

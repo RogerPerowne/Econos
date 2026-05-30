@@ -1,17 +1,69 @@
 ---
 name: econos-visual-diagram
-description: Use when designing, polishing, or translating SVG diagrams for Econos topic cards. Covers the tone palette, viewBox conventions, the visualKey wiring, and named recipes (tile-grid-6, hub-and-spoke, comparison-row). Trigger when the user asks for a visual, mockup, diagram, illustration, or graphic on a card — especially if they share a reference image (e.g. a ChatGPT mockup).
+description: Use when designing, polishing, or translating SVG diagrams for Econos topic cards. Covers the diagram generator library, the 'diagram' block, one-off static diagrams, and hand-authored SVG recipes. Trigger when the user asks for a visual, mockup, diagram, illustration, or graphic on a card — especially if they share a reference image (e.g. a ChatGPT mockup).
 ---
 
 # Econos visual diagrams
 
-All hero SVG visuals on topic cards are inline SVG strings in `window.ECONOS_ICONS` (file: `js/icons.js`). They render onto `ad-interactive` cards via a single `visualKey` field — there is no separate component or build step.
+## FIRST CHOICE: use a diagram generator via the `'diagram'` block
 
-## Wiring a diagram onto a card
+Before hand-authoring any SVG, check whether one of the built-in generators covers the topic. This is the preferred path for every standard economics diagram.
 
-1. Add the SVG string to the `ECONOS_ICONS` object in `js/icons.js` under a descriptive camelCase key, e.g. `phillipsCurveSvg`.
-2. On the target `ad-interactive` card in `js/data/<topic>/data-topic.js`, add `visualKey: 'phillipsCurveSvg'` right after `lede`. That's it.
-3. The render hook lives in `renderCardAdInteractive` in `js/app.js` (search for `c.visualKey && I[c.visualKey]`) — do not duplicate it.
+The generators live in `window.ECONOS_DIAGRAMS` (populated by `js/diagrams/generators/*.js` and indexed by `js/diagrams/index.js`). They are all built on the `window.EconSvg` primitive layer in `js/diagrams/econ-svg.js`, which handles axes, curves, equilibrium dots, guide lines, tone palette and ID namespacing automatically.
+
+**Available generators:**
+
+| Generator key | What it draws |
+|---|---|
+| `adasDiagram` | AD/AS diagram — demand-pull, cost-push, monetary, recession, gap modes |
+| `ppfDiagram` | PPF/PPC — basic, opportunity cost, trade, growth-shift, efficiency-gap |
+| `taxSubsidyDiagram` | Indirect tax or subsidy wedge on a supply/demand diagram |
+| `priceControlDiagram` | Price ceiling (`'ceiling'`) or price floor (`'floor'`) |
+| `multiplierDiagram` | Spending rounds, ripple effect, or AD-shift view |
+| `elasticityDiagram` | Demand or supply curve at any elasticity; optional tax wedge |
+| `costCurvesDiagram` | MC, AC, AVC, AFC for a competitive firm |
+| `marketStructureDiagram` | AR/MR/MC/AC for monopoly, oligopoly, or perfect competition |
+| `labourMarketDiagram` | Labour demand/supply with optional minimum wage or monopsony |
+| `phillipsCurve` | SRPC and/or LRPC with NAIRU marker |
+| `jCurveDiagram` | Trade balance response to a depreciation/devaluation |
+| `fortyFiveDiagram` | Keynesian national income determination (45° diagram) |
+| `growthDiagram` | Growth sources, sustainability, or Kuznets curve |
+
+Wire a generator onto any card that uses the `blocks` array via the `'diagram'` block type:
+
+```js
+{
+  type: 'diagram',
+  spec: {
+    type: 'adasDiagram',   // generator key
+    mode: 'demand-pull',   // generator-specific config
+  },
+  caption: 'AD shifts right as consumer confidence rises.',  // optional
+  height:  260,                                              // optional, px
+}
+```
+
+The block renders inside the same `.hero-visual` frame used by `heroVisual` blocks — no additional stylesheet needed. Full config options for every generator are documented in `docs/DIAGRAM_LIBRARY.md`.
+
+### Second choice: a one-off static diagram in `js/diagrams/static/`
+
+If no generator produces the right output, check `js/diagrams/static/` for a pre-built one-off SVG file. These are standalone econ charts that don't need parameterisation (e.g. `externalities.js`, `monopoly.js`, `phillips-lorenz.js`). They are registered on both `window.ECONOS_DIAGRAMS` and `window.ECONOS_ICONS`, so they are available to both the `'diagram'` block (via `svgKey`) and legacy `visualKey` cards. Use the `svgKey` form in a `'diagram'` block or a `heroVisual` block to reference them without any code change.
+
+### Third choice: hand-author a brand-new SVG
+
+Only reach for a hand-authored SVG when no generator and no static file fits. Follow `docs/ECON_DIAGRAM_RULES.md` for the full canonical conventions (curve colours, shift styling, equilibrium markers, viewBox margins, tone palette, safe-zone padding, text escaping, `<defs>` scoping). The rules summary is also maintained in the "House rules for econ line charts" and "Tone palette" sections below.
+
+Place the finished SVG string in `js/diagrams/static/<diagram-name>.js` (not in `js/icons.js`). Register it on `window.ECONOS_DIAGRAMS` and optionally mirror it to `window.ECONOS_ICONS` so legacy `visualKey` cards can reach it. Add the file to `PRECACHE_ASSETS` in `sw.js` and bump `CACHE_NAME`.
+
+### `js/icons.js` is now UI/hero/scene icons only
+
+`js/icons.js` (`window.ECONOS_ICONS`) holds UI chrome icons (navigation, action, status), hero illustration SVGs, and scene graphics. Economics diagram SVGs have been relocated to `js/diagrams/static/` and the generator system. Do not add new econ charts to `js/icons.js`.
+
+## Wiring a diagram onto a legacy `ad-interactive` card
+
+For cards that do not yet use `blocks`, the `visualKey` field on an `ad-interactive` card still works. Point it at any key in `window.ECONOS_ICONS` (which includes the static diagram keys mirrored there). The render hook in `js/app.js` (`renderCardAdInteractive`, search for `c.visualKey && I[c.visualKey]`) picks it up automatically — no code changes needed.
+
+For new cards, prefer the `blocks` array with a `'diagram'` block over `visualKey`.
 
 ## viewBox conventions
 
@@ -206,8 +258,8 @@ Fixes are nearly always: shift the label past the line endpoint, or move it clea
 
 1. **Spec first** (above) → confirm with user
 2. **Implement to spec coords** — every constant in the SVG should trace back to a line in the spec
-3. **`node --check js/icons.js`** to verify the SVG string parses
-4. **Bump the SW cache** in `sw.js` (`icons.js` is cache-first; users will see stale charts otherwise)
+3. **`node --check js/diagrams/static/<name>.js`** (or the generator file) to verify the JS parses
+4. **Bump the SW cache** in `sw.js` (diagram files are cache-first; add the new file to `PRECACHE_ASSETS` and increment `CACHE_NAME`)
 5. **Render via `run-econos`** — screenshot each affected card, compare to mockup, write up any deltas yourself before asking the user
 6. **Only then open the PR**
 
@@ -235,6 +287,9 @@ If the request maps cleanly to one of the named recipes, reuse the dimensions an
 
 ## See also
 
+- **`docs/DIAGRAM_LIBRARY.md`** — full config reference for every generator (`window.EconSvg` primitives, `window.ECONOS_DIAGRAMS` generators, `'diagram'` block schema).
+- **`docs/ECON_DIAGRAM_RULES.md`** — canonical conventions for hand-authored SVGs (curve colours, shifts, equilibrium markers, viewBox, safe-zone padding, text escaping).
+- **`docs/RENDER_BLOCKS.md`** — block schema reference, dev tooling (`renderer-lab.html`, `EconosDebug.validate`, `?dev=1`, `?screenshot=1`).
 - **`run-econos`** — drive a headless browser to screenshot a card and visually verify the diagram renders. Run this after every SVG edit; do not assume the first draft is correct.
 - **`econos-ship-changes`** — when the diagram is final, follow the backup-first workflow before merging. Do not push directly to main without snapshotting it.
-- **`econos-card-template`** — for the surrounding card fields (`visualKey` sits alongside `lede`, `tip`, `flow`, `causes`, etc.).
+- **`econos-card-template`** — for the surrounding card fields and block types.

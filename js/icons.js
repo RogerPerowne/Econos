@@ -17472,149 +17472,746 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Macroeconomic Objectives (Theme 2 · 2.6.1) — Card 1 hero scorecard.
-     Six objective tiles in a 3×2 grid. Tiles 1-3 (inflation, unemployment,
-     real GDP growth) carry a radial gauge with a green target-zone arc and
-     a black needle pointing to the UK's current value; tiles 4-6 (BoP,
-     fiscal, environmental) carry a plain icon + headline value. Gauge
-     geometry: cx=70, cy=58, r=44, value→angle θ=180−180·(v−min)/(max−min),
-     point = (70+44cosθ, 58−44sinθ). Visually rhymes with growthScorecard.
-     line-height:1.5 because the engine wraps visualKey HTML in line-height:0. */
-  macroObjectivesScorecard: `
-    <div class="macro-scorecard" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+  /* ============================================================
+     Macroeconomic Objectives (Theme 2 · 2.6.1) — THEORY topic.
+     Six creative heroes united by a "policymaker's dashboard"
+     metaphor: aerial view (C1) → character sheets (C2) →
+     constraint compass (C3) → lab workstation (C4) → see-saws (C5)
+     → constraint web (C6). Each card sheds the safe tile-grid.
+     ============================================================ */
+
+  /* Card 1 — THE COCKPIT.
+     Dashboard view: 7 UK macro gauges arranged like a pilot's
+     control panel, against a dark slate ground. 3 primary gauges
+     (inflation, unemployment, growth) in the top row; 4 secondary
+     gauges (BoP, fiscal, environment, equality) below. A green
+     target-zone arc on each gauge; a black needle points to UK
+     current. Bottom strip: "you are the pilot" framing. */
+  macroCockpit: `
+    <div style="line-height:1.5;background:#0B1426;border-radius:14px;padding:22px 18px 18px;font-family:Inter,sans-serif;color:#E2E8F0;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:0 4px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 8px #22C55E;"></span>
+          <span style="font-size:10px;font-weight:800;letter-spacing:0.18em;color:#94A3B8;">UK ECONOMY &middot; Q1 2026 &middot; LIVE</span>
+        </div>
+        <span style="font-size:10px;font-weight:700;letter-spacing:0.06em;color:#64748B;font-family:'Inter Mono',monospace;">DASHBOARD v.7</span>
+      </div>
+      <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+
+        <!-- Top divider -->
+        <line x1="20" y1="14" x2="700" y2="14" stroke="#1E293B" stroke-width="1"/>
+
+        <!-- Primary row (large gauges) — Inflation / Unemployment / Growth -->
+        <!-- INFLATION (rose) — target 1.6–2.4% on 0–6 scale, needle at 2.8% -->
+        <g transform="translate(120, 30)">
+          <circle r="78" fill="#0F1A2E" stroke="#1E293B" stroke-width="2"/>
+          <text y="-50" font-size="9" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.14em">INFLATION</text>
+          <path d="M-60 30 A60 60 0 0 1 60 30" stroke="#1E293B" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <path d="M-13.3 -28.6 A60 60 0 0 1 13.3 -28.6" stroke="#22C55E" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <line x1="0" y1="30" x2="6.3" y2="-29.7" stroke="#F472B6" stroke-width="3" stroke-linecap="round"/>
+          <circle r="4" fill="#F472B6"/>
+          <text y="-60" font-size="8" font-weight="700" fill="#22C55E" text-anchor="middle">2% TARGET</text>
+          <text y="50" font-size="24" font-weight="900" fill="#F9A8D4" text-anchor="middle" font-family="'Inter Mono',monospace">2.8%</text>
+          <text y="64" font-size="9" fill="#64748B" text-anchor="middle">CPI &middot; April 2026</text>
+        </g>
+        <!-- UNEMPLOYMENT (blue) — target 4–5% on 0–10 scale, needle at 5.0% -->
+        <g transform="translate(360, 30)">
+          <circle r="78" fill="#0F1A2E" stroke="#1E293B" stroke-width="2"/>
+          <text y="-50" font-size="9" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.14em">UNEMPLOYMENT</text>
+          <path d="M-60 30 A60 60 0 0 1 60 30" stroke="#1E293B" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <path d="M-13.3 -28.6 A60 60 0 0 1 13.3 -28.6" stroke="#22C55E" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <line x1="0" y1="30" x2="13.3" y2="-28.6" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
+          <circle r="4" fill="#60A5FA"/>
+          <text y="-60" font-size="8" font-weight="700" fill="#22C55E" text-anchor="middle">4–5% TARGET</text>
+          <text y="50" font-size="24" font-weight="900" fill="#93C5FD" text-anchor="middle" font-family="'Inter Mono',monospace">5.0%</text>
+          <text y="64" font-size="9" fill="#64748B" text-anchor="middle">ILO &middot; Jan–Mar 2026</text>
+        </g>
+        <!-- GROWTH (green) — target 2–2.5% on -2 to 5 scale, needle at 0.6% (below target) -->
+        <g transform="translate(600, 30)">
+          <circle r="78" fill="#0F1A2E" stroke="#1E293B" stroke-width="2"/>
+          <text y="-50" font-size="9" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.14em">REAL GDP GROWTH</text>
+          <path d="M-60 30 A60 60 0 0 1 60 30" stroke="#1E293B" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <path d="M30 -19.6 A60 60 0 0 1 47.5 5.3" stroke="#22C55E" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <line x1="0" y1="30" x2="-30" y2="-19.6" stroke="#22D3EE" stroke-width="3" stroke-linecap="round"/>
+          <circle r="4" fill="#22D3EE"/>
+          <text y="-60" font-size="8" font-weight="700" fill="#22C55E" text-anchor="middle">2–2.5% TARGET</text>
+          <text y="50" font-size="24" font-weight="900" fill="#67E8F9" text-anchor="middle" font-family="'Inter Mono',monospace">0.6%</text>
+          <text y="64" font-size="9" fill="#64748B" text-anchor="middle">q/q &middot; Q1 2026</text>
+        </g>
+
+        <!-- Divider between primary & secondary banks -->
+        <line x1="20" y1="190" x2="700" y2="190" stroke="#1E293B" stroke-width="1"/>
+        <text x="20" y="208" font-size="9" font-weight="800" fill="#475569" letter-spacing="0.14em">SUPPORTING OBJECTIVES — must also stay within bounds</text>
+
+        <!-- Secondary row (smaller gauges) — BoP / Fiscal / Environment / Equality -->
+        <!-- BoP (purple) — target -3..+3 on -6..+4 scale, needle at -2.4% (just inside) -->
+        <g transform="translate(110, 290)">
+          <circle r="58" fill="#0F1A2E" stroke="#1E293B" stroke-width="2"/>
+          <text y="-36" font-size="8" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.12em">BoP</text>
+          <path d="M-45 22 A45 45 0 0 1 45 22" stroke="#1E293B" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M-31.8 -31.8 A45 45 0 0 1 31.8 -31.8" stroke="#22C55E" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <line x1="0" y1="22" x2="-22.5" y2="-19" stroke="#C4B5FD" stroke-width="2.6" stroke-linecap="round"/>
+          <circle r="3" fill="#C4B5FD"/>
+          <text y="38" font-size="16" font-weight="900" fill="#DDD6FE" text-anchor="middle" font-family="'Inter Mono',monospace">-2.4%</text>
+          <text y="50" font-size="8" fill="#64748B" text-anchor="middle">CA &middot; % of GDP</text>
+        </g>
+        <!-- FISCAL (amber) — target debt 0–80 on 60–130 scale, needle at 93.8% (outside zone) -->
+        <g transform="translate(310, 290)">
+          <circle r="58" fill="#0F1A2E" stroke="#1E293B" stroke-width="2"/>
+          <text y="-36" font-size="8" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.12em">FISCAL</text>
+          <path d="M-45 22 A45 45 0 0 1 45 22" stroke="#1E293B" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M-45 22 A45 45 0 0 1 -22.5 -39" stroke="#22C55E" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <line x1="0" y1="22" x2="22.5" y2="-19" stroke="#FCD34D" stroke-width="2.6" stroke-linecap="round"/>
+          <circle r="3" fill="#FCD34D"/>
+          <text y="38" font-size="16" font-weight="900" fill="#FDE68A" text-anchor="middle" font-family="'Inter Mono',monospace">93.8%</text>
+          <text y="50" font-size="8" fill="#64748B" text-anchor="middle">debt &middot; % of GDP</text>
+          <text y="-50" font-size="7" font-weight="800" fill="#F87171" text-anchor="middle" letter-spacing="0.06em">!  ABOVE ZONE</text>
+        </g>
+        <!-- ENVIRONMENT (teal) — net zero progress mixed, needle middle -->
+        <g transform="translate(510, 290)">
+          <circle r="58" fill="#0F1A2E" stroke="#1E293B" stroke-width="2"/>
+          <text y="-36" font-size="8" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.12em">ENVIRONMENT</text>
+          <path d="M-45 22 A45 45 0 0 1 45 22" stroke="#1E293B" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M-31.8 -31.8 A45 45 0 0 1 0 -45" stroke="#22C55E" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <line x1="0" y1="22" x2="11.6" y2="-23.5" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round"/>
+          <circle r="3" fill="#5EEAD4"/>
+          <text y="38" font-size="14" font-weight="900" fill="#99F6E4" text-anchor="middle" font-family="'Inter Mono',monospace">MIXED</text>
+          <text y="50" font-size="8" fill="#64748B" text-anchor="middle">net zero by 2050</text>
+        </g>
+        <!-- EQUALITY (slate) — Gini 0.20–0.30 on 0.20–0.50, needle at ~0.36 (outside zone) -->
+        <g transform="translate(640, 290)">
+          <circle r="58" fill="#0F1A2E" stroke="#1E293B" stroke-width="2"/>
+          <text y="-36" font-size="8" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.12em">EQUALITY</text>
+          <path d="M-45 22 A45 45 0 0 1 45 22" stroke="#1E293B" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M-45 22 A45 45 0 0 1 -22.5 -39" stroke="#22C55E" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <line x1="0" y1="22" x2="9" y2="-30.7" stroke="#CBD5E1" stroke-width="2.6" stroke-linecap="round"/>
+          <circle r="3" fill="#CBD5E1"/>
+          <text y="38" font-size="14" font-weight="900" fill="#E2E8F0" text-anchor="middle" font-family="'Inter Mono',monospace">Gini 0.36</text>
+          <text y="50" font-size="8" fill="#64748B" text-anchor="middle">target ≤ 0.30</text>
+          <text y="-50" font-size="7" font-weight="800" fill="#F87171" text-anchor="middle" letter-spacing="0.06em">!  ABOVE ZONE</text>
+        </g>
+
+        <!-- Footer strip — pilot framing -->
+        <line x1="20" y1="360" x2="700" y2="360" stroke="#1E293B" stroke-width="1"/>
+        <text x="360" y="382" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="middle">Some gauges are in target. Some are not.</text>
+        <text x="360" y="402" font-size="14" font-weight="800" fill="#F9FAFB" text-anchor="middle">You are the pilot.</text>
+      </svg>
+    </div>
+  `,
+
+  /* Card 2 — THE HEADLINE THREE.
+     Three vertical "trading card" portraits side-by-side for the
+     three objectives reported every quarter (inflation,
+     unemployment, growth). Each card has a tone-coloured banner,
+     a stats panel (target / measure / current), a personality
+     italic line, and a tiny mechanism schematic at the foot.
+     Visually loud, anthropomorphic — sheds the stacked-rows feel. */
+  macroHeadlineCards: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+
+        <!-- INFLATION CARD (rose) -->
+        <div style="background:#fff;border:1.5px solid #FECDD3;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:linear-gradient(135deg,#E11D48 0%,#9F1239 100%);padding:14px 14px 12px;color:#fff;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:0.14em;opacity:0.85;">OBJECTIVE 01</div>
+            <div style="font-size:20px;font-weight:900;line-height:1.1;margin-top:4px;">Inflation</div>
+            <div style="font-size:11px;font-style:italic;opacity:0.92;margin-top:4px;line-height:1.35;">"I'm noisy and impatient — I react within months."</div>
+          </div>
+          <div style="padding:12px 14px;border-bottom:1px solid #FECDD3;">
+            <div style="font-size:9px;font-weight:800;color:#9F1239;letter-spacing:0.1em;margin-bottom:2px;">TARGET</div>
+            <div style="font-size:14px;font-weight:800;color:#0B1426;">~2% CPI</div>
+            <div style="font-size:10px;color:#64748B;">BoE symmetric target</div>
+          </div>
+          <div style="padding:12px 14px;border-bottom:1px solid #FECDD3;">
+            <div style="font-size:9px;font-weight:800;color:#9F1239;letter-spacing:0.1em;margin-bottom:2px;">MEASURE</div>
+            <div style="font-size:13px;font-weight:700;color:#0B1426;">CPI year-on-year</div>
+            <div style="font-size:10px;color:#64748B;">ONS, monthly</div>
+          </div>
+          <div style="padding:12px 14px;background:#FFF1F2;">
+            <div style="font-size:9px;font-weight:800;color:#9F1239;letter-spacing:0.1em;">UK CURRENT</div>
+            <div style="font-size:22px;font-weight:900;color:#9F1239;font-family:'Inter Mono',monospace;">2.8%</div>
+          </div>
+          <!-- Mechanism mini -->
+          <div style="padding:10px 14px 12px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;font-weight:700;color:#475569;">
+            <span style="background:#FEF2F2;border:1px solid #FECDD3;padding:3px 7px;border-radius:6px;">AD↑</span>
+            <span>→</span>
+            <span style="background:#FEF2F2;border:1px solid #FECDD3;padding:3px 7px;border-radius:6px;">P↑</span>
+            <span style="color:#94A3B8;font-style:italic;margin-left:4px;">prices rise</span>
+          </div>
+        </div>
+
+        <!-- UNEMPLOYMENT CARD (blue) -->
+        <div style="background:#fff;border:1.5px solid #BFDBFE;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:linear-gradient(135deg,#2563EB 0%,#1E3A8A 100%);padding:14px 14px 12px;color:#fff;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:0.14em;opacity:0.85;">OBJECTIVE 02</div>
+            <div style="font-size:20px;font-weight:900;line-height:1.1;margin-top:4px;">Unemployment</div>
+            <div style="font-size:11px;font-style:italic;opacity:0.92;margin-top:4px;line-height:1.35;">"I move slowly — but my floor (the NAIRU) is fierce."</div>
+          </div>
+          <div style="padding:12px 14px;border-bottom:1px solid #BFDBFE;">
+            <div style="font-size:9px;font-weight:800;color:#1E3A8A;letter-spacing:0.1em;margin-bottom:2px;">TARGET</div>
+            <div style="font-size:14px;font-weight:800;color:#0B1426;">~4–5% (near NAIRU)</div>
+            <div style="font-size:10px;color:#64748B;">full-employment range</div>
+          </div>
+          <div style="padding:12px 14px;border-bottom:1px solid #BFDBFE;">
+            <div style="font-size:9px;font-weight:800;color:#1E3A8A;letter-spacing:0.1em;margin-bottom:2px;">MEASURE</div>
+            <div style="font-size:13px;font-weight:700;color:#0B1426;">ILO unemployment rate</div>
+            <div style="font-size:10px;color:#64748B;">ONS, rolling 3-month</div>
+          </div>
+          <div style="padding:12px 14px;background:#EFF6FF;">
+            <div style="font-size:9px;font-weight:800;color:#1E3A8A;letter-spacing:0.1em;">UK CURRENT</div>
+            <div style="font-size:22px;font-weight:900;color:#1E3A8A;font-family:'Inter Mono',monospace;">5.0%</div>
+          </div>
+          <div style="padding:10px 14px 12px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;font-weight:700;color:#475569;">
+            <span style="background:#EFF6FF;border:1px solid #BFDBFE;padding:3px 7px;border-radius:6px;">AD↑</span>
+            <span>→</span>
+            <span style="background:#EFF6FF;border:1px solid #BFDBFE;padding:3px 7px;border-radius:6px;">jobs↑</span>
+            <span style="color:#94A3B8;font-style:italic;margin-left:4px;">U falls</span>
+          </div>
+        </div>
+
+        <!-- GROWTH CARD (green) -->
+        <div style="background:#fff;border:1.5px solid #86EFAC;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:linear-gradient(135deg,#16A34A 0%,#065F46 100%);padding:14px 14px 12px;color:#fff;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:0.14em;opacity:0.85;">OBJECTIVE 03</div>
+            <div style="font-size:20px;font-weight:900;line-height:1.1;margin-top:4px;">Real GDP growth</div>
+            <div style="font-size:11px;font-style:italic;opacity:0.92;margin-top:4px;line-height:1.35;">"I'm the headline — but only one of three I tell you about."</div>
+          </div>
+          <div style="padding:12px 14px;border-bottom:1px solid #86EFAC;">
+            <div style="font-size:9px;font-weight:800;color:#065F46;letter-spacing:0.1em;margin-bottom:2px;">TARGET</div>
+            <div style="font-size:14px;font-weight:800;color:#0B1426;">~2–2.5% p.a.</div>
+            <div style="font-size:10px;color:#64748B;">UK trend rate</div>
+          </div>
+          <div style="padding:12px 14px;border-bottom:1px solid #86EFAC;">
+            <div style="font-size:9px;font-weight:800;color:#065F46;letter-spacing:0.1em;margin-bottom:2px;">MEASURE</div>
+            <div style="font-size:13px;font-weight:700;color:#0B1426;">Real GDP YoY</div>
+            <div style="font-size:10px;color:#64748B;">ONS, quarterly</div>
+          </div>
+          <div style="padding:12px 14px;background:#F0FDF4;">
+            <div style="font-size:9px;font-weight:800;color:#065F46;letter-spacing:0.1em;">UK CURRENT</div>
+            <div style="font-size:22px;font-weight:900;color:#065F46;font-family:'Inter Mono',monospace;">~1.4%</div>
+          </div>
+          <div style="padding:10px 14px 12px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;font-weight:700;color:#475569;">
+            <span style="background:#F0FDF4;border:1px solid #86EFAC;padding:3px 7px;border-radius:6px;">LRAS↑</span>
+            <span>→</span>
+            <span style="background:#F0FDF4;border:1px solid #86EFAC;padding:3px 7px;border-radius:6px;">Y↑</span>
+            <span style="color:#94A3B8;font-style:italic;margin-left:4px;">capacity rises</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `,
+
+  /* Card 3 — THE FOUR CONSTRAINTS (compass rose).
+     Hard pivot from Card 2's loud trading cards: a cool, geometric
+     compass with the four supporting objectives at the cardinal
+     points. Each direction has a green inner "safe zone" ring
+     and a red outer "violation" ring. The needle for each shows
+     where the UK currently sits. Two needles (fiscal, equality)
+     point outside the safe zone — a visible warning at a glance. */
+  macroConstraintCompass: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px 14px;font-family:Inter,sans-serif;">
+      <svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+
+        <!-- Outer frame ring -->
+        <circle cx="360" cy="240" r="200" fill="none" stroke="#E2E8F0" stroke-width="1.4" stroke-dasharray="3 4"/>
+        <circle cx="360" cy="240" r="160" fill="none" stroke="#E2E8F0" stroke-width="1.4"/>
+        <circle cx="360" cy="240" r="100" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.4"/>
+
+        <!-- Safe-zone wedges (green tint, inside the inner ring sector) -->
+        <path d="M 360 240 L 360 80 A 160 160 0 0 1 502.78 161.04 Z" fill="#DCFCE7" opacity="0.35"/>
+        <path d="M 360 240 L 502.78 161.04 A 160 160 0 0 1 502.78 318.96 Z" fill="#DCFCE7" opacity="0.35"/>
+        <path d="M 360 240 L 502.78 318.96 A 160 160 0 0 1 360 400 Z" fill="#DCFCE7" opacity="0.35"/>
+        <path d="M 360 240 L 360 400 A 160 160 0 0 1 217.22 318.96 Z" fill="#DCFCE7" opacity="0.35"/>
+        <!-- The diagram is symmetric; safe wedges sit on the inward portion of each cardinal -->
+
+        <!-- Cardinal lines (cross) -->
+        <line x1="360" y1="40" x2="360" y2="440" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="160" y1="240" x2="560" y2="240" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 4"/>
+
+        <!-- Centre badge -->
+        <circle cx="360" cy="240" r="48" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <text x="360" y="232" font-size="9" font-weight="800" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">UK</text>
+        <text x="360" y="250" font-size="11" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Q1 2026</text>
+
+        <!-- NORTH — Balance of payments (purple) -->
+        <!-- Safe zone band (green ring segment), needle, label -->
+        <g>
+          <path d="M 339 100 A 21 21 0 0 1 381 100" stroke="#22C55E" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="360" cy="100" r="3" fill="#fff" stroke="#8B5CF6" stroke-width="2"/>
+          <line x1="360" y1="240" x2="360" y2="120" stroke="#8B5CF6" stroke-width="2.6" stroke-linecap="round"/>
+          <polygon points="360,108 354,124 366,124" fill="#8B5CF6"/>
+          <rect x="280" y="40" width="160" height="48" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+          <text x="360" y="58" font-size="9" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">BALANCE OF PAYMENTS</text>
+          <text x="360" y="74" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">CA &minus;2.4% &middot; in zone</text>
+        </g>
+
+        <!-- EAST — Fiscal sustainability (amber) — outside the zone -->
+        <g>
+          <path d="M 500 219 A 21 21 0 0 1 500 261" stroke="#22C55E" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="500" cy="240" r="3" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+          <line x1="360" y1="240" x2="540" y2="240" stroke="#F59E0B" stroke-width="2.6" stroke-linecap="round"/>
+          <polygon points="540,240 524,234 524,246" fill="#F59E0B"/>
+          <rect x="565" y="216" width="138" height="48" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+          <text x="634" y="234" font-size="9" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">FISCAL SUSTAINABILITY</text>
+          <text x="634" y="250" font-size="13" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">93.8% debt</text>
+          <text x="634" y="262" font-size="10" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif" text-anchor="middle">! outside zone</text>
+        </g>
+
+        <!-- SOUTH — Environment (teal) -->
+        <g>
+          <path d="M 339 380 A 21 21 0 0 1 381 380" stroke="#22C55E" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="360" cy="380" r="3" fill="#fff" stroke="#0D9488" stroke-width="2"/>
+          <line x1="360" y1="240" x2="360" y2="360" stroke="#0D9488" stroke-width="2.6" stroke-linecap="round"/>
+          <polygon points="360,372 354,356 366,356" fill="#0D9488"/>
+          <rect x="280" y="392" width="160" height="48" rx="10" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.5"/>
+          <text x="360" y="410" font-size="9" font-weight="800" fill="#115E59" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">ENVIRONMENT</text>
+          <text x="360" y="426" font-size="13" font-weight="800" fill="#115E59" font-family="Inter,sans-serif" text-anchor="middle">net-zero progress mixed</text>
+        </g>
+
+        <!-- WEST — Equality (slate) — outside the zone -->
+        <g>
+          <path d="M 220 219 A 21 21 0 0 1 220 261" stroke="#22C55E" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="220" cy="240" r="3" fill="#fff" stroke="#475569" stroke-width="2"/>
+          <line x1="360" y1="240" x2="180" y2="240" stroke="#475569" stroke-width="2.6" stroke-linecap="round"/>
+          <polygon points="180,240 196,234 196,246" fill="#475569"/>
+          <rect x="18" y="216" width="138" height="48" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+          <text x="87" y="234" font-size="9" font-weight="800" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">INCOME EQUALITY</text>
+          <text x="87" y="250" font-size="13" font-weight="800" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle">Gini 0.36</text>
+          <text x="87" y="262" font-size="10" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif" text-anchor="middle">! outside zone</text>
+        </g>
+
+        <!-- Bottom legend -->
+        <rect x="180" y="448" width="14" height="14" rx="3" fill="#DCFCE7" stroke="#22C55E" stroke-width="1"/>
+        <text x="200" y="459" font-size="11" fill="#475569" font-family="Inter,sans-serif">safe zone</text>
+        <text x="280" y="459" font-size="11" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif">!  needle outside zone = constraint violation</text>
+      </svg>
+    </div>
+  `,
+
+  /* Card 4 — THE PHILLIPS WORKSTATION (theory only, 2 views).
+     Lab-instrument aesthetic. Phillips curve on a graphed
+     'notebook' background. Two interactive views with an extra
+     "PLAY" CSS-only auto-cycle: a hidden checkbox + CSS
+     animation that walks the diagram from SRPC alone to LRPC +
+     A→B→C path, then resets. NO stagflation view (that lives in
+     Topic B). The right panel uses a handwritten-style monospace
+     note for a 'scientist's notebook' feel. */
+  macroPhillipsWorkstation: `
+    <div class="phil-ws" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px 14px;font-family:Inter,sans-serif;">
       <style>
-        .macro-scorecard .mos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-        @media (max-width: 640px) { .macro-scorecard .mos-grid { grid-template-columns:1fr; } }
+        .phil-ws .ws-grid {
+          display: grid;
+          grid-template-columns: 1.55fr 1fr;
+          gap: 16px;
+          align-items: stretch;
+        }
+        @media (max-width: 720px) { .phil-ws .ws-grid { grid-template-columns: 1fr; } }
+        .phil-ws .notebook {
+          background:
+            linear-gradient(#fff 0%, #fff 100%),
+            repeating-linear-gradient(#fff 0 23px, #E2E8F0 23px 24px);
+          background-blend-mode: multiply;
+          border: 1.5px solid #94A3B8;
+          border-radius: 10px;
+          padding: 18px 18px 16px;
+          font-family: 'Courier New', monospace;
+        }
+        .phil-ws .notebook h4 { font-family: 'Caveat','Inter',sans-serif; font-size:20px; color:#1E3A8A; margin:0 0 8px; font-weight:800; }
+        .phil-ws .ws-canvas { background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:10px; padding:14px 10px 6px; position:relative; }
+        .phil-ws .ws-canvas .corner-tag { position:absolute; top:10px; right:14px; font-size:9px; font-weight:800; letter-spacing:0.1em; color:#64748B; font-family:'Courier New',monospace; }
+        /* hide the LRPC + path layers by default */
+        .phil-ws .lrpc-layer, .phil-ws .friedman-layer { opacity:0; transition: opacity 0.4s; }
+        .phil-ws .srpc1 { transition: stroke 0.4s, stroke-dasharray 0.4s; }
+        /* When checkbox 2 (Friedman view) is selected, fade in LRPC + path
+           — the engine sets data-view="lrpc" on the wrapper via the step-strip click handler */
+        .phil-ws[data-view="lrpc"] .lrpc-layer,
+        .phil-ws[data-view="lrpc"] .friedman-layer { opacity:1; }
+        .phil-ws[data-view="lrpc"] .srpc1 { stroke:#94A3B8; stroke-dasharray:5 4; }
+        /* PLAY auto-cycle: when the play checkbox is toggled on, animate */
+        .phil-ws-play:checked ~ .ws-grid .lrpc-layer,
+        .phil-ws-play:checked ~ .ws-grid .friedman-layer { animation: phil-cycle 4.8s ease-in-out infinite; }
+        .phil-ws-play:checked ~ .ws-grid .srpc1 { animation: phil-srpc-cycle 4.8s ease-in-out infinite; }
+        @keyframes phil-cycle {
+          0%, 20% { opacity:0; }
+          50%, 80% { opacity:1; }
+          100% { opacity:0; }
+        }
+        @keyframes phil-srpc-cycle {
+          0%, 20% { stroke:#2563EB; stroke-dasharray:0; }
+          50%, 80% { stroke:#94A3B8; stroke-dasharray:5 4; }
+          100% { stroke:#2563EB; stroke-dasharray:0; }
+        }
+        .phil-ws-toggle { display:flex; align-items:center; gap:6px; cursor:pointer; user-select:none; padding:8px 12px; border:1px solid #CBD5E1; border-radius:8px; font-size:11px; font-weight:700; color:#475569; background:#fff; transition: all 0.2s; }
+        .phil-ws-toggle:hover { border-color:#94A3B8; }
+        .phil-ws-play:checked ~ .ws-controls .phil-ws-toggle { background:#1E3A8A; color:#fff; border-color:#1E3A8A; }
+        .phil-ws-play:checked ~ .ws-controls .play-icon { transform:scale(1.15); }
       </style>
-      <div class="mos-grid">
 
-        <!-- 1 · Inflation (rose) · gauge 0–6%, target zone 1.6–2.4, needle 2.8 -->
-        <div style="background:#fff;border:1.5px solid #FDA4AF;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:4px;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#E11D48;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-            <div><div style="font-weight:800;color:#9F1239;font-size:14px;line-height:1.2;">Inflation</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: around 2% CPI</div></div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin:2px 0;">
-            <svg viewBox="0 0 140 80" width="116" style="flex-shrink:0;">
-              <path d="M26 58 A44 44 0 0 1 114 58" stroke="#E2E8F0" stroke-width="7" fill="none" stroke-linecap="round"/>
-              <path d="M40.56 25.3 A44 44 0 0 1 56.4 16.15" stroke="#16A34A" stroke-width="7" fill="none" stroke-linecap="round"/>
-              <line x1="70" y1="58" x2="65.4" y2="14.24" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="70" cy="58" r="3.4" fill="#0B1426"/>
-              <text x="24" y="74" font-size="9" fill="#64748B" text-anchor="middle">0%</text>
-              <text x="48" y="11" font-size="9" fill="#16A34A" font-weight="700" text-anchor="middle">2%</text>
-              <text x="116" y="74" font-size="9" fill="#64748B" text-anchor="middle">6%</text>
-            </svg>
-            <div style="text-align:right;flex-shrink:0;">
-              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
-              <div style="font-size:21px;font-weight:800;color:#9F1239;line-height:1.1;">2.8%</div>
-              <div style="font-size:9px;color:#64748B;">April 2026</div>
-            </div>
-          </div>
-          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#E11D48;">●</span> After peaking at 11.1% in Oct 2022</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:#FFF1F2;border-radius:8px;padding:6px 10px;margin-top:7px;"><span style="font-size:10px;color:#9F1239;font-weight:700;">🏛️ Bank Rate context</span><span style="font-size:13px;font-weight:800;color:#9F1239;">3.75%</span></div>
+      <input type="checkbox" id="phil-ws-play" class="phil-ws-play" style="position:absolute;opacity:0;pointer-events:none;"/>
+
+      <div class="ws-grid">
+        <div class="ws-canvas">
+          <div class="corner-tag">LAB v.1958+1968</div>
+          <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:'Courier New',monospace;">
+            <!-- Graph paper background -->
+            <defs>
+              <pattern id="grid-phil" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E2E8F0" stroke-width="0.6"/>
+              </pattern>
+            </defs>
+            <rect x="40" y="20" width="400" height="300" fill="url(#grid-phil)"/>
+
+            <!-- Axes -->
+            <line x1="40" y1="320" x2="450" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+            <line x1="40" y1="320" x2="40" y2="14" stroke="#0B1426" stroke-width="1.6"/>
+            <polygon points="450,320 442,316 442,324" fill="#0B1426"/>
+            <polygon points="40,14 36,22 44,22" fill="#0B1426"/>
+            <text x="34" y="22" font-size="14" font-weight="700" fill="#0B1426" text-anchor="end">π</text>
+            <text x="14" y="38" font-size="10" fill="#64748B">inflation</text>
+            <text x="454" y="324" font-size="14" font-weight="700" fill="#0B1426">U</text>
+            <text x="426" y="338" font-size="10" fill="#64748B">unemp.</text>
+
+            <!-- Original SRPC₁ — always visible, fades to dashed grey in view 2 -->
+            <line class="srpc1" x1="80" y1="50" x2="420" y2="290" stroke="#2563EB" stroke-width="2.8" stroke-linecap="round"/>
+            <text class="srpc1-label" x="424" y="294" font-size="12" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">SRPC₁</text>
+
+            <!-- Point A at NAIRU on SRPC -->
+            <line x1="40" y1="200" x2="240" y2="200" stroke="#64748B" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="240" y1="200" x2="240" y2="320" stroke="#64748B" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="240" cy="200" r="5.5" fill="#fff" stroke="#2563EB" stroke-width="2.4"/>
+            <text x="252" y="196" font-size="13" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">A</text>
+            <text x="34" y="204" font-size="11" font-weight="700" fill="#475569" text-anchor="end">π₀</text>
+            <text x="240" y="338" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">U_N</text>
+
+            <!-- LRPC: vertical at NAIRU — VIEW 2 only -->
+            <g class="lrpc-layer">
+              <line x1="240" y1="20" x2="240" y2="320" stroke="#7E22CE" stroke-width="2.6" stroke-dasharray="6 4"/>
+              <text x="248" y="34" font-size="12" font-weight="800" fill="#7E22CE" font-family="Inter,sans-serif">LRPC</text>
+            </g>
+
+            <!-- Friedman path A → B → C : stimulus down SRPC1 to B, then expectations shift -->
+            <g class="friedman-layer">
+              <!-- Point B at U₁ < U_N, on original SRPC -->
+              <line x1="40" y1="140" x2="160" y2="140" stroke="#D97706" stroke-width="1" stroke-dasharray="3 3"/>
+              <line x1="160" y1="140" x2="160" y2="320" stroke="#D97706" stroke-width="1" stroke-dasharray="3 3"/>
+              <circle cx="160" cy="140" r="5.5" fill="#fff" stroke="#D97706" stroke-width="2.4"/>
+              <text x="146" y="132" font-size="13" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">B</text>
+              <text x="34" y="144" font-size="11" font-weight="700" fill="#D97706" text-anchor="end">π₁</text>
+              <text x="160" y="338" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">U₁</text>
+
+              <!-- Arrow A→B (along SRPC) -->
+              <path d="M 232 206 L 168 144" stroke="#D97706" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <polygon points="168,144 178,148 174,154" fill="#D97706"/>
+
+              <!-- SRPC₂ shifted up — passes through C at (240, 140) -->
+              <line x1="80" y1="-10" x2="420" y2="230" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round" opacity="0.85"/>
+              <text x="424" y="234" font-size="12" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">SRPC₂</text>
+
+              <!-- Point C at U_N, but on new SRPC₂ -->
+              <circle cx="240" cy="140" r="5.5" fill="#fff" stroke="#16A34A" stroke-width="2.4"/>
+              <text x="252" y="136" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">C</text>
+
+              <!-- Arrow B→C (curve shifts up at same U) -->
+              <path d="M 168 138 L 232 138" stroke="#16A34A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <polygon points="232,138 222,134 222,142" fill="#16A34A"/>
+            </g>
+          </svg>
         </div>
 
-        <!-- 2 · Unemployment (blue) · gauge 0–10%, target 4–5, needle 5.0 -->
-        <div style="background:#fff;border:1.5px solid #93C5FD;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:4px;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#2563EB;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-            <div><div style="font-weight:800;color:#1E3A8A;font-size:14px;line-height:1.2;">Unemployment</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: around 4–5%</div></div>
+        <div class="notebook">
+          <h4>Lab notes</h4>
+          <div style="font-size:13px;color:#0B1426;line-height:1.55;margin-bottom:10px;">
+            <strong style="font-family:Inter,sans-serif;color:#2563EB;">SRPC.</strong> Lower U → higher π. A short-run menu of choices.
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin:2px 0;">
-            <svg viewBox="0 0 140 80" width="116" style="flex-shrink:0;">
-              <path d="M26 58 A44 44 0 0 1 114 58" stroke="#E2E8F0" stroke-width="7" fill="none" stroke-linecap="round"/>
-              <path d="M56.4 16.15 A44 44 0 0 1 70 14" stroke="#16A34A" stroke-width="7" fill="none" stroke-linecap="round"/>
-              <line x1="70" y1="58" x2="70" y2="14" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="70" cy="58" r="3.4" fill="#0B1426"/>
-              <text x="24" y="74" font-size="9" fill="#64748B" text-anchor="middle">0%</text>
-              <text x="63" y="11" font-size="9" fill="#16A34A" font-weight="700" text-anchor="middle">4–5%</text>
-              <text x="116" y="74" font-size="9" fill="#64748B" text-anchor="middle">10%</text>
-            </svg>
-            <div style="text-align:right;flex-shrink:0;">
-              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
-              <div style="font-size:21px;font-weight:800;color:#1E3A8A;line-height:1.1;">5.0%</div>
-              <div style="font-size:9px;color:#64748B;">Jan–Mar 2026</div>
+          <div style="font-size:13px;color:#0B1426;line-height:1.55;margin-bottom:10px;">
+            <strong style="font-family:Inter,sans-serif;color:#7E22CE;">LRPC.</strong> Vertical at NAIRU. There is no long-run trade-off.
+          </div>
+          <div style="font-size:13px;color:#0B1426;line-height:1.55;margin-bottom:14px;">
+            <strong style="font-family:Inter,sans-serif;color:#D97706;">Why?</strong> Push U &lt; NAIRU → workers expect π↑ → SRPC shifts up → economy returns to NAIRU at <em>higher</em> π.
+          </div>
+          <div style="border-top:1px dashed #94A3B8;padding-top:10px;font-size:12px;color:#475569;line-height:1.5;">
+            <strong style="font-family:Inter,sans-serif;color:#0B1426;">A → B → C.</strong> Stimulus moves U below NAIRU (A→B). Expectations adjust (B→C). U returns; π is permanently higher.
+          </div>
+        </div>
+      </div>
+
+      <div class="ws-controls" style="display:flex;align-items:center;gap:10px;margin-top:12px;justify-content:center;">
+        <label class="phil-ws-toggle" for="phil-ws-play">
+          <span class="play-icon" style="display:inline-flex;width:14px;height:14px;align-items:center;justify-content:center;font-size:11px;color:#16A34A;">▶</span>
+          play A→B→C
+        </label>
+        <span style="font-size:11px;color:#94A3B8;font-style:italic;">Press play to watch the SRPC shift up after expectations adjust.</span>
+      </div>
+    </div>
+  `,
+
+  /* Card 5 — THE SEE-SAWS.
+     Four trade-offs, each rendered as a tipping see-saw. Two
+     coloured discs at the lever ends are the two objectives; a
+     small labelled "weight" near one end shows the mechanism
+     pushing the lever. CSS-only interactivity: a hidden checkbox
+     per see-saw flips the lever rotation, demonstrating the
+     reverse direction of the trade-off. No JS, CSP-safe. */
+  macroSeesaws: `
+    <div class="seesaws" style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">
+      <style>
+        .seesaws .ss-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; }
+        @media (max-width: 640px) { .seesaws .ss-grid { grid-template-columns: 1fr; } }
+        .seesaws .ss-tile { background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:14px; padding:14px 16px 12px; position:relative; }
+        .seesaws .ss-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+        .seesaws .ss-name { font-size:13px; font-weight:800; }
+        .seesaws .ss-flip { font-size:10px; color:#475569; cursor:pointer; user-select:none; padding:3px 9px; border:1px solid #CBD5E1; border-radius:14px; background:#fff; transition: all 0.18s; }
+        .seesaws .ss-flip:hover { border-color:#94A3B8; }
+        .seesaws .ss-flip-cb { position:absolute; opacity:0; pointer-events:none; }
+        .seesaws .ss-lever { transition: transform 0.5s cubic-bezier(.4,.0,.2,1); transform-origin: 140px 70px; }
+        .seesaws .ss-weight { transition: transform 0.5s cubic-bezier(.4,.0,.2,1); }
+        .seesaws .ss-flip-cb:checked + .ss-flip { background:#0B1426; color:#fff; border-color:#0B1426; }
+        .seesaws .ss-flip-cb:checked ~ svg .ss-lever { transform: rotate(-12deg); }
+        .seesaws .ss-flip-cb:checked ~ svg .ss-weight { transform: translateX(120px) rotate(12deg); }
+        .seesaws .ss-rule { font-size:11px; color:#475569; line-height:1.5; margin-top:6px; }
+      </style>
+
+      <div class="ss-grid">
+
+        <!-- 1. Growth ↔ Inflation (rose-green) -->
+        <div class="ss-tile">
+          <div class="ss-header">
+            <div class="ss-name">
+              <span style="color:#065F46;">Growth</span>
+              <span style="color:#94A3B8;font-weight:600;">↔</span>
+              <span style="color:#9F1239;">Inflation</span>
             </div>
+            <input type="checkbox" id="ss-1" class="ss-flip-cb"/>
+            <label for="ss-1" class="ss-flip">flip</label>
           </div>
-          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#2563EB;">●</span> At the top of the target range</div>
+          <svg viewBox="0 0 280 120" style="width:100%;height:auto;display:block;">
+            <!-- Ground -->
+            <line x1="20" y1="105" x2="260" y2="105" stroke="#CBD5E1" stroke-width="1"/>
+            <!-- Fulcrum -->
+            <polygon points="140,105 128,82 152,82" fill="#475569"/>
+            <!-- Lever (tilts to the LEFT by default — Growth heavy) -->
+            <g class="ss-lever" transform="rotate(12)" style="transform-origin: 140px 70px;">
+              <line x1="30" y1="70" x2="250" y2="70" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="40" cy="70" r="22" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+              <text x="40" y="74" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">Growth</text>
+              <circle cx="240" cy="70" r="22" fill="#E11D48" stroke="#fff" stroke-width="2"/>
+              <text x="240" y="74" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">π</text>
+            </g>
+            <!-- Mechanism weight: AD↑ pulling one side down -->
+            <g class="ss-weight">
+              <rect x="65" y="36" width="50" height="20" rx="4" fill="#0B1426"/>
+              <text x="90" y="50" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">AD↑</text>
+            </g>
+          </svg>
+          <div class="ss-rule">AD↑ near capacity feeds straight through to prices. <em>Lift growth, P rises.</em></div>
         </div>
 
-        <!-- 3 · Real GDP growth (green) · gauge -2..5%, target 2–2.5, needle 0.6 -->
-        <div style="background:#fff;border:1.5px solid #86EFAC;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:4px;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#16A34A;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-            <div><div style="font-weight:800;color:#065F46;font-size:14px;line-height:1.2;">Real GDP growth</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: around 2–2.5% p.a.</div></div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin:2px 0;">
-            <svg viewBox="0 0 140 80" width="116" style="flex-shrink:0;">
-              <path d="M26 58 A44 44 0 0 1 114 58" stroke="#E2E8F0" stroke-width="7" fill="none" stroke-linecap="round"/>
-              <path d="M79.77 15.1 A44 44 0 0 1 89.1 18.4" stroke="#16A34A" stroke-width="7" fill="none" stroke-linecap="round"/>
-              <line x1="70" y1="58" x2="52.7" y2="17.55" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="70" cy="58" r="3.4" fill="#0B1426"/>
-              <text x="22" y="74" font-size="9" fill="#64748B" text-anchor="middle">−2%</text>
-              <text x="92" y="11" font-size="9" fill="#16A34A" font-weight="700" text-anchor="middle">2–2.5%</text>
-              <text x="116" y="74" font-size="9" fill="#64748B" text-anchor="middle">5%</text>
-            </svg>
-            <div style="text-align:right;flex-shrink:0;">
-              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
-              <div style="font-size:21px;font-weight:800;color:#065F46;line-height:1.1;">0.6%</div>
-              <div style="font-size:9px;color:#64748B;">Q1 2026 (q/q)</div>
+        <!-- 2. Growth ↔ BoP (green-purple) -->
+        <div class="ss-tile">
+          <div class="ss-header">
+            <div class="ss-name">
+              <span style="color:#065F46;">Growth</span>
+              <span style="color:#94A3B8;font-weight:600;">↔</span>
+              <span style="color:#5B21B6;">BoP</span>
             </div>
+            <input type="checkbox" id="ss-2" class="ss-flip-cb"/>
+            <label for="ss-2" class="ss-flip">flip</label>
           </div>
-          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#16A34A;">●</span> Annual growth ~1.4% in 2025</div>
+          <svg viewBox="0 0 280 120" style="width:100%;height:auto;display:block;">
+            <line x1="20" y1="105" x2="260" y2="105" stroke="#CBD5E1" stroke-width="1"/>
+            <polygon points="140,105 128,82 152,82" fill="#475569"/>
+            <g class="ss-lever" transform="rotate(12)" style="transform-origin: 140px 70px;">
+              <line x1="30" y1="70" x2="250" y2="70" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="40" cy="70" r="22" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+              <text x="40" y="74" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">Growth</text>
+              <circle cx="240" cy="70" r="22" fill="#8B5CF6" stroke="#fff" stroke-width="2"/>
+              <text x="240" y="74" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">CA</text>
+            </g>
+            <g class="ss-weight">
+              <rect x="48" y="36" width="84" height="20" rx="4" fill="#0B1426"/>
+              <text x="90" y="50" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">income↑ &middot; M↑</text>
+            </g>
+          </svg>
+          <div class="ss-rule">Higher domestic income sucks in imports. <em>Lift growth, CA worsens.</em></div>
         </div>
 
-        <!-- 4 · Sustainable balance of payments (purple) -->
-        <div style="background:#fff;border:1.5px solid #C4B5FD;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:6px;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#8B5CF6;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-            <div><div style="font-weight:800;color:#5B21B6;font-size:14px;line-height:1.2;">Sustainable balance of payments</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: sustainable current-account position</div></div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0;">
-            <div style="width:48px;height:48px;border-radius:50%;background:#F5F3FF;display:inline-flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🌐</div>
-            <div style="text-align:right;flex-shrink:0;">
-              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
-              <div style="font-size:21px;font-weight:800;color:#5B21B6;line-height:1.1;">−2.4%</div>
-              <div style="font-size:9px;color:#64748B;">Q4 2025 (% of GDP)</div>
+        <!-- 3. Growth ↔ Environment (green-teal) -->
+        <div class="ss-tile">
+          <div class="ss-header">
+            <div class="ss-name">
+              <span style="color:#065F46;">Growth</span>
+              <span style="color:#94A3B8;font-weight:600;">↔</span>
+              <span style="color:#115E59;">Environment</span>
             </div>
+            <input type="checkbox" id="ss-3" class="ss-flip-cb"/>
+            <label for="ss-3" class="ss-flip">flip</label>
           </div>
-          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#8B5CF6;">●</span> Persistent current-account deficit</div>
+          <svg viewBox="0 0 280 120" style="width:100%;height:auto;display:block;">
+            <line x1="20" y1="105" x2="260" y2="105" stroke="#CBD5E1" stroke-width="1"/>
+            <polygon points="140,105 128,82 152,82" fill="#475569"/>
+            <g class="ss-lever" transform="rotate(12)" style="transform-origin: 140px 70px;">
+              <line x1="30" y1="70" x2="250" y2="70" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="40" cy="70" r="22" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+              <text x="40" y="74" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">Growth</text>
+              <circle cx="240" cy="70" r="22" fill="#0D9488" stroke="#fff" stroke-width="2"/>
+              <text x="240" y="74" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">env.</text>
+            </g>
+            <g class="ss-weight">
+              <rect x="48" y="36" width="84" height="20" rx="4" fill="#0B1426"/>
+              <text x="90" y="50" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">energy &middot; CO₂</text>
+            </g>
+          </svg>
+          <div class="ss-rule">Unless decoupled, output growth adds to emissions. <em>Lift growth, env. worsens.</em></div>
         </div>
 
-        <!-- 5 · Fiscal sustainability (amber) -->
-        <div style="background:#fff;border:1.5px solid #FCD34D;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:6px;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#F59E0B;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
-            <div><div style="font-weight:800;color:#B45309;font-size:14px;line-height:1.2;">Fiscal sustainability</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: debt on a stable or falling path</div></div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0;">
-            <div style="width:48px;height:48px;border-radius:50%;background:#FFFBEB;display:inline-flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🏛️</div>
-            <div style="text-align:right;flex-shrink:0;">
-              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
-              <div style="font-size:21px;font-weight:800;color:#B45309;line-height:1.1;">93.8%</div>
-              <div style="font-size:9px;color:#64748B;">March 2026 (% of GDP)</div>
+        <!-- 4. Spending ↔ Fiscal sustainability (slate-amber) -->
+        <div class="ss-tile">
+          <div class="ss-header">
+            <div class="ss-name">
+              <span style="color:#334155;">Spending</span>
+              <span style="color:#94A3B8;font-weight:600;">↔</span>
+              <span style="color:#B45309;">Fiscal</span>
             </div>
+            <input type="checkbox" id="ss-4" class="ss-flip-cb"/>
+            <label for="ss-4" class="ss-flip">flip</label>
           </div>
-          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#F59E0B;">●</span> Public sector net debt</div>
+          <svg viewBox="0 0 280 120" style="width:100%;height:auto;display:block;">
+            <line x1="20" y1="105" x2="260" y2="105" stroke="#CBD5E1" stroke-width="1"/>
+            <polygon points="140,105 128,82 152,82" fill="#475569"/>
+            <g class="ss-lever" transform="rotate(12)" style="transform-origin: 140px 70px;">
+              <line x1="30" y1="70" x2="250" y2="70" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="40" cy="70" r="22" fill="#475569" stroke="#fff" stroke-width="2"/>
+              <text x="40" y="74" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">G</text>
+              <circle cx="240" cy="70" r="22" fill="#F59E0B" stroke="#fff" stroke-width="2"/>
+              <text x="240" y="74" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">debt</text>
+            </g>
+            <g class="ss-weight">
+              <rect x="62" y="36" width="56" height="20" rx="4" fill="#0B1426"/>
+              <text x="90" y="50" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">deficit↑</text>
+            </g>
+          </svg>
+          <div class="ss-rule">Funding more services without higher taxes lifts the debt path. <em>Lift G, debt rises.</em></div>
         </div>
 
-        <!-- 6 · Environmental sustainability (teal) -->
-        <div style="background:#fff;border:1.5px solid #5EEAD4;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:6px;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#0D9488;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">6</div>
-            <div><div style="font-weight:800;color:#115E59;font-size:14px;line-height:1.2;">Environmental sustainability</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: progress compatible with net zero</div></div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0;">
-            <div style="width:48px;height:48px;border-radius:50%;background:#F0FDFA;display:inline-flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🌿</div>
-            <div style="text-align:right;flex-shrink:0;">
-              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
-              <div style="font-size:19px;font-weight:800;color:#115E59;line-height:1.1;">Mixed</div>
-              <div style="font-size:9px;color:#64748B;">Progress mixed</div>
-            </div>
-          </div>
-          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#0D9488;">●</span> Net zero by 2050 target</div>
-        </div>
+      </div>
+    </div>
+  `,
 
+  /* Card 6 — THE CONSTRAINT WEB.
+     Final synthesis: seven objectives placed as nodes around a
+     central "WELFARE" hub; five tension lines drawn between
+     trade-off pairs. CSS :hover on each tension line lifts both
+     endpoint nodes so the student SEES the connections. A small
+     four-tile framework strip sits below: advanced × compromised
+     × magnitude × time horizon. */
+  macroConstraintWeb: `
+    <div class="cweb" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;">
+      <style>
+        .cweb .web-link { stroke:#94A3B8; stroke-width:1.6; stroke-dasharray:5 4; fill:none; transition: stroke 0.2s, stroke-width 0.2s; cursor:pointer; }
+        .cweb .web-link:hover { stroke:#E11D48; stroke-width:3; stroke-dasharray:0; }
+        .cweb .web-node circle { transition: r 0.2s, stroke-width 0.2s; }
+        .cweb .web-link:hover ~ .web-mech { opacity: 1; }
+        .cweb .web-mech { opacity: 0.55; transition: opacity 0.2s; font-style:italic; }
+        .cweb .framework-tile { background:#fff; border:1.5px solid #E2E8F0; border-radius:12px; padding:12px 14px; text-align:center; }
+      </style>
+      <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Centre hub -->
+        <circle cx="360" cy="230" r="48" fill="#0B1426"/>
+        <text x="360" y="225" font-size="9" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.12em">WELFARE</text>
+        <text x="360" y="242" font-size="11" font-weight="900" fill="#fff" text-anchor="middle">net output</text>
+
+        <!-- Seven nodes arranged around the centre.
+             Layout angles: -90 inflation, -38.6 unemp, +12.9 growth, +64.3 BoP,
+             +115.7 fiscal, +167.1 env, +218.6 equality (i.e. 51.4° apart, 7 nodes).
+             Positions computed at radius 170. -->
+        <!-- Inflation @ -90° → (360, 60) -->
+        <g class="web-node">
+          <circle cx="360" cy="60" r="34" fill="#FFF1F2" stroke="#E11D48" stroke-width="2.4"/>
+          <text x="360" y="58" font-size="9" font-weight="800" fill="#9F1239" text-anchor="middle">INFLATION</text>
+          <text x="360" y="70" font-size="10" font-weight="900" fill="#9F1239" text-anchor="middle">π</text>
+        </g>
+        <!-- Unemployment @ -38.6° → (360+170*cos(-38.6°), 230+170*sin(-38.6°)) ≈ (493, 124) -->
+        <g class="web-node">
+          <circle cx="493" cy="124" r="34" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
+          <text x="493" y="122" font-size="9" font-weight="800" fill="#1E3A8A" text-anchor="middle">UNEMP.</text>
+          <text x="493" y="134" font-size="10" font-weight="900" fill="#1E3A8A" text-anchor="middle">U</text>
+        </g>
+        <!-- Growth @ 12.9° → (360+170*cos(12.9°), 230+170*sin(12.9°)) ≈ (526, 268) -->
+        <g class="web-node">
+          <circle cx="526" cy="268" r="34" fill="#F0FDF4" stroke="#16A34A" stroke-width="2.4"/>
+          <text x="526" y="266" font-size="9" font-weight="800" fill="#065F46" text-anchor="middle">GROWTH</text>
+          <text x="526" y="278" font-size="10" font-weight="900" fill="#065F46" text-anchor="middle">Y</text>
+        </g>
+        <!-- BoP @ 64.3° → (360+170*cos(64.3°), 230+170*sin(64.3°)) ≈ (434, 383) -->
+        <g class="web-node">
+          <circle cx="434" cy="383" r="34" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2.4"/>
+          <text x="434" y="381" font-size="9" font-weight="800" fill="#5B21B6" text-anchor="middle">BoP</text>
+          <text x="434" y="393" font-size="10" font-weight="900" fill="#5B21B6" text-anchor="middle">CA</text>
+        </g>
+        <!-- Fiscal @ 115.7° → (360+170*cos(115.7°), 230+170*sin(115.7°)) ≈ (286, 383) -->
+        <g class="web-node">
+          <circle cx="286" cy="383" r="34" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.4"/>
+          <text x="286" y="381" font-size="9" font-weight="800" fill="#B45309" text-anchor="middle">FISCAL</text>
+          <text x="286" y="393" font-size="10" font-weight="900" fill="#B45309" text-anchor="middle">G</text>
+        </g>
+        <!-- Environment @ 167.1° → (360+170*cos(167.1°), 230+170*sin(167.1°)) ≈ (194, 268) -->
+        <g class="web-node">
+          <circle cx="194" cy="268" r="34" fill="#F0FDFA" stroke="#0D9488" stroke-width="2.4"/>
+          <text x="194" y="266" font-size="9" font-weight="800" fill="#115E59" text-anchor="middle">ENV.</text>
+          <text x="194" y="278" font-size="10" font-weight="900" fill="#115E59" text-anchor="middle">CO₂</text>
+        </g>
+        <!-- Equality @ 218.6° (i.e. -141.4° equivalent) → (360+170*cos(218.6°), 230+170*sin(218.6°)) ≈ (227, 124) -->
+        <g class="web-node">
+          <circle cx="227" cy="124" r="34" fill="#F1F5F9" stroke="#475569" stroke-width="2.4"/>
+          <text x="227" y="122" font-size="9" font-weight="800" fill="#334155" text-anchor="middle">EQUALITY</text>
+          <text x="227" y="134" font-size="10" font-weight="900" fill="#334155" text-anchor="middle">Gini</text>
+        </g>
+
+        <!-- TENSION LINES — five trade-off pairs.
+             Each is hoverable; the line goes solid red and thicker on hover. -->
+        <!-- 1. Phillips: Inflation ↔ Unemployment (top right) -->
+        <line class="web-link" x1="360" y1="94" x2="493" y2="90"/>
+        <text class="web-mech" x="430" y="80" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Phillips</text>
+
+        <!-- 2. Growth ↔ Inflation (top right to top) -->
+        <line class="web-link" x1="526" y1="234" x2="375" y2="86"/>
+        <text class="web-mech" x="454" y="160" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">AD→P↑</text>
+
+        <!-- 3. Growth ↔ BoP -->
+        <line class="web-link" x1="526" y1="302" x2="448" y2="354"/>
+        <text class="web-mech" x="500" y="338" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">income↑→M↑</text>
+
+        <!-- 4. Growth ↔ Environment -->
+        <line class="web-link" x1="492" y1="268" x2="228" y2="268"/>
+        <text class="web-mech" x="360" y="262" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">energy&middot;CO₂</text>
+
+        <!-- 5. Fiscal ↔ Spending/Growth (proxy via Growth-fiscal link) -->
+        <line class="web-link" x1="304" y1="354" x2="510" y2="290"/>
+        <text class="web-mech" x="405" y="328" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">G↑→debt↑</text>
+
+        <!-- Legend -->
+        <line x1="40" y1="436" x2="76" y2="436" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <text x="84" y="440" font-size="10" fill="#475569" font-family="Inter,sans-serif">tension line = trade-off (hover to highlight)</text>
+      </svg>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;">
+        <div class="framework-tile" style="border-color:#FECDD3;">
+          <div style="font-size:9px;font-weight:800;color:#9F1239;letter-spacing:0.1em;margin-bottom:4px;">1 · ADVANCED</div>
+          <div style="font-size:12px;color:#0B1426;font-weight:700;line-height:1.3;">Which objective<br>does it help?</div>
+        </div>
+        <div class="framework-tile" style="border-color:#BFDBFE;">
+          <div style="font-size:9px;font-weight:800;color:#1E3A8A;letter-spacing:0.1em;margin-bottom:4px;">2 · COMPROMISED</div>
+          <div style="font-size:12px;color:#0B1426;font-weight:700;line-height:1.3;">Which objective<br>does it strain?</div>
+        </div>
+        <div class="framework-tile" style="border-color:#86EFAC;">
+          <div style="font-size:9px;font-weight:800;color:#065F46;letter-spacing:0.1em;margin-bottom:4px;">3 · MAGNITUDE</div>
+          <div style="font-size:12px;color:#0B1426;font-weight:700;line-height:1.3;">How large is<br>each effect?</div>
+        </div>
+        <div class="framework-tile" style="border-color:#FCD34D;">
+          <div style="font-size:9px;font-weight:800;color:#B45309;letter-spacing:0.1em;margin-bottom:4px;">4 · TIME HORIZON</div>
+          <div style="font-size:12px;color:#0B1426;font-weight:700;line-height:1.3;">Short-run cost,<br>long-run gain?</div>
+        </div>
       </div>
     </div>
   `,

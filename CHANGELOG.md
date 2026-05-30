@@ -6,6 +6,47 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.20.0 — 2026-05-30
+
+### Macro Conflicts & Trade-offs (2.6.4) — full 6-card build from ChatGPT mockups
+
+Sister topic to *Macroeconomic Objectives* (2.6.1) — applied case studies
+of the five real UK trade-offs, ending in the four-dimensional A* verdict
+framework. Built tightly to the six ChatGPT mockups Roger shared:
+
+- **C1 The conflict lens** — new `conflictLensMap` SVG: five tone-coded
+  trade-off tiles arranged around a central "WHEN OBJECTIVES COLLIDE"
+  lozenge with dashed arrows pointing inward. Each tile names the
+  trade-off + its historical UK case. Closes with a 3-step "Conflict
+  analysis" flow (trade-off · policy choice · legacy).
+- **C2 Diagnose the trade-off** — uses the existing `diagnoseRows` block
+  with a new `reveal: true` mode. Verdict boxes are blurred + faded by
+  default; a tone-coloured `?` button on each row toggles a hidden CSS
+  checkbox and unblurs the verdict. CSS-only, CSP-safe.
+- **C3 1970s stagflation** — new `stagflation5Step` flow icon (five
+  vertical tone-tinted tiles with numbered badges + circular icons +
+  arrows), plus `stagflationTimeline` icon (3 dated markers on a dashed
+  axis), plus a 3-tile `causes3` row of demand-side responses. Required
+  one engine addition: `visualKey2`/`visualLabel2`/`visualEmoji2`/
+  `visualCaption2` fields on `ad-interactive` to host a second hero.
+- **C4 The 2021–23 inflation surge** — big `inflationSurge2021` hero:
+  twin panels (shock blue / response amber) with a UK CPI line chart
+  peaking 11.1% Oct 2022 + a Bank Rate step chart climbing 0.1% → 5.25%
+  from Dec 2021 to Aug 2023. Embeds the "trade-off in real time"
+  Phillips-style view + 3 stat callouts at the bottom of the same icon.
+- **C5 The supply-side escape route** — uses the pair block (with `rows`
+  + `example` extensions added earlier) for the "can do / caveats"
+  comparison, with East Asian growth miracle + UK productivity puzzle
+  case examples. Closes with a 4-tile "at a glance" verdict row.
+- **C6 The A* verdict on any policy conflict** — 4-row evidence pile
+  (numbered-rows), four-dimensional judgement framework tiles
+  (icon-top), and a How-to-structure-the-judgement guide.
+
+Engine additions reusable across the library: `diagnoseRowsReveal`
+mode (click-to-reveal verdicts), `visualKey2` (secondary hero visual).
+
+Cache → `econos-v126`.
+
 ## 0.19.1 — 2026-05-30
 
 ### Macroeconomic Objectives — final best-of superset

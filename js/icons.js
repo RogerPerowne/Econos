@@ -18034,4 +18034,400 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     Macro Conflicts & Trade-offs (Theme 2 · 2.6.4) — APPLIED topic.
+     Six heroes built tightly to the ChatGPT design mockups:
+     C1 conflictLensMap  — 5-tile radial map
+     C2 (uses diagnoseRows engine block w/ reveal)
+     C3 stagflation5Step + stagflationTimeline + responses
+     C4 inflationSurge2021  — twin shock/response panels with charts
+     C5 (uses pair block w/ rows + example)
+     C6 (uses causes + causes3 + conclusion)
+     ============================================================ */
+
+  /* C1 — THE CONFLICT LENS.
+     Five trade-off tiles arranged around a central "WHEN OBJECTIVES
+     COLLIDE" lozenge with thin dashed arrows pointing inward. Each
+     tile carries the trade-off number, name, and historical UK case
+     that illustrates it. Tone-coded per tile. */
+  conflictLensMap: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
+      <svg viewBox="0 0 720 620" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Dashed arrows from each tile pointing to the centre -->
+        <defs>
+          <marker id="cl-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+          </marker>
+        </defs>
+        <line x1="360" y1="160" x2="360" y2="260" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#cl-arr)"/>
+        <line x1="170" y1="220" x2="290" y2="290" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#cl-arr)"/>
+        <line x1="550" y1="220" x2="430" y2="290" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#cl-arr)"/>
+        <line x1="200" y1="450" x2="290" y2="380" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#cl-arr)"/>
+        <line x1="520" y1="450" x2="430" y2="380" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#cl-arr)"/>
+
+        <!-- Centre lozenge -->
+        <rect x="280" y="290" width="160" height="80" rx="40" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <text x="360" y="324" font-size="11" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">WHEN</text>
+        <text x="360" y="342" font-size="11" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">OBJECTIVES</text>
+        <text x="360" y="360" font-size="11" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.06em">COLLIDE</text>
+
+        <!-- TILE 1 · Phillips trade-off (top, blue) -->
+        <g>
+          <rect x="266" y="20" width="188" height="140" rx="14" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+          <rect x="290" y="36" width="40" height="32" rx="6" fill="#fff" stroke="#BFDBFE" stroke-width="1"/>
+          <line x1="296" y1="60" x2="302" y2="52" stroke="#2563EB" stroke-width="1.6"/>
+          <line x1="302" y1="52" x2="310" y2="56" stroke="#2563EB" stroke-width="1.6"/>
+          <line x1="310" y1="56" x2="318" y2="46" stroke="#2563EB" stroke-width="1.6"/>
+          <circle cx="318" cy="46" r="2" fill="#2563EB"/>
+          <text x="360" y="92" font-size="13" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">1. Phillips trade-off</text>
+          <text x="360" y="118" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Case: 2021–23</text>
+          <text x="360" y="134" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">inflation surge</text>
+        </g>
+
+        <!-- TILE 2 · Growth and BoP (top-left, green) -->
+        <g>
+          <rect x="40" y="220" width="200" height="140" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="140" cy="262" r="20" fill="#fff" stroke="#86EFAC" stroke-width="1"/>
+          <text x="140" y="269" font-size="22" font-family="Inter,sans-serif" text-anchor="middle">🌐</text>
+          <text x="140" y="304" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">2. Growth and BoP</text>
+          <text x="140" y="324" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Case: 2010s persistent</text>
+          <text x="140" y="338" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">current account deficit</text>
+        </g>
+
+        <!-- TILE 3 · Stagflation (top-right, purple) -->
+        <g>
+          <rect x="480" y="220" width="200" height="140" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+          <circle cx="580" cy="262" r="20" fill="#fff" stroke="#C4B5FD" stroke-width="1"/>
+          <text x="580" y="269" font-size="22" font-family="Inter,sans-serif" text-anchor="middle">🏭</text>
+          <text x="580" y="304" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">3. Stagflation</text>
+          <text x="580" y="324" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Case: 1973</text>
+          <text x="580" y="338" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">OPEC shock</text>
+        </g>
+
+        <!-- TILE 4 · Spending and fiscal balance (bottom-left, amber) -->
+        <g>
+          <rect x="60" y="460" width="220" height="140" rx="14" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+          <circle cx="170" cy="502" r="20" fill="#fff" stroke="#FCD34D" stroke-width="1"/>
+          <text x="170" y="509" font-size="22" font-family="Inter,sans-serif" text-anchor="middle">🏛️</text>
+          <text x="170" y="544" font-size="13" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">4. Spending and</text>
+          <text x="170" y="560" font-size="13" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">fiscal balance</text>
+          <text x="170" y="580" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Case: 2010–12 austerity</text>
+        </g>
+
+        <!-- TILE 5 · Growth and environment (bottom-right, teal) -->
+        <g>
+          <rect x="440" y="460" width="220" height="140" rx="14" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.5"/>
+          <circle cx="550" cy="502" r="20" fill="#fff" stroke="#5EEAD4" stroke-width="1"/>
+          <text x="550" y="509" font-size="22" font-family="Inter,sans-serif" text-anchor="middle">🌿</text>
+          <text x="550" y="544" font-size="13" font-weight="800" fill="#115E59" font-family="Inter,sans-serif" text-anchor="middle">5. Growth and</text>
+          <text x="550" y="560" font-size="13" font-weight="800" fill="#115E59" font-family="Inter,sans-serif" text-anchor="middle">environment</text>
+          <text x="550" y="580" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Case: Net-zero pathway today</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* C3 · 1970S STAGFLATION — five-step mechanism flow.
+     Five vertical tinted tiles, each with a top numbered badge, a
+     circular tone-coloured icon, a bold title, and a short
+     descriptive line. Arrows between steps. */
+  stagflation5Step: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px 8px;font-family:Inter,sans-serif;">
+      <style>
+        .sf5 { display:grid; grid-template-columns: 1fr 14px 1fr 14px 1fr 14px 1fr 14px 1fr; gap:8px; align-items:stretch; }
+        @media (max-width: 720px) { .sf5 { grid-template-columns: 1fr; } .sf5-arrow { display:none; } }
+        .sf5-step { background:#fff; border:1.5px solid; border-radius:14px; padding:18px 12px 14px; text-align:center; display:flex; flex-direction:column; align-items:center; position:relative; }
+        .sf5-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); width:28px; height:28px; border-radius:50%; color:#fff; font-size:13px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.12); }
+        .sf5-icon { width:60px; height:60px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:28px; margin:14px 0 12px; }
+        .sf5-title { font-size:13px; font-weight:800; line-height:1.2; margin-bottom:8px; }
+        .sf5-sub { font-size:11px; color:#475569; line-height:1.4; }
+        .sf5-arrow { display:flex; align-items:center; justify-content:center; font-size:18px; color:#94A3B8; font-weight:700; }
+      </style>
+      <div class="sf5">
+        <div class="sf5-step" style="border-color:#BFDBFE;background:#F8FAFF;">
+          <span class="sf5-badge" style="background:#2563EB;">1</span>
+          <div class="sf5-icon" style="background:#EFF6FF;">🛢️</div>
+          <div class="sf5-title" style="color:#1E3A8A;">Supply shock</div>
+          <div class="sf5-sub">OPEC cuts supply and oil prices jump.</div>
+        </div>
+        <div class="sf5-arrow">→</div>
+        <div class="sf5-step" style="border-color:#FCD34D;background:#FFFEF7;">
+          <span class="sf5-badge" style="background:#F59E0B;">2</span>
+          <div class="sf5-icon" style="background:#FFFBEB;">📉</div>
+          <div class="sf5-title" style="color:#B45309;">SRAS shifts left</div>
+          <div class="sf5-sub">Higher input costs hit firms.</div>
+        </div>
+        <div class="sf5-arrow">→</div>
+        <div class="sf5-step" style="border-color:#86EFAC;background:#F5FFF8;">
+          <span class="sf5-badge" style="background:#16A34A;">3</span>
+          <div class="sf5-icon" style="background:#F0FDF4;">📊</div>
+          <div class="sf5-title" style="color:#065F46;">Output falls and prices rise</div>
+          <div class="sf5-sub">Stagflation.</div>
+        </div>
+        <div class="sf5-arrow">→</div>
+        <div class="sf5-step" style="border-color:#C4B5FD;background:#FBFAFF;">
+          <span class="sf5-badge" style="background:#8B5CF6;">4</span>
+          <div class="sf5-icon" style="background:#F5F3FF;">👥</div>
+          <div class="sf5-title" style="color:#5B21B6;">Workers demand higher nominal wages</div>
+          <div class="sf5-sub">Trying to protect real pay.</div>
+        </div>
+        <div class="sf5-arrow">→</div>
+        <div class="sf5-step" style="border-color:#FECDD3;background:#FFFBFC;">
+          <span class="sf5-badge" style="background:#E11D48;">5</span>
+          <div class="sf5-icon" style="background:#FFF1F2;">🌀</div>
+          <div class="sf5-title" style="color:#9F1239;">Wage–price spiral</div>
+          <div class="sf5-sub">Inflation expectations rise and the short-run Phillips curve shifts up.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* C3 · Timeline — three dated case markers with a dashed connecting axis. */
+  stagflationTimeline: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
+      <style>
+        .sft { position:relative; display:grid; grid-template-columns: 1fr 1fr 1fr; gap:14px; }
+        @media (max-width: 720px) { .sft { grid-template-columns: 1fr; } .sft-axis { display:none; } }
+        .sft-axis { position:absolute; top:8px; left:18%; right:18%; height:0; border-top:1.5px dashed #CBD5E1; z-index:0; }
+        .sft-dot { width:14px; height:14px; border-radius:50%; border:2.5px solid #fff; position:relative; z-index:1; margin:0 auto 10px; }
+        .sft-tile { background:#fff; border:1.5px solid; border-radius:14px; padding:16px; display:flex; align-items:flex-start; gap:14px; }
+        .sft-icon { width:42px; height:42px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+        .sft-date { font-size:18px; font-weight:900; line-height:1.1; }
+        .sft-event { font-size:13px; font-weight:800; color:#0B1426; line-height:1.25; margin-top:4px; }
+        .sft-desc { font-size:12px; color:#475569; line-height:1.45; margin-top:4px; }
+      </style>
+      <div class="sft">
+        <div class="sft-axis"></div>
+        <div>
+          <div class="sft-dot" style="background:#2563EB;"></div>
+          <div class="sft-tile" style="border-color:#BFDBFE;">
+            <div class="sft-icon" style="background:#EFF6FF;">📅</div>
+            <div>
+              <div class="sft-date" style="color:#1E3A8A;">1973–74</div>
+              <div class="sft-event">First oil shock</div>
+              <div class="sft-desc">Oil prices quadruple. Stagflation emerges.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="sft-dot" style="background:#F59E0B;"></div>
+          <div class="sft-tile" style="border-color:#FCD34D;">
+            <div class="sft-icon" style="background:#FFFBEB;">📅</div>
+            <div>
+              <div class="sft-date" style="color:#B45309;">1979–80</div>
+              <div class="sft-event">Second oil shock</div>
+              <div class="sft-desc">Oil prices spike again. Stagflation deepens.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="sft-dot" style="background:#16A34A;"></div>
+          <div class="sft-tile" style="border-color:#86EFAC;">
+            <div class="sft-icon" style="background:#F0FDF4;">🏛️</div>
+            <div>
+              <div class="sft-date" style="color:#065F46;">Early 1980s</div>
+              <div class="sft-event">Resolution</div>
+              <div class="sft-desc">Volcker and Thatcher era disinflation with a painful recession.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* C4 · 2021–23 INFLATION SURGE — twin shock/response panels with
+     embedded charts. LEFT (blue) = supply+demand drivers + UK CPI
+     line chart peaking at 11.1% Oct 2022; RIGHT (amber) = Bank Rate
+     step chart 0.1%→5.25% + three bullet outcomes. */
+  inflationSurge2021: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">
+      <style>
+        .is21 { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+        @media (max-width: 720px) { .is21 { grid-template-columns: 1fr; } }
+        .is21-panel { border:1.5px solid; border-radius:14px; padding:16px 18px; display:flex; flex-direction:column; }
+        .is21-head { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+        .is21-headicon { width:38px; height:38px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; font-size:18px; }
+        .is21-title { font-size:18px; font-weight:900; line-height:1.1; }
+        .is21-sub { font-size:13px; color:#0B1426; line-height:1.5; margin-bottom:12px; }
+        .is21-trio { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:8px; margin-bottom:14px; }
+        .is21-trio-tile { background:#fff; border:1.5px solid; border-radius:10px; padding:10px 8px; text-align:center; }
+        .is21-trio-icon { font-size:22px; line-height:1; margin-bottom:6px; }
+        .is21-trio-text { font-size:11px; font-weight:700; line-height:1.3; }
+        .is21-chart-label { font-size:9px; font-weight:800; letter-spacing:0.1em; color:#64748B; text-transform:uppercase; margin-bottom:6px; }
+        .is21-bullet { display:flex; gap:10px; align-items:flex-start; margin-top:8px; font-size:12px; line-height:1.45; }
+        .is21-bullet b { color:#B45309; font-weight:800; }
+      </style>
+
+      <div class="is21">
+        <!-- SHOCK PANEL (blue) -->
+        <div class="is21-panel" style="border-color:#BFDBFE;background:#F8FAFF;">
+          <div class="is21-head">
+            <div class="is21-headicon" style="background:#DBEAFE;color:#2563EB;">⚡</div>
+            <div class="is21-title" style="color:#2563EB;">The shock</div>
+          </div>
+          <div class="is21-sub">A powerful mix of supply and demand pressures pushed prices up sharply.</div>
+          <div class="is21-trio">
+            <div class="is21-trio-tile" style="border-color:#BFDBFE;">
+              <div class="is21-trio-icon">🔥</div>
+              <div class="is21-trio-text" style="color:#1E3A8A;">Energy prices spiked</div>
+            </div>
+            <div class="is21-trio-tile" style="border-color:#BFDBFE;">
+              <div class="is21-trio-icon">🛡️</div>
+              <div class="is21-trio-text" style="color:#1E3A8A;">The Ukraine war</div>
+            </div>
+            <div class="is21-trio-tile" style="border-color:#BFDBFE;">
+              <div class="is21-trio-icon">🛒</div>
+              <div class="is21-trio-text" style="color:#1E3A8A;">Post-COVID demand rebound</div>
+            </div>
+          </div>
+          <div class="is21-chart-label">UK CPI inflation (annual % change)</div>
+          <svg viewBox="0 0 360 200" style="width:100%;height:auto;display:block;">
+            <!-- Axes -->
+            <line x1="36" y1="170" x2="350" y2="170" stroke="#0B1426" stroke-width="1.2"/>
+            <line x1="36" y1="14" x2="36" y2="170" stroke="#0B1426" stroke-width="1.2"/>
+            <!-- Y gridlines + ticks: 0,2,4,6,8,10,12 over 0..170 (top=14, bottom=170, 156px range) -->
+            <line x1="36" y1="144" x2="350" y2="144" stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <line x1="36" y1="118" x2="350" y2="118" stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <line x1="36" y1="92"  x2="350" y2="92"  stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <line x1="36" y1="66"  x2="350" y2="66"  stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <line x1="36" y1="40"  x2="350" y2="40"  stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <text x="30" y="174" font-size="9" fill="#64748B" text-anchor="end">0%</text>
+            <text x="30" y="148" font-size="9" fill="#64748B" text-anchor="end">2%</text>
+            <text x="30" y="122" font-size="9" fill="#64748B" text-anchor="end">4%</text>
+            <text x="30" y="96"  font-size="9" fill="#64748B" text-anchor="end">6%</text>
+            <text x="30" y="70"  font-size="9" fill="#64748B" text-anchor="end">8%</text>
+            <text x="30" y="44"  font-size="9" fill="#64748B" text-anchor="end">10%</text>
+            <text x="30" y="18"  font-size="9" fill="#64748B" text-anchor="end">12%</text>
+            <!-- X labels -->
+            <text x="58"  y="184" font-size="9" fill="#64748B" text-anchor="middle">2020</text>
+            <text x="130" y="184" font-size="9" fill="#64748B" text-anchor="middle">2021</text>
+            <text x="202" y="184" font-size="9" fill="#64748B" text-anchor="middle">2022</text>
+            <text x="274" y="184" font-size="9" fill="#64748B" text-anchor="middle">2023</text>
+            <text x="332" y="184" font-size="9" fill="#64748B" text-anchor="middle">2024</text>
+            <!-- CPI series: low → climbs in 2021 → peak Oct 2022 (~11.1%) → falls -->
+            <path d="M 58 161 L 94 162 L 130 156 L 166 122 L 202 56 L 220 31 L 238 50 L 256 78 L 274 100 L 292 116 L 310 132 L 332 145" fill="none" stroke="#2563EB" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Peak marker -->
+            <circle cx="220" cy="31" r="4" fill="#2563EB"/>
+            <rect x="226" y="22" width="86" height="32" rx="6" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+            <text x="269" y="36" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle">Peak</text>
+            <text x="269" y="48" font-size="9" font-weight="700" fill="#1E3A8A" text-anchor="middle">11.1% Oct 2022</text>
+            <!-- Source -->
+            <text x="36" y="196" font-size="8" fill="#94A3B8">Source: ONS</text>
+          </svg>
+        </div>
+
+        <!-- RESPONSE PANEL (amber) -->
+        <div class="is21-panel" style="border-color:#FCD34D;background:#FFFEF7;">
+          <div class="is21-head">
+            <div class="is21-headicon" style="background:#FEF3C7;color:#F59E0B;">🏛️</div>
+            <div class="is21-title" style="color:#F59E0B;">The response</div>
+          </div>
+          <div class="is21-sub">The Bank of England tightened monetary policy to bring inflation back to target.</div>
+          <div class="is21-chart-label">Bank Rate (%)</div>
+          <svg viewBox="0 0 360 200" style="width:100%;height:auto;display:block;">
+            <!-- Axes -->
+            <line x1="36" y1="170" x2="350" y2="170" stroke="#0B1426" stroke-width="1.2"/>
+            <line x1="36" y1="14" x2="36" y2="170" stroke="#0B1426" stroke-width="1.2"/>
+            <!-- Y gridlines 0..6 -->
+            <line x1="36" y1="144" x2="350" y2="144" stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <line x1="36" y1="118" x2="350" y2="118" stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <line x1="36" y1="92" x2="350" y2="92" stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <line x1="36" y1="66" x2="350" y2="66" stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <line x1="36" y1="40" x2="350" y2="40" stroke="#E2E8F0" stroke-dasharray="2 3" stroke-width="0.6"/>
+            <text x="30" y="174" font-size="9" fill="#64748B" text-anchor="end">0</text>
+            <text x="30" y="148" font-size="9" fill="#64748B" text-anchor="end">1</text>
+            <text x="30" y="122" font-size="9" fill="#64748B" text-anchor="end">2</text>
+            <text x="30" y="96"  font-size="9" fill="#64748B" text-anchor="end">3</text>
+            <text x="30" y="70"  font-size="9" fill="#64748B" text-anchor="end">4</text>
+            <text x="30" y="44"  font-size="9" fill="#64748B" text-anchor="end">5</text>
+            <text x="30" y="18"  font-size="9" fill="#64748B" text-anchor="end">6</text>
+            <!-- X labels (Dec'21, Mar/Jun/Sep/Dec '22, Mar/Jun/Aug '23) -->
+            <text x="56" y="184" font-size="8" fill="#64748B" text-anchor="middle">Dec</text>
+            <text x="56" y="194" font-size="8" fill="#64748B" text-anchor="middle">2021</text>
+            <text x="110" y="184" font-size="8" fill="#64748B" text-anchor="middle">Mar</text>
+            <text x="110" y="194" font-size="8" fill="#64748B" text-anchor="middle">2022</text>
+            <text x="160" y="184" font-size="8" fill="#64748B" text-anchor="middle">Jun</text>
+            <text x="160" y="194" font-size="8" fill="#64748B" text-anchor="middle">2022</text>
+            <text x="210" y="184" font-size="8" fill="#64748B" text-anchor="middle">Sep</text>
+            <text x="210" y="194" font-size="8" fill="#64748B" text-anchor="middle">2022</text>
+            <text x="260" y="184" font-size="8" fill="#64748B" text-anchor="middle">Dec</text>
+            <text x="260" y="194" font-size="8" fill="#64748B" text-anchor="middle">2022</text>
+            <text x="310" y="184" font-size="8" fill="#64748B" text-anchor="middle">Aug</text>
+            <text x="310" y="194" font-size="8" fill="#64748B" text-anchor="middle">2023</text>
+            <!-- Step path. y = 170 - (rate * 26). 0.1→167.4 ; 0.25→163.5 ; 0.5→157 ; 0.75→150.5 ; 1.0→144 ; 1.25→137.5 ; 1.75→124.5 ; 2.25→111.5 ; 3.0→92 ; 3.5→79 ; 4.0→66 ; 4.25→59.5 ; 5.0→40 ; 5.25→33.5 -->
+            <path d="M 56 167 L 88 167 L 88 158 L 122 158 L 122 144 L 152 144 L 152 124 L 180 124 L 180 111 L 210 111 L 210 92 L 240 92 L 240 79 L 256 79 L 256 66 L 270 66 L 270 60 L 290 60 L 290 40 L 308 40 L 308 33 L 340 33" fill="none" stroke="#F59E0B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Endpoint marker 5.25% Aug 2023 -->
+            <circle cx="340" cy="33" r="4" fill="#F59E0B"/>
+            <rect x="270" y="14" width="78" height="28" rx="6" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1"/>
+            <text x="309" y="26" font-size="10" font-weight="800" fill="#B45309" text-anchor="middle">5.25%</text>
+            <text x="309" y="37" font-size="9" font-weight="700" fill="#B45309" text-anchor="middle">Aug 2023</text>
+            <!-- Start marker 0.1% Dec 2021 -->
+            <circle cx="56" cy="167" r="3" fill="#F59E0B"/>
+            <text x="70" y="159" font-size="10" font-weight="800" fill="#B45309">0.1%</text>
+            <text x="70" y="171" font-size="9" font-weight="700" fill="#B45309">Dec 2021</text>
+          </svg>
+          <div class="is21-bullet"><span style="color:#F59E0B;">●</span><div><b>Tighter monetary policy:</b> Higher rates reduce demand and price pressures.</div></div>
+          <div class="is21-bullet"><span style="color:#F59E0B;">●</span><div><b>Weaker growth:</b> Activity slows as borrowing costs rise and confidence falls.</div></div>
+          <div class="is21-bullet"><span style="color:#F59E0B;">●</span><div><b>Higher borrowing costs:</b> Households and firms face more expensive loans and mortgages.</div></div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:8px;margin-top:18px;margin-bottom:10px;padding:0 4px;">
+        <span style="font-size:14px;">⚖️</span>
+        <span style="font-size:10px;font-weight:800;letter-spacing:0.14em;color:#475569;">THE TRADE-OFF IN REAL TIME</span>
+      </div>
+      <div style="background:#F5F3FF;border:1px solid #E9D5FF;border-radius:14px;padding:18px;">
+      <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:18px;align-items:center;">
+        <svg viewBox="0 0 320 220" style="width:100%;height:auto;display:block;">
+          <text x="160" y="22" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="middle">Phillips-style view</text>
+          <!-- Axes -->
+          <line x1="48" y1="180" x2="300" y2="180" stroke="#0B1426" stroke-width="1.2"/>
+          <line x1="48" y1="44" x2="48" y2="180" stroke="#0B1426" stroke-width="1.2"/>
+          <polygon points="300,180 294,177 294,183" fill="#0B1426"/>
+          <polygon points="48,44 45,49 51,49" fill="#0B1426"/>
+          <!-- Labels -->
+          <text x="38" y="50" font-size="10" font-weight="700" fill="#0B1426" text-anchor="end">High</text>
+          <text x="38" y="172" font-size="10" font-weight="700" fill="#0B1426" text-anchor="end">Low</text>
+          <text x="14" y="116" font-size="9" fill="#64748B" text-anchor="middle" transform="rotate(-90 14 116)">Inflation (% change)</text>
+          <text x="56" y="195" font-size="10" font-weight="700" fill="#0B1426">Low</text>
+          <text x="294" y="195" font-size="10" font-weight="700" fill="#0B1426" text-anchor="end">High</text>
+          <text x="170" y="208" font-size="10" fill="#64748B" text-anchor="middle">Unemployment rate</text>
+          <!-- Phillips curve -->
+          <path d="M 60 60 C 110 60 140 110 200 160 C 240 175 270 178 290 179" fill="none" stroke="#8B5CF6" stroke-width="2.2"/>
+          <!-- 2022 point: high inflation, low unemp -->
+          <circle cx="110" cy="76" r="6" fill="#F59E0B" stroke="#fff" stroke-width="2"/>
+          <text x="124" y="62" font-size="10" font-weight="800" fill="#B45309">2022:</text>
+          <text x="124" y="74" font-size="9" fill="#475569">High inflation,</text>
+          <text x="124" y="86" font-size="9" fill="#475569">tighter labour market</text>
+          <!-- Arrow from 2022 to 2023 -->
+          <defs>
+            <marker id="phv-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+            </marker>
+          </defs>
+          <line x1="124" y1="100" x2="180" y2="135" stroke="#475569" stroke-width="1.6" marker-end="url(#phv-arr)"/>
+          <!-- 2023 point: lower inflation, higher unemp -->
+          <circle cx="200" cy="148" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <text x="180" y="170" font-size="10" font-weight="800" fill="#065F46" text-anchor="end">2023:</text>
+          <text x="294" y="116" font-size="9" fill="#475569" text-anchor="end">Lower inflation,</text>
+          <text x="294" y="128" font-size="9" fill="#475569" text-anchor="end">softer labour market</text>
+        </svg>
+        <div>
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+            <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;color:#5B21B6;flex-shrink:0;">📉</div>
+            <div><strong style="color:#0B1426;">Inflation fell:</strong> <span style="color:#475569;">CPI dropped from 11.1% (Oct 2022) to 4.0% by Aug 2023.</span></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+            <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;color:#5B21B6;flex-shrink:0;">📊</div>
+            <div><strong style="color:#0B1426;">Growth slowed:</strong> <span style="color:#475569;">GDP growth fell from 4.3% in 2022 to around 0.1% in 2023.</span></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;color:#5B21B6;flex-shrink:0;">👥</div>
+            <div><strong style="color:#0B1426;">Labour market softened:</strong> <span style="color:#475569;">Unemployment rose from 3.5% (2022) to 4.0% (Q2 2023).</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
 };

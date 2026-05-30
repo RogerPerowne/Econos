@@ -59,14 +59,30 @@
      New E: 0.8x − 88 = −0.8x + 584  →  x = 420, y = 248
 
    ── Baseline curve set ────────────────────────────────────────────────────
-   D, S        — always rendered in every view; receive per-view shifts.
+   D, S        — the core market curves; receive per-view shifts. A plain view
+                 (no `show`/`hide`) renders D + S + their equilibrium E only.
    PriceLine   — horizontal at P* (y = 280); the equilibrium price reference
-                 line used as the CS/PS boundary in the welfare view. Always
-                 rendered (it's meaningful in every view as the P* level).
-   PriceCeiling, PriceFloor — rendered as horizontal reference lines in their
-                 respective views.  Because ALL baseline curves render in every
-                 view, these are included in the baseline intentionally —
-                 they provide visual context in the price-control views.
+                 line used as the CS/PS boundary in the welfare view. Opt-in
+                 via `show:['D','S','PriceLine']` in the welfare view.
+   PriceCeiling, PriceFloor — horizontal reference lines for the price-control
+                 views. Opt-in per view via `show` so they do NOT appear as
+                 stray lines in the baseline or shift views.
+
+   ── Per-view visibility (engine `show`/`hide`) ─────────────────────────────
+   The engine renders ALL baseline curves by default, so a view that wants
+   ONLY a subset must declare `show:[curveIds]` (renders just those, plus any
+   curves its points/areas/brackets reference). The documented sampleViews
+   below therefore set `show:['D','S']` on the market views and add the price
+   reference line each control/welfare view needs. The baseline view shows
+   D + S + E and nothing else — no stray horizontal lines.
+
+   ── Documented sampleViews (mirrored in dev/renderer-lab.html) ─────────────
+     Baseline        show:['D','S']                              → D, S, E
+     Demand increase show:['D','S']                shifts D dx80 → D, S, E₁
+     Indirect tax    show:['D','S']                shifts S dy-60
+     Price ceiling   show:['D','S','PriceCeiling'] points Qs/Qd_ceiling
+     Price floor     show:['D','S','PriceFloor']   points Qd/Qs_floor
+     Welfare         show:['D','S','PriceLine']    areas CS + PS
 
    ── The engine computes all intersections ─────────────────────────────────
    Points declared with on:['D','S'] are resolved numerically per view shift.
@@ -134,23 +150,29 @@
         kind: 'linear', slope: S_SLOPE, c: S_C,
         tone: 'rose', display: 'S₀'
       },
-      // Equilibrium price line — always at P* = EQ_Y.
-      // Serves as the upper boundary of PS and lower boundary of CS for the
-      // welfare-area decomposition.  Meaningful as a reference in all views.
+      // Equilibrium price line — at P* = EQ_Y. Serves as the upper boundary of
+      // PS and lower boundary of CS for the welfare-area decomposition. Opt-in
+      // only: the welfare view sets show:['D','S','PriceLine'] so it does NOT
+      // appear as a stray horizontal line in the baseline / shift views.
       PriceLine: {
         kind: 'horizontal', y: EQ_Y,
+        optional: true,
         tone: 'slate', display: 'P*'
       },
       // Price ceiling — horizontal line below equilibrium price.
       // Lower on the price axis (higher screen y) → shortage emerges.
+      // Opt-in: the price-ceiling view sets show:['D','S','PriceCeiling'].
       PriceCeiling: {
         kind: 'horizontal', y: CEILING_Y,
+        optional: true,
         tone: 'amber', display: 'Pmax'
       },
       // Price floor — horizontal line above equilibrium price.
       // Higher on the price axis (lower screen y) → surplus emerges.
+      // Opt-in: the price-floor view sets show:['D','S','PriceFloor'].
       PriceFloor: {
         kind: 'horizontal', y: FLOOR_Y,
+        optional: true,
         tone: 'purple', display: 'Pmin'
       }
     },

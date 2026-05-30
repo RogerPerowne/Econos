@@ -41,6 +41,7 @@ beforeAll(() => {
   loadSource('js/blocks/econ-diagram.js');
   loadSource('js/blocks/charts/adas.js');
   loadSource('js/blocks/charts/phillips.js');
+  loadSource('js/blocks/charts/supply-demand.js');
   API = window.ECONOS_ECON_DIAGRAM;
 });
 
@@ -190,6 +191,81 @@ describe('movement-arrow endpoints lie on the dot edge', () => {
     const dEnd = Math.hypot(end.x - b.x, end.y - b.y);
     expect(dStart).toBeCloseTo(r, 2);
     expect(dEnd).toBeCloseTo(r, 2);
+  });
+});
+
+describe('per-view curve visibility (show / hide)', () => {
+  it('a view with show:[...] renders ONLY the named baseline curves', () => {
+    // supplyDemand baseline curves carry display labels D₀ / S₀ / P* / Pmax /
+    // Pmin. Render a single view that shows only D + S and assert the price
+    // reference lines are absent while D + S are present.
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'supplyDemand',
+      views: [{ label: 'Baseline', shifts: {}, show: ['D', 'S'] }]
+    });
+    expect(html).toContain('D₀');
+    expect(html).toContain('S₀');
+    // Stray horizontal reference lines must NOT be drawn.
+    expect(html).not.toContain('P*');
+    expect(html).not.toContain('Pmax');
+    expect(html).not.toContain('Pmin');
+    // The equilibrium E (D ∩ S) is still computed and labelled (E₀).
+    expect(html).toContain('>E₀<');
+  });
+
+  it('curves referenced by points/areas are force-shown under show:[...]', () => {
+    // PriceLine is NOT in `show`, but the welfare areas reference it, so it must
+    // still render (its geometry is needed for the CS/PS decomposition).
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'supplyDemand',
+      views: [{
+        label: 'Welfare', shifts: {}, show: ['D', 'S'],
+        areas: [
+          { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue' },
+          { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green' }
+        ]
+      }]
+    });
+    expect(html).toContain('D₀');
+    expect(html).toContain('S₀');
+    expect(html).toContain('P*');     // referenced by the areas → force-shown
+    expect(html).not.toContain('Pmax');
+    expect(html).not.toContain('Pmin');
+  });
+
+  it('omitting show renders all NON-optional baseline curves (optional ones stay hidden until opted in)', () => {
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'supplyDemand',
+      views: [{ label: 'Market', shifts: {} }]
+    });
+    // Demand + Supply (non-optional) render by default…
+    expect(html).toContain('D₀');
+    expect(html).toContain('S₀');
+    // …but the opt-in price lines (optional: true) stay hidden when a bare
+    // view neither shows nor references them — keeps the default clean.
+    expect(html).not.toContain('P*');
+    expect(html).not.toContain('Pmax');
+    expect(html).not.toContain('Pmin');
+  });
+
+  it('a non-optional baseline curve always renders by default (adas AD/SRAS)', () => {
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'adas', views: [{ label: 'Baseline', shifts: {} }]
+    });
+    expect(html).toContain('AD');
+    expect(html).toContain('SRAS');
+  });
+
+  it('hide:[...] renders every baseline curve except the named ones', () => {
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'supplyDemand',
+      views: [{ label: 'No controls', shifts: {}, hide: ['PriceCeiling', 'PriceFloor', 'PriceLine'] }]
+    });
+    expect(html).toContain('D₀');
+    expect(html).toContain('S₀');
+    expect(html).not.toContain('Pmax');
+    expect(html).not.toContain('Pmin');
+    expect(html).not.toContain('P*');
   });
 });
 

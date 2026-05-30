@@ -751,18 +751,76 @@
                      b.slope, shiftedC(b, normShift(shifts[eqDef.from[1]]).dx));
   }
 
+  /* ── Per-view curve visibility ───────────────────────────────────────────
+     A view MAY declare:
+       show: [curveIds]  → render ONLY those baseline curves (plus any the
+                           view's points/areas/brackets reference, which must
+                           stay visible so their geometry reads correctly).
+       hide: [curveIds]  → render every baseline curve EXCEPT these.
+     Default (neither given) → render ALL baseline curves. This keeps every
+     existing family (adas, phillips, …) byte-identical, since they declare
+     neither key.
+
+     Returns a predicate isVisible(id). Curves referenced by the view's
+     points/areas/brackets are force-included even under `show`, so a view that
+     shows only D+S but marks a point on PriceLine still draws PriceLine. */
+  function curvesReferencedByView(chart, view) {
+    var refs = {};
+    function mark(id) { if (id != null) refs[id] = true; }
+    (view.points || []).forEach(function (pname) {
+      var spec = chart.points && chart.points[pname];
+      if (!spec) return;
+      if (spec.onCurve) mark(spec.onCurve);
+      if (spec.on && spec.on.length === 2) { mark(spec.on[0]); mark(spec.on[1]); }
+    });
+    (view.areas || []).forEach(function (area) {
+      if (area.between) { mark(area.between[0]); mark(area.between[1]); }
+    });
+    (view.brackets || []).forEach(function (br) {
+      if (br.between) { mark(br.between[0]); mark(br.between[1]); }
+    });
+    return refs;
+  }
+
+  function makeVisibility(chart, view) {
+    var refs = curvesReferencedByView(chart, view);
+    if (Array.isArray(view.show)) {
+      var shown = {};
+      view.show.forEach(function (id) { shown[id] = true; });
+      return function (id) { return !!shown[id] || !!refs[id]; };
+    }
+    if (Array.isArray(view.hide)) {
+      var hidden = {};
+      view.hide.forEach(function (id) { hidden[id] = true; });
+      // A reference always wins over an explicit hide so dependent geometry
+      // stays valid.
+      return function (id) { return !hidden[id] || !!refs[id]; };
+    }
+    // No explicit show/hide: render every baseline curve EXCEPT those flagged
+    // `optional: true` (those only appear when a view opts them in via `show`
+    // or references them in points/areas/brackets). Keeps families like
+    // supplyDemand clean by default while still carrying opt-in price lines.
+    return function (id) {
+      var cv = chart.baseline[id];
+      return !(cv && cv.optional) || !!refs[id];
+    };
+  }
+
   /* ── Build one view's SVG content ─────────────────────────────────────── */
   function renderView(chart, views, viewIdx, uid) {
     var p = chart.plot;
     var curveIds = Object.keys(chart.baseline);
     var thisView = views[viewIdx];
     var thisShifts = thisView.shifts || {};
+    var isVisible = makeVisibility(chart, thisView);
 
     var bits = [];
 
     // 1. Faded prior-state curves: for each curve, show every distinct earlier
-    //    state (so AD₀ stays visible faded once AD₁ appears).
+    //    state (so AD₀ stays visible faded once AD₁ appears). Hidden curves are
+    //    skipped here too — faded priors respect this view's visibility.
     curveIds.forEach(function (id) {
+      if (!isVisible(id)) return;
       var baseline = chart.baseline[id];
       var thisShift = normShift(thisShifts[id]);
       var thisKey = stateKey(baseline, thisShift);
@@ -779,6 +837,7 @@
 
     // 2. Active curves for this view (solid, full opacity, labelled).
     curveIds.forEach(function (id) {
+      if (!isVisible(id)) return;
       var baseline = chart.baseline[id];
       var thisShift = normShift(thisShifts[id]);
       var thisKey = stateKey(baseline, thisShift);
@@ -796,6 +855,7 @@
     if (viewIdx > 0 && thisView.shiftArrows !== false) {
       var prevShifts = views[viewIdx - 1].shifts || {};
       curveIds.forEach(function (id) {
+        if (!isVisible(id)) return;
         var before = normShift(prevShifts[id]);
         var after = normShift(thisShifts[id]);
         if (stateKey(chart.baseline[id], before) !== stateKey(chart.baseline[id], after)) {

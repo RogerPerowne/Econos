@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.32.0 — 2026-05-30
+
+### econDiagram — per-view curve visibility + first migrations
+
+- Engine: views can `show:[ids]` / `hide:[ids]` specific curves, and a baseline
+  curve can be flagged `optional: true` (hidden by default, opt-in via `show` or
+  when referenced by a point/area/bracket). `supplyDemand` now renders a clean
+  D+S+E by default, with price ceiling/floor/welfare lines opting in per view.
+  Non-optional curves (adas AD/SRAS etc.) are unaffected. +5 unit assertions
+  (46/46).
+- First production migrations off hand-rolled SVG to `econDiagram`: PPF
+  (`production-possibility-frontiers`, 2 diagrams), the Keynesian 45° cross
+  (`equilibrium-national-income`, 1), and AD/AS (`aggregate-supply`, 5) — 8
+  diagrams now engine-computed (correct intersections, no kinks), card content
+  otherwise unchanged. `icons.js` SVGs left in place (shared across boards).
+- `econos-visual-diagram` + `econos-card-template` skills updated to make
+  `econDiagram` + the 16 chart families the first choice for any diagram, with a
+  mockup→family cheat sheet. `CACHE_NAME` → `econos-v139`.
+
 ## 0.31.0 — 2026-05-30
 
 ### econDiagram — 14 chart families + payoffMatrix + Editor mockup overlay

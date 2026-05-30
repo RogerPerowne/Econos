@@ -1167,29 +1167,42 @@
         {
           label: 'Baseline',
           shifts: {},
+          show: ['D', 'S'],
           analysis: 'D and S intersect at E: the market-clearing equilibrium where the quantity demanded equals the quantity supplied. The downward-sloping Demand curve reflects the law of demand; the upward-sloping Supply curve reflects the law of supply.'
         },
         {
           label: 'Demand increase',
           shifts: { D: { dx: 80, dy: 0 } },
+          show: ['D', 'S'],
           analysis: 'A rightward shift of D (e.g. a rise in consumer income for a normal good) raises both equilibrium price and quantity. The engine recomputes D∩S with the shifted D and places E₁ at higher Q and higher P than E₀.'
         },
         {
           label: 'Indirect tax',
           shifts: { S: { dx: 0, dy: -60 } },
+          show: ['D', 'S'],
           brackets: [{ x: [342, 380], y: 480, label: 'ΔQ (tax)', tone: 'amber' }],
           analysis: 'An indirect tax shifts S upward in econ space (dy = −60 in screen space): producers require a higher price at every output level to cover the tax. Q* falls and P* rises.'
         },
         {
           label: 'Price ceiling',
           shifts: {},
+          show: ['D', 'S', 'PriceCeiling'],
           points: ['Qs_ceiling', 'Qd_ceiling'],
           brackets: [{ x: [330, 430], y: 480, label: 'Shortage', tone: 'amber' }],
           analysis: 'A price ceiling (Pmax) set below the equilibrium price creates excess demand: quantity demanded (Qd = 430) exceeds quantity supplied (Qs = 330). The shortage bracket spans the gap.'
         },
         {
+          label: 'Price floor',
+          shifts: {},
+          show: ['D', 'S', 'PriceFloor'],
+          points: ['Qd_floor', 'Qs_floor'],
+          brackets: [{ x: [330, 430], y: 200, label: 'Surplus', tone: 'purple' }],
+          analysis: 'A price floor (Pmin) set above the equilibrium price creates excess supply: quantity supplied (Qs = 430) exceeds quantity demanded (Qd = 330). The surplus bracket spans the gap.'
+        },
+        {
           label: 'Welfare',
           shifts: {},
+          show: ['D', 'S', 'PriceLine'],
           areas: [
             { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue' },
             { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green' }

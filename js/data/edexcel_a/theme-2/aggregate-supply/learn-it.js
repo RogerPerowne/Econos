@@ -34,74 +34,48 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 1 – What is Aggregate Supply? ----- */
     {
       id: 'what-is-as',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Card 1 of 8',
       title: 'What is Aggregate Supply?',
       lede: 'Aggregate supply (AS) is the total output firms in the economy are willing and able to produce at each price level.\nAS has two time horizons – SRAS in the short run and LRAS in the long run.',
-
-      tip: { icon: '✅', tone: 'green', text: 'AS is about economy-wide output, not the supply of one product.' },
-
-      causesFirst: true,
-      causesLabel: 'THE CORE IDEA',
-      causesEmoji: '💡',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue',   icon: '📊', head: 'Aggregate supply',  body: 'The total planned output at each price level across the whole economy.' },
-        { tone: 'amber',  icon: '📈', head: 'SRAS',              body: 'Short run aggregate supply. Upward sloping – as prices rise, firms supply more. Costs can be sticky.' },
-        { tone: 'purple', icon: '🏛️', head: 'LRAS',              body: 'Long run aggregate supply. Vertical at productive capacity (Yf). Prices do not change LRAS.' }
-      ],
-
-      interactiveDiagram: {
-        svgKey: 'srasLrasIntro',
-        label: 'THE BASIC DIAGRAM',
-        emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
-        views: [
-          {
-            label: 'SRAS',
-            show: ['idl-1'],
-            tone: 'blue',
-            head: 'SRAS slopes upward.',
-            body: ['Higher prices improve profit margins when wages are sticky.', 'Firms increase output in the short run as the price level rises.'],
-            analysis: 'The upward slope reflects sticky costs – wages and supply contracts adjust slowly, so rising prices temporarily boost profit margins and output.'
-          },
-          {
-            label: 'SRAS + LRAS',
-            show: ['idl-1', 'idl-2'],
-            tone: 'purple',
-            head: 'LRAS is vertical at full-capacity output (Yf).',
-            body: ['In the long run, all costs adjust. Output is determined by productive capacity.', 'The economy returns to Yf regardless of price level changes.'],
-            analysis: 'Where SRAS crosses LRAS marks the long-run equilibrium at P₁ and Yf – the economy\'s maximum sustainable output.'
-          }
-        ]
-      },
-
-      pairLabel: 'SRAS VS LRAS',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue', icon: '📈', iconStyle: 'circle',
-        label: 'SRAS',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Affected by wages, energy prices, taxes, import costs, productivity.</p>'
-      },
-      right: {
-        tone: 'purple', icon: '🏛️', iconStyle: 'circle',
-        label: 'LRAS',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Determined by labour, capital, technology, productivity and efficiency.</p>'
-      },
-
-      whyItMatters: {
-        title: 'WHY IT MATTERS',
-        emoji: '🎯',
-        items: [
-          { tone: 'blue',   icon: '📈', label: 'Inflation shocks', text: 'SRAS explains short-run cost-push inflation.' },
-          { tone: 'amber',  icon: '📊', label: 'Growth potential', text: 'LRAS explains the economy\'s long-run capacity ceiling.' },
-          { tone: 'green',  icon: '🔍', label: 'Diagnosis tool',   text: 'Together they help identify whether rising prices come from demand or supply.' }
-        ]
-      },
-
-      conclusion: { title: 'Big idea', text: 'Short-run changes affect costs and inflation. Long-run changes affect the economy\'s productive capacity.' },
-      examEdge: 'Strong essays distinguish movements along SRAS from shifts in SRAS – and they separate short-run supply conditions from long-run capacity.'
+      blocks: [
+        { type: 'tip', tone: 'green', icon: '✅', text: 'AS is about economy-wide output, not the supply of one product.' },
+        { type: 'sectionHeader', icon: '💡', label: 'THE CORE IDEA' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '📊', head: 'Aggregate supply',  body: 'The total planned output at each price level across the whole economy.' },
+          { type: 'tile', tone: 'amber',  icon: '📈', head: 'SRAS',              body: 'Short run aggregate supply. Upward sloping – as prices rise, firms supply more. Costs can be sticky.' },
+          { type: 'tile', tone: 'purple', icon: '🏛️', head: 'LRAS',              body: 'Long run aggregate supply. Vertical at productive capacity (Yf). Prices do not change LRAS.' }
+        ]},
+        { type: 'sectionHeader', icon: '📊', label: 'THE BASIC DIAGRAM' },
+        {
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'SRAS',
+              show: ['SRAS'],
+              analysis: 'The upward slope reflects sticky costs – wages and supply contracts adjust slowly, so rising prices temporarily boost profit margins and output.'
+            },
+            {
+              label: 'SRAS + LRAS',
+              show: ['AD', 'SRAS'],
+              analysis: 'Where SRAS crosses LRAS marks the long-run equilibrium at P₁ and Yf – the economy\'s maximum sustainable output.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '⚖️', label: 'SRAS VS LRAS' },
+        { type: 'pair',
+          left:  { tone: 'blue',   icon: '📈', head: 'SRAS', body: 'Affected by wages, energy prices, taxes, import costs, productivity.' },
+          right: { tone: 'purple', icon: '🏛️', head: 'LRAS', body: 'Determined by labour, capital, technology, productivity and efficiency.' }
+        },
+        { type: 'sectionHeader', icon: '🎯', label: 'WHY IT MATTERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: '📈', head: 'Inflation shocks', body: 'SRAS explains short-run cost-push inflation.' },
+          { type: 'tile', tone: 'amber', icon: '📊', head: 'Growth potential', body: 'LRAS explains the economy\'s long-run capacity ceiling.' },
+          { type: 'tile', tone: 'green', icon: '🔍', head: 'Diagnosis tool',   body: 'Together they help identify whether rising prices come from demand or supply.' }
+        ]},
+        { type: 'bigIdea',  text: 'Short-run changes affect costs and inflation. Long-run changes affect the economy\'s productive capacity.' },
+        { type: 'examEdge', text: 'Strong essays distinguish movements along SRAS from shifts in SRAS – and they separate short-run supply conditions from long-run capacity.' }
+      ]
     },
 
     /* ----- CARD 2 – The SRAS curve ----- */
@@ -249,155 +223,109 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 4 – Shifts in SRAS ----- */
     {
       id: 'sras-shifts',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Shifts in SRAS',
       lede: 'A shift in short-run aggregate supply happens when firms\' costs or productivity change at every price level.',
-
-      tip: { icon: '✅', tone: 'green', text: 'SRAS shifts left when costs rise – and right when costs fall or productivity improves.' },
-
-      interactiveDiagram: {
-        svgKey: 'srasShiftInteractive',
-        label: 'THE INTERACTIVE IDEA',
-        emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
-        views: [
-          {
-            label: 'Base equilibrium',
-            show: [],
-            tone: 'slate',
-            head: 'The economy at equilibrium.',
-            body: ['AD and SRAS₁ intersect at E₁.', 'Price level is P₁, output is Y₁.']
-          },
-          {
-            label: 'Cost shock',
-            show: ['idl-1'],
-            tone: 'rose',
-            head: 'A cost shock shifts SRAS left.',
-            body: ['Rising costs – wages, energy, raw materials – make every level of output more expensive.', 'SRAS₂ lies above and to the left of SRAS₁.']
-          },
-          {
-            label: 'New equilibrium',
-            show: ['idl-1', 'idl-2'],
-            tone: 'rose',
-            head: 'Result – stagflation.',
-            body: ['P rises from P₁ to P₂ (higher price level).', 'Y falls from Y₁ to Y₂ (lower output).', 'This is the defining feature of a supply shock.']
-          }
-        ]
-      },
-
-      causesLabel: 'SIX SHIFT DRIVERS',
-      causesEmoji: '⚙️',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'purple', icon: '👥', head: 'Wages',                    shiftArrows: [{ dir: 'left', text: 'Rise in wages shifts SRAS left' }, { dir: 'right', text: 'Fall in wages shifts SRAS right' }] },
-        { tone: 'amber',  icon: '⚡', head: 'Energy prices',            shiftArrows: [{ dir: 'left', text: 'Rise in energy prices shifts SRAS left' }, { dir: 'right', text: 'Fall in energy prices shifts right' }] },
-        { tone: 'purple', icon: '📦', head: 'Raw material costs',       shiftArrows: [{ dir: 'left', text: 'Rise in raw material costs shifts SRAS left' }, { dir: 'right', text: 'Fall shifts SRAS right' }] },
-        { tone: 'green',  icon: '📈', head: 'Productivity',             shiftArrows: [{ dir: 'right', text: 'Rise in productivity shifts SRAS right' }, { dir: 'left', text: 'Fall in productivity shifts left' }] },
-        { tone: 'blue',   icon: '🌍', head: 'Import costs via exchange rate', shiftArrows: [{ dir: 'left', text: 'Currency depreciation raises import costs – shifts SRAS left' }, { dir: 'right', text: 'Appreciation shifts SRAS right' }] },
-        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies', shiftArrows: [{ dir: 'left', text: 'Rise in indirect taxes shifts SRAS left' }, { dir: 'right', text: 'Subsidies shift SRAS right' }] }
-      ],
-
-      pairLabel: 'LEFT OR RIGHT?',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'rose', icon: '←', iconStyle: 'circle',
-        label: 'Left shift',
-        points: ['Costs rise at every price level.', 'Output falls.', 'Inflation rises.']
-      },
-      right: {
-        tone: 'green', icon: '→', iconStyle: 'circle',
-        label: 'Right shift',
-        points: ['Costs fall or productivity rises.', 'Output rises.', 'Inflation eases.']
-      },
-
-      summaryRow: [
-        { tone: 'blue', icon: '📝', title: 'Essay link', text: 'SRAS shifts are central to cost-push inflation and cycle analysis. Always explain the cause, the shift, and the effect on output and the price level.' }
-      ],
-
-      conclusion: { title: 'Big idea', text: 'A supply shock changes the economy\'s short-run cost conditions at every price level.' },
-      examEdge: 'When output falls and prices rise together, the strongest diagnosis is an adverse SRAS shift rather than demand-pull inflation.'
+      blocks: [
+        { type: 'tip', tone: 'green', icon: '✅', text: 'SRAS shifts left when costs rise – and right when costs fall or productivity improves.' },
+        { type: 'sectionHeader', icon: '📊', label: 'THE INTERACTIVE IDEA' },
+        {
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'Base equilibrium',
+              shifts: {},
+              analysis: 'AD and SRAS₀ intersect at E₀. Price level is P₀, output is Y₀.'
+            },
+            {
+              label: 'Cost shock',
+              shifts: { SRAS: -100 },
+              analysis: 'Rising costs – wages, energy, raw materials – make every level of output more expensive. SRAS₁ lies above and to the left of SRAS₀.'
+            },
+            {
+              label: 'New equilibrium',
+              shifts: { SRAS: -100 },
+              analysis: 'Result – stagflation. P rises (higher price level) and Y falls (lower output). This is the defining feature of a supply shock.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '⚙️', label: 'SIX SHIFT DRIVERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'purple', icon: '👥', head: 'Wages',                         body: '← Rise shifts left · → Fall shifts right' },
+          { type: 'tile', tone: 'amber',  icon: '⚡', head: 'Energy prices',                 body: '← Rise shifts left · → Fall shifts right' },
+          { type: 'tile', tone: 'purple', icon: '📦', head: 'Raw material costs',            body: '← Rise shifts left · → Fall shifts right' },
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'Productivity',                  body: '→ Rise shifts right · ← Fall shifts left' },
+          { type: 'tile', tone: 'blue',   icon: '🌍', head: 'Import costs (exchange rate)',  body: '← Depreciation shifts left · → Appreciation shifts right' },
+          { type: 'tile', tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies',   body: '← Tax rise shifts left · → Subsidies shift right' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'LEFT OR RIGHT?' },
+        { type: 'pair',
+          left:  { tone: 'rose',  icon: '←', head: 'Left shift',  body: 'Costs rise at every price level. Output falls. Inflation rises.' },
+          right: { tone: 'green', icon: '→', head: 'Right shift', body: 'Costs fall or productivity rises. Output rises. Inflation eases.' }
+        },
+        { type: 'tile', tone: 'blue', icon: '📝', head: 'Essay link', body: 'SRAS shifts are central to cost-push inflation and cycle analysis. Always explain the cause, the shift, and the effect on output and the price level.' },
+        { type: 'bigIdea',  text: 'A supply shock changes the economy\'s short-run cost conditions at every price level.' },
+        { type: 'examEdge', text: 'When output falls and prices rise together, the strongest diagnosis is an adverse SRAS shift rather than demand-pull inflation.' }
+      ]
     },
 
     /* ----- CARD 5 – Shifts in LRAS ----- */
     {
       id: 'lras-shifts',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Shifts in LRAS',
       lede: 'LRAS shifts when the economy\'s productive capacity changes. A rightward shift means higher sustainable output without needing inflation.',
-
-      tip: { icon: '✅', tone: 'green', text: 'LRAS moves when the economy\'s capacity changes – not when the price level changes.' },
-
-      interactiveDiagram: {
-        svgKey: 'lrasShiftDiagram',
-        label: 'THE GROWTH DIAGRAM',
-        emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
-        views: [
-          {
-            label: 'Base equilibrium',
-            show: [],
-            tone: 'slate',
-            head: 'Initial long-run equilibrium.',
-            body: ['AD intersects LRAS₁ at E₁.', 'Price level is P₁. Real output is at full capacity Y₁.']
-          },
-          {
-            label: 'LRAS shifts right',
-            show: ['idl-1'],
-            tone: 'green',
-            head: 'Productive capacity expands.',
-            body: ['LRAS shifts right to LRAS₂.', 'New full-capacity output is Y₂ – higher than before.']
-          },
-          {
-            label: 'New equilibrium',
-            show: ['idl-1', 'idl-2'],
-            tone: 'green',
-            head: 'Sustainable non-inflationary growth.',
-            body: ['AD intersects LRAS₂ at E₂.', 'Real output rises from Y₁ to Y₂. The price level is stable or slightly lower.'],
-            analysis: 'A rightward LRAS shift is the supply-side ideal – more output without inflation. This contrasts with a demand-led AD shift, which raises output and prices together.'
-          }
-        ]
-      },
-
-      causesFirst: true,
-      causesLabel: 'WHAT SHIFTS LRAS?',
-      causesEmoji: '🎯',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'green', icon: '👥', head: 'Labour supply',       body: 'More people available and willing to work.' },
-        { tone: 'green', icon: '🏭', head: 'Capital stock',       body: 'More machinery, tools and infrastructure.' },
-        { tone: 'green', icon: '💡', head: 'Technology',          body: 'Innovations improve how resources are used.' },
-        { tone: 'green', icon: '📈', head: 'Productivity',        body: 'More output produced per unit of input.' },
-        { tone: 'green', icon: '🎓', head: 'Education and skills', body: 'A more skilled workforce raises productive capacity.' },
-        { tone: 'green', icon: '⚙️', head: 'Deregulation / efficiency', body: 'Lower barriers and red tape improve resource use.' }
-      ],
-
-      flowTitle: 'WHY IT MATTERS',
-      flowEmoji: '🎯',
-      flow: [
-        { tone: 'green',  icon: '📈', title: 'More capacity', sub: 'LRAS shifts right.' },
-        { tone: 'blue',   icon: '🏭', title: 'Higher potential output', sub: 'The economy can produce more at any given price level.' },
-        { tone: 'purple', icon: '🔍', title: 'Stronger long-run growth and lower inflation pressure', sub: 'Sustainable improvements in living standards.' }
-      ],
-
-      pairLabel: 'SHORT RUN VS LONG RUN',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue', icon: '⏱️', iconStyle: 'circle',
-        label: 'Short run',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">SRAS right shift can lower costs now. Useful to reduce short-term inflation.</p>'
-      },
-      right: {
-        tone: 'amber', icon: '🌄', iconStyle: 'circle',
-        label: 'Long run',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">LRAS right shift expands the economy\'s frontier. Sustains growth without creating inflation.</p>'
-      },
-
-      conclusion: { title: 'Big idea', text: 'LRAS growth is the supply-side route to rising output without overheating the economy.' },
-      examEdge: 'In essays, distinguish sustainable growth from a temporary AD-led boom – LRAS shifts raise capacity, not just spending.'
+      blocks: [
+        { type: 'tip', tone: 'green', icon: '✅', text: 'LRAS moves when the economy\'s capacity changes – not when the price level changes.' },
+        { type: 'sectionHeader', icon: '🎯', label: 'WHAT SHIFTS LRAS?' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '👥', head: 'Labour supply',             body: 'More people available and willing to work.' },
+          { type: 'tile', tone: 'green', icon: '🏭', head: 'Capital stock',             body: 'More machinery, tools and infrastructure.' },
+          { type: 'tile', tone: 'green', icon: '💡', head: 'Technology',                body: 'Innovations improve how resources are used.' },
+          { type: 'tile', tone: 'green', icon: '📈', head: 'Productivity',              body: 'More output produced per unit of input.' },
+          { type: 'tile', tone: 'green', icon: '🎓', head: 'Education and skills',      body: 'A more skilled workforce raises productive capacity.' },
+          { type: 'tile', tone: 'green', icon: '⚙️', head: 'Deregulation / efficiency', body: 'Lower barriers and red tape improve resource use.' }
+        ]},
+        { type: 'sectionHeader', icon: '📊', label: 'THE GROWTH DIAGRAM' },
+        {
+          type: 'econDiagram',
+          chart: 'growth',
+          views: [
+            {
+              label: 'Base equilibrium',
+              shifts: {},
+              points: ['E0'],
+              analysis: 'AD intersects LRAS₀ at E₀. Price level is P₀. Real output is at full capacity Y₀.'
+            },
+            {
+              label: 'LRAS shifts right',
+              shifts: { LRAS: 140 },
+              points: ['E0', 'E1'],
+              analysis: 'LRAS shifts right. New full-capacity output Y₁ is higher than before. Productive capacity expands.'
+            },
+            {
+              label: 'New equilibrium',
+              shifts: { LRAS: 140 },
+              points: ['E0', 'E1'],
+              analysis: 'A rightward LRAS shift is the supply-side ideal – more output without inflation. This contrasts with a demand-led AD shift, which raises output and prices together.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '🎯', label: 'WHY IT MATTERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'More capacity',        body: 'LRAS shifts right.' },
+          { type: 'tile', tone: 'blue',   icon: '🏭', head: 'Higher potential output', body: 'The economy can produce more at any given price level.' },
+          { type: 'tile', tone: 'purple', icon: '🔍', head: 'Stronger long-run growth', body: 'Sustainable improvements in living standards with lower inflation pressure.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'SHORT RUN VS LONG RUN' },
+        { type: 'pair',
+          left:  { tone: 'blue',  icon: '⏱️', head: 'Short run', body: 'SRAS right shift can lower costs now. Useful to reduce short-term inflation.' },
+          right: { tone: 'amber', icon: '🌄', head: 'Long run',  body: 'LRAS right shift expands the economy\'s frontier. Sustains growth without creating inflation.' }
+        },
+        { type: 'bigIdea',  text: 'LRAS growth is the supply-side route to rising output without overheating the economy.' },
+        { type: 'examEdge', text: 'In essays, distinguish sustainable growth from a temporary AD-led boom – LRAS shifts raise capacity, not just spending.' }
+      ]
     },
 
     /* ----- CARD 6 – Supply-side policies ----- */
@@ -438,83 +366,75 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 7 – AS in the AD/AS model ----- */
     {
       id: 'as-in-adas',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 7 of 8',
       title: 'AS in the AD/AS model',
       lede: 'Compare supply-side improvements with demand-side stimulus. Both may raise output, but the inflation consequences differ.',
-
-      tip: { icon: '✅', tone: 'green', text: 'The same output gain can come from stronger demand or stronger supply – but the price effect is different.' },
-
-      interactiveDiagram: [
+      blocks: [
+        { type: 'tip', tone: 'green', icon: '✅', text: 'The same output gain can come from stronger demand or stronger supply – but the price effect is different.' },
+        { type: 'sectionHeader', icon: '📈', label: 'DEMAND-SIDE STIMULUS' },
         {
-          svgKey: 'adShiftInteractive',
-          label: 'DEMAND-SIDE STIMULUS',
-          emoji: '📈',
-          layers: ['idl-1', 'idl-2'],
+          type: 'econDiagram',
+          chart: 'adas',
           views: [
-            { label: 'Base', show: [], tone: 'slate',
-              head: 'Initial equilibrium at E₁.',
-              body: ['AD and SRAS intersect at E₁.', 'Price level P₁, real output Y₁.'] },
-            { label: 'AD shifts right', show: ['idl-1'], tone: 'blue',
-              head: 'A demand stimulus shifts AD right to AD₂.',
-              body: ['Government spending, tax cuts or looser monetary policy raise demand.', 'The whole AD curve shifts rightward.'] },
-            { label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'blue',
-              head: 'Output rises – but so does the price level.',
-              body: ['The new equilibrium E₂ is higher on SRAS.', 'Y₂ > Y₁ but P₂ > P₁ – demand-pull inflation.'],
-              analysis: 'Demand stimulus raises output and the price level together. Near full capacity, most of the boost becomes inflationary rather than productive.' }
+            {
+              label: 'Base',
+              shifts: {},
+              analysis: 'AD and SRAS intersect at E₀. Price level P₀, real output Y₀.'
+            },
+            {
+              label: 'AD shifts right',
+              shifts: { AD: 80 },
+              analysis: 'Government spending, tax cuts or looser monetary policy raise demand. The whole AD curve shifts rightward.'
+            },
+            {
+              label: 'New equilibrium',
+              shifts: { AD: 80 },
+              analysis: 'Demand stimulus raises output and the price level together. Near full capacity, most of the boost becomes inflationary rather than productive.'
+            }
           ]
         },
+        { type: 'sectionHeader', icon: '⚙️', label: 'SUPPLY-SIDE IMPROVEMENT' },
         {
-          svgKey: 'srasRightShiftInteractive',
-          label: 'SUPPLY-SIDE IMPROVEMENT',
-          emoji: '⚙️',
-          layers: ['idl-1', 'idl-2'],
+          type: 'econDiagram',
+          chart: 'adas',
           views: [
-            { label: 'Base', show: [], tone: 'slate',
-              head: 'Initial equilibrium at E₁.',
-              body: ['AD and SRAS₁ intersect at E₁.', 'Price level P₁, real output Y₁.'] },
-            { label: 'SRAS shifts right', show: ['idl-1'], tone: 'green',
-              head: 'A supply-side improvement shifts SRAS right.',
-              body: ['Higher productivity, lower costs or better technology cut firms\' costs at every price level.', 'SRAS₂ lies to the right of SRAS₁.'] },
-            { label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'green',
-              head: 'Output rises – price level stable or lower.',
-              body: ['E₂ is to the right of and below E₁.', 'Y₂ > Y₁ and P₂ ≤ P₁ – non-inflationary growth.'],
-              analysis: 'Supply-side improvement raises output while keeping inflation in check. This is the key advantage over demand stimulus – especially when the economy is near full capacity.' }
+            {
+              label: 'Base',
+              shifts: {},
+              analysis: 'AD and SRAS₀ intersect at E₀. Price level P₀, real output Y₀.'
+            },
+            {
+              label: 'SRAS shifts right',
+              shifts: { SRAS: 100 },
+              analysis: 'Higher productivity, lower costs or better technology cut firms\' costs at every price level. SRAS₁ lies to the right of SRAS₀.'
+            },
+            {
+              label: 'New equilibrium',
+              shifts: { SRAS: 100 },
+              analysis: 'Supply-side improvement raises output while keeping inflation in check. This is the key advantage over demand stimulus – especially when the economy is near full capacity.'
+            }
           ]
-        }
-      ],
-
-      comparisonTable: {
-        title: 'COMPARE THE OUTCOMES',
-        emoji: '↔️',
-        columns: ['Demand-side stimulus', 'Supply-side improvement'],
-        columnTones: ['blue', 'green'],
-        rows: [
-          { label: '📊 Output',         values: ['Rises (AD shift)',               'Rises (capacity expands)'],             highlights: [false, true] },
-          { label: '💹 Price level',    values: ['Rises (inflationary)',           'Stable or falling'],                    highlights: [false, true] },
-          { label: '📅 Sustainability', values: ['Short-term boost',              'Long-term improvement'],                highlights: [false, true] },
-          { label: '⚠️ Inflation risk', values: ['High near full employment',     'Low – capacity expands with output'],   highlights: [false, true] },
-          { label: '🎯 Best use',       values: ['Recession / weak demand',       'Capacity constrained / high inflation'], highlights: [false, false] }
-        ]
-      },
-
-      pairLabel: 'WHEN TO USE WHICH',
-      pairEmoji: '🎯',
-      left: {
-        tone: 'blue', icon: '📉', iconStyle: 'circle',
-        label: 'Weak AD and recession',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Demand management can help. Use fiscal or monetary policy to stimulate demand.</p>'
-      },
-      right: {
-        tone: 'green', icon: '⚙️', iconStyle: 'circle',
-        label: 'Capacity constraints and inflation pressure',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Supply-side reform is better. Expand productive capacity and remove supply-side bottlenecks.</p>'
-      },
-
-      tipLate: { tone: 'blue', icon: 'ℹ️', text: 'Combining both can work best: use demand policy when demand is weak now, but invest in supply-side improvements to raise potential output over time.' },
-
-      conclusion: { title: 'Big idea', text: 'Demand policy changes spending. Supply policy changes capacity. The diagnosis determines the better cure.' },
-      examEdge: 'Top essays compare the inflation impact – AD stimulus is more inflationary than supply-side expansion when the economy is close to full employment.'
+        },
+        { type: 'sectionHeader', icon: '↔️', label: 'COMPARE THE OUTCOMES' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  head: '📊 Output (demand)',         body: 'Rises – AD shifts right.' },
+          { type: 'tile', tone: 'green', head: '📊 Output (supply)',          body: 'Rises – capacity expands.' },
+          { type: 'tile', tone: 'blue',  head: '💹 Price level (demand)',    body: 'Rises – inflationary.' },
+          { type: 'tile', tone: 'green', head: '💹 Price level (supply)',    body: 'Stable or falling.' },
+          { type: 'tile', tone: 'blue',  head: '📅 Sustainability (demand)', body: 'Short-term boost.' },
+          { type: 'tile', tone: 'green', head: '📅 Sustainability (supply)', body: 'Long-term improvement.' },
+          { type: 'tile', tone: 'blue',  head: '⚠️ Inflation risk (demand)', body: 'High near full employment.' },
+          { type: 'tile', tone: 'green', head: '⚠️ Inflation risk (supply)', body: 'Low – capacity expands with output.' }
+        ]},
+        { type: 'sectionHeader', icon: '🎯', label: 'WHEN TO USE WHICH' },
+        { type: 'pair',
+          left:  { tone: 'blue',  icon: '📉', head: 'Weak AD and recession',                      body: 'Demand management can help. Use fiscal or monetary policy to stimulate demand.' },
+          right: { tone: 'green', icon: '⚙️', head: 'Capacity constraints and inflation pressure', body: 'Supply-side reform is better. Expand productive capacity and remove supply-side bottlenecks.' }
+        },
+        { type: 'calloutStrip', tone: 'blue', icon: 'ℹ️', text: 'Combining both can work best: use demand policy when demand is weak now, but invest in supply-side improvements to raise potential output over time.' },
+        { type: 'bigIdea',  text: 'Demand policy changes spending. Supply policy changes capacity. The diagnosis determines the better cure.' },
+        { type: 'examEdge', text: 'Top essays compare the inflation impact – AD stimulus is more inflationary than supply-side expansion when the economy is close to full employment.' }
+      ]
     },
 
     /* ----- CARD 8 – Evaluating supply-side policy ----- */

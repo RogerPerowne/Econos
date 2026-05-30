@@ -59,50 +59,44 @@ window.ECONOS_TOPIC = {
       id: 'ppf_2',
       stepLabel: 'Learn: Step 2 of 6',
       title: 'Opportunity Cost and the Bowed-Out Shape',
-      tip: { icon: '💡', tone: 'blue', text: 'Opportunity cost changes at every point on the curve – and the bowed-out shape is what makes it rise as you specialise in one good.' },
-      interactiveDiagram: {
-        svgKey: 'ppfBowedOutInteractive',
-        label: 'See opportunity cost rise as you move along the curve',
-        emoji: '📈',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'The PPF',
-            tone: 'blue',
-            head: 'The production possibility frontier',
-            body: 'This bowed-out curve reflects a key property of real economies: resources are not equally suited to producing both goods. Move along the curve from left to right and watch how the trade-off changes at each point.',
-            analysis: 'The shape encodes information about resource adaptability. A straight-line PPF would mean perfect homogeneity – every unit of labour, land, and capital equally suited to either good. Real economies have specialists: surgeons, farmers, software engineers, factories. The bowed-out (concave) curve is the visual signature of that specialisation.'
-          },
-          {
-            label: 'Low opportunity cost',
-            tone: 'green',
-            head: 'Pa – small sacrifice, decent gain',
-            body: 'A 30-unit gain in Good B costs only 11 units of Good A. The first resources to transfer are those least suited to Good A – moving them costs little because they were barely productive there anyway.',
-            analysis: 'Early specialisation is cheap. The economy deploys its most adaptable resources first – those with the weakest attachment to Good A. They were only marginally productive there; moving them to Good B yields a large gain at a small sacrifice. The opportunity cost ratio (vertical leg ÷ horizontal leg of the triangle) is small.'
-          },
-          {
-            label: 'Rising opportunity cost',
-            tone: 'amber',
-            head: 'Pb – same gain, bigger sacrifice',
-            body: 'The same gain in Good B now costs roughly twice as much Good A. The resources switching now were better suited to Good A – their transfer is proportionally costlier. Compare the two triangles: equal width, but Pb\'s is visibly taller.',
-            analysis: 'The economy has used up its easy transfers. Remaining resources in Good A are progressively more specialised – more productive there and less adaptable to Good B. Transferring them yields a smaller gain relative to the sacrifice. The ratio grows. This is increasing opportunity cost made visible: the triangle taller despite the same horizontal step.'
-          },
-          {
-            label: 'High opportunity cost',
-            tone: 'rose',
-            head: 'Pc – steep sacrifice for modest gain',
-            body: 'A smaller gain in Good B now costs far more Good A. All three triangles share similar widths, but the vertical sacrifices are 11, 24, and 40 units respectively. The law of increasing opportunity cost, graphed.',
-            analysis: 'The most specialised resources – those most highly adapted to Good A – are the last to transfer. Their opportunity cost is enormous. The PPF steepens sharply near the axis. A straight-line PPF only arises if resources are perfectly homogeneous: equally suited to both goods at every point on the curve. Draw a straight line only when a question explicitly specifies constant opportunity cost – otherwise the bowed-out curve is more realistic and earns the mark.'
-          }
-        ]
-      },
-      keyTerms: [
-        { term: 'Opportunity cost on PPF', def: 'The quantity of one good given up to produce one more unit of the other – equal to the gradient of the PPF at that point.' },
-        { term: 'Constant opportunity cost', def: 'Straight-line PPF: resources are perfectly substitutable; the trade-off ratio is fixed regardless of output mix.' },
-        { term: 'Increasing opportunity cost', def: 'Bowed-out PPF (concave to origin): resources are specialised, so each extra unit of one good costs progressively more of the other as specialisation deepens.' },
-        { term: 'Resource specificity', def: 'Resources are not equally suited to all uses – a surgeon and a farmer are not interchangeable without cost. This is what bows the PPF outward.' }
-      ],
-      examEdge: 'To calculate opportunity cost: find how many units of one good are sacrificed per unit gained of the other. From a diagram: read the slope. Show the step – "output of B falls from X to Y while A rises by Z, so OC = (X−Y)/Z units of B per unit of A." Draw a straight-line PPF only when the question specifies constant opportunity cost or perfectly homogeneous resources – in all other cases, the bowed-out curve is more realistic and earns the mark.'
+      blocks: [
+        { type: 'tip', tone: 'blue', icon: '💡', text: 'Opportunity cost changes at every point on the curve – and the bowed-out shape is what makes it rise as you specialise in one good.' },
+        {
+          type: 'econDiagram',
+          chart: 'ppf',
+          views: [
+            {
+              label: 'The PPF',
+              points: [],
+              analysis: 'The shape encodes information about resource adaptability. A straight-line PPF would mean perfect homogeneity – every unit of labour, land, and capital equally suited to either good. Real economies have specialists: surgeons, farmers, software engineers, factories. The bowed-out (concave) curve is the visual signature of that specialisation.'
+            },
+            {
+              label: 'Low opportunity cost',
+              points: ['A'],
+              analysis: 'Early specialisation is cheap. The economy deploys its most adaptable resources first – those with the weakest attachment to Good A (capital goods). They were only marginally productive there; moving them to Good B (consumer goods) yields a large gain at a small sacrifice. Point A sits high on the frontier: many capital goods, few consumer goods. The curve is relatively shallow here, encoding a low opportunity cost per unit of consumer goods gained.'
+            },
+            {
+              label: 'Rising opportunity cost',
+              points: ['A', 'B'],
+              arrows: [['A', 'B', { tone: 'amber' }]],
+              analysis: 'The economy has used up its easy transfers. Moving from A to B along the frontier – gaining consumer goods (rightward) – requires sacrificing capital goods. The PPF steepens toward B: the same horizontal step requires a larger vertical sacrifice. This is increasing opportunity cost made visible. Resources remaining in capital-goods production are progressively more specialised – their transfer to consumer-goods production is proportionally costlier.'
+            },
+            {
+              label: 'High opportunity cost',
+              points: ['A', 'B'],
+              arrows: [['A', 'B', { tone: 'rose' }]],
+              analysis: 'The most specialised resources – those most highly adapted to capital-goods production – are the last to transfer. Their opportunity cost is enormous. The PPF steepens sharply near the x-axis (consumer-goods end). A straight-line PPF only arises if resources are perfectly homogeneous: equally suited to both goods at every point on the curve. Draw a straight line only when a question explicitly specifies constant opportunity cost – otherwise the bowed-out curve is more realistic and earns the mark.'
+            }
+          ]
+        },
+        { type: 'glossaryRow', terms: [
+          { term: 'Opportunity cost on PPF', definition: 'The quantity of one good given up to produce one more unit of the other – equal to the gradient of the PPF at that point.' },
+          { term: 'Constant opportunity cost', definition: 'Straight-line PPF: resources are perfectly substitutable; the trade-off ratio is fixed regardless of output mix.' },
+          { term: 'Increasing opportunity cost', definition: 'Bowed-out PPF (concave to origin): resources are specialised, so each extra unit of one good costs progressively more of the other as specialisation deepens.' },
+          { term: 'Resource specificity', definition: 'Resources are not equally suited to all uses – a surgeon and a farmer are not interchangeable without cost. This is what bows the PPF outward.' }
+        ]},
+        { type: 'examEdge', text: 'To calculate opportunity cost: find how many units of one good are sacrificed per unit gained of the other. From a diagram: read the slope. Show the step – “output of B falls from X to Y while A rises by Z, so OC = (X−Y)/Z units of B per unit of A.” Draw a straight-line PPF only when the question specifies constant opportunity cost or perfectly homogeneous resources – in all other cases, the bowed-out curve is more realistic and earns the mark.' }
+      ]
     },
 
     {
@@ -166,44 +160,36 @@ window.ECONOS_TOPIC = {
       id: 'ppf_5',
       stepLabel: 'Learn: Step 5 of 6',
       title: 'PPF and Economic Efficiency',
-      tip: { icon: '💡', tone: 'blue', text: 'Productive efficiency = ON the PPF. Allocative efficiency = the <em>right</em> point on the PPF. These are different – and examiners test whether you know it.' },
-      interactiveDiagram: {
-        svgKey: 'ppfEfficiencyInteractive',
-        label: 'Build the efficiency picture step by step',
-        emoji: '⚙️',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Three zones',
-            tone: 'blue',
-            head: 'The PPF defines three zones',
-            body: 'Any combination ON the curve is productively feasible and uses all resources fully. Inside is achievable but wastes capacity. Outside is currently impossible.',
-            analysis: 'The PPF is the maximum output frontier: every point on it represents a fully employed economy at the limit of its technology and resources. This boundary separates achievable from unachievable – not by price or policy, but by the hard constraint of productive capacity. Economists use it to define two distinct efficiency concepts that are often confused: productive efficiency (any point on the curve) and allocative efficiency (a specific point on the curve).'
-          },
-          {
-            label: 'Productive inefficiency',
-            tone: 'rose',
-            head: 'H – inside the PPF',
-            body: 'Point H represents idle resources: unemployed workers, spare factory capacity, misallocated inputs. Output could rise without any sacrifice – moving H to the frontier costs nothing.',
-            analysis: 'Common causes: cyclical unemployment (recession leaves capital and labour idle), structural barriers (skills mismatches, immobility of factors), X-inefficiency (management slack in firms insulated from competition). Key exam point: a <em>recession</em> moves the whole-economy point inside the PPF – it does not shift the frontier itself. The frontier only shifts with a change in productive <em>capacity</em>, not how fully that capacity is used.'
-          },
-          {
-            label: 'Productive efficiency',
-            tone: 'green',
-            head: 'Any point ON PPF₁ – productively efficient',
-            body: 'Multiple points sit on the curve. All are productively efficient: resources are fully and efficiently employed. You cannot raise output of one good without reducing the other.',
-            analysis: 'Productive efficiency does NOT mean the right goods are produced – only that production is at maximum capacity. A command economy could be on its PPF while producing only guns and no butter: productively efficient but allocatively catastrophic. The market test is P = minimum LRAC – firms produce at the lowest point on their long-run average cost curve, as competitive pressure forces in the long run.'
-          },
-          {
-            label: 'Allocative efficiency',
-            tone: 'amber',
-            head: 'G★ – the one allocatively efficient point',
-            body: 'G★ is the single combination on PPF₁ that society values most: P = MC. Every other on-curve point is productively efficient but allocatively wrong – producing too much of one good relative to what consumers want.',
-            analysis: 'Allocative efficiency requires P = MC at every point: the marginal benefit to society equals the marginal cost of production. This is a single point on the PPF reflecting consumer preferences. Competitive markets drive P → MC through profit-maximisation. For A* marks: mention <strong>Pareto efficiency</strong> – G★ is Pareto optimal, meaning no-one can be made better off without making someone else worse off. Command economies cannot identify G★ without price signals – this is the socialist calculation problem.'
-          }
-        ]
-      },
-      examEdge: 'For A* responses: name <strong>Pareto efficiency</strong> explicitly – G★ is the only Pareto-optimal point on the PPF, where no-one can be made better off without making someone else worse off. Competitive markets approximate this through P = MC. The socialist calculation problem is the sharpest evaluative counter-example: without market price signals, a command economy cannot locate G★, even when it achieves full-capacity output on the PPF.'
+      blocks: [
+        { type: 'tip', tone: 'blue', icon: '💡', text: 'Productive efficiency = ON the PPF. Allocative efficiency = the right point on the PPF. These are different – and examiners test whether you know it.' },
+        {
+          type: 'econDiagram',
+          chart: 'ppf',
+          views: [
+            {
+              label: 'Three zones',
+              points: [],
+              analysis: 'The PPF is the maximum output frontier: every point on it represents a fully employed economy at the limit of its technology and resources. This boundary separates achievable from unachievable – not by price or policy, but by the hard constraint of productive capacity. Economists use it to define two distinct efficiency concepts that are often confused: productive efficiency (any point on the curve) and allocative efficiency (a specific point on the curve). Points on the curve are productively efficient. Points inside are achievable but waste capacity. Points outside are currently impossible.'
+            },
+            {
+              label: 'Productive inefficiency',
+              points: ['I'],
+              analysis: 'Point I sits well inside the frontier – it represents idle resources: unemployed workers, spare factory capacity, misallocated inputs. Output could rise without any sacrifice by moving toward the frontier. Common causes: cyclical unemployment (recession leaves capital and labour idle), structural barriers (skills mismatches, immobility of factors), X-inefficiency (management slack in firms insulated from competition). Key exam point: a recession moves the whole-economy point inside the PPF – it does not shift the frontier itself. The frontier only shifts with a change in productive capacity, not how fully that capacity is used.'
+            },
+            {
+              label: 'Productive efficiency',
+              points: ['A', 'B'],
+              analysis: 'Points A and B both sit on the frontier – both are productively efficient. Resources are fully and efficiently employed at both points. You cannot raise output of one good without reducing the other. Productive efficiency does NOT mean the right goods are produced – only that production is at maximum capacity. A command economy could be on its PPF while producing only guns and no butter: productively efficient but allocatively catastrophic. The market test is P = minimum LRAC – firms produce at the lowest point on their long-run average cost curve, as competitive pressure forces in the long run.'
+            },
+            {
+              label: 'Allocative efficiency',
+              points: ['B'],
+              analysis: 'G★ (represented here by point B) marks the single combination on the PPF that society values most: where P = MC for every good. Every other on-curve point is productively efficient but allocatively wrong – producing too much of one good relative to what consumers want. Allocative efficiency requires P = MC at every point: the marginal benefit to society equals the marginal cost of production. Competitive markets drive P to MC through profit-maximisation. For A★ marks: mention Pareto efficiency – this is the only Pareto-optimal point on the PPF, meaning no-one can be made better off without making someone else worse off. Command economies cannot identify this point without price signals – the socialist calculation problem.'
+            }
+          ]
+        },
+        { type: 'examEdge', text: 'For A* responses: name Pareto efficiency explicitly – G★ is the only Pareto-optimal point on the PPF, where no-one can be made better off without making someone else worse off. Competitive markets approximate this through P = MC. The socialist calculation problem is the sharpest evaluative counter-example: without market price signals, a command economy cannot locate G★, even when it achieves full-capacity output on the PPF.' }
+      ]
     },
 
     {

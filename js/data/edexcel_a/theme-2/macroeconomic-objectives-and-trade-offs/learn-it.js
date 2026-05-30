@@ -60,7 +60,7 @@ window.ECONOS_TOPIC = {
       visualLabel: 'UK macro dashboard',
       visualEmoji: '\u{1F4CA}',
 
-      causesFirst: true,
+      causesPosition: 'top',
       causesLabel: 'The seven objectives',
       causesEmoji: '\u{1F4CB}',
       causesStyle: 'numbered-rows',

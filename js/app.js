@@ -1235,6 +1235,25 @@
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (c.causesStyle === 'numbered-rows') {
+          /* Top-position numbered-rows: same horizontal-row layout as the
+             causesFirst branch (line 4544 area) — numbered circle + icon +
+             title + body, tone-coloured left bar. */
+          const cycle = ['green','blue','purple','amber','rose','slate'];
+          const tone = pt || PATTERN_TONES[cycle[i % cycle.length]];
+          const iconHtml = item.icon
+            ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+            : '';
+          return `
+            <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+              <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+              ${iconHtml}
+              <div style="flex:1;min-width:0;">
+                <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
+                <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+              </div>
+            </div>`;
+        }
         if (c.causesStyle === 'icon-top' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
@@ -2052,6 +2071,25 @@
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (c.causesStyle === 'numbered-rows') {
+          /* Top-position numbered-rows: same horizontal-row layout as the
+             causesFirst branch (line 4544 area) — numbered circle + icon +
+             title + body, tone-coloured left bar. */
+          const cycle = ['green','blue','purple','amber','rose','slate'];
+          const tone = pt || PATTERN_TONES[cycle[i % cycle.length]];
+          const iconHtml = item.icon
+            ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+            : '';
+          return `
+            <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+              <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+              ${iconHtml}
+              <div style="flex:1;min-width:0;">
+                <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
+                <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+              </div>
+            </div>`;
+        }
         if (c.causesStyle === 'icon-top' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
@@ -4480,6 +4518,45 @@
         }).join('');
       })() : ''}
 
+      ${c.causesPosition === 'top' && c.causes && c.causes.length ? (() => {
+        /* Early causes for ad-interactive — when c.causesPosition === 'top',
+           render the causes block here (before visualKey) so the topic can
+           introduce WHAT each item is before the hero visualises them.
+           Supports numbered-rows and numbered styles. */
+        const items = c.causes;
+        const numberedRowsMode = c.causesStyle === 'numbered-rows';
+        const label = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Overview');
+        if (numberedRowsMode) {
+          const cycle = ['green','blue','purple','amber','rose','slate'];
+          const rows = items.map((item, i) => {
+            const tone = PATTERN_TONES[item.tone || cycle[i % cycle.length]];
+            const iconHtml = item.icon
+              ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+              : '';
+            return `
+              <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+                ${iconHtml}
+                <div style="flex:1;min-width:0;">
+                  <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
+                  <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+                </div>
+              </div>`;
+          }).join('');
+          return `${label}<div style="display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 22px;">${rows}</div>`;
+        }
+        /* Fall-through for non-numbered-rows styles: a simple tile grid. */
+        const tiles = items.map((item, i) => {
+          const tone = PATTERN_TONES[item.tone || ['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `<div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;"><div style="font-size:24px;line-height:1;">${item.icon || ''}</div><div style="font-weight:800;font-size:15px;color:${tone.label};">${item.head}</div></div>
+            <div style="font-size:13px;color:#0B1426;line-height:1.55;">${item.body}</div>
+          </div>`;
+        }).join('');
+        const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : `repeat(${Math.min(items.length, 3)},1fr)`;
+        return `${label}<div style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`;
+      })() : ''}
+
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
 
       ${buildInteractiveDiagramHtml(c)}
@@ -4813,7 +4890,7 @@
         </div>`;
       })() : ''}
 
-      ${!c.causesFirst && !c.causesLast && c.causes && c.causes.length ? (() => {
+      ${!c.causesFirst && !c.causesLast && c.causesPosition !== 'top' && c.causes && c.causes.length ? (() => {
         const items = c.causes;
         const tiles = items.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];

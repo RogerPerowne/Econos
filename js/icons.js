@@ -17482,30 +17482,47 @@ window.ECONOS_ICONS = {
      Card 4 play-pause animation; Card 6 hoverable tension lines).
      ============================================================ */
 
-  /* Card 1 — THE SCORECARD COCKPIT (light dashboard). */
+  /* Card 1 — THE DASHBOARD.
+     Pilot metaphor stripped (kept just "UK MACRO DASHBOARD" as a
+     neutral header). Secondary cards 4-7 now stack label/value
+     vertically (avoids the "TargetSustainable" run-together and
+     "UK current" wrap that the previous inline layout produced).
+     "! ABOVE ZONE" warnings moved out of the title corner — now sit
+     as a small inline red badge under the value. Trade-offs preview
+     at the bottom uses tone-coloured pills + a grey VS badge in the
+     middle (the established pair-renderer pattern), not the ugly
+     flow chain. */
   macroCockpit: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding:0 4px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding:0 4px;">
         <div style="display:flex;align-items:center;gap:8px;">
           <span style="width:7px;height:7px;border-radius:50%;background:#22C55E;box-shadow:0 0 6px #22C55E;"></span>
           <span style="font-size:10px;font-weight:800;letter-spacing:0.14em;color:#475569;">UK MACRO DASHBOARD &middot; Q1 2026</span>
         </div>
-        <span style="font-size:10px;font-weight:700;letter-spacing:0.06em;color:#94A3B8;font-family:'Inter Mono',monospace;">7 OBJECTIVES</span>
       </div>
       <style>
         .mos-cock { display:grid; gap:10px; }
         .mos-primary { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; }
         .mos-secondary { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
         @media (max-width: 720px) { .mos-primary { grid-template-columns: 1fr; } .mos-secondary { grid-template-columns: 1fr 1fr; } }
-        .mos-card { background:#fff; border:1.5px solid; border-radius:12px; padding:14px 12px 10px; position:relative; overflow:hidden; }
+        .mos-card { background:#fff; border:1.5px solid; border-radius:12px; padding:14px 14px 12px; position:relative; overflow:hidden; }
         .mos-bar { position:absolute; left:0; top:0; bottom:0; width:4px; }
         .mos-num { width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
-        .mos-warn { position:absolute; top:8px; right:8px; font-size:8px; font-weight:800; letter-spacing:0.06em; color:#DC2626; }
         .mos-stripe { display:flex; align-items:center; justify-content:center; gap:6px; font-size:10px; font-weight:800; padding:5px 10px; border-radius:8px; margin-top:10px; }
         .mos-row { display:flex; justify-content:space-between; align-items:baseline; font-size:11px; color:#64748B; padding:2px 0; }
         .mos-row b { color:#0B1426; font-weight:800; font-family:'Inter Mono',monospace; font-size:13px; }
-        .mos-flow-tile { background:#F8FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:9px 10px; text-align:center; font-size:11px; font-weight:700; color:#334155; line-height:1.25; }
-        .mos-flow-arrow { color:#94A3B8; font-size:14px; font-weight:700; text-align:center; padding:0 2px; align-self:center; }
+        /* Secondary-card data: stack label above value, no inline rows. */
+        .mos-sec-block { margin-top:8px; }
+        .mos-sec-label { font-size:9px; font-weight:800; letter-spacing:0.1em; color:#64748B; text-transform:uppercase; }
+        .mos-sec-val { font-size:14px; font-weight:800; color:#0B1426; line-height:1.2; margin-top:2px; }
+        .mos-sec-warn { display:inline-flex; align-items:center; gap:4px; font-size:9px; font-weight:800; letter-spacing:0.05em; color:#DC2626; background:#FEF2F2; border:1px solid #FECACA; border-radius:6px; padding:2px 6px; margin-top:6px; }
+        /* Trade-offs VS pairs. */
+        .mos-vs-grid { display:grid; gap:8px; }
+        .mos-vs-row { display:grid; grid-template-columns: 1fr 32px 1fr; align-items:center; gap:8px; padding:6px 4px; }
+        .mos-vs-pill { display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1.5px solid; font-size:12px; font-weight:800; line-height:1.2; }
+        .mos-vs-pill.left { justify-content:flex-end; text-align:right; }
+        .mos-vs-pill.right { justify-content:flex-start; text-align:left; }
+        .mos-vs-badge { width:30px; height:30px; border-radius:50%; background:#475569; color:#fff; font-size:10px; font-weight:900; letter-spacing:0.05em; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 5px rgba(71,85,105,0.25); margin:0 auto; }
       </style>
       <div class="mos-cock">
         <div class="mos-primary">
@@ -17550,54 +17567,98 @@ window.ECONOS_ICONS = {
           </div>
         </div>
         <div class="mos-secondary">
-          <div class="mos-card" style="border-color:#C4B5FD;padding-bottom:12px;">
+          <!-- 4. Balance of payments (purple) -->
+          <div class="mos-card" style="border-color:#C4B5FD;">
             <div class="mos-bar" style="background:#8B5CF6;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#8B5CF6;">4</span><span style="font-size:11px;font-weight:800;color:#5B21B6;line-height:1.2;">Balance of<br>payments</span></div>
-            <div style="font-size:22px;text-align:center;margin:4px 0;">🌐</div>
-            <div class="mos-row"><span>Target</span><b style="color:#5B21B6;font-size:11px;">Sustainable CA</b></div>
-            <div class="mos-row"><span>UK current</span><b style="color:#5B21B6;">−2.4%</b></div>
+            <div style="font-size:24px;text-align:center;margin:6px 0 2px;">🌐</div>
+            <div class="mos-sec-block">
+              <div class="mos-sec-label">Target</div>
+              <div class="mos-sec-val" style="color:#5B21B6;font-size:12px;">Sustainable CA</div>
+            </div>
+            <div class="mos-sec-block">
+              <div class="mos-sec-label">UK current</div>
+              <div class="mos-sec-val" style="color:#5B21B6;">−2.4%</div>
+            </div>
           </div>
-          <div class="mos-card" style="border-color:#FCD34D;padding-bottom:12px;">
+          <!-- 5. Balanced govt budget (amber) — outside zone -->
+          <div class="mos-card" style="border-color:#FCD34D;">
             <div class="mos-bar" style="background:#F59E0B;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#F59E0B;">5</span><span style="font-size:11px;font-weight:800;color:#B45309;line-height:1.2;">Balanced<br>govt budget</span></div>
-            <div class="mos-warn">! ABOVE ZONE</div>
-            <div style="font-size:22px;text-align:center;margin:4px 0;">🏛️</div>
-            <div class="mos-row"><span>Target</span><b style="color:#B45309;font-size:11px;">Stable path</b></div>
-            <div class="mos-row"><span>UK current</span><b style="color:#B45309;">93.8%</b></div>
+            <div style="font-size:24px;text-align:center;margin:6px 0 2px;">🏛️</div>
+            <div class="mos-sec-block">
+              <div class="mos-sec-label">Target</div>
+              <div class="mos-sec-val" style="color:#B45309;font-size:12px;">Stable path</div>
+            </div>
+            <div class="mos-sec-block">
+              <div class="mos-sec-label">UK current</div>
+              <div class="mos-sec-val" style="color:#B45309;">93.8%</div>
+              <span class="mos-sec-warn">⚠ above zone</span>
+            </div>
           </div>
-          <div class="mos-card" style="border-color:#5EEAD4;padding-bottom:12px;">
+          <!-- 6. Protection of environment (teal) -->
+          <div class="mos-card" style="border-color:#5EEAD4;">
             <div class="mos-bar" style="background:#0D9488;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#0D9488;">6</span><span style="font-size:11px;font-weight:800;color:#115E59;line-height:1.2;">Protection of<br>environment</span></div>
-            <div style="font-size:22px;text-align:center;margin:4px 0;">🌿</div>
-            <div class="mos-row"><span>Target</span><b style="color:#115E59;font-size:11px;">Net zero 2050</b></div>
-            <div class="mos-row"><span>UK current</span><b style="color:#115E59;font-size:11px;">Mixed</b></div>
+            <div style="font-size:24px;text-align:center;margin:6px 0 2px;">🌿</div>
+            <div class="mos-sec-block">
+              <div class="mos-sec-label">Target</div>
+              <div class="mos-sec-val" style="color:#115E59;font-size:12px;">Net zero 2050</div>
+            </div>
+            <div class="mos-sec-block">
+              <div class="mos-sec-label">UK current</div>
+              <div class="mos-sec-val" style="color:#115E59;font-size:12px;">Mixed</div>
+            </div>
           </div>
-          <div class="mos-card" style="border-color:#CBD5E1;padding-bottom:12px;">
+          <!-- 7. Greater income equality (slate) — outside zone -->
+          <div class="mos-card" style="border-color:#CBD5E1;">
             <div class="mos-bar" style="background:#475569;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#475569;">7</span><span style="font-size:11px;font-weight:800;color:#334155;line-height:1.2;">Greater income<br>equality</span></div>
-            <div class="mos-warn">! ABOVE ZONE</div>
-            <div style="font-size:22px;text-align:center;margin:4px 0;">⚖️</div>
-            <div class="mos-row"><span>Target</span><b style="color:#334155;font-size:11px;">Falling Gini</b></div>
-            <div class="mos-row"><span>UK current</span><b style="color:#334155;">Gini 0.36</b></div>
+            <div style="font-size:24px;text-align:center;margin:6px 0 2px;">⚖️</div>
+            <div class="mos-sec-block">
+              <div class="mos-sec-label">Target</div>
+              <div class="mos-sec-val" style="color:#334155;font-size:12px;">Falling Gini</div>
+            </div>
+            <div class="mos-sec-block">
+              <div class="mos-sec-label">UK current</div>
+              <div class="mos-sec-val" style="color:#334155;">Gini 0.36</div>
+              <span class="mos-sec-warn">⚠ above zone</span>
+            </div>
           </div>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;margin-top:6px;margin-bottom:4px;padding:0 4px;">
+
+        <!-- Trade-offs preview: five VS-pair rows. -->
+        <div style="display:flex;align-items:center;gap:8px;margin-top:14px;margin-bottom:4px;padding:0 4px;">
           <span style="font-size:14px;">⚖️</span>
           <span style="font-size:10px;font-weight:800;letter-spacing:0.14em;color:#475569;">FIVE STRUCTURAL TRADE-OFFS WE WILL EXPLORE</span>
         </div>
-        <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;">
-          <div class="mos-flow-tile" style="background:#FFF1F2;border-color:#FECDD3;color:#9F1239;">Inflation vs unemployment</div>
-          <div class="mos-flow-arrow">→</div>
-          <div class="mos-flow-tile" style="background:#EFF6FF;border-color:#BFDBFE;color:#1E3A8A;">Growth vs inflation</div>
-          <div class="mos-flow-arrow">→</div>
-          <div class="mos-flow-tile" style="background:#F5F3FF;border-color:#C4B5FD;color:#5B21B6;">Growth vs BoP</div>
+        <div class="mos-vs-grid">
+          <div class="mos-vs-row">
+            <div class="mos-vs-pill left" style="background:#FFF1F2;border-color:#FECDD3;color:#9F1239;">📊 Inflation</div>
+            <div class="mos-vs-badge">VS</div>
+            <div class="mos-vs-pill right" style="background:#EFF6FF;border-color:#BFDBFE;color:#1E3A8A;">👥 Unemployment</div>
+          </div>
+          <div class="mos-vs-row">
+            <div class="mos-vs-pill left" style="background:#F0FDF4;border-color:#86EFAC;color:#065F46;">📈 Growth</div>
+            <div class="mos-vs-badge">VS</div>
+            <div class="mos-vs-pill right" style="background:#FFF1F2;border-color:#FECDD3;color:#9F1239;">📊 Inflation</div>
+          </div>
+          <div class="mos-vs-row">
+            <div class="mos-vs-pill left" style="background:#F0FDF4;border-color:#86EFAC;color:#065F46;">📈 Growth</div>
+            <div class="mos-vs-badge">VS</div>
+            <div class="mos-vs-pill right" style="background:#F5F3FF;border-color:#C4B5FD;color:#5B21B6;">🌐 BoP</div>
+          </div>
+          <div class="mos-vs-row">
+            <div class="mos-vs-pill left" style="background:#F0FDF4;border-color:#86EFAC;color:#065F46;">📈 Growth</div>
+            <div class="mos-vs-badge">VS</div>
+            <div class="mos-vs-pill right" style="background:#F0FDFA;border-color:#5EEAD4;color:#115E59;">🌿 Environment</div>
+          </div>
+          <div class="mos-vs-row">
+            <div class="mos-vs-pill left" style="background:#FFFBEB;border-color:#FCD34D;color:#B45309;">🏛️ Public spending</div>
+            <div class="mos-vs-badge">VS</div>
+            <div class="mos-vs-pill right" style="background:#FFFBEB;border-color:#FCD34D;color:#B45309;">🏛️ Fiscal sustainability</div>
+          </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:6px;">
-          <div class="mos-flow-tile" style="background:#FFFBEB;border-color:#FCD34D;color:#B45309;">Spending vs fiscal sustainability</div>
-          <div class="mos-flow-arrow">→</div>
-          <div class="mos-flow-tile" style="background:#F0FDFA;border-color:#5EEAD4;color:#115E59;">Growth vs environment</div>
-        </div>
-        <div style="margin-top:12px;padding:10px 14px;background:#F8FAFC;border-radius:10px;text-align:center;font-size:11px;color:#475569;">Some gauges are in target. Some are not. <strong style="color:#0B1426;">You are the pilot.</strong></div>
       </div>
     </div>
   `,

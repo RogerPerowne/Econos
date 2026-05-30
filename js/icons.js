@@ -17248,6 +17248,144 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* Card 2 — UK income spectrum: same 2% growth year drawn two ways.
+     Layer .idl-pounds : £ per year per decile, with a broken Y-axis so
+     the bottom four bars (£200..£1,800) are readable alongside the
+     Top-1% bar (£12,000+). Break decoration: a white strip + zigzag
+     across the bar at y=108..120, plus paired diagonal slashes across
+     the Y-axis line at the same break point.
+     Layer .idl-percent : same gain expressed as % of typical
+     household income at each decile. Linear 0-6% scale, no break.
+     Tones map to the 5 spectrum tiles below the chart so the bars and
+     numbered tiles share a colour grammar. */
+  incomeSpectrumChart: `
+    <div style="background:#fff;border-radius:14px;padding:14px;">
+      <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+
+        <!-- LAYER 1: £ per year per decile (broken Y-axis) -->
+        <g class="idl-pounds" style="display:none">
+          <text x="360" y="22" font-size="13" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Real-income gain from a 2% growth year &mdash; &pound; per year</text>
+          <text x="20" y="180" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle" transform="rotate(-90 20 180)">&pound; per year</text>
+
+          <!-- Axes -->
+          <line x1="80" y1="60" x2="80" y2="300" stroke="#0B1426" stroke-width="1.4"/>
+          <line x1="80" y1="300" x2="700" y2="300" stroke="#0B1426" stroke-width="1.4"/>
+
+          <!-- Linear gridlines £500 / £1,000 / £1,500 / £2,000 -->
+          <line x1="80" y1="255" x2="700" y2="255" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <line x1="80" y1="210" x2="700" y2="210" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <line x1="80" y1="165" x2="700" y2="165" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <line x1="80" y1="120" x2="700" y2="120" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <!-- Above-break gridline for £12,000+ -->
+          <line x1="80" y1="80" x2="700" y2="80" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+          <!-- Y-axis tick labels -->
+          <text x="73" y="304" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">&pound;0</text>
+          <text x="73" y="259" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">&pound;500</text>
+          <text x="73" y="214" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">&pound;1,000</text>
+          <text x="73" y="169" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">&pound;1,500</text>
+          <text x="73" y="124" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">&pound;2,000</text>
+          <text x="73" y="84" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">&pound;12,000</text>
+
+          <!-- Axis-break decoration on Y-axis at y=110 (white gap + paired diagonal slashes) -->
+          <rect x="75" y="105" width="10" height="14" fill="#fff"/>
+          <line x1="74" y1="116" x2="86" y2="108" stroke="#0B1426" stroke-width="1.3"/>
+          <line x1="74" y1="112" x2="86" y2="104" stroke="#0B1426" stroke-width="1.3"/>
+
+          <!-- Bar 1: Bottom 10%, £200 (h=18) -->
+          <rect x="130" y="282" width="70" height="18" fill="#E11D48" stroke="#9F1239" stroke-width="0.8"/>
+          <text x="165" y="275" font-size="13" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">&pound;200</text>
+
+          <!-- Bar 2: Lower-mid, £500 (h=45) -->
+          <rect x="250" y="255" width="70" height="45" fill="#F59E0B" stroke="#B45309" stroke-width="0.8"/>
+          <text x="285" y="248" font-size="13" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">&pound;500</text>
+
+          <!-- Bar 3: Middle, £900 (h=81) -->
+          <rect x="370" y="219" width="70" height="81" fill="#2563EB" stroke="#1E3A8A" stroke-width="0.8"/>
+          <text x="405" y="212" font-size="13" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">&pound;900</text>
+
+          <!-- Bar 4: Upper-mid, £1,800 (h=162) -->
+          <rect x="490" y="138" width="70" height="162" fill="#8B5CF6" stroke="#5B21B6" stroke-width="0.8"/>
+          <text x="525" y="131" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">&pound;1,800</text>
+
+          <!-- Bar 5: Top 1%, £12,000+ (broken bar, lower segment + upper segment + zigzag break) -->
+          <rect x="610" y="120" width="70" height="180" fill="#16A34A" stroke="#065F46" stroke-width="0.8"/>
+          <rect x="610" y="78" width="70" height="30" fill="#16A34A" stroke="#065F46" stroke-width="0.8"/>
+          <!-- White strip across bar at break -->
+          <rect x="610.5" y="108" width="69" height="12" fill="#fff"/>
+          <!-- Zigzag squiggle across the gap -->
+          <path d="M 610 114 L 620 109 L 630 117 L 640 109 L 650 117 L 660 109 L 670 117 L 680 114" stroke="#065F46" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <!-- £12,000+ label above bar -->
+          <text x="645" y="70" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">&pound;12,000+</text>
+          <!-- 60× callout -->
+          <text x="645" y="54" font-size="10" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">60&times; the bottom decile</text>
+
+          <!-- X-axis decile labels -->
+          <text x="165" y="318" font-size="11" font-weight="700" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">Bottom 10%</text>
+          <text x="285" y="318" font-size="11" font-weight="700" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">Lower-mid</text>
+          <text x="405" y="318" font-size="11" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">Middle</text>
+          <text x="525" y="318" font-size="11" font-weight="700" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">Upper-mid</text>
+          <text x="645" y="318" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Top 1%</text>
+
+          <!-- Annotation under x-axis -->
+          <text x="360" y="345" font-size="10.5" font-style="italic" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Y-axis broken between &pound;2,000 and &pound;12,000 so the bottom four bars stay readable.</text>
+        </g>
+
+        <!-- LAYER 2: gain as % of household income (linear 0-6%) -->
+        <g class="idl-percent" style="display:none">
+          <text x="360" y="22" font-size="13" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Real-income gain &mdash; as % of household income</text>
+          <text x="20" y="180" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle" transform="rotate(-90 20 180)">% gain</text>
+
+          <!-- Axes -->
+          <line x1="80" y1="60" x2="80" y2="300" stroke="#0B1426" stroke-width="1.4"/>
+          <line x1="80" y1="300" x2="700" y2="300" stroke="#0B1426" stroke-width="1.4"/>
+
+          <!-- Gridlines 1% to 5% -->
+          <line x1="80" y1="260" x2="700" y2="260" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <line x1="80" y1="220" x2="700" y2="220" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <line x1="80" y1="180" x2="700" y2="180" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <line x1="80" y1="140" x2="700" y2="140" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <line x1="80" y1="100" x2="700" y2="100" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+          <!-- Y-axis tick labels -->
+          <text x="73" y="304" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">0%</text>
+          <text x="73" y="264" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">1%</text>
+          <text x="73" y="224" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">2%</text>
+          <text x="73" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">3%</text>
+          <text x="73" y="144" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">4%</text>
+          <text x="73" y="104" font-size="10" fill="#475569" font-family="Inter,sans-serif" text-anchor="end">5%</text>
+
+          <!-- Bar 1: 1.7% (h=68) -->
+          <rect x="130" y="232" width="70" height="68" fill="#E11D48" stroke="#9F1239" stroke-width="0.8"/>
+          <text x="165" y="225" font-size="13" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">1.7%</text>
+          <!-- Bar 2: 2.8% (h=112) -->
+          <rect x="250" y="188" width="70" height="112" fill="#F59E0B" stroke="#B45309" stroke-width="0.8"/>
+          <text x="285" y="181" font-size="13" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">2.8%</text>
+          <!-- Bar 3: 3.0% (h=120) -->
+          <rect x="370" y="180" width="70" height="120" fill="#2563EB" stroke="#1E3A8A" stroke-width="0.8"/>
+          <text x="405" y="173" font-size="13" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">3.0%</text>
+          <!-- Bar 4: 3.3% (h=132) -->
+          <rect x="490" y="168" width="70" height="132" fill="#8B5CF6" stroke="#5B21B6" stroke-width="0.8"/>
+          <text x="525" y="161" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">3.3%</text>
+          <!-- Bar 5: 4.8% (h=192) -->
+          <rect x="610" y="108" width="70" height="192" fill="#16A34A" stroke="#065F46" stroke-width="0.8"/>
+          <text x="645" y="101" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">4.8%</text>
+
+          <!-- X-axis decile labels -->
+          <text x="165" y="318" font-size="11" font-weight="700" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">Bottom 10%</text>
+          <text x="285" y="318" font-size="11" font-weight="700" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">Lower-mid</text>
+          <text x="405" y="318" font-size="11" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">Middle</text>
+          <text x="525" y="318" font-size="11" font-weight="700" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">Upper-mid</text>
+          <text x="645" y="318" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Top 1%</text>
+
+          <!-- Annotation under x-axis -->
+          <text x="360" y="345" font-size="10.5" font-style="italic" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Same growth year scaled against each decile&rsquo;s typical household income. Proportional gap is smaller but still rich-favouring.</text>
+        </g>
+
+      </svg>
+    </div>
+  `,
+
   /* Card 5 — Sustainability trade-off, 3 mutually-exclusive views.
      Each layer (.idl-kuznets / .idl-natural / .idl-carbon) is a
      complete mini-chart shown by explicit `show: ['idl-X']` per view.

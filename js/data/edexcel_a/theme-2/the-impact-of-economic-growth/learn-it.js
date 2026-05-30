@@ -90,15 +90,44 @@ window.ECONOS_TOPIC = {
       ledeStyle: 'plain',
       tip: { icon: '\u{1F465}', tone: 'green', text: 'Growth raises average real income. Whether it raises YOUR real income depends on where you sit in the distribution.' },
 
+      interactiveDiagram: {
+        svgKey: 'incomeSpectrumChart',
+        wide: true,
+        maxWidth: '100%',
+        label: 'Same growth year, two lenses',
+        emoji: '\u{1F4B0}',
+        layers: ['idl-pounds', 'idl-percent'],
+        views: [
+          {
+            label: '\u{00A3} per year (absolute)',
+            tone: 'blue',
+            show: ['idl-pounds'],
+            head: 'In raw cash terms the gap is enormous',
+            body: 'A 2% growth year delivers roughly &pound;200 to the bottom decile and &pound;12,000+ to the top 1% &mdash; a 60&times; ratio. The Y-axis is broken between &pound;2,000 and &pound;12,000 so the lower four bars stay readable next to the Top-1% bar.',
+            analysis: '<strong>Why the absolute gap is so large:</strong> growth lifts incomes via wages, but the top decile captures additional gains via capital &mdash; equity returns, owner-occupier housing wealth, business profits. The bottom decile is wage-only AND wage-fragile (zero-hours, part-time). UK 2010-19: the top-1% share of national income rose 12% &rarr; 14% even as headline GDP per capita grew.'
+          },
+          {
+            label: '% of household income (proportional)',
+            tone: 'purple',
+            show: ['idl-percent'],
+            head: 'Even proportionally, the top wins',
+            body: 'Scale each gain against typical household income at that decile and the ratios become 1.7% at the bottom vs 4.8% at the top. Tighter than the absolute view, but still tilts upward.',
+            analysis: '<strong>Why even the proportional gap favours the top:</strong> the bottom decile spends 70%+ on essentials &mdash; food, energy, rent &mdash; whose prices rise faster than headline CPI, so the real purchasing-power gain is even smaller than the raw % suggests. The top decile, with capital income, also benefits from asset-price inflation (house prices, equities) which CPI ignores. A strong evaluation move in essays: cite both lenses.'
+          }
+        ]
+      },
+
+      causesFirst: true,
       causesLabel: 'The UK income spectrum',
       causesEmoji: '\u{2696}\u{FE0F}',
       causesCols: 5,
+      causesStyle: 'numbered',
       causes: [
-        { tone: 'rose',   icon: '\u{1F33E}', head: 'Bottom 10%',     body: '<strong>Real-income gain: ~£200/yr.</strong> Spends 70%+ on essentials – food, energy, rent. Hit hardest by inflation that often accompanies growth. UK 2010-19: real wages at the bottom rose just 4% across the decade.' },
-        { tone: 'amber',  icon: '\u{1F45F}', head: 'Lower-middle',   body: '<strong>~£500/yr.</strong> Some discretionary spending. Sensitive to childcare costs, NI thresholds. Universal Credit taper means growth-driven wage gains are partly clawed back.' },
-        { tone: 'blue',   icon: '\u{1F3E0}', head: 'Middle',         body: '<strong>~£900/yr.</strong> Mortgage holders – interest rate sensitivity dominates. The "squeezed middle" of the 2010s saw real-terms incomes stagnate even when GDP grew.' },
-        { tone: 'purple', icon: '\u{2708}\u{FE0F}', head: 'Upper-middle', body: '<strong>~£1,800/yr.</strong> Saving and investment exposure. Equity gains compound growth into wealth. Pension contributions rise with salary.' },
-        { tone: 'green',  icon: '\u{1F3DB}\u{FE0F}', head: 'Top 1%',  body: '<strong>~£12,000+/yr.</strong> Capital gains often outpace wages. Owner-occupier housing wealth compounds. UK 2010-19: top-1% share of national income rose from 12% to 14%.' }
+        { tone: 'rose',   icon: '\u{1F33E}', head: 'Bottom 10%',     body: 'Spends 70%+ on essentials &mdash; food, energy, rent &mdash; whose prices rise faster than headline CPI. Hit hardest by inflation that often accompanies growth. UK 2010-19: real wages at the bottom rose just 4% across the whole decade.' },
+        { tone: 'amber',  icon: '\u{1F45F}', head: 'Lower-middle',   body: 'Some discretionary spending appears, but childcare costs and the Universal Credit taper claw back a chunk of any growth-driven wage gain.' },
+        { tone: 'blue',   icon: '\u{1F3E0}', head: 'Middle',         body: 'Mortgage holders &mdash; interest-rate sensitivity dominates. The "squeezed middle" of the 2010s saw real-terms incomes stagnate even when GDP grew.' },
+        { tone: 'purple', icon: '\u{2708}\u{FE0F}', head: 'Upper-middle', body: 'Saving and investment exposure starts to matter. Equity gains compound growth into wealth. Pension contributions rise with salary.' },
+        { tone: 'green',  icon: '\u{1F3DB}\u{FE0F}', head: 'Top 1%',  body: 'Capital gains often outpace wages. Owner-occupier housing wealth compounds. UK 2010-19: top-1% share of national income rose from 12% to 14%.' }
       ],
 
       bottomTip: { tone: 'purple', icon: '\u{1F4C8}', text: '<strong>Kuznets-curve intuition:</strong> in fast-developing economies, inequality typically widens before it narrows. The UK is well past the peak of its Kuznets curve — but that doesn’t mean growth is currently lowering inequality. Distributional outcome depends on the type of growth, not just its rate.' },

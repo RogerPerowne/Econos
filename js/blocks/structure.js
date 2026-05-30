@@ -37,7 +37,7 @@
           ? '<div class="econ-spectrum__band-label">' + U.escapeHtml(band.label) + '</div>'
           : '';
         var bodyHtml = band.body
-          ? '<div class="econ-spectrum__band-body text-fit-2">' + U.escapeHtml(band.body) + '</div>'
+          ? '<div class="econ-spectrum__band-body text-fit-2">' + band.body + '</div>'
           : '';
         return (
           '<div class="econ-spectrum__band ' +
@@ -83,12 +83,12 @@
           : '';
         var causeHtml = c.cause
           ? '<div class="econ-case__row"><span class="econ-case__row-label">Cause</span><span class="econ-case__row-value text-fit-2">' +
-            U.escapeHtml(c.cause) +
+            c.cause +
             '</span></div>'
           : '';
         var outcomeHtml = c.outcome
           ? '<div class="econ-case__row"><span class="econ-case__row-label">Outcome</span><span class="econ-case__row-value text-fit-2">' +
-            U.escapeHtml(c.outcome) +
+            c.outcome +
             '</span></div>'
           : '';
         var verdictHtml = c.verdict

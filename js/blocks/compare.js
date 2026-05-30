@@ -191,7 +191,8 @@
       var toneCls = U.toneClass(s.tone, fallbackTone);
       var icon = s.icon ? U.renderIcon(s.icon, 'disc') : '';
       var head = s.head != null ? '<h3 class="pair__head">' + U.escapeHtml(s.head) + '</h3>' : '';
-      var body = s.body != null ? '<p class="pair__body text-fit-1">' + U.escapeHtml(s.body) + '</p>' : '';
+      // body unescaped — trusted dev-authored inline HTML (<strong>, <em>, <sub>).
+      var body = s.body != null ? '<p class="pair__body text-fit-1">' + s.body + '</p>' : '';
       return (
         '<article class="pair__side ' + toneCls + '" data-overflow-watch>' +
           '<div class="pair__side-top">' + icon + head + '</div>' +

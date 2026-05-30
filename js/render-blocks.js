@@ -101,7 +101,11 @@
 
   BLOCK_RENDERERS.calloutStrip = function calloutStrip(block) {
     const tone = toneClass(block.tone, 'blue');
-    return `<div class="calloutStrip ${tone}" data-overflow-watch>${renderIcon(block.icon, 'disc')}<div class="calloutStrip__text text-fit-1">${escapeHtml(block.text || '')}</div></div>`;
+    // text passes through unescaped — authored data files are trusted (committed
+    // JS code) and routinely embed inline HTML (<strong>, <em>, <sub>, <br>).
+    // Matches the legacy ad-interactive renderer's behaviour. Same convention
+    // applies to bigIdea.text, examEdge.text, warning.text, tile.body etc below.
+    return `<div class="calloutStrip ${tone}" data-overflow-watch>${renderIcon(block.icon, 'disc')}<div class="calloutStrip__text text-fit-1">${block.text || ''}</div></div>`;
   };
 
   BLOCK_RENDERERS.tip = BLOCK_RENDERERS.calloutStrip;
@@ -148,23 +152,25 @@
   BLOCK_RENDERERS.tile = function tile(block) {
     const tone = toneClass(block.tone, 'slate');
     const icon = renderIcon(block.icon, 'square');
+    // body unescaped (see calloutStrip note); head stays escaped — heads are
+    // tight inline labels where stray brackets break layout.
     const body = block.body
-      ? `<div class="econ-tile__body text-fit-1" data-overflow-watch>${escapeHtml(block.body)}</div>`
+      ? `<div class="econ-tile__body text-fit-1" data-overflow-watch>${block.body}</div>`
       : '';
     return `<article class="econ-tile ${tone}" data-overflow-watch><div class="econ-tile__top">${icon}<h3 class="econ-tile__head text-fit-1">${escapeHtml(block.head || '')}</h3></div>${body}</article>`;
   };
 
   BLOCK_RENDERERS.bigIdea = function bigIdea(block) {
-    return `<div class="big-idea text-fit-1" data-overflow-watch>${escapeHtml(block.text || '')}</div>`;
+    return `<div class="big-idea text-fit-1" data-overflow-watch>${block.text || ''}</div>`;
   };
 
   BLOCK_RENDERERS.examEdge = function examEdge(block) {
     const title = escapeHtml(block.title || 'Exam edge');
-    return `<aside class="exam-edge" data-overflow-watch><div class="exam-edge__title">${title}</div><div class="exam-edge__text text-fit-1">${escapeHtml(block.text || '')}</div></aside>`;
+    return `<aside class="exam-edge" data-overflow-watch><div class="exam-edge__title">${title}</div><div class="exam-edge__text text-fit-1">${block.text || ''}</div></aside>`;
   };
 
   BLOCK_RENDERERS.warning = function warning(block) {
-    return `<aside class="warning" data-overflow-watch>${renderIcon(block.icon || '!', 'disc')}<div class="warning__text text-fit-1">${escapeHtml(block.text || '')}</div></aside>`;
+    return `<aside class="warning" data-overflow-watch>${renderIcon(block.icon || '!', 'disc')}<div class="warning__text text-fit-1">${block.text || ''}</div></aside>`;
   };
 
   const VALID_DENSITIES = new Set(['airy', 'standard', 'compact', 'exam']);

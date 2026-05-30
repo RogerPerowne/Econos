@@ -185,7 +185,7 @@
         ? '<span class="tline__title">' + U.escapeHtml(ev.title) + '</span>'
         : '';
       var body = ev.body != null
-        ? '<p class="tline__body text-fit-1">' + U.escapeHtml(ev.body) + '</p>'
+        ? '<p class="tline__body text-fit-1">' + ev.body + '</p>'
         : '';
       return (
         '<li class="tline__item ' + toneClass + '">' +
@@ -237,7 +237,7 @@
         ? U.renderIcon(step.icon, 'disc')
         : '<span class="step-chain__badge" aria-hidden="true">' + (i + 1) + '</span>';
       var head = step.head != null ? '<h3 class="step-chain__head">' + U.escapeHtml(step.head) + '</h3>' : '';
-      var body = step.body != null ? '<p class="step-chain__body text-fit-1">' + U.escapeHtml(step.body) + '</p>' : '';
+      var body = step.body != null ? '<p class="step-chain__body text-fit-1">' + step.body + '</p>' : '';
       return (
         '<li class="step-chain__step ' + toneCls + '" data-overflow-watch>' +
           badge + head + body +

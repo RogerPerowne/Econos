@@ -44,59 +44,30 @@ window.ECONOS_TOPIC = {
       lede: 'Investment is firms\' spending on capital goods that help produce future output.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Investment means spending on capital goods – not buying shares or bonds.' },
-
-      causesFirst: true,
-      causesLabel: 'THE BIG IDEA',
-      causesEmoji: '💡',
-      causes: [
-        {
-          tone: 'blue', icon: '🏭', head: 'Plant and machinery',
-          body: 'Equipment and tools used in production.'
-        },
-        {
-          tone: 'amber', icon: '🏢', head: 'Buildings',
-          body: 'Factories, offices and infrastructure.'
-        },
-        {
-          tone: 'purple', icon: '💻', head: 'Intangibles: IT, software, R&amp;D',
-          body: 'Knowledge, systems and innovation.'
-        }
-      ],
-
-      summaryRow: [
-        { tone: 'rose', icon: '🚫', title: 'NOT financial investment',
-          text: 'Shares and bonds are <strong>not</strong> investment in this topic. This is about <strong>real investment</strong> by firms – not financial assets.' }
-      ],
-
-      flowTitle: 'GROSS VS NET',
-      flowEmoji: '⚖️',
-      flowSep: ['−', '='],
-      flow: [
-        { tone: 'blue',  icon: '🛒',  title: 'Gross investment',  sub: 'All new capital goods purchased in a period.' },
-        { tone: 'amber', icon: '⚙️',  title: 'Depreciation',      sub: 'The wearing out, ageing or obsolescence of existing capital.' },
-        { tone: 'green', icon: '📈',  title: 'Net investment',    sub: 'The amount that adds to the capital stock.' }
-      ],
-
-      whyItMatters: {
-        title: 'WHY INVESTMENT MATTERS',
-        emoji: '📊',
-        items: [
-          { tone: 'blue',   icon: '🚀', label: 'Higher productivity',    text: 'Better capital makes workers more productive and lowers costs.' },
-          { tone: 'amber',  icon: '🏭', label: 'More productive capacity', text: 'More capital means the economy can produce more goods and services.' },
-          { tone: 'purple', icon: '🌐', label: 'Stronger long-run growth', text: 'Sustained investment is essential for rising living standards over time.' }
-        ]
-      },
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Investment adds to the economy\'s capital stock and helps shift productive capacity upward over time.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Always distinguish real investment from financial investment, and distinguish gross from net investment when discussing growth.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Investment means spending on capital goods – not buying shares or bonds.' },
+        { type: 'sectionHeader', icon: '💡', label: 'THE BIG IDEA' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '🏭', head: 'Plant and machinery',          body: 'Equipment and tools used in production.' },
+          { type: 'tile', tone: 'amber',  icon: '🏢', head: 'Buildings',                    body: 'Factories, offices and infrastructure.' },
+          { type: 'tile', tone: 'purple', icon: '💻', head: 'Intangibles: IT, software, R&D', body: 'Knowledge, systems and innovation.' }
+        ]},
+        { type: 'calloutStrip', tone: 'rose', icon: '🚫', text: 'NOT financial investment — Shares and bonds are not investment in this topic. This is about real investment by firms – not financial assets.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'GROSS VS NET' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Gross investment', detail: 'All new capital goods purchased in a period.' },
+          { label: 'Depreciation',     detail: 'The wearing out, ageing or obsolescence of existing capital.' },
+          { label: 'Net investment',   detail: 'The amount that adds to the capital stock.' }
+        ]},
+        { type: 'sectionHeader', icon: '📊', label: 'WHY INVESTMENT MATTERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '🚀', head: 'Higher productivity',    body: 'Better capital makes workers more productive and lowers costs.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'More productive capacity', body: 'More capital means the economy can produce more goods and services.' },
+          { type: 'tile', tone: 'purple', icon: '🌐', head: 'Stronger long-run growth', body: 'Sustained investment is essential for rising living standards over time.' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: Investment adds to the economy\'s capital stock and helps shift productive capacity upward over time.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always distinguish real investment from financial investment, and distinguish gross from net investment when discussing growth.' }
+      ]
     },
 
     /* ── CARD 2 ── Gross vs Net Investment ────────────────────────── */
@@ -108,63 +79,30 @@ window.ECONOS_TOPIC = {
       lede: 'All capital spending is gross investment, but only net investment grows the capital stock.',
       ledeStyle: 'plain',
 
-      tip: { icon: '🔒', tone: 'green', text: 'Net investment is the part that actually grows productive capacity.' },
-
-      flowTitle: 'THE SPLIT',
-      flowEmoji: '⚖️',
-      flowSep: ['−', '='],
-      flow: [
-        { tone: 'blue',  icon: '🛒', title: 'Gross investment', sub: 'All new capital goods purchased in a period.' },
-        { tone: 'amber', icon: '⚙️', title: 'Depreciation',     sub: 'The wearing out, ageing or obsolescence of existing capital.' },
-        { tone: 'green', icon: '📈', title: 'Net investment',   sub: 'The amount that adds to the capital stock.' }
-      ],
-
-      causesLabel: 'WORKED EXAMPLE',
-      causesEmoji: '🧮',
-      causes: [
-        { tone: 'blue',  icon: '🛒', head: 'Gross investment',
-          body: '<div style="font-size:30px;font-weight:900;color:#1E40AF;text-align:center;margin:6px 0 10px;">£100bn</div>' +
-                '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin:0 0 10px;">' +
-                Array(50).fill('<div style="aspect-ratio:1;background:#2563EB;border-radius:2px;"></div>').join('') +
-                '</div>' +
-                '<div style="font-size:12px;color:#1E3A8A;text-align:center;">All new capital goods purchased in the period.</div>' },
-        { tone: 'amber', icon: '⚙️', head: 'Depreciation',
-          body: '<div style="font-size:30px;font-weight:900;color:#B45309;text-align:center;margin:6px 0 10px;">£40bn</div>' +
-                '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin:0 0 10px;">' +
-                Array(20).fill('<div style="aspect-ratio:1;background:#F59E0B;border-radius:2px;"></div>').join('') +
-                '</div>' +
-                '<div style="font-size:12px;color:#92400E;text-align:center;">Replacing worn-out capital – maintains, does not grow.</div>' },
-        { tone: 'green', icon: '📈', head: 'Net investment',
-          body: '<div style="font-size:30px;font-weight:900;color:#047857;text-align:center;margin:6px 0 10px;">£60bn</div>' +
-                '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin:0 0 10px;">' +
-                Array(30).fill('<div style="aspect-ratio:1;background:#10B981;border-radius:2px;"></div>').join('') +
-                '</div>' +
-                '<div style="font-size:12px;color:#065F46;text-align:center;">Adds to the capital stock – grows productive capacity.</div>' }
-      ],
-
-      whyItMatters: {
-        title: 'WHY NET MATTERS',
-        emoji: '📊',
-        items: [
-          { tone: 'green',  icon: '📈', label: 'Capital stock growth', text: 'Net investment increases the total stock of capital available for production.' },
-          { tone: 'blue',   icon: '🚀', label: 'Higher productivity',  text: 'More capital per worker means more output with the same effort.' },
-          { tone: 'purple', icon: '🌐', label: 'Stronger long-run growth', text: 'Sustained net investment builds the foundation for future economic growth.' }
-        ]
-      },
-
-      summaryRow: [
-        { tone: 'amber', icon: '⚠️', title: 'Watch the trap', text: 'Depreciation maintains existing capital – it keeps the machine running. Net investment is what adds to it – it makes the machine bigger and better.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Only net investment expands productive capacity; depreciation simply maintains it.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'If depreciation is high, big gross investment may still leave little or no increase in the capital stock.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '🔒', text: 'Net investment is the part that actually grows productive capacity.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'THE SPLIT' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Gross investment', detail: 'All new capital goods purchased in a period.' },
+          { label: 'Depreciation',     detail: 'The wearing out, ageing or obsolescence of existing capital.' },
+          { label: 'Net investment',   detail: 'The amount that adds to the capital stock.' }
+        ]},
+        { type: 'sectionHeader', icon: '🧮', label: 'WORKED EXAMPLE' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: '🛒', head: 'Gross investment — £100bn', body: 'All new capital goods purchased in the period.' },
+          { type: 'tile', tone: 'amber', icon: '⚙️', head: 'Depreciation — £40bn',     body: 'Replacing worn-out capital – maintains, does not grow.' },
+          { type: 'tile', tone: 'green', icon: '📈', head: 'Net investment — £60bn',   body: 'Adds to the capital stock – grows productive capacity.' }
+        ]},
+        { type: 'sectionHeader', icon: '📊', label: 'WHY NET MATTERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'Capital stock growth',    body: 'Net investment increases the total stock of capital available for production.' },
+          { type: 'tile', tone: 'blue',   icon: '🚀', head: 'Higher productivity',     body: 'More capital per worker means more output with the same effort.' },
+          { type: 'tile', tone: 'purple', icon: '🌐', head: 'Stronger long-run growth', body: 'Sustained net investment builds the foundation for future economic growth.' }
+        ]},
+        { type: 'calloutStrip', tone: 'amber', icon: '⚠️', text: 'Watch the trap — Depreciation maintains existing capital – it keeps the machine running. Net investment is what adds to it – it makes the machine bigger and better.' },
+        { type: 'bigIdea', text: 'Big idea: Only net investment expands productive capacity; depreciation simply maintains it.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'If depreciation is high, big gross investment may still leave little or no increase in the capital stock.' }
+      ]
     },
 
     /* ── CARD 3 ── The Accelerator Theory ─────────────────────────── */
@@ -176,62 +114,35 @@ window.ECONOS_TOPIC = {
       lede: 'Investment depends on the rate of change of output, not its level.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Small changes in growth can cause big changes in investment.' },
-
-      flowTitle: 'WHEN OUTPUT GROWTH SPEEDS UP',
-      flowEmoji: '💡',
-      flowSep: '→',
-      flow: [
-        { tone: 'green', icon: '📈', title: 'Output expectations rise', sub: 'Firms expect to sell more in the future.' },
-        { tone: 'green', icon: '🏭', title: 'Firms want more capital',  sub: 'They invest to expand production capacity.' },
-        { tone: 'green', icon: '📊', title: 'Investment rises',         sub: 'More spending on plant and equipment.' }
-      ],
-
-      flow2Title: 'WHEN OUTPUT GROWTH SLOWS DOWN',
-      flow2Emoji: '⚠️',
-      flow2Sep: '→',
-      flow2: [
-        { tone: 'rose', icon: '📉', title: 'Output expectations fall', sub: 'Firms expect to sell less in the future.' },
-        { tone: 'rose', icon: '🏭', title: 'Firms want less capital',  sub: 'They postpone or cancel expansion.' },
-        { tone: 'rose', icon: '📊', title: 'Investment falls',         sub: 'Less spending on plant and equipment.' }
-      ],
-
-      comparisonTable: {
-        title: 'WORKED EXAMPLE',
-        emoji: '🧮',
-        columns: ['Period 1 – High growth', 'Period 2 – Slower growth'],
-        columnTones: ['blue', 'purple'],
-        rows: [
-          { label: 'Expected output growth',           values: ['+5%',         '+2%'] },
-          { label: 'Output level (index, base = 100)', values: ['100 → 105',   '105 → 107.1'] },
-          { label: 'Investment spending (£ bn)',       values: ['20',          '14'] }
-        ]
-      },
-
-      summaryRow: [
-        { tone: 'amber', icon: '⚖️', title: 'It depends on the change, not the level',
-          text: 'Output still rises (105 → 107.1), but investment falls in absolute terms (20 → 14). The accelerator amplifies small growth changes into big investment swings.' }
-      ],
-
-      whyItMatters: {
-        title: 'WHY INVESTMENT IS VOLATILE',
-        emoji: '⚡',
-        items: [
-          { tone: 'blue',   icon: '🧭', label: 'Forward-looking', text: 'Firms base decisions on expected changes in demand, not current levels.' },
-          { tone: 'amber',  icon: '⚡', label: 'Amplification',   text: 'Small shifts in growth expectations lead to large adjustments in capital spending.' },
-          { tone: 'green',  icon: '🏗️', label: 'Lumpy capital',   text: 'Machines and buildings are expensive and indivisible – firms adjust in big steps.' }
-        ]
-      },
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Investment is driven by the change in expected output, so it is the most volatile component of AD.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Always explain that investment depends on the rate of change of output, not its level.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Small changes in growth can cause big changes in investment.' },
+        { type: 'sectionHeader', icon: '💡', label: 'WHEN OUTPUT GROWTH SPEEDS UP' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Output expectations rise', detail: 'Firms expect to sell more in the future.' },
+          { label: 'Firms want more capital',  detail: 'They invest to expand production capacity.' },
+          { label: 'Investment rises',         detail: 'More spending on plant and equipment.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚠️', label: 'WHEN OUTPUT GROWTH SLOWS DOWN' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Output expectations fall', detail: 'Firms expect to sell less in the future.' },
+          { label: 'Firms want less capital',  detail: 'They postpone or cancel expansion.' },
+          { label: 'Investment falls',         detail: 'Less spending on plant and equipment.' }
+        ]},
+        { type: 'sectionHeader', icon: '🧮', label: 'WORKED EXAMPLE' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   head: 'Period 1 – High growth',   body: 'Expected output growth: +5%\nOutput level (index, base = 100): 100 → 105\nInvestment spending: £20bn' },
+          { type: 'tile', tone: 'purple', head: 'Period 2 – Slower growth', body: 'Expected output growth: +2%\nOutput level (index, base = 100): 105 → 107.1\nInvestment spending: £14bn' }
+        ]},
+        { type: 'calloutStrip', tone: 'amber', icon: '⚖️', text: 'It depends on the change, not the level — Output still rises (105 → 107.1), but investment falls in absolute terms (20 → 14). The accelerator amplifies small growth changes into big investment swings.' },
+        { type: 'sectionHeader', icon: '⚡', label: 'WHY INVESTMENT IS VOLATILE' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: '🧭', head: 'Forward-looking', body: 'Firms base decisions on expected changes in demand, not current levels.' },
+          { type: 'tile', tone: 'amber', icon: '⚡', head: 'Amplification',   body: 'Small shifts in growth expectations lead to large adjustments in capital spending.' },
+          { type: 'tile', tone: 'green', icon: '🏗️', head: 'Lumpy capital',   body: 'Machines and buildings are expensive and indivisible – firms adjust in big steps.' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: Investment is driven by the change in expected output, so it is the most volatile component of AD.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always explain that investment depends on the rate of change of output, not its level.' }
+      ]
     },
 
     /* ── CARD 4 ── Determinants of Investment ─────────────────────── */
@@ -243,55 +154,34 @@ window.ECONOS_TOPIC = {
       lede: 'Investment rises or falls when key drivers change firms\' expected returns or ability to invest.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Investment shifts when expected return, confidence or funding conditions change.' },
-
-      causesFirst: true,
-      causesLabel: 'THE SIX DRIVERS',
-      causesEmoji: '📊',
-      causesStyle: 'numbered',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue', icon: '%', head: 'Interest rates',
-          body: 'Lower borrowing costs make projects more attractive.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #93C5FD;font-size:12px;color:#1E40AF;font-weight:700;">↑ Lower rates boost investment.</div>' },
-        { tone: 'amber', icon: '😊', head: 'Business confidence / animal spirits',
-          body: 'Optimism about the future encourages firms to expand.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #FCD34D;font-size:12px;color:#B45309;font-weight:700;">↑ Higher confidence boosts investment.</div>' },
-        { tone: 'purple', icon: '💰', head: 'Corporate profits and retained earnings',
-          body: 'Stronger profits and cash flows fund more investment.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #C4B5FD;font-size:12px;color:#6D28D9;font-weight:700;">↑ Higher profits boost investment.</div>' },
-        { tone: 'green', icon: '📈', head: 'Demand expectations',
-          body: 'Higher expected sales and orders justify more capacity and capital.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #6EE7B7;font-size:12px;color:#047857;font-weight:700;">↑ Stronger demand boosts investment.</div>' },
-        { tone: 'purple', icon: '💡', head: 'Technology / innovation',
-          body: 'New technologies lower costs and create new opportunities.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #C4B5FD;font-size:12px;color:#6D28D9;font-weight:700;">↑ Innovation boosts investment and productivity.</div>' },
-        { tone: 'rose', icon: '🏛️', head: 'Government policy and taxes',
-          body: 'Incentives and stability help; higher taxes or uncertainty hold it back.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #FDA4AF;font-size:12px;color:#BE123C;font-weight:700;">↓ Uncertainty or higher taxes reduce investment.</div>' }
-      ],
-
-      pairLabel: 'FAST CLASSIFIER',
-      pairEmoji: '⚡',
-      left: {
-        tone: 'green', icon: '⬆️', iconStyle: 'circle',
-        label: 'What tends to raise investment',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;">Lower interest rates, higher confidence, strong profits, stronger demand, innovation, supportive policy and tax incentives.</p>'
-      },
-      right: {
-        tone: 'rose', icon: '⬇️', iconStyle: 'circle',
-        label: 'What tends to reduce investment',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;">Higher interest rates, weak confidence, weak profits, weak demand, lack of innovation, uncertainty, or higher taxes.</p>'
-      },
-
-      summaryRow: [
-        { tone: 'green', icon: '👁️', title: 'Synthesis',
-          text: 'Investment is forward-looking – it responds to expectations today about returns, risks and conditions tomorrow.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Investment depends on expected returns and the ability to finance – driven by confidence, conditions, costs and policy.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'When a driver changes, ask how it affects expected returns or the cost of funding – then link the direction of change to investment.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Investment shifts when expected return, confidence or funding conditions change.' },
+        { type: 'sectionHeader', icon: '📊', label: 'THE SIX DRIVERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '%',  head: 'Interest rates',
+            body: 'Lower borrowing costs make projects more attractive.\n\n↑ Lower rates boost investment.' },
+          { type: 'tile', tone: 'amber',  icon: '😊', head: 'Business confidence / animal spirits',
+            body: 'Optimism about the future encourages firms to expand.\n\n↑ Higher confidence boosts investment.' },
+          { type: 'tile', tone: 'purple', icon: '💰', head: 'Corporate profits and retained earnings',
+            body: 'Stronger profits and cash flows fund more investment.\n\n↑ Higher profits boost investment.' },
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'Demand expectations',
+            body: 'Higher expected sales and orders justify more capacity and capital.\n\n↑ Stronger demand boosts investment.' },
+          { type: 'tile', tone: 'purple', icon: '💡', head: 'Technology / innovation',
+            body: 'New technologies lower costs and create new opportunities.\n\n↑ Innovation boosts investment and productivity.' },
+          { type: 'tile', tone: 'rose',   icon: '🏛️', head: 'Government policy and taxes',
+            body: 'Incentives and stability help; higher taxes or uncertainty hold it back.\n\n↓ Uncertainty or higher taxes reduce investment.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚡', label: 'FAST CLASSIFIER' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '⬆️', head: 'What tends to raise investment',
+            body: 'Lower interest rates, higher confidence, strong profits, stronger demand, innovation, supportive policy and tax incentives.' },
+          { type: 'tile', tone: 'rose',  icon: '⬇️', head: 'What tends to reduce investment',
+            body: 'Higher interest rates, weak confidence, weak profits, weak demand, lack of innovation, uncertainty, or higher taxes.' }
+        ]},
+        { type: 'calloutStrip', tone: 'green', icon: '👁️', text: 'Synthesis — Investment is forward-looking – it responds to expectations today about returns, risks and conditions tomorrow.' },
+        { type: 'bigIdea', text: 'Big idea: Investment depends on expected returns and the ability to finance – driven by confidence, conditions, costs and policy.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'When a driver changes, ask how it affects expected returns or the cost of funding – then link the direction of change to investment.' }
+      ]
     },
 
     /* ── CARD 5 ── The MEC and Investment Decisions ───────────────── */
@@ -303,57 +193,26 @@ window.ECONOS_TOPIC = {
       lede: 'Firms invest while the expected return on capital exceeds the interest rate.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Firms invest while MEC is above the interest rate.' },
-
-      flowChart: {
-        svgKey: 'mecDiagram',
-        label: 'THE MEC DIAGRAM',
-        emoji: '📈',
-        caption: 'Equilibrium investment Q* is set where MEC crosses the interest rate. Higher rates lower Q*; a rightward shift in MEC raises Q*.'
-      },
-
-      causesLabel: 'STEP THROUGH IT',
-      causesEmoji: '📖',
-      causesStyle: 'numbered',
-      causes: [
-        { tone: 'blue',  icon: '⚖️', head: 'Base equilibrium', body: 'MEC crosses the interest rate at Q*.' },
-        { tone: 'amber', icon: '📈', head: 'Rates rise',       body: 'The interest rate rises to r₂, lowering equilibrium investment to Q₂.' },
-        { tone: 'green', icon: '💡', head: 'MEC shifts right', body: 'Higher optimism or better technology shifts MEC right to MEC₂, raising investment to Q₃.' }
-      ],
-
-      pairLabel: 'WHAT HAPPENS WHEN…',
-      pairEmoji: '❓',
-      left: {
-        tone: 'amber', icon: '📈', iconStyle: 'circle',
-        label: 'Interest rates rise',
-        text: '<p style="margin:0 0 8px;font-size:13px;color:#0B1426;">The interest rate line moves up.</p>' +
-              '<div style="border-top:1px dashed #FCD34D;margin:8px 0;"></div>' +
-              '<p style="margin:0 0 10px;font-size:13.5px;color:#B45309;font-weight:800;">↓ MEC crosses at a lower Q → investment falls.</p>' +
-              '<div style="background:#FFFBEB;border:1px dashed #FCD34D;border-radius:8px;padding:8px 12px;font-size:12px;color:#92400E;text-align:center;">Higher borrowing cost → fewer projects are worthwhile.</div>'
-      },
-      right: {
-        tone: 'green', icon: '💡', iconStyle: 'circle',
-        label: 'Animal spirits / tech improve',
-        text: '<p style="margin:0 0 8px;font-size:13px;color:#0B1426;">The MEC curve shifts right.</p>' +
-              '<div style="border-top:1px dashed #6EE7B7;margin:8px 0;"></div>' +
-              '<p style="margin:0 0 10px;font-size:13.5px;color:#047857;font-weight:800;">↑ MEC crosses at a higher Q → investment rises.</p>' +
-              '<div style="background:#ECFDF5;border:1px dashed #6EE7B7;border-radius:8px;padding:8px 12px;font-size:12px;color:#065F46;text-align:center;">Higher expected returns → more projects are worthwhile.</div>'
-      },
-
-      summaryRow: [
-        { tone: 'blue', icon: '✅', title: 'The decision rule',
-          text: 'Invest if <strong>MEC &gt; interest rate.</strong> &nbsp;Do not invest if <strong>MEC &lt; interest rate.</strong> &nbsp;At equilibrium: <strong>MEC = interest rate.</strong>' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Firms invest up to the point where the expected return on the next unit of capital (MEC) equals the interest rate – the cost of borrowing.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Always link the diagram to the story: higher rates raise borrowing cost and reduce investment; better expectations or technology raise MEC and boost investment.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Firms invest while MEC is above the interest rate.' },
+        { type: 'diagram', svgKey: 'mecDiagram', caption: 'Equilibrium investment Q* is set where MEC crosses the interest rate. Higher rates lower Q*; a rightward shift in MEC raises Q*.' },
+        { type: 'sectionHeader', icon: '📖', label: 'STEP THROUGH IT' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: '⚖️', head: 'Base equilibrium', body: 'MEC crosses the interest rate at Q*.' },
+          { type: 'tile', tone: 'amber', icon: '📈', head: 'Rates rise',       body: 'The interest rate rises to r₂, lowering equilibrium investment to Q₂.' },
+          { type: 'tile', tone: 'green', icon: '💡', head: 'MEC shifts right', body: 'Higher optimism or better technology shifts MEC right to MEC₂, raising investment to Q₃.' }
+        ]},
+        { type: 'sectionHeader', icon: '❓', label: 'WHAT HAPPENS WHEN…' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'amber', icon: '📈', head: 'Interest rates rise',
+            body: 'The interest rate line moves up.\n\n↓ MEC crosses at a lower Q → investment falls.\n\nHigher borrowing cost → fewer projects are worthwhile.' },
+          { type: 'tile', tone: 'green', icon: '💡', head: 'Animal spirits / tech improve',
+            body: 'The MEC curve shifts right.\n\n↑ MEC crosses at a higher Q → investment rises.\n\nHigher expected returns → more projects are worthwhile.' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: '✅', text: 'The decision rule — Invest if MEC > interest rate. Do not invest if MEC < interest rate. At equilibrium: MEC = interest rate.' },
+        { type: 'bigIdea', text: 'Big idea: Firms invest up to the point where the expected return on the next unit of capital (MEC) equals the interest rate – the cost of borrowing.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always link the diagram to the story: higher rates raise borrowing cost and reduce investment; better expectations or technology raise MEC and boost investment.' }
+      ]
     },
 
     /* ── CARD 6 ── Investment and the Multiplier ──────────────────── */
@@ -365,50 +224,27 @@ window.ECONOS_TOPIC = {
       lede: 'Higher demand can trigger more investment, which then multiplies demand again.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Investment and demand can amplify each other – every loop is bigger than the last.' },
-
-      flowChart: {
-        svgKey: 'investmentFeedbackLoop',
-        label: 'THE FEEDBACK LOOP',
-        emoji: '🔄',
-        caption: 'Higher demand → more investment → more income → still more demand. The same five steps repeat – and each pass through the loop is larger than the one before.'
-      },
-
-      comparisonTable: {
-        title: 'THE RIPPLE',
-        emoji: '🌊',
-        columns: ['Initial shock', 'Round 1', 'Round 2', 'Round 3', 'Round 4+'],
-        columnTones: ['blue', 'amber', 'purple', 'green', 'slate'],
-        rows: [
-          { label: 'Investment',     values: ['+100', '+60', '+36', '+22', '+ …'] },
-          { label: 'Income / output', values: ['+150', '+90', '+54', '+33', '+ …'] },
-          { label: 'Consumption',     values: ['+75',  '+45', '+27', '+16', '+ …'] }
-        ]
-      },
-
-      summaryRow: [
-        { tone: 'slate', icon: 'ℹ️', title: 'It compounds', text: 'Each round is smaller, but together they add up to a much larger total effect.' }
-      ],
-
-      whyItMatters: {
-        title: 'WHY BOOMS AND BUSTS AMPLIFY',
-        emoji: '📊',
-        items: [
-          { tone: 'blue',   icon: '📈', label: 'Positive feedback', text: 'More demand → more investment → more demand. Expansions build momentum.' },
-          { tone: 'amber',  icon: '📉', label: 'Negative feedback', text: 'Less demand → less investment → less demand. Downturns reinforce themselves.' },
-          { tone: 'purple', icon: '〰️', label: 'Delays and lags',  text: 'Decisions take time and are based on expectations, which can overshoot in both directions.' }
-        ]
-      },
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'The accelerator raises investment when demand rises; the multiplier spreads that spending. Together they create powerful, self-reinforcing cycles.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'In exam answers, explain how the accelerator–multiplier interaction can magnify both expansions and contractions in aggregate demand and output.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Investment and demand can amplify each other – every loop is bigger than the last.' },
+        { type: 'diagram', svgKey: 'investmentFeedbackLoop', caption: 'Higher demand → more investment → more income → still more demand. The same five steps repeat – and each pass through the loop is larger than the one before.' },
+        { type: 'sectionHeader', label: 'THE RIPPLE' },
+        { type: 'grid', cols: 5, children: [
+          { type: 'tile', tone: 'blue',   head: 'Initial shock', body: 'Investment +100\nIncome/output +150\nConsumption +75' },
+          { type: 'tile', tone: 'amber',  head: 'Round 1',       body: 'Investment +60\nIncome/output +90\nConsumption +45' },
+          { type: 'tile', tone: 'purple', head: 'Round 2',       body: 'Investment +36\nIncome/output +54\nConsumption +27' },
+          { type: 'tile', tone: 'green',  head: 'Round 3',       body: 'Investment +22\nIncome/output +33\nConsumption +16' },
+          { type: 'tile', tone: 'slate',  head: 'Round 4+',      body: 'Investment +…\nIncome/output +…\nConsumption +…' }
+        ]},
+        { type: 'calloutStrip', tone: 'slate', icon: 'ℹ️', text: 'It compounds — Each round is smaller, but together they add up to a much larger total effect.' },
+        { type: 'sectionHeader', icon: '📊', label: 'WHY BOOMS AND BUSTS AMPLIFY' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '📈', head: 'Positive feedback', body: 'More demand → more investment → more demand. Expansions build momentum.' },
+          { type: 'tile', tone: 'amber',  icon: '📉', head: 'Negative feedback', body: 'Less demand → less investment → less demand. Downturns reinforce themselves.' },
+          { type: 'tile', tone: 'purple', icon: '〰️', head: 'Delays and lags',  body: 'Decisions take time and are based on expectations, which can overshoot in both directions.' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: The accelerator raises investment when demand rises; the multiplier spreads that spending. Together they create powerful, self-reinforcing cycles.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'In exam answers, explain how the accelerator–multiplier interaction can magnify both expansions and contractions in aggregate demand and output.' }
+      ]
     },
 
     /* ── CARD 7 ── Real-world Investment ──────────────────────────── */
@@ -420,48 +256,27 @@ window.ECONOS_TOPIC = {
       lede: 'Recent UK episodes show how uncertainty, shocks and interest rates shape investment.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Business confidence and borrowing costs can move investment sharply.' },
-
-      causesFirst: true,
-      causesLabel: 'THREE UK EPISODES',
-      causesEmoji: '📅',
-      causesStyle: 'numbered',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue', icon: '📉', head: 'Post-Brexit uncertainty slump – 2016–19',
-          body: 'Referendum shock and prolonged uncertainty led firms to delay projects and hold back spending.<div style="margin-top:10px;padding:6px 10px;background:#fff;border:1px solid #BFDBFE;border-radius:8px;font-size:12px;font-weight:700;color:#1E40AF;text-align:center;">Outcome: Weak investment</div>' },
-        { tone: 'amber', icon: '🦠', head: 'Covid capex freeze – 2020, snap-back 2021',
-          body: 'Lockdowns froze investment in 2020; strong demand, savings and support drove a rebound in 2021.<div style="margin-top:10px;padding:6px 10px;background:#fff;border:1px solid #FCD34D;border-radius:8px;font-size:12px;font-weight:700;color:#B45309;text-align:center;">Outcome: Sharp rebound</div>' },
-        { tone: 'green', icon: '🏦', head: 'The high-rate squeeze – 2023–24',
-          body: 'Higher interest rates lifted borrowing costs and curbed investment plans across many sectors.<div style="margin-top:10px;padding:6px 10px;background:#fff;border:1px solid #6EE7B7;border-radius:8px;font-size:12px;font-weight:700;color:#047857;text-align:center;">Outcome: Soft investment</div>' }
-      ],
-
-      comparisonTable: {
-        title: 'WHAT EACH EPISODE SHOWS',
-        emoji: '📊',
-        columns: ['Confidence', 'Disruption / Shocks', 'Interest rates', 'Effect on investment'],
-        columnTones: ['blue', 'amber', 'purple', 'green'],
-        rows: [
-          { label: '2016–19 Post-Brexit',     values: ['Fell sharply',                'Political uncertainty, trade & policy ambiguity', 'Low and stable',          'Firms delayed and cancelled projects'] },
-          { label: '2020–21 Covid cycle',     values: ['Collapsed in 2020, recovered in 2021', 'Pandemic, lockdowns, supply chain shocks', 'Very low',                'Frozen in 2020, strong snap-back in 2021'] },
-          { label: '2023–24 High-rate squeeze', values: ['Cautious and fragile',       'Energy price shock, global uncertainty',          'High (Bank Rate at 5.25%)', 'Investment plans scaled back'] }
-        ]
-      },
-
-      summaryRow: [
-        { tone: 'green', icon: '🌟', title: 'Common thread',
-          text: 'Investment is highly sensitive to expectations, shocks and the cost of capital.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Uncertainty, shocks and interest rates shift confidence and the cost of capital – and investment moves.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Always link episodes to the channels: confidence, disruption and rates → investment outcomes.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Business confidence and borrowing costs can move investment sharply.' },
+        { type: 'sectionHeader', icon: '📅', label: 'THREE UK EPISODES' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: '📉', head: 'Post-Brexit uncertainty slump – 2016–19',
+            body: 'Referendum shock and prolonged uncertainty led firms to delay projects and hold back spending.\n\nOutcome: Weak investment' },
+          { type: 'tile', tone: 'amber', icon: '🦠', head: 'Covid capex freeze – 2020, snap-back 2021',
+            body: 'Lockdowns froze investment in 2020; strong demand, savings and support drove a rebound in 2021.\n\nOutcome: Sharp rebound' },
+          { type: 'tile', tone: 'green', icon: '🏦', head: 'The high-rate squeeze – 2023–24',
+            body: 'Higher interest rates lifted borrowing costs and curbed investment plans across many sectors.\n\nOutcome: Soft investment' }
+        ]},
+        { type: 'sectionHeader', icon: '📊', label: 'WHAT EACH EPISODE SHOWS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   head: '2016–19 Post-Brexit',       body: 'Confidence fell sharply. Political uncertainty, trade & policy ambiguity. Low and stable rates. Firms delayed and cancelled projects.' },
+          { type: 'tile', tone: 'amber',  head: '2020–21 Covid cycle',       body: 'Collapsed in 2020, recovered in 2021. Pandemic, lockdowns, supply chain shocks. Very low rates. Frozen in 2020, strong snap-back in 2021.' },
+          { type: 'tile', tone: 'green',  head: '2023–24 High-rate squeeze', body: 'Cautious and fragile confidence. Energy price shock, global uncertainty. High (Bank Rate at 5.25%). Investment plans scaled back.' }
+        ]},
+        { type: 'calloutStrip', tone: 'green', icon: '🌟', text: 'Common thread — Investment is highly sensitive to expectations, shocks and the cost of capital.' },
+        { type: 'bigIdea', text: 'Big idea: Uncertainty, shocks and interest rates shift confidence and the cost of capital – and investment moves.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always link episodes to the channels: confidence, disruption and rates → investment outcomes.' }
+      ]
     },
 
     /* ── CARD 8 ── Evaluating Investment as an AD Driver ──────────── */
@@ -473,53 +288,34 @@ window.ECONOS_TOPIC = {
       lede: 'Investment is powerful, but also volatile and uncertain.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Investment can drive both demand now and capacity later – but it is the least predictable AD component.' },
-
-      causesFirst: true,
-      causesLabel: 'THE EVALUATION GRID',
-      causesEmoji: '⚖️',
-      causesStyle: 'numbered',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue',   icon: '📉', head: 'Volatility',
-          body: 'Investment is highly volatile and sensitive to sentiment, confidence and financial conditions.' },
-        { tone: 'amber',  icon: '⏱️', head: 'Long-run vs short-run',
-          body: 'Drives long-run capacity growth but can be pro-cyclical in the short run.' },
-        { tone: 'purple', icon: '👥', head: 'Crowding out',
-          body: 'May raise interest rates and reduce private consumption or other investment.' },
-        { tone: 'green',  icon: '🐂', head: 'Animal spirits',
-          body: 'Driven by confidence and expectations rather than current profits alone.' },
-        { tone: 'blue',   icon: '⌛', head: 'Time lags',
-          body: 'Decisions, financing and implementation create delays in AD effects.' },
-        { tone: 'amber',  icon: '🏅', head: 'Quality of investment',
-          body: 'Productive, innovative investment boosts future AS and AD more.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Investment can drive both demand now and capacity later – but it is the least predictable AD component.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'THE EVALUATION GRID' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '📉', head: 'Volatility',
+            body: 'Investment is highly volatile and sensitive to sentiment, confidence and financial conditions.' },
+          { type: 'tile', tone: 'amber',  icon: '⏱️', head: 'Long-run vs short-run',
+            body: 'Drives long-run capacity growth but can be pro-cyclical in the short run.' },
+          { type: 'tile', tone: 'purple', icon: '👥', head: 'Crowding out',
+            body: 'May raise interest rates and reduce private consumption or other investment.' },
+          { type: 'tile', tone: 'green',  icon: '🐂', head: 'Animal spirits',
+            body: 'Driven by confidence and expectations rather than current profits alone.' },
+          { type: 'tile', tone: 'blue',   icon: '⌛', head: 'Time lags',
+            body: 'Decisions, financing and implementation create delays in AD effects.' },
+          { type: 'tile', tone: 'amber',  icon: '🏅', head: 'Quality of investment',
+            body: 'Productive, innovative investment boosts future AS and AD more.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'JUDGEMENT FRAMEWORK' },
+        { type: 'grid', cols: 4, children: [
+          { type: 'tile', tone: 'blue',   icon: '🎯', head: 'Size',       body: 'How large is the investment impulse relative to AD?' },
+          { type: 'tile', tone: 'amber',  icon: '📅', head: 'Timing',     body: 'When will it affect demand, and how lasting is it?' },
+          { type: 'tile', tone: 'green',  icon: '🏅', head: 'Quality',    body: 'Is it productive, innovative and capacity enhancing?' },
+          { type: 'tile', tone: 'purple', icon: '🛡️', head: 'Confidence', body: 'How strong and stable is business confidence?' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Synthesis — Evaluate investment by balancing its size, timing, quality and confidence – knowing its impact is uncertain.' },
+        { type: 'bigIdea', text: 'Big idea: Investment is the most powerful driver of future capacity and demand – and the least predictable.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Strong evaluation distinguishes short-run AD effects from long-run AS effects.' }
       ],
-
-      whyItMatters: {
-        title: 'JUDGEMENT FRAMEWORK',
-        emoji: '⚖️',
-        items: [
-          { tone: 'blue',   icon: '🎯', label: 'Size',       text: 'How large is the investment impulse relative to AD?' },
-          { tone: 'amber',  icon: '📅', label: 'Timing',     text: 'When will it affect demand, and how lasting is it?' },
-          { tone: 'green',  icon: '🏅', label: 'Quality',    text: 'Is it productive, innovative and capacity enhancing?' },
-          { tone: 'purple', icon: '🛡️', label: 'Confidence', text: 'How strong and stable is business confidence?' }
-        ]
-      },
-
-      summaryRow: [
-        { tone: 'blue', icon: '💡', title: 'Synthesis',
-          text: 'Evaluate investment by balancing its size, timing, quality and confidence – knowing its impact is uncertain.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Investment is the most powerful driver of future capacity and demand – and the least predictable.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Strong evaluation distinguishes short-run AD effects from long-run AS effects.'
-      },
 
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }

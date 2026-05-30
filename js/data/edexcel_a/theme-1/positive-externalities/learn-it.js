@@ -178,120 +178,92 @@ window.ECONOS_TOPIC = {
       id: 'pos_externalities_4',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Market-based interventions',
-      tip: { icon: '💡', tone: 'blue', text: '<em>Governments can use prices and financial incentives to internalise positive externalities and move output closer to the social optimum.</em>' },
-      keyPointsLabel: 'Three main interventions',
-      keyPointsEmoji: '🏛️',
-      keyPointsCols: 3,
-      keyPoints: [
-        {
-          tone: 'green', icon: '🎫', title: 'Pigouvian subsidy to consumers',
-          headline: 'Lower the effective price faced by consumers so they consume more of the good or activity.',
-          body: '<span style="font-weight:800;color:#059669;">Flow:</span> subsidy provided → lower consumer price → higher demand → more spillover benefits.<br><br><span style="font-weight:800;color:#059669;">Live examples:</span> free school meals · childcare vouchers · EV purchase grants.'
-        },
-        {
-          tone: 'purple', icon: '🏭', title: 'Pigouvian subsidy to producers',
-          headline: 'Subsidise supply by lowering firms\' costs, making it more profitable to produce socially beneficial goods or services.',
-          body: '<span style="font-weight:800;color:#7C3AED;">Flow:</span> subsidy reduces costs → higher supply → more output of positive good.<br><br><span style="font-weight:800;color:#7C3AED;">Live examples:</span> renewable energy subsidies · R&amp;D tax credits · apprenticeship levies.'
-        },
-        {
-          tone: 'blue', icon: '🏆', title: 'Outcome-based payments',
-          headline: 'Government rewards results rather than inputs. Payments are made for verified outcomes that generate positive externalities.',
-          body: '<span style="font-weight:800;color:#2563EB;">Examples of outcomes:</span> vaccinations completed · apprentices trained · ecosystem services delivered (e.g. tree planting).'
-        }
-      ],
-      table: {
-        title: 'Who pays, who gains, who loses?',
-        emoji: '👥',
-        headers: ['Agent', 'Impact'],
-        rows: [
-          { icon: '🛒', tone: 'green',  label: 'Consumers',     value: 'Pay less or get more access. Benefit from lower effective prices or more availability.' },
-          { icon: '🏭', tone: 'purple', label: 'Producers',     value: 'Receive higher revenue or more demand. Subsidies improve profitability of socially valuable output.' },
-          { icon: '🏛️', tone: 'blue',   label: 'Government',    value: 'Bears a fiscal cost through subsidy spending. Must balance cost with social benefits.' },
-          { icon: '👥', tone: 'amber',  label: 'Third parties', value: 'Gain from spillover benefits such as better health, cleaner environment or skills.' }
-        ]
-      },
-      causesLabel: 'Real-world examples',
-      causesEmoji: '🌍',
-      causesStyle: 'tinted-flat',
-      causes: [
-        { icon: '🌳', head: 'Payments for tree planting', body: 'Governments pay landowners per hectare planted and maintained. Trees provide carbon storage, cleaner air, and habitat – benefits that extend to the whole community.', tone: 'green' },
-        { icon: '🔋', head: 'EV purchase grants',         body: 'Consumers receive grants or rebates for electric vehicles, reducing the upfront cost and encouraging adoption that lowers emissions for everyone.',              tone: 'blue'  }
-      ],
-      tipLate: { icon: '✅', tone: 'green', head: 'When this works best', text: 'Best when the main problem is <strong>under-consumption</strong> and the social benefit can be reasonably identified.' },
-      examEdge: '"A Pigouvian subsidy is theoretically efficient but practically difficult to calibrate" – a high-mark phrase. For top marks, compare subsidies to consumers vs producers on incidence, fiscal cost, and equity.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<em>Governments can use prices and financial incentives to internalise positive externalities and move output closer to the social optimum.</em>' },
+        { type: 'sectionHeader', icon: '🏛️', label: 'Three main interventions' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '🎫', head: 'Pigouvian subsidy to consumers', body: 'Lower the effective price faced by consumers so they consume more of the good or activity.<br><br><span style="font-weight:800;color:#059669;">Flow:</span> subsidy provided → lower consumer price → higher demand → more spillover benefits.<br><br><span style="font-weight:800;color:#059669;">Live examples:</span> free school meals · childcare vouchers · EV purchase grants.' },
+          { type: 'tile', tone: 'purple', icon: '🏭', head: 'Pigouvian subsidy to producers', body: 'Subsidise supply by lowering firms\' costs, making it more profitable to produce socially beneficial goods or services.<br><br><span style="font-weight:800;color:#7C3AED;">Flow:</span> subsidy reduces costs → higher supply → more output of positive good.<br><br><span style="font-weight:800;color:#7C3AED;">Live examples:</span> renewable energy subsidies · R&amp;D tax credits · apprenticeship levies.' },
+          { type: 'tile', tone: 'blue', icon: '🏆', head: 'Outcome-based payments', body: 'Government rewards results rather than inputs. Payments are made for verified outcomes that generate positive externalities.<br><br><span style="font-weight:800;color:#2563EB;">Examples of outcomes:</span> vaccinations completed · apprentices trained · ecosystem services delivered (e.g. tree planting).' }
+        ]},
+        { type: 'sectionHeader', icon: '👥', label: 'Who pays, who gains, who loses?' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '🛒', head: 'Consumers',     body: 'Pay less or get more access. Benefit from lower effective prices or more availability.' },
+          { type: 'tile', tone: 'purple', icon: '🏭', head: 'Producers',     body: 'Receive higher revenue or more demand. Subsidies improve profitability of socially valuable output.' },
+          { type: 'tile', tone: 'blue',   icon: '🏛️', head: 'Government',    body: 'Bears a fiscal cost through subsidy spending. Must balance cost with social benefits.' },
+          { type: 'tile', tone: 'amber',  icon: '👥', head: 'Third parties', body: 'Gain from spillover benefits such as better health, cleaner environment or skills.' }
+        ]},
+        { type: 'sectionHeader', icon: '🌍', label: 'Real-world examples' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🌳', head: 'Payments for tree planting', body: 'Governments pay landowners per hectare planted and maintained. Trees provide carbon storage, cleaner air, and habitat – benefits that extend to the whole community.' },
+          { type: 'tile', tone: 'blue',  icon: '🔋', head: 'EV purchase grants',         body: 'Consumers receive grants or rebates for electric vehicles, reducing the upfront cost and encouraging adoption that lowers emissions for everyone.' }
+        ]},
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>When this works best:</strong> Best when the main problem is <strong>under-consumption</strong> and the social benefit can be reasonably identified.' },
+        { type: 'examEdge', title: 'Exam edge', text: '"A Pigouvian subsidy is theoretically efficient but practically difficult to calibrate" – a high-mark phrase. For top marks, compare subsidies to consumers vs producers on incidence, fiscal cost, and equity.' }
+      ]
     },
     {
       id: 'pos_externalities_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Direct provision & regulation',
-      tip: { icon: '💡', tone: 'blue', text: '<em>Some positive externalities are so important that government does not just nudge the market – it directly provides the good or requires its consumption.</em>' },
-      keyPointsLabel: 'Two direct tools',
-      keyPointsEmoji: '🏛️',
-      keyPointsCols: 2,
-      keyPoints: [
-        {
-          tone: 'green', icon: '🏛️', title: 'Public provision',
-          headline: 'Government funds or supplies the service directly.',
-          body: '<span style="font-weight:800;color:#059669;">Examples:</span><br>• <strong>NHS healthcare</strong> – funded and delivered by the state to ensure everyone can access essential care.<br>• <strong>State schools</strong> – publicly funded education so children can learn, regardless of family income.<br><br><em>Widening access and treating merit goods partly as a right, not just a purchase.</em>'
-        },
-        {
-          tone: 'blue', icon: '🛡️', title: 'Mandatory consumption / regulation',
-          headline: 'Government requires or strongly enforces consumption.',
-          body: '<span style="font-weight:800;color:#2563EB;">Examples:</span><br>• <strong>Compulsory schooling</strong> – children must attend school until a minimum age because education benefits society.<br>• <strong>Vaccination mandates</strong> – required for certain jobs or activities to protect public health and prevent disease spread.<br><br><em>Ensuring everyone takes up the good when the social benefits are large.</em>'
-        }
-      ],
-      causesLabel: 'Trade-offs',
-      causesEmoji: '⚖️',
-      causesStyle: 'tinted-flat',
-      causes: [
-        { icon: '🔁', head: 'Flexibility',          body: 'Market approaches are more flexible and adapt to preferences and new information. Direct tools are less flexible.', tone: 'green'  },
-        { icon: '💸', head: 'Fiscal cost',          body: 'Public provision is usually expensive and puts pressure on public finances. Mandates can be cheaper to deliver.',   tone: 'purple' },
-        { icon: '🎯', head: 'Certainty of outcome', body: 'Mandates provide greater certainty that the good will be consumed. Market approaches can leave under-consumption.', tone: 'blue'   },
-        { icon: '⚖️', head: 'Access / equity',      body: 'Public provision improves access and reduces inequalities. Market tools can exclude those who can\'t pay.',         tone: 'amber'  }
-      ],
-      tipLate: { icon: '✅', tone: 'green', head: 'When these tools are strongest', text: 'Use direct provision or regulation when the social benefit is large, access matters, and leaving it purely to the market would underprovide the good.' },
-      examEdge: 'Distinguish market-based vs direct tools by the mechanism: prices vs rules/provision. Use direct provision as your dominant answer when access matters morally (healthcare, education) or when the externality is large enough that voluntary uptake won\'t reach Q*.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<em>Some positive externalities are so important that government does not just nudge the market – it directly provides the good or requires its consumption.</em>' },
+        { type: 'sectionHeader', icon: '🏛️', label: 'Two direct tools' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🏛️', head: 'Public provision', body: 'Government funds or supplies the service directly.<br><br><span style="font-weight:800;color:#059669;">Examples:</span><br>• <strong>NHS healthcare</strong> – funded and delivered by the state to ensure everyone can access essential care.<br>• <strong>State schools</strong> – publicly funded education so children can learn, regardless of family income.<br><br><em>Widening access and treating merit goods partly as a right, not just a purchase.</em>' },
+          { type: 'tile', tone: 'blue',  icon: '🛡️', head: 'Mandatory consumption / regulation', body: 'Government requires or strongly enforces consumption.<br><br><span style="font-weight:800;color:#2563EB;">Examples:</span><br>• <strong>Compulsory schooling</strong> – children must attend school until a minimum age because education benefits society.<br>• <strong>Vaccination mandates</strong> – required for certain jobs or activities to protect public health and prevent disease spread.<br><br><em>Ensuring everyone takes up the good when the social benefits are large.</em>' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'Trade-offs' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '🔁', head: 'Flexibility',          body: 'Market approaches are more flexible and adapt to preferences and new information. Direct tools are less flexible.' },
+          { type: 'tile', tone: 'purple', icon: '💸', head: 'Fiscal cost',          body: 'Public provision is usually expensive and puts pressure on public finances. Mandates can be cheaper to deliver.' },
+          { type: 'tile', tone: 'blue',   icon: '🎯', head: 'Certainty of outcome', body: 'Mandates provide greater certainty that the good will be consumed. Market approaches can leave under-consumption.' },
+          { type: 'tile', tone: 'amber',  icon: '⚖️', head: 'Access / equity',      body: 'Public provision improves access and reduces inequalities. Market tools can exclude those who can\'t pay.' }
+        ]},
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>When these tools are strongest:</strong> Use direct provision or regulation when the social benefit is large, access matters, and leaving it purely to the market would underprovide the good.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Distinguish market-based vs direct tools by the mechanism: prices vs rules/provision. Use direct provision as your dominant answer when access matters morally (healthcare, education) or when the externality is large enough that voluntary uptake won\'t reach Q*.' }
+      ]
     },
     {
       id: 'pos_externalities_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Evaluation: why intervention can fail',
-      tip: { icon: '💡', tone: 'blue', text: '<em>Correcting positive externalities is not straightforward. Intervention can raise welfare, but it also creates trade-offs and risks of government failure.</em>' },
-      flowTitle: 'Key evaluation points',
-      flowEmoji: '⚖️',
-      flow: [
-        { tone: 'purple', icon: '🔍', title: 'Information failure on MEB', sub: 'Government may misjudge the true spillover benefit and set the subsidy or scale wrongly.' },
-        { tone: 'amber',  icon: '🛡️', title: 'Moral hazard',               sub: 'If services are free or heavily subsidised, some users may over-consume or take less care.' },
-        { tone: 'blue',   icon: '👥', title: 'Crowding out',                sub: 'Public support may displace private provision or personal responsibility.' },
-        { tone: 'green',  icon: '🏛️', title: 'Fiscal cost',                 sub: 'Subsidies and direct provision use tax revenue and create opportunity costs elsewhere.' },
-        { tone: 'rose',   icon: '👥', title: 'Political capture',           sub: 'Organised interest groups may shape policy in their own favour rather than the social interest.' }
-      ],
-      conclusion: { title: 'Bottom line: trade-offs', text: '<div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;"><div>• Intervention can still be justified – it can correct market failure and raise welfare.</div><div>• The question is not perfect or imperfect, but <strong>better or worse</strong>.</div><div>• Evaluation depends on how large the external benefit is and how well policy is targeted.</div></div>' },
-      tipLate: { icon: '➡️', tone: 'blue', text: 'Always <strong>compare market failure with possible government failure</strong> in essays – weigh the benefits of intervention against the risks and costs.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<em>Correcting positive externalities is not straightforward. Intervention can raise welfare, but it also creates trade-offs and risks of government failure.</em>' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'Key evaluation points' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Information failure on MEB', detail: 'Government may misjudge the true spillover benefit and set the subsidy or scale wrongly.' },
+          { label: 'Moral hazard',               detail: 'If services are free or heavily subsidised, some users may over-consume or take less care.' },
+          { label: 'Crowding out',                detail: 'Public support may displace private provision or personal responsibility.' },
+          { label: 'Fiscal cost',                 detail: 'Subsidies and direct provision use tax revenue and create opportunity costs elsewhere.' },
+          { label: 'Political capture',           detail: 'Organised interest groups may shape policy in their own favour rather than the social interest.' }
+        ]},
+        { type: 'bigIdea', text: 'Bottom line: trade-offs — Intervention can still be justified – it can correct market failure and raise welfare. The question is not perfect or imperfect, but <strong>better or worse</strong>. Evaluation depends on how large the external benefit is and how well policy is targeted.' },
+        { type: 'calloutStrip', tone: 'blue', icon: '➡️', text: 'Always <strong>compare market failure with possible government failure</strong> in essays – weigh the benefits of intervention against the risks and costs.' }
+      ]
     },
     {
       id: 'pos_externalities_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Exam edge',
-      tip: { icon: null, tone: 'green', head: 'Exam edge – best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;MSB exceeds MPB, so the market under-produces relative to the socially optimal output.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The market under-consumes the good because private decisions ignore the external benefit.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;A subsidy can internalise the external benefit by shifting MPB up towards MSB.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The size of the welfare gain forgone depends on the price elasticity of demand and supply.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Intervention may be justified despite government failure if the external benefit is large and well-targeted.&rdquo;</span></div></div>' },
-      flowTitle: 'A 4-step evaluation flow',
-      flowEmoji: '🧭',
-      flow: [
-        { tone: 'blue',   icon: '1️⃣', title: 'Identify the intervention',  sub: 'and how it moves output toward Q*.' },
-        { tone: 'green',  icon: '2️⃣', title: 'Explain the likely benefits', sub: 'to consumers, producers, and third parties.' },
-        { tone: 'purple', icon: '3️⃣', title: 'Evaluate practical limits',   sub: 'or government failure.' },
-        { tone: 'amber',  icon: '4️⃣', title: 'Reach a clear judgement',     sub: 'on when the policy works best.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: null, text: '<strong>Exam edge – best phrases to use in high-mark answers</strong><br><div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;MSB exceeds MPB, so the market under-produces relative to the socially optimal output.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The market under-consumes the good because private decisions ignore the external benefit.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;A subsidy can internalise the external benefit by shifting MPB up towards MSB.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The size of the welfare gain forgone depends on the price elasticity of demand and supply.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Intervention may be justified despite government failure if the external benefit is large and well-targeted.&rdquo;</span></div></div>' },
+        { type: 'sectionHeader', icon: '🧭', label: 'A 4-step evaluation flow' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Identify the intervention',   detail: 'and how it moves output toward Q*.' },
+          { label: 'Explain the likely benefits', detail: 'to consumers, producers, and third parties.' },
+          { label: 'Evaluate practical limits',   detail: 'or government failure.' },
+          { label: 'Reach a clear judgement',     detail: 'on when the policy works best.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'A 4-criterion judgement framework' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'Size of the external benefit', body: 'How large is the gap (MSB − MPB)? Big gaps justify stronger action.' },
+          { type: 'tile', tone: 'blue',   icon: '🎯', head: 'Accuracy of targeting',         body: 'Does the policy reach those creating or receiving the benefit?' },
+          { type: 'tile', tone: 'purple', icon: '💷', head: 'Fiscal affordability',          body: 'Can it be funded sustainably, with good value for money?' },
+          { type: 'tile', tone: 'amber',  icon: '⚖️', head: 'Equity / access',               body: 'Does it improve fairness and access, not just total welfare?' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Strong answers <strong>compare market failure with government failure</strong> and finish with a conditional judgement: the policy is likely to work best when the external benefit is large, targeting is accurate, costs are manageable, and the design is fair and accessible.' }
       ],
-      causesLabel: 'A 4-criterion judgement framework',
-      causesEmoji: '⚖️',
-      causesStyle: 'tinted-flat',
-      causes: [
-        { icon: '📈', head: 'Size of the external benefit', body: 'How large is the gap (MSB − MPB)? Big gaps justify stronger action.',         tone: 'green'  },
-        { icon: '🎯', head: 'Accuracy of targeting',         body: 'Does the policy reach those creating or receiving the benefit?',              tone: 'blue'   },
-        { icon: '💷', head: 'Fiscal affordability',          body: 'Can it be funded sustainably, with good value for money?',                    tone: 'purple' },
-        { icon: '⚖️', head: 'Equity / access',               body: 'Does it improve fairness and access, not just total welfare?',                tone: 'amber'  }
-      ],
-      examEdge: 'Strong answers <strong>compare market failure with government failure</strong> and finish with a conditional judgement: the policy is likely to work best when the external benefit is large, targeting is accurate, costs are manageable, and the design is fair and accessible.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
@@ -477,4 +449,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

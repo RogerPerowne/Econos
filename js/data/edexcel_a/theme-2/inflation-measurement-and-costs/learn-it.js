@@ -310,7 +310,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 4 – Costs of inflation
+       CARD 5 – Costs of inflation
        Five main costs. Winners and losers. The chain of impact.
        ==================================================================== */
     {
@@ -320,56 +320,36 @@ window.ECONOS_TOPIC = {
       title: 'Costs of inflation',
       lede: 'The harm depends on how high and how unpredictable inflation is – mild, anticipated inflation is manageable, but unstable inflation creates wider economic costs.',
 
-      causesFirst: true,
-      causesLabel: 'The main costs',
-      causesStyle: 'numbered-rows',
-      causes: [
-        { svgKey: 'receiptPound',  head: 'Menu costs',                  body: 'Firms must keep changing prices, menus, catalogues and systems.' },
-        { svgKey: 'shoeRun',       head: 'Shoe-leather costs',          body: 'People spend time and effort managing cash balances and seeking the best rates.' },
-        { svgKey: 'peopleArrow',   head: 'Redistribution',              body: 'Creditors lose and debtors gain; fixed incomes fall behind variable incomes.' },
-        { svgKey: 'cloudQuestion', head: 'Uncertainty',                 body: 'Harder planning reduces investment, confidence and long-term spending.' },
-        { svgKey: 'globeNet',      head: 'Lost competitiveness',        body: 'If UK inflation is higher than rivals, exports become less competitive and (X−M) deteriorates.' }
-      ],
-
-      pairLabel: 'Winners and losers',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'green',
-        icon: '✅',
-        iconStyle: 'circle',
-        label: 'May gain',
-        text: 'Debtors (real value of debt erodes). Owners of real assets (land, property). Governments with large nominal debt. Firms with pricing power that adjust prices quickly.'
-      },
-      right: {
-        tone: 'rose',
-        icon: '❌',
-        iconStyle: 'circle',
-        label: 'May lose',
-        text: 'Savers and creditors on fixed nominal rates. Workers on fixed wages. Pensioners on fixed incomes. Holders of cash. Exporters in competitive markets.'
-      },
-
-      flowTitle: 'The chain of impact',
-      flow: [
-        { tone: 'amber',  icon: '📈', title: 'Higher inflation',  sub: 'Especially if high and volatile.' },
-        { tone: 'amber',  icon: '❓', title: 'Uncertainty',        sub: 'Firms and households cannot plan.' },
-        { tone: 'rose',   icon: '📉', title: 'Weaker investment',  sub: 'Long-term decisions get delayed.' },
-        { tone: 'rose',   icon: '🐌', title: 'Slower growth',       sub: 'Reduced productive potential.' }
-      ],
-
-      tip: {
-        icon: '⚠️',
-        tone: 'rose',
-        text: '<strong>Common trap:</strong> not all inflation is equally damaging – the biggest problems come when inflation is <em>high, volatile or unexpected</em>. Mild, anticipated inflation is manageable.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Evaluation should distinguish between <strong>anticipated low inflation</strong> (largely benign) and <strong>high, unpredictable inflation</strong> (the latter causes the bigger welfare losses through uncertainty, lost investment and misallocation).'
-      }
+      blocks: [
+        { type: 'sectionHeader', label: 'The main costs' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'slate', icon: '🧾', head: 'Menu costs',         body: 'Firms must keep changing prices, menus, catalogues and systems.' },
+          { type: 'tile', tone: 'slate', icon: '👟', head: 'Shoe-leather costs',  body: 'People spend time and effort managing cash balances and seeking the best rates.' },
+          { type: 'tile', tone: 'slate', icon: '👥', head: 'Redistribution',      body: 'Creditors lose and debtors gain; fixed incomes fall behind variable incomes.' },
+          { type: 'tile', tone: 'slate', icon: '❓', head: 'Uncertainty',          body: 'Harder planning reduces investment, confidence and long-term spending.' },
+          { type: 'tile', tone: 'slate', icon: '🌐', head: 'Lost competitiveness', body: 'If UK inflation is higher than rivals, exports become less competitive and (X−M) deteriorates.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'Winners and losers' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '✅', head: 'May gain',
+            body: 'Debtors (real value of debt erodes). Owners of real assets (land, property). Governments with large nominal debt. Firms with pricing power that adjust prices quickly.' },
+          { type: 'tile', tone: 'rose', icon: '❌', head: 'May lose',
+            body: 'Savers and creditors on fixed nominal rates. Workers on fixed wages. Pensioners on fixed incomes. Holders of cash. Exporters in competitive markets.' }
+        ]},
+        { type: 'sectionHeader', label: 'The chain of impact' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Higher inflation',  detail: 'Especially if high and volatile.' },
+          { label: 'Uncertainty',       detail: 'Firms and households cannot plan.' },
+          { label: 'Weaker investment', detail: 'Long-term decisions get delayed.' },
+          { label: 'Slower growth',     detail: 'Reduced productive potential.' }
+        ]},
+        { type: 'calloutStrip', tone: 'rose', icon: '⚠️', text: 'Common trap: not all inflation is equally damaging – the biggest problems come when inflation is high, volatile or unexpected. Mild, anticipated inflation is manageable.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Evaluation should distinguish between anticipated low inflation (largely benign) and high, unpredictable inflation (the latter causes the bigger welfare losses through uncertainty, lost investment and misallocation).' }
+      ]
     },
 
     /* ====================================================================
-       CARD 5 – Fiscal drag and real vs nominal
+       CARD 6 – Fiscal drag and real vs nominal
        The gap between nominal and real. Frozen thresholds = stealth tax rise.
        ==================================================================== */
     {
@@ -447,7 +427,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 6 – Costs of deflation
+       CARD 7 – Costs of deflation
        The deflationary spiral. Why central banks fear it.
        ==================================================================== */
     {

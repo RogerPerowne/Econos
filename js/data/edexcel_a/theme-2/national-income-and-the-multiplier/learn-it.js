@@ -130,41 +130,27 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 4',
       title: 'The four propensities',
       lede: 'Every extra £1 of income is split four ways – consumed, saved, taxed, or spent on imports. Only the consumed slice keeps the multiplier alive; the other three are <strong>leakages</strong>.',
-      ledeStyle: 'plain',
-      tip: { icon: '✓', tone: 'green', text: 'MPC + MPS + MPT + MPM = 1. The bigger the leakages, the smaller the multiplier.' },
-
-      visualKey: 'multiplierPropensities',
-      visualLabel: 'Where the next £1 goes',
-      visualEmoji: '\u{1F4B7}',
-
-      causesFirst: true,
-      causesLabel: 'The four propensities',
-      causesEmoji: '\u{1F4D0}',
-      causes: [
-        { tone: 'blue',   icon: '\u{1F6D2}', head: 'MPC',  body: '<strong>Marginal propensity to consume</strong> – the slice of an extra £1 that gets spent on domestic goods. ΔC / ΔY. Higher when interest rates are low or confidence is high.' },
-        { tone: 'purple', icon: '\u{1F437}', head: 'MPS',  body: '<strong>Marginal propensity to save</strong> – the slice that goes into savings instead of being spent. ΔS / ΔY. Higher in recessions when households cut back.' },
-        { tone: 'amber',  icon: '\u{1F3DB}\u{FE0F}', head: 'MPT',  body: '<strong>Marginal propensity to tax</strong> – the slice claimed by income tax, VAT and NI. ΔT / ΔY. Higher when tax rates rise or fiscal drag bites.' },
-        { tone: 'green',  icon: '\u{1F30D}', head: 'MPM',  body: '<strong>Marginal propensity to import</strong> – the slice spent on foreign goods, leaking abroad. ΔM / ΔY. The UK has a relatively high MPM, which is why UK multipliers are smaller than the textbook value.' }
-      ],
-
-      causesNote: { tone: 'rose', text: '<strong>MPW = MPS + MPT + MPM</strong> – the marginal propensity to withdraw. This is the leakage at each round, and it sets the ceiling: bigger MPW → smaller multiplier.' },
-
-      flowTitle: 'What changes each propensity',
-      flowEmoji: '\u{1F39B}\u{FE0F}',
-      flowSep: '·',
-      flow: [
-        { tone: 'blue',   icon: '\u{1F4C9}', title: 'Lower interest rates', sub: '→ higher MPC' },
-        { tone: 'amber',  icon: '\u{1F3DB}\u{FE0F}', title: 'Tax rise',     sub: '→ higher MPT' },
-        { tone: 'green',  icon: '\u{1F4B7}', title: 'Weaker £',             sub: '→ lower MPM' },
-        { tone: 'purple', icon: '\u{1F627}', title: 'Recession fear',       sub: '→ higher MPS' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'The four propensities are the dials that set the multiplier. The economy with the smallest leakages has the biggest multiplier – which is why textbook k = 5 belongs in a closed economy with no tax.'
-      },
-      examEdge: 'Use the spec terminology – <strong>MPC, MPS, MPT, MPM</strong> – not the older MRT / MRM you may see in textbooks. Examiners reward precision.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'MPC + MPS + MPT + MPM = 1. The bigger the leakages, the smaller the multiplier.' },
+        { type: 'sectionHeader', icon: '\u{1F4D0}', label: 'The four propensities' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '\u{1F6D2}', head: 'MPC',  body: '<strong>Marginal propensity to consume</strong> – the slice of an extra £1 that gets spent on domestic goods. ΔC / ΔY. Higher when interest rates are low or confidence is high.' },
+          { type: 'tile', tone: 'purple', icon: '\u{1F437}', head: 'MPS',  body: '<strong>Marginal propensity to save</strong> – the slice that goes into savings instead of being spent. ΔS / ΔY. Higher in recessions when households cut back.' },
+          { type: 'tile', tone: 'amber',  icon: '\u{1F3DB}\u{FE0F}', head: 'MPT', body: '<strong>Marginal propensity to tax</strong> – the slice claimed by income tax, VAT and NI. ΔT / ΔY. Higher when tax rates rise or fiscal drag bites.' },
+          { type: 'tile', tone: 'green',  icon: '\u{1F30D}', head: 'MPM',  body: '<strong>Marginal propensity to import</strong> – the slice spent on foreign goods, leaking abroad. ΔM / ΔY. The UK has a relatively high MPM, which is why UK multipliers are smaller than the textbook value.' }
+        ]},
+        { type: 'calloutStrip', tone: 'rose', icon: undefined, text: '<strong>MPW = MPS + MPT + MPM</strong> – the marginal propensity to withdraw. This is the leakage at each round, and it sets the ceiling: bigger MPW → smaller multiplier.' },
+        { type: 'diagram', svgKey: 'multiplierPropensities', caption: 'Where the next £1 goes' },
+        { type: 'sectionHeader', icon: '\u{1F39B}\u{FE0F}', label: 'What changes each propensity' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Lower interest rates', detail: '→ higher MPC' },
+          { label: 'Tax rise', detail: '→ higher MPT' },
+          { label: 'Weaker £', detail: '→ lower MPM' },
+          { label: 'Recession fear', detail: '→ higher MPS' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: The four propensities are the dials that set the multiplier. The economy with the smallest leakages has the biggest multiplier – which is why textbook k = 5 belongs in a closed economy with no tax.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Use the spec terminology – <strong>MPC, MPS, MPT, MPM</strong> – not the older MRT / MRM you may see in textbooks. Examiners reward precision.' }
+      ]
     },
 
     /* ============================================================
@@ -218,56 +204,30 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 4 of 4',
       title: 'The multiplier in action',
       lede: 'A small injection produces a much larger AD shift, because the multiplier amplifies it. The same mechanism runs in reverse in a downturn – and several real-world frictions dampen the textbook ceiling.',
-      ledeStyle: 'plain',
-      tip: { icon: '✓', tone: 'green', text: 'ΔAD = k × ΔJ. The headline injection is just the first step; the multiplier is what the economy actually feels.' },
-
-      visualKey: 'multiplierAdAs',
-      visualLabel: 'A £10bn injection becomes a £k × 10bn AD shift',
-      visualEmoji: '\u{1F4C8}',
-
-      pairFirst: true,
-      pairLabel: 'Both directions matter',
-      pairEmoji: '\u{2195}\u{FE0F}',
-      left: {
-        tone: 'green',
-        icon: '\u{2B06}\u{FE0F}',
-        iconStyle: 'circle',
-        label: 'The upward multiplier',
-        text: 'A rise in any injection (I, G, X) shifts AD right by <strong>k × ΔJ</strong>. Real output and the price level both rise. This is the boost side – the case for fiscal stimulus and the reason policy effects are bigger than their headline cost.'
-      },
-      right: {
-        tone: 'amber',
-        icon: '\u{2B07}\u{FE0F}',
-        iconStyle: 'circle',
-        label: 'The downward multiplier',
-        text: 'A fall in any injection – or a rise in any withdrawal – shifts AD left by the same multiple. Recessions deepen faster than the headline shock suggests, because <strong>confidence collapses</strong> and the spending chain runs in reverse.'
-      },
-
-      causesLabel: 'What dampens the textbook ceiling',
-      causesEmoji: '\u{1F6A7}',
-      causes: [
-        { tone: 'blue',   icon: '\u{23F1}\u{FE0F}', head: 'Time lags',           body: 'The full chain plays out over 18–24 months. By then the cycle may have moved on, weakening the effect.' },
-        { tone: 'amber',  icon: '\u{1F3ED}', head: 'Supply-side limits',  body: 'Near full employment the multiplier hits an output ceiling and spills into prices, not real output.' },
-        { tone: 'purple', icon: '\u{1F4B0}', head: 'Crowding out',        body: 'Debt-financed stimulus can raise interest rates and squeeze private investment, partially offsetting the boost.' },
-        { tone: 'green',  icon: '\u{1F30D}', head: 'High UK MPM',         body: 'A high marginal propensity to import means stimulus leaks abroad – realistic UK k ≈ 1.5, not the textbook 5.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'ΔAD = k × ΔJ. The headline injection is just the first step; the multiplier is what the economy actually feels.' },
+        { type: 'diagram', svgKey: 'multiplierAdAs', caption: 'A £10bn injection becomes a £k × 10bn AD shift' },
+        { type: 'sectionHeader', icon: '\u{2195}\u{FE0F}', label: 'Both directions matter' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '\u{2B06}\u{FE0F}', head: 'The upward multiplier', body: 'A rise in any injection (I, G, X) shifts AD right by <strong>k × ΔJ</strong>. Real output and the price level both rise. This is the boost side – the case for fiscal stimulus and the reason policy effects are bigger than their headline cost.' },
+          { type: 'tile', tone: 'amber', icon: '\u{2B07}\u{FE0F}', head: 'The downward multiplier', body: 'A fall in any injection – or a rise in any withdrawal – shifts AD left by the same multiple. Recessions deepen faster than the headline shock suggests, because <strong>confidence collapses</strong> and the spending chain runs in reverse.' }
+        ]},
+        { type: 'sectionHeader', icon: '\u{1F6A7}', label: 'What dampens the textbook ceiling' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '\u{23F1}\u{FE0F}', head: 'Time lags',          body: 'The full chain plays out over 18–24 months. By then the cycle may have moved on, weakening the effect.' },
+          { type: 'tile', tone: 'amber',  icon: '\u{1F3ED}', head: 'Supply-side limits', body: 'Near full employment the multiplier hits an output ceiling and spills into prices, not real output.' },
+          { type: 'tile', tone: 'purple', icon: '\u{1F4B0}', head: 'Crowding out',       body: 'Debt-financed stimulus can raise interest rates and squeeze private investment, partially offsetting the boost.' },
+          { type: 'tile', tone: 'green',  icon: '\u{1F30D}', head: 'High UK MPM',        body: 'A high marginal propensity to import means stimulus leaks abroad – realistic UK k ≈ 1.5, not the textbook 5.' }
+        ]},
+        { type: 'sectionHeader', icon: '\u{1F680}', label: 'And one mechanism that amplifies further' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Y rises', detail: 'after the multiplier' },
+          { label: 'Firms invest more', detail: 'the accelerator' },
+          { label: 'AD shifts further', detail: 'feedback into the multiplier' }
+        ]},
+        { type: 'bigIdea', text: 'Big idea: The multiplier links any injection or withdrawal to a much bigger swing in AD. The accelerator can pile on; supply-side limits, time lags, crowding out and import leakage hold it back.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Top marks state the multiplier <em>both ways</em> – the symmetric downward case is what separates A from A*. Quote a realistic UK k (~1.5) when evaluating fiscal stimulus, not the textbook 5.' }
       ],
-
-      flowTitle: 'And one mechanism that amplifies further',
-      flowEmoji: '\u{1F680}',
-      flowSep: '→',
-      flow: [
-        { tone: 'rose',   icon: '\u{1F4C8}', title: 'Y rises',             sub: 'after the multiplier' },
-        { tone: 'rose',   icon: '\u{1F3ED}', title: 'Firms invest more',   sub: 'the accelerator' },
-        { tone: 'rose',   icon: '\u{1F501}', title: 'AD shifts further',   sub: 'feedback into the multiplier' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'The multiplier links any injection or withdrawal to a much bigger swing in AD. The accelerator can pile on; supply-side limits, time lags, crowding out and import leakage hold it back.'
-      },
-      examEdge: 'Top marks state the multiplier <em>both ways</em> – the symmetric downward case is what separates A from A*. Quote a realistic UK k (~1.5) when evaluating fiscal stimulus, not the textbook 5.',
-
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]

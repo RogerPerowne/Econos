@@ -27,41 +27,23 @@ window.ECONOS_TOPIC = {
       id: 'consumer_producer_surplus_1',
       stepLabel: 'Learn: Step 1 of 6',
       title: 'Consumer & producer surplus: the big picture',
-      tip: {
-        icon: '📊',
-        tone: 'blue',
-        text: '<strong>Consumer surplus</strong> is the gap between what consumers are willing to pay and the market price. <strong>Producer surplus</strong> is the gap between the market price and the minimum price producers are willing to accept.'
-      },
-      diagramKey: 'cpsDiagram',
-      diagramLabel: 'The surplus diagram',
-      diagramEmoji: '📐',
-      causes: [
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '📊', text: '<strong>Consumer surplus</strong> is the gap between what consumers are willing to pay and the market price. <strong>Producer surplus</strong> is the gap between the market price and the minimum price producers are willing to accept.' },
+        { type: 'diagram', svgKey: 'cpsDiagram', caption: 'The surplus diagram' },
         {
-          tone: 'blue',
-          icon: '🧠',
-          head: 'What the two surpluses show',
-          body: 'CS captures every buyer\'s saving: the gap between their maximum willingness to pay and P*. PS captures every seller\'s gain: the gap between P* and their minimum acceptable price. Both are shown as triangles on the D/S diagram.'
+          type: 'grid',
+          cols: 3,
+          children: [
+            { type: 'tile', tone: 'blue', icon: '🧠', head: 'What the two surpluses show', body: 'CS captures every buyer\'s saving: the gap between their maximum willingness to pay and P*. PS captures every seller\'s gain: the gap between P* and their minimum acceptable price. Both are shown as triangles on the D/S diagram.' },
+            { type: 'tile', tone: 'green', icon: '⚖️', head: 'Why total surplus matters', body: 'Total welfare = CS + PS. It measures the aggregate gains from all voluntary transactions. The free-market equilibrium maximises this total – any policy that moves price away from P* reduces total welfare, creating deadweight loss.' },
+            { type: 'tile', tone: 'amber', icon: '🤝', head: 'How markets create gains from trade', body: 'Trade is voluntary: a transaction only happens when both parties benefit. CS and PS together measure the full value created by exchange. This is why competitive markets are efficient – they extract the maximum possible gains from trade.' }
+          ]
         },
-        {
-          tone: 'green',
-          icon: '⚖️',
-          head: 'Why total surplus matters',
-          body: 'Total welfare = CS + PS. It measures the aggregate gains from all voluntary transactions. The free-market equilibrium maximises this total – any policy that moves price away from P* reduces total welfare, creating deadweight loss.'
-        },
-        {
-          tone: 'amber',
-          icon: '🤝',
-          head: 'How markets create gains from trade',
-          body: 'Trade is voluntary: a transaction only happens when both parties benefit. CS and PS together measure the full value created by exchange. This is why competitive markets are efficient – they extract the maximum possible gains from trade.'
-        }
-      ],
-      causesStyle: 'plain-white',
-      keyTerms: [
-        { term: 'Consumer surplus', def: 'The difference between the maximum a consumer is willing to pay (their demand price) and the actual market price they pay.' },
-        { term: 'Producer surplus', def: 'The difference between the market price received by a producer and the minimum price they would accept to supply (their supply price).' },
-        { term: 'Total welfare (social surplus)', def: 'CS + PS – the total gains from trade. Maximised at the competitive equilibrium where MSB = MSC.' }
-      ],
-      examEdge: 'Always describe surplus as a triangle with three vertices: (1) the equilibrium price; (2) the point where demand (for CS) or supply (for PS) meets the price axis; (3) the equilibrium quantity. Area = ½ × base × height. A common exam mistake: students shade the wrong side of the supply or demand curve. CS is above the price line; PS is below it.'
+        { type: 'glossaryRow', term: 'Consumer surplus', def: 'The difference between the maximum a consumer is willing to pay (their demand price) and the actual market price they pay.' },
+        { type: 'glossaryRow', term: 'Producer surplus', def: 'The difference between the market price received by a producer and the minimum price they would accept to supply (their supply price).' },
+        { type: 'glossaryRow', term: 'Total welfare (social surplus)', def: 'CS + PS – the total gains from trade. Maximised at the competitive equilibrium where MSB = MSC.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always describe surplus as a triangle with three vertices: (1) the equilibrium price; (2) the point where demand (for CS) or supply (for PS) meets the price axis; (3) the equilibrium quantity. Area = ½ × base × height. A common exam mistake: students shade the wrong side of the supply or demand curve. CS is above the price line; PS is below it.' }
+      ]
     },
     {
       id: 'consumer_producer_surplus_2',

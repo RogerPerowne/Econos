@@ -46,52 +46,26 @@ window.ECONOS_TOPIC = {
       lede: 'The labour market is not just about jobs. People are either employed, unemployed, or economically inactive. Getting this distinction right is essential for diagnosis and policy.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Do not confuse unemployment with inactivity – this is an easy exam distinction.' },
-
-      causesFirst: true,
-      causesLabel: 'THE THREE STATES',
-      causesEmoji: '👥',
-      causes: [
-        {
-          tone: 'green',
-          icon: '💼',
-          head: 'Employed',
-          body: 'People aged 16+ who did paid work in the reference week, or were temporarily away from a job.',
-          example: { label: 'Examples', text: 'Full-time worker · part-time worker · self-employed' }
-        },
-        {
-          tone: 'amber',
-          icon: '🔍',
-          head: 'Unemployed',
-          body: 'Not in work but actively seeking and available to start within 2 weeks.',
-          example: { label: 'Examples', text: 'Graduate job seeker · recently redundant worker' }
-        },
-        {
-          tone: 'purple',
-          icon: '👤',
-          head: 'Economically<br>inactive',
-          body: 'Not in work and not actively seeking or available for work.',
-          example: { label: 'Examples', text: 'Full-time student not looking · retiree · long-term carer' }
-        }
-      ],
-
-      flowTitle: 'WHY THE DISTINCTION MATTERS',
-      flowEmoji: '📊',
-      flow: [
-        { icon: '👥', title: 'Labour force',       sub: '= employed + unemployed' },
-        { icon: '📊', title: 'Participation rate',  sub: '= labour force ÷ working-age population' },
-        { icon: '📈', title: 'Unemployment rate',   sub: '= unemployed ÷ labour force' }
-      ],
-
-      conclusion: {
-        title: 'The inactive trap',
-        text: 'If many people leave the labour force, the unemployment rate can fall even when the jobs picture has not improved. A healthy labour market needs people in work – watch participation <em>and</em> unemployment, not just the headline rate.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Always distinguish <strong>unemployed</strong> from <strong>economically inactive</strong>. Use participation-rate evidence when relevant – it gives a fuller picture of the labour market.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Do not confuse unemployment with inactivity – this is an easy exam distinction.' },
+        { type: 'sectionHeader', icon: '👥', label: 'THE THREE STATES' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '💼', head: 'Employed',
+            body: 'People aged 16+ who did paid work in the reference week, or were temporarily away from a job. Examples: Full-time worker · part-time worker · self-employed' },
+          { type: 'tile', tone: 'amber',  icon: '🔍', head: 'Unemployed',
+            body: 'Not in work but actively seeking and available to start within 2 weeks. Examples: Graduate job seeker · recently redundant worker' },
+          { type: 'tile', tone: 'purple', icon: '👤', head: 'Economically inactive',
+            body: 'Not in work and not actively seeking or available for work. Examples: Full-time student not looking · retiree · long-term carer' }
+        ]},
+        { type: 'sectionHeader', icon: '📊', label: 'WHY THE DISTINCTION MATTERS' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Labour force',       detail: '= employed + unemployed' },
+          { label: 'Participation rate', detail: '= labour force ÷ working-age population' },
+          { label: 'Unemployment rate',  detail: '= unemployed ÷ labour force' }
+        ]},
+        { type: 'bigIdea', text: 'The inactive trap: If many people leave the labour force, the unemployment rate can fall even when the jobs picture has not improved. A healthy labour market needs people in work – watch participation and unemployment, not just the headline rate.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always distinguish unemployed from economically inactive. Use participation-rate evidence when relevant – it gives a fuller picture of the labour market.' }
+      ]
     },
 
     /* ----- CARD 2 – Measuring unemployment ----- */
@@ -156,80 +130,40 @@ window.ECONOS_TOPIC = {
       lede: 'Six causes – but only two flavours. Four are supply-side (frictions and rigidities in the labour market). Two are demand-side (cyclical and demand-deficient).',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Four supply-side types · two demand-side types. Different causes need different cures.' },
-
-      pairFirst: true,
-      pairLabel: 'THE BIG SPLIT',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'green',
-        icon: '🔧',
-        iconStyle: 'circle',
-        label: 'Supply-side · 4 types',
-        text: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by frictions and rigidities in the labour market. Workers stuck even when AD is strong.</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Frictional</strong> – between jobs</li><li><strong>Structural</strong> – skills / location mismatch</li><li><strong>Seasonal</strong> – predictable seasonal demand</li><li><strong>Real-wage</strong> – wage above market-clearing</li></ul><p style="margin:10px 0 0;font-size:12px;color:#047857;font-weight:700;">Cure: supply-side policy (retraining, mobility, market reform).</p>'
-      },
-      right: {
-        tone: 'rose',
-        icon: '📉',
-        iconStyle: 'circle',
-        label: 'Demand-side · 2 types',
-        text: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by weak aggregate demand. Output falls → labour demand falls (labour is a <em>derived demand</em>).</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Cyclical</strong> – short-run, follows the business cycle</li><li><strong>Demand-deficient</strong> – persistent, even outside recession</li></ul><p style="margin:10px 0 0;font-size:12px;color:#9F1239;font-weight:700;">Cure: demand stimulus (fiscal / monetary).</p>'
-      },
-
-      flowTitle: 'THE DEMAND-SIDE CHAIN',
-      flowEmoji: '⛓️',
-      flow: [
-        { icon: '📉', title: 'AD falls',           sub: 'C, I, G or (X−M) drops', tone: 'rose'   },
-        { icon: '🏭', title: 'Output falls',       sub: 'firms produce less',     tone: 'amber'  },
-        { icon: '👥', title: 'Labour demand falls', sub: 'derived demand effect', tone: 'purple' },
-        { icon: '📊', title: 'Unemployment ↑',     sub: 'cyclical OR demand-deficient', tone: 'rose' }
-      ],
-
-      causesLabel: 'THE SIX TYPES',
-      causesEmoji: '🧩',
-      causesStyle: 'numbered',
-      causes: [
-        {
-          tone: 'blue', icon: '🚶', head: 'Frictional',
-          body: 'Short-term unemployment <strong>between jobs</strong>. Caused by imperfect information and search time. Always present – even at "full employment".',
-          example: '🎓 Graduate searching after university.'
-        },
-        {
-          tone: 'amber', icon: '⛏️', head: 'Structural',
-          body: '<strong>Skills or location mismatch</strong> with available jobs. Caused by deindustrialisation, technology, globalisation. Long-term – workers need retraining or relocation.',
-          example: '⛏️ Ex-miners in South Wales.'
-        },
-        {
-          tone: 'purple', icon: '⛷️', head: 'Seasonal',
-          body: 'Predictable variation in labour demand at different times of year. Short-term and recurring.',
-          example: '⛷️ Ski instructors in summer.'
-        },
-        {
-          tone: 'green', icon: '⚖️', head: 'Real-wage (classical)',
-          body: 'Wages held <strong>above equilibrium</strong> by unions, minimum wage, or contracts – excess labour supply at that wage.',
-          example: '£ Low-skilled workers priced out of jobs.'
-        },
-        {
-          tone: 'rose', icon: '📉', head: 'Cyclical',
-          body: 'Caused by <strong>falling AD in a recession</strong>. Firms need fewer workers when output falls. <em>Self-correcting as the economy recovers.</em>',
-          example: '📉 Recession layoffs across sectors.'
-        },
-        {
-          tone: 'rose', icon: '🌀', head: 'Demand-deficient',
-          body: '<strong>Persistent weak AD</strong> – even outside recession (Keynes\'s "underemployment equilibrium"). Hysteresis can make cyclical unemployment become structural.',
-          example: '🌀 Japan\'s lost decades; eurozone post-2008.'
-        }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: '<strong>Four supply-side, two demand-side.</strong> Demand stimulus on a supply-side problem is wasteful – and supply-side reform on a demand-side problem misses the point.'
-      },
-
-      examEdge: {
-        title: 'Classify before you cure',
-        text: 'Open every unemployment essay with the type: <em>"This is primarily [type] unemployment because…"</em>. The 4-vs-2 split is the analytical move that lifts answers from B to A*. Note that "demand-deficient" is the Keynesian / persistent variant of cyclical – flag the relationship if your textbook treats them as one.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Four supply-side types · two demand-side types. Different causes need different cures.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'THE BIG SPLIT' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🔧', head: 'Supply-side · 4 types',
+            body: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by frictions and rigidities in the labour market. Workers stuck even when AD is strong.</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Frictional</strong> – between jobs</li><li><strong>Structural</strong> – skills / location mismatch</li><li><strong>Seasonal</strong> – predictable seasonal demand</li><li><strong>Real-wage</strong> – wage above market-clearing</li></ul><p style="margin:10px 0 0;font-size:12px;color:#047857;font-weight:700;">Cure: supply-side policy (retraining, mobility, market reform).</p>' },
+          { type: 'tile', tone: 'rose',  icon: '📉', head: 'Demand-side · 2 types',
+            body: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by weak aggregate demand. Output falls → labour demand falls (labour is a <em>derived demand</em>).</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Cyclical</strong> – short-run, follows the business cycle</li><li><strong>Demand-deficient</strong> – persistent, even outside recession</li></ul><p style="margin:10px 0 0;font-size:12px;color:#9F1239;font-weight:700;">Cure: demand stimulus (fiscal / monetary).</p>' }
+        ]},
+        { type: 'sectionHeader', icon: '⛓️', label: 'THE DEMAND-SIDE CHAIN' },
+        { type: 'mechanismChain', steps: [
+          { label: 'AD falls',            detail: 'C, I, G or (X−M) drops' },
+          { label: 'Output falls',        detail: 'firms produce less' },
+          { label: 'Labour demand falls', detail: 'derived demand effect' },
+          { label: 'Unemployment ↑',      detail: 'cyclical OR demand-deficient' }
+        ]},
+        { type: 'sectionHeader', icon: '🧩', label: 'THE SIX TYPES' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '🚶', head: 'Frictional',
+            body: 'Short-term unemployment between jobs. Caused by imperfect information and search time. Always present – even at "full employment". Example: 🎓 Graduate searching after university.' },
+          { type: 'tile', tone: 'amber',  icon: '⛏️', head: 'Structural',
+            body: 'Skills or location mismatch with available jobs. Caused by deindustrialisation, technology, globalisation. Long-term – workers need retraining or relocation. Example: ⛏️ Ex-miners in South Wales.' },
+          { type: 'tile', tone: 'purple', icon: '⛷️', head: 'Seasonal',
+            body: 'Predictable variation in labour demand at different times of year. Short-term and recurring. Example: ⛷️ Ski instructors in summer.' },
+          { type: 'tile', tone: 'green',  icon: '⚖️', head: 'Real-wage (classical)',
+            body: 'Wages held above equilibrium by unions, minimum wage, or contracts – excess labour supply at that wage. Example: £ Low-skilled workers priced out of jobs.' },
+          { type: 'tile', tone: 'rose',   icon: '📉', head: 'Cyclical',
+            body: 'Caused by falling AD in a recession. Firms need fewer workers when output falls. Self-correcting as the economy recovers. Example: 📉 Recession layoffs across sectors.' },
+          { type: 'tile', tone: 'rose',   icon: '🌀', head: 'Demand-deficient',
+            body: 'Persistent weak AD – even outside recession (Keynes\'s "underemployment equilibrium"). Hysteresis can make cyclical unemployment become structural. Example: 🌀 Japan\'s lost decades; eurozone post-2008.' }
+        ]},
+        { type: 'bigIdea', text: 'Four supply-side, two demand-side. Demand stimulus on a supply-side problem is wasteful – and supply-side reform on a demand-side problem misses the point.' },
+        { type: 'examEdge', title: 'Classify before you cure', text: 'Open every unemployment essay with the type: "This is primarily [type] unemployment because…". The 4-vs-2 split is the analytical move that lifts answers from B to A*. Note that "demand-deficient" is the Keynesian / persistent variant of cyclical – flag the relationship if your textbook treats them as one.' }
+      ]
     },
 
     /* ----- CARD 4 – Diagnose the type ----- */
@@ -241,75 +175,34 @@ window.ECONOS_TOPIC = {
       lede: 'Examiners reward correct diagnosis before policy. Identifying the right type of unemployment shows you understand the underlying mechanism – and that determines the right solution.',
       ledeStyle: 'plain',
 
-      tip: { icon: '🔒', tone: 'green', text: 'The clue is in the mechanism, not just the symptom of joblessness.' },
-
-      causesFirst: true,
-      causesLabel: 'CLASSIFY THE CASE',
-      causesEmoji: '🗂️',
-      causes: [
-        {
-          tone: 'blue',
-          icon: '🎓',
-          head: 'Frictional',
-          body: 'Graduates between jobs after finishing university.',
-          example: { label: 'Type', text: 'Between jobs – job-search lag, not a structural mismatch.' }
-        },
-        {
-          tone: 'amber',
-          icon: '⛏️',
-          head: 'Structural',
-          body: 'Ex-miners in Wales whose skills no longer match local jobs.',
-          example: { label: 'Type', text: 'Skills mismatch – deindustrialisation created a permanent gap.' }
-        },
-        {
-          tone: 'purple',
-          icon: '⛷️',
-          head: 'Seasonal',
-          body: 'Ski instructors with little work in the summer.',
-          example: { label: 'Type', text: 'Time of year – demand for labour falls predictably off-season.' }
-        },
-        {
-          tone: 'rose',
-          icon: '📉',
-          head: 'Cyclical',
-          body: 'A recession cuts spending and car plants lay off workers.',
-          example: { label: 'Type', text: 'Weak AD – firms need fewer workers when output falls.' }
-        },
-        {
-          tone: 'green',
-          icon: '⚖️',
-          head: 'Real-wage',
-          body: 'A wage floor above equilibrium leaves some low-skilled workers unemployed.',
-          example: { label: 'Type', text: 'Wage rigidity – price of labour held above market-clearing level.' }
-        },
-        {
-          tone: 'rose',
-          icon: '🌀',
-          head: 'Demand-deficient',
-          body: 'A region\'s unemployment stays high for years after a recession ends – even as the national economy grows.',
-          example: { label: 'Type', text: 'Persistent weak AD – hysteresis turns cyclical unemployment into long-run joblessness.' }
-        }
-      ],
-
-      flowTitle: 'FAST TEST',
-      flowEmoji: '⚡',
-      flow: [
-        { icon: '🚶', title: 'Between jobs?',     sub: '→ Frictional' },
-        { icon: '🧩', title: 'Mismatch?',         sub: '→ Structural' },
-        { icon: '📅', title: 'Time of year?',     sub: '→ Seasonal' },
-        { icon: '📉', title: 'Recession?',        sub: '→ Cyclical' },
-        { icon: '🌀', title: 'Persistent weak AD?', sub: '→ Demand-deficient' }
-      ],
-
-      conclusion: {
-        title: 'Watch out',
-        text: 'Structural unemployment can persist even when demand recovers – the skills gap doesn\'t close just because firms are hiring. Demand stimulus helps cyclical, not structural.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: "Open every unemployment essay with: <em>\"This is primarily [type] unemployment because…\"</em> Naming the type before discussing policy is the analytical step that lifts answers from B to A*."
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '🔒', text: 'The clue is in the mechanism, not just the symptom of joblessness.' },
+        { type: 'sectionHeader', icon: '🗂️', label: 'CLASSIFY THE CASE' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '🎓', head: 'Frictional',
+            body: 'Graduates between jobs after finishing university. Type: Between jobs – job-search lag, not a structural mismatch.' },
+          { type: 'tile', tone: 'amber',  icon: '⛏️', head: 'Structural',
+            body: 'Ex-miners in Wales whose skills no longer match local jobs. Type: Skills mismatch – deindustrialisation created a permanent gap.' },
+          { type: 'tile', tone: 'purple', icon: '⛷️', head: 'Seasonal',
+            body: 'Ski instructors with little work in the summer. Type: Time of year – demand for labour falls predictably off-season.' },
+          { type: 'tile', tone: 'rose',   icon: '📉', head: 'Cyclical',
+            body: 'A recession cuts spending and car plants lay off workers. Type: Weak AD – firms need fewer workers when output falls.' },
+          { type: 'tile', tone: 'green',  icon: '⚖️', head: 'Real-wage',
+            body: 'A wage floor above equilibrium leaves some low-skilled workers unemployed. Type: Wage rigidity – price of labour held above market-clearing level.' },
+          { type: 'tile', tone: 'rose',   icon: '🌀', head: 'Demand-deficient',
+            body: 'A region\'s unemployment stays high for years after a recession ends – even as the national economy grows. Type: Persistent weak AD – hysteresis turns cyclical unemployment into long-run joblessness.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚡', label: 'FAST TEST' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Between jobs?',      detail: '→ Frictional' },
+          { label: 'Mismatch?',          detail: '→ Structural' },
+          { label: 'Time of year?',      detail: '→ Seasonal' },
+          { label: 'Recession?',         detail: '→ Cyclical' },
+          { label: 'Persistent weak AD?', detail: '→ Demand-deficient' }
+        ]},
+        { type: 'bigIdea', text: 'Watch out: Structural unemployment can persist even when demand recovers – the skills gap doesn\'t close just because firms are hiring. Demand stimulus helps cyclical, not structural.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Open every unemployment essay with: "This is primarily [type] unemployment because…" Naming the type before discussing policy is the analytical step that lifts answers from B to A*.' }
+      ]
     },
 
     /* ----- CARD 5 – Cyclical unemployment & derived demand ----- */
@@ -449,60 +342,30 @@ window.ECONOS_TOPIC = {
       lede: 'Unemployment matters because its costs spread across the whole economy and society. It affects growth, public finances, communities and individuals – today and in the future.',
       ledeStyle: 'plain',
 
-      tip: { icon: '⚠️', tone: 'rose', text: '<strong>Unemployment damages both current output and future potential.</strong>' },
-
-      causesFirst: true,
-      causesLabel: 'FOUR COST CHANNELS',
-      causesEmoji: '📦',
-      causes: [
-        {
-          tone: 'blue',
-          icon: '📊',
-          head: '1. Economic costs',
-          body: 'Lost GDP lowers living standards and future income.<div style="border-top:1px dashed #93C5FD;margin:10px 0 8px;"></div>Lower tax revenue and higher welfare spending strain public finances.'
-        },
-        {
-          tone: 'amber',
-          icon: '👥',
-          head: '2. Social and personal costs',
-          body: 'Unemployment brings mental-health strain, family stress and higher crime risk.<div style="border-top:1px dashed #FCD34D;margin:10px 0 8px;"></div>It can damage self-esteem and reduce confidence and aspirations.'
-        },
-        {
-          tone: 'green',
-          icon: '🔗',
-          head: '3. Hysteresis',
-          body: 'Long unemployment weakens skills and attachment to the labour market.<div style="border-top:1px dashed #6EE7B7;margin:10px 0 8px;"></div>So temporary unemployment can become structural.'
-        },
-        {
-          tone: 'purple',
-          icon: '🌍',
-          head: '4. Wider macro effects',
-          body: 'Weakens the balance of payments and slows long-run growth.<div style="border-top:1px dashed #C4B5FD;margin:10px 0 8px;"></div>Can cause regional decline and put pressure on public finances.'
-        }
-      ],
-
-      flowTitle: 'THE HYSTERESIS CHAIN',
-      flowEmoji: '🔗',
-      flow: [
-        { icon: '🔄', title: 'Cyclical unemployment', sub: 'recession job losses' },
-        { icon: '🧠', title: 'Skills atrophy',         sub: 'human capital decays' },
-        { icon: '📉', title: 'Employability falls',    sub: 'employers prefer others' },
-        { icon: '⚠️', title: 'Structural risk',        sub: 'permanent scarring' }
-      ],
-
-      summaryRow: [
-        { tone: 'amber', icon: 'ℹ️', title: '', text: 'Youth unemployment can have especially long-lasting scarring effects.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'The full cost of unemployment is larger than the lost output in the current year.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Use <strong>"hysteresis"</strong> to explain why prolonged cyclical unemployment can worsen the supply side of the economy.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'rose', icon: '⚠️', text: '<strong>Unemployment damages both current output and future potential.</strong>' },
+        { type: 'sectionHeader', icon: '📦', label: 'FOUR COST CHANNELS' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '📊', head: '1. Economic costs',
+            body: 'Lost GDP lowers living standards and future income. Lower tax revenue and higher welfare spending strain public finances.' },
+          { type: 'tile', tone: 'amber',  icon: '👥', head: '2. Social and personal costs',
+            body: 'Unemployment brings mental-health strain, family stress and higher crime risk. It can damage self-esteem and reduce confidence and aspirations.' },
+          { type: 'tile', tone: 'green',  icon: '🔗', head: '3. Hysteresis',
+            body: 'Long unemployment weakens skills and attachment to the labour market. So temporary unemployment can become structural.' },
+          { type: 'tile', tone: 'purple', icon: '🌍', head: '4. Wider macro effects',
+            body: 'Weakens the balance of payments and slows long-run growth. Can cause regional decline and put pressure on public finances.' }
+        ]},
+        { type: 'sectionHeader', icon: '🔗', label: 'THE HYSTERESIS CHAIN' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Cyclical unemployment', detail: 'recession job losses' },
+          { label: 'Skills atrophy',        detail: 'human capital decays' },
+          { label: 'Employability falls',   detail: 'employers prefer others' },
+          { label: 'Structural risk',       detail: 'permanent scarring' }
+        ]},
+        { type: 'calloutStrip', tone: 'amber', icon: 'ℹ️', text: 'Youth unemployment can have especially long-lasting scarring effects.' },
+        { type: 'bigIdea', text: 'The full cost of unemployment is larger than the lost output in the current year.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Use "hysteresis" to explain why prolonged cyclical unemployment can worsen the supply side of the economy.' }
+      ]
     },
 
     /* ----- CARD 8 – Where to next ----- */

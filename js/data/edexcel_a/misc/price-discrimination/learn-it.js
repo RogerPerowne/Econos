@@ -98,27 +98,17 @@ window.ECONOS_TOPIC = {
       id: 'price_discrimination_6',
       template: 'paired',
       title: 'Price Discrimination: For and Against',
-      left: {
-        label: 'Arguments in favour',
-        points: [
-          'Can increase total output – serves market segments that single-price monopoly would exclude',
-          'Cross-subsidy: high prices from inelastic consumers subsidise access for elastic (poorer) consumers',
-          'Pharmaceutical example: funds R&D via high prices in rich markets; enables access in poor markets',
-          'May enable firms to cover high fixed costs that justify production at all (natural monopoly case)',
-          'Rail pricing: peak fares fund off-peak/rural services that would otherwise be unviable'
-        ]
-      },
-      right: {
-        label: 'Arguments against',
-        points: [
-          'Transfers consumer surplus to producers – income redistribution away from consumers',
-          'Requires market power – only possible when competition is already restricted',
-          'Consumer groups with inelastic demand (often lower-income, less mobile) pay highest prices',
-          'Requires costly segmentation and enforcement – resources wasted on discrimination machinery',
-          'Dynamic concern: high prices in protected markets reduce pressure to cut costs or innovate'
-        ]
-      },
-      examEdge: 'The strongest argument FOR price discrimination is the cross-subsidy case: rail operators use peak business fares (inelastic demand, higher price) to subsidise off-peak rural services (elastic demand, lower price). Without peak pricing, rural routes would close. This shows that the welfare effect depends entirely on how the discriminatory profit is used – evaluating price discrimination requires knowing what the firm does with the extra profit.'
+      blocks: [
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            { type: 'tile', tone: 'green', head: 'Arguments in favour', body: 'Can increase total output – serves market segments that single-price monopoly would exclude; Cross-subsidy: high prices from inelastic consumers subsidise access for elastic (poorer) consumers; Pharmaceutical example: funds R&D via high prices in rich markets; enables access in poor markets; May enable firms to cover high fixed costs that justify production at all (natural monopoly case); Rail pricing: peak fares fund off-peak/rural services that would otherwise be unviable' },
+            { type: 'tile', tone: 'rose', head: 'Arguments against', body: 'Transfers consumer surplus to producers – income redistribution away from consumers; Requires market power – only possible when competition is already restricted; Consumer groups with inelastic demand (often lower-income, less mobile) pay highest prices; Requires costly segmentation and enforcement – resources wasted on discrimination machinery; Dynamic concern: high prices in protected markets reduce pressure to cut costs or innovate' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'The strongest argument FOR price discrimination is the cross-subsidy case: rail operators use peak business fares (inelastic demand, higher price) to subsidise off-peak rural services (elastic demand, lower price). Without peak pricing, rural routes would close. This shows that the welfare effect depends entirely on how the discriminatory profit is used – evaluating price discrimination requires knowing what the firm does with the extra profit.' }
+      ]
     },
     {
       id: 'price_discrimination_7',

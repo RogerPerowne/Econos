@@ -63,237 +63,161 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_2',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Prices as incentives',
-      tip: {
-        icon: '💡',
-        tone: 'blue',
-        text: '<em>Higher prices encourage producers to supply more and consumers to buy less – lower prices do the opposite.</em><br>Prices therefore act like <strong>signals with consequences</strong> – they change behaviour.'
-      },
-      flowTitle: 'How prices change behaviour',
-      flowEmoji: '⚖️',
-      pairLabel: null,
-      left: {
-        tone: 'green',
-        icon: '🏭',
-        iconStyle: 'circle',
-        centeredLabel: true,
-        label: 'Producers respond',
-        points: [
-          'Price rises → potential profit rises',
-          'Firms increase output',
-          'New firms may enter',
-          'Resources move into this market'
-        ]
-      },
-      right: {
-        tone: 'amber',
-        icon: '👥',
-        iconStyle: 'circle',
-        centeredLabel: true,
-        label: 'Consumers respond',
-        points: [
-          'Price rises → quantity demanded falls',
-          'Consumers switch to substitutes',
-          'Some delay purchases',
-          'Scarce goods are used more carefully'
-        ]
-      },
-      flow: [
-        { tone: 'green', icon: '📈', title: 'Price rises' },
-        { tone: 'green', icon: '⬆️', title: 'Stronger incentive to supply' },
-        { tone: 'amber', icon: '⬇️', title: 'Weaker incentive to buy' },
-        { tone: 'blue',  icon: '⚖️', title: 'Market moves toward balance' }
-      ],
-      causesStyle: 'plain-white',
-      causesEmoji: '🌍',
-      causesLabel: 'Real-world examples',
-      causes: [
-        { tone: 'green', icon: '⛽', head: 'Petrol prices',          body: 'Higher petrol prices encourage less car use and more fuel efficiency.' },
-        { tone: 'amber', icon: '🏠', head: 'House prices',           body: 'Higher house prices encourage more housebuilding.' },
-        { tone: 'blue',  icon: '🍓', head: 'Strawberries in winter', body: 'High winter strawberry prices attract imports and greenhouse production.' }
-      ],
-      keyTerms: [
-        { term: 'Incentive function', def: 'Prices motivate producers and consumers to adjust behaviour in response to scarcity signals – the mechanism by which markets self-correct.' },
-        { term: 'Profit signal',      def: 'Abnormal profit signals under-supply of a good, attracting new entrants. Losses signal over-supply, causing exit.' },
-        { term: 'Entry and exit',     def: 'The mechanism by which the incentive function restores equilibrium – new firms enter profitable markets; unprofitable firms exit.' }
-      ],
-      examEdge: 'Don\'t stop at "price rises". Explain the incentive: firms chase profit, consumers reconsider value, and resources reallocate.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<em>Higher prices encourage producers to supply more and consumers to buy less – lower prices do the opposite.</em><br>Prices therefore act like <strong>signals with consequences</strong> – they change behaviour.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'How prices change behaviour' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Price rises', detail: undefined },
+          { label: 'Stronger incentive to supply', detail: undefined },
+          { label: 'Weaker incentive to buy', detail: undefined },
+          { label: 'Market moves toward balance', detail: undefined }
+        ]},
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🏭', head: 'Producers respond', body: 'Price rises → potential profit rises; Firms increase output; New firms may enter; Resources move into this market' },
+          { type: 'tile', tone: 'amber', icon: '👥', head: 'Consumers respond', body: 'Price rises → quantity demanded falls; Consumers switch to substitutes; Some delay purchases; Scarce goods are used more carefully' }
+        ]},
+        { type: 'sectionHeader', icon: '🌍', label: 'Real-world examples' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '⛽', head: 'Petrol prices',          body: 'Higher petrol prices encourage less car use and more fuel efficiency.' },
+          { type: 'tile', tone: 'amber', icon: '🏠', head: 'House prices',           body: 'Higher house prices encourage more housebuilding.' },
+          { type: 'tile', tone: 'blue',  icon: '🍓', head: 'Strawberries in winter', body: 'High winter strawberry prices attract imports and greenhouse production.' }
+        ]},
+        { type: 'glossaryRow', items: [
+          { term: 'Incentive function', def: 'Prices motivate producers and consumers to adjust behaviour in response to scarcity signals – the mechanism by which markets self-correct.' },
+          { term: 'Profit signal',      def: 'Abnormal profit signals under-supply of a good, attracting new entrants. Losses signal over-supply, causing exit.' },
+          { term: 'Entry and exit',     def: 'The mechanism by which the incentive function restores equilibrium – new firms enter profitable markets; unprofitable firms exit.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Don\'t stop at "price rises". Explain the incentive: firms chase profit, consumers reconsider value, and resources reallocate.' }
+      ]
     },
     {
       id: 'price_functions_3',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Prices as a rationing device',
-      tip: {
-        icon: '💡',
-        tone: 'blue',
-        text: '<em>When a product is scarce, price helps ration it. A higher price does not create more tickets or more seats today – it decides who gets them.</em><br>In a market, scarce goods usually go to those <strong>willing and able to pay</strong>.'
-      },
-      diagramKey: 'priceRationingScarcity',
-      diagramLabel: 'How rationing works',
-      diagramEmoji: '⚖️',
-      flow: [
-        { tone: 'green', icon: '👥', title: 'Shortage',                          sub: 'More people want tickets than are available.' },
-        { tone: 'amber', icon: '📈', title: 'Price rises',                        sub: 'Higher prices signal scarcity and adjust the price.' },
-        { tone: 'blue',  icon: '🚪', title: 'Some buyers drop out',               sub: 'Those not willing or able to pay the higher price choose not to buy.' },
-        { tone: 'green', icon: '🎫', title: 'Remaining buyers obtain the tickets', sub: 'Tickets go to those willing and able to pay the market price.' }
-      ],
-      note: {
-        icon: '⚖️', tone: 'blue', head: 'Central idea',
-        text: 'Prices ration scarce goods. They decide who gets what.'
-      },
-      causesStyle: 'plain-white',
-      causesEmoji: '🔍',
-      causesLabel: 'Three things to know',
-      causes: [
-        { tone: 'green', icon: '❓', head: 'Why it happens',       body: 'Demand exceeds supply. Price rises to balance the quantity people want to buy with the quantity available.' },
-        { tone: 'amber', icon: '🎯', head: 'What it achieves',     body: 'It prevents queues and chaos, allocates goods quickly, and encourages efficient use of scarce resources.' },
-        { tone: 'blue',  icon: '⚠️', head: 'What the drawback is', body: 'People with lower incomes may be excluded even if they need or value the good a lot.' }
-      ],
-      causes2Emoji: '🌍',
-      causes2Label: 'Real-world examples',
-      causes2: [
-        { tone: 'green', icon: '🎪', head: 'Festival tickets',      body: 'Higher prices mean tickets go to those who value the experience most.' },
-        { tone: 'amber', icon: '🚆', head: 'Peak-time train fares', body: 'Higher fares at busy times reduce crowding and manage limited seats.' },
-        { tone: 'blue',  icon: '🏠', head: 'Rental housing',        body: 'Higher rents ration limited homes to those willing and able to pay.' }
-      ],
-      keyTerms: [
-        { term: 'Rationing function',  def: 'Prices allocate scarce goods among competing buyers by excluding those unwilling or unable to pay the market price.' },
-        { term: 'Willingness to pay',  def: 'The maximum price a buyer would offer for a unit – combines both need and income.' },
-        { term: 'Non-market rationing', def: 'Alternatives to price rationing: queuing (NHS), vouchers, lottery, merit assessment – used when price rationing produces inequitable outcomes.' }
-      ],
-      examEdge: 'The price mechanism rations <strong>efficiently in one sense</strong> – it matches supply and demand quickly and uses resources well. But it is <strong>not always fair</strong>. In exams, mention both <strong>efficiency</strong> (good use of scarce resources) and <strong>equity</strong> (fairness and access).'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<em>When a product is scarce, price helps ration it. A higher price does not create more tickets or more seats today – it decides who gets them.</em><br>In a market, scarce goods usually go to those <strong>willing and able to pay</strong>.' },
+        { type: 'diagram', svgKey: 'priceRationingScarcity', caption: undefined },
+        { type: 'mechanismChain', steps: [
+          { label: 'Shortage', detail: 'More people want tickets than are available.' },
+          { label: 'Price rises', detail: 'Higher prices signal scarcity and adjust the price.' },
+          { label: 'Some buyers drop out', detail: 'Those not willing or able to pay the higher price choose not to buy.' },
+          { label: 'Remaining buyers obtain the tickets', detail: 'Tickets go to those willing and able to pay the market price.' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: '⚖️', text: 'Central idea — Prices ration scarce goods. They decide who gets what.' },
+        { type: 'sectionHeader', icon: '🔍', label: 'Three things to know' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '❓', head: 'Why it happens',       body: 'Demand exceeds supply. Price rises to balance the quantity people want to buy with the quantity available.' },
+          { type: 'tile', tone: 'amber', icon: '🎯', head: 'What it achieves',     body: 'It prevents queues and chaos, allocates goods quickly, and encourages efficient use of scarce resources.' },
+          { type: 'tile', tone: 'blue',  icon: '⚠️', head: 'What the drawback is', body: 'People with lower incomes may be excluded even if they need or value the good a lot.' }
+        ]},
+        { type: 'sectionHeader', icon: '🌍', label: 'Real-world examples' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '🎪', head: 'Festival tickets',      body: 'Higher prices mean tickets go to those who value the experience most.' },
+          { type: 'tile', tone: 'amber', icon: '🚆', head: 'Peak-time train fares', body: 'Higher fares at busy times reduce crowding and manage limited seats.' },
+          { type: 'tile', tone: 'blue',  icon: '🏠', head: 'Rental housing',        body: 'Higher rents ration limited homes to those willing and able to pay.' }
+        ]},
+        { type: 'glossaryRow', items: [
+          { term: 'Rationing function',  def: 'Prices allocate scarce goods among competing buyers by excluding those unwilling or unable to pay the market price.' },
+          { term: 'Willingness to pay',  def: 'The maximum price a buyer would offer for a unit – combines both need and income.' },
+          { term: 'Non-market rationing', def: 'Alternatives to price rationing: queuing (NHS), vouchers, lottery, merit assessment – used when price rationing produces inequitable outcomes.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'The price mechanism rations efficiently in one sense – it matches supply and demand quickly and uses resources well. But it is not always fair. In exams, mention both efficiency (good use of scarce resources) and equity (fairness and access).' }
+      ]
     },
     {
       id: 'price_functions_4',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'How price signals transmit through markets',
-      tip: {
-        icon: '💡',
-        tone: 'blue',
-        text: 'Price changes do more than affect one buyer and one seller. They <strong>transmit information through the whole market system</strong>. A higher price tells firms, workers, and related markets that this product has become more scarce or more demanded.'
-      },
-      flowTitle: 'Following a price signal',
-      flowEmoji: '🔗',
-      flow: [
-        { tone: 'green',  icon: '🌾', title: 'Poor harvest reduces wheat supply' },
-        { tone: 'amber',  icon: '💲', title: 'Wheat price rises' },
-        { tone: 'blue',   icon: '🥖', title: 'Bakers face higher costs and bread prices may rise' },
-        { tone: 'purple', icon: '👨‍🌾', title: 'Consumers adjust spending; farmers consider planting more wheat' },
-        { tone: 'slate',  icon: '🕸️', title: 'Resources and production decisions change across connected markets' }
-      ],
-      causesStyle: 'plain-white',
-      causesEmoji: '📡',
-      causesLabel: 'What the signal does',
-      causes: [
-        { tone: 'green', icon: '👤',  head: 'To producers',       body: 'Higher prices encourage expansion, innovation, and reallocation of resources to the more valuable use.' },
-        { tone: 'amber', icon: '🛒',  head: 'To consumers',       body: 'Higher prices encourage substitutes, less spending, and more efficient use of the good or service.' },
-        { tone: 'blue',  icon: '🕸️', head: 'To related markets', body: 'Price changes ripple to suppliers and complements (substitutes), affecting many linked markets.' }
-      ],
-      causes2Emoji: '⭐',
-      causes2Label: 'Why this matters',
-      causes2: [
-        { tone: 'green', icon: '🚗', head: 'Electric vehicles and lithium', body: 'Higher lithium prices encourage new mining, battery innovation, and substitutes like LFP batteries.' },
-        { tone: 'amber', icon: '☕', head: 'Coffee beans',                 body: 'Higher coffee prices lead cafés to adjust prices, consumers to switch brands, and farmers to plant more.' },
-        { tone: 'blue',  icon: '✈️', head: 'Holiday destinations',         body: 'Higher prices for popular destinations shift demand to alternatives and change travel patterns.' }
-      ],
-      keyTerms: [
-        { term: 'Transmission mechanism', def: 'The way price changes in one market propagate through linked markets via supply chains and substitute/complement relationships.' },
-        { term: 'Knock-on effects',        def: 'Secondary consequences of a price change as it cascades through downstream and related markets.' },
-        { term: 'Resource reallocation',   def: 'The shifting of factors of production (land, labour, capital) toward more valuable uses in response to price signals.' }
-      ],
-      examEdge: 'Explain the transmission <strong>mechanism</strong>, not just that "price rises". Use language like <strong>signal</strong>, <strong>response</strong>, <strong>resource reallocation</strong>, and <strong>knock-on effects</strong>.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Price changes do more than affect one buyer and one seller. They <strong>transmit information through the whole market system</strong>. A higher price tells firms, workers, and related markets that this product has become more scarce or more demanded.' },
+        { type: 'sectionHeader', icon: '🔗', label: 'Following a price signal' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Poor harvest reduces wheat supply', detail: undefined },
+          { label: 'Wheat price rises', detail: undefined },
+          { label: 'Bakers face higher costs and bread prices may rise', detail: undefined },
+          { label: 'Consumers adjust spending; farmers consider planting more wheat', detail: undefined },
+          { label: 'Resources and production decisions change across connected markets', detail: undefined }
+        ]},
+        { type: 'sectionHeader', icon: '📡', label: 'What the signal does' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '👤',  head: 'To producers',       body: 'Higher prices encourage expansion, innovation, and reallocation of resources to the more valuable use.' },
+          { type: 'tile', tone: 'amber', icon: '🛒',  head: 'To consumers',       body: 'Higher prices encourage substitutes, less spending, and more efficient use of the good or service.' },
+          { type: 'tile', tone: 'blue',  icon: '🕸️', head: 'To related markets', body: 'Price changes ripple to suppliers and complements (substitutes), affecting many linked markets.' }
+        ]},
+        { type: 'sectionHeader', icon: '⭐', label: 'Why this matters' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '🚗', head: 'Electric vehicles and lithium', body: 'Higher lithium prices encourage new mining, battery innovation, and substitutes like LFP batteries.' },
+          { type: 'tile', tone: 'amber', icon: '☕', head: 'Coffee beans',                 body: 'Higher coffee prices lead cafés to adjust prices, consumers to switch brands, and farmers to plant more.' },
+          { type: 'tile', tone: 'blue',  icon: '✈️', head: 'Holiday destinations',         body: 'Higher prices for popular destinations shift demand to alternatives and change travel patterns.' }
+        ]},
+        { type: 'glossaryRow', items: [
+          { term: 'Transmission mechanism', def: 'The way price changes in one market propagate through linked markets via supply chains and substitute/complement relationships.' },
+          { term: 'Knock-on effects',        def: 'Secondary consequences of a price change as it cascades through downstream and related markets.' },
+          { term: 'Resource reallocation',   def: 'The shifting of factors of production (land, labour, capital) toward more valuable uses in response to price signals.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Explain the transmission mechanism, not just that "price rises". Use language like signal, response, resource reallocation, and knock-on effects.' }
+      ]
     },
     {
       id: 'price_functions_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Entrepreneurship and the price mechanism',
-      tip: {
-        icon: '💡',
-        tone: 'blue',
-        text: 'Entrepreneurs watch prices closely. <strong>Rising prices and profits reveal unmet demand or scarcity.</strong> That creates an opportunity: enter the market, innovate, or find a cheaper way to supply the product.'
-      },
-      flowTitle: 'How entrepreneurs respond',
-      flowEmoji: '🚀',
-      flow: [
-        { tone: 'green',  icon: '🔍', title: 'Spot a price signal',          sub: 'Notice rising prices, shortages or strong demand.' },
-        { tone: 'amber',  icon: '📈', title: 'See a profit opportunity',     sub: 'Higher prices suggest consumers are willing to pay more.' },
-        { tone: 'blue',   icon: '🌱', title: 'Take a risk / invest',         sub: 'Commit money, time and ideas with uncertainty.' },
-        { tone: 'purple', icon: '🧩', title: 'Bring resources together',     sub: 'Combine labour, capital, ideas and technology.' },
-        { tone: 'green',  icon: '🏆', title: 'Earn profit if the idea works', sub: 'If consumers value it, profits reward success.' }
-      ],
-      pairLabel: null,
-      left: {
-        tone: 'green',
-        icon: '👤',
-        iconStyle: 'circle',
-        label: 'What entrepreneurs do',
-        points: [
-          'Organise resources to create goods and services.',
-          'Innovate with new products, processes or models.',
-          'Take risk by investing under uncertainty.',
-          'Respond to unmet demand and changing needs.'
-        ]
-      },
-      right: {
-        tone: 'blue',
-        icon: '⚖️',
-        iconStyle: 'circle',
-        label: 'Why the price mechanism matters',
-        points: [
-          'It rewards successful ideas.',
-          'It directs resources to where they are valued most.',
-          'It encourages efficiency and improvement.',
-          'It helps new firms enter and compete.'
-        ]
-      },
-      causesStyle: 'plain-white',
-      causesEmoji: '🌍',
-      causesLabel: 'Real-world examples',
-      causes: [
-        { tone: 'green', icon: '🛵', head: 'Food delivery apps', body: '<strong>Price signal:</strong> Busy times mean higher prices and delivery fees.<br><strong>Entrepreneurial response:</strong> Apps enter the market and use tech to match riders with customers.' },
-        { tone: 'amber', icon: '⛽', head: 'EV charging',        body: '<strong>Price signal:</strong> High fuel prices and demand for charging.<br><strong>Entrepreneurial response:</strong> Firms invest in charging networks and fast-charging stations.' },
-        { tone: 'blue',  icon: '📱', head: 'Revision apps',      body: '<strong>Price signal:</strong> Students value convenient, effective study tools.<br><strong>Entrepreneurial response:</strong> Entrepreneurs create apps with notes, quizzes and personalised plans.' }
-      ],
-      keyTerms: [
-        { term: 'Entrepreneur',           def: 'An economic agent who organises factors of production to create goods/services, bearing risk in search of profit.' },
-        { term: 'Creative destruction',   def: 'Schumpeter\'s term for entrepreneurial innovation destroying old industries while creating new ones – the engine of dynamic efficiency.' },
-        { term: 'Abnormal profit signal', def: 'Profit above normal return – the price signal that attracts entrepreneurs into a profitable market.' }
-      ],
-      examEdge: 'Remember: entrepreneurship is linked to <strong>profit incentives</strong> and <strong>dynamic efficiency</strong>. It\'s not just about starting a business – it\'s about <strong>responding to price signals to create value</strong>.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Entrepreneurs watch prices closely. <strong>Rising prices and profits reveal unmet demand or scarcity.</strong> That creates an opportunity: enter the market, innovate, or find a cheaper way to supply the product.' },
+        { type: 'sectionHeader', icon: '🚀', label: 'How entrepreneurs respond' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Spot a price signal',          detail: 'Notice rising prices, shortages or strong demand.' },
+          { label: 'See a profit opportunity',     detail: 'Higher prices suggest consumers are willing to pay more.' },
+          { label: 'Take a risk / invest',         detail: 'Commit money, time and ideas with uncertainty.' },
+          { label: 'Bring resources together',     detail: 'Combine labour, capital, ideas and technology.' },
+          { label: 'Earn profit if the idea works', detail: 'If consumers value it, profits reward success.' }
+        ]},
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '👤', head: 'What entrepreneurs do', body: 'Organise resources to create goods and services. Innovate with new products, processes or models. Take risk by investing under uncertainty. Respond to unmet demand and changing needs.' },
+          { type: 'tile', tone: 'blue', icon: '⚖️', head: 'Why the price mechanism matters', body: 'It rewards successful ideas. It directs resources to where they are valued most. It encourages efficiency and improvement. It helps new firms enter and compete.' }
+        ]},
+        { type: 'sectionHeader', icon: '🌍', label: 'Real-world examples' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '🛵', head: 'Food delivery apps', body: 'Price signal: Busy times mean higher prices and delivery fees. Entrepreneurial response: Apps enter the market and use tech to match riders with customers.' },
+          { type: 'tile', tone: 'amber', icon: '⛽', head: 'EV charging',        body: 'Price signal: High fuel prices and demand for charging. Entrepreneurial response: Firms invest in charging networks and fast-charging stations.' },
+          { type: 'tile', tone: 'blue',  icon: '📱', head: 'Revision apps',      body: 'Price signal: Students value convenient, effective study tools. Entrepreneurial response: Entrepreneurs create apps with notes, quizzes and personalised plans.' }
+        ]},
+        { type: 'glossaryRow', items: [
+          { term: 'Entrepreneur',           def: 'An economic agent who organises factors of production to create goods/services, bearing risk in search of profit.' },
+          { term: 'Creative destruction',   def: 'Schumpeter\'s term for entrepreneurial innovation destroying old industries while creating new ones – the engine of dynamic efficiency.' },
+          { term: 'Abnormal profit signal', def: 'Profit above normal return – the price signal that attracts entrepreneurs into a profitable market.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Remember: entrepreneurship is linked to profit incentives and dynamic efficiency. It\'s not just about starting a business – it\'s about responding to price signals to create value.' }
+      ]
     },
     {
       id: 'price_functions_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'When the price mechanism fails',
-      tip: {
-        icon: '💡',
-        tone: 'blue',
-        text: '<em>The price mechanism often coordinates markets well – but not always.</em><br><em>If prices do not reflect all costs and benefits, or if markets are distorted, resources may be allocated inefficiently.</em>'
-      },
-      causesStyle: 'tinted-flat',
-      causesEmoji: '⚠️',
-      causesLabel: 'Common sources of failure',
-      causes: [
-        { tone: 'green',  icon: '🏭', head: 'Externalities',           body: 'Costs or benefits affect others not reflected in prices (e.g. pollution).' },
-        { tone: 'blue',   icon: '🏞️', head: 'Public goods',            body: 'Non-excludable and non-rivalrous; markets underprovide them.' },
-        { tone: 'amber',  icon: 'ℹ️',  head: 'Information failure',     body: 'Buyers or sellers lack key information; leads to adverse selection or moral hazard.' },
-        { tone: 'purple', icon: '👑', head: 'Market power / monopoly', body: 'A firm can influence price above competitive levels; restriction of output.' },
-        { tone: 'slate',  icon: '📍', head: 'Factor immobility',       body: 'Resources cannot move freely to where they are most productive.' },
-        { tone: 'rose',   icon: '⚖️',  head: 'Merit and demerit goods', body: 'Markets underprovide merit goods and overprovide demerit goods.' }
-      ],
-      causes2Style: 'plain-white',
-      causes2Emoji: '🔬',
-      causes2Label: 'Examples',
-      causes2: [
-        { tone: 'slate', icon: '🏭', head: 'Pollution',                       body: 'Firms don\'t pay for the full environmental cost, so <strong>too much pollution</strong> is produced.' },
-        { tone: 'blue',  icon: '💉', head: 'Vaccination',                     body: 'Benefits extend to others (herd immunity), so private provision is <strong>too low</strong>.' },
-        { tone: 'amber', icon: '🚆', head: 'Rail commuters / local monopoly', body: 'Limited alternatives allow <strong>higher prices</strong> and <strong>poorer service</strong> than competition would deliver.' }
-      ],
-      keyTerms: [
-        { term: 'Market failure',       def: 'A situation where the free market fails to allocate resources efficiently – prices fail to signal, incentivise, or ration correctly.' },
-        { term: 'Externality',          def: 'A cost or benefit of a transaction that falls on a third party not involved in the exchange.' },
-        { term: 'Information asymmetry', def: 'When one side of a transaction has materially better information than the other, distorting decisions and prices.' }
-      ],
-      examEdge: '<strong>Identify why price no longer gives the correct signal.</strong><br>Then explain the consequence for efficiency and why government intervention may be justified.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<em>The price mechanism often coordinates markets well – but not always.</em><br><em>If prices do not reflect all costs and benefits, or if markets are distorted, resources may be allocated inefficiently.</em>' },
+        { type: 'sectionHeader', icon: '⚠️', label: 'Common sources of failure' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '🏭', head: 'Externalities',           body: 'Costs or benefits affect others not reflected in prices (e.g. pollution).' },
+          { type: 'tile', tone: 'blue',   icon: '🏞️', head: 'Public goods',            body: 'Non-excludable and non-rivalrous; markets underprovide them.' },
+          { type: 'tile', tone: 'amber',  icon: 'ℹ️',  head: 'Information failure',     body: 'Buyers or sellers lack key information; leads to adverse selection or moral hazard.' },
+          { type: 'tile', tone: 'purple', icon: '👑', head: 'Market power / monopoly', body: 'A firm can influence price above competitive levels; restriction of output.' },
+          { type: 'tile', tone: 'slate',  icon: '📍', head: 'Factor immobility',       body: 'Resources cannot move freely to where they are most productive.' },
+          { type: 'tile', tone: 'rose',   icon: '⚖️',  head: 'Merit and demerit goods', body: 'Markets underprovide merit goods and overprovide demerit goods.' }
+        ]},
+        { type: 'sectionHeader', icon: '🔬', label: 'Examples' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'slate', icon: '🏭', head: 'Pollution',                       body: 'Firms don\'t pay for the full environmental cost, so too much pollution is produced.' },
+          { type: 'tile', tone: 'blue',  icon: '💉', head: 'Vaccination',                     body: 'Benefits extend to others (herd immunity), so private provision is too low.' },
+          { type: 'tile', tone: 'amber', icon: '🚆', head: 'Rail commuters / local monopoly', body: 'Limited alternatives allow higher prices and poorer service than competition would deliver.' }
+        ]},
+        { type: 'glossaryRow', items: [
+          { term: 'Market failure',       def: 'A situation where the free market fails to allocate resources efficiently – prices fail to signal, incentivise, or ration correctly.' },
+          { term: 'Externality',          def: 'A cost or benefit of a transaction that falls on a third party not involved in the exchange.' },
+          { term: 'Information asymmetry', def: 'When one side of a transaction has materially better information than the other, distorting decisions and prices.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Identify why price no longer gives the correct signal. Then explain the consequence for efficiency and why government intervention may be justified.' }
+      ]
     },
     {
       id: 'price_functions_7',
@@ -352,7 +276,7 @@ window.ECONOS_TOPIC = {
         { term: 'Hybrid allocation',  def: 'Combining market exchange with government regulation, subsidies, or direct provision – common in healthcare, education, transport.' },
         { term: 'Contextual judgement', def: 'The exam skill of weighing efficiency vs equity, market failure vs government failure, on the facts of the specific market or policy.' }
       ],
-      examEdge: 'Strong answers compare <strong>efficiency and equity</strong>. Recognise <strong>market failure</strong> and <strong>government failure</strong>. Use <strong>examples</strong> and reach a balanced, <strong>contextual judgement</strong> rather than a blanket conclusion.',
+      examEdge: 'Strong answers compare efficiency and equity. Recognise market failure and government failure. Use examples and reach a balanced, contextual judgement rather than a blanket conclusion.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
@@ -539,4 +463,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

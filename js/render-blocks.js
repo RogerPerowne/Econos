@@ -175,7 +175,17 @@
       }
     }
 
-    return `<div class="econ-blocks${presetClass}" data-render-blocks="1"${densityAttr}>${html}</div>`;
+    // ── Card chrome (step label / title / lede) ───────────────────────────
+    // The legacy template renderers each emit these themselves; the block
+    // path must do the same so a migrated card keeps its heading. Authored
+    // content is trusted (ledes may contain <strong> etc.), so not escaped —
+    // matching the existing templates.
+    const chrome =
+      (card && card.stepLabel ? `<div class="card__step-label">${card.stepLabel}</div>` : '') +
+      (card && card.title ? `<h1 class="card__title">${card.title}</h1>` : '') +
+      (card && card.lede ? `<p class="card__lede">${card.lede}</p>` : '');
+
+    return `${chrome}<div class="econ-blocks${presetClass}" data-render-blocks="1"${densityAttr}>${html}</div>`;
   }
 
   function overflowSummary() {

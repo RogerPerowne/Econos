@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.27.0 — 2026-05-30
+
+### Renderer Phase 5 — migrate Learn It cards to the block system
+
+Migrated the static, convertible Learn It cards across all real-content topics
+to the `blocks:[...]` system (by a 22-shard Claude-agent workflow). **182 cards
+migrated, 269 preserved.** Cards that use an `interactiveDiagram`, tabbed
+`steps`, or a specialised template (calculation / five-frames / explorer /
+essay-scaffold / transmission-chain / market-structures-comparison) are kept on
+their existing renderer — the block system can't replicate those yet, and
+coexistence renders mixed topics fine.
+
+- `renderBlocks` now emits the card's step-label / title / lede chrome (the
+  template renderers did this themselves), so migrated cards keep their heading.
+- Legacy presentation fields (tip, causes*, flow*, left/right, conclusion,
+  examEdge, visualKey, …) on migrated cards are replaced by their block
+  equivalents (calloutStrip, grid+tile, mechanismChain, versusRows/grid,
+  bigIdea, examEdge, diagram). Top-level topic fields and preserved cards are
+  untouched.
+- Verified structurally: node --check on all 337 data files, lint, unit 26/26,
+  build all pass; a migrated card renders correctly end-to-end. (Not exhaustively
+  screenshot-reviewed — a visual pass is worthwhile.)
+
 ## 0.26.0 — 2026-05-30
 
 ### Renderer Phase 4 — image-to-data skill + mockup metadata

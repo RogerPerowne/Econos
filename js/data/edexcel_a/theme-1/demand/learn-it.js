@@ -27,7 +27,6 @@ window.ECONOS_TOPIC = {
       id: 'demand_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Demand: the big picture',
-      tip: { icon: '💡', tone: 'blue', text: 'Why do queues form for Taylor Swift tickets but shops slash prices on old stock? Demand helps explain how consumers respond to price – and why firms obsess over it.' },
       diagramKey: 'demandLawCurve',
       keyPoints: [
         { icon: '⚖️',  title: 'Law of demand',    headline: 'As price falls, quantity demanded usually rises.',                                  body: 'Consumers buy more when it\'s cheaper and less when it\'s more expensive.',         tone: 'green' },
@@ -39,7 +38,10 @@ window.ECONOS_TOPIC = {
         { term: 'Substitution effect', def: 'Price rise makes a good relatively expensive vs alternatives → consumers switch away → quantity demanded falls.' },
         { term: 'Income effect', def: 'Price rise reduces real purchasing power → consumers can afford less of the good (and others).' }
       ],
-      examEdge: 'Always state the ceteris paribus assumption when explaining the law of demand – other things stay the same. Giffen goods are the rare exception: a price rise increases quantity demanded because the income effect overwhelms the substitution effect. Mention this only for evaluation marks.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Why do queues form for Taylor Swift tickets but shops slash prices on old stock? Demand helps explain how consumers respond to price – and why firms obsess over it.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always state the ceteris paribus assumption when explaining the law of demand – other things stay the same. Giffen goods are the rare exception: a price rise increases quantity demanded because the income effect overwhelms the substitution effect. Mention this only for evaluation marks.' }
+      ]
     },
     {
       id: 'demand_2',
@@ -75,27 +77,26 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_3',
-      template: 'cause',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Non-Price Determinants of Demand',
-      tip: { icon: '💡', tone: 'blue', text: 'Demand shifts when anything other than the good\'s own price changes – income, tastes, related goods prices, population or expectations.' },
       shiftDiagrams: 'demand',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '📋',
-      causesLabel: 'What shifts the demand curve',
-      causes: [
-        { icon: '💰', head: 'Income',                   body: 'For normal goods: higher income → demand shifts right. For inferior goods (value-brand food, bus travel): higher income → demand shifts left. The key driver of YED analysis.',                  tone: 'green'  },
-        { icon: '↔️', head: 'Substitutes',              body: 'A rise in the price of a substitute shifts demand for this good right – consumers switch across. A fall in the substitute\'s price shifts demand left.',                                         tone: 'blue'   },
-        { icon: '🔗', head: 'Complements',              body: 'A rise in the price of a complement shifts demand for this good left – the two are bought together, so demand for both falls. A fall in the complement\'s price shifts demand right.',            tone: 'amber'  },
-        { icon: '🎨', head: 'Tastes & preferences',    body: 'Advertising, health recommendations, celebrity endorsements and social trends all shift demand. Changes can be rapid (viral trends) or gradual (long-run health awareness).',                    tone: 'purple' },
-        { icon: '👥', head: 'Population & demographics',body: 'Population growth increases total market demand. A changing age structure shifts demand between sectors – an ageing population increases healthcare demand; a younger one increases education.', tone: 'rose'   },
-        { icon: '🔮', head: 'Expectations',             body: 'If consumers expect future price rises, they bring purchases forward → demand rises now. In asset markets, expected price rises increase demand today – a key driver of speculative bubbles.',  tone: 'slate'  }
-      ],
       howToThink: {
         left:  { icon: '➡️', tone: 'green', head: 'Shifts demand right', body: 'Higher income (normal goods) · Substitute\'s price rises · Complement\'s price falls · Positive taste shift · Population growth · Expected price rise' },
         right: { icon: '⬅️', tone: 'rose',  head: 'Shifts demand left',  body: 'Lower income · Substitute\'s price falls · Complement\'s price rises · Negative taste shift · Population falls · Expected price fall' }
       },
-      examEdge: 'Examiners expect you to identify the relevant shifter for the specific context, not just list all of them. If the question is about the housing market, identify the most important driver (interest rates, income, expectations) and apply it precisely.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Demand shifts when anything other than the good\'s own price changes – income, tastes, related goods prices, population or expectations.' },
+        { type: 'sectionHeader', icon: '📋', label: 'What shifts the demand curve' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '💰', head: 'Income',                   body: 'For normal goods: higher income → demand shifts right. For inferior goods (value-brand food, bus travel): higher income → demand shifts left. The key driver of YED analysis.' },
+          { type: 'tile', tone: 'blue',   icon: '↔️', head: 'Substitutes',              body: 'A rise in the price of a substitute shifts demand for this good right – consumers switch across. A fall in the substitute\'s price shifts demand left.' },
+          { type: 'tile', tone: 'amber',  icon: '🔗', head: 'Complements',              body: 'A rise in the price of a complement shifts demand for this good left – the two are bought together, so demand for both falls. A fall in the complement\'s price shifts demand right.' },
+          { type: 'tile', tone: 'purple', icon: '🎨', head: 'Tastes & preferences',    body: 'Advertising, health recommendations, celebrity endorsements and social trends all shift demand. Changes can be rapid (viral trends) or gradual (long-run health awareness).' },
+          { type: 'tile', tone: 'rose',   icon: '👥', head: 'Population & demographics',body: 'Population growth increases total market demand. A changing age structure shifts demand between sectors – an ageing population increases healthcare demand; a younger one increases education.' },
+          { type: 'tile', tone: 'slate',  icon: '🔮', head: 'Expectations',             body: 'If consumers expect future price rises, they bring purchases forward → demand rises now. In asset markets, expected price rises increase demand today – a key driver of speculative bubbles.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Examiners expect you to identify the relevant shifter for the specific context, not just list all of them. If the question is about the housing market, identify the most important driver (interest rates, income, expectations) and apply it precisely.' }
+      ]
     },
     {
       id: 'demand_4',
@@ -125,76 +126,75 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_5',
-      template: 'framing',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Derived Demand',
-      tip: { icon: '💡', tone: 'blue', text: 'Derived demand links product and factor markets. If demand for cars falls in a recession, derived demand for car workers, steel, and components falls too – making recessions self-reinforcing.' },
-      flow: [
-        { icon: '🛍️', title: 'Consumers demand cars',      sub: 'Rising incomes → demand for vehicles grows.',                tone: 'green'  },
-        { icon: '🏭', title: 'Car firms expand output',    sub: 'Firms plan to build more vehicles.',                         tone: 'blue'   },
-        { icon: '⚙️', title: 'Demand for steel rises',    sub: 'More cars → more steel needed → steel market demand shifts right.',  tone: 'amber'  },
-        { icon: '👷', title: 'Demand for labour rises',    sub: 'More production → firms hire more workers in assembly.',     tone: 'purple' },
-        { icon: '📈', title: 'Wages and prices rise',      sub: 'Strong derived demand bids up wages and input costs.',       tone: 'rose'   }
-      ],
-      flowTitle: 'How derived demand flows through markets',
-      flowEmoji: '🔗',
       keyTerms: [
         { term: 'Derived demand', def: 'Demand for a factor or intermediate good arising from demand for the final good it helps produce.' },
         { term: 'Factor market', def: 'Market for inputs to production: labour, capital, land – demand in factor markets is always derived.' },
         { term: 'Joint demand', def: 'Demand for two goods that are complements – used together; demand for one creates demand for the other.' }
       ],
-      examEdge: 'Derived demand links micro and macro: if aggregate demand falls in a recession, demand for labour falls across the economy (derived demand), explaining rising unemployment. This chain – falling AD → falling product demand → falling derived demand for labour → unemployment – is a key transmission mechanism.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Derived demand links product and factor markets. If demand for cars falls in a recession, derived demand for car workers, steel, and components falls too – making recessions self-reinforcing.' },
+        { type: 'sectionHeader', icon: '🔗', label: 'How derived demand flows through markets' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Consumers demand cars',   detail: 'Rising incomes → demand for vehicles grows.' },
+          { label: 'Car firms expand output', detail: 'Firms plan to build more vehicles.' },
+          { label: 'Demand for steel rises',  detail: 'More cars → more steel needed → steel market demand shifts right.' },
+          { label: 'Demand for labour rises', detail: 'More production → firms hire more workers in assembly.' },
+          { label: 'Wages and prices rise',   detail: 'Strong derived demand bids up wages and input costs.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Derived demand links micro and macro: if aggregate demand falls in a recession, demand for labour falls across the economy (derived demand), explaining rising unemployment. This chain – falling AD → falling product demand → falling derived demand for labour → unemployment – is a key transmission mechanism.' }
+      ]
     },
     {
       id: 'demand_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Demand in Real Markets',
-      tip: { icon: '💡', tone: 'blue', text: 'In real markets, demand is shaped by many things at once – price, incomes, tastes, expectations, and market conditions. Understanding the full picture helps explain why demand changes.' },
       examples: [
         { tone: 'green', icon: '🎫', title: 'Taylor Swift tickets',   body: 'High willingness to pay, limited supply and loyal fans <strong>mean demand is very strong and not very price sensitive.</strong>' },
         { tone: 'green', icon: '⛽', title: 'Petrol',                  body: 'Relatively inelastic in the short run. People need it to get to work, school and essentials.' },
         { tone: 'green', icon: '🛒', title: 'Budget supermarkets',     body: 'Demand rises when incomes fall as people trade down to cheaper options. A rise in incomes can shift demand back.' },
         { tone: 'green', icon: '📺', title: 'Streaming subscriptions', body: 'Many close substitutes mean consumers can switch easily, making demand more elastic.' }
       ],
-      causesStyle: 'plain-white',
-      causesEmoji: '🔍',
-      causesLabel: 'What economists look for',
-      causes: [
-        { tone: 'blue',   icon: '🏷️', head: 'Price sensitivity',     body: 'How much demand changes when price changes.' },
-        { tone: 'amber',  icon: '🔄', head: 'Substitutes',            body: 'More substitutes usually mean more elastic demand.' },
-        { tone: 'green',  icon: '📈', head: 'Market data',            body: 'Sales, prices and volumes reveal real behaviour.' },
-        { tone: 'purple', icon: '🗓️', head: 'Seasonality',            body: 'Demand often follows predictable patterns.' },
-        { tone: 'rose',   icon: '🔮', head: 'Consumer expectations',  body: 'Future beliefs influence today\'s demand.' },
-        { tone: 'slate',  icon: '💰', head: 'Income levels',          body: 'Changes in income shift demand – especially for normal and inferior goods.' }
-      ],
-      causes2Style: 'plain-white',
-      causes2Emoji: '⚡',
-      causes2Label: 'Demand can shift in real time',
-      causes2: [
-        { tone: 'green', icon: '☀️', head: 'Summer heatwave',    body: '<strong style="color:#059669;">Demand shifts right →</strong> for ice cream, fans and sun cream as warm weather drives a spike in willingness to buy.' },
-        { tone: 'rose',  icon: '🌧️', head: 'Trend ends or fades', body: '<strong style="color:#DC2626;">← Demand shifts left</strong> as consumers lose interest, switch to the next craze, or the season ends.' }
-      ],
-      examEdge: 'Use context: name the market, identify the likely determinant, and explain why demand is likely to be more or less responsive.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'In real markets, demand is shaped by many things at once – price, incomes, tastes, expectations, and market conditions. Understanding the full picture helps explain why demand changes.' },
+        { type: 'sectionHeader', icon: '🔍', label: 'What economists look for' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '🏷️', head: 'Price sensitivity',    body: 'How much demand changes when price changes.' },
+          { type: 'tile', tone: 'amber',  icon: '🔄', head: 'Substitutes',           body: 'More substitutes usually mean more elastic demand.' },
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'Market data',           body: 'Sales, prices and volumes reveal real behaviour.' },
+          { type: 'tile', tone: 'purple', icon: '🗓️', head: 'Seasonality',           body: 'Demand often follows predictable patterns.' },
+          { type: 'tile', tone: 'rose',   icon: '🔮', head: 'Consumer expectations', body: 'Future beliefs influence today\'s demand.' },
+          { type: 'tile', tone: 'slate',  icon: '💰', head: 'Income levels',         body: 'Changes in income shift demand – especially for normal and inferior goods.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚡', label: 'Demand can shift in real time' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '☀️', head: 'Summer heatwave',    body: '<strong style="color:#059669;">Demand shifts right →</strong> for ice cream, fans and sun cream as warm weather drives a spike in willingness to buy.' },
+          { type: 'tile', tone: 'rose',  icon: '🌧️', head: 'Trend ends or fades', body: '<strong style="color:#DC2626;">← Demand shifts left</strong> as consumers lose interest, switch to the next craze, or the season ends.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Use context: name the market, identify the likely determinant, and explain why demand is likely to be more or less responsive.' }
+      ]
     },
     {
       id: 'demand_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'The Demand Curve and Market Analysis',
-      tip: { icon: '💡', tone: 'blue', text: 'Diagram checklist: label both axes (P, Q), label the curve (D), mark key points (P*, Q*), show any shift as D₂ clearly. Methodical technique earns marks even when written analysis is incomplete.' },
       diagramKey: 'demandScheduleCurve',
-      flow: [
-        { icon: '📖', title: 'Read the curve',  sub: 'The curve slopes downward. There is an inverse relationship between price and quantity demanded.',            tone: 'green'  },
-        { icon: '🔧', title: 'Use the curve',   sub: 'Estimate the effects of price changes, calculate revenue and measure consumer surplus.',                      tone: 'amber'  },
-        { icon: '⚠️', title: 'Limitations',     sub: 'In real life, many other factors change simultaneously. The ceteris paribus assumption rarely holds perfectly.', tone: 'blue'   }
-      ],
-      flowTitle: 'How to use this diagram',
-      flowEmoji: '📈',
       keyTerms: [
         { term: 'Ceteris paribus', def: 'Latin for "all else equal" – the assumption that only one variable changes at a time when analysing its effect.' },
         { term: 'Effective demand', def: 'Demand backed by both willingness AND ability to pay – a wish list without purchasing power is not demand.' },
         { term: 'Market demand', def: 'Horizontal sum of all individual demand curves – aggregate quantity demanded at each price across all consumers.' }
       ],
-      examEdge: 'Edexcel examiners note: too many students confuse "demand" (the whole schedule) with "quantity demanded" (a specific point on the schedule). "Demand" shifts; "quantity demanded" moves. Using these terms precisely throughout an essay is a marker of top-band understanding.',
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Diagram checklist: label both axes (P, Q), label the curve (D), mark key points (P*, Q*), show any shift as D₂ clearly. Methodical technique earns marks even when written analysis is incomplete.' },
+        { type: 'sectionHeader', icon: '📈', label: 'How to use this diagram' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Read the curve',  detail: 'The curve slopes downward. There is an inverse relationship between price and quantity demanded.' },
+          { label: 'Use the curve',   detail: 'Estimate the effects of price changes, calculate revenue and measure consumer surplus.' },
+          { label: 'Limitations',     detail: 'In real life, many other factors change simultaneously. The ceteris paribus assumption rarely holds perfectly.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Edexcel examiners note: too many students confuse "demand" (the whole schedule) with "quantity demanded" (a specific point on the schedule). "Demand" shifts; "quantity demanded" moves. Using these terms precisely throughout an essay is a marker of top-band understanding.' }
+      ],
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
@@ -384,4 +384,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

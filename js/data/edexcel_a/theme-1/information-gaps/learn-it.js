@@ -28,32 +28,30 @@ window.ECONOS_TOPIC = {
       id: 'info_gaps_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Information gaps: the big picture',
-      tip: { icon: '💡', tone: 'blue', text: 'Information gaps are a type of market failure. They occur when one party in a transaction has more or better information than the other. This leads to poor decisions, lower trust, and inefficient outcomes.' },
-      flowTitle: 'The big picture: five key areas',
-      flowEmoji: '🗺️',
-      flow: [
-        { icon: '⚖️', tone: 'blue',   title: 'Imperfect vs asymmetric information', sub: 'Imperfect information means both sides lack some facts. Asymmetric information means one side knows more than the other.' },
-        { icon: '🔍', tone: 'amber',  title: 'Adverse selection',                   sub: 'An ex-ante information problem – hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
-        { icon: '🛡️', tone: 'rose',   title: 'Moral hazard',                        sub: 'An ex-post information problem – behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
-        { icon: '📢', tone: 'green',  title: 'Private market solutions',            sub: 'Firms and individuals use signalling and screening to reveal information or sort good from bad.' },
-        { icon: '🏛️', tone: 'purple', title: 'Government responses',               sub: 'Governments can improve outcomes through disclosure, regulation, provision of information, and behavioural nudges.' }
-      ],
-      causesLabel: 'The logic flow',
-      causesEmoji: '➡️',
-      causesStyle: 'tinted-flat',
-      causes: [
-        { icon: 'ℹ️', tone: 'blue',  head: 'Information gap',              body: 'One side has more or better information' },
-        { icon: '⚠️', tone: 'amber', head: 'Poor decisions / missing trust', body: 'Wrong choices, higher risk, lower willingness to trade' },
-        { icon: '📉', tone: 'rose',  head: 'Market failure',               body: 'Inefficient outcomes, reduced welfare, lower trust in markets' }
-      ],
-      causes2Label: 'Why this matters',
-      causes2Emoji: '⭐',
-      causes2: [
-        { icon: '📉', tone: 'rose',  head: 'Markets may unravel',               body: 'Loss of trust can cause good markets to break down.' },
-        { icon: '🏆', tone: 'amber', head: 'Good products can be driven out',    body: 'Bad products survive when information is hidden.' },
-        { icon: '🏛️', tone: 'blue',  head: 'Government may need to intervene',  body: 'To correct failures and protect consumers.' }
-      ],
-      examEdge: 'Information failure is distinct from other market failures: it does not necessarily involve externalities or public goods. The market may be perfectly competitive and yet produce inefficient outcomes because information is unequally distributed. Identifying this as a separate cause of market failure is analytically important.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Information gaps are a type of market failure. They occur when one party in a transaction has more or better information than the other. This leads to poor decisions, lower trust, and inefficient outcomes.' },
+        { type: 'sectionHeader', icon: '🗺️', label: 'The big picture: five key areas' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Imperfect vs asymmetric information', detail: 'Imperfect information means both sides lack some facts. Asymmetric information means one side knows more than the other.' },
+          { label: 'Adverse selection',                   detail: 'An ex-ante information problem – hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
+          { label: 'Moral hazard',                        detail: 'An ex-post information problem – behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
+          { label: 'Private market solutions',            detail: 'Firms and individuals use signalling and screening to reveal information or sort good from bad.' },
+          { label: 'Government responses',               detail: 'Governments can improve outcomes through disclosure, regulation, provision of information, and behavioural nudges.' }
+        ]},
+        { type: 'sectionHeader', icon: '➡️', label: 'The logic flow' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: 'ℹ️', head: 'Information gap',              body: 'One side has more or better information' },
+          { type: 'tile', tone: 'amber', icon: '⚠️', head: 'Poor decisions / missing trust', body: 'Wrong choices, higher risk, lower willingness to trade' },
+          { type: 'tile', tone: 'rose',  icon: '📉', head: 'Market failure',               body: 'Inefficient outcomes, reduced welfare, lower trust in markets' }
+        ]},
+        { type: 'sectionHeader', icon: '⭐', label: 'Why this matters' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'rose',  icon: '📉', head: 'Markets may unravel',               body: 'Loss of trust can cause good markets to break down.' },
+          { type: 'tile', tone: 'amber', icon: '🏆', head: 'Good products can be driven out',    body: 'Bad products survive when information is hidden.' },
+          { type: 'tile', tone: 'blue',  icon: '🏛️', head: 'Government may need to intervene',  body: 'To correct failures and protect consumers.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Information failure is distinct from other market failures: it does not necessarily involve externalities or public goods. The market may be perfectly competitive and yet produce inefficient outcomes because information is unequally distributed. Identifying this as a separate cause of market failure is analytically important.' }
+      ]
     },
 
     {

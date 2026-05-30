@@ -50,13 +50,11 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'The macro dashboard',
       lede: 'Economists judge how well an economy is doing using four headline measures. Each tells us something different – and together they give the big picture.',
-      visualKey: 'macroDashboardSvg',
-      notePosition: 'top',
-      note: 'Every government judges economic success against <strong>all four indicators simultaneously</strong>. The difficulty is that they can pull in opposite directions: policies that boost growth can stoke inflation; cutting unemployment can widen the current-account deficit; squeezing inflation can slow growth and raise joblessness. Understanding these tensions is what separates descriptive answers from analytical ones.',
-      examEdge: {
-        title: 'Show how the four measures interact',
-        text: '<strong>Policy is about balance – there are no free lunches.</strong> Top marks come from explaining the <strong>trade-offs</strong>, not just describing each indicator in isolation. Faster growth can push up inflation. Lower unemployment can worsen the current account. Anti-inflation policy can slow growth.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: undefined, text: 'Every government judges economic success against <strong>all four indicators simultaneously</strong>. The difficulty is that they can pull in opposite directions: policies that boost growth can stoke inflation; cutting unemployment can widen the current-account deficit; squeezing inflation can slow growth and raise joblessness. Understanding these tensions is what separates descriptive answers from analytical ones.' },
+        { type: 'diagram', svgKey: 'macroDashboardSvg', caption: undefined },
+        { type: 'examEdge', title: 'Show how the four measures interact', text: '<strong>Policy is about balance – there are no free lunches.</strong> Top marks come from explaining the <strong>trade-offs</strong>, not just describing each indicator in isolation. Faster growth can push up inflation. Lower unemployment can worsen the current account. Anti-inflation policy can slow growth.' }
+      ]
     },
 
     /* ----- CARD 2 – What is GDP? ----- */
@@ -65,59 +63,22 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 8',
       title: 'What is GDP?',
       lede: 'GDP (Gross Domestic Product) is the headline measure of an economy\'s size.',
-      tip: { icon: '📊', tone: 'blue', head: 'DEFINITION', text: 'GDP is the <strong>total market value</strong> of all <strong>final</strong> goods and services produced <strong>within</strong> an economy in a given period.' },
-      causesLabel: 'Three approaches, one answer',
-      causesEmoji: '🔢',
-      causesStyle: 'plain-white',
-      causesCols: 3,
-      causes: [
-        {
-          tone: 'green',
-          icon: '①',
-          head: 'Output approach',
-          body: 'Add the value added at each stage of production.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:17px;font-weight:800;color:#047857;margin-top:6px;letter-spacing:0.3px;">Σ(Value added)</div></div><div style="font-size:12.5px;line-height:1.65;color:#475569;"><strong style="color:#0B1426;">Example:</strong><br>Agriculture value added<br>+ Manufacturing value added<br>+ Services value added<br>= <strong>GDP</strong></div>'
-        },
-        {
-          tone: 'blue',
-          icon: '②',
-          head: 'Expenditure approach',
-          body: 'Add up total spending on final goods and services.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:22px;font-weight:800;color:#1D4ED8;margin-top:4px;letter-spacing:0.5px;">C+I+G+(X−M)</div></div><div style="font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#1D4ED8;">C</strong> Consumption (households)<br><strong style="color:#1D4ED8;">I</strong> Investment (business)<br><strong style="color:#1D4ED8;">G</strong> Government spending<br><strong style="color:#1D4ED8;">X</strong> Exports (sold abroad)<br><strong style="color:#1D4ED8;">M</strong> Imports (bought abroad)<br><span style="color:#1D4ED8;font-weight:700;">Net exports = Exports − Imports</span></div>'
-        },
-        {
-          tone: 'amber',
-          icon: '③',
-          head: 'Income approach',
-          body: 'Add the incomes earned in producing goods and services.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:22px;font-weight:800;color:#B45309;margin-top:4px;letter-spacing:0.5px;">W+R+I+P</div></div><div style="font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">W</strong> Wages and salaries<br><strong style="color:#B45309;">R</strong> Rent<br><strong style="color:#B45309;">I</strong> Interest<br><strong style="color:#B45309;">P</strong> Profits<br><em style="color:#64748B;">(before taxes and subsidies on products)</em></div>'
-        }
-      ],
-      causes2Label: 'Final goods only – why this matters',
-      causes2Emoji: '🎯',
-      causes2Style: 'plain-white',
-      causes2Cols: 3,
-      causes2: [
-        {
-          tone: 'purple',
-          icon: '🔁',
-          head: 'Why should the three match?',
-          body: 'Every final good or service is produced <strong>somewhere</strong> (output), paid for by <strong>somehow</strong> (expenditure), and creates income for <strong>someone</strong> (income). Three views of the same circular flow.'
-        },
-        {
-          tone: 'rose',
-          icon: '⚠️',
-          head: 'Exam trap: intermediate goods',
-          body: 'GDP counts only <strong>final</strong> goods and services. Including intermediate goods leads to <strong>double-counting</strong>.<br><br><em>Example:</em> flour (£1) used to make bread (£3). Count bread (£3) in GDP, not both – the bread price already includes the flour value.'
-        },
-        {
-          tone: 'blue',
-          icon: '🧮',
-          head: 'Worked example: final goods only',
-          body: 'An economy in a year produces:<br>• Flour (used to make bread) – £1,000<br>• Bread (sold to consumers) – £3,000<br>• Haircuts – £800<br><br><strong style="color:#1D4ED8;">GDP = £3,000 + £800 = £3,800</strong><br><em style="color:#64748B;font-size:12px;">(Do not add flour – it is intermediate.)</em>'
-        }
-      ],
-      examEdge: {
-        title: 'Key idea',
-        text: 'GDP measures the value of <strong>final output within</strong> an economy over a given period. All three approaches give the same answer because every transaction is simultaneously an output, an expenditure and an income.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '📊', text: 'DEFINITION — GDP is the <strong>total market value</strong> of all <strong>final</strong> goods and services produced <strong>within</strong> an economy in a given period.' },
+        { type: 'sectionHeader', icon: '🔢', label: 'Three approaches, one answer' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '①', head: 'Output approach', body: 'Add the value added at each stage of production.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:17px;font-weight:800;color:#047857;margin-top:6px;letter-spacing:0.3px;">Σ(Value added)</div></div><div style="font-size:12.5px;line-height:1.65;color:#475569;"><strong style="color:#0B1426;">Example:</strong><br>Agriculture value added<br>+ Manufacturing value added<br>+ Services value added<br>= <strong>GDP</strong></div>' },
+          { type: 'tile', tone: 'blue', icon: '②', head: 'Expenditure approach', body: 'Add up total spending on final goods and services.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:22px;font-weight:800;color:#1D4ED8;margin-top:4px;letter-spacing:0.5px;">C+I+G+(X−M)</div></div><div style="font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#1D4ED8;">C</strong> Consumption (households)<br><strong style="color:#1D4ED8;">I</strong> Investment (business)<br><strong style="color:#1D4ED8;">G</strong> Government spending<br><strong style="color:#1D4ED8;">X</strong> Exports (sold abroad)<br><strong style="color:#1D4ED8;">M</strong> Imports (bought abroad)<br><span style="color:#1D4ED8;font-weight:700;">Net exports = Exports − Imports</span></div>' },
+          { type: 'tile', tone: 'amber', icon: '③', head: 'Income approach', body: 'Add the incomes earned in producing goods and services.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:22px;font-weight:800;color:#B45309;margin-top:4px;letter-spacing:0.5px;">W+R+I+P</div></div><div style="font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">W</strong> Wages and salaries<br><strong style="color:#B45309;">R</strong> Rent<br><strong style="color:#B45309;">I</strong> Interest<br><strong style="color:#B45309;">P</strong> Profits<br><em style="color:#64748B;">(before taxes and subsidies on products)</em></div>' }
+        ]},
+        { type: 'sectionHeader', icon: '🎯', label: 'Final goods only – why this matters' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'purple', icon: '🔁', head: 'Why should the three match?', body: 'Every final good or service is produced <strong>somewhere</strong> (output), paid for by <strong>somehow</strong> (expenditure), and creates income for <strong>someone</strong> (income). Three views of the same circular flow.' },
+          { type: 'tile', tone: 'rose', icon: '⚠️', head: 'Exam trap: intermediate goods', body: 'GDP counts only <strong>final</strong> goods and services. Including intermediate goods leads to <strong>double-counting</strong>.<br><br><em>Example:</em> flour (£1) used to make bread (£3). Count bread (£3) in GDP, not both – the bread price already includes the flour value.' },
+          { type: 'tile', tone: 'blue', icon: '🧮', head: 'Worked example: final goods only', body: 'An economy in a year produces:<br>• Flour (used to make bread) – £1,000<br>• Bread (sold to consumers) – £3,000<br>• Haircuts – £800<br><br><strong style="color:#1D4ED8;">GDP = £3,000 + £800 = £3,800</strong><br><em style="color:#64748B;font-size:12px;">(Do not add flour – it is intermediate.)</em>' }
+        ]},
+        { type: 'examEdge', title: 'Key idea', text: 'GDP measures the value of <strong>final output within</strong> an economy over a given period. All three approaches give the same answer because every transaction is simultaneously an output, an expenditure and an income.' }
+      ]
     },
 
     /* ----- CARD 3 – Real vs nominal GDP ----- */
@@ -126,53 +87,23 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Real vs nominal GDP',
       lede: 'Real GDP is the only number that tells you whether people are actually better off.',
-      tip: { icon: '💡', tone: 'blue', text: '<strong>Nominal GDP</strong> values output at <strong>current prices</strong> (includes inflation). <strong>Real GDP</strong> values output at <strong>constant prices</strong> (strips out inflation).' },
-      causesLabel: 'Current prices vs constant prices',
-      causesEmoji: '⚖️',
-      causesStyle: 'plain-white',
-      causesCols: 2,
-      causes: [
-        {
-          tone: 'blue',
-          icon: '💷',
-          head: 'Nominal GDP – at current prices',
-          body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">🏷️</span><div>Includes the effect of price changes (inflation or deflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">📈</span><div>Tells us the size of the economy <strong>in money terms today</strong></div></div><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">📅</span><div>Useful for budgets, tax receipts and debt measured in £ today</div></div></div>'
-        },
-        {
-          tone: 'green',
-          icon: '📊',
-          head: 'Real GDP – at constant prices',
-          body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">✂️</span><div><strong>Strips out</strong> the effect of price changes (inflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">📊</span><div>Shows changes in the <strong>volume</strong> of output</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">🎯</span><div>Best for judging <strong>living standards</strong>, growth and productivity</div></div></div>'
-        }
-      ],
-      causes2Label: 'Adjusting for inflation: nominal → real',
-      causes2Emoji: '🧮',
-      causes2Style: 'plain-white',
-      causes2Cols: 1,
-      causes2: [
-        {
-          tone: 'amber',
-          icon: '🧮',
-          head: 'Converting nominal GDP to real GDP',
-          body: 'Use a price index (the <strong>GDP deflator</strong>) to strip out the effect of inflation.<br><br><div style="display:grid;grid-template-columns:3fr 2fr;gap:14px;align-items:stretch;"><div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:18px 18px;text-align:center;font-family:Menlo,monospace;display:flex;flex-direction:column;justify-content:center;align-items:center;"><div style="display:inline-flex;align-items:center;gap:10px;color:#B45309;font-weight:800;"><span style="font-size:15px;">Real GDP =</span><div style="display:inline-flex;flex-direction:column;text-align:center;line-height:1.3;"><span style="font-size:15px;padding:0 10px 4px;border-bottom:2px solid #B45309;">Nominal GDP</span><span style="font-size:15px;padding:4px 10px 0;">GDP deflator</span></div><span style="font-size:15px;">× 100</span></div><div style="font-size:11px;color:#92400E;margin-top:12px;font-weight:400;">(base year deflator = 100)</div></div><div style="background:#FAFAFA;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">Worked example</strong><br>Nominal GDP (2024) = £2,200bn<br>GDP deflator (2024) = 125<br>Real GDP = 2,200 ÷ 125 × 100<br><strong style="color:#0B1426;">= £1,760bn (in base-year prices)</strong></div></div>'
-        }
-      ],
-      causes3Label: 'Adjusting for population: GDP per capita',
-      causes3Emoji: '👥',
-      causes3Style: 'plain-white',
-      causes3Cols: 1,
-      causes3: [
-        {
-          tone: 'purple',
-          icon: '👥',
-          head: 'GDP per capita – output per person',
-          body: 'Adjusts output for population size so we can compare <strong>living standards</strong> across time and between countries.<br><br><div style="display:grid;grid-template-columns:3fr 2fr;gap:14px;align-items:stretch;"><div style="background:#F5F3FF;border:1px solid #DDD6FE;border-radius:8px;padding:18px 18px;text-align:center;font-family:Menlo,monospace;display:flex;flex-direction:column;justify-content:center;align-items:center;"><div style="display:inline-flex;align-items:center;gap:10px;color:#6D28D9;font-weight:800;"><span style="font-size:15px;">GDP per capita =</span><div style="display:inline-flex;flex-direction:column;text-align:center;line-height:1.3;"><span style="font-size:15px;padding:0 10px 4px;border-bottom:2px solid #6D28D9;">Real GDP</span><span style="font-size:15px;padding:4px 10px 0;">Population</span></div></div></div><div style="background:#FAFAFA;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.75;color:#475569;"><strong style="color:#6D28D9;">Worked example</strong><br>Real GDP (2024) = £1,760bn<br>Population (2024) = 66 million<br>GDP per capita = 1,760 ÷ 66<br><strong style="color:#6D28D9;">= £26,667 per person</strong></div></div>'
-        }
-      ],
-      examEdge: {
-        title: 'Examiner tip',
-        text: 'Essays usually want <strong>real GDP</strong> rather than nominal GDP. Writing just "GDP rose" signals you haven\'t adjusted for inflation – instant lost marks. Use <strong>real GDP</strong> (or <strong>real GDP per capita</strong>) when judging economic performance and living standards. A growing GDP with a faster-growing population still means falling GDP per capita – the trap most students miss.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<strong>Nominal GDP</strong> values output at <strong>current prices</strong> (includes inflation). <strong>Real GDP</strong> values output at <strong>constant prices</strong> (strips out inflation).' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'Current prices vs constant prices' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '💷', head: 'Nominal GDP – at current prices', body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">🏷️</span><div>Includes the effect of price changes (inflation or deflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">📈</span><div>Tells us the size of the economy <strong>in money terms today</strong></div></div><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">📅</span><div>Useful for budgets, tax receipts and debt measured in £ today</div></div></div>' },
+          { type: 'tile', tone: 'green', icon: '📊', head: 'Real GDP – at constant prices', body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">✂️</span><div><strong>Strips out</strong> the effect of price changes (inflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">📊</span><div>Shows changes in the <strong>volume</strong> of output</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">🎯</span><div>Best for judging <strong>living standards</strong>, growth and productivity</div></div></div>' }
+        ]},
+        { type: 'sectionHeader', icon: '🧮', label: 'Adjusting for inflation: nominal → real' },
+        { type: 'grid', cols: 1, children: [
+          { type: 'tile', tone: 'amber', icon: '🧮', head: 'Converting nominal GDP to real GDP', body: 'Use a price index (the <strong>GDP deflator</strong>) to strip out the effect of inflation.<br><br><div style="display:grid;grid-template-columns:3fr 2fr;gap:14px;align-items:stretch;"><div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:18px 18px;text-align:center;font-family:Menlo,monospace;display:flex;flex-direction:column;justify-content:center;align-items:center;"><div style="display:inline-flex;align-items:center;gap:10px;color:#B45309;font-weight:800;"><span style="font-size:15px;">Real GDP =</span><div style="display:inline-flex;flex-direction:column;text-align:center;line-height:1.3;"><span style="font-size:15px;padding:0 10px 4px;border-bottom:2px solid #B45309;">Nominal GDP</span><span style="font-size:15px;padding:4px 10px 0;">GDP deflator</span></div><span style="font-size:15px;">× 100</span></div><div style="font-size:11px;color:#92400E;margin-top:12px;font-weight:400;">(base year deflator = 100)</div></div><div style="background:#FAFAFA;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">Worked example</strong><br>Nominal GDP (2024) = £2,200bn<br>GDP deflator (2024) = 125<br>Real GDP = 2,200 ÷ 125 × 100<br><strong style="color:#0B1426;">= £1,760bn (in base-year prices)</strong></div></div>' }
+        ]},
+        { type: 'sectionHeader', icon: '👥', label: 'Adjusting for population: GDP per capita' },
+        { type: 'grid', cols: 1, children: [
+          { type: 'tile', tone: 'purple', icon: '👥', head: 'GDP per capita – output per person', body: 'Adjusts output for population size so we can compare <strong>living standards</strong> across time and between countries.<br><br><div style="display:grid;grid-template-columns:3fr 2fr;gap:14px;align-items:stretch;"><div style="background:#F5F3FF;border:1px solid #DDD6FE;border-radius:8px;padding:18px 18px;text-align:center;font-family:Menlo,monospace;display:flex;flex-direction:column;justify-content:center;align-items:center;"><div style="display:inline-flex;align-items:center;gap:10px;color:#6D28D9;font-weight:800;"><span style="font-size:15px;">GDP per capita =</span><div style="display:inline-flex;flex-direction:column;text-align:center;line-height:1.3;"><span style="font-size:15px;padding:0 10px 4px;border-bottom:2px solid #6D28D9;">Real GDP</span><span style="font-size:15px;padding:4px 10px 0;">Population</span></div></div></div><div style="background:#FAFAFA;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.75;color:#475569;"><strong style="color:#6D28D9;">Worked example</strong><br>Real GDP (2024) = £1,760bn<br>Population (2024) = 66 million<br>GDP per capita = 1,760 ÷ 66<br><strong style="color:#6D28D9;">= £26,667 per person</strong></div></div>' }
+        ]},
+        { type: 'examEdge', title: 'Examiner tip', text: 'Essays usually want <strong>real GDP</strong> rather than nominal GDP. Writing just "GDP rose" signals you haven\'t adjusted for inflation – instant lost marks. Use <strong>real GDP</strong> (or <strong>real GDP per capita</strong>) when judging economic performance and living standards. A growing GDP with a faster-growing population still means falling GDP per capita – the trap most students miss.' }
+      ]
     },
 
     /* ----- CARD 4 – GNP, GNI and comparing economies ----- */
@@ -181,57 +112,28 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 4 of 8',
       title: 'GNP, GNI and comparing economies',
       lede: 'GDP, GNI and PPP each adjust for different things – pick the right tool for the question.',
-      tip: { icon: '💡', tone: 'blue', text: '<strong>GDP</strong> measures output <em>within</em> a country\'s borders. <strong>GNP / GNI</strong> adjust for income flows with the rest of the world. <strong>PPP</strong> adjustments make cross-country comparisons fairer.' },
-      causesLabel: 'GDP vs GNP / GNI',
-      causesEmoji: '🌍',
-      causesStyle: 'plain-white',
-      causesPosition: 'top',
-      causesCols: 2,
-      causes: [
-        {
-          tone: 'blue',
-          icon: '🏛️',
-          head: 'GDP – Gross Domestic Product',
-          body: 'Measures output produced <strong>within the country\'s borders</strong>.<br><br>• Includes everyone who works inside the country, regardless of nationality<br>• Excludes income earned by residents abroad<br><br><span style="color:#1D4ED8;font-weight:700;">Focus:</span> <em>location of production.</em>'
-        },
-        {
-          tone: 'green',
-          icon: '🌎',
-          head: 'GNP / GNI – Gross National Income',
-          body: 'Measures income earned by a country\'s <strong>residents from anywhere in the world</strong>.<br><br>• Adds net property income from abroad (profits, interest, dividends, rents)<br>• Subtracts foreign-owned income earned within the country<br><br><span style="color:#047857;font-weight:700;">Focus:</span> <em>ownership of income.</em>'
-        }
-      ],
-      flowTitle: 'How income flows affect GNP / GNI',
-      flowEmoji: '🔁',
-      flow: [
-        { tone: 'blue',   icon: '🌍', title: 'Rest of the world', sub: 'Foreign firms earn income in our country' },
-        { tone: 'amber',  icon: '↘️', title: 'Income in',         sub: '(e.g. foreign profits, interest)' },
-        { tone: 'green',  icon: '🏠', title: 'Our country',       sub: 'GDP: output inside our borders' },
-        { tone: 'rose',   icon: '↗️', title: 'Income out',         sub: '(e.g. profits sent abroad)' },
-        { tone: 'blue',   icon: '🌍', title: 'Rest of the world', sub: 'Our firms earn income abroad' }
-      ],
-      causes2Label: 'Formula and case study',
-      causes2Emoji: '🧮',
-      causes2Style: 'plain-white',
-      causes2Cols: 2,
-      causes2: [
-        {
-          tone: 'green',
-          icon: '🧮',
-          head: 'The GNI formula',
-          body: '<div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:14px 16px;font-family:Menlo,monospace;font-weight:800;color:#047857;font-size:13px;line-height:1.6;text-align:center;">GNP (at factor cost) =<br>GDP + Net property<br>income from abroad</div><br><div style="font-size:12.5px;color:#475569;line-height:1.65;"><strong style="color:#0B1426;">GNI ≈ GNP</strong> in practice – small adjustments for taxes and subsidies on income.</div>'
-        },
-        {
-          tone: 'purple',
-          icon: '🇮🇪',
-          head: 'Case study: Ireland and developing economies',
-          body: 'Ireland\'s <strong>GNP per capita is much lower</strong> than its GDP per capita because of large profits earned by multinational firms abroad.<br><br>In many <strong>developing countries</strong>, GNP per capita is also lower than GDP per capita as profits flow out to foreign owners.'
-        }
-      ],
-      examEdge: {
-        title: 'Exam tip: PPP for fair international comparisons',
-        text: '$1 buys very different things in <strong>London vs Lagos</strong>. <strong>Purchasing Power Parity (PPP)</strong> adjusts for different price levels so we compare real living standards, not just market exchange rates. Example – <strong>$100 buys ~4 items in London but ~14 items in Lagos.</strong> India\'s GDP per capita: ~$2,400 at market rates vs ~$9,200 at PPP. Use <strong>GNI per capita (PPP)</strong> for fair cross-country comparisons of living standards.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<strong>GDP</strong> measures output <em>within</em> a country\'s borders. <strong>GNP / GNI</strong> adjust for income flows with the rest of the world. <strong>PPP</strong> adjustments make cross-country comparisons fairer.' },
+        { type: 'sectionHeader', icon: '🌍', label: 'GDP vs GNP / GNI' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '🏛️', head: 'GDP – Gross Domestic Product', body: 'Measures output produced <strong>within the country\'s borders</strong>.<br><br>• Includes everyone who works inside the country, regardless of nationality<br>• Excludes income earned by residents abroad<br><br><span style="color:#1D4ED8;font-weight:700;">Focus:</span> <em>location of production.</em>' },
+          { type: 'tile', tone: 'green', icon: '🌎', head: 'GNP / GNI – Gross National Income', body: 'Measures income earned by a country\'s <strong>residents from anywhere in the world</strong>.<br><br>• Adds net property income from abroad (profits, interest, dividends, rents)<br>• Subtracts foreign-owned income earned within the country<br><br><span style="color:#047857;font-weight:700;">Focus:</span> <em>ownership of income.</em>' }
+        ]},
+        { type: 'sectionHeader', icon: '🔁', label: 'How income flows affect GNP / GNI' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Rest of the world', detail: 'Foreign firms earn income in our country' },
+          { label: 'Income in', detail: '(e.g. foreign profits, interest)' },
+          { label: 'Our country', detail: 'GDP: output inside our borders' },
+          { label: 'Income out', detail: '(e.g. profits sent abroad)' },
+          { label: 'Rest of the world', detail: 'Our firms earn income abroad' }
+        ]},
+        { type: 'sectionHeader', icon: '🧮', label: 'Formula and case study' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🧮', head: 'The GNI formula', body: '<div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:14px 16px;font-family:Menlo,monospace;font-weight:800;color:#047857;font-size:13px;line-height:1.6;text-align:center;">GNP (at factor cost) =<br>GDP + Net property<br>income from abroad</div><br><div style="font-size:12.5px;color:#475569;line-height:1.65;"><strong style="color:#0B1426;">GNI ≈ GNP</strong> in practice – small adjustments for taxes and subsidies on income.</div>' },
+          { type: 'tile', tone: 'purple', icon: '🇮🇪', head: 'Case study: Ireland and developing economies', body: 'Ireland\'s <strong>GNP per capita is much lower</strong> than its GDP per capita because of large profits earned by multinational firms abroad.<br><br>In many <strong>developing countries</strong>, GNP per capita is also lower than GDP per capita as profits flow out to foreign owners.' }
+        ]},
+        { type: 'examEdge', title: 'Exam tip: PPP for fair international comparisons', text: '$1 buys very different things in <strong>London vs Lagos</strong>. <strong>Purchasing Power Parity (PPP)</strong> adjusts for different price levels so we compare real living standards, not just market exchange rates. Example – <strong>$100 buys ~4 items in London but ~14 items in Lagos.</strong> India\'s GDP per capita: ~$2,400 at market rates vs ~$9,200 at PPP. Use <strong>GNI per capita (PPP)</strong> for fair cross-country comparisons of living standards.' }
+      ]
     },
 
     /* ----- CARD 5 – Actual vs potential output ----- */
@@ -240,58 +142,22 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Actual vs potential output',
       lede: 'Actual output is what the economy produces today. Potential output is the maximum sustainable output when resources are fully employed and the economy is operating efficiently.',
-      causesLabel: 'Actual vs potential growth',
-      causesEmoji: '📈',
-      causesStyle: 'plain-white',
-      causesPosition: 'top',
-      causesCols: 2,
-      causes: [
-        {
-          tone: 'blue',
-          icon: '↗️',
-          head: 'Actual (short-run) growth',
-          body: '<div style="font-size:12px;color:#1D4ED8;font-weight:700;text-align:center;letter-spacing:0.04em;margin-bottom:6px;">MOVEMENT ALONG OR WITHIN THE FRONTIER</div>' + MEP_PPF_ACTUAL + '<div style="background:#EFF6FF;border-radius:8px;padding:8px 12px;font-size:12.5px;line-height:1.5;color:#1D4ED8;text-align:center;margin-top:8px;">Resources unused or misallocated. <strong>More output possible without increasing capacity.</strong></div>'
-        },
-        {
-          tone: 'green',
-          icon: '🚀',
-          head: 'Potential (long-run) growth',
-          body: '<div style="font-size:12px;color:#047857;font-weight:700;text-align:center;letter-spacing:0.04em;margin-bottom:6px;">OUTWARD SHIFT OF THE FRONTIER</div>' + MEP_PPF_POTENTIAL + '<div style="background:#ECFDF5;border-radius:8px;padding:8px 12px;font-size:12.5px;line-height:1.5;color:#047857;text-align:center;margin-top:8px;"><strong>More resources, better technology, higher skills.</strong> Increases the economy\'s productive capacity.</div>'
-        }
-      ],
-      causes2Label: 'The output gap',
-      causes2Emoji: '📊',
-      causes2Style: 'plain-white',
-      causes2Cols: 2,
-      causes2: [
-        {
-          tone: 'rose',
-          icon: '🔥',
-          head: 'Positive output gap',
-          body: MEP_GAP_POSITIVE + '<div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:6px;"><strong style="color:#B91C1C;">Actual output &gt; Potential output</strong><br><br><strong>Consequences:</strong><br>• Inflationary pressure<br>• Demand overheating<br>• May not be sustainable</div>'
-        },
-        {
-          tone: 'blue',
-          icon: '❄️',
-          head: 'Negative output gap',
-          body: MEP_GAP_NEGATIVE + '<div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:6px;"><strong style="color:#1D4ED8;">Actual output &lt; Potential output</strong><br><br><strong>Consequences:</strong><br>• Unemployment<br>• Disinflation or deflation pressure<br>• Spare capacity exists</div>'
-        }
-      ],
-      causes3Label: 'Link to AD/AS',
-      causes3Emoji: '🔗',
-      causes3Style: 'plain-white',
-      causes3Cols: 1,
-      examEdge: {
-        title: 'Exam vocabulary: be precise with time horizons',
-        text: 'Always distinguish between actual and potential output. <strong>Short-run fluctuations</strong> move output relative to the frontier – use <em>"spare capacity"</em> or <em>"output gap."</em> <strong>Long-run growth</strong> means the frontier shifts outward – say <em>"LRAS shifts right"</em> or <em>"productive potential increases."</em> A* phrasing: <em>"A positive output gap arises when actual output exceeds potential, generating inflationary pressure. Eliminating it sustainably requires supply-side policies that expand productive capacity, not demand management alone."</em>'
-      },
-      causes3: [
-        {
-          tone: 'purple',
-          icon: '🔗',
-          head: 'How the PPF maps onto the AD/AS model',
-          body: '<div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-size:14px;">ℹ️</span><span style="font-size:12.5px;color:#475569;"><strong style="color:#0B1426;">Closing the gap</strong> is a key macroeconomic objective.</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;"><div style="background:#FAFAFA;border:1px solid #E7E7EA;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:800;color:#6D28D9;letter-spacing:0.08em;margin-bottom:8px;">SHORT-RUN (AD/AS)</div>' + MEP_ADAS_SR + '<div style="font-size:11.5px;color:#475569;line-height:1.55;margin-top:8px;">Changes in <strong>AD</strong> move output along the <strong>SRAS</strong> – both real GDP and the price level shift.</div></div><div style="background:#FAFAFA;border:1px solid #E7E7EA;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:800;color:#6D28D9;letter-spacing:0.08em;margin-bottom:8px;">LONG-RUN (LRAS)</div>' + MEP_ADAS_LR + '<div style="font-size:11.5px;color:#475569;line-height:1.55;margin-top:8px;">Growth occurs when <strong>LRAS shifts right</strong> – raises potential output (capacity).</div></div></div>'
-        }
+      blocks: [
+        { type: 'sectionHeader', icon: '📈', label: 'Actual vs potential growth' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '↗️', head: 'Actual (short-run) growth', body: '<div style="font-size:12px;color:#1D4ED8;font-weight:700;text-align:center;letter-spacing:0.04em;margin-bottom:6px;">MOVEMENT ALONG OR WITHIN THE FRONTIER</div>' + MEP_PPF_ACTUAL + '<div style="background:#EFF6FF;border-radius:8px;padding:8px 12px;font-size:12.5px;line-height:1.5;color:#1D4ED8;text-align:center;margin-top:8px;">Resources unused or misallocated. <strong>More output possible without increasing capacity.</strong></div>' },
+          { type: 'tile', tone: 'green', icon: '🚀', head: 'Potential (long-run) growth', body: '<div style="font-size:12px;color:#047857;font-weight:700;text-align:center;letter-spacing:0.04em;margin-bottom:6px;">OUTWARD SHIFT OF THE FRONTIER</div>' + MEP_PPF_POTENTIAL + '<div style="background:#ECFDF5;border-radius:8px;padding:8px 12px;font-size:12.5px;line-height:1.5;color:#047857;text-align:center;margin-top:8px;"><strong>More resources, better technology, higher skills.</strong> Increases the economy\'s productive capacity.</div>' }
+        ]},
+        { type: 'sectionHeader', icon: '📊', label: 'The output gap' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'rose', icon: '🔥', head: 'Positive output gap', body: MEP_GAP_POSITIVE + '<div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:6px;"><strong style="color:#B91C1C;">Actual output &gt; Potential output</strong><br><br><strong>Consequences:</strong><br>• Inflationary pressure<br>• Demand overheating<br>• May not be sustainable</div>' },
+          { type: 'tile', tone: 'blue', icon: '❄️', head: 'Negative output gap', body: MEP_GAP_NEGATIVE + '<div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:6px;"><strong style="color:#1D4ED8;">Actual output &lt; Potential output</strong><br><br><strong>Consequences:</strong><br>• Unemployment<br>• Disinflation or deflation pressure<br>• Spare capacity exists</div>' }
+        ]},
+        { type: 'examEdge', title: 'Exam vocabulary: be precise with time horizons', text: 'Always distinguish between actual and potential output. <strong>Short-run fluctuations</strong> move output relative to the frontier – use <em>"spare capacity"</em> or <em>"output gap."</em> <strong>Long-run growth</strong> means the frontier shifts outward – say <em>"LRAS shifts right"</em> or <em>"productive potential increases."</em> A* phrasing: <em>"A positive output gap arises when actual output exceeds potential, generating inflationary pressure. Eliminating it sustainably requires supply-side policies that expand productive capacity, not demand management alone."</em>' },
+        { type: 'sectionHeader', icon: '🔗', label: 'Link to AD/AS' },
+        { type: 'grid', cols: 1, children: [
+          { type: 'tile', tone: 'purple', icon: '🔗', head: 'How the PPF maps onto the AD/AS model', body: '<div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-size:14px;">ℹ️</span><span style="font-size:12.5px;color:#475569;"><strong style="color:#0B1426;">Closing the gap</strong> is a key macroeconomic objective.</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;"><div style="background:#FAFAFA;border:1px solid #E7E7EA;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:800;color:#6D28D9;letter-spacing:0.08em;margin-bottom:8px;">SHORT-RUN (AD/AS)</div>' + MEP_ADAS_SR + '<div style="font-size:11.5px;color:#475569;line-height:1.55;margin-top:8px;">Changes in <strong>AD</strong> move output along the <strong>SRAS</strong> – both real GDP and the price level shift.</div></div><div style="background:#FAFAFA;border:1px solid #E7E7EA;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:800;color:#6D28D9;letter-spacing:0.08em;margin-bottom:8px;">LONG-RUN (LRAS)</div>' + MEP_ADAS_LR + '<div style="font-size:11.5px;color:#475569;line-height:1.55;margin-top:8px;">Growth occurs when <strong>LRAS shifts right</strong> – raises potential output (capacity).</div></div></div>' }
+        ]}
       ]
     },
 
@@ -301,11 +167,10 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Causes of economic growth',
       lede: 'Not all increases in output are the same – only supply-side expansion is truly sustainable.',
-      visualKey: 'causesOfGrowthSvg',
-      examEdge: {
-        title: 'Why supply-side reforms matter most',
-        text: 'Short-run demand boosts can <strong>overheat the economy</strong>, raise inflation and increase debt. Supply-side reforms <strong>expand capacity</strong>, lift potential output and support higher living standards <em>without inflationary pressure</em> – the key to <strong>sustainable long-run growth</strong>. A complete essay covers both: <em>"In the short run, lower interest rates stimulate AD… However, sustained non-inflationary growth requires supply-side improvements that shift LRAS outward."</em>'
-      }
+      blocks: [
+        { type: 'diagram', svgKey: 'causesOfGrowthSvg', caption: undefined },
+        { type: 'examEdge', title: 'Why supply-side reforms matter most', text: 'Short-run demand boosts can <strong>overheat the economy</strong>, raise inflation and increase debt. Supply-side reforms <strong>expand capacity</strong>, lift potential output and support higher living standards <em>without inflationary pressure</em> – the key to <strong>sustainable long-run growth</strong>. A complete essay covers both: <em>"In the short run, lower interest rates stimulate AD… However, sustained non-inflationary growth requires supply-side improvements that shift LRAS outward."</em>' }
+      ]
     },
 
     /* ----- CARD 7 – What GDP misses ----- */
@@ -404,65 +269,22 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Exam summary: reading growth data',
       lede: 'In essays and data-response questions, success comes from a clear framework, UK context and precise interpretation. Use this page as your last-stop checklist.',
-      causesLabel: 'The essay framework',
-      causesEmoji: '🗺️',
-      causesStyle: 'icon-top',
-      causesPosition: 'top',
-      causesCols: 4,
-      causes: [
-        {
-          tone: 'blue',
-          icon: '⚖️',
-          head: '1. State the data',
-          body: 'Identify what is measured, period, units and source. Always state whether it is <strong style="color:#1D4ED8;">REAL or NOMINAL</strong> and whether it is <strong style="color:#1D4ED8;">PER CAPITA.</strong>'
-        },
-        {
-          tone: 'green',
-          icon: '📈',
-          head: '2. Describe the trend',
-          body: 'Note the overall movement (rise / fall / fluctuations). Comment on the <strong>RATE</strong> and any turning points.'
-        },
-        {
-          tone: 'amber',
-          icon: '〰️',
-          head: '3. Distinguish trend vs cyclical',
-          body: 'Explain the underlying <strong style="color:#B45309;">TREND</strong> (long-run growth) and any <strong style="color:#B45309;">CYCLICAL</strong> fluctuations (short-run ups and downs).'
-        },
-        {
-          tone: 'purple',
-          icon: '🔍',
-          head: '4. Interpret &amp; evaluate',
-          body: 'Explain likely causes and consequences for the economy and policy. Use chains of reasoning and judgement.'
-        }
+      blocks: [
+        { type: 'sectionHeader', icon: '🗺️', label: 'The essay framework' },
+        { type: 'grid', cols: 4, children: [
+          { type: 'tile', tone: 'blue', icon: '⚖️', head: '1. State the data', body: 'Identify what is measured, period, units and source. Always state whether it is <strong style="color:#1D4ED8;">REAL or NOMINAL</strong> and whether it is <strong style="color:#1D4ED8;">PER CAPITA.</strong>' },
+          { type: 'tile', tone: 'green', icon: '📈', head: '2. Describe the trend', body: 'Note the overall movement (rise / fall / fluctuations). Comment on the <strong>RATE</strong> and any turning points.' },
+          { type: 'tile', tone: 'amber', icon: '〰️', head: '3. Distinguish trend vs cyclical', body: 'Explain the underlying <strong style="color:#B45309;">TREND</strong> (long-run growth) and any <strong style="color:#B45309;">CYCLICAL</strong> fluctuations (short-run ups and downs).' },
+          { type: 'tile', tone: 'purple', icon: '🔍', head: '4. Interpret &amp; evaluate', body: 'Explain likely causes and consequences for the economy and policy. Use chains of reasoning and judgement.' }
+        ]},
+        { type: 'calloutStrip', tone: 'blue', icon: '🇬🇧', text: 'UK context snapshot — <strong>Post-2008 productivity puzzle:</strong> real GDP grew, but productivity (GDP per hour) stagnated – weaker living standards. · <strong>2020 Covid contraction:</strong> real GDP fell by −9.9%, the largest annual fall in the modern record. · <strong>Post-pandemic recovery:</strong> strong rebound in 2021, then slower growth as inflation, rate rises and global shocks weighed on activity.' },
+        { type: 'sectionHeader', icon: '✅', label: 'Phrases &amp; checklist' },
+        { type: 'grid', cols: 1, children: [
+          { type: 'tile', tone: 'green', icon: '💬', head: 'Examiner-friendly phrases (top-band language)', body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:12.5px;color:#0B1426;line-height:1.55;"><div>✓ "This suggests that…"</div><div>✓ "In the short run… however, in the long run…"</div><div>✓ "This indicates / implies that…"</div><div>✓ "One possible reason is…"</div><div>✓ "On balance, this is more likely to…"</div><div>✓ "A likely consequence is…"</div><div>✓ "A limitation of the data is…"</div></div><div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;font-size:12px;color:#92400E;margin-top:10px;"><strong>💡 Tip:</strong> Write in full sentences, link ideas, and use specific evidence from the data.</div>' },
+          { type: 'tile', tone: 'blue', icon: '📋', head: 'How to read growth data: checklist', body: '<div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#0B1426;line-height:1.5;"><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">1</span><div>Identify the variable (e.g. real GDP, GDP per capita).</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">2</span><div>State the time period, units and source.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">3</span><div>State: real or nominal? Per capita or total?</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">4</span><div>Describe the overall trend and key turning points.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">5</span><div>Separate trend from cyclical movements.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">6</span><div>Explain causes and consequences. Conclude with a clear overall judgement.</div></div></div>' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Marks are won by <strong>clarity</strong>, <strong>accuracy</strong> and <strong>evaluation</strong>. Always define the data, use the framework, and connect to the UK economy. Show judgement – don\'t just list facts.' }
       ],
-      note: {
-        icon: '🇬🇧',
-        tone: 'blue',
-        head: 'UK context snapshot',
-        text: '<strong>Post-2008 productivity puzzle:</strong> real GDP grew, but productivity (GDP per hour) stagnated – weaker living standards. · <strong>2020 Covid contraction:</strong> real GDP fell by −9.9%, the largest annual fall in the modern record. · <strong>Post-pandemic recovery:</strong> strong rebound in 2021, then slower growth as inflation, rate rises and global shocks weighed on activity.'
-      },
-      causes2Label: 'Phrases &amp; checklist',
-      causes2Emoji: '✅',
-      causes2Style: 'plain-white',
-      causes2Cols: 1,
-      causes2: [
-        {
-          tone: 'green',
-          icon: '💬',
-          head: 'Examiner-friendly phrases (top-band language)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:12.5px;color:#0B1426;line-height:1.55;"><div>✓ "This suggests that…"</div><div>✓ "In the short run… however, in the long run…"</div><div>✓ "This indicates / implies that…"</div><div>✓ "One possible reason is…"</div><div>✓ "On balance, this is more likely to…"</div><div>✓ "A likely consequence is…"</div><div>✓ "A limitation of the data is…"</div></div><div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;font-size:12px;color:#92400E;margin-top:10px;"><strong>💡 Tip:</strong> Write in full sentences, link ideas, and use specific evidence from the data.</div>'
-        },
-        {
-          tone: 'blue',
-          icon: '📋',
-          head: 'How to read growth data: checklist',
-          body: '<div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#0B1426;line-height:1.5;"><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">1</span><div>Identify the variable (e.g. real GDP, GDP per capita).</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">2</span><div>State the time period, units and source.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">3</span><div>State: real or nominal? Per capita or total?</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">4</span><div>Describe the overall trend and key turning points.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">5</span><div>Separate trend from cyclical movements.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">6</span><div>Explain causes and consequences. Conclude with a clear overall judgement.</div></div></div>'
-        }
-      ],
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Marks are won by <strong>clarity</strong>, <strong>accuracy</strong> and <strong>evaluation</strong>. Always define the data, use the framework, and connect to the UK economy. Show judgement – don\'t just list facts.'
-      },
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

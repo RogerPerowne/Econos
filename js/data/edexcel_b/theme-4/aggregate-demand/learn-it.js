@@ -557,62 +557,28 @@ window.ECONOS_TOPIC = {
       lede: 'Knowing the AD model is necessary. Knowing its limits is what lifts analysis to A*.',
       ledeStyle: 'plain',
 
-      tip: { icon: '🔒', tone: 'green', text: 'AD analysis works best when you also judge multiplier size, composition, lags, spare capacity, crowding out and expectations.' },
-
-      causesFirst: true,
-      causesLabel: 'THE SIX EVALUATION MOVES',
-      causesEmoji: '⚙️',
-      causesStyle: 'numbered',
-      causesCols: 3,
-      causes: [
-        {
-          tone: 'blue', icon: '⏸️', head: 'Multiplier size is uncertain',
-          body: 'The effect depends on MPC, leakages and confidence. Quote a realistic UK figure (~1.5) rather than the textbook 2.5.'
-        },
-        {
-          tone: 'amber', icon: '🧩', head: 'Composition of the shift',
-          body: 'Different shocks have different multipliers. Capital G &gt; current G &gt; transfers &gt; tax cuts. Investment shocks get amplified by the accelerator. The <em>type</em> of AD change matters as much as the size.'
-        },
-        {
-          tone: 'purple', icon: '⏳', head: 'Time lags',
-          body: 'Policy effects take time – recognition lag, decision lag, then impact lag. Fiscal months, monetary 12–18 months.'
-        },
-        {
-          tone: 'green', icon: '🏗️', head: 'AS constraints',
-          body: 'Supply limits, cost pressures and bottlenecks can restrict how much real output can rise. Near full employment, AD shifts cause inflation, not growth.'
-        },
-        {
-          tone: 'blue', icon: '£', head: 'Crowding out',
-          body: 'Higher G can push up interest rates and reduce private investment – partially offsetting the stimulus.'
-        },
-        {
-          tone: 'rose', icon: '👥', head: 'Confidence and expectations',
-          body: '"Animal spirits" drive spending and can swamp the textbook mechanism – confidence shocks dominate in practice.'
-        }
-      ],
-
-      flowTitle: 'YES AD ANALYSIS WORKS, BUT…',
-      flowEmoji: '⚖️',
-      flow: [
-        { icon: '🔍', title: 'Identify the shock',    sub: 'What changed and which component(s) moved?', tone: 'blue'   },
-        { icon: '📏', title: 'Spare capacity?',        sub: 'How much slack is in the economy?',          tone: 'green'  },
-        { icon: '⏳', title: 'Multiplier and lags',    sub: 'How big is k and how long will it take?',     tone: 'amber'  },
-        { icon: '👥', title: 'Side effects',            sub: 'Crowding out · confidence · expectations',    tone: 'purple' }
-      ],
-
-      summaryRow: [
-        { tone: 'purple', icon: 'ℹ️', title: 'When AD matters most', text: 'Crowding out matters more near full employment. AD boosts output more strongly in recession.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'AD shifts can raise output powerfully – but only when there is spare capacity and the multiplier is strong enough.'
-      },
-
-      examEdge: {
-        title: 'Exam edge (Edexcel B)',
-        text: 'Strong essays start with AD, then qualify with lags, spare capacity, crowding out and animal spirits.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '🔒', text: 'AD analysis works best when you also judge multiplier size, composition, lags, spare capacity, crowding out and expectations.' },
+        { type: 'sectionHeader', icon: '⚙️', label: 'THE SIX EVALUATION MOVES' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '⏸️', head: 'Multiplier size is uncertain',    body: 'The effect depends on MPC, leakages and confidence. Quote a realistic UK figure (~1.5) rather than the textbook 2.5.' },
+          { type: 'tile', tone: 'amber',  icon: '🧩', head: 'Composition of the shift',        body: 'Different shocks have different multipliers. Capital G > current G > transfers > tax cuts. Investment shocks get amplified by the accelerator. The type of AD change matters as much as the size.' },
+          { type: 'tile', tone: 'purple', icon: '⏳', head: 'Time lags',                       body: 'Policy effects take time – recognition lag, decision lag, then impact lag. Fiscal months, monetary 12–18 months.' },
+          { type: 'tile', tone: 'green',  icon: '🏗️', head: 'AS constraints',                  body: 'Supply limits, cost pressures and bottlenecks can restrict how much real output can rise. Near full employment, AD shifts cause inflation, not growth.' },
+          { type: 'tile', tone: 'blue',   icon: '£',  head: 'Crowding out',                    body: 'Higher G can push up interest rates and reduce private investment – partially offsetting the stimulus.' },
+          { type: 'tile', tone: 'rose',   icon: '👥', head: 'Confidence and expectations',     body: '"Animal spirits" drive spending and can swamp the textbook mechanism – confidence shocks dominate in practice.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'YES AD ANALYSIS WORKS, BUT…' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Identify the shock',    detail: 'What changed and which component(s) moved?' },
+          { label: 'Spare capacity?',        detail: 'How much slack is in the economy?' },
+          { label: 'Multiplier and lags',    detail: 'How big is k and how long will it take?' },
+          { label: 'Side effects',            detail: 'Crowding out · confidence · expectations' }
+        ]},
+        { type: 'calloutStrip', tone: 'purple', icon: 'ℹ️', text: 'When AD matters most: Crowding out matters more near full employment. AD boosts output more strongly in recession.' },
+        { type: 'bigIdea', text: 'AD shifts can raise output powerfully – but only when there is spare capacity and the multiplier is strong enough.' },
+        { type: 'examEdge', title: 'Exam edge (Edexcel B)', text: 'Strong essays start with AD, then qualify with lags, spare capacity, crowding out and animal spirits.' }
+      ]
     }
 
   ]

@@ -248,67 +248,22 @@ window.ECONOS_TOPIC = {
       title: 'What shifts AD?',
       lede: 'A shift happens when something changes one of the four engines at every price level.',
       ledeStyle: 'plain',
-
-      tip: { icon: '✅', tone: 'green', text: 'Think in four engines – C, I, G and (X − M). If one changes, the whole AD curve shifts.' },
-
-      causesFirst: true,
-      causesLabel: 'THE FOUR ENGINES',
-      causesEmoji: '⚙️',
-      causesStyle: 'numbered',
-      causesCols: 2,
-      causes: [
-        {
-          tone: 'blue', icon: '🛒', head: 'Consumption (C)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;">' +
-            '<div><div style="font-weight:800;color:#1E40AF;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Disposable income up</li><li>Interest rates down</li><li>Wealth up</li><li>Confidence up</li><li>Debt easier to get</li></ul></div>' +
-            '<div><div style="font-weight:800;color:#1E40AF;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Disposable income down</li><li>Interest rates up</li><li>Wealth down</li><li>Confidence down</li><li>Debt harder to get</li></ul></div>' +
-            '</div>'
-        },
-        {
-          tone: 'amber', icon: '🏭', head: 'Investment (I)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;">' +
-            '<div><div style="font-weight:800;color:#B45309;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Business confidence / animal spirits up</li><li>Interest rates down</li><li>Corporate tax down</li><li>Accelerator up</li></ul></div>' +
-            '<div><div style="font-weight:800;color:#B45309;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Business confidence / animal spirits down</li><li>Interest rates up</li><li>Corporate tax up</li><li>Accelerator down</li></ul></div>' +
-            '</div>'
-        },
-        {
-          tone: 'purple', icon: '🏛️', head: 'Government spending (G)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;">' +
-            '<div><div style="font-weight:800;color:#6D28D9;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Fiscal stance expansionary</li><li>Election cycle spending up</li><li>Automatic stabilisers kick in (recession)</li></ul></div>' +
-            '<div><div style="font-weight:800;color:#6D28D9;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Fiscal stance contractionary</li><li>Election cycle spending down</li><li>Austerity / debt-rule tightening</li></ul></div>' +
-            '</div>'
-        },
-        {
-          tone: 'green', icon: '🚢', head: 'Net trade (X − M)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12px;line-height:1.55;">' +
-            '<div><div style="font-weight:800;color:#047857;margin-bottom:4px;">+ Shifts right (↑ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Exchange rate depreciation</li><li>World income up</li><li>UK competitiveness up</li><li>Foreign trade barriers fall</li></ul></div>' +
-            '<div><div style="font-weight:800;color:#047857;margin-bottom:4px;">− Shifts left (↓ AD)</div><ul style="margin:0;padding:0 0 0 14px;"><li>Exchange rate appreciation</li><li>World income down</li><li>UK competitiveness down</li><li>Foreign trade barriers rise</li></ul></div>' +
-            '</div>'
-        }
-      ],
-
-      pairLabel: 'RIGHT OR LEFT?',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue', icon: '→', iconStyle: 'circle',
-        label: 'AD shifts right when…',
-        text: '<ol style="margin:0;padding:0 0 0 18px;font-size:13px;line-height:1.7;color:#0B1426;"><li>Consumers feel wealthier and spend more.</li><li>Firms invest more in new capacity.</li><li>The government spends or transfers more.</li></ol>'
-      },
-      right: {
-        tone: 'amber', icon: '←', iconStyle: 'circle',
-        label: 'AD shifts left when…',
-        text: '<ol style="margin:0;padding:0 0 0 18px;font-size:13px;line-height:1.7;color:#0B1426;"><li>Consumers feel worse off and spend less.</li><li>Firms invest less in new capacity.</li><li>The government cuts spending or raises taxes.</li></ol>'
-      },
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'A change in any one engine can shift AD – but in reality several often move together.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Organise determinants by C, I, G and (X − M). That instantly gives essays better structure.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Think in four engines – C, I, G and (X − M). If one changes, the whole AD curve shifts.' },
+        { type: 'sectionHeader', icon: '⚙️', label: 'THE FOUR ENGINES' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '🛒', head: 'Consumption (C)', body: '+ Shifts right: Disposable income up; Interest rates down; Wealth up; Confidence up; Debt easier to get. − Shifts left: Disposable income down; Interest rates up; Wealth down; Confidence down; Debt harder to get.' },
+          { type: 'tile', tone: 'amber', icon: '🏭', head: 'Investment (I)', body: '+ Shifts right: Business confidence / animal spirits up; Interest rates down; Corporate tax down; Accelerator up. − Shifts left: Business confidence / animal spirits down; Interest rates up; Corporate tax up; Accelerator down.' },
+          { type: 'tile', tone: 'purple', icon: '🏛️', head: 'Government spending (G)', body: '+ Shifts right: Fiscal stance expansionary; Election cycle spending up; Automatic stabilisers kick in (recession). − Shifts left: Fiscal stance contractionary; Election cycle spending down; Austerity / debt-rule tightening.' },
+          { type: 'tile', tone: 'green', icon: '🚢', head: 'Net trade (X − M)', body: '+ Shifts right: Exchange rate depreciation; World income up; UK competitiveness up; Foreign trade barriers fall. − Shifts left: Exchange rate appreciation; World income down; UK competitiveness down; Foreign trade barriers rise.' }
+        ]},
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '→', head: 'AD shifts right when…', body: '1. Consumers feel wealthier and spend more. 2. Firms invest more in new capacity. 3. The government spends or transfers more.' },
+          { type: 'tile', tone: 'amber', icon: '←', head: 'AD shifts left when…', body: '1. Consumers feel worse off and spend less. 2. Firms invest less in new capacity. 3. The government cuts spending or raises taxes.' }
+        ]},
+        { type: 'bigIdea', text: 'A change in any one engine can shift AD – but in reality several often move together.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Organise determinants by C, I, G and (X − M). That instantly gives essays better structure.' }
+      ]
     },
 
     /* ── CARD 5 ── The multiplier – the ripple ───────────────────── */
@@ -549,63 +504,28 @@ window.ECONOS_TOPIC = {
       title: 'Evaluating AD analysis',
       lede: 'Knowing the AD model is necessary. Knowing its limits is what lifts analysis to A*.',
       ledeStyle: 'plain',
-
-      tip: { icon: '🔒', tone: 'green', text: 'AD analysis works best when you also judge multiplier size, composition, lags, spare capacity, crowding out and expectations.' },
-
-      causesFirst: true,
-      causesLabel: 'THE SIX EVALUATION MOVES',
-      causesEmoji: '⚙️',
-      causesStyle: 'numbered',
-      causesCols: 3,
-      causes: [
-        {
-          tone: 'blue', icon: '⏸️', head: 'Multiplier size is uncertain',
-          body: 'The effect depends on MPC, leakages and confidence. Quote a realistic UK figure (~1.5) rather than the textbook 2.5.'
-        },
-        {
-          tone: 'amber', icon: '🧩', head: 'Composition of the shift',
-          body: 'Different shocks have different multipliers. Capital G &gt; current G &gt; transfers &gt; tax cuts. Investment shocks get amplified by the accelerator. The <em>type</em> of AD change matters as much as the size.'
-        },
-        {
-          tone: 'purple', icon: '⏳', head: 'Time lags',
-          body: 'Policy effects take time – recognition lag, decision lag, then impact lag. Fiscal months, monetary 12–18 months.'
-        },
-        {
-          tone: 'green', icon: '🏗️', head: 'AS constraints',
-          body: 'Supply limits, cost pressures and bottlenecks can restrict how much real output can rise. Near full employment, AD shifts cause inflation, not growth.'
-        },
-        {
-          tone: 'blue', icon: '£', head: 'Crowding out',
-          body: 'Higher G can push up interest rates and reduce private investment – partially offsetting the stimulus.'
-        },
-        {
-          tone: 'rose', icon: '👥', head: 'Confidence and expectations',
-          body: '"Animal spirits" drive spending and can swamp the textbook mechanism – confidence shocks dominate in practice.'
-        }
-      ],
-
-      flowTitle: 'YES AD ANALYSIS WORKS, BUT…',
-      flowEmoji: '⚖️',
-      flow: [
-        { icon: '🔍', title: 'Identify the shock',    sub: 'What changed and which component(s) moved?', tone: 'blue'   },
-        { icon: '📏', title: 'Spare capacity?',        sub: 'How much slack is in the economy?',          tone: 'green'  },
-        { icon: '⏳', title: 'Multiplier and lags',    sub: 'How big is k and how long will it take?',     tone: 'amber'  },
-        { icon: '👥', title: 'Side effects',            sub: 'Crowding out · confidence · expectations',    tone: 'purple' }
-      ],
-
-      summaryRow: [
-        { tone: 'purple', icon: 'ℹ️', title: 'When AD matters most', text: 'Crowding out matters more near full employment. AD boosts output more strongly in recession.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'AD shifts can raise output powerfully – but only when there is spare capacity and the multiplier is strong enough.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Strong essays start with AD, then qualify with lags, spare capacity, crowding out and animal spirits.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '🔒', text: 'AD analysis works best when you also judge multiplier size, composition, lags, spare capacity, crowding out and expectations.' },
+        { type: 'sectionHeader', icon: '⚙️', label: 'THE SIX EVALUATION MOVES' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue', icon: '⏸️', head: 'Multiplier size is uncertain', body: 'The effect depends on MPC, leakages and confidence. Quote a realistic UK figure (~1.5) rather than the textbook 2.5.' },
+          { type: 'tile', tone: 'amber', icon: '🧩', head: 'Composition of the shift', body: 'Different shocks have different multipliers. Capital G > current G > transfers > tax cuts. Investment shocks get amplified by the accelerator. The type of AD change matters as much as the size.' },
+          { type: 'tile', tone: 'purple', icon: '⏳', head: 'Time lags', body: 'Policy effects take time – recognition lag, decision lag, then impact lag. Fiscal months, monetary 12–18 months.' },
+          { type: 'tile', tone: 'green', icon: '🏗️', head: 'AS constraints', body: 'Supply limits, cost pressures and bottlenecks can restrict how much real output can rise. Near full employment, AD shifts cause inflation, not growth.' },
+          { type: 'tile', tone: 'blue', icon: '£', head: 'Crowding out', body: 'Higher G can push up interest rates and reduce private investment – partially offsetting the stimulus.' },
+          { type: 'tile', tone: 'rose', icon: '👥', head: 'Confidence and expectations', body: '"Animal spirits" drive spending and can swamp the textbook mechanism – confidence shocks dominate in practice.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'YES AD ANALYSIS WORKS, BUT…' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Identify the shock',    detail: 'What changed and which component(s) moved?' },
+          { label: 'Spare capacity?',        detail: 'How much slack is in the economy?' },
+          { label: 'Multiplier and lags',    detail: 'How big is k and how long will it take?' },
+          { label: 'Side effects',            detail: 'Crowding out · confidence · expectations' }
+        ]},
+        { type: 'calloutStrip', tone: 'purple', icon: 'ℹ️', text: 'When AD matters most — Crowding out matters more near full employment. AD boosts output more strongly in recession.' },
+        { type: 'bigIdea', text: 'AD shifts can raise output powerfully – but only when there is spare capacity and the multiplier is strong enough.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Strong essays start with AD, then qualify with lags, spare capacity, crowding out and animal spirits.' }
+      ]
     }
 
   ]
@@ -752,4 +672,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

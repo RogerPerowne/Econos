@@ -427,19 +427,9 @@ window.ECONOS_TOPIC = {
       title: 'Winners and losers',
       lede: 'Inflation redistributes purchasing power. It does not simply make everyone worse off. Who gains and who loses depends especially on whether inflation is <strong>anticipated</strong> or <strong>unanticipated</strong>.',
       ledeStyle: 'plain',
-
-      tip: {
-        icon: '✅',
-        tone: 'green',
-        text: '<strong>Inflation is not neutral – it redistributes.</strong>'
-      },
-
-      versusRows: {
-        title: 'Who benefits? Who loses?',
-        emoji: '👥',
-        leftTone: 'green',
-        rightTone: 'rose',
-        rows: [
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>Inflation is not neutral – it redistributes.</strong>' },
+        { type: 'versusRows', title: 'Who benefits? Who loses?', leftTone: 'green', rightTone: 'rose', rows: [
           {
             left:  { icon: '🐖', head: 'Savers and lenders',     sub: 'Real value of savings falls.' },
             right: { icon: '£',  head: 'Borrowers and debtors',  sub: 'Repay with cheaper money.' }
@@ -460,35 +450,15 @@ window.ECONOS_TOPIC = {
             left:  { icon: '🏠', head: 'Holders of real assets', sub: 'Property and other assets rise in value.' },
             right: { icon: '💵', head: 'Holders of cash',         sub: 'Cash loses purchasing power.' }
           }
-        ]
-      },
-
-      pairLabel: 'The big evaluation',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue',
-        icon: '🔮',
-        iconStyle: 'circle',
-        label: 'Anticipated inflation',
-        text: 'People can plan ahead, set wages and prices, and use index-linking. <strong style="color:#2563EB;">Distributional effects are smaller.</strong>'
-      },
-      right: {
-        tone: 'amber',
-        icon: '🔎',
-        iconStyle: 'circle',
-        label: 'Unanticipated inflation',
-        text: 'Price rises outpace expectations. Some gain and others lose. <strong style="color:#D97706;">Distributional effects are larger.</strong>'
-      },
-
-      conclusion: {
-        title: 'Governments and mortgage-holders',
-        text: 'Governments and mortgage-holders can <strong>benefit</strong> when the real value of debt erodes, lowering the real cost of servicing and repaying debt.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'The strongest evaluation of winners and losers depends on <strong>expectations</strong> – and on how quickly incomes and contracts adjust to higher prices.'
-      }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'The big evaluation' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '🔮', head: 'Anticipated inflation', body: 'People can plan ahead, set wages and prices, and use index-linking. Distributional effects are smaller.' },
+          { type: 'tile', tone: 'amber', icon: '🔎', head: 'Unanticipated inflation', body: 'Price rises outpace expectations. Some gain and others lose. Distributional effects are larger.' }
+        ]},
+        { type: 'bigIdea', text: 'Governments and mortgage-holders: Governments and mortgage-holders can benefit when the real value of debt erodes, lowering the real cost of servicing and repaying debt.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'The strongest evaluation of winners and losers depends on expectations – and on how quickly incomes and contracts adjust to higher prices.' }
+      ]
     },
 
     /* ====================================================================
@@ -807,4 +777,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

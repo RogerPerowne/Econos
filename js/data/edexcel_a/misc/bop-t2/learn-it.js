@@ -43,14 +43,13 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',   label: 'Capital account',         sub: 'Capital transfers and non-produced non-financial assets (land, resource rights). Small for the UK. Often combined with financial account in discussion.' },
         { tone: 'amber',  label: 'Financial account',       sub: 'FDI, portfolio investment, reserve assets, financial derivatives. The UK finances its current account deficit by attracting net financial inflows. Surpluses here offset current account deficits.' }
       ],
-      examEdge: {
-        title: 'The BoP always balances',
-        text: 'Current account deficit + financial account surplus = zero (overall). The UK runs a current account deficit financed by attracting foreign capital (FDI, portfolio inflows). A* answers note: the risk is that financial inflows can <strong>dry up or reverse</strong> – creating a sudden-stop financing crisis.'
-      },
       keyTakeaway: {
         title: 'Current account = the key focus',
         text: 'Edexcel Paper 2 focuses overwhelmingly on the <strong>current account</strong>. Know its four sub-components, the UK\'s persistent deficit (~3-5% of GDP), the causes, consequences, and correction policies. The other accounts matter primarily as a financing mechanism for the current account deficit.'
-      }
+      },
+      blocks: [
+        { type: 'examEdge', title: 'The BoP always balances', text: 'Current account deficit + financial account surplus = zero (overall). The UK runs a current account deficit financed by attracting foreign capital (FDI, portfolio inflows). A* answers note: the risk is that financial inflows can <strong>dry up or reverse</strong> – creating a sudden-stop financing crisis.' }
+      ]
     },
 
     /* ----- CARD 2 – Current account components ----- */
@@ -87,14 +86,13 @@ window.ECONOS_TOPIC = {
           text: 'Foreign aid, EU contributions, workers\' remittances. UK runs a small deficit here. Includes net contributions to international organisations and transfers between governments. Post-Brexit: no longer paying EU budget contribution – modest improvement.'
         }
       ],
-      examEdge: {
-        title: 'UK goods deficit is structural',
-        text: 'The UK goods deficit is not cyclical – it does not close when the economy grows (it may widen). It reflects structural deindustrialisation since the 1980s. The services surplus partially offsets this but is insufficient. <strong>Brexit has eroded the services surplus</strong> through reduced EU financial passporting and lower EU student numbers – worsening the overall BoP position.'
-      },
       connection: {
         title: 'Linking to AD',
         text: 'The current account = (X−M) in the AD formula. A current account deficit reduces AD ceteris paribus. Fiscal stimulus that raises domestic income → imports rise → deficit widens → net drag on AD from trade. This is why open economies have smaller fiscal multipliers.'
-      }
+      },
+      blocks: [
+        { type: 'examEdge', title: 'UK goods deficit is structural', text: 'The UK goods deficit is not cyclical – it does not close when the economy grows (it may widen). It reflects structural deindustrialisation since the 1980s. The services surplus partially offsets this but is insufficient. <strong>Brexit has eroded the services surplus</strong> through reduced EU financial passporting and lower EU student numbers – worsening the overall BoP position.' }
+      ]
     },
 
     /* ----- CARD 3 – Causes of UK current account deficit ----- */
@@ -130,14 +128,13 @@ window.ECONOS_TOPIC = {
         title: 'UK deficit in numbers',
         text: '<strong>2015:</strong> UK current account deficit 5.2% of GDP – near-record and alarming to markets. <strong>2022:</strong> deficit widened sharply as energy import prices surged. <strong>2023:</strong> narrowed slightly as energy prices fell. But underlying structural deficit of ~3-4% of GDP remains. <strong>Comparison:</strong> Germany runs a persistent ~6-7% surplus – the inverse structural pattern.'
       },
-      examEdge: {
-        title: 'The J-curve note',
-        text: 'After a currency depreciation, the BoP may initially worsen before improving – the <strong>J-curve effect</strong>. In the short run, import prices rise (inelastic demand) → import bill rises → deficit widens. Only as demand adjusts (elastic in long run) does the deficit improve. A* answers note this time-lag dimension of BoP correction.'
-      },
       policy: {
         title: 'Why the deficit matters',
         text: 'A persistent deficit must be financed by capital inflows. If inflows dry up (confidence shock, credit tightening), sterling weakens sharply – which is inflationary and can itself cause a crisis. The UK\'s dependence on \'the kindness of strangers\' (Mervyn King) to finance its deficit is a structural vulnerability.'
-      }
+      },
+      blocks: [
+        { type: 'examEdge', title: 'The J-curve note', text: 'After a currency depreciation, the BoP may initially worsen before improving – the <strong>J-curve effect</strong>. In the short run, import prices rise (inelastic demand) → import bill rises → deficit widens. Only as demand adjusts (elastic in long run) does the deficit improve. A* answers note this time-lag dimension of BoP correction.' }
+      ]
     },
 
     /* ----- CARD 4 – Consequences of a current account deficit ----- */
@@ -173,14 +170,13 @@ window.ECONOS_TOPIC = {
           example: '<strong>USA paradox:</strong> The US has run even larger current account deficits for decades – funded by reserve currency status. The deficit reflects US consumer purchasing power and foreign demand for dollar assets. Not inherently a crisis indicator.'
         }
       ],
-      examEdge: {
-        title: 'The composition of financing matters',
-        text: 'A* answers distinguish <strong>how</strong> the deficit is financed: FDI (foreign factories, long-term investment) is more stable than portfolio flows (hot money that can reverse quickly). If the UK deficit is financed by FDI, it is more sustainable than if financed by short-term portfolio speculation.'
-      },
       policy: {
         title: 'The Lawson Doctrine (1988)',
         text: 'Chancellor Lawson argued that a current account deficit financed by private capital flows is not a problem – only government-financed deficits matter. Later challenged as private capital flows can reverse rapidly. A historical context for the debate that A* answers can deploy.'
-      }
+      },
+      blocks: [
+        { type: 'examEdge', title: 'The composition of financing matters', text: 'A* answers distinguish <strong>how</strong> the deficit is financed: FDI (foreign factories, long-term investment) is more stable than portfolio flows (hot money that can reverse quickly). If the UK deficit is financed by FDI, it is more sustainable than if financed by short-term portfolio speculation.' }
+      ]
     },
 
     /* ----- CARD 5 – Expenditure-switching vs expenditure-reducing ----- */
@@ -216,14 +212,13 @@ window.ECONOS_TOPIC = {
           text: 'Raise UK export competitiveness through productivity improvement, R&D, and skills. Makes UK goods and services better (non-price) and cheaper (price) relative to competitors. Addresses the <em>root cause</em> of the structural deficit – low competitiveness – rather than just the symptoms.'
         }
       ],
-      examEdge: {
-        title: 'Expenditure-switching is the better option',
-        text: 'A* answers explain why expenditure-switching is preferred: it can improve the BoP without reducing domestic output. Expenditure-reducing works but at the cost of recession and unemployment – \'correcting the BoP by impoverishing the population\' is not good economics. Always present this trade-off explicitly.'
-      },
       connection: {
         title: 'The J-curve in full',
         text: 'Even expenditure-switching via depreciation has a delay (J-curve). In the short run: inelastic demand → import bill rises → BoP worsens. In the long run: demand adjusts, exports rise → BoP improves. The time lag means depreciation must be sustained for the Marshall-Lerner condition to improve the BoP. A* answers name both the condition and the curve.'
-      }
+      },
+      blocks: [
+        { type: 'examEdge', title: 'Expenditure-switching is the better option', text: 'A* answers explain why expenditure-switching is preferred: it can improve the BoP without reducing domestic output. Expenditure-reducing works but at the cost of recession and unemployment – \'correcting the BoP by impoverishing the population\' is not good economics. Always present this trade-off explicitly.' }
+      ]
     },
 
     /* ----- CARD 6 – BoP and exchange rate link ----- */
@@ -259,14 +254,13 @@ window.ECONOS_TOPIC = {
           example: '<strong>China currency intervention:</strong> China historically held RMB below its equilibrium value to keep exports competitive. This maintained their current account surplus artificially – the \'currency wars\' debate of the 2000s-10s.'
         }
       ],
-      examEdge: {
-        title: 'Depreciation: BoP vs inflation trade-off',
-        text: "Sterling depreciation is the standard BoP correction under floating exchange rates. But A* answers note the trade-off: <em>'While depreciation improves export competitiveness (X rises), it raises import prices, pushing SRAS left and causing cost-push inflation. The MPC may need to raise rates to contain this – partially offsetting the BoP benefit.'</em>"
-      },
       policy: {
         title: 'Why the UK doesn\'t manipulate the currency',
         text: 'The UK has a freely floating exchange rate – the government does not intervene to set the pound\'s value. This means BoP adjustment must occur through: (a) automatic depreciation, (b) expenditure-reducing policies (demand management), or (c) supply-side reform. No \'easy\' exchange rate fix is available.'
-      }
+      },
+      blocks: [
+        { type: 'examEdge', title: 'Depreciation: BoP vs inflation trade-off', text: "Sterling depreciation is the standard BoP correction under floating exchange rates. But A* answers note the trade-off: <em>'While depreciation improves export competitiveness (X rises), it raises import prices, pushing SRAS left and causing cost-push inflation. The MPC may need to raise rates to contain this – partially offsetting the BoP benefit.'</em>" }
+      ]
     },
 
     /* ----- CARD 7 – Evaluating BoP policies ----- */
@@ -307,10 +301,9 @@ window.ECONOS_TOPIC = {
           { period: 'Post-2016 UK', text: '15-20% sterling depreciation. Import prices rose → CPI spiked to 3%. But non-price Brexit barriers limited export improvement. Partial J-curve improvement, offset by structural trade damage.' }
         ]
       },
-      examEdge: {
-        title: 'The policy hierarchy for BoP correction',
-        text: "A* BoP evaluation structure: <em>'The preferred correction approach is expenditure-switching via improved competitiveness (supply-side) – it improves the BoP without reducing output. Currency depreciation is a faster route but risks inflation. Expenditure-reducing (austerity/rate rises) corrects the deficit but at the cost of recession. The optimal policy depends on whether the deficit is structural (supply-side needed) or cyclical (demand management appropriate).'</em>"
-      },
+      blocks: [
+        { type: 'examEdge', title: 'The policy hierarchy for BoP correction', text: "A* BoP evaluation structure: <em>'The preferred correction approach is expenditure-switching via improved competitiveness (supply-side) – it improves the BoP without reducing output. Currency depreciation is a faster route but risks inflation. Expenditure-reducing (austerity/rate rises) corrects the deficit but at the cost of recession. The optimal policy depends on whether the deficit is structural (supply-side needed) or cyclical (demand management appropriate).'</em>" }
+      ],
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
@@ -459,4 +452,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

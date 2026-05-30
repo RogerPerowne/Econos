@@ -55,63 +55,34 @@ window.ECONOS_TOPIC = {
       lede: 'Inflation does not have a single cause. It can arise from demand pressures, supply shocks or from money and expectations spiralling together. Diagnosing the source is essential because each cause calls for a different policy.',
       ledeStyle: 'plain',
 
-      tip: {
-        icon: '✅',
-        tone: 'green',
-        text: '<strong>The same inflation figure can require opposite policy responses depending on its origin.</strong>'
-      },
-
-      causesFirst: true,
-      causesLabel: null,
-      causes: [
-        {
-          tone: 'blue',
-          head: 'Demand-pull inflation',
-          icon: '🛒',
-          body: 'Too much spending chasing too little output.',
-          example: { icon: '📈', label: 'Cue', text: 'AD rising faster than AS.' }
-        },
-        {
-          tone: 'amber',
-          head: 'Cost-push inflation',
-          icon: '🏭',
-          body: 'Firms face higher costs and pass them on.',
-          example: { icon: '↩️', label: 'Cue', text: 'AS shifts left.' }
-        },
-        {
-          tone: 'purple',
-          head: 'Money & expectations',
-          icon: '💭',
-          body: 'Money growth and inflation psychology keep price rises going.',
-          example: { icon: '∞', label: 'Cue', text: 'Inflation becomes embedded.' }
-        }
-      ],
-
-      flowTitle: 'The big idea',
-      flowEmoji: '💡',
-      flow: [
-        { tone: 'blue',   icon: '📊', title: 'Headline inflation',  sub: 'A single CPI figure.' },
-        { tone: 'green',  icon: '🔎', title: 'Ask what caused it',   sub: 'Demand, costs or money?' },
-        { tone: 'purple', icon: '🎯', title: 'Choose the right policy', sub: 'Diagnosis drives the cure.' }
-      ],
-
-      causes2Label: 'Treatment depends on the diagnosis',
-      causes2Emoji: '🩺',
-      causes2: [
-        { tone: 'blue',   icon: '❄️', head: 'Demand problem',     body: 'Cool demand with tighter monetary or fiscal policy.' },
-        { tone: 'amber',  icon: '🏭', head: 'Supply shock',       body: 'Ease costs or boost supply – supply-side measures.' },
-        { tone: 'purple', icon: '🛡️', head: 'Expectations problem', body: 'Restore credibility through forward guidance and anchoring.' }
-      ],
-
-      conclusion: {
-        title: '"Rising prices" is not a cause of inflation',
-        text: 'Rising prices are the <strong>symptom</strong>. The <strong>cause</strong> is the underlying driver – demand, costs, money or expectations – that puts upward pressure on prices.'
-      },
-
-      examEdge: {
-        title: 'Exam edge (AQA)',
-        text: 'AO3 / AO4 essays diagnose the source first and only then judge the policy. The same CPI figure may hide three different macroeconomic stories – AQA mark schemes reward candidates who pin one down before evaluating.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>The same inflation figure can require opposite policy responses depending on its origin.</strong>' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '🛒', head: 'Demand-pull inflation',
+            body: 'Too much spending chasing too little output. Cue: AD rising faster than AS.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'Cost-push inflation',
+            body: 'Firms face higher costs and pass them on. Cue: AS shifts left.' },
+          { type: 'tile', tone: 'purple', icon: '💭', head: 'Money & expectations',
+            body: 'Money growth and inflation psychology keep price rises going. Cue: Inflation becomes embedded.' }
+        ]},
+        { type: 'sectionHeader', icon: '💡', label: 'The big idea' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Headline inflation',       detail: 'A single CPI figure.' },
+          { label: 'Ask what caused it',       detail: 'Demand, costs or money?' },
+          { label: 'Choose the right policy',  detail: 'Diagnosis drives the cure.' }
+        ]},
+        { type: 'sectionHeader', icon: '🩺', label: 'Treatment depends on the diagnosis' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '❄️', head: 'Demand problem',
+            body: 'Cool demand with tighter monetary or fiscal policy.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'Supply shock',
+            body: 'Ease costs or boost supply – supply-side measures.' },
+          { type: 'tile', tone: 'purple', icon: '🛡️', head: 'Expectations problem',
+            body: 'Restore credibility through forward guidance and anchoring.' }
+        ]},
+        { type: 'bigIdea', text: '"Rising prices" is not a cause of inflation: Rising prices are the symptom. The cause is the underlying driver – demand, costs, money or expectations – that puts upward pressure on prices.' },
+        { type: 'examEdge', title: 'Exam edge (AQA)', text: 'AO3 / AO4 essays diagnose the source first and only then judge the policy. The same CPI figure may hide three different macroeconomic stories – AQA mark schemes reward candidates who pin one down before evaluating.' }
+      ]
     },
 
     /* ====================================================================

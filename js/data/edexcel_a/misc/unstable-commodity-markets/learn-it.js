@@ -62,16 +62,20 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_3',
       template: 'cause',
       title: 'Consequences of Price Volatility',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '⚠️',
-      causesLabel: 'Who gets hurt by volatile commodity prices',
-      causes: [
-        { icon: '🛒', head: 'Consumer harm', body: 'Food price spikes reduce real incomes, particularly for low-income households in developing countries where food represents 50-70% of expenditure. Global food price spike (2007-08) contributed to food riots in 30+ countries.' },
-        { icon: '👨‍🌾', head: 'Producer income instability', body: 'Farmers face highly volatile incomes – in bad years (low supply, which often coincides with high prices globally), they may still face local price spikes but lower yields. In good years, gluts depress prices → revenues fall despite high output.' },
-        { icon: '📉', head: 'Investment disincentive', body: 'Volatile prices deter long-run investment in agricultural capacity. Farmers uncertain about future prices under-invest in machinery, irrigation, and land improvement – reducing long-run supply capacity.' },
-        { icon: '🌍', head: 'Macro instability in commodity exporters', body: 'Countries heavily dependent on commodity exports (Nigeria – oil; Zambia – copper; Brazil – soy) face government revenue volatility. Commodity price cycles create boom-bust fiscal and economic cycles.' }
-      ],
-      examEdge: 'The food price crisis of 2007-08 is the go-to commodity instability case study: drought in Australia + biofuel mandates in US (corn for ethanol) + speculative financial investment in food futures → global food prices doubled → political instability in 30+ countries. Multiple supply and demand shocks combining is typical of real commodity crises.'
+      blocks: [
+        { type: 'sectionHeader', icon: '⚠️', label: 'Who gets hurt by volatile commodity prices' },
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            { type: 'tile', icon: '🛒', head: 'Consumer harm', body: 'Food price spikes reduce real incomes, particularly for low-income households in developing countries where food represents 50-70% of expenditure. Global food price spike (2007-08) contributed to food riots in 30+ countries.' },
+            { type: 'tile', icon: '👨‍🌾', head: 'Producer income instability', body: 'Farmers face highly volatile incomes – in bad years (low supply, which often coincides with high prices globally), they may still face local price spikes but lower yields. In good years, gluts depress prices → revenues fall despite high output.' },
+            { type: 'tile', icon: '📉', head: 'Investment disincentive', body: 'Volatile prices deter long-run investment in agricultural capacity. Farmers uncertain about future prices under-invest in machinery, irrigation, and land improvement – reducing long-run supply capacity.' },
+            { type: 'tile', icon: '🌍', head: 'Macro instability in commodity exporters', body: 'Countries heavily dependent on commodity exports (Nigeria – oil; Zambia – copper; Brazil – soy) face government revenue volatility. Commodity price cycles create boom-bust fiscal and economic cycles.' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'The food price crisis of 2007-08 is the go-to commodity instability case study: drought in Australia + biofuel mandates in US (corn for ethanol) + speculative financial investment in food futures → global food prices doubled → political instability in 30+ countries. Multiple supply and demand shocks combining is typical of real commodity crises.' }
+      ]
     },
     {
       id: 'unstable_markets_4',
@@ -90,16 +94,20 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_5',
       template: 'cause',
       title: 'Limitations of Buffer Stock Schemes',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '⚠️',
-      causesLabel: 'Why buffer stocks fail in practice',
-      causes: [
-        { icon: '🏪', head: 'Storage costs', body: 'Storing physical commodities (grain, butter) is expensive. Costs include warehousing, preservation (temperature control, fumigation), transportation, and spoilage. EU "butter mountains" and "grain mountains" from CAP price supports: enormous storage costs and eventual dumping at below-market prices.' },
-        { icon: '🎯', head: 'Setting the target price', body: 'If the floor price is set above the long-run equilibrium, permanent surplus accumulates. If below, permanent shortage. Identifying the "correct" long-run equilibrium is an information challenge – prices trend over time as technology and tastes change.' },
-        { icon: '💸', head: 'Financial sustainability', body: 'Sustained low prices exhaust the authority\'s purchase funds; sustained high prices exhaust reserves. International Tin Council (1985): ran out of money to support the floor price → collapsed → tin price fell 50% instantly.' },
-        { icon: '📈', head: 'Speculation and manipulation', body: 'Traders aware of the floor/ceiling can exploit the scheme – buy just before the authority must sell; sell just before the authority must buy. Buffer stock schemes can be destabilised by speculative attacks.' }
-      ],
-      examEdge: 'The International Tin Agreement collapse (1985) is the definitive buffer stock failure case study. The authority over-committed to a floor price that was above the long-run market equilibrium → bought more than it could finance → ran out of money → floor collapsed → prices crashed far below equilibrium (overcorrection). A devastating real-world test.'
+      blocks: [
+        { type: 'sectionHeader', icon: '⚠️', label: 'Why buffer stocks fail in practice' },
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            { type: 'tile', icon: '🏪', head: 'Storage costs', body: 'Storing physical commodities (grain, butter) is expensive. Costs include warehousing, preservation (temperature control, fumigation), transportation, and spoilage. EU "butter mountains" and "grain mountains" from CAP price supports: enormous storage costs and eventual dumping at below-market prices.' },
+            { type: 'tile', icon: '🎯', head: 'Setting the target price', body: 'If the floor price is set above the long-run equilibrium, permanent surplus accumulates. If below, permanent shortage. Identifying the "correct" long-run equilibrium is an information challenge – prices trend over time as technology and tastes change.' },
+            { type: 'tile', icon: '💸', head: 'Financial sustainability', body: 'Sustained low prices exhaust the authority\'s purchase funds; sustained high prices exhaust reserves. International Tin Council (1985): ran out of money to support the floor price → collapsed → tin price fell 50% instantly.' },
+            { type: 'tile', icon: '📈', head: 'Speculation and manipulation', body: 'Traders aware of the floor/ceiling can exploit the scheme – buy just before the authority must sell; sell just before the authority must buy. Buffer stock schemes can be destabilised by speculative attacks.' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'The International Tin Agreement collapse (1985) is the definitive buffer stock failure case study. The authority over-committed to a floor price that was above the long-run market equilibrium → bought more than it could finance → ran out of money → floor collapsed → prices crashed far below equilibrium (overcorrection). A devastating real-world test.' }
+      ]
     },
     {
       id: 'unstable_markets_6',

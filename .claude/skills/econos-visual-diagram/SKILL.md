@@ -5,9 +5,63 @@ description: Use when designing, polishing, or translating SVG diagrams for Econ
 
 # Econos visual diagrams
 
-## FIRST CHOICE: use a diagram generator via the `'diagram'` block
+## FIRST CHOICE: the `econDiagram` block + chart families
 
-Before hand-authoring any SVG, check whether one of the built-in generators covers the topic. This is the preferred path for every standard economics diagram.
+For any standard economics line chart, the first question is always: does a chart family cover this? If yes, use `econDiagram`. This is the preferred path — it handles intercepts, equilibria, shift styling, labels, and the CSS-only step toggle automatically.
+
+**16 registered chart families:**
+
+| Chart ID | What it draws |
+|---|---|
+| `adas` | AD/AS — demand-pull, cost-push, monetary, recessionary/inflationary gap |
+| `phillips` | SRPC and/or LRPC with NAIRU marker |
+| `ppf` | PPF/PPC frontier with points and growth shift |
+| `supplyDemand` | Supply and demand with price line, ceiling/floor points |
+| `externalities-neg` | MPC/MSC/MPB — negative externality wedge |
+| `externalities-pos` | MPC/MSB/MPB — positive externality wedge |
+| `costCurves` | MC, AVC, ATC, MR for a competitive firm |
+| `marketStructure` | AR, MR, MC, ATC for monopoly/oligopoly/PC |
+| `labourMarket` | LD, LS, MCL, minimum wage or monopsony |
+| `jcurve` | Trade balance J-curve (depreciation/devaluation) |
+| `laffer` | Laffer curve with revenue-maximising tax rate |
+| `lorenz` | Lorenz curve against line of equality |
+| `kuznets` | Kuznets inverted-U (inequality vs development) |
+| `fortyFive` | Keynesian 45-degree national income diagram |
+| `growth` | Economic growth (AD/SRAS/LRAS framing) |
+| `publicGoods` | MB_A, MB_B, ΣMB, MC for public-good optimal provision |
+
+**View schema** (one entry per interactive step in `views: [...]`):
+
+```
+label      — tab label for this step
+shifts?    — { curveId: number | { dx?, dy? } } — move a curve
+points?    — string[] of named point IDs to show (e.g. ['E0','E1'])
+arrows?    — [[fromId, toId, { tone? }]] — movement arrows
+areas?     — [{ between: [curveA, curveB], x: [x1, x2], tone?, hatch? }]
+brackets?  — [{ x: [x1, x2], y, label, tone? }]
+analysis?  — text shown in the analysis pane for this step
+```
+
+Minimal example:
+
+```js
+{
+  type: 'econDiagram',
+  chart: 'adas',
+  views: [
+    { label: 'Baseline', points: ['E0'] },
+    { label: 'Demand-pull', shifts: { AD: 60 }, points: ['E0','E1'], arrows: [['E0','E1',{tone:'blue'}]], analysis: 'AD shifts right...' }
+  ]
+}
+```
+
+A generator-backed `'diagram'` block or a hand-authored SVG is only for shapes no `econDiagram` chart family covers. See the second and third choice sections below.
+
+---
+
+## SECOND CHOICE: use a diagram generator via the `'diagram'` block
+
+If no `econDiagram` chart family fits, check whether one of the built-in generators covers the topic. These produce a complete `<svg>` string via `window.ECONOS_DIAGRAMS` and are wired into a card via the `'diagram'` block.
 
 The generators live in `window.ECONOS_DIAGRAMS` (populated by `js/diagrams/generators/*.js` and indexed by `js/diagrams/index.js`). They are all built on the `window.EconSvg` primitive layer in `js/diagrams/econ-svg.js`, which handles axes, curves, equilibrium dots, guide lines, tone palette and ID namespacing automatically.
 
@@ -45,13 +99,13 @@ Wire a generator onto any card that uses the `blocks` array via the `'diagram'` 
 
 The block renders inside the same `.hero-visual` frame used by `heroVisual` blocks — no additional stylesheet needed. Full config options for every generator are documented in `docs/DIAGRAM_LIBRARY.md`.
 
-### Second choice: a one-off static diagram in `js/diagrams/static/`
+### Third choice: a one-off static diagram in `js/diagrams/static/`
 
 If no generator produces the right output, check `js/diagrams/static/` for a pre-built one-off SVG file. These are standalone econ charts that don't need parameterisation (e.g. `externalities.js`, `monopoly.js`, `phillips-lorenz.js`). They are registered on both `window.ECONOS_DIAGRAMS` and `window.ECONOS_ICONS`, so they are available to both the `'diagram'` block (via `svgKey`) and legacy `visualKey` cards. Use the `svgKey` form in a `'diagram'` block or a `heroVisual` block to reference them without any code change.
 
-### Third choice: hand-author a brand-new SVG
+### Fourth choice: hand-author a brand-new SVG
 
-Only reach for a hand-authored SVG when no generator and no static file fits. Follow `docs/ECON_DIAGRAM_RULES.md` for the full canonical conventions (curve colours, shift styling, equilibrium markers, viewBox margins, tone palette, safe-zone padding, text escaping, `<defs>` scoping). The rules summary is also maintained in the "House rules for econ line charts" and "Tone palette" sections below.
+Only reach for a hand-authored SVG when no `econDiagram` chart family, no generator, and no static file fits. Follow `docs/ECON_DIAGRAM_RULES.md` for the full canonical conventions (curve colours, shift styling, equilibrium markers, viewBox margins, tone palette, safe-zone padding, text escaping, `<defs>` scoping). The rules summary is also maintained in the "House rules for econ line charts" and "Tone palette" sections below.
 
 Place the finished SVG string in `js/diagrams/static/<diagram-name>.js` (not in `js/icons.js`). Register it on `window.ECONOS_DIAGRAMS` and optionally mirror it to `window.ECONOS_ICONS` so legacy `visualKey` cards can reach it. Add the file to `PRECACHE_ASSETS` in `sw.js` and bump `CACHE_NAME`.
 

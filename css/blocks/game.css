@@ -1,0 +1,164 @@
+/* css/blocks/game.css
+   ────────────────────────────────────────────────────────────────────────
+   Styles for the payoffMatrix block (game theory strategic-form matrix).
+   All selectors are scoped under .econ-blocks.
+   Design tokens from css/econ-tokens.css are used throughout.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* ── Container ──────────────────────────────────────────────────────────── */
+
+.econ-blocks .payoff-matrix {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.econ-blocks .payoff-matrix--empty {
+  color: var(--econ-tone-slate-400, #94A3B8);
+  font-size: 0.85rem;
+  padding: var(--econ-pad, 12px 16px);
+}
+
+/* ── Table skeleton ─────────────────────────────────────────────────────── */
+
+.econ-blocks .pm-table {
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 0 auto;
+  min-width: 320px;
+  table-layout: auto;
+}
+
+/* ── Corner / player-label cells ────────────────────────────────────────── */
+
+.econ-blocks .pm-corner {
+  background: transparent;
+  border: none;
+}
+
+.econ-blocks .pm-col-player-label {
+  background: var(--econ-tone-blue-50, #EFF6FF);
+  border: 1px solid var(--econ-tone-blue-100, #DBEAFE);
+  border-radius: 6px 6px 0 0;
+  color: var(--econ-tone-blue-700, #1D4ED8);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.econ-blocks .pm-row-player-label {
+  background: var(--econ-tone-green-50, #F0FDF4);
+  border: 1px solid var(--econ-tone-green-100, #DCFCE7);
+  border-radius: 6px 0 0 6px;
+  color: var(--econ-tone-green-700, #15803D);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  min-width: 80px;
+  padding: 8px 12px;
+  text-align: center;
+  vertical-align: middle;
+  writing-mode: vertical-rl;
+}
+
+.econ-blocks .pm-row-player-text {
+  display: inline-block;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+/* ── Column strategy labels ─────────────────────────────────────────────── */
+
+.econ-blocks .pm-col-label {
+  background: var(--econ-tone-blue-50, #EFF6FF);
+  border: 1px solid var(--econ-tone-blue-100, #DBEAFE);
+  color: var(--econ-tone-blue-700, #1D4ED8);
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-width: 120px;
+  padding: 6px 16px;
+  text-align: center;
+}
+
+/* ── Row strategy labels ────────────────────────────────────────────────── */
+
+.econ-blocks .pm-row-label {
+  background: var(--econ-tone-green-50, #F0FDF4);
+  border: 1px solid var(--econ-tone-green-100, #DCFCE7);
+  color: var(--econ-tone-green-700, #15803D);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ── Payoff cells ───────────────────────────────────────────────────────── */
+
+.econ-blocks .pm-cell {
+  background: #FFFFFF;
+  border: 1px solid var(--econ-block-line, #E2E8F0);
+  padding: 10px 18px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Nash equilibrium cell highlight */
+.econ-blocks .pm-cell--nash {
+  background: var(--econ-tone-amber-50, #FFFBEB);
+  border: 2px solid var(--econ-tone-amber-400, #FBBF24);
+  box-shadow: inset 0 0 0 1px var(--econ-tone-amber-200, #FDE68A);
+}
+
+/* ── Payoff values ──────────────────────────────────────────────────────── */
+
+.econ-blocks .pm-payoff {
+  font-family: ui-monospace, 'Cascadia Code', Menlo, monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.econ-blocks .pm-payoff--a {
+  color: var(--econ-tone-green-700, #15803D);
+}
+
+.econ-blocks .pm-payoff--b {
+  color: var(--econ-tone-blue-700, #1D4ED8);
+}
+
+.econ-blocks .pm-payoff-sep {
+  color: var(--econ-tone-slate-400, #94A3B8);
+  margin: 0 2px;
+}
+
+/* ── Nash equilibrium badge ─────────────────────────────────────────────── */
+
+.econ-blocks .pm-nash-badge {
+  background: var(--econ-tone-amber-400, #FBBF24);
+  border-radius: 4px;
+  color: #1E293B;
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-top: 4px;
+  padding: 2px 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ── Hover states ───────────────────────────────────────────────────────── */
+
+@media (hover: hover) {
+  .econ-blocks .pm-cell:hover {
+    background: var(--econ-tone-slate-50, #F8FAFC);
+  }
+
+  .econ-blocks .pm-cell--nash:hover {
+    background: var(--econ-tone-amber-100, #FEF3C7);
+  }
+}

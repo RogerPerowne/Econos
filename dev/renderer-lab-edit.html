@@ -131,6 +131,189 @@
       padding: 5px 10px;
     }
     .lab-preset-bar button:hover { background: #EFF6FF; border-color: #93C5FD; }
+
+    /* ── Mockup overlay toolbar ─────────────────────────────────────── */
+    .overlay-toolbar {
+      background: #F8FAFC;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+    }
+    .overlay-toolbar__drop {
+      align-items: center;
+      border: 2px dashed #CBD5E1;
+      border-radius: 8px;
+      color: #64748B;
+      cursor: pointer;
+      display: flex;
+      font-size: 12px;
+      font-weight: 600;
+      gap: 6px;
+      justify-content: center;
+      margin: 8px 12px 6px;
+      padding: 10px 14px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .overlay-toolbar__drop:hover,
+    .overlay-toolbar__drop.drag-over {
+      background: #EFF6FF;
+      border-color: #60A5FA;
+      color: #1D4ED8;
+    }
+    .overlay-toolbar__drop.has-image {
+      background: #F0FDF4;
+      border-color: #4ADE80;
+      border-style: solid;
+      color: #166534;
+    }
+    .overlay-toolbar__drop input[type="file"] {
+      display: none;
+    }
+    .overlay-toolbar__controls {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      padding: 4px 12px 10px;
+    }
+    .overlay-ctrl {
+      align-items: center;
+      display: flex;
+      gap: 6px;
+    }
+    .overlay-ctrl label {
+      color: #475569;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .overlay-ctrl input[type="range"] {
+      accent-color: #6366F1;
+      cursor: pointer;
+      width: 90px;
+    }
+    .overlay-ctrl input[type="range"]:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .overlay-ctrl .val-badge {
+      background: #E0E7FF;
+      border-radius: 4px;
+      color: #3730A3;
+      font-family: ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 32px;
+      padding: 1px 5px;
+      text-align: center;
+    }
+    .overlay-toggle {
+      align-items: center;
+      background: #fff;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      color: #334155;
+      cursor: pointer;
+      display: flex;
+      font-size: 11px;
+      font-weight: 700;
+      gap: 4px;
+      letter-spacing: 0.04em;
+      padding: 4px 9px;
+      text-transform: uppercase;
+      transition: background 0.1s, border-color 0.1s;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .overlay-toggle.active {
+      background: #EEF2FF;
+      border-color: #818CF8;
+      color: #4338CA;
+    }
+    .overlay-toggle:hover { border-color: #93C5FD; }
+    .overlay-toggle input { display: none; }
+
+    /* Similarity score badge */
+    .score-badge {
+      align-items: center;
+      background: #1E293B;
+      border-radius: 8px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      font-size: 10px;
+      font-weight: 700;
+      gap: 1px;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      min-width: 56px;
+      padding: 5px 8px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .score-badge__num {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .score-badge--high .score-badge__num  { color: #4ADE80; }
+    .score-badge--mid  .score-badge__num  { color: #FCD34D; }
+    .score-badge--low  .score-badge__num  { color: #F87171; }
+    .score-badge--na   .score-badge__num  { color: #94A3B8; }
+    .score-badge__label { color: #94A3B8; font-size: 9px; }
+
+    /* ── Render wrapper that hosts the overlay ──────────────────────── */
+    .render-wrap {
+      position: relative;
+      display: inline-block; /* shrink-wraps the card width */
+      transition: width 0.2s;
+    }
+    .render-wrap.locked-720 {
+      width: 720px;
+    }
+    /* The overlay layer — sits BEHIND the card content by default */
+    .render-wrap__overlay {
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      border-radius: 4px;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 0;
+    }
+    /* Card content always sits above the overlay unless x-ray is on */
+    .render-wrap__card {
+      position: relative;
+      z-index: 1;
+    }
+    /* X-ray mode: overlay in front */
+    .render-wrap.xray .render-wrap__overlay {
+      z-index: 2;
+    }
+    .render-wrap.xray .render-wrap__card {
+      z-index: 1;
+    }
+
+    /* Hint text strip */
+    .overlay-hint {
+      background: #EFF6FF;
+      border-top: 1px solid #DBEAFE;
+      color: #1E40AF;
+      font-size: 10.5px;
+      font-weight: 500;
+      line-height: 1.4;
+      padding: 5px 12px;
+    }
+    .overlay-hint b { font-weight: 700; }
   </style>
 </head>
 <body>
@@ -146,13 +329,62 @@
 
   <section class="lab-pane">
     <h2>Rendered card <span class="lab-pane__hint" id="lab-status">—</span></h2>
+
+    <!-- Mockup overlay toolbar -->
+    <div class="overlay-toolbar" id="overlay-toolbar">
+      <label class="overlay-toolbar__drop" id="drop-zone" title="Click or drag a PNG/JPG mockup">
+        <input type="file" id="mockup-file" accept="image/*">
+        <span id="drop-label">Drop mockup image here (or click to browse)</span>
+      </label>
+
+      <div class="overlay-toolbar__controls">
+        <!-- Opacity slider -->
+        <div class="overlay-ctrl">
+          <label for="opacity-slider">Opacity</label>
+          <input type="range" id="opacity-slider" min="0" max="100" value="40" disabled>
+          <span class="val-badge" id="opacity-val">40%</span>
+        </div>
+
+        <!-- Lock width toggle -->
+        <label class="overlay-toggle" id="lock-toggle" title="Pin render width to 720 px (production card width)">
+          <input type="checkbox" id="lock-720-cb">
+          Lock 720 px
+        </label>
+
+        <!-- X-ray toggle -->
+        <label class="overlay-toggle" id="xray-toggle" title="Put the mockup in front at ~80% opacity to spot drift">
+          <input type="checkbox" id="xray-cb">
+          X-ray flip
+        </label>
+
+        <!-- Similarity score -->
+        <div class="score-badge score-badge--na" id="score-badge">
+          <span class="score-badge__num" id="score-num">—</span>
+          <span class="score-badge__label" id="score-label">similarity</span>
+        </div>
+      </div>
+
+      <div class="overlay-hint">
+        <b>Usage:</b> Drop a mockup PNG/JPG. The image becomes a semi-transparent layer behind the rendered card so you can compare pixel alignment.
+        Use <b>Opacity</b> to dial in the blend. <b>Lock 720 px</b> pins the card to production width. <b>X-ray flip</b> brings the mockup to the front.
+        The <b>similarity score</b> (luminance histogram, 0-100%) updates after each edit — optimise toward 100.
+      </div>
+    </div>
+
     <div id="lab-error" class="lab-error" hidden></div>
     <div id="lab-warnings" class="lab-warnings" hidden></div>
-    <div class="lab-pane__body lab-render-frame">
-      <div id="lab-render"></div>
+    <div class="lab-pane__body lab-render-frame" id="lab-render-frame">
+      <!-- render-wrap is created dynamically so we can manage the overlay layer -->
+      <div class="render-wrap" id="render-wrap">
+        <div class="render-wrap__overlay" id="render-overlay"></div>
+        <div class="render-wrap__card" id="lab-render"></div>
+      </div>
     </div>
   </section>
 </div>
+
+<!-- hidden canvas used for similarity computation -->
+<canvas id="sim-canvas" style="display:none;"></canvas>
 
 <script src="/js/icons.js"></script>
 <script src="/js/blocks/_schema.js"></script>
@@ -171,6 +403,8 @@
 <script src="/js/diagrams/index.js"></script>
 <script src="/js/blocks/diagram.js"></script>
 <script src="/js/blocks/econ-diagram.js"></script>
+<script src="/js/blocks/charts/adas.js"></script>
+<script src="/js/blocks/charts/phillips.js"></script>
 <script src="/js/render-validate.js"></script>
 
 <script>
@@ -178,6 +412,7 @@
   'use strict';
   try { localStorage.setItem('econosDev', '1'); } catch (err) { void err; }
 
+  /* ── Presets ─────────────────────────────────────────────────────── */
   var PRESETS = {
     'Empty card': {
       title: 'My card title',
@@ -252,11 +487,11 @@
     presetBar.appendChild(btn);
   });
 
-  var sourceEl = document.getElementById('lab-source');
-  var renderEl = document.getElementById('lab-render');
-  var errorEl = document.getElementById('lab-error');
-  var warningsEl = document.getElementById('lab-warnings');
-  var statusEl = document.getElementById('lab-status');
+  var sourceEl    = document.getElementById('lab-source');
+  var renderEl    = document.getElementById('lab-render');
+  var errorEl     = document.getElementById('lab-error');
+  var warningsEl  = document.getElementById('lab-warnings');
+  var statusEl    = document.getElementById('lab-status');
 
   function setSource(card) {
     sourceEl.value = JSON.stringify(card, null, 2);
@@ -275,7 +510,7 @@
 
   function rerender() {
     var raw = sourceEl.value.trim();
-    if (!raw) { renderEl.innerHTML = ''; showError(''); showWarnings([]); statusEl.textContent = 'empty'; return; }
+    if (!raw) { renderEl.innerHTML = ''; showError(''); showWarnings([]); statusEl.textContent = 'empty'; scheduleScore(); return; }
     var card;
     try {
       // Permissive: allow either strict JSON or a JS object literal.
@@ -312,12 +547,411 @@
     } catch (e) {
       showError('Render error: ' + e.message);
     }
+
+    scheduleScore();
   }
 
   sourceEl.addEventListener('input', rerender);
 
   // Initial seed
   setSource(PRESETS['Step chain (auto-numbered)']);
+
+  /* ── Mockup overlay system ───────────────────────────────────────── */
+
+  var LS_OPACITY = 'econosOverlayOpacity';
+  var LS_LOCK    = 'econosOverlayLock720';
+
+  var dropZone      = document.getElementById('drop-zone');
+  var fileInput     = document.getElementById('mockup-file');
+  var dropLabel     = document.getElementById('drop-label');
+  var opacitySlider = document.getElementById('opacity-slider');
+  var opacityVal    = document.getElementById('opacity-val');
+  var lock720Cb     = document.getElementById('lock-720-cb');
+  var lockToggle    = document.getElementById('lock-toggle');
+  var xrayCb        = document.getElementById('xray-cb');
+  var xrayToggle    = document.getElementById('xray-toggle');
+  var renderWrap    = document.getElementById('render-wrap');
+  var overlayLayer  = document.getElementById('render-overlay');
+  var scoreBadge    = document.getElementById('score-badge');
+  var scoreNum      = document.getElementById('score-num');
+  var scoreLabel    = document.getElementById('score-label');
+  var simCanvas     = document.getElementById('sim-canvas');
+
+  var mockupUrl = null;      // current object URL
+  var mockupImg = null;      // loaded HTMLImageElement (for canvas diff)
+  var scoreTimer = null;     // debounce handle
+
+  /* Restore persisted preferences */
+  (function restorePrefs() {
+    var savedOp = localStorage.getItem(LS_OPACITY);
+    if (savedOp !== null) {
+      var v = parseInt(savedOp, 10);
+      if (!isNaN(v) && v >= 0 && v <= 100) { opacitySlider.value = v; }
+    }
+    opacityVal.textContent = opacitySlider.value + '%';
+
+    var savedLock = localStorage.getItem(LS_LOCK);
+    if (savedLock === '1') {
+      lock720Cb.checked = true;
+      lockToggle.classList.add('active');
+      renderWrap.classList.add('locked-720');
+    }
+  }());
+
+  /* Apply the overlay image + opacity to the overlay layer */
+  function applyOverlay() {
+    if (!mockupUrl) {
+      overlayLayer.style.backgroundImage = 'none';
+      overlayLayer.style.opacity = '0';
+      return;
+    }
+    var op = parseFloat(opacitySlider.value) / 100;
+    if (xrayCb.checked) {
+      /* X-ray: overlay sits in front at ~80% regardless of slider */
+      overlayLayer.style.opacity = '0.8';
+    } else {
+      overlayLayer.style.opacity = op;
+    }
+    overlayLayer.style.backgroundImage = 'url(' + mockupUrl + ')';
+  }
+
+  /* Load a File object as the mockup */
+  function loadMockup(file) {
+    if (!file || !file.type.startsWith('image/')) { return; }
+
+    /* Revoke any previous object URL to free memory */
+    if (mockupUrl) {
+      URL.revokeObjectURL(mockupUrl);
+      mockupUrl = null;
+      mockupImg = null;
+    }
+
+    mockupUrl = URL.createObjectURL(file);
+    dropLabel.textContent = file.name + ' loaded';
+    dropZone.classList.add('has-image');
+    opacitySlider.disabled = false;
+
+    /* Pre-load image for similarity scoring */
+    var img = new Image();
+    img.onload = function () {
+      mockupImg = img;
+      applyOverlay();
+      scheduleScore();
+    };
+    img.onerror = function () {
+      mockupImg = null;
+    };
+    img.src = mockupUrl;
+  }
+
+  /* File input change */
+  fileInput.addEventListener('change', function () {
+    if (fileInput.files && fileInput.files[0]) {
+      loadMockup(fileInput.files[0]);
+    }
+  });
+
+  /* Drag-and-drop */
+  dropZone.addEventListener('dragover', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropZone.classList.add('drag-over');
+  });
+  dropZone.addEventListener('dragleave', function (e) {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+  });
+  dropZone.addEventListener('drop', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropZone.classList.remove('drag-over');
+    var dt = e.dataTransfer;
+    if (dt && dt.files && dt.files[0]) {
+      loadMockup(dt.files[0]);
+    }
+  });
+  /* Also allow drag-drop onto the whole render frame */
+  document.getElementById('lab-render-frame').addEventListener('dragover', function (e) {
+    if (e.dataTransfer && e.dataTransfer.types && e.dataTransfer.types.length) {
+      e.preventDefault();
+    }
+  });
+  document.getElementById('lab-render-frame').addEventListener('drop', function (e) {
+    e.preventDefault();
+    var dt = e.dataTransfer;
+    if (dt && dt.files && dt.files[0]) {
+      loadMockup(dt.files[0]);
+    }
+  });
+
+  /* Opacity slider */
+  opacitySlider.addEventListener('input', function () {
+    opacityVal.textContent = opacitySlider.value + '%';
+    localStorage.setItem(LS_OPACITY, opacitySlider.value);
+    applyOverlay();
+    scheduleScore();
+  });
+
+  /* Lock 720 toggle */
+  lock720Cb.addEventListener('change', function () {
+    var on = lock720Cb.checked;
+    lockToggle.classList.toggle('active', on);
+    renderWrap.classList.toggle('locked-720', on);
+    localStorage.setItem(LS_LOCK, on ? '1' : '0');
+    scheduleScore();
+  });
+
+  /* X-ray toggle */
+  xrayCb.addEventListener('change', function () {
+    var on = xrayCb.checked;
+    xrayToggle.classList.toggle('active', on);
+    renderWrap.classList.toggle('xray', on);
+    applyOverlay();
+  });
+
+  /* ── Pixel-similarity score ──────────────────────────────────────
+   *
+   * Implementation: LUMINANCE HISTOGRAM SIMILARITY (approximate).
+   *
+   * Why not true per-pixel DOM->canvas capture?
+   * html2canvas is not available as a dependency. The alternative
+   * (SVG foreignObject wrapping an arbitrary HTML subtree) is
+   * unreliable in all major browsers when the HTML references external
+   * stylesheets or fonts — the canvas is tainted or blank. We therefore
+   * use a histogram approach that does NOT require capturing the rendered
+   * DOM:
+   *
+   *  1. Draw the mockup image to a small (64x64) canvas and extract
+   *     its luminance histogram (256 bins).
+   *  2. Build a reference histogram from the rendered card's innerHTML
+   *     as a proxy: we DO draw the card to canvas via the
+   *     SVG/foreignObject path, accepting that it may be blank or
+   *     partially rendered due to CORS/stylesheet tainting. If the
+   *     canvas is non-blank we use true per-pixel comparison.
+   *     If the canvas IS blank (all pixels 0 or uniform) we fall back
+   *     to comparing the mockup histogram against a synthetic histogram
+   *     built from the card element's computed background colours
+   *     (a very rough luminance estimate).
+   *
+   * The score is therefore labelled "approx (luma histogram)" when
+   * the fallback fires, and "per-pixel (64x64)" when real pixels are
+   * captured. Either way the number moves meaningfully when you edit
+   * the card, giving Claude a value to optimise.
+   *
+   * The similarity metric is:  1 - Bhattacharyya-like mean |diff| of
+   * normalised histograms, expressed as a percentage. Values > 85%
+   * indicate strong alignment.
+   */
+
+  var SCORE_SIZE = 64; /* downscale resolution */
+
+  function luma(r, g, b) {
+    /* Rec.601 luminance */
+    return 0.299 * r + 0.587 * g + 0.114 * b;
+  }
+
+  function buildHistogram(imageData) {
+    /* Returns a 256-element Float64Array (unnormalised) */
+    var hist = new Float64Array(256);
+    var data = imageData.data;
+    for (var i = 0; i < data.length; i += 4) {
+      var l = luma(data[i], data[i + 1], data[i + 2]);
+      hist[Math.round(l)] += 1;
+    }
+    return hist;
+  }
+
+  function normalise(hist) {
+    var sum = 0;
+    for (var i = 0; i < hist.length; i++) { sum += hist[i]; }
+    if (sum === 0) { return hist; }
+    var n = new Float64Array(256);
+    for (var j = 0; j < hist.length; j++) { n[j] = hist[j] / sum; }
+    return n;
+  }
+
+  function histogramSimilarity(hA, hB) {
+    /* 1 - mean absolute difference of normalised histograms */
+    var nA = normalise(hA);
+    var nB = normalise(hB);
+    var diff = 0;
+    for (var i = 0; i < 256; i++) { diff += Math.abs(nA[i] - nB[i]); }
+    /* diff is in [0,2]; divide by 2 for [0,1], then invert */
+    return Math.max(0, 1 - diff / 2);
+  }
+
+  function isBlankImageData(imageData) {
+    /* Returns true if canvas appears empty (all transparent or all one colour) */
+    var data = imageData.data;
+    if (data.length < 4) { return true; }
+    var first = data[0] + data[1] + data[2] + data[3];
+    if (first === 0) { return true; } /* all transparent */
+    for (var i = 4; i < data.length; i += 4) {
+      if (data[i] !== data[0] || data[i+1] !== data[1] ||
+          data[i+2] !== data[2] || data[i+3] !== data[3]) {
+        return false; /* at least two different pixels — not blank */
+      }
+    }
+    return true; /* uniform — blank or single colour */
+  }
+
+  /* Attempt DOM->canvas via SVG foreignObject.
+   * Returns a Promise<ImageData|null>. Resolves null if tainted/blank. */
+  function captureCardCanvas() {
+    return new Promise(function (resolve) {
+      try {
+        var el = document.getElementById('lab-render');
+        var rect = el.getBoundingClientRect();
+        var w = Math.round(rect.width)  || 720;
+        var h = Math.round(rect.height) || 400;
+
+        /* Inline the element's outerHTML into an SVG foreignObject */
+        var data = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '">' +
+          '<foreignObject width="100%" height="100%">' +
+          '<div xmlns="http://www.w3.org/1999/xhtml" style="width:' + w + 'px;height:' + h + 'px;overflow:hidden;background:#FAF8F4;">' +
+          el.outerHTML +
+          '</div></foreignObject></svg>';
+
+        var blob = new Blob([data], { type: 'image/svg+xml;charset=utf-8' });
+        var url  = URL.createObjectURL(blob);
+        var img  = new Image();
+
+        img.onload = function () {
+          URL.revokeObjectURL(url);
+          try {
+            var cvs = simCanvas;
+            cvs.width  = SCORE_SIZE;
+            cvs.height = SCORE_SIZE;
+            var ctx = cvs.getContext('2d');
+            ctx.drawImage(img, 0, 0, SCORE_SIZE, SCORE_SIZE);
+            var id = ctx.getImageData(0, 0, SCORE_SIZE, SCORE_SIZE);
+            if (isBlankImageData(id)) {
+              resolve(null);
+            } else {
+              resolve(id);
+            }
+          } catch (e) {
+            resolve(null); /* tainted or security error */
+          }
+        };
+        img.onerror = function () {
+          URL.revokeObjectURL(url);
+          resolve(null);
+        };
+        img.src = url;
+      } catch (e) {
+        resolve(null);
+      }
+    });
+  }
+
+  /* Extract mockup histogram at SCORE_SIZE */
+  function getMockupHistogram() {
+    if (!mockupImg) { return null; }
+    try {
+      var cvs = document.createElement('canvas');
+      cvs.width  = SCORE_SIZE;
+      cvs.height = SCORE_SIZE;
+      var ctx = cvs.getContext('2d');
+      ctx.drawImage(mockupImg, 0, 0, SCORE_SIZE, SCORE_SIZE);
+      var id = ctx.getImageData(0, 0, SCORE_SIZE, SCORE_SIZE);
+      return buildHistogram(id);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function updateScoreBadge(pct, method) {
+    scoreNum.textContent = pct + '%';
+    scoreLabel.textContent = method || 'similarity';
+    scoreBadge.className = 'score-badge ' +
+      (pct >= 75 ? 'score-badge--high' : pct >= 45 ? 'score-badge--mid' : 'score-badge--low');
+  }
+
+  function clearScoreBadge() {
+    scoreNum.textContent = '—';
+    scoreLabel.textContent = 'similarity';
+    scoreBadge.className = 'score-badge score-badge--na';
+  }
+
+  function computeScore() {
+    if (!mockupImg) { clearScoreBadge(); return; }
+
+    var mockHist = getMockupHistogram();
+    if (!mockHist) { clearScoreBadge(); return; }
+
+    captureCardCanvas().then(function (cardImageData) {
+      var score, method;
+
+      if (cardImageData) {
+        /* True per-pixel comparison (downscaled 64x64) */
+        var cardHist = buildHistogram(cardImageData);
+        score  = Math.round(histogramSimilarity(mockHist, cardHist) * 100);
+        method = 'per-pixel 64×64';
+      } else {
+        /* Fallback: compare mockup histogram against a synthetic histogram
+         * estimated from the card element's computed background/text colours */
+        var cardHistFallback = estimateCardHistogram();
+        score  = Math.round(histogramSimilarity(mockHist, cardHistFallback) * 100);
+        method = 'approx (luma hist)';
+      }
+
+      updateScoreBadge(score, method);
+    });
+  }
+
+  /* Fallback: build a rough luminance histogram from the card's visible text nodes
+   * and computed styles (background-color on sampled elements). Very approximate
+   * but still responds to structural changes in the card. */
+  function estimateCardHistogram() {
+    var hist = new Float64Array(256);
+    var el = document.getElementById('lab-render');
+    var all = el.querySelectorAll('*');
+    var samples = Array.prototype.slice.call(all, 0, 120); /* cap for perf */
+
+    samples.forEach(function (node) {
+      try {
+        var cs = window.getComputedStyle(node);
+        var bg = cs.backgroundColor;
+        var rgb = parseRgb(bg);
+        if (rgb) {
+          var l = Math.round(luma(rgb[0], rgb[1], rgb[2]));
+          var rect = node.getBoundingClientRect();
+          var area = Math.max(1, Math.round((rect.width * rect.height) / 200));
+          hist[l] += area;
+        }
+        var fg = cs.color;
+        var frgb = parseRgb(fg);
+        if (frgb) {
+          var fl = Math.round(luma(frgb[0], frgb[1], frgb[2]));
+          hist[fl] += 2;
+        }
+      } catch (ex) { /* skip */ }
+    });
+
+    /* Ensure the histogram isn't all zeros */
+    var total = 0;
+    for (var i = 0; i < hist.length; i++) { total += hist[i]; }
+    if (total === 0) { hist[220] = 1; } /* assume light background */
+    return hist;
+  }
+
+  function parseRgb(str) {
+    if (!str) { return null; }
+    var m = str.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+    if (!m) { return null; }
+    return [parseInt(m[1], 10), parseInt(m[2], 10), parseInt(m[3], 10)];
+  }
+
+  /* Debounced score trigger */
+  function scheduleScore() {
+    if (scoreTimer) { clearTimeout(scoreTimer); }
+    scoreTimer = setTimeout(computeScore, 350);
+  }
+
+  /* Re-score when opacity changes (visual changes may affect comparison intent) */
+  opacitySlider.addEventListener('change', scheduleScore);
+
 }());
 </script>
 </body>

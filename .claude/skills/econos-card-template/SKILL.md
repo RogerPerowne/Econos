@@ -234,6 +234,21 @@ When the user shares a mockup image, scan it region by region against this table
 | A numeric metric card with delta / context | `metricCard` |
 | Big LHS = RHS equation, possibly with terms underneath | `equationHero` |
 | A small inline fact chip (e.g. "UK CPI 2022: 11.1%") | `factChip` |
+| An AD/AS diagram — any shift, gap, or shock sequence | `econDiagram` with `chart: 'adas'` |
+| A Phillips curve (SRPC/LRPC, NAIRU) | `econDiagram` with `chart: 'phillips'` |
+| A PPF/PPC (opportunity cost, growth shift, trade) | `econDiagram` with `chart: 'ppf'` |
+| Cost curves for a firm (MC, AVC, ATC, profit-max) | `econDiagram` with `chart: 'costCurves'` |
+| Market structure diagram (AR, MR, MC, ATC — monopoly/PC) | `econDiagram` with `chart: 'marketStructure'` |
+| Supply and demand — tax, subsidy, price ceiling/floor | `econDiagram` with `chart: 'supplyDemand'` |
+| Externality diagram (negative or positive, wedge) | `econDiagram` with `chart: 'externalities-neg'` or `'externalities-pos'` |
+| Labour market (LD/LS, minimum wage, monopsony) | `econDiagram` with `chart: 'labourMarket'` |
+| J-curve (trade balance after depreciation) | `econDiagram` with `chart: 'jcurve'` |
+| Laffer curve | `econDiagram` with `chart: 'laffer'` |
+| Lorenz curve / Gini | `econDiagram` with `chart: 'lorenz'` |
+| Kuznets curve (inequality vs development) | `econDiagram` with `chart: 'kuznets'` |
+| Keynesian 45-degree / national income diagram | `econDiagram` with `chart: 'fortyFive'` |
+| Economic growth (LRAS shift framing) | `econDiagram` with `chart: 'growth'` |
+| Public goods optimal provision (ΣMB = MC) | `econDiagram` with `chart: 'publicGoods'` |
 
 If a region doesn't fit any block cleanly, that's usually a sign the card belongs on the legacy `ad-interactive` path (interactive multi-state, calculation widgets, etc.) — or that it's time to add a new block type. The 9-step recipe for adding one lives in [`docs/ADDING_NEW_BLOCKS.md`](../../docs/ADDING_NEW_BLOCKS.md). The whole dev tooling around this — Library, Editor, validator, schemas — is collectively the **Card Studio**; see [`docs/CARD_STUDIO.md`](../../docs/CARD_STUDIO.md) for naming + future direction.
 

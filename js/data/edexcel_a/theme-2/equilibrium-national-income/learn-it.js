@@ -68,7 +68,18 @@ window.ECONOS_TOPIC = {
       blocks: [
         { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'When injections equal withdrawals, planned spending equals output.' },
         { type: 'calloutStrip', tone: 'blue', icon: '\u{1F4D0}', text: 'What is the 45° line? — It\'s the line where <strong>planned expenditure equals actual output</strong> (E = Y). Anywhere on it, what households and firms plan to spend exactly matches what the economy produces. Equilibrium national income is therefore wherever the <strong>E line crosses the 45° line</strong> – the only output level where plans and reality match.' },
-        { type: 'diagram', svgKey: 'eniTwinJW45', caption: 'Two diagrams – same answer' },
+        { type: 'econDiagram', chart: 'fortyFive', views: [
+          {
+            label: 'The 45° line',
+            show: ['fortyfive'],
+            analysis: 'The 45° line is the set of all points where planned expenditure equals actual output (AE = Y). Anywhere on this line the economy would be in equilibrium — the question is which point the AE schedule pins down.'
+          },
+          {
+            label: 'Equilibrium at E₀',
+            points: ['E0'],
+            analysis: 'The AE schedule (slope = MPC < 1) is shallower than the 45° line. It crosses the 45° line at E₀ — equilibrium national income Y*. Above Y* planned spending falls short of output, so firms cut back. Below Y* planned spending exceeds output, so firms expand. Only at Y* are plans consistent.'
+          }
+        ]},
         { type: 'sectionHeader', icon: '\u{1F53A}', label: 'What if the economy is off equilibrium?' },
         { type: 'grid', cols: 2, children: [
           { type: 'tile', tone: 'amber', icon: '\u{2B07}️', head: 'Below equilibrium', body: ENI_STEP_ROW('#F59E0B', [

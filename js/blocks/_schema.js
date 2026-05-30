@@ -14,7 +14,7 @@
          required: [...],
          optional: [...]
        } },
-       group:    'core' | 'compare' | 'flow' | 'structure' | 'data' | 'diagram',
+       group:    'core' | 'compare' | 'flow' | 'structure' | 'data' | 'game' | 'diagram',
        summary:  'one-line description (used by editor + doc generator)'
      }
 
@@ -220,6 +220,20 @@
       summary: 'Inline source-cited fact chip.'
     },
 
+    /* ── Game theory group (js/blocks/game.js) ───────────────────────────── */
+    payoffMatrix: {
+      required: ['rows'],
+      optional: ['rowPlayer', 'colPlayer', 'colLabels'],
+      arrays: {
+        rows: {
+          required: ['label', 'cells'],
+          optional: []
+        }
+      },
+      group: 'game',
+      summary: 'Strategic-form N×M payoff matrix with row/column player labels and optional Nash-equilibrium cell highlighting. cells:[{a,b,nash?}].'
+    },
+
     /* ── Diagram group (js/blocks/diagram.js + js/blocks/econ-diagram.js) ─ */
     diagram: {
       required: [],
@@ -230,9 +244,9 @@
     econDiagram: {
       required: ['chart', 'views'],
       optional: [],
-      arrays: { views: { required: ['label'], optional: ['shifts', 'analysis'] } },
+      arrays: { views: { required: ['label'], optional: ['shifts', 'points', 'arrows', 'areas', 'brackets', 'analysis'] } },
       group: 'diagram',
-      summary: 'Declarative interactive economic diagram. Author describes semantic shifts on each curve per view; engine computes line intercepts, equilibrium intersections, label placement, and CSS-only step toggle. chart: \'adas\' supported today.'
+      summary: 'Declarative interactive economic diagram. chart names a registered family (\'adas\', \'phillips\'). Each view: shifts:{curveId:Δ|{dx,dy}}, points:[namedPoints], arrows:[[A,B,{tone}]], areas:[{between,x,tone,hatch}], brackets:[{x|between,y,label,tone}], analysis. Engine computes every coordinate (line/curve intersections, label placement, CSS-only step toggle). Curve kinds: linear, vertical, horizontal, fn, curve.'
     }
   };
 

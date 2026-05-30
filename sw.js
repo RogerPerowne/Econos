@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v136';
+  const CACHE_NAME = 'econos-v139';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -56,6 +56,20 @@
     '/js/diagrams/static/welfare-tax.js',
     '/js/blocks/diagram.js',
     '/js/blocks/econ-diagram.js',
+    '/js/blocks/charts/ppf.js',
+    '/js/blocks/charts/supply-demand.js',
+    '/js/blocks/charts/externalities.js',
+    '/js/blocks/charts/cost-curves.js',
+    '/js/blocks/charts/market-structure.js',
+    '/js/blocks/charts/labour-market.js',
+    '/js/blocks/charts/jcurve.js',
+    '/js/blocks/charts/laffer.js',
+    '/js/blocks/charts/lorenz-kuznets.js',
+    '/js/blocks/charts/forty-five.js',
+    '/js/blocks/charts/growth.js',
+    '/js/blocks/charts/public-goods.js',
+    '/js/blocks/game.js',
+    '/css/blocks/game.css',
     '/fonts/inter-variable.woff2',
     '/favicon.svg',
     '/assets/logo-full.png',

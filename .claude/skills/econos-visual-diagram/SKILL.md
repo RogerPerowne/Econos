@@ -230,6 +230,12 @@ These conventions are enforced across every chart in the codebase:
 - Stroke colour `#2563EB` (AD-blue) for every equilibrium, both old and new — they're "equilibrium" markers, not "curve-X" markers, and using one colour keeps the visual grammar tight
 - Section-theme colours (green for boom, amber for oil-shock) are reserved for **shift-direction arrows and the surrounding card chrome**, not the curves or dots
 
+**Equilibrium-point labels — default placement is ABOVE the dot:**
+- Label sits directly above the equilibrium circle, centred horizontally
+- Convention: `<text x="${cx}" y="${cy - r - 4}" text-anchor="middle">E₀</text>` — `cy - r - 4` puts the baseline ~4 px above the top edge of the circle, so the character body clears the dot with a small visual gap
+- Use this for every dot label: `A`, `B`, `C`, `S`, `E₀`–`E₃`, etc. Don't reach for upper-right offsets (`anchor="start"` at `cx+12, cy-4`) — that asymmetry reads as inconsistent across multi-equilibrium charts
+- Acceptable to break the convention only when the centred label would clash with a curve label or another dot — in that case nudge horizontally (`cx ± 6`) but stay above
+
 **Reference lines (Y_FE, leaders):**
 - Grey `#94A3B8`, `stroke-width="1"`, `stroke-dasharray="3 3"`
 - Every equilibrium dot needs a leader to **both** axes (vertical to x-axis, horizontal to y-axis) — not just one

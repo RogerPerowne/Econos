@@ -170,7 +170,7 @@ window.ECONOS_ICONS = {
           <line x1="80" y1="312" x2="400" y2="312" stroke="#64748B" stroke-width="1.2" stroke-dasharray="4 4"/>
           <line x1="400" y1="312" x2="400" y2="520" stroke="#64748B" stroke-width="1.2" stroke-dasharray="4 4"/>
           <circle cx="400" cy="312" r="8" fill="#fff" stroke="#0B1426" stroke-width="2.8"/>
-          <text x="414" y="307" font-size="16" font-weight="800" fill="#0B1426">A</text>
+          <text x="400" y="299" font-size="16" font-weight="800" fill="#0B1426" text-anchor="middle">A</text>
           <text x="68" y="317" font-size="13" font-weight="700" fill="#0B1426" text-anchor="end">π₀</text>
           <text x="400" y="546" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle">U_N</text>
         </g>
@@ -187,18 +187,18 @@ window.ECONOS_ICONS = {
           <text x="628" y="344" font-size="14" font-weight="800" fill="#2563EB">SRPC₂</text>
           <!-- A faded at (400,312) r=6 -->
           <circle cx="400" cy="312" r="6" fill="#fff" stroke="#94A3B8" stroke-width="2"/>
-          <text x="414" y="307" font-size="13" font-weight="700" fill="#94A3B8">A</text>
+          <text x="400" y="301" font-size="13" font-weight="700" fill="#94A3B8" text-anchor="middle">A</text>
           <!-- B on SRPC₁ at (280, 231) r=8 -->
           <line x1="80" y1="231" x2="280" y2="231" stroke="#D97706" stroke-width="1.2" stroke-dasharray="4 4"/>
           <line x1="280" y1="231" x2="280" y2="520" stroke="#D97706" stroke-width="1.2" stroke-dasharray="4 4"/>
           <circle cx="280" cy="231" r="8" fill="#fff" stroke="#D97706" stroke-width="2.8"/>
-          <text x="266" y="225" font-size="16" font-weight="800" fill="#D97706" text-anchor="end">B</text>
+          <text x="280" y="218" font-size="16" font-weight="800" fill="#D97706" text-anchor="middle">B</text>
           <text x="68" y="236" font-size="13" font-weight="700" fill="#D97706" text-anchor="end">π₁</text>
           <text x="280" y="546" font-size="13" font-weight="700" fill="#D97706" text-anchor="middle">U₁</text>
           <!-- C on SRPC₂ at (400, 192) r=8 -->
           <line x1="80" y1="192" x2="400" y2="192" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="4 4"/>
           <circle cx="400" cy="192" r="8" fill="#fff" stroke="#16A34A" stroke-width="2.8"/>
-          <text x="414" y="187" font-size="16" font-weight="800" fill="#16A34A">C</text>
+          <text x="400" y="179" font-size="16" font-weight="800" fill="#16A34A" text-anchor="middle">C</text>
           <text x="68" y="197" font-size="13" font-weight="700" fill="#16A34A" text-anchor="end">π_C</text>
           <!-- A → B arrow. Dir (-120,-81), len 144.78, unit (-0.829,-0.560).
                A_edge_AB = A + 6*unit = (395, 309). B_edge_AB = B - 8*unit = (287, 235) -->
@@ -218,14 +218,14 @@ window.ECONOS_ICONS = {
           <text x="500" y="74" font-size="11" font-style="italic" fill="#DC2626">shifted up by supply shock</text>
           <!-- A faded -->
           <circle cx="400" cy="312" r="6" fill="#fff" stroke="#94A3B8" stroke-width="2"/>
-          <text x="414" y="307" font-size="13" font-weight="700" fill="#94A3B8">A</text>
+          <text x="400" y="301" font-size="13" font-weight="700" fill="#94A3B8" text-anchor="middle">A</text>
           <text x="68" y="317" font-size="13" font-weight="700" fill="#94A3B8" text-anchor="end">π₀</text>
           <text x="400" y="546" font-size="13" font-weight="700" fill="#94A3B8" text-anchor="middle">U_N</text>
           <!-- S on SRPC₃ at U_S=520: y = 0.673*520 - 127.55 = 222.41 → (520, 222) r=9 -->
           <line x1="80" y1="222" x2="520" y2="222" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="4 4"/>
           <line x1="520" y1="222" x2="520" y2="520" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="4 4"/>
           <circle cx="520" cy="222" r="9" fill="#fff" stroke="#DC2626" stroke-width="3"/>
-          <text x="536" y="216" font-size="17" font-weight="800" fill="#DC2626">S</text>
+          <text x="520" y="207" font-size="17" font-weight="800" fill="#DC2626" text-anchor="middle">S</text>
           <text x="68" y="227" font-size="13" font-weight="700" fill="#DC2626" text-anchor="end">π_S</text>
           <text x="520" y="546" font-size="13" font-weight="700" fill="#DC2626" text-anchor="middle">U_S</text>
           <!-- A → S diagonal arrow. Dir (120,-90), len 150, unit (0.8,-0.6).
@@ -286,7 +286,7 @@ window.ECONOS_ICONS = {
           <line x1="80" y1="305" x2="400" y2="305" stroke="#64748B" stroke-width="1.2" stroke-dasharray="4 4"/>
           <line x1="400" y1="305" x2="400" y2="520" stroke="#64748B" stroke-width="1.2" stroke-dasharray="4 4"/>
           <circle cx="400" cy="305" r="8" fill="#fff" stroke="#0B1426" stroke-width="2.8"/>
-          <text x="414" y="300" font-size="16" font-weight="800" fill="#0B1426">E₀</text>
+          <text x="400" y="292" font-size="16" font-weight="800" fill="#0B1426" text-anchor="middle">E₀</text>
           <text x="68" y="310" font-size="13" font-weight="700" fill="#0B1426" text-anchor="end">P₀</text>
           <text x="400" y="546" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle">Y₀</text>
         </g>
@@ -306,7 +306,7 @@ window.ECONOS_ICONS = {
           <line x1="80" y1="277" x2="440" y2="277" stroke="#D97706" stroke-width="1.2" stroke-dasharray="4 4"/>
           <line x1="440" y1="277" x2="440" y2="520" stroke="#D97706" stroke-width="1.2" stroke-dasharray="4 4"/>
           <circle cx="440" cy="277" r="9" fill="#fff" stroke="#D97706" stroke-width="3"/>
-          <text x="454" y="271" font-size="16" font-weight="800" fill="#D97706">E₁</text>
+          <text x="440" y="263" font-size="16" font-weight="800" fill="#D97706" text-anchor="middle">E₁</text>
           <text x="68" y="282" font-size="13" font-weight="700" fill="#D97706" text-anchor="end">P₁</text>
           <text x="440" y="546" font-size="13" font-weight="700" fill="#D97706" text-anchor="middle">Y₁</text>
           <!-- Shift arrow AD₀→AD₁ at lower-right where lines have clean gap.
@@ -333,7 +333,7 @@ window.ECONOS_ICONS = {
           <line x1="80" y1="221" x2="360" y2="221" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="4 4"/>
           <line x1="360" y1="221" x2="360" y2="520" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="4 4"/>
           <circle cx="360" cy="221" r="9" fill="#fff" stroke="#DC2626" stroke-width="3"/>
-          <text x="345" y="215" font-size="16" font-weight="800" fill="#DC2626" text-anchor="end">E₂</text>
+          <text x="360" y="207" font-size="16" font-weight="800" fill="#DC2626" text-anchor="middle">E₂</text>
           <text x="68" y="226" font-size="13" font-weight="700" fill="#DC2626" text-anchor="end">P₂</text>
           <text x="360" y="546" font-size="13" font-weight="700" fill="#DC2626" text-anchor="middle">Y₂</text>
           <!-- SRAS₀ → SRAS₁ shift arrow. At y=140: SRAS₀ x=(585-140)/0.7=635.7,
@@ -362,7 +362,7 @@ window.ECONOS_ICONS = {
           <line x1="80" y1="256" x2="310" y2="256" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="4 4"/>
           <line x1="310" y1="256" x2="310" y2="520" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="4 4"/>
           <circle cx="310" cy="256" r="9" fill="#fff" stroke="#16A34A" stroke-width="3"/>
-          <text x="294" y="250" font-size="16" font-weight="800" fill="#16A34A" text-anchor="end">E₃</text>
+          <text x="310" y="242" font-size="16" font-weight="800" fill="#16A34A" text-anchor="middle">E₃</text>
           <text x="68" y="261" font-size="13" font-weight="700" fill="#16A34A" text-anchor="end">P₃</text>
           <text x="310" y="546" font-size="13" font-weight="700" fill="#16A34A" text-anchor="middle">Y₃</text>
           <!-- AD₁ → AD₂ shift arrow. At y=400: AD₁ x=(400+31)/0.7=615.7,

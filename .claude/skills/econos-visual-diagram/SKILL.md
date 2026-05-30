@@ -15,9 +15,32 @@ All hero SVG visuals on topic cards are inline SVG strings in `window.ECONOS_ICO
 
 ## viewBox conventions
 
-- **Width: always 640.** Matches the card body width on desktop; scales cleanly on mobile.
-- **Height: whatever the content needs.** Don't pad. Typical range 200–340.
+- **Width: 640 by default; widen to 720+ when right-edge labels need a margin.** Matches the card body width on desktop; scales cleanly on mobile. If end-of-curve labels (e.g. "Standard GDP", "1.5°C budget", "Emissions path") sit at `x ≥ 580`, widen the viewBox horizontally rather than repositioning the labels inward — the chart effectively shifts left within visible area which usually looks better than crammed-in labels.
+- **Height: whatever the content needs.** Don't pad. Typical range 200–340. If a chart caption/footnote line needs to sit below the x-axis labels (e.g. "Y-axis broken between £2,000 and £12,000…"), extend viewBox height to 360–370 to fit.
 - No outer background `<rect>`. The SVG sits transparent on the card body — adding a tinted wrapper rectangle makes the diagram feel disconnected. Use tinted tiles/circles for tone, not a backdrop.
+
+## When to break out of pure SVG: HTML+SVG hybrid heroes
+
+Pure SVG hits a wall on layouts that need: multi-line wrapping text, CSS grid, responsive breakpoints, or an "overlay" element floating on top of other tiles (e.g. a central circle on top of a 2×2 grid). For those, **build the hero as HTML with inline SVG only for the chart bits inside it.** Canonical example: `growthScorecard` in `js/icons.js` — a 2×2 grid of corner tiles with a central circular GDP card overlaid, plus dashed connectors behind. Built as a `<div>`-based layout with inline SVG gauge dials inside each tile.
+
+Two non-obvious things to know when using HTML inside a `visualKey`:
+
+1. **The engine wraps `visualKey` HTML in `line-height:0`.** Your outer wrapper must explicitly set `line-height:1.5` (or whatever your text needs) or every paragraph collapses to zero height and the layout breaks. See `js/app.js` ~line 2489.
+2. **Scoped `<style>` blocks inside the visualKey HTML do work.** Use them for media queries — inline styles can't host `@media`. Always scope with a top-level class on the wrapper (e.g. `.growth-scorecard .gs-grid`) so the CSS doesn't leak to the rest of the page. Used to collapse the 2×2 grid to single-column below 560 px without changing inline styles.
+
+```html
+<div class="my-hero" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
+  <style>
+    .my-hero .grid { display:grid; grid-template-columns:1fr 1fr; column-gap:170px; }
+    @media (max-width: 560px) {
+      .my-hero .grid { grid-template-columns:1fr; column-gap:0; }
+    }
+  </style>
+  <!-- ...HTML+SVG content here... -->
+</div>
+```
+
+Reach for HTML+SVG when: 4 tiles need to surround a centred overlay; tiles need long body text that has to wrap; mobile needs a fundamentally different layout (stacking) from desktop. Stay in pure SVG when: the diagram is essentially a chart with short text labels.
 
 ## Tone palette
 
@@ -84,6 +107,20 @@ Canonical example: `enterpriseCombinationSvg` in `js/icons.js`.
 - Optional dashed sub-badge under the hub for a secondary concept (e.g. institutions, externalities)
 - Arrow geometry: input arrows start on the input circle's edge facing the hub and end on the hub's edge facing the input; calculate using `cx + r*cos(θ)` where θ points at the hub centre
 - Arrow labels: small white pills (`rx=8`, stroke `#CBD5E1`) sitting at the midpoint of each arrow
+
+### `broken-axis-bar-chart` — values with vastly different magnitudes
+
+Canonical example: `incomeSpectrumChart` in `js/icons.js` — five income-decile bars where the top bar (£12,000+) is 60× the bottom (£200) and a linear scale would render the bottom four bars as illegible slivers.
+
+- viewBox ≥ 720 × 372 (gives bottom margin for a two-line footnote)
+- Y-axis is linear from 0 to the upper bound of the lower bars (£2,000 in the canonical), THEN a break, THEN a single tick for the outlier (£12,000)
+- Break decorations (both required for the convention to be legible):
+  1. **Across the Y-axis line itself:** a small white `<rect>` covers the axis line in a 4–6 px band, then two short parallel diagonal slashes are drawn across that band. Example: `<rect x="75" y="105" width="10" height="14" fill="#fff"/>` plus `<line x1="74" y1="116" x2="86" y2="108"/>` repeated at a 4 px offset
+  2. **Across the outlier bar itself:** a white horizontal strip + a 6-point zigzag path drawn in the bar's stroke colour, both spanning the bar's width at the same y as the axis break
+- Gridlines: linear ones through the lower range, plus a single dashed gridline at the outlier's value level for visual anchoring
+- Always annotate: a short caption under the chart stating the broken range explicitly (e.g. *"Y-axis broken between £2,000 and £12,000 so the bottom four bars stay readable"*). The break notation is itself a small data-literacy teaching moment students can use in evaluation answers.
+- A second annotation line is often needed to justify the outlier value if it looks aggressive (e.g. *"Top-1% bar reflects wages + capital gains; the bottom decile is wage-only"*).
+- Use a 2-view `interactiveDiagram` to pair the broken £ view with a linear %-of-income view. The proportional view doesn't need a break, and contrasting both lenses makes the same inequality story land twice.
 
 ### `comparison-row` — three boxes with arrows between them
 
@@ -187,6 +224,9 @@ Fixes are nearly always: shift the label past the line endpoint, or move it clea
 - **viewBox clips silently.** A text label at `x=586` in a `viewBox="0 0 640 320"` chart renders fine if the label is short — but `"Potential GDP"` at ~80 px wide extends to x=666, past the viewBox right edge, and gets clipped to `"Potential C"`. Before shipping, audit every right-edge label: `label_x + estimated_label_width` must be ≤ `viewBox_width`. Either widen the viewBox or move the label inward.
 - **Bezier curves are guesswork for smooth periodic shapes.** Three attempts to draw a trade-cycle wave with cubic Beziers all had visible kinks at the turning points (peaks/troughs weren't flat) or wrong amplitudes. For any curve where the math defines the shape (sine waves, exponentials, logistic curves), **sample the function at every 10–20 px and emit a polyline with `stroke-linejoin="round"`**. The visual is indistinguishable from a smooth curve at chart scale, and you skip all the control-point gymnastics. Save Beziers for genuinely irregular shapes that don't have a closed-form equation.
 - **For a Bezier to have a TRUE flat peak/trough**, the control points either side of the joint must be horizontal — same y as the joint. Otherwise the curve is still descending or ascending through the turning point and reads as a kink. If you must use a Bezier through a peak at `(xp, yp)`, the second control of the incoming segment AND the first control of the outgoing segment both go at `(_, yp)`, with their x positions ~30–60 px either side of the joint.
+- **Markers placed on a Bezier curve must be computed parametrically — eyeballing drifts them off the line.** I shipped the Kuznets curve with country dots sitting 10–30 px below the curve at every position because I positioned them by sight. Fix: for a cubic Bezier with control points `P0, P1, P2, P3`, the on-curve y for a chosen x is `y(t) = (1-t)³·y0 + 3(1-t)²t·y1 + 3(1-t)t²·y2 + t³·y3`, where `t` is solved from the same formula on x. Solve `x(t) = chosen_x` iteratively (binary-search over t∈[0,1] is fine — converges in ~10 steps to <0.01 px), then plug t into the y formula. Spend the 5 minutes; don't eyeball.
+- **Label-on-shaded-region: inside the shape, or outside with an arrow — choose by area.** If the shaded area is large enough to host the full label cleanly inside (label width × height fits comfortably with breathing room), put the label inside at the area's centroid (or vertical midpoint at the label's x). If the area is a small wedge or thin strip — label spills outside the shape — put the label in adjacent white space and add a short arrow (shaft `<line>` + arrowhead `<polygon>`) pointing into the shape. Both approaches in `growthSustainability3View`: "Natural-capital depletion" sits inside the depletion gap at the vertical midpoint between the two GDP curves; "debt to future" sits below the budget line with a red arrow pointing up into the small carbon-debt wedge.
+- To find the vertical midpoint of a region bounded by two curves at a chosen x: compute each curve's y at that x (parametrically — see above) and average them.
 
 ## Don't reinvent
 

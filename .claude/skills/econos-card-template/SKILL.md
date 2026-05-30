@@ -197,9 +197,10 @@ The renderer at `renderCardAdInteractive` (`js/app.js` around line 4321) reads t
 | `causesEmoji`   | Emoji for the causes heading                                      |
 | `causesFirst`   | Boolean — render `causes` before flow (default: after)            |
 | `causesCols`    | Explicit column count (the renderer uses `minmax(0, 1fr)` — narrow columns will squish text on mobile, prefer 2-3 for content-heavy items) |
-| `causesStyle`   | `'numbered'`, `'numbered-rows'`, `'icon-top'`, or default tinted-flat |
+| `causesStyle`   | `'numbered'`, `'numbered-rows'`, `'icon-top'`, `'tinted-flat'`, or default ⚠ requires `causesFirst: true` |
 | `causes`        | `[{ tone, icon, head, body, example? }, ...]` — the first tile-grid block |
 | `causes2Label` / `causes2Emoji` / `causes2Cols` / `causes2`       | Second tile grid (e.g. SUSTAINABLE VS UNSUSTAINABLE) |
+| `causes3Style`  | `'icon-top'` — stack icon (white square) above title in a `causes3` tile so long titles don't get clipped in 4-up grids |
 | `causes3Label` / `causes3Emoji` / `causes3Cols` / `causes3`       | Third tile grid (e.g. WHO WINS — added to renderer 2026-05) |
 | `flowTitle`     | Heading above the flow row                                        |
 | `flowEmoji`     | Emoji for the flow heading                                        |
@@ -214,6 +215,33 @@ The renderer at `renderCardAdInteractive` (`js/app.js` around line 4321) reads t
 | `conclusion`    | `{ title, text }` — closing summary block                         |
 | `examEdge`      | String or `{ title, text }` — yellow exam-edge callout            |
 | `quizCta`       | `{ href, label }` — only on the last card of a topic              |
+
+### Styled-causes gate: `causesFirst: true` (non-obvious)
+
+`causesStyle: 'numbered' | 'numbered-rows' | 'icon-top' | 'tinted-flat'` is only honoured by the `causesFirst` branch of the renderer. Without `causesFirst: true` set on the card, the engine falls through to the default non-first branch (`app.js` ~line 4762) which renders a generic side-by-side icon+title tile and silently ignores the style. **If a styled causes block isn't rendering, the missing field is almost always `causesFirst: true`.**
+
+`causesFirst: true` also shifts both `causes` and `causes2` upward in the render order (above the flow / steps / equation / letterFormula blocks). If you want the styled causes to appear later in the card, you need to place other content (interactiveDiagram, equation etc.) before the causes definition in the data object and accept that the renderer dictates the position regardless.
+
+### Choosing between `numbered`, `numbered-rows`, and `icon-top`
+
+All three put the styling cue (number or icon) ABOVE the title rather than beside it. Pick by content shape:
+
+- **`numbered`** (outlined numbered circle on top, then icon, then title, then body) — for 3–5 *parallel categories* shown as a column grid. Use when each item gets ~1 sentence of body and the categories are equal-weight (not a sequence). Canonical example: Card 2 income spectrum was originally numbered before switching to numbered-rows.
+- **`numbered-rows`** (single stacked column; each row is numbered circle + icon + title + full-width body, with a tone-coloured left bar) — for 4–7 items with *rich body content* (3–4 sentences, includes data points, stat citations). The full row width lets the substance breathe. Canonical examples: `inflation-measurement-and-costs` card 4, `causes-of-inflation-and-deflation` cards 2 and 6, `the-impact-of-economic-growth` card 2 (income spectrum).
+- **`icon-top`** (icon as a white square on top, title below, body below) — for *tile grids where titles risk overflow* in narrow columns (4-up or denser). Mirrors causesStyle:'numbered' visually but without the number circle. Use when the category labels are long ("Sustainability", "Distribution") and a side-by-side icon+title would clip.
+
+### Visual rhyming across cards
+
+When consecutive cards each have a tile/row sequence of similar size (e.g. 5 items each), echo the layout to make the cards feel like a coherent series. Examples in `the-impact-of-economic-growth`:
+
+- Card 1's closing 5-tile `flow` row (filled tone-accent circles 1–5 above title) and Card 2's `numbered-rows` spectrum (outlined numbered circles 1–5 above body) both use "circles above titles" — the visual rhyme signals "same series of 5 things, two different angles".
+- Card 1's hub-and-spoke scorecard tiles use the same five tone colours (rose, amber, blue, purple, green) as Card 2's bar chart bars and Card 2's spectrum rows. The shared colour grammar lets students mentally connect the dimensions across cards.
+
+Don't force a rhyme that isn't there — but when two cards genuinely cover the same dimensions in different lenses, reusing tones and tile layouts is high-leverage.
+
+### Interactive 2-view chart for "same data, two lenses"
+
+The `interactiveDiagram` block isn't just for cumulative reveals (multiplier rounds) or mutually-exclusive states (Kuznets vs natural-capital vs carbon). It's also the right shape for *one data set viewed two ways* — e.g. £ absolute gain vs % of household income on Card 2 of `the-impact-of-economic-growth`. Each view's analysis panel teaches the framing that makes that lens valuable. Use when the same numbers tell two different evaluation stories.
 
 ### Tone palette (do not invent)
 

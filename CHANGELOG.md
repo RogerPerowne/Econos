@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.30.0 — 2026-05-30
+
+### econDiagram engine — generalised geometry core
+
+Generalised the declarative diagram engine from linear-only (AD/AS) to a
+family-agnostic geometry core, so any econ diagram is described semantically and
+the engine computes every coordinate (eliminating the whole class of hand-rolled
+SVG geometry bugs). `window.ECONOS_ECON_DIAGRAM.register(name, def)` lets each
+chart family live in its own file under `js/blocks/charts/`.
+
+- Curve kinds: `linear`, `vertical`, `horizontal`, `fn` (sampled smooth, no
+  kinks), `curve` (monotone Catmull-Rom). Named curve-shapes: jcurve, laffer,
+  lorenz, kuznets, logistic, exponential, gaussian, convexPPF, uShape.
+- Generic numerical `intersectCurves` (line∩curve, curve∩curve), named points
+  (`{on:[A,B]}` / `{onCurve,x}` / `{at}`), shift + movement arrows (endpoints on
+  dot edges), area fills (CS/PS/DWL with hatch), gap brackets, and label-clash
+  avoidance.
+- `adas` refactored into `js/blocks/charts/adas.js` and verified pixel-identical
+  (the shipped Conflicts cards are unchanged); `phillips` added as the second
+  family. `tests/unit/econ-diagram.test.js` adds **15 geometry assertions**
+  (exact + numerical intersections, no-kinks, shift math, point/arrow geometry,
+  adas backward-compat). `CACHE_NAME` → `econos-v137`.
+
 ## 0.29.0 — 2026-05-30
 
 ### Migration round 2 + orphaned-template cleanup

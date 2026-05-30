@@ -218,6 +218,7 @@
     <li><a href="#section-diagrams-labour">11. Diagram — Labour Market</a></li>
     <li><a href="#section-diagrams-macro">12. Diagram — Macro Misc (Phillips, J-Curve, 45°, Growth)</a></li>
     <li><a href="#section-blocks-econ-diagram">12b. econDiagram — declarative interactive (data-driven)</a></li>
+    <li><a href="#section-blocks-econ-families">12c. econDiagram — chart families (adas · phillips, all views)</a></li>
     <li><a href="#section-fixture-demo">13. Fixture — ECONOS_BLOCKS_DEMO_CARD</a></li>
     <li><a href="#section-fixture-phase1">14. Fixture — ECONOS_BLOCKS_PHASE1_CARD</a></li>
     <li><a href="#section-fixture-diagrams">15. Fixture — ECONOS_DIAGRAMS_DEMO_CARD</a></li>
@@ -369,6 +370,17 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 12c: REGISTERED CHART FAMILIES (engine, all views)   -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-blocks-econ-families">
+  <div class="lab-section-title">Section 12c — econDiagram chart families (engine: register + all views)</div>
+  <p class="lab-section-subtitle">
+    Registered families rendered with every view. adas (linear AD/AS) · phillips (linear SRPC + vertical LRPC + parallel-shift stagflation + A→B→C movement arrows). Exercises the generalised primitives: curve kinds, named points, shift-direction + movement arrows.
+  </p>
+  <div id="render-blocks-econ-families" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
 <!-- SECTION 13: FIXTURE — BLOCKS DEMO                             -->
 <!-- ══════════════════════════════════════════════════════════════ -->
 <div class="lab-section" id="section-fixture-demo">
@@ -452,6 +464,8 @@
 <script src="/js/diagrams/index.js"></script>
 <script src="/js/blocks/diagram.js"></script>
 <script src="/js/blocks/econ-diagram.js"></script>
+<script src="/js/blocks/charts/adas.js"></script>
+<script src="/js/blocks/charts/phillips.js"></script>
 <script src="/js/data/_fixtures/blocks-demo.js"></script>
 <script src="/js/data/_fixtures/blocks-phase1.js"></script>
 <script src="/js/data/_fixtures/diagrams-demo.js"></script>
@@ -1024,6 +1038,48 @@
       ]
     }
   ], document.getElementById('render-blocks-econ-diagram'));
+
+  /* ── SECTION 12c: registered chart families (engine, all views) ───────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'adas — registered family, full 4-view C4 walk' },
+    {
+      type: 'econDiagram',
+      chart: 'adas',
+      views: [
+        { label: 'Baseline',        shifts: {} },
+        { label: 'AD↑ rebound',     shifts: { AD: 80 } },
+        { label: 'SRAS↓ shock',     shifts: { AD: 80, SRAS: -160 } },
+        { label: 'BoE response',    shifts: { AD: -20, SRAS: -160 } }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'phillips — SRPC (linear) + LRPC (vertical) + parallel-shift stagflation, A→B→C walk' },
+    {
+      type: 'econDiagram',
+      chart: 'phillips',
+      views: [
+        {
+          label: 'A · long-run start',
+          points: ['A'],
+          analysis: 'Start on the LRPC at the NAIRU: inflation equals expectations, unemployment at its natural rate.'
+        },
+        {
+          label: 'B · short-run boom',
+          shifts: { SRPC: { dx: 0, dy: 0 } },
+          points: ['A', 'B'],
+          arrows: [['A', 'B', { tone: 'amber' }]],
+          analysis: 'Stimulus pushes the economy down the SRPC: lower unemployment is bought with higher inflation. A short-run trade-off only.'
+        },
+        {
+          label: 'C · expectations adjust (stagflation)',
+          shifts: { SRPC: { dx: 0, dy: -90 } },
+          points: ['A', 'C'],
+          arrows: [['B', 'C', { tone: 'rose' }]],
+          analysis: 'Workers revise expectations up; the SRPC shifts up in parallel. Back at the NAIRU, but with permanently higher inflation — Friedman/Phelps: no long-run trade-off.'
+        }
+      ]
+    }
+  ], document.getElementById('render-blocks-econ-families'));
 
   /* ── SECTION 13–15: Fixtures ──────────────────────────────────────────── */
   if (window.ECONOS_BLOCKS_DEMO_CARD) {

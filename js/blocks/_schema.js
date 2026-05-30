@@ -230,9 +230,9 @@
     econDiagram: {
       required: ['chart', 'views'],
       optional: [],
-      arrays: { views: { required: ['label'], optional: ['shifts', 'analysis'] } },
+      arrays: { views: { required: ['label'], optional: ['shifts', 'points', 'arrows', 'areas', 'brackets', 'analysis'] } },
       group: 'diagram',
-      summary: 'Declarative interactive economic diagram. Author describes semantic shifts on each curve per view; engine computes line intercepts, equilibrium intersections, label placement, and CSS-only step toggle. chart: \'adas\' supported today.'
+      summary: 'Declarative interactive economic diagram. chart names a registered family (\'adas\', \'phillips\'). Each view: shifts:{curveId:Δ|{dx,dy}}, points:[namedPoints], arrows:[[A,B,{tone}]], areas:[{between,x,tone,hatch}], brackets:[{x|between,y,label,tone}], analysis. Engine computes every coordinate (line/curve intersections, label placement, CSS-only step toggle). Curve kinds: linear, vertical, horizontal, fn, curve.'
     }
   };
 

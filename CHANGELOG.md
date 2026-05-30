@@ -6,6 +6,102 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.24.0 — 2026-05-30
+
+### Diagram relocation — every diagram now lives in the diagram library
+
+Moves all economics diagrams out of `js/icons.js` into the single diagram
+library, leaving `icons.js` for UI/hero/scene icons only. Done by a
+deterministic codemod (`scripts/split-diagrams.mjs`) so SVG content is
+preserved byte-for-byte.
+
+- **155 diagram SVGs** relocated into 19 grouped files under
+  `js/diagrams/static/` (ad-as, multiplier, welfare-tax, supply-demand,
+  macro-national, monopoly, behavioural, ppf, costs-firm, trade-bop,
+  externalities, cs-ps, labour, contestability, elasticity, phillips-lorenz,
+  market-failure, …). 119 UI/hero/scene icons stay in `icons.js`
+  (now ~128 lines, down from ~17,600).
+- **Back-fill compatibility shim:** each static file re-registers its
+  diagrams into both `window.ECONOS_DIAGRAMS` and `window.ECONOS_ICONS`, so
+  every existing `svgKey`/`visualKey` resolves unchanged.
+- **8 inline SVGs** extracted from two Theme-2 data files
+  (equilibrium-national-income, measures-of-economic-performance) into
+  `js/diagrams/static/inline-extracted.js` and repointed.
+- New guard `scripts/check-diagram-refs.mjs` asserts every diagram key
+  referenced in `js/data` resolves: **67/67, 0 missing.** Wired into the
+  three shells; `CACHE_NAME` → `econos-v123`. lint/unit/build green;
+  moved-diagram card + chrome screenshot-verified unchanged.
+
+## 0.23.0 — 2026-05-30
+
+### Diagram system — data-driven generators + `diagram` block (additive)
+
+The new way to make and render economics diagrams. Fully additive — no
+existing diagram or card changed; this is the foundation for relocating the
+icons.js diagrams into a single library next.
+
+- `js/diagrams/econ-svg.js` — `window.EconSvg` builder (axes, curves, labels,
+  callouts, equilibria) with the house palette baked in (AD blue, SRAS amber,
+  LRAS green vertical, old curves dashed/faded, new solid). `docs/ECON_DIAGRAM_RULES.md`
+  is the canonical style reference.
+- `js/diagrams/generators/*` — 13 data-driven generators on `window.ECONOS_DIAGRAMS`:
+  adasDiagram, ppfDiagram, taxSubsidyDiagram, priceControlDiagram, multiplierDiagram,
+  elasticityDiagram, costCurvesDiagram, marketStructureDiagram, labourMarketDiagram,
+  phillipsCurve, jCurveDiagram, fortyFiveDiagram, growthDiagram. Each takes a config
+  and returns an SVG string; defaults yield the canonical textbook version.
+- `js/blocks/diagram.js` — a `diagram` block that resolves a `spec:{type,...}` via
+  the generators, or falls back to an existing `svgKey` from icons.js, wrapped in the
+  hero-visual frame. `docs/DIAGRAM_LIBRARY.md` documents the API.
+- Wired into the three shells; `sw.js` precache updated, `CACHE_NAME` → `econos-v122`.
+  `js/data/_fixtures/diagrams-demo.js` exercises every generator (screenshot-verified).
+
+## 0.22.0 — 2026-05-30
+
+### Renderer Phase 1 — block component library (17 new blocks)
+
+Extends the Phase 0 block system with 17 data-driven components, each in
+its own self-registering module under `js/blocks/` with matching CSS under
+`css/blocks/`. Authored by a parallel Claude-agent workflow; all reuse the
+shared `window.ECONOS_BLOCK_UTILS` helpers (escaping, tone mapping, icons,
+nesting) now exposed by `render-blocks.js`.
+
+- **compare** — versusRows, decisionMatrix, trafficLight, glossaryRow
+- **flow** — mechanismChain (with breakpoint chips), rippleCascade,
+  opposingFlows, timeline
+- **structure** — spectrum, caseStudies, satelliteDiagram, policyToolkit
+- **data** — metricCard, targetGauge, equationHero, workedExampleStrip, factChip
+
+Wired into the three card shells (CSS links + deferred module scripts after
+`render-blocks.js`); `sw.js` precache updated and `CACHE_NAME` → `econos-v121`.
+`docs/RENDER_BLOCKS.md` documents every new block; `js/data/_fixtures/blocks-phase1.js`
+exercises them all. Known follow-up polish: proportional sizing for
+rippleCascade bars / opposingFlows arrows, targetGauge marker clamp on narrow
+cards, satelliteDiagram orbit layout.
+
+## 0.21.0 — 2026-05-30
+
+### Renderer Phase 0 — composition-as-data block foundation
+
+Adds a new, **additive** block-rendering layer that coexists with the
+existing `ad-interactive` / template renderers — the first phase of the
+image-faithful renderer overhaul. No existing card changes behaviour.
+
+- `js/render-blocks.js` — `window.ECONOS_BLOCKS` registry + `renderBlocks(card)`.
+  When a card carries a `blocks: [...]` array it is composed from a starter
+  block set (sectionHeader, calloutStrip/tip, heroVisual, grid with
+  col/row span, tile, bigIdea, examEdge, warning) with HTML-escaped output
+  and a recursive grid. Cards without `blocks` are untouched.
+- `css/econ-tokens.css` + `css/econ-blocks.css` — design tokens (6-tone
+  scale, density modes, title/text-fit/clamp utilities, section header,
+  icon shapes, overflow-warning) and class-based block styling. Block
+  styles that share legacy names (`exam-edge`, `big-idea`, `warning`) are
+  scoped under `.econ-blocks` so existing cards are unaffected.
+- `renderCard()` gains a one-line `blocks` branch that takes precedence and
+  falls through to the existing paths otherwise. Linked into the three card
+  shells via `<script defer>`; `CACHE_NAME` bumped to `econos-v120`.
+- Dev-only (`?dev=1` or `localStorage.econosDev='1'`) overflow detector and
+  `EconosDebug.inspectCard()`. `docs/RENDER_BLOCKS.md` documents the schema;
+  `js/data/_fixtures/blocks-demo.js` is a local-only demo fixture.
 ## 0.20.0 — 2026-05-30
 
 ### Macro Conflicts & Trade-offs (2.6.4) — full 6-card build from ChatGPT mockups

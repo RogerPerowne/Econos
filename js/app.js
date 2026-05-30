@@ -5785,9 +5785,10 @@
     const pct = Math.round(((idx + 1) / T.cards.length) * 100);
 
     let body = '';
-    if (isGenericCard(c)) {
+    if (Array.isArray(c.blocks) && c.blocks.length) { body = window.renderBlocks(c); }
+    if (!body && isGenericCard(c)) {
       body = renderCardGeneric(c);
-    } else {
+    } else if (!body) {
       switch (c.template) {
         case 'framing':            body = renderCardFraming(c);          break;
         case 'cause':              body = renderCardCause(c);            break;

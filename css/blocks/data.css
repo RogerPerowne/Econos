@@ -1,0 +1,378 @@
+/* =============================================================================
+   data.css — Econos data-display block components (Phase 1)
+   Provides styles for: metricCard, targetGauge, equationHero,
+                         workedExampleStrip, factChip
+   All selectors are scoped under .econ-blocks where there is any collision risk.
+   Design tokens from css/econ-tokens.css + econ-blocks.css are used throughout.
+   ============================================================================= */
+
+/* ── metricCard ──────────────────────────────────────────────────────────────
+   A revision-card-sized headline metric panel.
+   Tone class (.econ-tone--*) is applied to the root element and drives the
+   --econ-block-tone-* custom properties for border, background and accent.
+   ---------------------------------------------------------------------------- */
+
+.econ-blocks .metric-card {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 10px;
+  display: grid;
+  gap: 8px;
+  padding: var(--econ-pad);
+  position: relative;
+}
+
+.econ-blocks .metric-card__header {
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.econ-blocks .metric-card__label {
+  color: var(--econ-block-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.econ-blocks .metric-card__status {
+  background: var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 999px;
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  flex: 0 0 auto;
+  font-size: 0.74rem;
+  font-weight: 750;
+  line-height: 1;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+
+.econ-blocks .metric-card__value--number {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  display: block;
+  font-size: clamp(1.65rem, 4vw, 2.4rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.econ-blocks .metric-card__value--badge {
+  background: var(--econ-block-tone, var(--econ-tone-slate));
+  border-radius: 8px;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 4px 12px;
+}
+
+.econ-blocks .metric-card__target {
+  align-items: center;
+  border-top: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  display: flex;
+  gap: 6px;
+  padding-top: 8px;
+}
+
+.econ-blocks .metric-card__target-label {
+  color: var(--econ-block-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.econ-blocks .metric-card__target-value {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+
+/* ── targetGauge ─────────────────────────────────────────────────────────────
+   Horizontal gauge bar; value marker and target band are pure CSS.
+   CSS custom properties set per-element via style="":
+     --gauge-band-left   (% from left edge where the target band starts)
+     --gauge-band-width  (% width of the target band)
+     --gauge-value-pct   (% position of the value marker)
+   ---------------------------------------------------------------------------- */
+
+.econ-blocks .target-gauge {
+  display: grid;
+  gap: 8px;
+  padding: var(--econ-pad);
+}
+
+.econ-blocks .target-gauge__label {
+  color: var(--econ-block-navy);
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.econ-blocks .target-gauge__track {
+  background: var(--econ-block-line);
+  border-radius: 999px;
+  height: 14px;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+}
+
+/* Target band */
+.econ-blocks .target-gauge__band {
+  background: var(--econ-block-tone-100, var(--econ-tone-green-100));
+  border-radius: 999px;
+  bottom: 0;
+  left: var(--gauge-band-left, 0%);
+  position: absolute;
+  top: 0;
+  width: var(--gauge-band-width, 20%);
+}
+
+/* Value marker — a vertical line + floating label */
+.econ-blocks .target-gauge__marker {
+  bottom: -2px;
+  left: var(--gauge-value-pct, 50%);
+  position: absolute;
+  top: -2px;
+  transform: translateX(-50%);
+  width: 3px;
+}
+
+.econ-blocks .target-gauge__marker::before {
+  background: var(--econ-block-tone-700, var(--econ-tone-green-700));
+  border-radius: 999px;
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 3px;
+}
+
+.econ-blocks .target-gauge__marker-label {
+  background: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  border-radius: 4px;
+  bottom: calc(100% + 5px);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  left: 50%;
+  line-height: 1;
+  padding: 2px 5px;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* min / max axis labels */
+.econ-blocks .target-gauge__axis {
+  color: var(--econ-block-muted);
+  display: flex;
+  font-size: 0.74rem;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+
+/* ── equationHero ────────────────────────────────────────────────────────────
+   Large centred equation. Each token is a coloured chip; operators are plain
+   text in between. Wraps on narrow viewports.
+   ---------------------------------------------------------------------------- */
+
+.econ-blocks .eq-hero {
+  background: var(--econ-block-panel);
+  border: 1px solid var(--econ-block-line);
+  border-radius: 12px;
+  display: grid;
+  gap: 12px;
+  padding: var(--econ-pad);
+  text-align: center;
+}
+
+.econ-blocks .eq-hero__row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Operator tokens ('+', '=', etc.) */
+.econ-blocks .eq-hero__op {
+  color: var(--econ-block-muted);
+  font-size: clamp(1.15rem, 2.8vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Coloured variable chips — tone set by .econ-tone--* on the chip itself */
+.econ-blocks .eq-hero__chip {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 8px;
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  display: inline-flex;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+  font-weight: 850;
+  line-height: 1.2;
+  padding: 5px 14px;
+}
+
+.econ-blocks .eq-hero__caption {
+  color: var(--econ-block-muted);
+  font-style: italic;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+/* ── workedExampleStrip ──────────────────────────────────────────────────────
+   Left-to-right calculation strip: scenario → step₁ → step₂ → … → result.
+   Scrolls horizontally on narrow viewports instead of breaking layout.
+   ---------------------------------------------------------------------------- */
+
+.econ-blocks .we-strip {
+  background: var(--econ-block-panel);
+  border: 1px solid var(--econ-block-line);
+  border-radius: 10px;
+  display: grid;
+  gap: 10px;
+  padding: var(--econ-pad);
+}
+
+.econ-blocks .we-strip__scenario {
+  color: var(--econ-tone-slate-700);
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+}
+
+.econ-blocks .we-strip__row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* Each calculation step box */
+.econ-blocks .we-strip__step {
+  background: var(--econ-tone-slate-50);
+  border: 1px solid var(--econ-block-line);
+  border-radius: 8px;
+  display: grid;
+  gap: 2px;
+  min-width: 72px;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.econ-blocks .we-strip__step-label {
+  color: var(--econ-block-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.econ-blocks .we-strip__step-value {
+  color: var(--econ-block-navy);
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Arrow separators between steps */
+.econ-blocks .we-strip__arrow {
+  color: var(--econ-block-muted);
+  flex: 0 0 auto;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* Final result cell — visually distinct */
+.econ-blocks .we-strip__result {
+  background: var(--econ-tone-green-50);
+  border: 1px solid var(--econ-tone-green-100);
+  border-radius: 8px;
+  color: var(--econ-tone-green-700);
+  font-size: 1.05rem;
+  font-weight: 900;
+  min-width: 72px;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+
+/* ── factChip ────────────────────────────────────────────────────────────────
+   Small inline UK-fact chip — label / value / optional date.
+   Designed to sit inside a grid cell or as a standalone accent block.
+   ---------------------------------------------------------------------------- */
+
+.econ-blocks .fact-chip {
+  align-items: center;
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 999px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 5px 12px 5px 10px;
+}
+
+.econ-blocks .fact-chip__label {
+  color: var(--econ-block-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.econ-blocks .fact-chip__value {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.88rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.econ-blocks .fact-chip__date {
+  background: var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 999px;
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 7px;
+}
+
+
+/* ── Responsive: collapse to single column at ≤640 px ───────────────────────
+   The multi-column layouts (eq-hero__row, we-strip__row) already flex-wrap.
+   The gauge marker label adjusts to avoid clipping on narrow screens.
+   ---------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .econ-blocks .eq-hero__chip {
+    font-size: 0.92rem;
+    padding: 4px 10px;
+  }
+
+  .econ-blocks .we-strip__row {
+    gap: 4px;
+  }
+
+  .econ-blocks .we-strip__step {
+    min-width: 60px;
+    padding: 5px 8px;
+  }
+
+  .econ-blocks .target-gauge__marker-label {
+    font-size: 0.68rem;
+  }
+}

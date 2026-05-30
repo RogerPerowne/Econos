@@ -24,7 +24,10 @@
     "EconosPdf": "readonly",
     "EconosElasticityExplorer": "readonly",
     "EconosPesExplorer": "readonly",
-    "EconosYedXedExplorer": "readonly"
+    "EconosYedXedExplorer": "readonly",
+    "globalThis": "readonly",
+    "ECONOS_DIAGRAMS": "readonly",
+    "EconSvg": "readonly"
   },
   "rules": {
     "no-undef": "error",
@@ -63,6 +66,17 @@
         "ecmaVersion": 2022
       },
       "env": { "node": true }
+    },
+    {
+      "files": [
+        "js/diagrams/econ-svg.js",
+        "js/diagrams/generators/*.js",
+        "js/diagrams/index.js",
+        "js/blocks/diagram.js"
+      ],
+      "rules": {
+        "no-unused-vars": "off"
+      }
     }
   ],
   "ignorePatterns": [

@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.25.0 — 2026-05-30
+
+### Renderer Phase 3 — dev validator, renderer-lab, screenshot mode
+
+Developer tooling for the block/diagram system. All dev-only or additive.
+
+- `js/render-validate.js` — `window.EconosDebug.validate()`, auto-running in
+  dev mode (`?dev=1`). Flags missing/duplicate card ids, unknown template/tone,
+  unknown block types, unknown `diagram` spec types / `svgKey`s, content-length
+  budget overruns (tile/flow/callout/examEdge), and pattern anti-patterns.
+- `dev/renderer-lab.html` — a standalone QA page rendering every block type and
+  every diagram generator on one page (replaces the throwaway harnesses). Served
+  from the repo root by `npm run dev`; not shipped in the production build.
+- `js/screenshot-mode.js` + `css/screenshot.css` — `?screenshot=1` (centre card
+  only, neutral background, for clean capture/mockup comparison) and
+  `?preview=center-panel`.
+- Wired into the three shells; `sw.js` `CACHE_NAME` → `econos-v129`.
+  `docs/RENDER_BLOCKS.md` documents the dev tooling. (Fixed a broken ternary in
+  the lab's inline render script that had blanked the page.)
+
 ## 0.24.0 — 2026-05-30
 
 ### Diagram relocation — every diagram now lives in the diagram library

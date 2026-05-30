@@ -363,7 +363,13 @@ Small inline UK-fact chip for anchoring context. Any field is optional except `v
 
 ## Dev Tooling
 
-Dev mode is off by default. Enable with either:
+Three dev-only files are loaded on every shell page (`learn-it.html`, `link-it.html`, `land-it.html`) via deferred `<script>` tags after the diagram and boot scripts. They are precached by the service worker alongside the production assets so offline use is unaffected.
+
+### `js/render-validate.js` — topic validator
+
+Validates the active topic against known block types, diagram types, templates, tones, and content-length budgets.
+
+Enable with either:
 
 ```js
 localStorage.setItem('econosDev', '1')
@@ -371,7 +377,48 @@ localStorage.setItem('econosDev', '1')
 
 or append `?dev=1` to the page URL.
 
-In dev mode, rendered block surfaces are scanned after render. If content overflows its box, `.overflow-warning` is added and a console warning is emitted. `window.EconosDebug.inspectCard()` returns a summary of rendered block types and overflow results.
+When active, `render-validate.js` auto-runs on `DOMContentLoaded` and logs any errors and warnings to the console under the `[EconosDebug]` group heading.
+
+You can also call it manually at any time from the browser console:
+
+```js
+window.EconosDebug.validate()          // validates window.ECONOS_TOPIC
+// → { errors: [...], warnings: [...] }
+
+window.EconosDebug.validate(myTopic)   // validates an arbitrary topic object
+```
+
+The validator reads `window.ECONOS_BLOCKS` and `window.ECONOS_DIAGRAMS` when they are available (populated by the block and diagram scripts), falling back to hard-coded baselines so it can report unknown types even before the registries are fully loaded.
+
+### `dev/renderer-lab.html` — QA sandbox
+
+A standalone HTML page (not served in production, not precached) that lets you drop a raw card object into a text area and see it rendered in isolation, without loading a full topic. Useful for authoring new cards and checking block layouts before wiring them into a data file.
+
+Open it directly from the repo:
+
+```
+dev/renderer-lab.html
+```
+
+No build step required — it loads the production scripts from relative paths.
+
+### `js/screenshot-mode.js` — screenshot and preview modes
+
+Adds body classes to strip UI chrome for automated screenshot capture or card preview.
+
+| Query param | Body class added | Purpose |
+|---|---|---|
+| `?screenshot=1` | `screenshot-mode` | Full-chrome-strip for Playwright / GPT Image captures |
+| `?preview=center-panel` | `preview-center` | Isolates the centre panel for in-browser preview |
+
+Styles for both classes live in `css/screenshot.css`.
+
+Example usage (Playwright):
+
+```js
+await page.goto('/edexcel_a/theme-2/causes-of-inflation/learn-it?screenshot=1');
+await page.screenshot({ path: 'card.png', fullPage: true });
+```
 
 ## Example Card
 

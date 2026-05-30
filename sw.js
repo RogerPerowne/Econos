@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v128';
+  const CACHE_NAME = 'econos-v129';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -11,7 +11,10 @@
     '/styles.css',
     '/css/econ-tokens.css',
     '/css/econ-blocks.css',
+    '/css/screenshot.css',
     '/js/app.js',
+    '/js/render-validate.js',
+    '/js/screenshot-mode.js',
     '/js/icons.js',
     '/js/render-blocks.js',
     '/js/blocks/compare.js',

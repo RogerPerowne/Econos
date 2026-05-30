@@ -38,6 +38,35 @@ A small follow-up to v0.17.0 — cleaner URLs, less legacy code:
   `routes.link('intro')` shape; `tests/e2e/mobile.spec.js` updated
   for the bare `/link-it` URL in the stages strip.
 
+## 0.17.10 — 2026-05-30
+
+### Two small fixes ahead of the next topic build
+
+**Measures of Economic Performance · Card 8 essay framework.** The
+"Distinguish trend vs cyclical" and "Interpret & evaluate" titles were
+overflowing their columns in the 4-up tile grid (icon + title
+side-by-side was too wide). Added `'icon-top'` support to the
+top-position causes renderer (mirrors the existing `'icon-top'` style
+on the causesFirst branch and on causes3); switched Card 8 from
+`'plain-white'` to `'icon-top'`. All four titles now fit cleanly.
+
+**Macro Conflicts · Card 2 Phillips curve · third pane (stagflation).**
+Two real geometric bugs in the existing diagram:
+1. SRPC₃ was drawn with slope 0.525 — shallower than SRPC₁'s slope of
+   0.7. A proper supply-shock shift moves the whole curve up while
+   keeping the same slope (parallel shift). Fixed by setting SRPC₃ to
+   go from (90, -7) to (490, 273), parallel to SRPC₁ shifted up by 110
+   pixels. Left portion exits the chart top and is clipped by the
+   existing `ph-chart-clip` so the curve appears to enter from the top
+   edge cleanly.
+2. The stagflation point S was plotted at (400, 160) but SRPC₃ at x=400
+   was at y=218 — so S floated 58 px above the curve, contradicting
+   the "S is the new equilibrium" pedagogy. Moved S to (400, 210) so
+   it lies exactly on SRPC₃ (verified: −7 + 0.7×310 = 210 ✓). All
+   associated leaders, labels, and the A→S arrow tip updated.
+
+Cache → `econos-v118`.
+
 ## 0.17.8 — 2026-05-30
 
 ### Card 6 · A* framework tiles · icon-top layout

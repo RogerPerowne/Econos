@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.18.2 — 2026-05-30
+
+### Fix: economist portraits + steel/vaccination heroes were 404ing
+
+When topic URLs moved to the path-based form
+(`/edexcel_a/<theme>/<topic>/learn-it/`), every relative-path PNG broke
+silently — the browser resolves `src="assets/economists/smith.png"`
+against the topic URL, not the document root, so every image fetch went
+to `…/<topic>/learn-it/assets/economists/smith.png` and 404'd.
+
+Fixed by making all PNG sources absolute (`/assets/...`):
+
+- 16 economist portraits in `js/icons.js` (`economistAdamSmith`,
+  `economistMarshall`, `economistPigou`, `economistHayek`,
+  `economistKahneman`, `economistOstrom`, `economistRicardo`,
+  `economistSchumpeter`, `economistGoldin`, `economistKeynes`,
+  `economistCoyle`, `economistSen`, `economistFriedman`,
+  `economistDuflo`, `economistMazzucato`, `economistPhillips`).
+- `negative-externalities` `heroImage` (`steel-hero.png`).
+- `positive-externalities` `heroImage` (`vaccination-hero.png`).
+
+Verified live: `/assets/economists/marshall.png`, `coyle.png`,
+`steel-hero.png`, `vaccination-hero.png` all return 200; portraits and
+heroes render in the cards that use them. Cache → `econos-v121`.
+
 ## 0.18.1 — 2026-05-30
 
 ### Quiz engine: fix every quiz question being unanswerable (CSP regression)

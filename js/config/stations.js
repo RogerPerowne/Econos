@@ -101,17 +101,24 @@
      that don't have the data don't need to generate the list
      (they ask for a single card slug, not the set). */
   window.ECONOS_STATION_GENERATORS = {
+    /* `intro` is the cover view, addressed by the BARE shell URL —
+       not enumerated here. Build-time route generation + runtime
+       URL building both treat the bare URL as the entry point. */
     learn: function (topicCards) {
-      var out = ['intro'];
-      var claimed = { intro: true };
+      var out = [];
+      var claimed = { intro: true };   // reserve so cardSlug never collides
       var cards = Array.isArray(topicCards) ? topicCards : [];
       for (var i = 0; i < cards.length; i++) {
         out.push(cardSlug(cards[i], i, claimed));
       }
       return out;
     },
-    link: function () { return Object.keys(linkStations); },
-    land: function () { return Object.keys(landStations); }
+    link: function () {
+      return Object.keys(linkStations).filter(function (s) { return s !== 'intro'; });
+    },
+    land: function () {
+      return Object.keys(landStations).filter(function (s) { return s !== 'intro'; });
+    }
   };
 
   /* Export the slug helper itself so app.js + the URL builders

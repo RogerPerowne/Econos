@@ -5,16 +5,22 @@
    public form is path-based and human-readable:
 
        /                                                home (topic index)
-       /<board>/<theme>/<topic>/learn-it/<card>          Learn It
-       /<board>/<theme>/<topic>/link-it/<station>        Link It
-       /<board>/<theme>/<topic>/land-it/<section>        Land It
+       /<board>/<theme>/<topic>/learn-it                 Learn It cover
+       /<board>/<theme>/<topic>/learn-it/<card>          Learn It card
+       /<board>/<theme>/<topic>/link-it                  Link It intro
+       /<board>/<theme>/<topic>/link-it/<station>        Link It station
+       /<board>/<theme>/<topic>/land-it                  Land It intro
+       /<board>/<theme>/<topic>/land-it/<section>        Land It section
 
    Sub-routes per shell:
-     Learn  — 'intro' or a title-derived card slug (e.g.
+     Learn  — title-derived card slug (e.g.
               'demand-pull-inflation'); fallback 'card-<n>'.
-     Link   — intro | context | chain | chain-open | calc | data |
-              extract | predict | diagram | depends | judge | complete.
-     Land   — intro | section-a | section-b | section-c | complete.
+              The bare /learn-it URL renders the cover.
+     Link   — context | chain | chain-open | calc | data | extract |
+              predict | diagram | depends | judge | complete.
+              The bare /link-it URL renders the intro.
+     Land   — section-a | section-b | section-c | complete.
+              The bare /land-it URL renders the intro.
 
    `<topic>` is the topic slug — derived from its display title
    (e.g. "Negative Externalities" → `negative-externalities`).
@@ -51,12 +57,6 @@
      change. */
   var URL_TO_SHELL = { 'learn-it': 'learn', 'link-it': 'link', 'land-it': 'land' };
 
-  /* Legacy land-it section tokens. v0.16 renamed bare letters
-     (`/land-it/a`) to self-describing (`/land-it/section-a`).
-     parsePath transparently rewrites the legacy form via
-     history.replaceState so existing bookmarks self-heal once. */
-  var LEGACY_LAND_TOKENS = { a: 'section-a', b: 'section-b', c: 'section-c' };
-
   function parsePath(pathname) {
     var p = String(pathname || window.location.pathname || '/');
     if (p.length > 1 && p.charAt(p.length - 1) === '/') {
@@ -81,27 +81,6 @@
       shell:   shell,
       station: sub
     };
-  }
-
-  /* One-shot legacy URL rewriter — runs at module load.
-     Rewrites /land-it/a → /land-it/section-a in place via
-     history.replaceState (no flash, no reload). The shell is
-     rendered against the new path. */
-  function rewriteLegacyUrl() {
-    try {
-      var path = window.location.pathname;
-      var route = parsePath(path);
-      if (route && route.shell === 'land' && route.station && LEGACY_LAND_TOKENS[route.station]) {
-        var newSub = LEGACY_LAND_TOKENS[route.station];
-        var parts = path.replace(/\/$/, '').split('/');
-        parts[5] = newSub;
-        var newPath = parts.join('/') + (window.location.search || '') + (window.location.hash || '');
-        window.history.replaceState(null, '', newPath);
-      }
-    } catch (e) { /* not fatal */ }
-  }
-  if (typeof window !== 'undefined' && window.history && typeof window.history.replaceState === 'function') {
-    rewriteLegacyUrl();
   }
 
   function getRoute() {
@@ -227,6 +206,11 @@
           sub = subOrTopic;
         }
       }
+      /* 'intro' is the cover view — addressed by the BARE shell URL,
+         not a distinct sub-route. Collapse the explicit form so
+         every caller that passes 'intro' (engines, data files,
+         UI links) ends up emitting the same canonical URL. */
+      if (sub === 'intro') sub = null;
       return urlBase(t) + '/' + shellSegment + (sub ? '/' + sub : '');
     };
   }

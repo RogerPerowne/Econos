@@ -122,11 +122,19 @@ Renderer wiring: `interactiveDiagram: { svgKey, wide, label, emoji, layers: ['id
 - **Cumulative build-up (default).** The renderer's `i < vi` rule reveals layers 0..vi-1 inclusive as views advance. Use when each view builds on the previous (Round 1, +Round 2, +Round 3 of the multiplier).
 - **Mutually exclusive swap.** Pass an explicit `show: ['some-layer']` on each view to control exactly which layers appear. Use when clicking a step shows ONE thing in isolation (click a phase → only that band lights up; click another phase → previous fades). Layer classes can be anything — use `.phase-boom`, `.phase-slowdown` etc. for readability.
 
-Canonical example: `js/data/edexcel_a/theme-2/national-income-and-the-multiplier/learn-it.js` Card 1 (round-by-round multiplier build-up); `js/data/edexcel_a/theme-1/indirect-taxes-and-subsidies/learn-it.js` Cards 1-4 (tax mechanic + ad valorem + incidence + subsidy mirror).
+Canonical example: `js/data/edexcel_a/theme-2/national-income-and-the-multiplier/learn-it.js` Card 1 (round-by-round multiplier build-up); `js/data/edexcel_a/theme-1/indirect-taxes-and-subsidies/learn-it.js` Cards 1-4 (tax mechanic + ad valorem + incidence + subsidy mirror); `js/data/edexcel_a/theme-2/macro-conflicts-and-trade-offs/learn-it.js` Card 4 (2021–23 AD/AS four-step shock sequence with `show: [...]`).
 
 Use for: layered explainers where order of revelation matters, scenario comparison on a shared visual, anything where manipulating the diagram is the lesson.
 
 Avoid when: a static diagram tells the story without clicks — interaction for its own sake is friction.
+
+**One shock per view — the splitting rule.** If a single view bundles two distinct shifts ("AD↑ and SRAS↓ at once"), readers can't see which curve does what or which equilibrium each shock produces. Split into separate views — one shock per click. The Conflicts C4 went from 3 views ("Baseline / Both shocks / Response") to 4 ("Baseline / AD↑ rebound / SRAS↓ shock / BoE response") for exactly this reason. Each view should add exactly one curve shift and produce one new equilibrium.
+
+**Label-clash discipline in the SVG.** When you fade older curves to grey, *also drop their labels in later layers* — the chart memory lives in the description column to the right, not on the chart itself. In each layer, only the curves that are actively part of THIS step carry full labels; faded lines stay silent. This prevents the bottom-right "AD₀ AD₁ AD₂ all stacked" mess. Same rule for equilibria: only the active equilibrium gets P-axis, Y-axis dashed guides and circle outline; older equilibria become tiny faded dots with no labels.
+
+**Stage size — chart is the hero.** The non-wide `interactiveDiagram` renderer uses grid `1.85fr 1fr` with 22×24 padding so the chart fills the stage and the description column sits comfortably alongside. Don't add `wide: true` just to make the chart bigger — that hides the description below and breaks the "see the diagram and read the explanation at the same time" affordance.
+
+**Y-axis label clipping (SVG gotcha).** Axis labels with `text-anchor="end"` at very small x (e.g. `x="36"`) get clipped on the left edge of the SVG container. Use `text-anchor="start"` (the default) at `x="8"` or so. Same for any text near the SVG's left edge.
 
 ### 8. Decompose a diagram
 
@@ -427,6 +435,7 @@ The renderer at `renderCardAdInteractive` (`js/app.js` around line 4321) reads t
 | `pairEmoji`     | Emoji for the pair heading                                        |
 | `left` / `right`| `{ tone, icon, iconStyle, label, sub, labelCenter, text, points, checks, rows, example }` — `rows: [{icon, text}]` gives per-item icon rows with dividers; `example: {icon, label, text}` adds a bottom example box; `labelCenter: true` centres the header (used on the supply-side pair, Macro Objectives card 5) |
 | `diagnoseRows`  | `[{ label, tone, icon, case, prompt?, verdict, verdictIcon?, pills: [{label, dir:'up'\|'down', tone}] }, ...]` — predict-then-reveal rows: case on the left, a Verdict box with coloured ↑/↓ pills on the right. With `diagnoseRowsLabel`/`diagnoseRowsEmoji`. Renders right after the pair slot. Pattern 6 inside `ad-interactive` when you also need a `flow`/`bottomTip` (the standalone `diagnose` template can't host those). Canonical: Macro Objectives card 3 |
+| `diagnoseRowsReveal` | Boolean — when `true`, the right-hand verdict block is hidden behind a CSS-only blur until the row's "?" button is clicked. Each prompt grows a small amber "?" button (the symbol stays as "?" before AND after click — bright amber bg + dark navy "?" + drop shadow on the clicked state, never a tick swap; white-on-dark was tried and lost visually). Pure HTML+CSS, no JS handlers — CSP-safe. Canonical: Conflicts card 2 |
 | `causesLabel`   | Heading above the `causes` grid                                   |
 | `causesEmoji`   | Emoji for the causes heading                                      |
 | `causesFirst`   | Boolean — render `causes` before flow (default: after)            |

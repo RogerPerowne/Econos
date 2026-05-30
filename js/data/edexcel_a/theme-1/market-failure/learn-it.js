@@ -36,7 +36,6 @@ window.ECONOS_TOPIC = {
       ],
       blocks: [
         { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Markets usually coordinate resources well – but sometimes private choices create social outcomes that are inefficient. The market still functions; it just produces the wrong amount from society\'s point of view.' },
-        { type: 'diagram', svgKey: 'marketFailureOverview', caption: 'When markets work, and when they fail' },
         { type: 'sectionHeader', icon: '🔍', label: 'What market failure means' },
         { type: 'grid', cols: 3, children: [
           { type: 'tile', tone: 'green', icon: '👥', head: 'Misallocation of resources', body: 'The price mechanism sends signals based on private costs and benefits, missing the wider picture. So inputs flow to uses that society does not value most.' },
@@ -58,7 +57,6 @@ window.ECONOS_TOPIC = {
       ],
       blocks: [
         { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'A decision can look worthwhile to the individual, but once spillover effects are included, the answer for society may be very different.' },
-        { type: 'diagram', svgKey: 'privateVsSocialDiagram', caption: 'The private vs social framework' },
         { type: 'sectionHeader', icon: '🌍', label: 'Two real-world examples' },
         { type: 'grid', cols: 2, children: [
           { type: 'tile', tone: 'rose', icon: '🏭', head: 'Negative externality', body: 'A factory produces goods – but locals breathe the pollution. It bears the cost of production, but local residents suffer health problems from the emissions.<br><br><strong>Private cost: ££</strong><br><strong>Social cost: £££</strong><br><br>Social cost &gt; private cost, so the factory over-produces relative to the social optimum.' },
@@ -80,7 +78,6 @@ window.ECONOS_TOPIC = {
       ],
       blocks: [
         { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'At this stage you only need the map: three broad reasons markets may fail. Each one gets a dedicated topic later – for now, secure the framework.' },
-        { type: 'diagram', svgKey: 'threeRoutesDiagram', caption: 'The three routes – and what each one breaks' },
         { type: 'examEdge', title: 'Exam edge', text: 'You do not need every detail yet – first secure the map, then study each failure type in depth. In an essay, naming the route correctly is the first credit-earning step. After that, link the route to the divergence (cost or benefit) and the direction of the failure (over- or under-production).' }
       ]
     },
@@ -96,7 +93,6 @@ window.ECONOS_TOPIC = {
       ],
       blocks: [
         { type: 'calloutStrip', tone: 'amber', icon: '💡', text: 'When the market produces the wrong quantity, society misses out on potential welfare. That missing value is <strong>deadweight loss</strong> – surplus no-one receives.' },
-        { type: 'diagram', svgKey: 'welfareLossDiagram', caption: 'The welfare loss triangle' },
         { type: 'sectionHeader', icon: '📉', label: 'How welfare is lost' },
         { type: 'grid', cols: 3, children: [
           { type: 'tile', tone: 'rose', icon: '📈', head: 'Too much output', body: 'Consumers value the last units less than they cost society to produce. The extra output creates welfare loss. <strong>Example:</strong> traffic congestion from the over-use of roads.' },

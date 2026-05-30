@@ -96,7 +96,6 @@ window.ECONOS_TOPIC = {
       title: 'Prices as a rationing device',
       blocks: [
         { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<em>When a product is scarce, price helps ration it. A higher price does not create more tickets or more seats today – it decides who gets them.</em><br>In a market, scarce goods usually go to those <strong>willing and able to pay</strong>.' },
-        { type: 'diagram', svgKey: 'priceRationingScarcity', caption: undefined },
         { type: 'mechanismChain', steps: [
           { label: 'Shortage', detail: 'More people want tickets than are available.' },
           { label: 'Price rises', detail: 'Higher prices signal scarcity and adjust the price.' },

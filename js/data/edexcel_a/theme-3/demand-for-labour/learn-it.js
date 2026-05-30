@@ -1,205 +1,28 @@
+/* PLACEHOLDER — Learn It content not yet rebuilt for this topic.
+   The cover view (intro) renders normally; clicking Start session
+   no-ops because cards is empty. Replaced from the previous content
+   on 2026-05-30 to remove pre-mockup-pipeline material that hadn't
+   been reviewed. Replace this file with a full ad-interactive build
+   once the topic is run through the ChatGPT → Claude mockup pipeline
+   (see docs/DISPATCH_BRIEF.md).
+*/
 window.ECONOS_TOPIC = {
-  id: 'demand-for-labour',
-  topicNum: '5.1',
-  theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  title: 'Demand for Labour',
-  estTime: '5-7 minutes',
-  goal: 'Lock in the demand for labour as a derived demand, MRP theory, and what causes labour demand to shift.',
+  id:          "demand-for-labour",
+  topicNum:    "5.1",
+  theme:       "Theme 3 \\xb7 Business Behaviour and the Labour Market",
+  title:       "Demand for Labour",
+  estTime:     '—',
+  goal:        'Coming soon.',
   intro: {
-    heroKey: 'heroLabour',
-    summary: 'The demand for labour is derived from the demand for the goods workers produce. A profit-maximising firm hires workers up to the point where the Marginal Revenue Product (MRP) equals the wage. The MRP curve IS the firm\'s labour demand curve – and anything that raises productivity or product demand shifts it right.',
-    doInThis: 'Work through 2 cards covering derived demand and the MRP theory of labour demand. Wage determination, equilibrium, and labour supply are covered in separate topics.',
-    outcomes: [
-      'Explain derived demand and why product market changes transmit to labour markets',
-      'Define MRP and explain why profit-maximising firms hire where W = MRP',
-      'Identify what causes the labour demand (MRP) curve to shift'
-    ],
-    tip: 'MRP = MR × MP. Firm hires up to where MRP = wage (W). The MRP curve IS the labour demand curve. It slopes down because of diminishing marginal returns and (for imperfect competitors) falling MR.',
+    summary:  "Demand for Labour — full Learn It content is in production.",
+    doInThis: 'Check back soon. This topic will be rebuilt using the same design system as the topics already shipped on this board.',
+    outcomes: [],
+    tip:      'Browse a finished topic in the meantime to see the design language this one will follow.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '2 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
-      { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
+      { num: 1, name: 'Learn it', sub: 'Coming soon', state: 'current' },
+      { num: 2, name: 'Link it',  sub: 'Coming soon', state: 'locked' },
+      { num: 3, name: 'Land it',  sub: 'Coming soon', state: 'locked' }
     ]
   },
-  cards: [
-    {
-      id: 'labour_markets_1',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 2',
-      title: 'Labour markets: the big picture',
-      lede: 'Wages and jobs come from the same supply-and-demand logic as any market – but workers aren\'t widgets, and employers aren\'t always price-takers.',
-      branches: [
-        { tone: 'green',  label: 'Derived demand',        sub: 'Firms hire labour only because workers produce sellable output. Product market shocks transmit straight to labour demand.' },
-        { tone: 'blue',   label: 'MRP theory',            sub: 'Hire workers up to where the marginal revenue product equals the wage. The MRP curve IS the firm\'s labour demand curve.' },
-        { tone: 'amber',  label: 'Wage differentials',    sub: 'Skills, compensating differentials, discrimination, and bargaining power all explain why identical hours pay different wages.' },
-        { tone: 'rose',   label: 'Monopsony',             sub: 'When one buyer dominates, employers can push wages below MRP. Workers under-paid, under-employed – a labour-market market failure.' }
-      ],
-      body: 'The demand for labour is a <strong>derived demand</strong> – firms hire workers not for their own sake but because workers produce goods and services that can be sold.<br><br>This means the demand for labour depends on:<br>• The demand for the final product (higher product demand → more labour demanded)<br>• The productivity of labour (more productive workers → more valuable → higher demand)<br>• The price of the final product (higher product price → each worker generates more revenue → higher demand)<br><br><strong>Implication:</strong> anything that increases the demand for a firm\'s product will increase its demand for labour. Demand shocks in product markets transmit directly to labour markets. UK manufacturing job losses 1980s–2000s reflected both import competition (reduced product demand) and automation (substitution away from labour).',
-      keyTerms: [
-        { term: 'Derived demand', def: 'Demand for a factor of production (labour, capital) that arises from the demand for the goods or services it produces.' },
-        { term: 'Marginal product of labour (MPL)', def: 'The additional output produced by one more unit of labour – diminishes as more workers are added (diminishing returns).' },
-        { term: 'Marginal revenue product (MRP)', def: 'MRP = MR \xd7 MPL. The additional revenue generated by hiring one more worker – the firm\'s labour demand curve.' }
-      ],
-      examEdge: 'The derived demand concept is the bridge between product markets and labour markets. A skill tested in A-level economics is tracing through from product market changes to labour market outcomes. Example: AI reduces demand for data entry work (productivity of labour in remaining roles rises but number of workers needed falls). Trade policy change (tariff on UK steel) → product demand for UK steel rises → demand for steelworkers rises → wage rises. Always trace: product demand → MRP → labour demand → wage and employment.'
-    },
-    {
-      id: 'labour_markets_2',
-      template: 'framing',
-      title: 'MRP Theory of Labour Demand',
-      body: '<strong>Marginal Revenue Product (MRP)</strong> is the revenue generated by hiring one additional worker:<br><br><strong>MRP = Marginal Revenue (MR) \xd7 Marginal Product of Labour (MPL)</strong><br><br>A profit-maximising firm hires additional workers as long as MRP > wage (W). Stops when MRP = W. This gives the labour demand rule: hire where W = MRP.<br><br>The MRP curve slopes <strong>downward</strong> because:<br>• Diminishing marginal returns – each additional worker adds less output (fixed capital, physical space constraints)<br>• For imperfect competitors: MR is falling (downward-sloping demand) – more output → lower price → lower MR<br><br>The MRP curve IS the firm\'s demand curve for labour. At each wage rate, the firm hires the quantity of workers where W = MRP.',
-      keyTerms: [
-        { term: 'MRP = W rule', def: 'The profit-maximising employment condition: hire workers up to the point where marginal revenue product equals the wage.' },
-        { term: 'Diminishing marginal returns', def: 'As more workers are added to fixed capital, each adds less additional output – causes MPL to fall and MRP curve to slope down.' },
-        { term: 'Labour demand curve', def: 'The firm\'s MRP curve – at each wage, the firm hires where W = MRP. Higher wages → fewer workers hired.' }
-      ],
-      examEdge: 'The MRP = W condition is directly analogous to MR = MC in product markets. Just as a firm produces where the marginal revenue from the last unit equals its marginal cost, it hires where the marginal revenue product of the last worker equals the marginal cost of labour (the wage). This symmetry is important: labour market equilibrium is just profit maximisation applied to factor markets. A worker worth £30/hour will not be employed at a wage of £35/hour.',
-      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
-    }
-
-  ]
+  cards: []
 };
-
-/* ============================================================
-   End-of-Learn-It quiz pool · folded in at v0.4.0
-   These questions used to live at /quiz/<topic>/<set> as a
-   standalone shell. They now ride along with the Learn It data
-   under the same window.ECONOS_QUIZ global. The /quiz/ URL
-   contract is gone; the quiz is the natural finisher to the
-   Learn It journey, so the data lives next to learn cards.
-   ============================================================ */
-/* ---- quiz-main.js (quiz pool, preserved from former /quiz/ shell) ---- */
-(function () {
-
-  window.ECONOS_QUIZ = {
-    title:    'Labour Markets',
-    subtitle: 'Labour Markets & Distribution',
-    backUrl:  TopicLoader.routes.learn('demand-for-labour'),
-    backLabel:'Back to Learn It',
-    lede:     '10 questions · ~8 minutes · covers derived demand, MRP, wage differentials, and monopsony',
-    shortNames: [
-      'Derived demand','MRP theory','Wage differentials','Monopsony','Labour supply',
-      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
-    ],
-    questions: [
-      {
-        type: 'mcq',
-        q:    'In labour markets, demand for labour is said to be "derived" because:',
-        opts: [
-          'Workers choose how many hours to offer',
-          'Firms hire labour because of the demand for the goods or services it produces',
-          'Wages are set by the government',
-          'Labour supply determines the wage rate'
-        ],
-        ans:  1,
-        exp:  'Derived demand means labour is not demanded for its own sake but because of the demand for the output it produces. If demand for a product rises, the demand for workers to produce it also rises.'
-      },
-      {
-        type: 'mcq',
-        q:    'A firm maximises profit by hiring labour up to the point where:',
-        opts: [
-          'MRP = wage rate (W)',
-          'MRP is at its maximum',
-          'Total revenue product is highest',
-          'Labour supply equals labour demand'
-        ],
-        ans:  0,
-        exp:  'MRP (Marginal Revenue Product = MR × MPP) is the revenue earned by the last worker. The firm should hire until MRP = W. Beyond this, the last worker costs more than they generate.'
-      },
-      {
-        type: 'mcq',
-        q:    'Which of the following would cause the demand for labour to increase?',
-        opts: [
-          'A fall in the wages paid to workers',
-          'A fall in consumer demand for the firm\'s product',
-          'An increase in worker productivity',
-          'An increase in the cost of capital substitutes'
-        ],
-        ans:  2,
-        exp:  'Higher worker productivity increases MRP – each worker now generates more revenue. The demand curve for labour (MRP curve) shifts right, meaning more workers are demanded at any given wage.'
-      },
-      {
-        type: 'mcq',
-        q:    'A monopsony in the labour market is:',
-        opts: [
-          'A single seller of labour',
-          'A single employer (buyer) of labour in a market',
-          'A market with many competing employers',
-          'A trade union that represents all workers'
-        ],
-        ans:  1,
-        exp:  'A monopsony is a market with a single buyer – in labour markets, a single dominant employer. The monopsonist must raise wages to attract more workers, making the marginal cost of labour exceed the average wage.'
-      },
-      {
-        type: 'numeric_input',
-        q:    'A firm employs 10 workers, each producing 5 units per hour. Each unit sells for £4. What is the Marginal Revenue Product (MRP) of the 10th worker per hour?',
-        answer: 20,
-        tolerance: 0,
-        unit: '£',
-        hint: 'MRP = MR × MPP. In a competitive market, MR = Price.',
-        workingSteps: ['MPP = 5 units per hour','MR = £4 per unit (competitive market, so MR = P)','MRP = £4 × 5 = £20']
-      },
-      {
-        type: 'categorise',
-        q:    'Categorise each factor as affecting labour demand or labour supply.',
-        categories: ['Labour demand','Labour supply'],
-        items: [
-          { item: 'Change in consumer demand for the product',  category: 'Labour demand' },
-          { item: 'Immigration of workers with relevant skills',category: 'Labour supply' },
-          { item: 'Rise in worker productivity (MRP rises)',    category: 'Labour demand' },
-          { item: 'Higher non-wage benefits offered elsewhere', category: 'Labour supply' },
-          { item: 'Fall in price of capital substitutes',       category: 'Labour demand' },
-          { item: 'Training and education increasing skills',   category: 'Labour supply' }
-        ]
-      },
-      {
-        type: 'cause_effect',
-        q:    'Match each cause to its effect in the labour market.',
-        pairs: [
-          { cause: 'Rise in demand for a product',                effect: 'MRP of workers rises; labour demand increases' },
-          { cause: 'Workers\' productivity improves',              effect: 'MRP shifts right; firms hire more workers' },
-          { cause: 'Monopsony employer dominates market',         effect: 'Wage set below competitive level; fewer workers hired' },
-          { cause: 'Trade union wins wage rise',                  effect: 'Employers may reduce quantity of labour demanded' },
-          { cause: 'Immigration increases labour supply',         effect: 'Downward pressure on wages in competitive market' },
-          { cause: 'Automation replaces routine tasks',           effect: 'Demand for low-skill labour falls' }
-        ]
-      },
-      {
-        type: 'odd_one_out',
-        q:    'Which is the odd one out?',
-        opts: ['MRP','Derived demand','Wage elasticity of supply','Consumer Price Index'],
-        ans:  3,
-        exp:  'MRP, derived demand, and wage elasticity of supply are all labour market concepts. The Consumer Price Index is a macroeconomic measure of inflation, not a labour market concept.'
-      },
-      {
-        type: 'data_table',
-        q:    'Use the MRP table to identify the profit-maximising number of workers if the market wage is £40/hour.',
-        tableHeaders: ['Workers','MPP (units/hr)','MR (£/unit)','MRP (£/hr)'],
-        tableData: [
-          ['1','12','5','60'],
-          ['2','10','5','50'],
-          ['3','9','5','45'],
-          ['4','8','5','40'],
-          ['5','7','5','35'],
-          ['6','6','5','30']
-        ],
-        opts: ['2 workers','3 workers','4 workers','5 workers'],
-        ans:  2,
-        exp:  'Hire until MRP = wage rate. At 4 workers, MRP = £40 = W. Hiring a 5th gives MRP = £35 < £40, so only 4 workers are profit-maximising.'
-      },
-      {
-        type: 'match_pairs',
-        q:    'Match each labour market term to its description.',
-        pairs: [
-          { a: 'Derived demand',         b: 'Labour demanded because of demand for the output it produces' },
-          { a: 'MRP',                    b: 'Extra revenue generated by employing one more worker' },
-          { a: 'Monopsony',              b: 'Single dominant employer of labour in a market' },
-          { a: 'Wage differential',      b: 'Difference in pay between groups of workers or industries' },
-          { a: 'Marginal labour cost',   b: 'Extra cost to a monopsonist of employing one more worker' },
-          { a: 'Non-pecuniary benefits', b: 'Non-wage job features such as conditions, status, or flexibility' }
-        ]
-      }
-    ]
-  };
-
-})();
-

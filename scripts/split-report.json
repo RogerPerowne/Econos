@@ -1,6 +1,6 @@
 {
-  "movedCount": 155,
-  "keptCount": 119,
+  "movedCount": 154,
+  "keptCount": 131,
   "groups": {
     "multiplier": [
       "fiscalDragChart",
@@ -190,8 +190,7 @@
       "actualVsPotentialGrowth",
       "growthScorecard",
       "incomeSpectrumChart",
-      "growthSustainability3View",
-      "macroObjectivesScorecard"
+      "growthSustainability3View"
     ]
   },
   "movedKeys": [
@@ -348,8 +347,7 @@
     "actualVsPotentialGrowth",
     "growthScorecard",
     "incomeSpectrumChart",
-    "growthSustainability3View",
-    "macroObjectivesScorecard"
+    "growthSustainability3View"
   ],
   "uncertainKept": []
 }

@@ -1,37 +1,37 @@
 /* ============================================================
-   ECONOS – Macroeconomic Objectives & Trade-offs (Theme 2 · 2.6.1)
-   6 cards · one storytelling pattern per card:
-     C1 Decompose a diagram     — the macro objectives scorecard
-     C2 Interactive multi-state — the Phillips curve, 3 views
-     C3 Predict-then-reveal     — diagnose the trade-off
-     C4 Sequential flow chain   — stagflation mechanism
-     C5 Side-by-side pair        — the supply-side argument
-     C6 Evidence-then-verdict   — the trade-off verdict
-   Rebuilt from ChatGPT mockups; folds in the strong UK-data content
-   from the prior build.
+   ECONOS – Macroeconomic Objectives (Theme 2 · 2.6.1)
+   6 cards · THEORY ONLY · one storytelling pattern per card:
+     C1 Decompose a diagram     — the cockpit (7 gauges)
+     C2 Spectrum / regime grid  — the headline three (character sheets)
+     C3 Spectrum / regime grid  — the four constraints (compass)
+     C4 Interactive multi-state — Phillips workstation (2 views, theory)
+     C5 Comparison              — flow-chain mechanisms (4 trade-offs)
+     C6 Evidence-then-verdict   — the constraint web + A* framework
+   Stagflation / historical conflicts live in the SISTER topic
+   `macro-conflicts-and-trade-offs` (spec 2.6.4) — DO NOT add
+   case studies here.
    ============================================================ */
 
 window.ECONOS_TOPIC = {
   id: 'macroeconomic-objectives-and-trade-offs',
   topicNum: '6.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  title: 'Macroeconomic Objectives & Trade-offs',
+  title: 'Macroeconomic Objectives',
   estTime: '10-12 minutes',
-  goal: 'Judge the economy by the whole scorecard of objectives, master the Phillips curve, and structure every policy answer around the trade-offs.',
+  goal: 'Know the seven UK macro objectives, the structural trade-offs between them, and the A* framework for weighing one against another.',
 
   intro: {
     heroKey: 'heroMacroObjectives',
-    summary: 'Governments pursue a whole scorecard of objectives — stable inflation, low unemployment, sustainable growth, a healthy external balance, sound public finances, and environmental sustainability. They can never all be maximised at once, and the conflicts between them organise half of every macro essay.',
-    doInThis: 'Six cards: the macro objectives scorecard, the Phillips curve, diagnosing real trade-offs, the stagflation mechanism, the supply-side argument, and the four-dimensional A* verdict.',
+    summary: 'Governments pursue a whole scorecard of objectives — stable inflation, low unemployment, sustainable growth, a healthy external balance, sound public finances, environmental sustainability, and greater income equality. They cannot all be maximised at once, and the structural trade-offs between them organise half of every macro essay.',
+    doInThis: 'Six cards: the cockpit (all seven objectives at a glance); the headline three (inflation, unemployment, growth); the four supporting constraints (BoP, fiscal, environment, equality); the Phillips curve as the prototypical trade-off; four more structural trade-offs; and the constraint web that ties them all together.',
     outcomes: [
-      'State the macro objectives with their targets and current UK data',
-      'Apply the Phillips curve — SRPC, the vertical LRPC, and the NAIRU',
-      'Diagnose which objective a policy advances and which it compromises',
-      'Explain why a supply shock causes stagflation and breaks the toolkit',
-      'Evaluate whether supply-side policy can resolve the trade-offs',
-      'Structure A* answers around rate × magnitude × distribution × time horizon'
+      'Name and explain all seven UK macro objectives with target and measure',
+      'Read a UK macro scorecard at a glance',
+      'Apply the Phillips curve — SRPC, vertical LRPC, NAIRU and adaptive expectations',
+      'Name the structural mechanism behind each of the five trade-offs',
+      'Use the four-dimensional framework (advanced × compromised × magnitude × time horizon) to evaluate any policy'
     ],
-    tip: 'The key insight: demand-side policy forces a choice between objectives. Supply-side reform can, in theory, ease several at once — but with long lags and up-front costs.',
+    tip: 'Real-world UK case studies — stagflation, 2008, 2021–23, Thatcher — live in the sister topic, Macro Conflicts & Trade-offs. This topic is the theory.',
     stages: [
       { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
@@ -42,288 +42,192 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ============================================================
-       CARD 1 – Pattern: Decompose a diagram
-       Hero: macroObjectivesScorecard. Six objective gauges/tiles
-       carry the message that we judge the whole scorecard, then a
-       5-tile row previews the trade-offs the rest of the topic explores.
+       CARD 1 — Pattern: Decompose a diagram
+       Hero: macroCockpit. Seven UK macro gauges arranged as a
+       pilot's dashboard. The visual IS the lesson: some gauges in
+       target, some not — judge the whole scorecard.
        ============================================================ */
     {
-      id: 'macro-objectives-scorecard',
+      id: 'macro-cockpit',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 6',
-      title: 'The macro objectives scorecard',
-      lede: 'We judge the economy by a whole set of objectives, not just one number. Each has a target — and the UK rarely hits them all at once.',
+      title: 'The cockpit',
+      lede: 'We judge the UK economy by a whole set of objectives, not just one number. Here is the dashboard — seven gauges, seven targets, the UK\'s current reading on each.',
       ledeStyle: 'plain',
-      tip: { icon: '✅', tone: 'green', text: 'Good policy balances the whole scorecard – improving one objective can worsen another.' },
+      tip: { icon: '\u{1F3AF}', tone: 'green', text: 'Good policy balances the whole scorecard — improving one objective can worsen another. Read the dashboard before you act.' },
 
-      visualKey: 'macroObjectivesScorecard',
-      visualLabel: 'The six macro objectives',
+      visualKey: 'macroCockpit',
+      visualLabel: 'UK macro dashboard',
       visualEmoji: '\u{1F4CA}',
 
-      causesFirst: true,
-      causesLabel: 'Five key trade-offs we will explore',
-      causesEmoji: '⚖️',
-      causesStyle: 'icon-top',
-      causesCols: 5,
+      causesPosition: 'top',
+      causesLabel: 'The seven objectives',
+      causesEmoji: '\u{1F4CB}',
+      causesStyle: 'numbered-rows',
       causes: [
-        { tone: 'rose',   icon: '\u{1F4C9}', head: 'Lower inflation vs higher unemployment', body: 'Tight policy cools prices but can raise joblessness.' },
-        { tone: 'blue',   icon: '\u{1F4C8}', head: 'Faster growth vs more inflation',        body: 'Stimulus lifts output but can overheat the economy.' },
-        { tone: 'green',  icon: '\u{1F33F}', head: 'Growth vs environmental sustainability', body: 'Strong growth today can mean higher emissions tomorrow.' },
-        { tone: 'amber',  icon: '\u{1F3DB}️', head: 'Public services spending vs fiscal sustainability', body: 'More spending improves services but can raise debt and taxes.' },
-        { tone: 'purple', icon: '\u{1F310}', head: 'Strong domestic demand vs external balance', body: 'High demand boosts jobs but can widen the current-account deficit.' }
+        { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation',      body: 'Low and stable price growth — the BoE\'s 2% CPI symmetric target.' },
+        { tone: 'blue',   icon: '\u{1F465}', head: 'Unemployment',    body: 'Low joblessness — UK NAIRU around 4–5%.' },
+        { tone: 'green',  icon: '\u{1F4C8}', head: 'Growth',          body: 'Real GDP growth of around 2–2.5% per year.' },
+        { tone: 'purple', icon: '\u{1F310}', head: 'Balance of payments', body: 'A sustainable current-account position with the rest of the world.' },
+        { tone: 'amber',  icon: '\u{1F3DB}', head: 'Fiscal sustainability', body: 'Government debt on a stable or falling path.' },
+        { tone: 'green',  icon: '\u{1F343}', head: 'Environment',     body: 'Decarbonisation compatible with net zero by 2050.' },
+        { tone: 'slate',  icon: '\u{2696}',  head: 'Income equality', body: 'A falling, or at least stable, Gini coefficient.' }
       ],
 
-      examEdge: 'Strong macro answers weigh the whole scorecard. Identify which objective improves, which worsens, by how much, and over what time horizon.'
+      examEdge: 'Strong macro answers cite the whole dashboard — not just growth. Identify which objective the policy advances, which it strains, by how much, and over what time horizon.'
     },
 
     /* ============================================================
-       CARD 2 – Pattern: Interactive multi-state diagram
-       Reuses the phillipsInteractive SVG (3 views) + folds the NAIRU
-       material into a closing 3-tile "what you need to know" row.
+       CARD 2 — Pattern: Spectrum / regime grid
+       Hero: macroHeadlineCards. The three quarterly headline
+       objectives anthropomorphised as character cards. Theory only.
        ============================================================ */
     {
-      id: 'phillips-curve',
+      id: 'headline-three',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 6',
-      title: 'The Phillips curve',
-      lede: 'The inflation–unemployment trade-off exists in the short run, but not always in the long run.',
+      title: 'The headline three',
+      lede: 'Three objectives are the headline numbers reported every quarter. Inflation moves fast and loud. Unemployment moves slowly with a fierce floor. Growth is the headline you read first.',
       ledeStyle: 'plain',
-      tip: { icon: '✅', tone: 'green', text: 'In the short run, lower unemployment can come with higher inflation – but expectations can shift the whole curve.' },
+      tip: { icon: '\u{2705}', tone: 'green', text: 'For each: know the target, the measure, and the why. That trio is the A* anchor in every answer.' },
 
-      diagramKey: 'phillipsInteractive',
-      steps: [
+      visualKey: 'macroHeadlineCards',
+      visualLabel: 'Meet the headline three',
+      visualEmoji: '\u{1F4F0}',
+
+      bottomTip: { tone: 'blue', icon: '\u{1F4D3}', text: 'These three are the <strong>flow</strong> measures of the economy — they update every quarter, and central banks and Treasury respond to their movement in real time. The next card covers the four <strong>constraint</strong> objectives that operate on longer time horizons.' },
+
+      examEdge: 'Cite all three numbers from memory in any policy essay. "Inflation 2.8%, unemployment 5.0%, growth ~1.4%" is the kind of opener that signals real-economy literacy — and lets you reach for the right policy lever.'
+    },
+
+    /* ============================================================
+       CARD 3 — Pattern: Spectrum / regime grid (visual pivot)
+       Hero: macroConstraintCompass. Compass rose with the four
+       supporting objectives at the cardinals. Two needles outside
+       the green safe zone signal constraint violations at a glance.
+       ============================================================ */
+    {
+      id: 'four-constraints',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 3 of 6',
+      title: 'The four constraints',
+      lede: 'Beyond the headline numbers, four more objectives shape whether growth genuinely improves lives — and whether today\'s outcomes can be sustained. Think of them as boundaries the economy must stay within.',
+      ledeStyle: 'plain',
+      tip: { icon: '\u{1F9ED}', tone: 'green', text: 'These are the objectives examiners reach for when they ask you to evaluate. The "yes growth was 2%, but..." pivot lives here.' },
+
+      visualKey: 'macroConstraintCompass',
+      visualLabel: 'The four supporting objectives',
+      visualEmoji: '\u{1F9ED}',
+
+      causesFirst: true,
+      causesLabel: 'Each constraint in one line',
+      causesEmoji: '\u{1F4D0}',
+      causesStyle: 'numbered-rows',
+      causes: [
         {
-          key: 'base',
-          label: 'Original 1958 SRPC',
-          text: 'Phillips found an empirical negative relationship between <strong>unemployment and wage inflation</strong> in UK data 1861-1957. As unemployment fell, workers gained bargaining power and wages rose. This gave policymakers a <strong>menu of choices</strong>: accept higher unemployment and low inflation, or push unemployment down and accept higher inflation.'
+          tone: 'purple', icon: '\u{1F310}', head: 'Balance of payments',
+          body: '<strong>Target</strong> sustainable current-account position. <strong>Measure</strong> current account % of GDP. <strong>UK current</strong> &minus;2.4% (Q4 2025). Persistent large deficits require foreign financing; the country is effectively borrowing demand from the rest of the world.'
         },
         {
-          key: 'extension',
-          label: 'Friedman / Phelps',
-          text: 'Friedman and Phelps argued the trade-off only exists <strong>in the short run</strong>. Push unemployment below the natural rate and workers demand higher nominal wages to compensate for inflation – the SRPC shifts up. In the long run the Phillips curve is <strong>vertical at the NAIRU</strong>: exploiting the short-run trade-off only produces permanently higher inflation.'
+          tone: 'amber', icon: '\u{1F3DB}', head: 'Fiscal sustainability',
+          body: '<strong>Target</strong> debt on a stable or falling path. <strong>Measure</strong> public sector net debt % of GDP. <strong>UK current</strong> 93.8% (Mar 2026). Fiscal headroom is the buffer for the next crisis — rising debt narrows future policy choices.'
         },
         {
-          key: 'shift',
-          label: '1970s stagflation',
-          text: 'In the 1970s the UK saw <strong>rising unemployment AND rising inflation together</strong> – impossible on the original curve. OPEC oil shocks shifted SRAS left; the SRPC shifted upward and both rose at once. This empirical failure ended the Keynesian consensus and launched monetarism.'
+          tone: 'green', icon: '\u{1F343}', head: 'Protection of the environment',
+          body: '<strong>Target</strong> decarbonisation path to net zero by 2050. <strong>Measure</strong> annual CO₂ emissions and the gap to the carbon budget. <strong>UK current</strong> mixed progress. Growth that breaches the budget transfers cost to people who haven’t been born yet.'
+        },
+        {
+          tone: 'slate', icon: '\u{2696}', head: 'Greater income equality',
+          body: '<strong>Target</strong> falling Gini coefficient. <strong>Measure</strong> Gini coefficient (ONS / HBAI). <strong>UK current</strong> Gini ≈ 0.36. Growth that lifts only the top deciles raises the average without raising the median — the headline is misleading.'
         }
       ],
 
+      examEdge: 'These constraints are where the marks live. In every essay, after stating the growth/inflation/unemployment effects, pivot to: "however, this also acts on [BoP / debt / emissions / Gini] in the following way..." That pivot is the difference between a B and an A*.'
+    },
+
+    /* ============================================================
+       CARD 4 — Pattern: Interactive multi-state diagram
+       Hero: macroPhillipsWorkstation. Phillips curve as a lab
+       notebook. Two views (SRPC, LRPC) + a CSS play-pause that
+       auto-cycles the A→B→C path. THEORY ONLY — no 1970s
+       stagflation view (that lives in Topic B).
+       ============================================================ */
+    {
+      id: 'phillips-workstation',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 6',
+      title: 'The Phillips curve — the prototypical trade-off',
+      lede: 'The inflation–unemployment trade-off is the prototypical example of how two objectives can pull against each other. It also illustrates the most important point about every trade-off: <strong>they can break down in the long run.</strong>',
+      ledeStyle: 'plain',
+      tip: { icon: '\u{2705}', tone: 'green', text: 'Lower unemployment can come with higher inflation in the short run — but the relationship is unstable once expectations adjust. Press play on the diagram to watch why.' },
+
+      visualKey: 'macroPhillipsWorkstation',
+      visualLabel: 'Phillips workstation',
+      visualEmoji: '\u{1F52C}',
+
       causesFirst: true,
-      causesLabel: 'What you need to know',
-      causesEmoji: '\u{1F9ED}',
+      causesLabel: 'Three things you need to know',
+      causesEmoji: '\u{1F9E0}',
       causesStyle: 'icon-top',
       causesCols: 3,
       causes: [
-        { tone: 'green', icon: '⚖️', head: 'NAIRU',                body: 'The unemployment rate consistent with stable inflation – where the long-run Phillips curve is vertical. UK estimate ~4–4.5%.' },
-        { tone: 'amber', icon: '\u{1F9E0}', head: 'Adaptive expectations', body: 'Workers and firms build recent inflation into wage and price setting, which is what shifts the short-run curve up.' },
-        { tone: 'rose',  icon: '⚠️', head: 'Trade-off breaks down', body: 'In the long run you cannot keep unemployment below the NAIRU without ever-accelerating inflation.' }
+        { tone: 'green', icon: '\u{2696}', head: 'NAIRU', body: 'The unemployment rate consistent with stable inflation — where the long-run Phillips curve is vertical. UK estimate ~4–4.5%.' },
+        { tone: 'amber', icon: '\u{1F4AD}', head: 'Adaptive expectations', body: 'Workers and firms build recent inflation into wage and price setting. That feedback is what shifts the short-run curve up.' },
+        { tone: 'rose',  icon: '\u{26A0}', head: 'No long-run trade-off', body: 'Attempts to keep U below the NAIRU produce ever-accelerating inflation, not lower joblessness.' }
       ],
 
-      examEdge: 'Use the Phillips curve dynamically. Name the view, explain the mechanism, then say whether the trade-off is short-run only or has broken down. A* answers draw BOTH the SRPC and the vertical LRPC on one diagram.'
+      examEdge: 'Always draw BOTH the SRPC and the vertical LRPC on the same axes; name the NAIRU; explain that adaptive expectations are what shift the SRPC up. The dynamic version of the diagram is what scores marks — a static SRPC alone is a B-grade answer.'
     },
 
     /* ============================================================
-       CARD 3 – Pattern: Predict-then-reveal
-       Three real UK scenarios; spot the conflict, then a fast-diagnosis
-       checklist. Reuses the strong scenarios from the prior build.
+       CARD 5 — Pattern: Comparison (4 flow-chain tiles)
+       Hero: macroTradeoffChains. Four structural trade-offs visualised
+       as 3-step mechanism flow chains. Tap
+       left-to-right to read each chain through the mechanism.
        ============================================================ */
     {
-      id: 'diagnose-trade-off',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 6',
-      title: 'Diagnose the trade-off',
-      lede: 'Policy choices usually improve one objective but strain another. Spot the conflict before judging the policy.',
-      ledeStyle: 'plain',
-      tip: { icon: '✅', tone: 'green', text: 'Strong answers diagnose the trade-off first – then decide whether it is worth it.' },
-
-      diagnoseRowsLabel: 'Classify the case',
-      diagnoseRowsEmoji: '⚖️',
-      diagnoseRows: [
-        {
-          label: 'A', tone: 'rose', icon: '\u{1F3DB}️',
-          case: 'The Bank of England raised interest rates sharply in 2021–23 (Bank Rate 0.1% → 5.25%) to bring inflation from 11.1% back to target.',
-          verdict: 'Inflation objective improved, but growth weakened to near-zero and mortgage holders faced sharply higher payments – unemployment risk rose.',
-          pills: [ { label: 'Inflation', dir: 'down', tone: 'rose' }, { label: 'Growth', dir: 'down', tone: 'blue' }, { label: 'Unemployment', dir: 'up', tone: 'purple' } ]
-        },
-        {
-          label: 'B', tone: 'blue', icon: '\u{1F4C8}',
-          case: 'A fiscal stimulus boosts demand while the UK already runs a persistent current-account deficit of ~4% of GDP.',
-          verdict: 'Growth and jobs may improve, but the income effect sucks in imports – inflation pressure and the balance-of-payments deficit can both worsen.',
-          pills: [ { label: 'Growth', dir: 'up', tone: 'blue' }, { label: 'Inflation', dir: 'up', tone: 'rose' }, { label: 'External balance', dir: 'down', tone: 'green' } ]
-        },
-        {
-          label: 'C', tone: 'green', icon: '\u{1F465}',
-          case: 'Unemployment falls to 3.7% in 2022 – below most NAIRU estimates – and wage growth accelerates to 7–8%.',
-          verdict: 'Strong employment, but below the NAIRU workers gain bargaining power and inflation pressure rises through wage-push forces.',
-          pills: [ { label: 'Unemployment', dir: 'down', tone: 'green' }, { label: 'Inflation', dir: 'up', tone: 'rose' } ]
-        }
-      ],
-
-      flowTitle: 'Fast diagnosis',
-      flowEmoji: '⚡',
-      flow: [
-        { tone: 'amber', title: 'Which objective improves?' },
-        { tone: 'amber', title: 'Which objective worsens?' },
-        { tone: 'amber', title: 'How big is the trade-off?' },
-        { tone: 'amber', title: 'Over what time horizon?' }
-      ],
-
-      bottomTip: { tone: 'amber', icon: '⚠️', text: 'Do not stop at the first benefit. Macro policy nearly always has a cost elsewhere on the scorecard.' },
-
-      examEdge: 'Write the trade-off as a sentence: <em>this policy supports X, but may worsen Y, especially in the short run.</em>'
-    },
-
-    /* ============================================================
-       CARD 4 – Pattern: Sequential flow chain
-       The stagflation mechanism as a 5-step chain, then history
-       examples and the three policy responses.
-       ============================================================ */
-    {
-      id: 'stagflation-mechanism',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 6',
-      title: 'Stagflation – the mechanism',
-      lede: 'A supply shock creates the hardest macro trade-off – prices rise while output falls.',
-      ledeStyle: 'plain',
-      tip: { icon: '⚠️', tone: 'amber', text: 'Stagflation is difficult because the cure for one symptom can worsen the other.' },
-
-      flowTitle: 'The stagflation chain',
-      flowEmoji: '\u{1F517}',
-      flow: [
-        { tone: 'rose',   icon: '\u{1F6E2}️', title: 'Supply shock',                   sub: 'OPEC 1973, oil shock, Ukraine energy spike.' },
-        { tone: 'amber',  icon: '\u{1F4C9}',       title: 'SRAS shifts left',               sub: 'firms face higher costs.' },
-        { tone: 'purple', icon: '\u{1F4CA}',       title: 'Output falls and prices rise',   sub: 'the stagflation point.' },
-        { tone: 'blue',   icon: '\u{1F465}',       title: 'Workers demand higher wages',    sub: 'trying to protect real incomes.' },
-        { tone: 'rose',   icon: '\u{1F504}',       title: 'Wage-price spiral',              sub: 'costs rise again and SRAS shifts further left.' }
-      ],
-
-      causes2Label: 'Examples in history',
-      causes2Emoji: '\u{1F4C5}',
-      causes2Cols: 3,
-      causes2: [
-        { tone: 'rose',  icon: '\u{1F4C5}', head: '1973–74', body: 'OPEC quadrupled oil prices – UK inflation peaked at ~25%, unemployment rose past 1m.' },
-        { tone: 'amber', icon: '\u{1F4C5}', head: '1979–80', body: 'Second oil shock – Thatcher’s tight money broke it, but at the cost of 3m+ unemployment.' },
-        { tone: 'blue',  icon: '\u{1F4C5}', head: '2022–23', body: 'Energy price spike post-Ukraine – UK inflation 11.1%, growth near-zero. A milder modern parallel.' }
-      ],
-
-      causes3Label: 'Policy responses',
-      causes3Emoji: '⚖️',
-      causes3Cols: 3,
-      causes3: [
-        { tone: 'blue',  icon: '\u{1F4C9}', head: 'Tighten demand',       body: 'Lower inflation pressure, but recession worsens.<br><span style="color:#1E3A8A;font-weight:700;">Example tools:</span> higher interest rates, fiscal restraint.' },
-        { tone: 'amber', icon: '\u{1F4C8}', head: 'Loosen demand',        body: 'Supports output, but inflation worsens.<br><span style="color:#B45309;font-weight:700;">Example tools:</span> lower interest rates, fiscal stimulus.' },
-        { tone: 'green', icon: '⚙️', head: 'Supply-side response', body: 'Tackles the cause more directly, but slow to work.<br><span style="color:#065F46;font-weight:700;">Example tools:</span> boost energy supply, improve productivity.' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'Demand-side policy is blunt in a stagflation shock – tightening worsens the recession, easing worsens the inflation. The best long-run answer is to ease the supply constraint.'
-      },
-      examEdge: 'State clearly that a <strong>negative supply shock</strong> moves inflation and output in opposite directions – that is why the policy dilemma appears and why there is no ‘good’ demand-side response.'
-    },
-
-    /* ============================================================
-       CARD 5 – Pattern: Side-by-side pair
-       Can supply-side policy escape the trade-offs? Reuses the
-       what-it-can-do vs caveats content from the prior build.
-       ============================================================ */
-    {
-      id: 'supply-side-argument',
+      id: 'structural-trade-offs',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 6',
-      title: 'The supply-side argument',
-      lede: 'Can better productivity and capacity help us escape the usual trade-offs?',
+      title: 'Four more structural trade-offs',
+      lede: 'Beyond Phillips, four more pairs of objectives pull against each other in theory. Each is a structural mechanism — a chain that runs from a policy through one objective to the next. Read each chain left-to-right.',
       ledeStyle: 'plain',
-      tip: { icon: '✅', tone: 'green', text: 'Supply-side policy can ease trade-offs – but it is no magic wand.' },
+      tip: { icon: '\u{1F501}', tone: 'green', text: 'Every macro trade-off is a chain. A policy raises objective X via some mechanism, and the SAME chain reduces objective Y as a side-effect.' },
 
-      pairFirst: true,
-      pairLabel: 'Can we escape the trade-offs?',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'green',
-        label: 'What supply-side policy can do',
-        labelCenter: true,
-        rows: [
-          { icon: '\u{1F3AF}', text: 'Reduce the NAIRU – lower unemployment without higher inflation' },
-          { icon: '\u{1F4C8}', text: 'Shift LRAS right – higher output AND lower inflation' },
-          { icon: '\u{1F465}', text: 'Raise productivity and living standards' },
-          { icon: '⚡',     text: 'Support growth with less inflation pressure' }
-        ],
-        example: { icon: '★', label: 'Example', text: 'East Asian growth miracle – fast productivity growth supported rapid expansion with low inflation and falling inequality.' }
-      },
-      right: {
-        tone: 'amber',
-        label: 'The caveats',
-        labelCenter: true,
-        rows: [
-          { icon: '⏳', text: 'Long time lags, often 10–20 years' },
-          { icon: '\u{1F4B0}', text: 'Upfront fiscal cost' },
-          { icon: '\u{1F464}', text: 'Transition unemployment can rise' },
-          { icon: '\u{1F465}', text: 'Inequality may widen' },
-          { icon: '⛈️', text: 'External shocks can overwhelm reforms' }
-        ],
-        example: { icon: '★', label: 'Example', text: 'UK productivity puzzle – despite decades of reform, weak productivity limited the gains from growth.' }
-      },
+      visualKey: 'macroTradeoffChains',
+      visualLabel: 'Four structural trade-offs',
+      visualEmoji: '\u{2696}',
 
-      causes2Label: 'Verdict pills',
-      causes2Emoji: '\u{1F48A}',
-      causes2Cols: 4,
-      causes2: [
-        { tone: 'blue',   icon: '⏱️', head: 'Timescale',    body: 'Slow – reforms take years to bite.' },
-        { tone: 'rose',   icon: '\u{1F4B0}',     head: 'Cost',         body: 'Often high upfront.' },
-        { tone: 'purple', icon: '\u{1F465}',     head: 'Distribution', body: 'Can be uneven across groups.' },
-        { tone: 'green',  icon: '\u{1F6E1}️', head: 'Best use',   body: 'Combine with short-run demand management.' }
-      ],
+      bottomTip: { tone: 'slate', icon: '\u{1F4DD}', text: '<strong>These are theoretical mechanisms, not historical events.</strong> Real-world examples — 1970s stagflation, the 2008 GFC, 2021&ndash;23 inflation, the UK\'s persistent current-account deficit &mdash; live in the sister topic, <em>Macro Conflicts &amp; Trade-offs</em>.' },
 
-      examEdge: 'Use supply-side reform as the long-run answer, but say what happens in the short run while the reform is still working through – demand management still matters.'
+      examEdge: 'When evaluating any policy, name <em>which</em> trade-off it activates — Phillips, growth&ndash;inflation, growth&ndash;BoP, growth&ndash;environment, or spending&ndash;fiscal. The named mechanism is what scores the marks; the example just illustrates it.'
     },
 
     /* ============================================================
-       CARD 6 – Pattern: Evidence-then-verdict
-       The evidence pile, the four-dimensional A* framework, and the
-       synthesised verdict. Reuses UK macro episodes from the prior build.
+       CARD 6 — Pattern: Evidence-then-verdict
+       Hero: macroConstraintWeb. Radial diagram with 7 nodes and
+       5 tension lines (hover-highlight in CSS). Below: the
+       4-dimensional A* framework + a theory verdict (no examples).
        ============================================================ */
     {
-      id: 'trade-off-verdict',
+      id: 'constraint-web',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 6',
-      title: 'The trade-off verdict',
-      lede: 'Short-run trade-offs are real. Strong macro judgement weighs what improves, what worsens, and for how long.',
+      title: 'Why no objective stands alone',
+      lede: 'The objectives don\'t sit in isolation. Every one of them is connected to at least one other through a structural trade-off mechanism. That\'s why we score the whole scorecard, not just one number — and why every macro essay needs a framework, not a verdict.',
       ledeStyle: 'plain',
-      tip: { icon: '✅', tone: 'green', text: 'Most top answers mix short-run demand management with long-run supply-side reform.' },
+      tip: { icon: '\u{2705}', tone: 'green', text: 'In every macro answer, name the objective being advanced AND the objective being compromised. That pair is the structure of the argument.' },
 
-      causesFirst: true,
-      causesLabel: 'The evidence pile',
-      causesEmoji: '\u{1F4CA}',
-      causesStyle: 'numbered-rows',
-      causes: [
-        { tone: 'rose',   icon: '\u{1F4C9}', head: '2010–12 austerity',             body: 'Tighter fiscal policy reduced the deficit, but growth halved and unemployment peaked at 8.3%. The IMF later said multipliers had been underestimated.' },
-        { tone: 'purple', icon: '\u{1F4C8}', head: '2021–23 inflation surge',        body: 'Inflation jumped to 11.1%, showing the Phillips curve trade-off in real time and forcing the Bank to raise Bank Rate to 5.25%.' },
-        { tone: 'blue',   icon: '\u{1F465}', head: 'Unemployment below NAIRU',           body: 'At 3.7% in 2022, tight labour markets pushed wage growth to 7–8% and added inflation pressure.' },
-        { tone: 'green',  icon: '\u{1F310}', head: 'Persistent current-account deficit', body: 'The UK can sustain deficits of ~4–5% of GDP for a time, but external imbalance remains a recurring constraint on demand.' }
-      ],
-
-      causes3Label: 'The A* framework',
-      causes3Emoji: '⚖️',
-      causes3Cols: 4,
-      causes3Style: 'icon-top',
-      causes3: [
-        { tone: 'rose',  icon: '\u{1F3AF}',     head: 'Objective advanced',    body: 'Which goal does the policy help?' },
-        { tone: 'blue',  icon: '\u{1F6E1}️', head: 'Objective compromised', body: 'Which goal does it strain?' },
-        { tone: 'green', icon: '\u{1F39A}️', head: 'Magnitude',             body: 'How large is each effect?' },
-        { tone: 'amber', icon: '\u{1F4C5}',     head: 'Time horizon',          body: 'Short-run cost, long-run gain?' }
-      ],
-
-      bottomTip: { tone: 'slate', icon: '⚖️', text: 'Judge whether the gain on one objective is worth the loss on another, and whether the trade-off is temporary or persistent.' },
+      visualKey: 'macroConstraintWeb',
+      visualLabel: 'The constraint web + A* framework',
+      visualEmoji: '\u{1F578}',
 
       conclusionPosition: 'end',
       conclusion: {
-        title: 'Final verdict',
-        text: 'Short-run trade-offs are real, especially when inflation, unemployment, growth, the external balance, and fiscal pressures pull in different directions. The best policy mix is usually a blend: <strong>demand management for short-run stabilisation, and supply-side reform for the long run.</strong>'
+        title: 'The theory verdict',
+        text: 'Macroeconomic policy is never the optimisation of one number; it is a choice along a constraint set. A good policy is one whose gains on the advanced objective outweigh its losses on the compromised one, evaluated at the right time horizon. <strong>The next topic shows you how to apply this framework to real UK conflicts.</strong>'
       },
-      examEdge: 'Structure every macro policy essay around trade-offs. Say which objective improves, which worsens, by how much, and over what time horizon – that four-part structure is what lifts a B to an A*.',
+      examEdge: 'Structure every macro policy essay around the four-dimensional framework: <em>advanced × compromised × magnitude × time horizon</em>. The framework is the difference between a B answer and an A*.',
 
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
@@ -332,38 +236,32 @@ window.ECONOS_TOPIC = {
 };
 
 /* ============================================================
-   End-of-Learn-It quiz pool · folded in at v0.4.0
-   These questions used to live at /quiz/<topic>/<set> as a
-   standalone shell. They now ride along with the Learn It data
-   under the same window.ECONOS_QUIZ global. The /quiz/ URL
-   contract is gone; the quiz is the natural finisher to the
-   Learn It journey, so the data lives next to learn cards.
+   End-of-Learn-It quiz pool
    ============================================================ */
-/* ---- quiz-main.js (quiz pool, preserved from former /quiz/ shell) ---- */
 (function () {
 
   window.ECONOS_QUIZ = {
-    title:    'Macroeconomic Objectives & Trade-offs',
+    title:    'Macroeconomic Objectives',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('macroeconomic-objectives-and-trade-offs'),
     backLabel:'Back to Learn It',
-    lede:     '10 questions · ~8 minutes · covers the five objectives, trade-offs, Phillips curve, and NAIRU',
+    lede:     '10 questions · ~8 minutes · covers the seven objectives, the Phillips curve, and the structural trade-offs',
     shortNames: [
-      'Five objectives','Conflict: inflation/unemploy','Phillips curve','NAIRU','Stagflation',
+      'Seven objectives','Phillips trade-off','SRPC vs LRPC','NAIRU','Mechanism: growth–inflation',
       'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
     ],
     questions: [
       {
         type: 'mcq',
-        q:    'Which of the following is NOT typically listed as a macroeconomic objective?',
+        q:    'Which of the following is NOT one of the seven UK macroeconomic objectives in the Edexcel spec?',
         opts: [
           'Low and stable inflation',
           'Low unemployment',
           'Maximising firm profit',
-          'Sustainable economic growth'
+          'Greater income equality'
         ],
         ans:  2,
-        exp:  'The five main macroeconomic objectives are: low inflation, low unemployment, sustainable growth, a satisfactory current account, and fiscal sustainability. Maximising firm profit is a microeconomic business objective, not a macroeconomic goal.'
+        exp:  'The seven Edexcel-A macro objectives are: economic growth; low unemployment; low and stable inflation; balance-of-payments equilibrium on current account; balanced government budget; protection of the environment; greater income equality. Maximising firm profit is a microeconomic business objective.'
       },
       {
         type: 'mcq',
@@ -375,7 +273,19 @@ window.ECONOS_TOPIC = {
           'The trade-off between growth and the environment'
         ],
         ans:  1,
-        exp:  'The original Phillips curve (1958) showed a negative relationship: when unemployment was low, wage demands pushed prices up (higher inflation); when unemployment was high, wage pressure fell (lower inflation). This is the short-run trade-off.'
+        exp:  'The original Phillips curve (1958) showed a negative relationship: lower unemployment came with higher wage inflation. This is the short-run trade-off.'
+      },
+      {
+        type: 'mcq',
+        q:    'According to Friedman and Phelps, the long-run Phillips curve is:',
+        opts: [
+          'Downward sloping, like the SRPC but flatter',
+          'Vertical at the natural rate of unemployment',
+          'Horizontal at the inflation target',
+          'Upward sloping in periods of stagflation'
+        ],
+        ans:  1,
+        exp:  'The LRPC is vertical at the NAIRU. Attempts to keep unemployment below the NAIRU produce ever-accelerating inflation rather than a lasting reduction in joblessness.'
       },
       {
         type: 'mcq',
@@ -387,19 +297,7 @@ window.ECONOS_TOPIC = {
           'Nominal Adjusted Interest Rate and Unemployment'
         ],
         ans:  1,
-        exp:  'NAIRU is the Non-Accelerating Inflation Rate of Unemployment – the level of unemployment at which inflation is stable. Below NAIRU, inflation accelerates; above it, inflation falls. It corresponds to the vertical long-run Phillips curve.'
-      },
-      {
-        type: 'mcq',
-        q:    'A potential conflict between macroeconomic objectives occurs when:',
-        opts: [
-          'A policy to reduce inflation simultaneously reduces unemployment',
-          'A policy to boost growth also improves the current account',
-          'Policies to reduce unemployment by boosting demand may also raise inflation',
-          'Lower interest rates reduce both inflation and unemployment'
-        ],
-        ans:  2,
-        exp:  'Expanding demand (e.g., lower interest rates) can reduce unemployment but also push up prices – this is the classic inflation-unemployment trade-off. More growth can also worsen the current account as imports rise.'
+        exp:  'NAIRU is the Non-Accelerating Inflation Rate of Unemployment — the unemployment rate at which inflation is stable. It corresponds to the vertical long-run Phillips curve.'
       },
       {
         type: 'numeric_input',
@@ -412,39 +310,39 @@ window.ECONOS_TOPIC = {
       },
       {
         type: 'categorise',
-        q:    'Categorise each policy as more likely to achieve lower inflation or lower unemployment.',
-        categories: ['Reduces inflation','Reduces unemployment'],
+        q:    'For each policy, identify which objective it most directly advances.',
+        categories: ['Lowers inflation','Lowers unemployment'],
         items: [
-          { item: 'Raising interest rates',                   category: 'Reduces inflation' },
-          { item: 'Expanding vocational training programmes', category: 'Reduces unemployment' },
-          { item: 'Cutting government spending (austerity)',  category: 'Reduces inflation' },
-          { item: 'Increasing job centre effectiveness',      category: 'Reduces unemployment' },
-          { item: 'Tightening monetary policy',               category: 'Reduces inflation' },
-          { item: 'Subsidising apprenticeships',              category: 'Reduces unemployment' }
+          { item: 'Raising interest rates',                   category: 'Lowers inflation' },
+          { item: 'Expanding vocational training programmes', category: 'Lowers unemployment' },
+          { item: 'Cutting government spending (austerity)',  category: 'Lowers inflation' },
+          { item: 'Active labour market policies',            category: 'Lowers unemployment' },
+          { item: 'Tightening monetary policy',               category: 'Lowers inflation' },
+          { item: 'Subsidising apprenticeships',              category: 'Lowers unemployment' }
         ]
       },
       {
         type: 'cause_effect',
-        q:    'Match each macroeconomic cause to its effect on objectives.',
+        q:    'Match each policy cause to the trade-off mechanism it activates.',
         pairs: [
-          { cause: 'Government stimulates AD to cut unemployment',  effect: 'Inflation may rise – trade-off activated' },
-          { cause: 'Strong growth boosts imports',                  effect: 'Current account deficit may widen' },
-          { cause: 'Central bank raises interest rates',            effect: 'Inflation falls but growth and employment may suffer' },
-          { cause: 'Supply-side policies improve productivity',     effect: 'Growth rises without inflation – objectives aligned' },
-          { cause: 'Negative supply shock hits the economy',        effect: 'Stagflation: higher inflation and higher unemployment' },
-          { cause: 'Large fiscal deficit persists',                 effect: 'Government debt rises; fiscal sustainability threatened' }
+          { cause: 'AD↑ near full capacity',                 effect: 'P↑ — growth–inflation trade-off activated' },
+          { cause: 'Higher domestic income',                 effect: 'Imports↑ — growth–BoP trade-off activated' },
+          { cause: 'Output↑ without decoupling',             effect: 'Emissions↑ — growth–environment trade-off activated' },
+          { cause: 'G↑ without higher taxes',                effect: 'Debt/GDP↑ — spending–fiscal trade-off activated' },
+          { cause: 'U pushed below NAIRU',                   effect: 'Wage demands↑ → SRPC shifts up' },
+          { cause: 'Productivity gains',                     effect: 'LRAS shifts right — multiple objectives advanced' }
         ]
       },
       {
         type: 'odd_one_out',
-        q:    'Which is the odd one out?',
-        opts: ['Phillips curve','NAIRU','Laffer curve','Stagflation'],
+        q:    'Which is the odd one out among the four "supporting" objectives (those that don\'t appear as a quarterly headline number)?',
+        opts: ['Balance of payments','Fiscal sustainability','Inflation','Greater income equality'],
         ans:  2,
-        exp:  'The Phillips curve, NAIRU, and stagflation are all directly related to the inflation-unemployment relationship. The Laffer curve is a fiscal concept about the relationship between tax rates and tax revenue – not an inflation/employment-and-unemployment concept.'
+        exp:  'Inflation is a headline objective reported in monthly CPI data — it is one of the "headline three". The other three options are all constraint objectives operating on slower time horizons.'
       },
       {
         type: 'data_table',
-        q:    'Use the table to identify which country best achieves multiple macroeconomic objectives.',
+        q:    'Use the table to identify which country best balances multiple macroeconomic objectives.',
         tableHeaders: ['Country','Inflation (%)','Unemployment (%)','GDP growth (%)','Current account (% GDP)'],
         tableData: [
           ['Alpia','2.1','4.2','2.5','-1.2'],
@@ -454,18 +352,18 @@ window.ECONOS_TOPIC = {
         ],
         opts: ['Alpia','Bortia','Centri','Dorus'],
         ans:  2,
-        exp:  'Centri has near-target inflation (1.8%), low unemployment (3.9%), solid growth (3%), and a small current account surplus. It best achieves multiple macro objectives simultaneously.'
+        exp:  'Centri sits closest to target on every gauge: near-target inflation, low unemployment, solid growth, and a small current-account surplus. It best balances the scorecard.'
       },
       {
         type: 'match_pairs',
-        q:    'Match each macroeconomic concept to its correct description.',
+        q:    'Match each concept to its correct description.',
         pairs: [
           { a: 'Phillips curve',      b: 'Short-run negative trade-off between inflation and unemployment' },
           { a: 'NAIRU',               b: 'Unemployment rate at which inflation is stable' },
-          { a: 'Stagflation',         b: 'Rising inflation occurring simultaneously with rising unemployment' },
-          { a: 'Current account',     b: 'Record of trade in goods, services, and income transfers with the rest of the world' },
-          { a: 'Fiscal sustainability',b: 'Government managing debt and deficit without endangering long-run finances' },
-          { a: 'Supply-side policy',  b: 'Measures that improve productive capacity and shift LRAS rightward' }
+          { a: 'Adaptive expectations', b: 'Workers and firms build recent inflation into wage setting' },
+          { a: 'Current account',     b: 'Record of trade in goods, services, and income with the rest of the world' },
+          { a: 'Gini coefficient',    b: 'A measure of income inequality from 0 (perfect equality) to 1' },
+          { a: 'Net zero by 2050',    b: 'The UK\'s target for balancing greenhouse-gas emissions and removals' }
         ]
       }
     ]

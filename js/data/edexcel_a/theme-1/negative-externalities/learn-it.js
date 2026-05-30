@@ -53,7 +53,7 @@ window.ECONOS_TOPIC = {
       workedExample: {
         label: 'Worked example: the steel plant',
         emoji: '🏭',
-        heroImage: 'assets/steel-hero.png',
+        heroImage: '/assets/steel-hero.png',
         cards: [
           {
             tone: 'green', icon: '💼',

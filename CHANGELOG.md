@@ -6,7 +6,7 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
-## 0.22.0 — 2026-05-30
+## 0.24.0 — 2026-05-30
 
 ### Diagram relocation — every diagram now lives in the diagram library
 
@@ -32,7 +32,7 @@ preserved byte-for-byte.
   three shells; `CACHE_NAME` → `econos-v123`. lint/unit/build green;
   moved-diagram card + chrome screenshot-verified unchanged.
 
-## 0.21.0 — 2026-05-30
+## 0.23.0 — 2026-05-30
 
 ### Diagram system — data-driven generators + `diagram` block (additive)
 
@@ -55,7 +55,7 @@ icons.js diagrams into a single library next.
 - Wired into the three shells; `sw.js` precache updated, `CACHE_NAME` → `econos-v122`.
   `js/data/_fixtures/diagrams-demo.js` exercises every generator (screenshot-verified).
 
-## 0.20.0 — 2026-05-30
+## 0.22.0 — 2026-05-30
 
 ### Renderer Phase 1 — block component library (17 new blocks)
 
@@ -78,7 +78,7 @@ exercises them all. Known follow-up polish: proportional sizing for
 rippleCascade bars / opposingFlows arrows, targetGauge marker clamp on narrow
 cards, satelliteDiagram orbit layout.
 
-## 0.19.0 — 2026-05-30
+## 0.21.0 — 2026-05-30
 
 ### Renderer Phase 0 — composition-as-data block foundation
 
@@ -102,6 +102,166 @@ image-faithful renderer overhaul. No existing card changes behaviour.
 - Dev-only (`?dev=1` or `localStorage.econosDev='1'`) overflow detector and
   `EconosDebug.inspectCard()`. `docs/RENDER_BLOCKS.md` documents the schema;
   `js/data/_fixtures/blocks-demo.js` is a local-only demo fixture.
+## 0.20.0 — 2026-05-30
+
+### Macro Conflicts & Trade-offs (2.6.4) — full 6-card build from ChatGPT mockups
+
+Sister topic to *Macroeconomic Objectives* (2.6.1) — applied case studies
+of the five real UK trade-offs, ending in the four-dimensional A* verdict
+framework. Built tightly to the six ChatGPT mockups Roger shared:
+
+- **C1 The conflict lens** — new `conflictLensMap` SVG: five tone-coded
+  trade-off tiles arranged around a central "WHEN OBJECTIVES COLLIDE"
+  lozenge with dashed arrows pointing inward. Each tile names the
+  trade-off + its historical UK case. Closes with a 3-step "Conflict
+  analysis" flow (trade-off · policy choice · legacy).
+- **C2 Diagnose the trade-off** — uses the existing `diagnoseRows` block
+  with a new `reveal: true` mode. Verdict boxes are blurred + faded by
+  default; a tone-coloured `?` button on each row toggles a hidden CSS
+  checkbox and unblurs the verdict. CSS-only, CSP-safe.
+- **C3 1970s stagflation** — new `stagflation5Step` flow icon (five
+  vertical tone-tinted tiles with numbered badges + circular icons +
+  arrows), plus `stagflationTimeline` icon (3 dated markers on a dashed
+  axis), plus a 3-tile `causes3` row of demand-side responses. Required
+  one engine addition: `visualKey2`/`visualLabel2`/`visualEmoji2`/
+  `visualCaption2` fields on `ad-interactive` to host a second hero.
+- **C4 The 2021–23 inflation surge** — big `inflationSurge2021` hero:
+  twin panels (shock blue / response amber) with a UK CPI line chart
+  peaking 11.1% Oct 2022 + a Bank Rate step chart climbing 0.1% → 5.25%
+  from Dec 2021 to Aug 2023. Embeds the "trade-off in real time"
+  Phillips-style view + 3 stat callouts at the bottom of the same icon.
+- **C5 The supply-side escape route** — uses the pair block (with `rows`
+  + `example` extensions added earlier) for the "can do / caveats"
+  comparison, with East Asian growth miracle + UK productivity puzzle
+  case examples. Closes with a 4-tile "at a glance" verdict row.
+- **C6 The A* verdict on any policy conflict** — 4-row evidence pile
+  (numbered-rows), four-dimensional judgement framework tiles
+  (icon-top), and a How-to-structure-the-judgement guide.
+
+Engine additions reusable across the library: `diagnoseRowsReveal`
+mode (click-to-reveal verdicts), `visualKey2` (secondary hero visual).
+
+Cache → `econos-v126`.
+
+## 0.19.1 — 2026-05-30
+
+### Macroeconomic Objectives — final best-of superset
+
+Iterated the six heroes into a "best of both" superset, combining the
+solo creative pass with the ChatGPT mockups Roger shared after:
+
+- **C1 cockpit** went from dark slate to a **lighter white dashboard**
+  with the same 7-gauge story; added the **"5 STRUCTURAL TRADE-OFFS WE
+  WILL EXPLORE" preview flow** at the bottom (ChatGPT's move).
+- **C2 headline three** switched from vertical character cards to
+  **horizontal numbered rows** with a 4-column data grid (target /
+  measure / UK current / why). Kept the personality voice quotes as
+  italic subtitles in the head column — the scannability of the table
+  format with the character of the original.
+- **C3 compass rose** kept (the genuinely-stronger design here).
+- **C4 Phillips** redrawn with **both SRPC₁ and SRPC₂ visible by default**
+  and **A → B → C labelled clearly** (ChatGPT's clarity); the PLAY
+  toggle now animates the path opacity rather than swapping curves.
+- **C5 trade-offs** swapped see-saws for **3-step mechanism flow chains**
+  (ChatGPT's directness). Hero key renamed `macroSeesaws` →
+  `macroTradeoffChains`.
+- **C6 constraint web** gained **numbered circles (1–7) on each node**
+  to tie back to the C1 scorecard numbering.
+
+Cache → `econos-v122`.
+
+## 0.19.0 — 2026-05-30
+
+### Macroeconomic Objectives (2.6.1) — split, retitled, rebuilt creatively
+
+Edexcel A spec separates 2.6.1 (the seven possible objectives) from 2.6.4
+(conflicts and trade-offs). The prior "Macroeconomic Objectives &
+Trade-offs" build mashed both into one topic. Split per the spec: this
+topic is now **theory only**, the sister topic
+`macro-conflicts-and-trade-offs` (2.6.4) holds the applied UK case
+studies (1970s stagflation, 2008 GFC, 2021–23 inflation surge — to be
+built next).
+
+Six creative cards, unified by a "policymaker's dashboard" metaphor:
+
+- **C1 The cockpit** (`macroCockpit`) — dark dashboard SVG, seven UK
+  macro gauges arranged like a pilot's control panel. Primary 3
+  (inflation, unemployment, growth) + secondary 4 (BoP, fiscal,
+  environment, equality). Some needles in target zone, some flagged
+  "! ABOVE ZONE". Adds the **7th equality objective** that was missing.
+- **C2 The headline three** (`macroHeadlineCards`) — three vertical
+  "trading card" portraits, each anthropomorphised ("I'm noisy and
+  impatient"), with target / measure / current / mechanism mini-chain.
+- **C3 The four constraints** (`macroConstraintCompass`) — compass rose
+  visual pivot from C2. Four cardinal directions; green safe-zone arcs;
+  two needles visibly outside zone (fiscal, equality). Numbered-rows
+  detail below.
+- **C4 The Phillips workstation** (`macroPhillipsWorkstation`) — Phillips
+  curve on graph-paper "lab notebook"; two views with a CSS-only PLAY
+  toggle that auto-cycles the A→B→C path. Pure theory; no 1970s
+  stagflation view (lives in 2.6.4).
+- **C5 Four more structural trade-offs** (`macroSeesaws`) — four
+  see-saws with the trade-off mechanism as a sliding weight; CSS-only
+  flip toggle per see-saw demonstrates reverse direction.
+- **C6 Why no objective stands alone** (`macroConstraintWeb`) — radial
+  SVG with seven nodes; five hoverable tension lines highlight the
+  trade-off pairs; closing four-dimensional A* framework + theory
+  verdict.
+
+Topic title shortened to "Macroeconomic Objectives". Quiz pool rewritten
+to match (10 questions on the seven objectives, Phillips theory, and
+trade-off mechanisms — no historical cases). Cache → `econos-v122`.
+
+## 0.18.2 — 2026-05-30
+
+### Fix: economist portraits + steel/vaccination heroes were 404ing
+
+When topic URLs moved to the path-based form
+(`/edexcel_a/<theme>/<topic>/learn-it/`), every relative-path PNG broke
+silently — the browser resolves `src="assets/economists/smith.png"`
+against the topic URL, not the document root, so every image fetch went
+to `…/<topic>/learn-it/assets/economists/smith.png` and 404'd.
+
+Fixed by making all PNG sources absolute (`/assets/...`):
+
+- 16 economist portraits in `js/icons.js` (`economistAdamSmith`,
+  `economistMarshall`, `economistPigou`, `economistHayek`,
+  `economistKahneman`, `economistOstrom`, `economistRicardo`,
+  `economistSchumpeter`, `economistGoldin`, `economistKeynes`,
+  `economistCoyle`, `economistSen`, `economistFriedman`,
+  `economistDuflo`, `economistMazzucato`, `economistPhillips`).
+- `negative-externalities` `heroImage` (`steel-hero.png`).
+- `positive-externalities` `heroImage` (`vaccination-hero.png`).
+
+Verified live: `/assets/economists/marshall.png`, `coyle.png`,
+`steel-hero.png`, `vaccination-hero.png` all return 200; portraits and
+heroes render in the cards that use them. Cache → `econos-v121`.
+
+## 0.18.1 — 2026-05-30
+
+### Quiz engine: fix every quiz question being unanswerable (CSP regression)
+
+The Learn It / Link It / Land It HTML shells ship a strict Content
+Security Policy (`script-src 'self'`, no `unsafe-inline`), but
+`quiz-engine.js` was built around 33 inline `onclick=""` attributes (plus
+one `oninput` and one `onkeydown` for the numeric input). Every click and
+keystroke was silently blocked by the browser's CSP enforcement — every
+quiz type was unanswerable: MCQ options, "Sort into groups" item/bucket
+assignment, numeric input, match-pairs, rank, cause-effect, the lot.
+
+Fix: a single `rebindInlineHandlers(node)` helper plus a `MutationObserver`
+watching `#quiz-root`. Every time a node is inserted into the quiz tree
+(`innerHTML`, `outerHTML`, append — any path), the helper parses each
+inline `on*` attribute (`onclick`, `oninput`, `onkeydown`, `onchange`,
+`onkeyup`, `onkeypress`), strips it, and re-attaches as a proper
+`addEventListener`. The `this` and `event` tokens are forwarded to the
+handler exactly as the inline form would have provided them.
+
+One-place fix; no question-renderer code touched. Verified end-to-end on
+the macroeconomic-objectives quiz: MCQ × 4, numeric input, **Sort into
+groups (categorise)**, all advance with correct feedback.
+
+Cache → `econos-v120`.
 
 ## 0.18.0 — 2026-05-30
 

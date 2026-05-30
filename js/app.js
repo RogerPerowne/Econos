@@ -1235,6 +1235,25 @@
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (c.causesStyle === 'numbered-rows') {
+          /* Top-position numbered-rows: same horizontal-row layout as the
+             causesFirst branch (line 4544 area) — numbered circle + icon +
+             title + body, tone-coloured left bar. */
+          const cycle = ['green','blue','purple','amber','rose','slate'];
+          const tone = pt || PATTERN_TONES[cycle[i % cycle.length]];
+          const iconHtml = item.icon
+            ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+            : '';
+          return `
+            <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+              <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+              ${iconHtml}
+              <div style="flex:1;min-width:0;">
+                <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
+                <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+              </div>
+            </div>`;
+        }
         if (c.causesStyle === 'icon-top' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
@@ -2052,6 +2071,25 @@
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (c.causesStyle === 'numbered-rows') {
+          /* Top-position numbered-rows: same horizontal-row layout as the
+             causesFirst branch (line 4544 area) — numbered circle + icon +
+             title + body, tone-coloured left bar. */
+          const cycle = ['green','blue','purple','amber','rose','slate'];
+          const tone = pt || PATTERN_TONES[cycle[i % cycle.length]];
+          const iconHtml = item.icon
+            ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+            : '';
+          return `
+            <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+              <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+              ${iconHtml}
+              <div style="flex:1;min-width:0;">
+                <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
+                <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+              </div>
+            </div>`;
+        }
         if (c.causesStyle === 'icon-top' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
@@ -4480,7 +4518,48 @@
         }).join('');
       })() : ''}
 
+      ${c.causesPosition === 'top' && c.causes && c.causes.length ? (() => {
+        /* Early causes for ad-interactive — when c.causesPosition === 'top',
+           render the causes block here (before visualKey) so the topic can
+           introduce WHAT each item is before the hero visualises them.
+           Supports numbered-rows and numbered styles. */
+        const items = c.causes;
+        const numberedRowsMode = c.causesStyle === 'numbered-rows';
+        const label = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Overview');
+        if (numberedRowsMode) {
+          const cycle = ['green','blue','purple','amber','rose','slate'];
+          const rows = items.map((item, i) => {
+            const tone = PATTERN_TONES[item.tone || cycle[i % cycle.length]];
+            const iconHtml = item.icon
+              ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+              : '';
+            return `
+              <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+                ${iconHtml}
+                <div style="flex:1;min-width:0;">
+                  <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
+                  <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+                </div>
+              </div>`;
+          }).join('');
+          return `${label}<div style="display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 22px;">${rows}</div>`;
+        }
+        /* Fall-through for non-numbered-rows styles: a simple tile grid. */
+        const tiles = items.map((item, i) => {
+          const tone = PATTERN_TONES[item.tone || ['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `<div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;"><div style="font-size:24px;line-height:1;">${item.icon || ''}</div><div style="font-weight:800;font-size:15px;color:${tone.label};">${item.head}</div></div>
+            <div style="font-size:13px;color:#0B1426;line-height:1.55;">${item.body}</div>
+          </div>`;
+        }).join('');
+        const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : `repeat(${Math.min(items.length, 3)},1fr)`;
+        return `${label}<div style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`;
+      })() : ''}
+
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
+
+      ${c.visualKey2 && I[c.visualKey2] ? `${c.visualLabel2 ? genSecLabel(c.visualEmoji2 || '📊', c.visualLabel2) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey2]}</div>${c.visualCaption2 ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption2}</div>` : ''}` : ''}
 
       ${buildInteractiveDiagramHtml(c)}
 
@@ -4489,30 +4568,54 @@
       ${c.diagnoseRows && c.diagnoseRows.length ? (() => {
         const dr = c.diagnoseRows;
         const label = c.diagnoseRowsLabel === null ? '' : genSecLabel(c.diagnoseRowsEmoji || '⚖️', c.diagnoseRowsLabel || 'Classify the case');
-        const rows = dr.map(row => {
+        /* Optional "predict then reveal" mode: when `reveal: true` is set,
+           verdicts are hidden behind a CSS-only checkbox toggle. The "?"
+           button is a <label> that flips a hidden checkbox; CSS rules show
+           the verdict when checked. Fully CSP-safe. */
+        const reveal = c.diagnoseRowsReveal === true;
+        const dridBase = (c.id || 'dr').replace(/[^a-z0-9]/gi, '_');
+        const styleBlock = reveal ? `
+          <style>
+            .dr-reveal-cb { position:absolute; opacity:0; pointer-events:none; }
+            .dr-verdict { transition: opacity 0.3s, filter 0.3s; }
+            .dr-reveal-cb:not(:checked) ~ .dr-row .dr-verdict { opacity: 0.18; filter: blur(2px); pointer-events:none; }
+            .dr-q { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:9px; border:1.5px solid; font-size:14px; font-weight:800; cursor:pointer; user-select:none; transition: all 0.2s; flex-shrink:0; }
+            .dr-q:hover { transform:scale(1.05); }
+            .dr-reveal-cb:checked ~ .dr-row .dr-q { background:#0B1426; color:#fff !important; border-color:#0B1426 !important; }
+            .dr-reveal-cb:checked ~ .dr-row .dr-q::after { content:'✓'; font-size:16px; }
+            .dr-reveal-cb:checked ~ .dr-row .dr-q-mark { display:none; }
+          </style>` : '';
+        const rows = dr.map((row, i) => {
           const t = PATTERN_TONES[row.tone] || PATTERN_TONES.blue;
           const pills = (row.pills || []).map(p => {
             const pt = PATTERN_TONES[p.tone] || t;
             const arrow = p.dir === 'up' ? '↑' : (p.dir === 'down' ? '↓' : '');
             return `<span style="display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;background:${pt.bg};border:1px solid ${pt.border};color:${pt.label};font-size:12px;font-weight:800;line-height:1.2;white-space:nowrap;">${p.label}${arrow ? `<span style="font-size:13px;">${arrow}</span>` : ''}</span>`;
           }).join('');
+          const drid = `${dridBase}-dr${i}`;
+          const cbHtml = reveal ? `<input type="checkbox" id="${drid}" class="dr-reveal-cb">` : '';
+          const qButton = reveal
+            ? `<label for="${drid}" class="dr-q" style="background:${t.bg};border-color:${t.border};color:${t.label};"><span class="dr-q-mark">?</span></label>`
+            : '';
           return `
-            <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:14px;align-items:stretch;margin-bottom:12px;">
-              <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:16px 18px;">
-                <div style="width:46px;height:46px;border-radius:50%;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${row.icon || ''}</div>
+            ${cbHtml}
+            <div class="dr-row" style="display:grid;grid-template-columns:1.05fr 1fr;gap:14px;align-items:stretch;margin-bottom:12px;">
+              <div style="display:flex;align-items:flex-start;gap:14px;background:${reveal ? t.bg : '#fff'};border:1px solid ${reveal ? t.border : '#E7E7EA'};border-radius:14px;padding:16px 18px;">
+                <div style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;">${row.label}</div>
                 <div style="flex:1;min-width:0;">
-                  <div style="font-size:14px;color:#0B1426;line-height:1.5;"><span style="font-weight:800;color:${t.label};">${row.label}.</span> ${row.case}</div>
-                  <div style="font-size:12.5px;color:#64748B;font-style:italic;margin-top:8px;">${row.prompt || 'What is the trade-off?'}</div>
+                  <div style="font-size:14px;color:#0B1426;line-height:1.5;${row.title ? 'font-weight:800;margin-bottom:6px;' : ''}">${row.title || ''}</div>
+                  <div style="font-size:13px;color:#0B1426;line-height:1.55;">${row.case}</div>
+                  ${row.prompt || reveal ? `<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;"><div style="font-size:12.5px;color:#64748B;font-style:italic;flex:1;">${row.prompt || 'What is the trade-off?'}</div>${qButton}</div>` : ''}
                 </div>
               </div>
-              <div style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;">
+              <div class="dr-verdict" style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;">
                 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="font-size:16px;line-height:1;">${row.verdictIcon || '⚖️'}</span><span style="font-size:12px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.06em;">Verdict</span></div>
                 <div style="font-size:13px;color:#0B1426;line-height:1.55;margin-bottom:12px;">${row.verdict}</div>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;">${pills}</div>
+                <div style="display:flex;flex-direction:column;gap:6px;margin-top:auto;">${pills}</div>
               </div>
             </div>`;
         }).join('');
-        return `${label}<div style="margin-bottom:22px;">${rows}</div>`;
+        return `${label}${styleBlock}<div style="margin-bottom:22px;">${rows}</div>`;
       })() : ''}
 
       ${hasSteps ? `
@@ -4813,7 +4916,7 @@
         </div>`;
       })() : ''}
 
-      ${!c.causesFirst && !c.causesLast && c.causes && c.causes.length ? (() => {
+      ${!c.causesFirst && !c.causesLast && c.causesPosition !== 'top' && c.causes && c.causes.length ? (() => {
         const items = c.causes;
         const tiles = items.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];

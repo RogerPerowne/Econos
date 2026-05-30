@@ -5,7 +5,7 @@
      C2 Spectrum / regime grid  — the headline three (character sheets)
      C3 Spectrum / regime grid  — the four constraints (compass)
      C4 Interactive multi-state — Phillips workstation (2 views, theory)
-     C5 Comparison              — the see-saws (4 trade-offs)
+     C5 Comparison              — flow-chain mechanisms (4 trade-offs)
      C6 Evidence-then-verdict   — the constraint web + A* framework
    Stagflation / historical conflicts live in the SISTER topic
    `macro-conflicts-and-trade-offs` (spec 2.6.4) — DO NOT add
@@ -23,7 +23,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroMacroObjectives',
     summary: 'Governments pursue a whole scorecard of objectives — stable inflation, low unemployment, sustainable growth, a healthy external balance, sound public finances, environmental sustainability, and greater income equality. They cannot all be maximised at once, and the structural trade-offs between them organise half of every macro essay.',
-    doInThis: 'Six cards: the cockpit (all seven objectives at a glance); the headline three (inflation, unemployment, growth); the four supporting constraints (BoP, fiscal, environment, equality); the Phillips curve as the prototypical trade-off; four more structural see-saws; and the constraint web that ties them all together.',
+    doInThis: 'Six cards: the cockpit (all seven objectives at a glance); the headline three (inflation, unemployment, growth); the four supporting constraints (BoP, fiscal, environment, equality); the Phillips curve as the prototypical trade-off; four more structural trade-offs; and the constraint web that ties them all together.',
     outcomes: [
       'Name and explain all seven UK macro objectives with target and measure',
       'Read a UK macro scorecard at a glance',
@@ -181,27 +181,27 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 5 — Pattern: Comparison (4 see-saw tiles)
-       Hero: macroSeesaws. Four structural trade-offs visualised
-       as see-saws with the mechanism as a sliding weight. Tap
-       'flip' on any see-saw to demonstrate the reverse effect.
+       CARD 5 — Pattern: Comparison (4 flow-chain tiles)
+       Hero: macroTradeoffChains. Four structural trade-offs visualised
+       as 3-step mechanism flow chains. Tap
+       left-to-right to read each chain through the mechanism.
        ============================================================ */
     {
-      id: 'structural-seesaws',
+      id: 'structural-trade-offs',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 6',
       title: 'Four more structural trade-offs',
-      lede: 'Beyond Phillips, four more pairs of objectives pull against each other in theory. Each is a structural mechanism — a chain that runs in both directions. Tap any see-saw to flip the chain and see the reverse effect.',
+      lede: 'Beyond Phillips, four more pairs of objectives pull against each other in theory. Each is a structural mechanism — a chain that runs from a policy through one objective to the next. Read each chain left-to-right.',
       ledeStyle: 'plain',
       tip: { icon: '\u{1F501}', tone: 'green', text: 'Every macro trade-off is a chain. A policy raises objective X via some mechanism, and the SAME chain reduces objective Y as a side-effect.' },
 
-      visualKey: 'macroSeesaws',
+      visualKey: 'macroTradeoffChains',
       visualLabel: 'Four structural trade-offs',
       visualEmoji: '\u{2696}',
 
       bottomTip: { tone: 'slate', icon: '\u{1F4DD}', text: '<strong>These are theoretical mechanisms, not historical events.</strong> Real-world examples — 1970s stagflation, the 2008 GFC, 2021&ndash;23 inflation, the UK\'s persistent current-account deficit &mdash; live in the sister topic, <em>Macro Conflicts &amp; Trade-offs</em>.' },
 
-      examEdge: 'When evaluating any policy, name <em>which</em> see-saw it activates — Phillips, growth&ndash;inflation, growth&ndash;BoP, growth&ndash;environment, or spending&ndash;fiscal. The named mechanism is what scores the marks; the example just illustrates it.'
+      examEdge: 'When evaluating any policy, name <em>which</em> trade-off it activates — Phillips, growth&ndash;inflation, growth&ndash;BoP, growth&ndash;environment, or spending&ndash;fiscal. The named mechanism is what scores the marks; the example just illustrates it.'
     },
 
     /* ============================================================
@@ -326,10 +326,10 @@ window.ECONOS_TOPIC = {
         type: 'cause_effect',
         q:    'Match each policy cause to the trade-off mechanism it activates.',
         pairs: [
-          { cause: 'AD↑ near full capacity',                 effect: 'P↑ — growth–inflation see-saw activated' },
-          { cause: 'Higher domestic income',                 effect: 'Imports↑ — growth–BoP see-saw activated' },
-          { cause: 'Output↑ without decoupling',             effect: 'Emissions↑ — growth–environment see-saw activated' },
-          { cause: 'G↑ without higher taxes',                effect: 'Debt/GDP↑ — spending–fiscal see-saw activated' },
+          { cause: 'AD↑ near full capacity',                 effect: 'P↑ — growth–inflation trade-off activated' },
+          { cause: 'Higher domestic income',                 effect: 'Imports↑ — growth–BoP trade-off activated' },
+          { cause: 'Output↑ without decoupling',             effect: 'Emissions↑ — growth–environment trade-off activated' },
+          { cause: 'G↑ without higher taxes',                effect: 'Debt/GDP↑ — spending–fiscal trade-off activated' },
           { cause: 'U pushed below NAIRU',                   effect: 'Wage demands↑ → SRPC shifts up' },
           { cause: 'Productivity gains',                     effect: 'LRAS shifts right — multiple objectives advanced' }
         ]

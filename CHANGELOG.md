@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.19.1 — 2026-05-30
+
+### Macroeconomic Objectives — final best-of superset
+
+Iterated the six heroes into a "best of both" superset, combining the
+solo creative pass with the ChatGPT mockups Roger shared after:
+
+- **C1 cockpit** went from dark slate to a **lighter white dashboard**
+  with the same 7-gauge story; added the **"5 STRUCTURAL TRADE-OFFS WE
+  WILL EXPLORE" preview flow** at the bottom (ChatGPT's move).
+- **C2 headline three** switched from vertical character cards to
+  **horizontal numbered rows** with a 4-column data grid (target /
+  measure / UK current / why). Kept the personality voice quotes as
+  italic subtitles in the head column — the scannability of the table
+  format with the character of the original.
+- **C3 compass rose** kept (the genuinely-stronger design here).
+- **C4 Phillips** redrawn with **both SRPC₁ and SRPC₂ visible by default**
+  and **A → B → C labelled clearly** (ChatGPT's clarity); the PLAY
+  toggle now animates the path opacity rather than swapping curves.
+- **C5 trade-offs** swapped see-saws for **3-step mechanism flow chains**
+  (ChatGPT's directness). Hero key renamed `macroSeesaws` →
+  `macroTradeoffChains`.
+- **C6 constraint web** gained **numbered circles (1–7) on each node**
+  to tie back to the C1 scorecard numbering.
+
+Cache → `econos-v122`.
+
 ## 0.19.0 — 2026-05-30
 
 ### Macroeconomic Objectives (2.6.1) — split, retitled, rebuilt creatively

@@ -14991,22 +14991,22 @@ window.ECONOS_ICONS = {
   /* ─── Economist portraits ─────────────────────────────────────────────── */
   /* Line-art PNGs in assets/economists/ with #FFFBEB background matching the
      amber economist insight box. */
-  economistAdamSmith:      '<img src="assets/economists/smith.png"      alt="Adam Smith"        style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistMarshall:       '<img src="assets/economists/marshall.png"   alt="Alfred Marshall"   style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistPigou:          '<img src="assets/economists/pigou.png"      alt="Arthur Pigou"      style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistHayek:          '<img src="assets/economists/hayek.png"      alt="Friedrich Hayek"   style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistDanielKahneman: '<img src="assets/economists/kahneman.png"   alt="Daniel Kahneman"   style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistElinorOstrom:   '<img src="assets/economists/ostrom.png"     alt="Elinor Ostrom"     style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistRicardo:        '<img src="assets/economists/ricardo.png"    alt="David Ricardo"     style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistSchumpeter:     '<img src="assets/economists/schumpeter.png" alt="Joseph Schumpeter" style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistGoldin:         '<img src="assets/economists/goldin.png"     alt="Claudia Goldin"    style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistKeynes:         '<img src="assets/economists/keynes.png"     alt="John Maynard Keynes" style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistCoyle:          '<img src="assets/economists/coyle.png"      alt="Diane Coyle"       style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistSen:            '<img src="assets/economists/sen.png"        alt="Amartya Sen"       style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistFriedman:       '<img src="assets/economists/friedman.png"   alt="Milton Friedman"   style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistDuflo:          '<img src="assets/economists/duflo.png"      alt="Esther Duflo"      style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistMazzucato:      '<img src="assets/economists/mazzucato.png"  alt="Mariana Mazzucato" style="max-width:100%;max-height:100%;object-fit:contain;">',
-  economistPhillips:       '<img src="assets/economists/phillips.png"   alt="William Phillips"  style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistAdamSmith:      '<img src="/assets/economists/smith.png"      alt="Adam Smith"        style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistMarshall:       '<img src="/assets/economists/marshall.png"   alt="Alfred Marshall"   style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistPigou:          '<img src="/assets/economists/pigou.png"      alt="Arthur Pigou"      style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistHayek:          '<img src="/assets/economists/hayek.png"      alt="Friedrich Hayek"   style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistDanielKahneman: '<img src="/assets/economists/kahneman.png"   alt="Daniel Kahneman"   style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistElinorOstrom:   '<img src="/assets/economists/ostrom.png"     alt="Elinor Ostrom"     style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistRicardo:        '<img src="/assets/economists/ricardo.png"    alt="David Ricardo"     style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistSchumpeter:     '<img src="/assets/economists/schumpeter.png" alt="Joseph Schumpeter" style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistGoldin:         '<img src="/assets/economists/goldin.png"     alt="Claudia Goldin"    style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistKeynes:         '<img src="/assets/economists/keynes.png"     alt="John Maynard Keynes" style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistCoyle:          '<img src="/assets/economists/coyle.png"      alt="Diane Coyle"       style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistSen:            '<img src="/assets/economists/sen.png"        alt="Amartya Sen"       style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistFriedman:       '<img src="/assets/economists/friedman.png"   alt="Milton Friedman"   style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistDuflo:          '<img src="/assets/economists/duflo.png"      alt="Esther Duflo"      style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistMazzucato:      '<img src="/assets/economists/mazzucato.png"  alt="Mariana Mazzucato" style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistPhillips:       '<img src="/assets/economists/phillips.png"   alt="William Phillips"  style="max-width:100%;max-height:100%;object-fit:contain;">',
 
   taxSubsidyFourPanels: `
     <svg viewBox="0 0 590 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

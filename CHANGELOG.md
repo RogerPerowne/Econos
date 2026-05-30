@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.4 — 2026-05-30
+
+### Impact of Economic Growth · Card 2 footnote
+
+Added a second annotation line under the £ bar chart explaining the Top-1%
+bar reflects wages **plus capital gains** (equity, dividends, housing
+wealth), while the bottom decile is wage-only. Makes the £12,000+ figure
+defensible at a glance without having to open the analysis panel.
+ViewBox extended to 720×372 to accommodate. Cache → `econos-v112`.
+
 ## 0.17.3 — 2026-05-30
 
 ### Impact of Economic Growth · Card 2 redesign

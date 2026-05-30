@@ -291,7 +291,8 @@ The renderer at `renderCardAdInteractive` (`js/app.js` around line 4321) reads t
 | `pairFirst`     | Boolean — render the pair above the flow/causes                   |
 | `pairLabel`     | Pair heading; if it contains "vs" the renderer adds a VS badge    |
 | `pairEmoji`     | Emoji for the pair heading                                        |
-| `left` / `right`| `{ tone, icon, iconStyle, label, sub, text, points, checks }`     |
+| `left` / `right`| `{ tone, icon, iconStyle, label, sub, labelCenter, text, points, checks, rows, example }` — `rows: [{icon, text}]` gives per-item icon rows with dividers; `example: {icon, label, text}` adds a bottom example box; `labelCenter: true` centres the header (used on the supply-side pair, Macro Objectives card 5) |
+| `diagnoseRows`  | `[{ label, tone, icon, case, prompt?, verdict, verdictIcon?, pills: [{label, dir:'up'\|'down', tone}] }, ...]` — predict-then-reveal rows: case on the left, a Verdict box with coloured ↑/↓ pills on the right. With `diagnoseRowsLabel`/`diagnoseRowsEmoji`. Renders right after the pair slot. Pattern 6 inside `ad-interactive` when you also need a `flow`/`bottomTip` (the standalone `diagnose` template can't host those). Canonical: Macro Objectives card 3 |
 | `causesLabel`   | Heading above the `causes` grid                                   |
 | `causesEmoji`   | Emoji for the causes heading                                      |
 | `causesFirst`   | Boolean — render `causes` before flow (default: after)            |

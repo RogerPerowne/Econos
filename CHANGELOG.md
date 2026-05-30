@@ -6,6 +6,45 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.18.0 — 2026-05-30
+
+### Macroeconomic Objectives & Trade-offs — full 6-card rebuild from mockups
+
+Rebuilt the topic end-to-end against the ChatGPT design mockups, one
+storytelling pattern per card, folding in the strong UK-data content
+from the prior build:
+
+- **Card 1 · The macro objectives scorecard** (*Decompose a diagram*).
+  New `macroObjectivesScorecard` HTML+SVG hero — six objective tiles in
+  a 3×2 grid. Tiles 1-3 (inflation 2.8%, unemployment 5.0%, real GDP
+  growth 0.6%) carry radial gauges with a green target-zone arc and a
+  black needle pointing to the UK's current value; tiles 4-6 (BoP −2.4%,
+  fiscal 93.8%, environmental "Mixed") carry an icon + headline value.
+  Closing 5-tile trade-off row previews the rest of the topic. Visually
+  rhymes with the growth scorecard.
+- **Card 2 · The Phillips curve** (*Interactive multi-state*). Reuses the
+  `phillipsInteractive` SVG (3 views) with a closing NAIRU / adaptive-
+  expectations / trade-off-breaks-down tile row.
+- **Card 3 · Diagnose the trade-off** (*Predict-then-reveal*). New
+  reusable `diagnoseRows` block in the `ad-interactive` renderer — case
+  on the left, a Verdict box with coloured ↑/↓ pills on the right — plus
+  a fast-diagnosis `flow` checklist. Three real UK scenarios (BoE rate
+  hike, fiscal stimulus + CA deficit, sub-NAIRU unemployment).
+- **Card 4 · Stagflation — the mechanism** (*Sequential flow chain*).
+  Five-step chain + examples-in-history row + the three policy responses
+  with example tools.
+- **Card 5 · The supply-side argument** (*Side-by-side pair*). Pair
+  renderer extended to support per-item icon `rows`, a bottom `example`
+  box, and `labelCenter`. Verdict-pills summary row.
+- **Card 6 · The trade-off verdict** (*Evidence-then-verdict*). Evidence
+  pile (numbered-rows), the four-dimensional A* framework (icon-top),
+  and the synthesised final verdict.
+
+Engine additions (all reusable): `diagnoseRows` block; pair side
+`rows` / `example` / `labelCenter`; `icon-top` style on the
+top-position causes renderer (shipped in 0.17.10). Quiz pool preserved.
+Cache → `econos-v119`.
+
 ## 0.17.9 — 2026-05-30
 
 ### Routing cleanup: bare shell URL = cover, drop legacy redirects

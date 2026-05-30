@@ -4397,9 +4397,14 @@
         const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
         const inner = side.text
           ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
+          : side.rows && side.rows.length
+            ? `<div style="display:flex;flex-direction:column;">${side.rows.map((r, ri) => `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;${ri < side.rows.length - 1 ? `border-bottom:1px solid ${tone.border};` : ''}"><div style="width:34px;height:34px;border-radius:50%;background:${tone.bg};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;flex-shrink:0;">${r.icon || ''}</div><div style="font-size:13.5px;color:#0B1426;line-height:1.45;">${r.text}</div></div>`).join('')}</div>`
           : side.checks && side.checks.length
             ? `<div style="display:flex;flex-direction:column;gap:8px;">${side.checks.map(ch => `<div style="font-size:13px;color:#0B1426;line-height:1.5;"><span style="font-weight:700;color:${tone.label};">${ch.term}:</span> ${ch.body}</div>`).join('')}</div>`
             : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}</ul>`;
+        const exampleHtml = side.example
+          ? `<div style="display:flex;align-items:flex-start;gap:10px;margin-top:14px;background:#fff;border:1px solid ${tone.border};border-radius:10px;padding:11px 13px;"><div style="width:26px;height:26px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;flex-shrink:0;">${side.example.icon || '★'}</div><div style="font-size:12.5px;color:#0B1426;line-height:1.5;"><span style="font-weight:800;color:${tone.label};">${side.example.label || 'Example'}:</span> ${side.example.text}</div></div>`
+          : '';
         const iconHtml = side.icon
           ? (side.iconStyle === 'circle'
               ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
@@ -4408,13 +4413,15 @@
         const labelHtml = side.sub
           ? `<div style="min-width:0;"><div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;line-height:1.25;">${side.label}</div><div style="color:${tone.label};font-size:12.5px;opacity:0.85;line-height:1.35;margin-top:2px;">${side.sub}</div></div>`
           : `<div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>`;
+        const headAlign = side.labelCenter ? 'justify-content:center;text-align:center;' : '';
         return `
           <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;${headAlign}">
               ${iconHtml}
               ${labelHtml}
             </div>
             ${inner}
+            ${exampleHtml}
           </div>`;
       };
       const label = c.pairLabel === null ? '' : genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
@@ -4478,6 +4485,35 @@
       ${buildInteractiveDiagramHtml(c)}
 
       ${c.pairFirst ? pairHtml : ''}
+
+      ${c.diagnoseRows && c.diagnoseRows.length ? (() => {
+        const dr = c.diagnoseRows;
+        const label = c.diagnoseRowsLabel === null ? '' : genSecLabel(c.diagnoseRowsEmoji || '⚖️', c.diagnoseRowsLabel || 'Classify the case');
+        const rows = dr.map(row => {
+          const t = PATTERN_TONES[row.tone] || PATTERN_TONES.blue;
+          const pills = (row.pills || []).map(p => {
+            const pt = PATTERN_TONES[p.tone] || t;
+            const arrow = p.dir === 'up' ? '↑' : (p.dir === 'down' ? '↓' : '');
+            return `<span style="display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;background:${pt.bg};border:1px solid ${pt.border};color:${pt.label};font-size:12px;font-weight:800;line-height:1.2;white-space:nowrap;">${p.label}${arrow ? `<span style="font-size:13px;">${arrow}</span>` : ''}</span>`;
+          }).join('');
+          return `
+            <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:14px;align-items:stretch;margin-bottom:12px;">
+              <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:16px 18px;">
+                <div style="width:46px;height:46px;border-radius:50%;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${row.icon || ''}</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:14px;color:#0B1426;line-height:1.5;"><span style="font-weight:800;color:${t.label};">${row.label}.</span> ${row.case}</div>
+                  <div style="font-size:12.5px;color:#64748B;font-style:italic;margin-top:8px;">${row.prompt || 'What is the trade-off?'}</div>
+                </div>
+              </div>
+              <div style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="font-size:16px;line-height:1;">${row.verdictIcon || '⚖️'}</span><span style="font-size:12px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.06em;">Verdict</span></div>
+                <div style="font-size:13px;color:#0B1426;line-height:1.55;margin-bottom:12px;">${row.verdict}</div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;">${pills}</div>
+              </div>
+            </div>`;
+        }).join('');
+        return `${label}<div style="margin-bottom:22px;">${rows}</div>`;
+      })() : ''}
 
       ${hasSteps ? `
       <div class="ad-interactive">

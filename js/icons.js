@@ -17472,4 +17472,151 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* Macroeconomic Objectives (Theme 2 · 2.6.1) — Card 1 hero scorecard.
+     Six objective tiles in a 3×2 grid. Tiles 1-3 (inflation, unemployment,
+     real GDP growth) carry a radial gauge with a green target-zone arc and
+     a black needle pointing to the UK's current value; tiles 4-6 (BoP,
+     fiscal, environmental) carry a plain icon + headline value. Gauge
+     geometry: cx=70, cy=58, r=44, value→angle θ=180−180·(v−min)/(max−min),
+     point = (70+44cosθ, 58−44sinθ). Visually rhymes with growthScorecard.
+     line-height:1.5 because the engine wraps visualKey HTML in line-height:0. */
+  macroObjectivesScorecard: `
+    <div class="macro-scorecard" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .macro-scorecard .mos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+        @media (max-width: 640px) { .macro-scorecard .mos-grid { grid-template-columns:1fr; } }
+      </style>
+      <div class="mos-grid">
+
+        <!-- 1 · Inflation (rose) · gauge 0–6%, target zone 1.6–2.4, needle 2.8 -->
+        <div style="background:#fff;border:1.5px solid #FDA4AF;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:4px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:#E11D48;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+            <div><div style="font-weight:800;color:#9F1239;font-size:14px;line-height:1.2;">Inflation</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: around 2% CPI</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin:2px 0;">
+            <svg viewBox="0 0 140 80" width="116" style="flex-shrink:0;">
+              <path d="M26 58 A44 44 0 0 1 114 58" stroke="#E2E8F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <path d="M40.56 25.3 A44 44 0 0 1 56.4 16.15" stroke="#16A34A" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <line x1="70" y1="58" x2="65.4" y2="14.24" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="70" cy="58" r="3.4" fill="#0B1426"/>
+              <text x="24" y="74" font-size="9" fill="#64748B" text-anchor="middle">0%</text>
+              <text x="48" y="11" font-size="9" fill="#16A34A" font-weight="700" text-anchor="middle">2%</text>
+              <text x="116" y="74" font-size="9" fill="#64748B" text-anchor="middle">6%</text>
+            </svg>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
+              <div style="font-size:21px;font-weight:800;color:#9F1239;line-height:1.1;">2.8%</div>
+              <div style="font-size:9px;color:#64748B;">April 2026</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#E11D48;">●</span> After peaking at 11.1% in Oct 2022</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:#FFF1F2;border-radius:8px;padding:6px 10px;margin-top:7px;"><span style="font-size:10px;color:#9F1239;font-weight:700;">🏛️ Bank Rate context</span><span style="font-size:13px;font-weight:800;color:#9F1239;">3.75%</span></div>
+        </div>
+
+        <!-- 2 · Unemployment (blue) · gauge 0–10%, target 4–5, needle 5.0 -->
+        <div style="background:#fff;border:1.5px solid #93C5FD;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:4px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:#2563EB;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+            <div><div style="font-weight:800;color:#1E3A8A;font-size:14px;line-height:1.2;">Unemployment</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: around 4–5%</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin:2px 0;">
+            <svg viewBox="0 0 140 80" width="116" style="flex-shrink:0;">
+              <path d="M26 58 A44 44 0 0 1 114 58" stroke="#E2E8F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <path d="M56.4 16.15 A44 44 0 0 1 70 14" stroke="#16A34A" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <line x1="70" y1="58" x2="70" y2="14" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="70" cy="58" r="3.4" fill="#0B1426"/>
+              <text x="24" y="74" font-size="9" fill="#64748B" text-anchor="middle">0%</text>
+              <text x="63" y="11" font-size="9" fill="#16A34A" font-weight="700" text-anchor="middle">4–5%</text>
+              <text x="116" y="74" font-size="9" fill="#64748B" text-anchor="middle">10%</text>
+            </svg>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
+              <div style="font-size:21px;font-weight:800;color:#1E3A8A;line-height:1.1;">5.0%</div>
+              <div style="font-size:9px;color:#64748B;">Jan–Mar 2026</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#2563EB;">●</span> At the top of the target range</div>
+        </div>
+
+        <!-- 3 · Real GDP growth (green) · gauge -2..5%, target 2–2.5, needle 0.6 -->
+        <div style="background:#fff;border:1.5px solid #86EFAC;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:4px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:#16A34A;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+            <div><div style="font-weight:800;color:#065F46;font-size:14px;line-height:1.2;">Real GDP growth</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: around 2–2.5% p.a.</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin:2px 0;">
+            <svg viewBox="0 0 140 80" width="116" style="flex-shrink:0;">
+              <path d="M26 58 A44 44 0 0 1 114 58" stroke="#E2E8F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <path d="M79.77 15.1 A44 44 0 0 1 89.1 18.4" stroke="#16A34A" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <line x1="70" y1="58" x2="52.7" y2="17.55" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="70" cy="58" r="3.4" fill="#0B1426"/>
+              <text x="22" y="74" font-size="9" fill="#64748B" text-anchor="middle">−2%</text>
+              <text x="92" y="11" font-size="9" fill="#16A34A" font-weight="700" text-anchor="middle">2–2.5%</text>
+              <text x="116" y="74" font-size="9" fill="#64748B" text-anchor="middle">5%</text>
+            </svg>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
+              <div style="font-size:21px;font-weight:800;color:#065F46;line-height:1.1;">0.6%</div>
+              <div style="font-size:9px;color:#64748B;">Q1 2026 (q/q)</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#16A34A;">●</span> Annual growth ~1.4% in 2025</div>
+        </div>
+
+        <!-- 4 · Sustainable balance of payments (purple) -->
+        <div style="background:#fff;border:1.5px solid #C4B5FD;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:6px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:#8B5CF6;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+            <div><div style="font-weight:800;color:#5B21B6;font-size:14px;line-height:1.2;">Sustainable balance of payments</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: sustainable current-account position</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#F5F3FF;display:inline-flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🌐</div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
+              <div style="font-size:21px;font-weight:800;color:#5B21B6;line-height:1.1;">−2.4%</div>
+              <div style="font-size:9px;color:#64748B;">Q4 2025 (% of GDP)</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#8B5CF6;">●</span> Persistent current-account deficit</div>
+        </div>
+
+        <!-- 5 · Fiscal sustainability (amber) -->
+        <div style="background:#fff;border:1.5px solid #FCD34D;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:6px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:#F59E0B;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+            <div><div style="font-weight:800;color:#B45309;font-size:14px;line-height:1.2;">Fiscal sustainability</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: debt on a stable or falling path</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#FFFBEB;display:inline-flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🏛️</div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
+              <div style="font-size:21px;font-weight:800;color:#B45309;line-height:1.1;">93.8%</div>
+              <div style="font-size:9px;color:#64748B;">March 2026 (% of GDP)</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#F59E0B;">●</span> Public sector net debt</div>
+        </div>
+
+        <!-- 6 · Environmental sustainability (teal) -->
+        <div style="background:#fff;border:1.5px solid #5EEAD4;border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:6px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:#0D9488;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">6</div>
+            <div><div style="font-weight:800;color:#115E59;font-size:14px;line-height:1.2;">Environmental sustainability</div><div style="font-size:10.5px;color:#475569;margin-top:1px;">Target: progress compatible with net zero</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#F0FDFA;display:inline-flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🌿</div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:9px;color:#64748B;text-transform:uppercase;letter-spacing:0.04em;">UK current</div>
+              <div style="font-size:19px;font-weight:800;color:#115E59;line-height:1.1;">Mixed</div>
+              <div style="font-size:9px;color:#64748B;">Progress mixed</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #EEF1F4;margin-top:5px;padding-top:6px;font-size:10.5px;color:#475569;line-height:1.4;"><span style="color:#0D9488;">●</span> Net zero by 2050 target</div>
+        </div>
+
+      </div>
+    </div>
+  `,
+
 };

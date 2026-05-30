@@ -1,0 +1,131 @@
+/* css/blocks/econ-diagram.css
+   ────────────────────────────────────────────────────────────────────────
+   Styles for the declarative interactive econ-diagram block. The toggle
+   is implemented via radio inputs + CSS sibling selectors (no JS), with
+   the per-instance rules emitted inline by the block renderer (the IDs
+   are unique per render). This file holds the layout + tab visuals.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.econ-blocks .econ-id-root {
+  background: #fff;
+  border: 1px solid var(--econ-block-line);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(11, 20, 38, 0.04);
+  margin: 0;
+  overflow: hidden;
+}
+
+.econ-blocks .econ-id-root .ed-radio {
+  height: 0;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.econ-blocks .ed-frame {
+  background: #fff;
+  padding: 24px 24px 8px;
+}
+
+.econ-blocks .ed-svg {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+/* All view layers hidden by default; the radio :checked rule (emitted
+   inline per block) reveals exactly one. */
+.econ-blocks .ed-view {
+  display: none;
+}
+
+/* Tabs strip ────────────────────────────────────────────────────────────── */
+.econ-blocks .ed-tabs {
+  background: #F8FAFC;
+  border-top: 1px solid var(--econ-block-line);
+  display: grid;
+  gap: 8px;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  padding: 12px 16px;
+}
+
+.econ-blocks .ed-tab {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--econ-block-line);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(11, 20, 38, 0.04);
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.82rem;
+  font-weight: 700;
+  gap: 8px;
+  line-height: 1.25;
+  min-width: 0;
+  padding: 10px 12px;
+  transition: background 0.18s, border-color 0.18s, box-shadow 0.18s;
+  user-select: none;
+}
+
+.econ-blocks .ed-tab:hover {
+  border-color: #94A3B8;
+}
+
+.econ-blocks .ed-tab-num {
+  align-items: center;
+  background: #E2E8F0;
+  border-radius: 999px;
+  color: #475569;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  height: 22px;
+  justify-content: center;
+  width: 22px;
+}
+
+.econ-blocks .ed-tab-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Analysis panels (optional) ────────────────────────────────────────────── */
+.econ-blocks .ed-analysis {
+  border-top: 1px solid var(--econ-block-line);
+  padding: 16px 20px;
+}
+
+.econ-blocks .ed-panel {
+  display: none;
+}
+
+.econ-blocks .ed-panel__label {
+  color: #475569;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.econ-blocks .ed-panel__body {
+  color: var(--econ-block-navy);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+/* Mobile: tabs stack vertically. */
+@media (max-width: 640px) {
+  .econ-blocks .ed-tabs {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+  }
+}

@@ -266,44 +266,15 @@
             err(bLabel + ': unknown block type "' + block.type + '".');
           }
 
-          // 5a-bis. Required-field check per block type. Catches the common
-          // mistake of writing `{ type: 'mechanismChain' }` without `steps`,
-          // or `{ type: 'pair' }` without `left`/`right`. The map below
-          // lists the *minimum* fields the renderer needs; optional fields
-          // are not enforced.
-          var REQUIRED_FIELDS = {
-            sectionHeader: ['label'],
-            calloutStrip: ['text'],
-            tip: ['text'],
-            heroVisual: ['svgKey'],
-            grid: ['children'],
-            tile: ['head'],
-            bigIdea: ['text'],
-            examEdge: ['text'],
-            warning: ['text'],
-            versusRows: ['rows'],
-            decisionMatrix: ['rows'],
-            trafficLight: ['rows'],
-            glossaryRow: ['rows'],
-            mechanismChain: ['steps'],
-            stepChain: ['steps'],
-            pair: ['left', 'right'],
-            rippleCascade: ['rounds'],
-            opposingFlows: ['left', 'right'],
-            timeline: ['events'],
-            spectrum: ['bands'],
-            caseStudies: ['cases'],
-            satelliteDiagram: ['centre', 'satellites'],
-            policyToolkit: ['tools'],
-            metricCard: ['label', 'value'],
-            targetGauge: ['actual', 'target'],
-            equationHero: ['equation'],
-            workedExampleStrip: ['steps'],
-            factChip: ['label']
-          };
-          var required = REQUIRED_FIELDS[block.type];
-          if (required) {
-            required.forEach(function (field) {
+          // 5a-bis. Required-field check per block type. Reads from the single
+          // source of truth: window.ECONOS_BLOCK_SCHEMAS (js/blocks/_schema.js).
+          // The same schema registry will drive the future form editor and the
+          // doc generator; this validator is its first consumer.
+          var schema = (typeof window !== 'undefined' && window.ECONOS_BLOCK_SCHEMAS)
+            ? window.ECONOS_BLOCK_SCHEMAS[block.type]
+            : null;
+          if (schema && Array.isArray(schema.required)) {
+            schema.required.forEach(function (field) {
               var value = block[field];
               var missing = value === undefined || value === null ||
                 (Array.isArray(value) && value.length === 0) ||

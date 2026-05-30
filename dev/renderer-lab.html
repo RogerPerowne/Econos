@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/blocks/flow.css">
   <link rel="stylesheet" href="/css/blocks/structure.css">
   <link rel="stylesheet" href="/css/blocks/data.css">
+  <link rel="stylesheet" href="/css/blocks/econ-diagram.css">
 
   <style>
     /* ── Lab page chrome — not part of the card system ── */
@@ -216,6 +217,7 @@
     <li><a href="#section-diagrams-firm">10. Diagram — Cost Curves &amp; Market Structure</a></li>
     <li><a href="#section-diagrams-labour">11. Diagram — Labour Market</a></li>
     <li><a href="#section-diagrams-macro">12. Diagram — Macro Misc (Phillips, J-Curve, 45°, Growth)</a></li>
+    <li><a href="#section-blocks-econ-diagram">12b. econDiagram — declarative interactive (data-driven)</a></li>
     <li><a href="#section-fixture-demo">13. Fixture — ECONOS_BLOCKS_DEMO_CARD</a></li>
     <li><a href="#section-fixture-phase1">14. Fixture — ECONOS_BLOCKS_PHASE1_CARD</a></li>
     <li><a href="#section-fixture-diagrams">15. Fixture — ECONOS_DIAGRAMS_DEMO_CARD</a></li>
@@ -240,7 +242,7 @@
 <div class="lab-section" id="section-blocks-compare">
   <div class="lab-section-title">Section 2 — Compare blocks (js/blocks/compare.js)</div>
   <p class="lab-section-subtitle">
-    versusRows · decisionMatrix · trafficLight · glossaryRow
+    versusRows · decisionMatrix · trafficLight · glossaryRow · pair
   </p>
   <div id="render-blocks-compare" class="lab-card-panel"></div>
 </div>
@@ -251,7 +253,7 @@
 <div class="lab-section" id="section-blocks-flow">
   <div class="lab-section-title">Section 3 — Flow blocks (js/blocks/flow.js)</div>
   <p class="lab-section-subtitle">
-    mechanismChain · rippleCascade · opposingFlows · timeline
+    mechanismChain · rippleCascade · opposingFlows · timeline · stepChain
   </p>
   <div id="render-blocks-flow" class="lab-card-panel"></div>
 </div>
@@ -356,6 +358,17 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 12b: DECLARATIVE INTERACTIVE DIAGRAM (econDiagram)    -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-blocks-econ-diagram">
+  <div class="lab-section-title">Section 12b — econDiagram (declarative, data-driven interactive)</div>
+  <p class="lab-section-subtitle">
+    Author writes view shifts; engine computes line intercepts, equilibrium intersections, label placement, and CSS-only step toggle. chart: 'adas'.
+  </p>
+  <div id="render-blocks-econ-diagram" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
 <!-- SECTION 13: FIXTURE — BLOCKS DEMO                             -->
 <!-- ══════════════════════════════════════════════════════════════ -->
 <div class="lab-section" id="section-fixture-demo">
@@ -423,6 +436,7 @@
 <!-- ══════════════════════════════════════════════════════════════ -->
 
 <script src="/js/icons.js"></script>
+<script src="/js/blocks/_schema.js"></script>
 <script src="/js/render-blocks.js"></script>
 <script src="/js/blocks/compare.js"></script>
 <script src="/js/blocks/flow.js"></script>
@@ -437,6 +451,7 @@
 <script src="/js/diagrams/generators/macro-misc.js"></script>
 <script src="/js/diagrams/index.js"></script>
 <script src="/js/blocks/diagram.js"></script>
+<script src="/js/blocks/econ-diagram.js"></script>
 <script src="/js/data/_fixtures/blocks-demo.js"></script>
 <script src="/js/data/_fixtures/blocks-phase1.js"></script>
 <script src="/js/data/_fixtures/diagrams-demo.js"></script>
@@ -617,6 +632,21 @@
         { term: 'MPM',  definition: 'Marginal propensity to import — the fraction spent on imports from additional income.' },
       ],
     },
+
+    { type: 'sectionHeader', icon: '5', label: 'pair — two-column side-by-side with VS badge' },
+    {
+      type: 'pair',
+      vsLabel: 'vs',
+      left:  { tone: 'green', icon: '+', head: 'Inflation low',  body: 'Real wages preserved; planning is easier and saving feels rewarded.' },
+      right: { tone: 'rose',  icon: '-', head: 'Inflation high', body: 'Purchasing power erodes; menu and shoe-leather costs bite; uncertainty rises.' },
+    },
+
+    { type: 'sectionHeader', icon: '6', label: 'pair — no VS badge, side by side' },
+    {
+      type: 'pair',
+      left:  { tone: 'blue', icon: 'i', head: 'Short-run', body: 'Wages and prices are sticky; AD does most of the work.' },
+      right: { tone: 'purple', icon: 'i', head: 'Long-run', body: 'Wages and prices adjust; LRAS sets the level.' },
+    },
   ], document.getElementById('render-blocks-compare'));
 
   /* ── SECTION 3: Flow blocks ───────────────────────────────────────────── */
@@ -677,6 +707,28 @@
         { year: '2013', title: 'Recovery',                tone: 'green',  body: 'UK GDP returns to pre-crisis level; unemployment begins sustained fall.' },
         { year: '2021', title: 'Post-COVID rebound',      tone: 'blue',   body: 'GDP grows 7.5%; supply-chain bottlenecks drive cost-push inflation.' },
         { year: '2022', title: 'Rate hiking cycle',       tone: 'purple', body: 'Bank Rate raised from 0.1% to 5.25% as CPI hits 11.1%.' },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '6', label: 'stepChain — 5-step mechanism (auto-numbered, tones auto-cycle)' },
+    {
+      type: 'stepChain',
+      steps: [
+        { head: 'Supply shock',       body: 'OPEC cuts supply and oil prices jump.' },
+        { head: 'SRAS shifts left',   body: 'Higher input costs hit firms.' },
+        { head: 'Output falls',       body: 'GDP slows; unemployment rises.' },
+        { head: 'Workers demand wages', body: 'Trying to protect real pay.' },
+        { head: 'Wage–price spiral',  body: 'Inflation expectations ratchet; SRPC shifts up.' },
+      ],
+    },
+
+    { type: 'sectionHeader', icon: '7', label: 'stepChain — 3 steps with explicit tones + icons' },
+    {
+      type: 'stepChain',
+      steps: [
+        { tone: 'blue',  icon: 'i', head: 'Diagnose',   body: 'Identify the conflict between objectives.' },
+        { tone: 'amber', icon: '!', head: 'Choose',     body: 'Pick the policy lever that best fits the situation.' },
+        { tone: 'green', icon: '+', head: 'Evaluate',   body: 'Weigh the gain against the sacrifice and time horizon.' },
       ],
     },
   ], document.getElementById('render-blocks-flow'));
@@ -947,6 +999,31 @@
       appendDiagramSpec(el, item.label, item.spec);
     });
   }());
+
+  /* ── SECTION 12b: econDiagram (declarative interactive) ───────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'econDiagram — Conflicts C4 AD/AS (data-driven, replaces hand-rolled SVG)' },
+    {
+      type: 'econDiagram',
+      chart: 'adas',
+      views: [
+        { label: 'Baseline · 2020',        shifts: {},                       analysis: 'Post-COVID baseline: AD recovering, supply normalising, inflation expectations anchored at 2%.' },
+        { label: 'AD↑ rebound · 2021', shifts: { AD: 80 },              analysis: 'Demand bounces back first. With supply still intact, output and prices both rise — healthy reflation.' },
+        { label: 'SRAS↓ shock · 2022', shifts: { AD: 80, SRAS: -160 }, analysis: 'Energy + Ukraine hit supply. The new equilibrium sits at lower output, sharply higher P — textbook stagflationary supply shock.' },
+        { label: 'BoE response · 2022–23', shifts: { AD: -20, SRAS: -160 }, analysis: 'Tighter policy drags AD back into the still-weakened supply side. Inflation cools, but lower Y is the price.' }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'econDiagram — minimal: AD shift only (no analysis)' },
+    {
+      type: 'econDiagram',
+      chart: 'adas',
+      views: [
+        { label: 'Before', shifts: {} },
+        { label: 'AD↑',  shifts: { AD: 100 } }
+      ]
+    }
+  ], document.getElementById('render-blocks-econ-diagram'));
 
   /* ── SECTION 13–15: Fixtures ──────────────────────────────────────────── */
   if (window.ECONOS_BLOCKS_DEMO_CARD) {

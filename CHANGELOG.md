@@ -6,6 +6,75 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.19.1 — 2026-05-30
+
+### Macroeconomic Objectives — final best-of superset
+
+Iterated the six heroes into a "best of both" superset, combining the
+solo creative pass with the ChatGPT mockups Roger shared after:
+
+- **C1 cockpit** went from dark slate to a **lighter white dashboard**
+  with the same 7-gauge story; added the **"5 STRUCTURAL TRADE-OFFS WE
+  WILL EXPLORE" preview flow** at the bottom (ChatGPT's move).
+- **C2 headline three** switched from vertical character cards to
+  **horizontal numbered rows** with a 4-column data grid (target /
+  measure / UK current / why). Kept the personality voice quotes as
+  italic subtitles in the head column — the scannability of the table
+  format with the character of the original.
+- **C3 compass rose** kept (the genuinely-stronger design here).
+- **C4 Phillips** redrawn with **both SRPC₁ and SRPC₂ visible by default**
+  and **A → B → C labelled clearly** (ChatGPT's clarity); the PLAY
+  toggle now animates the path opacity rather than swapping curves.
+- **C5 trade-offs** swapped see-saws for **3-step mechanism flow chains**
+  (ChatGPT's directness). Hero key renamed `macroSeesaws` →
+  `macroTradeoffChains`.
+- **C6 constraint web** gained **numbered circles (1–7) on each node**
+  to tie back to the C1 scorecard numbering.
+
+Cache → `econos-v122`.
+
+## 0.19.0 — 2026-05-30
+
+### Macroeconomic Objectives (2.6.1) — split, retitled, rebuilt creatively
+
+Edexcel A spec separates 2.6.1 (the seven possible objectives) from 2.6.4
+(conflicts and trade-offs). The prior "Macroeconomic Objectives &
+Trade-offs" build mashed both into one topic. Split per the spec: this
+topic is now **theory only**, the sister topic
+`macro-conflicts-and-trade-offs` (2.6.4) holds the applied UK case
+studies (1970s stagflation, 2008 GFC, 2021–23 inflation surge — to be
+built next).
+
+Six creative cards, unified by a "policymaker's dashboard" metaphor:
+
+- **C1 The cockpit** (`macroCockpit`) — dark dashboard SVG, seven UK
+  macro gauges arranged like a pilot's control panel. Primary 3
+  (inflation, unemployment, growth) + secondary 4 (BoP, fiscal,
+  environment, equality). Some needles in target zone, some flagged
+  "! ABOVE ZONE". Adds the **7th equality objective** that was missing.
+- **C2 The headline three** (`macroHeadlineCards`) — three vertical
+  "trading card" portraits, each anthropomorphised ("I'm noisy and
+  impatient"), with target / measure / current / mechanism mini-chain.
+- **C3 The four constraints** (`macroConstraintCompass`) — compass rose
+  visual pivot from C2. Four cardinal directions; green safe-zone arcs;
+  two needles visibly outside zone (fiscal, equality). Numbered-rows
+  detail below.
+- **C4 The Phillips workstation** (`macroPhillipsWorkstation`) — Phillips
+  curve on graph-paper "lab notebook"; two views with a CSS-only PLAY
+  toggle that auto-cycles the A→B→C path. Pure theory; no 1970s
+  stagflation view (lives in 2.6.4).
+- **C5 Four more structural trade-offs** (`macroSeesaws`) — four
+  see-saws with the trade-off mechanism as a sliding weight; CSS-only
+  flip toggle per see-saw demonstrates reverse direction.
+- **C6 Why no objective stands alone** (`macroConstraintWeb`) — radial
+  SVG with seven nodes; five hoverable tension lines highlight the
+  trade-off pairs; closing four-dimensional A* framework + theory
+  verdict.
+
+Topic title shortened to "Macroeconomic Objectives". Quiz pool rewritten
+to match (10 questions on the seven objectives, Phillips theory, and
+trade-off mechanisms — no historical cases). Cache → `econos-v122`.
+
 ## 0.18.2 — 2026-05-30
 
 ### Fix: economist portraits + steel/vaccination heroes were 404ing

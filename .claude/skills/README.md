@@ -10,6 +10,9 @@ This plugin bundles five skills that together cover the full lifecycle of econos
 | **`econos-new-topic`**         | The `data-topic.js` shape, the URL contract (no new HTML), and registration in `js/topics.js`.       |
 | **`econos-card-template`**     | The card template catalogue. Picks the right template (default `ad-interactive`) and lists every field on it. |
 | **`econos-visual-diagram`**    | The diagram system: generator-first decision tree (`window.ECONOS_DIAGRAMS` via `'diagram'` block), one-off statics in `js/diagrams/static/`, hand-authored SVG recipes. Tone palette, viewBox conventions, spec-first workflow. |
+| **`econos-mockup-analyse`**    | FIRST step for a mockup image: decompose it into a structured build plan (regions→blocks, charts→econDiagram families, confidence scores, corrections, unresolved gaps) before writing any data. |
+| **`econos-match-mockup`**      | The build-and-converge loop: render the card in the Studio Editor with the mockup overlay + live similarity score, fix the largest deltas first, iterate to a faithful match with no back-and-forth. |
+| **`econos-econ-diagram`**      | The `econDiagram` picker + authoring reference: which of the 16 chart families for a given diagram, and the full view schema (shifts / points / arrows / areas / brackets / show). Never hand-roll econ-chart SVG. |
 | **`run-econos`**               | Headless Playwright driver that launches the static SPA in this container and screenshots a card by index. |
 | **`econos-ship-changes`**      | The shipping flow: backup `main` first, push, PR, squash-merge, dev-branch reset. The single source of truth for any git operation that ends on `main`. |
 

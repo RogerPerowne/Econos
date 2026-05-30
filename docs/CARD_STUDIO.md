@@ -72,6 +72,8 @@ Avoid: "the lab", "the block thing", "the dev page". Those are accurate but they
 
 - `docs/RENDER_BLOCKS.md` — full block catalogue (one entry per block type)
 - `docs/DIAGRAM_LIBRARY.md` — diagram-generator reference
+- `docs/STRUCTURAL_GRAPHICS.md` — named layout blocks (hubSpoke, matrix, quadrant, pyramid, funnel, cycle, venn, richTable, flowChart)
+- `docs/DATA_CHARTS.md` — data-driven charts (bar, column, line, pie/donut) via the `dataChart` block
 - `docs/ADDING_NEW_BLOCKS.md` — workflow for adding a new block type from a mockup
 - `.claude/skills/econos-card-template/SKILL.md` — design discipline + mockup → block cheat sheet
 - `.claude/skills/econos-visual-diagram/SKILL.md` — diagram authoring conventions

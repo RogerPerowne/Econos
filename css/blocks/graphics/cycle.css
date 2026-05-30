@@ -1,0 +1,107 @@
+/* ==========================================================================
+   graphics/cycle.css — layout-specific styles for the cycle graphic.
+   Engine primitives + container context come from css/blocks/graphics.css.
+   Reflow is driven by @container gfx (max-width: 520px) — the documented
+   --econ-gfx-bp constant. NEVER a viewport @media.
+
+   Desktop: nodes arranged in a wrapping ring with directional arrows.
+   Narrow: vertical chain with down-arrows between nodes and a visible
+   loop-back arrow from the last node back to the first.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Ring — flex row that wraps naturally into a ring-like layout.
+   Arrows are inline between nodes; CSS rotates them per direction modifier.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-cycle__ring {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--econ-gap);
+  justify-content: center;
+  width: 100%;
+}
+
+/* Individual node wrapper — flex shrink to content, capped width. */
+.econ-blocks .gfx-cycle__node {
+  flex: 1 1 140px;
+  max-width: 220px;
+  min-width: 0;
+}
+
+.econ-blocks .gfx-cycle__node .gfx-node {
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Arrows between nodes
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-cycle__arrow {
+  align-items: center;
+  color: var(--econ-block-muted);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 1.25rem;
+  font-weight: 900;
+  justify-content: center;
+  line-height: 1;
+  user-select: none;
+}
+
+/* CCW direction: arrows already point left (←) from the JS.
+   CW direction:  arrows point right (→) from the JS.
+   The CSS does not need to rotate the glyph — direction is baked in. */
+
+/* Loop-back arrow: on desktop it's between the last and first node in the
+   wrap flow, which looks natural. We keep it visible but give it a softer
+   style to distinguish it as the "return" step. */
+.econ-blocks .gfx-cycle__arrow--loop {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  opacity: 0.55;
+}
+
+/* --------------------------------------------------------------------------
+   @container narrow — vertical chain layout
+   -------------------------------------------------------------------------- */
+
+@container gfx (max-width: 520px) {
+  .econ-blocks .gfx-cycle__ring {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .econ-blocks .gfx-cycle__node {
+    flex: 1 1 auto;
+    max-width: none;
+  }
+
+  /* All arrows between nodes point downward in the vertical chain.
+     We rotate the → / ← glyph 90° clockwise to get ↓. */
+  .econ-blocks .gfx-cycle__arrow {
+    align-self: center;
+    rotate: 90deg;
+  }
+
+  /* CCW: arrows were ← (pointing left); rotated 90°cw they point upward —
+     which implies reverse order. Rotate counter-clockwise instead so they
+     still read as "going down the chain". */
+  .econ-blocks .gfx-cycle--ccw .gfx-cycle__arrow {
+    rotate: -90deg;
+  }
+
+  /* Loop-back arrow: shown prominently at the bottom, full opacity,
+     rotated to point back up — signals "this loops back to the top". */
+  .econ-blocks .gfx-cycle__arrow--loop {
+    opacity: 1;
+    /* CW chain flows down, so loop-back points up → rotate further 180°
+       (total 270° = -90° equivalent). */
+    rotate: 270deg;
+  }
+
+  .econ-blocks .gfx-cycle--ccw .gfx-cycle__arrow--loop {
+    /* CCW chain: arrows rotated -90°, loop-back continues the convention. */
+    rotate: 90deg;
+  }
+}

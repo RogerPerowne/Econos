@@ -1,0 +1,60 @@
+/* ==========================================================================
+   graphics/funnel.css — layout-specific styles for the funnel graphic.
+   Engine primitives + container context come from css/blocks/graphics.css.
+   Reflow is driven by @container gfx (max-width: 520px) — the documented
+   --econ-gfx-bp constant. NEVER a viewport @media.
+   ========================================================================== */
+
+/* Desktop: a centred column of stages, each narrower than the one above.
+   --gfx-funnel-w is set inline by JS (100 % → 40 % across stages).
+   The connector arrows are centred between each pair of stages. */
+
+.econ-blocks .gfx-funnel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.econ-blocks .gfx-funnel__stage {
+  max-width: var(--gfx-funnel-w, 100%);
+  transition: max-width 0.2s ease;
+  width: 100%;
+}
+
+.econ-blocks .gfx-funnel__stage .gfx-node {
+  width: 100%;
+}
+
+/* Value label — a bold stat rendered above the stage label. */
+.econ-blocks .gfx-funnel__value {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+/* Connector wrapper — centres the down-arrow between stages. */
+.econ-blocks .gfx-funnel__connector {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: calc(var(--econ-gap) * 0.25) 0;
+}
+
+.econ-blocks .gfx-funnel__connector .gfx-arrow {
+  font-size: 1.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Narrow: full-width stacked stages — remove the tapering so every stage
+   spans 100 % of its container. Arrows stay visible and remain pointing
+   downward (the ↓ glyph is already correct). The connector simply centres
+   as before.
+   -------------------------------------------------------------------------- */
+
+@container gfx (max-width: 520px) {
+  .econ-blocks .gfx-funnel__stage {
+    max-width: 100%;
+  }
+}

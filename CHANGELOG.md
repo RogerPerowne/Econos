@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.34.0 — 2026-05-31
+
+### Structural-graphics catalogue + the dataChart system
+
+Extends the container-query structural engine and adds a separate data-driven
+chart system. Every block screenshot-verified at desktop **and** narrow-container
+widths.
+
+- **6 more structural layouts** (`group: graphics`): `pyramid`, `funnel`,
+  `cycle` (loop-back on mobile), `venn` (3-set circles on desktop → clean
+  Sets/Overlaps list on mobile), `richTable` (the responsive successor to
+  decisionMatrix — stacks as labelled cards on mobile), `flowChart`
+  (linear/branching/parallel/loop topologies → vertical chain on mobile).
+- **`dataChart`** — a NEW block, deliberately separate from `econDiagram`:
+  curve-driven and data-driven charts never share a schema. `js/blocks/data-chart.js`
+  + `window.ECONOS_DATACHART` kind-registry + kinds `bar` (with broken-axis for
+  outlier data), `line` (multi-series), `pie`/donut, `column`. Auto-scaling, the
+  6 tones, container-query mobile fallbacks (pie → % bar chart; bar/line →
+  card-list). `docs/DATA_CHARTS.md`.
+- Wired into the shells + Library gallery + Editor presets + the
+  `econos-card-template` cheat sheet + `econos-econ-diagram` (dataChart vs
+  econDiagram). `CACHE_NAME` → `econos-v143`.
+
 ## 0.33.0 — 2026-05-30
 
 ### Structural-graphics engine (container-query responsive)

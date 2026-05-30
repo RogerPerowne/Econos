@@ -19,6 +19,16 @@
   <link rel="stylesheet" href="/css/blocks/graphics/hubSpoke.css">
   <link rel="stylesheet" href="/css/blocks/graphics/matrix.css">
   <link rel="stylesheet" href="/css/blocks/graphics/quadrant.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/pyramid.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/funnel.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/cycle.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/venn.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/richTable.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/flowChart.css">
+  <link rel="stylesheet" href="/css/blocks/data-chart.css">
+  <link rel="stylesheet" href="/css/blocks/data-charts/line.css">
+  <link rel="stylesheet" href="/css/blocks/data-charts/pie.css">
+  <link rel="stylesheet" href="/css/blocks/data-charts/column.css">
 
   <style>
     /* ── Lab page chrome — not part of the card system ── */
@@ -230,6 +240,8 @@
     <li><a href="#section-econ-families-gallery">16. econDiagram chart families — full gallery (all views)</a></li>
     <li><a href="#section-game-blocks">17. Game theory blocks — payoffMatrix</a></li>
     <li><a href="#section-graphics-blocks">18. Structural graphics — hubSpoke · matrix · quadrant</a></li>
+    <li><a href="#section-graphics-new">19. Structural graphics — pyramid · funnel · cycle · venn · richTable · flowChart</a></li>
+    <li><a href="#section-data-charts">20. Data charts — bar · line · pie · column</a></li>
   </ol>
 </nav>
 
@@ -458,6 +470,28 @@
   <div id="render-graphics-blocks" class="lab-card-panel"></div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 19: NEW STRUCTURAL GRAPHICS                           -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-graphics-new">
+  <div class="lab-section-title">Section 19 — New structural graphics (pyramid · funnel · cycle · venn · richTable · flowChart)</div>
+  <p class="lab-section-subtitle">
+    Six new layout kinds. All responsive via @container gfx (max-width: 520px). Resize panel to see reflow.
+  </p>
+  <div id="render-graphics-new" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 20: DATA CHARTS                                        -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-data-charts">
+  <div class="lab-section-title">Section 20 — Data charts (js/blocks/data-chart.js + js/blocks/data-charts/*.js)</div>
+  <p class="lab-section-subtitle">
+    bar (income spectrum + brokenAxis) · line (UK CPI vs Bank Rate) · pie (UK household spending, donut) · column (world GDP)
+  </p>
+  <div id="render-data-charts" class="lab-card-panel"></div>
+</div>
+
 <!-- ── Status bar ── -->
 <div id="lab-status-bar">
   <span class="status-dev">Econos Renderer Lab</span>
@@ -528,6 +562,17 @@
 <script src="/js/blocks/graphics/hubSpoke.js"></script>
 <script src="/js/blocks/graphics/matrix.js"></script>
 <script src="/js/blocks/graphics/quadrant.js"></script>
+<script src="/js/blocks/graphics/pyramid.js"></script>
+<script src="/js/blocks/graphics/funnel.js"></script>
+<script src="/js/blocks/graphics/cycle.js"></script>
+<script src="/js/blocks/graphics/venn.js"></script>
+<script src="/js/blocks/graphics/richTable.js"></script>
+<script src="/js/blocks/graphics/flowChart.js"></script>
+<script src="/js/blocks/data-chart.js"></script>
+<script src="/js/blocks/data-charts/bar.js"></script>
+<script src="/js/blocks/data-charts/line.js"></script>
+<script src="/js/blocks/data-charts/pie.js"></script>
+<script src="/js/blocks/data-charts/column.js"></script>
 <script src="/js/data/_fixtures/blocks-demo.js"></script>
 <script src="/js/data/_fixtures/blocks-phase1.js"></script>
 <script src="/js/data/_fixtures/diagrams-demo.js"></script>
@@ -1689,6 +1734,209 @@
       ]
     }
   ], document.getElementById('render-graphics-blocks'));
+
+  /* ── SECTION 19: New structural graphics ─────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'pyramid — Maslow\'s Hierarchy of Needs (5 tiers)' },
+    {
+      type: 'pyramid',
+      tiers: [
+        { label: 'Self-Actualisation', body: 'Reaching full potential', tone: 'purple' },
+        { label: 'Esteem', body: 'Status, recognition, achievement', tone: 'blue' },
+        { label: 'Love & Belonging', body: 'Family, friendship, community', tone: 'green' },
+        { label: 'Safety', body: 'Security, employment, health', tone: 'amber' },
+        { label: 'Physiological', body: 'Food, water, shelter, warmth', tone: 'rose' }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'funnel — Econos conversion funnel (4 stages with values)' },
+    {
+      type: 'funnel',
+      stages: [
+        { label: 'Awareness',   body: 'Student discovers Econos via search or social', value: '10,000', tone: 'blue'   },
+        { label: 'Engagement',  body: 'Visits a topic page and reads a card',           value: '3,500',  tone: 'green'  },
+        { label: 'Sign-up',     body: 'Creates a free account',                         value: '900',    tone: 'amber'  },
+        { label: 'Conversion',  body: 'Upgrades to a paid student plan',                value: '120',    tone: 'purple' }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '3', label: 'cycle — Business cycle (4 nodes, clockwise)' },
+    {
+      type: 'cycle',
+      direction: 'cw',
+      nodes: [
+        { label: 'Boom',      detail: 'Output above trend, low unemployment', tone: 'green'  },
+        { label: 'Slowdown',  detail: 'Growth decelerates, confidence falls',  tone: 'amber'  },
+        { label: 'Recession', detail: 'Two quarters of negative GDP growth',   tone: 'rose'   },
+        { label: 'Recovery',  detail: 'Output rises, investment returns',      tone: 'blue'   }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '4', label: 'venn — Economics overlap diagram (3 sets)' },
+    {
+      type: 'venn',
+      sets: [
+        { label: 'Microeconomics', tone: 'blue'  },
+        { label: 'Macroeconomics', tone: 'green' },
+        { label: 'International',  tone: 'amber' }
+      ],
+      intersections: [
+        { label: 'Market failure + policy',   of: [0, 1] },
+        { label: 'Trade & competitiveness',   of: [1, 2] },
+        { label: 'Tariffs & externalities',   of: [0, 2] },
+        { label: 'Political economy',          of: [0, 1, 2] }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '5', label: 'richTable — Competitor comparison (icons + tones per cell)' },
+    {
+      type: 'richTable',
+      colHeaders: ['Criterion', 'ChatGPT Plus', 'Econos', 'Seneca'],
+      rows: [
+        {
+          header: 'Exam board',
+          cells: [
+            { body: 'None — generic content',        tone: 'rose'  },
+            { body: 'Edexcel A, B · AQA · OCR',      tone: 'green', icon: 'check' },
+            { body: 'Edexcel A only',                 tone: 'amber' }
+          ]
+        },
+        {
+          header: 'Explanations',
+          cells: [
+            { body: 'Conversational, unstructured',  tone: 'slate' },
+            { body: 'Card-by-card, pattern-driven',  tone: 'green', icon: 'check' },
+            { body: 'Short notes + quizzes',          tone: 'slate' }
+          ]
+        },
+        {
+          header: 'Price',
+          cells: [
+            { body: '£20 / month',                   tone: 'rose'  },
+            { body: 'From £49 / year',               tone: 'green' },
+            { body: 'Free (ads)',                    tone: 'slate' }
+          ]
+        }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '6', label: 'flowChart — Monetary transmission mechanism (linear, 5 nodes)' },
+    {
+      type: 'flowChart',
+      topology: 'linear',
+      nodes: [
+        { id: 'a', label: 'BoE raises Bank Rate',   tone: 'blue',   shape: 'rect' },
+        { id: 'b', label: 'Commercial rates rise',  tone: 'amber',  shape: 'rect' },
+        { id: 'c', label: 'Borrowing costs ↑',      tone: 'rose',   shape: 'rect' },
+        { id: 'd', label: 'Consumer spending ↓',    tone: 'purple', shape: 'rect' },
+        { id: 'e', label: 'Aggregate Demand falls', tone: 'slate',  shape: 'rect' }
+      ],
+      links: [
+        { from: 'a', to: 'b' },
+        { from: 'b', to: 'c' },
+        { from: 'c', to: 'd' },
+        { from: 'd', to: 'e' }
+      ]
+    }
+  ], document.getElementById('render-graphics-new'));
+
+  /* ── SECTION 20: Data charts ──────────────────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'dataChart kind:bar — UK income spectrum (brokenAxis)' },
+    {
+      type: 'dataChart',
+      kind: 'bar',
+      yLabel: 'Annual household income (£)',
+      valueSuffix: '',
+      brokenAxis: { from: 60000, to: 180000 },
+      caption: 'UK household income distribution by decile, 2023 (ONS)',
+      sort: 'asc',
+      rows: [
+        { label: '1st (bottom)', value: 8700,   tone: 'rose'   },
+        { label: '2nd',          value: 14800,  tone: 'rose'   },
+        { label: '3rd',          value: 20100,  tone: 'amber'  },
+        { label: '4th',          value: 25900,  tone: 'amber'  },
+        { label: '5th',          value: 31800,  tone: 'amber'  },
+        { label: '6th',          value: 38500,  tone: 'blue'   },
+        { label: '7th',          value: 47200,  tone: 'blue'   },
+        { label: '8th',          value: 58400,  tone: 'green'  },
+        { label: '9th',          value: 76300,  tone: 'green'  },
+        { label: '10th (top)',   value: 191500, tone: 'purple' }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'dataChart kind:line — UK CPI inflation vs Bank Rate (multi-series)' },
+    {
+      type: 'dataChart',
+      kind: 'line',
+      yLabel: 'Rate (%)',
+      xLabel: 'Year',
+      valueSuffix: '%',
+      smooth: true,
+      markers: true,
+      caption: 'UK CPI inflation vs Bank Rate, 2018–2023 (ONS / BoE)',
+      series: [
+        {
+          name: 'CPI inflation',
+          tone: 'rose',
+          rows: [
+            { label: '2018', value: 2.5 },
+            { label: '2019', value: 1.8 },
+            { label: '2020', value: 0.9 },
+            { label: '2021', value: 2.6 },
+            { label: '2022', value: 9.1 },
+            { label: '2023', value: 6.8 }
+          ]
+        },
+        {
+          name: 'Bank Rate',
+          tone: 'blue',
+          rows: [
+            { label: '2018', value: 0.75 },
+            { label: '2019', value: 0.75 },
+            { label: '2020', value: 0.1  },
+            { label: '2021', value: 0.1  },
+            { label: '2022', value: 3.5  },
+            { label: '2023', value: 5.25 }
+          ]
+        }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '3', label: 'dataChart kind:pie — UK household spending breakdown (donut)' },
+    {
+      type: 'dataChart',
+      kind: 'pie',
+      caption: 'UK household spending breakdown, 2024 (ONS)',
+      innerRadius: 0.55,
+      showLegend: true,
+      rows: [
+        { label: 'Housing',      value: 27, tone: 'blue'   },
+        { label: 'Food & drink', value: 18, tone: 'green'  },
+        { label: 'Transport',    value: 14, tone: 'amber'  },
+        { label: 'Recreation',   value: 12, tone: 'purple' },
+        { label: 'Clothing',     value: 9,  tone: 'rose'   },
+        { label: 'Other',        value: 20, tone: 'slate'  }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '4', label: 'dataChart kind:column — World GDP by country (sorted desc)' },
+    {
+      type: 'dataChart',
+      kind: 'column',
+      valueSuffix: '$tn',
+      sort: 'desc',
+      xLabel: 'GDP (2023, USD trillion)',
+      caption: 'Source: IMF World Economic Outlook 2023',
+      rows: [
+        { label: 'United States',  value: 25.5 },
+        { label: 'China',          value: 17.7 },
+        { label: 'Germany',        value: 4.5  },
+        { label: 'Japan',          value: 4.2  },
+        { label: 'United Kingdom', value: 3.1  }
+      ]
+    }
+  ], document.getElementById('render-data-charts'));
 
   /* ── SECTION 13–15: Fixtures ──────────────────────────────────────────── */
   if (window.ECONOS_BLOCKS_DEMO_CARD) {

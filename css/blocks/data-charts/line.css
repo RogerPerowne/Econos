@@ -1,0 +1,198 @@
+/* ==========================================================================
+   css/blocks/data-charts/line.css — 'line' kind styles
+   --------------------------------------------------------------------------
+   Styles for the time-series SVG line chart kind of the dataChart engine.
+   Scoped under `.econ-blocks`; uses `@container dc` for responsive reflow
+   (the `.dc-root` element sets `container-type: inline-size; container-name: dc`
+   in data-chart.css — we inherit that context here).
+
+   RESPONSIVE STRATEGY
+   -------------------
+   The SVG carries a fixed viewBox (600 × 300).  `width:100%; height:auto`
+   lets it scale to any container width with no overflow.  When the container
+   is narrow (≤ 520 px):
+     • The SVG is hidden and the mobile card-list is shown.
+     • x-axis labels that are even-indexed are hidden to halve label density
+       (applied via `[data-xi]` attribute selectors on the SVG text nodes —
+       still useful if the SVG is shown on a mid-range width, approx. 380–520 px).
+
+   TONES
+   -----
+   Line colour, marker fill, and legend swatch all use the shared
+   `--econ-block-tone` custom property that the `.econ-tone--*` classes set.
+   The `.dc-line__series` element carries the tone class; SVG stroke is set
+   via `currentColor` / CSS `stroke:`, so one class controls everything.
+
+   All selectors scoped under `.econ-blocks`.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Line chart outer wrapper
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-line {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   SVG canvas
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-line__svg {
+  display: block;
+  height: auto;
+  overflow: visible;   /* labels near edges must not be clipped */
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Axes and gridlines
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-line__gridline {
+  stroke: var(--econ-block-line);
+  stroke-dasharray: 4 4;
+  stroke-width: 1;
+}
+
+.econ-blocks .dc-line__axis {
+  stroke: var(--econ-block-line);
+  stroke-width: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Axis tick labels
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-line__ytick,
+.econ-blocks .dc-line__xtick {
+  fill: var(--econ-block-muted);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* x-axis labels are rotated 45° to prevent collision at normal widths */
+.econ-blocks .dc-line__xtick {
+  transform-box: fill-box;
+  transform-origin: top right;
+  transform: rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   Series: path + markers
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-line__series {
+  /* The tone class sets --econ-block-tone; use it for stroke + fill */
+}
+
+.econ-blocks .dc-line__path {
+  fill: none;
+  stroke: var(--econ-block-tone, var(--econ-tone-slate));
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.econ-blocks .dc-line__marker {
+  fill: var(--econ-block-tone, var(--econ-tone-slate));
+  stroke: var(--econ-block-panel, #fff);
+  stroke-width: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile card-list — hidden at desktop, shown at narrow widths
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .dc-linecardlist {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.econ-blocks .dc-lcl__heading {
+  /* Series name row */
+  border-bottom: 2px solid var(--econ-block-tone, var(--econ-tone-slate));
+  margin-top: var(--econ-gap);
+  padding: 4px 0;
+}
+
+.econ-blocks .dc-lcl__heading:first-child {
+  margin-top: 0;
+}
+
+.econ-blocks .dc-lcl__sname {
+  color: var(--econ-block-tone, var(--econ-tone-slate));
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.econ-blocks .dc-lcl__row {
+  align-items: center;
+  border-top: 1px solid var(--econ-block-line);
+  display: grid;
+  gap: 0 10px;
+  grid-template-columns: 1fr auto;
+  padding: 6px 0;
+}
+
+.econ-blocks .dc-lcl__row:first-child {
+  border-top: none;
+}
+
+.econ-blocks .dc-lcl__xlabel {
+  color: var(--econ-block-navy);
+  font-weight: 700;
+  min-width: 0;
+}
+
+.econ-blocks .dc-lcl__yval {
+  color: var(--econ-block-navy);
+  font-size: 0.86rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   @container dc (max-width: 520px) — hide SVG, show card-list
+   (520px == --econ-gfx-bp; keep in sync with econ-tokens.css and
+   data-chart.css)
+   -------------------------------------------------------------------------- */
+
+@container dc (max-width: 520px) {
+  .econ-blocks .dc-line {
+    display: none;
+  }
+
+  .econ-blocks .dc-linecardlist {
+    display: block;
+  }
+}
+
+/* At mid-range widths (≤ 520 px but > mobile threshold) the SVG is still
+   shown; thin out x-axis labels so they don't collide.  The JS emits
+   data-xi="0", "1", "2", … on each <text>; we hide the odd-indexed ones. */
+@container dc (max-width: 520px) {
+  /* already hidden via .dc-line:display:none above — rule is here for
+     documentation; a future breakpoint at ~380px could re-show the SVG
+     with thinned labels instead of switching to the card-list. */
+}
+
+/* On mid-size containers (roughly 380–520 px) keep the SVG but hide every
+   other label.  Expressed as a separate @container block so the 520px rule
+   above can independently hide everything on very narrow containers.      */
+@container dc (max-width: 480px) and (min-width: 320px) {
+  /* Hide odd-indexed x labels to halve density */
+  .econ-blocks .dc-line__xtick[data-xi="1"],
+  .econ-blocks .dc-line__xtick[data-xi="3"],
+  .econ-blocks .dc-line__xtick[data-xi="5"],
+  .econ-blocks .dc-line__xtick[data-xi="7"],
+  .econ-blocks .dc-line__xtick[data-xi="9"],
+  .econ-blocks .dc-line__xtick[data-xi="11"] {
+    display: none;
+  }
+}

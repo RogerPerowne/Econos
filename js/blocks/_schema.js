@@ -256,6 +256,71 @@
       group: 'graphics',
       summary: '2×2 grid with axis labels (SWOT/BCG). xAxis:{left,right}, yAxis:{top,bottom}, 4 quadrants in order TL,TR,BL,BR. Narrow: 1-column stack with inline axis legend.'
     },
+    pyramid: {
+      required: ['tiers'],
+      optional: [],
+      arrays: { tiers: { required: ['label'], optional: ['body', 'tone'] } },
+      group: 'graphics',
+      summary: 'Triangular tier hierarchy (Maslow-style). tiers:[{label,body?,tone?}] listed apex-first (index 0 = top). Rendered as tapering rows — widest at the bottom. Container-query responsive.'
+    },
+    funnel: {
+      required: ['stages'],
+      optional: [],
+      arrays: { stages: { required: ['label'], optional: ['body', 'value', 'tone'] } },
+      group: 'graphics',
+      summary: 'Narrowing conversion funnel. stages:[{label,body?,value?,tone?}] listed top-first. Each stage is narrower than the previous. value (string) shown as a count badge.'
+    },
+    cycle: {
+      required: ['nodes'],
+      optional: ['direction'],
+      arrays: { nodes: { required: ['label'], optional: ['detail', 'tone'] } },
+      group: 'graphics',
+      summary: 'Circular flow / repeating cycle (business cycle, circular economy). nodes:[{label,detail?,tone?}]. direction:\'cw\'|\'ccw\' (default \'cw\'). Nodes arranged around a ring with connecting arrows.'
+    },
+    venn: {
+      required: ['sets'],
+      optional: ['intersections'],
+      arrays: {
+        sets: { required: ['label'], optional: ['tone'] },
+        intersections: { required: ['label', 'of'], optional: [] }
+      },
+      group: 'graphics',
+      summary: 'Venn diagram with 2 or 3 overlapping sets. sets:[{label,tone?}]. intersections:[{label,of:[setIndexes]}] label each overlap region. of:[0,1] = pairwise; of:[0,1,2] = triple overlap.'
+    },
+    richTable: {
+      required: ['colHeaders', 'rows'],
+      optional: [],
+      arrays: {
+        rows: {
+          required: ['header', 'cells'],
+          optional: []
+        }
+      },
+      group: 'graphics',
+      summary: 'Comparison table with toned, icon-capable cells. colHeaders:[string] (first entry is the row-header column label). rows:[{header, cells:[{body,tone?,icon?}]}]. Narrow: each row reflows to a card.'
+    },
+    flowChart: {
+      required: ['nodes', 'links'],
+      optional: ['topology'],
+      arrays: {
+        nodes: { required: ['id', 'label'], optional: ['tone', 'shape'] },
+        links: { required: ['from', 'to'], optional: ['label'] }
+      },
+      group: 'graphics',
+      summary: 'General flowchart / process diagram. topology:\'linear\'|\'branching\' (default \'linear\'). nodes:[{id,label,tone?,shape?\'rect\'|\'diamond\'|\'pill\'}]. links:[{from,to,label?}] reference node ids. Narrow: vertical linear stack; branching falls back to list.'
+    },
+
+    /* ── Data-chart group (js/blocks/data-chart.js + js/blocks/data-charts/*.js) ─ */
+    dataChart: {
+      required: ['kind'],
+      optional: ['rows', 'series', 'xLabel', 'yLabel', 'valueSuffix', 'brokenAxis', 'caption', 'sort', 'smooth', 'markers', 'innerRadius', 'showLegend'],
+      arrays: {
+        rows: { required: ['label', 'value'], optional: ['tone'] },
+        series: { required: ['name', 'rows'], optional: ['tone'] }
+      },
+      group: 'data-chart',
+      summary: 'Data-driven chart. kind:\'bar\'|\'column\'|\'line\'|\'pie\'. bar/column/pie use rows:[{label,value,tone?}]. line uses either rows (single-series) or series:[{name,tone,rows}] (multi-series). valueSuffix appends to values (\'%\',\'£bn\'). brokenAxis:{from,to} draws a zig-zag axis break for outlier data (bar/column). sort:\'asc\'|\'desc\' reorders bars. smooth:true for curved lines. markers:true shows data-point dots on line. innerRadius (0-1) makes pie a donut. showLegend:true forces the legend on pie/line.'
+    },
 
     /* ── Diagram group (js/blocks/diagram.js + js/blocks/econ-diagram.js) ─ */
     diagram: {

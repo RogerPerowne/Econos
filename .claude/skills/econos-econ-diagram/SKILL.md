@@ -83,8 +83,21 @@ Each view is a step tab (CSS-only toggle, CSP-safe). The engine draws faded prio
 
 Render in the Studio Library (`dev/renderer-lab.html`, chart-family gallery) or the Editor (`dev/renderer-lab-edit.html`) with the mockup overlay. Geometry correctness is covered by `tests/unit/econ-diagram.test.js`; if you add a family, add an assertion (a known intersection, no-kink, label position).
 
+## dataChart vs econDiagram — when to use which
+
+`econDiagram` draws **economics diagrams**: axes with labelled curves (AD, SRAS, LRAS, demand, supply, cost curves…), named equilibrium points, shift arrows, shaded surplus/loss areas. The author describes *what the chart shows* (shifts, intersections, areas); the engine computes every coordinate.
+
+`dataChart` draws **data charts**: bar, column, line, pie — charts where the data lives in rows of (label, value) pairs like a spreadsheet. Use it for:
+- UK CPI trend over time (`kind: 'line'`)
+- Income deciles ranked lowest to highest (`kind: 'bar'` with `brokenAxis`)
+- GDP by country (`kind: 'column'`)
+- Household spending shares (`kind: 'pie'` / donut with `innerRadius`)
+
+Full authoring reference: `docs/DATA_CHARTS.md`.
+
 ## See also
 
 - `docs/DIAGRAM_LIBRARY.md` — every family + the full view schema + how to add one.
+- `docs/DATA_CHARTS.md` — data-driven charts via the `dataChart` block (bar, column, line, pie).
 - `econos-visual-diagram` — when (rarely) you do need a bespoke SVG.
 - `econos-mockup-analyse` / `econos-match-mockup` — the mockup→card pipeline.

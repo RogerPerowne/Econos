@@ -1,0 +1,294 @@
+/* ==========================================================================
+   graphics/flowChart.css — layout-specific styles for the flowChart graphic.
+   Engine primitives + container context come from css/blocks/graphics.css.
+   Reflow is driven by @container gfx (max-width: 520px) — the documented
+   --econ-gfx-bp constant. NEVER a viewport @media.
+
+   Topologies: linear | branching | parallel | loop
+   Desktop:  horizontal / branched layout.
+   Narrow:   vertical chain — nodes stacked, arrows point down,
+             branches become indented sub-lists.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Shared arrow-wrap — arrow glyph + optional link label stacked vertically
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-fc__arrow-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 2px;
+  justify-content: center;
+}
+
+.econ-blocks .gfx-fc__link-label {
+  color: var(--econ-block-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   LINEAR topology
+   Desktop: gfx-flow-row handles horizontal layout + arrow rotation at bp.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-fc__linear {
+  align-items: center;
+}
+
+.econ-blocks .gfx-fc__linear .gfx-fc__node {
+  flex: 1 1 120px;
+  max-width: 220px;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------------------
+   BRANCHING topology
+   Desktop: decision top-centre, branch columns fanned out horizontally,
+   optional merge node bottom-centre.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-fc__branching {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--econ-gap);
+}
+
+/* Decision node wrapper — constrained width, centred. */
+.econ-blocks .gfx-fc__decision-wrap {
+  max-width: 180px;
+  width: 100%;
+}
+
+/* Diamond node inside .gfx-fc__decision is already handled by .gfx-node--diamond
+   in graphics.css; we only need to ensure the wrapper doesn't distort it. */
+.econ-blocks .gfx-fc__decision {
+  width: 100%;
+}
+
+/* Branch columns row. */
+.econ-blocks .gfx-fc__branches {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--econ-gap);
+  justify-content: center;
+  width: 100%;
+}
+
+/* Each branch column — arrows + nodes in a vertical column. */
+.econ-blocks .gfx-fc__branch-col {
+  align-items: center;
+  display: flex;
+  flex: 1 1 120px;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 200px;
+  min-width: 0;
+}
+
+.econ-blocks .gfx-fc__branch-col .gfx-fc__branch-node {
+  width: 100%;
+}
+
+.econ-blocks .gfx-fc__branch-col .gfx-fc__arrow-wrap {
+  /* Rotate vertically — branches always flow top-to-bottom even on desktop. */
+}
+
+/* Merge row — arrow pointing down + merge node. */
+.econ-blocks .gfx-fc__merge-row {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 220px;
+  width: 100%;
+}
+
+.econ-blocks .gfx-fc__merge-row .gfx-fc__arrow-wrap .gfx-arrow {
+  rotate: 90deg; /* Always point down for convergence. */
+}
+
+.econ-blocks .gfx-fc__merge-node {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   PARALLEL topology
+   Desktop: source left, lanes (parallel nodes) in a horizontal row, sink right.
+   The fan-out is visual via the flex row of branch columns.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-fc__parallel {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: var(--econ-gap);
+  justify-content: center;
+}
+
+.econ-blocks .gfx-fc__parallel-source,
+.econ-blocks .gfx-fc__parallel-sink {
+  flex: 0 0 auto;
+  max-width: 180px;
+  min-width: 80px;
+}
+
+/* Lanes container — stacks branches vertically between source and sink. */
+.econ-blocks .gfx-fc__parallel-lanes {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--econ-gap);
+  min-width: 0;
+}
+
+/* Each branch: horizontal arrow → node → arrow. */
+.econ-blocks .gfx-fc__parallel-branch {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  width: 100%;
+}
+
+.econ-blocks .gfx-fc__parallel-node {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* In parallel, arrows point right on desktop (default .gfx-arrow → direction). */
+.econ-blocks .gfx-fc__parallel-branch .gfx-fc__arrow-wrap .gfx-arrow {
+  rotate: 0deg;
+}
+
+/* --------------------------------------------------------------------------
+   LOOP topology
+   Desktop: forward chain horizontal (via gfx-flow-row), back arc below.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-fc__loop {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.econ-blocks .gfx-fc__loop-forward {
+  align-items: center;
+}
+
+.econ-blocks .gfx-fc__loop-forward .gfx-fc__node {
+  flex: 1 1 100px;
+  max-width: 200px;
+  min-width: 0;
+}
+
+/* Back arc — a reverse arrow with a label, styled as a dashed underline strip. */
+.econ-blocks .gfx-fc__loop-back {
+  align-items: center;
+  border-top: 2px dashed var(--econ-block-line);
+  display: flex;
+  gap: var(--econ-gap);
+  justify-content: center;
+  padding-top: calc(var(--econ-gap) * 0.5);
+}
+
+.econ-blocks .gfx-fc__loop-back-label {
+  color: var(--econ-block-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.econ-blocks .gfx-fc__loop-arrow {
+  color: var(--econ-block-muted);
+  font-weight: 900;
+}
+
+/* --------------------------------------------------------------------------
+   @container REFLOW — narrow (≤ 520px)
+
+   All topologies become a vertical stack.
+   - linear: gfx-flow-row handles stacking + arrow rotation (graphics.css).
+   - branching: branches become an indented vertical list.
+   - parallel: lanes become a stacked vertical list; source and sink stay top/bottom.
+   - loop: forward chain stacks; back arrow points up.
+   -------------------------------------------------------------------------- */
+
+@container gfx (max-width: 520px) {
+
+  /* LINEAR — inherited from gfx-flow-row in graphics.css; arrows rotate to 90°.
+     Nodes go full-width. */
+  .econ-blocks .gfx-fc__linear .gfx-fc__node {
+    flex: 1 1 auto;
+    max-width: none;
+  }
+
+  /* BRANCHING — stack decision, then each branch col full-width with indent. */
+  .econ-blocks .gfx-fc__branches {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .econ-blocks .gfx-fc__branch-col {
+    border-left: 3px solid var(--econ-block-line);
+    flex: 1 1 auto;
+    max-width: none;
+    padding-left: calc(var(--econ-gap) * 0.75);
+  }
+
+  .econ-blocks .gfx-fc__decision-wrap {
+    max-width: none;
+  }
+
+  .econ-blocks .gfx-fc__merge-row {
+    max-width: none;
+  }
+
+  /* PARALLEL — rotate to vertical stack: source top, lanes column, sink bottom. */
+  .econ-blocks .gfx-fc__parallel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .econ-blocks .gfx-fc__parallel-source,
+  .econ-blocks .gfx-fc__parallel-sink {
+    max-width: none;
+    min-width: 0;
+  }
+
+  /* In narrow, each lane branch becomes a horizontal row with left-pointing
+     arrows — they now join source above and sink below so arrows point down. */
+  .econ-blocks .gfx-fc__parallel-branch {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .econ-blocks .gfx-fc__parallel-branch .gfx-fc__arrow-wrap .gfx-arrow {
+    rotate: 90deg; /* point down */
+  }
+
+  /* LOOP — forward chain stacks (gfx-flow-row handles it); back arrow flips. */
+  .econ-blocks .gfx-fc__loop-forward .gfx-fc__node {
+    flex: 1 1 auto;
+    max-width: none;
+  }
+
+  .econ-blocks .gfx-fc__loop-back {
+    flex-direction: row-reverse;
+  }
+
+  .econ-blocks .gfx-fc__loop-arrow {
+    /* In narrow the chain is vertical so the back arc goes up. */
+    display: inline-block;
+    rotate: 90deg;
+  }
+}

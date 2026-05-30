@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v122';
+  const CACHE_NAME = 'econos-v123';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -30,6 +30,25 @@
     '/js/diagrams/generators/firm-labour.js',
     '/js/diagrams/generators/macro-misc.js',
     '/js/diagrams/index.js',
+    '/js/diagrams/static/ad-as.js',
+    '/js/diagrams/static/behavioural.js',
+    '/js/diagrams/static/contestability.js',
+    '/js/diagrams/static/costs-firm.js',
+    '/js/diagrams/static/cs-ps.js',
+    '/js/diagrams/static/demand-pull.js',
+    '/js/diagrams/static/elasticity.js',
+    '/js/diagrams/static/externalities.js',
+    '/js/diagrams/static/inline-extracted.js',
+    '/js/diagrams/static/labour.js',
+    '/js/diagrams/static/macro-national.js',
+    '/js/diagrams/static/market-failure.js',
+    '/js/diagrams/static/monopoly.js',
+    '/js/diagrams/static/multiplier.js',
+    '/js/diagrams/static/phillips-lorenz.js',
+    '/js/diagrams/static/ppf.js',
+    '/js/diagrams/static/supply-demand.js',
+    '/js/diagrams/static/trade-bop.js',
+    '/js/diagrams/static/welfare-tax.js',
     '/js/blocks/diagram.js',
     '/fonts/inter-variable.woff2',
     '/favicon.svg',

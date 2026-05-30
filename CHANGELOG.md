@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.22.0 — 2026-05-30
+
+### Diagram relocation — every diagram now lives in the diagram library
+
+Moves all economics diagrams out of `js/icons.js` into the single diagram
+library, leaving `icons.js` for UI/hero/scene icons only. Done by a
+deterministic codemod (`scripts/split-diagrams.mjs`) so SVG content is
+preserved byte-for-byte.
+
+- **155 diagram SVGs** relocated into 19 grouped files under
+  `js/diagrams/static/` (ad-as, multiplier, welfare-tax, supply-demand,
+  macro-national, monopoly, behavioural, ppf, costs-firm, trade-bop,
+  externalities, cs-ps, labour, contestability, elasticity, phillips-lorenz,
+  market-failure, …). 119 UI/hero/scene icons stay in `icons.js`
+  (now ~128 lines, down from ~17,600).
+- **Back-fill compatibility shim:** each static file re-registers its
+  diagrams into both `window.ECONOS_DIAGRAMS` and `window.ECONOS_ICONS`, so
+  every existing `svgKey`/`visualKey` resolves unchanged.
+- **8 inline SVGs** extracted from two Theme-2 data files
+  (equilibrium-national-income, measures-of-economic-performance) into
+  `js/diagrams/static/inline-extracted.js` and repointed.
+- New guard `scripts/check-diagram-refs.mjs` asserts every diagram key
+  referenced in `js/data` resolves: **67/67, 0 missing.** Wired into the
+  three shells; `CACHE_NAME` → `econos-v123`. lint/unit/build green;
+  moved-diagram card + chrome screenshot-verified unchanged.
+
 ## 0.21.0 — 2026-05-30
 
 ### Diagram system — data-driven generators + `diagram` block (additive)

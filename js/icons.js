@@ -17433,8 +17433,9 @@ window.ECONOS_ICONS = {
           <!-- Green GDP (green, rising slower) -->
           <path d="M80 250 C200 235 350 200 580 150" stroke="#16A34A" stroke-width="2.6" fill="none"/>
           <text x="586" y="154" font-size="11" font-weight="700" fill="#16A34A" font-family="Inter,sans-serif">Green GDP</text>
-          <!-- Gap annotation -->
-          <text x="380" y="195" font-size="11" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Natural-capital depletion</text>
+          <!-- Gap annotation — sits inside the shaded area at the vertical midpoint
+               between the two curves (Standard ≈ y140, Green ≈ y193 at x=380). -->
+          <text x="380" y="170" font-size="11" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Natural-capital depletion</text>
           <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">GDP vs Green GDP — the depletion gap</text>
         </g>
         <!-- LAYER 3: Carbon debt — cumulative CO₂ over time vs remaining budget -->
@@ -17454,8 +17455,12 @@ window.ECONOS_ICONS = {
           <text x="586" y="64" font-size="11" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">Emissions path</text>
           <!-- Shaded region of debt (above budget line) -->
           <path d="M450 120 C530 80 570 65 580 60 L580 120 Z" fill="#FCA5A5" opacity="0.45"/>
-          <!-- Annotation -->
-          <text x="515" y="105" font-size="11" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif" text-anchor="middle">debt to future</text>
+          <!-- Annotation — wedge is too small to host the label cleanly inside, so
+               the label sits in the white area below the budget line with a short
+               red arrow pointing up into the shaded wedge. -->
+          <line x1="530" y1="140" x2="530" y2="112" stroke="#DC2626" stroke-width="1.4"/>
+          <polygon points="530,103 526,113 534,113" fill="#DC2626"/>
+          <text x="530" y="156" font-size="11" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif" text-anchor="middle">debt to future</text>
           <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Carbon debt — the bill the future inherits</text>
         </g>
       </svg>

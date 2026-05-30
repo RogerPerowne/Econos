@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.7 — 2026-05-30
+
+### Card 5 · annotation labels in the right place
+
+- **"Natural-capital depletion"** label moved from below the Green-GDP
+  curve up to the vertical midpoint between the two curves (y195 → y170),
+  so it sits inside the pink shaded gap it's labelling.
+- **"debt to future"** label moved out of the small wedge (which was
+  too tight to host the full label cleanly) into the white area below
+  the budget line, with a short red arrow pointing up into the wedge.
+
+Cache → `econos-v115`.
+
 ## 0.17.6 — 2026-05-30
 
 ### Impact of Economic Growth · Card 5 sustainability diagrams polish

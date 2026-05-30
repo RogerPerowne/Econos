@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.3 — 2026-05-30
+
+### Impact of Economic Growth · Card 2 redesign
+
+Added an interactive 2-view bar chart hero (`incomeSpectrumChart`) to Card 2.
+View 1 plots the £/yr real-income gain per decile (£200 → £12,000+) with a
+broken Y-axis between £2,000 and £12,000, paired diagonal slashes across
+the axis line, and a zigzag squiggle across the Top-1% bar so the bottom
+four bars stay readable next to the truncated outlier. View 2 plots the
+same gain as % of typical household income (1.7% → 4.8%) on a linear
+0-6% scale, no break needed. Bar tones match the 5 spectrum tiles
+beneath. Tiles restyled with `causesStyle: 'numbered'` — numbered
+outlined circles above each title — to visually rhyme with Card 1's
+multi-dimensional row. Body text trimmed to remove the £ figures now
+carried by the chart. Cache → `econos-v111`.
+
 ## 0.17.2 — 2026-05-30
 
 ### Impact of Economic Growth · Card 1 multi-dimensional row → flow

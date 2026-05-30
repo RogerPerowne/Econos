@@ -17260,7 +17260,7 @@ window.ECONOS_ICONS = {
      numbered tiles share a colour grammar. */
   incomeSpectrumChart: `
     <div style="background:#fff;border-radius:14px;padding:14px;">
-      <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
 
         <!-- LAYER 1: £ per year per decile (broken Y-axis) -->
         <g class="idl-pounds" style="display:none">
@@ -17328,7 +17328,8 @@ window.ECONOS_ICONS = {
           <text x="645" y="318" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Top 1%</text>
 
           <!-- Annotation under x-axis -->
-          <text x="360" y="345" font-size="10.5" font-style="italic" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Y-axis broken between &pound;2,000 and &pound;12,000 so the bottom four bars stay readable.</text>
+          <text x="360" y="343" font-size="10.5" font-style="italic" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Y-axis broken between &pound;2,000 and &pound;12,000 so the bottom four bars stay readable.</text>
+          <text x="360" y="362" font-size="10.5" font-style="italic" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Top-1% bar reflects wages + capital gains (equity, dividends, housing wealth); the bottom decile is wage-only.</text>
         </g>
 
         <!-- LAYER 2: gain as % of household income (linear 0-6%) -->

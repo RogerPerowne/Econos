@@ -14,7 +14,7 @@
          required: [...],
          optional: [...]
        } },
-       group:    'core' | 'compare' | 'flow' | 'structure' | 'data' | 'diagram',
+       group:    'core' | 'compare' | 'flow' | 'structure' | 'data' | 'game' | 'diagram',
        summary:  'one-line description (used by editor + doc generator)'
      }
 
@@ -218,6 +218,20 @@
       optional: ['value', 'tone', 'source'],
       group: 'data',
       summary: 'Inline source-cited fact chip.'
+    },
+
+    /* ── Game theory group (js/blocks/game.js) ───────────────────────────── */
+    payoffMatrix: {
+      required: ['rows'],
+      optional: ['rowPlayer', 'colPlayer', 'colLabels'],
+      arrays: {
+        rows: {
+          required: ['label', 'cells'],
+          optional: []
+        }
+      },
+      group: 'game',
+      summary: 'Strategic-form N×M payoff matrix with row/column player labels and optional Nash-equilibrium cell highlighting. cells:[{a,b,nash?}].'
     },
 
     /* ── Diagram group (js/blocks/diagram.js + js/blocks/econ-diagram.js) ─ */

@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.31.0 — 2026-05-30
+
+### econDiagram — 14 chart families + payoffMatrix + Editor mockup overlay
+
+Built out the declarative diagram engine into a full chart library and closed the
+mockup-accuracy feedback loop in the Studio Editor.
+
+- 12 new chart families on the engine (in `js/blocks/charts/`): `ppf`,
+  `supplyDemand`, `externalities-neg`/`externalities-pos`, `costCurves`,
+  `marketStructure`, `labourMarket`, `jcurve`, `laffer`, `lorenz`/`kuznets`,
+  `fortyFive`, `growth`, `publicGoods` — joining `adas` + `phillips` (16 charts).
+  All geometry computed by the engine; screenshot-verified across the family grid.
+- `payoffMatrix` block (`js/blocks/game.js` + `css/blocks/game.css`) for game
+  theory — N×M payoff grid with Nash-equilibrium cell highlighting.
+- **Studio Editor mockup overlay** (`dev/renderer-lab-edit.html`): drop a mockup
+  image as a configurable-opacity background behind the live card, lock-to-720px,
+  x-ray flip, and a live **similarity score** (true per-pixel via SVG
+  foreignObject where the canvas isn't tainted, luminance-histogram fallback
+  otherwise) — the number Claude optimises against when matching a mockup.
+- Studio Library gains a full chart-family gallery; `docs/DIAGRAM_LIBRARY.md`
+  documents every family + the view schema. `CACHE_NAME` → `econos-v138`.
+
 ## 0.30.0 — 2026-05-30
 
 ### econDiagram engine — generalised geometry core

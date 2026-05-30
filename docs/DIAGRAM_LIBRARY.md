@@ -362,3 +362,80 @@ used by `heroVisual` blocks — so no additional stylesheet is required.
 3. Add `<script defer src="/js/diagrams/generators/<name>.js"></script>` to `learn-it.html`, `link-it.html`, `land-it.html` (before `index.js`).
 4. Add the path to `PRECACHE_ASSETS` in `sw.js` and bump `CACHE_NAME`.
 5. Add a fixture block to `js/data/_fixtures/diagrams-demo.js`.
+
+---
+
+## 4. `'econDiagram'` Block Type — Declarative Interactive Diagrams
+
+`econDiagram` is the declarative, data-driven interactive block. The author writes view-level shift data; the engine computes line intercepts, equilibrium intersections, label placement, and implements a CSS-only step toggle.
+
+**File:** `js/blocks/econ-diagram.js` (engine) + `js/blocks/charts/<family>.js` (chart families)
+
+### Schema
+
+```js
+{
+  type:  'econDiagram',
+  chart: string,      // registered chart family name (see table below)
+  views: [            // one entry per interactive step
+    {
+      label:    string,                                         // tab label
+      shifts?:  { [curveId]: number | { dx?: number, dy?: number } },
+      points?:  string[],                                       // named point IDs to show
+      arrows?:  [[fromId, toId, { tone?: string }]],            // movement arrows
+      areas?:   [{ between: [curveA, curveB], x: [x1, x2], tone?: string, hatch?: boolean }],
+      brackets?:[{ x: [x1, x2], y: number, label: string, tone?: string }],
+      analysis?:string                                          // text in the analysis pane
+    }
+  ]
+}
+```
+
+### Registered Chart Families
+
+| Chart ID | File | Curves / Elements | Named Points |
+|---|---|---|---|
+| `adas` | `js/blocks/charts/adas.js` | AD, SRAS, LRAS | E0, E1, E2 |
+| `phillips` | `js/blocks/charts/phillips.js` | SRPC, LRPC | A, B, C |
+| `ppf` | `js/blocks/charts/ppf.js` | PPF0, PPF1 (frontier) | A, B, I |
+| `supplyDemand` | `js/blocks/charts/supply-demand.js` | D, S, PriceLine | E, Qs_ceiling, Qd_ceiling |
+| `externalities-neg` | `js/blocks/charts/externalities.js` | MPC, MSC, MPB | marketEq, socialEq |
+| `externalities-pos` | `js/blocks/charts/externalities.js` | MPC, MSB, MPB | marketEq, socialEq |
+| `costCurves` | `js/blocks/charts/cost-curves.js` | MC, AVC, ATC, MR | atcMin, avcMin, profitMax |
+| `marketStructure` | `js/blocks/charts/market-structure.js` | AR, MR, MC, ATC | profitMaxQ, priceOnAR, compEquil |
+| `labourMarket` | `js/blocks/charts/labour-market.js` | LD, LS, MCL, Wmin | E, Em, Wm, Ld, Ls |
+| `jcurve` | `js/blocks/charts/jcurve.js` | jcurve (fn), zeroLine | Trough, Recovery, Peak |
+| `laffer` | `js/blocks/charts/laffer.js` | laffer (fn), xAxis | tStar, tLow, tHigh |
+| `lorenz` | `js/blocks/charts/lorenz-kuznets.js` | lineOfEquality, lorenzCurve | LorenzMid |
+| `kuznets` | `js/blocks/charts/lorenz-kuznets.js` | kuznets (fn) | EarlyDev, PeakIneq, LateDev |
+| `fortyFive` | `js/blocks/charts/forty-five.js` | fortyfive, AE | E0, E1 |
+| `growth` | `js/blocks/charts/growth.js` | AD, SRAS, LRAS | E0, E1 |
+| `publicGoods` | `js/blocks/charts/public-goods.js` | MB_A, MB_B, ΣMB, MC | Eopt, Pa, Pb |
+
+### Load Order (shells)
+
+```html
+<!-- After js/blocks/econ-diagram.js — one tag per chart family: -->
+<script defer src="/js/blocks/charts/adas.js"></script>
+<script defer src="/js/blocks/charts/phillips.js"></script>
+<script defer src="/js/blocks/charts/ppf.js"></script>
+<script defer src="/js/blocks/charts/supply-demand.js"></script>
+<script defer src="/js/blocks/charts/externalities.js"></script>
+<script defer src="/js/blocks/charts/cost-curves.js"></script>
+<script defer src="/js/blocks/charts/market-structure.js"></script>
+<script defer src="/js/blocks/charts/labour-market.js"></script>
+<script defer src="/js/blocks/charts/jcurve.js"></script>
+<script defer src="/js/blocks/charts/laffer.js"></script>
+<script defer src="/js/blocks/charts/lorenz-kuznets.js"></script>
+<script defer src="/js/blocks/charts/forty-five.js"></script>
+<script defer src="/js/blocks/charts/growth.js"></script>
+<script defer src="/js/blocks/charts/public-goods.js"></script>
+```
+
+### Adding a New Chart Family
+
+1. Create `js/blocks/charts/<name>.js` as an IIFE that calls `window.ECONOS_ECON_DIAGRAM.register('<chartId>', { … })`.
+2. Add `<script defer src="/js/blocks/charts/<name>.js"></script>` to `learn-it.html`, `link-it.html`, `land-it.html`, and `dev/renderer-lab.html` (after `econ-diagram.js`).
+3. Add the path to `PRECACHE_ASSETS` in `sw.js` and bump `CACHE_NAME`.
+4. Add a gallery entry in `dev/renderer-lab.html` section 16.
+5. Add the chart ID to the table above.

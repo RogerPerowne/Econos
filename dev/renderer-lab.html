@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/css/blocks/structure.css">
   <link rel="stylesheet" href="/css/blocks/data.css">
   <link rel="stylesheet" href="/css/blocks/econ-diagram.css">
+  <link rel="stylesheet" href="/css/blocks/game.css">
 
   <style>
     /* ── Lab page chrome — not part of the card system ── */
@@ -222,6 +223,8 @@
     <li><a href="#section-fixture-demo">13. Fixture — ECONOS_BLOCKS_DEMO_CARD</a></li>
     <li><a href="#section-fixture-phase1">14. Fixture — ECONOS_BLOCKS_PHASE1_CARD</a></li>
     <li><a href="#section-fixture-diagrams">15. Fixture — ECONOS_DIAGRAMS_DEMO_CARD</a></li>
+    <li><a href="#section-econ-families-gallery">16. econDiagram chart families — full gallery (all views)</a></li>
+    <li><a href="#section-game-blocks">17. Game theory blocks — payoffMatrix</a></li>
   </ol>
 </nav>
 
@@ -413,6 +416,30 @@
   <div id="render-fixture-diagrams" class="lab-card-panel"></div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 16: econDiagram CHART FAMILIES — full gallery        -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-econ-families-gallery">
+  <div class="lab-section-title">Section 16 — econDiagram chart families — full gallery (all views)</div>
+  <p class="lab-section-subtitle">
+    Every registered chart family rendered with its complete sampleViews set.
+    ppf · supplyDemand · externalities (neg + pos) · costCurves · marketStructure ·
+    labourMarket · jcurve · laffer · lorenz + kuznets · fortyFive · growth · publicGoods
+  </p>
+  <div id="render-econ-families-gallery" class="lab-card-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 17: GAME THEORY BLOCKS — payoffMatrix                 -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-game-blocks">
+  <div class="lab-section-title">Section 17 — Game theory blocks (js/blocks/game.js)</div>
+  <p class="lab-section-subtitle">
+    payoffMatrix — 2×2 prisoner's dilemma · Nash equilibrium highlighted · larger N×M grid
+  </p>
+  <div id="render-game-blocks" class="lab-card-panel"></div>
+</div>
+
 <!-- ── Status bar ── -->
 <div id="lab-status-bar">
   <span class="status-dev">Econos Renderer Lab</span>
@@ -466,6 +493,19 @@
 <script src="/js/blocks/econ-diagram.js"></script>
 <script src="/js/blocks/charts/adas.js"></script>
 <script src="/js/blocks/charts/phillips.js"></script>
+<script src="/js/blocks/charts/ppf.js"></script>
+<script src="/js/blocks/charts/supply-demand.js"></script>
+<script src="/js/blocks/charts/externalities.js"></script>
+<script src="/js/blocks/charts/cost-curves.js"></script>
+<script src="/js/blocks/charts/market-structure.js"></script>
+<script src="/js/blocks/charts/labour-market.js"></script>
+<script src="/js/blocks/charts/jcurve.js"></script>
+<script src="/js/blocks/charts/laffer.js"></script>
+<script src="/js/blocks/charts/lorenz-kuznets.js"></script>
+<script src="/js/blocks/charts/forty-five.js"></script>
+<script src="/js/blocks/charts/growth.js"></script>
+<script src="/js/blocks/charts/public-goods.js"></script>
+<script src="/js/blocks/game.js"></script>
 <script src="/js/data/_fixtures/blocks-demo.js"></script>
 <script src="/js/data/_fixtures/blocks-phase1.js"></script>
 <script src="/js/data/_fixtures/diagrams-demo.js"></script>
@@ -1080,6 +1120,488 @@
       ]
     }
   ], document.getElementById('render-blocks-econ-families'));
+
+  /* ── SECTION 16: econDiagram chart families — full gallery ─────────────── */
+  (function () {
+    var el = document.getElementById('render-econ-families-gallery');
+
+    /* Helper: build a standard econDiagram block (simple views array) */
+    function makeEconDiagram(chart, views) {
+      return { type: 'econDiagram', chart: chart, views: views };
+    }
+
+    var blocks = [
+      /* ── PPF ── */
+      { type: 'sectionHeader', icon: '1', label: 'ppf — Production Possibility Frontier' },
+      makeEconDiagram('ppf', [
+        {
+          label: 'The Frontier',
+          shifts: {},
+          points: ['A', 'B'],
+          analysis: 'Points A and B both lie on PPF₀ — the economy is productively efficient at both. At A the economy devotes more resources to capital goods; at B it devotes more to consumer goods. Any point ON the frontier is technically efficient: all resources are fully employed and no waste occurs.'
+        },
+        {
+          label: 'Opportunity Cost',
+          shifts: {},
+          points: ['A', 'B'],
+          arrows: [['A', 'B', { tone: 'amber' }]],
+          analysis: 'Moving A→B along PPF₀ gains consumer goods but sacrifices capital goods — the opportunity cost. Because the frontier bows outward (concave to the origin), each successive unit of consumer goods requires an ever-larger sacrifice of capital goods. This reflects the law of increasing opportunity costs: resources are not perfectly adaptable between uses.'
+        },
+        {
+          label: 'Economic Growth',
+          shifts: { PPF1: { dy: -60 } },
+          points: ['A', 'B'],
+          analysis: 'A dy = −60 shift moves PPF₀ outward to PPF₁ — the economy can now produce more of BOTH goods simultaneously. This represents an increase in productive capacity driven by improved technology, a larger capital stock, or a more skilled workforce.'
+        },
+        {
+          label: 'Inefficiency',
+          shifts: {},
+          points: ['I'],
+          analysis: 'Point I lies INSIDE PPF₀ — the economy is productively inefficient. Resources are idle (unemployment) or misallocated. Moving from I to the frontier would be a free lunch: more of at least one good with no sacrifice of the other.'
+        }
+      ]),
+
+      /* ── Supply & Demand ── */
+      { type: 'sectionHeader', icon: '2', label: 'supplyDemand — Supply and Demand' },
+      makeEconDiagram('supplyDemand', [
+        {
+          label: 'Baseline',
+          shifts: {},
+          analysis: 'D and S intersect at E: the market-clearing equilibrium where the quantity demanded equals the quantity supplied. The downward-sloping Demand curve reflects the law of demand; the upward-sloping Supply curve reflects the law of supply.'
+        },
+        {
+          label: 'Demand increase',
+          shifts: { D: { dx: 80, dy: 0 } },
+          analysis: 'A rightward shift of D (e.g. a rise in consumer income for a normal good) raises both equilibrium price and quantity. The engine recomputes D∩S with the shifted D and places E₁ at higher Q and higher P than E₀.'
+        },
+        {
+          label: 'Indirect tax',
+          shifts: { S: { dx: 0, dy: -60 } },
+          brackets: [{ x: [342, 380], y: 480, label: 'ΔQ (tax)', tone: 'amber' }],
+          analysis: 'An indirect tax shifts S upward in econ space (dy = −60 in screen space): producers require a higher price at every output level to cover the tax. Q* falls and P* rises.'
+        },
+        {
+          label: 'Price ceiling',
+          shifts: {},
+          points: ['Qs_ceiling', 'Qd_ceiling'],
+          brackets: [{ x: [330, 430], y: 480, label: 'Shortage', tone: 'amber' }],
+          analysis: 'A price ceiling (Pmax) set below the equilibrium price creates excess demand: quantity demanded (Qd = 430) exceeds quantity supplied (Qs = 330). The shortage bracket spans the gap.'
+        },
+        {
+          label: 'Welfare',
+          shifts: {},
+          areas: [
+            { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue' },
+            { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green' }
+          ],
+          analysis: 'Consumer surplus (blue triangle) is the area between the Demand curve and P*. Producer surplus (green triangle) is the area between P* and the Supply curve. Together they measure total welfare at the competitive equilibrium.'
+        }
+      ]),
+
+      /* ── Externalities (negative) ── */
+      { type: 'sectionHeader', icon: '3', label: 'externalities-neg — Negative Externality' },
+      makeEconDiagram('externalities-neg', [
+        {
+          label: 'Market only (MPC + MPB)',
+          points: ['marketEq'],
+          analysis: 'The market equilibrium (Qm) is where private marginal cost (MPC) meets private marginal benefit (MPB). Producers have no incentive to account for costs imposed on third parties.'
+        },
+        {
+          label: 'Social cost + deadweight loss',
+          points: ['marketEq', 'socialEq'],
+          areas: [{ between: ['MSC', 'MPB'], x: [369, 430], tone: 'rose', hatch: true }],
+          brackets: [{ x: [369, 430], y: 510, label: 'Overproduction', tone: 'rose' }],
+          analysis: 'MSC sits above MPC by the per-unit external cost. The social optimum is Qs (MSC meets MPB). The hatched triangle is the welfare loss: the extra units produced from Qs to Qm cost society more (MSC) than they are worth to consumers (MPB).'
+        }
+      ]),
+
+      /* ── Externalities (positive) ── */
+      { type: 'sectionHeader', icon: '4', label: 'externalities-pos — Positive Externality' },
+      makeEconDiagram('externalities-pos', [
+        {
+          label: 'Market only (MPC + MPB)',
+          points: ['marketEq'],
+          analysis: 'The market equilibrium (Qm) is where MPC meets MPB. Producers only capture private benefits and have no incentive to produce the units that would benefit third parties.'
+        },
+        {
+          label: 'Social benefit + welfare gain',
+          points: ['marketEq', 'socialEq'],
+          areas: [{ between: ['MSB', 'MPB'], x: [430, 492], tone: 'green', hatch: true }],
+          brackets: [{ x: [430, 492], y: 510, label: 'Underproduction', tone: 'green' }],
+          analysis: 'MSB sits above MPB by the per-unit external benefit. The social optimum is Qs (MPC meets MSB). The hatched triangle is unrealised welfare: units between Qm and Qs would generate more social benefit (MSB) than they cost to produce (MPC).'
+        }
+      ]),
+
+      /* ── Cost Curves ── */
+      { type: 'sectionHeader', icon: '5', label: 'costCurves — Short-run Cost Curves' },
+      makeEconDiagram('costCurves', [
+        {
+          label: 'Cost curves',
+          shifts: {},
+          points: [],
+          analysis: 'MC, AVC and ATC all show a U-shape. MC is steepest and has its minimum to the LEFT of AVC and ATC. MC passes through the minimum of AVC and through the minimum of ATC — the key geometric relationship.'
+        },
+        {
+          label: 'Profit-max (MC = MR)',
+          shifts: {},
+          points: ['atcMin', 'avcMin', 'profitMax'],
+          analysis: 'The firm maximises profit by choosing Q* where MC = MR. At Q*, the price P (= MR) lies above ATC, so the firm earns supernormal profit. The AVC min point is the shutdown threshold.'
+        },
+        {
+          label: 'Profit rectangle',
+          shifts: {},
+          points: ['profitMax'],
+          areas: [{ between: ['MR', 'ATC'], x: [80, 464], tone: 'green' }],
+          analysis: 'The green shaded area is supernormal (economic) profit = (P − ATC) × Q*. This profit is competed away in the long run as new firms enter, driving P down to the ATC minimum.'
+        },
+        {
+          label: 'Loss (P below ATC)',
+          shifts: { MR: { dy: 180 } },
+          points: ['profitMax'],
+          areas: [{ between: ['ATC', 'MR'], x: [80, 373], tone: 'rose' }],
+          analysis: 'When the market price falls, MR shifts down. Here P < ATC at the profit-max Q, so the firm makes a loss (rose shaded area). The firm still operates in the short run because P > AVC.'
+        }
+      ]),
+
+      /* ── Market Structure ── */
+      { type: 'sectionHeader', icon: '6', label: 'marketStructure — Market Structure' },
+      makeEconDiagram('marketStructure', [
+        {
+          label: 'Monopoly — supernormal profit',
+          points: ['profitMaxQ', 'priceOnAR'],
+          areas: [{ between: ['AR', 'ATC'], x: [80, 280], tone: 'amber' }],
+          analysis: 'A monopolist restricts output to Qm (where MC = MR) and charges Pm. Because Pm > ATC at Qm, the shaded region is supernormal profit.'
+        },
+        {
+          label: 'Perfect competition — normal profit',
+          points: ['compEquil'],
+          analysis: 'A price-taking firm accepts P = AR = MR. It maximises profit where MC = P, which coincides with the minimum of ATC. The result is normal profit (zero economic profit).'
+        },
+        {
+          label: 'Monopoly vs competition — output restriction',
+          points: ['profitMaxQ', 'priceOnAR', 'compEquil'],
+          arrows: [['profitMaxQ', 'compEquil', { tone: 'slate' }]],
+          analysis: 'Monopoly restricts output to Qm < Qc (competitive level). The arrow shows the output the monopolist withholds relative to the perfectly competitive outcome.'
+        }
+      ]),
+
+      /* ── Labour Market ── */
+      { type: 'sectionHeader', icon: '7', label: 'labourMarket — Labour Market' },
+      makeEconDiagram('labourMarket', [
+        {
+          label: 'Competitive equilibrium',
+          points: ['E'],
+          analysis: 'In a competitive labour market, firms hire workers up to the point where MRP (= LD) equals the going wage. Equilibrium E gives the market-clearing wage W* and employment level L*.'
+        },
+        {
+          label: 'Minimum wage',
+          points: ['Ld', 'Ls'],
+          areas: [{ between: ['Wmin', 'LS'], x: [211, 548], tone: 'amber', hatch: true }],
+          brackets: [{ x: [211, 548], y: 148, label: 'Unemployment', tone: 'amber' }],
+          analysis: 'A minimum wage set above W* reduces labour demand. Firms demand only Ld workers while Ls workers are willing to supply. The gap Ls − Ld is involuntary unemployment.'
+        },
+        {
+          label: 'Monopsony',
+          points: ['Em', 'Wm', 'E'],
+          analysis: 'A monopsonist is the sole buyer of labour. The profit-maximising monopsonist hires where MRP = MCL, giving employment Lm and wage Wm — below the competitive outcome.'
+        },
+        {
+          label: 'Monopsony vs competitive',
+          points: ['Em', 'Wm', 'E'],
+          arrows: [['E', 'Em', { tone: 'rose' }]],
+          analysis: 'The arrow shows the shift from competitive outcome E to monopsony Em/Wm. Employment and wages both fall. The wedge between MCL and LS at Lm is the monopsonist’s wage mark-down.'
+        }
+      ]),
+
+      /* ── J-Curve ── */
+      { type: 'sectionHeader', icon: '8', label: 'jcurve — J-Curve' },
+      makeEconDiagram('jcurve', [
+        {
+          label: 'Depreciation shock',
+          shifts: {},
+          analysis: 'At t₀ a currency depreciation occurs. The current account balance begins to worsen immediately — import prices rise in domestic currency while export volumes have not yet responded.'
+        },
+        {
+          label: 'Trough: M-L not met',
+          shifts: {},
+          points: ['Trough'],
+          brackets: [{ x: [100, 183], y: 460, label: 'Short-run worsening', tone: 'rose' }],
+          analysis: 'The trough is the worst point of the current account deficit. The Marshall-Lerner condition is not yet satisfied — volumes are sticky, so higher import prices dominate.'
+        },
+        {
+          label: 'Recovery: M-L kicks in',
+          shifts: {},
+          points: ['Trough', 'Recovery'],
+          brackets: [
+            { x: [100, 183], y: 475, label: 'Worsening', tone: 'rose' },
+            { x: [183, 375], y: 475, label: 'Adjustment', tone: 'amber' }
+          ],
+          analysis: 'As import volumes fall and export volumes rise the Marshall-Lerner condition is satisfied. The current account balance improves and crosses zero at the recovery point.'
+        },
+        {
+          label: 'Full J-curve: surplus restored',
+          shifts: {},
+          points: ['Trough', 'Recovery', 'Peak'],
+          brackets: [
+            { x: [100, 183], y: 490, label: 'Worsening (M-L not met)', tone: 'rose' },
+            { x: [183, 375], y: 490, label: 'Volume adjustment', tone: 'amber' },
+            { x: [375, 567], y: 490, label: 'Surplus phase', tone: 'green' }
+          ],
+          analysis: 'The full J-curve: worsens on impact, passes through a trough, then crosses zero and rises to a peak surplus as volume effects fully materialise.'
+        }
+      ]),
+
+      /* ── Laffer Curve ── */
+      { type: 'sectionHeader', icon: '9', label: 'laffer — Laffer Curve' },
+      makeEconDiagram('laffer', [
+        {
+          label: 'The curve',
+          shifts: {},
+          analysis: 'The Laffer curve is an inverted-U showing tax revenue (R) against the tax rate (t). At 0% the government collects nothing; at 100% it also collects nothing because all economic activity ceases.'
+        },
+        {
+          label: 'Revenue-maximising t*',
+          shifts: {},
+          points: ['tStar'],
+          analysis: 'The peak of the parabola defines t* — the rate that maximises government revenue. Raising the rate above t* moves into the prohibitive zone: higher rates actually reduce revenue collected.'
+        },
+        {
+          label: 'Same revenue, two rates',
+          shifts: {},
+          points: ['tLow', 'tHigh'],
+          brackets: [{ x: [180, 580], y: 257, label: 'same revenue', tone: 'slate' }],
+          analysis: 'For every revenue level below the maximum there are two tax rates that achieve it: one below t* (competitive zone) and one above t* (prohibitive zone).'
+        },
+        {
+          label: 'Two zones',
+          shifts: {},
+          points: ['tStar'],
+          areas: [
+            { between: ['xAxis', 'laffer'], x: [80, 380], tone: 'green' },
+            { between: ['xAxis', 'laffer'], x: [380, 680], tone: 'rose' }
+          ],
+          analysis: 'Green (left) = competitive zone: raising the rate increases revenue. Rose (right) = prohibitive zone: the rate is already so high that further increases shrink the tax base.'
+        }
+      ]),
+
+      /* ── Lorenz Curve ── */
+      { type: 'sectionHeader', icon: '10', label: 'lorenz — Lorenz Curve' },
+      makeEconDiagram('lorenz', [
+        {
+          label: 'Line of Equality',
+          areas: [],
+          analysis: 'The 45-degree line of perfect equality shows a world where every 1% of the population earns exactly 1% of total income.'
+        },
+        {
+          label: 'Lorenz Curve',
+          areas: [{ between: ['lineOfEquality', 'lorenzCurve'], x: [80, 680], tone: 'rose' }],
+          points: ['LorenzMid'],
+          analysis: 'The Lorenz curve shows the actual cumulative income distribution. It bows below the line of equality: the bottom 50% holds far less than 50% of income.'
+        },
+        {
+          label: 'Gini Coefficient',
+          areas: [{ between: ['lineOfEquality', 'lorenzCurve'], x: [80, 680], tone: 'rose', hatch: true }],
+          points: ['LorenzMid'],
+          analysis: 'The Gini coefficient = (shaded area between the curves) / (area of the triangle below the equality line). A Gini of 0 means perfect equality; a Gini of 1 means one person owns everything.'
+        }
+      ]),
+
+      /* ── Kuznets Curve ── */
+      { type: 'sectionHeader', icon: '11', label: 'kuznets — Kuznets Curve' },
+      makeEconDiagram('kuznets', [
+        {
+          label: 'The Kuznets Curve',
+          points: ['EarlyDev', 'PeakIneq', 'LateDev'],
+          analysis: 'The Kuznets curve is an inverted-U showing how inequality first rises then falls as an economy develops. Simon Kuznets (1955) observed this pattern across industrialising economies.'
+        },
+        {
+          label: 'Rise: Industrialisation',
+          points: ['EarlyDev', 'PeakIneq'],
+          arrows: [['EarlyDev', 'PeakIneq', { tone: 'rose' }]],
+          analysis: 'As workers move from low-productivity agriculture into higher-wage industry, income spreads widen. Early industrialisation concentrates gains among factory owners and urban workers.'
+        },
+        {
+          label: 'Fall: Post-Industrial',
+          points: ['PeakIneq', 'LateDev'],
+          arrows: [['PeakIneq', 'LateDev', { tone: 'green' }]],
+          analysis: 'At higher incomes, stronger institutions, progressive taxation, universal education and social transfers compress the distribution. Inequality falls from B to C.'
+        }
+      ]),
+
+      /* ── 45-Degree Diagram ── */
+      { type: 'sectionHeader', icon: '12', label: 'fortyFive — 45-Degree / Keynesian Cross' },
+      makeEconDiagram('fortyFive', [
+        {
+          label: 'Equilibrium',
+          shifts: {},
+          points: ['E0'],
+          analysis: 'Where the AE line crosses the 45-degree line (AE = Y), the economy is in equilibrium. Planned expenditure equals national income — there is no unplanned change in inventories.'
+        },
+        {
+          label: 'Expansionary gap',
+          shifts: {},
+          points: ['E0'],
+          areas: [{ between: ['AE', 'fortyfive'], x: [80, 350], tone: 'green' }],
+          analysis: 'To the left of E0: AE > Y. Firms face rising demand with insufficient output — they run down stocks and expand production. The gap closes as output rises toward equilibrium.'
+        },
+        {
+          label: 'Multiplier',
+          shifts: { AE: { dy: -60 } },
+          points: ['E0', 'E1'],
+          arrows: [['E0', 'E1', { tone: 'amber' }]],
+          brackets: [{ x: [350, 500], y: 490, label: 'ΔY = 150', tone: 'amber' }],
+          analysis: 'An autonomous rise in investment (ΔI = 60) shifts AE upward. The income change ΔY = 150 exceeds the initial injection ΔI = 60 — the multiplier effect (k = 1/(1−MPC) = 2.5).'
+        },
+        {
+          label: 'Contractionary gap',
+          shifts: {},
+          points: ['E0'],
+          areas: [{ between: ['fortyfive', 'AE'], x: [350, 600], tone: 'rose' }],
+          analysis: 'To the right of E0: Y > AE. Output exceeds planned spending — unsold goods pile up as unplanned inventory investment. Firms cut production and income falls back toward equilibrium.'
+        }
+      ]),
+
+      /* ── Growth ── */
+      { type: 'sectionHeader', icon: '13', label: 'growth — AD/AS Growth' },
+      makeEconDiagram('growth', [
+        {
+          label: 'Long-run equilibrium',
+          points: ['E0'],
+          analysis: 'At potential output Y*, the economy is in long-run equilibrium (E₀). AD intersects LRAS — the economy is producing at full capacity with no output gap.'
+        },
+        {
+          label: 'LRAS shifts right',
+          shifts: { LRAS: { dx: 140 } },
+          points: ['E0', 'E1'],
+          brackets: [{ between: ['LRAS', 'LRAS'], x: [380, 520], y: 80, label: 'ΔY*', tone: 'green' }],
+          analysis: 'Growth in productive capacity shifts LRAS right. Potential output rises from Y₀* to Y₁*. The new long-run equilibrium E₁ lies at higher output and a lower price level.'
+        },
+        {
+          label: 'E₀ → E₁',
+          shifts: { LRAS: { dx: 140 } },
+          points: ['E0', 'E1'],
+          arrows: [['E0', 'E1', { tone: 'green' }]],
+          analysis: 'The economy moves from E₀ to E₁. Real output rises while the price level falls — the hallmark of supply-side led long-run growth.'
+        }
+      ]),
+
+      /* ── Public Goods ── */
+      { type: 'sectionHeader', icon: '14', label: 'publicGoods — Public Goods (Vertical Summation)' },
+      makeEconDiagram('publicGoods', [
+        {
+          label: 'Individual MB curves',
+          shifts: {},
+          points: [],
+          analysis: 'Consumer A (MB_A, blue) and Consumer B (MB_B, purple) each have a downward-sloping marginal benefit curve. For a public good, both consumers enjoy the same unit simultaneously, so we sum their willingness to pay vertically.'
+        },
+        {
+          label: 'Vertical summation',
+          shifts: {},
+          points: [],
+          analysis: 'The social marginal benefit (ΣMB, rose) is the vertical sum of MB_A and MB_B: at every quantity Q we add the two individual prices. This vertical summation distinguishes public goods from private goods (which use horizontal summation).'
+        },
+        {
+          label: 'Social optimum',
+          shifts: {},
+          points: ['Eopt'],
+          analysis: 'The socially efficient output Q* occurs where ΣMB = MC (E*, rose dot at Q=400). This satisfies the Samuelson condition: the sum of individual marginal benefits equals the marginal cost.'
+        },
+        {
+          label: 'Lindahl prices',
+          shifts: {},
+          points: ['Eopt', 'Pa', 'Pb'],
+          analysis: 'At Q*=400 the Lindahl prices show each consumer’s share of the marginal cost: P_A=140 (Consumer A’s WTP) and P_B=130 (Consumer B’s WTP). Together they sum exactly to MC=270, confirming the socially optimal provision.'
+        }
+      ])
+    ];
+
+    renderBlocks(blocks, el);
+  }());
+
+  /* ── SECTION 17: Game theory blocks ─────────────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'payoffMatrix — Prisoner’s Dilemma (2×2, Nash equilibrium highlighted)' },
+    {
+      type: 'payoffMatrix',
+      rowPlayer: 'Firm A',
+      colPlayer: 'Firm B',
+      colLabels: ['Low price', 'High price'],
+      rows: [
+        {
+          label: 'Low price',
+          cells: [
+            { a: 3, b: 3, nash: true },
+            { a: 5, b: 1 }
+          ]
+        },
+        {
+          label: 'High price',
+          cells: [
+            { a: 1, b: 5 },
+            { a: 4, b: 4 }
+          ]
+        }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'payoffMatrix — Battle of the Sexes (2×2, two Nash equilibria)' },
+    {
+      type: 'payoffMatrix',
+      rowPlayer: 'Player 1',
+      colPlayer: 'Player 2',
+      colLabels: ['Opera', 'Football'],
+      rows: [
+        {
+          label: 'Opera',
+          cells: [
+            { a: 3, b: 2, nash: true },
+            { a: 0, b: 0 }
+          ]
+        },
+        {
+          label: 'Football',
+          cells: [
+            { a: 0, b: 0 },
+            { a: 2, b: 3, nash: true }
+          ]
+        }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '3', label: 'payoffMatrix — Oligopoly advertising (3×3, dominant strategy)' },
+    {
+      type: 'payoffMatrix',
+      rowPlayer: 'Brand X',
+      colPlayer: 'Brand Y',
+      colLabels: ['No ad', 'Moderate ad', 'Heavy ad'],
+      rows: [
+        {
+          label: 'No ad',
+          cells: [
+            { a: 4, b: 4 },
+            { a: 2, b: 6 },
+            { a: 1, b: 7 }
+          ]
+        },
+        {
+          label: 'Moderate ad',
+          cells: [
+            { a: 6, b: 2 },
+            { a: 3, b: 3 },
+            { a: 1, b: 5 }
+          ]
+        },
+        {
+          label: 'Heavy ad',
+          cells: [
+            { a: 7, b: 1 },
+            { a: 5, b: 1 },
+            { a: 2, b: 2, nash: true }
+          ]
+        }
+      ]
+    }
+  ], document.getElementById('render-game-blocks'));
 
   /* ── SECTION 13–15: Fixtures ──────────────────────────────────────────── */
   if (window.ECONOS_BLOCKS_DEMO_CARD) {

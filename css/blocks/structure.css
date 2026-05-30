@@ -1,0 +1,308 @@
+/* ==========================================================================
+   structure.css — Spectrum, Case Studies, Satellite Diagram, Policy Toolkit
+   Registers on top of econ-tokens.css + econ-blocks.css. All classes are
+   scoped under .econ-blocks where collision risk exists.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Spectrum
+   -------------------------------------------------------------------------- */
+
+.econ-spectrum {
+  display: grid;
+  gap: 6px;
+}
+
+.econ-spectrum__axis {
+  align-items: center;
+  display: flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 6px;
+  justify-content: space-between;
+  letter-spacing: 0.01em;
+  padding: 0 2px;
+  text-transform: uppercase;
+  color: var(--econ-block-muted);
+}
+
+.econ-spectrum__axis-label {
+  flex: 1 1 auto;
+  font-weight: 850;
+  text-align: center;
+  color: var(--econ-block-navy);
+}
+
+.econ-spectrum__axis-left,
+.econ-spectrum__axis-right {
+  flex: 0 0 auto;
+  font-style: italic;
+}
+
+.econ-spectrum__track {
+  display: grid;
+  gap: var(--econ-gap);
+  grid-template-columns: repeat(var(--econ-spectrum-count, 4), minmax(0, 1fr));
+}
+
+.econ-spectrum__band {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 10px;
+  display: grid;
+  gap: 6px;
+  padding: var(--econ-pad);
+}
+
+.econ-spectrum__band-icon {
+  display: flex;
+}
+
+.econ-spectrum__band-label {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.9rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.econ-spectrum__band-body {
+  color: var(--econ-block-navy);
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .econ-spectrum__track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Case Studies
+   -------------------------------------------------------------------------- */
+
+.econ-case-grid {
+  display: grid;
+  gap: var(--econ-gap);
+  grid-template-columns: repeat(var(--econ-case-cols, 2), minmax(0, 1fr));
+}
+
+.econ-case {
+  background: var(--econ-block-panel);
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 10px;
+  display: grid;
+  gap: 8px;
+  overflow: hidden;
+  padding: var(--econ-pad);
+}
+
+.econ-case__title {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.96rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.econ-case__body {
+  display: grid;
+  gap: 4px;
+}
+
+.econ-case__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: baseline;
+}
+
+.econ-case__row-label {
+  color: var(--econ-block-muted);
+  flex: 0 0 auto;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  min-width: 56px;
+  text-transform: uppercase;
+}
+
+.econ-case__row-value {
+  color: var(--econ-block-navy);
+  flex: 1 1 0;
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+}
+
+.econ-case__verdict {
+  align-self: end;
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border-radius: 999px;
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.8rem;
+  font-weight: 850;
+  line-height: 1;
+  padding: 4px 12px;
+  text-align: center;
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  width: fit-content;
+}
+
+@media (max-width: 640px) {
+  .econ-case-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Satellite Diagram
+   -------------------------------------------------------------------------- */
+
+.econ-satellite {
+  padding: var(--econ-pad) 0;
+}
+
+.econ-satellite__orbit {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--econ-gap);
+  justify-content: center;
+  position: relative;
+}
+
+.econ-satellite__centre {
+  align-items: center;
+  background: var(--econ-block-navy);
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  min-height: 88px;
+  min-width: 120px;
+  order: 0;
+  padding: 14px 18px;
+  text-align: center;
+  z-index: 1;
+}
+
+.econ-satellite__centre-value {
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.econ-satellite__centre-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+
+.econ-satellite__chip {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.econ-satellite__chip-metric {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.econ-satellite__chip-label {
+  color: var(--econ-block-navy);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .econ-satellite__orbit {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .econ-satellite__centre {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .econ-satellite__chip {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Policy Toolkit
+   -------------------------------------------------------------------------- */
+
+.econ-policy-toolkit {
+  display: grid;
+  gap: var(--econ-gap);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.econ-policy__card {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 10px;
+  display: grid;
+  gap: 8px;
+  padding: var(--econ-pad);
+}
+
+.econ-policy__label {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.96rem;
+  font-weight: 850;
+  line-height: 1.2;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+}
+
+.econ-policy__row {
+  display: grid;
+  gap: 2px;
+}
+
+.econ-policy__row-key {
+  color: var(--econ-block-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.econ-policy__row-val {
+  color: var(--econ-block-navy);
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+}
+
+.econ-policy__row--risk .econ-policy__row-key {
+  color: var(--econ-tone-rose-700);
+}
+
+.econ-policy__row--risk .econ-policy__row-val {
+  color: var(--econ-tone-slate-700);
+}
+
+@media (max-width: 640px) {
+  .econ-policy-toolkit {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

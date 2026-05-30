@@ -92,6 +92,275 @@ Always purple with a star marker.
 
 Always amber.
 
+## Phase 1 Blocks — Compare group (`js/blocks/compare.js`)
+
+### `versusRows`
+
+```js
+{
+  type: 'versusRows',
+  left:  { label: 'Expansionary', tone: 'blue' },
+  right: { label: 'Contractionary', tone: 'rose' },
+  rows:  [
+    { criterion: 'Effect on AD', left: 'Increases', right: 'Decreases' }
+  ]
+}
+```
+
+Side-by-side comparison table with a left column for the criterion and two coloured value columns.
+
+### `decisionMatrix`
+
+```js
+{
+  type: 'decisionMatrix',
+  columns: ['Policy', 'Speed', 'Effectiveness'],
+  rows: [
+    { cells: ['Fiscal', 'Slow', 'High'] },
+    { cells: ['Monetary', 'Fast', 'Medium'] }
+  ]
+}
+```
+
+A scrollable table with an optional header row. First cell of each data row is a `<th scope="row">`.
+
+### `trafficLight`
+
+```js
+{
+  type: 'trafficLight',
+  green: 'Works when demand-pull inflation is below 5%.',
+  amber: 'May cause crowding out if borrowing costs rise.',
+  red:   'Fails during a liquidity trap.'
+}
+```
+
+Three-band green/amber/red verdict block. Any band with no text is omitted.
+
+### `glossaryRow`
+
+```js
+{
+  type: 'glossaryRow',
+  terms: [
+    { term: 'Multiplier', definition: 'The ratio of final income change to the initial injection.' },
+    { term: 'MPC', definition: 'Marginal propensity to consume.' }
+  ]
+}
+```
+
+Horizontal `<dl>` of term/definition pairs. Entries missing both fields are skipped.
+
+## Phase 1 Blocks — Flow group (`js/blocks/flow.js`)
+
+### `mechanismChain`
+
+```js
+{
+  type: 'mechanismChain',
+  steps: [
+    { label: 'Cut interest rates', detail: 'Base rate falls' },
+    { label: 'Cheaper borrowing' },
+    { label: 'Investment rises' }
+  ],
+  breakpoints: [
+    { label: 'Liquidity trap', tone: 'amber' }
+  ]
+}
+```
+
+Horizontal causal chain A → B → C with optional caveat chips. Stacks vertically on mobile.
+
+### `rippleCascade`
+
+```js
+{
+  type: 'rippleCascade',
+  initial: '£1,000m',
+  rounds: [
+    { round: 'Round 1', amount: '£800m' },
+    { round: 'Round 2', amount: '£640m' }
+  ],
+  leakageArrows: ['20% saved', '20% tax']
+}
+```
+
+Decreasing bar chart showing multiplier rounds with optional leakage labels per round.
+
+### `opposingFlows`
+
+```js
+{
+  type: 'opposingFlows',
+  positive: { label: 'Exports',  value: '£340bn', tone: 'green' },
+  negative: { label: 'Imports',  value: '£420bn', tone: 'rose'  },
+  result:   { label: 'Trade deficit', value: '−£80bn' }
+}
+```
+
+Two opposing arrows that net to a result. Useful for trade balance, injections vs leakages, etc.
+
+### `timeline`
+
+```js
+{
+  type: 'timeline',
+  events: [
+    { year: '2008', title: 'Financial crisis', tone: 'rose', body: 'Global credit crunch.' },
+    { year: '2009', title: 'QE launched',      tone: 'blue', body: 'Bank of England buys gilts.' }
+  ]
+}
+```
+
+Vertical timeline of real-world episodes. Each item can have an optional body paragraph.
+
+## Phase 1 Blocks — Structure group (`js/blocks/structure.js`)
+
+### `spectrum`
+
+```js
+{
+  type: 'spectrum',
+  axis: { left: 'Command', right: 'Free market', label: 'Economic systems' },
+  bands: [
+    { label: 'North Korea', tone: 'rose',   icon: 'globe' },
+    { label: 'UK',          tone: 'blue',   icon: 'globe' },
+    { label: 'Hong Kong',   tone: 'green',  icon: 'globe' }
+  ]
+}
+```
+
+4–6 equal-width bands along one labelled axis dimension. Icons are optional `window.ECONOS_ICONS` keys.
+
+### `caseStudies`
+
+```js
+{
+  type: 'caseStudies',
+  cols: 2,
+  cases: [
+    { title: 'UK 2010–15', cause: 'Austerity', outcome: 'Slow recovery', verdict: 'Mixed', tone: 'amber' }
+  ]
+}
+```
+
+Grid of case-study tiles. Each tile shows cause, outcome, and a coloured verdict pill. `cols` 1–4 (auto if omitted).
+
+### `satelliteDiagram`
+
+```js
+{
+  type: 'satelliteDiagram',
+  centre:     { label: 'GDP', value: '£2.2tn' },
+  satellites: [
+    { label: 'Consumption', metric: '61%', tone: 'green' },
+    { label: 'Investment',  metric: '17%', tone: 'blue'  }
+  ]
+}
+```
+
+Central node with surrounding satellite chips (CSS layout, no SVG). Good for component breakdowns.
+
+### `policyToolkit`
+
+```js
+{
+  type: 'policyToolkit',
+  tools: [
+    { label: 'Interest rate cut', bestFor: 'Demand stimulus', risk: 'Asset bubbles', tone: 'blue' },
+    { label: 'QE',                bestFor: 'Liquidity crisis', risk: 'Inflation',    tone: 'amber' }
+  ]
+}
+```
+
+Grid of policy-option cards showing label, best-for scenario, and risk. 2-up to 4-up auto layout.
+
+## Phase 1 Blocks — Data group (`js/blocks/data.js`)
+
+### `metricCard`
+
+```js
+{
+  type: 'metricCard',
+  label: 'UK CPI',
+  value: '3.2%',
+  target: '2%',
+  status: 'Above target',
+  tone: 'amber',
+  display: 'number'
+}
+```
+
+Headline metric card with optional target and status pill. `display` may be `'number'` (default) or `'badge'`.
+
+### `targetGauge`
+
+```js
+{
+  type: 'targetGauge',
+  label: 'Inflation',
+  value: 3.2,
+  targetRange: [1, 3],
+  min: 0,
+  max: 6,
+  tone: 'amber'
+}
+```
+
+Horizontal gauge bar showing current value against a coloured target band. All numeric fields required.
+
+### `equationHero`
+
+```js
+{
+  type: 'equationHero',
+  equation: [
+    { token: 'AD', tone: 'blue' },
+    '=',
+    { token: 'C', tone: 'green' },
+    '+',
+    { token: 'I', tone: 'blue' },
+    '+',
+    { token: 'G', tone: 'purple' },
+    '+',
+    { token: 'X−M', tone: 'amber' }
+  ],
+  caption: 'Aggregate Demand identity'
+}
+```
+
+Large centred equation with coloured chip tokens and plain operator strings. Optional caption below.
+
+### `workedExampleStrip`
+
+```js
+{
+  type: 'workedExampleStrip',
+  scenario: 'MPC = 0.8, initial injection = £500m',
+  steps: [
+    { label: 'Multiplier', value: '1 / (1−0.8) = 5' },
+    { label: 'Total ΔY',   value: '5 × £500m' }
+  ],
+  result: '£2,500m'
+}
+```
+
+Left-to-right calculation strip with labelled steps and a final result box.
+
+### `factChip`
+
+```js
+{
+  type: 'factChip',
+  label: 'UK unemployment',
+  value: '4.2%',
+  date: 'Q4 2023',
+  tone: 'slate'
+}
+```
+
+Small inline UK-fact chip for anchoring context. Any field is optional except `value` or `label`.
+
 ## Dev Tooling
 
 Dev mode is off by default. Enable with either:

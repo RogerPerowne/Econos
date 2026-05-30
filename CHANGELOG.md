@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.20.0 — 2026-05-30
+
+### Renderer Phase 1 — block component library (17 new blocks)
+
+Extends the Phase 0 block system with 17 data-driven components, each in
+its own self-registering module under `js/blocks/` with matching CSS under
+`css/blocks/`. Authored by a parallel Claude-agent workflow; all reuse the
+shared `window.ECONOS_BLOCK_UTILS` helpers (escaping, tone mapping, icons,
+nesting) now exposed by `render-blocks.js`.
+
+- **compare** — versusRows, decisionMatrix, trafficLight, glossaryRow
+- **flow** — mechanismChain (with breakpoint chips), rippleCascade,
+  opposingFlows, timeline
+- **structure** — spectrum, caseStudies, satelliteDiagram, policyToolkit
+- **data** — metricCard, targetGauge, equationHero, workedExampleStrip, factChip
+
+Wired into the three card shells (CSS links + deferred module scripts after
+`render-blocks.js`); `sw.js` precache updated and `CACHE_NAME` → `econos-v121`.
+`docs/RENDER_BLOCKS.md` documents every new block; `js/data/_fixtures/blocks-phase1.js`
+exercises them all. Known follow-up polish: proportional sizing for
+rippleCascade bars / opposingFlows arrows, targetGauge marker clamp on narrow
+cards, satelliteDiagram orbit layout.
+
 ## 0.19.0 — 2026-05-30
 
 ### Renderer Phase 0 — composition-as-data block foundation

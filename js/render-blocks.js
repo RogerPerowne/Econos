@@ -190,6 +190,22 @@
   }
 
   window.ECONOS_BLOCKS = BLOCK_RENDERERS;
+  /* Shared helpers for component modules in js/blocks/*.js (loaded after this
+     file). Lets later block renderers reuse escaping, tone mapping, icons,
+     spans and recursive child rendering without duplicating logic. */
+  window.ECONOS_BLOCK_UTILS = {
+    escapeHtml: escapeHtml,
+    escapeAttr: escapeAttr,
+    toneClass: toneClass,
+    renderIcon: renderIcon,
+    renderChild: renderBlockWrapper,
+    blockStyle: blockStyle,
+    safeGridCols: safeGridCols,
+    safeGap: safeGap,
+    safeSpan: safeSpan,
+    isDevMode: isDevMode,
+    VALID_TONES: VALID_TONES
+  };
   window.renderBlocks = renderBlocks;
   window.EconosDebug = window.EconosDebug || {};
   window.EconosDebug.inspectCard = function inspectCard() {

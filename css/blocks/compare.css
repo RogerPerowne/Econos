@@ -1,0 +1,274 @@
+/* ============================================================
+   compare.css — compare block-component styles
+   Registered by: js/blocks/compare.js
+   Depends on:   css/econ-tokens.css  (custom properties)
+                 css/econ-blocks.css  (tone cascade, .econ-tone--*)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   versusRows
+   Three-column comparison: criterion | left-view | right-view
+   ---------------------------------------------------------- */
+.econ-blocks .versus-rows {
+  background: var(--econ-block-panel);
+  border: 1px solid var(--econ-block-line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.econ-blocks .versus-rows__header,
+.econ-blocks .versus-rows__row {
+  display: grid;
+  /* criterion col is narrower; the two content cols share equal space */
+  grid-template-columns: minmax(80px, 0.85fr) 1fr 1fr;
+}
+
+.econ-blocks .versus-rows__row {
+  border-top: 1px solid var(--econ-block-line);
+}
+
+.econ-blocks .versus-rows__row:nth-child(even) {
+  background: var(--econ-tone-slate-50);
+}
+
+.econ-blocks .versus-rows__col-head {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border-left: 3px solid var(--econ-block-tone, var(--econ-tone-slate));
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  padding: 8px var(--econ-pad);
+  text-transform: uppercase;
+}
+
+.econ-blocks .versus-rows__criterion-cell {
+  padding: 8px var(--econ-pad);
+}
+
+.econ-blocks .versus-rows__criterion {
+  color: var(--econ-block-navy);
+  font-size: var(--econ-body-size);
+  font-weight: 700;
+  line-height: 1.35;
+  padding: 8px var(--econ-pad);
+}
+
+.econ-blocks .versus-rows__cell {
+  border-left: 1px solid var(--econ-block-line);
+  color: var(--econ-tone-slate-700);
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+  padding: 8px var(--econ-pad);
+}
+
+/* Tint each content cell with its column's tone */
+.econ-blocks .versus-rows__cell.econ-tone--green {
+  background: var(--econ-tone-green-50);
+}
+.econ-blocks .versus-rows__cell.econ-tone--amber {
+  background: var(--econ-tone-amber-50);
+}
+.econ-blocks .versus-rows__cell.econ-tone--blue {
+  background: var(--econ-tone-blue-50);
+}
+.econ-blocks .versus-rows__cell.econ-tone--purple {
+  background: var(--econ-tone-purple-50);
+}
+.econ-blocks .versus-rows__cell.econ-tone--rose {
+  background: var(--econ-tone-rose-50);
+}
+.econ-blocks .versus-rows__cell.econ-tone--slate {
+  background: var(--econ-tone-slate-50);
+}
+
+@media (max-width: 640px) {
+  .econ-blocks .versus-rows__header,
+  .econ-blocks .versus-rows__row {
+    grid-template-columns: minmax(60px, 0.7fr) 1fr 1fr;
+  }
+
+  .econ-blocks .versus-rows__col-head,
+  .econ-blocks .versus-rows__criterion,
+  .econ-blocks .versus-rows__cell {
+    padding: 6px 10px;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   decisionMatrix
+   Scrollable evaluation table with tone header row
+   ---------------------------------------------------------- */
+.econ-blocks .decision-matrix__scroll {
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--econ-block-line);
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.econ-blocks .decision-matrix {
+  border-collapse: collapse;
+  font-size: var(--econ-body-size);
+  min-width: 480px;
+  width: 100%;
+}
+
+.econ-blocks .decision-matrix__th {
+  background: var(--econ-block-navy);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  padding: 9px var(--econ-pad);
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.econ-blocks .decision-matrix__th--first {
+  /* Criterion column header gets a slight indent to echo body rows */
+  padding-left: var(--econ-pad);
+}
+
+.econ-blocks .decision-matrix tbody tr {
+  border-top: 1px solid var(--econ-block-line);
+}
+
+.econ-blocks .decision-matrix tbody tr:nth-child(even) {
+  background: var(--econ-tone-slate-50);
+}
+
+.econ-blocks .decision-matrix__td {
+  border-right: 1px solid var(--econ-block-line);
+  color: var(--econ-tone-slate-700);
+  line-height: 1.4;
+  padding: 8px var(--econ-pad);
+  vertical-align: top;
+}
+
+.econ-blocks .decision-matrix__td:last-child {
+  border-right: none;
+}
+
+.econ-blocks .decision-matrix__td--criterion {
+  color: var(--econ-block-navy);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* ----------------------------------------------------------
+   trafficLight
+   Three stacked verdict bands: works / depends / fails
+   ---------------------------------------------------------- */
+.econ-blocks .traffic-light {
+  border-radius: 10px;
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+}
+
+.econ-blocks .traffic-light__band {
+  align-items: flex-start;
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border-left: 4px solid var(--econ-block-tone, var(--econ-tone-slate));
+  border-top: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  display: flex;
+  gap: 12px;
+  padding: 10px var(--econ-pad);
+}
+
+.econ-blocks .traffic-light__band:first-child {
+  border-top: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.econ-blocks .traffic-light__band:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.econ-blocks .traffic-light__band:only-child {
+  border-radius: 10px;
+}
+
+.econ-blocks .traffic-light__icon {
+  color: var(--econ-block-tone, var(--econ-tone-slate));
+  flex: 0 0 auto;
+  font-size: 1.1rem;
+  font-weight: 900;
+  line-height: 1.5;
+  min-width: 20px;
+  text-align: center;
+}
+
+.econ-blocks .traffic-light__body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.econ-blocks .traffic-light__verdict {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.econ-blocks .traffic-light__text {
+  color: var(--econ-tone-slate-700);
+  line-height: 1.42;
+}
+
+
+/* ----------------------------------------------------------
+   glossaryRow
+   Compact inline term:definition pairs
+   ---------------------------------------------------------- */
+.econ-blocks .glossary-row {
+  background: var(--econ-block-panel);
+  border: 1px solid var(--econ-block-line);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.econ-blocks .glossary-row__item {
+  border-bottom: 1px solid var(--econ-block-line);
+  border-right: 1px solid var(--econ-block-line);
+  display: grid;
+  flex: 1 1 220px;
+  gap: 3px;
+  padding: 8px var(--econ-pad);
+}
+
+/* Visually remove trailing right borders on items that wrap to new rows
+   by letting the parent clip overflow; borders on the last item per visual
+   row are naturally hidden by overflow:hidden on the parent. */
+
+.econ-blocks .glossary-row__term {
+  color: var(--econ-block-navy);
+  font-size: 0.86rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.econ-blocks .glossary-row__def {
+  color: var(--econ-block-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .econ-blocks .glossary-row__item {
+    flex: 1 1 160px;
+  }
+}

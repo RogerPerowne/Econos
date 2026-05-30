@@ -342,6 +342,7 @@ window.ECONOS_TOPIC = {
       causes3Label: 'The A* evaluation framework',
       causes3Emoji: '\u{1F3AF}',
       causes3Cols: 4,
+      causes3Style: 'icon-top',
       causes3: [
         { tone: 'blue', icon: '\u{1F4C8}', head: 'Rate',          body: 'How fast is real GDP per capita growing? The headline number.' },
         { tone: 'blue', icon: '\u{1F3ED}', head: 'Quality',       body: 'Is it productivity-driven or debt-fuelled? Investment-led or consumption-led?' },

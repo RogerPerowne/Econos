@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v121';
+  const CACHE_NAME = 'econos-v122';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -22,6 +22,15 @@
     '/css/blocks/flow.css',
     '/css/blocks/structure.css',
     '/css/blocks/data.css',
+    '/js/diagrams/econ-svg.js',
+    '/js/diagrams/generators/adas.js',
+    '/js/diagrams/generators/ppf.js',
+    '/js/diagrams/generators/tax-controls.js',
+    '/js/diagrams/generators/mult-elas.js',
+    '/js/diagrams/generators/firm-labour.js',
+    '/js/diagrams/generators/macro-misc.js',
+    '/js/diagrams/index.js',
+    '/js/blocks/diagram.js',
     '/fonts/inter-variable.woff2',
     '/favicon.svg',
     '/assets/logo-full.png',

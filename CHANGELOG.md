@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.21.0 — 2026-05-30
+
+### Diagram system — data-driven generators + `diagram` block (additive)
+
+The new way to make and render economics diagrams. Fully additive — no
+existing diagram or card changed; this is the foundation for relocating the
+icons.js diagrams into a single library next.
+
+- `js/diagrams/econ-svg.js` — `window.EconSvg` builder (axes, curves, labels,
+  callouts, equilibria) with the house palette baked in (AD blue, SRAS amber,
+  LRAS green vertical, old curves dashed/faded, new solid). `docs/ECON_DIAGRAM_RULES.md`
+  is the canonical style reference.
+- `js/diagrams/generators/*` — 13 data-driven generators on `window.ECONOS_DIAGRAMS`:
+  adasDiagram, ppfDiagram, taxSubsidyDiagram, priceControlDiagram, multiplierDiagram,
+  elasticityDiagram, costCurvesDiagram, marketStructureDiagram, labourMarketDiagram,
+  phillipsCurve, jCurveDiagram, fortyFiveDiagram, growthDiagram. Each takes a config
+  and returns an SVG string; defaults yield the canonical textbook version.
+- `js/blocks/diagram.js` — a `diagram` block that resolves a `spec:{type,...}` via
+  the generators, or falls back to an existing `svgKey` from icons.js, wrapped in the
+  hero-visual frame. `docs/DIAGRAM_LIBRARY.md` documents the API.
+- Wired into the three shells; `sw.js` precache updated, `CACHE_NAME` → `econos-v122`.
+  `js/data/_fixtures/diagrams-demo.js` exercises every generator (screenshot-verified).
+
 ## 0.20.0 — 2026-05-30
 
 ### Renderer Phase 1 — block component library (17 new blocks)

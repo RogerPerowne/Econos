@@ -4798,14 +4798,19 @@
 
       ${c.causes3 && c.causes3.length ? (() => {
         const items3 = c.causes3;
+        const iconTopMode3 = c.causes3Style === 'icon-top';
         const tiles3 = items3.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['blue','green','purple','amber','rose','slate'][i % 6]];
+          const headerHtml = iconTopMode3
+            ? `<div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;margin-bottom:10px;">${item.icon || ''}</div>
+               <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
+            : `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                 <div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
+                 <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;">${item.head}</div>
+               </div>`;
           return `
           <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-              <div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
-              <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;">${item.head}</div>
-            </div>
+            ${headerHtml}
             <div style="font-size:12.5px;color:#0B1426;line-height:1.55;">${item.body}</div>
           </div>`;
         }).join('');

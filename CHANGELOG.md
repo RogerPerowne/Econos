@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.8 — 2026-05-30
+
+### Card 6 · A* framework tiles · icon-top layout
+
+The "Sustainability" tile title was being clipped by its column in the
+4-up A* framework row (side-by-side icon + title was too wide). Added
+`causes3Style: 'icon-top'` support to the engine — icon renders as a
+white square on top, title sits on its own line below — and switched
+Card 6's framework block to use it. All four titles now fit cleanly.
+Cache → `econos-v116`.
+
 ## 0.17.7 — 2026-05-30
 
 ### Card 5 · annotation labels in the right place

@@ -120,8 +120,7 @@ window.ECONOS_TOPIC = {
       causesFirst: true,
       causesLabel: 'The UK income spectrum',
       causesEmoji: '\u{2696}\u{FE0F}',
-      causesCols: 5,
-      causesStyle: 'numbered',
+      causesStyle: 'numbered-rows',
       causes: [
         { tone: 'rose',   icon: '\u{1F33E}', head: 'Bottom 10%',     body: 'Spends 70%+ on essentials &mdash; food, energy, rent &mdash; whose prices rise faster than headline CPI. Hit hardest by inflation that often accompanies growth. UK 2010-19: real wages at the bottom rose just 4% across the whole decade.' },
         { tone: 'amber',  icon: '\u{1F45F}', head: 'Lower-middle',   body: 'Some discretionary spending appears, but childcare costs and the Universal Credit taper claw back a chunk of any growth-driven wage gain.' },

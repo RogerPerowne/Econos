@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.5 — 2026-05-30
+
+### Impact of Economic Growth · Card 2 spectrum → numbered-rows
+
+Switched the UK income spectrum on Card 2 from `causesStyle: 'numbered'`
+(5-column tile grid) to `causesStyle: 'numbered-rows'` — the established
+stacked-row layout already used on inflation and other macro cards. Each
+band now reads as a single horizontal row with numbered circle + icon +
+title + full-width body, tone-coloured left bar. Lets the rich per-band
+detail breathe instead of cramping into narrow columns. Cache → `econos-v113`.
+
 ## 0.17.4 — 2026-05-30
 
 ### Impact of Economic Growth · Card 2 footnote

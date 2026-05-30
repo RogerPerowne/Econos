@@ -17393,7 +17393,7 @@ window.ECONOS_ICONS = {
      Shared canvas size for clean swap; one chart at a time. */
   growthSustainability3View: `
     <div style="background:#fff;border-radius:14px;padding:14px;">
-      <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- LAYER 1: Environmental Kuznets Curve (inverted-U pollution intensity vs GDP per capita) -->
         <g class="idl-kuznets" style="display:none">
           <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Pollution</text>
@@ -17405,15 +17405,15 @@ window.ECONOS_ICONS = {
           <text x="450" y="278" font-size="11" fill="#475569" font-family="Inter,sans-serif">GDP per capita →</text>
           <!-- Inverted-U curve (Kuznets) -->
           <path d="M80 250 C140 240 200 90 320 80 C440 70 520 200 580 250" stroke="#16A34A" stroke-width="2.4" fill="none"/>
-          <!-- Country markers -->
-          <circle cx="115" cy="245" r="5" fill="#C2410C"/>
-          <text x="115" y="232" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Niger</text>
+          <!-- Country markers — y-values computed to sit ON the Bezier curve at each x. -->
+          <circle cx="115" cy="231" r="5" fill="#C2410C"/>
+          <text x="115" y="218" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Niger</text>
           <text x="115" y="296" font-size="9" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">low income</text>
-          <circle cx="270" cy="100" r="5" fill="#F59E0B"/>
-          <text x="270" y="87" font-size="10" font-weight="700" fill="#F59E0B" font-family="Inter,sans-serif" text-anchor="middle">China</text>
+          <circle cx="270" cy="93" r="5" fill="#F59E0B"/>
+          <text x="270" y="80" font-size="10" font-weight="700" fill="#F59E0B" font-family="Inter,sans-serif" text-anchor="middle">China</text>
           <text x="270" y="296" font-size="9" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">industrialising</text>
-          <circle cx="500" cy="200" r="5" fill="#16A34A"/>
-          <text x="500" y="187" font-size="10" font-weight="700" fill="#16A34A" font-family="Inter,sans-serif" text-anchor="middle">UK</text>
+          <circle cx="500" cy="168" r="5" fill="#16A34A"/>
+          <text x="500" y="155" font-size="10" font-weight="700" fill="#16A34A" font-family="Inter,sans-serif" text-anchor="middle">UK</text>
           <text x="500" y="296" font-size="9" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">post-industrial</text>
           <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Environmental Kuznets Curve</text>
         </g>

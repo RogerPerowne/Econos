@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.6 — 2026-05-30
+
+### Impact of Economic Growth · Card 5 sustainability diagrams polish
+
+- **Kuznets curve dots now sit on the curve.** Niger / China / UK markers were drawn at approximate positions that drifted off the Bezier; recomputed the on-curve y for each x (Niger 245→231, China 100→93, UK 200→168) so the dots touch the line.
+- **Right-edge labels no longer clipped.** ViewBox widened from 640×320 → 720×320 across all three layers. "Standard GDP" / "Green GDP" (depletion gap), "Emissions path" / "1.5°C budget" (carbon debt) all now render fully — and the chart elements naturally sit in the left portion of the canvas with breathing room on the right where the labels live.
+
+Cache → `econos-v114`.
+
 ## 0.17.5 — 2026-05-30
 
 ### Impact of Economic Growth · Card 2 spectrum → numbered-rows

@@ -1133,5 +1133,150 @@ window.ECONOS_TOPICS = [
       aqa:       { spec: '4.2.6', included: true },
       ocr:       { spec: '3', included: true }
     }
+  },
+
+  /* ============================================================
+     Edexcel B — business-first strand
+     These sub-sections are unique to (or only examined as named
+     topics by) the Edexcel B "Economics B" spec (9EB0). They have
+     no equivalent named topic in Edexcel A / AQA / OCR (those
+     boards fold the same ideas into broader tiles such as
+     `globalisation` or `business-growth`), so the spec point is set
+     only for `edexcel_b` and `null` elsewhere — `classifyTopic` in
+     index.html then surfaces them solely on the Edexcel B grid.
+     Cover-card stubs only: `available` is all-false, so the build
+     generates no routes and the home grid shows them "coming soon"
+     until Learn It content is authored. Spec points verified
+     against docs/edexcel-b-spec.md (Pearson 9EB0).
+     ============================================================ */
+  {
+    id: 'stakeholders-and-csr',
+    name: 'Stakeholders & CSR',
+    sub: 'Stakeholder objectives and conflicts; corporate social responsibility',
+    color: '#f97316',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '1.1.3', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'the-entrepreneur',
+    name: 'The Entrepreneur',
+    sub: 'Creative destruction and adding value; profit and non-financial motives',
+    color: '#fb923c',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '1.2.1', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'banks-and-credit',
+    name: 'Banks & Credit in the Economy',
+    sub: 'Role of banks, risk and liability, types and sources of credit',
+    color: '#f59e0b',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '1.4.1', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'business-survival-and-cash-flow',
+    name: 'Business Survival & Cash Flow',
+    sub: 'Profit vs cash flow, forecasting, identifying credit requirements',
+    color: '#eab308',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '1.6.4', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'research-development-and-innovation',
+    name: 'R&D and Innovation',
+    sub: 'Product vs process innovation, product life cycle, state funding',
+    color: '#f97316',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '2.1.3', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'the-digital-economy',
+    name: 'The Digital Economy',
+    sub: 'Price comparison, micromarketing, the long tail, online retailing',
+    color: '#fb923c',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '2.1.4', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'how-small-firms-compete',
+    name: 'How Small Firms Compete',
+    sub: 'USPs and differentiation, niche markets, flexibility, customer service',
+    color: '#f59e0b',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '2.1.5', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'productivity-and-lean-production',
+    name: 'Productivity & Lean Production',
+    sub: 'Productivity, capacity utilisation, TQM, Kaizen and just-in-time',
+    color: '#eab308',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '2.3.1', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'global-business-strategy',
+    name: 'Global Business Strategy & Glocalisation',
+    sub: 'Glocalisation, ethnocentric/geocentric approaches, branding, cultural factors',
+    color: '#14b8a6',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '3.3.1', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'multinational-corporations',
+    name: 'Multinational Corporations (MNCs)',
+    sub: 'Impact on local and national economies, ethical issues, controlling MNCs',
+    color: '#0ea5e9',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: null, included: true },
+      edexcel_b: { spec: '3.4.1', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
   }
 ];

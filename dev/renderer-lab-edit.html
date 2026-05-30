@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Econos Renderer Lab · Live Editor</title>
+
+  <!-- Card styles (same stack as production cards) -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/econ-tokens.css">
+  <link rel="stylesheet" href="/css/econ-blocks.css">
+  <link rel="stylesheet" href="/css/blocks/compare.css">
+  <link rel="stylesheet" href="/css/blocks/flow.css">
+  <link rel="stylesheet" href="/css/blocks/structure.css">
+  <link rel="stylesheet" href="/css/blocks/data.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      background: #F1F5F9;
+      color: #0F172A;
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .lab-shell {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: minmax(360px, 1fr) minmax(480px, 1.4fr);
+      height: 100vh;
+      padding: 16px;
+    }
+    @media (max-width: 980px) {
+      .lab-shell { grid-template-columns: 1fr; height: auto; }
+    }
+    .lab-pane {
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .lab-pane h2 {
+      align-items: center;
+      background: #F8FAFC;
+      border-bottom: 1px solid #E2E8F0;
+      color: #475569;
+      display: flex;
+      font-size: 0.72rem;
+      font-weight: 700;
+      gap: 8px;
+      justify-content: space-between;
+      letter-spacing: 0.1em;
+      margin: 0;
+      padding: 10px 14px;
+      text-transform: uppercase;
+    }
+    .lab-pane .lab-pane__hint {
+      color: #94A3B8;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .lab-pane__body {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+    }
+    textarea.lab-source {
+      background: #0F172A;
+      border: 0;
+      color: #E2E8F0;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 13px;
+      height: 100%;
+      line-height: 1.55;
+      padding: 14px 16px;
+      resize: none;
+      width: 100%;
+    }
+    textarea.lab-source:focus { outline: 0; }
+    .lab-render-frame {
+      background: #FAF8F4;
+      padding: 18px;
+    }
+    .lab-error {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 8px;
+      color: #B91C1C;
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 0 14px 12px;
+      padding: 10px 12px;
+      white-space: pre-wrap;
+    }
+    .lab-warnings {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 8px;
+      color: #92400E;
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 0 14px 12px;
+      padding: 10px 12px;
+      white-space: pre-wrap;
+    }
+    .lab-preset-bar {
+      align-items: center;
+      background: #F8FAFC;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px 12px;
+    }
+    .lab-preset-bar button {
+      background: #fff;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      color: #334155;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 10px;
+    }
+    .lab-preset-bar button:hover { background: #EFF6FF; border-color: #93C5FD; }
+  </style>
+</head>
+<body>
+
+<div class="lab-shell">
+  <section class="lab-pane">
+    <h2>Card JSON <span class="lab-pane__hint">edits render live</span></h2>
+    <div class="lab-preset-bar" id="lab-presets"></div>
+    <div class="lab-pane__body" style="display:flex;">
+      <textarea class="lab-source" id="lab-source" spellcheck="false" autocapitalize="off" autocorrect="off"></textarea>
+    </div>
+  </section>
+
+  <section class="lab-pane">
+    <h2>Rendered card <span class="lab-pane__hint" id="lab-status">—</span></h2>
+    <div id="lab-error" class="lab-error" hidden></div>
+    <div id="lab-warnings" class="lab-warnings" hidden></div>
+    <div class="lab-pane__body lab-render-frame">
+      <div id="lab-render"></div>
+    </div>
+  </section>
+</div>
+
+<script src="/js/icons.js"></script>
+<script src="/js/render-blocks.js"></script>
+<script src="/js/blocks/compare.js"></script>
+<script src="/js/blocks/flow.js"></script>
+<script src="/js/blocks/structure.js"></script>
+<script src="/js/blocks/data.js"></script>
+<script src="/js/diagrams/econ-svg.js"></script>
+<script src="/js/diagrams/generators/adas.js"></script>
+<script src="/js/diagrams/generators/ppf.js"></script>
+<script src="/js/diagrams/generators/tax-controls.js"></script>
+<script src="/js/diagrams/generators/mult-elas.js"></script>
+<script src="/js/diagrams/generators/firm-labour.js"></script>
+<script src="/js/diagrams/generators/macro-misc.js"></script>
+<script src="/js/diagrams/index.js"></script>
+<script src="/js/blocks/diagram.js"></script>
+<script src="/js/render-validate.js"></script>
+
+<script>
+(function () {
+  'use strict';
+  try { localStorage.setItem('econosDev', '1'); } catch (err) { void err; }
+
+  var PRESETS = {
+    'Empty card': {
+      title: 'My card title',
+      lede: 'A short lede.',
+      blocks: [
+        { type: 'sectionHeader', label: 'Section A' },
+        { type: 'tile', tone: 'blue', head: 'Headline', body: 'Body copy here.' }
+      ]
+    },
+    'Step chain (auto-numbered)': {
+      title: '5-step mechanism',
+      blocks: [
+        { type: 'stepChain', steps: [
+          { head: 'Supply shock',  body: 'OPEC cuts supply and oil prices jump.' },
+          { head: 'SRAS shifts left', body: 'Higher input costs hit firms.' },
+          { head: 'Stagflation', body: 'Output falls and prices rise.' },
+          { head: 'Wage demands', body: 'Workers seek to protect real pay.' },
+          { head: 'Wage–price spiral', body: 'Expectations ratchet up; SRPC shifts up.' }
+        ]}
+      ]
+    },
+    'Pair (side-by-side)': {
+      title: 'Pair example',
+      blocks: [
+        { type: 'pair', vsLabel: 'vs',
+          left:  { tone: 'green', icon: '+', head: 'Inflation low', body: 'Real wages preserved; planning easier.' },
+          right: { tone: 'rose',  icon: '-', head: 'Inflation high', body: 'Erodes purchasing power; uncertainty rises.' }
+        }
+      ]
+    },
+    'Grid with cycleTones': {
+      title: 'Auto-toned 5-tile grid',
+      blocks: [
+        { type: 'grid', cols: 5, cycleTones: true, children: [
+          { type: 'tile', head: 'Growth',     body: 'GDP rises.' },
+          { type: 'tile', head: 'Employment', body: 'Jobs created.' },
+          { type: 'tile', head: 'Inflation',  body: 'Stable prices.' },
+          { type: 'tile', head: 'Balance',    body: 'External equilibrium.' },
+          { type: 'tile', head: 'Environment', body: 'Sustainability.' }
+        ]}
+      ]
+    },
+    'Diagram (AD/AS demand-pull)': {
+      title: 'Diagram block',
+      blocks: [
+        { type: 'diagram', spec: { type: 'adasDiagram', mode: 'demand-pull' }, caption: 'AD shifts right.' }
+      ]
+    }
+  };
+
+  var presetBar = document.getElementById('lab-presets');
+  Object.keys(PRESETS).forEach(function (name) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = name;
+    btn.addEventListener('click', function () { setSource(PRESETS[name]); });
+    presetBar.appendChild(btn);
+  });
+
+  var sourceEl = document.getElementById('lab-source');
+  var renderEl = document.getElementById('lab-render');
+  var errorEl = document.getElementById('lab-error');
+  var warningsEl = document.getElementById('lab-warnings');
+  var statusEl = document.getElementById('lab-status');
+
+  function setSource(card) {
+    sourceEl.value = JSON.stringify(card, null, 2);
+    rerender();
+  }
+
+  function showError(msg) {
+    errorEl.hidden = !msg;
+    errorEl.textContent = msg || '';
+  }
+  function showWarnings(list) {
+    if (!list || !list.length) { warningsEl.hidden = true; return; }
+    warningsEl.hidden = false;
+    warningsEl.textContent = list.join('\n');
+  }
+
+  function rerender() {
+    var raw = sourceEl.value.trim();
+    if (!raw) { renderEl.innerHTML = ''; showError(''); showWarnings([]); statusEl.textContent = 'empty'; return; }
+    var card;
+    try {
+      // Permissive: allow either strict JSON or a JS object literal.
+      // The latter helps when pasting straight from a data-file.
+      // eslint-disable-next-line no-new-func
+      card = new Function('return (' + raw + ')')();
+    } catch (e) {
+      showError('Parse error: ' + e.message);
+      showWarnings([]);
+      statusEl.textContent = 'parse error';
+      return;
+    }
+    showError('');
+
+    // Validate (catches missing required fields, unknown block types, etc.)
+    var report = { errors: [], warnings: [] };
+    if (window.EconosDebug && typeof window.EconosDebug.validate === 'function') {
+      try {
+        report = window.EconosDebug.validate({ cards: [card] }) || report;
+      } catch (e) { void e; }
+    }
+    if (report.errors && report.errors.length) {
+      showError(report.errors.join('\n'));
+    }
+    showWarnings(report.warnings || []);
+    statusEl.textContent = (report.errors && report.errors.length)
+      ? (report.errors.length + ' error(s)')
+      : (report.warnings && report.warnings.length)
+        ? (report.warnings.length + ' warning(s)')
+        : 'ok';
+
+    try {
+      renderEl.innerHTML = window.renderBlocks(card);
+    } catch (e) {
+      showError('Render error: ' + e.message);
+    }
+  }
+
+  sourceEl.addEventListener('input', rerender);
+
+  // Initial seed
+  setSource(PRESETS['Step chain (auto-numbered)']);
+}());
+</script>
+</body>
+</html>

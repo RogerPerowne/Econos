@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.17.2 — 2026-05-30
+
+### Impact of Economic Growth · Card 1 multi-dimensional row → flow
+
+Replaced the cramped 5-column `causes2` row at the bottom of Card 1 with a
+`flow` block: filled tone-accent circles numbered 1–5 sit above each title
+with dashed connectors between them. Carries the sequential layering of
+the framework ("The headline → but who it lands on → and what it buys →
+and whether it lasts → and how it feels") with one of our standard
+storytelling layouts rather than a custom tile grid. Cache → `econos-v110`.
+
 ## 0.17.1 — 2026-05-29
 
 ### Impact of Economic Growth · Card 1 redesign

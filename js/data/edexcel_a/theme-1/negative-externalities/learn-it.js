@@ -269,37 +269,25 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Exam edge & economist insight',
-      tip: { icon: null, tone: 'green', head: 'Exam edge – best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The size of the welfare loss depends on the <em>price elasticity of demand and supply</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;A Pigouvian tax is <em>theoretically efficient</em> but <em>practically difficult to calibrate</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Market-based policies are more <em>cost-effective</em>; <em>command-and-control gives greater certainty</em>.&rdquo;</span></div></div>' },
-      flow: [
-        { tone: 'blue',   icon: '📘', title: 'Define & explain',            sub: 'Define the externality (type and cause) and explain the negative production externality diagram with MSC above MPC.' },
-        { tone: 'green',  icon: '💸', title: 'Analyse market-based',        sub: 'Evaluate Pigouvian tax and tradeable permits: efficiency, revenue, certainty, and the difficulty of measuring MEC.' },
-        { tone: 'purple', icon: '📋', title: 'Compare command-and-control', sub: 'Assess regulations, standards and bans on certainty of outcome, compliance costs and fairness.' },
-        { tone: 'amber',  icon: '⚖️', title: 'Reach a judgement',          sub: 'Weigh size of externality, elasticity, political feasibility and irreversibility. Make a clear, supported conclusion.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: null, text: '<strong>Exam edge – best phrases to use in high-mark answers</strong><br><div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The size of the welfare loss depends on the <em>price elasticity of demand and supply</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;A Pigouvian tax is <em>theoretically efficient</em> but <em>practically difficult to calibrate</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Market-based policies are more <em>cost-effective</em>; <em>command-and-control gives greater certainty</em>.&rdquo;</span></div></div>' },
+        { type: 'sectionHeader', icon: '📖', label: 'How to evaluate a 25-mark essay' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Define & explain',            detail: 'Define the externality (type and cause) and explain the negative production externality diagram with MSC above MPC.' },
+          { label: 'Analyse market-based',        detail: 'Evaluate Pigouvian tax and tradeable permits: efficiency, revenue, certainty, and the difficulty of measuring MEC.' },
+          { label: 'Compare command-and-control', detail: 'Assess regulations, standards and bans on certainty of outcome, compliance costs and fairness.' },
+          { label: 'Reach a judgement',           detail: 'Weigh size of externality, elasticity, political feasibility and irreversibility. Make a clear, supported conclusion.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'Judgement framework – use these criteria to compare policies' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'Size of the externality',  body: 'How large is the welfare loss? Larger externalities justify stronger intervention.' },
+          { type: 'tile', tone: 'blue',   icon: '📉', head: 'Elasticity',                body: 'How responsive are demand and supply? Inelastic demand means taxes raise revenue but cut quantity less.' },
+          { type: 'tile', tone: 'purple', icon: '🗣️', head: 'Political feasibility',     body: 'Is the policy likely to be accepted and enforced? Regulatory capture, electoral cycles and public buy-in matter.' },
+          { type: 'tile', tone: 'amber',  icon: '🌱', head: 'Irreversibility of harm',   body: 'Would the damage persist or be hard to reverse? Irreversible harms favour command-and-control.' }
+        ]},
+        { type: 'bigIdea', text: 'The best policy depends on the <em>external harm</em>, the <em>information available</em> and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more efficient; command-and-control may be preferred when certainty and fairness matter most.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list.' }
       ],
-      flowTitle: 'How to evaluate a 25-mark essay',
-      flowEmoji: '📖',
-      causesLabel: 'Judgement framework – use these criteria to compare policies',
-      causesEmoji: '⚖️',
-      causesStyle: 'tinted-flat',
-      causes: [
-        { icon: '📈', head: 'Size of the externality',  body: 'How large is the welfare loss? Larger externalities justify stronger intervention.',                            tone: 'green'  },
-        { icon: '📉', head: 'Elasticity',                body: 'How responsive are demand and supply? Inelastic demand means taxes raise revenue but cut quantity less.',        tone: 'blue'   },
-        { icon: '🗣️', head: 'Political feasibility',     body: 'Is the policy likely to be accepted and enforced? Regulatory capture, electoral cycles and public buy-in matter.', tone: 'purple' },
-        { icon: '🌱', head: 'Irreversibility of harm',  body: 'Would the damage persist or be hard to reverse? Irreversible harms favour command-and-control.',                  tone: 'amber'  }
-      ],
-      economistQuote: {
-        portraitKey: 'economistPigou',
-        tone: 'amber',
-        label: 'Economist insight on externalities',
-        quote: '…one person A, in the course of rendering some service for which payment is made to a second person B, incidentally also renders services or disservices to other persons, of such a sort that payment cannot be exacted from the benefited parties or compensation enforced on behalf of the injured parties.',
-        attribution: 'Arthur Pigou, <em>The Economics of Welfare</em> (1920)'
-      },
-      tipLate: {
-        icon: '💡', tone: 'green', head: 'Why this matters',
-        text: 'This passage defines the externality problem: A imposes a cost on others, but no one can compel A to pay. Pigou\'s solution was a corrective tax – set equal to the <strong>marginal external cost at Q*</strong> – so firms face the full social cost of their output. This <strong>Pigouvian tax</strong> shifts MPC up to MSC, closing the wedge between private and social optima.'
-      },
-      conclusion: { title: 'Top-line judgement', text: 'The best policy depends on the <em>external harm</em>, the <em>information available</em> and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more efficient; command-and-control may be preferred when certainty and fairness matter most.' },
-      examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

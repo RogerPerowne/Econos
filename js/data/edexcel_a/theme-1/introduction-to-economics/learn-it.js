@@ -25,238 +25,161 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'basic_econ_problem_1',
-      template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'The basic economic problem: the big picture',
       lede: 'Economics begins with a simple tension: our wants are unlimited, but the resources to satisfy them are limited.',
-      tip: { icon: '💡', tone: 'blue', text: 'Economics begins with a simple tension – our wants are unlimited, but the resources to satisfy them are limited.' },
-      comparison: {
-        title: 'The core problem',
-        emoji: '⚡',
-        left:  { tone: 'rose',  icon: '❤️', label: 'Unlimited wants',   caption: 'Our wants are endless and ever-changing.' },
-        right: { tone: 'green', icon: '📦', label: 'Limited resources', caption: 'Resources are finite and can be used in many ways.' }
-      },
-      body: '<strong>Scarcity</strong> is the fundamental economic problem: human wants are unlimited, but the resources needed to satisfy them are finite. Because resources are scarce, we cannot produce everything we want – so choices must be made.<br><br>Scarcity applies to <em>every</em> economy regardless of wealth. Even the richest country cannot produce unlimited healthcare, education, infrastructure and defence simultaneously. Scarcity forces trade-offs at every level: individual, firm, and government.',
-      causes: [
-        { head: 'Land',       icon: '🌿', body: 'Natural resources provided by the earth – minerals, forests, fertile soil, water, fish stocks, oil and gas.' },
-        { head: 'Labour',     icon: '👥', body: 'The mental and physical effort of people – and the skills they bring. Quantity (workforce) and quality (education) both matter.' },
-        { head: 'Capital',    icon: '🏭', body: 'Man-made tools, machinery, factories and infrastructure used to produce other goods and services.' },
-        { head: 'Enterprise', icon: '💡', body: 'The ability to organise the other three factors, take risks and innovate. Without enterprise nothing gets made.' }
-      ],
-      causesLabel: 'Resources are scarce – the four factors of production',
-      causesEmoji: '🏗️',
-      keyTerms: [
-        { term: 'Scarcity', def: 'The condition where unlimited wants exceed the limited resources available to satisfy them.' },
-        { term: 'Factors of production', def: 'Land (natural resources), Labour (human effort), Capital (man-made productive assets), Enterprise (risk-taking ability).' },
-        { term: 'Free good', def: 'A good that is not scarce – available in unlimited quantity at zero opportunity cost. True free goods are extremely rare (e.g. air in most locations).' }
-      ],
-      examEdge: 'Scarcity is distinct from poverty. A billionaire still faces scarcity – they cannot buy unlimited time or live forever. Scarcity is a universal condition; poverty is a distributional one. Examiners test whether you understand this distinction.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Economics begins with a simple tension – our wants are unlimited, but the resources to satisfy them are limited.' },
+        { type: 'sectionHeader', icon: '⚡', label: 'The core problem' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'rose',  icon: '❤️', head: 'Unlimited wants',   body: 'Our wants are endless and ever-changing.' },
+          { type: 'tile', tone: 'green', icon: '📦', head: 'Limited resources', body: 'Resources are finite and can be used in many ways.' }
+        ]},
+        { type: 'sectionHeader', icon: '🏗️', label: 'Resources are scarce – the four factors of production' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '🌿', head: 'Land',       body: 'Natural resources provided by the earth – minerals, forests, fertile soil, water, fish stocks, oil and gas.' },
+          { type: 'tile', tone: 'blue',   icon: '👥', head: 'Labour',     body: 'The mental and physical effort of people – and the skills they bring. Quantity (workforce) and quality (education) both matter.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'Capital',    body: 'Man-made tools, machinery, factories and infrastructure used to produce other goods and services.' },
+          { type: 'tile', tone: 'purple', icon: '💡', head: 'Enterprise', body: 'The ability to organise the other three factors, take risks and innovate. Without enterprise nothing gets made.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Scarcity is distinct from poverty. A billionaire still faces scarcity – they cannot buy unlimited time or live forever. Scarcity is a universal condition; poverty is a distributional one. Examiners test whether you understand this distinction.' }
+      ]
     },
     {
       id: 'basic_econ_problem_2',
-      template: 'framing',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Opportunity Cost',
       lede: 'Every choice means giving something up. Opportunity cost is the value of the next best alternative forgone – not the money you spent.',
-      tip: { icon: '💡', tone: 'blue', text: 'Every choice means giving something up. Opportunity cost is the next best alternative forgone.' },
-      comparison: {
-        title: 'A concrete picture – both cost £80',
-        emoji: '🎯',
-        left:  { tone: 'green', icon: '🎫', label: 'Concert ticket',  value: '\xa380', caption: 'What you choose' },
-        right: { tone: 'amber', icon: '👟', label: 'New trainers',    value: '\xa380', caption: 'What you give up' }
-      },
-      body: 'You spent <strong>\xa380</strong> on the concert ticket – but your <strong>opportunity cost</strong> is not \xa380. It is the value of the trainers you gave up. The same logic underpins every economic decision a consumer, firm or government makes – and it shapes demand curves, supply choices and the slope of the production possibility frontier.',
-      causes: [
-        { head: 'Consumers',  icon: '🛍️', body: 'A consumer choosing a cinema ticket instead of saving that money for next month\'s bills. The opportunity cost is whatever the saved money would have bought.' },
-        { head: 'Firms',      icon: '🏭', body: 'A firm investing in new machines instead of advertising. The opportunity cost is the extra sales the advertising campaign might have produced.' },
-        { head: 'Government', icon: '🏛️', body: 'A government spending £10bn on hospitals instead of building new roads. The opportunity cost is the roads, schools or tax cuts that could have been funded.' }
-      ],
-      causesLabel: 'Who faces it?',
-      causesEmoji: '👥',
-      branches: [
-        { tone: 'green',  label: 'Same choice, different cost',                 sub: 'If the next best alternative changes, so does the opportunity cost – even if the choice itself is identical.' },
-        { tone: 'amber',  label: 'Sunk costs do not count',                     sub: 'Past costs cannot be changed by today\'s decision, so they are never part of the opportunity cost – only the foregone alternatives count.' },
-        { tone: 'blue',   label: 'Better alternatives = higher opportunity cost', sub: 'The more valuable the next best option, the higher the opportunity cost of the choice you made.' }
-      ],
-      branchesLabel: 'It depends on the next best alternative',
-      branchesEmoji: '⚖️',
-      keyTerms: [
-        { term: 'Opportunity cost', def: 'The value of the next best alternative forgone as a result of making a choice.' },
-        { term: 'Explicit cost',    def: 'Actual monetary payment for a resource (e.g. wage paid to a worker).' },
-        { term: 'Implicit cost',    def: 'Opportunity cost of a resource you own (e.g. foregone salary of an entrepreneur working in their own firm).' }
-      ],
-      examEdge: 'In exam questions, always state what the opportunity cost IS – not just that "something is given up." For government spending questions, name the alternative use of funds explicitly. Vague answers lose marks.',
-      keyTakeaway: 'Opportunity cost is not all the alternatives you give up – it is the value of the next best one.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Every choice means giving something up. Opportunity cost is the next best alternative forgone.' },
+        { type: 'sectionHeader', icon: '🎯', label: 'A concrete picture – both cost £80' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', icon: '🎫', head: 'Concert ticket – £80',  body: 'What you choose.' },
+          { type: 'tile', tone: 'amber', icon: '👟', head: 'New trainers – £80',    body: 'What you give up.' }
+        ]},
+        { type: 'sectionHeader', icon: '👥', label: 'Who faces it?' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '🛍️', head: 'Consumers',  body: 'A consumer choosing a cinema ticket instead of saving that money for next month\'s bills. The opportunity cost is whatever the saved money would have bought.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'Firms',      body: 'A firm investing in new machines instead of advertising. The opportunity cost is the extra sales the advertising campaign might have produced.' },
+          { type: 'tile', tone: 'purple', icon: '🏛️', head: 'Government', body: 'A government spending £10bn on hospitals instead of building new roads. The opportunity cost is the roads, schools or tax cuts that could have been funded.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'It depends on the next best alternative' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', head: 'Same choice, different cost',                 body: 'If the next best alternative changes, so does the opportunity cost – even if the choice itself is identical.' },
+          { type: 'tile', tone: 'amber', head: 'Sunk costs do not count',                     body: 'Past costs cannot be changed by today\'s decision, so they are never part of the opportunity cost – only the foregone alternatives count.' },
+          { type: 'tile', tone: 'blue',  head: 'Better alternatives = higher opportunity cost', body: 'The more valuable the next best option, the higher the opportunity cost of the choice you made.' }
+        ]},
+        { type: 'bigIdea', text: 'Opportunity cost is not all the alternatives you give up – it is the value of the next best one.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'In exam questions, always state what the opportunity cost IS – not just that "something is given up." For government spending questions, name the alternative use of funds explicitly. Vague answers lose marks.' }
+      ]
     },
     {
       id: 'basic_econ_problem_3',
-      template: 'framing',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'The Three Fundamental Economic Questions',
       lede: 'Because resources are scarce, every economy must answer three core questions – and the answers shape the entire system.',
-      tip: { icon: '💡', tone: 'blue', text: 'Because resources are scarce, every economy must answer three core questions: <strong>what</strong> to produce, <strong>how</strong> to produce, and <strong>for whom</strong> to produce.' },
-      branches: [
-        { tone: 'green',  label: '1. What to produce?',     sub: 'Decide which goods and services to produce with limited resources. Health care, gaming consoles, renewable energy – every yes is a no to something else.' },
-        { tone: 'amber',  label: '2. How to produce?',      sub: 'Decide which combination of factors to use. Labour-intensive or capital-intensive? Local or imported inputs? Sustainable or fastest?' },
-        { tone: 'blue',   label: '3. For whom to produce?', sub: 'Decide who gets the output. Distribution is shaped by income, prices, need, merit, and government allocation – never neutral.' }
-      ],
-      branchesLabel: 'The three questions',
-      branchesEmoji: '❓',
-      body: 'Scarcity forces every society to answer these three questions. They are deceptively simple – but the answers determine production, employment, and the distribution of wealth. Different economic systems answer them very differently, which is what the next section explores.',
-      causes: [
-        { head: 'Market economy',  icon: '🛒', body: 'Individuals and firms answer the three questions through choices made in markets, guided by prices and profit. Decentralised, fast-moving, prone to inequality and market failure.' },
-        { head: 'Command economy', icon: '🏛️', body: 'Central government planners make the main decisions about what, how and for whom to produce. Aims for equity and coordination, but struggles with information and incentive problems.' },
-        { head: 'Mixed economy',   icon: '⚖️', body: 'Markets and government share the decisions, varying by industry and policy goals. The dominant model in the modern world – including the UK.' }
-      ],
-      causesLabel: 'Different systems answer differently',
-      causesEmoji: '🌍',
-      keyTerms: [
-        { term: 'Choice',     def: 'Scarcity means we cannot have everything, so choices must be made.' },
-        { term: 'Efficiency', def: 'The right answers aim to use resources well and avoid waste.' },
-        { term: 'Equity',     def: 'Decisions affect how fairly goods and services are shared among people.' }
-      ],
-      keyTermsLabel: 'Why this matters',
-      keyTermsEmoji: '💡',
-      examEdge: 'The three questions are normative at heart – different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'Because resources are scarce, every economy must answer three core questions: <strong>what</strong> to produce, <strong>how</strong> to produce, and <strong>for whom</strong> to produce.' },
+        { type: 'sectionHeader', icon: '❓', label: 'The three questions' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', head: '1. What to produce?',     body: 'Decide which goods and services to produce with limited resources. Health care, gaming consoles, renewable energy – every yes is a no to something else.' },
+          { type: 'tile', tone: 'amber', head: '2. How to produce?',      body: 'Decide which combination of factors to use. Labour-intensive or capital-intensive? Local or imported inputs? Sustainable or fastest?' },
+          { type: 'tile', tone: 'blue',  head: '3. For whom to produce?', body: 'Decide who gets the output. Distribution is shaped by income, prices, need, merit, and government allocation – never neutral.' }
+        ]},
+        { type: 'sectionHeader', icon: '🌍', label: 'Different systems answer differently' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '🛒', head: 'Market economy',  body: 'Individuals and firms answer the three questions through choices made in markets, guided by prices and profit. Decentralised, fast-moving, prone to inequality and market failure.' },
+          { type: 'tile', tone: 'rose',   icon: '🏛️', head: 'Command economy', body: 'Central government planners make the main decisions about what, how and for whom to produce. Aims for equity and coordination, but struggles with information and incentive problems.' },
+          { type: 'tile', tone: 'blue',   icon: '⚖️', head: 'Mixed economy',   body: 'Markets and government share the decisions, varying by industry and policy goals. The dominant model in the modern world – including the UK.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'The three questions are normative at heart – different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."' }
+      ]
     },
     {
       id: 'basic_econ_problem_4',
-      template: 'cause',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Economic Agents and Their Objectives',
       lede: 'An economy is made up of decision-makers – households, firms, governments and workers – each with their own objectives.',
-      tip: { icon: '💡', tone: 'blue', text: 'An economy is made up of decision-makers – households, firms, governments and workers – each with their own objectives.' },
-      body: 'Standard economic models start by asking <em>who</em> is making the decision. Different agents pursue different objectives, which is why conflict and trade-off are so central to economics.',
-      causes: [
-        { head: 'Households',  icon: '🏠', body: 'Aim to maximise utility (satisfaction) within a budget. Consume goods and services and supply labour. Assumed to be rational: weigh marginal costs and benefits.' },
-        { head: 'Firms',       icon: '🏭', body: 'Produce goods and services to sell in markets. Standard theory assumes profit maximisation, but firms may also pursue revenue, growth or survival (covered in Theme 3).' },
-        { head: 'Government',  icon: '🏛️', body: 'Sets rules, corrects market failures, redistributes income, provides public goods and stabilises the macroeconomy. Acts in the public interest – though government failure is possible.' },
-        { head: 'Workers',     icon: '👤', body: 'Supply labour in return for wages. Face a work-leisure trade-off and care about wages, job security and satisfaction. Covered fully in Theme 3 labour markets.' }
-      ],
-      causesLabel: 'Who are the economic agents?',
-      causesEmoji: '👥',
-      table: {
-        title: 'Common objectives',
-        emoji: '🎯',
-        headers: ['Agent', 'Likely objectives'],
-        rows: [
-          { icon: '🏠', label: 'Households', value: 'Maximise satisfaction / utility' },
-          { icon: '🏭', label: 'Firms',      value: 'Profit, growth, survival, market share' },
-          { icon: '🏛️', label: 'Government', value: 'Growth, low inflation, low unemployment, equity' },
-          { icon: '👤', label: 'Workers',    value: 'Wages, job security, job satisfaction' }
-        ]
-      },
-      branches: [
-        { tone: 'amber',  label: 'Lower prices vs higher profits',     sub: 'Consumers want lower prices; firms want higher profits. Every price tag is a battleground between the two.' },
-        { tone: 'rose',   label: 'Higher wages vs lower costs',        sub: 'Workers want higher wages; firms want to keep costs down. Wage bargaining and minimum-wage debates flow from this.' },
-        { tone: 'green',  label: 'Economic growth vs the environment', sub: 'Faster growth can increase pollution and resource use; sustainability may slow growth. Modern policy must trade them off.' }
-      ],
-      branchesLabel: 'Why objectives can conflict',
-      branchesEmoji: '⚔️',
-      examEdge: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational – they use heuristics, are loss-averse, and act on incomplete information.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'An economy is made up of decision-makers – households, firms, governments and workers – each with their own objectives.' },
+        { type: 'sectionHeader', icon: '👥', label: 'Who are the economic agents?' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '🏠', head: 'Households',  body: 'Aim to maximise utility (satisfaction) within a budget. Consume goods and services and supply labour. Assumed to be rational: weigh marginal costs and benefits.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'Firms',       body: 'Produce goods and services to sell in markets. Standard theory assumes profit maximisation, but firms may also pursue revenue, growth or survival (covered in Theme 3).' },
+          { type: 'tile', tone: 'blue',   icon: '🏛️', head: 'Government',  body: 'Sets rules, corrects market failures, redistributes income, provides public goods and stabilises the macroeconomy. Acts in the public interest – though government failure is possible.' },
+          { type: 'tile', tone: 'purple', icon: '👤', head: 'Workers',     body: 'Supply labour in return for wages. Face a work-leisure trade-off and care about wages, job security and satisfaction. Covered fully in Theme 3 labour markets.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚔️', label: 'Why objectives can conflict' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'amber', head: 'Lower prices vs higher profits',     body: 'Consumers want lower prices; firms want higher profits. Every price tag is a battleground between the two.' },
+          { type: 'tile', tone: 'rose',  head: 'Higher wages vs lower costs',        body: 'Workers want higher wages; firms want to keep costs down. Wage bargaining and minimum-wage debates flow from this.' },
+          { type: 'tile', tone: 'green', head: 'Economic growth vs the environment', body: 'Faster growth can increase pollution and resource use; sustainability may slow growth. Modern policy must trade them off.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational – they use heuristics, are loss-averse, and act on incomplete information.' }
+      ]
     },
     {
       id: 'basic_econ_problem_5',
-      template: 'paired',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Positive vs Normative Statements',
-      tip: { icon: 'ℹ️', text: '<strong>Positive</strong> statements can be tested with evidence. <strong>Normative</strong> statements involve value judgements about what ought to happen.', tone: 'blue' },
-      left: {
-        label: 'Positive statements',
-        points: [
-          'Objective, factual claims about how the world IS',
-          'Can be tested against evidence and accepted or rejected',
-          'Example: "Raising minimum wage to \xa312/hr increases employment costs for SMEs"',
-          'Example: "UK inflation was 2.3% in October 2024"',
-          'Economics as a social science aspires to positive analysis'
-        ]
-      },
-      right: {
-        label: 'Normative statements',
-        points: [
-          'Subjective value judgements about how the world SHOULD be',
-          'Cannot be resolved purely by evidence – reflect values and priorities',
-          'Example: "The government should redistribute income more aggressively"',
-          'Example: "Economic growth is more important than environmental protection"',
-          'Policy recommendations are inherently normative'
-        ]
-      },
-      examEdge: 'Many policy debates contain both positive and normative elements. "Raising minimum wage will reduce employment" is positive (testable). "We should raise it anyway because fairness matters more" is normative. Identifying this distinction in exam questions signals analytical maturity.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: 'ℹ️', text: '<strong>Positive</strong> statements can be tested with evidence. <strong>Normative</strong> statements involve value judgements about what ought to happen.' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green', head: 'Positive statements', body: '<ul style="margin:0;padding-left:18px;"><li>Objective, factual claims about how the world IS</li><li>Can be tested against evidence and accepted or rejected</li><li>Example: "Raising minimum wage to £12/hr increases employment costs for SMEs"</li><li>Example: "UK inflation was 2.3% in October 2024"</li><li>Economics as a social science aspires to positive analysis</li></ul>' },
+          { type: 'tile', tone: 'amber', head: 'Normative statements', body: '<ul style="margin:0;padding-left:18px;"><li>Subjective value judgements about how the world SHOULD be</li><li>Cannot be resolved purely by evidence – reflect values and priorities</li><li>Example: "The government should redistribute income more aggressively"</li><li>Example: "Economic growth is more important than environmental protection"</li><li>Policy recommendations are inherently normative</li></ul>' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Many policy debates contain both positive and normative elements. "Raising minimum wage will reduce employment" is positive (testable). "We should raise it anyway because fairness matters more" is normative. Identifying this distinction in exam questions signals analytical maturity.' }
+      ]
     },
     {
       id: 'basic_econ_problem_6',
-      template: 'mechanisms',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Rational Economic Decision-Making',
       lede: 'In simple economic models, decision-makers are assumed to act rationally – weighing up costs and benefits to maximise their objective.',
-      tip: { icon: '💡', tone: 'blue', text: 'In simple economic models, decision-makers are assumed to act <strong>rationally</strong> – weighing up costs and benefits to maximise their objective.' },
-      body: 'Rational means making decisions in a logical and consistent way to achieve the best possible outcome. The standard model walks through four steps:',
-      flow: [
-        { icon: '🔍', title: 'Identify the objective',     sub: 'Be clear about the goal you want to achieve.' },
-        { icon: '⚖️', title: 'Compare costs and benefits', sub: 'List the costs and benefits of each available option.' },
-        { icon: '✅', title: 'Choose the best option',     sub: 'Select the option that maximises net benefit (or utility).' },
-        { icon: '🔄', title: 'Review the outcome',         sub: 'Check results and learn from the outcome for future decisions.' }
-      ],
-      flowTitle: 'What does rational mean?',
-      flowEmoji: '🧠',
-      causes: [
-        { head: 'Consumer',   icon: '🛒', body: 'A consumer compares mobile phone plans and picks the cheapest option that gives the same data and minutes.' },
-        { head: 'Firm',       icon: '🏭', body: 'A firm compares the cost of hiring extra workers against buying a machine that can do the same job – and chooses the lower-cost option.' },
-        { head: 'Government', icon: '🏛️', body: 'A government evaluates competing policies and chooses the one with the greatest net benefit per pound spent.' }
-      ],
-      causesLabel: 'Examples',
-      causesEmoji: '💡',
-      branches: [
-        { tone: 'amber',  label: 'Limited information', sub: 'Decision-makers rarely have complete or perfect information about every option – they decide under uncertainty.' },
-        { tone: 'rose',   label: 'Bias and habit',      sub: 'Emotions, habits and cognitive biases (loss aversion, present bias, anchoring) lead to systematically suboptimal choices. Covered in Theme 1.7.' },
-        { tone: 'blue',   label: 'Time pressure',       sub: 'Decisions often need to be made quickly with limited time to evaluate every option – so people use rules of thumb (heuristics) instead.' }
-      ],
-      branchesLabel: 'Limits to perfect rationality',
-      examEdge: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'In simple economic models, decision-makers are assumed to act <strong>rationally</strong> – weighing up costs and benefits to maximise their objective.' },
+        { type: 'sectionHeader', icon: '🧠', label: 'What does rational mean?' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Identify the objective',     detail: 'Be clear about the goal you want to achieve.' },
+          { label: 'Compare costs and benefits', detail: 'List the costs and benefits of each available option.' },
+          { label: 'Choose the best option',     detail: 'Select the option that maximises net benefit (or utility).' },
+          { label: 'Review the outcome',         detail: 'Check results and learn from the outcome for future decisions.' }
+        ]},
+        { type: 'sectionHeader', icon: '💡', label: 'Examples' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '🛒', head: 'Consumer',   body: 'A consumer compares mobile phone plans and picks the cheapest option that gives the same data and minutes.' },
+          { type: 'tile', tone: 'amber',  icon: '🏭', head: 'Firm',       body: 'A firm compares the cost of hiring extra workers against buying a machine that can do the same job – and chooses the lower-cost option.' },
+          { type: 'tile', tone: 'purple', icon: '🏛️', head: 'Government', body: 'A government evaluates competing policies and chooses the one with the greatest net benefit per pound spent.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚠️', label: 'Limits to perfect rationality' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'amber', head: 'Limited information', body: 'Decision-makers rarely have complete or perfect information about every option – they decide under uncertainty.' },
+          { type: 'tile', tone: 'rose',  head: 'Bias and habit',      body: 'Emotions, habits and cognitive biases (loss aversion, present bias, anchoring) lead to systematically suboptimal choices. Covered in Theme 1.7.' },
+          { type: 'tile', tone: 'blue',  head: 'Time pressure',       body: 'Decisions often need to be made quickly with limited time to evaluate every option – so people use rules of thumb (heuristics) instead.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.' }
+      ]
     },
     {
       id: 'basic_econ_problem_7',
-      template: 'paired',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Micro vs Macro Economics',
       lede: 'Microeconomics zooms in on individual markets and decision-makers. Macroeconomics zooms out to the whole economy.',
-      tip: { icon: '💡', tone: 'blue', text: '<strong>Microeconomics</strong> zooms in on individual markets and decision-makers. <strong>Macroeconomics</strong> zooms out to the whole economy.' },
-      left: {
-        label: '🔍 Microeconomics',
-        points: [
-          'Looks at individual markets and decision-makers',
-          'Demand and supply in a single market',
-          'How firms compete in an industry',
-          'Wages and employment within a firm',
-          'Market failure and consumer choice',
-          'Primary focus of Themes 1 and 3'
-        ]
-      },
-      right: {
-        label: '🌍 Macroeconomics',
-        points: [
-          'Looks at the economy as a whole',
-          'Inflation and the price level',
-          'Unemployment and economic growth',
-          'Trade, imports and exports',
-          'Fiscal and monetary policy',
-          'Primary focus of Themes 2 and 4'
-        ]
-      },
-      causes: [
-        { head: 'Wages affect inflation',        body: 'Higher wages can raise costs for firms (micro), feeding into higher prices across the whole economy (macro).' },
-        { head: 'Investment affects growth',     body: 'Business investment is a micro decision, but in aggregate it increases productive capacity and boosts national output.' },
-        { head: 'Taxes affect both',             body: 'Taxes change incentives for individual workers and firms, and also shape government revenue and spending in the wider economy.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: '<strong>Microeconomics</strong> zooms in on individual markets and decision-makers. <strong>Macroeconomics</strong> zooms out to the whole economy.' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  head: '🔍 Microeconomics', body: '<ul style="margin:0;padding-left:18px;"><li>Looks at individual markets and decision-makers</li><li>Demand and supply in a single market</li><li>How firms compete in an industry</li><li>Wages and employment within a firm</li><li>Market failure and consumer choice</li><li>Primary focus of Themes 1 and 3</li></ul>' },
+          { type: 'tile', tone: 'green', head: '🌍 Macroeconomics', body: '<ul style="margin:0;padding-left:18px;"><li>Looks at the economy as a whole</li><li>Inflation and the price level</li><li>Unemployment and economic growth</li><li>Trade, imports and exports</li><li>Fiscal and monetary policy</li><li>Primary focus of Themes 2 and 4</li></ul>' }
+        ]},
+        { type: 'sectionHeader', icon: '🔗', label: 'They connect' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'amber',  head: 'Wages affect inflation',    body: 'Higher wages can raise costs for firms (micro), feeding into higher prices across the whole economy (macro).' },
+          { type: 'tile', tone: 'green',  head: 'Investment affects growth', body: 'Business investment is a micro decision, but in aggregate it increases productive capacity and boosts national output.' },
+          { type: 'tile', tone: 'purple', head: 'Taxes affect both',         body: 'Taxes change incentives for individual workers and firms, and also shape government revenue and spending in the wider economy.' }
+        ]},
+        { type: 'bigIdea', text: 'Micro explains the parts; macro explains the whole – and good economists link both.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'The micro-macro distinction matters for policy evaluation. Supply-side policies (micro-level reforms to labour and product markets) work through micro mechanisms but have macro effects. Always specify the transmission mechanism linking micro behaviour to macro outcomes in essays.' }
       ],
-      causesLabel: 'They connect',
-      causesEmoji: '🔗',
-      keyTerms: [
-        { term: 'Microeconomics',         def: 'Study of individual agents, markets and resource allocation at the level of the firm, household, and industry.' },
-        { term: 'Macroeconomics',         def: 'Study of the economy as a whole – national income, price level, employment, and economic policy.' },
-        { term: 'Fallacy of composition', def: 'The error of assuming what is true for a part is true for the whole: a wage cut helps one firm; if all firms cut wages, aggregate demand falls.' }
-      ],
-      examEdge: 'The micro-macro distinction matters for policy evaluation. Supply-side policies (micro-level reforms to labour and product markets) work through micro mechanisms but have macro effects. Always specify the transmission mechanism linking micro behaviour to macro outcomes in essays.',
-      keyTakeaway: 'Micro explains the parts; macro explains the whole – and good economists link both.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]

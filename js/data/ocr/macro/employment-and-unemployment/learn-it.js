@@ -77,48 +77,30 @@ window.ECONOS_TOPIC = {
       lede: 'Two official measures tell slightly different stories.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'The gap between measures is evidence of measurement difficulty.' },
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'The gap between measures is evidence of measurement difficulty.' },
 
-      pairFirst: true,
-      pairLabel: 'THE TWO MEASURES',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue',
-        icon: '📄',
-        iconStyle: 'circle',
-        label: 'Claimant Count',
-        text: '<p style="font-size:13.5px;color:#0B1426;margin:0 0 10px;">People claiming unemployment-related benefits.</p><ul style="margin:0;padding:0 0 0 1.2em;font-size:13px;color:#0B1426;line-height:1.7;"><li><strong>Scope:</strong> narrow</li><li><strong>Frequency:</strong> monthly</li><li><strong>Influenced by:</strong> eligibility rules and sanctions</li><li><strong>Limitation:</strong> easy to game</li></ul>'
-      },
-      right: {
-        tone: 'amber',
-        icon: '👥',
-        iconStyle: 'circle',
-        label: 'ILO / Labour Force Survey',
-        text: '<p style="font-size:13.5px;color:#0B1426;margin:0 0 10px;">Surveyed households. Unemployed if without a job, available and actively seeking.</p><ul style="margin:0;padding:0 0 0 1.2em;font-size:13px;color:#0B1426;line-height:1.7;"><li><strong>Scope:</strong> broader</li><li><strong>Frequency:</strong> quarterly</li><li><strong>Strength:</strong> internationally comparable</li><li><strong>Role:</strong> headline rate</li></ul>'
-      },
+        { type: 'sectionHeader', icon: '⚖️', label: 'THE TWO MEASURES' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  icon: '📄', head: 'Claimant Count',          body: 'People claiming unemployment-related benefits. Scope: narrow · Frequency: monthly · Influenced by: eligibility rules and sanctions · Limitation: easy to game.' },
+          { type: 'tile', tone: 'amber', icon: '👥', head: 'ILO / Labour Force Survey', body: 'Surveyed households. Unemployed if without a job, available and actively seeking. Scope: broader · Frequency: quarterly · Strength: internationally comparable · Role: headline rate.' }
+        ]},
 
-      comparisonTable: {
-        title: 'MEASURES COMPARED',
-        emoji: '📋',
-        columns: ['Claimant Count', 'ILO / Labour Force Survey'],
-        columnTones: ['blue', 'amber'],
-        rows: [
-          { label: 'Scope',      values: ['Benefit claimants only',             'All people in the labour force'] },
-          { label: 'Strengths',  values: ['Timely; monthly data',               'Comprehensive; internationally comparable'] },
-          { label: 'Weaknesses', values: ['Affected by rules and behaviour',    'Smaller sample; subject to sampling error'] },
-          { label: 'Best use',   values: ['Short-term benefit claimant trends', 'Headline unemployment rate and comparisons'] }
-        ]
-      },
+        { type: 'versusRows',
+          left:  { label: 'Claimant Count',            tone: 'blue' },
+          right: { label: 'ILO / Labour Force Survey', tone: 'amber' },
+          rows: [
+            { criterion: 'Scope',      left: 'Benefit claimants only',             right: 'All people in the labour force' },
+            { criterion: 'Strengths',  left: 'Timely; monthly data',               right: 'Comprehensive; internationally comparable' },
+            { criterion: 'Weaknesses', left: 'Affected by rules and behaviour',    right: 'Smaller sample; subject to sampling error' },
+            { criterion: 'Best use',   left: 'Short-term benefit claimant trends', right: 'Headline unemployment rate and comparisons' }
+          ]
+        },
 
-      conclusion: {
-        title: 'They do not always match',
-        text: 'Different definitions and coverage mean the two measures often diverge. Policy changes can move the Claimant Count without changing real unemployment. Use both measures to build a fuller picture.'
-      },
-
-      examEdge: {
-        title: 'Exam move',
-        text: 'A rise in the Claimant Count may overstate or understate <em>labour-market weakness</em> depending on benefit eligibility rules. A* answers cite the gap between the two measures as evidence of measurement difficulty.'
-      }
+        { type: 'sectionHeader', icon: '💡', label: 'They do not always match' },
+        { type: 'bigIdea', text: 'Different definitions and coverage mean the two measures often diverge. Policy changes can move the Claimant Count without changing real unemployment. Use both measures to build a fuller picture.' },
+        { type: 'examEdge', title: 'Exam move', text: 'A rise in the Claimant Count may overstate or understate labour-market weakness depending on benefit eligibility rules. A* answers cite the gap between the two measures as evidence of measurement difficulty.' }
+      ]
     },
 
     /* ----- CARD 3 – The six types of unemployment ----- */

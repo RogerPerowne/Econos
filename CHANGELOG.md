@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.29.0 — 2026-05-30
+
+### Migration round 2 + orphaned-template cleanup
+
+- Migrated 21 more convertible cards to the block system (203 total), under
+  strict anti-invention rules after round 1 had hallucinated 5 diagram blocks;
+  `scripts/check-diagram-refs.mjs` passes 74/74 with no invented diagrams.
+- Removed 8 orphaned legacy template renderers from `js/app.js` (zero card
+  uses): `demand-side-policies-monetary`, `impacts`, `transmission-chain`,
+  `elasticity-explorer`, `essay-scaffold`, `yed-explorer`, `xed-explorer`,
+  `pes-explorer` (switch cases + renderCard* functions). The 18 still-used
+  templates (incl. ad-interactive + the interactive calculators/explorers
+  behind preserved cards) are kept. `CACHE_NAME` → `econos-v131`.
+
+## 0.28.0 — 2026-05-30
+
+### Merge: integrate team #794 + fix migration hallucinations
+
+Merged the latest `main` (#794 "Conflicts polish") into the renderer overhaul,
+keeping the team's content (took their `icons.js` and re-ran the relocation
+codemod over it). Removed 5 hallucinated diagram blocks introduced by the first
+migration pass. `CACHE_NAME` → `econos-v130`.
+
 ## 0.27.0 — 2026-05-30
 
 ### Renderer Phase 5 — migrate Learn It cards to the block system

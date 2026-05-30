@@ -285,43 +285,32 @@ window.ECONOS_TOPIC = {
       lede: 'The key diagnostic is output direction. Demand-pull inflation raises output because demand outpaces supply. Cost-push inflation lowers output because higher costs squeeze supply.',
       ledeStyle: 'plain',
 
-      tip: {
-        icon: '✅',
-        tone: 'green',
-        text: '<strong>Output is the tell.</strong>'
-      },
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>Output is the tell.</strong>' },
 
-      comparisonTable: {
-        title: 'Comparison table',
-        emoji: '📊',
-        columns: ['🛒 Demand-pull inflation', '🏭 Cost-push inflation'],
-        columnTones: ['blue', 'amber'],
-        rows: [
-          { label: '🎯 Main cause',          values: ['Demand rises faster than the economy can supply.', 'Input costs rise, pushing firms\' costs and prices up.'], highlights: [true, true] },
-          { label: '↔️ AD/AS movement',      values: ['AD shifts right. AS unchanged.',                    'AS shifts left. AD unchanged.'] },
-          { label: '📈 Output effect',       values: ['Output increases (above potential).',               'Output decreases (below potential).'] },
-          { label: '£ Inflation clue',       values: ['Prices rise alongside stronger output.',            'Prices rise while output falls.'] },
-          { label: '🛡️ Typical policy',      values: ['Tighten demand – raise rates or cut spending.',     'Relieve supply pressures – reduce costs or boost supply.'] }
-        ]
-      },
+        { type: 'versusRows',
+          left:  { label: '🛒 Demand-pull inflation', tone: 'blue' },
+          right: { label: '🏭 Cost-push inflation',   tone: 'amber' },
+          rows: [
+            { criterion: '🎯 Main cause',      left: 'Demand rises faster than the economy can supply.',  right: 'Input costs rise, pushing firms\' costs and prices up.' },
+            { criterion: '↔️ AD/AS movement',  left: 'AD shifts right. AS unchanged.',                     right: 'AS shifts left. AD unchanged.' },
+            { criterion: '📈 Output effect',   left: 'Output increases (above potential).',                right: 'Output decreases (below potential).' },
+            { criterion: '£ Inflation clue',   left: 'Prices rise alongside stronger output.',             right: 'Prices rise while output falls.' },
+            { criterion: '🛡️ Typical policy',  left: 'Tighten demand – raise rates or cut spending.',      right: 'Relieve supply pressures – reduce costs or boost supply.' }
+          ]
+        },
 
-      causes2Label: 'Classify the case',
-      causes2Emoji: '✏️',
-      causes2: [
-        { tone: 'amber', icon: '⚡', head: '2021 energy shock',     body: 'Global gas prices surged, lifting energy bills and production costs. Output fell as firms cut back. <strong style="display:block;margin-top:8px;color:#D97706;letter-spacing:0.08em;">→ COST-PUSH</strong>' },
-        { tone: 'blue',  icon: '📈', head: '2020 lockdown release boom', body: 'Households spent savings as lockdowns ended. Demand jumped and output rose above potential. <strong style="display:block;margin-top:8px;color:#2563EB;letter-spacing:0.08em;">→ DEMAND-PULL</strong>' },
-        { tone: 'amber', icon: '🏭', head: '1970s stagflation',     body: 'Oil shocks pushed prices up while output stalled. Unemployment rose at the same time. <strong style="display:block;margin-top:8px;color:#D97706;letter-spacing:0.08em;">→ COST-PUSH</strong>' }
-      ],
+        { type: 'sectionHeader', icon: '✏️', label: 'Classify the case' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'amber', icon: '⚡', head: '2021 energy shock',          body: 'Global gas prices surged, lifting energy bills and production costs. Output fell as firms cut back. → COST-PUSH' },
+          { type: 'tile', tone: 'blue',  icon: '📈', head: '2020 lockdown release boom', body: 'Households spent savings as lockdowns ended. Demand jumped and output rose above potential. → DEMAND-PULL' },
+          { type: 'tile', tone: 'amber', icon: '🏭', head: '1970s stagflation',          body: 'Oil shocks pushed prices up while output stalled. Unemployment rose at the same time. → COST-PUSH' }
+        ]},
 
-      conclusion: {
-        title: 'Fast test',
-        text: 'Prices up + output up = <strong>demand-pull</strong>. Prices up + output down = <strong>cost-push</strong>.'
-      },
-
-      examEdge: {
-        title: 'Exam edge (OCR)',
-        text: 'The highest-mark answers diagnose <em>before</em> recommending policy. Identify the cause using output direction first.'
-      }
+        { type: 'sectionHeader', icon: '⚡', label: 'Fast test' },
+        { type: 'bigIdea', text: 'Prices up + output up = demand-pull. Prices up + output down = cost-push.' },
+        { type: 'examEdge', title: 'Exam edge (OCR)', text: 'The highest-mark answers diagnose before recommending policy. Identify the cause using output direction first.' }
+      ]
     },
 
     /* ====================================================================

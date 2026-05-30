@@ -138,7 +138,9 @@ window.ECONOS_TOPIC = {
         { term: 'Schumpeterian hypothesis', def: 'Market power and supernormal profit are prerequisites for significant innovation; pure competition under-invests in R&D.' },
         { term: 'Inverted-U hypothesis (Aghion)', def: 'Innovation peaks at intermediate market concentration – neither pure competition nor pure monopoly is optimal for dynamic efficiency.' }
       ],
-      examEdge: 'In evaluation, push back against the static welfare diagram with these three arguments. Natural monopoly is the strongest rebuttal – for water and rail track, breaking up genuinely raises costs. Schumpeter is weaker as a general principle (mixed evidence) but strong for specific industries (pharma, where patents are essential). Contestability is the modern framework: regulate barriers, not concentration.'
+      blocks: [
+        { type: 'examEdge', title: 'Exam edge', text: 'In evaluation, push back against the static welfare diagram with these three arguments. Natural monopoly is the strongest rebuttal – for water and rail track, breaking up genuinely raises costs. Schumpeter is weaker as a general principle (mixed evidence) but strong for specific industries (pharma, where patents are essential). Contestability is the modern framework: regulate barriers, not concentration.' }
+      ]
     },
     {
       id: 'mvc_6',

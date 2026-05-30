@@ -540,43 +540,32 @@ window.ECONOS_TOPIC = {
       title: 'Evaluating supply-side policy',
       lede: 'Supply-side policy can raise long-run growth, but its success depends on time, cost, politics and context. This is the evaluative card.',
 
-      tip: { icon: '✅', tone: 'green', text: 'Supply-side policy can be powerful – but usually slowly, unevenly and at a cost.' },
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Supply-side policy can be powerful – but usually slowly, unevenly and at a cost.' },
 
-      causesFirst: true,
-      causesLabel: 'SIX EVALUATION TESTS',
-      causesEmoji: '⚖️',
-      causesStyle: 'icon-top',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue',   icon: '⏱️', head: '1. Time lags',           body: 'Effects are often very slow. Strengthens evaluation if reforms have long payback periods.' },
-        { tone: 'amber',  icon: '£',        head: '2. Funding cost',        body: 'Infrastructure and education are expensive. Weakens if fiscal space is limited.' },
-        { tone: 'purple', icon: '👥',  head: '3. Political feasibility', body: 'Reforms create losers as well as winners. Weakens if opposition is strong.' },
-        { tone: 'green',  icon: '⚖️',  head: '4. Distributional effects', body: 'Some reforms can be regressive. Weakens if inequality worsens.' },
-        { tone: 'blue',   icon: '🔗',  head: '5. Fits demand policy', body: 'Supply-side works best combined with demand management. Strengthens when macro conditions are favourable.' },
-        { tone: 'amber',  icon: '🌍',  head: '6. Global context',    body: 'Global conditions matter. Weakens if trading partners also improve their supply-side.' }
+        { type: 'sectionHeader', icon: '⚖️', label: 'SIX EVALUATION TESTS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '⏱️', head: '1. Time lags',             body: 'Effects are often very slow. Strengthens evaluation if reforms have long payback periods.' },
+          { type: 'tile', tone: 'amber',  icon: '£',  head: '2. Funding cost',           body: 'Infrastructure and education are expensive. Weakens if fiscal space is limited.' },
+          { type: 'tile', tone: 'purple', icon: '👥', head: '3. Political feasibility',  body: 'Reforms create losers as well as winners. Weakens if opposition is strong.' },
+          { type: 'tile', tone: 'green',  icon: '⚖️', head: '4. Distributional effects', body: 'Some reforms can be regressive. Weakens if inequality worsens.' },
+          { type: 'tile', tone: 'blue',   icon: '🔗', head: '5. Fits demand policy',    body: 'Supply-side works best combined with demand management. Strengthens when macro conditions are favourable.' },
+          { type: 'tile', tone: 'amber',  icon: '🌍', head: '6. Global context',         body: 'Global conditions matter. Weakens if trading partners also improve their supply-side.' }
+        ]},
+
+        { type: 'calloutStrip', tone: 'blue', icon: '⭐', text: 'Overall judgement — Supply-side policy is most effective when it targets binding constraints – such as skills shortages, poor infrastructure or regulatory barriers – and when it is financed sustainably and given time to work.' },
+
+        { type: 'sectionHeader', icon: '✅', label: 'HOW TO JUDGE' },
+        { type: 'mechanismChain', steps: [
+          { label: 'Speed',    detail: 'Will it work fast enough?' },
+          { label: 'Scale',    detail: 'Will it be large enough?' },
+          { label: 'Fairness', detail: 'Who gains and who loses?' },
+          { label: 'Evidence', detail: 'What does experience show?' }
+        ]},
+
+        { type: 'bigIdea', text: 'The right supply-side policy depends on the bottleneck – skills, incentives, infrastructure, innovation or regulation.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'The strongest judgement balances long-run benefits against short-run limits – especially time lags, cost and distributional trade-offs.' }
       ],
-
-      summaryRow: [
-        {
-          tone: 'blue',
-          icon: '⭐',
-          title: 'Overall judgement',
-          text: 'Supply-side policy is most effective when it targets binding constraints – such as skills shortages, poor infrastructure or regulatory barriers – and when it is financed sustainably and given time to work.'
-        }
-      ],
-
-      flow2Title: 'HOW TO JUDGE',
-      flow2Emoji: '✅',
-      flow2Sep: '→',
-      flow2: [
-        { tone: 'blue',   icon: '⚡', title: 'Speed',    sub: 'Will it work fast enough?' },
-        { tone: 'amber',  icon: '📏', title: 'Scale',    sub: 'Will it be large enough?' },
-        { tone: 'green',  icon: '⚖️', title: 'Fairness', sub: 'Who gains and who loses?' },
-        { tone: 'purple', icon: '📊', title: 'Evidence', sub: 'What does experience show?' }
-      ],
-
-      conclusion: { title: 'Big idea', text: 'The right supply-side policy depends on the bottleneck – skills, incentives, infrastructure, innovation or regulation.' },
-      examEdge: 'The strongest judgement balances long-run benefits against short-run limits – especially time lags, cost and distributional trade-offs.',
 
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }

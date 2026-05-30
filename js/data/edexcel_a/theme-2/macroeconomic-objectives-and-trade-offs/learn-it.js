@@ -63,8 +63,7 @@ window.ECONOS_TOPIC = {
       causesFirst: true,
       causesLabel: 'The seven objectives',
       causesEmoji: '\u{1F4CB}',
-      causesStyle: 'icon-top',
-      causesCols: 4,
+      causesStyle: 'numbered-rows',
       causes: [
         { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation',      body: 'Low and stable price growth — the BoE\'s 2% CPI symmetric target.' },
         { tone: 'blue',   icon: '\u{1F465}', head: 'Unemployment',    body: 'Low joblessness — UK NAIRU around 4–5%.' },

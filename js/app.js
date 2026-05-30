@@ -1180,10 +1180,10 @@
         }).join('') : '';
         html += `
           <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
-            <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
-              <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;">
-                <div style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
-                <div style="display:flex;flex-direction:column;padding:0 4px;">${descItems}</div>
+            <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:22px 24px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
+              <div style="display:grid;grid-template-columns:1.85fr 1fr;gap:22px;align-items:stretch;">
+                <div style="min-width:0;overflow-x:auto;display:flex;align-items:center;">${I[id.svgKey]}</div>
+                <div style="display:flex;flex-direction:column;justify-content:center;padding:0 4px;">${descItems}</div>
               </div>
             </div>
             <div style="display:grid;grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
@@ -4579,11 +4579,9 @@
             .dr-reveal-cb { position:absolute; opacity:0; pointer-events:none; }
             .dr-verdict { transition: opacity 0.3s, filter 0.3s; }
             .dr-reveal-cb:not(:checked) ~ .dr-row .dr-verdict { opacity: 0.18; filter: blur(2px); pointer-events:none; }
-            .dr-q { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:9px; border:1.5px solid; font-size:14px; font-weight:800; cursor:pointer; user-select:none; transition: all 0.2s; flex-shrink:0; }
+            .dr-q { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; border:1.5px solid; font-size:18px; font-weight:800; cursor:pointer; user-select:none; transition: all 0.2s; flex-shrink:0; }
             .dr-q:hover { transform:scale(1.05); }
-            .dr-reveal-cb:checked ~ .dr-row .dr-q { background:#0B1426; color:#fff !important; border-color:#0B1426 !important; }
-            .dr-reveal-cb:checked ~ .dr-row .dr-q::after { content:'✓'; font-size:16px; }
-            .dr-reveal-cb:checked ~ .dr-row .dr-q-mark { display:none; }
+            .dr-reveal-cb:checked ~ .dr-row .dr-q { background:#FBBF24; color:#0B1426 !important; border-color:#D97706 !important; box-shadow:0 2px 8px rgba(217,119,6,0.35); }
           </style>` : '';
         const rows = dr.map((row, i) => {
           const t = PATTERN_TONES[row.tone] || PATTERN_TONES.blue;

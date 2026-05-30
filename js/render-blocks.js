@@ -120,8 +120,27 @@
     return `<figure class="hero-visual"${styleAttr} data-overflow-watch><div class="hero-visual__media">${visual}</div>${caption}</figure>`;
   };
 
+  /* Opt-in tone cycling on grid children — when `cycleTones: true` is set on
+     a grid, any child without an explicit `tone` gets assigned one from the
+     six-tone rotation in array order. Lets a 5-tile rainbow be written as
+     `{ children: [{type:'tile',head:'…'}, …] }` without per-tile `tone:` keys.
+     Children with their own `tone` are left alone. Default behaviour
+     (no `cycleTones`) is unchanged. */
+  const GRID_TONE_CYCLE = ['green', 'amber', 'blue', 'purple', 'rose', 'slate'];
+
+  function applyGridToneCycle(children) {
+    return children.map(function (child, i) {
+      if (!child || typeof child !== 'object') return child;
+      if (child.tone) return child;
+      const next = Object.assign({}, child);
+      next.tone = GRID_TONE_CYCLE[i % GRID_TONE_CYCLE.length];
+      return next;
+    });
+  }
+
   BLOCK_RENDERERS.grid = function grid(block) {
-    const children = Array.isArray(block.children) ? block.children : [];
+    let children = Array.isArray(block.children) ? block.children : [];
+    if (block.cycleTones === true) children = applyGridToneCycle(children);
     const style = `--econ-grid-cols:${safeGridCols(block.cols)};--econ-grid-gap:${safeGap(block.gap)}`;
     return `<div class="econ-grid" style="${style}">${children.map(renderBlockWrapper).join('')}</div>`;
   };

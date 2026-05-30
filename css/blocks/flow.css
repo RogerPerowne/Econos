@@ -389,3 +389,98 @@
   margin: 0;
   min-width: 0;
 }
+
+/* ----------------------------------------------------------------
+   stepChain — numbered tile chain with arrow separators
+---------------------------------------------------------------- */
+.econ-blocks .step-chain {
+  background: var(--econ-block-panel);
+  border: 1px solid var(--econ-block-line);
+  border-radius: 14px;
+  padding: 18px 16px;
+}
+
+.econ-blocks .step-chain__list {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.econ-blocks .step-chain__step {
+  background: var(--step-chain-bg, #fff);
+  border: 1px solid var(--step-chain-border, var(--econ-block-line));
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(11, 20, 38, 0.06);
+  display: flex;
+  flex: 1 1 140px;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 12px 14px;
+  position: relative;
+  text-align: center;
+}
+
+.econ-blocks .step-chain__step.econ-tone--green  { --step-chain-bg: var(--econ-tone-green-50);  --step-chain-border: var(--econ-tone-green-100); }
+.econ-blocks .step-chain__step.econ-tone--amber  { --step-chain-bg: var(--econ-tone-amber-50);  --step-chain-border: var(--econ-tone-amber-100); }
+.econ-blocks .step-chain__step.econ-tone--blue   { --step-chain-bg: var(--econ-tone-blue-50);   --step-chain-border: var(--econ-tone-blue-100); }
+.econ-blocks .step-chain__step.econ-tone--purple { --step-chain-bg: var(--econ-tone-purple-50); --step-chain-border: var(--econ-tone-purple-100); }
+.econ-blocks .step-chain__step.econ-tone--rose   { --step-chain-bg: var(--econ-tone-rose-50);   --step-chain-border: var(--econ-tone-rose-100); }
+.econ-blocks .step-chain__step.econ-tone--slate  { --step-chain-bg: var(--econ-tone-slate-50);  --step-chain-border: var(--econ-tone-slate-100); }
+
+.econ-blocks .step-chain__badge {
+  align-items: center;
+  background: var(--econ-block-navy);
+  border-radius: 999px;
+  box-shadow: 0 2px 4px rgba(11, 20, 38, 0.18);
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 800;
+  height: 26px;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: -12px;
+  transform: translateX(-50%);
+  width: 26px;
+}
+
+.econ-blocks .step-chain__head {
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 6px 0 0;
+}
+
+.econ-blocks .step-chain__body {
+  color: var(--econ-tone-slate-700);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.econ-blocks .step-chain__arrow-cell {
+  align-items: center;
+  color: var(--econ-tone-slate);
+  display: flex;
+  flex: 0 0 18px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  justify-content: center;
+  list-style: none;
+}
+
+@media (max-width: 720px) {
+  .econ-blocks .step-chain__list {
+    flex-direction: column;
+  }
+  .econ-blocks .step-chain__arrow-cell {
+    flex: 0 0 auto;
+    padding: 4px 0;
+    transform: rotate(90deg);
+  }
+}

@@ -176,4 +176,43 @@
     );
   };
 
+  /* ------------------------------------------------------------------ */
+  /* pair                                                                 */
+  /* { vsLabel?: 'vs',                                                    */
+  /*   left:  { tone, icon?, head, body },                               */
+  /*   right: { tone, icon?, head, body } }                              */
+  /* Two-column side-by-side comparison with an optional centre badge.   */
+  /* Covers Pattern 2 (Side-by-side pair) from the design catalogue.     */
+  /* Sister to versusRows (which is criteria × alternatives).            */
+  /* ------------------------------------------------------------------ */
+  B.pair = function pair(block) {
+    function side(s, fallbackTone) {
+      if (!s || typeof s !== 'object') return '';
+      var toneCls = U.toneClass(s.tone, fallbackTone);
+      var icon = s.icon ? U.renderIcon(s.icon, 'disc') : '';
+      var head = s.head != null ? '<h3 class="pair__head">' + U.escapeHtml(s.head) + '</h3>' : '';
+      var body = s.body != null ? '<p class="pair__body text-fit-1">' + U.escapeHtml(s.body) + '</p>' : '';
+      return (
+        '<article class="pair__side ' + toneCls + '" data-overflow-watch>' +
+          '<div class="pair__side-top">' + icon + head + '</div>' +
+          body +
+        '</article>'
+      );
+    }
+
+    var leftHtml  = side(block.left,  'blue');
+    var rightHtml = side(block.right, 'rose');
+    if (!leftHtml && !rightHtml) return '';
+
+    var vs = block.vsLabel
+      ? '<span class="pair__vs" aria-hidden="true">' + U.escapeHtml(block.vsLabel) + '</span>'
+      : '';
+
+    return (
+      '<div class="pair" data-overflow-watch>' +
+        leftHtml + vs + rightHtml +
+      '</div>'
+    );
+  };
+
 })();

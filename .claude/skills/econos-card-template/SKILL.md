@@ -207,6 +207,35 @@ Keep `ad-interactive` / specialised templates for:
 
 The guiding question: *does this card need JS interactivity to deliver the lesson?* If no, `blocks:[]` is simpler and more composable.
 
+### Mockup → block cheat sheet
+
+When the user shares a mockup image, scan it region by region against this table and map each region to a block type. This is the first pass — refine fields after you've drafted the structure.
+
+| What the mockup looks like | First-pass block |
+|---|---|
+| A horizontal row of 3–6 numbered coloured tiles with arrows between, telling a story (1 → 2 → 3 → …) | `stepChain` (auto-numbered, tones auto-cycle) |
+| Two coloured cards side-by-side with a "vs" badge between, one positive/green, one negative/rose | `pair` with `vsLabel: 'vs'` |
+| A row of 3–6 same-shape tiles with no order (parallel categories) | `grid` of `tile` children; if 5+ tiles use `cycleTones: true` to skip per-tile `tone:` |
+| A static SVG diagram with a caption | `heroVisual` (legacy svgKey) or `diagram` (generator spec) |
+| One big highlighted statement, often green or rose | `bigIdea` (always green) or `calloutStrip` (any tone) |
+| A purple "exam edge" callout near the bottom | `examEdge` |
+| An amber caveat / "don't confuse this with…" | `warning` |
+| A criteria-vs-alternatives table (rows = criteria, columns = options) | `versusRows` (2 cols) or `decisionMatrix` (3+ cols) |
+| A row of green/amber/red verdict bands | `trafficLight` |
+| A list of term/definition pairs | `glossaryRow` |
+| A vertical chronological list of events with year markers | `timeline` |
+| A regime band along a labelled axis (e.g. inelastic ←→ elastic) | `spectrum` |
+| Cards each presenting a real-world example with verdict pill | `caseStudies` |
+| A hub-and-spoke layout (central concept + satellites) without SVG | `satelliteDiagram` |
+| Toolkit/option cards (label, best-for, risk) | `policyToolkit` |
+| Multiplier rounds with decreasing-amount bars | `rippleCascade` |
+| Two opposing arrows that net to a result | `opposingFlows` |
+| A numeric metric card with delta / context | `metricCard` |
+| Big LHS = RHS equation, possibly with terms underneath | `equationHero` |
+| A small inline fact chip (e.g. "UK CPI 2022: 11.1%") | `factChip` |
+
+If a region doesn't fit any block cleanly, that's usually a sign the card belongs on the legacy `ad-interactive` path (interactive multi-state, calculation widgets, etc.).
+
 ### Block component catalogue
 
 All block types are registered on `window.ECONOS_BLOCKS` (in `js/render-blocks.js` and `js/blocks/*.js`). `window.ECONOS_BLOCK_UTILS` exposes shared helpers (`escapeHtml`, `toneClass`, `renderIcon`, `renderChild`, `safeGridCols`) for adding new block renderers. Unknown block types render nothing and warn only in dev mode.
@@ -232,12 +261,14 @@ All block types are registered on `window.ECONOS_BLOCKS` (in `js/render-blocks.j
 | `decisionMatrix` | Scrollable multi-column data table | `columns:[...]`, `rows:[{cells:[...]}]` |
 | `trafficLight` | Green/amber/red verdict bands | `green`, `amber`, `red` (any omitted band is hidden) |
 | `glossaryRow` | Horizontal term/definition strip | `terms:[{term, definition}]` |
+| `pair` | Two-column "vs" comparison (Pattern 2) | `left`/`right` `{tone, icon, head, body}`, `vsLabel` |
 
 **Phase 1 — flow group (js/blocks/flow.js)**
 
 | Type | Purpose | Key fields |
 |---|---|---|
-| `mechanismChain` | Horizontal A→B→C causal chain | `steps:[{label, detail?}]`, `breakpoints:[{label, tone}]` |
+| `mechanismChain` | Horizontal A→B→C causal chain (text-only) | `steps:[{label, detail?}]`, `breakpoints:[{label, tone}]` |
+| `stepChain` | Numbered rich tile chain with arrows (e.g. 5-step mechanism) | `steps:[{head, body, tone?, icon?}]`, `cycleTones?` |
 | `rippleCascade` | Decreasing-bar multiplier rounds | `initial`, `rounds:[{round, amount}]`, `leakageArrows` |
 | `opposingFlows` | Two opposing arrows netting to a result | `positive`, `negative`, `result` each `{label, value, tone}` |
 | `timeline` | Vertical real-world timeline | `events:[{year, title, tone, body?}]` |

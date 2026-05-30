@@ -207,4 +207,51 @@
     );
   };
 
+  /* ─────────────────────────────────────────────────────────────
+     stepChain
+     { steps: [{ head, body, tone?, icon? }, ...], cycleTones?: true }
+     Rich numbered tile chain with arrow separators between steps.
+     Each step renders as a tile with a numbered badge in the top-left.
+     If `cycleTones: true` (default) and a step omits `tone`, tones are
+     cycled green → amber → blue → purple → rose. If a step has an
+     explicit `icon`, it overrides the auto-number badge.
+     Covers the "5-step mechanism" mockup pattern (e.g. stagflation chain)
+     that previously required hand-rolled SVG.
+  ───────────────────────────────────────────────────────────── */
+  var STEP_TONE_CYCLE = ['blue', 'amber', 'green', 'purple', 'rose'];
+
+  B.stepChain = function stepChain(block) {
+    var steps = Array.isArray(block.steps) ? block.steps : [];
+    if (!steps.length) return '';
+
+    var cycle = block.cycleTones !== false;
+
+    var stepsHtml = steps.map(function (step, i) {
+      if (!step || typeof step !== 'object') return '';
+      var resolvedTone = step.tone
+        || (cycle ? STEP_TONE_CYCLE[i % STEP_TONE_CYCLE.length] : 'slate');
+      var toneCls = U.toneClass(resolvedTone, 'slate');
+      var badge = step.icon
+        ? U.renderIcon(step.icon, 'disc')
+        : '<span class="step-chain__badge" aria-hidden="true">' + (i + 1) + '</span>';
+      var head = step.head != null ? '<h3 class="step-chain__head">' + U.escapeHtml(step.head) + '</h3>' : '';
+      var body = step.body != null ? '<p class="step-chain__body text-fit-1">' + U.escapeHtml(step.body) + '</p>' : '';
+      var arrow = i < steps.length - 1
+        ? '<span class="step-chain__arrow" aria-hidden="true">&#8594;</span>'
+        : '';
+      return (
+        '<li class="step-chain__step ' + toneCls + '" data-overflow-watch>' +
+          badge + head + body +
+        '</li>' +
+        (arrow ? '<li class="step-chain__arrow-cell" aria-hidden="true">' + arrow + '</li>' : '')
+      );
+    }).join('');
+
+    return (
+      '<div class="step-chain" data-overflow-watch>' +
+        '<ol class="step-chain__list" role="list">' + stepsHtml + '</ol>' +
+      '</div>'
+    );
+  };
+
 })();

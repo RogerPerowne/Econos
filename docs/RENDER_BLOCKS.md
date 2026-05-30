@@ -62,6 +62,8 @@ Valid tones are the canonical six: `green`, `amber`, `blue`, `purple`, `rose`, `
 
 `cols` can be a number or a CSS grid template string. Children are rendered recursively through `window.ECONOS_BLOCKS`. Child blocks can set `colSpan`, `rowSpan`, or `span`.
 
+Opt-in **tone cycling**: set `cycleTones: true` on a grid and any child without an explicit `tone` gets one auto-assigned from the `green → amber → blue → purple → rose → slate` rotation in array order. Children with their own `tone` are left alone. Lets a 5-tile rainbow be written without per-tile `tone:` keys.
+
 ### `tile`
 
 ```js
@@ -151,7 +153,37 @@ Three-band green/amber/red verdict block. Any band with no text is omitted.
 
 Horizontal `<dl>` of term/definition pairs. Entries missing both fields are skipped.
 
+### `pair`
+
+```js
+{
+  type: 'pair',
+  vsLabel: 'vs',
+  left:  { tone: 'green', icon: '+', head: 'Inflation low',  body: 'Real wages preserved.' },
+  right: { tone: 'rose',  icon: '-', head: 'Inflation high', body: 'Purchasing power eroded.' }
+}
+```
+
+Two-column side-by-side comparison with an optional centre "vs" badge. Covers Pattern 2 (Side-by-side pair) from the design catalogue — sister to `versusRows` (criteria × alternatives). Omit `vsLabel` to drop the centre badge and render as a clean two-column block. Stacks on mobile.
+
 ## Phase 1 Blocks — Flow group (`js/blocks/flow.js`)
+
+### `stepChain`
+
+```js
+{
+  type: 'stepChain',
+  steps: [
+    { head: 'Supply shock',  body: 'OPEC cuts supply.' },
+    { head: 'SRAS shifts left', body: 'Costs hit firms.' },
+    { head: 'Output falls',  body: 'Stagflation.' },
+    { head: 'Wages rise',    body: 'Workers protect real pay.' },
+    { head: 'Wage–price spiral', body: 'Expectations ratchet up.' }
+  ]
+}
+```
+
+Rich numbered tile chain with arrow separators between steps. Each step gets a numbered circular badge (1, 2, 3…) in the top-centre automatically; pass an explicit `icon` on a step to override. Tones auto-cycle blue → amber → green → purple → rose unless `cycleTones: false` is set or a step has an explicit `tone`. Covers the "five-step mechanism" mockup pattern (e.g. the stagflation 5-step) that previously required hand-rolled SVG.
 
 ### `mechanismChain`
 

@@ -361,6 +361,47 @@ Left-to-right calculation strip with labelled steps and a final result box.
 
 Small inline UK-fact chip for anchoring context. Any field is optional except `value` or `label`.
 
+## Card-Level Metadata Fields
+
+These fields sit on the card object alongside `blocks`. Two drive layout; the rest are agent-only build guidance that the renderer ignores entirely.
+
+### Layout-driving fields
+
+| Field | Type | Effect |
+|---|---|---|
+| `density` | `"airy" \| "standard" \| "compact" \| "exam"` | Sets `data-density="<value>"` on the `.econ-blocks` wrapper. CSS custom-property overrides in `css/econ-tokens.css` adjust `--econ-gap`, `--econ-pad`, and `--econ-body-size` automatically. Omitting the field leaves the default token values in effect. |
+| `layoutPreset` | `string` | Adds `econ-preset--<value>` as a class on the `.econ-blocks` wrapper. No built-in styles are shipped for preset classes — they are hooks for topic-specific CSS additions. |
+
+Example:
+
+```js
+{
+  id: 'exam-technique',
+  density: 'exam',
+  layoutPreset: 'two-col-exam',
+  blocks: [ /* … */ ]
+}
+```
+
+Renders as:
+
+```html
+<div class="econ-blocks econ-preset--two-col-exam" data-render-blocks="1" data-density="exam">…</div>
+```
+
+### Agent-only fields (non-rendering)
+
+The renderer reads none of these — they are carried on the card object purely as build guidance for AI agents and human authors. The validator treats them as known fields and will never flag them as unknown.
+
+| Field | Purpose |
+|---|---|
+| `mockupMap` | Maps mockup image references to card structure; used during content authoring. |
+| `visualBrief` | Free-text brief for SVG / diagram creation passed to visual-generation agents. |
+| `buildNotes` | Freeform notes for the build agent about card intent, copy constraints, or review reminders. |
+| `layoutLock` | Boolean or string — signals that the current layout should not be changed by an agent pass. Dev mode logs a `console.info` note when set. |
+| `hierarchy` | Describes the intended visual hierarchy; used by layout-planning agents. |
+| `preserveMockupLayout` | Boolean — instructs agents to preserve the original mockup's spatial arrangement rather than normalising it. Dev mode logs a `console.info` note when set. |
+
 ## Dev Tooling
 
 Three dev-only files are loaded on every shell page (`learn-it.html`, `link-it.html`, `land-it.html`) via deferred `<script>` tags after the diagram and boot scripts. They are precached by the service worker alongside the production assets so offline use is unaffected.

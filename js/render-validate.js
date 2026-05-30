@@ -47,6 +47,16 @@
   // ─── Known tones (from render-blocks.js VALID_TONES) ──────────────────────
   var KNOWN_TONES = new Set(['green', 'amber', 'blue', 'purple', 'rose', 'slate']);
 
+  // ─── Known card-level metadata fields (agent build guidance + layout) ──────
+  // These are all valid at the card object level and the validator will never
+  // flag them as unknown. Fields that drive layout: density, layoutPreset.
+  // Agent-only (non-rendering): mockupMap, visualBrief, buildNotes,
+  //   layoutLock, hierarchy, preserveMockupLayout.
+  //
+  // VALID_DENSITIES is the subset that must match a specific enumeration;
+  // the full field list is documented in docs/RENDER_BLOCKS.md.
+  var VALID_DENSITIES = new Set(['airy', 'standard', 'compact', 'exam']);
+
   // ─── Content-length budgets (warn when exceeded) ──────────────────────────
   var BUDGETS = {
     tileHead:    42,   // tile block: head field
@@ -225,6 +235,13 @@
       // ── 3. Unknown tone ───────────────────────────────────────────────
       if (card.tone !== undefined && !KNOWN_TONES.has(card.tone)) {
         warn(label + ': unknown tone "' + card.tone + '". Known tones: ' + Array.from(KNOWN_TONES).join(', ') + '.');
+      }
+
+      // ── 3b. density value check ───────────────────────────────────────
+      // density is a known metadata field; warn if the value is not one of the
+      // four CSS token modes (airy | standard | compact | exam).
+      if (card.density !== undefined && !VALID_DENSITIES.has(card.density)) {
+        warn(label + ': density "' + card.density + '" is not one of the allowed values: ' + Array.from(VALID_DENSITIES).join(', ') + '.');
       }
 
       // ── 4. Unknown template (only meaningful when blocks[] absent) ─────

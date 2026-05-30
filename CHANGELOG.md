@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.26.0 — 2026-05-30
+
+### Renderer Phase 4 — image-to-data skill + mockup metadata
+
+- New skill `.claude/skills/econos-image-to-data/SKILL.md` + `docs/MOCKUP_SCHEMA.md`:
+  turning a ChatGPT mockup into a block-based `blocks:[...]` card (mockup is the
+  source of truth; reuse blocks + diagram generators; verify in the renderer-lab).
+- Card-level metadata fields: `density` drives the `[data-density]` token modes
+  and `layoutPreset` adds an `econ-preset--<value>` class on the `.econ-blocks`
+  wrapper; `mockupMap`/`visualBrief`/`buildNotes`/`layoutLock`/`hierarchy`/
+  `preserveMockupLayout` are agent-only and ignored by the renderer. The validator
+  recognises them all. Backward-compatible: cards without these render unchanged.
+
 ## 0.25.0 — 2026-05-30
 
 ### Renderer Phase 3 — dev validator, renderer-lab, screenshot mode

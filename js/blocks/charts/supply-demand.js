@@ -124,6 +124,27 @@
   var QD_FLOOR   = 330;   // Qd at floor:   D(330)=240 ✓
   var QS_FLOOR   = 430;   // Qs at floor:   S(430)=240 ✓
 
+  // ── Tax / subsidy wedge points ────────────────────────────────────────────
+  // Canonical indirect-tax view shifts S UP in econ by 60 screen-y units
+  // (dy = −60). New equilibrium:
+  //   D(x) = S_taxed(x)   →  0.8x − 24 = −0.8x + 524  →  x = 342.5
+  //   y    = 0.8(342.5) − 24                          →  y = 250
+  // Pc = post-tax consumer price = y at new equilibrium = 250 (above P*).
+  // Pp = price producers receive = post-tax price MINUS tax per unit = 310
+  //      (below P* by the same amount that Pc is above it).
+  // Qt = post-tax quantity (smaller than Q*, dead-weight loss emerges).
+  var TAX_DY     = -60;            // S shift in screen y (negative = up in econ)
+  var TAX_QT     = 342.5;
+  var TAX_PC     = 250;            // consumer price after tax (above P*)
+  var TAX_PP     = TAX_PC - TAX_DY; // producer keeps (Pc) - (tax) = 310 in screen y
+  // Subsidy view: S shifts DOWN in econ (dy = +60 screen y).
+  // New eq: 0.8x − 24 = −0.8x + 644 → x = 417.5, y = 310. Consumer pays Pc=310;
+  // producer receives Pc + subsidy = 250 (smaller y, i.e. higher in econ).
+  var SUB_DY     = 60;
+  var SUB_QSUB   = 417.5;
+  var SUB_PC     = 310;            // consumer price after subsidy (below P*)
+  var SUB_PP     = SUB_PC - SUB_DY; // producer receives 250
+
   API.register('supplyDemand', {
     viewBox: { w: 780, h: 580 },
     plot:    { xMin: 80, xMax: 680, yMin: 40, yMax: 520 },
@@ -206,7 +227,25 @@
       Qd_floor:   { onCurve: 'D', x: QD_FLOOR,   label: 'Qd', tone: 'blue' },
       // Qs: quantity supplied at the floor price (on the S curve).
       //   S(430) = −0.8×430 + 584 = 240 = FLOOR_Y ✓
-      Qs_floor:   { onCurve: 'S', x: QS_FLOOR,   label: 'Qₛ', tone: 'rose' }
+      Qs_floor:   { onCurve: 'S', x: QS_FLOOR,   label: 'Qₛ', tone: 'rose' },
+
+      // ── Indirect-tax wedge markers ─────────────────────────────────────
+      // Use these in the tax view (shifts:{S:{dy:-60}} or sample 'tax' view).
+      // Pc: post-tax consumer price — read at the new equilibrium quantity.
+      // Pp: producer-received price — Pc minus the tax (per-unit wedge).
+      // Qt: post-tax quantity — sits to the LEFT of Q* (tax reduces output).
+      Pc_tax:     { at: [TAX_QT, TAX_PC], label: 'Pc', tone: 'rose'  },
+      Pp_tax:     { at: [TAX_QT, TAX_PP], label: 'Pp', tone: 'amber' },
+      Qt_tax:     { at: [TAX_QT, EQ_Y],   label: 'Qt', tone: 'slate' },
+
+      // ── Subsidy wedge markers ──────────────────────────────────────────
+      // Use these in the subsidy view (shifts:{S:{dy:+60}} or sample 'subsidy').
+      // Pc: post-subsidy consumer price (lower than P*).
+      // Pp: producer-received price (higher than P*; consumer price + subsidy).
+      // Qsub: post-subsidy quantity (sits to the RIGHT of Q* — subsidy expands output).
+      Pc_sub:     { at: [SUB_QSUB, SUB_PC], label: 'Pc', tone: 'green'  },
+      Pp_sub:     { at: [SUB_QSUB, SUB_PP], label: 'Pp', tone: 'amber'  },
+      Qsub:       { at: [SUB_QSUB, EQ_Y],   label: 'Qsub', tone: 'slate' }
     },
 
     // Legacy equilibrium fallback — used when a view omits `points`.

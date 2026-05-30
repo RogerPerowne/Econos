@@ -64,7 +64,13 @@
       B: { onCurve: 'SRPC', x: 240, label: 'B', tone: 'amber' },
       // C: new long-run equilibrium after expectations adjust (SRPC ∩ LRPC,
       // with the SRPC parallel-shifted up — supplied by the view's shifts).
-      C: { on: ['SRPC', 'LRPC'], label: 'C', tone: 'rose' }
+      C: { on: ['SRPC', 'LRPC'], label: 'C', tone: 'rose' },
+      // S: 1970s stagflation — high unemployment AND high inflation. Read on
+      // the SRPC at a higher-than-NAIRU unemployment (x = 480 > NAIRU_X 380).
+      // Used in the canonical stagflation view: shifts:{SRPC:170} pushes the
+      // curve UP, so onCurve SRPC at x=480 lands at higher inflation AND
+      // higher unemployment than A — the supply-shock equilibrium.
+      S: { onCurve: 'SRPC', x: 480, label: 'S', tone: 'rose' }
     },
     equilibrium: { from: ['SRPC', 'LRPC'], baseLabel: 'A' }
   });

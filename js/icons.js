@@ -17606,53 +17606,119 @@ window.ECONOS_ICONS = {
   macroHeadlineCards: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">
       <style>
-        .mh-row { display:grid; grid-template-columns: 200px 1fr 1fr 1fr 1fr; gap:0; align-items:stretch; border-radius:14px; overflow:hidden; border:1px solid; margin-bottom:12px; background:#fff; }
-        @media (max-width: 880px) { .mh-row { grid-template-columns: 1fr 1fr; } .mh-head { grid-column: 1 / -1; } }
-        .mh-head { padding:16px 18px; display:flex; flex-direction:column; justify-content:center; gap:6px; }
-        .mh-num-row { display:flex; align-items:center; gap:8px; }
-        .mh-num { width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
-        .mh-icon { font-size:30px; line-height:1; }
+        /* Match the ChatGPT mockup faithfully:
+           - tone-coloured left bar (4px), then white head section
+           - large icon-in-circle on top, name in tone-bold underneath
+           - 4 data columns separated by dashed verticals
+           - no tinted "UK current" cell — just a large bold tone-coloured value
+           - airy padding (22px+) and a clean grid of 5 columns */
+        /* Single-section head + a 2×2 data grid on the right.
+           Two rows of two cells gives each data piece ~2× the horizontal
+           space a 5-column layout would, which is what the cramped card
+           body actually needs — the mockup looks airy because its frame
+           is wider; the rendered card body sits inside a sidebar layout. */
+        .mh-row { display:grid; grid-template-columns: 170px 1fr; align-items:stretch; border-radius:14px; overflow:hidden; border:1px solid; margin-bottom:14px; background:#fff; position:relative; }
+        @media (max-width: 720px) { .mh-row { grid-template-columns: 1fr; } }
+        .mh-bar { position:absolute; left:0; top:0; bottom:0; width:4px; }
+        .mh-head { padding:18px 16px 18px 22px; display:flex; flex-direction:column; align-items:flex-start; gap:10px; position:relative; border-right:1px dashed #E2E8F0; }
+        .mh-num { position:absolute; top:14px; left:14px; width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
+        .mh-iconbox { width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; line-height:1; margin-top:18px; }
         .mh-name { font-size:18px; font-weight:900; line-height:1.1; }
-        .mh-voice { font-size:11px; font-style:italic; line-height:1.35; opacity:0.85; }
-        .mh-cell { padding:14px; border-left:1px dashed #E2E8F0; display:flex; flex-direction:column; }
-        .mh-cell-label { font-size:9px; font-weight:800; letter-spacing:0.1em; color:#64748B; text-transform:uppercase; margin-bottom:4px; }
-        .mh-cell-val { font-size:13px; font-weight:700; color:#0B1426; line-height:1.4; }
-        .mh-cell-sub { font-size:10.5px; color:#64748B; margin-top:2px; line-height:1.35; }
-        .mh-cell-current { display:flex; align-items:center; justify-content:center; }
-        .mh-cell-current b { font-size:24px; font-weight:900; font-family:'Inter Mono',monospace; }
+        .mh-data { display:grid; grid-template-columns: 1fr 1fr; }
+        .mh-cell { padding:14px 16px; display:flex; flex-direction:column; justify-content:flex-start; }
+        .mh-cell:nth-child(2) { border-left:1px dashed #E2E8F0; }
+        .mh-cell:nth-child(3), .mh-cell:nth-child(4) { border-top:1px dashed #E2E8F0; }
+        .mh-cell:nth-child(4) { border-left:1px dashed #E2E8F0; }
+        .mh-cell-label { font-size:9px; font-weight:800; letter-spacing:0.12em; color:#64748B; text-transform:uppercase; margin-bottom:6px; }
+        .mh-cell-val { font-size:13px; color:#0B1426; line-height:1.55; }
+        .mh-current-cell { padding:14px 16px; display:flex; flex-direction:column; justify-content:center; }
+        .mh-current-cell.mh-cell:nth-child(2) { border-left:1px dashed #E2E8F0; }
+        .mh-current-label { font-size:9px; font-weight:800; letter-spacing:0.12em; color:#64748B; text-transform:uppercase; margin-bottom:6px; }
+        .mh-current-val { font-size:24px; font-weight:900; line-height:1; font-family:Inter,sans-serif; }
       </style>
+
+      <!-- 1. Inflation (rose) -->
       <div class="mh-row" style="border-color:#FECDD3;">
-        <div class="mh-head" style="background:#FFF1F2;">
-          <div class="mh-num-row"><span class="mh-num" style="background:#E11D48;">1</span><span class="mh-icon">🏷️</span></div>
-          <div class="mh-name" style="color:#9F1239;">Inflation</div>
-          <div class="mh-voice" style="color:#9F1239;">"I'm noisy and impatient — I react within months."</div>
+        <div class="mh-bar" style="background:#E11D48;"></div>
+        <div class="mh-head">
+          <span class="mh-num" style="background:#E11D48;">1</span>
+          <div class="mh-iconbox" style="background:#FFE4E6;">🏷️</div>
+          <div class="mh-name" style="color:#E11D48;">Inflation</div>
         </div>
-        <div class="mh-cell"><div class="mh-cell-label">Target</div><div class="mh-cell-val">~2% CPI</div><div class="mh-cell-sub">BoE symmetric</div></div>
-        <div class="mh-cell"><div class="mh-cell-label">How we measure</div><div class="mh-cell-val">CPI YoY</div><div class="mh-cell-sub">ONS, monthly</div></div>
-        <div class="mh-cell mh-cell-current" style="background:#FFE4E6;"><b style="color:#9F1239;">2.8%</b></div>
-        <div class="mh-cell"><div class="mh-cell-label">Why it matters</div><div class="mh-cell-sub" style="font-size:11.5px;color:#0B1426;">Price stability anchors expectations and protects real incomes.</div></div>
+        <div class="mh-data">
+          <div class="mh-cell">
+            <div class="mh-cell-label">Target</div>
+            <div class="mh-cell-val">CPI about 2% — symmetric target</div>
+          </div>
+          <div class="mh-current-cell mh-cell">
+            <div class="mh-current-label">UK current</div>
+            <div class="mh-current-val" style="color:#E11D48;">2.8%</div>
+          </div>
+          <div class="mh-cell">
+            <div class="mh-cell-label">How we measure it</div>
+            <div class="mh-cell-val">CPI year-on-year — ONS, monthly</div>
+          </div>
+          <div class="mh-cell">
+            <div class="mh-cell-label">Why it matters</div>
+            <div class="mh-cell-val">Price stability anchors expectations and protects real incomes.</div>
+          </div>
+        </div>
       </div>
+
+      <!-- 2. Unemployment (blue) -->
       <div class="mh-row" style="border-color:#BFDBFE;">
-        <div class="mh-head" style="background:#EFF6FF;">
-          <div class="mh-num-row"><span class="mh-num" style="background:#2563EB;">2</span><span class="mh-icon">👥</span></div>
-          <div class="mh-name" style="color:#1E3A8A;">Unemployment</div>
-          <div class="mh-voice" style="color:#1E3A8A;">"I move slowly — but my floor (the NAIRU) is fierce."</div>
+        <div class="mh-bar" style="background:#2563EB;"></div>
+        <div class="mh-head">
+          <span class="mh-num" style="background:#2563EB;">2</span>
+          <div class="mh-iconbox" style="background:#DBEAFE;">👥</div>
+          <div class="mh-name" style="color:#2563EB;">Unemployment</div>
         </div>
-        <div class="mh-cell"><div class="mh-cell-label">Target</div><div class="mh-cell-val">~4–5%</div><div class="mh-cell-sub">around NAIRU</div></div>
-        <div class="mh-cell"><div class="mh-cell-label">How we measure</div><div class="mh-cell-val">ILO unemp. rate</div><div class="mh-cell-sub">ONS, rolling 3m</div></div>
-        <div class="mh-cell mh-cell-current" style="background:#DBEAFE;"><b style="color:#1E3A8A;">5.0%</b></div>
-        <div class="mh-cell"><div class="mh-cell-label">Why it matters</div><div class="mh-cell-sub" style="font-size:11.5px;color:#0B1426;">A labour-market failure is a welfare failure; under-used capacity wastes output.</div></div>
+        <div class="mh-data">
+          <div class="mh-cell">
+            <div class="mh-cell-label">Target</div>
+            <div class="mh-cell-val">About 4–5% — around the NAIRU</div>
+          </div>
+          <div class="mh-current-cell mh-cell">
+            <div class="mh-current-label">UK current</div>
+            <div class="mh-current-val" style="color:#2563EB;">5.0%</div>
+          </div>
+          <div class="mh-cell">
+            <div class="mh-cell-label">How we measure it</div>
+            <div class="mh-cell-val">ILO unemployment rate — ONS, rolling 3-month</div>
+          </div>
+          <div class="mh-cell">
+            <div class="mh-cell-label">Why it matters</div>
+            <div class="mh-cell-val">A labour-market failure is a welfare failure — under-used capacity wastes output.</div>
+          </div>
+        </div>
       </div>
+
+      <!-- 3. Real GDP growth (green) -->
       <div class="mh-row" style="border-color:#86EFAC;">
-        <div class="mh-head" style="background:#F0FDF4;">
-          <div class="mh-num-row"><span class="mh-num" style="background:#16A34A;">3</span><span class="mh-icon">📈</span></div>
-          <div class="mh-name" style="color:#065F46;">Real GDP growth</div>
-          <div class="mh-voice" style="color:#065F46;">"I'm the headline — but only one of three I tell you about."</div>
+        <div class="mh-bar" style="background:#16A34A;"></div>
+        <div class="mh-head">
+          <span class="mh-num" style="background:#16A34A;">3</span>
+          <div class="mh-iconbox" style="background:#DCFCE7;">📈</div>
+          <div class="mh-name" style="color:#16A34A;">Real GDP growth</div>
         </div>
-        <div class="mh-cell"><div class="mh-cell-label">Target</div><div class="mh-cell-val">~2–2.5% p.a.</div><div class="mh-cell-sub">UK trend rate</div></div>
-        <div class="mh-cell"><div class="mh-cell-label">How we measure</div><div class="mh-cell-val">Real GDP YoY</div><div class="mh-cell-sub">ONS, quarterly</div></div>
-        <div class="mh-cell mh-cell-current" style="background:#DCFCE7;"><b style="color:#065F46;">~1.4%</b></div>
-        <div class="mh-cell"><div class="mh-cell-label">Why it matters</div><div class="mh-cell-sub" style="font-size:11.5px;color:#0B1426;">Sustained growth funds public services and lifts living standards.</div></div>
+        <div class="mh-data">
+          <div class="mh-cell">
+            <div class="mh-cell-label">Target</div>
+            <div class="mh-cell-val">About 2–2.5% a year</div>
+          </div>
+          <div class="mh-current-cell mh-cell">
+            <div class="mh-current-label">UK current</div>
+            <div class="mh-current-val" style="color:#16A34A;">~1.4% <span style="font-size:12px;font-weight:600;color:#64748B;">in 2025</span></div>
+          </div>
+          <div class="mh-cell">
+            <div class="mh-cell-label">How we measure it</div>
+            <div class="mh-cell-val">Real GDP year-on-year — ONS, quarterly</div>
+          </div>
+          <div class="mh-cell">
+            <div class="mh-cell-label">Why it matters</div>
+            <div class="mh-cell-val">Sustained growth funds public services and lifts living standards.</div>
+          </div>
+        </div>
       </div>
     </div>
   `,

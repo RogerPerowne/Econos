@@ -141,8 +141,100 @@
   }
 
   /* ── Core utilities ── */
+
+  /* CSP-safe rebind. The Learn/Link/Land HTML shells ship a strict CSP
+     (script-src 'self', no 'unsafe-inline'), which silently blocks every
+     inline onclick="..." attribute in the quiz UI. Rather than rewrite
+     the 33 onclick strings spread across renderers + feedbackHTML +
+     nextBtnHTML, watch #quiz-root with a MutationObserver and, every
+     time a node is inserted, parse any onclick attribute on it (or its
+     descendants), strip it, and re-attach as a proper addEventListener.
+     One place to maintain; covers innerHTML, outerHTML, appendChild —
+     anything. */
+  var INLINE_OBSERVER_BOUND = false;
+  /* Every inline-handler attribute the quiz engine emits. Same fix as for
+     onclick: parse, strip, rebind as addEventListener. The numeric_input
+     question uses oninput + onkeydown; everything else uses onclick. */
+  var INLINE_ATTRS = ['onclick', 'oninput', 'onkeydown', 'onchange', 'onkeyup', 'onkeypress'];
+  function attrToEventName(attr) { return attr.slice(2); }
+  function parseHandler(code) {
+    /* Match foo(args). The numeric_input render uses oninput="niChanged(this)"
+       and onkeydown="niKey(event)" — `this` / `event` are special tokens. */
+    var m = code.match(/^([\w$.]+)\(([^)]*)\)\s*;?\s*$/);
+    if (!m) return null;
+    var fnName = m[1];
+    var argStr = m[2].trim();
+    var argTokens = [];
+    if (argStr) {
+      argStr.split(',').forEach(function (raw) {
+        var a = raw.trim();
+        if (a === 'true') argTokens.push({ kind: 'lit', v: true });
+        else if (a === 'false') argTokens.push({ kind: 'lit', v: false });
+        else if (a === 'this') argTokens.push({ kind: 'this' });
+        else if (a === 'event') argTokens.push({ kind: 'event' });
+        else if ((a.charAt(0) === "'" && a.charAt(a.length - 1) === "'") ||
+                 (a.charAt(0) === '"' && a.charAt(a.length - 1) === '"')) argTokens.push({ kind: 'lit', v: a.slice(1, -1) });
+        else {
+          var n = Number(a);
+          argTokens.push({ kind: 'lit', v: Number.isFinite(n) && a !== '' ? n : a });
+        }
+      });
+    }
+    return { fnName: fnName, argTokens: argTokens };
+  }
+  function rebindInlineHandlers(node) {
+    if (!node || node.nodeType !== 1) return;
+    for (var ai = 0; ai < INLINE_ATTRS.length; ai++) {
+      var attr = INLINE_ATTRS[ai];
+      var event = attrToEventName(attr);
+      var els = (node.hasAttribute && node.hasAttribute(attr)) ? [node] : [];
+      if (node.querySelectorAll) {
+        var more = node.querySelectorAll('[' + attr + ']');
+        for (var k = 0; k < more.length; k++) els.push(more[k]);
+      }
+      for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        var code = el.getAttribute(attr);
+        if (!code) continue;
+        el.removeAttribute(attr);
+        var parsed = parseHandler(code);
+        if (!parsed) continue;
+        (function (eventName, fnName, tokens, target) {
+          target.addEventListener(eventName, function (ev) {
+            var fn = window[fnName];
+            if (typeof fn !== 'function') return;
+            var args = tokens.map(function (t) {
+              if (t.kind === 'this') return target;
+              if (t.kind === 'event') return ev;
+              return t.v;
+            });
+            fn.apply(null, args);
+          });
+        }(event, parsed.fnName, parsed.argTokens, el));
+      }
+    }
+  }
+  function ensureInlineObserver() {
+    if (INLINE_OBSERVER_BOUND) return;
+    var root = document.getElementById('quiz-root');
+    if (!root) return;
+    var obs = new MutationObserver(function (records) {
+      for (var i = 0; i < records.length; i++) {
+        var added = records[i].addedNodes;
+        for (var j = 0; j < added.length; j++) rebindInlineHandlers(added[j]);
+      }
+    });
+    obs.observe(root, { childList: true, subtree: true });
+    INLINE_OBSERVER_BOUND = true;
+    /* Catch anything already rendered before the observer was wired. */
+    rebindInlineHandlers(root);
+  }
+
   function r(html) {
-    document.getElementById('quiz-root').innerHTML = html;
+    var root = document.getElementById('quiz-root');
+    root.innerHTML = html;
+    ensureInlineObserver();
+    rebindInlineHandlers(root);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 

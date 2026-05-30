@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.18.1 — 2026-05-30
+
+### Quiz engine: fix every quiz question being unanswerable (CSP regression)
+
+The Learn It / Link It / Land It HTML shells ship a strict Content
+Security Policy (`script-src 'self'`, no `unsafe-inline`), but
+`quiz-engine.js` was built around 33 inline `onclick=""` attributes (plus
+one `oninput` and one `onkeydown` for the numeric input). Every click and
+keystroke was silently blocked by the browser's CSP enforcement — every
+quiz type was unanswerable: MCQ options, "Sort into groups" item/bucket
+assignment, numeric input, match-pairs, rank, cause-effect, the lot.
+
+Fix: a single `rebindInlineHandlers(node)` helper plus a `MutationObserver`
+watching `#quiz-root`. Every time a node is inserted into the quiz tree
+(`innerHTML`, `outerHTML`, append — any path), the helper parses each
+inline `on*` attribute (`onclick`, `oninput`, `onkeydown`, `onchange`,
+`onkeyup`, `onkeypress`), strips it, and re-attaches as a proper
+`addEventListener`. The `this` and `event` tokens are forwarded to the
+handler exactly as the inline form would have provided them.
+
+One-place fix; no question-renderer code touched. Verified end-to-end on
+the macroeconomic-objectives quiz: MCQ × 4, numeric input, **Sort into
+groups (categorise)**, all advance with correct feedback.
+
+Cache → `econos-v120`.
+
 ## 0.18.0 — 2026-05-30
 
 ### Macroeconomic Objectives & Trade-offs — full 6-card rebuild from mockups

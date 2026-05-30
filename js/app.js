@@ -1235,6 +1235,15 @@
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (c.causesStyle === 'icon-top' && hasIcons) {
+          const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+            <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${item.icon}</div>
+            <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }
         if (c.causesStyle === 'plain-white' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
@@ -2043,6 +2052,15 @@
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (c.causesStyle === 'icon-top' && hasIcons) {
+          const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+            <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${item.icon}</div>
+            <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }
         if (c.causesStyle === 'plain-white' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `

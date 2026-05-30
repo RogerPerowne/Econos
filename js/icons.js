@@ -3716,22 +3716,27 @@ window.ECONOS_ICONS = {
         <text x="620" y="361" font-size="13" fill="#334155">curve is vertical at U_N (NAIRU).</text>
       </g>
 
-      <!-- ===== LAYER: stagflation (1970s shift) ===== -->
+      <!-- ===== LAYER: stagflation (1970s shift) =====
+           SRPC₃ is a parallel-up shift of SRPC₁ (same slope 0.7). The
+           left portion goes off the chart top and is clipped by
+           ph-chart-clip so the curve appears to enter from the top.
+           Stagflation point S = (400, 210) lies exactly on SRPC₃
+           (y at x=400 = -7 + 0.7×310 = 210 ✓). -->
       <g class="layer-stagflation">
-        <!-- SRPC₃ – supply-shock shifted curve, blue solid (new position, same colour) -->
+        <!-- SRPC₃ – supply-shock shifted curve, blue solid (parallel to SRPC₁) -->
         <g clip-path="url(#ph-chart-clip)">
-          <line x1="90" y1="55" x2="490" y2="265" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+          <line x1="90" y1="-7" x2="490" y2="273" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         </g>
-        <text x="496" y="268" font-size="13" font-weight="700" fill="#2563EB">SRPC₃</text>
-        <!-- Stagflation point at (400, 160): higher U AND higher π than A -->
-        <line x1="60" y1="160" x2="400" y2="160" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <line x1="400" y1="160" x2="400" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <circle cx="400" cy="160" r="7" fill="white" stroke="#DC2626" stroke-width="2.5"/>
-        <text x="412" y="156" font-size="13" font-weight="700" fill="#DC2626">S</text>
-        <text x="46" y="164" font-size="12" font-weight="600" fill="#DC2626" text-anchor="end">π_S</text>
+        <text x="496" y="276" font-size="13" font-weight="700" fill="#2563EB">SRPC₃</text>
+        <!-- Stagflation point S = (400, 210): higher U AND higher π than A -->
+        <line x1="60" y1="210" x2="400" y2="210" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="400" y1="210" x2="400" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="400" cy="210" r="7" fill="white" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="412" y="206" font-size="13" font-weight="700" fill="#DC2626">S</text>
+        <text x="46" y="214" font-size="12" font-weight="600" fill="#DC2626" text-anchor="end">π_S</text>
         <text x="400" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">U_S</text>
-        <!-- Diagonal arrow from A toward stagflation point -->
-        <line x1="307" y1="244" x2="393" y2="166" stroke="#D97706" stroke-width="2.5" marker-end="url(#ph-amber-end)"/>
+        <!-- Diagonal arrow from A toward stagflation point S -->
+        <line x1="307" y1="244" x2="393" y2="216" stroke="#D97706" stroke-width="2.5" marker-end="url(#ph-amber-end)"/>
       </g>
 
       <!-- ===== LAYER: legend shift (stagflation) ===== -->

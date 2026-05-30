@@ -396,7 +396,7 @@ window.ECONOS_TOPIC = {
       lede: 'In essays and data-response questions, success comes from a clear framework, UK context and precise interpretation. Use this page as your last-stop checklist.',
       causesLabel: 'The essay framework',
       causesEmoji: '🗺️',
-      causesStyle: 'plain-white',
+      causesStyle: 'icon-top',
       causesPosition: 'top',
       causesCols: 4,
       causes: [

@@ -164,6 +164,140 @@ Use for: true component decomposition where the items are genuinely equal-weight
 
 Avoid when (this is the rule): the content has order (use #1), contrast (use #2), gradation (use #3), evaluation criteria (use #4), procedure (use #5), classification (use #6), exploration (use #7), structural emphasis (use #8), or judgement (use #9). If any of those apply, use the matching pattern instead. The tile grid is the *default we are trying to avoid overusing*.
 
+## The block system and when to use it
+
+Econos has two card-rendering paths that coexist. Knowing which to reach for is a design decision, not a syntax question.
+
+### How dispatch works
+
+`renderCard` in `js/app.js` checks blocks first:
+
+```js
+if (Array.isArray(c.blocks) && c.blocks.length) { body = window.renderBlocks(c); }
+```
+
+If `card.blocks` is a non-empty array the block path runs and all legacy fields (`template`, `visualKey`, `causes`, `flow`, etc.) are ignored for that card. If `blocks` is absent or empty the engine falls through to the legacy `ad-interactive` / specialised-template renderers. Both paths share the same card chrome (`stepLabel`, `title`, `lede`) emitted by `renderBlocks`.
+
+**Changing `js/render-blocks.js`, `js/blocks/*.js`, or `js/diagrams/*.js` requires bumping `CACHE_NAME` in `sw.js` (currently `econos-v129`).**
+
+### When to author a `blocks:[]` card
+
+Use `blocks:[]` for:
+
+- **New mockup-faithful builds.** If the card was designed in ChatGPT as a block composition, the `econos-image-to-data` skill maps it region-by-region to block types. This is the preferred authoring path for new topics.
+- **Static compositions.** Cards that don't need JS interactivity — static tile grids, comparison rows, equations, diagrams, timelines, case studies — are all covered by Phase 0 and Phase 1 blocks and are easier to author and maintain as data.
+- **Cards that use `diagram` blocks.** The `ECONOS_DIAGRAMS` generators (`adasDiagram`, `ppfDiagram`, `elasticityDiagram`, etc.) are only accessible inside the `blocks` path via `{ type: 'diagram', spec: { type: 'adasDiagram', mode: 'demand-pull' } }`.
+
+Keep `ad-interactive` / specialised templates for:
+
+- **Interactive multi-state diagrams** (pattern 7) that use `interactiveDiagram` with `layers` and cumulative/swap reveals.
+- **Calculation templates** (`ped-calculation`, `pes-calculation`, `yed-calculation`, `xed-calculation`) with live input boxes.
+- **Reveal-step templates** (`worked-example`, `diagnose`, `puzzle`, `transmission-chain`) where the interactivity IS the pedagogy.
+- **Five-frame spectrum templates** (`ped-five-frames`, `pes-five-frames`).
+- **Market-structures comparison** grid.
+- **Any card in an existing topic** that already uses `ad-interactive` — do not migrate unless you're rebuilding the topic.
+
+The guiding question: *does this card need JS interactivity to deliver the lesson?* If no, `blocks:[]` is simpler and more composable.
+
+### Block component catalogue
+
+All block types are registered on `window.ECONOS_BLOCKS` (in `js/render-blocks.js` and `js/blocks/*.js`). `window.ECONOS_BLOCK_UTILS` exposes shared helpers (`escapeHtml`, `toneClass`, `renderIcon`, `renderChild`, `safeGridCols`) for adding new block renderers. Unknown block types render nothing and warn only in dev mode.
+
+**Phase 0 — core blocks (js/render-blocks.js)**
+
+| Type | Purpose | Key fields |
+|---|---|---|
+| `sectionHeader` | Section divider with label and optional rule | `icon`, `label`, `rule: false` hides rule |
+| `calloutStrip` / `tip` | Toned callout strip | `tone`, `icon`, `text` |
+| `heroVisual` | Static SVG hero from `ECONOS_ICONS` | `svgKey`, `height`, `caption` |
+| `grid` | CSS grid wrapper; children rendered recursively | `cols` (number or CSS string), `gap`, `children` |
+| `tile` | Coloured content tile | `tone`, `icon`, `head`, `body`; `colSpan`/`rowSpan` for grid placement |
+| `bigIdea` | Big green concept statement | `text` (always green) |
+| `examEdge` | Purple exam-edge callout | `title`, `text` (always purple) |
+| `warning` | Amber caveat callout | `text` (always amber) |
+
+**Phase 1 — compare group (js/blocks/compare.js)**
+
+| Type | Purpose | Key fields |
+|---|---|---|
+| `versusRows` | Side-by-side comparison table | `left`/`right` `{label, tone}`, `rows:[{criterion, left, right}]` |
+| `decisionMatrix` | Scrollable multi-column data table | `columns:[...]`, `rows:[{cells:[...]}]` |
+| `trafficLight` | Green/amber/red verdict bands | `green`, `amber`, `red` (any omitted band is hidden) |
+| `glossaryRow` | Horizontal term/definition strip | `terms:[{term, definition}]` |
+
+**Phase 1 — flow group (js/blocks/flow.js)**
+
+| Type | Purpose | Key fields |
+|---|---|---|
+| `mechanismChain` | Horizontal A→B→C causal chain | `steps:[{label, detail?}]`, `breakpoints:[{label, tone}]` |
+| `rippleCascade` | Decreasing-bar multiplier rounds | `initial`, `rounds:[{round, amount}]`, `leakageArrows` |
+| `opposingFlows` | Two opposing arrows netting to a result | `positive`, `negative`, `result` each `{label, value, tone}` |
+| `timeline` | Vertical real-world timeline | `events:[{year, title, tone, body?}]` |
+
+**Phase 1 — structure group (js/blocks/structure.js)**
+
+| Type | Purpose | Key fields |
+|---|---|---|
+| `spectrum` | 4–6 bands along a named axis | `axis:{left, right, label}`, `bands:[{label, tone, icon?}]` |
+| `caseStudies` | Grid of case-study tiles with verdict pill | `cols`, `cases:[{title, cause, outcome, verdict, tone}]` |
+| `satelliteDiagram` | Central node + satellite chips (CSS, no SVG) | `centre:{label, value}`, `satellites:[{label, metric, tone}]` |
+| `policyToolkit` | Policy-option cards (label/best-for/risk) | `tools:[{label, bestFor, risk, tone}]` |
+
+**Phase 1 — data group (js/blocks/data.js)**
+
+| Type | Purpose | Key fields |
+|---|---|---|
+| `metricCard` | Headline metric with optional target | `label`, `value`, `target?`, `status?`, `tone`, `display:'number'\|'badge'` |
+| `targetGauge` | Horizontal gauge against a target band | `label`, `value`, `targetRange:[lo,hi]`, `min`, `max`, `tone` (all numeric fields required) |
+| `equationHero` | Large centred coloured-chip equation | `equation:[{token,tone}\|string]`, `caption?` |
+| `workedExampleStrip` | Calculation strip with labelled steps | `scenario`, `steps:[{label, value}]`, `result` |
+| `factChip` | Small inline UK-fact anchor chip | `label`, `value`, `date?`, `tone` |
+
+**Diagram block (js/blocks/diagram.js)**
+
+| Type | Purpose | Key fields |
+|---|---|---|
+| `diagram` | Generated econ diagram or legacy SVG hero | `spec:{type, ...config}` OR `svgKey`; `caption?`, `height?` |
+
+The `diagram` block resolves through `ECONOS_DIAGRAMS.resolve()` in `js/diagrams/index.js`. Pass `spec.type` as the generator name (`adasDiagram`, `ppfDiagram`, `elasticityDiagram`, `multiplierDiagram`, `taxSubsidyDiagram`, `priceControlDiagram`, `costCurvesDiagram`, `marketStructureDiagram`, `labourMarketDiagram`, `phillipsCurve`, `jCurveDiagram`, `fortyFiveDiagram`, `growthDiagram`) plus any generator-specific config. When no generator covers the shape, fall back to `svgKey` pointing to a named icon in `js/icons.js`. Full generator configs: `docs/DIAGRAM_LIBRARY.md`.
+
+**Card-level layout fields**
+
+`density` (`'airy' | 'standard' | 'compact' | 'exam'`) sets `data-density` on the `.econ-blocks` wrapper; CSS tokens in `css/econ-tokens.css` adjust gap, padding, and body size automatically. `layoutPreset` adds `econ-preset--<value>` as a class hook for topic-specific CSS. Both are optional.
+
+**Agent-only fields (non-rendering)**
+
+`mockupMap`, `visualBrief`, `buildNotes`, `layoutLock`, `hierarchy`, `preserveMockupLayout` are carried on the card object for authoring guidance only. The renderer ignores them entirely; the validator never flags them as unknown.
+
+### How the 10 storytelling patterns map to blocks
+
+The patterns describe the *lesson job*; block types are the *implementation*. The block path and the `ad-interactive` path can both serve most patterns:
+
+| Pattern | Block path | Legacy path |
+|---|---|---|
+| 1. Sequential flow chain | `mechanismChain` or `grid`+`tile` with numbered order | `flow:[...]` in `ad-interactive` |
+| 2. Side-by-side pair | `versusRows` (criterion comparison), or two-col `grid` + `tile` | `left`/`right` + `pairLabel` in `ad-interactive` |
+| 3. Spectrum / regime grid | `spectrum` (named axis + 4–6 bands) | `causes` with `causesCols: 4-5` + `'numbered'` in `ad-interactive` |
+| 4. Comparison table | `versusRows` or `decisionMatrix` | `versusRows` block inside `ad-interactive`, or `market-structures-comparison` |
+| 5. Worked example | `workedExampleStrip` (static strip) | `template: 'worked-example'` (click-to-reveal) or elasticity calculators |
+| 6. Predict-then-reveal | *Not available in blocks path* — requires `diagnose`/`puzzle` templates | `template: 'diagnose'` / `'puzzle'` |
+| 7. Interactive multi-state | *Not available in blocks path* — requires JS layer reveal | `interactiveDiagram` in `ad-interactive` |
+| 8. Decompose a diagram | `diagram` block (generator or `svgKey`) + supporting `tile` | `visualKey` + `causes` in `ad-interactive` |
+| 9. Evidence-then-verdict | `versusRows` + `trafficLight` or `caseStudies` + `examEdge` | `pair` + `causes2` + `conclusion` in `ad-interactive` |
+| 10. Tile grid | `grid` + `tile` children | `causes:[...]` in `ad-interactive` |
+
+Patterns 6 (Predict-then-reveal) and 7 (Interactive multi-state) always require the legacy path because they depend on JS event handlers. Everything else can go either way; for new static builds the `blocks:[]` path is preferred.
+
+### Dev tooling for blocks cards
+
+| Tool | How |
+|---|---|
+| `dev/renderer-lab.html` | Paste the raw card object into the text area; renders in isolation without loading a full topic. No build step required. |
+| `?dev=1` (or `localStorage.setItem('econosDev','1')`) | Enables `js/render-validate.js`; auto-validates on `DOMContentLoaded` and logs to console under `[EconosDebug]`. Also activates the overflow scanner — any element with `data-overflow-watch` that overflows gets class `overflow-warning` and a console warning. |
+| `window.EconosDebug.validate()` | Call from console; validates `window.ECONOS_TOPIC` or an arbitrary topic object you pass. Must report zero errors before shipping. |
+| `?screenshot=1` | Body class `screenshot-mode`; strips all chrome for Playwright captures (see `js/screenshot-mode.js`). |
+| `?preview=center-panel` | Body class `preview-center`; isolates the centre panel. |
+
 ## The anti-pattern
 
 When a *topic* has three or more cards where the **primary** pattern is *Tile grid*, you've defaulted. Replace at least two of those cards with patterns 1-9.
@@ -388,5 +522,6 @@ These templates were built for a specific topic and don't generalise. If your co
 
 - **`econos-visual-diagram`** — when a card uses `visualKey` or `interactiveDiagram`, that skill owns the SVG spec-first workflow and house rules.
 - **`econos-new-topic`** — for creating a whole topic from scratch rather than editing one card.
+- **`econos-image-to-data`** — when building a `blocks:[]` card from a ChatGPT mockup image; covers the 8-step extraction → mapping → assembly → verify workflow and the intermediate mockup extraction schema (`docs/MOCKUP_SCHEMA.md`).
 - **`run-econos`** — screenshot the card after editing to confirm it renders.
 - **`econos-ship-changes`** — backup main, push, PR, merge, reset.

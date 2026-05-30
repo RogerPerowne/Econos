@@ -44,6 +44,10 @@ Topic IDs are `snake_case` (underscores, not hyphens — match existing folders)
 
 The engine (`js/app.js`) reads `window.ECONOS_TOPIC` (singular, assigned directly). A file that uses the keyed-dictionary form `ECONOS_TOPIC_DATA['<id>']` will load without errors but render a blank page — confirm the global is right.
 
+### Preferred card shape: `blocks:[]`
+
+For new topics, author cards using the `blocks:[]` array. When `card.blocks` is a non-empty array, `js/app.js` dispatches directly to `window.renderBlocks(card)` — no `template` field is needed. The card chrome (`stepLabel`, `title`, `lede`) is emitted by `renderBlocks` itself. All legacy `ad-interactive` fields (`visualKey`, `causes`, `flow`, etc.) are ignored when `blocks` is present.
+
 ```js
 /* ECONOS — content data for <topic_id> */
 window.ECONOS_TOPIC = {
@@ -73,17 +77,74 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'semantic-card-id',       // hyphenated and semantic
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of N',
       title: 'Card title',
       lede: 'Opening paragraph. Use <strong> for emphasis.',
-      // ...optional blocks per the econos-card-template skill...
+      blocks: [
+        // blocks in visual top-to-bottom order
+        { type: 'sectionHeader', icon: '1', label: 'The mechanism', rule: true },
+        { type: 'mechanismChain', steps: [
+          { label: 'Step A', detail: 'Detail A' },
+          { label: 'Step B' },
+          { label: 'Step C' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Link each step to the economic variable it moves.' }
+      ]
     }
   ]
 };
 ```
 
-Use the `econos-card-template` skill for the full field reference.
+The full block type catalogue, card-level layout fields (`density`, `layoutPreset`), and agent-only build-guidance fields are in `docs/RENDER_BLOCKS.md`. The diagram block and all `ECONOS_DIAGRAMS` generators are in `docs/DIAGRAM_LIBRARY.md`.
+
+**Changing `js/render-blocks.js`, `js/blocks/*.js`, or `js/diagrams/*.js` requires bumping `CACHE_NAME` in `sw.js`** — those files are cache-first assets. Topic data files under `js/data/` are network-first and do not need a cache bump.
+
+### Authoring a card with a generated diagram
+
+Use the `diagram` block to embed a generated economics diagram. It is only available on the `blocks` path.
+
+```js
+{
+  type: 'diagram',
+  spec: { type: 'adasDiagram', mode: 'demand-pull' },
+  caption: 'AD shifts right; price level and output rise.'
+}
+```
+
+Available generators (`docs/DIAGRAM_LIBRARY.md` for full configs):
+
+| Generator | What it draws |
+|---|---|
+| `adasDiagram` | AD/AS shifts, gaps, monetary, recession — 11 modes |
+| `ppfDiagram` | PPF/PPC — 6 modes (basic, opportunity-cost, trade, growth-shift, etc.) |
+| `taxSubsidyDiagram` | Indirect tax or subsidy wedge |
+| `priceControlDiagram` | Price ceiling or floor |
+| `multiplierDiagram` | Multiplier rounds / ripple / AD shift |
+| `elasticityDiagram` | PED/PES curves for 5 elasticity regimes |
+| `costCurvesDiagram` | Firm cost curves MC/AC/AVC/AFC |
+| `marketStructureDiagram` | Market structure AR/MR/MC/AC |
+| `labourMarketDiagram` | Labour market with min-wage or monopsony |
+| `phillipsCurve` | SRPC and/or LRPC with NAIRU |
+| `jCurveDiagram` | J-curve (depreciation + trade balance) |
+| `fortyFiveDiagram` | 45-degree Keynesian national income |
+| `growthDiagram` | Growth sources, sustainability, or Kuznets |
+
+When no generator covers the diagram, fall back to a legacy SVG icon: `{ type: 'diagram', svgKey: 'yourKey' }` referencing a named entry in `js/icons.js`.
+
+### When to use `ad-interactive` instead
+
+Two patterns still require the legacy renderer — use `template: 'ad-interactive'` (or a specialised template) for:
+
+- **Interactive multi-state diagrams** (pattern 7) using `interactiveDiagram` with `layers` and cumulative/swap reveals.
+- **Predict-then-reveal** (pattern 6) using `template: 'diagnose'` or `'puzzle'`.
+- **Calculation templates** — `ped-calculation`, `pes-calculation`, `yed-calculation`, `xed-calculation`.
+- **Five-frame spectrum templates** — `ped-five-frames`, `pes-five-frames`.
+- **Reveal-step worked examples** — `template: 'worked-example'` or `transmission-chain`.
+- **Market-structures comparison** grid.
+
+Everything else (tile grids, comparison rows, flow chains, spectrums, case studies, equations, static diagrams) is better expressed with `blocks:[]`.
+
+Use the `econos-card-template` skill for the full field reference for both paths, including the 10 storytelling patterns and when each applies.
 
 ## Step 2 — Register in `js/topics.js`
 
@@ -140,7 +201,8 @@ Strong existing topics to model new ones on:
 
 ## See also
 
-- **`econos-card-template`** — picking the right template for each card you add to the new topic.
-- **`econos-visual-diagram`** — when the topic needs hero SVG visuals via `visualKey`.
+- **`econos-card-template`** — 10 storytelling patterns, pattern-selection framework, full block catalogue, and `ad-interactive` field reference.
+- **`econos-image-to-data`** — building a `blocks:[]` card from a ChatGPT mockup image; 8-step extraction → mapping → assembly → verify workflow. Start here if any card was designed as a mockup first.
+- **`econos-visual-diagram`** — SVG spec-first workflow and house rules for custom diagrams in `js/icons.js` (used when no `ECONOS_DIAGRAMS` generator covers the shape).
 - **`run-econos`** — screenshot the new topic page to verify routing and rendering.
 - **`econos-ship-changes`** — backup main, push, PR, merge, reset. Mandatory before landing the new topic.

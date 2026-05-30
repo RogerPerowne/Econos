@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.33.0 — 2026-05-30
+
+### Structural-graphics engine (container-query responsive)
+
+A unified engine for non-chart relationship layouts (hub-and-spoke, matrices,
+quadrants, …), with **mobile responsiveness guaranteed by construction**.
+
+- **Architecture decision:** reflow is driven by CSS **container queries**
+  (`@container gfx (max-width: 520px)`), not viewport `@media` — so every
+  structural graphic reflows on *its own* width, correct inside any narrow slot
+  regardless of screen size. One breakpoint token (`--econ-gfx-bp`), all spacing/
+  tone from the design tokens. (`docs/STRUCTURAL_GRAPHICS.md`.)
+- `js/blocks/graphics/engine.js` — `window.ECONOS_GFX` primitives (`node`,
+  `badge`, `arrow`, `connectorSvg`, `radialCoords`, …) that every layout block
+  delegates to. `css/blocks/graphics.css` — shared responsive primitives.
+- First three layouts (`group: graphics`): **hubSpoke** (subsumes
+  satelliteDiagram), **matrix** (stacks as labelled cards on mobile, not a
+  cramped scroll), **quadrant** (2×2 with axis labels → 1-column stack). Wired
+  into the shells + Library + Editor presets. `CACHE_NAME` → `econos-v142`.
+
 ## 0.32.1 — 2026-05-30
 
 ### Skills — the mockup→card pipeline

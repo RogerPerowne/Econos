@@ -234,6 +234,29 @@
       summary: 'Strategic-form N×M payoff matrix with row/column player labels and optional Nash-equilibrium cell highlighting. cells:[{a,b,nash?}].'
     },
 
+    /* ── Graphics group (js/blocks/graphics/*.js) ────────────────────────── */
+    hubSpoke: {
+      required: ['centre', 'spokes'],
+      optional: ['connectors'],
+      arrays: { spokes: { required: ['label'], optional: ['detail', 'tone', 'icon'] } },
+      group: 'graphics',
+      summary: 'Central node + N spokes radiating around it (subsumes satelliteDiagram). centre:{label,value?,tone?}. connectors:true draws centre→spoke lines. Container-query responsive.'
+    },
+    matrix: {
+      required: ['colHeaders', 'rows'],
+      optional: [],
+      arrays: { rows: { required: ['header', 'cells'] } },
+      group: 'graphics',
+      summary: 'M×N grid with row + column headers. cells:[{body,tone?,icon?}]. Narrow: each row reflows to a labelled card (not horizontal scroll).'
+    },
+    quadrant: {
+      required: ['quadrants'],
+      optional: ['xAxis', 'yAxis'],
+      arrays: { quadrants: { required: ['label', 'items'], optional: ['tone'] } },
+      group: 'graphics',
+      summary: '2×2 grid with axis labels (SWOT/BCG). xAxis:{left,right}, yAxis:{top,bottom}, 4 quadrants in order TL,TR,BL,BR. Narrow: 1-column stack with inline axis legend.'
+    },
+
     /* ── Diagram group (js/blocks/diagram.js + js/blocks/econ-diagram.js) ─ */
     diagram: {
       required: [],

@@ -1,0 +1,89 @@
+/* ==========================================================================
+   graphics/matrix.css — layout-specific styles for the matrix graphic.
+   Engine context from css/blocks/graphics.css. Reflow via @container gfx.
+   ========================================================================== */
+
+/* Desktop: column-header strip + a grid body. Both the header strip and each
+   row use the same grid template: a row-header column + N equal cell columns,
+   driven by --gfx-matrix-cols set inline by the renderer. */
+
+.econ-blocks .gfx-matrix__head,
+.econ-blocks .gfx-matrix__row {
+  display: grid;
+  gap: var(--econ-gap);
+  grid-template-columns: minmax(96px, 0.8fr) repeat(var(--gfx-matrix-cols, 2), minmax(0, 1fr));
+}
+
+.econ-blocks .gfx-matrix__body {
+  display: grid;
+  gap: var(--econ-gap);
+  margin-top: var(--econ-gap);
+}
+
+.econ-blocks .gfx-matrix__colhead,
+.econ-blocks .gfx-matrix__rowhead {
+  align-items: center;
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  display: flex;
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.econ-blocks .gfx-matrix__colhead {
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--econ-block-muted);
+}
+
+.econ-blocks .gfx-matrix__cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.econ-blocks .gfx-matrix__cell .gfx-node {
+  height: 100%;
+}
+
+/* Per-cell column caption — hidden on desktop (the header strip covers it). */
+.econ-blocks .gfx-matrix__cell-cap {
+  color: var(--econ-block-muted);
+  display: none;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Narrow: each row becomes a labelled card. The shared column-header strip
+   disappears; each cell shows its own column caption instead. */
+@container gfx (max-width: 520px) {
+  .econ-blocks .gfx-matrix__head {
+    display: none;
+  }
+
+  .econ-blocks .gfx-matrix__row {
+    background: var(--econ-block-panel);
+    border: 1px solid var(--econ-block-line);
+    border-radius: 12px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--econ-pad);
+  }
+
+  .econ-blocks .gfx-matrix__rowhead {
+    border-bottom: 1px solid var(--econ-block-line);
+    font-size: 0.96rem;
+    padding-bottom: 6px;
+    text-transform: none;
+  }
+
+  .econ-blocks .gfx-matrix__cell-cap {
+    display: block;
+  }
+}

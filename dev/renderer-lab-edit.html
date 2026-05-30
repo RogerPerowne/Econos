@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="/css/blocks/structure.css">
   <link rel="stylesheet" href="/css/blocks/data.css">
   <link rel="stylesheet" href="/css/blocks/econ-diagram.css">
+  <link rel="stylesheet" href="/css/blocks/graphics.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/hubSpoke.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/matrix.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/quadrant.css">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -417,6 +421,10 @@
 <script src="/js/blocks/charts/forty-five.js"></script>
 <script src="/js/blocks/charts/growth.js"></script>
 <script src="/js/blocks/charts/public-goods.js"></script>
+<script src="/js/blocks/graphics/engine.js"></script>
+<script src="/js/blocks/graphics/hubSpoke.js"></script>
+<script src="/js/blocks/graphics/matrix.js"></script>
+<script src="/js/blocks/graphics/quadrant.js"></script>
 <script src="/js/render-validate.js"></script>
 
 <script>
@@ -471,6 +479,55 @@
       title: 'Diagram block',
       blocks: [
         { type: 'diagram', spec: { type: 'adasDiagram', mode: 'demand-pull' }, caption: 'AD shifts right.' }
+      ]
+    },
+    'Hub & spoke (graphics)': {
+      title: 'Components of AD',
+      blocks: [
+        {
+          type: 'hubSpoke',
+          connectors: true,
+          centre: { label: 'Aggregate Demand', value: 'C+I+G+(X−M)' },
+          spokes: [
+            { label: 'Consumption', detail: '~60% of AD.',       tone: 'green' },
+            { label: 'Investment',  detail: 'Rate-sensitive.',   tone: 'blue'  },
+            { label: 'Government',   detail: 'Fiscal policy.',    tone: 'amber' },
+            { label: 'Net exports',  detail: 'Trade balance.',    tone: 'rose'  }
+          ]
+        }
+      ]
+    },
+    'Matrix (graphics)': {
+      title: 'Policy effects matrix',
+      blocks: [
+        {
+          type: 'matrix',
+          colHeaders: ['Inflation', 'Unemployment', 'Growth'],
+          rows: [
+            { header: 'Tight monetary', cells: [
+              { body: 'Falls.', tone: 'green' }, { body: 'Rises short-run.', tone: 'rose' }, { body: 'Slows.', tone: 'amber' }
+            ]},
+            { header: 'Loose fiscal', cells: [
+              { body: 'Rises near capacity.', tone: 'rose' }, { body: 'Falls.', tone: 'green' }, { body: 'Boosted.', tone: 'green' }
+            ]}
+          ]
+        }
+      ]
+    },
+    'Quadrant (graphics SWOT)': {
+      title: 'SWOT',
+      blocks: [
+        {
+          type: 'quadrant',
+          xAxis: { left: 'Internal', right: 'External' },
+          yAxis: { top: 'Helpful', bottom: 'Harmful' },
+          quadrants: [
+            { label: 'Strengths',     tone: 'green', items: ['Strong brand', 'Low unit costs'] },
+            { label: 'Opportunities', tone: 'blue',  items: ['New markets', 'Tech adoption'] },
+            { label: 'Weaknesses',    tone: 'amber', items: ['High debt'] },
+            { label: 'Threats',       tone: 'rose',  items: ['New entrants', 'Regulation'] }
+          ]
+        }
       ]
     },
     'econDiagram (4-step AD/AS)': {

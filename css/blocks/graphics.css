@@ -1,0 +1,260 @@
+/* ==========================================================================
+   graphics.css — Structural-graphics SHARED ENGINE stylesheet
+   --------------------------------------------------------------------------
+   The foundation for the named-layout graphics system (hubSpoke, matrix,
+   quadrant, …). Per-layout reflow lives in css/blocks/graphics/<name>.css;
+   this file owns the container-query context, the reusable PRIMITIVE classes
+   (.gfx-node, .gfx-badge, .gfx-panel, .gfx-title/.gfx-caption, connectors),
+   and the @container-driven REFLOW UTILITIES (.gfx-flow-row, .gfx-grid,
+   .gfx-stack).
+
+   RESPONSIVE BY CONSTRUCTION
+   --------------------------
+   `.gfx-root` sets `container-type: inline-size` + `container-name: gfx`, so a
+   graphic reflows based on ITS OWN width — correct inside a narrow 2-column
+   slot regardless of screen width. Every reflow rule below is keyed on
+   `@container gfx (max-width: 520px)`, NEVER a viewport `@media`.
+
+   THE BREAKPOINT
+   --------------
+   `--econ-gfx-bp: 520px` is the single documented breakpoint token (see
+   econ-tokens.css). CSS cannot interpolate a custom property into a media /
+   container *condition*, so the literal `520px` is repeated in every
+   `@container` query here and in the per-layout files. Keep them in sync with
+   the token; the token is the source of truth for documentation + JS.
+
+   TOKENS ONLY: spacing/sizing/colour come from --econ-gap / --econ-pad /
+   --econ-body-size and the six tones' -50/-100/-700 scales. The only hard
+   numbers are the breakpoint constant and small geometric radii/line-weights.
+
+   All selectors are scoped under `.econ-blocks`.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container context — the heart of "responsive by construction"
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-root {
+  container-type: inline-size;
+  container-name: gfx;
+  display: grid;
+  gap: var(--econ-gap);
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Title / caption chrome
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-title {
+  color: var(--econ-block-navy);
+  font-size: 0.96rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.econ-blocks .gfx-caption {
+  color: var(--econ-block-muted);
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   .gfx-panel — neutral surface used to group nodes
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-panel {
+  background: var(--econ-block-panel);
+  border: 1px solid var(--econ-block-line);
+  border-radius: 12px;
+  padding: var(--econ-pad);
+}
+
+/* --------------------------------------------------------------------------
+   .gfx-node — the universal labelled element
+   Tone is supplied by the existing `.econ-tone--*` classes, which set the
+   --econ-block-tone-50/100/700 custom props. background = tone-50,
+   border = tone-100, label colour = tone-700, body colour = navy.
+   Shape modifiers: --rect (default) / --pill / --circle / --diamond / --hex.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-node {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 12px;
+  color: var(--econ-block-navy);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  padding: var(--econ-pad);
+  text-align: center;
+  position: relative;
+}
+
+.econ-blocks .gfx-node__label {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.96rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.econ-blocks .gfx-node__body {
+  color: var(--econ-block-navy);
+  font-size: var(--econ-body-size);
+  line-height: 1.4;
+}
+
+.econ-blocks .gfx-node__icon {
+  display: flex;
+  justify-content: center;
+}
+
+/* Shape modifiers ---------------------------------------------------------- */
+
+.econ-blocks .gfx-node--rect {
+  border-radius: 12px;
+}
+
+.econ-blocks .gfx-node--pill {
+  border-radius: 999px;
+  padding: calc(var(--econ-pad) * 0.6) var(--econ-pad);
+}
+
+/* Circle + diamond + hex are 1:1 aspect; they centre a short label.
+   They cap their own size so they don't balloon in a wide slot. */
+.econ-blocks .gfx-node--circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  margin-inline: auto;
+  max-width: 160px;
+  width: 100%;
+}
+
+.econ-blocks .gfx-node--diamond {
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  margin-inline: auto;
+  max-width: 160px;
+  rotate: 45deg;
+  width: 100%;
+}
+
+.econ-blocks .gfx-node--diamond > * {
+  rotate: -45deg;
+}
+
+.econ-blocks .gfx-node--hex {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  margin-inline: auto;
+  max-width: 180px;
+  width: 100%;
+}
+
+/* Emphasis modifier — solid navy "centre / hero" node (e.g. hub centre). */
+.econ-blocks .gfx-node--solid {
+  background: var(--econ-block-navy);
+  border-color: var(--econ-block-navy);
+  color: #fff;
+}
+
+.econ-blocks .gfx-node--solid .gfx-node__label,
+.econ-blocks .gfx-node--solid .gfx-node__body {
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   .gfx-badge — numbered / iconed disc
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-badge {
+  align-items: center;
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 999px;
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 0.95rem;
+  font-weight: 850;
+  height: 30px;
+  justify-content: center;
+  line-height: 1;
+  width: 30px;
+}
+
+.econ-blocks .gfx-badge--solid {
+  background: var(--econ-block-navy);
+  border-color: var(--econ-block-navy);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Connectors — base styles for CSS / SVG connectors used by layouts.
+   .gfx-connector is the SVG overlay; .gfx-arrow is a CSS chevron.
+   -------------------------------------------------------------------------- */
+
+.econ-blocks .gfx-connector {
+  pointer-events: none;
+  overflow: visible;
+}
+
+.econ-blocks .gfx-connector__line {
+  fill: none;
+  stroke: var(--econ-block-line);
+  stroke-width: 2;
+}
+
+.econ-blocks .gfx-arrow {
+  align-items: center;
+  color: var(--econ-block-muted);
+  display: inline-flex;
+  font-weight: 900;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   REFLOW UTILITIES — all driven by @container gfx, never the viewport.
+   -------------------------------------------------------------------------- */
+
+/* .gfx-flow-row — horizontal row of items with arrows between. At the bp it
+   stacks vertically; child arrows rotate 90° via the data hook below. */
+.econ-blocks .gfx-flow-row {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--econ-gap);
+  justify-content: center;
+}
+
+.econ-blocks .gfx-flow-row > .gfx-arrow {
+  rotate: 0deg;
+}
+
+/* .gfx-grid — auto-fitting column grid that collapses to one column at bp. */
+.econ-blocks .gfx-grid {
+  display: grid;
+  gap: var(--econ-gap);
+  grid-template-columns: repeat(var(--gfx-cols, 2), minmax(0, 1fr));
+}
+
+/* .gfx-stack — vertical stack helper. */
+.econ-blocks .gfx-stack {
+  display: grid;
+  gap: var(--econ-gap);
+}
+
+@container gfx (max-width: 520px) {
+  .econ-blocks .gfx-flow-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .econ-blocks .gfx-flow-row > .gfx-arrow {
+    rotate: 90deg;
+  }
+
+  .econ-blocks .gfx-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

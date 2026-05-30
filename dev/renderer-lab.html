@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="/css/blocks/data.css">
   <link rel="stylesheet" href="/css/blocks/econ-diagram.css">
   <link rel="stylesheet" href="/css/blocks/game.css">
+  <link rel="stylesheet" href="/css/blocks/graphics.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/hubSpoke.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/matrix.css">
+  <link rel="stylesheet" href="/css/blocks/graphics/quadrant.css">
 
   <style>
     /* ── Lab page chrome — not part of the card system ── */
@@ -225,6 +229,7 @@
     <li><a href="#section-fixture-diagrams">15. Fixture — ECONOS_DIAGRAMS_DEMO_CARD</a></li>
     <li><a href="#section-econ-families-gallery">16. econDiagram chart families — full gallery (all views)</a></li>
     <li><a href="#section-game-blocks">17. Game theory blocks — payoffMatrix</a></li>
+    <li><a href="#section-graphics-blocks">18. Structural graphics — hubSpoke · matrix · quadrant</a></li>
   </ol>
 </nav>
 
@@ -440,6 +445,19 @@
   <div id="render-game-blocks" class="lab-card-panel"></div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 18: STRUCTURAL GRAPHICS (js/blocks/graphics/*.js)     -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="lab-section" id="section-graphics-blocks">
+  <div class="lab-section-title">Section 18 — Structural graphics (js/blocks/graphics/*.js)</div>
+  <p class="lab-section-subtitle">
+    hubSpoke (connectors) · matrix (M×N) · quadrant (2×2 SWOT) — responsive by
+    construction via CSS container queries (@container gfx). Resize the panel /
+    narrow the window to see each reflow on its OWN width.
+  </p>
+  <div id="render-graphics-blocks" class="lab-card-panel"></div>
+</div>
+
 <!-- ── Status bar ── -->
 <div id="lab-status-bar">
   <span class="status-dev">Econos Renderer Lab</span>
@@ -506,6 +524,10 @@
 <script src="/js/blocks/charts/growth.js"></script>
 <script src="/js/blocks/charts/public-goods.js"></script>
 <script src="/js/blocks/game.js"></script>
+<script src="/js/blocks/graphics/engine.js"></script>
+<script src="/js/blocks/graphics/hubSpoke.js"></script>
+<script src="/js/blocks/graphics/matrix.js"></script>
+<script src="/js/blocks/graphics/quadrant.js"></script>
 <script src="/js/data/_fixtures/blocks-demo.js"></script>
 <script src="/js/data/_fixtures/blocks-phase1.js"></script>
 <script src="/js/data/_fixtures/diagrams-demo.js"></script>
@@ -1615,6 +1637,58 @@
       ]
     }
   ], document.getElementById('render-game-blocks'));
+
+  /* ── SECTION 18: Structural graphics ──────────────────────────────────── */
+  renderBlocks([
+    { type: 'sectionHeader', icon: '1', label: 'hubSpoke — centre + spokes (connectors on)' },
+    {
+      type: 'hubSpoke',
+      connectors: true,
+      centre: { label: 'Aggregate Demand', value: 'AD = C+I+G+(X−M)' },
+      spokes: [
+        { label: 'Consumption', detail: '~60% of AD; driven by income & confidence.', tone: 'green' },
+        { label: 'Investment',  detail: '~18%; rate-sensitive and volatile.',          tone: 'blue'  },
+        { label: 'Government',   detail: '~20%; set by fiscal policy.',                 tone: 'amber' },
+        { label: 'Net exports',  detail: '−2%; depends on competitiveness & the £.',    tone: 'rose'  }
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '2', label: 'matrix — M×N grid with row + column headers' },
+    {
+      type: 'matrix',
+      colHeaders: ['Inflation', 'Unemployment', 'Growth'],
+      rows: [
+        { header: 'Tight monetary', cells: [
+          { body: 'Falls — demand cools.',       tone: 'green' },
+          { body: 'Rises in the short run.',     tone: 'rose'  },
+          { body: 'Slows; output gap opens.',    tone: 'amber' }
+        ]},
+        { header: 'Loose fiscal', cells: [
+          { body: 'Rises if near capacity.',     tone: 'rose'  },
+          { body: 'Falls — jobs created.',       tone: 'green' },
+          { body: 'Boosted via the multiplier.', tone: 'green' }
+        ]},
+        { header: 'Supply-side', cells: [
+          { body: 'Eased long-run (lower costs).', tone: 'green' },
+          { body: 'Structural falls over time.',   tone: 'green' },
+          { body: 'Raises trend growth.',          tone: 'blue'  }
+        ]}
+      ]
+    },
+
+    { type: 'sectionHeader', icon: '3', label: 'quadrant — 2×2 SWOT with axes' },
+    {
+      type: 'quadrant',
+      xAxis: { left: 'Internal', right: 'External' },
+      yAxis: { top: 'Helpful', bottom: 'Harmful' },
+      quadrants: [
+        { label: 'Strengths',     tone: 'green',  items: ['Strong brand', 'Low unit costs', 'Skilled workforce'] },
+        { label: 'Opportunities', tone: 'blue',   items: ['Emerging markets', 'New tech adoption'] },
+        { label: 'Weaknesses',    tone: 'amber',  items: ['High debt', 'Ageing capital stock'] },
+        { label: 'Threats',       tone: 'rose',   items: ['New entrants', 'Tighter regulation', 'FX volatility'] }
+      ]
+    }
+  ], document.getElementById('render-graphics-blocks'));
 
   /* ── SECTION 13–15: Fixtures ──────────────────────────────────────────── */
   if (window.ECONOS_BLOCKS_DEMO_CARD) {

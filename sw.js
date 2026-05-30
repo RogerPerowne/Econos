@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v141';
+  const CACHE_NAME = 'econos-v142';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -70,6 +70,14 @@
     '/js/blocks/charts/public-goods.js',
     '/js/blocks/game.js',
     '/css/blocks/game.css',
+    '/css/blocks/graphics.css',
+    '/css/blocks/graphics/hubSpoke.css',
+    '/css/blocks/graphics/matrix.css',
+    '/css/blocks/graphics/quadrant.css',
+    '/js/blocks/graphics/engine.js',
+    '/js/blocks/graphics/hubSpoke.js',
+    '/js/blocks/graphics/matrix.js',
+    '/js/blocks/graphics/quadrant.js',
     '/fonts/inter-variable.woff2',
     '/favicon.svg',
     '/assets/logo-full.png',

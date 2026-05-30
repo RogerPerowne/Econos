@@ -1,0 +1,132 @@
+/* ==========================================================================
+   graphics/quadrant.css — layout-specific styles for the quadrant graphic.
+   Engine context from css/blocks/graphics.css. Reflow via @container gfx.
+   ========================================================================== */
+
+/* Desktop: a 2×2 grid inset within a plot that carries axis labels on its
+   four edges. The plot has padding to make room for the edge labels. */
+
+.econ-blocks .gfx-quad__plot {
+  padding: 26px 18px;
+  position: relative;
+}
+
+.econ-blocks .gfx-quad__grid {
+  display: grid;
+  gap: var(--econ-gap);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.econ-blocks .gfx-quad__cell {
+  background: var(--econ-block-tone-50, var(--econ-tone-slate-50));
+  border: 1px solid var(--econ-block-tone-100, var(--econ-tone-slate-100));
+  border-radius: 12px;
+  display: grid;
+  gap: 8px;
+  padding: var(--econ-pad);
+}
+
+.econ-blocks .gfx-quad__label {
+  color: var(--econ-block-tone-700, var(--econ-tone-slate-700));
+  font-size: 0.96rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.econ-blocks .gfx-quad__items {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.econ-blocks .gfx-quad__item {
+  color: var(--econ-block-navy);
+  line-height: 1.35;
+  padding-left: 14px;
+  position: relative;
+}
+
+.econ-blocks .gfx-quad__item::before {
+  color: var(--econ-block-muted);
+  content: "•";
+  left: 2px;
+  position: absolute;
+}
+
+/* Axis labels — centred on each edge of the plot. */
+.econ-blocks .gfx-quad__axes {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.econ-blocks .gfx-quad__axes span {
+  color: var(--econ-block-muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  position: absolute;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.econ-blocks .gfx-quad__y-top {
+  left: 50%;
+  top: 4px;
+  transform: translateX(-50%);
+}
+
+.econ-blocks .gfx-quad__y-bottom {
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.econ-blocks .gfx-quad__x-left {
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+}
+
+.econ-blocks .gfx-quad__x-right {
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: right center;
+}
+
+/* Inline legend — hidden on desktop (edge labels do the job). */
+.econ-blocks .gfx-quad__legend {
+  display: none;
+  flex-wrap: wrap;
+  gap: 6px var(--econ-gap);
+}
+
+.econ-blocks .gfx-quad__legend-axis {
+  color: var(--econ-block-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+/* Narrow: stack the four quadrants into one column; drop the edge axis labels
+   and reveal the inline legend instead. */
+@container gfx (max-width: 520px) {
+  .econ-blocks .gfx-quad__plot {
+    padding: 0;
+  }
+
+  .econ-blocks .gfx-quad__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .econ-blocks .gfx-quad__axes {
+    display: none;
+  }
+
+  .econ-blocks .gfx-quad__legend {
+    display: flex;
+  }
+}

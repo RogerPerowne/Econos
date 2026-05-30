@@ -1,0 +1,89 @@
+/* ==========================================================================
+   graphics/hubSpoke.css — layout-specific styles for the hubSpoke graphic.
+   Engine primitives + container context come from css/blocks/graphics.css.
+   Reflow is driven by @container gfx (max-width: 520px) — the documented
+   --econ-gfx-bp constant. NEVER a viewport @media.
+   ========================================================================== */
+
+/* Desktop: a centred board with the centre node in the middle and spokes
+   flowing around it. We use a flex column where the centre sits in the middle
+   of the spoke flow via DOM order (spokes first, centre appended) + order. */
+
+.econ-blocks .gfx-hub__board {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--econ-gap);
+  position: relative;
+}
+
+.econ-blocks .gfx-hub__spokes {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--econ-gap);
+  justify-content: center;
+  width: 100%;
+}
+
+.econ-blocks .gfx-hub__spoke {
+  flex: 1 1 160px;
+  max-width: 240px;
+  min-width: 0;
+}
+
+.econ-blocks .gfx-hub__spoke .gfx-node {
+  height: 100%;
+}
+
+/* Centre node sits visually first (above the spokes) and is emphasised. */
+.econ-blocks .gfx-hub__centre {
+  order: -1;
+  max-width: 320px;
+  width: 100%;
+}
+
+.econ-blocks .gfx-hub__centre-value {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+/* Connector overlay stretches across the whole board; only meaningful on
+   desktop where centre + spokes share a plane. Drawn behind the nodes. */
+.econ-blocks .gfx-hub__board > .gfx-connector {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.econ-blocks .gfx-hub__spokes,
+.econ-blocks .gfx-hub__centre {
+  position: relative;
+  z-index: 1;
+}
+
+/* Narrow: vertical stack, centre on top (already order:-1), spokes full-width
+   one per row. Connectors hidden — they don't map onto a vertical list. */
+@container gfx (max-width: 520px) {
+  .econ-blocks .gfx-hub__spokes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .econ-blocks .gfx-hub__spoke {
+    flex: 1 1 auto;
+    max-width: none;
+  }
+
+  .econ-blocks .gfx-hub__centre {
+    max-width: none;
+  }
+
+  .econ-blocks .gfx-hub--connected .gfx-connector {
+    display: none;
+  }
+}

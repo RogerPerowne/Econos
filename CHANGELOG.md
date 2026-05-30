@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.32.1 — 2026-05-30
+
+### Skills — the mockup→card pipeline
+
+Three new authoring skills that close the mockup-accuracy loop:
+- `econos-mockup-analyse` — decompose a mockup image into a structured build plan
+  (regions→blocks, charts→econDiagram families, confidence, corrections,
+  unresolved gaps) before any data is written.
+- `econos-match-mockup` — the build-and-converge loop using the Studio Editor's
+  mockup overlay + live similarity score; fix the largest deltas first, iterate
+  to a faithful match.
+- `econos-econ-diagram` — the `econDiagram` picker (which of the 16 chart
+  families) + the full view schema. Never hand-roll econ-chart SVG.
+Indexed in `.claude/skills/README.md`.
+
 ## 0.32.0 — 2026-05-30
 
 ### econDiagram — per-view curve visibility + first migrations

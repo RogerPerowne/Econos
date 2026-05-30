@@ -215,6 +215,21 @@
         on:    ['MC', 'P_PC'],
         label: 'Qc',
         tone:  'slate'
+      },
+
+      // ATC at the monopoly's profit-max output — the missing fourth corner of
+      // the supernormal-profit rectangle. The rectangle has vertices:
+      //   (Qm, Pm)         — top-right, = priceOnAR
+      //   (Qm, ATC(Qm))    — bottom-right, = THIS point
+      //   plus reflections to the y-axis for the left edge.
+      // Combine with priceOnAR via areas:[{between:['AR','ATC'], x:[plot.xMin, PROFIT_MAX_Q]}]
+      // to shade the supernormal-profit region, or use both points as the
+      // anchors for a bracket label.
+      atcAtMonopoly: {
+        onCurve: 'ATC',
+        x:       PROFIT_MAX_Q,    // = 280 — the monopoly Q*
+        label:   'ATC@Qm',
+        tone:    'slate'
       }
     }
   });

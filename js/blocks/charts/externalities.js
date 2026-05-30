@@ -132,6 +132,20 @@
       socialEq: {
         on: ['MSC', 'MPB'],
         label: 'Qs', tone: 'rose'
+      },
+      /* DWL-triangle apex on MSC at the market quantity Qm = 430.
+         The deadweight-loss triangle has vertices:
+           socialEq (apex, at MPB ∩ MSC),
+           marketEq (lower-right, at Qm on MPB),
+           mscAtMarket (upper-right, at Qm on MSC — sits directly above
+                        marketEq because MSC > MPC by EXT_COST at every Q).
+         Use these three together (areas:[{between:['MSC','MPB'],x:[Qs,Qm]}])
+         to shade the DWL or annotate it.                                  */
+      mscAtMarket: {
+        onCurve: 'MSC',
+        x:       430,           // matches marketEq's Qm coordinate
+        label:   'MSC@Qm',
+        tone:    'amber'
       }
     }
   });
@@ -205,6 +219,19 @@
       socialEq: {
         on: ['MPC', 'MSB'],
         label: 'Qs', tone: 'green'
+      },
+      /* Welfare-gain-triangle apex on MSB at the market quantity Qm = 430.
+         The welfare-gain triangle (the gain forgone by underproduction) has
+         vertices:
+           marketEq (lower-left, at Qm on MPB),
+           msbAtMarket (upper-left, at Qm on MSB — directly above marketEq),
+           socialEq (apex, at MPC ∩ MSB at the larger Qs).
+         Use these three together to shade the welfare gain.               */
+      msbAtMarket: {
+        onCurve: 'MSB',
+        x:       430,           // matches marketEq's Qm coordinate
+        label:   'MSB@Qm',
+        tone:    'amber'
       }
     }
   });

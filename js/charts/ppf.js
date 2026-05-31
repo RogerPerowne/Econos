@@ -602,7 +602,22 @@
   /* Optional dashed gridlines + axis-tick labels for a point.
      `pt.gridlines` may be `true` (use point's tone), or a tone-name string
      ('gray', 'amber', etc.) to override the gridline colour. */
-  function renderPointGridlines(pt, scale, area) {
+  // Minimum pixel gap between two tick labels on the same axis before
+  // the engine considers them visually collided. ~14px ≈ font size for
+  // MIN_LABEL_SIZE=12 with a bit of leading.
+  var MIN_TICK_GAP = 14;
+
+  /* Render dashed gridlines (axis → point on both axes) plus optional
+     tick labels on each axis. Tick labels are tracked in `ctx` so:
+       - Identical labels at the same axis position (within MIN_TICK_GAP)
+         are DEDUPED — the second call is silently skipped. Saves the
+         author from re-declaring `ticks: { x: 'Yf' }` on every point
+         that sits at the same vertical line.
+       - DIFFERENT labels close together (within MIN_TICK_GAP) log a dev
+         warning naming both. Catches the silent-collision case where
+         two points land 8px apart on the y-axis and their ticks render
+         on top of each other invisibly. */
+  function renderPointGridlines(pt, scale, area, ctx) {
     if (!pt.gridlines) return '';
     var gridTone = typeof pt.gridlines === 'string' ? tone(pt.gridlines) : tone(pt.tone);
     var t = tone(pt.tone);
@@ -612,11 +627,44 @@
       '<line x1="' + area.x + '" y1="' + cy + '" x2="' + cx + '" y2="' + cy + '" stroke="' + gridTone.stroke + '" stroke-width="1" stroke-dasharray="4 3"/>',
       '<line x1="' + cx + '" y1="' + (area.y + area.height) + '" x2="' + cx + '" y2="' + cy + '" stroke="' + gridTone.stroke + '" stroke-width="1" stroke-dasharray="4 3"/>'
     ];
+
+    // Track placed tick labels per axis so we can dedupe and detect
+    // collisions across calls. Stored on ctx so the state lives for the
+    // lifetime of a single render() pass.
+    if (ctx && !ctx.placedTicks) ctx.placedTicks = { x: [], y: [] };
+
+    function placeTick(axis, pos, text, x, y) {
+      if (!ctx) return true;
+      var existing = ctx.placedTicks[axis];
+      for (var i = 0; i < existing.length; i++) {
+        var prev = existing[i];
+        if (Math.abs(prev.pos - pos) < MIN_TICK_GAP) {
+          if (prev.text === text) {
+            return false; // duplicate label — silently skip
+          }
+          var msg = '[ECONOS_PPF] tick collision on ' + axis + '-axis: "' +
+            prev.text + '" at ' + prev.pos.toFixed(1) + ' vs "' + text +
+            '" at ' + pos.toFixed(1) + ' (gap ' +
+            Math.abs(prev.pos - pos).toFixed(1) + 'px < ' + MIN_TICK_GAP + 'px)';
+          ctx.devWarnings.push(msg);
+          try { console.warn(msg); } catch (e) {}
+        }
+      }
+      existing.push({ pos: pos, text: text, x: x, y: y });
+      return true;
+    }
+
     if (pt.ticks && pt.ticks.y) {
-      parts.push('<text x="' + (area.x - 10) + '" y="' + (cy + 4) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + pt.ticks.y + '</text>');
+      var ty = pt.ticks.y;
+      if (placeTick('y', cy, ty, area.x - 10, cy + 4)) {
+        parts.push('<text x="' + (area.x - 10) + '" y="' + (cy + 4) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + ty + '</text>');
+      }
     }
     if (pt.ticks && pt.ticks.x) {
-      parts.push('<text x="' + cx + '" y="' + (area.y + area.height + 17) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + pt.ticks.x + '</text>');
+      var tx = pt.ticks.x;
+      if (placeTick('x', cx, tx, cx, area.y + area.height + 17)) {
+        parts.push('<text x="' + cx + '" y="' + (area.y + area.height + 17) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + tx + '</text>');
+      }
     }
     return parts.join('');
   }
@@ -1159,7 +1207,7 @@
     (view.ocTriangles || []).forEach(function (tri) { parts.push(renderOcTriangle(tri, scale, ctx.curveRegistry)); });
     (view.boxedLabels || []).forEach(function (b) { parts.push(renderBoxedLabel(b, scale, area)); });
     (view.points || []).forEach(function (p) {
-      parts.push(renderPointGridlines(p, scale, area));
+      parts.push(renderPointGridlines(p, scale, area, ctx));
       parts.push(renderPoint(p, scale, ctx, area));
     });
     (view.zones || []).forEach(function (z) { parts.push(renderZone(z, scale)); });
@@ -1231,7 +1279,7 @@
     (panel.zones || []).forEach(function (z) { parts.push(maybeWrap(z, renderZone(z, scale))); });
     (panel.arrows || []).forEach(function (a) { parts.push(maybeWrap(a, renderArrow(a, scale, ctx.curveRegistry, ctx))); });
     (panel.points || []).forEach(function (p) {
-      var renderedDot = renderPointGridlines(p, scale, area) + renderPoint(p, scale, ctx, area);
+      var renderedDot = renderPointGridlines(p, scale, area, ctx) + renderPoint(p, scale, ctx, area);
       parts.push(maybeWrap(p, renderedDot));
     });
     (panel.texts || []).forEach(function (t) { parts.push(maybeWrap(t, renderText(t, scale, ctx, area))); });

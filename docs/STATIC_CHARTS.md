@@ -51,10 +51,13 @@ validator green (34 blocks / 18 files).
 - **Ad-valorem (pivoting) tax curve** on supplyDemand.
 - **Two-panel side-by-side comparison** (movement-vs-shift, Classical-vs-Keynesian).
 
-**B. New econDiagram families to add:**
-- Keynesian (non-vertical) AS · MEC / investment-demand · price discrimination
-  (1st & 3rd degree) · LRAC with MES · limit-pricing · cobweb · market-level
-  monopoly welfare (S=ΣMC).
+**B. New econDiagram families — ✅ BUILT (#814):**
+`keynesianAS` (Classical vs Keynesian reverse-L) · `mec` (investment-demand) ·
+`priceDiscrimination` (1st & 3rd degree) · `lrac` (LRAC + MES + limit pricing) ·
+`cobweb` / `cobwebDivergent` · `monopolyWelfare` (D=AR, MR, S=ΣMC, DWL) ·
+`elasticityRegimes` (steep/flat/unit/perfectly-elastic/inelastic D & S + incidence).
+All registered, smoke-tested, wired into shells + precache. Cards that needed
+them migrate in the next pass.
 
 **C. Structural / flow visuals → graphics blocks (separate workflow):**
 - ~40 cards: tile-grids, hub-and-spoke, circular-flow, rippleCascade,

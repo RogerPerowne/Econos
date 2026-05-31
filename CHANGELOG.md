@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.39.0 — 2026-05-31
+
+### Seven new econDiagram chart families (close the migration capability gaps)
+
+Adds the chart families the migration sweep was missing, each a self-contained
+file registered with the engine, geometry render-verified, and smoke-tested:
+
+- **`keynesianAS`** — Classical (vertical LRAS) vs Keynesian (reverse-L:
+  spare-capacity flat range → steepening → vertical at Yf) AS, with AD.
+- **`mec`** — investment / marginal efficiency of capital (interest rate vs
+  investment): rate cut = movement along MEC, confidence boost = MEC shift.
+- **`priceDiscrimination`** — AR/MR/MC for a sub-market; 1st-degree surplus
+  capture; 3rd-degree elastic-vs-inelastic AR variants (paired via a grid).
+- **`lrac`** — long-run average cost with minimum-efficient-scale marker and a
+  limit-pricing view.
+- **`cobweb`** / **`cobwebDivergent`** — commodity price-instability staircase.
+- **`monopolyWelfare`** — market-level D=AR, MR, S=ΣMC; competition vs monopoly
+  with the deadweight-loss triangle.
+- **`elasticityRegimes`** — steep/flat/unit/perfectly-elastic/inelastic demand &
+  supply through a common pivot, for PED/PES regimes and tax incidence.
+
+Wired into the three shells + `dev/renderer-lab*` + the service-worker precache;
+the `econos-econ-diagram` skill's family table lists them. Smoke tests assert
+each registers and renders (26 econ-diagram assertions). `CACHE_NAME` →
+`econos-v149`. The cards that needed these migrate next.
+
 ## 0.38.2 — 2026-05-31
 
 ### econDiagram: movement arrows arc off the curve

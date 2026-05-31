@@ -2550,6 +2550,21 @@ img, svg { display: block; max-width: 100%; }
   .card__lede        { font-size: var(--fs-md); }        /* 18 → 16 */
 }
 
+/* Topbar gets tighter side gutters on mobile so the topic title
+   has more room — 32 px → 12 px each side reclaims 40 px of width
+   on a 375-px viewport. The topic title also gets ellipsis when
+   long names would otherwise push the avatar off the right edge. */
+@media (max-width: 600px) {
+  .topbar { padding: 0 var(--sp-3); gap: var(--sp-3); }
+  .topbar__topic-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
 /* card-foot (Previous · counter · Next) sits in a row with
    space-between. On narrow viewports the buttons get pushed
    together and overflow; wrap with a counter that drops below. */

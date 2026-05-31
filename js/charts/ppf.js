@@ -456,7 +456,11 @@
       }
     }
     var opacity = item.opacity != null ? ' opacity="' + item.opacity + '"' : '';
-    return '<text x="' + x + '" y="' + y + '" font-size="' + size + '" fill="' + t.label + '" text-anchor="' + anchor + '"' + bold + italic + opacity + '>' + item.text + '</text>';
+    // Optional rotation. `item.rotate` is degrees (negative = counter-
+    // clockwise). Used for vertical-reading axis labels like "P falls"
+    // alongside a y-axis direction arrow.
+    var rotate = item.rotate ? ' transform="rotate(' + item.rotate + ' ' + x + ' ' + y + ')"' : '';
+    return '<text x="' + x + '" y="' + y + '" font-size="' + size + '" fill="' + t.label + '" text-anchor="' + anchor + '"' + bold + italic + opacity + rotate + '>' + item.text + '</text>';
   }
 
   /* Estimate a text element's bounding box in PIXEL space.

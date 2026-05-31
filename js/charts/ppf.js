@@ -388,9 +388,14 @@
     var defaultDy = hasGridlines ? -9 : 0;
     var lblX = cx + (pt.labelDx != null ? pt.labelDx : defaultDx);
     var lblY = cy + (pt.labelDy != null ? pt.labelDy : defaultDy);
+    // Default text-anchor: 'start' (label sits to the RIGHT of its x).
+    // Specs can override with pt.anchor ('end' = label sits to the LEFT;
+    // 'middle' = centred). Useful when an arrow approaches the point from
+    // the right and the label needs to go on the left side of the dot.
+    var anchor = pt.anchor || 'start';
     var symbolHtml = pt.symbol ? '<text x="' + cx + '" y="' + (cy + 1) + '" font-size="' + Math.round(r * 1.4) + '" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="middle">' + pt.symbol + '</text>' : '';
-    var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
-    var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
+    var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
+    var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
     return '<g class="chart-point"><circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="' + t.stroke + '"/>' + symbolHtml + labelHtml + descHtml + '</g>';
   }
 

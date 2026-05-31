@@ -79,26 +79,31 @@
     viewDefaultsHidden: true,
     views: [
       /* ---------- 'countries': UK label + Germany + China (view 1 only) ----------
+         Country positions are sized to actually sit ON PPF₁:
+           Germany at t≈0.49 → (0.52, 0.353)
+           China   at t≈0.77 → (0.70, 0.108)
          The UK label is here (not on the top-level UK dot) so it disappears
          when the narrative shifts to A in views 2-4. */
       {
         key: 'countries',
         contentLayer: 'countries',
         points: [
-          { x: 0.520, y: 0.395, tone: 'blue',  label: 'Germany', radius: 6 },
-          { x: 0.700, y: 0.110, tone: 'amber', label: 'China',   radius: 6 }
+          { x: 0.520, y: 0.353, tone: 'blue',  label: 'Germany', radius: 6 },
+          { x: 0.700, y: 0.108, tone: 'amber', label: 'China',   radius: 6 }
         ],
         texts: [
           { x: A.x + 0.03, y: A.y, text: 'UK', tone: 'purple', bold: true, fontSize: 13, anchor: 'start' }
         ]
       },
 
-      /* ---------- 'ppf1s': solid PPF₁ (views 1-2) ---------- */
+      /* ---------- 'ppf1s': solid PPF₁ (views 1-2) ----------
+         Curve label uses the engine default (above the endpoint) so it
+         clears the "Capital Goods" X-axis label below. */
       {
         key: 'ppf1s',
         contentLayer: 'ppf1s',
         curves: [
-          { id: 'ppf1', d: PPF1_D, tone: 'blue', label: 'PPF₁', strokeWidth: 2.5, labelDy: 6 }
+          { id: 'ppf1', d: PPF1_D, tone: 'blue', label: 'PPF₁', strokeWidth: 2.5 }
         ]
       },
 
@@ -107,7 +112,7 @@
         key: 'ppf1d',
         contentLayer: 'ppf1d',
         curves: [
-          { id: 'ppf1d', d: PPF1_D, tone: 'blue', strokeWidth: 2, dashed: '6 4', opacity: 0.55, label: 'PPF₁', labelDy: 6 }
+          { id: 'ppf1d', d: PPF1_D, tone: 'blue', strokeWidth: 2, dashed: '6 4', opacity: 0.55, label: 'PPF₁' }
         ]
       },
 
@@ -134,9 +139,11 @@
         key: 'a-b-arrow',
         contentLayer: 'a-b-arrow',
         arrows: [
-          // Dashed quadratic arrow A→B, bowing CLEARLY above PPF₁
+          // Dashed quadratic arrow A→B, bowing CLEARLY above PPF₁.
+          // Uses engine default ARROW_BUFFER (14) so the arrowhead
+          // clears both A and B dots.
           { d: 'M ' + A.x + ',' + A.y + ' Q 0.39,0.85 ' + B.x + ',' + B.y,
-            tone: 'purple', strokeWidth: 2, dashed: '6 3', markerEnd: 'ppfcc-pp', buffer: 6 },
+            tone: 'purple', strokeWidth: 2, dashed: '6 3', markerEnd: 'ppfcc-pp' },
           // Dashed projection gridlines from B to both axes (potential-position visual)
           { x1: 0, y1: B.y, x2: B.x, y2: B.y, tone: 'gray', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           { x1: B.x, y1: 0, x2: B.x, y2: B.y, tone: 'gray', strokeWidth: 1, dashed: '4 3', buffer: 0 }
@@ -179,10 +186,13 @@
         key: 'd-arrow',
         contentLayer: 'd-arrow',
         points: [
-          // D's label goes UPPER-LEFT of the dot — the C→D arrow approaches
-          // from the lower-right, so the default right-of-dot label position
-          // would collide with the arrowhead. labelDx negative pushes left.
-          { x: D.x, y: D.y, tone: 'green', label: 'D', radius: 6, labelDx: -14, labelDy: -2 }
+          // D sits on PPF₂. The curve sweeps both above-right of D (toward
+          // the Y-axis intercept) and right (toward the C area), so "left
+          // of dot" puts the label IN the curve's path, and "right of dot"
+          // collides with the C→D arrowhead. Clean spot is BELOW the dot
+          // (in the attainable region under PPF₂). labelDy positive pushes
+          // down; anchor='middle' centres the label horizontally on the dot.
+          { x: D.x, y: D.y, tone: 'green', label: 'D', radius: 6, labelDx: 0, labelDy: 14, anchor: 'middle' }
         ],
         arrows: [
           // Movement-along-PPF₂ arrow from C to D. Bows slightly above PPF₂

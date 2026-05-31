@@ -125,25 +125,23 @@
   var QS_FLOOR   = 430;   // Qs at floor:   S(430)=240 ✓
 
   // ── Tax / subsidy wedge points ────────────────────────────────────────────
-  // Canonical indirect-tax view shifts S UP in econ by 60 screen-y units
-  // (dy = −60). New equilibrium:
-  //   D(x) = S_taxed(x)   →  0.8x − 24 = −0.8x + 524  →  x = 342.5
-  //   y    = 0.8(342.5) − 24                          →  y = 250
-  // Pc = post-tax consumer price = y at new equilibrium = 250 (above P*).
-  // Pp = price producers receive = post-tax price MINUS tax per unit = 310
-  //      (below P* by the same amount that Pc is above it).
-  // Qt = post-tax quantity (smaller than Q*, dead-weight loss emerges).
-  var TAX_DY     = -60;            // S shift in screen y (negative = up in econ)
-  var TAX_QT     = 342.5;
-  var TAX_PC     = 250;            // consumer price after tax (above P*)
-  var TAX_PP     = TAX_PC - TAX_DY; // producer keeps (Pc) - (tax) = 310 in screen y
-  // Subsidy view: S shifts DOWN in econ (dy = +60 screen y).
-  // New eq: 0.8x − 24 = −0.8x + 644 → x = 417.5, y = 310. Consumer pays Pc=310;
-  // producer receives Pc + subsidy = 250 (smaller y, i.e. higher in econ).
-  var SUB_DY     = 60;
-  var SUB_QSUB   = 417.5;
-  var SUB_PC     = 310;            // consumer price after subsidy (below P*)
-  var SUB_PP     = SUB_PC - SUB_DY; // producer receives 250
+  // Indirect-tax view shifts S UP in econ by a 100 screen-y wedge (dy = −100),
+  // sized for legibility (Pc/Pp well separated, a readable DWL triangle).
+  // New equilibrium (D ∩ S_taxed):
+  //   0.8x − 24 = −0.8x + 484  →  x = 317.5  →  y = 0.8(317.5) − 24 = 230
+  // Pc = post-tax consumer price = 230 (above P*); Pp = Pc − dy = 330 (below P*
+  //      by the same wedge). Qt = 317.5 (left of Q*; dead-weight loss emerges).
+  var TAX_DY     = -100;           // S shift in screen y (negative = up in econ)
+  var TAX_QT     = 317.5;
+  var TAX_PC     = 230;            // consumer price after tax (above P*)
+  var TAX_PP     = TAX_PC - TAX_DY; // producer keeps (Pc) − (tax) = 330 in screen y
+  // Subsidy view: S shifts DOWN in econ (dy = +100 screen y).
+  // New eq: 0.8x − 24 = −0.8x + 684 → x = 442.5, y = 330. Consumer pays Pc=330;
+  // producer receives Pc + subsidy = 230 (smaller y, i.e. higher in econ).
+  var SUB_DY     = 100;
+  var SUB_QSUB   = 442.5;
+  var SUB_PC     = 330;            // consumer price after subsidy (below P*)
+  var SUB_PP     = SUB_PC - SUB_DY; // producer receives 230
 
   API.register('supplyDemand', {
     viewBox: { w: 780, h: 580 },
@@ -195,7 +193,30 @@
         kind: 'horizontal', y: FLOOR_Y,
         optional: true,
         tone: 'purple', display: 'Pmin'
-      }
+      },
+
+      // ── Tax / subsidy welfare apparatus (all opt-in) ───────────────────────
+      // A tax view shows D + S (unshifted) + S_taxed, NOT a shift on S. Keeping
+      // S unshifted lets the DWL area sit between D and the ORIGINAL S over
+      // [Qt, Q*]; the new equilibrium lands on S_taxed at (342.5, 250). The two
+      // price lines bound the tax-revenue rectangle (between Pc and Pp, 0→Qt).
+      // S shifted UP in econ by the tax: c = S_C − 60 = 524.
+      S_taxed: {
+        kind: 'linear', slope: S_SLOPE, c: S_C + TAX_DY,
+        optional: true, tone: 'rose', display: 'S+tax'
+      },
+      // S shifted DOWN in econ by the subsidy: c = S_C + 60 = 644.
+      S_sub: {
+        kind: 'linear', slope: S_SLOPE, c: S_C + SUB_DY,
+        optional: true, tone: 'green', display: 'S−subsidy'
+      },
+      // Horizontal price levels that bound the revenue / cost rectangles. They
+      // carry no display label (the Pc_tax / Pp_tax points label these levels),
+      // so they render as quiet reference lines when an area references them.
+      PcTaxLine: { kind: 'horizontal', y: TAX_PC, optional: true, tone: 'rose',  display: '' },
+      PpTaxLine: { kind: 'horizontal', y: TAX_PP, optional: true, tone: 'amber', display: '' },
+      PcSubLine: { kind: 'horizontal', y: SUB_PC, optional: true, tone: 'green', display: '' },
+      PpSubLine: { kind: 'horizontal', y: SUB_PP, optional: true, tone: 'amber', display: '' }
     },
 
     // ── Named points ──────────────────────────────────────────────────────

@@ -1271,10 +1271,32 @@
           shifts: {},
           show: ['D', 'S', 'PriceLine'],
           areas: [
-            { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue' },
-            { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green' }
+            { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue',  label: 'CS' },
+            { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green', label: 'PS' }
           ],
           analysis: 'Consumer surplus (blue triangle) is the area between the Demand curve and P*. Producer surplus (green triangle) is the area between P* and the Supply curve. Together they measure total welfare at the competitive equilibrium.'
+        },
+        {
+          label: 'Tax welfare',
+          shifts: {},
+          show: ['D', 'S', 'S_taxed', 'PcTaxLine', 'PpTaxLine'],
+          points: ['Pc_tax', 'Pp_tax', 'Qt_tax', 'E'],
+          areas: [
+            { between: ['PcTaxLine', 'PpTaxLine'], x: [80, 317.5], tone: 'green', label: 'Tax revenue' },
+            { between: ['D', 'S'], x: [317.5, 380], tone: 'rose', hatch: true, label: 'DWL' }
+          ],
+          analysis: 'An indirect tax raises the post-tax supply curve to S+tax. Buyers pay Pc, sellers keep Pp, output falls to Qt. The green rectangle (Pc−Pp)×Qt is tax revenue — a transfer; the hatched red triangle is the deadweight loss — welfare destroyed. The two opt-in price lines (PcTaxLine/PpTaxLine) carry no label so they read as quiet references.'
+        },
+        {
+          label: 'Subsidy welfare',
+          shifts: {},
+          show: ['D', 'S', 'S_sub', 'PcSubLine', 'PpSubLine'],
+          points: ['Pc_sub', 'Pp_sub', 'Qsub', 'E'],
+          areas: [
+            { between: ['PpSubLine', 'PcSubLine'], x: [80, 442.5], tone: 'amber', label: 'Subsidy cost' },
+            { between: ['S', 'D'], x: [380, 442.5], tone: 'rose', hatch: true, label: 'DWL' }
+          ],
+          analysis: 'A per-unit subsidy lowers the post-subsidy supply curve to S−subsidy. Buyers pay Pc, sellers receive Pp, output rises to Qsub. The amber rectangle (Pp−Pc)×Qsub is the government cost; the hatched red triangle is the deadweight loss from overproduction (units where marginal cost exceeds marginal benefit).'
         }
       ]),
 

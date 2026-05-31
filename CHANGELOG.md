@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.0 — 2026-05-31
+
+### Interactive-diagram migration apparatus + first interactive card
+
+Engine capabilities that let the rich `ad-interactive` tax/subsidy/welfare cards
+migrate to `econDiagram` faithfully, plus the first such migration.
+
+- **`supplyDemand` tax/subsidy welfare apparatus.** New opt-in curves
+  `S_taxed` / `S_sub` (the post-tax / post-subsidy supply) and the price-level
+  lines `PcTaxLine` / `PpTaxLine` / `PcSubLine` / `PpSubLine`. Together with the
+  existing tax/subsidy points, a view can now show the **tax-revenue rectangle**,
+  **subsidy-cost rectangle** and **DWL triangle** by construction. Wedge widened
+  to 100 screen-units for teaching legibility.
+- **Views support `head` + `body` + `analysis`.** The analysis panel renders the
+  legacy three-part shape (bold head, lead sentence, analysis paragraph), so an
+  interactive diagram's per-view narration migrates without losing structure.
+- **Empty `display: ''` suppresses a curve's label** — quiet reference lines
+  (labelled instead by a named point).
+- **First interactive card migrated.** consumer-and-producer-surplus "How Taxes
+  Affect Surplus" and "How Subsidies Affect Surplus" are now `econDiagram`
+  blocks (4 views each: free market → wedge → revenue/cost → DWL), replacing the
+  `taxDiagramInteractive` / `subsidyDiagramInteractive` SVGs. Surrounding
+  `tip`/`causes`/`examEdge` became `calloutStrip`/`grid`/`examEdge` blocks. Each
+  view screenshot-verified.
+- Gallery (`dev/renderer-lab.html`) gains Tax-welfare and Subsidy-welfare sample
+  views; the Welfare view's CS/PS areas are now labelled. New tracker:
+  `docs/STATIC_CHARTS.md`. `CACHE_NAME` → `econos-v146`.
+
 ## 0.36.1 — 2026-05-31
 
 ### Chart-migration sweep — four more clean static-chart swaps

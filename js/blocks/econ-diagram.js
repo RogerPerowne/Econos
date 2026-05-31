@@ -858,7 +858,11 @@
         seen[stateKey(baseline, normShift((views[v].shifts || {})[id]))] = true;
       }
       var subNum = Object.keys(seen).filter(function (k) { return k !== thisKey; }).length;
-      var label = (baseline.display || id).replace(/[₀-₉]/, SUBS[subNum] || '₀');
+      // An explicitly-empty display ('') suppresses the curve label entirely —
+      // for quiet reference lines (e.g. tax/subsidy price levels) that are
+      // labelled by a named point instead. Omitting display falls back to id.
+      var raw = baseline.display === '' ? null : (baseline.display || id);
+      var label = raw ? raw.replace(/[₀-₉]/, SUBS[subNum] || '₀') : null;
       bits.push(renderCurveAny(baseline, thisShift, { plot: p, faded: false, label: label }));
     });
 
@@ -1007,15 +1011,19 @@
       );
     }).join('');
 
-    var hasAnalysis = views.some(function (v) { return v.analysis; });
+    // A panel may carry a bold `head`, a `body` sentence, and an `analysis`
+    // paragraph — the three-part shape inherited from the legacy interactive
+    // panel. Any subset is fine; all are plain text (escaped). A view with none
+    // renders an empty (hidden) panel to keep the radio indices aligned.
+    function hasPanelText(v) { return v.head || v.body || v.analysis; }
+    var hasAnalysis = views.some(hasPanelText);
     var panels = hasAnalysis ? views.map(function (v, i) {
-      if (!v.analysis) return '<div class="ed-panel ed-panel-' + i + '" hidden></div>';
-      return (
-        '<div class="ed-panel ed-panel-' + i + '">' +
-          '<div class="ed-panel__label">Analysis</div>' +
-          '<div class="ed-panel__body">' + U.escapeHtml(v.analysis) + '</div>' +
-        '</div>'
-      );
+      if (!hasPanelText(v)) return '<div class="ed-panel ed-panel-' + i + '" hidden></div>';
+      var inner = '<div class="ed-panel__label">Analysis</div>';
+      if (v.head) inner += '<div class="ed-panel__head">' + U.escapeHtml(v.head) + '</div>';
+      if (v.body) inner += '<div class="ed-panel__lead">' + U.escapeHtml(v.body) + '</div>';
+      if (v.analysis) inner += '<div class="ed-panel__body">' + U.escapeHtml(v.analysis) + '</div>';
+      return '<div class="ed-panel ed-panel-' + i + '">' + inner + '</div>';
     }).join('') : '';
 
     return (

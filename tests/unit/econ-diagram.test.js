@@ -233,6 +233,23 @@ describe('per-view curve visibility (show / hide)', () => {
     expect(html).not.toContain('Pmin');
   });
 
+  it('an area with a label renders that label text once inside the fill', () => {
+    // The area `label` is drawn at the polygon centroid so CS/PS/DWL fills are
+    // legible without relying on the analysis text. One label → one occurrence.
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'supplyDemand',
+      views: [{
+        label: 'Welfare', shifts: {}, show: ['D', 'S', 'PriceLine'],
+        areas: [
+          { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue',  label: 'CS' },
+          { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green', label: 'PS' }
+        ]
+      }]
+    });
+    expect(html.match(/>CS</g) || []).toHaveLength(1);
+    expect(html.match(/>PS</g) || []).toHaveLength(1);
+  });
+
   it('omitting show renders all NON-optional baseline curves (optional ones stay hidden until opted in)', () => {
     const html = window.ECONOS_BLOCKS.econDiagram({
       chart: 'supplyDemand',

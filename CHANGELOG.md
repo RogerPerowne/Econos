@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.38.2 — 2026-05-31
+
+### econDiagram: movement arrows arc off the curve
+
+Movement arrows (A→B) now draw as a gentle perpendicular **arc** that bows into
+the open region instead of a straight chord hugging the curve — so a
+reallocation along a bowed PPF (or any movement-along) reads clearly separate
+from the frontier it traces. Authors can tune or disable it with
+`arrows:[['A','B',{ bow: <px> }]]` (`bow:0` → straight line). `CACHE_NAME` →
+`econos-v148`.
+
 ## 0.38.1 — 2026-05-31
 
 ### Migrate movement-along-a-curve cards (using inline points)

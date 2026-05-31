@@ -81,74 +81,61 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 2 – The SRAS curve ----- */
     {
       id: 'sras-curve',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'The SRAS curve',
       lede: 'Short-run aggregate supply (SRAS) slopes upward because many costs are sticky in the short run. When the general price level rises faster than firms\' costs, profit margins improve and firms increase output.',
-
-      tip: { icon: '✅', tone: 'green', text: 'Higher prices can raise output in the short run because some costs adjust slowly.' },
-
-      flowTitle: 'WHY SRAS SLOPES UPWARD',
-      flowEmoji: '📈',
-      flow: [
-        { tone: 'blue',   icon: '£',  title: 'The general price level rises.' },
-        { tone: 'amber',  icon: '🔒', title: 'Wages and some costs are sticky in the short run.' },
-        { tone: 'green',  icon: '📊', title: 'Profit margins improve and firms produce more.' }
-      ],
-
-      interactiveDiagram: {
-        svgKey: 'srasCurveStatic',
-        label: 'THE SRAS DIAGRAM',
-        emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
-        views: [
-          {
-            label: 'Point A',
-            show: ['idl-1'],
-            tone: 'blue',
-            head: 'Initial equilibrium at A.',
-            body: ['At price level P₁, firms supply Y₁.', 'Wages and production costs are sticky – they have not yet risen.'],
-            analysis: 'Point A is the starting position. Costs are fixed in the short run, so price and output sit at the lower-left of the curve.'
-          },
-          {
-            label: 'Movement to B',
-            show: ['idl-1', 'idl-2'],
-            tone: 'blue',
-            head: 'Price rises – output rises too.',
-            body: ['The price level rises to P₂. Revenue increases but costs remain fixed short-term.', 'Higher profit margins encourage firms to produce more – moving up to B at Y₂.'],
-            analysis: 'This is a movement along SRAS, not a shift. The slope reflects sticky costs making short-run supply responsive to price changes.'
-          }
-        ]
-      },
-
-      causesLabel: 'WHAT SHIFTS SRAS?',
-      causesEmoji: '⚙️',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'purple', icon: '👥', head: 'Wages',                    shiftArrows: [{ dir: 'left', text: 'Rise in wages shifts SRAS left' }, { dir: 'right', text: 'Fall in wages shifts SRAS right' }] },
-        { tone: 'amber',  icon: '⚡', head: 'Energy prices',            shiftArrows: [{ dir: 'left', text: 'Rise in energy prices shifts SRAS left' }, { dir: 'right', text: 'Fall in energy prices shifts right' }] },
-        { tone: 'purple', icon: '📦', head: 'Raw material costs',       shiftArrows: [{ dir: 'left', text: 'Rise in raw material costs shifts SRAS left' }, { dir: 'right', text: 'Fall shifts SRAS right' }] },
-        { tone: 'green',  icon: '📈', head: 'Productivity',             shiftArrows: [{ dir: 'right', text: 'Rise in productivity shifts SRAS right' }, { dir: 'left', text: 'Fall in productivity shifts left' }] },
-        { tone: 'blue',   icon: '🌍', head: 'Import costs via exchange rate', shiftArrows: [{ dir: 'left', text: 'Currency depreciation raises import costs – shifts SRAS left' }, { dir: 'right', text: 'Appreciation shifts SRAS right' }] },
-        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies', shiftArrows: [{ dir: 'left', text: 'Rise in indirect taxes shifts SRAS left' }, { dir: 'right', text: 'Subsidies shift SRAS right' }] }
-      ],
-
-      pairLabel: 'LEFT OR RIGHT?',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'rose', icon: '←', iconStyle: 'circle',
-        label: 'Left shift',
-        points: ['Costs rise at every price level.', 'Output falls.', 'Inflation rises.']
-      },
-      right: {
-        tone: 'green', icon: '→', iconStyle: 'circle',
-        label: 'Right shift',
-        points: ['Costs fall or productivity rises.', 'Output rises.', 'Inflation eases.']
-      },
-
-      conclusion: { title: 'Big idea', text: 'SRAS responds to cost conditions. When costs rise, firms supply less at each price level.' },
-      examEdge: 'In macro diagrams, a rise in energy prices shifts SRAS left – it is not a movement along the curve.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: 'Higher prices can raise output in the short run because some costs adjust slowly.' },
+        { type: 'sectionHeader', icon: '📈', label: 'WHY SRAS SLOPES UPWARD' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: '£',  head: 'Prices rise',   body: 'The general price level rises.' },
+          { type: 'tile', tone: 'amber', icon: '🔒', head: 'Costs sticky',  body: 'Wages and some costs are sticky in the short run.' },
+          { type: 'tile', tone: 'green', icon: '📊', head: 'Output rises',  body: 'Profit margins improve and firms produce more.' }
+        ]},
+        { type: 'sectionHeader', icon: '📊', label: 'THE SRAS DIAGRAM' },
+        {
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'Point A',
+              show: ['SRAS'],
+              points: [{ label: 'A', tone: 'blue', onCurve: 'SRAS', x: 200 }],
+              head: 'Initial equilibrium at A.',
+              body: 'At price level P₁, firms supply Y₁. Wages and production costs are sticky – they have not yet risen.',
+              analysis: 'Point A is the starting position. Costs are fixed in the short run, so price and output sit at the lower-left of the curve.'
+            },
+            {
+              label: 'Movement to B',
+              show: ['SRAS'],
+              points: [
+                { label: 'A', tone: 'blue',  onCurve: 'SRAS', x: 200 },
+                { label: 'B', tone: 'green', onCurve: 'SRAS', x: 500 }
+              ],
+              arrows: [['A', 'B', { tone: 'slate' }]],
+              head: 'Price rises – output rises too.',
+              body: 'The price level rises to P₂. Revenue increases but costs remain fixed short-term. Higher profit margins encourage firms to produce more – moving up to B at Y₂.',
+              analysis: 'This is a movement along SRAS, not a shift. The slope reflects sticky costs making short-run supply responsive to price changes.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '⚙️', label: 'WHAT SHIFTS SRAS?' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'purple', icon: '👥', head: 'Wages',                        body: '← Rise shifts SRAS left · → Fall shifts SRAS right' },
+          { type: 'tile', tone: 'amber',  icon: '⚡', head: 'Energy prices',                body: '← Rise shifts SRAS left · → Fall shifts right' },
+          { type: 'tile', tone: 'purple', icon: '📦', head: 'Raw material costs',           body: '← Rise shifts SRAS left · → Fall shifts right' },
+          { type: 'tile', tone: 'green',  icon: '📈', head: 'Productivity',                 body: '→ Rise shifts right · ← Fall shifts left' },
+          { type: 'tile', tone: 'blue',   icon: '🌍', head: 'Import costs (exchange rate)', body: '← Depreciation shifts left · → Appreciation shifts right' },
+          { type: 'tile', tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies',  body: '← Tax rise shifts left · → Subsidies shift right' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'LEFT OR RIGHT?' },
+        { type: 'pair',
+          left:  { tone: 'rose',  icon: '←', head: 'Left shift',  body: 'Costs rise at every price level. Output falls. Inflation rises.' },
+          right: { tone: 'green', icon: '→', head: 'Right shift', body: 'Costs fall or productivity rises. Output rises. Inflation eases.' }
+        },
+        { type: 'bigIdea',  text: 'SRAS responds to cost conditions. When costs rise, firms supply less at each price level.' },
+        { type: 'examEdge', text: 'In macro diagrams, a rise in energy prices shifts SRAS left – it is not a movement along the curve.' }
+      ]
     },
 
     /* ----- CARD 3 – The LRAS curve ----- */

@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.38.1 — 2026-05-31
+
+### Migrate movement-along-a-curve cards (using inline points)
+
+The first cards to use inline points + the grid-of-two-diagrams pattern:
+
+- **aggregate-demand** — "Why AD slopes downward" (movement E₁→E₂ down AD) and
+  "Movement along vs shifts of AD" (a 2-col grid: a movement panel with
+  points+arrow beside a shift panel with `shifts:{AD}`).
+- **aggregate-supply** — "The SRAS curve" (movement A→B up SRAS).
+- **demand** — "Movement along vs shift of demand" (3 views).
+- **production-possibility-frontiers** — production/consumption points placed on
+  the bowed frontier with reallocation arrows.
+
+All preserve their teaching content; screenshot-verified; validator green
+(42 blocks / 20 files). Data-only — no cache bump.
+
 ## 0.38.0 — 2026-05-31
 
 ### econDiagram: inline points + movement-along-a-curve

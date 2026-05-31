@@ -25,34 +25,56 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'ppf_1',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 6',
       title: 'The PPF: one diagram, five concepts',
       lede: 'The Production Possibility Frontier is the most versatile diagram in Theme 1 – explore construction, opportunity cost, shifts, and efficiency using the interactive diagram below.',
-      diagramKey: 'ppfInteractive',
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '📈', label: 'The most versatile diagram in Theme 1' },
         {
-          key: 'base',
-          label: 'Construction',
-          text: 'The PPF shows the <strong>maximum output combinations</strong> of two goods an economy can produce given current resources and technology. A point on the curve is <strong>productively efficient</strong>; inside is <strong>inefficient</strong> (resources wasted); outside is <strong>unattainable</strong>. Use this card to see the full picture – <strong>Card 2</strong> then builds the opportunity cost mechanics in detail.'
+          type: 'econDiagram',
+          chart: 'ppf',
+          views: [
+            {
+              label: 'Construction',
+              points: [
+                { label: 'efficient', tone: 'green', onCurve: 'PPF1', x: 380 },
+                'I',
+                { label: 'unattainable', tone: 'rose', at: [430, 70] }
+              ],
+              head: 'Three zones in one curve',
+              body: 'The PPF shows the maximum output combinations of two goods an economy can produce given current resources and technology.',
+              analysis: 'A point on the curve is productively efficient; a point inside (I) is inefficient, with resources wasted; a point outside is unattainable with current capacity. Use this card to see the full picture – Card 2 then builds the opportunity cost mechanics in detail.'
+            },
+            {
+              label: 'Opportunity cost',
+              show: ['PPF1'],
+              points: [
+                { label: 'A', tone: 'blue', onCurve: 'PPF1', x: 220 },
+                { label: 'B', tone: 'amber', onCurve: 'PPF1', x: 500 }
+              ],
+              arrows: [['A', 'B', { tone: 'slate' }]],
+              head: 'Moving along the frontier has a cost',
+              body: 'Moving along the PPF means gaining one good but sacrificing the other – that trade-off is the opportunity cost.',
+              analysis: 'The bowed-out shape means this cost rises the further you specialise in one good. Card 2 covers the calculation and the reason the curve bends.'
+            },
+            {
+              label: 'Shifts',
+              shifts: { PPF1: { dy: -60 } },
+              head: 'The frontier itself can move',
+              body: 'The PPF shifts outward when productive capacity increases and inward after negative supply shocks.',
+              analysis: 'Movement along PPF₀ is just reallocation of existing resources – the frontier itself does not move. Card 3 maps out all four movement types.'
+            },
+            {
+              label: 'Efficiency',
+              points: ['A', 'B', 'I'],
+              head: 'Productive vs allocative efficiency',
+              body: 'Productive efficiency means being on the PPF – no wasted resources. Allocative efficiency means being at the right point on it – producing the combination that best matches consumer preferences.',
+              analysis: 'These are different tests. Points A and B are both productively efficient; point I inside the frontier is not. Card 5 builds the productive-versus-allocative distinction in full.'
+            }
+          ]
         },
-        {
-          key: 'extension',
-          label: 'Opportunity cost',
-          text: 'Moving along the PPF means gaining one good but sacrificing the other – that trade-off is the <strong>opportunity cost</strong>. The bowed-out shape means this cost rises the further you specialise in one good. <strong>Card 2</strong> covers the calculation and the reason the curve bends.'
-        },
-        {
-          key: 'shift',
-          label: 'Shifts',
-          text: 'The PPF shifts <strong>outward</strong> when productive capacity increases and <strong>inward</strong> after negative supply shocks. Movement <em>along</em> PPF₁ is just reallocation of existing resources – the frontier itself does not move. <strong>Card 3</strong> maps out all four movement types.'
-        },
-        {
-          key: 'types-of-efficiency',
-          label: 'Efficiency',
-          text: '<strong>Productive efficiency</strong> means being on the PPF – no wasted resources. <strong>Allocative efficiency</strong> means being at the <em>right</em> point on it – producing the combination that best matches consumer preferences. These are different tests. <strong>Card 5</strong> builds this distinction in full.'
-        }
-      ],
-      examEdge: 'In exam diagrams always label: both axes with good names, the PPF curve, a point inside labelled "inefficient", a point on the curve labelled "efficient/on the PPF", and a point outside labelled "unattainable". Missing axis labels or unlabelled points are the most common PPF mark losses.'
+        { type: 'examEdge', title: 'Exam edge', text: 'In exam diagrams always label: both axes with good names, the PPF curve, a point inside labelled "inefficient", a point on the curve labelled "efficient/on the PPF", and a point outside labelled "unattainable". Missing axis labels or unlabelled points are the most common PPF mark losses.' }
+      ]
     },
 
     {
@@ -101,18 +123,57 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'ppf_3',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 6',
-      diagramKey: 'ppfMovesInteractive',
       title: 'Four Types of PPF Movement',
       lede: 'Not all output changes are equal – explore the four distinct ways an economy can change its production position and what each one means for capacity.',
-      steps: [
-        { key: 'along',    label: 'Movement along', text: 'Moving from D to E along PPF₁ means choosing to produce <strong>more capital goods</strong> but <strong>fewer consumer goods</strong>. The PPF itself does not move – existing resources are just reallocated. Every step along the curve has an <strong>opportunity cost</strong> equal to the slope of the PPF at that point.' },
-        { key: 'recovery', label: 'Short-run recovery', text: 'Point X is <strong>inside</strong> the PPF – resources are idle (unemployment, spare capacity). As aggregate demand recovers, firms rehire workers and reactivate capacity. Output rises from X toward PPF₁. The frontier does NOT shift – this is <strong>demand-side / short-run growth</strong>.' },
-        { key: 'outward',  label: 'Outward shift',   text: 'The PPF shifts outward from PPF₁ to PPF₂ when <strong>productive capacity permanently increases</strong>: better technology, more capital investment, population growth, or improved skills. This is <strong>supply-side / long-run growth</strong> – the economy\'s ceiling rises for good.' },
-        { key: 'inward',   label: 'Inward shift',    text: 'Negative supply shocks push the PPF inward to PPF₃: war destroys capital, natural disasters eliminate resources, "brain drain" depletes skilled labour, or sustained disinvestment causes capital depreciation. <strong>Maximum productive capacity falls permanently.</strong>' }
-      ],
-      examEdge: 'Classic exam trap: "Country A recovers from recession" → a point inside moves ONTO PPF₁ – do NOT draw an outward shift. "Country A invests in new technology" → PPF₁ shifts out to PPF₂. Naming the type of growth (demand-side vs supply-side) earns a mark in its own right – always state it explicitly.'
+      blocks: [
+        { type: 'sectionHeader', icon: '🔀', label: 'Four distinct ways production can change' },
+        {
+          type: 'econDiagram',
+          chart: 'ppf',
+          views: [
+            {
+              label: 'Movement along',
+              show: ['PPF1'],
+              points: [
+                { label: 'D', tone: 'amber', onCurve: 'PPF1', x: 500 },
+                { label: 'E', tone: 'blue', onCurve: 'PPF1', x: 220 }
+              ],
+              arrows: [['D', 'E', { tone: 'slate' }]],
+              head: 'Reallocation along the existing frontier',
+              body: 'Moving from D to E along PPF₀ means choosing to produce more capital goods but fewer consumer goods.',
+              analysis: 'The PPF itself does not move – existing resources are just reallocated. Every step along the curve has an opportunity cost equal to the slope of the PPF at that point.'
+            },
+            {
+              label: 'Short-run recovery',
+              points: [
+                { label: 'X', tone: 'rose', at: [310, 340] },
+                { label: 'recovery', tone: 'green', onCurve: 'PPF1', x: 360 }
+              ],
+              arrows: [['X', 'recovery', { tone: 'green' }]],
+              head: 'Closing the gap to the frontier',
+              body: 'Point X is inside the PPF – resources are idle (unemployment, spare capacity). As aggregate demand recovers, firms rehire workers and reactivate capacity.',
+              analysis: 'Output rises from X toward PPF₀. The frontier does NOT shift – this is demand-side / short-run growth.'
+            },
+            {
+              label: 'Outward shift',
+              shifts: { PPF1: { dy: -60 } },
+              head: 'Productive capacity rises',
+              body: 'The PPF shifts outward from PPF₀ to PPF₁ when productive capacity permanently increases: better technology, more capital investment, population growth, or improved skills.',
+              analysis: 'This is supply-side / long-run growth – the economy\'s ceiling rises for good.'
+            },
+            {
+              label: 'Inward shift',
+              shifts: { PPF1: { dy: 60 } },
+              shiftArrows: false,
+              head: 'Productive capacity falls',
+              body: 'Negative supply shocks push the PPF inward: war destroys capital, natural disasters eliminate resources, "brain drain" depletes skilled labour, or sustained disinvestment causes capital depreciation.',
+              analysis: 'Maximum productive capacity falls permanently – the economy\'s ceiling drops.'
+            }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'Classic exam trap: "Country A recovers from recession" → a point inside moves ONTO PPF₀ – do NOT draw an outward shift. "Country A invests in new technology" → the frontier shifts out. Naming the type of growth (demand-side vs supply-side) earns a mark in its own right – always state it explicitly.' }
+      ]
     },
 
     {

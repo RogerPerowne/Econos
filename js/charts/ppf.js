@@ -36,6 +36,9 @@
        spans from the anchor on `from` to the intersection on `to`, so
        outward-shift arrows truly sit BETWEEN PPF₁ and PPF₂, and
        inward-shift arrows truly sit BETWEEN PPF₁ and PPF₃.
+     - BACKGROUND: chart canvas is white by default. Specs override
+       with `background: '<color>'` only when the chart deliberately
+       needs a tinted backdrop (rare). Default is '#FFFFFF'.
    ============================================================ */
 (function () {
   'use strict';
@@ -365,11 +368,44 @@
     var t = tone(pt.tone);
     var cx = scale.sx(pt.x);
     var cy = scale.sy(pt.y);
-    var lblX = cx + 10;
+    var r = pt.radius || 7;
+    var lblX = cx + r + 3;
     var lblY = cy;
+    var symbolHtml = pt.symbol ? '<text x="' + cx + '" y="' + (cy + 1) + '" font-size="' + Math.round(r * 1.4) + '" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="middle">' + pt.symbol + '</text>' : '';
     var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
     var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
-    return '<g class="chart-point"><circle cx="' + cx + '" cy="' + cy + '" r="7" fill="' + t.stroke + '"/>' + labelHtml + descHtml + '</g>';
+    return '<g class="chart-point"><circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="' + t.stroke + '"/>' + symbolHtml + labelHtml + descHtml + '</g>';
+  }
+
+  /* Boxed annotation label — rounded rect with one or more lines of
+     centred text inside. Position is the TOP-LEFT corner in chart space;
+     dimensions are also chart-space (engine scales to pixels). Optionally
+     draws a dashed connector line from the box's bottom-left to a target
+     point in chart space. */
+  function renderBoxedLabel(b, scale, area) {
+    var t = tone(b.tone || 'amber');
+    var x = scale.sx(b.x);
+    var yTop = scale.sy(b.y);
+    var w = (b.w || 0.2) * area.width;
+    var h = (b.h || 0.06) * area.height;
+    var fillTone = t.stroke + '14';     // 8% alpha tint of the tone
+    var strokeTone = t.stroke + '50';   // 31% alpha
+    var lines = b.lines || [];
+    var lineH = h / Math.max(1, lines.length);
+    var textParts = lines.map(function (line, i) {
+      var ly = yTop + lineH * (i + 0.5) + 4;
+      return '<text x="' + (x + w / 2) + '" y="' + ly + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + line + '</text>';
+    }).join('');
+    var connector = '';
+    if (b.connectorTo) {
+      var cx2 = scale.sx(b.connectorTo.x);
+      var cy2 = scale.sy(b.connectorTo.y);
+      // From bottom-centre of the box
+      connector = '<line x1="' + (x + w / 2) + '" y1="' + (yTop + h) + '" x2="' + cx2 + '" y2="' + cy2 + '" stroke="' + t.stroke + '" stroke-width="1.2" stroke-dasharray="4 3"/>';
+    }
+    return connector +
+           '<rect x="' + x + '" y="' + yTop + '" width="' + w + '" height="' + h + '" rx="5" fill="' + fillTone + '" stroke="' + strokeTone + '"/>' +
+           textParts;
   }
 
   function renderZone(zone, scale) {
@@ -538,6 +574,7 @@
     (view.curves || []).forEach(function (c) { parts.push(renderCurve(c, scale)); });
     (view.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, curveRegistry)); });
     (view.ocTriangles || []).forEach(function (tri) { parts.push(renderOcTriangle(tri, scale, curveRegistry)); });
+    (view.boxedLabels || []).forEach(function (b) { parts.push(renderBoxedLabel(b, scale, area)); });
     (view.points || []).forEach(function (p) {
       parts.push(renderPointGridlines(p, scale, area));
       parts.push(renderPoint(p, scale));
@@ -557,7 +594,8 @@
     var parts = [];
     parts.push('<svg class="' + className + '" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">');
     if (spec.defs) parts.push('<defs>' + spec.defs + '</defs>');
-    parts.push('<rect width="' + width + '" height="' + height + '" fill="#F8FAFC" rx="12"/>');
+    var bg = spec.background || '#FFFFFF';
+    parts.push('<rect width="' + width + '" height="' + height + '" fill="' + bg + '" rx="12"/>');
     parts.push(renderDivider(spec.divider));
     parts.push(wrapLayer('layer-axes', [renderAxes(area, spec.axes || {})]));
 

@@ -971,47 +971,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* AD slope – three effects (static, used on AD Card 2) */
-  adSlopeDiagram: `
-    <svg viewBox="0 0 480 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <defs>
-        <marker id="ads-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
-        </marker>
-      </defs>
-      <!-- axes -->
-      <line x1="70" y1="40"  x2="70"  y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="70" y1="280" x2="430" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <text x="70"  y="30"  font-size="14" font-weight="800" fill="#0F172A" text-anchor="middle">P</text>
-      <text x="438" y="286" font-size="14" font-weight="800" fill="#0F172A">Y</text>
-      <text x="62"  y="284" font-size="11" font-weight="700" fill="#0F172A" text-anchor="end">0</text>
-
-      <!-- AD curve -->
-      <line x1="120" y1="80" x2="400" y2="260" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
-      <text x="408" y="263" font-size="13" font-weight="800" fill="#2563EB">AD</text>
-
-      <!-- E1 / E2 points and dashed guides -->
-      <line x1="70"  y1="120" x2="180" y2="120" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
-      <line x1="180" y1="280" x2="180" y2="120" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
-      <line x1="70"  y1="210" x2="320" y2="210" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
-      <line x1="320" y1="280" x2="320" y2="210" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
-
-      <circle cx="180" cy="120" r="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
-      <circle cx="320" cy="210" r="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
-      <text x="188" y="115" font-size="13" font-weight="800" fill="#1E40AF">E₁</text>
-      <text x="328" y="205" font-size="13" font-weight="800" fill="#1E40AF">E₂</text>
-      <text x="62"  y="125" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="end">P₁</text>
-      <text x="62"  y="215" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="end">P₂</text>
-      <text x="180" y="298" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="middle">Y₁</text>
-      <text x="320" y="298" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="middle">Y₂</text>
-
-      <!-- price-falls arrow on y-axis -->
-      <line x1="50" y1="125" x2="50" y2="200" stroke="#E11D48" stroke-width="2" marker-end="url(#ads-arr)"/>
-      <text x="44" y="170" font-size="11" font-weight="700" fill="#9F1239" text-anchor="end" transform="rotate(-90 44 170)">P falls</text>
-
-      <!-- output-rises arrow on x-axis -->
-      <line x1="195" y1="298" x2="305" y2="298" stroke="#15803D" stroke-width="2" marker-end="url(#ads-arr)"/>
-    </svg>
-  `,
+  adSlopeDiagram: window.ECONOS_PPF.render(window.ECONOS_AD_SLOPE_SPEC),
 
   /* Consumption function – C = a + bY line graph (Consumption Card 2) */
   consumptionFunction: `

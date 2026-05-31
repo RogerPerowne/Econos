@@ -1028,6 +1028,7 @@
       parts.push(maybeWrap(p, renderedDot));
     });
     (panel.texts || []).forEach(function (t) { parts.push(maybeWrap(t, renderText(t, scale, ctx, area))); });
+    (panel.boxedLabels || []).forEach(function (b) { parts.push(maybeWrap(b, renderBoxedLabel(b, scale, area))); });
 
     (panel.legends || []).forEach(function (lg) {
       var rendered = renderLegend(lg);
@@ -1091,6 +1092,10 @@
     //   .sv-show-N .idl-1, .sv-show-N .idl-2 {…}  (view N shows layers 1..N)
     // Items reach the layers via `layer: 'idl-1'` on any primitive — the
     // existing `maybeWrap` already produces `<g class="idl-N">` wrappers.
+    // `spec.inverseLayers: ['idl-old-solid']` are layers that are SHOWN by
+    // default and HIDDEN whenever any view is active. Used by shift charts
+    // where the original solid curve must vanish once the user steps into
+    // a view that overlays a dashed version of the same curve.
     var layerCss = '';
     if (Array.isArray(spec.layers) && spec.layers.length) {
       var hides = spec.layers.map(function (l) { return '.' + l + '{display:none}'; }).join('');
@@ -1099,7 +1104,15 @@
         var sel = spec.layers.slice(0, n).map(function (l) { return '.sv-show-' + n + ' .' + l; }).join(',');
         return sel + '{display:block}';
       }).join('');
-      layerCss = '<style>' + hides + reveals + '</style>';
+      var inverseCss = '';
+      if (Array.isArray(spec.inverseLayers) && spec.inverseLayers.length) {
+        var inverseHides = spec.layers.map(function (_, i) {
+          var n = i + 1;
+          return spec.inverseLayers.map(function (l) { return '.sv-show-' + n + ' .' + l; }).join(',');
+        }).join(',');
+        inverseCss = inverseHides + '{display:none}';
+      }
+      layerCss = '<style>' + hides + reveals + inverseCss + '</style>';
     }
     parts.push('<defs>' + clips + layerCss + (spec.defs || '') + '</defs>');
 
@@ -1167,6 +1180,7 @@
         arrows: spec.arrows,
         points: spec.points,
         texts: spec.texts,
+        boxedLabels: spec.boxedLabels,
         legends: spec.legends,
         legend: spec.legend,
         views: spec.views,

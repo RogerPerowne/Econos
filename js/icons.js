@@ -12877,64 +12877,7 @@ window.ECONOS_ICONS = {
     </g>
   </svg>`,
 
-  srasShiftInteractive: `<svg viewBox="0 0 440 305" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-    <defs><style>
-      .idl-1{display:none}.idl-2{display:none}.idl-old-solid{display:block}
-      .sv-show-1 .idl-1{display:block}
-      .sv-show-2 .idl-1,.sv-show-2 .idl-2{display:block}
-      .sv-show-1 .idl-old-solid,.sv-show-2 .idl-old-solid{display:none}
-    </style></defs>
-    <!-- Base: Axes -->
-    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
-    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
-    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
-    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
-    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
-    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
-    <!-- Base: AD line (blue) -->
-    <line x1="90" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
-    <text x="385" y="258" text-anchor="end" font-size="12" fill="#3B82F6" font-weight="700">AD</text>
-    <!-- Base: SRAS1 line – solid when no shift, dashed when shifted -->
-    <g class="idl-old-solid">
-      <line x1="90" y1="255" x2="390" y2="45" stroke="#334155" stroke-width="2"/>
-      <text x="385" y="42" text-anchor="end" font-size="11" fill="#334155" font-weight="700">SRAS₁</text>
-    </g>
-    <!-- Base: E1 equilibrium -->
-    <circle cx="240" cy="150" r="5.5" fill="white" stroke="#334155" stroke-width="1.5"/>
-    <text x="248" y="146" font-size="10" fill="#334155" font-weight="700">E₁</text>
-    <!-- Base: P1 dashed -->
-    <line x1="55" y1="150" x2="240" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="40" y="155" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
-    <!-- Base: Y1 dashed -->
-    <line x1="240" y1="150" x2="240" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="240" y="287" font-size="11" fill="#94A3B8" text-anchor="middle">Y₁</text>
-    <!-- Layer 1: SRAS2 (red solid = new) + SRAS1 redrawn dashed -->
-    <g class="idl-1">
-      <!-- old SRAS1 dashed -->
-      <line x1="90" y1="255" x2="390" y2="45" stroke="#64748B" stroke-width="1.6" stroke-dasharray="6,4"/>
-      <text x="385" y="42" text-anchor="end" font-size="11" fill="#64748B" font-weight="700">SRAS₁</text>
-      <!-- new SRAS2 solid -->
-      <line x1="90" y1="210" x2="370" y2="14" stroke="#DC2626" stroke-width="2.2"/>
-      <text x="365" y="11" text-anchor="end" font-size="11" fill="#DC2626" font-weight="700">SRAS₂</text>
-      <!-- Left-shift arrow -->
-      <line x1="265" y1="125" x2="232" y2="125" stroke="#DC2626" stroke-width="1.5"/>
-      <polygon points="232,121 232,129 225,125" fill="#DC2626"/>
-    </g>
-    <!-- Layer 2: E2, P2, Y2, stagflation label -->
-    <g class="idl-2">
-      <circle cx="208" cy="128" r="5.5" fill="white" stroke="#DC2626" stroke-width="2"/>
-      <text x="194" y="124" text-anchor="end" font-size="10" fill="#DC2626" font-weight="700">E₂</text>
-      <!-- P2 dashed -->
-      <line x1="55" y1="128" x2="208" y2="128" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="40" y="124" font-size="11" fill="#DC2626" text-anchor="middle">P₂</text>
-      <!-- Y2 dashed -->
-      <line x1="208" y1="128" x2="208" y2="272" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="208" y="287" font-size="11" fill="#DC2626" text-anchor="middle">Y₂</text>
-      <!-- Stagflation label – placed top-left, away from curves -->
-      <rect x="62" y="60" width="86" height="18" rx="9" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
-      <text x="105" y="73" text-anchor="middle" font-size="10" fill="#B91C1C" font-weight="800">Stagflation</text>
-    </g>
-  </svg>`,
+  srasShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_INTERACTIVE_SPEC),
 
   lrasShiftDiagram: `<svg viewBox="0 0 440 305" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
     <defs><style>

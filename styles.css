@@ -2500,6 +2500,63 @@ img, svg { display: block; max-width: 100%; }
   .page { padding: var(--sp-3); }
 }
 
+/* ============================================================
+   MOBILE GRID REFLOW — universal stack for inline grids
+   ─────────────────────────────────────────────────────────
+   Many card sections (keyPoints, causes, pills, flow, etc.) set
+   their column count via INLINE `grid-template-columns:repeat(N,…)`
+   from app.js, which media queries normally can't override. The
+   attribute-selector below catches every such grid and collapses
+   it to a single column on mobile so 3-up tile rows don't try to
+   share a 320-px viewport. The `1fr auto 1fr` compare pattern
+   (left | divider | right) also stacks.
+
+   Card-level inline styles like `align-items:center` are unaffected;
+   only the column track is overridden. Components that ship their
+   own mobile reflow (e.g. .id-content-row) are unaffected because
+   they don't use the inline-style hook.
+   ============================================================ */
+@media (max-width: 600px) {
+  [style*="grid-template-columns:repeat"],
+  [style*="grid-template-columns: repeat"],
+  [style*="grid-template-columns:1fr auto 1fr"],
+  [style*="grid-template-columns: 1fr auto 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Tighten the inline gap a bit too — 14-18 px gaps on tile rows
+     waste horizontal space on a 320–375 px viewport. */
+  [style*="display:grid"][style*="gap:14px"],
+  [style*="display: grid"][style*="gap: 14px"],
+  [style*="display:grid"][style*="gap:18px"],
+  [style*="display: grid"][style*="gap: 18px"] {
+    gap: 10px !important;
+  }
+}
+
+/* Card padding tightens on narrow viewports so the inner content
+   has more horizontal room. 28px+32px = 60px of side gutters at
+   desktop is fine; on mobile it eats a quarter of the viewport. */
+@media (max-width: 600px) {
+  .card { padding: var(--sp-5) var(--sp-5); }
+}
+
+/* card-foot (Previous · counter · Next) sits in a row with
+   space-between. On narrow viewports the buttons get pushed
+   together and overflow; wrap with a counter that drops below. */
+@media (max-width: 480px) {
+  .card-foot {
+    flex-wrap: wrap;
+    gap: 10px;
+    row-gap: 10px;
+    justify-content: space-between;
+  }
+  .card-foot__counter {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 /* ============================================================
    ============================================================

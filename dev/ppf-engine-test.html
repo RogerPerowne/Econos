@@ -3,39 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PPF engine — v2 test (all 4 views)</title>
+  <title>PPF engine — dev test</title>
   <link rel="stylesheet" href="/styles.css">
   <style>
     body { font-family: Inter, -apple-system, sans-serif; padding: 24px; max-width: 1000px; margin: 0 auto; color: #0F172A; background: #fff; }
     h1 { margin-top: 0; font-size: 22px; }
     h2 { font-size: 15px; margin: 32px 0 8px; color: #475569; font-weight: 700; }
     .chart { max-width: 900px; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; margin-bottom: 8px; }
+    .chart.small { max-width: 500px; }
     p.note { color: #64748B; font-size: 13px; max-width: 720px; }
   </style>
 </head>
 <body>
-  <h1>PPF engine — v2 test (all 4 views)</h1>
-  <p class="note">Each block below renders the same SVG with a different <code>show-X</code> wrapper, exercising the legacy opacity rules in styles.css that toggle layers per active step. If all four look right, the engine is a faithful drop-in for <code>ppfInteractive</code>.</p>
+  <h1>PPF engine — dev test</h1>
+  <p class="note">Each block below renders the same SVG with a different state wrapper, exercising the rules and layer toggles. If all eight look right, the engine is a faithful drop-in.</p>
 
-  <h2>1. show-base — Construction</h2>
-  <div class="show-base"><div class="chart" id="chart-base"></div></div>
+  <h2>CARD 1 — ppfInteractive (4 views via .show-X opacity)</h2>
 
-  <h2>2. show-extension — Opportunity cost</h2>
-  <div class="show-extension"><div class="chart" id="chart-extension"></div></div>
+  <h2>1a. show-base — Construction</h2>
+  <div class="show-base"><div class="chart" id="c1-base"></div></div>
 
-  <h2>3. show-shift — Shifts</h2>
-  <div class="show-shift"><div class="chart" id="chart-shift"></div></div>
+  <h2>1b. show-extension — Opportunity cost</h2>
+  <div class="show-extension"><div class="chart" id="c1-extension"></div></div>
 
-  <h2>4. show-efficiency — Efficiency (matches CSS rule; live data file uses key 'types-of-efficiency' which has a pre-existing CSS mismatch)</h2>
-  <div class="show-efficiency"><div class="chart" id="chart-efficiency"></div></div>
+  <h2>1c. show-shift — Shifts</h2>
+  <div class="show-shift"><div class="chart" id="c1-shift"></div></div>
+
+  <h2>1d. show-efficiency — Efficiency</h2>
+  <div class="show-efficiency"><div class="chart" id="c1-efficiency"></div></div>
+
+  <h2>CARD 2 — ppfBowedOutInteractive (3 OC triangles via idl-N progressive reveal)</h2>
+
+  <h2>2a. PPF only (no triangles shown — first view of the card)</h2>
+  <div class="chart small" id="c2-base"></div>
+
+  <h2>2b. After clicking through all 3 views (all triangles visible)</h2>
+  <div class="chart small" id="c2-full"></div>
 
   <script src="/js/charts/ppf.js"></script>
   <script src="/js/charts/specs/ppf-card1.js"></script>
+  <script src="/js/charts/specs/ppf-card2.js"></script>
   <script>
-    var svg = window.ECONOS_PPF.render(window.ECONOS_PPF_CARD1_SPEC);
+    // Card 1: render once, reuse for all 4 .show-X wrappers
+    var c1svg = window.ECONOS_PPF.render(window.ECONOS_PPF_CARD1_SPEC);
     ['base', 'extension', 'shift', 'efficiency'].forEach(function (k) {
-      document.getElementById('chart-' + k).innerHTML = svg;
+      document.getElementById('c1-' + k).innerHTML = c1svg;
     });
+
+    // Card 2: render two variants — hidden (initial state) and visible (after reveal)
+    var c2spec = window.ECONOS_PPF_CARD2_SPEC;
+    document.getElementById('c2-base').innerHTML = window.ECONOS_PPF.render(c2spec);
+    // For the "all-shown" variant, clone spec with hidden flag flipped
+    var c2revealed = Object.assign({}, c2spec, { viewDefaultsHidden: false });
+    document.getElementById('c2-full').innerHTML = window.ECONOS_PPF.render(c2revealed);
   </script>
 </body>
 </html>

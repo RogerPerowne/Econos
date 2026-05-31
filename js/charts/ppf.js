@@ -221,6 +221,21 @@
     return [nx, ny];
   }
 
+  /* Find parameter t on cubic curve P such that B(t).x equals targetX.
+     Assumes x is monotonically increasing along the curve (true for any
+     standard PPF). Returns null if targetX is outside the curve's x range. */
+  function findTAtX(P, targetX) {
+    var x0 = P[0][0], x3 = P[3][0];
+    if (targetX < Math.min(x0, x3) || targetX > Math.max(x0, x3)) return null;
+    var lo = 0, hi = 1;
+    for (var i = 0; i < 40; i++) {
+      var mid = (lo + hi) / 2;
+      if (cubicPoint(P, mid)[0] < targetX) lo = mid;
+      else hi = mid;
+    }
+    return (lo + hi) / 2;
+  }
+
   /* Find parameter t on cubic curve P such that B(t) lies on the ray
      from `anchor` in direction `normal`. Returns the intersection point
      in chart space, or null if no intersection in t∈[0,1].
@@ -447,10 +462,74 @@
     return '<line x1="' + divider.x + '" y1="' + (divider.y1 || 16) + '" x2="' + divider.x + '" y2="' + (divider.y2 || 424) + '" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>';
   }
 
-  /* Wrap a list of SVG element strings inside a named <g class="..."> */
-  function wrapLayer(className, contentStrs) {
+  /* Wrap a list of SVG element strings inside a named <g class="...">.
+     Optionally set style="display:none" so the legacy interactiveDiagram
+     progressive-reveal JS (which toggles display per layer) can take over. */
+  function wrapLayer(className, contentStrs, hidden) {
     if (!contentStrs.length) return '';
-    return '<g class="' + className + '">' + contentStrs.join('') + '</g>';
+    var styleAttr = hidden ? ' style="display:none"' : '';
+    return '<g class="' + className + '"' + styleAttr + '>' + contentStrs.join('') + '</g>';
+  }
+
+  /* Opportunity-cost triangle: anchor point on a named curve, horizontal
+     extent Δx, engine finds the second corner by inverting the curve so
+     BOTH triangle corners sit on the curve. Renders:
+       - blue dot at start corner (size 4.5)
+       - green horizontal arrow → "gain in Good B" (Δx)
+       - red vertical arrow → "sacrifice of Good A" (Δy, derived from curve)
+       - gray dashed hypotenuse connecting start↔end (chord of the curve)
+       - tone-coloured badge above the triangle with the label text
+     This guarantees the visual matches the economics: equal Δx across
+     triangles → progressively taller Δy as the curve steepens → the
+     classic "increasing opportunity cost" picture. */
+  function renderOcTriangle(spec, scale, curveRegistry) {
+    var P = curveRegistry && curveRegistry[spec.curve];
+    if (!P) return '<!-- ocTriangle: curve "' + spec.curve + '" not found -->';
+    var start = cubicPoint(P, spec.fromT);
+    var endT = findTAtX(P, start[0] + spec.deltaX);
+    if (endT == null) return '<!-- ocTriangle: Δx too large for curve -->';
+    var end = cubicPoint(P, endT);
+
+    var anchorTone = tone(spec.tone || 'blue');
+    var gainTone = tone(spec.gainTone || 'green');
+    var sacTone = tone(spec.sacrificeTone || 'rose');
+
+    var sX = scale.sx(start[0]), sY = scale.sy(start[1]);
+    var eX = scale.sx(end[0]), eY = scale.sy(end[1]);
+    var cornerX = eX, cornerY = sY;  // bottom-right of the right triangle (same y as start)
+
+    // Horizontal arrow (Good B gain) — short buffer so the arrowhead clears the dot
+    var gainBuffer = 4;
+    var gainStartX = sX + gainBuffer;
+    var hPath = 'M ' + gainStartX + ',' + sY + ' L ' + (cornerX - 0) + ',' + cornerY;
+
+    // Vertical arrow (Good A sacrifice) — from the corner up to the end point on PPF
+    var sacPath = 'M ' + cornerX + ',' + cornerY + ' L ' + eX + ',' + (eY + 0);
+
+    // Dashed hypotenuse from start to end
+    var hyp = '<line x1="' + sX + '" y1="' + sY + '" x2="' + eX + '" y2="' + eY + '" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>';
+
+    // Badge: rectangle + centred label, positioned above the start corner
+    var badgeText = spec.label || '';
+    var badgeW = Math.max(48, badgeText.length * 7);
+    var badgeH = 18;
+    var badgeX = sX - badgeW - 6;
+    var badgeY = sY - badgeH - 6;
+    var badgeBg = anchorTone.stroke + '22';   // tinted with alpha
+    var badge = '<rect x="' + badgeX + '" y="' + badgeY + '" width="' + badgeW + '" height="' + badgeH + '" rx="4" fill="' + badgeBg + '"/>' +
+                '<text x="' + (badgeX + badgeW/2) + '" y="' + (badgeY + badgeH - 5) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + anchorTone.label + '" text-anchor="middle">' + badgeText + '</text>';
+
+    // Internal triangle arrows are short — use a tiny buffer so they
+    // stay visible. The default ARROW_BUFFER (8px) is for longer arrows
+    // between labelled points.
+    var triBuf = 2;
+    return [
+      hyp,
+      '<circle cx="' + sX + '" cy="' + sY + '" r="4.5" fill="' + anchorTone.stroke + '"/>',
+      '<path d="' + applyPathBuffer(hPath, triBuf) + '" fill="none" stroke="' + gainTone.stroke + '" stroke-width="1.5" marker-end="url(#' + (spec.gainMarker || 'ppfboi-gn') + ')"/>',
+      '<path d="' + applyPathBuffer(sacPath, triBuf) + '" fill="none" stroke="' + sacTone.stroke + '" stroke-width="1.5" marker-end="url(#' + (spec.sacrificeMarker || 'ppfboi-sac') + ')"/>',
+      badge
+    ].join('');
   }
 
   /* Render the contents of a single view's content layer */
@@ -458,6 +537,7 @@
     var parts = [];
     (view.curves || []).forEach(function (c) { parts.push(renderCurve(c, scale)); });
     (view.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, curveRegistry)); });
+    (view.ocTriangles || []).forEach(function (tri) { parts.push(renderOcTriangle(tri, scale, curveRegistry)); });
     (view.points || []).forEach(function (p) {
       parts.push(renderPointGridlines(p, scale, area));
       parts.push(renderPoint(p, scale));
@@ -510,12 +590,17 @@
       parts.push(renderPoint(p, scale));
     });
 
-    // Multi-view: each view emits a content layer + a legend layer
+    // Multi-view: each view emits a content layer + a legend layer.
+    // If the spec sets `viewDefaultsHidden`, each view's content/legend
+    // layer is emitted with style="display:none" so a layer-toggling
+    // engine (the legacy interactiveDiagram code) can reveal them.
+    var hideViews = !!spec.viewDefaultsHidden;
     (spec.views || []).forEach(function (view) {
       var contentLayer = view.contentLayer || ('layer-' + view.key);
       var legendLayer = view.legendLayer || ('layer-legend-' + view.key);
-      parts.push(wrapLayer(contentLayer, renderViewContent(view, scale, area, curveRegistry)));
-      if (view.legend) parts.push(wrapLayer(legendLayer, [renderLegend(view.legend)]));
+      var hidden = view.hidden != null ? view.hidden : hideViews;
+      parts.push(wrapLayer(contentLayer, renderViewContent(view, scale, area, curveRegistry), hidden));
+      if (view.legend) parts.push(wrapLayer(legendLayer, [renderLegend(view.legend)], hidden));
     });
 
     // Top-level legend (single-view charts)

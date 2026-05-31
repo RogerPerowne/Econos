@@ -1964,49 +1964,7 @@ window.ECONOS_ICONS = {
     <text x="420" y="177" font-size="9" fill="#DC2626" text-anchor="start" font-style="italic">of A</text>
   </svg>`,
 
-  ppfBowedOutInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
-    <defs>
-      <marker id="ppfboi-ax"  markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
-      <marker id="ppfboi-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
-      <marker id="ppfboi-gn"  markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
-    </defs>
-    <!-- BASE: axes, PPF, labels (always visible) -->
-    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfboi-ax)"/>
-    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfboi-ax)"/>
-    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Good A</text>
-    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Good B</text>
-    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
-    <text x="358" y="70" font-size="12" font-weight="700" fill="#2563EB">PPF</text>
-    <!-- idl-1: Pa – Low OC triangle -->
-    <g class="idl-1" style="display:none">
-      <circle cx="135" cy="86" r="4.5" fill="#2563EB"/>
-      <line x1="135" y1="86" x2="165" y2="86" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfboi-gn)"/>
-      <line x1="165" y1="86" x2="165" y2="75" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfboi-sac)"/>
-      <line x1="135" y1="86" x2="165" y2="75" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>
-      <rect x="90" y="62" width="62" height="16" rx="4" fill="#DBEAFE"/>
-      <text x="121" y="74" font-size="9" font-weight="600" fill="#1E40AF" text-anchor="middle">Low OC</text>
-    </g>
-    <!-- idl-2: Pb – Rising OC triangle -->
-    <g class="idl-2" style="display:none">
-      <circle cx="271" cy="153" r="4.5" fill="#2563EB"/>
-      <line x1="271" y1="153" x2="301" y2="153" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfboi-gn)"/>
-      <line x1="301" y1="153" x2="301" y2="129" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfboi-sac)"/>
-      <line x1="271" y1="153" x2="301" y2="129" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>
-      <rect x="192" y="130" width="78" height="16" rx="4" fill="#FEF3C7"/>
-      <text x="231" y="142" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">Rising OC</text>
-    </g>
-    <!-- idl-3: Pc – High OC triangle (full picture) -->
-    <g class="idl-3" style="display:none">
-      <circle cx="359" cy="232" r="4.5" fill="#2563EB"/>
-      <line x1="359" y1="232" x2="379" y2="232" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfboi-gn)"/>
-      <line x1="379" y1="232" x2="379" y2="192" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfboi-sac)"/>
-      <line x1="359" y1="232" x2="379" y2="192" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>
-      <rect x="300" y="195" width="66" height="16" rx="4" fill="#FEE2E2"/>
-      <text x="333" y="207" font-size="9" font-weight="600" fill="#991B1B" text-anchor="middle">High OC</text>
-      <text x="220" y="260" font-size="9" fill="#059669" text-anchor="middle" font-style="italic">← same gain in Good B →</text>
-    </g>
-  </svg>`,
+  ppfBowedOutInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD2_SPEC),
 
   ppfMovesInteractive: `<svg class="ppf-moves-svg" viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
     <defs>

@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v190';
+  const CACHE_NAME = 'econos-v191';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -64,6 +64,10 @@
     '/js/charts/specs/subsidy-interactive.js',
     '/js/charts/specs/tax-incidence-interactive.js',
     '/js/charts/specs/tax-types-interactive.js',
+    '/js/charts/specs/market-failure-overview.js',
+    '/js/charts/specs/private-vs-social.js',
+    '/js/charts/specs/welfare-loss-diagram.js',
+    '/js/charts/specs/price-rationing-scarcity.js',
   ];
 
   /* ────────────────────────────────────────────────────────────

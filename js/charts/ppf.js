@@ -173,7 +173,13 @@
     var dy = toward[1] - from[1];
     var len = Math.sqrt(dx * dx + dy * dy);
     if (len < 0.001) return from;
-    return [from[0] + dx / len * distance, from[1] + dy / len * distance];
+    // Cap the pull so a too-large buffer can't overshoot past the
+    // other endpoint and reverse the arrow's direction (which makes
+    // `marker-end orient="auto"` rotate the head 180°, frequently
+    // mis-read as a "90° bent" arrow). 45% leaves a small visible
+    // segment between the buffered endpoints.
+    var capped = Math.min(distance, len * 0.45);
+    return [from[0] + dx / len * capped, from[1] + dy / len * capped];
   }
 
   /* Shorten both ends of a (pixel-space) path by `buffer` pixels along

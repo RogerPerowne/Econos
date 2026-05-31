@@ -43,35 +43,48 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_2',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Movement Along vs Shift of the Supply Curve',
       lede: 'The same fundamental distinction as demand – but the supply curve slopes the other way. Explore interactively.',
-      diagramKey: 'supplyInteractive',
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '📈', label: 'Movement along vs shift' },
         {
-          key: 'base',
-          label: 'The supply curve',
-          text: 'The supply curve shows the <strong>positive relationship between price and quantity supplied</strong>. Ceteris paribus, as price rises, quantity supplied rises. It slopes upward because higher prices increase the profitability of production – existing firms expand output, new firms enter. Rising output also raises marginal costs (diminishing returns), so higher prices are needed to justify more production.'
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'The supply curve',
+              show: ['D', 'S'],
+              head: 'The supply curve',
+              body: 'The supply curve shows the positive relationship between price and quantity supplied. Ceteris paribus, as price rises, quantity supplied rises.',
+              analysis: 'It slopes upward because higher prices increase the profitability of production – existing firms expand output and new firms enter. Rising output also raises marginal costs (diminishing returns), so higher prices are needed to justify more production. Equilibrium sits where demand meets supply at Pₑ, Qₑ.'
+            },
+            {
+              label: 'Movement along',
+              show: ['D', 'S'],
+              shifts: { D: 80 },
+              head: 'Movement along the supply curve',
+              body: 'A change in the good\'s own price causes a movement along the supply curve – nothing else can. Here higher demand lifts price, so quantity supplied extends up the curve to E₁.',
+              analysis: 'A price rise causes an extension (higher P, higher Q supplied); a price fall causes a contraction (lower P, lower Q supplied). The curve itself does not move – the equilibrium simply slides along the existing S. Say "quantity supplied rises/falls," not "supply rises/falls."'
+            },
+            {
+              label: 'Supply shifts',
+              show: ['D', 'S'],
+              shifts: { S: 80 },
+              head: 'A shift of the whole supply curve',
+              body: 'A change in any non-price determinant shifts the entire supply curve. A rightward shift (increase) means more is supplied at every price; price falls and quantity rises at the new equilibrium.',
+              analysis: 'Rightward (increase): more supplied at every price – lower input costs, better technology, more producers, or a subsidy. Leftward (decrease): less supplied at every price – higher input costs, a new tax, a supply shock, or fewer producers. At every price, producers are now willing to supply a different quantity.'
+            }
+          ]
         },
-        {
-          key: 'extension',
-          label: 'Movement along',
-          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the supply curve – nothing else can. A price rise causes an <strong>extension</strong> (E₂: higher P, higher Q supplied). A price fall causes a <strong>contraction</strong> (E₃: lower P, lower Q supplied). The curve itself does not move. Say "quantity supplied rises/falls," not "supply rises/falls."'
-        },
-        {
-          key: 'shift',
-          label: 'Supply shifts',
-          text: 'A change in any <strong>non-price determinant</strong> shifts the entire supply curve. <strong>Rightward (S₂ – increase):</strong> more supplied at every price – lower input costs, better technology, more producers, or a subsidy. <strong>Leftward (S₀ – decrease):</strong> less supplied at every price – higher input costs, a new tax, a supply shock, or fewer producers. At every price, producers are now willing to supply a different quantity.'
-        }
-      ],
-      causes: [
-        { icon: '🏷️', head: 'Price change',       body: 'A change in the good\'s own price causes a movement along the existing supply curve – not a shift.', tone: 'green'  },
-        { icon: '🏭', head: 'Costs of production', body: 'Higher input costs reduce profit at each price, shifting supply left. Lower costs shift it right.',    tone: 'purple' },
-        { icon: '💻', head: 'Technology',           body: 'Better technology raises productivity and lowers unit costs, shifting the supply curve to the right.', tone: 'blue'   },
-        { icon: '🏛️', head: 'Tax or subsidy',       body: 'A new tax raises costs and shifts supply left. A subsidy reduces effective costs and shifts it right.', tone: 'amber'  }
-      ],
-      examEdge: 'A leftward shift in supply raises equilibrium price – it looks like an "upward" shift on the diagram. Always describe shifts as left or right (not up or down), then explain the cause and the effect on equilibrium price and quantity. Both cause and effect are needed for full marks.'
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '🏷️', head: 'Price change',       body: 'A change in the good\'s own price causes a movement along the existing supply curve – not a shift.' },
+          { type: 'tile', tone: 'purple', icon: '🏭', head: 'Costs of production', body: 'Higher input costs reduce profit at each price, shifting supply left. Lower costs shift it right.' },
+          { type: 'tile', tone: 'blue',   icon: '💻', head: 'Technology',          body: 'Better technology raises productivity and lowers unit costs, shifting the supply curve to the right.' },
+          { type: 'tile', tone: 'amber',  icon: '🏛️', head: 'Tax or subsidy',      body: 'A new tax raises costs and shifts supply left. A subsidy reduces effective costs and shifts it right.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'A leftward shift in supply raises equilibrium price – it looks like an "upward" shift on the diagram. Always describe shifts as left or right (not up or down), then explain the cause and the effect on equilibrium price and quantity. Both cause and effect are needed for full marks.' }
+      ]
     },
     {
       id: 'supply_3',
@@ -99,29 +112,44 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_4',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Producer Surplus',
       lede: 'The supply curve reveals more than how much firms produce – it shows how much they gain from selling at the market price. Tap each step to build the picture.',
-      diagramKey: 'supplyPsSvg',
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '📊', label: 'Building producer surplus' },
         {
-          key: 'base',
-          label: 'Supply curve',
-          text: 'Each point on the supply curve shows the minimum price a seller would accept for that unit – their marginal cost. Low-cost producers are willing to supply at low prices; higher-cost producers only enter if the market price is high enough. The market price P* is the same for every seller.'
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Supply curve',
+              show: ['D', 'S'],
+              head: 'Supply curve',
+              body: 'Each point on the supply curve shows the minimum price a seller would accept for that unit – their marginal cost.',
+              analysis: 'Low-cost producers are willing to supply at low prices; higher-cost producers only enter if the market price is high enough. The market price P* is the same for every seller, set where demand meets supply.'
+            },
+            {
+              label: 'Producer surplus',
+              show: ['D', 'S', 'PriceLine'],
+              areas: [
+                { between: ['PriceLine', 'S'], x: [80, 380], tone: 'rose', label: 'PS' }
+              ],
+              head: 'Producer surplus',
+              body: 'Producer surplus is the rose triangle – the area below the market price P* and above the supply curve.',
+              analysis: 'Every seller who would have accepted less than P* receives a "bonus". The triangle\'s area measures the total extra revenue producers receive beyond their minimum acceptable price. Formula: PS = ½ × Qₑ × (P* − min supply price).'
+            },
+            {
+              label: 'Price rises → PS grows',
+              show: ['D', 'S'],
+              shifts: { D: 80 },
+              head: 'Price rises → PS grows',
+              body: 'When higher demand lifts price to P₁, producer surplus expands: existing sellers earn more on every unit, and new sellers enter as output extends up the supply curve to Q₁.',
+              analysis: 'PS grows in two ways: ① existing sellers earn (P₁ − P*) extra on every unit already supplied; ② new sellers enter who weren\'t profitable at P*, adding a further triangle of surplus as output extends. A tax does the reverse: lowering the producer price shrinks PS, with part going to government revenue and part lost as deadweight welfare loss.'
+            }
+          ]
         },
-        {
-          key: 'ps',
-          label: 'Producer surplus',
-          text: 'Producer surplus is the rose triangle – the area below the market price P* and above the supply curve. Every seller who would have accepted less than P* receives a "bonus". The triangle\'s area measures the total extra revenue producers receive beyond their minimum acceptable price. Formula: PS = ½ × Q* × (P* − min supply price).'
-        },
-        {
-          key: 'prise',
-          label: 'Price rises → PS grows',
-          text: 'When price rises to P₂, producer surplus expands in two ways: ① Existing sellers earn (P₂ − P*) extra on every unit already supplied – the rectangle between P* and P₂ is their gain. ② New sellers enter who weren\'t profitable at P* – output extends to Q₂, adding a further triangle of surplus. A tax does the reverse: lowering the producer price shrinks PS, with part going to government revenue and part lost as deadweight welfare loss.'
-        }
-      ],
-      examEdge: 'Total welfare = CS + PS. Market efficiency is maximised at the competitive equilibrium where total surplus is maximised. Any distortion (tax, price control, monopoly) creates deadweight loss – reducing total surplus below this maximum. In the supply context: a leftward supply shift raises price and PS per unit but reduces quantity – overall PS change depends on elasticity.'
+        { type: 'examEdge', title: 'Exam edge', text: 'Total welfare = CS + PS. Market efficiency is maximised at the competitive equilibrium where total surplus is maximised. Any distortion (tax, price control, monopoly) creates deadweight loss – reducing total surplus below this maximum. In the supply context: a leftward supply shift raises price and PS per unit but reduces quantity – overall PS change depends on elasticity.' }
+      ]
     },
     {
       id: 'supply_5',

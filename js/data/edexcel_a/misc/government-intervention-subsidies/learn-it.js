@@ -49,17 +49,61 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'govt_intervention_subsidies_2',
-      template: 'mechanisms',
-      diagramKey: 'subsidyDiagram',
       title: 'The Subsidy Diagram',
-      intro: 'The subsidy diagram is the mirror image of the tax diagram – master both for maximum flexibility in exams.',
-      steps: [
-        { label: '📍 Original equilibrium', text: 'S and D intersect at (P1, Q1). CS above P1 below D; PS above S below P1.' },
-        { label: '➡️ Add the subsidy', text: 'Supply shifts RIGHT by the subsidy amount. New supply = S − subsidy. New equilibrium at (P2, Q2). P2 < P1 (consumers pay less); Q2 > Q1 (more is produced and sold).' },
-        { label: '💰 Government cost', text: 'Government cost = subsidy per unit × new quantity = (P3 − P2) × Q2, where P3 = price producers receive (P2 + subsidy).' },
-        { label: '📊 Welfare distribution', text: 'Consumer benefit = (P1 − P2) × Q2 (lower price on all units). Producer benefit = (P3 − P1) × Q2 (higher received price). Government cost > consumer + producer benefit = DWL from subsidy.' }
-      ],
-      examEdge: 'The government cost of a subsidy is the rectangle between the two supply curves over the new quantity. The DWL triangle (between old and new equilibrium) represents the welfare cost of distorting production beyond the free-market level – unless correcting an externality, in which case the subsidy reduces the externality DWL.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: 'The subsidy diagram is the mirror image of the tax diagram – master both for maximum flexibility in exams.' },
+        { type: 'sectionHeader', icon: '📊', label: 'Stepping through the subsidy diagram' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Original equilibrium',
+              show: ['D', 'S', 'PriceLine'],
+              points: ['E'],
+              areas: [
+                { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue', label: 'CS' },
+                { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green', label: 'PS' }
+              ],
+              head: 'Original equilibrium',
+              body: 'S and D intersect at (Pₑ, Qₑ). Consumer surplus sits above Pₑ and below D; producer surplus sits above S and below Pₑ.',
+              analysis: 'This is the free-market starting point. The next step adds the subsidy and watches the equilibrium move.'
+            },
+            {
+              label: 'Add the subsidy',
+              show: ['D', 'S', 'S_sub'],
+              points: ['Pc_sub', 'Pp_sub', 'Qsub', 'E'],
+              head: 'Add the subsidy',
+              body: 'Supply shifts right to S−subsidy by the subsidy amount. The new equilibrium is at (Pc, Qsub). Pc < Pₑ (consumers pay less); Qsub > Qₑ (more is produced and sold). Producers receive Pp = Pc + subsidy.',
+              analysis: 'The vertical gap between Pp and Pc is the per-unit subsidy. Consumers pay a lower price while producers receive a higher net price – the difference comes from government.'
+            },
+            {
+              label: 'Government cost',
+              show: ['D', 'S', 'S_sub', 'PpSubLine', 'PcSubLine'],
+              points: ['Pc_sub', 'Pp_sub', 'Qsub'],
+              areas: [
+                { between: ['PpSubLine', 'PcSubLine'], x: [80, 442.5], tone: 'purple', label: 'Government cost' }
+              ],
+              head: 'Government cost',
+              body: 'Government cost = subsidy per unit × new quantity = (Pp − Pc) × Qsub, where Pp is the price producers receive (Pc + subsidy).',
+              analysis: 'The purple rectangle is the full cost to the Treasury – every penny of the subsidy on every unit now sold.'
+            },
+            {
+              label: 'Welfare distribution',
+              show: ['D', 'S', 'S_sub', 'PriceLine', 'PcSubLine', 'PpSubLine'],
+              points: ['Pc_sub', 'Pp_sub', 'Qsub'],
+              areas: [
+                { between: ['PriceLine', 'PcSubLine'], x: [80, 442.5], tone: 'blue', label: 'Consumer benefit' },
+                { between: ['PpSubLine', 'PriceLine'], x: [80, 442.5], tone: 'green', label: 'Producer benefit' }
+              ],
+              head: 'Welfare distribution',
+              body: 'Consumer benefit = (Pₑ − Pc) × Qsub (lower price on all units). Producer benefit = (Pp − Pₑ) × Qsub (higher received price). Government cost exceeds consumer benefit plus producer benefit – the difference is the deadweight loss from the subsidy.',
+              analysis: 'Because the Treasury pays more than buyers and sellers together gain, a non-corrective subsidy destroys net welfare. A corrective subsidy on a positive externality is the exception – there the extra output closes a market-failure gap.'
+            }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'The government cost of a subsidy is the rectangle between the two supply curves over the new quantity. The DWL triangle (between old and new equilibrium) represents the welfare cost of distorting production beyond the free-market level – unless correcting an externality, in which case the subsidy reduces the externality DWL.' }
+      ]
     },
     {
       id: 'govt_intervention_subsidies_3',

@@ -81,8 +81,56 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 3 of 3',
       title: 'Exam technique: drawing, analysis, evaluation',
       blocks: [
-        { type: 'calloutStrip', tone: 'blue', icon: '✍️', text: 'This card turns your content knowledge into high-mark exam performance. Master the four diagrams below and the three-axis evaluation structure to handle any tax/subsidy question.' },
-        { type: 'diagram', svgKey: 'taxSubsidyFourPanels', caption: undefined },
+        { type: 'calloutStrip', tone: 'blue', icon: '✍️', text: 'This card turns your content knowledge into high-mark exam performance. Master the core diagrams below and the three-axis evaluation structure to handle any tax/subsidy question.' },
+        { type: 'sectionHeader', icon: '🧾', label: 'Indirect tax and subsidy diagrams' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Indirect tax',
+              show: ['D', 'S', 'S_taxed', 'PcTaxLine', 'PpTaxLine'],
+              points: ['Pc_tax', 'Pp_tax', 'Qt_tax', 'E'],
+              areas: [
+                { between: ['PcTaxLine', 'PpTaxLine'], x: [80, 317.5], tone: 'green', label: 'Revenue' },
+                { between: ['D', 'S'], x: [317.5, 380], tone: 'rose', label: 'DWL' }
+              ],
+              head: 'Indirect tax — S shifts left/up',
+              body: 'A specific tax shifts supply up to S+tax. Quantity falls from Qₑ to Qₜ; consumers pay Pc, producers keep Pp, and the vertical gap is the per-unit tax.',
+              analysis: 'The green rectangle (Pc to Pp, up to Qₜ) is government revenue = £T × Qₜ. The red triangle between D and S over Qₜ to Qₑ is the deadweight loss from the trades the tax suppresses.'
+            },
+            {
+              label: 'Subsidy',
+              show: ['D', 'S', 'S_sub', 'PcSubLine', 'PpSubLine'],
+              points: ['Pc_sub', 'Pp_sub', 'Qsub', 'E'],
+              areas: [
+                { between: ['PpSubLine', 'PcSubLine'], x: [80, 442.5], tone: 'green', label: 'Gov. cost' },
+                { between: ['S', 'D'], x: [380, 442.5], tone: 'rose', label: 'DWL' }
+              ],
+              head: 'Subsidy — S shifts right/down',
+              body: 'A subsidy shifts supply down to S−sub. Quantity rises from Qₑ to Qsub; consumers pay a lower Pc while producers receive a higher Pp once the subsidy is added.',
+              analysis: 'The green rectangle (Pp to Pc, up to Qsub) is the total government cost = £S × Qsub. The red triangle between S and D over Qₑ to Qsub is the deadweight loss from over-production beyond the efficient quantity.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '🏭', label: 'Pigouvian correction — MPC to MSC' },
+        {
+          type: 'econDiagram',
+          chart: 'externalities-neg',
+          views: [
+            {
+              label: 'Pigouvian correction',
+              show: ['MPC', 'MPB', 'MSC'],
+              points: ['marketEq', 'socialEq'],
+              areas: [
+                { between: ['MSC', 'MPB'], x: [369, 430], tone: 'rose', label: 'DWL' }
+              ],
+              head: 'Pigouvian correction — internalising MEC',
+              body: 'With a negative externality the market produces at Qₘ where MPC = MPB, ignoring the external cost. MSC sits above MPC by the marginal external cost (MEC); the social optimum is Q* where MSC = MPB.',
+              analysis: 'A Pigouvian tax equal to MEC at Q* shifts MPC up to MSC, cutting output from Qₘ to Q* and eliminating the deadweight-loss triangle between MSC and MPB.'
+            }
+          ]
+        },
         { type: 'sectionHeader', icon: '⚖️', label: 'A three-axis evaluation framework' },
         { type: 'grid', cols: 3, children: [
           { type: 'tile', tone: 'rose', icon: '🎯', head: 'Effectiveness', body: 'Did output or consumption move toward the social optimum? Was the market failure reduced? By how much? Depends on PED/PES and producer response (reformulation, substitution). Name the elasticity assumption.' },

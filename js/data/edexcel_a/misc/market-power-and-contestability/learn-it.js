@@ -52,29 +52,46 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'mvc_2',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'The Two Limit Cases – Done Correctly',
       lede: 'A firm-level diagram for each extreme. PC firm: horizontal AR=MR=P (price-taker). Monopoly: faces the whole downward demand, MR below AR.',
-      diagramKey: 'firmLevelPcVsMonopoly',
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '📊', label: 'PC firm vs monopoly firm' },
         {
-          key: 'base',
-          label: 'PC firm (price-taker)',
-          text: 'Under perfect competition the individual firm is a <strong>price-taker</strong>. The market sets P; the firm faces a perfectly elastic <strong>horizontal demand: AR = MR = P</strong>. The firm chooses output where <strong>MC = MR (= P)</strong>. In the long run, free entry drives profit to zero: <strong>P = MC = min AC</strong> – both allocatively and productively efficient.'
+          type: 'econDiagram',
+          chart: 'marketStructure',
+          views: [
+            {
+              label: 'PC firm (price-taker)',
+              show: ['MC', 'ATC', 'P_PC'],
+              points: ['compEquil'],
+              head: 'The price-taking firm',
+              body: 'The firm faces a perfectly elastic horizontal demand AR = MR = P at the market price, and produces where MC = P at Qc.',
+              analysis: 'Under perfect competition the individual firm is a price-taker. The market sets P; the firm faces a perfectly elastic horizontal demand: AR = MR = P. The firm chooses output where MC = MR (= P). In the long run, free entry drives profit to zero: P = MC = min AC – both allocatively and productively efficient.'
+            },
+            {
+              label: 'Monopoly firm (price-maker)',
+              show: ['AR', 'MR', 'MC', 'ATC'],
+              points: ['profitMaxQ', 'priceOnAR', 'atcAtMonopoly'],
+              areas: [
+                { between: ['AR', 'ATC'], x: [80, 280], tone: 'amber', label: 'Supernormal profit' }
+              ],
+              head: 'The price-making firm',
+              body: 'The monopolist faces the whole downward AR=D, with MR below it. Profit-max at MR = MC gives Qm; price Pm is read up to AR, above ATC.',
+              analysis: 'The monopolist faces the whole market demand. AR is downward-sloping, so to sell another unit it must cut price on every unit. Hence MR < AR (MR has twice the slope of a linear AR). Profit-max where MR = MC gives Qₘ. Price is read up to AR, giving Pₘ > MC. Supernormal profit (Pₘ − ATC) × Qₘ persists if entry is blocked.'
+            },
+            {
+              label: 'Compare side-by-side',
+              show: ['AR', 'MR', 'MC', 'ATC', 'P_PC'],
+              points: ['priceOnAR', 'profitMaxQ', 'compEquil'],
+              head: 'Same costs, different demand',
+              body: 'On one cost stack: the PC firm settles at Qc on min ATC, the monopolist restricts to Qm and prices at Pm above ATC.',
+              analysis: 'Same cost curves, different demand. PC firm produces at min AC (productive efficiency) and P = MC (allocative efficiency). Monopoly firm produces less, at higher AC per unit, charges above MC, and earns supernormal profit. BUT: these are limit cases. Whether the monopoly outcome persists depends on contestability – covered next.'
+            }
+          ]
         },
-        {
-          key: 'extension',
-          label: 'Monopoly firm (price-maker)',
-          text: 'The monopolist faces the <strong>whole market demand</strong>. AR is downward-sloping, so to sell another unit it must cut price on every unit. Hence <strong>MR &lt; AR</strong> (MR has twice the slope of a linear AR). Profit-max where <strong>MR = MC</strong> gives Q_m. Price is read up to AR, giving <strong>P_m &gt; MC</strong>. Supernormal profit (P_m − AC) × Q_m persists if entry is blocked.'
-        },
-        {
-          key: 'shift',
-          label: 'Compare side-by-side',
-          text: 'Same cost curves, different demand. PC firm produces at <strong>min AC</strong> (productive efficiency) and <strong>P = MC</strong> (allocative efficiency). Monopoly firm produces less, at higher AC per unit, charges above MC, and earns supernormal profit. <strong>BUT</strong>: these are limit cases. Whether the monopoly outcome persists depends on contestability – covered next.'
-        }
-      ],
-      examEdge: 'For a PC firm the demand curve is HORIZONTAL at market price – NEVER draw a downward slope for the individual PC firm. The downward slope is the INDUSTRY demand curve. Mixing firm-level and industry-level diagrams is one of the most common A-level errors. In essays, use a two-panel diagram: left = PC firm, right = monopoly firm, with the same cost stack so the difference is purely about demand.'
+        { type: 'examEdge', title: 'Exam edge', text: 'For a PC firm the demand curve is HORIZONTAL at market price – NEVER draw a downward slope for the individual PC firm. The downward slope is the INDUSTRY demand curve. Mixing firm-level and industry-level diagrams is one of the most common A-level errors. In essays, use a two-panel diagram: left = PC firm, right = monopoly firm, with the same cost stack so the difference is purely about demand.' }
+      ]
     },
     {
       id: 'mvc_3',

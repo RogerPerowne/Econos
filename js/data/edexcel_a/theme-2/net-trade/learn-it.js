@@ -284,75 +284,45 @@ window.ECONOS_TOPIC = {
     /* ── CARD 6 ── Marshall-Lerner and the J-curve ───────────────── */
     {
       id: 'marshall-lerner-j-curve',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Marshall-Lerner and the J-curve',
       lede: 'Depreciation can hurt before it helps.',
-      ledeStyle: 'plain',
-
-      tip: { icon: '✅', tone: 'green', text: 'A weaker pound improves the trade balance only if demand for exports and imports is sufficiently elastic.' },
-
-      interactiveDiagram: {
-        svgKey: 'jCurveInteractive',
-        layers: ['idl-1', 'idl-2'],
-        label: 'THE J-CURVE',
-        emoji: '📉',
-        views: [
-          {
-            label: 'Depreciation',
-            tone: 'blue',
-            head: 'Prices react, volumes have not',
-            body: 'The pound falls. The trade balance sits at its pre-depreciation level. Prices are about to react – but contracts are fixed and volumes cannot move yet.',
-            analysis: 'The mechanism is about to start. Whether it works depends on elasticities.'
-          },
-          {
-            label: 'Worse first',
-            tone: 'rose',
-            show: ['idl-1'],
-            head: 'Trade balance worsens to the trough',
-            body: [
-              'Existing export/import contracts are set in advance.',
-              'Import prices rise immediately in pound terms.',
-              'Quantities – exports up and imports down – adjust slowly.'
-            ],
-            analysis: 'In the short run the trade balance gets worse even though the mechanism is working as expected.'
-          },
-          {
-            label: 'Recovery',
-            tone: 'green',
-            show: ['idl-1', 'idl-2'],
-            head: 'Volumes respond and balance improves',
-            body: [
-              'Exports become cheaper – foreign demand increases.',
-              'Imports become dearer – domestic demand for imports falls.'
-            ],
-            analysis: 'The recovery only completes if <strong>|PED of exports| + |PED of imports| &gt; 1</strong> (Marshall-Lerner). For services-heavy economies like the UK, lower elasticities can limit the J in practice.'
-          }
-        ]
-      },
-
-      pairLabel: 'WHAT THE CONDITION MEANS',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'green', icon: '✅', iconStyle: 'circle',
-        label: 'If true',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;">Depreciation improves the current account.</p>'
-      },
-      right: {
-        tone: 'rose', icon: '❌', iconStyle: 'circle',
-        label: 'If not',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;">The effect is weak or can fail.</p>'
-      },
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Time and elasticity both matter – first there can be pain, then gain.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Do not say depreciation always works immediately. Use the J-curve and the Marshall-Lerner condition to explain the full story.'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: 'A weaker pound improves the trade balance only if demand for exports and imports is sufficiently elastic.' },
+        { type: 'sectionHeader', icon: '📉', label: 'THE J-CURVE' },
+        { type: 'econDiagram',
+          chart: 'jcurve',
+          views: [
+            {
+              label: 'Depreciation',
+              head: 'Prices react, volumes have not',
+              body: 'The pound falls at t₀. The trade balance sits at its pre-depreciation level. Prices are about to react – but contracts are fixed and volumes cannot move yet.',
+              analysis: 'The mechanism is about to start. Whether it works depends on elasticities.'
+            },
+            {
+              label: 'Worse first',
+              points: ['Trough'],
+              head: 'Trade balance worsens to the trough',
+              body: 'Existing export and import contracts are set in advance. Import prices rise immediately in pound terms, while quantities – exports up and imports down – adjust slowly, so the balance falls to its trough.',
+              analysis: 'In the short run the trade balance gets worse even though the mechanism is working as expected.'
+            },
+            {
+              label: 'Recovery',
+              points: ['Trough', 'Recovery', 'Peak'],
+              head: 'Volumes respond and balance improves',
+              body: 'Exports become cheaper so foreign demand increases; imports become dearer so domestic demand for imports falls. The balance recovers back through zero and into surplus.',
+              analysis: 'The recovery only completes if |PED of exports| + |PED of imports| > 1 (Marshall-Lerner). For services-heavy economies like the UK, lower elasticities can limit the J in practice.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '⚖️', label: 'WHAT THE CONDITION MEANS' },
+        { type: 'pair',
+          left:  { tone: 'green', icon: '✅', head: 'If true',  body: 'Depreciation improves the current account.' },
+          right: { tone: 'rose',  icon: '❌', head: 'If not',   body: 'The effect is weak or can fail.' }
+        },
+        { type: 'bigIdea', text: 'Big idea: Time and elasticity both matter – first there can be pain, then gain.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Do not say depreciation always works immediately. Use the J-curve and the Marshall-Lerner condition to explain the full story.' }
+      ]
     },
 
     /* ── CARD 7 ── Net trade in the AD/AS model ──────────────────── */

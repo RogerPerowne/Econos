@@ -52,17 +52,17 @@ window.ECONOS_TOPIC = {
         {
           key: 'base',
           label: 'The demand curve',
-          text: 'The demand curve shows the <strong>inverse relationship between price and quantity demanded</strong>. Ceteris paribus, as price rises, quantity demanded falls. It slopes downward because of the <strong>substitution effect</strong> (the good becomes expensive relative to alternatives) and the <strong>income effect</strong> (real purchasing power falls as price rises).'
+          text: 'The demand curve shows the <strong>inverse relationship between price and quantity demanded</strong>. It slopes downward because of the <strong>substitution effect</strong> (good is dearer than alternatives) and the <strong>income effect</strong> (real purchasing power falls).'
         },
         {
           key: 'extension',
           label: 'Movement along',
-          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the demand curve – nothing else can. A price rise causes a <strong>contraction</strong> (E₂: higher P, lower Q). A price fall causes an <strong>extension</strong> (E₃: lower P, higher Q). The curve itself does not move. Precise language matters: say "quantity demanded falls," not "demand falls."'
+          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the curve – nothing else can. A price rise causes a <strong>contraction</strong> (E₂); a price fall causes an <strong>extension</strong> (E₃). Say "quantity demanded falls," not "demand falls."'
         },
         {
           key: 'shift',
           label: 'Demand shifts',
-          text: 'A change in any <strong>non-price determinant</strong> shifts the entire demand curve. <strong>Rightward (D₂ – increase):</strong> more demanded at every price – higher income, changed tastes, or a rise in a substitute\'s price. <strong>Leftward (D₀ – decrease):</strong> less demanded at every price – lower income, or a rise in a complement\'s price. Quantity changes at every price level, not just P₁.'
+          text: 'A change in any <strong>non-price determinant</strong> shifts the whole curve. <strong>Right (D₂):</strong> more demanded at every price – higher income, tastes, substitute price. <strong>Left (D₀):</strong> less at every price – lower income, complement price up.'
         }
       ],
       causes: [

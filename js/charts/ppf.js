@@ -438,7 +438,8 @@
         anchor = item.x < 0 ? 'end' : (item.x > 1 ? 'start' : 'middle');
       }
     }
-    return '<text x="' + x + '" y="' + y + '" font-size="' + size + '" fill="' + t.label + '" text-anchor="' + anchor + '"' + bold + italic + '>' + item.text + '</text>';
+    var opacity = item.opacity != null ? ' opacity="' + item.opacity + '"' : '';
+    return '<text x="' + x + '" y="' + y + '" font-size="' + size + '" fill="' + t.label + '" text-anchor="' + anchor + '"' + bold + italic + opacity + '>' + item.text + '</text>';
   }
 
   /* Estimate a text element's bounding box in PIXEL space.

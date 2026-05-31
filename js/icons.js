@@ -5423,47 +5423,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  allocativeEfficiencyDiagram: `
-    <svg viewBox="0 0 540 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <!-- Shaded surplus regions (behind curves) -->
-      <polygon points="100,60 100,200 270,200" fill="#DBEAFE" opacity="0.75"/>
-      <polygon points="100,340 100,200 270,200" fill="#FED7AA" opacity="0.6"/>
-      <text x="148" y="132" font-size="12" font-weight="700" fill="#1D4ED8" text-anchor="middle">Consumer</text>
-      <text x="148" y="147" font-size="12" font-weight="700" fill="#1D4ED8" text-anchor="middle">surplus</text>
-      <text x="148" y="260" font-size="12" font-weight="700" fill="#C2410C" text-anchor="middle">Producer</text>
-      <text x="148" y="275" font-size="12" font-weight="700" fill="#C2410C" text-anchor="middle">surplus</text>
-      <!-- Axes -->
-      <line x1="100" y1="40" x2="100" y2="340" stroke="#94A3B8" stroke-width="2"/>
-      <line x1="100" y1="340" x2="448" y2="340" stroke="#94A3B8" stroke-width="2"/>
-      <polygon points="100,36 96,44 104,44" fill="#94A3B8"/>
-      <polygon points="452,340 444,336 444,344" fill="#94A3B8"/>
-      <text x="82" y="32" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">Price</text>
-      <text x="456" y="345" font-size="13" font-weight="600" fill="#0F172A">Quantity</text>
-      <text x="88" y="358" font-size="12" fill="#64748B" text-anchor="middle">0</text>
-      <!-- MB / D curve (downward, blue) -->
-      <line x1="100" y1="60" x2="440" y2="340" stroke="#2563EB" stroke-width="2.8" stroke-linecap="round"/>
-      <text x="120" y="56" font-size="14" font-weight="700" fill="#2563EB" font-family="Georgia,serif">MB</text>
-      <text x="444" y="344" font-size="14" font-weight="700" fill="#2563EB" font-family="Georgia,serif">D</text>
-      <!-- MC / S curve (upward, orange) -->
-      <line x1="100" y1="340" x2="440" y2="60" stroke="#F97316" stroke-width="2.8" stroke-linecap="round"/>
-      <text x="120" y="334" font-size="14" font-weight="700" fill="#F97316" font-family="Georgia,serif">MC</text>
-      <text x="444" y="64" font-size="14" font-weight="700" fill="#F97316" font-family="Georgia,serif">S</text>
-      <!-- Equilibrium E at (270, 200) -->
-      <line x1="100" y1="200" x2="270" y2="200" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
-      <line x1="270" y1="200" x2="270" y2="340" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
-      <circle cx="270" cy="200" r="6" fill="#0F172A"/>
-      <text x="282" y="194" font-size="15" font-weight="700" fill="#0F172A" font-family="Georgia,serif">E</text>
-      <!-- Pe tick + label -->
-      <line x1="96" y1="200" x2="104" y2="200" stroke="#94A3B8" stroke-width="1.5"/>
-      <text x="90" y="204" font-size="13" fill="#0F172A" text-anchor="end" font-family="Georgia,serif">P</text>
-      <text x="96" y="208" font-size="9"  fill="#0F172A" text-anchor="end" font-family="Georgia,serif" font-style="italic">e</text>
-      <!-- Qe tick + label + subtitle -->
-      <line x1="270" y1="336" x2="270" y2="344" stroke="#94A3B8" stroke-width="1.5"/>
-      <text x="270" y="358" font-size="13" fill="#0F172A" text-anchor="middle" font-family="Georgia,serif">Q</text>
-      <text x="277" y="362" font-size="9"  fill="#0F172A" text-anchor="middle" font-family="Georgia,serif" font-style="italic">e</text>
-      <text x="270" y="375" font-size="11" fill="#64748B" text-anchor="middle" font-style="italic">(Allocatively efficient output)</text>
-    </svg>
-  `,
+  allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),
 
   /* ── Interactive diagrams for Indirect Taxes & Subsidies topic ── */
   taxTypesInteractive: `

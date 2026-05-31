@@ -4141,6 +4141,22 @@ img, svg { display: block; max-width: 100%; }
   .ad-interactive__tabs { grid-template-columns: 1fr !important; }
 }
 
+/* --- interactiveDiagram block: responsive reflow on narrow viewports.
+   The .id-content-row grid is set inline (SVG | description) at desktop.
+   Breakpoint matches .ad-interactive__tabs above — 1100px catches narrow
+   desktop windows with sidebars eating viewport, so cramped side-by-side
+   layouts flip to a vertical stack (chart on top, description below).
+   The .id-step-strip's column count is set inline based on view count;
+   1100px → 2-col, 560px → 1-col. !important is required to win against
+   the per-render inline grid-template-columns set by app.js. */
+@media (max-width: 1100px) {
+  .id-content-row { grid-template-columns: 1fr !important; }
+  .id-step-strip { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .id-step-strip { grid-template-columns: 1fr !important; }
+}
+
 .ad-tab {
   display: flex;
   align-items: center;

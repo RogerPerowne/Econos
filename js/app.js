@@ -1147,7 +1147,7 @@
             <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
               <div style="max-width:${id.maxWidth || '640px'};margin:0 auto;">${I[id.svgKey]}</div>
             </div>
-            <div style="display:grid;grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
+            <div class="id-step-strip" style="display:grid;grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
             ${combinedPanels}
           </div>`;
       } else {
@@ -1181,12 +1181,12 @@
         html += `
           <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
             <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
-              <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;">
+              <div class="id-content-row" style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;">
                 <div style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
                 <div style="display:flex;flex-direction:column;padding:0 4px;">${descItems}</div>
               </div>
             </div>
-            <div style="display:grid;grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
+            <div class="id-step-strip" style="display:grid;grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
             ${analysisItems}
           </div>`;
       }

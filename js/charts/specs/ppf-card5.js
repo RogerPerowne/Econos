@@ -31,13 +31,12 @@
     curves: [
       { id: 'ppf', d: 'M 0,0.773 C 0.458,0.773 0.917,0.173 0.917,0.013', tone: 'blue', label: 'PPF₁' }
     ],
-    // Zone labels: keep one. "Inefficient zone" survives — it labels the
-    // region below the PPF that view 2's H point lives in. The original
-    // "Unattainable zone" label is dropped because it clashed with the
-    // allocative-efficiency callout box in view 4 (it sat in the same
-    // top-right region the callout needs).
+    // Zone labels — both reinstated. "Unattainable zone" pinned to the
+    // very top-right corner; engine auto-anchors to 'end' for x > 0.7 so
+    // the text grows leftward from the position and stays inside the SVG.
     zones: [
-      { x: 0.40, y: 0.06, text: 'Inefficient zone',  tone: 'rose' }
+      { x: 0.30, y: 0.05, text: 'Inefficient zone',  tone: 'rose' },
+      { x: 0.98, y: 0.95, text: 'Unattainable zone', tone: 'rose' }
     ],
     viewDefaultsHidden: true,
     views: [

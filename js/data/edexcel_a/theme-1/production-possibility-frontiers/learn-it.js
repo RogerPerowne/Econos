@@ -138,33 +138,33 @@ window.ECONOS_TOPIC = {
             label: 'Country positions',
             tone: 'blue',
             show: ['countries', 'ppf1s'],
-            head: 'Where countries actually sit on the PPF',
-            body: 'Every economy chooses a mix of consumer goods (everything households buy today) and capital goods (machines, infrastructure, buildings that boost FUTURE production). The UK, Germany and China sit at very different points on the same conceptual PPF — driven by their investment ratios.',
-            analysis: 'Investment ratios (Gross Fixed Capital Formation as a % of GDP): UK and USA ~18%, Germany ~22%, China ~42%. Capital-heavy economies sit further to the right on the PPF — less consumption now, but more productive capacity being built. China\'s growth over the past three decades has been DIRECTLY dependent on sustained capital allocation: infrastructure, factories, machinery. The UK\'s comparatively low investment ratio is one structural reason its long-run growth has lagged.'
+            head: 'Where countries sit on the PPF',
+            body: 'Every economy chooses a mix of consumer goods (households buy today) and capital goods (boost FUTURE production). The UK, Germany and China sit at very different points on the same conceptual PPF.',
+            analysis: 'Investment ratios drive the position: UK ~18%, Germany ~22%, China ~42% of GDP. China\'s growth has been directly dependent on sustained capital allocation. The UK\'s low investment ratio is one structural reason its long-run growth has lagged.'
           },
           {
             label: 'Sacrifice for growth',
             tone: 'purple',
             show: ['ppf1s', 'a-lbl', 'b-pos', 'a-b-arrow'],
-            head: 'UK moves A → B (along PPF₁)',
-            body: 'The UK\'s current production mix is A — heavily weighted toward consumer goods. To boost long-run growth, it can move ALONG PPF₁ to point B: produce LESS consumer goods now, MORE capital goods. The dashed arrow shows the potential move; the dashed gridlines mark B\'s position — clearly more capital, fewer consumer goods than at A.',
-            analysis: 'This is movement along the EXISTING PPF — not yet a shift. A → B is a reallocation of existing resources, with a real opportunity cost: lower consumer goods output means lower present living standards. Post-war Germany, Japan, South Korea (1960s-80s) and China (1990s-2010s) all made this choice deliberately. The political challenge: voters resist short-term sacrifices even when long-term gains are large.'
+            head: 'UK moves A → B along PPF₁',
+            body: 'To grow faster, the UK can move ALONG PPF₁ from A to B: produce LESS consumer goods now, MORE capital goods. The dashed gridlines mark B\'s position.',
+            analysis: 'This is movement along the EXISTING PPF — not a shift. The opportunity cost is real: lower present living standards. Post-war Germany, Japan and South Korea sustained this choice for decades.'
           },
           {
-            label: 'PPF₂: B → C (same capital, more consumer)',
+            label: 'PPF₂: B → C',
             tone: 'green',
             show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow'],
-            head: 'Investment has shifted the frontier outward',
-            body: 'Years of producing at B has built up the capital stock. The PPF has shifted OUTWARD from PPF₁ (now dashed) to PPF₂ (solid). The straight arrow from B up to C shows the immediate gain: at the SAME level of capital goods, the country can now produce more CONSUMER GOODS than before. C sits on the new frontier.',
-            analysis: 'This is supply-side, long-run growth. The shift is the DIRECT consequence of B\'s higher investment ratio sustained over time. The catch: new capital must be PRODUCTIVELY invested. Misallocated investment (white-elephant infrastructure, Soviet five-year plans) builds capital that doesn\'t shift the frontier. The UK\'s persistent under-investment in productive capital is one reason its PPF has shifted out more slowly than peers.'
+            head: 'Investment shifts the frontier outward',
+            body: 'Years of producing at B builds the capital stock. PPF₁ (now dashed) has shifted to PPF₂. The arrow B → C shows the gain: at the SAME capital level, the country can now produce more CONSUMER GOODS than before.',
+            analysis: 'This is supply-side, long-run growth. The catch: new capital must be PRODUCTIVELY invested. Misallocated investment (white-elephant infrastructure, Soviet five-year plans) builds capital that doesn\'t shift the frontier.'
           },
           {
             label: 'C → D along PPF₂',
             tone: 'green',
             show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
-            head: 'D — consumer-heavy again, but at HIGHER absolute levels',
-            body: 'With PPF₂ in hand, the country specialises BACK toward consumer goods — moving along PPF₂ from C to D. D is in the upper-left consumer-heavy region, the same kind of allocation A was on PPF₁ originally. But because PPF₂ is bigger, D delivers MORE consumer goods AND MORE capital goods than A ever did.',
-            analysis: 'Compare D with A: same "consumer-heavy" mix, but everything is higher in absolute terms. That\'s the long-run pay-off of the A → B → PPF shift → D trajectory. The "Jamland" insight: <strong>more jam tomorrow IS possible — but only if you stomach less jam today.</strong> A* moves: name the opportunity cost (consumer goods foregone at B), distinguish movement along the PPF (A→B, C→D) from a shift of the PPF (PPF₁→PPF₂), and link to real countries that made this choice.'
+            head: 'D — consumer-heavy at HIGHER levels',
+            body: 'The country moves back toward consumer-heavy mix on PPF₂, from C to D. Because PPF₂ is bigger, D has MORE consumer goods AND MORE capital goods than A.',
+            analysis: '<strong>More jam tomorrow IS possible — but only if you stomach less jam today.</strong> A*: distinguish movement along the PPF (A→B, C→D) from a SHIFT (PPF₁→PPF₂); name the opportunity cost at B.'
           }
         ]
       },

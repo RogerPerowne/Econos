@@ -923,6 +923,9 @@
   /* Render the contents of a single view's content layer */
   function renderViewContent(view, scale, area, ctx) {
     var parts = [];
+    // Polygons FIRST so curves/lines render on top of region fills
+    // (CS / PS / govt rectangles / DWL triangles inside a view).
+    (view.polygons || []).forEach(function (p) { parts.push(renderPolygon(p, scale)); });
     (view.curves || []).forEach(function (c) { parts.push(renderCurve(c, scale)); });
     (view.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, ctx.curveRegistry, ctx)); });
     (view.ocTriangles || []).forEach(function (tri) { parts.push(renderOcTriangle(tri, scale, ctx.curveRegistry)); });
@@ -936,24 +939,102 @@
     return parts;
   }
 
+  /* Render a single panel's content into the parts array.
+     Used by both the legacy single-chartArea path and the multi-panel
+     path (`spec.panels: [...]`). The panel shape is identical to a
+     top-level spec — chartArea, axes, curves, polygons, arrows, points,
+     texts, zones, views, legends — except it never carries its own
+     viewBox / width / height / background / divider (those are svg-wide). */
+  function renderPanelContent(panel, ctx, parts) {
+    var area = panel.chartArea;
+    var scale = makeScale(area);
+
+    // Per-panel axes (skip rendering when axes:false)
+    if (panel.axes !== false) {
+      parts.push(wrapLayer('layer-axes', [renderAxes(area, panel.axes || {})]));
+    }
+
+    // Optional panel title above the chart area
+    if (panel.title) {
+      var titleX = area.x + area.width / 2;
+      var titleY = area.y - 12;
+      var tt = tone(panel.titleTone || 'slate');
+      parts.push('<text x="' + titleX + '" y="' + titleY + '" font-size="12" font-weight="800" fill="' + tt.label + '" text-anchor="middle">' + panel.title + '</text>');
+    }
+
+    function maybeWrap(shape, rendered) {
+      return shape.layer ? wrapLayer(shape.layer, [rendered]) : rendered;
+    }
+
+    (panel.polygons || []).forEach(function (p) {
+      parts.push(maybeWrap(p, renderPolygon(p, scale)));
+    });
+    (panel.curves || []).forEach(function (c) {
+      parts.push(maybeWrap(c, renderCurve(c, scale)));
+    });
+    (panel.zones || []).forEach(function (z) { parts.push(maybeWrap(z, renderZone(z, scale))); });
+    (panel.arrows || []).forEach(function (a) { parts.push(maybeWrap(a, renderArrow(a, scale, ctx.curveRegistry, ctx))); });
+    (panel.points || []).forEach(function (p) {
+      var renderedDot = renderPointGridlines(p, scale, area) + renderPoint(p, scale, ctx, area);
+      parts.push(maybeWrap(p, renderedDot));
+    });
+    (panel.texts || []).forEach(function (t) { parts.push(maybeWrap(t, renderText(t, scale, ctx, area))); });
+
+    (panel.legends || []).forEach(function (lg) {
+      var rendered = renderLegend(lg);
+      parts.push(lg.layer ? wrapLayer(lg.layer, [rendered]) : rendered);
+    });
+
+    var hideViews = !!panel.viewDefaultsHidden;
+    (panel.views || []).forEach(function (view) {
+      var contentLayer = view.contentLayer || ('layer-' + view.key);
+      var legendLayer = view.legendLayer || ('layer-legend-' + view.key);
+      var hidden = view.hidden != null ? view.hidden : hideViews;
+      parts.push(wrapLayer(contentLayer, renderViewContent(view, scale, area, ctx), hidden));
+      if (view.legend) parts.push(wrapLayer(legendLayer, [renderLegend(view.legend)], hidden));
+    });
+
+    if (panel.legend && !(panel.views || []).length) parts.push(renderLegend(panel.legend));
+  }
+
   function render(spec) {
     var width = spec.width || 560;
     var height = spec.height || 440;
-    var area = spec.chartArea || { x: 60, y: 50, width: width - 100, height: height - 100 };
-    var scale = makeScale(area);
     var className = spec.className || 'econos-chart';
+
+    // Multi-panel path: `spec.panels: [...]` means render each panel's
+    // shapes into a single SVG, with each panel using its own chartArea
+    // as a self-contained coordinate system. Used by side-by-side
+    // comparison diagrams (PED elastic-vs-inelastic, PES, 4-panel
+    // tax-vs-subsidy). Single-panel (legacy) path stays unchanged.
+    var panels = spec.panels;
+    var isMulti = Array.isArray(panels) && panels.length > 0;
+    var area = isMulti ? null : (spec.chartArea || { x: 60, y: 50, width: width - 100, height: height - 100 });
 
     var parts = [];
     parts.push('<svg class="' + className + '" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">');
-    // Always emit a chart-area clipPath so curves (renderCurve) auto-clip
-    // to the chart bounds. Stops shifted demand/supply lines bleeding into
-    // the axis gutter without needing per-curve `clip-path` boilerplate.
-    var chartClip = '<clipPath id="econos-chart-clip"><rect x="' + area.x + '" y="' + area.y + '" width="' + area.width + '" height="' + area.height + '"/></clipPath>';
-    parts.push('<defs>' + chartClip + (spec.defs || '') + '</defs>');
+
+    // Per-panel auto-clips for `renderCurve`'s automatic clipping. Single-
+    // panel charts use the legacy id `econos-chart-clip`; multi-panel
+    // charts emit numbered clips and let each panel scope its own.
+    var clips = '';
+    if (isMulti) {
+      panels.forEach(function (p, i) {
+        var a = p.chartArea;
+        clips += '<clipPath id="econos-chart-clip-' + i + '"><rect x="' + a.x + '" y="' + a.y + '" width="' + a.width + '" height="' + a.height + '"/></clipPath>';
+      });
+      // Also emit the legacy id so any shape WITHOUT a per-panel clip
+      // falls back gracefully (uses the first panel's bounds).
+      var first = panels[0].chartArea;
+      clips += '<clipPath id="econos-chart-clip"><rect x="' + first.x + '" y="' + first.y + '" width="' + first.width + '" height="' + first.height + '"/></clipPath>';
+    } else {
+      clips = '<clipPath id="econos-chart-clip"><rect x="' + area.x + '" y="' + area.y + '" width="' + area.width + '" height="' + area.height + '"/></clipPath>';
+    }
+    parts.push('<defs>' + clips + (spec.defs || '') + '</defs>');
+
     var bg = spec.background || '#FFFFFF';
     parts.push('<rect width="' + width + '" height="' + height + '" fill="' + bg + '" rx="12"/>');
     parts.push(renderDivider(spec.divider));
-    parts.push(wrapLayer('layer-axes', [renderAxes(area, spec.axes || {})]));
 
     // Approach B: build a single CONTEXT that the render functions consult
     // for cross-element awareness. The context carries:
@@ -982,64 +1063,42 @@
       (arrows || []).forEach(function (a) { if (a.from || a.to) ctx.arrows.push(a); });
     }
 
-    // Collect from top-level + every view
-    (spec.curves || []).forEach(registerCurve);
-    (spec.points || []).forEach(registerPoint);
-    registerArrows(spec.arrows);
-    (spec.views || []).forEach(function (v) {
-      (v.curves || []).forEach(registerCurve);
-      (v.points || []).forEach(registerPoint);
-      registerArrows(v.arrows);
+    // Collect cross-reference data from EVERY panel (multi) or the top
+    // level (single), plus all views, so labels/arrows can reference
+    // points/curves across the whole spec.
+    var collectFrom = isMulti ? panels : [spec];
+    collectFrom.forEach(function (src) {
+      (src.curves || []).forEach(registerCurve);
+      (src.points || []).forEach(registerPoint);
+      registerArrows(src.arrows);
+      (src.views || []).forEach(function (v) {
+        (v.curves || []).forEach(registerCurve);
+        (v.points || []).forEach(registerPoint);
+        registerArrows(v.arrows);
+      });
     });
 
-    // Helper: wrap a rendered string in <g class="X"> if shape declares a layer.
-    function maybeWrap(shape, rendered) {
-      return shape.layer ? wrapLayer(shape.layer, [rendered]) : rendered;
+    // Render each panel (multi-panel) or the spec itself (single-panel).
+    if (isMulti) {
+      panels.forEach(function (panel) { renderPanelContent(panel, ctx, parts); });
+    } else {
+      // Synthesize a panel from the spec's top-level shape fields so
+      // single-panel and multi-panel paths share the same rendering code.
+      renderPanelContent({
+        chartArea: area,
+        axes: spec.axes,
+        curves: spec.curves,
+        polygons: spec.polygons,
+        zones: spec.zones,
+        arrows: spec.arrows,
+        points: spec.points,
+        texts: spec.texts,
+        legends: spec.legends,
+        legend: spec.legend,
+        views: spec.views,
+        viewDefaultsHidden: spec.viewDefaultsHidden
+      }, ctx, parts);
     }
-
-    // Top-level polygons (filled shapes like CS triangles), painted
-    // BEFORE curves so curves sit on top of fills.
-    (spec.polygons || []).forEach(function (p) {
-      parts.push(maybeWrap(p, renderPolygon(p, scale)));
-    });
-
-    // Always-visible curves (each curve can carry its own layer name for opacity targeting)
-    (spec.curves || []).forEach(function (c) {
-      parts.push(maybeWrap(c, renderCurve(c, scale)));
-    });
-
-    // Top-level shapes (for single-view charts where everything is
-    // always-visible). Each shape can carry a `layer:` field for CSS-
-    // toggleable visibility (e.g. .show-cs / .show-pfall on demand-cs).
-    (spec.zones || []).forEach(function (z) { parts.push(maybeWrap(z, renderZone(z, scale))); });
-    (spec.arrows || []).forEach(function (a) { parts.push(maybeWrap(a, renderArrow(a, scale, ctx.curveRegistry, ctx))); });
-    (spec.points || []).forEach(function (p) {
-      var renderedDot = renderPointGridlines(p, scale, area) + renderPoint(p, scale, ctx, area);
-      parts.push(maybeWrap(p, renderedDot));
-    });
-    (spec.texts || []).forEach(function (t) { parts.push(maybeWrap(t, renderText(t, scale, ctx, area))); });
-
-    // Top-level multiple legends (each in its own layer wrapper).
-    (spec.legends || []).forEach(function (lg) {
-      var rendered = renderLegend(lg);
-      parts.push(lg.layer ? wrapLayer(lg.layer, [rendered]) : rendered);
-    });
-
-    // Multi-view: each view emits a content layer + a legend layer.
-    // If the spec sets `viewDefaultsHidden`, each view's content/legend
-    // layer is emitted with style="display:none" so a layer-toggling
-    // engine (the legacy interactiveDiagram code) can reveal them.
-    var hideViews = !!spec.viewDefaultsHidden;
-    (spec.views || []).forEach(function (view) {
-      var contentLayer = view.contentLayer || ('layer-' + view.key);
-      var legendLayer = view.legendLayer || ('layer-legend-' + view.key);
-      var hidden = view.hidden != null ? view.hidden : hideViews;
-      parts.push(wrapLayer(contentLayer, renderViewContent(view, scale, area, ctx), hidden));
-      if (view.legend) parts.push(wrapLayer(legendLayer, [renderLegend(view.legend)], hidden));
-    });
-
-    // Top-level legend (single-view charts)
-    if (spec.legend && !(spec.views || []).length) parts.push(renderLegend(spec.legend));
 
     parts.push('</svg>');
 

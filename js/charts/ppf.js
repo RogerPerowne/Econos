@@ -1513,6 +1513,18 @@
   }
 
   function render(specInput) {
+    // Defensive: if a spec script tag is missing from the shell HTML,
+    // window.ECONOS_FOO_SPEC is undefined and icons.js's top-level
+    // `ECONOS_PPF.render(window.ECONOS_FOO_SPEC)` would crash the entire
+    // page. Return a visible-but-non-fatal placeholder instead so the
+    // rest of the app still boots. Surfaces the bug in DevTools without
+    // bricking content.
+    if (!specInput || typeof specInput !== 'object') {
+      if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[ECONOS_PPF] render() called with no spec — likely a missing <script src="…/specs/X.js"> in the shell HTML. Page boots but this chart will be empty.');
+      }
+      return '<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart unavailable"><rect width="400" height="200" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/><text x="200" y="100" font-family="Inter, sans-serif" font-size="13" fill="#92400E" text-anchor="middle" dominant-baseline="middle">Chart spec missing (see console)</text></svg>';
+    }
     var spec = applyTemplate(specInput);
     var width = spec.width || 560;
     var height = spec.height || 440;

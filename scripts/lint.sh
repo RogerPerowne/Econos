@@ -91,11 +91,49 @@ check_no_legacy_stub_files() {
   fi
 }
 
+# ------------------------------------------------------------
+# Every chart spec referenced as `ECONOS_FOO_SPEC` in icons.js
+# must have a corresponding <script> tag in every shell HTML.
+# If not, the shell loads icons.js before the spec, the spec
+# variable is undefined when icons.js evaluates ECONOS_PPF.render(
+# window.ECONOS_FOO_SPEC) → throws → the page never boots.
+#
+# This caught the regression where consumption-function.js,
+# mec-diagram.js, etc. were added as spec files (and to sw.js)
+# but NOT to learn-it.html / link-it.html / land-it.html →
+# production blank-screened for all users.
+# ------------------------------------------------------------
+check_spec_scripts_loaded() {
+  # For every ECONOS_FOO_SPEC referenced in icons.js, find the spec
+  # file that DECLARES it (variable name doesn't always equal filename
+  # — e.g. ECONOS_TAX_DIAGRAM_SPEC lives in tax-diagram-interactive.js).
+  # Then check every shell HTML loads that file via <script>.
+  local var
+  for var in $(grep -oE 'ECONOS_[A-Z0-9_]+_SPEC' js/icons.js 2>/dev/null | sort -u); do
+    local declaring_file
+    declaring_file=$(grep -lE "window\.${var}\s*=" js/charts/specs/*.js 2>/dev/null | head -1)
+    if [ -z "$declaring_file" ]; then
+      echo "lint: icons.js references $var but no spec file declares it (window.${var} = …)"
+      fail=1
+      continue
+    fi
+    local stem
+    stem=$(basename "$declaring_file" .js)
+    for shell in learn-it.html link-it.html land-it.html; do
+      if ! grep -q "/js/charts/specs/${stem}.js" "$shell"; then
+        echo "lint: $shell missing <script src=\"/js/charts/specs/${stem}.js\"> (declares $var) — icons.js will crash on load"
+        fail=1
+      fi
+    done
+  done
+}
+
 main() {
   check_engine_navigation
   check_no_new_polish_blocks
   check_no_legacy_html_refs
   check_no_legacy_stub_files
+  check_spec_scripts_loaded
   if [ "$fail" -ne 0 ]; then
     echo
     echo "lint: FAILED"

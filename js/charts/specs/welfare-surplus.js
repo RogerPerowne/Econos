@@ -29,21 +29,20 @@
       y: { label: 'Price' }
     },
 
-    polygons: [
-      // Consumer surplus (blue) — above Pₑ, below MB
-      { points: [[0, 0.938], [0, 0.500], [E.x, E.y]],
-        fill: '#3B82F6', opacity: 0.18 },
-      // Producer surplus (amber) — below Pₑ, above MC
-      { points: [[0, 0.500], [0, 0.063], [E.x, E.y]],
-        fill: '#F59E0B', opacity: 0.18 }
+    // CS and PS auto-traced from the MB / MC curves and the price
+    // line at y = E.y. Engine computes the polygon corners — no more
+    // hand-computed (0, 0.938) and (0, 0.063) intercepts.
+    welfareRegions: [
+      { type: 'consumer-surplus', curve: 'MB', price: E.y, tone: 'blue', opacity: 0.18 },
+      { type: 'producer-surplus', curve: 'MC', price: E.y, tone: 'amber', opacity: 0.18 }
     ],
 
     curves: [
       // Marginal benefit (demand-like, downward, blue)
-      { d: 'M 0,0.938 L 0.944,0.063',
+      { id: 'MB', d: 'M 0,0.938 L 0.944,0.063',
         tone: 'blue', label: 'MB', strokeWidth: 3, labelDx: 8, labelDy: 4 },
       // Marginal cost (supply-like, upward, amber)
-      { d: 'M 0,0.063 L 0.944,0.938',
+      { id: 'MC', d: 'M 0,0.063 L 0.944,0.938',
         tone: 'amber', label: 'MC', strokeWidth: 3, labelDx: 8, labelDy: -4 }
     ],
 

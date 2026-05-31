@@ -2435,8 +2435,8 @@ window.ECONOS_ICONS = {
         <!-- Axis tick labels for E -->
         <text x="50" y="333" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">C₂</text>
         <text x="360" y="415" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">K₂</text>
-        <!-- OC arc arrow from D to E (follows curve shape) -->
-        <path d="M 197,202 Q 295,240 352,326" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ppf-occ-end)"/>
+        <!-- OC arc arrow from D to E (bows outside the PPF) -->
+        <path d="M 197,202 Q 310,210 352,326" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ppf-occ-end)"/>
         <!-- Delta labels -->
         <text x="72" y="270" font-size="12" font-weight="600" fill="#D97706">−ΔC</text>
         <text x="265" y="415" font-size="12" font-weight="600" fill="#D97706">+ΔK</text>

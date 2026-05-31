@@ -400,8 +400,24 @@
     if (b.connectorTo) {
       var cx2 = scale.sx(b.connectorTo.x);
       var cy2 = scale.sy(b.connectorTo.y);
-      // From bottom-centre of the box
-      connector = '<line x1="' + (x + w / 2) + '" y1="' + (yTop + h) + '" x2="' + cx2 + '" y2="' + cy2 + '" stroke="' + t.stroke + '" stroke-width="1.2" stroke-dasharray="4 3"/>';
+      // Start the connector at the box EDGE midpoint closest to the
+      // target — never from inside the box, otherwise the dashed line
+      // appears to cross the box's label text (the box fill is tinted
+      // and semi-transparent so internal line segments show through).
+      var bcx = x + w / 2;
+      var bcy = yTop + h / 2;
+      var dx = cx2 - bcx;
+      var dy = cy2 - bcy;
+      var horizontal = Math.abs(dx) / w > Math.abs(dy) / h;
+      var sX, sY;
+      if (horizontal) {
+        sX = dx > 0 ? (x + w) : x;
+        sY = bcy;
+      } else {
+        sX = bcx;
+        sY = dy > 0 ? (yTop + h) : yTop;
+      }
+      connector = '<line x1="' + sX + '" y1="' + sY + '" x2="' + cx2 + '" y2="' + cy2 + '" stroke="' + t.stroke + '" stroke-width="1.2" stroke-dasharray="4 3"/>';
     }
     return connector +
            '<rect x="' + x + '" y="' + yTop + '" width="' + w + '" height="' + h + '" rx="5" fill="' + fillTone + '" stroke="' + strokeTone + '"/>' +

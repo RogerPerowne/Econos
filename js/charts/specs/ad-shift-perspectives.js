@@ -61,28 +61,25 @@
     },
 
     curves: [
-      /* ── Shared: AD₁ (always visible) — passes through BOTH
-            Classical (0.65, 0.25) AND Keynesian (0.60, 0.30) ── */
-      { d: 'M 0.050,0.850 L 0.850,0.050',
+      /* ── Shared: AD₁ (always visible) ── */
+      { id: 'AD1', d: 'M 0.050,0.850 L 0.850,0.050',
         tone: 'blue', label: 'AD₁', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end' },
 
       /* ── Shared: AD₂ shifted right by 0.12 (layer 1) ── */
-      { d: 'M 0.050,0.970 L 0.950,0.070',
+      { id: 'AD2', d: 'M 0.050,0.970 L 0.950,0.070',
         tone: 'blue', label: 'AD₂', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end', layer: 'idl-1' },
 
       /* ── Classical perspective: vertical LRAS at Yf ── */
-      { d: 'M ' + YF + ',0 L ' + YF + ',0.992',
+      { id: 'LRAS', d: 'M ' + YF + ',0 L ' + YF + ',0.992',
         tone: 'blue', label: 'LRAS', strokeWidth: 2.5,
         labelDx: 0, labelDy: -10, anchor: 'middle',
         perspective: 'classical' },
 
       /* ── Keynesian perspective: reverse-L AS, low flat range,
-            steep rising section, asymptotic vertical at Yf.
-            Control points chosen so AD₁ ∩ curve = (0.600, 0.300)
-            and AD₂ ∩ curve = (0.621, 0.398). ── */
-      { d: 'M 0.050,' + P_FLAT + ' L 0.450,' + P_FLAT +
+            steep rising section, asymptotic vertical at Yf. ── */
+      { id: 'AS_K', d: 'M 0.050,' + P_FLAT + ' L 0.450,' + P_FLAT +
             ' C 0.557,' + P_FLAT + ' ' + YF + ',0.191 ' + YF + ',0.950',
         tone: 'amber', label: 'AS', strokeWidth: 2.5,
         labelDx: 0, labelDy: -10, anchor: 'middle',
@@ -90,25 +87,37 @@
     ],
 
     points: [
-      /* ── Classical: E₁ at (Yf, P₁) — gridlines + ticks ── */
-      { x: YF, y: P1_C, tone: 'blue', radius: 5.5, hollow: true,
+      /* Equilibria are declared by curve identity — the engine's solver
+         derives their (x, y) from the curve intersections. The hand-
+         maintained constants below act as geometry ASSERTIONS: if a
+         constant drifts from the solver's answer by > 0.005 chart-units,
+         a dev warning fires naming the point. */
+
+      /* ── Classical: E₁ at AD₁ ∩ LRAS — gridlines + ticks ── */
+      { x: YF, y: P1_C, intersection: { curves: ['AD1', 'LRAS'] },
+        id: 'E1_C', tone: 'blue', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Yf', y: 'P₁' },
         label: 'E₁', labelDx: 10, labelDy: -4, anchor: 'start',
         perspective: 'classical' },
 
-      /* ── Classical: E₂ at (Yf, P₂) — only P rose, layer 2 ── */
-      { x: YF, y: P2_C, tone: 'blue', radius: 5.5, hollow: true,
+      /* ── Classical: E₂ at AD₂ ∩ LRAS — only P rose, layer 2 ── */
+      { x: YF, y: P2_C, intersection: { curves: ['AD2', 'LRAS'] },
+        id: 'E2_C', tone: 'blue', radius: 5.5, hollow: true,
         label: 'E₂', labelDx: 10, labelDy: -4, anchor: 'start',
         perspective: 'classical', layer: 'idl-2' },
 
-      /* ── Keynesian: E₁ on the steep section, near Yf — gridlines + ticks ── */
-      { x: Y1_K, y: P1_K, tone: 'amber', radius: 5.5, hollow: true,
+      /* ── Keynesian: E₁ at AD₁ ∩ AS on the steep section — ticks ── */
+      { x: Y1_K, y: P1_K,
+        intersection: { curves: ['AD1', 'AS_K'], near: [Y1_K, P1_K] },
+        id: 'E1_K', tone: 'amber', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
         label: 'E₁', labelDx: -10, labelDy: -4, anchor: 'end',
         perspective: 'keynesian' },
 
-      /* ── Keynesian: E₂ — small Y rise + substantial P rise, layer 2 ── */
-      { x: Y2_K, y: P2_K, tone: 'amber', radius: 5.5, hollow: true,
+      /* ── Keynesian: E₂ at AD₂ ∩ AS — small Y rise + big P rise ── */
+      { x: Y2_K, y: P2_K,
+        intersection: { curves: ['AD2', 'AS_K'], near: [Y2_K, P2_K] },
+        id: 'E2_K', tone: 'amber', radius: 5.5, hollow: true,
         label: 'E₂', labelDx: 10, labelDy: -4, anchor: 'start',
         perspective: 'keynesian', layer: 'idl-2' }
     ],

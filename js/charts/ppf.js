@@ -261,6 +261,119 @@
     ];
   }
 
+  /* Parse an SVG path d-string into a list of segments. Each segment is
+     {type:'line', p0, p1} or {type:'cubic', p0, p1, p2, p3}. Supports the
+     absolute commands actually used in chart specs: M (move), L (line),
+     C (cubic Bezier). Returns null on parse failure.
+
+     The segments share endpoints — segment N's p1/p3 equals segment N+1's
+     p0. This makes intersection sampling trivial: just iterate segments.
+
+     Used by the intersection solver (`point.intersection: { curves: [...] }`)
+     so authors can declare equilibrium points by curve identity rather
+     than hand-computing coordinates. */
+  function parsePath(d) {
+    if (typeof d !== 'string') return null;
+    var tokens = d.match(/[MLC]|-?[\d.]+/g);
+    if (!tokens) return null;
+    var segments = [];
+    var cursor = null;
+    var i = 0;
+    while (i < tokens.length) {
+      var cmd = tokens[i++];
+      if (cmd === 'M') {
+        cursor = [parseFloat(tokens[i++]), parseFloat(tokens[i++])];
+      } else if (cmd === 'L') {
+        if (!cursor) return null;
+        var p1 = [parseFloat(tokens[i++]), parseFloat(tokens[i++])];
+        segments.push({ type: 'line', p0: cursor, p1: p1 });
+        cursor = p1;
+      } else if (cmd === 'C') {
+        if (!cursor) return null;
+        var c1 = [parseFloat(tokens[i++]), parseFloat(tokens[i++])];
+        var c2 = [parseFloat(tokens[i++]), parseFloat(tokens[i++])];
+        var c3 = [parseFloat(tokens[i++]), parseFloat(tokens[i++])];
+        segments.push({ type: 'cubic', p0: cursor, p1: c1, p2: c2, p3: c3 });
+        cursor = c3;
+      } else {
+        return null;
+      }
+    }
+    return segments.length ? segments : null;
+  }
+
+  /* Find all intersection points between two segments. Returns a list
+     of [x, y] tuples (usually 0, 1, or 2 points). Handles:
+       - line ∩ line   (closed-form)
+       - line ∩ cubic  (sample-and-bisect for sign changes)
+       - cubic ∩ cubic (NOT IMPLEMENTED — none of our charts need it yet) */
+  function intersectLineLine(a, b) {
+    var x1 = a.p0[0], y1 = a.p0[1], x2 = a.p1[0], y2 = a.p1[1];
+    var x3 = b.p0[0], y3 = b.p0[1], x4 = b.p1[0], y4 = b.p1[1];
+    var denom = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+    if (Math.abs(denom) < 1e-9) return [];
+    var t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / denom;
+    var u = ((x1 - x3) * (y1 - y2) - (y1 - y3) * (x1 - x2)) / denom;
+    if (t < -1e-6 || t > 1 + 1e-6 || u < -1e-6 || u > 1 + 1e-6) return [];
+    return [[x1 + t * (x2 - x1), y1 + t * (y2 - y1)]];
+  }
+
+  function intersectLineCubic(line, cubic) {
+    // Cross-product sign function: f(t) = (B(t)-p0) × (p1-p0)
+    // Zero where the cubic crosses the (infinite) line through p0→p1.
+    var lx0 = line.p0[0], ly0 = line.p0[1];
+    var dx = line.p1[0] - lx0, dy = line.p1[1] - ly0;
+    var P = [cubic.p0, cubic.p1, cubic.p2, cubic.p3];
+    function f(t) {
+      var pt = cubicPoint(P, t);
+      return (pt[0] - lx0) * dy - (pt[1] - ly0) * dx;
+    }
+    var STEPS = 80, hits = [];
+    var prevF = f(0), prevT = 0;
+    for (var s = 1; s <= STEPS; s++) {
+      var t = s / STEPS;
+      var ff = f(t);
+      if ((prevF <= 0 && ff > 0) || (prevF >= 0 && ff < 0)) {
+        var lo = prevT, hi = t;
+        for (var j = 0; j < 30; j++) {
+          var mid = (lo + hi) / 2;
+          var fm = f(mid);
+          if ((prevF <= 0 && fm <= 0) || (prevF >= 0 && fm >= 0)) lo = mid;
+          else hi = mid;
+        }
+        var tFinal = (lo + hi) / 2;
+        var pt = cubicPoint(P, tFinal);
+        // Check that the intersection ALSO lies within the line segment's
+        // extent (not just the infinite line).
+        var len = Math.sqrt(dx * dx + dy * dy);
+        if (len > 1e-9) {
+          var u = ((pt[0] - lx0) * dx + (pt[1] - ly0) * dy) / (len * len);
+          if (u >= -1e-6 && u <= 1 + 1e-6) hits.push([pt[0], pt[1]]);
+        }
+      }
+      prevF = ff; prevT = t;
+    }
+    return hits;
+  }
+
+  function intersectSegments(a, b) {
+    if (a.type === 'line' && b.type === 'line') return intersectLineLine(a, b);
+    if (a.type === 'line' && b.type === 'cubic') return intersectLineCubic(a, b);
+    if (a.type === 'cubic' && b.type === 'line') return intersectLineCubic(b, a);
+    return []; // cubic ∩ cubic not yet needed
+  }
+
+  /* Find every intersection between two parsed paths (lists of segments). */
+  function intersectPaths(path1, path2) {
+    var hits = [];
+    path1.forEach(function (s1) {
+      path2.forEach(function (s2) {
+        intersectSegments(s1, s2).forEach(function (p) { hits.push(p); });
+      });
+    });
+    return hits;
+  }
+
   /* Compute a unit normal to the tangent. The returned vector points
      AWAY from origin for direction='outward', TOWARD origin for 'inward'. */
   function unitNormal(tangent, anchor, direction) {
@@ -1165,13 +1278,81 @@
     //   - pointRegistry:  point id → { x, y } in chart space
     //   - arrows:         every arrow with from/to references (for label
     //                     placement and for resolving from/to → coords)
-    var ctx = { curveRegistry: {}, pointRegistry: {}, allPoints: [], arrows: [], placedBoxes: [], devWarnings: [] };
+    var ctx = { curveRegistry: {}, pathRegistry: {}, pointRegistry: {}, allPoints: [], arrows: [], placedBoxes: [], devWarnings: [] };
 
     function registerCurve(c) {
       if (c && c.id) {
         var parsed = parseCubic(c.d);
         if (parsed) ctx.curveRegistry[c.id] = parsed;
+        // Also register a fully-parsed segment list (line + cubic
+        // segments) so the intersection solver can resolve points by
+        // curve identity instead of hand-computed coordinates.
+        var path = parsePath(c.d);
+        if (path) ctx.pathRegistry[c.id] = path;
       }
+    }
+
+    /* Resolve `point.intersection: { curves: ['AD1', 'AS'], near: [x, y] }`
+       to actual chart-space coordinates by computing every intersection
+       between the two named paths and picking the one nearest the `near`
+       hint. If `near` is omitted, picks the first hit.
+
+       Behaviour matrix:
+         - intersection only        → engine fills in pt.x, pt.y
+         - x/y only                 → unchanged (legacy)
+         - intersection AND x/y     → engine ASSERTS the explicit
+                                       coordinates match the solver's
+                                       answer within `INTERSECTION_TOL`
+                                       chart-units. Drift logs a dev
+                                       warning naming the point so the
+                                       author can fix the constant.
+                                       The solver's answer wins.
+
+       Logs (not throws) so a broken spec still renders. */
+    var INTERSECTION_TOL = 0.005; // chart-space units (~1.5px at default scale)
+    function resolveIntersection(pt) {
+      if (!pt || !pt.intersection || !Array.isArray(pt.intersection.curves)) return;
+      var ids = pt.intersection.curves;
+      var name = pt.id || ids.join('×');
+      if (ids.length !== 2) return;
+      var p1 = ctx.pathRegistry[ids[0]], p2 = ctx.pathRegistry[ids[1]];
+      if (!p1 || !p2) {
+        ctx.devWarnings.push('intersection ' + name + ': unknown curve(s) ' + ids.join(', '));
+        return;
+      }
+      var hits = intersectPaths(p1, p2);
+      if (!hits.length) {
+        ctx.devWarnings.push('intersection ' + name + ': no crossing of ' + ids.join(' × '));
+        return;
+      }
+      var hint = pt.intersection.near;
+      var chosen = hits[0];
+      if (hint && Array.isArray(hint) && hits.length > 1) {
+        var bestDist = Infinity;
+        hits.forEach(function (h) {
+          var dx = h[0] - hint[0], dy = h[1] - hint[1];
+          var d2 = dx * dx + dy * dy;
+          if (d2 < bestDist) { bestDist = d2; chosen = h; }
+        });
+      }
+      // Geometry assertion: if the spec also gave explicit x/y, verify
+      // it agrees with the solver. Drift > INTERSECTION_TOL is the
+      // textbook "hand-computed intersection point that slid off the
+      // curve" bug — author should remove the constants or fix them.
+      if (pt.x != null && pt.y != null) {
+        var dx = chosen[0] - pt.x, dy = chosen[1] - pt.y;
+        var drift = Math.sqrt(dx * dx + dy * dy);
+        if (drift > INTERSECTION_TOL) {
+          var msg = '[ECONOS_PPF] intersection ' + name + ': declared (' +
+            pt.x.toFixed(3) + ', ' + pt.y.toFixed(3) + ') drifts ' +
+            drift.toFixed(4) + ' from solver (' + chosen[0].toFixed(3) +
+            ', ' + chosen[1].toFixed(3) + ')';
+          ctx.devWarnings.push(msg);
+          try { console.warn(msg); } catch (e) {}
+        }
+      }
+      pt.x = chosen[0];
+      pt.y = chosen[1];
     }
     function registerPoint(p) {
       if (p && p.id) ctx.pointRegistry[p.id] = { x: p.x, y: p.y, on: p.on };
@@ -1190,12 +1371,24 @@
     // level (single), plus all views, so labels/arrows can reference
     // points/curves across the whole spec.
     var collectFrom = isMulti ? panels : [spec];
+    // First pass: register every curve (path) so the intersection solver
+    // can see all curves before any point tries to resolve against them.
     collectFrom.forEach(function (src) {
       (src.curves || []).forEach(registerCurve);
+      (src.views || []).forEach(function (v) {
+        (v.curves || []).forEach(registerCurve);
+      });
+    });
+    // Second pass: resolve `point.intersection: { curves: [...] }` to real
+    // (x, y) coordinates, then register points and arrows. Done in a
+    // separate pass so a point referencing a curve declared LATER in the
+    // spec still resolves correctly.
+    collectFrom.forEach(function (src) {
+      (src.points || []).forEach(resolveIntersection);
       (src.points || []).forEach(registerPoint);
       registerArrows(src.arrows);
       (src.views || []).forEach(function (v) {
-        (v.curves || []).forEach(registerCurve);
+        (v.points || []).forEach(resolveIntersection);
         (v.points || []).forEach(registerPoint);
         registerArrows(v.arrows);
       });

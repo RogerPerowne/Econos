@@ -2006,54 +2006,7 @@ window.ECONOS_ICONS = {
     <text x="217" y="253" font-size="9" fill="#065F46" text-anchor="middle">The trade-off between living standards today vs tomorrow</text>
   </svg>`,
 
-  ppfEfficiencyInteractive: `<svg viewBox="0 0 470 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-
-    <!-- ===== BASE: axes, PPF₁, zone labels (always visible) ===== -->
-    <line x1="90" y1="390" x2="90" y2="15" stroke="#334155" stroke-width="2"/>
-    <line x1="90" y1="390" x2="450" y2="390" stroke="#334155" stroke-width="2"/>
-    <polygon points="90,11 86,23 94,23" fill="#334155"/>
-    <polygon points="454,390 442,386 442,394" fill="#334155"/>
-    <text x="65" y="202" font-size="11" font-weight="700" fill="#334155" text-anchor="middle" transform="rotate(-90,65,202)">Consumer Goods</text>
-    <text x="270" y="408" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Capital Goods</text>
-    <text x="82" y="404" font-size="10" fill="#94A3B8" text-anchor="middle">O</text>
-    <path d="M 90,100 C 255,100 420,325 420,385" fill="none" stroke="#2563EB" stroke-width="3"/>
-    <text x="424" y="381" font-size="13" font-weight="700" fill="#2563EB">PPF₁</text>
-    <text x="178" y="358" font-size="11" fill="#94A3B8" font-style="italic" text-anchor="middle">Inefficient zone</text>
-    <text x="410" y="118" font-size="11" fill="#94A3B8" font-style="italic" text-anchor="end">Unattainable</text>
-    <text x="410" y="132" font-size="11" fill="#94A3B8" font-style="italic" text-anchor="end">zone</text>
-
-    <!-- ===== idl-1: H – productively inefficient (view 1+) ===== -->
-    <g class="idl-1" style="display:none">
-      <circle cx="155" cy="305" r="8" fill="#DC2626"/>
-      <text x="168" y="300" font-size="13" font-weight="700" fill="#DC2626">H</text>
-      <text x="186" y="300" font-size="12" fill="#475569">– inside PPF</text>
-      <text x="162" y="346" font-size="10.5" fill="#DC2626" font-style="italic" text-anchor="middle">resources idle</text>
-    </g>
-
-    <!-- ===== idl-2: productive efficiency points on curve (view 2+) ===== -->
-    <g class="idl-2" style="display:none">
-      <circle cx="188" cy="124" r="7" fill="#059669"/>
-      <circle cx="317" cy="220" r="7" fill="#059669"/>
-      <text x="327" y="215" font-size="13" font-weight="700" fill="#059669">F</text>
-      <circle cx="380" cy="297" r="7" fill="#059669"/>
-      <rect x="94" y="175" width="138" height="20" rx="5" fill="#ECFDF5" stroke="#A7F3D0"/>
-      <text x="163" y="189" font-size="10" font-weight="700" fill="#065F46" text-anchor="middle">Any point ON PPF₁</text>
-    </g>
-
-    <!-- ===== idl-3: G★ – allocative efficiency (view 3) ===== -->
-    <g class="idl-3" style="display:none">
-      <circle cx="234" cy="150" r="9" fill="#D97706"/>
-      <text x="234" y="155" font-size="11" font-weight="900" fill="#fff" text-anchor="middle">★</text>
-      <text x="248" y="143" font-size="13" font-weight="700" fill="#D97706">G★</text>
-      <rect x="258" y="94" width="100" height="32" rx="6" fill="#FFFBEB" stroke="#FDE68A"/>
-      <text x="308" y="107" font-size="10" font-weight="700" fill="#B45309" text-anchor="middle">Allocatively</text>
-      <text x="308" y="120" font-size="10" font-weight="700" fill="#B45309" text-anchor="middle">efficient: P = MC</text>
-      <line x1="258" y1="112" x2="248" y2="143" stroke="#D97706" stroke-width="1.2" stroke-dasharray="4 3"/>
-      <text x="328" y="232" font-size="10" fill="#64748B" text-anchor="middle" font-style="italic">F: productively efficient</text>
-      <text x="328" y="244" font-size="10" fill="#64748B" text-anchor="middle" font-style="italic">but NOT allocatively efficient</text>
-    </g>
-
-  </svg>`,
+  ppfEfficiencyInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD5_SPEC),
 
   ppfTrade: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
     <rect width="440" height="300" fill="#F8FAFC" rx="10"/>

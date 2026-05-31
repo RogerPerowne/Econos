@@ -1,26 +1,29 @@
 /* ============================================================
    LRAS Views Interactive — engine spec for lrasViewsInteractive.
-   Aggregate-supply card 3 "Two views of long-run aggregate supply".
+   Aggregate-supply card 3 "The LRAS curve".
 
-   Side-by-side comparison rendered as exclusive-layer views:
-     view 1 → Classical LRAS (vertical line at Yf) + equilibrium
-     view 2 → Keynesian LRAS (reverse-L / hockey-stick) with
-              three labelled regions: flat → rising → vertical
+   Classical vs Keynesian as a PERSPECTIVE TOGGLE (not a stepped
+   view sequence). Default Classical; the pill above the chart
+   flips to Keynesian. The two AS shapes cross-fade via the
+   engine's opacity-based perspective CSS — same chart frame,
+   two interpretations.
 
-   The Keynesian shape follows the textbook canonical form:
-     • PERFECTLY horizontal at a low price level over the spare-
-       capacity range (no sag, no slope — even tiny upward drift
-       in the flat section is a common student error)
-     • Smooth bottleneck curve as the economy approaches Yf
-     • Vertical at Yf — capacity ceiling, AS perfectly inelastic
-   References:
-     tutor2u 2.3.3 LRAS, TutorChase Edexcel notes, IBonomics
-     Keynesian AD–LRAS diagram. All three describe the same
-     three-zone "bendy L" shape.
+     perspective='classical' → vertical LRAS at Yf + equilibrium
+                               point at (Yf, P₀)
+     perspective='keynesian' → textbook reverse-L:
+                               • PERFECTLY horizontal flat range
+                                 (zero slope — common student error)
+                               • smooth bottleneck curve
+                               • vertical at Yf — capacity ceiling
+                               + three region labels
 
-   The article-page bridge maps `.show-classical` → idl-1 and
-   `.show-keynesian` → idl-2 so static articles can drive the
-   same SVG via their wrapper-class state machine.
+   References for the Keynesian shape: tutor2u 2.3.3 LRAS,
+   TutorChase Edexcel notes, IBonomics Keynesian AD–LRAS diagram —
+   all describe the same three-zone "bendy L".
+
+   No layerAliases — articles don't yet embed this chart, and the
+   perspective system has no equivalent alias mechanism. Add one
+   if/when an article needs it.
    ============================================================ */
 (function () {
   'use strict';
@@ -33,25 +36,20 @@
     height: 300,
     chartArea: { x: 55, y: 18, width: 360, height: 254 },
     className: 'lras-views-interactive-svg',
-    layers: ['idl-1', 'idl-2'],
-    layerMode: 'exclusive',
-    layerAliases: {
-      'idl-1': ['show-classical'],
-      'idl-2': ['show-keynesian']
-    },
+    perspectives: ['classical', 'keynesian'],
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
     },
 
     curves: [
-      /* ── Classical (idl-1): straight vertical LRAS at Yf ── */
+      /* ── Classical: straight vertical LRAS at Yf ── */
       { d: 'M ' + YF + ',0 L ' + YF + ',0.992',
         tone: 'blue', label: 'LRAS', strokeWidth: 2.5,
         labelDx: 8, labelDy: -2, anchor: 'start',
-        layer: 'idl-1' },
+        perspective: 'classical' },
 
-      /* ── Keynesian (idl-2): textbook reverse-L shape ──
+      /* ── Keynesian: textbook reverse-L shape ──
          M  : start at low-Y, low-P (just past the y-axis)
          L  : PERFECTLY horizontal flat range (no slope)
          C  : smooth bottleneck transition (cubic Bezier)
@@ -63,39 +61,39 @@
       { d: 'M 0.042,0.224 L 0.300,0.224 C 0.450,0.224 ' + YF + ',0.450 ' + YF + ',0.850 L ' + YF + ',0.992',
         tone: 'amber', label: 'LRAS', strokeWidth: 2.5,
         labelDx: 0, labelDy: -10, anchor: 'middle',
-        layer: 'idl-2' },
+        perspective: 'keynesian' },
 
-      /* ── Keynesian: dashed Yf reference (so the vertical zone
-            reads as a hard ceiling, not just a curve tail) ── */
+      /* ── Keynesian: dashed Yf reference so the vertical zone
+            reads as a hard ceiling, not just a curve tail ── */
       { d: 'M ' + YF + ',0.040 L ' + YF + ',0.992',
         tone: 'slate', strokeWidth: 1, dashed: '4 3',
-        layer: 'idl-2' }
+        perspective: 'keynesian' }
     ],
 
     points: [
       /* Classical equilibrium dot at (Yf, P₀) with gridlines + ticks */
       { x: YF, y: P0, tone: 'blue', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { y: 'P₀' },
-        layer: 'idl-1' }
+        perspective: 'classical' }
     ],
 
     texts: [
       /* Classical: Yf tick + sub-caption */
       { x: YF, y: -0.063, text: 'Yf', tone: 'slate', bold: true,
-        fontSize: 12, anchor: 'middle', layer: 'idl-1' },
+        fontSize: 12, anchor: 'middle', perspective: 'classical' },
       { x: YF, y: -0.118, text: '(full-capacity output)',
-        tone: 'slate', fontSize: 9, anchor: 'middle', layer: 'idl-1' },
+        tone: 'slate', fontSize: 9, anchor: 'middle', perspective: 'classical' },
 
       /* Keynesian: three region labels */
       { x: 0.165, y: 0.157, text: 'Flat range',
-        tone: 'green', bold: true, fontSize: 10, anchor: 'middle', layer: 'idl-2' },
+        tone: 'green', bold: true, fontSize: 10, anchor: 'middle', perspective: 'keynesian' },
       { x: 0.420, y: 0.370, text: 'Rising range',
-        tone: 'amber', bold: true, fontSize: 10, anchor: 'middle', layer: 'idl-2' },
+        tone: 'amber', bold: true, fontSize: 10, anchor: 'middle', perspective: 'keynesian' },
       { x: 0.625, y: 0.835, text: 'Capacity limit',
-        tone: 'rose', bold: true, fontSize: 10, anchor: 'start', layer: 'idl-2' },
+        tone: 'rose', bold: true, fontSize: 10, anchor: 'start', perspective: 'keynesian' },
       /* Keynesian: Yf tick */
       { x: YF, y: -0.051, text: 'Yf', tone: 'slate', bold: true,
-        fontSize: 12, anchor: 'middle', layer: 'idl-2' }
+        fontSize: 12, anchor: 'middle', perspective: 'keynesian' }
     ]
   };
 })();

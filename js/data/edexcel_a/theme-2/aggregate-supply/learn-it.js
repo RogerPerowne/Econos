@@ -191,21 +191,23 @@ window.ECONOS_TOPIC = {
         svgKey: 'lrasViewsInteractive',
         label: 'TWO VIEWS OF LRAS',
         emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
+        layers: [],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical', keynesian: 'Keynesian' },
         views: [
           {
-            label: 'Classical',
-            show: ['idl-1'],
-            tone: 'blue',
-            head: 'The classical view holds that LRAS is vertical at Yf.',
-            body: ['With full flexibility of wages and prices, markets self-adjust.', 'Therefore, in the long run there is no trade-off between inflation and output.']
-          },
-          {
-            label: 'Keynesian',
-            show: ['idl-2'],
-            tone: 'amber',
-            head: 'Keynesians argue LRAS is not vertical in the short run.',
-            body: ['When there is spare capacity (range 1), output can rise without much increase in the price level.', 'As the economy nears Yf, inflation pressure rises sharply.']
+            label: 'LRAS shape',
+            tone: 'slate',
+            classical: {
+              head: 'The classical view holds that LRAS is vertical at Yf.',
+              body: ['With full flexibility of wages and prices, markets self-adjust.', 'Therefore, in the long run there is no trade-off between inflation and output.'],
+              analysis: 'Output is determined entirely by capacity. Demand shocks change the price level but not Y in the long run — money is neutral.'
+            },
+            keynesian: {
+              head: 'Keynesians argue LRAS has a flat range, a rising range and a vertical capacity ceiling.',
+              body: ['When there is spare capacity (range 1), output can rise without much increase in the price level.', 'As the economy nears Yf, inflation pressure rises sharply.'],
+              analysis: 'The shape of AS depends on where the economy sits. Deep in spare capacity, demand stimulus mostly raises Y. Near capacity, it mostly raises P.'
+            }
           }
         ]
       },

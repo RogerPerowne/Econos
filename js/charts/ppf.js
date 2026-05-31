@@ -1011,8 +1011,15 @@
     // skip the rest of the per-panel rendering — there's nothing to draw.
     if (!area) return;
 
+    // Items can carry BOTH `layer: 'idl-N'` (narrative reveal) AND
+    // `perspective: 'classical'|'keynesian'` (school-of-thought toggle).
+    // Inner-first: perspective wraps first, then layer wraps on top —
+    // hiding the layer hides both; hiding the perspective hides only
+    // that variant while keeping the layer reveal intact.
     function maybeWrap(shape, rendered) {
-      return shape.layer ? wrapLayer(shape.layer, [rendered]) : rendered;
+      if (shape.perspective) rendered = wrapLayer('perspective-' + shape.perspective, [rendered]);
+      if (shape.layer) rendered = wrapLayer(shape.layer, [rendered]);
+      return rendered;
     }
 
     (panel.polygons || []).forEach(function (p) {
@@ -1129,7 +1136,23 @@
       }
       layerCss = '<style>' + hides + reveals + aliasReveals + inverseCss + '</style>';
     }
-    parts.push('<defs>' + clips + layerCss + (spec.defs || '') + '</defs>');
+    // `spec.perspectives: ['classical', 'keynesian']` declares a binary
+    // school-of-thought toggle. Primitives opt in via `perspective:
+    // 'classical'` (or 'keynesian'); the engine wraps them in
+    // `<g class="perspective-X">` and emits CSS so only the perspective
+    // matching the wrapper's `.chart-<name>` class is visible. Items
+    // without a perspective field are shared base content — visible
+    // under every perspective. There is no `'both'` value: shared
+    // primitives simply omit the field.
+    var perspectiveCss = '';
+    if (Array.isArray(spec.perspectives) && spec.perspectives.length) {
+      var pHides = spec.perspectives.map(function (p) { return '.perspective-' + p; }).join(',') + '{display:none}';
+      var pReveals = spec.perspectives.map(function (p) {
+        return '.chart-' + p + ' .perspective-' + p + '{display:block}';
+      }).join('');
+      perspectiveCss = '<style>' + pHides + pReveals + '</style>';
+    }
+    parts.push('<defs>' + clips + layerCss + perspectiveCss + (spec.defs || '') + '</defs>');
 
     var bg = spec.background || '#FFFFFF';
     parts.push('<rect width="' + width + '" height="' + height + '" fill="' + bg + '" rx="12"/>');

@@ -12942,8 +12942,6 @@ window.ECONOS_ICONS = {
     </g>
   </svg>`,
 
-  adShiftPerspectives: window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_PERSPECTIVES_SPEC),
-
   srasRightShiftInteractive: `<svg viewBox="0 0 440 305" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
     <defs><style>
       .idl-1{display:none}.idl-2{display:none}.idl-old-solid{display:block}

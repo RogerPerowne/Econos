@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.1 — 2026-05-31
+
+### econDiagram reference validator (Goal 3) — anti-invention gate
+
+- **`scripts/check-econ-diagrams.mjs`** (`npm run check:diagrams`) loads the
+  engine + all chart families to build the family registry, then walks every
+  econDiagram block in `js/data` and checks that each curve/point a view
+  references (`show`, `hide`, `shifts`, `areas.between`, `brackets.between`,
+  `points`, `arrows`) actually exists in that chart family. A migrated card that
+  invents a curve or point now fails the build instead of shipping a silently
+  broken diagram.
+- Wired into `scripts/lint.sh`, so it runs in pre-commit and CI.
+- `docs/STATIC_CHARTS.md` updated for the "migrate everything" directive: curve
+  charts → econDiagram (add a family if none fits), structural/flow visuals →
+  graphics blocks (add a layout if none fits). No bespoke SVGs remain the goal.
+
 ## 0.37.0 — 2026-05-31
 
 ### Interactive-diagram migration apparatus + first interactive card

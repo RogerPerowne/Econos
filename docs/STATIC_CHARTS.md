@@ -36,31 +36,34 @@ skill and `docs/DIAGRAM_LIBRARY.md` for the engine reference.
 - An explicitly-empty curve `display: ''` suppresses the label (quiet reference lines). (this PR)
 - Views support `head` + `body` + `analysis` (the legacy three-part panel shape). (this PR)
 
-## Interactive — keep as legacy (do NOT force into econDiagram)
+## Directive: migrate EVERYTHING (2026-05-31)
 
-These use draggable handles, animation, or text-input scaffolds the declarative
-engine does not model. Migrate the AROUND-the-diagram blocks if cheap, but keep
-the widget on its legacy template.
+The owner wants every hand-rolled diagram migrated for consistency — nothing
+stays as a bespoke SVG. Two destination systems:
 
-| Card / template | Reason |
-|---|---|
-| `transmission-chain` | animated horizontal mechanism flow |
-| `elasticity-explorer`, `yed-xed-explorer`, `pes-explorer` | draggable curve widgets |
-| `welfare-gf-explorer` | interactive welfare-loss with drag handles |
-| `regulatory-capture-explorer` | bespoke animation |
-| `essay-scaffold` | text-input essay template (not a diagram) |
-| `market-structures-comparison` | multi-panel side-by-side interactive |
+- **Curve charts → `econDiagram`.** If no family fits, **add a chart family**
+  (don't keep-as-legacy). Preserve all content and visuals.
+- **Structural / flow / scene visuals → graphics blocks** (`window.ECONOS_GFX`).
+  If no layout fits, **add a graphics layout**. Covers dashboards
+  (`macroDashboardSvg`, `macroCockpit`), circular flows (`nationalIncomeFlow`),
+  hub-and-spoke (`enterpriseCombinationSvg`), tile-grids (`landTypesSvg`),
+  scorecards (`growthScorecard`), feedback loops (`investmentFeedbackLoop`).
 
-## Chart-family gaps blocking faithful migration
+Draggable explorers (`elasticity-explorer`, `pes-explorer`, `welfare-gf-explorer`)
+convert to multi-view econDiagram — discrete views replace the continuous drag,
+preserving the pedagogy. Only genuine **non-visual scaffolds** (`essay-scaffold`,
+a text-input template) have nothing to migrate.
 
-- **Keynesian (non-vertical) AS** — `adas` has only a vertical LRAS anchor, so
-  Classical-vs-Keynesian cards (e.g. aggregate-supply `lrasViewsInteractive`)
-  can't migrate yet. Needs a 3-segment AS shape.
-- **MEC / investment-demand** (`mecDiagram`), **price discrimination**
-  (`firstDegreePd` / `thirdDegreePd`) — no matching family.
+## Chart-family / graphics-layout gaps to BUILD
 
-## Not econDiagram targets (flow / structure / scene graphics)
+- **Keynesian (non-vertical) AS** chart family (or `adas` variant) — 3-segment
+  AS for Classical-vs-Keynesian cards (e.g. aggregate-supply `lrasViewsInteractive`).
+- **MEC / investment-demand** family (`mecDiagram`).
+- **Price discrimination** family (`firstDegreePd` / `thirdDegreePd`).
+- Graphics layouts as needed for the dashboards / scorecards / flows above.
 
-Hub-and-spoke, dashboards (`macroDashboardSvg`, `macroCockpit`), circular flows
-(`nationalIncomeFlow`), tile-grids (`landTypesSvg`), scorecards, feedback loops —
-these belong to the structural-graphics blocks or stay as hero SVGs. Leave them.
+## Tooling
+
+- `npm run check:diagrams` (`scripts/check-econ-diagrams.mjs`) — validates every
+  econDiagram block's curve/point refs against its family. Wired into
+  `scripts/lint.sh` as the anti-invention gate.

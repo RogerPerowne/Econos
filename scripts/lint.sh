@@ -91,11 +91,25 @@ check_no_legacy_stub_files() {
   fi
 }
 
+# ------------------------------------------------------------
+# econDiagram reference integrity (anti-invention gate).
+# Every econDiagram block in js/data must reference only curves
+# and points its chart family actually defines. Catches a migrated
+# card that invents a curve/point before it ships a broken diagram.
+# ------------------------------------------------------------
+check_econ_diagram_refs() {
+  if ! node scripts/check-econ-diagrams.mjs; then
+    echo "lint: econDiagram reference check failed (see above)"
+    fail=1
+  fi
+}
+
 main() {
   check_engine_navigation
   check_no_new_polish_blocks
   check_no_legacy_html_refs
   check_no_legacy_stub_files
+  check_econ_diagram_refs
   if [ "$fail" -ne 0 ]; then
     echo
     echo "lint: FAILED"

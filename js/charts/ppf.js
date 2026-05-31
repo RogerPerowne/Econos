@@ -1431,6 +1431,87 @@
     return merged;
   }
 
+  /* Build SVG accessibility metadata for a spec. Returns
+     `{ title, desc }`. Spec can override either:
+
+       altTitle: 'Custom short summary'
+       altDesc:  'Long-form description with all the detail.'
+
+     Otherwise the engine scans curves + points + axes (across all
+     panels and views) and assembles a sensible sentence:
+
+       title: "Chart with AD₁, AD₂, LRAS curves and E₁, E₂ points"
+       desc:  "Real output (Y) on x-axis, Price level (P) on y-axis.
+               Curves: AD₁, AD₂, LRAS. Points: E₁ at (0.65, 0.25),
+               E₂ at (0.65, 0.37)."
+
+     Crude but covers the screen-reader baseline: a non-sighted user
+     gets at least the structure of the chart instead of "image". */
+  function escapeXml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function buildAltText(spec) {
+    if (spec.altTitle && spec.altDesc) {
+      return { title: escapeXml(spec.altTitle), desc: escapeXml(spec.altDesc) };
+    }
+    var sources = Array.isArray(spec.panels) && spec.panels.length ? spec.panels : [spec];
+    var curveLabels = [], pointDescs = [], axes = null;
+    sources.forEach(function (src) {
+      if (!axes && src.axes) axes = src.axes;
+      (src.curves || []).forEach(function (c) {
+        if (c.label) curveLabels.push(c.label);
+      });
+      (src.points || []).forEach(function (p) {
+        if (p.label || p.id) {
+          var n = p.label || p.id;
+          if (p.x != null && p.y != null) {
+            pointDescs.push(n + ' at (' + p.x.toFixed(2) + ', ' + p.y.toFixed(2) + ')');
+          } else {
+            pointDescs.push(n);
+          }
+        }
+      });
+      (src.views || []).forEach(function (v) {
+        (v.curves || []).forEach(function (c) { if (c.label) curveLabels.push(c.label); });
+        (v.points || []).forEach(function (p) {
+          if (p.label || p.id) {
+            var n = p.label || p.id;
+            if (p.x != null && p.y != null) {
+              pointDescs.push(n + ' at (' + p.x.toFixed(2) + ', ' + p.y.toFixed(2) + ')');
+            }
+          }
+        });
+      });
+    });
+    // Dedupe in order.
+    function dedupe(a) { var s = {}, out = []; a.forEach(function (x) { if (!s[x]) { s[x] = 1; out.push(x); } }); return out; }
+    curveLabels = dedupe(curveLabels);
+    pointDescs = dedupe(pointDescs);
+    var title;
+    if (spec.altTitle) {
+      title = spec.altTitle;
+    } else if (curveLabels.length && pointDescs.length) {
+      title = 'Chart with ' + curveLabels.join(', ') + ' curves and ' +
+              pointDescs.map(function (p) { return p.split(' at ')[0]; }).join(', ') + ' points';
+    } else if (curveLabels.length) {
+      title = 'Chart with ' + curveLabels.join(', ') + ' curves';
+    } else {
+      title = 'Econos chart';
+    }
+    var descParts = [];
+    if (axes) {
+      var xl = axes.x && axes.x.label;
+      var yl = axes.y && axes.y.label;
+      if (xl && yl) descParts.push(xl + ' on x-axis, ' + yl + ' on y-axis.');
+    }
+    if (curveLabels.length) descParts.push('Curves: ' + curveLabels.join(', ') + '.');
+    if (pointDescs.length) descParts.push('Points: ' + pointDescs.join(', ') + '.');
+    return {
+      title: escapeXml(title),
+      desc: escapeXml(spec.altDesc || (descParts.join(' ') || title))
+    };
+  }
+
   function render(specInput) {
     var spec = applyTemplate(specInput);
     var width = spec.width || 560;
@@ -1447,7 +1528,15 @@
     var area = isMulti ? null : (spec.chartArea || { x: 60, y: 50, width: width - 100, height: height - 100 });
 
     var parts = [];
-    parts.push('<svg class="' + className + '" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">');
+    // Auto-generate accessibility metadata. Spec may override either
+    // field with explicit text; otherwise the engine scans curves +
+    // points + axes and assembles a single descriptive sentence.
+    // Emitted as `<title>` (short, hover + screen-reader summary) and
+    // `<desc>` (longer description) per SVG accessibility guidelines.
+    var altMeta = buildAltText(spec);
+    parts.push('<svg class="' + className + '" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-labelledby="econos-chart-title econos-chart-desc">');
+    parts.push('<title id="econos-chart-title">' + altMeta.title + '</title>');
+    parts.push('<desc id="econos-chart-desc">' + altMeta.desc + '</desc>');
 
     // Per-panel auto-clips for `renderCurve`'s automatic clipping. Single-
     // panel charts use the legacy id `econos-chart-clip`; multi-panel

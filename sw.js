@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v139';
+  const CACHE_NAME = 'econos-v141';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -20,6 +20,7 @@
     '/js/charts/specs/ppf-card4.js',
     '/js/charts/specs/ppf-card5.js',
     '/js/charts/specs/ppf-card6.js',
+    '/js/charts/specs/demand-card4.js',
   ];
 
   /* ────────────────────────────────────────────────────────────

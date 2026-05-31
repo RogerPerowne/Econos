@@ -557,6 +557,18 @@
     return { dx: fallback.dx, dy: fallback.dy, anchor: fallback.anchor, bbox: fbbox };
   }
 
+  /* Filled polygon — points are a list of [x, y] in 0..1 chart space.
+     Renders as <polygon> with the tone fill at the given opacity. */
+  function renderPolygon(poly, scale) {
+    var t = tone(poly.tone || 'green');
+    var pts = (poly.points || []).map(function (p) {
+      return scale.sx(p[0]) + ',' + scale.sy(p[1]);
+    }).join(' ');
+    var opacity = poly.opacity != null ? poly.opacity : 0.85;
+    var fill = poly.fill || t.stroke + '33'; // 20% alpha tint of tone
+    return '<polygon points="' + pts + '" fill="' + fill + '" opacity="' + opacity + '"/>';
+  }
+
   function renderPoint(pt, scale, ctx, area) {
     var t = tone(pt.tone);
     var cx = scale.sx(pt.x);
@@ -582,7 +594,12 @@
     var symbolHtml = pt.symbol ? '<text x="' + cx + '" y="' + (cy + 1) + '" font-size="' + Math.round(r * 1.4) + '" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="middle">' + pt.symbol + '</text>' : '';
     var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
     var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
-    return '<g class="chart-point"><circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="' + t.stroke + '"/>' + symbolHtml + labelHtml + descHtml + '</g>';
+    // Hollow points render as an open circle (stroke only, white fill).
+    // Used for equilibrium markers like the demand chart's (Q*, P*) dot.
+    var circle = pt.hollow
+      ? '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="#FFFFFF" stroke="' + t.stroke + '" stroke-width="2.5"/>'
+      : '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="' + t.stroke + '"/>';
+    return '<g class="chart-point">' + circle + symbolHtml + labelHtml + descHtml + '</g>';
   }
 
   /* Boxed annotation label — rounded rect with one or more lines of
@@ -681,7 +698,7 @@
   function renderLegend(legend) {
     if (!legend) return '';
     var x = legend.x || 600;
-    var y = 31;
+    var y = legend.y || 31;
     var parts = ['<g class="chart-legend">'];
 
     if (legend.title) {
@@ -880,22 +897,38 @@
       registerArrows(v.arrows);
     });
 
+    // Helper: wrap a rendered string in <g class="X"> if shape declares a layer.
+    function maybeWrap(shape, rendered) {
+      return shape.layer ? wrapLayer(shape.layer, [rendered]) : rendered;
+    }
+
+    // Top-level polygons (filled shapes like CS triangles), painted
+    // BEFORE curves so curves sit on top of fills.
+    (spec.polygons || []).forEach(function (p) {
+      parts.push(maybeWrap(p, renderPolygon(p, scale)));
+    });
+
     // Always-visible curves (each curve can carry its own layer name for opacity targeting)
     (spec.curves || []).forEach(function (c) {
-      var rendered = renderCurve(c, scale);
-      parts.push(c.layer ? wrapLayer(c.layer, [rendered]) : rendered);
+      parts.push(maybeWrap(c, renderCurve(c, scale)));
     });
 
     // Top-level shapes (for single-view charts where everything is
-    // always-visible). Order: zones → arrows → gridlines → points.
-    // Arrows render BEFORE points so the dot overlays the arrow's end.
-    (spec.zones || []).forEach(function (z) { parts.push(renderZone(z, scale)); });
-    (spec.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, ctx.curveRegistry, ctx)); });
+    // always-visible). Each shape can carry a `layer:` field for CSS-
+    // toggleable visibility (e.g. .show-cs / .show-pfall on demand-cs).
+    (spec.zones || []).forEach(function (z) { parts.push(maybeWrap(z, renderZone(z, scale))); });
+    (spec.arrows || []).forEach(function (a) { parts.push(maybeWrap(a, renderArrow(a, scale, ctx.curveRegistry, ctx))); });
     (spec.points || []).forEach(function (p) {
-      parts.push(renderPointGridlines(p, scale, area));
-      parts.push(renderPoint(p, scale, ctx, area));
+      var renderedDot = renderPointGridlines(p, scale, area) + renderPoint(p, scale, ctx, area);
+      parts.push(maybeWrap(p, renderedDot));
     });
-    (spec.texts || []).forEach(function (t) { parts.push(renderText(t, scale, ctx, area)); });
+    (spec.texts || []).forEach(function (t) { parts.push(maybeWrap(t, renderText(t, scale, ctx, area))); });
+
+    // Top-level multiple legends (each in its own layer wrapper).
+    (spec.legends || []).forEach(function (lg) {
+      var rendered = renderLegend(lg);
+      parts.push(lg.layer ? wrapLayer(lg.layer, [rendered]) : rendered);
+    });
 
     // Multi-view: each view emits a content layer + a legend layer.
     // If the spec sets `viewDefaultsHidden`, each view's content/legend

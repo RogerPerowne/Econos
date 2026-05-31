@@ -4478,6 +4478,13 @@
       </button>
     `).join('') : '';
 
+    if (window.ECONOS_DEV && hasSteps) {
+      c.steps.forEach((s) => {
+        const len = (s.text || '').length;
+        if (len > 280) console.warn('[econos:ad-interactive] step "' + s.key + '" body is ' + len + ' chars (>280) — trim to keep stage height stable');
+      });
+    }
+
     const panels = hasSteps ? c.steps.map((s, i) => `
       <div class="ad-panel ${i === 0 ? 'is-active' : ''}" data-panel-key="${s.key}">
         <div class="ad-panel__title">${s.label}</div>

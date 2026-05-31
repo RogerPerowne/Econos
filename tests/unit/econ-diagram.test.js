@@ -250,6 +250,44 @@ describe('per-view curve visibility (show / hide)', () => {
     expect(html.match(/>PS</g) || []).toHaveLength(1);
   });
 
+  it('a view with head + body + analysis renders all three (escaped) in the panel', () => {
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'supplyDemand',
+      views: [{
+        label: 'Tax wedge', shifts: {}, show: ['D', 'S'],
+        head: 'The tax wedge', body: 'S shifts up to S+tax.',
+        analysis: 'The gap Pc − Pp equals the per-unit tax.'
+      }]
+    });
+    expect(html).toContain('ed-panel__head');
+    expect(html).toContain('The tax wedge');
+    expect(html).toContain('ed-panel__lead');
+    expect(html).toContain('S shifts up to S+tax.');
+    expect(html).toContain('ed-panel__body');
+    expect(html).toContain('The gap Pc − Pp equals the per-unit tax.');
+  });
+
+  it('tax welfare view renders S+tax, the revenue rectangle and DWL — with quiet reference lines', () => {
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'supplyDemand',
+      views: [{
+        label: 'Tax', shifts: {},
+        show: ['D', 'S', 'S_taxed', 'PcTaxLine', 'PpTaxLine'],
+        points: ['Pc_tax', 'Pp_tax', 'Qt_tax'],
+        areas: [
+          { between: ['PcTaxLine', 'PpTaxLine'], x: [80, 317.5], tone: 'green', label: 'Tax revenue' },
+          { between: ['D', 'S'], x: [317.5, 380], tone: 'rose', hatch: true, label: 'DWL' }
+        ]
+      }]
+    });
+    expect(html).toContain('S+tax');                              // post-tax supply curve renders
+    expect(html.match(/>Tax revenue</g) || []).toHaveLength(1);   // revenue rectangle labelled once
+    expect(html.match(/>DWL</g) || []).toHaveLength(1);           // DWL triangle labelled once
+    // The empty-display price lines render as quiet references — their ids must NOT leak as labels.
+    expect(html).not.toContain('PcTaxLine');
+    expect(html).not.toContain('PpTaxLine');
+  });
+
   it('omitting show renders all NON-optional baseline curves (optional ones stay hidden until opted in)', () => {
     const html = window.ECONOS_BLOCKS.econDiagram({
       chart: 'supplyDemand',

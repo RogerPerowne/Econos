@@ -25,7 +25,22 @@ skill and `docs/DIAGRAM_LIBRARY.md` for the engine reference.
 | price-determination | `equilibriumBasic`, `welfareSurplusDiagram` | supplyDemand | #806 |
 | equilibrium-national-income | `eniAdAsCore` | adas | #806 |
 | national-income-and-the-multiplier | `multiplierAdAs` | adas | #806 |
-| consumer-and-producer-surplus | `taxDiagramInteractive` (card 3), `subsidyDiagramInteractive` (card 4) | supplyDemand | (this PR) |
+| consumer-and-producer-surplus | `taxDiagramInteractive` (card 3), `subsidyDiagramInteractive` (card 4) | supplyDemand | #807 |
+| indirect-taxes-and-subsidies | `taxIncidenceInteractive` (card 2), `subsidyInteractive` (card 3) | supplyDemand | #809 |
+| government-intervention-in-markets | `subsidyInteractive` (card 3), `priceCeilingDiagramInteractive` (card 4), `priceFloorDiagramInteractive` (card 5) | supplyDemand | #809 |
+
+### Still to migrate — capability gaps surfaced (build these)
+
+- **Ad-valorem (pivoting) tax supply curve** in `supplyDemand` — a wedge that
+  widens with price (vs the parallel `S_taxed`). Blocks: indirect-taxes card 1
+  (`taxTypesInteractive`), government-intervention card 2 (diagram array).
+- **Variable demand elasticity / two-panel** — steep-vs-flat D to show incidence
+  following the less elastic side. Blocks: indirect-taxes card 4
+  (`elasticityIncidenceInteractive`).
+- **`policySpectrumDiagram` → `spectrum`/`policyToolkit` graphics block** (those
+  blocks already exist). Blocks: government-intervention cards 1, 9.
+- **Draggable welfare** (`welfare-gf-explorer`, government-intervention card 10)
+  → convert to a multi-view `supplyDemand` welfare sequence.
 
 ## Engine capabilities added for the sweep
 

@@ -69,94 +69,140 @@ window.ECONOS_TOPIC = {
       id: 'indirect_taxes_subsidies_2',
       stepLabel: 'Learn: Step 2 of 4',
       title: 'Tax incidence: who actually pays?',
-      tip: { icon: '⚖️', tone: 'rose', text: '<strong>Legal incidence</strong> (who hands over the cash) ≠ <strong>economic incidence</strong> (who bears the burden). Step through the diagram to see the consumer share, the producer share, and the resulting tax revenue.' },
-      interactiveDiagram: {
-        svgKey: 'taxIncidenceInteractive',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Tax in place',
-            tone: 'blue',
-            head: 'The tax in place – Pc, Pp and the £T wedge',
-            body: 'The tax has shifted supply up to S+T. Quantity falls to <strong>Qt</strong>. Consumers pay <strong>Pc</strong>; producers receive net price <strong>Pp</strong> after remitting the tax. The vertical gap between Pc and Pp is the per-unit tax, <strong>£T</strong>.',
-            analysis: 'Pc > P₀ > Pp – consumers pay more, producers receive less, and the gap goes to government. The next steps split that gap into who bears how much, then total it as revenue.'
-          },
-          {
-            label: 'Consumer burden',
-            tone: 'blue',
-            head: 'Step 2 – the consumer burden',
-            body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer burden: <strong>(Pc − P₀) × Qt</strong>. It is the extra price consumers pay per unit times the quantity they actually buy.'
-          },
-          {
-            label: 'Producer burden',
-            tone: 'rose',
-            head: 'Step 3 – the producer burden',
-            body: 'The <strong style="color:#dc2626">red rectangle</strong> is the producer burden: <strong>(P₀ − Pp) × Qt</strong>. It is the reduction in net price per unit times the quantity sold.',
-            analysis: 'Together the blue and red rectangles partition the tax wedge. The relative size of each depends on elasticity – covered in card 4.'
-          },
-          {
-            label: 'Tax revenue',
-            tone: 'purple',
-            head: 'Step 4 – total tax revenue',
-            body: 'The purple-outlined area is total <strong>tax revenue = £T × Qt</strong>. It is exactly the sum of the consumer and producer burdens – every penny paid by buyers and sellers above/below P₀ ends up at HMRC.',
-            analysis: 'Whether this revenue is worth the deadweight loss and behavioural distortions is a policy judgement – see <strong>Taxes & Subsidies as Policy Tools</strong> (4.1).'
-          }
-        ]
-      },
-      keyTerms: [
-        { term: 'Legal incidence',    def: 'Who is legally responsible for remitting the tax to government – typically the seller for indirect taxes.' },
-        { term: 'Economic incidence', def: 'Who actually bears the burden through higher prices paid (consumers) or lower net receipts (producers) – determined by relative PED and PES.' },
-        { term: 'Consumer burden',    def: 'The portion of the tax borne by buyers: (P<sub>c</sub> − P<sub>0</sub>) × Q<sub>t</sub>. Larger when demand is inelastic relative to supply.' },
-        { term: 'Producer burden',    def: 'The portion of the tax borne by sellers: (P<sub>0</sub> − P<sub>p</sub>) × Q<sub>t</sub>. Larger when supply is inelastic relative to demand.' }
-      ],
-      examEdge: 'Always draw both the consumer burden and producer burden rectangles explicitly – many students draw the diagram correctly but forget to <strong>label and shade</strong> the burden split. A 25-mark answer needs both rectangles visible, both labelled, and a clear statement that Pc − Pp = £T per unit.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'rose', icon: '💡', text: 'Legal incidence (who hands over the cash) ≠ economic incidence (who bears the burden). Step through the diagram to see the consumer share, the producer share, and the resulting tax revenue.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'Splitting the tax wedge' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Tax in place',
+              show: ['D', 'S', 'S_taxed'],
+              points: ['Pc_tax', 'Pp_tax', 'Qt_tax', 'E'],
+              head: 'The tax in place — Pc, Pp and the £T wedge',
+              body: 'The tax has shifted supply up to S+tax. Quantity falls to Qₜ. Consumers pay Pc; producers receive net price Pp after remitting the tax. The vertical gap between Pc and Pp is the per-unit tax, £T.',
+              analysis: 'Pc > P₀ > Pp — consumers pay more, producers receive less, and the gap goes to government. The next steps split that gap into who bears how much, then total it as revenue.'
+            },
+            {
+              label: 'Consumer burden',
+              show: ['D', 'S', 'S_taxed', 'PcTaxLine', 'PriceLine'],
+              points: ['Pc_tax', 'Qt_tax'],
+              areas: [
+                { between: ['PcTaxLine', 'PriceLine'], x: [80, 317.5], tone: 'blue', label: 'Consumer burden' }
+              ],
+              head: 'Step 2 — the consumer burden',
+              body: 'The blue rectangle is the consumer burden: (Pc − P₀) × Qₜ. It is the extra price consumers pay per unit times the quantity they actually buy.'
+            },
+            {
+              label: 'Producer burden',
+              show: ['D', 'S', 'S_taxed', 'PriceLine', 'PpTaxLine'],
+              points: ['Pp_tax', 'Qt_tax'],
+              areas: [
+                { between: ['PriceLine', 'PpTaxLine'], x: [80, 317.5], tone: 'rose', label: 'Producer burden' }
+              ],
+              head: 'Step 3 — the producer burden',
+              body: 'The red rectangle is the producer burden: (P₀ − Pp) × Qₜ. It is the reduction in net price per unit times the quantity sold.',
+              analysis: 'Together the blue and red rectangles partition the tax wedge. The relative size of each depends on elasticity — covered in card 4.'
+            },
+            {
+              label: 'Tax revenue',
+              show: ['D', 'S', 'S_taxed', 'PcTaxLine', 'PpTaxLine'],
+              points: ['Pc_tax', 'Pp_tax', 'Qt_tax'],
+              areas: [
+                { between: ['PcTaxLine', 'PpTaxLine'], x: [80, 317.5], tone: 'purple', label: 'Tax revenue' }
+              ],
+              head: 'Step 4 — total tax revenue',
+              body: 'The purple rectangle is total tax revenue = £T × Qₜ. It is exactly the sum of the consumer and producer burdens — every penny paid by buyers and sellers above/below P₀ ends up at HMRC.',
+              analysis: 'Whether this revenue is worth the deadweight loss and behavioural distortions is a policy judgement — see Taxes & Subsidies as Policy Tools (4.1).'
+            }
+          ]
+        },
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            { type: 'tile', tone: 'blue', icon: '🧠', head: 'Legal vs economic incidence', body: 'The seller remits the tax, but the burden is shared. Who actually pays is set by the market, not by the law — it depends on relative elasticity, not on who hands HMRC the cash.' },
+            { type: 'tile', tone: 'rose', icon: '⚖️', head: 'The wedge is partitioned', body: 'Consumer burden (Pc − P₀)×Qₜ plus producer burden (P₀ − Pp)×Qₜ exactly equals tax revenue £T×Qₜ. Every unit above P₀ comes from buyers; every unit below P₀ comes from sellers.' }
+          ]
+        },
+        {
+          type: 'glossaryRow',
+          terms: [
+            { term: 'Legal incidence',    definition: 'Who is legally responsible for remitting the tax to government – typically the seller for indirect taxes.' },
+            { term: 'Economic incidence', definition: 'Who actually bears the burden through higher prices paid (consumers) or lower net receipts (producers) – determined by relative PED and PES.' },
+            { term: 'Consumer burden',    definition: 'The portion of the tax borne by buyers: (Pc − P₀) × Qₜ. Larger when demand is inelastic relative to supply.' },
+            { term: 'Producer burden',    definition: 'The portion of the tax borne by sellers: (P₀ − Pp) × Qₜ. Larger when supply is inelastic relative to demand.' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always draw both the consumer burden and producer burden rectangles explicitly – many students draw the diagram correctly but forget to label and shade the burden split. A 25-mark answer needs both rectangles visible, both labelled, and a clear statement that Pc − Pp = £T per unit.' }
+      ]
     },
 
     {
       id: 'indirect_taxes_subsidies_3',
       stepLabel: 'Learn: Step 3 of 4',
       title: 'How a subsidy works',
-      tip: { icon: '💡', tone: 'green', text: 'A subsidy is the mirror image of a tax – a government payment that shifts supply <em>down</em>, lowering the consumer price and raising the producer net price. Step through to see the consumer share, the producer share, and the cost to government.' },
-      interactiveDiagram: {
-        svgKey: 'subsidyInteractive',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Subsidy in place',
-            tone: 'green',
-            head: 'Subsidy in place – Pc, Pp and £S wedge',
-            body: 'The subsidy shifts supply down to S₁, raising quantity to <strong>Qs</strong>. Consumers pay <strong>Pc</strong> below P₀, while producers receive <strong>Pp</strong> above P₀ once the subsidy is added. The gap between Pp and Pc is the per-unit subsidy, <strong>£S</strong>.',
-            analysis: 'Pp > P₀ > Pc – producers receive more, consumers pay less, and the difference comes from government. The next steps split the wedge into who captures how much, then total it as cost.'
-          },
-          {
-            label: 'Consumer benefit',
-            tone: 'blue',
-            head: 'Step 2 – the consumer benefit',
-            body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer benefit: <strong>(P₀ − Pc) × Qs</strong>. It is the price reduction per unit times the quantity bought at the new lower price.'
-          },
-          {
-            label: 'Producer benefit',
-            tone: 'green',
-            head: 'Step 3 – the producer benefit',
-            body: 'The <strong style="color:#059669">green rectangle</strong> is the producer benefit: <strong>(Pp − P₀) × Qs</strong>. It is the rise in net price per unit times the quantity sold.',
-            analysis: 'Together the blue and green rectangles partition the subsidy wedge. The relative size depends on elasticity – covered in card 4.'
-          },
-          {
-            label: 'Government cost',
-            tone: 'purple',
-            head: 'Step 4 – total government cost',
-            body: 'The purple-outlined area is total <strong>subsidy cost = £S × Qs</strong>. It is exactly the sum of the consumer and producer benefits – every penny granted to buyers and sellers comes from the Treasury.',
-            analysis: "Whether this cost delivers value for money – whether £S × Qs is justified by the externality being corrected – is the policy question covered in <strong>Taxes & Subsidies as Policy Tools</strong> (4.1)."
-          }
-        ]
-      },
-      keyTerms: [
-        { term: 'Subsidy',            def: 'A government payment to producers (or consumers) that reduces the effective cost of a good or service. Shifts supply rightward / downward.' },
-        { term: 'Production subsidy', def: 'Paid per unit of output to sellers (e.g. UK Contracts for Difference for renewable energy). Shifts S down by the subsidy amount.' },
-        { term: 'Consumer subsidy',   def: 'A direct reduction in the price buyers face – childcare vouchers, EV grants, fuel poverty support. Effectively shifts D right or lowers P paid by consumers.' },
-        { term: 'Subsidy wedge',      def: 'The vertical gap between the producer net price (P<sub>p</sub>) and the consumer price (P<sub>c</sub>) – equal to the subsidy per unit. Government cost = wedge × Q<sub>s</sub>.' }
-      ],
-      examEdge: 'A subsidy mirrors a tax: same wedge geometry, opposite direction. The benefit split follows the same elasticity rule in reverse – <strong>the less elastic side captures MORE of the benefit</strong>. With inelastic demand (e.g. insulin), consumers gain little because they would buy anyway – producers capture most of the subsidy. With elastic demand, consumers gain more. For the policy questions – when subsidies are justified, real UK cases, and how to evaluate them – see <strong>Taxes & Subsidies as Policy Tools</strong> (4.1).'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: 'A subsidy is the mirror image of a tax – a government payment that shifts supply down, lowering the consumer price and raising the producer net price. Step through to see the consumer share, the producer share, and the cost to government.' },
+        { type: 'sectionHeader', icon: '💡', label: 'Splitting the subsidy wedge' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Subsidy in place',
+              show: ['D', 'S', 'S_sub'],
+              points: ['Pc_sub', 'Pp_sub', 'Qsub', 'E'],
+              head: 'Subsidy in place — Pc, Pp and £S wedge',
+              body: 'The subsidy shifts supply down to S−subsidy, raising quantity to Qsub. Consumers pay Pc below P₀, while producers receive Pp above P₀ once the subsidy is added. The gap between Pp and Pc is the per-unit subsidy, £S.',
+              analysis: 'Pp > P₀ > Pc – producers receive more, consumers pay less, and the difference comes from government. The next steps split the wedge into who captures how much, then total it as cost.'
+            },
+            {
+              label: 'Consumer benefit',
+              show: ['D', 'S', 'S_sub', 'PriceLine', 'PcSubLine'],
+              points: ['Pc_sub', 'Qsub'],
+              areas: [
+                { between: ['PriceLine', 'PcSubLine'], x: [80, 442.5], tone: 'blue', label: 'Consumer benefit' }
+              ],
+              head: 'Step 2 — the consumer benefit',
+              body: 'The blue rectangle is the consumer benefit: (P₀ − Pc) × Qsub. It is the price reduction per unit times the quantity bought at the new lower price.'
+            },
+            {
+              label: 'Producer benefit',
+              show: ['D', 'S', 'S_sub', 'PpSubLine', 'PriceLine'],
+              points: ['Pp_sub', 'Qsub'],
+              areas: [
+                { between: ['PpSubLine', 'PriceLine'], x: [80, 442.5], tone: 'green', label: 'Producer benefit' }
+              ],
+              head: 'Step 3 — the producer benefit',
+              body: 'The green rectangle is the producer benefit: (Pp − P₀) × Qsub. It is the rise in net price per unit times the quantity sold.',
+              analysis: 'Together the blue and green rectangles partition the subsidy wedge. The relative size depends on elasticity – covered in card 4.'
+            },
+            {
+              label: 'Government cost',
+              show: ['D', 'S', 'S_sub', 'PpSubLine', 'PcSubLine'],
+              points: ['Pc_sub', 'Pp_sub', 'Qsub'],
+              areas: [
+                { between: ['PpSubLine', 'PcSubLine'], x: [80, 442.5], tone: 'purple', label: 'Subsidy cost' }
+              ],
+              head: 'Step 4 — total government cost',
+              body: 'The purple rectangle is total subsidy cost = £S × Qsub. It is exactly the sum of the consumer and producer benefits – every penny granted to buyers and sellers comes from the Treasury.',
+              analysis: 'Whether this cost delivers value for money – whether £S × Qsub is justified by the externality being corrected – is the policy question covered in Taxes & Subsidies as Policy Tools (4.1).'
+            }
+          ]
+        },
+        {
+          type: 'glossaryRow',
+          terms: [
+            { term: 'Subsidy',            definition: 'A government payment to producers (or consumers) that reduces the effective cost of a good or service. Shifts supply rightward / downward.' },
+            { term: 'Production subsidy', definition: 'Paid per unit of output to sellers (e.g. UK Contracts for Difference for renewable energy). Shifts S down by the subsidy amount.' },
+            { term: 'Consumer subsidy',   definition: 'A direct reduction in the price buyers face – childcare vouchers, EV grants, fuel poverty support. Effectively shifts D right or lowers P paid by consumers.' },
+            { term: 'Subsidy wedge',      definition: 'The vertical gap between the producer net price (Pp) and the consumer price (Pc) – equal to the subsidy per unit. Government cost = wedge × Qsub.' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'A subsidy mirrors a tax: same wedge geometry, opposite direction. The benefit split follows the same elasticity rule in reverse – the less elastic side captures MORE of the benefit. With inelastic demand (e.g. insulin), consumers gain little because they would buy anyway – producers capture most of the subsidy. With elastic demand, consumers gain more. For the policy questions – when subsidies are justified, real UK cases, and how to evaluate them – see Taxes & Subsidies as Policy Tools (4.1).' }
+      ]
     },
 
     {

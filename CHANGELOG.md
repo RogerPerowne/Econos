@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.2 — 2026-05-31
+
+### Migrate the market-intervention interactives (tax incidence, subsidy, price controls)
+
+Five `ad-interactive` cards across two Edexcel A micro topics migrated to
+`econDiagram` (`supplyDemand`), each preserving all teaching content (the legacy
+`tip`/`keyTerms`/`examEdge` became `calloutStrip`/`glossaryRow`/`examEdge` blocks,
+per-view `head`/`body`/`analysis` preserved with unicode subscripts).
+
+- **indirect-taxes-and-subsidies** — tax incidence (card 2) and subsidy (card 3),
+  4 views each; the tax card partitions the revenue rectangle into consumer- and
+  producer-burden using `PriceLine` as the divider.
+- **government-intervention-in-markets** — subsidy (card 3), price ceiling
+  (card 4, with shortage bracket + DWL), price floor (card 5, with surplus
+  bracket + DWL).
+- Every diagram screenshot-verified; all references pass the econDiagram
+  validator. Cards needing capabilities not yet in the engine (ad-valorem
+  pivoting tax, elasticity-incidence two-panel, the policy-spectrum graphic, the
+  draggable welfare widget) were left intact and logged in `docs/STATIC_CHARTS.md`.
+  Data-only — no cache bump.
+
 ## 0.37.1 — 2026-05-31
 
 ### econDiagram reference validator (Goal 3) — anti-invention gate

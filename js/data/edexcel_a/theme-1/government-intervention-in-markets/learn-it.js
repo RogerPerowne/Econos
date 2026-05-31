@@ -163,57 +163,69 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_3',
       stepLabel: 'Learn: Step 3 of 10',
       title: 'Subsidies',
-      tip: { icon: '🎁', tone: 'purple', text: 'A <strong>subsidy</strong> is a payment from government to producers (or consumers) that lowers the cost of supply. Supply shifts <em>right</em>, price falls, quantity rises. It is the mirror image of an indirect tax.' },
-      interactiveDiagram: {
-        svgKey: 'subsidyInteractive',
-        label: 'Build the subsidy diagram step by step',
-        emoji: '📊',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Subsidy in place',
-            tone: 'green',
-            head: 'Subsidy in place – Pc, Pp and £S wedge',
-            body: 'The subsidy shifts supply down to S₁, raising quantity to <strong>Qs</strong>. Consumers pay <strong>Pc</strong> below P₀, while producers receive <strong>Pp</strong> above P₀ once the subsidy is added. The gap between Pp and Pc is the per-unit subsidy, <strong>£S</strong>.',
-            analysis: 'Pp > P₀ > Pc – producers receive more, consumers pay less, and the difference comes from government. The next steps split the wedge into who captures how much, then total it as cost.'
-          },
-          {
-            label: 'Consumer benefit',
-            tone: 'blue',
-            head: 'Step 2 – the consumer benefit',
-            body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer benefit: <strong>(P₀ − Pc) × Qs</strong>. It is the price reduction per unit times the quantity bought at the new lower price.'
-          },
-          {
-            label: 'Producer benefit',
-            tone: 'green',
-            head: 'Step 3 – the producer benefit',
-            body: 'The <strong style="color:#059669">green rectangle</strong> is the producer benefit: <strong>(Pp − P₀) × Qs</strong>. It is the rise in net price per unit times the quantity sold.',
-            analysis: 'Together the blue and green rectangles partition the subsidy wedge. The relative size depends on elasticity – covered in card 4.'
-          },
-          {
-            label: 'Government cost',
-            tone: 'purple',
-            head: 'Step 4 – total government cost',
-            body: 'The purple-outlined area is total <strong>subsidy cost = £S × Qs</strong>. It is exactly the sum of the consumer and producer benefits – every penny granted to buyers and sellers comes from the Treasury.',
-            analysis: 'Whether this cost delivers value for money – whether £S × Qs is justified by the externality being corrected – is the policy question this topic addresses in the surrounding cards.'
-          }
-        ]
-      },
-      illustratedGrid: [
-        { tone: 'green',  title: '🚌 £2 bus fare cap (2023–24)', body: 'Government subsidy capped single bus fares nationally at £2. Large CS gain for regular commuters; modest effect on modal shift. Cost ~£600m/year – opportunity cost against other transport priorities.' },
-        { tone: 'blue',   title: '🔬 R&D tax credits',           body: 'Firms claim 20–27% of qualifying R&D costs back against corporation tax. Strong evidence of additionality – firms do more R&D than without the subsidy, because innovation has large positive MEB (spillovers to the wider economy).' },
-        { tone: 'purple', title: '🌱 Boiler Upgrade Scheme',     body: 'Grant of £7,500 toward a heat pump. Producer subsidy shifting consumer demand toward low-carbon heating. Slow take-up suggests elasticity of demand for heat pumps is low despite the large subsidy – supply constraint dominates.' },
-        { tone: 'amber',  title: '🚜 Agricultural support (post-CAP)', body: 'UK\'s Environmental Land Management (ELM) pays farmers per hectare of habitat they restore. Producer subsidy targeting positive externalities (biodiversity, flood prevention) rather than output volume.' }
-      ],
-      illustratedGridLabel: 'UK subsidy case studies',
-      illustratedGridEmoji: '📋',
-      keyTerms: [
-        { term: 'Producer subsidy', def: 'Payment per unit to suppliers – used for solar PV, agricultural support, public transport.' },
-        { term: 'Consumer subsidy', def: 'Payment to buyers (vouchers, free provision) – used for free school meals, NHS prescriptions for under-16s.' },
-        { term: 'Subsidy incidence', def: 'How the benefit splits between buyers and sellers – more inelastic side captures more of the gain.' },
-        { term: 'Positive externality (MEB)', def: 'The third-party benefit a subsidy is often designed to internalise. If MEB > 0, the subsidy can raise welfare.' }
-      ],
-      examEdge: '<strong>Three classic UK case studies:</strong> (1) <em>EV plug-in grant</em> – boosted EV adoption but disproportionately benefited high-income buyers; retired in 2022. (2) <em>Bus operator subsidy (£2 fare cap)</em> – large CS gain, but cost ~£600m/year and may not be sustainable. (3) <em>R&D tax credits</em> – strong evidence of additionality (firms do more R&D than they would have done) because innovation has large MEB. <strong>Evaluation upgrade:</strong> always check (a) is there an externality, (b) does the subsidy actually change behaviour or just transfer cash, and (c) what is the opportunity cost.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'purple', icon: '💡', text: 'A subsidy is a payment from government to producers (or consumers) that lowers the cost of supply. Supply shifts right, price falls, quantity rises. It is the mirror image of an indirect tax.' },
+        { type: 'sectionHeader', icon: '📊', label: 'Build the subsidy diagram step by step' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Subsidy in place',
+              show: ['D', 'S', 'S_sub'],
+              points: ['Pc_sub', 'Pp_sub', 'Qsub', 'E'],
+              head: 'Subsidy in place – Pc, Pp and £S wedge',
+              body: 'The subsidy shifts supply down to S−subsidy, raising quantity to Qsub. Consumers pay Pc below Pₑ, while producers receive Pp above Pₑ once the subsidy is added. The gap between Pp and Pc is the per-unit subsidy, £S.',
+              analysis: 'Pp > Pₑ > Pc – producers receive more, consumers pay less, and the difference comes from government. The next steps split the wedge into who captures how much, then total it as cost.'
+            },
+            {
+              label: 'Consumer benefit',
+              show: ['D', 'S', 'S_sub', 'PriceLine', 'PcSubLine'],
+              points: ['Pc_sub', 'Qsub'],
+              areas: [
+                { between: ['PriceLine', 'PcSubLine'], x: [80, 442.5], tone: 'blue', label: 'Consumer benefit' }
+              ],
+              head: 'Step 2 – the consumer benefit',
+              body: 'The blue rectangle is the consumer benefit: (Pₑ − Pc) × Qsub. It is the price reduction per unit times the quantity bought at the new lower price.'
+            },
+            {
+              label: 'Producer benefit',
+              show: ['D', 'S', 'S_sub', 'PriceLine', 'PpSubLine'],
+              points: ['Pp_sub', 'Qsub'],
+              areas: [
+                { between: ['PpSubLine', 'PriceLine'], x: [80, 442.5], tone: 'green', label: 'Producer benefit' }
+              ],
+              head: 'Step 3 – the producer benefit',
+              body: 'The green rectangle is the producer benefit: (Pp − Pₑ) × Qsub. It is the rise in net price per unit times the quantity sold.',
+              analysis: 'Together the blue and green rectangles partition the subsidy wedge. The relative size depends on elasticity.'
+            },
+            {
+              label: 'Government cost',
+              show: ['D', 'S', 'S_sub', 'PcSubLine', 'PpSubLine'],
+              points: ['Pc_sub', 'Pp_sub', 'Qsub'],
+              areas: [
+                { between: ['PpSubLine', 'PcSubLine'], x: [80, 442.5], tone: 'purple', label: 'Subsidy cost' }
+              ],
+              head: 'Step 4 – total government cost',
+              body: 'The shaded area is total subsidy cost = £S × Qsub. It is exactly the sum of the consumer and producer benefits – every penny granted to buyers and sellers comes from the Treasury.',
+              analysis: 'Whether this cost delivers value for money – whether £S × Qsub is justified by the externality being corrected – is the policy question this topic addresses in the surrounding cards.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '📋', label: 'UK subsidy case studies' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'green',  icon: '🚌', head: '£2 bus fare cap (2023–24)', body: 'Government subsidy capped single bus fares nationally at £2. Large CS gain for regular commuters; modest effect on modal shift. Cost ~£600m/year – opportunity cost against other transport priorities.' },
+          { type: 'tile', tone: 'blue',   icon: '🔬', head: 'R&D tax credits',           body: 'Firms claim 20–27% of qualifying R&D costs back against corporation tax. Strong evidence of additionality – firms do more R&D than without the subsidy, because innovation has large positive MEB (spillovers to the wider economy).' },
+          { type: 'tile', tone: 'purple', icon: '🌱', head: 'Boiler Upgrade Scheme',     body: 'Grant of £7,500 toward a heat pump. Producer subsidy shifting consumer demand toward low-carbon heating. Slow take-up suggests elasticity of demand for heat pumps is low despite the large subsidy – supply constraint dominates.' },
+          { type: 'tile', tone: 'amber',  icon: '🚜', head: 'Agricultural support (post-CAP)', body: 'UK\'s Environmental Land Management (ELM) pays farmers per hectare of habitat they restore. Producer subsidy targeting positive externalities (biodiversity, flood prevention) rather than output volume.' }
+        ]},
+        { type: 'sectionHeader', icon: '📖', label: 'Key terms' },
+        { type: 'glossaryRow', term: 'Producer subsidy', def: 'Payment per unit to suppliers – used for solar PV, agricultural support, public transport.' },
+        { type: 'glossaryRow', term: 'Consumer subsidy', def: 'Payment to buyers (vouchers, free provision) – used for free school meals, NHS prescriptions for under-16s.' },
+        { type: 'glossaryRow', term: 'Subsidy incidence', def: 'How the benefit splits between buyers and sellers – more inelastic side captures more of the gain.' },
+        { type: 'glossaryRow', term: 'Positive externality (MEB)', def: 'The third-party benefit a subsidy is often designed to internalise. If MEB > 0, the subsidy can raise welfare.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Three classic UK case studies: (1) EV plug-in grant – boosted EV adoption but disproportionately benefited high-income buyers; retired in 2022. (2) Bus operator subsidy (£2 fare cap) – large CS gain, but cost ~£600m/year and may not be sustainable. (3) R&D tax credits – strong evidence of additionality (firms do more R&D than they would have done) because innovation has large MEB. Evaluation upgrade: always check (a) is there an externality, (b) does the subsidy actually change behaviour or just transfer cash, and (c) what is the opportunity cost.' }
+      ]
     },
 
     /* ============================================================
@@ -223,50 +235,64 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_4',
       stepLabel: 'Learn: Step 4 of 10',
       title: 'Maximum prices (price ceilings)',
-      tip: { icon: '🧢', tone: 'amber', text: 'A price ceiling is binding only when set <strong>below</strong> equilibrium. It creates a shortage, redistributes surplus from sellers to lucky buyers, and destroys welfare through the DWL triangle.' },
-      interactiveDiagram: {
-        svgKey: 'priceCeilingDiagramInteractive',
-        label: 'Build the price ceiling diagram step by step',
-        emoji: '🧢',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Free market',
-            tone: 'blue',
-            head: 'The free-market baseline',
-            body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no price control in place.',
-            analysis: 'Without intervention, the market clears: every buyer willing to pay P<sub>e</sub> can buy, and every seller willing to sell at P<sub>e</sub> can sell. Allocative efficiency holds. Any binding price control will move the market away from this point and create a welfare cost – unless it corrects a market failure like monopoly power.'
-          },
-          {
-            label: 'Ceiling imposed',
-            tone: 'amber',
-            head: 'P<sub>max</sub> below P<sub>e</sub> – a shortage opens up',
-            body: 'At P<sub>max</sub>, sellers supply only Q<sub>s</sub>, but buyers demand Q<sub>d</sub>. The horizontal gap Q<sub>d</sub> − Q<sub>s</sub> is the <strong>shortage</strong>. Trades are rationed to Q<sub>s</sub>.',
-            analysis: 'A ceiling is only <em>binding</em> if it sits below P<sub>e</sub>; above P<sub>e</sub> it has no effect. Because quantity supplied (Q<sub>s</sub>) is now the short side of the market, Q<sub>s</sub> becomes the quantity actually traded. Non-price rationing fills the gap – queues, waiting lists, black markets, or quality reductions are all common real-world responses.'
-          },
-          {
-            label: 'Surplus shifts',
-            tone: 'amber',
-            head: 'PS shrinks; CS effect is ambiguous',
-            body: 'PS shrinks: sellers transact fewer units at a lower price. CS <em>may</em> rise if buyers who value the good most get the rationed quantity – but with random rationing or queueing costs, CS can fall.',
-            analysis: 'Textbook CS under a ceiling assumes <strong>efficient rationing</strong> – that the Q<sub>s</sub> units go to the buyers who value them most. In reality, rationing is rarely efficient: queueing wastes time, black-market markups erode the price benefit, and quality often drops to compensate sellers. So the "CS rises" result is a best case, not a guarantee.'
-          },
-          {
-            label: 'Deadweight loss',
-            tone: 'rose',
-            head: 'Welfare lost from trades that no longer happen',
-            body: 'The red triangle = DWL: surplus from units between Q<sub>s</sub> and Q<sub>e</sub> that <em>would have been traded</em> at P<sub>e</sub>, but are now prevented by the ceiling.',
-            analysis: 'DWL grows with the gap between P<sub>max</sub> and P<sub>e</sub> and with elasticity. A ceiling raises welfare only if it offsets a larger pre-existing distortion – for instance, capping the price a monopolist can charge can <em>increase</em> total welfare by pushing output toward the competitive level. Most consumer-facing rent controls and energy price caps do not meet this bar.'
-          }
-        ]
-      },
-      keyTerms: [
-        { term: 'Price ceiling', def: 'A legal maximum price. Only binding when set below the equilibrium price; above P<sub>e</sub> it has no effect on the market.' },
-        { term: 'Shortage', def: 'Excess demand at the controlled price: Q<sub>d</sub> > Q<sub>s</sub>. The quantity actually traded is the lower side (Q<sub>s</sub>).' },
-        { term: 'Non-price rationing', def: 'How the shortage is allocated when price cannot adjust: queueing, lottery, key money, black markets, or quality reduction.' },
-        { term: 'Black market', def: 'Illegal trading above the controlled price. When shortages are severe the black-market price can exceed the original equilibrium – leaving consumers worse off than with no control.' }
-      ],
-      examEdge: 'Two classic UK applications: <strong>rent controls</strong> (NYC, Berlin, Stockholm – produce shortages and quality decline, deter new building) and the <strong>UK energy price cap</strong> (Ofgem, 2019–) – protected consumers but pushed 25+ suppliers into bankruptcy in 2021–22 when wholesale prices spiked above the cap. A ceiling does not make the underlying cost problem disappear; it shifts who bears it – consumers, suppliers, or taxpayers via bailouts. Naming the bearer of the cost is a strong evaluation move.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'amber', icon: '💡', text: 'A price ceiling is binding only when set below equilibrium. It creates a shortage, redistributes surplus from sellers to lucky buyers, and destroys welfare through the DWL triangle.' },
+        { type: 'sectionHeader', icon: '🧢', label: 'Build the price ceiling diagram step by step' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Free market',
+              show: ['D', 'S', 'PriceLine'],
+              points: ['E'],
+              areas: [
+                { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue',  label: 'CS' },
+                { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green', label: 'PS' }
+              ],
+              head: 'The free-market baseline',
+              body: 'D and S intersect at Pₑ, Qₑ. Total welfare = CS + PS, with no price control in place.',
+              analysis: 'Without intervention, the market clears: every buyer willing to pay Pₑ can buy, and every seller willing to sell at Pₑ can sell. Allocative efficiency holds. Any binding price control will move the market away from this point and create a welfare cost – unless it corrects a market failure like monopoly power.'
+            },
+            {
+              label: 'Ceiling imposed',
+              show: ['D', 'S', 'PriceCeiling'],
+              points: ['Qs_ceiling', 'Qd_ceiling', 'E'],
+              brackets: [
+                { x: [330, 430], y: 320, label: 'Shortage', tone: 'amber' }
+              ],
+              head: 'Pmax below Pₑ – a shortage opens up',
+              body: 'At Pmax, sellers supply only Qₛ, but buyers demand Qd. The horizontal gap Qd − Qₛ is the shortage. Trades are rationed to Qₛ.',
+              analysis: 'A ceiling is only binding if it sits below Pₑ; above Pₑ it has no effect. Because quantity supplied (Qₛ) is now the short side of the market, Qₛ becomes the quantity actually traded. Non-price rationing fills the gap – queues, waiting lists, black markets, or quality reductions are all common real-world responses.'
+            },
+            {
+              label: 'Surplus shifts',
+              show: ['D', 'S', 'PriceCeiling'],
+              points: ['Qs_ceiling', 'E'],
+              head: 'PS shrinks; CS effect is ambiguous',
+              body: 'PS shrinks: sellers transact fewer units at a lower price. CS may rise if buyers who value the good most get the rationed quantity – but with random rationing or queueing costs, CS can fall.',
+              analysis: 'Textbook CS under a ceiling assumes efficient rationing – that the Qₛ units go to the buyers who value them most. In reality, rationing is rarely efficient: queueing wastes time, black-market markups erode the price benefit, and quality often drops to compensate sellers. So the "CS rises" result is a best case, not a guarantee.'
+            },
+            {
+              label: 'Deadweight loss',
+              show: ['D', 'S', 'PriceCeiling'],
+              points: ['Qs_ceiling', 'E'],
+              areas: [
+                { between: ['D', 'S'], x: [330, 380], tone: 'rose', hatch: true, label: 'DWL' }
+              ],
+              head: 'Welfare lost from trades that no longer happen',
+              body: 'The red triangle = DWL: surplus from units between Qₛ and Qₑ that would have been traded at Pₑ, but are now prevented by the ceiling.',
+              analysis: 'DWL grows with the gap between Pmax and Pₑ and with elasticity. A ceiling raises welfare only if it offsets a larger pre-existing distortion – for instance, capping the price a monopolist can charge can increase total welfare by pushing output toward the competitive level. Most consumer-facing rent controls and energy price caps do not meet this bar.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '📖', label: 'Key terms' },
+        { type: 'glossaryRow', term: 'Price ceiling', def: 'A legal maximum price. Only binding when set below the equilibrium price; above Pₑ it has no effect on the market.' },
+        { type: 'glossaryRow', term: 'Shortage', def: 'Excess demand at the controlled price: Qd > Qₛ. The quantity actually traded is the lower side (Qₛ).' },
+        { type: 'glossaryRow', term: 'Non-price rationing', def: 'How the shortage is allocated when price cannot adjust: queueing, lottery, key money, black markets, or quality reduction.' },
+        { type: 'glossaryRow', term: 'Black market', def: 'Illegal trading above the controlled price. When shortages are severe the black-market price can exceed the original equilibrium – leaving consumers worse off than with no control.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Two classic UK applications: rent controls (NYC, Berlin, Stockholm – produce shortages and quality decline, deter new building) and the UK energy price cap (Ofgem, 2019–) – protected consumers but pushed 25+ suppliers into bankruptcy in 2021–22 when wholesale prices spiked above the cap. A ceiling does not make the underlying cost problem disappear; it shifts who bears it – consumers, suppliers, or taxpayers via bailouts. Naming the bearer of the cost is a strong evaluation move.' }
+      ]
     },
 
     /* ============================================================
@@ -276,50 +302,64 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_5',
       stepLabel: 'Learn: Step 5 of 10',
       title: 'Minimum prices (price floors)',
-      tip: { icon: '🪜', tone: 'green', text: 'A price floor is binding only when set <strong>above</strong> equilibrium. It creates a surplus, redistributes surplus from buyers to sellers (often), and destroys welfare through the DWL triangle.' },
-      interactiveDiagram: {
-        svgKey: 'priceFloorDiagramInteractive',
-        label: 'Build the price floor diagram step by step',
-        emoji: '🪜',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Free market',
-            tone: 'blue',
-            head: 'The free-market baseline',
-            body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no price control in place.',
-            analysis: 'The same starting point as the ceiling case: the market clears at P<sub>e</sub>, Q<sub>e</sub>, with CS + PS at its maximum. A binding floor pushes price <em>above</em> this point and is the mirror image of a binding ceiling.'
-          },
-          {
-            label: 'Floor imposed',
-            tone: 'green',
-            head: 'P<sub>min</sub> above P<sub>e</sub> – excess supply emerges',
-            body: 'At P<sub>min</sub>, buyers only want Q<sub>d</sub>, but sellers would supply Q<sub>s</sub>. The horizontal gap Q<sub>s</sub> − Q<sub>d</sub> is the <strong>excess supply</strong>. Trades are limited to Q<sub>d</sub>.',
-            analysis: 'A floor is only <em>binding</em> if it sits above P<sub>e</sub>; below P<sub>e</sub> it has no effect. Now buyers are the short side of the market, so Q<sub>d</sub> becomes the quantity actually traded. The excess supply often shows up as <em>unsold output</em> (e.g. EU butter mountains, US dairy stockpiles) or, in the labour market, as <em>unemployment</em> from a minimum wage set above the market-clearing wage.'
-          },
-          {
-            label: 'Surplus shifts',
-            tone: 'amber',
-            head: 'CS shrinks; PS effect is ambiguous',
-            body: 'CS shrinks: buyers pay a higher price and transact fewer units. PS <em>may</em> rise if the higher per-unit price outweighs the lost quantity – but if demand is elastic, PS can fall.',
-            analysis: 'The PS effect depends on the elasticity of demand. If demand is inelastic, the higher price compensates for the lost quantity and PS rises. If demand is elastic, the quantity loss dominates and PS falls. In labour markets, this translates into a real exam debate: a minimum wage may raise total worker income (if labour demand is inelastic) or lower it (if elastic).'
-          },
-          {
-            label: 'Deadweight loss',
-            tone: 'rose',
-            head: 'Welfare lost from trades that no longer happen',
-            body: 'The red triangle = DWL: surplus from units between Q<sub>d</sub> and Q<sub>e</sub> that <em>would have been traded</em> at P<sub>e</sub>, but are now prevented by the floor.',
-            analysis: 'As with a ceiling, DWL grows with the gap between P<sub>min</sub> and P<sub>e</sub> and with elasticity. The floor raises total welfare only if it offsets a larger pre-existing distortion – for example, a minimum wage in a <em>monopsonistic</em> labour market can raise both wages <em>and</em> employment, because monopsony already suppressed both. The textbook DWL result assumes a competitive market with no offsetting failure.'
-          }
-        ]
-      },
-      keyTerms: [
-        { term: 'Price floor', def: 'A legal minimum price. Only binding when set above the equilibrium price; below P<sub>e</sub> it has no effect on the market.' },
-        { term: 'Excess supply', def: 'Sellers want to supply more than buyers will buy at the controlled price: Q<sub>s</sub> > Q<sub>d</sub>. Quantity traded is Q<sub>d</sub>.' },
-        { term: 'Binding floor', def: 'A floor that actually constrains the market – i.e. set above the free-market equilibrium price. A floor below P<sub>e</sub> is non-binding.' },
-        { term: 'Monopsony exception', def: 'In a labour market with a dominant employer, a minimum wage can raise both wages and employment by counteracting employer power – reversing the standard competitive-market result.' }
-      ],
-      examEdge: 'Three classic floor examples: <strong>National Living Wage</strong> (£12.21/hr from April 2024 – limited disemployment evidence suggests the floor sits close to equilibrium for most workers); <strong>EU Common Agricultural Policy</strong> (guaranteed prices produced "butter mountains" and "wine lakes" that had to be bought, stored, or destroyed); <strong>Scotland minimum unit pricing on alcohol</strong> (50p/unit since 2018 – alcohol sales fell 3–7%, targeting heavy drinkers as positive-externality correction). The labour-market case has an evaluation upgrade: in a monopsonistic market, a minimum wage can <em>raise</em> employment and wages simultaneously by counteracting employer power.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: 'A price floor is binding only when set above equilibrium. It creates a surplus, redistributes surplus from buyers to sellers (often), and destroys welfare through the DWL triangle.' },
+        { type: 'sectionHeader', icon: '🪜', label: 'Build the price floor diagram step by step' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Free market',
+              show: ['D', 'S', 'PriceLine'],
+              points: ['E'],
+              areas: [
+                { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue',  label: 'CS' },
+                { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green', label: 'PS' }
+              ],
+              head: 'The free-market baseline',
+              body: 'D and S intersect at Pₑ, Qₑ. Total welfare = CS + PS, with no price control in place.',
+              analysis: 'The same starting point as the ceiling case: the market clears at Pₑ, Qₑ, with CS + PS at its maximum. A binding floor pushes price above this point and is the mirror image of a binding ceiling.'
+            },
+            {
+              label: 'Floor imposed',
+              show: ['D', 'S', 'PriceFloor'],
+              points: ['Qd_floor', 'Qs_floor', 'E'],
+              brackets: [
+                { x: [330, 430], y: 240, label: 'Excess supply', tone: 'green' }
+              ],
+              head: 'Pmin above Pₑ – excess supply emerges',
+              body: 'At Pmin, buyers only want Qd, but sellers would supply Qₛ. The horizontal gap Qₛ − Qd is the excess supply. Trades are limited to Qd.',
+              analysis: 'A floor is only binding if it sits above Pₑ; below Pₑ it has no effect. Now buyers are the short side of the market, so Qd becomes the quantity actually traded. The excess supply often shows up as unsold output (e.g. EU butter mountains, US dairy stockpiles) or, in the labour market, as unemployment from a minimum wage set above the market-clearing wage.'
+            },
+            {
+              label: 'Surplus shifts',
+              show: ['D', 'S', 'PriceFloor'],
+              points: ['Qd_floor', 'E'],
+              head: 'CS shrinks; PS effect is ambiguous',
+              body: 'CS shrinks: buyers pay a higher price and transact fewer units. PS may rise if the higher per-unit price outweighs the lost quantity – but if demand is elastic, PS can fall.',
+              analysis: 'The PS effect depends on the elasticity of demand. If demand is inelastic, the higher price compensates for the lost quantity and PS rises. If demand is elastic, the quantity loss dominates and PS falls. In labour markets, this translates into a real exam debate: a minimum wage may raise total worker income (if labour demand is inelastic) or lower it (if elastic).'
+            },
+            {
+              label: 'Deadweight loss',
+              show: ['D', 'S', 'PriceFloor'],
+              points: ['Qd_floor', 'E'],
+              areas: [
+                { between: ['D', 'S'], x: [330, 380], tone: 'rose', hatch: true, label: 'DWL' }
+              ],
+              head: 'Welfare lost from trades that no longer happen',
+              body: 'The red triangle = DWL: surplus from units between Qd and Qₑ that would have been traded at Pₑ, but are now prevented by the floor.',
+              analysis: 'As with a ceiling, DWL grows with the gap between Pmin and Pₑ and with elasticity. The floor raises total welfare only if it offsets a larger pre-existing distortion – for example, a minimum wage in a monopsonistic labour market can raise both wages and employment, because monopsony already suppressed both. The textbook DWL result assumes a competitive market with no offsetting failure.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '📖', label: 'Key terms' },
+        { type: 'glossaryRow', term: 'Price floor', def: 'A legal minimum price. Only binding when set above the equilibrium price; below Pₑ it has no effect on the market.' },
+        { type: 'glossaryRow', term: 'Excess supply', def: 'Sellers want to supply more than buyers will buy at the controlled price: Qₛ > Qd. Quantity traded is Qd.' },
+        { type: 'glossaryRow', term: 'Binding floor', def: 'A floor that actually constrains the market – i.e. set above the free-market equilibrium price. A floor below Pₑ is non-binding.' },
+        { type: 'glossaryRow', term: 'Monopsony exception', def: 'In a labour market with a dominant employer, a minimum wage can raise both wages and employment by counteracting employer power – reversing the standard competitive-market result.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Three classic floor examples: National Living Wage (£12.21/hr from April 2024 – limited disemployment evidence suggests the floor sits close to equilibrium for most workers); EU Common Agricultural Policy (guaranteed prices produced "butter mountains" and "wine lakes" that had to be bought, stored, or destroyed); Scotland minimum unit pricing on alcohol (50p/unit since 2018 – alcohol sales fell 3–7%, targeting heavy drinkers as positive-externality correction). The labour-market case has an evaluation upgrade: in a monopsonistic market, a minimum wage can raise employment and wages simultaneously by counteracting employer power.' }
+      ]
     },
 
     /* ============================================================

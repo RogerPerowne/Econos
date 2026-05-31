@@ -52,17 +52,17 @@ window.ECONOS_TOPIC = {
         {
           key: 'base',
           label: 'The supply curve',
-          text: 'The supply curve shows the <strong>positive relationship between price and quantity supplied</strong>. Ceteris paribus, as price rises, quantity supplied rises. It slopes upward because higher prices increase the profitability of production – existing firms expand output, new firms enter. Rising output also raises marginal costs (diminishing returns), so higher prices are needed to justify more production.'
+          text: 'The supply curve shows the <strong>positive relationship between price and quantity supplied</strong>. It slopes upward because higher prices make production more profitable: existing firms expand output and new firms enter. Rising output raises marginal costs (diminishing returns).'
         },
         {
           key: 'extension',
           label: 'Movement along',
-          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the supply curve – nothing else can. A price rise causes an <strong>extension</strong> (E₂: higher P, higher Q supplied). A price fall causes a <strong>contraction</strong> (E₃: lower P, lower Q supplied). The curve itself does not move. Say "quantity supplied rises/falls," not "supply rises/falls."'
+          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the curve – nothing else can. A price rise causes an <strong>extension</strong> (E₂); a price fall causes a <strong>contraction</strong> (E₃). Say "quantity supplied rises/falls," not "supply rises/falls."'
         },
         {
           key: 'shift',
           label: 'Supply shifts',
-          text: 'A change in any <strong>non-price determinant</strong> shifts the entire supply curve. <strong>Rightward (S₂ – increase):</strong> more supplied at every price – lower input costs, better technology, more producers, or a subsidy. <strong>Leftward (S₀ – decrease):</strong> less supplied at every price – higher input costs, a new tax, a supply shock, or fewer producers. At every price, producers are now willing to supply a different quantity.'
+          text: 'A change in any <strong>non-price determinant</strong> shifts the whole curve. <strong>Right (S₂):</strong> more supplied at every price – lower costs, better tech, more producers, subsidy. <strong>Left (S₀):</strong> less at every price – higher costs, tax, supply shock.'
         }
       ],
       causes: [
@@ -108,17 +108,17 @@ window.ECONOS_TOPIC = {
         {
           key: 'base',
           label: 'Supply curve',
-          text: 'Each point on the supply curve shows the minimum price a seller would accept for that unit – their marginal cost. Low-cost producers are willing to supply at low prices; higher-cost producers only enter if the market price is high enough. The market price P* is the same for every seller.'
+          text: 'Each point on the supply curve shows the minimum price a seller would accept for that unit – their marginal cost. Low-cost producers supply at low prices; higher-cost producers only enter if the market price rises.'
         },
         {
           key: 'ps',
           label: 'Producer surplus',
-          text: 'Producer surplus is the rose triangle – the area below the market price P* and above the supply curve. Every seller who would have accepted less than P* receives a "bonus". The triangle\'s area measures the total extra revenue producers receive beyond their minimum acceptable price. Formula: PS = ½ × Q* × (P* − min supply price).'
+          text: 'Producer surplus is the rose triangle – the area below the market price P* and above the supply curve. Every seller who would have accepted less than P* receives a "bonus" measuring the extra revenue producers gain beyond their minimum acceptable price.'
         },
         {
           key: 'prise',
           label: 'Price rises → PS grows',
-          text: 'When price rises to P₂, producer surplus expands in two ways: ① Existing sellers earn (P₂ − P*) extra on every unit already supplied – the rectangle between P* and P₂ is their gain. ② New sellers enter who weren\'t profitable at P* – output extends to Q₂, adding a further triangle of surplus. A tax does the reverse: lowering the producer price shrinks PS, with part going to government revenue and part lost as deadweight welfare loss.'
+          text: 'When price rises to P₂, producer surplus expands two ways: ① Existing sellers earn (P₂ − P*) extra on every unit already supplied – the rectangle between P* and P₂. ② New sellers enter who weren\'t profitable at P* – output extends to Q₂, adding a further triangle of surplus.'
         }
       ],
       examEdge: 'Total welfare = CS + PS. Market efficiency is maximised at the competitive equilibrium where total surplus is maximised. Any distortion (tax, price control, monopoly) creates deadweight loss – reducing total surplus below this maximum. In the supply context: a leftward supply shift raises price and PS per unit but reduces quantity – overall PS change depends on elasticity.'

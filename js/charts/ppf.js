@@ -86,6 +86,7 @@
     blue:   { stroke: '#2563EB', label: '#2563EB' },
     amber:  { stroke: '#D97706', label: '#D97706' },
     rose:   { stroke: '#DC2626', label: '#DC2626' },
+    red:    { stroke: '#DC2626', label: '#DC2626' },
     green:  { stroke: '#059669', label: '#059669' },
     purple: { stroke: '#7C3AED', label: '#7D23CB' },
     cyan:   { stroke: '#0891B2', label: '#0891B2' },

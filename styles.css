@@ -2540,6 +2540,16 @@ img, svg { display: block; max-width: 100%; }
   .card { padding: var(--sp-5) var(--sp-5); }
 }
 
+/* Display typography shrinks on mobile. The 36/44 px hero sizes
+   are calibrated for a comfortable desktop reading column; on a
+   320–375 px viewport they overpower the content and force
+   awkward line breaks. Drop one tier on phones. */
+@media (max-width: 600px) {
+  .card__title       { font-size: var(--fs-3xl); }       /* 36 → 28 */
+  .card__title--lg   { font-size: var(--fs-3xl); }       /* 44 → 28 */
+  .card__lede        { font-size: var(--fs-md); }        /* 18 → 16 */
+}
+
 /* card-foot (Previous · counter · Next) sits in a row with
    space-between. On narrow viewports the buttons get pushed
    together and overflow; wrap with a counter that drops below. */

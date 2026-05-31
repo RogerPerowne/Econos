@@ -195,7 +195,38 @@ window.ECONOS_TOPIC = {
 
       blocks: [
         { type: 'calloutStrip', tone: 'green', icon: '✅', text: 'Firms invest while MEC is above the interest rate.' },
-        { type: 'diagram', svgKey: 'mecDiagram', caption: 'Equilibrium investment Q* is set where MEC crosses the interest rate. Higher rates lower Q*; a rightward shift in MEC raises Q*.' },
+        {
+          type: 'econDiagram',
+          chart: 'mec',
+          views: [
+            {
+              label: 'Base equilibrium',
+              show: ['MEC', 'RStar'],
+              points: ['Istar'],
+              head: 'Equilibrium investment at I*.',
+              body: 'The MEC schedule crosses the interest rate r* at I*.',
+              analysis: 'Firms rank projects by expected return and invest in every one whose MEC exceeds the cost of borrowing. The last worthwhile project is where MEC = r*, fixing equilibrium investment at I*.'
+            },
+            {
+              label: 'Rate cut',
+              show: ['MEC', 'RStar', 'RCut'],
+              points: ['Istar', 'I2'],
+              arrows: [['Istar', 'I2', { tone: 'amber' }]],
+              head: 'A lower interest rate raises investment.',
+              body: 'When the interest rate falls to r₂, investment rises from I* to I₂.',
+              analysis: 'Cheaper borrowing makes previously marginal projects worthwhile, so the economy moves down along the same MEC schedule to a higher level of investment. This is a movement along MEC, not a shift.'
+            },
+            {
+              label: 'Confidence / tech boost',
+              show: ['MEC', 'RStar'],
+              shifts: { MEC: { dx: 120 } },
+              points: ['I3'],
+              head: 'Higher expected returns shift MEC right.',
+              body: 'Better animal spirits or new technology shift the whole schedule to MEC₂, raising investment to I₃ at the same rate r*.',
+              analysis: 'Every project now earns a higher expected return, so the entire MEC schedule shifts rightward. At the unchanged interest rate r*, equilibrium investment rises to I₃ – a shift of the schedule, not a movement along it.'
+            }
+          ]
+        },
         { type: 'sectionHeader', icon: '📖', label: 'STEP THROUGH IT' },
         { type: 'grid', cols: 3, children: [
           { type: 'tile', tone: 'blue',  icon: '⚖️', head: 'Base equilibrium', body: 'MEC crosses the interest rate at Q*.' },

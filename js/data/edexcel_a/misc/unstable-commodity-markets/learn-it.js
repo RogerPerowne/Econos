@@ -47,16 +47,73 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'unstable_markets_2',
-      template: 'framing',
-      diagramKey: 'cobwebModel',
       title: 'The Cobweb Model',
-      body: 'The <strong>cobweb model</strong> explains cyclical price and quantity oscillations in agricultural markets arising from production lags.<br><br><strong>Mechanism:</strong><br>1. Good harvest → low price this year.<br>2. Farmers plan next year\'s planting based on this year\'s (low) price → reduce acreage.<br>3. Bad supply next year → high price.<br>4. High price → farmers plant lots next year.<br>5. Large harvest → low price again. Cycle repeats.<br><br><strong>Convergent cobweb:</strong> if supply is more elastic than demand, oscillations shrink over time – market tends toward equilibrium. <strong>Divergent cobweb:</strong> if demand is more inelastic than supply is elastic, oscillations grow – market becomes increasingly unstable.',
-      keyTerms: [
-        { term: 'Cobweb model', def: 'A model of price/quantity cycles in markets with production lags – farmers base planting decisions on last period\'s price.' },
-        { term: 'Convergent cobweb', def: 'Supply more elastic than demand – oscillations diminish; market converges to equilibrium.' },
-        { term: 'Divergent cobweb', def: 'Demand more inelastic – oscillations grow; market diverges from equilibrium.' }
-      ],
-      examEdge: 'Cobweb diagram technique: draw S and D. Start below equilibrium at Q0 (excess demand → high price P1). At P1, supply = Q1 (read off supply curve). Q1 on demand curve gives P2 (low price). At P2, supply = Q2. Continue: if supply slope > demand slope (both negative/positive), convergent; if reverse, divergent. Draw the cobweb pattern explicitly.'
+      blocks: [
+        { type: 'sectionHeader', icon: '🕸️', label: 'How production lags create price cycles' },
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'The <strong>cobweb model</strong> explains cyclical price and quantity oscillations in agricultural markets arising from production lags.<br><br><strong>Mechanism:</strong><br>1. Good harvest → low price this year.<br>2. Farmers plan next year\'s planting based on this year\'s (low) price → reduce acreage.<br>3. Bad supply next year → high price.<br>4. High price → farmers plant lots next year.<br>5. Large harvest → low price again. Cycle repeats.<br><br><strong>Convergent cobweb:</strong> if supply is more elastic than demand, oscillations shrink over time – market tends toward equilibrium. <strong>Divergent cobweb:</strong> if demand is more inelastic than supply is elastic, oscillations grow – market becomes increasingly unstable.' },
+        { type: 'sectionHeader', icon: '📊', label: 'Convergent vs divergent cobweb' },
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            {
+              type: 'econDiagram',
+              chart: 'cobweb',
+              views: [
+                {
+                  label: 'Convergent',
+                  head: 'Convergent cobweb',
+                  body: 'Supply more elastic than demand: the price staircase spirals inward toward equilibrium E.',
+                  analysis: 'From a starting price P₀, producers set next period\'s quantity on supply (the production lag); the market then clears that quantity on demand, revealing the next price. Because supply is more elastic than demand, each swing is smaller than the last, so prices 200 → 333 → 244 → 304 → 264 close on the equilibrium price and quantities settle on Qₑ. The market self-corrects back to E.',
+                  show: ['D', 'S'],
+                  points: ['E', 'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'],
+                  arrows: [
+                    ['c0', 'c1', { tone: 'slate' }],
+                    ['c1', 'c2', { tone: 'slate' }],
+                    ['c2', 'c3', { tone: 'slate' }],
+                    ['c3', 'c4', { tone: 'slate' }],
+                    ['c4', 'c5', { tone: 'slate' }],
+                    ['c5', 'c6', { tone: 'slate' }],
+                    ['c6', 'c7', { tone: 'slate' }]
+                  ]
+                }
+              ]
+            },
+            {
+              type: 'econDiagram',
+              chart: 'cobwebDivergent',
+              views: [
+                {
+                  label: 'Divergent',
+                  head: 'Divergent cobweb',
+                  body: 'Demand more inelastic than supply is elastic: the price staircase spirals outward, away from equilibrium E.',
+                  analysis: 'The same production-lag iteration runs, but now supply is less elastic than demand, so each swing is larger than the last. A small perturbation grows: prices 255 → 316 → 227 → 357 → 168 fan ever wider and quantities swing outward. The market becomes increasingly unstable rather than settling on E.',
+                  show: ['D', 'S'],
+                  points: ['E', 'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'],
+                  arrows: [
+                    ['c0', 'c1', { tone: 'slate' }],
+                    ['c1', 'c2', { tone: 'slate' }],
+                    ['c2', 'c3', { tone: 'slate' }],
+                    ['c3', 'c4', { tone: 'slate' }],
+                    ['c4', 'c5', { tone: 'slate' }],
+                    ['c5', 'c6', { tone: 'slate' }],
+                    ['c6', 'c7', { tone: 'slate' }]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: 'glossaryRow',
+          terms: [
+            { term: 'Cobweb model', definition: 'A model of price/quantity cycles in markets with production lags – farmers base planting decisions on last period\'s price.' },
+            { term: 'Convergent cobweb', definition: 'Supply more elastic than demand – oscillations diminish; market converges to equilibrium.' },
+            { term: 'Divergent cobweb', definition: 'Demand more inelastic – oscillations grow; market diverges from equilibrium.' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'Cobweb diagram technique: draw S and D. Start below equilibrium at Q0 (excess demand → high price P1). At P1, supply = Q1 (read off supply curve). Q1 on demand curve gives P2 (low price). At P2, supply = Q2. Continue: if supply slope > demand slope (both negative/positive), convergent; if reverse, divergent. Draw the cobweb pattern explicitly.' }
+      ]
     },
     {
       id: 'unstable_markets_3',

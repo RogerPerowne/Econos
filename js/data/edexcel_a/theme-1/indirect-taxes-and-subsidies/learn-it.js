@@ -209,40 +209,49 @@ window.ECONOS_TOPIC = {
       id: 'indirect_taxes_subsidies_4',
       stepLabel: 'Learn: Step 4 of 4',
       title: 'Elasticity and who pays',
-      tip: { icon: '⚖️', tone: 'blue', text: 'The same tax or subsidy falls differently on different markets. One rule governs both: <strong>the less elastic side carries more of the burden (tax) or captures more of the benefit (subsidy).</strong>' },
-      interactiveDiagram: {
-        svgKey: 'elasticityIncidenceInteractive',
-        layers: ['idl-1', 'idl-2'],
-        views: [
-          {
-            label: 'Same tax, two markets',
-            tone: 'blue',
-            head: 'The same tax – but two different markets',
-            body: 'Both markets have the same supply curve and the same specific tax (S+T). The only difference is how elastic demand is. This alone changes who pays.'
-          },
-          {
-            label: 'Add demand',
-            tone: 'blue',
-            head: 'Add the demand curves – steep (inelastic) vs flat (elastic)',
-            body: 'Left: demand is steep – consumers <em>must</em> buy regardless of price. Right: demand is flat – consumers can switch to substitutes if the price rises.',
-            analysis: 'The pre-tax equilibrium (P₀, Q₀) appears in both panels. Notice it is at a similar price in both markets – the difference is purely in how responsive buyers are.'
-          },
-          {
-            label: 'Who pays?',
-            tone: 'rose',
-            head: 'The burden follows the less elastic side',
-            body: 'Left (inelastic D): Pc rises sharply, so consumers bear about <strong>87%</strong> of the tax. Right (elastic D): Pc barely rises, so consumers bear only <strong>36%</strong>; producers absorb <strong>64%</strong>.',
-            analysis: 'Producers absorb more when demand is elastic – they cannot afford to lose price-sensitive buyers. One rule covers both taxes and subsidies: the <strong>less elastic side</strong> bears more of a tax and captures more of a subsidy.'
-          }
-        ]
-      },
-      keyTerms: [
-        { term: 'Legal incidence',    def: 'Who is legally responsible for remitting the tax – typically the seller. NOT the same as who bears the economic cost.' },
-        { term: 'Economic incidence', def: 'Who actually bears the burden or captures the benefit, determined by relative PED and PES.' },
-        { term: 'Consumer burden',    def: '(Pc − P₀) × Qt. Larger when demand is inelastic – consumers have few substitutes and cannot avoid the tax.' },
-        { term: 'Producer burden',    def: '(P₀ − Pp) × Qt. Larger when supply is inelastic – producers cannot easily redirect output to other markets.' }
+      blocks: [
+        { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'The same tax or subsidy falls differently on different markets. One rule governs both: the less elastic side carries more of the burden (tax) or captures more of the benefit (subsidy).' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'Same tax, steep vs flat demand' },
+        {
+          type: 'econDiagram',
+          chart: 'elasticityRegimes',
+          views: [
+            {
+              label: 'Same tax, two markets',
+              show: ['S', 'S_taxed'],
+              points: ['E0'],
+              head: 'The same tax — but two different markets',
+              body: 'Both markets share the same supply curve and the same specific tax (S+tax). The only difference is how elastic demand is — and that alone changes who pays.'
+            },
+            {
+              label: 'Add demand',
+              show: ['S', 'S_taxed', 'D_inelastic', 'D_elastic'],
+              points: ['E0'],
+              head: 'Add the demand curves — steep (inelastic) vs flat (elastic)',
+              body: 'The steep demand curve is inelastic: consumers must buy regardless of price. The flat demand curve is elastic: consumers can switch to substitutes when the price rises.',
+              analysis: 'The pre-tax equilibrium (P₀, Q₀) sits on the shared pivot for both demand curves. The difference is purely in how responsive buyers are.'
+            },
+            {
+              label: 'Who pays?',
+              show: ['S', 'S_taxed', 'D_inelastic', 'D_elastic', 'PcSteepLine', 'PpSteepLine', 'PcFlatLine', 'PpFlatLine', 'P0Line'],
+              points: ['Pc_steep', 'Pp_steep', 'Pc_flat', 'Pp_flat', 'Qt_steep', 'Qt_flat'],
+              head: 'The burden follows the less elastic side',
+              body: 'Steep (inelastic) demand: Pc rises sharply, so consumers bear most of the tax. Flat (elastic) demand: Pc barely rises, so producers absorb most of it instead.',
+              analysis: 'Producers absorb more when demand is elastic — they cannot afford to lose price-sensitive buyers. One rule covers both taxes and subsidies: the less elastic side bears more of a tax and captures more of a subsidy.'
+            }
+          ]
+        },
+        {
+          type: 'glossaryRow',
+          terms: [
+            { term: 'Legal incidence',    definition: 'Who is legally responsible for remitting the tax – typically the seller. NOT the same as who bears the economic cost.' },
+            { term: 'Economic incidence', definition: 'Who actually bears the burden or captures the benefit, determined by relative PED and PES.' },
+            { term: 'Consumer burden',    definition: '(Pc − P₀) × Qt. Larger when demand is inelastic – consumers have few substitutes and cannot avoid the tax.' },
+            { term: 'Producer burden',    definition: '(P₀ − Pp) × Qt. Larger when supply is inelastic – producers cannot easily redirect output to other markets.' }
+          ]
+        },
+        { type: 'examEdge', title: 'Exam edge', text: 'One rule governs both taxes and subsidies: the less elastic side bears more of a tax / captures more of a subsidy. For a 25-mark essay: state the elasticity assumption first, then use the diagram rectangles to show the split, then link to a real example – UK tobacco duty (PED ≈ −0.4, consumers bear most), EU farm subsidies (inelastic land supply, landlords capture most), or the 1990 US luxury yacht tax (elastic demand for US yachts, domestic producers bore the burden and the industry collapsed).' }
       ],
-      examEdge: 'One rule governs both taxes and subsidies: <strong>the less elastic side bears more of a tax / captures more of a subsidy.</strong> For a 25-mark essay: state the elasticity assumption first, then use the diagram rectangles to show the split, then link to a real example – UK tobacco duty (PED ≈ −0.4, consumers bear most), EU farm subsidies (inelastic land supply, landlords capture most), or the 1990 US luxury yacht tax (elastic demand for US yachts, domestic producers bore the burden and the industry collapsed).',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

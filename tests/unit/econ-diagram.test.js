@@ -42,7 +42,28 @@ beforeAll(() => {
   loadSource('js/blocks/charts/adas.js');
   loadSource('js/blocks/charts/phillips.js');
   loadSource('js/blocks/charts/supply-demand.js');
+  // New families (added to close migration capability gaps) — load for the smoke test.
+  [
+    'keynesian-as', 'investment-mec', 'price-discrimination',
+    'lrac', 'cobweb', 'monopoly-welfare', 'elasticity-regimes'
+  ].forEach((f) => loadSource('js/blocks/charts/' + f + '.js'));
   API = window.ECONOS_ECON_DIAGRAM;
+});
+
+describe('new chart families register and render', () => {
+  const NEW = ['keynesianAS', 'mec', 'priceDiscrimination', 'lrac', 'cobweb', 'cobwebDivergent', 'monopolyWelfare', 'elasticityRegimes'];
+  it('each registers with a baseline curve set', () => {
+    NEW.forEach((name) => {
+      expect(API.charts[name], `family ${name} registered`).toBeTruthy();
+      expect(Object.keys(API.charts[name].baseline || {}).length, `family ${name} has curves`).toBeGreaterThan(0);
+    });
+  });
+  it('each renders a bare view to SVG without throwing', () => {
+    NEW.forEach((name) => {
+      const html = window.ECONOS_BLOCKS.econDiagram({ chart: name, views: [{ label: 't', shifts: {} }] });
+      expect(html, `family ${name} renders`).toContain('econ-id-root');
+    });
+  });
 });
 
 describe('exact line∩line intersect()', () => {

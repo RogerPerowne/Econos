@@ -28,6 +28,13 @@ Full reference: `docs/DIAGRAM_LIBRARY.md`. Engine: `js/blocks/econ-diagram.js`; 
 | Keynesian 45° cross / multiplier | `fortyFive` |
 | Long-run growth (LRAS shift) | `growth` |
 | Public good (vertical MB summation) | `publicGoods` |
+| Classical vs Keynesian AS (vertical LRAS vs reverse-L spare-capacity shape) | `keynesianAS` |
+| Investment / marginal efficiency of capital (r vs I) | `mec` |
+| Price discrimination (1st-degree; 3rd-degree elastic vs inelastic sub-markets) | `priceDiscrimination` |
+| Long-run average cost + minimum efficient scale / limit pricing | `lrac` |
+| Cobweb (commodity price instability — convergent/divergent staircase) | `cobweb` / `cobwebDivergent` |
+| Market-level monopoly welfare (D=AR, MR, S=ΣMC, DWL vs competition) | `monopolyWelfare` |
+| Elasticity regimes (steep/flat/unit/perfectly elastic/inelastic D & S; incidence) | `elasticityRegimes` |
 | Game-theory payoff matrix | use the **`payoffMatrix`** block (not econDiagram) |
 
 If none fits (indifference curves, Edgeworth box, a bespoke shape), it's a candidate for a **new chart family** — add one (`docs/DIAGRAM_LIBRARY.md` → "Adding a New Chart Family"), don't inline an SVG.

@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v148';
+  const CACHE_NAME = 'econos-v149';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -70,6 +70,13 @@
     '/js/blocks/charts/forty-five.js',
     '/js/blocks/charts/growth.js',
     '/js/blocks/charts/public-goods.js',
+    '/js/blocks/charts/keynesian-as.js',
+    '/js/blocks/charts/investment-mec.js',
+    '/js/blocks/charts/price-discrimination.js',
+    '/js/blocks/charts/lrac.js',
+    '/js/blocks/charts/cobweb.js',
+    '/js/blocks/charts/monopoly-welfare.js',
+    '/js/blocks/charts/elasticity-regimes.js',
     '/js/blocks/game.js',
     '/css/blocks/game.css',
     '/css/blocks/graphics.css',

@@ -111,18 +111,24 @@
     ),
 
     points: [
-      /* Faded E₁ dot + new E₂ dot per state */
+      /* Faded E₁ dot + new E₂ dot per state. E₂ label sits on the
+         OPPOSITE side of E₂ from E₁ so the label never lands between
+         the two dots or on top of the active curve. */
+      // demand-right: E₂ is upper-right of E₁ → label upper-right of E₂
       { layer: 'layer-demand-right', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-demand-right', x: E2_dr.x, y: E2_dr.y, tone: 'blue', radius: 6.5, label: 'E₂', labelDx: 10, labelDy: -10, anchor: 'start' },
+      { layer: 'layer-demand-right', x: E2_dr.x, y: E2_dr.y, tone: 'blue', radius: 6.5, label: 'E₂', labelDx: 12, labelDy: -10, anchor: 'start' },
 
+      // demand-left: E₂ is lower-left of E₁ → label lower-left of E₂
       { layer: 'layer-demand-left', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-demand-left', x: E2_dl.x, y: E2_dl.y, tone: 'blue', radius: 6.5, label: 'E₂', labelDx: 10, labelDy: -10, anchor: 'start' },
+      { layer: 'layer-demand-left', x: E2_dl.x, y: E2_dl.y, tone: 'blue', radius: 6.5, label: 'E₂', labelDx: -12, labelDy: 16, anchor: 'end' },
 
+      // supply-right: E₂ is lower-right of E₁ → label lower-right of E₂
       { layer: 'layer-supply-right', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-supply-right', x: E2_sr.x, y: E2_sr.y, tone: 'amber', radius: 6.5, label: 'E₂', labelDx: 10, labelDy: -10, anchor: 'start' },
+      { layer: 'layer-supply-right', x: E2_sr.x, y: E2_sr.y, tone: 'amber', radius: 6.5, label: 'E₂', labelDx: 12, labelDy: 16, anchor: 'start' },
 
+      // supply-left: E₂ is upper-left of E₁ → label upper-left of E₂
       { layer: 'layer-supply-left', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-supply-left', x: E2_sl.x, y: E2_sl.y, tone: 'amber', radius: 6.5, label: 'E₂', labelDx: 10, labelDy: -10, anchor: 'start' },
+      { layer: 'layer-supply-left', x: E2_sl.x, y: E2_sl.y, tone: 'amber', radius: 6.5, label: 'E₂', labelDx: -12, labelDy: -10, anchor: 'end' },
 
       /* Title-strip dots */
       { layer: 'layer-demand-right', x: 0.028, y: 1.031, tone: 'blue',  radius: 7 },

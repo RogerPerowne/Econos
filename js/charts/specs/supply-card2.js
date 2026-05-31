@@ -84,9 +84,12 @@
       { layer: 'layer-extension',
         x1: 0.288, y1: 0.294, x2: 0.288, y2: 0,
         tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      // Amber double-headed arrow along S₁ from E₃ to E₂ (up-right)
+      // Amber double-headed arrow connecting E₃ and E₂ along S₁.
+      // Offset 0.03 chart-units perpendicular OUTWARD (upper-left of
+      // the S₁ line) so the arrow runs PARALLEL to the curve instead of
+      // sitting on top of it.
       { layer: 'layer-extension',
-        x1: 0.300, y1: 0.308, x2: 0.622, y2: 0.628,
+        x1: 0.279, y1: 0.345, x2: 0.601, y2: 0.665,
         tone: 'amber', strokeWidth: 2.5,
         markerStart: 'sp-amber-start', markerEnd: 'sp-amber-end', buffer: 0 },
 

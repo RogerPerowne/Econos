@@ -5189,7 +5189,7 @@ window.ECONOS_ICONS = {
   /* ── Interactive diagrams for Indirect Taxes & Subsidies topic ── */
   taxTypesInteractive: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
       <g class="idl-base">
         <line x1="55" y1="265" x2="415" y2="265" stroke="#334155" stroke-width="1.5"/>
         <line x1="55" y1="265" x2="55" y2="18" stroke="#334155" stroke-width="1.5"/>
@@ -5221,12 +5221,15 @@ window.ECONOS_ICONS = {
         <line x1="384" y1="28" x2="392" y2="28" stroke="#1d4ed8" stroke-width="1.5"/>
         <line x1="384" y1="68" x2="392" y2="68" stroke="#1d4ed8" stroke-width="1.5"/>
         <text x="396" y="52" font-size="9" fill="#1d4ed8" font-weight="700">£T</text>
-        <!-- New equilibrium Pc, Qt -->
-        <circle cx="212" cy="123" r="4.5" fill="#1d4ed8"/>
-        <line x1="55" y1="123" x2="212" y2="123" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.7"/>
-        <line x1="212" y1="265" x2="212" y2="123" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.7"/>
-        <text x="49" y="127" text-anchor="end" font-weight="700" font-size="10" fill="#1d4ed8">Pc</text>
-        <text x="212" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
+        <!-- New equilibrium Pc, Qt — at the actual D × (S+T) intersection.
+             D from (80,42) to (405,242) → slope +0.6154
+             S+T from (80,202) to (395,28) → slope −0.5524
+             Intersection: x = 80 + 160/1.1678 = 217, y = 42 + 0.6154×137 = 126 -->
+        <circle cx="217" cy="126" r="4.5" fill="#1d4ed8"/>
+        <line x1="55" y1="126" x2="217" y2="126" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.7"/>
+        <line x1="217" y1="265" x2="217" y2="126" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.7"/>
+        <text x="49" y="130" text-anchor="end" font-weight="700" font-size="10" fill="#1d4ed8">Pc</text>
+        <text x="217" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
         <!-- Annotation -->
         <rect x="138" y="40" width="166" height="18" rx="5" fill="#DBEAFE" stroke="#1d4ed8" stroke-width="0.6"/>
         <text x="221" y="53" font-size="10" fill="#1d4ed8" font-weight="700" text-anchor="middle">Parallel shift – constant gap</text>
@@ -5256,7 +5259,7 @@ window.ECONOS_ICONS = {
 
   taxIncidenceInteractive: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
       <g class="idl-base">
         <line x1="55" y1="265" x2="415" y2="265" stroke="#334155" stroke-width="1.5"/>
         <line x1="55" y1="265" x2="55" y2="18" stroke="#334155" stroke-width="1.5"/>
@@ -5306,7 +5309,7 @@ window.ECONOS_ICONS = {
 
   subsidyInteractive: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
       <g class="idl-base">
         <line x1="55" y1="265" x2="415" y2="265" stroke="#334155" stroke-width="1.5"/>
         <line x1="55" y1="265" x2="55" y2="18" stroke="#334155" stroke-width="1.5"/>
@@ -5356,7 +5359,7 @@ window.ECONOS_ICONS = {
 
   elasticityIncidenceInteractive: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
       <line x1="220" y1="15" x2="220" y2="260" stroke="#e2e8f0" stroke-width="1"/>
       <g class="idl-base">
         <line x1="30" y1="250" x2="210" y2="250" stroke="#334155" stroke-width="1.5"/>

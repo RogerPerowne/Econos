@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v153';
+  const CACHE_NAME = 'econos-v154';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -36,6 +36,8 @@
     '/js/charts/specs/allocative-efficiency.js',
     '/js/charts/specs/subsidy-diagram-interactive.js',
     '/js/charts/specs/tax-diagram-interactive.js',
+    '/js/charts/specs/price-ceiling-diagram.js',
+    '/js/charts/specs/price-floor-diagram.js',
   ];
 
   /* ────────────────────────────────────────────────────────────

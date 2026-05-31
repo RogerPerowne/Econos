@@ -94,13 +94,19 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#app-root">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- Initial-load skeleton — the engine renders into #app-root once
        topic data + app.js have loaded and replaces the whole block.
        This means slow networks see the right chrome shape immediately
-       instead of a blank cream page for half a second. -->
-  <main id="app-root">
+       instead of a blank cream page for half a second.
+
+       NOT wrapped in <main> — the SPA's renderApp() (see shell.js)
+       emits <main id="main-content"> for the real content. Wrapping
+       the skeleton in another <main> creates a duplicate landmark
+       once the SPA boots (page-no-duplicate-main, etc.). The
+       skip-link above targets the SPA's main once it renders. -->
+  <div id="app-root">
     <div class="app" aria-busy="true">
       <div class="skeleton skeleton--sidebar"></div>
       <div class="skeleton__main">
@@ -111,7 +117,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
 
 </body>
 </html>

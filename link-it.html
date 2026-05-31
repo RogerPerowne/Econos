@@ -86,10 +86,12 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#app-root">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Initial-load skeleton — replaced by LinkRouter once a station boots. -->
-  <main id="app-root">
+  <!-- Initial-load skeleton — replaced by LinkRouter once a station boots.
+       The SPA's renderApp() emits <main id="main-content">; we don't wrap
+       the skeleton in <main> to avoid duplicate landmarks. -->
+  <div id="app-root">
     <div class="app theme--link" aria-busy="true">
       <div class="skeleton skeleton--sidebar"></div>
       <div class="skeleton__main">
@@ -100,7 +102,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
 
 </body>
 </html>

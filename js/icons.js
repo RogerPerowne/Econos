@@ -556,63 +556,10 @@ window.ECONOS_ICONS = {
      Layer dpl-1: AD₂ (green) + shift arrow.
      Layer dpl-2: E₂ dot + P₂/Y₂/E₂ labels + result chip.
      Geometry matches adAsDemandPull (viewBox 0 0 480 280, E₁=195,149, E₂=227,128).
+  adDemandPullInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_DEMAND_PULL_INTERACTIVE_SPEC),
+
+  adCostPushInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_COST_PUSH_INTERACTIVE_SPEC),
      ============================================================ */
-  adDemandPullInteractive: `
-    <svg viewBox="0 0 480 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <defs>
-        <marker id="idpl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
-      </defs>
-
-      <!-- BASE – always visible: axes, SRAS, AD₁, E₁ -->
-      <line x1="55" y1="40" x2="55" y2="374" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="55" y1="374" x2="380" y2="374" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
-      <text x="48" y="34" font-size="12" font-weight="700" fill="#374151" text-anchor="end">P</text>
-      <text x="385" y="382" font-size="12" font-weight="700" fill="#374151">Y</text>
-
-      <!-- SRAS -->
-      <line x1="65" y1="369" x2="350" y2="65" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>
-      <text x="358" y="65" font-size="12" font-weight="700" fill="#475569">SRAS</text>
-
-      <!-- AD₁ -->
-      <line x1="75" y1="82" x2="305" y2="366" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round"/>
-      <text x="60" y="74" font-size="12" font-weight="700" fill="#2563EB">AD₁</text>
-
-      <!-- E₁ at (195, 230) -->
-      <line x1="55" y1="230" x2="195" y2="230" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-      <line x1="195" y1="374" x2="195" y2="230" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-      <circle cx="195" cy="230" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
-      <text x="50" y="234" font-size="11" font-weight="600" fill="#475569" text-anchor="end">P₁</text>
-      <text x="195" y="392" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">Y₁</text>
-      <text x="203" y="224" font-size="11" font-weight="600" fill="#475569">E₁</text>
-
-      <!-- LAYER dpl-1: AD₂ + shift arrow -->
-      <g class="dpl-1" style="display:none;">
-        <line x1="135" y1="82" x2="365" y2="366" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
-        <text x="120" y="74" font-size="12" font-weight="800" fill="#10B981">AD₂</text>
-        <path d="M 240 307 L 290 307" stroke="#10B981" stroke-width="2.6" fill="none" marker-end="url(#idpl-arrow)"/>
-        <text x="265" y="325" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle" letter-spacing="0.5">AD shifts right</text>
-      </g>
-
-      <!-- LAYER dpl-2: E₂ + result chip -->
-      <g class="dpl-2" style="display:none;">
-        <line x1="55" y1="195" x2="227" y2="195" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 2"/>
-        <line x1="227" y1="374" x2="227" y2="195" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 2"/>
-        <circle cx="227" cy="195" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
-        <text x="50" y="199" font-size="11" font-weight="800" fill="#059669" text-anchor="end">P₂</text>
-        <text x="227" y="392" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">Y₂</text>
-        <text x="235" y="189" font-size="11" font-weight="700" fill="#059669">E₂</text>
-        <g transform="translate(393, 132)">
-          <rect x="0" y="0" width="75" height="58" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
-          <text x="37.5" y="18" font-size="9" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="1">RESULT</text>
-          <line x1="12" y1="24" x2="63" y2="24" stroke="#10B981" stroke-width="1" opacity="0.4"/>
-          <text x="37.5" y="40" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">P ↑</text>
-          <text x="37.5" y="54" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">Y ↑</text>
-        </g>
-      </g>
-    </svg>
-  `,
 
   /* ============================================================
      COST-PUSH INTERACTIVE – 3-step build for interactiveDiagram block.
@@ -621,62 +568,6 @@ window.ECONOS_ICONS = {
      Layer cpl-2: E₂ dot + P₂/Y₂/E₂ labels + result chip.
      Geometry matches adAsCostPush (viewBox 0 0 480 280, E₁=195,149, E₂=159,122).
      ============================================================ */
-  adCostPushInteractive: `
-    <svg viewBox="0 0 480 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <defs>
-        <marker id="icpl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
-        </marker>
-      </defs>
-
-      <!-- BASE – always visible: axes, AD, SRAS₁, E₁ -->
-      <line x1="55" y1="40" x2="55" y2="374" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="55" y1="374" x2="380" y2="374" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
-      <text x="48" y="34" font-size="12" font-weight="700" fill="#374151" text-anchor="end">P</text>
-      <text x="385" y="382" font-size="12" font-weight="700" fill="#374151">Y</text>
-
-      <!-- AD – unchanged throughout -->
-      <line x1="75" y1="82" x2="305" y2="366" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round"/>
-      <text x="312" y="369" font-size="12" font-weight="700" fill="#2563EB">AD</text>
-
-      <!-- SRAS₁ -->
-      <line x1="65" y1="369" x2="350" y2="65" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>
-      <text x="358" y="65" font-size="12" font-weight="700" fill="#475569">SRAS₁</text>
-
-      <!-- E₁ at (195, 230) -->
-      <line x1="55" y1="230" x2="195" y2="230" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-      <line x1="195" y1="374" x2="195" y2="230" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
-      <circle cx="195" cy="230" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="2"/>
-      <text x="50" y="234" font-size="11" font-weight="600" fill="#475569" text-anchor="end">P₁</text>
-      <text x="195" y="392" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">Y₁</text>
-      <text x="203" y="224" font-size="11" font-weight="600" fill="#475569">E₁</text>
-
-      <!-- LAYER cpl-1: SRAS₂ + shift arrow -->
-      <g class="cpl-1" style="display:none;">
-        <line x1="65" y1="286" x2="303" y2="32" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
-        <text x="310" y="32" font-size="12" font-weight="800" fill="#F59E0B">SRAS₂</text>
-        <path d="M 270 152 L 270 98" stroke="#F59E0B" stroke-width="2.6" fill="none" marker-end="url(#icpl-arrow)"/>
-        <text x="282" y="132" font-size="10" font-weight="700" fill="#F59E0B" letter-spacing="0.5">SRAS shifts left</text>
-      </g>
-
-      <!-- LAYER cpl-2: E₂ + result chip -->
-      <g class="cpl-2" style="display:none;">
-        <line x1="55" y1="185" x2="159" y2="185" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 2"/>
-        <line x1="159" y1="374" x2="159" y2="185" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 2"/>
-        <circle cx="159" cy="185" r="6" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2.5"/>
-        <text x="50" y="189" font-size="11" font-weight="800" fill="#B45309" text-anchor="end">P₂</text>
-        <text x="159" y="392" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle">Y₂</text>
-        <text x="167" y="179" font-size="11" font-weight="700" fill="#B45309">E₂</text>
-        <g transform="translate(393, 132)">
-          <rect x="0" y="0" width="75" height="58" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
-          <text x="37.5" y="18" font-size="9" font-weight="800" fill="#B45309" text-anchor="middle" letter-spacing="1">RESULT</text>
-          <line x1="12" y1="24" x2="63" y2="24" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
-          <text x="37.5" y="40" font-size="13" font-weight="800" fill="#B45309" text-anchor="middle">P ↑</text>
-          <text x="37.5" y="54" font-size="13" font-weight="800" fill="#B45309" text-anchor="middle">Y ↓</text>
-        </g>
-      </g>
-    </svg>
-  `,
 
   /* === UK CPI inflation 2010 – Jan 2026 (Card 5 puzzle chart) === */
   qeChart: `

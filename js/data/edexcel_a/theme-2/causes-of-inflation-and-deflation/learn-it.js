@@ -124,27 +124,49 @@ window.ECONOS_TOPIC = {
         svgKey: 'adDemandPullInteractive',
         label: 'The AD/AS diagram',
         emoji: '📊',
-        layers: ['dpl-1', 'dpl-2'],
+        layers: ['idl-1', 'idl-2'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical', keynesian: 'Keynesian' },
         views: [
           {
             label: 'Base equilibrium',
             tone: 'blue',
-            head: 'Starting point: P₁ and Y₁',
-            body: 'The economy is at equilibrium E₁ where AD₁ meets SRAS. The price level is P₁ and real output is Y₁. AD is unchanged in this view.'
+            classical: {
+              head: 'Starting point on vertical LRAS',
+              body: 'Classical economists hold that in the long run AS is vertical at full-capacity output Yf. The economy starts at E₁ where AD₁ meets LRAS — price level P₁, output Y₁ = Yf.'
+            },
+            keynesian: {
+              head: 'Starting point on sloped SRAS',
+              body: 'Keynesians draw AS as upward-sloping in the short run because some costs are sticky. The economy starts at E₁ where AD₁ meets SRAS — price level P₁, output Y₁ below full capacity.'
+            }
           },
           {
             label: 'AD shifts right',
             tone: 'green',
-            head: 'Demand shock – AD₁ → AD₂',
-            body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₂. Firms face excess demand and raise prices.',
-            analysis: 'The rightward shift is the signature of demand-pull. SRAS is unchanged – the pressure comes entirely from the demand side.'
+            classical: {
+              head: 'Demand shock — AD₁ → AD₂',
+              body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₂. The AS curve (vertical LRAS) does not move.',
+              analysis: 'Classical view: only AD has moved. The economy cannot produce above Yf in the long run, so something has to give — that something is the price level.'
+            },
+            keynesian: {
+              head: 'Demand shock — AD₁ → AD₂',
+              body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₂. Firms face excess demand at the old prices.',
+              analysis: 'Keynesian view: in the short run AS slopes up, so firms can BOTH raise prices AND raise output in response. The pressure splits between P and Y.'
+            }
           },
           {
             label: 'New equilibrium',
             tone: 'green',
-            head: 'Result: P ↑ and Y ↑',
-            body: 'The new equilibrium E₂ is at higher price level P₂ and higher output Y₂. Inflation has occurred and the economy is producing more.',
-            analysis: 'Both P and Y rise – that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
+            classical: {
+              head: 'Result: P ↑, Y unchanged',
+              body: 'The new equilibrium E₂ sits directly ABOVE E₁ on the vertical LRAS. Price level rises from P₁ to P₂. Output is still Y₁ = Yf.',
+              analysis: 'The Classical "money is neutral" result — AD stimulus produces ONLY inflation in the long run. No real-output gain.'
+            },
+            keynesian: {
+              head: 'Result: P ↑ and Y ↑',
+              body: 'The new equilibrium E₂ is at higher price level P₂ AND higher output Y₂. Inflation has occurred but the economy is also producing more.',
+              analysis: 'Both P and Y rise — that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
+            }
           }
         ]
       },
@@ -210,7 +232,7 @@ window.ECONOS_TOPIC = {
         svgKey: 'adCostPushInteractive',
         label: 'The AD/AS diagram',
         emoji: '📊',
-        layers: ['cpl-1', 'cpl-2'],
+        layers: ['idl-1', 'idl-2'],
         views: [
           {
             label: 'Base equilibrium',

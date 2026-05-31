@@ -721,9 +721,17 @@
     function placeTick(axis, pos, text, x, y) {
       if (!ctx) return true;
       var existing = ctx.placedTicks[axis];
+      // Perspective- and layer-aware: two ticks in DIFFERENT
+      // perspectives (or mutually-exclusive layers) never render at
+      // the same time, so a position overlap is fine. Only flag a
+      // collision when both ticks could conceivably be visible
+      // together — same perspective + compatible layer.
+      var persp = pt.perspective || null;
+      var layer = pt.layer || null;
       for (var i = 0; i < existing.length; i++) {
         var prev = existing[i];
         if (Math.abs(prev.pos - pos) < MIN_TICK_GAP) {
+          if (prev.perspective && persp && prev.perspective !== persp) continue;
           if (prev.text === text) {
             return false; // duplicate label — silently skip
           }
@@ -735,7 +743,7 @@
           try { console.warn(msg); } catch (e) {}
         }
       }
-      existing.push({ pos: pos, text: text, x: x, y: y });
+      existing.push({ pos: pos, text: text, x: x, y: y, perspective: persp, layer: layer });
       return true;
     }
 

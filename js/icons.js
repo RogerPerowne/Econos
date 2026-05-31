@@ -12835,47 +12835,7 @@ window.ECONOS_ICONS = {
 
   srasCurveStatic: window.ECONOS_PPF.render(window.ECONOS_SRAS_CURVE_STATIC_SPEC),
 
-  lrasViewsInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-    <defs><style>
-      .idl-1{display:none}.idl-2{display:none}
-      .sv-show-1 .idl-1{display:block}
-      .sv-show-2 .idl-2{display:block}
-      /* article-page bridge: the static-article engine swaps show-&lt;state&gt;
-         on the wrapper (SPA uses sv-show-N); map the two LRAS views to it. */
-      .show-classical .idl-1{display:block}
-      .show-keynesian .idl-2{display:block}
-    </style></defs>
-    <!-- Base: Axes -->
-    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
-    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
-    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
-    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
-    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
-    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
-    <!-- Layer 1: Classical LRAS -->
-    <g class="idl-1">
-      <line x1="245" y1="20" x2="245" y2="272" stroke="#3B82F6" stroke-width="2.5"/>
-      <text x="250" y="17" font-size="12" fill="#3B82F6" font-weight="700">LRAS</text>
-      <line x1="55" y1="150" x2="245" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="40" y="155" font-size="11" fill="#94A3B8" text-anchor="middle">P₀</text>
-      <circle cx="245" cy="150" r="5.5" fill="white" stroke="#3B82F6" stroke-width="2"/>
-      <text x="245" y="287" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
-      <text x="245" y="296" font-size="9" fill="#94A3B8" text-anchor="middle">(full-capacity output)</text>
-    </g>
-    <!-- Layer 2: Keynesian LRAS – classic hockey-stick.
-         Flat at a modest price level over the spare-capacity range,
-         rises steeply as the economy nears Yf, then vertical at Yf=245
-         (same x as Classical LRAS so the two views align). -->
-    <g class="idl-2">
-      <path d="M 70,215 C 140,215 185,213 215,200 C 235,188 245,110 245,22" fill="none" stroke="#D97706" stroke-width="2.5"/>
-      <text x="245" y="14" text-anchor="middle" font-size="12" fill="#D97706" font-weight="700">LRAS</text>
-      <line x1="245" y1="22" x2="245" y2="268" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="245" y="285" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
-      <text x="130" y="232" font-size="10" fill="#059669" font-weight="700">Flat range</text>
-      <text x="200" y="180" font-size="10" fill="#D97706" font-weight="700">Rising range</text>
-      <text x="255" y="60" font-size="10" fill="#DC2626" font-weight="700">Capacity limit</text>
-    </g>
-  </svg>`,
+  lrasViewsInteractive: window.ECONOS_PPF.render(window.ECONOS_LRAS_VIEWS_INTERACTIVE_SPEC),
 
   srasShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_INTERACTIVE_SPEC),
 

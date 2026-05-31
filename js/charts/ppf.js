@@ -1096,13 +1096,28 @@
     // default and HIDDEN whenever any view is active. Used by shift charts
     // where the original solid curve must vanish once the user steps into
     // a view that overlays a dashed version of the same curve.
+    // `spec.layerMode: 'exclusive'` switches the reveal pattern so view N
+    // shows ONLY layer N (instead of layers 1..N). Used by side-by-side
+    // shape comparisons like Classical-vs-Keynesian LRAS.
+    // `spec.layerAliases: { 'idl-1': ['show-classical'], 'idl-2': ['show-keynesian'] }`
+    // adds extra parent classes that reveal a layer — used by the
+    // static-article engine which swaps `show-<state>` on the wrapper
+    // instead of the SPA's `sv-show-N`.
     var layerCss = '';
     if (Array.isArray(spec.layers) && spec.layers.length) {
+      var exclusive = spec.layerMode === 'exclusive';
+      var aliases = spec.layerAliases || {};
       var hides = spec.layers.map(function (l) { return '.' + l + '{display:none}'; }).join('');
-      var reveals = spec.layers.map(function (_, i) {
+      var reveals = spec.layers.map(function (l, i) {
         var n = i + 1;
-        var sel = spec.layers.slice(0, n).map(function (l) { return '.sv-show-' + n + ' .' + l; }).join(',');
+        var visible = exclusive ? [l] : spec.layers.slice(0, n);
+        var sel = visible.map(function (vl) { return '.sv-show-' + n + ' .' + vl; }).join(',');
         return sel + '{display:block}';
+      }).join('');
+      var aliasReveals = Object.keys(aliases).map(function (layerName) {
+        return aliases[layerName].map(function (parent) {
+          return '.' + parent + ' .' + layerName + '{display:block}';
+        }).join('');
       }).join('');
       var inverseCss = '';
       if (Array.isArray(spec.inverseLayers) && spec.inverseLayers.length) {
@@ -1112,7 +1127,7 @@
         }).join(',');
         inverseCss = inverseHides + '{display:none}';
       }
-      layerCss = '<style>' + hides + reveals + inverseCss + '</style>';
+      layerCss = '<style>' + hides + reveals + aliasReveals + inverseCss + '</style>';
     }
     parts.push('<defs>' + clips + layerCss + (spec.defs || '') + '</defs>');
 

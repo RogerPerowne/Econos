@@ -13521,56 +13521,7 @@ window.ECONOS_ICONS = {
        .idl-hysteresis  = trend-bends-down arrow at the recession trough
      viewBox widened to 720 so right-edge labels fit; arrows drawn as
      inline polygons rather than markers (markers were scaling oddly). */
-  actualVsPotentialGrowth: `
-    <div style="background:#fff;border-radius:14px;padding:14px 16px;">
-      <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Real GDP</text>
-        <line x1="60" y1="240" x2="690" y2="240" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="60" y1="240" x2="60" y2="30" stroke="#0B1426" stroke-width="1.4"/>
-        <polygon points="690,240 683,236 683,244" fill="#0B1426"/>
-        <polygon points="60,30 56,37 64,37" fill="#0B1426"/>
-        <text x="668" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">Time</text>
-        <!-- Actual GDP wave (base — always visible) -->
-        <path d="M60 195 C100 175 150 110 220 100 C280 92 320 195 380 195 C430 195 460 100 530 80 C560 72 575 80 580 85" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-        <text x="588" y="90" font-size="11" fill="#1E3A8A" font-family="Inter,sans-serif" font-weight="700">Actual GDP</text>
-        <!-- LAYER 1: Potential trend + Booms/Recessions markers -->
-        <g class="idl-trend" style="display:none">
-          <line x1="60" y1="200" x2="580" y2="90" stroke="#16A34A" stroke-width="2.4"/>
-          <text x="588" y="110" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Potential GDP</text>
-          <circle cx="220" cy="100" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="220" y1="100" x2="280" y2="58" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-          <text x="286" y="55" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">Booms sit</text>
-          <text x="286" y="69" font-size="11" fill="#065F46" font-family="Inter,sans-serif" font-weight="700">above trend</text>
-          <circle cx="380" cy="195" r="5" fill="#C2410C" stroke="#fff" stroke-width="2"/>
-          <line x1="380" y1="195" x2="440" y2="222" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-          <text x="448" y="220" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">Recessions sit</text>
-          <text x="448" y="234" font-size="11" fill="#C2410C" font-family="Inter,sans-serif" font-weight="700">below trend</text>
-        </g>
-        <!-- LAYER 2: Trend drivers — 5 small upward triangles + labels below.
-             Triangle apex sits on the trend line; label sits ~14 px below.
-             Trend equation: trend_y = 200 − 0.2115·(x − 60). -->
-        <g class="idl-drivers" style="display:none">
-          <polygon points="116,195 124,195 120,187" fill="#16A34A"/>
-          <text x="120" y="211" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Labour</text>
-          <polygon points="226,172 234,172 230,164" fill="#16A34A"/>
-          <text x="230" y="188" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Capital</text>
-          <polygon points="336,149 344,149 340,141" fill="#16A34A"/>
-          <text x="340" y="165" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Productivity</text>
-          <polygon points="446,126 454,126 450,118" fill="#16A34A"/>
-          <text x="450" y="142" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Skills</text>
-          <polygon points="546,103 554,103 550,95" fill="#16A34A"/>
-          <text x="550" y="119" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Tech</text>
-        </g>
-        <!-- LAYER 3: Hysteresis — dashed line from trough bending down,
-             ending in a small downward triangle, with a caption to the side. -->
-        <g class="idl-hysteresis" style="display:none">
-          <path d="M380 195 C400 205 420 215 440 222" stroke="#C2410C" stroke-width="1.8" fill="none" stroke-dasharray="4 3"/>
-          <polygon points="436,218 444,218 440,228" fill="#C2410C"/>
-          <text x="396" y="290" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif">Hysteresis: trend can bend down</text>
-        </g>
-      </svg>
-    </div>
-  `,
+  actualVsPotentialGrowth: window.ECONOS_PPF.render(window.ECONOS_ACTUAL_VS_POTENTIAL_GROWTH_SPEC),
 
   /* ============================================================
      The Impact of Economic Growth (Theme 2 · 2.5.4)

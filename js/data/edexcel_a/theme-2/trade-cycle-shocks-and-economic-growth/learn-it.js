@@ -235,7 +235,7 @@ window.ECONOS_TOPIC = {
         maxWidth: '100%',
         label: 'Click through the four stages',
         emoji: '\u{3030}\u{FE0F}',
-        layers: ['idl-trend', 'idl-drivers', 'idl-hysteresis'],
+        layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           {
             label: 'Actual GDP only',

@@ -34,7 +34,18 @@ window.ECONOS_TOPIC = {
       ],
       blocks: [
         { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'When the plans of buyers and sellers match, the market settles at an equilibrium price and quantity.' },
-        { type: 'diagram', svgKey: 'equilibriumBasic', caption: 'Market equilibrium' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Market equilibrium',
+              show: ['D', 'S'],
+              points: ['E'],
+              analysis: 'Demand and supply meet at the single equilibrium E: price P* and quantity Q*. At this price quantity demanded equals quantity supplied, so the market clears – no shortage and no surplus.'
+            }
+          ]
+        },
         { type: 'grid', cols: 2, children: [
           { type: 'tile', tone: 'blue',  icon: '🛒', head: 'Demand', body: 'The demand curve shows how much consumers are willing and able to buy at each price.' },
           { type: 'tile', tone: 'amber', icon: '🏭', head: 'Supply', body: 'The supply curve shows how much producers are willing and able to sell at each price.' }
@@ -197,7 +208,22 @@ window.ECONOS_TOPIC = {
       ],
       blocks: [
         { type: 'calloutStrip', tone: 'blue', icon: '💡', text: 'In a competitive market, equilibrium allocates output to the consumers who value it most and the producers who can supply it at the lowest cost.' },
-        { type: 'diagram', svgKey: 'welfareSurplusDiagram', caption: 'Why equilibrium can be efficient' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Total surplus at equilibrium',
+              show: ['D', 'S', 'PriceLine'],
+              points: ['E'],
+              areas: [
+                { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue',  label: 'CS' },
+                { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green', label: 'PS' }
+              ],
+              analysis: 'At E the price line P* splits the gains from trade: consumer surplus (CS, blue) above it and producer surplus (PS, green) below. Total surplus (CS + PS) is at its maximum here – at any other quantity, marginal benefit and marginal cost no longer match and some mutually beneficial trades are lost.'
+            }
+          ]
+        },
         { type: 'sectionHeader', icon: '📐', label: 'Key welfare concepts' },
         { type: 'grid', cols: 3, children: [
           { type: 'tile', tone: 'blue',   icon: '👥', head: 'Consumer surplus',                body: 'The benefit consumers get from paying less than their willingness to pay.' },

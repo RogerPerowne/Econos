@@ -206,7 +206,22 @@ window.ECONOS_TOPIC = {
       lede: 'A small injection produces a much larger AD shift, because the multiplier amplifies it. The same mechanism runs in reverse in a downturn – and several real-world frictions dampen the textbook ceiling.',
       blocks: [
         { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'ΔAD = k × ΔJ. The headline injection is just the first step; the multiplier is what the economy actually feels.' },
-        { type: 'diagram', svgKey: 'multiplierAdAs', caption: 'A £10bn injection becomes a £k × 10bn AD shift' },
+        {
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'The injection',
+              shifts: {},
+              analysis: 'Start at equilibrium E₀ where AD₀ meets SRAS. A £10bn rise in an injection (I, G or X) is only the first link in the chain – on its own it would shift AD right by just that £10bn.'
+            },
+            {
+              label: 'Amplified to k × ΔJ',
+              shifts: { AD: 120 },
+              analysis: 'The multiplier amplifies the injection: ΔAD = k × ΔJ. AD shifts right by far more than the original £10bn, so the new equilibrium E₁ sits at a higher price level and higher real output. The economy feels the multiplied shift, not the headline figure.'
+            }
+          ]
+        },
         { type: 'sectionHeader', icon: '\u{2195}\u{FE0F}', label: 'Both directions matter' },
         { type: 'grid', cols: 2, children: [
           { type: 'tile', tone: 'green', icon: '\u{2B06}\u{FE0F}', head: 'The upward multiplier', body: 'A rise in any injection (I, G, X) shifts AD right by <strong>k × ΔJ</strong>. Real output and the price level both rise. This is the boost side – the case for fiscal stimulus and the reason policy effects are bigger than their headline cost.' },

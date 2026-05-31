@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.1 — 2026-05-31
+
+### Chart-migration sweep — four more clean static-chart swaps
+
+Continues migrating standalone static-chart `diagram` blocks (the low-risk
+class: a chart sitting in a `blocks` array with no interactive scaffolding) to
+`econDiagram`. Data-only — these files are network-first, so no cache bump.
+
+- **price-determination** — `equilibriumBasic` → `supplyDemand` baseline
+  (Equilibrium view, D/S/E); `welfareSurplusDiagram` → `supplyDemand` with
+  labelled CS/PS triangles (reuses the v0.36.0 area-label capability).
+- **equilibrium-national-income** — `eniAdAsCore` → `adas` AD/AS-equilibrium
+  view (AD ∩ SRAS on the LRAS line gives P* and Y*).
+- **national-income-and-the-multiplier** — `multiplierAdAs` → `adas` 2-view
+  injection → amplified-AD-shift sequence (ΔAD = k × ΔJ; equilibrium moves
+  right and up into an inflationary gap).
+- All four screenshot-verified; the `adas` shift was checked baseline-vs-shifted
+  to confirm the equilibrium moves correctly and labels don't clash.
+
 ## 0.36.0 — 2026-05-31
 
 ### Chart-migration sweep (Goal 1) — engine hardening + first migration

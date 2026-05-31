@@ -974,34 +974,7 @@ window.ECONOS_ICONS = {
   adSlopeDiagram: window.ECONOS_PPF.render(window.ECONOS_AD_SLOPE_SPEC),
 
   /* Consumption function – C = a + bY line graph (Consumption Card 2) */
-  consumptionFunction: `
-    <svg viewBox="0 0 560 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <!-- axes -->
-      <line x1="160" y1="40"  x2="160" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="160" y1="280" x2="520" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <text x="160" y="30"  font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">C</text>
-      <text x="530" y="286" font-size="16" font-weight="800" fill="#0F172A">Y</text>
-      <text x="152" y="296" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">0</text>
-
-      <!-- C = a + bY line: intercept at (160, 200), slope rising to (500, 80) -->
-      <line x1="160" y1="200" x2="500" y2="80" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
-
-      <!-- intercept dot -->
-      <circle cx="160" cy="200" r="5.5" fill="#2563EB"/>
-
-      <!-- slope triangle near top right showing b = MPC -->
-      <line x1="380" y1="138" x2="440" y2="138" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
-      <line x1="440" y1="138" x2="440" y2="117" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
-      <text x="452" y="132" font-size="14" font-style="italic" font-weight="700" fill="#0F172A">b</text>
-      <text x="466" y="132" font-size="13" font-weight="700" fill="#0F172A">= MPC</text>
-
-      <!-- autonomous consumption brace and label on y-axis -->
-      <path d="M 136 200 Q 130 200 130 215 L 130 268 Q 130 280 136 280" fill="none" stroke="#475569" stroke-width="1.5"/>
-      <text x="120" y="232" font-size="12" font-style="italic" font-weight="700" fill="#0F172A" text-anchor="end">a –</text>
-      <text x="120" y="248" font-size="11" font-weight="600" fill="#475569" text-anchor="end">autonomous</text>
-      <text x="120" y="262" font-size="11" font-weight="600" fill="#475569" text-anchor="end">consumption</text>
-    </svg>
-  `,
+  consumptionFunction: window.ECONOS_PPF.render(window.ECONOS_CONSUMPTION_FUNCTION_SPEC),
 
   /* Investment & Multiplier feedback loop (Investment Card 6) */
   investmentFeedbackLoop: `
@@ -1087,45 +1060,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* MEC and Investment Decisions diagram (Investment Card 5) */
-  mecDiagram: `
-    <svg viewBox="0 0 560 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <!-- axes -->
-      <line x1="120" y1="40"  x2="120" y2="320" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="120" y1="320" x2="520" y2="320" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <text x="112" y="336" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">0</text>
-
-      <!-- Y-axis title -->
-      <text x="90" y="56" font-size="12" font-weight="700" fill="#475569" text-anchor="end">Real return</text>
-      <text x="90" y="72" font-size="11" font-weight="600" fill="#64748B" text-anchor="end">(% per year)</text>
-
-      <!-- X-axis title (right end) -->
-      <text x="445" y="346" font-size="12" font-weight="700" fill="#475569">Capital stock</text>
-      <text x="478" y="360" font-size="11" font-weight="600" fill="#64748B">(Q)</text>
-
-      <!-- MEC curve: downward, convex; from (140,60) to (500,300) -->
-      <path d="M 140 60 C 200 130, 260 220, 500 300" fill="none" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
-      <text x="508" y="304" font-size="14" font-weight="800" fill="#2563EB">MEC</text>
-
-      <!-- Equilibrium dashed lines and dot at (300, 210) – sits exactly on the MEC curve -->
-      <line x1="120" y1="210" x2="300" y2="210" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5 4"/>
-      <line x1="300" y1="210" x2="300" y2="320" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5 4"/>
-      <circle cx="300" cy="210" r="7" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-
-      <!-- Y-axis label: Interest rate (r) -->
-      <text x="112" y="208" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="end">Interest</text>
-      <text x="112" y="222" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="end">rate</text>
-      <text x="112" y="236" font-size="11" font-style="italic" font-weight="700" fill="#1E40AF" text-anchor="end">(r)</text>
-
-      <!-- X-axis label: Q* -->
-      <text x="300" y="340" font-size="13" font-weight="800" fill="#1E40AF" text-anchor="middle">Q*</text>
-
-      <!-- Callout: Equilibrium investment -->
-      <rect x="310" y="120" width="148" height="48" rx="8" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-      <text x="384" y="140" font-size="12" font-weight="700" fill="#0F172A" text-anchor="middle">Equilibrium</text>
-      <text x="384" y="156" font-size="12" font-weight="700" fill="#0F172A" text-anchor="middle">investment</text>
-      <line x1="384" y1="168" x2="304" y2="206" stroke="#CBD5E1" stroke-width="1.3"/>
-    </svg>
-  `,
+  mecDiagram: window.ECONOS_PPF.render(window.ECONOS_MEC_DIAGRAM_SPEC),
 
   /* Government Spending Multiplier – 5-tile injection chain + formula box (Gov Spending Card 5) */
   govMultiplierChain: `
@@ -1368,87 +1303,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  crowdingOutInteractive: `
-    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <defs>
-        <marker id="coi-ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
-        </marker>
-        <marker id="coi-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F97316"/>
-        </marker>
-        <marker id="coi-pu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#8B5CF6"/>
-        </marker>
-      </defs>
-
-      <!-- BASE: axes + S + D1 + E1 -->
-      <!-- Geometry: S=(80,260)→(390,50) slope=-0.677; D1=(80,50)→(390,260) slope=+0.677; E1=(235,155) -->
-      <g class="idl-base">
-        <rect width="440" height="300" fill="#FFFFFF" rx="8"/>
-        <text x="220" y="16" font-size="12" font-weight="900" fill="#0F172A" text-anchor="middle">Loanable funds market</text>
-
-        <!-- Y-axis -->
-        <line x1="55" y1="272" x2="55" y2="26" stroke="#334155" stroke-width="1.5"/>
-        <polygon points="55,23 51,31 59,31" fill="#334155"/>
-        <!-- X-axis -->
-        <line x1="55" y1="272" x2="413" y2="272" stroke="#334155" stroke-width="1.5"/>
-        <polygon points="416,272 408,268 408,276" fill="#334155"/>
-        <!-- Origin -->
-        <text x="49" y="276" font-size="9" font-weight="700" fill="#475569" text-anchor="end">0</text>
-        <!-- Y-axis label (rotated) -->
-        <text transform="rotate(-90 14 155)" x="14" y="155" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Real interest rate</text>
-        <!-- X-axis label -->
-        <text x="418" y="276" font-size="9" font-weight="700" fill="#475569">Q</text>
-
-        <!-- Supply S (blue, upward) -->
-        <line x1="80" y1="260" x2="390" y2="50" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
-        <text x="393" y="49" font-size="11" font-weight="800" fill="#2563EB">S</text>
-
-        <!-- D1 (teal, downward) -->
-        <line x1="80" y1="50" x2="390" y2="260" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round"/>
-        <text x="393" y="263" font-size="11" font-weight="800" fill="#0F766E">D₁</text>
-
-        <!-- E1 at (235, 155) -->
-        <line x1="55" y1="155" x2="235" y2="155" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="4 3"/>
-        <line x1="235" y1="155" x2="235" y2="272" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="4 3"/>
-        <circle cx="235" cy="155" r="4.5" fill="#0F766E" stroke="#fff" stroke-width="1.5"/>
-        <text x="49" y="159" font-size="10" font-weight="800" fill="#0F766E" text-anchor="end">R₁</text>
-        <text x="235" y="284" font-size="10" font-weight="800" fill="#0F766E" text-anchor="middle">Q₁</text>
-      </g>
-
-      <!-- idl-1: D2 + E2 (gov. borrowing shifts demand right by 50px) -->
-      <!-- D2=(130,50)→(405,237); E2=(260,138); rate-rise arrow on y-axis -->
-      <!-- D-shift arrow: (302,200)→(347,200) – both points verified on their curves -->
-      <g class="idl-1" style="display:none">
-        <line x1="130" y1="50" x2="405" y2="237" stroke="#F97316" stroke-width="2.2" stroke-dasharray="8 4" stroke-linecap="round"/>
-        <text x="407" y="240" font-size="11" font-weight="800" fill="#F97316">D₂</text>
-
-        <!-- Horizontal D-shift arrow from D1 to D2 at y=200 -->
-        <line x1="302" y1="200" x2="347" y2="200" stroke="#F97316" stroke-width="1.8" marker-end="url(#coi-or)"/>
-
-        <!-- E2 dashed guides + dot -->
-        <line x1="55" y1="138" x2="260" y2="138" stroke="#F97316" stroke-width="1.3" stroke-dasharray="5 3"/>
-        <line x1="260" y1="138" x2="260" y2="272" stroke="#F97316" stroke-width="1.3" stroke-dasharray="5 3"/>
-        <circle cx="260" cy="138" r="4.5" fill="#F97316" stroke="#fff" stroke-width="1.5"/>
-        <text x="49" y="142" font-size="10" font-weight="800" fill="#F97316" text-anchor="end">R₂</text>
-        <text x="260" y="284" font-size="10" font-weight="800" fill="#F97316" text-anchor="middle">Q₂</text>
-
-        <!-- Rate-rise arrow on y-axis -->
-        <line x1="63" y1="152" x2="63" y2="142" stroke="#F97316" stroke-width="2" marker-end="url(#coi-or)"/>
-      </g>
-
-      <!-- idl-2: Qp on D1 at R2 + crowded-out band -->
-      <!-- Qp: D1 at y=138 → x=210 (verified: 50+0.677*(210-80)=138) -->
-      <g class="idl-2" style="display:none">
-        <line x1="210" y1="138" x2="210" y2="272" stroke="#8B5CF6" stroke-width="1.3" stroke-dasharray="5 3"/>
-        <circle cx="210" cy="138" r="4.5" fill="#8B5CF6" stroke="#fff" stroke-width="1.5"/>
-        <text x="210" y="284" font-size="10" font-weight="800" fill="#8B5CF6" text-anchor="middle">Qₚ</text>
-        <!-- Crowded-out band Qp→Q1 just above x-axis -->
-        <rect x="210" y="263" width="25" height="9" fill="#8B5CF6" opacity="0.3" rx="1"/>
-      </g>
-    </svg>
-  `,
+  crowdingOutInteractive: window.ECONOS_PPF.render(window.ECONOS_CROWDING_OUT_SPEC),
 
   autoStabilisersInteractive: `
     <svg viewBox="0 0 420 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

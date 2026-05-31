@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v146';
+  const CACHE_NAME = 'econos-v147';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -56,6 +56,8 @@
     '/js/diagrams/static/welfare-tax.js',
     '/js/blocks/diagram.js',
     '/js/blocks/econ-diagram.js',
+    '/js/blocks/charts/adas.js',
+    '/js/blocks/charts/phillips.js',
     '/js/blocks/charts/ppf.js',
     '/js/blocks/charts/supply-demand.js',
     '/js/blocks/charts/externalities.js',

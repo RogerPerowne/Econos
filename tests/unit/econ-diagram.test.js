@@ -250,6 +250,27 @@ describe('per-view curve visibility (show / hide)', () => {
     expect(html.match(/>PS</g) || []).toHaveLength(1);
   });
 
+  it('inline point specs in view.points render, and arrows can reference their labels', () => {
+    // Movement-along-a-curve: two inline points on AD + an A→B arrow, with no
+    // family points registry involved. adas has no `points`, so this proves
+    // inline points work standalone.
+    const html = window.ECONOS_BLOCKS.econDiagram({
+      chart: 'adas',
+      views: [{
+        label: 'Movement', shifts: {}, show: ['AD'],
+        points: [
+          { label: 'A', onCurve: 'AD', x: 200, tone: 'blue' },
+          { label: 'B', onCurve: 'AD', x: 520, tone: 'green' }
+        ],
+        arrows: [['A', 'B', { tone: 'slate' }]]
+      }]
+    });
+    expect(html).toContain('>A<');
+    expect(html).toContain('>B<');
+    // The arrow resolves both endpoints (no throw) and the diagram renders.
+    expect(html).toContain('econ-id-root');
+  });
+
   it('a view with head + body + analysis renders all three (escaped) in the panel', () => {
     const html = window.ECONOS_BLOCKS.econDiagram({
       chart: 'supplyDemand',

@@ -889,16 +889,27 @@
       // Faded prior equilibria first (small grey dots) — preserve adas grammar
       // only when the family also defines a legacy equilibrium AND no explicit
       // points; here points are explicit so we skip faded priors.
-      thisView.points.forEach(function (pname, i) {
-        var spec = (chart.points && chart.points[pname]) || null;
+      thisView.points.forEach(function (entry, i) {
+        // An entry is EITHER a family point name (string) OR an inline point
+        // spec object { label, tone, at|onCurve+x|on, pLabel?, yLabel? }. Inline
+        // points let a view place its own markers (e.g. A and B for a
+        // movement-along-a-curve story) without the family pre-defining them.
+        var spec, key;
+        if (typeof entry === 'string') {
+          spec = (chart.points && chart.points[entry]) || null;
+          key = entry;
+        } else if (entry && typeof entry === 'object') {
+          spec = entry;
+          key = entry.label || ('p' + i);
+        }
         var pt = resolvePoint(chart, spec, thisShifts);
         if (!pt) return;
-        resolvedPoints[pname] = pt;
+        resolvedPoints[key] = pt;
         var tone = (spec && spec.tone) || EQ_TONES[i % EQ_TONES.length];
         bits.push(renderEquilibrium(pt, {
           plot: p,
           tone: tone,
-          label: (spec && spec.label) || pname,
+          label: (spec && spec.label) || key,
           pLabel: spec && spec.pLabel,
           yLabel: spec && spec.yLabel
         }));

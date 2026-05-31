@@ -99,10 +99,10 @@
         label: 'E*', labelDx: 0, labelDy: -16, anchor: 'middle' },
 
       // Title-strip dots
-      { layer: 'layer-legend-base',       x: 0.028, y: 1.031, tone: 'red',    radius: 7 },
-      { layer: 'layer-legend-extension',  x: 0.028, y: 1.031, tone: 'purple', radius: 7 },
-      { layer: 'layer-legend-shift',      x: 0.028, y: 1.031, tone: 'green',  radius: 7 },
-      { layer: 'layer-legend-efficiency', x: 0.028, y: 1.031, tone: 'green',  radius: 7 }
+      { layer: 'layer-legend-base',       x: 0.095, y: 1.031, tone: 'red',    radius: 7 },
+      { layer: 'layer-legend-extension',  x: 0.095, y: 1.031, tone: 'purple', radius: 7 },
+      { layer: 'layer-legend-shift',      x: 0.095, y: 1.031, tone: 'green',  radius: 7 },
+      { layer: 'layer-legend-efficiency', x: 0.095, y: 1.031, tone: 'green',  radius: 7 }
     ],
 
     texts: [
@@ -123,14 +123,14 @@
         text: 'Welfare gain', tone: 'green', bold: true, fontSize: 11, anchor: 'middle' },
 
       // Title strips per state
-      { layer: 'layer-legend-base',       x: 0.060, y: 1.017,
-        text: 'Free market equilibrium: MPC = MPB', tone: 'slate', fontSize: 12, anchor: 'start' },
-      { layer: 'layer-legend-extension',  x: 0.060, y: 1.017,
-        text: 'Consumption creates external benefits → MSB sits above MPB', tone: 'slate', fontSize: 12, anchor: 'start' },
-      { layer: 'layer-legend-shift',      x: 0.060, y: 1.017,
-        text: 'Socially optimal output: where MSB = MSC', tone: 'slate', fontSize: 12, anchor: 'start' },
-      { layer: 'layer-legend-efficiency', x: 0.060, y: 1.017,
-        text: 'Under-consumption → welfare gain triangle forgone', tone: 'slate', fontSize: 12, anchor: 'start' }
+      { layer: 'layer-legend-base',       x: 0.450, y: 1.017,
+        text: 'Free market equilibrium: MPC = MPB', tone: 'slate', fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-legend-extension',  x: 0.450, y: 1.017,
+        text: 'Consumption creates external benefits → MSB sits above MPB', tone: 'slate', fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-legend-shift',      x: 0.450, y: 1.017,
+        text: 'Socially optimal output: where MSB = MSC', tone: 'slate', fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-legend-efficiency', x: 0.450, y: 1.017,
+        text: 'Under-consumption → welfare gain triangle forgone', tone: 'slate', fontSize: 12, anchor: 'middle' }
     ],
 
     legends: [

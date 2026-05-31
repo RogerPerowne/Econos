@@ -1,6 +1,6 @@
 /* ============================================================
    ECONOS – content data for agg_supply
-   9 cards · ad-interactive template · Edexcel Theme 2.3
+   8 cards · ad-interactive template · Edexcel Theme 2.3
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -23,7 +23,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Draw the diagram as you go – seeing SRAS, LRAS, and AD interact makes the logic stick.',
     stages: [
-      { num: 1, name: 'Learn',  sub: '9 cards \xb7 22 min', state: 'current' },
+      { num: 1, name: 'Learn',  sub: '8 cards \xb7 20 min', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply in exam-style questions', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
@@ -35,7 +35,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'what-is-as',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 1 of 9',
+      stepLabel: 'Learn: Card 1 of 8',
       title: 'What is Aggregate Supply?',
       lede: 'Aggregate supply (AS) is the total output firms in the economy are willing and able to produce at each price level.\nAS has two time horizons – SRAS in the short run and LRAS in the long run.',
 
@@ -108,7 +108,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'sras-curve',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 2 of 9',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'The SRAS curve',
       lede: 'Short-run aggregate supply (SRAS) slopes upward because many costs are sticky in the short run. When the general price level rises faster than firms\' costs, profit margins improve and firms increase output.',
 
@@ -181,7 +181,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'lras-curve',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 3 of 9',
+      stepLabel: 'Learn: Card 3 of 8',
       title: 'The LRAS curve',
       lede: 'The long-run aggregate supply (LRAS) curve is vertical at Yf. In the long run, factor prices adjust, so output is determined by real productive capacity rather than the price level.',
 
@@ -250,7 +250,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'sras-shifts',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 9',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'Shifts in SRAS',
       lede: 'A shift in short-run aggregate supply happens when firms\' costs or productivity change at every price level.',
 
@@ -324,7 +324,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'lras-shifts',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 5 of 9',
+      stepLabel: 'Learn: Step 5 of 8',
       title: 'Shifts in LRAS',
       lede: 'LRAS shifts when the economy\'s productive capacity changes. A rightward shift means higher sustainable output without needing inflation.',
 
@@ -404,7 +404,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply-side-policies',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 6 of 9',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'Supply-side policies',
       lede: 'Supply-side policies aim to raise productive capacity or improve incentives and efficiency. Present both market-based and interventionist approaches.',
 
@@ -459,7 +459,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'as-in-adas',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 7 of 9',
+      stepLabel: 'Learn: Step 7 of 8',
       title: 'AS in the AD/AS model',
       lede: 'Compare supply-side improvements with demand-side stimulus. Both may raise output, but the inflation consequences differ.',
 
@@ -537,83 +537,11 @@ window.ECONOS_TOPIC = {
       examEdge: 'Top essays compare the inflation impact – AD stimulus is more inflationary than supply-side expansion when the economy is close to full employment.'
     },
 
-    /* ----- CARD 8 – AD shifts: Classical vs Keynesian -----
-       Prototype card for the Classical/Keynesian perspective toggle.
-       Same AD₁ → AD₂ shift, drawn under both schools of thought —
-       click the toggle pill above the diagram to flip between them.
-       The right-column description AND the analysis swap with the
-       perspective, because the predicted outcome of an AD shift
-       differs fundamentally between the two models.                */
-    {
-      id: 'ad-shift-perspectives',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Step 8 of 9',
-      title: 'AD shifts: Classical vs Keynesian',
-      lede: 'The same AD rightward shift — driven by, say, a fiscal stimulus — plays out very differently in each school of thought. Watch the diagram swap between the two.',
-
-      tip: { icon: '✅', tone: 'green', text: 'Same shock. Same chart. Two completely different stories — that is the heart of the macro debate.' },
-
-      interactiveDiagram: {
-        svgKey: 'adShiftPerspectives',
-        label: 'CLASSICAL VS KEYNESIAN OUTCOMES',
-        emoji: '⚖️',
-        layers: ['idl-1', 'idl-2'],
-        perspectives: ['classical', 'keynesian'],
-        perspectiveLabels: { classical: 'Classical', keynesian: 'Keynesian' },
-        views: [
-          {
-            label: 'Base',
-            show: [],
-            tone: 'slate',
-            classical: {
-              head: 'Initial equilibrium at E₁ on the vertical LRAS.',
-              body: ['The economy operates at full-capacity output Yf.', 'Price level is P₁ — set by where AD₁ meets LRAS.']
-            },
-            keynesian: {
-              head: 'Initial equilibrium at E₁ on the steep section, near capacity.',
-              body: ['The economy operates close to full capacity at output Y₁ — only just left of Yf.', 'AD₁ meets AS on the steepening section, so the price level P₁ is already under upward pressure.']
-            }
-          },
-          {
-            label: 'AD shifts right',
-            show: ['idl-1'],
-            tone: 'blue',
-            classical: {
-              head: 'Demand stimulus shifts AD to AD₂.',
-              body: ['Government spending, tax cuts or looser monetary policy raise total demand.', 'The whole AD curve moves rightward — the AS curve does not move.']
-            },
-            keynesian: {
-              head: 'Demand stimulus shifts AD to AD₂.',
-              body: ['Same shock as in the Classical case: AD₁ → AD₂.', 'The Keynesian AS curve is the textbook reverse-L — flat at low Y, steepening sharply as the economy approaches Yf.']
-            }
-          },
-          {
-            label: 'New equilibrium',
-            show: ['idl-1', 'idl-2'],
-            tone: 'amber',
-            classical: {
-              head: 'Only the price level rises — output stays at Yf.',
-              body: ['New equilibrium E₂ sits directly ABOVE E₁ on the vertical LRAS.', 'Y₂ = Y₁ = Yf. P₂ > P₁ — pure demand-pull inflation.'],
-              analysis: 'At full capacity, there is no spare labour or capital to mobilise. The extra demand bids up prices but cannot raise real output. This is the Classical "money is neutral in the long run" result — fiscal stimulus only creates inflation.'
-            },
-            keynesian: {
-              head: 'Mostly inflation — with only a small output gain.',
-              body: ['New equilibrium E₂ sits up-and-slightly-right of E₁ on the steep section.', 'P₂ > P₁ rises sharply; Y₂ rises only marginally above Y₁ — the remaining slack is quickly used up.'],
-              analysis: 'Close to capacity, Keynes converges with the Classical view: most of the AD stimulus turns into inflation, with only a thin sliver of extra real output. The dramatic "free lunch" contrast — pure Y rise with no inflation — only appears DEEP in spare capacity, on the flat range of AS, not here.'
-            }
-          }
-        ]
-      },
-
-      conclusion: { title: 'Big idea', text: 'Near capacity, Keynes and Classical converge — both predict mostly inflation from demand stimulus. The dramatic split between them only opens up DEEP in spare capacity, where the Keynesian flat range is in play.' },
-      examEdge: 'Top essays name the regime first: "Near Yf, both schools predict mostly inflation from AD shifts; on the Keynesian flat range, AD shifts mostly raise Y without inflation." The toggle in this diagram is the visual proof.'
-    },
-
-    /* ----- CARD 9 – Evaluating supply-side policy ----- */
+    /* ----- CARD 8 – Evaluating supply-side policy ----- */
     {
       id: 'evaluating-supply-side',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 9 of 9',
+      stepLabel: 'Learn: Step 8 of 8',
       title: 'Evaluating supply-side policy',
       lede: 'Supply-side policy can raise long-run growth, but its success depends on time, cost, politics and context. This is the evaluative card.',
 

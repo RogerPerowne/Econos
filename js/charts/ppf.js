@@ -853,7 +853,25 @@
 
   function renderDivider(divider) {
     if (!divider) return '';
-    return '<line x1="' + divider.x + '" y1="' + (divider.y1 || 16) + '" x2="' + divider.x + '" y2="' + (divider.y2 || 424) + '" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>';
+    // Allow horizontal dividers via x1/x2 explicit pair, vertical via x only.
+    var stroke = divider.stroke || '#CBD5E1';
+    var sw = divider.strokeWidth || 1;
+    var dashAttr = divider.dashed === false ? '' : ' stroke-dasharray="' + (divider.dashed || '5 4') + '"';
+    if (divider.x1 != null && divider.x2 != null) {
+      return '<line x1="' + divider.x1 + '" y1="' + (divider.y1 || 16) + '" x2="' + divider.x2 + '" y2="' + (divider.y2 || 424) + '" stroke="' + stroke + '" stroke-width="' + sw + '"' + dashAttr + '/>';
+    }
+    return '<line x1="' + divider.x + '" y1="' + (divider.y1 || 16) + '" x2="' + divider.x + '" y2="' + (divider.y2 || 424) + '" stroke="' + stroke + '" stroke-width="' + sw + '"' + dashAttr + '/>';
+  }
+
+  /* Render multiple dividers — spec.dividers takes an array. Used by
+     multi-panel charts that need internal dividers within a panel
+     (e.g. panel "(b) Tax incidence" has a vertical divider between
+     its inelastic / elastic sub-charts). Each divider entry supports
+     the same { x, y1, y2, stroke, strokeWidth, dashed } fields plus
+     { x1, x2, y } for horizontal dividers. */
+  function renderDividers(dividers) {
+    if (!Array.isArray(dividers)) return '';
+    return dividers.map(renderDivider).join('');
   }
 
   /* Wrap a list of SVG element strings inside a named <g class="...">.
@@ -955,18 +973,39 @@
     var area = panel.chartArea;
     var scale = makeScale(area, clipId);
 
-    // Per-panel axes (skip rendering when axes:false)
-    if (panel.axes !== false) {
+    // Optional panel container box — drawn FIRST so chart content sits on top.
+    // Used by macro grids (taxSubsidyFourPanels) that frame each panel with
+    // a rounded white card.
+    if (panel.box) {
+      var b = panel.box;
+      var fill = b.fill || '#FFFFFF';
+      var stroke = b.stroke || '#E2E8F0';
+      var sw = b.strokeWidth || 1;
+      var rx = b.rx != null ? b.rx : 8;
+      parts.push('<rect x="' + b.x + '" y="' + b.y + '" width="' + b.width + '" height="' + b.height + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="' + sw + '" rx="' + rx + '"/>');
+    }
+
+    // Per-panel axes (skip rendering when axes:false). Skipped also when
+    // the panel is just a container shell with no chartArea content.
+    if (panel.axes !== false && area) {
       parts.push(wrapLayer('layer-axes', [renderAxes(area, panel.axes || {})]));
     }
 
-    // Optional panel title above the chart area
+    // Optional panel title — positioned above chartArea by default, or at
+    // an absolute SVG y when `panel.titleY` is given.
     if (panel.title) {
-      var titleX = area.x + area.width / 2;
-      var titleY = area.y - 12;
+      var titleX = panel.titleX != null ? panel.titleX
+                 : (panel.box ? panel.box.x + panel.box.width / 2 : (area ? area.x + area.width / 2 : 0));
+      var titleY = panel.titleY != null ? panel.titleY
+                 : (area ? area.y - 12 : (panel.box ? panel.box.y + 17 : 12));
       var tt = tone(panel.titleTone || 'slate');
-      parts.push('<text x="' + titleX + '" y="' + titleY + '" font-size="12" font-weight="800" fill="' + tt.label + '" text-anchor="middle">' + panel.title + '</text>');
+      var titleSize = panel.titleSize || 12;
+      parts.push('<text x="' + titleX + '" y="' + titleY + '" font-size="' + titleSize + '" font-weight="800" fill="' + tt.label + '" text-anchor="middle">' + panel.title + '</text>');
     }
+
+    // If the panel is a pure container (box + title only, no chartArea),
+    // skip the rest of the per-panel rendering — there's nothing to draw.
+    if (!area) return;
 
     function maybeWrap(shape, rendered) {
       return shape.layer ? wrapLayer(shape.layer, [rendered]) : rendered;
@@ -1026,13 +1065,19 @@
     var clips = '';
     if (isMulti) {
       panels.forEach(function (p, i) {
+        // Skip container-only panels (box + title, no chartArea) — they
+        // have no curves to clip.
+        if (!p.chartArea) return;
         var a = p.chartArea;
         clips += '<clipPath id="econos-chart-clip-' + i + '"><rect x="' + a.x + '" y="' + a.y + '" width="' + a.width + '" height="' + a.height + '"/></clipPath>';
       });
-      // Also emit the legacy id so any shape WITHOUT a per-panel clip
-      // falls back gracefully (uses the first panel's bounds).
-      var first = panels[0].chartArea;
-      clips += '<clipPath id="econos-chart-clip"><rect x="' + first.x + '" y="' + first.y + '" width="' + first.width + '" height="' + first.height + '"/></clipPath>';
+      // Legacy fallback clip — uses the first chartArea-bearing panel.
+      var firstWithArea = panels.find ? panels.find(function (p) { return p.chartArea; })
+                                       : (function () { for (var i = 0; i < panels.length; i++) if (panels[i].chartArea) return panels[i]; return null; })();
+      if (firstWithArea) {
+        var first = firstWithArea.chartArea;
+        clips += '<clipPath id="econos-chart-clip"><rect x="' + first.x + '" y="' + first.y + '" width="' + first.width + '" height="' + first.height + '"/></clipPath>';
+      }
     } else {
       clips = '<clipPath id="econos-chart-clip"><rect x="' + area.x + '" y="' + area.y + '" width="' + area.width + '" height="' + area.height + '"/></clipPath>';
     }
@@ -1041,6 +1086,7 @@
     var bg = spec.background || '#FFFFFF';
     parts.push('<rect width="' + width + '" height="' + height + '" fill="' + bg + '" rx="12"/>');
     parts.push(renderDivider(spec.divider));
+    parts.push(renderDividers(spec.dividers));
 
     // Approach B: build a single CONTEXT that the render functions consult
     // for cross-element awareness. The context carries:

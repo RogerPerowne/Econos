@@ -45,9 +45,12 @@
       { x1: 0, y1: E2.y, x2: E2.x, y2: E2.y, tone: 'slate', strokeWidth: 1.3, dashed: '4 3', buffer: 0 },
       { x1: E2.x, y1: E2.y, x2: E2.x, y2: 0, tone: 'slate', strokeWidth: 1.3, dashed: '4 3', buffer: 0 },
 
-      // "P falls" arrow OUTSIDE chart on left of y-axis, pointing DOWN
-      // (chart-y decreasing means going down in screen space)
-      { x1: -0.056, y1: 0.646, x2: -0.056, y2: 0.333,
+      // "P falls" arrow OUTSIDE chart on left of y-axis, pointing DOWN.
+      // Pulled further LEFT (chart-x -0.110) and shortened vertically so
+      // its top doesn't sit at the same y as P₁ label and its bottom
+      // doesn't sit at the same y as P₂ label — clears the "looks like
+      // it's touching" perception both labels have.
+      { x1: -0.110, y1: 0.595, x2: -0.110, y2: 0.380,
         tone: 'rose', strokeWidth: 2, markerEnd: 'ads-arr-red', buffer: 0 },
       // "Output rises" arrow BELOW chart, pointing RIGHT
       { x1: 0.347, y1: -0.075, x2: 0.653, y2: -0.075,
@@ -69,11 +72,11 @@
       { x: E1.x,    y: -0.075, text: 'Y₁', tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
       { x: E2.x,    y: -0.075, text: 'Y₂', tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
 
-      // "P falls" label rotated alongside the y-axis arrow.
-      // Engine doesn't natively support text rotation yet, so place
-      // a small "P falls" label below the arrow head (chart-x -0.056,
-      // chart-y slightly below 0.333 in screen space).
-      { x: -0.090, y: 0.490, text: 'P falls', tone: 'rose', bold: true, fontSize: 10, anchor: 'middle' },
+      // "P falls" caption BELOW the arrow head (mirrors how
+      // "Output rises" sits below the bottom-edge arrow). Horizontal
+      // text, anchored at the arrow's x, well below the P₂ tick label
+      // so the two never share a vertical line.
+      { x: -0.110, y: 0.300, text: 'P falls', tone: 'rose', bold: true, fontSize: 10, anchor: 'middle' },
       // "Output rises" caption below the bottom arrow
       { x: 0.500, y: -0.135, text: 'Output rises', tone: 'green', bold: true, fontSize: 10, anchor: 'middle' }
     ]

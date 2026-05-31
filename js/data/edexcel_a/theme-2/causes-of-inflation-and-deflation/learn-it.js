@@ -70,85 +70,65 @@ window.ECONOS_TOPIC = {
        ==================================================================== */
     {
       id: 'demand-pull-inflation',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Demand-pull inflation',
       lede: 'Demand-pull inflation happens when aggregate demand rises faster than aggregate supply can respond. Firms raise prices while output also increases, because the economy is producing more to meet stronger demand.',
       ledeStyle: 'plain',
-
-      tip: {
-        icon: '✅',
-        tone: 'green',
-        text: '<strong>Output rises alongside prices – that is the key clue.</strong>'
-      },
-
-      interactiveDiagram: {
-        svgKey: 'adDemandPullInteractive',
-        label: 'The AD/AS diagram',
-        emoji: '📊',
-        layers: ['dpl-1', 'dpl-2'],
-        views: [
-          {
-            label: 'Base equilibrium',
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: '<strong>Output rises alongside prices – that is the key clue.</strong>' },
+        { type: 'sectionHeader', icon: '📊', label: 'The AD/AS diagram' },
+        {
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'Base equilibrium',
+              shifts: {},
+              head: 'Starting point: Pₑ and Yₑ',
+              body: 'The economy is at equilibrium E₀ where AD₀ meets SRAS. The price level is P₀ and real output is Y₀. AD is unchanged in this view.'
+            },
+            {
+              label: 'AD shifts right',
+              shifts: { AD: 80 },
+              head: 'Demand shock – AD₀ → AD₁',
+              body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₁. Firms face excess demand and raise prices.',
+              analysis: 'The rightward shift is the signature of demand-pull. SRAS is unchanged – the pressure comes entirely from the demand side.'
+            },
+            {
+              label: 'New equilibrium',
+              shifts: { AD: 80 },
+              head: 'Result: P ↑ and Y ↑',
+              body: 'The new equilibrium E₁ is at higher price level P₁ and higher output Y₁. Inflation has occurred and the economy is producing more.',
+              analysis: 'Both P and Y rise – that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '🔍', label: 'Common causes' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',   icon: '🛍️', head: 'Consumer boom',       body: 'Households spend more on goods and services.' },
+          { type: 'tile', tone: 'amber',  icon: '🏛️', head: 'Government spending', body: 'Higher public spending increases demand in the economy.' },
+          { type: 'tile', tone: 'green',  icon: '£',  head: 'Cheap credit',         body: 'Lower interest rates or easy lending boost borrowing and spending.' },
+          { type: 'tile', tone: 'rose',   icon: '📉', head: 'Weak exchange rate',   body: 'Imports become dearer, raising domestic demand for local goods.' },
+          { type: 'tile', tone: 'purple', icon: '📈', head: 'Positive expectations', body: 'Firms and consumers expect higher prices and bring demand forward.' }
+        ]},
+        { type: 'sectionHeader', icon: '🛡️', label: 'Policy response' },
+        { type: 'pair',
+          left: {
             tone: 'blue',
-            head: 'Starting point: P₁ and Y₁',
-            body: 'The economy is at equilibrium E₁ where AD₁ meets SRAS. The price level is P₁ and real output is Y₁. AD is unchanged in this view.'
+            icon: '🏦',
+            head: 'Tighter monetary policy',
+            body: 'Raise interest rates or reduce money supply to cool demand. <strong>Effect:</strong> AD shifts left – lower inflation, lower output.'
           },
-          {
-            label: 'AD shifts right',
-            tone: 'green',
-            head: 'Demand shock – AD₁ → AD₂',
-            body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₂. Firms face excess demand and raise prices.',
-            analysis: 'The rightward shift is the signature of demand-pull. SRAS is unchanged – the pressure comes entirely from the demand side.'
-          },
-          {
-            label: 'New equilibrium',
-            tone: 'green',
-            head: 'Result: P ↑ and Y ↑',
-            body: 'The new equilibrium E₂ is at higher price level P₂ and higher output Y₂. Inflation has occurred and the economy is producing more.',
-            analysis: 'Both P and Y rise – that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
+          right: {
+            tone: 'amber',
+            icon: '🏛️',
+            head: 'Tighter fiscal policy',
+            body: 'Reduce government spending or increase taxes to cool demand. <strong>Effect:</strong> AD shifts left – lower inflation, lower output.'
           }
-        ]
-      },
-
-      causesFirst: true,
-      causesLabel: 'Common causes',
-      causesEmoji: '🔍',
-      causesStyle: 'numbered-rows',
-      causes: [
-        { tone: 'blue',   icon: '🛍️', head: 'Consumer boom',       body: 'Households spend more on goods and services.' },
-        { tone: 'amber',  icon: '🏛️', head: 'Government spending', body: 'Higher public spending increases demand in the economy.' },
-        { tone: 'green',  icon: '£',  head: 'Cheap credit',         body: 'Lower interest rates or easy lending boost borrowing and spending.' },
-        { tone: 'rose',   icon: '📉', head: 'Weak exchange rate',   body: 'Imports become dearer, raising domestic demand for local goods.' },
-        { tone: 'purple', icon: '📈', head: 'Positive expectations', body: 'Firms and consumers expect higher prices and bring demand forward.' }
-      ],
-
-      pairLabel: 'Policy response',
-      pairEmoji: '🛡️',
-      left: {
-        tone: 'blue',
-        icon: '🏦',
-        iconStyle: 'circle',
-        label: 'Tighter monetary policy',
-        text: 'Raise interest rates or reduce money supply to cool demand. <strong>Effect:</strong> AD shifts left – lower inflation, lower output.'
-      },
-      right: {
-        tone: 'amber',
-        icon: '🏛️',
-        iconStyle: 'circle',
-        label: 'Tighter fiscal policy',
-        text: 'Reduce government spending or increase taxes to cool demand. <strong>Effect:</strong> AD shifts left – lower inflation, lower output.'
-      },
-
-      conclusion: {
-        title: 'If output and prices are both rising, demand-pull is the leading candidate.',
-        text: 'Use output direction as your first diagnostic. Rising output alongside rising prices points to demand-pull.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'The best answers explicitly link the diagram to the outcome: AD shifts right → higher price level (inflation) and higher real output.'
-      }
+        },
+        { type: 'bigIdea', text: 'If output and prices are both rising, demand-pull is the leading candidate. Use output direction as your first diagnostic. Rising output alongside rising prices points to demand-pull.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'The best answers explicitly link the diagram to the outcome: AD shifts right → higher price level (inflation) and higher real output.' }
+      ]
     },
 
     /* ====================================================================
@@ -156,106 +136,59 @@ window.ECONOS_TOPIC = {
        ==================================================================== */
     {
       id: 'cost-push-inflation',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Cost-push inflation',
       lede: 'Cost-push inflation happens when firms face higher production costs – such as rising input prices, wages or taxes – and pass them on to customers. Prices rise while output falls, because it becomes more expensive to produce.',
       ledeStyle: 'plain',
-
-      tip: {
-        icon: '⚠️',
-        tone: 'amber',
-        text: '<strong>Rising prices with falling output = stagflation risk.</strong>'
-      },
-
-      interactiveDiagram: {
-        svgKey: 'adCostPushInteractive',
-        label: 'The AD/AS diagram',
-        emoji: '📊',
-        layers: ['cpl-1', 'cpl-2'],
-        views: [
-          {
-            label: 'Base equilibrium',
-            tone: 'blue',
-            head: 'Starting point: P₁ and Y₁',
-            body: 'The economy is at E₁ where AD meets SRAS₁. The price level is P₁ and real output is Y₁. AD remains unchanged throughout this sequence.'
-          },
-          {
-            label: 'SRAS shifts left',
-            tone: 'amber',
-            head: 'Supply shock – SRAS₁ → SRAS₂',
-            body: 'Higher input costs (energy, wages, import prices) mean it now costs more to produce at every output level. SRAS shifts left to SRAS₂.',
-            analysis: 'The leftward SRAS shift is the signature of cost-push. AD is unchanged – the pressure comes from the supply side alone.'
-          },
-          {
-            label: 'Stagflation result',
-            tone: 'amber',
-            head: 'Result: P ↑ and Y ↓',
-            body: 'The new equilibrium E₂ has higher price level P₂ but lower output Y₂. Inflation and falling output occur simultaneously – stagflation.',
-            analysis: 'Both outcomes worsen at once. Raising rates fights inflation but deepens the output fall. Loosening policy helps output but risks embedding inflation.'
-          }
-        ]
-      },
-
-      causesFirst: true,
-      causesLabel: 'What causes it?',
-      causesEmoji: '🔍',
-      causesStyle: 'numbered',
-      causes: [
-        { tone: 'amber',  icon: '🔥', head: 'Higher energy prices',         body: 'More expensive fuel and electricity raise production costs.' },
-        { tone: 'blue',   icon: '👥', head: 'Wage rises',                   body: 'Higher pay increases labour costs, especially if productivity does not keep up.' },
-        { tone: 'green',  icon: '£',  head: 'Import costs from a weaker FX', body: 'Imports become more expensive, lifting input prices.' },
-        { tone: 'purple', icon: '📄', head: 'Indirect taxes',               body: 'VAT or excise duty rises increase firms\' costs, which they pass on.' },
-        { tone: 'amber',  icon: '⛈️', head: 'Supply shocks',                body: 'Events like bad weather, pandemics or war disrupt supply and lift costs.' }
-      ],
-
-      verdict: {
-        title: 'The policy dilemma',
-        emoji: '⚖️',
-        layout: 'vs',
-        columns: [
-          {
-            tone: 'blue',
-            icon: '🛡️',
-            label: 'Tighten policy to reduce inflation',
-            items: [
-              { text: 'Higher interest rates curb demand.' },
-              { text: 'Helps bring inflation down.' },
-              { ok: false, text: 'But output falls further and unemployment may rise.' }
-            ]
-          },
-          {
-            tone: 'rose',
-            icon: '📈',
-            label: 'Loosen policy to support the economy',
-            items: [
-              { text: 'Lower rates or fiscal support boost demand.' },
-              { text: 'Helps output and jobs in the short run.' },
-              { ok: false, text: 'But risks keeping inflation high and becoming harder to bring down later.' }
-            ]
-          }
-        ]
-      },
-
-      summaryRow: [
+      blocks: [
+        { type: 'calloutStrip', tone: 'amber', icon: '⚠️', text: '<strong>Rising prices with falling output = stagflation risk.</strong>' },
+        { type: 'sectionHeader', icon: '📊', label: 'The AD/AS diagram' },
         {
-          tone: 'blue',
-          icon: '🌍',
-          title: 'UK 2021–23',
-          text: 'Surging energy prices and higher import costs pushed inflation up while growth slowed.'
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'Base equilibrium',
+              shifts: {},
+              head: 'Starting point: Pₑ and Yₑ',
+              body: 'The economy is at E₀ where AD meets SRAS₀. The price level is P₀ and real output is Y₀. AD remains unchanged throughout this sequence.'
+            },
+            {
+              label: 'SRAS shifts left',
+              shifts: { SRAS: -100 },
+              head: 'Supply shock – SRAS₀ → SRAS₁',
+              body: 'Higher input costs (energy, wages, import prices) mean it now costs more to produce at every output level. SRAS shifts left to SRAS₁.',
+              analysis: 'The leftward SRAS shift is the signature of cost-push. AD is unchanged – the pressure comes from the supply side alone.'
+            },
+            {
+              label: 'Stagflation result',
+              shifts: { SRAS: -100 },
+              head: 'Result: P ↑ and Y ↓',
+              body: 'The new equilibrium E₁ has higher price level P₁ but lower output Y₁. Inflation and falling output occur simultaneously – stagflation.',
+              analysis: 'Both outcomes worsen at once. Raising rates fights inflation but deepens the output fall. Loosening policy helps output but risks embedding inflation.'
+            }
+          ]
         },
-        {
-          tone: 'amber',
-          icon: '🛢️',
-          title: '1970s oil shock',
-          text: 'Higher oil prices raised costs across the economy, leading to high inflation and high unemployment.'
-        }
-      ],
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Cost-push inflation is harder to cure because inflation and recession appear together – policymakers face an unpleasant trade-off.'
-      }
+        { type: 'sectionHeader', icon: '🔍', label: 'What causes it?' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'amber',  icon: '🔥', head: 'Higher energy prices',         body: 'More expensive fuel and electricity raise production costs.' },
+          { type: 'tile', tone: 'blue',   icon: '👥', head: 'Wage rises',                   body: 'Higher pay increases labour costs, especially if productivity does not keep up.' },
+          { type: 'tile', tone: 'green',  icon: '£',  head: 'Import costs from a weaker FX', body: 'Imports become more expensive, lifting input prices.' },
+          { type: 'tile', tone: 'purple', icon: '📄', head: 'Indirect taxes',               body: 'VAT or excise duty rises increase firms\' costs, which they pass on.' },
+          { type: 'tile', tone: 'amber',  icon: '⛈️', head: 'Supply shocks',                body: 'Events like bad weather, pandemics or war disrupt supply and lift costs.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'The policy dilemma' },
+        { type: 'pair',
+          left:  { tone: 'blue', icon: '🛡️', head: 'Tighten policy to reduce inflation', body: 'Higher interest rates curb demand. Helps bring inflation down – <strong>but</strong> output falls further and unemployment may rise.' },
+          right: { tone: 'rose', icon: '📈', head: 'Loosen policy to support the economy', body: 'Lower rates or fiscal support boost demand. Helps output and jobs in the short run – <strong>but</strong> risks keeping inflation high and harder to bring down later.' }
+        },
+        { type: 'sectionHeader', icon: '🌍', label: 'Real-world examples' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  icon: '🌍', head: 'UK 2021–23',      body: 'Surging energy prices and higher import costs pushed inflation up while growth slowed.' },
+          { type: 'tile', tone: 'amber', icon: '🛢️', head: '1970s oil shock', body: 'Higher oil prices raised costs across the economy, leading to high inflation and high unemployment.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Cost-push inflation is harder to cure because inflation and recession appear together – policymakers face an unpleasant trade-off.' }
+      ]
     },
 
     /* ====================================================================

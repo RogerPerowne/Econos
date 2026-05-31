@@ -132,128 +132,113 @@ window.ECONOS_TOPIC = {
     /* CARD 3 — 1970s stagflation (Sequential flow chain). */
     {
       id: 'stagflation-1970s',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 6',
       title: '1970s stagflation',
       lede: '<em>The case the Phillips curve could not explain.</em>',
       ledeStyle: 'plain',
-      tip: { icon: '\u{2705}', tone: 'green', text: 'In the 1970s, economies faced rising inflation and rising unemployment at the same time &mdash; a challenge the simple Phillips curve could not explain.' },
 
-      visualKey: 'stagflation5Step',
-      visualLabel: 'The 1970s stagflation mechanism',
-      visualEmoji: '\u{1F517}',
-
-      interactiveDiagram: {
-        svgKey: 'stagflationPhillipsInteractive',
-        label: 'On the Phillips curve',
-        emoji: '\u{1F4C9}',
-        layers: ['phil-1', 'phil-2', 'phil-3'],
-        views: [
-          {
-            label: 'Original 1958 SRPC',
-            tone: 'blue',
-            show: ['phil-1'],
-            head: 'A clean inverse trade-off',
-            body: 'Bill Phillips found a stable empirical inverse relationship between unemployment and wage inflation. Equilibrium <strong>A</strong> sat at the natural rate U_N with steady inflation π₀.',
-            analysis: 'In the 1958 world, demand stimulus could buy lower unemployment by accepting higher inflation. Policymakers thought they had a stable menu of choices to pick from.'
-          },
-          {
-            label: 'Friedman / Phelps long run',
-            tone: 'purple',
-            show: ['phil-2'],
-            head: 'No long-run trade-off',
-            body: 'Push unemployment below U_N to <strong>B</strong> and workers eventually demand wages to compensate for inflation. The SRPC shifts up to SRPC₂; the economy lands at <strong>C</strong> &mdash; back at U_N but with permanently higher inflation.',
-            analysis: 'The long-run Phillips curve is vertical at the NAIRU. Adaptive expectations do the work: any attempt to exploit the short-run trade-off only ratchets up inflation.'
-          },
-          {
-            label: '1970s stagflation',
-            tone: 'rose',
-            show: ['phil-3'],
-            head: 'The curve breaks down',
-            body: 'OPEC shocked SRAS left. SRPC₃ shifted up parallel to SRPC₁ &mdash; not from expectations but from a real supply shock. The economy ended at <strong>S</strong>: <em>higher</em> U <em>and</em> higher π &mdash; a point the original 1958 curve said was impossible.',
-            analysis: 'Stagflation is the empirical falsification of the simple Phillips curve. It shows there is no single curve to walk along: the curve itself moves when supply conditions change.'
-          }
-        ]
-      },
-
-      visualKey2: 'stagflationTimeline',
-      visualLabel2: 'The case study timeline',
-      visualEmoji2: '\u{1F4C5}',
-
-      causes3Label: 'Demand-side responses and their costs',
-      causes3Emoji: '\u{2696}\u{FE0F}',
-      causes3Cols: 3,
-      causes3: [
-        { tone: 'blue',  icon: '\u{1F4C8}', head: 'Tighten',          body: '<strong>Rates up / spending down.</strong><br>Inflation lower, but recession deeper.' },
-        { tone: 'amber', icon: '\u{1F4C9}', head: 'Ease',             body: '<strong>Rates down / spending up.</strong><br>Growth support, but inflation worsens.' },
-        { tone: 'green', icon: '\u{2699}\u{FE0F}', head: 'Supply-side route', body: '<strong>Productivity and competition help.</strong><br>Helps in the long run, but this is slower.' }
-      ],
-
-      bottomTip: { tone: 'amber', icon: '\u{26A0}\u{FE0F}', text: 'Stagflation is difficult because the cure for one symptom can worsen the other.' },
-
-      examEdge: 'Stagflation is the classic case where the simple Phillips trade-off breaks down.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '\u{2705}', text: 'In the 1970s, economies faced rising inflation and rising unemployment at the same time &mdash; a challenge the simple Phillips curve could not explain.' },
+        { type: 'sectionHeader', icon: '\u{1F517}', label: 'The 1970s stagflation mechanism' },
+        { type: 'diagram', svgKey: 'stagflation5Step' },
+        { type: 'sectionHeader', icon: '\u{1F4C9}', label: 'On the Phillips curve' },
+        {
+          type: 'econDiagram',
+          chart: 'phillips',
+          views: [
+            {
+              label: 'Original 1958 SRPC',
+              show: ['SRPC', 'LRPC'],
+              points: ['A'],
+              head: 'A clean inverse trade-off',
+              body: 'Bill Phillips found a stable empirical inverse relationship between unemployment and wage inflation. Equilibrium A sat at the natural rate U_N with steady inflation π₀.',
+              analysis: 'In the 1958 world, demand stimulus could buy lower unemployment by accepting higher inflation. Policymakers thought they had a stable menu of choices to pick from.'
+            },
+            {
+              label: 'Friedman / Phelps long run',
+              show: ['SRPC', 'LRPC'],
+              shifts: { SRPC: 170 },
+              points: ['A', 'B', 'C'],
+              arrows: [['A', 'B'], ['B', 'C']],
+              head: 'No long-run trade-off',
+              body: 'Push unemployment below U_N to B and workers eventually demand wages to compensate for inflation. The SRPC shifts up to SRPC₂; the economy lands at C — back at U_N but with permanently higher inflation.',
+              analysis: 'The long-run Phillips curve is vertical at the NAIRU. Adaptive expectations do the work: any attempt to exploit the short-run trade-off only ratchets up inflation.'
+            },
+            {
+              label: '1970s stagflation',
+              show: ['SRPC', 'LRPC'],
+              shifts: { SRPC: 170 },
+              points: ['A', 'S'],
+              arrows: [['A', 'S']],
+              head: 'The curve breaks down',
+              body: 'OPEC shocked SRAS left. SRPC₃ shifted up parallel to SRPC₁ — not from expectations but from a real supply shock. The economy ended at S: higher U and higher π — a point the original 1958 curve said was impossible.',
+              analysis: 'Stagflation is the empirical falsification of the simple Phillips curve. It shows there is no single curve to walk along: the curve itself moves when supply conditions change.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '\u{1F4C5}', label: 'The case study timeline' },
+        { type: 'diagram', svgKey: 'stagflationTimeline' },
+        { type: 'sectionHeader', icon: '\u{2696}\u{FE0F}', label: 'Demand-side responses and their costs' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: '\u{1F4C8}', head: 'Tighten',          body: '<strong>Rates up / spending down.</strong><br>Inflation lower, but recession deeper.' },
+          { type: 'tile', tone: 'amber', icon: '\u{1F4C9}', head: 'Ease',             body: '<strong>Rates down / spending up.</strong><br>Growth support, but inflation worsens.' },
+          { type: 'tile', tone: 'green', icon: '\u{2699}\u{FE0F}', head: 'Supply-side route', body: '<strong>Productivity and competition help.</strong><br>Helps in the long run, but this is slower.' }
+        ]},
+        { type: 'calloutStrip', tone: 'amber', icon: '\u{26A0}\u{FE0F}', text: 'Stagflation is difficult because the cure for one symptom can worsen the other.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Stagflation is the classic case where the simple Phillips trade-off breaks down.' }
+      ]
     },
 
     /* CARD 4 — 2021–23 inflation surge (Side-by-side hero with charts). */
     {
       id: 'inflation-surge-2021-23',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 6',
       title: 'The 2021&ndash;23 inflation surge',
       lede: 'A modern UK case study of objectives colliding in real time.',
       ledeStyle: 'plain',
 
-      visualKey: 'inflationSurge2021',
-      visualLabel: 'Shock and response',
-      visualEmoji: '\u{26A1}',
-
-      interactiveDiagram: {
-        svgKey: 'inflation2022AdAs',
-        label: 'The trade-off in AD/AS',
-        emoji: '\u{2696}\u{FE0F}',
-        layers: ['ada-1', 'ada-2', 'ada-3', 'ada-4'],
-        views: [
-          {
-            label: 'Baseline · 2020',
-            tone: 'blue',
-            show: ['ada-1'],
-            head: 'The pre-shock economy',
-            body: 'Coming out of COVID, the UK economy sat at <strong>E₀</strong> &mdash; close to full output Y₀ on long-run AS, with inflation near the 2% target P₀.',
-            analysis: 'The post-COVID baseline was unusually benign: AD recovering, supply normalising, inflation expectations anchored to 2%.'
-          },
-          {
-            label: 'AD↑ rebound · 2021',
-            tone: 'amber',
-            show: ['ada-2'],
-            head: 'Demand bounces back first',
-            body: 'Pent-up consumer spending and ultra-loose policy shifted <strong>AD right</strong> to AD₁. With supply still intact, the new equilibrium <strong>E₁</strong> sat at higher output Y₁ and modestly higher P₁ &mdash; healthy reflation.',
-            analysis: 'AD↑ on its own gives the textbook demand-pull effect: both output and prices rise. At this point inflation looked manageable — the policy story would have been very different if the shocks had stopped here.'
-          },
-          {
-            label: 'SRAS↓ shock · 2022',
-            tone: 'rose',
-            show: ['ada-3'],
-            head: 'Energy + Ukraine hit supply',
-            body: 'Energy prices and the Ukraine war shifted <strong>SRAS left</strong> to SRAS₁. The new equilibrium <strong>E₂</strong> sat at lower output Y₂ with sharply higher P₂ &mdash; the textbook stagflationary supply shock.',
-            analysis: 'This is why Phillips struggles here: Phillips models movement <em>along</em> a curve, not the curve itself shifting. The 2022 episode was a supply-side shift &mdash; AD/AS handles it cleanly while Phillips breaks down.'
-          },
-          {
-            label: 'BoE response · 2022–23',
-            tone: 'green',
-            show: ['ada-4'],
-            head: 'Tighter policy pulls AD back',
-            body: 'The Bank of England raised Bank Rate from 0.1% to 5.25%. <strong>AD shifted left</strong> to AD₂. The new equilibrium <strong>E₃</strong> sat at even lower output Y₃ but with falling prices P₃ &mdash; inflation cooled, but at a real cost.',
-            analysis: 'This is the trade-off in action: monetary tightening can bring inflation down, but it does so by pulling AD left into a still-weakened supply side. Lower P, lower Y &mdash; the squeeze on households.'
-          }
-        ]
-      },
-
-      bottomTip: [
-        { tone: 'blue', icon: '\u{2696}\u{FE0F}', text: '<strong>Did the policy work?</strong> Yes &mdash; inflation came down sharply. But growth slowed, unemployment ticked up, and the cost to households was higher mortgage payments and weaker activity.' },
-        { tone: 'green', icon: '\u{2728}', text: '<strong>Key insight:</strong> the Bank can cool inflation, but rarely for free &mdash; lower inflation often comes with lower growth.' }
-      ],
-
-      examEdge: 'Strong essays weigh whether the fall in inflation justified the sacrifice in growth and household finances.'
+      blocks: [
+        { type: 'sectionHeader', icon: '\u{26A1}', label: 'Shock and response' },
+        { type: 'diagram', svgKey: 'inflationSurge2021' },
+        { type: 'sectionHeader', icon: '\u{2696}\u{FE0F}', label: 'The trade-off in AD/AS' },
+        {
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'Baseline · 2020',
+              shifts: {},
+              head: 'The pre-shock economy',
+              body: 'Coming out of COVID, the UK economy sat at E₀ — close to full output Y₀ on long-run AS, with inflation near the 2% target P₀.',
+              analysis: 'The post-COVID baseline was unusually benign: AD recovering, supply normalising, inflation expectations anchored to 2%.'
+            },
+            {
+              label: 'AD↑ rebound · 2021',
+              shifts: { AD: 80 },
+              head: 'Demand bounces back first',
+              body: 'Pent-up consumer spending and ultra-loose policy shifted AD right to AD₁. With supply still intact, the new equilibrium E₁ sat at higher output Y₁ and modestly higher P₁ — healthy reflation.',
+              analysis: 'AD↑ on its own gives the textbook demand-pull effect: both output and prices rise. At this point inflation looked manageable — the policy story would have been very different if the shocks had stopped here.'
+            },
+            {
+              label: 'SRAS↓ shock · 2022',
+              shifts: { AD: 80, SRAS: -100 },
+              head: 'Energy + Ukraine hit supply',
+              body: 'Energy prices and the Ukraine war shifted SRAS left to SRAS₁. The new equilibrium E₂ sat at lower output Y₂ with sharply higher P₂ — the textbook stagflationary supply shock.',
+              analysis: 'This is why Phillips struggles here: Phillips models movement along a curve, not the curve itself shifting. The 2022 episode was a supply-side shift — AD/AS handles it cleanly while Phillips breaks down.'
+            },
+            {
+              label: 'BoE response · 2022–23',
+              shifts: { AD: -40, SRAS: -100 },
+              head: 'Tighter policy pulls AD back',
+              body: 'The Bank of England raised Bank Rate from 0.1% to 5.25%. AD shifted left to AD₂. The new equilibrium E₃ sat at even lower output Y₃ but with falling prices P₃ — inflation cooled, but at a real cost.',
+              analysis: 'This is the trade-off in action: monetary tightening can bring inflation down, but it does so by pulling AD left into a still-weakened supply side. Lower P, lower Y — the squeeze on households.'
+            }
+          ]
+        },
+        { type: 'calloutStrip', tone: 'blue', icon: '\u{2696}\u{FE0F}', text: '<strong>Did the policy work?</strong> Yes &mdash; inflation came down sharply. But growth slowed, unemployment ticked up, and the cost to households was higher mortgage payments and weaker activity.' },
+        { type: 'calloutStrip', tone: 'green', icon: '\u{2728}', text: '<strong>Key insight:</strong> the Bank can cool inflation, but rarely for free &mdash; lower inflation often comes with lower growth.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Strong essays weigh whether the fall in inflation justified the sacrifice in growth and household finances.' }
+      ]
     },
 
     /* CARD 5 — Supply-side escape route (Side-by-side pair). */

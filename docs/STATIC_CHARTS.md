@@ -29,7 +29,45 @@ skill and `docs/DIAGRAM_LIBRARY.md` for the engine reference.
 | indirect-taxes-and-subsidies | `taxIncidenceInteractive` (card 2), `subsidyInteractive` (card 3) | supplyDemand | #809 |
 | government-intervention-in-markets | `subsidyInteractive` (card 3), `priceCeilingDiagramInteractive` (card 4), `priceFloorDiagramInteractive` (card 5) | supplyDemand | #809 |
 
-### Still to migrate — capability gaps surfaced (build these)
+### Breadth pass (#810) — 14 cards across 10 files
+
+causes-of-inflation (demand-pull, cost-push → adas), employment-and-unemployment
+(cyclical → adas), net-trade (Marshall-Lerner → jcurve), macro-conflicts
+(stagflation → phillips; inflation-surge → adas), supply (×2 → supplyDemand),
+negative-externalities (→ externalities-neg), positive-externalities (→
+externalities-pos), taxes-and-subsidies-as-policy-tools (→ supplyDemand +
+externalities-neg), market-power-and-contestability (→ marketStructure),
+government-intervention-subsidies (→ supplyDemand). All screenshot-verified;
+validator green (34 blocks / 18 files).
+
+### Remaining work — grouped by what it needs (from the 67 skips)
+
+**A. econDiagram engine capabilities to build (highest leverage):**
+- **Named on-curve movement points + A→B movement arrows** — depict "movement
+  along" a single curve (demand contraction/extension, AD slope, SRAS A→B).
+  Recurring across demand, supply, PED, PES, aggregate-demand, aggregate-supply.
+- **Variable-elasticity curve variants** (steep / flat / vertical / horizontal D
+  and S) — incidence-by-elasticity, PED/PES regime diagrams.
+- **Ad-valorem (pivoting) tax curve** on supplyDemand.
+- **Two-panel side-by-side comparison** (movement-vs-shift, Classical-vs-Keynesian).
+
+**B. New econDiagram families to add:**
+- Keynesian (non-vertical) AS · MEC / investment-demand · price discrimination
+  (1st & 3rd degree) · LRAC with MES · limit-pricing · cobweb · market-level
+  monopoly welfare (S=ΣMC).
+
+**C. Structural / flow visuals → graphics blocks (separate workflow):**
+- ~40 cards: tile-grids, hub-and-spoke, circular-flow, rippleCascade,
+  mechanism-flow, dashboards/scorecards, comparison-rows, spectrum, compass/dial.
+  Many map to EXISTING graphics blocks (grid+tiles, hubSpoke, spectrum,
+  opposingFlows, mechanismChain, caseStudies, rippleCascade) — add layouts only
+  where none fits.
+
+**D. Data charts → dataChart system:**
+- Per-decile bars (broken-axis), trade-cycle wave, actual-vs-potential trend,
+  dual diverging time-series, account-component bars.
+
+### Capability gaps surfaced (detail)
 
 - **Ad-valorem (pivoting) tax supply curve** in `supplyDemand` — a wedge that
   widens with price (vs the parallel `S_taxed`). Blocks: indirect-taxes card 1

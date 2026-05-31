@@ -151,80 +151,58 @@ window.ECONOS_TOPIC = {
     },
 
     /* ----- CARD 5 – Cyclical unemployment & derived demand ----- */
-    /* PRESERVED: has a steps array */
     {
       id: 'cyclical',
-      template: 'ad-interactive',
-      diagramKey: 'adAsRecession',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Cyclical unemployment & derived demand',
       lede: 'Labour is a derived demand – firms hire workers because they expect to sell output. When AD falls, firms need fewer workers.',
       ledeStyle: 'plain',
 
-      tip: { icon: '🔒', tone: 'green', text: 'When aggregate demand falls, firms need fewer workers.' },
-
-      steps: [
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '🔒', text: 'When aggregate demand falls, firms need fewer workers.' },
+        { type: 'sectionHeader', icon: '📉', label: 'AD FALLS, OUTPUT FALLS BELOW FULL EMPLOYMENT' },
         {
-          key: 'base',
-          label: 'Base equilibrium',
-          text: 'AD meets AS at full-employment output <strong>Y<sub>FE</sub></strong>. Labour markets clear – unemployment is at the natural rate (frictional + structural + seasonal only). Price level is P₁.'
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'Base equilibrium',
+              head: 'Base equilibrium at full employment',
+              body: 'AD meets SRAS at full-employment output, on the LRAS line.',
+              analysis: 'AD meets AS at full-employment output Yₑ, on the LRAS line. Labour markets clear – unemployment is at the natural rate (frictional + structural + seasonal only). Read the price level Pₑ off the vertical axis.'
+            },
+            {
+              label: 'AD shifts left',
+              shifts: { AD: -120 },
+              head: 'AD shifts left – a recessionary gap opens',
+              body: 'A fall in C, I, G or (X−M) shifts AD left, so output falls below LRAS.',
+              analysis: 'AD shifts LEFT – a fall in C, I, G or (X−M). Demand for goods falls, so demand for labour falls too: labour is a derived demand. Output drops to Y₁, below full employment. The gap between LRAS and Y₁ is the cyclical unemployment.'
+            },
+            {
+              label: 'Labour demand falls',
+              shifts: { AD: -120 },
+              head: 'Wages are sticky, so the gap persists',
+              body: 'Sticky wages mean the labour market does not self-correct – the gap persists until AD recovers.',
+              analysis: 'Wages are sticky downward (Keynes) – unions resist cuts, contracts are fixed, workers refuse pay reductions. So the labour market does not self-correct. Cyclical unemployment persists at the lower output until AD recovers. Fiscal or monetary stimulus is needed.'
+            }
+          ]
         },
-        {
-          key: 'extension',
-          label: 'AD shifts left',
-          text: 'AD shifts <strong>LEFT</strong> – fall in C, I, G or (X−M). Demand for goods falls, so demand for labour falls too: <em>labour is a derived demand</em>. Output drops to Y₁, below Y<sub>FE</sub>. The gap (Y<sub>FE</sub>−Y₁) is the cyclical unemployment.'
-        },
-        {
-          key: 'shift',
-          label: 'Labour demand falls',
-          text: '<strong>Wages are sticky downward</strong> (Keynes) – unions resist cuts, contracts are fixed, workers refuse pay reductions. So the labour market doesn\'t self-correct. Cyclical unemployment <em>persists</em> until AD recovers. Fiscal or monetary stimulus is needed.'
-        }
-      ],
-
-      flowTitle: 'THE EMPLOYMENT CHAIN',
-      flowEmoji: '🔗',
-      flow: [
-        { icon: '📉', title: 'AD falls',                sub: 'C, I, G or X−M drops' },
-        { icon: '🏭', title: 'Output falls',            sub: 'firms produce less' },
-        { icon: '✂️', title: 'Firms cut production',    sub: 'less labour needed' },
-        { icon: '👥', title: 'Labour demand falls',     sub: 'derived demand effect' },
-        { icon: '📊', title: 'Unemployment rises',      sub: 'cyclical unemployment' }
-      ],
-
-      pairLabel: 'POLICY RESPONSE',
-      pairEmoji: '🛡️',
-      left: {
-        tone: 'blue',
-        icon: '🏛️',
-        iconStyle: 'circle',
-        label: 'Monetary policy',
-        points: [
-          'Lower interest rates → ↑ borrowing → ↑ C and ↑ I',
-          'Increases money supply (QE)',
-          'Boosts AD → output recovers → firms re-hire'
-        ]
-      },
-      right: {
-        tone: 'amber',
-        icon: '🏛️',
-        iconStyle: 'circle',
-        label: 'Fiscal policy',
-        points: [
-          'Increase government spending (↑ G)',
-          'Cut taxes → ↑ household disposable income',
-          'Multiplier effect amplifies the AD boost'
-        ]
-      },
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Cyclical unemployment is demand-deficient – the cure is to restore AD, not to retrain workers. That\'s why the wrong policy diagnosis (supply-side for a cyclical problem) wastes money and fails.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: "Always use the phrase <em>\"labour is a derived demand\"</em> when explaining why falling output raises unemployment. Combined with <strong>wage stickiness</strong>, this is the textbook Keynesian explanation."
-      }
+        { type: 'sectionHeader', icon: '🔗', label: 'THE EMPLOYMENT CHAIN' },
+        { type: 'mechanismChain', steps: [
+          { label: 'AD falls',             detail: 'C, I, G or X−M drops' },
+          { label: 'Output falls',         detail: 'firms produce less' },
+          { label: 'Firms cut production', detail: 'less labour needed' },
+          { label: 'Labour demand falls',  detail: 'derived demand effect' },
+          { label: 'Unemployment rises',   detail: 'cyclical unemployment' }
+        ]},
+        { type: 'sectionHeader', icon: '🛡️', label: 'POLICY RESPONSE' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',  icon: '🏛️', head: 'Monetary policy', body: '<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.7;"><li>Lower interest rates → ↑ borrowing → ↑ C and ↑ I</li><li>Increases money supply (QE)</li><li>Boosts AD → output recovers → firms re-hire</li></ul>' },
+          { type: 'tile', tone: 'amber', icon: '🏛️', head: 'Fiscal policy',   body: '<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.7;"><li>Increase government spending (↑ G)</li><li>Cut taxes → ↑ household disposable income</li><li>Multiplier effect amplifies the AD boost</li></ul>' }
+        ]},
+        { type: 'bigIdea', text: 'Cyclical unemployment is demand-deficient – the cure is to restore AD, not to retrain workers. That\'s why the wrong policy diagnosis (supply-side for a cyclical problem) wastes money and fails.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always use the phrase <em>"labour is a derived demand"</em> when explaining why falling output raises unemployment. Combined with <strong>wage stickiness</strong>, this is the textbook Keynesian explanation.' }
+      ]
     },
 
     /* ----- CARD 6 – Different causes, different cures ----- */

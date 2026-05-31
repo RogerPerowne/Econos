@@ -92,43 +92,62 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'pos_externalities_2',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'The positive consumption externality diagram',
       lede: 'The mirror of the negative diagram. Build it in four moves – every label matters.',
-      diagramKey: 'posExternalityInteractive',
-      diagramCallouts: [
-        { tone: 'green',  icon: '📉', head: 'Free market output is too low', body: 'At Q_market the market produces below the socially optimal Q*.' },
-        { tone: 'purple', icon: '🔺', head: 'Welfare gain forgone',          body: 'The shaded triangle is the welfare society foregoes by under-consuming.' },
-        { tone: 'blue',   icon: '💡', head: 'Vertical gap = MEB',            body: 'The vertical distance between MSB and MPB is the marginal external benefit captured by third parties.' }
-      ],
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '📈', label: 'Build the diagram in four moves' },
         {
-          key: 'base',
-          label: 'Market equilibrium',
-          text: 'Start with the free market: <strong>MPB</strong> (marginal private benefit, demand) meets <strong>MPC = MSC</strong> (supply) at the market equilibrium <strong>(Q_m, P_m)</strong>. The market ignores any benefit captured by third parties.'
+          type: 'econDiagram',
+          chart: 'externalities-pos',
+          views: [
+            {
+              label: 'Market equilibrium',
+              show: ['MPB', 'MPC'],
+              points: ['marketEq'],
+              head: 'Start with the free market',
+              body: 'MPB (marginal private benefit, demand) meets MPC = MSC (supply) at the market equilibrium (Qₘ, Pₘ).',
+              analysis: 'The market ignores any benefit captured by third parties, so it settles where private benefit equals private cost.'
+            },
+            {
+              label: 'Add MSB and MEB',
+              show: ['MPB', 'MPC', 'MSB'],
+              points: ['marketEq'],
+              head: 'Add MSB above MPB — the gap is MEB',
+              body: 'Add MSB (marginal social benefit) above MPB. The vertical gap is the MEB – the marginal external benefit enjoyed by third parties: herd immunity, productivity, lower crime. MSB = MPB + MEB.',
+              analysis: 'The market ignores this gap, so it under-consumes — it responds only to MPB, not the full social benefit MSB.'
+            },
+            {
+              label: 'Socially optimal output',
+              show: ['MPB', 'MPC', 'MSB'],
+              points: ['marketEq', 'socialEq'],
+              head: 'The social optimum is where MSB = MSC',
+              body: 'The socially optimal point is where MSB = MSC at (Q*, P*). Compare: Q* > Qₘ (society wants more output) and P* > Pₘ (optimal price is higher).',
+              analysis: 'The free market under-produces by (Q* − Qₘ). Society would be better off consuming more of the good than the market delivers.'
+            },
+            {
+              label: 'Welfare gain forgone',
+              show: ['MPB', 'MPC', 'MSB'],
+              points: ['marketEq', 'socialEq', 'msbAtMarket'],
+              areas: [
+                { between: ['MSB', 'MPC'], x: [430, 491], tone: 'purple', label: 'Welfare gain forgone' }
+              ],
+              head: 'Shade the welfare gain forgone',
+              body: 'The shaded triangle is bounded by MSB (above), MSC = MPC (below), and the vertical between Qₘ and Q*. For every unit not consumed between Qₘ and Q*, society loses (MSB − MSC) of welfare.',
+              analysis: 'A Pigouvian subsidy = MEB at Q* internalises the externality and closes the wedge, moving consumption to the social optimum.'
+            }
+          ]
         },
-        {
-          key: 'extension',
-          label: 'Add MSB and MEB',
-          text: 'Add <strong>MSB</strong> (marginal social benefit) above MPB. The vertical gap is the <strong>MEB</strong> – marginal external benefit enjoyed by third parties: herd immunity, productivity, lower crime. MSB = MPB + MEB. The market ignores this gap, so it under-consumes.'
-        },
-        {
-          key: 'shift',
-          label: 'Socially optimal output',
-          text: 'The socially optimal point is where <strong>MSB = MSC</strong> at <strong>(Q*, P*)</strong>. Compare: <strong>Q* &gt; Q_m</strong> (society wants more output) and <strong>P* &gt; P_m</strong> (optimal price is higher). The free market under-produces by (Q* − Q_m).'
-        },
-        {
-          key: 'types-of-efficiency',
-          label: 'Welfare gain forgone',
-          text: 'Shade the triangle bounded by MSB (above), MSC (below), and the vertical between Q_m and Q*. For every unit not produced between Q_m and Q*, society loses (MSB − MSC) of welfare. A <strong>Pigouvian subsidy = MEB at Q*</strong> internalises the externality and closes the wedge.'
-        }
-      ],
-      tipLate: [
-        { icon: '✅', tone: 'green', head: 'What the diagram shows',  text: 'The market produces too little. At Q_market, only private benefits (MPB) are counted, so price is lower (P_market) and quantity is below the efficient level (Q*). The shaded triangle is the welfare gain society forgoes when consumption stays at the market level.' },
-        { icon: 'ℹ️',  tone: 'blue',  head: 'Production-side mirror', text: 'For a positive production externality, think MSC below MPC instead. The logic is identical – the market still produces too little.' }
-      ],
-      examEdge: 'Diagram technique: label all six elements – MSC = MPC, MPB, MSB, E_market (Q_m, P_m), E* (Q*, P*), and shade the welfare-gain triangle. Missing any of these loses marks. Draw MSB as a parallel shift above MPB for a constant external benefit.'
+        { type: 'sectionHeader', icon: '🔎', label: 'What to notice' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '📉', head: 'Free market output is too low', body: 'At Qₘ the market produces below the socially optimal Q*.' },
+          { type: 'tile', tone: 'purple', icon: '🔺', head: 'Welfare gain forgone',          body: 'The shaded triangle is the welfare society foregoes by under-consuming.' },
+          { type: 'tile', tone: 'blue',   icon: '💡', head: 'Vertical gap = MEB',            body: 'The vertical distance between MSB and MPB is the marginal external benefit captured by third parties.' }
+        ]},
+        { type: 'calloutStrip', tone: 'green', icon: '✅', text: '<strong>What the diagram shows:</strong> The market produces too little. At Q_market, only private benefits (MPB) are counted, so price is lower (P_market) and quantity is below the efficient level (Q*). The shaded triangle is the welfare gain society forgoes when consumption stays at the market level.' },
+        { type: 'calloutStrip', tone: 'blue', icon: 'ℹ️', text: '<strong>Production-side mirror:</strong> For a positive production externality, think MSC below MPC instead. The logic is identical – the market still produces too little.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Diagram technique: label all six elements – MSC = MPC, MPB, MSB, E_market (Q_m, P_m), E* (Q*, P*), and shade the welfare-gain triangle. Missing any of these loses marks. Draw MSB as a parallel shift above MPB for a constant external benefit.' }
+      ]
     },
     {
       id: 'pos_externalities_3',

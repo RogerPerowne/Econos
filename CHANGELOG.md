@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.3 — 2026-05-31
+
+### Chart-migration sweep — breadth pass (14 cards, 6 families)
+
+A 32-file Edexcel A migration workflow converted every cleanly-expressible curve
+chart to econDiagram; 14 ad-interactive cards across 10 files migrated, each
+preserving all teaching content (tip→calloutStrip, keyTerms→glossaryRow,
+causes→grid, per-view head/body/analysis):
+
+- **adas** — causes-of-inflation (demand-pull, cost-push), employment-and-
+  unemployment (cyclical), macro-conflicts (inflation-surge 2021-23).
+- **jcurve** — net-trade (Marshall-Lerner / J-curve).
+- **phillips** — macro-conflicts (1970s stagflation).
+- **supplyDemand** — supply (×2), taxes-and-subsidies-as-policy-tools,
+  government-intervention-subsidies.
+- **externalities-neg / -pos** — negative- & positive-externalities.
+- **marketStructure** — market-power-and-contestability.
+
+Every diagram screenshot-verified across families; all references pass the
+econDiagram validator (34 blocks / 18 files). The remaining charts are grouped
+by the capability each needs (engine features, new families, graphics blocks,
+dataChart) in docs/STATIC_CHARTS.md — built next. Data-only — no cache bump.
+
 ## 0.37.2 — 2026-05-31
 
 ### Migrate the market-intervention interactives (tax incidence, subsidy, price controls)

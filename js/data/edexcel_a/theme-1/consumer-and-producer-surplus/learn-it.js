@@ -72,16 +72,24 @@ window.ECONOS_TOPIC = {
         tone: 'amber',
         text: 'To find consumer and producer surplus, first identify equilibrium. Then use the market price as the divider – shade above price and below demand for consumer surplus, and below price and above supply for producer surplus.'
       },
-      diagramPanel: {
-        diagramKey: 'cpsDiagram',
-        layout: 'stacked',
-        title: 'Build it in this order',
-        tone: 'green',
-        steps: [
-          { head: 'Plot demand and supply',   body: 'Draw demand (D) sloping down and supply (S) sloping up.' },
-          { head: 'Find equilibrium E',        body: 'Locate where D and S intersect.' },
-          { head: 'Mark P<sub>e</sub> and Q<sub>e</sub>', body: 'Draw dashed lines to the price (P<sub>e</sub>) and quantity (Q<sub>e</sub>) axes.' },
-          { head: 'Shade CS and PS',           body: 'Shade consumer surplus (CS) and producer surplus (PS) using P<sub>e</sub> as the divider.' }
+      interactiveDiagram: {
+        svgKey: 'cpsBuildInteractive',
+        label: 'Build it in this order',
+        emoji: '📐',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          { label: 'Plot demand and supply', tone: 'blue',
+            head: 'Step 1 · Plot demand and supply',
+            body: 'Draw demand (D) sloping down and supply (S) sloping up.' },
+          { label: 'Find equilibrium E', tone: 'slate',
+            head: 'Step 2 · Find equilibrium E',
+            body: 'Locate where D and S intersect — that\'s the market equilibrium.' },
+          { label: 'Mark Pₑ and Qₑ', tone: 'slate',
+            head: 'Step 3 · Mark Pₑ and Qₑ',
+            body: 'Draw dashed lines from E to the price (Pₑ) and quantity (Qₑ) axes.' },
+          { label: 'Shade CS and PS', tone: 'green',
+            head: 'Step 4 · Shade CS and PS',
+            body: 'Shade consumer surplus (above Pₑ, below D) and producer surplus (below Pₑ, above S).' }
         ]
       },
       causes: [

@@ -5181,6 +5181,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
   cpsDiagram: window.ECONOS_PPF.render(window.ECONOS_CPS_DIAGRAM_SPEC),
+  cpsBuildInteractive: window.ECONOS_PPF.render(window.ECONOS_CPS_BUILD_SPEC),
   subsidyDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_DIAGRAM_SPEC),
 
   allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),

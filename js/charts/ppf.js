@@ -1085,7 +1085,23 @@
     } else {
       clips = '<clipPath id="econos-chart-clip"><rect x="' + area.x + '" y="' + area.y + '" width="' + area.width + '" height="' + area.height + '"/></clipPath>';
     }
-    parts.push('<defs>' + clips + (spec.defs || '') + '</defs>');
+    // Cumulative idl-* layer styles for the ad-interactive view-switcher.
+    // `spec.layers: ['idl-1', 'idl-2']` declares the layers; engine emits:
+    //   .idl-N { display: none }                  (hidden by default)
+    //   .sv-show-N .idl-1, .sv-show-N .idl-2 {…}  (view N shows layers 1..N)
+    // Items reach the layers via `layer: 'idl-1'` on any primitive — the
+    // existing `maybeWrap` already produces `<g class="idl-N">` wrappers.
+    var layerCss = '';
+    if (Array.isArray(spec.layers) && spec.layers.length) {
+      var hides = spec.layers.map(function (l) { return '.' + l + '{display:none}'; }).join('');
+      var reveals = spec.layers.map(function (_, i) {
+        var n = i + 1;
+        var sel = spec.layers.slice(0, n).map(function (l) { return '.sv-show-' + n + ' .' + l; }).join(',');
+        return sel + '{display:block}';
+      }).join('');
+      layerCss = '<style>' + hides + reveals + '</style>';
+    }
+    parts.push('<defs>' + clips + layerCss + (spec.defs || '') + '</defs>');
 
     var bg = spec.background || '#FFFFFF';
     parts.push('<rect width="' + width + '" height="' + height + '" fill="' + bg + '" rx="12"/>');

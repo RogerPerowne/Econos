@@ -12861,46 +12861,7 @@ window.ECONOS_ICONS = {
     </g>
   </svg>`,
 
-  srasCurveStatic: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-    <defs>
-      <style>
-        .idl-1{display:none}.idl-2{display:none}
-        .sv-show-1 .idl-1{display:block}
-        .sv-show-2 .idl-1,.sv-show-2 .idl-2{display:block}
-      </style>
-      <marker id="arrowBlue2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L8,3 Z" fill="#3B82F6"/>
-      </marker>
-    </defs>
-    <!-- Base: Axes + straight SRAS line -->
-    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
-    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
-    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
-    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
-    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
-    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
-    <line x1="70" y1="255" x2="390" y2="45" stroke="#3B82F6" stroke-width="2.5"/>
-    <text x="385" y="42" text-anchor="end" font-size="12" fill="#3B82F6" font-weight="700">SRAS</text>
-    <!-- Layer 1: Point A -->
-    <g class="idl-1">
-      <line x1="55" y1="186" x2="175" y2="186" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-      <line x1="175" y1="186" x2="175" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="40" y="191" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
-      <text x="175" y="287" font-size="11" fill="#94A3B8" text-anchor="middle">Y₁</text>
-      <circle cx="175" cy="186" r="5.5" fill="white" stroke="#3B82F6" stroke-width="2"/>
-      <text x="158" y="184" font-size="12" fill="#3B82F6" font-weight="700">A</text>
-    </g>
-    <!-- Layer 2: Point B + movement arrow -->
-    <g class="idl-2">
-      <line x1="55" y1="111" x2="290" y2="111" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-      <line x1="290" y1="111" x2="290" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="40" y="116" font-size="11" fill="#94A3B8" text-anchor="middle">P₂</text>
-      <text x="290" y="287" font-size="11" fill="#94A3B8" text-anchor="middle">Y₂</text>
-      <circle cx="290" cy="111" r="5.5" fill="white" stroke="#3B82F6" stroke-width="2"/>
-      <text x="296" y="106" font-size="12" fill="#3B82F6" font-weight="700">B</text>
-      <line x1="197" y1="172" x2="271" y2="124" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrowBlue2)"/>
-    </g>
-  </svg>`,
+  srasCurveStatic: window.ECONOS_PPF.render(window.ECONOS_SRAS_CURVE_STATIC_SPEC),
 
   lrasViewsInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
     <defs><style>

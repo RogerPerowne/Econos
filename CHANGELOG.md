@@ -6,6 +6,65 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.21.0 — 2026-05-31
+
+### Chart-engine toolkit — ten-piece overhaul
+
+A focused investment block in the chart engine ahead of the theme 2–4
+content push. The engine was already powerful but had grown by
+accretion; this round formalises the contracts that authors lean on so
+the next 100 charts don't repeat the first 100's mistakes. Nine PRs
+landed in sequence, plus this regression-snapshot capstone.
+
+**Authoring ergonomics**
+- **Named curve shapes** (`{shape:{type:'linear', through:[…], slope:-1}}`,
+  `vertical`, `horizontal`, `keynesianAS`). No more hand-typed
+  `d="M … L …"` strings; the engine compiles the shape to a path AND
+  feeds the same shape to the intersection solver so coords stay in
+  sync. The Keynesian reverse-L AS is one named recipe shared by every
+  AD-AS chart on the site.
+- **Composable templates** (`template: 'ad-as'`, `'supply-demand'`,
+  `'ppf'`, `'phillips'`). Pre-set axes, gridlines, default curves and
+  styling for the four chart types that account for ~70% of A-level
+  charts. Authors override only what differs.
+- **Auto welfare-region shading** — CS / PS / DWL triangles get traced
+  from curve identity, not hand-typed polygon points. Re-derives after
+  any curve shift.
+
+**Correctness guards**
+- **Intersection solver** — the engine knows where two curves cross.
+  Spec-declared coords get checked against the solved coords; drift
+  >2px raises a warning.
+- **Geometry assertions** — authors can declare invariants
+  (`E1.x === E2.x`, monotonic, on-curve) that the engine validates at
+  render time.
+- **Tick dedup + collision detection** — duplicate labels collapse,
+  ticks <14px apart warn.
+- **Spec linter as CI gate** — `scripts/lint-charts.mjs` runs every
+  spec through the engine in dev mode and fails the build on any
+  warning. Wired into `npm run lint`.
+- **SVG regression snapshots** — 36 specs' rendered markup is
+  snapshotted under `tests/unit/__snapshots__/`. Any engine change
+  that shifts a curve, label or coord shows up as a test diff; you
+  refresh with `vitest -u` after eyeballing the change.
+
+**Polish & a11y**
+- **Animated transitions** — layer reveals and Classical/Keynesian
+  perspective toggles cross-fade (350ms opacity) instead of pop-cutting.
+- **Auto alt text** — every rendered SVG carries a `<title>` and
+  `<desc>` derived from the spec's curves, points and axes. Screen
+  readers and Google Image Search both win; authors override per spec
+  if needed.
+
+**By the numbers**
+- 91 unit tests (up from ~30 before the toolkit).
+- 36 chart specs linted on every PR.
+- 37 SVG snapshots — one per spec + one manifest.
+- Zero new dependencies. Everything is pure JS + vitest.
+
+This is the foundation layer the rest of theme 2 (and themes 3/4, and
+the SEO article diagrams, and revision) will build on top of.
+
 ## 0.20.0 — 2026-05-30
 
 ### Macro Conflicts & Trade-offs (2.6.4) — full 6-card build from ChatGPT mockups

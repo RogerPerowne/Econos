@@ -162,10 +162,31 @@
         ? TopicLoader.routes.link(String(weakestId).replace(/_/g, '-'))
         : '#';
 
+      // Forward button: prefer Land It on the same topic when it
+      // exists; otherwise walk to the next topic with Learn It
+      // available. Falls back to "Back to my topics" if neither.
+      var currentId = TopicLoader.getTopic();
+      var cur = (window.ECONOS_TOPICS || []).filter(function (t) { return t.id === currentId; })[0];
+      var hasLand = cur && cur.available && cur.available.land;
+      var forwardHref, forwardLabel;
+      if (hasLand) {
+        forwardHref  = DATA.nextUrl;
+        forwardLabel = 'On to Land It';
+      } else {
+        var nt = TopicLoader.nextLearnableTopicAfter(currentId);
+        if (nt) {
+          forwardHref  = TopicLoader.routes.learn(null, nt.id);
+          forwardLabel = 'Next topic: ' + nt.name;
+        } else {
+          forwardHref  = '/';
+          forwardLabel = 'Back to my topics';
+        }
+      }
+
       return ''
         + '<div class="link-footer">'
         +   '<a href="' + weakHref + '" class="link-btn link-btn--ghost">Review weak step</a>'
-        +   '<a href="' + DATA.nextUrl + '" class="link-btn link-btn--primary">On to Land It →</a>'
+        +   '<a href="' + forwardHref + '" class="link-btn link-btn--primary">' + forwardLabel + ' →</a>'
         + '</div>';
     }
 

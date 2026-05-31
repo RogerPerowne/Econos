@@ -214,6 +214,26 @@
       return urlBase(t) + '/' + shellSegment + (sub ? '/' + sub : '');
     };
   }
+  /* Find the next topic AFTER `fromId` that has Learn It available.
+     Walks the registry forward so a topic without `available.learn`
+     in between is skipped. Returns null if `fromId` is the last
+     topic with available content. Used by end-of-stage footers
+     (learn last card, link complete, land complete) to render a
+     consistent "Next topic →" button. */
+  function nextLearnableTopicAfter(fromId) {
+    var arr = (typeof window !== 'undefined' && window.ECONOS_TOPICS) || [];
+    var idx = -1;
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] && arr[i].id === fromId) { idx = i; break; }
+    }
+    if (idx < 0) return null;
+    for (var j = idx + 1; j < arr.length; j++) {
+      var nt = arr[j];
+      if (nt && nt.available && nt.available.learn) return nt;
+    }
+    return null;
+  }
+
   var routes = {
     home:  function () { return '/'; },
     learn: makeShellRoute('learn-it'),
@@ -375,6 +395,7 @@
     divisionLabelFor:    divisionLabelFor,
     /* Misc */
     sessionLabel:        sessionLabel,
+    nextLearnableTopicAfter: nextLearnableTopicAfter,
     /* Data loading */
     loadData:            loadData,
     loadDataAndBoot:     loadDataAndBoot,

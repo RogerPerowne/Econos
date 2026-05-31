@@ -6055,7 +6055,8 @@
         layers.forEach((cls, i) => {
           const visible = explicitShow ? explicitShow.includes(cls) : 0 > i;
           idRoot.querySelectorAll('.' + cls).forEach(el => {
-            el.style.display = visible ? 'block' : 'none';
+            el.style.opacity = visible ? '1' : '0';
+            el.style.visibility = visible ? 'visible' : 'hidden';
           });
         });
       });
@@ -6353,10 +6354,18 @@
       const layers = JSON.parse(idRoot.dataset.idLayers || '[]');
       const explicitShow = target.dataset.idShow ? JSON.parse(target.dataset.idShow) : null;
 
+      // Use opacity + visibility (not display) so the engine's CSS
+      // transition kicks in — layer reveals cross-fade in/out instead
+      // of pop-cutting. visibility flips after the fade so hidden
+      // layers don't trap pointer events mid-transition.
       layers.forEach((cls, i) => {
         const visible = explicitShow ? explicitShow.includes(cls) : i < vi;
         idRoot.querySelectorAll('.' + cls).forEach(el => {
-          el.style.display = visible ? 'block' : 'none';
+          el.style.opacity = visible ? '1' : '0';
+          el.style.visibility = visible ? 'visible' : 'hidden';
+          el.style.transition = visible
+            ? 'opacity .35s ease-out'
+            : 'opacity .35s ease-out, visibility 0s linear .35s';
         });
       });
 

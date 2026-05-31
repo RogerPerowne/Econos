@@ -1581,25 +1581,34 @@
     if (Array.isArray(spec.layers) && spec.layers.length) {
       var exclusive = spec.layerMode === 'exclusive';
       var aliases = spec.layerAliases || {};
-      var hides = spec.layers.map(function (l) { return '.' + l + '{display:none}'; }).join('');
+      // Layers are hidden via opacity + visibility (not display) so the
+      // transition between hidden/shown is animatable. visibility flips
+      // after the opacity fade so hidden layers don't trap pointer
+      // events; the delayed-visibility trick keeps the fade-out smooth.
+      var fadeOut = 'opacity:0;visibility:hidden;transition:opacity .35s ease-out,visibility 0s linear .35s';
+      var fadeIn  = 'opacity:1;visibility:visible;transition:opacity .35s ease-out';
+      var hides = spec.layers.map(function (l) { return '.' + l + '{' + fadeOut + '}'; }).join('');
       var reveals = spec.layers.map(function (l, i) {
         var n = i + 1;
         var visible = exclusive ? [l] : spec.layers.slice(0, n);
         var sel = visible.map(function (vl) { return '.sv-show-' + n + ' .' + vl; }).join(',');
-        return sel + '{display:block}';
+        return sel + '{' + fadeIn + '}';
       }).join('');
       var aliasReveals = Object.keys(aliases).map(function (layerName) {
         return aliases[layerName].map(function (parent) {
-          return '.' + parent + ' .' + layerName + '{display:block}';
+          return '.' + parent + ' .' + layerName + '{' + fadeIn + '}';
         }).join('');
       }).join('');
       var inverseCss = '';
       if (Array.isArray(spec.inverseLayers) && spec.inverseLayers.length) {
+        // Inverse layers are shown BY DEFAULT and fade out when any view
+        // activates — opposite direction from idl-N.
+        var inverseShow = spec.inverseLayers.map(function (l) { return '.' + l + '{' + fadeIn + '}'; }).join('');
         var inverseHides = spec.layers.map(function (_, i) {
           var n = i + 1;
           return spec.inverseLayers.map(function (l) { return '.sv-show-' + n + ' .' + l; }).join(',');
         }).join(',');
-        inverseCss = inverseHides + '{display:none}';
+        inverseCss = inverseShow + inverseHides + '{' + fadeOut + '}';
       }
       layerCss = '<style>' + hides + reveals + aliasReveals + inverseCss + '</style>';
     }
@@ -1613,9 +1622,14 @@
     // primitives simply omit the field.
     var perspectiveCss = '';
     if (Array.isArray(spec.perspectives) && spec.perspectives.length) {
-      var pHides = spec.perspectives.map(function (p) { return '.perspective-' + p; }).join(',') + '{display:none}';
+      // Same opacity+visibility pattern as the idl layers so toggling
+      // Classical → Keynesian cross-fades the two AS shapes instead
+      // of swap-cutting.
+      var pFadeOut = 'opacity:0;visibility:hidden;transition:opacity .35s ease-out,visibility 0s linear .35s';
+      var pFadeIn  = 'opacity:1;visibility:visible;transition:opacity .35s ease-out';
+      var pHides = spec.perspectives.map(function (p) { return '.perspective-' + p; }).join(',') + '{' + pFadeOut + '}';
       var pReveals = spec.perspectives.map(function (p) {
-        return '.chart-' + p + ' .perspective-' + p + '{display:block}';
+        return '.chart-' + p + ' .perspective-' + p + '{' + pFadeIn + '}';
       }).join('');
       perspectiveCss = '<style>' + pHides + pReveals + '</style>';
     }

@@ -83,7 +83,7 @@
   background: var(--econ-tone-slate-50);
 }
 
-@media (max-width: 640px) {
+@container econblock (max-width: 520px) {
   .econ-blocks .versus-rows__header,
   .econ-blocks .versus-rows__row {
     grid-template-columns: minmax(60px, 0.7fr) 1fr 1fr;
@@ -98,66 +98,11 @@
 
 
 /* ----------------------------------------------------------
-   decisionMatrix
-   Scrollable evaluation table with tone header row
+   decisionMatrix styles removed — decisionMatrix now renders via the
+   richTable graphics block (see js/blocks/compare.js adapter). Its styles
+   live in css/blocks/graphics/richTable (.gfx-rt*), which reflows each row
+   into a self-describing card on the block's own width.
    ---------------------------------------------------------- */
-.econ-blocks .decision-matrix__scroll {
-  -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--econ-block-line);
-  border-radius: 10px;
-  overflow-x: auto;
-}
-
-.econ-blocks .decision-matrix {
-  border-collapse: collapse;
-  font-size: var(--econ-body-size);
-  min-width: 480px;
-  width: 100%;
-}
-
-.econ-blocks .decision-matrix__th {
-  background: var(--econ-block-navy);
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 850;
-  letter-spacing: 0.01em;
-  padding: 9px var(--econ-pad);
-  text-align: left;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.econ-blocks .decision-matrix__th--first {
-  /* Criterion column header gets a slight indent to echo body rows */
-  padding-left: var(--econ-pad);
-}
-
-.econ-blocks .decision-matrix tbody tr {
-  border-top: 1px solid var(--econ-block-line);
-}
-
-.econ-blocks .decision-matrix tbody tr:nth-child(even) {
-  background: var(--econ-tone-slate-50);
-}
-
-.econ-blocks .decision-matrix__td {
-  border-right: 1px solid var(--econ-block-line);
-  color: var(--econ-tone-slate-700);
-  line-height: 1.4;
-  padding: 8px var(--econ-pad);
-  vertical-align: top;
-}
-
-.econ-blocks .decision-matrix__td:last-child {
-  border-right: none;
-}
-
-.econ-blocks .decision-matrix__td--criterion {
-  color: var(--econ-block-navy);
-  font-weight: 700;
-  white-space: nowrap;
-}
 
 
 /* ----------------------------------------------------------
@@ -267,7 +212,7 @@
   margin: 0;
 }
 
-@media (max-width: 640px) {
+@container econblock (max-width: 520px) {
   .econ-blocks .glossary-row__item {
     flex: 1 1 160px;
   }
@@ -347,7 +292,7 @@
   z-index: 1;
 }
 
-@media (max-width: 640px) {
+@container econblock (max-width: 520px) {
   .econ-blocks .pair {
     grid-template-columns: 1fr;
     gap: var(--econ-gap);

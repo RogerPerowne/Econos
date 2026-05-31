@@ -357,7 +357,7 @@
    The gauge marker label adjusts to avoid clipping on narrow screens.
    ---------------------------------------------------------------------------- */
 
-@media (max-width: 640px) {
+@container econblock (max-width: 520px) {
   .econ-blocks .eq-hero__chip {
     font-size: 0.92rem;
     padding: 4px 10px;

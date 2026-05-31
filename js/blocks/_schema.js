@@ -94,7 +94,8 @@
       optional: ['columns'],
       arrays: { rows: { required: ['cells'] } },
       group: 'compare',
-      summary: 'Scrollable multi-column data table.'
+      deprecated: 'Alias of richTable — renders via the richTable adapter (container-query responsive, no horizontal scroll). Prefer richTable for new cards.',
+      summary: 'DEPRECATED alias of richTable. Multi-column data table; first column is the row label, remaining columns are data columns.'
     },
     trafficLight: {
       required: [],
@@ -177,7 +178,8 @@
       optional: [],
       arrays: { satellites: { required: ['label'], optional: ['metric', 'tone'] } },
       group: 'structure',
-      summary: 'Central concept + satellite chips (CSS, no SVG).'
+      deprecated: 'Alias of hubSpoke — renders via the hubSpoke adapter (container-query responsive). Prefer hubSpoke for new cards.',
+      summary: 'DEPRECATED alias of hubSpoke. Central concept + satellite chips (satellites[].metric maps to a spoke detail line).'
     },
     policyToolkit: {
       required: ['tools'],

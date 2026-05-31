@@ -123,7 +123,7 @@
 }
 
 /* Mobile: tabs stack vertically. */
-@media (max-width: 640px) {
+@container econblock (max-width: 520px) {
   .econ-blocks .ed-tabs {
     grid-auto-flow: row;
     grid-auto-columns: auto;

@@ -5,6 +5,12 @@
 
 .econ-block {
   min-width: 0;
+  /* Every block wrapper is a query container, so any block can reflow on its
+     OWN width via @container econblock (...) — the one consistent responsive
+     mechanism across the whole block system (replacing ad-hoc viewport
+     @media). A block in a narrow grid cell reflows just like one on a phone. */
+  container-type: inline-size;
+  container-name: econblock;
 }
 
 .econ-tone--green {
@@ -200,7 +206,7 @@
   padding: var(--econ-pad);
 }
 
-@media (max-width: 640px) {
+@container econblock (max-width: 520px) {
   .econ-grid {
     grid-template-columns: minmax(0, 1fr);
   }

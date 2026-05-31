@@ -59,57 +59,43 @@
   };
 
   /* ------------------------------------------------------------------ */
-  /* decisionMatrix                                                       */
+  /* decisionMatrix — DEPRECATED ALIAS of richTable.                      */
   /* {                                                                    */
   /*   columns: [string, ...],                                            */
   /*   rows:    [{ cells: [string, ...] }]                               */
   /* }                                                                    */
+  /* Thin adapter: the legacy first column is the row-header column, the  */
+  /* remaining columns are data columns. Maps onto richTable so shipped   */
+  /* cards keep working and now reflow each row into a self-describing     */
+  /* card on the block's own width — no horizontal scroll.                */
+  /* Field map: columns[0] -> per-row header label; columns[1..] ->       */
+  /*            colHeaders; each row's cells[0] -> row header,             */
+  /*            cells[1..] -> richTable cells [{ body }].                  */
   /* ------------------------------------------------------------------ */
   B.decisionMatrix = function decisionMatrix(block) {
+    if (typeof B.richTable !== 'function') return '';
     var columns = Array.isArray(block.columns) ? block.columns : [];
     var rows    = Array.isArray(block.rows)    ? block.rows    : [];
 
     if (columns.length === 0 && rows.length === 0) return '';
 
-    var colCount = columns.length;
+    var colHeaders = columns.slice(1);
 
-    /* thead */
-    var theadHtml = '';
-    if (colCount > 0) {
-      var thCells = columns.map(function (col, i) {
-        var cls = i === 0
-          ? 'decision-matrix__th decision-matrix__th--first'
-          : 'decision-matrix__th';
-        return '<th class="' + cls + '" scope="col">' + U.escapeHtml(col || '') + '</th>';
-      }).join('');
-      theadHtml = '<thead><tr>' + thCells + '</tr></thead>';
-    }
+    var mappedRows = rows
+      .filter(function (row) {
+        return Array.isArray(row && row.cells) && row.cells.length > 0;
+      })
+      .map(function (row) {
+        var cells = row.cells;
+        return {
+          header: cells[0] != null ? String(cells[0]) : '',
+          cells: cells.slice(1).map(function (cell) {
+            return { body: cell != null ? String(cell) : '' };
+          })
+        };
+      });
 
-    /* tbody — skip rows where cells array is empty or missing */
-    var tbodyHtml = rows.map(function (row) {
-      var cells = Array.isArray(row && row.cells) ? row.cells : [];
-      if (cells.length === 0) return '';
-      var tdCells = cells.map(function (cell, i) {
-        var cls = i === 0
-          ? 'decision-matrix__td decision-matrix__td--criterion text-fit-2'
-          : 'decision-matrix__td text-fit-2';
-        var tag = i === 0 ? 'th' : 'td';
-        var scope = i === 0 ? ' scope="row"' : '';
-        return '<' + tag + ' class="' + cls + '"' + scope + '>' +
-          U.escapeHtml(cell != null ? cell : '') +
-        '</' + tag + '>';
-      }).join('');
-      return '<tr>' + tdCells + '</tr>';
-    }).join('');
-
-    return (
-      '<div class="decision-matrix__scroll" data-overflow-watch>' +
-        '<table class="decision-matrix" role="table">' +
-          theadHtml +
-          (tbodyHtml ? '<tbody>' + tbodyHtml + '</tbody>' : '') +
-        '</table>' +
-      '</div>'
-    );
+    return B.richTable({ colHeaders: colHeaders, rows: mappedRows });
   };
 
   /* ------------------------------------------------------------------ */

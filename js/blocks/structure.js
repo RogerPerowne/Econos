@@ -112,53 +112,28 @@
   };
 
   /* ------------------------------------------------------------------ *
-   * satelliteDiagram
+   * satelliteDiagram — DEPRECATED ALIAS of hubSpoke.
    * { centre: { label, value }, satellites: [{ label, metric, tone }] }
-   * Central object with surrounding satellite chips (CSS layout, no SVG).
+   * Thin adapter: maps the legacy schema onto hubSpoke and delegates
+   * rendering, so shipped cards keep working and now reflow on the block's
+   * own width (container queries) like the rest of the graphics engine.
+   * Field map: centre stays; satellites[{label, metric, tone}] ->
+   *            spokes[{label, detail: metric, tone}].
    * ------------------------------------------------------------------ */
   B.satelliteDiagram = function satelliteDiagram(block) {
+    if (typeof B.hubSpoke !== 'function') return '';
     var centre = block.centre && typeof block.centre === 'object' ? block.centre : {};
     var satellites = Array.isArray(block.satellites) ? block.satellites : [];
 
-    var centreHtml =
-      '<div class="econ-satellite__centre" aria-label="Centre: ' +
-      U.escapeAttr(centre.label || '') +
-      '">' +
-      (centre.value
-        ? '<div class="econ-satellite__centre-value">' + U.escapeHtml(centre.value) + '</div>'
-        : '') +
-      (centre.label
-        ? '<div class="econ-satellite__centre-label">' + U.escapeHtml(centre.label) + '</div>'
-        : '') +
-      '</div>';
-
-    var satellitesHtml = satellites
-      .map(function (sat) {
-        if (!sat || typeof sat !== 'object') return '';
-        var tone = U.toneClass(sat.tone, 'slate');
-        var metricHtml = sat.metric
-          ? '<span class="econ-satellite__chip-metric">' + U.escapeHtml(sat.metric) + '</span>'
-          : '';
-        var labelHtml = sat.label
-          ? '<span class="econ-satellite__chip-label">' + U.escapeHtml(sat.label) + '</span>'
-          : '';
-        return (
-          '<div class="econ-satellite__chip ' + tone + '">' +
-          metricHtml +
-          labelHtml +
-          '</div>'
-        );
+    var spokes = satellites
+      .filter(function (sat) {
+        return sat && typeof sat === 'object';
       })
-      .join('');
+      .map(function (sat) {
+        return { label: sat.label, detail: sat.metric, tone: sat.tone };
+      });
 
-    return (
-      '<div class="econ-satellite" data-overflow-watch>' +
-      '<div class="econ-satellite__orbit">' +
-      satellitesHtml +
-      centreHtml +
-      '</div>' +
-      '</div>'
-    );
+    return B.hubSpoke({ centre: centre, spokes: spokes });
   };
 
   /* ------------------------------------------------------------------ *

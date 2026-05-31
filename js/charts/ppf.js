@@ -796,6 +796,16 @@
         anchor = item.x < 0 ? 'end' : (item.x > 1 ? 'start' : 'middle');
       }
     }
+    // Track this text's bbox so dev-mode off-stage and clash checks see
+    // it. Carry the item's layer/perspective so the clash check can
+    // skip pairs that are mutually exclusive at runtime.
+    if (ctx && ctx.placedBoxes && item.text) {
+      var tbox = estimateTextBox(item.text, size, x, y, anchor);
+      if (item.layer) tbox.layer = item.layer;
+      if (item.perspective) tbox.perspective = item.perspective;
+      if (ctx.currentPanelIdx != null) tbox.panelIdx = ctx.currentPanelIdx;
+      ctx.placedBoxes.push(tbox);
+    }
     var opacity = item.opacity != null ? ' opacity="' + item.opacity + '"' : '';
     // Optional rotation. `item.rotate` is degrees (negative = counter-
     // clockwise). Used for vertical-reading axis labels like "P falls"
@@ -818,6 +828,14 @@
 
   function boxesOverlap(a, b) {
     return !(a.x + a.w < b.x || b.x + b.w < a.x || a.y + a.h < b.y || b.y + b.h < a.y);
+  }
+
+  // Overlap area in SVG px². Used to filter out sub-pixel and trivial
+  // grazing overlaps that aren't visually problematic.
+  function boxOverlapArea(a, b) {
+    var w = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x);
+    var h = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+    return Math.max(0, w) * Math.max(0, h);
   }
 
   function isInsideArea(box, area, margin) {
@@ -1864,10 +1882,15 @@
     });
 
     // Render each panel (multi-panel) or the spec itself (single-panel).
+    // Track which panel each placedBox belongs to so the clash detector
+    // can skip cross-panel comparisons — labels in different panels
+    // can never visually overlap.
     if (isMulti) {
       panels.forEach(function (panel, i) {
+        ctx.currentPanelIdx = i;
         renderPanelContent(panel, ctx, parts, 'econos-chart-clip-' + i);
       });
+      ctx.currentPanelIdx = null;
     } else {
       // Synthesize a panel from the spec's top-level shape fields so
       // single-panel and multi-panel paths share the same rendering code.
@@ -1891,20 +1914,56 @@
     parts.push('</svg>');
 
     // Dev-mode post-render collision scan. Pairs of placed label
-    // bboxes are checked for overlap; each overlap is logged. The
-    // smart placement should prevent most overlaps; this is a
-    // safety net for patterns the heuristic doesn't yet catch.
+    // bboxes are checked for overlap; each overlap is logged.
+    // Layer/perspective-aware: if two labels live in DIFFERENT
+    // layers or perspectives, they never appear together at
+    // runtime, so overlap is fine.
     var devOn = (typeof window !== 'undefined' && window.ECONOS_DEV);
     if (devOn && ctx.placedBoxes.length > 1) {
       for (var i = 0; i < ctx.placedBoxes.length; i++) {
         for (var j = i + 1; j < ctx.placedBoxes.length; j++) {
-          if (boxesOverlap(ctx.placedBoxes[i], ctx.placedBoxes[j])) {
-            var msg = '[ECONOS_PPF] label clash: "' + ctx.placedBoxes[i].text + '" ↔ "' + ctx.placedBoxes[j].text + '"';
+          var a = ctx.placedBoxes[i], b = ctx.placedBoxes[j];
+          // Skip if labels are in different panels (multi-panel charts)
+          if (a.panelIdx != null && b.panelIdx != null && a.panelIdx !== b.panelIdx) continue;
+          // Skip if perspectives mutually exclusive
+          if (a.perspective && b.perspective && a.perspective !== b.perspective) continue;
+          // Skip if both have layers that are mutually exclusive (not
+          // a perfect check — engine cumulates by default — but exclusive
+          // siblings of `idl-N` rarely co-exist visually)
+          if (a.layer && b.layer && a.layer !== b.layer) continue;
+          // Skip identical-text duplicates that come from cumulative
+          // reveals (e.g. a tick "Q*" rendered both in base and in a
+          // layer that re-affirms the same coord).
+          if (a.text === b.text) continue;
+          if (boxesOverlap(a, b) && boxOverlapArea(a, b) >= 30) {
+            // 30 px² threshold — ignores grazing 1-2px touches that
+            // aren't visually problematic. Real clashes are tens or
+            // hundreds of px² of intersection.
+            var msg = '[ECONOS_PPF] label clash: "' + a.text + '" ↔ "' + b.text + '"';
             ctx.devWarnings.push(msg);
-            try { console.warn(msg, ctx.placedBoxes[i], ctx.placedBoxes[j]); } catch (e) {}
+            try { console.warn(msg, a, b); } catch (e) {}
           }
         }
       }
+    }
+    // Off-stage detection. ViewBox is "0 -16 W H+16" so the visible
+    // area is x ∈ [0, W] and y ∈ [-16, H]. A label bbox extending past
+    // those bounds will clip in the browser. Tolerance of 2px to
+    // ignore sub-pixel rounding noise.
+    if (devOn) {
+      var TOL = 2;
+      ctx.placedBoxes.forEach(function (bx) {
+        var off = [];
+        if (bx.x < -TOL)                off.push('left');
+        if (bx.x + bx.w > width + TOL)  off.push('right');
+        if (bx.y < -16 - TOL)           off.push('top');
+        if (bx.y + bx.h > height + TOL) off.push('bottom');
+        if (off.length) {
+          var omsg = '[ECONOS_PPF] label off-stage (' + off.join('+') + '): "' + bx.text + '" at (' + bx.x.toFixed(1) + ',' + bx.y.toFixed(1) + ') size ' + bx.w.toFixed(0) + 'x' + bx.h.toFixed(0);
+          ctx.devWarnings.push(omsg);
+          try { console.warn(omsg, bx); } catch (e) {}
+        }
+      });
     }
     // Stash for programmatic inspection (test harnesses can read this).
     if (typeof window !== 'undefined' && window.ECONOS_PPF) {

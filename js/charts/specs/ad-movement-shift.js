@@ -118,7 +118,7 @@
             tone: 'green', strokeWidth: 2.4, markerEnd: 'mvs-green-end', buffer: 0 }
         ],
         texts: [
-          { x: 0.560, y: 1.090, text: 'whole curve moves · C, I, G or X−M change', tone: 'gray', fontSize: 11, anchor: 'middle' },
+          { x: 0.500, y: 1.090, text: 'whole curve moves · C/I/G/X−M change', tone: 'gray', fontSize: 10, anchor: 'middle' },
           { x: 0.521, y: 0.180, text: 'shift right', tone: 'green', bold: true, fontSize: 10, anchor: 'middle' }
         ]
       },

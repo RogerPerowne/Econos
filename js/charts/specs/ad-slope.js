@@ -76,7 +76,7 @@
       // "Output rises" sits below the bottom-edge arrow). Horizontal
       // text, anchored at the arrow's x, well below the P₂ tick label
       // so the two never share a vertical line.
-      { x: -0.110, y: 0.300, text: 'P falls', tone: 'rose', bold: true, fontSize: 10, anchor: 'middle' },
+      { x: -0.110, y: 0.220, text: 'P falls', tone: 'rose', bold: true, fontSize: 10, anchor: 'middle' },
       // "Output rises" caption below the bottom arrow
       { x: 0.500, y: -0.135, text: 'Output rises', tone: 'green', bold: true, fontSize: 10, anchor: 'middle' }
     ]

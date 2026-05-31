@@ -76,8 +76,6 @@
           { x: -0.020, y: Tax.pc, text: 'Pᶜ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: -0.020, y: Tax.pp, text: 'Pᵖ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: Tax.x,  y: -0.055, text: 'Qₜ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
-          { x: -0.020, y: Tax.pc + 0.040, text: '(buyer price)',  tone: 'gray', italic: true, fontSize: 10, anchor: 'end' },
-          { x: -0.020, y: Tax.pp - 0.040, text: '(seller price)', tone: 'gray', italic: true, fontSize: 10, anchor: 'end' }
         ]
       },
 

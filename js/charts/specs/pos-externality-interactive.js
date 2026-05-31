@@ -119,10 +119,8 @@
       { layer: 'layer-optimal', x: Eopt.x,  y: -0.050,   text: 'Q*', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
 
       // Welfare-gain label inside green triangle
-      { layer: 'layer-wfg', x: (Em.x + Eopt.x + MsbAtQm.x) / 3 + 0.020, y: (Em.y + Eopt.y + MsbAtQm.y) / 3 + 0.012,
-        text: 'Welfare', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-wfg', x: (Em.x + Eopt.x + MsbAtQm.x) / 3 + 0.020, y: (Em.y + Eopt.y + MsbAtQm.y) / 3 - 0.025,
-        text: 'gain',    tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-wfg', x: (Em.x + Eopt.x + MsbAtQm.x) / 3 + 0.020, y: (Em.y + Eopt.y + MsbAtQm.y) / 3,
+        text: 'Welfare gain', tone: 'green', bold: true, fontSize: 11, anchor: 'middle' },
 
       // Title strips per state
       { layer: 'layer-legend-base',       x: 0.060, y: 1.017,

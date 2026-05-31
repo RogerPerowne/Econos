@@ -6055,6 +6055,7 @@
         layers.forEach((cls, i) => {
           const visible = explicitShow ? explicitShow.includes(cls) : 0 > i;
           idRoot.querySelectorAll('.' + cls).forEach(el => {
+            el.style.display = 'block';
             el.style.opacity = visible ? '1' : '0';
             el.style.visibility = visible ? 'visible' : 'hidden';
           });
@@ -6358,9 +6359,16 @@
       // transition kicks in — layer reveals cross-fade in/out instead
       // of pop-cutting. visibility flips after the fade so hidden
       // layers don't trap pointer events mid-transition.
+      //
+      // `display: block` is set inline to override any `display:none`
+      // baked into a hand-rolled SVG's inline <style> block (the
+      // toolkit-rendered specs use opacity-based hide rules and don't
+      // need this — but legacy theme-1 charts still emit display rules
+      // and inline opacity alone can't override `display:none`).
       layers.forEach((cls, i) => {
         const visible = explicitShow ? explicitShow.includes(cls) : i < vi;
         idRoot.querySelectorAll('.' + cls).forEach(el => {
+          el.style.display = 'block';
           el.style.opacity = visible ? '1' : '0';
           el.style.visibility = visible ? 'visible' : 'hidden';
           el.style.transition = visible

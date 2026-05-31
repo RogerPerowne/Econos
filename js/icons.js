@@ -1968,43 +1968,7 @@ window.ECONOS_ICONS = {
 
   ppfMovesInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD3_SPEC),
 
-  ppfConsumerCapital: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
-    <defs>
-      <marker id="ppfcc-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
-      <marker id="ppfcc-bl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2563EB"/></marker>
-      <marker id="ppfcc-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
-    </defs>
-    <!-- Axes -->
-    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfcc-ax)"/>
-    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfcc-ax)"/>
-    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Consumer Goods (now)</text>
-    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Capital Goods (investment)</text>
-    <!-- PPF₁ current -->
-    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
-    <text x="358" y="70" font-size="11" font-weight="700" fill="#2563EB">PPF</text>
-    <!-- PPF₂ shifted out (future) -->
-    <path d="M 55,45 C 255,45 410,250 410,268" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="6 4"/>
-    <text x="388" y="42" font-size="10" font-weight="700" fill="#059669">Future PPF</text>
-    <!-- Arrow showing outward shift -->
-    <line x1="340" y1="120" x2="370" y2="90" stroke="#059669" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#ppfcc-gr)"/>
-    <!-- Point K: UK/USA style (high consumer goods, low investment) -->
-    <circle cx="145" cy="118" r="6" fill="#7C3AED"/>
-    <text x="108" y="108" font-size="10" font-weight="700" fill="#7C3AED">🇬🇧🇺🇸</text>
-    <rect x="62" y="118" width="74" height="28" rx="5" fill="#F5F3FF" stroke="#C4B5FD"/>
-    <text x="99" y="131" font-size="9" font-weight="600" fill="#5B21B6" text-anchor="middle">UK / USA</text>
-    <text x="99" y="141" font-size="9" fill="#64748B" text-anchor="middle">~18% investment</text>
-    <!-- Point L: China style (lower consumer, high investment) -->
-    <rect x="332" y="133" width="76" height="28" rx="5" fill="#FFFBEB" stroke="#FDE68A"/>
-    <text x="370" y="146" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle">China 🇨🇳</text>
-    <text x="370" y="157" font-size="9" fill="#64748B" text-anchor="middle">~42% investment</text>
-    <line x1="370" y1="161" x2="330" y2="183" stroke="#D97706" stroke-width="1.2" stroke-dasharray="3 2"/>
-    <circle cx="328" cy="186" r="6" fill="#D97706"/>
-    <!-- Annotation: more capital now = bigger PPF later -->
-    <rect x="62" y="230" width="310" height="28" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
-    <text x="217" y="243" font-size="10" font-weight="600" fill="#065F46" text-anchor="middle">More capital goods now → PPF shifts outward later</text>
-    <text x="217" y="253" font-size="9" fill="#065F46" text-anchor="middle">The trade-off between living standards today vs tomorrow</text>
-  </svg>`,
+  ppfConsumerCapital: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD4_SPEC),
 
   ppfEfficiencyInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD5_SPEC),
 

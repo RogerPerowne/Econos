@@ -123,43 +123,57 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'ppf_4',
-      template: 'paired',
       stepLabel: 'Learn: Step 4 of 6',
-      diagramKey: 'ppfConsumerCapital',
       title: 'Consumer vs Capital Goods Trade-Off',
       tip: { icon: '💡', tone: 'blue', text: 'Every economy chooses where to sit on the consumer–capital goods PPF. The choice today shapes where the PPF will be tomorrow.' },
-      left: {
-        label: 'Produce more consumer goods now',
-        points: [
-          'Higher present living standards',
-          'Less investment in future productive capacity',
-          'PPF shifts outward only slowly in the future',
-          'Choice of developed economies with high income and low savings rates',
-          'Risk: productive capacity stagnates relative to competitors'
+      interactiveDiagram: {
+        svgKey: 'ppfConsumerCapital',
+        label: 'From "now" to "later" — the investment trade-off',
+        emoji: '📈',
+        // Every layer the engine emits, in the order it's emitted.
+        // Per-view `show` arrays below pick exactly which to display.
+        layers: ['countries', 'ppf1s', 'ppf1d', 'a-lbl', 'b-pos', 'a-b-arrow', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
+        views: [
+          {
+            label: 'Country positions',
+            tone: 'blue',
+            show: ['countries', 'ppf1s'],
+            head: 'Where countries actually sit on the PPF',
+            body: 'Every economy chooses a mix of consumer goods (everything households buy today) and capital goods (machines, infrastructure, buildings that boost FUTURE production). The UK, Germany and China sit at very different points on the same conceptual PPF — driven by their investment ratios.',
+            analysis: 'Investment ratios (Gross Fixed Capital Formation as a % of GDP): UK and USA ~18%, Germany ~22%, China ~42%. Capital-heavy economies sit further to the right on the PPF — less consumption now, but more productive capacity being built. China\'s growth over the past three decades has been DIRECTLY dependent on sustained capital allocation: infrastructure, factories, machinery. The UK\'s comparatively low investment ratio is one structural reason its long-run growth has lagged.'
+          },
+          {
+            label: 'Sacrifice for growth',
+            tone: 'purple',
+            show: ['ppf1s', 'a-lbl', 'b-pos', 'a-b-arrow'],
+            head: 'UK moves A → B (along PPF₁)',
+            body: 'The UK\'s current production mix is A — heavily weighted toward consumer goods. To boost long-run growth, it can move ALONG PPF₁ to point B: produce LESS consumer goods now, MORE capital goods. The dashed arrow shows the potential move; the dashed gridlines mark B\'s position — clearly more capital, fewer consumer goods than at A.',
+            analysis: 'This is movement along the EXISTING PPF — not yet a shift. A → B is a reallocation of existing resources, with a real opportunity cost: lower consumer goods output means lower present living standards. Post-war Germany, Japan, South Korea (1960s-80s) and China (1990s-2010s) all made this choice deliberately. The political challenge: voters resist short-term sacrifices even when long-term gains are large.'
+          },
+          {
+            label: 'PPF₂: B → C (same capital, more consumer)',
+            tone: 'green',
+            show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow'],
+            head: 'Investment has shifted the frontier outward',
+            body: 'Years of producing at B has built up the capital stock. The PPF has shifted OUTWARD from PPF₁ (now dashed) to PPF₂ (solid). The straight arrow from B up to C shows the immediate gain: at the SAME level of capital goods, the country can now produce more CONSUMER GOODS than before. C sits on the new frontier.',
+            analysis: 'This is supply-side, long-run growth. The shift is the DIRECT consequence of B\'s higher investment ratio sustained over time. The catch: new capital must be PRODUCTIVELY invested. Misallocated investment (white-elephant infrastructure, Soviet five-year plans) builds capital that doesn\'t shift the frontier. The UK\'s persistent under-investment in productive capital is one reason its PPF has shifted out more slowly than peers.'
+          },
+          {
+            label: 'C → D along PPF₂',
+            tone: 'green',
+            show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
+            head: 'D — consumer-heavy again, but at HIGHER absolute levels',
+            body: 'With PPF₂ in hand, the country specialises BACK toward consumer goods — moving along PPF₂ from C to D. D is in the upper-left consumer-heavy region, the same kind of allocation A was on PPF₁ originally. But because PPF₂ is bigger, D delivers MORE consumer goods AND MORE capital goods than A ever did.',
+            analysis: 'Compare D with A: same "consumer-heavy" mix, but everything is higher in absolute terms. That\'s the long-run pay-off of the A → B → PPF shift → D trajectory. The "Jamland" insight: <strong>more jam tomorrow IS possible — but only if you stomach less jam today.</strong> A* moves: name the opportunity cost (consumer goods foregone at B), distinguish movement along the PPF (A→B, C→D) from a shift of the PPF (PPF₁→PPF₂), and link to real countries that made this choice.'
+          }
         ]
       },
-      right: {
-        label: 'Produce more capital goods now',
-        points: [
-          'Lower present living standards – deferred consumption',
-          'Greater future productive capacity (PPF shifts further outward)',
-          'Long-run strategy for rapid growth (e.g. South Korea, China in development phase)',
-          'Requires institutional capacity to sustain low consumption politically',
-          'Risk: capital goods may become obsolete or misallocated'
-        ]
-      },
-      table: {
-        title: 'Where do economies stand?',
-        emoji: '🌍',
-        headers: ['Economy', 'Investment share of GDP'],
-        rows: [
-          { icon: '🇨🇳', label: 'China',   value: '~42% – decades of capital-led growth; rapid outward PPF shifts' },
-          { icon: '🇩🇪', label: 'Germany', value: '~22% – manufacturing-heavy, more capital-oriented' },
-          { icon: '🇬🇧', label: 'UK',      value: '~18% – services-led economy, closer to consumer end' },
-          { icon: '🇺🇸', label: 'USA',     value: '~18% – similar to UK; high present consumption' }
-        ]
-      },
-      examEdge: 'Where would you place these economies on a consumer–capital PPF? Use real investment-ratio data with the "guns vs butter" or "now vs later" framing for evaluation credit. Post-war Germany and Japan both chose high investment / low consumption to rebuild – their PPFs shifted dramatically outward over the following decades.'
+      keyTerms: [
+        { term: 'Investment ratio',  def: 'Gross Fixed Capital Formation as a % of GDP — the share of an economy\'s output devoted to building productive capital (machines, infrastructure) rather than consumed today.' },
+        { term: 'Deferred consumption', def: 'Choosing to consume LESS now (point B vs A) so that more resources go into capital goods — the opportunity cost paid for long-run growth.' },
+        { term: 'PPF outward shift', def: 'A long-run increase in productive capacity, driven by capital accumulation, better technology, or labour-force growth. Movement along the PPF (A→B) is not a shift; only PPF₁ → PPF₂ is.' }
+      ],
+      examEdge: 'A* moves: name the OPPORTUNITY COST of investment (consumer goods foregone — point A to point B), distinguish movement along the PPF (A→B) from a shift (PPF₁→PPF₂), and link to real countries. Post-war Germany and Japan made this exact choice; their PPFs shifted dramatically outward over the following decades. The UK\'s lower investment ratio is one structural reason its growth has lagged.'
     },
 
     {

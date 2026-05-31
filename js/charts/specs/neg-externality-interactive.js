@@ -107,10 +107,10 @@
         label: 'E*', labelDx: 0, labelDy: -16, anchor: 'middle' },
 
       // Title-strip dots
-      { layer: 'layer-legend-base',       x: 0.028, y: 1.031, tone: 'red',    radius: 7 },
-      { layer: 'layer-legend-extension',  x: 0.028, y: 1.031, tone: 'purple', radius: 7 },
-      { layer: 'layer-legend-shift',      x: 0.028, y: 1.031, tone: 'green',  radius: 7 },
-      { layer: 'layer-legend-efficiency', x: 0.028, y: 1.031, tone: 'red',    radius: 7 }
+      { layer: 'layer-legend-base',       x: 0.095, y: 1.031, tone: 'red',    radius: 7 },
+      { layer: 'layer-legend-extension',  x: 0.095, y: 1.031, tone: 'purple', radius: 7 },
+      { layer: 'layer-legend-shift',      x: 0.095, y: 1.031, tone: 'green',  radius: 7 },
+      { layer: 'layer-legend-efficiency', x: 0.095, y: 1.031, tone: 'red',    radius: 7 }
     ],
 
     texts: [
@@ -131,14 +131,14 @@
         text: 'DWL', tone: 'red', bold: true, fontSize: 13, anchor: 'middle' },
 
       // Title strips per state
-      { layer: 'layer-legend-base',       x: 0.060, y: 1.017,
-        text: 'Free market equilibrium: MPC = MSB', tone: 'slate', fontSize: 12, anchor: 'start' },
-      { layer: 'layer-legend-extension',  x: 0.060, y: 1.017,
-        text: 'Production imposes external costs → MSC sits above MPC', tone: 'slate', fontSize: 12, anchor: 'start' },
-      { layer: 'layer-legend-shift',      x: 0.060, y: 1.017,
-        text: 'Socially optimal output: where MSC = MSB', tone: 'slate', fontSize: 12, anchor: 'start' },
-      { layer: 'layer-legend-efficiency', x: 0.060, y: 1.017,
-        text: 'Overproduction → deadweight welfare loss triangle', tone: 'slate', fontSize: 12, anchor: 'start' }
+      { layer: 'layer-legend-base',       x: 0.450, y: 1.017,
+        text: 'Free market equilibrium: MPC = MSB', tone: 'slate', fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-legend-extension',  x: 0.450, y: 1.017,
+        text: 'Production imposes external costs → MSC sits above MPC', tone: 'slate', fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-legend-shift',      x: 0.450, y: 1.017,
+        text: 'Socially optimal output: where MSC = MSB', tone: 'slate', fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-legend-efficiency', x: 0.450, y: 1.017,
+        text: 'Overproduction → deadweight welfare loss triangle', tone: 'slate', fontSize: 12, anchor: 'middle' }
     ],
 
     legends: [

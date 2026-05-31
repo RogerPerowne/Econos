@@ -6137,10 +6137,15 @@
          hand off to quiz-engine.js's bootQuiz(). The engine renders
          the whole flow (questions → results) into #quiz-root using
          the data file's window.ECONOS_QUIZ pool. quiz-engine.js is
-         loaded as a defer script in learn.html. */
+         loaded as a defer script in learn.html.
+
+         Wrap quiz-root inside renderShell() so the sidebar + topbar
+         persist — Roger's brief: "put the left and right menus on
+         the quiz sections the way they are shown for the topic
+         sections". Without the wrap the quiz blanked the chrome. */
       const root = document.getElementById('app-root');
       if (root && window.ECONOS_QUIZ && typeof window.bootQuiz === 'function') {
-        root.innerHTML = '<div id="quiz-root"></div>';
+        root.innerHTML = renderShell('<div id="quiz-root"></div>');
         window.bootQuiz(window.ECONOS_QUIZ.questions, window.ECONOS_QUIZ);
       }
     } else if (action === 'prev') {

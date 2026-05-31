@@ -131,10 +131,10 @@
       { layer: 'layer-supply-left', x: E2_sl.x, y: E2_sl.y, tone: 'amber', radius: 6.5, label: 'E₂', labelDx: -12, labelDy: -10, anchor: 'end' },
 
       /* Title-strip dots */
-      { layer: 'layer-demand-right', x: 0.028, y: 1.031, tone: 'blue',  radius: 7 },
-      { layer: 'layer-demand-left',  x: 0.028, y: 1.031, tone: 'blue',  radius: 7 },
-      { layer: 'layer-supply-right', x: 0.028, y: 1.031, tone: 'amber', radius: 7 },
-      { layer: 'layer-supply-left',  x: 0.028, y: 1.031, tone: 'amber', radius: 7 }
+      { layer: 'layer-demand-right', x: 0.095, y: 1.031, tone: 'blue',  radius: 7 },
+      { layer: 'layer-demand-left',  x: 0.095, y: 1.031, tone: 'blue',  radius: 7 },
+      { layer: 'layer-supply-right', x: 0.095, y: 1.031, tone: 'amber', radius: 7 },
+      { layer: 'layer-supply-left',  x: 0.095, y: 1.031, tone: 'amber', radius: 7 }
     ],
 
     texts: [].concat(
@@ -159,10 +159,10 @@
         { layer: 'layer-supply-left', x: E2_sl.x, y: -0.050, text: 'Q₂', tone: 'amber', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
 
         // Title strips
-        { layer: 'layer-demand-right', x: 0.060, y: 1.017, text: 'Demand increases · D shifts right → higher P and Q', tone: 'slate', fontSize: 12, anchor: 'start' },
-        { layer: 'layer-demand-left',  x: 0.060, y: 1.017, text: 'Demand decreases · D shifts left → lower P and Q',  tone: 'slate', fontSize: 12, anchor: 'start' },
-        { layer: 'layer-supply-right', x: 0.060, y: 1.017, text: 'Supply increases · S shifts right → lower P, higher Q', tone: 'slate', fontSize: 12, anchor: 'start' },
-        { layer: 'layer-supply-left',  x: 0.060, y: 1.017, text: 'Supply decreases · S shifts left → higher P, lower Q',  tone: 'slate', fontSize: 12, anchor: 'start' }
+        { layer: 'layer-demand-right', x: 0.450, y: 1.017, text: 'Demand increases · D shifts right → higher P and Q', tone: 'slate', fontSize: 12, anchor: 'middle' },
+        { layer: 'layer-demand-left',  x: 0.450, y: 1.017, text: 'Demand decreases · D shifts left → lower P and Q',  tone: 'slate', fontSize: 12, anchor: 'middle' },
+        { layer: 'layer-supply-right', x: 0.450, y: 1.017, text: 'Supply increases · S shifts right → lower P, higher Q', tone: 'slate', fontSize: 12, anchor: 'middle' },
+        { layer: 'layer-supply-left',  x: 0.450, y: 1.017, text: 'Supply decreases · S shifts left → higher P, lower Q',  tone: 'slate', fontSize: 12, anchor: 'middle' }
       ]
     ),
 

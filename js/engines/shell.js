@@ -354,6 +354,23 @@
            +   '</div>'
            + (clickable ? '</a>' : '</div>');
     }
+    // Quick-skip "Take the quiz" link below the stages — only when the
+    // topic ships a quiz pool (window.ECONOS_QUIZ). Lets the user jump
+    // straight to the quiz without walking through the Learn It cards
+    // first. The button's data-action is handled by the global click
+    // delegate in app.js, which boots the quiz inline (see take-quiz
+    // handler in app.js).
+    var hasQuiz = (typeof window !== 'undefined') &&
+      window.ECONOS_QUIZ &&
+      Array.isArray(window.ECONOS_QUIZ.questions) &&
+      window.ECONOS_QUIZ.questions.length > 0;
+    if (hasQuiz) {
+      html += '<button type="button" class="stages__quiz-cta" data-action="take-quiz" aria-label="Skip straight to the quiz">'
+           +   '<span class="stages__quiz-cta-icon" aria-hidden="true">🎯</span>'
+           +   '<span class="stages__quiz-cta-text">Take the quiz</span>'
+           +   '<span class="stages__quiz-cta-arrow" aria-hidden="true">→</span>'
+           + '</button>';
+    }
     html += '</nav>';
     return html;
   }

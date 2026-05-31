@@ -1048,9 +1048,15 @@
      style objects `{ text, tone, bold }` for callouts that need mixed
      colours.
 
-     The box renders a solid WHITE base under the tinted overlay so the
-     callout cleanly covers any curve/dot that happens to sit beneath
-     it — labels never have the chart bleeding through them. */
+     Returns an object `{ bg, fg }` so the caller can render the
+     shaded rect BEHIND the curves (so the lines and dots remain
+     readable on top) while the text content sits on TOP of the
+     whole chart (so it stays readable). The connector dashed line
+     stays with the bg layer so it doesn't crash through other text.
+
+     NO white base — the rect is fully transparent except for the
+     low-alpha tint. Roger's brief: "shaded panels must be
+     transparent so they don't obscure the lines". */
   function renderBoxedLabel(b, scale, area) {
     var t = tone(b.tone || 'amber');
     var x = scale.sx(b.x);
@@ -1075,10 +1081,6 @@
     if (b.connectorTo) {
       var cx2 = scale.sx(b.connectorTo.x);
       var cy2 = scale.sy(b.connectorTo.y);
-      // Start the connector at the box EDGE midpoint closest to the
-      // target — never from inside the box, otherwise the dashed line
-      // appears to cross the box's label text (the box fill is tinted
-      // and semi-transparent so internal line segments show through).
       var bcx = x + w / 2;
       var bcy = yTop + h / 2;
       var dx = cx2 - bcx;
@@ -1094,13 +1096,11 @@
       }
       connector = '<line x1="' + sX + '" y1="' + sY + '" x2="' + cx2 + '" y2="' + cy2 + '" stroke="' + t.stroke + '" stroke-width="1.2" stroke-dasharray="4 3"/>';
     }
-    // Two-rect stack: solid white base + tinted overlay. The white base
-    // ensures the callout reliably covers any chart content beneath it.
     var rectAttrs = 'x="' + x + '" y="' + yTop + '" width="' + w + '" height="' + h + '" rx="5"';
-    return connector +
-           '<rect ' + rectAttrs + ' fill="#FFFFFF"/>' +
-           '<rect ' + rectAttrs + ' fill="' + fillTone + '" stroke="' + strokeTone + '"/>' +
-           textParts;
+    return {
+      bg: connector + '<rect ' + rectAttrs + ' fill="' + fillTone + '" stroke="' + strokeTone + '"/>',
+      fg: textParts
+    };
   }
 
   function renderZone(zone, scale) {
@@ -1292,19 +1292,28 @@
   /* Render the contents of a single view's content layer */
   function renderViewContent(view, scale, area, ctx) {
     var parts = [];
-    // Polygons FIRST so curves/lines render on top of region fills
-    // (CS / PS / govt rectangles / DWL triangles inside a view).
+    // Shaded backgrounds FIRST (polygons + boxed-label rects) so curves
+    // and labels render on top — the chart never gets obscured by its
+    // own shading. boxedLabel TEXT is appended LAST so it stays
+    // readable above the curves.
     (view.polygons || []).forEach(function (p) { parts.push(renderPolygon(p, scale)); });
+    var boxedFgs = [];
+    (view.boxedLabels || []).forEach(function (b) {
+      var rendered = renderBoxedLabel(b, scale, area);
+      parts.push(rendered.bg);
+      if (rendered.fg) boxedFgs.push(rendered.fg);
+    });
     (view.curves || []).forEach(function (c) { parts.push(renderCurve(c, scale)); });
     (view.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, ctx.curveRegistry, ctx)); });
     (view.ocTriangles || []).forEach(function (tri) { parts.push(renderOcTriangle(tri, scale, ctx.curveRegistry)); });
-    (view.boxedLabels || []).forEach(function (b) { parts.push(renderBoxedLabel(b, scale, area)); });
     (view.points || []).forEach(function (p) {
       parts.push(renderPointGridlines(p, scale, area, ctx));
       parts.push(renderPoint(p, scale, ctx, area));
     });
     (view.zones || []).forEach(function (z) { parts.push(renderZone(z, scale)); });
     (view.texts || []).forEach(function (t) { parts.push(renderText(t, scale, ctx, area)); });
+    // BoxedLabel text overlays go last — readable above everything.
+    boxedFgs.forEach(function (fg) { parts.push(fg); });
     return parts;
   }
 
@@ -1363,8 +1372,17 @@
       return rendered;
     }
 
+    // Shaded backgrounds (polygons + boxedLabel rects) FIRST so curves
+    // and dots render on top of them. Roger's rule: shading must never
+    // obscure the chart's lines and labels.
     (panel.polygons || []).forEach(function (p) {
       parts.push(maybeWrap(p, renderPolygon(p, scale)));
+    });
+    var panelBoxedFgs = [];
+    (panel.boxedLabels || []).forEach(function (b) {
+      var rendered = renderBoxedLabel(b, scale, area);
+      parts.push(maybeWrap(b, rendered.bg));
+      if (rendered.fg) panelBoxedFgs.push(maybeWrap(b, rendered.fg));
     });
     (panel.curves || []).forEach(function (c) {
       parts.push(maybeWrap(c, renderCurve(c, scale)));
@@ -1376,7 +1394,8 @@
       parts.push(maybeWrap(p, renderedDot));
     });
     (panel.texts || []).forEach(function (t) { parts.push(maybeWrap(t, renderText(t, scale, ctx, area))); });
-    (panel.boxedLabels || []).forEach(function (b) { parts.push(maybeWrap(b, renderBoxedLabel(b, scale, area))); });
+    // BoxedLabel text overlays last — readable on top of curves/dots.
+    panelBoxedFgs.forEach(function (fg) { parts.push(fg); });
 
     (panel.legends || []).forEach(function (lg) {
       var rendered = renderLegend(lg);

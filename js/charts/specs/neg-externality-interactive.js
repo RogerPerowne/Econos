@@ -70,16 +70,15 @@
         x1: Em.x, y1: Em.y, x2: Em.x, y2: 0,
         tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
 
-      // MEC bracket — vertical purple bar with end ticks at chart-x 0.680
+      // MEC indicator — thick vertical purple bar between MPC and MSC.
+      // The end-cap "tick" lines from the legacy version were dropped
+      // because they form 90° corners with the main bar that read as
+      // a bent arrow rather than a measurement bracket. The bar plus
+      // the "MEC" label beside it communicates the same vertical gap
+      // without the visual ambiguity.
       { layer: 'layer-mec',
         x1: MecBracket.x, y1: MecBracket.yMpc, x2: MecBracket.x, y2: MecBracket.yMsc,
-        tone: 'purple', strokeWidth: 2, buffer: 0 },
-      { layer: 'layer-mec',
-        x1: MecBracket.x - 0.012, y1: MecBracket.yMpc, x2: MecBracket.x + 0.012, y2: MecBracket.yMpc,
-        tone: 'purple', strokeWidth: 2, buffer: 0 },
-      { layer: 'layer-mec',
-        x1: MecBracket.x - 0.012, y1: MecBracket.yMsc, x2: MecBracket.x + 0.012, y2: MecBracket.yMsc,
-        tone: 'purple', strokeWidth: 2, buffer: 0 },
+        tone: 'purple', strokeWidth: 3, buffer: 0 },
 
       // Optimal point gridlines (shift + efficiency)
       { layer: 'layer-optimal',

@@ -119,7 +119,7 @@ window.ECONOS_TOPIC = {
           text: 'The socially optimal point is where <strong>MSB = MSC</strong> at <strong>(Q*, P*)</strong>. Compare: <strong>Q* &gt; Q_m</strong> (society wants more output) and <strong>P* &gt; P_m</strong> (optimal price is higher). The free market under-produces by (Q* − Q_m).'
         },
         {
-          key: 'types-of-efficiency',
+          key: 'efficiency',
           label: 'Welfare gain forgone',
           text: 'Shade the triangle bounded by MSB (above), MSC (below), and the vertical between Q_m and Q*. For every unit not produced between Q_m and Q*, society loses (MSB − MSC) of welfare. A <strong>Pigouvian subsidy = MEB at Q*</strong> internalises the externality and closes the wedge.'
         }

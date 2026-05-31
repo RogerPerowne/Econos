@@ -96,11 +96,14 @@
         markerStart: 'dm-amber-start', markerEnd: 'dm-amber-end', buffer: 0 },
 
       /* ---- shift layer: Q₀, Q₂ vert gridlines + green horiz arrow ---- */
+      // Q₀/Q₂ droplines start BELOW each dot (not at the dot) so the
+      // dropline + horizontal shift arrow don't read as one bent
+      // right-angle arrow.
       { layer: 'layer-shift',
-        x1: 0.330, y1: 0.476, x2: 0.330, y2: 0,
+        x1: 0.330, y1: 0.430, x2: 0.330, y2: 0,
         tone: 'red', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
       { layer: 'layer-shift',
-        x1: 0.610, y1: 0.476, x2: 0.610, y2: 0,
+        x1: 0.610, y1: 0.430, x2: 0.610, y2: 0,
         tone: 'green', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
       // Green arrow Q₁ → Q₂ (rightward = increase). Single colour: green stroke + green head.
       { layer: 'layer-shift',

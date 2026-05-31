@@ -94,11 +94,15 @@
         markerStart: 'sp-amber-start', markerEnd: 'sp-amber-end', buffer: 0 },
 
       /* ---- shift: Q₀ + Q₂ vert gridlines + single-colour horiz arrows ---- */
+      // Q₀/Q₂ vertical droplines from the dots down to the Q-axis ticks.
+      // Start 14px BELOW each dot (not at the dot) so the dropline doesn't
+      // form an L-shape with the horizontal shift arrow that meets the same
+      // dot — keeps arrows reading as arrows, not bent right-angles.
       { layer: 'layer-shift',
-        x1: 0.330, y1: 0.476, x2: 0.330, y2: 0,
+        x1: 0.330, y1: 0.430, x2: 0.330, y2: 0,
         tone: 'red', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
       { layer: 'layer-shift',
-        x1: 0.610, y1: 0.476, x2: 0.610, y2: 0,
+        x1: 0.610, y1: 0.430, x2: 0.610, y2: 0,
         tone: 'green', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
       // Green Q₁ → Q₂ rightward (increase)
       { layer: 'layer-shift',

@@ -46,11 +46,6 @@
         layer: 'idl-2' }
     ],
 
-    texts: [
-      // Layer 2 — Yf sub-caption below the tick
-      { x: YF, y: -0.094, text: '(full-capacity output)',
-        tone: 'slate', fontSize: 9, anchor: 'middle',
-        layer: 'idl-2' }
-    ]
+    texts: []
   };
 })();

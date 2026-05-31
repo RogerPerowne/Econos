@@ -79,9 +79,6 @@
           { x: -0.020, y: Eq.y,  text: 'Pᵦ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: -0.020, y: Eq.ps, text: 'Pₛ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: Eq.x,   y: -0.055, text: 'Qₛ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
-          // Helper "(buyer price)" / "(seller price)" notes
-          { x: -0.020, y: Eq.y - 0.040,  text: '(buyer price)',  tone: 'gray', italic: true, fontSize: 10, anchor: 'end' },
-          { x: -0.020, y: Eq.ps + 0.040, text: '(seller price)', tone: 'gray', italic: true, fontSize: 10, anchor: 'end' }
         ]
       },
 
@@ -120,8 +117,7 @@
           { x1: Eq.x, y1: E.y, x2: Eq.x + 0.110, y2: E.y, tone: 'red', strokeWidth: 1.4, buffer: 0 }
         ],
         texts: [
-          { x: Eq.x + 0.125, y: E.y + 0.022, text: 'Deadweight', tone: 'red', bold: true, fontSize: 11, anchor: 'start' },
-          { x: Eq.x + 0.125, y: E.y - 0.022, text: 'loss',       tone: 'red', bold: true, fontSize: 11, anchor: 'start' }
+          { x: Eq.x + 0.130, y: E.y, text: 'Deadweight loss', tone: 'red', bold: true, fontSize: 10, anchor: 'start' }
         ]
       }
     ]

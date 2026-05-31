@@ -81,8 +81,6 @@
       /* Classical: Yf tick + sub-caption */
       { x: YF, y: -0.063, text: 'Yf', tone: 'slate', bold: true,
         fontSize: 12, anchor: 'middle', perspective: 'classical' },
-      { x: YF, y: -0.118, text: '(full-capacity output)',
-        tone: 'slate', fontSize: 9, anchor: 'middle', perspective: 'classical' },
 
       /* Keynesian: three region labels */
       { x: 0.165, y: 0.157, text: 'Flat range',

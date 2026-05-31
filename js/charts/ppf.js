@@ -1302,7 +1302,52 @@
     if (panel.legend && !(panel.views || []).length) parts.push(renderLegend(panel.legend));
   }
 
-  function render(spec) {
+  /* Composable templates. `spec.template: 'ad-as'` (or 'supply-demand',
+     'ppf', 'cost-curves') applies a recipe of defaults — chart area,
+     axis labels, standard marker defs — that the spec can selectively
+     override. Author fields ALWAYS win over template fields. Each
+     template is a partial spec; missing fields fall through to the
+     engine's own defaults. */
+  var TEMPLATES = {
+    'ad-as': {
+      width: 440, height: 340,
+      chartArea: { x: 55, y: 35, width: 360, height: 254 },
+      axes: { x: { label: 'Real output (Y)' }, y: { label: 'Price level (P)' } }
+    },
+    'supply-demand': {
+      width: 440, height: 340,
+      chartArea: { x: 55, y: 35, width: 360, height: 254 },
+      axes: { x: { label: 'Quantity (Q)' }, y: { label: 'Price (P)' } }
+    },
+    'ppf': {
+      width: 440, height: 340,
+      chartArea: { x: 55, y: 35, width: 360, height: 254 },
+      axes: { x: { label: 'Good B' }, y: { label: 'Good A' } }
+    },
+    'cost-curves': {
+      width: 440, height: 340,
+      chartArea: { x: 55, y: 35, width: 360, height: 254 },
+      axes: { x: { label: 'Quantity (Q)' }, y: { label: 'Cost / Revenue' } }
+    }
+  };
+
+  function applyTemplate(spec) {
+    if (!spec || !spec.template) return spec;
+    var tmpl = TEMPLATES[spec.template];
+    if (!tmpl) return spec;
+    // Shallow merge: spec wins on any explicitly-set field. For nested
+    // objects (chartArea, axes), spec also wins as a whole — overriding
+    // any one field of chartArea means setting the whole object.
+    var merged = {};
+    Object.keys(tmpl).forEach(function (k) { merged[k] = tmpl[k]; });
+    Object.keys(spec).forEach(function (k) {
+      if (spec[k] !== undefined) merged[k] = spec[k];
+    });
+    return merged;
+  }
+
+  function render(specInput) {
+    var spec = applyTemplate(specInput);
     var width = spec.width || 560;
     var height = spec.height || 440;
     var className = spec.className || 'econos-chart';

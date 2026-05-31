@@ -45,9 +45,7 @@
   var Y2_K = 0.621, P2_K = 0.398;
 
   window.ECONOS_AD_SHIFT_PERSPECTIVES_SPEC = {
-    width: 440,
-    height: 340,
-    chartArea: { x: 55, y: 35, width: 360, height: 254 },
+    template: 'ad-as',
     className: 'ad-shift-perspectives-svg',
     layers: ['idl-1', 'idl-2'],
     perspectives: ['classical', 'keynesian'],
@@ -55,10 +53,6 @@
       '<marker id="asp-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/></marker>' +
       '<marker id="asp-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>' +
       '<marker id="asp-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>',
-    axes: {
-      x: { label: 'Real output (Y)' },
-      y: { label: 'Price level (P)' }
-    },
 
     curves: [
       /* ── Shared: AD₁ (always visible) — slope -1 through (Yf, P₁) ── */

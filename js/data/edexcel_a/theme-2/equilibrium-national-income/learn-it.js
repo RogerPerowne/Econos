@@ -119,7 +119,16 @@ window.ECONOS_TOPIC = {
 
       blocks: [
         { type: 'calloutStrip', tone: 'green', icon: '✓', text: 'Equilibrium in AD/AS gives both P* and Y*.' },
-        { type: 'diagram', svgKey: 'eniAdAsCore', caption: 'The core diagram' },
+        {
+          type: 'econDiagram',
+          chart: 'adas',
+          views: [
+            {
+              label: 'AD/AS equilibrium',
+              analysis: 'Equilibrium sits where AD crosses SRAS. Read the equilibrium price level P* off the vertical axis and equilibrium real output Y* off the horizontal axis. This single crossing pins down both the price level and output for the whole economy.'
+            }
+          ]
+        },
         { type: 'sectionHeader', icon: '\u{1F53A}', label: 'Two shocks, two outcomes' },
         { type: 'grid', cols: 2, children: [
           { type: 'tile', tone: 'green', icon: '\u{2B06}️', head: 'AD shifts right – confidence boom', body: ENI_MINI_CHART_BOOM + '<ul style="margin:10px 0 0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;"><li><strong>P rises</strong></li><li><strong>Y rises</strong></li><li><strong>Demand is stronger</strong></li></ul><div style="font-size:12.5px;color:#475569;margin-top:6px;">Consumer confidence, spending and investment rise.</div>' },

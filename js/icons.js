@@ -2015,87 +2015,9 @@ window.ECONOS_ICONS = {
 
   supplyInteractive: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD2_SPEC),
 
-  welfareSurplusDiagram: `
-    <svg viewBox="0 0 480 420" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="480" height="420" fill="#fff" rx="6"/>
+  welfareSurplusDiagram: window.ECONOS_PPF.render(window.ECONOS_WELFARE_SURPLUS_SPEC),
 
-      <!-- Axes -->
-      <line x1="60" y1="370" x2="420" y2="370" stroke="#334155" stroke-width="1.8"/>
-      <polygon points="420,365 420,375 432,370" fill="#334155"/>
-      <line x1="60" y1="50" x2="60" y2="370" stroke="#334155" stroke-width="1.8"/>
-      <polygon points="55,50 65,50 60,38" fill="#334155"/>
-      <text x="38" y="46" font-size="13" font-weight="700" fill="#334155">Price</text>
-      <text x="385" y="392" font-size="13" font-weight="700" fill="#334155">Quantity</text>
-      <text x="46" y="386" font-size="12" fill="#64748B">O</text>
-
-      <!-- Consumer surplus: bounded by MB curve (top), Pe line (bottom), y-axis (left) -->
-      <polygon points="60,70 230,210 60,210" fill="#3B82F6" fill-opacity="0.18" stroke="none"/>
-      <!-- Producer surplus: bounded by MC curve (bottom), Pe line (top), y-axis (left) -->
-      <polygon points="60,210 230,210 60,350" fill="#F59E0B" fill-opacity="0.18" stroke="none"/>
-
-      <!-- MB (demand, downward) – starts at y-axis -->
-      <line x1="60" y1="70" x2="400" y2="350" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
-      <text x="408" y="354" font-size="14" font-weight="800" fill="#2563EB">MB</text>
-
-      <!-- MC (supply, upward) – starts at y-axis -->
-      <line x1="60" y1="350" x2="400" y2="70" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
-      <text x="408" y="74" font-size="14" font-weight="800" fill="#D97706">MC</text>
-
-      <!-- Equilibrium dashed guides -->
-      <line x1="60" y1="210" x2="230" y2="210" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
-      <line x1="230" y1="210" x2="230" y2="370" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
-
-      <!-- E point -->
-      <circle cx="230" cy="210" r="6" fill="#0B1426"/>
-      <text x="240" y="204" font-size="14" font-weight="800" fill="#0B1426">E</text>
-
-      <!-- Surplus labels -->
-      <text x="115" y="145" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">Consumer</text>
-      <text x="115" y="159" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">surplus</text>
-      <text x="115" y="260" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">Producer</text>
-      <text x="115" y="274" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">surplus</text>
-
-      <!-- Axis equilibrium labels -->
-      <text x="36" y="214" font-size="13" font-weight="700" fill="#334155">P<tspan font-size="10" dy="3">e</tspan></text>
-      <text x="222" y="388" font-size="13" font-weight="700" fill="#334155">Q<tspan font-size="10" dy="3">e</tspan></text>
-    </svg>
-  `,
-
-  equilibriumBasic: `
-    <svg viewBox="0 0 460 320" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="460" height="320" fill="#fff" rx="6"/>
-
-      <!-- Axes -->
-      <line x1="60" y1="270" x2="410" y2="270" stroke="#334155" stroke-width="1.8"/>
-      <polygon points="410,265 410,275 422,270" fill="#334155"/>
-      <line x1="60" y1="50" x2="60" y2="270" stroke="#334155" stroke-width="1.8"/>
-      <polygon points="55,50 65,50 60,38" fill="#334155"/>
-
-      <text x="38" y="46" font-size="13" font-weight="700" fill="#334155">Price</text>
-      <text x="380" y="292" font-size="13" font-weight="700" fill="#334155">Quantity</text>
-      <text x="46" y="286" font-size="12" fill="#64748B">O</text>
-
-      <!-- Demand: top-left to bottom-right (blue) -->
-      <line x1="95" y1="75" x2="390" y2="250" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
-      <text x="398" y="254" font-size="15" font-weight="800" fill="#2563EB">D</text>
-
-      <!-- Supply: bottom-left to top-right (orange) -->
-      <line x1="95" y1="250" x2="390" y2="75" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
-      <text x="398" y="79" font-size="15" font-weight="800" fill="#D97706">S</text>
-
-      <!-- Dashed guidelines to equilibrium E (intersection at ~242,162) -->
-      <line x1="60" y1="162" x2="242" y2="162" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
-      <line x1="242" y1="162" x2="242" y2="270" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
-
-      <!-- Equilibrium point E -->
-      <circle cx="242" cy="162" r="6.5" fill="#0B1426"/>
-      <text x="252" y="156" font-size="15" font-weight="800" fill="#0B1426">E</text>
-
-      <!-- Pe and Qe axis labels -->
-      <text x="36" y="167" font-size="13" font-weight="700" fill="#334155">P<tspan font-size="10" dy="3">e</tspan></text>
-      <text x="232" y="288" font-size="13" font-weight="700" fill="#334155">Q<tspan font-size="10" dy="3">e</tspan></text>
-    </svg>
-  `,
+  equilibriumBasic: window.ECONOS_PPF.render(window.ECONOS_EQUILIBRIUM_BASIC_SPEC),
 
   simultaneousShiftsInteractive: `
     <svg class="sim-shifts-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

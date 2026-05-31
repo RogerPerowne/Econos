@@ -147,6 +147,10 @@
     var sw = curve.strokeWidth || 3;
     var dashAttr = curve.dashed ? ' stroke-dasharray="' + curve.dashed + '"' : '';
     var opacityAttr = curve.opacity != null ? ' opacity="' + curve.opacity + '"' : '';
+    // Auto-clip curves to chart area so lines that extend beyond 0..1
+    // (e.g. shifted demand/supply curves) don't bleed into the axis-label
+    // gutter. The curve label is a separate <text> and isn't clipped.
+    var clipAttr = curve.clip === false ? '' : ' clip-path="url(#econos-chart-clip)"';
     var labelHtml = '';
     if (curve.label) {
       var last = curve.d.match(/([0-9.\-]+)\s*,\s*([0-9.\-]+)\s*$/);
@@ -159,7 +163,7 @@
       }
       labelHtml = '<text x="' + lx + '" y="' + ly + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '">' + curve.label + '</text>';
     }
-    return '<path d="' + dAbs + '" fill="none" stroke="' + t.stroke + '" stroke-width="' + sw + '"' + dashAttr + opacityAttr + '/>' + labelHtml;
+    return '<path d="' + dAbs + '" fill="none" stroke="' + t.stroke + '" stroke-width="' + sw + '"' + dashAttr + opacityAttr + clipAttr + '/>' + labelHtml;
   }
 
   /* Pull point A toward B by `distance` pixels along the AB direction. */
@@ -861,7 +865,11 @@
 
     var parts = [];
     parts.push('<svg class="' + className + '" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">');
-    if (spec.defs) parts.push('<defs>' + spec.defs + '</defs>');
+    // Always emit a chart-area clipPath so curves (renderCurve) auto-clip
+    // to the chart bounds. Stops shifted demand/supply lines bleeding into
+    // the axis gutter without needing per-curve `clip-path` boilerplate.
+    var chartClip = '<clipPath id="econos-chart-clip"><rect x="' + area.x + '" y="' + area.y + '" width="' + area.width + '" height="' + area.height + '"/></clipPath>';
+    parts.push('<defs>' + chartClip + (spec.defs || '') + '</defs>');
     var bg = spec.background || '#FFFFFF';
     parts.push('<rect width="' + width + '" height="' + height + '" fill="' + bg + '" rx="12"/>');
     parts.push(renderDivider(spec.divider));

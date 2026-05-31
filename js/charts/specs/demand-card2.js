@@ -37,7 +37,7 @@
       '<marker id="dm-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>' +
       '<marker id="dm-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#D97706"/></marker>' +
       '<marker id="dm-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>' +
-      '<marker id="dm-red-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/></marker>',
+      '<marker id="dm-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>',
     axes: {
       x: { label: 'Q' },
       y: { label: 'P' }
@@ -99,10 +99,16 @@
       { layer: 'layer-shift',
         x1: 0.610, y1: 0.476, x2: 0.610, y2: 0,
         tone: 'green', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
+      // Green arrow Q₁ → Q₂ (rightward = increase). Single colour: green stroke + green head.
       { layer: 'layer-shift',
-        x1: 0.356, y1: 0.476, x2: 0.584, y2: 0.476,
+        x1: 0.480, y1: 0.476, x2: 0.602, y2: 0.476,
         tone: 'green', strokeWidth: 3.5,
-        markerStart: 'dm-red-start', markerEnd: 'dm-green-end', buffer: 0 }
+        markerEnd: 'dm-green-end', buffer: 0 },
+      // Red arrow Q₁ → Q₀ (leftward = decrease). Single colour: red stroke + red head.
+      { layer: 'layer-shift',
+        x1: 0.460, y1: 0.476, x2: 0.338, y2: 0.476,
+        tone: 'red', strokeWidth: 3.5,
+        markerEnd: 'dm-red-end', buffer: 0 }
     ],
 
     points: [

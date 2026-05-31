@@ -30,7 +30,7 @@
     height: 440,
     chartArea: { x: 60, y: 43, width: 515, height: 357 },
     className: 'demand-cs-svg',
-    background: '#F8FAFC',
+    background: '#FFFFFF',
     divider: { x: 608, y1: 16, y2: 424 },
     axes: {
       x: { label: 'Q' },

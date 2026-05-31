@@ -1425,7 +1425,7 @@ window.ECONOS_ICONS = {
       <!-- BASE: axes + S + D1 + E1 -->
       <!-- Geometry: S=(80,260)→(390,50) slope=-0.677; D1=(80,50)→(390,260) slope=+0.677; E1=(235,155) -->
       <g class="idl-base">
-        <rect width="440" height="300" fill="#F8FAFC" rx="8"/>
+        <rect width="440" height="300" fill="#FFFFFF" rx="8"/>
         <text x="220" y="16" font-size="12" font-weight="900" fill="#0F172A" text-anchor="middle">Loanable funds market</text>
 
         <!-- Y-axis -->
@@ -1869,7 +1869,7 @@ window.ECONOS_ICONS = {
   /* === PPF static diagrams (cards 2-7) === */
 
   ppfOpportunityCost: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
     <defs>
       <marker id="ppfoc-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
       <marker id="ppfoc-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
@@ -1919,7 +1919,7 @@ window.ECONOS_ICONS = {
   </svg>`,
 
   ppfBowedOut: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
     <defs>
       <marker id="ppfbo-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
       <marker id="ppfbo-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
@@ -1973,7 +1973,7 @@ window.ECONOS_ICONS = {
   ppfEfficiencyInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD5_SPEC),
 
   ppfTrade: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
     <defs>
       <marker id="ppftr-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
       <marker id="ppftr-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
@@ -2043,7 +2043,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- Background -->
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
 
       <!-- Right panel divider -->
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
@@ -2208,7 +2208,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- Background -->
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
 
       <!-- Right panel divider -->
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
@@ -2376,7 +2376,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- Background -->
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
 
       <!-- Right panel divider -->
       <line x1="440" y1="16" x2="440" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
@@ -2563,7 +2563,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- Background -->
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
 
       <!-- Right panel divider -->
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
@@ -2716,7 +2716,7 @@ window.ECONOS_ICONS = {
 
       <!-- BASE: sterling circle (always visible) -->
       <g class="idl-base">
-        <rect width="440" height="300" fill="#F8FAFC" rx="8"/>
+        <rect width="440" height="300" fill="#FFFFFF" rx="8"/>
         <circle cx="58" cy="150" r="36" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
         <text x="58" y="148" font-size="22" font-weight="900" fill="#6D28D9" text-anchor="middle">£</text>
         <text x="58" y="166" font-size="10" font-weight="700" fill="#6D28D9" text-anchor="middle">Sterling</text>
@@ -2902,7 +2902,7 @@ window.ECONOS_ICONS = {
       <!-- BASE: axes + zero line + pre-devaluation flat + devaluation marker -->
       <!-- Zero line at y=155; surplus region y<155; deficit region y>155 -->
       <g class="idl-base">
-        <rect width="440" height="300" fill="#F8FAFC" rx="8"/>
+        <rect width="440" height="300" fill="#FFFFFF" rx="8"/>
 
         <!-- Y-axis -->
         <line x1="70" y1="282" x2="70" y2="24" stroke="#334155" stroke-width="1.5"/>
@@ -2994,7 +2994,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- Background -->
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
 
       <!-- Right panel divider -->
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
@@ -3156,7 +3156,7 @@ window.ECONOS_ICONS = {
   kuznetsCurve: `
     <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
-      <rect width="480" height="280" fill="#F8FAFC" rx="8"/>
+      <rect width="480" height="280" fill="#FFFFFF" rx="8"/>
 
       <!-- Axes -->
       <line x1="60" y1="240" x2="440" y2="240" stroke="#334155" stroke-width="2"/>
@@ -4966,7 +4966,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- Background -->
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
 
       <!-- Right panel divider -->
       <line x1="608" y1="16" x2="608" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
@@ -5438,7 +5438,7 @@ window.ECONOS_ICONS = {
 
   taxSubsidyElasticityStatic: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
       <line x1="10" y1="150" x2="430" y2="150" stroke="#e2e8f0" stroke-width="1"/>
       <line x1="220" y1="10" x2="220" y2="290" stroke="#e2e8f0" stroke-width="1"/>
 
@@ -6940,7 +6940,7 @@ window.ECONOS_ICONS = {
       <defs>
         <clipPath id="fpcm-chart-clip"><rect x="60" y="43" width="502" height="357"/></clipPath>
       </defs>
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
 
       <!-- ===== axes ===== -->
@@ -7073,7 +7073,7 @@ window.ECONOS_ICONS = {
         </clipPath>
       </defs>
 
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
 
       <g class="layer-axes">
@@ -7219,7 +7219,7 @@ window.ECONOS_ICONS = {
           <stop offset="100%" stop-color="#DC2626" stop-opacity="0.18"/>
         </linearGradient>
       </defs>
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
 
       <!-- Plot area: x=80..540 (barriers), y=80..360 (concentration: top = one firm, bottom = many) -->
@@ -7337,7 +7337,7 @@ window.ECONOS_ICONS = {
       <defs>
         <clipPath id="cfra-chart-clip"><rect x="60" y="43" width="502" height="357"/></clipPath>
       </defs>
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
 
       <g class="layer-axes">
@@ -7453,7 +7453,7 @@ window.ECONOS_ICONS = {
       <defs>
         <clipPath id="sr-chart-clip"><rect x="60" y="43" width="502" height="357"/></clipPath>
       </defs>
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
 
       <g class="layer-axes">
@@ -7583,7 +7583,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- Background -->
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
 
       <!-- Right panel divider -->
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
@@ -7747,7 +7747,7 @@ window.ECONOS_ICONS = {
 
   lracEnvelope: `
     <svg class="lrac-svg" viewBox="0 0 760 420" width="760" height="420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="760" height="420" fill="#F8FAFC" rx="12"/>
+      <rect width="760" height="420" fill="#FFFFFF" rx="12"/>
       <text x="380" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Long-Run Average Cost (Envelope) Curve</text>
 
       <!-- shaded regions -->
@@ -7804,7 +7804,7 @@ window.ECONOS_ICONS = {
 
   mcLrTangency: `
     <svg class="mclt-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <!-- divider -->
       <line x1="450" y1="10" x2="450" y2="430" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6 4"/>
 
@@ -7910,7 +7910,7 @@ window.ECONOS_ICONS = {
 
   cobwebModel: `
     <svg class="cobweb-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <!-- divider -->
       <line x1="450" y1="10" x2="450" y2="430" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6 4"/>
 
@@ -8159,7 +8159,7 @@ window.ECONOS_ICONS = {
 
   profitsShutdownDiagram: `
     <svg class="psd-svg" viewBox="0 0 900 480" width="900" height="480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="900" height="480" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="480" fill="#FFFFFF" rx="12"/>
 
       <!-- Grid lines -->
       <line x1="450" y1="10" x2="450" y2="470" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
@@ -8385,7 +8385,7 @@ window.ECONOS_ICONS = {
 
   labourMarketEquilibrium: `
     <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Amber wage bill shading: W* x Q* rectangle (0,W*) to (Q*,0) -->
       <!-- W* approx y=180 (from top), Q* approx x=370 (from left) -->
@@ -8429,7 +8429,7 @@ window.ECONOS_ICONS = {
 
   monopsonyDiagram: `
     <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Y axis -->
       <line x1="70" y1="30" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
@@ -8496,7 +8496,7 @@ window.ECONOS_ICONS = {
 
   backwardBendingLSC: `
     <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Y axis -->
       <line x1="70" y1="30" x2="70" y2="420" stroke="#334155" stroke-width="2"/>
@@ -8544,7 +8544,7 @@ window.ECONOS_ICONS = {
 
   nmwDiagram: `
     <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Y axis -->
       <line x1="70" y1="30" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
@@ -8607,7 +8607,7 @@ window.ECONOS_ICONS = {
 
   firstDegreePd: `
     <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Y axis -->
       <line x1="70" y1="30" x2="70" y2="380" stroke="#334155" stroke-width="2"/>
@@ -8668,7 +8668,7 @@ window.ECONOS_ICONS = {
 
   thirdDegreePd: `
     <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Vertical divider -->
       <line x1="450" y1="20" x2="450" y2="400" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.7"/>
@@ -8772,7 +8772,7 @@ window.ECONOS_ICONS = {
      ============================================================ */
   mesBarrierDiagram: `
     <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="380" y="22" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Scale Economies as Entry Barrier: Incumbent at MES, Entrant starts small</text>
@@ -8835,7 +8835,7 @@ window.ECONOS_ICONS = {
      ============================================================ */
   limitPricingDiagram: `
     <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="380" y="22" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Limit Pricing: Incumbent sets price below entrant's minimum AC to deter entry</text>
@@ -8898,7 +8898,7 @@ window.ECONOS_ICONS = {
      ============================================================ */
   networkEffectDiagram: `
     <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="350" y="22" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Winner-takes-all: incumbent network advantage compounds over time</text>
@@ -8960,7 +8960,7 @@ window.ECONOS_ICONS = {
   /* ── Monopoly supernormal profit ─────────────────────────────────────── */
   monopolySupernormalProfit: `
     <svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Geometry: AR (60,80)→(640,380), slope=300/580≈0.517/px.
            MR same intercept, 2× slope: (60,80)→(370,400).
@@ -9025,7 +9025,7 @@ window.ECONOS_ICONS = {
   /* ── Monopoly DWL (welfare analysis) ────────────────────────────────── */
   monopolyDwl: `
     <svg viewBox="0 0 840 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Y axis -->
       <line x1="60" y1="40" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
@@ -9115,7 +9115,7 @@ window.ECONOS_ICONS = {
   /* ── Natural monopoly diagram ────────────────────────────────────────── */
   naturalMonopolyDiagram: `
     <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Y axis -->
       <line x1="60" y1="40" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
@@ -9247,7 +9247,7 @@ window.ECONOS_ICONS = {
   /* ── Tax diagram (indirect tax, welfare analysis) ────────────────────── */
   taxDiagram: `
     <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!--
         Coordinates (illustrative, consistent):
@@ -9351,7 +9351,7 @@ window.ECONOS_ICONS = {
   /* ── Tax incidence diagram (two-panel) ───────────────────────────────── */
   taxIncidenceDiagram: `
     <svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Shared title -->
       <text x="450" y="24" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Same tax, different incidence – elasticity determines the split</text>
@@ -9498,7 +9498,7 @@ window.ECONOS_ICONS = {
   /* ── Subsidy diagram (welfare analysis) ─────────────────────────────── */
   subsidyDiagram: `
     <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!--
         Coordinates (illustrative, consistent):
@@ -9617,7 +9617,7 @@ window.ECONOS_ICONS = {
 
   cartelPrisonersDilemma: `
     <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="320" y="32" font-size="15" font-weight="700" fill="#334155" text-anchor="middle">Cartel Prisoners' Dilemma – Payoff Matrix</text>
@@ -9680,7 +9680,7 @@ window.ECONOS_ICONS = {
 
   cartelJointProfitDiagram: `
     <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Cartel as Joint Monopolist – Profit Maximisation</text>
@@ -9747,7 +9747,7 @@ window.ECONOS_ICONS = {
 
   posExternalityDiagram: `
     <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Positive Consumption Externality – Under-consumption</text>
@@ -9830,7 +9830,7 @@ window.ECONOS_ICONS = {
 
   lemonMarketDiagram: `
     <svg viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Akerlof's Lemons Market – Adverse Selection &amp; Market Unravelling</text>
@@ -9902,7 +9902,7 @@ window.ECONOS_ICONS = {
 
   freeRiderDiagram: `
     <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Public Goods – Free Rider Problem &amp; Market Under-provision</text>
@@ -9961,7 +9961,7 @@ window.ECONOS_ICONS = {
   revMaxDiagram: `
     <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Loss-domain background (not applicable here; plain background) -->
 
@@ -10164,7 +10164,7 @@ window.ECONOS_ICONS = {
 
   twoSystemsDiagram: `
     <svg viewBox="0 0 440 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="380" fill="#F8FAFC" rx="10"/>
+      <rect width="440" height="380" fill="#FFFFFF" rx="10"/>
       <text x="220" y="26" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Two systems thinking – one head</text>
 
       <rect x="20" y="40" width="190" height="292" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
@@ -10347,7 +10347,7 @@ window.ECONOS_ICONS = {
 
   presentBiasInteractive: `
     <svg viewBox="0 0 440 400" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="400" fill="#F8FAFC" rx="10"/>
+      <rect width="440" height="400" fill="#FFFFFF" rx="10"/>
       <g class="idl-base">
         <text x="220" y="24" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Two pairs of choices – same one-week gap</text>
         <text x="220" y="44" font-size="10.5" text-anchor="middle" fill="#64748B">A rational person should answer both pairs the same way. Do they?</text>
@@ -10751,7 +10751,7 @@ window.ECONOS_ICONS = {
 
   bitFrameworkDiagram: `
     <svg viewBox="0 0 440 310" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="310" fill="#F8FAFC" rx="10"/>
+      <rect width="440" height="310" fill="#FFFFFF" rx="10"/>
 
       <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The BIT framework – small tweaks, big effects</text>
       <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">UK Behavioural Insights Team (founded 2010). Same mechanism every time.</text>
@@ -10859,7 +10859,7 @@ window.ECONOS_ICONS = {
   prospectTheoryDiagram: `
     <svg viewBox="0 0 752 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Split background: losses (left) rose tint, gains (right) green tint -->
       <!-- Origin at x=200, y=240 -->
@@ -10949,7 +10949,7 @@ window.ECONOS_ICONS = {
   nudgeDefaultDiagram: `
     <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="320" y="28" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">UK Pension Participation: The Power of the Default</text>
@@ -11026,7 +11026,7 @@ window.ECONOS_ICONS = {
   tariffDiagram: `
     <svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Welfare shading (draw before curves) -->
       <!-- Producer surplus gain (amber) -->
@@ -11157,7 +11157,7 @@ window.ECONOS_ICONS = {
   tradingBlocDiagram: `
     <svg viewBox="0 0 660 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+      <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="330" y="28" font-size="12" font-weight="700" fill="#1E3A5F" text-anchor="middle">Customs Union / FTA: Viner Welfare Analysis</text>
@@ -11227,7 +11227,7 @@ window.ECONOS_ICONS = {
   contestabilityDiagram: `
     <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
-      <rect width="700" height="460" fill="#F8FAFC" rx="12"/>
+      <rect width="700" height="460" fill="#FFFFFF" rx="12"/>
 
       <!-- Title -->
       <text x="350" y="28" font-size="13" font-weight="600" fill="#1E3A5F" text-anchor="middle">Contestability: Threat of Entry Disciplines Pricing</text>
@@ -11350,7 +11350,7 @@ window.ECONOS_ICONS = {
 
   demandPullDiagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" font-family="Inter, sans-serif">
     <!-- Background -->
-    <rect width="640" height="430" fill="#F8FAFC" rx="12"/>
+    <rect width="640" height="430" fill="#FFFFFF" rx="12"/>
 
     <!-- Title -->
     <text x="320" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#1E3A5F">Demand-Pull Inflation: AD Shifts Right</text>
@@ -11410,7 +11410,7 @@ window.ECONOS_ICONS = {
 
   costPushDiagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" font-family="Inter, sans-serif">
     <!-- Background -->
-    <rect width="640" height="430" fill="#F8FAFC" rx="12"/>
+    <rect width="640" height="430" fill="#FFFFFF" rx="12"/>
 
     <!-- Title -->
     <text x="320" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#1E3A5F">Cost-Push Inflation: SRAS Shifts Left</text>
@@ -11475,7 +11475,7 @@ window.ECONOS_ICONS = {
 
   supplyPolicyDiagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 440" font-family="Inter, sans-serif">
     <!-- Background -->
-    <rect width="660" height="440" fill="#F8FAFC" rx="12"/>
+    <rect width="660" height="440" fill="#FFFFFF" rx="12"/>
 
     <!-- Title -->
     <text x="330" y="27" text-anchor="middle" font-size="12" font-weight="600" fill="#1E3A5F">Supply-Side Policy: LRAS Shifts Right</text>
@@ -11551,7 +11551,7 @@ window.ECONOS_ICONS = {
 
   currentAccountDiagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 420" font-family="Inter, sans-serif">
     <!-- Background -->
-    <rect width="660" height="420" fill="#F8FAFC" rx="12"/>
+    <rect width="660" height="420" fill="#FFFFFF" rx="12"/>
 
     <!-- Title -->
     <text x="330" y="28" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">UK Current Account: Four Components</text>
@@ -11614,7 +11614,7 @@ window.ECONOS_ICONS = {
   globalisationDiagram: `<svg viewBox="0 0 660 440" font-family="Inter, sans-serif" xmlns="http://www.w3.org/2000/svg">
 
     <!-- Background -->
-    <rect width="660" height="440" fill="#F8FAFC" rx="12"/>
+    <rect width="660" height="440" fill="#FFFFFF" rx="12"/>
 
     <!-- Title -->
     <text x="330" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#0F172A">Globalisation: Drivers and Effects</text>
@@ -11732,7 +11732,7 @@ window.ECONOS_ICONS = {
     </defs>
 
     <!-- Background -->
-    <rect width="660" height="440" fill="#F8FAFC" rx="12"/>
+    <rect width="660" height="440" fill="#FFFFFF" rx="12"/>
 
     <!-- Main title -->
     <text x="330" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#0F172A">Types of Business Integration</text>
@@ -11882,7 +11882,7 @@ window.ECONOS_ICONS = {
 
   demandShiftMini: `
     <svg viewBox="0 0 900 320" width="900" height="320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="900" height="320" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="320" fill="#FFFFFF" rx="12"/>
 
       <!-- LEFT: rightward shift D1 → D2 -->
       <g transform="translate(40,30)">
@@ -11966,7 +11966,7 @@ window.ECONOS_ICONS = {
 
   derivedDemandFlow: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <text x="450" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Final demand pulls demand for inputs</text>
 
       <!-- 3-step top chain -->
@@ -12043,7 +12043,7 @@ window.ECONOS_ICONS = {
 
   realMarketsGrid: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
       <text x="32" y="34" font-size="15" font-weight="800" fill="#0F172A">Demand looks different in every market</text>
 
       <!-- 2x2 grid of examples (left side) -->
@@ -12148,7 +12148,7 @@ window.ECONOS_ICONS = {
 
   taxSubsidyFourPanels: `
     <svg viewBox="0 0 590 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="590" height="460" fill="#F8FAFC" rx="12"/>
+      <rect width="590" height="460" fill="#FFFFFF" rx="12"/>
 
       <!-- ── PANEL (a): Indirect tax – S shifts up ─────────────────────────── -->
       <g transform="translate(6,6)">

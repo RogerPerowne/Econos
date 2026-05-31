@@ -31,7 +31,12 @@
     className: 'ped-compare-svg',
     background: '#FFFFFF',
     defs:
-      '<marker id="ped-red-end-up" markerWidth="8" markerHeight="8" refX="4" refY="0" orient="auto"><polygon points="0,8 8,8 4,0" fill="#DC2626"/></marker>' +
+      // Standard right-pointing arrowhead. `orient="auto"` rotates the
+      // marker to the line's tangent direction, so this works on the
+      // vertical ΔP arrows too. The previous design pointed UP in local
+      // coords and rendered HORIZONTAL after auto-rotation on a
+      // vertical line — same family of bug as dq-up/dq-down.
+      '<marker id="ped-red-end-up" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#DC2626"/></marker>' +
       '<marker id="ped-blue-start" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#2563EB"/></marker>' +
       '<marker id="ped-blue-end" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#2563EB"/></marker>' +
       '<marker id="ped-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#D97706"/></marker>' +

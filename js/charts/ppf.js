@@ -96,10 +96,16 @@
 
   function tone(name) { return TONES[name] || TONES.slate; }
 
-  function makeScale(area) {
+  function makeScale(area, clipId) {
     return {
       sx: function (x) { return area.x + x * area.width; },
-      sy: function (y) { return area.y + area.height - y * area.height; }
+      sy: function (y) { return area.y + area.height - y * area.height; },
+      // clipId tells renderCurve which clipPath to apply when auto-clipping.
+      // In single-panel charts every curve uses the same chart-area clip.
+      // In multi-panel charts each panel gets its own clipPath id so a
+      // curve declared inside panel N is never clipped against panel 0's
+      // bounds (which would erase curves outside the first panel).
+      clipId: clipId || 'econos-chart-clip'
     };
   }
 
@@ -151,7 +157,7 @@
     // Auto-clip curves to chart area so lines that extend beyond 0..1
     // (e.g. shifted demand/supply curves) don't bleed into the axis-label
     // gutter. The curve label is a separate <text> and isn't clipped.
-    var clipAttr = curve.clip === false ? '' : ' clip-path="url(#econos-chart-clip)"';
+    var clipAttr = curve.clip === false ? '' : ' clip-path="url(#' + (scale.clipId || 'econos-chart-clip') + ')"';
     var labelHtml = '';
     if (curve.label) {
       var last = curve.d.match(/([0-9.\-]+)\s*,\s*([0-9.\-]+)\s*$/);
@@ -945,9 +951,9 @@
      top-level spec — chartArea, axes, curves, polygons, arrows, points,
      texts, zones, views, legends — except it never carries its own
      viewBox / width / height / background / divider (those are svg-wide). */
-  function renderPanelContent(panel, ctx, parts) {
+  function renderPanelContent(panel, ctx, parts, clipId) {
     var area = panel.chartArea;
-    var scale = makeScale(area);
+    var scale = makeScale(area, clipId);
 
     // Per-panel axes (skip rendering when axes:false)
     if (panel.axes !== false) {
@@ -1080,7 +1086,9 @@
 
     // Render each panel (multi-panel) or the spec itself (single-panel).
     if (isMulti) {
-      panels.forEach(function (panel) { renderPanelContent(panel, ctx, parts); });
+      panels.forEach(function (panel, i) {
+        renderPanelContent(panel, ctx, parts, 'econos-chart-clip-' + i);
+      });
     } else {
       // Synthesize a panel from the spec's top-level shape fields so
       // single-panel and multi-panel paths share the same rendering code.

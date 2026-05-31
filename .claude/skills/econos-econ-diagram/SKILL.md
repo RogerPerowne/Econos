@@ -52,7 +52,8 @@ Each view is a step tab (CSS-only toggle, CSP-safe). The engine draws faded prio
 ## View fields
 
 - **`shifts: { curveId: Δ }`** — translate a curve. `Δ` is a number (horizontal) or `{ dx, dy }`. The engine recomputes intersections/equilibria for the shifted state — you never place a dot.
-- **`points: [names]`** — which named points to show (each family declares points like `E`, `A`, `B`, `C` via curve intersections). Dots get leaders + a label above, automatically.
+- **`points: [names | inline]`** — which points to show. An entry is either a **family point name** (string, e.g. `E`, `Qt_tax`) or an **inline point spec** object: `{ label, tone, onCurve:'D', x }` (on a curve at x), `{ label, tone, at:[x,y] }` (explicit), or `{ label, tone, on:['D','S'] }` (intersection). Inline points let a view place its own markers — e.g. `A` and `B` for a **movement-along-a-curve** story — without the family pre-defining them. Dots get leaders + a label, automatically.
+- **Movement along a curve**: show only the curve, place two inline points on it, and draw an arrow between them — e.g. `show:['D'], points:[{label:'A',onCurve:'D',x:200},{label:'B',onCurve:'D',x:500}], arrows:[['A','B']]`. Use this for demand/supply extension–contraction and AD/AS movement-vs-shift (a *shift* uses `shifts:` instead).
 - **`arrows: [['A','B',{tone}]]`** — a movement arrow between two points (endpoints sit on the dot edges).
 - **`areas: [{ between:['Top','Bottom'], x:[x0,x1], tone, hatch }]`** — shaded region (consumer/producer surplus, deadweight loss with `hatch:true`).
 - **`brackets: [{ x:[x0,x1] | between:['A','B'], y, label, tone }]`** — a labelled double-headed bracket (output gap, tax wedge, shortage/surplus).

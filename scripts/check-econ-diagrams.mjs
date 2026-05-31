@@ -92,11 +92,23 @@ function validateBlock(block, where, errors) {
     (v.show || []).forEach((id) => checkCurve(id, `view '${v.label}' show`));
     (v.hide || []).forEach((id) => checkCurve(id, `view '${v.label}' hide`));
     Object.keys(v.shifts || {}).forEach((id) => checkCurve(id, `view '${v.label}' shifts`));
-    (v.points || []).forEach((p) => checkPoint(p, `view '${v.label}' points`));
+    // Points: a string names a family point; an object is an inline point spec
+    // whose curve refs (onCurve / on) must resolve, and whose label becomes a
+    // local point name that arrows/brackets in this view may reference.
+    const localPoints = new Set();
+    (v.points || []).forEach((entry) => {
+      if (typeof entry === 'string') { checkPoint(entry, `view '${v.label}' points`); return; }
+      if (entry && typeof entry === 'object') {
+        if (entry.label) localPoints.add(entry.label);
+        if (entry.onCurve) checkCurve(entry.onCurve, `view '${v.label}' inline point onCurve`);
+        if (Array.isArray(entry.on)) entry.on.forEach((id) => checkCurve(id, `view '${v.label}' inline point on`));
+      }
+    });
+    const checkPointOrLocal = (name, ctx) => { if (!localPoints.has(name)) checkPoint(name, ctx); };
     (v.areas || []).forEach((a) => (a.between || []).forEach((id) => checkCurve(id, `view '${v.label}' area`)));
-    (v.brackets || []).forEach((br) => (br.between || []).forEach((p) => checkPoint(p, `view '${v.label}' bracket`)));
+    (v.brackets || []).forEach((br) => (br.between || []).forEach((p) => checkPointOrLocal(p, `view '${v.label}' bracket`)));
     (v.arrows || []).forEach((ar) => {
-      if (Array.isArray(ar)) { checkPoint(ar[0], `view '${v.label}' arrow`); checkPoint(ar[1], `view '${v.label}' arrow`); }
+      if (Array.isArray(ar)) { checkPointOrLocal(ar[0], `view '${v.label}' arrow`); checkPointOrLocal(ar[1], `view '${v.label}' arrow`); }
     });
   }
 }

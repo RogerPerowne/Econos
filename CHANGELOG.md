@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.38.0 — 2026-05-31
+
+### econDiagram: inline points + movement-along-a-curve
+
+A view's `points` can now contain **inline point specs** — `{ label, tone,
+onCurve:'D', x }`, `{ label, tone, at:[x,y] }`, or `{ label, tone, on:['D','S'] }`
+— not just family point names. Combined with `arrows`, this expresses
+**movement along a curve** (demand/supply extension & contraction, AD/AS
+movement-vs-shift) on *any* family, with no per-family points registry — proven
+on `adas` (which has none). The validator resolves inline points and lets arrows
+/ brackets reference their labels. New unit test (now 24 econ-diagram assertions);
+skill `econos-econ-diagram` documents it.
+
+- Also added the `adas` and `phillips` chart families to the service-worker
+  precache (they were missing) so migrated AD/AS and Phillips diagrams work
+  offline. `CACHE_NAME` → `econos-v147`.
+
 ## 0.37.3 — 2026-05-31
 
 ### Chart-migration sweep — breadth pass (14 cards, 6 families)

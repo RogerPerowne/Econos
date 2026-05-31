@@ -698,7 +698,7 @@
   function renderLegend(legend) {
     if (!legend) return '';
     var x = legend.x || 600;
-    var y = 31;
+    var y = legend.y || 31;
     var parts = ['<g class="chart-legend">'];
 
     if (legend.title) {

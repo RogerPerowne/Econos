@@ -30,6 +30,7 @@
     height: 440,
     chartArea: { x: 60, y: 43, width: 515, height: 357 },
     className: 'demand-cs-svg',
+    background: '#F8FAFC',
     divider: { x: 608, y1: 16, y2: 424 },
     axes: {
       x: { label: 'Q' },
@@ -123,6 +124,7 @@
       {
         layer: 'layer-legend-base',
         x: 600,
+        y: 72,
         sections: [
           { header: { text: 'THE DEMAND CURVE', tone: 'slate' },
             body: [
@@ -149,6 +151,7 @@
       {
         layer: 'layer-cs-label',
         x: 600,
+        y: 72,
         sections: [
           { header: { text: 'CONSUMER SURPLUS', tone: 'green' },
             body: [
@@ -178,6 +181,7 @@
       {
         layer: 'layer-pfall',
         x: 600,
+        y: 72,
         sections: [
           { header: { text: 'PRICE FALLS → CS EXPANDS', tone: 'green' },
             body: [

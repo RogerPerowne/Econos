@@ -1103,7 +1103,36 @@
       const layers = id.layers || [];
       const views = id.views || [];
       const defaultToneNames = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
+      // Perspective toggle (e.g. Classical vs Keynesian). When present,
+      // each view carries per-perspective `{head, body, analysis}` blocks
+      // under `view[perspective]`, and the SVG wrapper is initially
+      // tagged `chart-<initial>` so the engine's perspective CSS reveals
+      // only one school. The click handler `id-perspective` flips both.
+      const perspectives = Array.isArray(id.perspectives) && id.perspectives.length ? id.perspectives : null;
+      const initialPersp = perspectives ? perspectives[0] : null;
+      const perspLabels = id.perspectiveLabels || {};
+      function viewSlot(v, persp) {
+        return perspectives && persp && v[persp] ? v[persp] : v;
+      }
       if (id.label) html += genSecLabel(id.emoji || '📊', id.label);
+      // Perspective pill strip — renders only when a perspectives array
+      // is declared. Each button toggles the wrapper's `.chart-<name>`
+      // class and re-shows the matching description/analysis block.
+      const perspectiveStrip = perspectives ? perspectives.map((p, pi) => {
+        const pToneName = pi === 0 ? 'blue' : 'amber';
+        const t = PATTERN_TONES[pToneName] || PATTERN_TONES.blue;
+        const isActive = pi === 0;
+        return `<button
+          type="button"
+          data-action="id-perspective"
+          data-id-uid="${uid}"
+          data-id-persp="${p}"
+          data-id-tone="${pToneName}"
+          style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:${isActive ? t.bg : '#fff'};border:1.5px solid ${isActive ? t.accent : '#E7E7EA'};border-radius:999px;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:800;color:${isActive ? t.label : '#475569'};letter-spacing:0.01em;transition:background 0.18s,border-color 0.18s,color 0.18s;">
+          <span data-id-persp-dot style="width:9px;height:9px;border-radius:50%;background:${isActive ? t.accent : '#CBD5E1'};"></span>
+          ${perspLabels[p] || (p.charAt(0).toUpperCase() + p.slice(1))}
+        </button>`;
+      }).join('') : '';
 
       const stepStrip = views.map((v, i) => {
         const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
@@ -1151,38 +1180,58 @@
             ${combinedPanels}
           </div>`;
       } else {
-        const descItems = views.map((v, i) => {
-          const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
-          const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
-          const bodyHtml = Array.isArray(v.body)
-            ? `<ul style="margin:0;padding:0;list-style:none;font-size:11.5px;color:#475569;line-height:1.55;">${v.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:11.5px;color:#475569;line-height:1.6;">${v.body || ''}</div>`;
-          const marker = v.icon
-            ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${v.icon}</span>`
-            : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
-          return `<div data-id-desc="${i}" style="display:${i === 0 ? 'flex' : 'none'};align-items:flex-start;gap:12px;">
-            ${marker}
-            <div style="flex:1;min-width:0;">
-              <div style="font-weight:800;font-size:12.5px;color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${v.head}</div>
-              ${bodyHtml}
-            </div>
-          </div>`;
-        }).join('');
-        const hasAnalysis = views.some(v => v.analysis);
-        const analysisItems = hasAnalysis ? views.map((v, i) => {
-          const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
-          const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
-          if (!v.analysis) return `<div data-id-analysis="${i}" style="display:none;"></div>`;
-          return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.7;">${v.analysis}</div>
-          </div>`;
-        }).join('') : '';
+        // Build per-(view, perspective) description and analysis blocks.
+        // When `perspectives` is null, the perspective dimension collapses
+        // to [null] and the existing single-block-per-view behaviour
+        // emerges unchanged.
+        const perspList = perspectives || [null];
+        const descItems = views.map((v, i) =>
+          perspList.map((persp) => {
+            const slot = viewSlot(v, persp);
+            const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
+            const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+            const bodyHtml = Array.isArray(slot.body)
+              ? `<ul style="margin:0;padding:0;list-style:none;font-size:11.5px;color:#475569;line-height:1.55;">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
+              : `<div style="font-size:11.5px;color:#475569;line-height:1.6;">${slot.body || ''}</div>`;
+            const marker = v.icon
+              ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${v.icon}</span>`
+              : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
+            const isActive = i === 0 && (!persp || persp === initialPersp);
+            const perspAttr = persp ? ` data-id-persp="${persp}"` : '';
+            return `<div data-id-desc="${i}"${perspAttr} style="display:${isActive ? 'flex' : 'none'};align-items:flex-start;gap:12px;">
+              ${marker}
+              <div style="flex:1;min-width:0;">
+                <div style="font-weight:800;font-size:12.5px;color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${slot.head}</div>
+                ${bodyHtml}
+              </div>
+            </div>`;
+          }).join('')
+        ).join('');
+        const hasAnalysis = views.some(v => perspList.some(p => viewSlot(v, p).analysis));
+        const analysisItems = hasAnalysis ? views.map((v, i) =>
+          perspList.map((persp) => {
+            const slot = viewSlot(v, persp);
+            const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
+            const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+            const perspAttr = persp ? ` data-id-persp="${persp}"` : '';
+            if (!slot.analysis) return `<div data-id-analysis="${i}"${perspAttr} style="display:none;"></div>`;
+            const isActive = i === 0 && (!persp || persp === initialPersp);
+            return `<div data-id-analysis="${i}"${perspAttr} style="display:${isActive ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
+              <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
+              <div style="font-size:13.5px;color:#0B1426;line-height:1.7;">${slot.analysis}</div>
+            </div>`;
+          }).join('')
+        ).join('') : '';
+        const perspectiveStripHtml = perspectiveStrip
+          ? `<div class="id-perspective-strip" style="display:flex;justify-content:center;gap:10px;margin-bottom:12px;">${perspectiveStrip}</div>`
+          : '';
+        const svgWrapClass = initialPersp ? `chart-${initialPersp}` : '';
         html += `
-          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
+          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}'${perspectives ? ` data-id-perspectives='${JSON.stringify(perspectives)}'` : ''} style="margin-bottom:26px;">
+            ${perspectiveStripHtml}
             <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
               <div class="id-content-row" style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;">
-                <div style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
+                <div class="${svgWrapClass}" style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
                 <div style="display:flex;flex-direction:column;padding:0 4px;">${descItems}</div>
               </div>
             </div>
@@ -6330,11 +6379,62 @@
         }
       });
 
+      // When the diagram carries a Classical/Keynesian perspective toggle,
+      // each description/analysis block also has a `data-id-persp`. The
+      // currently-active perspective lives on the SVG wrapper as
+      // `class="chart-<name>"`; resolve it once and use it as a second
+      // filter on visibility.
+      const currentPersp = (idRoot.querySelector('[class*="chart-"]') || {}).className || '';
+      const activePersp = (currentPersp.match(/chart-([a-z]+)/) || [])[1];
       idRoot.querySelectorAll('[data-id-desc]').forEach(d => {
-        d.style.display = parseInt(d.dataset.idDesc, 10) === vi ? 'flex' : 'none';
+        const matchesPersp = !d.dataset.idPersp || d.dataset.idPersp === activePersp;
+        d.style.display = (parseInt(d.dataset.idDesc, 10) === vi && matchesPersp) ? 'flex' : 'none';
       });
       idRoot.querySelectorAll('[data-id-analysis]').forEach(a => {
-        a.style.display = parseInt(a.dataset.idAnalysis, 10) === vi ? 'block' : 'none';
+        const matchesPersp = !a.dataset.idPersp || a.dataset.idPersp === activePersp;
+        a.style.display = (parseInt(a.dataset.idAnalysis, 10) === vi && matchesPersp) ? 'block' : 'none';
+      });
+    } else if (action === 'id-perspective') {
+      // Classical/Keynesian toggle. Flip the SVG wrapper's chart-<name>
+      // class, restyle the perspective pills, and re-show the
+      // description + analysis blocks for the currently-active view
+      // step at the newly-selected perspective.
+      const uid = target.dataset.idUid;
+      const newPersp = target.dataset.idPersp;
+      const idRoot = root.querySelector(`[data-id-root="${uid}"]`);
+      if (!idRoot || !newPersp) return;
+      const perspectives = JSON.parse(idRoot.dataset.idPerspectives || '[]');
+      const svgWrap = idRoot.querySelector('[class*="chart-"]');
+      if (svgWrap) {
+        perspectives.forEach(p => svgWrap.classList.remove('chart-' + p));
+        svgWrap.classList.add('chart-' + newPersp);
+      }
+      // Restyle the perspective pills.
+      idRoot.querySelectorAll('[data-id-persp][data-action="id-perspective"]').forEach(btn => {
+        const isActive = btn.dataset.idPersp === newPersp;
+        const toneName = btn.dataset.idTone || 'blue';
+        const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+        btn.style.background  = isActive ? t.bg : '#fff';
+        btn.style.borderColor = isActive ? t.accent : '#E7E7EA';
+        btn.style.color       = isActive ? t.label : '#475569';
+        const dot = btn.querySelector('[data-id-persp-dot]');
+        if (dot) dot.style.background = isActive ? t.accent : '#CBD5E1';
+      });
+      // Find the currently-visible description's view index — that's
+      // the active step. Any block currently displayed (regardless of
+      // perspective) is on the active step.
+      let activeVi = 0;
+      const visibleDesc = idRoot.querySelector('[data-id-desc]:not([style*="display: none"]):not([style*="display:none"])');
+      if (visibleDesc) activeVi = parseInt(visibleDesc.dataset.idDesc, 10);
+      idRoot.querySelectorAll('[data-id-desc]').forEach(d => {
+        const matches = parseInt(d.dataset.idDesc, 10) === activeVi &&
+                        (!d.dataset.idPersp || d.dataset.idPersp === newPersp);
+        d.style.display = matches ? 'flex' : 'none';
+      });
+      idRoot.querySelectorAll('[data-id-analysis]').forEach(a => {
+        const matches = parseInt(a.dataset.idAnalysis, 10) === activeVi &&
+                        (!a.dataset.idPersp || a.dataset.idPersp === newPersp);
+        a.style.display = matches ? 'block' : 'none';
       });
     } else if (action === 'tc-channel') {
       // Transmission chain: highlight the chosen channel and reveal its panel

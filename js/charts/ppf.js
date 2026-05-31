@@ -466,7 +466,15 @@
 
   function renderZone(zone, scale) {
     var t = tone(zone.tone);
-    return '<text x="' + scale.sx(zone.x) + '" y="' + scale.sy(zone.y) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="600" fill="' + t.label + '" font-style="italic">' + zone.text + '</text>';
+    // Zone labels support an `anchor` field ('start' | 'middle' | 'end').
+    // Auto-anchor by x position: x near right edge → 'end' (text grows
+    // left from x, so the label stays inside the SVG when pinned to a
+    // top-right or bottom-right corner).
+    var anchor = zone.anchor;
+    if (!anchor) {
+      anchor = zone.x > 0.7 ? 'end' : (zone.x < 0.3 ? 'start' : 'middle');
+    }
+    return '<text x="' + scale.sx(zone.x) + '" y="' + scale.sy(zone.y) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="600" fill="' + t.label + '" font-style="italic" text-anchor="' + anchor + '">' + zone.text + '</text>';
   }
 
   /* ------------------------------------------------------------------ *

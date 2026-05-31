@@ -2008,44 +2008,7 @@ window.ECONOS_ICONS = {
     <text x="320" y="155" font-size="8.5" fill="#64748B" text-anchor="middle">unattainable</text>
   </svg>`,
 
-  ppfTradeInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
-    <defs>
-      <marker id="ppftri-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
-      <marker id="ppftri-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
-    </defs>
-    <!-- BASE: axes, PPF, labels (always visible) -->
-    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppftri-ax)"/>
-    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppftri-ax)"/>
-    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Good A</text>
-    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Good B</text>
-    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
-    <text x="358" y="70" font-size="11" font-weight="700" fill="#2563EB">PPF</text>
-    <text x="410" y="102" font-size="9" fill="#94A3B8" text-anchor="end" font-style="italic">Unattainable</text>
-    <text x="410" y="114" font-size="9" fill="#94A3B8" text-anchor="end" font-style="italic">zone</text>
-    <!-- idl-1: Production at P (on the PPF) -->
-    <g class="idl-1" style="display:none">
-      <line x1="55" y1="167" x2="289" y2="167" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
-      <line x1="289" y1="167" x2="289" y2="268" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
-      <circle cx="289" cy="167" r="6" fill="#2563EB"/>
-      <text x="296" y="163" font-size="11" font-weight="700" fill="#2563EB">P</text>
-      <text x="296" y="176" font-size="9" fill="#475569">production</text>
-    </g>
-    <!-- idl-2: Consumption at C – beyond the PPF -->
-    <g class="idl-2" style="display:none">
-      <line x1="295" y1="161" x2="335" y2="124" stroke="#059669" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#ppftri-gr)"/>
-      <circle cx="340" cy="118" r="6" fill="#059669"/>
-      <text x="348" y="114" font-size="11" font-weight="700" fill="#059669">C</text>
-      <text x="348" y="127" font-size="9" fill="#475569">consumption</text>
-      <text x="288" y="104" font-size="10" fill="#059669" font-style="italic" font-weight="600">Gains from trade</text>
-      <rect x="62" y="30" width="218" height="52" rx="6" fill="white" stroke="#E2E8F0"/>
-      <text x="72" y="48" font-size="9.5" font-weight="700" fill="#2563EB">With specialisation + trade:</text>
-      <text x="72" y="62" font-size="9.5" fill="#334155">Produces at P (comparative advantage)</text>
-      <text x="72" y="75" font-size="9.5" fill="#059669">↗ Consumes at C – beyond own PPF</text>
-    </g>
-  </svg>`,
-
-  /* === PPF interactive diagram === */
+  ppfTradeInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD6_SPEC),
   ppfInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD1_SPEC),
 
   demandInteractive: `

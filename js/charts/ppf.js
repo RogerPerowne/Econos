@@ -1534,7 +1534,11 @@
     // Emitted as `<title>` (short, hover + screen-reader summary) and
     // `<desc>` (longer description) per SVG accessibility guidelines.
     var altMeta = buildAltText(spec);
-    parts.push('<svg class="' + className + '" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-labelledby="econos-chart-title econos-chart-desc">');
+    // Extend the viewBox up by 16px so the y-axis label (which sits at
+    // y≈ area.y - 15, with ascender ~10px above that) has safe headroom.
+    // Without this, "Price level" etc. clip at the top of the SVG on
+    // every chart whose chartArea.y < 30.
+    parts.push('<svg class="' + className + '" viewBox="0 -16 ' + width + ' ' + (height + 16) + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-labelledby="econos-chart-title econos-chart-desc">');
     parts.push('<title id="econos-chart-title">' + altMeta.title + '</title>');
     parts.push('<desc id="econos-chart-desc">' + altMeta.desc + '</desc>');
 
@@ -1636,7 +1640,9 @@
     parts.push('<defs>' + clips + layerCss + perspectiveCss + (spec.defs || '') + '</defs>');
 
     var bg = spec.background || '#FFFFFF';
-    parts.push('<rect width="' + width + '" height="' + height + '" fill="' + bg + '" rx="12"/>');
+    // y=-16/height=H+16 matches the extended viewBox above so the white
+    // card fill covers the headroom strip too.
+    parts.push('<rect x="0" y="-16" width="' + width + '" height="' + (height + 16) + '" fill="' + bg + '" rx="12"/>');
     parts.push(renderDivider(spec.divider));
     parts.push(renderDividers(spec.dividers));
 

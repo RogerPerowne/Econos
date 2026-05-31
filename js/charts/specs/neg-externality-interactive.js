@@ -37,7 +37,7 @@
     height: 440,
     chartArea: { x: 60, y: 43, width: 500, height: 357 },
     className: 'negext-svg',
-    background: '#F8FAFC',
+    background: '#FFFFFF',
     divider: { x: 595, y1: 16, y2: 424 },
     axes: {
       x: { label: 'Q' },

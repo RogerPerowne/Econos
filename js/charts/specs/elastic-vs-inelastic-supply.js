@@ -19,7 +19,7 @@
     width: 660,
     height: 300,
     className: 'pes-compare-svg',
-    background: '#F8FAFC',
+    background: '#FFFFFF',
     defs:
       '<marker id="pes-red-end-up" markerWidth="8" markerHeight="8" refX="4" refY="0" orient="auto"><polygon points="0,8 8,8 4,0" fill="#DC2626"/></marker>' +
       '<marker id="pes-blue-start" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#2563EB"/></marker>' +

@@ -29,7 +29,7 @@
     height: 440,
     chartArea: { x: 60, y: 43, width: 500, height: 357 },
     className: 'supply-svg',
-    background: '#F8FAFC',
+    background: '#FFFFFF',
     divider: { x: 595, y1: 16, y2: 424 },
     defs:
       '<marker id="sp-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>' +

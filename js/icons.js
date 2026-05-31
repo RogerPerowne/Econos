@@ -12831,35 +12831,7 @@ window.ECONOS_ICONS = {
     <circle cx="32" cy="22" r="2" fill="currentColor"/>
   </svg>`,
 
-  srasLrasIntro: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-    <defs><style>
-      .idl-1{display:none}.idl-2{display:none}
-      .sv-show-1 .idl-1{display:block}
-      .sv-show-2 .idl-1,.sv-show-2 .idl-2{display:block}
-    </style></defs>
-    <!-- Base: Axes -->
-    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
-    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
-    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
-    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
-    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
-    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
-    <!-- Layer 1: SRAS -->
-    <g class="idl-1">
-      <line x1="80" y1="255" x2="390" y2="45" stroke="#3B82F6" stroke-width="2.5"/>
-      <text x="385" y="42" text-anchor="end" font-size="12" fill="#3B82F6" font-weight="700">SRAS</text>
-    </g>
-    <!-- Layer 2: LRAS + equilibrium point -->
-    <g class="idl-2">
-      <line x1="245" y1="20" x2="245" y2="272" stroke="#7C3AED" stroke-width="2.5"/>
-      <text x="245" y="14" text-anchor="middle" font-size="12" fill="#7C3AED" font-weight="700">LRAS</text>
-      <line x1="55" y1="143" x2="245" y2="143" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="40" y="148" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
-      <circle cx="245" cy="143" r="5.5" fill="white" stroke="#7C3AED" stroke-width="2"/>
-      <text x="245" y="287" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
-      <text x="245" y="296" font-size="9" fill="#94A3B8" text-anchor="middle">(full-capacity output)</text>
-    </g>
-  </svg>`,
+  srasLrasIntro: window.ECONOS_PPF.render(window.ECONOS_SRAS_LRAS_INTRO_SPEC),
 
   srasCurveStatic: window.ECONOS_PPF.render(window.ECONOS_SRAS_CURVE_STATIC_SPEC),
 

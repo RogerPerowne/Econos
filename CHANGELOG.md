@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.0 — 2026-05-31
+
+### Chart-migration sweep (Goal 1) — engine hardening + first migration
+
+Begins migrating hand-rolled econ-chart SVGs to the declarative `econDiagram`
+engine, starting with a reusable engine capability and the first production use
+of the `supplyDemand` family.
+
+- **`econDiagram` areas can now carry a `label`.** Area fills (CS/PS, DWL,
+  externality wedges) accept `{ between, x, tone, hatch, label }`; the label is
+  drawn at the fill's centroid in bold tone-colour, so a welfare diagram is
+  legible from the figure alone rather than relying on the analysis text. Unit
+  test added (`tests/unit/econ-diagram.test.js`, now 21 assertions).
+- **First chart migrated to `supplyDemand`.** The consumer-and-producer-surplus
+  "big picture" card now renders its surplus diagram via
+  `chart: 'supplyDemand'` (a 2-view Equilibrium → CS/PS sequence with labelled
+  blue CS and green PS triangles) instead of the static `cpsDiagram` SVG. This
+  is the inaugural production use of the family and establishes the
+  static-chart → `econDiagram` migration pattern.
+- Note on scope: the remaining hand-rolled charts live mostly inside legacy
+  interactive template cards (`ad-interactive` / `diagramPanel` / `diagramGrid`),
+  which the coexistence policy keeps. Those migrate as the engine gains the
+  expressiveness to reproduce them faithfully (next: tax-revenue rectangle
+  lines, then the rich tax/subsidy/price-control cards). `CACHE_NAME` →
+  `econos-v145`.
+
 ## 0.35.0 — 2026-05-31
 
 ### One consistent responsive mechanism (CSS container queries)

@@ -29,7 +29,28 @@ window.ECONOS_TOPIC = {
       title: 'Consumer & producer surplus: the big picture',
       blocks: [
         { type: 'calloutStrip', tone: 'blue', icon: '📊', text: '<strong>Consumer surplus</strong> is the gap between what consumers are willing to pay and the market price. <strong>Producer surplus</strong> is the gap between the market price and the minimum price producers are willing to accept.' },
-        { type: 'diagram', svgKey: 'cpsDiagram', caption: 'The surplus diagram' },
+        {
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Equilibrium',
+              show: ['D', 'S'],
+              points: ['E'],
+              analysis: 'The market clears where demand meets supply, at price P* and quantity Q*. This single point divides every buyer’s and seller’s gain.'
+            },
+            {
+              label: 'Consumer & producer surplus',
+              show: ['D', 'S', 'PriceLine'],
+              points: ['E'],
+              areas: [
+                { between: ['D', 'PriceLine'], x: [80, 380], tone: 'blue',  label: 'CS' },
+                { between: ['PriceLine', 'S'], x: [80, 380], tone: 'green', label: 'PS' }
+              ],
+              analysis: 'Consumer surplus (CS, blue) is the area between the demand curve and the price line P* – what buyers were willing to pay above what they actually paid. Producer surplus (PS, green) is the area between P* and the supply curve. Together CS + PS is total welfare at the competitive equilibrium.'
+            }
+          ]
+        },
         {
           type: 'grid',
           cols: 3,

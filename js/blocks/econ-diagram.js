@@ -605,7 +605,7 @@
 
   /* ── Area fill between two curves over an x-range ───────────────────────── */
   var HATCH_DEFINED = {};
-  function renderArea(topCurve, topShift, botCurve, botShift, x0, x1, tone, hatch, plot, uid) {
+  function renderArea(topCurve, topShift, botCurve, botShift, x0, x1, tone, hatch, plot, uid, label) {
     var hex = CURVE_HEX[tone] || '#2563EB';
     var stepPx = 12;
     var n = Math.max(2, Math.ceil((x1 - x0) / stepPx));
@@ -639,7 +639,18 @@
     } else {
       fill = hex + '" fill-opacity="0.16';
     }
-    return defs + '<path d="' + d + '" fill="' + fill + '" stroke="none"/>';
+    var labelSvg = '';
+    if (label) {
+      /* Anchor at the polygon's vertex-average — always inside these convex
+         fills (CS/PS/DWL triangles, externality wedges). Bold tone-hex text on
+         the translucent fill reads cleanly without a backing rect. */
+      var sx = 0, sy = 0, k = 0;
+      for (var a = 0; a < topPts.length; a++) { sx += topPts[a].x; sy += topPts[a].y; k++; }
+      for (var b = 0; b < botPts.length; b++) { sx += botPts[b].x; sy += botPts[b].y; k++; }
+      labelSvg = svgText(sx / k, sy / k + 4, label,
+        'font-size="13" font-weight="800" fill="' + hex + '" text-anchor="middle"');
+    }
+    return defs + '<path d="' + d + '" fill="' + fill + '" stroke="none"/>' + labelSvg;
   }
 
   /* Get a curve's y at x including verticals (returns null for verticals). */
@@ -913,7 +924,7 @@
       var bot = chart.baseline[area.between[1]];
       if (!top || !bot) return;
       bits.unshift(renderArea(top, thisShifts[area.between[0]], bot, thisShifts[area.between[1]],
-        area.x[0], area.x[1], area.tone || 'blue', area.hatch, p, uid));
+        area.x[0], area.x[1], area.tone || 'blue', area.hatch, p, uid, area.label));
     });
 
     // 6. Movement arrows between named points.

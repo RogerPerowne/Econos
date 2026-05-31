@@ -4712,7 +4712,125 @@ window.ECONOS_ICONS = {
 
   subsidyInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_INTERACTIVE_SPEC),
 
+  /* ── Market-failure topic — gap-fill diagrams ───────────── */
+  marketFailureOverview: window.ECONOS_PPF.render(window.ECONOS_MARKET_FAILURE_OVERVIEW_SPEC),
 
+  privateVsSocialDiagram: window.ECONOS_PPF.render(window.ECONOS_PRIVATE_VS_SOCIAL_SPEC),
+
+  welfareLossDiagram: window.ECONOS_PPF.render(window.ECONOS_WELFARE_LOSS_DIAGRAM_SPEC),
+
+  /* threeRoutesDiagram — 3-tile category map. Hand-rolled because
+     it's a tile infographic, not a coordinate chart. */
+  threeRoutesDiagram: `
+    <svg viewBox="0 0 720 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="720" height="300" fill="#FFFFFF" rx="12"/>
+      <text x="360" y="32" font-size="13" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="1">THREE ROUTES TO MARKET FAILURE</text>
+
+      <!-- Tile 1: Externalities -->
+      <g>
+        <rect x="40"  y="60" width="200" height="200" rx="14" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+        <circle cx="80" cy="100" r="22" fill="#DC2626"/>
+        <text x="80" y="106" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle">1</text>
+        <text x="140" y="106" font-size="14" font-weight="800" fill="#7F1D1D">Externalities</text>
+        <text x="140" y="122" font-size="11" fill="#991B1B">Costs / benefits ignored</text>
+        <line x1="60" y1="138" x2="220" y2="138" stroke="#FCA5A5" stroke-width="1"/>
+        <text x="140" y="158" font-size="11" font-weight="700" fill="#7F1D1D" text-anchor="middle">What breaks?</text>
+        <text x="140" y="180" font-size="11" fill="#1F2937" text-anchor="middle">Private cost ≠ social cost</text>
+        <text x="140" y="196" font-size="11" fill="#1F2937" text-anchor="middle">Private benefit ≠ social</text>
+        <text x="140" y="212" font-size="11" fill="#1F2937" text-anchor="middle">benefit</text>
+        <text x="140" y="238" font-size="11" font-style="italic" fill="#991B1B" text-anchor="middle">e.g. pollution, vaccines</text>
+      </g>
+
+      <!-- Tile 2: Public goods -->
+      <g>
+        <rect x="260" y="60" width="200" height="200" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+        <circle cx="300" cy="100" r="22" fill="#2563EB"/>
+        <text x="300" y="106" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle">2</text>
+        <text x="360" y="106" font-size="14" font-weight="800" fill="#1E3A8A">Public goods</text>
+        <text x="360" y="122" font-size="11" fill="#1E40AF">Free-rider problem</text>
+        <line x1="280" y1="138" x2="440" y2="138" stroke="#93C5FD" stroke-width="1"/>
+        <text x="360" y="158" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">What breaks?</text>
+        <text x="360" y="180" font-size="11" fill="#1F2937" text-anchor="middle">Non-rival + non-excludable</text>
+        <text x="360" y="196" font-size="11" fill="#1F2937" text-anchor="middle">→ no incentive to pay</text>
+        <text x="360" y="212" font-size="11" fill="#1F2937" text-anchor="middle">→ under-provision</text>
+        <text x="360" y="238" font-size="11" font-style="italic" fill="#1E40AF" text-anchor="middle">e.g. street lighting, defence</text>
+      </g>
+
+      <!-- Tile 3: Information asymmetry -->
+      <g>
+        <rect x="480" y="60" width="200" height="200" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+        <circle cx="520" cy="100" r="22" fill="#D97706"/>
+        <text x="520" y="106" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle">3</text>
+        <text x="580" y="106" font-size="14" font-weight="800" fill="#92400E">Asymmetric info</text>
+        <text x="580" y="122" font-size="11" fill="#B45309">One side knows more</text>
+        <line x1="500" y1="138" x2="660" y2="138" stroke="#FCD34D" stroke-width="1"/>
+        <text x="580" y="158" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">What breaks?</text>
+        <text x="580" y="180" font-size="11" fill="#1F2937" text-anchor="middle">Adverse selection,</text>
+        <text x="580" y="196" font-size="11" fill="#1F2937" text-anchor="middle">moral hazard → wrong</text>
+        <text x="580" y="212" font-size="11" fill="#1F2937" text-anchor="middle">trades, broken trust</text>
+        <text x="580" y="238" font-size="11" font-style="italic" fill="#B45309" text-anchor="middle">e.g. used cars, insurance</text>
+      </g>
+
+      <!-- Common result strip at the bottom -->
+      <rect x="40" y="270" width="640" height="20" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="360" y="284" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">All three lead to misallocation: society could do better with a different quantity</text>
+    </svg>
+  `,
+
+  /* ── The-price-mechanism topic — gap-fill diagrams ──────── */
+  priceRationingScarcity: window.ECONOS_PPF.render(window.ECONOS_PRICE_RATIONING_SCARCITY_SPEC),
+
+  /* priceMechanismFlow — Hayek's three functions in one diagram.
+     A 3-circle Venn-ish layout where the centre is the price level
+     and each circle is one function (signalling / incentives /
+     rationing). Hand-rolled because it's a relational diagram, not
+     a coordinate chart. */
+  priceMechanismFlow: `
+    <svg viewBox="0 0 720 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="720" height="320" fill="#FFFFFF" rx="12"/>
+      <text x="360" y="32" font-size="13" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="1">THREE FUNCTIONS OF THE PRICE MECHANISM</text>
+
+      <!-- Central price node -->
+      <circle cx="360" cy="180" r="48" fill="#0B1426" stroke="#475569" stroke-width="2"/>
+      <text x="360" y="174" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">PRICE</text>
+      <text x="360" y="192" font-size="10" fill="#CBD5E1" text-anchor="middle">moves up / down</text>
+
+      <!-- Signalling (top-left) -->
+      <g>
+        <line x1="320" y1="150" x2="180" y2="105" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <rect x="40" y="65" width="220" height="80" rx="12" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.5"/>
+        <circle cx="74" cy="95" r="16" fill="#059669"/>
+        <text x="74" y="100" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">S</text>
+        <text x="150" y="92" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle">Signalling</text>
+        <text x="150" y="110" font-size="11" fill="#1F2937" text-anchor="middle">Prices tell buyers and sellers</text>
+        <text x="150" y="124" font-size="11" fill="#1F2937" text-anchor="middle">what is scarce or abundant</text>
+        <text x="150" y="138" font-size="10" font-style="italic" fill="#047857" text-anchor="middle">↑P = scarcer · ↓P = abundant</text>
+      </g>
+
+      <!-- Incentives (top-right) -->
+      <g>
+        <line x1="400" y1="150" x2="540" y2="105" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <rect x="460" y="65" width="220" height="80" rx="12" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+        <circle cx="494" cy="95" r="16" fill="#D97706"/>
+        <text x="494" y="100" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">I</text>
+        <text x="570" y="92" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle">Incentives</text>
+        <text x="570" y="110" font-size="11" fill="#1F2937" text-anchor="middle">Prices motivate firms to enter</text>
+        <text x="570" y="124" font-size="11" fill="#1F2937" text-anchor="middle">profitable markets and exit</text>
+        <text x="570" y="138" font-size="10" font-style="italic" fill="#B45309" text-anchor="middle">↑P → produce more · ↓P → less</text>
+      </g>
+
+      <!-- Rationing (bottom) -->
+      <g>
+        <line x1="360" y1="228" x2="360" y2="245" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <rect x="250" y="245" width="220" height="60" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+        <circle cx="282" cy="275" r="16" fill="#2563EB"/>
+        <text x="282" y="280" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">R</text>
+        <text x="380" y="270" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle">Rationing</text>
+        <text x="380" y="288" font-size="11" fill="#1F2937" text-anchor="middle">Prices decide who gets what</text>
+        <text x="380" y="300" font-size="10" font-style="italic" fill="#1E40AF" text-anchor="middle">scarce goods → willing & able</text>
+      </g>
+    </svg>
+  `,
 
   elasticityIncidenceInteractive: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">

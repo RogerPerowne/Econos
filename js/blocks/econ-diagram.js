@@ -589,7 +589,11 @@
       '" fill="' + hex + '"/>';
   }
 
-  /* ── Movement arrow between two named points A→B (endpoints on dot edges) ─ */
+  /* ── Movement arrow between two named points A→B (endpoints on dot edges) ─
+     Drawn as a gentle perpendicular arc so it sits clearly OFF the curve it
+     traces (a straight chord hugs the curve — especially a bowed PPF). The arc
+     bows to the left of travel by `bow` px; authors can tune or disable it via
+     arrows:[['A','B',{ bow: <px> }]] (bow:0 → a straight line). */
   function renderMovementArrow(a, b, opts) {
     var r = 9; // dot radius
     var hex = (EQ_HEX[opts.tone] || EQ_HEX.slate).stroke;
@@ -599,8 +603,19 @@
     var ux = dx / len, uy = dy / len;
     var sx = a.x + ux * r, sy = a.y + uy * r;       // start on A's edge
     var ex = b.x - ux * r, ey = b.y - uy * r;       // end on B's edge
-    return svgLine(sx, sy, ex, ey, 'stroke="' + hex + '" stroke-width="2" opacity="0.9"') +
-      arrowHead(ex, ey, ux, uy, hex);
+    var bow = (opts.bow != null) ? opts.bow : Math.min(len * 0.16, 18);
+    if (!bow) {
+      return svgLine(sx, sy, ex, ey, 'stroke="' + hex + '" stroke-width="2" opacity="0.9"') +
+        arrowHead(ex, ey, ux, uy, hex);
+    }
+    var nx = -uy, ny = ux;                            // left-of-travel normal
+    var cx = (sx + ex) / 2 + nx * bow, cy = (sy + ey) / 2 + ny * bow; // control point
+    var tx = ex - cx, ty = ey - cy;                  // end tangent → arrowhead orientation
+    var tl = Math.sqrt(tx * tx + ty * ty) || 1;
+    var d = 'M' + sx.toFixed(2) + ',' + sy.toFixed(2) +
+            ' Q' + cx.toFixed(2) + ',' + cy.toFixed(2) + ' ' + ex.toFixed(2) + ',' + ey.toFixed(2);
+    return '<path d="' + d + '" fill="none" stroke="' + hex + '" stroke-width="2" opacity="0.9"/>' +
+      arrowHead(ex, ey, tx / tl, ty / tl, hex);
   }
 
   /* ── Area fill between two curves over an x-range ───────────────────────── */

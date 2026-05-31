@@ -570,8 +570,8 @@ window.ECONOS_TOPIC = {
               body: ['The economy operates at full-capacity output Yf.', 'Price level is P₁ — set by where AD₁ meets LRAS.']
             },
             keynesian: {
-              head: 'Initial equilibrium at E₁ on the flat range.',
-              body: ['The economy operates with significant spare capacity at output Y₁.', 'Price level is the "stuck" flat-range price P̄.']
+              head: 'Initial equilibrium at E₁ on the steep section, near capacity.',
+              body: ['The economy operates close to full capacity at output Y₁ — only just left of Yf.', 'AD₁ meets AS on the steepening section, so the price level P₁ is already under upward pressure.']
             }
           },
           {
@@ -584,7 +584,7 @@ window.ECONOS_TOPIC = {
             },
             keynesian: {
               head: 'Demand stimulus shifts AD to AD₂.',
-              body: ['Same shock as in the Classical case: AD₁ → AD₂.', 'But the AS curve has a very different shape on the flat range.']
+              body: ['Same shock as in the Classical case: AD₁ → AD₂.', 'The Keynesian AS curve is the textbook reverse-L — flat at low Y, steepening sharply as the economy approaches Yf.']
             }
           },
           {
@@ -597,16 +597,16 @@ window.ECONOS_TOPIC = {
               analysis: 'At full capacity, there is no spare labour or capital to mobilise. The extra demand bids up prices but cannot raise real output. This is the Classical "money is neutral in the long run" result — fiscal stimulus only creates inflation.'
             },
             keynesian: {
-              head: 'Only real output rises — the price level is unchanged.',
-              body: ['New equilibrium E₂ sits HORIZONTALLY to the right of E₁ on the flat range.', 'Y₂ > Y₁. P̄ unchanged — non-inflationary growth.'],
-              analysis: 'With massive spare capacity, firms can hire idle workers and bring underused machinery online at existing prices. The extra demand is absorbed entirely by higher output. This is the Keynesian "free lunch" case for demand-side stimulus during a recession.'
+              head: 'Mostly inflation — with only a small output gain.',
+              body: ['New equilibrium E₂ sits up-and-slightly-right of E₁ on the steep section.', 'P₂ > P₁ rises sharply; Y₂ rises only marginally above Y₁ — the remaining slack is quickly used up.'],
+              analysis: 'Close to capacity, Keynes converges with the Classical view: most of the AD stimulus turns into inflation, with only a thin sliver of extra real output. The dramatic "free lunch" contrast — pure Y rise with no inflation — only appears DEEP in spare capacity, on the flat range of AS, not here.'
             }
           }
         ]
       },
 
-      conclusion: { title: 'Big idea', text: 'The Classical vs Keynesian split is really a question about AS shape. The right policy depends on which range the economy is operating in.' },
-      examEdge: 'Top essays name the regime explicitly: "If we are on the flat range of AS, demand stimulus raises Y without inflation; if we are at Yf, it raises P without raising Y." The toggle in this diagram is the visual proof.'
+      conclusion: { title: 'Big idea', text: 'Near capacity, Keynes and Classical converge — both predict mostly inflation from demand stimulus. The dramatic split between them only opens up DEEP in spare capacity, where the Keynesian flat range is in play.' },
+      examEdge: 'Top essays name the regime first: "Near Yf, both schools predict mostly inflation from AD shifts; on the Keynesian flat range, AD shifts mostly raise Y without inflation." The toggle in this diagram is the visual proof.'
     },
 
     /* ----- CARD 9 – Evaluating supply-side policy ----- */

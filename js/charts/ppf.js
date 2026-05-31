@@ -1153,20 +1153,35 @@
     if (!legend) return '';
     var x = legend.x || 600;
     var y = legend.y || 31;
+    // Width of the legend column — used to centre titles + section
+    // headers horizontally. Default 280 matches the conventional
+    // 900-px-wide multi-panel layout (legend at x=600, chart at
+    // x=60-560 with a divider at x=595, leaving ~300px for legend).
+    // Authors can override per spec via `legend.width`.
+    var legW = legend.width || 280;
+    var legCenterX = x + legW / 2;
     var parts = ['<g class="chart-legend">'];
 
     if (legend.title) {
       var tt = tone(legend.title.tone || 'blue');
-      parts.push('<circle cx="' + (x + 12) + '" cy="' + y + '" r="6" fill="' + tt.stroke + '"/>');
-      parts.push('<text x="' + (x + 26) + '" y="' + (y + 5) + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + LABEL_INK + '">' + legend.title.text + '</text>');
+      // Centred title: dot sits just LEFT of the title text, both
+      // anchored together on the legend column's centre line.
+      var titleSize = clampSize(13);
+      var titleTextW = 0.58 * titleSize * (legend.title.text || '').length;
+      var titleTextStartX = legCenterX - titleTextW / 2;
+      parts.push('<circle cx="' + (titleTextStartX - 10) + '" cy="' + y + '" r="6" fill="' + tt.stroke + '"/>');
+      parts.push('<text x="' + legCenterX + '" y="' + (y + 5) + '" font-size="' + titleSize + '" font-weight="700" fill="' + LABEL_INK + '" text-anchor="middle">' + legend.title.text + '</text>');
       y += 44;
     }
 
     (legend.sections || []).forEach(function (section) {
       if (section.header) {
         var ht = tone(section.header.tone || 'blue');
-        // Headers: bumped from 10 → 12 (engine floor), letter-spaced for the punchy look
-        parts.push('<text x="' + (x + 20) + '" y="' + y + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="800" fill="' + ht.stroke + '" letter-spacing="1.5">' + section.header.text + '</text>');
+        // Section header — centred in the legend column. Letter-spaced
+        // and uppercased visually by author convention. Centring gives
+        // the right column the polished feel of a real legend panel
+        // rather than a left-anchored caption strip.
+        parts.push('<text x="' + legCenterX + '" y="' + y + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="800" fill="' + ht.stroke + '" letter-spacing="1.5" text-anchor="middle">' + section.header.text + '</text>');
         y += 26;
       }
       if (section.rows) {

@@ -120,124 +120,109 @@ window.ECONOS_TOPIC = {
     /* ── CARD 2 ── Why AD slopes downward ─────────────────────────── */
     {
       id: 'slope',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Why AD slopes downward',
       lede: 'Three effects explain why a lower price level means more total spending.',
       ledeStyle: 'plain',
-
-      tip: { icon: '🔒', tone: 'green', text: 'AD slopes down for macro reasons – not for the same reason as the demand curve for one product.' },
-
-      flowChart: {
-        svgKey: 'adSlopeDiagram',
-        label: 'THE THREE EFFECTS',
-        emoji: '📈',
-        caption: 'P falls from P₁ to P₂ – total spending (Y) rises from Y₁ to Y₂.'
-      },
-
-      causesFirst: false,
-      causesLabel: 'THE EFFECTS – ONE BY ONE',
-      causesEmoji: '⚙️',
-      causesStyle: 'numbered',
-      causes: [
-        {
-          tone: 'green', icon: '💰', head: 'Wealth effect (Pigou)',
-          body: 'P falls → the real value of money and savings rises → households feel wealthier → <strong>C rises</strong>.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: 'AD slopes down for macro reasons – not for the same reason as the demand curve for one product.' },
+        { type: 'sectionHeader', icon: '📈', label: 'THE THREE EFFECTS' },
+        { type: 'econDiagram', chart: 'adas', views: [
+          {
+            label: 'P falls, Y rises',
+            show: ['AD'],
+            points: [
+              { label: 'E₁', tone: 'blue', onCurve: 'AD', x: 250, pLabel: 'P₁', yLabel: 'Y₁' },
+              { label: 'E₂', tone: 'blue', onCurve: 'AD', x: 550, pLabel: 'P₂', yLabel: 'Y₂' }
+            ],
+            arrows: [['E₁', 'E₂', { tone: 'slate' }]],
+            head: 'A lower price level means more total spending',
+            body: 'P falls from P₁ to P₂ – total spending (Y) rises from Y₁ to Y₂. This is a movement along AD, driven by the three effects below.',
+            analysis: 'The price level is the only trigger here, so the economy slides down the same AD curve from E₁ to E₂ rather than the curve shifting.'
+          }
+        ]},
+        { type: 'sectionHeader', icon: '⚙️', label: 'THE EFFECTS – ONE BY ONE' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green', icon: '💰', head: 'Wealth effect (Pigou)', body: 'P falls → the real value of money and savings rises → households feel wealthier → <strong>C rises</strong>.' },
+          { type: 'tile', tone: 'blue', icon: '📉', head: 'Interest rate effect (Keynes)', body: 'P falls → money demand falls → interest rates fall → cheaper borrowing → <strong>I and C rise</strong>.' },
+          { type: 'tile', tone: 'amber', icon: '🌐', head: 'International substitution', body: 'P falls → UK goods become relatively cheaper than foreign goods → <strong>(X − M) rises</strong>.' }
+        ]},
+        { type: 'sectionHeader', icon: '⚖️', label: 'NOT THE SAME AS MARKET DEMAND' },
+        { type: 'pair',
+          left: {
+            tone: 'blue', icon: '🌐',
+            head: 'AD slopes down because…',
+            body: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Wealth effect</strong> – lower P raises real balances.</li><li><strong>Interest rate effect</strong> – lower P reduces rates and boosts spending.</li><li><strong>International substitution</strong> – lower P makes UK goods cheaper.</li></ul>'
+          },
+          right: {
+            tone: 'amber', icon: '🛒',
+            head: 'Market demand slopes down because…',
+            body: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Income effect</strong> – lower P raises real income, so quantity demanded rises.</li><li><strong>Substitution effect</strong> – lower P makes the good relatively cheaper, buyers switch to it.</li></ul>'
+          }
         },
-        {
-          tone: 'blue', icon: '📉', head: 'Interest rate effect (Keynes)',
-          body: 'P falls → money demand falls → interest rates fall → cheaper borrowing → <strong>I and C rise</strong>.'
-        },
-        {
-          tone: 'amber', icon: '🌐', head: 'International substitution',
-          body: 'P falls → UK goods become relatively cheaper than foreign goods → <strong>(X − M) rises</strong>.'
-        }
-      ],
-
-      pairLabel: 'NOT THE SAME AS MARKET DEMAND',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue', icon: '🌐', iconStyle: 'circle',
-        label: 'AD slopes down because…',
-        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Wealth effect</strong> – lower P raises real balances.</li><li><strong>Interest rate effect</strong> – lower P reduces rates and boosts spending.</li><li><strong>International substitution</strong> – lower P makes UK goods cheaper.</li></ul>'
-      },
-      right: {
-        tone: 'amber', icon: '🛒', iconStyle: 'circle',
-        label: 'Market demand slopes down because…',
-        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Income effect</strong> – lower P raises real income, so quantity demanded rises.</li><li><strong>Substitution effect</strong> – lower P makes the good relatively cheaper, buyers switch to it.</li></ul>'
-      },
-
-      summaryRow: [
-        { tone: 'amber', icon: '⚠️', title: 'Common error', text: 'Do not use income and substitution effects to explain the AD curve.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Lower price levels boost total spending through wealth, interest-rate and international-substitution channels.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Always separate the reasons for the AD curve from the reasons for an individual demand curve.'
-      }
+        { type: 'calloutStrip', tone: 'amber', icon: '⚠️', text: 'Common error: do not use income and substitution effects to explain the AD curve.' },
+        { type: 'bigIdea', text: 'Lower price levels boost total spending through wealth, interest-rate and international-substitution channels.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Always separate the reasons for the AD curve from the reasons for an individual demand curve.' }
+      ]
     },
 
     /* ── CARD 3 ── Movement along vs shifts of AD ────────────────── */
     {
       id: 'movement-vs-shift',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Movement along vs shifts of AD',
       lede: 'A change in the price level moves you along AD. A change in any non-price determinant shifts the whole curve.',
       ledeStyle: 'plain',
-
-      tip: { icon: '🔒', tone: 'green', text: 'Price level change = movement. Non-price determinant change = shift.' },
-
-      flowChart: {
-        svgKey: 'adMovementShift',
-        label: 'THE CRUCIAL DISTINCTION',
-        emoji: '⚖️',
-        caption: 'Left: same curve, different point (price level change). Right: whole curve moves (component change).'
-      },
-
-      comparisonTable: {
-        title: 'MOVEMENT VS SHIFT',
-        emoji: '📋',
-        columns: ['Movement along', 'Shift'],
-        columnTones: ['blue', 'purple'],
-        rows: [
-          { label: 'Cause',         values: ['Change in the price level',                   'Change in C, I, G or (X − M)'] },
-          { label: 'What changes?', values: ['Quantity demanded (Y) at a given P',           'Quantity demanded (Y) at every P'] },
-          { label: 'Diagram clue',  values: ['One AD curve, move along it',                  'AD curve moves left or right'] },
-          { label: 'Best wording',  values: ['"Movement along AD."',                         '"Rightward shift of AD" or "Leftward shift of AD"'] }
-        ]
-      },
-
-      whyItMatters: {
-        title: 'FAST DIAGNOSIS',
-        emoji: '🔍',
-        items: [
-          { tone: 'blue',   icon: '❓', label: 'What changed?',       text: 'Pin down the trigger before naming the effect.' },
-          { tone: 'amber',  icon: '💰', label: 'Price level?',         text: 'A change in P → movement along AD.' },
-          { tone: 'purple', icon: '⚙️', label: 'Component changed?',  text: 'A change in C, I, G or (X − M) → shift of AD.' },
-          { tone: 'green',  icon: '🧭', label: 'Movement or shift?',  text: 'Name the type before writing the analysis.' }
-        ]
-      },
-
-      summaryRow: [
-        { tone: 'blue',   icon: '🛢️', title: 'Example – movement', text: 'Oil-price-driven inflation changes the price level → <strong>movement along AD</strong>.' },
-        { tone: 'purple', icon: '👥', title: 'Example – shift',    text: 'Consumer confidence rises → C rises at every price level → <strong>AD shifts right</strong>.' }
-      ],
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Essay marks often hinge on naming movement or shift correctly before analysing the effect.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Write the diagnosis first – for example, "This is a rightward shift of AD because consumer confidence raises C at every price level."'
-      }
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: 'Price level change = movement. Non-price determinant change = shift.' },
+        { type: 'sectionHeader', icon: '⚖️', label: 'THE CRUCIAL DISTINCTION' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'econDiagram', chart: 'adas', views: [
+            {
+              label: 'Movement along AD',
+              show: ['AD'],
+              points: [
+                { label: 'A', tone: 'blue', onCurve: 'AD', x: 250, pLabel: 'P₁', yLabel: 'Y₁' },
+                { label: 'B', tone: 'blue', onCurve: 'AD', x: 550, pLabel: 'P₂', yLabel: 'Y₂' }
+              ],
+              arrows: [['A', 'B', { tone: 'slate' }]],
+              head: 'Same curve, different point',
+              body: 'The price level changes, so the economy slides along one AD curve from A to B. The curve itself does not move.',
+              analysis: 'Trigger: the price level (P) changes. This is a movement along AD, never a shift.'
+            }
+          ]},
+          { type: 'econDiagram', chart: 'adas', views: [
+            {
+              label: 'Shift of AD',
+              show: ['AD'],
+              shifts: { AD: 80 },
+              head: 'Whole curve moves right',
+              body: 'A non-price determinant changes, so the entire AD curve moves from AD₀ to AD₁ – more is demanded at every price level.',
+              analysis: 'Trigger: C, I, G or (X − M) changes. This is a rightward shift of AD, not a movement along it.'
+            }
+          ]}
+        ]},
+        { type: 'sectionHeader', icon: '📋', label: 'MOVEMENT VS SHIFT' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue', icon: '↕️', head: 'Movement along',
+            body: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Cause:</strong> change in the price level.</li><li><strong>What changes:</strong> quantity demanded (Y) at a given P.</li><li><strong>Diagram clue:</strong> one AD curve, move along it.</li><li><strong>Best wording:</strong> "Movement along AD."</li></ul>' },
+          { type: 'tile', tone: 'purple', icon: '↔️', head: 'Shift',
+            body: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Cause:</strong> change in C, I, G or (X − M).</li><li><strong>What changes:</strong> quantity demanded (Y) at every P.</li><li><strong>Diagram clue:</strong> AD curve moves left or right.</li><li><strong>Best wording:</strong> "Rightward shift of AD" or "Leftward shift of AD".</li></ul>' }
+        ]},
+        { type: 'sectionHeader', icon: '🔍', label: 'FAST DIAGNOSIS' },
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '❓', head: 'What changed?',      body: 'Pin down the trigger before naming the effect.' },
+          { type: 'tile', tone: 'amber',  icon: '💰', head: 'Price level?',        body: 'A change in P → movement along AD.' },
+          { type: 'tile', tone: 'purple', icon: '⚙️', head: 'Component changed?', body: 'A change in C, I, G or (X − M) → shift of AD.' },
+          { type: 'tile', tone: 'green',  icon: '🧭', head: 'Movement or shift?', body: 'Name the type before writing the analysis.' }
+        ]},
+        { type: 'grid', cols: 2, children: [
+          { type: 'tile', tone: 'blue',   icon: '🛢️', head: 'Example – movement', body: 'Oil-price-driven inflation changes the price level → <strong>movement along AD</strong>.' },
+          { type: 'tile', tone: 'purple', icon: '👥', head: 'Example – shift',    body: 'Consumer confidence rises → C rises at every price level → <strong>AD shifts right</strong>.' }
+        ]},
+        { type: 'bigIdea', text: 'Essay marks often hinge on naming movement or shift correctly before analysing the effect.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Write the diagnosis first – for example, "This is a rightward shift of AD because consumer confidence raises C at every price level."' }
+      ]
     },
 
     /* ── CARD 4 ── What shifts AD? ───────────────────────────────── */

@@ -45,35 +45,52 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_2',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Movement Along vs Shift of the Demand Curve',
       lede: 'This is the most common source of error in exam diagrams – explore the distinction interactively.',
-      diagramKey: 'demandInteractive',
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '📈', label: 'Movement along vs shift' },
         {
-          key: 'base',
-          label: 'The demand curve',
-          text: 'The demand curve shows the <strong>inverse relationship between price and quantity demanded</strong>. Ceteris paribus, as price rises, quantity demanded falls. It slopes downward because of the <strong>substitution effect</strong> (the good becomes expensive relative to alternatives) and the <strong>income effect</strong> (real purchasing power falls as price rises).'
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'The demand curve',
+              show: ['D', 'S'],
+              head: 'The demand curve',
+              body: 'The demand curve shows the inverse relationship between price and quantity demanded. Ceteris paribus, as price rises, quantity demanded falls.',
+              analysis: 'It slopes downward because of the substitution effect (the good becomes expensive relative to alternatives) and the income effect (real purchasing power falls as price rises). Equilibrium sits where demand meets supply at Pₑ, Qₑ.'
+            },
+            {
+              label: 'Movement along',
+              show: ['D'],
+              points: [
+                { label: 'A', tone: 'blue',  onCurve: 'D', x: 200 },
+                { label: 'B', tone: 'green', onCurve: 'D', x: 500 }
+              ],
+              arrows: [['A', 'B', { tone: 'slate' }]],
+              head: 'Movement along the demand curve',
+              body: 'A change in the good\'s own price causes a movement along the demand curve – nothing else can. A price rise causes a contraction (A: higher P, lower Q); a price fall causes an extension (B: lower P, higher Q).',
+              analysis: 'The curve itself does not move – the point simply slides along the existing D. Precise language matters: say "quantity demanded falls," not "demand falls." A price rise gives a contraction; a price fall gives an extension.'
+            },
+            {
+              label: 'Demand shifts',
+              show: ['D', 'S'],
+              shifts: { D: 80 },
+              head: 'A shift of the whole demand curve',
+              body: 'A change in any non-price determinant shifts the entire demand curve. A rightward shift (increase) means more is demanded at every price; price and quantity both rise at the new equilibrium E₁.',
+              analysis: 'Rightward (increase): more demanded at every price – higher income, changed tastes, or a rise in a substitute\'s price. Leftward (decrease): less demanded at every price – lower income, or a rise in a complement\'s price. Quantity changes at every price level, not just at one point.'
+            }
+          ]
         },
-        {
-          key: 'extension',
-          label: 'Movement along',
-          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the demand curve – nothing else can. A price rise causes a <strong>contraction</strong> (E₂: higher P, lower Q). A price fall causes an <strong>extension</strong> (E₃: lower P, higher Q). The curve itself does not move. Precise language matters: say "quantity demanded falls," not "demand falls."'
-        },
-        {
-          key: 'shift',
-          label: 'Demand shifts',
-          text: 'A change in any <strong>non-price determinant</strong> shifts the entire demand curve. <strong>Rightward (D₂ – increase):</strong> more demanded at every price – higher income, changed tastes, or a rise in a substitute\'s price. <strong>Leftward (D₀ – decrease):</strong> less demanded at every price – lower income, or a rise in a complement\'s price. Quantity changes at every price level, not just P₁.'
-        }
-      ],
-      causes: [
-        { icon: '🏷️', head: 'Price change',          body: 'A change in the good\'s own price causes a movement along the existing demand curve – not a shift.',                                 tone: 'green'  },
-        { icon: '💰', head: 'Income',                 body: 'Higher income raises demand for normal goods (rightward shift). Lower income reduces it. Inferior goods move in the opposite direction.', tone: 'purple' },
-        { icon: '🎨', head: 'Tastes & advertising',  body: 'A shift in consumer preferences, a viral trend or an effective campaign shifts the entire demand curve left or right.',               tone: 'blue'   },
-        { icon: '🔄', head: 'Prices of related goods',body: 'A substitute\'s price rise shifts demand right. A complement\'s price rise shifts demand left.',                                      tone: 'amber'  }
-      ],
-      examEdge: 'Never say "demand rises because price falls" – that confuses demand (the whole schedule) with quantity demanded (a point on the schedule). Price falls cause quantity demanded to rise (movement along). Demand rising means the curve shifts right. Examiners specifically test this distinction.'
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'green',  icon: '🏷️', head: 'Price change',           body: 'A change in the good\'s own price causes a movement along the existing demand curve – not a shift.' },
+          { type: 'tile', tone: 'purple', icon: '💰', head: 'Income',                  body: 'Higher income raises demand for normal goods (rightward shift). Lower income reduces it. Inferior goods move in the opposite direction.' },
+          { type: 'tile', tone: 'blue',   icon: '🎨', head: 'Tastes & advertising',    body: 'A shift in consumer preferences, a viral trend or an effective campaign shifts the entire demand curve left or right.' },
+          { type: 'tile', tone: 'amber',  icon: '🔄', head: 'Prices of related goods', body: 'A substitute\'s price rise shifts demand right. A complement\'s price rise shifts demand left.' }
+        ]},
+        { type: 'examEdge', title: 'Exam edge', text: 'Never say "demand rises because price falls" – that confuses demand (the whole schedule) with quantity demanded (a point on the schedule). Price falls cause quantity demanded to rise (movement along). Demand rising means the curve shifts right. Examiners specifically test this distinction.' }
+      ]
     },
     {
       id: 'demand_3',
@@ -100,29 +117,44 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_4',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Consumer Surplus',
       lede: 'The demand curve does more than show quantity – it reveals how much buyers gain from market exchange. Tap each step to build the picture.',
-      diagramKey: 'demandCsSvg',
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '📊', label: 'Building consumer surplus' },
         {
-          key: 'base',
-          label: 'Demand curve',
-          text: 'Each point on the demand curve shows the maximum price a buyer would pay for that unit – their willingness to pay (WTP). At lower quantities, WTP is high; it falls as more units are consumed (diminishing marginal utility). The market price P* is the same for every buyer.'
+          type: 'econDiagram',
+          chart: 'supplyDemand',
+          views: [
+            {
+              label: 'Demand curve',
+              show: ['D', 'S'],
+              head: 'Demand curve',
+              body: 'Each point on the demand curve shows the maximum price a buyer would pay for that unit – their willingness to pay (WTP).',
+              analysis: 'At lower quantities, WTP is high; it falls as more units are consumed (diminishing marginal utility). The market price P* is the same for every buyer, set where demand meets supply.'
+            },
+            {
+              label: 'Consumer surplus',
+              show: ['D', 'S', 'PriceLine'],
+              areas: [
+                { between: ['D', 'PriceLine'], x: [80, 380], tone: 'green', label: 'CS' }
+              ],
+              head: 'Consumer surplus',
+              body: 'Consumer surplus is the green triangle – the area above the market price P* and below the demand curve.',
+              analysis: 'Every buyer who would have paid more than P* receives a "bonus". The triangle\'s area measures the total benefit consumers receive beyond what they actually pay. Formula: CS = ½ × Qₑ × (max WTP − P*).'
+            },
+            {
+              label: 'Price falls → CS grows',
+              show: ['D', 'S'],
+              shifts: { S: 80 },
+              head: 'Price falls → CS grows',
+              body: 'When increased supply lowers price to P₂, consumer surplus expands: existing buyers each save on every unit, and new buyers enter as output extends down the demand curve to Q₂.',
+              analysis: 'CS grows in two ways: ① existing buyers each save (P* − P₂) on every unit already bought; ② new buyers enter who weren\'t willing to pay P*, adding a further triangle of surplus as output extends. A tax does the reverse: raising the consumer price shrinks CS, with part going to government revenue and part lost as deadweight welfare loss.'
+            }
+          ]
         },
-        {
-          key: 'cs',
-          label: 'Consumer surplus',
-          text: 'Consumer surplus is the green triangle – the area above the market price P* and below the demand curve. Every buyer who would have paid more than P* receives a "bonus". The triangle\'s area measures the total benefit consumers receive beyond what they actually pay. Formula: CS = ½ × Q* × (max WTP − P*).'
-        },
-        {
-          key: 'pfall',
-          label: 'Price falls → CS grows',
-          text: 'When price falls to P₂, consumer surplus expands in two ways: ① Existing buyers each save (P* − P₂) on every unit – the rectangle between P* and P₂ is their gain. ② New buyers enter who weren\'t willing to pay P* – output extends to Q₂, adding a further triangle of surplus. A tax does the reverse: raising consumer price shrinks CS, with part going to government revenue and part lost as deadweight welfare loss.'
-        }
-      ],
-      examEdge: 'A tax causes: (1) consumer surplus transferred to government as revenue, (2) consumer surplus destroyed as deadweight loss (DWL). Distinguish which part is redistribution and which is pure welfare loss – this shows you understand welfare analysis, not just diagram labelling.'
+        { type: 'examEdge', title: 'Exam edge', text: 'A tax causes: (1) consumer surplus transferred to government as revenue, (2) consumer surplus destroyed as deadweight loss (DWL). Distinguish which part is redistribution and which is pure welfare loss – this shows you understand welfare analysis, not just diagram labelling.' }
+      ]
     },
     {
       id: 'demand_5',

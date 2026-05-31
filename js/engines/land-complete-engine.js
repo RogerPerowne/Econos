@@ -163,9 +163,18 @@
         C: TopicLoader.routes.land('c')
       };
       var redoHref = reDoMap[firstSection] || TopicLoader.routes.land('intro');
+
+      // Land It is the last stage of any topic, so the natural forward
+      // action is the NEXT topic's Learn It. Falls back to "Back to my
+      // topics" only when this is the last topic in the registry.
+      var currentId = TopicLoader.getTopic();
+      var nt = TopicLoader.nextLearnableTopicAfter(currentId);
+      var forwardHref  = nt ? TopicLoader.routes.learn(null, nt.id) : (DATA.nextUrl || '/');
+      var forwardLabel = nt ? ('Next topic: ' + nt.name)             : 'Back to my topics';
+
       return '<div class="link-footer">'
         + '<a href="' + redoHref + '" class="link-btn link-btn--ghost">Redo session</a>'
-        + '<a href="' + DATA.nextUrl + '" class="link-btn link-btn--primary">Back to my topics ' + I.arrowRight + '</a>'
+        + '<a href="' + forwardHref + '" class="link-btn link-btn--primary">' + forwardLabel + ' ' + I.arrowRight + '</a>'
         + '</div>';
     }
 

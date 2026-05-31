@@ -5895,15 +5895,14 @@
         stageHref = TopicLoader.routes.link('intro', T.id); stageLabel = 'Link it';
       } else if (cur && cur.available && cur.available.land) {
         stageHref = TopicLoader.routes.land('intro', T.id); stageLabel = 'Land it';
-      } else if (window.ECONOS_TOPICS) {
-        const tidx = window.ECONOS_TOPICS.findIndex(t => t.id === T.id);
-        if (tidx >= 0 && tidx < window.ECONOS_TOPICS.length - 1) {
-          const nt = window.ECONOS_TOPICS[tidx + 1];
-          if (nt && nt.available && nt.available.learn) {
-            nextTopicId = nt.id;
-            nextTopicName = nt.name;
-          }
-        }
+      } else {
+        // Walk the registry forward (via the shared helper) to the
+        // next topic that actually has Learn It data. The previous
+        // code only checked tidx+1 and gave up when that neighbour
+        // wasn't learnable — leaving the "Next topic" button hidden
+        // even though a learnable topic existed two slots ahead.
+        const nt = TopicLoader.nextLearnableTopicAfter(T.id);
+        if (nt) { nextTopicId = nt.id; nextTopicName = nt.name; }
       }
     }
 

@@ -113,12 +113,12 @@ window.ECONOS_TOPIC = {
         {
           key: 'cs',
           label: 'Consumer surplus',
-          text: 'Consumer surplus is the green triangle – the area above the market price P* and below the demand curve. Every buyer who would have paid more than P* receives a "bonus". The triangle\'s area measures the total benefit consumers receive beyond what they actually pay. Formula: CS = ½ × Q* × (max WTP − P*).'
+          text: 'Consumer surplus is the green triangle – the area above the market price P* and below the demand curve. Every buyer who would have paid more than P* receives a "bonus" measuring the total benefit consumers gain beyond what they actually pay.'
         },
         {
           key: 'pfall',
           label: 'Price falls → CS grows',
-          text: 'When price falls to P₂, consumer surplus expands in two ways: ① Existing buyers each save (P* − P₂) on every unit – the rectangle between P* and P₂ is their gain. ② New buyers enter who weren\'t willing to pay P* – output extends to Q₂, adding a further triangle of surplus. A tax does the reverse: raising consumer price shrinks CS, with part going to government revenue and part lost as deadweight welfare loss.'
+          text: 'When price falls to P₂, consumer surplus expands two ways: ① Existing buyers each save (P* − P₂) on every unit – the rectangle between P* and P₂. ② New buyers enter who weren\'t willing to pay P* – output extends to Q₂, adding a further triangle of surplus.'
         }
       ],
       examEdge: 'A tax causes: (1) consumer surplus transferred to government as revenue, (2) consumer surplus destroyed as deadweight loss (DWL). Distinguish which part is redistribution and which is pure welfare loss – this shows you understand welfare analysis, not just diagram labelling.'

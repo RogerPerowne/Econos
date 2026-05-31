@@ -45,6 +45,30 @@
      - BACKGROUND: chart canvas is white by default. Specs override
        with `background: '<color>'` only when the chart deliberately
        needs a tinted backdrop (rare). Default is '#FFFFFF'.
+
+   Anchor-based positioning (Approach B):
+     - Point IDs: any point can carry an `id` field. Used as a reference
+       target by other elements.
+     - Arrow point references: arrows can declare `from: 'pointId'` /
+       `to: 'pointId'` INSTEAD of x1/y1/x2/y2. Engine resolves the IDs to
+       chart-space positions when rendering.
+     - Curve membership: a point can declare `on: 'curveId'` saying "I
+       sit on this curve". The engine then knows the curve's local
+       tangent at the point, which determines the "attainable" direction
+       (inside the curve, toward origin).
+     - Smart label placement: when a point has `on:` declared (and
+       optionally has arrows touching it via from/to references), the
+       engine picks the label's side automatically — preferring the
+       attainable region and avoiding any arrow's approach direction.
+       Authors don't write labelDx/labelDy/anchor. Override remains
+       available via explicit labelDx/labelDy/anchor.
+
+   Dev-mode collision warnings:
+     - Set window.ECONOS_DEV = true (or append ?dev=1 to the URL the
+       page is loaded from) to log bounding-box overlap warnings to the
+       console. The engine tracks every rendered text/dot/arrow and
+       reports pair-wise overlaps. Cheap insurance against new clash
+       patterns the smart placement doesn't yet catch.
    ============================================================ */
 (function () {
   'use strict';
@@ -283,12 +307,22 @@
     return null;
   }
 
-  /* Arrow rendering — supports three shapes:
+  /* Does the spec's arrow list include any arrow that touches `ptId`
+     via its from/to references? Used by renderPoint to decide whether
+     smart label placement should kick in. */
+  function arrowsTouchPoint(ctx, ptId) {
+    return (ctx.arrows || []).some(function (a) {
+      return a.from === ptId || a.to === ptId;
+    });
+  }
+
+  /* Arrow rendering — supports four shapes:
        { d: '...' }                                   raw path in 0..1 space
        { x1, y1, x2, y2 }                             straight line in 0..1 space
+       { from: 'A', to: 'B' }                         line between two referenced points
        { perpendicular: { curve, t, length, direction } }  geometric perpendicular
-     All three are shortened at both ends by ARROW_BUFFER (per-arrow override). */
-  function renderArrow(arrow, scale, curveRegistry) {
+     All shapes are shortened at both ends by ARROW_BUFFER (per-arrow override). */
+  function renderArrow(arrow, scale, curveRegistry, ctx) {
     var t = tone(arrow.tone);
     var sw = arrow.strokeWidth || 2;
     var buffer = arrow.buffer != null ? arrow.buffer : ARROW_BUFFER;
@@ -297,6 +331,17 @@
     var mStart = arrow.markerStart ? ' marker-start="url(#' + arrow.markerStart + ')"' : '';
     var mEnd = arrow.markerEnd ? ' marker-end="url(#' + arrow.markerEnd + ')"' : '';
     var dPix;
+
+    // Resolve from/to point references into x1/y1/x2/y2.
+    if ((arrow.from || arrow.to) && ctx && ctx.pointRegistry) {
+      var src = arrow.from && ctx.pointRegistry[arrow.from];
+      var dst = arrow.to   && ctx.pointRegistry[arrow.to];
+      if (src && dst) {
+        dPix = 'M ' + scale.sx(src.x) + ',' + scale.sy(src.y) + ' L ' + scale.sx(dst.x) + ',' + scale.sy(dst.y);
+        dPix = applyPathBuffer(dPix, buffer);
+        return '<path d="' + dPix + '" fill="none" stroke="' + t.stroke + '" stroke-width="' + sw + '"' + dashAttr + capAttr + mStart + mEnd + '/>';
+      }
+    }
     if (arrow.perpendicular) {
       var spec = arrow.perpendicular;
       var fromKey = spec.from || spec.curve;
@@ -359,40 +404,181 @@
     return parts.join('');
   }
 
-  /* Standalone text label, with optional italic + bold */
-  function renderText(item, scale) {
+  /* Standalone text label.
+
+     Two placement modes:
+       - Explicit: spec gives x/y in chart space.
+       - Anchored: spec gives `near: 'pointId'`. Engine looks up the
+         point and uses the smart side-picker to place the text next
+         to it, avoiding curves, arrows, and other placed labels.
+     `item.anchor` always wins if set; otherwise auto-derived. */
+  function renderText(item, scale, ctx, area) {
     var t = tone(item.tone || 'slate');
     var bold = item.bold ? ' font-weight="700"' : '';
     var italic = item.italic ? ' font-style="italic"' : '';
     var size = clampSize(item.fontSize);
-    // Auto text-anchor for axis-adjacent labels (overridable via item.anchor)
-    var anchor = item.anchor;
-    if (!anchor) {
-      anchor = item.x < 0 ? 'end' : (item.x > 1 ? 'start' : 'middle');
+
+    var x, y, anchor;
+    if (item.near && ctx && ctx.pointRegistry[item.near]) {
+      var target = ctx.pointRegistry[item.near];
+      var pseudoPoint = { id: item.near, x: target.x, y: target.y, on: target.on };
+      // Annotations get a bigger offset (extraOffset=14) than direct
+      // point labels, so the annotation sits clear of the dot's own
+      // label rather than overlapping it.
+      var auto = smartLabelPosition(pseudoPoint, ctx, scale, 7, area, item.text, size, 14);
+      if (auto.bbox && ctx.placedBoxes) ctx.placedBoxes.push(auto.bbox);
+      x = scale.sx(target.x) + auto.dx;
+      y = scale.sy(target.y) + auto.dy;
+      anchor = item.anchor || auto.anchor;
+    } else {
+      x = scale.sx(item.x);
+      y = scale.sy(item.y);
+      anchor = item.anchor;
+      if (!anchor) {
+        anchor = item.x < 0 ? 'end' : (item.x > 1 ? 'start' : 'middle');
+      }
     }
-    return '<text x="' + scale.sx(item.x) + '" y="' + scale.sy(item.y) + '" font-size="' + size + '" fill="' + t.label + '" text-anchor="' + anchor + '"' + bold + italic + '>' + item.text + '</text>';
+    return '<text x="' + x + '" y="' + y + '" font-size="' + size + '" fill="' + t.label + '" text-anchor="' + anchor + '"' + bold + italic + '>' + item.text + '</text>';
   }
 
-  function renderPoint(pt, scale) {
+  /* Estimate a text element's bounding box in PIXEL space.
+     Width approximation: 0.58 × fontSize × character count (works for
+     proportional fonts at 12-13pt). Height: 1.15 × fontSize. */
+  function estimateTextBox(text, fontSize, x, y, anchor) {
+    var size = fontSize || MIN_LABEL_SIZE;
+    var w = 0.58 * size * (text || '').length;
+    var h = 1.15 * size;
+    var left = anchor === 'end' ? x - w : (anchor === 'middle' ? x - w / 2 : x);
+    var top = y - h / 2;  // dominant-baseline=middle approximation
+    return { x: left, y: top, w: w, h: h, text: text };
+  }
+
+  function boxesOverlap(a, b) {
+    return !(a.x + a.w < b.x || b.x + b.w < a.x || a.y + a.h < b.y || b.y + b.h < a.y);
+  }
+
+  function isInsideArea(box, area, margin) {
+    margin = margin || 2;
+    return box.x >= area.x - margin && box.y >= area.y - margin
+        && box.x + box.w <= area.x + area.width + margin
+        && box.y + box.h <= area.y + area.height + margin;
+  }
+
+  /* Heuristic side picker for point labels (Approach B v1).
+
+     Given a point and the rendering context (curves, arrows, placed
+     bboxes, chart area), pick the cleanest side for the label among
+     {right, below, left, above}.
+
+     Rules, in order:
+       1. If the point has `on: 'curveId'`, eliminate the side that's
+          OUTSIDE the curve (away from origin for a PPF).
+       2. If any arrow touches this point (via from/to references),
+          eliminate the side closest to the other endpoint's direction.
+       3. Eliminate sides where the label would overflow the chart area.
+       4. Eliminate sides where the label would overlap an already-placed
+          label (label-to-label collision).
+       5. Among remaining sides, prefer right > below > left > above
+          (reading order).
+
+     Returns { dx, dy, anchor } in pixel space relative to the dot. */
+  function smartLabelPosition(pt, ctx, scale, r, area, labelText, fontSize, extraOffset) {
+    extraOffset = extraOffset || 0;
+    var SIDES = {
+      right: { dx: r + 3 + extraOffset, dy: 0, anchor: 'start' },
+      below: { dx: 0, dy: r + 14 + extraOffset, anchor: 'middle' },
+      left:  { dx: -(r + 3 + extraOffset), dy: 0, anchor: 'end' },
+      above: { dx: 0, dy: -(r + 8 + extraOffset), anchor: 'middle' }
+    };
+    var SIDE_VEC = { right: [1, 0], below: [0, -1], left: [-1, 0], above: [0, 1] };
+
+    var eliminated = {};
+    var why = {};
+    function elim(side, reason) { if (side && !eliminated[side]) { eliminated[side] = reason; why[side] = reason; } }
+
+    var cx = scale.sx(pt.x);
+    var cy = scale.sy(pt.y);
+
+    // Rule 1: avoid the side OUTSIDE the curve.
+    if (pt.on && ctx.curveRegistry[pt.on]) {
+      var P = ctx.curveRegistry[pt.on];
+      var t = findTAtX(P, pt.x);
+      if (t != null) {
+        var tangent = cubicTangent(P, t);
+        var outward = unitNormal(tangent, [pt.x, pt.y], 'outward');
+        var worst = null, worstDot = -Infinity;
+        ['right', 'below', 'left', 'above'].forEach(function (s) {
+          var v = SIDE_VEC[s];
+          var d = v[0] * outward[0] + v[1] * outward[1];
+          if (d > worstDot) { worstDot = d; worst = s; }
+        });
+        elim(worst, 'outside curve');
+      }
+    }
+
+    // Rule 2: avoid each arrow's other-endpoint direction.
+    (ctx.arrows || []).forEach(function (arrow) {
+      var targetId = arrow.to;
+      var sourceId = arrow.from;
+      if (targetId !== pt.id && sourceId !== pt.id) return;
+      var otherId = targetId === pt.id ? sourceId : targetId;
+      var other = ctx.pointRegistry[otherId];
+      if (!other) return;
+      var dx = other.x - pt.x, dy = other.y - pt.y;
+      var worst = null, worstDot = -Infinity;
+      ['right', 'below', 'left', 'above'].forEach(function (s) {
+        var v = SIDE_VEC[s];
+        var d = v[0] * dx + v[1] * dy;
+        if (d > worstDot) { worstDot = d; worst = s; }
+      });
+      elim(worst, 'arrow path');
+    });
+
+    // Rules 3 + 4: bounds check + label-to-label collision check.
+    // Compute the candidate bbox for each remaining side; eliminate the
+    // side if the bbox would overflow the chart or overlap a placed label.
+    var priority = ['right', 'below', 'left', 'above'];
+    for (var i = 0; i < priority.length; i++) {
+      var s = priority[i];
+      if (eliminated[s]) continue;
+      var off = SIDES[s];
+      var bbox = estimateTextBox(labelText, fontSize || clampSize(13), cx + off.dx, cy + off.dy, off.anchor);
+      if (!isInsideArea(bbox, area)) { elim(s, 'overflows chart'); continue; }
+      var clash = (ctx.placedBoxes || []).some(function (b) { return boxesOverlap(bbox, b); });
+      if (clash) { elim(s, 'overlaps label'); continue; }
+      return { dx: off.dx, dy: off.dy, anchor: off.anchor, bbox: bbox };
+    }
+    // All sides eliminated — return right as fallback (with warning if dev mode).
+    if (typeof window !== 'undefined' && window.ECONOS_DEV) {
+      try { console.warn('[ECONOS_PPF] All sides eliminated for label "' + labelText + '" at point ' + (pt.id || '?'), why); } catch (e) {}
+    }
+    var fallback = SIDES.right;
+    var fbbox = estimateTextBox(labelText, fontSize || clampSize(13), cx + fallback.dx, cy + fallback.dy, fallback.anchor);
+    return { dx: fallback.dx, dy: fallback.dy, anchor: fallback.anchor, bbox: fbbox };
+  }
+
+  function renderPoint(pt, scale, ctx, area) {
     var t = tone(pt.tone);
     var cx = scale.sx(pt.x);
     var cy = scale.sy(pt.y);
     var r = pt.radius || 7;
-    // Default label position: to the right of the dot.
-    // If the point has gridlines (dashed projection lines from the dot
-    // out to both axes), shift the label UP by ~9px so the horizontal
-    // gridline doesn't slice through the label's text. Specs can
-    // override with pt.labelDx / pt.labelDy.
-    var hasGridlines = !!pt.gridlines;
-    var defaultDx = r + 3;
-    var defaultDy = hasGridlines ? -9 : 0;
-    var lblX = cx + (pt.labelDx != null ? pt.labelDx : defaultDx);
-    var lblY = cy + (pt.labelDy != null ? pt.labelDy : defaultDy);
-    // Default text-anchor: 'start' (label sits to the RIGHT of its x).
-    // Specs can override with pt.anchor ('end' = label sits to the LEFT;
-    // 'middle' = centred). Useful when an arrow approaches the point from
-    // the right and the label needs to go on the left side of the dot.
-    var anchor = pt.anchor || 'start';
+    // Smart label placement when the point declares `on:` (curve
+    // membership) OR an arrow references this point's id. Otherwise
+    // fall back to the legacy gridlines-aware default.
+    var useSmart = ctx && (pt.on || (pt.id && arrowsTouchPoint(ctx, pt.id)));
+    var auto;
+    if (useSmart) {
+      auto = smartLabelPosition(pt, ctx, scale, r, area, pt.label, clampSize(13));
+      // Track this label's bbox so later labels can avoid it.
+      if (auto.bbox && ctx.placedBoxes) ctx.placedBoxes.push(auto.bbox);
+    } else {
+      var hasGridlines = !!pt.gridlines;
+      auto = { dx: r + 3, dy: hasGridlines ? -9 : 0, anchor: 'start' };
+    }
+    var lblX = cx + (pt.labelDx != null ? pt.labelDx : auto.dx);
+    var lblY = cy + (pt.labelDy != null ? pt.labelDy : auto.dy);
+    // Anchor: explicit override OR derived from smart placement OR default 'start'.
+    var anchor = pt.anchor || auto.anchor || 'start';
     var symbolHtml = pt.symbol ? '<text x="' + cx + '" y="' + (cy + 1) + '" font-size="' + Math.round(r * 1.4) + '" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="middle">' + pt.symbol + '</text>' : '';
     var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
     var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
@@ -633,18 +819,18 @@
   }
 
   /* Render the contents of a single view's content layer */
-  function renderViewContent(view, scale, area, curveRegistry) {
+  function renderViewContent(view, scale, area, ctx) {
     var parts = [];
     (view.curves || []).forEach(function (c) { parts.push(renderCurve(c, scale)); });
-    (view.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, curveRegistry)); });
-    (view.ocTriangles || []).forEach(function (tri) { parts.push(renderOcTriangle(tri, scale, curveRegistry)); });
+    (view.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, ctx.curveRegistry, ctx)); });
+    (view.ocTriangles || []).forEach(function (tri) { parts.push(renderOcTriangle(tri, scale, ctx.curveRegistry)); });
     (view.boxedLabels || []).forEach(function (b) { parts.push(renderBoxedLabel(b, scale, area)); });
     (view.points || []).forEach(function (p) {
       parts.push(renderPointGridlines(p, scale, area));
-      parts.push(renderPoint(p, scale));
+      parts.push(renderPoint(p, scale, ctx, area));
     });
     (view.zones || []).forEach(function (z) { parts.push(renderZone(z, scale)); });
-    (view.texts || []).forEach(function (t) { parts.push(renderText(t, scale)); });
+    (view.texts || []).forEach(function (t) { parts.push(renderText(t, scale, ctx, area)); });
     return parts;
   }
 
@@ -663,20 +849,35 @@
     parts.push(renderDivider(spec.divider));
     parts.push(wrapLayer('layer-axes', [renderAxes(area, spec.axes || {})]));
 
-    // Build a registry of curves by id so view arrows can reference them
-    // for perpendicular geometry. Includes top-level curves AND every
-    // view's curves (so PPF₂/PPF₃ defined inside the shift view are
-    // discoverable as intersection targets). Parses each cubic `d` once.
-    var curveRegistry = {};
+    // Approach B: build a single CONTEXT that the render functions consult
+    // for cross-element awareness. The context carries:
+    //   - curveRegistry:  curve id → parsed cubic control points
+    //   - pointRegistry:  point id → { x, y } in chart space
+    //   - arrows:         every arrow with from/to references (for label
+    //                     placement and for resolving from/to → coords)
+    var ctx = { curveRegistry: {}, pointRegistry: {}, arrows: [], placedBoxes: [], devWarnings: [] };
+
     function registerCurve(c) {
       if (c && c.id) {
         var parsed = parseCubic(c.d);
-        if (parsed) curveRegistry[c.id] = parsed;
+        if (parsed) ctx.curveRegistry[c.id] = parsed;
       }
     }
+    function registerPoint(p) {
+      if (p && p.id) ctx.pointRegistry[p.id] = { x: p.x, y: p.y, on: p.on };
+    }
+    function registerArrows(arrows) {
+      (arrows || []).forEach(function (a) { if (a.from || a.to) ctx.arrows.push(a); });
+    }
+
+    // Collect from top-level + every view
     (spec.curves || []).forEach(registerCurve);
+    (spec.points || []).forEach(registerPoint);
+    registerArrows(spec.arrows);
     (spec.views || []).forEach(function (v) {
       (v.curves || []).forEach(registerCurve);
+      (v.points || []).forEach(registerPoint);
+      registerArrows(v.arrows);
     });
 
     // Always-visible curves (each curve can carry its own layer name for opacity targeting)
@@ -685,12 +886,16 @@
       parts.push(c.layer ? wrapLayer(c.layer, [rendered]) : rendered);
     });
 
-    // Top-level points / zones (for single-view charts like v1)
+    // Top-level shapes (for single-view charts where everything is
+    // always-visible). Order: zones → arrows → gridlines → points.
+    // Arrows render BEFORE points so the dot overlays the arrow's end.
     (spec.zones || []).forEach(function (z) { parts.push(renderZone(z, scale)); });
+    (spec.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, ctx.curveRegistry, ctx)); });
     (spec.points || []).forEach(function (p) {
       parts.push(renderPointGridlines(p, scale, area));
-      parts.push(renderPoint(p, scale));
+      parts.push(renderPoint(p, scale, ctx, area));
     });
+    (spec.texts || []).forEach(function (t) { parts.push(renderText(t, scale, ctx, area)); });
 
     // Multi-view: each view emits a content layer + a legend layer.
     // If the spec sets `viewDefaultsHidden`, each view's content/legend
@@ -701,7 +906,7 @@
       var contentLayer = view.contentLayer || ('layer-' + view.key);
       var legendLayer = view.legendLayer || ('layer-legend-' + view.key);
       var hidden = view.hidden != null ? view.hidden : hideViews;
-      parts.push(wrapLayer(contentLayer, renderViewContent(view, scale, area, curveRegistry), hidden));
+      parts.push(wrapLayer(contentLayer, renderViewContent(view, scale, area, ctx), hidden));
       if (view.legend) parts.push(wrapLayer(legendLayer, [renderLegend(view.legend)], hidden));
     });
 
@@ -709,6 +914,29 @@
     if (spec.legend && !(spec.views || []).length) parts.push(renderLegend(spec.legend));
 
     parts.push('</svg>');
+
+    // Dev-mode post-render collision scan. Pairs of placed label
+    // bboxes are checked for overlap; each overlap is logged. The
+    // smart placement should prevent most overlaps; this is a
+    // safety net for patterns the heuristic doesn't yet catch.
+    var devOn = (typeof window !== 'undefined' && window.ECONOS_DEV);
+    if (devOn && ctx.placedBoxes.length > 1) {
+      for (var i = 0; i < ctx.placedBoxes.length; i++) {
+        for (var j = i + 1; j < ctx.placedBoxes.length; j++) {
+          if (boxesOverlap(ctx.placedBoxes[i], ctx.placedBoxes[j])) {
+            var msg = '[ECONOS_PPF] label clash: "' + ctx.placedBoxes[i].text + '" ↔ "' + ctx.placedBoxes[j].text + '"';
+            ctx.devWarnings.push(msg);
+            try { console.warn(msg, ctx.placedBoxes[i], ctx.placedBoxes[j]); } catch (e) {}
+          }
+        }
+      }
+    }
+    // Stash for programmatic inspection (test harnesses can read this).
+    if (typeof window !== 'undefined' && window.ECONOS_PPF) {
+      window.ECONOS_PPF.lastWarnings = ctx.devWarnings;
+      window.ECONOS_PPF.lastPlacedBoxes = ctx.placedBoxes;
+    }
+
     return parts.join('');
   }
 

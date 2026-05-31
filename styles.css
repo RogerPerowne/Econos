@@ -936,6 +936,52 @@ img, svg { display: block; max-width: 100%; }
   display: none;
 }
 
+/* Quick-skip "Take the quiz" button at the bottom of the stages widget.
+   Renders when window.ECONOS_QUIZ is present so users can jump straight
+   to the quiz without walking through the Learn It cards. Styled to
+   read as a clear next-step CTA but visually subordinate to the 3 stage
+   tiles above it. */
+.stages__quiz-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 14px;
+  background: var(--econ-white);
+  border: 1.5px dashed var(--econ-gray-300);
+  border-radius: 12px;
+  cursor: pointer;
+  font: inherit;
+  color: var(--econ-ink);
+  text-align: left;
+  transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+.stages__quiz-cta:hover,
+.stages__quiz-cta:focus-visible {
+  border-color: var(--econ-green-500);
+  background: var(--econ-green-50);
+  color: var(--econ-green-700);
+}
+.stages__quiz-cta-icon { font-size: 18px; }
+.stages__quiz-cta-text {
+  flex: 1;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+}
+.stages__quiz-cta-arrow {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--econ-gray-500);
+  transition: color 120ms ease, transform 120ms ease;
+}
+.stages__quiz-cta:hover .stages__quiz-cta-arrow,
+.stages__quiz-cta:focus-visible .stages__quiz-cta-arrow {
+  color: var(--econ-green-600);
+  transform: translateX(2px);
+}
+
 .stage {
   display: flex;
   align-items: flex-start;

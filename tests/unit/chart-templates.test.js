@@ -27,7 +27,7 @@ describe('templates', () => {
     const svg = render(spec);
     expect(svg).toContain('Real output (Y)');
     expect(svg).toContain('Price level (P)');
-    expect(svg).toContain('viewBox="0 0 440 340"');
+    expect(svg).toContain('viewBox="0 -16 440 356"');
   });
 
   it('supply-demand template uses Q on x and P on y', () => {
@@ -38,7 +38,7 @@ describe('templates', () => {
 
   it('author width overrides template width', () => {
     const svg = render({ template: 'ad-as', width: 600 });
-    expect(svg).toContain('viewBox="0 0 600 340"');
+    expect(svg).toContain('viewBox="0 -16 600 356"');
   });
 
   it('author axes override template axes', () => {
@@ -59,6 +59,6 @@ describe('templates', () => {
       axes: { x: { label: 'X' }, y: { label: 'Y' } }
     };
     const svg = render(spec);
-    expect(svg).toContain('viewBox="0 0 400 300"');
+    expect(svg).toContain('viewBox="0 -16 400 316"');
   });
 });

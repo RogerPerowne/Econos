@@ -1534,7 +1534,11 @@
     // Emitted as `<title>` (short, hover + screen-reader summary) and
     // `<desc>` (longer description) per SVG accessibility guidelines.
     var altMeta = buildAltText(spec);
-    parts.push('<svg class="' + className + '" viewBox="0 0 ' + width + ' ' + height + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-labelledby="econos-chart-title econos-chart-desc">');
+    // Extend the viewBox up by 16px so the y-axis label (which sits at
+    // y≈ area.y - 15, with ascender ~10px above that) has safe headroom.
+    // Without this, "Price level" etc. clip at the top of the SVG on
+    // every chart whose chartArea.y < 30.
+    parts.push('<svg class="' + className + '" viewBox="0 -16 ' + width + ' ' + (height + 16) + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-labelledby="econos-chart-title econos-chart-desc">');
     parts.push('<title id="econos-chart-title">' + altMeta.title + '</title>');
     parts.push('<desc id="econos-chart-desc">' + altMeta.desc + '</desc>');
 
@@ -1633,10 +1637,34 @@
       }).join('');
       perspectiveCss = '<style>' + pHides + pReveals + '</style>';
     }
-    parts.push('<defs>' + clips + layerCss + perspectiveCss + (spec.defs || '') + '</defs>');
+    // Built-in arrow markers — emitted in every chart's <defs> so authors
+    // can write `markerEnd: 'econos-arrow-blue'` instead of hand-rolling
+    // their own. ALL markers are designed as RIGHT-POINTING triangles
+    // (tip at the +X end of local coords) with `orient="auto"`. The
+    // browser auto-rotates each marker to align with the line's tangent
+    // direction at the endpoint — so the SAME marker arrows-up on a
+    // vertical line going up, arrows-down on a line going down, and
+    // arrows-right on a horizontal line. Per-spec hand-rolled markers
+    // that pointed up or down in LOCAL coords have produced HORIZONTAL
+    // arrowheads on vertical lines (the auto-rotation rotates them into
+    // the wrong axis). Use these built-ins instead.
+    var builtInArrows = [
+      ['blue',  '#2563EB'],
+      ['amber', '#D97706'],
+      ['green', '#059669'],
+      ['red',   '#DC2626'],
+      ['slate', '#475569'],
+      ['rose',  '#E11D48'],
+      ['purple','#7C3AED']
+    ].map(function (pair) {
+      return '<marker id="econos-arrow-' + pair[0] + '" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="' + pair[1] + '"/></marker>';
+    }).join('');
+    parts.push('<defs>' + clips + layerCss + perspectiveCss + builtInArrows + (spec.defs || '') + '</defs>');
 
     var bg = spec.background || '#FFFFFF';
-    parts.push('<rect width="' + width + '" height="' + height + '" fill="' + bg + '" rx="12"/>');
+    // y=-16/height=H+16 matches the extended viewBox above so the white
+    // card fill covers the headroom strip too.
+    parts.push('<rect x="0" y="-16" width="' + width + '" height="' + (height + 16) + '" fill="' + bg + '" rx="12"/>');
     parts.push(renderDivider(spec.divider));
     parts.push(renderDividers(spec.dividers));
 

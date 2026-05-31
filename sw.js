@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v182';
+  const CACHE_NAME = 'econos-v183';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -49,7 +49,9 @@
     '/js/charts/specs/sras-lras-intro.js',
     '/js/charts/specs/sras-shift-interactive.js',
     '/js/charts/specs/lras-views-interactive.js',
-    '/js/charts/specs/ad-shift-perspectives.js',
+    '/js/charts/specs/lras-shift-diagram.js',
+    '/js/charts/specs/ad-shift-interactive.js',
+    '/js/charts/specs/sras-right-shift-interactive.js',
   ];
 
   /* ────────────────────────────────────────────────────────────

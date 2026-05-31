@@ -105,7 +105,7 @@ window.ECONOS_TOPIC = {
         {
           key: 'demand-right',
           label: 'Demand increases',
-          text: '<strong>D shifts right (D₁ → D₂)</strong> – a non-price demand factor improves (higher income, changed tastes, substitute\'s price rises). At old P₁, excess demand appears → price rises → Qs extends up S → new equilibrium E₂. Result: <strong>P rises, Q rises</strong>. Both move in the same direction – an unambiguous outcome.'
+          text: '<strong>D shifts right (D₁ → D₂)</strong> – a non-price demand factor improves (higher income, tastes, substitute\'s price). At old P₁, excess demand appears → price rises → new equilibrium E₂. Result: <strong>P rises, Q rises</strong> – an unambiguous outcome.'
         },
         {
           key: 'demand-left',
@@ -115,7 +115,7 @@ window.ECONOS_TOPIC = {
         {
           key: 'supply-right',
           label: 'Supply increases',
-          text: '<strong>S shifts right (S₁ → S₂)</strong> – costs fall, technology improves, more producers enter, or a subsidy is granted. At old P₁, excess supply appears → price falls → Qd extends down D → new equilibrium E₂. Result: <strong>P falls, Q rises</strong>. Opposite price direction to a demand shift – a key exam distinction.'
+          text: '<strong>S shifts right (S₁ → S₂)</strong> – costs fall, technology improves, or a subsidy is granted. At old P₁, excess supply appears → price falls → new equilibrium E₂. Result: <strong>P falls, Q rises</strong>. Opposite price direction to a D shift.'
         },
         {
           key: 'supply-left',

@@ -144,7 +144,16 @@ jobs:
         run: |
           set -euo pipefail
           BASE='https://econos.co.uk'
-          PROBE_PATHS=( '/' '/learn/causes-of-inflation-and-deflation' '/sitemap.xml' '/articles/feed.xml' )
+          # `/learn/<topic>` was the legacy URL format; the live router
+          # is path-based per board/theme. The old smoke probe has been
+          # silently failing the deploy job for weeks even though the
+          # site itself rolled out fine.
+          PROBE_PATHS=(
+            '/'
+            '/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it'
+            '/sitemap.xml'
+            '/articles/feed.xml'
+          )
           for path in "${PROBE_PATHS[@]}"; do
             url="${BASE}${path}"
             code=''

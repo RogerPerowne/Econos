@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Approach B test — anchor-based positioning</title>
+  <style>
+    body { font-family: Inter, -apple-system, sans-serif; padding: 24px; max-width: 1000px; margin: 0 auto; color: #0F172A; background: #fff; }
+    h1 { margin-top: 0; font-size: 22px; }
+    h2 { font-size: 15px; margin: 32px 0 8px; color: #475569; }
+    .chart { max-width: 700px; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; margin-bottom: 8px; }
+    pre { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px 16px; font-size: 12px; overflow-x: auto; max-width: 700px; }
+    .note { color: #64748B; font-size: 13px; max-width: 700px; }
+    .warn { background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 8px 12px; font-size: 12px; margin-top: 8px; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <h1>Approach B test — anchor-based label positioning</h1>
+  <p class="note">A → B → C trajectory plus annotation labels. The spec declares only positions, point IDs, arrow references, curve membership (<code>on:</code>), and annotation anchors (<code>near:</code>). No labelDx/labelDy/anchor anywhere. The engine derives every label position from context.</p>
+
+  <h2>Rendered output</h2>
+  <div class="chart" id="chart"></div>
+
+  <h2>Dev-mode warnings (window.ECONOS_DEV = true)</h2>
+  <div id="warnings"></div>
+
+  <h2>The spec — what's NOT there</h2>
+  <pre id="spec-src"></pre>
+
+  <script>window.ECONOS_DEV = true;</script>
+  <script src="/js/charts/ppf.js"></script>
+  <script>
+    var spec = {
+      width: 440,
+      height: 300,
+      chartArea: { x: 55, y: 30, width: 340, height: 238 },
+      axes: { x: { label: 'Capital' }, y: { label: 'Consumer' } },
+      defs: '<marker id="ab-p" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#7C3AED"/></marker>' +
+            '<marker id="ab-g" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>',
+      curves: [
+        { id: 'ppf', d: 'M 0,0.65 C 0.4,0.65 0.75,0.05 0.75,0', tone: 'blue', label: 'PPF' }
+      ],
+      points: [
+        // Each point: id + (optionally) which curve it's on.
+        { id: 'A', x: 0.175, y: 0.613, on: 'ppf', label: 'A', tone: 'purple' },
+        { id: 'B', x: 0.601, y: 0.251, on: 'ppf', label: 'B', tone: 'purple' },
+        { id: 'C', x: 0.601, y: 0.554,           label: 'C', tone: 'green' }
+      ],
+      arrows: [
+        { from: 'A', to: 'B', tone: 'purple', dashed: '6 3', markerEnd: 'ab-p' },
+        { from: 'B', to: 'C', tone: 'green',  dashed: '5 3', markerEnd: 'ab-g' }
+      ],
+      texts: [
+        // `near:` looks up the point and auto-places this annotation
+        // next to it, using the same side-picker as point labels.
+        { near: 'B', text: 'production',  tone: 'slate', italic: true, fontSize: 12 },
+        { near: 'C', text: 'consumption', tone: 'slate', italic: true, fontSize: 12 }
+      ]
+    };
+
+    document.getElementById('chart').innerHTML = window.ECONOS_PPF.render(spec);
+
+    var w = window.ECONOS_PPF.lastWarnings || [];
+    var warnEl = document.getElementById('warnings');
+    if (w.length === 0) {
+      warnEl.innerHTML = '<div class="note">No label clashes detected ✓</div>';
+    } else {
+      warnEl.innerHTML = w.map(function (m) { return '<div class="warn">' + m + '</div>'; }).join('');
+    }
+
+    document.getElementById('spec-src').textContent = JSON.stringify(spec, function (key, value) {
+      if (key === 'defs') return '<... marker defs ...>';
+      return value;
+    }, 2);
+  </script>
+</body>
+</html>

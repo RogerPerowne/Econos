@@ -69,15 +69,20 @@ test('Learn It shell is accessible', async ({ page }) => {
 test('Link It intro is accessible', async ({ page }) => {
   await login(page);
   await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
+  // Wait for the intro engine to paint its first card — the h1 lives
+  // inside `.intro-card`. Without this, axe runs before the SPA's
+  // boot completes and fails `page-has-heading-one` spuriously.
+  await page.waitForSelector('.intro-card', { state: 'attached', timeout: 10_000 });
   await page.waitForLoadState('networkidle');
-  await page.waitForTimeout(300);
   await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link-it/intro');
 });
 
 test('Land It intro is accessible', async ({ page }) => {
   await login(page);
   await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/intro');
+  // Same wait pattern as the Link It test — `.intro-card` is the
+  // first SPA-rendered element that contains the h1.
+  await page.waitForSelector('.intro-card', { state: 'attached', timeout: 10_000 });
   await page.waitForLoadState('networkidle');
-  await page.waitForTimeout(300);
   await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/intro');
 });

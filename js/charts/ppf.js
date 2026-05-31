@@ -302,6 +302,93 @@
     return segments.length ? segments : null;
   }
 
+  /* Named curve shapes. Compile to an SVG `d` string at render time.
+     Authors can replace raw paths with a named recipe:
+
+       linear      slope-and-point or two-point line. Clipped to the
+                   chart-space [0..1] square so a slope-3 line still
+                   renders cleanly.
+       vertical    vertical line at chart-x = x, optionally cropped
+                   to [from, to] on the y-axis.
+       horizontal  mirror of vertical.
+       keynesianAS the textbook reverse-L: flat horizontal range,
+                   smooth cubic-Bezier bottleneck, asymptotic vertical
+                   at full-capacity output. Parameters: flatY, kneeX,
+                   capacityX, top (default 0.95). Control points are
+                   chosen so the curve is C¹-continuous at both joins
+                   (horizontal tangent at the knee, vertical tangent
+                   at the capacity limit). One recipe, one consistent
+                   shape across every Keynesian AD-AS chart.
+
+     Falls back to null (caller keeps the explicit `d`) if the shape
+     is unrecognised. */
+  function compileShape(shape) {
+    if (!shape || typeof shape !== 'object') return null;
+    var type = shape.type;
+    if (type === 'linear') {
+      // Line through `through: [x, y]` with `slope: m`, extending across
+      // the chart [0..1]. Falls back to two-point form when `from`/`to`
+      // are given instead.
+      if (Array.isArray(shape.from) && Array.isArray(shape.to)) {
+        return 'M ' + shape.from[0] + ',' + shape.from[1] +
+               ' L ' + shape.to[0] + ',' + shape.to[1];
+      }
+      if (Array.isArray(shape.through) && typeof shape.slope === 'number') {
+        var m = shape.slope;
+        var px = shape.through[0], py = shape.through[1];
+        var range = shape.extend || [0, 1];
+        var x1 = range[0], x2 = range[1];
+        var y1 = py + m * (x1 - px);
+        var y2 = py + m * (x2 - px);
+        return 'M ' + x1 + ',' + y1 + ' L ' + x2 + ',' + y2;
+      }
+      return null;
+    }
+    if (type === 'vertical') {
+      var vx = shape.x;
+      var vy1 = shape.from != null ? shape.from : 0;
+      var vy2 = shape.to != null ? shape.to : 0.992;
+      return 'M ' + vx + ',' + vy1 + ' L ' + vx + ',' + vy2;
+    }
+    if (type === 'horizontal') {
+      var hy = shape.y;
+      var hx1 = shape.from != null ? shape.from : 0;
+      var hx2 = shape.to != null ? shape.to : 1;
+      return 'M ' + hx1 + ',' + hy + ' L ' + hx2 + ',' + hy;
+    }
+    if (type === 'keynesianAS') {
+      // Reverse-L shape with three regions:
+      //   1. Flat horizontal at y=flatY from x=0.05 to x=kneeX
+      //   2. Smooth cubic Bezier bottleneck up to (capacityX, top)
+      //   3. Asymptotic vertical — the bezier ends with vertical
+      //      tangent so the curve effectively goes straight up.
+      // C¹-continuous at both joins. Control points derived so the
+      // bottleneck is gentle near the flat and steep near the top
+      // — the textbook "knee" picture.
+      var flatY = shape.flatY != null ? shape.flatY : 0.15;
+      var kneeX = shape.kneeX != null ? shape.kneeX : 0.45;
+      var capX  = shape.capacityX != null ? shape.capacityX : 0.65;
+      var top   = shape.top != null ? shape.top : 0.95;
+      var startX = shape.startX != null ? shape.startX : 0.05;
+      // First control point: extends the horizontal tangent from the
+      // knee a fraction of the way to capX (keeps the flat genuinely
+      // flat for the first portion of the transition).
+      var c1x = kneeX + (capX - kneeX) * 0.535;
+      var c1y = flatY;
+      // Second control point: sits on the vertical line at capX with
+      // a y just above flatY (keeps the curve mostly low until it
+      // shoots up near the cap).
+      var c2x = capX;
+      var c2y = flatY + (top - flatY) * 0.0513;
+      return 'M ' + startX + ',' + flatY +
+             ' L ' + kneeX + ',' + flatY +
+             ' C ' + c1x + ',' + c1y +
+             ' '   + c2x + ',' + c2y +
+             ' '   + capX + ',' + top;
+    }
+    return null;
+  }
+
   /* Find all intersection points between two segments. Returns a list
      of [x, y] tuples (usually 0, 1, or 2 points). Handles:
        - line ∩ line   (closed-form)
@@ -1371,6 +1458,23 @@
     // level (single), plus all views, so labels/arrows can reference
     // points/curves across the whole spec.
     var collectFrom = isMulti ? panels : [spec];
+    // Pre-pass: compile any `shape: { type: 'linear'|'vertical'|
+    // 'horizontal'|'keynesianAS' }` declarations to a raw `d` string.
+    // Lets specs declare textbook shapes by name (one source of truth
+    // for, say, the Keynesian reverse-L) without losing the ability to
+    // hand-author a `d` when needed. Author-supplied `d` always wins.
+    function compileCurveShape(c) {
+      if (c && c.shape && !c.d) {
+        var d = compileShape(c.shape);
+        if (d) c.d = d;
+      }
+    }
+    collectFrom.forEach(function (src) {
+      (src.curves || []).forEach(compileCurveShape);
+      (src.views || []).forEach(function (v) {
+        (v.curves || []).forEach(compileCurveShape);
+      });
+    });
     // First pass: register every curve (path) so the intersection solver
     // can see all curves before any point tries to resolve against them.
     collectFrom.forEach(function (src) {

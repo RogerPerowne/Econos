@@ -61,26 +61,28 @@
     },
 
     curves: [
-      /* ── Shared: AD₁ (always visible) ── */
-      { id: 'AD1', d: 'M 0.050,0.850 L 0.850,0.050',
+      /* ── Shared: AD₁ (always visible) — slope -1 through (Yf, P₁) ── */
+      { id: 'AD1',
+        shape: { type: 'linear', through: [YF, P1_C], slope: -1 },
         tone: 'blue', label: 'AD₁', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end' },
 
       /* ── Shared: AD₂ shifted right by 0.12 (layer 1) ── */
-      { id: 'AD2', d: 'M 0.050,0.970 L 0.950,0.070',
+      { id: 'AD2',
+        shape: { type: 'linear', through: [YF, P2_C], slope: -1 },
         tone: 'blue', label: 'AD₂', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end', layer: 'idl-1' },
 
       /* ── Classical perspective: vertical LRAS at Yf ── */
-      { id: 'LRAS', d: 'M ' + YF + ',0 L ' + YF + ',0.992',
+      { id: 'LRAS',
+        shape: { type: 'vertical', x: YF },
         tone: 'blue', label: 'LRAS', strokeWidth: 2.5,
         labelDx: 0, labelDy: -10, anchor: 'middle',
         perspective: 'classical' },
 
-      /* ── Keynesian perspective: reverse-L AS, low flat range,
-            steep rising section, asymptotic vertical at Yf. ── */
-      { id: 'AS_K', d: 'M 0.050,' + P_FLAT + ' L 0.450,' + P_FLAT +
-            ' C 0.557,' + P_FLAT + ' ' + YF + ',0.191 ' + YF + ',0.950',
+      /* ── Keynesian perspective: textbook reverse-L AS ── */
+      { id: 'AS_K',
+        shape: { type: 'keynesianAS', flatY: P_FLAT, kneeX: 0.45, capacityX: YF, top: 0.95 },
         tone: 'amber', label: 'AS', strokeWidth: 2.5,
         labelDx: 0, labelDy: -10, anchor: 'middle',
         perspective: 'keynesian' }

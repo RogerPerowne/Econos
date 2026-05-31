@@ -581,6 +581,71 @@
     return '<polygon points="' + pts + '" fill="' + fill + '" opacity="' + opacity + '"/>';
   }
 
+  /* Universal label-vs-other-points repulsion.
+
+     Given a point's INITIAL label position (computed by spec or smart
+     placement), check whether the resulting label box overlaps any
+     OTHER visible dot in the same layer. If it does, sweep through the
+     four diagonal quadrants (upper-right, upper-left, lower-right,
+     lower-left) and return the first clean one. The initial position
+     stays preferred when it's already clean — spec-author intent wins.
+
+     Layer-aware: two points in mutually-exclusive state layers
+     (e.g. layer-shortage vs layer-surplus) never push each other,
+     because they're never on screen at the same time. */
+  function autoRepelLabel(pt, ctx, scale, r, cx, cy, initDx, initDy, initAnchor) {
+    var fallback = { dx: initDx, dy: initDy, anchor: initAnchor };
+    if (!pt.label || !ctx || !ctx.allPoints || ctx.allPoints.length < 2) return fallback;
+
+    var size = clampSize(13);
+    var lblW = 0.58 * size * (pt.label.length || 1);
+    var lblH = 1.15 * size;
+
+    // Filter to OTHER visible points in the same layer (or no layer = always-visible).
+    var others = [];
+    for (var i = 0; i < ctx.allPoints.length; i++) {
+      var op = ctx.allPoints[i];
+      if (op.x === pt.x && op.y === pt.y) continue;
+      if (pt.layer && op.layer && pt.layer !== op.layer) continue;
+      others.push({ px: scale.sx(op.x), py: scale.sy(op.y), r: op.r || 7 });
+    }
+    if (!others.length) return fallback;
+
+    var off = Math.max(8, r + 4);
+    var candidates = [
+      { dx: initDx,  dy: initDy,  anchor: initAnchor }, // try spec position first
+      { dx:  off, dy: -off,    anchor: 'start' },
+      { dx: -off, dy: -off,    anchor: 'end' },
+      { dx:  off, dy:  off+4,  anchor: 'start' },
+      { dx: -off, dy:  off+4,  anchor: 'end' }
+    ];
+
+    function labelBox(c) {
+      var x = c.anchor === 'end' ? cx + c.dx - lblW
+            : c.anchor === 'middle' ? cx + c.dx - lblW / 2
+            : cx + c.dx;
+      var y = cy + c.dy - lblH / 2;
+      return { x: x, y: y, w: lblW, h: lblH };
+    }
+    function clashes(c) {
+      var b = labelBox(c);
+      for (var j = 0; j < others.length; j++) {
+        var o = others[j];
+        var clx = Math.max(b.x, Math.min(o.px, b.x + b.w));
+        var cly = Math.max(b.y, Math.min(o.py, b.y + b.h));
+        var dx = o.px - clx, dy = o.py - cly;
+        var pad = o.r + 6;  // dot radius + 6px clearance
+        if (dx * dx + dy * dy < pad * pad) return true;
+      }
+      return false;
+    }
+
+    for (var k = 0; k < candidates.length; k++) {
+      if (!clashes(candidates[k])) return candidates[k];
+    }
+    return fallback;  // every quadrant clashes — give up gracefully
+  }
+
   function renderPoint(pt, scale, ctx, area) {
     var t = tone(pt.tone);
     var cx = scale.sx(pt.x);
@@ -599,10 +664,18 @@
       var hasGridlines = !!pt.gridlines;
       auto = { dx: r + 3, dy: hasGridlines ? -9 : 0, anchor: 'start' };
     }
-    var lblX = cx + (pt.labelDx != null ? pt.labelDx : auto.dx);
-    var lblY = cy + (pt.labelDy != null ? pt.labelDy : auto.dy);
-    // Anchor: explicit override OR derived from smart placement OR default 'start'.
-    var anchor = pt.anchor || auto.anchor || 'start';
+    var initDx = pt.labelDx != null ? pt.labelDx : auto.dx;
+    var initDy = pt.labelDy != null ? pt.labelDy : auto.dy;
+    var initAnchor = pt.anchor || auto.anchor || 'start';
+
+    // Auto label repulsion — pick the (dx, dy, anchor) that puts the
+    // label box clear of every OTHER point's dot in the same layer.
+    // The initial position (from spec or smart placement) is preferred;
+    // only override if it overlaps a neighbouring dot.
+    var picked = autoRepelLabel(pt, ctx, scale, r, cx, cy, initDx, initDy, initAnchor);
+    var lblX = cx + picked.dx;
+    var lblY = cy + picked.dy;
+    var anchor = picked.anchor;
     var symbolHtml = pt.symbol ? '<text x="' + cx + '" y="' + (cy + 1) + '" font-size="' + Math.round(r * 1.4) + '" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="middle">' + pt.symbol + '</text>' : '';
     var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
     var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
@@ -888,7 +961,7 @@
     //   - pointRegistry:  point id → { x, y } in chart space
     //   - arrows:         every arrow with from/to references (for label
     //                     placement and for resolving from/to → coords)
-    var ctx = { curveRegistry: {}, pointRegistry: {}, arrows: [], placedBoxes: [], devWarnings: [] };
+    var ctx = { curveRegistry: {}, pointRegistry: {}, allPoints: [], arrows: [], placedBoxes: [], devWarnings: [] };
 
     function registerCurve(c) {
       if (c && c.id) {
@@ -898,6 +971,12 @@
     }
     function registerPoint(p) {
       if (p && p.id) ctx.pointRegistry[p.id] = { x: p.x, y: p.y, on: p.on };
+      // Also track every point's position + layer for automatic label
+      // repulsion in renderPoint. Layer-aware so points in mutually-
+      // exclusive state layers don't push each other around.
+      if (p && p.x != null && p.y != null) {
+        ctx.allPoints.push({ x: p.x, y: p.y, layer: p.layer, r: p.radius || 7 });
+      }
     }
     function registerArrows(arrows) {
       (arrows || []).forEach(function (a) { if (a.from || a.to) ctx.arrows.push(a); });

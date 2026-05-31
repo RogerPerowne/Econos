@@ -20,10 +20,16 @@
      - LABEL_INK: all text fills default to near-black. Tones with a 'gray'
        semantic still drive STROKES (dots, lines, dashes) but never label
        text — labels are always readable, never muted to gray.
-     - ARROW_BUFFER: every arrow (line or path) has its start + end pulled
-       inward by ARROW_BUFFER pixels along the tangent at each end, so the
-       arrow visually clears its source/destination points and adjacent
-       curves. Specs can override per-arrow with `arrow.buffer`.
+     - ARROW_BUFFER (14px): every arrow (line or path) has its start + end
+       pulled inward by ARROW_BUFFER pixels along the tangent at each end.
+       Sized to clear a typical point's radius (6–9px) plus the arrowhead
+       so arrowheads don't land inside their target dot. Specs can override
+       per-arrow with `arrow.buffer`.
+     - Point-label auto-offset for gridlined points: when `pt.gridlines`
+       is set, the label is auto-positioned upper-right of the dot (Δy=-9)
+       instead of straight right, so the horizontal dashed gridline running
+       through the dot's row doesn't slice the label text. Override per
+       point with `pt.labelDx` / `pt.labelDy`.
      - Axis-adjacent text labels live OUTSIDE the chart area, not inside.
        Specs place them at x<0 (left of Y-axis), x>1 (right of plot), or
        y<0 (below X-axis). The engine auto-aligns text-anchor based on x
@@ -45,7 +51,10 @@
 
   var MIN_LABEL_SIZE = 12;
   var LABEL_INK = '#0F172A';
-  var ARROW_BUFFER = 8;
+  // ARROW_BUFFER bumped from 8 → 14 so the arrowhead clears a typical
+  // point's radius (6–9px) with visible breathing room — no more
+  // arrowheads landing inside the target dot.
+  var ARROW_BUFFER = 14;
 
   function clampSize(s) { return Math.max(MIN_LABEL_SIZE, s || MIN_LABEL_SIZE); }
 
@@ -369,19 +378,40 @@
     var cx = scale.sx(pt.x);
     var cy = scale.sy(pt.y);
     var r = pt.radius || 7;
-    var lblX = cx + r + 3;
-    var lblY = cy;
+    // Default label position: to the right of the dot.
+    // If the point has gridlines (dashed projection lines from the dot
+    // out to both axes), shift the label UP by ~9px so the horizontal
+    // gridline doesn't slice through the label's text. Specs can
+    // override with pt.labelDx / pt.labelDy.
+    var hasGridlines = !!pt.gridlines;
+    var defaultDx = r + 3;
+    var defaultDy = hasGridlines ? -9 : 0;
+    var lblX = cx + (pt.labelDx != null ? pt.labelDx : defaultDx);
+    var lblY = cy + (pt.labelDy != null ? pt.labelDy : defaultDy);
+    // Default text-anchor: 'start' (label sits to the RIGHT of its x).
+    // Specs can override with pt.anchor ('end' = label sits to the LEFT;
+    // 'middle' = centred). Useful when an arrow approaches the point from
+    // the right and the label needs to go on the left side of the dot.
+    var anchor = pt.anchor || 'start';
     var symbolHtml = pt.symbol ? '<text x="' + cx + '" y="' + (cy + 1) + '" font-size="' + Math.round(r * 1.4) + '" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="middle">' + pt.symbol + '</text>' : '';
-    var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
-    var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
+    var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
+    var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
     return '<g class="chart-point"><circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="' + t.stroke + '"/>' + symbolHtml + labelHtml + descHtml + '</g>';
   }
 
   /* Boxed annotation label — rounded rect with one or more lines of
      centred text inside. Position is the TOP-LEFT corner in chart space;
      dimensions are also chart-space (engine scales to pixels). Optionally
-     draws a dashed connector line from the box's bottom-left to a target
-     point in chart space. */
+     draws a dashed connector line from the nearest box edge to a target
+     point in chart space.
+
+     Lines can be plain strings (use the box's default tone) or per-line
+     style objects `{ text, tone, bold }` for callouts that need mixed
+     colours.
+
+     The box renders a solid WHITE base under the tinted overlay so the
+     callout cleanly covers any curve/dot that happens to sit beneath
+     it — labels never have the chart bleeding through them. */
   function renderBoxedLabel(b, scale, area) {
     var t = tone(b.tone || 'amber');
     var x = scale.sx(b.x);
@@ -394,7 +424,13 @@
     var lineH = h / Math.max(1, lines.length);
     var textParts = lines.map(function (line, i) {
       var ly = yTop + lineH * (i + 0.5) + 4;
-      return '<text x="' + (x + w / 2) + '" y="' + ly + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + line + '</text>';
+      var isObj = line && typeof line === 'object';
+      var lineText = isObj ? line.text : line;
+      var lineTone = isObj && line.tone ? tone(line.tone).label : t.label;
+      var lineWeight = isObj && line.bold === false ? '600' : '700';
+      var align = isObj && line.align ? line.align : 'middle';
+      var tx = align === 'start' ? (x + 8) : align === 'end' ? (x + w - 8) : (x + w / 2);
+      return '<text x="' + tx + '" y="' + ly + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="' + lineWeight + '" fill="' + lineTone + '" text-anchor="' + align + '">' + lineText + '</text>';
     }).join('');
     var connector = '';
     if (b.connectorTo) {
@@ -419,8 +455,12 @@
       }
       connector = '<line x1="' + sX + '" y1="' + sY + '" x2="' + cx2 + '" y2="' + cy2 + '" stroke="' + t.stroke + '" stroke-width="1.2" stroke-dasharray="4 3"/>';
     }
+    // Two-rect stack: solid white base + tinted overlay. The white base
+    // ensures the callout reliably covers any chart content beneath it.
+    var rectAttrs = 'x="' + x + '" y="' + yTop + '" width="' + w + '" height="' + h + '" rx="5"';
     return connector +
-           '<rect x="' + x + '" y="' + yTop + '" width="' + w + '" height="' + h + '" rx="5" fill="' + fillTone + '" stroke="' + strokeTone + '"/>' +
+           '<rect ' + rectAttrs + ' fill="#FFFFFF"/>' +
+           '<rect ' + rectAttrs + ' fill="' + fillTone + '" stroke="' + strokeTone + '"/>' +
            textParts;
   }
 

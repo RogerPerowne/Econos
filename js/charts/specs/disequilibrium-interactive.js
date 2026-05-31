@@ -61,15 +61,18 @@
         x1: E.x, y1: E.y, x2: E.x, y2: 0,
         tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
 
-      /* ---- shortage: P₁ horizontal blue + vertical dashes to Q-axis + UP price arrow ---- */
+      /* ---- shortage: P₁ horizontal blue + vertical droplines to Q-axis + UP price arrow ---- */
+      // Vertical droplines start BELOW each Qs/Qd dot (not at the dot)
+      // so the dropline + horizontal P₁ line don't form a 90° L-corner
+      // at the dot.
       { layer: 'layer-shortage',
         x1: 0, y1: P1_y, x2: Qd_short, y2: P1_y,
         tone: 'blue', strokeWidth: 2, dashed: '6 4', buffer: 0 },
       { layer: 'layer-shortage',
-        x1: Qs_short, y1: P1_y, x2: Qs_short, y2: 0,
+        x1: Qs_short, y1: P1_y - 0.040, x2: Qs_short, y2: 0,
         tone: 'slate', strokeWidth: 1.2, dashed: '4 4', buffer: 0 },
       { layer: 'layer-shortage',
-        x1: Qd_short, y1: P1_y, x2: Qd_short, y2: 0,
+        x1: Qd_short, y1: P1_y - 0.040, x2: Qd_short, y2: 0,
         tone: 'slate', strokeWidth: 1.2, dashed: '4 4', buffer: 0 },
       // Price-direction arrow on the LEFT side of P-axis (outside chart)
       // pointing UP to signal price rising back toward Pₑ
@@ -77,15 +80,15 @@
         x1: -0.048, y1: 0.266, x2: -0.048, y2: 0.426,
         tone: 'blue', strokeWidth: 2.5, markerEnd: 'dq-up', buffer: 0 },
 
-      /* ---- surplus: P₂ horizontal amber + vertical dashes + DOWN price arrow ---- */
+      /* ---- surplus: P₂ horizontal amber + vertical droplines + DOWN price arrow ---- */
       { layer: 'layer-surplus',
         x1: 0, y1: P2_y, x2: Qs_surp, y2: P2_y,
         tone: 'amber', strokeWidth: 2, dashed: '6 4', buffer: 0 },
       { layer: 'layer-surplus',
-        x1: Qd_surp, y1: P2_y, x2: Qd_surp, y2: 0,
+        x1: Qd_surp, y1: P2_y - 0.040, x2: Qd_surp, y2: 0,
         tone: 'slate', strokeWidth: 1.2, dashed: '4 4', buffer: 0 },
       { layer: 'layer-surplus',
-        x1: Qs_surp, y1: P2_y, x2: Qs_surp, y2: 0,
+        x1: Qs_surp, y1: P2_y - 0.040, x2: Qs_surp, y2: 0,
         tone: 'slate', strokeWidth: 1.2, dashed: '4 4', buffer: 0 },
       // DOWN arrow on left to signal price falling back toward Pₑ
       { layer: 'layer-surplus',

@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v155';
+  const CACHE_NAME = 'econos-v156';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -39,6 +39,7 @@
     '/js/charts/specs/price-ceiling-diagram.js',
     '/js/charts/specs/price-floor-diagram.js',
     '/js/charts/specs/neg-externality-interactive.js',
+    '/js/charts/specs/pos-externality-interactive.js',
   ];
 
   /* ────────────────────────────────────────────────────────────

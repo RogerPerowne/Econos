@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.35.0 — 2026-05-31
+
+### One consistent responsive mechanism (CSS container queries)
+
+A consistency pass over the whole block system: every block now reflows on its
+**own** width via a single mechanism, and two duplicate blocks were folded into
+their canonical successors. No new features — the system just behaves the same
+way everywhere now.
+
+- **Container queries everywhere.** `.econ-block` is now a query container
+  (`container-type: inline-size; container-name: econblock`), and all 14
+  remaining width-based viewport `@media` rules across
+  `css/blocks/{compare,flow,structure,data,econ-diagram}.css` were converted to
+  `@container econblock (max-width: 520px)`. A block in a narrow grid cell now
+  reflows exactly like one on a phone — no more "looks fine on mobile, breaks in
+  a half-width column." Zero width-based `@media` remain (only `@media (hover)`).
+- **`satelliteDiagram` → `hubSpoke`.** `satelliteDiagram` is now a thin
+  deprecated alias that maps its `centre`/`satellites` schema onto the
+  container-query-native `hubSpoke` graphic. Old bespoke CSS removed.
+- **`decisionMatrix` → `richTable`.** Likewise folded into `richTable`, so it
+  inherits the responsive stack-as-labelled-cards mobile treatment for free.
+- Both aliases keep their original authoring schema (existing cards render
+  unchanged); `_schema.js` marks them deprecated. `CACHE_NAME` → `econos-v144`.
+
 ## 0.34.0 — 2026-05-31
 
 ### Structural-graphics catalogue + the dataChart system

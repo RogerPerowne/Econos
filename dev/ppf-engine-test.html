@@ -3,66 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PPF engine — v1 test</title>
+  <title>PPF engine — v2 test (all 4 views)</title>
+  <link rel="stylesheet" href="/styles.css">
   <style>
-    body { font-family: Inter, -apple-system, sans-serif; padding: 24px; max-width: 1100px; margin: 0 auto; color: #0F172A; }
+    body { font-family: Inter, -apple-system, sans-serif; padding: 24px; max-width: 1000px; margin: 0 auto; color: #0F172A; background: #fff; }
     h1 { margin-top: 0; font-size: 22px; }
-    h2 { font-size: 16px; margin-top: 32px; color: #475569; }
-    .chart { max-width: 900px; margin-top: 12px; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; }
+    h2 { font-size: 15px; margin: 32px 0 8px; color: #475569; font-weight: 700; }
+    .chart { max-width: 900px; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; margin-bottom: 8px; }
     p.note { color: #64748B; font-size: 13px; max-width: 720px; }
   </style>
 </head>
 <body>
-  <h1>PPF chart engine — v1 test</h1>
-  <p class="note">Dev-only visual verification of <code>window.ECONOS_PPF.render()</code>. Reproduces the Construction-step view of <code>ppfInteractive</code> declaratively.</p>
+  <h1>PPF engine — v2 test (all 4 views)</h1>
+  <p class="note">Each block below renders the same SVG with a different <code>show-X</code> wrapper, exercising the legacy opacity rules in styles.css that toggle layers per active step. If all four look right, the engine is a faithful drop-in for <code>ppfInteractive</code>.</p>
 
-  <h2>Card 1, Construction step — full base view (chart + legend)</h2>
-  <div class="chart" id="chart"></div>
+  <h2>1. show-base — Construction</h2>
+  <div class="show-base"><div class="chart" id="chart-base"></div></div>
+
+  <h2>2. show-extension — Opportunity cost</h2>
+  <div class="show-extension"><div class="chart" id="chart-extension"></div></div>
+
+  <h2>3. show-shift — Shifts</h2>
+  <div class="show-shift"><div class="chart" id="chart-shift"></div></div>
+
+  <h2>4. show-efficiency — Efficiency (matches CSS rule; live data file uses key 'types-of-efficiency' which has a pre-existing CSS mismatch)</h2>
+  <div class="show-efficiency"><div class="chart" id="chart-efficiency"></div></div>
 
   <script src="/js/charts/ppf.js"></script>
+  <script src="/js/charts/specs/ppf-card1.js"></script>
   <script>
-    document.getElementById('chart').innerHTML = window.ECONOS_PPF.render({
-      width: 900,
-      height: 440,
-      chartArea: { x: 60, y: 50, width: 500, height: 350 },
-      divider: { x: 595, y1: 16, y2: 424 },
-      axes: {
-        x: { label: 'Capital Goods' },
-        y: { label: 'Consumer Goods' }
-      },
-      curves: [
-        { id: 'ppf1', d: 'M 0,0.65 C 0.36,0.65 0.65,0.23 0.65,0', tone: 'blue', label: 'PPF₁' }
-      ],
-      points: [
-        { x: 0.46, y: 0.41, tone: 'blue',  label: 'A', desc: '– Efficient (on PPF)' },
-        { x: 0.24, y: 0.26, tone: 'amber', label: 'B', desc: '– Inefficient (inside)' },
-        { x: 0.67, y: 0.57, tone: 'rose',  label: 'C', desc: '– Unattainable' }
-      ],
-      zones: [
-        { x: 0.08, y: 0.09, text: 'Inefficient zone',  tone: 'amber' },
-        { x: 0.74, y: 0.70, text: 'Unattainable zone', tone: 'rose' }
-      ],
-      legend: {
-        x: 600,
-        title: { tone: 'blue', text: 'Frontier = maximum output · three zones' },
-        sections: [
-          {
-            header: { text: 'THREE ZONES', tone: 'blue' },
-            rows: [
-              { tone: 'blue',  text: 'On the PPF · Productively efficient' },
-              { tone: 'amber', text: 'Inside · Inefficient, wasted resources' },
-              { tone: 'rose',  text: 'Outside · Unattainable now' }
-            ]
-          },
-          {
-            header: { text: 'WHY IT SLOPES DOWN', tone: 'blue' },
-            body: [
-              'More of one good always means',
-              'less of the other – scarcity.'
-            ]
-          }
-        ]
-      }
+    var svg = window.ECONOS_PPF.render(window.ECONOS_PPF_CARD1_SPEC);
+    ['base', 'extension', 'shift', 'efficiency'].forEach(function (k) {
+      document.getElementById('chart-' + k).innerHTML = svg;
     });
   </script>
 </body>

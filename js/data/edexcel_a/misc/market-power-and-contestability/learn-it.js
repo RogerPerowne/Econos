@@ -95,55 +95,97 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'mvc_3',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Contestability Theory (Baumol 1982)',
       lede: 'A market is contestable if entry and exit are costless. Then even a single firm must price near competitive level – the threat of entry disciplines it.',
-      diagramKey: 'contestabilityFrames',
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '🚪', label: 'How the entry threat disciplines a single firm' },
         {
-          key: 'base',
-          label: 'Pure monopoly (no entry threat)',
-          text: 'With <strong>high sunk costs and entry barriers</strong>, the monopolist faces no entry threat. It charges the textbook profit-max P_m well above MC. Supernormal profit persists indefinitely. This is the static monopoly outcome from card 2.'
+          type: 'econDiagram',
+          chart: 'marketStructure',
+          views: [
+            {
+              label: 'Pure monopoly (no entry threat)',
+              show: ['AR', 'MR', 'MC', 'ATC'],
+              points: ['profitMaxQ', { label: 'Pₘ', tone: 'rose', onCurve: 'AR', x: 280 }],
+              areas: [
+                { between: ['AR', 'ATC'], x: [80, 280], tone: 'rose', label: 'Large supernormal profit' }
+              ],
+              head: 'No entry threat – the full markup',
+              body: 'With high sunk costs and entry barriers the monopolist faces no entry threat. It sets the profit-max output at MR = MC (Qₘ) and reads price Pₘ up to AR, well above ATC.',
+              analysis: 'With high sunk costs and entry barriers, the monopolist faces no entry threat. It charges the textbook profit-max Pₘ well above MC. Supernormal profit (Pₘ − ATC) × Qₘ persists indefinitely. This is the static monopoly outcome from card 2.'
+            },
+            {
+              label: 'Contestable monopoly (entry threat)',
+              show: ['AR', 'MR', 'MC', 'ATC'],
+              points: [{ label: 'P', tone: 'amber', onCurve: 'AR', x: 380 }],
+              areas: [
+                { between: ['AR', 'ATC'], x: [80, 380], tone: 'amber', label: 'Reduced profit' }
+              ],
+              head: 'Hit-and-run threat shrinks the markup',
+              body: 'A profit-making monopoly attracts hit-and-run entrants. To deter them the incumbent prices nearer AC: output expands and the price P drops toward the ATC curve, so the profit area shrinks.',
+              analysis: 'If sunk costs are low and entry is easy, a profit-making monopoly attracts hit-and-run entrants – enter, undercut, profit, exit before retaliation. To deter this, the incumbent prices near AC, sacrificing supernormal profit. One firm, near-competitive outcome.'
+            },
+            {
+              label: 'Perfectly contestable',
+              show: ['AR', 'MR', 'MC', 'ATC'],
+              points: [{ label: 'P=AC', tone: 'green', on: ['AR', 'ATC'] }],
+              head: 'Price driven to AC – zero supernormal profit',
+              body: 'In the limit the price is driven all the way to where AR meets ATC: P = AC, no supernormal profit. Any markup above this invites instant entry.',
+              analysis: 'In the limit of zero sunk costs and free entry/exit, the monopolist must price at AC – any markup invites instant entry. Allocative efficiency is approximated. Airline routes (mobile aircraft, low route-specific sunk costs) are the canonical example. Structure: one firm. Outcome: competitive.'
+            }
+          ]
         },
-        {
-          key: 'extension',
-          label: 'Contestable monopoly (entry threat)',
-          text: 'If <strong>sunk costs are low</strong> and entry is easy, a profit-making monopoly attracts <strong>hit-and-run entrants</strong> – enter, undercut, profit, exit before retaliation. To deter this, the incumbent <strong>prices near AC</strong>, sacrificing supernormal profit. <strong>One firm, near-competitive outcome.</strong>'
-        },
-        {
-          key: 'shift',
-          label: 'Perfectly contestable',
-          text: 'In the limit of <strong>zero sunk costs and free entry/exit</strong>, the monopolist must price at AC – any markup invites instant entry. Allocative efficiency is approximated. Airline routes (mobile aircraft, low route-specific sunk costs) are the canonical example. <strong>Structure: one firm. Outcome: competitive.</strong>'
-        }
-      ],
-      examEdge: 'The key contestability condition is <strong>sunk costs near zero</strong>, NOT zero capital costs. Capital can be high if recoverable on exit (aircraft, leased buildings). Capital is unrecoverable for railway track, pipelines, specialised plant. For evaluation: "Although X is a monopolist, the market is contestable because aircraft can be redeployed to other routes, so prices are disciplined by the threat of entry rather than by the number of competitors."'
+        { type: 'examEdge', title: 'Exam edge', text: 'The key contestability condition is sunk costs near zero, NOT zero capital costs. Capital can be high if recoverable on exit (aircraft, leased buildings). Capital is unrecoverable for railway track, pipelines, specialised plant. For evaluation: "Although X is a monopolist, the market is contestable because aircraft can be redeployed to other routes, so prices are disciplined by the threat of entry rather than by the number of competitors."' }
+      ]
     },
     {
       id: 'mvc_4',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'The Welfare Cost of Unchecked Market Power',
       lede: 'Market-level diagram: industry demand vs industry supply for PC, vs monopolist\'s MR=MC for monopoly. The DWL triangle is the welfare cost when contestability fails.',
-      diagramKey: 'marketLevelWelfare',
-      steps: [
+      blocks: [
+        { type: 'sectionHeader', icon: '📉', label: 'Decomposing the static welfare cost' },
         {
-          key: 'base',
-          label: 'PC industry equilibrium',
-          text: 'At the <strong>market level</strong>, industry supply (S = ΣMC of price-taking firms above AVC) meets market demand at the competitive equilibrium (Q_c, P_c). Consumer surplus is maximised (the blue triangle). P = MC at the margin → no deadweight loss.'
+          type: 'econDiagram',
+          chart: 'monopolyWelfare',
+          views: [
+            {
+              label: 'PC industry equilibrium',
+              show: ['D', 'MC', 'PcLine'],
+              points: ['Ec'],
+              areas: [
+                { between: ['D', 'PcLine'], x: [80, 400], tone: 'blue', label: 'Consumer surplus' }
+              ],
+              head: 'Competition maximises consumer surplus',
+              body: 'Industry supply S = ΣMC meets market demand D at the competitive equilibrium Ec = (Qₑ, Pₑ). P = MC at the margin, so there is no deadweight loss and consumer surplus is at its maximum.',
+              analysis: 'At the market level, industry supply (S = ΣMC of price-taking firms above AVC) meets market demand at the competitive equilibrium (Qₑ, Pₑ). Consumer surplus is maximised (the blue triangle). P = MC at the margin → no deadweight loss.'
+            },
+            {
+              label: 'Monopoly takeover',
+              show: ['D', 'MR', 'MC'],
+              points: ['Qm', 'Pm', 'Ec'],
+              head: 'One firm restricts output and raises price',
+              body: 'A monopolist inherits the same cost stack (so MC = the old S curve) and faces market D as its own AR, with MR below. Profit-max at MR = MC gives Qₘ < Qₑ; price Pₘ is read up to D, above Pₑ.',
+              analysis: 'A monopolist takes over the same industry, inheriting the cost structure (so MC = the old S curve). It now faces market D as its own AR with MR below. Profit-max at MR = MC gives Qₘ < Qₑ. Read up to D for price Pₘ > Pₑ. Output restricted; price raised.'
+            },
+            {
+              label: 'Welfare decomposition',
+              show: ['D', 'MR', 'MC', 'PmLine', 'PcLine'],
+              points: ['Pm', 'Qm', 'Ec'],
+              areas: [
+                { between: ['D', 'PmLine'], x: [80, 267.3], tone: 'blue', label: 'Remaining CS' },
+                { between: ['PmLine', 'PcLine'], x: [80, 267.3], tone: 'amber', label: 'Transfer to monopolist' },
+                { between: ['D', 'MC'], x: [267.3, 400], tone: 'rose', label: 'Deadweight loss', hatch: true }
+              ],
+              head: 'Three areas versus the competitive baseline',
+              body: 'Blue: the remaining (smaller) consumer surplus. Amber: the transfer from consumers to the monopolist (former CS now PS). Rose triangle: the deadweight loss between D and MC over [Qₘ, Qₑ].',
+              analysis: 'Three areas vs the competitive baseline. Blue: remaining consumer surplus (smaller). Amber: transfer from consumers to monopolist (former CS now PS). Rose triangle: deadweight loss – value destroyed because units consumers value above MC go unproduced. This is the static welfare cost when contestability fails.'
+            }
+          ]
         },
-        {
-          key: 'extension',
-          label: 'Monopoly takeover',
-          text: 'A monopolist takes over the same industry, inheriting the cost structure (so MC = the old S curve). It now faces market D as its own AR with MR below. Profit-max at <strong>MR = MC</strong> gives Q_m &lt; Q_c. Read up to D for price <strong>P_m &gt; P_c</strong>. Output restricted; price raised.'
-        },
-        {
-          key: 'shift',
-          label: 'Welfare decomposition',
-          text: 'Three areas vs the competitive baseline. <strong>Blue</strong>: remaining consumer surplus (smaller). <strong>Amber</strong>: transfer from consumers to monopolist (former CS now PS). <strong>Red triangle</strong>: deadweight loss – value destroyed because units consumers value above MC go unproduced. <strong>This is the static welfare cost when contestability fails.</strong>'
-        }
-      ],
-      examEdge: 'DWL size depends on demand elasticity at the monopoly point. Inelastic demand → small Q reduction → small DWL triangle. Elastic demand → large Q reduction → large DWL. Competition policy intervention is most justified where DWL is large relative to the market size. Note: this diagram assumes contestability has failed – a contestable monopoly would price near competitive levels and the DWL would shrink towards zero.'
+        { type: 'examEdge', title: 'Exam edge', text: 'DWL size depends on demand elasticity at the monopoly point. Inelastic demand → small Q reduction → small DWL triangle. Elastic demand → large Q reduction → large DWL. Competition policy intervention is most justified where DWL is large relative to the market size. Note: this diagram assumes contestability has failed – a contestable monopoly would price near competitive levels and the DWL would shrink towards zero.' }
+      ]
     },
     {
       id: 'mvc_5',

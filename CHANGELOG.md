@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.39.1 — 2026-05-31
+
+### Migrate the cards the new families unblocked
+
+With the seven new families in place, the previously-blocked curve charts
+migrated to econDiagram:
+
+- **aggregate-supply** — "The LRAS curve" → `keynesianAS` (Classical vertical
+  LRAS vs Keynesian reverse-L, 2 views).
+- **investment** — `mecDiagram` → `mec` (base; rate-cut movement along MEC;
+  confidence/tech MEC shift).
+- **price-discrimination** — `firstDegreePd` → `priceDiscrimination` (single-price
+  monopoly + first-degree capture); `thirdDegreePd` → a grid of two sub-markets
+  (inelastic vs elastic) sharing MC.
+- **unstable-commodity-markets** — `cobweb` / `cobwebDivergent` staircases
+  (convergent spirals in, divergent spirals out).
+- **market-power-and-contestability** — `monopolyWelfare` (competition vs
+  monopoly + DWL) and the markup view.
+- **indirect-taxes-and-subsidies** — incidence-by-elasticity → `elasticityRegimes`.
+
+All screenshot-verified; validator green (52 blocks / 23 files). Data-only — no
+cache bump.
+
 ## 0.39.0 — 2026-05-31
 
 ### Seven new econDiagram chart families (close the migration capability gaps)

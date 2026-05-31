@@ -56,7 +56,34 @@ window.ECONOS_TOPIC = {
         { term: 'Personalised pricing', def: 'Digital economy version of first-degree discrimination – using data and algorithms to set individual prices.' }
       ],
       blocks: [
-        { type: 'diagram', svgKey: 'firstDegreePd' },
+        {
+          type: 'econDiagram',
+          chart: 'priceDiscrimination',
+          views: [
+            {
+              label: 'Single-price monopoly',
+              show: ['AR', 'MR', 'MC', 'PmLine'],
+              points: ['profitMaxQ', 'priceOnAR'],
+              areas: [
+                { between: ['AR', 'PmLine'], x: [80, 300], tone: 'blue', label: 'CS' }
+              ],
+              head: 'Single price leaves surplus on the table',
+              body: 'A standard monopolist sets one price where MR = MC, giving Qm and price Pm read up to AR.',
+              analysis: 'Consumers below the AR curve but above Pm keep consumer surplus (the blue triangle). Consumers willing to pay less than Pm but more than MC are not served at all, so mutually beneficial trades are lost. The single price captures only part of the available surplus.'
+            },
+            {
+              label: 'First-degree capture',
+              show: ['AR', 'MC'],
+              points: ['compQ'],
+              areas: [
+                { between: ['AR', 'MC'], x: [80, 600], tone: 'green', label: 'Captured' }
+              ],
+              head: 'Charging each consumer their reservation price',
+              body: 'Under perfect discrimination the firm charges every consumer their maximum willingness to pay, so output extends to Qc where AR = MC.',
+              analysis: 'The whole wedge between AR and MC over [0, Qc] is now captured by the producer as surplus. Consumer surplus is zero, but output is allocatively efficient (the last unit is priced at MC, so no deadweight loss remains). Efficiency improves while the entire gain accrues to the firm.'
+            }
+          ]
+        },
         { type: 'examEdge', title: 'Exam edge', text: 'First-degree discrimination is "allocatively efficient" in the sense that there is no deadweight loss – all mutually beneficial trades occur. But "efficient" here does not mean "good for consumers." All surplus goes to the producer – it is the maximum possible wealth transfer from consumers to producers. This is a crucial distinction: efficiency and equity are completely different criteria.' }
       ]
     },
@@ -85,7 +112,46 @@ window.ECONOS_TOPIC = {
         { term: 'Elasticity-based pricing', def: 'Lower PED group → higher price; higher PED group → lower price. The firm extracts more surplus from less elastic demand.' }
       ],
       blocks: [
-        { type: 'diagram', svgKey: 'thirdDegreePd' },
+        {
+          type: 'grid',
+          cols: 2,
+          children: [
+            {
+              type: 'econDiagram',
+              chart: 'priceDiscrimination',
+              views: [
+                {
+                  label: 'Inelastic market',
+                  show: ['AR_inelastic', 'MR_inelastic', 'MC', 'PiLine'],
+                  points: ['inelQ', 'inelP'],
+                  areas: [
+                    { between: ['PiLine', 'MC'], x: [80, 200], tone: 'green', label: 'Revenue' }
+                  ],
+                  head: 'Inelastic group: higher price, lower quantity',
+                  body: 'Steep AR (less price-sensitive). Profit-max where MRᵢ = MC gives quantity Qᵢ and the high price Pᵢ.',
+                  analysis: 'Because demand is inelastic, the firm extracts more surplus by charging a high price Pᵢ to a smaller quantity Qᵢ. The shaded rectangle is the revenue raised from this segment. Business rail travellers and patented drugs in rich markets are typical inelastic groups.'
+                }
+              ]
+            },
+            {
+              type: 'econDiagram',
+              chart: 'priceDiscrimination',
+              views: [
+                {
+                  label: 'Elastic market',
+                  show: ['AR_elastic', 'MR_elastic', 'MC', 'PeLine'],
+                  points: ['elasQ', 'elasP'],
+                  areas: [
+                    { between: ['PeLine', 'MC'], x: [80, 325], tone: 'green', label: 'Revenue' }
+                  ],
+                  head: 'Elastic group: lower price, higher quantity',
+                  body: 'Flat AR (more price-sensitive). Profit-max where MRₑ = MC gives quantity Qₑ and the low price Pₑ.',
+                  analysis: 'Because demand is elastic, the firm sets a lower price Pₑ and sells a larger quantity Qₑ. MC is common to both panels, so MRᵢ = MRₑ = MC equalises marginal revenue across segments. Leisure rail travellers and students are typical elastic groups served at the lower price.'
+                }
+              ]
+            }
+          ]
+        },
         { type: 'examEdge', title: 'Exam edge', text: 'The MR = MR = MC rule is the key analytical framework. In a two-segment market: draw two demand curves (steep for inelastic, flat for elastic); draw corresponding MR curves; find where each MR = MC. The inelastic segment gets higher price, elastic segment gets lower price. Total output is higher than single-price monopoly, and revenue is higher. This diagram approach is essential for the highest-mark answers.' }
       ]
     },

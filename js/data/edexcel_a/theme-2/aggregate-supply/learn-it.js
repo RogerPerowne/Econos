@@ -141,70 +141,48 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 3 – The LRAS curve ----- */
     {
       id: 'lras-curve',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Card 3 of 8',
       title: 'The LRAS curve',
       lede: 'The long-run aggregate supply (LRAS) curve is vertical at Yf. In the long run, factor prices adjust, so output is determined by real productive capacity rather than the price level.',
-
-      tip: { icon: '✅', tone: 'green', text: 'Long-run output depends on capacity, not on the price level.' },
-
-      interactiveDiagram: {
-        svgKey: 'lrasViewsInteractive',
-        label: 'TWO VIEWS OF LRAS',
-        emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
-        views: [
-          {
-            label: 'Classical',
-            show: ['idl-1'],
-            tone: 'blue',
-            head: 'The classical view holds that LRAS is vertical at Yf.',
-            body: ['With full flexibility of wages and prices, markets self-adjust.', 'Therefore, in the long run there is no trade-off between inflation and output.']
-          },
-          {
-            label: 'Keynesian',
-            show: ['idl-2'],
-            tone: 'amber',
-            head: 'Keynesians argue LRAS is not vertical in the short run.',
-            body: ['When there is spare capacity (range 1), output can rise without much increase in the price level.', 'As the economy nears Yf, inflation pressure rises sharply.']
-          }
-        ]
-      },
-
-      pairLabel: 'CLASSICAL VS KEYNESIAN',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue', icon: '🏛️', iconStyle: 'circle',
-        label: 'Classical',
-        checks: [
-          { term: 'Vertical LRAS', body: 'LRAS is vertical at Yf.' },
-          { term: 'Markets self-adjust', body: 'Flexible wages and prices restore equilibrium.' },
-          { term: 'Long-run focus', body: 'Emphasis on capacity and money neutrality.' }
-        ]
-      },
-      right: {
-        tone: 'amber', icon: '📈', iconStyle: 'circle',
-        label: 'Keynesian',
-        checks: [
-          { term: 'Kinked LRAS', body: 'LRAS has a Keynesian range in the short run.' },
-          { term: 'Spare capacity', body: 'Output can expand before inflation bites.' },
-          { term: 'Demand conditions', body: 'Short-run demand conditions and unused resources matter.' }
-        ]
-      },
-
-      causesLast: true,
-      causesLabel: 'WHY Yf MATTERS',
-      causesEmoji: '🎯',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue',   icon: '🏭', head: 'Productive capacity', body: 'Yf represents the economy\'s maximum sustainable output with resources fully employed.' },
-        { tone: 'green',  icon: '📈', head: 'Sustainable growth',  body: 'In the long run, output cannot exceed Yf without higher inflation.' },
-        { tone: 'rose',   icon: '⏱️', head: 'Inflation pressure',  body: 'Pushing beyond Yf leads to rising costs, bottlenecks and accelerating inflation.' }
-      ],
-
-      conclusion: { title: 'Big idea', text: 'LRAS shows how much the economy can produce sustainably when resources are fully employed.' },
-      examEdge: 'Use the Keynesian range when evaluating whether higher AD will raise real output or mostly create inflation.'
+      blocks: [
+        { type: 'calloutStrip', tone: 'green', icon: '💡', text: 'Long-run output depends on capacity, not on the price level.' },
+        { type: 'sectionHeader', icon: '📊', label: 'TWO VIEWS OF LRAS' },
+        {
+          type: 'econDiagram',
+          chart: 'keynesianAS',
+          views: [
+            {
+              label: 'Classical',
+              show: ['AD', 'ClassicalAS'],
+              points: ['Ec'],
+              head: 'The classical view holds that LRAS is vertical at Yf.',
+              body: 'With full flexibility of wages and prices, markets self-adjust.',
+              analysis: 'In the long run there is no trade-off between inflation and output – the economy always returns to full-employment output Yf, so the price level cannot raise sustainable output.'
+            },
+            {
+              label: 'Keynesian',
+              show: ['AD', 'KeynesianAS'],
+              points: ['Ek'],
+              head: 'Keynesians argue LRAS is not vertical in the short run.',
+              body: 'When there is spare capacity, output can rise without much increase in the price level.',
+              analysis: 'On the flat range, extra demand raises real output cheaply. As the economy nears Yf the curve steepens and inflation pressure rises sharply.'
+            }
+          ]
+        },
+        { type: 'sectionHeader', icon: '⚖️', label: 'CLASSICAL VS KEYNESIAN' },
+        { type: 'pair',
+          left:  { tone: 'blue',  icon: '🏛️', head: 'Classical', body: 'Vertical LRAS – LRAS is vertical at Yf. Markets self-adjust – flexible wages and prices restore equilibrium. Long-run focus – emphasis on capacity and money neutrality.' },
+          right: { tone: 'amber', icon: '📈', head: 'Keynesian', body: 'Kinked LRAS – LRAS has a Keynesian range in the short run. Spare capacity – output can expand before inflation bites. Demand conditions – short-run demand conditions and unused resources matter.' }
+        },
+        { type: 'sectionHeader', icon: '🎯', label: 'WHY Yf MATTERS' },
+        { type: 'grid', cols: 3, children: [
+          { type: 'tile', tone: 'blue',  icon: '🏭', head: 'Productive capacity', body: 'Yf represents the economy\'s maximum sustainable output with resources fully employed.' },
+          { type: 'tile', tone: 'green', icon: '📈', head: 'Sustainable growth',  body: 'In the long run, output cannot exceed Yf without higher inflation.' },
+          { type: 'tile', tone: 'rose',  icon: '⏱️', head: 'Inflation pressure',  body: 'Pushing beyond Yf leads to rising costs, bottlenecks and accelerating inflation.' }
+        ]},
+        { type: 'bigIdea',  text: 'LRAS shows how much the economy can produce sustainably when resources are fully employed.' },
+        { type: 'examEdge', title: 'Exam edge', text: 'Use the Keynesian range when evaluating whether higher AD will raise real output or mostly create inflation.' }
+      ]
     },
 
     /* ----- CARD 4 – Shifts in SRAS ----- */

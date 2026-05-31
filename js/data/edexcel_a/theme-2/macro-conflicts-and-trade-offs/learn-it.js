@@ -154,12 +154,13 @@ window.ECONOS_TOPIC = {
         svgKey: 'stagflationPhillipsInteractive',
         label: 'On the Phillips curve',
         emoji: '\u{1F4C9}',
-        layers: ['phil-1', 'phil-2', 'phil-3'],
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        layerMode: 'exclusive',
         views: [
           {
             label: 'Original 1958 SRPC',
             tone: 'blue',
-            show: ['phil-1'],
+            show: ['idl-1'],
             head: 'A clean inverse trade-off',
             body: 'Bill Phillips found a stable empirical inverse relationship between unemployment and wage inflation. Equilibrium <strong>A</strong> sat at the natural rate U_N with steady inflation π₀.',
             analysis: 'In the 1958 world, demand stimulus could buy lower unemployment by accepting higher inflation. Policymakers thought they had a stable menu of choices to pick from.'
@@ -167,7 +168,7 @@ window.ECONOS_TOPIC = {
           {
             label: 'Friedman / Phelps long run',
             tone: 'purple',
-            show: ['phil-2'],
+            show: ['idl-2'],
             head: 'No long-run trade-off',
             body: 'Push unemployment below U_N to <strong>B</strong> and workers eventually demand wages to compensate for inflation. The SRPC shifts up to SRPC₂; the economy lands at <strong>C</strong> &mdash; back at U_N but with permanently higher inflation.',
             analysis: 'The long-run Phillips curve is vertical at the NAIRU. Adaptive expectations do the work: any attempt to exploit the short-run trade-off only ratchets up inflation.'
@@ -175,7 +176,7 @@ window.ECONOS_TOPIC = {
           {
             label: '1970s stagflation',
             tone: 'rose',
-            show: ['phil-3'],
+            show: ['idl-3'],
             head: 'The curve breaks down',
             body: 'OPEC shocked SRAS left. SRPC₃ shifted up parallel to SRPC₁ &mdash; not from expectations but from a real supply shock. The economy ended at <strong>S</strong>: <em>higher</em> U <em>and</em> higher π &mdash; a point the original 1958 curve said was impossible.',
             analysis: 'Stagflation is the empirical falsification of the simple Phillips curve. It shows there is no single curve to walk along: the curve itself moves when supply conditions change.'
@@ -218,12 +219,13 @@ window.ECONOS_TOPIC = {
         svgKey: 'inflation2022AdAs',
         label: 'The trade-off in AD/AS',
         emoji: '\u{2696}\u{FE0F}',
-        layers: ['ada-1', 'ada-2', 'ada-3'],
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        layerMode: 'exclusive',
         views: [
           {
             label: 'Baseline · 2020–21',
             tone: 'blue',
-            show: ['ada-1'],
+            show: ['idl-1'],
             head: 'The pre-shock economy',
             body: 'Coming out of COVID, the UK economy sat at equilibrium <strong>E₀</strong> &mdash; close to full output Y₀ on long-run AS, with inflation near the 2% target P₀.',
             analysis: 'The post-COVID baseline was unusually benign: AD recovering, supply normalising, inflation expectations anchored to 2%.'
@@ -231,7 +233,7 @@ window.ECONOS_TOPIC = {
           {
             label: 'Both shocks · 2021–22',
             tone: 'rose',
-            show: ['ada-2'],
+            show: ['idl-2'],
             head: 'AD↑ and SRAS↓ at once',
             body: 'A powerful demand rebound shifted <strong>AD right</strong>. Energy prices and the Ukraine shock shifted <strong>SRAS left</strong>. The new equilibrium <strong>E₁</strong> sat at lower Y₁ with sharply higher P₁ &mdash; the textbook supply+demand inflation shock.',
             analysis: 'This is why Phillips struggles here: Phillips only models movement <em>along</em> a curve. The 2021–22 episode was the curve itself shifting, driven by supply. AD/AS handles both shocks cleanly.'
@@ -239,7 +241,7 @@ window.ECONOS_TOPIC = {
           {
             label: 'BoE response · 2022–23',
             tone: 'green',
-            show: ['ada-3'],
+            show: ['idl-3'],
             head: 'Tighter policy pulls AD back',
             body: 'The Bank of England raised Bank Rate from 0.1% to 5.25%. <strong>AD shifted left</strong> to AD₂. The new equilibrium <strong>E₂</strong> sat at even lower output Y₂ but with falling prices P₂ &mdash; inflation cooled, but at a real cost.',
             analysis: 'This is the trade-off in action: monetary tightening can bring inflation down, but it does so by pulling AD left into a still-weakened supply side. Lower P, lower Y &mdash; the squeeze on households.'

@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v186';
+  const CACHE_NAME = 'econos-v187';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -57,6 +57,8 @@
     '/js/charts/specs/crowding-out.js',
     '/js/charts/specs/ad-demand-pull-interactive.js',
     '/js/charts/specs/ad-cost-push-interactive.js',
+    '/js/charts/specs/stagflation-phillips.js',
+    '/js/charts/specs/inflation-2022-ad-as.js',
   ];
 
   /* ────────────────────────────────────────────────────────────

@@ -2054,7 +2054,7 @@ window.ECONOS_ICONS = {
       <text x="356" y="309" font-size="13" font-weight="700" fill="#7C3AED">E</text>
       <text x="48" y="318" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">C₂</text>
       <text x="349" y="416" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">K₂</text>
-      <path d="M 218,211 Q 290,255 342,312" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ppfmv-along-end)"/>
+      <path d="M 218,200 Q 305,215 348,305" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ppfmv-along-end)"/>
       <text x="72" y="265" font-size="12" font-weight="600" fill="#7C3AED">−ΔC</text>
       <text x="275" y="416" font-size="12" font-weight="600" fill="#7C3AED">+ΔK</text>
     </g>

@@ -4134,8 +4134,11 @@ img, svg { display: block; max-width: 100%; }
   grid-template-columns: repeat(3, 1fr); /* default; overridden by inline style for 4 tabs */
   gap: var(--sp-2);
 }
-@media (max-width: 760px) {
-  .ad-interactive__tabs { grid-template-columns: 1fr; }
+@media (max-width: 1100px) {
+  .ad-interactive__tabs { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .ad-interactive__tabs { grid-template-columns: 1fr !important; }
 }
 
 .ad-tab {

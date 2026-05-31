@@ -389,6 +389,91 @@
     return null;
   }
 
+  /* Sample y on a parsed path at a given x. Used by the welfare-region
+     compiler to trace the top/bottom edge of a CS or PS triangle along
+     the underlying demand or supply curve. Returns null if x is outside
+     the path's x-extent. */
+  function pathYAtX(path, targetX) {
+    for (var i = 0; i < path.length; i++) {
+      var seg = path[i];
+      if (seg.type === 'line') {
+        var x0 = seg.p0[0], x1 = seg.p1[0];
+        if (targetX >= Math.min(x0, x1) - 1e-9 && targetX <= Math.max(x0, x1) + 1e-9) {
+          if (Math.abs(x1 - x0) < 1e-9) return seg.p0[1];
+          var t = (targetX - x0) / (x1 - x0);
+          return seg.p0[1] + t * (seg.p1[1] - seg.p0[1]);
+        }
+      } else if (seg.type === 'cubic') {
+        var P = [seg.p0, seg.p1, seg.p2, seg.p3];
+        var t2 = findTAtX(P, targetX);
+        if (t2 != null) return cubicPoint(P, t2)[1];
+      }
+    }
+    return null;
+  }
+
+  /* Auto-compile welfare regions (consumer surplus, producer surplus,
+     etc.) to polygons. The author declares the region by curve identity
+     and a reference price; the engine traces along the curve to build
+     the polygon. Removes the need to hand-compute triangle corners.
+
+       welfareRegions: [
+         { type: 'consumer-surplus', curve: 'D', price: 0.5,
+           tone: 'blue', opacity: 0.18 },
+         { type: 'producer-surplus', curve: 'S', price: 0.5,
+           tone: 'amber', opacity: 0.18 }
+       ]
+
+     Consumer surplus = area bounded by demand (above price line),
+     the horizontal price line, and the y-axis. For straight demand
+     curves this is a triangle; for curved demand it traces samples.
+
+     Producer surplus = mirror, bounded by supply (below price), the
+     horizontal price line, and the y-axis. */
+  var WELFARE_SAMPLES = 24;
+  function compileWelfareRegion(region, pathRegistry) {
+    var path = pathRegistry[region.curve];
+    if (!path) return null;
+    var price = region.price;
+    // Find the x where the curve crosses y=price (right edge of the polygon).
+    var crossings = intersectPaths(path, [{ type: 'line', p0: [0, price], p1: [1, price] }]);
+    if (!crossings.length) return null;
+    var qStar = crossings[0][0];
+    var type = region.type;
+    var points;
+    if (type === 'consumer-surplus') {
+      // Walk back from (qStar, price) along the curve to x=0, then
+      // close down to (0, price). Top edge traces the demand curve;
+      // bottom edge is horizontal at the price.
+      points = [[0, price], [qStar, price]];
+      var step = qStar / WELFARE_SAMPLES;
+      for (var i = WELFARE_SAMPLES; i >= 0; i--) {
+        var x = i * step;
+        var y = pathYAtX(path, x);
+        if (y != null) points.push([x, y]);
+      }
+    } else if (type === 'producer-surplus') {
+      // Symmetric: top edge horizontal at price, bottom edge traces
+      // the supply curve.
+      points = [[0, price], [qStar, price]];
+      var step2 = qStar / WELFARE_SAMPLES;
+      for (var j = WELFARE_SAMPLES; j >= 0; j--) {
+        var x2 = j * step2;
+        var y2 = pathYAtX(path, x2);
+        if (y2 != null) points.push([x2, y2]);
+      }
+    } else {
+      return null;
+    }
+    return {
+      points: points,
+      fill: region.fill || (region.tone === 'amber' ? '#F59E0B' : region.tone === 'blue' ? '#3B82F6' : '#10B981'),
+      opacity: region.opacity != null ? region.opacity : 0.18,
+      layer: region.layer,
+      perspective: region.perspective
+    };
+  }
+
   /* Find all intersection points between two segments. Returns a list
      of [x, y] tuples (usually 0, 1, or 2 points). Handles:
        - line ∩ line   (closed-form)
@@ -1589,6 +1674,23 @@
         (v.points || []).forEach(registerPoint);
         registerArrows(v.arrows);
       });
+    });
+    // Third pass: compile `welfareRegions: [{ type, curve, price, ... }]`
+    // to ordinary polygons so the existing polygon renderer handles them.
+    // Author still has full polygon control; this is just a recipe for
+    // the most common shapes (CS triangle, PS triangle) to avoid hand-
+    // computing corners that drift when the underlying curve changes.
+    function compileWelfares(src) {
+      if (!Array.isArray(src.welfareRegions)) return;
+      src.polygons = src.polygons || [];
+      src.welfareRegions.forEach(function (region) {
+        var poly = compileWelfareRegion(region, ctx.pathRegistry);
+        if (poly) src.polygons.push(poly);
+      });
+    }
+    collectFrom.forEach(function (src) {
+      compileWelfares(src);
+      (src.views || []).forEach(compileWelfares);
     });
 
     // Render each panel (multi-panel) or the spec itself (single-panel).

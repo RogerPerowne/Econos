@@ -17,6 +17,7 @@
     '/js/charts/specs/ppf-card1.js',
     '/js/charts/specs/ppf-big-picture.js',
     '/js/charts/specs/ppf-classify.js',
+    '/js/charts/specs/ppf-opp-cost.js',
     '/js/charts/specs/ppf-card2.js',
     '/js/charts/specs/ppf-card3.js',
     '/js/charts/specs/ppf-card4.js',

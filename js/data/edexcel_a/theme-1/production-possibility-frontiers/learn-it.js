@@ -99,72 +99,83 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_3',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 6',
-      diagramKey: 'ppfMovesInteractive',
-      title: 'Four Types of PPF Movement',
-      lede: 'Not all output changes are equal – explore the four distinct ways an economy can change its production position and what each one means for capacity.',
+      stepLabel: 'Learn: Step 3 of 7',
+      title: 'Opportunity cost – moving along the frontier',
+      lede: 'When resources are fixed, producing more of one good means sacrificing some of the other good.',
+      tip: { icon: '✅', tone: 'green', text: 'Opportunity cost is the next best alternative forgone.' },
+      diagramKey: 'ppfOppCost',
+      diagramLabel: 'A move along the curve',
+      diagramEmoji: '📈',
       steps: [
-        { key: 'along',    label: 'Movement along', text: 'Moving from D to E along PPF₁ means choosing to produce <strong>more capital goods</strong> but <strong>fewer consumer goods</strong>. The PPF itself does not move – existing resources are just reallocated. Every step along the curve has an <strong>opportunity cost</strong> equal to the slope of the PPF at that point.' },
-        { key: 'recovery', label: 'Short-run recovery', text: 'Point X is <strong>inside</strong> the PPF – resources are idle (unemployment, spare capacity). As aggregate demand recovers, firms rehire workers and reactivate capacity. Output rises from X toward PPF₁. The frontier does NOT shift – this is <strong>demand-side / short-run growth</strong>.' },
-        { key: 'outward',  label: 'Outward shift',   text: 'The PPF shifts outward from PPF₁ to PPF₂ when <strong>productive capacity permanently increases</strong>: better technology, more capital investment, population growth, or improved skills. This is <strong>supply-side / long-run growth</strong> – the economy\'s ceiling rises for good.' },
-        { key: 'inward',   label: 'Inward shift',    text: 'Negative supply shocks push the PPF inward to PPF₃: war destroys capital, natural disasters eliminate resources, "brain drain" depletes skilled labour, or sustained disinvestment causes capital depreciation. <strong>Maximum productive capacity falls permanently.</strong>' }
+        { key: 'ab', label: 'Move A → B',
+          text: '<div style="font-size:13.5px;color:#0B1426;line-height:1.7;"><strong style="color:#D97706;">Capital goods rise from 20 → 30</strong> <span style="color:#475569;">(+10)</span><br><strong style="color:#D97706;">Consumer goods fall from 80 → 65</strong> <span style="color:#475569;">(−15)</span><br><br><strong>Opportunity cost = 15 consumer goods.</strong></div>' },
+        { key: 'bc', label: 'Move B → C',
+          text: '<div style="font-size:13.5px;color:#0B1426;line-height:1.7;"><strong style="color:#DC2626;">Capital goods rise from 30 → 40</strong> <span style="color:#475569;">(+10)</span><br><strong style="color:#DC2626;">Consumer goods fall from 65 → 40</strong> <span style="color:#475569;">(−25)</span><br><br><strong>Opportunity cost = 25 consumer goods.</strong></div>' }
       ],
-      examEdge: 'Classic exam trap: "Country A recovers from recession" → a point inside moves ONTO PPF₁ – do NOT draw an outward shift. "Country A invests in new technology" → PPF₁ shifts out to PPF₂. Naming the type of growth (demand-side vs supply-side) earns a mark in its own right – always state it explicitly.'
+      flowTitle: 'Why every move along the curve has a cost',
+      flowEmoji: '🔁',
+      flow: [
+        { icon: '🏭', title: 'Want more capital goods', sub: '',  tone: 'blue'   },
+        { icon: '🛒', title: 'Must give up consumer goods', sub: '', tone: 'amber' },
+        { icon: '⚖️', title: 'The sacrifice is the opportunity cost', sub: '', tone: 'green' }
+      ],
+      methodGrid: {
+        label: 'Why this matters',
+        emoji: '💡',
+        items: [
+          { tone: 'blue',   icon: '👤',  title: 'Every choice has a cost',                  body: 'You can’t have more of everything. Choosing one option means giving up another.' },
+          { tone: 'amber',  icon: '⚖️',  title: 'Cost is measured in real alternatives',    body: 'Opportunity cost is what you <em>forgo</em> when you make a choice — not just the money price.' },
+          { tone: 'green',  icon: '📈',  title: 'The PPF makes trade-offs visible',          body: 'Moving along the curve shows exactly how one good is exchanged for the other.' }
+        ]
+      },
+      tipLate: { icon: '⚠️', tone: 'amber', text: '<strong>No free lunch</strong> – more of one thing means less of something else while resources stay fixed.' },
+      keyTakeaway: 'A movement along the frontier shows choice and opportunity cost, not economic growth.',
+      examEdge: 'Use the phrase ‘opportunity cost’ explicitly when explaining a movement from one point on the PPF to another.'
     },
 
     {
       id: 'ppf_4',
-      stepLabel: 'Learn: Step 4 of 6',
-      title: 'Consumer vs Capital Goods Trade-Off',
-      tip: { icon: '💡', tone: 'blue', text: 'Every economy chooses where to sit on the consumer–capital goods PPF. The choice today shapes where the PPF will be tomorrow.' },
+      stepLabel: 'Learn: Step 4 of 7',
+      title: 'Why the PPF bows out',
+      lede: 'The bowed shape of the PPF reflects increasing opportunity cost. Resources are not equally good at producing both goods, so each extra unit comes at a bigger sacrifice.',
+      tip: { icon: '✅', tone: 'green', text: 'The curve bows out because resources are specialised.' },
       interactiveDiagram: {
-        svgKey: 'ppfConsumerCapital',
-        label: 'From "now" to "later" — the investment trade-off',
+        svgKey: 'ppfBowedOutInteractive',
+        label: 'Increasing opportunity cost',
         emoji: '📈',
-        // Every layer the engine emits, in the order it's emitted.
-        // Per-view `show` arrays below pick exactly which to display.
-        layers: ['countries', 'ppf1s', 'ppf1d', 'a-lbl', 'b-pos', 'a-b-arrow', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
+        layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
-          {
-            label: 'Country positions',
-            tone: 'blue',
-            show: ['countries', 'ppf1s'],
-            head: 'Where countries sit on the PPF',
-            body: 'Every economy chooses a mix of consumer goods (households buy today) and capital goods (boost FUTURE production). The UK, Germany and China sit at very different points on the same conceptual PPF.',
-            analysis: 'Investment ratios drive the position: UK ~18%, Germany ~22%, China ~42% of GDP. China\'s growth has been directly dependent on sustained capital allocation. The UK\'s low investment ratio is one structural reason its long-run growth has lagged.'
-          },
-          {
-            label: 'Sacrifice for growth',
-            tone: 'purple',
-            show: ['ppf1s', 'a-lbl', 'b-pos', 'a-b-arrow'],
-            head: 'UK moves A → B along PPF₁',
-            body: 'To grow faster, the UK can move ALONG PPF₁ from A to B: produce LESS consumer goods now, MORE capital goods. The dashed gridlines mark B\'s position.',
-            analysis: 'This is movement along the EXISTING PPF — not a shift. The opportunity cost is real: lower present living standards. Post-war Germany, Japan and South Korea sustained this choice for decades.'
-          },
-          {
-            label: 'PPF₂: B → C',
-            tone: 'green',
-            show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow'],
-            head: 'Investment shifts the frontier outward',
-            body: 'Years of producing at B builds the capital stock. PPF₁ (now dashed) has shifted to PPF₂. The arrow B → C shows the gain: at the SAME capital level, the country can now produce more CONSUMER GOODS than before.',
-            analysis: 'This is supply-side, long-run growth. The catch: new capital must be PRODUCTIVELY invested. Misallocated investment (white-elephant infrastructure, Soviet five-year plans) builds capital that doesn\'t shift the frontier.'
-          },
-          {
-            label: 'C → D along PPF₂',
-            tone: 'green',
-            show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
-            head: 'D — consumer-heavy at HIGHER levels',
-            body: 'The country moves back toward consumer-heavy mix on PPF₂, from C to D. Because PPF₂ is bigger, D has MORE consumer goods AND MORE capital goods than A.',
-            analysis: '<strong>More jam tomorrow IS possible — but only if you stomach less jam today.</strong> A*: distinguish movement along the PPF (A→B, C→D) from a SHIFT (PPF₁→PPF₂); name the opportunity cost at B.'
-          }
+          { label: 'Small cost',      tone: 'green', show: ['idl-1'],
+            head: '+1 capital good early on costs only −1 consumer good.',
+            body: 'Near point A the first resources to move into capital goods are those least suited to consumer-good production. Moving them costs little.',
+            analysis: 'Adaptable resources transfer first. Their opportunity cost is low because they were only marginally productive in their original use.' },
+          { label: 'Larger cost',     tone: 'amber', show: ['idl-1','idl-2'],
+            head: 'Now +1 capital good costs −2 consumer goods.',
+            body: 'Near point B the easy transfers are gone. The resources moving now were genuinely productive in consumer goods, so giving them up hurts more.',
+            analysis: 'The sacrifice has roughly doubled for the same gain. Specialisation starts to bite.' },
+          { label: 'Even larger cost', tone: 'rose', show: ['idl-1','idl-2','idl-3'],
+            head: 'Near C, +1 capital good costs −3 consumer goods.',
+            body: 'The most specialised consumer-good resources are the last to switch. Their opportunity cost is huge — the curve steepens sharply.',
+            analysis: 'Equal increases in capital goods require bigger and bigger decreases in consumer goods. <strong>That is increasing opportunity cost.</strong>' }
         ]
       },
-      keyTerms: [
-        { term: 'Investment ratio',  def: 'Gross Fixed Capital Formation as a % of GDP — the share of an economy\'s output devoted to building productive capital (machines, infrastructure) rather than consumed today.' },
-        { term: 'Deferred consumption', def: 'Choosing to consume LESS now (point B vs A) so that more resources go into capital goods — the opportunity cost paid for long-run growth.' },
-        { term: 'PPF outward shift', def: 'A long-run increase in productive capacity, driven by capital accumulation, better technology, or labour-force growth. Movement along the PPF (A→B) is not a shift; only PPF₁ → PPF₂ is.' }
-      ],
-      examEdge: 'A* moves: name the OPPORTUNITY COST of investment (consumer goods foregone — point A to point B), distinguish movement along the PPF (A→B) from a shift (PPF₁→PPF₂), and link to real countries. Post-war Germany and Japan made this exact choice; their PPFs shifted dramatically outward over the following decades. The UK\'s lower investment ratio is one structural reason its growth has lagged.'
+      methodGrid: {
+        label: 'Why costs rise',
+        emoji: '⚙️',
+        items: [
+          { tone: 'blue',  icon: '👤', title: '1. Best-suited first',     body: 'Some workers, land or capital are highly suited to producing consumer goods.' },
+          { tone: 'amber', icon: '🔄', title: '2. Switch less-suited',     body: 'As production shifts, less-suitable resources must be reallocated.' },
+          { tone: 'rose',  icon: '📈', title: '3. Cost rises',              body: 'Each extra unit of capital goods becomes more expensive in terms of forgone consumer goods.' }
+        ]
+      },
+      versusList: {
+        rows: [{
+          left:  { tone: 'green', icon: '🏃', name: 'Early move (near A)', premise: 'Easy to transfer highly adaptable resources.', reason: 'Small sacrifice of consumer goods.' },
+          right: { tone: 'rose',  icon: '🚶', name: 'Later move (near C)', premise: 'Harder to transfer specialised resources.',   reason: 'Large sacrifice of consumer goods.' }
+        }]
+      },
+      keyTakeaway: 'The bowed shape is visual evidence that factors of production are specialised, not equally adaptable.',
+      examEdge: 'If asked why the PPF is concave to the origin, say ‘increasing opportunity cost due to factor specificity’.'
     },
 
     {

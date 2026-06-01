@@ -1103,6 +1103,37 @@
     return html;
   }
 
+  // Build the HTML for a methodGrid block. Shared by renderCardGeneric
+  // and renderCardAdInteractive so cards on either path can drop in the
+  // tone-banded "here are the N approaches/methods" tiles. Each tile may
+  // override its `exampleLabel`, otherwise inherits from `mg.exampleLabel`,
+  // otherwise defaults to "Example".
+  //   Pattern: methodGrid: { label?, emoji?, exampleLabel?,
+  //                          items: [{tone,icon,title,body,example?,exampleLabel?}] }
+  function buildMethodGridHtml(mg) {
+    if (!mg || !Array.isArray(mg.items) || !mg.items.length) return '';
+    let html = '';
+    if (mg.label) html += genSecLabel(mg.emoji || '🧰', mg.label);
+    const n = mg.items.length;
+    html += `<div class="method-grid" style="display:grid;grid-template-columns:${gridColumnsFor(n, 200)};gap:14px;margin-bottom:26px;">`;
+    html += mg.items.map(m => {
+      const t = PATTERN_TONES[m.tone || 'blue'] || PATTERN_TONES.blue;
+      return `
+        <div style="display:flex;flex-direction:column;border:1px solid ${t.border};border-radius:14px;background:#fff;overflow:hidden;">
+          <div style="background:${t.bg};border-bottom:1px solid ${t.border};padding:12px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${m.icon || ''}</span>
+            <span style="font-size:15px;font-weight:800;color:${t.label};line-height:1.25;">${m.title || ''}</span>
+          </div>
+          <div style="padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;">
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${m.body || ''}</div>
+            ${m.example !== undefined ? `<div style="font-size:13px;color:#475569;line-height:1.5;margin-top:auto;"><span style="font-weight:800;color:${t.label};">${m.exampleLabel || mg.exampleLabel || 'Example'}:</span> <em>${m.example}</em></div>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+    html += `</div>`;
+    return html;
+  }
+
   // Build the HTML for a continuum block – a spectrum bar (gradient +
   // positional dots) with tone-coded cards underneath. Factored out so it
   // can render at its default early slot OR be deferred (position:'late')
@@ -2503,31 +2534,8 @@
       content += `</div>`;
     }
 
-    // Method grid – N tone-coloured cards in a row, each with a tinted
-    // title band, an icon + description, and an italic "Example:" footer.
-    // For "here are the N approaches / tools / methods" sections.
-    //   Pattern: methodGrid: { label?, emoji?, items: [{tone,icon,title,body,example}] }
-    if (c.methodGrid && Array.isArray(c.methodGrid.items) && c.methodGrid.items.length) {
-      const mg = c.methodGrid;
-      if (mg.label) content += genSecLabel(mg.emoji || '🧰', mg.label);
-      const n = mg.items.length;
-      content += `<div class="method-grid" style="display:grid;grid-template-columns:${gridColumnsFor(n, 200)};gap:14px;margin-bottom:26px;">`;
-      content += mg.items.map(m => {
-        const t = PATTERN_TONES[m.tone || 'blue'] || PATTERN_TONES.blue;
-        return `
-          <div style="display:flex;flex-direction:column;border:1px solid ${t.border};border-radius:14px;background:#fff;overflow:hidden;">
-            <div style="background:${t.bg};border-bottom:1px solid ${t.border};padding:12px 14px;display:flex;align-items:center;gap:10px;">
-              <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${m.icon || ''}</span>
-              <span style="font-size:15px;font-weight:800;color:${t.label};line-height:1.25;">${m.title || ''}</span>
-            </div>
-            <div style="padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;">
-              <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${m.body || ''}</div>
-              ${m.example !== undefined ? `<div style="font-size:13px;color:#475569;line-height:1.5;margin-top:auto;"><span style="font-weight:800;color:${t.label};">${m.exampleLabel || mg.exampleLabel || 'Example'}:</span> <em>${m.example}</em></div>` : ''}
-            </div>
-          </div>`;
-      }).join('');
-      content += `</div>`;
-    }
+    // Method grid – see buildMethodGridHtml helper below for shape.
+    if (c.methodGrid) content += buildMethodGridHtml(c.methodGrid);
 
     // Late continuum – rendered here (after methodGrid) when
     // c.continuum.position === 'late', so a card can introduce items first
@@ -5675,6 +5683,19 @@
               <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
             </div>
           </div>`;
+      })() : ''}
+
+      ${c.methodGrid ? buildMethodGridHtml(c.methodGrid) : ''}
+
+      ${c.tipLate ? (() => {
+        const lateTips = Array.isArray(c.tipLate) ? c.tipLate : [c.tipLate];
+        return lateTips.map(tip => {
+          const tipText = typeof tip === 'object' ? tip.text : tip;
+          const tipIcon = (typeof tip === 'object' && tip.icon) || '💡';
+          const tipTone = (typeof tip === 'object' && tip.tone) || 'blue';
+          const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
+          return `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:15px;color:#0B1426;line-height:1.55;">${tipText}</div></div>`;
+        }).join('');
       })() : ''}
 
       ${renderExamEdge(c.examEdge)}

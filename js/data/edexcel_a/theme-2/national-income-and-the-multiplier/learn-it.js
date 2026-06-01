@@ -252,7 +252,7 @@ window.ECONOS_TOPIC = {
         { tone: 'green',  icon: '\u{1F30D}', head: 'High UK MPM',         body: 'A high marginal propensity to import means stimulus leaks abroad – realistic UK k ≈ 1.5, not the textbook 5.' }
       ],
 
-      flowTitle: 'And one mechanism that amplifies further',
+      flowTitle: 'One that amplifies further',
       flowEmoji: '\u{1F680}',
       flowSep: '→',
       flow: [

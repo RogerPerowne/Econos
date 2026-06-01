@@ -387,7 +387,7 @@ window.ECONOS_TOPIC = {
       },
 
       causesFirst: true,
-      causesLabel: 'Nominal vs real – three worked examples',
+      causesLabel: 'Nominal vs real: examples',
       causes: [
         {
           tone: 'green',

@@ -135,7 +135,7 @@ window.ECONOS_TOPIC = {
           body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">✂️</span><div><strong>Strips out</strong> the effect of price changes (inflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">📊</span><div>Shows changes in the <strong>volume</strong> of output</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">🎯</span><div>Best for judging <strong>living standards</strong>, growth and productivity</div></div></div>'
         }
       ],
-      causes2Label: 'Adjusting for inflation: nominal → real',
+      causes2Label: 'Nominal vs real GDP',
       causes2Emoji: '🧮',
       causes2Style: 'plain-white',
       causes2Cols: 1,
@@ -347,7 +347,7 @@ window.ECONOS_TOPIC = {
           body: 'GDP counts goods and services <strong>regardless of what they are</strong>. Guns and hospitals both add to GDP equally.'
         }
       ],
-      causes2Label: 'Alternatives to GDP: broader ways to measure wellbeing',
+      causes2Label: 'Alternatives to GDP',
       causes2Emoji: '💡',
       causes2Style: 'plain-white',
       causes2Cols: 3,

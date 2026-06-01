@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v202';
+  const CACHE_NAME = 'econos-v203';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -69,6 +69,7 @@
     '/js/charts/specs/welfare-loss-diagram.js',
     '/js/charts/specs/price-rationing-scarcity.js',
     '/js/charts/specs/elasticity-incidence-interactive.js',
+    '/js/icons/dial-engine.js',
   ];
 
   /* ────────────────────────────────────────────────────────────

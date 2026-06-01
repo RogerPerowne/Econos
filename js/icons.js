@@ -13704,12 +13704,7 @@ window.ECONOS_ICONS = {
           <div class="mos-card" style="border-color:#FECDD3;">
             <div class="mos-bar" style="background:#E11D48;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#E11D48;">1</span><span style="font-size:13px;font-weight:800;color:#9F1239;">Inflation</span></div>
-            <svg viewBox="0 0 160 90" style="width:100%;height:auto;display:block;">
-              <path d="M20 75 A60 60 0 0 1 140 75" stroke="#FECACA" stroke-width="8" fill="none" stroke-linecap="round"/>
-              <path d="M60 22.2 A60 60 0 0 1 100 22.2" stroke="#16A34A" stroke-width="8" fill="none" stroke-linecap="round"/>
-              <line x1="80" y1="75" x2="92.6" y2="20" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="80" cy="75" r="4" fill="#0B1426"/>
-            </svg>
+            ${window.ECONOS_DIALS.render({ type: 'gauge', size: 160, value: 2.8, min: 0, max: 6, target: [1.5, 2.5], tone: 'red', ariaLabel: 'UK CPI inflation 2.8%, target 1.5–2.5%' })}
             <div class="mos-row"><span>Target</span><b style="color:#9F1239;">~2% CPI</b></div>
             <div class="mos-row"><span>UK current</span><b style="color:#9F1239;">2.8%</b></div>
             <div class="mos-stripe" style="background:#FFF1F2;color:#9F1239;">Price stability</div>
@@ -13717,12 +13712,7 @@ window.ECONOS_ICONS = {
           <div class="mos-card" style="border-color:#BFDBFE;">
             <div class="mos-bar" style="background:#2563EB;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#2563EB;">2</span><span style="font-size:13px;font-weight:800;color:#1E3A8A;">Unemployment</span></div>
-            <svg viewBox="0 0 160 90" style="width:100%;height:auto;display:block;">
-              <path d="M20 75 A60 60 0 0 1 140 75" stroke="#DBEAFE" stroke-width="8" fill="none" stroke-linecap="round"/>
-              <path d="M68 16.4 A60 60 0 0 1 92 16.4" stroke="#16A34A" stroke-width="8" fill="none" stroke-linecap="round"/>
-              <line x1="80" y1="75" x2="100" y2="18.5" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="80" cy="75" r="4" fill="#0B1426"/>
-            </svg>
+            ${window.ECONOS_DIALS.render({ type: 'gauge', size: 160, value: 5.0, min: 0, max: 12, target: [4, 5], tone: 'blue', ariaLabel: 'UK unemployment rate 5.0%, target 4–5%' })}
             <div class="mos-row"><span>Target</span><b style="color:#1E3A8A;">~4–5%</b></div>
             <div class="mos-row"><span>UK current</span><b style="color:#1E3A8A;">5.0%</b></div>
             <div class="mos-stripe" style="background:#EFF6FF;color:#1E3A8A;">High employment</div>
@@ -13730,12 +13720,7 @@ window.ECONOS_ICONS = {
           <div class="mos-card" style="border-color:#86EFAC;">
             <div class="mos-bar" style="background:#16A34A;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#16A34A;">3</span><span style="font-size:13px;font-weight:800;color:#065F46;">Real GDP growth</span></div>
-            <svg viewBox="0 0 160 90" style="width:100%;height:auto;display:block;">
-              <path d="M20 75 A60 60 0 0 1 140 75" stroke="#DCFCE7" stroke-width="8" fill="none" stroke-linecap="round"/>
-              <path d="M122 32 A60 60 0 0 1 134 49" stroke="#16A34A" stroke-width="8" fill="none" stroke-linecap="round"/>
-              <line x1="80" y1="75" x2="42" y2="28" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="80" cy="75" r="4" fill="#0B1426"/>
-            </svg>
+            ${window.ECONOS_DIALS.render({ type: 'gauge', size: 160, value: 0.6, min: -2, max: 5, target: [2, 2.5], tone: 'green', ariaLabel: 'UK real GDP growth 0.6% q/q, target 2–2.5% p.a.' })}
             <div class="mos-row"><span>Target</span><b style="color:#065F46;">2–2.5% p.a.</b></div>
             <div class="mos-row"><span>UK current</span><b style="color:#065F46;">0.6% q/q</b></div>
             <div class="mos-stripe" style="background:#F0FDF4;color:#065F46;">Rising living standards</div>

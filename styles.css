@@ -2798,6 +2798,15 @@ img, svg { display: block; max-width: 100%; }
   /* Three-element comparison (A + B = C) is too tight side-by-side on a
      phone — stack the cards with the operator badges sitting between. */
   .gen-comparison--triple { flex-direction: column !important; }
+  /* When any of the vs-family rows stack into a column, each operator
+     badge wrapper stretches to full row width (default align-self) and
+     the badge inside falls to flex-start (left). Centre the badge so it
+     reads as a join between the stacked cards. */
+  .split-decision__vs,
+  .versus-list__vs,
+  .gen-comparison__op {
+    justify-content: center !important;
+  }
 }
 
 /* Card padding tightens on narrow viewports so the inner content

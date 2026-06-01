@@ -1150,6 +1150,62 @@
     return html;
   }
 
+  // Build the HTML for a factorEngine block – a responsive "inputs +
+  // coordinator = output" production-function panel. Native HTML version of
+  // the old enterpriseCombinationSvg: keeps the rounded cards, oval reward
+  // pills and wording, but reflows (3 zones → stacked) on mobile and uses
+  // the site's flat tone palette + dark +/= badges.
+  //   Pattern: factorEngine: { label?, emoji?,
+  //     inputs: [{tone,icon,label,contributes?,reward}],
+  //     coordinator: {tone,icon,title,tagline?,reward?,panel?:{title?,lines:[],foot?}},
+  //     output: {tone,icon,label} }
+  function buildFactorEngineHtml(fe) {
+    if (!fe || !Array.isArray(fe.inputs) || !fe.coordinator || !fe.output) return '';
+    let html = '';
+    if (fe.label) html += genSecLabel(fe.emoji || '🔗', fe.label);
+    const pill = (text, t) => `<span style="display:inline-block;background:#fff;border:1.5px solid ${t.border};color:${t.label};font-size:11px;font-weight:800;padding:3px 12px;border-radius:999px;">${text}</span>`;
+    const inputCard = (inp) => {
+      const t = PATTERN_TONES[inp.tone || 'slate'] || PATTERN_TONES.slate;
+      return `<div style="border:1.5px solid ${t.border};border-radius:14px;background:${t.bg};padding:11px 13px;display:flex;align-items:center;gap:11px;">
+        <div style="font-size:25px;line-height:1;flex-shrink:0;">${inp.icon || ''}</div>
+        <div style="display:flex;flex-direction:column;gap:4px;min-width:0;">
+          <div style="font-size:12px;font-weight:900;letter-spacing:0.04em;color:${t.label};">${inp.label || ''}</div>
+          ${inp.contributes ? `<div style="font-size:10.5px;color:#64748B;line-height:1.2;">gives ${inp.contributes}</div>` : ''}
+          ${inp.reward ? `<div>${pill(inp.reward, t)}</div>` : ''}
+        </div>
+      </div>`;
+    };
+    const ct = PATTERN_TONES[fe.coordinator.tone || 'rose'] || PATTERN_TONES.rose;
+    const co = fe.coordinator;
+    const panel = co.panel ? `<div style="margin-top:12px;border:1px dashed ${ct.border};border-radius:10px;background:#fff;padding:11px 13px;text-align:center;">
+        ${co.panel.title ? `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:${ct.label};margin-bottom:7px;">${co.panel.title}</div>` : ''}
+        ${(co.panel.lines || []).map(l => `<div style="font-size:12px;color:#0B1426;line-height:1.7;">${l}</div>`).join('')}
+        ${co.panel.foot ? `<div style="font-size:11.5px;font-style:italic;color:${ct.label};margin-top:7px;">${co.panel.foot}</div>` : ''}
+      </div>` : '';
+    const coordCard = `<div style="border:2px solid ${ct.border};border-radius:16px;background:${ct.bg};padding:16px 16px 18px;text-align:center;">
+        <div style="font-size:30px;line-height:1;margin-bottom:6px;">${co.icon || ''}</div>
+        <div style="font-size:16px;font-weight:900;color:${ct.label};line-height:1.2;">${co.title || ''}</div>
+        ${co.tagline ? `<div style="font-size:10px;font-weight:700;letter-spacing:0.05em;color:${ct.accent};margin-top:7px;">${co.tagline}</div>` : ''}
+        ${co.reward ? `<div style="margin-top:9px;">${pill(co.reward, ct)}</div>` : ''}
+        ${panel}
+      </div>`;
+    const ot = PATTERN_TONES[fe.output.tone || 'blue'] || PATTERN_TONES.blue;
+    const outputCard = `<div style="border:2px solid ${ot.border};border-radius:14px;background:${ot.bg};padding:20px 14px;text-align:center;">
+        <div style="font-size:30px;line-height:1;margin-bottom:8px;">${fe.output.icon || ''}</div>
+        <div style="font-size:14px;font-weight:800;color:${ot.label};line-height:1.25;">${fe.output.label || ''}</div>
+      </div>`;
+    const zone = (cap, body, extra) => `<div class="fe-zone${extra ? ' ' + extra : ''}"><div class="fe-cap">${cap}</div><div class="fe-zone__body">${body}</div></div>`;
+    const op = (txt) => `<div class="fe-op"><div>${txt}</div></div>`;
+    html += `<div class="factor-engine">${
+      zone('Factor inputs', `<div class="fe-stack">${fe.inputs.map(inputCard).join('')}</div>`)
+    }${op('+')}${
+      zone('+ Coordinator', coordCard, 'fe-zone--wide')
+    }${op('=')}${
+      zone('= Output', outputCard, 'fe-zone--center')
+    }</div>`;
+    return html;
+  }
+
   function gridColumnsFor(n, minPx = 155) {
     if (n === 4) return 'repeat(2, 1fr)';
     if (n === 7 || n === 8) return 'repeat(4, 1fr)';
@@ -2485,6 +2541,11 @@
     //   Pattern: tileGrid: { label?, emoji?, items: [{tone,icon,title,sub}] }
     if (c.tileGrid && Array.isArray(c.tileGrid.items) && c.tileGrid.items.length) {
       content += buildTileGridHtml(c.tileGrid);
+    }
+
+    // Factor engine – responsive "inputs + coordinator = output" panel.
+    if (c.factorEngine) {
+      content += buildFactorEngineHtml(c.factorEngine);
     }
 
     // Versus list – a stack of "A vs B" conflict rows, each two tinted
@@ -4870,6 +4931,8 @@
 
       ${c.tileGrid ? buildTileGridHtml(c.tileGrid) : ''}
 
+      ${c.factorEngine ? buildFactorEngineHtml(c.factorEngine) : ''}
+
       ${c.visualKey2 && I[c.visualKey2] ? `${c.visualLabel2 ? genSecLabel(c.visualEmoji2 || '📊', c.visualLabel2) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey2]}</div>${c.visualCaption2 ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption2}</div>` : ''}` : ''}
 
       ${buildInteractiveDiagramHtml(c)}
@@ -6072,6 +6135,7 @@
       c.conceptBoxes !== undefined ||
       c.methodGrid !== undefined ||
       c.tileGrid !== undefined ||
+      c.factorEngine !== undefined ||
       c.chipWall !== undefined ||
       c.classifyList !== undefined ||
       c.splitDecision !== undefined ||

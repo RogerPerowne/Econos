@@ -247,7 +247,7 @@
   function qHeader(q) {
     var prog = ((q.n - 1) / Qs.length * 100).toFixed(0);
     return '<div class="quiz-top">' + typeBadge(q.type) +
-      '<div class="quiz-score"><div class="quiz-score__label">Score</div><div class="quiz-score__value">' + S.score + ' / ' + (q.n - 1) + '</div></div></div>' +
+      '<div class="quiz-score"><div class="quiz-score__label">Score</div><div class="quiz-score__value">' + fmtScore(S.score) + ' / ' + (q.n - 1) + '</div></div></div>' +
       '<div class="quiz-progress"><div class="quiz-progress__fill" style="width:' + prog + '%"></div></div>' +
       '<div class="quiz-qnum">Question ' + q.n + ' of ' + Qs.length + '</div>';
   }
@@ -266,11 +266,40 @@
       '</div>';
   }
 
-  function recordResult(ok, summary) {
-    if (ok) S.score++;
+  /* Score display: integer when the total lands clean (no partial
+     credit awarded yet), one decimal when fractions are in play
+     ("7.5 / 10"). Keeps the in-flight chip tidy for binary-only
+     quizzes and honest for mixed ones. */
+  function fmtScore(n) {
+    if (n >= 0 && (n - Math.floor(n)) < 0.05) return String(Math.round(n));
+    return n.toFixed(1).replace(/\.0$/, '');
+  }
+
+  /* Partial credit. Each question contributes a score in [0, 1] to
+     S.score instead of a binary 0/1.
+       - Single-answer types (MCQ, T/F, numeric_input, odd-one-out,
+         diagnostic_pair, confidence_mcq) stay binary: pass `true` or
+         `false`, which the helper coerces to 1 or 0.
+       - Multi-part types (match_pairs, cause_effect, categorise,
+         elastic_sort, para_fill, rank/chain) pass a fraction:
+         `correctItems / totalItems`. 5 of 6 pairs → 0.833.
+       - Multi_select uses negative marking: `max(0, (right − wrong)
+         / total_correct)`. Closes the "tick everything" loophole —
+         picking all 6 options when only 3 are correct gives 3−3 = 0.
+     `rv.ok` (legacy boolean) stays for back-compat with anything that
+     reads it; new code reads `rv.score`. */
+  function recordResult(scoreOrBool, summary) {
+    var score;
+    if (typeof scoreOrBool === 'boolean') score = scoreOrBool ? 1 : 0;
+    else if (typeof scoreOrBool === 'number' && isFinite(scoreOrBool)) {
+      score = Math.max(0, Math.min(1, scoreOrBool));
+    } else score = 0;
+    S.score += score;
     var q = Qs[S.qi];
     S.results.push({
-      ok: ok, n: S.qi + 1, type: q.type,
+      ok: score >= 0.999,
+      score: score,
+      n: S.qi + 1, type: q.type,
       stem: q.stem || '',
       exp:  q.exp  || '',
       summary: summary
@@ -381,7 +410,7 @@
       });
     });
     var allOk = (nCorrect === q.goods.length);
-    recordResult(allOk, nCorrect + ' of ' + q.goods.length + ' classified correctly');
+    recordResult(nCorrect / q.goods.length, nCorrect + ' of ' + q.goods.length + ' classified correctly');
     document.getElementById('es-sub').disabled = true;
     document.getElementById('es-tally').innerHTML = '<span><strong>' + nCorrect + '</strong> / ' + q.goods.length + ' correct</span>';
     var prefix = '<strong>You got ' + nCorrect + ' out of ' + q.goods.length + ' right.</strong><br><br>';
@@ -589,9 +618,20 @@
     if (S.answered) return; S.answered = true;
     var q = Qs[S.qi];
     var correctSet = {}; q.correct.forEach(function (idx) { correctSet[idx] = true; });
-    var allOk = true;
-    S.msChecked.forEach(function (checked, i) { if (checked !== !!correctSet[i]) allOk = false; });
-    recordResult(allOk, 'Multi-select submitted');
+    /* Negative marking: each correct pick +1, each wrong pick −1,
+       floor at 0, normalize by the number of correct answers. Stops
+       learners from ticking every option to guarantee a perfect
+       score — picking all 6 when only 3 are correct gives 3 − 3 = 0. */
+    var rightPicks = 0, wrongPicks = 0, allOk = true;
+    S.msChecked.forEach(function (checked, i) {
+      if (checked !== !!correctSet[i]) allOk = false;
+      if (checked && correctSet[i]) rightPicks++;
+      else if (checked && !correctSet[i]) wrongPicks++;
+    });
+    var totalCorrect = q.correct.length || 1;
+    var scoreFrac = Math.max(0, (rightPicks - wrongPicks) / totalCorrect);
+    var summary = rightPicks + ' right, ' + wrongPicks + ' wrong (of ' + totalCorrect + ' correct)';
+    recordResult(scoreFrac, summary);
     document.querySelectorAll('.quiz-ms-opt').forEach(function (el, i) {
       el.classList.add('locked');
       var shouldBe = !!correctSet[i];
@@ -667,7 +707,13 @@
     if (S.answered) return; S.answered = true;
     var q = Qs[S.qi];
     var allOk = S.rankOrder.every(function (idx, i) { return idx === q.correctOrder[i]; });
-    recordResult(allOk, 'Order: ' + S.rankOrder.map(function (i) { return q.items[i].label.replace(/<[^>]+>/g, ''); }).join(' › '));
+    // Partial credit: items in their correct slot. Slot-based (not
+    // Kendall tau) — simpler to explain to a learner ("3 of 5 in the
+    // right spot"). Single-item rank still works (1/1 or 0/1).
+    var inSlot = 0;
+    S.rankOrder.forEach(function (idx, i) { if (idx === q.correctOrder[i]) inSlot++; });
+    var rankScore = q.correctOrder.length ? inSlot / q.correctOrder.length : 0;
+    recordResult(rankScore, inSlot + ' / ' + q.correctOrder.length + ' in correct order');
     document.querySelectorAll('.quiz-rank-item').forEach(function (el) { el.classList.add('locked'); el.classList.remove('selected'); });
     q.correctOrder.forEach(function (idx, i) {
       var el = document.getElementById('ri' + idx);
@@ -893,7 +939,7 @@
 
     var allCorrect = correctCount === n;
     var summary    = correctCount + ' / ' + n + ' pairs correct';
-    recordResult(allCorrect, summary);
+    recordResult(n ? correctCount / n : 0, summary);
     var checkBtn = document.getElementById('ce-check');
     if (checkBtn) checkBtn.style.display = 'none';
     document.getElementById('fb').outerHTML = feedbackHTML(allCorrect, q.exp);
@@ -1104,7 +1150,7 @@
     });
 
     var allCorrect = correctCount === n;
-    recordResult(allCorrect, correctCount + ' / ' + n + ' pairs correct');
+    recordResult(n ? correctCount / n : 0, correctCount + ' / ' + n + ' pairs correct');
     var checkBtn = document.getElementById('mp-check');
     if (checkBtn) checkBtn.style.display = 'none';
     document.getElementById('fb').outerHTML = feedbackHTML(allCorrect, q.exp);
@@ -1187,7 +1233,7 @@
       if (el) el.classList.add(correct ? 'cat-correct' : 'cat-wrong');
     });
     var allOk = (nCorrect === q.items.length);
-    recordResult(allOk, nCorrect + ' / ' + q.items.length + ' placed correctly');
+    recordResult(q.items.length ? nCorrect / q.items.length : 0, nCorrect + ' / ' + q.items.length + ' placed correctly');
     document.getElementById('cat-sub').disabled = true;
     document.getElementById('fb').outerHTML = feedbackHTML(allOk, q.exp);
     document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
@@ -1233,8 +1279,10 @@
   window.submitPF = function () {
     if (S.answered) return; S.answered = true;
     var q = Qs[S.qi];
-    var allOk = q.blanks.every(function (b) { return S.pfSel[b.id] === b.ans; });
-    recordResult(allOk, 'Paragraph completed');
+    var nBlanks = q.blanks.length;
+    var nRight = q.blanks.reduce(function (n, b) { return n + (S.pfSel[b.id] === b.ans ? 1 : 0); }, 0);
+    var allOk = nRight === nBlanks;
+    recordResult(nBlanks ? nRight / nBlanks : 0, nRight + ' / ' + nBlanks + ' blanks correct');
     q.blanks.forEach(function (b) {
       var chosen = S.pfSel[b.id];
       var ok = (chosen === b.ans);
@@ -1324,20 +1372,29 @@
 
     var verdict = pct >= 80 ? 'Excellent — the full picture is clear.'
                 : pct >= 60 ? "You're on the right track."
-                : pct >= 40 ? 'Developing — some core ideas need more work.'
-                : 'This topic needs focused revision.';
+                : pct >= 40 ? 'Solid start — a focused review will lock the rest in.'
+                : 'A quick replay of the cards will move the needle fast.';
 
-    var nCorrect = S.score;
+    // Three-state breakdown so partial credit reads honestly: fully
+    // correct (✓), partial (◐), missed (✗). Drives the ring caption
+    // and the per-question review chips.
+    var fullCorrect = 0, partial = 0;
+    S.results.forEach(function (rv) {
+      if (rv.score >= 0.999) fullCorrect++;
+      else if (rv.score > 0) partial++;
+    });
 
     var reviewRows = S.results.map(function (rv) {
       var m = TYPE_META[rv.type] || { label: rv.type, tone: 'blue' };
       var tc = TONE_COLOURS[m.tone];
       var hasExp = !!(rv.exp || rv.summary);
+      var chipClass = rv.score >= 0.999 ? 'ok' : (rv.score > 0 ? 'partial' : 'bad');
+      var chipIcon  = rv.score >= 0.999 ? '✓'  : (rv.score > 0 ? '◐'      : '✗');
       var header =
         '<summary class="quiz-rvrow__head">' +
-          '<div class="quiz-rvrow__chip quiz-rvrow__chip--' + (rv.ok ? 'ok' : 'bad') + '">' +
+          '<div class="quiz-rvrow__chip quiz-rvrow__chip--' + chipClass + '">' +
             '<span>Q' + rv.n + '</span>' +
-            '<span>' + (rv.ok ? '✓' : '✗') + '</span>' +
+            '<span>' + chipIcon + '</span>' +
           '</div>' +
           '<div class="quiz-rvrow__body">' +
             '<div class="quiz-rvrow__type" style="color:' + tc.fg + '">' + m.label + '</div>' +
@@ -1370,11 +1427,11 @@
       '<div class="quiz-stats">' +
         '<div class="quiz-stat">' +
           '<div class="quiz-stat__label">Your score</div>' +
-          '<div class="quiz-stat__value">' + S.score + '<span class="quiz-stat__denom">/' + total + '</span></div>' +
+          '<div class="quiz-stat__value">' + fmtScore(S.score) + '<span class="quiz-stat__denom">/' + total + '</span></div>' +
           '<div class="quiz-stat__sub">' + pct + '%</div>' +
           '<div class="quiz-stat__verdict">' + verdict + '</div>' +
           '<div class="quiz-stat__chip quiz-stat__chip--' + (passed ? 'ok' : 'bad') + '">' +
-            (passed ? '✓ Pass (60% required)' : 'Below pass mark — try again') +
+            (passed ? '✓ Pass (60% required)' : 'Pass mark is 60% — give it another go') +
           '</div>' +
         '</div>' +
         '<div class="quiz-stat">' +
@@ -1388,9 +1445,12 @@
           '<div class="quiz-stat__label">Accuracy</div>' +
           '<div class="quiz-ring" style="--ring-pct:' + pct + '">' +
             '<div class="quiz-ring__inner"><div class="quiz-ring__pct">' + pct + '%</div>' +
-            '<div class="quiz-ring__sub">' + nCorrect + ' correct</div></div>' +
+            '<div class="quiz-ring__sub">' + fullCorrect + ' correct</div></div>' +
           '</div>' +
-          '<div class="quiz-stat__sub">of ' + total + ' questions</div>' +
+          '<div class="quiz-stat__sub">' +
+            (partial > 0 ? '+ ' + partial + ' partial · ' : '') +
+            'of ' + total + ' questions' +
+          '</div>' +
         '</div>' +
       '</div>' +
 

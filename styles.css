@@ -6384,6 +6384,11 @@ img, svg { display: block; max-width: 100%; }
   border-color: var(--econ-green-100);
   color: var(--econ-green-700);
 }
+.quiz-rvrow__chip--partial {
+  background: var(--econ-amber-50);
+  border-color: var(--econ-amber-100);
+  color: var(--econ-amber-700);
+}
 .quiz-rvrow__chip--bad {
   background: var(--econ-rose-50);
   border-color: var(--econ-rose-100);

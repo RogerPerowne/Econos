@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       causes: [
         { head: 'Isolate key variables',               icon: '🔍', body: 'Focus on the factors that matter most to the question.' },
         { head: 'Manage complexity', icon: '🧩', body: 'Break big problems into manageable parts.' },
-        { head: 'Compare outcomes or policies',        icon: '⚖️', body: 'See how different changes might affect results.' }
+        { head: 'Compare outcomes',                     icon: '⚖️', body: 'See how different changes might affect results.' }
       ],
       causesLabel: 'Why simplify?',
       causesEmoji: '🔻',

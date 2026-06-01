@@ -29,12 +29,12 @@
   var P2_y = 0.700, Qd_surp  = 0.248, Qs_surp  = 0.692;
 
   window.ECONOS_DISEQUILIBRIUM_SPEC = {
-    width: 900,
+    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
+    legendPosition: 'bottom',
     height: 440,
     chartArea: { x: 60, y: 43, width: 500, height: 357 },
     className: 'disequilibrium-svg',
     background: '#FFFFFF',
-    divider: { x: 595, y1: 16, y2: 424 },
     // Arrowheads come from the engine's built-in econos-arrow-{tone}
     // markers — no per-spec marker boilerplate needed.
     axes: {

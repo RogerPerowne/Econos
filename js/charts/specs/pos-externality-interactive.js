@@ -31,12 +31,12 @@
   var MebBracket = { x: 0.640, yMpb: 0.199, yMsb: 0.395 };
 
   window.ECONOS_POS_EXTERNALITY_SPEC = {
-    width: 900,
+    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
+    legendPosition: 'bottom',
     height: 440,
     chartArea: { x: 60, y: 43, width: 500, height: 357 },
     className: 'posext-svg',
     background: '#FFFFFF',
-    divider: { x: 595, y1: 16, y2: 424 },
     axes: {
       x: { label: 'Q' },
       y: { label: 'P' }

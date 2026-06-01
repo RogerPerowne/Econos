@@ -1808,26 +1808,49 @@
     // legendsBelow: emit visibility rules for the HTML legend layers so
     // the parent's `.show-<view.key>` class toggles the HTML legends
     // exactly the way it toggled the old in-SVG legends. Generated from
-    // spec.views so adding a view doesn't require touching styles.css.
+    // spec.views (per-view legend) OR spec.legends[] (each legend's
+    // `layer: 'layer-legend-<key>'` carries the key). Either authoring
+    // shape works — the engine derives the same `(layer → show-<key>)`
+    // pairs and emits one stylesheet.
     var legendBelowCss = '';
-    if (legendsBelow && Array.isArray(spec.views) && spec.views.length) {
-      var viewKeys = spec.views.map(function (v) { return v.key; });
-      var legendLayers = spec.views.map(function (v) {
-        return v.legendLayer || ('layer-legend-' + v.key);
-      });
-      var lFadeOut = 'opacity:0;transition:opacity .32s ease';
-      var lFadeIn  = 'opacity:1;transition:opacity .32s ease';
-      // Hide every legend layer by default inside the HTML container.
-      var lHides = legendLayers.map(function (cls) {
-        return '.econos-chart-legends .' + cls;
-      }).join(',') + '{' + lFadeOut + '}';
-      // For each view key, the matching legend layer fades in.
-      var lReveals = viewKeys.map(function (k, i) {
-        return '.show-' + k + ' .econos-chart-legends .' + legendLayers[i] + '{' + lFadeIn + '}';
-      }).join('');
-      // First view = default-visible (no .show-* parent class yet).
-      var lInitial = '.econos-chart-legends .' + legendLayers[0] + '{' + lFadeIn + '}';
-      legendBelowCss = '<style>' + lHides + lInitial + lReveals + '</style>';
+    if (legendsBelow) {
+      var pairs = []; // [{ key, layer }]
+      if (Array.isArray(spec.views) && spec.views.length) {
+        spec.views.forEach(function (v) {
+          pairs.push({ key: v.key, layer: v.legendLayer || ('layer-legend-' + v.key) });
+        });
+      }
+      if (Array.isArray(spec.legends) && spec.legends.length) {
+        spec.legends.forEach(function (lg) {
+          if (!lg.layer) return;
+          // Convention: layer-legend-<key> → show-<key>. Strip the
+          // prefix; the remainder is the state key. Skip duplicates
+          // already contributed by spec.views.
+          var key = lg.layer.replace(/^layer-legend-/, '');
+          if (!pairs.some(function (p) { return p.layer === lg.layer; })) {
+            pairs.push({ key: key, layer: lg.layer });
+          }
+        });
+      }
+      // Single-legend charts: no toggling — just leave it visible.
+      // Multi-legend charts: hide all, then reveal the one matching
+      // the parent's `.show-<view-key>` class. We rely on the consumer
+      // (app.js's ad-interactive renderer) setting `.show-<firstkey>`
+      // on the parent at initial render so the first view is visible
+      // out of the box. An "initially shown" rule with equal specificity
+      // to the hide-all rule used to keep every legend visible at once
+      // because the cascade order favoured it — see screenshot 06-01.
+      if (pairs.length > 1) {
+        var lFadeOut = 'opacity:0;pointer-events:none;transition:opacity .32s ease';
+        var lFadeIn  = 'opacity:1;pointer-events:auto;transition:opacity .32s ease';
+        var lHides = pairs.map(function (p) {
+          return '.econos-chart-legends .' + p.layer;
+        }).join(',') + '{' + lFadeOut + '}';
+        var lReveals = pairs.map(function (p) {
+          return '.show-' + p.key + ' .econos-chart-legends .' + p.layer + '{' + lFadeIn + '}';
+        }).join('');
+        legendBelowCss = '<style>' + lHides + lReveals + '</style>';
+      }
     }
     // Built-in arrow markers — emitted in every chart's <defs> so authors
     // can write `markerEnd: 'econos-arrow-blue'` instead of hand-rolling

@@ -33,12 +33,12 @@
   var MecBracket = { x: 0.680, yMpc: 0.910, yMsc: 0.686 };
 
   window.ECONOS_NEG_EXTERNALITY_SPEC = {
-    width: 900,
+    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
+    legendPosition: 'bottom',
     height: 440,
     chartArea: { x: 60, y: 43, width: 500, height: 357 },
     className: 'negext-svg',
     background: '#FFFFFF',
-    divider: { x: 595, y1: 16, y2: 424 },
     axes: {
       x: { label: 'Q' },
       y: { label: 'P' }

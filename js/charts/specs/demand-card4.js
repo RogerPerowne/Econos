@@ -26,12 +26,12 @@
   var P_2    = { x: 0.705, y: 0.308 };
 
   window.ECONOS_DEMAND_CARD4_SPEC = {
-    width: 900,
+    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
+    legendPosition: 'bottom',
     height: 440,
     chartArea: { x: 60, y: 43, width: 515, height: 357 },
     className: 'demand-cs-svg',
     background: '#FFFFFF',
-    divider: { x: 608, y1: 16, y2: 424 },
     axes: {
       x: { label: 'Q' },
       y: { label: 'P' }
@@ -111,10 +111,7 @@
       { layer: 'layer-pfall', x: -0.03, y: 0.308, text: 'P₂', tone: 'green', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-pfall', x: 0.705, y: -0.045, text: 'Q₂', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
       // pfall: CS label inside expanded triangle (different position)
-      { layer: 'layer-pfall', x: 0.184, y: 0.532, text: 'CS', tone: 'green', bold: true, fontSize: 18, anchor: 'middle' },
-
-      // Always-visible "TAP A STEP TO BUILD THE DIAGRAM" header
-      { x: 1.10, y: 1.03, text: 'TAP A STEP TO BUILD THE DIAGRAM', tone: 'gray', bold: true, fontSize: 10, anchor: 'start' }
+      { layer: 'layer-pfall', x: 0.184, y: 0.532, text: 'CS', tone: 'green', bold: true, fontSize: 18, anchor: 'middle' }
     ],
 
     // Right-side legend variants — each in its own layer so the CSS

@@ -24,12 +24,12 @@
   var P_2    = { x: 0.647, y: 0.630 };
 
   window.ECONOS_SUPPLY_CARD4_SPEC = {
-    width: 900,
+    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
+    legendPosition: 'bottom',
     height: 440,
     chartArea: { x: 60, y: 43, width: 515, height: 357 },
     className: 'supply-ps-svg',
     background: '#FFFFFF',
-    divider: { x: 608, y1: 16, y2: 424 },
     axes: {
       x: { label: 'Q' },
       y: { label: 'P' }
@@ -100,11 +100,7 @@
       { layer: 'layer-prise', x: -0.03, y: P_2.y, text: 'P₂', tone: 'rose', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-prise', x: P_2.x, y: -0.045, text: 'Q₂', tone: 'rose', bold: true, fontSize: 12, anchor: 'middle' },
       // prise: PS label inside expanded triangle (slightly right of base position)
-      { layer: 'layer-prise', x: 0.175, y: 0.294, text: 'PS', tone: 'rose', bold: true, fontSize: 18, anchor: 'middle' },
-
-      // Always-visible "TAP A STEP TO BUILD THE DIAGRAM" header
-      { x: 1.10, y: 1.03, text: 'TAP A STEP TO BUILD THE DIAGRAM',
-        tone: 'gray', bold: true, fontSize: 10, anchor: 'start' }
+      { layer: 'layer-prise', x: 0.175, y: 0.294, text: 'PS', tone: 'rose', bold: true, fontSize: 18, anchor: 'middle' }
     ],
 
     legends: [

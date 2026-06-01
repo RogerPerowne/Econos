@@ -85,8 +85,8 @@ window.ECONOS_TOPIC = {
       comparison: {
         title: 'The distinction',
         emoji: '⚖️',
-        left:  { tone: 'green', icon: '🌱', label: 'Renewable resources',     caption: 'Replenished naturally if used sustainably – e.g. solar, wind, forests, fish stocks. Their stock lasts only if use stays within the natural replenishment rate.' },
-        right: { tone: 'amber', icon: '⛏️', label: 'Non-renewable resources', caption: 'Finite in supply and depleted by use – e.g. oil, coal, natural gas, metal ores. Once extracted and used, they are gone for future generations.' }
+        left:  { tone: 'green', icon: '🌱', label: 'Renewable resources',     caption: 'Replenished naturally – but only if use stays within the natural replenishment rate.', chips: ['☀️ Solar', '💨 Wind', '🌲 Forests', '🐟 Fish stocks'] },
+        right: { tone: 'amber', icon: '⛏️', label: 'Non-renewable resources', caption: 'Finite and depleted by use – once extracted, gone for future generations.',           chips: ['🛢️ Oil', '⛏️ Coal', '🔥 Gas', '🪨 Metal ores'] }
       },
       flow: [
         { icon: '⛏️', title: 'Use non-renewables now',           sub: 'Less is left for the future.' },
@@ -95,12 +95,23 @@ window.ECONOS_TOPIC = {
       ],
       flowTitle: 'Opportunity cost over time',
       flowEmoji: '⏳',
-      causes: [
-        { head: 'Today: consumption now',  icon: '👥', body: 'Greater output, lower prices and higher living standards in the short run.' },
-        { head: 'Tomorrow: welfare later', icon: '⚖️', body: 'Overuse today can mean higher costs, fewer resources and lower welfare for future generations.' }
-      ],
-      causesLabel: 'Today vs tomorrow',
-      causesEmoji: '📅',
+      verdict: {
+        title: 'Today vs tomorrow – the trade-off',
+        emoji: '📅',
+        layout: 'arrow',
+        columns: [
+          { tone: 'green', icon: '⚡', label: 'Today: consume now', items: [
+            { ok: true, text: 'Greater output and jobs now' },
+            { ok: true, text: 'Lower prices for consumers' },
+            { ok: true, text: 'Higher living standards in the short run' }
+          ] },
+          { tone: 'amber', icon: '⏳', label: 'Tomorrow: the bill arrives', items: [
+            { ok: false, text: 'Higher costs as resources run scarce' },
+            { ok: false, text: 'Fewer resources left to use' },
+            { ok: false, text: 'Lower welfare for future generations' }
+          ] }
+        ]
+      },
       branches: [
         { tone: 'green',  label: 'Sustainability',           sub: 'Renewables can support economic activity without running out if managed well.' },
         { tone: 'amber',  label: 'Long-run scarcity',         sub: 'Non-renewables become scarcer and more expensive as stocks are used up.' },

@@ -1532,7 +1532,13 @@
 
     // Diagram panel – SVG on the left, annotated notes on the right (default),
     // or SVG full-width on top with notes below when layout:'stacked'.
-    //   Pattern: diagramPanel: { diagramKey, title?, intro?, bullets?:[string], steps?:[{head,body}], tone?, layout?:'side'|'stacked' }
+    //   Pattern: diagramPanel: { diagramKey, title?, intro?, bullets?:[string], steps?:[{head,body}], tone?, layout?:'side'|'stacked', position?: 'after-causes'|'after-table' }
+    //   By default the panel renders HERE (before causes/table). `position`
+    //   defers it so a card can match a mockup where the worked example sits
+    //   after the causes tiles and/or the table — mirroring the `position`
+    //   option comparison already supports.
+    let deferredDiagramPanel = '';
+    const diagramPanelDeferred = c.diagramPanel && (c.diagramPanel.position === 'after-causes' || c.diagramPanel.position === 'after-table');
     if (c.diagramPanel && I[c.diagramPanel.diagramKey]) {
       const dp = c.diagramPanel;
       const tone = PATTERN_TONES[dp.tone || 'green'] || PATTERN_TONES.green;
@@ -1576,28 +1582,32 @@
       // 17px bold heading inside the panel was a one-off style that
       // existed nowhere else; removing it restores coherence and tightens
       // the panel's internal spacing.
-      if (dp.title) content += genSecLabel(dp.emoji || dp.titleEmoji || '📊', dp.title);
       const headerHtml = dp.intro ? `<div style="font-size:13.5px;color:#475569;margin-bottom:12px;">${dp.intro}</div>` : '';
       const hasBody = (headerHtml.trim() || notesHtml.trim());
+      // Build the panel (section-label + box) into a string so it can
+      // either render in place or be deferred via dp.position.
+      let panelOut = dp.title ? genSecLabel(dp.emoji || dp.titleEmoji || '📊', dp.title) : '';
       if (stacked && dp.bare) {
-        content += `
+        panelOut += `
           <div style="margin-bottom:26px;">
             <div style="overflow-x:auto;${hasBody ? 'margin-bottom:18px;' : ''}">${I[dp.diagramKey]}</div>
             ${hasBody ? `<div>${headerHtml}${notesHtml}</div>` : ''}
           </div>`;
       } else if (stacked) {
-        content += `
+        panelOut += `
           <div style="margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
             <div style="overflow-x:auto;margin-bottom:18px;">${I[dp.diagramKey]}</div>
             <div>${headerHtml}${notesHtml}</div>
           </div>`;
       } else {
-        content += `
+        panelOut += `
           <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
             <div style="min-width:0;overflow-x:auto;">${I[dp.diagramKey]}</div>
             <div style="display:flex;flex-direction:column;padding:0 4px;">${headerHtml}${notesHtml}</div>
           </div>`;
       }
+      if (diagramPanelDeferred) deferredDiagramPanel = panelOut;
+      else content += panelOut;
     }
 
     // Late comparison – rendered here when c.comparison.position === 'after-diagram'.
@@ -2209,6 +2219,12 @@
       renderComparison();
     }
 
+    // Deferred diagramPanel (position: 'after-causes') – renders the worked
+    // example after the causes tiles instead of before them.
+    if (c.diagramPanel && c.diagramPanel.position === 'after-causes') {
+      content += deferredDiagramPanel;
+    }
+
     // Causes 2 – a second causes-style grid for a separate themed section.
     //   Pattern: causes2: [{tone,icon,head,body}], causes2Label?, causes2Emoji?, causes2Style? ('plain-white' | default)
     if (c.causes2 && Array.isArray(c.causes2) && c.causes2.length && typeof c.causes2[0].head !== 'undefined') {
@@ -2316,6 +2332,13 @@
       `;
       }).join('');
       content += `</div>`;
+    }
+
+    // Deferred diagramPanel (position: 'after-table') – renders the worked
+    // example after the table, matching mockups where the diagram is the
+    // payoff at the end of the explanation.
+    if (c.diagramPanel && c.diagramPanel.position === 'after-table') {
+      content += deferredDiagramPanel;
     }
 
     // Branches – tone-coded callouts rendered after main content as a

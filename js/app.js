@@ -1392,6 +1392,7 @@
             <div style="font-size:${triple ? 15 : 17}px;font-weight:800;color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
             ${side.value ? `<div style="font-size:22px;font-weight:800;color:#0B1426;margin-bottom:8px;">${side.value}</div>` : ''}
             ${side.caption ? `<div style="font-size:${triple ? 12.5 : 13.5}px;color:${t.label};line-height:1.5;font-weight:600;">${side.caption}</div>` : ''}
+            ${Array.isArray(side.chips) && side.chips.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:13px;">${side.chips.map(ch => `<span style="background:#fff;border:1px solid ${t.border};color:${t.label};font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;box-shadow:0 1px 2px rgba(0,0,0,0.04);">${ch}</span>`).join('')}</div>` : ''}
           </div>
         `;
       };
@@ -1428,7 +1429,7 @@
       if (v.title) {
         content += genSecLabel(v.emoji || '⚖️', v.title);
       }
-      content += `<div style="display:flex;align-items:stretch;gap:12px;margin-bottom:26px;flex-wrap:wrap;">`;
+      content += `<div class="gen-verdict" style="display:flex;align-items:stretch;gap:12px;margin-bottom:26px;flex-wrap:wrap;">`;
       content += v.columns.map((col, i) => {
         const t = PATTERN_TONES[col.tone || 'slate'] || PATTERN_TONES.slate;
         const isLast = i === v.columns.length - 1;
@@ -1448,7 +1449,7 @@
               }).join('')}
             </ul>
           </div>`;
-        const separator = !isLast ? `<div style="display:flex;align-items:center;flex-shrink:0;"><div style="width:34px;height:34px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:${sep === '→' ? '15px' : '11px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(11,20,38,0.25);">${sep}</div></div>` : '';
+        const separator = !isLast ? `<div class="gen-verdict__sep${sep === '→' ? ' gen-verdict__sep--arrow' : ''}" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:34px;height:34px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:${sep === '→' ? '15px' : '11px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(11,20,38,0.25);">${sep}</div></div>` : '';
         return colHtml + separator;
       }).join('');
       content += `</div>`;

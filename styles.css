@@ -2808,6 +2808,13 @@ img, svg { display: block; max-width: 100%; }
     justify-content: center !important;
     transform: none !important;
   }
+  /* Verdict (✓/✗ columns) stacks into a column on phones — two 160px
+     columns plus a badge don't fit a ~330px card. Centre the separator
+     between the stacked columns; rotate only the directional arrow so it
+     points downward (the VS variant stays upright). */
+  .gen-verdict { flex-direction: column !important; }
+  .gen-verdict__sep { justify-content: center !important; align-self: center !important; }
+  .gen-verdict__sep--arrow > div { transform: rotate(90deg); }
 }
 
 /* Card padding tightens on narrow viewports so the inner content

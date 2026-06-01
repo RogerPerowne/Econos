@@ -2713,6 +2713,10 @@ img, svg { display: block; max-width: 100%; }
   [style*="display: grid"][style*="gap: 18px"] {
     gap: 10px !important;
   }
+  /* splitDecision (vs-style economist cards) stacks on phones — the
+     dark VS badge sits between the stacked cards. */
+  .split-decision { flex-direction: column !important; }
+  .split-decision__vs { transform: rotate(90deg); }
 }
 
 /* Card padding tightens on narrow viewports so the inner content

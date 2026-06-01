@@ -86,9 +86,9 @@ window.ECONOS_TOPIC = {
         right: { tone: 'slate', icon: '💡', label: 'What it means',            caption: 'We hold all other relevant factors constant so we can focus on how one factor affects another.' }
       },
       flow: [
-        { icon: '1️⃣', title: 'Many moving parts',        sub: 'Economies are complex. Many factors influence people’s decisions.' },
-        { icon: '2️⃣', title: 'Isolate one relationship', sub: 'By holding other factors constant, we can see the effect of just one factor.' },
-        { icon: '3️⃣', title: 'Clearer explanation',      sub: 'This makes cause and effect easier to identify and theory more testable.' }
+        { icon: '⚙️', title: 'Many moving parts',        sub: 'Economies are complex. Many factors influence people’s decisions.' },
+        { icon: '🔍', title: 'Isolate one relationship', sub: 'By holding other factors constant, we can see the effect of just one factor.' },
+        { icon: '💡', title: 'Clearer explanation',      sub: 'This makes cause and effect easier to identify and theory more testable.' }
       ],
       flowTitle: 'Why it is needed',
       flowEmoji: '🔗',
@@ -124,24 +124,30 @@ window.ECONOS_TOPIC = {
       ],
       causesLabel: 'Why not',
       causesEmoji: '⚖️',
-      table: {
-        title: 'What economists use instead',
+      methodGrid: {
+        label: 'What economists use instead',
         emoji: '🧰',
-        headers: ['Method', 'What it is'],
-        rows: [
-          { icon: '🔍', label: 'Natural experiments', value: 'Real-world events that create a comparison group by chance. <em>Example: a minimum-wage change in one region but not in others.</em>' },
-          { icon: '📅', label: 'Historical data',     value: 'Data collected over time reveals patterns and relationships. <em>Example: inflation data over many years to study causes and effects.</em>' },
-          { icon: '🔗', label: 'Models',              value: 'Simplified representations that help explain how the economy works. <em>Example: the AD/AS model, or supply and demand.</em>' }
+        items: [
+          { tone: 'blue',   icon: '🔍', title: 'Natural experiments', body: 'Real-world events that create a comparison group by chance.', example: 'a minimum-wage change in one region but not in others.' },
+          { tone: 'amber',  icon: '📅', title: 'Historical data',     body: 'Data collected over time shows patterns and relationships.', example: 'inflation data over many years to study causes and effects.' },
+          { tone: 'purple', icon: '🔗', title: 'Models',              body: 'Simplified representations that help explain how the economy works.', example: 'the AD/AS model, or supply and demand.' }
         ]
       },
-      branches: [
-        { tone: 'blue',   label: 'Evidence is often messy',          sub: 'Real economies are complex. Data is incomplete and influenced by many factors at once.' },
-        { tone: 'amber',  label: 'Causal relationships are harder to prove', sub: 'It’s difficult to be certain that one change caused another.' },
-        { tone: 'purple', label: 'Reasonable economists may read the same evidence differently', sub: 'Different models, values and assumptions can lead to different conclusions – two economists can see the same evidence and recommend opposite policies.' }
+      noteLabel: 'What this means',
+      noteEmoji: '💡',
+      note: [
+        { tone: 'blue',   icon: '🧩', head: 'Evidence is often messy', text: 'Real economies are complex. Data is incomplete and influenced by many factors at once.' },
+        { tone: 'amber',  icon: '🎯', head: 'Causal relationships are harder to prove', text: 'It’s difficult to be certain that one change caused another.' },
+        { tone: 'purple', icon: '👥', head: 'Reasonable economists may read the same evidence differently', text: 'Different models, values and assumptions can lead to different conclusions.' }
       ],
-      branchesLabel: 'What this means',
-      branchesEmoji: '💡',
-      branchesLayout: 'stack',
+      splitDecision: {
+        label: 'Agreeing on facts, disagreeing on policy',
+        emoji: '👥',
+        sides: [
+          { tone: 'blue', icon: '🧑', name: 'Economist A', premise: 'Sees the same evidence.', interpretation: 'Interprets it as showing policy X will boost growth.', conclusion: 'Recommends policy X.' },
+          { tone: 'rose', icon: '🧑', name: 'Economist B', premise: 'Sees the same evidence.', interpretation: 'Interprets it as showing policy Y is better.', conclusion: 'Recommends policy Y.' }
+        ]
+      },
       keyTakeaway: 'Economics is a social science – it studies people, so evidence is powerful but rarely perfect.',
       examEdge: 'High-level answers link the lack of controlled experiments to uncertainty and disagreement among economists.'
     },

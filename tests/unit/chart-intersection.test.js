@@ -142,3 +142,32 @@ describe('geometry assertion', () => {
     expect(drifts[0]).toContain('0.300');
   });
 });
+
+/* ============================================================
+   on:-snap — a point declared `on: 'curveId'` has its y resolved
+   from the curve at the point's x, so dots are guaranteed to sit
+   on the line (not just hinted for label placement). Drift beyond
+   tolerance warns but still snaps.
+   ============================================================ */
+describe('on:-curve snap', () => {
+  it('snaps a drifted point onto a straight line at its x', () => {
+    const spec = {
+      ...SQUARE,
+      curves: [{ id: 'D', d: 'M 0.000,1.000 L 1.000,0.000' }], // y = 1 - x
+      // declared y is wrong (0.30); the curve at x=0.40 is y=0.60
+      points: [{ x: 0.40, y: 0.30, on: 'D' }]
+    };
+    render(spec);
+    expect(pt(spec).y).toBeCloseTo(0.60, 5);
+  });
+
+  it('leaves an already-correct on-curve point unchanged', () => {
+    const spec = {
+      ...SQUARE,
+      curves: [{ id: 'D', d: 'M 0.000,1.000 L 1.000,0.000' }],
+      points: [{ x: 0.25, y: 0.75, on: 'D' }]
+    };
+    render(spec);
+    expect(pt(spec).y).toBeCloseTo(0.75, 5);
+  });
+});

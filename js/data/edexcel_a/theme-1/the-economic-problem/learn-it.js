@@ -80,7 +80,7 @@ window.ECONOS_TOPIC = {
       comparison: {
         title: 'The distinction',
         emoji: '⚖️',
-        left:  { tone: 'green', icon: '🌱', label: 'Renewable resources',     caption: 'Replenished naturally if used sustainably – e.g. solar, wind, forests (timber), fish stocks. They maintain their stock over time, but only if use does not exceed the natural rate of replenishment.' },
+        left:  { tone: 'green', icon: '🌱', label: 'Renewable resources',     caption: 'Replenished naturally if used sustainably – e.g. solar, wind, forests, fish stocks. Their stock lasts only if use stays within the natural replenishment rate.' },
         right: { tone: 'amber', icon: '⛏️', label: 'Non-renewable resources', caption: 'Finite in supply and depleted by use – e.g. oil, coal, natural gas, metal ores. Once extracted and used, they are gone for future generations.' }
       },
       flow: [

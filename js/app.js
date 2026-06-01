@@ -2334,6 +2334,32 @@
       content += `</div>`;
     }
 
+    // Method grid – N tone-coloured cards in a row, each with a tinted
+    // title band, an icon + description, and an italic "Example:" footer.
+    // For "here are the N approaches / tools / methods" sections.
+    //   Pattern: methodGrid: { label?, emoji?, items: [{tone,icon,title,body,example}] }
+    if (c.methodGrid && Array.isArray(c.methodGrid.items) && c.methodGrid.items.length) {
+      const mg = c.methodGrid;
+      if (mg.label) content += genSecLabel(mg.emoji || '🧰', mg.label);
+      const n = mg.items.length;
+      content += `<div class="method-grid" style="display:grid;grid-template-columns:repeat(${n},1fr);gap:14px;margin-bottom:26px;">`;
+      content += mg.items.map(m => {
+        const t = PATTERN_TONES[m.tone || 'blue'] || PATTERN_TONES.blue;
+        return `
+          <div style="display:flex;flex-direction:column;border:1px solid ${t.border};border-radius:14px;background:#fff;overflow:hidden;">
+            <div style="background:${t.bg};border-bottom:1px solid ${t.border};padding:12px 14px;display:flex;align-items:center;gap:10px;">
+              <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${m.icon || ''}</span>
+              <span style="font-size:15px;font-weight:800;color:${t.label};line-height:1.25;">${m.title || ''}</span>
+            </div>
+            <div style="padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;">
+              <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${m.body || ''}</div>
+              ${m.example !== undefined ? `<div style="font-size:13px;color:#475569;line-height:1.5;margin-top:auto;"><span style="font-weight:800;color:${t.label};">Example:</span> <em>${m.example}</em></div>` : ''}
+            </div>
+          </div>`;
+      }).join('');
+      content += `</div>`;
+    }
+
     // Deferred diagramPanel (position: 'after-table') – renders the worked
     // example after the table, matching mockups where the diagram is the
     // payoff at the end of the explanation.
@@ -2509,6 +2535,7 @@
     //   Default icon: ℹ️, default tone: blue.
     if (c.note && c.notePosition !== 'top') {
       const notes = Array.isArray(c.note) ? c.note : [c.note];
+      if (c.noteLabel) content += genSecLabel(c.noteEmoji || '💡', c.noteLabel);
       notes.forEach(note => {
         const noteText = typeof note === 'object' ? note.text : note;
         const noteIcon = (typeof note === 'object' && note.icon) || 'ℹ️';
@@ -2520,6 +2547,35 @@
           : `<div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div>`;
         content += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:14px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
       });
+    }
+
+    // Split decision – two side-by-side cards showing how the SAME premise
+    // leads to DIFFERENT conclusions (e.g. two economists who agree on the
+    // facts but recommend opposite policies). Each side: avatar + name,
+    // a shared premise, an interpretation, then a bold conclusion below a
+    // down-arrow. Stacks on mobile.
+    //   Pattern: splitDecision: { label?, emoji?, sides: [{tone,icon,name,premise,interpretation,conclusion}] }
+    if (c.splitDecision && Array.isArray(c.splitDecision.sides) && c.splitDecision.sides.length) {
+      const sd = c.splitDecision;
+      if (sd.label) content += genSecLabel(sd.emoji || '⚖️', sd.label);
+      const cardHtml = (s) => {
+        const t = PATTERN_TONES[s.tone || 'blue'] || PATTERN_TONES.blue;
+        return `
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:10px;border:1px solid ${t.border};border-radius:16px;background:${t.bg};padding:18px 20px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">${s.icon || '👤'}</span>
+              <span style="font-size:15px;font-weight:800;color:${t.label};">${s.name || ''}</span>
+            </div>
+            ${s.premise ? `<div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${s.premise}</div>` : ''}
+            ${s.interpretation ? `<div style="font-size:13.5px;color:#0B1426;line-height:1.55;border-top:1px dashed ${t.border};padding-top:10px;">${s.interpretation}</div>` : ''}
+            <div style="text-align:center;color:${t.accent};font-size:18px;line-height:1;">↓</div>
+            <div style="font-size:14px;font-weight:800;color:#0B1426;line-height:1.4;">${s.conclusion || ''}</div>
+          </div>`;
+      };
+      // vs-style: same dark "VS" badge the comparison block uses, between
+      // the two sides. `.split-decision` stacks to a column on mobile.
+      const vsBadge = `<div class="split-decision__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:46px;height:46px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:13px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${sd.vs || 'VS'}</div></div>`;
+      content += `<div class="split-decision" style="display:flex;align-items:stretch;gap:14px;margin-bottom:26px;">${sd.sides.map(cardHtml).join(vsBadge)}</div>`;
     }
 
     // Summary row – up to 3 mini-cards side-by-side for contrast/context blocks
@@ -5831,6 +5887,8 @@
       (c.table !== undefined && c.table.rows && c.table.rows.length > 0 &&
        !Array.isArray(c.table.rows[0])) ||
       c.conceptBoxes !== undefined ||
+      c.methodGrid !== undefined ||
+      c.splitDecision !== undefined ||
       c.diagramPanel !== undefined ||
       c.diagramGrid !== undefined ||
       c.interactiveDiagram !== undefined ||

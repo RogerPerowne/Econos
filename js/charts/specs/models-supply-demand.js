@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  var E = { x: 0.500, y: 0.500 };
+  var E = { x: 0.500, y: 0.505 };  // exact D×S crossing
 
   window.ECONOS_MODELS_SD_SPEC = {
     width: 440,
@@ -21,9 +21,9 @@
     },
 
     curves: [
-      { d: 'M 0.080,0.900 L 0.920,0.110',
+      { id: 'D', d: 'M 0.080,0.900 L 0.920,0.110',
         tone: 'blue',  label: 'Demand', strokeWidth: 3, labelDx: 6, labelDy: 4 },
-      { d: 'M 0.080,0.110 L 0.920,0.900',
+      { id: 'S', d: 'M 0.080,0.110 L 0.920,0.900',
         tone: 'amber', label: 'Supply', strokeWidth: 3, labelDx: 6, labelDy: -4 }
     ],
 
@@ -32,8 +32,12 @@
       { x1: E.x, y1: E.y, x2: E.x, y2: 0, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 }
     ],
 
+    /* Equilibrium resolved by the engine's intersection solver — the
+       explicit x/y must match the D×S crossing or the drift assertion
+       warns. (D and S cross at (0.5, 0.505) by construction.) */
     points: [
-      { x: E.x, y: E.y, tone: 'slate', radius: 6.5, label: 'Equilibrium', labelDx: 14, labelDy: -8, anchor: 'start' }
+      { x: E.x, y: E.y, intersection: { curves: ['D', 'S'] },
+        tone: 'slate', radius: 6.5, label: 'Equilibrium', labelDx: 14, labelDy: -8, anchor: 'start' }
     ],
 
     texts: [

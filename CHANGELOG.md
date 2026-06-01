@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.23.1 — 2026-06-01
+
+### 1.2.1 Rational Decision Making — content authored
+
+Filled the scaffold from v0.22.0 with the three designed cards plus a
+6-question quiz:
+
+- **What ‘rational’ means** — consistent / goal-seeking / marginal
+  analysis / maximisation, and a "who maximises what?" consumer-vs-firm
+  split.
+- **Consumers maximise utility** — utility vs budget constraint, a
+  £20 worked-example basket, diminishing marginal utility, and the
+  link to the downward-sloping demand curve.
+- **Firms maximise profit** — the Profit = TR − TC benchmark, how the
+  model works, other possible objectives (revenue / growth /
+  survival), and a behavioural-economics look-ahead.
+
+Built entirely from the generic renderer's table / flow / flowBottom /
+comparison / branches blocks — no new chart needed. Build + lint +
+118 unit tests pass; all three cards verified visually.
+
 ## 0.23.0 — 2026-06-01
 
 ### Theme 1.1 missing cards authored + wired (designs from ChatGPT)

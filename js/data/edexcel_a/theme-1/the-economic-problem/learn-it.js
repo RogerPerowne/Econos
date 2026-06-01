@@ -20,16 +20,17 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroScarcity',
     summary: 'Economics begins with one unavoidable fact: wants are unlimited but resources are finite. That scarcity forces every choice to carry an opportunity cost, and forces every society to answer three questions – what, how, and for whom to produce. The resources being allocated are the four factors of production: land, labour, capital and enterprise.',
-    doInThis: 'Work through scarcity, opportunity cost and the three economic questions, then the four factors of production – their rewards, the quantity/quality distinction, factor mobility, and the evaluation points that lift exam answers.',
+    doInThis: 'Work through scarcity, renewable vs non-renewable resources, opportunity cost and the three economic questions, then the four factors of production – their rewards, the quantity/quality distinction, factor mobility, and the evaluation points that lift exam answers.',
     outcomes: [
       'Define scarcity and explain why it makes choice and opportunity cost inevitable',
+      'Distinguish renewable from non-renewable resources and link them to sustainability',
       'Apply opportunity cost to consumers, firms and government',
       'Identify the three fundamental economic questions',
       'Identify the four factors of production, their rewards and their mobility'
     ],
     tip: 'Opportunity cost is not money spent – it is the next best alternative forgone. Always ask: what had to be given up to make this choice?',
     stages: [
-      { num: 1, name: 'Learn it', sub: '11 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '12 concept cards', state: 'current' },
       { num: 2, name: 'Link it',  sub: 'Coming soon', state: 'locked' },
       { num: 3, name: 'Land it',  sub: 'Exam paper',  state: 'locked' }
     ]
@@ -41,7 +42,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'econ-problem-scarcity',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 11',
+      stepLabel: 'Learn: Step 1 of 12',
       title: 'The basic economic problem: the big picture',
       lede: 'Economics begins with a simple tension: our wants are unlimited, but the resources to satisfy them are limited.',
       tip: { icon: '💡', tone: 'blue', text: 'Economics begins with a simple tension – our wants are unlimited, but the resources to satisfy them are limited.' },
@@ -68,11 +69,55 @@ window.ECONOS_TOPIC = {
       examEdge: 'Scarcity is distinct from poverty. A billionaire still faces scarcity – they cannot buy unlimited time or live forever. Scarcity is a universal condition; poverty is a distributional one. Examiners test whether you understand this distinction.'
     },
 
-    /* ----- CARD 2 – Opportunity cost ----- */
+    /* ----- CARD 2 – Renewable vs non-renewable resources (spec 1.1.3b) ----- */
+    {
+      id: 'econ-problem-renewable',
+      template: 'framing',
+      stepLabel: 'Learn: Step 2 of 12',
+      title: 'Renewable vs non-renewable resources',
+      lede: 'Resources differ not just by how scarce they are today, but by whether they can be replenished naturally over time.',
+      tip: { icon: '✅', tone: 'green', text: 'Resources differ not just by scarcity today, but by whether they can be replenished over time.' },
+      comparison: {
+        title: 'The distinction',
+        emoji: '⚖️',
+        left:  { tone: 'green', icon: '🌱', label: 'Renewable resources',     caption: 'Replenished naturally if used sustainably – e.g. solar, wind, forests (timber), fish stocks. They maintain their stock over time, but only if use does not exceed the natural rate of replenishment.' },
+        right: { tone: 'amber', icon: '⛏️', label: 'Non-renewable resources', caption: 'Finite in supply and depleted by use – e.g. oil, coal, natural gas, metal ores. Once extracted and used, they are gone for future generations.' }
+      },
+      flow: [
+        { icon: '⛏️', title: 'Use non-renewables now',           sub: 'Less is left for the future.' },
+        { icon: '🏷️', title: 'Higher future cost, fewer choices', sub: 'Scarcity raises prices and limits options.' },
+        { icon: '🌬️', title: 'Conserve or invest in renewables',  sub: 'More options and lower long-run opportunity cost.' }
+      ],
+      flowTitle: 'Opportunity cost over time',
+      flowEmoji: '⏳',
+      causes: [
+        { head: 'Today: consumption now',  icon: '👥', body: 'Greater output, lower prices and higher living standards in the short run.' },
+        { head: 'Tomorrow: welfare later', icon: '⚖️', body: 'Overuse today can mean higher costs, fewer resources and lower welfare for future generations.' }
+      ],
+      causesLabel: 'Today vs tomorrow',
+      causesEmoji: '📅',
+      branches: [
+        { tone: 'green',  label: 'Sustainability',           sub: 'Renewables can support economic activity without running out if managed well.' },
+        { tone: 'amber',  label: 'Long-run scarcity',         sub: 'Non-renewables become scarcer and more expensive as stocks are used up.' },
+        { tone: 'purple', label: 'Intergenerational choice',  sub: 'Decisions today affect the resources, prices and choices available tomorrow.' }
+      ],
+      branchesLabel: 'Why it matters',
+      branchesEmoji: '📈',
+      branchesLayout: 'triptych',
+      keyTerms: [
+        { term: 'Renewable resource',     def: 'A resource that can be replenished naturally over time if used sustainably (e.g. solar, wind, fish stocks).' },
+        { term: 'Non-renewable resource', def: 'A finite resource that is depleted by use and cannot be replaced within a human time horizon (e.g. oil, coal, metal ores).' },
+        { term: 'Sustainability',         def: 'Using resources at a rate that does not exceed their natural replenishment, preserving them for the future.' }
+      ],
+      keyTakeaway: 'The economic problem is not only what to use, but when and how fast to use it.',
+      examEdge: 'Strong answers link renewable and non-renewable resources to sustainability and opportunity cost across time.'
+    },
+
+    /* ----- CARD 3 – Opportunity cost ----- */
     {
       id: 'econ-problem-opp-cost',
       template: 'framing',
-      stepLabel: 'Learn: Step 2 of 11',
+      stepLabel: 'Learn: Step 3 of 12',
       title: 'Opportunity Cost',
       lede: 'Every choice means giving something up. Opportunity cost is the value of the next best alternative forgone – not the money you spent.',
       tip: { icon: '💡', tone: 'blue', text: 'Every choice means giving something up. Opportunity cost is the next best alternative forgone.' },
@@ -111,7 +156,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'econ-problem-three-questions',
       template: 'framing',
-      stepLabel: 'Learn: Step 3 of 11',
+      stepLabel: 'Learn: Step 4 of 12',
       title: 'The Three Fundamental Economic Questions',
       lede: 'Because resources are scarce, every economy must answer three core questions – and the answers shape the entire system.',
       tip: { icon: '💡', tone: 'blue', text: 'Because resources are scarce, every economy must answer three core questions: <strong>what</strong> to produce, <strong>how</strong> to produce, and <strong>for whom</strong> to produce.' },
@@ -146,7 +191,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'four-factors',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 11',
+      stepLabel: 'Learn: Step 5 of 12',
       title: 'The Four Factors of Production',
       lede: 'Every economy combines four key inputs to produce goods and services. Each has a distinct role – and each earns a distinct reward.',
       causesLabel: 'The four factors at a glance',
@@ -201,7 +246,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'land',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 5 of 11',
+      stepLabel: 'Learn: Step 6 of 12',
       title: 'Land',
       lede: 'Land is <strong>everything provided by nature</strong> and used in the production of goods and services. It is not just fields – it includes all natural resources.',
       visualKey: 'landTypesSvg',
@@ -247,7 +292,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'labour',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 6 of 11',
+      stepLabel: 'Learn: Step 7 of 12',
       title: 'Labour',
       lede: 'Labour is the <strong>human effort</strong> – both physical and mental – used in the production of goods and services. Its supply depends on both economic incentives and wider social factors.',
       pairFirst: true,
@@ -301,7 +346,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'capital',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 7 of 11',
+      stepLabel: 'Learn: Step 8 of 12',
       title: 'Capital',
       lede: '<strong>Capital</strong> refers to man-made resources used to produce other goods and services – tools, equipment, machinery, buildings and infrastructure. It is built up through investment and can depreciate over time.',
       visualKey: 'capitalTypesSvg',
@@ -359,7 +404,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'enterprise',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 8 of 11',
+      stepLabel: 'Learn: Step 9 of 12',
       title: 'Enterprise & Institutions',
       lede: 'Enterprise is the <strong>risk-taking and decision-making function</strong> that organises the other three factors. More broadly, <strong>institutions</strong> – government, legal frameworks, property rights – shape whether enterprise can flourish at all.',
       visualKey: 'enterpriseCombinationSvg',
@@ -424,7 +469,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'factor-rewards',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 9 of 11',
+      stepLabel: 'Learn: Step 10 of 12',
       title: 'Factor Rewards Summary',
       lede: 'Each factor of production earns a different reward because each contributes something different to the production process. Lock these four pairings in.',
       causesLabel: 'Match each factor to its reward',
@@ -465,7 +510,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'factor-mobility',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 10 of 11',
+      stepLabel: 'Learn: Step 11 of 12',
       title: 'Factor Mobility',
       lede: 'Mobility is the <strong>ability of a factor – especially labour – to move</strong> between places and jobs. Low mobility is a major cause of structural unemployment and regional inequality.',
       pairFirst: true,
@@ -521,7 +566,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'evaluating-factors',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 11 of 11',
+      stepLabel: 'Learn: Step 12 of 12',
       title: 'Evaluating Factors of Production',
       lede: 'The best evaluation goes <strong>beyond definitions</strong>. It compares how important, high quality and flexible each factor is in helping an economy produce more and improve living standards.',
       causesLabel: 'Four ways to evaluate factor importance',

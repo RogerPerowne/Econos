@@ -6,6 +6,42 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.23.0 — 2026-06-01
+
+### Theme 1.1 missing cards authored + wired (designs from ChatGPT)
+
+The six cards flagged TODO in v0.22.0 are now built and routed to the
+correct spec topics:
+
+**1.1.1 Economics as a Social Science** — now 6 cards. Prepended:
+- Thinking like an economist (models & assumptions) — with an
+  engine-rendered supply & demand worked example.
+- Ceteris paribus — with an engine-rendered "price rises, quantity
+  demanded falls" demand-curve worked example.
+- Why economics can't run lab experiments (natural experiments,
+  historical data, models; disagreement among economists).
+
+**1.1.2 Positive & Normative Statements** — now 3 cards. Added "The
+role of value judgements" (same facts → different policies; minimum
+wage & carbon tax) and upgraded "Spotting the distinction in
+practice" (fast test, clue words, worked classifications).
+
+**1.1.3 The Economic Problem** — now 12 cards. Inserted "Renewable
+vs non-renewable resources" (the distinction, opportunity cost over
+time, today vs tomorrow, why it matters) after the scarcity card.
+
+### Two new chart specs
+
+- `models-supply-demand.js` (`ECONOS_MODELS_SD_SPEC`) — D/S with
+  P*/Q* equilibrium, for the 1.1.1 models card.
+- `ceteris-paribus-demand.js` (`ECONOS_CETERIS_DEMAND_SPEC`) —
+  movement up the demand curve with P₁→P₂ / Q₁→Q₂ direction arrows.
+
+Both bound in icons.js (`modelsSupplyDemand`, `ceterisParibusDemand`),
+loaded in all three shells, precached in the SW, and covered by the
+snapshot suite (57 specs render clean). Build + lint + 118 unit
+tests pass; all four chart/dense cards verified visually.
+
 ## 0.22.0 — 2026-06-01
 
 ### Theme 1.1 restructure to match the Edexcel A spec

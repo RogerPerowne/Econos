@@ -399,7 +399,7 @@ window.ECONOS_TOPIC = {
         caption: 'For a given level of real output (T), higher money (M) raises prices (P) only if velocity (V) is stable. If V falls or spare capacity exists, extra money may not feed through to higher inflation.'
       },
 
-      flowTitle: 'Why QE did not trigger runaway inflation',
+      flowTitle: 'Why QE didn’t trigger inflation',
       flowEmoji: '📊',
       flow: [
         { tone: 'blue',   icon: '📉', title: 'Velocity fell',           sub: 'Pandemic uncertainty and precautionary saving depressed spending velocity.' },

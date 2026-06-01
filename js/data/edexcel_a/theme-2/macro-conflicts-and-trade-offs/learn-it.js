@@ -328,7 +328,7 @@ window.ECONOS_TOPIC = {
       ledeStyle: 'plain',
 
       causesPosition: 'top',
-      causesLabel: 'Evidence pile &mdash; four real-world cases',
+      causesLabel: 'Evidence: four real cases',
       causesEmoji: '\u{1F4DA}',
       causesStyle: 'numbered-rows',
       causes: [

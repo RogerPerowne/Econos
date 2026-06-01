@@ -302,7 +302,7 @@ window.ECONOS_TOPIC = {
       tip: { icon: '\u{1F3AF}', tone: 'blue', text: 'A* essays never declare growth simply "good" or "bad". They judge it on four multipliers and conclude conditionally.' },
 
       pairFirst: true,
-      pairLabel: 'The case for growth vs the case against unconstrained growth',
+      pairLabel: 'Growth: case for and against',
       pairEmoji: '\u{2696}\u{FE0F}',
       left: {
         tone: 'green',
@@ -331,7 +331,7 @@ window.ECONOS_TOPIC = {
         '</ul>'
       },
 
-      causes2Label: 'High-quality vs low-quality growth — two real cases',
+      causes2Label: 'High vs low-quality growth',
       causes2Emoji: '\u{1F3AD}',
       causes2Cols: 2,
       causes2: [

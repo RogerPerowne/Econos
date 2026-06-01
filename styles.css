@@ -1692,29 +1692,33 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: var(--sp-2);
 }
 .key-takeaway {
+  /* Geometry matches .exam-edge (gap / padding / radius / border widths)
+     so the two callouts feel identical; only the colour family differs
+     (amber here, purple there). */
   display: flex;
-  gap: var(--sp-3);
+  gap: var(--sp-4);
   align-items: flex-start;
   background: #FFFBEC;
-  border: 1px solid #FDE9B3;
-  border-left: 3px solid var(--econ-amber);
-  border-radius: var(--r-md);
-  padding: 14px 16px;
+  border: 1.5px solid #FDE9B3;
+  border-left: 4px solid var(--econ-amber);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
   margin-top: var(--sp-5);
   margin-bottom: 20px;
 }
 .key-takeaway__star {
-  width: 22px;
-  height: 22px;
+  /* Same 32px icon as .exam-edge__star — only the amber fill differs. */
+  width: 32px;
+  height: 32px;
   border-radius: var(--r-full);
   background: var(--econ-amber);
   color: var(--econ-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 16px;
   flex-shrink: 0;
-  margin-top: 1px;
+  box-shadow: 0 2px 6px rgba(245, 184, 0, 0.30);
 }
 .key-takeaway__body { flex: 1; }
 .key-takeaway__label {

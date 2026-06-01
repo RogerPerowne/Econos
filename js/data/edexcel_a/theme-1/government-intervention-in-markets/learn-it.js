@@ -36,7 +36,7 @@ window.ECONOS_TOPIC = {
       causesPosition: 'top',
       causesStyle: 'tinted-flat',
       causesEmoji: '🚨',
-      causesLabel: 'The four market failures intervention tries to fix',
+      causesLabel: 'Four market failures to fix',
       causes: [
         { tone: 'rose',   icon: '🏭', head: 'Externalities',              body: 'Third-party costs (pollution) or benefits (vaccination) the market ignores. The market over- or under-produces relative to the social optimum.' },
         { tone: 'amber',  icon: '🏛️', head: 'Under-provision of public goods', body: 'Non-rival, non-excludable goods (defence, street lighting) the private sector won\'t provide because of the free-rider problem.' },
@@ -491,7 +491,7 @@ window.ECONOS_TOPIC = {
       ],
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
-      causesLabel: 'Risks of government failure – every tool faces these',
+      causesLabel: 'Government failure risks',
       causes: [
         { tone: 'rose',   icon: '🔀', head: 'Distorted price signals',  body: 'Taxes, subsidies and price controls move prices away from marginal cost – sending the wrong scarcity signals to other parts of the economy.' },
         { tone: 'amber',  icon: '🎲', head: 'Unintended consequences', body: 'Bans create black markets; rent caps reduce housing supply; sugar taxes shift consumption to unflavoured-but-still-unhealthy alternatives.' },

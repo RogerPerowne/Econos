@@ -78,7 +78,7 @@ window.ECONOS_TOPIC = {
         { label: '🚕 Lemon', colA: '£2,000 (low quality). Seller\'s minimum acceptable price: £1,000.', colB: '✅ Seller stays – profit at £5,000. Only lemons remain.' }
       ],
       footer: 'Average price offered = £5,000. Too low for the peach seller (needs £7,000), so only lemons remain in the market.',
-      causes2Label: 'Applications: information gaps in other markets',
+      causes2Label: 'Information gaps in other markets',
       causes2Emoji: '🌐',
       causes2: [
         { icon: '☂️', tone: 'amber', head: 'Insurance',                           body: 'People with higher risk are more likely to buy insurance → average risk rises → premiums rise → low-risk people leave → adverse selection spiral.' },

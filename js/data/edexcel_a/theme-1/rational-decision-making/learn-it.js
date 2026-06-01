@@ -143,14 +143,15 @@ window.ECONOS_TOPIC = {
       ],
       flowTitle: 'How the model works',
       flowEmoji: '🔗',
-      branches: [
-        { tone: 'blue',   label: 'Revenue',  sub: 'Chasing sales.' },
-        { tone: 'amber',  label: 'Growth',   sub: 'Expanding market share or scale.' },
-        { tone: 'purple', label: 'Survival', sub: 'Staying in business in hard times.' }
-      ],
-      branchesLabel: 'Other possible objectives',
-      branchesEmoji: '👥',
-      branchesLayout: 'triptych',
+      methodGrid: {
+        label: 'Other possible firm objectives',
+        emoji: '🎯',
+        items: [
+          { tone: 'blue',   icon: '📈', title: 'Revenue maximisation', body: 'Chasing the highest sales – not the biggest profit gap.', example: 'A streaming service burning cash to win subscribers before rivals catch up.' },
+          { tone: 'amber',  icon: '🚀', title: 'Growth',                body: 'Expanding scale, headcount or market share.',           example: 'A retailer opening new stores even when the first ones only break even.' },
+          { tone: 'purple', icon: '🛡️', title: 'Survival',              body: 'Staying in business through hard times.',               example: 'A pub cutting hours and menu in a recession just to keep the doors open.' }
+        ]
+      },
       tipLate: { icon: '➡️', tone: 'blue', head: 'Looking ahead', text: 'Later in the course, behavioural economics questions whether firms and consumers always behave with full rationality.' },
       keyTakeaway: 'Profit maximisation is the benchmark model for firm behaviour – useful because it gives a clear objective and testable predictions.',
       examEdge: 'When evaluating firm behaviour, start with profit maximisation, then note that real firms may also pursue growth, revenue or survival.'

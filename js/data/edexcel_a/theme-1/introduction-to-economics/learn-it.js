@@ -212,13 +212,15 @@ window.ECONOS_TOPIC = {
       ],
       causesLabel: 'Examples',
       causesEmoji: '💡',
-      branches: [
-        { tone: 'amber',  label: 'Limited information', sub: 'Decision-makers rarely have complete or perfect information about every option – they decide under uncertainty.' },
-        { tone: 'rose',   label: 'Bias and habit',      sub: 'Emotions, habits and cognitive biases (loss aversion, present bias, anchoring) lead to systematically suboptimal choices. Covered in Theme 1.7.' },
-        { tone: 'blue',   label: 'Time pressure',       sub: 'Decisions often need to be made quickly with limited time to evaluate every option – so people use rules of thumb (heuristics) instead.' }
-      ],
-      branchesLabel: 'Limits to perfect rationality',
-      branchesLayout: 'triptych',
+      methodGrid: {
+        label: 'Limits to perfect rationality',
+        emoji: '⚠️',
+        items: [
+          { tone: 'amber', icon: '📭', title: 'Limited information', body: 'Decision-makers rarely have complete or perfect information about every option – they decide under uncertainty.' },
+          { tone: 'rose',  icon: '🔁', title: 'Bias and habit',      body: 'Emotions, habits and cognitive biases (loss aversion, present bias, anchoring) lead to systematically suboptimal choices. Covered in Theme 1.7.' },
+          { tone: 'blue',  icon: '⏱️', title: 'Time pressure',       body: 'Decisions often need to be made quickly with limited time to evaluate every option – so people use rules of thumb (heuristics) instead.' }
+        ]
+      },
       examEdge: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.'
     },
     {

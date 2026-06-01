@@ -25,36 +25,43 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'ppf_1',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Step 1 of 6',
-      title: 'The PPF: one diagram, five concepts',
-      lede: 'The Production Possibility Frontier is the most versatile diagram in Theme 1 – explore construction, opportunity cost, shifts, and efficiency using the interactive diagram below.',
-      diagramKey: 'ppfInteractive',
-      diagramLabel: 'Explore the PPF',
-      diagramEmoji: '📈',
-      steps: [
-        {
-          key: 'base',
-          label: 'Construction',
-          text: 'The PPF shows the <strong>maximum output combinations</strong> of two goods an economy can produce given current resources and technology. A point on the curve is <strong>productively efficient</strong>; inside is <strong>inefficient</strong> (resources wasted); outside is <strong>unattainable</strong>. Use this card to see the full picture – <strong>Card 2</strong> then builds the opportunity cost mechanics in detail.'
-        },
-        {
-          key: 'extension',
-          label: 'Opportunity cost',
-          text: 'Moving along the PPF means gaining one good but sacrificing the other – that trade-off is the <strong>opportunity cost</strong>. The bowed-out shape means this cost rises the further you specialise in one good. <strong>Card 2</strong> covers the calculation and the reason the curve bends.'
-        },
-        {
-          key: 'shift',
-          label: 'Shifts',
-          text: 'The PPF shifts <strong>outward</strong> when productive capacity increases and <strong>inward</strong> after negative supply shocks. Movement <em>along</em> PPF₁ is just reallocation of existing resources – the frontier itself does not move. <strong>Card 3</strong> maps out all four movement types.'
-        },
-        {
-          key: 'efficiency',
-          label: 'Efficiency',
-          text: '<strong>Productive efficiency</strong> means being on the PPF – no wasted resources. <strong>Allocative efficiency</strong> means being at the <em>right</em> point on it – producing the combination that best matches consumer preferences. These are different tests. <strong>Card 5</strong> builds this distinction in full.'
-        }
-      ],
-      examEdge: 'In exam diagrams always label: both axes with good names, the PPF curve, a point inside labelled "inefficient", a point on the curve labelled "efficient/on the PPF", and a point outside labelled "unattainable". Missing axis labels or unlabelled points are the most common PPF mark losses.'
+      template: 'framing',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'The PPF – the big picture',
+      lede: 'A production possibility frontier shows the maximum combinations of two goods an economy can produce with its current resources and technology.',
+      tip: { icon: '✅', tone: 'green', text: 'PPFs are about scarcity, choice and opportunity cost.' },
+      diagramPanel: {
+        diagramKey: 'ppfBigPicture',
+        title: 'What a PPF shows',
+        emoji: '📈',
+        layout: 'side',
+        bullets: [
+          '<strong style="color:#2563EB;">A · Productively efficient</strong> — on the frontier, using resources fully and efficiently.',
+          '<strong style="color:#D97706;">B · Inefficient / unemployed</strong> — inside the frontier, resources underused or not fully employed.',
+          '<strong style="color:#059669;">C · Unattainable</strong> — outside the frontier, not possible with current resources and technology.'
+        ]
+      },
+      methodGrid: {
+        label: 'The three core ideas',
+        emoji: '🎯',
+        exampleLabel: 'Memory hook',
+        items: [
+          { tone: 'blue',  icon: '🔒', title: 'Scarcity',        body: 'Resources are limited.',                  example: 'We can’t have it all – choices are forced.' },
+          { tone: 'amber', icon: '⚖️', title: 'Choice',          body: 'More of one good means less of another.', example: 'Every choice has a cost.' },
+          { tone: 'green', icon: '🌱', title: 'Opportunity cost', body: 'The next best alternative forgone.',       example: 'What you give up is the real cost.' }
+        ]
+      },
+      tileGrid: {
+        label: 'Assumptions',
+        emoji: '📄',
+        items: [
+          { tone: 'blue', icon: '👥', title: 'Resources fixed',  sub: 'A given amount of labour, capital, land and enterprise — no change in total resources.' },
+          { tone: 'blue', icon: '⚙️', title: 'Technology fixed', sub: 'Methods of production stay the same — no technological improvement.' },
+          { tone: 'blue', icon: '✅', title: 'Full employment',  sub: 'All resources used fully and efficiently — the economy sits on the frontier.' }
+        ]
+      },
+      keyTakeaway: 'A PPF is not just a curve – it is a visual summary of scarcity, efficiency and trade-offs.',
+      examEdge: 'In essays, use the PPF to show opportunity cost, unemployment inside the curve, and economic growth when the frontier shifts out.'
     },
 
     {

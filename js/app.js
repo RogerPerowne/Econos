@@ -2522,7 +2522,7 @@
             </div>
             <div style="padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;">
               <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${m.body || ''}</div>
-              ${m.example !== undefined ? `<div style="font-size:13px;color:#475569;line-height:1.5;margin-top:auto;"><span style="font-weight:800;color:${t.label};">Example:</span> <em>${m.example}</em></div>` : ''}
+              ${m.example !== undefined ? `<div style="font-size:13px;color:#475569;line-height:1.5;margin-top:auto;"><span style="font-weight:800;color:${t.label};">${m.exampleLabel || mg.exampleLabel || 'Example'}:</span> <em>${m.example}</em></div>` : ''}
             </div>
           </div>`;
       }).join('');

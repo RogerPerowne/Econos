@@ -168,10 +168,11 @@ window.ECONOS_TOPIC = {
     subtitle: 'Theme 1 &middot; Topic 1.2.1 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('intro'),
     backLabel: 'Back to Learn It',
-    lede: '6 questions · ~5 minutes · covers the rationality assumption, utility maximisation, profit maximisation, and the limits of rationality',
+    lede: '10 questions · ~8 minutes · the rationality assumption, utility & profit maximisation, marginal thinking and the demand curve',
     shortNames: [
-      'What rational means', 'Agent → objective', 'Utility vs profit',
-      'Diminishing MU', 'Profit formula', 'Para fill'
+      'Define rational', 'Match the terms', 'Agent features', 'Utility vs profit',
+      'Profit calc', 'Odd one out', 'MU & demand', 'Best answer',
+      'Rational or not', 'Para fill'
     ],
 
     questions: [
@@ -201,7 +202,22 @@ window.ECONOS_TOPIC = {
         exp: 'The two baseline assumptions: <strong>consumers maximise utility</strong>, <strong>firms maximise profit</strong>. Both decide <strong>at the margin</strong> – weighing the extra benefit of one more unit against its extra cost.'
       },
 
-      /* 3 – Elastic sort: utility-max vs profit-max */
+      /* 3 – Multi-select: features of a rational agent */
+      { type: 'multi_select',
+        stem: 'Tick <strong>every</strong> feature of a rational economic agent.',
+        opts: [
+          'Makes consistent choices that don’t randomly change',
+          'Always feels happy with the outcome',
+          'Weighs the extra benefit of an action against its extra cost',
+          'Has perfect information about every future event',
+          'Acts to maximise a clear objective',
+          'Never makes a mistake'
+        ],
+        correct: [0, 2, 4],
+        exp: 'A rational agent makes <strong>consistent</strong> choices, thinks <strong>at the margin</strong> (extra benefit vs extra cost) and <strong>maximises an objective</strong> (A, C, E). Rationality does <em>not</em> require perfect information, perfect happiness, or never erring – those are common misconceptions (B, D, F).'
+      },
+
+      /* 4 – Elastic sort: utility-max vs profit-max */
       { type: 'elastic_sort',
         stem: 'Classify each decision as driven by <strong>utility maximisation</strong> (a consumer) or <strong>profit maximisation</strong> (a firm).',
         categories: ['utility', 'profit'],
@@ -217,33 +233,75 @@ window.ECONOS_TOPIC = {
         exp: 'Consumers optimise <strong>utility</strong> within a budget; firms optimise <strong>profit</strong> (TR − TC). Both apply marginal thinking – do the next unit only if its extra benefit beats its extra cost.'
       },
 
-      /* 4 – MCQ: diminishing marginal utility → demand */
-      { type: 'mcq',
-        stem: 'How does <strong>diminishing marginal utility</strong> help explain the demand curve?',
+      /* 5 – Numeric input: profit = TR − TC */
+      { type: 'numeric_input',
+        stem: 'Calculate the firm’s <strong>profit</strong>.',
+        context: 'A firm earns total revenue of <strong>£80,000</strong> and has total costs of <strong>£55,000</strong>. A profit-maximising firm chooses the option that makes this gap as large as possible.',
+        answer: 25000,
+        tolerance: 0,
+        unit: '£',
+        hint: 'Profit = total revenue − total costs.',
+        workingSteps: [
+          'Total revenue: £80,000',
+          'Total costs: £55,000',
+          'Profit = £80,000 − £55,000 = £25,000'
+        ],
+        exp: 'Profit = total revenue − total costs = £80,000 − £55,000 = <strong>£25,000</strong>. Profit maximisation assumes the firm picks the option that makes this gap as large as possible – the benchmark objective in standard models.'
+      },
+
+      /* 6 – Odd one out: the non-rational behaviour */
+      { type: 'odd_one_out',
+        stem: 'Three of these describe <strong>rational</strong> decision-making. Which is the <strong>odd one out</strong>?',
+        items: [
+          { icon: '🧮', label: 'Buying one more coffee only while the enjoyment is worth the price', note: '' },
+          { icon: '💼', label: 'Hiring another worker only if they add more to revenue than to cost', note: '' },
+          { icon: '🛒', label: 'Choosing the basket of goods that gives the most satisfaction within a budget', note: '' },
+          { icon: '🌀', label: 'Buying a product on impulse because an advert caught your eye', note: '' }
+        ],
+        ans: 3,
+        exp: 'The odd one out is the <strong>impulse buy</strong>: it isn’t a weighing of marginal benefit against marginal cost, so it breaks the rationality assumption. The other three all compare the extra benefit of an action with its extra cost – the hallmark of rational, marginal decision-making.'
+      },
+
+      /* 7 – Confidence MCQ: diminishing marginal utility → demand */
+      { type: 'confidence_mcq',
+        stem: 'How does <strong>diminishing marginal utility</strong> help explain the shape of the demand curve?',
         opts: [
           'As consumption rises, the extra utility from each unit falls, so consumers will only buy more at a lower price – demand slopes down',
-          'Extra units give more and more satisfaction, so demand slopes upward',
-          'Utility is constant for every unit, so the demand curve is vertical',
-          'It explains why firms raise prices when costs rise'
+          'Each extra unit gives more and more satisfaction, so demand slopes upward',
+          'Utility is the same for every unit, so the demand curve is vertical',
+          'It explains why firms raise prices when their costs rise'
         ],
         ans: 0,
         exp: 'Because the <strong>marginal utility</strong> of each extra unit falls, a consumer is only willing to pay a lower price for additional units. Falling willingness to pay as quantity rises is exactly the downward-sloping demand curve.'
       },
 
-      /* 5 – MCQ: profit formula */
-      { type: 'mcq',
-        stem: 'A firm has total revenue of £80,000 and total costs of £55,000. What is its <strong>profit</strong>, and what does the profit-maximisation assumption imply?',
-        opts: [
-          '£25,000 – and the firm is assumed to choose the option that makes this gap as large as possible',
-          '£135,000 – and the firm is assumed to maximise revenue regardless of cost',
-          '£25,000 – but firms are assumed to ignore costs entirely',
-          '£55,000 – and the firm is assumed to minimise revenue'
+      /* 8 – Diagnostic pair: best MU → demand explanation */
+      { type: 'diagnostic_pair',
+        stem: '"Use marginal utility to explain why the demand curve slopes downwards." (4 marks)',
+        students: [
+          { name: 'Student A', badge: 'Answer A', answer: 'Demand slopes down because when prices are high people can’t afford as much, and when prices are low they buy more. It’s just common sense.' },
+          { name: 'Student B', badge: 'Answer B', answer: 'Each extra unit consumed gives less additional satisfaction (diminishing marginal utility), so a consumer is only willing to pay a lower price for further units. Lower willingness to pay as quantity rises is the downward-sloping demand curve.' }
         ],
-        ans: 0,
-        exp: 'Profit = total revenue − total costs = £80,000 − £55,000 = <strong>£25,000</strong>. Profit maximisation assumes the firm picks the option that makes this gap as large as possible – the benchmark objective in standard models.'
+        ans: 1,
+        exp: '<strong>Student B</strong> scores higher: it uses the <em>mechanism</em> – diminishing marginal utility → falling willingness to pay → downward slope. Student A describes the relationship but never explains <em>why</em> via marginal utility, so it misses the analytical marks.'
       },
 
-      /* 6 – Para fill */
+      /* 9 – Categorise: rational vs not rational */
+      { type: 'categorise',
+        stem: 'Sort each decision as <strong>rational</strong> (weighs extra benefit vs extra cost to maximise an objective) or <strong>not rational</strong>.',
+        categories: ['Rational', 'Not rational'],
+        items: [
+          { text: 'Working an extra hour only if the pay beats the value of the time given up', category: 'Rational' },
+          { text: 'Keeping a loss-making product because “we’ve always made it”',              category: 'Not rational' },
+          { text: 'Picking the streaming plan with the best value for money',                  category: 'Rational' },
+          { text: 'Buying more of something just because everyone else is',                    category: 'Not rational' },
+          { text: 'A firm setting output where the gap between revenue and cost is greatest',  category: 'Rational' },
+          { text: 'Spending on a whim without comparing the alternatives',                     category: 'Not rational' }
+        ],
+        exp: '<strong>Rational</strong> decisions weigh extra benefit against extra cost to maximise an objective (utility or profit). The others act on habit, herd behaviour or impulse – they ignore the margin, so they break the rationality assumption. (Behavioural economics, 1.2.10, studies exactly these departures.)'
+      },
+
+      /* 10 – Para fill */
       { type: 'para_fill',
         stem: 'Complete the paragraph on rational decision making.',
         anchor: 'Standard models assume agents pursue an objective consistently.',

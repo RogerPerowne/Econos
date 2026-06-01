@@ -2589,6 +2589,33 @@ img, svg { display: block; max-width: 100%; }
    chart reads on a phone in a single column and on a desktop in two.
    The parent `.show-<view>` class toggles individual legend layers
    exactly the way it did when they lived inside the SVG. */
+
+/* Outer wrapper: chart on the left, analysis on the right on desktop.
+   On phones the wrapper collapses to a single column and the analysis
+   stacks below — matching the interactiveDiagram layout pattern. The
+   `minmax(0, ...)` columns are critical: without the `0` minimum, the
+   SVG's intrinsic width forces a horizontal overflow on narrow
+   parents. The chart column is capped so a fluid panel doesn't blow
+   the chart up to 1200 px on a wide screen — it stays close to its
+   intrinsic ~590 px and the legend gets the remaining width. */
+.econos-chart-wrap-below {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+.econos-chart-wrap-below > svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 720px) {
+  .econos-chart-wrap-below {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
 .econos-chart-legends {
   display: grid;
   grid-template-columns: 1fr;

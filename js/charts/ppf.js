@@ -1683,6 +1683,13 @@
     var area = isMulti ? null : (spec.chartArea || { x: 60, y: 50, width: width - 100, height: height - 100 });
 
     var parts = [];
+    // Wrap the chart + (optional) HTML legend block in a grid container
+    // when `legendPosition: 'bottom'` is on, so the CSS can lay them out
+    // side-by-side on desktop and stacked on mobile. Without this wrapper
+    // the SVG's `width:100%` rule stretches the chart to the full panel
+    // width on a laptop — the analysis ends up under a giant chart
+    // instead of beside it.
+    if (legendsBelow) parts.push('<div class="econos-chart-wrap-below">');
     // Auto-generate accessibility metadata. Spec may override either
     // field with explicit text; otherwise the engine scans curves +
     // points + axes and assembles a single descriptive sentence.
@@ -2097,6 +2104,8 @@
       });
       htmlParts.push('</div>');
       parts.push(htmlParts.join(''));
+      // Close the desktop side-by-side / mobile stack wrapper.
+      parts.push('</div>');
     }
 
     // Dev-mode post-render collision scan. Pairs of placed label

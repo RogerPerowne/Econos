@@ -22,8 +22,8 @@ window.ECONOS_TOPICS = [
   /* ---- Theme 1, Section 1: The Economic Problem (1.1–1.6) ---- */
   {
     id: 'introduction-to-economics',
-    name: 'Introduction to Economics',
-    sub: 'Economics as a social science, positive/normative statements, scarcity, choice, opportunity cost',
+    name: 'Economics as a Social Science',
+    sub: 'Models and assumptions, ceteris paribus, the limits of economic experiments',
     color: '#f97316',
     available: { learn: true, link: true, land: false },
     boards: {
@@ -34,13 +34,43 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'positive-and-normative-statements',
+    name: 'Positive & Normative Statements',
+    sub: 'Fact vs value judgement, and how values shape economic policy',
+    color: '#fb923c',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '1.1.2', included: true },
+      edexcel_b: { spec: null, included: false },
+      aqa:       { spec: null, included: false },
+      ocr:       { spec: null, included: false }
+    }
+  },
+  {
+    id: 'the-economic-problem',
+    name: 'The Economic Problem',
+    sub: 'Scarcity, opportunity cost, renewable vs non-renewable resources, the factors of production',
+    color: '#ea580c',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '1.1.3', included: true },
+      edexcel_b: { spec: null, included: false },
+      aqa:       { spec: null, included: false },
+      ocr:       { spec: null, included: false }
+    }
+  },
+  {
     id: 'factors-of-production',
     name: 'Factors of Production',
     sub: 'Land, labour, capital, enterprise; factor rewards and factor mobility',
     color: '#fb923c',
     available: { learn: true, link: true, land: false },
     boards: {
-      edexcel_a: { spec: '1.1.3', included: true },
+      /* Edexcel A: factors of production isn't a standalone sub-section —
+         its content now lives inside `the-economic-problem` (1.1.3), so
+         this topic is hidden from the Edexcel A grid. Still shown for the
+         boards where factors IS a named point. */
+      edexcel_a: { spec: '1.1.3', included: false },
       edexcel_b: { spec: '1.2.3', included: true },
       aqa:       { spec: '3.1.1.3', included: true },
       ocr:       { spec: '1.1', included: true }

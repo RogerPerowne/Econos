@@ -5836,28 +5836,18 @@
     // present (the quiz pool now lives in learn.js, not at a
     // standalone /quiz/ URL — see v0.4.0 refactor).
     let nextTopicId = null, nextTopicName = null;
-    let stageHref = null, stageLabel = null;
     const hasQuiz = !!(window.ECONOS_QUIZ && Array.isArray(window.ECONOS_QUIZ.questions)
       && window.ECONOS_QUIZ.questions.length);
     if (isLast) {
-      const cur = window.ECONOS_TOPICS ? window.ECONOS_TOPICS.find(t => t.id === T.id) : null;
-      /* Finishing Learn It should walk the learner on to the NEXT STAGE
-         of the same topic — Link It, then Land It — not jump sideways to
-         a different topic. Only fall back to the next topic's Learn It
-         when this topic has no further stage. */
-      if (cur && cur.available && cur.available.link) {
-        stageHref = TopicLoader.routes.link('intro', T.id); stageLabel = 'Link it';
-      } else if (cur && cur.available && cur.available.land) {
-        stageHref = TopicLoader.routes.land('intro', T.id); stageLabel = 'Land it';
-      } else {
-        // Walk the registry forward (via the shared helper) to the
-        // next topic that actually has Learn It data. The previous
-        // code only checked tidx+1 and gave up when that neighbour
-        // wasn't learnable — leaving the "Next topic" button hidden
-        // even though a learnable topic existed two slots ahead.
-        const nt = TopicLoader.nextLearnableTopicAfter(T.id);
-        if (nt) { nextTopicId = nt.id; nextTopicName = nt.name; }
-      }
+      /* Finishing Learn It always offers "Next topic" — sideways jump
+         to the next learnable topic. Roger's call: the next-stage
+         buttons (Link it / Land it) for the SAME topic surfaced as
+         "Link it" / "Land it" labels were confusing; learners want a
+         clean "what's next in the syllabus" exit. The stages widget
+         in the right rail still shows Link/Land for in-topic
+         progression. */
+      const nt = TopicLoader.nextLearnableTopicAfter(T.id);
+      if (nt) { nextTopicId = nt.id; nextTopicName = nt.name; }
     }
 
     const prevBtn = `<button class="btn btn--ghost" data-action="prev" ${isFirst ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''}>${I.arrowLeft} Previous</button>`;
@@ -5865,23 +5855,18 @@
 
     let cardFoot;
     if (isLast) {
-      const quizBtn  = hasQuiz     ? `<button class="btn btn--primary" data-action="take-quiz">Take the quiz ${I.arrowRight}</button>` : '';
-      /* Always offer a forward path. When a quiz exists, surface BOTH
-         the quiz CTA AND the next-stage / next-topic button — so the
-         learner can pick: drill in with the quiz, or skip ahead. The
-         quiz button is the primary CTA (filled blue); the onward link
-         is secondary (ghost). Previously the next-topic button was
-         hidden whenever a quiz existed, so card 7 of 7 left learners
-         staring at a single button with no onward jump. */
-      const nextStageBtn = stageHref
-        ? `<a href="${stageHref}" class="btn ${hasQuiz ? 'btn--ghost' : 'btn--primary'}" style="text-decoration:none;${hasQuiz ? 'border:1.5px solid #CBD5E1;' : ''}">${stageLabel} ${I.arrowRight}</a>`
-        : '';
-      const nextTopicBtn = !stageHref && nextTopicId
+      /* Order: Next topic on the LEFT (ghost), Take the quiz on the
+         RIGHT (primary). Roger's brief: "next topic to be the button
+         with the quiz button to the right hand side of the next topic
+         button". When only one path exists it becomes the lone CTA. */
+      const nextTopicBtn = nextTopicId
         ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn ${hasQuiz ? 'btn--ghost' : 'btn--primary'}" style="text-decoration:none;${hasQuiz ? 'border:1.5px solid #CBD5E1;' : ''}" title="${nextTopicName}">Next topic ${I.arrowRight}</a>`
         : '';
-      const nextBtn  = nextStageBtn || nextTopicBtn;
-      const fallback = (!quizBtn && !nextBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
-      cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${quizBtn}${nextBtn}${fallback}</div></div>`;
+      const quizBtn = hasQuiz
+        ? `<button class="btn btn--primary" data-action="take-quiz">Take the quiz ${I.arrowRight}</button>`
+        : '';
+      const fallback = (!quizBtn && !nextTopicBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
+      cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${nextTopicBtn}${quizBtn}${fallback}</div></div>`;
     } else {
       cardFoot = `<div class="card-foot">${prevBtn}${counter}<button class="btn btn--primary" data-action="next" data-next-button>Next card ${I.arrowRight}</button></div>`;
     }

@@ -2535,7 +2535,10 @@
     }
 
     // Method grid – see buildMethodGridHtml helper below for shape.
-    if (c.methodGrid) content += buildMethodGridHtml(c.methodGrid);
+    if (c.methodGrid)  content += buildMethodGridHtml(c.methodGrid);
+    // Optional second methodGrid (e.g. "what causes growth" + "what causes
+    // decline" on the same card). Same helper, renders after the first.
+    if (c.methodGrid2) content += buildMethodGridHtml(c.methodGrid2);
 
     // Late continuum – rendered here (after methodGrid) when
     // c.continuum.position === 'late', so a card can introduce items first
@@ -2552,6 +2555,11 @@
     //   Pattern: tileGrid: { label?, emoji?, items: [{tone,icon,title,sub}] }
     if (c.tileGrid && Array.isArray(c.tileGrid.items) && c.tileGrid.items.length) {
       content += buildTileGridHtml(c.tileGrid);
+    }
+    // Optional second tile grid (e.g. "what it shows" + "common mistakes" on
+    // the same card). Same helper, just a second slot.
+    if (c.tileGrid2 && Array.isArray(c.tileGrid2.items) && c.tileGrid2.items.length) {
+      content += buildTileGridHtml(c.tileGrid2);
     }
 
     // Factor engine – responsive "inputs + coordinator = output" panel.

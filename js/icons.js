@@ -1630,6 +1630,8 @@ window.ECONOS_ICONS = {
   ppfBigPicture:       window.ECONOS_PPF.render(window.ECONOS_PPF_BIGPIC_SPEC),
   ppfClassify:         window.ECONOS_PPF.render(window.ECONOS_PPF_CLASSIFY_SPEC),
   ppfOppCost:          window.ECONOS_PPF.render(window.ECONOS_PPF_OPPCOST_SPEC),
+  ppfShiftsTrio:       window.ECONOS_PPF.render(window.ECONOS_PPF_SHIFTS_TRIO_SPEC),
+  ppfTodayTomorrow:    window.ECONOS_PPF.render(window.ECONOS_PPF_TODAY_TOMORROW_SPEC),
   modelsSupplyDemand:  window.ECONOS_PPF.render(window.ECONOS_MODELS_SD_SPEC),
   ceterisParibusDemand: window.ECONOS_PPF.render(window.ECONOS_CETERIS_DEMAND_SPEC),
 

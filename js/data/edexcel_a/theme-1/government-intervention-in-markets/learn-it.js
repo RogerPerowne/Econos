@@ -343,10 +343,10 @@ window.ECONOS_TOPIC = {
       causesEmoji: '⚙️',
       causesLabel: 'How cap-and-trade works in four steps',
       causes: [
-        { tone: 'blue',   icon: '1️⃣', head: 'Government sets a cap',          body: 'Total annual emissions are capped (e.g. UK ETS 2024 cap ≈ 87 Mt CO₂e for power and industry). The cap usually <strong>tightens each year</strong> to drive abatement.' },
-        { tone: 'purple', icon: '2️⃣', head: 'Permits issued or auctioned',    body: 'One permit = one tonne of CO₂e. Firms buy permits at auction (most) or get them free (declining share to protect trade-exposed industries).' },
-        { tone: 'green',  icon: '3️⃣', head: 'Firms trade permits',            body: 'Firms with <em>low</em> abatement costs cut emissions and sell spare permits. Firms with <em>high</em> abatement costs buy permits. The market finds the cheapest cuts first.' },
-        { tone: 'amber',  icon: '4️⃣', head: 'Market sets the permit price',   body: 'Permit price reflects the marginal cost of abatement. UK ETS price ≈ £35-50/tCO₂ in 2024. Firms decide: pay this, or abate.' }
+        { tone: 'blue',   icon: '🎯', head: 'Government sets a cap',          body: 'Total annual emissions are capped (e.g. UK ETS 2024 cap ≈ 87 Mt CO₂e for power and industry). The cap usually <strong>tightens each year</strong> to drive abatement.' },
+        { tone: 'purple', icon: '🎟️', head: 'Permits issued or auctioned',    body: 'One permit = one tonne of CO₂e. Firms buy permits at auction (most) or get them free (declining share to protect trade-exposed industries).' },
+        { tone: 'green',  icon: '🔄', head: 'Firms trade permits',            body: 'Firms with <em>low</em> abatement costs cut emissions and sell spare permits. Firms with <em>high</em> abatement costs buy permits. The market finds the cheapest cuts first.' },
+        { tone: 'amber',  icon: '🏷️', head: 'Market sets the permit price',   body: 'Permit price reflects the marginal cost of abatement. UK ETS price ≈ £35-50/tCO₂ in 2024. Firms decide: pay this, or abate.' }
       ],
       comparison: {
         title: 'Why economists prefer cap-and-trade',

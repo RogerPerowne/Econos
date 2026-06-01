@@ -92,10 +92,10 @@ window.ECONOS_TOPIC = {
       },
       note: { icon: '💡', tone: 'blue', head: 'Why a balanced basket?', text: 'A basket of 2 popcorn + 2 drinks gives higher total utility than spending everything on one item – because the extra satisfaction (marginal utility) falls with each additional unit.' },
       flow: [
-        { icon: '1️⃣', title: '1st unit', sub: 'very high satisfaction' },
-        { icon: '2️⃣', title: '2nd unit', sub: 'high satisfaction' },
-        { icon: '3️⃣', title: '3rd unit', sub: 'moderate satisfaction' },
-        { icon: '4️⃣', title: '4th unit', sub: 'low satisfaction' }
+        { icon: '😋', title: '1st unit', sub: 'very high satisfaction' },
+        { icon: '🙂', title: '2nd unit', sub: 'high satisfaction' },
+        { icon: '😐', title: '3rd unit', sub: 'moderate satisfaction' },
+        { icon: '😕', title: '4th unit', sub: 'low satisfaction' }
       ],
       flowTitle: 'Diminishing marginal utility',
       flowEmoji: '📉',

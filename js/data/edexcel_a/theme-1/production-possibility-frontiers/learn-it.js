@@ -66,52 +66,34 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'ppf_2',
-      stepLabel: 'Learn: Step 2 of 6',
-      title: 'Opportunity Cost and the Bowed-Out Shape',
-      tip: { icon: '💡', tone: 'blue', text: 'Opportunity cost changes at every point on the curve – and the bowed-out shape is what makes it rise as you specialise in one good.' },
-      interactiveDiagram: {
-        svgKey: 'ppfBowedOutInteractive',
-        label: 'See opportunity cost rise as you move along the curve',
-        emoji: '📈',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'The PPF',
-            tone: 'blue',
-            head: 'The production possibility frontier',
-            body: 'This bowed-out curve reflects a key property of real economies: resources are not equally suited to producing both goods. Move along the curve from left to right and watch how the trade-off changes at each point.',
-            analysis: 'The shape encodes information about resource adaptability. A straight-line PPF would mean perfect homogeneity – every unit of labour, land, and capital equally suited to either good. Real economies have specialists: surgeons, farmers, software engineers, factories. The bowed-out (concave) curve is the visual signature of that specialisation.'
-          },
-          {
-            label: 'Low opportunity cost',
-            tone: 'green',
-            head: 'Pa – small sacrifice, decent gain',
-            body: 'A 30-unit gain in Good B costs only 11 units of Good A. The first resources to transfer are those least suited to Good A – moving them costs little because they were barely productive there anyway.',
-            analysis: 'Early specialisation is cheap. The economy deploys its most adaptable resources first – those with the weakest attachment to Good A. They were only marginally productive there; moving them to Good B yields a large gain at a small sacrifice. The opportunity cost ratio (vertical leg ÷ horizontal leg of the triangle) is small.'
-          },
-          {
-            label: 'Rising opportunity cost',
-            tone: 'amber',
-            head: 'Pb – same gain, bigger sacrifice',
-            body: 'The same gain in Good B now costs roughly twice as much Good A. The resources switching now were better suited to Good A – their transfer is proportionally costlier. Compare the two triangles: equal width, but Pb\'s is visibly taller.',
-            analysis: 'The economy has used up its easy transfers. Remaining resources in Good A are progressively more specialised – more productive there and less adaptable to Good B. Transferring them yields a smaller gain relative to the sacrifice. The ratio grows. This is increasing opportunity cost made visible: the triangle taller despite the same horizontal step.'
-          },
-          {
-            label: 'High opportunity cost',
-            tone: 'rose',
-            head: 'Pc – steep sacrifice for modest gain',
-            body: 'A smaller gain in Good B now costs far more Good A. All three triangles share similar widths, but the vertical sacrifices are 11, 24, and 40 units respectively. The law of increasing opportunity cost, graphed.',
-            analysis: 'The most specialised resources are the last to transfer, so their opportunity cost is enormous and the PPF steepens near the axis. A straight-line PPF only arises if resources are perfectly homogeneous. Draw a straight line only when a question specifies constant opportunity cost – otherwise the bowed-out curve is more realistic and earns the mark.'
-          }
+      template: 'framing',
+      stepLabel: 'Learn: Step 2 of 7',
+      title: 'Efficiency, unemployment and impossibility',
+      lede: 'Where a point sits relative to the frontier tells us whether resources are used efficiently, underused, or are currently unattainable.',
+      tip: { icon: '✅', tone: 'green', text: 'On the curve = efficient. Inside = underused. Outside = unattainable.' },
+      diagramPanel: {
+        diagramKey: 'ppfClassify',
+        title: 'Classify the point',
+        emoji: '🎯',
+        layout: 'side',
+        bullets: [
+          '<strong style="color:#2563EB;">A · Productively efficient</strong> — on the frontier. All resources fully used: no waste, no unemployment.',
+          '<strong style="color:#D97706;">B · Productively inefficient</strong> — inside the frontier. Some resources underused or unemployed (spare capacity).',
+          '<strong style="color:#059669;">C · Unattainable now</strong> — outside the frontier. Achievable only with more resources or better technology.'
         ]
       },
-      keyTerms: [
-        { term: 'Opportunity cost on PPF', def: 'The quantity of one good given up to produce one more unit of the other – equal to the gradient of the PPF at that point.' },
-        { term: 'Constant opportunity cost', def: 'Straight-line PPF: resources are perfectly substitutable; the trade-off ratio is fixed regardless of output mix.' },
-        { term: 'Increasing opportunity cost', def: 'Bowed-out PPF (concave to origin): resources are specialised, so each extra unit of one good costs progressively more of the other as specialisation deepens.' },
-        { term: 'Resource specificity', def: 'Resources are not equally suited to all uses – a surgeon and a farmer are not interchangeable without cost. This is what bows the PPF outward.' }
-      ],
-      examEdge: 'To calculate opportunity cost: find how many units of one good are sacrificed per unit gained of the other. From a diagram: read the slope. Show the step – "output of B falls from X to Y while A rises by Z, so OC = (X−Y)/Z units of B per unit of A." Draw a straight-line PPF only when the question specifies constant opportunity cost or perfectly homogeneous resources – in all other cases, the bowed-out curve is more realistic and earns the mark.'
+      methodGrid: {
+        label: 'What each region means',
+        emoji: '📍',
+        items: [
+          { tone: 'amber', icon: '📉', title: 'Recession / spare capacity', body: 'The economy operates <strong>inside</strong> the curve — unemployment or idle resources exist.' },
+          { tone: 'blue',  icon: '👥', title: 'Full employment',            body: 'The economy operates <strong>on</strong> the curve — resources fully used, no spare capacity.' },
+          { tone: 'green', icon: '📈', title: 'Long-run growth',             body: 'Only pushing the frontier <strong>outward</strong> turns today’s unattainable point into a possible one.' }
+        ]
+      },
+      note: { icon: 'ℹ️', tone: 'blue', text: 'Moving from inside the curve to the frontier does <strong>not</strong> require economic growth — it requires better use of existing resources.' },
+      keyTakeaway: 'The PPF separates what is efficient, what is wasteful, and what is not yet possible.',
+      examEdge: 'Always state whether a point is on, inside, or outside the frontier before explaining the economics.'
     },
 
     {

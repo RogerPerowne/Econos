@@ -2565,6 +2565,15 @@ img, svg { display: block; max-width: 100%; }
   }
 }
 
+/* Session-meta on the intro card stacks vertically on phones — the
+   default 1fr 1fr crushed "Estimated time" and "Your goal" into two
+   half-width columns, forcing the goal text to wrap awkwardly tall
+   and ugly. One per row gives each the full width and renders the
+   meta block compactly. */
+@media (max-width: 600px) {
+  .session-meta { grid-template-columns: 1fr; gap: var(--sp-3); }
+}
+
 /* card-foot (Previous · counter · Next) sits in a row with
    space-between. On narrow viewports the buttons get pushed
    together and overflow; wrap with a counter that drops below. */

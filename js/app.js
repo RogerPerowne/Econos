@@ -62,65 +62,19 @@
      SHELL (sidebar + topbar)
      ============================================================ */
 
+  /* Chrome is rendered through Shell.renderApp + Shell.renderSidebar so
+     Learn It (this file), Link It (link-router → link engines), Land It
+     (land-router → land engines) and the inline quiz (take-quiz handler
+     below) all emit the SAME `<div class="app"> + <main id="main-content">`
+     skeleton. Roger's brief: "ensure the chrome on each page is the exact
+     same, possibly getting it from the same place". The local renderTopbar
+     stays Learn-It-specific (intro vs non-intro variant). */
   function renderShell(inner) {
-    return `
-      <div class="app">
-        ${renderSidebar()}
-        <div id="main-content" class="main" tabindex="-1" role="main">
-          ${renderTopbar()}
-          ${inner}
-        </div>
-      </div>
-    `;
-  }
-
-  function renderSidebar() {
-    const navItems = [
-      { name: 'Home',         icon: I.home,     href: '#', active: false },
-      { name: 'My topics',    icon: I.topics,   href: '#', active: true  },
-      { name: 'Progress',     icon: I.progress, href: '#', active: false },
-      { name: 'Exam practice',icon: I.practice, href: '#', active: false },
-      { name: 'Study planner',icon: I.planner,  href: '#', active: false },
-      { name: 'Messages',     icon: I.messages, href: '#', active: false },
-      { name: 'Settings',     icon: I.settings, href: '#', active: false }
-    ];
-
-    return `
-      <aside class="sidebar">
-        <div class="sidebar__brand">
-          <a href="/" class="sidebar__logo-link">
-            <img src="/assets/logo-full.png" alt="Econos — Learn it. Link it. Land it." class="sidebar__logo-full">
-          </a>
-        </div>
-
-        <nav class="sidebar__nav">
-          ${navItems.map(n => `
-            <a href="${n.href}" class="${n.active ? 'is-active' : ''}">
-              ${n.icon}
-              <span>${n.name}</span>
-            </a>
-          `).join('')}
-        </nav>
-
-        <div class="sidebar__streak">
-          <div class="sidebar__streak-row">
-            <span class="sidebar__streak-flame">🔥</span>
-            <span class="sidebar__streak-num">1</span>
-          </div>
-          <div class="sidebar__streak-label">Day streak</div>
-          <div class="sidebar__streak-sub">Keep it going!</div>
-        </div>
-
-        <div class="sidebar__user">
-          <div class="sidebar__user-avatar">AB</div>
-          <div class="sidebar__user-info">
-            <div class="sidebar__user-name">Alex Brown</div>
-            <div class="sidebar__user-role">A-Level Economics · <span class="sidebar__user-board">${(window.TopicLoader && TopicLoader.getBoardName && TopicLoader.getBoardName()) || 'Edexcel A'}</span></div>
-          </div>
-          <div class="sidebar__user-chev">${I.chevDown}</div>
-        </div>
-      </aside>
-    `;
+    return Shell.renderApp({
+      sidebar: { activeNav: 'My topics' },
+      topbar: renderTopbar(),
+      body: inner
+    });
   }
 
   /* Topbar template. The streak chip that used to live here was a duplicate

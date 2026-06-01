@@ -125,26 +125,22 @@
       /* ---- shift ---- */
       { layer: 'layer-shift', x: 0.330, y: 0.476, tone: 'red',   radius: 6, hollow: true },
       { layer: 'layer-shift', x: 0.470, y: 0.476, tone: 'slate', radius: 4 },
-      { layer: 'layer-shift', x: 0.610, y: 0.476, tone: 'green', radius: 6, hollow: true },
+      { layer: 'layer-shift', x: 0.610, y: 0.476, tone: 'green', radius: 6, hollow: true }
+    ],
 
-      /* ---- title-strip dots ---- */
-      { layer: 'layer-legend-base', x: 0.095, y: 1.031, tone: 'red',   radius: 7 },
-      { layer: 'layer-extension',   x: 0.095, y: 1.031, tone: 'amber', radius: 7 },
-      { layer: 'layer-shift',       x: 0.095, y: 1.031, tone: 'green', radius: 7 }
+    // titleStrips: engine pairs the dot with the text and positions
+    // the dot just before the rendered text's left edge — long titles
+    // no longer get their first letter eclipsed by the marker dot.
+    titleStrips: [
+      { layer: 'layer-legend-base', tone: 'red',
+        text: 'Supply slopes upward · higher prices incentivise more production' },
+      { layer: 'layer-extension', tone: 'amber',
+        text: 'Price changes → slide ALONG the supply curve' },
+      { layer: 'layer-shift', tone: 'green',
+        text: 'Non-price factors → SHIFT the whole supply curve' }
     ],
 
     texts: [
-      // Title strips
-      { layer: 'layer-legend-base', x: 0.450, y: 1.017,
-        text: 'Supply slopes upward · higher prices incentivise more production',
-        tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-extension', x: 0.450, y: 1.017,
-        text: 'Price changes → slide ALONG the supply curve',
-        tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-shift', x: 0.450, y: 1.017,
-        text: 'Non-price factors → SHIFT the whole supply curve',
-        tone: 'slate', fontSize: 12, anchor: 'middle' },
-
       // Base axis tick labels
       { layer: 'layer-e1', x: -0.028, y: 0.476, text: 'P₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-e1', x: 0.470, y: -0.050, text: 'Q₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'middle' },

@@ -129,26 +129,19 @@
       { layer: 'layer-shift', x: 0.330, y: 0.476, tone: 'red',   radius: 6, hollow: true },
       // E₁ reference dot — smaller, filled grey
       { layer: 'layer-shift', x: 0.470, y: 0.476, tone: 'slate', radius: 4 },
-      { layer: 'layer-shift', x: 0.610, y: 0.476, tone: 'green', radius: 6, hollow: true },
+      { layer: 'layer-shift', x: 0.610, y: 0.476, tone: 'green', radius: 6, hollow: true }
+    ],
 
-      /* ---- title-strip dots (one per state) ---- */
-      { layer: 'layer-legend-base', x: 0.028, y: 1.031, tone: 'blue',  radius: 7 },
-      { layer: 'layer-extension',   x: 0.028, y: 1.031, tone: 'amber', radius: 7 },
-      { layer: 'layer-shift',       x: 0.028, y: 1.031, tone: 'green', radius: 7 }
+    titleStrips: [
+      { layer: 'layer-legend-base', tone: 'blue',
+        text: 'Demand slopes downward · inverse price-quantity relationship' },
+      { layer: 'layer-extension', tone: 'amber',
+        text: 'Price changes → slide ALONG the demand curve' },
+      { layer: 'layer-shift', tone: 'green',
+        text: 'Non-price factors → SHIFT the whole demand curve' }
     ],
 
     texts: [
-      /* ---- TITLE STRIP (one per state, all positioned the same) ---- */
-      // base — blue
-      { layer: 'layer-legend-base', x: 0.060, y: 1.017, text: 'Demand slopes downward · inverse price-quantity relationship',
-        tone: 'slate', fontSize: 12, anchor: 'start' },
-      // extension — amber dot uses layer-extension (the legend layer toggles separately, but the strip belongs to the diagram state)
-      { layer: 'layer-extension', x: 0.060, y: 1.017, text: 'Price changes → slide ALONG the demand curve',
-        tone: 'slate', fontSize: 12, anchor: 'start' },
-      // shift — green
-      { layer: 'layer-shift', x: 0.060, y: 1.017, text: 'Non-price factors → SHIFT the whole demand curve',
-        tone: 'slate', fontSize: 12, anchor: 'start' },
-
       /* ---- base axis tick labels ---- */
       { layer: 'layer-e1', x: -0.028, y: 0.476, text: 'P₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-e1', x: 0.470, y: -0.050, text: 'Q₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'middle' },

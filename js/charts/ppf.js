@@ -1149,6 +1149,44 @@
          ]
        }
      ------------------------------------------------------------------ */
+  /* titleStrip — centered "dot + text" header that sits above the
+     chart area. The engine handles positioning so the dot ALWAYS
+     lands just before the text's actual left edge, regardless of
+     text length. Author shape:
+       titleStrips: [
+         { layer: 'layer-legend-base', tone: 'blue', text: 'Long title …' },
+         ...
+       ]
+     Defaults:
+       y         = chart-y 1.025 (just above the chart area, room
+                   for ~14 px of ascender)
+       fontSize  = 12
+       radius    = 7
+       gap       = 8 px between dot and first character
+     The width estimate `0.58 × fontSize × charCount` matches the
+     legend-title centering used elsewhere in the engine. */
+  function renderTitleStrip(ts, scale, area) {
+    var t = tone(ts.tone || 'slate');
+    var fontSize = ts.fontSize || 12;
+    var radius = ts.radius || 7;
+    var gap = ts.gap != null ? ts.gap : 8;
+    var text = ts.text || '';
+    var textW = 0.58 * fontSize * text.length;
+    // Centre of the chart area in pixel space.
+    var centerX = area.x + area.width / 2;
+    // Y default lifts the strip ~12 px above the chartArea top so the
+    // ascender doesn't graze the axis arrow. Override via ts.y if you
+    // need a different vertical position.
+    var py = ts.y != null ? scale.y(ts.y) : (area.y - 14);
+    var textStartX = centerX - textW / 2;
+    var dotCx = textStartX - radius - gap;
+    return '<circle cx="' + dotCx.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="' + radius +
+           '" fill="' + t.stroke + '"/>' +
+           '<text x="' + centerX.toFixed(1) + '" y="' + (py + 4).toFixed(1) +
+           '" font-size="' + fontSize + '" font-weight="700" fill="' + LABEL_INK +
+           '" text-anchor="middle">' + text + '</text>';
+  }
+
   function renderLegend(legend) {
     if (!legend) return '';
     var x = legend.x || 600;
@@ -1407,6 +1445,7 @@
     });
     (view.zones || []).forEach(function (z) { parts.push(renderZone(z, scale)); });
     (view.texts || []).forEach(function (t) { parts.push(renderText(t, scale, ctx, area)); });
+    (view.titleStrips || []).forEach(function (ts) { parts.push(renderTitleStrip(ts, scale, area)); });
     // BoxedLabel text overlays go last — readable above everything.
     boxedFgs.forEach(function (fg) { parts.push(fg); });
     return parts;
@@ -1491,6 +1530,18 @@
     (panel.texts || []).forEach(function (t) { parts.push(maybeWrap(t, renderText(t, scale, ctx, area))); });
     // BoxedLabel text overlays last — readable on top of curves/dots.
     panelBoxedFgs.forEach(function (fg) { parts.push(fg); });
+
+    // titleStrips: centered dot + text pair, auto-positioned so the
+    // dot always sits just before the text's actual left edge. The
+    // old hand-rolled pattern used a fixed-x circle paired with an
+    // anchor:middle text; long titles spilled their left edge UNDER
+    // the dot (Roger's screenshot 06-01 — "Supply slopes upward"
+    // with the red dot overlapping the "S"). Estimating text width
+    // from charCount × 0.58 × fontSize lets the engine position
+    // the dot reliably across every spec without authoring math.
+    (panel.titleStrips || []).forEach(function (ts) {
+      parts.push(maybeWrap(ts, renderTitleStrip(ts, scale, area)));
+    });
 
     var legendsBelow = !!panel.legendsBelow;
     (panel.legends || []).forEach(function (lg) {
@@ -2069,6 +2120,7 @@
         points: spec.points,
         texts: spec.texts,
         boxedLabels: spec.boxedLabels,
+        titleStrips: spec.titleStrips,
         legends: spec.legends,
         legend: spec.legend,
         views: spec.views,

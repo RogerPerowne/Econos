@@ -39,28 +39,44 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 3',
       title: 'What ‘rational’ means',
-      lede: 'Economists often assume agents are rational. Rational means consistent, goal-seeking, and comparing marginal costs with marginal benefits to maximise an objective. This is a simplifying assumption, not a literal claim about every person.',
+      lede: 'Rational means consistent, goal-seeking, and comparing extra benefit with extra cost. It is a simplifying assumption that underpins almost every demand-and-supply diagram you will meet.',
       tip: { icon: '✅', tone: 'green', text: 'Rationality is a simplifying assumption – not a claim that people are robots.' },
-      causes: [
-        { head: 'Consistent choices', icon: '🔁', body: 'Preferences do not randomly change.' },
-        { head: 'Goal-seeking',       icon: '🎯', body: 'Decisions aim at an objective.' },
-        { head: 'Marginal analysis',  icon: '⚖️', body: 'Compare one more unit of benefit with one more unit of cost.' },
-        { head: 'Maximisation',       icon: '📈', body: 'Choose the option that gives the highest payoff.' }
-      ],
-      causesLabel: 'What rational means',
-      causesEmoji: '🧠',
-      causesPosition: 'top',
-      comparison: {
-        title: 'Who maximises what?',
-        emoji: '⚖️',
-        left:  { tone: 'blue',  icon: '🙂', label: 'Consumers maximise utility', caption: 'satisfaction or benefit.' },
-        right: { tone: 'amber', icon: '🏭', label: 'Firms maximise profit',      caption: 'total revenue minus total costs.' }
+      methodGrid: {
+        label: 'The four habits of a rational agent',
+        emoji: '🧠',
+        items: [
+          { tone: 'blue',   icon: '🔁', title: 'Consistent choices', body: 'Preferences do not randomly change from one moment to the next.', example: 'If you prefer tea to coffee today, you prefer it tomorrow too – other things equal.' },
+          { tone: 'green',  icon: '🎯', title: 'Goal-seeking',       body: 'Every decision aims at a clear objective.',                     example: 'A shopper maximises satisfaction; a firm maximises profit.' },
+          { tone: 'amber',  icon: '⚖️', title: 'Marginal analysis',  body: 'Compare one more unit of benefit with one more unit of cost.',  example: '“Is the next slice of pizza worth £2 to me?” – not “is pizza worth it overall?”' },
+          { tone: 'purple', icon: '📈', title: 'Maximisation',       body: 'Choose the option that gives the highest payoff.',              example: 'Pick the plan that gives the most satisfaction within your budget.' }
+        ]
       },
-      keyTerms: [
-        { term: 'Rational economic agent', def: 'Someone assumed to make consistent, goal-directed choices.' },
-        { term: 'Utility',                 def: 'Satisfaction or benefit from consumption.' },
-        { term: 'Marginal analysis',       def: 'Decision-making at the margin, by comparing extra benefit with extra cost.' }
-      ],
+      versusList: {
+        label: 'Rational thinking in action',
+        emoji: '🤔',
+        rows: [
+          {
+            heading: 'Buying a new phone',
+            left:  { tone: 'blue', name: 'Rational consumer', icon: '🙂', premise: 'Weighs the extra utility of the phone against £800.',         reason: 'Buys only if that £800 gives more satisfaction here than from anything else it could buy.' },
+            right: { tone: 'rose', name: 'Impulse buyer',     icon: '🤩', premise: 'Sees the launch ad and taps Buy.',                            reason: 'Acts on feeling, without comparing the cost to other foregone uses of £800.' }
+          },
+          {
+            heading: 'Working an extra hour',
+            left:  { tone: 'blue', name: 'Rational worker',   icon: '🧮', premise: 'Asks if the extra wage beats the value of that hour spent elsewhere.', reason: 'Works the hour only if the wage is worth more than the leisure or sleep lost.' },
+            right: { tone: 'rose', name: 'Habit worker',      icon: '🌀', premise: 'Just keeps working – it is what everyone does.',              reason: 'Doesn’t compare marginal benefit and marginal cost at all.' }
+          }
+        ]
+      },
+      comparison: {
+        title: 'Where the assumption leads',
+        emoji: '⚖️',
+        vs: '+',
+        resultJoin: '=',
+        position: 'after-branches',
+        left:   { tone: 'blue',  icon: '🙂', label: 'Consumers maximise utility', caption: 'Satisfaction or benefit, within a budget.' },
+        right:  { tone: 'amber', icon: '🏭', label: 'Firms maximise profit',      caption: 'Total revenue minus total costs.' },
+        result: { tone: 'green', icon: '📊', label: 'Every market diagram',       caption: 'These two assumptions sit underneath almost every demand-and-supply model in the course.' }
+      },
       keyTakeaway: 'Rationality helps economists build clear models of behaviour before testing them against the real world.',
       examEdge: 'In essays, treat rationality as the baseline assumption, then evaluate whether it is realistic.'
     },

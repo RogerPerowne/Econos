@@ -1985,6 +1985,50 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ============================================================
+   FACTOR ENGINE — responsive "inputs + coordinator = output"
+   Three zones side-by-side on desktop, stacked on phones with the
+   +/= badges turning to point down.
+   ============================================================ */
+.factor-engine {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.factor-engine .fe-zone {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fe-cap {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--econ-slate, #64748B);
+  text-align: center;
+}
+.factor-engine .fe-zone--wide { flex: 1.5; }
+.fe-zone__body { flex: 1; display: flex; flex-direction: column; }
+.factor-engine .fe-zone--center .fe-zone__body { justify-content: center; }
+.fe-stack { display: flex; flex-direction: column; gap: 10px; }
+.fe-op { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fe-op > div {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #0B1426; color: #fff; font-weight: 800; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(11, 20, 38, 0.25);
+}
+@media (max-width: 680px) {
+  .factor-engine { flex-direction: column; align-items: stretch; }
+  /* +/= are operators (not directional arrows), so they stay upright when
+     the zones stack — same rule as the VS badge. */
+  .factor-engine .fe-zone--center .fe-zone__body { justify-content: flex-start; }
+}
+
+/* ============================================================
    CLASSIFY MICRO-GAME — predict-then-commit ("sort into A/B")
    ============================================================ */
 .classify-item {

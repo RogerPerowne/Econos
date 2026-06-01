@@ -85,12 +85,12 @@ test.describe('Per-topic SEO metadata', () => {
 
 test.describe('Per-topic stage availability', () => {
   test('Learn shell locks stages a topic does not have data for', async ({ page }) => {
-    /* 'factors-of-production' ships learn + link but no land
+    /* 'production-possibility-frontiers' ships learn + link but no land
        (per js/topics.js). The build emits a meta tag listing the
        available stages; the runtime stages widget reads it and
        locks the rest. */
     await login(page);
-    await page.goto('/edexcel_a/theme-1/factors-of-production/learn-it');
+    await page.goto('/edexcel_a/theme-1/production-possibility-frontiers/learn-it');
 
     const meta = await page.evaluate(() =>
       document.querySelector('meta[name="econos-availability"]')?.getAttribute('content'));

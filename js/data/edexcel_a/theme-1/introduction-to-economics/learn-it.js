@@ -16,16 +16,138 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Economics models a messy world with simplifying assumptions. The most important is that agents are rational – they weigh costs and benefits to maximise their objective.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '3 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
   cards: [
+    /* ----- CARD 1 – Thinking like an economist (spec 1.1.1a) ----- */
+    {
+      id: 'eass_thinking_like_economist',
+      template: 'framing',
+      stepLabel: 'Learn: Step 1 of 6',
+      title: 'Thinking like an economist',
+      lede: 'Economists use models to make sense of how the economy works. Models simplify reality so we can understand patterns and make predictions.',
+      tip: { icon: '✅', tone: 'green', text: 'Economists simplify reality to understand patterns and make predictions.' },
+      comparison: {
+        title: 'What is a model?',
+        emoji: '📦',
+        left:  { tone: 'blue',  icon: '📦', label: 'Definition', caption: 'A model is a simplified representation of reality.' },
+        right: { tone: 'amber', icon: '🎯', label: 'Purpose',    caption: 'It helps economists explain relationships, predict outcomes, and test ideas.' }
+      },
+      causes: [
+        { head: 'Isolate key variables',               icon: '🔍', body: 'Focus on the factors that matter most to the question.' },
+        { head: 'Make complex systems understandable', icon: '🧩', body: 'Break big problems into manageable parts.' },
+        { head: 'Compare outcomes or policies',        icon: '⚖️', body: 'See how different changes might affect results.' }
+      ],
+      causesLabel: 'Why simplify?',
+      causesEmoji: '🔻',
+      table: {
+        title: 'Assumptions make the model manageable',
+        emoji: '📄',
+        headers: ['Assumption', 'What it means'],
+        rows: [
+          { icon: '✅', label: 'Rational consumers',         value: 'People try to maximise their satisfaction (utility).' },
+          { icon: '✅', label: 'Firms seek profit',          value: 'Businesses aim to maximise profits.' },
+          { icon: '✅', label: 'Other influences set aside', value: 'Factors like weather or politics are held back – for now.' }
+        ]
+      },
+      diagramPanel: {
+        diagramKey: 'modelsSupplyDemand',
+        title: 'Worked example – supply and demand',
+        emoji: '📈',
+        layout: 'side',
+        bullets: [
+          '<strong>Price and quantity:</strong> the model focuses on price (P) and quantity (Q).',
+          '<strong>Buyers and sellers:</strong> demand comes from buyers, supply from sellers.',
+          '<strong>Equilibrium:</strong> P* and Q* where supply equals demand.',
+          '<strong>Why powerful:</strong> it explains how markets work and predicts how changes shift price or quantity – even though many real-world details are left out.'
+        ]
+      },
+      tipLate: { icon: '⚠️', tone: 'amber', text: 'Unrealistic assumptions do not automatically make a model useless – what matters is whether the model helps explain and predict the issue at hand.' },
+      keyTakeaway: 'Good economists know that a model is a tool, not reality itself.',
+      examEdge: 'Stronger answers explain why models are useful and mention that simplifying assumptions help isolate relationships.'
+    },
+
+    /* ----- CARD 2 – Ceteris paribus (spec 1.1.1b) ----- */
+    {
+      id: 'eass_ceteris_paribus',
+      template: 'framing',
+      stepLabel: 'Learn: Step 2 of 6',
+      title: 'Ceteris paribus',
+      lede: 'Economists often want to know how one factor affects another – for example, how price affects quantity demanded. To do this they use ceteris paribus: all other things being equal.',
+      tip: { icon: '✅', tone: 'green', text: 'Ceteris paribus lets economists test one cause at a time.' },
+      comparison: {
+        title: 'The idea',
+        emoji: '⚖️',
+        left:  { tone: 'blue',  icon: '⚖️', label: 'Ceteris paribus (Latin)', caption: '‘all other things being equal’' },
+        right: { tone: 'slate', icon: '💡', label: 'What it means',            caption: 'We hold all other relevant factors constant so we can focus on how one factor affects another.' }
+      },
+      flow: [
+        { icon: '1️⃣', title: 'Many moving parts',        sub: 'Economies are complex. Many factors influence people’s decisions.' },
+        { icon: '2️⃣', title: 'Isolate one relationship', sub: 'By holding other factors constant, we can see the effect of just one factor.' },
+        { icon: '3️⃣', title: 'Clearer explanation',      sub: 'This makes cause and effect easier to identify and theory more testable.' }
+      ],
+      flowTitle: 'Why it is needed',
+      flowEmoji: '🔗',
+      diagramPanel: {
+        diagramKey: 'ceterisParibusDemand',
+        title: 'Worked example – price rises, quantity demanded falls',
+        emoji: '📉',
+        layout: 'side',
+        bullets: [
+          'If the price of a good rises from P₁ to P₂, quantity demanded falls from Q₁ to Q₂.',
+          '<strong>Held constant (ceteris paribus):</strong> income, tastes and preferences, prices of substitutes and complements, and the number of buyers.',
+          'Change just one thing – price – and the effect on quantity demanded is clear.'
+        ]
+      },
+      tipLate: { icon: '⚠️', tone: 'rose', text: 'If several things change at once – for example, price rises and income also falls – it is hard to know which factor caused the change in quantity demanded.' },
+      keyTakeaway: 'Economists isolate one variable to reveal a relationship.',
+      examEdge: 'Top answers define ceteris paribus explicitly and use it to explain a movement along a demand curve.'
+    },
+
+    /* ----- CARD 3 – Why economics can't run lab experiments (spec 1.1.1c) ----- */
+    {
+      id: 'eass_no_experiments',
+      template: 'framing',
+      stepLabel: 'Learn: Step 3 of 6',
+      title: 'Why economics can’t run lab experiments',
+      lede: 'Economics studies real people and whole economies. That means perfect control is rarely possible, so economists use other methods to learn and test ideas.',
+      tip: { icon: '✅', tone: 'green', text: 'Economists can’t usually run controlled lab experiments on entire economies.' },
+      causes: [
+        { head: 'No control over all variables', icon: '🎛️', body: 'Too many factors affect outcomes at once – you can’t hold everything else constant.' },
+        { head: 'People change behaviour',       icon: '🧑', body: 'When policies or prices change, people react, adapt and learn. That affects the results.' },
+        { head: 'Ethical and practical limits',  icon: '🛡️', body: 'We can’t ethically or realistically experiment with jobs, taxes, prices or poverty on people.' }
+      ],
+      causesLabel: 'Why not',
+      causesEmoji: '⚖️',
+      table: {
+        title: 'What economists use instead',
+        emoji: '🧰',
+        headers: ['Method', 'What it is'],
+        rows: [
+          { icon: '🔍', label: 'Natural experiments', value: 'Real-world events that create a comparison group by chance. <em>Example: a minimum-wage change in one region but not in others.</em>' },
+          { icon: '📅', label: 'Historical data',     value: 'Data collected over time reveals patterns and relationships. <em>Example: inflation data over many years to study causes and effects.</em>' },
+          { icon: '🔗', label: 'Models',              value: 'Simplified representations that help explain how the economy works. <em>Example: the AD/AS model, or supply and demand.</em>' }
+        ]
+      },
+      branches: [
+        { tone: 'blue',   label: 'Evidence is often messy',          sub: 'Real economies are complex. Data is incomplete and influenced by many factors at once.' },
+        { tone: 'amber',  label: 'Causal relationships are harder to prove', sub: 'It’s difficult to be certain that one change caused another.' },
+        { tone: 'purple', label: 'Reasonable economists may read the same evidence differently', sub: 'Different models, values and assumptions can lead to different conclusions – two economists can see the same evidence and recommend opposite policies.' }
+      ],
+      branchesLabel: 'What this means',
+      branchesEmoji: '💡',
+      branchesLayout: 'stack',
+      keyTakeaway: 'Economics is a social science – it studies people, so evidence is powerful but rarely perfect.',
+      examEdge: 'High-level answers link the lack of controlled experiments to uncertainty and disagreement among economists.'
+    },
+
     {
       id: 'basic_econ_problem_4',
       template: 'cause',
-      stepLabel: 'Learn: Step 1 of 3',
+      stepLabel: 'Learn: Step 4 of 6',
       title: 'Economic Agents and Their Objectives',
       lede: 'An economy is made up of decision-makers – households, firms, governments and workers – each with their own objectives.',
       tip: { icon: '💡', tone: 'blue', text: 'An economy is made up of decision-makers – households, firms, governments and workers – each with their own objectives.' },
@@ -62,7 +184,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_6',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 2 of 3',
+      stepLabel: 'Learn: Step 5 of 6',
       title: 'Rational Economic Decision-Making',
       lede: 'In simple economic models, decision-makers are assumed to act rationally – weighing up costs and benefits to maximise their objective.',
       tip: { icon: '💡', tone: 'blue', text: 'In simple economic models, decision-makers are assumed to act <strong>rationally</strong> – weighing up costs and benefits to maximise their objective.' },
@@ -94,7 +216,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_7',
       template: 'paired',
-      stepLabel: 'Learn: Step 3 of 3',
+      stepLabel: 'Learn: Step 6 of 6',
       title: 'Micro vs Macro Economics',
       lede: 'Microeconomics zooms in on individual markets and decision-makers. Macroeconomics zooms out to the whole economy.',
       tip: { icon: '💡', tone: 'blue', text: '<strong>Microeconomics</strong> zooms in on individual markets and decision-makers. <strong>Macroeconomics</strong> zooms out to the whole economy.' },

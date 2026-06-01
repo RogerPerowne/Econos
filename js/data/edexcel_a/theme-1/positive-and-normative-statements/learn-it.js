@@ -8,15 +8,15 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroScarcity',
     summary: 'Economists try to keep two kinds of claim apart: statements of fact that can be tested against evidence, and statements of value about what ought to happen. Mixing them up is one of the most common ways exam answers lose marks – and one of the main reasons economists who agree on the facts still disagree on policy.',
-    doInThis: 'Work through the cards covering the positive/normative distinction and the role value judgements play in real economic decision-making.',
+    doInThis: 'Work through three cards: the positive/normative distinction, the role value judgements play in policy, and how to spot the distinction in practice.',
     outcomes: [
       'Define positive and normative statements and tell them apart',
-      'Spot the flag words that signal a value judgement',
-      'Explain why value judgements shape economic policy and disagreement'
+      'Explain why value judgements shape economic policy and disagreement',
+      'Spot the flag words that signal a normative claim'
     ],
     tip: 'Flag words like "should", "ought", "fair" or "too much" almost always signal a normative statement. A positive statement could in principle be checked against data.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '2 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '3 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Coming soon', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'posnorm_1',
       template: 'paired',
-      stepLabel: 'Learn: Step 1 of 2',
+      stepLabel: 'Learn: Step 1 of 3',
       title: 'Positive vs Normative Statements',
       lede: 'Positive statements describe how the world IS and can be tested. Normative statements judge how the world OUGHT to be and rest on values.',
       tip: { icon: 'ℹ️', text: '<strong>Positive</strong> statements can be tested with evidence. <strong>Normative</strong> statements involve value judgements about what ought to happen.', tone: 'blue' },
@@ -56,23 +56,70 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Many policy debates contain both positive and normative elements. "Raising the minimum wage will reduce employment" is positive (testable). "We should raise it anyway because fairness matters more" is normative. Identifying this distinction in exam questions signals analytical maturity.'
     },
+    /* ----- CARD 2 – The role of value judgements (spec 1.1.2b) ----- */
     {
-      id: 'posnorm_2',
-      template: 'cause',
-      stepLabel: 'Learn: Step 2 of 2',
-      title: 'Spotting the Distinction in Practice',
-      lede: 'In exam extracts and real debate the two are tangled together. The fastest way to separate them is to hunt for the flag words.',
-      tip: { icon: '🚩', tone: 'amber', text: 'Words like <strong>should</strong>, <strong>ought</strong>, <strong>fair</strong>, <strong>too much/little</strong> and <strong>better</strong> almost always signal a normative claim.' },
-      body: 'A positive statement makes a claim you could, in principle, check against data – even if the data is hard to gather. A normative statement asks you to <em>agree with a value</em>, so no amount of evidence settles it. Train yourself to label each sentence in an extract: it makes the evaluation paragraph almost write itself.',
+      id: 'posnorm_value_judgements',
+      template: 'framing',
+      stepLabel: 'Learn: Step 2 of 3',
+      title: 'The role of value judgements',
+      lede: 'Two economists can agree on the facts but still disagree on policy. Value judgements about what ought to happen shape the conclusions they reach.',
+      tip: { icon: '✅', tone: 'green', text: 'Facts alone do not decide policy – values matter too.' },
+      body: '<strong>A value judgement is a view based on opinion, ethics or beliefs about what ought to happen.</strong> It goes beyond facts and reflects what people think is desirable or acceptable.',
+      comparison: {
+        title: 'Facts vs values',
+        emoji: '📊',
+        left:  { tone: 'blue',  icon: '📊', label: 'Positive (facts)',     caption: 'Describes what is – based on evidence and data.' },
+        right: { tone: 'amber', icon: '⚖️', label: 'Normative (values)',   caption: 'Judges what ought to be – based on values and beliefs.' }
+      },
       causes: [
-        { head: 'Positive – testable', icon: '📊', body: '"A carbon tax of \xa350/tonne would cut emissions by roughly 8%." A claim about cause and effect that data could confirm or refute.' },
-        { head: 'Normative – value-laden', icon: '⚖️', body: '"The government ought to prioritise the environment over growth." Rests on what you think matters most – not on evidence.' },
-        { head: 'Often blended', icon: '🔀', body: '"Inequality is rising (positive) and the rich should pay more tax (normative)." Real arguments stitch the two together – your job is to unpick them.' }
+        { head: 'Minimum wage', icon: '💷', body: '<strong>Economist A</strong> supports a higher minimum wage – it improves fairness and helps low-paid workers reach a decent standard of living. <strong>Economist B</strong> opposes it – it may cause job losses and reduce flexibility for firms, especially for young or low-skilled workers.' },
+        { head: 'Carbon tax',   icon: '🌍', body: '<strong>Economist A</strong> supports a carbon tax – it tackles climate change, encourages cleaner choices and protects future generations. <strong>Economist B</strong> opposes it – it raises the cost of living and reduces competitiveness for businesses and households.' }
       ],
-      causesLabel: 'Label every sentence',
-      causesEmoji: '🔍',
-      keyTakeaway: 'Find the flag word. If the claim asks you to share a value, it is normative; if it could be checked against evidence, it is positive.',
-      examEdge: 'Examiners reward candidates who explicitly note when a statement in the extract is normative – it shows you know that a policy recommendation cannot be "proved" and must be evaluated against competing values.'
+      causesLabel: 'Same facts – different policies',
+      causesEmoji: '👥',
+      branches: [
+        { tone: 'green', label: 'Different priorities',                 sub: 'People value goals differently – e.g. equality vs growth.' },
+        { tone: 'green', label: 'Different time horizons',              sub: 'Short-term costs and long-term benefits are weighed differently.' },
+        { tone: 'green', label: 'Different views of fairness or efficiency', sub: 'People disagree on what is a fair or efficient outcome.' }
+      ],
+      branchesLabel: 'Why disagreement happens',
+      branchesEmoji: '🧩',
+      branchesLayout: 'triptych',
+      keyTakeaway: 'Policy debate is not just about what is true – it is also about what society values.',
+      examEdge: 'The strongest answers explain that two economists may agree on the evidence but disagree because of different value judgements.'
+    },
+
+    /* ----- CARD 3 – Spotting the distinction in practice (spec 1.1.2a) ----- */
+    {
+      id: 'posnorm_spotting',
+      template: 'framing',
+      stepLabel: 'Learn: Step 3 of 3',
+      title: 'Spotting the distinction in practice',
+      lede: 'Economists make positive statements about what is, and normative statements about what ought to be. Two quick tests tell them apart.',
+      tip: { icon: '✅', tone: 'green', text: 'Positive statements can be tested with evidence. Normative statements express a judgement.' },
+      comparison: {
+        title: 'Fast test',
+        emoji: '⚡',
+        left:  { tone: 'blue',  icon: '🔍', label: 'Can it be checked with evidence?', caption: 'Is it about what is, was or will be? If yes → POSITIVE.' },
+        right: { tone: 'amber', icon: '⚖️', label: 'Does it express what ought to happen or what is fair?', caption: 'Is it a value judgement or opinion? If yes → NORMATIVE.' }
+      },
+      body: '<strong>Clue words:</strong> should · ought · fair · unfair · better · worse · desirable. If a statement uses these words, it is likely to be normative.',
+      table: {
+        title: 'Try these',
+        emoji: '✏️',
+        headers: ['Statement', 'Type'],
+        rows: [
+          { icon: '1️⃣', label: 'A rise in VAT increases prices.',            value: 'Positive' },
+          { icon: '2️⃣', label: 'The government should cut taxes.',           value: 'Normative' },
+          { icon: '3️⃣', label: 'The minimum wage has increased.',            value: 'Positive' },
+          { icon: '4️⃣', label: 'It is unfair that chief executives earn so much.', value: 'Normative' },
+          { icon: '5️⃣', label: 'A carbon tax reduces demand for fossil fuels.', value: 'Positive' },
+          { icon: '6️⃣', label: 'The NHS ought to receive more funding.',     value: 'Normative' }
+        ]
+      },
+      tipLate: { icon: 'ℹ️', tone: 'blue', text: 'Some arguments include both positive and normative elements. Be clear about which is which.' },
+      keyTakeaway: 'Look for evidence on one hand and judgement language on the other.',
+      examEdge: 'When asked to distinguish the two, quote the part of the statement that makes it testable or value-based.'
     }
   ]
 };

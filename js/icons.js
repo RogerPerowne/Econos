@@ -1627,6 +1627,9 @@ window.ECONOS_ICONS = {
 
   equilibriumBasic: window.ECONOS_PPF.render(window.ECONOS_EQUILIBRIUM_BASIC_SPEC),
 
+  modelsSupplyDemand:  window.ECONOS_PPF.render(window.ECONOS_MODELS_SD_SPEC),
+  ceterisParibusDemand: window.ECONOS_PPF.render(window.ECONOS_CETERIS_DEMAND_SPEC),
+
   simultaneousShiftsInteractive: window.ECONOS_PPF.render(window.ECONOS_SIM_SHIFTS_SPEC),
 
   shiftsInteractive: window.ECONOS_PPF.render(window.ECONOS_SHIFTS_SPEC),

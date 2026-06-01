@@ -126,18 +126,24 @@ window.ECONOS_TOPIC = {
         left:  { tone: 'blue',  icon: '🔍', label: 'Can it be checked with evidence?', caption: 'Is it about what is, was or will be? If yes → POSITIVE.' },
         right: { tone: 'amber', icon: '⚖️', label: 'Does it express what ought to happen or what is fair?', caption: 'Is it a value judgement or opinion? If yes → NORMATIVE.' }
       },
-      body: '<strong>Clue words:</strong> should · ought · fair · unfair · better · worse · desirable. If a statement uses these words, it is likely to be normative.',
-      table: {
-        title: 'Try these',
+      chipWall: {
+        label: 'Flag words',
+        emoji: '🚩',
+        tone: 'amber',
+        intro: 'Spot any of these and the statement is almost certainly <strong>normative</strong> – it is making a value judgement, not stating a fact.',
+        chips: ['should', 'ought', 'fair', 'unfair', 'better', 'worse', 'too much', 'desirable']
+      },
+      classifyList: {
+        label: 'Try these',
         emoji: '✏️',
-        headers: ['Statement', 'Type'],
-        rows: [
-          { icon: '1️⃣', label: 'A rise in VAT increases prices.',            value: 'Positive' },
-          { icon: '2️⃣', label: 'The government should cut taxes.',           value: 'Normative' },
-          { icon: '3️⃣', label: 'The minimum wage has increased.',            value: 'Positive' },
-          { icon: '4️⃣', label: 'It is unfair that chief executives earn so much.', value: 'Normative' },
-          { icon: '5️⃣', label: 'A carbon tax reduces demand for fossil fuels.', value: 'Positive' },
-          { icon: '6️⃣', label: 'The NHS ought to receive more funding.',     value: 'Normative' }
+        intro: 'Make your call on each statement – tap Positive or Normative.',
+        items: [
+          { statement: 'A rise in VAT increases prices.',                              answer: 'positive',  why: 'A testable cause-and-effect claim – check it against price data.' },
+          { statement: 'The government <strong>should</strong> cut taxes.',            answer: 'normative', why: '“should” is a value judgement about what ought to happen.' },
+          { statement: 'The minimum wage has increased.',                              answer: 'positive',  why: 'A plain statement of fact you can verify.' },
+          { statement: 'It is <strong>unfair</strong> that chief executives earn so much.', answer: 'normative', why: '“unfair” reflects an opinion about fairness, not a fact.' },
+          { statement: 'A carbon tax reduces demand for fossil fuels.',                answer: 'positive',  why: 'A testable prediction about how people respond.' },
+          { statement: 'The NHS <strong>ought to</strong> receive more funding.',      answer: 'normative', why: '“ought to” signals what someone thinks should happen.' }
         ]
       },
       tipLate: { icon: 'ℹ️', tone: 'blue', text: 'Some arguments include both positive and normative elements. Be clear about which is which.' },

@@ -1951,6 +1951,20 @@
       }
     }
 
+    // Chip wall – a tinted panel of pill chips. A livelier way to present a
+    // set of signal words / examples than a comma list (e.g. the normative
+    // "flag words"). Pattern: chipWall: { label?, emoji?, tone?, intro?, chips:[string] }
+    if (c.chipWall && Array.isArray(c.chipWall.chips) && c.chipWall.chips.length) {
+      const cw = c.chipWall;
+      const t = PATTERN_TONES[cw.tone || 'amber'] || PATTERN_TONES.amber;
+      if (cw.label) content += genSecLabel(cw.emoji || '🚩', cw.label);
+      content += `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:16px 18px;margin-bottom:24px;">`;
+      if (cw.intro) content += `<div style="font-size:13.5px;color:#0B1426;line-height:1.55;margin-bottom:13px;">${cw.intro}</div>`;
+      content += `<div style="display:flex;flex-wrap:wrap;gap:9px;">`;
+      content += cw.chips.map(ch => `<span style="display:inline-flex;align-items:center;background:#fff;border:1.5px solid ${t.border};color:${t.label};font-weight:800;font-size:14px;padding:7px 15px;border-radius:999px;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${ch}</span>`).join('');
+      content += `</div></div>`;
+    }
+
     // Paired: left / right – defines the two things being contrasted, so
     // renders before causes / table / branches which build on top of them.
     //   - Default: each side has `points: [string]` → bullet list.
@@ -2357,6 +2371,40 @@
           <div style="padding:14px 16px;font-size:14px;color:#0B1426;line-height:1.55;border-left:1px solid #E2E8F0;display:flex;align-items:center;">${r.value}</div>
         </div>
       `;
+      }).join('');
+      content += `</div>`;
+    }
+
+    // Classify list – a predict-then-commit micro-game. For each statement
+    // the learner taps one of N option chips and gets instant colour-coded
+    // feedback plus a one-line "why". Active recall, reusable for any
+    // "sort these into A/B" concept card.
+    //   Pattern: classifyList: { label?, emoji?, options?:[{id,label,tone}],
+    //                            items:[{statement, answer, why?}] }
+    //   options defaults to Positive (blue) / Normative (amber).
+    if (c.classifyList && Array.isArray(c.classifyList.items) && c.classifyList.items.length) {
+      const cl = c.classifyList;
+      if (cl.label) content += genSecLabel(cl.emoji || '✏️', cl.label);
+      if (cl.intro) content += `<div style="font-size:13.5px;color:#475569;line-height:1.55;margin:-6px 0 16px;">${cl.intro}</div>`;
+      const opts = cl.options || [
+        { id: 'positive',  label: 'Positive',  tone: 'blue'  },
+        { id: 'normative', label: 'Normative', tone: 'amber' }
+      ];
+      content += `<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px;">`;
+      content += cl.items.map((it, i) => {
+        const btns = opts.map(o => {
+          const t = PATTERN_TONES[o.tone || 'slate'] || PATTERN_TONES.slate;
+          return `<button type="button" data-action="classify-pick" data-choice="${o.id}" class="classify-opt" style="--opt-label:${t.label};--opt-bg:${t.bg};--opt-border:${t.border};">${o.label}</button>`;
+        }).join('');
+        return `
+          <div class="classify-item" data-answer="${it.answer}">
+            <div class="classify-item__row">
+              <div class="classify-item__num">${i + 1}</div>
+              <div class="classify-item__stmt">${it.statement}</div>
+            </div>
+            <div class="classify-item__opts">${btns}</div>
+            ${it.why ? `<div class="classify-item__why is-hidden">${it.why}</div>` : ''}
+          </div>`;
       }).join('');
       content += `</div>`;
     }
@@ -5969,6 +6017,8 @@
        !Array.isArray(c.table.rows[0])) ||
       c.conceptBoxes !== undefined ||
       c.methodGrid !== undefined ||
+      c.chipWall !== undefined ||
+      c.classifyList !== undefined ||
       c.splitDecision !== undefined ||
       c.versusList !== undefined ||
       c.diagramPanel !== undefined ||
@@ -6318,6 +6368,26 @@
       const txt = edge.querySelector('.exam-edge__text');
       if (txt) txt.classList.remove('is-hidden');
       target.style.display = 'none';
+    } else if (action === 'classify-pick') {
+      // Generic renderer: predict-then-commit classifier. Lock the item,
+      // mark the correct option green, the wrong pick (if any) red, dim the
+      // rest, and reveal the "why" toned by correctness.
+      const item = target.closest('.classify-item');
+      if (!item || item.classList.contains('is-done')) return;
+      item.classList.add('is-done');
+      const answer  = item.dataset.answer;
+      const correct = target.dataset.choice === answer;
+      item.querySelectorAll('[data-action="classify-pick"]').forEach(btn => {
+        btn.disabled = true;
+        if (btn.dataset.choice === answer) btn.classList.add('classify-opt--correct');
+        else if (btn === target) btn.classList.add('classify-opt--wrong');
+        else btn.classList.add('classify-opt--dim');
+      });
+      const why = item.querySelector('.classify-item__why');
+      if (why) {
+        why.classList.remove('is-hidden');
+        why.classList.add(correct ? 'classify-item__why--correct' : 'classify-item__why--wrong');
+      }
     } else if (action === 'reveal-cell') {
       // Generic renderer: reveal an answer cell in a comparison table
       const cell = target.closest('.reveal-cell');

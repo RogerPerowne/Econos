@@ -59,7 +59,7 @@
         ],
         texts: [
           { x: 0.475, y: 0.495, text: 'DWL',
-            tone: 'red', bold: true, fontSize: 11, anchor: 'middle' }
+            tone: 'red', bold: true, anchor: 'middle' }
         ]
       },
 
@@ -94,7 +94,7 @@
         ],
         texts: [
           { x: 0.575, y: 0.560, text: 'DWL',
-            tone: 'green', bold: true, fontSize: 11, anchor: 'middle' }
+            tone: 'green', bold: true, anchor: 'middle' }
         ]
       }
     ]

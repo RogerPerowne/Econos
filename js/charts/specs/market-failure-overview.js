@@ -57,7 +57,7 @@
       /* DWL caption pointing to the wedge between the two equilibria */
       { x: (EM.x + ES.x) / 2 + 0.040, y: (EM.y + ES.y) / 2 + 0.060,
         text: 'Welfare loss',
-        tone: 'red', bold: true, italic: true, fontSize: 11,
+        tone: 'red', bold: true, italic: true,
         anchor: 'middle' }
     ]
   };

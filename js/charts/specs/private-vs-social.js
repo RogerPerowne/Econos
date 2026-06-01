@@ -58,7 +58,7 @@
         ],
         texts: [
           { x: 0.450, y: 0.190, text: 'Over-production',
-            tone: 'red', bold: true, italic: true, fontSize: 11,
+            tone: 'red', bold: true, italic: true,
             anchor: 'middle' }
         ]
       },
@@ -93,7 +93,7 @@
         ],
         texts: [
           { x: 0.590, y: 0.190, text: 'Under-production',
-            tone: 'green', bold: true, italic: true, fontSize: 11,
+            tone: 'green', bold: true, italic: true,
             anchor: 'middle' }
         ]
       }

@@ -62,24 +62,24 @@
     texts: [
       /* Pp horizontal label on the y-axis */
       { x: -0.020, y: Pp, text: 'Pp', tone: 'green', bold: true,
-        fontSize: 10, anchor: 'end' },
+        anchor: 'end' },
 
       /* Layer 1: consumer benefit rectangle label */
       { x: Qs / 2, y: (E0.y + Pc) / 2, text: 'Consumer benefit',
-        tone: 'blue', bold: true, fontSize: 10, anchor: 'middle',
+        tone: 'blue', bold: true, anchor: 'middle',
         layer: 'idl-1' },
       /* Layer 2: producer benefit rectangle label */
       { x: Qs / 2, y: (E0.y + Pp) / 2, text: 'Producer benefit',
-        tone: 'green', bold: true, fontSize: 10, anchor: 'middle',
+        tone: 'green', bold: true, anchor: 'middle',
         layer: 'idl-2' },
       /* Layer 3: total subsidy cost caption above the outline */
       { x: Qs / 2, y: Pp + 0.075, text: 'Subsidy cost = £S × Qs',
-        tone: 'purple', bold: true, fontSize: 11, anchor: 'middle',
+        tone: 'purple', bold: true, anchor: 'middle',
         layer: 'idl-3' },
 
       /* Subsidy bracket caption (right of the bracket) */
       { x: Qs + 0.020, y: (Pc + Pp) / 2, text: 'Subsidy = £S',
-        tone: 'slate', bold: true, fontSize: 9 }
+        tone: 'slate', bold: true }
     ],
 
     boxedLabels: [

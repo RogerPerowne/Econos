@@ -78,7 +78,7 @@
 
       // Italic caption beneath the Qₑ label
       { x: E.x, y: -0.135, text: '(Allocatively efficient output)',
-        tone: 'gray', italic: true, fontSize: 11, anchor: 'middle' }
+        tone: 'gray', italic: true, anchor: 'middle' }
     ]
   };
 })();

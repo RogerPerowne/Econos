@@ -84,11 +84,11 @@
 
       /* Keynesian: three region labels */
       { x: 0.165, y: 0.157, text: 'Flat range',
-        tone: 'green', bold: true, fontSize: 10, anchor: 'middle', perspective: 'keynesian' },
+        tone: 'green', bold: true, anchor: 'middle', perspective: 'keynesian' },
       { x: 0.420, y: 0.370, text: 'Rising range',
-        tone: 'amber', bold: true, fontSize: 10, anchor: 'middle', perspective: 'keynesian' },
+        tone: 'amber', bold: true, anchor: 'middle', perspective: 'keynesian' },
       { x: 0.625, y: 0.835, text: 'Capacity limit',
-        tone: 'rose', bold: true, fontSize: 10, anchor: 'start', perspective: 'keynesian' },
+        tone: 'rose', bold: true, anchor: 'start', perspective: 'keynesian' },
       /* Keynesian: Yf tick */
       { x: YF, y: -0.051, text: 'Yf', tone: 'slate', bold: true,
         fontSize: 12, anchor: 'middle', perspective: 'keynesian' }

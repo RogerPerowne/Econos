@@ -94,8 +94,8 @@
         texts: [
           { x: 0.165, y: 0.825, text: 'Consumer', tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
           { x: 0.165, y: 0.783, text: 'surplus',  tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
-          { x: 0.170, y: 0.515, text: 'Government', tone: 'green', bold: true, fontSize: 11, anchor: 'middle' },
-          { x: 0.170, y: 0.475, text: 'tax revenue', tone: 'green', bold: true, fontSize: 11, anchor: 'middle' },
+          { x: 0.170, y: 0.515, text: 'Government', tone: 'green', bold: true, anchor: 'middle' },
+          { x: 0.170, y: 0.475, text: 'tax revenue', tone: 'green', bold: true, anchor: 'middle' },
           { x: 0.165, y: 0.235, text: 'Producer', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
           { x: 0.165, y: 0.195, text: 'surplus',  tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' }
         ]
@@ -114,8 +114,8 @@
           { x1: E.x, y1: E.y, x2: E.x + 0.110, y2: E.y, tone: 'red', strokeWidth: 1.4, buffer: 0 }
         ],
         texts: [
-          { x: E.x + 0.125, y: E.y + 0.022, text: 'Deadweight', tone: 'red', bold: true, fontSize: 11, anchor: 'start' },
-          { x: E.x + 0.125, y: E.y - 0.022, text: 'loss',       tone: 'red', bold: true, fontSize: 11, anchor: 'start' }
+          { x: E.x + 0.125, y: E.y + 0.022, text: 'Deadweight', tone: 'red', bold: true, anchor: 'start' },
+          { x: E.x + 0.125, y: E.y - 0.022, text: 'loss',       tone: 'red', bold: true, anchor: 'start' }
         ]
       }
     ]

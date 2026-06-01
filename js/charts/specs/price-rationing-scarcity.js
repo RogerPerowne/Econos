@@ -71,14 +71,14 @@
     texts: [
       /* P_c label on the y-axis */
       { x: -0.020, y: Pc, text: 'P_c', tone: 'slate', bold: true,
-        fontSize: 10, anchor: 'end' },
+        anchor: 'end' },
       /* "Shortage" caption above the gap arrow */
       { x: (Qs + Qd) / 2, y: Pc + 0.055, text: 'Shortage',
-        tone: 'red', bold: true, italic: true, fontSize: 11,
+        tone: 'red', bold: true, italic: true,
         anchor: 'middle' },
       /* Subtle hint that the price must RISE to clear it */
       { x: 0.040, y: 0.430, text: '⬆ price rises',
-        tone: 'red', fontSize: 10, bold: true }
+        tone: 'red', bold: true }
     ]
   };
 })();

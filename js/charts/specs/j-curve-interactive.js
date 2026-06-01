@@ -74,30 +74,30 @@
     texts: [
       /* Base: signed Y-axis region labels */
       { x: -0.020, y: 0.795, text: 'Surplus +', tone: 'green', bold: true,
-        fontSize: 10, anchor: 'end' },
+        anchor: 'end' },
       { x: -0.020, y: 0.225, text: 'Deficit −',  tone: 'red', bold: true,
-        fontSize: 10, anchor: 'end' },
+        anchor: 'end' },
 
       /* Base: devaluation event caption next to its marker */
       { x: T_DEV + 0.010, y: 0.690, text: 'devaluation',
-        tone: 'red', bold: true, fontSize: 10 },
+        tone: 'red', bold: true },
 
       /* Layer 1: PED < 1 region annotation under the dip */
       { x: 0.304, y: 0.085, text: 'PED < 1 → CA worsens',
-        tone: 'red', bold: true, fontSize: 9.5, anchor: 'middle',
+        tone: 'red', bold: true, anchor: 'middle',
         layer: 'idl-1' },
 
       /* Layer 2: PED > 1 annotation in the surplus recovery + J-curve label */
       { x: 0.826, y: 0.640, text: 'PED > 1 → CA improves',
-        tone: 'green', bold: true, fontSize: 9.5, anchor: 'middle',
+        tone: 'green', bold: true, anchor: 'middle',
         layer: 'idl-2' },
       { x: 0.516, y: 0.380, text: 'J-curve',
-        tone: 'red', bold: true, italic: true, fontSize: 11,
+        tone: 'red', bold: true, italic: true,
         layer: 'idl-2' },
 
       /* Layer 3: failed-path label */
       { x: 0.783, y: 0.151, text: 'M-L fails: CA stays worse',
-        tone: 'purple', bold: true, fontSize: 9.5, anchor: 'middle',
+        tone: 'purple', bold: true, anchor: 'middle',
         layer: 'idl-3' }
     ],
 

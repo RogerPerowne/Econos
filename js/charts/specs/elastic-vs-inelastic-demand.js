@@ -70,13 +70,13 @@
             markerStart: 'ped-blue-start', markerEnd: 'ped-blue-end', buffer: 0 }
         ],
         texts: [
-          { x: -0.071, y: P2_y,  text: 'P₂', tone: 'slate', bold: true, fontSize: 9,  anchor: 'end' },
-          { x: -0.071, y: P1_y,  text: 'P₁', tone: 'slate', bold: true, fontSize: 9,  anchor: 'end' },
-          { x: Q2_el,  y: -0.065, text: 'Q₂', tone: 'slate', bold: true, fontSize: 9,  anchor: 'middle' },
-          { x: Q1_el,  y: -0.065, text: 'Q₁', tone: 'slate', bold: true, fontSize: 9,  anchor: 'middle' },
+          { x: -0.071, y: P2_y,  text: 'P₂', tone: 'slate', bold: true,  anchor: 'end' },
+          { x: -0.071, y: P1_y,  text: 'P₁', tone: 'slate', bold: true,  anchor: 'end' },
+          { x: Q2_el,  y: -0.065, text: 'Q₂', tone: 'slate', bold: true,  anchor: 'middle' },
+          { x: Q1_el,  y: -0.065, text: 'Q₁', tone: 'slate', bold: true,  anchor: 'middle' },
           // ΔP / ΔQD labels
-          { x: -0.080, y: (P1_y + P2_y) / 2, text: 'ΔP', tone: 'red', bold: true, fontSize: 8, anchor: 'end' },
-          { x: (Q2_el + Q1_el) / 2, y: 0.110, text: 'Large ΔQD', tone: 'blue', bold: true, fontSize: 8, anchor: 'middle' }
+          { x: -0.080, y: (P1_y + P2_y) / 2, text: 'ΔP', tone: 'red', bold: true, anchor: 'end' },
+          { x: (Q2_el + Q1_el) / 2, y: 0.110, text: 'Large ΔQD', tone: 'blue', bold: true, anchor: 'middle' }
         ]
       },
 
@@ -104,12 +104,12 @@
             markerStart: 'ped-amber-start', markerEnd: 'ped-amber-end', buffer: 0 }
         ],
         texts: [
-          { x: -0.071, y: P2_y,  text: 'P₂', tone: 'slate', bold: true, fontSize: 9,  anchor: 'end' },
-          { x: -0.071, y: P1_y,  text: 'P₁', tone: 'slate', bold: true, fontSize: 9,  anchor: 'end' },
-          { x: Q2_in,  y: -0.065, text: 'Q₂', tone: 'slate', bold: true, fontSize: 9,  anchor: 'middle' },
-          { x: Q1_in,  y: -0.065, text: 'Q₁', tone: 'slate', bold: true, fontSize: 9,  anchor: 'middle' },
-          { x: -0.080, y: (P1_y + P2_y) / 2, text: 'ΔP', tone: 'red', bold: true, fontSize: 8, anchor: 'end' },
-          { x: (Q2_in + Q1_in) / 2, y: 0.110, text: 'Small ΔQD', tone: 'amber', bold: true, fontSize: 8, anchor: 'middle' }
+          { x: -0.071, y: P2_y,  text: 'P₂', tone: 'slate', bold: true,  anchor: 'end' },
+          { x: -0.071, y: P1_y,  text: 'P₁', tone: 'slate', bold: true,  anchor: 'end' },
+          { x: Q2_in,  y: -0.065, text: 'Q₂', tone: 'slate', bold: true,  anchor: 'middle' },
+          { x: Q1_in,  y: -0.065, text: 'Q₁', tone: 'slate', bold: true,  anchor: 'middle' },
+          { x: -0.080, y: (P1_y + P2_y) / 2, text: 'ΔP', tone: 'red', bold: true, anchor: 'end' },
+          { x: (Q2_in + Q1_in) / 2, y: 0.110, text: 'Small ΔQD', tone: 'amber', bold: true, anchor: 'middle' }
         ]
       },
 
@@ -120,7 +120,7 @@
         texts: [
           { x: 0.5, y: 0.5,
             text: 'Same price change – very different quantity responses',
-            tone: 'gray', italic: true, fontSize: 9, anchor: 'middle' }
+            tone: 'gray', italic: true, anchor: 'middle' }
         ]
       }
     ]

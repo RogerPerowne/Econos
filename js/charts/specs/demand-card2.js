@@ -151,8 +151,8 @@
       { layer: 'layer-extension', x: 0.304,  y: -0.050, text: 'Q₂', tone: 'red',   bold: true, fontSize: 12, anchor: 'middle' },
       { layer: 'layer-extension', x: -0.028, y: 0.294, text: 'P₃', tone: 'green', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-extension', x: 0.650,  y: -0.050, text: 'Q₃', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-extension', x: 0.320,  y: 0.678,  text: 'contraction', tone: 'red',   bold: true, fontSize: 11, anchor: 'start' },
-      { layer: 'layer-extension', x: 0.560,  y: 0.238,  text: 'extension',   tone: 'green', bold: true, fontSize: 11, anchor: 'start' },
+      { layer: 'layer-extension', x: 0.320,  y: 0.678,  text: 'contraction', tone: 'red',   bold: true, anchor: 'start' },
+      { layer: 'layer-extension', x: 0.560,  y: 0.238,  text: 'extension',   tone: 'green', bold: true, anchor: 'start' },
 
       /* ---- shift labels ---- */
       // Faded D₁ reference label at end of dashed curve

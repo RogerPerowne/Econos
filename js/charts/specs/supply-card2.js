@@ -150,8 +150,8 @@
       { layer: 'layer-extension', x: 0.636,  y: -0.050, text: 'Q₂', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
       { layer: 'layer-extension', x: -0.028, y: 0.294, text: 'P₃', tone: 'red', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-extension', x: 0.288,  y: -0.050, text: 'Q₃', tone: 'red', bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-extension', x: 0.652,  y: 0.678,  text: 'extension',   tone: 'green', bold: true, fontSize: 11, anchor: 'start' },
-      { layer: 'layer-extension', x: 0.180,  y: 0.238,  text: 'contraction', tone: 'red',   bold: true, fontSize: 11, anchor: 'start' },
+      { layer: 'layer-extension', x: 0.652,  y: 0.678,  text: 'extension',   tone: 'green', bold: true, anchor: 'start' },
+      { layer: 'layer-extension', x: 0.180,  y: 0.238,  text: 'contraction', tone: 'red',   bold: true, anchor: 'start' },
 
       // Shift labels
       { layer: 'layer-shift', x: 0.880, y: 0.874, text: 'S₁', tone: 'red', bold: true, fontSize: 13, anchor: 'start', opacity: 0.55 },

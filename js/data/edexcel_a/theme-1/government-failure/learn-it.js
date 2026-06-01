@@ -142,8 +142,8 @@ window.ECONOS_TOPIC = {
       comparison: {
         title: 'When does each failure dominate?',
         emoji: '⚖️',
-        left:  { icon: '📉', tone: 'rose',  label: 'Strong case for intervention', caption: 'Market failure is large, well-evidenced, and irreversible. Government has good information and clear mandate. Externality is global (carbon). Public good: private provision is zero.' },
-        right: { icon: '🏛️', tone: 'green', label: 'Weaker case for intervention', caption: 'Market failure is modest or uncertain. Government faces severe information problems. Political cycle distorts incentives. Regulatory capture risk is high. Private solutions exist.' }
+        left:  { icon: '📉', tone: 'rose',  label: 'Strong case for intervention', caption: 'Market failure is large, well-evidenced and irreversible. Government has clear information and mandate. Externality is global (carbon).' },
+        right: { icon: '🏛️', tone: 'green', label: 'Weaker case for intervention', caption: 'Market failure is modest or uncertain. Government faces severe information problems, political cycles distort incentives, capture risk is high.' }
       },
       keyPointsLabel: 'Three dimensions for the evaluation',
       keyPointsEmoji: '🔑',

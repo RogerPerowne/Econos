@@ -105,8 +105,8 @@
       { layer: 'layer-cs-label', x: 0.151, y: 0.644, text: 'CS', tone: 'green', bold: true, fontSize: 18, anchor: 'middle' },
 
       // pfall: faded P*, Q* refs
-      { layer: 'layer-pfall', x: -0.03, y: 0.490, text: 'P*', tone: 'gray', bold: true, fontSize: 11, anchor: 'end' },
-      { layer: 'layer-pfall', x: 0.501, y: -0.045, text: 'Q*', tone: 'gray', bold: true, fontSize: 11, anchor: 'middle' },
+      { layer: 'layer-pfall', x: -0.03, y: 0.490, text: 'P*', tone: 'gray', bold: true, anchor: 'end' },
+      { layer: 'layer-pfall', x: 0.501, y: -0.045, text: 'Q*', tone: 'gray', bold: true, anchor: 'middle' },
       // pfall: new P₂, Q₂ labels
       { layer: 'layer-pfall', x: -0.03, y: 0.308, text: 'P₂', tone: 'green', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-pfall', x: 0.705, y: -0.045, text: 'Q₂', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },

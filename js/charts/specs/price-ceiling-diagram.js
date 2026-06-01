@@ -74,7 +74,7 @@
           { x: -0.020, y: Pmax, text: 'Pₘₐₓ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: Qs, y: -0.055, text: 'Qs', tone: 'slate', bold: true, italic: true, fontSize: 12, anchor: 'middle' },
           { x: Qd, y: -0.055, text: 'Qd', tone: 'slate', bold: true, italic: true, fontSize: 12, anchor: 'middle' },
-          { x: (Qs + Qd) / 2, y: 0.165, text: 'Shortage', tone: 'red', bold: true, fontSize: 11, anchor: 'middle' }
+          { x: (Qs + Qd) / 2, y: 0.165, text: 'Shortage', tone: 'red', bold: true, anchor: 'middle' }
         ]
       },
 
@@ -110,8 +110,8 @@
           { x1: E.x, y1: E.y, x2: E.x + 0.110, y2: E.y, tone: 'red', strokeWidth: 1.4, buffer: 0 }
         ],
         texts: [
-          { x: E.x + 0.125, y: E.y + 0.022, text: 'Deadweight', tone: 'red', bold: true, fontSize: 11, anchor: 'start' },
-          { x: E.x + 0.125, y: E.y - 0.022, text: 'loss',       tone: 'red', bold: true, fontSize: 11, anchor: 'start' }
+          { x: E.x + 0.125, y: E.y + 0.022, text: 'Deadweight', tone: 'red', bold: true, anchor: 'start' },
+          { x: E.x + 0.125, y: E.y - 0.022, text: 'loss',       tone: 'red', bold: true, anchor: 'start' }
         ]
       }
     ]

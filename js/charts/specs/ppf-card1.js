@@ -23,11 +23,16 @@
   'use strict';
 
   window.ECONOS_PPF_CARD1_SPEC = {
-    width: 900,
+    // `legendPosition: 'bottom'` moves the analysis out of the SVG to
+    // an HTML block beneath it. The engine auto-shrinks `width` to
+    // `chartArea.x + chartArea.width + 30` (≈ 590 here) so the chart
+    // fits a phone natively instead of horizontal-scrolling, and the
+    // `.show-<view-key>` cascade from `.ad-interactive__diagram` still
+    // toggles each per-view legend the same way it did inside the SVG.
+    legendPosition: 'bottom',
     height: 440,
     chartArea: { x: 60, y: 50, width: 500, height: 350 },
     className: 'ppf-svg',
-    divider: { x: 595, y1: 16, y2: 424 },
     axes: {
       x: { label: 'Capital Goods' },
       y: { label: 'Consumer Goods' }

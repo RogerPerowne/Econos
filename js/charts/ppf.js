@@ -1229,6 +1229,68 @@
     return parts.join('');
   }
 
+  /* HTML mirror of renderLegend — emits the same content as <div>s instead
+     of <text>/<circle> nodes, so wide-layout charts can opt to render
+     their analysis BELOW the SVG (stacking vertically on phones) rather
+     than as a side column that crushes at narrow viewports. The output
+     re-uses the SAME layer class names as the SVG path so the existing
+     `.show-<view>` parent CSS toggles them in lockstep with the SVG
+     content. Only the visual chrome is HTML; the meaning is identical. */
+  function renderLegendHtml(legend) {
+    if (!legend) return '';
+    var parts = ['<div class="econos-chart-legend">'];
+    if (legend.title) {
+      var tt = tone(legend.title.tone || 'blue');
+      parts.push('<div class="econos-chart-legend__title">' +
+        '<span class="econos-chart-legend__dot" style="background:' + tt.stroke + ';"></span>' +
+        '<span>' + legend.title.text + '</span>' +
+        '</div>');
+    }
+    (legend.sections || []).forEach(function (section) {
+      parts.push('<div class="econos-chart-legend__section">');
+      if (section.header) {
+        var ht = tone(section.header.tone || 'blue');
+        parts.push('<div class="econos-chart-legend__header" style="color:' + ht.stroke + ';">' + section.header.text + '</div>');
+      }
+      if (section.rows) {
+        section.rows.forEach(function (row) {
+          var rt = tone(row.tone || 'slate');
+          var marker = row.marker || 'dot';
+          var markerHtml = marker === 'line'
+            ? '<span class="econos-chart-legend__line" style="background:' + rt.stroke + ';"></span>'
+            : '<span class="econos-chart-legend__dot" style="background:' + rt.stroke + ';"></span>';
+          var mainText = row.label || row.text || '';
+          var mainTone = row.labelTone ? tone(row.labelTone).label : (row.marker === 'line' ? rt.label : LABEL_INK);
+          var mainWeight = row.bold || row.marker === 'line' ? '700' : '600';
+          parts.push('<div class="econos-chart-legend__row">' +
+            markerHtml +
+            '<div class="econos-chart-legend__row-text">' +
+            '<div style="color:' + mainTone + ';font-weight:' + mainWeight + ';">' + mainText + '</div>');
+          if (row.subLines) {
+            row.subLines.forEach(function (sub) {
+              var subText = typeof sub === 'string' ? sub : sub.text;
+              var subTone = typeof sub === 'string' ? LABEL_INK : tone(sub.tone || 'slate').label;
+              parts.push('<div class="econos-chart-legend__sub" style="color:' + subTone + ';">' + subText + '</div>');
+            });
+          }
+          parts.push('</div></div>');
+        });
+      } else if (section.body) {
+        section.body.forEach(function (line) {
+          var lineText = typeof line === 'string' ? line : line.text;
+          var lineTone = typeof line === 'string' ? LABEL_INK : tone(line.tone || 'slate').label;
+          var lineWeight = typeof line === 'object' && line.bold ? '700' : '600';
+          var lineItalic = typeof line === 'object' && line.italic ? 'font-style:italic;' : '';
+          var lineSize = typeof line === 'object' && line.fontSize ? line.fontSize : 13;
+          parts.push('<div class="econos-chart-legend__body" style="color:' + lineTone + ';font-weight:' + lineWeight + ';font-size:' + lineSize + 'px;' + lineItalic + '">' + lineText + '</div>');
+        });
+      }
+      parts.push('</div>');
+    });
+    parts.push('</div>');
+    return parts.join('');
+  }
+
   function renderDivider(divider) {
     if (!divider) return '';
     // Allow horizontal dividers via x1/x2 explicit pair, vertical via x only.
@@ -1430,7 +1492,9 @@
     // BoxedLabel text overlays last — readable on top of curves/dots.
     panelBoxedFgs.forEach(function (fg) { parts.push(fg); });
 
+    var legendsBelow = !!panel.legendsBelow;
     (panel.legends || []).forEach(function (lg) {
+      if (legendsBelow) return; // collected separately and emitted as HTML after </svg>
       var rendered = renderLegend(lg);
       parts.push(lg.layer ? wrapLayer(lg.layer, [rendered]) : rendered);
     });
@@ -1441,10 +1505,10 @@
       var legendLayer = view.legendLayer || ('layer-legend-' + view.key);
       var hidden = view.hidden != null ? view.hidden : hideViews;
       parts.push(wrapLayer(contentLayer, renderViewContent(view, scale, area, ctx), hidden));
-      if (view.legend) parts.push(wrapLayer(legendLayer, [renderLegend(view.legend)], hidden));
+      if (view.legend && !legendsBelow) parts.push(wrapLayer(legendLayer, [renderLegend(view.legend)], hidden));
     });
 
-    if (panel.legend && !(panel.views || []).length) parts.push(renderLegend(panel.legend));
+    if (panel.legend && !(panel.views || []).length && !legendsBelow) parts.push(renderLegend(panel.legend));
   }
 
   /* Composable templates. `spec.template: 'ad-as'` (or 'supply-demand',
@@ -1586,9 +1650,28 @@
       return '<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart unavailable"><rect width="400" height="200" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/><text x="200" y="100" font-family="Inter, sans-serif" font-size="13" fill="#92400E" text-anchor="middle" dominant-baseline="middle">Chart spec missing (see console)</text></svg>';
     }
     var spec = applyTemplate(specInput);
-    var width = spec.width || 560;
     var height = spec.height || 440;
     var className = spec.className || 'econos-chart';
+
+    // `legendPosition: 'bottom'` opts a wide-layout chart into stacking
+    // its analysis BELOW the SVG (as HTML) instead of beside it (as SVG
+    // at x=600). The chart-area itself doesn't move — we just stop
+    // emitting the side legend, shrink the SVG to the chart-area's right
+    // edge plus a small margin, and drop the dashed vertical divider.
+    // The HTML legend is appended after `</svg>` so it lives inside the
+    // chart consumer's wrapper and inherits any `.show-<view>` class
+    // toggles the consumer applies for layer reveals.
+    var legendsBelow = spec.legendPosition === 'bottom';
+    var width;
+    if (legendsBelow && spec.chartArea) {
+      // Auto-shrink to chartArea right edge + 30px headroom for axis
+      // tick labels. Author can still pin a specific width via spec.width.
+      var ca = spec.chartArea;
+      var autoW = ca.x + ca.width + 30;
+      width = spec.width && spec.width < autoW ? spec.width : autoW;
+    } else {
+      width = spec.width || 560;
+    }
 
     // Multi-panel path: `spec.panels: [...]` means render each panel's
     // shapes into a single SVG, with each panel using its own chartArea
@@ -1616,7 +1699,10 @@
     // legend text would render at 4-5 px. Tag those charts so the CSS
     // can give them a min-width and let the wrapping container's
     // overflow-x: auto scroll horizontally instead of crushing them.
-    var isWide = (spec.divider || isMulti ||
+    // legendsBelow shrinks the SVG to chart-area only — no side legend,
+    // no divider — so a chart that USED to be "wide" (900px) is now
+    // narrow enough to render natively on a phone. Don't tag it wide.
+    var isWide = !legendsBelow && (spec.divider || isMulti ||
                   (Array.isArray(spec.legends) && spec.legends.length > 0) ||
                   width >= 700);
     var wideClass = isWide ? ' econos-chart--wide' : '';
@@ -1719,6 +1805,30 @@
       }).join('');
       perspectiveCss = '<style>' + pHides + pReveals + '</style>';
     }
+    // legendsBelow: emit visibility rules for the HTML legend layers so
+    // the parent's `.show-<view.key>` class toggles the HTML legends
+    // exactly the way it toggled the old in-SVG legends. Generated from
+    // spec.views so adding a view doesn't require touching styles.css.
+    var legendBelowCss = '';
+    if (legendsBelow && Array.isArray(spec.views) && spec.views.length) {
+      var viewKeys = spec.views.map(function (v) { return v.key; });
+      var legendLayers = spec.views.map(function (v) {
+        return v.legendLayer || ('layer-legend-' + v.key);
+      });
+      var lFadeOut = 'opacity:0;transition:opacity .32s ease';
+      var lFadeIn  = 'opacity:1;transition:opacity .32s ease';
+      // Hide every legend layer by default inside the HTML container.
+      var lHides = legendLayers.map(function (cls) {
+        return '.econos-chart-legends .' + cls;
+      }).join(',') + '{' + lFadeOut + '}';
+      // For each view key, the matching legend layer fades in.
+      var lReveals = viewKeys.map(function (k, i) {
+        return '.show-' + k + ' .econos-chart-legends .' + legendLayers[i] + '{' + lFadeIn + '}';
+      }).join('');
+      // First view = default-visible (no .show-* parent class yet).
+      var lInitial = '.econos-chart-legends .' + legendLayers[0] + '{' + lFadeIn + '}';
+      legendBelowCss = '<style>' + lHides + lInitial + lReveals + '</style>';
+    }
     // Built-in arrow markers — emitted in every chart's <defs> so authors
     // can write `markerEnd: 'econos-arrow-blue'` instead of hand-rolling
     // their own. ALL markers are designed as RIGHT-POINTING triangles
@@ -1741,13 +1851,13 @@
     ].map(function (pair) {
       return '<marker id="econos-arrow-' + pair[0] + '" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="' + pair[1] + '"/></marker>';
     }).join('');
-    parts.push('<defs>' + clips + layerCss + perspectiveCss + builtInArrows + (spec.defs || '') + '</defs>');
+    parts.push('<defs>' + clips + layerCss + perspectiveCss + legendBelowCss + builtInArrows + (spec.defs || '') + '</defs>');
 
     var bg = spec.background || '#FFFFFF';
     // y=-16/height=H+16 matches the extended viewBox above so the white
     // card fill covers the headroom strip too.
     parts.push('<rect x="0" y="-16" width="' + width + '" height="' + (height + 16) + '" fill="' + bg + '" rx="12"/>');
-    parts.push(renderDivider(spec.divider));
+    if (!legendsBelow) parts.push(renderDivider(spec.divider));
     parts.push(renderDividers(spec.dividers));
 
     // Approach B: build a single CONTEXT that the render functions consult
@@ -1932,11 +2042,39 @@
         legends: spec.legends,
         legend: spec.legend,
         views: spec.views,
-        viewDefaultsHidden: spec.viewDefaultsHidden
+        viewDefaultsHidden: spec.viewDefaultsHidden,
+        legendsBelow: legendsBelow
       }, ctx, parts);
     }
 
     parts.push('</svg>');
+
+    // HTML legend block — emitted AFTER </svg> when `legendPosition:
+    // 'bottom'`. The wrapper class `econos-chart-legends` is what the
+    // CSS targets for layout (single column on phones, two-column on
+    // wider screens). Each per-view legend gets its own layer class so
+    // the parent's `.show-<view>` cascade fades them in/out the same
+    // way the SVG legend layers used to.
+    if (legendsBelow) {
+      var htmlParts = ['<div class="econos-chart-legends">'];
+      // Top-level static legend(s)
+      (spec.legends || []).forEach(function (lg) {
+        var rendered = renderLegendHtml(lg);
+        htmlParts.push(lg.layer ? '<div class="' + lg.layer + '">' + rendered + '</div>' : rendered);
+      });
+      if (spec.legend && !(spec.views || []).length) {
+        htmlParts.push(renderLegendHtml(spec.legend));
+      }
+      // Per-view legends — wrapped in their legendLayer class so the
+      // existing `.show-<key>` toggling targets them too.
+      (spec.views || []).forEach(function (view) {
+        if (!view.legend) return;
+        var legendLayer = view.legendLayer || ('layer-legend-' + view.key);
+        htmlParts.push('<div class="' + legendLayer + '">' + renderLegendHtml(view.legend) + '</div>');
+      });
+      htmlParts.push('</div>');
+      parts.push(htmlParts.join(''));
+    }
 
     // Dev-mode post-render collision scan. Pairs of placed label
     // bboxes are checked for overlap; each overlap is logged.

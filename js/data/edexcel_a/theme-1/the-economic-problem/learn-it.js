@@ -174,32 +174,31 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 4 of 12',
       title: 'The Three Fundamental Economic Questions',
-      lede: 'Because resources are scarce, every economy must answer three core questions – and the answers shape the entire system.',
-      tip: { icon: '💡', tone: 'blue', text: 'Because resources are scarce, every economy must answer three core questions: <strong>what</strong> to produce, <strong>how</strong> to produce, and <strong>for whom</strong> to produce.' },
-      branches: [
-        { tone: 'green',  label: '1. What to produce?',     sub: 'Decide which goods and services to produce with limited resources. Health care, gaming consoles, renewable energy – every yes is a no to something else.' },
-        { tone: 'amber',  label: '2. How to produce?',      sub: 'Decide which combination of factors to use. Labour-intensive or capital-intensive? Local or imported inputs? Sustainable or fastest?' },
-        { tone: 'blue',   label: '3. For whom to produce?', sub: 'Decide who gets the output. Distribution is shaped by income, prices, need, merit, and government allocation – never neutral.' }
-      ],
-      branchesLabel: 'The three questions',
-      branchesEmoji: '❓',
-      branchesLayout: 'triptych',
-      body: 'Scarcity forces every society to answer these three questions. They are deceptively simple – but the answers determine production, employment, and the distribution of wealth. Different economic systems answer them very differently, which is what a later topic explores.',
-      causes: [
-        { head: 'Market economy',  icon: '🛒', body: 'Individuals and firms answer the three questions through choices made in markets, guided by prices and profit. Decentralised, fast-moving, prone to inequality and market failure.' },
-        { head: 'Command economy', icon: '🏛️', body: 'Central government planners make the main decisions about what, how and for whom to produce. Aims for equity and coordination, but struggles with information and incentive problems.' },
-        { head: 'Mixed economy',   icon: '⚖️', body: 'Markets and government share the decisions, varying by industry and policy goals. The dominant model in the modern world – including the UK.' }
-      ],
-      causesLabel: 'Different systems answer differently',
-      causesEmoji: '🌍',
-      keyTerms: [
-        { term: 'Choice',     def: 'Scarcity means we cannot have everything, so choices must be made.' },
-        { term: 'Efficiency', def: 'The right answers aim to use resources well and avoid waste.' },
-        { term: 'Equity',     def: 'Decisions affect how fairly goods and services are shared among people.' }
-      ],
-      keyTermsLabel: 'Why this matters',
-      keyTermsEmoji: '💡',
-      examEdge: 'The three questions are normative at heart – different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."'
+      lede: 'Because resources are scarce, every economy must answer three core questions – and how it answers them defines the whole system.',
+      tip: { icon: '💡', tone: 'blue', text: 'Scarcity forces every economy to answer three questions: <strong>what</strong> to produce, <strong>how</strong> to produce it, and <strong>for whom</strong>.' },
+      methodGrid: {
+        label: 'The three questions',
+        emoji: '❓',
+        items: [
+          { tone: 'green', icon: '🛍️', title: 'What to produce?',     body: 'Which goods and services to make with limited resources.', example: 'More hospitals, or more gaming consoles? Every yes is a no to something else.' },
+          { tone: 'amber', icon: '🏭', title: 'How to produce?',      body: 'Which combination of factors to use to make them.',       example: 'A car plant: robots (capital-intensive) or workers (labour-intensive)?' },
+          { tone: 'blue',  icon: '👥', title: 'For whom to produce?', body: 'Who gets the output once it has been made.',               example: 'Cancer drugs rationed by ability to pay, or by medical need?' }
+        ]
+      },
+      continuum: {
+        title: 'How different economies answer them',
+        emoji: '🌍',
+        position: 'late',
+        leftCap: 'Pure market',
+        rightCap: 'Pure command',
+        items: [
+          { icon: '🛒', title: 'Market economy',  verdict: 'Markets decide',    verdictTone: 'green', body: 'Prices and profit answer all three questions. Decentralised and fast – but prone to inequality and market failure.' },
+          { icon: '⚖️', title: 'Mixed economy',   verdict: 'Both decide',       verdictTone: 'blue',  body: 'Markets allocate most resources; the state provides public goods and redistributes. The real-world norm – including the UK.' },
+          { icon: '🏛️', title: 'Command economy', verdict: 'The state decides', verdictTone: 'amber', body: 'Government planners set what, how and for whom. Aims for equity – but struggles with information and incentives.' }
+        ]
+      },
+      keyTakeaway: 'Every economy faces the same three questions – what differs is who answers them: the market, the state, or a mix of both.',
+      examEdge: 'The three questions are normative at heart – different political values lead to different answers. Saying so earns evaluation credit: "the best answer depends on value judgements about efficiency, equality and freedom."'
     },
 
     /* ----- CARD 4 – The Four Factors of Production -----

@@ -165,10 +165,53 @@ emits the right sitemap.
 
 ## Conventions enforced by CI
 
-- `npm run lint` must pass (repo lint + ESLint with `--max-warnings=0`).
+- `npm run lint` must pass (repo lint + ESLint with `--max-warnings=0` +
+  `lint:charts` + `lint:cards`).
 - `npm run test:unit` must pass (Vitest, pure-function coverage under `tests/unit/`).
 - `npm run test:e2e` must pass (Playwright suite across desktop + mobile + a11y).
 - `pre-commit` runs the lint + unit tests; `pre-push` runs the e2e suite. Override with `--no-verify` or `ECONOS_SKIP_E2E=1` only when you genuinely know better.
+
+## Charts & diagrams — ALWAYS use the toolkit, never hand-roll SVG
+
+Every diagram goes through the chart engine (`window.ECONOS_PPF.render(spec)`)
+or the dial engine (`window.ECONOS_DIALS.render(...)`). Do not author raw
+`<svg>` in `icons.js` or data files. The whole point of the toolkit is that
+geometry is *guaranteed*, not eyeballed.
+
+**Non-negotiable rules (a chart isn't done until all pass):**
+
+1. **Points that sit on a curve must be declared, never typed as raw
+   coordinates.** Use one of:
+   - `point.intersection: { curves: ['D','S'], near? }` — engine solves
+     the exact crossing and asserts any declared x/y matches.
+   - `point.on: 'curveId'` — engine snaps the point's y onto that curve at
+     its x (and warns if a declared y drifts > 0.01).
+   - define the curve *through* the points: `curve.shape: { type:'linear',
+     through:[x,y], slope }` so curve and dots share one source of truth.
+   Raw `{x, y}` literals for a dot that should be on a line is the bug that
+   produced floating equilibrium points — don't do it.
+2. **New/changed spec → run the full gate:** `node scripts/lint-charts.mjs`
+   (renders every spec, fails on engine warnings) + `npm run test:unit`
+   (snapshot regression auto-discovers specs against the manifest) +
+   **screenshot-verify** via the `run-econos` skill driver before calling it
+   done. Treat dev-mode geometry warnings (intersection drift, off-stage
+   labels, label clashes, on-curve drift) as blockers.
+3. **Wiring a new spec:** declare `window.ECONOS_FOO_SPEC` in
+   `js/charts/specs/foo.js`, bind it in `icons.js` (`fooKey:
+   ECONOS_PPF.render(window.ECONOS_FOO_SPEC)`), add the `<script>` to all
+   three shells (`learn-it.html`, `link-it.html`, `land-it.html`), and add
+   the file to `sw.js` PRECACHE_ASSETS. `lint:cards`/`check_spec_scripts_loaded`
+   enforce the script-tag rule.
+
+## Description length — keep staging stable
+
+Long copy stretches the card / interactive-diagram staging and makes stage
+height jump between cards. `npm run lint:cards`
+(`scripts/lint-card-lengths.mjs`) warns (never fails) on over-budget
+staging-sensitive fields: interactiveDiagram `view.body` / ad-interactive
+`step.body` (280), `view.analysis` (360), `diagramPanel` bullets (170),
+`comparison` captions (170), `branches[].sub` (200). New content should land
+within budget; don't add to the warning list.
 
 ## Versioning & CHANGELOG
 

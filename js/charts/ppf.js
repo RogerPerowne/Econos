@@ -2023,6 +2023,57 @@
       pt.x = chosen[0];
       pt.y = chosen[1];
     }
+
+    /* Snap a point declared `on: 'curveId'` onto that curve. Computes the
+       curve's y at the point's x and overwrites pt.y, so a dot tagged
+       `on:` is GUARANTEED to sit on the line — not just hinted for label
+       placement. If the author also gave an explicit y that drifts beyond
+       ON_CURVE_TOL, warn (same spirit as the intersection drift assertion)
+       then snap. Works for both straight `L` segments and `C` cubics via
+       the parsed path registry. */
+    var ON_CURVE_TOL = 0.01; // chart-space units (~2px at default scale)
+    function yOnPathAtX(path, x) {
+      if (!Array.isArray(path)) return null;
+      for (var s = 0; s < path.length; s++) {
+        var seg = path[s];
+        if (seg.type === 'line') {
+          var ax = seg.p0[0], bx = seg.p1[0];
+          if (x >= Math.min(ax, bx) - 1e-9 && x <= Math.max(ax, bx) + 1e-9) {
+            if (bx === ax) return seg.p0[1];
+            var t = (x - ax) / (bx - ax);
+            return seg.p0[1] + t * (seg.p1[1] - seg.p0[1]);
+          }
+        } else if (seg.type === 'cubic') {
+          var P = [seg.p0, seg.p1, seg.p2, seg.p3];
+          var tc = findTAtX(P, x);
+          if (tc != null) return cubicPoint(P, tc)[1];
+        }
+      }
+      return null;
+    }
+    function resolveOnCurve(pt) {
+      if (!pt || !pt.on || pt.x == null) return;
+      // Skip if this point already resolved via the intersection solver.
+      if (pt.intersection) return;
+      var path = ctx.pathRegistry[pt.on];
+      if (!path) {
+        ctx.devWarnings.push('on-curve: point references unknown curve "' + pt.on + '"');
+        return;
+      }
+      var y = yOnPathAtX(path, pt.x);
+      if (y == null) return; // x outside the curve's domain — leave as authored
+      if (pt.y != null) {
+        var drift = Math.abs(pt.y - y);
+        if (drift > ON_CURVE_TOL) {
+          var msg = '[ECONOS_PPF] point on:"' + pt.on + '" at x=' + pt.x.toFixed(3) +
+            ' declared y=' + pt.y.toFixed(3) + ' drifts ' + drift.toFixed(4) +
+            ' from the curve (y=' + y.toFixed(3) + ') — snapping onto the curve';
+          ctx.devWarnings.push(msg);
+          try { console.warn(msg); } catch (e) {}
+        }
+      }
+      pt.y = y;
+    }
     function registerPoint(p) {
       if (p && p.id) ctx.pointRegistry[p.id] = { x: p.x, y: p.y, on: p.on };
       // Also track every point's position + layer for automatic label
@@ -2071,10 +2122,12 @@
     // spec still resolves correctly.
     collectFrom.forEach(function (src) {
       (src.points || []).forEach(resolveIntersection);
+      (src.points || []).forEach(resolveOnCurve);
       (src.points || []).forEach(registerPoint);
       registerArrows(src.arrows);
       (src.views || []).forEach(function (v) {
         (v.points || []).forEach(resolveIntersection);
+        (v.points || []).forEach(resolveOnCurve);
         (v.points || []).forEach(registerPoint);
         registerArrows(v.arrows);
       });

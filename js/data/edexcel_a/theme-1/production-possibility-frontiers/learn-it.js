@@ -47,7 +47,7 @@ window.ECONOS_TOPIC = {
           text: 'The PPF shifts <strong>outward</strong> when productive capacity increases and <strong>inward</strong> after negative supply shocks. Movement <em>along</em> PPF₁ is just reallocation of existing resources – the frontier itself does not move. <strong>Card 3</strong> maps out all four movement types.'
         },
         {
-          key: 'types-of-efficiency',
+          key: 'efficiency',
           label: 'Efficiency',
           text: '<strong>Productive efficiency</strong> means being on the PPF – no wasted resources. <strong>Allocative efficiency</strong> means being at the <em>right</em> point on it – producing the combination that best matches consumer preferences. These are different tests. <strong>Card 5</strong> builds this distinction in full.'
         }

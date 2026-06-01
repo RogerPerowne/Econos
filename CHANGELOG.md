@@ -6,6 +6,39 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.21.1 — 2026-06-01
+
+### Wide-chart analysis stacks below on phones
+
+PPF cards 1 and 3 (the only 900-wide charts on the site) used to render
+their analysis as a side legend at x=600 inside the SVG. On a phone the
+whole SVG shrank to fit, dropping the legend text to ~5 px — illegible.
+PR #891 added `min-width:720px` + horizontal-scroll as a safety net;
+this is the deeper fix Roger asked for ("can the analysis be below as
+the other charts?").
+
+**Engine option `spec.legendPosition: 'bottom'`** — opted-in per spec.
+When set the engine:
+- Skips emitting the side legend inside the SVG.
+- Auto-shrinks `width` to `chartArea.x + chartArea.width + 30` so the
+  SVG fits a phone natively (560 → 590, no horizontal scroll).
+- Drops the dashed vertical divider (no side column to separate from).
+- Renders each per-view legend as HTML *after* `</svg>`, wrapped in
+  its existing `layer-legend-<view-key>` class.
+- Emits a `<style>` block scoped to `.econos-chart-legends` so the
+  parent's `.show-<view-key>` cascade fades the HTML legends exactly
+  the way it did when they lived inside the SVG.
+
+PPF cards 1 and 3 opt in; cards 2/4/5/6 are 440-wide already and stay
+unchanged. Verified visually on iPhone-portrait viewport.
+
+### Fix
+
+- The 4th PPF tab ("Efficiency") on the construction card was bound to
+  step key `types-of-efficiency` while the spec view + CSS rules used
+  `efficiency` — clicking the tab did not reveal the efficiency layers.
+  Renamed the step key to `efficiency` so the cascade fires.
+
 ## 0.21.0 — 2026-05-31
 
 ### Chart-engine toolkit — ten-piece overhaul

@@ -94,8 +94,8 @@
       { layer: 'layer-ps-label', x: 0.128, y: 0.294, text: 'PS', tone: 'rose', bold: true, fontSize: 18, anchor: 'middle' },
 
       // prise: faded P*, Q* refs
-      { layer: 'layer-prise', x: -0.03, y: P_STAR.y, text: 'P*', tone: 'gray', bold: true, fontSize: 11, anchor: 'end' },
-      { layer: 'layer-prise', x: P_STAR.x, y: -0.045, text: 'Q*', tone: 'gray', bold: true, fontSize: 11, anchor: 'middle' },
+      { layer: 'layer-prise', x: -0.03, y: P_STAR.y, text: 'P*', tone: 'gray', bold: true, anchor: 'end' },
+      { layer: 'layer-prise', x: P_STAR.x, y: -0.045, text: 'Q*', tone: 'gray', bold: true, anchor: 'middle' },
       // prise: new P₂, Q₂ labels
       { layer: 'layer-prise', x: -0.03, y: P_2.y, text: 'P₂', tone: 'rose', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-prise', x: P_2.x, y: -0.045, text: 'Q₂', tone: 'rose', bold: true, fontSize: 12, anchor: 'middle' },

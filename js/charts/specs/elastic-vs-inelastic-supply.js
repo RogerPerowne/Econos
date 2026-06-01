@@ -68,11 +68,11 @@
           { x: 0.468, y: 0.461, tone: 'green', radius: 4 }
         ],
         texts: [
-          { x: -0.071, y: 0.369, text: 'P₁', tone: 'slate', bold: true, fontSize: 9, anchor: 'end' },
-          { x: -0.071, y: 0.461, text: 'P₂', tone: 'slate', bold: true, fontSize: 9, anchor: 'end' },
-          { x: 0.298, y: -0.065, text: 'Q₁', tone: 'slate', bold: true, fontSize: 9, anchor: 'middle' },
-          { x: 0.468, y: -0.065, text: 'Q₂', tone: 'slate', bold: true, fontSize: 9, anchor: 'middle' },
-          { x: (0.298 + 0.468) / 2, y: -0.180, text: 'Large ΔQ', tone: 'blue', bold: true, fontSize: 8, anchor: 'middle' }
+          { x: -0.071, y: 0.369, text: 'P₁', tone: 'slate', bold: true, anchor: 'end' },
+          { x: -0.071, y: 0.461, text: 'P₂', tone: 'slate', bold: true, anchor: 'end' },
+          { x: 0.298, y: -0.065, text: 'Q₁', tone: 'slate', bold: true, anchor: 'middle' },
+          { x: 0.468, y: -0.065, text: 'Q₂', tone: 'slate', bold: true, anchor: 'middle' },
+          { x: (0.298 + 0.468) / 2, y: -0.180, text: 'Large ΔQ', tone: 'blue', bold: true, anchor: 'middle' }
         ]
       },
 
@@ -111,11 +111,11 @@
           { x: 0.351, y: 0.650, tone: 'green', radius: 4 }
         ],
         texts: [
-          { x: -0.071, y: 0.406, text: 'P₁', tone: 'slate', bold: true, fontSize: 9, anchor: 'end' },
-          { x: -0.071, y: 0.650, text: 'P₂', tone: 'slate', bold: true, fontSize: 9, anchor: 'end' },
-          { x: 0.275, y: -0.065, text: 'Q₁', tone: 'slate', bold: true, fontSize: 9, anchor: 'middle' },
-          { x: 0.351, y: -0.065, text: 'Q₂', tone: 'slate', bold: true, fontSize: 9, anchor: 'middle' },
-          { x: (0.275 + 0.351) / 2, y: -0.180, text: 'Small ΔQ', tone: 'blue', bold: true, fontSize: 8, anchor: 'middle' }
+          { x: -0.071, y: 0.406, text: 'P₁', tone: 'slate', bold: true, anchor: 'end' },
+          { x: -0.071, y: 0.650, text: 'P₂', tone: 'slate', bold: true, anchor: 'end' },
+          { x: 0.275, y: -0.065, text: 'Q₁', tone: 'slate', bold: true, anchor: 'middle' },
+          { x: 0.351, y: -0.065, text: 'Q₂', tone: 'slate', bold: true, anchor: 'middle' },
+          { x: (0.275 + 0.351) / 2, y: -0.180, text: 'Small ΔQ', tone: 'blue', bold: true, anchor: 'middle' }
         ]
       },
 
@@ -126,7 +126,7 @@
         texts: [
           { x: 0.5, y: 0.5,
             text: 'Same shock — very different price and quantity responses',
-            tone: 'gray', italic: true, fontSize: 10, anchor: 'middle' }
+            tone: 'gray', italic: true, anchor: 'middle' }
         ]
       }
     ]

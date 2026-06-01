@@ -97,8 +97,8 @@
         texts: [
           { x: 0.165, y: 0.690, text: 'Consumer', tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
           { x: 0.165, y: 0.648, text: 'surplus',  tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
-          { x: 0.290, y: 0.515, text: 'Government', tone: 'green', bold: true, fontSize: 11, anchor: 'middle' },
-          { x: 0.290, y: 0.475, text: 'spending',   tone: 'green', bold: true, fontSize: 11, anchor: 'middle' },
+          { x: 0.290, y: 0.515, text: 'Government', tone: 'green', bold: true, anchor: 'middle' },
+          { x: 0.290, y: 0.475, text: 'spending',   tone: 'green', bold: true, anchor: 'middle' },
           { x: 0.165, y: 0.250, text: 'Producer', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
           { x: 0.165, y: 0.210, text: 'surplus',  tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' }
         ]
@@ -117,7 +117,7 @@
           { x1: Eq.x, y1: E.y, x2: Eq.x + 0.110, y2: E.y, tone: 'red', strokeWidth: 1.4, buffer: 0 }
         ],
         texts: [
-          { x: Eq.x + 0.130, y: E.y, text: 'Deadweight loss', tone: 'red', bold: true, fontSize: 10, anchor: 'start' }
+          { x: Eq.x + 0.130, y: E.y, text: 'Deadweight loss', tone: 'red', bold: true, anchor: 'start' }
         ]
       }
     ]

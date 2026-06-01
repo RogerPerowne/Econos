@@ -210,7 +210,7 @@ window.ECONOS_TOPIC = {
         emoji: '⚖️',
         left: {
           tone: 'blue', icon: '📢', label: 'Signalling',
-          caption: 'Informed party sends a credible signal.<br>• The informed party takes an action that is costly (or otherwise hard) to fake.<br>• The signal helps the uninformed party infer true quality.'
+          caption: 'Informed party sends a costly, hard-to-fake signal that lets the uninformed party infer true quality.'
         },
         right: {
           tone: 'amber', icon: '🔍', label: 'Screening',

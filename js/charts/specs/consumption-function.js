@@ -61,7 +61,7 @@
       { x: -0.111, y: 0.300, text: 'a',
         tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
       { x: -0.111, y: 0.233, text: '(autonomous)',
-        tone: 'slate', fontSize: 10, anchor: 'end' }
+        tone: 'slate', anchor: 'end' }
     ]
   };
 })();

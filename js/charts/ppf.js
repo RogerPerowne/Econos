@@ -80,6 +80,28 @@
   // arrowheads landing inside the target dot.
   var ARROW_BUFFER = 14;
 
+  /* SIZE — single source of truth for chart typography.
+     Every text element the engine renders draws from this map; specs
+     only set `fontSize:` when they need a deliberate exception (rare).
+     Values match the engine's previous hardcoded defaults, so the
+     rollout is a no-op visually but ends the per-spec font drift
+     (was: 9 distinct sizes across specs, half of which were silently
+     clamped to MIN_LABEL_SIZE and rendered nothing the author wanted). */
+  var SIZE = {
+    axisLabel:    13,  // "Quantity (Q)", "Price (P)" arrow-tip labels
+    axisOrigin:   12,  // the "O" at the origin
+    tick:         12,  // axis-tick labels (P*, Q*, P₁ etc.)
+    curveLabel:   13,  // the D / S / AD / AS labels attached to curves
+    pointLabel:   13,  // letter labels next to points (E, A, B …)
+    pointDesc:    12,  // optional "– Efficient (on PPF)" trailing text
+    zone:         12,  // italic zone names ("Unattainable zone")
+    boxedLabel:   12,  // multi-line text inside a boxed label
+    legendTitle:  13,  // legend top-strip ("Frontier = maximum output …")
+    legendHeader: 12,  // small uppercase section headers ("THREE ZONES")
+    legendRow:    13,  // legend body rows
+    legendSub:    12   // legend sub-lines under a row
+  };
+
   function clampSize(s) { return Math.max(MIN_LABEL_SIZE, s || MIN_LABEL_SIZE); }
 
   var TONES = {
@@ -139,11 +161,11 @@
       '<line x1="' + area.x + '" y1="' + bottom + '" x2="' + xArrowTip + '" y2="' + bottom + '" stroke="#334155" stroke-width="2"/>',
       '<polygon points="' + (xArrowTip + 5) + ',' + bottom + ' ' + (xArrowTip - 7) + ',' + (bottom - 4) + ' ' + (xArrowTip - 7) + ',' + (bottom + 4) + '" fill="#334155"/>',
       // Origin label
-      '<text x="' + (area.x - 10) + '" y="' + (bottom + 14) + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" text-anchor="middle">O</text>',
+      '<text x="' + (area.x - 10) + '" y="' + (bottom + 14) + '" font-size="' + SIZE.axisOrigin + '" fill="' + LABEL_INK + '" text-anchor="middle">O</text>',
       // Y label — above arrowhead, centred on axis line
-      yLabel ? '<text x="' + area.x + '" y="' + (yArrowTip - 10) + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + LABEL_INK + '" text-anchor="middle">' + yLabel + '</text>' : '',
+      yLabel ? '<text x="' + area.x + '" y="' + (yArrowTip - 10) + '" font-size="' + SIZE.axisLabel + '" font-weight="700" fill="' + LABEL_INK + '" text-anchor="middle">' + yLabel + '</text>' : '',
       // X label — below axis line, right-aligned to arrowhead tip
-      xLabel ? '<text x="' + (xArrowTip + 5) + '" y="' + (bottom + 18) + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + LABEL_INK + '" text-anchor="end">' + xLabel + '</text>' : '',
+      xLabel ? '<text x="' + (xArrowTip + 5) + '" y="' + (bottom + 18) + '" font-size="' + SIZE.axisLabel + '" font-weight="700" fill="' + LABEL_INK + '" text-anchor="end">' + xLabel + '</text>' : '',
       '</g>'
     ].join('');
   }
@@ -168,7 +190,7 @@
       } else {
         lx = scale.sx(0.7); ly = scale.sy(0.05);
       }
-      labelHtml = '<text x="' + lx + '" y="' + ly + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '">' + curve.label + '</text>';
+      labelHtml = '<text x="' + lx + '" y="' + ly + '" font-size="' + SIZE.curveLabel + '" font-weight="700" fill="' + t.label + '">' + curve.label + '</text>';
     }
     return '<path d="' + dAbs + '" fill="none" stroke="' + t.stroke + '" stroke-width="' + sw + '"' + dashAttr + opacityAttr + clipAttr + '/>' + labelHtml;
   }
@@ -750,13 +772,13 @@
     if (pt.ticks && pt.ticks.y) {
       var ty = pt.ticks.y;
       if (placeTick('y', cy, ty, area.x - 10, cy + 4)) {
-        parts.push('<text x="' + (area.x - 10) + '" y="' + (cy + 4) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + ty + '</text>');
+        parts.push('<text x="' + (area.x - 10) + '" y="' + (cy + 4) + '" font-size="' + SIZE.tick + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + ty + '</text>');
       }
     }
     if (pt.ticks && pt.ticks.x) {
       var tx = pt.ticks.x;
       if (placeTick('x', cx, tx, cx, area.y + area.height + 17)) {
-        parts.push('<text x="' + cx + '" y="' + (area.y + area.height + 17) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + tx + '</text>');
+        parts.push('<text x="' + cx + '" y="' + (area.y + area.height + 17) + '" font-size="' + SIZE.tick + '" font-weight="700" fill="' + t.label + '" text-anchor="middle">' + tx + '</text>');
       }
     }
     return parts.join('');
@@ -923,7 +945,7 @@
       var s = priority[i];
       if (eliminated[s]) continue;
       var off = SIDES[s];
-      var bbox = estimateTextBox(labelText, fontSize || clampSize(13), cx + off.dx, cy + off.dy, off.anchor);
+      var bbox = estimateTextBox(labelText, fontSize || SIZE.pointLabel, cx + off.dx, cy + off.dy, off.anchor);
       if (!isInsideArea(bbox, area)) { elim(s, 'overflows chart'); continue; }
       var clash = (ctx.placedBoxes || []).some(function (b) { return boxesOverlap(bbox, b); });
       if (clash) { elim(s, 'overlaps label'); continue; }
@@ -934,7 +956,7 @@
       try { console.warn('[ECONOS_PPF] All sides eliminated for label "' + labelText + '" at point ' + (pt.id || '?'), why); } catch (e) {}
     }
     var fallback = SIDES.right;
-    var fbbox = estimateTextBox(labelText, fontSize || clampSize(13), cx + fallback.dx, cy + fallback.dy, fallback.anchor);
+    var fbbox = estimateTextBox(labelText, fontSize || SIZE.pointLabel, cx + fallback.dx, cy + fallback.dy, fallback.anchor);
     return { dx: fallback.dx, dy: fallback.dy, anchor: fallback.anchor, bbox: fbbox };
   }
 
@@ -966,7 +988,7 @@
     var fallback = { dx: initDx, dy: initDy, anchor: initAnchor };
     if (!pt.label || !ctx || !ctx.allPoints || ctx.allPoints.length < 2) return fallback;
 
-    var size = clampSize(13);
+    var size = SIZE.pointLabel;
     var lblW = 0.58 * size * (pt.label.length || 1);
     var lblH = 1.15 * size;
 
@@ -1026,7 +1048,7 @@
     var useSmart = ctx && (pt.on || (pt.id && arrowsTouchPoint(ctx, pt.id)));
     var auto;
     if (useSmart) {
-      auto = smartLabelPosition(pt, ctx, scale, r, area, pt.label, clampSize(13));
+      auto = smartLabelPosition(pt, ctx, scale, r, area, pt.label, SIZE.pointLabel);
       // Track this label's bbox so later labels can avoid it.
       if (auto.bbox && ctx.placedBoxes) ctx.placedBoxes.push(auto.bbox);
     } else {
@@ -1046,8 +1068,8 @@
     var lblY = cy + picked.dy;
     var anchor = picked.anchor;
     var symbolHtml = pt.symbol ? '<text x="' + cx + '" y="' + (cy + 1) + '" font-size="' + Math.round(r * 1.4) + '" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="middle">' + pt.symbol + '</text>' : '';
-    var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + clampSize(13) + '" font-weight="700" fill="' + t.label + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
-    var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + LABEL_INK + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
+    var labelHtml = pt.label ? '<text x="' + lblX + '" y="' + lblY + '" font-size="' + SIZE.pointLabel + '" font-weight="700" fill="' + t.label + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.label + '</text>' : '';
+    var descHtml = pt.desc ? '<text x="' + (lblX + 14) + '" y="' + lblY + '" font-size="' + SIZE.pointDesc + '" fill="' + LABEL_INK + '" text-anchor="' + anchor + '" dominant-baseline="middle">' + pt.desc + '</text>' : '';
     // Hollow points render as an open circle (stroke only, white fill).
     // Used for equilibrium markers like the demand chart's (Q*, P*) dot.
     var circle = pt.hollow
@@ -1093,7 +1115,7 @@
       var lineWeight = isObj && line.bold === false ? '600' : '700';
       var align = isObj && line.align ? line.align : 'middle';
       var tx = align === 'start' ? (x + 8) : align === 'end' ? (x + w - 8) : (x + w / 2);
-      return '<text x="' + tx + '" y="' + ly + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="' + lineWeight + '" fill="' + lineTone + '" text-anchor="' + align + '">' + lineText + '</text>';
+      return '<text x="' + tx + '" y="' + ly + '" font-size="' + SIZE.boxedLabel + '" font-weight="' + lineWeight + '" fill="' + lineTone + '" text-anchor="' + align + '">' + lineText + '</text>';
     }).join('');
     var connector = '';
     if (b.connectorTo) {
@@ -1131,7 +1153,7 @@
     if (!anchor) {
       anchor = zone.x > 0.7 ? 'end' : (zone.x < 0.3 ? 'start' : 'middle');
     }
-    return '<text x="' + scale.sx(zone.x) + '" y="' + scale.sy(zone.y) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="600" fill="' + t.label + '" font-style="italic" text-anchor="' + anchor + '">' + zone.text + '</text>';
+    return '<text x="' + scale.sx(zone.x) + '" y="' + scale.sy(zone.y) + '" font-size="' + SIZE.zone + '" font-weight="600" fill="' + t.label + '" font-style="italic" text-anchor="' + anchor + '">' + zone.text + '</text>';
   }
 
   /* ------------------------------------------------------------------ *
@@ -1204,7 +1226,7 @@
       var tt = tone(legend.title.tone || 'blue');
       // Centred title: dot sits just LEFT of the title text, both
       // anchored together on the legend column's centre line.
-      var titleSize = clampSize(13);
+      var titleSize = SIZE.legendTitle;
       var titleTextW = 0.58 * titleSize * (legend.title.text || '').length;
       var titleTextStartX = legCenterX - titleTextW / 2;
       parts.push('<circle cx="' + (titleTextStartX - 10) + '" cy="' + y + '" r="6" fill="' + tt.stroke + '"/>');
@@ -1219,7 +1241,7 @@
         // and uppercased visually by author convention. Centring gives
         // the right column the polished feel of a real legend panel
         // rather than a left-anchored caption strip.
-        parts.push('<text x="' + legCenterX + '" y="' + y + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="800" fill="' + ht.stroke + '" letter-spacing="1.5" text-anchor="middle">' + section.header.text + '</text>');
+        parts.push('<text x="' + legCenterX + '" y="' + y + '" font-size="' + SIZE.legendHeader + '" font-weight="800" fill="' + ht.stroke + '" letter-spacing="1.5" text-anchor="middle">' + section.header.text + '</text>');
         y += 26;
       }
       if (section.rows) {
@@ -1235,13 +1257,13 @@
           // Row text never gray — coloured if the row carries a tone+line marker, else near-black
           var mainTone = row.labelTone ? tone(row.labelTone).label : (row.marker === 'line' ? rt.label : LABEL_INK);
           var mainWeight = row.bold || row.marker === 'line' ? '700' : '600';
-          parts.push('<text x="' + (x + 42) + '" y="' + (y + 5) + '" font-size="' + clampSize(13) + '" font-weight="' + mainWeight + '" fill="' + mainTone + '">' + mainText + '</text>');
+          parts.push('<text x="' + (x + 42) + '" y="' + (y + 5) + '" font-size="' + SIZE.legendRow + '" font-weight="' + mainWeight + '" fill="' + mainTone + '">' + mainText + '</text>');
           y += 20;
           if (row.subLines) {
             row.subLines.forEach(function (sub) {
               var subText = typeof sub === 'string' ? sub : sub.text;
               var subTone = typeof sub === 'string' ? LABEL_INK : tone(sub.tone || 'slate').label;
-              parts.push('<text x="' + (x + 42) + '" y="' + (y + 5) + '" font-size="' + MIN_LABEL_SIZE + '" fill="' + subTone + '">' + subText + '</text>');
+              parts.push('<text x="' + (x + 42) + '" y="' + (y + 5) + '" font-size="' + SIZE.legendSub + '" fill="' + subTone + '">' + subText + '</text>');
               y += 18;
             });
             y += 4;

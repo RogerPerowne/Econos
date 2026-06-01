@@ -61,24 +61,24 @@
     texts: [
       /* Pp horizontal label on the y-axis */
       { x: -0.020, y: Pp, text: 'Pp', tone: 'red', bold: true,
-        fontSize: 10, anchor: 'end' },
+        anchor: 'end' },
 
       /* Layer 1: consumer burden rectangle label */
       { x: Qt / 2, y: (E0.y + Pc) / 2, text: 'Consumer burden',
-        tone: 'blue', bold: true, fontSize: 10, anchor: 'middle',
+        tone: 'blue', bold: true, anchor: 'middle',
         layer: 'idl-1' },
       /* Layer 2: producer burden rectangle label */
       { x: Qt / 2, y: (E0.y + Pp) / 2, text: 'Producer burden',
-        tone: 'red', bold: true, fontSize: 10, anchor: 'middle',
+        tone: 'red', bold: true, anchor: 'middle',
         layer: 'idl-2' },
       /* Layer 3: tax revenue caption above the outline */
       { x: Qt / 2, y: Pc + 0.075, text: 'Tax revenue = £T × Qt',
-        tone: 'purple', bold: true, fontSize: 11, anchor: 'middle',
+        tone: 'purple', bold: true, anchor: 'middle',
         layer: 'idl-3' },
 
       /* Tax bracket caption (right of the bracket) */
       { x: Qt + 0.025, y: (Pc + Pp) / 2, text: 'Tax = £T',
-        tone: 'slate', bold: true, fontSize: 10 }
+        tone: 'slate', bold: true }
     ],
 
     boxedLabels: [

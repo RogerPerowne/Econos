@@ -69,20 +69,20 @@
     texts: [
       // Layer 1: annotations next to the boom + recession points
       { x: 0.349, y: 0.762, text: 'Booms above trend',
-        tone: 'green', bold: true, fontSize: 11, layer: 'idl-1' },
+        tone: 'green', bold: true, layer: 'idl-1' },
       { x: 0.619, y: 0.105, text: 'Recessions below trend',
-        tone: 'red', bold: true, fontSize: 11, layer: 'idl-1' },
+        tone: 'red', bold: true, layer: 'idl-1' },
 
       // Layer 2: driver labels below each triangle
-      { x: 0.089, y: 0.190, text: 'Labour',       tone: 'green', bold: true, fontSize: 10, anchor: 'middle', layer: 'idl-2' },
-      { x: 0.263, y: 0.300, text: 'Capital',      tone: 'green', bold: true, fontSize: 10, anchor: 'middle', layer: 'idl-2' },
-      { x: 0.438, y: 0.410, text: 'Productivity', tone: 'green', bold: true, fontSize: 10, anchor: 'middle', layer: 'idl-2' },
-      { x: 0.613, y: 0.520, text: 'Skills',       tone: 'green', bold: true, fontSize: 10, anchor: 'middle', layer: 'idl-2' },
-      { x: 0.787, y: 0.620, text: 'Tech',         tone: 'green', bold: true, fontSize: 10, anchor: 'middle', layer: 'idl-2' },
+      { x: 0.089, y: 0.190, text: 'Labour',       tone: 'green', bold: true, anchor: 'middle', layer: 'idl-2' },
+      { x: 0.263, y: 0.300, text: 'Capital',      tone: 'green', bold: true, anchor: 'middle', layer: 'idl-2' },
+      { x: 0.438, y: 0.410, text: 'Productivity', tone: 'green', bold: true, anchor: 'middle', layer: 'idl-2' },
+      { x: 0.613, y: 0.520, text: 'Skills',       tone: 'green', bold: true, anchor: 'middle', layer: 'idl-2' },
+      { x: 0.787, y: 0.620, text: 'Tech',         tone: 'green', bold: true, anchor: 'middle', layer: 'idl-2' },
 
       // Layer 3: hysteresis caption
       { x: 0.530, y: 0.040, text: 'Hysteresis: trend can bend down',
-        tone: 'red', bold: true, fontSize: 10, layer: 'idl-3' }
+        tone: 'red', bold: true, layer: 'idl-3' }
     ]
   };
 })();

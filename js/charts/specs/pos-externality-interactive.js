@@ -126,7 +126,7 @@
 
       // Welfare-gain label inside green triangle
       { layer: 'layer-wfg', x: (Em.x + Eopt.x + MsbAtQm.x) / 3 + 0.020, y: (Em.y + Eopt.y + MsbAtQm.y) / 3,
-        text: 'Welfare gain', tone: 'green', bold: true, fontSize: 11, anchor: 'middle' }
+        text: 'Welfare gain', tone: 'green', bold: true, anchor: 'middle' }
     ],
 
     legends: [

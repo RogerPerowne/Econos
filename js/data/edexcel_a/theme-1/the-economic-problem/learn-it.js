@@ -67,7 +67,7 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  icon: '🏭', label: 'Firms',        sub: 'Limited capital vs the projects worth funding – pick which to launch.' },
         { tone: 'purple', icon: '🏛️', label: 'Governments',  sub: 'Limited tax revenue vs the services to fund – pick which to prioritise.' }
       ],
-      branchesLabel: 'Scarcity forces choice – at every level',
+      branchesLabel: 'Scarcity forces choice',
       branchesEmoji: '👥',
       branchesLayout: 'triptych',
       keyTakeaway: 'Scarcity is universal – even the wealthiest country cannot produce unlimited healthcare, education, defence and infrastructure all at once.',
@@ -156,7 +156,7 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  label: 'Sunk costs do not count',                     sub: 'Past costs cannot be changed by today\'s decision, so they are never part of the opportunity cost – only the foregone alternatives count.' },
         { tone: 'blue',   label: 'Better alternatives = higher opportunity cost', sub: 'The more valuable the next best option, the higher the opportunity cost of the choice you made.' }
       ],
-      branchesLabel: 'It depends on the next best alternative',
+      branchesLabel: 'The next best alternative',
       branchesEmoji: '⚖️',
       branchesLayout: 'quotes',
       keyTerms: [
@@ -413,7 +413,7 @@ window.ECONOS_TOPIC = {
         { tone: 'green',  icon: '🏭', title: 'More capital stock', sub: 'Machines, tools, infrastructure and technology.' },
         { tone: 'purple', icon: '🚀', title: 'Higher capacity',    sub: 'Greater productive potential – the PPF shifts out.' }
       ],
-      causesLabel: 'Capital wears out – and must be replaced',
+      causesLabel: 'Capital depreciation',
       causesEmoji: '🔄',
       causes: [
         {
@@ -582,7 +582,7 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  icon: '🏚️', title: 'Labour market immobility', sub: 'Skills and jobs don\'t match up.' },
         { tone: 'rose',   icon: '📉', title: 'Structural unemployment',  sub: 'Persistent joblessness in some areas and industries.' }
       ],
-      causes2Label: 'Policy levers to raise labour mobility',
+      causes2Label: 'Raising labour mobility',
       causes2Emoji: '🛠️',
       causes2: [
         { tone: 'blue',   icon: '🎓', head: 'Apprentices',         body: 'Build skills while earning – combining work and training.' },

@@ -44,7 +44,7 @@ window.ECONOS_TOPIC = {
   <li><strong>PES = ∞:</strong> Perfectly elastic – producers supply any amount at the going price; horizontal supply curve.</li>
 </ul>`,
       causesEmoji: '📊',
-      causesLabel: 'Supply responsiveness – from fixed to flexible',
+      causesLabel: 'From fixed to flexible supply',
       causes: [
         {
           head: '🏗️ Housing – very inelastic (PES ≈ 0.1)',

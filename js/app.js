@@ -6405,8 +6405,24 @@
       // currently-active perspective lives on the SVG wrapper as
       // `class="chart-<name>"`; resolve it once and use it as a second
       // filter on visibility.
-      const currentPersp = (idRoot.querySelector('[class*="chart-"]') || {}).className || '';
-      const activePersp = (currentPersp.match(/chart-([a-z]+)/) || [])[1];
+      //
+      // Bug previously: querySelector('[class*="chart-"]') could match
+      // an SVG element inside the chart (e.g. <g class="chart-axes">),
+      // whose className is an SVGAnimatedString rather than a string,
+      // so calling .match() on it threw TypeError and killed the whole
+      // handler — descs and analysis never updated. Use getAttribute
+      // which returns a plain string for both HTML and SVG elements,
+      // and prefer the wrapper div whose class STARTS with "chart-"
+      // (the perspective marker) over any nested chart-* class.
+      const perspectives = JSON.parse(idRoot.dataset.idPerspectives || 'null');
+      let activePersp;
+      if (perspectives) {
+        const wrappers = idRoot.querySelectorAll('div[class^="chart-"], div[class*=" chart-"]');
+        for (const w of wrappers) {
+          const m = (w.getAttribute('class') || '').match(/(?:^|\s)chart-([a-z]+)/);
+          if (m && perspectives.indexOf(m[1]) !== -1) { activePersp = m[1]; break; }
+        }
+      }
       idRoot.querySelectorAll('[data-id-desc]').forEach(d => {
         const matchesPersp = !d.dataset.idPersp || d.dataset.idPersp === activePersp;
         d.style.display = (parseInt(d.dataset.idDesc, 10) === vi && matchesPersp) ? 'flex' : 'none';

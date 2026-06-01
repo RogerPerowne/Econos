@@ -2789,23 +2789,24 @@ img, svg { display: block; max-width: 100%; }
     gap: 10px !important;
   }
   /* splitDecision (vs-style economist cards) stacks on phones — the
-     dark VS badge sits between the stacked cards. */
+     dark VS badge sits between the stacked cards, upright (the "VS" text
+     reads horizontally, not rotated). */
   .split-decision { flex-direction: column !important; }
-  .split-decision__vs { transform: rotate(90deg); }
   /* versusList "A vs B" pairs stack the same way on phones. */
   .versus-list__pair { flex-direction: column !important; }
-  .versus-list__vs { transform: rotate(90deg); }
   /* Three-element comparison (A + B = C) is too tight side-by-side on a
      phone — stack the cards with the operator badges sitting between. */
   .gen-comparison--triple { flex-direction: column !important; }
   /* When any of the vs-family rows stack into a column, each operator
      badge wrapper stretches to full row width (default align-self) and
      the badge inside falls to flex-start (left). Centre the badge so it
-     reads as a join between the stacked cards. */
+     reads as a join between the stacked cards, and keep the glyph upright
+     (no rotation — "VS" / "+" / "=" read normally). */
   .split-decision__vs,
   .versus-list__vs,
   .gen-comparison__op {
     justify-content: center !important;
+    transform: none !important;
   }
 }
 

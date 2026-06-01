@@ -167,9 +167,9 @@ window.ECONOS_TOPIC = {
       causesEmoji: '✅',
       causesStyle: 'tinted-flat',
       causes: [
-        { icon: '1️⃣', head: 'Private benefit understates total benefit', body: 'Consumers decide on MPB alone – they don\'t account for the spillover.',                                tone: 'green'  },
-        { icon: '2️⃣', head: 'Market quantity is too low',                 body: 'Under-consumption: Q_market sits below the socially optimal Q*.',                                       tone: 'blue'   },
-        { icon: '3️⃣', head: 'Intervention may raise welfare',             body: 'Subsidies, public provision, or regulation can move output closer to Q* and capture the welfare gain.', tone: 'purple' }
+        { icon: '👤', head: 'Private benefit understates total benefit', body: 'Consumers decide on MPB alone – they don\'t account for the spillover.',                                tone: 'green'  },
+        { icon: '📉', head: 'Market quantity is too low',                 body: 'Under-consumption: Q_market sits below the socially optimal Q*.',                                       tone: 'blue'   },
+        { icon: '🏛️', head: 'Intervention may raise welfare',             body: 'Subsidies, public provision, or regulation can move output closer to Q* and capture the welfare gain.', tone: 'purple' }
       ],
       tipLate: { icon: 'ℹ️', tone: 'blue', text: 'These examples can be used in 5-, 8-, 12-, and 25-mark answers – pick one and name the third party who gains.' },
       examEdge: 'Examiners reward specificity. "Education has positive externalities" → low marks. "Higher educational attainment raises national productivity and lowers crime rates – clear external benefits captured by employers and society" → high marks.'
@@ -277,10 +277,10 @@ window.ECONOS_TOPIC = {
       flowTitle: 'A 4-step evaluation flow',
       flowEmoji: '🧭',
       flow: [
-        { tone: 'blue',   icon: '1️⃣', title: 'Identify the intervention',  sub: 'and how it moves output toward Q*.' },
-        { tone: 'green',  icon: '2️⃣', title: 'Explain the likely benefits', sub: 'to consumers, producers, and third parties.' },
-        { tone: 'purple', icon: '3️⃣', title: 'Evaluate practical limits',   sub: 'or government failure.' },
-        { tone: 'amber',  icon: '4️⃣', title: 'Reach a clear judgement',     sub: 'on when the policy works best.' }
+        { tone: 'blue',   icon: '🔍', title: 'Identify the intervention',  sub: 'and how it moves output toward Q*.' },
+        { tone: 'green',  icon: '💬', title: 'Explain the likely benefits', sub: 'to consumers, producers, and third parties.' },
+        { tone: 'purple', icon: '⚖️', title: 'Evaluate practical limits',   sub: 'or government failure.' },
+        { tone: 'amber',  icon: '✅', title: 'Reach a clear judgement',     sub: 'on when the policy works best.' }
       ],
       causesLabel: 'A 4-criterion judgement framework',
       causesEmoji: '⚖️',

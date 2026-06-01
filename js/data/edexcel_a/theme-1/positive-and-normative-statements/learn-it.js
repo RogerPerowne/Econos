@@ -164,10 +164,11 @@ window.ECONOS_TOPIC = {
     subtitle: 'Theme 1 &middot; Topic 1.1.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('intro'),
     backLabel: 'Back to Learn It',
-    lede: '6 questions · ~5 minutes · covers the positive/normative distinction, flag words, and the role of value judgements in policy',
+    lede: '10 questions · ~8 minutes · the positive/normative distinction, flag words, value judgements and blended claims',
     shortNames: [
-      'Define the distinction', 'Classify statements', 'Flag words',
-      'Value judgements', 'Blended claim', 'Para fill'
+      'Define positive', 'Classify statements', 'Find the positive',
+      'Select normatives', 'Match the framing', 'Read the claims',
+      'Blended claim', 'Best answer', 'Positive / Normative / Blended', 'Para fill'
     ],
 
     questions: [
@@ -214,22 +215,52 @@ window.ECONOS_TOPIC = {
         exp: 'The odd one out is the <strong>positive</strong> statement: "a 1pp cut in interest rates tends to raise consumer borrowing within 12 months" is a testable cause-and-effect claim. The other three all contain flag words – "should", "ought", "too low" – that signal a <strong>value judgement</strong> about what is desirable, which cannot be proved by data.'
       },
 
-      /* 4 – MCQ: role of value judgements */
-      { type: 'mcq',
-        stem: 'Two economists agree on every fact about a carbon tax’s effects, yet still disagree on whether to introduce it. What best explains this?',
+      /* 4 – Multi-select: pick every normative statement */
+      { type: 'multi_select',
+        stem: 'Tick <strong>every normative statement</strong> below.',
         opts: [
-          'They hold different value judgements about how to weigh growth, fairness and the environment',
-          'One of them must have made an arithmetic error in the forecast',
-          'Positive analysis is unreliable, so facts cannot guide policy',
-          'Economic policy is purely scientific and disagreement is impossible'
+          'The UK economy grew by 0.6% in the last quarter',
+          'The government should spend more on the NHS',
+          'Higher interest rates reduce consumer borrowing',
+          'It is wrong that some children grow up in poverty',
+          'Income tax ought to be more progressive',
+          'Unemployment fell to 4.2% in March'
         ],
-        ans: 0,
-        exp: 'Even with identical positive analysis (agreement on the facts and forecasts), policy choices depend on <strong>value judgements</strong>: how much weight to give present growth versus future sustainability, or efficiency versus fairness. This is why economists who share the same data can still recommend opposite policies – and why policy debate is never settled by evidence alone.'
+        correct: [1, 3, 4],
+        exp: 'The normative statements are <strong>B, D and E</strong> – each rests on a value judgement ("should", "wrong", "ought"). A, C and F are <strong>positive</strong>: factual claims you could check against data, whether or not they turn out to be true. (Ticking everything is penalised, so commit only to the ones you can justify.)'
       },
 
-      /* 5 – MCQ: blended claim */
-      { type: 'mcq',
-        stem: 'Consider: "Inequality has risen since 1980, so the rich should pay more tax." Which is the most accurate analysis?',
+      /* 5 – Match pairs: the same topic stated as fact vs judgement */
+      { type: 'match_pairs',
+        stem: 'Every topic can be stated as a <strong>fact</strong> or as a <strong>judgement</strong>. Match each positive statement to the normative claim about the same topic.',
+        pairs: [
+          { a: 'Inflation rose to 11% in 2022',          b: 'Inflation is far too high and must be cut' },
+          { a: 'The minimum wage is £11.44 an hour',     b: 'The minimum wage should be raised' },
+          { a: 'The top 1% own 23% of UK wealth',        b: 'Wealth is distributed unfairly' },
+          { a: 'A carbon tax raises fuel prices',        b: 'A carbon tax is the right way to cut emissions' }
+        ],
+        exp: 'Each pair describes one topic two ways. The left tiles are <strong>positive</strong> – measurable facts. The right tiles are <strong>normative</strong> – they judge the same situation with "too high", "should", "unfairly", "right". Recognising that any topic can be framed both ways is the heart of evaluation.'
+      },
+
+      /* 6 – Data table: spot the single positive claim */
+      { type: 'data_table',
+        stem: 'A news article makes four claims about the housing market.',
+        headers: ['#', 'Claim'],
+        rows: [
+          ['1', 'House prices rose 4% last year'],
+          ['2', 'First-time buyers are being treated unfairly'],
+          ['3', 'The government should build more social housing'],
+          ['4', 'Rents are too expensive']
+        ],
+        question: 'Which claim is the only <strong>positive</strong> statement?',
+        opts: ['Claim 1', 'Claim 2', 'Claim 3', 'Claim 4'],
+        ans: 0,
+        exp: 'Only <strong>Claim 1</strong> ("house prices rose 4%") is positive – a factual claim you can verify against market data. Claims 2–4 are normative: "unfairly", "should" and "too expensive" are value judgements that evidence alone cannot settle.'
+      },
+
+      /* 7 – Confidence MCQ: blended claim */
+      { type: 'confidence_mcq',
+        stem: 'Consider: "<em>Inequality has risen since 1980, so the rich should pay more tax.</em>" Which analysis is correct?',
         opts: [
           'The first clause is positive (testable); the second is normative (a value judgement)',
           'Both clauses are positive because they mention measurable things',
@@ -237,10 +268,36 @@ window.ECONOS_TOPIC = {
           'The first clause is normative; the second is positive'
         ],
         ans: 0,
-        exp: 'Real arguments blend the two. "Inequality has risen since 1980" is <strong>positive</strong> – it can be checked against income data. "The rich should pay more tax" is <strong>normative</strong> – it rests on a view about fairness that evidence cannot settle. Splitting a sentence into its positive and normative parts is exactly the skill examiners reward in evaluation.'
+        exp: '"Inequality has risen since 1980" is <strong>positive</strong> – checkable against income data. "The rich should pay more tax" is <strong>normative</strong> – it rests on a view about fairness. Real arguments blend the two, and splitting a sentence into its positive and normative parts is exactly the skill examiners reward.'
       },
 
-      /* 6 – Para fill */
+      /* 8 – Diagnostic pair: which answer scores higher */
+      { type: 'diagnostic_pair',
+        stem: '"Explain the difference between a positive and a normative statement." (4 marks)',
+        students: [
+          { name: 'Student A', badge: 'Answer A', answer: 'A positive statement is a good thing for the economy, and a normative statement is a bad or negative thing. For example, growth is positive and a recession is normative.' },
+          { name: 'Student B', badge: 'Answer B', answer: 'A positive statement is an objective claim that can be tested against evidence (e.g. "inflation was 4%"). A normative statement is a value judgement about what ought to happen (e.g. "inflation should be lower") and cannot be settled by data alone.' }
+        ],
+        ans: 1,
+        exp: '<strong>Student B</strong> scores higher: each term is defined precisely (testable vs value judgement) with a clear example. Student A makes the classic error of confusing "positive" with "good" and "normative" with "bad" – remember, "positive" means <em>testable</em>, not optimistic.'
+      },
+
+      /* 9 – Categorise: positive / normative / blended */
+      { type: 'categorise',
+        stem: 'Sort each statement into <strong>Positive</strong>, <strong>Normative</strong>, or <strong>Blended</strong> (a fact plus a judgement).',
+        categories: ['Positive', 'Normative', 'Blended'],
+        items: [
+          { text: 'GDP per head is higher in Norway than in the UK',     category: 'Positive' },
+          { text: 'The UK should aim to match Norway’s living standards', category: 'Normative' },
+          { text: 'Unemployment is 4%, which is far too high',           category: 'Blended' },
+          { text: 'A weaker pound raises import prices',                 category: 'Positive' },
+          { text: 'It is unfair that graduates out-earn non-graduates',  category: 'Normative' },
+          { text: 'House prices rose 4%, so the government must act',     category: 'Blended' }
+        ],
+        exp: 'Positive = pure fact; Normative = pure judgement; Blended = a factual claim <em>plus</em> a value judgement. "Unemployment is 4%" (fact) + "far too high" (judgement) is blended, as is "house prices rose 4%" (fact) + "the government must act" (judgement). Blended claims are the most common in real arguments – and separating them is where the marks are.'
+      },
+
+      /* 10 – Para fill */
       { type: 'para_fill',
         stem: 'Complete the paragraph on the positive/normative distinction.',
         anchor: 'Economists try to keep facts and values apart.',

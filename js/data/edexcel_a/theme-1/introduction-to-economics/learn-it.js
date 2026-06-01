@@ -179,14 +179,15 @@ window.ECONOS_TOPIC = {
           { icon: '👤', label: 'Workers',    value: 'Wages, job security, job satisfaction' }
         ]
       },
-      branches: [
-        { tone: 'amber',  label: 'Lower prices vs higher profits',     sub: 'Consumers want lower prices; firms want higher profits. Every price tag is a battleground between the two.' },
-        { tone: 'rose',   label: 'Higher wages vs lower costs',        sub: 'Workers want higher wages; firms want to keep costs down. Wage bargaining and minimum-wage debates flow from this.' },
-        { tone: 'green',  label: 'Economic growth vs the environment', sub: 'Faster growth can increase pollution and resource use; sustainability may slow growth. Modern policy must trade them off.' }
-      ],
-      branchesLabel: 'Why objectives can conflict',
-      branchesEmoji: '⚔️',
-      branchesLayout: 'triptych',
+      versusList: {
+        label: 'Why objectives can conflict',
+        emoji: '⚔️',
+        rows: [
+          { left: { tone: 'blue',  label: 'Consumers', sub: 'want lower prices' }, right: { tone: 'amber', label: 'Firms', sub: 'want higher profits' }, note: 'Every price tag is a battleground between the two.' },
+          { left: { tone: 'blue',  label: 'Workers',   sub: 'want higher wages' }, right: { tone: 'amber', label: 'Firms', sub: 'want to keep costs down' }, note: 'Wage bargaining and minimum-wage debates flow from this.' },
+          { left: { tone: 'green', label: 'Economic growth', sub: 'raises output and incomes' }, right: { tone: 'rose', label: 'The environment', sub: 'pollution and resource use rise' }, note: 'Sustainability may slow growth – modern policy must trade them off.' }
+        ]
+      },
       examEdge: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational – they use heuristics, are loss-averse, and act on incomplete information.'
     },
     {

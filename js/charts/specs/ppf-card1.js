@@ -53,9 +53,9 @@
         ],
         legend: {
           sections: [{ body: [
-            'A on the curve — efficient, no waste.',
-            'B inside the curve — resources lie idle.',
-            'C outside — not possible with today’s resources.'
+            '<strong style="color:#2563EB;">A · on the curve</strong> — efficient, no waste.',
+            '<strong style="color:#D97706;">B · inside</strong> — resources lie idle.',
+            '<strong style="color:#DC2626;">C · outside</strong> — not possible with today’s resources.'
           ] }]
         }
       },
@@ -78,9 +78,8 @@
         ],
         legend: {
           sections: [{ body: [
-            'Moving D → E gains capital goods.',
-            'But it sacrifices consumer goods.',
-            'That sacrifice is the opportunity cost.',
+            '<strong style="color:#D97706;">Moving D → E:</strong> gain capital goods, lose consumer goods.',
+            'That sacrifice is the <strong style="color:#D97706;">opportunity cost</strong>.',
             'The bowed curve means it rises as you specialise.'
           ] }]
         }
@@ -110,8 +109,8 @@
         ],
         legend: {
           sections: [{ body: [
-            'PPF₂ outward — more capacity (better tech, more resources).',
-            'PPF₃ inward — lost capacity (war, disaster, depreciation).',
+            '<strong style="color:#059669;">PPF₂ · outward</strong> — more capacity (better tech, more resources).',
+            '<strong style="color:#DC2626;">PPF₃ · inward</strong> — lost capacity (war, disaster, depreciation).',
             'Moving along one curve is reallocation, not growth.'
           ] }]
         }
@@ -129,9 +128,9 @@
         ],
         legend: {
           sections: [{ body: [
-            'Every point on the curve is productively efficient.',
-            'Only G is allocatively efficient — what society wants most.',
-            'H inside the curve wastes resources.'
+            'Any point on the curve (like <strong style="color:#7C3AED;">F</strong>) is productively efficient.',
+            'Only <strong style="color:#0891B2;">G</strong> is allocatively efficient — what society wants most.',
+            '<strong style="color:#64748B;">H · inside</strong> the curve wastes resources.'
           ] }]
         }
       }

@@ -1086,7 +1086,10 @@
     if (!tg || !Array.isArray(tg.items) || !tg.items.length) return '';
     let html = '';
     if (tg.label) html += genSecLabel(tg.emoji || '🧩', tg.label);
-    html += `<div class="tile-grid" style="display:grid;gap:14px;margin-bottom:26px;">`;
+    // Default lays out 3-up; cols:2 / cols:4 pick a different desktop width
+    // (e.g. a 4-item set reads better as 2×2 than 3+1).
+    const colsClass = tg.cols === 2 ? ' tile-grid--2' : tg.cols === 4 ? ' tile-grid--4' : '';
+    html += `<div class="tile-grid${colsClass}" style="display:grid;gap:14px;margin-bottom:26px;">`;
     html += tg.items.map(it => {
       const t = PATTERN_TONES[it.tone || 'slate'] || PATTERN_TONES.slate;
       return `

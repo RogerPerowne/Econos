@@ -1977,11 +1977,16 @@ img, svg { display: block; max-width: 100%; }
    so phones get a clean 2-col instead of 6 stacked tall tiles.
    ============================================================ */
 .tile-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+.tile-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.tile-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
 @media (max-width: 900px) {
-  .tile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .tile-grid,
+  .tile-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 }
 @media (max-width: 460px) {
-  .tile-grid { grid-template-columns: 1fr !important; }
+  .tile-grid,
+  .tile-grid--2,
+  .tile-grid--4 { grid-template-columns: 1fr !important; }
 }
 
 /* ============================================================

@@ -80,6 +80,7 @@ window.ECONOS_TOPIC = {
       ],
       branchesLabel: 'It depends on the next best alternative',
       branchesEmoji: '⚖️',
+      branchesLayout: 'quotes',
       keyTerms: [
         { term: 'Opportunity cost', def: 'The value of the next best alternative forgone as a result of making a choice.' },
         { term: 'Explicit cost',    def: 'Actual monetary payment for a resource (e.g. wage paid to a worker).' },
@@ -102,6 +103,7 @@ window.ECONOS_TOPIC = {
       ],
       branchesLabel: 'The three questions',
       branchesEmoji: '❓',
+      branchesLayout: 'triptych',
       body: 'Scarcity forces every society to answer these three questions. They are deceptively simple – but the answers determine production, employment, and the distribution of wealth. Different economic systems answer them very differently, which is what the next section explores.',
       causes: [
         { head: 'Market economy',  icon: '🛒', body: 'Individuals and firms answer the three questions through choices made in markets, guided by prices and profit. Decentralised, fast-moving, prone to inequality and market failure.' },
@@ -153,6 +155,7 @@ window.ECONOS_TOPIC = {
       ],
       branchesLabel: 'Why objectives can conflict',
       branchesEmoji: '⚔️',
+      branchesLayout: 'triptych',
       examEdge: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational – they use heuristics, are loss-averse, and act on incomplete information.'
     },
     {
@@ -212,6 +215,7 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',   label: 'Time pressure',       sub: 'Decisions often need to be made quickly with limited time to evaluate every option – so people use rules of thumb (heuristics) instead.' }
       ],
       branchesLabel: 'Limits to perfect rationality',
+      branchesLayout: 'triptych',
       examEdge: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.'
     },
     {

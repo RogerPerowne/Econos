@@ -49,7 +49,8 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',   label: 'The price mechanism',      sub: 'Signals, incentives and rationing – the three jobs prices do whenever markets are allowed to function.' },
         { tone: 'amber',  label: 'Transition &amp; hybrids', sub: 'Russia\'s shock therapy, China\'s gradualism: different paths from plan to market, with very different outcomes.' }
       ],
-      branchesLabel: 'The five big ideas – tap each to recall',
+      branchesLabel: 'The five big ideas',
+      branchesLayout: 'quotes',
       examEdge: 'The invisible hand is not magic – it works only when prices reflect all costs and benefits. Market failure occurs precisely when prices don\'t capture external costs (externalities) or when public goods are non-excludable. This is why Theme 1 moves from free markets to market failure.'
     },
 

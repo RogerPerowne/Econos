@@ -384,6 +384,75 @@ These templates were built for a specific topic and don't generalise. If your co
 3. **Wire the fields.** Use the pattern's renderer wiring as the starting point; add only the optional fields the card needs.
 4. **Self-review before shipping.** Use `run-econos` to render each card; compare to the mockup or to the pattern's canonical example. Look for the anti-pattern (3+ tile grids) and the consecutive-same-pattern rule.
 
+## Block taxonomy — pick the styling by the lesson's job
+
+The patterns above are the *story*. This is the *render vocabulary* — every
+core block in the generic field-based renderer (`framing` / `renderCardGeneric`,
+`js/app.js`), grouped by the pedagogical job it does. Pick by job, then vary
+the block across consecutive cards so the topic doesn't read as one card
+five times. Every block listed is mobile-responsive (chart-beside-text and
+vs-pairs stack on phones) and draws colour from the named tone family
+(green / amber / blue / rose / purple / slate) — never raw hex in data.
+
+### Hook & framing
+| Job | Block | Character |
+|---|---|---|
+| One-line essence at the top | `tip` (and a late `tipLate`) | Coloured strip, icon + sentence. A green ✅ for the take-home, an amber ⚠️ for a caveat. |
+| A short framing note mid-card | `note` (object or array) | Tinted callout, icon circle + bold head + body. Stack 2–3 for a "what this means" block (icon circles, no numbers). |
+
+### Define a concept
+| Job | Block | Character |
+|---|---|---|
+| Term ⇆ meaning, two facets | `comparison` (left/right) | Two equal tinted cards with a dark **VS** badge, big centred icons. "Definition vs Purpose", "Utility vs Budget constraint". |
+| Vocabulary list | `keyTerms` | Term + definition grid (footer chrome). |
+
+### Contrast & conflict — the "vs" family (all share the dark VS badge)
+| Job | Block | When |
+|---|---|---|
+| X vs Y at a glance | `comparison` | One clean two-way contrast, icon-led, short captions. |
+| Same input → different output | `splitDecision` | Two structured cards: name → premise → interpretation → ↓ → bold conclusion. Two economists, two firms reaching opposite calls. |
+| Several tensions / trade-offs | `versusList` | A *stack* of "A vs B" rows, each with a note below. "Consumers vs Firms", "Growth vs Environment". |
+| Every feature of A vs every feature of B | `paired` (`left`/`right` points) | Two bullet-list columns. Micro vs Macro, Positive vs Normative. |
+
+### List reasons / factors / types (unordered)
+| Job | Block | When |
+|---|---|---|
+| 2–4 reasons / factors | `causes` (+ `causes2`) | The workhorse icon tiles. `causesStyle` needs `causesFirst: true` (see gate above). |
+| Each item deserves colour + an example | `methodGrid` | Tone cards: tinted title band + icon + body + italic "Example:" footer. "What economists use instead", "Limits to rationality". No numbers — use where a numbered block sits nearby. |
+| Principles / aphorisms | `branches: 'quotes'` | Pull-quote tiles with an oversized tone mark. |
+
+### Parallel set of N (use with care)
+| Job | Block | When |
+|---|---|---|
+| Genuinely parallel triad/quad | `branches: 'triptych'` | Numbered columns. **Only** when items are equal-weight AND no other numbered block (a `flow`) sits nearby — else the numerals clash (use `methodGrid` or `versusList` instead). |
+
+### Sequence / process / mechanism
+| Job | Block | When |
+|---|---|---|
+| Ordered steps | `flow` (+ `flowBottom`) | Numbered circles joined by dashed arrows. Icons must be **thematic** (🔍 ⚖️ 💡), never keycap-number emoji — those duplicate the auto-numbers. |
+
+### Data, diagrams & worked examples
+| Job | Block | When |
+|---|---|---|
+| Reference mapping | `table` | 2-col label → value, light borders. |
+| A drawn relationship | chart toolkit (`ECONOS_PPF.render`) / dial engine | Never hand-roll SVG. On-curve points declared via `intersection`/`on:`/`shape:through`. |
+| Worked example beside a chart | `diagramPanel` | Chart + bullets (`layout:'side'|'stacked'`). `position:'after-causes'|'after-table'` lands the diagram where the mockup wants it (often last, as the payoff). |
+| Click-through multi-state diagram | `interactiveDiagram` / `ad-interactive` | Pattern 7. |
+
+### Consolidate
+| Job | Block | Character |
+|---|---|---|
+| The take-home | `keyTakeaway` | Amber box, 32px star — geometry matches Exam Edge. |
+| The exam gem | `examEdge` | Purple box, ⭐. |
+
+### Variation rule (the whole point)
+Rotate blocks across consecutive cards. The three "vs" blocks
+(`comparison` / `splitDecision` / `versusList`) are visually coherent (shared
+VS badge) but pedagogically distinct — reach for the one whose *structure*
+matches the content, not the first that compares two things. If two
+consecutive cards would both be `causes` tile-grids, convert one to
+`methodGrid`, `versusList`, or a `flow`.
+
 ## See also
 
 - **`econos-visual-diagram`** — when a card uses `visualKey` or `interactiveDiagram`, that skill owns the SVG spec-first workflow and house rules.

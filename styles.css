@@ -897,12 +897,13 @@ img, svg { display: block; max-width: 100%; }
 }
 .btn:active { transform: translateY(1px); }
 
+/* `.btn--primary` was 1 padding-step larger than `.btn--ghost`, which
+   made the Take-the-quiz CTA bulge out next to Previous / Next topic
+   in the card foot (and wrap awkwardly on narrow screens). Same size
+   as the ghosts now; the blue fill alone is the affordance. */
 .btn--primary {
   background: var(--econ-blue);
   color: var(--econ-white);
-  padding: var(--sp-4) var(--sp-6);
-  font-size: var(--fs-md);
-  border-radius: var(--r-md);
 }
 .btn--primary:hover { background: var(--econ-blue-700); }
 

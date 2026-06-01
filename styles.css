@@ -1758,41 +1758,125 @@ img, svg { display: block; max-width: 100%; }
   gap: var(--sp-3);
 }
 
+/* Branch callouts — flashcard-style reveal tiles.
+   Replaced the original flat pastel boxes (which read as "info banner"
+   rather than "active recall card"). New design:
+     - white card with a thick coloured left strip in the tile's tone
+     - chunky tone-coloured numeric badge replaces the small dot
+     - Fraunces bold display label, larger than before
+     - explicit "Reveal answer →" pill CTA in the body (not a small
+       'tap to recall +' hint), flips to "Hide answer ↑" once open
+     - subtle lift on hover so the tile reads as a tappable surface
+   The .branch-cal--<tone> modifier sets every coloured element via
+   currentColor so a new tone only needs the two CSS vars (-700 +
+   -50) — no per-class duplication. */
 .branch-cal {
+  --tone-strong: var(--econ-blue);
+  --tone-deep:   var(--econ-blue-700);
+  --tone-tint:   var(--econ-blue-50);
   display: flex;
-  gap: var(--sp-3);
-  align-items: flex-start;
-  padding: var(--sp-4);
+  gap: var(--sp-4);
+  align-items: stretch;
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--econ-white);
+  border: 1.5px solid var(--econ-gray-200);
   border-radius: var(--r-lg);
-  border-left: 4px solid;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
-.branch-cal--green { background: var(--econ-green-50);  border-left-color: var(--econ-green); }
-.branch-cal--amber { background: var(--econ-amber-50);  border-left-color: var(--econ-amber); }
-.branch-cal--blue  { background: var(--econ-blue-50);   border-left-color: var(--econ-blue); }
+.branch-cal::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 6px;
+  background: var(--tone-strong);
+}
+.branch-cal:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--tone-strong);
+}
+.branch-cal--green  { --tone-strong: var(--econ-green);  --tone-deep: var(--econ-green-700);  --tone-tint: var(--econ-green-50); }
+.branch-cal--amber  { --tone-strong: var(--econ-amber);  --tone-deep: var(--econ-amber-700);  --tone-tint: var(--econ-amber-50); }
+.branch-cal--blue   { --tone-strong: var(--econ-blue);   --tone-deep: var(--econ-blue-700);   --tone-tint: var(--econ-blue-50); }
+.branch-cal--rose   { --tone-strong: var(--econ-rose);   --tone-deep: var(--econ-rose-700);   --tone-tint: var(--econ-rose-50); }
+.branch-cal--purple { --tone-strong: var(--econ-purple); --tone-deep: var(--econ-purple-700); --tone-tint: var(--econ-purple-50); }
+.branch-cal--slate  { --tone-strong: var(--econ-slate);  --tone-deep: var(--econ-slate-700);  --tone-tint: var(--econ-slate-50); }
 
-.branch-cal__dot {
-  width: 14px; height: 14px;
-  border-radius: var(--r-full);
+.branch-cal__badge {
   flex-shrink: 0;
-  margin-top: 4px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-full);
+  background: var(--tone-tint);
+  color: var(--tone-deep);
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-section);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-left: var(--sp-2);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
-.branch-cal--green .branch-cal__dot { background: var(--econ-green); }
-.branch-cal--amber .branch-cal__dot { background: var(--econ-amber); }
-.branch-cal--blue  .branch-cal__dot { background: var(--econ-blue); }
+.branch-cal.is-open .branch-cal__badge {
+  background: var(--tone-strong);
+  color: var(--econ-white);
+  transform: scale(1.06);
+}
+
+.branch-cal__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
 
 .branch-cal__label {
-  font-size: var(--fs-md);
-  font-weight: var(--fw-semi);
-  margin-bottom: 2px;
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-section);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  line-height: 1.25;
+  color: var(--tone-deep);
+  letter-spacing: -0.01em;
 }
-.branch-cal--green .branch-cal__label { color: var(--econ-green-700); }
-.branch-cal--amber .branch-cal__label { color: var(--econ-amber-700); }
-.branch-cal--blue  .branch-cal__label { color: var(--econ-blue-700); }
 
 .branch-cal__sub {
+  font-family: var(--font-body);
   font-size: var(--fs-sm);
   color: var(--econ-ink);
   line-height: var(--lh-relaxed);
+  padding-top: var(--sp-2);
+  border-top: 1px dashed var(--econ-gray-200);
+}
+
+.branch-cal__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 4px var(--sp-3);
+  border-radius: var(--r-full);
+  background: var(--tone-tint);
+  color: var(--tone-deep);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.18s ease;
+}
+.branch-cal:hover .branch-cal__cta { background: var(--tone-strong); color: var(--econ-white); }
+.branch-cal__cta-arrow {
+  display: inline-block;
+  transition: transform 0.18s ease;
 }
 
 /* ============================================================
@@ -3055,34 +3139,9 @@ img, svg { display: block; max-width: 100%; }
 .exam-edge__btn:hover {
   background: #FEF3C7 !important;
 }
-.branch-cal[data-flap] .branch-cal__sub {
+.branch-cal[data-flap] .branch-cal__sub,
+.branch-cal.is-open .branch-cal__sub {
   animation: econ-flap-open 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-.branch-cal__hint {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semi);
-  color: var(--econ-ink);
-  margin-top: 2px;
-  letter-spacing: 0.3px;
-}
-.branch-cal__hint::after {
-  content: '+';
-  display: inline-block;
-  width: 16px; height: 16px;
-  border-radius: var(--r-full);
-  background: var(--econ-gray-200);
-  color: var(--econ-ink);
-  text-align: center;
-  line-height: 14px;
-  font-weight: 800;
-  transition: transform 0.22s ease, background 0.22s ease;
-}
-.branch-cal.is-open .branch-cal__hint::after {
-  transform: rotate(45deg);
-  background: var(--econ-gray-300);
 }
 
 /* --- Card 4 diagnose: tap-to-reveal answer --- */
@@ -3270,27 +3329,32 @@ img, svg { display: block; max-width: 100%; }
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
+/* Reveal pill — mirrors the branch-cal CTA so the two "tap to recall"
+   surfaces share the same visual language. */
 .def-mech-row__hint {
-  font-size: var(--fs-xs);
-  color: var(--econ-ink);
-  font-weight: var(--fw-semi);
-  letter-spacing: 0.3px;
-  margin-top: 4px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-}
-.def-mech-row__hint::before {
-  content: '+';
-  width: 14px; height: 14px;
+  align-self: flex-start;
+  margin-top: var(--sp-2);
+  padding: 4px var(--sp-3);
   border-radius: var(--r-full);
-  background: var(--econ-gray-200);
+  background: var(--econ-gray-100);
   color: var(--econ-ink);
-  font-weight: 800;
-  text-align: center;
-  line-height: 12px;
-  font-size: 11px;
-  transition: transform 0.22s ease, background 0.22s ease;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.18s ease;
+}
+.def-mech-row:hover .def-mech-row__hint {
+  background: var(--econ-amber);
+  color: var(--econ-white);
+}
+.def-mech-row__arrow {
+  display: inline-block;
+  transition: transform 0.18s ease;
 }
 .def-mech-row.is-open .def-mech-row__hint { display: none; }
 .def-mech-row__text.is-hidden { display: none; }
@@ -3698,20 +3762,9 @@ img, svg { display: block; max-width: 100%; }
    ============================================================ */
 
 /* --- 4th branch tone: purple (used for X−M in AD topic) --- */
-.branch-cal--purple {
-  background: var(--econ-purple-50);
-  border-left-color: var(--econ-purple-700);
-}
-.branch-cal--purple .branch-cal__dot { background: var(--econ-purple-700); }
-.branch-cal--purple .branch-cal__label { color: var(--econ-purple-700); }
-
-/* --- 5th branch tone: rose --- */
-.branch-cal--rose {
-  background: var(--econ-rose-50);
-  border-left-color: var(--econ-rose);
-}
-.branch-cal--rose .branch-cal__dot { background: var(--econ-rose); }
-.branch-cal--rose .branch-cal__label { color: var(--econ-rose); }
+/* Legacy purple / rose modifiers — superseded by the consolidated
+   --tone-* custom-property block on `.branch-cal` itself. Kept the
+   selectors removed; everything inherits from the new block. */
 
 /* --- Hallmark accent: generalised variants --- */
 .cause-col--hallmark-green       { border-left-color: var(--econ-green); }

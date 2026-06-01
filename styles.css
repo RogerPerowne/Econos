@@ -6217,6 +6217,15 @@ img, svg { display: block; max-width: 100%; }
   color: var(--econ-rose-700);
   border: 1px solid var(--econ-rose-100);
 }
+/* When the fail chip wraps an actionable Review link, the anchor
+   inherits the chip's rose tone so it looks like a single tappable
+   pill — not a blue link inside a rose chip. */
+.quiz-stat__chip-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: var(--fw-semi);
+}
+.quiz-stat__chip-link:hover { text-decoration: underline; }
 .quiz-stat__divider {
   width: 100%; height: 1px;
   background: var(--econ-gray-200);

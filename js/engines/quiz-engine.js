@@ -1431,7 +1431,9 @@
           '<div class="quiz-stat__sub">' + pct + '%</div>' +
           '<div class="quiz-stat__verdict">' + verdict + '</div>' +
           '<div class="quiz-stat__chip quiz-stat__chip--' + (passed ? 'ok' : 'bad') + '">' +
-            (passed ? '✓ Pass (60% required)' : 'Pass mark is 60% — give it another go') +
+            (passed
+              ? '✓ Pass (60% required)'
+              : '<a href="' + TopicLoader.routes.learn('intro') + '" class="quiz-stat__chip-link">Review the Learn It cards to lock the gaps in →</a>') +
           '</div>' +
         '</div>' +
         '<div class="quiz-stat">' +
@@ -1461,7 +1463,7 @@
       '</div>' +
 
       '<div class="quiz-results__actions">' +
-        '<button class="quiz-btn quiz-btn--secondary" onclick="restartQuiz()">Redo quiz</button>' +
+        '<a class="quiz-btn quiz-btn--secondary" href="' + TopicLoader.routes.learn('intro') + '">Recap topic</a>' +
         '<a class="quiz-btn quiz-btn--primary" href="' + TopicLoader.routes.link('intro') + '">On to Link it →</a>' +
       '</div>' +
 

@@ -27,12 +27,12 @@
   'use strict';
 
   window.ECONOS_DEMAND_CARD2_SPEC = {
-    width: 900,
+    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
+    legendPosition: 'bottom',
     height: 440,
     chartArea: { x: 60, y: 43, width: 500, height: 357 },
     className: 'demand-svg',
     background: '#FFFFFF',
-    divider: { x: 595, y1: 16, y2: 424 },
     defs:
       '<marker id="dm-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>' +
       '<marker id="dm-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#D97706"/></marker>' +

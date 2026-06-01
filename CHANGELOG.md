@@ -6,6 +6,39 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.21.2 — 2026-06-01
+
+### Site-wide rollout of legend-below + overlap fix
+
+PR #892's legend-below mode now applies to every wide chart with a
+side legend, not just the two PPF cards:
+
+- demand-card2, demand-card4 (movement vs shift, consumer surplus)
+- supply-card2, supply-card4 (movement vs shift, producer surplus)
+- shifts-interactive, sim-shifts-interactive (equilibrium dynamics)
+- disequilibrium-interactive (surplus / shortage)
+- neg-externality-interactive, pos-externality-interactive
+- (plus ppf-card1, ppf-card3 from #892)
+
+Eleven 900-wide charts in total. Each one now renders at 590–605 px
+on phones with the analysis as HTML beneath the chart — no more
+horizontal scroll, no more 5-px legend text.
+
+### Fix — overlapping legends
+
+The engine emitted an "initially visible" rule for the first legend
+that had equal specificity with the "hide all" rule but came LATER
+in the cascade. With `.show-<key>` set on the parent the matching
+legend got opacity:1 — but the FIRST legend's "initially visible"
+rule was never overridden, so both rendered at once and the user
+saw four sets of headers/rows stacked on top of each other.
+
+The fix drops the "initially visible" rule. The consumer (app.js's
+ad-interactive renderer) always sets `.show-<firstkey>` on the
+parent at initial render, so the cascade handles the default
+without needing an unconditional rule. Also adds
+`pointer-events: none` to hidden layers as a defensive measure.
+
 ## 0.21.1 — 2026-06-01
 
 ### Wide-chart analysis stacks below on phones

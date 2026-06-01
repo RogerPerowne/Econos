@@ -13,8 +13,17 @@
 (function () {
   'use strict';
 
-  var A = { x: 0.300, y: 0.660 };  // Q2, P2
-  var B = { x: 0.620, y: 0.360 };  // Q1, P1
+  /* Single source of truth: the demand line is DEFINED to pass through
+     the two marked points (via shape:linear through A with the A→B
+     slope), so the dots are guaranteed to sit exactly on the curve.
+     Earlier this spec hand-placed the points as raw coords that drifted
+     ~0.03 below the line — fixed by construction here.
+        slope = (B.y − A.y)/(B.x − A.x) = (0.36 − 0.66)/(0.62 − 0.30)
+              = −0.30/0.32 = −0.9375
+     B lies on the line: 0.66 + (−0.9375)(0.62 − 0.30) = 0.36 ✓ */
+  var A = { x: 0.300, y: 0.660 };  // Q2, P2  (after the price rise)
+  var B = { x: 0.620, y: 0.360 };  // Q1, P1  (original)
+  var SLOPE = -0.9375;
 
   window.ECONOS_CETERIS_DEMAND_SPEC = {
     width: 440,
@@ -27,13 +36,13 @@
     },
 
     curves: [
-      { d: 'M 0.120,0.860 L 0.880,0.150',
+      { id: 'D', shape: { type: 'linear', through: [A.x, A.y], slope: SLOPE, extend: [0.08, 0.92] },
         tone: 'blue', label: 'D', strokeWidth: 3, labelDx: 8, labelDy: 6 }
     ],
 
     points: [
-      { x: B.x, y: B.y, tone: 'slate', radius: 5.5, gridlines: 'gray' },
-      { x: A.x, y: A.y, tone: 'slate', radius: 5.5, gridlines: 'gray' }
+      { x: B.x, y: B.y, on: 'D', tone: 'slate', radius: 5.5, gridlines: 'gray' },
+      { x: A.x, y: A.y, on: 'D', tone: 'slate', radius: 5.5, gridlines: 'gray' }
     ],
 
     arrows: [

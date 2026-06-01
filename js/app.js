@@ -1078,6 +1078,28 @@
   // Returns a grid-template-columns value that lays out N items without
   // leaving a single-item orphan row. 4 → 2x2 (not 3+1), 7 → 4+3, etc.
   // Falls back to auto-fill for very long lists.
+  // Build the HTML for a tileGrid block. Shared by renderCardGeneric and
+  // renderCardAdInteractive so cards on either path can drop in the same
+  // responsive 3×2 (default) panel. CSS class .tile-grid handles the
+  // 3→2→1 column breakpoints (see styles.css).
+  function buildTileGridHtml(tg) {
+    if (!tg || !Array.isArray(tg.items) || !tg.items.length) return '';
+    let html = '';
+    if (tg.label) html += genSecLabel(tg.emoji || '🧩', tg.label);
+    html += `<div class="tile-grid" style="display:grid;gap:14px;margin-bottom:26px;">`;
+    html += tg.items.map(it => {
+      const t = PATTERN_TONES[it.tone || 'slate'] || PATTERN_TONES.slate;
+      return `
+        <div style="border-radius:12px;background:${t.bg};border:1.5px solid ${t.border};padding:22px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div style="font-size:34px;line-height:1;">${it.icon || ''}</div>
+          <div style="font-size:14.5px;font-weight:800;color:${t.label};line-height:1.25;">${it.title || ''}</div>
+          ${it.sub ? `<div style="font-size:12.5px;color:${t.accent};line-height:1.4;font-weight:600;">${it.sub}</div>` : ''}
+        </div>`;
+    }).join('');
+    html += `</div>`;
+    return html;
+  }
+
   function gridColumnsFor(n, minPx = 155) {
     if (n === 4) return 'repeat(2, 1fr)';
     if (n === 7 || n === 8) return 'repeat(4, 1fr)';
@@ -2434,6 +2456,16 @@
           </div>`;
       }).join('');
       content += `</div>`;
+    }
+
+    // Tile grid – a responsive N-tile "examples of X" panel. Each tile is
+    // a tone-coloured card with a large icon, bold title and a one-line
+    // sub. Replaces the old hand-rolled fixed-viewBox SVGs (landTypesSvg,
+    // capitalTypesSvg) so the grid responds to the viewport: 3 cols on
+    // desktop → 2 cols on tablet → 1 col on phone.
+    //   Pattern: tileGrid: { label?, emoji?, items: [{tone,icon,title,sub}] }
+    if (c.tileGrid && Array.isArray(c.tileGrid.items) && c.tileGrid.items.length) {
+      content += buildTileGridHtml(c.tileGrid);
     }
 
     // Versus list – a stack of "A vs B" conflict rows, each two tinted
@@ -4817,6 +4849,8 @@
 
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
 
+      ${c.tileGrid ? buildTileGridHtml(c.tileGrid) : ''}
+
       ${c.visualKey2 && I[c.visualKey2] ? `${c.visualLabel2 ? genSecLabel(c.visualEmoji2 || '📊', c.visualLabel2) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey2]}</div>${c.visualCaption2 ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption2}</div>` : ''}` : ''}
 
       ${buildInteractiveDiagramHtml(c)}
@@ -6018,6 +6052,7 @@
        !Array.isArray(c.table.rows[0])) ||
       c.conceptBoxes !== undefined ||
       c.methodGrid !== undefined ||
+      c.tileGrid !== undefined ||
       c.chipWall !== undefined ||
       c.classifyList !== undefined ||
       c.splitDecision !== undefined ||

@@ -5866,13 +5866,20 @@
     let cardFoot;
     if (isLast) {
       const quizBtn  = hasQuiz     ? `<button class="btn btn--primary" data-action="take-quiz">Take the quiz ${I.arrowRight}</button>` : '';
-      /* When a quiz exists, "Take the quiz" is the only forward action —
-         the quiz's own results screen handles moving on. Otherwise offer
-         the next stage of this topic (Link it / Land it), falling back to
-         the next topic's Learn It. */
-      const nextBtn  = (!hasQuiz && stageHref)
-        ? `<a href="${stageHref}" class="btn btn--primary" style="text-decoration:none;">${stageLabel} ${I.arrowRight}</a>`
-        : (!hasQuiz && nextTopicId ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '');
+      /* Always offer a forward path. When a quiz exists, surface BOTH
+         the quiz CTA AND the next-stage / next-topic button — so the
+         learner can pick: drill in with the quiz, or skip ahead. The
+         quiz button is the primary CTA (filled blue); the onward link
+         is secondary (ghost). Previously the next-topic button was
+         hidden whenever a quiz existed, so card 7 of 7 left learners
+         staring at a single button with no onward jump. */
+      const nextStageBtn = stageHref
+        ? `<a href="${stageHref}" class="btn ${hasQuiz ? 'btn--ghost' : 'btn--primary'}" style="text-decoration:none;${hasQuiz ? 'border:1.5px solid #CBD5E1;' : ''}">${stageLabel} ${I.arrowRight}</a>`
+        : '';
+      const nextTopicBtn = !stageHref && nextTopicId
+        ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn ${hasQuiz ? 'btn--ghost' : 'btn--primary'}" style="text-decoration:none;${hasQuiz ? 'border:1.5px solid #CBD5E1;' : ''}" title="${nextTopicName}">Next topic ${I.arrowRight}</a>`
+        : '';
+      const nextBtn  = nextStageBtn || nextTopicBtn;
       const fallback = (!quizBtn && !nextBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
       cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${quizBtn}${nextBtn}${fallback}</div></div>`;
     } else {

@@ -12698,49 +12698,56 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 .quiz-ce-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: var(--sp-3);
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
 }
 .quiz-ce-col__head {
-  font-size: 0.7rem;
-  font-weight: 800;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
   text-transform: uppercase;
   letter-spacing: .08em;
-  margin-bottom: 10px;
-  padding: 3px 10px;
-  border-radius: 20px;
+  margin-bottom: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: 999px;
   display: inline-block;
 }
-.quiz-ce-col__head--cause  { color: #1D4ED8; background: #EFF6FF; }
-.quiz-ce-col__head--effect { color: #92400E; background: #FFFBEB; }
+.quiz-ce-col__head--cause  { color: var(--econ-blue-700);  background: var(--econ-blue-50); }
+.quiz-ce-col__head--effect { color: var(--econ-amber-700); background: var(--econ-amber-50); }
 
+/* Cause-effect tile mirrors the unified quiz-tile system (same token-
+   based border, radius, padding, hover/select/correct/wrong colours
+   as MCQ / elastic-sort / odd-one-out / match-pairs). The cause vs
+   effect distinction is carried by a 4px left-border accent in the
+   column's tone, not by per-tile typography. */
 .quiz-ce-tile {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--sp-2);
   width: 100%;
   min-height: 64px;
-  padding: 10px 12px;
-  margin-bottom: 8px;
-  border-radius: 10px;
-  border: 2px solid #E5E7EB;
-  background: #fff;
+  padding: var(--sp-3) var(--sp-4);
+  margin-bottom: var(--sp-2);
+  border-radius: var(--r-lg);
+  border: 1.5px solid var(--econ-gray-200);
+  background: var(--econ-white);
   cursor: pointer;
-  font-size: 0.82rem;
-  line-height: 1.35;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
   color: var(--econ-ink);
   text-align: left;
-  transition: border-color .15s, background .15s, box-shadow .15s;
+  transition: all 0.18s ease;
 }
-.quiz-ce-tile--cause  { border-left: 4px solid #BFDBFE; }
-.quiz-ce-tile--effect { border-left: 4px solid #FDE68A; }
+.quiz-ce-tile--cause  { border-left: 4px solid var(--econ-blue-200, #BFDBFE); }
+.quiz-ce-tile--effect { border-left: 4px solid var(--econ-amber-200, #FDE68A); }
 .quiz-ce-tile:hover:not(:disabled):not(.ce-linked):not(.ce-correct):not(.ce-wrong) {
-  border-color: #93C5FD;
-  background: #F0F9FF;
+  border-color: var(--econ-amber);
+  background: var(--econ-amber-50);
 }
 .quiz-ce-tile.ce-sel {
-  border-color: #F43F5E;
-  background: #FFF1F2;
+  border-color: var(--econ-rose);
+  background: var(--econ-rose-50);
   box-shadow: 0 0 0 3px #FECDD3;
 }
 .quiz-ce-tile.ce-linked {
@@ -12749,13 +12756,13 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   cursor: pointer;
 }
 .quiz-ce-tile.ce-correct {
-  border-color: #10B981 !important;
-  background: #F0FDF4 !important;
+  border-color: var(--econ-green) !important;
+  background: var(--econ-green-50) !important;
   cursor: default;
 }
 .quiz-ce-tile.ce-wrong {
-  border-color: #F43F5E !important;
-  background: #FFF1F2 !important;
+  border-color: var(--econ-rose) !important;
+  background: var(--econ-rose-50) !important;
   cursor: default;
 }
 .quiz-ce-badge {
@@ -12765,15 +12772,16 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   border-radius: 50%;
   color: #fff;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: var(--fw-bold);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background .2s;
 }
+.quiz-ce-badge:empty { display: none; }
 .quiz-ce-text { flex: 1; }
 .quiz-ce-tally {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   color: var(--econ-muted);
   text-align: center;
   margin-bottom: var(--sp-3);
@@ -12822,40 +12830,45 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 /* ============================================================
    Quiz — Match pairs (.quiz-mp-*)
    ============================================================ */
+/* Match-pairs styling mirrors the elastic_sort card system (`.quiz-es-*`)
+   so the two quiz formats feel like they live in the same product:
+   same border tone, same radius, same Fraunces label, same hover
+   amber. The previous styling — tight 80px rows, 0.78rem sans-serif,
+   2px grey border — read as a completely different widget compared
+   to the chunky bold-serif cards of the sort questions. */
 .quiz-mp-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 80px;
-  gap: 8px;
-  margin-bottom: var(--sp-3);
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
 }
 @media (max-width: 520px) {
-  .quiz-mp-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 72px; }
+  .quiz-mp-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .quiz-mp-tile {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 8px 10px;
-  border-radius: 10px;
-  border: 2px solid #E5E7EB;
-  background: #fff;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  border-radius: var(--r-lg);
+  border: 1.5px solid var(--econ-gray-200);
+  background: var(--econ-white);
   cursor: pointer;
-  font-size: 0.78rem;
-  line-height: 1.3;
   text-align: center;
   color: var(--econ-ink);
-  overflow: hidden;
-  transition: border-color .15s, background .15s, box-shadow .15s;
+  min-height: 110px;
+  transition: all 0.18s ease;
 }
 .quiz-mp-tile:hover:not(:disabled):not(.mp-linked):not(.mp-correct):not(.mp-wrong) {
-  border-color: #93C5FD;
-  background: #F0F9FF;
+  border-color: var(--econ-amber);
+  background: var(--econ-amber-50);
 }
 .quiz-mp-tile.mp-sel {
-  border-color: #F43F5E;
-  background: #FFF1F2;
+  border-color: var(--econ-rose);
+  background: var(--econ-rose-50);
   box-shadow: 0 0 0 3px #FECDD3;
 }
 .quiz-mp-tile.mp-linked {
@@ -12864,31 +12877,41 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   cursor: pointer;
 }
 .quiz-mp-tile.mp-correct {
-  border-color: #10B981 !important;
-  background: #F0FDF4 !important;
+  border-color: var(--econ-green) !important;
+  background: var(--econ-green-50) !important;
   cursor: default;
 }
 .quiz-mp-tile.mp-wrong {
-  border-color: #F43F5E !important;
-  background: #FFF1F2 !important;
+  border-color: var(--econ-rose) !important;
+  background: var(--econ-rose-50) !important;
   cursor: default;
 }
 .quiz-mp-badge {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   color: #fff;
-  font-size: 10px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: var(--fw-bold);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background .2s;
 }
-.quiz-mp-text { flex: 1; }
+.quiz-mp-badge:empty { display: none; }
+.quiz-mp-text {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-section);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  line-height: 1.3;
+  color: var(--econ-ink);
+}
 .quiz-mp-tally {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   color: var(--econ-muted);
   text-align: center;
   margin-bottom: var(--sp-3);
@@ -12911,19 +12934,23 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   gap: var(--sp-3);
   margin-bottom: var(--sp-3);
 }
+/* Categorise — bucket is a dashed drop-zone (token-based gray-200
+   border), item is a pill button using the same token palette as the
+   other quiz answer tiles. */
 .quiz-cat-bucket {
-  border: 2px dashed var(--econ-gray-200, #E5E7EB);
-  border-radius: 10px;
-  padding: var(--sp-2) var(--sp-3);
-  min-height: 80px;
+  border: 2px dashed var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-3) var(--sp-4);
+  min-height: 96px;
   cursor: pointer;
-  transition: border-color .15s, background .15s;
-  background: var(--econ-gray-50, #F9FAFB);
+  transition: all 0.18s ease;
+  background: var(--econ-gray-50);
 }
-.quiz-cat-bucket:hover { border-color: var(--econ-amber, #F59E0B); background: var(--econ-amber-50, #FFFBEB); }
+.quiz-cat-bucket:hover { border-color: var(--econ-amber); background: var(--econ-amber-50); }
 .quiz-cat-bucket__label {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
   text-transform: uppercase;
   letter-spacing: .06em;
   color: var(--econ-muted);
@@ -12935,9 +12962,9 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   gap: var(--sp-1);
 }
 .quiz-cat-bucket__items .quiz-cat-item {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   line-height: 1.3;
-  padding: 4px 10px;
+  padding: var(--sp-1) var(--sp-3);
 }
 .quiz-cat-items {
   display: flex;
@@ -12946,23 +12973,25 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   margin-bottom: var(--sp-3);
   min-height: 40px;
   padding: var(--sp-2);
-  border: 1px solid var(--econ-gray-100, #F3F4F6);
-  border-radius: 8px;
+  border: 1px solid var(--econ-gray-100);
+  border-radius: var(--r-md);
 }
 .quiz-cat-item {
-  padding: var(--sp-1) var(--sp-3);
-  border-radius: 20px;
-  border: 1.5px solid var(--econ-gray-200, #E5E7EB);
-  background: #fff;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: 999px;
+  border: 1.5px solid var(--econ-gray-200);
+  background: var(--econ-white);
   cursor: pointer;
-  font-size: 0.83rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
   color: var(--econ-ink);
   line-height: 1.4;
-  transition: border-color .15s, background .15s;
+  transition: all 0.18s ease;
 }
 .quiz-cat-item:hover:not(:disabled):not(.cat-correct):not(.cat-wrong) {
-  border-color: var(--econ-amber, #F59E0B);
-  background: var(--econ-amber-50, #FFFBEB);
+  border-color: var(--econ-amber);
+  background: var(--econ-amber-50);
 }
 .quiz-cat-item.cat-selected {
   border-color: var(--econ-amber, #F59E0B);

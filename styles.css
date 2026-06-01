@@ -2695,7 +2695,14 @@ img, svg { display: block; max-width: 100%; }
   [style*="grid-template-columns:repeat"],
   [style*="grid-template-columns: repeat"],
   [style*="grid-template-columns:1fr auto 1fr"],
-  [style*="grid-template-columns: 1fr auto 1fr"] {
+  [style*="grid-template-columns: 1fr auto 1fr"],
+  /* chart-beside-text rows (diagramPanel side layout + interactiveDiagram)
+     — stack the SVG on top and the description underneath on phones,
+     matching every other chart on the site. */
+  [style*="grid-template-columns:1.35fr 1fr"],
+  [style*="grid-template-columns: 1.35fr 1fr"],
+  [style*="grid-template-columns:1.55fr 1fr"],
+  [style*="grid-template-columns: 1.55fr 1fr"] {
     grid-template-columns: 1fr !important;
   }
   /* Tighten the inline gap a bit too — 14-18 px gaps on tile rows

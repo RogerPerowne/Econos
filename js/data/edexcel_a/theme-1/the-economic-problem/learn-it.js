@@ -444,27 +444,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 9 of 12',
       title: 'Enterprise & Institutions',
       lede: 'Enterprise is the <strong>risk-taking and decision-making function</strong> that organises the other three factors. More broadly, <strong>institutions</strong> – government, legal frameworks, property rights – shape whether enterprise can flourish at all.',
-      factorEngine: {
-        label: 'How enterprise combines the factors',
-        emoji: '🔗',
-        inputs: [
-          { tone: 'green',  icon: '🏞️', label: 'LAND',    contributes: 'Resources', reward: 'Rent' },
-          { tone: 'purple', icon: '👥', label: 'LABOUR',  contributes: 'Skills',    reward: 'Wages' },
-          { tone: 'amber',  icon: '🏭', label: 'CAPITAL', contributes: 'Equipment', reward: 'Interest' }
-        ],
-        coordinator: {
-          tone: 'rose', icon: '🚀',
-          title: 'Enterprise & Institutions',
-          tagline: 'COORDINATES · INNOVATES · BEARS RISK',
-          reward: 'Profit',
-          panel: {
-            title: 'The institutional dimension',
-            lines: ['Property rights · Rule of law', 'Government · Legal frameworks', 'Social norms · Incentive systems'],
-            foot: 'Without these, markets fail'
-          }
-        },
-        output: { tone: 'blue', icon: '🛍️', label: 'Goods & Services' }
-      },
+      visualKey: 'enterpriseCombinationSvg',
       causesLabel: 'The four functions of enterprise',
       causesEmoji: '🎯',
       causes: [

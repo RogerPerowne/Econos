@@ -97,9 +97,10 @@ window.ECONOS_TOPIC = {
         title: 'Worked example – price rises, quantity demanded falls',
         emoji: '📉',
         layout: 'side',
+        position: 'after-table',
         bullets: [
           'If the price of a good rises from P₁ to P₂, quantity demanded falls from Q₁ to Q₂.',
-          '<strong>Held constant (ceteris paribus):</strong> income, tastes and preferences, prices of substitutes and complements, and the number of buyers.',
+          '<strong>Held constant (ceteris paribus):</strong> income; tastes &amp; preferences; prices of substitutes &amp; complements; number of buyers.',
           'Change just one thing – price – and the effect on quantity demanded is clear.'
         ]
       },

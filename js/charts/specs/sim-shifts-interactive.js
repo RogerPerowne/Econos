@@ -129,11 +129,17 @@
       { layer: 'layer-both-down', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
       { layer: 'layer-both-down', x: E2_bd.x, y: E2_bd.y, tone: 'red', radius: 6.5, label: 'E₂' },
 
-      // Title strip dots per state
-      { layer: 'layer-both-up',     x: 0.095, y: 1.031, tone: 'green', radius: 7 },
-      { layer: 'layer-d-up-s-down', x: 0.095, y: 1.031, tone: 'blue',  radius: 7 },
-      { layer: 'layer-d-down-s-up', x: 0.095, y: 1.031, tone: 'blue',  radius: 7 },
-      { layer: 'layer-both-down',   x: 0.095, y: 1.031, tone: 'red',   radius: 7 }
+    ],
+
+    titleStrips: [
+      { layer: 'layer-both-up',     tone: 'green',
+        text: 'Demand and supply both increase → Q rises, P ambiguous' },
+      { layer: 'layer-d-up-s-down', tone: 'blue',
+        text: 'Demand rises, supply falls → P rises, Q ambiguous' },
+      { layer: 'layer-d-down-s-up', tone: 'blue',
+        text: 'Demand falls, supply rises → P falls, Q ambiguous' },
+      { layer: 'layer-both-down',   tone: 'red',
+        text: 'Demand and supply both decrease → Q falls, P ambiguous' }
     ],
 
     texts: [].concat(
@@ -146,13 +152,7 @@
         { layer: 'layer-both-up', x: E2_bu.x, y: -0.050, text: 'Q₂', tone: 'green', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
         { layer: 'layer-d-up-s-down', x: -0.028, y: E2_du.y, text: 'P₂', tone: 'green', bold: true, italic: true, fontSize: 13, anchor: 'end' },
         { layer: 'layer-d-down-s-up', x: -0.028, y: E2_dd.y, text: 'P₂', tone: 'red',   bold: true, italic: true, fontSize: 13, anchor: 'end' },
-        { layer: 'layer-both-down', x: E2_bd.x, y: -0.050, text: 'Q₂', tone: 'red',   bold: true, italic: true, fontSize: 13, anchor: 'middle' },
-
-        // Title strips
-        { layer: 'layer-both-up',     x: 0.450, y: 1.017, text: 'Demand and supply both increase → Q rises, P ambiguous', tone: 'slate', fontSize: 12, anchor: 'middle' },
-        { layer: 'layer-d-up-s-down', x: 0.450, y: 1.017, text: 'Demand rises, supply falls → P rises, Q ambiguous',      tone: 'slate', fontSize: 12, anchor: 'middle' },
-        { layer: 'layer-d-down-s-up', x: 0.450, y: 1.017, text: 'Demand falls, supply rises → P falls, Q ambiguous',      tone: 'slate', fontSize: 12, anchor: 'middle' },
-        { layer: 'layer-both-down',   x: 0.450, y: 1.017, text: 'Demand and supply both decrease → Q falls, P ambiguous', tone: 'slate', fontSize: 12, anchor: 'middle' }
+        { layer: 'layer-both-down', x: E2_bd.x, y: -0.050, text: 'Q₂', tone: 'red',   bold: true, italic: true, fontSize: 13, anchor: 'middle' }
       ]
     ),
 

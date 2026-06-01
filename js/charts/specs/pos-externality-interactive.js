@@ -98,11 +98,17 @@
         x: Eopt.x, y: Eopt.y, tone: 'green', radius: 7, hollow: true,
         label: 'E*', labelDx: 0, labelDy: -16, anchor: 'middle' },
 
-      // Title-strip dots
-      { layer: 'layer-legend-base',       x: 0.095, y: 1.031, tone: 'red',    radius: 7 },
-      { layer: 'layer-legend-extension',  x: 0.095, y: 1.031, tone: 'purple', radius: 7 },
-      { layer: 'layer-legend-shift',      x: 0.095, y: 1.031, tone: 'green',  radius: 7 },
-      { layer: 'layer-legend-efficiency', x: 0.095, y: 1.031, tone: 'green',  radius: 7 }
+    ],
+
+    titleStrips: [
+      { layer: 'layer-legend-base',       tone: 'red',
+        text: 'Free market equilibrium: MPC = MPB' },
+      { layer: 'layer-legend-extension',  tone: 'purple',
+        text: 'Consumption creates external benefits → MSB sits above MPB' },
+      { layer: 'layer-legend-shift',      tone: 'green',
+        text: 'Socially optimal output: where MSB = MSC' },
+      { layer: 'layer-legend-efficiency', tone: 'green',
+        text: 'Under-consumption → welfare gain triangle forgone' }
     ],
 
     texts: [
@@ -120,17 +126,7 @@
 
       // Welfare-gain label inside green triangle
       { layer: 'layer-wfg', x: (Em.x + Eopt.x + MsbAtQm.x) / 3 + 0.020, y: (Em.y + Eopt.y + MsbAtQm.y) / 3,
-        text: 'Welfare gain', tone: 'green', bold: true, fontSize: 11, anchor: 'middle' },
-
-      // Title strips per state
-      { layer: 'layer-legend-base',       x: 0.450, y: 1.017,
-        text: 'Free market equilibrium: MPC = MPB', tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-legend-extension',  x: 0.450, y: 1.017,
-        text: 'Consumption creates external benefits → MSB sits above MPB', tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-legend-shift',      x: 0.450, y: 1.017,
-        text: 'Socially optimal output: where MSB = MSC', tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-legend-efficiency', x: 0.450, y: 1.017,
-        text: 'Under-consumption → welfare gain triangle forgone', tone: 'slate', fontSize: 12, anchor: 'middle' }
+        text: 'Welfare gain', tone: 'green', bold: true, fontSize: 11, anchor: 'middle' }
     ],
 
     legends: [

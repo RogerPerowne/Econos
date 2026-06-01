@@ -108,31 +108,21 @@
       { layer: 'layer-surplus', x: Qd_surp, y: P2_y, tone: 'slate', radius: 5.5 },
       { layer: 'layer-surplus', x: Qs_surp, y: P2_y, tone: 'slate', radius: 5.5 },
 
-      // Title-strip dots (one per state) — positioned just to the left
-      // of the centred title text so the [dot] + [text] reads as one
-      // unit. The previous x=0.028 placed them in the y-axis-label
-      // gutter where they clashed visually with "Price"; centring the
-      // pair pulls the dot to ~x=0.095 (well clear of the y-axis).
-      { layer: 'layer-base',     x: 0.095, y: 1.031, tone: 'green', radius: 7 },
-      { layer: 'layer-shortage', x: 0.095, y: 1.031, tone: 'blue',  radius: 7 },
-      { layer: 'layer-surplus',  x: 0.095, y: 1.031, tone: 'amber', radius: 7 }
+    ],
+
+    titleStrips: [
+      { layer: 'layer-base',     tone: 'green',
+        text: 'Market in equilibrium · supply meets demand at E' },
+      { layer: 'layer-shortage', tone: 'blue',
+        text: 'Excess demand (shortage) · price rises towards Pₑ' },
+      { layer: 'layer-surplus',  tone: 'amber',
+        text: 'Excess supply (surplus) · price falls towards Pₑ' }
     ],
 
     texts: [
       // Persistent E axis tick labels
       { layer: 'layer-e1', x: -0.028, y: E.y,    text: 'Pₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
       { layer: 'layer-e1', x: E.x,    y: -0.050, text: 'Qₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
-
-      // Title strips (one per state) — centred above the chart so the
-      // [dot] + [text] combo sits clear of the y-axis title gutter.
-      // Anchor 'middle' keeps the text horizontally centred; the dot
-      // (defined above) is positioned to sit immediately to its left.
-      { layer: 'layer-base',     x: 0.450, y: 1.017,
-        text: 'Market in equilibrium · supply meets demand at E', tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-shortage', x: 0.450, y: 1.017,
-        text: 'Excess demand (shortage) · price rises towards Pₑ', tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-surplus',  x: 0.450, y: 1.017,
-        text: 'Excess supply (surplus) · price falls towards Pₑ',  tone: 'slate', fontSize: 12, anchor: 'middle' },
 
       // Shortage labels
       { layer: 'layer-shortage', x: -0.028, y: P1_y, text: 'P₁', tone: 'blue', bold: true, italic: true, fontSize: 13, anchor: 'end' },

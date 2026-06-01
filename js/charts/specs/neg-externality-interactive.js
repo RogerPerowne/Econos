@@ -105,12 +105,17 @@
       { layer: 'layer-optimal',
         x: Eopt.x, y: Eopt.y, tone: 'green', radius: 7, hollow: true,
         label: 'E*', labelDx: 0, labelDy: -16, anchor: 'middle' },
+    ],
 
-      // Title-strip dots
-      { layer: 'layer-legend-base',       x: 0.095, y: 1.031, tone: 'red',    radius: 7 },
-      { layer: 'layer-legend-extension',  x: 0.095, y: 1.031, tone: 'purple', radius: 7 },
-      { layer: 'layer-legend-shift',      x: 0.095, y: 1.031, tone: 'green',  radius: 7 },
-      { layer: 'layer-legend-efficiency', x: 0.095, y: 1.031, tone: 'red',    radius: 7 }
+    titleStrips: [
+      { layer: 'layer-legend-base',       tone: 'red',
+        text: 'Free market equilibrium: MPC = MSB' },
+      { layer: 'layer-legend-extension',  tone: 'purple',
+        text: 'Production imposes external costs → MSC sits above MPC' },
+      { layer: 'layer-legend-shift',      tone: 'green',
+        text: 'Socially optimal output: where MSC = MSB' },
+      { layer: 'layer-legend-efficiency', tone: 'red',
+        text: 'Overproduction → deadweight welfare loss triangle' }
     ],
 
     texts: [
@@ -128,17 +133,7 @@
 
       // DWL label inside red triangle
       { layer: 'layer-dwl', x: (Eopt.x + MscAtQm.x + Em.x) / 3 + 0.020, y: (Eopt.y + MscAtQm.y + Em.y) / 3,
-        text: 'DWL', tone: 'red', bold: true, fontSize: 13, anchor: 'middle' },
-
-      // Title strips per state
-      { layer: 'layer-legend-base',       x: 0.450, y: 1.017,
-        text: 'Free market equilibrium: MPC = MSB', tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-legend-extension',  x: 0.450, y: 1.017,
-        text: 'Production imposes external costs → MSC sits above MPC', tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-legend-shift',      x: 0.450, y: 1.017,
-        text: 'Socially optimal output: where MSC = MSB', tone: 'slate', fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-legend-efficiency', x: 0.450, y: 1.017,
-        text: 'Overproduction → deadweight welfare loss triangle', tone: 'slate', fontSize: 12, anchor: 'middle' }
+        text: 'DWL', tone: 'red', bold: true, fontSize: 13, anchor: 'middle' }
     ],
 
     legends: [

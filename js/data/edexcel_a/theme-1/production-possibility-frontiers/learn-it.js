@@ -25,254 +25,265 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'ppf_1',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Step 1 of 6',
-      title: 'The PPF: one diagram, five concepts',
-      lede: 'The Production Possibility Frontier is the most versatile diagram in Theme 1 – explore construction, opportunity cost, shifts, and efficiency using the interactive diagram below.',
-      diagramKey: 'ppfInteractive',
-      diagramLabel: 'Explore the PPF',
-      diagramEmoji: '📈',
-      steps: [
-        {
-          key: 'base',
-          label: 'Construction',
-          text: 'The PPF shows the <strong>maximum output combinations</strong> of two goods an economy can produce given current resources and technology. A point on the curve is <strong>productively efficient</strong>; inside is <strong>inefficient</strong> (resources wasted); outside is <strong>unattainable</strong>. Use this card to see the full picture – <strong>Card 2</strong> then builds the opportunity cost mechanics in detail.'
-        },
-        {
-          key: 'extension',
-          label: 'Opportunity cost',
-          text: 'Moving along the PPF means gaining one good but sacrificing the other – that trade-off is the <strong>opportunity cost</strong>. The bowed-out shape means this cost rises the further you specialise in one good. <strong>Card 2</strong> covers the calculation and the reason the curve bends.'
-        },
-        {
-          key: 'shift',
-          label: 'Shifts',
-          text: 'The PPF shifts <strong>outward</strong> when productive capacity increases and <strong>inward</strong> after negative supply shocks. Movement <em>along</em> PPF₁ is just reallocation of existing resources – the frontier itself does not move. <strong>Card 3</strong> maps out all four movement types.'
-        },
-        {
-          key: 'efficiency',
-          label: 'Efficiency',
-          text: '<strong>Productive efficiency</strong> means being on the PPF – no wasted resources. <strong>Allocative efficiency</strong> means being at the <em>right</em> point on it – producing the combination that best matches consumer preferences. These are different tests. <strong>Card 5</strong> builds this distinction in full.'
-        }
-      ],
-      examEdge: 'In exam diagrams always label: both axes with good names, the PPF curve, a point inside labelled "inefficient", a point on the curve labelled "efficient/on the PPF", and a point outside labelled "unattainable". Missing axis labels or unlabelled points are the most common PPF mark losses.'
+      template: 'framing',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'The PPF – the big picture',
+      lede: 'A production possibility frontier shows the maximum combinations of two goods an economy can produce with its current resources and technology.',
+      tip: { icon: '✅', tone: 'green', text: 'PPFs are about scarcity, choice and opportunity cost.' },
+      diagramPanel: {
+        diagramKey: 'ppfBigPicture',
+        title: 'What a PPF shows',
+        emoji: '📈',
+        layout: 'side',
+        bullets: [
+          '<strong style="color:#2563EB;">A · Productively efficient</strong> — on the frontier, using resources fully and efficiently.',
+          '<strong style="color:#D97706;">B · Inefficient / unemployed</strong> — inside the frontier, resources underused or not fully employed.',
+          '<strong style="color:#059669;">C · Unattainable</strong> — outside the frontier, not possible with current resources and technology.'
+        ]
+      },
+      methodGrid: {
+        label: 'The three core ideas',
+        emoji: '🎯',
+        exampleLabel: 'Memory hook',
+        items: [
+          { tone: 'blue',  icon: '🔒', title: 'Scarcity',        body: 'Resources are limited.',                  example: 'We can’t have it all – choices are forced.' },
+          { tone: 'amber', icon: '⚖️', title: 'Choice',          body: 'More of one good means less of another.', example: 'Every choice has a cost.' },
+          { tone: 'green', icon: '🌱', title: 'Opportunity cost', body: 'The next best alternative forgone.',       example: 'What you give up is the real cost.' }
+        ]
+      },
+      tileGrid: {
+        label: 'Assumptions',
+        emoji: '📄',
+        items: [
+          { tone: 'blue', icon: '👥', title: 'Resources fixed',  sub: 'A given amount of labour, capital, land and enterprise — no change in total resources.' },
+          { tone: 'blue', icon: '⚙️', title: 'Technology fixed', sub: 'Methods of production stay the same — no technological improvement.' },
+          { tone: 'blue', icon: '✅', title: 'Full employment',  sub: 'All resources used fully and efficiently — the economy sits on the frontier.' }
+        ]
+      },
+      keyTakeaway: 'A PPF is not just a curve – it is a visual summary of scarcity, efficiency and trade-offs.',
+      examEdge: 'In essays, use the PPF to show opportunity cost, unemployment inside the curve, and economic growth when the frontier shifts out.'
     },
 
     {
       id: 'ppf_2',
-      stepLabel: 'Learn: Step 2 of 6',
-      title: 'Opportunity Cost and the Bowed-Out Shape',
-      tip: { icon: '💡', tone: 'blue', text: 'Opportunity cost changes at every point on the curve – and the bowed-out shape is what makes it rise as you specialise in one good.' },
-      interactiveDiagram: {
-        svgKey: 'ppfBowedOutInteractive',
-        label: 'See opportunity cost rise as you move along the curve',
-        emoji: '📈',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'The PPF',
-            tone: 'blue',
-            head: 'The production possibility frontier',
-            body: 'This bowed-out curve reflects a key property of real economies: resources are not equally suited to producing both goods. Move along the curve from left to right and watch how the trade-off changes at each point.',
-            analysis: 'The shape encodes information about resource adaptability. A straight-line PPF would mean perfect homogeneity – every unit of labour, land, and capital equally suited to either good. Real economies have specialists: surgeons, farmers, software engineers, factories. The bowed-out (concave) curve is the visual signature of that specialisation.'
-          },
-          {
-            label: 'Low opportunity cost',
-            tone: 'green',
-            head: 'Pa – small sacrifice, decent gain',
-            body: 'A 30-unit gain in Good B costs only 11 units of Good A. The first resources to transfer are those least suited to Good A – moving them costs little because they were barely productive there anyway.',
-            analysis: 'Early specialisation is cheap. The economy deploys its most adaptable resources first – those with the weakest attachment to Good A. They were only marginally productive there; moving them to Good B yields a large gain at a small sacrifice. The opportunity cost ratio (vertical leg ÷ horizontal leg of the triangle) is small.'
-          },
-          {
-            label: 'Rising opportunity cost',
-            tone: 'amber',
-            head: 'Pb – same gain, bigger sacrifice',
-            body: 'The same gain in Good B now costs roughly twice as much Good A. The resources switching now were better suited to Good A – their transfer is proportionally costlier. Compare the two triangles: equal width, but Pb\'s is visibly taller.',
-            analysis: 'The economy has used up its easy transfers. Remaining resources in Good A are progressively more specialised – more productive there and less adaptable to Good B. Transferring them yields a smaller gain relative to the sacrifice. The ratio grows. This is increasing opportunity cost made visible: the triangle taller despite the same horizontal step.'
-          },
-          {
-            label: 'High opportunity cost',
-            tone: 'rose',
-            head: 'Pc – steep sacrifice for modest gain',
-            body: 'A smaller gain in Good B now costs far more Good A. All three triangles share similar widths, but the vertical sacrifices are 11, 24, and 40 units respectively. The law of increasing opportunity cost, graphed.',
-            analysis: 'The most specialised resources are the last to transfer, so their opportunity cost is enormous and the PPF steepens near the axis. A straight-line PPF only arises if resources are perfectly homogeneous. Draw a straight line only when a question specifies constant opportunity cost – otherwise the bowed-out curve is more realistic and earns the mark.'
-          }
+      template: 'framing',
+      stepLabel: 'Learn: Step 2 of 7',
+      title: 'Efficiency, unemployment and impossibility',
+      lede: 'Where a point sits relative to the frontier tells us whether resources are used efficiently, underused, or are currently unattainable.',
+      tip: { icon: '✅', tone: 'green', text: 'On the curve = efficient. Inside = underused. Outside = unattainable.' },
+      diagramPanel: {
+        diagramKey: 'ppfClassify',
+        title: 'Classify the point',
+        emoji: '🎯',
+        layout: 'side',
+        bullets: [
+          '<strong style="color:#2563EB;">A · Productively efficient</strong> — on the frontier. All resources fully used: no waste, no unemployment.',
+          '<strong style="color:#D97706;">B · Productively inefficient</strong> — inside the frontier. Some resources underused or unemployed (spare capacity).',
+          '<strong style="color:#059669;">C · Unattainable now</strong> — outside the frontier. Achievable only with more resources or better technology.'
         ]
       },
-      keyTerms: [
-        { term: 'Opportunity cost on PPF', def: 'The quantity of one good given up to produce one more unit of the other – equal to the gradient of the PPF at that point.' },
-        { term: 'Constant opportunity cost', def: 'Straight-line PPF: resources are perfectly substitutable; the trade-off ratio is fixed regardless of output mix.' },
-        { term: 'Increasing opportunity cost', def: 'Bowed-out PPF (concave to origin): resources are specialised, so each extra unit of one good costs progressively more of the other as specialisation deepens.' },
-        { term: 'Resource specificity', def: 'Resources are not equally suited to all uses – a surgeon and a farmer are not interchangeable without cost. This is what bows the PPF outward.' }
-      ],
-      examEdge: 'To calculate opportunity cost: find how many units of one good are sacrificed per unit gained of the other. From a diagram: read the slope. Show the step – "output of B falls from X to Y while A rises by Z, so OC = (X−Y)/Z units of B per unit of A." Draw a straight-line PPF only when the question specifies constant opportunity cost or perfectly homogeneous resources – in all other cases, the bowed-out curve is more realistic and earns the mark.'
+      methodGrid: {
+        label: 'What each region means',
+        emoji: '📍',
+        items: [
+          { tone: 'amber', icon: '📉', title: 'Recession / spare capacity', body: 'The economy operates <strong>inside</strong> the curve — unemployment or idle resources exist.' },
+          { tone: 'blue',  icon: '👥', title: 'Full employment',            body: 'The economy operates <strong>on</strong> the curve — resources fully used, no spare capacity.' },
+          { tone: 'green', icon: '📈', title: 'Long-run growth',             body: 'Only pushing the frontier <strong>outward</strong> turns today’s unattainable point into a possible one.' }
+        ]
+      },
+      note: { icon: 'ℹ️', tone: 'blue', text: 'Moving from inside the curve to the frontier does <strong>not</strong> require economic growth — it requires better use of existing resources.' },
+      keyTakeaway: 'The PPF separates what is efficient, what is wasteful, and what is not yet possible.',
+      examEdge: 'Always state whether a point is on, inside, or outside the frontier before explaining the economics.'
     },
 
     {
       id: 'ppf_3',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 6',
-      diagramKey: 'ppfMovesInteractive',
-      title: 'Four Types of PPF Movement',
-      lede: 'Not all output changes are equal – explore the four distinct ways an economy can change its production position and what each one means for capacity.',
+      stepLabel: 'Learn: Step 3 of 7',
+      title: 'Opportunity cost – moving along the frontier',
+      lede: 'When resources are fixed, producing more of one good means sacrificing some of the other good.',
+      tip: { icon: '✅', tone: 'green', text: 'Opportunity cost is the next best alternative forgone.' },
+      diagramKey: 'ppfOppCost',
+      diagramLabel: 'A move along the curve',
+      diagramEmoji: '📈',
       steps: [
-        { key: 'along',    label: 'Movement along', text: 'Moving from D to E along PPF₁ means choosing to produce <strong>more capital goods</strong> but <strong>fewer consumer goods</strong>. The PPF itself does not move – existing resources are just reallocated. Every step along the curve has an <strong>opportunity cost</strong> equal to the slope of the PPF at that point.' },
-        { key: 'recovery', label: 'Short-run recovery', text: 'Point X is <strong>inside</strong> the PPF – resources are idle (unemployment, spare capacity). As aggregate demand recovers, firms rehire workers and reactivate capacity. Output rises from X toward PPF₁. The frontier does NOT shift – this is <strong>demand-side / short-run growth</strong>.' },
-        { key: 'outward',  label: 'Outward shift',   text: 'The PPF shifts outward from PPF₁ to PPF₂ when <strong>productive capacity permanently increases</strong>: better technology, more capital investment, population growth, or improved skills. This is <strong>supply-side / long-run growth</strong> – the economy\'s ceiling rises for good.' },
-        { key: 'inward',   label: 'Inward shift',    text: 'Negative supply shocks push the PPF inward to PPF₃: war destroys capital, natural disasters eliminate resources, "brain drain" depletes skilled labour, or sustained disinvestment causes capital depreciation. <strong>Maximum productive capacity falls permanently.</strong>' }
+        { key: 'ab', label: 'Move A → B',
+          text: '<div style="font-size:13.5px;color:#0B1426;line-height:1.7;"><strong style="color:#D97706;">Capital goods rise from 20 → 30</strong> <span style="color:#475569;">(+10)</span><br><strong style="color:#D97706;">Consumer goods fall from 80 → 65</strong> <span style="color:#475569;">(−15)</span><br><br><strong>Opportunity cost = 15 consumer goods.</strong></div>' },
+        { key: 'bc', label: 'Move B → C',
+          text: '<div style="font-size:13.5px;color:#0B1426;line-height:1.7;"><strong style="color:#DC2626;">Capital goods rise from 30 → 40</strong> <span style="color:#475569;">(+10)</span><br><strong style="color:#DC2626;">Consumer goods fall from 65 → 40</strong> <span style="color:#475569;">(−25)</span><br><br><strong>Opportunity cost = 25 consumer goods.</strong></div>' }
       ],
-      examEdge: 'Classic exam trap: "Country A recovers from recession" → a point inside moves ONTO PPF₁ – do NOT draw an outward shift. "Country A invests in new technology" → PPF₁ shifts out to PPF₂. Naming the type of growth (demand-side vs supply-side) earns a mark in its own right – always state it explicitly.'
+      flowTitle: 'Why every move along the curve has a cost',
+      flowEmoji: '🔁',
+      flow: [
+        { icon: '🏭', title: 'Want more capital goods', sub: '',  tone: 'blue'   },
+        { icon: '🛒', title: 'Must give up consumer goods', sub: '', tone: 'amber' },
+        { icon: '⚖️', title: 'The sacrifice is the opportunity cost', sub: '', tone: 'green' }
+      ],
+      methodGrid: {
+        label: 'Why this matters',
+        emoji: '💡',
+        items: [
+          { tone: 'blue',   icon: '👤',  title: 'Every choice has a cost',                  body: 'You can’t have more of everything. Choosing one option means giving up another.' },
+          { tone: 'amber',  icon: '⚖️',  title: 'Cost is measured in real alternatives',    body: 'Opportunity cost is what you <em>forgo</em> when you make a choice — not just the money price.' },
+          { tone: 'green',  icon: '📈',  title: 'The PPF makes trade-offs visible',          body: 'Moving along the curve shows exactly how one good is exchanged for the other.' }
+        ]
+      },
+      tipLate: { icon: '⚠️', tone: 'amber', text: '<strong>No free lunch</strong> – more of one thing means less of something else while resources stay fixed.' },
+      keyTakeaway: 'A movement along the frontier shows choice and opportunity cost, not economic growth.',
+      examEdge: 'Use the phrase ‘opportunity cost’ explicitly when explaining a movement from one point on the PPF to another.'
     },
 
     {
       id: 'ppf_4',
-      stepLabel: 'Learn: Step 4 of 6',
-      title: 'Consumer vs Capital Goods Trade-Off',
-      tip: { icon: '💡', tone: 'blue', text: 'Every economy chooses where to sit on the consumer–capital goods PPF. The choice today shapes where the PPF will be tomorrow.' },
+      stepLabel: 'Learn: Step 4 of 7',
+      title: 'Why the PPF bows out',
+      lede: 'The bowed shape of the PPF reflects increasing opportunity cost. Resources are not equally good at producing both goods, so each extra unit comes at a bigger sacrifice.',
+      tip: { icon: '✅', tone: 'green', text: 'The curve bows out because resources are specialised.' },
       interactiveDiagram: {
-        svgKey: 'ppfConsumerCapital',
-        label: 'From "now" to "later" — the investment trade-off',
+        svgKey: 'ppfBowedOutInteractive',
+        label: 'Increasing opportunity cost',
         emoji: '📈',
-        // Every layer the engine emits, in the order it's emitted.
-        // Per-view `show` arrays below pick exactly which to display.
-        layers: ['countries', 'ppf1s', 'ppf1d', 'a-lbl', 'b-pos', 'a-b-arrow', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
+        layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
-          {
-            label: 'Country positions',
-            tone: 'blue',
-            show: ['countries', 'ppf1s'],
-            head: 'Where countries sit on the PPF',
-            body: 'Every economy chooses a mix of consumer goods (households buy today) and capital goods (boost FUTURE production). The UK, Germany and China sit at very different points on the same conceptual PPF.',
-            analysis: 'Investment ratios drive the position: UK ~18%, Germany ~22%, China ~42% of GDP. China\'s growth has been directly dependent on sustained capital allocation. The UK\'s low investment ratio is one structural reason its long-run growth has lagged.'
-          },
-          {
-            label: 'Sacrifice for growth',
-            tone: 'purple',
-            show: ['ppf1s', 'a-lbl', 'b-pos', 'a-b-arrow'],
-            head: 'UK moves A → B along PPF₁',
-            body: 'To grow faster, the UK can move ALONG PPF₁ from A to B: produce LESS consumer goods now, MORE capital goods. The dashed gridlines mark B\'s position.',
-            analysis: 'This is movement along the EXISTING PPF — not a shift. The opportunity cost is real: lower present living standards. Post-war Germany, Japan and South Korea sustained this choice for decades.'
-          },
-          {
-            label: 'PPF₂: B → C',
-            tone: 'green',
-            show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow'],
-            head: 'Investment shifts the frontier outward',
-            body: 'Years of producing at B builds the capital stock. PPF₁ (now dashed) has shifted to PPF₂. The arrow B → C shows the gain: at the SAME capital level, the country can now produce more CONSUMER GOODS than before.',
-            analysis: 'This is supply-side, long-run growth. The catch: new capital must be PRODUCTIVELY invested. Misallocated investment (white-elephant infrastructure, Soviet five-year plans) builds capital that doesn\'t shift the frontier.'
-          },
-          {
-            label: 'C → D along PPF₂',
-            tone: 'green',
-            show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
-            head: 'D — consumer-heavy at HIGHER levels',
-            body: 'The country moves back toward consumer-heavy mix on PPF₂, from C to D. Because PPF₂ is bigger, D has MORE consumer goods AND MORE capital goods than A.',
-            analysis: '<strong>More jam tomorrow IS possible — but only if you stomach less jam today.</strong> A*: distinguish movement along the PPF (A→B, C→D) from a SHIFT (PPF₁→PPF₂); name the opportunity cost at B.'
-          }
+          { label: 'Small cost',      tone: 'green', show: ['idl-1'],
+            head: '+1 capital good early on costs only −1 consumer good.',
+            body: 'Near point A the first resources to move into capital goods are those least suited to consumer-good production. Moving them costs little.',
+            analysis: 'Adaptable resources transfer first. Their opportunity cost is low because they were only marginally productive in their original use.' },
+          { label: 'Larger cost',     tone: 'amber', show: ['idl-1','idl-2'],
+            head: 'Now +1 capital good costs −2 consumer goods.',
+            body: 'Near point B the easy transfers are gone. The resources moving now were genuinely productive in consumer goods, so giving them up hurts more.',
+            analysis: 'The sacrifice has roughly doubled for the same gain. Specialisation starts to bite.' },
+          { label: 'Even larger cost', tone: 'rose', show: ['idl-1','idl-2','idl-3'],
+            head: 'Near C, +1 capital good costs −3 consumer goods.',
+            body: 'The most specialised consumer-good resources are the last to switch. Their opportunity cost is huge — the curve steepens sharply.',
+            analysis: 'Equal increases in capital goods require bigger and bigger decreases in consumer goods. <strong>That is increasing opportunity cost.</strong>' }
         ]
       },
-      keyTerms: [
-        { term: 'Investment ratio',  def: 'Gross Fixed Capital Formation as a % of GDP — the share of an economy\'s output devoted to building productive capital (machines, infrastructure) rather than consumed today.' },
-        { term: 'Deferred consumption', def: 'Choosing to consume LESS now (point B vs A) so that more resources go into capital goods — the opportunity cost paid for long-run growth.' },
-        { term: 'PPF outward shift', def: 'A long-run increase in productive capacity, driven by capital accumulation, better technology, or labour-force growth. Movement along the PPF (A→B) is not a shift; only PPF₁ → PPF₂ is.' }
-      ],
-      examEdge: 'A* moves: name the OPPORTUNITY COST of investment (consumer goods foregone — point A to point B), distinguish movement along the PPF (A→B) from a shift (PPF₁→PPF₂), and link to real countries. Post-war Germany and Japan made this exact choice; their PPFs shifted dramatically outward over the following decades. The UK\'s lower investment ratio is one structural reason its growth has lagged.'
+      methodGrid: {
+        label: 'Why costs rise',
+        emoji: '⚙️',
+        items: [
+          { tone: 'blue',  icon: '👤', title: '1. Best-suited first',     body: 'Some workers, land or capital are highly suited to producing consumer goods.' },
+          { tone: 'amber', icon: '🔄', title: '2. Switch less-suited',     body: 'As production shifts, less-suitable resources must be reallocated.' },
+          { tone: 'rose',  icon: '📈', title: '3. Cost rises',              body: 'Each extra unit of capital goods becomes more expensive in terms of forgone consumer goods.' }
+        ]
+      },
+      versusList: {
+        rows: [{
+          left:  { tone: 'green', icon: '🏃', name: 'Early move (near A)', premise: 'Easy to transfer highly adaptable resources.', reason: 'Small sacrifice of consumer goods.' },
+          right: { tone: 'rose',  icon: '🚶', name: 'Later move (near C)', premise: 'Harder to transfer specialised resources.',   reason: 'Large sacrifice of consumer goods.' }
+        }]
+      },
+      keyTakeaway: 'The bowed shape is visual evidence that factors of production are specialised, not equally adaptable.',
+      examEdge: 'If asked why the PPF is concave to the origin, say ‘increasing opportunity cost due to factor specificity’.'
     },
 
     {
       id: 'ppf_5',
-      stepLabel: 'Learn: Step 5 of 6',
-      title: 'PPF and Economic Efficiency',
-      tip: { icon: '💡', tone: 'blue', text: 'Productive efficiency = ON the PPF. Allocative efficiency = the <em>right</em> point on the PPF. These are different – and examiners test whether you know it.' },
-      interactiveDiagram: {
-        svgKey: 'ppfEfficiencyInteractive',
-        label: 'Build the efficiency picture step by step',
-        emoji: '⚙️',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Three zones',
-            tone: 'blue',
-            head: 'The PPF defines three zones',
-            body: 'Any combination ON the curve is productively feasible and uses all resources fully. Inside is achievable but wastes capacity. Outside is currently impossible.',
-            analysis: 'The PPF is the maximum output frontier: every point on it is a fully employed economy at the limit of its technology and resources. It separates achievable from unachievable, and defines two efficiency concepts often confused: productive (any point on the curve) and allocative (a specific point on it).'
-          },
-          {
-            label: 'Productive inefficiency',
-            tone: 'rose',
-            head: 'H – inside the PPF',
-            body: 'Point H represents idle resources: unemployed workers, spare factory capacity, misallocated inputs. Output could rise without any sacrifice – moving H to the frontier costs nothing.',
-            analysis: 'Common causes: cyclical unemployment (idle capital and labour), structural barriers (skills mismatch, factor immobility), X-inefficiency (management slack). Key exam point: a <em>recession</em> moves the economy <em>inside</em> the PPF – it does not shift the frontier. The frontier shifts only with a change in productive <em>capacity</em>, not how fully it is used.'
-          },
-          {
-            label: 'Productive efficiency',
-            tone: 'green',
-            head: 'Any point ON PPF₁ – productively efficient',
-            body: 'Multiple points sit on the curve. All are productively efficient: resources are fully and efficiently employed. You cannot raise output of one good without reducing the other.',
-            analysis: 'Productive efficiency does NOT mean the right goods are produced – only that output is at maximum capacity. A command economy could sit on its PPF making only guns and no butter: productively efficient but allocatively catastrophic. The market test is P = minimum LRAC – competition forces firms to the lowest point on their long-run average cost curve.'
-          },
-          {
-            label: 'Allocative efficiency',
-            tone: 'amber',
-            head: 'G★ – the one allocatively efficient point',
-            body: 'G★ is the single combination on PPF₁ that society values most: P = MC. Every other on-curve point is productively efficient but allocatively wrong – producing too much of one good relative to what consumers want.',
-            analysis: 'Allocative efficiency requires P = MC: marginal social benefit equals marginal cost. It is one point on the PPF reflecting consumer preferences, and competition drives P → MC. For A*: mention <strong>Pareto efficiency</strong> – at G★ no-one can gain without someone losing. Command economies can\'t find G★ without price signals – the calculation problem.'
-          }
+      template: 'framing',
+      stepLabel: 'Learn: Step 5 of 7',
+      title: 'Shifts in the PPF',
+      lede: 'The whole production possibility frontier shifts when the economy’s productive capacity changes — not when it simply uses existing resources better.',
+      tip: { icon: '✅', tone: 'green', text: 'A shift means the economy can produce more or less than before.' },
+      diagramLabel: 'Three kinds of shift',
+      diagramEmoji: '📈',
+      diagramKey: 'ppfShiftsTrio',
+      methodGrid: {
+        label: 'What causes growth',
+        emoji: '🌱',
+        items: [
+          { tone: 'green', icon: '👥', title: 'More labour and enterprise', body: 'A larger or more active workforce increases productive capacity.' },
+          { tone: 'green', icon: '💰', title: 'More capital and investment', body: 'More machines, infrastructure and tools raise potential output.' },
+          { tone: 'green', icon: '⚙️', title: 'Better technology and productivity', body: 'Improvements allow more output from the same resources.' },
+          { tone: 'green', icon: '🎓', title: 'Better education and skills', body: 'A more skilled population uses resources more effectively.' }
         ]
       },
-      examEdge: 'For A* responses: name <strong>Pareto efficiency</strong> explicitly – G★ is the only Pareto-optimal point on the PPF, where no-one can be made better off without making someone else worse off. Competitive markets approximate this through P = MC. The socialist calculation problem is the sharpest evaluative counter-example: without market price signals, a command economy cannot locate G★, even when it achieves full-capacity output on the PPF.'
+      methodGrid2: {
+        label: 'What causes decline',
+        emoji: '📉',
+        items: [
+          { tone: 'rose', icon: '🌋', title: 'Natural disaster or war',           body: 'Destroys resources and infrastructure, reducing productive capacity.' },
+          { tone: 'rose', icon: '🍃', title: 'Resource depletion',                body: 'Finite resources run down, reducing what can be produced.' },
+          { tone: 'rose', icon: '👥', title: 'Loss of workers or capital stock',  body: 'Emigration, illness, or damage reduces the economy’s capacity.' }
+        ]
+      },
+      note: { icon: 'ℹ️', tone: 'blue', text: 'Moving from an interior point to the frontier is recovery or better efficiency. <strong>Shifting the frontier out is economic growth.</strong>' },
+      keyTakeaway: 'The PPF shifts when productive capacity changes – not when the economy merely uses existing resources better.',
+      examEdge: 'Differentiate clearly between a movement to the frontier and an outward shift of the frontier.'
     },
 
     {
       id: 'ppf_6',
-      stepLabel: 'Learn: Step 6 of 6',
-      title: 'PPF Applications: Trade and Development',
-      tip: { icon: '💡', tone: 'blue', text: 'Trade lets both countries consume <em>outside</em> their own PPF – that is the core economic argument for free trade.' },
-      interactiveDiagram: {
-        svgKey: 'ppfTradeInteractive',
-        label: 'Follow the logic of gains from trade',
-        emoji: '🌐',
-        layers: ['idl-1', 'idl-2'],
-        views: [
-          {
-            label: 'The production frontier',
-            tone: 'blue',
-            head: "A closed economy's consumption ceiling",
-            body: 'Without trade, a country can only consume what it produces. Any consumption point must lie on or inside its own PPF – the frontier is a hard limit set by its resources and technology alone.',
-            analysis: "In autarky, the PPF is simultaneously the production frontier and the consumption possibility set. No point beyond it is achievable, regardless of preferences or willingness to pay. This constraint can only be relaxed in two ways: by shifting the frontier outward (economic growth) or by separating production from consumption through trade."
-          },
-          {
-            label: 'Specialise at P',
-            tone: 'green',
-            head: 'Produce at P – comparative advantage',
-            body: "The economy concentrates production at P, the point where its opportunity cost is lowest. This is comparative advantage: produce what you give up least, not necessarily what you're best at in absolute terms.",
-            analysis: "Comparative advantage doesn't require absolute superiority. Even if a country is less efficient at both goods, it still gains by specialising where it sacrifices less. The gains come from differences in opportunity cost between countries, not absolute productivity gaps. P is the optimal production point given those relative costs."
-          },
-          {
-            label: 'Consume at C',
-            tone: 'amber',
-            head: 'C is outside the PPF – only possible with trade',
-            body: 'By exporting its surplus from specialising at P and importing the other good, the economy reaches consumption point C – a combination it could never produce alone. C lies outside its own PPF.',
-            analysis: "The core welfare case for free trade: trade separates the production decision (where to produce on the PPF) from consumption (where to end up). Both partners reach points beyond their own frontiers, consuming more of both goods than autarky allows. For A*: draw C outside the PPF, label it 'consumption point (with trade)', and note both partners gain."
-          }
+      template: 'framing',
+      stepLabel: 'Learn: Step 6 of 7',
+      title: 'Capital goods vs consumer goods',
+      lede: 'Choosing more capital goods today can mean faster growth tomorrow.',
+      tip: { icon: '✅', tone: 'green', text: 'Sacrifice now can expand future productive capacity.' },
+      diagramLabel: 'Today vs tomorrow',
+      diagramEmoji: '⚖️',
+      diagramKey: 'ppfTodayTomorrow',
+      methodGrid: {
+        label: 'Why capital goods matter',
+        emoji: '📈',
+        items: [
+          { tone: 'blue', icon: '🏭', title: '1. Investment',          body: 'Investment builds machines and infrastructure.' },
+          { tone: 'blue', icon: '📈', title: '2. More productive',      body: 'More capital raises future productivity and efficiency.' },
+          { tone: 'blue', icon: '↔️', title: '3. Larger PPF',           body: 'A larger PPF means higher future potential output.' }
         ]
       },
-      keyTerms: [
-        { term: 'Comparative advantage', def: 'The ability to produce a good at a lower opportunity cost than a trading partner – the basis for mutually beneficial specialisation even when one country has absolute advantage in all goods.' },
-        { term: 'Gains from trade', def: 'The welfare improvement from countries specialising in their comparative-advantage goods and exchanging output – total production rises and both partners can consume more.' },
-        { term: 'Development constraint', def: 'Poor countries face inward PPFs due to capital scarcity, low productivity, and weak institutions – development policy shifts the frontier outward through investment, technology transfer, and reform.' }
+      versusList: {
+        rows: [{
+          left:  { tone: 'blue',  icon: '🛒', name: 'More consumer goods now', premise: 'Higher living standards today, but slower future growth.' },
+          right: { tone: 'amber', icon: '📈', name: 'More growth later',       premise: 'Lower consumption today, but higher future potential.' }
+        }]
+      },
+      note: { icon: 'ℹ️', tone: 'blue', text: 'This is why economies must balance present living standards with future growth.' },
+      keyTakeaway: 'PPFs show that growth often requires a present-day opportunity cost.',
+      examEdge: 'Use capital-vs-consumer-goods examples to link PPF analysis to investment and long-run economic growth.'
+    },
+
+    /* ── CARD 7 — The PPF exam toolkit (consolidation) ────────────── */
+    {
+      id: 'ppf_7',
+      template: 'framing',
+      stepLabel: 'Learn: Step 7 of 7',
+      title: 'The PPF exam toolkit',
+      lede: 'The PPF is one of the most flexible diagrams in introductory economics because it can show scarcity, efficiency, trade-offs, and growth.',
+      tip: { icon: '✅', tone: 'green', text: 'One diagram – many exam uses.' },
+      tileGrid: {
+        label: 'What a PPF can show',
+        emoji: '💼',
+        cols: 3,
+        items: [
+          { tone: 'blue',   icon: '🔒', title: '1. Scarcity',              sub: 'Resources are limited. We cannot produce everything.' },
+          { tone: 'amber',  icon: '⚖️', title: '2. Opportunity cost',      sub: 'Moving along the curve means giving up more of another good.' },
+          { tone: 'green',  icon: '🎯', title: '3. Productive efficiency', sub: 'Points on the frontier use resources fully and efficiently.' },
+          { tone: 'purple', icon: '👤', title: '4. Unemployment / spare capacity', sub: 'Points inside the frontier show resources that are underused.' },
+          { tone: 'blue',   icon: '📈', title: '5. Economic growth',       sub: 'An outward shift shows more resources or better technology.' },
+          { tone: 'cyan',   icon: '🧩', title: '6. Specialisation',        sub: 'The bowed shape shows rising opportunity cost and the gains from trade.' }
+        ]
+      },
+      tileGrid2: {
+        label: 'Common mistakes',
+        emoji: '⚠️',
+        cols: 3,
+        items: [
+          { tone: 'rose', icon: '✕', title: 'Inside the curve is not growth',     sub: 'It is inefficiency or unused resources.' },
+          { tone: 'rose', icon: '✕', title: 'Moving along is not shifting',        sub: 'Movement = trade-off. Shift = more capacity.' },
+          { tone: 'rose', icon: '✕', title: 'Opportunity cost ≠ money price',     sub: 'Always think in terms of the next best alternative.' }
+        ]
+      },
+      flowBottomTitle: 'How to write it',
+      flowBottomEmoji: '✍️',
+      flowBottom: [
+        { icon: '🔍',  title: '1. Identify', body: 'Identify the point or shift on the PPF.', tone: 'blue'   },
+        { icon: '💬',  title: '2. State',    body: 'State what it means clearly.',             tone: 'amber'  },
+        { icon: '🔗',  title: '3. Link',     body: 'Link it to the relevant concept (e.g. scarcity, efficiency, growth).', tone: 'green'  },
+        { icon: '🏛️', title: '4. Finish',   body: 'Finish with the implication for the economy or policy decision.', tone: 'purple' }
       ],
-      examEdge: 'Illustrating C beyond the PPF in your exam diagram is an A*-level response – it shows trade separating production from consumption decisions. The development application uses the same logic in reverse: poor countries have inward PPFs due to capital scarcity and low productivity; outward shifts require investment, technology transfer, or institutional reform – not just trade liberalisation.',
-      economistQuote: {
-        portraitKey: 'economistRicardo',
-        tone: 'amber',
-        label: 'Economist insight: Ricardo and comparative advantage',
-        quote: 'Under a system of perfectly free commerce, each country naturally devotes its capital and labour to such employments as are most beneficial to each. This pursuit of individual advantage is admirably connected with the universal good of the whole.',
-        attribution: 'David Ricardo, <em>On the Principles of Political Economy and Taxation</em> (1817)'
-      },
-      tipLate: {
-        icon: '💡', tone: 'amber', head: 'Why this matters',
-        text: 'Ricardo\'s breakthrough was showing that mutually beneficial trade does <strong>not</strong> require one country to be better at producing everything – it only requires <em>differences in opportunity cost</em>. His famous example: Portugal could produce both wine and cloth more cheaply than England, yet both countries gained by specialising in their comparative-advantage good and trading. The A* move is to anchor any trade or globalisation answer to Ricardo: gains come from <strong>relative</strong>, not absolute, productivity differences – which is why even low-productivity developing economies can benefit from opening to trade.'
-      },
+      note: { icon: 'ℹ️', tone: 'blue', text: 'PPFs help economists tell the story of <strong>choice now, efficiency today, and growth tomorrow</strong>.' },
+      keyTakeaway: 'If you can read a PPF well, you can explain a surprising amount of economics.',
+      examEdge: 'Top answers use the PPF actively — they do not just label the curve, they explain the mechanism.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]

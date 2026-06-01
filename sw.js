@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v245';
+  const CACHE_NAME = 'econos-v246';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -15,6 +15,11 @@
     '/site.webmanifest',
     '/js/charts/ppf.js',
     '/js/charts/specs/ppf-card1.js',
+    '/js/charts/specs/ppf-big-picture.js',
+    '/js/charts/specs/ppf-classify.js',
+    '/js/charts/specs/ppf-opp-cost.js',
+    '/js/charts/specs/ppf-shifts-trio.js',
+    '/js/charts/specs/ppf-today-tomorrow.js',
     '/js/charts/specs/ppf-card2.js',
     '/js/charts/specs/ppf-card3.js',
     '/js/charts/specs/ppf-card4.js',

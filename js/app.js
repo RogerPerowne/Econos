@@ -167,13 +167,14 @@
       tone: b.tone || 'blue',
       label: b.label || '',
       sub: b.sub || '',
+      icon: b.icon || null,
       n: i + 1,
       id: `${idPrefix}-${i}`
     }));
     if (layout === 'triptych') {
       const cols = items.map(it => `
         <div class="branch-tri branch-tri--${it.tone}">
-          <div class="branch-tri__numeral">${it.n}</div>
+          <div class="branch-tri__numeral">${it.icon || it.n}</div>
           <div class="branch-tri__label">${it.label}</div>
           <div class="branch-tri__sub">${it.sub}</div>
         </div>`).join('');
@@ -1402,7 +1403,7 @@
         </div>
       `;
     };
-    if (c.comparison && c.comparison.position !== 'after-diagram' && c.comparison.position !== 'after-causes') {
+    if (c.comparison && c.comparison.position !== 'after-diagram' && c.comparison.position !== 'after-causes' && c.comparison.position !== 'after-branches') {
       renderComparison();
     }
 
@@ -1916,12 +1917,25 @@
         </div>`;
     }
 
-    // Body text – styled as a rich explainer
+    // Body text – styled as a rich explainer. Optional bodyLabel/bodyEmoji
+    // prepend a section eyebrow; bodyTone + bodyIcon switch the plain grey
+    // panel for a tinted callout with an avatar-style icon circle (used for
+    // definition boxes like "What is a value judgement").
     if (c.body) {
-      content += `
-        <div style="font-size:15px;line-height:1.8;color:#0B1426;margin-bottom:22px;padding:18px 20px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;">
-          ${c.body}
-        </div>`;
+      if (c.bodyLabel) content += genSecLabel(c.bodyEmoji || '📝', c.bodyLabel);
+      if (c.bodyTone) {
+        const bt = PATTERN_TONES[c.bodyTone] || PATTERN_TONES.blue;
+        content += `
+          <div style="display:flex;align-items:flex-start;gap:14px;background:${bt.bg};border:1px solid ${bt.border};border-radius:14px;padding:18px 20px;margin-bottom:22px;">
+            ${c.bodyIcon ? `<div style="width:40px;height:40px;border-radius:50%;background:${bt.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${c.bodyIcon}</div>` : ''}
+            <div style="font-size:14.5px;color:#0B1426;line-height:1.65;">${c.body}</div>
+          </div>`;
+      } else {
+        content += `
+          <div style="font-size:15px;line-height:1.8;color:#0B1426;margin-bottom:22px;padding:18px 20px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;">
+            ${c.body}
+          </div>`;
+      }
     }
 
     // Paired: left / right – defines the two things being contrasted, so
@@ -2364,21 +2378,35 @@
     // side-cards separated by the same dark VS badge the comparison block
     // uses. For trade-off / tension content (consumers vs firms, growth vs
     // environment…). Each row may carry a `note` rendered below the pair.
-    //   Pattern: versusList: { label?, emoji?, rows: [{ left:{label,sub,tone}, right:{label,sub,tone}, note? }] }
+    //   Pattern: versusList: { label?, emoji?, vs?, rows: [{ heading?, left, right, note? }] }
+    //   Each side is either simple { label, sub, tone } or rich
+    //   { name, premise, reason, icon?, tone } (avatar + name + dashed-divider
+    //   "Reason:" line — the "Economist A vs Economist B" treatment).
     if (c.versusList && Array.isArray(c.versusList.rows) && c.versusList.rows.length) {
       const vl = c.versusList;
       if (vl.label) content += genSecLabel(vl.emoji || '⚔️', vl.label);
       const sideHtml = (s) => {
         const t = PATTERN_TONES[s.tone || 'blue'] || PATTERN_TONES.blue;
+        if (s.name || s.premise || s.reason) {
+          return `<div style="flex:1;min-width:0;border-radius:14px;background:${t.bg};border:1px solid ${t.border};padding:16px 16px 14px;display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">${s.icon || '👤'}</span>
+              <span style="font-size:15px;font-weight:800;color:${t.label};">${s.name || ''}</span>
+            </div>
+            ${s.premise ? `<div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${s.premise}</div>` : ''}
+            ${s.reason ? `<div style="font-size:13px;color:#0B1426;line-height:1.55;border-top:1px dashed ${t.border};padding-top:9px;"><strong style="color:${t.label};">Reason:</strong> ${s.reason}</div>` : ''}
+          </div>`;
+        }
         return `<div style="flex:1;min-width:0;border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:12px 14px;text-align:center;">
           <div style="font-size:14px;font-weight:800;color:${t.label};margin-bottom:3px;line-height:1.25;">${s.label || ''}</div>
           <div style="font-size:12.5px;color:#0B1426;line-height:1.45;">${s.sub || ''}</div>
         </div>`;
       };
-      const vsBadge = `<div class="versus-list__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,20,38,0.25);">VS</div></div>`;
+      const vsBadge = `<div class="versus-list__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,20,38,0.25);">${vl.vs || 'VS'}</div></div>`;
       content += `<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:26px;">`;
       content += vl.rows.map(row => `
-        <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px;">
+        <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:16px;">
+          ${row.heading ? `<div style="text-align:center;font-size:13px;font-weight:800;color:#2563EB;margin-bottom:12px;letter-spacing:0.01em;">${row.heading}</div>` : ''}
           <div class="versus-list__pair" style="display:flex;align-items:stretch;gap:12px;">${sideHtml(row.left)}${vsBadge}${sideHtml(row.right)}</div>
           ${row.note ? `<div style="text-align:center;font-size:12.5px;color:#475569;line-height:1.5;margin-top:10px;">${row.note}</div>` : ''}
         </div>`).join('');
@@ -2412,6 +2440,13 @@
       content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture');
       const layout = c.branchesLayout || 'stack';
       content += renderBranches(c.branches, layout, 'gen-branch');
+    }
+
+    // After-branches comparison – rendered here when c.comparison.position === 'after-branches'.
+    // Lets a card place a "facts vs values"-style two-card block as the pay-off
+    // beneath the branches triptych, matching mockups where the contrast lands last.
+    if (c.comparison && c.comparison.position === 'after-branches') {
+      renderComparison();
     }
 
     // Flow (late position) – renders AFTER causes/table/branches for cards where
@@ -2726,6 +2761,14 @@
             <div style="display:flex;flex-wrap:wrap;gap:14px 22px;">${liItemsHtml}</div>
           </div>`;
       }
+    }
+
+    // Key takeaway – the positive "big idea" consolidation. Renders just
+    // BEFORE the exam edge so the closing pair reads "big idea → exam tip",
+    // matching the card mockups. (Non-generic templates still emit it from
+    // the renderCard wrapper, which skips generic cards to avoid duplication.)
+    if (c.keyTakeaway) {
+      content += renderKeyTakeaway(c.keyTakeaway);
     }
 
     // Exam edge – always visible
@@ -6029,7 +6072,7 @@
 
           <div class="card">
             ${body}
-            ${renderKeyTakeaway(c.keyTakeaway)}
+            ${isGenericCard(c) ? '' : renderKeyTakeaway(c.keyTakeaway)}
             ${cardFoot}
           </div>
         </div>

@@ -28,7 +28,12 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 3',
       title: 'Positive vs Normative Statements',
       lede: 'Positive statements describe how the world IS and can be tested. Normative statements judge how the world OUGHT to be and rest on values.',
-      tip: { icon: 'ℹ️', text: '<strong>Positive</strong> statements can be tested with evidence. <strong>Normative</strong> statements involve value judgements about what ought to happen.', tone: 'blue' },
+      comparison: {
+        left:  { tone: 'blue',  icon: '🔍', label: 'Positive', caption: 'Describes how the world IS – and can be tested against evidence.' },
+        right: { tone: 'amber', icon: '⚖️', label: 'Normative', caption: 'Judges how the world OUGHT to be – and rests on values.' }
+      },
+      pairLabel: 'What to look for',
+      pairEmoji: '🔎',
       left: {
         label: 'Positive statements',
         points: [
@@ -64,27 +69,43 @@ window.ECONOS_TOPIC = {
       title: 'The role of value judgements',
       lede: 'Two economists can agree on the facts but still disagree on policy. Value judgements about what ought to happen shape the conclusions they reach.',
       tip: { icon: '✅', tone: 'green', text: 'Facts alone do not decide policy – values matter too.' },
+      bodyLabel: 'What is a value judgement',
+      bodyEmoji: '⚖️',
+      bodyTone: 'purple',
+      bodyIcon: '👤',
       body: '<strong>A value judgement is a view based on opinion, ethics or beliefs about what ought to happen.</strong> It goes beyond facts and reflects what people think is desirable or acceptable.',
-      comparison: {
-        title: 'Facts vs values',
-        emoji: '📊',
-        left:  { tone: 'blue',  icon: '📊', label: 'Positive (facts)',     caption: 'Describes what is – based on evidence and data.' },
-        right: { tone: 'amber', icon: '⚖️', label: 'Normative (values)',   caption: 'Judges what ought to be – based on values and beliefs.' }
+      versusList: {
+        label: 'Same facts – different policies',
+        emoji: '👥',
+        rows: [
+          {
+            heading: 'Example 1: Minimum wage',
+            left:  { tone: 'blue',  name: 'Economist A', premise: 'supports a higher minimum wage.', reason: 'improves fairness and helps low-paid workers achieve a decent standard of living.' },
+            right: { tone: 'amber', name: 'Economist B', premise: 'opposes a higher minimum wage.',  reason: 'may lead to job losses and reduce flexibility for firms, especially for young or low-skilled workers.' }
+          },
+          {
+            heading: 'Example 2: Carbon tax',
+            left:  { tone: 'blue',  name: 'Economist A', premise: 'supports a carbon tax.', reason: 'tackles climate change, encourages cleaner choices and protects future generations.' },
+            right: { tone: 'amber', name: 'Economist B', premise: 'opposes a carbon tax.',  reason: 'increases the cost of living and reduces competitiveness for businesses and households.' }
+          }
+        ]
       },
-      causes: [
-        { head: 'Minimum wage', icon: '💷', body: '<strong>Economist A</strong> supports a higher minimum wage – it improves fairness and helps low-paid workers reach a decent standard of living. <strong>Economist B</strong> opposes it – it may cause job losses and reduce flexibility for firms, especially for young or low-skilled workers.' },
-        { head: 'Carbon tax',   icon: '🌍', body: '<strong>Economist A</strong> supports a carbon tax – it tackles climate change, encourages cleaner choices and protects future generations. <strong>Economist B</strong> opposes it – it raises the cost of living and reduces competitiveness for businesses and households.' }
-      ],
-      causesLabel: 'Same facts – different policies',
-      causesEmoji: '👥',
       branches: [
-        { tone: 'green', label: 'Different priorities',                 sub: 'People value goals differently – e.g. equality vs growth.' },
-        { tone: 'green', label: 'Different time horizons',              sub: 'Short-term costs and long-term benefits are weighed differently.' },
-        { tone: 'green', label: 'Different views of fairness or efficiency', sub: 'People disagree on what is a fair or efficient outcome.' }
+        { tone: 'green', icon: '👥', label: 'Different priorities',                 sub: 'People value goals differently – e.g. equality vs growth.' },
+        { tone: 'green', icon: '⏱️', label: 'Different time horizons',              sub: 'Short-term costs and long-term benefits are weighed differently.' },
+        { tone: 'green', icon: '⚖️', label: 'Different views of fairness or efficiency', sub: 'People disagree on what is a fair or efficient outcome.' }
       ],
       branchesLabel: 'Why disagreement happens',
       branchesEmoji: '🧩',
       branchesLayout: 'triptych',
+      comparison: {
+        title: 'Facts vs values',
+        emoji: '📊',
+        vs: '+',
+        position: 'after-branches',
+        left:  { tone: 'blue',  icon: '📊', label: 'Positive (facts)',     caption: 'Describes what is – based on evidence and data.' },
+        right: { tone: 'amber', icon: '⚖️', label: 'Normative (values)',   caption: 'Judges what ought to be – based on values and beliefs.' }
+      },
       keyTakeaway: 'Policy debate is not just about what is true – it is also about what society values.',
       examEdge: 'The strongest answers explain that two economists may agree on the evidence but disagree because of different value judgements.'
     },

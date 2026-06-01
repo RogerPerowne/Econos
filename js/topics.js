@@ -118,6 +118,19 @@ window.ECONOS_TOPICS = [
 
   /* ---- Theme 1, Section 2: How Markets Work (2.1–2.10) ---- */
   {
+    id: 'rational-decision-making',
+    name: 'Rational Decision Making',
+    sub: 'The assumptions behind the models: consumers maximise utility, firms maximise profit',
+    color: '#14b8a6',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '1.2.1', included: true },
+      edexcel_b: { spec: null, included: false },
+      aqa:       { spec: null, included: false },
+      ocr:       { spec: null, included: false }
+    }
+  },
+  {
     id: 'demand',
     name: 'Demand',
     sub: 'Law of demand, shifts, consumer surplus',

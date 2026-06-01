@@ -13,12 +13,8 @@
      V2 Surplus & gov rev   → idl-1 + idl-2 (CS / PS / Govt rect)
      V3 Deadweight loss     → idl-1 + idl-2 + idl-3 (DWL triangle)
 
-   Chart geometry (viewBox 470×420), identical to subsidy diagram:
-     Chart area  x=100..448, y=26..374 → width 348, height 348
-     E (Pe, Qe)  chart (0.489, 0.500)
-     New eq Qt   chart-x 0.368
-     Pc (buyer)  chart-y 0.615  – above Pe
-     Pp (seller) chart-y 0.385  – below Pe
+   Chart geometry standardised on the 1.1.1 modelsSupplyDemand
+   recipe (440×360, chartArea 330×264).
    ============================================================ */
 (function () {
   'use strict';
@@ -27,9 +23,9 @@
   var Tax = { x: 0.368, pc: 0.615, pp: 0.385 };
 
   window.ECONOS_TAX_DIAGRAM_SPEC = {
-    width: 470,
-    height: 420,
-    chartArea: { x: 100, y: 26, width: 348, height: 348 },
+    width: 440,
+    height: 360,
+    chartArea: { x: 58, y: 46, width: 330, height: 264 },
     className: 'tax-diagram-svg',
     background: '#FFFFFF',
     axes: {
@@ -60,7 +56,6 @@
         key: 'tax-shift',
         contentLayer: 'idl-1',
         curves: [
-          // S + tax dashed line (shifted UP by tax amount, parallel to S)
           { d: 'M 0,0.270 L 0.793,1.017', tone: 'amber', strokeWidth: 2.4, dashed: '6 4' }
         ],
         arrows: [
@@ -75,7 +70,7 @@
           { x: 0.730, y: 1.020, text: 'S + tax', tone: 'amber', bold: true, fontSize: 12, anchor: 'start' },
           { x: -0.020, y: Tax.pc, text: 'Pᶜ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: -0.020, y: Tax.pp, text: 'Pᵖ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
-          { x: Tax.x,  y: -0.055, text: 'Qₜ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
+          { x: Tax.x,  y: -0.055, text: 'Qₜ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' }
         ]
       },
 
@@ -84,20 +79,14 @@
         key: 'surplus-and-govt',
         contentLayer: 'idl-2',
         polygons: [
-          // Reduced CS (blue) — above Pc, below D, vertex at new eq
           { points: [[0, 0.960], [0, Tax.pc], [Tax.x, Tax.pc]], fill: '#DBEAFE', opacity: 0.85 },
-          // Reduced PS (amber) — below Pp, above S, vertex at new eq
           { points: [[0, 0.040], [0, Tax.pp], [Tax.x, Tax.pp]], fill: '#FEF3C7', opacity: 0.85 },
-          // Government tax revenue rect between Pp and Pc, from 0 to Qt
           { points: [[0, Tax.pp], [0, Tax.pc], [Tax.x, Tax.pc], [Tax.x, Tax.pp]], fill: '#D1FAE5', opacity: 0.9 }
         ],
         texts: [
-          { x: 0.165, y: 0.825, text: 'Consumer', tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
-          { x: 0.165, y: 0.783, text: 'surplus',  tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
-          { x: 0.170, y: 0.515, text: 'Government', tone: 'green', bold: true, anchor: 'middle' },
-          { x: 0.170, y: 0.475, text: 'tax revenue', tone: 'green', bold: true, anchor: 'middle' },
-          { x: 0.165, y: 0.235, text: 'Producer', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
-          { x: 0.165, y: 0.195, text: 'surplus',  tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' }
+          { x: 0.165, y: 0.800, text: 'Consumer surplus', tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
+          { x: 0.180, y: 0.500, text: 'Tax revenue', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
+          { x: 0.165, y: 0.215, text: 'Producer surplus', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' }
         ]
       },
 
@@ -106,16 +95,13 @@
         key: 'deadweight-loss',
         contentLayer: 'idl-3',
         polygons: [
-          // DWL triangle — vertices at new-eq corners (Qt, Pc), (Qt, Pp), and E (free-mkt eq)
           { points: [[Tax.x, Tax.pc], [Tax.x, Tax.pp], [E.x, E.y]], fill: '#FECACA', opacity: 0.9 }
         ],
         arrows: [
-          // Callout line right toward "Deadweight loss" label
           { x1: E.x, y1: E.y, x2: E.x + 0.110, y2: E.y, tone: 'red', strokeWidth: 1.4, buffer: 0 }
         ],
         texts: [
-          { x: E.x + 0.125, y: E.y + 0.022, text: 'Deadweight', tone: 'red', bold: true, anchor: 'start' },
-          { x: E.x + 0.125, y: E.y - 0.022, text: 'loss',       tone: 'red', bold: true, anchor: 'start' }
+          { x: E.x + 0.125, y: E.y, text: 'Deadweight loss', tone: 'red', bold: true, anchor: 'start' }
         ]
       }
     ]

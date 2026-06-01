@@ -11,11 +11,8 @@
      V2 Surplus regions → idl-1 + idl-2 (CS smaller, PS quadrilateral)
      V3 DWL            → idl-1 + idl-2 + idl-3 (DWL triangle)
 
-   Chart geometry:
-     E (Pₑ, Qₑ)   chart (0.489, 0.500)
-     Pmin level   chart-y 0.615  – above Pₑ
-     Qd at Pmin   chart-x 0.368  – reduced demand
-     Qs at Pmin   chart-x 0.609  – unsold supply
+   Chart geometry standardised on the 1.1.1 modelsSupplyDemand
+   recipe (440×360, chartArea 330×264).
    ============================================================ */
 (function () {
   'use strict';
@@ -26,9 +23,9 @@
   var Qs   = 0.609;
 
   window.ECONOS_PRICE_FLOOR_SPEC = {
-    width: 470,
-    height: 420,
-    chartArea: { x: 100, y: 26, width: 348, height: 348 },
+    width: 440,
+    height: 360,
+    chartArea: { x: 58, y: 46, width: 330, height: 264 },
     className: 'price-floor-svg',
     background: '#FFFFFF',
     axes: {
@@ -62,7 +59,6 @@
           { x1: 0, y1: Pmin, x2: 0.609, y2: Pmin, tone: 'green', strokeWidth: 2.4, dashed: '6 4', buffer: 0 },
           { x1: Qd, y1: Pmin, x2: Qd, y2: 0, tone: 'slate', strokeWidth: 1.4, dashed: '5 3', buffer: 0 },
           { x1: Qs, y1: Pmin, x2: Qs, y2: 0, tone: 'slate', strokeWidth: 1.4, dashed: '5 3', buffer: 0 },
-          // Excess supply bracket between Qd and Qs near top of chart
           { x1: Qd, y1: 0.880, x2: Qs, y2: 0.880, tone: 'green', strokeWidth: 1.8, buffer: 0 }
         ],
         points: [
@@ -70,11 +66,11 @@
           { x: Qs, y: Pmin, tone: 'slate', radius: 4 }
         ],
         texts: [
-          { x: 0.305, y: Pmin + 0.025, text: 'Price floor', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
+          { x: 0.305, y: Pmin + 0.030, text: 'Price floor', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
           { x: -0.020, y: Pmin, text: 'Pₘᵢₙ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: Qd, y: -0.055, text: 'Qd', tone: 'slate', bold: true, italic: true, fontSize: 12, anchor: 'middle' },
           { x: Qs, y: -0.055, text: 'Qs', tone: 'slate', bold: true, italic: true, fontSize: 12, anchor: 'middle' },
-          { x: (Qd + Qs) / 2, y: 0.905, text: 'Excess supply', tone: 'green', bold: true, anchor: 'middle' }
+          { x: (Qd + Qs) / 2, y: 0.920, text: 'Excess supply', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' }
         ]
       },
 
@@ -83,18 +79,12 @@
         key: 'surplus-regions',
         contentLayer: 'idl-2',
         polygons: [
-          // CS triangle (reduced): (0, 0.960), (0, Pmin), (Qd, Pmin)
           { points: [[0, 0.960], [0, Pmin], [Qd, Pmin]], fill: '#DBEAFE', opacity: 0.85 },
-          // PS quadrilateral: (0, Pmin), (Qd, Pmin), (Qd, 0.385), (0, 0.040)
-          // Approximation matching legacy: (100,160)(228,160)(228,240)(100,360)
-          // → (0, Pmin), (Qd, Pmin), (Qd, 0.385), (0, 0.040)
           { points: [[0, Pmin], [Qd, Pmin], [Qd, 0.385], [0, 0.040]], fill: '#FEF3C7', opacity: 0.85 }
         ],
         texts: [
-          { x: 0.140, y: 0.815, text: 'Consumer', tone: 'blue',  bold: true, fontSize: 12, anchor: 'middle' },
-          { x: 0.140, y: 0.773, text: 'surplus',  tone: 'blue',  bold: true, fontSize: 12, anchor: 'middle' },
-          { x: 0.140, y: 0.275, text: 'Producer', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
-          { x: 0.140, y: 0.233, text: 'surplus',  tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' }
+          { x: 0.115, y: 0.795, text: 'Consumer surplus', tone: 'blue',  bold: true, fontSize: 12, anchor: 'middle' },
+          { x: 0.140, y: 0.265, text: 'Producer surplus',  tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' }
         ]
       },
 
@@ -103,15 +93,13 @@
         key: 'dwl',
         contentLayer: 'idl-3',
         polygons: [
-          // DWL triangle: (Qd, Pmin), (Qd, 0.385), (E.x, E.y)
           { points: [[Qd, Pmin], [Qd, 0.385], [E.x, E.y]], fill: '#FECACA', opacity: 0.9 }
         ],
         arrows: [
           { x1: E.x, y1: E.y, x2: E.x + 0.110, y2: E.y, tone: 'red', strokeWidth: 1.4, buffer: 0 }
         ],
         texts: [
-          { x: E.x + 0.125, y: E.y + 0.022, text: 'Deadweight', tone: 'red', bold: true, anchor: 'start' },
-          { x: E.x + 0.125, y: E.y - 0.022, text: 'loss',       tone: 'red', bold: true, anchor: 'start' }
+          { x: E.x + 0.125, y: E.y, text: 'Deadweight loss', tone: 'red', bold: true, anchor: 'start' }
         ]
       }
     ]

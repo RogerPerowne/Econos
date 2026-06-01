@@ -2360,6 +2360,31 @@
       content += `</div>`;
     }
 
+    // Versus list – a stack of "A vs B" conflict rows, each two tinted
+    // side-cards separated by the same dark VS badge the comparison block
+    // uses. For trade-off / tension content (consumers vs firms, growth vs
+    // environment…). Each row may carry a `note` rendered below the pair.
+    //   Pattern: versusList: { label?, emoji?, rows: [{ left:{label,sub,tone}, right:{label,sub,tone}, note? }] }
+    if (c.versusList && Array.isArray(c.versusList.rows) && c.versusList.rows.length) {
+      const vl = c.versusList;
+      if (vl.label) content += genSecLabel(vl.emoji || '⚔️', vl.label);
+      const sideHtml = (s) => {
+        const t = PATTERN_TONES[s.tone || 'blue'] || PATTERN_TONES.blue;
+        return `<div style="flex:1;min-width:0;border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:12px 14px;text-align:center;">
+          <div style="font-size:14px;font-weight:800;color:${t.label};margin-bottom:3px;line-height:1.25;">${s.label || ''}</div>
+          <div style="font-size:12.5px;color:#0B1426;line-height:1.45;">${s.sub || ''}</div>
+        </div>`;
+      };
+      const vsBadge = `<div class="versus-list__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,20,38,0.25);">VS</div></div>`;
+      content += `<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:26px;">`;
+      content += vl.rows.map(row => `
+        <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px;">
+          <div class="versus-list__pair" style="display:flex;align-items:stretch;gap:12px;">${sideHtml(row.left)}${vsBadge}${sideHtml(row.right)}</div>
+          ${row.note ? `<div style="text-align:center;font-size:12.5px;color:#475569;line-height:1.5;margin-top:10px;">${row.note}</div>` : ''}
+        </div>`).join('');
+      content += `</div>`;
+    }
+
     // Deferred diagramPanel (position: 'after-table') – renders the worked
     // example after the table, matching mockups where the diagram is the
     // payoff at the end of the explanation.
@@ -5889,6 +5914,7 @@
       c.conceptBoxes !== undefined ||
       c.methodGrid !== undefined ||
       c.splitDecision !== undefined ||
+      c.versusList !== undefined ||
       c.diagramPanel !== undefined ||
       c.diagramGrid !== undefined ||
       c.interactiveDiagram !== undefined ||

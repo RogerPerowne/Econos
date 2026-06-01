@@ -2717,6 +2717,9 @@ img, svg { display: block; max-width: 100%; }
      dark VS badge sits between the stacked cards. */
   .split-decision { flex-direction: column !important; }
   .split-decision__vs { transform: rotate(90deg); }
+  /* versusList "A vs B" pairs stack the same way on phones. */
+  .versus-list__pair { flex-direction: column !important; }
+  .versus-list__vs { transform: rotate(90deg); }
 }
 
 /* Card padding tightens on narrow viewports so the inner content

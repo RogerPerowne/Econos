@@ -349,7 +349,7 @@ window.ECONOS_TOPIC = {
       { type: 'elastic_sort',
         stem: 'Classify each statement as <strong>positive</strong> (factual, testable) or <strong>normative</strong> (value judgement, opinion).',
         categories: ['positive', 'normative'],
-        categoryLabels: ['Positive statement (factual/testable)', 'Normative statement (value judgement)'],
+        categoryLabels: ['Positive statement', 'Normative statement'],
         goods: [
           { icon: '📊', label: 'A 10% rise in the minimum wage reduces employment by approximately 2% in low-skill sectors', note: '', ans: 'positive' },
           { icon: '⚖️', label: 'The government should raise the minimum wage to reduce income inequality', note: '', ans: 'normative' },

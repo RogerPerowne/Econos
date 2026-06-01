@@ -104,7 +104,7 @@ window.ECONOS_TOPIC = {
             show: ['idl-pounds'],
             head: 'In raw cash terms the gap is enormous',
             body: 'A 2% growth year delivers roughly &pound;200 to the bottom decile and &pound;12,000+ to the top 1% &mdash; a 60&times; ratio. The Y-axis is broken between &pound;2,000 and &pound;12,000 so the lower four bars stay readable next to the Top-1% bar.',
-            analysis: '<strong>Why the absolute gap is so large:</strong> growth lifts incomes via wages, but the top decile captures additional gains via capital &mdash; equity returns, owner-occupier housing wealth, business profits. The bottom decile is wage-only AND wage-fragile (zero-hours, part-time). UK 2010-19: the top-1% share of national income rose 12% &rarr; 14% even as headline GDP per capita grew.'
+            analysis: '<strong>Why the absolute gap is so large:</strong> growth lifts wages, but the top decile also captures capital gains &mdash; equities, housing wealth, profits. The bottom decile is wage-only and wage-fragile (zero-hours, part-time). UK 2010-19: the top-1% income share rose 12% &rarr; 14% even as GDP per capita grew.'
           },
           {
             label: '% of household income (proportional)',
@@ -112,7 +112,7 @@ window.ECONOS_TOPIC = {
             show: ['idl-percent'],
             head: 'Even proportionally, the top wins',
             body: 'Scale each gain against typical household income at that decile and the ratios become 1.7% at the bottom vs 4.8% at the top. Tighter than the absolute view, but still tilts upward.',
-            analysis: '<strong>Why even the proportional gap favours the top:</strong> the bottom decile spends 70%+ on essentials &mdash; food, energy, rent &mdash; whose prices rise faster than headline CPI, so the real purchasing-power gain is even smaller than the raw % suggests. The top decile, with capital income, also benefits from asset-price inflation (house prices, equities) which CPI ignores. A strong evaluation move in essays: cite both lenses.'
+            analysis: '<strong>Why even the proportional gap favours the top:</strong> the bottom decile spends 70%+ on essentials &mdash; food, energy, rent &mdash; whose prices rise faster than CPI, so its real gain is smaller than the raw % suggests. The top decile also gains from asset-price inflation (housing, equities) that CPI ignores. Strong evaluation: cite both lenses.'
           }
         ]
       },
@@ -259,8 +259,8 @@ window.ECONOS_TOPIC = {
             tone: 'green',
             show: ['idl-kuznets'],
             head: 'The Environmental Kuznets Curve',
-            body: 'Pollution intensity (per unit of GDP) follows an inverted-U as countries develop. Early industrialisation pushes pollution UP — energy-intensive heavy industry, weak environmental standards. Past a turning point (~$10,000 GDP per capita in the original 1991 study), citizens demand cleaner air and water, and the curve bends DOWN.',
-            analysis: '<strong>Three live examples on the curve right now:</strong> Niger (left side, low GDP, low intensity). China (near the peak, polluting heavily but with a peak target). UK (right side, post-industrial, falling carbon intensity for 30 years). The exam point: growth itself eventually cleans up, IF institutions force the bend. The curve doesn’t guarantee the descent — it just describes the rich-economy path.'
+            body: 'Pollution intensity (per unit of GDP) follows an inverted-U as countries develop. Early industrialisation pushes pollution UP — heavy industry, weak standards. Past a turning point (~$10,000 GDP per capita), citizens demand cleaner air and the curve bends DOWN.',
+            analysis: '<strong>Three live examples:</strong> Niger (left side, low GDP, low intensity); China (near the peak, polluting heavily but with a peak target); UK (right side, post-industrial, carbon intensity falling 30 years). Exam point: growth eventually cleans up only IF institutions force the bend — the curve describes the rich-economy path, it doesn’t guarantee the descent.'
           },
           {
             label: 'Natural capital',
@@ -268,15 +268,15 @@ window.ECONOS_TOPIC = {
             show: ['idl-natural'],
             head: 'GDP vs Green GDP — the depletion gap',
             body: '<strong>Standard GDP</strong> measures value added but ignores natural-capital depletion. <strong>Green GDP</strong> subtracts the value of resources extracted (timber, fisheries, oil) and pollution costs (cleanup, health impact). The gap between them is the <em>real bill</em> growth is running up.',
-            analysis: 'For the UK, the gap is small — a service economy doesn’t extract much. For Norway, the gap is large — North Sea oil extraction is huge value created but also huge natural capital consumed. For Saudi Arabia, the gap is bigger still — most measured GDP is just monetising a finite resource. The exam framing: a resource-extraction economy isn’t really growing in any sustainable sense; it’s converting natural capital into financial capital.'
+            analysis: 'UK: gap is small — a service economy extracts little. Norway: gap is large — North Sea oil is huge value but huge natural capital consumed. Saudi Arabia: bigger still — most GDP is monetising a finite resource. Exam framing: a resource-extraction economy isn’t really growing sustainably; it’s converting natural capital into financial capital.'
           },
           {
             label: 'Carbon debt',
             tone: 'rose',
             show: ['idl-carbon'],
             head: 'Carbon debt — the bill the future inherits',
-            body: 'The IPCC 1.5°C carbon budget is the <em>cumulative</em> CO₂ humanity can emit and still hit the 1.5°C warming limit. The world is burning through it at ~2% per year. Every tonne emitted above the budget transfers a cost — flood damage, crop failure, adaptation spending — to future generations.',
-            analysis: 'This is the strongest "growth versus future" case. Unlike Kuznets (which eventually self-corrects) and natural-capital (which can be substituted), carbon debt compounds and lasts millennia in the atmosphere. Strong evaluation move: growth that doesn’t decouple from emissions is borrowing welfare from people who haven’t been born yet. The UK has decoupled (GDP +75% since 1990, emissions −50%); China hasn’t yet; the US is partially decoupled. The decoupling trajectory matters more than the headline growth rate.'
+            body: 'The IPCC 1.5°C carbon budget is the <em>cumulative</em> CO₂ humanity can emit and still hit the 1.5°C limit. The world is burning through it at ~2% per year. Every tonne above the budget transfers a cost — flood damage, crop failure — to future generations.',
+            analysis: 'The strongest "growth versus future" case. Unlike Kuznets (self-corrects) and natural capital (substitutable), carbon debt compounds for millennia. Strong evaluation: growth that doesn’t decouple from emissions borrows welfare from the unborn. The UK has decoupled (GDP +75% since 1990, emissions −50%); China hasn’t — trajectory matters more than the rate.'
           }
         ]
       },

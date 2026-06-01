@@ -79,7 +79,7 @@ window.ECONOS_TOPIC = {
             show: ['idl-4'],
             head: 'Loss aversion – losses hurt twice as much as gains feel good',
             body: 'Kahneman &amp; Tversky showed the pain of losing £100 is roughly twice the pleasure of gaining £100. We are <strong>not symmetric</strong> about the £0 reference point.',
-            analysis: '<strong>Mini-test:</strong> would you rather (A) take £50 for sure, or (B) flip a coin for £100? Most people pick (A). Now reverse it: (A) lose £50 for sure, or (B) flip a coin to lose £100 or nothing? Most pick (B). <br><br>Same maths, opposite choice – because losses change everything. This is why people hold falling shares, stay in worse mortgages, and dodge any decision framed as a "loss".'
+            analysis: '<strong>Mini-test:</strong> (A) take £50 for sure, or (B) flip a coin for £100? Most pick (A). Reverse it: (A) lose £50 for sure, or (B) flip to lose £100 or nothing? Most pick (B). <br><br>Same maths, opposite choice – losses change everything. It\'s why people hold falling shares and dodge any decision framed as a "loss".'
           },
           {
             label: 'Availability',
@@ -131,7 +131,7 @@ window.ECONOS_TOPIC = {
             show: ['idl-1'],
             head: 'Two voices inside one head',
             body: 'Thaler and Shefrin describe us as two selves sharing a body. The <strong>planner self</strong> wants the long-term best (revise, save, eat well). The <strong>doer self</strong> wants the easy option now (scroll, spend, snack). The doer almost always wins in the moment.',
-            analysis: 'This is <strong>bounded self-control</strong>: the gap between knowing better and doing better. It produces <strong>internalities</strong> – costs we impose on our future selves. Smoking, junk food, under-saving, missed dentist visits. The market provides what the doer wants without correcting the cost to the planner – which is the strongest argument for paternalistic policy without any externality.'
+            analysis: 'This is <strong>bounded self-control</strong>: the gap between knowing better and doing better. It produces <strong>internalities</strong> – costs we impose on our future selves (smoking, junk food, under-saving). The market gives the doer what they want without correcting the cost to the planner – the strongest case for paternalism without any externality.'
           },
           {
             label: 'The experiment',
@@ -139,7 +139,7 @@ window.ECONOS_TOPIC = {
             show: ['idl-2'],
             head: 'The classic two-pair choice – same gap, different answer',
             body: 'Offered <strong>£100 today vs £110 in a week</strong>, most people take the £100. Offered <strong>£100 in 52 weeks vs £110 in 53 weeks</strong>, the same people happily wait. Same one-week gap. Same £10. Different decision.',
-            analysis: '<strong>Picking £100 today means rejecting a 10% return over one week</strong> – an effective annual rate of ~14,000%. No rational agent would do this. But almost everyone does. <br><br>This is <strong>hyperbolic discounting</strong>: we discount the near future steeply, the far future barely. Pre-2012, only ~55% of UK private-sector workers had a pension. Tax relief was generous; employers matched contributions; the maths was obvious. None of it overrode the present self.'
+            analysis: '<strong>Picking £100 today rejects a 10% return over one week</strong> – an effective annual rate of ~14,000%. No rational agent would; almost everyone does. <br><br>This is <strong>hyperbolic discounting</strong>: we discount the near future steeply, the far future barely. Pre-2012, only ~55% of UK private-sector workers had a pension despite generous tax relief – the present self won.'
           },
           {
             label: 'How to beat it',
@@ -147,7 +147,7 @@ window.ECONOS_TOPIC = {
             show: ['idl-3'],
             head: 'Commitment devices – bind your future self in advance',
             body: 'If the present self is unreliable, the planner can <strong>lock the choice in advance</strong> – when she has the willpower. Three families of tool: <strong>auto-defaults</strong> (decision pre-made), <strong>pre-commitment</strong> (irreversible promise), and <strong>removing temptation</strong> (take the option away).',
-            analysis: 'Modern UK life is full of commitment devices, often without the label: direct debits for savings, gym contracts that auto-renew, phone-free study apps, NHS Stop Smoking quit-dates, supermarket online shops that prevent impulse buys. <br><br>Card 4 shows the most powerful commitment device of all: <strong>pension auto-enrolment</strong>, where the government locks in the planner\'s choice on the doer\'s behalf.'
+            analysis: 'Modern UK life is full of commitment devices, often unlabelled: direct debits for savings, auto-renewing gym contracts, phone-free study apps, NHS quit-dates. <br><br>Card 4 shows the most powerful of all: <strong>pension auto-enrolment</strong>, where the government locks in the planner\'s choice on the doer\'s behalf.'
           }
         ]
       },

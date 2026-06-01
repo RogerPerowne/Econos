@@ -64,9 +64,9 @@ window.ECONOS_TOPIC = {
         vs: 'VS',
         position: 'after-diagram',
         left:  { tone: 'green', icon: '✅', label: 'When a nudge is enough',
-          caption: '<strong>Auto-enrolment</strong> took pension participation from 55% to 87%. The binding constraint was <em>inertia</em>, not money – so a default change fit perfectly without restricting choice or spending taxpayer money.' },
+          caption: '<strong>Auto-enrolment</strong> took pension participation from 55% to 87%. The binding constraint was <em>inertia</em>, not money – so a default change worked without restricting choice.' },
         right: { tone: 'rose',  icon: '❌', label: 'When a nudge isn\'t enough',
-          caption: 'Carbon emissions at scale, addictive products, severe poverty. The binding constraint is <em>affordability, addiction or price</em> – not inertia. Nudges underperform; pricing tools or regulation do the heavy lifting.' }
+          caption: 'For carbon, addiction or severe poverty the binding constraint is <em>affordability or price</em>, not inertia – so pricing tools or regulation do the heavy lifting.' }
       },
       tipLate: { icon: '⚖️', tone: 'amber', text: '<strong>The aim is allocative efficiency and equity</strong> – but every tool brings risks of government failure (distorted signals, unintended consequences, admin costs, info gaps). The next nine cards build each tool and then bring them together in a decision matrix.' },
       examEdge: 'Top answers <em>name the market failure first, then choose the tool</em>. "Tradable permits work better than a Pigouvian tax for CO₂ because the regulator can set the total emissions cap with certainty even when abatement costs are uncertain." Linking the tool to the specific failure it addresses is what separates A from B grades.'
@@ -302,14 +302,14 @@ window.ECONOS_TOPIC = {
             tone: 'amber',
             head: 'CS shrinks; PS effect is ambiguous',
             body: 'CS shrinks: buyers pay a higher price and transact fewer units. PS <em>may</em> rise if the higher per-unit price outweighs the lost quantity – but if demand is elastic, PS can fall.',
-            analysis: 'The PS effect depends on the elasticity of demand. If demand is inelastic, the higher price compensates for the lost quantity and PS rises. If demand is elastic, the quantity loss dominates and PS falls. In labour markets, this translates into a real exam debate: a minimum wage may raise total worker income (if labour demand is inelastic) or lower it (if elastic).'
+            analysis: 'The PS effect depends on demand elasticity: if inelastic, the higher price offsets the lost quantity and PS rises; if elastic, the quantity loss dominates and PS falls. The labour-market parallel: a minimum wage may raise total worker income (inelastic demand) or lower it (elastic).'
           },
           {
             label: 'Deadweight loss',
             tone: 'rose',
             head: 'Welfare lost from trades that no longer happen',
             body: 'The red triangle = DWL: surplus from units between Q<sub>d</sub> and Q<sub>e</sub> that <em>would have been traded</em> at P<sub>e</sub>, but are now prevented by the floor.',
-            analysis: 'As with a ceiling, DWL grows with the gap between P<sub>min</sub> and P<sub>e</sub> and with elasticity. The floor raises total welfare only if it offsets a larger pre-existing distortion – for example, a minimum wage in a <em>monopsonistic</em> labour market can raise both wages <em>and</em> employment, because monopsony already suppressed both. The textbook DWL result assumes a competitive market with no offsetting failure.'
+            analysis: 'As with a ceiling, DWL grows with the gap between P<sub>min</sub> and P<sub>e</sub> and with elasticity. The floor raises welfare only if it offsets a larger pre-existing distortion – a minimum wage in a <em>monopsonistic</em> labour market can lift both wages and employment, because monopsony already suppressed both.'
           }
         ]
       },
@@ -352,9 +352,9 @@ window.ECONOS_TOPIC = {
         title: 'Why economists prefer cap-and-trade',
         emoji: '⚖️',
         left:  { tone: 'green', icon: '✅', label: 'Strengths',
-          caption: '<strong>Environmental certainty</strong> – the cap guarantees the emissions outcome. <strong>Cost-efficient</strong> – the market finds the cheapest abatement opportunities first. <strong>Flexible</strong> – firms choose whether to abate or buy permits. <strong>Dynamic incentive</strong> – firms profit from innovating to cut emissions and sell spare permits.' },
+          caption: '<strong>Certainty</strong> – the cap fixes the emissions outcome. <strong>Cost-efficient</strong> – cheapest abatement first. <strong>Dynamic incentive</strong> – firms profit from innovating and selling spare permits.' },
         right: { tone: 'rose',  icon: '❌', label: 'Weaknesses',
-          caption: '<strong>Price volatility</strong> – permit prices swing with the business cycle (EU ETS collapsed to €5 in the 2010s). <strong>Carbon leakage</strong> – firms relocate to uncapped jurisdictions. <strong>Distributional</strong> – free allocations can over-compensate incumbents. <strong>Coverage gaps</strong> – UK ETS excludes agriculture and most transport.' }
+          caption: '<strong>Price volatility</strong> – prices swing with the cycle (EU ETS hit €5). <strong>Carbon leakage</strong> – firms relocate abroad. <strong>Coverage gaps</strong> – the UK ETS excludes farming and most transport.' }
       },
       keyTerms: [
         { term: 'Cap',                 def: 'The total quantity of emissions allowed across all covered firms in a period. The binding environmental constraint.' },
@@ -422,9 +422,9 @@ window.ECONOS_TOPIC = {
         title: 'Strengths vs limits of information provision',
         emoji: '⚖️',
         left:  { tone: 'green', icon: '✅', label: 'Strengths',
-          caption: '<strong>Preserves choice</strong> – no ban, no tax distortion, just better-informed decisions. <strong>Low cost</strong> compared with subsidies or direct provision. <strong>Targets the root cause</strong> when the failure is genuinely an info gap. <strong>Encourages competition</strong> – informed consumers reward quality.' },
+          caption: '<strong>Preserves choice</strong> – no ban or tax distortion. <strong>Low cost</strong> vs subsidies or provision. <strong>Targets the root cause</strong> when the failure is genuinely an info gap.' },
         right: { tone: 'rose',  icon: '❌', label: 'Limits',
-          caption: '<strong>Behavioural bias</strong> – even with info, people discount future harms (smoking, sugar). <strong>Slow</strong> to shift behaviour. <strong>Limited reach</strong> if labels are ignored or misunderstood. <strong>Producer pushback</strong> – industry lobbies against mandatory disclosure.' }
+          caption: '<strong>Behavioural bias</strong> – people still discount future harms (smoking, sugar). <strong>Slow</strong> to shift behaviour. <strong>Limited reach</strong> if labels are ignored or misunderstood.' }
       },
       keyTerms: [
         { term: 'Asymmetric information', def: 'When one side of a transaction knows more than the other – e.g. a used-car seller knows more about reliability than the buyer ("lemons" problem).' },
@@ -457,9 +457,9 @@ window.ECONOS_TOPIC = {
         title: 'Regulation – strengths vs weaknesses',
         emoji: '⚖️',
         left:  { tone: 'green', icon: '✅', label: 'Pros',
-          caption: '<strong>Certainty of outcome</strong> – direct quantity control, not reliant on firms\' price responses. <strong>Acts quickly</strong> when speed matters (pandemic, environmental emergencies). <strong>Essential for severe or irreversible harm</strong> – toxic substances, endangered species, child safety. <strong>Easy to communicate</strong> – "this is illegal" is clearer than a tax.' },
+          caption: '<strong>Certainty</strong> – direct quantity control, not reliant on price responses. <strong>Acts fast</strong> in emergencies. <strong>Essential for severe or irreversible harm</strong> – toxics, child safety.' },
         right: { tone: 'rose',  icon: '❌', label: 'Cons',
-          caption: '<strong>Rigid / less flexible</strong> – one-size-fits-all doesn\'t reflect firms\' differing costs. <strong>Compliance costs</strong> – monitoring, reporting, enforcement. <strong>Regulatory capture</strong> – firms lobby regulators for weaker rules. <strong>Unintended consequences</strong> – bans create black markets (prohibition, drug bans).' }
+          caption: '<strong>Rigid</strong> – one-size-fits-all ignores firms\' differing costs. <strong>Compliance costs</strong> – monitoring and enforcement. <strong>Unintended consequences</strong> – bans can create black markets.' }
       },
       keyTerms: [
         { term: 'Command-and-control', def: 'Direct regulation that mandates specific behaviour or outcomes – as opposed to market-based tools (taxes, permits) that change incentives.' },

@@ -92,7 +92,7 @@ window.ECONOS_TOPIC = {
             tone: 'rose',
             head: 'Pc – steep sacrifice for modest gain',
             body: 'A smaller gain in Good B now costs far more Good A. All three triangles share similar widths, but the vertical sacrifices are 11, 24, and 40 units respectively. The law of increasing opportunity cost, graphed.',
-            analysis: 'The most specialised resources – those most highly adapted to Good A – are the last to transfer. Their opportunity cost is enormous. The PPF steepens sharply near the axis. A straight-line PPF only arises if resources are perfectly homogeneous: equally suited to both goods at every point on the curve. Draw a straight line only when a question explicitly specifies constant opportunity cost – otherwise the bowed-out curve is more realistic and earns the mark.'
+            analysis: 'The most specialised resources are the last to transfer, so their opportunity cost is enormous and the PPF steepens near the axis. A straight-line PPF only arises if resources are perfectly homogeneous. Draw a straight line only when a question specifies constant opportunity cost – otherwise the bowed-out curve is more realistic and earns the mark.'
           }
         ]
       },
@@ -192,28 +192,28 @@ window.ECONOS_TOPIC = {
             tone: 'blue',
             head: 'The PPF defines three zones',
             body: 'Any combination ON the curve is productively feasible and uses all resources fully. Inside is achievable but wastes capacity. Outside is currently impossible.',
-            analysis: 'The PPF is the maximum output frontier: every point on it represents a fully employed economy at the limit of its technology and resources. This boundary separates achievable from unachievable – not by price or policy, but by the hard constraint of productive capacity. Economists use it to define two distinct efficiency concepts that are often confused: productive efficiency (any point on the curve) and allocative efficiency (a specific point on the curve).'
+            analysis: 'The PPF is the maximum output frontier: every point on it is a fully employed economy at the limit of its technology and resources. It separates achievable from unachievable, and defines two efficiency concepts often confused: productive (any point on the curve) and allocative (a specific point on it).'
           },
           {
             label: 'Productive inefficiency',
             tone: 'rose',
             head: 'H – inside the PPF',
             body: 'Point H represents idle resources: unemployed workers, spare factory capacity, misallocated inputs. Output could rise without any sacrifice – moving H to the frontier costs nothing.',
-            analysis: 'Common causes: cyclical unemployment (recession leaves capital and labour idle), structural barriers (skills mismatches, immobility of factors), X-inefficiency (management slack in firms insulated from competition). Key exam point: a <em>recession</em> moves the whole-economy point inside the PPF – it does not shift the frontier itself. The frontier only shifts with a change in productive <em>capacity</em>, not how fully that capacity is used.'
+            analysis: 'Common causes: cyclical unemployment (idle capital and labour), structural barriers (skills mismatch, factor immobility), X-inefficiency (management slack). Key exam point: a <em>recession</em> moves the economy <em>inside</em> the PPF – it does not shift the frontier. The frontier shifts only with a change in productive <em>capacity</em>, not how fully it is used.'
           },
           {
             label: 'Productive efficiency',
             tone: 'green',
             head: 'Any point ON PPF₁ – productively efficient',
             body: 'Multiple points sit on the curve. All are productively efficient: resources are fully and efficiently employed. You cannot raise output of one good without reducing the other.',
-            analysis: 'Productive efficiency does NOT mean the right goods are produced – only that production is at maximum capacity. A command economy could be on its PPF while producing only guns and no butter: productively efficient but allocatively catastrophic. The market test is P = minimum LRAC – firms produce at the lowest point on their long-run average cost curve, as competitive pressure forces in the long run.'
+            analysis: 'Productive efficiency does NOT mean the right goods are produced – only that output is at maximum capacity. A command economy could sit on its PPF making only guns and no butter: productively efficient but allocatively catastrophic. The market test is P = minimum LRAC – competition forces firms to the lowest point on their long-run average cost curve.'
           },
           {
             label: 'Allocative efficiency',
             tone: 'amber',
             head: 'G★ – the one allocatively efficient point',
             body: 'G★ is the single combination on PPF₁ that society values most: P = MC. Every other on-curve point is productively efficient but allocatively wrong – producing too much of one good relative to what consumers want.',
-            analysis: 'Allocative efficiency requires P = MC at every point: the marginal benefit to society equals the marginal cost of production. This is a single point on the PPF reflecting consumer preferences. Competitive markets drive P → MC through profit-maximisation. For A* marks: mention <strong>Pareto efficiency</strong> – G★ is Pareto optimal, meaning no-one can be made better off without making someone else worse off. Command economies cannot identify G★ without price signals – this is the socialist calculation problem.'
+            analysis: 'Allocative efficiency requires P = MC: marginal social benefit equals marginal cost. It is one point on the PPF reflecting consumer preferences, and competition drives P → MC. For A*: mention <strong>Pareto efficiency</strong> – at G★ no-one can gain without someone losing. Command economies can\'t find G★ without price signals – the calculation problem.'
           }
         ]
       },
@@ -243,14 +243,14 @@ window.ECONOS_TOPIC = {
             tone: 'green',
             head: 'Produce at P – comparative advantage',
             body: "The economy concentrates production at P, the point where its opportunity cost is lowest. This is comparative advantage: produce what you give up least, not necessarily what you're best at in absolute terms.",
-            analysis: "Comparative advantage doesn't require absolute superiority. Even if a country is less efficient at producing both goods, it still gains from specialising in whichever good it sacrifices less to produce. The gains come from differences in opportunity costs between countries, not absolute productivity gaps. P is the optimal production point given those relative costs."
+            analysis: "Comparative advantage doesn't require absolute superiority. Even if a country is less efficient at both goods, it still gains by specialising where it sacrifices less. The gains come from differences in opportunity cost between countries, not absolute productivity gaps. P is the optimal production point given those relative costs."
           },
           {
             label: 'Consume at C',
             tone: 'amber',
             head: 'C is outside the PPF – only possible with trade',
             body: 'By exporting its surplus from specialising at P and importing the other good, the economy reaches consumption point C – a combination it could never produce alone. C lies outside its own PPF.',
-            analysis: "This is the core welfare case for free trade: trade separates the production decision (where to produce on the PPF) from the consumption decision (where to end up). Both partners reach points beyond their individual frontiers, consuming more of both goods than autarky allows. For A*: draw C clearly outside the PPF, label it 'consumption point (with trade)', and note that both trading partners benefit – this single diagram captures the entire gains-from-trade argument."
+            analysis: "The core welfare case for free trade: trade separates the production decision (where to produce on the PPF) from consumption (where to end up). Both partners reach points beyond their own frontiers, consuming more of both goods than autarky allows. For A*: draw C outside the PPF, label it 'consumption point (with trade)', and note both partners gain."
           }
         ]
       },

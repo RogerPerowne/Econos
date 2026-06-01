@@ -1570,11 +1570,14 @@
             <span style="flex-shrink:0;width:7px;height:7px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>
             <span>${b}</span>
           </li>`).join('')}</ul>`;
-      const titleOutside = dp.titleAbove && dp.title;
-      const headerHtml = `
-        ${(!titleOutside && dp.title) ? `<div style="font-weight:800;font-size:17px;color:#0B1426;margin-bottom:10px;">${dp.title}</div>` : ''}
-        ${dp.intro ? `<div style="font-size:13.5px;color:#475569;margin-bottom:12px;">${dp.intro}</div>` : ''}`;
-      if (titleOutside) content += genSecLabel(dp.titleEmoji || '⚖️', dp.title);
+      // diagramPanel title ALWAYS renders as the standard section-label
+      // (icon + uppercase eyebrow + divider rule) ABOVE the panel — the
+      // same chrome every other section on the card uses. The old inline
+      // 17px bold heading inside the panel was a one-off style that
+      // existed nowhere else; removing it restores coherence and tightens
+      // the panel's internal spacing.
+      if (dp.title) content += genSecLabel(dp.emoji || dp.titleEmoji || '📊', dp.title);
+      const headerHtml = dp.intro ? `<div style="font-size:13.5px;color:#475569;margin-bottom:12px;">${dp.intro}</div>` : '';
       const hasBody = (headerHtml.trim() || notesHtml.trim());
       if (stacked && dp.bare) {
         content += `

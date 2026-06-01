@@ -1971,6 +1971,20 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ============================================================
+   TILE GRID — responsive "examples of X" 3×2 panel
+   3 cols → 2 cols at <=900px → 1 col at <=460px. The !important
+   pushes through the universal "stack repeat-grids on mobile" rule
+   so phones get a clean 2-col instead of 6 stacked tall tiles.
+   ============================================================ */
+.tile-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+@media (max-width: 900px) {
+  .tile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 460px) {
+  .tile-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ============================================================
    CLASSIFY MICRO-GAME — predict-then-commit ("sort into A/B")
    ============================================================ */
 .classify-item {

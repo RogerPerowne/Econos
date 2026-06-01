@@ -265,7 +265,18 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 6 of 12',
       title: 'Land',
       lede: 'Land is <strong>everything provided by nature</strong> and used in the production of goods and services. It is not just fields – it includes all natural resources.',
-      visualKey: 'landTypesSvg',
+      tileGrid: {
+        label: 'Examples of land',
+        emoji: '🌿',
+        items: [
+          { tone: 'green',  icon: '🌾',  title: 'Agricultural Land',   sub: 'Farmland · Crops · Pasture' },
+          { tone: 'slate',  icon: '🛢️', title: 'Oil & Natural Gas',   sub: 'Fossil fuels · Energy' },
+          { tone: 'amber',  icon: '⛏️',  title: 'Minerals & Metals',   sub: 'Iron · Lithium · Copper' },
+          { tone: 'blue',   icon: '💧',  title: 'Water & Fisheries',   sub: 'Rivers · Seas · Aquifers' },
+          { tone: 'green',  icon: '🌲',  title: 'Forests & Timber',    sub: 'Wood · Carbon sinks' },
+          { tone: 'purple', icon: '📡',  title: 'Radio Spectrum',       sub: 'Mobile · Satellite · Wi-Fi' }
+        ]
+      },
       causesLabel: 'Key characteristics &amp; reward',
       causesEmoji: '⭐',
       causes: [
@@ -365,7 +376,18 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 8 of 12',
       title: 'Capital',
       lede: '<strong>Capital</strong> refers to man-made resources used to produce other goods and services – tools, equipment, machinery, buildings and infrastructure. It is built up through investment and can depreciate over time.',
-      visualKey: 'capitalTypesSvg',
+      tileGrid: {
+        label: 'Examples of capital',
+        emoji: '🏭',
+        items: [
+          { tone: 'amber',  icon: '🏭',  title: 'Factories & Plants',     sub: 'Plants · Workshops · Assembly' },
+          { tone: 'slate',  icon: '⚙️',  title: 'Machinery & Tools',      sub: 'Robots · Tools · Equipment' },
+          { tone: 'blue',   icon: '🛣️',  title: 'Infrastructure',          sub: 'Roads · Ports · Power grids' },
+          { tone: 'purple', icon: '🚚',  title: 'Vehicles & Transport',   sub: 'Trucks · Ships · Aircraft' },
+          { tone: 'green',  icon: '💻',  title: 'Technology & IT',        sub: 'Computers · Software · Servers' },
+          { tone: 'rose',   icon: '🏢',  title: 'Buildings & Offices',    sub: 'Warehouses · Stores · Offices' }
+        ]
+      },
       tip: { icon: '⚠️', tone: 'amber', text: 'A common exam trap: capital in economics means physical productive resources, <strong>NOT money</strong>. Money used to <em>buy</em> capital is "financial capital" – a different concept.' },
       pairFirst: true,
       pairLabel: 'Capital is not money',

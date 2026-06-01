@@ -2274,15 +2274,18 @@
     // Branches – tone-coded tappable callouts. Rendered after main content
     // (body / causes / table) so they read as a "now zoom out" framing block.
     if (c.branches && c.branches.length) {
-      content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture – tap each to recall');
+      content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture');
       content += `<div class="branch-callouts" style="margin-bottom:24px;">
         ${c.branches.map((b, i) => `
           <div class="branch-cal branch-cal--${b.tone || 'blue'}" data-flap-id="gen-branch-${i}">
-            <div class="branch-cal__dot"></div>
-            <div style="flex:1; min-width:0;">
+            <div class="branch-cal__badge">${i + 1}</div>
+            <div class="branch-cal__body">
               <div class="branch-cal__label">${b.label}</div>
               <div class="branch-cal__sub is-hidden">${b.sub}</div>
-              <div class="branch-cal__hint">tap to recall</div>
+              <div class="branch-cal__cta">
+                <span class="branch-cal__cta-label">Reveal answer</span>
+                <span class="branch-cal__cta-arrow" aria-hidden="true">→</span>
+              </div>
             </div>
           </div>
         `).join('')}
@@ -2746,11 +2749,14 @@
         <div class="branch-callouts">
           ${c.branches.map((b, i) => `
             <div class="branch-cal branch-cal--${b.tone}" data-flap-id="branch-${i}">
-              <div class="branch-cal__dot"></div>
-              <div style="flex:1; min-width:0;">
+              <div class="branch-cal__badge">${i + 1}</div>
+              <div class="branch-cal__body">
                 <div class="branch-cal__label">${b.label}</div>
                 <div class="branch-cal__sub is-hidden">${b.sub}</div>
-                <div class="branch-cal__hint">tap to recall</div>
+                <div class="branch-cal__cta">
+                  <span class="branch-cal__cta-label">Reveal answer</span>
+                  <span class="branch-cal__cta-arrow" aria-hidden="true">→</span>
+                </div>
               </div>
             </div>
           `).join('')}
@@ -3117,7 +3123,10 @@
         <div style="flex:1; min-width:0;">
           <div class="def-mech-row__title">${m.title}</div>
           <div class="def-mech-row__text is-hidden">${m.text}</div>
-          <div class="def-mech-row__hint">tap to recall</div>
+          <div class="def-mech-row__hint">
+            <span>Reveal mechanism</span>
+            <span class="def-mech-row__arrow" aria-hidden="true">→</span>
+          </div>
         </div>
       </div>
     `).join('');
@@ -6036,16 +6045,19 @@
     const branchEl = e.target.closest('.branch-cal[data-flap-id]');
     if (branchEl) {
       e.preventDefault();
-      const sub  = branchEl.querySelector('.branch-cal__sub');
-      const hint = branchEl.querySelector('.branch-cal__hint');
+      const sub = branchEl.querySelector('.branch-cal__sub');
+      const cta = branchEl.querySelector('.branch-cal__cta-label');
+      const arrow = branchEl.querySelector('.branch-cal__cta-arrow');
       if (sub.classList.contains('is-hidden')) {
         sub.classList.remove('is-hidden');
         branchEl.classList.add('is-open');
-        if (hint) hint.style.display = 'none';
+        if (cta) cta.textContent = 'Hide answer';
+        if (arrow) arrow.textContent = '↑';
       } else {
         sub.classList.add('is-hidden');
         branchEl.classList.remove('is-open');
-        if (hint) hint.style.display = '';
+        if (cta) cta.textContent = 'Reveal answer';
+        if (arrow) arrow.textContent = '→';
       }
       return;
     }

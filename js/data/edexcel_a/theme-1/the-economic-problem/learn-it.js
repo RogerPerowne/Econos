@@ -43,30 +43,35 @@ window.ECONOS_TOPIC = {
       id: 'econ-problem-scarcity',
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 12',
-      title: 'The basic economic problem: the big picture',
-      lede: 'Economics begins with a simple tension: our wants are unlimited, but the resources to satisfy them are limited.',
-      tip: { icon: '💡', tone: 'blue', text: 'Economics begins with a simple tension – our wants are unlimited, but the resources to satisfy them are limited.' },
+      title: 'The basic economic problem',
+      lede: 'Economics begins with a simple tension: our wants are unlimited, but the resources to satisfy them are limited. That gap is called scarcity – and it forces every choice in the subject.',
+      tip: { icon: '💡', tone: 'blue', text: 'Scarcity is the gap between unlimited wants and limited resources – the root of every economic choice.' },
+      chipWall: {
+        label: 'A few of the things people want',
+        emoji: '🛍️',
+        tone: 'rose',
+        intro: 'Just a sample. The list never stops – and every item below competes for the same finite pool of resources.',
+        chips: ['🍞 Food', '💧 Clean water', '🏠 Housing', '🏥 Healthcare', '🎓 Education', '📱 Phones', '✈️ Holidays', '🚗 Cars', '👕 Clothes', '⚡ Energy', '🎮 Games', '🛡️ Defence', '🌳 Parks', '🚄 Transport', '🎵 Music', '💼 Jobs']
+      },
       comparison: {
         title: 'The core problem',
         emoji: '⚡',
-        left:  { tone: 'rose',  icon: '❤️', label: 'Unlimited wants',   caption: 'Our wants are endless and ever-changing.' },
-        right: { tone: 'green', icon: '📦', label: 'Limited resources', caption: 'Resources are finite and can be used in many ways.' }
+        vs: '+',
+        resultJoin: '=',
+        left:   { tone: 'rose',  icon: '❤️',  label: 'Unlimited wants',   caption: 'Endless and ever-changing.' },
+        right:  { tone: 'green', icon: '📦',  label: 'Limited resources', caption: 'Land, labour, capital, enterprise – all finite.' },
+        result: { tone: 'amber', icon: '⚖️',  label: 'Scarcity',          caption: 'The gap that forces choice at every level of the economy.' }
       },
-      body: '<strong>Scarcity</strong> is the fundamental economic problem: human wants are unlimited, but the resources needed to satisfy them are finite. Because resources are scarce, we cannot produce everything we want – so choices must be made.<br><br>Scarcity applies to <em>every</em> economy regardless of wealth. Even the richest country cannot produce unlimited healthcare, education, infrastructure and defence simultaneously. Scarcity forces trade-offs at every level: individual, firm, and government.',
-      causes: [
-        { head: 'Land',       icon: '🌿', body: 'Natural resources provided by the earth – minerals, forests, fertile soil, water, fish stocks, oil and gas.' },
-        { head: 'Labour',     icon: '👥', body: 'The mental and physical effort of people – and the skills they bring. Quantity (workforce) and quality (education) both matter.' },
-        { head: 'Capital',    icon: '🏭', body: 'Man-made tools, machinery, factories and infrastructure used to produce other goods and services.' },
-        { head: 'Enterprise', icon: '💡', body: 'The ability to organise the other three factors, take risks and innovate. Without enterprise nothing gets made.' }
+      branches: [
+        { tone: 'blue',   icon: '🙋', label: 'Individuals',  sub: 'Limited income vs the basket of goods you want – pick which to buy.' },
+        { tone: 'amber',  icon: '🏭', label: 'Firms',        sub: 'Limited capital vs the projects worth funding – pick which to launch.' },
+        { tone: 'purple', icon: '🏛️', label: 'Governments',  sub: 'Limited tax revenue vs the services to fund – pick which to prioritise.' }
       ],
-      causesLabel: 'Resources are scarce – the four factors of production',
-      causesEmoji: '🏗️',
-      keyTerms: [
-        { term: 'Scarcity', def: 'The condition where unlimited wants exceed the limited resources available to satisfy them.' },
-        { term: 'Factors of production', def: 'Land (natural resources), Labour (human effort), Capital (man-made productive assets), Enterprise (risk-taking ability).' },
-        { term: 'Free good', def: 'A good that is not scarce – available in unlimited quantity at zero opportunity cost. True free goods are extremely rare (e.g. air in most locations).' }
-      ],
-      examEdge: 'Scarcity is distinct from poverty. A billionaire still faces scarcity – they cannot buy unlimited time or live forever. Scarcity is a universal condition; poverty is a distributional one. Examiners test whether you understand this distinction.'
+      branchesLabel: 'Scarcity forces choice – at every level',
+      branchesEmoji: '👥',
+      branchesLayout: 'triptych',
+      keyTakeaway: 'Scarcity is universal – even the wealthiest country cannot produce unlimited healthcare, education, defence and infrastructure all at once.',
+      examEdge: 'Scarcity is not the same as poverty. A billionaire still faces scarcity – they cannot buy unlimited time. Scarcity is a universal condition; poverty is a distributional one. Strong answers spell out this distinction.'
     },
 
     /* ----- CARD 2 – Renewable vs non-renewable resources (spec 1.1.3b) ----- */
@@ -465,44 +470,33 @@ window.ECONOS_TOPIC = {
     },
 
     /* ----- CARD 6 – Factor Rewards Summary -----
-       2×2 grid: each tile shows Factor → Reward + Why */
+       Active-recall matcher: tap the reward each factor earns. */
     {
       id: 'factor-rewards',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 10 of 12',
       title: 'Factor Rewards Summary',
-      lede: 'Each factor of production earns a different reward because each contributes something different to the production process. Lock these four pairings in.',
-      causesLabel: 'Match each factor to its reward',
-      causesEmoji: '🎁',
-      causes: [
-        {
-          tone: 'green',
-          icon: '🏞️',
-          head: 'Land → Rent',
-          body: '<strong>Definition:</strong> payment for the use of natural resources.<br><br><strong>Why this reward?</strong> Land is in fixed supply. Whoever owns it can charge others to use it for production, earning rent.<br><br><span style="display:block;margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(6,95,70,0.08);font-size:13px;font-style:italic;color:#065F46;">🧠 Remember: natural resources earn rent because supply is fixed.</span>'
-        },
-        {
-          tone: 'purple',
-          icon: '👥',
-          head: 'Labour → Wages',
-          body: '<strong>Definition:</strong> payment for the physical and mental effort of people.<br><br><strong>Why this reward?</strong> Workers give up their time and energy. Wages compensate them for this contribution to production.<br><br><span style="display:block;margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(91,33,182,0.08);font-size:13px;font-style:italic;color:#5B21B6;">🧠 Remember: human effort earns wages – payment for time and skill.</span>'
-        },
-        {
-          tone: 'amber',
-          icon: '🏭',
-          head: 'Capital → Interest',
-          body: '<strong>Definition:</strong> payment for the use of man-made productive resources.<br><br><strong>Why this reward?</strong> Capital wears out or could be used elsewhere. Interest rewards owners for use and the opportunity cost.<br><br><span style="display:block;margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(146,64,14,0.08);font-size:13px;font-style:italic;color:#92400E;">🧠 Remember: productive assets earn interest – reward for use and waiting.</span>'
-        },
-        {
-          tone: 'rose',
-          icon: '🚀',
-          head: 'Enterprise → Profit',
-          body: '<strong>Definition:</strong> the residual return after all other costs have been paid.<br><br><strong>Why this reward?</strong> Entrepreneurs take risks and make decisions. Profit is what is <em>left over</em> – it is not guaranteed.<br><br><span style="display:block;margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(185,28,28,0.08);font-size:13px;font-style:italic;color:#B91C1C;">🧠 Remember: risk-taking earns profit – the residual, not guaranteed.</span>'
-        }
-      ],
+      lede: 'Each factor of production earns a different reward. Lock the four pairings in with a quick check – then keep them for the rest of the course.',
+      tip: { icon: '✅', tone: 'green', text: 'Land → Rent · Labour → Wages · Capital → Interest · Enterprise → Profit.' },
+      classifyList: {
+        label: 'Match each factor to its reward',
+        emoji: '🎁',
+        intro: 'Tap the reward you think each factor earns.',
+        options: [
+          { id: 'rent',     label: 'Rent',     tone: 'green'  },
+          { id: 'wages',    label: 'Wages',    tone: 'purple' },
+          { id: 'interest', label: 'Interest', tone: 'amber'  },
+          { id: 'profit',   label: 'Profit',   tone: 'rose'   }
+        ],
+        items: [
+          { statement: '<strong>🏞️ Land</strong> – natural resources owned and let out for productive use.',         answer: 'rent',     why: 'Land earns <strong>rent</strong> – its supply is fixed, so owners can charge for use.' },
+          { statement: '<strong>👥 Labour</strong> – the time, effort and skill people contribute to production.',     answer: 'wages',    why: 'Labour earns <strong>wages</strong> – payment for time and skill applied to production.' },
+          { statement: '<strong>🏭 Capital</strong> – machines, factories and equipment used to produce other goods.', answer: 'interest', why: 'Capital earns <strong>interest</strong> – the reward for use and the opportunity cost of waiting.' },
+          { statement: '<strong>🚀 Enterprise</strong> – the risk-taker who organises the other three factors.',       answer: 'profit',   why: 'Enterprise earns <strong>profit</strong> – the residual after rent, wages and interest are paid. Not guaranteed.' }
+        ]
+      },
       examEdge: {
         title: 'Exam tip: never mix these up',
-        text: 'Don\'t confuse capital with money, or profit with wages. The classic A-level error is "capital earns wages" or "labour earns profit." Always link the factor to the reward it earns: <strong>Land→Rent, Labour→Wages, Capital→Interest, Enterprise→Profit</strong>. Profit is special – it\'s a residual, not a fixed payment.'
+        text: 'The classic A-level slip is “capital earns wages” or “labour earns profit”. Always link the factor to the reward: <strong>Land→Rent, Labour→Wages, Capital→Interest, Enterprise→Profit</strong>. Profit is special – it is the residual, not a contracted payment.'
       }
     },
 

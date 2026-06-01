@@ -2417,7 +2417,7 @@
       const mg = c.methodGrid;
       if (mg.label) content += genSecLabel(mg.emoji || '🧰', mg.label);
       const n = mg.items.length;
-      content += `<div class="method-grid" style="display:grid;grid-template-columns:repeat(${n},1fr);gap:14px;margin-bottom:26px;">`;
+      content += `<div class="method-grid" style="display:grid;grid-template-columns:${gridColumnsFor(n, 200)};gap:14px;margin-bottom:26px;">`;
       content += mg.items.map(m => {
         const t = PATTERN_TONES[m.tone || 'blue'] || PATTERN_TONES.blue;
         return `

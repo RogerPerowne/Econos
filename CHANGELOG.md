@@ -6,6 +6,41 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.22.0 — 2026-06-01
+
+### Theme 1.1 restructure to match the Edexcel A spec
+
+The first topic conflated three spec points. Split into spec-accurate
+topics (Edexcel A scope):
+
+- **1.1.1 Economics as a Social Science** — reuses the
+  `introduction-to-economics` URL (no SEO/link loss); reduced to
+  methodology scope (economic agents, the rationality assumption,
+  micro vs macro). New methodology quiz. Cards on models &
+  assumptions, ceteris paribus and the limits of economic
+  experiments are still to be authored (ChatGPT brief issued).
+- **1.1.2 Positive & Normative Statements** — NEW topic
+  (`positive-and-normative-statements`); migrates the positive/
+  normative card, adds an applied "spotting the distinction" card,
+  and ships a brand-new 6-question quiz. A "role of value
+  judgements" card is still to be authored.
+- **1.1.3 The Economic Problem** — NEW topic (`the-economic-problem`);
+  carries scarcity, opportunity cost and the three economic
+  questions (migrated from the old intro) plus the full eight-card
+  factors-of-production content folded in. Quiz now spans scarcity →
+  opportunity cost → three questions → factors (13 questions). A
+  "renewable vs non-renewable resources" card is still to be
+  authored.
+
+`factors-of-production` is hidden from the Edexcel A grid
+(`included: false`) — its content now lives in 1.1.3 — but stays
+live for AQA, OCR and Edexcel B where it's a named sub-section.
+Scope this round is Edexcel A only; the other boards keep reading
+their existing baseline.
+
+Build, lint and the 116-test unit suite all pass; the home grid now
+reads 1.1.1 → 1.1.6 in spec order.
+
 ## 0.21.2 — 2026-06-01
 
 ### Site-wide rollout of legend-below + overlap fix

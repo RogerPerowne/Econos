@@ -9,11 +9,11 @@ window.ECONOS_TOPIC = {
   id:          "introduction-to-economics",
   topicNum:    "1.1",
   theme:       "Component 1 — Microeconomics",
-  title:       "Introduction to Economics",
+  title:       "Economics as a Social Science",
   estTime:     '—',
   goal:        'Coming soon.',
   intro: {
-    summary:  "Introduction to Economics on OCR.",
+    summary:  "Economics as a Social Science on OCR.",
     doInThis: "Full Learn It content for this topic is not yet available on OCR.",
     outcomes: [],
     tip:      'Switch board in the account menu (top-right) to access the same topic on Edexcel A.',

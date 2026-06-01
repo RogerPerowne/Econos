@@ -9,11 +9,11 @@ window.ECONOS_TOPIC = {
   id:          "introduction-to-economics",
   topicNum:    "3.1.1.1",
   theme:       "Paper 1 — Individuals, firms, markets and market failure",
-  title:       "Introduction to Economics",
+  title:       "Economics as a Social Science",
   estTime:     '—',
   goal:        'Coming soon.',
   intro: {
-    summary:  "Introduction to Economics on AQA.",
+    summary:  "Economics as a Social Science on AQA.",
     doInThis: "Full Learn It content for this topic is not yet available on AQA.",
     outcomes: [],
     tip:      'Switch board in the account menu (top-right) to access the same topic on Edexcel A.',

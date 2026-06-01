@@ -9,11 +9,11 @@ window.ECONOS_TOPIC = {
   id:          "introduction-to-economics",
   topicNum:    "1.1.1",
   theme:       "Theme 1 — Markets, consumers and firms",
-  title:       "Introduction to Economics",
+  title:       "Economics as a Social Science",
   estTime:     '—',
   goal:        'Coming soon.',
   intro: {
-    summary:  "Introduction to Economics on Edexcel B.",
+    summary:  "Economics as a Social Science on Edexcel B.",
     doInThis: "Full Learn It content for this topic is not yet available on Edexcel B.",
     outcomes: [],
     tip:      'Switch board in the account menu (top-right) to access the same topic on Edexcel A.',

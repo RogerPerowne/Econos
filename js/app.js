@@ -158,6 +158,50 @@
     return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 18px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
   }
 
+  /* Branches: three static layouts share one helper so the data-file
+     `branchesLayout` field stays the only knob. All three render Inter
+     throughout — Fraunces is reserved for page titles. */
+  function renderBranches(branches, layout, idPrefix) {
+    if (!Array.isArray(branches) || !branches.length) return '';
+    const items = branches.map((b, i) => ({
+      tone: b.tone || 'blue',
+      label: b.label || '',
+      sub: b.sub || '',
+      n: i + 1,
+      id: `${idPrefix}-${i}`
+    }));
+    if (layout === 'triptych') {
+      const cols = items.map(it => `
+        <div class="branch-tri branch-tri--${it.tone}">
+          <div class="branch-tri__numeral">${it.n}</div>
+          <div class="branch-tri__label">${it.label}</div>
+          <div class="branch-tri__sub">${it.sub}</div>
+        </div>`).join('');
+      return `<div class="branch-tris" style="--branch-tri-count:${items.length};margin-bottom:24px;">${cols}</div>`;
+    }
+    if (layout === 'quotes') {
+      const tiles = items.map(it => `
+        <div class="branch-quote branch-quote--${it.tone}">
+          <div class="branch-quote__mark" aria-hidden="true">&ldquo;</div>
+          <div class="branch-quote__body">
+            <div class="branch-quote__label">${it.label}</div>
+            <div class="branch-quote__sub">${it.sub}</div>
+          </div>
+        </div>`).join('');
+      return `<div class="branch-quotes" style="margin-bottom:24px;">${tiles}</div>`;
+    }
+    // Default 'stack' — open tone-stripe cards, no reveal pill.
+    const cards = items.map(it => `
+      <div class="branch-cal branch-cal--${it.tone}">
+        <div class="branch-cal__badge">${it.n}</div>
+        <div class="branch-cal__body">
+          <div class="branch-cal__label">${it.label}</div>
+          <div class="branch-cal__sub">${it.sub}</div>
+        </div>
+      </div>`).join('');
+    return `<div class="branch-callouts" style="margin-bottom:24px;">${cards}</div>`;
+  }
+
   // Shared tone palette used by tip / comparison / flow / table patterns.
   // Keeps colour decisions consistent with the rest of the generic renderer.
   const PATTERN_TONES = {
@@ -2271,25 +2315,26 @@
       content += `</div>`;
     }
 
-    // Branches – tone-coded tappable callouts. Rendered after main content
-    // (body / causes / table) so they read as a "now zoom out" framing block.
+    // Branches – tone-coded callouts rendered after main content as a
+    // "now zoom out" framing block. The `branchesLayout` field picks
+    // the visual treatment:
+    //   stack    (default) — vertical list of tone-strip cards. Good
+    //                        default when the items are independent.
+    //   quotes             — pull-quote tiles with an oversized tone
+    //                        opening mark. Suits sequential principles
+    //                        or aphorisms ("Opportunity cost is...").
+    //   triptych           — N equal-width columns on desktop, stacks
+    //                        on mobile. Best when the items are
+    //                        parallel-structure (the three questions,
+    //                        the three trade-offs). Reads structurally.
+    // All three render STATICALLY now — the tap-to-reveal pattern was
+    // dropped; content is elegant enough on its own. Body uses Inter
+    // throughout per Roger's typography rule (Fraunces reserved for
+    // page titles + chart accents).
     if (c.branches && c.branches.length) {
       content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture');
-      content += `<div class="branch-callouts" style="margin-bottom:24px;">
-        ${c.branches.map((b, i) => `
-          <div class="branch-cal branch-cal--${b.tone || 'blue'}" data-flap-id="gen-branch-${i}">
-            <div class="branch-cal__badge">${i + 1}</div>
-            <div class="branch-cal__body">
-              <div class="branch-cal__label">${b.label}</div>
-              <div class="branch-cal__sub is-hidden">${b.sub}</div>
-              <div class="branch-cal__cta">
-                <span class="branch-cal__cta-label">Reveal answer</span>
-                <span class="branch-cal__cta-arrow" aria-hidden="true">→</span>
-              </div>
-            </div>
-          </div>
-        `).join('')}
-      </div>`;
+      const layout = c.branchesLayout || 'stack';
+      content += renderBranches(c.branches, layout, 'gen-branch');
     }
 
     // Flow (late position) – renders AFTER causes/table/branches for cards where
@@ -2746,21 +2791,7 @@
       <p class="card__lede">${c.lede}</p>
 
       <div class="framing-row">
-        <div class="branch-callouts">
-          ${c.branches.map((b, i) => `
-            <div class="branch-cal branch-cal--${b.tone}" data-flap-id="branch-${i}">
-              <div class="branch-cal__badge">${i + 1}</div>
-              <div class="branch-cal__body">
-                <div class="branch-cal__label">${b.label}</div>
-                <div class="branch-cal__sub is-hidden">${b.sub}</div>
-                <div class="branch-cal__cta">
-                  <span class="branch-cal__cta-label">Reveal answer</span>
-                  <span class="branch-cal__cta-arrow" aria-hidden="true">→</span>
-                </div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
+        ${renderBranches(c.branches, c.branchesLayout || 'stack', 'branch')}
         <div class="framing-diagram">${diagram}</div>
       </div>
 
@@ -3117,16 +3148,12 @@
 
   /* === Card 7: deflation === */
   function renderCardDeflation(c) {
-    const mechs = c.mechanisms.map((m, i) => `
-      <div class="def-mech-row" data-action="reveal-deflation" data-deflation-id="${i}">
+    const mechs = c.mechanisms.map((m) => `
+      <div class="def-mech-row">
         <div class="def-mech-row__icon">${m.icon}</div>
         <div style="flex:1; min-width:0;">
           <div class="def-mech-row__title">${m.title}</div>
-          <div class="def-mech-row__text is-hidden">${m.text}</div>
-          <div class="def-mech-row__hint">
-            <span>Reveal mechanism</span>
-            <span class="def-mech-row__arrow" aria-hidden="true">→</span>
-          </div>
+          <div class="def-mech-row__text">${m.text}</div>
         </div>
       </div>
     `).join('');
@@ -6041,26 +6068,7 @@
   }
 
   function handleClick(e) {
-    // Branch-cal flap toggle (card 1) – match anywhere inside the branch
-    const branchEl = e.target.closest('.branch-cal[data-flap-id]');
-    if (branchEl) {
-      e.preventDefault();
-      const sub = branchEl.querySelector('.branch-cal__sub');
-      const cta = branchEl.querySelector('.branch-cal__cta-label');
-      const arrow = branchEl.querySelector('.branch-cal__cta-arrow');
-      if (sub.classList.contains('is-hidden')) {
-        sub.classList.remove('is-hidden');
-        branchEl.classList.add('is-open');
-        if (cta) cta.textContent = 'Hide answer';
-        if (arrow) arrow.textContent = '↑';
-      } else {
-        sub.classList.add('is-hidden');
-        branchEl.classList.remove('is-open');
-        if (cta) cta.textContent = 'Reveal answer';
-        if (arrow) arrow.textContent = '→';
-      }
-      return;
-    }
+    // Branches are static now — no flap toggle here.
 
     const target = e.target.closest('[data-action], [data-card-idx]');
     if (!target) return;
@@ -6165,17 +6173,6 @@
       target.setAttribute('aria-expanded', 'true');
       const nextBtn = root.querySelector('[data-next-button]');
       if (nextBtn) nextBtn.classList.add('btn--pulse');
-    } else if (action === 'reveal-deflation') {
-      // Card 7: open or close a deflation flap
-      const text = target.querySelector('.def-mech-row__text');
-      if (!text) return;
-      if (text.classList.contains('is-hidden')) {
-        text.classList.remove('is-hidden');
-        target.classList.add('is-open');
-      } else {
-        text.classList.add('is-hidden');
-        target.classList.remove('is-open');
-      }
     } else if (action === 'ad-step') {
       // AD interactive: change diagram state, switch active tab, swap panel
       const newState = target.dataset.adState;

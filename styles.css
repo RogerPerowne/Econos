@@ -1759,33 +1759,34 @@ img, svg { display: block; max-width: 100%; }
   gap: var(--sp-3);
 }
 
-/* Branch callouts — flashcard-style reveal tiles.
-   Replaced the original flat pastel boxes (which read as "info banner"
-   rather than "active recall card"). New design:
-     - white card with a thick coloured left strip in the tile's tone
-     - chunky tone-coloured numeric badge replaces the small dot
-     - Fraunces bold display label, larger than before
-     - explicit "Reveal answer →" pill CTA in the body (not a small
-       'tap to recall +' hint), flips to "Hide answer ↑" once open
-     - subtle lift on hover so the tile reads as a tappable surface
-   The .branch-cal--<tone> modifier sets every coloured element via
-   currentColor so a new tone only needs the two CSS vars (-700 +
-   -50) — no per-class duplication. */
+/* Branch callouts — three static layouts share one tone palette.
+     stack    (.branch-callouts > .branch-cal)
+                Vertical list of tone-strip cards. Default when items
+                are independent points.
+     quotes   (.branch-quotes > .branch-quote)
+                Pull-quote tiles with oversized opening mark. Suits
+                sequential principles / aphorisms.
+     triptych (.branch-tris > .branch-tri)
+                N equal columns on desktop, stacks on mobile. Best
+                when items are parallel-structure (the three core
+                questions, three trade-offs).
+   Each layout sets three CSS custom properties (--tone-strong,
+   --tone-deep, --tone-tint) via the .X--<tone> modifier; a new tone
+   only needs three colour vars. Body uses Inter — Fraunces stays
+   reserved for page titles. */
 .branch-cal {
   --tone-strong: var(--econ-blue);
   --tone-deep:   var(--econ-blue-700);
   --tone-tint:   var(--econ-blue-50);
   display: flex;
   gap: var(--sp-4);
-  align-items: stretch;
+  align-items: flex-start;
   padding: var(--sp-4) var(--sp-5);
   background: var(--econ-white);
   border: 1.5px solid var(--econ-gray-200);
   border-radius: var(--r-lg);
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 .branch-cal::before {
   content: '';
@@ -1793,11 +1794,6 @@ img, svg { display: block; max-width: 100%; }
   top: 0; bottom: 0; left: 0;
   width: 6px;
   background: var(--tone-strong);
-}
-.branch-cal:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--tone-strong);
 }
 .branch-cal--green  { --tone-strong: var(--econ-green);  --tone-deep: var(--econ-green-700);  --tone-tint: var(--econ-green-50); }
 .branch-cal--amber  { --tone-strong: var(--econ-amber);  --tone-deep: var(--econ-amber-700);  --tone-tint: var(--econ-amber-50); }
@@ -1808,27 +1804,20 @@ img, svg { display: block; max-width: 100%; }
 
 .branch-cal__badge {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--r-full);
   background: var(--tone-tint);
   color: var(--tone-deep);
-  font-family: var(--font-display);
-  font-variation-settings: var(--fraunces-section);
+  font-family: var(--font-body);
   font-weight: var(--fw-bold);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
-  letter-spacing: -0.02em;
   margin-left: var(--sp-2);
-  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
-}
-.branch-cal.is-open .branch-cal__badge {
-  background: var(--tone-strong);
-  color: var(--econ-white);
-  transform: scale(1.06);
+  margin-top: 2px;
 }
 
 .branch-cal__body {
@@ -1840,13 +1829,11 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .branch-cal__label {
-  font-family: var(--font-display);
-  font-variation-settings: var(--fraunces-section);
+  font-family: var(--font-body);
   font-weight: var(--fw-bold);
-  font-size: var(--fs-lg);
-  line-height: 1.25;
+  font-size: var(--fs-md);
+  line-height: 1.3;
   color: var(--tone-deep);
-  letter-spacing: -0.01em;
 }
 
 .branch-cal__sub {
@@ -1854,30 +1841,129 @@ img, svg { display: block; max-width: 100%; }
   font-size: var(--fs-sm);
   color: var(--econ-ink);
   line-height: var(--lh-relaxed);
-  padding-top: var(--sp-2);
-  border-top: 1px dashed var(--econ-gray-200);
 }
 
-.branch-cal__cta {
-  display: inline-flex;
+/* ── Quotes layout ───────────────────────────────────────────────
+   Vertical stack of pull-quote tiles. Oversized tone-coloured
+   opening curly mark sets a calm, declarative tone; works well for
+   principles and aphorisms ("opportunity cost is..."). */
+.branch-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.branch-quote {
+  --tone-strong: var(--econ-blue);
+  --tone-deep:   var(--econ-blue-700);
+  --tone-tint:   var(--econ-blue-50);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-4);
+  align-items: start;
+  padding: var(--sp-4) var(--sp-5) var(--sp-4) var(--sp-4);
+  background: var(--econ-white);
+  border: 1.5px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+}
+.branch-quote--green  { --tone-strong: var(--econ-green);  --tone-deep: var(--econ-green-700);  --tone-tint: var(--econ-green-50); }
+.branch-quote--amber  { --tone-strong: var(--econ-amber);  --tone-deep: var(--econ-amber-700);  --tone-tint: var(--econ-amber-50); }
+.branch-quote--blue   { --tone-strong: var(--econ-blue);   --tone-deep: var(--econ-blue-700);   --tone-tint: var(--econ-blue-50); }
+.branch-quote--rose   { --tone-strong: var(--econ-rose);   --tone-deep: var(--econ-rose-700);   --tone-tint: var(--econ-rose-50); }
+.branch-quote--purple { --tone-strong: var(--econ-purple); --tone-deep: var(--econ-purple-700); --tone-tint: var(--econ-purple-50); }
+.branch-quote--slate  { --tone-strong: var(--econ-slate);  --tone-deep: var(--econ-slate-700);  --tone-tint: var(--econ-slate-50); }
+.branch-quote__mark {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: 56px;
+  line-height: 0.8;
+  color: var(--tone-strong);
+  opacity: 0.55;
+  margin-top: -4px;
+  user-select: none;
+}
+.branch-quote__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+.branch-quote__label {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  line-height: 1.3;
+  color: var(--tone-deep);
+}
+.branch-quote__sub {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Triptych layout ─────────────────────────────────────────────
+   Equal columns on desktop, stacks on mobile. Designed for parallel-
+   structure sets — the three core economic questions, the three
+   trade-offs of macro objectives. Each column reads top-to-bottom:
+   chunky numeral → bold question → answer paragraph. The numerals
+   live in tinted circles so they sit visually equal to each other
+   even when one number is wider (10 vs 1). */
+.branch-tris {
+  display: grid;
+  grid-template-columns: repeat(var(--branch-tri-count, 3), minmax(0, 1fr));
+  gap: var(--sp-3);
+}
+@media (max-width: 720px) {
+  .branch-tris { grid-template-columns: 1fr; }
+}
+.branch-tri {
+  --tone-strong: var(--econ-blue);
+  --tone-deep:   var(--econ-blue-700);
+  --tone-tint:   var(--econ-blue-50);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  align-self: flex-start;
-  padding: 4px var(--sp-3);
+  text-align: center;
+  gap: var(--sp-3);
+  padding: var(--sp-5) var(--sp-4);
+  background: var(--econ-white);
+  border: 1.5px solid var(--econ-gray-200);
+  border-top: 4px solid var(--tone-strong);
+  border-radius: var(--r-lg);
+  min-height: 100%;
+}
+.branch-tri--green  { --tone-strong: var(--econ-green);  --tone-deep: var(--econ-green-700);  --tone-tint: var(--econ-green-50); }
+.branch-tri--amber  { --tone-strong: var(--econ-amber);  --tone-deep: var(--econ-amber-700);  --tone-tint: var(--econ-amber-50); }
+.branch-tri--blue   { --tone-strong: var(--econ-blue);   --tone-deep: var(--econ-blue-700);   --tone-tint: var(--econ-blue-50); }
+.branch-tri--rose   { --tone-strong: var(--econ-rose);   --tone-deep: var(--econ-rose-700);   --tone-tint: var(--econ-rose-50); }
+.branch-tri--purple { --tone-strong: var(--econ-purple); --tone-deep: var(--econ-purple-700); --tone-tint: var(--econ-purple-50); }
+.branch-tri--slate  { --tone-strong: var(--econ-slate);  --tone-deep: var(--econ-slate-700);  --tone-tint: var(--econ-slate-50); }
+.branch-tri__numeral {
+  width: 56px;
+  height: 56px;
   border-radius: var(--r-full);
   background: var(--tone-tint);
   color: var(--tone-deep);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-body);
-  font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: background 0.18s ease;
+  font-size: 28px;
+  line-height: 1;
 }
-.branch-cal:hover .branch-cal__cta { background: var(--tone-strong); color: var(--econ-white); }
-.branch-cal__cta-arrow {
-  display: inline-block;
-  transition: transform 0.18s ease;
+.branch-tri__label {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  line-height: 1.3;
+  color: var(--tone-deep);
+}
+.branch-tri__sub {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: var(--lh-relaxed);
 }
 
 /* ============================================================
@@ -2888,13 +2974,11 @@ img, svg { display: block; max-width: 100%; }
 /* Hover-lift on interactive surfaces only (cards, scenarios) */
 .scenario,
 .mech-tile,
-.branch-cal,
 .cards-list__item {
   cursor: pointer;
 }
 .scenario:hover,
-.mech-tile:hover,
-.branch-cal:hover {
+.mech-tile:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -3104,14 +3188,9 @@ img, svg { display: block; max-width: 100%; }
    5. POP-UP BOOK INTERACTIONS
    ============================================================ */
 
-/* --- Card 1 framing: branches as tappable flaps --- */
-.branch-cal {
-  position: relative;
-  user-select: none;
-}
-.branch-cal__sub.is-hidden {
-  display: none;
-}
+/* Legacy hidden-state util — still used by key-tile / exam-edge /
+   reveal-cell which keep their tap-to-reveal pattern. Branches are
+   static now, so the .branch-cal__sub.is-hidden rule was removed. */
 .key-tile__def.is-hidden,
 .exam-edge__text.is-hidden,
 .reveal-cell__body.is-hidden {
@@ -3139,10 +3218,6 @@ img, svg { display: block; max-width: 100%; }
 }
 .exam-edge__btn:hover {
   background: #FEF3C7 !important;
-}
-.branch-cal[data-flap] .branch-cal__sub,
-.branch-cal.is-open .branch-cal__sub {
-  animation: econ-flap-open 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 /* --- Card 4 diagnose: tap-to-reveal answer --- */
@@ -3320,48 +3395,8 @@ img, svg { display: block; max-width: 100%; }
 .mech-tile:nth-child(3) { animation-delay: 0.31s; }
 .mech-tile:nth-child(4) { animation-delay: 0.44s; }
 
-/* --- Card 7 deflation: tap-to-reveal flaps --- */
-.def-mech-row {
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.2s ease;
-}
-.def-mech-row:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-/* Reveal pill — mirrors the branch-cal CTA so the two "tap to recall"
-   surfaces share the same visual language. */
-.def-mech-row__hint {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  align-self: flex-start;
-  margin-top: var(--sp-2);
-  padding: 4px var(--sp-3);
-  border-radius: var(--r-full);
-  background: var(--econ-gray-100);
-  color: var(--econ-ink);
-  font-family: var(--font-body);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: background 0.18s ease;
-}
-.def-mech-row:hover .def-mech-row__hint {
-  background: var(--econ-amber);
-  color: var(--econ-white);
-}
-.def-mech-row__arrow {
-  display: inline-block;
-  transition: transform 0.18s ease;
-}
-.def-mech-row.is-open .def-mech-row__hint { display: none; }
-.def-mech-row__text.is-hidden { display: none; }
-.def-mech-row__text:not(.is-hidden) {
-  animation: econ-slide-reveal 0.36s ease both;
-}
+/* Card 7 deflation: mechanism rows are static now — no flap/reveal. */
+.def-mech-row { transition: background 0.18s ease; }
 
 
 /* ============================================================

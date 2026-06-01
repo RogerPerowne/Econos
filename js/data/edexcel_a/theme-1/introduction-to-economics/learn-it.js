@@ -58,6 +58,7 @@ window.ECONOS_TOPIC = {
         title: 'Worked example – supply and demand',
         emoji: '📈',
         layout: 'side',
+        position: 'after-table',
         bullets: [
           '<strong>Price and quantity:</strong> the model focuses on price (P) and quantity (Q).',
           '<strong>Buyers and sellers:</strong> demand comes from buyers, supply from sellers.',

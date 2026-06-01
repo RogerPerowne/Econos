@@ -12,8 +12,8 @@
 
   window.ECONOS_MODELS_SD_SPEC = {
     width: 440,
-    height: 320,
-    chartArea: { x: 58, y: 46, width: 330, height: 220 },
+    height: 360,
+    chartArea: { x: 58, y: 46, width: 330, height: 264 },
     className: 'models-sd-svg',
     axes: {
       x: { label: 'Quantity' },

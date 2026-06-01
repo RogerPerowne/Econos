@@ -1339,7 +1339,7 @@
         section.body.forEach(function (line) {
           var lineText = typeof line === 'string' ? line : line.text;
           var lineTone = typeof line === 'string' ? LABEL_INK : tone(line.tone || 'slate').label;
-          var lineWeight = typeof line === 'object' && line.bold ? '700' : '600';
+          var lineWeight = typeof line === 'object' && line.bold ? '700' : '400';
           var lineItalic = typeof line === 'object' && line.italic ? 'font-style:italic;' : '';
           var lineSize = typeof line === 'object' && line.fontSize ? line.fontSize : 13;
           parts.push('<div class="econos-chart-legend__body" style="color:' + lineTone + ';font-weight:' + lineWeight + ';font-size:' + lineSize + 'px;' + lineItalic + '">' + lineText + '</div>');

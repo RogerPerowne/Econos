@@ -30,6 +30,8 @@ window.ECONOS_TOPIC = {
       title: 'The PPF: one diagram, five concepts',
       lede: 'The Production Possibility Frontier is the most versatile diagram in Theme 1 – explore construction, opportunity cost, shifts, and efficiency using the interactive diagram below.',
       diagramKey: 'ppfInteractive',
+      diagramLabel: 'Explore the PPF',
+      diagramEmoji: '📈',
       steps: [
         {
           key: 'base',

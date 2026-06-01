@@ -4701,6 +4701,16 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 560px) {
   .id-step-strip { grid-template-columns: 1fr !important; }
 }
+/* Scale interactiveDiagram SVGs to fit their column. Without this the
+   chart renders at its intrinsic viewBox width (e.g. 470 px) and gets
+   centred inside a wider column, leaving massive empty whitespace on
+   both sides — most visible at viewports ≤1100 px where the grid
+   collapses to a single column. Mirrors .econos-chart-wrap-below > svg. */
+.id-content-row > div > svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 .ad-tab {
   display: flex;

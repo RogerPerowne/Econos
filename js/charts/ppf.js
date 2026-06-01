@@ -1610,7 +1610,17 @@
     // y≈ area.y - 15, with ascender ~10px above that) has safe headroom.
     // Without this, "Price level" etc. clip at the top of the SVG on
     // every chart whose chartArea.y < 30.
-    parts.push('<svg class="' + className + '" viewBox="0 -16 ' + width + ' ' + (height + 16) + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-labelledby="econos-chart-title econos-chart-desc">');
+    //
+    // Wide-layout marker: a chart with side legends, a vertical divider,
+    // or multi-panels can't usefully shrink to a 320-px phone — the
+    // legend text would render at 4-5 px. Tag those charts so the CSS
+    // can give them a min-width and let the wrapping container's
+    // overflow-x: auto scroll horizontally instead of crushing them.
+    var isWide = (spec.divider || isMulti ||
+                  (Array.isArray(spec.legends) && spec.legends.length > 0) ||
+                  width >= 700);
+    var wideClass = isWide ? ' econos-chart--wide' : '';
+    parts.push('<svg class="' + className + wideClass + '" viewBox="0 -16 ' + width + ' ' + (height + 16) + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-labelledby="econos-chart-title econos-chart-desc">');
     parts.push('<title id="econos-chart-title">' + altMeta.title + '</title>');
     parts.push('<desc id="econos-chart-desc">' + altMeta.desc + '</desc>');
 

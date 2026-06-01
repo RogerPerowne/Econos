@@ -2565,6 +2565,24 @@ img, svg { display: block; max-width: 100%; }
   }
 }
 
+/* Wide-layout charts (multi-panel, side-legend, or width ≥ 700) get a
+   min-width so they don't shrink to unreadable text on mobile. The
+   wrapping container has overflow-x:auto so the user can pan
+   horizontally to read the legend if needed. Without this the engine's
+   default svg { max-width: 100% } rule shrank a 900-px chart to fit a
+   375-px viewport — fonts dropped from 13 px to ~5 px and the side
+   legend became illegible. Roger's brief: "Can we change all charts
+   to be responsive?". */
+@media (max-width: 720px) {
+  .econos-chart--wide {
+    min-width: 720px;
+  }
+  /* .ad-interactive__diagram normally has overflow:hidden — flip it on
+     mobile so a wide chart inside can scroll horizontally instead of
+     getting clipped. */
+  .ad-interactive__diagram { overflow-x: auto !important; }
+}
+
 /* Session-meta on the intro card stacks vertically on phones — the
    default 1fr 1fr crushed "Estimated time" and "Your goal" into two
    half-width columns, forcing the goal text to wrap awkwardly tall

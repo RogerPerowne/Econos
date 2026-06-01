@@ -2720,6 +2720,9 @@ img, svg { display: block; max-width: 100%; }
   /* versusList "A vs B" pairs stack the same way on phones. */
   .versus-list__pair { flex-direction: column !important; }
   .versus-list__vs { transform: rotate(90deg); }
+  /* Three-element comparison (A + B = C) is too tight side-by-side on a
+     phone — stack the cards with the operator badges sitting between. */
+  .gen-comparison--triple { flex-direction: column !important; }
 }
 
 /* Card padding tightens on narrow viewports so the inner content

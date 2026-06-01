@@ -1379,27 +1379,40 @@
     // When position === 'after-diagram', rendering is deferred until after the diagramPanel block below.
     const renderComparison = () => {
       const cmp = c.comparison;
+      // A third "result" side (A op B = C) makes the row 3 cards wide, so the
+      // cards render in a more compact size to keep captions from over-wrapping.
+      const triple = !!cmp.result;
       const renderSide = (side) => {
         const t = PATTERN_TONES[side.tone || 'green'] || PATTERN_TONES.green;
+        const ring = triple ? 52 : 64;
+        const pad = triple ? '20px 14px 18px' : '24px 20px 22px';
         return `
-          <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:24px 20px 22px;text-align:center;">
-            <div style="width:64px;height:64px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:30px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);">${side.icon || ''}</div>
-            <div style="font-size:17px;font-weight:800;color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
+          <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:${pad};text-align:center;">
+            <div style="width:${ring}px;height:${ring}px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:${triple ? 26 : 30}px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);">${side.icon || ''}</div>
+            <div style="font-size:${triple ? 15 : 17}px;font-weight:800;color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
             ${side.value ? `<div style="font-size:22px;font-weight:800;color:#0B1426;margin-bottom:8px;">${side.value}</div>` : ''}
-            ${side.caption ? `<div style="font-size:13.5px;color:${t.label};line-height:1.55;font-weight:600;">${side.caption}</div>` : ''}
+            ${side.caption ? `<div style="font-size:${triple ? 12.5 : 13.5}px;color:${t.label};line-height:1.5;font-weight:600;">${side.caption}</div>` : ''}
           </div>
         `;
+      };
+      // Operator badge between sides. Single-char tokens (+, =, ×) read
+      // better a little larger than the two-letter "VS".
+      const badge = (txt) => {
+        const fs = (txt && txt.length === 1) ? '20px' : '13px';
+        return `<div class="gen-comparison__op" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:46px;height:46px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:${fs};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${txt}</div></div>`;
       };
       if (cmp.title) {
         content += genSecLabel(cmp.emoji || '⚖️', cmp.title);
       }
+      // The optional third "result" side closes an A op B = C equation
+      // (facts + values = a policy choice); stacks on mobile via the
+      // .gen-comparison--triple modifier.
       content += `
-        <div style="display:flex;align-items:stretch;gap:14px;margin-bottom:26px;">
+        <div class="gen-comparison${triple ? ' gen-comparison--triple' : ''}" style="display:flex;align-items:stretch;gap:14px;margin-bottom:26px;">
           ${renderSide(cmp.left)}
-          <div style="display:flex;align-items:center;flex-shrink:0;">
-            <div style="width:46px;height:46px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:13px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${cmp.vs || 'VS'}</div>
-          </div>
+          ${badge(cmp.vs || 'VS')}
           ${renderSide(cmp.right)}
+          ${triple ? badge(cmp.resultJoin || '=') + renderSide(cmp.result) : ''}
         </div>
       `;
     };

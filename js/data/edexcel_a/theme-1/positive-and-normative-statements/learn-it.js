@@ -102,9 +102,11 @@ window.ECONOS_TOPIC = {
         title: 'Facts vs values',
         emoji: '📊',
         vs: '+',
+        resultJoin: '=',
         position: 'after-branches',
-        left:  { tone: 'blue',  icon: '📊', label: 'Positive (facts)',     caption: 'Describes what is – based on evidence and data.' },
-        right: { tone: 'amber', icon: '⚖️', label: 'Normative (values)',   caption: 'Judges what ought to be – based on values and beliefs.' }
+        left:   { tone: 'blue',  icon: '📊', label: 'Positive (facts)',     caption: 'Describes what is – based on evidence and data.' },
+        right:  { tone: 'amber', icon: '⚖️', label: 'Normative (values)',   caption: 'Judges what ought to be – based on values and beliefs.' },
+        result: { tone: 'green', icon: '🏛️', label: 'A policy choice',      caption: 'Evidence frames the options; values decide between them.' }
       },
       keyTakeaway: 'Policy debate is not just about what is true – it is also about what society values.',
       examEdge: 'The strongest answers explain that two economists may agree on the evidence but disagree because of different value judgements.'

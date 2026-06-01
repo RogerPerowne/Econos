@@ -538,9 +538,20 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 11 of 12',
       title: 'Factor Mobility',
-      lede: 'Mobility is the <strong>ability of a factor – especially labour – to move</strong> between places and jobs. Low mobility is a major cause of structural unemployment and regional inequality.',
+      lede: 'Mobility is the <strong>ability of a factor of production to move</strong> – between places (geographic) and between uses (occupational). <strong>Every</strong> factor has some mobility, but it is <strong>labour</strong> mobility that matters most for unemployment and regional inequality, so that is where we focus.',
+      tileGrid: {
+        label: 'How mobile is each factor?',
+        emoji: '🚚',
+        cols: 2,
+        items: [
+          { tone: 'green',  icon: '🏞️', title: 'Land',       sub: 'Fixed in place – but its use can change (farm → housing → solar)' },
+          { tone: 'purple', icon: '👥', title: 'Labour',     sub: 'Moves between places and jobs – but slowed by costs and ties' },
+          { tone: 'amber',  icon: '🏭', title: 'Capital',    sub: 'Tools, vehicles and money move easily; factories and infrastructure don’t' },
+          { tone: 'rose',   icon: '🚀', title: 'Enterprise', sub: 'Highly mobile – entrepreneurial skill transfers across sectors and borders' }
+        ]
+      },
       pairFirst: true,
-      pairLabel: 'Two dimensions of mobility',
+      pairLabel: 'Labour mobility – two dimensions',
       pairEmoji: '🚉',
       left: {
         tone: 'green',
@@ -556,7 +567,7 @@ window.ECONOS_TOPIC = {
         label: 'Occupational mobility',
         text: '<strong>Moving between jobs or industries.</strong><br><br>Workers change occupation or sector to find better opportunities. Supports structural change as the economy evolves (manufacturing → services → digital).<br><br>Higher occupational mobility means a more adaptable labour force – but requires retraining and transferable skills.'
       },
-      causesLabel: 'Why mobility is often low',
+      causesLabel: 'Why labour mobility is often low',
       causesEmoji: '🚧',
       causes: [
         { tone: 'amber',  icon: '💰', head: 'Retraining costs',    body: 'Learning new skills takes time and money. Mid-career workers may struggle to switch sectors without financial support.' },
@@ -564,14 +575,14 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '👨‍👩‍👧', head: 'Family ties',         body: 'Partners\' jobs, children\'s schools and elderly care duties anchor people to a location. Two-earner households are especially constrained.' },
         { tone: 'blue',   icon: 'ℹ️', head: 'Lack of information', body: 'Workers may not know about opportunities elsewhere. Job vacancies, training schemes and relocation support are often poorly advertised.' }
       ],
-      flowTitle: 'Why low mobility matters',
+      flowTitle: 'Why low labour mobility matters',
       flowEmoji: '⚠️',
       flow: [
         { tone: 'purple', icon: '🚷', title: 'Low mobility',              sub: 'Workers can\'t easily move or retrain.' },
         { tone: 'amber',  icon: '🏚️', title: 'Labour market immobility', sub: 'Skills and jobs don\'t match up.' },
         { tone: 'rose',   icon: '📉', title: 'Structural unemployment',  sub: 'Persistent joblessness in some areas and industries.' }
       ],
-      causes2Label: 'Policy levers to raise mobility',
+      causes2Label: 'Policy levers to raise labour mobility',
       causes2Emoji: '🛠️',
       causes2: [
         { tone: 'blue',   icon: '🎓', head: 'Apprentices',         body: 'Build skills while earning – combining work and training.' },

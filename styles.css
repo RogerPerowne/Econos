@@ -2672,9 +2672,13 @@ img, svg { display: block; max-width: 100%; }
    default 1fr 1fr crushed "Estimated time" and "Your goal" into two
    half-width columns, forcing the goal text to wrap awkwardly tall
    and ugly. One per row gives each the full width and renders the
-   meta block compactly. */
+   meta block compactly. Covers all three intros: Learn, Link, Land. */
 @media (max-width: 600px) {
-  .session-meta { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .session-meta,
+  .land-session-meta {
+    grid-template-columns: 1fr !important;
+    gap: var(--sp-3);
+  }
 }
 
 /* card-foot (Previous · counter · Next) sits in a row with
@@ -2844,16 +2848,23 @@ img, svg { display: block; max-width: 100%; }
   color: var(--econ-green-700);
 }
 
-/* Session meta — three columns of equal weight */
-.session-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  align-items: center;
-  gap: var(--sp-6);
-  padding: var(--sp-5) var(--sp-7);
+/* Session meta — three columns of equal weight on tablet+ . Below
+   600 px the columns stack vertically so "Your goal" and "Estimated
+   time" each get full width (see the mobile rule above this section
+   in the layout block). Scoping this to min-width: 600px keeps it
+   from overriding the mobile stack — the unscoped duplicate used
+   to win because it sat later in the cascade. */
+@media (min-width: 600px) {
+  .session-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+    gap: var(--sp-6);
+    padding: var(--sp-5) var(--sp-7);
+  }
+  .session-meta__cta { margin-left: 0; }
+  .session-meta__item { gap: var(--sp-4); }
 }
-.session-meta__cta { margin-left: 0; }
-.session-meta__item { gap: var(--sp-4); }
 
 
 /* ============================================================
@@ -3535,8 +3546,10 @@ img, svg { display: block; max-width: 100%; }
 
 
 /* --- Session-meta: give "Your goal" more space, force 2-line text --- */
-.session-meta {
-  grid-template-columns: auto 1fr auto;
+@media (min-width: 600px) {
+  .session-meta {
+    grid-template-columns: auto 1fr auto;
+  }
 }
 
 

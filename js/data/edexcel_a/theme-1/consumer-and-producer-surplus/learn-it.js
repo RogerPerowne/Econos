@@ -142,7 +142,7 @@ window.ECONOS_TOPIC = {
             tone: 'rose',
             head: 'Welfare lost forever',
             body: 'The red triangle = DWL: surplus from trades that <em>would have occurred</em> at P<sub>e</sub> but no longer happen.',
-            analysis: 'DWL is the <strong>efficiency cost</strong> of the tax – surplus that is destroyed, not transferred to anyone. Its size grows with the tax rate (DWL ≈ ½ × tax² × elasticity) and is larger when supply or demand is more elastic. <strong>Exception:</strong> a <em>Pigouvian</em> tax on a negative externality can <em>increase</em> welfare, because the DWL it creates in the private market is smaller than the externality DWL it eliminates.'
+            analysis: 'DWL is the <strong>efficiency cost</strong> of the tax – surplus destroyed, not transferred. It grows with the tax rate (DWL ≈ ½ × tax² × elasticity) and with elasticity. <strong>Exception:</strong> a <em>Pigouvian</em> tax on a negative externality can <em>raise</em> welfare, because the DWL it creates is smaller than the externality DWL it removes.'
           }
         ]
       },
@@ -196,7 +196,7 @@ window.ECONOS_TOPIC = {
             tone: 'rose',
             head: 'Welfare lost from overproduction',
             body: 'The red triangle = DWL: units between Q<sub>e</sub> and Q<sub>s</sub> whose <em>marginal cost</em> exceeds their <em>marginal benefit</em> – produced only because the subsidy distorts incentives.',
-            analysis: 'DWL is the <strong>efficiency cost</strong> of the subsidy – resources used to produce units society values less than they cost. Its size grows with the subsidy rate and is larger when supply or demand is more elastic. <strong>Exception:</strong> a subsidy that corrects a <em>positive externality</em> can <em>increase</em> welfare, because the DWL it creates in the private market is smaller than the externality DWL it eliminates.'
+            analysis: 'DWL is the <strong>efficiency cost</strong> of the subsidy – resources used on units society values less than they cost. It grows with the subsidy rate and with elasticity. <strong>Exception:</strong> a subsidy that corrects a <em>positive externality</em> can <em>raise</em> welfare, because the DWL it creates is smaller than the externality DWL it removes.'
           }
         ]
       },

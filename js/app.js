@@ -1566,8 +1566,8 @@
           </li>`;
         }).join('')}</ol>`
         : `<ul style="list-style:none;margin:0;padding:0;">${(dp.bullets || []).map(b => `
-          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13.5px;color:#0B1426;line-height:1.55;">
-            <span style="flex-shrink:0;width:8px;height:8px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>
+          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:12.5px;color:#0B1426;line-height:1.55;">
+            <span style="flex-shrink:0;width:7px;height:7px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>
             <span>${b}</span>
           </li>`).join('')}</ul>`;
       const titleOutside = dp.titleAbove && dp.title;

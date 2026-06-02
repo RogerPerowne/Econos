@@ -67,15 +67,9 @@ window.ECONOS_TOPIC = {
   <div style="font-size:22px;font-weight:800;color:#2563EB;font-family:Fraunces,Georgia,serif;">YED = %ΔQ<sup>d</sup> ÷ %ΔY</div>
   <div style="font-size:13px;color:#475569;margin-top:8px;line-height:1.6;">A <strong>positive</strong> YED means a normal good. A <strong>negative</strong> YED means an inferior good. The <strong>sign</strong> classifies the good — get it right first.</div>
 </div>`,
-      causesLabel: 'Classify the result',
-      causesEmoji: '📊',
-      causesStyle: 'tinted-flat',
-      causes: [
-        { tone: 'rose',  icon: '📉', head: 'YED < 0 · Inferior', body: 'Demand <strong>falls</strong> as income rises — consumers trade up.' },
-        { tone: 'amber', icon: '🛒', head: '0 < YED < 1 · Necessity', body: 'Demand rises, but <strong>less</strong> than proportionately.' },
-        { tone: 'green', icon: '💎', head: 'YED > 1 · Luxury', body: 'Demand rises <strong>more</strong> than proportionately.' },
-        { tone: 'slate', icon: '➖', head: 'YED ≈ 0 · Income-neutral', body: 'Demand barely changes when income moves.' }
-      ],
+      visualKey: 'yedClassifySpectrum',
+      visualLabel: 'Classify the result',
+      visualEmoji: '📊',
       causes2Label: 'Read the sign',
       causes2Emoji: '👁️',
       causes2Style: 'plain-white',

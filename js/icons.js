@@ -14476,6 +14476,40 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
+     yedClassifySpectrum — Income & Cross-Price Elasticity Card 2.
+     Replaces the 2×2 "classify the result" box grid with the same
+     number-line spectrum family used for XED: the four income-response
+     regimes laid out left → right by YED value — inferior (falls) →
+     income-neutral (0) → necessity (0–1) → luxury (>1) — each with an
+     example, a dot and a value chip over a red → green gradient bar.
+     Responsive: cells compress and wrap rather than clip.
+     ─────────────────────────────────────────────────────────────── */
+  yedClassifySpectrum: `
+    <div class="yed-spec" style="line-height:1.45;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .yed-spec .ys-row { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+        .yed-spec .ys-col { text-align:center; display:flex; flex-direction:column; align-items:center; min-width:0; }
+        .yed-spec .ys-cap { font-size:11.5px; font-weight:800; line-height:1.2; min-height:28px; }
+        .yed-spec .ys-eg { font-size:20px; line-height:1.2; margin:3px 0 2px; }
+        .yed-spec .ys-egl { font-size:10px; color:#64748B; line-height:1.25; min-height:24px; }
+        .yed-spec .ys-dot { width:13px; height:13px; border-radius:50%; border:2.5px solid #fff; box-shadow:0 0 0 1.5px currentColor; margin:7px 0 6px; flex-shrink:0; }
+        .yed-spec .ys-val { font-size:11.5px; font-weight:800; border-radius:8px; padding:3px 8px; line-height:1.2; }
+        .yed-spec .ys-d { font-size:10px; color:#64748B; line-height:1.3; margin-top:6px; min-height:26px; }
+        .yed-spec .ys-bar { height:6px; border-radius:3px; margin:8px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#94A3B8 33%,#D97706 66%,#059669 100%); }
+        .yed-spec .ys-ends { display:flex; justify-content:space-between; font-size:10.5px; font-weight:700; color:#475569; margin:6px 4px 0; }
+      </style>
+      <div class="ys-row">
+        <div class="ys-col" style="color:#DC2626;"><div class="ys-cap">Inferior</div><div class="ys-eg">🚌</div><div class="ys-egl">Bus travel · value brands</div><div class="ys-dot"></div><div class="ys-val" style="background:#FFF1F2;color:#9F1239;">YED &lt; 0</div><div class="ys-d">Demand falls as income rises.</div></div>
+        <div class="ys-col" style="color:#64748B;"><div class="ys-cap">Income-neutral</div><div class="ys-eg">🧂</div><div class="ys-egl">Salt · basic staples</div><div class="ys-dot"></div><div class="ys-val" style="background:#F1F5F9;color:#475569;">YED ≈ 0</div><div class="ys-d">Barely changes when income moves.</div></div>
+        <div class="ys-col" style="color:#D97706;"><div class="ys-cap">Necessity</div><div class="ys-eg">🛒</div><div class="ys-egl">Groceries · electricity</div><div class="ys-dot"></div><div class="ys-val" style="background:#FFFBEB;color:#B45309;">0 &lt; YED &lt; 1</div><div class="ys-d">Rises, but less than proportionately.</div></div>
+        <div class="ys-col" style="color:#059669;"><div class="ys-cap">Luxury</div><div class="ys-eg">💎</div><div class="ys-egl">Holidays · fine dining</div><div class="ys-dot"></div><div class="ys-val" style="background:#ECFDF5;color:#065F46;">YED &gt; 1</div><div class="ys-d">Rises more than proportionately.</div></div>
+      </div>
+      <div class="ys-bar"></div>
+      <div class="ys-ends"><span>← Demand falls as income rises</span><span>Rises faster than income →</span></div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
      pesBigPictureCompare — PES Card 1. Twin supply panels: the SAME
      price rise (P₁→P₂) traced onto a steep (inelastic) and a shallow
      (elastic) supply curve, so a small ΔQ vs a large ΔQ is read off

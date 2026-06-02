@@ -1839,7 +1839,7 @@
         const border = plain ? '#E7E7EA' : tone.border;
         const headerAlign = side.centeredLabel ? 'center' : 'flex-start';
         return `
-          <div style="border-radius:14px;background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;">
+          <div style="border-radius:14px;background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;min-width:0;">
             <div style="display:flex;align-items:center;justify-content:${headerAlign};gap:12px;margin-bottom:14px;">
               ${numberHtml}${iconHtml}
               <div style="color:${tone.label};font-weight:800;font-size:16px;letter-spacing:0.01em;">${side.label}</div>
@@ -1852,7 +1852,7 @@
         html += genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
       }
       html += `
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:22px;">
         ${renderPairedSide(c.left, 'green')}
         ${renderPairedSide(c.right, 'amber')}
       </div>`;

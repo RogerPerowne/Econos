@@ -14505,10 +14505,13 @@ window.ECONOS_ICONS = {
       <text x="64" y="114" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">P&#8322;</text>
       <text x="141" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8321;</text>
       <text x="170" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8322;</text>
-      <line x1="92" y1="178" x2="92" y2="112" stroke="#059669" stroke-width="2" marker-end="url(#pes-bp-up)"/>
+      <line x1="92" y1="178" x2="92" y2="115" stroke="#059669" stroke-width="2"/>
+      <polygon points="92,106 86,117 98,117" fill="#059669"/>
       <text x="98" y="150" font-size="10" font-weight="600" fill="#059669">same rise</text>
       <text x="98" y="162" font-size="10" font-weight="600" fill="#059669">in price</text>
-      <line x1="141" y1="244" x2="166" y2="244" stroke="#059669" stroke-width="2" marker-start="url(#pes-bp-lt)" marker-end="url(#pes-bp-rt)"/>
+      <line x1="149" y1="244" x2="158" y2="244" stroke="#059669" stroke-width="2"/>
+      <polygon points="141,244 149,240 149,248" fill="#059669"/>
+      <polygon points="166,244 158,240 158,248" fill="#059669"/>
       <text x="153" y="237" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">small &#916;Qs</text>
 
       <!-- RIGHT: elastic (shallow, purple) -->
@@ -14518,35 +14521,29 @@ window.ECONOS_ICONS = {
       <text x="404" y="47" font-size="11" fill="#475569">Price</text>
       <text x="590" y="272" font-size="10" fill="#475569">Quantity</text>
       <text x="590" y="284" font-size="10" fill="#475569">supplied</text>
-      <line x1="415" y1="235" x2="630" y2="95" stroke="#7C3AED" stroke-width="2.6" stroke-linecap="round"/>
-      <text x="634" y="98" font-size="12" font-weight="700" fill="#7C3AED">S</text>
-      <line x1="400" y1="180" x2="498" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-      <line x1="498" y1="180" x2="498" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-      <line x1="400" y1="110" x2="603" y2="110" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-      <line x1="603" y1="110" x2="603" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-      <circle cx="498" cy="180" r="4" fill="#fff" stroke="#0B1426" stroke-width="2"/>
-      <circle cx="603" cy="110" r="4" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+      <line x1="400" y1="235" x2="580" y2="95" stroke="#7C3AED" stroke-width="2.6" stroke-linecap="round"/>
+      <text x="584" y="98" font-size="12" font-weight="700" fill="#7C3AED">S</text>
+      <line x1="400" y1="180" x2="470" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="470" y1="180" x2="470" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="400" y1="110" x2="561" y2="110" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="561" y1="110" x2="561" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="470" cy="180" r="4" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+      <circle cx="561" cy="110" r="4" fill="#fff" stroke="#0B1426" stroke-width="2"/>
       <text x="394" y="184" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">P&#8321;</text>
       <text x="394" y="114" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">P&#8322;</text>
-      <text x="498" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8321;</text>
-      <text x="603" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8322;</text>
-      <line x1="422" y1="178" x2="422" y2="112" stroke="#7C3AED" stroke-width="2" marker-end="url(#pes-bp-up2)"/>
+      <text x="470" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8321;</text>
+      <text x="561" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8322;</text>
+      <line x1="422" y1="178" x2="422" y2="115" stroke="#7C3AED" stroke-width="2"/>
+      <polygon points="422,106 416,117 428,117" fill="#7C3AED"/>
       <text x="428" y="150" font-size="10" font-weight="600" fill="#7C3AED">same rise</text>
       <text x="428" y="162" font-size="10" font-weight="600" fill="#7C3AED">in price</text>
-      <line x1="498" y1="244" x2="603" y2="244" stroke="#7C3AED" stroke-width="2" marker-start="url(#pes-bp-lt2)" marker-end="url(#pes-bp-rt2)"/>
-      <text x="550" y="237" font-size="10" font-weight="600" fill="#7C3AED" text-anchor="middle">large &#916;Qs</text>
+      <line x1="480" y1="244" x2="551" y2="244" stroke="#7C3AED" stroke-width="2"/>
+      <polygon points="470,244 480,239 480,249" fill="#7C3AED"/>
+      <polygon points="561,244 551,239 551,249" fill="#7C3AED"/>
+      <text x="515" y="237" font-size="10" font-weight="600" fill="#7C3AED" text-anchor="middle">large &#916;Qs</text>
 
       <circle cx="330" cy="150" r="17" fill="#94A3B8"/>
       <text x="330" y="154" font-size="10" font-weight="800" fill="#fff" text-anchor="middle" letter-spacing="0.06em">VS</text>
-
-      <defs>
-        <marker id="pes-bp-up" markerWidth="9" markerHeight="9" refX="4.5" refY="1" orient="auto"><polygon points="0,9 9,9 4.5,0" fill="#059669"/></marker>
-        <marker id="pes-bp-up2" markerWidth="9" markerHeight="9" refX="4.5" refY="1" orient="auto"><polygon points="0,9 9,9 4.5,0" fill="#7C3AED"/></marker>
-        <marker id="pes-bp-lt" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#059669"/></marker>
-        <marker id="pes-bp-rt" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#059669"/></marker>
-        <marker id="pes-bp-lt2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#7C3AED"/></marker>
-        <marker id="pes-bp-rt2" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#7C3AED"/></marker>
-      </defs>
     </svg>
   `,
 

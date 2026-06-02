@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.29.0 — 2026-06-02
+
+### Demand — interactive chart family rolled out to cards 1–3
+
+Cards 1, 2 and 3 now match the Card 4 interactive pattern (the
+`interactiveDiagram` block: chart left, description right, step buttons
+below; stacks on mobile). All four demand-curve charts are now one
+consistent family, each taller (480) with explicit in-bounds labels.
+
+- **Card 1 (big picture):** The demand curve → a higher price (point A,
+  £10→20) → a lower price (point B, £6→40).
+- **Card 2 (slope):** steps the price down A→B→C, one reason per step —
+  substitution effect, real-income effect, diminishing marginal utility.
+- **Card 3 (movements):** reference point B persistent; reveal a
+  contraction up to A (price rises) or an extension down to C (price
+  falls).
+
+Specs `demand-card1` / `demand-card7` / `demand-card2` rewritten as
+layered interactive specs; snapshots updated. SW cache → v264.
+
 ## 0.28.2 — 2026-06-02
 
 ### Demand shifts chart — label clash fix

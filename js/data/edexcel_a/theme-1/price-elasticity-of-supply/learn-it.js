@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroElasticity',
     summary: 'PES measures how responsive quantity supplied is to a price change. When demand shifts, PES determines the split between price and quantity adjustment. Inelastic supply means most of the pressure goes into higher prices; elastic supply means output adjusts instead.',
-    doInThis: 'Work through 7 cards covering what PES is, elastic vs inelastic supply, a step-by-step worked calculation, how to read the PES coefficient, the determinants of PES, real-world implications, and an exam-ready summary.',
+    doInThis: 'Work through 8 cards covering what PES is, calculating and classifying it, a step-by-step worked calculation, the five drivers of supply elasticity, how time changes everything, why PES matters when demand jumps, PES across real industries, and an exam-ready toolkit.',
     outcomes: [
       'Define and calculate PES correctly using the formula',
       'Distinguish elastic and inelastic supply and link each to the supply curve diagram',
@@ -17,7 +17,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'PES = % change in QS \xf7 % change in P. Always positive. PES > 1 = elastic; PES < 1 = inelastic; PES = 0 = perfectly inelastic (vertical); PES = ∞ = perfectly elastic (horizontal).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -25,85 +25,73 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ================================================================
-       CARD 1 – WHAT IS PES
-       Hook question → formula → examples
+       CARD 1 – PES: THE BIG PICTURE  (pattern: Side-by-side pair)
+       Steep vs shallow supply, same price rise → small vs large ΔQ
        ================================================================ */
     {
       id: 'pes_1',
-      stepLabel: 'Learn: Step 1 of 7',
-      title: 'What is Price Elasticity of Supply?',
-      intro: 'A factory sees its price jump 20%. Can it ramp up production to capitalise – or is output stuck?',
-      body: `<div style="border:2px solid #0B1426;border-radius:10px;padding:16px;text-align:center;margin:12px 0;font-size:18px;font-weight:700;background:#F8FAFC;">
-  PES = % ΔQS \xf7 % ΔP
-</div>
-<p style="margin:10px 0 6px;">PES is <strong>always positive</strong> – price and quantity supplied always move in the same direction (upward-sloping supply curve). There is no negative sign issue, unlike PED.</p>
-<ul style="margin:8px 0 0 18px;line-height:1.8;">
-  <li><strong>PES &gt; 1:</strong> Elastic supply – quantity rises proportionally <em>more</em> than price.</li>
-  <li><strong>PES &lt; 1:</strong> Inelastic supply – quantity rises proportionally <em>less</em> than price.</li>
-  <li><strong>PES = 0:</strong> Perfectly inelastic – fixed supply regardless of price; vertical supply curve.</li>
-  <li><strong>PES = ∞:</strong> Perfectly elastic – producers supply any amount at the going price; horizontal supply curve.</li>
-</ul>`,
-      causesEmoji: '📊',
-      causesLabel: 'From fixed to flexible supply',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 1 of 8',
+      title: 'PES — the big picture',
+      lede: 'Elasticity of supply shows how strongly producers respond when price changes.',
+      ledeStyle: 'plain',
+      tip: { tone: 'green', icon: '🔒', text: '<strong>PES measures the responsiveness of quantity supplied to a change in price.</strong>' },
+      visualKey: 'pesBigPictureCompare',
+      visualLabel: 'The core idea',
+      visualEmoji: '🎯',
+      causesLabel: 'Two regimes, one question',
+      causesEmoji: '⚖️',
+      causesCols: 3,
+      causesStyle: 'icon-top',
+      causesFirst: true,
       causes: [
-        {
-          head: '🏗️ Housing – very inelastic (PES ≈ 0.1)',
-          body: 'Planning permission takes years; construction takes 18+ months; land in specific locations is a fixed factor. A demand surge mostly becomes a price spike – output barely moves. The market adjusts almost entirely through price.'
-        },
-        {
-          head: '🏭 Manufacturing – elastic long-run (PES ≈ 1.5)',
-          body: 'Firms can hire workers, extend shifts, and commission new plant over months. Long-run supply responds more than proportionally to price – a demand surge goes mostly into extra output, not higher prices. Time is the key unlock.'
-        },
-        {
-          head: '💻 Digital goods – near-perfectly elastic (PES → ∞)',
-          body: 'Once created, software can be replicated at near-zero marginal cost. Any demand surge is met almost instantly and entirely through extra supply – price barely moves. The marginal cost of one more user is effectively zero.'
-        }
-      ]
+        { tone: 'green', icon: '🐢', head: 'Inelastic supply', body: 'Producers struggle to expand output quickly, so a price rise unlocks only a small quantity increase.' },
+        { tone: 'purple', icon: '🚀', head: 'Elastic supply', body: 'Firms can expand output a lot when price rises, so most of the response shows up as extra quantity.' },
+        { tone: 'amber', icon: '💡', head: 'Why it matters', body: 'PES explains how a market shares any adjustment between higher prices and higher output.' }
+      ],
+      note: { tone: 'purple', icon: '🧮', head: 'The formula', text: 'PES = % change in quantity supplied ÷ % change in price. The bigger the number, the more responsive supply is.' },
+      notePosition: 'top',
+      bottomTip: { tone: 'blue', icon: 'ℹ️', text: 'Supply is about sellers and production — <strong>not</strong> buyers and demand.' },
+      conclusion: { title: 'Big idea', text: 'PES tells us whether higher prices mainly trigger more output, or mainly push prices further up.' },
+      examEdge: { title: 'Exam edge', text: 'Always say how much quantity supplied changes <em>relative to</em> price — not just "supply rises".' }
     },
 
     /* ================================================================
-       CARD 2 – ELASTIC VS INELASTIC SUPPLY
-       Diagram + four supply rules + geometric shortcut
+       CARD 2 – CALCULATING & CLASSIFYING PES  (pattern: Spectrum)
+       Two worked examples + the 5-point classification spectrum
        ================================================================ */
     {
       id: 'pes_2',
-      stepLabel: 'Learn: Step 2 of 7',
-      title: 'Elastic vs Inelastic Supply',
-      intro: 'When demand increases, PES decides the split – how much goes into higher prices, and how much into more output.',
-      diagramKey: 'elasticVsInelasticSupplyDiagram',
-      steps: [
-        {
-          label: 'Elastic supply (PES > 1): demand rises → large quantity increase, small price rise',
-          text: 'Output can expand easily. Most of the market adjustment happens through higher quantities, not higher prices. Consumers gain access to more goods without paying much more.'
-        },
-        {
-          label: 'Inelastic supply (PES < 1): demand rises → small quantity increase, large price rise',
-          text: 'Supply is constrained. Most of the market adjustment falls on price. Existing producers benefit (higher revenue); consumers face a price spike with little extra output.'
-        },
-        {
-          label: 'Perfectly inelastic (PES = 0): all adjustment is in price – zero extra output produced',
-          text: 'Supply is completely fixed regardless of price. Vertical supply curve. Any rightward demand shift becomes entirely a price rise – classic examples: land in a specific location, Van Gogh paintings, fish already landed.'
-        },
-        {
-          label: 'Perfectly elastic (PES = ∞): all adjustment is in quantity – price stays constant',
-          text: 'Producers supply any amount at the going price. Horizontal supply curve. Any rightward demand shift is met by more output at the same price – typical of long-run perfectly competitive industries with constant costs.'
-        }
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 8',
+      title: 'Calculating and classifying PES',
+      lede: 'PES is a number — but the sign and size tell a clear story about responsiveness.',
+      ledeStyle: 'plain',
+      tip: { tone: 'green', icon: '🔒', text: '<strong>PES = % change in quantity supplied ÷ % change in price.</strong>' },
+      visualKey: 'pesCalcClassify',
+      visualLabel: 'Worked examples → classify the result',
+      visualEmoji: '🧮',
+      causesLabel: 'Read the number',
+      causesEmoji: 'ℹ️',
+      causesCols: 3,
+      causes: [
+        { tone: 'blue', icon: '🔒', head: 'Low PES', body: 'Capacity is hard to expand, so output barely moves when price rises.' },
+        { tone: 'green', icon: '📈', head: 'High PES', body: 'Output can be scaled up quickly, so quantity does most of the adjusting.' },
+        { tone: 'purple', icon: '⚡', head: 'PES and price shocks', body: 'Low PES means demand swings produce bigger price swings.' }
       ],
-      keyTakeaway: 'Inelastic supply + rising demand = price spike. Elastic supply + rising demand = output surge.',
-      examEdge: {
-        title: 'The geometric shortcut',
-        text: 'A supply curve through the origin has PES = 1 everywhere. One that cuts the P-axis (starts above zero) has PES < 1 – inelastic. One that cuts the Q-axis (starts with positive quantity at zero price) has PES > 1 – elastic. This saves calculation time in multiple-choice questions.'
-      }
+      bottomTip: { tone: 'amber', icon: '⚠️', text: 'Use <strong>percentage</strong> changes — not absolute changes.' },
+      conclusion: { title: 'Big idea', text: 'PES is not just a calculation — it is a classification of producer flexibility.' },
+      examEdge: { title: 'Exam edge', text: 'State the value, classify it, then explain what it means for firms.' }
     },
 
     /* ================================================================
-       CARD 3 – WORKED EXAMPLE: CALCULATING PES
-       Oil market scenario, 5 scaffolded steps
+       CARD 3 – WORKED CALCULATION  (interactive PES calculator, kept)
+       Oil market scenario, scaffolded reveal steps
        ================================================================ */
     {
       id: 'pes_3',
       template: 'pes-calculation',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'Worked Example: Calculating PES',
       lede: 'Show every step – examiners award marks for method, not just the final number.',
       scenario: {
@@ -123,235 +111,210 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 4 – READING THE PES COEFFICIENT
-       Five categories with rich colour-coded tiles
+       CARD 4 – WHAT MAKES SUPPLY ELASTIC OR INELASTIC  (Tile grid)
+       Five drivers feeding an elasticity dial + typical patterns
        ================================================================ */
     {
       id: 'pes_4',
-      template: 'pes-five-frames',
-      stepLabel: 'Learn: Step 4 of 7',
-      title: 'Reading the PES Coefficient',
-      lede: 'PES is always positive. The magnitude tells you how much output can expand when price rises – and how a market absorbs a demand shift.',
-      frames: [
-        {
-          tone: 'rose',
-          name: 'Perfectly inelastic',
-          pesCoeff: 'PES = 0',
-          curveType: 'vertical',
-          example: 'Land in a specific location, Van Gogh paintings, fish already landed at market.',
-          marketRule: 'Demand shift → 100% price spike, 0% extra output. Supply is completely fixed.'
-        },
-        {
-          tone: 'amber',
-          name: 'Inelastic',
-          pesCoeff: 'PES < 1',
-          curveType: 'steep',
-          example: 'UK housing (PES ≈ 0.1), crude oil short-run, agricultural produce within a season.',
-          marketRule: 'Demand shift → mostly price rise, small quantity gain. Markets are price-volatile.'
-        },
-        {
-          tone: 'blue',
-          name: 'Unit elastic',
-          pesCoeff: 'PES = 1',
-          curveType: 'origin',
-          example: 'Supply through origin has PES = 1 everywhere – a handy visual shortcut.',
-          marketRule: '10% price rise → 10% more supplied. Equal split. Curve passes through origin.'
-        },
-        {
-          tone: 'green',
-          name: 'Elastic',
-          pesCoeff: 'PES > 1',
-          curveType: 'shallow',
-          example: 'Manufactured goods with spare capacity, many services, long-run agricultural output.',
-          marketRule: 'Demand shift → mostly quantity rise, small price increase. Markets adjust well.'
-        },
-        {
-          tone: 'purple',
-          name: 'Perfectly elastic',
-          pesCoeff: 'PES = ∞',
-          curveType: 'horizontal',
-          example: 'Long-run perfectly competitive industry with constant costs. Any Q at the going price.',
-          marketRule: 'Demand shift → 100% quantity, 0% price. Supply is infinitely flexible.'
-        }
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 8',
+      title: 'What makes supply elastic or inelastic?',
+      lede: 'Some markets can expand quickly. Others are boxed in by hard constraints.',
+      ledeStyle: 'plain',
+      tip: { tone: 'green', icon: '🔒', text: '<strong>PES depends on how easily firms can increase output when price rises.</strong>' },
+      visualKey: 'pesDriversSpectrum',
+      visualLabel: 'The five drivers',
+      visualEmoji: '🎛️',
+      causes3Label: 'Typical patterns',
+      causes3Emoji: '🌍',
+      causes3Cols: 4,
+      causes3Style: 'icon-top',
+      causes3: [
+        { tone: 'green', icon: '🐟', head: 'Fresh fish', body: 'Low PES — today\'s catch is fixed.' },
+        { tone: 'amber', icon: '👕', head: 'Clothing', body: 'Higher PES — production can be scaled.' },
+        { tone: 'purple', icon: '🏠', head: 'Housing', body: 'Low PES — planning and construction take time.' },
+        { tone: 'blue', icon: '☁️', head: 'Digital', body: 'Very high PES — extra units are easy to supply.' }
       ],
-      examEdge: 'Geometric shortcut: supply through origin → PES = 1; cuts P-axis above origin → PES < 1 (inelastic); cuts Q-axis → PES > 1 (elastic). Values to know: UK housing ≈ 0.1, crude oil short-run ≈ 0.2–0.3, manufacturing long-run > 1.'
+      flowTitle: 'Quick rule',
+      flowEmoji: '🔗',
+      flowSep: '→',
+      flow: [
+        { tone: 'green', icon: '🏭', title: 'More spare capacity', sub: '' },
+        { tone: 'blue', icon: '📊', title: 'Output rises faster', sub: '' },
+        { tone: 'purple', icon: '📈', title: 'Supply becomes more elastic', sub: '' }
+      ],
+      bottomTip: { tone: 'blue', icon: 'ℹ️', text: 'The same good can have <strong>different PES in the short run and the long run.</strong>' },
+      conclusion: { title: 'Big idea', text: 'PES is really about constraints — how many barriers stand between a higher price and higher output.' },
+      examEdge: { title: 'Exam edge', text: 'When explaining PES, name the driver — spare capacity, time, stocks, mobility, or production lag.' }
     },
 
     /* ================================================================
-       CARD 5 – DETERMINANTS OF PES
-       Five tiles, time period front and centre
+       CARD 5 – TIME CHANGES EVERYTHING  (pattern: Sequential flow)
+       Market period → short run → long run, PES rising over time
        ================================================================ */
     {
       id: 'pes_5',
-      stepLabel: 'Learn: Step 5 of 7',
-      title: 'What Determines PES?',
-      intro: 'Can producers respond quickly to a price rise? Six factors decide.',
-      causes: [
-        {
-          icon: '⏱️',
-          head: 'Time period (most important)',
-          body: 'Short run nearly always more inelastic than long run. In the very short run (market period) supply may be completely fixed (PES = 0). As time passes, capacity expands and PES rises significantly.'
-        },
-        {
-          icon: '🏭',
-          head: 'Spare capacity',
-          body: 'Firms with unused machinery and workers can respond fast to higher prices. At full capacity, output is nearly fixed in the short run – supply is effectively inelastic until new investment arrives.'
-        },
-        {
-          icon: '📦',
-          head: 'Stocks and inventories',
-          body: 'Large stocks can be released quickly when prices rise – acting like elastic supply in the short run. No stocks means more output must actually be produced, giving a slower response.'
-        },
-        {
-          icon: '🔄',
-          head: 'Factor mobility',
-          body: 'If labour and capital can easily switch into this good\'s production, PES is higher. Specialised assets (oil rigs, orchards) cannot be redeployed quickly – locking in low PES until long-run investment occurs.'
-        },
-        {
-          icon: '🔧',
-          head: 'Complexity and lead times',
-          body: 'Housing takes 2–3 years; aircraft take years to manufacture; trees take decades. Long production periods mean near-zero short-run PES regardless of price signals – even a very large price rise cannot unlock output quickly.'
-        },
-        {
-          icon: '💰',
-          head: 'Barriers to entry and cost of expansion',
-          body: 'High capital costs, planning restrictions, or regulatory barriers slow supply responses. A firm cannot double output overnight if new equipment costs £50m or requires planning permission. Lower barriers mean higher PES.'
-        }
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 5 of 8',
+      title: 'Time changes everything',
+      lede: 'Elasticity of supply usually increases as producers get more time to respond.',
+      ledeStyle: 'plain',
+      tip: { tone: 'green', icon: '⏱️', text: '<strong>Supply is often very inelastic at first, then becomes more elastic over time.</strong>' },
+      visualKey: 'pesTimeHorizons',
+      visualLabel: 'Three time horizons',
+      visualEmoji: '🕐',
+      flowTitle: 'Follow one market',
+      flowEmoji: '🏪',
+      flowSep: '→',
+      flow: [
+        { tone: 'purple', icon: '🛒', title: 'Today', sub: 'Price rises, shelves empty quickly.' },
+        { tone: 'amber', icon: '🏭', title: 'Next month', sub: 'Firm adds shifts and restocks.' },
+        { tone: 'green', icon: '🏬', title: 'Next year', sub: 'More competitors and capacity appear.' }
       ],
-      productExamplesTitle: 'How responsive is supply?',
-      productExamplesSubtitle: 'Predict whether supply is elastic or inelastic for each market – then reveal the verdict.',
-      productExamples: [
-        {
-          icon: '🏘️',
-          product: 'UK housing',
-          verdict: 'Very Inelastic',
-          verdictTone: 'red',
-          reasoning: 'PES ≈ 0.1. Planning permission takes years, construction takes 18+ months, and land in specific locations is fixed. Demand surges become price spikes, not extra homes.'
-        },
-        {
-          icon: '🛢️',
-          product: 'Crude oil (short-run)',
-          verdict: 'Inelastic',
-          verdictTone: 'orange',
-          reasoning: 'PES ≈ 0.2–0.3. Existing wells operate at near-full capacity. New drilling and refinery infrastructure takes years. Price signals can\'t unlock much extra output quickly.'
-        },
-        {
-          icon: '🌾',
-          product: 'Wheat (within season)',
-          verdict: 'Perfectly Inelastic',
-          verdictTone: 'red',
-          reasoning: 'PES ≈ 0. Once the crop is planted, output is fixed until the next harvest. Any demand shock or weather event causes a pure price spike – quantity cannot adjust at all.'
-        },
-        {
-          icon: '💻',
-          product: 'Software / digital goods',
-          verdict: 'Highly Elastic',
-          verdictTone: 'green',
-          reasoning: 'PES → ∞ for digital goods. Once created, software can be replicated at near-zero marginal cost. Demand surges are met instantly by digital delivery – price barely moves.'
-        },
-        {
-          icon: '🏭',
-          product: 'Manufacturing (long-run)',
-          verdict: 'Elastic',
-          verdictTone: 'green',
-          reasoning: 'PES > 1 long-run. Firms can hire workers, add shifts, and build new plant over 1–3 years. Long-run supply is considerably more elastic than short-run – time is the key.'
-        }
+      bottomTip: { tone: 'blue', icon: '📈', text: 'Same market — <strong>rising PES over time.</strong>' },
+      causes3Label: 'Why this matters',
+      causes3Emoji: '🎯',
+      causes3Cols: 3,
+      causes3Style: 'icon-top',
+      causes3: [
+        { tone: 'purple', icon: '📈', head: 'Short run', body: 'Low PES means prices can spike when demand jumps — short-run shortages.' },
+        { tone: 'amber', icon: '🔄', head: 'Long run', body: 'Higher PES allows output to catch up with demand over time.' },
+        { tone: 'green', icon: '❓', head: 'Evaluation', body: 'Always ask: over what time period are we judging supply?' }
       ],
-      examEdge: {
-        title: 'Short-run vs long-run – always distinguish',
-        text: 'Short-run vs long-run PES is the single most exam-relevant point. Always state: "In the short run, supply is more inelastic because…" and "In the long run, supply becomes more elastic as…" – this alone can earn a Band 3 mark.'
-      }
+      conclusion: { title: 'Big idea', text: 'Time is the master variable in PES — flexibility grows as adjustment options multiply.' },
+      examEdge: { title: 'Exam edge', text: 'Never discuss PES without saying whether you mean the short run or the long run.' }
     },
+
     /* ================================================================
-       CARD 6 – PES IN THE REAL WORLD
-       Four application areas with policy depth
+       CARD 6 – WHEN DEMAND JUMPS  (pattern: Side-by-side pair)
+       Demand shift onto steep vs shallow supply
        ================================================================ */
     {
       id: 'pes_6',
-      stepLabel: 'Learn: Step 6 of 7',
-      title: 'PES in the Real World',
-      intro: 'PES isn\'t just a formula – it shapes housing crises, food price spikes, tax policy, and economic reform.',
-      steps: [
-        {
-          label: 'Housing market crisis',
-          text: 'UK housing PES ≈ 0.1. When demand rises (population growth, Help to Buy subsidies), almost all adjustment is in price – not output. This is why UK house prices outpace general inflation. Demand-side subsidies mainly enrich existing homeowners; only supply-side reform (planning deregulation, new towns) can improve PES and stabilise prices.'
-        },
-        {
-          label: 'Agricultural price volatility',
-          text: 'Within-season PES ≈ 0. Harvest shocks or demand spikes cause huge price swings because output cannot adjust until next planting season. This is why commodity prices are notoriously volatile. Buffer stocks and futures markets are used to manage the consequences of near-zero short-run PES.'
-        },
-        {
-          label: 'Tax incidence',
-          text: 'The less elastic side of the market bears more of the tax burden. Formula: consumer share = PES \xf7 (PES + |PED|); producer share = |PED| \xf7 (PES + |PED|). Cigarette tax: inelastic demand + fairly elastic supply → consumers bear most of the burden.'
-        },
-        {
-          label: 'Supply-side policy',
-          text: 'Governments can improve PES by removing constraints. Planning reform → higher housing PES. Skills training → higher labour PES. R&D funding → firms can scale output at lower cost. Higher PES means demand growth creates output (good) rather than just inflation (bad).'
-        }
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 6 of 8',
+      title: 'When demand jumps — why PES matters',
+      lede: 'Elasticity of supply shapes whether a demand increase raises price, quantity, or both.',
+      ledeStyle: 'plain',
+      tip: { tone: 'green', icon: '🔒', text: '<strong>Low PES means price rises more. High PES means output rises more.</strong>' },
+      visualKey: 'elasticVsInelasticSupplyDiagram',
+      visualLabel: 'Two market outcomes',
+      visualEmoji: '📊',
+      flowTitle: 'Demand rises — two outcomes',
+      flowEmoji: '📈',
+      flowSep: '→',
+      flow: [
+        { tone: 'blue', icon: '📈', title: 'Demand rises', sub: 'A rightward shift in D.' },
+        { tone: 'purple', icon: '🏷️', title: 'With low PES', sub: 'Mostly price pressure.' },
+        { tone: 'amber', icon: '📊', title: 'With high PES', sub: 'Mostly an output response.' }
       ],
-      examEdge: 'The housing market is the go-to PES context. Structure your answer: (1) state UK housing PES is very inelastic; (2) explain WHY (planning restrictions, construction time, fixed land); (3) show the consequence (demand shift → price spike); (4) evaluate the policy implication (supply-side reform needed).'
+      causesLabel: 'Price volatility',
+      causesEmoji: '〰️',
+      causesCols: 3,
+      causes: [
+        { tone: 'green', icon: '📈', head: 'Low PES', body: 'Markets more vulnerable to shortages and price spikes.' },
+        { tone: 'purple', icon: '〰️', head: 'High PES', body: 'Markets can absorb demand growth more smoothly.' },
+        { tone: 'amber', icon: '👥', head: 'Buyers', body: 'PES affects affordability and the inflation pressure on consumers.' }
+      ],
+      causes2Label: 'Real examples',
+      causes2Emoji: '🏛️',
+      causes2Cols: 3,
+      causes2: [
+        { tone: 'green', icon: '🏠', head: 'Housing boom', body: 'Low PES → house prices surge.' },
+        { tone: 'purple', icon: '🎫', head: 'Concert', body: 'Low PES → tickets become expensive.' },
+        { tone: 'amber', icon: '👟', head: 'Trainers', body: 'Higher PES → mass producers boost output.' }
+      ],
+      bottomTip: { tone: 'blue', icon: 'ℹ️', text: 'PES helps explain why some booms cause inflation while others mainly raise production.' },
+      conclusion: { title: 'Big idea', text: 'Demand shocks do not tell the whole story — supply flexibility determines the market result.' },
+      examEdge: { title: 'Exam edge', text: 'In diagram questions, link the steepness of supply to the balance between price and quantity change.' }
     },
 
     /* ================================================================
-       CARD 7 – EXAM SUMMARY
-       5 core facts, common mistakes, 5-step checklist
+       CARD 7 – PES IN THE REAL WORLD  (pattern: Spectrum / regime grid)
+       Four industries arranged low → high PES with supply-time sparklines
        ================================================================ */
     {
       id: 'pes_7',
-      stepLabel: 'Learn: Step 7 of 7',
-      title: 'Exam Summary',
-      intro: 'Lock in the essentials – PES has five things examiners always test.',
-      body: `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#059669;margin-bottom:10px;">① 5 Core Facts</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px;margin-bottom:20px;">
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #05996920;">
-    <div style="background:#059669;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">🔢 Formula</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">PES = % ΔQS \xf7 % ΔP</div>
-  </div>
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #2563EB20;">
-    <div style="background:#2563EB;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">&#43; Always positive</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">Price and quantity supplied always move together – never write a negative PES.</div>
-  </div>
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #D9770620;">
-    <div style="background:#D97706;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">⚖️ Elastic vs Inelastic</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">PES &gt; 1 = elastic (Q rises more than P).<br>PES &lt; 1 = inelastic (P rises more than Q).</div>
-  </div>
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #7C3AED20;">
-    <div style="background:#7C3AED;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">⏱️ Top determinant</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">Time period – short-run always more inelastic than long-run.</div>
-  </div>
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #0891B220;">
-    <div style="background:#0891B2;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">🏘️ Key market</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">Housing PES ≈ 0.1 – demand shifts mostly become price rises.</div>
-  </div>
-</div>
-
-<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin-bottom:10px;">② Common Mistakes</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
-  <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
-    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Forget the positive sign</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">PES is always positive; never write PES = −0.5. If you get a negative answer, you have swapped the formula.</div>
-  </div>
-  <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
-    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Slope ≠ PES</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Steeper slope does not directly give you PES. Use the geometric intercept rule: P-axis cut = inelastic; Q-axis cut = elastic; origin = unit elastic.</div>
-  </div>
-  <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
-    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Short-run = long-run</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Always distinguish time period – short-run PES is almost always lower. Missing this distinction costs marks on any PES question.</div>
-  </div>
-  <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
-    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Demand subsidies fix supply problems</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Help to Buy didn't solve the housing crisis because PES stayed near 0. Demand-side policy can't fix an inelastic supply problem.</div>
-  </div>
-</div>`,
-      steps: [
-        { label: 'Define PES', text: '% ΔQS \xf7 % ΔP, always positive – price and quantity supplied move in the same direction.' },
-        { label: 'Calculate', text: 'Show each % change separately, then divide. Never skip steps – each one can carry a mark.' },
-        { label: 'Classify', text: 'Compare to 1: PES > 1 = elastic, PES < 1 = inelastic. Name the category explicitly.' },
-        { label: 'Contextualise', text: 'Explain WHY that market has that PES using at least one determinant (most commonly: time period).' },
-        { label: 'Apply', text: 'State the consequence for prices, quantities, or policy – this is where evaluation marks sit.' }
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 7 of 8',
+      title: 'PES in the real world',
+      lede: 'Different industries face very different supply constraints.',
+      ledeStyle: 'plain',
+      tip: { tone: 'green', icon: '🔒', text: '<strong>To apply PES well, classify the market and explain the constraint.</strong>' },
+      visualKey: 'pesIndustrySpectrum',
+      visualLabel: 'Four market scenarios',
+      visualEmoji: '🌍',
+      causesLabel: 'Who cares?',
+      causesEmoji: '👥',
+      causesCols: 3,
+      causesStyle: 'icon-top',
+      causesFirst: true,
+      causes: [
+        { tone: 'blue', icon: '🏛️', head: 'Firms', body: 'Plan capacity, stock and pricing around how fast they can supply.' },
+        { tone: 'amber', icon: '🏦', head: 'Governments', body: 'Predict inflation and shortage risks in key markets.' },
+        { tone: 'green', icon: '📈', head: 'Investors', body: 'Spot sectors with hard or easy expansion.' }
       ],
-      keyTakeaway: 'PES is always positive, time is the key determinant, and housing is the go-to real-world context.',
+      causes3Label: 'Short context, big consequences',
+      causes3Emoji: '🎯',
+      causes3Cols: 4,
+      causes3Style: 'icon-top',
+      causes3: [
+        { tone: 'blue', icon: '⬆️', head: 'Strong demand', body: 'Low PES + strong demand → bigger price rises.' },
+        { tone: 'amber', icon: '⚠️', head: 'Supply shocks', body: 'Low PES can worsen inflation pressure.' },
+        { tone: 'green', icon: '↗️', head: 'High PES', body: 'Markets expand without as much price pain.' },
+        { tone: 'purple', icon: '🔄', head: 'Time', body: 'Can move a market from low PES to higher PES.' }
+      ],
+      conclusion: { title: 'Big idea', text: 'PES turns an industry story — capacity, stock, time, and barriers — into a market prediction.' },
+      examEdge: { title: 'Exam edge', text: 'Application marks come from the example — explain why housing, farming, manufacturing or digital supply behaves differently.' }
+    },
+
+    /* ================================================================
+       CARD 8 – THE PES EXAM TOOLKIT  (pattern: Sequential flow)
+       How to answer, common mistakes, how to write it, memory hooks
+       ================================================================ */
+    {
+      id: 'pes_8',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'The PES exam toolkit',
+      lede: 'Most PES questions ask you to identify the change, classify responsiveness, and apply it to a market outcome.',
+      ledeStyle: 'plain',
+      tip: { tone: 'green', icon: '✅', text: '<strong>Good answers define, calculate, classify and apply.</strong>' },
+      flowTitle: 'How to answer',
+      flowEmoji: '📖',
+      flowSep: '→',
+      flow: [
+        { tone: 'blue', icon: '🔍', title: 'Identify the change', sub: 'Price changed. Supply responded.' },
+        { tone: 'amber', icon: '🧮', title: 'Use the formula', sub: 'PES = %ΔQS ÷ %ΔP.' },
+        { tone: 'purple', icon: '⚖️', title: 'Calculate and classify', sub: '0, inelastic, unit, elastic, perfectly elastic.' },
+        { tone: 'green', icon: '📈', title: 'Apply it', sub: 'Price, output, shortages, or inflation.' }
+      ],
+      causesLabel: 'Common mistakes',
+      causesEmoji: '⚠️',
+      causesCols: 4,
+      causesStyle: 'icon-top',
+      causesFirst: true,
+      causes: [
+        { tone: 'rose', icon: '✖️', head: 'Confusing supply with demand', body: 'PES is about sellers, not buyers.' },
+        { tone: 'rose', icon: '✖️', head: 'Absolute not percentage', body: 'Using raw changes instead of % changes.' },
+        { tone: 'rose', icon: '✖️', head: 'Forgetting the time period', body: 'Short run and long run differ.' },
+        { tone: 'rose', icon: '✖️', head: 'No interpretation', body: 'Giving the number without explaining it.' }
+      ],
+      pairFirst: false,
+      pairLabel: 'How to write it',
+      pairEmoji: '✍️',
+      left: { tone: 'blue', icon: '📄', label: 'Short run', text: 'Supply is <strong>price inelastic</strong> because PES = 0.4, so quantity supplied rises less than proportionally when price rises. This means demand growth is more likely to push up prices than output.' },
+      right: { tone: 'green', icon: '📄', label: 'Long run', text: 'In the <strong>long run</strong>, supply becomes <strong>more elastic</strong> because firms have time to expand capacity and new firms can enter the market.' },
+      causes2Label: 'Memory hooks',
+      causes2Emoji: '💡',
+      causes2Cols: 3,
+      causes2: [
+        { tone: 'green', icon: '📈', head: 'Steep supply', body: 'Low PES.' },
+        { tone: 'amber', icon: '📉', head: 'Flat supply', body: 'High PES.' },
+        { tone: 'purple', icon: '⏳', head: 'More time', body: 'Higher PES.' }
+      ],
+      conclusion: { title: 'Big idea', text: 'PES is the language economists use to describe producer flexibility.' },
+      examEdge: { title: 'Exam edge', text: 'Top answers combine the value of PES with context — capacity, stock, time and the likely market consequence.' },
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

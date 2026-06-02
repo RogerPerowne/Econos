@@ -14475,6 +14475,300 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ───────────────────────────────────────────────────────────────
+     pesBigPictureCompare — PES Card 1. Twin supply panels: the SAME
+     price rise (P₁→P₂) traced onto a steep (inelastic) and a shallow
+     (elastic) supply curve, so a small ΔQ vs a large ΔQ is read off
+     directly. No demand curves — this is the price→quantity response,
+     not a demand shift (that lives on Card 6).
+     ─────────────────────────────────────────────────────────────── */
+  pesBigPictureCompare: `
+    <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Inter,sans-serif;">
+      <line x1="330" y1="40" x2="330" y2="270" stroke="#E2E8F0" stroke-width="1"/>
+
+      <!-- LEFT: inelastic (steep, green) -->
+      <text x="180" y="30" font-size="13" font-weight="800" letter-spacing="0.06em" fill="#065F46" text-anchor="middle">INELASTIC SUPPLY</text>
+      <line x1="70" y1="50" x2="70" y2="255" stroke="#0B1426" stroke-width="1.4"/>
+      <line x1="70" y1="255" x2="300" y2="255" stroke="#0B1426" stroke-width="1.4"/>
+      <text x="74" y="47" font-size="11" fill="#475569">Price</text>
+      <text x="248" y="272" font-size="10" fill="#475569">Quantity</text>
+      <text x="248" y="284" font-size="10" fill="#475569">supplied</text>
+      <line x1="115" y1="255" x2="185" y2="55" stroke="#059669" stroke-width="2.6" stroke-linecap="round"/>
+      <text x="190" y="58" font-size="12" font-weight="700" fill="#059669">S</text>
+      <line x1="70" y1="180" x2="141" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="141" y1="180" x2="141" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="70" y1="110" x2="166" y2="110" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="166" y1="110" x2="166" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="141" cy="180" r="4" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+      <circle cx="166" cy="110" r="4" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+      <text x="64" y="184" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">P&#8321;</text>
+      <text x="64" y="114" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">P&#8322;</text>
+      <text x="141" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8321;</text>
+      <text x="170" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8322;</text>
+      <line x1="92" y1="178" x2="92" y2="112" stroke="#059669" stroke-width="2" marker-end="url(#pes-bp-up)"/>
+      <text x="98" y="150" font-size="10" font-weight="600" fill="#059669">same rise</text>
+      <text x="98" y="162" font-size="10" font-weight="600" fill="#059669">in price</text>
+      <line x1="141" y1="244" x2="166" y2="244" stroke="#059669" stroke-width="2" marker-start="url(#pes-bp-lt)" marker-end="url(#pes-bp-rt)"/>
+      <text x="153" y="237" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">small &#916;Qs</text>
+
+      <!-- RIGHT: elastic (shallow, purple) -->
+      <text x="515" y="30" font-size="13" font-weight="800" letter-spacing="0.06em" fill="#5B21B6" text-anchor="middle">ELASTIC SUPPLY</text>
+      <line x1="400" y1="50" x2="400" y2="255" stroke="#0B1426" stroke-width="1.4"/>
+      <line x1="400" y1="255" x2="645" y2="255" stroke="#0B1426" stroke-width="1.4"/>
+      <text x="404" y="47" font-size="11" fill="#475569">Price</text>
+      <text x="590" y="272" font-size="10" fill="#475569">Quantity</text>
+      <text x="590" y="284" font-size="10" fill="#475569">supplied</text>
+      <line x1="415" y1="235" x2="630" y2="95" stroke="#7C3AED" stroke-width="2.6" stroke-linecap="round"/>
+      <text x="634" y="98" font-size="12" font-weight="700" fill="#7C3AED">S</text>
+      <line x1="400" y1="180" x2="498" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="498" y1="180" x2="498" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="400" y1="110" x2="603" y2="110" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="603" y1="110" x2="603" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="498" cy="180" r="4" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+      <circle cx="603" cy="110" r="4" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+      <text x="394" y="184" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">P&#8321;</text>
+      <text x="394" y="114" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">P&#8322;</text>
+      <text x="498" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8321;</text>
+      <text x="603" y="269" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q&#8322;</text>
+      <line x1="422" y1="178" x2="422" y2="112" stroke="#7C3AED" stroke-width="2" marker-end="url(#pes-bp-up2)"/>
+      <text x="428" y="150" font-size="10" font-weight="600" fill="#7C3AED">same rise</text>
+      <text x="428" y="162" font-size="10" font-weight="600" fill="#7C3AED">in price</text>
+      <line x1="498" y1="244" x2="603" y2="244" stroke="#7C3AED" stroke-width="2" marker-start="url(#pes-bp-lt2)" marker-end="url(#pes-bp-rt2)"/>
+      <text x="550" y="237" font-size="10" font-weight="600" fill="#7C3AED" text-anchor="middle">large &#916;Qs</text>
+
+      <circle cx="330" cy="150" r="17" fill="#94A3B8"/>
+      <text x="330" y="154" font-size="10" font-weight="800" fill="#fff" text-anchor="middle" letter-spacing="0.06em">VS</text>
+
+      <defs>
+        <marker id="pes-bp-up" markerWidth="9" markerHeight="9" refX="4.5" refY="1" orient="auto"><polygon points="0,9 9,9 4.5,0" fill="#059669"/></marker>
+        <marker id="pes-bp-up2" markerWidth="9" markerHeight="9" refX="4.5" refY="1" orient="auto"><polygon points="0,9 9,9 4.5,0" fill="#7C3AED"/></marker>
+        <marker id="pes-bp-lt" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#059669"/></marker>
+        <marker id="pes-bp-rt" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#059669"/></marker>
+        <marker id="pes-bp-lt2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#7C3AED"/></marker>
+        <marker id="pes-bp-rt2" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#7C3AED"/></marker>
+      </defs>
+    </svg>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     pesCalcClassify — PES Card 2. Two static worked examples (bottled
+     water, inelastic vs T-shirts, elastic) above the five-point PES
+     classification spectrum (0 → ∞). Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  pesCalcClassify: `
+    <div class="pes-cc" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pes-cc .cc-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+        .pes-cc .cc-col { border-radius:14px; padding:14px 14px 12px; }
+        .pes-cc .cc-line { display:flex; align-items:flex-start; gap:10px; font-size:12px; margin-bottom:8px; }
+        .pes-cc .cc-ic { width:32px; height:32px; border-radius:50%; color:#fff; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+        .pes-cc .cc-chip { font-weight:800; border-radius:7px; padding:1px 7px; white-space:nowrap; }
+        .pes-cc .cc-calc { background:#fff; border-radius:9px; padding:8px; text-align:center; font-size:13px; font-weight:800; margin:6px 0 8px; box-shadow:0 1px 2px rgba(11,20,38,0.06); }
+        .pes-cc .cc-verdict { text-align:center; font-size:12.5px; font-weight:800; border-radius:8px; padding:6px; }
+        .pes-cc .cc-spec { margin-top:16px; overflow-x:auto; }
+        .pes-cc .cc-srow { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; min-width:520px; text-align:center; }
+        .pes-cc .cc-scell { display:flex; flex-direction:column; align-items:center; }
+        .pes-cc .cc-sic { width:34px; height:34px; border-radius:50%; border:2px solid currentColor; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:900; margin-bottom:5px; }
+        .pes-cc .cc-sval { font-size:12px; font-weight:800; }
+        .pes-cc .cc-snm { font-size:11px; font-weight:800; margin-top:1px; }
+        .pes-cc .cc-sd { font-size:10px; color:#64748B; line-height:1.25; margin-top:2px; min-height:26px; }
+        .pes-cc .cc-bar { height:6px; border-radius:3px; margin:8px 8px 4px; min-width:520px; background:linear-gradient(90deg,#DC2626 0%,#D97706 28%,#CA8A04 50%,#059669 74%,#7C3AED 100%); }
+        @media (max-width:560px){ .pes-cc .cc-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="cc-row">
+        <div class="cc-col" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="cc-line"><div class="cc-ic" style="background:#2563EB;">💧</div><div><strong style="color:#1E3A8A;">Price of bottled water</strong> rises from £1.00 to £1.10 = <span class="cc-chip" style="background:#DBEAFE;color:#1E3A8A;">+10%</span></div></div>
+          <div class="cc-line"><div class="cc-ic" style="background:#60A5FA;">📈</div><div>Quantity supplied rises from 1,000 to 1,050 = <span class="cc-chip" style="background:#DBEAFE;color:#1E3A8A;">+5%</span></div></div>
+          <div class="cc-calc" style="color:#1E3A8A;">PES = 5 ÷ 10 = 0.5</div>
+          <div class="cc-verdict" style="background:#DBEAFE;color:#1E3A8A;">Inelastic supply</div>
+        </div>
+        <div class="cc-col" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+          <div class="cc-line"><div class="cc-ic" style="background:#059669;">👕</div><div><strong style="color:#065F46;">Price of T-shirts</strong> rises from £10 to £11 = <span class="cc-chip" style="background:#D1FAE5;color:#065F46;">+10%</span></div></div>
+          <div class="cc-line"><div class="cc-ic" style="background:#34D399;">📈</div><div>Quantity supplied rises from 500 to 650 = <span class="cc-chip" style="background:#D1FAE5;color:#065F46;">+30%</span></div></div>
+          <div class="cc-calc" style="color:#065F46;">PES = 30 ÷ 10 = 3.0</div>
+          <div class="cc-verdict" style="background:#D1FAE5;color:#065F46;">Elastic supply</div>
+        </div>
+      </div>
+      <div class="cc-spec">
+        <div class="cc-srow">
+          <div class="cc-scell" style="color:#DC2626;"><div class="cc-sic">−</div><div class="cc-sval">PES = 0</div><div class="cc-snm">Perfectly inelastic</div><div class="cc-sd">No response in supply</div></div>
+          <div class="cc-scell" style="color:#D97706;"><div class="cc-sic">◔</div><div class="cc-sval">0 &lt; PES &lt; 1</div><div class="cc-snm">Inelastic</div><div class="cc-sd">Supply rises less than price</div></div>
+          <div class="cc-scell" style="color:#CA8A04;"><div class="cc-sic">=</div><div class="cc-sval">PES = 1</div><div class="cc-snm">Unit elastic</div><div class="cc-sd">Supply rises in the same proportion</div></div>
+          <div class="cc-scell" style="color:#059669;"><div class="cc-sic">↗</div><div class="cc-sval">PES &gt; 1</div><div class="cc-snm">Elastic</div><div class="cc-sd">Supply rises more than price</div></div>
+          <div class="cc-scell" style="color:#7C3AED;"><div class="cc-sic">∞</div><div class="cc-sval">PES = ∞</div><div class="cc-snm">Perfectly elastic</div><div class="cc-sd">Any amount supplied at one price</div></div>
+        </div>
+        <div class="cc-bar"></div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     pesDriversSpectrum — PES Card 4. The five drivers of supply
+     elasticity as numbered tiles, sitting over a less-elastic →
+     more-elastic gradient bar. Each driver notes which way it pushes
+     PES. Stacks to 2-up then 1-up on narrow screens.
+     ─────────────────────────────────────────────────────────────── */
+  pesDriversSpectrum: `
+    <div class="pes-dr" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pes-dr .dr-row { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
+        .pes-dr .dr-tile { border-radius:12px; padding:11px 9px; text-align:center; }
+        .pes-dr .dr-num { width:24px; height:24px; border-radius:50%; color:#fff; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 7px; }
+        .pes-dr .dr-ic { font-size:22px; line-height:1; margin-bottom:6px; }
+        .pes-dr .dr-t { font-size:12px; font-weight:800; line-height:1.2; }
+        .pes-dr .dr-b { font-size:10.5px; color:#475569; line-height:1.3; margin-top:4px; }
+        .pes-dr .dr-push { font-size:10px; font-weight:800; margin-top:6px; border-radius:6px; padding:2px 0; }
+        .pes-dr .dr-bar { height:9px; border-radius:5px; margin:14px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#D97706 30%,#CA8A04 50%,#34D399 72%,#059669 100%); }
+        .pes-dr .dr-ends { display:flex; justify-content:space-between; font-size:11px; font-weight:800; margin:0 4px; }
+        @media (max-width:640px){ .pes-dr .dr-row{ grid-template-columns:repeat(2,1fr); } }
+        @media (max-width:380px){ .pes-dr .dr-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="dr-row">
+        <div class="dr-tile" style="background:#ECFDF5;border:1.5px solid #6EE7B7;"><div class="dr-num" style="background:#059669;">1</div><div class="dr-ic">🏭</div><div class="dr-t" style="color:#065F46;">Spare capacity</div><div class="dr-b">Unused labour or machinery makes expansion easier.</div><div class="dr-push" style="background:#D1FAE5;color:#065F46;">↑ raises PES</div></div>
+        <div class="dr-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;"><div class="dr-num" style="background:#EA580C;">2</div><div class="dr-ic">📦</div><div class="dr-t" style="color:#C2410C;">Stocks</div><div class="dr-b">Firms can sell from inventories immediately.</div><div class="dr-push" style="background:#FFEDD5;color:#C2410C;">↑ raises PES</div></div>
+        <div class="dr-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;"><div class="dr-num" style="background:#7C3AED;">3</div><div class="dr-ic">⏱️</div><div class="dr-t" style="color:#5B21B6;">Time</div><div class="dr-b">More time gives firms more chance to adjust.</div><div class="dr-push" style="background:#EDE9FE;color:#5B21B6;">↑ raises PES</div></div>
+        <div class="dr-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="dr-num" style="background:#2563EB;">4</div><div class="dr-ic">🔄</div><div class="dr-t" style="color:#1E3A8A;">Factor mobility</div><div class="dr-b">Inputs that move easily make supply more elastic.</div><div class="dr-push" style="background:#DBEAFE;color:#1E3A8A;">↑ raises PES</div></div>
+        <div class="dr-tile" style="background:#FFF1F2;border:1.5px solid #FDA4AF;"><div class="dr-num" style="background:#DC2626;">5</div><div class="dr-ic">🏗️</div><div class="dr-t" style="color:#9F1239;">Production lag</div><div class="dr-b">Long build or growth times make supply less elastic.</div><div class="dr-push" style="background:#FFE4E6;color:#9F1239;">↓ lowers PES</div></div>
+      </div>
+      <div class="dr-bar"></div>
+      <div class="dr-ends"><span style="color:#DC2626;">← Less elastic</span><span style="color:#059669;">More elastic →</span></div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     pesTimeHorizons — PES Card 5. Three time horizons, each with a
+     mini supply curve whose slope flattens as time passes: market
+     period (vertical, PES=0) → short run (steep) → long run (shallow).
+     Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  pesTimeHorizons: `
+    <div class="pes-th" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pes-th .th-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:stretch; }
+        .pes-th .th-col { border-radius:14px; padding:13px 12px; display:flex; flex-direction:column; }
+        .pes-th .th-h { display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:800; line-height:1.2; }
+        .pes-th .th-n { width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .pes-th .th-b { font-size:11px; color:#475569; line-height:1.35; margin-top:8px; }
+        @media (max-width:560px){ .pes-th .th-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="th-row">
+        <div class="th-col" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <div class="th-h" style="color:#5B21B6;"><span class="th-n" style="background:#7C3AED;">1</span>Market period — now</div>
+          <svg viewBox="0 0 150 96" style="width:100%;height:auto;margin-top:8px;">
+            <line x1="20" y1="10" x2="20" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
+            <line x1="20" y1="80" x2="140" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
+            <text x="6" y="14" font-size="9" fill="#94A3B8">Price</text>
+            <text x="104" y="93" font-size="9" fill="#94A3B8">Quantity</text>
+            <line x1="62" y1="14" x2="62" y2="80" stroke="#7C3AED" stroke-width="2.6" stroke-linecap="round"/>
+            <text x="66" y="16" font-size="10" font-weight="700" fill="#7C3AED">S</text>
+          </svg>
+          <div class="th-b">Output is basically fixed. Existing stock is all that can be sold.</div>
+        </div>
+        <div class="th-col" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="th-h" style="color:#C2410C;"><span class="th-n" style="background:#EA580C;">2</span>Short run — weeks/months</div>
+          <svg viewBox="0 0 150 96" style="width:100%;height:auto;margin-top:8px;">
+            <line x1="20" y1="10" x2="20" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
+            <line x1="20" y1="80" x2="140" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
+            <text x="6" y="14" font-size="9" fill="#94A3B8">Price</text>
+            <text x="104" y="93" font-size="9" fill="#94A3B8">Quantity</text>
+            <line x1="40" y1="80" x2="100" y2="14" stroke="#EA580C" stroke-width="2.6" stroke-linecap="round"/>
+            <text x="104" y="16" font-size="10" font-weight="700" fill="#EA580C">S</text>
+          </svg>
+          <div class="th-b">Firms add overtime, use spare capacity, and reorder inputs.</div>
+        </div>
+        <div class="th-col" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+          <div class="th-h" style="color:#065F46;"><span class="th-n" style="background:#059669;">3</span>Long run — months/years</div>
+          <svg viewBox="0 0 150 96" style="width:100%;height:auto;margin-top:8px;">
+            <line x1="20" y1="10" x2="20" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
+            <line x1="20" y1="80" x2="140" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
+            <text x="6" y="14" font-size="9" fill="#94A3B8">Price</text>
+            <text x="104" y="93" font-size="9" fill="#94A3B8">Quantity</text>
+            <line x1="28" y1="64" x2="132" y2="26" stroke="#059669" stroke-width="2.6" stroke-linecap="round"/>
+            <text x="135" y="26" font-size="10" font-weight="700" fill="#059669">S</text>
+          </svg>
+          <div class="th-b">Firms expand plant, new firms enter, and supply becomes more elastic.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     pesIndustrySpectrum — PES Card 7. Four industries arranged
+     low → high PES, each with a supply-against-time sparkline whose
+     shape mirrors its elasticity: housing/agriculture stay flat then
+     step up; manufacturing rises steadily; digital jumps early.
+     Stacks 2-up then 1-up on narrow screens.
+     ─────────────────────────────────────────────────────────────── */
+  pesIndustrySpectrum: `
+    <div class="pes-is" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pes-is .is-row { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; align-items:stretch; }
+        .pes-is .is-col { border-radius:14px; padding:12px 11px; display:flex; flex-direction:column; }
+        .pes-is .is-h { display:flex; align-items:center; gap:5px; font-size:11.5px; font-weight:800; line-height:1.15; min-width:0; }
+        .pes-is .is-n { width:19px; height:19px; border-radius:50%; color:#fff; font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .pes-is .is-ic { font-size:24px; line-height:1; text-align:center; margin:8px 0 6px; }
+        .pes-is .is-pill { font-size:10.5px; font-weight:800; border-radius:7px; padding:3px 7px; text-align:center; }
+        .pes-is .is-b { font-size:10.5px; color:#475569; line-height:1.3; margin-top:8px; }
+        @media (max-width:640px){ .pes-is .is-row{ grid-template-columns:repeat(2,1fr); } }
+        @media (max-width:360px){ .pes-is .is-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="is-row">
+        <div class="is-col" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="is-h" style="color:#1E3A8A;"><span class="is-n" style="background:#2563EB;">1</span>Housing</div>
+          <div class="is-ic">🏗️</div>
+          <div class="is-pill" style="background:#DBEAFE;color:#1E3A8A;">Short-run PES: low</div>
+          <svg viewBox="0 0 150 54" style="width:100%;height:auto;margin-top:8px;">
+            <line x1="14" y1="6" x2="14" y2="46" stroke="#CBD5E1" stroke-width="1.2"/>
+            <line x1="14" y1="46" x2="142" y2="46" stroke="#CBD5E1" stroke-width="1.2"/>
+            <text x="2" y="10" font-size="7.5" fill="#94A3B8">Supply</text>
+            <text x="118" y="53" font-size="7.5" fill="#94A3B8">Time</text>
+            <polyline points="14,42 70,42 70,30 120,30 120,18 142,18" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+          <div class="is-b">Demand increases mainly push up prices.</div>
+        </div>
+        <div class="is-col" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="is-h" style="color:#C2410C;"><span class="is-n" style="background:#EA580C;">2</span>Agriculture</div>
+          <div class="is-ic">🌾</div>
+          <div class="is-pill" style="background:#FFEDD5;color:#C2410C;">Short-run PES: low</div>
+          <svg viewBox="0 0 150 54" style="width:100%;height:auto;margin-top:8px;">
+            <line x1="14" y1="6" x2="14" y2="46" stroke="#CBD5E1" stroke-width="1.2"/>
+            <line x1="14" y1="46" x2="142" y2="46" stroke="#CBD5E1" stroke-width="1.2"/>
+            <text x="2" y="10" font-size="7.5" fill="#94A3B8">Supply</text>
+            <text x="118" y="53" font-size="7.5" fill="#94A3B8">Time</text>
+            <polyline points="14,40 84,40 84,22 142,22" fill="none" stroke="#EA580C" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+          <div class="is-b">Farmers cannot instantly grow more output.</div>
+        </div>
+        <div class="is-col" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <div class="is-h" style="color:#5B21B6;"><span class="is-n" style="background:#7C3AED;">3</span>Manufacturing</div>
+          <div class="is-ic">🏭</div>
+          <div class="is-pill" style="background:#EDE9FE;color:#5B21B6;">PES: medium to high</div>
+          <svg viewBox="0 0 150 54" style="width:100%;height:auto;margin-top:8px;">
+            <line x1="14" y1="6" x2="14" y2="46" stroke="#CBD5E1" stroke-width="1.2"/>
+            <line x1="14" y1="46" x2="142" y2="46" stroke="#CBD5E1" stroke-width="1.2"/>
+            <text x="2" y="10" font-size="7.5" fill="#94A3B8">Supply</text>
+            <text x="118" y="53" font-size="7.5" fill="#94A3B8">Time</text>
+            <polyline points="14,44 142,12" fill="none" stroke="#7C3AED" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+          <div class="is-b">Firms can increase production relatively quickly.</div>
+        </div>
+        <div class="is-col" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+          <div class="is-h" style="color:#065F46;"><span class="is-n" style="background:#059669;">4</span>Digital</div>
+          <div class="is-ic">☁️</div>
+          <div class="is-pill" style="background:#D1FAE5;color:#065F46;">PES: very high</div>
+          <svg viewBox="0 0 150 54" style="width:100%;height:auto;margin-top:8px;">
+            <line x1="14" y1="6" x2="14" y2="46" stroke="#CBD5E1" stroke-width="1.2"/>
+            <line x1="14" y1="46" x2="142" y2="46" stroke="#CBD5E1" stroke-width="1.2"/>
+            <text x="2" y="10" font-size="7.5" fill="#94A3B8">Supply</text>
+            <text x="118" y="53" font-size="7.5" fill="#94A3B8">Time</text>
+            <polyline points="14,44 34,14 142,12" fill="none" stroke="#059669" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+          <div class="is-b">Supplying extra units is easy once the product exists.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* Card 2 — UK income spectrum: same 2% growth year drawn two ways.
      Layer .idl-pounds : £ per year per decile, with a broken Y-axis so
      the bottom four bars (£200..£1,800) are readable alongside the

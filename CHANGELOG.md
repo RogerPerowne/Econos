@@ -6,6 +6,44 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.35.0 — 2026-06-02
+
+### Price Elasticity of Supply — restructured to 8 cards with the visual family
+
+Reworked PES to match the new mockup designs, keeping the genuinely good
+content (and the interactive oil-market PES calculator) and adapting every
+cartoon-style scene in the mockups (twin supply diagrams, the elasticity
+dial, time-horizon curves, industry sparklines) into the established Econos
+style — clean tinted tiles, icon-top tile rows, and gradient spectra.
+
+- **Card 1 (big picture):** twin steep-vs-shallow supply diagram (same
+  price rise → small vs large ΔQs), the formula box, and an icon-top
+  inelastic / elastic / why-it-matters trio.
+- **Card 2 (calculate & classify):** two static worked examples (bottled
+  water 0.5 vs T-shirts 3.0) above the five-point PES classification
+  spectrum (0 → ∞) + a read-the-number trio.
+- **Card 3:** kept the interactive PES calculator (crude oil).
+- **Card 4 (drivers):** the five drivers of supply elasticity as numbered
+  tiles over a less-elastic → more-elastic gradient, with a quick-rule
+  chain and typical-patterns row (fish / clothing / housing / digital).
+- **Card 5 (time changes everything):** three time horizons (market period
+  vertical S → short-run steep S → long-run shallow S) + a follow-one-market
+  flow (today / next month / next year).
+- **Card 6 (when demand jumps):** reuses the demand-shift twin diagram
+  (steep vs shallow supply) + a demand-rises flow + price-volatility and
+  real-example tiles.
+- **Card 7 (real world):** four industries arranged low → high PES, each
+  with a supply-against-time sparkline, plus who-cares and short-context
+  tile rows.
+- **Card 8 (exam toolkit):** four-step how-to-answer flow + common-mistakes
+  tiles + how-to-write pair + memory hooks.
+
+Five new static visuals in `icons.js` (`pesBigPictureCompare`,
+`pesCalcClassify`, `pesDriversSpectrum`, `pesTimeHorizons`,
+`pesIndustrySpectrum`) — no engine specs, so no shell/precache plumbing.
+Card 6 reuses the existing `elasticVsInelasticSupplyDiagram`. Quiz pool
+preserved verbatim. `sw.js` cache bumped to `econos-v270`.
+
 ## 0.34.0 — 2026-06-02
 
 ### Income & Cross-Price Elasticity — restructured to 9 cards with the visual family

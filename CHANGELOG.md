@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.39.0 — 2026-06-02
+
+### Chart engine — honour curve.anchor (cleanup pass)
+
+- `renderCurve` in the chart engine now honours `curve.anchor`
+  (`start` / `middle` / `end`), matching how point labels already work.
+  Previously the engine silently dropped the curve-label anchor and forced
+  every curve label left-anchored, so authors who set `anchor: 'end'` with
+  a negative `labelDx` (the consistent convention across 24 specs) saw
+  their labels extend the wrong way and often clip the right edge.
+- Audited all 24 affected specs; every one had `anchor` paired with a
+  consistent `labelDx` sign, so honouring it improved each one. Snapshot
+  regression updated.
+- **Follow-up tidy** for the four specs the audit exposed:
+  - `consumption-function` — widened viewBox 560 → 640 so `C = a + bY` no
+    longer clips past the right edge.
+  - `market-failure-overview`, `welfare-loss-diagram`, `private-vs-social`
+    (both panels) — pushed the long `MPC = S` / `MPC` labels upward
+    (`labelDy: -20` instead of `-6`) so they clear the dashed `MSC` / `MSB`
+    labels that share the same endpoint y. All four externalities charts
+    now stack the curve labels cleanly.
+
+`sw.js` cache bumped to `econos-v290`.
+
 ## 0.38.2 — 2026-06-02
 
 ### Indirect Taxes & Subsidies Card 4 — wide layout

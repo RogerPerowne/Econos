@@ -22,7 +22,7 @@
   var TOP_RIGHT = { x: 0.944, y: 0.833 };
 
   window.ECONOS_CONSUMPTION_FUNCTION_SPEC = {
-    width: 560,
+    width: 640,
     height: 320,
     chartArea: { x: 160, y: 40, width: 360, height: 240 },
     className: 'consumption-function-svg',

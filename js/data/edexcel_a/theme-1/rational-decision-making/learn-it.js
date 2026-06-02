@@ -41,42 +41,24 @@ window.ECONOS_TOPIC = {
       title: 'What ‘rational’ means',
       lede: 'Rational means consistent, goal-seeking, and comparing extra benefit with extra cost. It is a simplifying assumption that underpins almost every demand-and-supply diagram you will meet.',
       tip: { icon: '✅', tone: 'green', text: 'Rationality is a simplifying assumption – not a claim that people are robots.' },
-      methodGrid: {
-        label: 'The four habits of a rational agent',
-        emoji: '🧠',
-        items: [
-          { tone: 'blue',   icon: '🔁', title: 'Consistent choices', body: 'Preferences do not randomly change from one moment to the next.', example: 'If you prefer tea to coffee today, you prefer it tomorrow too – other things equal.' },
-          { tone: 'green',  icon: '🎯', title: 'Goal-seeking',       body: 'Every decision aims at a clear objective.',                     example: 'A shopper maximises satisfaction; a firm maximises profit.' },
-          { tone: 'amber',  icon: '⚖️', title: 'Marginal analysis',  body: 'Compare one more unit of benefit with one more unit of cost.',  example: '“Is the next slice of pizza worth £2 to me?” – not “is pizza worth it overall?”' },
-          { tone: 'purple', icon: '📈', title: 'Maximisation',       body: 'Choose the option that gives the highest payoff.',              example: 'Pick the plan that gives the most satisfaction within your budget.' }
-        ]
-      },
-      versusList: {
-        label: 'Rational thinking in action',
-        emoji: '🤔',
-        rows: [
-          {
-            heading: 'Buying a new phone',
-            left:  { tone: 'blue', name: 'Rational consumer', icon: '🙂', premise: 'Weighs the extra utility of the phone against £800.',         reason: 'Buys only if that £800 gives more satisfaction here than from anything else it could buy.' },
-            right: { tone: 'rose', name: 'Impulse buyer',     icon: '🤩', premise: 'Sees the launch ad and taps Buy.',                            reason: 'Acts on feeling, without comparing the cost to other foregone uses of £800.' }
-          },
-          {
-            heading: 'Working an extra hour',
-            left:  { tone: 'blue', name: 'Rational worker',   icon: '🧮', premise: 'Asks if the extra wage beats the value of that hour spent elsewhere.', reason: 'Works the hour only if the wage is worth more than the leisure or sleep lost.' },
-            right: { tone: 'rose', name: 'Habit worker',      icon: '🌀', premise: 'Just keeps working – it is what everyone does.',              reason: 'Doesn’t compare marginal benefit and marginal cost at all.' }
-          }
-        ]
-      },
+      diagramKey: 'rationalAgentHub',
+      diagramLabel: 'What a rational agent does',
+      diagramEmoji: '🧠',
       comparison: {
-        title: 'Where the assumption leads',
-        emoji: '⚖️',
-        vs: '+',
-        resultJoin: '=',
-        position: 'after-branches',
-        left:   { tone: 'blue',  icon: '🙂', label: 'Consumers maximise utility', caption: 'Satisfaction or benefit, within a budget.' },
-        right:  { tone: 'amber', icon: '🏭', label: 'Firms maximise profit',      caption: 'Total revenue minus total costs.' },
-        result: { tone: 'green', icon: '📊', label: 'Every market diagram',       caption: 'These two assumptions sit underneath almost every demand-and-supply model in the course.' }
+        title: 'Who maximises what? — same logic, different objective',
+        emoji: '👥',
+        position: 'after-diagram',
+        vs: '≈',
+        left:  { tone: 'blue',  icon: '🙂', label: 'Consumers maximise utility', caption: 'Satisfaction or benefit, within a budget.' },
+        right: { tone: 'amber', icon: '🏭', label: 'Firms maximise profit',      caption: 'Total revenue minus total costs.' }
       },
+      keyTerms: [
+        { term: '🧠 Rational economic agent', def: 'Someone assumed to make consistent, goal-directed choices.' },
+        { term: '🙂 Utility',                  def: 'The satisfaction or benefit gained from consumption.' },
+        { term: '⚖️ Marginal analysis',        def: 'Deciding at the margin – comparing extra benefit with extra cost.' }
+      ],
+      keyTermsLabel: 'Key terms',
+      keyTermsEmoji: '📖',
       keyTakeaway: 'Rationality helps economists build clear models of behaviour before testing them against the real world.',
       examEdge: 'In essays, treat rationality as the baseline assumption, then evaluate whether it is realistic.'
     },
@@ -89,41 +71,26 @@ window.ECONOS_TOPIC = {
       title: 'Consumers maximise utility',
       lede: 'Utility means satisfaction or benefit. Consumers try to allocate a limited budget to get the highest total utility. Diminishing marginal utility helps explain why the demand curve slopes down.',
       tip: { icon: '✅', tone: 'green', text: 'Consumers aim to get the most satisfaction possible from a limited budget.' },
-      comparison: {
-        title: 'What is utility?',
-        emoji: '📖',
-        left:  { tone: 'blue',  icon: '🙂', label: 'Utility',           caption: 'Satisfaction or benefit gained from consuming goods and services. It is subjective and measured in “utils”.' },
-        right: { tone: 'amber', icon: '👛', label: 'Budget constraint', caption: 'Consumers have a limited income, so they must make trade-offs between different choices.' }
-      },
-      table: {
-        title: 'Worked example – spending a £20 budget',
-        emoji: '🧮',
-        headers: ['Choice', 'Spend'],
-        rows: [
-          { icon: '🍿', label: 'Popcorn — £5 each × 2', value: '£10' },
-          { icon: '🥤', label: 'Drinks — £5 each × 2',  value: '£10' },
-          { icon: '💷', label: 'Budget',                value: '£20' },
-          { icon: '✅', label: 'Total spend',           value: '£20' }
-        ]
-      },
-      note: { icon: '💡', tone: 'blue', head: 'Why a balanced basket?', text: 'A basket of 2 popcorn + 2 drinks gives higher total utility than spending everything on one item – because the extra satisfaction (marginal utility) falls with each additional unit.' },
+      diagramKey: 'marginalUtilityCompare',
+      diagramLabel: 'Deciding at the margin',
+      diagramEmoji: '⚖️',
       flow: [
-        { icon: '😋', title: '1st unit', sub: 'very high satisfaction' },
-        { icon: '🙂', title: '2nd unit', sub: 'high satisfaction' },
-        { icon: '😐', title: '3rd unit', sub: 'moderate satisfaction' },
-        { icon: '😕', title: '4th unit', sub: 'low satisfaction' }
+        { tone: 'blue',  icon: '❤️', title: 'Preferences',           sub: 'People value goods differently.' },
+        { tone: 'green', icon: '👛', title: 'Budget constraint',     sub: 'Prices and income limit what’s affordable.' },
+        { tone: 'amber', icon: '🛒', title: 'Best affordable bundle', sub: 'The mix that gives the highest total utility.' }
       ],
-      flowTitle: 'Diminishing marginal utility',
-      flowEmoji: '📉',
-      flowBottom: [
-        { icon: '👛', title: 'Limited budget',            body: 'Income is fixed, so choices are constrained.' },
-        { icon: '⚖️', title: 'Compare extra utility per pound', body: 'Consider the extra utility from each £1 spent.' },
-        { icon: '🎯', title: 'Choose the best combination', body: 'Allocate spending to maximise total utility.' }
+      flowTitle: 'The utility logic',
+      flowEmoji: '💡',
+      causes: [
+        { tone: 'blue',  icon: '🙂', head: 'Utility is personal', body: 'Different people get satisfaction from different things.' },
+        { tone: 'amber', icon: '⭐', head: 'Rational ≠ cheapest', body: 'It means the highest satisfaction per £, not simply the lowest price.' },
+        { tone: 'green', icon: '🔁', head: 'Choices can change',  body: 'A change in prices or income can change the best choice.' }
       ],
-      flowBottomTitle: 'Why this matters',
-      flowBottomEmoji: '👥',
-      keyTakeaway: 'Diminishing marginal utility means consumers are willing to pay less for extra units – this helps explain the downward-sloping demand curve.',
-      examEdge: 'Link utility to demand: as marginal utility falls, willingness to pay falls, so the demand curve slopes down.'
+      causesLabel: 'What to remember',
+      causesEmoji: '📌',
+      causesStyle: 'tinted-flat',
+      keyTakeaway: 'Diminishing marginal utility means each extra unit gives less satisfaction – so willingness to pay falls as quantity rises, which helps explain the downward-sloping demand curve.',
+      examEdge: 'Use the language of utility, budget and the margin – not just “people buy what they like”. Then link falling marginal utility to the downward-sloping demand curve.'
     },
 
     /* ----- CARD 3 – Firms maximise profit ----- */
@@ -134,12 +101,14 @@ window.ECONOS_TOPIC = {
       title: 'Firms maximise profit',
       lede: 'The standard assumption in economics is that firms aim to maximise profit. Profit is total revenue minus total costs. This is the baseline simplification used in models, even though firms may sometimes care about other objectives.',
       tip: { icon: '✅', tone: 'green', text: 'The baseline firm objective in economics is profit maximisation.' },
-      body: '<div style="font-size:20px;font-weight:800;color:#2563EB;letter-spacing:0.01em;margin:2px 0 8px;">Profit = Total revenue − Total costs</div>Firms compare the extra revenue and extra cost of decisions, and choose the option that raises profit the most.',
+      diagramKey: 'profitEquationHero',
+      diagramLabel: 'The core idea',
+      diagramEmoji: '🎯',
       flow: [
-        { icon: '🛒', title: 'Revenue', sub: 'earned from sales' },
-        { icon: '🏭', title: 'Costs',   sub: 'of production' },
-        { icon: '📊', title: 'Profit',  sub: 'the gap between the two' },
-        { icon: '🏆', title: 'Choose',  sub: 'the highest-profit option' }
+        { tone: 'blue',   icon: '🛒', title: 'Revenue', sub: 'earned from sales' },
+        { tone: 'amber',  icon: '🏭', title: 'Costs',   sub: 'of production' },
+        { tone: 'purple', icon: '📊', title: 'Profit',  sub: 'the gap between the two' },
+        { tone: 'green',  icon: '🏆', title: 'Choose',  sub: 'the highest-profit option' }
       ],
       flowTitle: 'How the model works',
       flowEmoji: '🔗',

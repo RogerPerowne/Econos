@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.26.0 — 2026-06-02
+
+### Rational Decision Making (1.2.1) — visual upgrade pass
+
+Kept the 3-card structure (the spec point is narrow) but rebuilt the
+heroes to match a ChatGPT visual set. Three new visuals in
+`js/icons.js`:
+
+- **`rationalAgentHub`** (Card 1) — a brain at the centre with the four
+  habits of a rational agent radiating to the corners (consistent /
+  goal-seeking / marginal / maximising); "who maximises what?" now a
+  consumers↔firms comparison + key terms.
+- **`marginalUtilityCompare`** (Card 2) — two goods rated by the extra
+  satisfaction from the next £1 (stars), with a "shift spending to the
+  higher MU per £" hub and the equimarginal rule; the demand-curve link
+  is preserved in the takeaway.
+- **`profitEquationHero`** (Card 3) — Profit = Total revenue − Total
+  costs as a proper equation panel, replacing the inline body text.
+
+SW cache → v258.
+
 ## 0.25.0 — 2026-06-02
 
 ### Economic Systems (1.1.6) — full restructure

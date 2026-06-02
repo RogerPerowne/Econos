@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.1 — 2026-06-02
+
+### Spectrum strip — unit-elastic cell now blue
+
+- Recoloured the middle "unit elastic" cell (and the gradient midpoint)
+  on both classification strips (`pedClassifySpectrum` and the strip in
+  `pesCalcClassify`) from gold to blue, so it matches the blue
+  unit-elastic frame in the five-frame grid below. `sw.js` cache bumped
+  to `econos-v273`.
+
 ## 0.36.0 — 2026-06-02
 
 ### PED gets the elasticity classification spectrum

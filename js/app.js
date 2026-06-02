@@ -1241,9 +1241,14 @@
   }
 
   function gridColumnsFor(n, minPx = 155) {
-    if (n === 4) return 'repeat(2, 1fr)';
-    if (n === 7 || n === 8) return 'repeat(4, 1fr)';
-    if (n === 9) return 'repeat(3, 1fr)';
+    // All equal-column tracks use minmax(0, 1fr) rather than a bare 1fr.
+    // A bare 1fr carries an implicit minmax(auto, 1fr) floor, so a column
+    // whose content has a wide min-content size (a long unbreakable word
+    // or example string) refuses to shrink and the columns render unequal
+    // — a CSS grid blowout. minmax(0, …) lets every track shrink evenly.
+    if (n === 4) return 'repeat(2, minmax(0, 1fr))';
+    if (n === 7 || n === 8) return 'repeat(4, minmax(0, 1fr))';
+    if (n === 9) return 'repeat(3, minmax(0, 1fr))';
     if (n >= 1 && n <= 6) return `repeat(${Math.min(n, 3)}, minmax(0, 1fr))`;
     return `repeat(auto-fill, minmax(${minPx}px, 1fr))`;
   }
@@ -2129,14 +2134,14 @@
             <span style="color:${t.label};flex-shrink:0;margin-top:1px;">•</span><span>${b}</span>
           </li>`).join('');
         return `
-          <div style="border-radius:16px;background:#fff;border:1px solid #E7E7EA;padding:24px 22px 20px;display:flex;flex-direction:column;">
+          <div style="border-radius:16px;background:#fff;border:1px solid #E7E7EA;padding:24px 22px 20px;display:flex;flex-direction:column;min-width:0;">
             <div style="text-align:center;font-size:17px;font-weight:800;color:${t.label};margin-bottom:4px;">${box.head}</div>
             ${box.sub ? `<div style="text-align:center;font-size:13px;color:#64748B;font-weight:500;margin-bottom:18px;">${box.sub}</div>` : ''}
             ${flowsHtml}
             <ul style="margin:10px 0 0;padding:0;list-style:none;">${bulletsHtml}</ul>
           </div>`;
       }).join('');
-      content += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">${boxesHtml}</div>`;
+      content += `<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:22px;">${boxesHtml}</div>`;
     }
 
     // Shift diagrams – two mini SVGs (increase / decrease) side by side.
@@ -2177,8 +2182,8 @@
       </svg>`;
       const noun = isDemand ? 'Demand' : 'Supply';
       content += `
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;">
-          <div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;padding:14px 14px 10px;">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-bottom:22px;">
+          <div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;padding:14px 14px 10px;min-width:0;">
             ${rightSvg}
             <div style="text-align:center;font-size:12px;font-weight:700;color:#059669;margin-top:6px;">${noun} increases (right shift)</div>
           </div>
@@ -4835,7 +4840,7 @@
           : `<div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>`;
         const headAlign = side.labelCenter ? 'justify-content:center;text-align:center;' : '';
         return `
-          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
+          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;min-width:0;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;${headAlign}">
               ${iconHtml}
               ${labelHtml}
@@ -4848,9 +4853,9 @@
       const hasVs = c.pairLabel && /\bvs\b/i.test(c.pairLabel);
       if (hasVs) {
         const vsBadge = `<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:36px;height:36px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);flex-shrink:0;">VS</div></div>`;
-        return `${label}<div style="display:grid;grid-template-columns:1fr 36px 1fr;gap:12px;align-items:stretch;margin-bottom:16px;">${renderSide(c.left, 'green')}${vsBadge}${renderSide(c.right, 'amber')}</div>`;
+        return `${label}<div style="display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);gap:12px;align-items:stretch;margin-bottom:16px;">${renderSide(c.left, 'green')}${vsBadge}${renderSide(c.right, 'amber')}</div>`;
       }
-      return `${label}<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
+      return `${label}<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-bottom:16px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
     })() : '';
     const tabs = hasSteps ? c.steps.map((s, i) => `
       <button class="ad-tab ${i === 0 ? 'is-active' : ''}" type="button"
@@ -5958,11 +5963,11 @@
     if (c.rows && c.rows.length) {
       const hasColA = !!c.colA;
       const headerHtml = hasColA
-        ? '<div style="display:grid;grid-template-columns:' + (hasColA ? '1fr 1fr 1fr' : '1fr 1fr') + ';gap:10px 16px;padding:10px 14px;border-bottom:2px solid #E7E7EA;"><div style="font-size:12px;font-weight:800;color:#334155;text-transform:uppercase;letter-spacing:.05em;">Market failure</div><div style="font-size:12px;font-weight:800;color:#334155;text-transform:uppercase;letter-spacing:.05em;">' + (c.colA || '') + '</div><div style="font-size:12px;font-weight:800;color:#334155;text-transform:uppercase;letter-spacing:.05em;">' + (c.colB || '') + '</div></div>'
+        ? '<div style="display:grid;grid-template-columns:' + (hasColA ? 'minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1fr)') + ';gap:10px 16px;padding:10px 14px;border-bottom:2px solid #E7E7EA;"><div style="font-size:12px;font-weight:800;color:#334155;text-transform:uppercase;letter-spacing:.05em;">Market failure</div><div style="font-size:12px;font-weight:800;color:#334155;text-transform:uppercase;letter-spacing:.05em;">' + (c.colA || '') + '</div><div style="font-size:12px;font-weight:800;color:#334155;text-transform:uppercase;letter-spacing:.05em;">' + (c.colB || '') + '</div></div>'
         : '';
       const rowsHtml = c.rows.map(function(r, i) {
         const bg = i % 2 === 0 ? '#fff' : '#F8FAFC';
-        return '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px 16px;padding:10px 14px;background:' + bg + ';"><div style="font-size:13px;font-weight:700;color:#1e293b;">' + r.label + '</div><div style="font-size:13px;color:#475569;">' + (r.colA || '') + '</div><div style="font-size:13px;color:#475569;">' + (r.colB || '') + '</div></div>';
+        return '<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:10px 16px;padding:10px 14px;background:' + bg + ';"><div style="font-size:13px;font-weight:700;color:#1e293b;">' + r.label + '</div><div style="font-size:13px;color:#475569;">' + (r.colA || '') + '</div><div style="font-size:13px;color:#475569;">' + (r.colB || '') + '</div></div>';
       }).join('');
       out += '<div style="border:1px solid #E7E7EA;border-radius:12px;overflow:hidden;margin-bottom:24px;">' + headerHtml + rowsHtml + '</div>';
     }

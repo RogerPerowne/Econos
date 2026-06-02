@@ -12706,7 +12706,7 @@ window.ECONOS_ICONS = {
      ============================================================ */
   eniTwinJW45: `
     <div style="background:#fff;border-radius:14px;padding:12px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;">
         <!-- LEFT: J = W view. Plot area x:[60,340] y:[40,210].
              J upward (75,175)→(325,65); W downward (75,65)→(325,175).
              Intersection (200,120). -->
@@ -12796,7 +12796,7 @@ window.ECONOS_ICONS = {
 
   eniOutputGapsTwin: `
     <div style="background:#fff;border-radius:14px;padding:12px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;">
         <!-- LEFT: Recessionary gap. Plot x:[60,340] y:[30,180].
              Intersection (140, 100). Y_FE marker at x=230.
              AS through (140,100) slope SVG -0.45: (60,136)→(273,40).
@@ -13140,7 +13140,7 @@ window.ECONOS_ICONS = {
      RIGHT (negative shock) AD shifts left: E₁ (494,123) → E₂ (467,142) */
   demandShocksTwin: `
     <div style="background:#fff;border-radius:14px;padding:12px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;">
         <!-- LEFT panel: positive AD shock -->
         <div style="border:1px solid #A6E0C4;border-radius:12px;background:#F1FBF5;padding:14px;">
           <div style="text-align:center;color:#065F46;font-weight:700;font-size:14px;margin-bottom:8px;">Positive AD shock</div>
@@ -13228,7 +13228,7 @@ window.ECONOS_ICONS = {
      RIGHT (positive): SRAS₀ dashed (left) → SRAS₁ solid (right). */
   supplyShocksTwin: `
     <div style="background:#fff;border-radius:14px;padding:12px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;">
         <!-- LEFT: Negative SRAS shock -->
         <div style="border:1px solid #F7D19A;border-radius:12px;background:#FFF8EC;padding:14px;">
           <div style="text-align:center;color:#C2410C;font-weight:700;font-size:14px;margin-bottom:8px;">Negative SRAS shock</div>
@@ -13338,7 +13338,7 @@ window.ECONOS_ICONS = {
   growthScorecard: `
     <div class="growth-scorecard" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .growth-scorecard .gs-grid { display:grid; grid-template-columns:1fr 1fr; column-gap:170px; row-gap:18px; position:relative; z-index:1; }
+        .growth-scorecard .gs-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:170px; row-gap:18px; position:relative; z-index:1; }
         .growth-scorecard .gs-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .growth-scorecard .gs-connectors { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
         @media (max-width: 560px) {
@@ -13687,7 +13687,7 @@ window.ECONOS_ICONS = {
         .mos-cock { display:grid; gap:10px; }
         .mos-primary { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; }
         .mos-secondary { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
-        @media (max-width: 720px) { .mos-primary { grid-template-columns: 1fr; } .mos-secondary { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 720px) { .mos-primary { grid-template-columns: 1fr; } .mos-secondary { grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
         .mos-card { background:#fff; border:1.5px solid; border-radius:12px; padding:14px 14px 12px; position:relative; overflow:hidden; }
         .mos-bar { position:absolute; left:0; top:0; bottom:0; width:4px; }
         .mos-num { width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
@@ -13853,7 +13853,7 @@ window.ECONOS_ICONS = {
         .mh-num { position:absolute; top:14px; left:14px; width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
         .mh-iconbox { width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; line-height:1; margin-top:18px; }
         .mh-name { font-size:18px; font-weight:900; line-height:1.1; }
-        .mh-data { display:grid; grid-template-columns: 1fr 1fr; }
+        .mh-data { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
         .mh-cell { padding:14px 16px; display:flex; flex-direction:column; justify-content:flex-start; }
         .mh-cell:nth-child(2) { border-left:1px dashed #E2E8F0; }
         .mh-cell:nth-child(3), .mh-cell:nth-child(4) { border-top:1px dashed #E2E8F0; }
@@ -14101,7 +14101,7 @@ window.ECONOS_ICONS = {
   macroTradeoffChains: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">
       <style>
-        .toc-grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+        .toc-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:14px; }
         @media (max-width: 720px) { .toc-grid { grid-template-columns: 1fr; } }
         .toc-tile { background:#fff; border:1.5px solid; border-radius:14px; padding:16px 16px 14px; }
         .toc-head { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
@@ -14354,7 +14354,7 @@ window.ECONOS_ICONS = {
   stagflationTimeline: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
       <style>
-        .sft { position:relative; display:grid; grid-template-columns: 1fr 1fr 1fr; gap:14px; }
+        .sft { position:relative; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap:14px; }
         @media (max-width: 720px) { .sft { grid-template-columns: 1fr; } .sft-axis { display:none; } }
         .sft-axis { position:absolute; top:8px; left:18%; right:18%; height:0; border-top:1.5px dashed #CBD5E1; z-index:0; }
         .sft-dot { width:14px; height:14px; border-radius:50%; border:2.5px solid #fff; position:relative; z-index:1; margin:0 auto 10px; }
@@ -14410,14 +14410,14 @@ window.ECONOS_ICONS = {
   inflationSurge2021: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">
       <style>
-        .is21 { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+        .is21 { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:14px; }
         @media (max-width: 720px) { .is21 { grid-template-columns: 1fr; } }
         .is21-panel { border:1.5px solid; border-radius:14px; padding:16px 18px; display:flex; flex-direction:column; }
         .is21-head { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
         .is21-headicon { width:38px; height:38px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; font-size:18px; }
         .is21-title { font-size:18px; font-weight:900; line-height:1.1; }
         .is21-sub { font-size:13px; color:#0B1426; line-height:1.5; margin-bottom:12px; }
-        .is21-trio { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:8px; margin-bottom:14px; }
+        .is21-trio { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap:8px; margin-bottom:14px; }
         .is21-trio-tile { background:#fff; border:1.5px solid; border-radius:10px; padding:10px 8px; text-align:center; }
         .is21-trio-icon { font-size:22px; line-height:1; margin-bottom:6px; }
         .is21-trio-text { font-size:11px; font-weight:700; line-height:1.3; }

@@ -87,7 +87,7 @@ const ENI_STEP_DOT = (tone, icon) => `
   <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#fff;border:1.5px solid ${tone};color:${tone};font-size:14px;line-height:1;">${icon}</span>`;
 
 const ENI_STEP_ROW = (tone, steps) => `
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px;">
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:6px;">
     ${steps.map(s => `
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;">
         <div style="display:flex;align-items:center;gap:4px;">

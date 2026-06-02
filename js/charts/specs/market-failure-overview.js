@@ -2,20 +2,27 @@
    Market Failure Overview — engine spec for marketFailureOverview.
    Market-failure topic — card 1 "Market failure".
 
-   The visual anchor for the concept. A simple supply-demand chart
-   where the free-market equilibrium E_m and the socially optimal
-   point E* are clearly DIFFERENT — and a small DWL triangle
-   between them shows what society loses.
+   The visual anchor for the concept. A supply-demand chart with
+   MPB (= D), MPC (= S) and dashed MSC (parallel-shift, simulating
+   a constant per-unit external cost). Two equilibria:
 
-   Generic illustration: doesn't commit to over- or under-production
-   (that's the next card). Both possibilities are shown by the dashed
-   sliders and the DWL label is centred between them.
+     E_m  = MPB ∩ MPC  — the free-market equilibrium
+     E*   = MPB ∩ MSC  — the socially optimal point
+
+   Both points are SOLVED by the engine's intersection solver
+   (curve ids 'MPB', 'MPC', 'MSC'), so they always sit exactly on
+   the curves — no eyeball drift. The wedge between E_m and E* is
+   the deadweight welfare-loss triangle.
    ============================================================ */
 (function () {
   'use strict';
 
-  var EM = { x: 0.580, y: 0.450 };   // market equilibrium (where D = MPC)
-  var ES = { x: 0.420, y: 0.580 };   // socially optimal (where MSB = MSC)
+  /* Equilibria (verified by the engine — see point.intersection). */
+  var EM = { x: 0.520, y: 0.480 };   // MPB ∩ MPC
+  var ES = { x: 0.420, y: 0.569 };   // MPB ∩ MSC
+
+  /* Top vertex of the DWL triangle: MSC sampled at Q_m. */
+  var DWL_TOP = { x: 0.520, y: 0.655 };
 
   window.ECONOS_MARKET_FAILURE_OVERVIEW_SPEC = {
     width: 480,
@@ -27,37 +34,49 @@
       y: { label: 'Price (P)' }
     },
 
+    /* DWL triangle — bounded by MSC (top), MPB (bottom-right) and the
+       vertical at Q_m (right). Visible amber tint with high opacity so
+       students can actually see it. */
+    polygons: [
+      { points: [[ES.x, ES.y], [EM.x, EM.y], [DWL_TOP.x, DWL_TOP.y]],
+        fill: '#DC2626', opacity: 0.35 }
+    ],
+
     curves: [
       /* MPB (private demand) — the market sees this */
-      { d: 'M 0.069,0.880 L 0.972,0.080',
+      { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
         tone: 'blue', label: 'MPB = D', strokeWidth: 2.5,
         labelDx: -6, labelDy: 14, anchor: 'end' },
       /* MPC (private supply) — the market sees this */
-      { d: 'M 0.069,0.080 L 0.972,0.880',
+      { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
         tone: 'amber', label: 'MPC = S', strokeWidth: 2.5,
         labelDx: -6, labelDy: -20, anchor: 'end' },
-      /* MSC (social cost) — dashed, shifted up from MPC */
-      { d: 'M 0.069,0.270 L 0.785,0.880',
+      /* MSC (social cost) — dashed, parallel-shifted up from MPC.
+         Same slope as MPC (0.886 chart-y per chart-x) so the
+         externality is constant per unit. */
+      { id: 'MSC', d: 'M 0.069,0.270 L 0.785,0.880',
         tone: 'green', label: 'MSC', strokeWidth: 2.2, dashed: '6 4',
         labelDx: 8, labelDy: -4, anchor: 'start' }
     ],
 
     points: [
-      /* Market equilibrium — where the price mechanism settles */
-      { x: EM.x, y: EM.y, tone: 'blue', radius: 6, hollow: true,
+      /* Market equilibrium — solved by the engine at MPB ∩ MPC */
+      { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
+        tone: 'blue', radius: 6, hollow: true,
         gridlines: 'slate', ticks: { x: 'Q_m' },
         label: 'E_m', labelDx: 10, labelDy: -4, anchor: 'start' },
-      /* Social optimum — where MSB = MSC */
-      { x: ES.x, y: ES.y, tone: 'green', radius: 7, hollow: true,
+      /* Social optimum — solved by the engine at MPB ∩ MSC */
+      { x: ES.x, y: ES.y, intersection: { curves: ['MPB', 'MSC'] },
+        tone: 'green', radius: 7, hollow: true,
         gridlines: 'green', ticks: { x: 'Q*' },
         label: 'E*', labelDx: -10, labelDy: -4, anchor: 'end' }
     ],
 
     texts: [
-      /* DWL caption pointing to the wedge between the two equilibria */
-      { x: (EM.x + ES.x) / 2 + 0.040, y: (EM.y + ES.y) / 2 + 0.060,
-        text: 'Welfare loss',
-        tone: 'red', bold: true, italic: true,
+      /* DWL caption — sits inside the shaded triangle so it can't be
+         mistaken for an axis annotation. */
+      { x: 0.495, y: 0.595, text: 'DWL',
+        tone: 'rose', bold: true, fontSize: 12,
         anchor: 'middle' }
     ]
   };

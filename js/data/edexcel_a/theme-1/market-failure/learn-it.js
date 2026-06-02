@@ -31,7 +31,7 @@ window.ECONOS_TOPIC = {
       title: 'Market failure',
       tip: { icon: '💡', tone: 'blue', text: 'Markets usually coordinate resources well – but sometimes private choices create social outcomes that are inefficient. The market still functions; it just produces the wrong amount from society\'s point of view.' },
       diagramKey: 'marketFailureOverview',
-      diagramLabel: 'When markets work, and when they fail',
+      diagramLabel: 'When markets fail',
       diagramEmoji: '⚖️',
       keyPointsLabel: 'What market failure means',
       keyPointsEmoji: '🔍',

@@ -33,9 +33,23 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Demand: the big picture',
       tip: { icon: '✅', tone: 'green', text: 'Demand means willingness AND ability to pay – not just wanting something. The demand curve shows how much consumers buy at each price.' },
-      diagramKey: 'demandBigPicture',
-      diagramLabel: 'What the demand curve shows',
-      diagramEmoji: '📊',
+      interactiveDiagram: {
+        svgKey: 'demandBigPicture',
+        label: 'What the demand curve shows',
+        emoji: '📊',
+        layers: ['layer-a', 'layer-b'],
+        views: [
+          { label: 'The demand curve', tone: 'blue', show: [],
+            head: 'The demand curve',
+            body: 'Demand shows how much consumers are willing and able to buy at each price — the whole downward-sloping curve <strong>D</strong>.' },
+          { label: 'A higher price → less', tone: 'amber', show: ['layer-a'],
+            head: 'At a higher price (A)',
+            body: 'At the higher price of <strong>£10</strong> (point A), quantity demanded is just <strong>20</strong>.' },
+          { label: 'A lower price → more', tone: 'green', show: ['layer-b'],
+            head: 'At a lower price (B)',
+            body: 'At the lower price of <strong>£6</strong> (point B), quantity demanded rises to <strong>40</strong> — the law of demand.' }
+        ]
+      },
       causes: [
         { tone: 'blue',  icon: '🙋', head: 'Willingness', body: 'Consumers want the good.' },
         { tone: 'amber', icon: '👛', head: 'Ability',     body: 'They can afford to buy it.' },
@@ -63,9 +77,23 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Why the demand curve slopes down',
       tip: { icon: '✅', tone: 'green', text: 'As price falls consumers usually buy more; as price rises they usually buy less. Lower prices make a good both more attractive and more affordable.' },
-      diagramKey: 'demandSlopeCurve',
-      diagramLabel: 'The downward-sloping demand curve',
-      diagramEmoji: '📉',
+      interactiveDiagram: {
+        svgKey: 'demandSlopeCurve',
+        label: 'Why quantity demanded rises as price falls',
+        emoji: '📉',
+        layers: ['layer-a', 'layer-b', 'layer-c'],
+        views: [
+          { label: 'Substitution effect', tone: 'green', show: ['layer-a'],
+            head: '① Substitution effect',
+            body: 'At a high price (A, £10 → 20), the good is dear relative to substitutes. As it gets cheaper, consumers <strong>switch towards it</strong>, so quantity demanded rises.' },
+          { label: 'Real-income effect', tone: 'amber', show: ['layer-b'],
+            head: '② Real-income effect',
+            body: 'A lower price (B, £8 → 30) means each £ stretches further — real purchasing power rises, so consumers can <strong>afford more</strong>.' },
+          { label: 'Diminishing marginal utility', tone: 'purple', show: ['layer-c'],
+            head: '③ Diminishing marginal utility',
+            body: 'Each extra unit gives <strong>less satisfaction</strong>, so consumers only buy more (C, £6 → 40) if the price falls — which is exactly the downward slope.' }
+        ]
+      },
       causes: [
         { tone: 'green',  icon: '🔀', head: 'Substitution effect',       body: 'When the good gets cheaper, consumers switch towards it and away from alternatives.' },
         { tone: 'amber',  icon: '👛', head: 'Real-income effect',        body: 'A lower price stretches purchasing power, so consumers can afford more.' },
@@ -93,17 +121,24 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Movements along the demand curve',
-      tip: { icon: '✅', tone: 'green', text: 'A change in the good’s own price causes a movement along the SAME demand curve – never a shift. Worked example: price falls £8 → £6, quantity demanded rises 30 → 40.' },
-      diagramKey: 'demandMovements',
-      diagramLabel: 'Extension vs contraction',
-      diagramEmoji: '📈',
-      flow: [
-        { tone: 'blue',  icon: '🏷️', title: 'Price changes',          sub: 'The good’s own price moves.' },
-        { tone: 'blue',  icon: '🧠', title: 'Consumers recalculate value', sub: 'They re-weigh the good against the alternatives.' },
-        { tone: 'amber', icon: '🛒', title: 'Quantity demanded changes', sub: 'We slide to a new point on the same curve.' }
-      ],
-      flowTitle: 'The mechanism',
-      flowEmoji: '🔗',
+      tip: { icon: '✅', tone: 'green', text: 'A change in the good’s own price causes a movement along the SAME demand curve – never a shift.' },
+      interactiveDiagram: {
+        svgKey: 'demandMovements',
+        label: 'Extension vs contraction',
+        emoji: '📈',
+        layers: ['layer-contract', 'layer-extend'],
+        views: [
+          { label: 'On the curve', tone: 'blue', show: [],
+            head: 'Start at point B',
+            body: 'We begin at point <strong>B</strong>: price <strong>£8</strong>, quantity demanded <strong>30</strong>.' },
+          { label: 'Price rises → contraction', tone: 'rose', show: ['layer-contract'],
+            head: 'Price rises → contraction',
+            body: 'Price rises to <strong>£10</strong>, so we move <strong>up</strong> the curve to A. Quantity demanded <strong>contracts</strong> to 20.' },
+          { label: 'Price falls → extension', tone: 'green', show: ['layer-extend'],
+            head: 'Price falls → extension',
+            body: 'Price falls to <strong>£6</strong>, so we move <strong>down</strong> the curve to C. Quantity demanded <strong>extends</strong> to 40.' }
+        ]
+      },
       causes: [
         { tone: 'green', icon: '↗️', head: 'Extension',   body: 'More is bought because price falls (move down the curve).' },
         { tone: 'amber', icon: '↘️', head: 'Contraction', body: 'Less is bought because price rises (move up the curve).' },

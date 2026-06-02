@@ -1324,8 +1324,8 @@
           const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
           const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
           const bodyHtml = !v.body ? '' : Array.isArray(v.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:#475569;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:13.5px;color:#475569;line-height:1.65;">${v.body}</div>`;
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:#0B1426;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${v.body}</div>`;
           const analysisHtml = v.analysis ? `
             <div style="margin-top:14px;padding-top:14px;border-top:1px solid ${t.border}60;">
               <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
@@ -1357,8 +1357,8 @@
             const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
             const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
             const bodyHtml = Array.isArray(slot.body)
-              ? `<ul style="margin:0;padding:0;list-style:none;font-size:11.5px;color:#475569;line-height:1.55;">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
-              : `<div style="font-size:11.5px;color:#475569;line-height:1.6;">${slot.body || ''}</div>`;
+              ? `<ul style="margin:0;padding:0;list-style:none;font-size:11.5px;color:#0B1426;line-height:1.55;">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
+              : `<div style="font-size:11.5px;color:#0B1426;line-height:1.6;">${slot.body || ''}</div>`;
             const marker = v.icon
               ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${v.icon}</span>`
               : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
@@ -1698,8 +1698,8 @@
               ? `<span style="flex-shrink:0;width:34px;height:34px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${s.icon}</span>`
               : `<span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">${i + 1}</span>`);
           const bodyHtml = Array.isArray(s.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:${stepsBoxed ? '#0B1426' : '#475569'};line-height:1.55;">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:13px;color:${stepsBoxed ? '#0B1426' : '#475569'};line-height:1.55;">${s.body}</div>`;
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:13px;color:#0B1426;line-height:1.55;">${s.body}</div>`;
           const divider = !stepsBoxed && i < dp.steps.length - 1 && !stacked
             ? `border-bottom:1px solid #E7E7EA;padding-bottom:12px;margin-bottom:12px;`
             : '';
@@ -1726,7 +1726,7 @@
       // 17px bold heading inside the panel was a one-off style that
       // existed nowhere else; removing it restores coherence and tightens
       // the panel's internal spacing.
-      const headerHtml = dp.intro ? `<div style="font-size:13.5px;color:#475569;margin-bottom:12px;">${dp.intro}</div>` : '';
+      const headerHtml = dp.intro ? `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;margin-bottom:12px;">${dp.intro}</div>` : '';
       const hasBody = (headerHtml.trim() || notesHtml.trim());
       // Build the panel (section-label + box) into a string so it can
       // either render in place or be deferred via dp.position.

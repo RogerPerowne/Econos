@@ -6,19 +6,26 @@
    archetypes:
      LEFT panel  — Negative externality (factory pollution)
                    MSC > MPC. Market produces Q_m where MPB = MPC.
-                   Social optimum Q* < Q_m where MSB = MSC.
+                   Social optimum Q* < Q_m where MPB = MSC.
                    → over-production.
      RIGHT panel — Positive externality (vaccinations)
                    MSB > MPB. Market produces Q_m where MPB = MPC.
-                   Social optimum Q* > Q_m where MSB = MSC.
+                   Social optimum Q* > Q_m where MPC = MSB.
                    → under-production.
 
-   Each panel highlights the divergence (vertical gap MSC−MPC on
-   the left, MSB−MPB on the right) and the resulting Q_m vs Q*
-   wedge. Uses the engine's panels API.
+   Geometry is SOLVED, not hand-set. Curves carry `id` strings and
+   each equilibrium uses `intersection: { curves: [...] }` so the
+   engine resolves the y-coord and warns on drift. No DWL shading
+   here — that's card 4's job.
    ============================================================ */
 (function () {
   'use strict';
+
+  /* Equilibria solved from the shared MPB / MPC / MSC / MSB curves
+     (see the calc note at the top of this file). */
+  var EM      = { x: 0.520, y: 0.480 };  // MPB ∩ MPC (both panels)
+  var ES_NEG  = { x: 0.420, y: 0.569 };  // MPB ∩ MSC (left panel)
+  var ES_POS  = { x: 0.606, y: 0.556 };  // MPC ∩ MSB (right panel)
 
   window.ECONOS_PRIVATE_VS_SOCIAL_SPEC = {
     width: 720,
@@ -35,24 +42,26 @@
         titleTone: 'rose',
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
-          { d: 'M 0.069,0.880 L 0.972,0.080',
+          { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
             tone: 'blue', label: 'MPB', strokeWidth: 2.5,
             labelDx: -6, labelDy: 14, anchor: 'end' },
-          { d: 'M 0.069,0.080 L 0.972,0.880',
+          { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC', strokeWidth: 2.5,
             labelDx: -6, labelDy: -20, anchor: 'end' },
           /* MSC shifted UP from MPC — pollution adds external cost */
-          { d: 'M 0.069,0.270 L 0.785,0.880',
+          { id: 'MSC', d: 'M 0.069,0.270 L 0.785,0.880',
             tone: 'red', label: 'MSC', strokeWidth: 2.2, dashed: '6 4',
             labelDx: 8, labelDy: -4, anchor: 'start' }
         ],
         points: [
-          /* Market eq at MPC ∩ MPB */
-          { x: 0.524, y: 0.482, tone: 'blue', radius: 5, hollow: true,
+          /* Market eq at MPB ∩ MPC */
+          { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
+            tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
             label: 'E_m', labelDx: 10, labelDy: -4, anchor: 'start' },
-          /* Social optimum at MSC ∩ MPB — left of Q_m */
-          { x: 0.380, y: 0.620, tone: 'red', radius: 6, hollow: true,
+          /* Social optimum at MPB ∩ MSC — left of Q_m */
+          { x: ES_NEG.x, y: ES_NEG.y, intersection: { curves: ['MPB', 'MSC'] },
+            tone: 'red', radius: 6, hollow: true,
             gridlines: 'red', ticks: { x: 'Q*' },
             label: 'E*', labelDx: -10, labelDy: -4, anchor: 'end' }
         ],
@@ -70,24 +79,26 @@
         titleTone: 'green',
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
-          { d: 'M 0.069,0.880 L 0.972,0.080',
+          { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
             tone: 'blue', label: 'MPB', strokeWidth: 2.5,
             labelDx: -6, labelDy: 14, anchor: 'end' },
-          { d: 'M 0.069,0.080 L 0.972,0.880',
+          { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC', strokeWidth: 2.5,
             labelDx: -6, labelDy: -20, anchor: 'end' },
           /* MSB shifted UP from MPB — vaccinations add herd-immunity benefit */
-          { d: 'M 0.215,0.880 L 1.000,0.230',
+          { id: 'MSB', d: 'M 0.215,0.880 L 1.000,0.230',
             tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4',
             labelDx: -6, labelDy: 14, anchor: 'end' }
         ],
         points: [
-          /* Market eq at MPC ∩ MPB */
-          { x: 0.524, y: 0.482, tone: 'blue', radius: 5, hollow: true,
+          /* Market eq at MPB ∩ MPC */
+          { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
+            tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
             label: 'E_m', labelDx: -10, labelDy: -4, anchor: 'end' },
-          /* Social optimum at MSB ∩ MPC — right of Q_m */
-          { x: 0.665, y: 0.620, tone: 'green', radius: 6, hollow: true,
+          /* Social optimum at MPC ∩ MSB — right of Q_m */
+          { x: ES_POS.x, y: ES_POS.y, intersection: { curves: ['MPC', 'MSB'] },
+            tone: 'green', radius: 6, hollow: true,
             gridlines: 'green', ticks: { x: 'Q*' },
             label: 'E*', labelDx: 10, labelDy: -4, anchor: 'start' }
         ],

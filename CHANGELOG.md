@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.40.0 — 2026-06-02
+
+### Market Failure charts — solved geometry, visible DWL triangles
+
+Three of the four Market Failure charts had equilibrium points placed
+by eye, so E\* drifted off the curves it was supposed to sit on. Rewrote
+each spec to use the engine's intersection solver — every equilibrium is
+now declared by curve identity (`point.intersection: { curves: [...] }`)
+and the chart-svg-regression test asserts no drift.
+
+- `marketFailureOverview` (Card 1) — E\_m solved at MPB ∩ MPC, E\* at
+  MPB ∩ MSC. Added a visible shaded DWL triangle (was just a floating
+  "Welfare loss" caption with no shape). Renamed the card section header
+  from "When markets work, and when they fail" to "When markets fail"
+  since the chart only shows the failing case.
+- `privateVsSocialDiagram` (Card 2, twin) — both panels now have E\*
+  exactly on the dashed social curve.
+- `welfareLossDiagram` (Card 4, twin) — same intersection fix, plus the
+  DWL polygons now use explicit fill colours at 0.35 opacity (the prior
+  combo of tint+opacity multiplied to ~0.08 effective alpha, leaving
+  them almost invisible). DWL labels nudged off the equilibrium markers.
+
+Curve ids and the intersection solver mean any future drift gets caught
+at build time (`node scripts/lint-charts.mjs`) rather than shipping.
+`sw.js` cache bumped to `econos-v291`.
+
 ## 0.39.0 — 2026-06-02
 
 ### Chart engine — honour curve.anchor (cleanup pass)

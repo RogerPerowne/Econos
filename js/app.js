@@ -2031,12 +2031,32 @@
             <div style="font-size:38px;line-height:1;margin-top:-8px;">${tile.icon || ''}</div>
             <div style="font-size:17px;font-weight:800;color:${t.label};">${tile.title}</div>
             <div style="font-size:13px;color:#0B1426;line-height:1.55;">${tile.body}</div>
+            ${tile.rule ? `<div style="margin-top:auto;background:#fff;border:1px solid ${t.border};color:${t.label};font-size:11.5px;font-weight:700;border-radius:8px;padding:5px 10px;line-height:1.35;">${tile.rule}</div>` : ''}
           </div>`;
       }).join('');
+      // Optional "price source" header: a dark PRICE box that fans arrows
+      // down into the tiles, showing the tiles as functions OF the price.
+      const fwSource = fw.priceSource ? (() => {
+        const n = fw.tiles.length;
+        const W = 920;
+        const targets = Array.from({ length: n }, (_, i) => Math.round(W * (i + 0.5) / n));
+        const lines = targets.map((x) => `<line x1="${W / 2}" y1="2" x2="${x}" y2="42" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5 4"/>`).join('');
+        const heads = targets.map((x) => `<polygon points="${x},49 ${x - 6},40 ${x + 6},40" fill="#94A3B8"/>`).join('');
+        const ps = fw.priceSource;
+        const psTitle = (typeof ps === 'object' && ps.title) || 'PRICE';
+        const psSub = (typeof ps === 'object' && ps.sub) || 'moves up ↑ / down ↓';
+        return `
+          <div style="max-width:300px;margin:4px auto 0;background:#0B1426;color:#fff;border-radius:14px;padding:11px 18px;text-align:center;box-shadow:0 4px 14px rgba(11,20,38,0.22);">
+            <div style="font-size:15px;font-weight:800;letter-spacing:0.05em;">${psTitle}</div>
+            <div style="font-size:11.5px;color:#CBD5E1;margin-top:1px;">${psSub}</div>
+          </div>
+          <svg viewBox="0 0 ${W} 50" style="width:100%;height:auto;display:block;margin:0 0 4px;">${lines}${heads}</svg>`;
+      })() : '';
       const fwDiagram = fw.diagramKey && I[fw.diagramKey] ? I[fw.diagramKey] : '';
       content += `
         <div style="background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:6px 22px 18px;margin-bottom:22px;">
           ${fw.label ? genSecLabel(fw.labelEmoji || '⭐', fw.label) : ''}
+          ${fwSource}
           <div style="display:grid;grid-template-columns:repeat(${fw.tiles.length},1fr);gap:14px;margin-bottom:${fwDiagram ? '14px' : '0'};">${fwTiles}</div>
           ${fwDiagram ? `<div style="margin-top:6px;">${fwDiagram}</div>` : ''}
         </div>`;

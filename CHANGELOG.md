@@ -6,6 +6,42 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.34.0 — 2026-06-02
+
+### Income & Cross-Price Elasticity — restructured to 9 cards with the visual family
+
+Reworked YED/XED to match the new mockup designs, keeping the two
+genuinely excellent bespoke interactive calculators (YED bus-travel, XED
+tea & coffee) and adapting every cartoon-style scene in the mockups
+(escalator, recession/boom dioramas) into the established Econos style
+— clean tinted tiles, hub-and-spoke, and a strength spectrum.
+
+- **Card 1 (big picture):** two-lens panel (income vs related-good
+  price) + "what they help us do" tiles.
+- **Card 2 (income elasticity):** formula + classify spectrum
+  (inferior / necessity / luxury / neutral) + read-the-sign +
+  predict-reveal.
+- **Card 3:** kept interactive YED calculator (bus travel).
+- **Card 4 (how income changes spending):** income-ladder tiles
+  (inferior ↓ / necessity ↗ / luxury ↑) + think-like-a-consumer +
+  what-YED-reveals.
+- **Card 5 (cross-price explained):** XED relationship hub
+  (substitutes / complements / unrelated, Good A at the centre) +
+  read-the-sign + predict-reveal.
+- **Card 6:** kept interactive XED calculator (tea & coffee).
+- **Card 7 (how strong is the relationship):** XED strength spectrum
+  from strong complements (−1.2) through unrelated to close substitutes
+  (+1.3) + why-size-matters + quick rules.
+- **Card 8 (real world):** four scenarios (recession / boom / rival
+  price cut / fuel tax) + who-uses-them tinted tiles +
+  short-context strip.
+- **Card 9 (exam toolkit):** how-to-read + common mistakes + how-to-write.
+
+Four new static HTML visuals in `icons.js` (`yedXedTwoLenses`,
+`yedIncomeLadder`, `xedRelationshipHub`, `xedStrengthSpectrum`) — no
+engine specs, so no shell/precache plumbing. Quiz pool preserved
+verbatim. `sw.js` cache bumped to `econos-v269`.
+
 ## 0.33.0 — 2026-06-02
 
 ### Price Elasticity of Demand — restructured to 8 cards with the visual family

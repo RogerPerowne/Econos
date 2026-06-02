@@ -1,248 +1,75 @@
 /* ============================================================
-   Supply card 2 — declarative spec for supplyInteractive.
-   Movement Along vs Shift of the Supply Curve. Structural mirror
-   of demand card 2 but with an UPWARD-sloping S curve and red tone.
+   Supply card 3 — INTERACTIVE "movements along the supply curve"
+   (icons key: supplyMovements; className smove-svg). Mirror of
+   demand-card2 with an upward curve. Rendered via interactiveDiagram.
 
-   Layer wiring matches the existing supply-svg CSS:
-     base       S₁ + E₁ + base legend
-     extension  S₁ + E₁ + E₂ extension (up-right, green) + E₃
-                  contraction (down-left, red) + amber arrow
-     shift      S₁ dashed faded + S₀ + S₂ + Q₀/Q₁/Q₂ markers +
-                  single-colour shift arrows (green right = increase,
-                  red left = decrease)
-
-   Chart geometry (viewBox 900×440):
-     Chart area   x=60..560, y=43..400 → width 500, height 357
-     Divider      x=595
-     S₁ line      (0.080, 0.084) → (0.860, 0.868)  – UP-right
-     E₁ at P₁,Q₁  (0.470, 0.476)
-     E₂ extend    (0.636, 0.644)  – price up, q up (green)
-     E₃ contract  (0.288, 0.294)  – price down, q down (red)
-     S₀ left      (-0.060, 0.084) → (0.720, 0.868)
-     S₂ right     (0.220, 0.084) → (1.000, 0.868)
+   Persistent: the supply line S and the reference point B (£8, 30).
+   Layers reveal one movement at a time:
+     layer-contract → A (£6, 20) + B→A arrow · price FALLS, contraction
+     layer-extend   → C (£10,40) + B→C arrow · price RISES, extension
+   Arrows offset 0.028 perpendicular (down-right of a slope +1 line).
    ============================================================ */
 (function () {
   'use strict';
 
+  var A = { x: 0.333, y: 0.500 };
+  var B = { x: 0.500, y: 0.667 };
+  var C = { x: 0.667, y: 0.833 };
+  var o = 0.028;
+
   window.ECONOS_SUPPLY_CARD2_SPEC = {
-    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
-    legendPosition: 'bottom',
-    height: 440,
-    chartArea: { x: 60, y: 43, width: 500, height: 357 },
-    className: 'supply-svg',
-    background: '#FFFFFF',
+    width: 700,
+    height: 480,
+    chartArea: { x: 84, y: 40, width: 534, height: 372 },
+    className: 'smove-svg',
+    layers: ['layer-contract', 'layer-extend'],
+    layerMode: 'exclusive',
     defs:
-      '<marker id="sp-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>' +
-      '<marker id="sp-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#D97706"/></marker>' +
-      '<marker id="sp-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>' +
-      '<marker id="sp-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>',
+      '<marker id="sm-red-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>' +
+      '<marker id="sm-green-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>',
     axes: {
-      x: { label: 'Q' },
-      y: { label: 'P' }
+      x: { label: 'Quantity supplied' },
+      y: { label: 'Price (£)' }
     },
 
     curves: [
-      // Base S₁ — always visible except in shift state (CSS hides layer-supply-base)
-      { layer: 'layer-supply-base',
-        d: 'M 0.080,0.084 L 0.860,0.868',
-        tone: 'red', label: 'S₁', strokeWidth: 3.5 },
-      // Shift-state S₁ — same line dashed/faded
-      { layer: 'layer-shift',
-        d: 'M 0.080,0.084 L 0.860,0.868',
-        tone: 'red', strokeWidth: 2, dashed: '9 5', opacity: 0.55 },
-      // Shift S₀ left
-      { layer: 'layer-shift',
-        d: 'M -0.060,0.084 L 0.720,0.868',
-        tone: 'red', label: 'S₀', strokeWidth: 2.5, labelDx: 8 },
-      // Shift S₂ right
-      { layer: 'layer-shift',
-        d: 'M 0.220,0.084 L 1.000,0.868',
-        tone: 'red', label: 'S₂', strokeWidth: 2.5, labelDx: 8 }
-    ],
-
-    arrows: [
-      /* ---- base: E₁ gridlines ---- */
-      { layer: 'layer-e1',
-        x1: 0, y1: 0.476, x2: 0.470, y2: 0.476,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-e1',
-        x1: 0.470, y1: 0.476, x2: 0.470, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-
-      /* ---- extension: E₂ extension (up-right) + E₃ contraction (down-left) ---- */
-      // E₂ extension horiz + vert
-      { layer: 'layer-extension',
-        x1: 0, y1: 0.644, x2: 0.636, y2: 0.644,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-extension',
-        x1: 0.636, y1: 0.644, x2: 0.636, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      // E₃ contraction horiz + vert
-      { layer: 'layer-extension',
-        x1: 0, y1: 0.294, x2: 0.288, y2: 0.294,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-extension',
-        x1: 0.288, y1: 0.294, x2: 0.288, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      // Amber double-headed arrow connecting E₃ and E₂ along S₁.
-      // Offset 0.03 chart-units perpendicular OUTWARD (upper-left of
-      // the S₁ line) so the arrow runs PARALLEL to the curve instead of
-      // sitting on top of it.
-      { layer: 'layer-extension',
-        x1: 0.279, y1: 0.345, x2: 0.601, y2: 0.665,
-        tone: 'amber', strokeWidth: 2.5,
-        markerStart: 'sp-amber-start', markerEnd: 'sp-amber-end', buffer: 0 },
-
-      /* ---- shift: Q₀ + Q₂ vert gridlines + single-colour horiz arrows ---- */
-      // Q₀/Q₂ vertical droplines from the dots down to the Q-axis ticks.
-      // Start 14px BELOW each dot (not at the dot) so the dropline doesn't
-      // form an L-shape with the horizontal shift arrow that meets the same
-      // dot — keeps arrows reading as arrows, not bent right-angles.
-      { layer: 'layer-shift',
-        x1: 0.330, y1: 0.430, x2: 0.330, y2: 0,
-        tone: 'red', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-shift',
-        x1: 0.610, y1: 0.430, x2: 0.610, y2: 0,
-        tone: 'green', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      // Green Q₁ → Q₂ rightward (increase)
-      { layer: 'layer-shift',
-        x1: 0.480, y1: 0.476, x2: 0.602, y2: 0.476,
-        tone: 'green', strokeWidth: 3.5, markerEnd: 'sp-green-end', buffer: 0 },
-      // Red Q₁ → Q₀ leftward (decrease)
-      { layer: 'layer-shift',
-        x1: 0.460, y1: 0.476, x2: 0.338, y2: 0.476,
-        tone: 'red', strokeWidth: 3.5, markerEnd: 'sp-red-end', buffer: 0 }
+      { d: 'M 0.12,0.286 L 0.88,1.046', tone: 'blue', strokeWidth: 3 }
     ],
 
     points: [
-      /* ---- base ---- */
-      { layer: 'layer-e1', x: 0.470, y: 0.476, tone: 'red', radius: 6, hollow: true },
-
-      /* ---- extension ---- */
-      { layer: 'layer-extension', x: 0.636, y: 0.644, tone: 'green', radius: 6, hollow: true },
-      { layer: 'layer-extension', x: 0.288, y: 0.294, tone: 'red',   radius: 6, hollow: true },
-
-      /* ---- shift ---- */
-      { layer: 'layer-shift', x: 0.330, y: 0.476, tone: 'red',   radius: 6, hollow: true },
-      { layer: 'layer-shift', x: 0.470, y: 0.476, tone: 'slate', radius: 4 },
-      { layer: 'layer-shift', x: 0.610, y: 0.476, tone: 'green', radius: 6, hollow: true }
+      { x: B.x, y: B.y, tone: 'blue', radius: 6 },
+      { layer: 'layer-contract', x: A.x, y: A.y, tone: 'red',   radius: 6 },
+      { layer: 'layer-extend',   x: C.x, y: C.y, tone: 'green', radius: 6 }
     ],
 
-    // titleStrips: engine pairs the dot with the text and positions
-    // the dot just before the rendered text's left edge — long titles
-    // no longer get their first letter eclipsed by the marker dot.
-    titleStrips: [
-      { layer: 'layer-legend-base', tone: 'red',
-        text: 'Supply slopes upward · higher prices incentivise more production' },
-      { layer: 'layer-extension', tone: 'amber',
-        text: 'Price changes → slide ALONG the supply curve' },
-      { layer: 'layer-shift', tone: 'green',
-        text: 'Non-price factors → SHIFT the whole supply curve' }
+    arrows: [
+      { x1: 0, y1: B.y, x2: B.x, y2: B.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { x1: B.x, y1: B.y, x2: B.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      /* contraction B → A (price falls, down) */
+      { layer: 'layer-contract', x1: B.x + o, y1: B.y - o, x2: A.x + o, y2: A.y - o,
+        tone: 'red', strokeWidth: 2.6, markerEnd: 'sm-red-end', buffer: 0.02 },
+      { layer: 'layer-contract', x1: 0, y1: A.y, x2: A.x, y2: A.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { layer: 'layer-contract', x1: A.x, y1: A.y, x2: A.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      /* extension B → C (price rises, up) */
+      { layer: 'layer-extend', x1: B.x + o, y1: B.y - o, x2: C.x + o, y2: C.y - o,
+        tone: 'green', strokeWidth: 2.6, markerEnd: 'sm-green-end', buffer: 0.02 },
+      { layer: 'layer-extend', x1: 0, y1: C.y, x2: C.x, y2: C.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { layer: 'layer-extend', x1: C.x, y1: C.y, x2: C.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 }
     ],
 
     texts: [
-      // Base axis tick labels
-      { layer: 'layer-e1', x: -0.028, y: 0.476, text: 'P₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-e1', x: 0.470, y: -0.050, text: 'Q₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'middle' },
-
-      // Extension labels
-      { layer: 'layer-extension', x: -0.028, y: 0.644, text: 'P₂', tone: 'green', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-extension', x: 0.636,  y: -0.050, text: 'Q₂', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-extension', x: -0.028, y: 0.294, text: 'P₃', tone: 'red', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-extension', x: 0.288,  y: -0.050, text: 'Q₃', tone: 'red', bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-extension', x: 0.652,  y: 0.678,  text: 'extension',   tone: 'green', bold: true, anchor: 'start' },
-      { layer: 'layer-extension', x: 0.180,  y: 0.238,  text: 'contraction', tone: 'red',   bold: true, anchor: 'start' },
-
-      // Shift labels
-      { layer: 'layer-shift', x: 0.880, y: 0.874, text: 'S₁', tone: 'red', bold: true, fontSize: 13, anchor: 'start', opacity: 0.55 },
-      { layer: 'layer-shift', x: 0.330, y: -0.050, text: 'Q₀', tone: 'red',   bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-shift', x: 0.470, y: -0.050, text: 'Q₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-shift', x: 0.610, y: -0.050, text: 'Q₂', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' }
-    ],
-
-    legends: [
-      /* ---- BASE LEGEND ---- */
-      {
-        layer: 'layer-legend-base',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'THE SUPPLY CURVE', tone: 'red' },
-            body: [
-              { text: 'Upward sloping: higher prices', tone: 'slate', bold: true },
-              { text: 'make production more profitable', tone: 'slate', bold: true },
-              { text: '→ more is supplied.', tone: 'slate', bold: true }
-            ]
-          },
-          { header: { text: 'WHY IT SLOPES UP', tone: 'gray' },
-            body: [
-              { text: '① Profit motive:', tone: 'slate', bold: true },
-              'higher prices cover rising',
-              'marginal costs',
-              { text: '② New entrants:', tone: 'slate', bold: true },
-              'higher prices attract new firms',
-              'into the market'
-            ]
-          },
-          { header: { text: 'AT EQUILIBRIUM', tone: 'gray' },
-            body: [ 'Quantity supplied Q₁ at price P₁.' ]
-          }
-        ]
-      },
-
-      /* ---- EXTENSION LEGEND ---- */
-      {
-        layer: 'layer-legend-extension',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'MOVEMENT ALONG CURVE', tone: 'amber' },
-            body: [ 'Only a price change causes this.' ]
-          },
-          { header: { text: 'EXTENSION (E₂)', tone: 'green' },
-            body: [ 'P rises → Q supplied rises', 'Move up the curve.' ]
-          },
-          { header: { text: 'CONTRACTION (E₃)', tone: 'red' },
-            body: [ 'P falls → Q supplied falls', 'Move down the curve.' ]
-          },
-          { header: { text: 'EXAM LANGUAGE', tone: 'amber' },
-            body: [
-              'Say "quantity supplied rises/falls,"',
-              'not "supply rises/falls."'
-            ]
-          }
-        ]
-      },
-
-      /* ---- SHIFT LEGEND ---- */
-      {
-        layer: 'layer-legend-shift',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'SHIFT OF SUPPLY', tone: 'green' },
-            body: [
-              'A non-price determinant changes –',
-              'the whole curve moves.'
-            ]
-          },
-          { header: { text: 'S₂ – RIGHT (INCREASE)', tone: 'red' },
-            body: [
-              'Lower costs / Better technology /',
-              'More producers / Subsidies'
-            ]
-          },
-          { header: { text: 'S₀ – LEFT (DECREASE)', tone: 'red' },
-            body: [
-              'Higher wages / Input price rise /',
-              'New tax / Supply shock'
-            ]
-          },
-          { header: { text: 'REMEMBER', tone: 'green' },
-            body: [
-              'At every price, more (S₂) or less',
-              '(S₀) is supplied.'
-            ]
-          }
-        ]
-      }
+      { x: 0.76, y: 1.00, text: 'S', tone: 'blue', bold: true, fontSize: 15, anchor: 'start' },
+      { x: -0.02, y: B.y, text: '8', tone: 'slate', fontSize: 13, anchor: 'end' },
+      { x: B.x, y: -0.06, text: '30', tone: 'slate', fontSize: 13, anchor: 'middle' },
+      { x: B.x - 0.04, y: B.y + 0.03, text: 'B', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' },
+      { layer: 'layer-contract', x: -0.02, y: A.y, text: '6', tone: 'slate', fontSize: 13, anchor: 'end' },
+      { layer: 'layer-contract', x: A.x, y: -0.06, text: '20', tone: 'slate', fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-contract', x: A.x - 0.04, y: A.y + 0.03, text: 'A', tone: 'red', bold: true, fontSize: 15, anchor: 'end' },
+      { layer: 'layer-contract', x: 0.40, y: 0.40, text: 'Contraction', tone: 'red', bold: true, fontSize: 12, anchor: 'start' },
+      { layer: 'layer-extend', x: -0.02, y: C.y, text: '10', tone: 'slate', fontSize: 13, anchor: 'end' },
+      { layer: 'layer-extend', x: C.x, y: -0.06, text: '40', tone: 'slate', fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-extend', x: C.x - 0.04, y: C.y + 0.03, text: 'C', tone: 'green', bold: true, fontSize: 15, anchor: 'end' },
+      { layer: 'layer-extend', x: 0.70, y: 0.74, text: 'Extension', tone: 'green', bold: true, fontSize: 12, anchor: 'start' }
     ]
   };
 })();

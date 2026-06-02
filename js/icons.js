@@ -1621,7 +1621,7 @@ window.ECONOS_ICONS = {
 
   demandMovements: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD2_SPEC),
 
-  supplyInteractive: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD2_SPEC),
+  supplyMovements: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD2_SPEC),
 
   welfareSurplusDiagram: window.ECONOS_PPF.render(window.ECONOS_WELFARE_SURPLUS_SPEC),
 
@@ -4483,7 +4483,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
   demandShifts: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD4_SPEC),
-  supplyPsSvg: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD4_SPEC),
+  supplyShifts: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD4_SPEC),
   cpsSvg: `
     <svg class="cps-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -11284,7 +11284,8 @@ window.ECONOS_ICONS = {
   demandBigPicture: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD1_SPEC),
   demandSlopeCurve: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD7_SPEC),
 
-  supplyCurveBasic: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD1_SPEC),
+  supplyBigPicture: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD1_SPEC),
+  supplySlopeCurve: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD7_SPEC),
 
   demandShiftMini: `
     <svg viewBox="0 0 900 320" width="900" height="320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -14111,6 +14112,100 @@ window.ECONOS_ICONS = {
             <div class="gt-top"><span class="gt-badge" style="background:#7C3AED;">D</span><span class="gt-name" style="color:#5B21B6;">Complements</span></div>
             <div class="gt-body">Price of printers rises → demand for ink falls.</div>
             <div class="gt-eg" style="color:#5B21B6;"><span>🖨️ Ink</span><span style="color:#DC2626;">▼</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     supplyDeterminantsHub — Supply Card 5. "Supply" at the centre with
+     the six conditions of supply around it. Mirror of
+     demandDeterminantsHub. Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  supplyDeterminantsHub: `
+    <div class="sup-hub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .sup-hub .sh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:188px; row-gap:14px; position:relative; z-index:1; }
+        .sup-hub .sh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .sup-hub .sh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .sup-hub .sh-tile { border-radius:12px; padding:11px 13px; display:flex; gap:10px; align-items:flex-start; }
+        .sup-hub .sh-ic { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .sup-hub .sh-t { font-size:13px; font-weight:800; line-height:1.2; }
+        .sup-hub .sh-s { font-size:11.5px; color:#475569; line-height:1.35; margin-top:2px; }
+        @media (max-width:560px){ .sup-hub .sh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .sup-hub .sh-center{ position:static; transform:none; margin:8px auto; } .sup-hub .sh-center-wrap{ order:99; display:flex; justify-content:center; } .sup-hub .sh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:680px;margin:0 auto;">
+        <svg class="sh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="30" y1="17" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="70" y1="17" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="28" y1="50" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="72" y1="50" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="30" y1="83" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="70" y1="83" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+        </svg>
+        <div class="sh-grid">
+          <div class="sh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="sh-ic">💷</div><div><div class="sh-t" style="color:#1E3A8A;">Costs of production</div><div class="sh-s">Higher wages, energy or raw-material costs can reduce supply.</div></div></div>
+          <div class="sh-tile" style="background:#ECFDF5;border:1.5px solid #6EE7B7;"><div class="sh-ic">⚖️</div><div><div class="sh-t" style="color:#065F46;">Taxes &amp; subsidies</div><div class="sh-s">Tax tends to reduce supply; a subsidy tends to increase it.</div></div></div>
+          <div class="sh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;"><div class="sh-ic">⚙️</div><div><div class="sh-t" style="color:#5B21B6;">Technology &amp; productivity</div><div class="sh-s">Better methods can lower unit cost and raise supply.</div></div></div>
+          <div class="sh-tile" style="background:#FFFBEB;border:1.5px solid #FCD34D;"><div class="sh-ic">👥</div><div><div class="sh-t" style="color:#B45309;">Number of firms</div><div class="sh-s">More sellers usually raise market supply.</div></div></div>
+          <div class="sh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;"><div class="sh-ic">📈</div><div><div class="sh-t" style="color:#C2410C;">Expectations</div><div class="sh-s">If firms expect higher future prices, they may hold back supply now.</div></div></div>
+          <div class="sh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="sh-ic">🌩️</div><div><div class="sh-t" style="color:#1E3A8A;">Weather &amp; shocks</div><div class="sh-s">Harvests, strikes and disruption can shift supply suddenly.</div></div></div>
+        </div>
+        <div class="sh-center-wrap"><div class="sh-center" style="background:#fff;border:2.4px solid #2563EB;border-radius:50%;width:150px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 14px rgba(37,99,235,0.18);">
+          <div style="font-size:26px;line-height:1;">🏭</div>
+          <div style="font-size:17px;font-weight:800;color:#1E3A8A;font-family:Fraunces,Georgia,serif;margin:3px 0 2px;">Supply</div>
+          <div style="font-size:10.5px;color:#475569;text-align:center;line-height:1.3;">The quantity producers offer at every price.</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     supplyCostFactors — Supply Card 6. Cost-side changes (lower/higher
+     costs) and policy & efficiency (technology, tax vs subsidy), each
+     with a supply-direction arrow. Mirror of demandGoodTypes.
+     ─────────────────────────────────────────────────────────────── */
+  supplyCostFactors: `
+    <div class="cost-fac" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cost-fac .cf-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        .cost-fac .cf-col { border-radius:14px; padding:12px; }
+        .cost-fac .cf-h { font-size:13.5px; font-weight:800; text-align:center; margin-bottom:9px; }
+        .cost-fac .cf-card { background:#fff; border-radius:12px; padding:11px 12px; margin-bottom:9px; }
+        .cost-fac .cf-card:last-child { margin-bottom:0; }
+        .cost-fac .cf-top { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+        .cost-fac .cf-badge { width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .cost-fac .cf-name { font-size:13px; font-weight:800; }
+        .cost-fac .cf-body { font-size:11.5px; color:#475569; line-height:1.4; }
+        .cost-fac .cf-eg { display:flex; align-items:center; gap:8px; margin-top:7px; font-size:12px; font-weight:700; }
+        @media (max-width:560px){ .cost-fac .cf-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="cf-row">
+        <div class="cf-col" style="background:#F8FAFC;border:1px solid #E2E8F0;">
+          <div class="cf-h" style="color:#1E3A8A;">Cost-side changes</div>
+          <div class="cf-card" style="border:1.5px solid #6EE7B7;">
+            <div class="cf-top"><span class="cf-badge" style="background:#059669;">A</span><span class="cf-name" style="color:#065F46;">Lower costs</span></div>
+            <div class="cf-body">Cheaper energy, lower wages or cheaper inputs.</div>
+            <div class="cf-eg" style="color:#065F46;"><span>⚡ Energy / raw materials</span><span>→ supply right</span></div>
+          </div>
+          <div class="cf-card" style="border:1.5px solid #FCD34D;">
+            <div class="cf-top"><span class="cf-badge" style="background:#D97706;">B</span><span class="cf-name" style="color:#B45309;">Higher costs</span></div>
+            <div class="cf-body">Higher wages, fuel or input prices.</div>
+            <div class="cf-eg" style="color:#B45309;"><span>⛽ Fuel / wages</span><span>← supply left</span></div>
+          </div>
+        </div>
+        <div class="cf-col" style="background:#F8FAFC;border:1px solid #E2E8F0;">
+          <div class="cf-h" style="color:#5B21B6;">Policy &amp; efficiency</div>
+          <div class="cf-card" style="border:1.5px solid #6EE7B7;">
+            <div class="cf-top"><span class="cf-badge" style="background:#059669;">C</span><span class="cf-name" style="color:#065F46;">Technology &amp; productivity</span></div>
+            <div class="cf-body">Better machinery or methods lower unit cost.</div>
+            <div class="cf-eg" style="color:#065F46;"><span>⚙️ Better methods</span><span>↑ supply</span></div>
+          </div>
+          <div class="cf-card" style="border:1.5px solid #C4B5FD;">
+            <div class="cf-top"><span class="cf-badge" style="background:#7C3AED;">D</span><span class="cf-name" style="color:#5B21B6;">Tax vs subsidy</span></div>
+            <div class="cf-body">Indirect tax raises cost → supply down. Subsidy lowers cost → supply up.</div>
+            <div class="cf-eg" style="color:#5B21B6;"><span>🏛️ Tax ↓ · Subsidy ↑</span></div>
           </div>
         </div>
       </div>

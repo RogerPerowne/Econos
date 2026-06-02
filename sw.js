@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v264';
+  const CACHE_NAME = 'econos-v265';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -32,6 +32,7 @@
     '/js/charts/specs/supply-card1.js',
     '/js/charts/specs/supply-card2.js',
     '/js/charts/specs/supply-card4.js',
+    '/js/charts/specs/supply-card7.js',
     '/js/charts/specs/cps-diagram.js',
     '/js/charts/specs/cps-build-interactive.js',
     '/js/charts/specs/equilibrium-basic.js',

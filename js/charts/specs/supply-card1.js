@@ -1,66 +1,58 @@
 /* ============================================================
-   Supply card 1 — declarative spec for supplyCurveBasic.
+   Supply card 1 — INTERACTIVE "big picture" supply curve (icons key:
+   supplyBigPicture; className sbig-svg). Mirror of demand-card1 with an
+   UPWARD-sloping curve. Rendered via the interactiveDiagram block.
 
-   Legacy was hybrid: chart on the left + numbered "1. What supply
-   means / 2. Law of supply / 3. Ceteris paribus" text on the right.
-   Per the migration plan, the right panel is dropped — the same
-   content is already covered by the card's keyTerms (Law of supply,
-   Supply curve, Extension of supply) and keyPoints below the
-   diagram. This spec renders the chart only.
+   Persistent: the upward supply line S. Layers reveal one point:
+     layer-a → A (£6, 20)  "a lower price → less supplied"
+     layer-b → B (£10, 40) "a higher price → more supplied"
 
-   The chart shows the law of supply: as price rises from P₁ to P₂,
-   quantity supplied rises from Q₁ to Q₂. Plotted as two dots on a
-   straight upward-sloping S curve with dashed projection lines.
-
-   Chart-space positions:
-     (Q₁, P₁) → (0.324, 0.317)
-     (Q₂, P₂) → (0.595, 0.577)
-   S line endpoints (auto-clipped):
-     (0.054, 0.057) → (0.973, 0.943)
+   Canonical supply line (slope +1): y = x + 0.166, through
+     A(0.333,0.500) · B-mid(0.500,0.667) · C(0.667,0.833).
+   Endpoints: (0.12,0.286) → (0.88,1.046).
    ============================================================ */
 (function () {
   'use strict';
 
-  var P1 = { x: 0.324, y: 0.317 };
-  var P2 = { x: 0.595, y: 0.577 };
+  var A = { x: 0.333, y: 0.500 }; // £6,  q20
+  var B = { x: 0.667, y: 0.833 }; // £10, q40
 
   window.ECONOS_SUPPLY_CARD1_SPEC = {
     width: 700,
-    height: 400,
-    chartArea: { x: 90, y: 40, width: 520, height: 280 },
-    className: 'supply-basic-svg',
+    height: 480,
+    chartArea: { x: 84, y: 40, width: 534, height: 372 },
+    className: 'sbig-svg',
+    layers: ['layer-a', 'layer-b'],
+    layerMode: 'exclusive',
     axes: {
-      x: { label: 'Q' },
-      y: { label: 'P' }
+      x: { label: 'Quantity supplied' },
+      y: { label: 'Price (£)' }
     },
 
     curves: [
-      { d: 'M 0.054,0.057 L 0.973,0.943',
-        tone: 'green', label: 'S', strokeWidth: 3, labelDx: 10, labelDy: 0 }
-    ],
-
-    arrows: [
-      // Dashed projections from P-axis to each dot
-      { x1: 0, y1: P1.y, x2: P1.x, y2: P1.y, tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { x1: 0, y1: P2.y, x2: P2.x, y2: P2.y, tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      // Dashed projections from each dot down to Q-axis
-      { x1: P1.x, y1: P1.y, x2: P1.x, y2: 0, tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { x1: P2.x, y1: P2.y, x2: P2.x, y2: 0, tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 }
+      { d: 'M 0.12,0.286 L 0.88,1.046', tone: 'blue', strokeWidth: 3 }
     ],
 
     points: [
-      // Two solid dark dots marking (Q₁, P₁) and (Q₂, P₂).
-      { x: P1.x, y: P1.y, tone: 'slate', radius: 6 },
-      { x: P2.x, y: P2.y, tone: 'slate', radius: 6 }
+      { layer: 'layer-a', x: A.x, y: A.y, tone: 'blue', radius: 6 },
+      { layer: 'layer-b', x: B.x, y: B.y, tone: 'blue', radius: 6 }
+    ],
+
+    arrows: [
+      { layer: 'layer-a', x1: 0, y1: A.y, x2: A.x, y2: A.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { layer: 'layer-a', x1: A.x, y1: A.y, x2: A.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { layer: 'layer-b', x1: 0, y1: B.y, x2: B.x, y2: B.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { layer: 'layer-b', x1: B.x, y1: B.y, x2: B.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 }
     ],
 
     texts: [
-      // P-axis tick labels (italic, matching the legacy's italic style)
-      { x: -0.025, y: P1.y, text: 'P₁', tone: 'slate', bold: true, italic: true, fontSize: 14, anchor: 'end' },
-      { x: -0.025, y: P2.y, text: 'P₂', tone: 'slate', bold: true, italic: true, fontSize: 14, anchor: 'end' },
-      // Q-axis tick labels
-      { x: P1.x, y: -0.055, text: 'Q₁', tone: 'slate', bold: true, italic: true, fontSize: 14, anchor: 'middle' },
-      { x: P2.x, y: -0.055, text: 'Q₂', tone: 'slate', bold: true, italic: true, fontSize: 14, anchor: 'middle' }
+      { x: 0.76, y: 1.00, text: 'S', tone: 'blue', bold: true, fontSize: 15, anchor: 'start' },
+      { layer: 'layer-a', x: -0.02, y: A.y, text: '6', tone: 'slate', fontSize: 13, anchor: 'end' },
+      { layer: 'layer-a', x: A.x, y: -0.06, text: '20', tone: 'slate', fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-a', x: A.x - 0.04, y: A.y + 0.03, text: 'A', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' },
+      { layer: 'layer-b', x: -0.02, y: B.y, text: '10', tone: 'slate', fontSize: 13, anchor: 'end' },
+      { layer: 'layer-b', x: B.x, y: -0.06, text: '40', tone: 'slate', fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-b', x: B.x - 0.04, y: B.y + 0.03, text: 'B', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' }
     ]
   };
 })();

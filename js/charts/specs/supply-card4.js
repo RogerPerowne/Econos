@@ -1,200 +1,70 @@
 /* ============================================================
-   Supply card 4 — declarative spec for supplyPsSvg.
-   Producer Surplus diagram, 3 step states (base / ps / prise) —
-   structural mirror of demand card 4 (Consumer Surplus) but with
-   an upward-sloping S curve and rose-tinted PS triangles.
+   Supply card 4 — INTERACTIVE "shifts in supply" (icons key:
+   supplyShifts; className sshift-svg). The old producer-surplus diagram
+   is retired (producer surplus belongs in 1.2.7). Mirror of
+   demand-card4 with an upward curve and the green=increase /
+   red=decrease convention.
 
-   Layer wiring matches the existing supply-ps-svg CSS:
-     - Always visible: layer-axes, layer-supply
-     - .show-base  → layer-legend-base
-     - .show-ps    → layer-eq + layer-ps + layer-ps-label
-     - .show-prise → layer-prise-ps + layer-prise
-
-   Chart geometry (viewBox 900×440):
-     Chart area: x=60–575, y=43–400 (width 515, height 357)
-     Supply line: pixel (60, 375) → (560, 75)
-                  → chart (0, 0.070) → (0.971, 0.910)
-     Equilibrium: pixel (293, 235) → chart (0.452, 0.462)
-     Raised P₂:   pixel (393, 175) → chart (0.647, 0.630)
+   States (mutually exclusive via show: ['layer-*']):
+     base → S₁ solid (starting point)
+     incr → S₁ dashed + green S₂ (shift right, increase)
+     decr → S₁ dashed + red S₃ (shift left, decrease)
+   Slope +1 lines; shift = ±0.22 in chart-x. Arrows at a mid price.
    ============================================================ */
 (function () {
   'use strict';
 
-  var P_STAR = { x: 0.452, y: 0.462 };
-  var P_2    = { x: 0.647, y: 0.630 };
+  var yMid = 0.60;
+  var s1x = yMid - 0.166; // S₁: y = x + 0.166 → x = y − 0.166 = 0.434
+  var s2x = s1x + 0.22;   // 0.654
+  var s3x = s1x - 0.22;   // 0.214
 
   window.ECONOS_SUPPLY_CARD4_SPEC = {
-    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
-    legendPosition: 'bottom',
-    height: 440,
-    chartArea: { x: 60, y: 43, width: 515, height: 357 },
-    className: 'supply-ps-svg',
-    background: '#FFFFFF',
+    width: 700,
+    height: 480,
+    chartArea: { x: 84, y: 40, width: 534, height: 372 },
+    className: 'sshift-svg',
+    layers: ['layer-base', 'layer-incr', 'layer-decr'],
+    layerMode: 'exclusive',
+    defs:
+      '<marker id="ss-green-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>' +
+      '<marker id="ss-red-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>',
     axes: {
-      x: { label: 'Q' },
-      y: { label: 'P' }
+      x: { label: 'Quantity supplied' },
+      y: { label: 'Price' }
     },
 
-    // PS triangles (filled rose polygons)
-    polygons: [
-      // Original PS triangle — vertices on the Y-axis from min-supply-price
-      // (0, 0.070, where S meets axis) up to P*, plus the equilibrium corner.
-      { layer: 'layer-ps',
-        points: [[0, 0.070], [0, 0.462], [0.452, 0.462]],
-        fill: '#FEE2E2', opacity: 0.85 },
-      // Expanded PS triangle when price rises to P₂
-      { layer: 'layer-prise-ps',
-        points: [[0, 0.070], [0, 0.630], [0.647, 0.630]],
-        fill: '#FEE2E2', opacity: 0.85 }
-    ],
-
     curves: [
-      { layer: 'layer-supply',
-        d: 'M 0,0.070 L 0.971,0.910',
-        tone: 'rose', label: 'S', strokeWidth: 3.5, labelDx: 10, labelDy: 0 }
+      /* base — solid blue S₁ */
+      { layer: 'layer-base', d: 'M 0.12,0.286 L 0.88,1.046', tone: 'blue', strokeWidth: 3 },
+
+      /* incr — dashed grey S₁ + solid green S₂ (right) */
+      { layer: 'layer-incr', d: 'M 0.12,0.286 L 0.88,1.046', tone: 'slate', strokeWidth: 2.4, dashed: '7 5', opacity: 0.55 },
+      { layer: 'layer-incr', d: 'M 0.34,0.286 L 1.10,1.046', tone: 'green', strokeWidth: 3 },
+
+      /* decr — dashed grey S₁ + solid red S₃ (left) */
+      { layer: 'layer-decr', d: 'M 0.12,0.286 L 0.88,1.046', tone: 'slate', strokeWidth: 2.4, dashed: '7 5', opacity: 0.55 },
+      { layer: 'layer-decr', d: 'M -0.10,0.286 L 0.66,1.046', tone: 'red', strokeWidth: 3 }
     ],
 
     arrows: [
-      // Equilibrium gridlines (show-ps)
-      { layer: 'layer-eq',
-        x1: 0, y1: P_STAR.y, x2: P_STAR.x, y2: P_STAR.y,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-eq',
-        x1: P_STAR.x, y1: P_STAR.y, x2: P_STAR.x, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-
-      // prise: faded P* refs
-      { layer: 'layer-prise',
-        x1: 0, y1: P_STAR.y, x2: P_2.x, y2: P_STAR.y,
-        tone: 'slate', strokeWidth: 1, dashed: '4 4', buffer: 0, opacity: 0.3 },
-      { layer: 'layer-prise',
-        x1: P_STAR.x, y1: P_STAR.y, x2: P_STAR.x, y2: 0,
-        tone: 'slate', strokeWidth: 1, dashed: '4 4', buffer: 0, opacity: 0.3 },
-      // prise: new P₂/Q₂ gridlines
-      { layer: 'layer-prise',
-        x1: 0, y1: P_2.y, x2: P_2.x, y2: P_2.y,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-prise',
-        x1: P_2.x, y1: P_2.y, x2: P_2.x, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 }
-    ],
-
-    points: [
-      { layer: 'layer-eq',
-        x: P_STAR.x, y: P_STAR.y, tone: 'rose', radius: 6, hollow: true },
-      { layer: 'layer-prise',
-        x: P_2.x, y: P_2.y, tone: 'rose', radius: 6, hollow: true }
+      { layer: 'layer-incr', x1: s1x + 0.03, y1: yMid, x2: s2x - 0.02, y2: yMid,
+        tone: 'green', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'ss-green-end', buffer: 0 },
+      { layer: 'layer-decr', x1: s1x - 0.03, y1: yMid, x2: s3x + 0.02, y2: yMid,
+        tone: 'red', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'ss-red-end', buffer: 0 }
     ],
 
     texts: [
-      // P*/Q* axis tick labels (show-ps)
-      { layer: 'layer-eq', x: -0.03, y: P_STAR.y, text: 'P*', tone: 'slate', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-eq', x: P_STAR.x, y: -0.045, text: 'Q*', tone: 'slate', bold: true, fontSize: 12, anchor: 'middle' },
-      // "PS" big label inside triangle (show-ps)
-      { layer: 'layer-ps-label', x: 0.128, y: 0.294, text: 'PS', tone: 'rose', bold: true, fontSize: 18, anchor: 'middle' },
+      /* one bold curve label per state + faint S₁ on the dashed baseline */
+      { layer: 'layer-base', x: 0.74, y: 1.00, text: 'S₁', tone: 'blue', bold: true, fontSize: 15, anchor: 'start' },
 
-      // prise: faded P*, Q* refs
-      { layer: 'layer-prise', x: -0.03, y: P_STAR.y, text: 'P*', tone: 'gray', bold: true, anchor: 'end' },
-      { layer: 'layer-prise', x: P_STAR.x, y: -0.045, text: 'Q*', tone: 'gray', bold: true, anchor: 'middle' },
-      // prise: new P₂, Q₂ labels
-      { layer: 'layer-prise', x: -0.03, y: P_2.y, text: 'P₂', tone: 'rose', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-prise', x: P_2.x, y: -0.045, text: 'Q₂', tone: 'rose', bold: true, fontSize: 12, anchor: 'middle' },
-      // prise: PS label inside expanded triangle (slightly right of base position)
-      { layer: 'layer-prise', x: 0.175, y: 0.294, text: 'PS', tone: 'rose', bold: true, fontSize: 18, anchor: 'middle' }
-    ],
+      { layer: 'layer-incr', x: 0.96, y: 1.00, text: 'S₂', tone: 'green', bold: true, fontSize: 15, anchor: 'start' },
+      { layer: 'layer-incr', x: 0.66, y: 0.98, text: 'S₁', tone: 'slate', fontSize: 13, anchor: 'end', opacity: 0.6 },
+      { layer: 'layer-incr', x: s2x + 0.03, y: yMid - 0.07, text: 'Increase', tone: 'green', bold: true, fontSize: 12, anchor: 'start' },
 
-    legends: [
-      {
-        layer: 'layer-legend-base',
-        x: 600,
-        y: 72,
-        sections: [
-          { header: { text: 'THE SUPPLY CURVE', tone: 'slate' },
-            body: [
-              { text: 'Each point on S shows the',          tone: 'slate', bold: true },
-              { text: 'minimum a seller would accept.',     tone: 'slate', bold: true }
-            ]
-          },
-          { header: { text: 'MIN ACCEPTABLE PRICE', tone: 'gray' },
-            body: [
-              'Low-cost producers supply at low',
-              'prices. Higher-cost sellers need',
-              'a higher price to enter.'
-            ]
-          },
-          { header: { text: 'THE MARKET PRICE', tone: 'gray' },
-            body: [
-              'Everyone receives the same price',
-              'P* – but low-cost sellers earn a',
-              'surplus. Tap to reveal it.'
-            ]
-          }
-        ]
-      },
-      {
-        layer: 'layer-ps-label',
-        x: 600,
-        y: 72,
-        sections: [
-          { header: { text: 'PRODUCER SURPLUS', tone: 'rose' },
-            body: [
-              { text: 'The rose triangle: sellers got', tone: 'slate', bold: true },
-              { text: 'P* but would have accepted less.', tone: 'slate', bold: true }
-            ]
-          },
-          { header: { text: 'THREE VERTICES', tone: 'gray' },
-            body: [
-              '① P-axis: where S meets the price',
-              '   axis (min acceptable price)',
-              '② (Q*, P*): equilibrium point',
-              '③ (0, P*): market price on P-axis'
-            ]
-          },
-          { header: { text: 'FORMULA', tone: 'gray' },
-            body: [ 'PS = ½ × Q* × (P* − min supply P)' ]
-          },
-          { header: { text: 'KEY POINT', tone: 'gray' },
-            body: [
-              'PS is maximised at the free-market',
-              'equilibrium. Taxes reduce it.'
-            ]
-          }
-        ]
-      },
-      {
-        layer: 'layer-prise',
-        x: 600,
-        y: 72,
-        sections: [
-          { header: { text: 'PRICE RISES → PS EXPANDS', tone: 'rose' },
-            body: [
-              { text: 'When price rises from P* to P₂,', tone: 'slate', bold: true },
-              { text: 'producer surplus gets bigger.',   tone: 'slate', bold: true }
-            ]
-          },
-          { header: { text: 'TWO GAINS', tone: 'gray' },
-            body: [
-              '① Existing sellers earn (P₂−P*) on',
-              '   every unit already supplied',
-              '② New sellers enter who weren\'t',
-              '   profitable at P* – output extends',
-              '   to Q₂'
-            ]
-          },
-          { header: { text: 'REVERSE: PRICE FALLS', tone: 'gray' },
-            body: [
-              'PS shrinks – sellers earn less',
-              'and some exit the market.'
-            ]
-          },
-          { header: { text: 'EXAM POINT', tone: 'gray' },
-            body: [
-              'A tax lowers producer price → PS',
-              'falls – part lost, part to govt.'
-            ]
-          }
-        ]
-      }
+      { layer: 'layer-decr', x: 0.50, y: 1.00, text: 'S₃', tone: 'red', bold: true, fontSize: 15, anchor: 'start' },
+      { layer: 'layer-decr', x: 0.86, y: 1.00, text: 'S₁', tone: 'slate', fontSize: 13, anchor: 'start', opacity: 0.6 },
+      { layer: 'layer-decr', x: s3x - 0.03, y: yMid - 0.07, text: 'Decrease', tone: 'red', bold: true, fontSize: 12, anchor: 'end' }
     ]
   };
 })();

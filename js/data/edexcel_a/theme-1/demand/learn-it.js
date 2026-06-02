@@ -120,19 +120,26 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'demand_4',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Shifts in demand',
-      lede: 'When a non-price factor changes, the WHOLE demand curve shifts – more or less is demanded at every price. Step through an increase and a decrease.',
-      diagramAside: true,
-      diagramKey: 'demandShifts',
-      diagramLabel: 'Increase and decrease',
-      diagramEmoji: '📊',
-      steps: [
-        { key: 'base', label: 'Starting point', text: 'We begin on demand curve <strong>D₁</strong>. At each price, consumers buy the quantity shown by the curve.' },
-        { key: 'incr', label: 'Shift right (increase)', text: 'A favourable non-price change – higher income, stronger tastes, a dearer substitute – shifts demand right to <strong>D₂</strong>. At <em>every</em> price, more is demanded.' },
-        { key: 'decr', label: 'Shift left (decrease)', text: 'An adverse change – lower income, weaker tastes, a dearer complement – shifts demand left to <strong>D₃</strong>. At <em>every</em> price, less is demanded.' }
-      ],
+      tip: { icon: '✅', tone: 'green', text: 'When a non-price factor changes, the WHOLE demand curve shifts – more or less is demanded at every price. Step through an increase and a decrease.' },
+      interactiveDiagram: {
+        svgKey: 'demandShifts',
+        label: 'Increase and decrease',
+        emoji: '📊',
+        layers: ['layer-base', 'layer-incr', 'layer-decr'],
+        views: [
+          { label: 'Starting point', tone: 'blue', show: ['layer-base'],
+            head: 'Starting point',
+            body: 'We begin on demand curve <strong>D₁</strong>. At each price, consumers buy the quantity shown by the curve.' },
+          { label: 'Shift right (increase)', tone: 'green', show: ['layer-incr'],
+            head: 'Shift right — demand increases',
+            body: 'A favourable non-price change — higher income, stronger tastes, a dearer substitute — shifts demand right to <strong>D₂</strong>. At <em>every</em> price, more is demanded.' },
+          { label: 'Shift left (decrease)', tone: 'rose', show: ['layer-decr'],
+            head: 'Shift left — demand decreases',
+            body: 'An adverse change — lower income, weaker tastes, a dearer complement — shifts demand left to <strong>D₃</strong>. At <em>every</em> price, less is demanded.' }
+        ]
+      },
       examEdge: 'A shift is <strong>not</strong> the same as a movement along the curve: only the good’s own price moves us along D₁. Always state whether the question describes a movement or a shift before you explain the outcome.'
     },
 

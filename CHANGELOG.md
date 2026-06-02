@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.38.1 — 2026-06-02
+
+### Indirect Taxes & Subsidies Card 1 — un-clip the S+T curve labels
+
+- On the tax-types interactive (`taxTypesInteractive`), the "S + T (specific)"
+  and "S + T% (ad valorem)" curve labels were clipped at the right edge
+  (the viewBox left only ~25px past the plot, and the engine renders curve
+  labels left-anchored regardless of the spec's `anchor`). Widened the
+  viewBox 440 → 520 so both labels fit, and nudged the ad-valorem label's
+  `labelDy` down so it clears the top edge (its curve runs off the top of
+  the plot). `sw.js` cache bumped to `econos-v288`.
+
 ## 0.38.0 — 2026-06-02
 
 ### Consumer & Producer Surplus — pedagogy pass

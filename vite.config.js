@@ -293,7 +293,11 @@ function topicRoutes() {
      Standalone routes (/login, /privacy-policy, …) still take
      precedence so /<board>/<theme>/<topic>/<shell> can never
      shadow them. */
-  const BOARDS_FOR_URLS = ['edexcel_a', 'edexcel_b', 'aqa', 'ocr'];
+  /* Edexcel A only for now — Edexcel B / AQA / OCR are parked until
+     Edexcel A is complete + a CMS exists (see js/config/boards.js).
+     Re-add a board id here to regenerate its routes, placeholders and
+     sitemap entries. */
+  const BOARDS_FOR_URLS = ['edexcel_a'];
   function parseUrl(rawPath) {
     if (!rawPath || rawPath === '/' || rawPath.includes('.')) return null;
     const parts = rawPath.split('/').filter(Boolean);

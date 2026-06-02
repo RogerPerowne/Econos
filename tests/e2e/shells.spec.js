@@ -133,41 +133,27 @@ test.describe('Content Security Policy', () => {
 });
 
 test.describe('Exam-board picker', () => {
-  test('picker is in the account menu and selecting a board persists across reload', async ({ page }) => {
+  test('picker is hidden while Edexcel A is the only active board', async ({ page }) => {
     await login(page);
-    /* Switch board from inside the Learn It shell. Non-Edexcel-A
-       boards ship placeholder learn-it pages for every topic (cover
-       view only); switching board navigates to the equivalent
-       learn-it page on the new board. */
+    /* Edexcel B / AQA / OCR are parked until Edexcel A is complete +
+       a CMS exists (see js/config/boards.js). With a single active
+       board the picker is suppressed and the account menu shows only
+       Log out — no board radios, no "Exam board" group. */
     await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it/intro');
     await page.waitForLoadState('networkidle');
 
-    /* Open the menu and confirm the four boards render. */
     await page.locator('.topbar__avatar').click();
     const menu = page.locator('#econ-account-menu');
     await expect(menu).toBeVisible();
-    const boards = menu.locator('.account-menu__board');
-    await expect(boards).toHaveCount(4);
 
-    /* Edexcel A is active by default. */
-    const active = menu.locator('.account-menu__board.is-active');
-    await expect(active).toHaveAttribute('data-board', 'edexcel_a');
+    /* No board options render, and the "Exam board" group is gone. */
+    await expect(menu.locator('.account-menu__board')).toHaveCount(0);
+    await expect(menu.locator('.account-menu__group')).toHaveCount(0);
+    /* Log out is still present and reachable. */
+    await expect(menu.locator('[data-action="logout"]')).toBeVisible();
 
-    /* Select AQA — the click navigates to the AQA equivalent URL. */
-    await Promise.all([
-      page.waitForLoadState('load'),
-      menu.locator('.account-menu__board[data-board="aqa"]').click()
-    ]);
-
-    /* The URL now begins with /aqa/ and the stored board is AQA. */
-    await expect(page).toHaveURL(/^https?:\/\/[^/]+\/aqa\//);
-    const stored = await page.evaluate(() => localStorage.getItem('econos:board'));
-    expect(stored).toBe('aqa');
-    await expect(page.locator('.sidebar__user-board')).toHaveText('AQA');
-
-    /* Reopen the menu — AQA is now the active radio. */
-    await page.locator('.topbar__avatar').click();
-    await expect(menu.locator('.account-menu__board.is-active')).toHaveAttribute('data-board', 'aqa');
+    /* The current board is still Edexcel A everywhere it's read. */
+    await expect(page.locator('.sidebar__user-board')).toHaveText('Edexcel A');
   });
 });
 

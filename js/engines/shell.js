@@ -414,13 +414,19 @@
            +   '<span class="account-menu__board-name">' + b.name + '</span>'
            + '</button>';
     }).join('');
+    /* The exam-board picker only makes sense with more than one board.
+       While Edexcel A is the sole active board it's hidden — reappears
+       automatically when another board is reactivated in the registry. */
+    var boardGroup = order.length > 1
+      ? '<div class="account-menu__group" role="group" aria-label="Exam board">'
+        +   '<div class="account-menu__label">Exam board</div>'
+        +   boardItems
+        + '</div>'
+        + '<div class="account-menu__divider" role="separator"></div>'
+      : '';
     return ''
       + '<div id="' + ACCOUNT_MENU_ID + '" class="account-menu" role="menu" hidden>'
-      +   '<div class="account-menu__group" role="group" aria-label="Exam board">'
-      +     '<div class="account-menu__label">Exam board</div>'
-      +     boardItems
-      +   '</div>'
-      +   '<div class="account-menu__divider" role="separator"></div>'
+      +   boardGroup
       +   '<button type="button" class="account-menu__item" data-action="logout" role="menuitem">Log out</button>'
       + '</div>';
   }

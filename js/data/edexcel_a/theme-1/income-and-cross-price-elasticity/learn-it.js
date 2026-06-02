@@ -67,9 +67,9 @@ window.ECONOS_TOPIC = {
   <div style="font-size:22px;font-weight:800;color:#2563EB;font-family:Fraunces,Georgia,serif;">YED = %ΔQ<sup>d</sup> ÷ %ΔY</div>
   <div style="font-size:13px;color:#475569;margin-top:8px;line-height:1.6;">A <strong>positive</strong> YED means a normal good. A <strong>negative</strong> YED means an inferior good. The <strong>sign</strong> classifies the good — get it right first.</div>
 </div>`,
-      visualKey: 'yedClassifySpectrum',
-      visualLabel: 'Classify the result',
-      visualEmoji: '📊',
+      bodyVisualKey: 'yedClassifySpectrum',
+      bodyVisualLabel: 'Classify the result',
+      bodyVisualEmoji: '📊',
       causes2Label: 'Read the sign',
       causes2Emoji: '👁️',
       causes2Style: 'plain-white',

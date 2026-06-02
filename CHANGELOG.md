@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.5 — 2026-06-02
+
+### YED Card 2 — spectrum repositioned after the formula
+
+- Moved the `yedClassifySpectrum` down the page so the card now reads
+  define → classify → exemplify → practise: green lock → formula box →
+  **classification spectrum** → "Read the sign" examples → predict-reveal.
+  Previously the generic renderer placed `visualKey` at the very top, so
+  the spectrum appeared before the definition.
+- Added a `bodyVisualKey` slot to `renderCardGeneric` that renders a hero
+  visual immediately after the `body` block (with optional `bodyVisualLabel`
+  heading) — for cards where a definition should lead and a diagram follows.
+  `sw.js` cache bumped to `econos-v277`.
+
 ## 0.36.4 — 2026-06-02
 
 ### YED classification — spectrum diagram replaces the box grid

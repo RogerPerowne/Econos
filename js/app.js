@@ -2081,6 +2081,14 @@
       }
     }
 
+    // Optional hero visual rendered right after the body block (rather than
+    // at the top via visualKey) — for cards where a definition/formula
+    // should lead and a diagram follows it (e.g. YED "classify" spectrum).
+    if (c.bodyVisualKey && I[c.bodyVisualKey]) {
+      if (c.bodyVisualLabel) content += genSecLabel(c.bodyVisualEmoji || '📊', c.bodyVisualLabel);
+      content += `<div style="margin:0 0 26px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.bodyVisualKey]}</div>`;
+    }
+
     // Chip wall – a tinted panel of pill chips. A livelier way to present a
     // set of signal words / examples than a comma list (e.g. the normative
     // "flag words"). Pattern: chipWall: { label?, emoji?, tone?, intro?, chips:[string] }

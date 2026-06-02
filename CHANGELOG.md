@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.27.0 — 2026-06-02
+
+### Demand (1.2.2) — restructure + chart rebuild
+
+Fixed two problems at once: several charts were rendering badly, and
+three cards drifted off spec 1.2.2. Rebuilt to 8 on-spec cards (big
+picture → why the curve slopes down → movements → shifts → what shifts
+demand → types of good → derived demand → exam toolkit), dropping
+Consumer Surplus (belongs in 1.2.7) and the elasticity-flavoured "real
+markets" card; Derived Demand is retained as an applied extension.
+
+Charts: the four `demand-card*.js` specs were rewritten in place (same
+global names, so no new shell/precache wiring). The cramped three-state
+interactive and the broken consumer-surplus diagram are gone; in their
+place are clean static engine charts on one canonical demand line —
+big-picture curve, slope curve (3 points), movements (extension/
+contraction arrows) and shifts (D₁/D₂/D₃). Icon keys renamed to
+`demandBigPicture` / `demandSlopeCurve` / `demandMovements` /
+`demandShifts`.
+
+Two new HTML heroes: `demandDeterminantsHub` (Demand at the centre with
+the six conditions of demand) and `demandGoodTypes` (normal/inferior +
+substitutes/complements with examples). Chart SVG regression snapshots
+updated for the four rewritten specs. SW cache → v259.
+
 ## 0.26.0 — 2026-06-02
 
 ### Rational Decision Making (1.2.1) — visual upgrade pass

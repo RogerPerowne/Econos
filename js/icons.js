@@ -1619,7 +1619,7 @@ window.ECONOS_ICONS = {
   ppfTradeInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD6_SPEC),
   ppfInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD1_SPEC),
 
-  demandInteractive: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD2_SPEC),
+  demandMovements: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD2_SPEC),
 
   supplyInteractive: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD2_SPEC),
 
@@ -4482,7 +4482,7 @@ window.ECONOS_ICONS = {
       <circle cx="200" cy="100" r="6"  fill="#3B82F6"/>
     </svg>
   `,
-  demandCsSvg: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD4_SPEC),
+  demandShifts: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD4_SPEC),
   supplyPsSvg: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD4_SPEC),
   cpsSvg: `
     <svg class="cps-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -11281,8 +11281,8 @@ window.ECONOS_ICONS = {
 
   elasticVsInelasticSupplyDiagram: window.ECONOS_PPF.render(window.ECONOS_PES_ELASTIC_VS_INELASTIC_SPEC),
 
-  demandLawCurve: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD1_SPEC),
-  demandScheduleCurve: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD7_SPEC),
+  demandBigPicture: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD1_SPEC),
+  demandSlopeCurve: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD7_SPEC),
 
   supplyCurveBasic: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD1_SPEC),
 
@@ -14019,6 +14019,100 @@ window.ECONOS_ICONS = {
       <div>
         <div style="font-size:21px;font-weight:800;color:#2563EB;letter-spacing:0.01em;margin-bottom:6px;">Profit = Total revenue − Total costs</div>
         <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">Firms compare the <strong>extra revenue</strong> and <strong>extra cost</strong> of each decision, and choose the option that raises profit the most.</div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     demandDeterminantsHub — Demand Card 5. "Demand" at the centre with
+     the six conditions of demand around it (3 left, 3 right). HTML +
+     SVG connector layer (growthScorecard pattern). Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  demandDeterminantsHub: `
+    <div class="dem-hub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .dem-hub .dh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:188px; row-gap:14px; position:relative; z-index:1; }
+        .dem-hub .dh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .dem-hub .dh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .dem-hub .dh-tile { border-radius:12px; padding:11px 13px; display:flex; gap:10px; align-items:flex-start; }
+        .dem-hub .dh-ic { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .dem-hub .dh-t { font-size:13px; font-weight:800; line-height:1.2; }
+        .dem-hub .dh-s { font-size:11.5px; color:#475569; line-height:1.35; margin-top:2px; }
+        @media (max-width:560px){ .dem-hub .dh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .dem-hub .dh-center{ position:static; transform:none; margin:8px auto; } .dem-hub .dh-center-wrap{ order:99; display:flex; justify-content:center; } .dem-hub .dh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:680px;margin:0 auto;">
+        <svg class="dh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="30" y1="17" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="70" y1="17" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="28" y1="50" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="72" y1="50" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="30" y1="83" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="70" y1="83" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+        </svg>
+        <div class="dh-grid">
+          <div class="dh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="dh-ic">💰</div><div><div class="dh-t" style="color:#1E3A8A;">Income</div><div class="dh-s">Higher income raises demand for normal goods.</div></div></div>
+          <div class="dh-tile" style="background:#ECFDF5;border:1.5px solid #6EE7B7;"><div class="dh-ic">👕</div><div><div class="dh-t" style="color:#065F46;">Tastes &amp; fashion</div><div class="dh-s">Popularity can raise or lower demand.</div></div></div>
+          <div class="dh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;"><div class="dh-ic">📢</div><div><div class="dh-t" style="color:#5B21B6;">Advertising &amp; information</div><div class="dh-s">Consumers may value the good more.</div></div></div>
+          <div class="dh-tile" style="background:#FFFBEB;border:1.5px solid #FCD34D;"><div class="dh-ic">👥</div><div><div class="dh-t" style="color:#B45309;">Population</div><div class="dh-s">More buyers can increase market demand.</div></div></div>
+          <div class="dh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;"><div class="dh-ic">💭</div><div><div class="dh-t" style="color:#C2410C;">Expectations</div><div class="dh-s">Beliefs about future prices or incomes matter.</div></div></div>
+          <div class="dh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="dh-ic">🌦️</div><div><div class="dh-t" style="color:#1E3A8A;">Seasonal &amp; weather</div><div class="dh-s">Some products are time-sensitive.</div></div></div>
+        </div>
+        <div class="dh-center-wrap"><div class="dh-center" style="background:#fff;border:2.4px solid #2563EB;border-radius:50%;width:150px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 14px rgba(37,99,235,0.18);">
+          <div style="font-size:26px;line-height:1;">👪</div>
+          <div style="font-size:17px;font-weight:800;color:#1E3A8A;font-family:Fraunces,Georgia,serif;margin:3px 0 2px;">Demand</div>
+          <div style="font-size:10.5px;color:#475569;text-align:center;line-height:1.3;">The quantity consumers want at every price.</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     demandGoodTypes — Demand Card 6. Income effects (normal / inferior)
+     and related goods (substitutes / complements), each with a worked
+     example and a demand-direction arrow. Two columns → stack on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  demandGoodTypes: `
+    <div class="good-types" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .good-types .gt-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        .good-types .gt-col { border-radius:14px; padding:12px; }
+        .good-types .gt-h { font-size:13.5px; font-weight:800; text-align:center; margin-bottom:9px; }
+        .good-types .gt-card { background:#fff; border-radius:12px; padding:11px 12px; margin-bottom:9px; }
+        .good-types .gt-card:last-child { margin-bottom:0; }
+        .good-types .gt-top { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+        .good-types .gt-badge { width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .good-types .gt-name { font-size:13px; font-weight:800; }
+        .good-types .gt-body { font-size:11.5px; color:#475569; line-height:1.4; }
+        .good-types .gt-eg { display:flex; align-items:center; gap:8px; margin-top:7px; font-size:12px; font-weight:700; }
+        @media (max-width:560px){ .good-types .gt-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="gt-row">
+        <div class="gt-col" style="background:#F8FAFC;border:1px solid #E2E8F0;">
+          <div class="gt-h" style="color:#1E3A8A;">Income effects</div>
+          <div class="gt-card" style="border:1.5px solid #93C5FD;">
+            <div class="gt-top"><span class="gt-badge" style="background:#2563EB;">A</span><span class="gt-name" style="color:#1E3A8A;">Normal goods</span></div>
+            <div class="gt-body">Income rises → demand rises.</div>
+            <div class="gt-eg" style="color:#1E3A8A;"><span>🍽️ Restaurant meals</span><span style="color:#059669;">▲</span></div>
+          </div>
+          <div class="gt-card" style="border:1.5px solid #FCD34D;">
+            <div class="gt-top"><span class="gt-badge" style="background:#D97706;">B</span><span class="gt-name" style="color:#B45309;">Inferior goods</span></div>
+            <div class="gt-body">Income rises → demand falls.</div>
+            <div class="gt-eg" style="color:#B45309;"><span>🍜 Instant noodles</span><span style="color:#DC2626;">▼</span></div>
+          </div>
+        </div>
+        <div class="gt-col" style="background:#F8FAFC;border:1px solid #E2E8F0;">
+          <div class="gt-h" style="color:#065F46;">Related goods</div>
+          <div class="gt-card" style="border:1.5px solid #6EE7B7;">
+            <div class="gt-top"><span class="gt-badge" style="background:#059669;">C</span><span class="gt-name" style="color:#065F46;">Substitutes</span></div>
+            <div class="gt-body">Price of tea rises → demand for coffee rises.</div>
+            <div class="gt-eg" style="color:#065F46;"><span>☕ Coffee</span><span style="color:#059669;">▲</span></div>
+          </div>
+          <div class="gt-card" style="border:1.5px solid #C4B5FD;">
+            <div class="gt-top"><span class="gt-badge" style="background:#7C3AED;">D</span><span class="gt-name" style="color:#5B21B6;">Complements</span></div>
+            <div class="gt-body">Price of printers rises → demand for ink falls.</div>
+            <div class="gt-eg" style="color:#5B21B6;"><span>🖨️ Ink</span><span style="color:#DC2626;">▼</span></div>
+          </div>
+        </div>
       </div>
     </div>
   `,

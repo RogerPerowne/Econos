@@ -1,246 +1,73 @@
 /* ============================================================
-   Demand card 2 — declarative spec for demandInteractive.
-   Movement Along vs Shift of the Demand Curve. Three step states
-   match the legacy demand-svg CSS in styles.css (.show-X):
+   Demand card 2 — repurposed as a STATIC "movements along the demand
+   curve" chart (icons key: demandMovements). The old version was a
+   cramped three-state interactive; the topic now splits movements
+   (this spec) and shifts (card 4) into two clean static charts.
 
-     base       → layer-axes + layer-demand-base + layer-e1 + layer-legend-base
-     extension  → same minus layer-e1 minus layer-legend-base,
-                   plus layer-extension + layer-legend-extension
-     shift      → axes + layer-shift + layer-legend-shift (D₁ base hidden)
-
-   Chart geometry (viewBox 900×440):
-     chart area  x=60..560, y=43..400  → width 500, height 357
-     divider     x=595
-     title strip dot + text at pixel y=32 (chart-y 1.031)
-
-   Key positions in chart-space (0..1, y up):
-     D₁ line     (0.080, 0.868) → (0.860, 0.084)
-     E₁ at P₁,Q₁ (0.470, 0.476)
-     E₂ contract (0.304, 0.644)
-     E₃ extend   (0.650, 0.294)
-     D₀ left     (-0.060, 0.868) → (0.720, 0.084)
-     D₂ right    (0.220, 0.868) → (1.000, 0.084)
-     Q₀ shift-L  (0.330, 0.476)
-     Q₂ shift-R  (0.610, 0.476)
+   Same canonical demand line (slope −1). Reference point B; a price
+   rise contracts quantity up to A, a price fall extends it down to C.
+   The two arrows are offset 0.028 perpendicular (up-right) so they
+   run parallel to the line instead of over it.
+     A (£10, 20) → (0.333, 0.833)
+     B (£8,  30) → (0.500, 0.667)
+     C (£6,  40) → (0.667, 0.500)
    ============================================================ */
 (function () {
   'use strict';
 
+  var A = { x: 0.333, y: 0.833 };
+  var B = { x: 0.500, y: 0.667 };
+  var C = { x: 0.667, y: 0.500 };
+  var o = 0.028; // perpendicular offset (up-right of a slope −1 line)
+
   window.ECONOS_DEMAND_CARD2_SPEC = {
-    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
-    legendPosition: 'bottom',
-    height: 440,
-    chartArea: { x: 60, y: 43, width: 500, height: 357 },
-    className: 'demand-svg',
-    background: '#FFFFFF',
+    width: 700,
+    height: 360,
+    chartArea: { x: 92, y: 38, width: 510, height: 256 },
+    className: 'demand-movements-svg',
     defs:
-      '<marker id="dm-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>' +
-      '<marker id="dm-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#D97706"/></marker>' +
-      '<marker id="dm-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>' +
-      '<marker id="dm-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>',
+      '<marker id="dm-red-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>' +
+      '<marker id="dm-green-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>',
     axes: {
-      x: { label: 'Q' },
-      y: { label: 'P' }
+      x: { label: 'Quantity demanded' },
+      y: { label: 'Price (£)' }
     },
 
     curves: [
-      // Base D₁ — always visible except in shift state
-      { layer: 'layer-demand-base',
-        d: 'M 0.080,0.868 L 0.860,0.084',
-        tone: 'blue', label: 'D₁', strokeWidth: 3.5 },
-      // Shift-state D₁ — same line dashed/faded (visible only when curve toggled on)
-      { layer: 'layer-shift',
-        d: 'M 0.080,0.868 L 0.860,0.084',
-        tone: 'blue', strokeWidth: 2, dashed: '9 5', opacity: 0.55 },
-      // Shift D₀ left
-      { layer: 'layer-shift',
-        d: 'M -0.060,0.868 L 0.720,0.084',
-        tone: 'blue', label: 'D₀', strokeWidth: 2.5, labelDx: 8 },
-      // Shift D₂ right
-      { layer: 'layer-shift',
-        d: 'M 0.220,0.868 L 1.000,0.084',
-        tone: 'blue', label: 'D₂', strokeWidth: 2.5, labelDx: 8 }
+      { d: 'M 0.12,1.046 L 1.00,0.166',
+        tone: 'blue', label: 'D', strokeWidth: 3, labelDx: 12, labelDy: 6 }
     ],
 
     arrows: [
-      /* ---- base layer: E₁ gridlines ---- */
-      { layer: 'layer-e1',
-        x1: 0, y1: 0.476, x2: 0.470, y2: 0.476,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-e1',
-        x1: 0.470, y1: 0.476, x2: 0.470, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-
-      /* ---- extension layer: E₂ contraction + E₃ extension gridlines + amber arrow ---- */
-      // E₂ horiz + vert
-      { layer: 'layer-extension',
-        x1: 0, y1: 0.644, x2: 0.304, y2: 0.644,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-extension',
-        x1: 0.304, y1: 0.644, x2: 0.304, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      // E₃ horiz + vert
-      { layer: 'layer-extension',
-        x1: 0, y1: 0.294, x2: 0.650, y2: 0.294,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-extension',
-        x1: 0.650, y1: 0.294, x2: 0.650, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      // Amber double-headed arrow connecting E₂ and E₃ along D₁.
-      // Offset 0.03 chart-units perpendicular OUTWARD (upper-right of
-      // the D₁ line) so the arrow runs PARALLEL to the curve instead of
-      // overlapping it — keeps both the arrow and the curve readable.
-      { layer: 'layer-extension',
-        x1: 0.341, y1: 0.668, x2: 0.657, y2: 0.348,
-        tone: 'amber', strokeWidth: 2.5,
-        markerStart: 'dm-amber-start', markerEnd: 'dm-amber-end', buffer: 0 },
-
-      /* ---- shift layer: Q₀, Q₂ vert gridlines + green horiz arrow ---- */
-      // Q₀/Q₂ droplines start BELOW each dot (not at the dot) so the
-      // dropline + horizontal shift arrow don't read as one bent
-      // right-angle arrow.
-      { layer: 'layer-shift',
-        x1: 0.330, y1: 0.430, x2: 0.330, y2: 0,
-        tone: 'red', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-shift',
-        x1: 0.610, y1: 0.430, x2: 0.610, y2: 0,
-        tone: 'green', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      // Green arrow Q₁ → Q₂ (rightward = increase). Single colour: green stroke + green head.
-      { layer: 'layer-shift',
-        x1: 0.480, y1: 0.476, x2: 0.602, y2: 0.476,
-        tone: 'green', strokeWidth: 3.5,
-        markerEnd: 'dm-green-end', buffer: 0 },
-      // Red arrow Q₁ → Q₀ (leftward = decrease). Single colour: red stroke + red head.
-      { layer: 'layer-shift',
-        x1: 0.460, y1: 0.476, x2: 0.338, y2: 0.476,
-        tone: 'red', strokeWidth: 3.5,
-        markerEnd: 'dm-red-end', buffer: 0 }
+      // leaders for the three points
+      { x1: 0, y1: A.y, x2: A.x, y2: A.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { x1: A.x, y1: A.y, x2: A.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { x1: 0, y1: C.y, x2: C.x, y2: C.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      { x1: C.x, y1: C.y, x2: C.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
+      // contraction: B → A (price rises, quantity falls) — red, offset up-right
+      { x1: B.x + o, y1: B.y + o, x2: A.x + o, y2: A.y + o,
+        tone: 'red', strokeWidth: 2.6, markerEnd: 'dm-red-end', buffer: 0.02 },
+      // extension: B → C (price falls, quantity rises) — green, offset up-right
+      { x1: B.x + o, y1: B.y + o, x2: C.x + o, y2: C.y + o,
+        tone: 'green', strokeWidth: 2.6, markerEnd: 'dm-green-end', buffer: 0.02 }
     ],
 
     points: [
-      /* ---- base ---- */
-      { layer: 'layer-e1', x: 0.470, y: 0.476, tone: 'blue', radius: 6, hollow: true },
-
-      /* ---- extension ---- */
-      { layer: 'layer-extension', x: 0.304, y: 0.644, tone: 'red',   radius: 6, hollow: true },
-      { layer: 'layer-extension', x: 0.650, y: 0.294, tone: 'green', radius: 6, hollow: true },
-
-      /* ---- shift ---- */
-      { layer: 'layer-shift', x: 0.330, y: 0.476, tone: 'red',   radius: 6, hollow: true },
-      // E₁ reference dot — smaller, filled grey
-      { layer: 'layer-shift', x: 0.470, y: 0.476, tone: 'slate', radius: 4 },
-      { layer: 'layer-shift', x: 0.610, y: 0.476, tone: 'green', radius: 6, hollow: true }
-    ],
-
-    titleStrips: [
-      { layer: 'layer-legend-base', tone: 'blue',
-        text: 'Demand slopes downward · inverse price-quantity relationship' },
-      { layer: 'layer-extension', tone: 'amber',
-        text: 'Price changes → slide ALONG the demand curve' },
-      { layer: 'layer-shift', tone: 'green',
-        text: 'Non-price factors → SHIFT the whole demand curve' }
+      { x: A.x, y: A.y, tone: 'blue', radius: 6, label: 'A', labelDx: -15, labelDy: -8, anchor: 'end', bold: true },
+      { x: B.x, y: B.y, tone: 'blue', radius: 6, label: 'B', labelDx: -15, labelDy: -8, anchor: 'end', bold: true },
+      { x: C.x, y: C.y, tone: 'blue', radius: 6, label: 'C', labelDx: -15, labelDy: -8, anchor: 'end', bold: true }
     ],
 
     texts: [
-      /* ---- base axis tick labels ---- */
-      { layer: 'layer-e1', x: -0.028, y: 0.476, text: 'P₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-e1', x: 0.470, y: -0.050, text: 'Q₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'middle' },
-
-      /* ---- extension labels ---- */
-      { layer: 'layer-extension', x: -0.028, y: 0.644, text: 'P₂', tone: 'red',   bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-extension', x: 0.304,  y: -0.050, text: 'Q₂', tone: 'red',   bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-extension', x: -0.028, y: 0.294, text: 'P₃', tone: 'green', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-extension', x: 0.650,  y: -0.050, text: 'Q₃', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-extension', x: 0.320,  y: 0.678,  text: 'contraction', tone: 'red',   bold: true, anchor: 'start' },
-      { layer: 'layer-extension', x: 0.560,  y: 0.238,  text: 'extension',   tone: 'green', bold: true, anchor: 'start' },
-
-      /* ---- shift labels ---- */
-      // Faded D₁ reference label at end of dashed curve
-      { layer: 'layer-shift', x: 0.880, y: 0.084, text: 'D₁', tone: 'blue', bold: true, fontSize: 13, anchor: 'start', opacity: 0.55 },
-      { layer: 'layer-shift', x: 0.330, y: -0.050, text: 'Q₀', tone: 'red',   bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-shift', x: 0.470, y: -0.050, text: 'Q₁', tone: 'slate', bold: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-shift', x: 0.610, y: -0.050, text: 'Q₂', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' }
-    ],
-
-    legends: [
-      /* ---- BASE LEGEND ---- */
-      {
-        layer: 'layer-legend-base',
-        x: 600,
-        y: 72,
-        sections: [
-          { header: { text: 'THE DEMAND CURVE', tone: 'blue' },
-            body: [
-              { text: 'Downward sloping: higher',  tone: 'slate', bold: true },
-              { text: 'prices → less demanded.',  tone: 'slate', bold: true }
-            ]
-          },
-          { header: { text: 'TWO REASONS', tone: 'gray' },
-            body: [
-              { text: '① Substitution effect:', tone: 'slate', bold: true },
-              'good becomes expensive relative',
-              'to substitutes',
-              { text: '② Income effect:', tone: 'slate', bold: true },
-              'real purchasing power falls as',
-              'price rises'
-            ]
-          },
-          { header: { text: 'AT EQUILIBRIUM', tone: 'gray' },
-            body: [ 'Quantity demanded Q₁ at price P₁.' ]
-          }
-        ]
-      },
-
-      /* ---- EXTENSION LEGEND ---- */
-      {
-        layer: 'layer-legend-extension',
-        x: 600,
-        y: 72,
-        sections: [
-          { header: { text: 'MOVEMENT ALONG CURVE', tone: 'amber' },
-            body: [
-              'Only a price change causes this –',
-              'the curve itself stays fixed.'
-            ]
-          },
-          { header: { text: 'CONTRACTION (E₂)', tone: 'red' },
-            body: [ 'P rises → Q falls', 'Move up the curve' ]
-          },
-          { header: { text: 'EXTENSION (E₃)', tone: 'green' },
-            body: [ 'P falls → Q rises', 'Move down the curve' ]
-          },
-          { header: { text: 'EXAM LANGUAGE', tone: 'amber' },
-            body: [
-              'Say "quantity demanded rises/falls,"',
-              'not "demand rises/falls."'
-            ]
-          }
-        ]
-      },
-
-      /* ---- SHIFT LEGEND ---- */
-      {
-        layer: 'layer-legend-shift',
-        x: 600,
-        y: 72,
-        sections: [
-          { header: { text: 'SHIFT OF DEMAND', tone: 'green' },
-            body: [
-              'A non-price determinant changes –',
-              'the whole curve moves.'
-            ]
-          },
-          { header: { text: 'D₂ – RIGHT (INCREASE)', tone: 'blue' },
-            body: [ '↑ income, ↑ tastes,', '↑ substitute price' ]
-          },
-          { header: { text: 'D₀ – LEFT (DECREASE)', tone: 'blue' },
-            body: [ '↓ income, ↓ tastes,', '↑ complement price' ]
-          },
-          { header: { text: 'REMEMBER', tone: 'green' },
-            body: [ 'Q changes at EVERY price –', 'not just P₁.' ]
-          }
-        ]
-      }
+      { x: -0.02, y: A.y, text: '10', tone: 'slate', fontSize: 13, anchor: 'end' },
+      { x: -0.02, y: B.y, text: '8',  tone: 'slate', fontSize: 13, anchor: 'end' },
+      { x: -0.02, y: C.y, text: '6',  tone: 'slate', fontSize: 13, anchor: 'end' },
+      { x: A.x, y: -0.06, text: '20', tone: 'slate', fontSize: 13, anchor: 'middle' },
+      { x: B.x, y: -0.06, text: '30', tone: 'slate', fontSize: 13, anchor: 'middle' },
+      { x: C.x, y: -0.06, text: '40', tone: 'slate', fontSize: 13, anchor: 'middle' },
+      // arrow labels, sat in clear space up-right of each arrow
+      { x: 0.30, y: 0.94, text: 'Contraction (price rises)', tone: 'red',   bold: true, fontSize: 12.5, anchor: 'start' },
+      { x: 0.70, y: 0.56, text: 'Extension (price falls)',   tone: 'green', bold: true, fontSize: 12.5, anchor: 'start' }
     ]
   };
 })();

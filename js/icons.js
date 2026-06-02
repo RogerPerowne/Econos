@@ -14301,6 +14301,180 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ───────────────────────────────────────────────────────────────
+     yedXedTwoLenses — Income & cross elasticity Card 1. Two lenses on
+     demand side by side: income changes (YED) vs related-good price
+     changes (XED), each with its formula. Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  yedXedTwoLenses: `
+    <div class="yx-lens" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .yx-lens .yl-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+        .yx-lens .yl-col { border-radius:14px; padding:14px 14px 12px; }
+        .yx-lens .yl-h { font-size:13px; font-weight:800; text-align:center; letter-spacing:0.02em; }
+        .yx-lens .yl-sub { font-size:11px; text-align:center; color:#64748B; margin-bottom:12px; }
+        .yx-lens .yl-item { background:#fff; border-radius:10px; padding:9px 11px; display:flex; align-items:center; gap:10px; margin-bottom:8px; box-shadow:0 1px 3px rgba(11,20,38,0.06); }
+        .yx-lens .yl-ic { width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+        .yx-lens .yl-t { font-size:12.5px; font-weight:800; line-height:1.2; }
+        .yx-lens .yl-d { font-size:11px; color:#475569; line-height:1.3; margin-top:1px; }
+        .yx-lens .yl-arrow { margin-left:auto; font-size:15px; font-weight:800; flex-shrink:0; }
+        .yx-lens .yl-formula { margin-top:10px; background:#fff; border:1.5px dashed #CBD5E1; border-radius:9px; padding:8px; text-align:center; font-size:12px; font-weight:800; }
+        @media (max-width:560px){ .yx-lens .yl-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="yl-row">
+        <div class="yl-col" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+          <div class="yl-h" style="color:#065F46;">INCOME CHANGES · YED</div>
+          <div class="yl-sub">How demand responds when income rises</div>
+          <div class="yl-item"><div class="yl-ic" style="background:#DCFCE7;">💎</div><div><div class="yl-t" style="color:#065F46;">Luxuries</div><div class="yl-d">Demand rises a lot</div></div><div class="yl-arrow" style="color:#059669;">↑↑</div></div>
+          <div class="yl-item"><div class="yl-ic" style="background:#DBEAFE;">🛒</div><div><div class="yl-t" style="color:#1E3A8A;">Necessities</div><div class="yl-d">Demand rises slightly</div></div><div class="yl-arrow" style="color:#2563EB;">↑</div></div>
+          <div class="yl-item"><div class="yl-ic" style="background:#EDE9FE;">🚲</div><div><div class="yl-t" style="color:#5B21B6;">Inferior goods</div><div class="yl-d">Demand falls</div></div><div class="yl-arrow" style="color:#7C3AED;">↓</div></div>
+          <div class="yl-formula" style="color:#065F46;">YED = %ΔQ<sup>d</sup> ÷ %ΔY</div>
+        </div>
+        <div class="yl-col" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <div class="yl-h" style="color:#5B21B6;">RELATED-GOOD PRICE · XED</div>
+          <div class="yl-sub">How a change in good B's price hits good A</div>
+          <div class="yl-item"><div class="yl-ic" style="background:#DCFCE7;">📲</div><div><div class="yl-t" style="color:#065F46;">Substitutes</div><div class="yl-d">P of B ↑ → demand for A ↑</div></div><div class="yl-arrow" style="color:#059669;">+</div></div>
+          <div class="yl-item"><div class="yl-ic" style="background:#FFEDD5;">🔌</div><div><div class="yl-t" style="color:#C2410C;">Complements</div><div class="yl-d">P of B ↑ → demand for A ↓</div></div><div class="yl-arrow" style="color:#EA580C;">−</div></div>
+          <div class="yl-item"><div class="yl-ic" style="background:#F1F5F9;">🎧</div><div><div class="yl-t" style="color:#475569;">Unrelated</div><div class="yl-d">P of B ↑ → A barely moves</div></div><div class="yl-arrow" style="color:#94A3B8;">≈0</div></div>
+          <div class="yl-formula" style="color:#5B21B6;">XED = %ΔQ<sup>d</sup>(A) ÷ %ΔP(B)</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:#94A3B8;text-align:center;margin-top:10px;">PED explains movement <em>along</em> demand. YED and XED explain <em>shifts</em> in demand.</div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     yedIncomeLadder — Income & cross elasticity Card 3. Adapts the
+     "income ladder" escalator into three clean good-type columns: as
+     income rises, inferior demand falls, necessities rise slightly,
+     luxuries rise a lot. Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  yedIncomeLadder: `
+    <div class="yx-ladder" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .yx-ladder .yk-banner { text-align:center; font-size:12px; font-weight:800; color:#059669; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:12px; }
+        .yx-ladder .yk-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:stretch; }
+        .yx-ladder .yk-col { border-radius:14px; padding:14px 12px; display:flex; flex-direction:column; }
+        .yx-ladder .yk-t { font-size:13.5px; font-weight:800; }
+        .yx-ladder .yk-resp { font-size:11.5px; font-weight:700; margin:2px 0 10px; }
+        .yx-ladder .yk-big { font-size:30px; line-height:1; margin:0 0 10px; }
+        .yx-ladder .yk-eg { display:flex; align-items:center; gap:8px; background:#fff; border-radius:9px; padding:7px 9px; margin-bottom:6px; font-size:11.5px; font-weight:600; box-shadow:0 1px 2px rgba(11,20,38,0.05); }
+        @media (max-width:560px){ .yx-ladder .yk-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="yk-banner">↑ Rising income — same rise, very different response</div>
+      <div class="yk-row">
+        <div class="yk-col" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <div class="yk-big" style="color:#7C3AED;">↓</div>
+          <div class="yk-t" style="color:#5B21B6;">Inferior goods</div>
+          <div class="yk-resp" style="color:#7C3AED;">Demand falls · YED &lt; 0</div>
+          <div class="yk-eg">🍜 Instant noodles</div>
+          <div class="yk-eg">🚌 Bus travel</div>
+        </div>
+        <div class="yk-col" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="yk-big" style="color:#2563EB;">↗</div>
+          <div class="yk-t" style="color:#1E3A8A;">Necessities</div>
+          <div class="yk-resp" style="color:#2563EB;">Rises slightly · 0 &lt; YED &lt; 1</div>
+          <div class="yk-eg">🛒 Groceries</div>
+          <div class="yk-eg">💡 Electricity</div>
+        </div>
+        <div class="yk-col" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+          <div class="yk-big" style="color:#059669;">↑</div>
+          <div class="yk-t" style="color:#065F46;">Luxuries</div>
+          <div class="yk-resp" style="color:#059669;">Rises a lot · YED &gt; 1</div>
+          <div class="yk-eg">🏝️ Long-haul holidays</div>
+          <div class="yk-eg">👜 Premium fashion</div>
+          <div class="yk-eg">🍽️ Fine dining</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     xedRelationshipHub — Income & cross elasticity Card 5. Good A at
+     the centre; substitutes (positive XED) left, complements
+     (negative XED) right, unrelated (≈0) below. Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  xedRelationshipHub: `
+    <div class="xed-hub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .xed-hub .xh-top { display:grid; grid-template-columns:1fr 1fr; gap:150px; position:relative; }
+        .xed-hub .xh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .xed-hub .xh-card { border-radius:13px; padding:12px 13px; }
+        .xed-hub .xh-h { font-size:13px; font-weight:800; display:flex; align-items:center; gap:7px; }
+        .xed-hub .xh-rule { font-size:11px; color:#475569; margin:3px 0 9px; }
+        .xed-hub .xh-pair { background:#fff; border-radius:9px; padding:7px 10px; display:flex; align-items:center; gap:7px; font-size:12px; font-weight:700; margin-bottom:6px; box-shadow:0 1px 2px rgba(11,20,38,0.05); }
+        .xed-hub .xh-sign { width:26px; height:26px; border-radius:50%; color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900; flex-shrink:0; }
+        .xed-hub .xh-foot { font-size:11px; font-style:italic; color:#64748B; margin-top:6px; }
+        .xed-hub .xh-bottom { display:flex; justify-content:center; margin-top:14px; }
+        @media (max-width:620px){ .xed-hub .xh-top{ grid-template-columns:1fr; gap:12px; } .xed-hub .xh-center{ position:static; transform:none; margin:4px auto; } .xed-hub .xh-center-wrap{ display:flex; justify-content:center; order:99; } }
+      </style>
+      <div style="position:relative;max-width:680px;margin:0 auto;">
+        <div class="xh-top">
+          <div class="xh-card" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+            <div class="xh-h" style="color:#065F46;"><span class="xh-sign" style="background:#059669;">+</span>Substitutes · XED &gt; 0</div>
+            <div class="xh-rule">P of B ↑ → demand for A ↑</div>
+            <div class="xh-pair">🍵 Tea <span style="color:#94A3B8;">↔</span> ☕ Coffee</div>
+            <div class="xh-pair">🧈 Butter <span style="color:#94A3B8;">↔</span> 🧴 Margarine</div>
+            <div class="xh-foot">Consumers switch to the alternative.</div>
+          </div>
+          <div class="xh-card" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="xh-h" style="color:#C2410C;"><span class="xh-sign" style="background:#EA580C;">−</span>Complements · XED &lt; 0</div>
+            <div class="xh-rule">P of B ↑ → demand for A ↓</div>
+            <div class="xh-pair">🚗 Cars <span style="color:#94A3B8;">↔</span> ⛽ Petrol</div>
+            <div class="xh-pair">🖨️ Printers <span style="color:#94A3B8;">↔</span> 🩸 Ink</div>
+            <div class="xh-foot">The goods are used together.</div>
+          </div>
+          <div class="xh-center-wrap"><div class="xh-center" style="background:#fff;border:2.4px solid #2563EB;border-radius:50%;width:118px;height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-shadow:0 4px 14px rgba(37,99,235,0.18);">
+            <div style="font-size:22px;line-height:1;">📦</div>
+            <div style="font-size:16px;font-weight:800;color:#1E3A8A;font-family:Fraunces,Georgia,serif;margin:2px 0;">Good A</div>
+            <div style="font-size:9.5px;color:#475569;text-align:center;line-height:1.25;">demand we are measuring</div>
+          </div></div>
+        </div>
+        <div class="xh-bottom">
+          <div class="xh-card" style="background:#F5F3FF;border:1.5px solid #C4B5FD;max-width:330px;width:100%;">
+            <div class="xh-h" style="color:#5B21B6;"><span class="xh-sign" style="background:#7C3AED;">≈</span>Unrelated · XED ≈ 0</div>
+            <div class="xh-rule">P of B changes → A barely moves</div>
+            <div class="xh-pair">🍞 Bread <span style="color:#94A3B8;">↔</span> 🚲 Bicycles</div>
+            <div class="xh-foot">No meaningful relationship.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     xedStrengthSpectrum — Income & cross elasticity Card 7. The XED
+     number line from strong complements (−) through unrelated (0) to
+     close substitutes (+), with example pairs and value chips. Scrolls
+     horizontally on narrow screens via the diagramKey wrapper.
+     ─────────────────────────────────────────────────────────────── */
+  xedStrengthSpectrum: `
+    <div class="xed-spec" style="line-height:1.45;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .xed-spec .xs-row { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; min-width:560px; }
+        .xed-spec .xs-col { text-align:center; display:flex; flex-direction:column; align-items:center; }
+        .xed-spec .xs-cap { font-size:11.5px; font-weight:800; line-height:1.2; min-height:30px; }
+        .xed-spec .xs-eg { font-size:17px; line-height:1.3; margin:4px 0 2px; }
+        .xed-spec .xs-egl { font-size:10px; color:#64748B; line-height:1.25; min-height:24px; }
+        .xed-spec .xs-dot { width:13px; height:13px; border-radius:50%; border:2.5px solid #fff; box-shadow:0 0 0 1.5px currentColor; margin:8px 0 6px; }
+        .xed-spec .xs-val { font-size:13px; font-weight:800; border-radius:8px; padding:3px 9px; }
+        .xed-spec .xs-bar { height:6px; border-radius:3px; margin:2px 6px 2px; background:linear-gradient(90deg,#7C3AED 0%,#C4B5FD 28%,#94A3B8 50%,#6EE7B7 72%,#059669 100%); }
+        .xed-spec .xs-ends { display:flex; justify-content:space-between; font-size:11px; font-weight:700; color:#475569; margin:6px 6px 0; }
+      </style>
+      <div style="overflow-x:auto;">
+        <div class="xs-row">
+          <div class="xs-col" style="color:#7C3AED;"><div class="xs-cap">Strong complements</div><div class="xs-eg">🖨️🩸</div><div class="xs-egl">Printers &amp; ink · consoles &amp; games</div><div class="xs-dot"></div><div class="xs-val" style="background:#F5F3FF;color:#5B21B6;">−1.2</div></div>
+          <div class="xs-col" style="color:#A78BFA;"><div class="xs-cap">Weak complements</div><div class="xs-eg">🚗⛽</div><div class="xs-egl">Cars &amp; petrol</div><div class="xs-dot"></div><div class="xs-val" style="background:#F5F3FF;color:#6D28D9;">−0.3</div></div>
+          <div class="xs-col" style="color:#94A3B8;"><div class="xs-cap">Unrelated</div><div class="xs-eg">🍞🪥</div><div class="xs-egl">Bread &amp; toothpaste</div><div class="xs-dot"></div><div class="xs-val" style="background:#F1F5F9;color:#475569;">0</div></div>
+          <div class="xs-col" style="color:#34D399;"><div class="xs-cap">Weak substitutes</div><div class="xs-eg">🍵☕</div><div class="xs-egl">Tea &amp; coffee</div><div class="xs-dot"></div><div class="xs-val" style="background:#ECFDF5;color:#047857;">+0.4</div></div>
+          <div class="xs-col" style="color:#059669;"><div class="xs-cap">Close substitutes</div><div class="xs-eg">🥤🧈</div><div class="xs-egl">Coca-Cola &amp; Pepsi · butter &amp; margarine</div><div class="xs-dot"></div><div class="xs-val" style="background:#ECFDF5;color:#065F46;">+1.3</div></div>
+        </div>
+        <div class="xs-bar" style="min-width:560px;"></div>
+        <div class="xs-ends" style="min-width:560px;"><span>← More complementary</span><span>Cross-price elasticity (XED)</span><span>More substitutable →</span></div>
+      </div>
+    </div>
+  `,
+
   /* Card 2 — UK income spectrum: same 2% growth year drawn two ways.
      Layer .idl-pounds : £ per year per decile, with a broken Y-axis so
      the bottom four bars (£200..£1,800) are readable alongside the

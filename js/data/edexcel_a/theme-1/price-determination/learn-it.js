@@ -58,41 +58,44 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_2',
-      template: 'ad-interactive',
+      template: 'framing',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Excess Demand and Excess Supply',
-      lede: 'When the market price is above or below equilibrium, shortages or surpluses appear. Price pressure pushes the market back towards equilibrium.',
-      diagramKey: 'disequilibriumInteractive',
-      steps: [
-        {
-          key: 'base',
-          label: 'Market in equilibrium',
-          text: 'At point <strong>E</strong>, quantity demanded equals quantity supplied. There is no pressure for price to rise or fall – the market clears at equilibrium price <strong>P<sub>e</sub></strong> and quantity <strong>Q<sub>e</sub></strong>. Now disturb the price above or below P<sub>e</sub> and watch the market self-correct.'
-        },
-        {
-          key: 'shortage',
-          label: 'Excess demand (shortage)',
-          text: 'At price <strong>P₁</strong> (below P<sub>e</sub>), <strong>quantity demanded exceeds quantity supplied</strong> (Q<sub>d</sub> &gt; Q<sub>s</sub>). Buyers compete for limited stock and bid the price up. Rising price reduces Q<sub>d</sub> (movement up D) and expands Q<sub>s</sub> (movement up S) → the market returns to E.'
-        },
-        {
-          key: 'surplus',
-          label: 'Excess supply (surplus)',
-          text: 'At price <strong>P₂</strong> (above P<sub>e</sub>), <strong>quantity supplied exceeds quantity demanded</strong> (Q<sub>s</sub> &gt; Q<sub>d</sub>). Unsold stock builds up and sellers cut prices to clear inventory. Falling price raises Q<sub>d</sub> and contracts Q<sub>s</sub> → the market returns to E.'
-        }
+      lede: 'When the market price is above or below equilibrium, a surplus or a shortage appears. Price pressure then pushes the market back towards equilibrium.',
+      interactiveDiagram: {
+        svgKey: 'disequilibriumInteractive',
+        label: 'How the market clears',
+        emoji: '⚖️',
+        layers: ['layer-base', 'layer-surplus', 'layer-short'],
+        views: [
+          { label: 'Market in equilibrium', tone: 'green', show: ['layer-base'],
+            head: 'Market in equilibrium',
+            body: 'At <strong>E</strong>, quantity demanded equals quantity supplied. There is no pressure for price to move — the market clears at <strong>Pₑ</strong>, <strong>Qₑ</strong>.' },
+          { label: 'Price too high → surplus', tone: 'amber', show: ['layer-surplus'],
+            head: 'Price too high → surplus',
+            body: 'At <strong>P₁</strong> (above Pₑ), quantity supplied (Q₂) exceeds quantity demanded (Q₁) — the gap below the axis is the <strong>surplus</strong>. Unsold stock builds up, so sellers <strong>cut the price</strong>, pushing the market back down to E.' },
+          { label: 'Price too low → shortage', tone: 'blue', show: ['layer-short'],
+            head: 'Price too low → shortage',
+            body: 'At <strong>P₂</strong> (below Pₑ), quantity demanded (Q₁) exceeds quantity supplied (Q₂) — the gap below the axis is the <strong>shortage</strong>. Buyers compete for scarce stock and <strong>bid the price up</strong>, pushing the market back up to E.' }
+        ]
+      },
+      causes: [
+        { tone: 'amber', icon: '🔻', head: 'Surplus',  body: 'Excess supply creates downward pressure on price.' },
+        { tone: 'blue',  icon: '🔺', head: 'Shortage', body: 'Excess demand creates upward pressure on price.' },
+        { tone: 'green', icon: '🎯', head: 'Back to equilibrium', body: 'Adjustment continues until the market clears at E.' }
       ],
-      flowTitle: 'How the price adjusts',
-      flowEmoji: '➡️',
-      flow: [
-        { tone: 'blue',  icon: '🔺', title: 'Shortage', sub: 'Excess demand creates upward pressure on price.' },
-        { tone: 'amber', icon: '🔻', title: 'Surplus',  sub: 'Excess supply creates downward pressure on price.' },
-        { tone: 'green', icon: '🎯', title: 'Adjustment continues', sub: 'Until equilibrium is restored at E.' }
+      causesLabel: 'How the price adjusts',
+      causesEmoji: '➡️',
+      causesStyle: 'tinted-flat',
+      causes2: [
+        { tone: 'blue',  icon: '🎫', head: 'Shortage example', body: 'Concert tickets sell out in minutes; resale prices rise well above face value until willingness-to-pay aligns with supply.' },
+        { tone: 'amber', icon: '🛒', head: 'Surplus example',  body: 'Supermarkets discount fresh stock near closing; cutting price clears the shelves before goods perish.' }
       ],
-      pairLabel: 'Real-world examples',
-      pairEmoji: '🌍',
-      left:  { tone: 'blue',  icon: '🎫', iconStyle: 'circle', label: 'Shortage example', text: 'Concert tickets sell out within minutes. Fans compete on resale platforms and prices rise well above face value until supply and willingness-to-pay align.' },
-      right: { tone: 'amber', icon: '🛒', iconStyle: 'circle', label: 'Surplus example',  text: 'Supermarkets discount fresh stock near closing time. Cutting price clears the shelves before goods perish – the surplus disappears as Q<sub>d</sub> rises.' },
+      causes2Label: 'Real-world examples',
+      causes2Emoji: '🌍',
+      causes2Cols: 2,
       conclusion: { title: 'Key takeaway', text: 'Market prices self-correct when there is competition and flexibility – shortages bid prices up, surpluses force prices down, both routes lead back to E.' },
-      examEdge: 'Always relate shortage or surplus to both quantity and price pressure. Markets that adjust slowly – housing, labour, agriculture – are prime candidates for policy intervention because the free-market correction can take years.'
+      examEdge: 'Always relate a shortage or surplus to both quantity and price pressure. Markets that adjust slowly – housing, labour, agriculture – are prime candidates for policy intervention because the free-market correction can take years.'
     },
     {
       id: 'market_equilibrium_3',

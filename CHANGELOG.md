@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.31.0 — 2026-06-02
+
+### Price Determination — interactive excess demand/supply diagram (card 2)
+
+First member of the Price Determination interactive family, fixing the
+worst-broken diagram (the old `ad-interactive` excess card rendered a
+huge empty box). Card 2 now uses the `interactiveDiagram` block: D & S
+on one chart, step through **equilibrium → price too high (surplus) →
+price too low (shortage)**, chart-left/description-right.
+
+Per review, the excess is signalled as a double-headed arrow **below the
+quantity axis**, spanning Q₁ (quantity demanded) → Q₂ (quantity
+supplied), with droplines from the curve points and a clear
+"Surplus = excess supply" / "Shortage = excess demand" label, plus a
+price-pressure arrow on the price axis. Template for rolling out to
+cards 1, 3, 4. SW cache → v266.
+
 ## 0.30.1 — 2026-06-02
 
 ### Supply — restore joint & competing supply card

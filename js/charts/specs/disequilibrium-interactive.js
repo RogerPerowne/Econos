@@ -1,202 +1,91 @@
 /* ============================================================
-   Disequilibrium Interactive — engine spec for disequilibriumInteractive.
-   Price-determination card 2 (Excess Demand and Excess Supply).
+   Disequilibrium Interactive — engine spec for disequilibriumInteractive
+   (Price-determination card 2). Layered spec for the `interactiveDiagram`
+   block (chart left, description right, steps below).
 
-   Layer wiring matches the existing disequilibrium-svg CSS:
-     persistent  axes + demand + supply + E (Pₑ, Qₑ)
-     base        title strip "Market in equilibrium" + legend
-     shortage    P₁ horizontal + 2 dots at (Qs, P₁) and (Qd, P₁) +
-                   "Shortage" label + UP price-direction arrow + legend
-     surplus     P₂ horizontal + 2 dots at (Qd, P₂) and (Qs, P₂) +
-                   "Surplus"  label + DOWN price-direction arrow + legend
+   Persistent: D (downward), S (upward), equilibrium E.
+   Mutually-exclusive states (show: ['layer-*']):
+     layer-base     → Pₑ/Qₑ reference lines at E
+     layer-surplus  → price P₁ above Pₑ: Qd < Qs → surplus (excess supply)
+     layer-short    → price P₂ below Pₑ: Qd > Qs → shortage (excess demand)
 
-   Chart geometry (viewBox 900×440):
-     Chart area  x=60..560, y=43..400 → width 500, height 357
-     Divider     x=595
+   The excess is shown as a double-headed arrow BELOW the quantity axis,
+   spanning Qd→Qs, with dashed droplines from the two curve points.
 
-   Key chart-space positions (0..1):
-     D line     (0.080, 0.868) → (0.860, 0.084)
-     S line     (0.080, 0.084) → (0.860, 0.868)
-     E (Pₑ,Qₑ)  (0.470, 0.476)
-     Shortage   P₁ y=0.252  Qs=0.248  Qd=0.692
-     Surplus    P₂ y=0.700  Qd=0.248  Qs=0.692
+   Geometry (chart-space, y up):
+     D: (0.10,0.886) → (0.94,0.091)   S: (0.10,0.091) → (0.94,0.886)
+     E ≈ (0.52,0.49)
+     P₁ = 0.66 : Qd=0.34 (on D), Qs=0.70 (on S)
+     P₂ = 0.32 : Qd=0.70 (on D), Qs=0.34 (on S)
    ============================================================ */
 (function () {
   'use strict';
 
-  var E = { x: 0.470, y: 0.476 };
-  var P1_y = 0.252, Qs_short = 0.248, Qd_short = 0.692;
-  var P2_y = 0.700, Qd_surp  = 0.248, Qs_surp  = 0.692;
-
   window.ECONOS_DISEQUILIBRIUM_SPEC = {
-    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
-    legendPosition: 'bottom',
-    height: 440,
-    chartArea: { x: 60, y: 43, width: 500, height: 357 },
-    className: 'disequilibrium-svg',
-    background: '#FFFFFF',
-    // Arrowheads come from the engine's built-in econos-arrow-{tone}
-    // markers — no per-spec marker boilerplate needed.
+    width: 700,
+    height: 500,
+    chartArea: { x: 84, y: 38, width: 534, height: 384 },
+    className: 'pd-diseq-svg',
+    layers: ['layer-base', 'layer-surplus', 'layer-short'],
+    layerMode: 'exclusive',
+    defs:
+      '<marker id="pd-a-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#B45309"/></marker>' +
+      '<marker id="pd-a-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#B45309"/></marker>' +
+      '<marker id="pd-b-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1E3A8A"/></marker>' +
+      '<marker id="pd-b-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#1E3A8A"/></marker>' +
+      '<marker id="pd-dn" markerWidth="9" markerHeight="9" refX="4" refY="7" orient="auto"><path d="M0,0 L8,0 L4,8 z" fill="#B45309"/></marker>' +
+      '<marker id="pd-up" markerWidth="9" markerHeight="9" refX="4" refY="2" orient="auto"><path d="M4,0 L8,8 L0,8 z" fill="#1E3A8A"/></marker>',
     axes: {
       x: { label: 'Quantity' },
       y: { label: 'Price' }
     },
 
     curves: [
-      { layer: 'layer-demand',
-        d: 'M 0.080,0.868 L 0.860,0.084',
-        tone: 'blue', label: 'D', strokeWidth: 3.5 },
-      { layer: 'layer-supply',
-        d: 'M 0.080,0.084 L 0.860,0.868',
-        tone: 'amber', label: 'S', strokeWidth: 3.5 }
-    ],
-
-    arrows: [
-      /* ---- E equilibrium gridlines (persistent) ---- */
-      { layer: 'layer-e1',
-        x1: 0, y1: E.y, x2: E.x, y2: E.y,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-      { layer: 'layer-e1',
-        x1: E.x, y1: E.y, x2: E.x, y2: 0,
-        tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
-
-      /* ---- shortage: P₁ horizontal blue + vertical droplines to Q-axis + UP price arrow ---- */
-      // Vertical droplines start BELOW each Qs/Qd dot (not at the dot)
-      // so the dropline + horizontal P₁ line don't form a 90° L-corner
-      // at the dot.
-      { layer: 'layer-shortage',
-        x1: 0, y1: P1_y, x2: Qd_short, y2: P1_y,
-        tone: 'blue', strokeWidth: 2, dashed: '6 4', buffer: 0 },
-      { layer: 'layer-shortage',
-        x1: Qs_short, y1: P1_y - 0.040, x2: Qs_short, y2: 0,
-        tone: 'slate', strokeWidth: 1.2, dashed: '4 4', buffer: 0 },
-      { layer: 'layer-shortage',
-        x1: Qd_short, y1: P1_y - 0.040, x2: Qd_short, y2: 0,
-        tone: 'slate', strokeWidth: 1.2, dashed: '4 4', buffer: 0 },
-      // Price-direction arrow on the LEFT side of P-axis (outside chart)
-      // pointing UP to signal price rising back toward Pₑ
-      { layer: 'layer-shortage',
-        x1: -0.048, y1: 0.266, x2: -0.048, y2: 0.426,
-        tone: 'blue', strokeWidth: 2.5, markerEnd: 'econos-arrow-blue', buffer: 0 },
-
-      /* ---- surplus: P₂ horizontal amber + vertical droplines + DOWN price arrow ---- */
-      { layer: 'layer-surplus',
-        x1: 0, y1: P2_y, x2: Qs_surp, y2: P2_y,
-        tone: 'amber', strokeWidth: 2, dashed: '6 4', buffer: 0 },
-      { layer: 'layer-surplus',
-        x1: Qd_surp, y1: P2_y - 0.040, x2: Qd_surp, y2: 0,
-        tone: 'slate', strokeWidth: 1.2, dashed: '4 4', buffer: 0 },
-      { layer: 'layer-surplus',
-        x1: Qs_surp, y1: P2_y - 0.040, x2: Qs_surp, y2: 0,
-        tone: 'slate', strokeWidth: 1.2, dashed: '4 4', buffer: 0 },
-      // DOWN arrow on left to signal price falling back toward Pₑ
-      { layer: 'layer-surplus',
-        x1: -0.048, y1: 0.686, x2: -0.048, y2: 0.527,
-        tone: 'amber', strokeWidth: 2.5, markerEnd: 'econos-arrow-amber', buffer: 0 }
+      { d: 'M 0.10,0.886 L 0.94,0.091', tone: 'blue',  label: 'D', strokeWidth: 3, labelDx: 8, labelDy: 8 },
+      { d: 'M 0.10,0.091 L 0.94,0.886', tone: 'amber', label: 'S', strokeWidth: 3, labelDx: 8, labelDy: -4 }
     ],
 
     points: [
-      // Persistent E equilibrium dot — solid dark
-      { layer: 'layer-e1', x: E.x, y: E.y, tone: 'slate', radius: 6.5, label: 'E',
-        labelDx: 12, labelDy: -10, anchor: 'start' },
-
-      // Shortage state dots — solid dark on supply and demand curves
-      { layer: 'layer-shortage', x: Qs_short, y: P1_y, tone: 'slate', radius: 5.5 },
-      { layer: 'layer-shortage', x: Qd_short, y: P1_y, tone: 'slate', radius: 5.5 },
-
-      // Surplus state dots
-      { layer: 'layer-surplus', x: Qd_surp, y: P2_y, tone: 'slate', radius: 5.5 },
-      { layer: 'layer-surplus', x: Qs_surp, y: P2_y, tone: 'slate', radius: 5.5 },
-
+      { x: 0.52, y: 0.49, tone: 'slate', radius: 6, label: 'E', labelDx: 11, labelDy: -9, anchor: 'start' },
+      { layer: 'layer-surplus', x: 0.34, y: 0.66, tone: 'blue',  radius: 5 },
+      { layer: 'layer-surplus', x: 0.70, y: 0.66, tone: 'amber', radius: 5 },
+      { layer: 'layer-short', x: 0.70, y: 0.32, tone: 'blue',  radius: 5 },
+      { layer: 'layer-short', x: 0.34, y: 0.32, tone: 'amber', radius: 5 }
     ],
 
-    titleStrips: [
-      { layer: 'layer-base',     tone: 'green',
-        text: 'Market in equilibrium · supply meets demand at E' },
-      { layer: 'layer-shortage', tone: 'blue',
-        text: 'Excess demand (shortage) · price rises towards Pₑ' },
-      { layer: 'layer-surplus',  tone: 'amber',
-        text: 'Excess supply (surplus) · price falls towards Pₑ' }
+    arrows: [
+      /* base — Pₑ/Qₑ leaders */
+      { layer: 'layer-base', x1: 0, y1: 0.49, x2: 0.52, y2: 0.49, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
+      { layer: 'layer-base', x1: 0.52, y1: 0.49, x2: 0.52, y2: 0, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
+
+      /* surplus — P₁ price line, droplines, excess arrow BELOW axis, price pressure */
+      { layer: 'layer-surplus', x1: 0, y1: 0.66, x2: 0.70, y2: 0.66, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
+      { layer: 'layer-surplus', x1: 0.34, y1: 0.66, x2: 0.34, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-surplus', x1: 0.70, y1: 0.66, x2: 0.70, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-surplus', x1: 0.345, y1: -0.085, x2: 0.695, y2: -0.085, tone: 'amber', strokeWidth: 2.4, markerStart: 'pd-a-start', markerEnd: 'pd-a-end', buffer: 0 },
+      { layer: 'layer-surplus', x1: 0.06, y1: 0.63, x2: 0.06, y2: 0.52, tone: 'amber', strokeWidth: 2.4, markerEnd: 'pd-dn', buffer: 0 },
+
+      /* shortage — P₂ price line, droplines, excess arrow BELOW axis, price pressure */
+      { layer: 'layer-short', x1: 0, y1: 0.32, x2: 0.70, y2: 0.32, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
+      { layer: 'layer-short', x1: 0.34, y1: 0.32, x2: 0.34, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-short', x1: 0.70, y1: 0.32, x2: 0.70, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-short', x1: 0.345, y1: -0.085, x2: 0.695, y2: -0.085, tone: 'blue', strokeWidth: 2.4, markerStart: 'pd-b-start', markerEnd: 'pd-b-end', buffer: 0 },
+      { layer: 'layer-short', x1: 0.06, y1: 0.35, x2: 0.06, y2: 0.46, tone: 'blue', strokeWidth: 2.4, markerEnd: 'pd-up', buffer: 0 }
     ],
 
     texts: [
-      // Persistent E axis tick labels
-      { layer: 'layer-e1', x: -0.028, y: E.y,    text: 'Pₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
-      { layer: 'layer-e1', x: E.x,    y: -0.050, text: 'Qₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-base', x: -0.02, y: 0.49, text: 'Pₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
+      { layer: 'layer-base', x: 0.52, y: -0.07, text: 'Qₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
 
-      // Shortage labels
-      { layer: 'layer-shortage', x: -0.028, y: P1_y, text: 'P₁', tone: 'blue', bold: true, italic: true, fontSize: 13, anchor: 'end' },
-      { layer: 'layer-shortage', x: Qs_short, y: -0.060, text: 'Qs', tone: 'slate', bold: true, italic: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-shortage', x: Qd_short, y: -0.060, text: 'Qd', tone: 'slate', bold: true, italic: true, fontSize: 12, anchor: 'middle' },
-      // Big "Shortage" callout between the two dots
-      { layer: 'layer-shortage', x: 0.470, y: 0.190, text: 'Shortage', tone: 'blue', bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-surplus', x: -0.02, y: 0.66, text: 'P₁', tone: 'amber', bold: true, fontSize: 13, anchor: 'end' },
+      { layer: 'layer-surplus', x: 0.34, y: -0.05, text: 'Q₁', tone: 'blue',  bold: true, fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-surplus', x: 0.70, y: -0.05, text: 'Q₂', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-surplus', x: 0.52, y: -0.155, text: 'Surplus = excess supply (Q₂ − Q₁)', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
 
-      // Surplus labels
-      { layer: 'layer-surplus', x: -0.028, y: P2_y, text: 'P₂', tone: 'amber', bold: true, italic: true, fontSize: 13, anchor: 'end' },
-      { layer: 'layer-surplus', x: Qd_surp, y: -0.060, text: 'Qd', tone: 'slate', bold: true, italic: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-surplus', x: Qs_surp, y: -0.060, text: 'Qs', tone: 'slate', bold: true, italic: true, fontSize: 12, anchor: 'middle' },
-      { layer: 'layer-surplus', x: 0.470, y: 0.768, text: 'Surplus', tone: 'amber', bold: true, fontSize: 13, anchor: 'middle' }
-    ],
-
-    legends: [
-      /* ---- BASE LEGEND ---- */
-      {
-        layer: 'layer-base',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'EQUILIBRIUM', tone: 'green' },
-            body: [
-              'At E: Qd = Qs.',
-              'No shortage, no surplus.',
-              'No tendency for price to change.'
-            ]
-          },
-          { header: { text: 'DISTURB IT…', tone: 'gray' },
-            body: [
-              'Tap "Excess demand" to see what',
-              'happens below Pₑ.',
-              'Tap "Excess supply" to see what',
-              'happens above Pₑ.'
-            ]
-          }
-        ]
-      },
-
-      /* ---- SHORTAGE LEGEND ---- */
-      {
-        layer: 'layer-shortage',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'EXCESS DEMAND', tone: 'blue' },
-            body: [
-              'Price P₁ is below Pₑ.',
-              { text: 'Qd > Qs → shortage.', tone: 'slate', bold: true },
-              'Buyers compete for limited',
-              'stock → bid the price up.',
-              'Rising price reduces Qd and',
-              'expands Qs → returns to E.'
-            ]
-          }
-        ]
-      },
-
-      /* ---- SURPLUS LEGEND ---- */
-      {
-        layer: 'layer-surplus',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'EXCESS SUPPLY', tone: 'amber' },
-            body: [
-              'Price P₂ is above Pₑ.',
-              { text: 'Qs > Qd → surplus.', tone: 'slate', bold: true },
-              'Sellers with unsold stock cut',
-              'prices to clear inventory.',
-              'Falling price raises Qd and',
-              'contracts Qs → returns to E.'
-            ]
-          }
-        ]
-      }
+      { layer: 'layer-short', x: -0.02, y: 0.32, text: 'P₂', tone: 'blue', bold: true, fontSize: 13, anchor: 'end' },
+      { layer: 'layer-short', x: 0.70, y: -0.05, text: 'Q₁', tone: 'blue',  bold: true, fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-short', x: 0.34, y: -0.05, text: 'Q₂', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-short', x: 0.52, y: -0.155, text: 'Shortage = excess demand (Q₁ − Q₂)', tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' }
     ]
   };
 })();

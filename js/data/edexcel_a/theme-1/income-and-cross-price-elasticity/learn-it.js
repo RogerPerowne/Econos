@@ -342,28 +342,16 @@ window.ECONOS_TOPIC = {
       title: 'The YED and XED exam toolkit',
       tip: { tone: 'green', icon: '🔒', text: 'Good answers <strong>calculate, classify and apply</strong>.' },
       intro: 'Most questions boil down to identifying the change, choosing the right elasticity, calculating it, and applying it.',
+      flowTitle: 'How to read the question',
+      flowEmoji: 'ℹ️',
+      flow: [
+        { tone: 'blue',   icon: '🔍', title: 'Identify the change', sub: 'Is the question about income (Y) or the price of another good (Pₓ)?' },
+        { tone: 'amber',  icon: '🧮', title: 'Choose the formula',  sub: 'YED = %ΔQ<sup>d</sup> ÷ %ΔY, or XED = %ΔQ<sup>d</sup> ÷ %ΔPₓ.' },
+        { tone: 'purple', icon: '⚖️', title: 'Calculate &amp; classify', sub: 'Compute the value, then use the sign and size to decide what it means.' },
+        { tone: 'green',  icon: '🎯', title: 'Apply it',             sub: 'Link the result to inferior/luxury or substitute/complement — and a real outcome.' }
+      ],
       body: `<style>.yx-toolkit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}@media (max-width:560px){.yx-toolkit-grid{grid-template-columns:1fr;}}</style>
-<div style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#2563EB;margin-bottom:12px;">① How to read the question</div>
-<div class="yx-toolkit-grid">
-  <div style="border-radius:12px;border:1px solid #93C5FD;background:#EFF6FF;padding:14px 16px;">
-    <div style="font-weight:800;font-size:14.5px;color:#1E3A8A;margin-bottom:6px;">1 · Identify the change</div>
-    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Is the question about income (Y) or the price of another good (Pₓ)?</div>
-  </div>
-  <div style="border-radius:12px;border:1px solid #FDBA74;background:#FFF7ED;padding:14px 16px;">
-    <div style="font-weight:800;font-size:14.5px;color:#C2410C;margin-bottom:6px;">2 · Choose the formula</div>
-    <div style="font-size:14px;color:#0B1426;line-height:1.6;">YED = %ΔQ<sup>d</sup> ÷ %ΔY, or XED = %ΔQ<sup>d</sup> ÷ %ΔPₓ. Write it clearly.</div>
-  </div>
-  <div style="border-radius:12px;border:1px solid #C4B5FD;background:#F5F3FF;padding:14px 16px;">
-    <div style="font-weight:800;font-size:14.5px;color:#5B21B6;margin-bottom:6px;">3 · Calculate &amp; classify</div>
-    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Compute the value, then use the sign and size to decide what it means.</div>
-  </div>
-  <div style="border-radius:12px;border:1px solid #6EE7B7;background:#ECFDF5;padding:14px 16px;">
-    <div style="font-weight:800;font-size:14.5px;color:#065F46;margin-bottom:6px;">4 · Apply it</div>
-    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Link the result to economic meaning — inferior/luxury, substitute/complement — and a real outcome.</div>
-  </div>
-</div>
-
-<div style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin-bottom:12px;">② Common mistakes</div>
+<div style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin:6px 0 12px;">⚠️ Common mistakes</div>
 <div class="yx-toolkit-grid">
   <div style="border-radius:12px;border:1px solid #FDA4AF;background:#FFF1F2;padding:14px 16px;">
     <div style="font-weight:800;font-size:14.5px;color:#9F1239;margin-bottom:6px;">⚠️ Using PED instead</div>

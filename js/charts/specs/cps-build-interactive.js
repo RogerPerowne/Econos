@@ -10,18 +10,20 @@
      V2  Mark Pₑ and Qₑ    → idl-1 + idl-2 (gridlines + tick labels)
      V3  Shade CS and PS    → idl-1 + idl-2 + idl-3 (triangles + labels)
 
-   Geometry is identical to the static cpsDiagram so the two cards
-   feel consistent — only the reveal sequence differs.
+   Geometry mirrors the static cpsDiagram exactly (taller 480×420
+   aspect, thick curves, subtle shaded triangles, E + Pₑ/Qₑ ticks)
+   so card 1 (static) and card 2 (built up) feel identical — only the
+   reveal sequence differs.
    ============================================================ */
 (function () {
   'use strict';
 
-  var E = { x: 0.457, y: 0.500 };
+  var E = { x: 0.472, y: 0.500 };
 
   window.ECONOS_CPS_BUILD_SPEC = {
-    width: 600,
-    height: 320,
-    chartArea: { x: 70, y: 30, width: 440, height: 240 },
+    width: 480,
+    height: 420,
+    chartArea: { x: 60, y: 50, width: 360, height: 320 },
     className: 'cps-build-svg',
     axes: {
       x: { label: 'Quantity' },
@@ -30,10 +32,10 @@
 
     /* Always-visible base: D and S curves */
     curves: [
-      { d: 'M 0,0.960 L 0.914,0.040',
-        tone: 'blue', label: 'D', strokeWidth: 2.8, labelDx: 8, labelDy: 4 },
-      { d: 'M 0,0.040 L 0.914,0.960',
-        tone: 'amber', label: 'S', strokeWidth: 2.8, labelDx: 8, labelDy: -4 }
+      { id: 'D', d: 'M 0,0.938 L 0.944,0.063',
+        tone: 'blue', label: 'D', strokeWidth: 3, labelDx: 8, labelDy: 4 },
+      { id: 'S', d: 'M 0,0.063 L 0.944,0.938',
+        tone: 'amber', label: 'S', strokeWidth: 3, labelDx: 8, labelDy: -4 }
     ],
 
     viewDefaultsHidden: true,
@@ -44,7 +46,7 @@
         contentLayer: 'idl-1',
         points: [
           { x: E.x, y: E.y, tone: 'slate', radius: 6, label: 'E',
-            labelDx: 12, labelDy: -8, anchor: 'start' }
+            labelDx: 12, labelDy: -10, anchor: 'start' }
         ]
       },
 
@@ -54,9 +56,9 @@
         contentLayer: 'idl-2',
         arrows: [
           { x1: 0, y1: E.y, x2: E.x, y2: E.y,
-            tone: 'slate', strokeWidth: 1.5, dashed: '5 3', buffer: 0 },
+            tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
           { x1: E.x, y1: E.y, x2: E.x, y2: 0,
-            tone: 'slate', strokeWidth: 1.5, dashed: '5 3', buffer: 0 }
+            tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 }
         ],
         texts: [
           { x: -0.020, y: E.y,    text: 'Pₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
@@ -70,17 +72,17 @@
         contentLayer: 'idl-3',
         polygons: [
           // CS triangle (blue) — above Pₑ, below D
-          { points: [[0, 0.960], [0, E.y], [E.x, E.y]],
-            fill: '#DBEAFE', opacity: 0.85 },
+          { points: [[0, 0.938], [0, E.y], [E.x, E.y]],
+            fill: '#3B82F6', opacity: 0.18 },
           // PS triangle (amber) — below Pₑ, above S
-          { points: [[0, E.y], [0, 0.040], [E.x, E.y]],
-            fill: '#FEF3C7', opacity: 0.85 }
+          { points: [[0, E.y], [0, 0.063], [E.x, E.y]],
+            fill: '#F59E0B', opacity: 0.18 }
         ],
         texts: [
-          { x: 0.13, y: 0.745, text: 'Consumer surplus',
-            tone: 'blue', bold: true, fontSize: 13, anchor: 'middle' },
-          { x: 0.13, y: 0.260, text: 'Producer surplus',
-            tone: 'amber', bold: true, fontSize: 13, anchor: 'middle' }
+          { x: 0.150, y: 0.730, text: 'Consumer', tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
+          { x: 0.150, y: 0.685, text: 'surplus',  tone: 'blue', bold: true, fontSize: 12, anchor: 'middle' },
+          { x: 0.150, y: 0.350, text: 'Producer', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
+          { x: 0.150, y: 0.305, text: 'surplus',  tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' }
         ]
       }
     ]

@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.5 — 2026-06-02
+
+### CPS Card 2 — taller build chart to match the rest of the topic
+
+- The `cpsBuildInteractive` chart was the squashed outlier (600×320, ~1.9:1)
+  next to the taller tax / subsidy / allocative charts. Reworked the spec
+  to mirror the now-modernised static `cpsDiagram` exactly — 480×420, thick
+  D / S curves, subtle shaded CS/PS triangles, clear E + Pₑ/Qₑ ticks —
+  keeping the cumulative reveal layers so "Build it in this order" still
+  steps through E → prices → surpluses. Snapshot updated. `sw.js` cache
+  bumped to `econos-v285`.
+
 ## 0.37.4 — 2026-06-02
 
 ### CPS Card 5 — icon-top tiles to stop title overflow

@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.4 — 2026-06-02
+
+### CPS Card 5 — icon-top tiles to stop title overflow
+
+- The "When markets miss the efficient level" tiles (Underproduction /
+  Overproduction / Total surplus test) used the default icon-left layout,
+  where "Total surplus test" overflowed beside the icon. Moved the block to
+  the `causes3` slot with `causes3Style: 'icon-top'` so the icon sits in a
+  square above a full-width title. `sw.js` cache bumped to `econos-v284`.
+
 ## 0.37.3 — 2026-06-02
 
 ### Chart-side caption text darkened from grey to black

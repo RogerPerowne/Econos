@@ -3,12 +3,12 @@ window.ECONOS_TOPIC = {
   topicNum: '2.2',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   title: 'Price Elasticity of Demand',
-  estTime: '8–10 minutes',
-  goal: 'Understand what PED measures, how to calculate it, how to read the coefficient, what determines it, and how firms and governments use it in practice.',
+  estTime: '10–12 minutes',
+  goal: 'Understand what PED measures, how to calculate it, how to read the coefficient, where demand is elastic along a curve, what determines it, and how firms and governments use it in practice.',
   intro: {
     heroKey: 'heroElasticity',
     summary: 'PED measures how sensitive quantity demanded is to a price change. The answer determines whether a price rise raises or lowers total revenue – and shapes firm pricing strategy, government tax policy, and who bears the burden of a tax.',
-    doInThis: 'Work through 7 cards covering what PED is, elastic vs inelastic demand, step-by-step calculation, how to read the PED coefficient, the determinants of PED, real-world implications, and an exam-ready summary.',
+    doInThis: 'Work through 8 cards covering what PED is, how to calculate it, how to read the coefficient, where demand is elastic along a curve, what makes demand elastic, the PED–total-revenue link, real-world uses, and an exam-ready toolkit.',
     outcomes: [
       'Define and calculate PED correctly using the formula',
       'Distinguish elastic and inelastic demand and link each to the demand curve diagram',
@@ -17,7 +17,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'PED = % change in QD \xf7 % change in P. Always negative. |PED| > 1 = elastic; |PED| < 1 = inelastic; |PED| = 1 = unit elastic.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards',            state: 'done',      href: TopicLoader.routes.learn()      },
+      { num: 1, name: 'Learn it', sub: '8 concept cards',            state: 'done',      href: TopicLoader.routes.learn()      },
       { num: 2, name: 'Link it',  sub: 'Apply skills with context',  state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions', state: 'locked'                                                   }
     ]
@@ -25,12 +25,13 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ================================================================
-       CARD 1 – WHAT IS PED
-       Hook question → formula → Cinema vs Petrol comparison
+       CARD 1 – THE BIG PICTURE
+       Hook → formula → elastic vs inelastic two-chart →
+       three categories → why PED matters
        ================================================================ */
     {
       id: 'ped_1',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Price Elasticity of Demand',
       intro: 'If a coffee shop raises its price by 10%, does demand fall by 2% or 20%? That answer decides whether revenue rises or falls – and it’s precisely what PED measures.',
       body: `<div style="text-align:center;padding:18px 20px;background:#fff;border-radius:12px;border:2px solid #1E3A5F;margin-bottom:18px;">
@@ -44,62 +45,67 @@ window.ECONOS_TOPIC = {
     </div>
   </div>
 </div>
-PED is <strong>always negative</strong> – price and quantity demanded move in opposite directions (law of demand). Economists compare the <strong>absolute value</strong>: |PED| &gt; 1 = elastic, |PED| &lt; 1 = inelastic, |PED| = 1 = unit elastic.`,
+A <strong>shallow</strong> demand curve means consumers respond strongly to price (elastic); a <strong>steep</strong> curve means they barely react (inelastic). The same price change produces a very different quantity response in each case.`,
+      diagramKey: 'elasticVsInelasticDiagram',
+      causesLabel: 'Three categories',
+      causesEmoji: '⚖️',
+      causesStyle: 'tinted-flat',
       causes: [
         {
-          head: '🎥  Cinema tickets – more elastic',
-          body: '<strong>Many substitutes</strong> – streaming, other leisure activities, staying home<br><strong>Discretionary spending</strong> – consumers can choose not to go<br><strong>Result:</strong> demand falls a lot when price rises'
+          tone: 'green',
+          icon: '📉',
+          head: 'Elastic · |PED| > 1',
+          body: 'QD changes proportionally <strong>more</strong> than price. Consumers are sensitive – they switch, delay or go without. Luxuries, branded goods with close rivals.'
         },
         {
-          head: '⛽️  Petrol – more inelastic',
-          body: '<strong>Few close substitutes</strong> in the short run<br><strong>Essential for many journeys</strong> – commuters must travel regardless<br><strong>Result:</strong> demand barely changes when price rises'
+          tone: 'amber',
+          icon: '⚖️',
+          head: 'Unit elastic · |PED| = 1',
+          body: 'QD changes <strong>exactly in proportion</strong> to price. Total revenue is unchanged by any price move. The midpoint of a straight-line demand curve.'
+        },
+        {
+          tone: 'purple',
+          icon: '📈',
+          head: 'Inelastic · |PED| < 1',
+          body: 'QD changes proportionally <strong>less</strong> than price. Consumers have few options. Necessities, addictive goods, products with few substitutes.'
         }
       ],
-    },
-
-    /* ================================================================
-       CARD 2 – ELASTIC VS INELASTIC DEMAND
-       Side-by-side annotated diagram + Total Revenue rules
-       ================================================================ */
-    {
-      id: 'ped_2',
-      stepLabel: 'Learn: Step 2 of 7',
-      title: 'Elastic vs inelastic demand',
-      intro: 'A shallow demand curve = consumers respond strongly to price changes (elastic). A steep curve = consumers barely react (inelastic). The curve shape is the visual shorthand – but always use the formula to confirm.',
-      diagramKey: 'elasticVsInelasticDiagram',
-      steps: [
+      causes2Label: 'Why PED matters',
+      causes2Emoji: '🎯',
+      causes2: [
         {
-          label: 'Elastic + price rise → total revenue falls',
-          text: 'QD falls proportionally more than price rises. The volume loss outweighs the extra revenue per unit. Cinemas, luxury holidays, branded goods with close rivals.'
+          tone: 'blue',
+          icon: '🏷️',
+          head: 'Pricing strategy',
+          body: 'Firms with inelastic demand can raise prices; firms in elastic markets must compete on price or differentiate.'
         },
         {
-          label: 'Inelastic + price rise → total revenue rises',
-          text: 'QD falls proportionally less than price rises. The higher price per unit more than compensates for fewer sales. Petrol, cigarettes, electricity, rail season tickets.'
+          tone: 'green',
+          icon: '💷',
+          head: 'Total revenue',
+          body: 'Whether a price rise grows or shrinks revenue depends entirely on whether demand is elastic or inelastic.'
         },
         {
-          label: 'Elastic + price cut → total revenue rises',
-          text: 'QD rises proportionally more than price falls. Volume gain outweighs the lower price. Firms in competitive markets use this to grow revenue.'
-        },
-        {
-          label: 'Inelastic + price cut → total revenue falls',
-          text: 'QD rises proportionally less than price falls. More units sold, but not enough to offset the lower price per unit. Explains why tobacco firms resist duty increases but cannot absorb them fully.'
+          tone: 'rose',
+          icon: '🏛️',
+          head: 'Tax & policy',
+          body: 'PED decides who bears an indirect tax and how much revenue it raises – the core of sin-tax design.'
         }
       ],
       keyTakeaway: {
-        title: 'The Total Revenue rule',
-        text: 'Elastic demand: price and revenue move in <em>opposite</em> directions. Inelastic demand: price and revenue move in the <em>same</em> direction.'
-      },
-      examEdge: 'Never read PED off the diagram. A steep curve suggests inelastic demand, but PED varies at every point along a straight-line demand curve. The upper half of any linear demand curve is elastic, the lower half inelastic, and the midpoint unit elastic – even though the slope is constant throughout.'
+        title: 'PED in one line',
+        text: 'PED is <strong>always negative</strong> (law of demand). Economists compare the <strong>absolute value</strong>: |PED| &gt; 1 = elastic, |PED| &lt; 1 = inelastic, |PED| = 1 = unit elastic.'
+      }
     },
 
     /* ================================================================
-       CARD 3 – CALCULATING PED
+       CARD 2 – CALCULATING PED
        Worked example: concert tickets £10→£12, QD 100→70
        ================================================================ */
     {
       id: 'ped_3',
       template: 'ped-calculation',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'Calculating PED step by step',
       lede: 'Follow the chain. Each step unlocks the next – by the end you\'ll see how a price change ripples into a revenue impact.',
       scenario: {
@@ -119,13 +125,13 @@ PED is <strong>always negative</strong> – price and quantity demanded move in 
     },
 
     /* ================================================================
-       CARD 4 – READING THE PED COEFFICIENT
+       CARD 3 – READING THE PED COEFFICIENT
        Five-regime spectrum with mini diagrams
        ================================================================ */
     {
       id: 'ped_4',
       template: 'ped-five-frames',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'Reading the PED coefficient',
       lede: 'Every demand curve sits somewhere on this spectrum. The larger the absolute value, the more responsive consumers are to price changes – and the more it matters for pricing and tax policy.',
       frames: [
@@ -174,44 +180,81 @@ PED is <strong>always negative</strong> – price and quantity demanded move in 
     },
 
     /* ================================================================
-       CARD 5 – WHAT AFFECTS PED?
-       Five determinants + examiner product assessments
+       CARD 4 – WHERE DEMAND IS ELASTIC (along a linear curve)
+       Interactive: step A (elastic) → B (unit) → C (inelastic)
        ================================================================ */
     {
       id: 'ped_5',
-      stepLabel: 'Learn: Step 5 of 7',
-      title: 'What affects PED?',
-      intro: 'Ask: “What can consumers do when the price rises?” The more options they have – to switch, delay, or go without – the more elastic demand will be.',
+      stepLabel: 'Learn: Step 4 of 8',
+      title: 'Where demand is elastic',
+      intro: 'PED is not constant along a straight-line demand curve. Even though the slope never changes, the elasticity falls steadily as you move down the curve. Step through the three regions to see why.',
+      interactiveDiagram: {
+        svgKey: 'pedLinearRegions',
+        label: 'PED along a linear demand curve',
+        emoji: '📐',
+        layers: ['layer-a', 'layer-b', 'layer-c'],
+        views: [
+          {
+            label: 'A · upper part',
+            tone: 'green',
+            show: ['layer-a'],
+            head: 'Upper part → elastic (|PED| > 1)',
+            body: 'High price, low quantity. A given price change is a <strong>small %</strong> of a high price but a <strong>large %</strong> of a low quantity – so %ΔQD outweighs %ΔP. Demand is elastic here.'
+          },
+          {
+            label: 'B · midpoint',
+            tone: 'amber',
+            show: ['layer-b'],
+            head: 'Midpoint → unit elastic (|PED| = 1)',
+            body: 'Exactly halfway down the curve the two percentage effects are equal, so |PED| = 1. This is the point where <strong>total revenue is maximised</strong>.'
+          },
+          {
+            label: 'C · lower part',
+            tone: 'purple',
+            show: ['layer-c'],
+            head: 'Lower part → inelastic (|PED| < 1)',
+            body: 'Low price, high quantity. Now a price change is a <strong>large %</strong> of a low price but a <strong>small %</strong> of a high quantity – so %ΔP outweighs %ΔQD. Demand is inelastic here.'
+          }
+        ]
+      },
+      keyTakeaway: {
+        title: 'Slope ≠ elasticity',
+        text: 'A constant slope hides a changing elasticity. Demand is elastic in the <strong>upper</strong> half, unit elastic at the <strong>midpoint</strong>, and inelastic in the <strong>lower</strong> half – which is exactly why total revenue peaks at the middle of the curve.'
+      },
+      examEdge: 'A favourite mark-scheme catch: students assume a straight-line demand curve has one PED. It does not. State which region you are in (upper/lower) and link it to the revenue consequence – that earns the application mark.'
+    },
+
+    /* ================================================================
+       CARD 5 – WHAT MAKES DEMAND ELASTIC
+       Determinants hub + one good, different PED + predict-reveal
+       ================================================================ */
+    {
+      id: 'ped_6',
+      stepLabel: 'Learn: Step 5 of 8',
+      title: 'What makes demand elastic?',
+      intro: 'Ask: “What can consumers do when the price rises?” The more options they have – to switch, delay, or go without – the more elastic demand will be. Five forces decide it.',
+      diagramKey: 'pedDriversHub',
+      causesLabel: 'One good, different PED',
+      causesEmoji: '🔀',
+      causesStyle: 'tinted-flat',
       causes: [
         {
-          icon: '🔄',
-          head: '1. Close substitutes',
-          body: 'The more substitutes available, the more elastic demand. A price rise for one cola brand → consumers switch to another. Few substitutes (insulin, petrol) → inelastic. <strong>The most important determinant.</strong>'
+          tone: 'rose',
+          icon: '💉',
+          head: 'Insulin → very inelastic',
+          body: 'A medical necessity with no substitute. The diabetic patient must buy a fixed quantity whatever the price – demand barely moves.'
         },
         {
-          icon: '💎',
-          head: '2. Necessity vs luxury',
-          body: 'Necessities (food, medicines, utilities) tend to be inelastic – consumers cannot easily cut back. Luxuries (holidays, jewellery, restaurant meals) are more elastic – purchases can be postponed or abandoned.'
+          tone: 'green',
+          icon: '🍽️',
+          head: 'Restaurant meals → elastic',
+          body: 'A luxury with countless substitutes – cook at home, choose a cheaper venue, eat out less often. A price rise prompts a large fall in demand.'
         },
         {
-          icon: '💰',
-          head: '3. Proportion of income',
-          body: 'Goods that take a large share of income (rent, cars) are more price elastic. Small items (salt, matches) are inelastic – a price change is barely noticed against total spending.'
-        },
-        {
-          icon: '⏱️',
-          head: '4. Time period',
-          body: 'Demand becomes more elastic over time. Short-run: consumers are locked into habits. Long-run: substitutes emerge and behaviour adapts. Petrol is inelastic now; more elastic long-run as EVs become viable.'
-        },
-        {
-          icon: '🔒',
-          head: '5. Habit and addiction',
-          body: 'Cigarettes, alcohol, addictive goods: demand is inelastic because willingness to pay holds despite price rises. This is precisely why sin taxes raise substantial revenue with little fall in quantity demanded.'
-        },
-        {
-          icon: '🌟',
-          head: '6. Branding and loyalty',
-          body: 'Strong brand attachment (Apple, Nike, Chanel) makes consumers perceive no real substitute – even when cheaper alternatives exist. Brand loyalty reduces elasticity by making the good feel unique in consumers\' minds.'
+          tone: 'amber',
+          icon: '⛽',
+          head: 'Petrol → it depends on time',
+          body: 'Inelastic in the short run (drivers are locked into cars and commutes) but more elastic over the long run as EVs, transport and home moves provide substitutes.'
         }
       ],
       productExamplesTitle: 'How elastic is…?',
@@ -246,17 +289,57 @@ PED is <strong>always negative</strong> – price and quantity demanded move in 
           reasoning: 'Many alternatives; luxury item; brand-driven not need-driven.'
         }
       ],
-      examEdge: 'Always tie the determinant to the product: “Demand for petrol is inelastic because there are few close substitutes in the short run – most journeys cannot easily switch to other transport modes.” Determinant → mechanism → conclusion.',
+      examEdge: 'Always tie the determinant to the product: “Demand for petrol is inelastic because there are few close substitutes in the short run – most journeys cannot easily switch to other transport modes.” Determinant → mechanism → conclusion.'
     },
 
     /* ================================================================
-       CARD 6 – REAL-WORLD IMPLICATIONS OF PED
-       Four application areas: pricing, revenue, tax, branding
+       CARD 6 – PED AND TOTAL REVENUE
+       Elastic vs inelastic revenue panels + the TR rule
        ================================================================ */
     {
-      id: 'ped_6',
-      stepLabel: 'Learn: Step 6 of 7',
-      title: 'Real-world implications of PED',
+      id: 'ped_7',
+      stepLabel: 'Learn: Step 6 of 8',
+      title: 'PED and total revenue',
+      intro: 'Total revenue = price × quantity. When price changes, both move – and PED decides which effect wins. The same 10% price cut grows revenue for one firm and shrinks it for another.',
+      diagramKey: 'pedTotalRevenue',
+      causesLabel: 'The Total Revenue rule',
+      causesEmoji: '💷',
+      causesStyle: 'tinted-flat',
+      causes: [
+        {
+          tone: 'green',
+          icon: '📉',
+          head: 'Elastic → opposite directions',
+          body: 'Price and revenue move in <strong>opposite</strong> directions. Price ↑ → TR falls; price ↓ → TR rises, because the quantity effect dominates.'
+        },
+        {
+          tone: 'amber',
+          icon: '⚖️',
+          head: 'Unit elastic → no change',
+          body: 'The % change in quantity exactly cancels the % change in price, so total revenue stays the same. TR is at its <strong>maximum</strong>.'
+        },
+        {
+          tone: 'purple',
+          icon: '📈',
+          head: 'Inelastic → same direction',
+          body: 'Price and revenue move in the <strong>same</strong> direction. Price ↑ → TR rises; price ↓ → TR falls, because the price effect dominates.'
+        }
+      ],
+      keyTakeaway: {
+        title: 'The shortcut',
+        text: 'Elastic demand: price and revenue move in <em>opposite</em> directions. Inelastic demand: price and revenue move in the <em>same</em> direction. Unit elastic: revenue is unchanged (and maximised).'
+      },
+      examEdge: 'Data-response gold: read the % price change and the % quantity change off the stem, divide for PED, then state the revenue consequence. “Demand is inelastic (|PED| = 0.5), so the 10% price rise raises total revenue” earns analysis and application together.'
+    },
+
+    /* ================================================================
+       CARD 7 – PED IN THE REAL WORLD
+       Who uses it + short run vs long run + Marshall quote
+       ================================================================ */
+    {
+      id: 'ped_8',
+      stepLabel: 'Learn: Step 7 of 8',
+      title: 'PED in the real world',
       intro: 'PED determines who pays a tax, what firms charge, and whether government policy works as intended. It is the bridge between economic theory and practical decision-making.',
       economistQuote: {
         portraitKey: 'economistMarshall',
@@ -265,39 +348,61 @@ PED is <strong>always negative</strong> – price and quantity demanded move in 
         quote: 'The elasticity of demand in a market is great or small according as the amount demanded increases much or little for a given fall in price, and diminishes much or little for a given rise in price.',
         attribution: 'Alfred Marshall, <em>Principles of Economics</em> (1890)'
       },
-      steps: [
+      causesLabel: 'Who uses PED?',
+      causesEmoji: '🌍',
+      causes: [
         {
-          label: '1. Pricing decisions for firms',
-          text: 'Inelastic demand → raise price to grow revenue. Elastic demand → cut price. Apple (brand loyalty → inelastic) can charge a premium. Commodity markets (many identical rivals → elastic) are price-competitive with no pricing power.'
+          icon: '✈️',
+          head: 'Airlines & hotels',
+          body: 'Yield management: charge inelastic business travellers and peak-date bookers premium fares, while tempting elastic leisure customers with cheap advance and off-peak deals.'
         },
         {
-          label: '2. Total revenue strategy',
-          text: 'TR = P \xd7 Q. Firms with inelastic demand (tobacco, utilities, branded pharmaceuticals) can raise prices without large falls in revenue. Firms in elastic markets must compete on price or invest in differentiation to reduce elasticity.'
+          icon: '🏛️',
+          head: 'Government taxation',
+          body: 'Indirect taxes target inelastic goods (tobacco, alcohol, fuel): quantity barely falls, so revenue is large and stable – though the burden is often regressive.'
         },
         {
-          label: '3. Indirect taxes and tax incidence',
-          text: 'Inelastic demand + elastic supply → consumers bear most of the tax burden (e.g. cigarette duty: price rises significantly, quantity barely falls, revenue is large). Elastic demand + inelastic supply → firms absorb more of the tax through lower margins.'
+          icon: '🛒',
+          head: 'Supermarket promotions',
+          body: 'Price-cut promotions work on elastic goods where a small discount drives a big sales jump; staples with inelastic demand are rarely discounted deeply.'
         },
         {
-          label: '4. Business strategy and branding',
-          text: 'Differentiation, branding, loyalty schemes all reduce effective substitutes → make demand more inelastic → give pricing power. This is why firms invest heavily in brand identity: Apple, Dyson, and Premier League clubs all exploit relatively inelastic demand.'
+          icon: '🕑',
+          head: 'Peak & off-peak pricing',
+          body: 'Rail fares, energy tariffs and cinema tickets all split demand: inelastic peak users pay more, elastic off-peak users are lured by lower prices.'
+        }
+      ],
+      causes2Label: 'Short run vs long run',
+      causes2Emoji: '⏳',
+      causes2: [
+        {
+          tone: 'amber',
+          icon: '🔒',
+          head: 'Short run → more inelastic',
+          body: 'Consumers are locked into existing habits, contracts and equipment, so they cannot respond much to a price change at first.'
+        },
+        {
+          tone: 'green',
+          icon: '🔓',
+          head: 'Long run → more elastic',
+          body: 'Given time, substitutes emerge and behaviour adapts – petrol demand is inelastic today but more elastic as EVs and transport alternatives spread.'
         }
       ],
       keyTakeaway: {
         title: 'The big idea',
-        text: 'PED is not just theory – it explains why cigarettes are taxed heavily, why Apple charges premium prices, and why supermarkets offer loyalty cards. It is a practical tool for firms and governments alike.'
+        text: 'PED is not just theory – it explains why cigarettes are taxed heavily, why airlines fence off business fares, and why supermarkets discount some goods and not others. It is a practical tool for firms and governments alike.'
       },
       examEdge: 'Three-step chain for full marks: (1) State the PED for the product and its determinant. (2) Apply the TR rule or tax incidence rule. (3) Explain the consequence for the firm, consumer, or government. Example: “Demand for cigarettes is price inelastic (few substitutes, addictive). Therefore an indirect tax causes a large price rise with little fall in quantity. Most of the tax burden falls on smokers, and the government raises substantial revenue.”'
     },
 
     /* ================================================================
-       CARD 7 – EXAM SUMMARY
-       5 core facts, common mistakes, exam-ready checklist
+       CARD 8 – PED EXAM TOOLKIT
+       How to read → core facts → common mistakes → checklist
        ================================================================ */
     {
-      id: 'ped_7',
-      stepLabel: 'Learn: Step 7 of 7',
-      title: 'PED exam summary',
+      id: 'ped_9',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'PED exam toolkit',
       intro: 'The essentials to remember under pressure. Work through this checklist before your exam.',
       body: `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#059669;margin-bottom:10px;">① 5 Core Facts</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:8px;margin-bottom:22px;">
@@ -342,13 +447,18 @@ PED is <strong>always negative</strong> – price and quantity demanded move in 
     <div style="font-size:12px;color:#0B1426;line-height:1.55;">PED is always negative for normal goods. Show it in your calculation, then use |PED| to classify.</div>
   </div>
 </div>`,
+      stepsLabel: 'How to read a PED question',
+      stepsEmoji: '🧭',
       steps: [
-        { label: 'Define PED clearly', text: 'PED measures the responsiveness of quantity demanded to a change in the good’s own price, using the formula % ΔQD \xf7 % ΔP.' },
-        { label: 'Calculate accurately using % changes', text: 'Show each % change separately, then divide. Six steps visible = six opportunities for marks.' },
-        { label: 'Interpret the coefficient', text: 'State |PED|, compare to 1, classify as elastic/inelastic/unit elastic. Quote one decimal place.' },
-        { label: 'Apply to the product and context', text: 'Explain why this good has this PED using at least one determinant tied to the specific product.' },
-        { label: 'Link to revenue or policy consequences', text: 'State what happens to TR, who bears a tax, or how a firm should price. This is where evaluation marks sit.' }
+        { label: 'Identify the PED or the data', text: 'Spot the PED value in the stem, or read off the % price change and % quantity change you need to calculate it.' },
+        { label: 'Calculate accurately using % changes', text: 'Show each % change separately, then divide. Keep the sign, quote one decimal place – every visible step is a mark.' },
+        { label: 'Classify the coefficient', text: 'State |PED|, compare to 1, and label it elastic / inelastic / unit elastic.' },
+        { label: 'Apply to product, revenue or policy', text: 'Tie the value to a determinant of the product, then state what happens to total revenue, tax incidence, or pricing. This is where evaluation marks sit.' }
       ],
+      keyTakeaway: {
+        title: 'How to write it up',
+        text: 'Define → calculate (with sign) → classify (|PED| vs 1) → apply (determinant + revenue/tax/policy consequence). Four moves, full marks.'
+      },
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
@@ -544,4 +654,3 @@ PED is <strong>always negative</strong> – price and quantity demanded move in 
   };
 
 })();
-

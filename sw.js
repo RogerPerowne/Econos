@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v267';
+  const CACHE_NAME = 'econos-v268';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -50,6 +50,7 @@
     '/js/charts/specs/neg-externality-interactive.js',
     '/js/charts/specs/pos-externality-interactive.js',
     '/js/charts/specs/elastic-vs-inelastic-demand.js',
+    '/js/charts/specs/ped-linear-regions.js',
     '/js/charts/specs/elastic-vs-inelastic-supply.js',
     '/js/charts/specs/ad-slope.js',
     '/js/charts/specs/ad-movement-shift.js',

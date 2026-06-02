@@ -6,6 +6,37 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.33.0 — 2026-06-02
+
+### Price Elasticity of Demand — restructured to 8 cards with the visual family
+
+Reworked PED to match the new mockup designs, keeping the two excellent
+bespoke templates (step-through calculator, five-regime spectrum) and
+upgrading the rest to the established interactive / hub / panel visuals.
+
+- **Card 1 (big picture):** elastic-vs-inelastic two-chart hero +
+  three-category tinted tiles (elastic / unit / inelastic) + a
+  "why PED matters" row (pricing / revenue / tax).
+- **Card 2:** step-by-step PED calculator (unchanged bespoke template).
+- **Card 3:** five-regime coefficient spectrum (unchanged bespoke template).
+- **Card 4 (new interactive):** PED along a linear demand curve — step
+  through the elastic upper part → unit-elastic midpoint (TR max) →
+  inelastic lower part, on one straight-line demand curve. New engine
+  spec `ped-linear-regions.js` (`pedLinearRegions`).
+- **Card 5 (what makes demand elastic):** six-driver determinants hub
+  (`pedDriversHub`) + "one good, different PED" (insulin / restaurant
+  meals / petrol) + the predict-then-reveal product self-test.
+- **Card 6 (PED & total revenue):** elastic-vs-inelastic revenue panels
+  (`pedTotalRevenue`) + the TR rule tiles.
+- **Card 7 (real world):** who-uses-PED tiles (airlines & hotels /
+  government tax / supermarket promotions / peak & off-peak) + short-run
+  vs long-run + the Marshall quote.
+- **Card 8 (exam toolkit):** core facts + common mistakes + a
+  read-a-PED-question checklist (Identify / Calculate / Classify / Apply).
+
+The end-of-Learn-It quiz pool is unchanged. `sw.js` cache bumped to
+`econos-v268` for the new spec + icon visuals.
+
 ## 0.32.0 — 2026-06-02
 
 ### Price Determination — interactive family rolled out to cards 1, 3, 4

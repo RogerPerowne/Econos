@@ -11278,6 +11278,7 @@ window.ECONOS_ICONS = {
      Right: steep (inelastic) demand curve – small ΔQD for same ΔP
      ============================================================ */
   elasticVsInelasticDiagram: window.ECONOS_PPF.render(window.ECONOS_PED_ELASTIC_VS_INELASTIC_SPEC),
+  pedLinearRegions: window.ECONOS_PPF.render(window.ECONOS_PED_LINEAR_REGIONS_SPEC),
 
   elasticVsInelasticSupplyDiagram: window.ECONOS_PPF.render(window.ECONOS_PES_ELASTIC_VS_INELASTIC_SPEC),
 
@@ -14209,6 +14210,94 @@ window.ECONOS_ICONS = {
           </div>
         </div>
       </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     pedDriversHub — PED Card 5. "PED" at the centre with the six
+     determinants of elasticity around it. Mirror of
+     demandDeterminantsHub. Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  pedDriversHub: `
+    <div class="ped-hub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ped-hub .ph-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:188px; row-gap:14px; position:relative; z-index:1; }
+        .ped-hub .ph-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .ped-hub .ph-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .ped-hub .ph-tile { border-radius:12px; padding:11px 13px; display:flex; gap:10px; align-items:flex-start; }
+        .ped-hub .ph-ic { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .ped-hub .ph-t { font-size:13px; font-weight:800; line-height:1.2; }
+        .ped-hub .ph-s { font-size:11.5px; color:#475569; line-height:1.35; margin-top:2px; }
+        @media (max-width:560px){ .ped-hub .ph-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .ped-hub .ph-center{ position:static; transform:none; margin:8px auto; } .ped-hub .ph-center-wrap{ order:99; display:flex; justify-content:center; } .ped-hub .ph-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:680px;margin:0 auto;">
+        <svg class="ph-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="30" y1="17" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="70" y1="17" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="28" y1="50" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="72" y1="50" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="30" y1="83" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+          <line x1="70" y1="83" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
+        </svg>
+        <div class="ph-grid">
+          <div class="ph-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="ph-ic">🔄</div><div><div class="ph-t" style="color:#1E3A8A;">Close substitutes</div><div class="ph-s">More alternatives make switching easier — the biggest driver.</div></div></div>
+          <div class="ph-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;"><div class="ph-ic">🛒</div><div><div class="ph-t" style="color:#C2410C;">Necessity or luxury</div><div class="ph-s">Necessities tend to be inelastic; luxuries more elastic.</div></div></div>
+          <div class="ph-tile" style="background:#FFFBEB;border:1.5px solid #FCD34D;"><div class="ph-ic">💰</div><div><div class="ph-t" style="color:#B45309;">Share of income</div><div class="ph-s">Expensive items tend to have more elastic demand.</div></div></div>
+          <div class="ph-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;"><div class="ph-ic">⏱️</div><div><div class="ph-t" style="color:#5B21B6;">Time to adjust</div><div class="ph-s">Demand usually becomes more elastic over time.</div></div></div>
+          <div class="ph-tile" style="background:#FFF1F2;border:1.5px solid #FDA4AF;"><div class="ph-ic">🔒</div><div><div class="ph-t" style="color:#9F1239;">Habit &amp; addiction</div><div class="ph-s">Habitual or addictive goods are inelastic.</div></div></div>
+          <div class="ph-tile" style="background:#ECFDF5;border:1.5px solid #6EE7B7;"><div class="ph-ic">🌟</div><div><div class="ph-t" style="color:#065F46;">Brand loyalty</div><div class="ph-s">Strong brands feel irreplaceable → less responsive.</div></div></div>
+        </div>
+        <div class="ph-center-wrap"><div class="ph-center" style="background:#fff;border:2.4px solid #2563EB;border-radius:50%;width:150px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 14px rgba(37,99,235,0.18);">
+          <div style="font-size:24px;line-height:1;">🎯</div>
+          <div style="font-size:20px;font-weight:800;color:#1E3A8A;font-family:Fraunces,Georgia,serif;margin:2px 0 2px;">PED</div>
+          <div style="font-size:10.5px;color:#475569;text-align:center;line-height:1.3;">How sensitive demand is to price.</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     pedTotalRevenue — PED Card 6. The same 10% price cut on elastic
+     vs inelastic demand, traced to opposite revenue outcomes, with
+     before→after revenue boxes. Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  pedTotalRevenue: `
+    <div class="ped-tr" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ped-tr .tr-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        .ped-tr .tr-col { border-radius:14px; padding:14px 12px; }
+        .ped-tr .tr-h { font-size:14px; font-weight:800; text-align:center; }
+        .ped-tr .tr-sub { font-size:12px; font-weight:700; text-align:center; margin-bottom:10px; }
+        .ped-tr .tr-chain { display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; font-size:11.5px; font-weight:700; margin-bottom:10px; }
+        .ped-tr .tr-chip { background:#fff; border-radius:8px; padding:5px 8px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+        .ped-tr .tr-rev { background:#fff; border-radius:10px; padding:10px 12px; display:flex; align-items:center; justify-content:space-around; gap:6px; }
+        .ped-tr .tr-amt { font-size:18px; font-weight:800; }
+        .ped-tr .tr-lab { font-size:10px; color:#64748B; text-transform:uppercase; letter-spacing:0.04em; }
+        @media (max-width:560px){ .ped-tr .tr-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="tr-row">
+        <div class="tr-col" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="tr-h" style="color:#1E3A8A;">Elastic demand</div>
+          <div class="tr-sub" style="color:#2563EB;">PED &gt; 1</div>
+          <div class="tr-chain" style="color:#1E3A8A;"><span class="tr-chip">Price −10%</span><span>→</span><span class="tr-chip">Qty +25%</span><span>→</span><span class="tr-chip" style="color:#059669;">TR rises ▲</span></div>
+          <div class="tr-rev">
+            <div style="text-align:center;"><div class="tr-lab">Revenue before</div><div class="tr-amt" style="color:#1E3A8A;">£1,000</div></div>
+            <div style="font-size:16px;color:#94A3B8;">→</div>
+            <div style="text-align:center;"><div class="tr-lab">after</div><div class="tr-amt" style="color:#059669;">£1,125 ▲</div></div>
+          </div>
+        </div>
+        <div class="tr-col" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+          <div class="tr-h" style="color:#065F46;">Inelastic demand</div>
+          <div class="tr-sub" style="color:#059669;">PED &lt; 1</div>
+          <div class="tr-chain" style="color:#065F46;"><span class="tr-chip">Price −10%</span><span>→</span><span class="tr-chip">Qty +5%</span><span>→</span><span class="tr-chip" style="color:#DC2626;">TR falls ▼</span></div>
+          <div class="tr-rev">
+            <div style="text-align:center;"><div class="tr-lab">Revenue before</div><div class="tr-amt" style="color:#065F46;">£1,000</div></div>
+            <div style="font-size:16px;color:#94A3B8;">→</div>
+            <div style="text-align:center;"><div class="tr-lab">after</div><div class="tr-amt" style="color:#DC2626;">£945 ▼</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:#94A3B8;text-align:center;margin-top:10px;">Total revenue = price × quantity. A price cut helps revenue only if the quantity gain outweighs it (elastic).</div>
     </div>
   `,
 

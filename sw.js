@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v252';
+  const CACHE_NAME = 'econos-v253';
 
   const PRECACHE_ASSETS = [
     '/',
@@ -148,16 +148,27 @@
       return;
     }
 
-    // All other requests: cache-first, fallback to network
-    // …EXCEPT topic data files (/js/data/...) which must be network-first
-    // so that newly-deployed content (rebuilt quizzes, edited link data,
-    // updated topic JSON) reaches users without waiting for the cache to
-    // expire. Cache-first here meant a single stale data file could keep
-    // serving forever across multiple hard refreshes.
+    // All other requests: see strategy split below.
+    //
+    // NETWORK-FIRST for everything that is code or styling —
+    // /js/** (app.js, icons.js, every chart spec + dial engine) and
+    // any .css. These are the files we actively edit, and serving them
+    // cache-first made staleness depend entirely on remembering to bump
+    // CACHE_NAME on every deploy: miss one bump (or hit sw.js while it is
+    // still HTTP-cached) and returning users are pinned to the old build
+    // FOREVER — a hard refresh can't help because it doesn't bypass the
+    // service worker. Network-first means an online user always gets the
+    // current build; the browser's own HTTP cache + ETags keep unchanged
+    // files cheap (304), and the cache is only a fallback for offline.
+    // This is the same reasoning the topic data files already used.
+    //
+    // CACHE-FIRST stays only for genuinely static binaries (fonts,
+    // images, logos, manifest, favicon) that change rarely and benefit
+    // from instant serving.
     const url = new URL(request.url);
-    const isData = url.pathname.includes('/js/data/');
+    const freshFirst = url.pathname.startsWith('/js/') || url.pathname.endsWith('.css');
 
-    if (isData) {
+    if (freshFirst) {
       event.respondWith(
         fetch(request)
           .then((response) => {

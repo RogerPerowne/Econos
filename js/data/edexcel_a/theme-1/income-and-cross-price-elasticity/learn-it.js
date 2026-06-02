@@ -299,7 +299,7 @@ window.ECONOS_TOPIC = {
       title: 'Exam Summary: YED & XED',
       intro: 'Two formulas, two signs, four good types, three relationship types – here\'s the complete picture.',
       body: `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#059669;margin-bottom:10px;">① YED vs XED at a Glance</div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid #CBD5E1;border-radius:10px;overflow:hidden;margin-bottom:20px;font-size:12px;">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid #CBD5E1;border-radius:10px;overflow:hidden;margin-bottom:20px;font-size:12px;">
   <div style="background:#1E3A5F;color:#fff;font-weight:800;padding:8px 12px;">Dimension</div>
   <div style="background:#1E3A5F;color:#fff;font-weight:800;padding:8px 12px;">YED</div>
   <div style="background:#1E3A5F;color:#fff;font-weight:800;padding:8px 12px;">XED</div>

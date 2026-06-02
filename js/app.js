@@ -4724,6 +4724,7 @@
       <div class="card__step-label">${c.stepLabel || ''}</div>
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      ${c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
       <div class="pff-grid">${frames}</div>
       ${renderExamEdge(c.examEdge)}
     `;
@@ -4804,6 +4805,7 @@
       <div class="card__step-label">${c.stepLabel || ''}</div>
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      ${c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
       <div class="pff-grid">${frames}</div>
       ${renderExamEdge(c.examEdge)}
     `;

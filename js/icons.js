@@ -14563,13 +14563,13 @@ window.ECONOS_ICONS = {
         .pes-cc .cc-calc { background:#fff; border-radius:9px; padding:8px; text-align:center; font-size:13px; font-weight:800; margin:6px 0 8px; box-shadow:0 1px 2px rgba(11,20,38,0.06); }
         .pes-cc .cc-verdict { text-align:center; font-size:12.5px; font-weight:800; border-radius:8px; padding:6px; }
         .pes-cc .cc-spec { margin-top:16px; overflow-x:auto; }
-        .pes-cc .cc-srow { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; min-width:520px; text-align:center; }
-        .pes-cc .cc-scell { display:flex; flex-direction:column; align-items:center; }
-        .pes-cc .cc-sic { width:34px; height:34px; border-radius:50%; border:2px solid currentColor; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:900; margin-bottom:5px; }
-        .pes-cc .cc-sval { font-size:12px; font-weight:800; }
-        .pes-cc .cc-snm { font-size:11px; font-weight:800; margin-top:1px; }
-        .pes-cc .cc-sd { font-size:10px; color:#64748B; line-height:1.25; margin-top:2px; min-height:26px; }
-        .pes-cc .cc-bar { height:6px; border-radius:3px; margin:8px 8px 4px; min-width:520px; background:linear-gradient(90deg,#DC2626 0%,#D97706 28%,#CA8A04 50%,#059669 74%,#7C3AED 100%); }
+        .pes-cc .cc-srow { display:grid; grid-template-columns:repeat(5,1fr); gap:5px; text-align:center; }
+        .pes-cc .cc-scell { display:flex; flex-direction:column; align-items:center; min-width:0; }
+        .pes-cc .cc-sic { width:32px; height:32px; border-radius:50%; border:2px solid currentColor; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900; margin-bottom:5px; flex-shrink:0; }
+        .pes-cc .cc-sval { font-size:11px; font-weight:800; line-height:1.2; }
+        .pes-cc .cc-snm { font-size:11px; font-weight:800; margin-top:2px; line-height:1.2; }
+        .pes-cc .cc-sd { font-size:10px; color:#64748B; line-height:1.25; margin-top:3px; }
+        .pes-cc .cc-bar { height:6px; border-radius:3px; margin:8px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#D97706 28%,#CA8A04 50%,#059669 74%,#7C3AED 100%); }
         @media (max-width:560px){ .pes-cc .cc-row{ grid-template-columns:1fr; } }
       </style>
       <div class="cc-row">
@@ -14595,6 +14595,38 @@ window.ECONOS_ICONS = {
           <div class="cc-scell" style="color:#7C3AED;"><div class="cc-sic">∞</div><div class="cc-sval">PES = ∞</div><div class="cc-snm">Perfectly elastic</div><div class="cc-sd">Any amount supplied at one price</div></div>
         </div>
         <div class="cc-bar"></div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     pedClassifySpectrum — PED Card 3 (reading the coefficient). The
+     same five-point classification strip used on PES, relabelled for
+     demand: perfectly inelastic (0) → perfectly elastic (∞), with a
+     red → purple gradient bar. Renders as a banner above the detailed
+     five-frame grid. Scrolls horizontally on narrow screens.
+     ─────────────────────────────────────────────────────────────── */
+  pedClassifySpectrum: `
+    <div class="ped-spec" style="line-height:1.45;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ped-spec .ps-wrap { overflow-x:auto; }
+        .ped-spec .ps-row { display:grid; grid-template-columns:repeat(5,1fr); gap:5px; text-align:center; }
+        .ped-spec .ps-cell { display:flex; flex-direction:column; align-items:center; min-width:0; }
+        .ped-spec .ps-ic { width:32px; height:32px; border-radius:50%; border:2px solid currentColor; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900; margin-bottom:5px; flex-shrink:0; }
+        .ped-spec .ps-val { font-size:11px; font-weight:800; line-height:1.2; }
+        .ped-spec .ps-nm { font-size:11px; font-weight:800; margin-top:2px; line-height:1.2; }
+        .ped-spec .ps-d { font-size:10px; color:#64748B; line-height:1.25; margin-top:3px; }
+        .ped-spec .ps-bar { height:6px; border-radius:3px; margin:8px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#D97706 28%,#CA8A04 50%,#059669 74%,#7C3AED 100%); }
+      </style>
+      <div class="ps-wrap">
+        <div class="ps-row">
+          <div class="ps-cell" style="color:#DC2626;"><div class="ps-ic">−</div><div class="ps-val">PED = 0</div><div class="ps-nm">Perfectly inelastic</div><div class="ps-d">No response in demand</div></div>
+          <div class="ps-cell" style="color:#D97706;"><div class="ps-ic">◔</div><div class="ps-val">0 &lt; |PED| &lt; 1</div><div class="ps-nm">Inelastic</div><div class="ps-d">Demand changes less than price</div></div>
+          <div class="ps-cell" style="color:#CA8A04;"><div class="ps-ic">=</div><div class="ps-val">|PED| = 1</div><div class="ps-nm">Unit elastic</div><div class="ps-d">Demand changes in the same proportion</div></div>
+          <div class="ps-cell" style="color:#059669;"><div class="ps-ic">↗</div><div class="ps-val">|PED| &gt; 1</div><div class="ps-nm">Elastic</div><div class="ps-d">Demand changes more than price</div></div>
+          <div class="ps-cell" style="color:#7C3AED;"><div class="ps-ic">∞</div><div class="ps-val">PED = ∞</div><div class="ps-nm">Perfectly elastic</div><div class="ps-d">Any amount demanded at one price</div></div>
+        </div>
+        <div class="ps-bar"></div>
       </div>
     </div>
   `,

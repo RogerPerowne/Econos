@@ -134,6 +134,7 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Reading the PED coefficient',
       lede: 'Every demand curve sits somewhere on this spectrum. The larger the absolute value, the more responsive consumers are to price changes – and the more it matters for pricing and tax policy.',
+      visualKey: 'pedClassifySpectrum',
       frames: [
         {
           tone: 'rose',

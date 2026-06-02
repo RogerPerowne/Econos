@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.38.0 — 2026-06-02
+
+### Consumer & Producer Surplus — pedagogy pass
+
+- **Added a worked-calculation card** (new card 3, "Calculating CS, PS and
+  DWL"). The topic's stated outcome — *calculate CS, PS and deadweight
+  loss* — previously had no worked example. New `worked-example` card walks
+  through a linear D = 30 − 2Q / S = 6 + Q market: equilibrium → CS (£64m) →
+  PS (£32m) → total surplus (£96m) → DWL (£6m) from a £6 tax, all via
+  ½ × base × height. Topic is now 7 cards; step labels renumbered.
+- Trimmed card 2's exam-edge to remove the now-duplicated area formula and
+  signpost the new calculation card.
+- **Notation consistency:** the subsidy buyer price was labelled Pᵦ on card 5
+  (the interactive) but Pᶜ everywhere else (tax cards + the card-7 mini
+  diagram). Standardised on **Pᶜ** (consumer) across the subsidy chart and
+  its captions so the whole topic uses one symbol. `sw.js` cache bumped to
+  `econos-v287`.
+
 ## 0.37.6 — 2026-06-02
 
 ### CPS Card 1 — surplus chart now a side-by-side panel

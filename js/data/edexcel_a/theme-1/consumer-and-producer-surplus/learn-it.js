@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroSupplyDemand',
     summary: 'Consumer surplus is the benefit buyers receive above what they pay; producer surplus is the benefit sellers receive above their minimum. Together they measure total welfare – the gains from trade. Any policy that shifts price or quantity redistributes or destroys part of this surplus.',
-    doInThis: 'Work through 6 cards covering the definitions and diagrams for both surplus measures, how to calculate them, what happens to surplus under taxes and subsidies, and how surplus connects to allocative efficiency and market failure.',
+    doInThis: 'Work through 7 cards covering the definitions and diagrams for both surplus measures, how to calculate them, what happens to surplus under taxes and subsidies, and how surplus connects to allocative efficiency and market failure.',
     outcomes: [
       'Define consumer surplus and producer surplus and show both on a supply-demand diagram',
       'Calculate consumer surplus, producer surplus, and deadweight welfare loss',
@@ -17,7 +17,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Consumer surplus = area of triangle above price below demand curve. Producer surplus = area of triangle below price above supply curve. Both are maximised at the free-market equilibrium – any intervention that moves price away from equilibrium reduces total welfare unless it corrects a market failure.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'consumer_producer_surplus_1',
-      stepLabel: 'Learn: Step 1 of 6',
+      stepLabel: 'Learn: Step 1 of 7',
       title: 'Consumer & producer surplus: the big picture',
       tip: {
         icon: '📊',
@@ -75,7 +75,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_2',
-      stepLabel: 'Learn: Step 2 of 6',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Building the Surplus Diagram',
       tip: {
         icon: '💡',
@@ -109,11 +109,47 @@ window.ECONOS_TOPIC = {
       ],
       causesStyle: 'plain-white',
       causesLabel: null,
-      examEdge: '<strong>Key idea:</strong> Surplus is always measured relative to the equilibrium price. If the diagram changes, redraw the new equilibrium before discussing surplus.<br><br><strong>Numerical questions:</strong> Area of triangle = ½ × base × height. For CS: height = (D-axis intercept) − P<sub>e</sub>, base = Q<sub>e</sub>. For PS: height = P<sub>e</sub> − (S-axis intercept), base = Q<sub>e</sub>. When a tax is introduced, remember three things happen: CS falls, PS falls, government gains revenue – but CS + PS lost > revenue gained, leaving the DWL as the net efficiency cost.'
+      examEdge: '<strong>Key idea:</strong> Surplus is always measured relative to the equilibrium price. If the diagram changes, redraw the new equilibrium before discussing surplus. Each area is a triangle — <strong>½ × base × height</strong>, with the base running along Qₑ. The next card works a full numerical example: CS, PS, total surplus, and the deadweight loss from a tax.'
+    },
+    {
+      id: 'consumer_producer_surplus_calc',
+      template: 'worked-example',
+      stepLabel: 'Learn: Step 3 of 7',
+      title: 'Worked Example: Calculating CS, PS and DWL',
+      scenario: 'A competitive market has demand <strong>P = 30 − 2Q</strong> and supply <strong>P = 6 + Q</strong> (price in £, quantity in millions of units). Work out consumer surplus, producer surplus, total surplus — then the deadweight loss if a £6 per-unit tax is imposed.<br><br>Every surplus area is a triangle: <strong>area = ½ × base × height</strong>.',
+      steps: [
+        {
+          prompt: 'Step 1 – Find the equilibrium (Pₑ, Qₑ)',
+          hint: 'Set demand equal to supply and solve for Q, then substitute back for P.',
+          answer: '30 − 2Q = 6 + Q → 24 = 3Q → <strong>Qₑ = 8</strong>. Price: P = 6 + 8 = <strong>Pₑ = £14</strong> (check: 30 − 2×8 = 14 ✓).'
+        },
+        {
+          prompt: 'Step 2 – Consumer surplus',
+          hint: 'CS is the triangle above Pₑ and below demand. Base = Qₑ; height = (demand price-axis intercept) − Pₑ. The demand intercept is the price where Q = 0.',
+          answer: 'Demand intercept (Q = 0): P = £30. Height = 30 − 14 = 16. <strong>CS = ½ × 8 × 16 = £64m</strong>.'
+        },
+        {
+          prompt: 'Step 3 – Producer surplus',
+          hint: 'PS is the triangle below Pₑ and above supply. Base = Qₑ; height = Pₑ − (supply price-axis intercept). The supply intercept is the price where Q = 0.',
+          answer: 'Supply intercept (Q = 0): P = £6. Height = 14 − 6 = 8. <strong>PS = ½ × 8 × 8 = £32m</strong>.'
+        },
+        {
+          prompt: 'Step 4 – Total surplus',
+          hint: 'Total (social) surplus = CS + PS.',
+          answer: 'TS = 64 + 32 = <strong>£96m</strong> — the maximum possible, because the free market clears at Qₑ.'
+        },
+        {
+          prompt: 'Step 5 – Deadweight loss from a £6 per-unit tax',
+          hint: 'A tax opens a £6 wedge between the demand and supply prices, cutting output. Find the new Q where (demand price − supply price) = 6, then DWL = ½ × (fall in Q) × tax.',
+          answer: 'Wedge: (30 − 2Q) − (6 + Q) = 6 → 24 − 3Q = 6 → <strong>Q falls to 6</strong>. Output drops by 8 − 6 = 2. <strong>DWL = ½ × 2 × £6 = £6m</strong> — surplus from trades that no longer happen.'
+        }
+      ],
+      conclusion: 'CS = £64m, PS = £32m, total surplus = <strong>£96m</strong>. A £6 tax shrinks output to 6m units and destroys <strong>£6m</strong> of welfare (the deadweight loss) — on top of the surplus it transfers to the government.',
+      examEdge: 'Every surplus is <strong>½ × base × height</strong>. For CS and PS the base is always Qₑ; the height is the vertical gap from Pₑ to the relevant curve\'s price-axis intercept. For a <strong>DWL</strong> triangle the base is the <em>fall in quantity</em> and the height is the <em>wedge</em> (the tax, or the gap between demand and supply prices at the restricted output). Always state units and show the ½ × base × height working — examiners award method marks.'
     },
     {
       id: 'consumer_producer_surplus_3',
-      stepLabel: 'Learn: Step 3 of 6',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'How Taxes Affect Surplus',
       tip: {
         icon: '💡',
@@ -167,7 +203,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_4',
-      stepLabel: 'Learn: Step 4 of 6',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'How Subsidies Affect Surplus',
       tip: {
         icon: '💡',
@@ -191,14 +227,14 @@ window.ECONOS_TOPIC = {
             label: 'Subsidy shifts supply',
             tone: 'amber',
             head: 'The subsidy wedge',
-            body: 'S shifts down by the subsidy amount. Buyers now pay P<sub>b</sub>; sellers receive P<sub>s</sub> = P<sub>b</sub> + subsidy. Output rises from Q<sub>e</sub> to Q<sub>s</sub>.',
-            analysis: 'The vertical gap P<sub>s</sub> − P<sub>b</sub> equals the per-unit subsidy. As with a tax, <strong>incidence</strong> depends on relative elasticity: the more <em>inelastic</em> side captures more of the subsidy benefit. Quantity always rises because at every quantity the price sellers receive now exceeds the price buyers pay by the subsidy.'
+            body: 'S shifts down by the subsidy amount. Buyers now pay P<sub>c</sub>; sellers receive P<sub>s</sub> = P<sub>c</sub> + subsidy. Output rises from Q<sub>e</sub> to Q<sub>s</sub>.',
+            analysis: 'The vertical gap P<sub>s</sub> − P<sub>c</sub> equals the per-unit subsidy. As with a tax, <strong>incidence</strong> depends on relative elasticity: the more <em>inelastic</em> side captures more of the subsidy benefit. Quantity always rises because at every quantity the price sellers receive now exceeds the price buyers pay by the subsidy.'
           },
           {
             label: 'Surplus & gov. cost',
             tone: 'green',
             head: 'CS and PS expand; the government pays',
-            body: 'CS (blue) and PS (amber) are both larger than at the free-market equilibrium. The green rectangle = government spending = (P<sub>s</sub> − P<sub>b</sub>) × Q<sub>s</sub>.',
+            body: 'CS (blue) and PS (amber) are both larger than at the free-market equilibrium. The green rectangle = government spending = (P<sub>s</sub> − P<sub>c</sub>) × Q<sub>s</sub>.',
             analysis: 'The subsidy is funded by taxpayers, so the gain to buyers and sellers comes at a public cost. Total private surplus rises by less than the cost of the subsidy: the difference is welfare that is <em>spent</em> but not received by anyone in the market. Evaluation hinges on whether the wider social benefit (e.g. equity, externality correction) justifies that gap.'
           },
           {
@@ -221,7 +257,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_5',
-      stepLabel: 'Learn: Step 5 of 6',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Surplus and Allocative Efficiency',
       tip: {
         icon: '💡',
@@ -257,7 +293,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_6',
-      stepLabel: 'Learn: Step 6 of 6',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Surplus in the Real World',
       tip: {
         icon: '📊',

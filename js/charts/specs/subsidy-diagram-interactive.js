@@ -66,7 +66,7 @@
         ],
         texts: [
           { x: 0.690, y: 0.557, text: 'S – subsidy', tone: 'amber', bold: true, fontSize: 12, anchor: 'start' },
-          { x: -0.020, y: Eq.y,  text: 'Pᵦ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
+          { x: -0.020, y: Eq.y,  text: 'Pᶜ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: -0.020, y: Eq.ps, text: 'Pₛ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
           { x: Eq.x,   y: -0.055, text: 'Qₛ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' }
         ]

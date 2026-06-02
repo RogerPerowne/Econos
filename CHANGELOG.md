@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.2 — 2026-06-02
+
+### Consumer & Producer Surplus Card 1 — modernised the surplus diagram
+
+- Reworked the `cpsDiagram` spec to match the polished welfareSurplusDiagram
+  styling: taller aspect (480×420 vs the old flat 600×320), thicker D / S
+  curves, engine-traced `welfareRegions` at a subtle 0.18 opacity (replacing
+  the heavy hand-coded 0.85 polygon fills), and a clear E marker with
+  Pₑ / Qₑ leaders. Kept the demand/supply labels (not MB/MC) since this is
+  the market-exchange intro card. `sw.js` cache bumped to `econos-v282`.
+
 ## 0.37.1 — 2026-06-02
 
 ### Price Mechanism Card 3 — modern rationing chart

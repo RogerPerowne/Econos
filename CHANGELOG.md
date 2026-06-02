@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.38.2 — 2026-06-02
+
+### Indirect Taxes & Subsidies Card 4 — wide layout
+
+- Switched the elasticity-incidence interactive to the `wide: true` layout:
+  the twin inelastic/elastic chart now spans full width on top (much
+  clearer than the cramped left column), and each view's description sits
+  in a clean bordered box below it — with the "Analysis" subsection only
+  where a view actually has deeper analysis. `sw.js` cache bumped to
+  `econos-v289`.
+
 ## 0.38.1 — 2026-06-02
 
 ### Indirect Taxes & Subsidies Card 1 — un-clip the S+T curve labels

@@ -120,26 +120,20 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'demand_4',
-      template: 'framing',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Shifts in demand',
-      tip: { icon: '✅', tone: 'green', text: 'When a non-price factor changes, the whole demand curve shifts left or right – more or less is demanded at every price.' },
+      lede: 'When a non-price factor changes, the WHOLE demand curve shifts – more or less is demanded at every price. Step through an increase and a decrease.',
+      diagramAside: true,
       diagramKey: 'demandShifts',
       diagramLabel: 'Increase and decrease',
       diagramEmoji: '📊',
-      causes: [
-        { tone: 'green',  icon: '🛒', head: 'Demand increases', body: 'The curve shifts right (D₁ → D₂): at each price, consumers buy more.' },
-        { tone: 'purple', icon: '🛍️', head: 'Demand decreases', body: 'The curve shifts left (D₁ → D₃): at each price, consumers buy less.' }
+      steps: [
+        { key: 'base', label: 'Starting point', text: 'We begin on demand curve <strong>D₁</strong>. At each price, consumers buy the quantity shown by the curve.' },
+        { key: 'incr', label: 'Shift right (increase)', text: 'A favourable non-price change – higher income, stronger tastes, a dearer substitute – shifts demand right to <strong>D₂</strong>. At <em>every</em> price, more is demanded.' },
+        { key: 'decr', label: 'Shift left (decrease)', text: 'An adverse change – lower income, weaker tastes, a dearer complement – shifts demand left to <strong>D₃</strong>. At <em>every</em> price, less is demanded.' }
       ],
-      causesLabel: 'Increase vs decrease',
-      causesEmoji: '↔️',
-      causesStyle: 'tinted-flat',
-      causes2Cols: 2,
-      note: {
-        tone: 'blue', icon: 'ℹ️', head: 'Not a shift',
-        text: 'If only the good’s own price changes, we <strong>move along</strong> D₁. The curve <strong>shifts</strong> only when another determinant changes.'
-      },
-      examEdge: 'Always state whether the question describes a <strong>movement along</strong> the curve or a <strong>shift</strong> of the curve before you explain the outcome.'
+      examEdge: 'A shift is <strong>not</strong> the same as a movement along the curve: only the good’s own price moves us along D₁. Always state whether the question describes a movement or a shift before you explain the outcome.'
     },
 
     /* ================================================================

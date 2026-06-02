@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.24.0 — 2026-06-02
+
+### Specialisation & Money — visual upgrade pass
+
+Folded the strongest ideas from a ChatGPT visual set into the topic,
+keeping our 8-card spine and the (b)-vs-(c) distinction the spec
+examines. Three new heroes in `js/icons.js`, all responsive (stack on
+mobile):
+
+- **`specialisationGainsCompare`** (Card 1) — quantified
+  self-sufficiency (20 units) → specialisation (300 units) panels,
+  replacing the abstract opening flow with a concrete output gain.
+- **`barterTriangle`** (Card 5) — Baker/Fisher/Shoemaker hub-and-spoke
+  with Has/Wants pills, a central "double coincidence of wants" node
+  and a red ✕ on every pairwise edge; makes the deadlock visible.
+- **`goodMoneyScorecard`** (Card 7) — scored matrix (six
+  characteristics × shells/gold/notes, ✓/◑/✕) with a Score row
+  (2/6 · 6/6 · 5/6), replacing the old shells/livestock verdict.
+
+Card 8 (synthesis) rebuilt as an evidence-then-verdict: a 6-step
+specialisation→living-standards chain, a rose "Don't forget the limits"
+block, and a green/rose two-column "Final judgement". The scarcity
+weak-spot on `goodMoneyScorecard` now ties directly to the inflation
+point. SW cache bumped to v256 (icons.js changed).
+
 ## 0.23.1 — 2026-06-01
 
 ### 1.2.1 Rational Decision Making — content authored

@@ -14397,7 +14397,7 @@ window.ECONOS_ICONS = {
   xedRelationshipHub: `
     <div class="xed-hub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .xed-hub .xh-top { display:grid; grid-template-columns:1fr 1fr; gap:150px; position:relative; }
+        .xed-hub .xh-top { display:grid; grid-template-columns:1fr 1fr; column-gap:150px; row-gap:0; position:relative; }
         .xed-hub .xh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .xed-hub .xh-card { border-radius:13px; padding:12px 13px; }
         .xed-hub .xh-h { font-size:13px; font-weight:800; display:flex; align-items:center; gap:7px; }

@@ -30,12 +30,12 @@ window.ECONOS_TOPIC = {
       tip: { icon: '💡', tone: 'blue', text: '<em>In a market economy, resources are scarce but wants are unlimited.</em><br><strong>How do prices help decide what gets produced, how much, and who gets it?</strong><br>The price mechanism performs three core functions that keep the economy coordinated and efficient.' },
       framework: {
         label: 'The Price Mechanism: 3 Core Functions',
+        priceSource: { title: 'PRICE', sub: 'moves up ↑ / down ↓' },
         tiles: [
-          { tone: 'green', icon: '📡', title: 'Signalling', body: 'Changing prices give information about scarcity and consumer demand.' },
-          { tone: 'amber', icon: '🏃', title: 'Incentive',  body: 'Rising prices encourage producers and consumers to change behaviour.' },
-          { tone: 'blue',  icon: '👥', title: 'Rationing',  body: 'Prices allocate scarce goods to those willing and able to pay.' }
-        ],
-        diagramKey: 'priceMechanismFlow'
+          { tone: 'green', icon: '📡', title: 'Signalling', body: 'Changing prices give information about scarcity and consumer demand.', rule: '↑P = scarcer · ↓P = abundant' },
+          { tone: 'amber', icon: '🏃', title: 'Incentive',  body: 'Rising prices encourage producers and consumers to change behaviour.', rule: '↑P → produce more · ↓P → less' },
+          { tone: 'blue',  icon: '👥', title: 'Rationing',  body: 'Prices allocate scarce goods to those willing and able to pay.', rule: 'scarce goods → willing &amp; able' }
+        ]
       },
       economistQuote: {
         portraitKey: 'economistHayek',

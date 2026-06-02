@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.0 — 2026-06-02
+
+### Price Mechanism Card 1 — merged the two function visuals into one
+
+- Card 1 previously showed the three core functions twice: the styled
+  framework tiles AND a separate hub-and-spoke diagram (`priceMechanismFlow`)
+  below them. Merged into a single visual: a dark **PRICE** source box on
+  top fans three dashed arrows down into the Signalling / Incentive /
+  Rationing tiles, and each tile now carries the detail rule that used to
+  live in the hub circles (`↑P = scarcer · ↓P = abundant`, `↑P → produce
+  more · ↓P → less`, `scarce goods → willing & able`).
+- `framework` renderer gained two optional fields: `priceSource`
+  (`{ title, sub }` — the dark header box + auto-generated fan connector to
+  each tile) and per-tile `rule` (a pill line pinned to the tile bottom).
+  `sw.js` cache bumped to `econos-v280`.
+
 ## 0.36.7 — 2026-06-02
 
 ### YED & XED Card 9 — "How to read the question" as a flow chain

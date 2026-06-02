@@ -6,6 +6,42 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.25.0 — 2026-06-02
+
+### Economic Systems (1.1.6) — full restructure
+
+Rebuilt the topic from 7 cards to 8, closing the spec (a) gap (the
+distinction "with reference to Adam Smith, Friedrich Hayek and Karl
+Marx" — Marx was previously absent entirely) and folding in the
+strongest ideas from a ChatGPT visual set. New card order: big
+picture → the three thinkers → how a free market works → how a command
+economy works → why economies are mixed → comparing the systems →
+Russia vs China → the whole story.
+
+Five new responsive heroes in `js/icons.js` (all stack on mobile):
+
+- **`economicSystemsBigPicture`** (Card 1) — a three-questions hub
+  (what / how / for-whom radiating from "every economy") above the
+  market↔state spectrum (free market · mixed · command on a
+  green→blue→rose ribbon).
+- **`economicThinkersThree`** (Card 2, spec a) — Smith / Hayek / Marx
+  with real portrait photos (new `marx.png` asset + `economistMarx`),
+  each thinker's stance and a pull-quote. The thinker→system mapping
+  below renders as stacked rows.
+- **`economicCommandPlanning`** (Card 4) — a hub-and-spoke planning
+  diagram: the government sets priorities, the plan fans down to four
+  process steps.
+- **`economicMixedWhoDoesWhat`** (Card 5, spec c) — two icon-tile
+  panels contrasting what markets allocate with what government
+  provides or shapes.
+- **`economicSystemsScorecard`** (Card 6) — a six-dimension trade-off
+  matrix (choice / incentives / equity / state control / flexibility /
+  provision) with fill bars per system.
+
+Card 8 (synthesis) follows the shared chain → limits → final-judgement
+pattern. Topic palette standardised: free market = green, mixed = blue,
+command = rose. SW cache bumped to v257.
+
 ## 0.24.0 — 2026-06-02
 
 ### Specialisation & Money — visual upgrade pass

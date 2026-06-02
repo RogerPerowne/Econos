@@ -4179,6 +4179,35 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .ad-svg .layer-legend-shift { opacity: 1; }
 .show-shift .ad-svg .layer-shift { opacity: 1; }
 
+/* ===== Interactive demand family (cards 1–4) =====
+   Opt-in aside layout: chart on the left, step tabs + the per-state
+   description on the right (desktop); stacks below on mobile. Applied
+   via .ad-interactive--aside when a card sets diagramAside. */
+@media (min-width: 760px) {
+  .ad-interactive--aside {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    grid-template-areas: "diagram tabs" "diagram panel";
+    grid-template-rows: auto 1fr;
+    column-gap: var(--sp-4);
+    align-items: start;
+  }
+  .ad-interactive--aside .ad-interactive__diagram { grid-area: diagram; align-self: start; }
+  .ad-interactive--aside .ad-interactive__tabs { grid-area: tabs; margin: 0; }
+  .ad-interactive--aside .ad-interactive__panels { grid-area: panel; }
+}
+
+/* Shifts diagram (.dshift-svg) — states: base / incr / decr.
+   Each state's layer is self-contained (base D₁ solid; incr = dashed D₁
+   + green D₂; decr = dashed D₁ + red D₃), so we just fade whole layers. */
+.dshift-svg .layer-base { opacity: 1; transition: opacity 0.3s ease; }
+.dshift-svg .layer-incr,
+.dshift-svg .layer-decr { opacity: 0; transition: opacity 0.3s ease; }
+.show-incr .dshift-svg .layer-base { opacity: 0; }
+.show-incr .dshift-svg .layer-incr { opacity: 1; }
+.show-decr .dshift-svg .layer-base { opacity: 0; }
+.show-decr .dshift-svg .layer-decr { opacity: 1; }
+
 /* ===== PPF INTERACTIVE — layer visibility ===== */
 /* Visible by default (base state) */
 .ppf-svg .layer-axes,

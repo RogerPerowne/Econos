@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.28.0 — 2026-06-02
+
+### Demand — interactive shifts chart (family template)
+
+Card 4 (shifts) is now an interactive diagram: step through Starting
+point → Shift right (increase) → Shift left (decrease), with the chart
+on the left and the per-state description on the right (desktop),
+stacking on mobile. Blue D₁ baseline; green D₂ for an increase, red D₃
+for a decrease, each with a dashed directional arrow.
+
+New shared infra (reused by the rest of the demand chart family next):
+- `.ad-interactive--aside` layout variant (opt-in via `diagramAside`)
+  — chart left, tabs + description right on desktop, stacked on mobile.
+- `dshift-svg` layer state machine (base / incr / decr) in styles.css.
+- `demand-card4.js` rewritten as a layered interactive spec.
+
+SW cache → v261.
+
 ## 0.27.1 — 2026-06-02
 
 ### Demand — shifts chart refinement

@@ -1549,8 +1549,8 @@
         const ring = triple ? 52 : 64;
         const pad = triple ? '20px 14px 18px' : '24px 20px 22px';
         return `
-          <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:${pad};text-align:center;">
-            <div style="width:${ring}px;height:${ring}px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:${triple ? 26 : 30}px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);">${side.icon || ''}</div>
+          <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:${pad};text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <div style="width:${ring}px;height:${ring}px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:${triple ? 26 : 30}px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);flex-shrink:0;">${side.icon || ''}</div>
             <div style="font-size:${triple ? 15 : 17}px;font-weight:800;color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
             ${side.value ? `<div style="font-size:22px;font-weight:800;color:#0B1426;margin-bottom:8px;">${side.value}</div>` : ''}
             ${side.caption ? `<div style="font-size:${triple ? 12.5 : 13.5}px;color:${t.label};line-height:1.5;font-weight:600;">${side.caption}</div>` : ''}

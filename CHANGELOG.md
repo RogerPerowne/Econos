@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.30.0 — 2026-06-02
+
+### Supply (1.2.4) — restructure to mirror Demand + interactive chart family
+
+Rebuilt Supply as the mirror of Demand: 7 on-spec cards (big picture →
+why the curve slopes up → movements → shifts → what shifts supply →
+costs/productivity/tax → exam toolkit), dropping the off-spec drift
+(Producer Surplus → 1.2.7, "supply in context", joint/competing supply).
+
+Cards 1–4 are the interactive chart family (chart left, description
+right, step buttons below; stacks on mobile) on an UPWARD curve:
+- **Card 1 (big picture):** the curve → lower price (A, £6→20) → higher
+  price (B, £10→40).
+- **Card 2 (slope up):** price steps up A→B→C, one reason per step —
+  profit incentive, rising marginal cost, higher-cost producers join.
+- **Card 3 (movements):** reference point B; extension up to C (price
+  rises) / contraction down to A (price falls).
+- **Card 4 (shifts):** S₁ baseline → green S₂ (increase, right) → red S₃
+  (decrease, left), green/red convention matching Demand.
+
+Specs `supply-card1/2/4` rewritten as layered interactive specs and a
+new `supply-card7.js` added (slope card) — wired into the three shells
+and the SW precache. Two new HTML heroes: `supplyDeterminantsHub` (six
+conditions of supply) and `supplyCostFactors` (cost-side changes +
+policy/efficiency). Icon keys renamed to `supplyBigPicture` /
+`supplySlopeCurve` / `supplyMovements` / `supplyShifts`. Snapshots
+updated. SW cache → v265.
+
 ## 0.29.0 — 2026-06-02
 
 ### Demand — interactive chart family rolled out to cards 1–3

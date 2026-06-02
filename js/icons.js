@@ -13982,7 +13982,7 @@ window.ECONOS_ICONS = {
         .mu-comp .mu-lvl { font-size:12px; font-weight:800; }
         .mu-comp .mu-mid { text-align:center; padding:0 4px; }
         .mu-comp .mu-mid-c { width:46px; height:46px; border-radius:50%; background:#F1F5F9; border:1.5px solid #CBD5E1; display:flex; align-items:center; justify-content:center; font-size:20px; margin:0 auto 6px; }
-        @media (max-width:560px){ .mu-comp .mu-row{ grid-template-columns:1fr; } .mu-comp .mu-mid{ transform:rotate(90deg); margin:10px 0; } }
+        @media (max-width:560px){ .mu-comp .mu-row{ grid-template-columns:1fr; } .mu-comp .mu-mid{ margin:10px 0; } .mu-comp .mu-arrow{ transform:rotate(90deg); } }
       </style>
       <div class="mu-row">
         <div class="mu-panel" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
@@ -13995,7 +13995,7 @@ window.ECONOS_ICONS = {
         <div class="mu-mid">
           <div class="mu-mid-c">💷</div>
           <div style="font-size:11px;font-weight:700;color:#334155;line-height:1.3;">Shift spending to the higher MU per £</div>
-          <div style="font-size:20px;color:#2563EB;margin-top:4px;">→</div>
+          <div class="mu-arrow" style="font-size:20px;color:#2563EB;margin-top:4px;display:inline-block;">→</div>
         </div>
         <div class="mu-panel" style="background:#FFFBEB;border:1.5px solid #FCD34D;">
           <div class="mu-ic">☕</div>

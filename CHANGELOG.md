@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.6 — 2026-06-02
+
+### CPS Card 1 — surplus chart now a side-by-side panel
+
+- Card 1's surplus diagram was a lonely full-width chart with no
+  description beside it. Wrapped it in a side-by-side `diagramPanel`
+  (`layout: 'side'`) — the fully-shaded `cpsDiagram` (identical to card 2's
+  final build state) on the left, with three annotations beside it
+  (consumer surplus triangle, producer surplus triangle, total surplus =
+  CS + PS at E). Matches the card 5 chart-and-text pattern. `sw.js` cache
+  bumped to `econos-v286`.
+
 ## 0.37.5 — 2026-06-02
 
 ### CPS Card 2 — taller build chart to match the rest of the topic

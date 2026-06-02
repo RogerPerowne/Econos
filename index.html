@@ -34,7 +34,13 @@
   <link rel="canonical" href="https://econos.co.uk/">
 
   <script src="/js/auth-check.js"></script>
-  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
+  <!-- updateViaCache:'none' forces the browser to revalidate /sw.js against
+       the network on every update check instead of trusting its HTTP cache.
+       Without it, a CACHE_NAME bump (or any sw.js change) could sit behind
+       GitHub Pages' cache and not reach returning users — the root of the
+       "stale build returns after a hard refresh" problem, since a hard
+       refresh never bypasses the service worker. -->
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' });</script>
 </head>
 <body>
 

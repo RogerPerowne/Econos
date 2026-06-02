@@ -21,7 +21,7 @@
   var E0 = { x: 0.544, y: 0.478 };
 
   window.ECONOS_TAX_TYPES_INTERACTIVE_SPEC = {
-    width: 440,
+    width: 520,
     height: 300,
     chartArea: { x: 55, y: 18, width: 360, height: 247 },
     className: 'tax-types-interactive-svg',
@@ -53,7 +53,7 @@
       { d: 'M 0.069,0.117 L 0.944,1.077',
         tone: 'amber', label: 'S + T% (ad valorem)', strokeWidth: 2.2,
         dashed: '7 4',
-        labelDx: -10, labelDy: -8, anchor: 'end',
+        labelDx: -10, labelDy: 18, anchor: 'end',
         layer: 'idl-2' }
     ],
 

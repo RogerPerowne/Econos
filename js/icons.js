@@ -11537,6 +11537,7 @@ window.ECONOS_ICONS = {
      amber economist insight box. */
   economistAdamSmith:      '<img src="/assets/economists/smith.png"      alt="Adam Smith"        style="max-width:100%;max-height:100%;object-fit:contain;">',
   economistMarshall:       '<img src="/assets/economists/marshall.png"   alt="Alfred Marshall"   style="max-width:100%;max-height:100%;object-fit:contain;">',
+  economistMarx:           '<img src="/assets/economists/marx.png"       alt="Karl Marx"         style="max-width:100%;max-height:100%;object-fit:contain;">',
   economistPigou:          '<img src="/assets/economists/pigou.png"      alt="Arthur Pigou"      style="max-width:100%;max-height:100%;object-fit:contain;">',
   economistHayek:          '<img src="/assets/economists/hayek.png"      alt="Friedrich Hayek"   style="max-width:100%;max-height:100%;object-fit:contain;">',
   economistDanielKahneman: '<img src="/assets/economists/kahneman.png"   alt="Daniel Kahneman"   style="max-width:100%;max-height:100%;object-fit:contain;">',
@@ -13624,6 +13625,286 @@ window.ECONOS_ICONS = {
         <div class="ms-cell ms-score" style="background:#0B1426;color:#6EE7B7;border-bottom:none;">5 / 6</div>
       </div>
       <div style="font-size:11px;color:#94A3B8;text-align:center;margin-top:6px;">✓ meets it · ◑ partly · ✕ fails it &nbsp;·&nbsp; score counts full passes</div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     economicSystemsBigPicture — Economic Systems Card 1. Two-part
+     hero: (a) a three-questions hub (What/How/For-whom radiating from
+     "every economy") and (b) the market↔state spectrum, three tone
+     circles riding a green→blue→rose ribbon. HTML+SVG hybrid
+     (barterTriangle pattern): connector layer behind, positioned
+     nodes, stacks on mobile. Topic palette: FM green, mixed blue,
+     command rose.
+     ─────────────────────────────────────────────────────────────── */
+  economicSystemsBigPicture: `
+    <div class="es-big" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px 18px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .es-big .eb-cap { font-size:11px; font-weight:800; letter-spacing:1px; color:#475569; text-transform:uppercase; margin:2px 0 4px; }
+        .es-big .eb-hub { position:relative; max-width:430px; height:262px; margin:0 auto 8px; }
+        .es-big .eb-node { position:absolute; width:116px; text-align:center; }
+        .es-big .eb-top { top:0; left:50%; transform:translateX(-50%); }
+        .es-big .eb-left { bottom:0; left:0; }
+        .es-big .eb-right { bottom:0; right:0; }
+        .es-big .eb-center { position:absolute; top:54%; left:50%; transform:translate(-50%,-50%); width:104px; text-align:center; }
+        .es-big .eb-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+        .es-big .eb-circ { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:25px; margin:0 auto 5px; }
+        .es-big .eb-ql { font-size:12.5px; font-weight:800; line-height:1.2; }
+        .es-big .eb-qs { font-size:11px; color:#64748B; line-height:1.3; }
+        .es-big .eb-ribbon { position:relative; max-width:520px; margin:6px auto 0; padding-top:6px; }
+        .es-big .eb-bar { height:12px; border-radius:6px; background:linear-gradient(90deg,#34D399,#60A5FA,#FB7185); margin:34px 24px 0; box-shadow:0 1px 4px rgba(0,0,0,0.08); }
+        .es-big .eb-sys-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:-46px; position:relative; }
+        .es-big .eb-sys { text-align:center; }
+        .es-big .eb-sys-c { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 6px; box-shadow:0 2px 8px rgba(0,0,0,0.14); }
+        .es-big .eb-axis { display:flex; justify-content:space-between; font-size:11.5px; font-weight:700; margin:8px 6px 0; }
+        @media (max-width:560px){
+          .es-big .eb-hub{ height:auto; display:flex; flex-direction:column; gap:10px; align-items:center; }
+          .es-big .eb-node,.es-big .eb-center,.es-big .eb-top,.es-big .eb-left,.es-big .eb-right{ position:static; transform:none; width:100%; }
+          .es-big .eb-conn{ display:none; }
+          .es-big .eb-center{ order:-1; }
+          .es-big .eb-bar{ display:none; }
+          .es-big .eb-sys-row{ grid-template-columns:1fr; margin-top:8px; gap:12px; }
+          .es-big .eb-axis{ display:none; }
+        }
+      </style>
+
+      <div class="eb-cap">The three questions every economy answers</div>
+      <div class="eb-hub">
+        <svg class="eb-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="50" y1="20" x2="50" y2="46" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
+          <line x1="45" y1="58" x2="17" y2="85" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
+          <line x1="55" y1="58" x2="83" y2="85" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
+        </svg>
+        <div class="eb-node eb-top">
+          <div class="eb-circ" style="background:#EFF6FF;border:1.5px solid #93C5FD;">🛒</div>
+          <div class="eb-ql" style="color:#1E3A8A;">What to produce?</div>
+          <div class="eb-qs">Which goods and services.</div>
+        </div>
+        <div class="eb-node eb-left">
+          <div class="eb-circ" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">👥</div>
+          <div class="eb-ql" style="color:#5B21B6;">For whom?</div>
+          <div class="eb-qs">How output is shared.</div>
+        </div>
+        <div class="eb-node eb-right">
+          <div class="eb-circ" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">🏭</div>
+          <div class="eb-ql" style="color:#065F46;">How to produce?</div>
+          <div class="eb-qs">Which methods and resources.</div>
+        </div>
+        <div class="eb-center">
+          <div class="eb-circ" style="width:88px;height:88px;font-size:38px;background:#F1F5F9;border:2px solid #CBD5E1;">🏙️</div>
+          <div style="font-size:11.5px;font-weight:800;color:#334155;">Every economy</div>
+        </div>
+      </div>
+
+      <div class="eb-cap">The market ↔ state spectrum</div>
+      <div class="eb-ribbon">
+        <div class="eb-bar"></div>
+        <div class="eb-sys-row">
+          <div class="eb-sys">
+            <div class="eb-sys-c" style="background:#ECFDF5;border:2px solid #6EE7B7;">🛒</div>
+            <div style="font-size:13px;font-weight:800;color:#065F46;">Free market</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">Prices and profit decide.</div>
+          </div>
+          <div class="eb-sys">
+            <div class="eb-sys-c" style="background:#EFF6FF;border:2px solid #93C5FD;">🏛️</div>
+            <div style="font-size:13px;font-weight:800;color:#1E3A8A;">Mixed</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">Markets + government.</div>
+          </div>
+          <div class="eb-sys">
+            <div class="eb-sys-c" style="background:#FFF1F2;border:2px solid #FDA4AF;">🚩</div>
+            <div style="font-size:13px;font-weight:800;color:#9F1239;">Command</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">The state directs.</div>
+          </div>
+        </div>
+      </div>
+      <div class="eb-axis"><span style="color:#059669;">← More market freedom</span><span style="color:#E11D48;">More state control →</span></div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     economicThinkersThree — Economic Systems Card 2, spec 1.1.6(a).
+     Smith / Hayek / Marx, tone-coded (green / blue / rose). Icon
+     avatars rather than photos (no Marx portrait asset, and a mixed
+     photo+icon row reads badly). Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  economicThinkersThree: `
+    <div class="thinkers3" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .thinkers3 .tk-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; align-items:stretch; }
+        .thinkers3 .tk-card { border-radius:14px; padding:16px 14px; display:flex; flex-direction:column; }
+        .thinkers3 .tk-av { width:76px; height:76px; border-radius:50%; overflow:hidden; margin:0 auto 9px; background:#fff; box-shadow:0 2px 7px rgba(0,0,0,0.14); }
+        .thinkers3 .tk-av img { width:100%; height:100%; object-fit:cover; object-position:center 22%; display:block; }
+        .thinkers3 .tk-name { font-size:15px; font-weight:800; text-align:center; line-height:1.2; }
+        .thinkers3 .tk-dates { font-size:11px; color:#64748B; text-align:center; margin-bottom:8px; }
+        .thinkers3 .tk-stance { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; text-align:center; margin-bottom:8px; }
+        .thinkers3 .tk-body { font-size:12.5px; color:#0B1426; line-height:1.5; margin-bottom:10px; flex:1; }
+        .thinkers3 .tk-quote { font-size:12px; font-style:italic; line-height:1.45; border-top:1px dashed; padding-top:8px; }
+        @media (max-width:560px){ .thinkers3 .tk-row{ grid-template-columns:1fr; } }
+      </style>
+      <div class="tk-row">
+        <div class="tk-card" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+          <div class="tk-av"><img src="/assets/economists/smith.png" alt="Adam Smith"></div>
+          <div class="tk-name" style="color:#065F46;">Adam Smith</div>
+          <div class="tk-dates">1723–1790</div>
+          <div class="tk-stance" style="color:#059669;">Markets coordinate</div>
+          <div class="tk-body">Self-interest and competition guide resources as if by an <strong>“invisible hand”</strong>. The state should do little beyond defence, justice and basic public works.</div>
+          <div class="tk-quote" style="color:#065F46;border-color:#6EE7B7;">“It is not from the benevolence of the butcher… that we expect our dinner, but from their regard to their own interest.”</div>
+        </div>
+        <div class="tk-card" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="tk-av"><img src="/assets/economists/hayek.png" alt="Friedrich Hayek"></div>
+          <div class="tk-name" style="color:#1E3A8A;">Friedrich Hayek</div>
+          <div class="tk-dates">1899–1992</div>
+          <div class="tk-stance" style="color:#2563EB;">Planning can’t know enough</div>
+          <div class="tk-body">Knowledge is <strong>dispersed</strong> across millions of people; no planner can gather it. <strong>Prices</strong> aggregate it automatically — the <strong>knowledge problem</strong> that dooms central planning.</div>
+          <div class="tk-quote" style="color:#1E3A8A;border-color:#93C5FD;">“The curious task of economics is to demonstrate how little men really know about what they imagine they can design.”</div>
+        </div>
+        <div class="tk-card" style="background:#FFF1F2;border:1.5px solid #FDA4AF;">
+          <div class="tk-av"><img src="/assets/economists/marx.png" alt="Karl Marx"></div>
+          <div class="tk-name" style="color:#9F1239;">Karl Marx</div>
+          <div class="tk-dates">1818–1883</div>
+          <div class="tk-stance" style="color:#BE123C;">Markets exploit labour</div>
+          <div class="tk-body">Private ownership lets capital <strong>exploit workers</strong> and concentrates wealth. The remedy is <strong>common ownership</strong> of the means of production — the case for a command economy.</div>
+          <div class="tk-quote" style="color:#9F1239;border-color:#FDA4AF;">“From each according to his ability, to each according to his needs.”</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     economicSystemsScorecard — Economic Systems Card 6. Trade-off
+     matrix: six dimensions × three systems, each cell a level word
+     (High/Medium/Low) + a fill bar coloured by the system's tone.
+     High=100% · Medium=55% · Low=25%. Topic palette: FM green,
+     Mixed blue, Command rose. Label sub-text hides on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  economicSystemsScorecard: `
+    <div class="sys-score" style="line-height:1.5;background:#fff;border-radius:14px;padding:6px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .sys-score .es-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; border:1px solid #E7E7EA; border-radius:12px; overflow:hidden; }
+        .sys-score .es-h { background:#F8FAFC; font-size:12.5px; font-weight:800; padding:10px 6px; text-align:center; border-bottom:2px solid #E7E7EA; display:flex; align-items:center; justify-content:center; gap:5px; }
+        .sys-score .es-crit { padding:11px 11px; border-bottom:1px solid #EEF0F2; font-size:12.5px; font-weight:700; }
+        .sys-score .es-crit small { display:block; font-weight:400; color:#64748B; font-size:11px; line-height:1.35; margin-top:2px; }
+        .sys-score .es-cell { padding:11px 8px; border-bottom:1px solid #EEF0F2; border-left:1px solid #EEF0F2; text-align:center; }
+        .sys-score .es-lvl { font-size:12.5px; font-weight:800; display:block; margin-bottom:6px; }
+        .sys-score .es-bar { display:block; height:6px; border-radius:3px; background:#EDF0F3; overflow:hidden; }
+        .sys-score .es-fill { display:block; height:100%; border-radius:3px; }
+        @media (max-width:560px){ .sys-score .es-grid{ grid-template-columns:1.2fr 1fr 1fr 1fr; } .sys-score .es-crit small{ display:none; } .sys-score .es-h{ font-size:10.5px; } .sys-score .es-crit{ font-size:11px; } }
+      </style>
+      <div class="es-grid">
+        <div class="es-h" style="justify-content:flex-start;color:#475569;">Dimension</div>
+        <div class="es-h" style="color:#065F46;">📈 Free market</div>
+        <div class="es-h" style="color:#1E3A8A;">🏛️ Mixed</div>
+        <div class="es-h" style="color:#9F1239;">🚩 Command</div>
+
+        <div class="es-crit">Choice<small>Freedom over what to produce and buy</small></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#059669;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#E11D48;"></span></span></div>
+
+        <div class="es-crit">Incentives<small>Reward for effort and innovation</small></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#059669;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#E11D48;"></span></span></div>
+
+        <div class="es-crit">Equity<small>Fairness of the distribution</small></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#059669;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#E11D48;"></span></span></div>
+
+        <div class="es-crit">State control<small>Government direction of resources</small></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#059669;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#E11D48;"></span></span></div>
+
+        <div class="es-crit">Flexibility<small>Ability to adapt to change</small></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#059669;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#E11D48;"></span></span></div>
+
+        <div class="es-crit" style="border-bottom:none;">Basic provision<small>Essentials guaranteed for all</small></div>
+        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#059669;"></span></span></div>
+        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#2563EB;"></span></span></div>
+        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#E11D48;"></span></span></div>
+      </div>
+      <div style="font-size:11px;color:#94A3B8;text-align:center;margin-top:6px;">Bar length shows how strongly each system delivers that dimension — no system wins on everything.</div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     economicCommandPlanning — Economic Systems Card 4. Hub-and-spoke:
+     the government sets priorities at the top, the plan fans down to
+     four process steps. HTML + an SVG fan connector. Collapses to a
+     2-col grid on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  economicCommandPlanning: `
+    <div class="cmd-plan" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cmd-plan .cp-gov { max-width:320px; margin:0 auto; background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:14px; padding:12px 14px; display:flex; align-items:center; gap:12px; }
+        .cmd-plan .cp-gov-ic { width:48px; height:48px; border-radius:50%; background:#fff; border:1.5px solid #C4B5FD; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
+        .cmd-plan .cp-fan { width:100%; height:32px; display:block; }
+        .cmd-plan .cp-row { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; align-items:stretch; }
+        .cmd-plan .cp-step { border-radius:12px; padding:12px 8px; text-align:center; }
+        .cmd-plan .cp-step-ic { width:44px; height:44px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:22px; margin:0 auto 6px; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .cmd-plan .cp-step-t { font-size:12px; font-weight:800; line-height:1.25; }
+        .cmd-plan .cp-step-s { font-size:10.5px; color:#475569; line-height:1.3; margin-top:3px; }
+        @media (max-width:560px){ .cmd-plan .cp-row{ grid-template-columns:1fr 1fr; } .cmd-plan .cp-fan{ height:16px; } }
+      </style>
+      <div class="cp-gov">
+        <div class="cp-gov-ic">🏛️</div>
+        <div><div style="font-size:13.5px;font-weight:800;color:#5B21B6;">Government sets priorities</div><div style="font-size:11.5px;color:#475569;line-height:1.35;">It decides society’s goals — then the plan flows down.</div></div>
+      </div>
+      <svg class="cp-fan" viewBox="0 0 100 32" preserveAspectRatio="none">
+        <path d="M50,0 V9 M12.5,9 H87.5 M12.5,9 V30 M37.5,9 V30 M62.5,9 V30 M87.5,9 V30" stroke="#C4B5FD" stroke-width="0.6" fill="none" stroke-dasharray="1.6 1.2"/>
+      </svg>
+      <div class="cp-row">
+        <div class="cp-step" style="background:#EFF6FF;border:1px solid #93C5FD;"><div class="cp-step-ic">📋</div><div class="cp-step-t" style="color:#1E3A8A;">Plans output</div><div class="cp-step-s">Targets for what to produce.</div></div>
+        <div class="cp-step" style="background:#EFF6FF;border:1px solid #93C5FD;"><div class="cp-step-ic">👷</div><div class="cp-step-t" style="color:#1E3A8A;">Directs labour &amp; capital</div><div class="cp-step-s">Resources allocated to the plan.</div></div>
+        <div class="cp-step" style="background:#FFFBEB;border:1px solid #FCD34D;"><div class="cp-step-ic">🏭</div><div class="cp-step-t" style="color:#B45309;">State firms produce</div><div class="cp-step-s">Public enterprises carry it out.</div></div>
+        <div class="cp-step" style="background:#ECFDF5;border:1px solid #6EE7B7;"><div class="cp-step-ic">🧺</div><div class="cp-step-t" style="color:#065F46;">Goods distributed</div><div class="cp-step-s">Allocated where planners decide.</div></div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     economicMixedWhoDoesWhat — Economic Systems Card 5. Two panels:
+     what markets allocate vs what government provides/shapes, with a
+     ⇄ between. Icon tiles. Stacks on mobile (arrow rotates).
+     ─────────────────────────────────────────────────────────────── */
+  economicMixedWhoDoesWhat: `
+    <div class="who-what" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .who-what .ww-row { display:grid; grid-template-columns:1fr 46px 1fr; align-items:stretch; gap:0; }
+        .who-what .ww-panel { border-radius:14px; padding:14px 12px; }
+        .who-what .ww-h { font-size:13.5px; font-weight:800; text-align:center; margin-bottom:10px; }
+        .who-what .ww-tiles { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+        .who-what .ww-tile { background:#fff; border-radius:10px; padding:9px 6px; text-align:center; font-size:11px; font-weight:600; color:#334155; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
+        .who-what .ww-tile span { display:block; font-size:22px; line-height:1; margin-bottom:4px; }
+        .who-what .ww-mid { display:flex; align-items:center; justify-content:center; }
+        @media (max-width:560px){ .who-what .ww-row{ grid-template-columns:1fr; } .who-what .ww-mid{ transform:rotate(90deg); margin:8px 0; } }
+      </style>
+      <div class="ww-row">
+        <div class="ww-panel" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+          <div class="ww-h" style="color:#065F46;">Markets usually allocate</div>
+          <div class="ww-tiles">
+            <div class="ww-tile"><span>👕</span>Clothes</div>
+            <div class="ww-tile"><span>📱</span>Phones</div>
+            <div class="ww-tile"><span>☕</span>Cafés</div>
+            <div class="ww-tile"><span>🍿</span>Entertainment</div>
+          </div>
+        </div>
+        <div class="ww-mid"><div style="width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">⇄</div></div>
+        <div class="ww-panel" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="ww-h" style="color:#1E3A8A;">Government provides or shapes</div>
+          <div class="ww-tiles">
+            <div class="ww-tile"><span>🏥</span>Healthcare</div>
+            <div class="ww-tile"><span>🎓</span>Education</div>
+            <div class="ww-tile"><span>🪖</span>Defence</div>
+            <div class="ww-tile"><span>👮</span>Policing</div>
+            <div class="ww-tile"><span>💷</span>Taxes</div>
+            <div class="ww-tile"><span>🤝</span>Benefits</div>
+          </div>
+        </div>
+      </div>
     </div>
   `,
 

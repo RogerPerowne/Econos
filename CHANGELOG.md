@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.7 — 2026-06-02
+
+### YED & XED Card 9 — "How to read the question" as a flow chain
+
+- Replaced the 2×2 box grid on the YED & XED exam toolkit ("How to read
+  the question") with the standard `flow` block — numbered tone-coloured
+  circles (blue / amber / purple / green) joined by dashed connectors,
+  with a tinted icon circle below each and a tone-coloured title +
+  description, matching the money-functions visual. Each step is now its
+  own "coloured button".
+- "Common mistakes" stays as a 2×2 box grid since the items are
+  classification (no ordering). Reframed its label from "② Common
+  mistakes" to "⚠️ Common mistakes" now the two blocks are no longer
+  numerically paired. `sw.js` cache bumped to `econos-v279`.
+
 ## 0.36.6 — 2026-06-02
 
 ### YED & XED — Card 2 cleanup, Card 9 toolkit polish

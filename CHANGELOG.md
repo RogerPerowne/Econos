@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.35.1 — 2026-06-02
+
+### PES Card 1 diagram — arrowhead and label fixes
+
+- Redrew the "same rise in price" and ΔQs arrowheads on
+  `pesBigPictureCompare` as inline polygons instead of SVG markers —
+  `orient="auto"` was rotating the vertical-line markers into
+  flag/pennant shapes. Removed the now-unused `<defs>` marker block.
+- Pulled the elastic panel's equilibrium points inward so Q₂ no longer
+  overlaps the "Quantity supplied" axis label. `sw.js` cache bumped to
+  `econos-v271`.
+
 ## 0.35.0 — 2026-06-02
 
 ### Price Elasticity of Supply — restructured to 8 cards with the visual family

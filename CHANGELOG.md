@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.0 — 2026-06-02
+
+### PED gets the elasticity classification spectrum
+
+- Added the five-point classification strip (the one introduced on PES
+  Card 2) to PED Card 3 "Reading the PED coefficient" as an overview
+  banner above the detailed five-frame grid — new `pedClassifySpectrum`
+  visual, relabelled for demand (perfectly inelastic 0 → perfectly
+  elastic ∞). The `ped-five-frames` / `pes-five-frames` renderers now
+  accept an optional `visualKey` banner above the frame grid.
+- Made both spectrum strips (`pedClassifySpectrum` and the strip inside
+  `pesCalcClassify`) responsive: dropped the fixed `min-width:520px` so
+  all five cells compress and wrap to fit narrow content columns instead
+  of clipping the last cell. `sw.js` cache bumped to `econos-v272`.
+
 ## 0.35.1 — 2026-06-02
 
 ### PES Card 1 diagram — arrowhead and label fixes

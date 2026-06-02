@@ -127,9 +127,23 @@ window.ECONOS_TOPIC = {
         tone: 'blue',
         text: '<em>When a product is scarce, price helps ration it. A higher price does not create more tickets or more seats today – it decides who gets them.</em><br>In a market, scarce goods usually go to those <strong>willing and able to pay</strong>.'
       },
-      diagramKey: 'priceRationingScarcity',
-      diagramLabel: 'How rationing works',
-      diagramEmoji: '⚖️',
+      interactiveDiagram: {
+        svgKey: 'disequilibriumInteractive',
+        label: 'How rationing works',
+        emoji: '⚖️',
+        layers: ['layer-base', 'layer-surplus', 'layer-short'],
+        views: [
+          { label: 'Market in equilibrium', tone: 'green', show: ['layer-base'],
+            head: 'Market in equilibrium',
+            body: 'At <strong>E</strong>, quantity demanded equals quantity supplied. The market clears at <strong>Pₑ</strong>, <strong>Qₑ</strong> — no shortage, so no rationing pressure.' },
+          { label: 'Price too high → surplus', tone: 'amber', show: ['layer-surplus'],
+            head: 'Price too high → surplus',
+            body: 'At <strong>P₁</strong> (above Pₑ), quantity supplied (Q₂) exceeds quantity demanded (Q₁) — the gap is the <strong>surplus</strong>. Unsold stock builds up, so sellers <strong>cut the price</strong> back towards E.' },
+          { label: 'Price too low → shortage', tone: 'blue', show: ['layer-short'],
+            head: 'Price too low → shortage rations the good',
+            body: 'At <strong>P₂</strong> (below Pₑ), quantity demanded (Q₁) exceeds quantity supplied (Q₂) — the gap is the <strong>shortage</strong>. Buyers compete for scarce stock and <strong>bid the price up</strong>; the rising price <strong>rations</strong> the good to those willing and able to pay, restoring E.' }
+        ]
+      },
       flow: [
         { tone: 'green', icon: '👥', title: 'Shortage',                          sub: 'More people want tickets than are available.' },
         { tone: 'amber', icon: '📈', title: 'Price rises',                        sub: 'Higher prices signal scarcity and adjust the price.' },

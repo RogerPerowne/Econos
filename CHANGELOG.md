@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.37.1 — 2026-06-02
+
+### Price Mechanism Card 3 — modern rationing chart
+
+- Replaced the old static `priceRationingScarcity` diagram on "Prices as a
+  rationing device" with the interactive `disequilibriumInteractive` chart
+  reused from Price Determination (equilibrium / surplus / shortage view
+  toggles, clean blue-D / orange-S styling). The shortage view is tailored
+  to the rationing context (rising price rations the good to those willing
+  and able to pay). Its spec is already precached/wired into the shells, so
+  no new plumbing. `sw.js` cache bumped to `econos-v281`.
+
 ## 0.37.0 — 2026-06-02
 
 ### Price Mechanism Card 1 — merged the two function visuals into one

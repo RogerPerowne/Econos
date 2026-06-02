@@ -35,7 +35,7 @@
       /* MPC (private supply) — the market sees this */
       { d: 'M 0.069,0.080 L 0.972,0.880',
         tone: 'amber', label: 'MPC = S', strokeWidth: 2.5,
-        labelDx: -6, labelDy: -6, anchor: 'end' },
+        labelDx: -6, labelDy: -20, anchor: 'end' },
       /* MSC (social cost) — dashed, shifted up from MPC */
       { d: 'M 0.069,0.270 L 0.785,0.880',
         tone: 'green', label: 'MSC', strokeWidth: 2.2, dashed: '6 4',

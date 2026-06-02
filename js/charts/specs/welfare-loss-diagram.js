@@ -38,7 +38,7 @@
             labelDx: -6, labelDy: 14, anchor: 'end' },
           { d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC', strokeWidth: 2.5,
-            labelDx: -6, labelDy: -6, anchor: 'end' },
+            labelDx: -6, labelDy: -20, anchor: 'end' },
           { d: 'M 0.069,0.270 L 0.785,0.880',
             tone: 'red', label: 'MSC', strokeWidth: 2.2, dashed: '6 4',
             labelDx: 8, labelDy: -4, anchor: 'start' }
@@ -75,7 +75,7 @@
             labelDx: -6, labelDy: 14, anchor: 'end' },
           { d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC = S', strokeWidth: 2.5,
-            labelDx: -6, labelDy: -6, anchor: 'end' },
+            labelDx: -6, labelDy: -20, anchor: 'end' },
           { d: 'M 0.215,0.880 L 1.000,0.230',
             tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4',
             labelDx: -6, labelDy: 14, anchor: 'end' }

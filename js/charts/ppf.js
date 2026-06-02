@@ -190,7 +190,8 @@
       } else {
         lx = scale.sx(0.7); ly = scale.sy(0.05);
       }
-      labelHtml = '<text x="' + lx + '" y="' + ly + '" font-size="' + SIZE.curveLabel + '" font-weight="700" fill="' + t.label + '">' + curve.label + '</text>';
+      var labelAnchorAttr = curve.anchor ? ' text-anchor="' + curve.anchor + '"' : '';
+      labelHtml = '<text x="' + lx + '" y="' + ly + '"' + labelAnchorAttr + ' font-size="' + SIZE.curveLabel + '" font-weight="700" fill="' + t.label + '">' + curve.label + '</text>';
     }
     return '<path d="' + dAbs + '" fill="none" stroke="' + t.stroke + '" stroke-width="' + sw + '"' + dashAttr + opacityAttr + clipAttr + '/>' + labelHtml;
   }

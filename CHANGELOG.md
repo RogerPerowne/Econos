@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.2 — 2026-06-02
+
+### Rational Decision Making Card 2 — mobile label fix
+
+- On `marginalUtilityCompare`, the mobile breakpoint was rotating the
+  whole middle block 90° — which spun the "Shift spending to the higher
+  MU per £" label vertical and overlapped it with the panels. Now the
+  text stays upright and only the connector arrow rotates to point down
+  when the two goods stack. `sw.js` cache bumped to `econos-v274`.
+
 ## 0.36.1 — 2026-06-02
 
 ### Spectrum strip — unit-elastic cell now blue

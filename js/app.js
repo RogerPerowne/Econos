@@ -2989,7 +2989,7 @@
     // Quiz CTA – celebration-style signpost
 
     const ledeHtml = c.lede ? `<p class="card__lede">${c.lede}</p>` : '';
-    const visualKeyHtml = c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 20px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : '';
+    const visualKeyHtml = c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 20px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : '';
     let noteTopHtml = '';
     if (c.note && c.notePosition === 'top') {
       const notes = Array.isArray(c.note) ? c.note : [c.note];

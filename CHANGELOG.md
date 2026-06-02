@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.4 — 2026-06-02
+
+### YED classification — spectrum diagram replaces the box grid
+
+- Replaced the 2×2 "Classify the result" box grid on Income & Cross-Price
+  Elasticity Card 2 with a new `yedClassifySpectrum` — the same number-line
+  spectrum family used for XED, laid out left → right by YED value:
+  inferior (falls) → income-neutral (0) → necessity (0–1) → luxury (>1),
+  each with an example, a dot and a value chip over a red → green gradient
+  bar. Responsive: cells compress and wrap rather than clip.
+- `renderCardGeneric` now renders a section label above `visualKey` when
+  `visualLabel` is set (parity with the `ad-interactive` renderer), so the
+  spectrum keeps its "Classify the result" heading. `sw.js` cache bumped to
+  `econos-v276`.
+
 ## 0.36.3 — 2026-06-02
 
 ### XED relationship hub — bottom box spacing

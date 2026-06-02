@@ -32,16 +32,10 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Specialisation & money: the big picture',
-      tip: { icon: '💡', tone: 'blue', text: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest.' },
-      flow: [
-        { icon: '🛠️', title: 'Specialisation',     sub: 'Focus on what you do relatively well.' },
-        { icon: '📈', title: 'Higher productivity', sub: 'You produce more with the same resources.' },
-        { icon: '🤝', title: 'Exchange',           sub: 'You trade for the goods and services you don\'t produce.' },
-        { icon: '💵', title: 'Money',              sub: 'Money is accepted in exchange, making trade much easier.' },
-        { icon: '🏡', title: 'Higher living standards', sub: 'More goods, more choice, better lives.' }
-      ],
-      flowTitle: 'The big-picture chain',
-      flowEmoji: '🔗',
+      tip: { icon: '💡', tone: 'blue', text: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest – and total output rises sharply.' },
+      diagramKey: 'specialisationGainsCompare',
+      diagramLabel: 'Self-sufficiency vs specialisation',
+      diagramEmoji: '📊',
       keyTerms: [
         { term: '📈 More output',  def: 'We can produce more with the resources we have.' },
         { term: '🛒 More choice',  def: 'Trade lets us enjoy a wider variety of goods and services.' },
@@ -189,14 +183,10 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'The Problem with Barter',
-      tip: { icon: '💡', tone: 'blue', text: 'Barter means exchanging goods directly without money. Trade is difficult when needs do not match.' },
-      flow: [
-        { icon: '🍎', title: 'Tom has apples',      sub: 'He wants bread. The baker has bread, but doesn\'t want apples.', tone: 'rose', status: 'fail' },
-        { icon: '🥖', title: 'The baker has bread', sub: 'She wants milk. The farmer has milk, but doesn\'t want bread.', tone: 'rose', status: 'fail' },
-        { icon: '🥛', title: 'The farmer has milk', sub: 'He wants apples – and Tom has them – but only by chance.',     tone: 'rose', status: 'fail' }
-      ],
-      flowTitle: 'Why barter is difficult: the double coincidence of wants',
-      flowEmoji: '🔄',
+      tip: { icon: '💡', tone: 'blue', text: 'Barter means exchanging goods directly without money. Trade only happens when both people want exactly what the other has – the double coincidence of wants.' },
+      diagramKey: 'barterTriangle',
+      diagramLabel: 'The double coincidence of wants',
+      diagramEmoji: '🔄',
       verdict: {
         title: 'Barter vs money exchange',
         emoji: '⚖️',
@@ -294,7 +284,10 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 7 of 8',
       title: 'Characteristics of Good Money',
-      tip: { icon: '💡', tone: 'blue', text: 'For money to perform its four functions well, it has to have certain practical qualities. These are why modern currency beats shells or livestock.' },
+      tip: { icon: '💡', tone: 'blue', text: 'For money to perform its four functions well, it needs certain practical qualities. Score the candidates against them and a winner emerges – which is why every economy converges on something like modern currency.' },
+      diagramKey: 'goodMoneyScorecard',
+      diagramLabel: 'Which makes the best money?',
+      diagramEmoji: '⚖️',
       causes: [
         { head: 'Durable',             icon: '🛡️', body: 'It lasts a long time and can withstand regular use.' },
         { head: 'Portable',            icon: '👛', body: 'It is easy to carry and convenient to transport.' },
@@ -305,47 +298,7 @@ window.ECONOS_TOPIC = {
       ],
       causesLabel: 'The six characteristics',
       causesEmoji: '⭐',
-      verdict: {
-        title: 'Why shells or livestock are weaker forms of money',
-        emoji: '🔬',
-        layout: 'arrow',
-        columns: [
-          {
-            tone: 'rose',
-            icon: '🐚',
-            label: 'Shells',
-            items: [
-              { ok: false, text: 'Not durable' },
-              { ok: false, text: 'Hard to verify' },
-              { ok: false, text: 'Not divisible' },
-              { ok: false, text: 'Supply can be inconsistent' }
-            ]
-          },
-          {
-            tone: 'amber',
-            icon: '🐄',
-            label: 'Livestock',
-            items: [
-              { ok: false, text: 'Hard to carry' },
-              { ok: false, text: 'Not divisible' },
-              { ok: false, text: 'Care and storage costs' },
-              { ok: false, text: 'Value changes over time' }
-            ]
-          },
-          {
-            tone: 'green',
-            icon: '💵',
-            label: 'Modern currency',
-            items: [
-              { ok: true, text: 'Durable and portable' },
-              { ok: true, text: 'Easily divisible' },
-              { ok: true, text: 'Widely accepted' },
-              { ok: true, text: 'Stable and scarce' }
-            ]
-          }
-        ]
-      },
-      keyTakeaway: 'Good money supports exchange by being trusted, manageable and stable in value – which is exactly why every complex economy converges on currency rather than commodity money.'
+      keyTakeaway: 'Score the candidates and the pattern is clear: gold scores top on the qualities themselves, but paper notes trade a little durability and scarcity for unbeatable portability and divisibility – which is why modern economies use currency rather than commodity money. The one weak spot, scarcity, is exactly where inflation does its damage.'
     },
 
     /* ================================================================
@@ -356,28 +309,39 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Why Money Holds It All Together',
-      tip: { icon: '💡', tone: 'blue', text: 'Specialisation only pays off if exchange works – and exchange only works if money holds its value.' },
-      causes: [
-        { tone: 'blue',  icon: '🔗', head: 'The functions are interdependent', body: 'Break one and the others follow – if money stops holding value, people stop accepting it.' },
-        { tone: 'rose',  icon: '🔥', head: 'Inflation attacks money first',     body: 'Rising prices erode the store of value and punish deferred payment – lenders are repaid in devalued currency.' },
-        { tone: 'amber', icon: '🪙', head: 'Hyperinflation → barter',       body: 'In Zimbabwe (2008) and Weimar Germany, money failed and trade collapsed back toward barter and foreign currency.' },
-        { tone: 'green', icon: '🏛️', head: 'Stability underpins it all',         body: 'A specialised economy needs trusted money and institutions – a central bank, contracts, rule of law – which many developing economies lack.' }
-      ],
-      causesLabel: 'The judgement: money is the enabler',
-      causesEmoji: '🧠',
+      tip: { icon: '💡', tone: 'green', text: 'The gains from specialisation are unlocked fully only when money allows smooth exchange. Together they convert higher productivity into wider prosperity.' },
       flow: [
-        { icon: '🛠️', title: 'Specialise',      sub: 'Focus on relative strengths.' },
-        { icon: '🤝', title: 'Exchange',         sub: 'Trade for the rest.' },
-        { icon: '💵', title: 'Stable money',     sub: 'Trusted store + measure of value.' },
-        { icon: '🌐', title: 'Larger markets',   sub: 'Specialisation can go further.' },
-        { icon: '🏙️', title: 'Living standards', sub: 'Higher output and choice over time.' }
+        { tone: 'blue',   icon: '🛠️', title: 'Specialisation',         sub: 'People focus on what they do best.' },
+        { tone: 'blue',   icon: '📈', title: 'Higher productivity',    sub: 'Skills and tools are used more efficiently.' },
+        { tone: 'green',  icon: '🏭', title: 'More output',            sub: 'More goods and services are produced.' },
+        { tone: 'amber',  icon: '🤝', title: 'More exchange',          sub: 'People trade to get what they need.' },
+        { tone: 'purple', icon: '💵', title: 'Money cuts transaction costs', sub: 'Exchange becomes faster, cheaper and safer.' },
+        { tone: 'green',  icon: '🌐', title: 'Wider markets, higher living standards', sub: 'More choice, better access, higher wellbeing.' }
       ],
-      flowTitle: 'The chain that lifts living standards',
+      flowTitle: 'The chain: from specialisation to living standards',
       flowEmoji: '🔗',
-      balancedNote: {
-        title: 'A balanced note',
-        text: 'The gains aren’t automatic or evenly shared – economies over-dependent on a narrow range of exports, or where the gains accrue to a few, can be left vulnerable. Good institutions and policy spread the benefits.'
-      },
+      causes: [
+        { tone: 'rose',  icon: '🧰', head: 'Dependence on narrow skills', body: 'Workers and regions tied to one specialism are exposed if demand for it falls.' },
+        { tone: 'rose',  icon: '⚡', head: 'Supply shocks bite harder',   body: 'Interdependent, specialised systems can be disrupted by one broken link (e.g. 2021 semiconductors).' },
+        { tone: 'rose',  icon: '🔥', head: 'Inflation weakens money',     body: 'If money fails as a store of value, exchange falters – hyperinflation pushes economies back toward barter.' },
+        { tone: 'rose',  icon: '⚖️', head: 'Unequal rewards',             body: 'The gains aren’t shared evenly; over-specialised or unequal economies can leave groups behind.' }
+      ],
+      causesLabel: 'Don’t forget the limits',
+      causesEmoji: '⚠️',
+      causesStyle: 'tinted-flat',
+      causes2: [
+        {
+          tone: 'green', icon: '✅', head: 'Why economists like it',
+          body: '<div style="margin-bottom:5px;">• Specialisation raises productivity and real incomes.</div><div style="margin-bottom:5px;">• Lower unit costs make goods and services more affordable.</div><div>• Wider choice and larger markets lift living standards.</div>'
+        },
+        {
+          tone: 'rose', icon: '⚖️', head: 'Why evaluation matters',
+          body: '<div style="margin-bottom:5px;">• It can create vulnerability to shocks and over-dependence.</div><div style="margin-bottom:5px;">• It can widen inequality and leave some groups behind.</div><div>• It all depends on trust in money and stable institutions.</div>'
+        }
+      ],
+      causes2Label: 'Final judgement',
+      causes2Emoji: '🧠',
+      causes2Cols: 2,
       keyTakeaway: {
         title: 'The big takeaway',
         text: 'Scarcity drives specialisation; specialisation needs exchange; exchange needs money; and money only works if it stays stable. That chain – not money or specialisation alone – is what raises living standards.'

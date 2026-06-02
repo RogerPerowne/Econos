@@ -13436,6 +13436,197 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ───────────────────────────────────────────────────────────────
+     specialisationGainsCompare — Card 1 hook for Specialisation & Money.
+     Two tinted panels (self-sufficiency 20 units → specialisation 300
+     units) with the three goods quantified and a connecting arrow.
+     HTML+flex hero so the panels stack cleanly on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  specialisationGainsCompare: `
+    <div class="spec-compare" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .spec-compare .sc-row { display:grid; grid-template-columns:1fr 52px 1fr; align-items:stretch; gap:0; }
+        .spec-compare .sc-arrow { display:flex; align-items:center; justify-content:center; }
+        .spec-compare .sc-goods { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:10px 0 12px; }
+        @media (max-width: 560px) {
+          .spec-compare .sc-row { grid-template-columns:1fr; }
+          .spec-compare .sc-arrow { transform:rotate(90deg); margin:6px 0; }
+        }
+      </style>
+      <div class="sc-row">
+        <!-- Self-sufficiency (amber) -->
+        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;">
+          <div style="font-size:15px;font-weight:800;color:#B45309;text-align:center;margin-bottom:3px;">Self-sufficiency</div>
+          <div style="font-size:12px;color:#475569;text-align:center;line-height:1.4;min-height:34px;">One person tries to grow food, make clothes and build tools.</div>
+          <div class="sc-goods">
+            <div style="text-align:center;"><div style="font-size:24px;line-height:1;">🌾</div><div style="font-size:11px;color:#475569;margin-top:3px;">Food</div><div style="font-size:17px;font-weight:800;color:#B45309;">10</div></div>
+            <div style="text-align:center;"><div style="font-size:24px;line-height:1;">👕</div><div style="font-size:11px;color:#475569;margin-top:3px;">Clothes</div><div style="font-size:17px;font-weight:800;color:#B45309;">5</div></div>
+            <div style="text-align:center;"><div style="font-size:24px;line-height:1;">🛠️</div><div style="font-size:11px;color:#475569;margin-top:3px;">Tools</div><div style="font-size:17px;font-weight:800;color:#B45309;">5</div></div>
+          </div>
+          <div style="border-top:1px solid #FCD34D;padding-top:9px;text-align:center;font-size:14px;font-weight:800;color:#B45309;">Total = 20 units</div>
+        </div>
+        <!-- Arrow -->
+        <div class="sc-arrow">
+          <div style="width:38px;height:38px;border-radius:50%;background:#fff;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:18px;color:#475569;box-shadow:0 1px 4px rgba(0,0,0,0.08);">→</div>
+        </div>
+        <!-- Specialisation (green) -->
+        <div style="background:#ECFDF5;border:1.5px solid #6EE7B7;border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;">
+          <div style="font-size:15px;font-weight:800;color:#065F46;text-align:center;margin-bottom:3px;">Specialisation</div>
+          <div style="font-size:12px;color:#475569;text-align:center;line-height:1.4;min-height:34px;">Three people each focus on one task, then trade what they produce.</div>
+          <div class="sc-goods">
+            <div style="text-align:center;"><div style="font-size:24px;line-height:1;">🌾</div><div style="font-size:11px;color:#475569;margin-top:3px;">Food</div><div style="font-size:17px;font-weight:800;color:#065F46;">100</div></div>
+            <div style="text-align:center;"><div style="font-size:24px;line-height:1;">👕</div><div style="font-size:11px;color:#475569;margin-top:3px;">Clothes</div><div style="font-size:17px;font-weight:800;color:#065F46;">100</div></div>
+            <div style="text-align:center;"><div style="font-size:24px;line-height:1;">🛠️</div><div style="font-size:11px;color:#475569;margin-top:3px;">Tools</div><div style="font-size:17px;font-weight:800;color:#065F46;">100</div></div>
+          </div>
+          <div style="border-top:1px solid #6EE7B7;padding-top:9px;text-align:center;font-size:14px;font-weight:800;color:#065F46;">Total = 300 units</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     barterTriangle — Card 5 hook. Three traders at the corners of a
+     triangle, each with a green Has pill and a blue Wants pill, a
+     central "double coincidence of wants" hub, dashed connector lines
+     and a red ✗ on every pairwise edge (no pair double-matches).
+     HTML+SVG hybrid (growthScorecard pattern): SVG connector layer
+     behind, absolutely-positioned node cards, stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  barterTriangle: `
+    <div class="barter-tri" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .barter-tri .bt-stage { position:relative; max-width:520px; height:400px; margin:0 auto; }
+        .barter-tri .bt-node { position:absolute; width:150px; text-align:center; }
+        .barter-tri .bt-baker { top:0; left:50%; transform:translateX(-50%); }
+        .barter-tri .bt-fisher { bottom:0; left:0; }
+        .barter-tri .bt-shoe { bottom:0; right:0; }
+        .barter-tri .bt-hub { position:absolute; top:48%; left:50%; transform:translate(-50%,-50%); width:108px; height:108px; }
+        .barter-tri .bt-x { position:absolute; width:26px; height:26px; transform:translate(-50%,-50%); }
+        .barter-tri .bt-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+        .barter-tri .bt-circle { width:62px; height:62px; border-radius:50%; background:#EFF6FF; border:1.5px solid #93C5FD; display:flex; align-items:center; justify-content:center; font-size:30px; margin:0 auto 6px; }
+        .barter-tri .bt-name { font-size:14px; font-weight:800; color:#0B1426; margin-bottom:5px; }
+        .barter-tri .bt-pill { display:inline-block; font-size:11px; font-weight:700; border-radius:20px; padding:2px 9px; margin:2px 2px 0; }
+        .barter-tri .bt-has { background:#ECFDF5; color:#065F46; border:1px solid #6EE7B7; }
+        .barter-tri .bt-wants { background:#EFF6FF; color:#1E3A8A; border:1px solid #93C5FD; }
+        @media (max-width: 560px) {
+          .barter-tri .bt-stage { height:auto; display:flex; flex-direction:column; gap:12px; }
+          .barter-tri .bt-node, .barter-tri .bt-baker, .barter-tri .bt-fisher, .barter-tri .bt-shoe { position:static; transform:none; width:100%; }
+          .barter-tri .bt-conn, .barter-tri .bt-x { display:none; }
+          .barter-tri .bt-hub { position:static; transform:none; width:100%; height:auto; order:99; }
+          .barter-tri .bt-hub > div { width:auto !important; height:auto !important; border-radius:14px !important; padding:12px !important; }
+        }
+      </style>
+      <div class="bt-stage">
+        <!-- connector lines (triangle edges) -->
+        <svg class="bt-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="50" y1="16" x2="15" y2="84" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
+          <line x1="50" y1="16" x2="85" y2="84" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
+          <line x1="15" y1="84" x2="85" y2="84" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
+        </svg>
+        <!-- red ✗ on each edge midpoint -->
+        <div class="bt-x" style="top:50%;left:32%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
+        <div class="bt-x" style="top:50%;left:68%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
+        <div class="bt-x" style="top:90%;left:50%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
+        <!-- Baker -->
+        <div class="bt-node bt-baker">
+          <div class="bt-circle">🧑‍🍳</div>
+          <div class="bt-name">Baker</div>
+          <span class="bt-pill bt-has">Has: bread</span>
+          <span class="bt-pill bt-wants">Wants: shoes</span>
+        </div>
+        <!-- Fisher -->
+        <div class="bt-node bt-fisher">
+          <div class="bt-circle">🎣</div>
+          <div class="bt-name">Fisher</div>
+          <span class="bt-pill bt-has">Has: fish</span>
+          <span class="bt-pill bt-wants">Wants: bread</span>
+        </div>
+        <!-- Shoemaker -->
+        <div class="bt-node bt-shoe">
+          <div class="bt-circle">👞</div>
+          <div class="bt-name">Shoemaker</div>
+          <span class="bt-pill bt-has">Has: shoes</span>
+          <span class="bt-pill bt-wants">Wants: fish</span>
+        </div>
+        <!-- central hub -->
+        <div class="bt-hub">
+          <div style="width:108px;height:108px;border-radius:50%;background:#fff;border:2px solid #C4B5FD;box-shadow:0 3px 10px rgba(124,58,237,0.15);display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;">
+            <div style="font-size:12px;font-weight:800;color:#5B21B6;line-height:1.3;">Double<br>coincidence<br>of wants</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     goodMoneyScorecard — Card 7 hook. Scored comparison matrix: six
+     characteristics × three candidate monies, each cell ✓ / ◑ / ✗,
+     with a bottom score row counting full passes (Shells 2/6, Gold
+     6/6, Paper notes 5/6). HTML grid; label column narrows on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  goodMoneyScorecard: `
+    <div class="money-score" style="line-height:1.5;background:#fff;border-radius:14px;padding:6px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .money-score .ms-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; border:1px solid #E7E7EA; border-radius:12px; overflow:hidden; }
+        .money-score .ms-cell { padding:11px 8px; border-bottom:1px solid #EEF0F2; display:flex; align-items:center; justify-content:center; }
+        .money-score .ms-crit { justify-content:flex-start; gap:8px; font-size:13px; font-weight:700; color:#0B1426; }
+        .money-score .ms-head { background:#F8FAFC; font-size:13px; font-weight:800; padding:11px 6px; border-bottom:2px solid #E7E7EA; display:flex; align-items:center; justify-content:center; gap:6px; }
+        .money-score .ms-badge { width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; }
+        .money-score .ms-score { font-size:15px; font-weight:800; }
+        @media (max-width: 560px) {
+          .money-score .ms-grid { grid-template-columns:1.3fr 1fr 1fr 1fr; }
+          .money-score .ms-crit { font-size:11.5px; }
+          .money-score .ms-head { font-size:11px; }
+          .money-score .ms-crit-icon { display:none; }
+        }
+      </style>
+      <div class="ms-grid">
+        <!-- header -->
+        <div class="ms-head" style="justify-content:flex-start;color:#475569;">Characteristic</div>
+        <div class="ms-head" style="color:#B45309;"><span style="font-size:15px;">🐚</span> Shells</div>
+        <div class="ms-head" style="color:#92400E;"><span style="font-size:15px;">🪙</span> Gold</div>
+        <div class="ms-head" style="color:#065F46;"><span style="font-size:15px;">💵</span> Notes</div>
+
+        <div class="ms-cell ms-crit"><span class="ms-crit-icon">🛡️</span>Durable</div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#FEE2E2;color:#DC2626;">✕</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+
+        <div class="ms-cell ms-crit"><span class="ms-crit-icon">👛</span>Portable</div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+
+        <div class="ms-cell ms-crit"><span class="ms-crit-icon">✂️</span>Divisible</div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#FEE2E2;color:#DC2626;">✕</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+
+        <div class="ms-cell ms-crit"><span class="ms-crit-icon">🤝</span>Acceptable</div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#FEE2E2;color:#DC2626;">✕</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+
+        <div class="ms-cell ms-crit"><span class="ms-crit-icon">💎</span>Scarce</div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#FEF3C7;color:#B45309;">◑</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+        <div class="ms-cell"><span class="ms-badge" style="background:#FEF3C7;color:#B45309;">◑</span></div>
+
+        <div class="ms-cell ms-crit" style="border-bottom:none;"><span class="ms-crit-icon">🔍</span>Recognisable</div>
+        <div class="ms-cell" style="border-bottom:none;"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+        <div class="ms-cell" style="border-bottom:none;"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+        <div class="ms-cell" style="border-bottom:none;"><span class="ms-badge" style="background:#D1FAE5;color:#059669;">✓</span></div>
+
+        <!-- score row -->
+        <div class="ms-cell ms-crit" style="background:#0B1426;color:#fff;border-bottom:none;font-weight:800;">Score</div>
+        <div class="ms-cell ms-score" style="background:#0B1426;color:#FCA5A5;border-bottom:none;">2 / 6</div>
+        <div class="ms-cell ms-score" style="background:#0B1426;color:#6EE7B7;border-bottom:none;">6 / 6</div>
+        <div class="ms-cell ms-score" style="background:#0B1426;color:#6EE7B7;border-bottom:none;">5 / 6</div>
+      </div>
+      <div style="font-size:11px;color:#94A3B8;text-align:center;margin-top:6px;">✓ meets it · ◑ partly · ✕ fails it &nbsp;·&nbsp; score counts full passes</div>
+    </div>
+  `,
+
   /* Card 2 — UK income spectrum: same 2% growth year drawn two ways.
      Layer .idl-pounds : £ per year per decile, with a broken Y-axis so
      the bottom four bars (£200..£1,800) are readable alongside the

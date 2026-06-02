@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.30.1 — 2026-06-02
+
+### Supply — restore joint & competing supply card
+
+Added joint & competing supply back as Card 7 (applied extension),
+mirroring the derived-demand decision on the Demand topic. Reuses the
+`conceptBoxes` flow visual (cattle → beef + leather; farmland → wheat /
+rapeseed). The exam toolkit moves to Card 8; topic is now 8 cards.
+Data-only change.
+
 ## 0.30.0 — 2026-06-02
 
 ### Supply (1.2.4) — restructure to mirror Demand + interactive chart family

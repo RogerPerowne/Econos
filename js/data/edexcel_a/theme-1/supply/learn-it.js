@@ -8,16 +8,17 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroSupply',
     summary: 'Supply is the quantity of a good producers are willing and able to offer for sale at each price. It mirrors demand: the non-negotiable skill is telling what moves ALONG the curve (a price change) from what SHIFTS it (a non-price determinant).',
-    doInThis: 'Work through 7 cards: the big picture, why the curve slopes up, movements along the curve, shifts of the curve, what shifts supply, how costs/productivity/tax work, and an exam toolkit.',
+    doInThis: 'Work through 8 cards: the big picture, why the curve slopes up, movements along the curve, shifts of the curve, what shifts supply, how costs/productivity/tax work, joint and competing supply, and an exam toolkit.',
     outcomes: [
       'Distinguish a movement along the supply curve from a shift of the supply curve',
       'Explain why the supply curve slopes up (profit incentive, rising marginal cost, higher-cost producers)',
       'List and apply the conditions of supply that shift the curve',
-      'Link a determinant to unit cost, then to the direction of the shift'
+      'Link a determinant to unit cost, then to the direction of the shift',
+      'Distinguish joint supply from competing supply and trace the knock-on effects'
     ],
     tip: 'A change in the good’s own price causes a movement ALONG the supply curve (price up → extension; price down → contraction). A non-price determinant shifts the WHOLE curve – right = increase, left = decrease.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -28,7 +29,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Supply: the big picture',
       tip: { icon: '✅', tone: 'green', text: 'Supply means willingness AND ability to offer output for sale – not just making something. The supply curve shows how much producers sell at each price.' },
       interactiveDiagram: {
@@ -70,7 +71,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_2',
       template: 'framing',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'Why the supply curve slopes up',
       tip: { icon: '✅', tone: 'green', text: 'As price rises producers usually sell more; as price falls they usually sell less. Higher prices make extra output more worthwhile.' },
       interactiveDiagram: {
@@ -113,7 +114,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_3',
       template: 'framing',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'Movements along the supply curve',
       tip: { icon: '✅', tone: 'green', text: 'A change in the good’s own price causes a movement along the SAME supply curve – never a shift.' },
       interactiveDiagram: {
@@ -148,7 +149,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_4',
       template: 'framing',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'Shifts in supply',
       tip: { icon: '✅', tone: 'green', text: 'When a non-price factor changes, the WHOLE supply curve shifts – more or less is supplied at every price. Step through an increase and a decrease.' },
       interactiveDiagram: {
@@ -175,7 +176,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_5',
       template: 'framing',
-      stepLabel: 'Learn: Step 5 of 7',
+      stepLabel: 'Learn: Step 5 of 8',
       title: 'What shifts supply',
       tip: { icon: '✅', tone: 'green', text: 'Think of shifts as supply drivers OUTSIDE the good’s own price – the conditions of supply.' },
       diagramKey: 'supplyDeterminantsHub',
@@ -200,7 +201,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_6',
       template: 'framing',
-      stepLabel: 'Learn: Step 6 of 7',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'Costs, productivity, tax & subsidy',
       tip: { icon: '✅', tone: 'green', text: 'Many supply changes work through one mechanism – the producer’s unit cost. Lower unit cost tends to raise supply; higher unit cost tends to reduce it.' },
       diagramKey: 'supplyCostFactors',
@@ -217,11 +218,55 @@ window.ECONOS_TOPIC = {
       examEdge: 'Link the determinant to <strong>unit cost</strong>, then to supply — that causal chain (determinant → cost → supply shift) is what earns the marks.'
     },
 
-    /* ================ CARD 7 – The supply exam toolkit ================ */
+    /* ================ CARD 7 – Joint & competing supply (applied extension) ================ */
     {
       id: 'supply_7',
       template: 'framing',
-      stepLabel: 'Learn: Step 7 of 7',
+      stepLabel: 'Learn: Step 7 of 8',
+      title: 'Joint & competing supply',
+      tip: { icon: '💡', tone: 'blue', text: 'Some products are supplied together, while others compete for the same scarce resources – so one supply decision can ripple into another market.' },
+      conceptBoxes: [
+        {
+          tone: 'green',
+          head: 'Joint supply',
+          sub: 'Products are produced together.',
+          flows: [
+            { inputs: [{ icon: '🐄', label: 'Cattle' }],    outputs: [{ icon: '🥩', label: 'Beef' },   { icon: '🟫', label: 'Leather' }], connector: '+' },
+            { inputs: [{ icon: '🛢️', label: 'Crude oil' }], outputs: [{ icon: '⛽', label: 'Petrol' }, { icon: '💧', label: 'Diesel' }],  connector: '+' }
+          ],
+          bullets: [
+            'Two or more products come from the same production process.',
+            'You can’t get more of one without also getting more of the other.',
+            'When output of one rises, supply of the joint product rises too.'
+          ]
+        },
+        {
+          tone: 'purple',
+          head: 'Competing supply',
+          sub: 'Products compete for the same scarce resources.',
+          flows: [
+            { inputs: [{ icon: '🌾', label: 'Farmland' }], outputs: [{ icon: '🌽', label: 'Wheat' },  { icon: '🌻', label: 'Rapeseed' }], connector: 'or' },
+            { inputs: [{ icon: '🏭', label: 'Factory' }],  outputs: [{ icon: '🚗', label: 'Cars' },   { icon: '🚐', label: 'Vans' }],    connector: 'or' }
+          ],
+          bullets: [
+            'Resources have alternative uses across different products.',
+            'Using more resources for one means fewer for the other.',
+            'More resources for one product can reduce supply of the other.'
+          ]
+        }
+      ],
+      howToThink: {
+        left:  { icon: '🧩', tone: 'green',  head: 'Joint supply',    body: 'Produced together — more of one means more of the other.' },
+        right: { icon: '🧩', tone: 'purple', head: 'Competing supply', body: 'Share scarce resources — more of one can mean less of the other.' }
+      },
+      examEdge: 'Joint supply is a favourite context question: "Beef demand rises — what happens to leather prices?" Walk the chain: beef price up → beef output rises (extension) → more leather produced as a by-product → leather supply shifts right → leather price falls.'
+    },
+
+    /* ================ CARD 8 – The supply exam toolkit ================ */
+    {
+      id: 'supply_8',
+      template: 'framing',
+      stepLabel: 'Learn: Step 8 of 8',
       title: 'The supply exam toolkit',
       tip: { icon: '✅', tone: 'green', text: 'Most supply questions come down to one distinction: movement or shift? Separate price changes from non-price changes and the logic becomes much clearer.' },
       flow: [

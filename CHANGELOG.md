@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.3 — 2026-06-02
+
+### XED relationship hub — bottom box spacing
+
+- Fixed the large gap between the central "Good A" circle and the bottom
+  "Unrelated" box on `xedRelationshipHub` (Income & Cross-Price Elasticity
+  Card 5). The grid used `gap:150px`, which set both column- **and**
+  row-gap; since the circle is a third grid item it wrapped to a phantom
+  second row, injecting ~150px of empty space below the cards. Changed to
+  `column-gap:150px; row-gap:0` — the bottom box now sits naturally close
+  to the circle (gap 104px → 29px). `sw.js` cache bumped to `econos-v275`.
+
 ## 0.36.2 — 2026-06-02
 
 ### Rational Decision Making Card 2 — mobile label fix

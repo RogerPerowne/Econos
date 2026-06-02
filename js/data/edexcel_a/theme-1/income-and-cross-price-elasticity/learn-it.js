@@ -70,14 +70,6 @@ window.ECONOS_TOPIC = {
       bodyVisualKey: 'yedClassifySpectrum',
       bodyVisualLabel: 'Classify the result',
       bodyVisualEmoji: '📊',
-      causes2Label: 'Read the sign',
-      causes2Emoji: '👁️',
-      causes2Style: 'plain-white',
-      causes2: [
-        { tone: 'rose',  icon: '🚌', head: 'Bus travel → inferior', body: 'Income ↑ → demand ↓. People switch to cars and taxis.' },
-        { tone: 'blue',  icon: '🍞', head: 'Bread & milk → necessity', body: 'Income ↑ → demand ↑ slightly. A staple either way.' },
-        { tone: 'green', icon: '👜', head: 'Designer handbags → luxury', body: 'Income ↑ → demand ↑ a lot. Strongly income-sensitive.' }
-      ],
       productExamplesTitle: 'Normal or inferior?',
       productExamplesSubtitle: 'Predict the YED classification for each good – then reveal the verdict.',
       productExamples: [
@@ -350,43 +342,44 @@ window.ECONOS_TOPIC = {
       title: 'The YED and XED exam toolkit',
       tip: { tone: 'green', icon: '🔒', text: 'Good answers <strong>calculate, classify and apply</strong>.' },
       intro: 'Most questions boil down to identifying the change, choosing the right elasticity, calculating it, and applying it.',
-      body: `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#2563EB;margin-bottom:10px;">① How to read the question</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:22px;">
-  <div style="border-radius:10px;border:1px solid #93C5FD;background:#EFF6FF;padding:12px 13px;">
-    <div style="font-weight:800;font-size:12px;color:#1E3A8A;margin-bottom:5px;">1 · Identify the change</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Is the question about income (Y) or the price of another good (Pₓ)?</div>
+      body: `<style>.yx-toolkit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}@media (max-width:560px){.yx-toolkit-grid{grid-template-columns:1fr;}}</style>
+<div style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#2563EB;margin-bottom:12px;">① How to read the question</div>
+<div class="yx-toolkit-grid">
+  <div style="border-radius:12px;border:1px solid #93C5FD;background:#EFF6FF;padding:14px 16px;">
+    <div style="font-weight:800;font-size:14.5px;color:#1E3A8A;margin-bottom:6px;">1 · Identify the change</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Is the question about income (Y) or the price of another good (Pₓ)?</div>
   </div>
-  <div style="border-radius:10px;border:1px solid #FDBA74;background:#FFF7ED;padding:12px 13px;">
-    <div style="font-weight:800;font-size:12px;color:#C2410C;margin-bottom:5px;">2 · Choose the formula</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">YED = %ΔQ<sup>d</sup> ÷ %ΔY, or XED = %ΔQ<sup>d</sup> ÷ %ΔPₓ. Write it clearly.</div>
+  <div style="border-radius:12px;border:1px solid #FDBA74;background:#FFF7ED;padding:14px 16px;">
+    <div style="font-weight:800;font-size:14.5px;color:#C2410C;margin-bottom:6px;">2 · Choose the formula</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">YED = %ΔQ<sup>d</sup> ÷ %ΔY, or XED = %ΔQ<sup>d</sup> ÷ %ΔPₓ. Write it clearly.</div>
   </div>
-  <div style="border-radius:10px;border:1px solid #C4B5FD;background:#F5F3FF;padding:12px 13px;">
-    <div style="font-weight:800;font-size:12px;color:#5B21B6;margin-bottom:5px;">3 · Calculate & classify</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Compute the value, then use the sign and size to decide what it means.</div>
+  <div style="border-radius:12px;border:1px solid #C4B5FD;background:#F5F3FF;padding:14px 16px;">
+    <div style="font-weight:800;font-size:14.5px;color:#5B21B6;margin-bottom:6px;">3 · Calculate &amp; classify</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Compute the value, then use the sign and size to decide what it means.</div>
   </div>
-  <div style="border-radius:10px;border:1px solid #6EE7B7;background:#ECFDF5;padding:12px 13px;">
-    <div style="font-weight:800;font-size:12px;color:#065F46;margin-bottom:5px;">4 · Apply it</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Link the result to economic meaning — inferior/luxury, substitute/complement — and a real outcome.</div>
+  <div style="border-radius:12px;border:1px solid #6EE7B7;background:#ECFDF5;padding:14px 16px;">
+    <div style="font-weight:800;font-size:14.5px;color:#065F46;margin-bottom:6px;">4 · Apply it</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Link the result to economic meaning — inferior/luxury, substitute/complement — and a real outcome.</div>
   </div>
 </div>
 
-<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin-bottom:10px;">② Common mistakes</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
-  <div style="border-radius:10px;border:1px solid #DC262620;background:#FFF5F5;padding:12px 14px;">
-    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Using PED instead</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Confusing own-price elasticity with income or cross-price elasticity.</div>
+<div style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin-bottom:12px;">② Common mistakes</div>
+<div class="yx-toolkit-grid">
+  <div style="border-radius:12px;border:1px solid #FDA4AF;background:#FFF1F2;padding:14px 16px;">
+    <div style="font-weight:800;font-size:14.5px;color:#9F1239;margin-bottom:6px;">⚠️ Using PED instead</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Confusing own-price elasticity with income or cross-price elasticity.</div>
   </div>
-  <div style="border-radius:10px;border:1px solid #DC262620;background:#FFF5F5;padding:12px 14px;">
-    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Forgetting the sign</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Ignoring whether the elasticity is positive, negative or zero — the sign is the classification.</div>
+  <div style="border-radius:12px;border:1px solid #FDA4AF;background:#FFF1F2;padding:14px 16px;">
+    <div style="font-weight:800;font-size:14.5px;color:#9F1239;margin-bottom:6px;">⚠️ Forgetting the sign</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Ignoring whether the elasticity is positive, negative or zero — the sign is the classification.</div>
   </div>
-  <div style="border-radius:10px;border:1px solid #DC262620;background:#FFF5F5;padding:12px 14px;">
-    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Using absolute changes</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Elasticity needs proportional (percentage) changes, not raw differences.</div>
+  <div style="border-radius:12px;border:1px solid #FDA4AF;background:#FFF1F2;padding:14px 16px;">
+    <div style="font-weight:800;font-size:14.5px;color:#9F1239;margin-bottom:6px;">⚠️ Using absolute changes</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Elasticity needs proportional (percentage) changes, not raw differences.</div>
   </div>
-  <div style="border-radius:10px;border:1px solid #DC262620;background:#FFF5F5;padding:12px 14px;">
-    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ No context or implication</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Giving a number without saying what it implies for behaviour or markets.</div>
+  <div style="border-radius:12px;border:1px solid #FDA4AF;background:#FFF1F2;padding:14px 16px;">
+    <div style="font-weight:800;font-size:14.5px;color:#9F1239;margin-bottom:6px;">⚠️ No context or implication</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Giving a number without saying what it implies for behaviour or markets.</div>
   </div>
 </div>`,
       causesLabel: 'How to write it',

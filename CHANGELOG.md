@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.36.6 — 2026-06-02
+
+### YED & XED — Card 2 cleanup, Card 9 toolkit polish
+
+- Card 2: removed the now-redundant "Read the sign" three-tile block.
+  The new spectrum (added in 0.36.4) carries the same examples and
+  classification, so the card reads more crisply: lock → intro → formula
+  → spectrum → predict-reveal → exam edge.
+- Card 9 (exam toolkit): smartened the "How to read the question" and
+  "Common mistakes" inline-HTML grids. Switched from
+  `auto-fit minmax(150px, 1fr)` (which produced a ragged 3+1 wrap on
+  desktop) to a fixed 2×2 grid stacking to 1 column on mobile, bumped
+  body type from 12px → 14px and headings from 12px → 14.5px to match
+  the rest of the topic, and recoloured the common-mistakes tiles to the
+  rose tone (was a soft red on red border, washed out). `sw.js` cache
+  bumped to `econos-v278`.
+
 ## 0.36.5 — 2026-06-02
 
 ### YED Card 2 — spectrum repositioned after the formula

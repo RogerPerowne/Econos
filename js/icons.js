@@ -14569,7 +14569,7 @@ window.ECONOS_ICONS = {
         .pes-cc .cc-sval { font-size:11px; font-weight:800; line-height:1.2; }
         .pes-cc .cc-snm { font-size:11px; font-weight:800; margin-top:2px; line-height:1.2; }
         .pes-cc .cc-sd { font-size:10px; color:#64748B; line-height:1.25; margin-top:3px; }
-        .pes-cc .cc-bar { height:6px; border-radius:3px; margin:8px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#D97706 28%,#CA8A04 50%,#059669 74%,#7C3AED 100%); }
+        .pes-cc .cc-bar { height:6px; border-radius:3px; margin:8px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#D97706 28%,#2563EB 50%,#059669 74%,#7C3AED 100%); }
         @media (max-width:560px){ .pes-cc .cc-row{ grid-template-columns:1fr; } }
       </style>
       <div class="cc-row">
@@ -14590,7 +14590,7 @@ window.ECONOS_ICONS = {
         <div class="cc-srow">
           <div class="cc-scell" style="color:#DC2626;"><div class="cc-sic">−</div><div class="cc-sval">PES = 0</div><div class="cc-snm">Perfectly inelastic</div><div class="cc-sd">No response in supply</div></div>
           <div class="cc-scell" style="color:#D97706;"><div class="cc-sic">◔</div><div class="cc-sval">0 &lt; PES &lt; 1</div><div class="cc-snm">Inelastic</div><div class="cc-sd">Supply rises less than price</div></div>
-          <div class="cc-scell" style="color:#CA8A04;"><div class="cc-sic">=</div><div class="cc-sval">PES = 1</div><div class="cc-snm">Unit elastic</div><div class="cc-sd">Supply rises in the same proportion</div></div>
+          <div class="cc-scell" style="color:#2563EB;"><div class="cc-sic">=</div><div class="cc-sval">PES = 1</div><div class="cc-snm">Unit elastic</div><div class="cc-sd">Supply rises in the same proportion</div></div>
           <div class="cc-scell" style="color:#059669;"><div class="cc-sic">↗</div><div class="cc-sval">PES &gt; 1</div><div class="cc-snm">Elastic</div><div class="cc-sd">Supply rises more than price</div></div>
           <div class="cc-scell" style="color:#7C3AED;"><div class="cc-sic">∞</div><div class="cc-sval">PES = ∞</div><div class="cc-snm">Perfectly elastic</div><div class="cc-sd">Any amount supplied at one price</div></div>
         </div>
@@ -14616,13 +14616,13 @@ window.ECONOS_ICONS = {
         .ped-spec .ps-val { font-size:11px; font-weight:800; line-height:1.2; }
         .ped-spec .ps-nm { font-size:11px; font-weight:800; margin-top:2px; line-height:1.2; }
         .ped-spec .ps-d { font-size:10px; color:#64748B; line-height:1.25; margin-top:3px; }
-        .ped-spec .ps-bar { height:6px; border-radius:3px; margin:8px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#D97706 28%,#CA8A04 50%,#059669 74%,#7C3AED 100%); }
+        .ped-spec .ps-bar { height:6px; border-radius:3px; margin:8px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#D97706 28%,#2563EB 50%,#059669 74%,#7C3AED 100%); }
       </style>
       <div class="ps-wrap">
         <div class="ps-row">
           <div class="ps-cell" style="color:#DC2626;"><div class="ps-ic">−</div><div class="ps-val">PED = 0</div><div class="ps-nm">Perfectly inelastic</div><div class="ps-d">No response in demand</div></div>
           <div class="ps-cell" style="color:#D97706;"><div class="ps-ic">◔</div><div class="ps-val">0 &lt; |PED| &lt; 1</div><div class="ps-nm">Inelastic</div><div class="ps-d">Demand changes less than price</div></div>
-          <div class="ps-cell" style="color:#CA8A04;"><div class="ps-ic">=</div><div class="ps-val">|PED| = 1</div><div class="ps-nm">Unit elastic</div><div class="ps-d">Demand changes in the same proportion</div></div>
+          <div class="ps-cell" style="color:#2563EB;"><div class="ps-ic">=</div><div class="ps-val">|PED| = 1</div><div class="ps-nm">Unit elastic</div><div class="ps-d">Demand changes in the same proportion</div></div>
           <div class="ps-cell" style="color:#059669;"><div class="ps-ic">↗</div><div class="ps-val">|PED| &gt; 1</div><div class="ps-nm">Elastic</div><div class="ps-d">Demand changes more than price</div></div>
           <div class="ps-cell" style="color:#7C3AED;"><div class="ps-ic">∞</div><div class="ps-val">PED = ∞</div><div class="ps-nm">Perfectly elastic</div><div class="ps-d">Any amount demanded at one price</div></div>
         </div>

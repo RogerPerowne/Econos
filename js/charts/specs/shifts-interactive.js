@@ -1,240 +1,71 @@
 /* ============================================================
-   Shifts Interactive — engine spec for shiftsInteractive.
-   Price-determination card 3 (Analysing Shifts: Demand and Supply).
+   Shifts Interactive — engine spec for shiftsInteractive
+   (Price-determination card 3). Layered spec for the
+   `interactiveDiagram` block: one curve shifts, the equilibrium moves.
 
-   Layer wiring matches the existing shifts-svg CSS:
-     persistent  axes
-     show-demand-right   layer-demand-right
-     show-demand-left    layer-demand-left
-     show-supply-right   layer-supply-right
-     show-supply-left    layer-supply-left
+   Persistent: original D, S, E.
+   States (show: ['layer-*']):
+     layer-dinc → D → D₂ (right): E₂ higher P, higher Q
+     layer-ddec → D → D₃ (left):  E₃ lower P, lower Q
+     layer-sinc → S → S₂ (right): E₂ lower P, higher Q
+     layer-sdec → S → S₃ (left):  E₃ higher P, lower Q
 
-   Each state renders its own 3 curves (faded original + solid shift +
-   the opposing curve solid) so the engine spec describes 4 self-
-   contained subdiagrams sharing the chart axes.
-
-   Chart geometry (viewBox 900×440):
-     Chart area  x=60..560, y=43..400 → width 500, height 357
-     Divider     x=595
-
-   Base curve endpoints (chart-space):
-     D₁  (0.080, 0.868) → (0.860, 0.084)
-     S₁  (0.080, 0.084) → (0.860, 0.868)
-     E₁  (0.470, 0.476)
-
-   Shifts (right = +0.240 in starting x; left = -0.200 in starting x):
-     D₂ right (0.280, 0.868) → (1.000, 0.146)
-     D₂ left  (-0.120, 0.868) → (0.660, 0.084)
-     S₂ right (0.280, 0.084) → (1.000, 0.807)
-     S₂ left  (-0.120, 0.084) → (0.660, 0.868)
+   D (0.10,0.886)→(0.94,0.091), S (0.10,0.091)→(0.94,0.886), E≈(0.52,0.49).
+   Shift = ±0.18 in chart-x; new equilibria solved on the opposite curve.
    ============================================================ */
 (function () {
   'use strict';
 
-  var E1 = { x: 0.470, y: 0.476 };
-  var E2_dr = { x: 0.570, y: 0.577 }; // demand right
-  var E2_dl = { x: 0.370, y: 0.375 }; // demand left
-  var E2_sr = { x: 0.570, y: 0.375 }; // supply right
-  var E2_sl = { x: 0.370, y: 0.577 }; // supply left
-
-  // Tiny helpers to keep the per-state declarations terse.
-  function fadedE1(layer) {
-    return [
-      // Faded E₁ gridlines
-      { layer: layer, x1: 0, y1: E1.y, x2: E1.x, y2: E1.y, tone: 'slate', strokeWidth: 1.2, dashed: '5 4', buffer: 0, opacity: 0.45 },
-      { layer: layer, x1: E1.x, y1: E1.y, x2: E1.x, y2: 0,  tone: 'slate', strokeWidth: 1.2, dashed: '5 4', buffer: 0, opacity: 0.45 }
-    ];
-  }
-  function fadedE1Texts(layer) {
-    return [
-      { layer: layer, x: -0.028, y: E1.y, text: 'P₁', tone: 'gray', italic: true, fontSize: 12, anchor: 'end' },
-      { layer: layer, x: E1.x, y: -0.050, text: 'Q₁', tone: 'gray', italic: true, fontSize: 12, anchor: 'middle' }
-    ];
-  }
-  function newEqGridlines(layer, E2, tone) {
-    return [
-      { layer: layer, x1: 0, y1: E2.y, x2: E2.x, y2: E2.y, tone: tone, strokeWidth: 1.3, dashed: '5 4', buffer: 0 },
-      { layer: layer, x1: E2.x, y1: E2.y, x2: E2.x, y2: 0, tone: tone, strokeWidth: 1.3, dashed: '5 4', buffer: 0 }
-    ];
-  }
-
   window.ECONOS_SHIFTS_SPEC = {
-    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
-    legendPosition: 'bottom',
-    height: 440,
-    chartArea: { x: 60, y: 43, width: 500, height: 357 },
-    className: 'shifts-svg',
-    background: '#FFFFFF',
+    width: 700,
+    height: 480,
+    chartArea: { x: 84, y: 40, width: 534, height: 372 },
+    className: 'pd-shift-svg',
+    layers: ['layer-dinc', 'layer-ddec', 'layer-sinc', 'layer-sdec'],
+    layerMode: 'exclusive',
     axes: {
       x: { label: 'Quantity' },
       y: { label: 'Price' }
     },
 
     curves: [
-      /* ─── DEMAND RIGHT ─── */
-      // Faded D₁ ref (no label – D₂ carries the active label)
-      { layer: 'layer-demand-right', d: 'M 0.080,0.868 L 0.860,0.084', tone: 'blue', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      // D₂ shifted right (active)
-      { layer: 'layer-demand-right', d: 'M 0.280,0.868 L 1.000,0.146', tone: 'blue', label: 'D₂', strokeWidth: 3.5, labelDx: 8 },
-      // S (solid amber)
-      { layer: 'layer-demand-right', d: 'M 0.080,0.084 L 0.860,0.868', tone: 'amber', label: 'S', strokeWidth: 3.5, labelDx: 8, labelDy: -4 },
+      { d: 'M 0.10,0.886 L 0.94,0.091', tone: 'blue',  label: 'D', strokeWidth: 3, labelDx: 8, labelDy: 8 },
+      { d: 'M 0.10,0.091 L 0.94,0.886', tone: 'amber', label: 'S', strokeWidth: 3, labelDx: 8, labelDy: -4 },
 
-      /* ─── DEMAND LEFT ─── */
-      { layer: 'layer-demand-left', d: 'M 0.080,0.868 L 0.860,0.084', tone: 'blue', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-demand-left', d: 'M -0.120,0.868 L 0.660,0.084', tone: 'blue', label: 'D₂', strokeWidth: 3.5, labelDx: 8 },
-      { layer: 'layer-demand-left', d: 'M 0.080,0.084 L 0.860,0.868', tone: 'amber', label: 'S', strokeWidth: 3.5, labelDx: 8, labelDy: -4 },
-
-      /* ─── SUPPLY RIGHT ─── */
-      { layer: 'layer-supply-right', d: 'M 0.080,0.084 L 0.860,0.868', tone: 'amber', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-supply-right', d: 'M 0.280,0.084 L 1.000,0.807', tone: 'amber', label: 'S₂', strokeWidth: 3.5, labelDx: 8, labelDy: -4 },
-      { layer: 'layer-supply-right', d: 'M 0.080,0.868 L 0.860,0.084', tone: 'blue', label: 'D', strokeWidth: 3.5, labelDx: 8, labelDy: 4 },
-
-      /* ─── SUPPLY LEFT ─── */
-      { layer: 'layer-supply-left', d: 'M 0.080,0.084 L 0.860,0.868', tone: 'amber', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-supply-left', d: 'M -0.120,0.084 L 0.660,0.868', tone: 'amber', label: 'S₂', strokeWidth: 3.5, labelDx: 8, labelDy: -4 },
-      { layer: 'layer-supply-left', d: 'M 0.080,0.868 L 0.860,0.084', tone: 'blue', label: 'D', strokeWidth: 3.5, labelDx: 8, labelDy: 4 }
+      { layer: 'layer-dinc', d: 'M 0.28,0.886 L 1.12,0.091', tone: 'green',  strokeWidth: 2.6 },
+      { layer: 'layer-ddec', d: 'M -0.08,0.886 L 0.76,0.091', tone: 'purple', strokeWidth: 2.6 },
+      { layer: 'layer-sinc', d: 'M 0.28,0.091 L 1.12,0.886', tone: 'green',  strokeWidth: 2.6 },
+      { layer: 'layer-sdec', d: 'M -0.08,0.091 L 0.76,0.886', tone: 'purple', strokeWidth: 2.6 }
     ],
-
-    arrows: [].concat(
-      // Demand right: faded E₁ + new E₂ gridlines (blue)
-      fadedE1('layer-demand-right'),
-      newEqGridlines('layer-demand-right', E2_dr, 'blue'),
-      // Demand left
-      fadedE1('layer-demand-left'),
-      newEqGridlines('layer-demand-left', E2_dl, 'blue'),
-      // Supply right (amber gridlines)
-      fadedE1('layer-supply-right'),
-      newEqGridlines('layer-supply-right', E2_sr, 'amber'),
-      // Supply left
-      fadedE1('layer-supply-left'),
-      newEqGridlines('layer-supply-left', E2_sl, 'amber')
-    ),
 
     points: [
-      /* Faded E₁ dot + new E₂ dot per state. E₂ label sits on the
-         OPPOSITE side of E₂ from E₁ so the label never lands between
-         the two dots or on top of the active curve. */
-      // demand-right: E₂ is upper-right of E₁ → label upper-right of E₂
-      { layer: 'layer-demand-right', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-demand-right', x: E2_dr.x, y: E2_dr.y, tone: 'blue', radius: 6.5, label: 'E₂', labelDx: 12, labelDy: -10, anchor: 'start' },
-
-      // demand-left: E₂ is lower-left of E₁ → label lower-left of E₂
-      { layer: 'layer-demand-left', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-demand-left', x: E2_dl.x, y: E2_dl.y, tone: 'blue', radius: 6.5, label: 'E₂', labelDx: -12, labelDy: 16, anchor: 'end' },
-
-      // supply-right: E₂ is lower-right of E₁ → label lower-right of E₂
-      { layer: 'layer-supply-right', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-supply-right', x: E2_sr.x, y: E2_sr.y, tone: 'amber', radius: 6.5, label: 'E₂', labelDx: 12, labelDy: 16, anchor: 'start' },
-
-      // supply-left: E₂ is upper-left of E₁ → label upper-left of E₂
-      { layer: 'layer-supply-left', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-supply-left', x: E2_sl.x, y: E2_sl.y, tone: 'amber', radius: 6.5, label: 'E₂', labelDx: -12, labelDy: -10, anchor: 'end' },
-
+      { x: 0.52, y: 0.49, tone: 'slate', radius: 6, label: 'E', labelDx: 11, labelDy: -9, anchor: 'start' },
+      { layer: 'layer-dinc', x: 0.611, y: 0.573, tone: 'green',  radius: 6, hollow: true },
+      { layer: 'layer-ddec', x: 0.432, y: 0.404, tone: 'purple', radius: 6, hollow: true },
+      { layer: 'layer-sinc', x: 0.611, y: 0.404, tone: 'green',  radius: 6, hollow: true },
+      { layer: 'layer-sdec', x: 0.432, y: 0.573, tone: 'purple', radius: 6, hollow: true }
     ],
 
-    titleStrips: [
-      { layer: 'layer-demand-right', tone: 'blue',
-        text: 'Demand increases · D shifts right → higher P and Q' },
-      { layer: 'layer-demand-left',  tone: 'blue',
-        text: 'Demand decreases · D shifts left → lower P and Q' },
-      { layer: 'layer-supply-right', tone: 'amber',
-        text: 'Supply increases · S shifts right → lower P, higher Q' },
-      { layer: 'layer-supply-left',  tone: 'amber',
-        text: 'Supply decreases · S shifts left → higher P, lower Q' }
+    arrows: [
+      { layer: 'layer-dinc', x1: 0, y1: 0.573, x2: 0.611, y2: 0.573, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-dinc', x1: 0.611, y1: 0.573, x2: 0.611, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-ddec', x1: 0, y1: 0.404, x2: 0.432, y2: 0.404, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-ddec', x1: 0.432, y1: 0.404, x2: 0.432, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-sinc', x1: 0, y1: 0.404, x2: 0.611, y2: 0.404, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-sinc', x1: 0.611, y1: 0.404, x2: 0.611, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-sdec', x1: 0, y1: 0.573, x2: 0.432, y2: 0.573, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-sdec', x1: 0.432, y1: 0.573, x2: 0.432, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 }
     ],
 
-    texts: [].concat(
-      // Faded E₁ axis tick labels per state
-      fadedE1Texts('layer-demand-right'),
-      fadedE1Texts('layer-demand-left'),
-      fadedE1Texts('layer-supply-right'),
-      fadedE1Texts('layer-supply-left'),
-
-      // E₂ axis tick labels per state
-      [
-        { layer: 'layer-demand-right', x: -0.028, y: E2_dr.y, text: 'P₂', tone: 'blue',  bold: true, italic: true, fontSize: 13, anchor: 'end' },
-        { layer: 'layer-demand-right', x: E2_dr.x, y: -0.050, text: 'Q₂', tone: 'blue',  bold: true, italic: true, fontSize: 13, anchor: 'middle' },
-
-        { layer: 'layer-demand-left', x: -0.028, y: E2_dl.y, text: 'P₂', tone: 'blue',  bold: true, italic: true, fontSize: 13, anchor: 'end' },
-        { layer: 'layer-demand-left', x: E2_dl.x, y: -0.050, text: 'Q₂', tone: 'blue',  bold: true, italic: true, fontSize: 13, anchor: 'middle' },
-
-        { layer: 'layer-supply-right', x: -0.028, y: E2_sr.y, text: 'P₂', tone: 'amber', bold: true, italic: true, fontSize: 13, anchor: 'end' },
-        { layer: 'layer-supply-right', x: E2_sr.x, y: -0.050, text: 'Q₂', tone: 'amber', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
-
-        { layer: 'layer-supply-left', x: -0.028, y: E2_sl.y, text: 'P₂', tone: 'amber', bold: true, italic: true, fontSize: 13, anchor: 'end' },
-        { layer: 'layer-supply-left', x: E2_sl.x, y: -0.050, text: 'Q₂', tone: 'amber', bold: true, italic: true, fontSize: 13, anchor: 'middle' }
-      ]
-    ),
-
-    legends: [
-      /* ─── DEMAND RIGHT LEGEND ─── */
-      {
-        layer: 'layer-demand-right',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'DEMAND INCREASES', tone: 'blue' },
-            body: [ 'D shifts right.', 'Excess demand at old P₁.' ]
-          },
-          { header: { text: 'NEW EQUILIBRIUM', tone: 'gray' },
-            body: [
-              { text: 'Price:     RISES ↑',    tone: 'green', bold: true },
-              { text: 'Quantity: RISES ↑',     tone: 'green', bold: true },
-              'P₂ > P₁  ·  Q₂ > Q₁'
-            ]
-          }
-        ]
-      },
-      /* ─── DEMAND LEFT LEGEND ─── */
-      {
-        layer: 'layer-demand-left',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'DEMAND DECREASES', tone: 'blue' },
-            body: [ 'D shifts left.', 'Excess supply at old P₁.' ]
-          },
-          { header: { text: 'NEW EQUILIBRIUM', tone: 'gray' },
-            body: [
-              { text: 'Price:     FALLS ↓',    tone: 'red', bold: true },
-              { text: 'Quantity: FALLS ↓',     tone: 'red', bold: true },
-              'P₂ < P₁  ·  Q₂ < Q₁'
-            ]
-          }
-        ]
-      },
-      /* ─── SUPPLY RIGHT LEGEND ─── */
-      {
-        layer: 'layer-supply-right',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'SUPPLY INCREASES', tone: 'amber' },
-            body: [ 'S shifts right.', 'Excess supply at old P₁.' ]
-          },
-          { header: { text: 'NEW EQUILIBRIUM', tone: 'gray' },
-            body: [
-              { text: 'Price:     FALLS ↓',    tone: 'red', bold: true },
-              { text: 'Quantity: RISES ↑',     tone: 'green', bold: true },
-              'P₂ < P₁  ·  Q₂ > Q₁'
-            ]
-          }
-        ]
-      },
-      /* ─── SUPPLY LEFT LEGEND ─── */
-      {
-        layer: 'layer-supply-left',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'SUPPLY DECREASES', tone: 'amber' },
-            body: [ 'S shifts left.', 'Excess demand at old P₁.' ]
-          },
-          { header: { text: 'NEW EQUILIBRIUM', tone: 'gray' },
-            body: [
-              { text: 'Price:     RISES ↑',    tone: 'green', bold: true },
-              { text: 'Quantity: FALLS ↓',     tone: 'red', bold: true },
-              'P₂ > P₁  ·  Q₂ < Q₁'
-            ]
-          }
-        ]
-      }
+    texts: [
+      { layer: 'layer-dinc', x: 0.93, y: 0.36, text: 'D₂', tone: 'green',  bold: true, fontSize: 14, anchor: 'middle' },
+      { layer: 'layer-dinc', x: 0.645, y: 0.61, text: 'E₂', tone: 'green', bold: true, fontSize: 13, anchor: 'start' },
+      { layer: 'layer-ddec', x: 0.55, y: 0.17, text: 'D₃', tone: 'purple', bold: true, fontSize: 14, anchor: 'middle' },
+      { layer: 'layer-ddec', x: 0.40, y: 0.43, text: 'E₃', tone: 'purple', bold: true, fontSize: 13, anchor: 'end' },
+      { layer: 'layer-sinc', x: 0.93, y: 0.70, text: 'S₂', tone: 'green',  bold: true, fontSize: 14, anchor: 'middle' },
+      { layer: 'layer-sinc', x: 0.645, y: 0.36, text: 'E₂', tone: 'green', bold: true, fontSize: 13, anchor: 'start' },
+      { layer: 'layer-sdec', x: 0.45, y: 0.73, text: 'S₃', tone: 'purple', bold: true, fontSize: 14, anchor: 'middle' },
+      { layer: 'layer-sdec', x: 0.40, y: 0.60, text: 'E₃', tone: 'purple', bold: true, fontSize: 13, anchor: 'end' }
     ]
   };
 })();

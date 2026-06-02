@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.32.0 — 2026-06-02
+
+### Price Determination — interactive family rolled out to cards 1, 3, 4
+
+Completed the diagram swap: cards 1, 3 and 4 now match the card-2
+interactive pattern (D & S on one chart, chart-left / description-right /
+step buttons below), replacing the broken `ad-interactive` empty-box
+diagrams and the cluttered static equilibrium chart.
+
+- **Card 1 (big picture):** demand & supply → equilibrium E (Pₑ/Qₑ) →
+  the market clears (Qd = Qs, no pressure).
+- **Card 3 (shifts):** step through demand/supply increase/decrease, each
+  drawing the shifted curve and the new equilibrium (E₂/E₃) with leaders.
+- **Card 4 (simultaneous shifts):** both-increase (Q certain, P ambiguous)
+  and demand-up/supply-down (P certain, Q ambiguous); the four real-world
+  combos remain as examples.
+
+Also fixed a marker bug on card 2: the up/down price-pressure arrows used
+pre-rotated triangles with `orient="auto"`, double-rotating them (the 90°
+turn). Now use a standard rightward triangle that `orient` rotates to
+follow the line. Specs `equilibrium-basic` / `shifts-interactive` /
+`sim-shifts-interactive` rewritten as layered interactive specs;
+snapshots updated. SW cache → v267.
+
 ## 0.31.0 — 2026-06-02
 
 ### Price Determination — interactive excess demand/supply diagram (card 2)

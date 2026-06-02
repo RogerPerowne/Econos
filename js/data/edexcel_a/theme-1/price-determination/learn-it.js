@@ -27,27 +27,32 @@ window.ECONOS_TOPIC = {
       id: 'market_equilibrium_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Market equilibrium: the big picture',
-      tip: { icon: '💡', tone: 'blue', text: 'When the plans of buyers and sellers match, the market settles at an equilibrium price and quantity.' },
-      diagramPanel: {
-        diagramKey: 'equilibriumBasic',
-        title: 'Market equilibrium',
-        intro: 'At point E:',
-        bullets: [
-          'quantity demanded equals quantity supplied',
-          'there is no pressure for price to rise or fall',
-          'the equilibrium price clears the market'
+      tip: { icon: '💡', tone: 'blue', text: 'When the plans of buyers and sellers match, the market settles at an equilibrium price and quantity – where the demand and supply curves cross.' },
+      interactiveDiagram: {
+        svgKey: 'equilibriumBasic',
+        label: 'Where demand meets supply',
+        emoji: '⚖️',
+        layers: ['layer-e', 'layer-clear'],
+        views: [
+          { label: 'Demand and supply', tone: 'blue', show: [],
+            head: 'Demand and supply',
+            body: 'Demand (D) slopes down; supply (S) slopes up. Together they describe how much is bought and sold at each price.' },
+          { label: 'Where they meet: E', tone: 'slate', show: ['layer-e'],
+            head: 'Equilibrium E',
+            body: 'Where D and S cross is equilibrium <strong>E</strong> — the market-clearing price <strong>Pₑ</strong> and quantity <strong>Qₑ</strong>.' },
+          { label: 'The market clears', tone: 'green', show: ['layer-e', 'layer-clear'],
+            head: 'The market clears',
+            body: 'At E, quantity demanded equals quantity supplied (Qd = Qs), so there is <strong>no pressure</strong> for the price to rise or fall.' }
         ]
       },
-      pairLabel: null,
-      left:  { tone: 'blue',  icon: '🛒', iconStyle: 'circle', label: 'Demand', text: 'The demand curve shows how much consumers are willing and able to buy at each price.' },
-      right: { tone: 'amber', icon: '🏭', iconStyle: 'circle', label: 'Supply', text: 'The supply curve shows how much producers are willing and able to sell at each price.' },
-      flowTitle: 'How the market gets there',
-      flowEmoji: '➡️',
-      flow: [
-        { tone: 'blue',  icon: '🔺', title: 'Price too high', sub: 'Surplus appears. Sellers cut price.' },
-        { tone: 'amber', icon: '🔻', title: 'Price too low',  sub: 'Shortage appears. Sellers raise price.' },
-        { tone: 'green', icon: '🎯', title: 'Price adjusts towards equilibrium', sub: 'Market moves back to balance at E.' }
+      causes: [
+        { tone: 'blue',  icon: '🛒', head: 'Demand', body: 'How much consumers are willing and able to buy at each price.' },
+        { tone: 'amber', icon: '🏭', head: 'Supply', body: 'How much producers are willing and able to sell at each price.' },
+        { tone: 'green', icon: '🎯', head: 'Equilibrium', body: 'The single price where the two plans match and the market clears.' }
       ],
+      causesLabel: 'The three pieces',
+      causesEmoji: '⚖️',
+      causesStyle: 'tinted-flat',
       conclusion: { title: 'Key takeaway', text: 'Equilibrium is the meeting point of demand and supply – not the point that is automatically best for everyone.' },
       keyTerms: [
         { term: 'Equilibrium', def: 'The price at which quantity demanded equals quantity supplied – the market clears.' },
@@ -99,40 +104,30 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_3',
-      template: 'ad-interactive',
+      template: 'framing',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Analysing Shifts: Demand and Supply',
-      tip: { icon: '💡', tone: 'blue', text: 'Any shift in demand or supply changes the equilibrium price and quantity. Movements along the curve, caused by a price change, do not shift the whole curve.' },
-      diagramKey: 'shiftsInteractive',
-      steps: [
-        {
-          key: 'demand-right',
-          label: 'Demand increases',
-          text: '<strong>D shifts right (D₁ → D₂)</strong> – a non-price demand factor improves (higher income, tastes, substitute\'s price). At old P₁, excess demand appears → price rises → new equilibrium E₂. Result: <strong>P rises, Q rises</strong> – an unambiguous outcome.'
-        },
-        {
-          key: 'demand-left',
-          label: 'Demand decreases',
-          text: '<strong>D shifts left (D₁ → D₂)</strong> – a non-price demand factor worsens (lower income, changed tastes, substitute\'s price falls). At old P₁, excess supply appears → price falls → new equilibrium E₂. Result: <strong>P falls, Q falls</strong>. Both fall – the mirror image of a demand increase.'
-        },
-        {
-          key: 'supply-right',
-          label: 'Supply increases',
-          text: '<strong>S shifts right (S₁ → S₂)</strong> – costs fall, technology improves, or a subsidy is granted. At old P₁, excess supply appears → price falls → new equilibrium E₂. Result: <strong>P falls, Q rises</strong>. Opposite price direction to a D shift.'
-        },
-        {
-          key: 'supply-left',
-          label: 'Supply decreases',
-          text: '<strong>S shifts left (S₁ → S₂)</strong> – costs rise, a tax is imposed, a supply shock hits, or producers leave. At old P₁, excess demand appears → price rises → new equilibrium E₂. Result: <strong>P rises, Q falls</strong>. Classic stagflationary supply shock: higher price, lower output.'
-        }
-      ],
-      flowTitle: 'A 3-step method',
-      flowEmoji: '📋',
-      flow: [
-        { tone: 'blue',  icon: '🔍', title: 'Identify which curve shifts and why',   sub: 'D shifts if a non-price demand factor changes. S shifts if a non-price supply factor changes.' },
-        { tone: 'amber', icon: '↔️', title: 'Say the direction of the shift',         sub: 'Right = increase. Left = decrease. Draw D₂ or S₂ clearly on the diagram.' },
-        { tone: 'green', icon: '🎯', title: 'State the new equilibrium P and Q',      sub: 'Use dashed gridlines to both axes. Label E₂, P₂ and Q₂. State the direction of change.' }
-      ],
+      tip: { icon: '💡', tone: 'blue', text: 'Any shift in demand or supply moves the equilibrium to a new price and quantity. (A change in the good’s own price is a movement along the curve, not a shift.)' },
+      interactiveDiagram: {
+        svgKey: 'shiftsInteractive',
+        label: 'Each shift moves the equilibrium',
+        emoji: '↔️',
+        layers: ['layer-dinc', 'layer-ddec', 'layer-sinc', 'layer-sdec'],
+        views: [
+          { label: 'Demand increases', tone: 'green', show: ['layer-dinc'],
+            head: 'Demand increases (D → D₂)',
+            body: 'A favourable non-price demand factor (higher income, tastes, a dearer substitute) shifts D right. New equilibrium <strong>E₂</strong>: <strong>P rises, Q rises</strong>.' },
+          { label: 'Demand decreases', tone: 'purple', show: ['layer-ddec'],
+            head: 'Demand decreases (D → D₃)',
+            body: 'An adverse demand factor shifts D left. New equilibrium <strong>E₃</strong>: <strong>P falls, Q falls</strong> — the mirror image.' },
+          { label: 'Supply increases', tone: 'green', show: ['layer-sinc'],
+            head: 'Supply increases (S → S₂)',
+            body: 'Lower costs, better technology or a subsidy shift S right. New equilibrium <strong>E₂</strong>: <strong>P falls, Q rises</strong>.' },
+          { label: 'Supply decreases', tone: 'purple', show: ['layer-sdec'],
+            head: 'Supply decreases (S → S₃)',
+            body: 'Higher costs, a tax or a supply shock shift S left. New equilibrium <strong>E₃</strong>: <strong>P rises, Q falls</strong> — a classic supply shock.' }
+        ]
+      },
       causesEmoji: '↔️',
       causesLabel: 'Movement along vs shift',
       causes: [
@@ -151,40 +146,24 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_4',
-      template: 'ad-interactive',
+      template: 'framing',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Simultaneous Shifts',
-      tip: { icon: '💡', tone: 'blue', text: 'When demand and supply both shift, the final effect depends on the direction and relative size of each shift.' },
-      diagramKey: 'simultaneousShiftsInteractive',
-      steps: [
-        {
-          key: 'both-up',
-          label: 'D↑ & S↑',
-          text: '<strong>Both rise – demand right, supply right.</strong> The market clears more units at the new equilibrium. <strong>Quantity definitely rises.</strong> Price could rise, fall, or stay the same – it depends on whether the demand shift or supply shift is larger.'
-        },
-        {
-          key: 'd-up-s-down',
-          label: 'D↑ & S↓',
-          text: '<strong>Demand rises, supply falls.</strong> Both shifts push price up – buyers are bidding more for fewer goods. <strong>Price definitely rises.</strong> Quantity is ambiguous: demand wants to raise Q, supply pulls it down – net effect depends on which shift dominates.'
-        },
-        {
-          key: 'd-down-s-up',
-          label: 'D↓ & S↑',
-          text: '<strong>Demand falls, supply rises.</strong> Both shifts push price down – fewer buyers facing more sellers. <strong>Price definitely falls.</strong> Quantity is ambiguous: lower demand reduces Q, higher supply raises Q – net effect depends on which shift dominates.'
-        },
-        {
-          key: 'both-down',
-          label: 'D↓ & S↓',
-          text: '<strong>Both fall – demand left, supply left.</strong> The market clears fewer units at the new equilibrium. <strong>Quantity definitely falls.</strong> Price could rise, fall, or stay the same depending on whether demand or supply shrinks more.'
-        }
-      ],
-      flowTitle: 'How to answer',
-      flowEmoji: '📋',
-      flow: [
-        { tone: 'blue',  icon: '🔍', title: 'Identify both shifts',        sub: 'State clearly how demand and supply have shifted – direction and reason.' },
-        { tone: 'amber', icon: '⚖️', title: "Decide what's predictable",   sub: 'Same direction for one variable → that variable is determinate. Opposite directions → ambiguous.' },
-        { tone: 'green', icon: '🎯', title: 'Explain the final outcome',   sub: 'State the certain change, then say the other variable depends on the relative magnitude of the shifts.' }
-      ],
+      tip: { icon: '💡', tone: 'blue', text: 'When demand and supply both shift, one variable is determinate and the other is ambiguous – it depends on the relative size of the two shifts.' },
+      interactiveDiagram: {
+        svgKey: 'simultaneousShiftsInteractive',
+        label: 'One certain, one ambiguous',
+        emoji: '⚖️',
+        layers: ['layer-both', 'layer-dups'],
+        views: [
+          { label: 'Both increase', tone: 'green', show: ['layer-both'],
+            head: 'Both increase (D→D₂, S→S₂)',
+            body: 'More is traded at the new equilibrium, so <strong>Q definitely rises</strong>. The effect on <strong>P is ambiguous</strong> — it depends on whether the demand or supply shift is larger (shown ≈ unchanged with equal shifts).' },
+          { label: 'Demand up, supply down', tone: 'purple', show: ['layer-dups'],
+            head: 'Demand up, supply down (D→D₂, S→S₃)',
+            body: 'Both shifts push price up, so <strong>P definitely rises</strong>. The effect on <strong>Q is ambiguous</strong> — demand pulls it up, the supply fall pulls it down.' }
+        ]
+      },
       causes2Emoji: '🌍',
       causes2Label: 'Real-world examples',
       causes2: [

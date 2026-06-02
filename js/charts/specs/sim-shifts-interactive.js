@@ -1,226 +1,70 @@
 /* ============================================================
    Simultaneous Shifts Interactive — engine spec for
-   simultaneousShiftsInteractive. Price-determination card 4.
+   simultaneousShiftsInteractive (Price-determination card 4). Layered
+   spec for the `interactiveDiagram` block: BOTH curves shift, so one
+   variable is determinate and the other is ambiguous.
 
-   Layer wiring matches the sim-shifts-svg CSS:
-     persistent   axes
-     show-both-up        layer-both-up
-     show-d-up-s-down    layer-d-up-s-down
-     show-d-down-s-up    layer-d-down-s-up
-     show-both-down      layer-both-down
+   Persistent: original D, S, E.
+   States (show: ['layer-*']):
+     layer-both → D→D₂ and S→S₂ (both right): Q rises (certain),
+                  P ambiguous (shown ≈ unchanged with equal shifts).
+     layer-dups → D→D₂ (right) and S→S₃ (left): P rises (certain),
+                  Q ambiguous (shown ≈ unchanged).
 
-   Each of the 4 states shows BOTH curves shifted. One outcome
-   variable is certain, the other ambiguous:
-     both-up         Q rises  (P ambiguous)  → Q₂ vert line only
-     d-up-s-down     P rises  (Q ambiguous)  → P₂ horiz line only
-     d-down-s-up     P falls  (Q ambiguous)  → P₂ horiz line only
-     both-down       Q falls  (P ambiguous)  → Q₂ vert line only
-
-   Chart-space positions (chart area: x=60..560, y=43..400):
-     D₁ ref (0.080, 0.868) → (0.860, 0.084)
-     S₁ ref (0.080, 0.084) → (0.860, 0.868)
-     D right (0.240, 0.868) → (1.000, 0.104)
-     D left  (-0.080, 0.868) → (0.700, 0.084)
-     S right (0.240, 0.084) → (1.000, 0.849)
-     S left  (-0.080, 0.084) → (0.700, 0.868)
-     E₁      (0.470, 0.476)
-     E₂      both-up (0.630, 0.476)
-             d-up-s-down (0.470, 0.636)
-             d-down-s-up (0.470, 0.317)
-             both-down (0.310, 0.476)
+   New equilibria solved from the shifted pairs:
+     both: (0.70, 0.488)   d-up/s-down: (0.522, 0.658)
    ============================================================ */
 (function () {
   'use strict';
 
-  var E1 = { x: 0.470, y: 0.476 };
-  var E2_bu = { x: 0.630, y: 0.476 };
-  var E2_du = { x: 0.470, y: 0.636 };
-  var E2_dd = { x: 0.470, y: 0.317 };
-  var E2_bd = { x: 0.310, y: 0.476 };
-
-  // Tag the "certain" variable for each state — drives which dashed
-  // ref line (vertical for Q certain, horizontal for P certain) renders.
-  function fadedE1(layer) {
-    return [
-      { layer: layer, x1: 0, y1: E1.y, x2: E1.x, y2: E1.y, tone: 'slate', strokeWidth: 1.2, dashed: '5 4', buffer: 0, opacity: 0.40 },
-      { layer: layer, x1: E1.x, y1: E1.y, x2: E1.x, y2: 0,  tone: 'slate', strokeWidth: 1.2, dashed: '5 4', buffer: 0, opacity: 0.40 }
-    ];
-  }
-  function fadedE1Texts(layer) {
-    return [
-      { layer: layer, x: -0.028, y: E1.y, text: 'P₁', tone: 'gray', italic: true, fontSize: 12, anchor: 'end' },
-      { layer: layer, x: E1.x, y: -0.050, text: 'Q₁', tone: 'gray', italic: true, fontSize: 12, anchor: 'middle' }
-    ];
-  }
-
   window.ECONOS_SIM_SHIFTS_SPEC = {
-    // Side-legend → HTML-below: see ppf-card1.js for the rationale.
-    legendPosition: 'bottom',
-    height: 440,
-    chartArea: { x: 60, y: 43, width: 500, height: 357 },
-    className: 'sim-shifts-svg',
-    background: '#FFFFFF',
+    width: 700,
+    height: 480,
+    chartArea: { x: 84, y: 40, width: 534, height: 372 },
+    className: 'pd-sim-svg',
+    layers: ['layer-both', 'layer-dups'],
+    layerMode: 'exclusive',
     axes: {
       x: { label: 'Quantity' },
       y: { label: 'Price' }
     },
 
     curves: [
-      /* ─── BOTH UP (D right + S right) ─── */
-      { layer: 'layer-both-up', d: 'M 0.080,0.868 L 0.860,0.084', tone: 'blue', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-both-up', d: 'M 0.240,0.868 L 1.000,0.104', tone: 'blue', label: 'D₂', strokeWidth: 3.5, labelDx: 8 },
-      { layer: 'layer-both-up', d: 'M 0.080,0.084 L 0.860,0.868', tone: 'amber', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-both-up', d: 'M 0.240,0.084 L 1.000,0.849', tone: 'amber', label: 'S₂', strokeWidth: 3.5, labelDx: 8, labelDy: -4 },
+      { d: 'M 0.10,0.886 L 0.94,0.091', tone: 'blue',  label: 'D', strokeWidth: 3, labelDx: 8, labelDy: 8 },
+      { d: 'M 0.10,0.091 L 0.94,0.886', tone: 'amber', label: 'S', strokeWidth: 3, labelDx: 8, labelDy: -4 },
 
-      /* ─── D UP, S DOWN ─── */
-      { layer: 'layer-d-up-s-down', d: 'M 0.080,0.868 L 0.860,0.084', tone: 'blue', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-d-up-s-down', d: 'M 0.240,0.868 L 1.000,0.104', tone: 'blue', label: 'D₂', strokeWidth: 3.5, labelDx: 8 },
-      { layer: 'layer-d-up-s-down', d: 'M 0.080,0.084 L 0.860,0.868', tone: 'amber', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-d-up-s-down', d: 'M -0.080,0.084 L 0.700,0.868', tone: 'amber', label: 'S₂', strokeWidth: 3.5, labelDx: 8, labelDy: -4 },
+      /* both increase */
+      { layer: 'layer-both', d: 'M 0.28,0.886 L 1.12,0.091', tone: 'green', strokeWidth: 2.6 },
+      { layer: 'layer-both', d: 'M 0.28,0.091 L 1.12,0.886', tone: 'green', strokeWidth: 2.6 },
 
-      /* ─── D DOWN, S UP ─── */
-      { layer: 'layer-d-down-s-up', d: 'M 0.080,0.868 L 0.860,0.084', tone: 'blue', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-d-down-s-up', d: 'M -0.080,0.868 L 0.700,0.084', tone: 'blue', label: 'D₂', strokeWidth: 3.5, labelDx: 8 },
-      { layer: 'layer-d-down-s-up', d: 'M 0.080,0.084 L 0.860,0.868', tone: 'amber', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-d-down-s-up', d: 'M 0.240,0.084 L 1.000,0.849', tone: 'amber', label: 'S₂', strokeWidth: 3.5, labelDx: 8, labelDy: -4 },
-
-      /* ─── BOTH DOWN (D left + S left) ─── */
-      { layer: 'layer-both-down', d: 'M 0.080,0.868 L 0.860,0.084', tone: 'blue', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-both-down', d: 'M -0.080,0.868 L 0.700,0.084', tone: 'blue', label: 'D₂', strokeWidth: 3.5, labelDx: 8 },
-      { layer: 'layer-both-down', d: 'M 0.080,0.084 L 0.860,0.868', tone: 'amber', strokeWidth: 2.5, dashed: '8 5', opacity: 0.45 },
-      { layer: 'layer-both-down', d: 'M -0.080,0.084 L 0.700,0.868', tone: 'amber', label: 'S₂', strokeWidth: 3.5, labelDx: 8, labelDy: -4 }
+      /* demand up, supply down */
+      { layer: 'layer-dups', d: 'M 0.28,0.886 L 1.12,0.091', tone: 'green',  strokeWidth: 2.6 },
+      { layer: 'layer-dups', d: 'M -0.08,0.091 L 0.76,0.886', tone: 'purple', strokeWidth: 2.6 }
     ],
-
-    arrows: [].concat(
-      // Persistent (per state) E₁ faded gridlines
-      fadedE1('layer-both-up'),
-      fadedE1('layer-d-up-s-down'),
-      fadedE1('layer-d-down-s-up'),
-      fadedE1('layer-both-down'),
-
-      [
-        // E₂ partial gridlines — only the CERTAIN variable's line shown
-        // both-up: Q rises → vertical Q₂ line only (green)
-        { layer: 'layer-both-up', x1: E2_bu.x, y1: E2_bu.y, x2: E2_bu.x, y2: 0,
-          tone: 'green', strokeWidth: 1.3, dashed: '5 4', buffer: 0 },
-        // d-up-s-down: P rises → horizontal P₂ line only (green)
-        { layer: 'layer-d-up-s-down', x1: 0, y1: E2_du.y, x2: E2_du.x, y2: E2_du.y,
-          tone: 'green', strokeWidth: 1.3, dashed: '5 4', buffer: 0 },
-        // d-down-s-up: P falls → horizontal P₂ line only (red)
-        { layer: 'layer-d-down-s-up', x1: 0, y1: E2_dd.y, x2: E2_dd.x, y2: E2_dd.y,
-          tone: 'red', strokeWidth: 1.3, dashed: '5 4', buffer: 0 },
-        // both-down: Q falls → vertical Q₂ line only (red)
-        { layer: 'layer-both-down', x1: E2_bd.x, y1: E2_bd.y, x2: E2_bd.x, y2: 0,
-          tone: 'red', strokeWidth: 1.3, dashed: '5 4', buffer: 0 }
-      ]
-    ),
 
     points: [
-      // Faded E₁ ref + E₂ new per state
-      { layer: 'layer-both-up', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-both-up', x: E2_bu.x, y: E2_bu.y, tone: 'green', radius: 6.5, label: 'E₂' },
-
-      { layer: 'layer-d-up-s-down', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-d-up-s-down', x: E2_du.x, y: E2_du.y, tone: 'green', radius: 6.5, label: 'E₂' },
-
-      { layer: 'layer-d-down-s-up', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-d-down-s-up', x: E2_dd.x, y: E2_dd.y, tone: 'red', radius: 6.5, label: 'E₂' },
-
-      { layer: 'layer-both-down', x: E1.x, y: E1.y, tone: 'gray', radius: 4.5 },
-      { layer: 'layer-both-down', x: E2_bd.x, y: E2_bd.y, tone: 'red', radius: 6.5, label: 'E₂' },
-
+      { x: 0.52, y: 0.49, tone: 'slate', radius: 6, label: 'E', labelDx: -14, labelDy: -9, anchor: 'end' },
+      { layer: 'layer-both', x: 0.70, y: 0.488, tone: 'green', radius: 6, hollow: true },
+      { layer: 'layer-dups', x: 0.522, y: 0.658, tone: 'purple', radius: 6, hollow: true }
     ],
 
-    titleStrips: [
-      { layer: 'layer-both-up',     tone: 'green',
-        text: 'Demand and supply both increase → Q rises, P ambiguous' },
-      { layer: 'layer-d-up-s-down', tone: 'blue',
-        text: 'Demand rises, supply falls → P rises, Q ambiguous' },
-      { layer: 'layer-d-down-s-up', tone: 'blue',
-        text: 'Demand falls, supply rises → P falls, Q ambiguous' },
-      { layer: 'layer-both-down',   tone: 'red',
-        text: 'Demand and supply both decrease → Q falls, P ambiguous' }
+    arrows: [
+      { layer: 'layer-both', x1: 0, y1: 0.488, x2: 0.70, y2: 0.488, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-both', x1: 0.70, y1: 0.488, x2: 0.70, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-dups', x1: 0, y1: 0.658, x2: 0.522, y2: 0.658, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
+      { layer: 'layer-dups', x1: 0.522, y1: 0.658, x2: 0.522, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 }
     ],
 
-    texts: [].concat(
-      fadedE1Texts('layer-both-up'),
-      fadedE1Texts('layer-d-up-s-down'),
-      fadedE1Texts('layer-d-down-s-up'),
-      fadedE1Texts('layer-both-down'),
-      [
-        // E₂ tick labels for the CERTAIN variable only
-        { layer: 'layer-both-up', x: E2_bu.x, y: -0.050, text: 'Q₂', tone: 'green', bold: true, italic: true, fontSize: 13, anchor: 'middle' },
-        { layer: 'layer-d-up-s-down', x: -0.028, y: E2_du.y, text: 'P₂', tone: 'green', bold: true, italic: true, fontSize: 13, anchor: 'end' },
-        { layer: 'layer-d-down-s-up', x: -0.028, y: E2_dd.y, text: 'P₂', tone: 'red',   bold: true, italic: true, fontSize: 13, anchor: 'end' },
-        { layer: 'layer-both-down', x: E2_bd.x, y: -0.050, text: 'Q₂', tone: 'red',   bold: true, italic: true, fontSize: 13, anchor: 'middle' }
-      ]
-    ),
+    texts: [
+      { layer: 'layer-both', x: 0.95, y: 0.36, text: 'D₂', tone: 'green', bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-both', x: 0.95, y: 0.66, text: 'S₂', tone: 'green', bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-both', x: 0.73, y: 0.52, text: 'E₂', tone: 'green', bold: true, fontSize: 13, anchor: 'start' },
+      { layer: 'layer-both', x: 0.40, y: -0.155, text: 'Q rises · P ambiguous', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
 
-    legends: [
-      /* ─── BOTH UP ─── */
-      {
-        layer: 'layer-both-up',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'D AND S BOTH RISE', tone: 'green' },
-            body: [ 'D shifts right · S shifts right.' ]
-          },
-          { header: { text: 'PREDICTABLE', tone: 'gray' },
-            body: [ { text: 'Quantity   RISES ↑', tone: 'green', bold: true } ]
-          },
-          { header: { text: 'AMBIGUOUS', tone: 'gray' },
-            body: [ 'Price depends on which', 'shift is larger.' ]
-          }
-        ]
-      },
-      /* ─── D UP, S DOWN ─── */
-      {
-        layer: 'layer-d-up-s-down',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'D RIGHT · S LEFT', tone: 'blue' },
-            body: [ 'D shifts right (more buyers).', 'S shifts left (less production).' ]
-          },
-          { header: { text: 'PREDICTABLE', tone: 'gray' },
-            body: [ { text: 'Price   RISES ↑', tone: 'green', bold: true } ]
-          },
-          { header: { text: 'AMBIGUOUS', tone: 'gray' },
-            body: [ 'Quantity could go either way.' ]
-          }
-        ]
-      },
-      /* ─── D DOWN, S UP ─── */
-      {
-        layer: 'layer-d-down-s-up',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'D LEFT · S RIGHT', tone: 'blue' },
-            body: [ 'D shifts left (fewer buyers).', 'S shifts right (more production).' ]
-          },
-          { header: { text: 'PREDICTABLE', tone: 'gray' },
-            body: [ { text: 'Price   FALLS ↓', tone: 'red', bold: true } ]
-          },
-          { header: { text: 'AMBIGUOUS', tone: 'gray' },
-            body: [ 'Quantity could go either way.' ]
-          }
-        ]
-      },
-      /* ─── BOTH DOWN ─── */
-      {
-        layer: 'layer-both-down',
-        x: 600, y: 72,
-        sections: [
-          { header: { text: 'D AND S BOTH FALL', tone: 'red' },
-            body: [ 'D shifts left · S shifts left.' ]
-          },
-          { header: { text: 'PREDICTABLE', tone: 'gray' },
-            body: [ { text: 'Quantity   FALLS ↓', tone: 'red', bold: true } ]
-          },
-          { header: { text: 'AMBIGUOUS', tone: 'gray' },
-            body: [ 'Price depends on which', 'shift is larger.' ]
-          }
-        ]
-      }
+      { layer: 'layer-dups', x: 0.95, y: 0.36, text: 'D₂', tone: 'green',  bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-dups', x: 0.46, y: 0.74, text: 'S₃', tone: 'purple', bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-dups', x: 0.545, y: 0.69, text: 'E₂', tone: 'purple', bold: true, fontSize: 13, anchor: 'start' },
+      { layer: 'layer-dups', x: 0.40, y: -0.155, text: 'P rises · Q ambiguous', tone: 'purple', bold: true, fontSize: 12, anchor: 'middle' }
     ]
   };
 })();

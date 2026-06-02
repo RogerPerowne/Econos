@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.28.2 — 2026-06-02
+
+### Demand shifts chart — label clash fix
+
+The curve auto-labels were anchored to the line ends, and D₂/D₃ end
+off-stage (right of the plot), so their labels clipped/cramped. Replaced
+with explicit in-bounds text labels — one bold curve label per state
+plus a faint D₁ on the dashed baseline — all clear of the lines and the
+shift arrows. SW cache → v263.
+
 ## 0.28.1 — 2026-06-02
 
 ### Demand shifts chart — switch to interactiveDiagram block

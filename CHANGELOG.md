@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.28.1 — 2026-06-02
+
+### Demand shifts chart — switch to interactiveDiagram block
+
+Reworked per review. The previous attempt re-laid out the
+`ad-interactive` pieces and pushed the per-state panels into the right
+column, which left the panels orphaned. This release switches Card 4
+to the canonical `interactiveDiagram` block (the same component the
+Consumer & Producer Surplus topic Card 2 uses): **chart on the left,
+description on the right, step buttons underneath the row**. Stacks on
+narrow viewports below 1100px.
+
+The `--aside` CSS variant and the renderer's `c.diagramAside` slot
+from v0.28.0 are reverted (they were the wrong shape). Chart height
+bumped from 360 → 480 in the spec so the demand-curve has more room.
+SW cache → v262.
+
 ## 0.28.0 — 2026-06-02
 
 ### Demand — interactive shifts chart (family template)

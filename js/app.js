@@ -5018,7 +5018,7 @@
 
       ${hasSteps ? `
       ${c.diagramLabel ? genSecLabel(c.diagramEmoji || '📈', c.diagramLabel) : ''}
-      <div class="ad-interactive${c.diagramAside ? ' ad-interactive--aside' : ''}">
+      <div class="ad-interactive">
         <div class="ad-interactive__diagram show-${c.steps[0].key}" data-ad-state="${c.steps[0].key}">
           ${diagram}
         </div>

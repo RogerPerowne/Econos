@@ -13908,6 +13908,121 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ───────────────────────────────────────────────────────────────
+     rationalAgentHub — Rational Decision Making Card 1. A brain at the
+     centre with the four habits of a rational agent radiating to the
+     corners (consistent / goal-seeking / marginal / maximising).
+     growthScorecard pattern: 2×2 grid + central overlay + dashed
+     connectors. Collapses to one column on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  rationalAgentHub: `
+    <div class="rat-hub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .rat-hub .rh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:152px; row-gap:18px; position:relative; z-index:1; }
+        .rat-hub .rh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .rat-hub .rh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .rat-hub .rh-tile { border-radius:12px; padding:12px 14px; }
+        .rat-hub .rh-head { display:flex; align-items:center; gap:10px; margin-bottom:5px; }
+        .rat-hub .rh-ic { width:42px; height:42px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; box-shadow:0 1px 4px rgba(0,0,0,0.1); position:relative; }
+        .rat-hub .rh-num { position:absolute; top:-6px; right:-6px; width:18px; height:18px; border-radius:50%; color:#fff; font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+        .rat-hub .rh-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .rat-hub .rh-s { font-size:12px; color:#475569; line-height:1.4; }
+        @media (max-width:560px){ .rat-hub .rh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .rat-hub .rh-center{ position:static; transform:none; margin:6px auto; } .rat-hub .rh-center-wrap{ order:99; display:flex; justify-content:center; } .rat-hub .rh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:660px;margin:0 auto;">
+        <svg class="rh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="33" y1="33" x2="50" y2="50" stroke="#CBD5E1" stroke-width="0.25" stroke-dasharray="0.8 0.8"/>
+          <line x1="67" y1="33" x2="50" y2="50" stroke="#CBD5E1" stroke-width="0.25" stroke-dasharray="0.8 0.8"/>
+          <line x1="33" y1="67" x2="50" y2="50" stroke="#CBD5E1" stroke-width="0.25" stroke-dasharray="0.8 0.8"/>
+          <line x1="67" y1="67" x2="50" y2="50" stroke="#CBD5E1" stroke-width="0.25" stroke-dasharray="0.8 0.8"/>
+        </svg>
+        <div class="rh-grid">
+          <div class="rh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="rh-head"><div class="rh-ic">🔁<span class="rh-num" style="background:#2563EB;">1</span></div><div class="rh-t" style="color:#1E3A8A;">Consistent choices</div></div>
+            <div class="rh-s">Preferences don’t randomly change.</div>
+          </div>
+          <div class="rh-tile" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
+            <div class="rh-head"><div class="rh-ic">🎯<span class="rh-num" style="background:#059669;">2</span></div><div class="rh-t" style="color:#065F46;">Goal-seeking</div></div>
+            <div class="rh-s">Decisions aim at an objective.</div>
+          </div>
+          <div class="rh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="rh-head"><div class="rh-ic">⚖️<span class="rh-num" style="background:#7C3AED;">3</span></div><div class="rh-t" style="color:#5B21B6;">Marginal analysis</div></div>
+            <div class="rh-s">Compare one more unit of benefit with one more unit of cost.</div>
+          </div>
+          <div class="rh-tile" style="background:#FFFBEB;border:1.5px solid #FCD34D;">
+            <div class="rh-head"><div class="rh-ic">📈<span class="rh-num" style="background:#D97706;">4</span></div><div class="rh-t" style="color:#B45309;">Maximisation</div></div>
+            <div class="rh-s">Choose the option with the highest payoff.</div>
+          </div>
+        </div>
+        <div class="rh-center-wrap"><div class="rh-center" style="background:#fff;border:2.4px solid #94A3B8;border-radius:50%;width:128px;height:128px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;box-shadow:0 4px 14px rgba(0,0,0,0.12);">
+          <div style="font-size:40px;line-height:1;">🧠</div>
+          <div style="font-size:10.5px;font-weight:800;color:#334155;text-align:center;margin-top:4px;letter-spacing:0.05em;">RATIONAL AGENT</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     marginalUtilityCompare — Rational Decision Making Card 2. Two
+     goods rated on the extra satisfaction from the next £1 (stars),
+     with a "shift spending to the higher MU per £" hub between them
+     and the equimarginal rule beneath. Stacks on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  marginalUtilityCompare: `
+    <div class="mu-comp" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mu-comp .mu-row { display:grid; grid-template-columns:1fr 96px 1fr; align-items:center; gap:0; }
+        .mu-comp .mu-panel { border-radius:14px; padding:14px 12px; text-align:center; }
+        .mu-comp .mu-ic { width:54px; height:54px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 8px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
+        .mu-comp .mu-name { font-size:13px; font-weight:800; margin-bottom:4px; }
+        .mu-comp .mu-cap { font-size:11px; color:#475569; margin-bottom:8px; line-height:1.35; }
+        .mu-comp .mu-stars { font-size:16px; letter-spacing:2px; margin-bottom:4px; }
+        .mu-comp .mu-lvl { font-size:12px; font-weight:800; }
+        .mu-comp .mu-mid { text-align:center; padding:0 4px; }
+        .mu-comp .mu-mid-c { width:46px; height:46px; border-radius:50%; background:#F1F5F9; border:1.5px solid #CBD5E1; display:flex; align-items:center; justify-content:center; font-size:20px; margin:0 auto 6px; }
+        @media (max-width:560px){ .mu-comp .mu-row{ grid-template-columns:1fr; } .mu-comp .mu-mid{ transform:rotate(90deg); margin:10px 0; } }
+      </style>
+      <div class="mu-row">
+        <div class="mu-panel" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="mu-ic">🎧</div>
+          <div class="mu-name" style="color:#1E3A8A;">Good A — headphones</div>
+          <div class="mu-cap">Extra satisfaction from the next £1</div>
+          <div class="mu-stars" style="color:#2563EB;">★★★★<span style="color:#CBD5E1;">★</span></div>
+          <div class="mu-lvl" style="color:#2563EB;">High MU per £</div>
+        </div>
+        <div class="mu-mid">
+          <div class="mu-mid-c">💷</div>
+          <div style="font-size:11px;font-weight:700;color:#334155;line-height:1.3;">Shift spending to the higher MU per £</div>
+          <div style="font-size:20px;color:#2563EB;margin-top:4px;">→</div>
+        </div>
+        <div class="mu-panel" style="background:#FFFBEB;border:1.5px solid #FCD34D;">
+          <div class="mu-ic">☕</div>
+          <div class="mu-name" style="color:#B45309;">Good B — coffee</div>
+          <div class="mu-cap">Extra satisfaction from the next £1</div>
+          <div class="mu-stars" style="color:#D97706;">★★<span style="color:#CBD5E1;">★★★</span></div>
+          <div class="mu-lvl" style="color:#B45309;">Lower MU per £</div>
+        </div>
+      </div>
+      <div style="font-size:11.5px;color:#475569;text-align:center;margin-top:12px;line-height:1.45;">The best point is where the <strong>last £1</strong> spent on each good gives roughly the <strong>same</strong> extra utility — the equimarginal rule.</div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
+     profitEquationHero — Rational Decision Making Card 3. The core
+     identity Profit = Total revenue − Total costs, scales icon beside
+     it. Stacks/centres on mobile.
+     ─────────────────────────────────────────────────────────────── */
+  profitEquationHero: `
+    <div class="profit-eq" style="line-height:1.5;background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:14px;padding:18px 16px;font-family:Inter,sans-serif;color:#0B1426;display:flex;align-items:center;gap:18px;">
+      <style>@media (max-width:560px){ .profit-eq{ flex-direction:column; text-align:center; gap:12px; } }</style>
+      <div style="width:74px;height:74px;border-radius:50%;background:#fff;border:1.5px solid #93C5FD;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;box-shadow:0 2px 8px rgba(37,99,235,0.12);">⚖️</div>
+      <div>
+        <div style="font-size:21px;font-weight:800;color:#2563EB;letter-spacing:0.01em;margin-bottom:6px;">Profit = Total revenue − Total costs</div>
+        <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">Firms compare the <strong>extra revenue</strong> and <strong>extra cost</strong> of each decision, and choose the option that raises profit the most.</div>
+      </div>
+    </div>
+  `,
+
   /* Card 2 — UK income spectrum: same 2% growth year drawn two ways.
      Layer .idl-pounds : £ per year per decile, with a broken Y-axis so
      the bottom four bars (£200..£1,800) are readable alongside the

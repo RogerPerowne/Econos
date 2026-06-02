@@ -166,6 +166,7 @@ window.ECONOS_TOPIC = {
       tip: { icon: '⚖️', tone: 'blue', text: 'The same tax or subsidy falls differently on different markets. One rule governs both: <strong>the less elastic side carries more of the burden (tax) or captures more of the benefit (subsidy).</strong>' },
       interactiveDiagram: {
         svgKey: 'elasticityIncidenceInteractive',
+        wide: true,
         layers: ['idl-1', 'idl-2'],
         views: [
           {

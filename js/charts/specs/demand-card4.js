@@ -42,16 +42,16 @@
     },
 
     curves: [
-      /* base — solid blue D₁ */
-      { layer: 'layer-base', d: 'M 0.12,1.046 L 1.00,0.166', tone: 'blue', label: 'D₁', strokeWidth: 3, labelDx: 12, labelDy: 6 },
+      /* base — solid blue D₁ (label via explicit text below) */
+      { layer: 'layer-base', d: 'M 0.12,1.046 L 1.00,0.166', tone: 'blue', strokeWidth: 3 },
 
       /* incr — dashed grey D₁ + solid green D₂ */
       { layer: 'layer-incr', d: 'M 0.12,1.046 L 1.00,0.166', tone: 'slate', strokeWidth: 2.4, dashed: '7 5', opacity: 0.55 },
-      { layer: 'layer-incr', d: 'M 0.34,1.046 L 1.22,0.166', tone: 'green', label: 'D₂', strokeWidth: 3, labelDx: 10, labelDy: 6 },
+      { layer: 'layer-incr', d: 'M 0.34,1.046 L 1.22,0.166', tone: 'green', strokeWidth: 3 },
 
       /* decr — dashed grey D₁ + solid red D₃ */
       { layer: 'layer-decr', d: 'M 0.12,1.046 L 1.00,0.166', tone: 'slate', strokeWidth: 2.4, dashed: '7 5', opacity: 0.55 },
-      { layer: 'layer-decr', d: 'M -0.10,1.046 L 0.78,0.166', tone: 'red', label: 'D₃', strokeWidth: 3, labelDx: -2, labelDy: 6 }
+      { layer: 'layer-decr', d: 'M -0.10,1.046 L 0.78,0.166', tone: 'red', strokeWidth: 3 }
     ],
 
     arrows: [
@@ -62,8 +62,16 @@
     ],
 
     texts: [
-      { layer: 'layer-incr', x: d2x + 0.03, y: yMid + 0.07, text: 'Increase', tone: 'green', bold: true, fontSize: 12, anchor: 'start' },
-      { layer: 'layer-decr', x: d3x - 0.03, y: yMid + 0.07, text: 'Decrease', tone: 'red',   bold: true, fontSize: 12, anchor: 'end' }
+      /* curve labels — explicit, in-bounds, one per state, clear of the line */
+      { layer: 'layer-base', x: 0.90, y: 0.40, text: 'D₁', tone: 'blue',  bold: true, fontSize: 15, anchor: 'middle' },
+
+      { layer: 'layer-incr', x: 0.95, y: 0.46, text: 'D₂', tone: 'green', bold: true, fontSize: 15, anchor: 'middle' },
+      { layer: 'layer-incr', x: 0.70, y: 0.30, text: 'D₁', tone: 'slate', fontSize: 13, anchor: 'middle', opacity: 0.6 },
+      { layer: 'layer-incr', x: 0.86, y: 0.64, text: 'Increase', tone: 'green', bold: true, fontSize: 12, anchor: 'start' },
+
+      { layer: 'layer-decr', x: 0.62, y: 0.24, text: 'D₃', tone: 'red',   bold: true, fontSize: 15, anchor: 'middle' },
+      { layer: 'layer-decr', x: 0.92, y: 0.34, text: 'D₁', tone: 'slate', fontSize: 13, anchor: 'middle', opacity: 0.6 },
+      { layer: 'layer-decr', x: 0.40, y: 0.64, text: 'Decrease', tone: 'red', bold: true, fontSize: 12, anchor: 'end' }
     ]
   };
 })();

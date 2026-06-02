@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.27.1 — 2026-06-02
+
+### Demand — shifts chart refinement
+
+Reworked the Card 4 shifts diagram per review: D₁ is now the faint
+dashed baseline, with bold solid shifted curves — green D₂ (increase,
+right) and red D₃ (decrease, left) — each reached by a dashed
+directional arrow. Adopts the standard green=increase / red=decrease
+convention. SW cache → v260.
+
 ## 0.27.0 — 2026-06-02
 
 ### Demand (1.2.2) — restructure + chart rebuild

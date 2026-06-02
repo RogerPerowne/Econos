@@ -2878,6 +2878,16 @@ img, svg { display: block; max-width: 100%; }
   .gen-verdict { flex-direction: column !important; }
   .gen-verdict__sep { justify-content: center !important; align-self: center !important; }
   .gen-verdict__sep--arrow > div { transform: rotate(90deg); }
+  /* Flow/flow2 separator chains (A → B → C …) use flex:1 1 0 so the tiles
+     stretch to fill the row on desktop. On a phone the chain wraps, and
+     because flex-grow lets each row fill independently, a row with fewer
+     tiles renders them wider than a full row — worst case a lone wrapped
+     tile balloons to the full width. Cap each tile at a third of the row
+     and centre the wrapped remainder so every tile lands at a consistent
+     width regardless of which row it wrapped onto. Separators stay visible
+     (they carry meaning in the formula chains, e.g. AD = C + I + G). */
+  .econos-flow-chain { justify-content: center !important; }
+  .econos-flow-chain > .econos-flow-tile { max-width: calc(33.333% - 6px); }
 }
 
 /* Card padding tightens on narrow viewports so the inner content

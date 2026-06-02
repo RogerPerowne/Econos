@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v253';
+  const CACHE_NAME = 'econos-v254';
 
   const PRECACHE_ASSETS = [
     '/',

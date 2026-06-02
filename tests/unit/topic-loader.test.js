@@ -146,3 +146,48 @@ describe('TopicLoader exam-board selection', () => {
     expect(window.TopicLoader.getBoard()).toBe('edexcel_a');
   });
 });
+
+describe('TopicLoader routes — topic-arg honouring', () => {
+  /* Regression for the "Next topic" → wrong Learn It bug: the Link It /
+     Land It completion footers call routes.learn(null, nextTopicId).
+     makeShellRoute used to ignore the 2nd-arg topic whenever the 1st arg
+     wasn't a string, so the URL fell back to the CURRENT topic (and 404'd
+     when getTopic() didn't resolve). These pin the corrected contract. */
+  beforeAll(() => {
+    window.ECONOS_BOARDS = {
+      edexcel_a: { id: 'edexcel_a', name: 'Edexcel A', isDefault: true }
+    };
+    window.ECONOS_TOPICS = [
+      { id: 'topic-a', name: 'Topic A', boards: { edexcel_a: { spec: '1.1.1', included: true } } },
+      { id: 'topic-b', name: 'Topic B', boards: { edexcel_a: { spec: '2.2.2', included: true } } }
+    ];
+    /* Current topic = topic-a (theme-1). The bug sent next-topic links here. */
+    window.history.replaceState(null, '', '/edexcel_a/theme-1/topic-a/learn-it');
+    window.localStorage.clear();
+    const src = readFileSync(resolve(process.cwd(), 'js/topic-loader.js'), 'utf8');
+    // eslint-disable-next-line no-new-func
+    new Function(src)();
+  });
+
+  it('routes.learn(null, topic) targets the passed topic, not the current one', () => {
+    expect(window.TopicLoader.routes.learn(null, 'topic-b'))
+      .toBe('/edexcel_a/theme-2/topic-b/learn-it');
+  });
+
+  it('routes.learn(undefined, topic) behaves the same', () => {
+    expect(window.TopicLoader.routes.learn(undefined, 'topic-b'))
+      .toBe('/edexcel_a/theme-2/topic-b/learn-it');
+  });
+
+  it('routes.learn() with no args still emits the current topic cover', () => {
+    expect(window.TopicLoader.routes.learn())
+      .toBe('/edexcel_a/theme-1/topic-a/learn-it');
+  });
+
+  it('single topic-id arg and (sub, topic) forms are unaffected', () => {
+    expect(window.TopicLoader.routes.learn('topic-b'))
+      .toBe('/edexcel_a/theme-2/topic-b/learn-it');
+    expect(window.TopicLoader.routes.learn('demand-pull', 'topic-b'))
+      .toBe('/edexcel_a/theme-2/topic-b/learn-it/demand-pull');
+  });
+});

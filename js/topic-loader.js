@@ -205,6 +205,15 @@
           /* one arg, not a known topic id — treat as sub */
           sub = subOrTopic;
         }
+      } else if (topic !== undefined) {
+        /* first arg omitted (null/undefined) but an explicit topic was
+           passed — e.g. routes.learn(null, nextTopicId) from the Link It /
+           Land It completion footers. Honour the topic and emit its bare
+           cover. Previously this fell through with t=null, so urlBase()
+           used the CURRENT topic from the URL — sending "Next topic" to
+           the current topic's Learn It (and 404-ing when getTopic() didn't
+           resolve on a completion screen). */
+        t = topic;
       }
       /* 'intro' is the cover view — addressed by the BARE shell URL,
          not a distinct sub-route. Collapse the explicit form so

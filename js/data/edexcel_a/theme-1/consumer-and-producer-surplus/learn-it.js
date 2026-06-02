@@ -32,9 +32,19 @@ window.ECONOS_TOPIC = {
         tone: 'blue',
         text: '<strong>Consumer surplus</strong> is the gap between what consumers are willing to pay and the market price. <strong>Producer surplus</strong> is the gap between the market price and the minimum price producers are willing to accept.'
       },
-      diagramKey: 'cpsDiagram',
-      diagramLabel: 'The surplus diagram',
-      diagramEmoji: '📐',
+      diagramPanel: {
+        diagramKey: 'cpsDiagram',
+        title: 'The surplus diagram',
+        titleAbove: true,
+        titleEmoji: '📐',
+        tone: 'blue',
+        layout: 'side',
+        bullets: [
+          '<strong>Consumer surplus</strong> — the blue triangle between the demand curve and the price Pₑ: the gain buyers get.',
+          '<strong>Producer surplus</strong> — the amber triangle between Pₑ and the supply curve: the gain sellers get.',
+          '<strong>Total surplus = CS + PS</strong>, and it is largest at the equilibrium E.'
+        ]
+      },
       causes: [
         {
           tone: 'blue',

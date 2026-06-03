@@ -6,6 +6,41 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.16 — 2026-06-03
+
+### Auto-placer fixes: interior-direction bias + slope-aware offset
+
+User asked why the v0.41.15 logic was putting the MPC label above the
+curve when below was clearly better. Three issues with the first pass:
+
+1. **No interior-direction bias.** All four cardinal candidates tied
+   at cost 0 for typical supply/demand layouts; ties fell through to
+   the first-listed candidate (LEFT). Added a bias: for an endpoint in
+   the UPPER half of the chart prefer BELOW (push label into the open
+   chart body); for a LOWER-half endpoint prefer ABOVE. Symmetric
+   horizontal bias for endpoints near the right/left edges.
+
+2. **Out-of-bounds disqualified useful slots.** BELOW for MPC ended
+   3.6px past the right panel edge — my 1000+ overflow penalty killed
+   it even though shifting left 4px would make it fit. Added a shift
+   step: when overflow is smaller than the label dimension, slide the
+   candidate INWARD and re-evaluate.
+
+3. **Fixed 10px offset wasn't enough for sloped curves.** With a
+   straight supply curve, the line RISES from the endpoint as the
+   label extends sideways — so a 10px below-the-endpoint offset put
+   the curve through the bottom edge of the label. Now the engine
+   computes the curve's slope from the last two samples and sizes the
+   vertical offset to `max(10, slope × halfWidth + 4)` — the label
+   always clears the line by at least 4px.
+
+`private-vs-social.js` is fully auto-placed (all six curve labels
+stripped of manual `labelDx`/`labelDy`/`anchor`). Both panels read
+cleanly: MPC and MSC sit below their endpoints in the upper area, MPB
+sits above its endpoint in the lower area, MSB picks its own slot.
+
+`sw.js` cache bumped to `econos-v310`.
+
 ## 0.41.15 — 2026-06-03
 
 ### Curve-label auto-placer in the chart engine

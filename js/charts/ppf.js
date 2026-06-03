@@ -219,27 +219,56 @@
     var size = SIZE.curveLabel;
     var endpoint = samples[samples.length - 1];
     var ex = endpoint[0], ey = endpoint[1];
-    var offset = curve.labelOffset != null ? curve.labelOffset : 10;
+    var baseOffset = curve.labelOffset != null ? curve.labelOffset : 10;
     var halfH = 1.15 * size / 2;
+    var halfW = 0.58 * size * text.length / 2;
+
+    // For ABOVE/BELOW placements, the label spans `halfW` pixels on
+    // each side of the endpoint x. If the curve is sloped, the line
+    // RISES from the endpoint as we move sideways — so a fixed offset
+    // can put the curve THROUGH the label box (this is exactly why
+    // MPC's "BELOW" was failing). Compute slope from the last two
+    // samples and pad the offset by enough to clear the curve at the
+    // far edge of the label box, plus a 4px breathing margin.
+    var penult = samples[Math.max(0, samples.length - 2)];
+    var slopeMag = Math.abs((ey - penult[1]) / Math.max(1, ex - penult[0]));
+    var slopeOffset = Math.ceil(slopeMag * halfW) + 4;
+    var vOffset = Math.max(baseOffset, slopeOffset);
+
     // CENTER candidate: midpoint of the curve, with the label offset
-    // ABOVE the line (perpendicular up in pixel space). Good for
-    // straight supply/demand lines where corners are crowded but the
-    // middle has empty space — also the natural slot for things like
-    // a DWL label inside a triangle.
+    // ABOVE the line. Good for straight supply/demand lines where
+    // corners are crowded but the middle has empty space — also the
+    // natural slot for things like a DWL label inside a triangle.
     var mid = samples[Math.floor(samples.length / 2)];
     var candidates = [
-      { name: 'right',  x: ex + offset,        y: ey,                  anchor: 'start'  },
-      { name: 'left',   x: ex - offset,        y: ey,                  anchor: 'end'    },
-      { name: 'above',  x: ex,                  y: ey - offset - halfH, anchor: 'middle' },
-      { name: 'below',  x: ex,                  y: ey + offset + halfH, anchor: 'middle' },
-      { name: 'center', x: mid[0],              y: mid[1] - offset - halfH, anchor: 'middle' }
+      { name: 'right',  x: ex + baseOffset,    y: ey,                   anchor: 'start'  },
+      { name: 'left',   x: ex - baseOffset,    y: ey,                   anchor: 'end'    },
+      { name: 'above',  x: ex,                  y: ey - vOffset - halfH, anchor: 'middle' },
+      { name: 'below',  x: ex,                  y: ey + vOffset + halfH, anchor: 'middle' },
+      { name: 'center', x: mid[0],              y: mid[1] - baseOffset - halfH, anchor: 'middle' }
     ];
     var best = null, bestCost = Infinity;
     for (var i = 0; i < candidates.length; i++) {
       var c = candidates[i];
       var box = estimateTextBox(text, size, c.x, c.y, c.anchor);
       var cost = 0;
-      // Out-of-bounds: heavy penalty proportional to overflow distance
+      // SHIFT inward when the candidate would overflow the chart area
+      // by less than the label's own width/height. This preserves the
+      // intent (label-below the endpoint stays below, just nudged
+      // along the overflow axis) instead of disqualifying useful
+      // slots — MPC's BELOW candidate hung over the right edge by
+      // 4px before the shift was added, losing to a LEFT candidate
+      // that wasn't visually anchored to the curve.
+      var maxShiftX = box.w, maxShiftY = box.h;
+      var overflowR = (box.x + box.w) - (area.x + area.width);
+      if (overflowR > 0 && overflowR < maxShiftX) { c.x -= overflowR; box.x -= overflowR; }
+      var overflowL = area.x - box.x;
+      if (overflowL > 0 && overflowL < maxShiftX) { c.x += overflowL; box.x += overflowL; }
+      var overflowB = (box.y + box.h) - (area.y + area.height);
+      if (overflowB > 0 && overflowB < maxShiftY) { c.y -= overflowB; box.y -= overflowB; }
+      var overflowT = area.y - box.y;
+      if (overflowT > 0 && overflowT < maxShiftY) { c.y += overflowT; box.y += overflowT; }
+      // Post-shift overflow penalty (only what couldn't be shifted away)
       if (box.x < area.x - 2) cost += 1000 + (area.x - box.x);
       if (box.x + box.w > area.x + area.width + 2) cost += 1000 + (box.x + box.w - area.x - area.width);
       if (box.y < area.y - 2) cost += 1000 + (area.y - box.y);
@@ -274,6 +303,19 @@
           }
         }
       }
+      // Interior-direction bias: for an endpoint in the upper half of
+      // the chart, BELOW pushes the label into the open chart body
+      // (where supply/demand labels naturally read); ABOVE pushes it
+      // into the cramped top margin. Symmetric for the lower half.
+      // The bias is small (60 — comparable to one curve-sample overlap)
+      // so it tie-breaks but doesn't override an otherwise-bad slot.
+      var epEndpointRelY = (samples[samples.length - 1][1] - area.y) / area.height;
+      if (c.name === 'below' && epEndpointRelY < 0.5) cost -= 60;
+      if (c.name === 'above' && epEndpointRelY > 0.5) cost -= 60;
+      // Symmetric horizontal bias for endpoints near the right/left edges.
+      var epEndpointRelX = (samples[samples.length - 1][0] - area.x) / area.width;
+      if (c.name === 'left'  && epEndpointRelX > 0.5) cost -= 30;
+      if (c.name === 'right' && epEndpointRelX < 0.5) cost -= 30;
       if (cost < bestCost) { bestCost = cost; best = { lx: c.x, ly: c.y, anchor: c.anchor, box: box, name: c.name }; }
     }
     return best;

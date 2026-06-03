@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.14 — 2026-06-03
+
+### PES & Price Mechanism tweaks (3 of 4 in the batch)
+
+- **PES Card 6 diagram** — shrank the ΔP / ΔQ / shift arrows (smaller
+  arrowheads + thinner strokes) so they read as annotations, not features.
+- **PES Card 6 "Real examples"** — evened up the three columns: trimmed UK
+  housing and gave Concert tickets (near-zero PES, fixed capacity → resale)
+  and Trainers (high PES, spare capacity → output scales) proper detail.
+- **Price Mechanism Card 6 "Common sources of failure"** — the seven tiles
+  are now seven fancy numbered rows (numbered-rows style), matching the
+  treatment used elsewhere.
+
+Spec + data only (network-first) — no `sw.js` bump. (The fourth batch item —
+PES cards 1–6 labels in the 'above' position — ships separately.)
+
 ## 0.44.13 — 2026-06-03
 
 ### PES Card 1 — remove the divider line between the two supply panels

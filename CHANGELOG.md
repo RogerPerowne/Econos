@@ -6,6 +6,38 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.3 — 2026-06-03
+
+### PPF Card 4 — concrete axis numbers make the increasing-OC story readable
+
+The "Why the PPF bows out" interactive previously labelled axes as
+"Good A" / "Good B" with no tick marks, so the three OC triangles told
+the increasing-cost story qualitatively but the actual numbers had to
+be taken on faith from the analysis prose.
+
+- **Axis labels** renamed to **"Capital goods"** (x) and **"Consumer
+  goods"** (y) — matches the language the methodGrid + versusList
+  already use and matches Card 6's UK-vs-other-country interactive.
+- **Numeric ticks** added at 2 / 4 / 6 / 8 on both axes via the spec's
+  `texts` field (the engine doesn't draw ticks, so they're placed as
+  text just outside the chart area).
+- **PPF curve** stretched to span the full chart `(0, 10) → (10, 0)`
+  so the new tick numerals read cleanly.
+- **Triangle positions** re-calibrated to start at integer capital
+  values (capital = 2, 5, 8) with `deltaX = 0.1 = 1 capital good`, and
+  badges relabelled from "Low / Rising / High OC" to the actual
+  numbers **OC ≈ 0.5 / 1.0 / 1.5** — the 1 : 2 : 3 ratio of triangle
+  heights is now visually obvious and verifiable off the axes.
+- **Card view bodies** rewritten to walk the reader through reading
+  the numbers off the diagram ("Capital rises from 5 to 6 (+1),
+  consumer goods fall from about 7.6 to 6.5 (−1.0)") instead of
+  describing the cost in words alone.
+
+Verified all three views — small / larger / even larger cost — show
+the right triangle at the right axis coordinates with the right badge.
+
+`sw.js` cache bumped to `econos-v298`.
+
 ## 0.41.2 — 2026-06-03
 
 ### PPF Card 3 — move B and C labels off the arrowhead

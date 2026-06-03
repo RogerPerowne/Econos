@@ -151,17 +151,17 @@ window.ECONOS_TOPIC = {
         layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           { label: 'Small cost',      tone: 'green', show: ['idl-1'],
-            head: '+1 capital good early on costs only −1 consumer good.',
-            body: 'Near point A the first resources to move into capital goods are those least suited to consumer-good production. Moving them costs little.',
-            analysis: 'Adaptable resources transfer first. Their opportunity cost is low because they were only marginally productive in their original use.' },
+            head: 'Near 2 capital goods — OC ≈ 0.5',
+            body: 'Read it off the axes: capital rises from 2 to 3 (+1), consumer goods fall from about 9.6 to 9.1 (−0.5). One more capital good costs only about <strong>half</strong> a consumer good.',
+            analysis: 'Adaptable resources transfer first. They were only marginally productive in consumer goods, so giving them up barely dents output. The triangle is flat and shallow.' },
           { label: 'Larger cost',     tone: 'amber', show: ['idl-1','idl-2'],
-            head: 'Now +1 capital good costs −2 consumer goods.',
-            body: 'Near point B the easy transfers are gone. The resources moving now were genuinely productive in consumer goods, so giving them up hurts more.',
-            analysis: 'The sacrifice has roughly doubled for the same gain. Specialisation starts to bite.' },
+            head: 'Near 5 capital goods — OC ≈ 1.0',
+            body: 'Capital rises from 5 to 6 (+1), consumer goods fall from about 7.6 to 6.5 (−1.0). The sacrifice has <strong>doubled</strong> for the same gain.',
+            analysis: 'The easy transfers are gone. Resources now moving were genuinely productive in consumer goods, so reallocating them hurts more. The triangle is visibly taller than the first.' },
           { label: 'Even larger cost', tone: 'rose', show: ['idl-1','idl-2','idl-3'],
-            head: 'Near C, +1 capital good costs −3 consumer goods.',
-            body: 'The most specialised consumer-good resources are the last to switch. Their opportunity cost is huge — the curve steepens sharply.',
-            analysis: 'Equal increases in capital goods require bigger and bigger decreases in consumer goods. <strong>That is increasing opportunity cost.</strong>' }
+            head: 'Near 8 capital goods — OC ≈ 1.5',
+            body: 'Capital rises from 8 to 9 (+1), consumer goods fall from about 3.8 to 2.2 (−1.5). The same +1 capital good now costs <strong>three times</strong> what it did at the start.',
+            analysis: 'The last consumer-good resources to switch are the most specialised — workers, land or machinery that were highly productive in consumer goods. <strong>That is increasing opportunity cost.</strong>' }
         ]
       },
       methodGrid: {

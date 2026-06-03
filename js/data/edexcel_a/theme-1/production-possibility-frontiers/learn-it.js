@@ -151,7 +151,7 @@ window.ECONOS_TOPIC = {
         layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           { label: 'Cheap trade', tone: 'green', show: ['idl-1'],
-            head: 'OC ≈ 1/3 — you gain three times what you give up.',
+            head: 'Opportunity Cost (OC) ≈ 1/3 — you gain three times what you give up.',
             body: 'Near the top of the PPF, moving from 2 to 4 capital goods (+2) costs only about <strong>0.6 consumer goods</strong>. The chord is shallow: the gain dwarfs the sacrifice.',
             analysis: 'The first resources to switch are workers, land and machinery that weren’t much use in consumer goods anyway. Reallocating them barely dents consumer-goods output — so the sacrifice per extra capital good is small.' },
           { label: 'Even trade', tone: 'blue', show: ['idl-1','idl-2'],
@@ -211,7 +211,7 @@ window.ECONOS_TOPIC = {
             tone: 'purple',
             show: ['ppf1s', 'a-lbl', 'b-pos', 'a-b-arrow'],
             head: 'UK moves A → B (along PPF₁)',
-            body: 'The UK\'s current production mix is <strong>A</strong> — heavily weighted toward consumer goods. To boost long-run growth, it can move <em>along</em> PPF₁ to point <strong>B</strong>: produce less consumer goods now, more capital goods. The dashed arrow shows the potential move; the dashed gridlines mark B\'s position — clearly more capital, fewer consumer goods than at A.',
+            body: 'The UK\'s current production mix is <strong>A</strong> — heavily weighted toward consumer goods. To boost long-run growth, it can move <em>along</em> PPF₁ to point <strong>B</strong>: produce less consumer goods now, more capital goods.',
             analysis: 'This is movement <strong>along the existing PPF</strong> — not yet a shift. A → B is a reallocation of existing resources, with a real opportunity cost: lower consumer goods output means lower present living standards. Post-war Germany, Japan, South Korea (1960s–80s) and China (1990s–2010s) all made this choice deliberately — <strong>China averaged ~9.5% real growth p.a. from 1990–2010 against the UK\'s ~2.3%</strong>, the cumulative effect of decades of high investment ratios shifting PPF₂ further and further out. The political challenge: voters resist short-term sacrifices even when long-term gains are large.'
           },
           {

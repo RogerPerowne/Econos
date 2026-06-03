@@ -43,12 +43,17 @@
     },
 
     curves: [
+      // labelDx/anchor flipped to 'end' so the multi-char curve labels
+      // sit inline at the curve end instead of floating ~35–42px out
+      // past the endpoint (the old labelDx=8/anchor='start' had the
+      // label CENTRE sitting that far from the line for any label
+      // wider than a single character).
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.560 L 0.860,0.056',
-        tone: 'amber', label: 'D = MPB', strokeWidth: 3, labelDx: 8, labelDy: 4 },
+        tone: 'amber', label: 'D = MPB', strokeWidth: 3, labelDx: -8, labelDy: -12, anchor: 'end' },
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.084 L 0.860,0.868',
-        tone: 'green', label: 'MPC = MSC', strokeWidth: 3, labelDx: 8, labelDy: -4 },
+        tone: 'green', label: 'MPC = MSC', strokeWidth: 3, labelDx: -8, labelDy: 12, anchor: 'end' },
       // MSB (blue dashed) — visible in extension/shift/efficiency.
       // Curve labelled near its right end inside the chart.
       { layer: 'layer-msb',

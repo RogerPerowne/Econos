@@ -6,6 +6,64 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.14 — 2026-06-03
+
+### Sweep label-to-curve placement using the new audit script
+
+User flagged that the MSC label in `private-vs-social` sat far from
+the actual line, and asked for a systematic review of label placement
+across every chart instead of one-at-a-time fixes. Built
+`scripts/audit-labels.mjs` which samples each curve at 40 points and
+measures pixel-distance from the curve to each label centre, plus a
+distance-to-nearest-other-label "ambiguous" check. The first pass
+found 19 labels >28px from their own curve.
+
+This release works through them, taking the audit number from **19
+findings down to 8**:
+
+**Long labels shortened** — the label CENTRE was the actual culprit
+on these because anchor='end' with a label this wide pushed the
+midpoint well inside the chart:
+- `tax-types-interactive`: "S + T (specific)" → "S + T", "S + T%
+  (ad valorem)" → "S + T%". The two views are `layerMode: 'exclusive'`
+  so the parenthetical is carried by the view title, not the label.
+- `ppf-classify`: "Efficient frontier" → "PPF". The classification
+  is now carried entirely by the region shadings (amber/green).
+- `actual-vs-potential-growth`: "Actual GDP" / "Potential GDP" →
+  "Actual" / "Potential". The y-axis "Real GDP" already establishes
+  what's plotted.
+
+**Curve trimmed to chart edge** — three specs had supply/demand
+lines extending to chart x=1.153 (auto-clipped) but the label was
+positioned relative to the un-clipped endpoint, so its centre sat
+~46px from the visible end:
+- `ad-demand-pull-interactive`, `ad-shift-interactive`: AD₂ curve
+  trimmed to `L 1.000,0.218`. Label now anchors at the visible end.
+- `sras-right-shift-interactive`: SRAS₂ curve trimmed to `L 1.000,0.743`.
+
+**anchor='end' + bigger labelDx** for wide labels that need to stay
+near their curve's endpoint:
+- `consumption-function`: "C = a + bY" repositioned.
+- `pos-externality-interactive`: "D = MPB", "MPC = MSC".
+- `neg-externality-interactive`: "D = MSB".
+- `market-failure-overview`, `welfare-loss-diagram`: "MPB = D",
+  "MPC = S" (where it didn't create a clash with MSC).
+- `models-supply-demand`: "Demand", "Supply".
+
+**User-flagged MSC adjacency** in `private-vs-social.js`: the MSC
+label sat at the curve's upper-right endpoint, visually stacked next
+to the MPC label. Moved to anchor='end' / labelDy=14 so it sits
+inline on the MSC line at chart-x≈0.72 — clearly separated from MPC.
+
+8 remaining findings (30–43px range) are borderline-acceptable in
+the supply/demand family — pushing them further risked introducing
+clashes with axis ticks or other curve labels (the
+`actual-vs-potential` "Actual" ↔ "Tech" clash hit and reverted on
+the way through). Future work: rotated inline labels via `texts`
+field as a per-spec opt-in.
+
+`sw.js` cache bumped to `econos-v308`.
+
 ## 0.41.13 — 2026-06-03
 
 ### Chart-engine sweep: clear the 9 label issues v0.41.11 surfaced

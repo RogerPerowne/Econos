@@ -58,13 +58,12 @@
         dashed: '6 4', labelDx: -6, labelDy: 6, anchor: 'end',
         layer: 'idl-1' },
       // Layer 1: new AD₂ solid blue, shifted right (clipped at right edge)
-      { d: 'M 0.319,0.894 L 1.153,0.067',
+      // Curve trimmed to end AT chart x=1.0 (same as ad-demand-pull's
+      // AD₂) so the label anchors on the VISIBLE curve end, not the
+      // off-stage extension. Auto-clip means the visual is unchanged.
+      { d: 'M 0.319,0.894 L 1.000,0.218',
         tone: 'blue', label: 'AD₂', strokeWidth: 2.2,
-        // labelDx=-32 keeps the "AD₂" right edge inside the 440-wide SVG
-        // — the curve endpoint sits past x=1.0 and auto-clips, but the
-        // label is positioned from the un-clipped endpoint so it needs
-        // explicit pull-back.
-        labelDx: -32, labelDy: 14, anchor: 'end',
+        labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' }
     ],
 

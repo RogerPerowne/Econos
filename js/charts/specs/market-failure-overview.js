@@ -43,11 +43,17 @@
     ],
 
     curves: [
-      /* MPB (private demand) — the market sees this */
+      /* MPB (private demand) — the market sees this. labelDx pulled
+       * in (−32) so the wide "MPB = D" sits closer to the line at
+       * chart-x≈0.86 instead of dangling ~35px off the endpoint. */
       { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
         tone: 'blue', label: 'MPB = D', strokeWidth: 2.5,
-        labelDx: -6, labelDy: 14, anchor: 'end' },
-      /* MPC (private supply) — the market sees this */
+        labelDx: -32, labelDy: -6, anchor: 'end' },
+      /* MPC (private supply) — the market sees this. labelDy negative
+       * (above the line at the endpoint) and labelDx small so the
+       * label sits at the top-right of the supply curve, above the
+       * MSC label which is mid-curve. labelDx=-32 with positive
+       * labelDy was clashing with MSC. */
       { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
         tone: 'amber', label: 'MPC = S', strokeWidth: 2.5,
         labelDx: -6, labelDy: -20, anchor: 'end' },

@@ -48,10 +48,16 @@
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC', strokeWidth: 2.5,
             labelDx: -6, labelDy: -20, anchor: 'end' },
-          /* MSC shifted UP from MPC — pollution adds external cost */
+          /* MSC shifted UP from MPC — pollution adds external cost.
+           * label placed BELOW-LEFT of endpoint (anchor='end', labelDy
+           * positive) so it sits inline on the MSC line at chart-x≈0.72
+           * rather than stacking next to the MPC label at the top-right
+           * corner — user feedback was that the old anchor='start' /
+           * labelDx=8 had MSC and MPC visually merged at the top of
+           * the chart. */
           { id: 'MSC', d: 'M 0.069,0.270 L 0.785,0.880',
             tone: 'red', label: 'MSC', strokeWidth: 2.2, dashed: '6 4',
-            labelDx: 8, labelDy: -4, anchor: 'start' }
+            labelDx: -8, labelDy: 14, anchor: 'end' }
         ],
         points: [
           /* Market eq at MPB ∩ MPC */

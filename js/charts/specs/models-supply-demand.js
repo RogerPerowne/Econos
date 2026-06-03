@@ -21,10 +21,13 @@
     },
 
     curves: [
+      // labelDx/anchor flipped to 'end' so the 6-char curve labels sit
+      // inline at the line end instead of hanging in the chart corner
+      // (old labelDx=6 anchor='start' put the centre ~29px from the line).
       { id: 'D', d: 'M 0.080,0.900 L 0.920,0.110',
-        tone: 'blue',  label: 'Demand', strokeWidth: 3, labelDx: 6, labelDy: 4 },
+        tone: 'blue',  label: 'Demand', strokeWidth: 3, labelDx: -8, labelDy: 14, anchor: 'end' },
       { id: 'S', d: 'M 0.080,0.110 L 0.920,0.900',
-        tone: 'amber', label: 'Supply', strokeWidth: 3, labelDx: 6, labelDy: -4 }
+        tone: 'amber', label: 'Supply', strokeWidth: 3, labelDx: -8, labelDy: -14, anchor: 'end' }
     ],
 
     arrows: [

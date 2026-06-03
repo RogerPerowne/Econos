@@ -41,17 +41,25 @@
         tone: 'green', label: 'S', strokeWidth: 2.5,
         labelDx: 6, labelDy: -4, anchor: 'start' },
 
-      /* View 1 — SPECIFIC tax: parallel shift up by 0.162 */
+      /* View 1 — SPECIFIC tax: parallel shift up by 0.162.
+       * Label shortened from "S + T (specific)" to "S + T" so it
+       * sits inline at the curve end (long form put its CENTRE
+       * ~70px from the line). Tone/dash + view title carry the
+       * "specific" disambiguator — the two tax views are layerMode:
+       * 'exclusive' so they never co-display. */
       { d: 'M 0.069,0.255 L 0.944,0.959',
-        tone: 'blue', label: 'S + T (specific)', strokeWidth: 2.2,
+        tone: 'blue', label: 'S + T', strokeWidth: 2.2,
         dashed: '7 4',
         labelDx: -10, labelDy: -8, anchor: 'end',
         layer: 'idl-1' },
 
       /* View 2 — AD VALOREM tax: pivot from origin so the gap
          widens at high prices */
+      /* "S + T% (ad valorem)" → "S + T%" — same shorten-for-inline
+       * treatment as the specific tax above. The "%" alone signals
+       * ad valorem (proportional). */
       { d: 'M 0.069,0.117 L 0.944,1.077',
-        tone: 'amber', label: 'S + T% (ad valorem)', strokeWidth: 2.2,
+        tone: 'amber', label: 'S + T%', strokeWidth: 2.2,
         dashed: '7 4',
         labelDx: -10, labelDy: 18, anchor: 'end',
         layer: 'idl-2' }

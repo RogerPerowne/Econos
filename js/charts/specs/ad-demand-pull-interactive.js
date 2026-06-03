@@ -68,12 +68,14 @@
         tone: 'blue', label: 'AD₁', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end' },
       /* ── Layer 1: AD₂ shifted right ───────────────────────── */
-      { d: 'M 0.319,0.894 L 1.153,0.067',
+      // Curve trimmed to end AT chart x=1.0 (was 1.153 with auto-clip).
+       // The visual is identical thanks to the clip, but the label is
+       // now positioned relative to the VISIBLE end of the curve instead
+       // of the off-stage extension — old setup put the label centre
+       // ~46px from the line.
+      { d: 'M 0.319,0.894 L 1.000,0.218',
         tone: 'green', label: 'AD₂', strokeWidth: 2.5,
-        // Curve endpoint sits at chart x=1.153 (past the chart area —
-        // auto-clipped). labelDx=-32 pulls the "AD₂" right edge to pixel
-        // ~438, inside the 440-wide SVG. Old -22 overflowed by ~8px.
-        labelDx: -32, labelDy: 14, anchor: 'end',
+        labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' }
     ],
 

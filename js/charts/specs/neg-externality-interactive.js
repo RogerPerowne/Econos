@@ -46,9 +46,13 @@
 
     /* Always-visible base curves */
     curves: [
+      // labelDx/anchor flipped to 'end' so the multi-char "D = MSB"
+      // sits inline at the curve end instead of floating ~35px past
+      // the endpoint. MPC is short enough that anchor='start' stays
+      // visually clean.
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.868 L 0.860,0.084',
-        tone: 'amber', label: 'D = MSB', strokeWidth: 3, labelDx: 8, labelDy: 4 },
+        tone: 'amber', label: 'D = MSB', strokeWidth: 3, labelDx: -8, labelDy: 12, anchor: 'end' },
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.084 L 0.860,0.868',
         tone: 'green', label: 'MPC', strokeWidth: 3, labelDx: 8, labelDy: -4 },

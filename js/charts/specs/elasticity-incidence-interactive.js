@@ -60,16 +60,19 @@
 
   window.ECONOS_ELASTICITY_INCIDENCE_SPEC = {
     width: 440,
-    height: 300,
+    // Height trimmed 300 → 232 (panels 230 → 168): the old portrait
+    // panels (180w × 230h) made the chart feel too tall against the
+    // card staging. The dashed centre divider was also removed — the
+    // 35px gap between panels separates them cleanly on its own.
+    height: 232,
     className: 'elasticity-incidence-svg',
     background: '#FFFFFF',
     layers: ['idl-1', 'idl-2'],
-    divider: { x: 220, y1: 22, y2: 270 },
 
     panels: [
       /* ─── LEFT panel: INELASTIC demand ─── */
       basePanel(
-        { x: 30, y: 20, width: 180, height: 230 },
+        { x: 30, y: 18, width: 180, height: 168 },
         'Inelastic demand',
         'rose',
         /* Steep D curve (small ΔQ for big ΔP) */
@@ -108,7 +111,7 @@
 
       /* ─── RIGHT panel: ELASTIC demand ─── */
       basePanel(
-        { x: 245, y: 20, width: 180, height: 230 },
+        { x: 245, y: 18, width: 180, height: 168 },
         'Elastic demand',
         'green',
         /* Shallow D curve (big ΔQ for small ΔP). Endpoint at x=1.0
@@ -123,8 +126,13 @@
           { x: 0.578, y: 0.509, tone: 'slate', radius: 4,
             gridlines: 'slate', ticks: { x: 'Q₀', y: 'P₀' },
             layer: 'idl-1' },
+          /* Pc/Qt tick labels dropped (as in the inelastic panel): with
+             the shorter chart, Pc sits only ~12px below P₀ here (elastic
+             demand → small consumer burden), so the two y-ticks collided.
+             The "Producer burden" rectangle + Pp dashed line carry the
+             post-tax position; P₀ stays labelled. */
           { x: 0.428, y: 0.578, tone: 'blue', radius: 4,
-            gridlines: 'blue', ticks: { x: 'Qt', y: 'Pc' },
+            gridlines: 'blue',
             layer: 'idl-2' }
         ],
         [

@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.9 — 2026-06-03
+
+### Indirect Taxes & Subsidies Card 4 — shorter incidence chart, no divider
+
+The elasticity-incidence chart (`elasticityIncidenceInteractive`) felt too
+tall against the card staging — the panels were portrait (180w × 230h).
+Trimmed:
+
+- Panel height 230 → 168, canvas 300 → 232 — a less-tall, more balanced
+  aspect.
+- Removed the dashed grey centre divider; the 35px gap between panels
+  separates them on its own.
+- The shorter height pushed the elastic panel's Pc/Qt y-ticks within 14px
+  of P₀ (elastic demand → small consumer burden, so Pc ≈ P₀), so those two
+  ticks were dropped — exactly as the inelastic panel already does. The
+  "Producer burden" rectangle and the Pp dashed line carry the post-tax
+  position; P₀/Q₀ stay labelled.
+
+Design unchanged otherwise (the "old-school" supply-shift look is kept).
+Font sizes left at engine defaults pending review. Chart spec change →
+snapshot updated; `sw.js` unaffected (chart specs are network-first).
+
 ## 0.42.8 — 2026-06-03
 
 ### Economic Systems — diagram parity on the free-market card (Theme 1 polish #5)

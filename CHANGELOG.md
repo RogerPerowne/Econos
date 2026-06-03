@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.16 — 2026-06-03
+
+### Tax-incidence chart (Indirect Taxes Card 4) — fix oversized/bold labels
+
+The elasticity-incidence two-panel chart had a 440px viewBox displayed at
+`maxWidth: 560px` (scale ~1.27×), so the engine's 13px/12px label tokens
+rendered at ~16px bold — far heavier than sibling charts (~700px viewBox,
+scale ~0.9 → ~12px). Widened the spec's viewBox to 700 (panels scaled
+×1.59) and removed the maxWidth cap so it fills the card like every other
+chart; the same labels now render at ~12px and stop clashing. Geometry is
+normalised per panel, so only the viewBox dims + panel chartAreas changed.
+Snapshot updated; `lint:charts` clean. Network-first — no `sw.js` bump.
+
 ## 0.44.15 — 2026-06-03
 
 ### Consumer & Producer Surplus — even up two over-long blocks

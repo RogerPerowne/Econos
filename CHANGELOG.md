@@ -6,6 +6,36 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.12 — 2026-06-03
+
+### PPF Cards 1 and 2 — distinct stories instead of the same diagram twice
+
+User flagged that cards 1 and 2 were running the same A/B/C-on-a-PPF
+diagram with slightly different point text. Redrew both so each tells
+a genuinely different story:
+
+**Card 1 — "What a PPF shows"** (ppfBigPicture)
+- Frontier is now a **boundary** between two shaded zones.
+- Light-blue feasible region under the curve, labelled "Feasible
+  production"; un-shaded upper-right region labelled "Beyond current
+  resources".
+- One anchor point on the curve labelled "On the frontier" — the
+  classification is no longer this card's job.
+- Data-file bullets rewritten to describe the curve + the two regions,
+  not three A/B/C points.
+
+**Card 2 — "Classify the point"** (ppfClassify)
+- The two regions are now visually distinct: **amber tint under the
+  curve** (= underused) and **green tint above the curve** (=
+  unattainable). The blue curve itself becomes the "efficient frontier".
+- Three A/B/C points sit in their respective regions as classification
+  examples.
+
+Both polygons are built from 12 sampled points along the PPF cubic
+so the curved boundary reads smoothly.
+
+`sw.js` cache bumped to `econos-v306`.
+
 ## 0.41.11 — 2026-06-03
 
 ### PPF Card 5 (shifts trio) — PPF₂ labels pulled inside their panels + engine catches this kind of bug

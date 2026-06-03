@@ -97,7 +97,7 @@ window.ECONOS_TOPIC = {
       causes: [
         { icon: '⚡', tone: 'amber', head: 'UK energy – Ofgem', body: 'Energy regulator accused of being too close to the "Big Six" energy companies – slow to investigate overcharging, reluctant to force structural separation. Household bills remained high even as wholesale prices fell. Classic case of regulator protecting incumbents over consumers.' },
         { icon: '💰', tone: 'blue',  head: 'US finance – SEC and the 2008 crisis', body: 'The SEC and Federal Reserve adopted a "light-touch" approach to financial regulation in the 2000s, influenced by the finance industry\'s lobbying and the revolving door between Wall Street and Washington. Result: excessive leverage, mortgage mis-selling, and the 2008 financial crash. Taxpayer cost: $700bn TARP bailout.' },
-        { icon: '💊', tone: 'purple', head: 'Pharmaceuticals – FDA and opioids', body: 'The US Food and Drug Administration approved OxyContin based on manufacturer-supplied evidence of low addiction risk. The drug was aggressively marketed. Result: the opioid crisis – 500,000+ US deaths from opioid overdose (1999–2019). The regulator failed to independently verify manufacturer claims.' }
+        { icon: '💊', tone: 'purple', head: 'Pharma – FDA and opioids', body: 'The US Food and Drug Administration approved OxyContin based on manufacturer-supplied evidence of low addiction risk. The drug was aggressively marketed. Result: the opioid crisis – 500,000+ US deaths from opioid overdose (1999–2019). The regulator failed to independently verify manufacturer claims.' }
       ],
       examEdge: 'The principal-agent problem in government: the public (principal) delegates power to the government (agent) which delegates power to the regulator (second agent). Each delegation creates agency slack – the agent may pursue their own interests rather than the principal\'s. Regulatory capture is the most extreme form of agency slack: the regulator has been captured by a third party. Pre-2008: the UK FSA was the principal (government) → regulator (agent) → banks (captured agent). Use the principal-agent framework to give structure to any regulatory capture argument.'
     },
@@ -170,7 +170,8 @@ window.ECONOS_TOPIC = {
       tip: { icon: '📌', tone: 'amber', text: 'Abstract causes become clearer through real cases. Four show how information problems, political incentives, and poor contract design produce documented welfare losses — and one (Bank of England independence) shows how institutional design can <em>reduce</em> government failure. Top answers cite both sides.' },
       causesLabel: 'Five case studies — four failures and one institutional success',
       causesEmoji: '🏗️',
-      causesStyle: 'tinted-flat',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
       causes: [
         {
           icon: '🚄', tone: 'rose', head: 'HS2 – optimism bias and sunk-cost politics',

@@ -21,10 +21,10 @@
     className: 'pes-compare-svg',
     background: '#FFFFFF',
     defs:
-      '<marker id="pes-red-end-up" markerWidth="8" markerHeight="8" refX="4" refY="0" orient="auto"><polygon points="0,8 8,8 4,0" fill="#DC2626"/></marker>' +
-      '<marker id="pes-blue-start" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#2563EB"/></marker>' +
-      '<marker id="pes-blue-end" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#2563EB"/></marker>' +
-      '<marker id="pes-green-end" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#059669"/></marker>',
+      '<marker id="pes-red-end-up" markerWidth="6" markerHeight="6" refX="3" refY="0" orient="auto"><polygon points="0,6 6,6 3,0" fill="#DC2626"/></marker>' +
+      '<marker id="pes-blue-start" markerWidth="6" markerHeight="6" refX="1.5" refY="3" orient="auto"><polygon points="6,0 6,6 0,3" fill="#2563EB"/></marker>' +
+      '<marker id="pes-blue-end" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto"><polygon points="0,0 0,6 6,3" fill="#2563EB"/></marker>' +
+      '<marker id="pes-green-end" markerWidth="6" markerHeight="6" refX="4" refY="2.5" orient="auto"><path d="M0,0 L0,5 L6,2.5 z" fill="#059669"/></marker>',
     divider: { x: 330, y1: 22, y2: 268 },
 
     panels: [

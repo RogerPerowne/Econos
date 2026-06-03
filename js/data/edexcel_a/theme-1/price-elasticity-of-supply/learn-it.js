@@ -227,9 +227,9 @@ window.ECONOS_TOPIC = {
       causes2Emoji: '🏛️',
       causes2Cols: 3,
       causes2: [
-        { tone: 'green', icon: '🏠', head: 'UK housing 2010–22', body: 'PES is very low: planning constraints cap new builds at ~180k/year. House prices rose ~75% while new builds barely moved — a textbook low-PES boom that shifts almost entirely into price.' },
-        { tone: 'purple', icon: '🎫', head: 'Concert', body: 'Low PES → tickets become expensive.' },
-        { tone: 'amber', icon: '👟', head: 'Trainers', body: 'Higher PES → mass producers boost output.' }
+        { tone: 'green', icon: '🏠', head: 'UK housing', body: 'Very low PES: planning limits cap new builds, so when demand rose 2010–22 prices jumped ~75% while quantity barely moved — the shock fell almost entirely on price.' },
+        { tone: 'purple', icon: '🎫', head: 'Concert tickets', body: 'Near-zero PES: a venue\'s capacity is fixed, so extra demand can\'t add seats — it spills into higher prices and resale touts rather than more tickets.' },
+        { tone: 'amber', icon: '👟', head: 'Trainers', body: 'High PES: mass production has spare capacity, so firms scale output up quickly when demand rises — quantity does most of the adjusting and prices stay fairly stable.' }
       ],
       bottomTip: { tone: 'blue', icon: 'ℹ️', text: 'PES helps explain why some booms cause inflation while others mainly raise production.' },
       conclusion: { title: 'Big idea', text: 'Demand shocks do not tell the whole story — supply flexibility determines the market result.' },

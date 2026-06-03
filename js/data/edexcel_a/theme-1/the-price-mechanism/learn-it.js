@@ -284,7 +284,8 @@ window.ECONOS_TOPIC = {
         tone: 'blue',
         text: '<em>The price mechanism often coordinates markets well – but not always.</em><br><em>If prices do not reflect all costs and benefits, or if markets are distorted, resources may be allocated inefficiently.</em>'
       },
-      causesStyle: 'tinted-flat',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
       causesEmoji: '⚠️',
       causesLabel: 'Common sources of failure',
       causes: [

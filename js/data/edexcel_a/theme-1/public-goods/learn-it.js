@@ -105,7 +105,7 @@ window.ECONOS_TOPIC = {
           'Conclude with no private provision'
         ]
       },
-      examEdge: 'If non-payers cannot be excluded, a private firm cannot charge all beneficiaries, so the market under-provides or fails to provide the good altogether.'
+      examEdge: 'If non-payers cannot be excluded, a private firm cannot charge all beneficiaries, so the market under-provides or fails to provide the good altogether. <em>See Card 5 for the deeper diagrammatic reason — society\'s demand for a public good is the <strong>vertical</strong> sum of individual willingness to pay, and no single buyer reveals enough demand to fund the good alone.</em>'
     },
 
     /* ============================================================
@@ -263,9 +263,10 @@ window.ECONOS_TOPIC = {
       colB: '🏛️ Who provides',
       colC: '👥 Who benefits',
       rows: [
-        { label: '🛡️ Defence',         colA: 'Taxpayers', colB: 'Government',         colC: 'All citizens' },
-        { label: '💡 Street lighting', colA: 'Taxpayers', colB: 'Local government',   colC: 'All residents' },
-        { label: '🌊 Flood defences', colA: 'Taxpayers', colB: 'National government', colC: 'Communities at risk' }
+        { label: '🛡️ Defence',         colA: 'Taxpayers (~£57bn/yr)',   colB: 'UK government (MoD)',          colC: 'All citizens' },
+        { label: '💡 Street lighting', colA: 'Council tax (~£0.5bn)',   colB: 'Local councils',               colC: 'All residents and passers-by' },
+        { label: '🌊 Flood defences', colA: 'Taxpayers (~£1.2bn/yr)',  colB: 'Environment Agency / Defra',   colC: 'Communities at risk' },
+        { label: '📺 BBC',             colA: 'Licence fee (~£3.7bn/yr)', colB: 'BBC (public corporation)',     colC: 'All UK households' }
       ],
       tipLate: { icon: '❓', tone: 'purple', text: '<strong>The preference revelation problem.</strong> People may understate or overstate how much they value the public good. For example, someone might say they only want a small amount of flood defence to save tax, even though they would like more protection. Because preferences are hidden, the government cannot easily know the <strong>optimal quantity</strong> to provide.' },
       causesStyle: 'tinted-flat',
@@ -324,10 +325,10 @@ window.ECONOS_TOPIC = {
       flowTitle: 'How to evaluate in an essay',
       flowEmoji: '📝',
       flow: [
-        { tone: 'green',  icon: '🔍', title: 'Identify the public-good characteristics', sub: '' },
-        { tone: 'purple', icon: '🔓', title: 'Explain why markets fail',                  sub: '' },
-        { tone: 'amber',  icon: '🏛️', title: 'Assess why government provision helps',   sub: '' },
-        { tone: 'rose',   icon: '⚖️', title: 'Weigh limitations and give a judgement',  sub: '' }
+        { tone: 'green',  icon: '🔍', title: '1. Identify the public-good properties',  sub: 'Non-rival AND non-excludable? Name both tests and give the example.' },
+        { tone: 'purple', icon: '🔓', title: '2. Explain why markets fail',              sub: 'Free-rider problem → private revenue cannot capture the full social benefit (vertical demand summation, Card 5).' },
+        { tone: 'amber',  icon: '🏛️', title: '3. Weigh free-rider fix vs preference revelation', sub: 'Government provision solves free-riding via taxation — but cannot easily know the optimal quantity, because demand is hidden.' },
+        { tone: 'rose',   icon: '⚖️', title: '4. Judge by scale and certainty',         sub: 'Provision dominates where social benefit is large and broadly shared (defence, flood defences); other tools (subsidies, regulation) may suit where demand can be revealed.' }
       ],
       causesStyle: 'tinted-flat',
       causesEmoji: '⚖️',

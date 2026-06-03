@@ -378,6 +378,14 @@ window.ECONOS_TOPIC = {
         right: { tone: 'rose',  icon: '❌', label: 'Weaknesses',
           caption: '<strong>Price volatility</strong> – prices swing with the cycle (EU ETS hit €5). <strong>Carbon leakage</strong> – firms relocate abroad. <strong>Coverage gaps</strong> – the UK ETS excludes farming and most transport.' }
       },
+      causes2Label: 'Tax vs permits — when to choose which',
+      causes2Emoji: '🧭',
+      causes2Style: 'tinted-flat',
+      causes2Cols: 2,
+      causes2: [
+        { tone: 'blue',   icon: '💰', head: 'Pigouvian tax — price-certain', body: '<strong>Fixes the price</strong> of carbon; the quantity adjusts. <strong>Choose when:</strong> the regulator knows the marginal external cost (MEC) reasonably well, and welfare loss is roughly proportional to total emissions. <strong>Risk:</strong> if MEC is mis-set, the wrong quantity of emissions results — which matters less if the harm is roughly linear.' },
+        { tone: 'green',  icon: '📊', head: 'Cap-and-trade — quantity-certain', body: '<strong>Fixes the quantity</strong> of emissions; the price adjusts. <strong>Choose when:</strong> the environmental target is non-negotiable — e.g. legally binding net zero, a planetary tipping point, or a non-substitutable resource. <strong>Risk:</strong> permit prices can swing sharply with the cycle, hurting investment certainty for clean-tech.' }
+      ],
       keyTerms: [
         { term: 'Cap',                 def: 'The total quantity of emissions allowed across all covered firms in a period. The binding environmental constraint.' },
         { term: 'Permit (allowance)',  def: 'A tradable right to emit one tonne of CO₂e. Firms must surrender permits equal to verified emissions each year.' },

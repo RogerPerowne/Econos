@@ -199,7 +199,7 @@ window.ECONOS_TOPIC = {
       causes: [
         { icon: '💰', head: 'Who pays?',         body: '<strong>Pigouvian tax:</strong> producers (higher costs) and possibly consumers (higher prices). <strong>Cap-and-trade:</strong> producers (cost of permits passed on), and possibly consumers.', tone: 'green' },
         { icon: '🌱', head: 'Who benefits?',     body: '<strong>Both schemes:</strong> third parties and the environment (less pollution); government raises revenue under a tax.', tone: 'blue'  },
-        { icon: '🏭', head: 'Who is worse off?', body: '<strong>Both schemes:</strong> high-polluting firms – they face higher costs or must buy permits. Innovation that lowers abatement costs reduces this burden.', tone: 'purple' }
+        { icon: '🏭', head: 'Who is worse off?', body: '<strong>Pigouvian tax:</strong> high-polluting firms face higher costs; <em>low-income consumers</em> often bear a disproportionate share of fuel/sugar/tobacco tax (regressive incidence — spend a higher % of income on the taxed good). <strong>Cap-and-trade:</strong> incumbent high-emitters who can\'t innovate fast enough. Innovation lowering abatement costs reduces both burdens.', tone: 'purple' }
       ],
       table: {
         title: 'Impact on economic agents',
@@ -316,7 +316,7 @@ window.ECONOS_TOPIC = {
         text: 'This passage defines the externality problem: A imposes a cost on others, but no one can compel A to pay. Pigou\'s solution was a corrective tax – set equal to the <strong>marginal external cost at Q*</strong> – so firms face the full social cost of their output. This <strong>Pigouvian tax</strong> shifts MPC up to MSC, closing the wedge between private and social optima.'
       },
       conclusion: { title: 'Top-line judgement', text: 'The best policy depends on the <em>external harm</em>, the <em>information available</em> and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more efficient; command-and-control may be preferred when certainty and fairness matter most.' },
-      examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list.',
+      examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list. <strong>A worked 25-mark structure:</strong> "Define the negative externality and draw MSC above MPC (define). Compare two policies — e.g. a Pigouvian tax (cost-effective if MEC is measurable; risks regressive incidence) vs cap-and-trade (quantity-certain; flexible; better when the environmental target is binding) (analyse). Both face information problems and political resistance (evaluate). For a small, reversible externality with known MEC the tax dominates; for a large, irreversible externality with a hard target (e.g. net zero) permits or regulation dominate (judge)." That sequence — define → analyse → evaluate → judge — anchored to the four criteria is what lifts a Level 3 to a Level 4.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

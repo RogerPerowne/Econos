@@ -1024,54 +1024,49 @@
 </svg>`,
 
     privateDemandMini: `
-<svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;" font-family="Inter,sans-serif">
-  <rect width="260" height="180" fill="#F3E8FF" rx="8"/>
+<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;" font-family="Inter,sans-serif">
+  <rect width="300" height="210" fill="#F3E8FF" rx="8"/>
   <!-- Axes -->
-  <line x1="40" y1="150" x2="240" y2="150" stroke="#1F2937" stroke-width="1.5"/>
-  <polygon points="236,146 236,154 244,150" fill="#1F2937"/>
-  <line x1="40" y1="150" x2="40" y2="30" stroke="#1F2937" stroke-width="1.5"/>
-  <polygon points="36,34 44,34 40,26" fill="#1F2937"/>
+  <line x1="44" y1="176" x2="282" y2="176" stroke="#1F2937" stroke-width="1.5"/>
+  <polygon points="282,172 282,180 290,176" fill="#1F2937"/>
+  <line x1="44" y1="176" x2="44" y2="34" stroke="#1F2937" stroke-width="1.5"/>
+  <polygon points="40,42 48,42 44,32" fill="#1F2937"/>
   <!-- Axis labels -->
-  <text x="22" y="38" font-size="9" font-weight="700" fill="#1F2937">Price</text>
-  <text x="22" y="48" font-size="8" fill="#475569">($)</text>
-  <text x="240" y="166" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">Quantity</text>
-  <!-- Horizontal dashed line at price P -->
-  <line x1="40" y1="78" x2="200" y2="78" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="30" y="82" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">P</text>
+  <text x="10" y="22" font-size="9" font-weight="700" fill="#1F2937">Price ($)</text>
+  <text x="282" y="196" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">Quantity</text>
   <!-- Demand line - downward slope -->
-  <line x1="60" y1="42" x2="220" y2="148" stroke="#7C3AED" stroke-width="2.5"/>
+  <line x1="64" y1="48" x2="244" y2="172" stroke="#7C3AED" stroke-width="2.5"/>
+  <!-- Price P dashed -->
+  <line x1="44" y1="94" x2="188" y2="94" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="38" y="98" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">P</text>
   <!-- Q1, Q2 markers -->
-  <line x1="120" y1="78" x2="120" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="170" y1="78" x2="170" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="120" y="166" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₁</text>
-  <text x="170" y="166" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₂</text>
+  <line x1="124" y1="94" x2="124" y2="176" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="176" y1="94" x2="176" y2="176" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="124" y="192" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₁</text>
+  <text x="176" y="192" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₂</text>
 </svg>`,
 
     publicDemandMini: `
-<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;" font-family="Inter,sans-serif">
-  <rect width="320" height="180" fill="#DCFCE7" rx="8"/>
+<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;" font-family="Inter,sans-serif">
+  <rect width="300" height="210" fill="#DCFCE7" rx="8"/>
   <!-- Axes -->
-  <line x1="40" y1="150" x2="280" y2="150" stroke="#1F2937" stroke-width="1.5"/>
-  <polygon points="276,146 276,154 284,150" fill="#1F2937"/>
-  <line x1="40" y1="150" x2="40" y2="30" stroke="#1F2937" stroke-width="1.5"/>
-  <polygon points="36,34 44,34 40,26" fill="#1F2937"/>
+  <line x1="44" y1="176" x2="282" y2="176" stroke="#1F2937" stroke-width="1.5"/>
+  <polygon points="282,172 282,180 290,176" fill="#1F2937"/>
+  <line x1="44" y1="176" x2="44" y2="34" stroke="#1F2937" stroke-width="1.5"/>
+  <polygon points="40,42 48,42 44,32" fill="#1F2937"/>
   <!-- Axis labels -->
-  <text x="22" y="38" font-size="9" font-weight="700" fill="#1F2937">Willingness</text>
-  <text x="22" y="48" font-size="9" font-weight="700" fill="#1F2937">to pay ($)</text>
-  <text x="160" y="174" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Quantity (same unit for all)</text>
-  <text x="278" y="166" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">Q</text>
-  <!-- Individual 2 (bottom blue) -->
-  <line x1="50" y1="100" x2="230" y2="142" stroke="#2563EB" stroke-width="2"/>
-  <text x="240" y="142" font-size="9" font-weight="700" fill="#2563EB">Individual 2</text>
-  <text x="240" y="152" font-size="8" fill="#475569">marginal benefit</text>
-  <!-- Individual 1 (middle purple) -->
-  <line x1="50" y1="80" x2="230" y2="125" stroke="#7C3AED" stroke-width="2"/>
-  <text x="240" y="120" font-size="9" font-weight="700" fill="#7C3AED">Individual 1</text>
-  <text x="240" y="130" font-size="8" fill="#475569">marginal benefit</text>
-  <!-- Social marginal benefit (top green - sum) -->
-  <line x1="50" y1="42" x2="230" y2="90" stroke="#059669" stroke-width="2.5"/>
-  <text x="240" y="62" font-size="9" font-weight="700" fill="#059669">Social marginal benefit</text>
-  <text x="240" y="72" font-size="8" fill="#475569">(sum of all individuals)</text>
+  <text x="10" y="20" font-size="8.5" font-weight="700" fill="#1F2937">Willingness to pay ($)</text>
+  <text x="160" y="196" font-size="8.5" font-weight="700" fill="#1F2937" text-anchor="middle">Quantity (same unit for all)</text>
+  <!-- Individual 2 (bottom, blue) -->
+  <line x1="60" y1="118" x2="204" y2="148" stroke="#2563EB" stroke-width="2"/>
+  <text x="208" y="150" font-size="9" font-weight="700" fill="#2563EB">Individual 2</text>
+  <!-- Individual 1 (middle, purple) -->
+  <line x1="60" y1="94" x2="204" y2="130" stroke="#7C3AED" stroke-width="2"/>
+  <text x="208" y="128" font-size="9" font-weight="700" fill="#7C3AED">Individual 1</text>
+  <!-- Social marginal benefit (top, green = vertical sum) -->
+  <line x1="60" y1="52" x2="204" y2="104" stroke="#059669" stroke-width="2.5"/>
+  <text x="208" y="96" font-size="9" font-weight="700" fill="#059669">Social MB</text>
+  <text x="208" y="106" font-size="7" fill="#475569">(Ind 1 + Ind 2)</text>
 </svg>`
   };
 

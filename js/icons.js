@@ -14545,7 +14545,6 @@ window.ECONOS_ICONS = {
      ─────────────────────────────────────────────────────────────── */
   pesBigPictureCompare: `
     <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Inter,sans-serif;">
-      <line x1="330" y1="40" x2="330" y2="270" stroke="#E2E8F0" stroke-width="1"/>
 
       <!-- LEFT: inelastic (steep, green) -->
       <text x="180" y="30" font-size="13" font-weight="800" letter-spacing="0.06em" fill="#065F46" text-anchor="middle">INELASTIC SUPPLY</text>

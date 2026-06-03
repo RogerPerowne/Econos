@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.4 — 2026-06-03
+
+### Government Intervention — split the overloaded tax Card 2 into two
+
+Card 2 carried **two full interactive diagrams** (tax types + tax incidence)
+in a single card — straining the staging budget and burying the
+incidence/elasticity link that exam questions hammer. Split into two cards,
+each with one diagram:
+
+- **Card 2 — "Indirect taxation – specific vs ad valorem"**: keeps the
+  tax-types interactive (parallel vs pivot shift), plus indirect-tax /
+  specific / ad-valorem key terms and a focused exam-edge on the shift
+  shapes and the inflation-erosion point.
+- **Card 3 (new) — "Tax incidence – who really pays"**: takes the incidence
+  interactive (Pc/Pp/£T wedge, consumer/producer burden, revenue), the
+  incidence + Pigouvian key terms, and the three-evaluation-moves exam edge.
+
+This is a **within-topic** split — the topic stays `government-intervention-in-markets`
+(spec 1.4.1) throughout, so spec alignment is unaffected. Topic renumbered
+10 → 11 cards. Data-only change (network-first), no service-worker bump.
+
+Decided alongside this: **not** splitting `the-economic-problem` and **not**
+re-tagging the 1.4.1 registry cluster — both would push topics away from
+spec alignment (factors of production has no standalone Edexcel A
+sub-section), so they were dropped. This card split is spec-neutral, which
+is why it proceeded.
+
 ## 0.42.3 — 2026-06-03
 
 ### Information Gaps Card 1 — swap flow/rows formats, trim wording

@@ -404,7 +404,13 @@
         labelAnchor = curve.anchor || 'start';
       }
       var labelAnchorAttr = (autoPlace || curve.anchor) ? ' text-anchor="' + labelAnchor + '"' : '';
-      labelHtml = '<text x="' + lx + '" y="' + ly + '"' + labelAnchorAttr + ' font-size="' + SIZE.curveLabel + '" font-weight="700" fill="' + t.label + '">' + curve.label + '</text>';
+      // dominant-baseline=middle so the rendered text vertical CENTER
+      // sits at `ly` — matching the auto-placer's bbox math which
+      // also assumes y = center. Without this, the text baseline is
+      // at ly, making the visual text ~5px higher than the computed
+      // bbox — the "imprecision" the user spotted on equilibrium and
+      // curve labels alike. (v0.41.19.)
+      labelHtml = '<text x="' + lx + '" y="' + ly + '"' + labelAnchorAttr + ' font-size="' + SIZE.curveLabel + '" font-weight="700" fill="' + t.label + '" dominant-baseline="middle">' + curve.label + '</text>';
       // Track curve label in placedBoxes so dev-mode off-stage and
       // clash checks see it. Without this, a curve label that
       // overflows its panel's chartArea (or collides with another

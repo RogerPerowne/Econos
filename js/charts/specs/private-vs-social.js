@@ -62,12 +62,12 @@
           { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
             tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
-            label: 'E_m', labelDx: 10, labelDy: -4, anchor: 'start' },
+            label: 'E_m', labelDx: 10, labelDy: 0, anchor: 'start' },
           /* Social optimum at MPB ∩ MSC — left of Q_m */
           { x: ES_NEG.x, y: ES_NEG.y, intersection: { curves: ['MPB', 'MSC'] },
             tone: 'red', radius: 6, hollow: true,
             gridlines: 'red', ticks: { x: 'Q*' },
-            label: 'E*', labelDx: -10, labelDy: -4, anchor: 'end' }
+            label: 'E*', labelDx: -10, labelDy: 0, anchor: 'end' }
         ],
         texts: [
           { x: 0.450, y: 0.190, text: 'Over-production',
@@ -107,12 +107,12 @@
           { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
             tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
-            label: 'E_m', labelDx: -10, labelDy: -4, anchor: 'end' },
+            label: 'E_m', labelDx: -10, labelDy: 0, anchor: 'end' },
           /* Social optimum at MPC ∩ MSB — right of Q_m */
           { x: ES_POS.x, y: ES_POS.y, intersection: { curves: ['MPC', 'MSB'] },
             tone: 'green', radius: 6, hollow: true,
             gridlines: 'green', ticks: { x: 'Q*' },
-            label: 'E*', labelDx: 10, labelDy: -4, anchor: 'start' }
+            label: 'E*', labelDx: 10, labelDy: 0, anchor: 'start' }
         ],
         texts: [
           { x: 0.590, y: 0.190, text: 'Under-production',

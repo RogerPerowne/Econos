@@ -43,7 +43,7 @@
       {
         chartArea: { x: 50, y: 28, width: 280, height: 254 },
         title: 'Too much output (over-production)',
-        titleTone: 'rose',
+        titleColor: '#0F172A',  // black/bold so the title doesn't read as a curve label
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
 
         /* Shaded backgrounds FIRST so curves draw on top. */
@@ -53,19 +53,15 @@
         ],
 
         curves: [
-          // Wide "MPB = D" pulled in by labelDx=-32 so the label sits
-          // closer to the line at chart-x≈0.84 instead of dangling
-          // ~38px off the endpoint. labelDy stays positive so it
-          // hangs just below the descending demand line.
+          /* All label positions UNSET — auto-placer (v0.41.18) handles
+           * MPC = S BELOW, MSC ABOVE (opposite-side rule for the
+           * parallel pair), MPB = D picks its own slot. */
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
-            tone: 'blue', label: 'MPB = D', strokeWidth: 2.5,
-            labelDx: -32, labelDy: -6, anchor: 'end' },
+            tone: 'blue', label: 'MPB = D', strokeWidth: 2.5 },
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
-            tone: 'amber', label: 'MPC', strokeWidth: 2.5,
-            labelDx: -6, labelDy: -20, anchor: 'end' },
+            tone: 'amber', label: 'MPC', strokeWidth: 2.5 },
           { id: 'MSC', d: 'M 0.069,0.270 L 0.785,0.880',
-            tone: 'red', label: 'MSC', strokeWidth: 2.2, dashed: '6 4',
-            labelDx: 8, labelDy: -4, anchor: 'start' }
+            tone: 'red', label: 'MSC', strokeWidth: 2.2, dashed: '6 4' }
         ],
         points: [
           { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
@@ -78,8 +74,11 @@
             label: 'E*', labelDx: -10, labelDy: -4, anchor: 'end' }
         ],
         texts: [
-          /* DWL label centred inside the shaded triangle. */
-          { x: 0.495, y: 0.595, text: 'DWL',
+          /* DWL label at the triangle's CENTROID — vertically centred
+           * in the shaded region as the user requested. Centroid of
+           * [(0.420, 0.569), (0.520, 0.480), (0.520, 0.655)] is
+           * (0.487, 0.568). */
+          { x: 0.487, y: 0.568, text: 'DWL',
             tone: 'red', bold: true, fontSize: 12, anchor: 'middle' }
         ]
       },
@@ -88,7 +87,7 @@
       {
         chartArea: { x: 410, y: 28, width: 280, height: 254 },
         title: 'Too little output (under-production)',
-        titleTone: 'amber',
+        titleColor: '#0F172A',  // black/bold — same rule as left panel
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
 
         polygons: [
@@ -97,20 +96,18 @@
         ],
 
         curves: [
+          /* All label positions UNSET — auto-placer handles. */
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
-            tone: 'blue', label: 'MPB', strokeWidth: 2.5,
-            labelDx: -6, labelDy: 14, anchor: 'end' },
-          // Wide "MPC = S" pulled in by labelDx=-32 so the label sits
-          // closer to the line at chart-x≈0.84 instead of dangling
-          // ~38px off the endpoint.
+            tone: 'blue', label: 'MPB', strokeWidth: 2.5 },
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
-            tone: 'amber', label: 'MPC = S', strokeWidth: 2.5,
-            labelDx: -32, labelDy: 6, anchor: 'end' },
+            tone: 'amber', label: 'MPC = S', strokeWidth: 2.5 },
           { id: 'MSB', d: 'M 0.215,0.880 L 1.000,0.230',
-            tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4',
-            labelDx: -6, labelDy: 14, anchor: 'end' }
+            tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4' }
         ],
         points: [
+          /* E_m to the LEFT of the dot — E* sits to the right at higher
+           * Q (Q* > Q_m for under-production), so a right-side E_m
+           * would crash into E*. */
           { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
             tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
@@ -121,7 +118,10 @@
             label: 'E*', labelDx: 10, labelDy: -4, anchor: 'start' }
         ],
         texts: [
-          { x: 0.545, y: 0.580, text: 'DWL',
+          /* DWL at the triangle's CENTROID. Centroid of
+           * [(0.520, 0.480), (0.520, 0.627), (0.606, 0.556)] is
+           * (0.549, 0.554). */
+          { x: 0.549, y: 0.554, text: 'DWL',
             tone: 'green', bold: true, fontSize: 12, anchor: 'middle' }
         ]
       }

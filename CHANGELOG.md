@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.10 — 2026-06-03
+
+### PED Card 8 (exam toolkit) — restructure two blocks
+
+On the PED exam-toolkit card:
+- **"5 core facts"** moved from a grid of gradient-header tiles to five
+  fancy numbered rows (`causes` numbered-rows, top position) — matching the
+  numbered-row treatment used elsewhere.
+- **"How to read a PED question"** moved from stacked left-bar steps to a
+  horizontal flow diagram (`flowBottom` — coloured numbered circles in
+  columns: Identify → Calculate → Classify → Apply).
+- "Common mistakes" kept (relabelled, de-numbered); dropped the now-stray
+  intro line so the card flows title → core facts → mistakes → flow →
+  write-up.
+
+Data only (network-first) — no `sw.js` bump.
+
 ## 0.44.9 — 2026-06-03
 
 ### PED Card 4 · A/B/C labels moved above the curve

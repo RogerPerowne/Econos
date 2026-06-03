@@ -411,32 +411,19 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
       id: 'ped_9',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'PED exam toolkit',
-      intro: 'The essentials to remember under pressure. Work through this checklist before your exam.',
-      body: `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#059669;margin-bottom:10px;">① 5 Core Facts</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:8px;margin-bottom:22px;">
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #05996920;">
-    <div style="background:#059669;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">📖 Definition</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">PED measures how responsive QD is to a change in the good’s own price.</div>
-  </div>
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #2563EB20;">
-    <div style="background:#2563EB;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">🔢 Formula</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">PED = % ΔQD \xf7 % ΔP<br>Always negative for normal goods.</div>
-  </div>
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #D9770620;">
-    <div style="background:#D97706;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">⚖️ Elastic vs Inelastic</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">|PED| &gt; 1 = elastic<br>|PED| &lt; 1 = inelastic<br>|PED| = 1 = unit elastic</div>
-  </div>
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #7C3AED20;">
-    <div style="background:#7C3AED;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">🔍 Determinants</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">Substitutes, necessity vs luxury, income share, time horizon, habit/addiction, brand loyalty.</div>
-  </div>
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #0EA5E920;">
-    <div style="background:#0EA5E9;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">📈 Revenue link</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">Elastic: price cuts raise TR.<br>Inelastic: price rises raise TR.</div>
-  </div>
-</div>
-
-<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin-bottom:10px;">② Common Mistakes</div>
+      causesLabel: '5 core facts',
+      causesEmoji: 'ℹ️',
+      causesPosition: 'top',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
+      causes: [
+        { tone: 'green',  icon: '📖', head: 'Definition',          body: 'PED measures how responsive quantity demanded is to a change in the good’s own price.' },
+        { tone: 'blue',   icon: '🔢', head: 'Formula',             body: 'PED = % ΔQD ÷ % ΔP. Always negative for normal goods — quote the sign, then use |PED| to classify.' },
+        { tone: 'amber',  icon: '⚖️', head: 'Elastic vs inelastic', body: '|PED| &gt; 1 = elastic · |PED| &lt; 1 = inelastic · |PED| = 1 = unit elastic.' },
+        { tone: 'purple', icon: '🔍', head: 'Determinants',        body: 'Substitutes, necessity vs luxury, income share, time horizon, habit/addiction, brand loyalty.' },
+        { tone: 'rose',   icon: '📈', head: 'Revenue link',        body: 'Elastic demand: price cuts raise total revenue. Inelastic demand: price rises raise total revenue.' }
+      ],
+      body: `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin-bottom:10px;">Common mistakes</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
   <div style="border-radius:10px;border:1px solid #DC262620;background:#FFF5F5;padding:12px 14px;">
     <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Use % changes, not absolute changes</div>
@@ -455,13 +442,13 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
     <div style="font-size:12px;color:#0B1426;line-height:1.55;">PED is always negative for normal goods. Show it in your calculation, then use |PED| to classify.</div>
   </div>
 </div>`,
-      stepsLabel: 'How to read a PED question',
-      stepsEmoji: '🧭',
-      steps: [
-        { label: 'Identify the PED or the data', text: 'Spot the PED value in the stem, or read off the % price change and % quantity change you need to calculate it.' },
-        { label: 'Calculate accurately using % changes', text: 'Show each % change separately, then divide. Keep the sign, quote one decimal place – every visible step is a mark.' },
-        { label: 'Classify the coefficient', text: 'State |PED|, compare to 1, and label it elastic / inelastic / unit elastic.' },
-        { label: 'Apply to product, revenue or policy', text: 'Tie the value to a determinant of the product, then state what happens to total revenue, tax incidence, or pricing. This is where evaluation marks sit.' }
+      flowBottomTitle: 'How to read a PED question',
+      flowBottomEmoji: '🧭',
+      flowBottom: [
+        { icon: '🔍', tone: 'green',  title: 'Identify', sub: 'Spot the PED in the stem, or the % price and % quantity changes you need to calculate it.' },
+        { icon: '🧮', tone: 'amber',  title: 'Calculate', sub: 'Show each % change separately, then divide. Keep the sign and quote one decimal place.' },
+        { icon: '🏷️', tone: 'blue',   title: 'Classify', sub: 'State |PED| against 1 — elastic, inelastic, or unit elastic.' },
+        { icon: '🎯', tone: 'purple', title: 'Apply',    sub: 'Link to a determinant, then the effect on total revenue, tax incidence or pricing — evaluation marks.' }
       ],
       keyTakeaway: {
         title: 'How to write it up',

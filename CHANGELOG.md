@@ -6,6 +6,54 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.0 — 2026-06-03
+
+### Econos Diagram Language (EDL) — new first-class diagram layer
+
+Introduces `window.ECONOS_DIAGRAMS` (`js/diagrams/econos-diagrams.js`): a
+domain-specific economics diagram language where authors describe the
+*economics* (a market, a tax, an externality, a PPF…) and the engine solves
+the geometry, layering, labels, arrows and rendering. It does **not** replace
+the legacy chart engine — `window.ECONOS_PPF` (`js/charts/ppf.js`) is untouched
+and still drives all current Learn It / Link It / Land It content. EDL detects
+legacy chart specs and transparently delegates to `ECONOS_PPF`.
+
+**Engine.** Semantic specs (`{ type, intent, show, … }`) compiled through
+validate → normalise → template → render-plan → SVG. Public API: `render`,
+`validate`, `compile`, `debug`, plus `templates` / `layers` / `registry`.
+`render()` returns `{ svg, errors, warnings, derived, renderPlan, hidden,
+collisionsResolved }`.
+
+**Families & intents (v1).** market, tax, subsidy, price-control, externality,
+PPF, AD-AS and Phillips — 38 intents in total (equilibrium, demand/supply
+shifts, tax incidence + DWL, subsidy incidence, max/min price shortage/surplus,
+negative-production / positive-consumption externalities, PPF
+efficient/inefficient/unattainable + outward/inward shifts + opportunity cost,
+AD/SRAS shifts + classical LRAS + Keynesian AS + output gap, SRPC/LRPC +
+expectations shift).
+
+**Rendering.** Open chevron arrowheads by default (per-colour SVG markers, round
+caps/joins, never filled triangles); a central 16-band layer map with
+data-driven paint order; a collision pass that places labels by priority, clamps
+them on-stage, hides low-priority labels on compact viewports and reports what
+moved/hid; `learn` / `exam` / `debug` teaching modes; `card` / `stage` /
+`article` / `full` viewports; generated alt text + `role="img"`.
+
+**Tooling.** `dev/diagram-gallery.html` (every family, mode/viewport toggles,
+diagnostics) and `dev/diagram-builder.html` (live spec → preview workbench).
+`scripts/lint-diagrams.mjs` (`npm run lint:diagrams`, wired into `npm run lint`)
+and `scripts/convert-legacy-charts.mjs` (`npm run convert:legacy-charts`,
+advisory only — classifies the 64 legacy specs with confidence scores, never
+edits). 24 new Vitest cases in `tests/unit/diagrams.test.js`, including the
+legacy-delegation proof.
+
+**Docs & skill.** `docs/DIAGRAM_LANGUAGE_GUIDE.md`,
+`docs/DIAGRAM_MIGRATION_GUIDE.md`, `docs/DIAGRAM_AUTHORING_RECIPES.md`, and the
+`econos-diagram-language` agent skill.
+
+EDL is loaded only by the dev gallery/builder for now; no shells, routes or
+`sw.js` precache rules changed, so existing pages are unaffected.
+
 ## 0.41.2 — 2026-06-03
 
 ### PPF Card 3 — move B and C labels off the arrowhead

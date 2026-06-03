@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.8 — 2026-06-03
+
+### Demand diagrams · point labels moved below the line
+
+On the three demand cards with point markers — Card 1 (big picture, A/B),
+Card 2 (why the curve slopes down, A/B/C) and Card 3 (movements, A/B/C) —
+the point labels sat above-left of each dot, right where the downward curve
+passes, so they clashed with the line. Moved every A/B/C label to sit
+below-left of its dot (the side where a downward-sloping line rises away,
+giving clean clearance). Chart-spec change only; snapshots updated,
+`lint:charts` clean. Network-first — no `sw.js` bump.
+
 ## 0.44.7 — 2026-06-03
 
 ### Three Economic Systems diagram tweaks

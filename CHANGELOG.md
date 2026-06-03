@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.43.4 — 2026-06-03
+
+### Government Failure Card 3 — regulatory-capture diagram: good → great
+
+Three fixes to the regulatory-capture explorer:
+
+- **Standard-formatted title.** The centred serif-bold per-stage title inside
+  the SVG is replaced by a proper section-label heading above the diagram
+  (genSecLabel style — left-aligned, uppercase, letter-spaced, emoji + rule),
+  swapped per stage via the existing `.show-stageN` CSS (new `.rc-head`).
+- **Breathing room / no clash.** Removing the in-SVG title frees the top, and
+  the stage-4 capture arc + label were re-laid so the dashed arrow no longer
+  strikes through "Industry now controls the regulator" (was overlapping the
+  arc apex). Doubled "REGULATORY CAPTURE / Industry controls the regulator"
+  collapsed to one clear line above the arc.
+- **De-duplicated content.** Removed the "Two mechanisms" tiles (Revolving
+  door + Information asymmetry) below the diagram — stages 2 and 3 of the
+  explorer already teach exactly those, so the tiles were a verbatim repeat.
+  Kept the real-world examples (Ofgem, SEC/2008, FDA/opioids) and exam edge.
+
+`app.js` + `styles.css` changed → `sw.js` bumped to `econos-v322`.
+
 ## 0.43.3 — 2026-06-03
 
 ### Taxes & Subsidies as Policy Tools — Card 2: five case studies → 2×2 of four

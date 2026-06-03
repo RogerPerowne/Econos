@@ -73,7 +73,7 @@ window.ECONOS_TOPIC = {
       title: 'How a free market works',
       tip: { icon: '💡', tone: 'green', text: 'In a free market no one is in charge. The price mechanism coordinates millions of independent decisions – signalling, incentivising and rationing all at once.' },
       diagramKey: 'priceMechanismFlow',
-      diagramLabel: 'What prices do – the coordinating mechanism',
+      diagramLabel: 'Three functions of the price mechanism — how prices coordinate the market',
       diagramEmoji: '🎯',
       flow: [
         { tone: 'blue',   icon: '🛒', title: 'Consumers want more', sub: 'Demand for a good rises.' },

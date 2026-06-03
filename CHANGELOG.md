@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.5 — 2026-06-03
+
+### PPF Card 5 · "More jam tomorrow" view — tighter copy
+
+Trimmed the "More jam tomorrow" view's body on PPF Card 5: dropped the
+"in the consumer-heavy region" mid-sentence framing and the closing
+"than A ever did" so the comparison reads cleanly. Data only — no
+`sw.js` bump.
+
 ## 0.44.4 — 2026-06-03
 
 ### PPF copy tweaks · Card 4 OC abbreviation; Card 5 "Less jam today" trim

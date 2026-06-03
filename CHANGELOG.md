@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.16 — 2026-06-03
+
+### Market Failure Card 3 — diagram title to standard section-label style
+
+The rebuilt three-routes diagram's internal title was centred serif; changed
+it to match the site's normal section-label styling — left-aligned,
+uppercase, letter-spaced (`0.09em`), 11px/800, leading 🗺️ emoji and trailing
+rule, mirroring `genSecLabel`. `icons.js` changed → `sw.js` bumped to
+`econos-v319`.
+
 ## 0.42.15 — 2026-06-03
 
 ### Market Failure Card 3 — rebuilt "three routes" diagram to match the mockup

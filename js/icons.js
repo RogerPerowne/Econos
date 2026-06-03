@@ -4732,7 +4732,8 @@ window.ECONOS_ICONS = {
   threeRoutesDiagram: `
     <div class="three-routes" style="background:#fff;border-radius:14px;padding:18px 16px 8px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .three-routes .tr-title { text-align:center; font-size:15px; font-weight:800; color:#0F172A; margin-bottom:10px; font-family:Fraunces,Georgia,serif; }
+        .three-routes .tr-title { display:flex; align-items:center; gap:8px; font-size:11px; font-weight:800; letter-spacing:0.09em; text-transform:uppercase; color:#0B1426; margin:2px 0 14px; }
+        .three-routes .tr-title .tr-rule { flex:1; height:1px; background:#E7E7EA; margin-left:6px; }
         .three-routes .tr-hub { width:56px; height:56px; border-radius:50%; margin:0 auto; background:#fff; border:2px solid #CBD5E1; display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
         .three-routes .tr-fan { width:100%; height:26px; display:block; }
         .three-routes .tr-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
@@ -4751,7 +4752,7 @@ window.ECONOS_ICONS = {
         @media (max-width:560px){ .three-routes .tr-row{ grid-template-columns:1fr; } .three-routes .tr-fan{ display:none; } }
       </style>
 
-      <div class="tr-title">Types of market failure</div>
+      <div class="tr-title">🗺️ <span>Types of market failure</span><div class="tr-rule"></div></div>
       <div class="tr-hub">⚖️</div>
       <svg class="tr-fan" viewBox="0 0 100 26" preserveAspectRatio="none">
         <path d="M50,0 V9 M16.7,9 H83.3 M16.7,9 V24 M50,9 V24 M83.3,9 V24" stroke="#CBD5E1" stroke-width="0.4" fill="none"/>

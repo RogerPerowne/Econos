@@ -44,25 +44,19 @@
       y: { label: 'P' }
     },
 
-    /* Always-visible base curves */
+    /* Always-visible base curves. All label positions UNSET so the
+     * auto-placer (v0.41.18+) handles them. */
     curves: [
-      // labelDx/anchor flipped to 'end' so the multi-char "D = MSB"
-      // sits inline at the curve end instead of floating ~35px past
-      // the endpoint. MPC is short enough that anchor='start' stays
-      // visually clean.
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.868 L 0.860,0.084',
-        tone: 'amber', label: 'D = MSB', strokeWidth: 3, labelDx: -8, labelDy: 12, anchor: 'end' },
+        tone: 'amber', label: 'D = MSB', strokeWidth: 3 },
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.084 L 0.860,0.868',
-        tone: 'green', label: 'MPC', strokeWidth: 3, labelDx: 8, labelDy: -4 },
+        tone: 'green', label: 'MPC', strokeWidth: 3 },
       // MSC (blue dashed) — visible in extension/shift/efficiency.
-      // Curve extends past chart top (auto-clipped); label offset back
-      // toward the chart so it sits just above the visible end, not
-      // floating in the title-strip area.
       { layer: 'layer-msc',
         d: 'M 0.080,0.308 L 0.860,1.092',
-        tone: 'blue', label: 'MSC', strokeWidth: 3, dashed: '9 5', labelDx: -38, labelDy: 24 }
+        tone: 'blue', label: 'MSC', strokeWidth: 3, dashed: '9 5' }
     ],
 
     arrows: [

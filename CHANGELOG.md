@@ -6,6 +6,42 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.17 — 2026-06-03
+
+### Auto-placer: opposite-side rule for parallel curves + E_m flip
+
+User: "MSC should be above with MPC below. Perhaps defaulting to a
+few more points away from the line in each. Hope this is helping your
+logic (humans need as much distinction as possible)".
+
+Two more rules + a bump:
+
+- **Opposite-side rule.** When a curve's label-candidate is ABOVE or
+  BELOW, scan already-placed curve labels. If any has its endpoint
+  within 80px AND was placed on the SAME side, add a 350 penalty.
+  Additionally, if the nearby label is on the OPPOSITE vertical
+  side, GRANT a −300 bonus to this candidate — without the bonus,
+  the penalised candidate would just lose to LEFT or RIGHT rather
+  than being pushed to the opposite vertical slot. Textbook
+  convention: parallel pairs like MPC/MSC and MPB/MSB sit on
+  OPPOSITE sides for maximum distinction.
+
+- **Default offset bumped 10 → 14.** Labels float a couple of
+  label-widths further off the line by default. Slope-aware
+  adjustment still raises this when the line is steep.
+
+`private-vs-social.js` now reads exactly as the user described:
+MSC ABOVE the dashed red line at the top of the negative-externality
+panel, MPC BELOW inside the chart, MPB ABOVE in the lower-right.
+Symmetric outcome in the positive-externality panel (MSB picks
+CENTER, MPB and MPC on opposite vertical sides).
+
+E_m label in the right panel flipped from `labelDx: -10, anchor:
+'end'` (left of dot) to `labelDx: 10, anchor: 'start'` (right of dot)
+to match the left panel and the user's preference.
+
+`sw.js` cache bumped to `econos-v311`.
+
 ## 0.41.16 — 2026-06-03
 
 ### Auto-placer fixes: interior-direction bias + slope-aware offset

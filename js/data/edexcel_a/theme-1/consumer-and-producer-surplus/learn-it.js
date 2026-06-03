@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroSupplyDemand',
     summary: 'Consumer surplus is the benefit buyers receive above what they pay; producer surplus is the benefit sellers receive above their minimum. Together they measure total welfare – the gains from trade. Any policy that shifts price or quantity redistributes or destroys part of this surplus.',
-    doInThis: 'Work through 7 cards covering the definitions and diagrams for both surplus measures, how to calculate them, what happens to surplus under taxes and subsidies, and how surplus connects to allocative efficiency and market failure.',
+    doInThis: 'Work through 8 cards covering the definitions and diagrams for both surplus measures, how to calculate them, the three-step exam method, what happens to surplus under taxes and subsidies, and how surplus connects to allocative efficiency and market failure.',
     outcomes: [
       'Define consumer surplus and producer surplus and show both on a supply-demand diagram',
       'Calculate consumer surplus, producer surplus, and deadweight welfare loss',
@@ -17,7 +17,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Consumer surplus = area of triangle above price below demand curve. Producer surplus = area of triangle below price above supply curve. Both are maximised at the free-market equilibrium – any intervention that moves price away from equilibrium reduces total welfare unless it corrects a market failure.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'consumer_producer_surplus_1',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Consumer & producer surplus: the big picture',
       tip: {
         icon: '📊',
@@ -75,7 +75,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_2',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'Building the Surplus Diagram',
       tip: {
         icon: '💡',
@@ -103,7 +103,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       causes: [
-        { tone: 'rose',  icon: '❌', head: 'Common mistake',               body: 'Students shade the whole triangle. Surplus must be measured using the market price line, not the axes.' },
+        { tone: 'rose',  icon: '❌', head: 'Common mistake — and why it\'s wrong', body: 'Students shade the whole triangle <em>down to the axes</em>. That includes the rectangle below Pₑ, which is total expenditure (Pₑ × Qₑ) — not surplus. <strong>Surplus must be measured relative to the market price line:</strong> CS = area <em>above</em> Pₑ, between price and demand; PS = area <em>below</em> Pₑ, between supply and price. The "gain from exchange" lives between the curve and the price, not between the curve and the axis.' },
         { tone: 'blue',  icon: '🎓', head: 'Exam habit',                   body: 'Always label CS, PS, E, P<sub>e</sub> and Q<sub>e</sub> clearly.' },
         { tone: 'amber', icon: '⭐', head: 'Why the market price matters', body: 'The market price separates buyer gains (above price) from seller gains (below price).' }
       ],
@@ -114,7 +114,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'consumer_producer_surplus_calc',
       template: 'worked-example',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'Worked Example: Calculating CS, PS and DWL',
       scenario: 'A competitive market has demand <strong>P = 30 − 2Q</strong> and supply <strong>P = 6 + Q</strong> (price in £, quantity in millions of units). Work out consumer surplus, producer surplus, total surplus — then the deadweight loss if a £6 per-unit tax is imposed.<br><br>Every surplus area is a triangle: <strong>area = ½ × base × height</strong>.',
       steps: [
@@ -148,8 +148,33 @@ window.ECONOS_TOPIC = {
       examEdge: 'Every surplus is <strong>½ × base × height</strong>. For CS and PS the base is always Qₑ; the height is the vertical gap from Pₑ to the relevant curve\'s price-axis intercept. For a <strong>DWL</strong> triangle the base is the <em>fall in quantity</em> and the height is the <em>wedge</em> (the tax, or the gap between demand and supply prices at the restricted output). Always state units and show the ½ × base × height working — examiners award method marks.'
     },
     {
+      id: 'consumer_producer_surplus_method',
+      stepLabel: 'Learn: Step 4 of 8',
+      title: 'The surplus exam method',
+      tip: { icon: '🎯', tone: 'green', text: 'Almost every Edexcel A "evaluate the welfare effect of <policy>" question yields to a single three-step routine. Lock it in now and the tax, subsidy, ceiling and floor cards become applications of one method.' },
+      flowTitle: 'The three-step method',
+      flowEmoji: '📐',
+      flow: [
+        { tone: 'blue',   icon: '📐', title: '1. Draw before & after', sub: 'Same diagram, two states. Label CS, PS, tax revenue or subsidy spend, and the new DWL triangle. If you can\'t see all the areas, you can\'t evaluate.' },
+        { tone: 'amber',  icon: '⚖️', title: '2. Identify the transfers & losses', sub: 'Some surplus transfers (CS → tax revenue, or government subsidy → PS). Some surplus is destroyed (the DWL — trades that no longer happen). State winners, losers, and the size of each area.' },
+        { tone: 'green',  icon: '🧮', title: '3. State the net welfare effect', sub: 'Net effect on total surplus = transfers cancel (no welfare change), DWL is a pure loss. Then judge: is this loss justified by correcting a market failure of equal-or-greater size?' }
+      ],
+      causesLabel: 'How it plays out across policies',
+      causesEmoji: '🛠️',
+      causesStyle: 'tinted-flat',
+      causesCols: 2,
+      causes: [
+        { tone: 'rose',   icon: '💰', head: 'Per-unit tax', body: '<strong>Step 1:</strong> draw S shifted up by the tax. <strong>Step 2:</strong> CS and PS shrink; some becomes government revenue (transfer); a DWL triangle opens between Qₜ and Qₑ. <strong>Step 3:</strong> if the tax corrects an externality of equal or greater size, total welfare rises; if it operates in an otherwise efficient market, it falls.' },
+        { tone: 'green',  icon: '🎁', head: 'Per-unit subsidy', body: '<strong>Step 1:</strong> draw S shifted down. <strong>Step 2:</strong> CS and PS both grow; government spending is the transfer; a DWL triangle opens because output is pushed past the efficient level. <strong>Step 3:</strong> justified if the externality being internalised is at least as large as the new DWL.' },
+        { tone: 'amber',  icon: '🚧', head: 'Price ceiling (below Pₑ)', body: '<strong>Step 1:</strong> draw a horizontal line below equilibrium. <strong>Step 2:</strong> CS may rise for buyers who get the good but falls for those rationed out; PS shrinks; a DWL triangle opens between the new Q and Qₑ. <strong>Step 3:</strong> equity gain vs efficiency loss — name the trade-off.' },
+        { tone: 'purple', icon: '🛡️', head: 'Price floor (above Pₑ)', body: '<strong>Step 1:</strong> draw a horizontal line above equilibrium. <strong>Step 2:</strong> PS rises for sellers who sell but those rationed out lose; CS shrinks; surplus appears (excess supply); DWL opens. <strong>Step 3:</strong> the welfare verdict depends on who policymakers are protecting.' }
+      ],
+      tipLate: { icon: '⚠️', tone: 'rose', head: 'Don\'t confuse transfers with losses', text: 'Tax revenue is a <em>transfer</em> from consumers/producers to the government — it does not destroy welfare. Only the <strong>DWL triangle</strong> (surplus no one gets) is a true welfare loss. Mixing these up is the most common error and the surest way to lose evaluation marks.' },
+      examEdge: 'This three-step method is the single most reliable scaffolding for any welfare-effects question. Memorise the structure and the policy-specific details fall out. The next three cards apply it to taxes, subsidies, and the real-world contexts where it bites.'
+    },
+    {
       id: 'consumer_producer_surplus_3',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 5 of 8',
       title: 'How Taxes Affect Surplus',
       tip: {
         icon: '💡',
@@ -203,7 +228,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_4',
-      stepLabel: 'Learn: Step 5 of 7',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'How Subsidies Affect Surplus',
       tip: {
         icon: '💡',
@@ -257,7 +282,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_5',
-      stepLabel: 'Learn: Step 6 of 7',
+      stepLabel: 'Learn: Step 7 of 8',
       title: 'Surplus and Allocative Efficiency',
       tip: {
         icon: '💡',
@@ -293,7 +318,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_6',
-      stepLabel: 'Learn: Step 7 of 7',
+      stepLabel: 'Learn: Step 8 of 8',
       title: 'Surplus in the Real World',
       tip: {
         icon: '📊',
@@ -367,6 +392,7 @@ window.ECONOS_TOPIC = {
       causesStyle: 'tinted-flat',
       causes: [
         { tone: 'blue',   icon: '🏠', head: 'Rent controls',       body: 'Rent controls set below Pe reduce landlord PS and create a shortage (Qs < Qd). Some tenants gain lower rents, but others cannot find housing. Total welfare falls – DWL equals the value of housing transactions that do not occur. Evidence: San Francisco rent control reduced rental supply by 15% (Diamond et al., 2019).' },
+        { tone: 'rose',   icon: '🇬🇧', head: 'UK Help to Buy (2013–23)', body: 'A £21bn demand-side housing subsidy aimed at first-time buyers. With housing supply very inelastic (~180k new builds vs ~300k household formation), most of the subsidy capitalised into <strong>higher house prices</strong> rather than higher Q. <strong>PS rose</strong> sharply for developers and existing owners; <strong>CS for the targeted first-time buyers barely moved</strong> in real terms because prices rose by similar amounts. Net welfare: surplus transferred from taxpayers to producers, not to the intended beneficiaries — the classic case of a subsidy whose incidence depends on PES, not on policy intent.' },
         { tone: 'amber',  icon: '✈️', head: 'Aviation subsidies',  body: 'Government subsidies to airports and airlines expand output beyond free-market levels. CS rises (lower fares) and PS rises (higher revenue), but the government subsidy cost may exceed the welfare gain unless aviation corrects a genuine positive externality.' },
         { tone: 'green',  icon: '🌐', head: 'Trade tariffs',       body: 'A tariff raises the domestic price above the world price, transferring CS to domestic producers and the government, while creating DWL triangles on both sides. Free trade maximises total surplus; the welfare losses from tariffs typically exceed the gains to protected producers.' },
         { tone: 'purple', icon: '👷', head: 'Minimum wage',        body: 'A minimum wage above Pe transfers surplus from employers to employed workers, but may reduce employment. Workers who lose jobs lose their surplus. Total welfare effect depends on labour demand elasticity – inelastic demand means smaller employment loss and a net welfare gain for workers.' }

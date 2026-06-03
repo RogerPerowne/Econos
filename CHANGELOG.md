@@ -6,6 +6,44 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.1 — 2026-06-03
+
+### Theme 1 pedagogy sweep · PR B — Elasticities, Price Mechanism & CPS
+
+Second of three pedagogy-sweep PRs. Five topics touched:
+
+- **Price Elasticity of Demand (1.2.3):** Card 6 (PED & total revenue) — added
+  a worked numerical (cigarettes inelastic +20% price → TR rises £600→£660
+  vs concert tickets elastic +20% → TR falls £600→£432) so the TR rule is
+  shown, not just stated.
+- **Income & Cross-Price Elasticity (1.2.3):** Card 8 (determinants) — added
+  quantified UK stats (UK restaurant spending +22%/−50%; Aldi+Lidl 5%→16%
+  share; Netflix lost ~1m UK subs in 2022). Card 9 (real-world) — tagged
+  each scenario with a YED/XED badge so the income-effect vs substitution-
+  effect distinction stays explicit.
+- **Price Elasticity of Supply (1.2.5):** Card 5 — added a worked SR/LR
+  numerical comparison (oil PES 0.25 in Year 1 → 0.80 in Year 5). Card 6 —
+  upgraded the housing example with the 2010–22 UK stats. Card 7 — added a
+  bottomTip on supply-side policy as a PES lever (T-Levels, planning
+  reform, HS2/grid).
+- **The Price Mechanism (1.2.7):** Card 1 examEdge — now explicitly flags
+  the spec requirement to name signalling/incentive/rationing separately.
+  Card 4 — added 2022 UK energy crisis cascade (gas ↑5× → electricity ↑ →
+  consumer switching → renewables investment) as the canonical Hayekian
+  transmission example. Card 5 — bridge sentence tying entrepreneurship
+  back to Card 2's incentive function. Card 6 — added a 7th cause (time
+  lags & sticky prices) explicitly naming the Level 3→4 evaluation point.
+- **Consumer & Producer Surplus (1.2.8):** new **Card 4 "The surplus exam
+  method"** (8 cards now, was 7) — promotes the three-step routine to a
+  standalone card with per-policy applications (tax/subsidy/ceiling/floor)
+  and a tipLate clarifying transfers vs welfare losses. Card 2 — expanded
+  the "common mistake" entry to explain *why* shading whole triangles is
+  wrong. Card 8 — added UK Help to Buy (£21bn, 2013–23) as a real-world
+  case of subsidy incidence under inelastic supply. Renumbered all
+  remaining stepLabels; updated intro `doInThis` and stages copy.
+
+Data only (network-first) — no `sw.js` bump.
+
 ## 0.44.0 — 2026-06-03
 
 ### Theme 1 pedagogy sweep · PR A — Foundations & Markets (1.1, 1.2)

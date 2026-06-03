@@ -57,7 +57,7 @@ window.ECONOS_TOPIC = {
         { term: 'Dispersed knowledge', def: 'Hayek\'s concept: relevant economic knowledge is distributed across millions of individuals – no central authority can aggregate it as efficiently as prices do.' },
         { term: 'Efficient allocation', def: 'A pattern of resource use where goods flow to their most highly-valued uses and producers respond to genuine consumer demand.' }
       ],
-      examEdge: 'Strong answers explain the link between prices and resource allocation. Don\'t just say "prices change behaviour" – show how this leads to efficient allocation.'
+      examEdge: '<strong>Exam requirement:</strong> spec 1.2.7 mandates that you name and distinguish the three functions — <strong>signalling, incentive, rationing</strong> — separately when explaining how prices allocate resources. Examiners award marks for using the precise terminology; vague phrases like "prices change behaviour" leave marks on the table. Strong answers go further and link each function to the resulting efficient allocation.'
     },
     {
       id: 'price_functions_2',
@@ -203,8 +203,9 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',  icon: '🕸️', head: 'To related markets', body: 'Price changes ripple to suppliers and complements (substitutes), affecting many linked markets.' }
       ],
       causes2Emoji: '⭐',
-      causes2Label: 'Why this matters',
+      causes2Label: 'Why this matters — including a live UK cascade',
       causes2: [
+        { tone: 'rose',  icon: '⚡', head: 'UK energy crisis (2022–24)', body: 'Russian gas supply cuts pushed wholesale gas prices up ~5× in 12 months. Cascade: gas ↑ → electricity (gas is the marginal generator) ↑ → households cut usage and switched to heat pumps; firms switched away from gas heating; offshore-wind and solar investment accelerated. One price signal coordinated millions of unrelated decisions across linked markets — exactly Hayek\'s vision.' },
         { tone: 'green', icon: '🚗', head: 'Electric vehicles and lithium', body: 'Higher lithium prices encourage new mining, battery innovation, and substitutes like LFP batteries.' },
         { tone: 'amber', icon: '☕', head: 'Coffee beans',                 body: 'Higher coffee prices lead cafés to adjust prices, consumers to switch brands, and farmers to plant more.' },
         { tone: 'blue',  icon: '✈️', head: 'Holiday destinations',         body: 'Higher prices for popular destinations shift demand to alternatives and change travel patterns.' }
@@ -223,7 +224,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '💡',
         tone: 'blue',
-        text: 'Entrepreneurs watch prices closely. <strong>Rising prices and profits reveal unmet demand or scarcity.</strong> That creates an opportunity: enter the market, innovate, or find a cheaper way to supply the product.'
+        text: 'Entrepreneurs are the living response to the <strong>incentive function</strong> from Card 2: abnormal profits signal unmet demand, attracting capital and labour until the market rebalances. <strong>Rising prices and profits reveal unmet demand or scarcity.</strong> That creates an opportunity: enter the market, innovate, or find a cheaper way to supply the product.'
       },
       flowTitle: 'How entrepreneurs respond',
       flowEmoji: '🚀',
@@ -292,7 +293,8 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  icon: 'ℹ️',  head: 'Information failure',     body: 'Buyers or sellers lack key information; leads to adverse selection or moral hazard.' },
         { tone: 'purple', icon: '👑', head: 'Market power / monopoly', body: 'A firm can influence price above competitive levels; restriction of output.' },
         { tone: 'slate',  icon: '📍', head: 'Factor immobility',       body: 'Resources cannot move freely to where they are most productive.' },
-        { tone: 'rose',   icon: '⚖️',  head: 'Merit and demerit goods', body: 'Markets underprovide merit goods and overprovide demerit goods.' }
+        { tone: 'rose',   icon: '⚖️',  head: 'Merit and demerit goods', body: 'Markets underprovide merit goods and overprovide demerit goods.' },
+        { tone: 'blue',   icon: '⏳', head: 'Time lags &amp; sticky prices', body: 'Even when the signal is correct, supply may take years to respond (housing: 5–10 yr lag) and wages are <em>sticky downward</em> (workers resist cuts) — so unemployment can persist. A Level 3→4 evaluation point: not every market failure is about <em>what</em> the price says; some are about <em>how fast</em> the response arrives.' }
       ],
       causes2Style: 'plain-white',
       causes2Emoji: '🔬',

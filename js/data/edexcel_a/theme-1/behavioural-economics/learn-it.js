@@ -8,8 +8,9 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroBehavioural',
     summary: 'Traditional economics assumes rational, self-interested actors. In reality we use mental shortcuts that produce predictable biases. The UK government has built one of the world\'s most active behavioural policy machines on this insight – starting with the most successful nudge in economic history: pension auto-enrolment, which lifted workplace pension participation from ~55% to ~87% at near-zero cost.',
-    doInThis: 'Work through 5 cards covering why people aren\'t rational, the four key biases (try each one on yourself), bounded self-control and commitment devices, four real UK nudges, and how to evaluate behavioural policy.',
+    doInThis: 'Work through 6 cards covering why people aren\'t rational, the four key biases (try each one on yourself), weakness at computation with money, bounded self-control and commitment devices, four real UK nudges, and how to evaluate behavioural policy.',
     outcomes: [
+      'Explain the three reasons consumers behave irrationally: influence of others, habit, and weakness at computation',
       'Explain bounded rationality, bounded self-control and habitual behaviour',
       'Identify anchoring, loss aversion, availability and social norms – and recognise each in real contexts',
       'Describe the UK\'s flagship behavioural policies (auto-enrolment, opt-out organ donation, HMRC letters, NHS reminders)',
@@ -17,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Two systems: System 1 fast / automatic / biased; System 2 slow / deliberate / rare. Biases happen when System 1 takes over jobs that need System 2. Nudges work by changing the choice architecture so System 1\'s default produces a better outcome.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '5 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -26,7 +27,7 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'behavioural_econ_1',
-      stepLabel: 'Learn: Step 1 of 5',
+      stepLabel: 'Learn: Step 1 of 6',
       title: 'Why people aren\'t rational',
       tip: { icon: '🧠', tone: 'amber', text: 'Kahneman\'s two-systems framework underpins all of behavioural economics. <strong>System 1</strong> is fast, automatic and biased. <strong>System 2</strong> is slow, deliberate and rarely engaged. Almost every bias in this topic happens when System 1 takes over a job that needed System 2.' },
       diagramKey: 'whyNotRationalDiagram',
@@ -57,7 +58,7 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'behavioural_econ_2',
-      stepLabel: 'Learn: Step 2 of 5',
+      stepLabel: 'Learn: Step 2 of 6',
       title: 'The four biases – try them on yourself',
       tip: { icon: '🎯', tone: 'rose', text: 'These four biases aren\'t quirks – they\'re predictable shortcuts. Click through each one, and read the <em>mini-test</em> at the bottom of every panel. If you would have fallen for it, you\'ve felt the bias in action.' },
       interactiveDiagram: {
@@ -116,8 +117,66 @@ window.ECONOS_TOPIC = {
     },
 
     {
+      /* ================================================================
+         CARD 3 – WEAKNESS AT COMPUTATION — spec 1.2.10(a)
+         Closes the named spec gap. Edexcel lists three reasons consumers
+         act irrationally: influence of others (social norms, C2), habit
+         (keyTerm C1 + commitment-device examples C4), and weakness at
+         computation — numeracy errors with money — which had no card.
+         Predict-then-reveal (diagnose template); UK numeracy traps.
+         ================================================================ */
+      id: 'behavioural_econ_computation',
+      template: 'diagnose',
+      stepLabel: 'Learn: Step 3 of 6',
+      title: 'Weakness at computation',
+      lede: 'Edexcel names three reasons consumers behave irrationally: <strong>influence of others</strong> (social norms), <strong>habit</strong>, and <strong>weakness at computation</strong> — we are systematically bad at the maths of money. For each case below, predict what most people get wrong, then <em>make your call</em>.',
+      table: {
+        headers: ['Edexcel reason', 'What it means', 'Where it shows up'],
+        rows: [
+          ['Influence of others', 'We copy what people around us do', 'Social norms — Card 2'],
+          ['Habit', 'We repeat past choices to avoid re-deciding', 'Defaults &amp; auto-renewal — Cards 4–6'],
+          ['Weakness at computation', 'We mis-judge the maths of money', 'This card ↓']
+        ]
+      },
+      scenarios: {
+        title: 'Four money traps — predict the error',
+        items: [
+          {
+            tone: 'rose',
+            label: '1',
+            text: '<strong>Compound interest.</strong> You save £1,000 in an account paying 5% a year and leave it untouched for 30 years. No more deposits. Most people, asked to guess from memory, say somewhere around £2,000–£2,500. What is it actually worth?',
+            answer: '<strong>About £4,322.</strong> People mentally do <em>simple</em> interest (£1,000 + 30 × £50 = £2,500) and badly underestimate <strong>exponential</strong> growth — interest earning interest. The same blind spot runs in reverse on debt: we underestimate how fast a balance compounds against us.'
+          },
+          {
+            tone: 'amber',
+            label: '2',
+            text: '<strong>"Only 25% a month".</strong> A short-term lender advertises a payday loan at "just 25% interest a month — no nasty surprises". It sounds close to a 25% annual rate. What is the true annual cost (APR)?',
+            answer: '<strong>Roughly 1,355% APR.</strong> A monthly rate compounds: 1.25¹² − 1 ≈ 1,355%. Pre-2015 UK payday lenders like Wonga advertised representative APRs over 1,500% — legal, because a monthly headline rate hides the annual reality from buyers who can\'t compute it. This is exactly why the FCA later capped payday costs.'
+          },
+          {
+            tone: 'blue',
+            label: '3',
+            text: '<strong>The £5 that moves you — sometimes.</strong> A shopper will happily drive across town to save £5 on a £15 phone case, but won\'t cross the road to save the same £5 on a £400 sofa. The £5 is identical. Why the inconsistency?',
+            answer: '<strong>People judge money in percentages, not absolute pounds.</strong> £5 off £15 feels huge (33%); £5 off £400 feels trivial (1.25%) — even though a saved pound is a saved pound. Retailers exploit this: "% off" on cheap goods, "£ off" on expensive ones, whichever sounds bigger.'
+          },
+          {
+            tone: 'purple',
+            label: '4',
+            text: '<strong>The minimum-payment trap.</strong> A £2,000 credit-card balance sits at 20% APR. You pay only the 2% monthly minimum each month and add nothing new. Roughly how long to clear it — and how much interest?',
+            answer: '<strong>Around 30 years and over £4,500 in interest</strong> — more than double what you borrowed. Minimum repayments are designed so most of each payment covers interest. People anchor on the small, manageable monthly figure and never compute the lifetime cost — the single most expensive computation error UK households make. (It\'s why card statements now legally show the "minimum payment" warning.)'
+          }
+        ]
+      },
+      keyTerms: [
+        { term: 'Weakness at computation', def: 'The tendency to make systematic errors when the maths of a decision is hard — especially compounding, percentages and long time horizons. One of the three Edexcel reasons for irrational behaviour.' },
+        { term: 'Money illusion', def: 'Judging sums in nominal/proportional terms rather than real absolute value — e.g. reacting to a 33% vs 1.25% discount, not the identical £5.' }
+      ],
+      examEdge: 'This is the third of Edexcel\'s named reasons for irrational behaviour (with influence of others and habit). The exam reward is naming it precisely and pairing it with a policy response: APR caps, the credit-card minimum-payment warning, and "total cost of credit" disclosure are all government attempts to correct weakness at computation.'
+    },
+
+    {
       id: 'behavioural_econ_3',
-      stepLabel: 'Learn: Step 3 of 5',
+      stepLabel: 'Learn: Step 4 of 6',
       title: 'Bounded self-control – we know but we don\'t do',
       tip: { icon: '⏳', tone: 'amber', text: 'We genuinely want to act in our long-term interest – but in the moment the present self wins. This is <strong>not laziness</strong>. It is a structural feature of how humans weigh time. It is also why pension under-saving remained a problem for decades despite tax relief and employer matches.' },
       interactiveDiagram: {
@@ -169,7 +228,7 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'behavioural_econ_4',
-      stepLabel: 'Learn: Step 4 of 5',
+      stepLabel: 'Learn: Step 5 of 6',
       title: 'Nudges that worked – Britain\'s behavioural revolution',
       tip: { icon: '🇬🇧', tone: 'blue', text: 'Britain runs the world\'s most active behavioural government. The <strong>Behavioural Insights Team</strong> (BIT, founded 2010 under the Cameron government) has delivered measurable policy wins at near-zero cost. Four UK case studies below – each illustrating the framework in action.' },
       flowTitle: 'The BIT framework – small tweaks, big effects',
@@ -238,7 +297,7 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'behavioural_econ_5',
-      stepLabel: 'Learn: Step 5 of 5',
+      stepLabel: 'Learn: Step 6 of 6',
       title: 'When nudges work, and when they don\'t',
       tip: { icon: '⚖️', tone: 'slate', text: 'Nudges <strong>complement</strong> traditional policy – they do not replace taxes or regulation. The art is knowing which lever fits which market failure. For a carbon price or sugar tax, behavioural insight <em>supports</em> the tax; it does not substitute for it.' },
       continuum: {

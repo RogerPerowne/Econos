@@ -65,15 +65,16 @@ window.ECONOS_TOPIC = {
       examEdge: 'The decisive question: does the welfare gain from correcting the externality exceed the DWL from the policy? A revenue-raising tax in an otherwise efficient market only destroys welfare. A well-targeted Pigouvian tax corrects a larger externality DWL. Identify the market failure (or its absence) explicitly – this is what distinguishes a Level 3 from a Level 4 answer.'
     },
 
-    /* ── Card 2: Five UK case studies ────────────────────────────────── */
+    /* ── Card 2: Four UK case studies (2×2: two taxes · two subsidies) ── */
     {
       id: 'taxes_subsidies_policy_2',
       stepLabel: 'Learn: Step 2 of 3',
-      title: 'Five UK case studies – what actually happens',
-      tip: { icon: '🌍', tone: 'amber', text: 'Real policy outcomes depend on three questions: Does it change behaviour (effectiveness)? Is the welfare gain worth the cost (efficiency)? Who gains and who loses (equity)? These five cases show theory meeting reality.' },
-      causesLabel: 'Five UK policy case studies',
+      title: 'Four UK case studies – what actually happens',
+      tip: { icon: '🌍', tone: 'amber', text: 'Real policy outcomes depend on three questions: Does it change behaviour (effectiveness)? Is the welfare gain worth the cost (efficiency)? Who gains and who loses (equity)? Two taxes and two subsidies show theory meeting reality.' },
+      causesLabel: 'Two taxes · two subsidies',
       causesEmoji: '📋',
       causesStyle: 'tinted-flat',
+      causesCols: 2,
       causes: [
         {
           icon: '🥤', tone: 'rose', head: 'Sugar Levy (SDIL, 2018–)',
@@ -81,13 +82,6 @@ window.ECONOS_TOPIC = {
             + '<span style="font-size:11px;font-weight:800;color:#DC2626;">🎯 Effectiveness</span> <span style="font-size:11.5px;"> Strong: reformulation saw average sugar content fall sharply. Sales of taxed drinks fell ~21%.</span><br>'
             + '<span style="font-size:11px;font-weight:800;color:#059669;">💰 Efficiency</span> <span style="font-size:11.5px;"> Relatively efficient: low admin cost; revenue used for school sports.</span><br>'
             + '<span style="font-size:11px;font-weight:800;color:#2563EB;">👥 Equity</span> <span style="font-size:11.5px;"> Mixed: healthier outcomes benefit low-income groups, but taxes can feel regressive.</span>'
-        },
-        {
-          icon: '⛽', tone: 'blue', head: 'Fuel duty (ongoing, ~£24bn/yr)',
-          body: '<span style="font-size:10.5px;color:#1E3A8A;font-style:italic;">Large excise on petrol and diesel (~53p/litre + VAT).</span><br>'
-            + '<span style="font-size:11px;font-weight:800;color:#DC2626;">🎯 Effectiveness</span> <span style="font-size:11.5px;"> Can reduce car use and emissions somewhat. PED ≈ 0.2–0.4 short run.</span><br>'
-            + '<span style="font-size:11px;font-weight:800;color:#059669;">💰 Efficiency</span> <span style="font-size:11.5px;"> Good revenue raiser; low collection cost. Frozen 2011–2024 due to political pressure.</span><br>'
-            + '<span style="font-size:11px;font-weight:800;color:#2563EB;">👥 Equity</span> <span style="font-size:11.5px;"> Regressive: hits rural and lower-income drivers harder as share of income.</span>'
         },
         {
           icon: '🚬', tone: 'amber', head: 'Tobacco duty (ongoing)',
@@ -114,7 +108,7 @@ window.ECONOS_TOPIC = {
       causes2Label: 'What economists ask',
       causes2Emoji: '❓',
       causes2: [
-        { icon: '🎯', tone: 'rose',  head: 'Effectiveness = did behaviour change?', body: 'Sugar tax worked partly because producers had an elastic response (reformulate). Fuel duty changes behaviour less because PED is low and substitutes are limited.' },
+        { icon: '🎯', tone: 'rose',  head: 'Effectiveness = did behaviour change?', body: 'Sugar tax worked partly because producers had an elastic response (reformulate). Where demand is inelastic, behaviour shifts more slowly and the tax leans on sustained price rises over time.' },
         { icon: '💰', tone: 'green', head: 'Efficiency = was the welfare gain worth the cost?', body: 'Compare the DWL eliminated from the externality with the new DWL created by the policy. Strong Pigouvian designs (sugar, tobacco) clear this bar. Revenue taxes in efficient markets do not.' },
         { icon: '👥', tone: 'blue',  head: 'Equity = who gained and who lost?', body: 'Most indirect taxes are regressive (higher % of income from poorer households). Subsidies can be captured by unintended beneficiaries (landowners under CAP, developers under Help to Buy).' }
       ],

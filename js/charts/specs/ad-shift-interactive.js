@@ -60,7 +60,11 @@
       // Layer 1: new AD₂ solid blue, shifted right (clipped at right edge)
       { d: 'M 0.319,0.894 L 1.153,0.067',
         tone: 'blue', label: 'AD₂', strokeWidth: 2.2,
-        labelDx: -22, labelDy: 14, anchor: 'end',
+        // labelDx=-32 keeps the "AD₂" right edge inside the 440-wide SVG
+        // — the curve endpoint sits past x=1.0 and auto-clips, but the
+        // label is positioned from the un-clipped endpoint so it needs
+        // explicit pull-back.
+        labelDx: -32, labelDy: 14, anchor: 'end',
         layer: 'idl-1' }
     ],
 

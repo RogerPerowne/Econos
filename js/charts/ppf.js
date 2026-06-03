@@ -208,6 +208,13 @@
         // axis-end label.
         if (area && ctx.currentPanelIdx != null) cbox.panelArea = area;
         if (ctx.currentPanelIdx != null) cbox.panelIdx = ctx.currentPanelIdx;
+        // Carry the curve's `layer` and `perspective` onto the bbox so
+        // the clash-detection skip-rules (different layers = mutually
+        // exclusive on-screen) apply to curve labels too. Without this,
+        // a clash between SRPC₂ (idl-2) and SRPC₃ (idl-3) was reported
+        // even though the two never appear together at runtime.
+        if (curve.layer) cbox.layer = curve.layer;
+        if (curve.perspective) cbox.perspective = curve.perspective;
         ctx.placedBoxes.push(cbox);
       }
     }

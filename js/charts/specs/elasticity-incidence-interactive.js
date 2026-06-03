@@ -35,10 +35,13 @@
       titleTone: titleTone,
       axes: { x: { label: 'Q' }, y: { label: 'P' } },
       curves: [
-        /* Base S (always visible) */
+        /* Base S (always visible). labelDx/anchor flipped to 'end' so
+         * the 8-px-wide "S" tucks LEFT of the curve endpoint and fits
+         * inside both 180-px panels — old labelDx=6/anchor='start'
+         * overflowed each panel by ~9px. */
         { d: 'M 0.083,0.096 L 0.972,0.835',
           tone: 'green', label: 'S', strokeWidth: 2,
-          labelDx: 6, labelDy: -4, anchor: 'start' },
+          labelDx: -5, labelDy: -8, anchor: 'end' },
         /* Base S+T (always visible — same tax in both panels) */
         { d: 'M 0.083,0.291 L 0.972,1.030',
           tone: 'blue', label: 'S+T', strokeWidth: 1.8, dashed: '7 4',
@@ -108,10 +111,13 @@
         { x: 245, y: 20, width: 180, height: 230 },
         'Elastic demand',
         'green',
-        /* Shallow D curve (big ΔQ for small ΔP) */
+        /* Shallow D curve (big ΔQ for small ΔP). Endpoint at x=1.0
+         * lands AT the right panel edge, so labelDx/anchor flipped to
+         * 'end' to keep the 8-px-wide "D" inside the panel — old
+         * labelDx=6/anchor='start' overflowed by ~14px. */
         { d: 'M 0.000,0.804 L 1.000,0.283',
           tone: 'blue', label: 'D', strokeWidth: 2,
-          labelDx: 6, labelDy: 4, anchor: 'start',
+          labelDx: -5, labelDy: 12, anchor: 'end',
           layer: 'idl-1' },
         [
           { x: 0.578, y: 0.509, tone: 'slate', radius: 4,

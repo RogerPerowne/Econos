@@ -6,6 +6,71 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.13 — 2026-06-03
+
+### Chart-engine sweep: clear the 9 label issues v0.41.11 surfaced
+
+The new curve-label tracking in v0.41.11 flagged 9 pre-existing label
+problems. This release works through all of them so `lint:charts`
+reports **0 known issues** for the first time since the dev-mode checks
+were added.
+
+**Curve labels pulled inside their panels** (7 fixes, all the same
+pattern — labelDx tightened or anchor flipped so the text fits inside
+the SVG width / panel chartArea):
+- `ad-demand-pull-interactive`: AD₂ `labelDx: -22 → -32`
+- `ad-shift-interactive`: AD₂ `labelDx: -22 → -32`
+- `ad-movement-shift`: AD₂ `labelDx: 8 → -10, anchor: 'end'`
+- `sras-right-shift-interactive`: SRAS₂ `labelDx: -22 → -32`
+- `elasticity-incidence-interactive`: S `labelDx: 6 → -5, anchor: 'end',
+  labelDy: -4 → -8` (fixes both panels — shared via `basePanel`).
+  Right-panel D `labelDx: 6 → -5, anchor: 'end', labelDy: 4 → 12`.
+
+**Engine fix — propagate `layer`/`perspective` to curve-label bboxes.**
+Two of the 9 findings were false-positive label clashes: SRPC₂ ↔ SRPC₃
+in `stagflation-phillips` and S+T(specific) ↔ S+T%(ad valorem) in
+`tax-types-interactive`. Both pairs live in `layerMode: 'exclusive'`
+sibling layers and never co-display, but my v0.41.11 curve-label
+tracking didn't carry the curve's `layer` field onto the bbox — so
+the clash detector's "skip if different layers" rule couldn't apply
+to curve labels. Fixed by setting `cbox.layer = curve.layer` (and the
+matching `perspective` field) at curve-bbox-registration time. The
+two pairs now correctly skip.
+
+`KNOWN_ISSUES` in `scripts/lint-charts.mjs` is empty as of this release.
+
+`sw.js` cache bumped to `econos-v307`.
+
+## 0.41.12 — 2026-06-03
+
+### PPF Cards 1 and 2 — distinct stories instead of the same diagram twice
+
+User flagged that cards 1 and 2 were running the same A/B/C-on-a-PPF
+diagram with slightly different point text. Redrew both so each tells
+a genuinely different story:
+
+**Card 1 — "What a PPF shows"** (ppfBigPicture)
+- Frontier is now a **boundary** between two shaded zones.
+- Light-blue feasible region under the curve, labelled "Feasible
+  production"; un-shaded upper-right region labelled "Beyond current
+  resources".
+- One anchor point on the curve labelled "On the frontier" — the
+  classification is no longer this card's job.
+- Data-file bullets rewritten to describe the curve + the two regions,
+  not three A/B/C points.
+
+**Card 2 — "Classify the point"** (ppfClassify)
+- The two regions are now visually distinct: **amber tint under the
+  curve** (= underused) and **green tint above the curve** (=
+  unattainable). The blue curve itself becomes the "efficient frontier".
+- Three A/B/C points sit in their respective regions as classification
+  examples.
+
+Both polygons are built from 12 sampled points along the PPF cubic
+so the curved boundary reads smoothly.
+
+`sw.js` cache bumped to `econos-v306`.
+
 ## 0.41.11 — 2026-06-03
 
 ### PPF Card 5 (shifts trio) — PPF₂ labels pulled inside their panels + engine catches this kind of bug

@@ -40,15 +40,11 @@ const allowWarnings = process.argv.includes('--allow-warnings');
    each entry. New chart bugs MUST NOT be added here without a fix
    plan documented in CHANGELOG. */
 const KNOWN_ISSUES = [
-  { spec: 'ECONOS_AD_DEMAND_PULL_INTERACTIVE_SPEC',  signature: '"AD₂"' },
-  { spec: 'ECONOS_AD_MOVEMENT_SHIFT_SPEC',           signature: '"AD₂"' },
-  { spec: 'ECONOS_AD_SHIFT_INTERACTIVE_SPEC',        signature: '"AD₂"' },
-  { spec: 'ECONOS_ELASTICITY_INCIDENCE_SPEC',        signature: '"S" at (211.0' },
-  { spec: 'ECONOS_ELASTICITY_INCIDENCE_SPEC',        signature: '"S" at (426.0' },
-  { spec: 'ECONOS_ELASTICITY_INCIDENCE_SPEC',        signature: '"D" at (431.0' },
-  { spec: 'ECONOS_SRAS_RIGHT_SHIFT_INTERACTIVE_SPEC', signature: '"SRAS₂"' },
-  { spec: 'ECONOS_STAGFLATION_PHILLIPS_SPEC',        signature: '"SRPC₂" ↔ "SRPC₃"' },
-  { spec: 'ECONOS_TAX_TYPES_INTERACTIVE_SPEC',       signature: '"S + T (specific)" ↔ "S + T% (ad valorem)"' }
+  // Empty as of v0.41.13 — all 9 issues surfaced by the v0.41.11 engine
+  // change have been resolved. Add an entry here ONLY when the dev-mode
+  // engine warning is a known false positive (e.g. label clash in
+  // mutually exclusive layers that the layer-skip rule can't infer).
+  // Every entry MUST link to a CHANGELOG note or open issue.
 ];
 function isKnown(specKey, message) {
   return KNOWN_ISSUES.some(k => k.spec === specKey && message.includes(k.signature));

@@ -36,9 +36,9 @@ window.ECONOS_TOPIC = {
         emoji: '📈',
         layout: 'side',
         bullets: [
-          '<strong style="color:#2563EB;">A · Productively efficient</strong> — on the frontier, using resources fully and efficiently.',
-          '<strong style="color:#D97706;">B · Inefficient / unemployed</strong> — inside the frontier, resources underused or not fully employed.',
-          '<strong style="color:#059669;">C · Unattainable</strong> — outside the frontier, not possible with current resources and technology.'
+          '<strong style="color:#2563EB;">The PPF curve</strong> — the <em>maximum</em> combinations of two goods the economy can produce with its current resources and technology.',
+          '<strong style="color:#475569;">Everything below the curve</strong> is <strong>feasible</strong> — the economy could produce it using existing resources.',
+          '<strong style="color:#475569;">Everything above the curve</strong> is <strong>beyond current resources</strong> — only reachable with more resources or better technology.'
         ]
       },
       methodGrid: {

@@ -55,7 +55,10 @@
       // Layer 1: SRAS₂ shifted right (clipped at right edge)
       { d: 'M 0.319,0.067 L 1.153,0.894',
         tone: 'green', label: 'SRAS₂', strokeWidth: 2.2,
-        labelDx: -22, labelDy: -16, anchor: 'end',
+        // labelDx=-32 keeps the "SRAS₂" (38px wide) right edge inside
+        // the 440-wide SVG. Curve auto-clips at x=1.0 but the label
+        // anchors to the un-clipped endpoint.
+        labelDx: -32, labelDy: -16, anchor: 'end',
         layer: 'idl-1' }
     ],
 

@@ -3265,9 +3265,24 @@
 
   /* === Card 4: diagnose === */
   function renderCardDiagnose(c) {
-    const tableRows = (c.table && c.table.rows ? c.table.rows : []).map(row => `
-      <tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>
-    `).join('');
+    // Render the optional comparison table with the standard .cmp-table
+    // component (shared with the generic rows/colA table) so diagnose
+    // tables match every other table site-wide — dark header row, striping,
+    // and mobile row-stacking via .cmp-table__key. Header[0] is the
+    // row-label column; the rest are data columns.
+    const tbl = c.table || {};
+    const tblHeaders = tbl.headers || [];
+    const dataHeaders = tblHeaders.slice(1);
+    const cmpCols = dataHeaders.length >= 3 ? '140px 1fr 1fr 1fr'
+      : dataHeaders.length === 2 ? '140px 1fr 1fr' : '140px 1fr';
+    const cmpHead = tblHeaders.length
+      ? `<div class="cmp-table__head"><div class="cmp-table__hcell cmp-table__hcell--corner">${tblHeaders[0] || ''}</div>${dataHeaders.map(h => `<div class="cmp-table__hcell">${h}</div>`).join('')}</div>`
+      : '';
+    const cmpRows = (tbl.rows || []).map((row, i) => `
+      <div class="cmp-table__row ${i % 2 === 0 ? 'cmp-table__row--even' : 'cmp-table__row--odd'}">
+        <div class="cmp-table__label">${row[0]}</div>
+        ${row.slice(1).map((cell, j) => `<div class="cmp-table__cell"><span class="cmp-table__key">${dataHeaders[j] || ''}</span><span class="cmp-table__val">${cell}</span></div>`).join('')}
+      </div>`).join('');
 
     const scenarios = c.scenarios.items.map((s, i) => `
       <div class="scenario scenario--${s.tone}" data-scenario-id="${i}">
@@ -3295,16 +3310,7 @@
           ${c.diagramCaption ? `<div class="mech-diagram__caption">${c.diagramCaption}</div>` : ''}
         </div>
       `
-      : `
-        <table class="diag-table">
-          <thead>
-            <tr>${c.table.headers.map(h => `<th>${h}</th>`).join('')}</tr>
-          </thead>
-          <tbody>
-            ${tableRows}
-          </tbody>
-        </table>
-      `;
+      : `<div class="cmp-table" style="--cmp-cols:${cmpCols};">${cmpHead}${cmpRows}</div>`;
 
     return `
       <div class="card__step-label">${c.stepLabel}</div>

@@ -3648,16 +3648,24 @@
       </div>
     ` : '';
 
-    // Locked conclusion (PED-style dark gradient, unlocks when all steps done)
-    const conclusion = c.conclusion ? `
+    // Locked conclusion (PED-style dark gradient, unlocks when all steps done).
+    // Accept BOTH shapes: a plain string, or { label, text }. Historically the
+    // renderer interpolated c.conclusion directly, so the documented
+    // { label, text } object form rendered as "[object Object]" (a latent bug
+    // on the multiplier + inflation worked-example cards). Normalise here so
+    // either form works; the object's `label` overrides the default heading.
+    const conclObj = c.conclusion
+      ? (typeof c.conclusion === 'string' ? { text: c.conclusion } : c.conclusion)
+      : null;
+    const conclusion = conclObj ? `
       <div data-we-payoff style="margin-top:18px;position:relative;border-radius:14px;opacity:0.35;filter:blur(1px);transition:opacity 0.5s ease,filter 0.5s ease,box-shadow 0.5s ease;">
         <div style="border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
           <div style="padding:16px 20px;display:flex;align-items:flex-start;gap:14px;">
             <div style="font-size:30px;line-height:1;flex-shrink:0;">🏆</div>
             <div>
               <div style="color:#FCD34D;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">The full picture</div>
-              <div style="color:#fff;font-size:16px;font-weight:800;margin-bottom:6px;">Conclusion</div>
-              <div style="color:rgba(255,255,255,0.85);font-size:13.5px;line-height:1.65;">${c.conclusion}</div>
+              <div style="color:#fff;font-size:16px;font-weight:800;margin-bottom:6px;">${conclObj.label || 'Conclusion'}</div>
+              <div style="color:rgba(255,255,255,0.85);font-size:13.5px;line-height:1.65;">${conclObj.text || ''}</div>
             </div>
           </div>
         </div>

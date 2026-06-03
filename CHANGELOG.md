@@ -6,6 +6,48 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.0 — 2026-06-03
+
+### Comparative advantage card (Theme 1 spec gap 1.1.5c) + worked-example conclusion fix
+
+The first of the Theme 1 content gaps from the audit. `specialisation-and-money`
+now has a dedicated **comparative advantage** card (new Card 5, worked-example
+walkthrough), closing spec point 1.1.5(c) which the topic previously only
+gestured at via the "specialise at comparative advantage" line in Card 4.
+
+The card walks five reveal steps on a UK-vs-China / services-vs-electronics
+scenario:
+1. Absolute vs comparative advantage (Ricardo's distinction)
+2. Each country's opportunity costs (UK: 1 service = 0.5 electronics;
+   China: 1 service = 2 electronics)
+3. Comparative advantage = lowest opportunity cost (UK → services,
+   China → electronics)
+4. The gains: full specialisation lifts world output from 150+150 to
+   200+200 with the same resources (+50 of each good)
+5. Evaluation: the terms-of-trade band (0.5–2), over-specialisation risk,
+   and Ricardo's deeper point that comparative advantage applies even when
+   one country is absolutely more productive at everything
+
+Numbers chosen so the worked totals are exact and both world outputs rise
+cleanly; the "better at everything" case is framed as an opportunity-cost
+principle (stated, not a second table) because full specialisation in that
+case can lower one total. Topic renumbered 8 → 9 cards; intro/outcomes
+updated.
+
+**Renderer fix (latent bug):** `renderCardWorkedExample` interpolated
+`c.conclusion` directly as a string, so the documented `{ label, text }`
+object form rendered as a literal "[object Object]". This was live on the
+multiplier and inflation-measurement worked-example cards. The renderer now
+accepts both shapes — a plain string or `{ label, text }` (the object's
+`label` overrides the default "Conclusion" heading). No data files needed
+editing; all three worked-example cards now render their conclusions
+correctly.
+
+`app.js` changed → `sw.js` cache bumped to `econos-v315`.
+
+Minor version bump (0.41 → 0.42) to mark the start of the Theme 1
+content-gap build block.
+
 ## 0.41.24 — 2026-06-03
 
 ### Fix broken externality cross-links (legacy /learn/ URLs → routes API)

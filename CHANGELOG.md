@@ -6,6 +6,52 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.2 — 2026-06-03
+
+### Theme 1 pedagogy sweep · PR C — Market Failure & Intervention (1.3, 1.4)
+
+Third and final pedagogy-sweep PR. Eight topics touched:
+
+- **Market Failure (1.3.1):** Card 2 examEdge adds an explicit spec callout
+  mapping the three routes to spec 1.3.1(b). Card 5 anchors the
+  petrol/congestion example with the 2003 London Congestion Charge data
+  (traffic −18%, speed +33%, buses +14%, £97m/year revenue).
+- **Negative Externalities (1.3.2):** Card 4 "Who is worse off?" row now
+  identifies both high-polluting firms <em>and</em> low-income consumers
+  (regressive incidence) under a Pigouvian tax — and incumbent high-emitters
+  under cap-and-trade. Card 7 examEdge includes a worked 25-mark essay
+  structure (define → analyse → evaluate → judge) anchored to the four
+  criteria.
+- **Positive Externalities (1.3.2):** Card 7 examEdge adds a worked
+  subsidy-vs-direct-provision essay structure with the binding-constraint
+  judgement ("subsidy when price-sensitive; provision when access-binding").
+- **Public Goods (1.3.3):** Card 2 examEdge adds a forward reference to
+  Card 5's vertical demand summation. Card 6 (Government Solutions) table
+  now carries live UK £ amounts (defence £57bn, street lighting £0.5bn,
+  flood defences £1.2bn, BBC licence fee £3.7bn). Card 7 four-step
+  evaluation flow expanded with full sub-text including the preference-
+  revelation problem.
+- **Information Gaps (1.3.4):** Card 1 — repurposed `causes2` as an
+  explicit two-tile callout naming Adverse selection (ex-ante) vs Moral
+  hazard (ex-post), making the cognitive hierarchy land before Akerlof.
+  Card 2 — renamed the unravelling flow "Adverse selection — how the
+  market unravels" so the named mechanism stays visible.
+- **Taxes & Subsidies as Policy Tools (1.4.1):** Card 3 — added an
+  examEdge "what this topic covers / what comes next" signpost forward to
+  the full toolkit in Government Intervention.
+- **Government Intervention (1.4.1):** Card 6 (tradable permits) — added a
+  visible `causes2` "Tax vs permits — when to choose which" 2-tile callout
+  with the price-certain vs quantity-certain decision rule, elevated from
+  the examEdge prose.
+- **Government Failure (1.4.2):** Card 2 — elevated political short-termism
+  from examEdge into a visible `causes2` row labelled "the four spec causes
+  and one strategic pattern to watch", with UK examples. Card 6 — added
+  Bank of England independence (1997) as a fifth case study, retitled
+  "Five case studies — four failures and one institutional success" so
+  students see both sides of the design question.
+
+Data only (network-first) — no `sw.js` bump.
+
 ## 0.44.1 — 2026-06-03
 
 ### Theme 1 pedagogy sweep · PR B — Elasticities, Price Mechanism & CPS

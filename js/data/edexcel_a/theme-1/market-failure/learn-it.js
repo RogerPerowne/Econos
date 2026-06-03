@@ -70,7 +70,7 @@ window.ECONOS_TOPIC = {
         { term: 'Asymmetric information', def: 'When one party in a transaction has materially better information than the other – leading to adverse selection or moral hazard.' },
         { term: 'Free-rider problem', def: 'When people benefit from a good without paying for it. Because no-one can be excluded, no-one has an incentive to pay – so the market under-provides.' }
       ],
-      examEdge: 'You do not need every detail yet – first secure the map, then study each failure type in depth. In an essay, naming the route correctly is the first credit-earning step. After that, link the route to the divergence (cost or benefit) and the direction of the failure (over- or under-production).'
+      examEdge: '<strong>Spec callout:</strong> these three routes are exactly the types listed at Edexcel A spec 1.3.1(b) — externalities, public goods, information gaps. Each gets its own dedicated topic (1.3.2 / 1.3.3 / 1.3.4). You do not need every detail yet – first secure the map, then study each failure type in depth. In an essay, naming the route correctly is the first credit-earning step. After that, link the route to the divergence (cost or benefit) and the direction of the failure (over- or under-production).'
     },
 
     {
@@ -130,7 +130,7 @@ window.ECONOS_TOPIC = {
       keyPointsEmoji: '🔬',
       keyPointsCols: 2,
       keyPoints: [
-        { title: 'Petrol, congestion and emissions', icon: '🚗', headline: 'Drivers ignore the full impact of driving', body: '<strong>Route:</strong> <em>Externality</em>.<br><strong>What goes wrong:</strong> Too much driving → pollution, congestion and higher social costs that the price of petrol doesn\'t capture.', tone: 'rose' },
+        { title: 'Petrol, congestion and emissions', icon: '🚗', headline: 'Drivers ignore the full impact of driving', body: '<strong>Route:</strong> <em>Externality</em>.<br><strong>What goes wrong:</strong> Too much driving → pollution, congestion and higher social costs that the price of petrol doesn\'t capture.<br><strong>UK fix:</strong> the London Congestion Charge (2003) showed how internalising the externality works — car traffic in the zone fell 18%, average speeds rose 33%, bus journey times improved by 14%, and ~£97m/year was raised for transport reinvestment. A textbook Pigouvian-style fix.', tone: 'rose' },
         { title: 'Vaccination or education', icon: '💉', headline: 'Benefits extend well beyond the individual', body: '<strong>Route:</strong> <em>Positive externality / public good characteristics</em>.<br><strong>What goes wrong:</strong> Under-provision because individuals don\'t capture the full social benefits when deciding.', tone: 'blue' },
         { title: 'Street lighting or flood defences', icon: '💡', headline: 'Everyone benefits and no-one can be excluded', body: '<strong>Route:</strong> <em>Public good</em>.<br><strong>What goes wrong:</strong> Under-provision since people can free-ride on others\' payments – no-one has an incentive to pay.', tone: 'amber' },
         { title: 'Food labels, used cars, vaping info', icon: '🏷️', headline: 'One side has more or better information', body: '<strong>Route:</strong> <em>Information gap</em>.<br><strong>What goes wrong:</strong> Poor-quality and biased choices → inefficient outcomes; the price reflects misperception, not reality.', tone: 'purple' }

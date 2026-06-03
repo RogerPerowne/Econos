@@ -53,9 +53,16 @@ window.ECONOS_TOPIC = {
         { icon: '⚠️', tone: 'amber', title: 'Poor decisions / missing trust', sub: 'Wrong choices, higher risk, lower willingness to trade.' },
         { icon: '📉', tone: 'rose',  title: 'Market failure',               sub: 'Inefficient outcomes, reduced welfare, lower trust in markets.' }
       ],
-      causes2Label: 'Why this matters',
-      causes2Emoji: '⭐',
+      causes2Label: 'The two core failures — one cognitive hierarchy',
+      causes2Emoji: '🧭',
+      causes2Style: 'tinted-flat',
       causes2: [
+        { icon: '🔍', tone: 'amber', head: 'Adverse selection · BEFORE the contract', body: '<strong>Ex-ante problem:</strong> hidden <em>characteristics</em> of the product or person mean the wrong ones end up in the market. Used cars (lemons), insurance pools (the riskiest most want cover), credit markets (the riskiest borrowers most eager to borrow). <em>Card 2 (Akerlof) — the foundational example.</em>' },
+        { icon: '🛡️', tone: 'rose',  head: 'Moral hazard · AFTER the contract',  body: '<strong>Ex-post problem:</strong> hidden <em>actions</em> change once one side is protected. Insurance reduces care; bailouts reduce risk discipline; full healthcare cover may encourage over-use. <em>Card 4 — the after-contract problem.</em>' }
+      ],
+      causes3Label: 'Why this matters',
+      causes3Emoji: '⭐',
+      causes3: [
         { icon: '📉', tone: 'rose',  head: 'Markets may unravel',               body: 'Loss of trust can cause good markets to break down.' },
         { icon: '🏆', tone: 'amber', head: 'Good products can be driven out',    body: 'Bad products survive when information is hidden.' },
         { icon: '🏛️', tone: 'blue',  head: 'Government may need to intervene',  body: 'To correct failures and protect consumers.' }
@@ -68,7 +75,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Akerlof\'s Market for Lemons',
       tip: { icon: '💡', tone: 'blue', text: 'George Akerlof\'s 1970 paper "The Market for Lemons" — work that won the 2001 Nobel Prize in Economics — showed that asymmetric information can cause an <strong>entire market to unravel</strong>. Sellers of used cars know their car\'s true quality; buyers do not. Buyers can only offer an average price, which is too low for good-quality cars, so high-quality sellers leave. The market shrinks toward <em>lemons</em>.' },
-      flowTitle: 'How the market unravels — 5 stages',
+      flowTitle: 'Adverse selection — how the market unravels (5 stages)',
       flowEmoji: '🚗',
       flow: [
         { icon: '🚗', tone: 'blue',   title: 'Seller knows quality',                  sub: 'Seller knows whether the car is high quality ("peach") or low quality ("lemon").' },

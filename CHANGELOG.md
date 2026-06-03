@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.10 — 2026-06-03
+
+### Indirect Taxes Card 4 — black panel titles + ~2pt smaller fonts
+
+Follow-up polish on the incidence chart:
+
+- **Panel titles now black** (`titleColor: '#0F172A'`) instead of red/green,
+  so "Inelastic demand" / "Elastic demand" read as headings rather than as
+  extra curve labels. (The summary and burden labels stay colour-coded.)
+- **Fonts ~2pt smaller.** The engine's typography is global (shared `SIZE`
+  tokens with a 12px floor), so per-chart font sizes aren't possible without
+  affecting every chart, and rescaling the viewBox would have re-tallened the
+  chart. Instead capped the `wide` diagram's rendered width at 560px (default
+  640px) — the whole chart renders ~12% smaller, taking the fonts down the
+  requested ~2pt without touching the shared tokens.
+
+Spec + data change (both network-first), no service-worker bump.
+
 ## 0.42.9 — 2026-06-03
 
 ### Indirect Taxes & Subsidies Card 4 — shorter incidence chart, no divider

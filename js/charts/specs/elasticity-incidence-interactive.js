@@ -33,6 +33,7 @@
       chartArea: chartArea,
       title: title,
       titleTone: titleTone,
+      titleColor: '#0F172A',  // black titles (not red/green) so they don't read as curve labels
       axes: { x: { label: 'Q' }, y: { label: 'P' } },
       curves: [
         /* Base S (always visible). labelDx/anchor flipped to 'end' so

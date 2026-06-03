@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.45.1 — 2026-06-03
+
+### EDL — wired into the production shells (no visible change)
+
+- Loaded `js/diagrams/econos-diagrams.js` from `learn-it.html`, `link-it.html`,
+  `land-it.html` (after `ppf.js` so EDL's legacy-delegation path can resolve
+  `window.ECONOS_PPF`). Added to `sw.js` PRECACHE_ASSETS; bumped `CACHE_NAME`
+  to `econos-v332`.
+- Added a minimal opt-in renderer hook in `js/app.js`: a card can now carry
+  `diagram: { ... }` (an EDL semantic spec) alongside the existing `visualKey` /
+  `diagramKey` / `interactiveDiagram` fields, and the engine renders it as a
+  hero block via `window.ECONOS_DIAGRAMS.render()`. No card uses the field
+  today, so every existing card is byte-identical to v0.45.0.
+- Smoke-tested in the production shell: `window.ECONOS_DIAGRAMS` is reachable
+  with `version: '1.0.0'`; the legacy chart engine still works; an
+  `intent: 'market-equilibrium'` render returns a 3.3 kB SVG with zero errors.
+
 ## 0.45.0 — 2026-06-03
 
 ### Econos Diagram Language (EDL) — new first-class diagram layer

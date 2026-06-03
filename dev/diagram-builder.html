@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Econos Diagram Language — Builder</title>
+    <script src="/js/diagrams/econos-diagrams.js"></script>
+    <style>
+      :root {
+        --ink: #0f172a;
+        --muted: #64748b;
+        --line: #e2e8f0;
+        --bg: #f6f8fb;
+        --accent: #2563eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      header {
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+        padding: 12px 20px;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      header h1 {
+        font-size: 15px;
+        margin: 0;
+      }
+      header .v {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      header select,
+      header button {
+        font-size: 13px;
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer;
+      }
+      header button.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .wrap {
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 0;
+        height: calc(100vh - 53px);
+      }
+      .left {
+        border-right: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+      }
+      textarea {
+        flex: 1;
+        border: 0;
+        padding: 14px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 12.5px;
+        line-height: 1.5;
+        resize: none;
+        outline: none;
+      }
+      .left .row {
+        display: flex;
+        gap: 8px;
+        padding: 10px 12px;
+        border-top: 1px solid var(--line);
+        flex-wrap: wrap;
+      }
+      .left .row button {
+        font-size: 12px;
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .right {
+        overflow: auto;
+        padding: 20px;
+      }
+      .preview {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+        max-width: 760px;
+      }
+      .preview svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .panel {
+        margin-top: 16px;
+        max-width: 760px;
+      }
+      .panel h3 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--muted);
+        margin: 0 0 6px;
+      }
+      pre {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 11.5px;
+        overflow: auto;
+        max-height: 260px;
+      }
+      .pill {
+        display: inline-block;
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        margin: 2px 4px 2px 0;
+      }
+      .pill.ok {
+        background: #d1fae5;
+        color: #065f46;
+      }
+      .pill.warn {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      .pill.err {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>EDL Builder</h1>
+      <span class="v" id="version"></span>
+      <label class="v">sample:
+        <select id="samples"></select>
+      </label>
+      <label class="v">mode:
+        <select id="mode">
+          <option>learn</option>
+          <option>exam</option>
+          <option>debug</option>
+        </select>
+      </label>
+      <label class="v">viewport:
+        <select id="viewport">
+          <option>card</option>
+          <option selected>stage</option>
+          <option>article</option>
+          <option>full</option>
+        </select>
+      </label>
+      <button class="primary" id="render">Render ⌘↵</button>
+    </header>
+    <div class="wrap">
+      <div class="left">
+        <textarea id="spec" spellcheck="false"></textarea>
+        <div class="row">
+          <button id="copySvg">Copy SVG</button>
+          <button id="copyNorm">Copy normalised spec</button>
+          <button id="copyPlan">Copy render plan</button>
+        </div>
+      </div>
+      <div class="right">
+        <div class="preview" id="preview"></div>
+        <div id="status" class="panel"></div>
+        <div class="panel">
+          <h3>Derived geometry</h3>
+          <pre id="derived"></pre>
+        </div>
+        <div class="panel">
+          <h3>Render plan (<span id="planCount">0</span> elements)</h3>
+          <pre id="plan"></pre>
+        </div>
+        <div class="panel">
+          <h3>Hidden labels &amp; resolved collisions</h3>
+          <pre id="collisions"></pre>
+        </div>
+        <div class="panel">
+          <h3>Normalised spec</h3>
+          <pre id="norm"></pre>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var D = window.ECONOS_DIAGRAMS;
+      document.getElementById('version').textContent = 'v' + D.version;
+
+      var SAMPLES = {
+        'Market — demand shift right': {
+          version: 1, type: 'market', intent: 'demand-shift-right',
+          teaching: { takeaway: 'Demand rises, raising both equilibrium price and quantity.' },
+          show: ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change', 'takeaway'],
+        },
+        'Tax — incidence (inelastic demand)': {
+          version: 1, type: 'tax', intent: 'tax-incidence',
+          demand: { elasticity: 'inelastic' }, supply: { elasticity: 'normal' },
+          tax: { size: 0.2, imposedOn: 'producers' },
+          show: ['tax-wedge', 'consumer-burden', 'producer-burden', 'deadweight-loss'],
+        },
+        'Subsidy — incidence': {
+          version: 1, type: 'subsidy', intent: 'subsidy-incidence',
+          subsidy: { size: 0.18, paidTo: 'producers' },
+          show: ['subsidy-wedge', 'consumer-benefit', 'producer-benefit', 'government-cost'],
+        },
+        'Price control — maximum price': {
+          version: 1, type: 'price-control', intent: 'maximum-price-shortage',
+        },
+        'Externality — negative production': {
+          version: 1, type: 'externality', intent: 'negative-production-externality',
+          show: ['msc', 'welfare-loss', 'correction-arrow'],
+        },
+        'PPF — outward shift': { version: 1, type: 'ppf', intent: 'ppf-outward-shift' },
+        'AD-AS — AD shift right': { version: 1, type: 'ad-as', intent: 'ad-shift-right' },
+        'Phillips — long run': { version: 1, type: 'phillips', intent: 'long-run-phillips-curve' },
+      };
+
+      var lastOut = null;
+      var lastNorm = null;
+
+      function el(id) {
+        return document.getElementById(id);
+      }
+
+      function parseSpec() {
+        var txt = el('spec').value;
+        // tolerant parse: allow JS object literals (unquoted keys) by
+        // wrapping in parentheses and using Function — DEV TOOL ONLY.
+        try {
+          return JSON.parse(txt);
+        } catch (e) {
+          /* eslint-disable no-new-func */
+          return new Function('return (' + txt + ')')();
+        }
+      }
+
+      function run() {
+        var spec;
+        try {
+          spec = parseSpec();
+        } catch (e) {
+          el('status').innerHTML = '<span class="pill err">parse error: ' + e.message + '</span>';
+          return;
+        }
+        spec.mode = el('mode').value;
+        spec.viewport = el('viewport').value;
+        var dbg = D.debug(spec);
+        var out = D.render(spec);
+        lastOut = out;
+        lastNorm = dbg.normalisedSpec || spec;
+        el('preview').innerHTML = out.svg;
+
+        var status = '';
+        var val = dbg.validation || { valid: true, errors: [], warnings: [] };
+        status += '<span class="pill ' + (val.valid ? 'ok' : 'err') + '">' +
+          (val.valid ? 'valid' : 'invalid') + '</span>';
+        (out.errors || []).forEach(function (x) {
+          status += '<span class="pill err">' + x + '</span>';
+        });
+        (out.warnings || []).forEach(function (x) {
+          status += '<span class="pill warn">' + x + '</span>';
+        });
+        status += '<span class="pill ok">' + out.renderPlan.elements.length + ' elements</span>';
+        el('status').innerHTML = status;
+
+        el('derived').textContent = JSON.stringify(out.derived, null, 2);
+        el('planCount').textContent = out.renderPlan.elements.length;
+        el('plan').textContent = (out.renderPlan.elements || [])
+          .map(function (e) {
+            return String(e.layer).padStart(4) + '  ' + e.kind +
+              (e.label ? ' "' + (e.label.text || '') + '"' : '');
+          })
+          .join('\n');
+        el('collisions').textContent = JSON.stringify(
+          { hidden: out.hidden, collisionsResolved: out.collisionsResolved }, null, 2
+        );
+        el('norm').textContent = JSON.stringify(lastNorm, null, 2);
+      }
+
+      function copy(text) {
+        navigator.clipboard.writeText(text);
+      }
+
+      // populate samples
+      var sel = el('samples');
+      Object.keys(SAMPLES).forEach(function (name) {
+        var o = document.createElement('option');
+        o.textContent = name;
+        sel.appendChild(o);
+      });
+      function loadSample(name) {
+        el('spec').value = JSON.stringify(SAMPLES[name], null, 2);
+        run();
+      }
+      sel.addEventListener('change', function () {
+        loadSample(sel.value);
+      });
+
+      el('render').addEventListener('click', run);
+      el('spec').addEventListener('keydown', function (e) {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+          e.preventDefault();
+          run();
+        }
+      });
+      el('copySvg').addEventListener('click', function () {
+        if (lastOut) copy(lastOut.svg);
+      });
+      el('copyNorm').addEventListener('click', function () {
+        if (lastNorm) copy(JSON.stringify(lastNorm, null, 2));
+      });
+      el('copyPlan').addEventListener('click', function () {
+        if (lastOut) copy(JSON.stringify(lastOut.renderPlan, null, 2));
+      });
+
+      loadSample(Object.keys(SAMPLES)[0]);
+    </script>
+  </body>
+</html>

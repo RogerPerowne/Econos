@@ -30,7 +30,14 @@
   // 'ppf1'/'ppf2' across panels meant the third panel's curves
   // overwrote the first two, and all three arrows resolved against the
   // BIASED PPF₂. The `tone` suffix keeps each panel's lookup distinct.
-  function panel(originX, ppf2D, tone, title) {
+  // arrowT defaults to 0.5 (curve midpoint) — the symmetric outward/
+  // inward panels read well from there. The biased panel uses 0.7 so
+  // the arrow anchors further down-and-right on PPF₁, where the two
+  // curves visibly diverge by ≈0.18 chart-units (vs ~0.11 at t=0.5
+  // where the curves are still close to the top-left corner and the
+  // arrowhead crowds the curve). Numerically verified via
+  // ray-cubic intersection probe before shipping.
+  function panel(originX, ppf2D, tone, title, arrowT) {
     var id1 = 'ppf1-' + tone, id2 = 'ppf2-' + tone;
     return {
       chartArea: { x: originX + 40, y: 44, width: 170, height: 161 },
@@ -53,7 +60,7 @@
         // so the default end-pull would shrink the visible arrow to a
         // tiny tick. With buffer:3 the arrow clearly spans between the
         // two curves and the arrowhead direction is unambiguous.
-        { perpendicular: { from: id1, t: 0.5, to: id2 },
+        { perpendicular: { from: id1, t: (arrowT != null ? arrowT : 0.5), to: id2 },
           tone: tone, strokeWidth: 2.6, lineCap: 'round',
           markerEnd: 'econos-arrow-' + tone, buffer: 3 }
       ]
@@ -67,7 +74,7 @@
     panels: [
       panel(  0, PPF2_OUT,  'green',  'Outward shift'),
       panel(220, PPF2_IN,   'rose',   'Inward shift'),
-      panel(440, PPF2_BIAS, 'purple', 'Biased shift')
+      panel(440, PPF2_BIAS, 'purple', 'Biased shift', 0.7)
     ]
   };
 })();

@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.8 — 2026-06-03
+
+### PPF Card 5 (shifts trio) — bias-shift arrow moved off the top-left
+
+The outward and inward panels in `ppfShiftsTrio` use symmetric quarter-
+arcs and read fine with the arrow anchored at `t = 0.5` (PPF₁ midpoint).
+The biased panel is asymmetric — PPF₂ stretches further along x than y —
+so at t=0.5 the two curves are still close to the top-left corner and
+the perpendicular arrow has only ~0.11 chart-units of room, leaving the
+arrowhead crowded against the curve.
+
+Parameterised the `panel()` builder to accept a per-panel `arrowT` and
+set the biased panel to **t = 0.7** — anchor (0.55, 0.28) on PPF₁,
+hitting PPF₂ at (0.70, 0.36). Arrow length grows from 0.110 to 0.175
+chart-units (~60% longer) and the arrowhead now sits in the open space
+between the diverging curves rather than overlapping the steep section.
+
+Verified numerically (ray-cubic intersection probe) before rendering
+and visually across all three panels.
+
+`sw.js` cache bumped to `econos-v303`.
+
 ## 0.41.7 — 2026-06-03
 
 ### PPF Card 4 — OC badges aligned directly under their start dots

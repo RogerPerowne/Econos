@@ -2163,6 +2163,7 @@ window.ECONOS_ICONS = {
   `,
 
   negExternalityInteractive: window.ECONOS_PPF.render(window.ECONOS_NEG_EXTERNALITY_SPEC),
+  welfareGovtFailureInteractive: window.ECONOS_PPF.render(window.ECONOS_WELFARE_GOVT_FAILURE_SPEC),
 
   priceControlsInteractive: `
     <svg class="pc-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

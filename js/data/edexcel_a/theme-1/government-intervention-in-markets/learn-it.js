@@ -509,10 +509,45 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_10',
-      template: 'welfare-gf-explorer',
       stepLabel: 'Learn: Step 11 of 11',
       title: 'Choosing the right tool + evaluation',
       tip: { icon: '🎯', tone: 'amber', text: '<strong>Match the tool to the failure.</strong> Externalities → price-based tools or permits. Public goods → state provision. Information gaps → labels and rules. Market power → regulation or price caps. Every tool risks government failure – the question is whether the gain outweighs the new distortion.' },
+      interactiveDiagram: {
+        svgKey: 'welfareGovtFailureInteractive',
+        label: 'Pigouvian tax – the cure that can over-shoot',
+        emoji: '⚖️',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Free market',
+            tone: 'slate',
+            head: 'The free-market equilibrium',
+            body: 'MPC (supply) meets MSB (demand) at <strong>E₁</strong> – output Q<sub>m</sub>, price P<sub>m</sub>. Producers ignore the marginal external cost (MEC) their output imposes on third parties.',
+            analysis: 'The full social cost is higher than the private cost, so the market over-produces. This is the benchmark every intervention is judged against.'
+          },
+          {
+            label: 'Market failure',
+            tone: 'rose',
+            head: 'The social optimum – and the DWL',
+            body: 'Add the MEC and you get the full social cost: <strong>MSC = MPC + MEC</strong>. The socially optimal output is <strong>Q*</strong> at <strong>E*</strong> – a lower quantity and higher price than the market. The rose triangle is the deadweight loss <strong>DWL₁</strong> from over-producing between Q* and Q<sub>m</sub>.',
+            analysis: 'Every unit between Q* and Q<sub>m</sub> costs society more (on MSC) than it\'s worth (on MSB). The government\'s goal is to cut output from Q<sub>m</sub> to Q* without creating a new distortion.'
+          },
+          {
+            label: 'Policy attempt',
+            tone: 'green',
+            head: 'The Pigouvian tax – in theory',
+            body: 'A correctly-calibrated Pigouvian tax equals the <strong>MEC measured at Q*</strong> (the purple bar). It lifts the firm\'s effective supply from MPC up to MSC, so each unit faces its full social cost. Output falls to Q* and DWL₁ disappears.',
+            analysis: 'In theory the cure is exact. In practice the regulator must estimate MEC – pollution, harm, lost amenity – accurately, which is the central information problem of corrective taxation.'
+          },
+          {
+            label: 'Govt failure',
+            tone: 'purple',
+            head: 'Government failure – the overestimate',
+            body: 'If the government overestimates MEC, the tax is set too high. The effective supply rises above MSC to <strong>S + tax</strong>; output falls to <strong>Q\'\'</strong> at <strong>E\'\'</strong>, below the social optimum. A new deadweight loss, the purple triangle <strong>DWL₂</strong>, appears.',
+            analysis: 'The corrective tool has itself become a source of welfare loss: government failure. Evaluation must weigh the original market failure against the overcorrection risk – the answer is rarely "tax = 0" and rarely "tax = best guess".'
+          }
+        ]
+      },
       colA: 'Best-fit tool(s)',
       colB: 'Why it fits',
       rows: [

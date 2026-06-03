@@ -219,7 +219,11 @@
     var size = SIZE.curveLabel;
     var endpoint = samples[samples.length - 1];
     var ex = endpoint[0], ey = endpoint[1];
-    var baseOffset = curve.labelOffset != null ? curve.labelOffset : 10;
+    // baseOffset bumped 10 → 14 so labels float a couple of label-widths
+    // off the line by default — "humans need as much distinction as
+    // possible" per user feedback. Slope-aware adjustment below raises
+    // it further for sloped lines.
+    var baseOffset = curve.labelOffset != null ? curve.labelOffset : 14;
     var halfH = 1.15 * size / 2;
     var halfW = 0.58 * size * text.length / 2;
 
@@ -304,11 +308,9 @@
         }
       }
       // Interior-direction bias: for an endpoint in the upper half of
-      // the chart, BELOW pushes the label into the open chart body
-      // (where supply/demand labels naturally read); ABOVE pushes it
-      // into the cramped top margin. Symmetric for the lower half.
-      // The bias is small (60 — comparable to one curve-sample overlap)
-      // so it tie-breaks but doesn't override an otherwise-bad slot.
+      // the chart, BELOW pushes the label into the open chart body.
+      // The bias is small (60) so it tie-breaks but doesn't override
+      // an otherwise-bad slot.
       var epEndpointRelY = (samples[samples.length - 1][1] - area.y) / area.height;
       if (c.name === 'below' && epEndpointRelY < 0.5) cost -= 60;
       if (c.name === 'above' && epEndpointRelY > 0.5) cost -= 60;
@@ -316,7 +318,31 @@
       var epEndpointRelX = (samples[samples.length - 1][0] - area.x) / area.width;
       if (c.name === 'left'  && epEndpointRelX > 0.5) cost -= 30;
       if (c.name === 'right' && epEndpointRelX < 0.5) cost -= 30;
-      if (cost < bestCost) { bestCost = cost; best = { lx: c.x, ly: c.y, anchor: c.anchor, box: box, name: c.name }; }
+      // Opposite-side rule for PARALLEL curves. Textbook convention:
+      // parallel pairs like MPC/MSC and MPB/MSB get labels on OPPOSITE
+      // sides for maximum distinction (user: "humans need as much
+      // distinction as possible"). If another labelled curve's
+      // endpoint sits within 80px AND its label was placed ABOVE,
+      // penalise ABOVE for this curve AND grant a bonus to BELOW
+      // (and vice versa). Without the bonus, the penalised candidate
+      // would just lose to LEFT or RIGHT rather than driving the
+      // engine toward the opposite vertical slot.
+      if (placedBoxes && (c.name === 'above' || c.name === 'below')) {
+        for (var pk = 0; pk < placedBoxes.length; pk++) {
+          var pb = placedBoxes[pk];
+          if (!pb.curveEndpoint || !pb.curveSide) continue;
+          if (curve.layer && pb.layer && curve.layer !== pb.layer) continue;
+          var epDist = Math.hypot(pb.curveEndpoint[0] - ex, pb.curveEndpoint[1] - ey);
+          if (epDist > 80) continue;
+          if (pb.curveSide === c.name) cost += 350;
+          if (pb.curveSide === 'above' && c.name === 'below') cost -= 300;
+          if (pb.curveSide === 'below' && c.name === 'above') cost -= 300;
+        }
+      }
+      if (cost < bestCost) {
+        bestCost = cost;
+        best = { lx: c.x, ly: c.y, anchor: c.anchor, box: box, name: c.name, endpoint: [ex, ey] };
+      }
     }
     return best;
   }
@@ -340,10 +366,11 @@
       // "endpoint + (6, -6)" placement when ctx/area aren't available
       // (e.g. tests that render outside the engine harness).
       var autoPlace = (curve.labelDx == null && curve.labelDy == null) && ctx && area && last;
+      var autoChoice = null;
       if (autoPlace) {
         var samples = samplePathPixels(curve.d, scale);
-        var choice = chooseCurveLabelPosition(curve, samples, area, ctx.placedBoxes || []);
-        lx = choice.lx; ly = choice.ly; labelAnchor = choice.anchor;
+        autoChoice = chooseCurveLabelPosition(curve, samples, area, ctx.placedBoxes || []);
+        lx = autoChoice.lx; ly = autoChoice.ly; labelAnchor = autoChoice.anchor;
       } else if (last) {
         lx = scale.sx(parseFloat(last[1])) + (curve.labelDx != null ? curve.labelDx : 6);
         ly = scale.sy(parseFloat(last[2])) + (curve.labelDy != null ? curve.labelDy : -6);
@@ -376,6 +403,13 @@
         // even though the two never appear together at runtime.
         if (curve.layer) cbox.layer = curve.layer;
         if (curve.perspective) cbox.perspective = curve.perspective;
+        // Stash the curve's endpoint and the chosen side so the next
+        // curve's auto-placer can apply the opposite-side-for-parallel
+        // rule against this bbox.
+        if (autoChoice) {
+          cbox.curveEndpoint = autoChoice.endpoint;
+          cbox.curveSide = autoChoice.name;
+        }
         ctx.placedBoxes.push(cbox);
       }
     }

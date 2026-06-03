@@ -98,11 +98,13 @@
             tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4' }
         ],
         points: [
-          /* Market eq at MPB ∩ MPC */
+          /* Market eq at MPB ∩ MPC. E_m label to the right (matches
+           * the left panel's convention so both market-equilibrium
+           * dots read with the label on the same side). */
           { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
             tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
-            label: 'E_m', labelDx: -10, labelDy: -4, anchor: 'end' },
+            label: 'E_m', labelDx: 10, labelDy: -4, anchor: 'start' },
           /* Social optimum at MPC ∩ MSB — right of Q_m */
           { x: ES_POS.x, y: ES_POS.y, intersection: { curves: ['MPC', 'MSB'] },
             tone: 'green', radius: 6, hollow: true,

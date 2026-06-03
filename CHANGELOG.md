@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.5 — 2026-06-03
+
+### Government Intervention — worked MUP case study (Theme 1 polish #7)
+
+Minimum unit pricing was the canonical UK minimum-price case the spec
+asks about, but it sat as one clause in the price-floor card's examEdge.
+Added a worked `illustratedGrid` case-study block to the minimum-prices
+card (matching the subsidy card's style), drawing out what makes MUP
+distinct from a generic floor:
+
+- **How it works** — a floor per *unit of alcohol* (Scotland 50p, 2018;
+  Wales 2020), biting hardest on the cheapest high-strength drinks the
+  heaviest price-sensitive drinkers buy, so it targets harmful
+  consumption rather than the whole market.
+- **The evidence** — Public Health Scotland (2023): deaths wholly
+  attributable to alcohol down ~13%, off-trade sales ~3%, concentrated
+  in the heaviest-purchasing households; cross-border/illicit effects small.
+- **The catch** — the key exam discriminator: unlike a *tax*, the higher
+  price is a **windfall to retailers, not the Treasury** (a tax would also
+  fund treatment). Mildly regressive, but the burden falls on harmful
+  consumption.
+
+Added an MUP key term too. No new card or chart (the generic floor diagram
+already fits). Data-only (network-first), no SW bump.
+
 ## 0.42.4 — 2026-06-03
 
 ### Government Intervention — split the overloaded tax Card 2 into two

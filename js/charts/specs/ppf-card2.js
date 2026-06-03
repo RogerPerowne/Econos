@@ -68,7 +68,7 @@
         contentLayer: 'idl-1',
         ocTriangles: [
           { curve: 'ppf', fromT: 0.1240, deltaX: DELTA_X, label: 'OC ≈ 1/3', tone: 'green',
-            labelDx: 0.10, labelDy: -0.20 }
+            labelDx: 0.00, labelDy: -0.10 }
         ],
         texts: [
           xTick(0.2, '2'),
@@ -82,7 +82,7 @@
         contentLayer: 'idl-2',
         ocTriangles: [
           { curve: 'ppf', fromT: 0.4076, deltaX: DELTA_X, label: 'OC = 1', tone: 'blue',
-            labelDx: -0.10, labelDy: -0.25 }
+            labelDx: 0.00, labelDy: -0.15 }
         ],
         texts: [
           xTick(0.6, '6'),
@@ -99,7 +99,7 @@
         contentLayer: 'idl-3',
         ocTriangles: [
           { curve: 'ppf', fromT: 0.5923, deltaX: 0.199, label: 'OC ≈ 3', tone: 'rose',
-            labelDx: -0.20, labelDy: -0.25 }
+            labelDx: 0.00, labelDy: -0.25 }
         ],
         texts: []
       }

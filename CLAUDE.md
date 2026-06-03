@@ -203,6 +203,57 @@ geometry is *guaranteed*, not eyeballed.
    the file to `sw.js` PRECACHE_ASSETS. `lint:cards`/`check_spec_scripts_loaded`
    enforce the script-tag rule.
 
+4. **Canonical shapes.** Don't invent Bezier control points by eye. A
+   bowed-out PPF is a quarter-arc of a circle: use
+   `M 0,1 C 0.5523,1 1,0.5523 1,0` (the magic constant 4(√2−1)/3 is the
+   standard quarter-arc Bezier approximation in every vector library;
+   in 0..10 chart units it satisfies x² + y² ≈ 100 to four decimals).
+   Hand-tuned cubics like `M 0,1 C 0.55,1 1.0,0.05 1.0,0` produce
+   flat-then-cliff shapes that make early features invisible — chart
+   shape is part of the lesson, not decoration.
+
+5. **`findTAtX` rejects exact endpoint x.** The engine's bounds check
+   `targetX > Math.max(x0, x3)` plus binary-search precision means
+   `start[0]` for a fromT near 1 computes to 1.000001..., so
+   `start[0] + Δx` overshoots and the engine silently omits the
+   triangle (`<!-- ocTriangle: Δx too large for curve -->`). For trades
+   ending at the curve's right edge, back Δx off by 0.001 (e.g. 0.199
+   instead of 0.200). Same applies to `point.on` near a curve
+   endpoint.
+
+6. **Label positions are a design decision, not a default.** The
+   `ocTriangle` helper's auto-placed badge sits above-left of the
+   start dot — fine for a flat-then-steep curve but it drags through
+   a quarter-arc or off the chart top. Set `labelDx` / `labelDy`
+   (CHART units, relative to start) explicitly for each trade and
+   numerically pre-check before rendering:
+   - **Inside the chart**: `0 ≤ box ≤ 1` in both axes.
+   - **Curve clearance**: sample the PPF at ≥20 points across the
+     badge's x-range; for an "above-curve" placement require
+     `curve.y > box.top` (with margin ≥ 0.02 chart-units) at every
+     sample; for a "below-curve" placement require `curve.y < box.bottom`.
+   - **Cross-overlap**: with cumulative reveal, the final view shows
+     every layer's labels at once. Check pairwise box-intersection of
+     all labels and refuse to ship if any overlap.
+
+   A 10-line node script that does the above three checks is faster
+   than another round of screenshot iteration. Use it; ship only
+   labels that pass.
+
+7. **Screenshot EVERY view, then critique.** Taking a screenshot is not
+   the same as verifying the chart. After rendering, open each view's
+   image and ask:
+   - Is every label clearly associated with its referent (close enough
+     that a stranger would link them without thinking)?
+   - Is any element obscured (curve cutting through a label, label
+     spilling outside chart, two labels merging visually)?
+   - On the final view (all reveal layers visible), does the whole
+     story read at a glance?
+
+   If any answer is "no", DO NOT SHIP. Mention the issue in chat
+   instead of hoping the user doesn't notice — they will, and the
+   iteration cost is much higher when it comes back as "still wrong".
+
 ## Description length — keep staging stable
 
 Long copy stretches the card / interactive-diagram staging and makes stage

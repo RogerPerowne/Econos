@@ -307,9 +307,9 @@ window.ECONOS_TOPIC = {
       causesLabel: 'What makes YED large or small',
       causesEmoji: '💰',
       causes: [
-        { tone: 'blue', head: 'Necessity vs luxury', body: 'Luxuries are highly income-sensitive (YED > 1); necessities barely move (0 < YED < 1); inferior goods fall as income rises (YED < 0). <em>UK: restaurant/hotel spending grew ~22% in real terms 2010–19 then fell ~50% in the 2020 lockdown — a textbook high-YED luxury. Bread and milk crept up ~1–2% over the same decade (necessity). Aldi and Lidl combined share rose from 5% to 16% over 2010–24 as incomes squeezed (value own-label = inferior).</em>' },
-        { tone: 'amber', head: 'Income level &amp; stage of development', body: 'The <em>same</em> good can be a luxury at low income and a necessity — or even inferior — at high income. <em>UK: car ownership was a luxury in the 1950s and a near-necessity today; in lower-income economies a fridge or smartphone is still income-elastic.</em>' },
-        { tone: 'purple', head: 'Time horizon', body: 'Spending habits re-base slowly, so YED is often larger in the long run as households adjust their whole lifestyle to a new income level rather than tweaking one purchase.' }
+        { tone: 'blue', head: 'Necessity vs luxury', body: 'Luxuries are highly income-sensitive (YED > 1); necessities barely move (0 < YED < 1); inferior goods fall as income rises (YED < 0). <em>UK: restaurant meals swing with the cycle (luxury); bread and milk barely budge (necessity); value own-label rises when budgets are squeezed (inferior).</em>' },
+        { tone: 'amber', head: 'Income level &amp; stage of development', body: 'The <em>same</em> good can be a luxury at low income and a necessity at high income. <em>UK: a car was a luxury in the 1950s and a near-necessity today.</em>' },
+        { tone: 'purple', head: 'Time horizon', body: 'Habits re-base slowly, so YED is often larger in the long run — households adjust their whole lifestyle to a new income level, not just one purchase.' }
       ],
       causes2Label: 'What makes XED large or small',
       causes2Emoji: '🔀',

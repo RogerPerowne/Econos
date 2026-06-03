@@ -93,12 +93,6 @@ window.ECONOS_TOPIC = {
         { icon: '💰', tone: 'blue',  head: 'US finance – SEC and the 2008 crisis', body: 'The SEC and Federal Reserve adopted a "light-touch" approach to financial regulation in the 2000s, influenced by the finance industry\'s lobbying and the revolving door between Wall Street and Washington. Result: excessive leverage, mortgage mis-selling, and the 2008 financial crash. Taxpayer cost: $700bn TARP bailout.' },
         { icon: '💊', tone: 'purple', head: 'Pharmaceuticals – FDA and opioids', body: 'The US Food and Drug Administration approved OxyContin based on manufacturer-supplied evidence of low addiction risk. The drug was aggressively marketed. Result: the opioid crisis – 500,000+ US deaths from opioid overdose (1999–2019). The regulator failed to independently verify manufacturer claims.' }
       ],
-      causes2Label: 'The two mechanisms',
-      causes2Emoji: '⚙️',
-      causes2: [
-        { icon: '🚪', tone: 'rose',  head: 'Revolving door', body: 'Regulators are recruited from industry (bringing industry\'s perspective) and return to industry after their regulatory stint (creating incentive to be industry-friendly while in post). This is a structural conflict of interest built into regulatory design.' },
-        { icon: '📊', tone: 'amber', head: 'Information asymmetry', body: 'Industry has far better information about its own costs, technology, and practices than the regulator. It can manipulate the data it provides, making independent oversight very difficult. The regulator becomes dependent on industry for information – and the information is strategically supplied.' }
-      ],
       examEdge: 'The principal-agent problem in government: the public (principal) delegates power to the government (agent) which delegates power to the regulator (second agent). Each delegation creates agency slack – the agent may pursue their own interests rather than the principal\'s. Regulatory capture is the most extreme form of agency slack: the regulator has been captured by a third party. Pre-2008: the UK FSA was the principal (government) → regulator (agent) → banks (captured agent). Use the principal-agent framework to give structure to any regulatory capture argument.'
     },
 

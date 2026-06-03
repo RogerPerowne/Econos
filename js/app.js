@@ -6052,7 +6052,6 @@
 
         <!-- Stage 1: Design intent -->
         <g class="rc-stage rc-stage-1">
-          <text x="320" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">Intended principal–agent chain</text>
           <rect x="10" y="80" width="120" height="58" rx="10" fill="#D1FAE5" stroke="#10b981" stroke-width="2"/>
           <text x="70" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">PUBLIC</text>
           <text x="70" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#047857">Citizens / voters</text>
@@ -6074,7 +6073,6 @@
 
         <!-- Stage 2: Information asymmetry -->
         <g class="rc-stage rc-stage-2">
-          <text x="320" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">Industry gains control of information flow</text>
           <rect x="10" y="80" width="120" height="58" rx="10" fill="#D1FAE5" stroke="#10b981" stroke-width="1.5"/>
           <text x="70" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">PUBLIC</text>
           <text x="70" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#047857">Citizens / voters</text>
@@ -6093,7 +6091,6 @@
 
         <!-- Stage 3: Revolving door -->
         <g class="rc-stage rc-stage-3">
-          <text x="320" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">Staff cycle between regulator and industry</text>
           <rect x="10" y="80" width="120" height="58" rx="10" fill="#D1FAE5" stroke="#10b981" stroke-width="1.5"/>
           <text x="70" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">PUBLIC</text>
           <text x="70" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#047857">Citizens / voters</text>
@@ -6114,10 +6111,8 @@
 
         <!-- Stage 4: Regulatory capture -->
         <g class="rc-stage rc-stage-4">
-          <text x="320" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#7f1d1d">Non-ideal outcome: regulator serves industry, not the public</text>
-          <path d="M 566,80 Q 444,28 324,80" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="7,3" marker-end="url(#rc-ar)"/>
-          <text x="444" y="42" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#dc2626">🎯 REGULATORY CAPTURE</text>
-          <text x="444" y="58" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#ef4444">Industry controls the regulator</text>
+          <text x="444" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#dc2626">🎯 Industry now controls the regulator</text>
+          <path d="M 566,80 Q 444,46 324,80" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="7,3" marker-end="url(#rc-ar)"/>
           <rect x="10" y="80" width="120" height="58" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,3"/>
           <text x="70" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#94a3b8">PUBLIC</text>
           <text x="70" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">unprotected</text>
@@ -6149,11 +6144,26 @@
       ? '<div style="display:flex;align-items:center;gap:14px;background:' + t.bg + ';border:1px solid ' + t.border + ';border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:' + t.accent + ';color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">' + (c.tip.icon || '💡') + '</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">' + c.tip.text + '</div></div>'
       : '';
 
+    // Per-stage diagram headings rendered as standard section labels
+    // (genSecLabel style) and toggled with the SVG stage via the
+    // .rc-explorer.show-stageN CSS. Replaces the old centred in-SVG
+    // titles, which were non-standard and crowded the stage-4 arc.
+    const rcHeadings = [
+      { emoji: '🏛️', text: 'Intended principal–agent chain' },
+      { emoji: '📊', text: 'Industry captures the information flow' },
+      { emoji: '🚪', text: 'Staff revolve between regulator and industry' },
+      { emoji: '🎯', text: 'Captured: the regulator now serves industry' }
+    ];
+    const headHtml = steps.map(function (s, i) {
+      return '<div class="rc-head rc-head-' + (i + 1) + '">' + rcHeadings[i].emoji +
+        ' <span>' + rcHeadings[i].text + '</span><div class="rc-head__rule"></div></div>';
+    }).join('');
+
     let out = '<div class="card__step-label">' + c.stepLabel + '</div>';
     out += '<h1 class="card__title">' + c.title + '</h1>';
     if (c.lede) out += '<p class="card__lede">' + c.lede + '</p>';
     out += tipHtml;
-    out += '<div class="ad-interactive"><div class="ad-interactive__diagram rc-explorer show-stage1" data-ad-state="stage1">' + svgDiagram + '</div>';
+    out += '<div class="ad-interactive"><div class="ad-interactive__diagram rc-explorer show-stage1" data-ad-state="stage1">' + headHtml + svgDiagram + '</div>';
     out += '<div class="ad-interactive__tabs" style="grid-template-columns:repeat(4,1fr);">' + tabs + '</div>';
     out += '<div class="ad-interactive__panels">' + panels + '</div></div>';
 

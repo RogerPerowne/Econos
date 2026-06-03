@@ -5033,6 +5033,31 @@ img, svg { display: block; max-width: 100%; }
 .rc-explorer.show-stage3 .rc-stage-3,
 .rc-explorer.show-stage4 .rc-stage-4 { display: block; }
 
+/* Per-stage diagram heading — standard section-label style (mirrors
+   genSecLabel). Only the heading for the active stage is shown, in
+   lockstep with the SVG stage via .show-stageN on the wrapper. */
+.rc-explorer .rc-head {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #0B1426;
+  margin: 2px 2px 16px;
+}
+.rc-explorer .rc-head__rule {
+  flex: 1;
+  height: 1px;
+  background: #E7E7EA;
+  margin-left: 6px;
+}
+.rc-explorer.show-stage1 .rc-head-1,
+.rc-explorer.show-stage2 .rc-head-2,
+.rc-explorer.show-stage3 .rc-head-3,
+.rc-explorer.show-stage4 .rc-head-4 { display: flex; }
+
 
 /* ============================================================
    ============================================================

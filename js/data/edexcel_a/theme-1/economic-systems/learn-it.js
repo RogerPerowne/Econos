@@ -72,6 +72,9 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 3 of 8',
       title: 'How a free market works',
       tip: { icon: '💡', tone: 'green', text: 'In a free market no one is in charge. The price mechanism coordinates millions of independent decisions – signalling, incentivising and rationing all at once.' },
+      diagramKey: 'priceMechanismFlow',
+      diagramLabel: 'What prices do – the coordinating mechanism',
+      diagramEmoji: '🎯',
       flow: [
         { tone: 'blue',   icon: '🛒', title: 'Consumers want more', sub: 'Demand for a good rises.' },
         { tone: 'blue',   icon: '🏷️', title: 'Price rises',         sub: 'With demand above supply, the price goes up.' },

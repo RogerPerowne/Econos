@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.14 — 2026-06-03
+
+### Market Failure Card 1 — chart to a side panel with a recap
+
+Converted the `marketFailureOverview` chart from a full-width hero to a
+`diagramPanel` with `layout: 'side'` (chart left, explanation right) — part
+of the move away from wide charts. Added a brief four-bullet recap of what
+the diagram shows, colour-matched to the curves:
+
+- E<sub>m</sub> = MPC(S) ∩ MPB(D) — the market equilibrium
+- MSC sits above MPC — the externality the market ignores
+- E* (MSB = MSC) at a lower Q*
+- the red DWL triangle = welfare lost over-producing Q*→Q<sub>m</sub>
+
+A recap is worth it even though externalities come later, so the diagram
+reads on its own. The side layout also shortens the card vs the old
+full-width hero (panel ~280px vs ~360px); the chart is the shorter element
+in the panel, so no chart-size change was needed. Data-only, no SW bump.
+
 ## 0.42.13 — 2026-06-03
 
 ### Behavioural Economics — clean up the planner/doer "vs" divider

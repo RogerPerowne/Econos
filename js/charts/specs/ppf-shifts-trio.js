@@ -50,9 +50,13 @@
         // PPF₂'s end label (the two curves' right-end x-positions are too
         // close together for the small 170px panels).
         { id: id1, d: PPF1,  tone: tone, strokeWidth: 2.4, dashed: '6 4', label: 'PPF₁', labelTone: tone, labelDx: 4, labelDy: -32 },
-        // PPF₂ label nudged slightly up + left so it doesn't clip the
-        // right edge of the small panel when PPF₂ extends close to x=1.
-        { id: id2, d: ppf2D, tone: tone, strokeWidth: 2.8,                label: 'PPF₂', labelTone: tone, labelDx: -4, labelDy: -10 }
+        // PPF₂ label pulled WELL left of the curve endpoint (labelDx: -34)
+        // so it fits inside the panel even when PPF₂ ends near x=1. The
+        // old offset (-4) overflowed the panel's right edge by ~17px in
+        // the outward panel and ~12px in the biased panel — caught by
+        // the engine's new per-panel off-stage check once curve labels
+        // started being tracked in placedBoxes (v0.41.11).
+        { id: id2, d: ppf2D, tone: tone, strokeWidth: 2.8,                label: 'PPF₂', labelTone: tone, labelDx: -34, labelDy: -10 }
       ],
       arrows: [
         // buffer:3 (not the default 14) — the perpendicular gap between

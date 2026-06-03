@@ -170,7 +170,7 @@
     ].join('');
   }
 
-  function renderCurve(curve, scale) {
+  function renderCurve(curve, scale, ctx, area) {
     var t = tone(curve.tone);
     var dAbs = scalePath(curve.d, scale);
     var sw = curve.strokeWidth || 3;
@@ -190,8 +190,26 @@
       } else {
         lx = scale.sx(0.7); ly = scale.sy(0.05);
       }
+      var labelAnchor = curve.anchor || 'start';
       var labelAnchorAttr = curve.anchor ? ' text-anchor="' + curve.anchor + '"' : '';
       labelHtml = '<text x="' + lx + '" y="' + ly + '"' + labelAnchorAttr + ' font-size="' + SIZE.curveLabel + '" font-weight="700" fill="' + t.label + '">' + curve.label + '</text>';
+      // Track curve label in placedBoxes so dev-mode off-stage and
+      // clash checks see it. Without this, a curve label that
+      // overflows its panel's chartArea (or collides with another
+      // label) is silently shipped. `panelArea` is set so the
+      // off-stage check can use per-panel bounds for multi-panel
+      // charts instead of just the SVG viewBox.
+      if (ctx && ctx.placedBoxes) {
+        var cbox = estimateTextBox(curve.label, SIZE.curveLabel, lx, ly, labelAnchor);
+        // Only enforce per-panel bounds for MULTI-panel charts (where
+        // overflow spills into the adjacent panel). In single-panel
+        // charts, curve labels at the right edge of the chartArea are
+        // intentional — they live in the right margin alongside the
+        // axis-end label.
+        if (area && ctx.currentPanelIdx != null) cbox.panelArea = area;
+        if (ctx.currentPanelIdx != null) cbox.panelIdx = ctx.currentPanelIdx;
+        ctx.placedBoxes.push(cbox);
+      }
     }
     return '<path d="' + dAbs + '" fill="none" stroke="' + t.stroke + '" stroke-width="' + sw + '"' + dashAttr + opacityAttr + clipAttr + '/>' + labelHtml;
   }
@@ -1464,7 +1482,7 @@
       parts.push(rendered.bg);
       if (rendered.fg) boxedFgs.push(rendered.fg);
     });
-    (view.curves || []).forEach(function (c) { parts.push(renderCurve(c, scale)); });
+    (view.curves || []).forEach(function (c) { parts.push(renderCurve(c, scale, ctx, area)); });
     (view.arrows || []).forEach(function (a) { parts.push(renderArrow(a, scale, ctx.curveRegistry, ctx)); });
     (view.ocTriangles || []).forEach(function (tri) { parts.push(renderOcTriangle(tri, scale, ctx.curveRegistry)); });
     (view.points || []).forEach(function (p) {
@@ -1547,7 +1565,7 @@
       if (rendered.fg) panelBoxedFgs.push(maybeWrap(b, rendered.fg));
     });
     (panel.curves || []).forEach(function (c) {
-      parts.push(maybeWrap(c, renderCurve(c, scale)));
+      parts.push(maybeWrap(c, renderCurve(c, scale, ctx, area)));
     });
     (panel.zones || []).forEach(function (z) { parts.push(maybeWrap(z, renderZone(z, scale))); });
     (panel.arrows || []).forEach(function (a) { parts.push(maybeWrap(a, renderArrow(a, scale, ctx.curveRegistry, ctx))); });
@@ -2278,16 +2296,28 @@
     // area is x ∈ [0, W] and y ∈ [-16, H]. A label bbox extending past
     // those bounds will clip in the browser. Tolerance of 2px to
     // ignore sub-pixel rounding noise.
+    //
+    // For labels with `panelArea` set (currently curve labels — see
+    // renderCurve), enforce the PANEL'S chartArea bounds as the right
+    // edge rather than the SVG viewBox: a label that spills out of its
+    // panel into the next panel's territory technically stays inside
+    // the SVG but visually overflows. This catches the v0.41.10 bug
+    // where a triptych panel's "PPF₂" text started a few pixels left
+    // of the curve endpoint, extended right, and ran past the chart
+    // area into the divider region of the next panel.
     if (devOn) {
       var TOL = 2;
       ctx.placedBoxes.forEach(function (bx) {
         var off = [];
-        if (bx.x < -TOL)                off.push('left');
-        if (bx.x + bx.w > width + TOL)  off.push('right');
-        if (bx.y < -16 - TOL)           off.push('top');
-        if (bx.y + bx.h > height + TOL) off.push('bottom');
+        var rightBound = bx.panelArea ? (bx.panelArea.x + bx.panelArea.width) : width;
+        var leftBound  = bx.panelArea ? bx.panelArea.x : 0;
+        if (bx.x < leftBound - TOL)        off.push('left');
+        if (bx.x + bx.w > rightBound + TOL) off.push('right');
+        if (bx.y < -16 - TOL)               off.push('top');
+        if (bx.y + bx.h > height + TOL)     off.push('bottom');
         if (off.length) {
-          var omsg = '[ECONOS_PPF] label off-stage (' + off.join('+') + '): "' + bx.text + '" at (' + bx.x.toFixed(1) + ',' + bx.y.toFixed(1) + ') size ' + bx.w.toFixed(0) + 'x' + bx.h.toFixed(0);
+          var scopeLabel = bx.panelArea ? 'panel' : 'svg';
+          var omsg = '[ECONOS_PPF] label off-stage (' + scopeLabel + ', ' + off.join('+') + '): "' + bx.text + '" at (' + bx.x.toFixed(1) + ',' + bx.y.toFixed(1) + ') size ' + bx.w.toFixed(0) + 'x' + bx.h.toFixed(0);
           ctx.devWarnings.push(omsg);
           try { console.warn(omsg, bx); } catch (e) {}
         }

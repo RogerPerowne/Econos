@@ -6,6 +6,49 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.11 — 2026-06-03
+
+### PPF Card 5 (shifts trio) — PPF₂ labels pulled inside their panels + engine catches this kind of bug
+
+User flagged the PPF₂ labels in the trio panels clashing/clipping against
+the curves and the panel edges. The default offset (`labelDx: -4`)
+placed the label start ~4 pixels left of the curve endpoint, but the
+text extended right by ~30 pixels and overflowed the 170-pixel panel by
+12–17px in the outward and biased panels (the inward panel's PPF₂
+endpoint sat far enough left that its label fit).
+
+**Spec fix.** Tightened `labelDx: -4` → `labelDx: -34` for PPF₂ in
+`ppf-shifts-trio.js` — text now sits fully inside each panel with
+clear separation from PPF₁.
+
+**Engine fix (why the existing check missed it).** Two structural gaps
+in the dev-mode label checks:
+
+1. **Curve labels weren't tracked in `placedBoxes`.** `renderText`
+   tracked text-element bboxes for the clash and off-stage checks, but
+   `renderCurve` emitted curve labels as a separate `<text>` and never
+   added them to the registry. Any overflow or clash involving a
+   curve label was silent. Fixed by tracking curve-label bboxes too.
+2. **The off-stage check used the SVG viewBox bounds, not the panel's
+   chartArea.** In multi-panel charts, a label spilling out of its
+   panel into the next panel's territory still stays inside the SVG,
+   so the check passed. Fixed by carrying the panel's `chartArea` on
+   each curve-label bbox and using it as the right/left bound when set.
+
+Running lint after these engine changes surfaced **9 pre-existing
+issues** the engine had been missing: PPF₂ overflows in the trio
+(now fixed), AD₂ overflows in three AD-shift charts, SRAS₂ overflow
+in `sras-right-shift-interactive`, S/D overflows in
+`elasticity-incidence-interactive`, and two real label clashes
+(`stagflation-phillips`'s SRPC₂/SRPC₃ and `tax-types-interactive`'s
+specific/ad-valorem labels). The 8 non-trio findings are recorded in
+`scripts/lint-charts.mjs` as a `KNOWN_ISSUES` allowlist so the new
+engine checks stay strict for future regressions while these tracked
+items get worked through one chart at a time. New chart bugs **must
+not** be added to that list without a fix plan.
+
+`sw.js` cache bumped to `econos-v305`.
+
 ## 0.41.10 — 2026-06-03
 
 ### PPF Card 3 — A, B, C labels moved directly below their dots

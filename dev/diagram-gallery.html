@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Econos Diagram Gallery</title>
+  <style>
+    body { margin:0; font-family: Inter, system-ui, sans-serif; background:#f6f8fb; color:#0f172a; }
+    header { padding:28px 32px 14px; }
+    h1 { margin:0; font-size:30px; letter-spacing:-.03em; }
+    p { color:#475569; }
+    main { display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:20px; padding:18px 32px 40px; }
+    .card { background:#fff; border:1px solid #e2e8f0; border-radius:22px; box-shadow:0 18px 45px rgba(15,23,42,.08); padding:18px; }
+    .card h2 { margin:0 0 10px; font-size:16px; }
+    .diagram { border:1px solid #eef2f7; border-radius:18px; overflow:hidden; }
+    pre { white-space:pre-wrap; font-size:11px; background:#f8fafc; border-radius:14px; padding:12px; color:#334155; max-height:150px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Econos Diagram Gallery</h1>
+    <p>EDL workbench for semantic diagrams, layers, arrowheads and collision diagnostics.</p>
+  </header>
+  <main id="gallery"></main>
+  <script src="../js/charts/ppf.js"></script>
+  <script src="../js/diagrams/econos-diagrams.js"></script>
+  <script>
+    var examples = [
+      {
+        title: 'Market equilibrium',
+        spec: { version:1, type:'market', title:'Market equilibrium', curves:{ D:{role:'demand'}, S:{role:'supply'} }, show:['equilibrium-before'], teaching:{takeaway:'Equilibrium occurs where demand equals supply.'} }
+      },
+      {
+        title: 'Demand shift right',
+        spec: { version:1, type:'market', title:'Demand shift right', curves:{ D1:{role:'demand'}, D2:{role:'demand',shiftFrom:'D1',direction:'right'}, S:{role:'supply'} }, show:['equilibrium-before','equilibrium-after','shift-arrow','price-change','quantity-change'], teaching:{takeaway:'Demand rises, increasing both equilibrium price and quantity.'} }
+      },
+      {
+        title: 'Supply shift left',
+        spec: { version:1, type:'market', title:'Supply shift left', curves:{ D:{role:'demand'}, S1:{role:'supply'}, S2:{role:'supply',shiftFrom:'S1',direction:'left'} }, show:['equilibrium-before','equilibrium-after','shift-arrow','price-change','quantity-change'], teaching:{takeaway:'Supply falls, raising price and reducing quantity.'} }
+      },
+      {
+        title: 'Tax incidence',
+        spec: { version:1, type:'market', title:'Tax incidence', curves:{ D:{role:'demand',elasticity:'inelastic'}, S1:{role:'supply'}, S2:{role:'supply',shiftFrom:'S1',direction:'left'} }, intervention:{type:'tax'}, show:['equilibrium-before','equilibrium-after','tax-wedge','consumer-burden','producer-burden','deadweight-loss'], teaching:{takeaway:'Tax burden falls mainly on the less elastic side.'} }
+      },
+      {
+        title: 'Maximum price shortage',
+        spec: { version:1, type:'market', title:'Maximum price', curves:{ D:{role:'demand'}, S:{role:'supply'} }, priceControl:{type:'maximum',price:0.38}, show:['shortage'], teaching:{takeaway:'A binding maximum price creates excess demand.'} }
+      }
+    ];
+    var root = document.getElementById('gallery');
+    examples.forEach(function (ex) {
+      var result = ECONOS_DIAGRAMS.render(ex.spec);
+      var card = document.createElement('section');
+      card.className = 'card';
+      card.innerHTML = '<h2>' + ex.title + '</h2><div class="diagram">' + result.svg + '</div><pre>' + JSON.stringify({warnings:result.warnings, errors:result.errors, derived:result.derived}, null, 2) + '</pre>';
+      root.appendChild(card);
+    });
+  </script>
+</body>
+</html>

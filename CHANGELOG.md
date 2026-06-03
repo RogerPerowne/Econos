@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.2 — 2026-06-03
+
+### PPF Card 3 — move B and C labels off the arrowhead
+
+After fixing the arc geometry in v0.41.1, the arrowheads landed on top of
+the **B** and **C** labels: both labels sat at `labelDx: 10, labelDy: -4`
+(upper-right of dot), but the arrows approach each point from below-right,
+so the marker triangle's body overlapped the label.
+
+Moved B and C labels to the **upper-left** of their dots
+(`labelDx: -10, labelDy: -6, anchor: 'end'`) — opposite side from the
+arrow approach. A's label stays on the right (no arrow approaches A).
+Verified on **both** views.
+
+`sw.js` cache bumped to `econos-v297`.
+
 ## 0.41.1 — 2026-06-03
 
 ### PPF Card 3 — arrows properly bowed outside the curve

@@ -142,7 +142,7 @@ window.ECONOS_TOPIC = {
       id: 'ppf_4',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Why the PPF bows out',
-      lede: 'The bowed shape of the PPF reflects increasing opportunity cost. Resources are not equally good at producing both goods, so each extra unit comes at a bigger sacrifice.',
+      lede: 'The same +1 capital good costs very different amounts of consumer goods depending on where you start. Click through three trades — cheap, even, expensive — to see why the curve bows out.',
       tip: { icon: '✅', tone: 'green', text: 'The curve bows out because resources are specialised.' },
       interactiveDiagram: {
         svgKey: 'ppfBowedOutInteractive',
@@ -150,18 +150,18 @@ window.ECONOS_TOPIC = {
         emoji: '📈',
         layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
-          { label: 'Small cost',      tone: 'green', show: ['idl-1'],
-            head: '+1 capital good early on costs only −1 consumer good.',
-            body: 'Near point A the first resources to move into capital goods are those least suited to consumer-good production. Moving them costs little.',
-            analysis: 'Adaptable resources transfer first. Their opportunity cost is low because they were only marginally productive in their original use.' },
-          { label: 'Larger cost',     tone: 'amber', show: ['idl-1','idl-2'],
-            head: 'Now +1 capital good costs −2 consumer goods.',
-            body: 'Near point B the easy transfers are gone. The resources moving now were genuinely productive in consumer goods, so giving them up hurts more.',
-            analysis: 'The sacrifice has roughly doubled for the same gain. Specialisation starts to bite.' },
-          { label: 'Even larger cost', tone: 'rose', show: ['idl-1','idl-2','idl-3'],
-            head: 'Near C, +1 capital good costs −3 consumer goods.',
-            body: 'The most specialised consumer-good resources are the last to switch. Their opportunity cost is huge — the curve steepens sharply.',
-            analysis: 'Equal increases in capital goods require bigger and bigger decreases in consumer goods. <strong>That is increasing opportunity cost.</strong>' }
+          { label: 'Cheap trade', tone: 'green', show: ['idl-1'],
+            head: 'OC ≈ 0.5 — you gain more than you give up.',
+            body: 'At low capital output (≈ 2), +1 capital good costs only about <strong>half</strong> a consumer good (consumer falls from 9.6 to 9.1). The trade is cheap because you sacrifice <em>less</em> than you gain.',
+            analysis: 'The first resources to switch are workers, land and machinery that weren’t much use in consumer goods anyway. Reallocating them barely dents consumer-goods output — so the sacrifice per extra capital good is small.' },
+          { label: 'Even trade', tone: 'blue', show: ['idl-1','idl-2'],
+            head: 'OC ≈ 1.0 — roughly a 1-for-1 trade.',
+            body: 'At mid-range capital (≈ 5), +1 capital good costs about <strong>one</strong> consumer good (consumer falls from 7.6 to 6.5). The chord is now sloped at roughly 45°: you give up about what you gain.',
+            analysis: 'The easy switches are gone. The resources moving now are about equally productive in both sectors, so the sacrifice matches the gain almost unit-for-unit.' },
+          { label: 'Expensive trade', tone: 'rose', show: ['idl-1','idl-2','idl-3'],
+            head: 'OC ≈ 1.5 — you give up more than you gain.',
+            body: 'At high capital output (≈ 8), +1 capital good costs about <strong>one-and-a-half</strong> consumer goods (consumer falls from 3.8 to 2.2). The same +1 gain now costs three times what it did at the cheap end.',
+            analysis: 'The last consumer-good resources to switch are the most specialised — workers and machines that were brilliant at consumer goods. Reallocating them is painful. <strong>That is increasing opportunity cost.</strong>' }
         ]
       },
       methodGrid: {

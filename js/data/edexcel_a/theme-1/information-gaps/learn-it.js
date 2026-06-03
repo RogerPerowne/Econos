@@ -32,7 +32,7 @@ window.ECONOS_TOPIC = {
       flowTitle: 'The big picture: five key areas',
       flowEmoji: '🗺️',
       flow: [
-        { icon: '⚖️', tone: 'blue',   title: 'Imperfect vs asymmetric information', sub: 'Imperfect information means both sides lack some facts. Asymmetric information means one side knows more than the other.' },
+        { icon: '⚖️', tone: 'blue',   title: 'Symmetric vs asymmetric information', sub: '<strong>Symmetric</strong> information means both sides know the same things — the textbook benchmark of a competitive market. <strong>Asymmetric</strong> information means one side knows more than the other. (A separate idea, <em>imperfect</em> information, is where both sides lack some facts — the asymmetric case is what creates market failure.)' },
         { icon: '🔍', tone: 'amber',  title: 'Adverse selection',                   sub: 'An ex-ante information problem – hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
         { icon: '🛡️', tone: 'rose',   title: 'Moral hazard',                        sub: 'An ex-post information problem – behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
         { icon: '📢', tone: 'green',  title: 'Private market solutions',            sub: 'Firms and individuals use signalling and screening to reveal information or sort good from bad.' },
@@ -53,7 +53,7 @@ window.ECONOS_TOPIC = {
         { icon: '🏆', tone: 'amber', head: 'Good products can be driven out',    body: 'Bad products survive when information is hidden.' },
         { icon: '🏛️', tone: 'blue',  head: 'Government may need to intervene',  body: 'To correct failures and protect consumers.' }
       ],
-      examEdge: 'Information failure is distinct from other market failures: it does not necessarily involve externalities or public goods. The market may be perfectly competitive and yet produce inefficient outcomes because information is unequally distributed. Identifying this as a separate cause of market failure is analytically important.'
+      examEdge: 'Spec language matters here: Edexcel asks for <strong>symmetric vs asymmetric</strong> information specifically. Symmetric is the textbook competitive benchmark; asymmetric is the failure case where one party knows more. Information failure is analytically distinct from externalities and public goods — a market can be perfectly competitive AND produce inefficient outcomes just because information is unequally distributed.'
     },
 
     {

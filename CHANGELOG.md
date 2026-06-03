@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.22 — 2026-06-03
+
+### Information gaps Card 1 — symmetric vs asymmetric spec wording fix
+
+Theme 1 audit (gap #2) called this out: the spec for 1.3.4(a) asks
+for **symmetric vs asymmetric** information, but Card 1's flow lead
+tile contrasted *imperfect vs asymmetric* — right economics, wrong
+spec language. The word *symmetric* didn't appear anywhere in the
+topic.
+
+Two targeted edits to `info_gaps_1`:
+
+- Flow tile retitled "Symmetric vs asymmetric information". New
+  sub-text: symmetric = textbook competitive benchmark; asymmetric =
+  failure case where one party knows more. Keeps *imperfect* as a
+  parenthetical aside ("a separate idea") so the v0.7 content isn't
+  lost, but the spec frame is now front and centre.
+- examEdge now explicitly tells students "Edexcel asks for symmetric
+  vs asymmetric specifically" — closes the marks-on-exact-wording
+  hole the audit identified.
+
 ## 0.41.21 — 2026-06-03
 
 ### Information gaps — Akerlof lemons card promoted to full case study

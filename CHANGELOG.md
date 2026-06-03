@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.17 — 2026-06-03
+
+### Market Failure — reorder cards 2 ↔ 3 for a cleaner pedagogical arc
+
+The Learn It sequence now reads define → map → mechanism → cost → diagnose:
+"Three routes to market failure" moves to Step 2 (give students the map of
+*why* markets fail before the machinery), and "Private vs social costs and
+benefits" moves to Step 3 (the framework that explains *how* each route bites).
+Swapped the two card objects, renumbered ids/stepLabels positionally, and
+updated the intro `doInThis` and outcomes ordering to match. Data-only change
+(network-first) — no `sw.js` bump.
+
 ## 0.42.16 — 2026-06-03
 
 ### Market Failure Card 3 — diagram title to standard section-label style

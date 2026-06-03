@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.23 — 2026-06-03
+
+### Government Intervention in Markets — three formatting tweaks (Card 1 + price-floor card)
+
+- **Policy-spectrum panel (Card 1):** added a row of illustrative emoji icons
+  above the grey example text in each of the four tool boxes (Information
+  🍔🚗🏫🚬, Nudge 💷🫀🍽️, Tax/subsidy 🏭🥤⛽🚌, Regulation 🚭🧴🛢️🚗) so the
+  worked examples read at a glance.
+- **Price-floor card:** turned the orphan-3 MUP `illustratedGrid` (How MUP
+  works / The evidence / The catch) into a numbered flow diagram (`flowBottom`)
+  with dashed connectors, and converted the orphan-5 glossary from gradient
+  `keyTerms` tiles into full-width "fancy rows" (`causes` numbered-rows). The
+  card now reads: interactive diagram → key-term rows → MUP worked-case flow →
+  exam edge.
+
 ## 0.44.22 — 2026-06-03
 
 ### Government Failure — two small tweaks

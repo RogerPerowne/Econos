@@ -52,10 +52,10 @@ window.ECONOS_TOPIC = {
         bare: true,
         stepsStyle: 'boxed',
         steps: [
-          { tone: 'green',  icon: 'ℹ️', head: 'Information – when people just don\'t know',                     body: 'Calorie labels on menus, MPG ratings, school league tables, plain-pack cigarette warnings.' },
-          { tone: 'purple', icon: '👉', head: 'Nudge – when the bias is attention, inertia or default-stickiness', body: 'Auto-enrolment into pensions (participation 55% → 87%); opt-out organ donation; smaller default plate sizes.' },
-          { tone: 'amber',  icon: '💷', head: 'Tax / subsidy – when there is an externality to price',          body: 'Carbon pricing, sugar levy on drinks, fuel duty; R&D tax credits, £2 bus fare cap.' },
-          { tone: 'rose',   icon: '🚫', head: 'Regulation – when harm is severe, addictive or affects others',   body: 'Smoking indoor ban, CFC ban (Montreal Protocol), leaded petrol ban, Euro 6 vehicle emissions standards.' }
+          { tone: 'green',  icon: 'ℹ️', head: 'Information – when people just don\'t know',                     body: '<div style="font-size:21px;line-height:1;margin-bottom:7px;letter-spacing:5px;">🍔🚗🏫🚬</div>Calorie labels on menus, MPG ratings, school league tables, plain-pack cigarette warnings.' },
+          { tone: 'purple', icon: '👉', head: 'Nudge – when the bias is attention, inertia or default-stickiness', body: '<div style="font-size:21px;line-height:1;margin-bottom:7px;letter-spacing:5px;">💷🫀🍽️</div>Auto-enrolment into pensions (participation 55% → 87%); opt-out organ donation; smaller default plate sizes.' },
+          { tone: 'amber',  icon: '💷', head: 'Tax / subsidy – when there is an externality to price',          body: '<div style="font-size:21px;line-height:1;margin-bottom:7px;letter-spacing:5px;">🏭🥤⛽🚌</div>Carbon pricing, sugar levy on drinks, fuel duty; R&D tax credits, £2 bus fare cap.' },
+          { tone: 'rose',   icon: '🚫', head: 'Regulation – when harm is severe, addictive or affects others',   body: '<div style="font-size:21px;line-height:1;margin-bottom:7px;letter-spacing:5px;">🚭🧴🛢️🚗</div>Smoking indoor ban, CFC ban (Montreal Protocol), leaded petrol ban, Euro 6 vehicle emissions standards.' }
         ]
       },
       comparison: {
@@ -327,19 +327,23 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
-      illustratedGridLabel: 'Worked case: Scotland\'s minimum unit pricing (MUP)',
-      illustratedGridEmoji: '🥃',
-      illustratedGrid: [
-        { tone: 'green', title: '🏴 How MUP actually works', body: 'A floor of <strong>50p per unit of alcohol</strong> (Scotland since May 2018; Wales 2020; raised to 65p in 2024). It is a floor on price-<em>per-unit-of-alcohol</em>, so it bites hardest on the cheapest high-strength drinks – white cider, own-label spirits – which is exactly what the heaviest, most price-sensitive drinkers buy. Moderate drinkers already paying above 50p/unit are barely affected, so the policy <em>targets</em> the harmful consumption rather than the whole market.' },
-        { tone: 'blue', title: '📉 The evidence', body: 'Public Health Scotland (2023 evaluation): deaths <em>wholly attributable to alcohol</em> fell ~<strong>13%</strong> and hospitalisations ~4% against the projected trend; off-trade alcohol sold fell ~3%, concentrated in the heaviest-purchasing households. Feared cross-border shopping and illicit substitution turned out small.' },
-        { tone: 'rose', title: '⚠️ The catch – a windfall, not revenue', body: 'Crucial exam point: unlike an alcohol <em>tax</em>, the higher price under MUP is kept by <strong>retailers, not the Treasury</strong>. A tax raising price by the same amount would also fund treatment services and the NHS. MUP is mildly regressive, but the burden falls on harmful consumption – the policy intent – which is the standard defence.' }
+      causesLabel: 'Key terms',
+      causesEmoji: '🔑',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
+      causes: [
+        { tone: 'green',  icon: '🚧', head: 'Price floor', body: 'A legal minimum price. Only binding when set above the equilibrium price; below P<sub>e</sub> it has no effect on the market.' },
+        { tone: 'blue',   icon: '🥃', head: 'Minimum unit pricing (MUP)', body: 'A floor on the price per unit of alcohol (Scotland 50p, 2018). A floor used to correct a demerit-good / negative-externality problem – the surplus accrues to retailers, not the state.' },
+        { tone: 'amber',  icon: '📦', head: 'Excess supply', body: 'Sellers want to supply more than buyers will buy at the controlled price: Q<sub>s</sub> > Q<sub>d</sub>. Quantity traded is Q<sub>d</sub>.' },
+        { tone: 'purple', icon: '📌', head: 'Binding floor', body: 'A floor that actually constrains the market – i.e. set above the free-market equilibrium price. A floor below P<sub>e</sub> is non-binding.' },
+        { tone: 'rose',   icon: '🏭', head: 'Monopsony exception', body: 'In a labour market with a dominant employer, a minimum wage can raise both wages and employment by counteracting employer power – reversing the standard competitive-market result.' }
       ],
-      keyTerms: [
-        { term: 'Price floor', def: 'A legal minimum price. Only binding when set above the equilibrium price; below P<sub>e</sub> it has no effect on the market.' },
-        { term: 'Minimum unit pricing (MUP)', def: 'A floor on the price per unit of alcohol (Scotland 50p, 2018). A floor used to correct a demerit-good / negative-externality problem – the surplus accrues to retailers, not the state.' },
-        { term: 'Excess supply', def: 'Sellers want to supply more than buyers will buy at the controlled price: Q<sub>s</sub> > Q<sub>d</sub>. Quantity traded is Q<sub>d</sub>.' },
-        { term: 'Binding floor', def: 'A floor that actually constrains the market – i.e. set above the free-market equilibrium price. A floor below P<sub>e</sub> is non-binding.' },
-        { term: 'Monopsony exception', def: 'In a labour market with a dominant employer, a minimum wage can raise both wages and employment by counteracting employer power – reversing the standard competitive-market result.' }
+      flowBottomTitle: 'Worked case: Scotland\'s minimum unit pricing (MUP)',
+      flowBottomEmoji: '🥃',
+      flowBottom: [
+        { tone: 'green', icon: '🏴', title: 'How MUP works', sub: 'A floor of <strong>50p per unit of alcohol</strong> (Scotland 2018; raised to 65p in 2024). It bites hardest on the cheapest high-strength drinks – exactly what the heaviest, most price-sensitive drinkers buy.' },
+        { tone: 'blue', icon: '📉', title: 'The evidence', sub: 'Public Health Scotland (2023): alcohol-attributable deaths fell ~<strong>13%</strong>, hospitalisations ~4%; off-trade sales fell ~3%, concentrated in the heaviest-purchasing households. Feared cross-border shopping proved small.' },
+        { tone: 'rose', icon: '⚠️', title: 'The catch', sub: 'Unlike a tax, the higher price is kept by <strong>retailers, not the Treasury</strong> – so no funding for treatment or the NHS. Mildly regressive, but the burden falls on harmful consumption, the policy intent.' }
       ],
       examEdge: 'Three classic floor examples: <strong>National Living Wage</strong> (£12.21/hr from April 2024 – limited disemployment evidence suggests the floor sits close to equilibrium for most workers); <strong>EU Common Agricultural Policy</strong> (guaranteed prices produced "butter mountains" and "wine lakes" that had to be bought, stored, or destroyed); <strong>Scotland minimum unit pricing on alcohol</strong> (50p/unit since 2018 – alcohol sales fell 3–7%, targeting heavy drinkers as positive-externality correction). The labour-market case has an evaluation upgrade: in a monopsonistic market, a minimum wage can <em>raise</em> employment and wages simultaneously by counteracting employer power.'
     },

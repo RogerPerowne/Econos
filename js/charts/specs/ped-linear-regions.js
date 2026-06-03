@@ -54,15 +54,15 @@
     ],
 
     texts: [
-      { layer: 'layer-a', x: A.x + 0.04, y: A.y + 0.02, text: 'A', tone: 'green', bold: true, fontSize: 15, anchor: 'start' },
+      { layer: 'layer-a', x: A.x + 0.03, y: A.y + 0.05, text: 'A', tone: 'green', bold: true, fontSize: 15, anchor: 'start' },
       { layer: 'layer-a', x: 0.52, y: 0.80, text: 'Elastic (|PED| > 1)', tone: 'green', bold: true, fontSize: 13, anchor: 'start' },
       { layer: 'layer-a', x: 0.52, y: 0.745, text: 'upper part of the curve', tone: 'green', fontSize: 11.5, anchor: 'start' },
 
-      { layer: 'layer-b', x: B.x + 0.04, y: B.y + 0.03, text: 'B', tone: 'amber', bold: true, fontSize: 15, anchor: 'start' },
+      { layer: 'layer-b', x: B.x + 0.03, y: B.y + 0.05, text: 'B', tone: 'amber', bold: true, fontSize: 15, anchor: 'start' },
       { layer: 'layer-b', x: 0.60, y: 0.55, text: 'Unit elastic (|PED| = 1)', tone: 'amber', bold: true, fontSize: 13, anchor: 'start' },
       { layer: 'layer-b', x: 0.60, y: 0.495, text: 'midpoint · TR is maximised', tone: 'amber', fontSize: 11.5, anchor: 'start' },
 
-      { layer: 'layer-c', x: C.x - 0.04, y: C.y + 0.03, text: 'C', tone: 'purple', bold: true, fontSize: 15, anchor: 'end' },
+      { layer: 'layer-c', x: C.x + 0.03, y: C.y + 0.05, text: 'C', tone: 'purple', bold: true, fontSize: 15, anchor: 'start' },
       { layer: 'layer-c', x: 0.30, y: 0.26, text: 'Inelastic (|PED| < 1)', tone: 'purple', bold: true, fontSize: 13, anchor: 'start' },
       { layer: 'layer-c', x: 0.30, y: 0.205, text: 'lower part of the curve', tone: 'purple', fontSize: 11.5, anchor: 'start' }
     ]

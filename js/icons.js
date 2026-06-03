@@ -4813,7 +4813,6 @@ window.ECONOS_ICONS = {
   priceMechanismFlow: `
     <svg viewBox="0 0 720 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="720" height="320" fill="#FFFFFF" rx="12"/>
-      <text x="360" y="32" font-size="13" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="1">THREE FUNCTIONS OF THE PRICE MECHANISM</text>
 
       <!-- Central price node -->
       <circle cx="360" cy="180" r="48" fill="#0B1426" stroke="#475569" stroke-width="2"/>
@@ -13659,13 +13658,23 @@ window.ECONOS_ICONS = {
   economicSystemsBigPicture: `
     <div class="es-big" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px 18px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .es-big .eb-cap { font-size:11px; font-weight:800; letter-spacing:1px; color:#475569; text-transform:uppercase; margin:2px 0 4px; }
-        .es-big .eb-hub { position:relative; max-width:430px; height:262px; margin:0 auto 8px; }
+        /* Section header styling matches genSecLabel: emoji + uppercase
+           + letter-spaced + trailing rule. Splits the two halves with
+           clear standard headers per Roger's request. */
+        .es-big .eb-cap {
+          display:flex; align-items:center; gap:8px;
+          font-size:11px; font-weight:800; letter-spacing:0.09em;
+          text-transform:uppercase; color:#0B1426;
+          margin:6px 2px 14px;
+        }
+        .es-big .eb-cap__rule { flex:1; height:1px; background:#E7E7EA; margin-left:6px; }
+        .es-big .eb-divider { height:1px; background:#E7E7EA; margin:22px 0 0; }
+        .es-big .eb-hub { position:relative; max-width:430px; height:290px; margin:0 auto 8px; }
         .es-big .eb-node { position:absolute; width:116px; text-align:center; }
         .es-big .eb-top { top:0; left:50%; transform:translateX(-50%); }
         .es-big .eb-left { bottom:0; left:0; }
         .es-big .eb-right { bottom:0; right:0; }
-        .es-big .eb-center { position:absolute; top:54%; left:50%; transform:translate(-50%,-50%); width:104px; text-align:center; }
+        .es-big .eb-center { position:absolute; top:55%; left:50%; transform:translate(-50%,-50%); width:104px; text-align:center; }
         .es-big .eb-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
         .es-big .eb-circ { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:25px; margin:0 auto 5px; }
         .es-big .eb-ql { font-size:12.5px; font-weight:800; line-height:1.2; }
@@ -13687,12 +13696,12 @@ window.ECONOS_ICONS = {
         }
       </style>
 
-      <div class="eb-cap">The three questions every economy answers</div>
+      <div class="eb-cap">❓ <span>The three questions every economy answers</span><div class="eb-cap__rule"></div></div>
       <div class="eb-hub">
         <svg class="eb-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="50" y1="20" x2="50" y2="46" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
-          <line x1="45" y1="58" x2="17" y2="85" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
-          <line x1="55" y1="58" x2="83" y2="85" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
+          <line x1="50" y1="20" x2="50" y2="42" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
+          <line x1="44" y1="62" x2="14" y2="70" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
+          <line x1="56" y1="62" x2="86" y2="70" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
         </svg>
         <div class="eb-node eb-top">
           <div class="eb-circ" style="background:#EFF6FF;border:1.5px solid #93C5FD;">🛒</div>
@@ -13710,12 +13719,13 @@ window.ECONOS_ICONS = {
           <div class="eb-qs">Which methods and resources.</div>
         </div>
         <div class="eb-center">
-          <div class="eb-circ" style="width:88px;height:88px;font-size:38px;background:#F1F5F9;border:2px solid #CBD5E1;">🏙️</div>
+          <div class="eb-circ" style="width:74px;height:74px;font-size:32px;background:#F1F5F9;border:2px solid #CBD5E1;">🏙️</div>
           <div style="font-size:11.5px;font-weight:800;color:#334155;">Every economy</div>
         </div>
       </div>
 
-      <div class="eb-cap">The market ↔ state spectrum</div>
+      <div class="eb-divider"></div>
+      <div class="eb-cap">🎚️ <span>The market ↔ state spectrum</span><div class="eb-cap__rule"></div></div>
       <div class="eb-ribbon">
         <div class="eb-bar"></div>
         <div class="eb-sys-row">
@@ -13877,7 +13887,7 @@ window.ECONOS_ICONS = {
       </svg>
       <div class="cp-row">
         <div class="cp-step" style="background:#EFF6FF;border:1px solid #93C5FD;"><div class="cp-step-ic">📋</div><div class="cp-step-t" style="color:#1E3A8A;">Plans output</div><div class="cp-step-s">Targets for what to produce.</div></div>
-        <div class="cp-step" style="background:#EFF6FF;border:1px solid #93C5FD;"><div class="cp-step-ic">👷</div><div class="cp-step-t" style="color:#1E3A8A;">Directs labour &amp; capital</div><div class="cp-step-s">Resources allocated to the plan.</div></div>
+        <div class="cp-step" style="background:#FEF2F2;border:1px solid #FCA5A5;"><div class="cp-step-ic">👷</div><div class="cp-step-t" style="color:#B91C1C;">Directs labour &amp; capital</div><div class="cp-step-s">Resources allocated to the plan.</div></div>
         <div class="cp-step" style="background:#FFFBEB;border:1px solid #FCD34D;"><div class="cp-step-ic">🏭</div><div class="cp-step-t" style="color:#B45309;">State firms produce</div><div class="cp-step-s">Public enterprises carry it out.</div></div>
         <div class="cp-step" style="background:#ECFDF5;border:1px solid #6EE7B7;"><div class="cp-step-ic">🧺</div><div class="cp-step-t" style="color:#065F46;">Goods distributed</div><div class="cp-step-s">Allocated where planners decide.</div></div>
       </div>

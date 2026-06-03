@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.7 — 2026-06-03
+
+### Three Economic Systems diagram tweaks
+
+- **Card 1 hub** (`economicSystemsBigPicture`) — split visually into two with
+  standard section-style headers (emoji + uppercase + letter-spaced rule)
+  and a divider between the two halves. Shrunk the central "Every economy"
+  circle from 88px → 74px and shifted to `top:55%` in a taller (290px) hub
+  so it sits cleanly in the gap instead of overlapping the "What to
+  produce?" sub-text. Connector line coords updated to match.
+- **Card 3 price-mechanism flow** — removed the duplicate inner title
+  "THREE FUNCTIONS OF THE PRICE MECHANISM" from the SVG; rolled it into
+  the outer section header which now reads "Three functions of the price
+  mechanism — how prices coordinate the market".
+- **Card 4 command-economy flow** — changed the second blue box ("Directs
+  labour & capital") to red so the four-box row no longer has two adjacent
+  blue boxes.
+
+`icons.js` changed → `sw.js` bumped to `econos-v325`.
+
 ## 0.44.6 — 2026-06-03
 
 ### Two small visual fixes — PPF Card 7 "How to write it"; barter triangle centring

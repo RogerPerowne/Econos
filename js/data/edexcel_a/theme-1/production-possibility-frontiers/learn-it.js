@@ -103,15 +103,20 @@ window.ECONOS_TOPIC = {
       title: 'Opportunity cost – moving along the frontier',
       lede: 'When resources are fixed, producing more of one good means sacrificing some of the other good.',
       tip: { icon: '✅', tone: 'green', text: 'Opportunity cost is the next best alternative forgone.' },
-      diagramKey: 'ppfOppCost',
-      diagramLabel: 'A move along the curve',
-      diagramEmoji: '📈',
-      steps: [
-        { key: 'ab', label: 'Move A → B',
-          text: '<div style="font-size:13.5px;color:#0B1426;line-height:1.7;"><strong style="color:#D97706;">Capital goods rise from 20 → 30</strong> <span style="color:#475569;">(+10)</span><br><strong style="color:#D97706;">Consumer goods fall from 80 → 65</strong> <span style="color:#475569;">(−15)</span><br><br><strong>Opportunity cost = 15 consumer goods.</strong></div>' },
-        { key: 'bc', label: 'Move B → C',
-          text: '<div style="font-size:13.5px;color:#0B1426;line-height:1.7;"><strong style="color:#DC2626;">Capital goods rise from 30 → 40</strong> <span style="color:#475569;">(+10)</span><br><strong style="color:#DC2626;">Consumer goods fall from 65 → 40</strong> <span style="color:#475569;">(−25)</span><br><br><strong>Opportunity cost = 25 consumer goods.</strong></div>' }
-      ],
+      interactiveDiagram: {
+        svgKey: 'ppfOppCost',
+        label: 'A move along the curve',
+        emoji: '📈',
+        layers: ['layer-ab', 'layer-bc'],
+        views: [
+          { label: 'Move A → B', tone: 'amber', show: ['layer-ab'],
+            head: 'Move A → B',
+            body: '<strong style="color:#D97706;">Capital goods rise from 20 → 30</strong> <span style="color:#475569;">(+10)</span><br><strong style="color:#D97706;">Consumer goods fall from 80 → 65</strong> <span style="color:#475569;">(−15)</span><br><br><strong>Opportunity cost = 15 consumer goods.</strong>' },
+          { label: 'Move B → C', tone: 'rose', show: ['layer-bc'],
+            head: 'Move B → C',
+            body: '<strong style="color:#DC2626;">Capital goods rise from 30 → 40</strong> <span style="color:#475569;">(+10)</span><br><strong style="color:#DC2626;">Consumer goods fall from 65 → 40</strong> <span style="color:#475569;">(−25)</span><br><br><strong>Opportunity cost = 25 consumer goods.</strong>' }
+        ]
+      },
       flowTitle: 'Why every move along the curve has a cost',
       flowEmoji: '🔁',
       flow: [

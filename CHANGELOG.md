@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.8 — 2026-06-03
+
+### Economic Systems — diagram parity on the free-market card (Theme 1 polish #5)
+
+Card 3 ("How a free market works") was the only content card in the topic
+without a hero diagram, while its explicit mirror — Card 4 ("How a command
+economy works") — leads with the `economicCommandPlanning` visual. Added
+the existing `priceMechanismFlow` diagram (central PRICE node → signalling /
+incentives / rationing) as Card 3's hero. It gives the free-market card the
+visual anchor the command card already had, and reinforces the Hayek
+price-coordination point from Card 2. Reuses an existing icons.js diagram
+(no new SVG), data-only, no SW bump.
+
+This was the last of the four Theme 1 polish items (#5 diagram parity,
+#6 misconceptions block, #7 worked MUP case, #8 government-failure causes).
+Combined with the three spec-gap cards and the bug fixes earlier in the
+0.42 line, the Theme 1 review backlog is now fully cleared.
+
 ## 0.42.7 — 2026-06-03
 
 ### The Economic Problem — "three traps to avoid" misconceptions block (Theme 1 polish #6)

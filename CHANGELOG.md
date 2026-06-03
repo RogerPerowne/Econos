@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.12 — 2026-06-03
+
+### YED/XED determinants card — even up & de-nerd the YED column
+
+The "Necessity vs luxury" column had grown a long, stat-heavy UK aside
+(restaurant +22%/−50%, bread/milk +1–2%, Aldi+Lidl 5%→16% 2010–24) that made
+it ~3× longer than the other two columns and read like a data appendix.
+Trimmed all three YED determinant entries to concise, plain-language
+examples so the three columns are balanced and approachable. Data only
+(network-first) — no `sw.js` bump.
+
 ## 0.44.11 — 2026-06-03
 
 ### Economic Systems trade-offs table — resolve the colour clash

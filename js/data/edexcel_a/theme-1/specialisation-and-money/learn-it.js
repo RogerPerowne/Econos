@@ -8,16 +8,17 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroSpecialisationMoney',
     summary: 'Specialisation dramatically raises productivity but creates a need for exchange. Barter is too inefficient to support complex trade – money solves this by acting as a medium of exchange, measure of value, store of value, and standard of deferred payment.',
-    doInThis: 'Work through 8 cards: the big picture, Adam Smith’s pin factory and his three gains, the division of labour weighed up, specialising to trade across individuals, firms and countries, the barter problem, the four functions of money, what makes good money, and how money and specialisation lift living standards.',
+    doInThis: 'Work through 9 cards: the big picture, Adam Smith’s pin factory and his three gains, the division of labour weighed up, specialising to trade across individuals, firms and countries, comparative advantage and the gains from trade, the barter problem, the four functions of money, what makes good money, and how money and specialisation lift living standards.',
     outcomes: [
       'Explain the division of labour using Adam Smith’s three gains (dexterity, time saved, machinery)',
       'Distinguish the advantages/disadvantages of the division of labour from those of specialising to trade',
+      'Explain comparative advantage using opportunity cost, and show how specialisation and trade raise total output',
       'Explain why barter is inefficient and how money solves the double coincidence of wants',
       'State and apply the four functions of money, and judge why monetary stability matters'
     ],
     tip: 'Money’s four functions (Edexcel wording): Medium of Exchange, Measure of Value (also called unit of account), Store of Value, and Standard of Deferred Payment.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '9 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -30,7 +31,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 8',
+      stepLabel: 'Learn: Step 1 of 9',
       title: 'Specialisation & money: the big picture',
       tip: { icon: '💡', tone: 'blue', text: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest – and total output rises sharply.' },
       diagramKey: 'specialisationGainsCompare',
@@ -52,7 +53,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_2',
       template: 'framing',
-      stepLabel: 'Learn: Step 2 of 8',
+      stepLabel: 'Learn: Step 2 of 9',
       title: 'Adam Smith’s Pin Factory',
       tip: { icon: '💡', tone: 'blue', text: 'The division of labour splits one production process into separate tasks, each done by a different worker. Adam Smith showed how powerful this is.' },
       economistQuote: {
@@ -100,7 +101,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_3',
       template: 'framing',
-      stepLabel: 'Learn: Step 3 of 8',
+      stepLabel: 'Learn: Step 3 of 9',
       title: 'The Division of Labour: Gains vs Drawbacks',
       tip: { icon: '💡', tone: 'blue', text: 'Splitting work into specialised tasks raises output – but doing one narrow job all day has real costs for workers and firms.' },
       causes: [
@@ -132,7 +133,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_4',
       template: 'framing',
-      stepLabel: 'Learn: Step 4 of 8',
+      stepLabel: 'Learn: Step 4 of 9',
       title: 'Specialising to Trade',
       tip: { icon: '💡', tone: 'blue', text: 'Beyond the factory floor, whole people, firms and countries specialise – then trade for everything else.' },
       note: {
@@ -176,12 +177,60 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 5 – The Problem with Barter (Sequential flow chain) — spec (d) setup
+       CARD 5 – Comparative Advantage (Worked-example walkthrough) — spec 1.1.5(c)
+       Closes the comparative-advantage gap flagged in the Theme 1 audit.
+       Numbers chosen so full specialisation cleanly raises BOTH world
+       totals by 50; OC ratios 0.5 / 2 mirror exactly. The deeper
+       "applies even if one country is better at everything" insight is
+       stated in step 5 + conclusion (the standard A-level treatment;
+       the "better at both + full specialisation" case can lower one
+       total, so it's framed as an opportunity-cost principle, not a
+       second worked table).
+       ================================================================ */
+    {
+      id: 'specialisation_money_comparative_advantage',
+      template: 'worked-example',
+      stepLabel: 'Learn: Step 5 of 9',
+      title: 'Worked Example: Comparative Advantage',
+      scenario: 'Two countries — the <strong>UK</strong> and <strong>China</strong> — can each put a worker on <strong>financial services</strong> or <strong>electronics</strong>. With the same resources, one worker can make:\n\n<strong>UK:</strong> 200 financial services <em>or</em> 100 electronics\n<strong>China:</strong> 100 financial services <em>or</em> 200 electronics\n\nBoth countries can make both goods. Should they specialise — and if so, who makes what?',
+      steps: [
+        {
+          label: 'Step 1 – Absolute vs comparative advantage',
+          hint: 'Who can produce MORE of each good with the same resources? Is that the right question?',
+          answer: '<strong>Absolute advantage</strong> = producing more with the same resources. The UK wins on services (200 &gt; 100); China wins on electronics (200 &gt; 100).\n\nBut absolute advantage is <em>not</em> the basis for trade. David Ricardo\'s insight (1817): what matters is <strong>comparative advantage</strong> — who gives up the least to make each good. That means working in <strong>opportunity cost</strong>, not raw output.'
+        },
+        {
+          label: 'Step 2 – Work out each country\'s opportunity cost',
+          hint: 'For each country: to make 1 more unit of one good, how many units of the other must it give up?',
+          answer: '<strong>UK</strong> (200 services = 100 electronics, so the worker\'s time trades at 2 : 1):\n• 1 electronics costs <strong>2 services</strong>\n• 1 service costs <strong>0.5 electronics</strong>\n\n<strong>China</strong> (100 services = 200 electronics):\n• 1 electronics costs <strong>0.5 services</strong>\n• 1 service costs <strong>2 electronics</strong>'
+        },
+        {
+          label: 'Step 3 – Identify comparative advantage (lowest opportunity cost)',
+          hint: 'For each good, which country gives up less of the other good to make it?',
+          answer: '<strong>Financial services:</strong> the UK gives up 0.5 electronics; China gives up 2 electronics. → <strong>The UK has the comparative advantage in services.</strong>\n\n<strong>Electronics:</strong> China gives up 0.5 services; the UK gives up 2 services. → <strong>China has the comparative advantage in electronics.</strong>\n\nEach country should specialise where its opportunity cost is lowest.'
+        },
+        {
+          label: 'Step 4 – Specialise and trade: the gains',
+          hint: 'Take 2 workers per country. Compare total world output before trade (each splits 50/50) with after full specialisation.',
+          answer: '<strong>Before trade</strong> (each country splits 2 workers 50/50):\n• UK: 100 services + 50 electronics · China: 50 services + 100 electronics\n• <strong>World total: 150 services + 150 electronics</strong>\n\n<strong>After full specialisation</strong> (UK → services, China → electronics):\n• UK: 200 services · China: 200 electronics\n• <strong>World total: 200 services + 200 electronics</strong>\n\nSame resources, <strong>+50 of each good</strong>. Trading at any rate between 0.5 and 2 electronics per service shares the gain so <em>both</em> countries consume beyond what they could produce alone.'
+        },
+        {
+          label: 'Step 5 – Evaluate: the catch, and Ricardo\'s deeper point',
+          hint: 'When does trade NOT make both better off? And does comparative advantage still apply if one country is better at everything?',
+          answer: '<strong>The terms of trade must lie between the two opportunity costs</strong> (here 0.5–2 electronics per service). Outside that band, one country is better off not trading.\n\n<strong>Other limits:</strong> over-specialisation leaves an economy exposed to price swings and structural unemployment if its industry fades; transport costs and trade barriers can wipe out small gains.\n\n<strong>Ricardo\'s deeper point:</strong> comparative advantage applies <em>even when one country is absolutely more productive at everything</em>. The basis for trade is the <strong>difference in opportunity-cost ratios</strong>, not absolute productivity — which is why a highly productive economy like the UK still gains from trading with less productive partners.'
+        }
+      ],
+      conclusion: 'Comparative advantage = the lowest opportunity cost. Whenever opportunity-cost ratios differ between countries, specialisation plus trade raises total output — here from 150 to 200 units of each good with no extra resources. Specialise by opportunity cost, not by who is absolutely best.',
+      examEdge: 'The classic trap is answering on <em>absolute</em> advantage. Always compute opportunity cost and award comparative advantage to the lower-OC producer. State the terms-of-trade condition (the trade rate must sit between the two opportunity costs) to reach the top band.'
+    },
+
+    /* ================================================================
+       CARD 6 – The Problem with Barter (Sequential flow chain) — spec (d) setup
        ================================================================ */
     {
       id: 'specialisation_money_5',
       template: 'framing',
-      stepLabel: 'Learn: Step 5 of 8',
+      stepLabel: 'Learn: Step 6 of 9',
       title: 'The Problem with Barter',
       tip: { icon: '💡', tone: 'blue', text: 'Barter means exchanging goods directly without money. Trade only happens when both people want exactly what the other has – the double coincidence of wants.' },
       diagramKey: 'barterTriangle',
@@ -232,7 +281,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_6',
       template: 'framing',
-      stepLabel: 'Learn: Step 6 of 8',
+      stepLabel: 'Learn: Step 7 of 9',
       title: 'The Four Functions of Money',
       tip: { icon: '💡', tone: 'blue', text: 'Money solves the problems of barter because it performs four key jobs that make exchange possible, practical and efficient.' },
       causes: [
@@ -282,7 +331,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_7',
       template: 'framing',
-      stepLabel: 'Learn: Step 7 of 8',
+      stepLabel: 'Learn: Step 8 of 9',
       title: 'Characteristics of Good Money',
       tip: { icon: '💡', tone: 'blue', text: 'For money to perform its four functions well, it needs certain practical qualities. Score the candidates against them and a winner emerges – which is why every economy converges on something like modern currency.' },
       diagramKey: 'goodMoneyScorecard',
@@ -307,7 +356,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_8',
       template: 'framing',
-      stepLabel: 'Learn: Step 8 of 8',
+      stepLabel: 'Learn: Step 9 of 9',
       title: 'Why Money Holds It All Together',
       tip: { icon: '💡', tone: 'green', text: 'The gains from specialisation are unlocked fully only when money allows smooth exchange. Together they convert higher productivity into wider prosperity.' },
       flow: [

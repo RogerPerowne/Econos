@@ -6,6 +6,38 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.2 — 2026-06-03
+
+### Weakness-at-computation card (Theme 1 spec gap 1.2.10a)
+
+Third and final Theme 1 spec-gap card. `behavioural-economics` now has a
+dedicated **"Weakness at computation"** card (new Card 3, predict-then-reveal).
+Spec 1.2.10(a) names three reasons consumers behave irrationally — influence
+of others, habit, weakness at computation. The first two were covered (social
+norms in C2; habitual behaviour as a keyTerm + the commitment-device / default
+examples in C4–C6) but the third was never a card.
+
+The card opens with a table mapping all three Edexcel reasons (and where each
+is covered, closing the spec-vocabulary loop), then runs four predict-then-reveal
+UK money traps:
+- Compound interest underestimation (£1,000 @ 5% for 30y → £4,322, not ~£2,500)
+- Payday "25% a month" → ~1,355% APR (the pre-FCA Wonga case)
+- % vs £ framing (£5 off £15 vs £5 off £400)
+- Credit-card minimum-payment trap (~30 years, >£4,500 interest)
+
+Each pairs the error with the UK policy response (FCA payday cap, minimum-payment
+warning, total-cost-of-credit disclosure). Topic renumbered 5 → 6 cards.
+
+**Renderer note:** the `diagnose` template requires either a `diagramKey` or a
+`table` with `headers` (it builds a header row unconditionally in the no-diagram
+branch) — without either it threw `Cannot read properties of undefined (reading
+'headers')`. Resolved by giving the card the three-reasons table, which is
+useful content rather than a workaround. Data-only change (network-first), no
+service-worker bump.
+
+This completes all three remaining Theme 1 spec-gap cards (comparative
+advantage · YED/XED determinants · weakness at computation).
+
 ## 0.42.1 — 2026-06-03
 
 ### YED/XED determinants card (Theme 1 spec gap 1.2.3d)

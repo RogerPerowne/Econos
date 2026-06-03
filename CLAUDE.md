@@ -240,6 +240,16 @@ geometry is *guaranteed*, not eyeballed.
    than another round of screenshot iteration. Use it; ship only
    labels that pass.
 
+   **Curve labels** (the `<text>` emitted by `renderCurve` for
+   `curve.label`) are now also tracked by the engine's dev-mode
+   clash + off-stage checks (v0.41.11). For MULTI-panel charts, the
+   off-stage check enforces the panel's own `chartArea` bounds, not
+   just the SVG viewBox — a `PPF₂` label spilling out of one panel
+   into the next will now be caught by `npm run lint:charts`. If
+   `lint:charts` shows `0 new finding(s)` your chart is clean;
+   `KNOWN_ISSUES` in `scripts/lint-charts.mjs` lists tracked tech
+   debt and **must not** grow without a documented fix plan.
+
 7. **Screenshot EVERY view, then critique.** Taking a screenshot is not
    the same as verifying the chart. After rendering, open each view's
    image and ask:

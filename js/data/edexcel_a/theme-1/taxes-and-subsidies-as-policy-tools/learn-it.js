@@ -135,7 +135,8 @@ window.ECONOS_TOPIC = {
       ],
       causesLabel: 'Common exam errors to avoid',
       causesEmoji: '❌',
-      causesStyle: 'tinted-flat',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
       causes: [
         { icon: '❌', tone: 'rose', head: 'Wrong shift direction', body: 'A tax shifts S <strong>up/left</strong> – NOT down. A subsidy shifts S <strong>down/right</strong>. Many students reverse these. The curve label (S+tax or S−sub) must appear at the new curve.' },
         { icon: '❌', tone: 'rose', head: 'Missing labels', body: 'Always label <strong>P<sub>c</sub></strong> (consumer price), <strong>P<sub>p</sub></strong> (producer net price), and <strong>Q<sub>t</sub></strong> (post-tax quantity). Missing any one of these is the most frequent single mark loss.' },

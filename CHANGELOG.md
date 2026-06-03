@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.21 — 2026-06-03
+
+### Taxes & Subsidies Card 3 — "Common exam errors" → numbered rows
+
+The five "Common exam errors to avoid" tiles left an orphan in the 3-col
+grid. Converted to numbered fancy rows (they were already all rose/red), so
+the orphan is gone and they read as a clean ordered checklist. Data only —
+no `sw.js` bump.
+
 ## 0.44.20 — 2026-06-03
 
 ### Public Goods Card 7 — flesh out the judgement-framework tiles

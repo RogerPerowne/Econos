@@ -8,11 +8,11 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroMarketFailure',
     summary: 'A free market achieves allocative efficiency when price equals marginal social cost and benefit. Market failure occurs when private incentives diverge from social welfare – through externalities, public goods, or information gaps – so the market produces too much or too little for society.',
-    doInThis: 'Work through 5 cards covering the big picture of market failure, the private-vs-social framework, three routes to failure, welfare loss and allocative inefficiency, and how to diagnose market failure in real contexts.',
+    doInThis: 'Work through 5 cards covering the big picture of market failure, the three routes to failure, the private-vs-social framework, welfare loss and allocative inefficiency, and how to diagnose market failure in real contexts.',
     outcomes: [
       'Define market failure and explain its link to allocative efficiency',
-      'Distinguish private vs social costs and benefits, and explain why their divergence causes failure',
       'Identify the three core routes to market failure with real-world examples',
+      'Distinguish private vs social costs and benefits, and explain why their divergence causes failure',
       'Draw and interpret the welfare-loss (deadweight loss) triangle',
       'Diagnose market failure in unseen contexts using a four-step framework'
     ],
@@ -61,6 +61,21 @@ window.ECONOS_TOPIC = {
     {
       id: 'market_failure_2',
       stepLabel: 'Learn: Step 2 of 5',
+      title: 'Three routes to market failure',
+      tip: { icon: '💡', tone: 'blue', text: 'At this stage you only need the map: three broad reasons markets may fail. Each one gets a dedicated topic later – for now, secure the framework.' },
+      diagramKey: 'threeRoutesDiagram',
+      keyTerms: [
+        { term: 'Externality', def: 'A cost or benefit imposed on a third party that is not reflected in the market price. Negative externalities cause over-production; positive externalities cause under-production.' },
+        { term: 'Public good', def: 'A good that is non-rival (one person\'s use does not reduce availability) and non-excludable (you cannot stop non-payers from consuming). Free markets under-provide them.' },
+        { term: 'Asymmetric information', def: 'When one party in a transaction has materially better information than the other – leading to adverse selection or moral hazard.' },
+        { term: 'Free-rider problem', def: 'When people benefit from a good without paying for it. Because no-one can be excluded, no-one has an incentive to pay – so the market under-provides.' }
+      ],
+      examEdge: 'You do not need every detail yet – first secure the map, then study each failure type in depth. In an essay, naming the route correctly is the first credit-earning step. After that, link the route to the divergence (cost or benefit) and the direction of the failure (over- or under-production).'
+    },
+
+    {
+      id: 'market_failure_3',
+      stepLabel: 'Learn: Step 3 of 5',
       title: 'Private vs social costs and benefits',
       tip: { icon: '💡', tone: 'blue', text: 'A decision can look worthwhile to the individual, but once spillover effects are included, the answer for society may be very different.' },
       diagramKey: 'privateVsSocialDiagram',
@@ -80,21 +95,6 @@ window.ECONOS_TOPIC = {
         { term: 'Social cost / benefit', def: 'Private + external. The full cost or benefit to society as a whole. Market failure begins when social and private values diverge.' }
       ],
       examEdge: 'The exam trick: market failure begins the moment <strong>private and social costs (or benefits) diverge</strong>. State this explicitly, then identify whether the divergence is on the cost or the benefit side – that tells the examiner whether the market is over- or under-producing.'
-    },
-
-    {
-      id: 'market_failure_3',
-      stepLabel: 'Learn: Step 3 of 5',
-      title: 'Three routes to market failure',
-      tip: { icon: '💡', tone: 'blue', text: 'At this stage you only need the map: three broad reasons markets may fail. Each one gets a dedicated topic later – for now, secure the framework.' },
-      diagramKey: 'threeRoutesDiagram',
-      keyTerms: [
-        { term: 'Externality', def: 'A cost or benefit imposed on a third party that is not reflected in the market price. Negative externalities cause over-production; positive externalities cause under-production.' },
-        { term: 'Public good', def: 'A good that is non-rival (one person\'s use does not reduce availability) and non-excludable (you cannot stop non-payers from consuming). Free markets under-provide them.' },
-        { term: 'Asymmetric information', def: 'When one party in a transaction has materially better information than the other – leading to adverse selection or moral hazard.' },
-        { term: 'Free-rider problem', def: 'When people benefit from a good without paying for it. Because no-one can be excluded, no-one has an incentive to pay – so the market under-provides.' }
-      ],
-      examEdge: 'You do not need every detail yet – first secure the map, then study each failure type in depth. In an essay, naming the route correctly is the first credit-earning step. After that, link the route to the divergence (cost or benefit) and the direction of the failure (over- or under-production).'
     },
 
     {

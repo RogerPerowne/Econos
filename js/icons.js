@@ -4730,59 +4730,75 @@ window.ECONOS_ICONS = {
   /* threeRoutesDiagram — 3-tile category map. Hand-rolled because
      it's a tile infographic, not a coordinate chart. */
   threeRoutesDiagram: `
-    <svg viewBox="0 0 720 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="720" height="300" fill="#FFFFFF" rx="12"/>
-      <text x="360" y="32" font-size="13" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="1">THREE ROUTES TO MARKET FAILURE</text>
+    <div class="three-routes" style="background:#fff;border-radius:14px;padding:18px 16px 8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .three-routes .tr-title { text-align:center; font-size:15px; font-weight:800; color:#0F172A; margin-bottom:10px; font-family:Fraunces,Georgia,serif; }
+        .three-routes .tr-hub { width:56px; height:56px; border-radius:50%; margin:0 auto; background:#fff; border:2px solid #CBD5E1; display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+        .three-routes .tr-fan { width:100%; height:26px; display:block; }
+        .three-routes .tr-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+        .three-routes .tr-tile { border-radius:12px; padding:14px 12px 12px; text-align:center; border:1.5px solid; }
+        .three-routes .tr-ic { width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; margin:0 auto 8px; }
+        .three-routes .tr-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .three-routes .tr-d { font-size:11.5px; color:#475569; line-height:1.4; margin-top:5px; }
+        .three-routes .tr-ex { margin-top:10px; padding-top:8px; border-top:1px dashed #CBD5E1; }
+        .three-routes .tr-ex-l { font-size:10px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; }
+        .three-routes .tr-ex-b { font-size:11px; color:#334155; line-height:1.4; margin-top:3px; }
+        .three-routes .tr-table { width:100%; border-collapse:collapse; margin-top:16px; }
+        .three-routes .tr-table th { font-size:11px; font-weight:800; color:#0F172A; text-align:left; padding:8px 10px; border-bottom:2px solid #E2E8F0; }
+        .three-routes .tr-table td { font-size:11.5px; color:#334155; padding:9px 10px; border-bottom:1px solid #F1F5F9; line-height:1.4; vertical-align:middle; }
+        .three-routes .tr-table .tr-prob { font-weight:800; }
+        .three-routes .tr-badge { width:30px; height:30px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:15px; }
+        @media (max-width:560px){ .three-routes .tr-row{ grid-template-columns:1fr; } .three-routes .tr-fan{ display:none; } }
+      </style>
 
-      <!-- Tile 1: Externalities -->
-      <g>
-        <rect x="40"  y="60" width="200" height="200" rx="14" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
-        <circle cx="80" cy="100" r="22" fill="#DC2626"/>
-        <text x="80" y="106" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle">1</text>
-        <text x="140" y="106" font-size="14" font-weight="800" fill="#7F1D1D">Externalities</text>
-        <text x="140" y="122" font-size="11" fill="#991B1B">Costs / benefits ignored</text>
-        <line x1="60" y1="138" x2="220" y2="138" stroke="#FCA5A5" stroke-width="1"/>
-        <text x="140" y="158" font-size="11" font-weight="700" fill="#7F1D1D" text-anchor="middle">What breaks?</text>
-        <text x="140" y="180" font-size="11" fill="#1F2937" text-anchor="middle">Private cost ≠ social cost</text>
-        <text x="140" y="196" font-size="11" fill="#1F2937" text-anchor="middle">Private benefit ≠ social</text>
-        <text x="140" y="212" font-size="11" fill="#1F2937" text-anchor="middle">benefit</text>
-        <text x="140" y="238" font-size="11" font-style="italic" fill="#991B1B" text-anchor="middle">e.g. pollution, vaccines</text>
-      </g>
+      <div class="tr-title">Types of market failure</div>
+      <div class="tr-hub">⚖️</div>
+      <svg class="tr-fan" viewBox="0 0 100 26" preserveAspectRatio="none">
+        <path d="M50,0 V9 M16.7,9 H83.3 M16.7,9 V24 M50,9 V24 M83.3,9 V24" stroke="#CBD5E1" stroke-width="0.4" fill="none"/>
+      </svg>
 
-      <!-- Tile 2: Public goods -->
-      <g>
-        <rect x="260" y="60" width="200" height="200" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
-        <circle cx="300" cy="100" r="22" fill="#2563EB"/>
-        <text x="300" y="106" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle">2</text>
-        <text x="360" y="106" font-size="14" font-weight="800" fill="#1E3A8A">Public goods</text>
-        <text x="360" y="122" font-size="11" fill="#1E40AF">Free-rider problem</text>
-        <line x1="280" y1="138" x2="440" y2="138" stroke="#93C5FD" stroke-width="1"/>
-        <text x="360" y="158" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">What breaks?</text>
-        <text x="360" y="180" font-size="11" fill="#1F2937" text-anchor="middle">Non-rival + non-excludable</text>
-        <text x="360" y="196" font-size="11" fill="#1F2937" text-anchor="middle">→ no incentive to pay</text>
-        <text x="360" y="212" font-size="11" fill="#1F2937" text-anchor="middle">→ under-provision</text>
-        <text x="360" y="238" font-size="11" font-style="italic" fill="#1E40AF" text-anchor="middle">e.g. street lighting, defence</text>
-      </g>
+      <div class="tr-row">
+        <div class="tr-tile" style="background:#ECFDF5;border-color:#6EE7B7;">
+          <div class="tr-ic" style="background:#059669;">🏭</div>
+          <div class="tr-t" style="color:#065F46;">1. Externalities</div>
+          <div class="tr-d">Decisions create spillover costs or benefits for others.</div>
+          <div class="tr-ex"><div class="tr-ex-l" style="color:#059669;">Example</div><div class="tr-ex-b">Pollution from a factory affects nearby residents.</div></div>
+        </div>
+        <div class="tr-tile" style="background:#FFFBEB;border-color:#FCD34D;">
+          <div class="tr-ic" style="background:#D97706;">💡</div>
+          <div class="tr-t" style="color:#92400E;">2. Public goods</div>
+          <div class="tr-d">Markets under-provide goods that are non-rival and non-excludable.</div>
+          <div class="tr-ex"><div class="tr-ex-l" style="color:#B45309;">Example</div><div class="tr-ex-b">Street lighting or national defence benefits everyone.</div></div>
+        </div>
+        <div class="tr-tile" style="background:#EFF6FF;border-color:#93C5FD;">
+          <div class="tr-ic" style="background:#2563EB;">ℹ️</div>
+          <div class="tr-t" style="color:#1E3A8A;">3. Information gaps</div>
+          <div class="tr-d">Consumers or producers lack full information, so choices are poor.</div>
+          <div class="tr-ex"><div class="tr-ex-l" style="color:#2563EB;">Example</div><div class="tr-ex-b">Misleading health claims lead to poor choices (asymmetric information).</div></div>
+        </div>
+      </div>
 
-      <!-- Tile 3: Information asymmetry -->
-      <g>
-        <rect x="480" y="60" width="200" height="200" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
-        <circle cx="520" cy="100" r="22" fill="#D97706"/>
-        <text x="520" y="106" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle">3</text>
-        <text x="580" y="106" font-size="14" font-weight="800" fill="#92400E">Asymmetric info</text>
-        <text x="580" y="122" font-size="11" fill="#B45309">One side knows more</text>
-        <line x1="500" y1="138" x2="660" y2="138" stroke="#FCD34D" stroke-width="1"/>
-        <text x="580" y="158" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">What breaks?</text>
-        <text x="580" y="180" font-size="11" fill="#1F2937" text-anchor="middle">Adverse selection,</text>
-        <text x="580" y="196" font-size="11" fill="#1F2937" text-anchor="middle">moral hazard → wrong</text>
-        <text x="580" y="212" font-size="11" fill="#1F2937" text-anchor="middle">trades, broken trust</text>
-        <text x="580" y="238" font-size="11" font-style="italic" fill="#B45309" text-anchor="middle">e.g. used cars, insurance</text>
-      </g>
-
-      <!-- Common result strip at the bottom -->
-      <rect x="40" y="270" width="640" height="20" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="360" y="284" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">All three lead to misallocation: society could do better with a different quantity</text>
-    </svg>
+      <table class="tr-table">
+        <thead><tr><th>Problem</th><th>What goes wrong</th><th>Typical result</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tr-prob" style="color:#059669;">1. Externalities</td>
+            <td>Price system misses costs or benefits.</td>
+            <td>Too much or too little output. <span class="tr-badge" style="background:#ECFDF5;color:#059669;">↕</span></td>
+          </tr>
+          <tr>
+            <td class="tr-prob" style="color:#B45309;">2. Public goods</td>
+            <td>Free-rider problem — people benefit without paying.</td>
+            <td>Under-provision of the good or service. <span class="tr-badge" style="background:#FFFBEB;color:#B45309;">👥</span></td>
+          </tr>
+          <tr>
+            <td class="tr-prob" style="color:#2563EB;">3. Information gaps</td>
+            <td>Decisions based on incomplete or imperfect information.</td>
+            <td>Bad decisions and welfare loss. <span class="tr-badge" style="background:#EFF6FF;color:#2563EB;">📉</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   `,
 
   /* ── The-price-mechanism topic — gap-fill diagrams ──────── */

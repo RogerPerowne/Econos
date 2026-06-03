@@ -88,8 +88,6 @@ window.ECONOS_TOPIC = {
       title: 'Three routes to market failure',
       tip: { icon: '💡', tone: 'blue', text: 'At this stage you only need the map: three broad reasons markets may fail. Each one gets a dedicated topic later – for now, secure the framework.' },
       diagramKey: 'threeRoutesDiagram',
-      diagramLabel: 'The three routes – and what each one breaks',
-      diagramEmoji: '🌳',
       keyTerms: [
         { term: 'Externality', def: 'A cost or benefit imposed on a third party that is not reflected in the market price. Negative externalities cause over-production; positive externalities cause under-production.' },
         { term: 'Public good', def: 'A good that is non-rival (one person\'s use does not reduce availability) and non-excludable (you cannot stop non-payers from consuming). Free markets under-provide them.' },

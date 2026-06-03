@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.43.3 — 2026-06-03
+
+### Taxes & Subsidies as Policy Tools — Card 2: five case studies → 2×2 of four
+
+Trimmed the case-study card from five to four and laid them out as a 2×2
+matrix (`causesCols: 2`) — two taxes on the top row, two subsidies on the
+bottom, reinforcing Card 1's tax-vs-subsidy framing. Dropped Fuel duty
+(it overlapped Tobacco as a regressive sin-tax on an inelastic good); kept
+Sugar Levy (elastic producer reformulation), Tobacco duty (clean
+effectiveness story + regressive-incidence/progressive-health nuance), EU
+CAP and UK Contracts for Difference. Updated the title, tip and the
+effectiveness note (which had referenced fuel duty). Data only
+(network-first) — no `sw.js` bump.
+
 ## 0.43.2 — 2026-06-03
 
 ### Taxes & Subsidies as Policy Tools — Card 1 flow → vs comparison

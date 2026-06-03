@@ -30,9 +30,18 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 5',
       title: 'Market failure',
       tip: { icon: '💡', tone: 'blue', text: 'Markets usually coordinate resources well – but sometimes private choices create social outcomes that are inefficient. The market still functions; it just produces the wrong amount from society\'s point of view.' },
-      diagramKey: 'marketFailureOverview',
-      diagramLabel: 'When markets fail',
-      diagramEmoji: '⚖️',
+      diagramPanel: {
+        diagramKey: 'marketFailureOverview',
+        title: 'When markets fail',
+        emoji: '⚖️',
+        layout: 'side',
+        bullets: [
+          'The market settles at <strong>E<sub>m</sub></strong>, where private supply <strong style="color:#D97706;">MPC = S</strong> meets demand <strong style="color:#2563EB;">MPB = D</strong>.',
+          'But <strong style="color:#059669;">MSC</strong> sits above MPC — each unit imposes an extra cost on third parties the market ignores.',
+          'The social optimum <strong>E*</strong> (where MSB = MSC) is at a <em>lower</em> quantity, Q*.',
+          'Over-producing from Q* to Q<sub>m</sub> wastes welfare — the red <strong style="color:#DC2626;">DWL</strong> triangle.'
+        ]
+      },
       keyPointsLabel: 'What market failure means',
       keyPointsEmoji: '🔍',
       keyPointsCols: 3,

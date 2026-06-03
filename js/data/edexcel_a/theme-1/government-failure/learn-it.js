@@ -210,7 +210,8 @@ window.ECONOS_TOPIC = {
       tip: { icon: '🏦', tone: 'green', text: 'Government failure is not inevitable. Better institutional design reduces its probability and severity. The best way to improve outcomes is to change the incentive structure within which governments operate – not to avoid intervention altogether.' },
       causesLabel: 'Five institutional solutions',
       causesEmoji: '🏗️',
-      causesStyle: 'tinted-flat',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
       causes: [
         {
           icon: '🏦', tone: 'blue', head: 'Independent regulatory agencies',

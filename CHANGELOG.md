@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.11 — 2026-06-03
+
+### Economic Systems trade-offs table — resolve the colour clash
+
+The `economicSystemsScorecard` double-encoded colour: cell bars were
+system-coded (green/blue/red by column) while the level words were
+value-coded (green=High, red=Low). In the Equity / State control / Basic
+provision rows these collided — a green-bar "Low" in red text, a red-bar
+"High" in green text — so colour screamed the opposite of the word.
+
+Fix: strip colour from the data cells entirely. Level words now render in
+neutral navy and all bars in a single neutral slate, so bar *length* is the
+only magnitude signal. System colour is kept where it belongs — on the
+column headers (Free market green, Mixed blue, Command red). Matches the
+footnote's promise that "bar length shows how strongly each system delivers
+that dimension".
+
+`icons.js` changed → `sw.js` bumped to `econos-v326`.
+
 ## 0.44.10 — 2026-06-03
 
 ### PED Card 8 (exam toolkit) — restructure two blocks

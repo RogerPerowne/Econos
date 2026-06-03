@@ -6,6 +6,44 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.19 — 2026-06-03
+
+### Forensic audit of market-failure topic — fix label imprecision
+
+User asked for a full audit of the market-failure charts checking
+whether all the auto-placer rules were being applied consistently and
+flagging "imprecision" — equilibrium labels "hovering a little high"
+above their dots. Audit identified two root causes:
+
+**Point-label legacy `labelDy: -4`**
+
+Ten point-label declarations across the three market-failure specs
+(private-vs-social.js, market-failure-overview.js,
+welfare-loss-diagram.js) carried `labelDy: -4`. The engine now sets
+`dominant-baseline="middle"` on point-label text, so `labelDy: 0` is
+what aligns the label's vertical centre with the dot's centre — the
+`-4` was a legacy lift from before the middle-baseline was added,
+and it now puts every E*/E_m label ~4px above where the eye expects.
+Updated all ten to `labelDy: 0`.
+
+**Curve labels were missing `dominant-baseline="middle"`**
+
+The same fix needed in the curve-label rendering path. Without the
+middle baseline, the SVG `y` attribute is the text baseline, so
+visible text sits ~5px above where `chooseCurveLabelPosition`'s
+bbox math placed it. That ~5px gap is exactly the "imprecision" the
+user spotted. Added `dominant-baseline="middle"` to `renderCurve`'s
+label `<text>` so rendered position matches the auto-placer's
+intended position.
+
+After both fixes, every label in the three market-failure charts
+sits where the rules say it should: E*/E_m vertically aligned with
+their dots; MPC/MSC and MPB/MSB on opposite vertical sides per the
+parallel-pair rule; titles black/bold; DWL at each triangle's
+centroid.
+
+`sw.js` cache bumped to `econos-v313`.
+
 ## 0.41.18 — 2026-06-03
 
 ### Auto-placer + market-failure suite: forensic-feedback sweep

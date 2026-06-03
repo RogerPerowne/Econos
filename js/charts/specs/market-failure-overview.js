@@ -59,12 +59,12 @@
       { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
         tone: 'blue', radius: 6, hollow: true,
         gridlines: 'slate', ticks: { x: 'Q_m' },
-        label: 'E_m', labelDx: 10, labelDy: -4, anchor: 'start' },
+        label: 'E_m', labelDx: 10, labelDy: 0, anchor: 'start' },
       /* Social optimum — solved by the engine at MPB ∩ MSC */
       { x: ES.x, y: ES.y, intersection: { curves: ['MPB', 'MSC'] },
         tone: 'green', radius: 7, hollow: true,
         gridlines: 'green', ticks: { x: 'Q*' },
-        label: 'E*', labelDx: -10, labelDy: -4, anchor: 'end' }
+        label: 'E*', labelDx: -10, labelDy: 0, anchor: 'end' }
     ],
 
     texts: [

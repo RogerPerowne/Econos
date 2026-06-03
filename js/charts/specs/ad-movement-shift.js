@@ -108,9 +108,12 @@
           // AD₁ dashed grey reference
           { d: 'M 0.042,0.867 L 0.708,0.067',
             tone: 'gray', label: 'AD₁', strokeWidth: 2, dashed: '4 3', labelDx: -22, labelDy: 4 },
-          // AD₂ solid green, shifted right
+          // AD₂ solid green, shifted right.
+          // Right panel ends at pixel x=620; old labelDx=8 placed the
+          // 23-px-wide "AD₂" text starting at pixel 608, overflowing the
+          // panel by ~11px. labelDx=-10 + anchor 'end' tucks it inside.
           { d: 'M 0.250,0.867 L 0.917,0.067',
-            tone: 'green', label: 'AD₂', strokeWidth: 3, labelDx: 8, labelDy: 4 }
+            tone: 'green', label: 'AD₂', strokeWidth: 3, labelDx: -10, labelDy: 4, anchor: 'end' }
         ],
         arrows: [
           // Horizontal "shift right" arrow in the clear lower-middle space

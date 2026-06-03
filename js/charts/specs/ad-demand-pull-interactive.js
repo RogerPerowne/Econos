@@ -70,7 +70,10 @@
       /* ── Layer 1: AD₂ shifted right ───────────────────────── */
       { d: 'M 0.319,0.894 L 1.153,0.067',
         tone: 'green', label: 'AD₂', strokeWidth: 2.5,
-        labelDx: -22, labelDy: 14, anchor: 'end',
+        // Curve endpoint sits at chart x=1.153 (past the chart area —
+        // auto-clipped). labelDx=-32 pulls the "AD₂" right edge to pixel
+        // ~438, inside the 440-wide SVG. Old -22 overflowed by ~8px.
+        labelDx: -32, labelDy: 14, anchor: 'end',
         layer: 'idl-1' }
     ],
 

@@ -6,6 +6,36 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.4 — 2026-06-03
+
+### PPF Card 4 — moderate-bow curve + bigger Δx so the triangles read
+
+Follow-up to v0.41.3. The extreme-bow curve (`M 0,1 C 0.55,1 1.0,0.05
+1.0,0`) plus Δx = 1 capital good made the three opportunity-cost
+triangles visually cramped — the lesson "early OC is small" became
+"early OC is invisible" because the curve sat at y ≈ 1 for the first
+third of the x-axis.
+
+- **Curve** swapped to `M 0,1 C 0.7,0.9 0.9,0.3 1,0` — uniformly
+  bowed rather than flat-then-steep. Every triangle along the curve
+  now has visible height.
+- **Δx doubled** from 1 to **2 capital goods** so each chord is large
+  enough that its slope is the dominant visual.
+- **Trade positions retuned** to give clean fractional OC values
+  straddling the 1-for-1 anchor:
+  - View 1 — Cheap (green, OC ≈ 1/3): capital 1 → 3, consumer 9.8 → 9.2.
+  - View 2 — Even (blue, OC ≈ 1): capital 5 → 7, consumer 8.0 → 6.1.
+  - View 3 — Costly (rose, OC ≈ 5/3): capital 7 → 9, consumer 6.1 → 2.7.
+- **X-axis ticks** now appear ONLY at the capital values that matter
+  (1, 3, 5, 7, 9) and reveal progressively as views are clicked —
+  the axis itself tells the story. The dense 2/4/6/8 grid is gone.
+- **Y-axis tick numerals dropped** — the chord slope and the badge
+  carry the magnitude, and the y-values aren't clean integers anyway.
+- **Card prose** updated to reference the new numbers (Δx = 2,
+  fractional OCs).
+
+`sw.js` cache bumped to `econos-v299`.
+
 ## 0.41.3 — 2026-06-03
 
 ### PPF Card 4 — redrawn from scratch around three distinct OC trades

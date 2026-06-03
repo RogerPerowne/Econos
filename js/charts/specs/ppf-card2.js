@@ -1,36 +1,44 @@
 /* ============================================================
-   PPF card 4 — ppfBowedOutInteractive: three points on the curve,
-   three economically distinct opportunity-cost stories.
+   PPF card 4 — ppfBowedOutInteractive: three trades along a more
+   moderately bowed PPF, designed so the chord slopes (OC values)
+   read as 1/3, 1, 5/3 — straddling the 1-for-1 anchor.
 
-   The point of the diagram is NOT just "OC rises along the curve".
-   It's that the SAME +1 capital good costs a different amount of
-   consumer goods depending on where you are, and the three values
-   straddle 1.0 — so the three triangles correspond to three
-   qualitatively different trades:
+   Curve `M 0,1 C 0.7,0.9 0.9,0.3 1,0` was picked over the previous
+   extreme-bow curve because the old shape made the early triangles
+   visually flat (curve stayed at y≈1 for the first third of the
+   x-axis) — the lesson "early OC is small" became "early OC is
+   invisible". A moderate bow keeps every triangle legibly sized.
 
-     View 1 — CHEAP  (green) capital ≈ 2 → 3, consumer 9.6 → 9.1
-              OC ≈ 0.5 — you gain MORE than you give up.
-     View 2 — EVEN   (blue)  capital ≈ 5 → 6, consumer 7.6 → 6.5
-              OC ≈ 1.0 — a roughly 1-for-1 trade.
-     View 3 — COSTLY (rose)  capital ≈ 8 → 9, consumer 3.8 → 2.2
-              OC ≈ 1.5 — you give up MORE than you gain.
+   Trade Δx is 2 capital goods (was 1) so each triangle is large
+   enough that the chord slope is the dominant visual:
 
-   Each triangle has Δx = 0.1 chart-units = 1 capital good. Both
-   axes are calibrated 0..1 chart = 0..10 units, so chart-slope of
-   the dashed chord equals real OC and can be read straight off the
-   axis ticks. Tone progression green → blue → rose maps to the
-   "ahead / even / behind" framing in the card prose, not to a
-   generic "low/med/high" gradient.
+     View 1 — CHEAP    (green) capital 1 → 3, consumer ≈ 9.8 → 9.2
+              OC ≈ 1/3 — you gain ~3× what you give up.
+     View 2 — EVEN     (blue)  capital 5 → 7, consumer ≈ 8.0 → 6.1
+              OC ≈ 1   — the 1-for-1 trade, chord at ~45°.
+     View 3 — COSTLY   (rose)  capital 7 → 9, consumer ≈ 6.1 → 2.7
+              OC ≈ 5/3 — you give up ~1.7× what you gain.
+
+   X-axis tick numerals are emitted ONLY at the capital values that
+   currently matter (1, 3, 5, 7, 9) and they appear progressively as
+   the learner reveals each view — the axis itself tells the story.
+   Y-axis ticks are dropped: the badge carries the OC value and the
+   chord slope carries the visual.
 
    Progressive reveal: engine emits each triangle into <g class="idl-N">
-   with display:none; js/app.js shows layers 0..N-1 for view N, so the
-   three triangles accumulate as the learner clicks through.
+   with display:none; js/app.js shows layers 0..N-1 for view N, so
+   the three trades accumulate.
    ============================================================ */
 (function () {
   'use strict';
 
-  // 1 capital good — keeps the off-axis read clean (integers everywhere).
-  var DELTA_X = 0.1;
+  // 2 capital goods per trade — large enough that the chord slope reads.
+  var DELTA_X = 0.2;
+
+  // Tick-numeral template — reused for the x-axis tick texts per view.
+  function xTick(x, label) {
+    return { x: x, y: -0.04, text: String(label), tone: 'slate', fontSize: 11, anchor: 'middle' };
+  }
 
   window.ECONOS_PPF_CARD2_SPEC = {
     width: 440,
@@ -41,51 +49,49 @@
       y: { label: 'Consumer goods' }
     },
     curves: [
-      // PPF spans the full 0..10 / 0..10 chart so axis-tick numerals
-      // line up with the curve endpoints (10, 0) and (0, 10).
-      { id: 'ppf', d: 'M 0,1 C 0.55,1 1.0,0.05 1.0,0', tone: 'blue', label: 'PPF', strokeWidth: 2.5 }
-    ],
-
-    // Numeric tick labels on both axes (chart 0..1 = 0..10 units). The
-    // engine's renderAxes doesn't draw ticks itself, so we place the
-    // numerals via the `texts` field — anchored just outside the chart
-    // area on each side. Skip 0 (origin "O") and 10 (collides with the
-    // axis-end labels / curve label).
-    texts: [
-      { x: 0.2, y: -0.04, text: '2',  tone: 'slate', fontSize: 11, anchor: 'middle' },
-      { x: 0.4, y: -0.04, text: '4',  tone: 'slate', fontSize: 11, anchor: 'middle' },
-      { x: 0.6, y: -0.04, text: '6',  tone: 'slate', fontSize: 11, anchor: 'middle' },
-      { x: 0.8, y: -0.04, text: '8',  tone: 'slate', fontSize: 11, anchor: 'middle' },
-      { x: -0.025, y: 0.2, text: '2', tone: 'slate', fontSize: 11, anchor: 'end' },
-      { x: -0.025, y: 0.4, text: '4', tone: 'slate', fontSize: 11, anchor: 'end' },
-      { x: -0.025, y: 0.6, text: '6', tone: 'slate', fontSize: 11, anchor: 'end' },
-      { x: -0.025, y: 0.8, text: '8', tone: 'slate', fontSize: 11, anchor: 'end' }
+      // Moderately bowed PPF — uniformly curved rather than flat-then-steep
+      // so every triangle along the curve has visible height.
+      { id: 'ppf', d: 'M 0,1 C 0.7,0.9 0.9,0.3 1,0', tone: 'blue', label: 'PPF', strokeWidth: 2.5 }
     ],
 
     viewDefaultsHidden: true,
     views: [
       {
-        // CHEAP — capital 2 → 3, sacrifice ≈ 0.5 consumer goods. Gain > sacrifice.
+        // CHEAP — capital 1 → 3, OC ≈ 1/3. Gain 3× what you sacrifice.
+        // fromT ≈ 0.0588 hits x = 0.1; engine solves the end-corner via Δx.
         key: 'cheap',
         contentLayer: 'idl-1',
         ocTriangles: [
-          { curve: 'ppf', fromT: 0.124, deltaX: DELTA_X, label: 'OC ≈ 0.5', tone: 'green' }
+          { curve: 'ppf', fromT: 0.0493, deltaX: DELTA_X, label: 'OC ≈ 1/3', tone: 'green' }
+        ],
+        texts: [
+          xTick(0.1, '1'),
+          xTick(0.3, '3')
         ]
       },
       {
-        // EVEN — capital 5 → 6, sacrifice ≈ 1.0 consumer goods. 1-for-1.
+        // EVEN — capital 5 → 7, OC ≈ 1.0. The 1-for-1 trade.
+        // fromT ≈ 0.302 hits x = 0.5.
         key: 'even',
         contentLayer: 'idl-2',
         ocTriangles: [
-          { curve: 'ppf', fromT: 0.331, deltaX: DELTA_X, label: 'OC ≈ 1.0', tone: 'blue' }
+          { curve: 'ppf', fromT: 0.2956, deltaX: DELTA_X, label: 'OC ≈ 1', tone: 'blue' }
+        ],
+        texts: [
+          xTick(0.5, '5'),
+          xTick(0.7, '7')
         ]
       },
       {
-        // COSTLY — capital 8 → 9, sacrifice ≈ 1.5 consumer goods. Sacrifice > gain.
+        // COSTLY — capital 7 → 9, OC ≈ 5/3. Sacrifice 1.7× what you gain.
+        // fromT ≈ 0.479 hits x = 0.7.
         key: 'costly',
         contentLayer: 'idl-3',
         ocTriangles: [
-          { curve: 'ppf', fromT: 0.593, deltaX: DELTA_X, label: 'OC ≈ 1.5', tone: 'rose' }
+          { curve: 'ppf', fromT: 0.4730, deltaX: DELTA_X, label: 'OC ≈ 5/3', tone: 'rose' }
+        ],
+        texts: [
+          xTick(0.9, '9')
         ]
       }
     ]

@@ -34,7 +34,7 @@ window.ECONOS_TOPIC = {
       flowEmoji: '🗺️',
       flow: [
         { icon: '⚖️', tone: 'blue',   title: 'The core idea',              sub: 'Imperfect government vs imperfect market – both can fail. The relevant question is: which failure is less costly?' },
-        { icon: '⚠️', tone: 'amber',  title: 'Causes of government failure', sub: 'Information problems, political short-termism, administrative inefficiency, and unintended consequences.' },
+        { icon: '⚠️', tone: 'amber',  title: 'Causes of government failure', sub: 'Distorted price signals, unintended consequences, excessive administrative costs, and information gaps.' },
         { icon: '🔄', tone: 'rose',   title: 'Regulatory capture',          sub: 'Regulators end up serving the industry they regulate – weak enforcement, protected incumbents, consumer harm.' },
         { icon: '🐍', tone: 'purple', title: 'Unintended consequences',      sub: 'Interventions produce unexpected side-effects that can be as bad as – or worse than – the original market failure.' },
         { icon: '🏦', tone: 'green',  title: 'Reducing government failure',  sub: 'Independent regulators, sunset clauses, cost-benefit analysis, pilots, and transparency improve outcomes.' }
@@ -47,26 +47,26 @@ window.ECONOS_TOPIC = {
       id: 'govt_failure_2',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Causes of government failure',
-      tip: { icon: '🔍', tone: 'amber', text: 'Government failure is not one thing. It arises from four distinct root causes, each of which can push intervention from welfare-improving to welfare-reducing.' },
-      causesLabel: 'Four root causes',
+      tip: { icon: '🔍', tone: 'amber', text: 'Government failure is not one thing. Edexcel names <strong>four</strong> root causes – distortion of price signals, unintended consequences, excessive administrative costs, and information gaps – each of which can push intervention from welfare-improving to welfare-reducing.' },
+      causesLabel: 'The four causes Edexcel names',
       causesEmoji: '⚠️',
       causesStyle: 'tinted-flat',
       causes: [
         {
-          icon: '🧩', tone: 'blue', head: 'Information failure',
-          body: 'Setting an optimal Pigouvian tax requires knowing the exact MEC – which is inherently uncertain. If the government overestimates the externality, the tax overshoots and creates a new deadweight loss on the left of the optimal point. <strong>Result:</strong> the correction is worse than the disease.'
+          icon: '🔄', tone: 'blue', head: 'Distortion of price signals',
+          body: 'Taxes, subsidies and price controls override the information that free-market prices carry, so resources are misallocated. A subsidy props up output the market would shrink; a price cap removes the shortage signal that would otherwise attract new supply; rent controls below the market rent kill the signal to build. That misallocation is a welfare loss <em>on top of</em> any administrative cost.'
         },
         {
-          icon: '🗳️', tone: 'amber', head: 'Political short-termism',
-          body: 'Elected politicians face 4–5 year cycles. Policies with costs now but benefits later – infrastructure, climate action, pension reform – are systematically under-prioritised. Policies with benefits now but costs later (fiscal spending) are over-used. The incentive is to time policy to the electoral cycle, not the economic optimum.'
+          icon: '🔀', tone: 'amber', head: 'Unintended consequences',
+          body: 'Complex systems react to interventions in unexpected ways. Biofuel mandates raised food prices. Rent controls created housing shortages. Right to Buy reduced social-housing stock. The further an intervention is from the original externality, the higher the risk of cascading side-effects.'
         },
         {
-          icon: '💸', tone: 'rose', head: 'Administrative costs and inefficiency',
-          body: 'Government production lacks the profit motive and competitive pressure that drive productive efficiency. NHS procurement, public IT projects, and defence contracts routinely overrun on cost and time. These administrative costs are a deadweight burden that must be deducted from any welfare gain from intervention.'
+          icon: '💸', tone: 'rose', head: 'Excessive administrative costs',
+          body: 'Running an intervention is rarely cheap. Ofgem\'s energy price cap costs tens of millions a year to administer; the Soft Drinks Industry Levy needs HMRC collection machinery; large public IT projects (Universal Credit, NHS systems) have over-run by billions per NAO reports. These costs are a deadweight burden netted off any welfare gain.'
         },
         {
-          icon: '🔀', tone: 'purple', head: 'Unintended consequences',
-          body: 'Complex systems react to interventions in unexpected ways. Biofuel mandates raised food prices. Rent controls created housing shortages. Right to Buy reduced social housing stock. The further an intervention is from the original externality, the higher the risk of cascading unintended effects.'
+          icon: '🧩', tone: 'purple', head: 'Information gaps',
+          body: 'Setting an optimal Pigouvian tax requires knowing the exact MEC – which is inherently uncertain. Overestimate the externality and the tax overshoots, creating a fresh deadweight loss; underestimate it and the failure persists. Governments cannot know the optimum any more precisely than the data allows.'
         }
       ],
       causes2Label: 'Why this matters for evaluation',
@@ -76,7 +76,7 @@ window.ECONOS_TOPIC = {
         { icon: '⚖️', tone: 'amber', head: 'Costs must be weighed, not ignored',    body: 'Administrative costs, incentive distortions, and political biases are real costs. They must appear on the cost side of any CBA.' },
         { icon: '🏗️', tone: 'blue',  head: 'Institutional design matters',          body: 'Government failure is reduced by better institutions – independent bodies, transparency, clear mandates – not by avoiding all intervention.' }
       ],
-      examEdge: 'Hayek\'s knowledge problem: no central authority can aggregate all the dispersed, local, tacit knowledge that millions of price signals process every second. This applies to government intervention just as it does to central planning – governments cannot set optimal quantities or prices without knowing what consumers and producers know individually. Cite Hayek in any government failure evaluation for a high-band analytical point.'
+      examEdge: 'Beyond the four named causes, <strong>political short-termism</strong> is a strong evaluation add-on: elected governments face 4–5 year cycles, so policies with costs now and benefits later (infrastructure, climate, pension reform) are under-prioritised while benefits-now-costs-later policies are over-used. And underpinning the price-signal and information causes is <strong>Hayek\'s knowledge problem</strong>: no central authority can aggregate the dispersed, tacit knowledge that millions of prices process every second – so governments cannot set optimal quantities or prices any more than a central planner could. Cite Hayek for a high-band analytical point.'
     },
 
     /* ── Card 3: Regulatory Capture ─────────────────────────────────── */

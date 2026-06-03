@@ -6,6 +6,35 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.0 — 2026-06-03
+
+### PPF Card 6 — restored the Jamland (UK vs Germany vs China) 4-stage interactive
+
+- Reverted Card 6's chart from the 2×2 today-vs-tomorrow grid back to the
+  `ppfConsumerCapital` 4-view interactive (the "Jamland" investment
+  story). The four views step through:
+  1. **Country positions** — UK / Germany / China on a shared PPF₁,
+     driven by their investment ratios (~18% / ~22% / ~42%).
+  2. **Sacrifice for growth** — UK moves A → B along PPF₁: more capital,
+     fewer consumer goods now (with dashed arrow above PPF₁ + projection
+     gridlines).
+  3. **PPF₂ shift** — years of investment at B shift the frontier
+     outward; B → C straight up gives more consumer goods at the same
+     capital level.
+  4. **C → D along PPF₂** — consumer-heavy again, but D delivers more
+     of both goods than A ever did.
+- The `ppfConsumerCapital` icon and `ppf-card4.js` spec were already
+  wired through the shells from the old PR #824 — just had to swap the
+  card data over and update the card 6 keytakeaway / examEdge to the
+  longer investment-trajectory pedagogy.
+- Also (from earlier in this session): fixed `ppfTodayTomorrow` ids and
+  marker references the same way as the triptych and `ppfOppCost`
+  (panel-unique ids, built-in tone markers, lower buffer for tight
+  panels) — the chart isn't used by any card now but kept clean for
+  reference and any future use.
+
+`sw.js` cache bumped to `econos-v295`.
+
 ## 0.40.3 — 2026-06-03
 
 ### PPF Card 3 — side-by-side layout + clean curved arrows

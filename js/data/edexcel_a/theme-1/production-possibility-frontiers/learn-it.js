@@ -221,30 +221,58 @@ window.ECONOS_TOPIC = {
       id: 'ppf_6',
       template: 'framing',
       stepLabel: 'Learn: Step 6 of 7',
-      title: 'Capital goods vs consumer goods',
-      lede: 'Choosing more capital goods today can mean faster growth tomorrow.',
-      tip: { icon: '✅', tone: 'green', text: 'Sacrifice now can expand future productive capacity.' },
-      diagramLabel: 'Today vs tomorrow',
-      diagramEmoji: '⚖️',
-      diagramKey: 'ppfTodayTomorrow',
-      methodGrid: {
-        label: 'Why capital goods matter',
+      title: 'Consumer vs capital goods trade-off',
+      lede: 'Every economy chooses where to sit on the consumer–capital goods PPF. The choice today shapes where the PPF will be tomorrow.',
+      tip: { icon: '💡', tone: 'blue', text: 'Sacrifice now can expand future productive capacity — the Jamland story.' },
+      interactiveDiagram: {
+        svgKey: 'ppfConsumerCapital',
+        label: 'From "now" to "later" — the investment trade-off',
         emoji: '📈',
-        items: [
-          { tone: 'blue', icon: '🏭', title: '1. Investment',          body: 'Investment builds machines and infrastructure.' },
-          { tone: 'blue', icon: '📈', title: '2. More productive',      body: 'More capital raises future productivity and efficiency.' },
-          { tone: 'blue', icon: '↔️', title: '3. Larger PPF',           body: 'A larger PPF means higher future potential output.' }
+        // Every layer the engine emits, in the order it's emitted.
+        // Per-view `show` arrays below pick exactly which to display.
+        layers: ['countries', 'ppf1s', 'ppf1d', 'a-lbl', 'b-pos', 'a-b-arrow', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
+        views: [
+          {
+            label: 'Country positions',
+            tone: 'blue',
+            show: ['countries', 'ppf1s'],
+            head: 'Where countries actually sit on the PPF',
+            body: 'Every economy chooses a mix of consumer goods (everything households buy today) and capital goods (machines, infrastructure, buildings that boost <strong>future</strong> production). The UK, Germany and China sit at very different points on the same conceptual PPF — driven by their investment ratios.',
+            analysis: 'Investment ratios (Gross Fixed Capital Formation as a % of GDP): UK and USA ~18%, Germany ~22%, China ~42%. Capital-heavy economies sit further to the right on the PPF — less consumption now, but more productive capacity being built. China\'s growth over the past three decades has been <strong>directly dependent</strong> on sustained capital allocation: infrastructure, factories, machinery. The UK\'s comparatively low investment ratio is one structural reason its long-run growth has lagged.'
+          },
+          {
+            label: 'Sacrifice for growth',
+            tone: 'purple',
+            show: ['ppf1s', 'a-lbl', 'b-pos', 'a-b-arrow'],
+            head: 'UK moves A → B (along PPF₁)',
+            body: 'The UK\'s current production mix is <strong>A</strong> — heavily weighted toward consumer goods. To boost long-run growth, it can move <em>along</em> PPF₁ to point <strong>B</strong>: produce less consumer goods now, more capital goods. The dashed arrow shows the potential move; the dashed gridlines mark B\'s position — clearly more capital, fewer consumer goods than at A.',
+            analysis: 'This is movement <strong>along the existing PPF</strong> — not yet a shift. A → B is a reallocation of existing resources, with a real opportunity cost: lower consumer goods output means lower present living standards. Post-war Germany, Japan, South Korea (1960s–80s) and China (1990s–2010s) all made this choice deliberately. The political challenge: voters resist short-term sacrifices even when long-term gains are large.'
+          },
+          {
+            label: 'PPF₂: B → C',
+            tone: 'green',
+            show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow'],
+            head: 'Investment has shifted the frontier outward',
+            body: 'Years of producing at B has built up the capital stock. The PPF has shifted <strong>outward</strong> from PPF₁ (now dashed) to PPF₂ (solid). The arrow from B up to C shows the immediate gain: at the <em>same</em> level of capital goods, the country can now produce more <strong>consumer goods</strong> than before. C sits on the new frontier.',
+            analysis: 'This is supply-side, long-run growth. The shift is the direct consequence of B\'s higher investment ratio sustained over time. The catch: new capital must be <em>productively</em> invested. Misallocated investment (white-elephant infrastructure, Soviet five-year plans) builds capital that doesn\'t shift the frontier. The UK\'s persistent under-investment in productive capital is one reason its PPF has shifted out more slowly than peers.'
+          },
+          {
+            label: 'C → D along PPF₂',
+            tone: 'green',
+            show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
+            head: 'D — consumer-heavy again, but at higher absolute levels',
+            body: 'With PPF₂ in hand, the country specialises <strong>back</strong> toward consumer goods — moving along PPF₂ from C to D. D is in the consumer-heavy region, the same kind of allocation A occupied on PPF₁ originally. But because PPF₂ is bigger, D delivers more consumer goods AND more capital goods than A ever did.',
+            analysis: 'Compare D with A: same "consumer-heavy" mix, but everything is higher in absolute terms. That\'s the long-run pay-off of the A → B → PPF shift → D trajectory. The "Jamland" insight: <strong>more jam tomorrow is possible — but only if you stomach less jam today.</strong> A* moves: name the opportunity cost (consumer goods foregone at B), distinguish movement along the PPF (A→B, C→D) from a shift of the PPF (PPF₁→PPF₂), and link to real countries that made this choice.'
+          }
         ]
       },
-      versusList: {
-        rows: [{
-          left:  { tone: 'blue',  icon: '🛒', name: 'More consumer goods now', premise: 'Higher living standards today, but slower future growth.' },
-          right: { tone: 'amber', icon: '📈', name: 'More growth later',       premise: 'Lower consumption today, but higher future potential.' }
-        }]
-      },
-      note: { icon: 'ℹ️', tone: 'blue', text: 'This is why economies must balance present living standards with future growth.' },
-      keyTakeaway: 'PPFs show that growth often requires a present-day opportunity cost.',
-      examEdge: 'Use capital-vs-consumer-goods examples to link PPF analysis to investment and long-run economic growth.'
+      keyTerms: [
+        { term: 'Investment ratio',  def: 'Gross Fixed Capital Formation as a % of GDP — the share of an economy\'s output devoted to building productive capital (machines, infrastructure) rather than consumed today.' },
+        { term: 'Deferred consumption', def: 'Choosing to consume less now (point B vs A) so that more resources go into capital goods — the opportunity cost paid for long-run growth.' },
+        { term: 'PPF outward shift', def: 'A long-run increase in productive capacity, driven by capital accumulation, better technology, or labour-force growth. Movement along the PPF (A→B) is not a shift; only PPF₁ → PPF₂ is.' }
+      ],
+      keyTakeaway: 'PPFs show that growth often requires a present-day opportunity cost — but the long-run pay-off is more of <em>both</em> goods.',
+      examEdge: 'A* moves: name the OPPORTUNITY COST of investment (consumer goods foregone — point A to point B), distinguish movement along the PPF (A→B) from a shift (PPF₁→PPF₂), and link to real countries. Post-war Germany and Japan made this exact choice; their PPFs shifted dramatically outward over the following decades. The UK\'s lower investment ratio is one structural reason its growth has lagged.'
     },
 
     /* ── CARD 7 — The PPF exam toolkit (consolidation) ────────────── */

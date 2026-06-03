@@ -49,10 +49,10 @@
       { x: 0.93, y: 0.30, text: 'D', tone: 'blue', bold: true, fontSize: 15, anchor: 'middle' },
       { layer: 'layer-a', x: -0.02, y: A.y, text: '10', tone: 'slate', fontSize: 13, anchor: 'end' },
       { layer: 'layer-a', x: A.x, y: -0.06, text: '20', tone: 'slate', fontSize: 13, anchor: 'middle' },
-      { layer: 'layer-a', x: A.x - 0.04, y: A.y + 0.03, text: 'A', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' },
+      { layer: 'layer-a', x: A.x - 0.02, y: A.y - 0.055, text: 'A', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' },
       { layer: 'layer-b', x: -0.02, y: B.y, text: '6', tone: 'slate', fontSize: 13, anchor: 'end' },
       { layer: 'layer-b', x: B.x, y: -0.06, text: '40', tone: 'slate', fontSize: 13, anchor: 'middle' },
-      { layer: 'layer-b', x: B.x - 0.04, y: B.y + 0.03, text: 'B', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' }
+      { layer: 'layer-b', x: B.x - 0.02, y: B.y - 0.055, text: 'B', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' }
     ]
   };
 })();

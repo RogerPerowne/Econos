@@ -65,16 +65,16 @@
       /* persistent B labelling */
       { x: -0.02, y: B.y, text: '8', tone: 'slate', fontSize: 13, anchor: 'end' },
       { x: B.x, y: -0.06, text: '30', tone: 'slate', fontSize: 13, anchor: 'middle' },
-      { x: B.x - 0.04, y: B.y + 0.03, text: 'B', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' },
+      { x: B.x - 0.02, y: B.y - 0.055, text: 'B', tone: 'blue', bold: true, fontSize: 15, anchor: 'end' },
       /* contraction */
       { layer: 'layer-contract', x: -0.02, y: A.y, text: '10', tone: 'slate', fontSize: 13, anchor: 'end' },
       { layer: 'layer-contract', x: A.x, y: -0.06, text: '20', tone: 'slate', fontSize: 13, anchor: 'middle' },
-      { layer: 'layer-contract', x: A.x - 0.04, y: A.y + 0.03, text: 'A', tone: 'red', bold: true, fontSize: 15, anchor: 'end' },
+      { layer: 'layer-contract', x: A.x - 0.02, y: A.y - 0.055, text: 'A', tone: 'red', bold: true, fontSize: 15, anchor: 'end' },
       { layer: 'layer-contract', x: 0.30, y: 0.95, text: 'Contraction', tone: 'red', bold: true, fontSize: 12, anchor: 'start' },
       /* extension */
       { layer: 'layer-extend', x: -0.02, y: C.y, text: '6', tone: 'slate', fontSize: 13, anchor: 'end' },
       { layer: 'layer-extend', x: C.x, y: -0.06, text: '40', tone: 'slate', fontSize: 13, anchor: 'middle' },
-      { layer: 'layer-extend', x: C.x - 0.04, y: C.y + 0.03, text: 'C', tone: 'green', bold: true, fontSize: 15, anchor: 'end' },
+      { layer: 'layer-extend', x: C.x - 0.02, y: C.y - 0.055, text: 'C', tone: 'green', bold: true, fontSize: 15, anchor: 'end' },
       { layer: 'layer-extend', x: 0.72, y: 0.56, text: 'Extension', tone: 'green', bold: true, fontSize: 12, anchor: 'start' }
     ]
   };

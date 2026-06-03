@@ -233,7 +233,7 @@ window.ECONOS_TOPIC = {
         layers: ['countries', 'ppf1s', 'ppf1d', 'a-lbl', 'b-pos', 'a-b-arrow', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
         views: [
           {
-            label: 'Country positions',
+            label: 'Three countries, one PPF',
             tone: 'blue',
             show: ['countries', 'ppf1s'],
             head: 'Where countries actually sit on the PPF',
@@ -241,7 +241,7 @@ window.ECONOS_TOPIC = {
             analysis: 'Investment ratios (Gross Fixed Capital Formation as a % of GDP): UK and USA ~18%, Germany ~22%, China ~42%. Capital-heavy economies sit further to the right on the PPF — less consumption now, but more productive capacity being built. China\'s growth over the past three decades has been <strong>directly dependent</strong> on sustained capital allocation: infrastructure, factories, machinery. The UK\'s comparatively low investment ratio is one structural reason its long-run growth has lagged.'
           },
           {
-            label: 'Sacrifice for growth',
+            label: 'Less jam today',
             tone: 'purple',
             show: ['ppf1s', 'a-lbl', 'b-pos', 'a-b-arrow'],
             head: 'UK moves A → B (along PPF₁)',
@@ -249,7 +249,7 @@ window.ECONOS_TOPIC = {
             analysis: 'This is movement <strong>along the existing PPF</strong> — not yet a shift. A → B is a reallocation of existing resources, with a real opportunity cost: lower consumer goods output means lower present living standards. Post-war Germany, Japan, South Korea (1960s–80s) and China (1990s–2010s) all made this choice deliberately. The political challenge: voters resist short-term sacrifices even when long-term gains are large.'
           },
           {
-            label: 'PPF₂: B → C',
+            label: 'The frontier grows',
             tone: 'green',
             show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow'],
             head: 'Investment has shifted the frontier outward',
@@ -257,7 +257,7 @@ window.ECONOS_TOPIC = {
             analysis: 'This is supply-side, long-run growth. The shift is the direct consequence of B\'s higher investment ratio sustained over time. The catch: new capital must be <em>productively</em> invested. Misallocated investment (white-elephant infrastructure, Soviet five-year plans) builds capital that doesn\'t shift the frontier. The UK\'s persistent under-investment in productive capital is one reason its PPF has shifted out more slowly than peers.'
           },
           {
-            label: 'C → D along PPF₂',
+            label: 'More jam tomorrow',
             tone: 'green',
             show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
             head: 'D — consumer-heavy again, but at higher absolute levels',

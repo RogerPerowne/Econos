@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.13 — 2026-06-03
+
+### PES Card 1 — remove the divider line between the two supply panels
+
+Dropped the light-grey vertical divider line between the inelastic and
+elastic supply charts on `pesBigPictureCompare`. The central VS badge stays
+and continues to separate the two panels cleanly. `icons.js` changed →
+`sw.js` bumped to `econos-v327`.
+
 ## 0.44.12 — 2026-06-03
 
 ### YED/XED determinants card — even up & de-nerd the YED column

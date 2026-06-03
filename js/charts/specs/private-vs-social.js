@@ -49,15 +49,12 @@
             tone: 'amber', label: 'MPC', strokeWidth: 2.5,
             labelDx: -6, labelDy: -20, anchor: 'end' },
           /* MSC shifted UP from MPC — pollution adds external cost.
-           * label placed BELOW-LEFT of endpoint (anchor='end', labelDy
-           * positive) so it sits inline on the MSC line at chart-x≈0.72
-           * rather than stacking next to the MPC label at the top-right
-           * corner — user feedback was that the old anchor='start' /
-           * labelDx=8 had MSC and MPC visually merged at the top of
-           * the chart. */
+           * Label position deliberately UNSET — the engine's
+           * auto-placer (chooseCurveLabelPosition, v0.41.15) evaluates
+           * five candidate positions and picks the one that doesn't
+           * overlap the curve or other labels. */
           { id: 'MSC', d: 'M 0.069,0.270 L 0.785,0.880',
-            tone: 'red', label: 'MSC', strokeWidth: 2.2, dashed: '6 4',
-            labelDx: -8, labelDy: 14, anchor: 'end' }
+            tone: 'red', label: 'MSC', strokeWidth: 2.2, dashed: '6 4' }
         ],
         points: [
           /* Market eq at MPB ∩ MPC */

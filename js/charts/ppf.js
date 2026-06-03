@@ -170,6 +170,115 @@
     ].join('');
   }
 
+  /* Sample a curve path into a polyline of pixel points. Used by the
+     curve-label auto-placer to detect whether a candidate label box
+     intersects the visible curve. M/L treated as endpoints + lerp;
+     C sampled at 20 points per segment. */
+  function samplePathPixels(d, scale, n) {
+    n = n || 20;
+    var pts = [];
+    var tokens = d.match(/[MLC]\s*[^MLC]+/gi) || [];
+    var lx = 0, ly = 0;
+    tokens.forEach(function (tok) {
+      var cmd = tok[0].toUpperCase();
+      var nums = tok.slice(1).split(/[\s,]+/).filter(Boolean).map(parseFloat);
+      if (cmd === 'M') { lx = nums[0]; ly = nums[1]; pts.push([scale.sx(lx), scale.sy(ly)]); }
+      else if (cmd === 'L') {
+        var x0 = lx, y0 = ly, x1 = nums[0], y1 = nums[1];
+        for (var i = 1; i <= n; i++) {
+          var t = i / n;
+          pts.push([scale.sx(x0 + t * (x1 - x0)), scale.sy(y0 + t * (y1 - y0))]);
+        }
+        lx = nums[0]; ly = nums[1];
+      } else if (cmd === 'C') {
+        var P = [[lx, ly], [nums[0], nums[1]], [nums[2], nums[3]], [nums[4], nums[5]]];
+        for (var j = 1; j <= n; j++) {
+          var tj = j / n, uj = 1 - tj;
+          var cx = uj*uj*uj*P[0][0] + 3*uj*uj*tj*P[1][0] + 3*uj*tj*tj*P[2][0] + tj*tj*tj*P[3][0];
+          var cy = uj*uj*uj*P[0][1] + 3*uj*uj*tj*P[1][1] + 3*uj*tj*tj*P[2][1] + tj*tj*tj*P[3][1];
+          pts.push([scale.sx(cx), scale.sy(cy)]);
+        }
+        lx = nums[4]; ly = nums[5];
+      }
+    });
+    return pts;
+  }
+
+  /* Auto-place a curve label. Evaluates FIVE candidate positions —
+     four at the curve's endpoint (LEFT, RIGHT, ABOVE, BELOW) plus
+     CENTER (at the curve's midpoint, offset above the line) — and
+     picks the one with lowest cost. Cost penalises:
+       - curve samples inside the label bbox (label sits on the line)
+       - other already-placed label bboxes intersected
+       - label extending outside the chart area
+     Used when the spec author hasn't pinned the label with explicit
+     labelDx + labelDy. Removes the "place it left/right/up/down,
+     screenshot, iterate" loop that motivated v0.41.15. */
+  function chooseCurveLabelPosition(curve, samples, area, placedBoxes) {
+    var text = curve.label;
+    var size = SIZE.curveLabel;
+    var endpoint = samples[samples.length - 1];
+    var ex = endpoint[0], ey = endpoint[1];
+    var offset = curve.labelOffset != null ? curve.labelOffset : 10;
+    var halfH = 1.15 * size / 2;
+    // CENTER candidate: midpoint of the curve, with the label offset
+    // ABOVE the line (perpendicular up in pixel space). Good for
+    // straight supply/demand lines where corners are crowded but the
+    // middle has empty space — also the natural slot for things like
+    // a DWL label inside a triangle.
+    var mid = samples[Math.floor(samples.length / 2)];
+    var candidates = [
+      { name: 'right',  x: ex + offset,        y: ey,                  anchor: 'start'  },
+      { name: 'left',   x: ex - offset,        y: ey,                  anchor: 'end'    },
+      { name: 'above',  x: ex,                  y: ey - offset - halfH, anchor: 'middle' },
+      { name: 'below',  x: ex,                  y: ey + offset + halfH, anchor: 'middle' },
+      { name: 'center', x: mid[0],              y: mid[1] - offset - halfH, anchor: 'middle' }
+    ];
+    var best = null, bestCost = Infinity;
+    for (var i = 0; i < candidates.length; i++) {
+      var c = candidates[i];
+      var box = estimateTextBox(text, size, c.x, c.y, c.anchor);
+      var cost = 0;
+      // Out-of-bounds: heavy penalty proportional to overflow distance
+      if (box.x < area.x - 2) cost += 1000 + (area.x - box.x);
+      if (box.x + box.w > area.x + area.width + 2) cost += 1000 + (box.x + box.w - area.x - area.width);
+      if (box.y < area.y - 2) cost += 1000 + (area.y - box.y);
+      if (box.y + box.h > area.y + area.height + 2) cost += 1000 + (box.y + box.h - area.y - area.height);
+      // Curve overlap: every sample point inside the bbox costs 100
+      for (var j = 0; j < samples.length; j++) {
+        var sx = samples[j][0], sy = samples[j][1];
+        if (sx >= box.x && sx <= box.x + box.w && sy >= box.y && sy <= box.y + box.h) {
+          cost += 100;
+        }
+      }
+      // Other-label proximity: heavy penalty for actual overlap, plus
+      // a graduated penalty for labels within 14px (so the chooser
+      // prefers placements that are visually SEPARATED, not just
+      // technically non-overlapping). Without this graduated term the
+      // auto-placer happily put an MSC label 5px below an MPC label
+      // because the bboxes didn't quite intersect.
+      if (placedBoxes) {
+        for (var k = 0; k < placedBoxes.length; k++) {
+          var ob = placedBoxes[k];
+          if (ob.text === text) continue;          // same-text duplicates ok
+          if (curve.layer && ob.layer && curve.layer !== ob.layer) continue;
+          if (boxesOverlap(box, ob)) {
+            cost += 500;
+          } else {
+            // Closest-edge distance. 0 when boxes touch, grows as they
+            // separate. Penalty inversely proportional below 14px.
+            var dx = Math.max(0, ob.x - (box.x + box.w), box.x - (ob.x + ob.w));
+            var dy = Math.max(0, ob.y - (box.y + box.h), box.y - (ob.y + ob.h));
+            var edgeDist = Math.hypot(dx, dy);
+            if (edgeDist < 14) cost += 200 * (14 - edgeDist) / 14;
+          }
+        }
+      }
+      if (cost < bestCost) { bestCost = cost; best = { lx: c.x, ly: c.y, anchor: c.anchor, box: box, name: c.name }; }
+    }
+    return best;
+  }
+
   function renderCurve(curve, scale, ctx, area) {
     var t = tone(curve.tone);
     var dAbs = scalePath(curve.d, scale);
@@ -183,15 +292,25 @@
     var labelHtml = '';
     if (curve.label) {
       var last = curve.d.match(/([0-9.\-]+)\s*,\s*([0-9.\-]+)\s*$/);
-      var lx, ly;
-      if (last) {
+      var lx, ly, labelAnchor;
+      // Auto-place when the spec author hasn't pinned the label with
+      // BOTH labelDx and labelDy. Falls back to the historical
+      // "endpoint + (6, -6)" placement when ctx/area aren't available
+      // (e.g. tests that render outside the engine harness).
+      var autoPlace = (curve.labelDx == null && curve.labelDy == null) && ctx && area && last;
+      if (autoPlace) {
+        var samples = samplePathPixels(curve.d, scale);
+        var choice = chooseCurveLabelPosition(curve, samples, area, ctx.placedBoxes || []);
+        lx = choice.lx; ly = choice.ly; labelAnchor = choice.anchor;
+      } else if (last) {
         lx = scale.sx(parseFloat(last[1])) + (curve.labelDx != null ? curve.labelDx : 6);
         ly = scale.sy(parseFloat(last[2])) + (curve.labelDy != null ? curve.labelDy : -6);
+        labelAnchor = curve.anchor || 'start';
       } else {
         lx = scale.sx(0.7); ly = scale.sy(0.05);
+        labelAnchor = curve.anchor || 'start';
       }
-      var labelAnchor = curve.anchor || 'start';
-      var labelAnchorAttr = curve.anchor ? ' text-anchor="' + curve.anchor + '"' : '';
+      var labelAnchorAttr = (autoPlace || curve.anchor) ? ' text-anchor="' + labelAnchor + '"' : '';
       labelHtml = '<text x="' + lx + '" y="' + ly + '"' + labelAnchorAttr + ' font-size="' + SIZE.curveLabel + '" font-weight="700" fill="' + t.label + '">' + curve.label + '</text>';
       // Track curve label in placedBoxes so dev-mode off-stage and
       // clash checks see it. Without this, a curve label that

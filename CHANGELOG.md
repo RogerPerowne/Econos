@@ -6,6 +6,54 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.15 — 2026-06-03
+
+### Curve-label auto-placer in the chart engine
+
+User feedback after v0.41.14: "It's interesting that you think it's
+better, when it's clearly not. All you need to do each time, is place
+a label in four places (left, right, up or down) and then pick the
+best. How are we going to solve this frustrating universal problem
+once and for all" — followed by a note that DWL-style central
+placement makes 5 candidates total.
+
+So that's now in the engine. `chooseCurveLabelPosition` in `ppf.js`
+evaluates **five** candidate positions for every curve label that
+isn't pinned with explicit `labelDx` + `labelDy`:
+
+| Candidate | Where it puts the label |
+|-----------|------------------------|
+| **right**  | endpoint + 10px to the right, anchor='start' |
+| **left**   | endpoint − 10px to the left, anchor='end' |
+| **above**  | endpoint − 10px − halfH, centered horizontally |
+| **below**  | endpoint + 10px + halfH, centered horizontally |
+| **center** | curve midpoint − 10px − halfH, centered (DWL slot) |
+
+Each candidate is scored on:
+- **Out-of-bounds** — 1000 + overflow distance (always disqualifying)
+- **Curve overlap** — 100 per curve sample inside the bbox (label
+  sits on the line)
+- **Other-label overlap** — 500 per intersecting bbox
+- **Proximity** — graduated penalty for labels within 14px of any
+  edge (the case that motivated this — MSC and MPC bboxes didn't
+  quite intersect but were visually stacked)
+
+Lowest cost wins. Used in `renderCurve` when `curve.labelDx` and
+`curve.labelDy` are both unset. Explicit values still win when set —
+this is opt-in, not a forced rewrite of existing specs.
+
+**First spec on the new system**: `private-vs-social.js` MSC label.
+With its labelDx/labelDy removed, the auto-placer picks CENTER (the
+curve midpoint, well clear of the MPC label that the old
+endpoint-anchored placement was crashing into).
+
+Future: roll out by removing manual labelDx/labelDy from specs that
+the audit script (`scripts/audit-labels.mjs`) still flags. Manual
+overrides remain available for the rare case where the author needs
+a specific position.
+
+`sw.js` cache bumped to `econos-v309`.
+
 ## 0.41.14 — 2026-06-03
 
 ### Sweep label-to-curve placement using the new audit script

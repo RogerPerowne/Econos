@@ -8,16 +8,17 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroElasticity',
     summary: 'YED measures how demand responds to income changes; XED measures how demand for one good responds to the price of another. Together they classify goods (normal, inferior, luxury, necessity) and reveal whether two products are substitutes, complements, or unrelated.',
-    doInThis: 'Work through 9 cards: the big picture, income elasticity, a YED worked example, how income reshapes spending, cross-price elasticity, an XED worked example, the strength of XED relationships, real-world uses, and an exam-ready toolkit.',
+    doInThis: 'Work through 10 cards: the big picture, income elasticity, a YED worked example, how income reshapes spending, cross-price elasticity, an XED worked example, the strength of XED relationships, what determines the size of YED and XED, real-world uses, and an exam-ready toolkit.',
     outcomes: [
       'Calculate and interpret YED including sign and magnitude',
       'Classify goods as normal (luxury/necessity) or inferior using YED',
       'Calculate and interpret XED including sign and what it reveals about the relationship between goods',
+      'Explain the factors that determine the size of YED and XED',
       'Apply YED and XED to business strategy, competition policy, and macroeconomic analysis'
     ],
     tip: 'YED: positive = normal good; negative = inferior good; YED > 1 = luxury; 0 < YED < 1 = necessity. XED: positive = substitutes; negative = complements; zero = unrelated.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '9 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '10 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -30,7 +31,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_1',
-      stepLabel: 'Learn: Step 1 of 9',
+      stepLabel: 'Learn: Step 1 of 10',
       title: 'YED and XED — the big picture',
       tip: { tone: 'green', icon: '🔒', text: 'YED shows how demand responds to <strong>income</strong>. XED shows how demand responds to <strong>another good’s price</strong>.' },
       intro: 'Demand doesn’t only respond to a good’s own price. It also responds to income and to the prices of related goods.',
@@ -59,7 +60,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_2',
-      stepLabel: 'Learn: Step 2 of 9',
+      stepLabel: 'Learn: Step 2 of 10',
       title: 'Income elasticity of demand',
       tip: { tone: 'green', icon: '🔒', text: 'YED = % change in quantity demanded \xf7 % change in income.' },
       intro: 'YED measures how strongly quantity demanded responds when consumer income changes.',
@@ -112,7 +113,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_calc',
       template: 'yed-calculation',
-      stepLabel: 'Learn: Step 3 of 9',
+      stepLabel: 'Learn: Step 3 of 10',
       title: 'Worked Example: Calculating YED',
       lede: 'The sign matters as much as the number – get both right.',
       scenario: {
@@ -139,7 +140,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_4',
-      stepLabel: 'Learn: Step 4 of 9',
+      stepLabel: 'Learn: Step 4 of 10',
       title: 'How income changes spending patterns',
       tip: { tone: 'green', icon: '🔒', text: 'Rising income usually lifts necessities a little, luxuries a lot, and can <strong>reduce</strong> demand for inferior goods.' },
       intro: 'As households get richer, they don’t increase demand for every good by the same amount.',
@@ -175,7 +176,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_5',
-      stepLabel: 'Learn: Step 5 of 9',
+      stepLabel: 'Learn: Step 5 of 10',
       title: 'Cross-price elasticity explained',
       tip: { tone: 'green', icon: '🔒', text: 'XED = % change in quantity demanded of good A \xf7 % change in price of good B.' },
       intro: 'XED measures how demand for one good responds when the price of another good changes.',
@@ -232,7 +233,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_calc2',
       template: 'xed-calculation',
-      stepLabel: 'Learn: Step 6 of 9',
+      stepLabel: 'Learn: Step 6 of 10',
       title: 'Worked Example: Calculating XED',
       lede: 'Always name both goods and state which price changed and which quantity responded.',
       scenario: {
@@ -261,7 +262,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_7',
-      stepLabel: 'Learn: Step 7 of 9',
+      stepLabel: 'Learn: Step 7 of 10',
       title: 'How strong is the relationship?',
       tip: { tone: 'green', icon: '🔒', text: 'A large <strong>positive</strong> XED suggests close substitutes. A large <strong>negative</strong> XED suggests strong complements.' },
       intro: 'For XED, the sign shows the direction of the relationship. The size shows how close the link really is.',
@@ -290,12 +291,47 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 8 – YED AND XED IN THE REAL WORLD
+       CARD 8 – WHAT DETERMINES THE SIZE OF YED AND XED — spec 1.2.3(d)
+       Closes the YED/XED determinants gap from the Theme 1 audit.
+       Distinct from C4 (what YED *reveals*) and C7 (how to *interpret*
+       XED magnitude): this card lists the *factors that drive* the size
+       of each elasticity. Two tile blocks (YED drivers, then XED
+       drivers), each driver carrying a UK example.
+       ================================================================ */
+    {
+      id: 'yed_xed_determinants',
+      stepLabel: 'Learn: Step 8 of 10',
+      title: 'What determines the size of YED and XED',
+      tip: { tone: 'green', icon: '🔒', text: 'Spec point 1.2.3(d): you must be able to explain the <strong>factors</strong> that make each elasticity large or small — not just calculate it.' },
+      intro: 'Two goods can both be "normal" or both be "substitutes", yet have very different elasticity sizes. These are the factors that decide how big the number is.',
+      causesLabel: 'What makes YED large or small',
+      causesEmoji: '💰',
+      causes: [
+        { tone: 'blue', head: 'Necessity vs luxury', body: 'Luxuries are highly income-sensitive (YED > 1); necessities barely move (0 < YED < 1); inferior goods fall as income rises (YED < 0). <em>UK: overseas holidays and restaurant meals surge in a boom (luxury); bread and milk creep up slowly (necessity); value own-label ranges can fall as incomes rise.</em>' },
+        { tone: 'amber', head: 'Income level &amp; stage of development', body: 'The <em>same</em> good can be a luxury at low income and a necessity — or even inferior — at high income. <em>UK: car ownership was a luxury in the 1950s and a near-necessity today; in lower-income economies a fridge or smartphone is still income-elastic.</em>' },
+        { tone: 'purple', head: 'Time horizon', body: 'Spending habits re-base slowly, so YED is often larger in the long run as households adjust their whole lifestyle to a new income level rather than tweaking one purchase.' }
+      ],
+      causes2Label: 'What makes XED large or small',
+      causes2Emoji: '🔀',
+      causes2: [
+        { tone: 'blue', head: 'Closeness of substitutes', body: 'The more two goods serve the same need, the larger the <strong>positive</strong> XED. <em>UK: rival streaming services (Netflix ↔ Disney+) or branded ↔ supermarket own-label have high positive XED; a price rise in one sends buyers to the other.</em>' },
+        { tone: 'amber', head: 'Strength of complementarity', body: 'The more two goods must be used together, the larger the <strong>negative</strong> XED. <em>UK: petrol and large cars, printers and ink, consoles and games — a price rise in one cuts demand for the other.</em>' },
+        { tone: 'purple', head: 'Brand loyalty &amp; switching costs', body: 'Strong brand attachment or high switching costs <strong>weaken</strong> XED — loyal or locked-in consumers don\'t switch even when a rival changes price. <em>UK: Apple\'s ecosystem lock-in keeps its XED with Android phones lower than the products\' similarity alone would suggest.</em>' }
+      ],
+      keyTakeaway: {
+        title: 'Big idea',
+        text: 'Sign tells you the <em>type</em> of good or relationship; these factors tell you the <em>size</em> of the response — which is what firms and policymakers actually plan around.'
+      },
+      examEdge: 'A common top-band move: having classified a good or relationship, go one step further and justify <em>why</em> the elasticity is large or small using one of these factors. "Demand is income-elastic because it is a luxury with no necessity component" earns the evaluation mark.'
+    },
+
+    /* ================================================================
+       CARD 9 – YED AND XED IN THE REAL WORLD
        Four scenarios + who uses them + short context big consequences
        ================================================================ */
     {
       id: 'yed_xed_8',
-      stepLabel: 'Learn: Step 8 of 9',
+      stepLabel: 'Learn: Step 9 of 10',
       title: 'YED and XED in the real world',
       tip: { tone: 'green', icon: '🔒', text: 'Elasticities turn a change in income or price into a <strong>prediction about demand</strong>.' },
       intro: 'Elasticities help firms and governments forecast how markets change in recessions, booms, and price shocks.',
@@ -338,7 +374,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_9',
-      stepLabel: 'Learn: Step 9 of 9',
+      stepLabel: 'Learn: Step 10 of 10',
       title: 'The YED and XED exam toolkit',
       tip: { tone: 'green', icon: '🔒', text: 'Good answers <strong>calculate, classify and apply</strong>.' },
       intro: 'Most questions boil down to identifying the change, choosing the right elasticity, calculating it, and applying it.',

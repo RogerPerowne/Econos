@@ -39,8 +39,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 3',
       title: 'What ‘rational’ means',
-      lede: 'Rational means consistent, goal-seeking, and comparing extra benefit with extra cost. It is a simplifying assumption that underpins almost every demand-and-supply diagram you will meet.',
-      tip: { icon: '✅', tone: 'green', text: 'Rationality is a simplifying assumption – not a claim that people are robots.' },
+      lede: 'Standard economic models rest on two assumptions: <strong>consumers maximise utility</strong> and <strong>firms maximise profit</strong>. Both choose consistently, at the margin, by comparing extra benefit with extra cost. This is the foundation for almost every demand-and-supply diagram you will meet.',
+      tip: { icon: '✅', tone: 'green', text: 'Two assumptions, one logic: pick the option whose marginal benefit beats its marginal cost.' },
       diagramKey: 'rationalAgentHub',
       diagramLabel: 'What a rational agent does',
       diagramEmoji: '🧠',
@@ -60,7 +60,7 @@ window.ECONOS_TOPIC = {
       keyTermsLabel: 'Key terms',
       keyTermsEmoji: '📖',
       keyTakeaway: 'Rationality helps economists build clear models of behaviour before testing them against the real world.',
-      examEdge: 'In essays, treat rationality as the baseline assumption, then evaluate whether it is realistic.'
+      examEdge: 'Rationality is a <em>simplifying assumption</em>, not a claim that people are robots — economists build the model first, then test how realistic it is. Behavioural economics (spec 1.2.10) tackles the cases where it breaks down. In essays, state the assumption explicitly before using it, then evaluate.'
     },
 
     /* ----- CARD 2 – Consumers maximise utility ----- */

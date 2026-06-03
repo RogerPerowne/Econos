@@ -110,7 +110,8 @@ window.ECONOS_TOPIC = {
       causes2Label: 'Why it matters',
       causes2Emoji: '💡',
       causes2Style: 'tinted-flat',
-      examEdge: 'When explaining the slope, name at least one mechanism – the <strong>substitution effect</strong>, the <strong>real-income effect</strong>, or <strong>diminishing marginal utility</strong>. Rare Giffen/Veblen exceptions don’t overturn the basic demand story.'
+      tipLate: { icon: '⭐', tone: 'purple', head: 'The deepest reason', text: '<strong>Diminishing marginal utility</strong> is the foundational reason demand curves slope down. Each extra unit gives less satisfaction, so consumers only choose to buy more if the price falls. Substitution and real-income effects sit on top of this — DMU is the bedrock that makes the law of demand hold even when no clear substitute or income change is involved.' },
+      examEdge: 'When explaining the slope, name at least one mechanism – the <strong>substitution effect</strong>, the <strong>real-income effect</strong>, or <strong>diminishing marginal utility</strong>. The spec (1.2.2) specifically requires you to link DMU to the demand-curve shape, so this is the safest move. Rare Giffen/Veblen exceptions don’t overturn the basic demand story.'
     },
 
     /* ================================================================
@@ -225,7 +226,7 @@ window.ECONOS_TOPIC = {
       ],
       flowTitle: 'How to think about it',
       flowEmoji: '🧭',
-      examEdge: 'Use the terms carefully: <strong>normal/inferior</strong> refer to <em>income</em> changes (YED); <strong>substitutes/complements</strong> refer to the <em>relationship between goods</em> (XED). This sets up the elasticity topic next.'
+      examEdge: 'Use the terms carefully: <strong>normal/inferior</strong> refer to <em>income</em> changes (YED); <strong>substitutes/complements</strong> refer to the <em>relationship between goods</em> (XED). Here the focus is the <strong>mechanism</strong> — income↑ shifts a normal good\'s demand right, an inferior good\'s left; a substitute\'s price rise shifts demand for this good right. The <em>magnitude</em> of the response (how big the shift is) is the elasticity topic next (1.2.3) — don\'t mix the two.'
     },
 
     /* ================================================================
@@ -283,7 +284,7 @@ window.ECONOS_TOPIC = {
         title: 'The big takeaway',
         text: 'If you can separate movements (own-price) from shifts (a named determinant), you can explain almost any demand question clearly – using exact language: quantity demanded, extension, contraction, increase in demand, decrease in demand.'
       },
-      examEdge: 'Top answers use exact language and always state whether the curve moves or we move on the curve before explaining the outcome.',
+      examEdge: 'Top answers use exact language and always state whether the curve moves or we move on the curve before explaining the outcome. The Level 3→4 step: <strong>predict knock-on effects on related markets</strong> — if demand for coffee shifts, what happens to demand for milk (complement) or tea (substitute), and on to derived demand for baristas? Tracing the chain earns evaluation marks.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]

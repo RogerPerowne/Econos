@@ -221,6 +221,7 @@ window.ECONOS_TOPIC = {
       keyTerms: [
         { term: 'Present bias', def: 'Over-weighting immediate rewards relative to future ones – beyond any normal time preference.' },
         { term: 'Hyperbolic discounting', def: 'The technical name for present bias – the rate at which we discount future rewards is steeper for the near future than the far future.' },
+        { term: 'Habitual behaviour', def: 'Repeating past choices automatically to avoid the cognitive cost of deciding again. It\'s why defaults are sticky — once people are auto-enrolled they tend to stay; once they smoke they tend to keep smoking. Edexcel names <em>habit</em> as the second reason consumers behave irrationally (after influence of others, before weakness at computation).' },
         { term: 'Internality', def: 'A cost a person imposes on their future self through present-biased decisions – like an externality, but internal to the individual.' },
         { term: 'Commitment device', def: 'A tool that locks in a choice in advance, so the future self cannot abandon the planner\'s preferred path.' }
       ],

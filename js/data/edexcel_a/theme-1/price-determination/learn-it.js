@@ -164,6 +164,16 @@ window.ECONOS_TOPIC = {
             body: 'Both shifts push price up, so <strong>P definitely rises</strong>. The effect on <strong>Q is ambiguous</strong> — demand pulls it up, the supply fall pulls it down.' }
         ]
       },
+      causesEmoji: '🧭',
+      causesLabel: 'The four cases at a glance',
+      causesStyle: 'tinted-flat',
+      causesCols: 2,
+      causes: [
+        { tone: 'green',  icon: '↗️', head: 'D↑ S↑',  body: '<strong>Q rises</strong> for sure (both push Q up). <em>P ambiguous</em> — depends on which shift is bigger.' },
+        { tone: 'amber',  icon: '↗️↘️', head: 'D↑ S↓', body: '<strong>P rises</strong> for sure (both push P up). <em>Q ambiguous</em> — demand pulls it up, supply fall pulls it down.' },
+        { tone: 'blue',   icon: '↘️↗️', head: 'D↓ S↑', body: '<strong>P falls</strong> for sure (both push P down). <em>Q ambiguous</em> — demand pulls it down, supply rise pulls it up.' },
+        { tone: 'rose',   icon: '↘️', head: 'D↓ S↓',  body: '<strong>Q falls</strong> for sure (both push Q down). <em>P ambiguous</em> — depends on which shift is bigger.' }
+      ],
       causes2Emoji: '🌍',
       causes2Label: 'Real-world examples',
       causes2: [
@@ -222,7 +232,7 @@ window.ECONOS_TOPIC = {
         { icon: '❓', head: 'Information failures', body: 'Buyers or sellers lack information about prices in other markets – cannot respond to price signals. Markets in remote areas, illiquid asset markets, and monopoly-information markets may not clear.' },
         { icon: '🏛️', head: 'Government intervention', body: 'Minimum prices, maximum prices, subsidies, and taxes all prevent the market from reaching the free-market equilibrium – intentionally or as side effects.' }
       ],
-      examEdge: 'Price controls cause predictable distortions. Rent control (price ceiling): housing shortage; black markets; quality deterioration; no new supply. Minimum wage (price floor above equilibrium): unemployment; firms substitute capital for labour; some workers better off, others lose jobs. Both are standard exam contexts.'
+      examEdge: 'Price controls cause predictable distortions. Rent control (price ceiling): housing shortage; black markets; quality deterioration; no new supply. Minimum wage (price floor above equilibrium): unemployment; firms substitute capital for labour; some workers better off, others lose jobs. <strong>Live UK case:</strong> housing supply has not cleared the market for decades — England builds ~180,000 homes/year while ~300,000 households form, sustaining a chronic shortage and pushing prices ~75% higher in the decade to 2022. Rent controls (often proposed) would deepen the shortage, not solve it. Both rent control and minimum wage are standard exam contexts.'
     },
     {
       id: 'market_equilibrium_7',

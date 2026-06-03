@@ -309,10 +309,10 @@ window.ECONOS_TOPIC = {
       flowBottomTitle: 'How to write it',
       flowBottomEmoji: '✍️',
       flowBottom: [
-        { icon: '🔍',  title: '1. Identify', body: 'Identify the point or shift on the PPF.', tone: 'blue'   },
-        { icon: '💬',  title: '2. State',    body: 'State what it means clearly.',             tone: 'amber'  },
-        { icon: '🔗',  title: '3. Link',     body: 'Link it to the relevant concept (e.g. scarcity, efficiency, growth).', tone: 'green'  },
-        { icon: '🏛️', title: '4. Finish',   body: 'Finish with the implication for the economy or policy decision.', tone: 'purple' }
+        { icon: '🔍',  title: '1. Identify', sub: 'Pinpoint the location — point A is on, inside or outside the PPF — or the type of change (movement along vs outward/inward shift).', tone: 'blue'   },
+        { icon: '💬',  title: '2. State',    sub: 'Say what it means in plain economic terms: efficient, unemployed, unobtainable, growing, declining.',                                tone: 'amber'  },
+        { icon: '🔗',  title: '3. Link',     sub: 'Connect it back to the underlying concept the curve illustrates — scarcity, opportunity cost, productive efficiency, growth.',     tone: 'green'  },
+        { icon: '🏛️', title: '4. Finish',   sub: 'Close with the consequence — what does this mean for output, welfare or the policy choice the question asks about?',                tone: 'purple' }
       ],
       note: { icon: 'ℹ️', tone: 'blue', text: 'PPFs help economists tell the story of <strong>choice now, efficiency today, and growth tomorrow</strong>.' },
       keyTakeaway: 'If you can read a PPF well, you can explain a surprising amount of economics — the PPF\'s power is its <strong>density</strong>: scarcity, choice, efficiency and growth all in one diagram. No other introductory model packs as much.',

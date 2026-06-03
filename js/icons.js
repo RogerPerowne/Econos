@@ -13535,16 +13535,18 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="bt-stage">
-        <!-- connector lines (triangle edges) -->
+        <!-- connector lines (triangle edges) — vertex coords match the
+             icon-circle centres in the 100×100 viewBox stretched to the
+             520×400 stage: Baker (50, 8), Fisher (14, 75), Shoemaker (86, 75). -->
         <svg class="bt-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="50" y1="16" x2="15" y2="84" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
-          <line x1="50" y1="16" x2="85" y2="84" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
-          <line x1="15" y1="84" x2="85" y2="84" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
+          <line x1="50" y1="8"  x2="14" y2="75" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
+          <line x1="50" y1="8"  x2="86" y2="75" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
+          <line x1="14" y1="75" x2="86" y2="75" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.4 1.2"/>
         </svg>
         <!-- red ✗ on each edge midpoint -->
-        <div class="bt-x" style="top:50%;left:32%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
-        <div class="bt-x" style="top:50%;left:68%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
-        <div class="bt-x" style="top:90%;left:50%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
+        <div class="bt-x" style="top:42%;left:32%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
+        <div class="bt-x" style="top:42%;left:68%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
+        <div class="bt-x" style="top:75%;left:50%;"><div style="width:26px;height:26px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;">✕</div></div>
         <!-- Baker -->
         <div class="bt-node bt-baker">
           <div class="bt-circle">🧑‍🍳</div>

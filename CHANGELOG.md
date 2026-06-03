@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.1 — 2026-06-03
+
+### YED/XED determinants card (Theme 1 spec gap 1.2.3d)
+
+Second Theme 1 content gap. `income-and-cross-price-elasticity` now has a
+dedicated **"What determines the size of YED and XED"** card (new Card 8).
+The topic previously covered what YED *reveals* (Card 4) and how to
+*interpret* XED magnitude (Card 7), but never the *factors that drive* the
+size of each elasticity — which is what spec 1.2.3(d) asks for.
+
+Two tile blocks, each driver carrying a UK example:
+
+- **YED size:** necessity vs luxury (holidays/dining vs bread/milk); income
+  level & stage of development (cars: 1950s luxury → today's near-necessity);
+  time horizon (habits re-base slowly → larger long-run YED).
+- **XED size:** closeness of substitutes (Netflix ↔ Disney+); strength of
+  complementarity (petrol & cars, printers & ink); brand loyalty / switching
+  costs (Apple ecosystem lock-in weakens XED).
+
+Framed explicitly as *determinants* (what makes the number big/small) to
+stay distinct from Card 7's *interpretation* of the magnitude. Topic
+renumbered 9 → 10 cards; intro / outcomes / stage count updated. Data-only
+change (network-first), so no service-worker bump.
+
 ## 0.42.0 — 2026-06-03
 
 ### Comparative advantage card (Theme 1 spec gap 1.1.5c) + worked-example conclusion fix

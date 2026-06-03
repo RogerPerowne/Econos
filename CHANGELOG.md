@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.9 — 2026-06-03
+
+### PPF Card 6 (UK / Jamland) — narrative button labels
+
+Replaced the four interactive-diagram view labels — which described
+the mechanics ("PPF₂: B → C", "C → D along PPF₂") rather than the
+story — with the four beats of the Jamland investment trade-off:
+
+- **Three countries, one PPF** — the comparison hook (UK / Germany / China)
+- **Less jam today** — the sacrifice (A → B along PPF₁)
+- **The frontier grows** — the pay-off (PPF₁ → PPF₂, B → C)
+- **More jam tomorrow** — the new equilibrium (C → D on PPF₂)
+
+The "jam" framing ties back to the card's lede ("the Jamland story").
+Data-only change — no `sw.js` bump needed (topic data files are
+network-first).
+
 ## 0.41.8 — 2026-06-03
 
 ### PPF Card 5 (shifts trio) — bias-shift arrow moved off the top-left

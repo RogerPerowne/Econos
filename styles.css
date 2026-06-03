@@ -2360,6 +2360,11 @@ img, svg { display: block; max-width: 100%; }
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-3);
 }
+/* Opt-in 2-column variant (set scenariosCols: 2 on a diagnose card).
+   Use for 4 scenarios so they form a clean 2×2 with no orphan rather
+   than 3 + 1 in the default 3-col grid. Still collapses to 1 column on
+   mobile via the ≤900px rule below (later in source, equal specificity). */
+.scenarios__grid--cols2 { grid-template-columns: repeat(2, 1fr); }
 
 .scenario {
   background: var(--econ-white);

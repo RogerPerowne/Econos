@@ -15,7 +15,7 @@ window.ECONOS_TOPIC = {
       'Identify the key determinants of PED and predict the elasticity of specific goods',
       'Apply PED to total revenue, tax incidence, and firm pricing strategy'
     ],
-    tip: 'PED = % change in QD \xf7 % change in P. Always negative. |PED| > 1 = elastic; |PED| < 1 = inelastic; |PED| = 1 = unit elastic.',
+    tip: 'PED = % change in QD \xf7 % change in P. Always negative. |PED| > 1 = elastic; |PED| < 1 = inelastic; |PED| = 1 = unit elastic (also called unitary — the term Edexcel uses).',
     stages: [
       { num: 1, name: 'Learn it', sub: '8 concept cards',            state: 'done',      href: TopicLoader.routes.learn()      },
       { num: 2, name: 'Link it',  sub: 'Apply skills with context',  state: 'available', href: TopicLoader.routes.link('intro') },
@@ -233,7 +233,7 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
       id: 'ped_6',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'What makes demand elastic?',
-      intro: 'Ask: “What can consumers do when the price rises?” The more options they have – to switch, delay, or go without – the more elastic demand will be. Five forces decide it.',
+      intro: 'Ask: “What can consumers do when the price rises?” The more options they have – to switch, delay, or go without – the more elastic demand will be. Six forces decide it: <strong>close substitutes</strong>, <strong>necessity vs luxury</strong>, <strong>share of income</strong>, <strong>time to adjust</strong>, <strong>habit &amp; addiction</strong>, and <strong>brand loyalty</strong> (the hub below maps all six; the cases that follow put them to work).',
       diagramKey: 'pedDriversHub',
       causesLabel: 'One good, different PED',
       causesEmoji: '🔀',
@@ -421,7 +421,7 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
   </div>
   <div style="border-radius:10px;overflow:hidden;border:1px solid #7C3AED20;">
     <div style="background:#7C3AED;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">🔍 Determinants</div>
-    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">Substitutes, necessity vs luxury, income share, time horizon, addiction.</div>
+    <div style="padding:10px 12px;font-size:12px;line-height:1.6;color:#0B1426;">Substitutes, necessity vs luxury, income share, time horizon, habit/addiction, brand loyalty.</div>
   </div>
   <div style="border-radius:10px;overflow:hidden;border:1px solid #0EA5E920;">
     <div style="background:#0EA5E9;color:#fff;font-weight:800;font-size:11px;padding:8px 12px;">📈 Revenue link</div>

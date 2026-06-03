@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.23 — 2026-06-03
+
+### PED card — unitary synonym + fix the five/six determinant mismatch
+
+Theme 1 improvement programme, Tier 1 (mechanical). The PED topic
+named "unit elastic" but never the exam-board synonym "unitary", and
+the determinant count was internally inconsistent:
+
+- Topic intro tip now reads "unit elastic (also called unitary — the
+  term Edexcel uses)".
+- Card 5 ("What makes demand elastic?") intro said "Five forces decide
+  it" while the `pedDriversHub` diagram on the same card shows **six**
+  (close substitutes, necessity vs luxury, share of income, time to
+  adjust, habit & addiction, brand loyalty). Intro now says six and
+  names all of them, so a text-only read enumerates the drivers before
+  the vignettes apply them.
+- Card 8 toolkit determinants tile listed only five (omitted brand
+  loyalty); now lists all six to match.
+
+Note: several other "quick wins" from the Theme 1 audit were
+investigated and deliberately NOT shipped in this batch —
+`topicNum` is a dormant field (not displayed anywhere, so its `3.x`
+values aren't a visible bug); the DMU "duplication" is a defensible
+forward-reference + full-treatment split, not redundancy; and the
+1.3→1.4 cross-link task surfaced a pre-existing broken-link bug
+(legacy `/learn/<topic>` URLs 404 under the path-based contract).
+Those are carried into the planning doc rather than shipped blind.
+
 ## 0.41.22 — 2026-06-03
 
 ### Information gaps Card 1 — symmetric vs asymmetric spec wording fix

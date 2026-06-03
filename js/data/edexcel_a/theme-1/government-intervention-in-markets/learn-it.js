@@ -327,8 +327,16 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+      illustratedGridLabel: 'Worked case: Scotland\'s minimum unit pricing (MUP)',
+      illustratedGridEmoji: '🥃',
+      illustratedGrid: [
+        { tone: 'green', title: '🏴 How MUP actually works', body: 'A floor of <strong>50p per unit of alcohol</strong> (Scotland since May 2018; Wales 2020; raised to 65p in 2024). It is a floor on price-<em>per-unit-of-alcohol</em>, so it bites hardest on the cheapest high-strength drinks – white cider, own-label spirits – which is exactly what the heaviest, most price-sensitive drinkers buy. Moderate drinkers already paying above 50p/unit are barely affected, so the policy <em>targets</em> the harmful consumption rather than the whole market.' },
+        { tone: 'blue', title: '📉 The evidence', body: 'Public Health Scotland (2023 evaluation): deaths <em>wholly attributable to alcohol</em> fell ~<strong>13%</strong> and hospitalisations ~4% against the projected trend; off-trade alcohol sold fell ~3%, concentrated in the heaviest-purchasing households. Feared cross-border shopping and illicit substitution turned out small.' },
+        { tone: 'rose', title: '⚠️ The catch – a windfall, not revenue', body: 'Crucial exam point: unlike an alcohol <em>tax</em>, the higher price under MUP is kept by <strong>retailers, not the Treasury</strong>. A tax raising price by the same amount would also fund treatment services and the NHS. MUP is mildly regressive, but the burden falls on harmful consumption – the policy intent – which is the standard defence.' }
+      ],
       keyTerms: [
         { term: 'Price floor', def: 'A legal minimum price. Only binding when set above the equilibrium price; below P<sub>e</sub> it has no effect on the market.' },
+        { term: 'Minimum unit pricing (MUP)', def: 'A floor on the price per unit of alcohol (Scotland 50p, 2018). A floor used to correct a demerit-good / negative-externality problem – the surplus accrues to retailers, not the state.' },
         { term: 'Excess supply', def: 'Sellers want to supply more than buyers will buy at the controlled price: Q<sub>s</sub> > Q<sub>d</sub>. Quantity traded is Q<sub>d</sub>.' },
         { term: 'Binding floor', def: 'A floor that actually constrains the market – i.e. set above the free-market equilibrium price. A floor below P<sub>e</sub> is non-binding.' },
         { term: 'Monopsony exception', def: 'In a labour market with a dominant employer, a minimum wage can raise both wages and employment by counteracting employer power – reversing the standard competitive-market result.' }

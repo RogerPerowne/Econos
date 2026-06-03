@@ -6,6 +6,14 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.20 — 2026-06-03
+
+### Positive externality diagram — shorten the in-triangle label
+
+The welfare-gain triangle is small, so the "Welfare gain" label crowded the
+E* dot. Shortened it to "Gain" so it sits cleanly inside the triangle. Spec
+only (network-first) — no `sw.js` bump; snapshot updated.
+
 ## 0.42.19 — 2026-06-03
 
 ### Externalities diagrams — tidy the description panel, kill the repetition

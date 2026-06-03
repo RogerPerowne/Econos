@@ -123,9 +123,10 @@
       { layer: 'layer-optimal', x: -0.028, y: Eopt.y,    text: 'P*', tone: 'green', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-optimal', x: Eopt.x,  y: -0.050,   text: 'Q*', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
 
-      // Welfare-gain label inside green triangle
+      // Welfare-gain label inside green triangle — short form ("Gain")
+      // because the triangle is small; "Welfare gain" crowded the E* dot.
       { layer: 'layer-wfg', x: (Em.x + Eopt.x + MsbAtQm.x) / 3 + 0.020, y: (Em.y + Eopt.y + MsbAtQm.y) / 3,
-        text: 'Welfare gain', tone: 'green', bold: true, anchor: 'middle' }
+        text: 'Gain', tone: 'green', bold: true, anchor: 'middle' }
     ],
 
     legends: [

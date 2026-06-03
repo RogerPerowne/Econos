@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.3 — 2026-06-03
+
+### Information Gaps Card 1 — swap flow/rows formats, trim wording
+
+Two blocks on Card 1 had their formats the wrong way round:
+
+- **The five key areas** (symmetric/asymmetric · adverse selection · moral
+  hazard · private solutions · government responses) were a horizontal
+  numbered **flow chain** — but they're *parallel categories*, not a
+  sequence. Now a single-column stacked-rows list (`causesStyle:
+  'numbered-rows'`, `causesCols: 1`, `causesPosition: 'top'`): icons kept,
+  no connecting arrows, and a single column so no "5-card orphan" in a
+  multi-column grid.
+- **The logic chain** (information gap → poor decisions → market failure)
+  was a tile grid — but it genuinely *is* a sequence, so it's now the
+  `flow` chain with arrows.
+
+Also trimmed the wordy symmetric/asymmetric body copy down to one tight
+line. Data-only change (network-first), no service-worker bump.
+
 ## 0.42.2 — 2026-06-03
 
 ### Weakness-at-computation card (Theme 1 spec gap 1.2.10a)

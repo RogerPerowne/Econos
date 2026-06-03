@@ -29,22 +29,29 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Information gaps: the big picture',
       tip: { icon: '💡', tone: 'blue', text: 'Information gaps are a type of market failure. They occur when one party in a transaction has more or better information than the other. This leads to poor decisions, lower trust, and inefficient outcomes.' },
-      flowTitle: 'The big picture: five key areas',
-      flowEmoji: '🗺️',
-      flow: [
-        { icon: '⚖️', tone: 'blue',   title: 'Symmetric vs asymmetric information', sub: '<strong>Symmetric</strong> information means both sides know the same things — the textbook benchmark of a competitive market. <strong>Asymmetric</strong> information means one side knows more than the other. (A separate idea, <em>imperfect</em> information, is where both sides lack some facts — the asymmetric case is what creates market failure.)' },
-        { icon: '🔍', tone: 'amber',  title: 'Adverse selection',                   sub: 'An ex-ante information problem – hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
-        { icon: '🛡️', tone: 'rose',   title: 'Moral hazard',                        sub: 'An ex-post information problem – behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
-        { icon: '📢', tone: 'green',  title: 'Private market solutions',            sub: 'Firms and individuals use signalling and screening to reveal information or sort good from bad.' },
-        { icon: '🏛️', tone: 'purple', title: 'Government responses',               sub: 'Governments can improve outcomes through disclosure, regulation, provision of information, and behavioural nudges.' }
-      ],
-      causesLabel: 'The logic flow',
-      causesEmoji: '➡️',
-      causesStyle: 'tinted-flat',
+      /* Five key areas — parallel categories, NOT a sequence, so rendered
+         as stacked rows (causesPosition:'top' keeps them above the flow). */
+      causesLabel: 'The big picture: five key areas',
+      causesEmoji: '🗺️',
+      causesPosition: 'top',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
       causes: [
-        { icon: 'ℹ️', tone: 'blue',  head: 'Information gap',              body: 'One side has more or better information' },
-        { icon: '⚠️', tone: 'amber', head: 'Poor decisions / missing trust', body: 'Wrong choices, higher risk, lower willingness to trade' },
-        { icon: '📉', tone: 'rose',  head: 'Market failure',               body: 'Inefficient outcomes, reduced welfare, lower trust in markets' }
+        { icon: '⚖️', tone: 'blue',   head: 'Symmetric vs asymmetric information', body: '<strong>Symmetric</strong> — both sides know the same things (the competitive benchmark). <strong>Asymmetric</strong> — one side knows more, the case that creates market failure. (<em>Imperfect</em> information, where both sides lack facts, is a separate idea.)' },
+        { icon: '🔍', tone: 'amber',  head: 'Adverse selection',                   body: 'An ex-ante information problem – hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
+        { icon: '🛡️', tone: 'rose',   head: 'Moral hazard',                        body: 'An ex-post information problem – behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
+        { icon: '📢', tone: 'green',  head: 'Private market solutions',            body: 'Firms and individuals use signalling and screening to reveal information or sort good from bad.' },
+        { icon: '🏛️', tone: 'purple', head: 'Government responses',               body: 'Governments can improve outcomes through disclosure, regulation, provision of information, and behavioural nudges.' }
+      ],
+      /* The logic flow IS a sequence (gap → poor decisions → failure), so it
+         is the flow chain. */
+      flowTitle: 'The logic flow',
+      flowEmoji: '➡️',
+      flowSep: '→',
+      flow: [
+        { icon: 'ℹ️', tone: 'blue',  title: 'Information gap',              sub: 'One side has more or better information.' },
+        { icon: '⚠️', tone: 'amber', title: 'Poor decisions / missing trust', sub: 'Wrong choices, higher risk, lower willingness to trade.' },
+        { icon: '📉', tone: 'rose',  title: 'Market failure',               sub: 'Inefficient outcomes, reduced welfare, lower trust in markets.' }
       ],
       causes2Label: 'Why this matters',
       causes2Emoji: '⭐',

@@ -6,6 +6,35 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.19 — 2026-06-03
+
+### Externalities diagrams — tidy the description panel, kill the repetition
+
+A sweep of the interactive diagram on both Negative Externalities (Card 2)
+and Positive Externalities (Card 2), which shared the same three faults:
+
+- **Right-hand description panel (the chart legend) was too long and badly
+  formatted.** Each body line had been hand-split into sentence fragments
+  that then *also* wrapped in the narrow column ("Marginal private cost – /
+  what / the firm itself pays"). Rewritten so each entry is one complete
+  short sentence that wraps cleanly, and cut from three sections per step to
+  two — the old "what each curve means" section just duplicated the labels
+  already drawn on the chart.
+- **The analysis panel underneath repeated the legend almost verbatim** at
+  every step. Rewritten as the economic *insight* for each move (why Qₘ is
+  wrong, what the gap does, what the optimum costs, how the tax/subsidy
+  fixes it) rather than re-describing the same coordinates.
+- **Subscripts rendered as literal underscores** (`Q_m`, `P_m`, `E_market`).
+  Fixed to proper subscripts (Qₘ, Pₘ, Eₘ) across both specs, the step text
+  and the exam-edge lines.
+- Removed the `diagramCallouts` tiles (a third restatement of output-too-
+  high / DWL / MEC gap) and, on Positive Externalities, the redundant
+  "what the diagram shows" `tipLate` — keeping only the genuinely additive
+  production-side mirror note.
+
+Spec + data files only (network-first) — no `sw.js` bump. Chart SVG
+regression snapshots updated for both specs.
+
 ## 0.42.18 — 2026-06-03
 
 ### Fix sticky caching — "network-first" was secretly serving stale content

@@ -98,7 +98,7 @@
       // Market equilibrium — red hollow (always visible)
       { layer: 'layer-market-eq',
         x: Em.x, y: Em.y, tone: 'red', radius: 6, hollow: true,
-        label: 'E_market', labelDx: 12, labelDy: -4, anchor: 'start' },
+        label: 'Eₘ', labelDx: 12, labelDy: -4, anchor: 'start' },
       // Socially optimal equilibrium — green hollow
       { layer: 'layer-optimal',
         x: Eopt.x, y: Eopt.y, tone: 'green', radius: 7, hollow: true,
@@ -113,9 +113,9 @@
     // equilibrium: MPC = MSB", "Production imposes external costs →
     // MSC sits above MPC", etc.) live in the card body anyway.
     texts: [
-      // Persistent E_market axis tick labels
-      { layer: 'layer-market-eq', x: -0.028, y: Em.y,    text: 'P_m', tone: 'red', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-market-eq', x: Em.x,    y: -0.050, text: 'Q_m', tone: 'red', bold: true, fontSize: 12, anchor: 'middle' },
+      // Persistent Eₘ axis tick labels
+      { layer: 'layer-market-eq', x: -0.028, y: Em.y,    text: 'Pₘ', tone: 'red', bold: true, fontSize: 12, anchor: 'end' },
+      { layer: 'layer-market-eq', x: Em.x,    y: -0.050, text: 'Qₘ', tone: 'red', bold: true, fontSize: 12, anchor: 'middle' },
 
       // MEC text label next to bracket
       { layer: 'layer-mec', x: MecBracket.x + 0.024, y: (MecBracket.yMpc + MecBracket.yMsc) / 2,
@@ -132,31 +132,24 @@
 
     legends: [
       /* ─── BASE LEGEND ─── */
+      /* Each body entry is now ONE complete short sentence, so the
+       * narrow HTML legend column wraps cleanly instead of breaking
+       * mid-phrase. The old "what each curve means" section was a
+       * straight duplicate of the on-chart D=MSB / MPC labels and is
+       * gone; the analysis panel below carries the teaching prose. */
       {
         layer: 'layer-legend-base',
         x: 600, y: 65,
         sections: [
           { header: { text: 'FREE MARKET OUTCOME', tone: 'red' },
             body: [
-              'Producers maximise profit at',
-              'MPC = MSB → equilibrium at',
-              { text: '(Q_m, P_m).', tone: 'slate', bold: true }
+              'MPC (supply) meets D = MSB (demand) at the market equilibrium Eₘ.',
+              { text: 'Output Qₘ · Price Pₘ', tone: 'slate', bold: true }
             ]
           },
-          { header: { text: 'WHAT EACH CURVE MEANS', tone: 'gray' },
+          { header: { text: 'THE BLIND SPOT', tone: 'gray' },
             body: [
-              { text: 'D = MSB', tone: 'amber', bold: true },
-              'Marginal social benefit – value',
-              'to society of one more unit.',
-              { text: 'MPC', tone: 'green', bold: true },
-              'Marginal private cost – what',
-              'the firm itself pays.'
-            ]
-          },
-          { header: { text: 'BUT THIS IGNORES…', tone: 'red' },
-            body: [
-              'External costs on third parties',
-              '(pollution, congestion).'
+              'This price reflects only the firm\'s own cost — the harm done to third parties stays invisible.'
             ]
           }
         ]
@@ -169,24 +162,13 @@
         sections: [
           { header: { text: 'MSC = MPC + MEC', tone: 'purple' },
             body: [
-              'MSC adds the cost imposed on',
-              'third parties to private cost.',
+              'MSC stacks the cost imposed on third parties on top of the firm\'s private cost.'
+            ]
+          },
+          { header: { text: 'THE GAP', tone: 'purple' },
+            body: [
               { text: 'Vertical gap = MEC', tone: 'slate', bold: true },
-              '(marginal external cost)'
-            ]
-          },
-          { header: { text: 'EXAMPLES OF MEC', tone: 'gray' },
-            body: [
-              'Air pollution from a factory',
-              'Noise from late-night venues',
-              'Congestion from extra cars',
-              'CO₂ emissions from cement'
-            ]
-          },
-          { header: { text: 'THE PROBLEM', tone: 'purple' },
-            body: [
-              'Producers don\'t pay MEC, so',
-              'they produce too much.'
+              'The marginal external cost — pollution, noise, CO₂. Producers don\'t pay it, so they over-produce.'
             ]
           }
         ]
@@ -197,25 +179,15 @@
         layer: 'layer-legend-shift',
         x: 600, y: 65,
         sections: [
-          { header: { text: 'THE OPTIMUM', tone: 'green' },
+          { header: { text: 'THE SOCIAL OPTIMUM', tone: 'green' },
             body: [
-              'Society maximises welfare',
-              'where MSC = MSB at',
-              { text: '(Q*, P*).', tone: 'green', bold: true }
+              'Welfare is highest where MSC = MSB, at E* (Q*, P*).'
             ]
           },
-          { header: { text: 'COMPARISON', tone: 'gray' },
+          { header: { text: 'OPTIMUM vs MARKET', tone: 'gray' },
             body: [
-              { text: 'Q* < Q_m', tone: 'slate', bold: true },
-              'Society wants less output.',
-              { text: 'P* > P_m', tone: 'slate', bold: true },
-              'Optimal price is higher.'
-            ]
-          },
-          { header: { text: 'FREE MARKET FAILS', tone: 'green' },
-            body: [
-              'Without intervention the market',
-              'overproduces by (Q_m − Q*).'
+              { text: 'Q* < Qₘ  and  P* > Pₘ', tone: 'slate', bold: true },
+              'Society wants less output at a higher price; the market over-produces by Qₘ − Q*.'
             ]
           }
         ]
@@ -228,25 +200,13 @@
         sections: [
           { header: { text: 'DEADWEIGHT WELFARE LOSS', tone: 'red' },
             body: [
-              'Shaded triangle between Q*',
-              'and Q_m, bounded above by',
-              'MSC and below by MSB.',
-              { text: 'For each over-produced unit:', tone: 'slate', bold: true },
-              'MSC > MSB → society loses',
-              '(MSC − MSB) of welfare.'
+              'The red triangle between Q* and Qₘ — bounded above by MSC, below by MSB.',
+              { text: 'Each extra unit: MSC > MSB', tone: 'slate', bold: true }
             ]
           },
-          { header: { text: 'POLICY RESPONSE', tone: 'red' },
+          { header: { text: 'THE FIX', tone: 'red' },
             body: [
-              'A Pigouvian tax = MEC at Q*',
-              'internalises the externality',
-              'and eliminates the DWL.'
-            ]
-          },
-          { header: { text: 'EXAM TECHNIQUE', tone: 'gray' },
-            body: [
-              'Label all six: D=MSB, MPC,',
-              'MSC, E_m, E*, DWL.'
+              'A Pigouvian tax = MEC at Q* shifts MPC up to MSC and erases the loss.'
             ]
           }
         ]

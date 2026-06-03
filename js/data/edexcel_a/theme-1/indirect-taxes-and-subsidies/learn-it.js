@@ -167,10 +167,9 @@ window.ECONOS_TOPIC = {
       interactiveDiagram: {
         svgKey: 'elasticityIncidenceInteractive',
         wide: true,
-        // Cap the rendered width (default 640px) so the whole chart — and
-        // its global-token fonts — render ~2pt smaller, without touching
-        // the shared SIZE tokens or re-tallening the chart.
-        maxWidth: '560px',
+        // No maxWidth cap: the spec's viewBox is now 700px wide (panels
+        // scaled up), so it fills the card like every other chart and its
+        // global-token labels render at ~12px instead of being magnified.
         layers: ['idl-1', 'idl-2'],
         views: [
           {

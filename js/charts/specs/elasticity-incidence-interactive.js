@@ -60,12 +60,14 @@
   }
 
   window.ECONOS_ELASTICITY_INCIDENCE_SPEC = {
-    width: 440,
-    // Height trimmed 300 → 232 (panels 230 → 168): the old portrait
-    // panels (180w × 230h) made the chart feel too tall against the
-    // card staging. The dashed centre divider was also removed — the
-    // 35px gap between panels separates them cleanly on its own.
-    height: 232,
+    // viewBox widened 440 → 700 (panels scaled ×1.59) so the chart fills
+    // the card like every other chart instead of being blown up by a
+    // maxWidth cap. The engine's 13px/12px label tokens then render at
+    // ~12px (scale ≈ 0.9) rather than ~16px — matching the rest of the
+    // topic. Geometry is normalised inside each panel, so only the
+    // panel chartAreas + viewBox dims change; curves/labels follow.
+    width: 700,
+    height: 370,
     className: 'elasticity-incidence-svg',
     background: '#FFFFFF',
     layers: ['idl-1', 'idl-2'],
@@ -73,7 +75,7 @@
     panels: [
       /* ─── LEFT panel: INELASTIC demand ─── */
       basePanel(
-        { x: 30, y: 18, width: 180, height: 168 },
+        { x: 36, y: 26, width: 286, height: 268 },
         'Inelastic demand',
         'rose',
         /* Steep D curve (small ΔQ for big ΔP) */
@@ -112,7 +114,7 @@
 
       /* ─── RIGHT panel: ELASTIC demand ─── */
       basePanel(
-        { x: 245, y: 18, width: 180, height: 168 },
+        { x: 378, y: 26, width: 286, height: 268 },
         'Elastic demand',
         'green',
         /* Shallow D curve (big ΔQ for small ΔP). Endpoint at x=1.0

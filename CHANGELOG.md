@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.22 — 2026-06-03
+
+### Government Failure — two small tweaks
+
+- **Card 3 (regulatory capture):** shortened the "Pharmaceuticals – FDA and
+  opioids" example head to "Pharma – FDA and opioids" so it wraps to fewer
+  lines.
+- **Card 6 (government failure in practice):** the five case studies
+  (HS2, EU CAP, Help to Buy, PFI, Bank of England) left an orphan in the
+  3-col grid; converted to numbered fancy rows.
+
+Data only — no `sw.js` bump.
+
 ## 0.44.21 — 2026-06-03
 
 ### Taxes & Subsidies Card 3 — "Common exam errors" → numbered rows

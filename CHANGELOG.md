@@ -6,6 +6,66 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.6 — 2026-06-03
+
+### PPF Card 4 — labels off the curve, stage taller for axis breathing room
+
+Polish on v0.41.5. The auto-positioned OC badges sat above-left of
+each trade's start dot — the default placement that works for a
+flat-then-steep curve but, on the new quarter-circle, dragged the
+badge through the curve itself (view 3) or off the top of the chart
+area (view 1).
+
+- Added `labelDx` / `labelDy` (chart-unit) overrides to the
+  `ocTriangle` helper in `js/charts/ppf.js`. When present, the badge
+  is centred on `(start.x + labelDx, start.y + labelDy)` instead of
+  the auto upper-left. Backward-compatible: existing specs that don't
+  set the fields are unaffected.
+- Each trade's badge nudged into the consumable region (below the
+  curve), forming a diagonal cheap → even → costly arrangement that
+  reads cleanly when view 3 shows all three at once.
+- Stage enlarged from 440×300 → **460×350**, chartArea from 340×238
+  → **360×270**. Top / bottom / right margins all grow so the axis
+  titles ("Consumer goods" above the y-arrow, "Capital goods" below
+  the x-arrow) and the curve-end "PPF" label no longer crowd the
+  chart corners.
+
+`sw.js` cache bumped to `econos-v301`.
+
+## 0.41.5 — 2026-06-03
+
+### PPF Card 4 — canonical quarter-circle curve, OC 1/3 → 1 → 3
+
+User flagged that the v0.41.4 curve still didn't look like a proper
+PPF — the textbook shape is closer to a quarter-arc of a circle,
+smoothly bowed throughout. Swapped to the canonical cubic-Bezier
+approximation `M 0,1 C 0.5523,1 1,0.5523 1,0` (the magic constant
+is 4(√2−1)/3 — the standard quarter-arc approximation used in every
+vector graphics library). In 0..10 chart units the curve satisfies
+x² + y² ≈ 100 to four decimal places everywhere.
+
+The quarter-circle's geometry gives beautifully clean trade values
+at integer x positions:
+
+- **View 1 — Cheap** (green, OC ≈ 1/3): capital 2 → 4, consumer 9.8 → 9.2.
+- **View 2 — Even** (blue, OC = 1): capital 6 → 8, consumer 8.0 → 6.0 — exact.
+- **View 3 — Costly** (rose, OC ≈ 3): capital 8 → ~10, consumer 6.0 → ~0.
+
+OC values form a perfect **3× geometric progression**: 1/3 → 1 → 3.
+Triangle heights ratio 1 : 3 : 9 — the increasing-OC story is now
+visually overwhelming. View 3's vertical sacrifice arrow runs all
+the way down to the x-axis showing the brutal cost of the last few
+capital goods.
+
+Trade 3's Δx is 0.199 (not 0.200) because the engine's `findTAtX`
+bounds check rejects exact-endpoint targets — `start[0]` computes
+to 0.80000194 due to binary-search precision, so adding 0.2 gives
+1.00000194 > 1 and the triangle is silently omitted. 0.199 keeps
+the end safely inside the curve range without changing the
+displayed OC.
+
+`sw.js` cache bumped to `econos-v300`.
+
 ## 0.41.4 — 2026-06-03
 
 ### PPF Card 4 — moderate-bow curve + bigger Δx so the triangles read

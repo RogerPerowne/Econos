@@ -6,6 +6,38 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.3 — 2026-06-03
+
+### PPF Card 4 — redrawn from scratch around three distinct OC trades
+
+The "Why the PPF bows out" interactive previously framed three
+triangles as "Small cost / Larger cost / Even larger cost" — three
+points on a rising curve but the same story told three times.
+Redrawn to make each triangle tell a qualitatively **different**
+trade, with the three OC values straddling 1.0:
+
+- **View 1 — Cheap trade (green, OC ≈ 0.5)** — capital 2 → 3,
+  consumer 9.6 → 9.1. You gain MORE than you give up.
+- **View 2 — Even trade (blue, OC ≈ 1.0)** — capital 5 → 6,
+  consumer 7.6 → 6.5. Roughly a 1-for-1 trade — the chord sits at
+  about 45°.
+- **View 3 — Expensive trade (rose, OC ≈ 1.5)** — capital 8 → 9,
+  consumer 3.8 → 2.2. You give up MORE than you gain.
+
+Tone progression (green → blue → rose) now maps to the
+"ahead / even / behind" framing in the prose, rather than a generic
+low/med/high gradient. View bodies lead with the story and a single
+concrete number, not a math walkthrough.
+
+Numeric axis ticks (2 / 4 / 6 / 8) added on both axes via the spec's
+`texts` field so learners can read the consumer-good sacrifice
+straight off the y-axis without mental scaling. PPF curve stretched
+to span the full 0..10 / 0..10 chart so the tick numerals line up
+with the curve endpoints. Axis labels renamed to "Capital goods" /
+"Consumer goods" to match the methodGrid and versusList prose.
+
+`sw.js` cache bumped to `econos-v298`.
+
 ## 0.41.2 — 2026-06-03
 
 ### PPF Card 3 — move B and C labels off the arrowhead

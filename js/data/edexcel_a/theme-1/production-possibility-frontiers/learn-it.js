@@ -142,7 +142,7 @@ window.ECONOS_TOPIC = {
       id: 'ppf_4',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Why the PPF bows out',
-      lede: 'The same +1 capital good costs very different amounts of consumer goods depending on where you start. Click through three trades — cheap, even, expensive — to see why the curve bows out.',
+      lede: 'The same +2 capital goods costs very different amounts of consumer goods depending on where you start. Click through three trades — cheap, even, expensive — to see why the curve bows out.',
       tip: { icon: '✅', tone: 'green', text: 'The curve bows out because resources are specialised.' },
       interactiveDiagram: {
         svgKey: 'ppfBowedOutInteractive',
@@ -151,16 +151,16 @@ window.ECONOS_TOPIC = {
         layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           { label: 'Cheap trade', tone: 'green', show: ['idl-1'],
-            head: 'OC ≈ 0.5 — you gain more than you give up.',
-            body: 'At low capital output (≈ 2), +1 capital good costs only about <strong>half</strong> a consumer good (consumer falls from 9.6 to 9.1). The trade is cheap because you sacrifice <em>less</em> than you gain.',
+            head: 'OC ≈ 1/3 — you gain three times what you give up.',
+            body: 'At low capital output, moving from 1 to 3 capital goods (+2) costs only about <strong>0.6 consumer goods</strong>. The chord is shallow: the sacrifice is much smaller than the gain.',
             analysis: 'The first resources to switch are workers, land and machinery that weren’t much use in consumer goods anyway. Reallocating them barely dents consumer-goods output — so the sacrifice per extra capital good is small.' },
           { label: 'Even trade', tone: 'blue', show: ['idl-1','idl-2'],
-            head: 'OC ≈ 1.0 — roughly a 1-for-1 trade.',
-            body: 'At mid-range capital (≈ 5), +1 capital good costs about <strong>one</strong> consumer good (consumer falls from 7.6 to 6.5). The chord is now sloped at roughly 45°: you give up about what you gain.',
+            head: 'OC ≈ 1 — roughly a 1-for-1 trade.',
+            body: 'In the middle of the PPF, moving from 5 to 7 capital goods (+2) costs about <strong>2 consumer goods</strong>. The chord now sits at ≈ 45°: you give up about what you gain.',
             analysis: 'The easy switches are gone. The resources moving now are about equally productive in both sectors, so the sacrifice matches the gain almost unit-for-unit.' },
           { label: 'Expensive trade', tone: 'rose', show: ['idl-1','idl-2','idl-3'],
-            head: 'OC ≈ 1.5 — you give up more than you gain.',
-            body: 'At high capital output (≈ 8), +1 capital good costs about <strong>one-and-a-half</strong> consumer goods (consumer falls from 3.8 to 2.2). The same +1 gain now costs three times what it did at the cheap end.',
+            head: 'OC ≈ 5/3 — you give up far more than you gain.',
+            body: 'Near the right of the PPF, moving from 7 to 9 capital goods (+2) costs about <strong>3.4 consumer goods</strong>. The chord is now steeper than 45°: the same +2 gain costs <em>five times</em> what it did at the cheap end.',
             analysis: 'The last consumer-good resources to switch are the most specialised — workers and machines that were brilliant at consumer goods. Reallocating them is painful. <strong>That is increasing opportunity cost.</strong>' }
         ]
       },

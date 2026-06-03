@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.12 — 2026-06-03
+
+### Behavioural Economics — trim the weakness-at-computation reveals
+
+In the new 2×2 grid, the four paragraph-length reveal answers were a wall of
+text. Cut each to a single punchy line — the answer (number/verdict) plus a
+short clause for the "gotcha":
+
+- ≈ £4,322 — exponential, not ~£2,500 of simple interest
+- ≈ 1,355% APR — a monthly rate compounds (Wonga-era)
+- The £5 is identical — 33% off £15 vs 1.25% off £400
+- ≈ 30 years, £4,500 interest — most of each min payment is interest
+
+Nothing lost: the policy hooks (APR caps, minimum-payment warning) live in the
+examEdge and the three-reasons table already frames it. Data-only, no SW bump.
+
 ## 0.42.11 — 2026-06-03
 
 ### Behavioural Economics — weakness-at-computation card to a 2×2 grid

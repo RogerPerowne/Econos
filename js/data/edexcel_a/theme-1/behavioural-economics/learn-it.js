@@ -146,25 +146,25 @@ window.ECONOS_TOPIC = {
             tone: 'rose',
             label: '1',
             text: '<strong>Compound interest.</strong> You save £1,000 in an account paying 5% a year and leave it untouched for 30 years. No more deposits. Most people, asked to guess from memory, say somewhere around £2,000–£2,500. What is it actually worth?',
-            answer: '<strong>About £4,322.</strong> People mentally do <em>simple</em> interest (£1,000 + 30 × £50 = £2,500) and badly underestimate <strong>exponential</strong> growth — interest earning interest. The same blind spot runs in reverse on debt: we underestimate how fast a balance compounds against us.'
+            answer: '<strong>≈ £4,322</strong> — exponential growth, not the ~£2,500 of "simple" interest most people picture.'
           },
           {
             tone: 'amber',
             label: '2',
             text: '<strong>"Only 25% a month".</strong> A short-term lender advertises a payday loan at "just 25% interest a month — no nasty surprises". It sounds close to a 25% annual rate. What is the true annual cost (APR)?',
-            answer: '<strong>Roughly 1,355% APR.</strong> A monthly rate compounds: 1.25¹² − 1 ≈ 1,355%. Pre-2015 UK payday lenders like Wonga advertised representative APRs over 1,500% — legal, because a monthly headline rate hides the annual reality from buyers who can\'t compute it. This is exactly why the FCA later capped payday costs.'
+            answer: '<strong>≈ 1,355% APR</strong> — a monthly rate compounds (1.25¹² − 1). Wonga-era payday loans topped 1,500%.'
           },
           {
             tone: 'blue',
             label: '3',
             text: '<strong>The £5 that moves you — sometimes.</strong> A shopper will happily drive across town to save £5 on a £15 phone case, but won\'t cross the road to save the same £5 on a £400 sofa. The £5 is identical. Why the inconsistency?',
-            answer: '<strong>People judge money in percentages, not absolute pounds.</strong> £5 off £15 feels huge (33%); £5 off £400 feels trivial (1.25%) — even though a saved pound is a saved pound. Retailers exploit this: "% off" on cheap goods, "£ off" on expensive ones, whichever sounds bigger.'
+            answer: '<strong>The £5 is identical</strong> — but 33% off £15 feels huge and 1.25% off £400 feels trivial. We judge in %, not £.'
           },
           {
             tone: 'purple',
             label: '4',
             text: '<strong>The minimum-payment trap.</strong> A £2,000 credit-card balance sits at 20% APR. You pay only the 2% monthly minimum each month and add nothing new. Roughly how long to clear it — and how much interest?',
-            answer: '<strong>Around 30 years and over £4,500 in interest</strong> — more than double what you borrowed. Minimum repayments are designed so most of each payment covers interest. People anchor on the small, manageable monthly figure and never compute the lifetime cost — the single most expensive computation error UK households make. (It\'s why card statements now legally show the "minimum payment" warning.)'
+            answer: '<strong>≈ 30 years, £4,500 interest</strong> — most of each minimum payment is just interest; people anchor on the small monthly figure.'
           }
         ]
       },

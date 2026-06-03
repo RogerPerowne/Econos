@@ -29,12 +29,17 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 3',
       title: 'When are taxes and subsidies justified?',
       tip: { icon: '⚖️', tone: 'blue', text: 'Taxes discourage socially harmful behaviour. Subsidies encourage socially beneficial behaviour. Both are tools for correcting a market failure – not instruments for raising revenue in an otherwise efficient market.' },
-      flow: [
-        { icon: '🏭', tone: 'rose',  title: 'Pigouvian tax',              sub: 'Tax equal to the marginal external cost (MEC). Shifts S up to the social-cost curve, moving the market to Q*. Examples: carbon tax, sugar levy, tobacco duty, congestion charge.' },
-        { icon: '🎓', tone: 'green', title: 'Merit-good subsidy',          sub: 'Subsidy equal to the marginal external benefit (MEB). Shifts S down (lowers price) to reach socially optimal Q*. Examples: NHS, vaccinations, education, renewables.' }
-      ],
-      flowTitle: 'Pigouvian tax → internalises external costs           Subsidy → increases socially desirable activity',
-      flowEmoji: '🛠️',
+      comparison: {
+        title: 'Two corrective tools, opposite directions',
+        emoji: '🛠️',
+        vs: 'VS',
+        left:  { tone: 'rose',  icon: '🏭', label: 'Pigouvian tax',
+          caption: 'Set at the marginal external cost (MEC). <strong>Shifts supply up</strong> — raises price, cuts an over-produced good back down to Q*.',
+          chips: ['Carbon tax', 'Sugar levy', 'Tobacco duty', 'Congestion charge'] },
+        right: { tone: 'green', icon: '🎓', label: 'Merit-good subsidy',
+          caption: 'Set at the marginal external benefit (MEB). <strong>Shifts supply down</strong> — lowers price, lifts an under-produced good up to Q*.',
+          chips: ['Vaccinations', 'Education', 'Renewables', 'NHS'] }
+      },
       causesLabel: 'Three justification logics',
       causesEmoji: '🧩',
       causesStyle: 'tinted-flat',

@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.24 — 2026-06-03
+
+### Government Intervention — "Choosing the right tool" card rebuilt
+
+- **Welfare / government-failure diagram corrected.** The old hand-rolled SVG
+  placed the social optimum E\* off both curves and at a *lower* price than the
+  free market — backwards for a negative externality. Rebuilt with computed
+  geometry so E₁ (MPC∩MSB), E\* (MSC∩MSB) and E'' (over-taxed S∩MSB) all sit on
+  their true intersections; E\* now correctly shows a higher price and lower
+  quantity, with DWL₁ (over-production) and DWL₂ (over-correction) triangles in
+  the right places and an ideal-tax = MEC brace at Q\*.
+- **Formatting aligned with the rest of the site.** Removed the grey diagram
+  background (white card + soft shadow now), and the right-hand description is a
+  bordered, tone-accented panel matching the other interactive charts. Labels
+  shortened (MSC, Over-taxed S, E₁/E\*/E'', DWL₁/DWL₂) and re-placed so they no
+  longer clash; taller viewBox (410→450) for breathing room.
+- **"Match the tool to the failure" table** moved onto the standard `.cmp-table`
+  chrome with colour-coded, icon-led row labels (🏭 negative externality, 💉
+  positive externality, 🏛️ public goods, 🔍 information gaps, ⚖️ market power,
+  🤝 inequity) instead of the flat grey grid.
+
 ## 0.44.23 — 2026-06-03
 
 ### Government Intervention in Markets — three formatting tweaks (Card 1 + price-floor card)

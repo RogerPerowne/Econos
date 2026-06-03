@@ -516,12 +516,12 @@ window.ECONOS_TOPIC = {
       colA: 'Best-fit tool(s)',
       colB: 'Why it fits',
       rows: [
-        { label: 'Negative externality',     colA: 'Indirect tax (Pigouvian) · Tradable permits · Regulation', colB: 'Internalises MEC; permits cap total emissions; regulation when harm is severe or irreversible.' },
-        { label: 'Positive externality',     colA: 'Subsidy · Information provision · State provision',        colB: 'Subsidy expands output to social optimum; info corrects under-estimation of MEB; state provision for merit goods (NHS, schools).' },
-        { label: 'Public goods',             colA: 'State provision (tax-funded)',                              colB: 'Free-rider problem prevents private supply; only the state can fund through compulsory taxation.' },
-        { label: 'Information gaps',         colA: 'Mandatory disclosure · Regulation · Nudges',                 colB: 'Cheapest fix when the root failure is missing information; regulation backs up labels when behaviour is sticky.' },
-        { label: 'Market power',             colA: 'Price cap · Competition regulation · Antitrust',             colB: 'Caps prevent monopoly pricing; competition policy attacks the structure rather than just the symptom.' },
-        { label: 'Inequity',                 colA: 'Targeted subsidy · Income transfer · Progressive tax',       colB: 'Equity tools preserve price signals while redistributing – usually more efficient than universal price controls.' }
+        { label: 'Negative externality', icon: '🏭', tone: 'rose',   colA: 'Indirect tax (Pigouvian) · Tradable permits · Regulation', colB: 'Internalises MEC; permits cap total emissions; regulation when harm is severe or irreversible.' },
+        { label: 'Positive externality', icon: '💉', tone: 'green',  colA: 'Subsidy · Information provision · State provision',        colB: 'Subsidy expands output to social optimum; info corrects under-estimation of MEB; state provision for merit goods (NHS, schools).' },
+        { label: 'Public goods',         icon: '🏛️', tone: 'blue',   colA: 'State provision (tax-funded)',                              colB: 'Free-rider problem prevents private supply; only the state can fund through compulsory taxation.' },
+        { label: 'Information gaps',     icon: '🔍', tone: 'amber',  colA: 'Mandatory disclosure · Regulation · Nudges',                 colB: 'Cheapest fix when the root failure is missing information; regulation backs up labels when behaviour is sticky.' },
+        { label: 'Market power',         icon: '⚖️', tone: 'purple', colA: 'Price cap · Competition regulation · Antitrust',             colB: 'Caps prevent monopoly pricing; competition policy attacks the structure rather than just the symptom.' },
+        { label: 'Inequity',             icon: '🤝', tone: 'slate',  colA: 'Targeted subsidy · Income transfer · Progressive tax',       colB: 'Equity tools preserve price signals while redistributing – usually more efficient than universal price controls.' }
       ],
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',

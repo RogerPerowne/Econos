@@ -105,17 +105,13 @@
         label: 'E*', labelDx: 0, labelDy: -16, anchor: 'middle' },
     ],
 
-    titleStrips: [
-      { layer: 'layer-legend-base',       tone: 'red',
-        text: 'Free market equilibrium: MPC = MSB' },
-      { layer: 'layer-legend-extension',  tone: 'purple',
-        text: 'Production imposes external costs → MSC sits above MPC' },
-      { layer: 'layer-legend-shift',      tone: 'green',
-        text: 'Socially optimal output: where MSC = MSB' },
-      { layer: 'layer-legend-efficiency', tone: 'red',
-        text: 'Overproduction → deadweight welfare loss triangle' }
-    ],
-
+    // titleStrips removed (v0.41.20). Each was a single dot + text
+    // header — a one-entry "legend" in the user's sense: a coloured
+    // dot referring to one thing, with the text repeating the lede
+    // of the card. Per the universal rule, single-entry legends are
+    // always redundant and come out. The four headers ("Free market
+    // equilibrium: MPC = MSB", "Production imposes external costs →
+    // MSC sits above MPC", etc.) live in the card body anyway.
     texts: [
       // Persistent E_market axis tick labels
       { layer: 'layer-market-eq', x: -0.028, y: Em.y,    text: 'P_m', tone: 'red', bold: true, fontSize: 12, anchor: 'end' },

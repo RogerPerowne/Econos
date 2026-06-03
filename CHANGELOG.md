@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.40.2 — 2026-06-03
+
+### PPF triptych — arrowheads now visible
+
+- The previous fix made the shift arrows the right length but the
+  **arrowheads were still invisible**. Cause: the spec authored custom
+  arrow markers (`ppfs-green`, `ppfs-rose`, `ppfs-purple`) inside each
+  `panel.defs`, but the engine only collects `spec.defs` (top-level) into
+  the SVG `<defs>` block — panel-level defs are dropped. So
+  `marker-end="url(#ppfs-green)"` referenced a non-existent marker and
+  rendered nothing.
+- Switched to the engine's built-in tone-named markers
+  (`econos-arrow-green` / `econos-arrow-rose` / `econos-arrow-purple`)
+  which are emitted automatically in every chart's defs. Removed the
+  unused panel-level `defs` block. `sw.js` cache bumped to `econos-v293`.
+
 ## 0.40.1 — 2026-06-03
 
 ### PPF Card 5 — triptych shift arrows + panel titles

@@ -38,9 +38,6 @@
       titleTone: tone,
       titleSize: 12,
       axes: { x: { label: 'Consumer' }, y: { label: 'Capital' } },
-      defs:
-        '<marker id="ppfs-' + tone + '" viewBox="0 0 10 8" markerWidth="7" markerHeight="7" refX="8" refY="4" orient="auto"><path d="M0,0 L0,8 L10,4 z" fill="' +
-        (tone === 'green' ? '#059669' : tone === 'rose' ? '#DC2626' : '#7C3AED') + '"/></marker>',
       curves: [
         // PPF₁ label lifted up off the x-axis so it doesn't collide with
         // PPF₂'s end label (the two curves' right-end x-positions are too
@@ -58,7 +55,7 @@
         // two curves and the arrowhead direction is unambiguous.
         { perpendicular: { from: id1, t: 0.5, to: id2 },
           tone: tone, strokeWidth: 2.6, lineCap: 'round',
-          markerEnd: 'ppfs-' + tone, buffer: 3 }
+          markerEnd: 'econos-arrow-' + tone, buffer: 3 }
       ]
     };
   }

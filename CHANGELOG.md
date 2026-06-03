@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.18 — 2026-06-03
+
+### Fix sticky caching — "network-first" was secretly serving stale content
+
+Two bugs made deployed changes feel like they needed a manual cache clear:
+
+1. **The service worker's network-first fetches weren't reaching the
+   network.** A bare `fetch()` inside a SW still consults the browser's
+   HTTP cache, and GitHub Pages stamps `Cache-Control: max-age=600` on every
+   asset (HTML, `/js/**`, `.css`). So for 10 minutes after each deploy the
+   "network-first" branches returned the stale-but-unexpired copy *and
+   re-cached it*. New `fetchFresh()` helper issues `fetch(request, { cache:
+   'no-cache' })`, forcing revalidation against the origin on every request
+   — still cheap (ETag → 304 when unchanged) but it can never serve a stale
+   body. Applied to both the navigation and `/js/`+`.css` branches; the
+   offline fallback is unchanged.
+2. **Inconsistent SW registration.** `index.html` registered `/sw.js` with
+   `updateViaCache: 'none'` but `js/sw-register.js` (used by every
+   learn-it/link-it/land-it shell) did not — so on the lesson pages the
+   worker script itself was served from the HTTP cache, letting a stale
+   (potentially old cache-first) worker stay pinned and never migrate.
+   `sw-register.js` now matches `index.html`.
+
+`sw.js` changed → `CACHE_NAME` bumped to `econos-v320`.
+
 ## 0.42.17 — 2026-06-03
 
 ### Market Failure — reorder cards 2 ↔ 3 for a cleaner pedagogical arc

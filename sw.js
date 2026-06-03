@@ -2,7 +2,26 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v319';
+  const CACHE_NAME = 'econos-v320';
+
+  /* ────────────────────────────────────────────────────────────
+     fetchFresh — a network fetch that bypasses the BROWSER'S OWN
+     HTTP cache.
+
+     A bare fetch() inside a service worker still consults the
+     browser HTTP cache. GitHub Pages stamps `Cache-Control:
+     max-age=600` on every asset (HTML, /js/**, .css — we can't
+     change those headers), so for 10 minutes after a deploy a
+     plain fetch() returns the stale-but-unexpired copy and our
+     "network-first" strategy silently serves (and re-caches) old
+     content. `cache: 'no-cache'` forces revalidation against the
+     origin on every request — still cheap (ETag → 304 when the
+     file is unchanged), but it can never hand back a stale body.
+     The offline fallback (catch → caches.match) is unaffected.
+     ──────────────────────────────────────────────────────────── */
+  function fetchFresh(request) {
+    return fetch(request, { cache: 'no-cache' });
+  }
 
   const PRECACHE_ASSETS = [
     '/',
@@ -135,7 +154,7 @@
     // Navigate requests: network-first, fallback to cache, fallback to offline.html
     if (request.mode === 'navigate') {
       event.respondWith(
-        fetch(request)
+        fetchFresh(request)
           .then((response) => {
             const clone = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
@@ -172,7 +191,7 @@
 
     if (freshFirst) {
       event.respondWith(
-        fetch(request)
+        fetchFresh(request)
           .then((response) => {
             const clone = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));

@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.4 — 2026-06-03
+
+### PPF copy tweaks · Card 4 OC abbreviation; Card 5 "Less jam today" trim
+
+Two small copy fixes on Production Possibility Frontiers:
+
+- **Card 4 — Why the PPF bows out.** The three interactive views all use the
+  shorthand "OC" for opportunity cost. The first view's head now spells it
+  out — "Opportunity Cost (OC) ≈ 1/3 …" — so subsequent uses of OC in the
+  other two views are unambiguous.
+- **Card 5 — Consumer vs capital goods trade-off, "Less jam today" view.**
+  Removed the closing sentence "The dashed arrow shows the potential move;
+  the dashed gridlines mark B's position — clearly more capital, fewer
+  consumer goods than at A." The diagram already makes this visible; the
+  text was redundant.
+
+Data only (network-first) — no `sw.js` bump.
+
 ## 0.44.3 — 2026-06-03
 
 ### Fix 404 on "Next topic" from The Economic Problem (Edexcel A)

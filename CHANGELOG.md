@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.40.1 — 2026-06-03
+
+### PPF Card 5 — triptych shift arrows + panel titles
+
+- Fixed the shift arrows on `ppfShiftsTrio`. The three panels declared
+  curves with the same ids (`ppf1`, `ppf2`), but the chart engine merges
+  every panel's curve registry into one shared lookup — so the third
+  panel's `ppf2` overwrote the first two, and all three perpendicular
+  arrows resolved against the BIASED PPF₂ (the third panel's curve),
+  producing tiny 13px ticks instead of arrows spanning between PPF₁ and
+  PPF₂. Made the ids panel-unique (`ppf1-green`, `ppf2-green`, etc.) and
+  dropped the per-arrow `buffer` from 14 to 3 so the visible span isn't
+  shrunk in these compact 170×175 panels. Bumped marker size 5→7 too.
+- Added per-panel titles ("Outward shift" / "Inward shift" / "Biased
+  shift") in each panel's tone colour, so the three cases are clearly
+  differentiated rather than visually identical except by colour.
+- Shortened axis labels from "Consumer goods" / "Capital goods" to
+  "Consumer" / "Capital" to save space in the small panels.
+
+`sw.js` cache bumped to `econos-v292`.
+
 ## 0.40.0 — 2026-06-02
 
 ### Market Failure charts — solved geometry, visible DWL triangles

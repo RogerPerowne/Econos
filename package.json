@@ -1,6 +1,6 @@
 {
   "name": "econos",
-  "version": "0.41.2",
+  "version": "0.42.0",
   "private": true,
   "description": "A-Level economics revision — bite-sized topics around the frameworks examiners reward.",
   "type": "module",
@@ -12,7 +12,9 @@
     "lint:js": "eslint 'js/**/*.js' --max-warnings=0",
     "lint:charts": "node scripts/lint-charts.mjs",
     "lint:cards": "node scripts/lint-card-lengths.mjs",
-    "lint": "npm run lint:repo && npm run lint:js && npm run lint:charts && npm run lint:cards",
+    "lint:diagrams": "node scripts/lint-diagrams.mjs",
+    "lint": "npm run lint:repo && npm run lint:js && npm run lint:charts && npm run lint:cards && npm run lint:diagrams",
+    "convert:legacy-charts": "node scripts/convert-legacy-charts.mjs",
     "format": "prettier --write 'js/**/*.js' '*.html' '*.json' '*.md'",
     "format:check": "prettier --check 'js/**/*.js' '*.html' '*.json' '*.md'",
     "test:unit": "vitest run",

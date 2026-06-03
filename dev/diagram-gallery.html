@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Econos Diagram Language — Gallery</title>
+    <script src="/js/diagrams/econos-diagrams.js"></script>
+    <style>
+      :root {
+        --ink: #0f172a;
+        --muted: #64748b;
+        --line: #e2e8f0;
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --accent: #2563eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.5;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: saturate(180%) blur(8px);
+        border-bottom: 1px solid var(--line);
+        padding: 14px 24px;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      header h1 {
+        font-size: 16px;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+      header .v {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .controls {
+        margin-left: auto;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .seg {
+        display: inline-flex;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        overflow: hidden;
+        background: #fff;
+      }
+      .seg button {
+        border: 0;
+        background: #fff;
+        padding: 6px 12px;
+        font-size: 13px;
+        cursor: pointer;
+        color: var(--muted);
+      }
+      .seg button.on {
+        background: var(--accent);
+        color: #fff;
+      }
+      .lab {
+        font-size: 12px;
+        color: var(--muted);
+        margin-right: 6px;
+      }
+      main {
+        padding: 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+        gap: 22px;
+        max-width: 1480px;
+        margin: 0 auto;
+      }
+      .tile {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 16px 14px;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.04);
+      }
+      .tile h2 {
+        font-size: 14px;
+        margin: 0 0 2px;
+      }
+      .tile .intent {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 10px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      .stage {
+        background: #fff;
+        border: 1px solid #f1f5f9;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .stage svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .meta {
+        margin-top: 10px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .meta details {
+        margin-top: 6px;
+      }
+      .meta summary {
+        cursor: pointer;
+        color: var(--accent);
+      }
+      .meta pre {
+        background: #f8fafc;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 8px;
+        overflow: auto;
+        max-height: 220px;
+        font-size: 11px;
+      }
+      .pills {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+      .pill {
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: #f1f5f9;
+        color: #475569;
+      }
+      .pill.warn {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      .pill.err {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+      .pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .pair .stage {
+        border-radius: 10px;
+      }
+      .section-title {
+        grid-column: 1 / -1;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin: 10px 2px -6px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Econos Diagram Language</h1>
+      <span class="v" id="version"></span>
+      <div class="controls">
+        <span class="lab">Mode</span>
+        <div class="seg" id="mode">
+          <button data-v="learn" class="on">learn</button>
+          <button data-v="exam">exam</button>
+          <button data-v="debug">debug</button>
+        </div>
+        <span class="lab">Viewport</span>
+        <div class="seg" id="viewport">
+          <button data-v="card" class="on">card</button>
+          <button data-v="stage">stage</button>
+          <button data-v="article">article</button>
+          <button data-v="full">full</button>
+        </div>
+      </div>
+    </header>
+    <main id="gallery"></main>
+
+    <script>
+      var D = window.ECONOS_DIAGRAMS;
+      document.getElementById('version').textContent = 'v' + D.version;
+
+      var state = { mode: 'learn', viewport: 'card' };
+
+      var GALLERY = [
+        ['Market', [
+          ['Market equilibrium', { type: 'market', intent: 'market-equilibrium' }],
+          ['Demand shift right', { type: 'market', intent: 'demand-shift-right' }],
+          ['Demand shift left', { type: 'market', intent: 'demand-shift-left' }],
+          ['Supply shift right', { type: 'market', intent: 'supply-shift-right' }],
+          ['Supply shift left', { type: 'market', intent: 'supply-shift-left' }],
+        ]],
+        ['Tax', [
+          ['Tax incidence', { type: 'tax', intent: 'tax-incidence', tax: { size: 0.18 } }],
+          ['Revenue + deadweight loss', {
+            type: 'tax', intent: 'tax-revenue-and-deadweight-loss', tax: { size: 0.2 },
+          }],
+        ]],
+        ['Tax — elasticity comparison', [
+          ['__PAIR__', [
+            ['Inelastic demand', { type: 'tax', intent: 'tax-inelastic-demand', tax: { size: 0.2 } }],
+            ['Elastic demand', { type: 'tax', intent: 'tax-elastic-demand', tax: { size: 0.2 } }],
+          ]],
+        ]],
+        ['Subsidy', [
+          ['Subsidy incidence', { type: 'subsidy', intent: 'subsidy-incidence' }],
+          ['Government cost', { type: 'subsidy', intent: 'subsidy-cost' }],
+        ]],
+        ['Price controls', [
+          ['Maximum price → shortage', { type: 'price-control', intent: 'maximum-price-shortage' }],
+          ['Minimum price → surplus', { type: 'price-control', intent: 'minimum-price-surplus' }],
+        ]],
+        ['Externalities', [
+          ['Negative production externality', {
+            type: 'externality', intent: 'negative-production-externality',
+            show: ['msc', 'welfare-loss', 'correction-arrow'],
+          }],
+          ['Positive consumption externality', {
+            type: 'externality', intent: 'positive-consumption-externality',
+            show: ['msb', 'welfare-loss', 'correction-arrow'],
+          }],
+        ]],
+        ['PPF', [
+          ['Efficient / inefficient / unattainable', {
+            type: 'ppf', intent: 'ppf-efficient-inefficient-unattainable',
+          }],
+          ['Outward shift (growth)', { type: 'ppf', intent: 'ppf-outward-shift' }],
+          ['Opportunity cost', { type: 'ppf', intent: 'ppf-opportunity-cost' }],
+        ]],
+        ['AD–AS', [
+          ['AD shift right', { type: 'ad-as', intent: 'ad-shift-right' }],
+          ['SRAS shift left', { type: 'ad-as', intent: 'sras-shift-left' }],
+          ['Classical LRAS + output gap', { type: 'ad-as', intent: 'output-gap' }],
+        ]],
+        ['Phillips', [
+          ['Short-run Phillips curve', { type: 'phillips', intent: 'short-run-phillips-curve' }],
+          ['Long-run Phillips curve', { type: 'phillips', intent: 'long-run-phillips-curve' }],
+          ['Expectations shift', { type: 'phillips', intent: 'expectations-shift' }],
+        ]],
+      ];
+
+      function withState(spec) {
+        var s = JSON.parse(JSON.stringify(spec));
+        s.version = 1;
+        s.mode = state.mode;
+        s.viewport = state.viewport;
+        return s;
+      }
+
+      function pills(out) {
+        var html = '';
+        html += '<span class="pill">' + out.renderPlan.elements.length + ' els</span>';
+        if (out.hidden.length) html += '<span class="pill">' + out.hidden.length + ' hidden</span>';
+        if (out.collisionsResolved.length)
+          html += '<span class="pill">' + out.collisionsResolved.length + ' moved</span>';
+        out.warnings.forEach(function (w) {
+          html += '<span class="pill warn">' + w + '</span>';
+        });
+        out.errors.forEach(function (e) {
+          html += '<span class="pill err">' + e + '</span>';
+        });
+        return html;
+      }
+
+      function renderTile(title, spec) {
+        var out = D.render(withState(spec));
+        var derived = JSON.stringify(out.derived, null, 1);
+        var planSummary = (out.renderPlan.elements || [])
+          .map(function (e) {
+            return e.kind + '@' + e.layer;
+          })
+          .join('  ');
+        return (
+          '<div class="tile"><h2>' + title + '</h2><div class="intent">' +
+          (spec.intent || spec.type) + '</div><div class="stage">' + out.svg + '</div>' +
+          '<div class="pills">' + pills(out) + '</div>' +
+          '<div class="meta"><details><summary>derived</summary><pre>' + derived +
+          '</pre></details><details><summary>render plan (' + out.renderPlan.elements.length +
+          ')</summary><pre>' + planSummary + '</pre></details>' +
+          (out.hidden.length
+            ? '<details><summary>hidden labels</summary><pre>' +
+              JSON.stringify(out.hidden, null, 1) + '</pre></details>'
+            : '') +
+          '</div></div>'
+        );
+      }
+
+      function renderPair(title, items) {
+        var inner = items
+          .map(function (it) {
+            var out = D.render(withState(it[1]));
+            return (
+              '<div><div class="intent">' + it[0] + '</div><div class="stage">' + out.svg +
+              '</div></div>'
+            );
+          })
+          .join('');
+        return '<div class="tile"><h2>' + title + '</h2><div class="pair">' + inner + '</div></div>';
+      }
+
+      function draw() {
+        var html = '';
+        GALLERY.forEach(function (section) {
+          html += '<div class="section-title">' + section[0] + '</div>';
+          section[1].forEach(function (entry) {
+            if (entry[0] === '__PAIR__') {
+              html += renderPair(section[0], entry[1]);
+            } else {
+              html += renderTile(entry[0], entry[1]);
+            }
+          });
+        });
+        document.getElementById('gallery').innerHTML = html;
+      }
+
+      function wireSeg(id, key) {
+        var seg = document.getElementById(id);
+        seg.addEventListener('click', function (e) {
+          if (e.target.tagName !== 'BUTTON') return;
+          state[key] = e.target.getAttribute('data-v');
+          Array.prototype.forEach.call(seg.children, function (b) {
+            b.classList.toggle('on', b === e.target);
+          });
+          draw();
+        });
+      }
+      wireSeg('mode', 'mode');
+      wireSeg('viewport', 'viewport');
+      draw();
+    </script>
+  </body>
+</html>

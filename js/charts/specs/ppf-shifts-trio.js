@@ -24,38 +24,53 @@
   // engine's `perpendicular: { from, t, to }` solver — anchored at t
   // on PPF₁, cast perpendicular until it hits PPF₂. Guarantees the
   // arrow truly sits BETWEEN the two curves (no eyeballed coords).
-  function panel(originX, ppf2D, tone) {
+  //
+  // NOTE: curve ids must be unique ACROSS panels — the engine merges
+  // every panel's curve registry into one shared lookup, so reusing
+  // 'ppf1'/'ppf2' across panels meant the third panel's curves
+  // overwrote the first two, and all three arrows resolved against the
+  // BIASED PPF₂. The `tone` suffix keeps each panel's lookup distinct.
+  function panel(originX, ppf2D, tone, title) {
+    var id1 = 'ppf1-' + tone, id2 = 'ppf2-' + tone;
     return {
-      chartArea: { x: originX + 40, y: 30, width: 170, height: 175 },
-      axes: { x: { label: 'Consumer goods' }, y: { label: 'Capital goods' } },
+      chartArea: { x: originX + 40, y: 44, width: 170, height: 161 },
+      title: title,
+      titleTone: tone,
+      titleSize: 12,
+      axes: { x: { label: 'Consumer' }, y: { label: 'Capital' } },
       defs:
-        '<marker id="ppfs-' + tone + '" viewBox="0 0 8 6" markerWidth="5" markerHeight="5" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="' +
+        '<marker id="ppfs-' + tone + '" viewBox="0 0 10 8" markerWidth="7" markerHeight="7" refX="8" refY="4" orient="auto"><path d="M0,0 L0,8 L10,4 z" fill="' +
         (tone === 'green' ? '#059669' : tone === 'rose' ? '#DC2626' : '#7C3AED') + '"/></marker>',
       curves: [
         // PPF₁ label lifted up off the x-axis so it doesn't collide with
         // PPF₂'s end label (the two curves' right-end x-positions are too
         // close together for the small 170px panels).
-        { id: 'ppf1', d: PPF1,  tone: tone, strokeWidth: 2.4, dashed: '6 4', label: 'PPF₁', labelTone: tone, labelDx: 4, labelDy: -32 },
+        { id: id1, d: PPF1,  tone: tone, strokeWidth: 2.4, dashed: '6 4', label: 'PPF₁', labelTone: tone, labelDx: 4, labelDy: -32 },
         // PPF₂ label nudged slightly up + left so it doesn't clip the
         // right edge of the small panel when PPF₂ extends close to x=1.
-        { id: 'ppf2', d: ppf2D, tone: tone, strokeWidth: 2.8,                label: 'PPF₂', labelTone: tone, labelDx: -4, labelDy: -10 }
+        { id: id2, d: ppf2D, tone: tone, strokeWidth: 2.8,                label: 'PPF₂', labelTone: tone, labelDx: -4, labelDy: -10 }
       ],
       arrows: [
-        { perpendicular: { from: 'ppf1', t: 0.5, to: 'ppf2' },
+        // buffer:3 (not the default 14) — the perpendicular gap between
+        // PPF₁ and PPF₂ in these compact 170×175 panels is only ~50px,
+        // so the default end-pull would shrink the visible arrow to a
+        // tiny tick. With buffer:3 the arrow clearly spans between the
+        // two curves and the arrowhead direction is unambiguous.
+        { perpendicular: { from: id1, t: 0.5, to: id2 },
           tone: tone, strokeWidth: 2.6, lineCap: 'round',
-          markerEnd: 'ppfs-' + tone }
+          markerEnd: 'ppfs-' + tone, buffer: 3 }
       ]
     };
   }
 
   window.ECONOS_PPF_SHIFTS_TRIO_SPEC = {
     width: 660,
-    height: 230,
-    divider: { x: 220, y1: 16, y2: 220, stroke: '#E2E8F0', dashed: '4 4' },
+    height: 244,
+    divider: { x: 220, y1: 30, y2: 234, stroke: '#E2E8F0', dashed: '4 4' },
     panels: [
-      panel(  0, PPF2_OUT,  'green'),
-      panel(220, PPF2_IN,   'rose'),
-      panel(440, PPF2_BIAS, 'purple')
+      panel(  0, PPF2_OUT,  'green',  'Outward shift'),
+      panel(220, PPF2_IN,   'rose',   'Inward shift'),
+      panel(440, PPF2_BIAS, 'purple', 'Biased shift')
     ]
   };
 })();

@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.7 — 2026-06-03
+
+### The Economic Problem — "three traps to avoid" misconceptions block (Theme 1 polish #6)
+
+Added a compact misconceptions tile block to Card 1 (the basic economic
+problem), mirroring the PPF topic's "common mistakes" pattern:
+
+- **Scarcity ≠ shortage** — scarcity is the permanent wants/resources gap;
+  a shortage is temporary and price-clears.
+- **Want ≠ need** — economics treats all wants as claims on scarce
+  resources; "need" is a normative judgement.
+- **Opportunity cost ≠ money price** — the next-best alternative forgone
+  often differs from the cash price.
+
+Added as a block on the existing scarcity card (which already handles
+scarcity ≠ poverty in its examEdge) rather than a new card, keeping the
+already-long topic from growing. Default tiles, no numbering clash with the
+card's triptych. Data-only, no SW bump.
+
 ## 0.42.6 — 2026-06-03
 
 ### Government Failure — align the four causes with the spec (Theme 1 polish #8)

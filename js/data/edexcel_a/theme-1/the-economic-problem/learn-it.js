@@ -70,6 +70,13 @@ window.ECONOS_TOPIC = {
       branchesLabel: 'Scarcity forces choice',
       branchesEmoji: '👥',
       branchesLayout: 'triptych',
+      causesLabel: 'Three traps to avoid',
+      causesEmoji: '🚫',
+      causes: [
+        { tone: 'rose',  icon: '🌀', head: 'Scarcity ≠ shortage', body: 'Scarcity is the <em>permanent</em> gap between unlimited wants and finite resources – it never goes away. A <strong>shortage</strong> is temporary: demand exceeds supply at the current price, and a higher price clears it. Don\'t use them interchangeably.' },
+        { tone: 'amber', icon: '🎯', head: 'Want ≠ need', body: 'Economics treats every want as a claim on scarce resources – whether it\'s insulin or a third holiday. "<strong>Need</strong>" is a normative judgement; the economic problem applies to <em>all</em> wants equally.' },
+        { tone: 'blue',  icon: '⏳', head: 'Opportunity cost ≠ money price', body: 'The opportunity cost is the <strong>next-best alternative forgone</strong>, which often differs from the cash price. A "free" lecture still costs the hour you could have worked – the price tag and the real cost are not the same thing.' }
+      ],
       keyTakeaway: 'Scarcity is universal – even the wealthiest country cannot produce unlimited healthcare, education, defence and infrastructure all at once.',
       examEdge: 'Scarcity is not the same as poverty. A billionaire still faces scarcity – they cannot buy unlimited time. Scarcity is a universal condition; poverty is a distributional one. Strong answers spell out this distinction.'
     },

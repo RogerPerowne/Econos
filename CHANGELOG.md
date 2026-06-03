@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.15 — 2026-06-03
+
+### Consumer & Producer Surplus — even up two over-long blocks
+
+- **Card 2** ("Building the Surplus Diagram"): the "Common mistake" tile had
+  ballooned to ~15 lines next to two one-liners. Trimmed it to the essential
+  point (measure surplus from the price line — CS above Pₑ, PS below) so the
+  three tiles are balanced.
+- **Card 8** ("Surplus in the Real World"): shortened the over-long UK Help
+  to Buy entry and converted the five case studies (rent controls, Help to
+  Buy, aviation subsidies, tariffs, minimum wage) from column tiles to fancy
+  numbered rows.
+
+Data only (network-first) — no `sw.js` bump.
+
 ## 0.44.14 — 2026-06-03
 
 ### PES & Price Mechanism tweaks (3 of 4 in the batch)

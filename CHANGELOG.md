@@ -6,6 +6,39 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.21 — 2026-06-03
+
+### Information gaps — Akerlof lemons card promoted to full case study
+
+User asked whether the Akerlof case study still existed (suspected it
+had been lost in earlier refactors). The 5-stage lemons flow + worked
+example was present, but a richer version had lived in the original
+`link-extract.js` (Read-the-Extract station) before the v0.7 data
+restructure flattened Link It into a single chain. That richer
+version cited Akerlof 1970 directly and walked through a UK FCA
+motor-insurance case with specific data.
+
+Brought the lost depth back into the existing `info_gaps_2` card:
+
+- **Tip box** now attributes the 1970 paper and the 2001 Nobel Prize
+  directly, so the card opens with the economist not just the example
+- **New "Case study — UK motor insurance (FCA, 2022)" panel** replaces
+  the three thin one-line "other markets" bullets:
+  - hidden risk before contract
+  - the **FCA's 12% inaccurate-information finding**
+  - the lemons spiral in insurance (premiums rise → low-risk drivers
+    exit → pool gets riskier → repeat)
+- **Worked example footer** now explicitly continues the spiral
+  ("as buyers learn this, average expected quality falls again")
+- **examEdge** retitled "foundational example of adverse selection",
+  uses *before-contract* framing as the discriminator and signposts
+  forward to Card 4 (moral hazard) so the topic structure is explicit
+
+No spec content was lost — the credit-markets and MBS examples are
+now in the examEdge prose rather than as parallel bullets, freeing
+the case-study panel for one deep UK example (the FCA 12% figure) per
+the universal pedagogy rule "concrete UK data beats generic bullets".
+
 ## 0.41.20 — 2026-06-03
 
 ### Single-entry legend sweep: strip redundant titleStrips

@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.25 — 2026-06-03
+
+### Government Intervention — welfare/govt-failure diagram migrated to the chart engine
+
+- New chart-engine spec `welfareGovtFailureInteractive` (file
+  `js/charts/specs/welfare-govt-failure-interactive.js`) — geometry is now
+  computed by the engine (MPC, MSB, MSC and an over-taxed-S curve, with E₁,
+  E\*, E'' sitting on their true intersections via the spec's `points` and
+  `polygons`). The hand-rolled SVG inside `renderCardWelfareGFExplorer` is
+  retired along with the renderer, its dispatch entry and the `.gf-*` CSS
+  block.
+- Card layout now matches every other interactive chart in the site:
+  description panel on the right, view-step buttons below the chart,
+  analysis panel underneath — driven by the standard `interactiveDiagram`
+  block in the topic data instead of a one-off explorer template.
+- `c.rows` in the generic renderer now honours optional `tone` + `icon` on
+  each row, preserving the colour-coded matrix labels from v0.44.24 on the
+  same card now that it runs through the generic table path.
+
 ## 0.44.24 — 2026-06-03
 
 ### Government Intervention — "Choosing the right tool" card rebuilt

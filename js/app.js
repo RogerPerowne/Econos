@@ -2793,9 +2793,16 @@
             ${useThree ? `<div class="cmp-table__cell reveal-cell"><span class="cmp-table__key">${colC}</span>${revealBtn}<div class="reveal-cell__body is-hidden">${r.colC || ''}</div></div>` : ''}
           </div>`;
         }
+        // Optional `tone` + `icon` on a row paint a tone-tinted, icon-led
+        // label cell — used when the row labels are categories worth
+        // colour-coding (e.g. market failures in the gov-intervention
+        // matrix). Falls back to the plain label when neither is set.
+        const rt = r.tone ? PATTERN_TONES[r.tone] : null;
+        const labelStyle = rt ? ` style="border-left:4px solid ${rt.label};background:${rt.bg};color:${rt.label};font-weight:800;"` : '';
+        const iconHtml = r.icon ? `<span style="font-size:16px;margin-right:7px;">${r.icon}</span>` : '';
         return `
         <div class="cmp-table__row ${i % 2 === 0 ? 'cmp-table__row--even' : 'cmp-table__row--odd'}">
-          <div class="cmp-table__label">${r.label}</div>
+          <div class="cmp-table__label"${labelStyle}>${iconHtml}${r.label}</div>
           <div class="cmp-table__cell"><span class="cmp-table__key">${colA}</span><span class="cmp-table__val">${r.colA}</span></div>
           <div class="cmp-table__cell"><span class="cmp-table__key">${colB}</span><span class="cmp-table__val">${r.colB}</span></div>
           ${useThree ? `<div class="cmp-table__cell"><span class="cmp-table__key">${colC}</span><span class="cmp-table__val">${r.colC || ''}</span></div>` : ''}
@@ -5849,180 +5856,6 @@
     `;
   }
 
-  /* === full card view === */
-  function renderCardWelfareGFExplorer(c) {
-    const stages = [
-      { key: 'stage1', label: 'Free market', tone: '#2563EB',
-        title: 'Free market overproduces',
-        text: 'The free market settles where MPC (supply) = MSB (demand) – at output Qm, price Pm (point E₁). Producers ignore the marginal external cost (MEC) their output imposes on third parties, such as pollution. Because the full social cost is higher than the private cost, the market produces too much.' },
-      { key: 'stage2', label: 'Market failure', tone: '#DC2626',
-        title: 'The social optimum – and the deadweight loss',
-        text: 'Adding the MEC gives the full social cost: MSC = MPC + MEC. The socially optimal output is Q*, where MSB = MSC (point E*) – a lower quantity and a higher price than the free market. The rose-shaded triangle (DWL₁) is the deadweight welfare loss from over-producing between Q* and Qm. The government\'s goal: cut output from Qm to Q* without creating a new distortion.' },
-      { key: 'stage3', label: 'Policy attempt', tone: '#059669',
-        title: 'The Pigouvian tax – in theory',
-        text: 'A correctly-calibrated Pigouvian tax equals the MEC measured at Q* (the green brace). It lifts the firm\'s effective supply curve from MPC up to MSC, so each unit now faces its full social cost. Output falls to Q* and the deadweight loss disappears. In practice, the government must estimate MEC accurately – a significant information challenge.' },
-      { key: 'stage4', label: 'Govt failure', tone: '#7D23CB',
-        title: 'Government failure – the overestimate',
-        text: 'If the government overestimates MEC, the tax is set too high. The effective supply curve rises above MSC and output falls to Q\'\' – below the social optimum Q*. A new deadweight loss, the purple triangle (DWL₂), appears. The corrective tool has itself become a source of welfare loss: government failure. Any evaluation must weigh the original market failure against this overcorrection risk.' }
-    ];
-
-    const svgDiagram = `<svg viewBox="0 0 640 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" font-family="system-ui,sans-serif">
-      <defs>
-        <marker id="gf-ag" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#059669"/></marker>
-      </defs>
-
-      <!-- ── STAGE 1 BASE: axes, MPC, MSB, free-market equilibrium ─────── -->
-      <g class="gf-base">
-        <!-- x-axis -->
-        <line x1="72" y1="390" x2="600" y2="390" stroke="#334155" stroke-width="2"/>
-        <polygon points="600,386 600,394 608,390" fill="#334155"/>
-        <!-- y-axis -->
-        <line x1="72" y1="390" x2="72" y2="34" stroke="#334155" stroke-width="2"/>
-        <polygon points="68,38 76,38 72,30" fill="#334155"/>
-        <!-- axis labels -->
-        <text x="58" y="34" font-size="14" fill="#334155" font-weight="700">P</text>
-        <text x="612" y="396" font-size="14" fill="#334155" font-weight="700">Q</text>
-        <!-- MPC (green, upward) -->
-        <line x1="100" y1="360" x2="575" y2="95" stroke="#059669" stroke-width="2.5"/>
-        <text x="579" y="98" font-size="12" fill="#059669" font-weight="700">MPC</text>
-        <!-- MSB (blue, downward) -->
-        <line x1="100" y1="75" x2="575" y2="365" stroke="#2563EB" stroke-width="2.5"/>
-        <text x="566" y="361" font-size="12" fill="#2563EB" font-weight="700">MSB</text>
-        <!-- Qm dashed vertical + Pm dashed horizontal -->
-        <line x1="344" y1="224" x2="344" y2="390" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-        <line x1="72" y1="224" x2="344" y2="224" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-        <!-- E₁ free-market equilibrium dot -->
-        <circle cx="344" cy="224" r="5" fill="#1e293b"/>
-        <text x="352" y="220" font-size="11" fill="#1e293b" font-weight="700">E₁</text>
-        <!-- axis tick labels -->
-        <text x="344" y="406" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="600">Qm</text>
-        <text x="66" y="228" font-size="10" fill="#1e293b" text-anchor="end" font-weight="600">Pm</text>
-      </g>
-
-      <!-- ── STAGE 2: MSC + Q* + market-failure DWL ──────────────────── -->
-      <g class="gf-stage-2">
-        <!-- Rose DWL₁ triangle (over-production) -->
-        <polygon points="280,185 344,224 344,149" fill="#FECACA" opacity="0.7"/>
-        <!-- MSC = MPC + MEC (red dashed, upward) -->
-        <line x1="100" y1="285" x2="560" y2="28" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3"/>
-        <text x="478" y="74" font-size="12" fill="#DC2626" font-weight="700">MSC</text>
-        <!-- Q* dashed vertical + P* dashed horizontal -->
-        <line x1="280" y1="185" x2="280" y2="390" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-        <line x1="72" y1="185" x2="280" y2="185" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-        <!-- E* social-optimum dot -->
-        <circle cx="280" cy="185" r="5" fill="#DC2626"/>
-        <text x="289" y="178" font-size="11" fill="#B91C1C" text-anchor="start" font-weight="700">E*</text>
-        <!-- axis tick labels -->
-        <text x="280" y="406" font-size="11" fill="#B91C1C" text-anchor="middle" font-weight="600">Q*</text>
-        <text x="66" y="189" font-size="10" fill="#B91C1C" text-anchor="end" font-weight="600">P*</text>
-        <!-- DWL₁ tag -->
-        <text x="316" y="192" font-size="11" fill="#B91C1C" text-anchor="middle" font-weight="800">DWL₁</text>
-      </g>
-
-      <!-- ── STAGE 3: ideal-tax brace (MEC at Q*) ────────────────────── -->
-      <g class="gf-stage-3">
-        <!-- Brace showing MEC gap (MSC − MPC) at Q* -->
-        <line x1="272" y1="185" x2="272" y2="260" stroke="#059669" stroke-width="1.5"/>
-        <line x1="266" y1="185" x2="278" y2="185" stroke="#059669" stroke-width="1.5"/>
-        <line x1="266" y1="260" x2="278" y2="260" stroke="#059669" stroke-width="1.5"/>
-        <!-- label + arrow to brace -->
-        <text x="175" y="266" font-size="10" fill="#047857" text-anchor="middle" font-weight="700">ideal tax = MEC</text>
-        <line x1="215" y1="262" x2="266" y2="226" stroke="#059669" stroke-width="1" marker-end="url(#gf-ag)"/>
-      </g>
-
-      <!-- ── STAGE 4: over-taxed supply + Q'' + govt-failure DWL ──────── -->
-      <g class="gf-stage-4">
-        <!-- Purple DWL₂ triangle (over-correction / under-production) -->
-        <polygon points="280,185 250,167 250,201" fill="#DDD6FE" opacity="0.85"/>
-        <!-- Over-taxed supply line (purple dashed) -->
-        <line x1="100" y1="250" x2="495" y2="30" stroke="#7D23CB" stroke-width="1.5" stroke-dasharray="5,3"/>
-        <text x="350" y="100" font-size="11" fill="#7D23CB" text-anchor="middle" font-weight="700">Over-taxed S</text>
-        <!-- Q'' dashed vertical + P'' dashed horizontal -->
-        <line x1="250" y1="167" x2="250" y2="390" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-        <line x1="72" y1="167" x2="250" y2="167" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-        <!-- E'' over-corrected equilibrium dot -->
-        <circle cx="250" cy="167" r="5" fill="#7D23CB"/>
-        <text x="242" y="163" font-size="11" fill="#7D23CB" text-anchor="end" font-weight="700">E''</text>
-        <!-- axis tick labels -->
-        <text x="250" y="406" font-size="11" fill="#7D23CB" text-anchor="middle" font-weight="600">Q''</text>
-        <text x="66" y="171" font-size="10" fill="#7D23CB" text-anchor="end" font-weight="600">P''</text>
-        <!-- DWL₂ tag (left of the small triangle) -->
-        <text x="232" y="188" font-size="11" fill="#7D23CB" text-anchor="end" font-weight="800">DWL₂</text>
-      </g>
-    </svg>`;
-
-    const steps = stages.map(function(s, i) {
-      return '<button class="gf-step-btn' + (i === 0 ? ' is-active' : '') + '" type="button" data-action="gf-step" data-ad-state="' + s.key + '"><span class="gf-step-btn__num">' + (i + 1) + '</span>' + s.label + '</button>';
-    }).join('');
-
-    const panels = stages.map(function(s, i) {
-      return '<div class="gf-panel' + (i === 0 ? ' is-active' : '') + '" data-panel-key="' + s.key + '" style="border-left-color:' + s.tone + ';"><div class="gf-panel__title" style="color:' + s.tone + ';">' + s.title + '</div><div class="gf-panel__body">' + s.text + '</div></div>';
-    }).join('');
-
-    const tipTone = (c.tip && typeof c.tip === 'object' && c.tip.tone) || 'amber';
-    const tt = PATTERN_TONES[tipTone] || PATTERN_TONES.amber;
-    const tipHtml = (c.tip && typeof c.tip === 'object' && c.tip.text)
-      ? '<div style="display:flex;align-items:center;gap:14px;background:' + tt.bg + ';border:1px solid ' + tt.border + ';border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:' + tt.accent + ';color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">' + (c.tip.icon || '💡') + '</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">' + c.tip.text + '</div></div>'
-      : '';
-
-    let out = '<div class="card__step-label">' + c.stepLabel + '</div>';
-    out += '<h1 class="card__title">' + c.title + '</h1>';
-    if (c.lede) out += '<p class="card__lede">' + c.lede + '</p>';
-    out += tipHtml;
-
-    out += '<div class="gf-explorer">';
-    out += '<div class="gf-steps">' + steps + '</div>';
-    out += '<div class="gf-main">';
-    out += '<div class="gf-diagram show-stage1" data-ad-state="stage1">' + svgDiagram + '</div>';
-    out += '<div class="gf-descriptions">' + panels + '</div>';
-    out += '</div>';
-    out += '</div>';
-
-    // Rows table — standard .cmp-table chrome, with a tone-tinted icon label
-    // per market-failure row so the matrix reads at a glance.
-    if (c.rows && c.rows.length) {
-      out += genSecLabel('🧰', 'Match the tool to the failure');
-      const cmpHead = '<div class="cmp-table__head">'
-        + '<div class="cmp-table__hcell cmp-table__hcell--corner">Market failure</div>'
-        + '<div class="cmp-table__hcell">' + (c.colA || '') + '</div>'
-        + '<div class="cmp-table__hcell">' + (c.colB || '') + '</div></div>';
-      const cmpRows = c.rows.map(function(r, i) {
-        const tone = r.tone ? PATTERN_TONES[r.tone] : PATTERN_TONES[['rose','green','blue','amber','purple','slate'][i % 6]];
-        const labelStyle = 'border-left:4px solid ' + tone.label + ';background:' + tone.bg + ';color:' + tone.label + ';font-weight:800;';
-        const iconHtml = r.icon ? '<span style="font-size:16px;margin-right:7px;">' + r.icon + '</span>' : '';
-        return '<div class="cmp-table__row ' + (i % 2 === 0 ? 'cmp-table__row--even' : 'cmp-table__row--odd') + '">'
-          + '<div class="cmp-table__label" style="' + labelStyle + '">' + iconHtml + r.label + '</div>'
-          + '<div class="cmp-table__cell"><span class="cmp-table__key">' + (c.colA || '') + '</span><span class="cmp-table__val">' + (r.colA || '') + '</span></div>'
-          + '<div class="cmp-table__cell"><span class="cmp-table__key">' + (c.colB || '') + '</span><span class="cmp-table__val">' + (r.colB || '') + '</span></div>'
-          + '</div>';
-      }).join('');
-      out += '<div class="cmp-table" style="--cmp-cols:0.95fr 1fr 1.15fr;margin-bottom:24px;">' + cmpHead + cmpRows + '</div>';
-    }
-
-    // Causes
-    if (c.causesLabel && c.causes && c.causes.length) {
-      const causesTiles = c.causes.map(function(item, i) {
-        const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
-        return '<div style="border-radius:14px;background:' + tone.bg + ';border:1px solid ' + tone.border + ';padding:16px 16px 14px;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><div style="width:38px;height:38px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">' + item.icon + '</div><div style="font-weight:800;font-size:14px;color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13px;color:#0B1426;line-height:1.65;">' + item.body + '</div></div>';
-      }).join('');
-      out += genSecLabel(c.causesEmoji || '⚠️', c.causesLabel);
-      out += '<div style="display:grid;grid-template-columns:' + gridColumnsFor(c.causes.length, 155) + ';gap:12px;margin:0 0 28px;">' + causesTiles + '</div>';
-    }
-
-    if (c.examEdge) {
-      const et = PATTERN_TONES['purple'];
-      out += '<div style="background:' + et.bg + ';border:1px solid ' + et.border + ';border-radius:12px;padding:16px 18px;margin-top:10px;"><div style="font-size:12px;font-weight:700;color:' + et.label + ';text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">Exam edge</div><div style="font-size:13.5px;color:#0B1426;line-height:1.65;">' + c.examEdge + '</div></div>';
-    }
-
-    /* Note: quizCta button was dropped in v0.4.0 when the standalone
-       /quiz/ shell was retired. The quiz pool now lives alongside the
-       Learn It cards in the same learn.js file under
-       window.ECONOS_QUIZ — ready to be surfaced inline at the end of
-       the Learn It journey when the inline-quiz renderer ships. */
-
-    return out;
-  }
-
   function renderCardRegulatoryCaptureExplorer(c) {
     const steps = [
       { key: 'stage1', label: 'Design intent',  text: 'Parliament creates an independent regulator to act as a buffer between industry and consumers. The regulator has statutory powers: it can set prices, investigate anti-competitive conduct, and impose fines. In this design, the regulator\'s loyalty runs exclusively to the public – not to the firms it oversees.' },
@@ -6187,7 +6020,7 @@
 
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'pes-five-frames' || c.template === 'worked-example' || c.template === 'ped-calculation' || c.template === 'pes-calculation' || c.template === 'yed-calculation' || c.template === 'xed-calculation' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold' || c.template === 'regulatory-capture-explorer' || c.template === 'welfare-gf-explorer' || c.template === 'diagnose' || c.template === 'puzzle') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'pes-five-frames' || c.template === 'worked-example' || c.template === 'ped-calculation' || c.template === 'pes-calculation' || c.template === 'yed-calculation' || c.template === 'xed-calculation' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold' || c.template === 'regulatory-capture-explorer' || c.template === 'diagnose' || c.template === 'puzzle') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows – they fall through to the switch and get dedicated renderers.
     return !!(
@@ -6269,7 +6102,6 @@
         case 'xed-explorer':       body = renderCardXedExplorer(c);        break;
         case 'market-structures-comparison':      body = renderCardMarketStructuresComparison(c);      break;
         case 'essay-scaffold':                     body = renderCardEssayScaffold(c);                     break;
-        case 'welfare-gf-explorer':                body = renderCardWelfareGFExplorer(c);                break;
         case 'regulatory-capture-explorer':        body = renderCardRegulatoryCaptureExplorer(c);        break;
       }
     }

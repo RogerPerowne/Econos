@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.43.1 — 2026-06-03
+
+### Public Goods — de-duplicate Cards 2 & 5 for pattern variety
+
+Card 2 ("The Free Rider Problem") and Card 5 ("Why Markets Cannot Provide…")
+both opened with a near-identical *sequential-flow* chain making the same
+point — the market can't capture enough revenue, so it fails. Card 5 already
+carried the genuinely distinct, examinable content (vertical demand
+summation) underneath that duplicate flow.
+
+Re-cast Card 5 as a *Decompose-a-diagram* card: removed the duplicate
+revenue-capture flow, retitled it "Adding Up Demand for a Public Good", and
+led with the private-(horizontal) vs public-(vertical) demand-summation
+diagrams. The existing "private market view vs social view" comparison now
+delivers the market-failure conclusion through the summation lens, so no
+content is lost and the two cards no longer echo each other. Matches the
+intro's existing "why markets fail (vertical demand summation)" framing.
+Data only (network-first) — no `sw.js` bump.
+
 ## 0.43.0 — 2026-06-03
 
 ### Comparison table (.cmp-table) — responsive, no more clipped columns on mobile

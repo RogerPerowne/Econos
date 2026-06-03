@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.11 — 2026-06-03
+
+### Behavioural Economics — weakness-at-computation card to a 2×2 grid
+
+The four money-trap scenarios rendered 3 + 1 in the diagnose template's
+default 3-column grid, leaving an orphan. Added an opt-in **2-column
+variant** so the four form a clean 2×2 with no orphan:
+
+- `styles.css`: new `.scenarios__grid--cols2` modifier (2 columns on
+  desktop; still collapses to 1 column on mobile via the existing ≤900px
+  rule).
+- `app.js`: `renderCardDiagnose` emits the modifier class when a card sets
+  `scenariosCols: 2`.
+- The weakness-at-computation card opts in with `scenariosCols: 2`.
+
+Reusable and opt-in — only cards that set `scenariosCols` change; every
+other diagnose card keeps the 3-column default. All four examples kept.
+
+`app.js` + `styles.css` changed → `sw.js` cache bumped to `econos-v316`.
+
 ## 0.42.10 — 2026-06-03
 
 ### Indirect Taxes Card 4 — black panel titles + ~2pt smaller fonts

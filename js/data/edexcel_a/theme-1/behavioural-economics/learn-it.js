@@ -129,6 +129,7 @@ window.ECONOS_TOPIC = {
       template: 'diagnose',
       stepLabel: 'Learn: Step 3 of 6',
       title: 'Weakness at computation',
+      scenariosCols: 2,
       lede: 'Edexcel names three reasons consumers behave irrationally: <strong>influence of others</strong> (social norms), <strong>habit</strong>, and <strong>weakness at computation</strong> — we are systematically bad at the maths of money. For each case below, predict what most people get wrong, then <em>make your call</em>.',
       table: {
         headers: ['Edexcel reason', 'What it means', 'Where it shows up'],

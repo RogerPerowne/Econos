@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.7 — 2026-06-03
+
+### PPF Card 4 — OC badges aligned directly under their start dots
+
+Two follow-on fixes after user feedback that the v0.41.6 badges were
+still "badly placed":
+
+- Each badge is now positioned with `labelDx = 0` and a small negative
+  `labelDy` — sitting **directly below its trade's start dot at the
+  same x-coordinate**. The green/blue/rose dot owns the green/blue/rose
+  label vertically beneath it, removing the visual ambiguity of
+  badges floating off to one side.
+- Added a numerical pre-check (`tmp/badge-check.mjs`-style probe) used
+  while iterating: for each badge, sample the curve at 20 points across
+  the badge's x-range and refuse to ship if any sample falls inside the
+  badge box. Catches the curve-clash bugs that the eye misses on small
+  screens.
+
+Also captured the lessons from the multi-round PPF Card 4 saga in
+`CLAUDE.md` under "Charts & diagrams — non-negotiable rules" so the
+same iterations don't have to happen again on the next chart:
+quarter-arc Bezier as the default bowed shape, `findTAtX`
+endpoint-rejection workaround, label-position numerical pre-check,
+and the "screenshot every view AND critique it harshly" rule.
+
+`sw.js` cache bumped to `econos-v302`.
+
 ## 0.41.6 — 2026-06-03
 
 ### PPF Card 4 — labels off the curve, stage taller for axis breathing room

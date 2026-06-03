@@ -334,10 +334,10 @@ window.ECONOS_TOPIC = {
       causesEmoji: '⚖️',
       causesLabel: 'Judgement framework',
       causes: [
-        { tone: 'green',  icon: '👥', head: 'Scale of social benefit',     body: '' },
-        { tone: 'purple', icon: '🔍', head: 'Measurability of demand',     body: '' },
-        { tone: 'amber',  icon: '£',  head: 'Opportunity cost of tax funding', body: '' },
-        { tone: 'rose',   icon: '🏛️', head: 'Risk of government failure', body: '' }
+        { tone: 'green',  icon: '👥', head: 'Scale of social benefit',         body: 'How large and widely shared is the benefit? The bigger the spillover (e.g. national defence), the stronger the case for state provision.' },
+        { tone: 'purple', icon: '🔍', head: 'Measurability of demand',         body: 'Can the government work out how much people value the good? Hidden preferences make the optimal quantity hard to set — risk of over- or under-provision.' },
+        { tone: 'amber',  icon: '£',  head: 'Opportunity cost of tax funding', body: 'Provision is funded by taxation, so weigh it against the next best use of that money — other public services or leaving it with taxpayers.' },
+        { tone: 'rose',   icon: '🏛️', head: 'Risk of government failure',      body: 'State provision can be inefficient or politically captured. Judge whether the likely government failure is smaller than the market failure it corrects.' }
       ],
       lockIn: {
         title: 'What you need to lock in',

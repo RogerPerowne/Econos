@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.20 — 2026-06-03
+
+### Public Goods Card 7 — flesh out the judgement-framework tiles
+
+The four "Judgement framework" tiles (scale of social benefit · measurability
+of demand · opportunity cost of tax funding · risk of government failure)
+were headline-only. Added a brief one-sentence explanation to each so
+students know what the criterion actually asks. Data only — no `sw.js` bump.
+
 ## 0.44.19 — 2026-06-03
 
 ### Public Goods Card 7 — replace the fabricated quote with a real, attributed one

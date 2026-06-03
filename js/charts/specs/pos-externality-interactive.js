@@ -97,7 +97,7 @@
       // Market equilibrium — red hollow (always)
       { layer: 'layer-market-eq',
         x: Em.x, y: Em.y, tone: 'red', radius: 6, hollow: true,
-        label: 'E_market', labelDx: 12, labelDy: -4, anchor: 'start' },
+        label: 'Eₘ', labelDx: 12, labelDy: -4, anchor: 'start' },
       // Socially optimal equilibrium — green hollow
       { layer: 'layer-optimal',
         x: Eopt.x, y: Eopt.y, tone: 'green', radius: 7, hollow: true,
@@ -112,8 +112,8 @@
 
     texts: [
       // Persistent market-eq axis tick labels
-      { layer: 'layer-market-eq', x: -0.028, y: Em.y,    text: 'P_m', tone: 'red', bold: true, fontSize: 12, anchor: 'end' },
-      { layer: 'layer-market-eq', x: Em.x,    y: -0.050, text: 'Q_m', tone: 'red', bold: true, fontSize: 12, anchor: 'middle' },
+      { layer: 'layer-market-eq', x: -0.028, y: Em.y,    text: 'Pₘ', tone: 'red', bold: true, fontSize: 12, anchor: 'end' },
+      { layer: 'layer-market-eq', x: Em.x,    y: -0.050, text: 'Qₘ', tone: 'red', bold: true, fontSize: 12, anchor: 'middle' },
 
       // MEB label next to bracket
       { layer: 'layer-meb', x: MebBracket.x + 0.024, y: (MebBracket.yMpb + MebBracket.yMsb) / 2,
@@ -130,31 +130,23 @@
 
     legends: [
       /* ─── BASE LEGEND ─── */
+      /* Mirror of neg-externality (v0.42.19 sweep): one complete short
+       * sentence per body entry so the narrow column wraps cleanly; the
+       * old "what each curve means" duplicate of the on-chart labels is
+       * gone; the analysis panel below carries the teaching prose. */
       {
         layer: 'layer-legend-base',
         x: 600, y: 65,
         sections: [
           { header: { text: 'FREE MARKET OUTCOME', tone: 'red' },
             body: [
-              'Consumers maximise utility at',
-              'MPC = MPB → equilibrium at',
-              { text: '(Q_m, P_m).', tone: 'slate', bold: true }
+              'D = MPB (demand) meets MPC = MSC (supply) at the market equilibrium Eₘ.',
+              { text: 'Output Qₘ · Price Pₘ', tone: 'slate', bold: true }
             ]
           },
-          { header: { text: 'WHAT EACH CURVE MEANS', tone: 'gray' },
+          { header: { text: 'THE BLIND SPOT', tone: 'gray' },
             body: [
-              { text: 'D = MPB', tone: 'amber', bold: true },
-              'Marginal private benefit – value to',
-              'the consumer of one more unit.',
-              { text: 'MPC = MSC', tone: 'green', bold: true },
-              'Same private and social cost',
-              '(no production externality).'
-            ]
-          },
-          { header: { text: 'BUT THIS IGNORES…', tone: 'red' },
-            body: [
-              'External benefits to third parties',
-              '(herd immunity, productivity).'
+              'Buyers value only their own benefit — the benefit spilling over to third parties is invisible.'
             ]
           }
         ]
@@ -167,24 +159,13 @@
         sections: [
           { header: { text: 'MSB = MPB + MEB', tone: 'purple' },
             body: [
-              'MSB adds the benefit enjoyed by',
-              'third parties to private benefit.',
+              'MSB stacks the benefit enjoyed by third parties on top of the buyer\'s private benefit.'
+            ]
+          },
+          { header: { text: 'THE GAP', tone: 'purple' },
+            body: [
               { text: 'Vertical gap = MEB', tone: 'slate', bold: true },
-              '(marginal external benefit)'
-            ]
-          },
-          { header: { text: 'EXAMPLES OF MEB', tone: 'gray' },
-            body: [
-              'Herd immunity from vaccination',
-              'Productivity from education',
-              'Lower crime from schooling',
-              'Pollination from beekeeping'
-            ]
-          },
-          { header: { text: 'THE PROBLEM', tone: 'purple' },
-            body: [
-              'Consumers don\'t capture MEB,',
-              'so they consume too little.'
+              'The marginal external benefit — herd immunity, productivity. Buyers don\'t capture it, so they under-consume.'
             ]
           }
         ]
@@ -195,25 +176,15 @@
         layer: 'layer-legend-shift',
         x: 600, y: 65,
         sections: [
-          { header: { text: 'THE OPTIMUM', tone: 'green' },
+          { header: { text: 'THE SOCIAL OPTIMUM', tone: 'green' },
             body: [
-              'Society maximises welfare',
-              'where MSB = MSC at',
-              { text: '(Q*, P*).', tone: 'green', bold: true }
+              'Welfare is highest where MSB = MSC, at E* (Q*, P*).'
             ]
           },
-          { header: { text: 'COMPARISON', tone: 'gray' },
+          { header: { text: 'OPTIMUM vs MARKET', tone: 'gray' },
             body: [
-              { text: 'Q* > Q_m', tone: 'slate', bold: true },
-              'Society wants more output.',
-              { text: 'P* > P_m', tone: 'slate', bold: true },
-              'Optimal price is higher.'
-            ]
-          },
-          { header: { text: 'FREE MARKET FAILS', tone: 'green' },
-            body: [
-              'Without intervention the market',
-              'under-produces by (Q* − Q_m).'
+              { text: 'Q* > Qₘ  and  P* > Pₘ', tone: 'slate', bold: true },
+              'Society wants more output at a higher price; the market under-produces by Q* − Qₘ.'
             ]
           }
         ]
@@ -226,25 +197,13 @@
         sections: [
           { header: { text: 'WELFARE GAIN FORGONE', tone: 'green' },
             body: [
-              'Shaded triangle between Q_m',
-              'and Q*, bounded above by',
-              'MSB and below by MSC.',
-              { text: 'For each unit Q_m → Q*:', tone: 'slate', bold: true },
-              'MSB > MSC → society gains',
-              '(MSB − MSC) of welfare.'
+              'The green triangle between Qₘ and Q* — bounded above by MSB, below by MSC.',
+              { text: 'Each missing unit: MSB > MSC', tone: 'slate', bold: true }
             ]
           },
-          { header: { text: 'POLICY RESPONSE', tone: 'green' },
+          { header: { text: 'THE FIX', tone: 'green' },
             body: [
-              'A Pigouvian subsidy = MEB at Q*',
-              'internalises the externality',
-              'and closes the wedge.'
-            ]
-          },
-          { header: { text: 'EXAM TECHNIQUE', tone: 'gray' },
-            body: [
-              'Label all six: D=MPB, MPC=MSC,',
-              'MSB, E_m, E*, welfare gain.'
+              'A Pigouvian subsidy = MEB at Q* lifts consumption to Q* and closes the wedge.'
             ]
           }
         ]

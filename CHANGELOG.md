@@ -6,6 +6,40 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.5 — 2026-06-03
+
+### PPF Card 4 — canonical quarter-circle curve, OC 1/3 → 1 → 3
+
+User flagged that the v0.41.4 curve still didn't look like a proper
+PPF — the textbook shape is closer to a quarter-arc of a circle,
+smoothly bowed throughout. Swapped to the canonical cubic-Bezier
+approximation `M 0,1 C 0.5523,1 1,0.5523 1,0` (the magic constant
+is 4(√2−1)/3 — the standard quarter-arc approximation used in every
+vector graphics library). In 0..10 chart units the curve satisfies
+x² + y² ≈ 100 to four decimal places everywhere.
+
+The quarter-circle's geometry gives beautifully clean trade values
+at integer x positions:
+
+- **View 1 — Cheap** (green, OC ≈ 1/3): capital 2 → 4, consumer 9.8 → 9.2.
+- **View 2 — Even** (blue, OC = 1): capital 6 → 8, consumer 8.0 → 6.0 — exact.
+- **View 3 — Costly** (rose, OC ≈ 3): capital 8 → ~10, consumer 6.0 → ~0.
+
+OC values form a perfect **3× geometric progression**: 1/3 → 1 → 3.
+Triangle heights ratio 1 : 3 : 9 — the increasing-OC story is now
+visually overwhelming. View 3's vertical sacrifice arrow runs all
+the way down to the x-axis showing the brutal cost of the last few
+capital goods.
+
+Trade 3's Δx is 0.199 (not 0.200) because the engine's `findTAtX`
+bounds check rejects exact-endpoint targets — `start[0]` computes
+to 0.80000194 due to binary-search precision, so adding 0.2 gives
+1.00000194 > 1 and the triangle is silently omitted. 0.199 keeps
+the end safely inside the curve range without changing the
+displayed OC.
+
+`sw.js` cache bumped to `econos-v300`.
+
 ## 0.41.4 — 2026-06-03
 
 ### PPF Card 4 — moderate-bow curve + bigger Δx so the triangles read

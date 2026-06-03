@@ -9825,9 +9825,7 @@ window.ECONOS_ICONS = {
         <text x="44" y="198" font-size="10.5" fill="#334155">Exercise regularly</text>
         <text x="115" y="238" font-size="9" fill="#64748B" font-style="italic" text-anchor="middle">"future me will thank me"</text>
 
-        <line x1="215" y1="74" x2="215" y2="244" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
-        <rect x="205" y="150" width="20" height="18" rx="3" fill="#E2E8F0"/>
-        <text x="215" y="163" font-size="9" font-weight="700" text-anchor="middle" fill="#64748B">vs</text>
+        <text x="220" y="162" font-size="12" font-weight="800" text-anchor="middle" fill="#94A3B8">vs</text>
 
         <rect x="230" y="64" width="190" height="188" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
         <rect x="230" y="64" width="190" height="5" rx="4" fill="#7c3aed"/>

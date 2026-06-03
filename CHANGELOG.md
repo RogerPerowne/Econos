@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.13 — 2026-06-03
+
+### Behavioural Economics — clean up the planner/doer "vs" divider
+
+On the bounded-self-control card's planner-vs-doer diagram
+(`boundedSelfControlInteractive`), removed the dashed grey vertical divider
+and the grey `vs` badge between the two cards, leaving a single clean `vs`
+centred in the gap (moved to the true centre x:220, slightly larger/bolder
+so it reads without the badge). `icons.js` changed → `sw.js` cache bumped to
+`econos-v317`.
+
 ## 0.42.12 — 2026-06-03
 
 ### Behavioural Economics — trim the weakness-at-computation reveals

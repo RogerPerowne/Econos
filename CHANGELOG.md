@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.6 — 2026-06-03
+
+### Two small visual fixes — PPF Card 7 "How to write it"; barter triangle centring
+
+- **PPF Card 7 "How to write it"** (1. Identify / 2. State / 3. Link /
+  4. Finish): the renderer reads `step.sub` for the description text, but
+  the data file used `body`. The descriptions never appeared. Renamed the
+  field and rewrote each entry as a substantive one-liner so students see
+  what to actually do at each step.
+- **Specialisation & Money — barter triangle** (Card 6, "Problem with
+  barter"): the dashed-line triangle didn't pass through the centres of
+  the three icon circles — apex and base were below the icons. Updated the
+  SVG coords so vertices land on (Baker), (Fisher) and (Shoemaker) circle
+  centres; recomputed the red ✕ positions to sit on the new edge midpoints.
+
+`icons.js` changed → `sw.js` bumped to `econos-v324`.
+
 ## 0.44.5 — 2026-06-03
 
 ### PPF Card 5 · "More jam tomorrow" view — tighter copy

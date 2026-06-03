@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.26 — 2026-06-03
+
+### Price Determination — every chart label moved to "above" mode
+
+- All five Price Determination chart specs (`equilibrium-basic`,
+  `disequilibrium-interactive`, `shifts-interactive`,
+  `sim-shifts-interactive`, `welfare-surplus`) now place the **D / MB curve
+  label above the line** instead of below — matching the existing S / MC
+  convention so every curve label sits above its referent.
+- Fixed the `layer-sinc` (supply-increases) E₂ label in shifts-interactive,
+  which was sitting below its dot — now above, consistent with the other
+  three shift states.
+
 ## 0.44.25 — 2026-06-03
 
 ### Government Intervention — welfare/govt-failure diagram migrated to the chart engine

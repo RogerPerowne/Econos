@@ -40,7 +40,7 @@
     curves: [
       // Marginal benefit (demand-like, downward, blue)
       { id: 'MB', d: 'M 0,0.938 L 0.944,0.063',
-        tone: 'blue', label: 'MB', strokeWidth: 3, labelDx: 8, labelDy: 4 },
+        tone: 'blue', label: 'MB', strokeWidth: 3, labelDx: 8, labelDy: -4 },
       // Marginal cost (supply-like, upward, amber)
       { id: 'MC', d: 'M 0,0.063 L 0.944,0.938',
         tone: 'amber', label: 'MC', strokeWidth: 3, labelDx: 8, labelDy: -4 }

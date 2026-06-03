@@ -29,7 +29,7 @@
     },
 
     curves: [
-      { d: 'M 0.10,0.886 L 0.94,0.091', tone: 'blue',  label: 'D', strokeWidth: 3, labelDx: 8, labelDy: 8 },
+      { d: 'M 0.10,0.886 L 0.94,0.091', tone: 'blue',  label: 'D', strokeWidth: 3, labelDx: 8, labelDy: -4 },
       { d: 'M 0.10,0.091 L 0.94,0.886', tone: 'amber', label: 'S', strokeWidth: 3, labelDx: 8, labelDy: -4 },
 
       { layer: 'layer-dinc', d: 'M 0.28,0.886 L 1.12,0.091', tone: 'green',  strokeWidth: 2.6 },
@@ -63,7 +63,7 @@
       { layer: 'layer-ddec', x: 0.55, y: 0.17, text: 'D₃', tone: 'purple', bold: true, fontSize: 14, anchor: 'middle' },
       { layer: 'layer-ddec', x: 0.40, y: 0.43, text: 'E₃', tone: 'purple', bold: true, fontSize: 13, anchor: 'end' },
       { layer: 'layer-sinc', x: 0.93, y: 0.70, text: 'S₂', tone: 'green',  bold: true, fontSize: 14, anchor: 'middle' },
-      { layer: 'layer-sinc', x: 0.645, y: 0.36, text: 'E₂', tone: 'green', bold: true, fontSize: 13, anchor: 'start' },
+      { layer: 'layer-sinc', x: 0.645, y: 0.44, text: 'E₂', tone: 'green', bold: true, fontSize: 13, anchor: 'start' },
       { layer: 'layer-sdec', x: 0.45, y: 0.73, text: 'S₃', tone: 'purple', bold: true, fontSize: 14, anchor: 'middle' },
       { layer: 'layer-sdec', x: 0.40, y: 0.60, text: 'E₃', tone: 'purple', bold: true, fontSize: 13, anchor: 'end' }
     ]

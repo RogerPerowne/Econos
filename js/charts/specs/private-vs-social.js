@@ -42,12 +42,13 @@
         titleTone: 'rose',
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
+          /* MPB and MPC label positions UNSET — auto-placer evaluates
+           * 5 candidates and picks the one with no curve clash, no
+           * label clash, and a slot that doesn't drift off-stage. */
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
-            tone: 'blue', label: 'MPB', strokeWidth: 2.5,
-            labelDx: -6, labelDy: 14, anchor: 'end' },
+            tone: 'blue', label: 'MPB', strokeWidth: 2.5 },
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
-            tone: 'amber', label: 'MPC', strokeWidth: 2.5,
-            labelDx: -6, labelDy: -20, anchor: 'end' },
+            tone: 'amber', label: 'MPC', strokeWidth: 2.5 },
           /* MSC shifted UP from MPC — pollution adds external cost.
            * Label position deliberately UNSET — the engine's
            * auto-placer (chooseCurveLabelPosition, v0.41.15) evaluates
@@ -82,16 +83,19 @@
         titleTone: 'green',
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
+          /* MPB and MPC label positions UNSET — auto-placer evaluates
+           * 5 candidates and picks the one with no curve clash, no
+           * label clash, and a slot that doesn't drift off-stage. */
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
-            tone: 'blue', label: 'MPB', strokeWidth: 2.5,
-            labelDx: -6, labelDy: 14, anchor: 'end' },
+            tone: 'blue', label: 'MPB', strokeWidth: 2.5 },
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
-            tone: 'amber', label: 'MPC', strokeWidth: 2.5,
-            labelDx: -6, labelDy: -20, anchor: 'end' },
-          /* MSB shifted UP from MPB — vaccinations add herd-immunity benefit */
+            tone: 'amber', label: 'MPC', strokeWidth: 2.5 },
+          /* MSB shifted UP from MPB — vaccinations add herd-immunity
+           * benefit. Label position UNSET — auto-placer handles it
+           * (without this the manual placement clashed with the
+           * auto-placed MPB above). */
           { id: 'MSB', d: 'M 0.215,0.880 L 1.000,0.230',
-            tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4',
-            labelDx: -6, labelDy: 14, anchor: 'end' }
+            tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4' }
         ],
         points: [
           /* Market eq at MPB ∩ MPC */

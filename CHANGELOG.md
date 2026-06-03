@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.19 — 2026-06-03
+
+### Public Goods Card 7 — replace the fabricated quote with a real, attributed one
+
+The "Economist insight · ARPANET and the internet" quote was made up,
+unattributed and had no portrait. Replaced it with a genuine Mariana
+Mazzucato line from *The Entrepreneurial State* (2013) — "there is not a
+single key technology behind the iPhone … that was not government-funded" —
+which makes the same state-investment / widely-shared-returns point and now
+carries her portrait (`economistMazzucato`). Data only — no `sw.js` bump.
+
 ## 0.44.18 — 2026-06-03
 
 ### Public Goods Card 5 — redraw the demand-summation diagrams

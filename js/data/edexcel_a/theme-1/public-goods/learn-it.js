@@ -316,11 +316,11 @@ window.ECONOS_TOPIC = {
         ]
       },
       economistQuote: {
-        portraitKey: null,
+        portraitKey: 'economistMazzucato',
         tone: 'amber',
-        label: 'Economist insight · ARPANET and the internet',
-        quote: 'State-backed early network investment created huge future value that private firms may not have funded at the start because returns were uncertain and widely shared.',
-        attribution: 'Public goods and long-run value creation'
+        label: 'Economist insight · the state as investor',
+        quote: 'There is not a single key technology behind the iPhone — the internet, GPS, touchscreen, even Siri — that was not government-funded.',
+        attribution: 'Mariana Mazzucato, <em>The Entrepreneurial State</em> (2013)'
       },
       flowTitle: 'How to evaluate in an essay',
       flowEmoji: '📝',

@@ -227,7 +227,7 @@ window.ECONOS_TOPIC = {
             tone: 'green',
             show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
             head: 'D — consumer-heavy again, but at higher absolute levels',
-            body: 'With PPF₂ in hand, the country specialises <strong>back</strong> toward consumer goods — moving along PPF₂ from C to D. D is in the consumer-heavy region, the same kind of allocation A occupied on PPF₁ originally. But because PPF₂ is bigger, D delivers more consumer goods AND more capital goods than A ever did.',
+            body: 'With PPF₂ in hand, the country specialises <strong>back</strong> toward consumer goods — moving along PPF₂ from C to D. D is the same kind of allocation A occupied on PPF₁ originally. But because PPF₂ is bigger, D delivers more consumer goods AND more capital goods.',
             analysis: 'Compare D with A: same "consumer-heavy" mix, but everything is higher in absolute terms. That\'s the long-run pay-off of the A → B → PPF shift → D trajectory. The "Jamland" insight: <strong>more jam tomorrow is possible — but only if you stomach less jam today.</strong> A* moves: name the opportunity cost (consumer goods foregone at B), distinguish movement along the PPF (A→B, C→D) from a shift of the PPF (PPF₁→PPF₂), and link to real countries that made this choice.'
           }
         ]

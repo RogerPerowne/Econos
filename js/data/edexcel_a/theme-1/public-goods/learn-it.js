@@ -198,17 +198,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'public_goods_5',
       stepLabel: 'Learn: Step 5 of 7',
-      title: 'Why Markets Cannot Provide Public Goods',
-      tip: { icon: '🏛️', tone: 'blue', text: 'This is <strong>complete market failure, not partial</strong>. Because firms cannot charge every beneficiary, private revenue is lower than society\'s total benefit.' },
-      flowTitle: 'The revenue-capture problem',
-      flowEmoji: '💸',
-      flow: [
-        { tone: 'green',  icon: '👥', title: 'Society benefits widely',          sub: 'Many people gain from the good.' },
-        { tone: 'purple', icon: '💷', title: 'Firm can only charge a few or none', sub: 'Cannot bill everyone who benefits.' },
-        { tone: 'amber',  icon: '📉', title: 'Revenue too low',                  sub: 'Private revenue is less than the cost of provision.' },
-        { tone: 'rose',   icon: '🚫', title: 'No incentive to supply',           sub: 'Firms will not provide the good.' }
-      ],
-      illustratedGridLabel: 'Vertical demand summation',
+      title: 'Adding Up Demand for a Public Good',
+      tip: { icon: '📈', tone: 'blue', text: 'Card 2 showed <em>why</em> no one wants to pay. This card shows the deeper diagrammatic reason markets fail <strong>completely</strong>: because everyone consumes the <em>same</em> unit, society\'s demand is summed <strong>vertically</strong> — and no single buyer ever reveals enough willingness to pay to fund it alone.' },
+      illustratedGridLabel: 'How demand is added up',
       illustratedGridEmoji: '📈',
       illustratedGridCols: 2,
       illustratedGridSceneHeight: 210,

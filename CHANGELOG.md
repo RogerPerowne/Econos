@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.43.6 — 2026-06-03
+
+### Remove Environmental Economics — not a standalone spec point
+
+Removed the parked "Environmental Economics" topic (registry entry +
+`js/data/edexcel_a/theme-1/environmental-economics/`). It wasn't a distinct
+spec sub-section on any board — its Edexcel A mapping (`1.4.1`) is Government
+Intervention and its AQA mapping (`4.1.8.4`) is Externalities. The
+exam-relevant content (carbon tax, cap-and-trade, climate as market failure)
+is already covered by Negative Externalities, Indirect Taxes & Subsidies and
+Government Intervention; the rest (sustainability, growth-vs-environment,
+international agreements) belongs to Theme 2 macro and Theme 4. Learn-It-only
+and unlinked, so nothing breaks. Build now emits 655 per-route files and an
+88-URL sitemap (down from 663 / 89). Data + registry only (network-first) —
+no `sw.js` bump.
+
 ## 0.43.5 — 2026-06-03
 
 ### Government Failure Card 7 — five solutions: columns → numbered rows

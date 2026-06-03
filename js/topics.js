@@ -356,20 +356,6 @@ window.ECONOS_TOPICS = [
     }
   },
 
-  /* ---- Parked — to be assigned to later themes ---- */
-  {
-    id: 'environmental-economics',
-    name: 'Environmental Economics',
-    sub: 'Carbon markets, Pigouvian taxes, sustainability',
-    color: '#15803d',
-    available: { learn: true, link: false, land: false },
-    boards: {
-      edexcel_a: { spec: '1.4.1', included: true },
-      edexcel_b: { spec: '4.3.2', included: true },
-      aqa:       { spec: '4.1.8.4', included: true },
-      ocr:       { spec: null, included: true }
-    }
-  },
   {
     id: 'government-intervention-in-markets',
     name: 'Government Intervention in Markets',

@@ -43,26 +43,15 @@
     ],
 
     curves: [
-      /* MPB (private demand) — the market sees this. labelDx pulled
-       * in (−32) so the wide "MPB = D" sits closer to the line at
-       * chart-x≈0.86 instead of dangling ~35px off the endpoint. */
+      /* All label positions UNSET — auto-placer (v0.41.18) handles it.
+       * MPC = S sits BELOW the line, MSC sits ABOVE (opposite-side
+       * rule for the parallel pair). MPB = D auto-picks its slot. */
       { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
-        tone: 'blue', label: 'MPB = D', strokeWidth: 2.5,
-        labelDx: -32, labelDy: -6, anchor: 'end' },
-      /* MPC (private supply) — the market sees this. labelDy negative
-       * (above the line at the endpoint) and labelDx small so the
-       * label sits at the top-right of the supply curve, above the
-       * MSC label which is mid-curve. labelDx=-32 with positive
-       * labelDy was clashing with MSC. */
+        tone: 'blue', label: 'MPB = D', strokeWidth: 2.5 },
       { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
-        tone: 'amber', label: 'MPC = S', strokeWidth: 2.5,
-        labelDx: -6, labelDy: -20, anchor: 'end' },
-      /* MSC (social cost) — dashed, parallel-shifted up from MPC.
-         Same slope as MPC (0.886 chart-y per chart-x) so the
-         externality is constant per unit. */
+        tone: 'amber', label: 'MPC = S', strokeWidth: 2.5 },
       { id: 'MSC', d: 'M 0.069,0.270 L 0.785,0.880',
-        tone: 'green', label: 'MSC', strokeWidth: 2.2, dashed: '6 4',
-        labelDx: 8, labelDy: -4, anchor: 'start' }
+        tone: 'green', label: 'MSC', strokeWidth: 2.2, dashed: '6 4' }
     ],
 
     points: [
@@ -79,9 +68,10 @@
     ],
 
     texts: [
-      /* DWL caption — sits inside the shaded triangle so it can't be
-         mistaken for an axis annotation. */
-      { x: 0.495, y: 0.595, text: 'DWL',
+      /* DWL at the triangle's CENTROID — vertically centred in the
+       * shaded region. Centroid of [(0.420, 0.569), (0.520, 0.480),
+       * (0.520, 0.655)] is (0.487, 0.568). */
+      { x: 0.487, y: 0.568, text: 'DWL',
         tone: 'rose', bold: true, fontSize: 12,
         anchor: 'middle' }
     ]

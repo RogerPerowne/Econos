@@ -219,37 +219,53 @@
     var size = SIZE.curveLabel;
     var endpoint = samples[samples.length - 1];
     var ex = endpoint[0], ey = endpoint[1];
-    // baseOffset bumped 10 → 14 so labels float a couple of label-widths
-    // off the line by default — "humans need as much distinction as
-    // possible" per user feedback. Slope-aware adjustment below raises
-    // it further for sloped lines.
-    var baseOffset = curve.labelOffset != null ? curve.labelOffset : 14;
+    // Asymmetric base offsets. ABOVE labels sit closer to the curve at
+    // the endpoint because the curve continues AWAY from the label
+    // (downward in pixel space, away from a label sitting above) — no
+    // slope clearance needed. BELOW labels sit further from the curve
+    // because the curve continues TOWARD the label (upward in pixel,
+    // toward a label sitting below) — slope clearance required to keep
+    // the line from crossing through the label box. User feedback:
+    // "MSC should go down (closer to curve); MPC should go down (away
+    // from curve)" — both labels move DOWN in absolute terms, which
+    // means closer for ABOVE and further for BELOW. (v0.41.18.)
+    var baseOffsetAbove = curve.labelOffset != null ? curve.labelOffset : 6;
+    var baseOffsetBelow = curve.labelOffset != null ? curve.labelOffset : 18;
     var halfH = 1.15 * size / 2;
     var halfW = 0.58 * size * text.length / 2;
 
-    // For ABOVE/BELOW placements, the label spans `halfW` pixels on
-    // each side of the endpoint x. If the curve is sloped, the line
-    // RISES from the endpoint as we move sideways — so a fixed offset
-    // can put the curve THROUGH the label box (this is exactly why
-    // MPC's "BELOW" was failing). Compute slope from the last two
-    // samples and pad the offset by enough to clear the curve at the
-    // far edge of the label box, plus a 4px breathing margin.
+    // Slope clearance applies to whichever side the curve APPROACHES
+    // as we walk back along the path from the endpoint. For supply-
+    // like curves (penult sits below endpoint in pixel y), walking
+    // back goes down-left → curve enters the BELOW region of the
+    // label, BELOW needs the clearance. For demand-like curves (penult
+    // sits above endpoint), walking back goes up-left → curve enters
+    // the ABOVE region, ABOVE needs the clearance. (v0.41.18: my first
+    // pass hard-coded "BELOW only" which broke MSB — a demand curve
+    // whose ABOVE bbox had the curve passing through it.)
     var penult = samples[Math.max(0, samples.length - 2)];
     var slopeMag = Math.abs((ey - penult[1]) / Math.max(1, ex - penult[0]));
-    var slopeOffset = Math.ceil(slopeMag * halfW) + 4;
-    var vOffset = Math.max(baseOffset, slopeOffset);
+    // Approach distance = full label WIDTH (not halfW). When the
+    // candidate overflows the chart we shift it inward, which moves
+    // the bbox's left edge further from the endpoint than halfW —
+    // 2*halfW is the worst-case distance and ensures the curve still
+    // clears after the shift. (v0.41.18 sub-fix: my first cut used
+    // halfW and the shifted MSB bbox still had the curve passing
+    // through it.)
+    var slopeOffset = Math.ceil(slopeMag * (2 * halfW)) + 6;
+    var approachesAbove = penult[1] < ey;   // curve walked back goes UP in pixel
+    var aboveOffset = approachesAbove ? Math.max(baseOffsetAbove, slopeOffset) : baseOffsetAbove;
+    var belowOffset = approachesAbove ? baseOffsetBelow                          : Math.max(baseOffsetBelow, slopeOffset);
 
     // CENTER candidate: midpoint of the curve, with the label offset
-    // ABOVE the line. Good for straight supply/demand lines where
-    // corners are crowded but the middle has empty space — also the
-    // natural slot for things like a DWL label inside a triangle.
+    // ABOVE the line. Uses aboveOffset since the geometry is the same.
     var mid = samples[Math.floor(samples.length / 2)];
     var candidates = [
-      { name: 'right',  x: ex + baseOffset,    y: ey,                   anchor: 'start'  },
-      { name: 'left',   x: ex - baseOffset,    y: ey,                   anchor: 'end'    },
-      { name: 'above',  x: ex,                  y: ey - vOffset - halfH, anchor: 'middle' },
-      { name: 'below',  x: ex,                  y: ey + vOffset + halfH, anchor: 'middle' },
-      { name: 'center', x: mid[0],              y: mid[1] - baseOffset - halfH, anchor: 'middle' }
+      { name: 'right',  x: ex + baseOffsetAbove,    y: ey,                       anchor: 'start'  },
+      { name: 'left',   x: ex - baseOffsetAbove,    y: ey,                       anchor: 'end'    },
+      { name: 'above',  x: ex,                       y: ey - aboveOffset - halfH, anchor: 'middle' },
+      { name: 'below',  x: ex,                       y: ey + belowOffset + halfH, anchor: 'middle' },
+      { name: 'center', x: mid[0],                   y: mid[1] - aboveOffset - halfH, anchor: 'middle' }
     ];
     var best = null, bestCost = Infinity;
     for (var i = 0; i < candidates.length; i++) {
@@ -327,13 +343,21 @@
       // (and vice versa). Without the bonus, the penalised candidate
       // would just lose to LEFT or RIGHT rather than driving the
       // engine toward the opposite vertical slot.
+      // Scoped to ACTUALLY-PARALLEL endpoints (similar y), not just
+      // "within 80px Euclidean". MPC/MSC have the same endpoint y so
+      // their labels truly stack if placed on the same side; MPB/MSB
+      // have endpoints 38px apart vertically and can both be ABOVE
+      // without a visual conflict (their labels would sit at different
+      // y too). Skip the rule when endpoints differ vertically by more
+      // than 25px. (v0.41.18.)
       if (placedBoxes && (c.name === 'above' || c.name === 'below')) {
         for (var pk = 0; pk < placedBoxes.length; pk++) {
           var pb = placedBoxes[pk];
           if (!pb.curveEndpoint || !pb.curveSide) continue;
           if (curve.layer && pb.layer && curve.layer !== pb.layer) continue;
-          var epDist = Math.hypot(pb.curveEndpoint[0] - ex, pb.curveEndpoint[1] - ey);
-          if (epDist > 80) continue;
+          var epDx = Math.abs(pb.curveEndpoint[0] - ex);
+          var epDy = Math.abs(pb.curveEndpoint[1] - ey);
+          if (epDx > 80 || epDy > 25) continue;
           if (pb.curveSide === c.name) cost += 350;
           if (pb.curveSide === 'above' && c.name === 'below') cost -= 300;
           if (pb.curveSide === 'below' && c.name === 'above') cost -= 300;
@@ -1736,7 +1760,12 @@
                  : (area ? area.y - 12 : (panel.box ? panel.box.y + 17 : 12));
       var tt = tone(panel.titleTone || 'slate');
       var titleSize = panel.titleSize || 12;
-      parts.push('<text x="' + titleX + '" y="' + titleY + '" font-size="' + titleSize + '" font-weight="800" fill="' + tt.label + '" text-anchor="middle">' + panel.title + '</text>');
+      // `panel.titleColor` explicit override — used when the title
+      // should be visually distinct from any curve-label tone (e.g.
+      // black title above a panel that has both red and green curves,
+      // so the title doesn't look like an extra red label).
+      var titleFill = panel.titleColor || tt.label;
+      parts.push('<text x="' + titleX + '" y="' + titleY + '" font-size="' + titleSize + '" font-weight="800" fill="' + titleFill + '" text-anchor="middle">' + panel.title + '</text>');
     }
 
     // If the panel is a pure container (box + title only, no chartArea),

@@ -6,6 +6,71 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.18 — 2026-06-03
+
+### Auto-placer + market-failure suite: forensic-feedback sweep
+
+User forensic feedback across four charts in a row (private-vs-social
+neg + pos, market-failure-overview, welfare-loss-diagram neg + pos).
+Common rules extracted and folded into the engine:
+
+**Engine — `chooseCurveLabelPosition`**
+
+- **Asymmetric base offsets** for ABOVE vs BELOW. ABOVE uses
+  `baseOffsetAbove = 6` (label sits close to the curve at the
+  endpoint); BELOW uses `baseOffsetBelow = 18` (further from the
+  curve, since the curve approaches the label from above as we walk
+  back along the path). Matches user feedback: "MSC closer to curve,
+  MPC further".
+- **Approach-direction-aware slope clearance.** Whichever side the
+  curve walks back toward gets the slope clearance, the other side
+  uses the base offset. Supply-like curves (penult below endpoint)
+  → BELOW gets clearance, ABOVE is free. Demand-like (penult above)
+  → ABOVE gets clearance, BELOW is free. My v0.41.17 first cut
+  hard-coded "BELOW only" which broke MSB (a demand curve whose
+  ABOVE bbox had the curve passing through it).
+- **Approach distance = 2×halfW** (not halfW). Candidates that get
+  shifted inward to fit the chart extend further from the endpoint
+  than their nominal half-width — so the slope clearance must cover
+  the worst case. Without this, MSB's auto-placed ABOVE still had
+  the curve crossing the shifted bbox.
+- **Same-side rule scoped to actually-parallel endpoints.** Skip the
+  same-side / opposite-side rules when endpoint dy > 25px — MPB and
+  MSB have endpoints 38px apart vertically and don't conflict the
+  way MPC and MSC (same y) do.
+
+**Engine — panel rendering**
+
+- New `panel.titleColor` override. Use to keep a panel title bold +
+  black even when the panel theme would otherwise tone it (red,
+  green, etc) — so the title doesn't read as a stray curve label
+  competing for the eye.
+
+**Spec rollout — `private-vs-social.js`**
+
+- Both panel titles now `titleColor: '#0F172A'` (bold/black).
+- All curve labels stripped of manual `labelDx`/`labelDy`/`anchor`.
+- Positive-externality `E_m` label flipped to `labelDx: -10, anchor:
+  'end'` (left of dot) so it doesn't crash into `E*` which sits at
+  Q* > Q_m.
+
+**Spec rollout — `market-failure-overview.js`**
+
+- All three curves (`MPB = D`, `MPC = S`, `MSC`) stripped of manual
+  placement.
+- DWL label moved to the triangle's centroid `(0.487, 0.568)` — was
+  hand-set at `(0.495, 0.595)` which sat too low.
+
+**Spec rollout — `welfare-loss-diagram.js`**
+
+- Both panel titles `titleColor: '#0F172A'`.
+- All curves auto-placed (both panels).
+- DWL labels at each triangle's centroid: `(0.487, 0.568)` for the
+  over-production panel, `(0.549, 0.554)` for the under-production
+  panel.
+
+`sw.js` cache bumped to `econos-v312`.
+
 ## 0.41.17 — 2026-06-03
 
 ### Auto-placer: opposite-side rule for parallel curves + E_m flip

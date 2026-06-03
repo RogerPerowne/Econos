@@ -39,7 +39,7 @@
       {
         chartArea: { x: 50, y: 28, width: 280, height: 254 },
         title: 'Negative externality',
-        titleTone: 'rose',
+        titleColor: '#0F172A',  // black/bold so the title doesn't read as a curve label
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
           /* MPB and MPC label positions UNSET — auto-placer evaluates
@@ -80,7 +80,7 @@
       {
         chartArea: { x: 410, y: 28, width: 280, height: 254 },
         title: 'Positive externality',
-        titleTone: 'green',
+        titleColor: '#0F172A',  // black/bold — same rule as left panel
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
           /* MPB and MPC label positions UNSET — auto-placer evaluates
@@ -98,13 +98,16 @@
             tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4' }
         ],
         points: [
-          /* Market eq at MPB ∩ MPC. E_m label to the right (matches
-           * the left panel's convention so both market-equilibrium
-           * dots read with the label on the same side). */
+          /* Market eq at MPB ∩ MPC. In the POSITIVE-externality panel
+           * E_m label goes to the LEFT of the dot — E* sits to the
+           * right (Q* > Q_m for under-production) so a right-side E_m
+           * label would crash into E*. User feedback this round:
+           * "E_m label should be to the LEFT of the intersection
+           * point" in the positive-externality panel. */
           { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
             tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
-            label: 'E_m', labelDx: 10, labelDy: -4, anchor: 'start' },
+            label: 'E_m', labelDx: -10, labelDy: -4, anchor: 'end' },
           /* Social optimum at MPC ∩ MSB — right of Q_m */
           { x: ES_POS.x, y: ES_POS.y, intersection: { curves: ['MPC', 'MSB'] },
             tone: 'green', radius: 6, hollow: true,

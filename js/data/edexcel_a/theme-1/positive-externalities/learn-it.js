@@ -88,7 +88,7 @@ window.ECONOS_TOPIC = {
         { term: 'Marginal External Benefit (MEB)', def: 'The additional benefit enjoyed by third parties from the consumption (or production) of one more unit.' },
         { term: 'Marginal Social Benefit (MSB)',   def: 'The total additional benefit to society from one more unit – equal to MPB + MEB. The true benefit the market should respond to but does not.' }
       ],
-      examEdge: 'Remember the trilogy – <strong>private</strong> is captured by the consumer; <strong>external</strong> is captured by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the negative mirror, see <a href="/learn/neg-externalities" style="color:#2563EB;font-weight:700;">Negative Externalities</a>.'
+      examEdge: `Remember the trilogy – <strong>private</strong> is captured by the consumer; <strong>external</strong> is captured by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the negative mirror, see <a href="${TopicLoader.routes.learn(null, 'negative-externalities')}" style="color:#2563EB;font-weight:700;">Negative Externalities</a>.`
     },
     {
       id: 'pos_externalities_2',

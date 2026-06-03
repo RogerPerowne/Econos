@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.24 — 2026-06-03
+
+### Fix broken externality cross-links (legacy /learn/ URLs → routes API)
+
+The two inter-topic links between the externality topics used the
+pre-migration `/learn/<topic>` URL format, which 404s under the
+current path-based contract — and the slugs were also stale
+(`neg-externalities` / `pos-externalities` vs the real topic ids
+`negative-externalities` / `positive-externalities`). Doubly broken.
+
+Replaced the literal hrefs with `TopicLoader.routes.learn(null,
+'<topic-id>')`, evaluated at data-file load time (the same API the
+`stages` arrays in these files already use). The links now render as
+`/edexcel_a/theme-1/positive-externalities/learn-it` — correct
+format, correct slug, and board-portable (the route derives board +
+theme from the active board, so the same source works on every
+board). Both confirmed 200.
+
+This was the only legacy `/learn/` pattern left in the data files
+(swept all of `js/data/`), so the cross-link bug class is now closed
+and adding further cross-references is unblocked.
+
 ## 0.41.23 — 2026-06-03
 
 ### PED card — unitary synonym + fix the five/six determinant mismatch

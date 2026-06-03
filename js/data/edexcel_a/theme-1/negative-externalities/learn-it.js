@@ -95,7 +95,7 @@ window.ECONOS_TOPIC = {
         { term: 'Marginal External Cost (MEC)', def: 'The additional cost imposed on third parties by the production (or consumption) of one more unit.' },
         { term: 'Marginal Social Cost (MSC)',   def: 'The total additional cost to society of one more unit – equal to MPC + MEC. The true cost the market should respond to but does not.' }
       ],
-      examEdge: 'Remember the trilogy – <strong>private</strong> is paid by the producer; <strong>external</strong> is paid by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the positive mirror, see <a href="/learn/pos-externalities" style="color:#2563EB;font-weight:700;">Positive Externalities</a>.'
+      examEdge: `Remember the trilogy – <strong>private</strong> is paid by the producer; <strong>external</strong> is paid by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the positive mirror, see <a href="${TopicLoader.routes.learn(null, 'positive-externalities')}" style="color:#2563EB;font-weight:700;">Positive Externalities</a>.`
     },
     {
       id: 'neg_externalities_2',

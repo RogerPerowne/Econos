@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.40.3 — 2026-06-03
+
+### PPF Card 3 — side-by-side layout + clean curved arrows
+
+- Card 3 ("Opportunity cost — moving along the frontier") was full-width
+  while Cards 1 and 2 used the `diagramPanel` side-by-side layout. The
+  card used the legacy `diagramKey + steps` pattern; converted it to the
+  newer `interactiveDiagram { svgKey, views }` block which renders chart
+  left + description right by default. The "Move A → B" / "Move B → C"
+  toggle buttons now produce clear bordered description boxes beside the
+  chart instead of underneath it.
+- Fixed the **arrow clash with the PPF**. The original arrows drew
+  straight chords from A→B and B→C, cutting through and visually
+  competing with the blue curve. Replaced with quadratic-bezier arrow
+  paths that arc **outside** the PPF (away from origin), so each arrow
+  visibly follows the curve direction without overlapping it. Also
+  switched from custom marker `defs` (which the engine doesn't collect
+  for non-top-level specs) to the built-in `econos-arrow-amber` /
+  `econos-arrow-rose` markers, so the arrowheads always render.
+
+`sw.js` cache bumped to `econos-v294`.
+
 ## 0.40.2 — 2026-06-03
 
 ### PPF triptych — arrowheads now visible

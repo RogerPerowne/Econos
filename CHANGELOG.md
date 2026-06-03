@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.1 — 2026-06-03
+
+### PPF Card 3 — arrows properly bowed outside the curve
+
+Follow-up to v0.40.3. The previous quadratic-bezier control points were
+chosen by eye and produced arcs that only cleared the PPF by 0.0005 to
+0.011 chart-units at their tightest — visually overlapping the blue
+curve along most of their length, especially the B→C arrow.
+
+Re-picked the controls by **sampling each candidate arc against the
+cubic at 10 points and keeping the worst-case clearance**:
+- A→B control `(0.85, 0.49)` (0.011 clearance) → `(0.91, 0.56)` (0.038)
+- B→C control `(0.61, 0.74)` (0.0005 clearance) → `(0.70, 0.84)` (0.036)
+
+Both arrows now hold a ≥0.036 chart-unit (≈12px) outward clearance
+along their full length, so neither overlaps the curve at any sample.
+
+Also — better checking protocol going forward: when an interactive
+diagram has multiple views, screenshot **every** view before declaring
+done. The previous fix only verified the A→B view; the B→C clash was
+shipped because I didn't open the second tab.
+
+`sw.js` cache bumped to `econos-v296`.
+
 ## 0.41.0 — 2026-06-03
 
 ### PPF Card 6 — restored the Jamland (UK vs Germany vs China) 4-stage interactive

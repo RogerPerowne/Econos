@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.43.5 — 2026-06-03
+
+### Government Failure Card 7 — five solutions: columns → numbered rows
+
+The "Five institutional solutions" rendered as `tinted-flat` column tiles,
+which left an orphan on the last row (5 doesn't divide evenly). Switched to
+the `numbered-rows` style with `causesCols: 1` — full-width stacked rows,
+each with a numbered circle, the item icon, a tone-coloured left bar, and
+head/body. Same elegant treatment used for other 5-item lists; no orphan.
+Data only (network-first) — no `sw.js` bump.
+
 ## 0.43.4 — 2026-06-03
 
 ### Government Failure Card 3 — regulatory-capture diagram: good → great

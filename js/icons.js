@@ -13814,7 +13814,7 @@ window.ECONOS_ICONS = {
         .sys-score .es-crit { padding:11px 11px; border-bottom:1px solid #EEF0F2; font-size:12.5px; font-weight:700; }
         .sys-score .es-crit small { display:block; font-weight:400; color:#64748B; font-size:11px; line-height:1.35; margin-top:2px; }
         .sys-score .es-cell { padding:11px 8px; border-bottom:1px solid #EEF0F2; border-left:1px solid #EEF0F2; text-align:center; }
-        .sys-score .es-lvl { font-size:12.5px; font-weight:800; display:block; margin-bottom:6px; }
+        .sys-score .es-lvl { font-size:12.5px; font-weight:800; display:block; margin-bottom:6px; color:#0B1426; }
         .sys-score .es-bar { display:block; height:6px; border-radius:3px; background:#EDF0F3; overflow:hidden; }
         .sys-score .es-fill { display:block; height:100%; border-radius:3px; }
         @media (max-width:560px){ .sys-score .es-grid{ grid-template-columns:1.2fr 1fr 1fr 1fr; } .sys-score .es-crit small{ display:none; } .sys-score .es-h{ font-size:10.5px; } .sys-score .es-crit{ font-size:11px; } }
@@ -13826,34 +13826,34 @@ window.ECONOS_ICONS = {
         <div class="es-h" style="color:#9F1239;">🚩 Command</div>
 
         <div class="es-crit">Choice<small>Freedom over what to produce and buy</small></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#059669;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#E11D48;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#64748B;"></span></span></div>
 
         <div class="es-crit">Incentives<small>Reward for effort and innovation</small></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#059669;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#E11D48;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#64748B;"></span></span></div>
 
         <div class="es-crit">Equity<small>Fairness of the distribution</small></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#059669;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#E11D48;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
 
         <div class="es-crit">State control<small>Government direction of resources</small></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#059669;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#E11D48;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
 
         <div class="es-crit">Flexibility<small>Ability to adapt to change</small></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#059669;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#2563EB;">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#2563EB;"></span></span></div>
-        <div class="es-cell"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#E11D48;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Medium</span><span class="es-bar"><span class="es-fill" style="width:55%;background:#64748B;"></span></span></div>
+        <div class="es-cell"><span class="es-lvl">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#64748B;"></span></span></div>
 
         <div class="es-crit" style="border-bottom:none;">Basic provision<small>Essentials guaranteed for all</small></div>
-        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl" style="color:#E11D48;">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#059669;"></span></span></div>
-        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#2563EB;"></span></span></div>
-        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl" style="color:#059669;">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#E11D48;"></span></span></div>
+        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl">Low</span><span class="es-bar"><span class="es-fill" style="width:25%;background:#64748B;"></span></span></div>
+        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
+        <div class="es-cell" style="border-bottom:none;"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
       </div>
       <div style="font-size:11px;color:#94A3B8;text-align:center;margin-top:6px;">Bar length shows how strongly each system delivers that dimension — no system wins on everything.</div>
     </div>

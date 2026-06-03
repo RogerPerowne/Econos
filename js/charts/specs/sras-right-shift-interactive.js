@@ -53,12 +53,13 @@
         dashed: '6 4', labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' },
       // Layer 1: SRAS₂ shifted right (clipped at right edge)
-      { d: 'M 0.319,0.067 L 1.153,0.894',
+      // Curve trimmed to end AT chart x=1.0 — same treatment as the
+      // AD₂ curves in ad-demand-pull / ad-shift. The auto-clip means
+      // visual is unchanged; label now anchors at the visible end so
+      // its centre sits ~14px from the line instead of ~53px.
+      { d: 'M 0.319,0.067 L 1.000,0.743',
         tone: 'green', label: 'SRAS₂', strokeWidth: 2.2,
-        // labelDx=-32 keeps the "SRAS₂" (38px wide) right edge inside
-        // the 440-wide SVG. Curve auto-clips at x=1.0 but the label
-        // anchors to the un-clipped endpoint.
-        labelDx: -32, labelDy: -16, anchor: 'end',
+        labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' }
     ],
 

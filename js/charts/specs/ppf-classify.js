@@ -53,10 +53,13 @@
       { points: UNATTAINABLE, tone: 'green', opacity: 0.14 }
     ],
     curves: [
-      // The frontier itself — blue, labelled "Efficient frontier" so
-      // the curve owns the third classification (on-the-curve).
+      // The frontier itself — blue, just labelled "PPF". The
+      // "efficient" classification is carried by the curve's
+      // position between the amber and green region shadings, not
+      // by a long curve label (which put its centre 76px from
+      // the line).
       { id: 'ppf1', d: 'M 0,0.92 C 0.42,0.92 0.92,0.42 0.92,0.04', tone: 'blue', strokeWidth: 3,
-        label: 'Efficient frontier', labelDx: -10, labelDy: -10, anchor: 'end' }
+        label: 'PPF', labelDx: -10, labelDy: -10, anchor: 'end' }
     ],
     points: [
       // A — on the frontier (snapped via on:'ppf1')

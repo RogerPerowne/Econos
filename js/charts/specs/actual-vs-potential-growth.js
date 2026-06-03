@@ -34,14 +34,20 @@
     },
 
     curves: [
-      // Base: Actual GDP wave with two peak-trough cycles
+      // Base: Actual GDP wave with two peak-trough cycles.
+      // Labels shortened from "Actual GDP" / "Potential GDP" to
+      // "Actual" / "Potential" — y-axis label "Real GDP" already
+      // tells the reader what's plotted. anchor='start' kept so the
+      // labels live in the right margin (anchor='end' moved them left
+      // INTO the Tech/Capital/etc. growth-driver labels and caused a
+      // clash with "Tech" in idl-2).
       { d: 'M 0,0.214 C 0.063,0.310 0.143,0.619 0.254,0.667 C 0.349,0.705 0.413,0.214 0.508,0.214 C 0.587,0.214 0.635,0.667 0.746,0.762 C 0.794,0.800 0.817,0.762 0.825,0.738',
-        tone: 'blue', label: 'Actual GDP', strokeWidth: 2.6,
+        tone: 'blue', label: 'Actual', strokeWidth: 2.6,
         labelDx: 8, labelDy: -8, anchor: 'start' },
 
       // Layer 1: Potential GDP trend (straight line)
       { d: 'M 0,0.190 L 0.825,0.714',
-        tone: 'green', label: 'Potential GDP', strokeWidth: 2.4,
+        tone: 'green', label: 'Potential', strokeWidth: 2.4,
         labelDx: 8, labelDy: 8, anchor: 'start',
         layer: 'idl-1' },
 

@@ -46,9 +46,20 @@ function samplePath(d, scaleX, scaleY, n = 40) {
   for (const tok of tokens) {
     const cmd = tok[0].toUpperCase();
     const nums = tok.slice(1).split(/[\s,]+/).filter(Boolean).map(Number);
-    if (cmd === 'M' || cmd === 'L') {
+    if (cmd === 'M') {
       lastX = nums[0]; lastY = nums[1];
       points.push([scaleX(lastX), scaleY(lastY)]);
+    } else if (cmd === 'L') {
+      // Sample n points along the line — sparse endpoints miss the
+      // case where the label sits ON the line between endpoints,
+      // which is visually the cleanest placement and the one most
+      // worth measuring.
+      const x0 = lastX, y0 = lastY, x1 = nums[0], y1 = nums[1];
+      for (let i = 1; i <= n; i++) {
+        const t = i / n;
+        points.push([scaleX(x0 + t * (x1 - x0)), scaleY(y0 + t * (y1 - y0))]);
+      }
+      lastX = nums[0]; lastY = nums[1];
     } else if (cmd === 'C') {
       const P = [[lastX, lastY], [nums[0], nums[1]], [nums[2], nums[3]], [nums[4], nums[5]]];
       // Sample n points along the cubic between the previous endpoint and (nums[4],nums[5]).

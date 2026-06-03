@@ -33,8 +33,13 @@
 
     curves: [
       { d: 'M ' + INTERCEPT.x + ',' + INTERCEPT.y + ' L ' + TOP_RIGHT.x + ',' + TOP_RIGHT.y,
+        // "C = a + bY" is 68px wide. Placed inline above the line by
+        // anchoring 'end' at endpoint and pulling left+up enough that
+        // the label SITS on the slope rather than hanging in the upper
+        // right corner (old labelDx=8 anchor='start' put the label
+        // 46px from the line).
         tone: 'blue', label: 'C = a + bY', strokeWidth: 3.5,
-        labelDx: 8, labelDy: -2, anchor: 'start' }
+        labelDx: -8, labelDy: -10, anchor: 'end' }
     ],
 
     points: [

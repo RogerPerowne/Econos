@@ -53,9 +53,13 @@
         ],
 
         curves: [
+          // Wide "MPB = D" pulled in by labelDx=-32 so the label sits
+          // closer to the line at chart-x≈0.84 instead of dangling
+          // ~38px off the endpoint. labelDy stays positive so it
+          // hangs just below the descending demand line.
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
             tone: 'blue', label: 'MPB = D', strokeWidth: 2.5,
-            labelDx: -6, labelDy: 14, anchor: 'end' },
+            labelDx: -32, labelDy: -6, anchor: 'end' },
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC', strokeWidth: 2.5,
             labelDx: -6, labelDy: -20, anchor: 'end' },
@@ -96,9 +100,12 @@
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
             tone: 'blue', label: 'MPB', strokeWidth: 2.5,
             labelDx: -6, labelDy: 14, anchor: 'end' },
+          // Wide "MPC = S" pulled in by labelDx=-32 so the label sits
+          // closer to the line at chart-x≈0.84 instead of dangling
+          // ~38px off the endpoint.
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC = S', strokeWidth: 2.5,
-            labelDx: -6, labelDy: -20, anchor: 'end' },
+            labelDx: -32, labelDy: 6, anchor: 'end' },
           { id: 'MSB', d: 'M 0.215,0.880 L 1.000,0.230',
             tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4',
             labelDx: -6, labelDy: 14, anchor: 'end' }

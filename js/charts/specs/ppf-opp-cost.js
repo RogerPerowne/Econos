@@ -32,9 +32,15 @@
     // values are chosen to spread the three points evenly across
     // the frontier (high-consumer → high-capital corner).
     points: [
+      // A — labels right (no arrow approaches A).
       { id: 'A', x: 0.88, on: 'ppf1', tone: 'blue',  label: 'A', anchor: 'start', labelDx: 10, labelDy: 4,  layer: 'layer-points' },
-      { id: 'B', x: 0.72, on: 'ppf1', tone: 'amber', label: 'B', anchor: 'start', labelDx: 10, labelDy: -4, layer: 'layer-points' },
-      { id: 'C', x: 0.44, on: 'ppf1', tone: 'rose',  label: 'C', anchor: 'start', labelDx: 10, labelDy: -4, layer: 'layer-points' }
+      // B — labels UPPER-LEFT. The A→B arrow approaches B from below-right
+      // and its marker body sits in that quadrant, so a label on the right
+      // would collide with the arrowhead (the bug v0.41.1 left behind).
+      { id: 'B', x: 0.72, on: 'ppf1', tone: 'amber', label: 'B', anchor: 'end',   labelDx: -10, labelDy: -6, layer: 'layer-points' },
+      // C — labels UPPER-LEFT for the same reason: B→C arrow ends at C
+      // from a similar below-right direction.
+      { id: 'C', x: 0.44, on: 'ppf1', tone: 'rose',  label: 'C', anchor: 'end',   labelDx: -10, labelDy: -6, layer: 'layer-points' }
     ],
     views: [
       {

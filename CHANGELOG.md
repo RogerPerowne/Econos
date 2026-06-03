@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.18 — 2026-06-03
+
+### Public Goods Card 5 — redraw the demand-summation diagrams
+
+The private/public demand mini-charts (`privateDemandMini` /
+`publicDemandMini`) had mismatched viewBoxes (260 vs 320), so the public one
+letterboxed and didn't fill its stage; its right-edge labels ("Social
+marginal benefit (sum of all individuals)", "Individual 1/2 marginal
+benefit") ran off the 320 viewBox; and the y-axis title sat on the top line.
+Redrew both at a consistent 300×210 viewBox: axis titles top-left clear of
+the curves, lines ending earlier so the shortened labels (Social MB
+(Ind 1 + Ind 2) · Individual 1 · Individual 2) fit on-stage, and both charts
+now fill their stage equally. `app.js` (scene SVGs) changed → `sw.js` bumped
+to `econos-v329`.
+
 ## 0.44.17 — 2026-06-03
 
 ### Three format consistency fixes

@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.10 — 2026-06-03
+
+### PPF Card 3 — A, B, C labels moved directly below their dots
+
+Previously A's label sat right-of-dot and B/C's labels sat upper-left
+(to dodge the arrowheads that approach from below-right). Consistency
+trumps individual offsets: all three labels now sit **directly below
+their dots** (`anchor: 'middle'`, `labelDx: 0`, `labelDy: +18px`).
+
+Because the A→B and B→C arrows arc outside the PPF (away from origin,
+i.e. up-and-right), the area below each dot is clear — no clash
+between labels and arrowheads. Verified visually across both views.
+
+`sw.js` cache bumped to `econos-v304`.
+
 ## 0.41.9 — 2026-06-03
 
 ### PPF Card 6 (UK / Jamland) — narrative button labels

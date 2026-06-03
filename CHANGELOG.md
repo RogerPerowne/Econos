@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.6 — 2026-06-03
+
+### Government Failure — align the four causes with the spec (Theme 1 polish #8)
+
+The "Causes of government failure" card listed *information failure, political
+short-termism, admin costs, unintended consequences* — but Edexcel 1.4.2(b)
+names a different four: **distortion of price signals, unintended consequences,
+excessive administrative costs, information gaps**. "Distortion of price
+signals" — a named spec cause — was missing (political short-termism stood in
+its place).
+
+Reworked the four cause tiles to match the spec exactly:
+- **Distortion of price signals** (new) — taxes/subsidies/price controls
+  override the information prices carry → misallocation, a welfare loss on top
+  of admin cost.
+- **Unintended consequences** (kept).
+- **Excessive administrative costs** — beefed up with UK numbers (Ofgem cap
+  running cost, SDIL collection machinery, Universal Credit / NHS IT over-runs
+  per NAO).
+- **Information gaps** (kept; the Pigouvian-MEC uncertainty case).
+
+Political short-termism wasn't lost — it moves to the examEdge as an evaluation
+add-on, alongside Hayek's knowledge problem. Card 1's overview line updated to
+match. Clean 2×2 tile grid (no 5-item orphan). Data-only, no SW bump.
+
 ## 0.42.5 — 2026-06-03
 
 ### Government Intervention — worked MUP case study (Theme 1 polish #7)

@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.17 — 2026-06-03
+
+### Three format consistency fixes
+
+- **Diagnose table → standard table style.** The `diagnose` template's
+  optional comparison table rendered with its own bespoke coloured-header
+  `.diag-table`. Switched it to the shared `.cmp-table` component (dark
+  header row, striping, mobile row-stacking) so it matches every other
+  table site-wide. Affects the Behavioural Economics "weakness at
+  computation" card (and any future diagnose table). `app.js` changed →
+  `sw.js` bumped to `econos-v328`.
+- **Behavioural Economics key terms → fancy rows.** The five key terms were
+  a 3-col grid that left an orphan; converted to numbered rows and trimmed
+  the over-long "Habitual behaviour" definition.
+- **Public Goods comparison — drop the odd word colours.** The bold words in
+  the "two defining properties / important distinction" pair were hard-coded
+  to clashing colours; removed the inline colour so each word matches its
+  box's font (green left, blue right).
+
 ## 0.44.16 — 2026-06-03
 
 ### Tax-incidence chart (Indirect Taxes Card 4) — fix oversized/bold labels

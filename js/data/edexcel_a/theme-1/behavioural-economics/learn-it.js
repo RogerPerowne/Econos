@@ -218,12 +218,16 @@ window.ECONOS_TOPIC = {
         { title: 'Direct debits & savings round-ups', icon: '🧾', tone: 'green', headline: 'Automate the saving before payday – so the doer never sees the money', body: 'Standing orders move savings on payday. App round-ups (Monzo, Revolut) turn every purchase into a micro-saving without any willpower required.' },
         { title: 'Digital temptation removal', icon: '📵', tone: 'purple', headline: 'Remove the temptation rather than rely on willpower', body: 'Phone-free study apps (Forest, Freedom) take the doer\'s options away. Online supermarket shopping prevents impulse purchases in the snack aisle – changing the environment beats changing the person.' }
       ],
-      keyTerms: [
-        { term: 'Present bias', def: 'Over-weighting immediate rewards relative to future ones – beyond any normal time preference.' },
-        { term: 'Hyperbolic discounting', def: 'The technical name for present bias – the rate at which we discount future rewards is steeper for the near future than the far future.' },
-        { term: 'Habitual behaviour', def: 'Repeating past choices automatically to avoid the cognitive cost of deciding again. It\'s why defaults are sticky — once people are auto-enrolled they tend to stay; once they smoke they tend to keep smoking. Edexcel names <em>habit</em> as the second reason consumers behave irrationally (after influence of others, before weakness at computation).' },
-        { term: 'Internality', def: 'A cost a person imposes on their future self through present-biased decisions – like an externality, but internal to the individual.' },
-        { term: 'Commitment device', def: 'A tool that locks in a choice in advance, so the future self cannot abandon the planner\'s preferred path.' }
+      causesLabel: 'Key terms',
+      causesEmoji: '🔑',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
+      causes: [
+        { tone: 'amber',  icon: '⏱️', head: 'Present bias', body: 'Over-weighting immediate rewards relative to future ones — beyond any normal time preference.' },
+        { tone: 'blue',   icon: '📉', head: 'Hyperbolic discounting', body: 'The technical name for present bias — we discount the near future far more steeply than the far future.' },
+        { tone: 'green',  icon: '🔁', head: 'Habitual behaviour', body: 'Repeating past choices automatically to avoid the cost of re-deciding — why defaults are sticky. Edexcel\'s second named reason for irrational behaviour (after influence of others, before weakness at computation).' },
+        { tone: 'purple', icon: '🪞', head: 'Internality', body: 'A cost a person imposes on their future self through present-biased decisions — like an externality, but internal to the individual.' },
+        { tone: 'rose',   icon: '🔒', head: 'Commitment device', body: 'A tool that locks in a choice in advance, so the future self cannot abandon the planner\'s preferred path.' }
       ],
       examEdge: '<strong>Internalities are the strongest behavioural justification for paternalism.</strong> A sugar tax, plain tobacco packaging, or pension auto-enrolment can be defended purely on the grounds of protecting people from their own future cost – no externality argument required. This is a powerful evaluation point in any policy essay.'
     },

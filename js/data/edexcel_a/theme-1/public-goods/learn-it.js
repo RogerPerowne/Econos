@@ -48,9 +48,9 @@ window.ECONOS_TOPIC = {
         vs: '+',
         position: 'after-diagram',
         left:  { tone: 'green', icon: '👥', label: 'The two defining properties',
-          caption: '<strong style="color:#059669">Non-rivalry</strong> – extra users benefit at near-zero marginal cost.<br><strong style="color:#7C3AED">Non-excludability</strong> – non-payers can\'t be stopped from consuming.' },
+          caption: '<strong>Non-rivalry</strong> – extra users benefit at near-zero marginal cost.<br><strong>Non-excludability</strong> – non-payers can\'t be stopped from consuming.' },
         right: { tone: 'blue', icon: '🧩', label: 'Important distinction',
-          caption: '<strong style="color:#059669">Pure</strong> – fully non-rival and non-excludable (defence, clean air).<br><strong style="color:#2563EB">Quasi-public</strong> – partly public, but excludable or rival at some point (motorways, parks).' }
+          caption: '<strong>Pure</strong> – fully non-rival and non-excludable (defence, clean air).<br><strong>Quasi-public</strong> – partly public, but excludable or rival at some point (motorways, parks).' }
       },
       lockIn: {
         title: 'What you need to lock in',

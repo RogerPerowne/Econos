@@ -79,14 +79,14 @@ window.ECONOS_TOPIC = {
         emoji: '👥',
         rows: [
           {
-            heading: 'Example 1: Minimum wage',
-            left:  { tone: 'blue',  name: 'Economist A', premise: 'supports a higher minimum wage.', reason: 'improves fairness and helps low-paid workers achieve a decent standard of living.' },
-            right: { tone: 'amber', name: 'Economist B', premise: 'opposes a higher minimum wage.',  reason: 'may lead to job losses and reduce flexibility for firms, especially for young or low-skilled workers.' }
+            heading: 'Example 1: UK National Living Wage (raised to £11.44/hr in 2024)',
+            left:  { tone: 'blue',  name: 'Economist A', premise: 'supports the rise.', reason: 'lifts ~3m low-paid workers above the real Living Wage and shifts income toward those with the highest marginal propensity to consume.' },
+            right: { tone: 'amber', name: 'Economist B', premise: 'opposes the rise.',  reason: 'risks hours-cuts and youth unemployment in low-margin sectors (hospitality, care); OBR estimated 20–50k job losses.' }
           },
           {
-            heading: 'Example 2: Carbon tax',
-            left:  { tone: 'blue',  name: 'Economist A', premise: 'supports a carbon tax.', reason: 'tackles climate change, encourages cleaner choices and protects future generations.' },
-            right: { tone: 'amber', name: 'Economist B', premise: 'opposes a carbon tax.',  reason: 'increases the cost of living and reduces competitiveness for businesses and households.' }
+            heading: 'Example 2: UK net-zero by 2050 (carbon pricing, ICE-car ban, heat-pump targets)',
+            left:  { tone: 'blue',  name: 'Economist A', premise: 'backs the legally binding target.', reason: 'long-run climate costs (CCC estimate: 1–2% of GDP/year unmitigated) dwarf the transition cost; the UK should lead.' },
+            right: { tone: 'amber', name: 'Economist B', premise: 'wants the target softened.',  reason: 'transition cost (~£50bn/yr to 2050) hits low-income households hardest and risks carbon leakage if rivals don\'t follow.' }
           }
         ]
       },

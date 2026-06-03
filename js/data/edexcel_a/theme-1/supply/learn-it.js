@@ -183,9 +183,10 @@ window.ECONOS_TOPIC = {
       diagramLabel: 'The supply drivers',
       diagramEmoji: '🎯',
       causes: [
-        { tone: 'blue',   icon: '☕', head: 'Coffee beans',   body: 'Bad weather can cut supply (a supply shock).' },
-        { tone: 'purple', icon: '🔆', head: 'Solar panels',   body: 'A subsidy can raise supply.' },
-        { tone: 'green',  icon: '🛵', head: 'Food delivery',  body: 'Lower fuel costs can raise supply.' }
+        { tone: 'rose',   icon: '🔥', head: 'UK gas (2021–22)', body: 'Russia\'s invasion of Ukraine cut European gas supply; UK wholesale gas prices rose ~5× in 12 months. A textbook supply shock: a non-price input constraint shifted supply left, dragging electricity supply left with it.' },
+        { tone: 'blue',   icon: '☕', head: 'Coffee beans',     body: 'Bad weather can cut supply (a supply shock).' },
+        { tone: 'purple', icon: '🔆', head: 'Solar panels',     body: 'A subsidy can raise supply.' },
+        { tone: 'green',  icon: '🛵', head: 'Food delivery',    body: 'Lower fuel costs can raise supply.' }
       ],
       causesLabel: 'One market, many stories',
       causesEmoji: '✨',
@@ -215,7 +216,7 @@ window.ECONOS_TOPIC = {
       ],
       flowTitle: 'How to think about it',
       flowEmoji: '🧭',
-      examEdge: 'Link the determinant to <strong>unit cost</strong>, then to supply — that causal chain (determinant → cost → supply shift) is what earns the marks.'
+      examEdge: 'Link the determinant to <strong>unit cost</strong>, then to supply — that causal chain (determinant → cost → supply shift) is what earns the marks. <strong>Timing matters:</strong> the shift logic above describes the long-run direction, but in practice supply responses take time — especially for capital-intensive goods (housing, oil) where the long run may be years. The full short-run vs long-run distinction is the elasticity-of-supply topic next (spec 1.2.5).'
     },
 
     /* ================ CARD 7 – Joint & competing supply (applied extension) ================ */

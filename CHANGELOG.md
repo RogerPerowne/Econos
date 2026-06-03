@@ -6,6 +6,47 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.0 — 2026-06-03
+
+### Theme 1 pedagogy sweep · PR A — Foundations & Markets (1.1, 1.2)
+
+First of three PRs implementing the final Theme 1 pedagogy review. Eight
+topics touched:
+
+- **Positive & Normative (1.1.2):** Card 2 — replaced the generic minimum
+  wage / carbon tax pair with UK-anchored debates (National Living Wage
+  £11.44/hr 2024 with OBR 20–50k jobs estimate; net-zero by 2050 with CCC
+  cost estimates).
+- **The Economic Problem (1.1.3):** Card 2 — replaced abstract
+  sustainability branches with a UK case (North Sea oil decline 2.9m → 0.7m
+  barrels/day; offshore wind 1GW → 14.7GW; CfD strike prices −70%).
+- **Production Possibility Frontiers (1.1.4):** swapped Cards 5 ↔ 6 so the
+  concrete consumer-vs-capital trade-off comes before the abstract shifts
+  card; added the China 9.5%/year vs UK 2.3%/year growth stat in the A→B
+  analysis; added a closing meta-line in Card 7 on why the PPF is uniquely
+  dense among intro models.
+- **Rational Decision Making (1.2.1):** reframed Card 1 lede to lead with
+  the two spec assumptions (consumers max utility, firms max profit); moved
+  the "rationality is a simplifying assumption" caveat to examEdge so it
+  sets up Behavioural rather than hedging upfront.
+- **Demand (1.2.2):** added a tipLate after Card 2's three reasons pinning
+  diminishing marginal utility as *the* foundational reason (spec
+  requirement); Card 6 examEdge now distinguishes shift-mechanism (here)
+  from elasticity magnitude (next topic); Card 8 examEdge adds the Level
+  3→4 knock-on-effects move.
+- **Supply (1.2.4):** Card 5 — added 2022 UK gas crisis (5× price spike) as
+  a textbook supply shock; Card 6 examEdge now links cost-driven shifts to
+  the short-run/long-run timing distinction in 1.2.5.
+- **Price Determination (1.2.6):** Card 4 — added a clean 2×2 "four cases
+  at a glance" matrix (D↑S↑, D↑S↓, D↓S↑, D↓S↓ with one-line verdicts)
+  before the existing real-world examples; Card 6 examEdge adds UK housing
+  shortfall (180k built vs 300k formed → +75% prices to 2022).
+- **Behavioural Economics (1.2.10):** Card 4 — added "Habitual behaviour"
+  to keyTerms, anchoring Edexcel's middle reason for irrational consumer
+  behaviour explicitly to the bounded-self-control card.
+
+Data only (network-first) — no `sw.js` bump.
+
 ## 0.43.6 — 2026-06-03
 
 ### Remove Environmental Economics — not a standalone spec point

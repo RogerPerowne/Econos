@@ -120,12 +120,12 @@ window.ECONOS_TOPIC = {
         ]
       },
       branches: [
-        { tone: 'green',  label: 'Sustainability',           sub: 'Renewables can support economic activity without running out if managed well.' },
-        { tone: 'amber',  label: 'Long-run scarcity',         sub: 'Non-renewables become scarcer and more expensive as stocks are used up.' },
-        { tone: 'purple', label: 'Intergenerational choice',  sub: 'Decisions today affect the resources, prices and choices available tomorrow.' }
+        { tone: 'amber',  label: 'UK North Sea oil — depleting',  sub: 'Peak production 1999 (~2.9m barrels/day). By 2023 down to ~0.7m — a finite stock chosen for fast extraction.' },
+        { tone: 'green',  label: 'UK renewables — replacing',     sub: 'Offshore wind capacity 1GW (2010) → 14.7GW (2024). Strike prices fell ~70% via Contracts for Difference auctions.' },
+        { tone: 'purple', label: 'Intergenerational choice',      sub: 'Every barrel extracted now is one fewer for the future — and the price the future pays depends on what we substitute toward today.' }
       ],
-      branchesLabel: 'Why it matters',
-      branchesEmoji: '📈',
+      branchesLabel: 'Why it matters — a UK case',
+      branchesEmoji: '🇬🇧',
       branchesLayout: 'triptych',
       keyTerms: [
         { term: 'Renewable resource',     def: 'A resource that can be replenished naturally over time if used sustainably (e.g. solar, wind, fish stocks).' },
@@ -133,7 +133,7 @@ window.ECONOS_TOPIC = {
         { term: 'Sustainability',         def: 'Using resources at a rate that does not exceed their natural replenishment, preserving them for the future.' }
       ],
       keyTakeaway: 'The economic problem is not only what to use, but when and how fast to use it.',
-      examEdge: 'Strong answers link renewable and non-renewable resources to sustainability and opportunity cost across time.'
+      examEdge: 'Strong answers link renewable and non-renewable resources to sustainability and opportunity cost across time. Anchor with UK data where possible — North Sea oil\'s fast post-1999 decline vs the offshore-wind ramp shows exactly the choice between consuming a finite stock now and building a replenishable one.'
     },
 
     /* ----- CARD 3 – Opportunity cost ----- */

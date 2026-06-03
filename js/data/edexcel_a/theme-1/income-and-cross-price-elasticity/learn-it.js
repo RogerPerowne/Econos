@@ -307,14 +307,14 @@ window.ECONOS_TOPIC = {
       causesLabel: 'What makes YED large or small',
       causesEmoji: '💰',
       causes: [
-        { tone: 'blue', head: 'Necessity vs luxury', body: 'Luxuries are highly income-sensitive (YED > 1); necessities barely move (0 < YED < 1); inferior goods fall as income rises (YED < 0). <em>UK: overseas holidays and restaurant meals surge in a boom (luxury); bread and milk creep up slowly (necessity); value own-label ranges can fall as incomes rise.</em>' },
+        { tone: 'blue', head: 'Necessity vs luxury', body: 'Luxuries are highly income-sensitive (YED > 1); necessities barely move (0 < YED < 1); inferior goods fall as income rises (YED < 0). <em>UK: restaurant/hotel spending grew ~22% in real terms 2010–19 then fell ~50% in the 2020 lockdown — a textbook high-YED luxury. Bread and milk crept up ~1–2% over the same decade (necessity). Aldi and Lidl combined share rose from 5% to 16% over 2010–24 as incomes squeezed (value own-label = inferior).</em>' },
         { tone: 'amber', head: 'Income level &amp; stage of development', body: 'The <em>same</em> good can be a luxury at low income and a necessity — or even inferior — at high income. <em>UK: car ownership was a luxury in the 1950s and a near-necessity today; in lower-income economies a fridge or smartphone is still income-elastic.</em>' },
         { tone: 'purple', head: 'Time horizon', body: 'Spending habits re-base slowly, so YED is often larger in the long run as households adjust their whole lifestyle to a new income level rather than tweaking one purchase.' }
       ],
       causes2Label: 'What makes XED large or small',
       causes2Emoji: '🔀',
       causes2: [
-        { tone: 'blue', head: 'Closeness of substitutes', body: 'The more two goods serve the same need, the larger the <strong>positive</strong> XED. <em>UK: rival streaming services (Netflix ↔ Disney+) or branded ↔ supermarket own-label have high positive XED; a price rise in one sends buyers to the other.</em>' },
+        { tone: 'blue', head: 'Closeness of substitutes', body: 'The more two goods serve the same need, the larger the <strong>positive</strong> XED. <em>UK: Netflix lost ~1m UK subscribers in 2022 after price rises, with Disney+ and Amazon Prime gaining — a high positive XED in action. Branded ↔ supermarket own-label show similar switching during cost-of-living squeezes.</em>' },
         { tone: 'amber', head: 'Strength of complementarity', body: 'The more two goods must be used together, the larger the <strong>negative</strong> XED. <em>UK: petrol and large cars, printers and ink, consoles and games — a price rise in one cuts demand for the other.</em>' },
         { tone: 'purple', head: 'Brand loyalty &amp; switching costs', body: 'Strong brand attachment or high switching costs <strong>weaken</strong> XED — loyal or locked-in consumers don\'t switch even when a rival changes price. <em>UK: Apple\'s ecosystem lock-in keeps its XED with Android phones lower than the products\' similarity alone would suggest.</em>' }
       ],
@@ -339,10 +339,10 @@ window.ECONOS_TOPIC = {
       causesEmoji: '🌍',
       causesStyle: 'tinted-flat',
       causes: [
-        { tone: 'blue',   icon: '📉', head: 'Recession', body: 'Incomes fall: luxury demand drops sharply, some inferior goods rise.<br><strong>Luxury ↓ · Inferior ↑</strong>' },
-        { tone: 'amber',  icon: '📈', head: 'Boom', body: 'Incomes rise: demand for luxuries and travel grows fastest.<br><strong>Luxury ↑ · Travel ↑</strong>' },
-        { tone: 'purple', icon: '🔀', head: 'Rival price cut', body: 'Demand shifts from one brand to its substitute.<br><strong>Brand A ↓ · Brand B ↑</strong>' },
-        { tone: 'green',  icon: '⛽', head: 'Fuel tax rise', body: 'Demand for a complement such as car journeys is hit.<br><strong>Car journeys ↓ · Public transport ↑</strong>' }
+        { tone: 'blue',   icon: '📉', head: 'Recession <span style="display:inline-block;margin-left:6px;padding:1px 7px;border-radius:5px;font-size:10px;font-weight:800;letter-spacing:0.06em;background:#DBEAFE;color:#1E40AF;">YED</span>', body: 'Incomes fall: luxury demand drops sharply, some inferior goods rise. <em>Income effect → YED applies.</em><br><strong>Luxury ↓ · Inferior ↑</strong>' },
+        { tone: 'amber',  icon: '📈', head: 'Boom <span style="display:inline-block;margin-left:6px;padding:1px 7px;border-radius:5px;font-size:10px;font-weight:800;letter-spacing:0.06em;background:#FEF3C7;color:#92400E;">YED</span>', body: 'Incomes rise: demand for luxuries and travel grows fastest. <em>Income effect → YED applies.</em><br><strong>Luxury ↑ · Travel ↑</strong>' },
+        { tone: 'purple', icon: '🔀', head: 'Rival price cut <span style="display:inline-block;margin-left:6px;padding:1px 7px;border-radius:5px;font-size:10px;font-weight:800;letter-spacing:0.06em;background:#EDE9FE;color:#5B21B6;">XED</span>', body: 'Demand shifts from one brand to its substitute. <em>Substitution effect → XED applies (positive sign).</em><br><strong>Brand A ↓ · Brand B ↑</strong>' },
+        { tone: 'green',  icon: '⛽', head: 'Fuel tax rise <span style="display:inline-block;margin-left:6px;padding:1px 7px;border-radius:5px;font-size:10px;font-weight:800;letter-spacing:0.06em;background:#D1FAE5;color:#065F46;">XED</span>', body: 'Demand for a complement such as car journeys is hit. <em>Complement effect → XED applies (negative sign).</em><br><strong>Car journeys ↓ · Public transport ↑</strong>' }
       ],
       causes2Label: 'Who uses them',
       causes2Emoji: '🧑‍🤝‍🧑',

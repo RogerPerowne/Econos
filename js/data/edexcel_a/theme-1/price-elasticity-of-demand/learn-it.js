@@ -326,6 +326,13 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
           body: 'Price and revenue move in the <strong>same</strong> direction. Price ↑ → TR rises; price ↓ → TR falls, because the price effect dominates.'
         }
       ],
+      causes2Label: 'Worked example — same price rise, opposite revenue effects',
+      causes2Emoji: '🧮',
+      causes2Style: 'tinted-flat',
+      causes2: [
+        { tone: 'purple', icon: '🚬', head: 'Inelastic good (cigarettes, PED ≈ −0.4)', body: '<strong>Before:</strong> P = £10, Q = 60 → TR = £600.<br><strong>After +20% price:</strong> P = £12, Q falls 8% to 55 → TR = £660.<br><strong style="color:#7C3AED;">TR rises by £60</strong> — the price effect (+20%) beats the quantity effect (−8%).' },
+        { tone: 'green', icon: '🎟️', head: 'Elastic good (concert tickets, PED ≈ −2.0)', body: '<strong>Before:</strong> P = £10, Q = 60 → TR = £600.<br><strong>After +20% price:</strong> P = £12, Q falls 40% to 36 → TR = £432.<br><strong style="color:#059669;">TR falls by £168</strong> — the quantity effect (−40%) beats the price effect (+20%).' }
+      ],
       keyTakeaway: {
         title: 'The shortcut',
         text: 'Elastic demand: price and revenue move in <em>opposite</em> directions. Inelastic demand: price and revenue move in the <em>same</em> direction. Unit elastic: revenue is unchanged (and maximised).'

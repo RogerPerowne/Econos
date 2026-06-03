@@ -172,6 +172,13 @@ window.ECONOS_TOPIC = {
         { tone: 'green', icon: '🏬', title: 'Next year', sub: 'More competitors and capacity appear.' }
       ],
       bottomTip: { tone: 'blue', icon: '📈', text: 'Same market — <strong>rising PES over time.</strong>' },
+      causes2Label: 'Worked numerical: same product, two time horizons',
+      causes2Emoji: '🧮',
+      causes2Style: 'tinted-flat',
+      causes2: [
+        { tone: 'purple', icon: '⛽', head: 'Oil supply · Year 1 (short run)', body: 'A 40% price rise prompts an estimated <strong>10% rise</strong> in quantity supplied — existing wells already near capacity. <strong>PES = 10% ÷ 40% = 0.25</strong> (inelastic). Most of the price shock sticks; prices stay high.' },
+        { tone: 'green',  icon: '🛢️', head: 'Oil supply · Year 5 (long run)', body: 'New wells and rigs have been brought online. The same 40% price rise now triggers a <strong>32% rise</strong> in quantity supplied. <strong>PES = 32% ÷ 40% = 0.80</strong> (still inelastic, but ~3× higher than the short run). Prices ease back as supply catches up — which is why oil price shocks moderate over time.' }
+      ],
       causes3Label: 'Why this matters',
       causes3Emoji: '🎯',
       causes3Cols: 3,
@@ -220,7 +227,7 @@ window.ECONOS_TOPIC = {
       causes2Emoji: '🏛️',
       causes2Cols: 3,
       causes2: [
-        { tone: 'green', icon: '🏠', head: 'Housing boom', body: 'Low PES → house prices surge.' },
+        { tone: 'green', icon: '🏠', head: 'UK housing 2010–22', body: 'PES is very low: planning constraints cap new builds at ~180k/year. House prices rose ~75% while new builds barely moved — a textbook low-PES boom that shifts almost entirely into price.' },
         { tone: 'purple', icon: '🎫', head: 'Concert', body: 'Low PES → tickets become expensive.' },
         { tone: 'amber', icon: '👟', head: 'Trainers', body: 'Higher PES → mass producers boost output.' }
       ],
@@ -264,6 +271,7 @@ window.ECONOS_TOPIC = {
         { tone: 'green', icon: '↗️', head: 'High PES', body: 'Markets expand without as much price pain.' },
         { tone: 'purple', icon: '🔄', head: 'Time', body: 'Can move a market from low PES to higher PES.' }
       ],
+      bottomTip: { tone: 'green', icon: '🛠️', head: 'Policy can lift PES', text: '<strong>Supply-side policies aim to raise PES in critical markets.</strong> UK examples: T-Levels and apprenticeship funding raise the long-run elasticity of skilled labour; planning reform aims to raise housing PES (currently the tightest constraint in the UK economy); HS2 and grid investment raise the elasticity of transport and energy supply. Where the binding constraint is regulatory (planning), reform shifts PES faster than where it is physical (oil reserves).' },
       conclusion: { title: 'Big idea', text: 'PES turns an industry story — capacity, stock, time, and barriers — into a market prediction.' },
       examEdge: { title: 'Exam edge', text: 'Application marks come from the example — explain why housing, farming, manufacturing or digital supply behaves differently.' }
     },

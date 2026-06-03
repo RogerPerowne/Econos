@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.3 — 2026-06-03
+
+### Fix 404 on "Next topic" from The Economic Problem (Edexcel A)
+
+`nextLearnableTopicAfter()` walked the topic registry checking only
+`available.learn` — but ignored each topic's per-board `boards.<id>.included`
+flag. For Edexcel A users that meant the button pointed at
+`factors-of-production`, which is `included: false` for Edexcel A (its
+content was folded into `the-economic-problem`). The build correctly skips
+route generation for excluded topics, so the link 404'd.
+
+The fix reads the current board via `getBoard()` and skips any topic where
+`boards[board].included === false`. On Edexcel A, "Next topic" from
+Economic Problem now correctly resolves to Production Possibility Frontiers
+(verified by Playwright: navigation returns 200).
+
+`topic-loader.js` changed → `sw.js` bumped to `econos-v323`.
+
 ## 0.44.2 — 2026-06-03
 
 ### Theme 1 pedagogy sweep · PR C — Market Failure & Intervention (1.3, 1.4)

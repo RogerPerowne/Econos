@@ -105,16 +105,10 @@
 
     ],
 
-    titleStrips: [
-      { layer: 'layer-legend-base',       tone: 'red',
-        text: 'Free market equilibrium: MPC = MPB' },
-      { layer: 'layer-legend-extension',  tone: 'purple',
-        text: 'Consumption creates external benefits → MSB sits above MPB' },
-      { layer: 'layer-legend-shift',      tone: 'green',
-        text: 'Socially optimal output: where MSB = MSC' },
-      { layer: 'layer-legend-efficiency', tone: 'green',
-        text: 'Under-consumption → welfare gain triangle forgone' }
-    ],
+    // titleStrips removed (v0.41.20) — same rule as neg-externality.
+    // Each header was a single dot + text — a one-entry legend whose
+    // text repeated the card lede. Universal rule: single-entry
+    // legends are redundant.
 
     texts: [
       // Persistent market-eq axis tick labels

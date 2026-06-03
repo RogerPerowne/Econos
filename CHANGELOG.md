@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.20 — 2026-06-03
+
+### Single-entry legend sweep: strip redundant titleStrips
+
+User rule, stated in this round of feedback:
+
+> When there is only one colour/dot reference in a legend, it is
+> always redundant.
+
+A `titleStrip` in this engine is literally that: a single coloured
+dot followed by text, sitting above the chart. Each strip is a
+one-entry "legend" by definition. Per the universal rule, they all
+come out.
+
+Two specs in the codebase used `titleStrips`:
+- `neg-externality-interactive.js` — 4 per-view headers stripped
+- `pos-externality-interactive.js` — 4 per-view headers stripped
+
+The text those strips carried ("Free market equilibrium: MPC = MSB",
+"Production imposes external costs → MSC sits above MPC", etc.) all
+duplicated the card lede / body — no information is lost.
+
+The wider `legends` blocks (right-side / below-chart panels with
+multiple sections) are kept for now — those are multi-entry text
+panels, not single-entry legends, and need a separate pass.
+
+`sw.js` cache bumped to `econos-v314`.
+
 ## 0.41.19 — 2026-06-03
 
 ### Forensic audit of market-failure topic — fix label imprecision

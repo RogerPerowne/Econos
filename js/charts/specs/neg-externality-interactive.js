@@ -44,25 +44,19 @@
       y: { label: 'P' }
     },
 
-    /* Always-visible base curves */
+    /* Always-visible base curves. All label positions UNSET so the
+     * auto-placer (v0.41.18+) handles them. */
     curves: [
-      // labelDx/anchor flipped to 'end' so the multi-char "D = MSB"
-      // sits inline at the curve end instead of floating ~35px past
-      // the endpoint. MPC is short enough that anchor='start' stays
-      // visually clean.
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.868 L 0.860,0.084',
-        tone: 'amber', label: 'D = MSB', strokeWidth: 3, labelDx: -8, labelDy: 12, anchor: 'end' },
+        tone: 'amber', label: 'D = MSB', strokeWidth: 3 },
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.084 L 0.860,0.868',
-        tone: 'green', label: 'MPC', strokeWidth: 3, labelDx: 8, labelDy: -4 },
+        tone: 'green', label: 'MPC', strokeWidth: 3 },
       // MSC (blue dashed) — visible in extension/shift/efficiency.
-      // Curve extends past chart top (auto-clipped); label offset back
-      // toward the chart so it sits just above the visible end, not
-      // floating in the title-strip area.
       { layer: 'layer-msc',
         d: 'M 0.080,0.308 L 0.860,1.092',
-        tone: 'blue', label: 'MSC', strokeWidth: 3, dashed: '9 5', labelDx: -38, labelDy: 24 }
+        tone: 'blue', label: 'MSC', strokeWidth: 3, dashed: '9 5' }
     ],
 
     arrows: [
@@ -111,17 +105,13 @@
         label: 'E*', labelDx: 0, labelDy: -16, anchor: 'middle' },
     ],
 
-    titleStrips: [
-      { layer: 'layer-legend-base',       tone: 'red',
-        text: 'Free market equilibrium: MPC = MSB' },
-      { layer: 'layer-legend-extension',  tone: 'purple',
-        text: 'Production imposes external costs → MSC sits above MPC' },
-      { layer: 'layer-legend-shift',      tone: 'green',
-        text: 'Socially optimal output: where MSC = MSB' },
-      { layer: 'layer-legend-efficiency', tone: 'red',
-        text: 'Overproduction → deadweight welfare loss triangle' }
-    ],
-
+    // titleStrips removed (v0.41.20). Each was a single dot + text
+    // header — a one-entry "legend" in the user's sense: a coloured
+    // dot referring to one thing, with the text repeating the lede
+    // of the card. Per the universal rule, single-entry legends are
+    // always redundant and come out. The four headers ("Free market
+    // equilibrium: MPC = MSB", "Production imposes external costs →
+    // MSC sits above MPC", etc.) live in the card body anyway.
     texts: [
       // Persistent E_market axis tick labels
       { layer: 'layer-market-eq', x: -0.028, y: Em.y,    text: 'P_m', tone: 'red', bold: true, fontSize: 12, anchor: 'end' },

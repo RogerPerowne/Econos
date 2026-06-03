@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.42.15 — 2026-06-03
+
+### Market Failure Card 3 — rebuilt "three routes" diagram to match the mockup
+
+The old `threeRoutesDiagram` was a cramped 3-tile SVG text-dump (mismatched
+colours, "Asymmetric info" naming, "What breaks?" walls of text). Rebuilt it
+as a clean hub-and-spoke + comparison table, matching the supplied mockup:
+
+- **Hub:** a "Types of market failure" title with a scales (⚖️) node fanning
+  to three colour-coded tiles — **Externalities** (green, 🏭), **Public
+  goods** (amber, 💡), **Information gaps** (blue, ℹ️) — each with a short
+  description and an Example box.
+- **Table:** Problem / What goes wrong / Typical result, one row per route,
+  with a colour-matched result badge (↕ / 👥 / 📉).
+- Renamed "Asymmetric info" → "Information gaps" to match the spec topic; the
+  colour scheme now aligns green/amber/blue across the tiles, table, and badges.
+
+Built as one responsive HTML block (stacks on mobile), self-titled, so the
+card's redundant `diagramLabel` header was removed. `icons.js` changed →
+`sw.js` cache bumped to `econos-v318`.
+
 ## 0.42.14 — 2026-06-03
 
 ### Market Failure Card 1 — chart to a side panel with a recap

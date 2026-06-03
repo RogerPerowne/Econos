@@ -1422,12 +1422,17 @@
     // Dashed hypotenuse from start to end
     var hyp = '<line x1="' + sX + '" y1="' + sY + '" x2="' + eX + '" y2="' + eY + '" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>';
 
-    // Badge: rectangle + centred label, positioned above the start corner
+    // Badge: rectangle + centred label. Default position is above-left
+    // of the start corner; spec.labelDx / spec.labelDy (CHART units) shift
+    // the badge into the inside-the-PPF whitespace when the auto position
+    // would clash with the curve or fall outside the chart area.
     var badgeText = spec.label || '';
     var badgeW = Math.max(48, badgeText.length * 7);
     var badgeH = 18;
     var badgeX = sX - badgeW - 6;
     var badgeY = sY - badgeH - 6;
+    if (spec.labelDx != null) badgeX = sX + scale.sx(spec.labelDx) - scale.sx(0) - badgeW / 2;
+    if (spec.labelDy != null) badgeY = sY + scale.sy(spec.labelDy) - scale.sy(0) - badgeH / 2;
     var badgeBg = anchorTone.stroke + '22';   // tinted with alpha
     var badge = '<rect x="' + badgeX + '" y="' + badgeY + '" width="' + badgeW + '" height="' + badgeH + '" rx="4" fill="' + badgeBg + '"/>' +
                 '<text x="' + (badgeX + badgeW/2) + '" y="' + (badgeY + badgeH - 5) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + anchorTone.label + '" text-anchor="middle">' + badgeText + '</text>';

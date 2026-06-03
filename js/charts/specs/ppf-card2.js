@@ -41,9 +41,13 @@
   }
 
   window.ECONOS_PPF_CARD2_SPEC = {
-    width: 440,
-    height: 300,
-    chartArea: { x: 55, y: 30, width: 340, height: 238 },
+    // Stage enlarged from 440×300 → 460×350 so the axis labels
+    // ("Consumer goods" above the y-arrow, "Capital goods" below the
+    // x-arrow) and the curve-end "PPF" label have breathing room
+    // around the corners where they previously crowded the chart.
+    width: 460,
+    height: 350,
+    chartArea: { x: 60, y: 40, width: 360, height: 270 },
     axes: {
       x: { label: 'Capital goods' },
       y: { label: 'Consumer goods' }
@@ -58,10 +62,13 @@
     views: [
       {
         // CHEAP — capital 2 → 4, OC ≈ 1/3.
+        // Badge nudged down-right into the consumable region so it doesn't
+        // sit on the curve or fall outside the chart.
         key: 'cheap',
         contentLayer: 'idl-1',
         ocTriangles: [
-          { curve: 'ppf', fromT: 0.1240, deltaX: DELTA_X, label: 'OC ≈ 1/3', tone: 'green' }
+          { curve: 'ppf', fromT: 0.1240, deltaX: DELTA_X, label: 'OC ≈ 1/3', tone: 'green',
+            labelDx: 0.10, labelDy: -0.20 }
         ],
         texts: [
           xTick(0.2, '2'),
@@ -70,10 +77,12 @@
       },
       {
         // EVEN — capital 6 → 8, OC = 1 exactly. Chord at 45°.
+        // Badge sits below-left of the start, well below the curve at x≈0.65.
         key: 'even',
         contentLayer: 'idl-2',
         ocTriangles: [
-          { curve: 'ppf', fromT: 0.4076, deltaX: DELTA_X, label: 'OC = 1', tone: 'blue' }
+          { curve: 'ppf', fromT: 0.4076, deltaX: DELTA_X, label: 'OC = 1', tone: 'blue',
+            labelDx: -0.10, labelDy: -0.25 }
         ],
         texts: [
           xTick(0.6, '6'),
@@ -81,15 +90,16 @@
         ]
       },
       {
-        // COSTLY — capital 8 → ~10, OC ≈ 3. End vertex hits the x-axis.
+        // COSTLY — capital 8 → ~10, OC ≈ 3.
         // Δx is 0.199 (not 0.2) because findTAtX's bounds check rejects
         // exact-endpoint targets — start[0] computes to 0.80000194 due
-        // to binary-search precision, so start[0] + 0.2 = 1.00000194 > 1
-        // and the engine omits the triangle. 0.199 stays safely inside.
+        // to binary-search precision. Badge nudged left into the triangle
+        // interior so it doesn't sit on the curve.
         key: 'costly',
         contentLayer: 'idl-3',
         ocTriangles: [
-          { curve: 'ppf', fromT: 0.5923, deltaX: 0.199, label: 'OC ≈ 3', tone: 'rose' }
+          { curve: 'ppf', fromT: 0.5923, deltaX: 0.199, label: 'OC ≈ 3', tone: 'rose',
+            labelDx: -0.20, labelDy: -0.25 }
         ],
         texts: []
       }

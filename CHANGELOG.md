@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.41.6 — 2026-06-03
+
+### PPF Card 4 — labels off the curve, stage taller for axis breathing room
+
+Polish on v0.41.5. The auto-positioned OC badges sat above-left of
+each trade's start dot — the default placement that works for a
+flat-then-steep curve but, on the new quarter-circle, dragged the
+badge through the curve itself (view 3) or off the top of the chart
+area (view 1).
+
+- Added `labelDx` / `labelDy` (chart-unit) overrides to the
+  `ocTriangle` helper in `js/charts/ppf.js`. When present, the badge
+  is centred on `(start.x + labelDx, start.y + labelDy)` instead of
+  the auto upper-left. Backward-compatible: existing specs that don't
+  set the fields are unaffected.
+- Each trade's badge nudged into the consumable region (below the
+  curve), forming a diagonal cheap → even → costly arrangement that
+  reads cleanly when view 3 shows all three at once.
+- Stage enlarged from 440×300 → **460×350**, chartArea from 340×238
+  → **360×270**. Top / bottom / right margins all grow so the axis
+  titles ("Consumer goods" above the y-arrow, "Capital goods" below
+  the x-arrow) and the curve-end "PPF" label no longer crowd the
+  chart corners.
+
+`sw.js` cache bumped to `econos-v301`.
+
 ## 0.41.5 — 2026-06-03
 
 ### PPF Card 4 — canonical quarter-circle curve, OC 1/3 → 1 → 3

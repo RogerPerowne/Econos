@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroPrice',
     summary: 'Governments intervene when markets fail. The spec lists seven tools that split into two families: price-changing interventions (taxes, subsidies, max/min prices) that work through the price mechanism, and other tools (permits, state provision, information, regulation) that work directly on quantities, access or behaviour.',
-    doInThis: 'Work through 10 cards: an overview map, four price-changing tools with interactive welfare diagrams, four "other" tools with case studies, and a synthesis card that matches each market failure to its best-fit policy.',
+    doInThis: 'Work through 11 cards: an overview map, the price-changing tools with interactive welfare diagrams (indirect tax types, tax incidence, subsidies, price ceilings and floors), four "other" tools with case studies, and a synthesis card that matches each market failure to its best-fit policy.',
     outcomes: [
       'Distinguish specific from ad valorem indirect taxes and identify tax incidence using PED and PES',
       'Use the welfare diagram to show how taxes, subsidies, ceilings and floors redistribute surplus and create DWL',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'For every intervention ask three things: (1) What market failure does it address? (2) Who gains, who loses, and who pays? (3) Could a different tool do the same job with less distortion? These three questions earn the bulk of the evaluation marks.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '10 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '11 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -30,7 +30,7 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_1',
-      stepLabel: 'Learn: Step 1 of 10',
+      stepLabel: 'Learn: Step 1 of 11',
       title: 'The big picture: why governments intervene',
       tip: { icon: '🎯', tone: 'blue', text: 'Markets sometimes fail. When they do, governments have a toolkit of interventions – but no single tool fits every problem. <strong>Name the failure first, then choose the tool.</strong>' },
       causesPosition: 'top',
@@ -77,79 +77,93 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_2',
-      stepLabel: 'Learn: Step 2 of 10',
+      stepLabel: 'Learn: Step 2 of 11',
       title: 'Indirect taxation – specific vs ad valorem',
       tip: { icon: '💷', tone: 'green', text: 'An <strong>indirect tax</strong> is a tax on spending, paid by the producer but usually passed (at least partly) to the consumer. A <strong>specific tax</strong> shifts supply up by a fixed amount per unit; an <strong>ad valorem tax</strong> pivots supply because it is a percentage of price.' },
-      interactiveDiagram: [
-        {
-          svgKey: 'taxTypesInteractive',
-          label: 'Specific vs ad valorem – how supply shifts differently',
-          emoji: '📐',
-          layers: ['idl-1', 'idl-2'],
-          views: [
-            {
-              label: 'Free market',
-              tone: 'blue',
-              head: 'The free-market equilibrium',
-              body: 'Before any tax, supply and demand determine price P₀ and quantity Q₀. Producers receive exactly what consumers pay – there is no wedge between the two.',
-              analysis: 'This is the benchmark. Every effect of the tax is measured as a departure from P₀ and Q₀.'
-            },
-            {
-              label: 'Specific tax',
-              tone: 'blue',
-              head: 'Specific tax – parallel shift (e.g. fuel duty)',
-              body: 'A fixed amount per unit (e.g. 53p/litre of fuel duty). Sellers need an extra £T per unit – so the supply curve shifts <strong>parallel</strong> upward by exactly £T at every quantity. Consumer price rises to <strong>Pc</strong>; quantity falls to <strong>Qt</strong>.',
-              analysis: 'The gap between S and S+T is the same at every quantity – that constant gap is £T. Government revenue = £T × Qt (the area of the wedge up to Qt).'
-            },
-            {
-              label: 'Ad valorem tax',
-              tone: 'amber',
-              show: ['idl-2'],
-              head: 'Ad valorem tax – pivot shift (e.g. 20% VAT)',
-              body: 'A percentage of price (e.g. 20% VAT). The £ amount of tax is small at low prices and large at high prices – so the supply curve <strong>pivots</strong> upward. The gap between S and S+T% widens as price rises.',
-              analysis: 'Ad valorem taxes yield more revenue on expensive goods and scale automatically with inflation. Specific taxes erode in real terms unless manually uprated – which is why UK alcohol duties were frozen for years while VAT revenue grew automatically.'
-            }
-          ]
-        },
-        {
-          svgKey: 'taxIncidenceInteractive',
-          label: 'Tax incidence – who actually pays?',
-          emoji: '⚖️',
-          layers: ['idl-1', 'idl-2', 'idl-3'],
-          views: [
-            {
-              label: 'Tax in place',
-              tone: 'blue',
-              head: 'The tax in place – Pc, Pp and the £T wedge',
-              body: 'The tax has shifted supply up to S+T. Quantity falls to <strong>Qt</strong>. Consumers pay <strong>Pc</strong>; producers receive net price <strong>Pp</strong> after remitting the tax. The vertical gap between Pc and Pp is the per-unit tax, <strong>£T</strong>.',
-              analysis: 'Pc > P₀ > Pp – consumers pay more, producers receive less, and the gap goes to government. The next steps split that gap into who bears how much, then total it as revenue.'
-            },
-            {
-              label: 'Consumer burden',
-              tone: 'blue',
-              head: 'Step 2 – the consumer burden',
-              body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer burden: <strong>(Pc − P₀) × Qt</strong>. It is the extra price consumers pay per unit times the quantity they actually buy.'
-            },
-            {
-              label: 'Producer burden',
-              tone: 'rose',
-              head: 'Step 3 – the producer burden',
-              body: 'The <strong style="color:#dc2626">red rectangle</strong> is the producer burden: <strong>(P₀ − Pp) × Qt</strong>. It is the reduction in net price per unit times the quantity sold.',
-              analysis: 'Together the blue and red rectangles partition the tax wedge. The relative size of each depends on elasticity – covered in card 4.'
-            },
-            {
-              label: 'Tax revenue',
-              tone: 'purple',
-              head: 'Step 4 – total tax revenue',
-              body: 'The purple-outlined area is total <strong>tax revenue = £T × Qt</strong>. It is exactly the sum of the consumer and producer burdens – every penny paid by buyers and sellers above/below P₀ ends up at HMRC.',
-              analysis: 'Whether this revenue is worth the deadweight loss and behavioural distortions is a policy judgement addressed in the surrounding cards.'
-            }
-          ]
-        }
-      ],
+      interactiveDiagram: {
+        svgKey: 'taxTypesInteractive',
+        label: 'Specific vs ad valorem – how supply shifts differently',
+        emoji: '📐',
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          {
+            label: 'Free market',
+            tone: 'blue',
+            head: 'The free-market equilibrium',
+            body: 'Before any tax, supply and demand determine price P₀ and quantity Q₀. Producers receive exactly what consumers pay – there is no wedge between the two.',
+            analysis: 'This is the benchmark. Every effect of the tax is measured as a departure from P₀ and Q₀.'
+          },
+          {
+            label: 'Specific tax',
+            tone: 'blue',
+            head: 'Specific tax – parallel shift (e.g. fuel duty)',
+            body: 'A fixed amount per unit (e.g. 53p/litre of fuel duty). Sellers need an extra £T per unit – so the supply curve shifts <strong>parallel</strong> upward by exactly £T at every quantity. Consumer price rises to <strong>Pc</strong>; quantity falls to <strong>Qt</strong>.',
+            analysis: 'The gap between S and S+T is the same at every quantity – that constant gap is £T. Government revenue = £T × Qt (the area of the wedge up to Qt).'
+          },
+          {
+            label: 'Ad valorem tax',
+            tone: 'amber',
+            show: ['idl-2'],
+            head: 'Ad valorem tax – pivot shift (e.g. 20% VAT)',
+            body: 'A percentage of price (e.g. 20% VAT). The £ amount of tax is small at low prices and large at high prices – so the supply curve <strong>pivots</strong> upward. The gap between S and S+T% widens as price rises.',
+            analysis: 'Ad valorem taxes yield more revenue on expensive goods and scale automatically with inflation. Specific taxes erode in real terms unless manually uprated – which is why UK alcohol duties were frozen for years while VAT revenue grew automatically.'
+          }
+        ]
+      },
       keyTerms: [
+        { term: 'Indirect tax',   def: 'A tax on spending (e.g. VAT, fuel duty), levied on the producer but typically passed in part to the consumer through a higher price.' },
         { term: 'Specific tax',   def: 'A fixed amount per unit (e.g. 57.95p per litre of petrol). Causes a <strong>parallel</strong> upward shift in supply.' },
-        { term: 'Ad valorem tax', def: 'A percentage of price (e.g. 20% VAT, tobacco at 16.5% of retail). Causes supply to <strong>pivot</strong> upward – gap widens at higher prices.' },
+        { term: 'Ad valorem tax', def: 'A percentage of price (e.g. 20% VAT, tobacco at 16.5% of retail). Causes supply to <strong>pivot</strong> upward – gap widens at higher prices.' }
+      ],
+      examEdge: 'Get the shift shape right: a <strong>specific</strong> tax is a <em>parallel</em> shift (constant £T at every quantity); an <strong>ad valorem</strong> tax is a <em>pivot</em> (gap widens with price). Then note the dynamic point — ad valorem revenue scales automatically with inflation, while specific duties erode in real terms unless uprated (why UK alcohol duty freezes quietly cut the real tax for years).'
+    },
+
+    /* ============================================================
+       CARD 2b – Tax incidence (split out of the old Card 2, which
+       carried two full interactive diagrams). Spec-neutral pacing fix:
+       same topic (1.4.1), one diagram per card.
+       ============================================================ */
+    {
+      id: 'price_controls_2b',
+      stepLabel: 'Learn: Step 3 of 11',
+      title: 'Tax incidence – who really pays',
+      tip: { icon: '⚖️', tone: 'green', text: 'The per-unit tax opens a wedge <strong>£T</strong> between the price consumers pay (<strong>Pc</strong>) and the net price producers keep (<strong>Pp</strong>). How that wedge splits — the <strong>incidence</strong> — depends on elasticity: the more <em>inelastic</em> side of the market bears more of the tax.' },
+      interactiveDiagram: {
+        svgKey: 'taxIncidenceInteractive',
+        label: 'Tax incidence – who actually pays?',
+        emoji: '⚖️',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Tax in place',
+            tone: 'blue',
+            head: 'The tax in place – Pc, Pp and the £T wedge',
+            body: 'The tax has shifted supply up to S+T. Quantity falls to <strong>Qt</strong>. Consumers pay <strong>Pc</strong>; producers receive net price <strong>Pp</strong> after remitting the tax. The vertical gap between Pc and Pp is the per-unit tax, <strong>£T</strong>.',
+            analysis: 'Pc > P₀ > Pp – consumers pay more, producers receive less, and the gap goes to government. The next steps split that gap into who bears how much, then total it as revenue.'
+          },
+          {
+            label: 'Consumer burden',
+            tone: 'blue',
+            head: 'Step 2 – the consumer burden',
+            body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer burden: <strong>(Pc − P₀) × Qt</strong>. It is the extra price consumers pay per unit times the quantity they actually buy.'
+          },
+          {
+            label: 'Producer burden',
+            tone: 'rose',
+            head: 'Step 3 – the producer burden',
+            body: 'The <strong style="color:#dc2626">red rectangle</strong> is the producer burden: <strong>(P₀ − Pp) × Qt</strong>. It is the reduction in net price per unit times the quantity sold.',
+            analysis: 'Together the blue and red rectangles partition the tax wedge. The relative size of each depends on elasticity – the more inelastic side pays more.'
+          },
+          {
+            label: 'Tax revenue',
+            tone: 'purple',
+            head: 'Step 4 – total tax revenue',
+            body: 'The purple-outlined area is total <strong>tax revenue = £T × Qt</strong>. It is exactly the sum of the consumer and producer burdens – every penny paid by buyers and sellers above/below P₀ ends up at HMRC.',
+            analysis: 'Whether this revenue is worth the deadweight loss and behavioural distortions is a policy judgement addressed in the surrounding cards.'
+          }
+        ]
+      },
+      keyTerms: [
         { term: 'Tax incidence',  def: 'How the burden of a tax is split between buyers and sellers. The more <strong>inelastic</strong> side of the market pays more of the tax.' },
         { term: 'Pigouvian tax',  def: 'A tax set equal to the marginal external cost of a negative externality. Internalises the externality and can raise welfare even though it creates private-market DWL.' }
       ],
@@ -161,7 +175,7 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_3',
-      stepLabel: 'Learn: Step 3 of 10',
+      stepLabel: 'Learn: Step 4 of 11',
       title: 'Subsidies',
       tip: { icon: '🎁', tone: 'purple', text: 'A <strong>subsidy</strong> is a payment from government to producers (or consumers) that lowers the cost of supply. Supply shifts <em>right</em>, price falls, quantity rises. It is the mirror image of an indirect tax.' },
       interactiveDiagram: {
@@ -221,7 +235,7 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_4',
-      stepLabel: 'Learn: Step 4 of 10',
+      stepLabel: 'Learn: Step 5 of 11',
       title: 'Maximum prices (price ceilings)',
       tip: { icon: '🧢', tone: 'amber', text: 'A price ceiling is binding only when set <strong>below</strong> equilibrium. It creates a shortage, redistributes surplus from sellers to lucky buyers, and destroys welfare through the DWL triangle.' },
       interactiveDiagram: {
@@ -274,7 +288,7 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_5',
-      stepLabel: 'Learn: Step 5 of 10',
+      stepLabel: 'Learn: Step 6 of 11',
       title: 'Minimum prices (price floors)',
       tip: { icon: '🪜', tone: 'green', text: 'A price floor is binding only when set <strong>above</strong> equilibrium. It creates a surplus, redistributes surplus from buyers to sellers (often), and destroys welfare through the DWL triangle.' },
       interactiveDiagram: {
@@ -327,7 +341,7 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_6',
-      stepLabel: 'Learn: Step 6 of 10',
+      stepLabel: 'Learn: Step 7 of 11',
       title: 'Tradable pollution permits (cap-and-trade)',
       tip: { icon: '🏭', tone: 'blue', text: 'Government <strong>sets a cap</strong> on total emissions and issues permits equal to the cap. Firms must hold a permit for every tonne they emit. They can <strong>trade</strong> permits – creating a market price for pollution.' },
       workedExample: {
@@ -370,7 +384,7 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_7',
-      stepLabel: 'Learn: Step 7 of 10',
+      stepLabel: 'Learn: Step 8 of 11',
       title: 'State provision of public goods',
       tip: { icon: '🏛️', tone: 'purple', text: '<strong>Public goods</strong> are non-rival (one person\'s use doesn\'t reduce another\'s) and non-excludable (no one can be prevented from using them). The free-rider problem means the private sector under-provides – so the state steps in and funds provision via taxation.' },
       workedExample: { scene: 'publicGoods', label: null, cards: [] },
@@ -407,7 +421,7 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_8',
-      stepLabel: 'Learn: Step 8 of 10',
+      stepLabel: 'Learn: Step 9 of 11',
       title: 'Provision of information',
       tip: { icon: 'ℹ️', tone: 'blue', text: 'Information failures and asymmetric information lead consumers to misjudge benefits and costs – over-consuming demerit goods, under-consuming merit goods. <strong>Better information shifts demand toward the social optimum</strong> without distorting prices.' },
       illustratedGrid: [
@@ -440,7 +454,7 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_9',
-      stepLabel: 'Learn: Step 9 of 10',
+      stepLabel: 'Learn: Step 10 of 11',
       title: 'Regulation',
       tip: { icon: '🛡️', tone: 'rose', text: '<strong>Regulation</strong> sets rules, standards or outright bans on behaviour. It is <em>command-and-control</em>: no reliance on price signals, just legal compliance. Best when harm is severe or irreversible and price-based tools are too slow or uncertain.' },
       diagramPanel: { diagramKey: 'policySpectrumDiagram', title: 'Where regulation sits on the policy spectrum', titleAbove: true, titleEmoji: '🛡️', layout: 'stacked', bare: true },
@@ -476,7 +490,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_controls_10',
       template: 'welfare-gf-explorer',
-      stepLabel: 'Learn: Step 10 of 10',
+      stepLabel: 'Learn: Step 11 of 11',
       title: 'Choosing the right tool + evaluation',
       tip: { icon: '🎯', tone: 'amber', text: '<strong>Match the tool to the failure.</strong> Externalities → price-based tools or permits. Public goods → state provision. Information gaps → labels and rules. Market power → regulation or price caps. Every tool risks government failure – the question is whether the gain outweighs the new distortion.' },
       colA: 'Best-fit tool(s)',

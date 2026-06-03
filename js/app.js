@@ -2771,42 +2771,39 @@
       const colB = c.colB || '';
       const colC = c.colC || '';
       const useThree = !!c.colC;
+      // Class-based comparison table (.cmp-table). Desktop renders the
+      // CSS grid exactly as before; the ≤600px breakpoint in styles.css
+      // hides the dark header row and stacks each row into a labelled
+      // card (the column header rides along in a .cmp-table__key span),
+      // so the table never overflows / clips columns on mobile.
       const gridCols = useThree ? '140px 1fr 1fr 1fr' : '140px 1fr 1fr';
-      content += `<div style="border-radius:12px;overflow:hidden;border:1px solid #E7E7EA;margin-bottom:20px;">`;
+      const revealBtn = '<button data-action="reveal-cell" class="cmp-table__reveal-btn">Reveal answer ↓</button>';
+      content += `<div class="cmp-table" style="--cmp-cols:${gridCols};">`;
       if (colA || colB || colC) {
-        content += `<div style="display:grid;grid-template-columns:${gridCols};background:#0B1426;">
-          <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6);">${c.rowsHeader || ''}</div>
-          <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colA}</div>
-          <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colB}</div>
-          ${useThree ? `<div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colC}</div>` : ''}
+        content += `<div class="cmp-table__head">
+          <div class="cmp-table__hcell cmp-table__hcell--corner">${c.rowsHeader || ''}</div>
+          <div class="cmp-table__hcell">${colA}</div>
+          <div class="cmp-table__hcell">${colB}</div>
+          ${useThree ? `<div class="cmp-table__hcell">${colC}</div>` : ''}
         </div>`;
       }
       content += c.rows.map((r, i) => {
         const reveal = REVEAL_RE.test(r.label);
         if (reveal) {
           return `
-          <div style="display:grid;grid-template-columns:${gridCols};background:#FEFCE8;border-top:1px solid #E7E7EA;">
-            <div style="padding:12px 14px;font-weight:800;font-size:13px;color:#92400E;border-right:1px solid #E7E7EA;">⭐ ${r.label}</div>
-            <div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;border-right:1px solid #E7E7EA;">
-              <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;">Reveal answer ↓</button>
-              <div class="reveal-cell__body is-hidden">${r.colA}</div>
-            </div>
-            <div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;${useThree ? 'border-right:1px solid #E7E7EA;' : ''}">
-              <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;">Reveal answer ↓</button>
-              <div class="reveal-cell__body is-hidden">${r.colB}</div>
-            </div>
-            ${useThree ? `<div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">
-              <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;">Reveal answer ↓</button>
-              <div class="reveal-cell__body is-hidden">${r.colC || ''}</div>
-            </div>` : ''}
+          <div class="cmp-table__row cmp-table__row--reveal">
+            <div class="cmp-table__label cmp-table__label--reveal">⭐ ${r.label}</div>
+            <div class="cmp-table__cell reveal-cell"><span class="cmp-table__key">${colA}</span>${revealBtn}<div class="reveal-cell__body is-hidden">${r.colA}</div></div>
+            <div class="cmp-table__cell reveal-cell"><span class="cmp-table__key">${colB}</span>${revealBtn}<div class="reveal-cell__body is-hidden">${r.colB}</div></div>
+            ${useThree ? `<div class="cmp-table__cell reveal-cell"><span class="cmp-table__key">${colC}</span>${revealBtn}<div class="reveal-cell__body is-hidden">${r.colC || ''}</div></div>` : ''}
           </div>`;
         }
         return `
-        <div style="display:grid;grid-template-columns:${gridCols};background:${i % 2 === 0 ? '#f8fafc' : '#fff'};border-top:1px solid #E7E7EA;">
-          <div style="padding:12px 14px;font-weight:700;font-size:13px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
-          <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;border-right:1px solid #E7E7EA;">${r.colA}</div>
-          <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;${useThree ? 'border-right:1px solid #E7E7EA;' : ''}">${r.colB}</div>
-          ${useThree ? `<div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">${r.colC || ''}</div>` : ''}
+        <div class="cmp-table__row ${i % 2 === 0 ? 'cmp-table__row--even' : 'cmp-table__row--odd'}">
+          <div class="cmp-table__label">${r.label}</div>
+          <div class="cmp-table__cell"><span class="cmp-table__key">${colA}</span><span class="cmp-table__val">${r.colA}</span></div>
+          <div class="cmp-table__cell"><span class="cmp-table__key">${colB}</span><span class="cmp-table__val">${r.colB}</span></div>
+          ${useThree ? `<div class="cmp-table__cell"><span class="cmp-table__key">${colC}</span><span class="cmp-table__val">${r.colC || ''}</span></div>` : ''}
         </div>`;
       }).join('');
       content += `</div>`;

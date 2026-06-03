@@ -3387,6 +3387,110 @@ img, svg { display: block; max-width: 100%; }
 .reveal-cell__body.is-hidden {
   display: none;
 }
+
+/* ────────────────────────────────────────────────────────────
+   Comparison table (.cmp-table) — the "Direct state provision"
+   style row/colA/colB/colC table. Was inline-styled with a fixed
+   `140px 1fr 1fr 1fr` grid that overflowed and clipped columns on
+   narrow screens. Desktop is unchanged; at ≤600px the dark header
+   row hides and each row stacks into a labelled card, with the
+   column header carried in a .cmp-table__key span.
+   ──────────────────────────────────────────────────────────── */
+.cmp-table {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E7E7EA;
+  margin-bottom: 20px;
+}
+.cmp-table__head {
+  display: grid;
+  grid-template-columns: var(--cmp-cols);
+  background: #0B1426;
+}
+.cmp-table__hcell {
+  padding: 11px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+.cmp-table__hcell--corner {
+  color: rgba(255, 255, 255, 0.6);
+  border-left: 0;
+}
+.cmp-table__row {
+  display: grid;
+  grid-template-columns: var(--cmp-cols);
+  border-top: 1px solid #E7E7EA;
+}
+.cmp-table__row--even { background: #f8fafc; }
+.cmp-table__row--odd { background: #fff; }
+.cmp-table__row--reveal { background: #FEFCE8; }
+.cmp-table__label {
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #0B1426;
+  border-right: 1px solid #E7E7EA;
+}
+.cmp-table__label--reveal {
+  font-weight: 800;
+  color: #92400E;
+}
+.cmp-table__cell {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #0B1426;
+  line-height: 1.55;
+  border-right: 1px solid #E7E7EA;
+}
+.cmp-table__cell:last-child { border-right: 0; }
+.cmp-table__key { display: none; }
+.cmp-table__reveal-btn {
+  background: #fff;
+  border: 1.5px dashed #D97706;
+  color: #92400E;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  /* Stack each row into a card; the dark header row is redundant
+     once every cell shows its own column key. */
+  .cmp-table__head { display: none; }
+  .cmp-table__row { grid-template-columns: 1fr; }
+  .cmp-table__label {
+    border-right: 0;
+    background: #0B1426;
+    color: #fff;
+    font-size: 13px;
+  }
+  .cmp-table__label--reveal {
+    background: #FEF9C3;
+    color: #92400E;
+  }
+  .cmp-table__cell {
+    border-right: 0;
+    border-top: 1px solid #E7E7EA;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cmp-table__key {
+    display: block;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748B;
+  }
+  .cmp-table__reveal-btn { align-self: flex-start; margin-top: 2px; }
+}
 /* Generic card body — proper hanging indent for bullet lists */
 .card ul,
 .card ol,

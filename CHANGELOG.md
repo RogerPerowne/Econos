@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.43.0 — 2026-06-03
+
+### Comparison table (.cmp-table) — responsive, no more clipped columns on mobile
+
+The row/colA/colB/colC comparison table (e.g. Public Goods "Direct state
+provision") was built entirely from inline styles with a fixed
+`140px 1fr 1fr 1fr` grid. On narrow screens the `1fr` tracks couldn't shrink
+below their content, so the table overflowed and the right-hand columns were
+clipped. Refactored sitewide into a class-based `.cmp-table` component:
+
+- **Desktop is unchanged** — same dark header row, striping, borders and
+  reveal-row styling (verified pixel-for-pixel against the old markup).
+- **At ≤600px each row stacks into a labelled card**: the dark header row
+  hides, the row label becomes a header bar, and every cell shows its column
+  header inline (`.cmp-table__key`) above the value. Nothing overflows.
+- Reveal-row tables keep their tap-to-reveal hooks (`data-action`,
+  `.reveal-cell`, `.is-hidden`); the reveal button moved to a
+  `.cmp-table__reveal-btn` class.
+
+Affects all 8 topics using this table. `app.js` + `styles.css` changed →
+`sw.js` bumped to `econos-v321`.
+
 ## 0.42.20 — 2026-06-03
 
 ### Positive externality diagram — shorten the in-triangle label

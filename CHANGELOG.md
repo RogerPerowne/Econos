@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.44.9 — 2026-06-03
+
+### PED Card 4 · A/B/C labels moved above the curve
+
+On "Where demand is elastic" (PED along a linear demand curve), point C's
+label sat below-left of its dot (under the curve), and A/B were only just
+above. Set all three labels to a consistent above-right placement so A, B
+and C all sit clearly above the curve on their respective panels. Chart-spec
+only; snapshot updated, `lint:charts` clean. Network-first — no `sw.js` bump.
+
 ## 0.44.8 — 2026-06-03
 
 ### Demand diagrams · point labels moved below the line

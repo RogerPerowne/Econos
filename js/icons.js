@@ -15989,4 +15989,520 @@ window.ECONOS_ICONS = {
      V2 — Both shocks (2021–22): AD shifts right, SRAS shifts left → E1
      V3 — BoE response (2022–23): AD shifts left → E2 */
 
+  /* ============================================================
+     BALANCE OF PAYMENTS — Theme 2.1.4
+     Six bespoke heroes, one per Learn-It card. Each is built to
+     match the ChatGPT mockup's distinctive centrepiece — three-
+     accounts → balance node (C1), visual equation (C2), hub-and-
+     spoke drivers (C3), matching-identity pillars (C4), gauge
+     dashboard (C5), and numbered process flow (C6).
+     ============================================================ */
+
+  /* C1 · BoP THE BIG PICTURE — three account columns converging on
+     a central "Overall balance = 0" node, with a subtitle reminder
+     "Current account deficit → financial account surplus". Each
+     column shows its sub-component tiles. Tone-coded per account. */
+  bopThreeAccounts: `
+    <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
+      <style>
+        .bop-3a-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-bottom:18px; }
+        @media (max-width: 760px) { .bop-3a-grid { grid-template-columns:1fr; } }
+        .bop-3a-col { background:#fff; border:1.5px solid; border-radius:14px; padding:14px 12px; display:flex; flex-direction:column; }
+        .bop-3a-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; padding-bottom:10px; border-bottom:1.5px dashed; }
+        .bop-3a-iconcirc { width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-size:18px; flex-shrink:0; }
+        .bop-3a-title { font-size:14px; font-weight:800; }
+        .bop-3a-tile { display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px; background:#F8FAFC; margin-bottom:6px; font-size:12px; color:#0B1426; }
+        .bop-3a-bullet { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+        .bop-3a-note { font-size:11px; color:#475569; font-style:italic; margin-top:8px; text-align:center; }
+        .bop-3a-arrows { display:grid; grid-template-columns:1fr 1fr 1fr; align-items:end; height:32px; margin-bottom:4px; }
+        .bop-3a-arrow { display:flex; flex-direction:column; align-items:center; }
+        .bop-3a-arrow-line { width:2px; height:24px; }
+        .bop-3a-arrow-head { width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; }
+        .bop-3a-balance { display:flex; flex-direction:column; align-items:center; }
+        .bop-3a-pill { display:inline-flex; align-items:center; gap:10px; padding:12px 22px; border-radius:999px; background:#fff; border:2.5px solid #0B1426; font-weight:900; font-size:15px; color:#0B1426; }
+        .bop-3a-pill-icon { width:28px; height:28px; border-radius:50%; background:#0B1426; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; }
+        .bop-3a-sub { margin-top:10px; padding:8px 16px; background:#EFF6FF; border:1px solid #BFDBFE; border-radius:8px; font-size:12.5px; color:#1E3A8A; font-weight:600; }
+      </style>
+      <div class="bop-3a-grid">
+        <div class="bop-3a-col" style="border-color:#86EFAC;background:#F0FDF4;">
+          <div class="bop-3a-head" style="border-color:#86EFAC;">
+            <span class="bop-3a-iconcirc" style="background:#16A34A;">🌐</span>
+            <span class="bop-3a-title" style="color:#065F46;">Current account</span>
+          </div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#16A34A;"></span>Trade in goods</div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#16A34A;"></span>Trade in services</div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#16A34A;"></span>Primary income</div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#16A34A;"></span>Secondary income</div>
+        </div>
+        <div class="bop-3a-col" style="border-color:#C4B5FD;background:#F5F3FF;">
+          <div class="bop-3a-head" style="border-color:#C4B5FD;">
+            <span class="bop-3a-iconcirc" style="background:#7C3AED;">🏛️</span>
+            <span class="bop-3a-title" style="color:#5B21B6;">Capital account</span>
+          </div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#7C3AED;"></span>Capital transfers</div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#7C3AED;"></span>Non-produced, non-financial assets (patents, land)</div>
+          <div class="bop-3a-note">Usually small — under 1% of GDP</div>
+        </div>
+        <div class="bop-3a-col" style="border-color:#BFDBFE;background:#EFF6FF;">
+          <div class="bop-3a-head" style="border-color:#BFDBFE;">
+            <span class="bop-3a-iconcirc" style="background:#2563EB;">📈</span>
+            <span class="bop-3a-title" style="color:#1E3A8A;">Financial account</span>
+          </div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#2563EB;"></span>Foreign Direct Investment (FDI)</div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#2563EB;"></span>Portfolio flows</div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#2563EB;"></span>Other investment</div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#2563EB;"></span>Reserve assets</div>
+        </div>
+      </div>
+      <div class="bop-3a-arrows">
+        <div class="bop-3a-arrow"><div class="bop-3a-arrow-line" style="background:#16A34A;"></div><div class="bop-3a-arrow-head" style="border-top:8px solid #16A34A;"></div></div>
+        <div class="bop-3a-arrow"><div class="bop-3a-arrow-line" style="background:#7C3AED;"></div><div class="bop-3a-arrow-head" style="border-top:8px solid #7C3AED;"></div></div>
+        <div class="bop-3a-arrow"><div class="bop-3a-arrow-line" style="background:#2563EB;"></div><div class="bop-3a-arrow-head" style="border-top:8px solid #2563EB;"></div></div>
+      </div>
+      <div class="bop-3a-balance">
+        <div class="bop-3a-pill"><span class="bop-3a-pill-icon">⚖️</span>Overall balance = 0</div>
+        <div class="bop-3a-sub">🔄 Current account deficit ⇄ Financial account surplus</div>
+      </div>
+    </div>
+  `,
+
+  /* C2 · INSIDE THE CURRENT ACCOUNT — visual equation:
+     [Current account balance pill] = [Goods] + [Services] + [Primary income] + [Secondary income]
+     Each component is a tall card with a large icon at top, tone-coded.
+     Below the equation: a UK pattern visualisation (Goods + Services → Final balance lozenge). */
+  bopCurrentAccountEquation: `
+    <div style="background:#fff;border-radius:14px;padding:20px 16px;font-family:Inter,sans-serif;">
+      <style>
+        .bop-eq { display:grid; grid-template-columns: 1.2fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr; gap:8px; align-items:stretch; }
+        @media (max-width: 760px) { .bop-eq { grid-template-columns: 1fr; } .bop-eq-op { display:none; } }
+        .bop-eq-lhs { background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:14px; padding:18px 12px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:160px; }
+        .bop-eq-lhs-icon { width:56px; height:56px; border-radius:50%; background:#7C3AED; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:10px; }
+        .bop-eq-lhs-title { font-size:14px; font-weight:900; color:#5B21B6; line-height:1.25; }
+        .bop-eq-op { display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:900; color:#475569; }
+        .bop-eq-card { border:1.5px solid; border-radius:14px; padding:18px 10px 14px; display:flex; flex-direction:column; align-items:center; text-align:center; min-height:160px; }
+        .bop-eq-card-icon { width:48px; height:48px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:10px; color:#fff; }
+        .bop-eq-card-title { font-size:13px; font-weight:800; line-height:1.25; }
+      </style>
+      <div class="bop-eq">
+        <div class="bop-eq-lhs">
+          <div class="bop-eq-lhs-icon">⚖️</div>
+          <div class="bop-eq-lhs-title">Current<br>account<br>balance</div>
+        </div>
+        <div class="bop-eq-op">=</div>
+        <div class="bop-eq-card" style="border-color:#86EFAC;background:#F0FDF4;">
+          <div class="bop-eq-card-icon" style="background:#16A34A;">🚢</div>
+          <div class="bop-eq-card-title" style="color:#065F46;">Trade in<br>goods</div>
+        </div>
+        <div class="bop-eq-op">+</div>
+        <div class="bop-eq-card" style="border-color:#BFDBFE;background:#EFF6FF;">
+          <div class="bop-eq-card-icon" style="background:#2563EB;">🧳</div>
+          <div class="bop-eq-card-title" style="color:#1E3A8A;">Trade in<br>services</div>
+        </div>
+        <div class="bop-eq-op">+</div>
+        <div class="bop-eq-card" style="border-color:#C4B5FD;background:#F5F3FF;">
+          <div class="bop-eq-card-icon" style="background:#7C3AED;">🏛️</div>
+          <div class="bop-eq-card-title" style="color:#5B21B6;">Primary<br>income</div>
+        </div>
+        <div class="bop-eq-op">+</div>
+        <div class="bop-eq-card" style="border-color:#FED7AA;background:#FFFBEB;">
+          <div class="bop-eq-card-icon" style="background:#F59E0B;">👥</div>
+          <div class="bop-eq-card-title" style="color:#92400E;">Secondary<br>income</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* C2 · UK PATTERN — Goods card and Services card on either side,
+     with curved arrows converging on a "Final current account balance"
+     lozenge below. Plus a calm "Primary income and transfers can push
+     either way" caveat. */
+  bopUkPattern: `
+    <div style="background:#fff;border-radius:14px;padding:18px 16px;font-family:Inter,sans-serif;">
+      <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="bopuk-arr-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/>
+          </marker>
+          <marker id="bopuk-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
+          </marker>
+        </defs>
+        <g>
+          <rect x="20" y="20" width="240" height="100" rx="14" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
+          <circle cx="60" cy="56" r="20" fill="#fff" stroke="#FDA4AF" stroke-width="1"/>
+          <text x="60" y="63" font-size="20" text-anchor="middle">🚢</text>
+          <text x="90" y="54" font-size="13" font-weight="800" fill="#BE123C" font-family="Inter,sans-serif">Goods</text>
+          <text x="90" y="74" font-size="11" fill="#9F1239" font-family="Inter,sans-serif">UK goods deficit ~£206bn</text>
+          <text x="90" y="90" font-size="11" fill="#9F1239" font-family="Inter,sans-serif">(2024) — imports often</text>
+          <text x="90" y="106" font-size="11" fill="#9F1239" font-family="Inter,sans-serif">exceed exports.</text>
+        </g>
+        <g>
+          <rect x="440" y="20" width="240" height="100" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="480" cy="56" r="20" fill="#fff" stroke="#86EFAC" stroke-width="1"/>
+          <text x="480" y="63" font-size="20" text-anchor="middle">🧳</text>
+          <text x="510" y="54" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Services</text>
+          <text x="510" y="74" font-size="11" fill="#065F46" font-family="Inter,sans-serif">UK services surplus ~£184bn</text>
+          <text x="510" y="90" font-size="11" fill="#065F46" font-family="Inter,sans-serif">offsets most of the goods</text>
+          <text x="510" y="106" font-size="11" fill="#065F46" font-family="Inter,sans-serif">deficit.</text>
+        </g>
+        <path d="M 140 130 Q 140 200 340 230" fill="none" stroke="#E11D48" stroke-width="2" marker-end="url(#bopuk-arr-rose)"/>
+        <path d="M 560 130 Q 560 200 360 230" fill="none" stroke="#16A34A" stroke-width="2" marker-end="url(#bopuk-arr-green)"/>
+        <rect x="220" y="225" width="260" height="60" rx="30" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <text x="290" y="262" font-size="22" text-anchor="middle">⚖️</text>
+        <text x="375" y="261" font-size="13" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif">Final current account balance</text>
+        <text x="350" y="307" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Primary income &amp; transfers can push the final balance either way</text>
+      </svg>
+    </div>
+  `,
+
+  /* C3 · DRIVERS OF THE CURRENT ACCOUNT — hub-and-spoke layout with
+     a central "Current account balance" balance icon and six driver
+     cards (3 left, 3 right) connected by curved arrows pointing
+     inward. Each driver card has its own icon and short caption. */
+  bopDriverHub: `
+    <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
+      <svg viewBox="0 0 760 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="bophub-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
+          </marker>
+        </defs>
+        <!-- curved spokes (each from edge of side card to centre node) -->
+        <path d="M 230 80 Q 320 130 340 240" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 230 230 Q 290 250 340 270" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 230 380 Q 290 340 340 300" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 530 80 Q 440 130 420 240" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 530 230 Q 470 250 420 270" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 530 380 Q 470 340 420 300" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
+
+        <!-- LEFT TILES -->
+        <g>
+          <rect x="30" y="20" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="62" cy="52" r="18" fill="#fff" stroke="#86EFAC"/><text x="62" y="59" font-size="18" text-anchor="middle">🏠</text>
+          <text x="90" y="50" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Domestic income</text>
+          <text x="90" y="64" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ demand</text>
+          <text x="90" y="84" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Stronger home spending</text>
+          <text x="90" y="98" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">often raises imports.</text>
+        </g>
+        <g>
+          <rect x="30" y="170" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="62" cy="202" r="18" fill="#fff" stroke="#86EFAC"/><text x="62" y="209" font-size="18" text-anchor="middle">£</text>
+          <text x="90" y="200" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Exchange rate</text>
+          <text x="90" y="234" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Depreciation can help</text>
+          <text x="90" y="248" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">price competitiveness.</text>
+        </g>
+        <g>
+          <rect x="30" y="320" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="62" cy="352" r="18" fill="#fff" stroke="#86EFAC"/><text x="62" y="359" font-size="18" text-anchor="middle">🛢️</text>
+          <text x="90" y="350" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Commodity &amp; energy</text>
+          <text x="90" y="364" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">prices</text>
+          <text x="90" y="384" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Expensive imports can</text>
+          <text x="90" y="398" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">worsen the balance.</text>
+        </g>
+
+        <!-- CENTRE HUB -->
+        <circle cx="380" cy="270" r="78" fill="#fff" stroke="#0B1426" stroke-width="2.5"/>
+        <text x="380" y="262" font-size="32" text-anchor="middle">⚖️</text>
+        <text x="380" y="294" font-size="11.5" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Current</text>
+        <text x="380" y="308" font-size="11.5" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">account balance</text>
+
+        <!-- RIGHT TILES -->
+        <g>
+          <rect x="530" y="20" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="562" cy="52" r="18" fill="#fff" stroke="#86EFAC"/><text x="562" y="59" font-size="18" text-anchor="middle">🌍</text>
+          <text x="590" y="50" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Foreign income</text>
+          <text x="590" y="64" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ demand</text>
+          <text x="590" y="84" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Stronger trading partners</text>
+          <text x="590" y="98" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">raise export demand.</text>
+        </g>
+        <g>
+          <rect x="530" y="170" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="562" cy="202" r="18" fill="#fff" stroke="#86EFAC"/><text x="562" y="209" font-size="18" text-anchor="middle">📈</text>
+          <text x="590" y="200" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Competitiveness</text>
+          <text x="590" y="214" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ productivity</text>
+          <text x="590" y="234" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Better quality &amp; lower</text>
+          <text x="590" y="248" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">unit costs help exports.</text>
+        </g>
+        <g>
+          <rect x="530" y="320" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="562" cy="352" r="18" fill="#fff" stroke="#86EFAC"/><text x="562" y="359" font-size="18" text-anchor="middle">🐷</text>
+          <text x="590" y="350" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Saving vs investment</text>
+          <text x="590" y="370" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Low national saving</text>
+          <text x="590" y="384" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">relative to investment</text>
+          <text x="590" y="398" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">often links to deficits.</text>
+        </g>
+
+        <!-- SIMPLE CHAINS BELOW -->
+        <g>
+          <text x="30" y="465" font-size="11" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">A SIMPLE CHAIN</text>
+          <rect x="30" y="478" width="150" height="42" rx="8" fill="#fff" stroke="#CBD5E1"/>
+          <text x="105" y="497" font-size="11" font-weight="700" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">UK demand</text>
+          <text x="105" y="511" font-size="11" font-weight="700" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">rises</text>
+          <text x="195" y="503" font-size="16" fill="#94A3B8" font-family="Inter,sans-serif" text-anchor="middle">→</text>
+          <rect x="210" y="478" width="170" height="42" rx="8" fill="#fff" stroke="#CBD5E1"/>
+          <text x="295" y="497" font-size="11" font-weight="700" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Imports rise</text>
+          <text x="295" y="511" font-size="11" font-weight="700" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">faster</text>
+          <text x="395" y="503" font-size="16" fill="#94A3B8" font-family="Inter,sans-serif" text-anchor="middle">→</text>
+          <rect x="410" y="478" width="320" height="42" rx="8" fill="#FFF1F2" stroke="#FDA4AF"/>
+          <text x="570" y="497" font-size="11" font-weight="800" fill="#BE123C" font-family="Inter,sans-serif" text-anchor="middle">Current account</text>
+          <text x="570" y="511" font-size="11" font-weight="800" fill="#BE123C" font-family="Inter,sans-serif" text-anchor="middle">moves towards deficit</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* C4 · MATCHING IDENTITY — two tall pillar columns side by side.
+     LEFT (red): "Current account deficit" with 4 component rows.
+     RIGHT (blue): "Financial account surplus" with 4 financing rows.
+     CENTRE: arrow "Must be financed by →" between them. */
+  bopMatchingIdentity: `
+    <div style="background:#fff;border-radius:14px;padding:20px 16px;font-family:Inter,sans-serif;">
+      <style>
+        .bop-mi { display:grid; grid-template-columns: 1fr 96px 1fr; gap:12px; align-items:stretch; }
+        @media (max-width: 760px) { .bop-mi { grid-template-columns: 1fr; } .bop-mi-arrow { flex-direction:column; height:auto; padding:14px 0; } }
+        .bop-mi-pillar { border:1.5px solid; border-radius:14px; padding:0; overflow:hidden; display:flex; flex-direction:column; }
+        .bop-mi-head { display:flex; align-items:center; gap:10px; padding:14px 16px; }
+        .bop-mi-head-icon { width:34px; height:34px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:16px; }
+        .bop-mi-head-title { font-size:14px; font-weight:800; }
+        .bop-mi-row { display:grid; grid-template-columns: 28px 1fr; gap:8px; padding:10px 16px; border-top:1px solid; align-items:center; font-size:12.5px; color:#0B1426; }
+        .bop-mi-row-icon { display:inline-flex; align-items:center; justify-content:center; font-size:14px; }
+        .bop-mi-arrow { display:flex; align-items:center; justify-content:center; }
+        .bop-mi-arrow-inner { display:flex; flex-direction:column; align-items:center; gap:6px; font-size:11px; color:#475569; font-weight:700; text-align:center; }
+        .bop-mi-arrow-svg { width:60px; height:24px; }
+      </style>
+      <div class="bop-mi">
+        <div class="bop-mi-pillar" style="border-color:#FDA4AF;background:#FFF1F2;">
+          <div class="bop-mi-head" style="background:#FECDD3;">
+            <span class="bop-mi-head-icon" style="background:#E11D48;">⬇️</span>
+            <span class="bop-mi-head-title" style="color:#9F1239;">Current account deficit</span>
+          </div>
+          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🚢</span><span>Goods</span></div>
+          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🧳</span><span>Services</span></div>
+          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🏛️</span><span>Income</span></div>
+          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">👥</span><span>Transfers</span></div>
+        </div>
+        <div class="bop-mi-arrow">
+          <div class="bop-mi-arrow-inner">
+            <span>Must be</span>
+            <span>financed by</span>
+            <svg class="bop-mi-arrow-svg" viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg"><defs><marker id="bop-mi-am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/></marker></defs><line x1="2" y1="12" x2="56" y2="12" stroke="#0B1426" stroke-width="2.5" marker-end="url(#bop-mi-am)"/></svg>
+          </div>
+        </div>
+        <div class="bop-mi-pillar" style="border-color:#BFDBFE;background:#EFF6FF;">
+          <div class="bop-mi-head" style="background:#DBEAFE;">
+            <span class="bop-mi-head-icon" style="background:#2563EB;">⬆️</span>
+            <span class="bop-mi-head-title" style="color:#1E3A8A;">Financial account surplus</span>
+          </div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏭</span><span><strong>FDI</strong> — foreign firms build or buy assets</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">📊</span><span><strong>Portfolio flows</strong> — bonds and shares</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏦</span><span><strong>Loans / other</strong> — borrowing from abroad</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🛡️</span><span><strong>Reserve changes</strong> — official reserve use</span></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* C4 · GOOD SIGN VS WARNING SIGN — two cards, each with a 3- or
+     4-step mini-flow chain illustrating the path from inflow to
+     outcome. Green = healthy investment-led finance; red = fragile
+     short-term, vulnerability-led finance. */
+  bopGoodVsWarning: `
+    <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
+      <style>
+        .bop-gw { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+        @media (max-width: 760px) { .bop-gw { grid-template-columns: 1fr; } }
+        .bop-gw-card { border:1.5px solid; border-radius:14px; padding:16px 12px; }
+        .bop-gw-head { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+        .bop-gw-head-icon { width:32px; height:32px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:16px; }
+        .bop-gw-head-title { font-size:14px; font-weight:800; }
+        .bop-gw-sub { font-size:12px; color:#475569; line-height:1.5; margin-bottom:14px; }
+        .bop-gw-chain { display:flex; align-items:stretch; gap:6px; }
+        .bop-gw-step { flex:1; background:#fff; border:1px solid; border-radius:10px; padding:8px 6px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:6px; }
+        .bop-gw-step-icon { font-size:18px; }
+        .bop-gw-step-label { font-size:10.5px; font-weight:700; line-height:1.2; color:#0B1426; }
+        .bop-gw-arrow { display:flex; align-items:center; font-size:14px; color:#94A3B8; font-weight:700; }
+      </style>
+      <div class="bop-gw">
+        <div class="bop-gw-card" style="border-color:#86EFAC;background:#F0FDF4;">
+          <div class="bop-gw-head">
+            <span class="bop-gw-head-icon" style="background:#16A34A;">👍</span>
+            <span class="bop-gw-head-title" style="color:#065F46;">Good sign?</span>
+          </div>
+          <div class="bop-gw-sub">Foreign investors funding <strong>productive investment</strong>.</div>
+          <div class="bop-gw-chain">
+            <div class="bop-gw-step" style="border-color:#86EFAC;"><span class="bop-gw-step-icon">⬇️</span><span class="bop-gw-step-label">Inflow</span></div>
+            <div class="bop-gw-arrow">→</div>
+            <div class="bop-gw-step" style="border-color:#86EFAC;"><span class="bop-gw-step-icon">🏭</span><span class="bop-gw-step-label">Investment in capacity</span></div>
+            <div class="bop-gw-arrow">→</div>
+            <div class="bop-gw-step" style="border-color:#86EFAC;"><span class="bop-gw-step-icon">📈</span><span class="bop-gw-step-label">Stronger future growth</span></div>
+          </div>
+        </div>
+        <div class="bop-gw-card" style="border-color:#FDA4AF;background:#FFF1F2;">
+          <div class="bop-gw-head">
+            <span class="bop-gw-head-icon" style="background:#E11D48;">👎</span>
+            <span class="bop-gw-head-title" style="color:#9F1239;">Warning sign?</span>
+          </div>
+          <div class="bop-gw-sub">Deficit funded by <strong>short-term borrowing and weak competitiveness</strong>.</div>
+          <div class="bop-gw-chain">
+            <div class="bop-gw-step" style="border-color:#FDA4AF;"><span class="bop-gw-step-icon">⏱️</span><span class="bop-gw-step-label">Short-term inflows</span></div>
+            <div class="bop-gw-arrow">→</div>
+            <div class="bop-gw-step" style="border-color:#FDA4AF;"><span class="bop-gw-step-icon">⚠️</span><span class="bop-gw-step-label">Vulnerable to shocks</span></div>
+            <div class="bop-gw-arrow">→</div>
+            <div class="bop-gw-step" style="border-color:#FDA4AF;"><span class="bop-gw-step-icon">📉</span><span class="bop-gw-step-label">Risk of crisis and adjustment</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* C5 · SUSTAINABILITY DASHBOARD — four semicircle dials in a row,
+     each a separate sustainability dimension. Beneath: a "More
+     sustainable ←→ Less sustainable" axis. Uses the dial engine
+     directly to guarantee geometric correctness. */
+  bopSustainabilityDashboard: `
+    <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
+      <style>
+        .bop-dash { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-bottom:12px; }
+        @media (max-width: 760px) { .bop-dash { grid-template-columns: 1fr 1fr; } }
+        .bop-dash-card { border:1.5px solid #E2E8F0; border-radius:14px; padding:12px 10px; display:flex; flex-direction:column; align-items:center; text-align:center; background:#FAFCFF; position:relative; }
+        .bop-dash-num { position:absolute; top:8px; left:8px; width:24px; height:24px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
+        .bop-dash-title { font-size:13px; font-weight:800; margin:6px 0 4px; }
+        .bop-dash-sub { font-size:10.5px; color:#475569; line-height:1.4; }
+        .bop-dash-axis { display:flex; align-items:center; justify-content:space-between; padding:8px 14px; background:#F0FDF4; border:1px dashed #86EFAC; border-radius:10px; font-size:11.5px; font-weight:700; }
+      </style>
+      <div class="bop-dash">
+        <div class="bop-dash-card">
+          <span class="bop-dash-num" style="background:#16A34A;">1</span>
+          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:1.6, min:0, max:8, target:[0,3], tone:'green', ariaLabel:'Size — 1.6% of GDP, sustainable band 0–3%' })}
+          <div class="bop-dash-title" style="color:#065F46;">Size</div>
+          <div class="bop-dash-sub">How big is the deficit<br>relative to GDP?</div>
+        </div>
+        <div class="bop-dash-card">
+          <span class="bop-dash-num" style="background:#7C3AED;">2</span>
+          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:6, min:0, max:10, tone:'purple', ariaLabel:'Persistence — has it lasted for years?' })}
+          <div class="bop-dash-title" style="color:#5B21B6;">Persistence</div>
+          <div class="bop-dash-sub">Has it lasted<br>for years?</div>
+        </div>
+        <div class="bop-dash-card">
+          <span class="bop-dash-num" style="background:#2563EB;">3</span>
+          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:5.5, min:0, max:10, tone:'blue', ariaLabel:'Competitiveness — does it reflect weak exports and high unit costs?' })}
+          <div class="bop-dash-title" style="color:#1E3A8A;">Competitiveness</div>
+          <div class="bop-dash-sub">Does it reflect weak exports<br>and high unit costs?</div>
+        </div>
+        <div class="bop-dash-card">
+          <span class="bop-dash-num" style="background:#0D9488;">4</span>
+          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:3, min:0, max:10, tone:'teal', ariaLabel:'Financing quality — funded by FDI or fragile borrowing?' })}
+          <div class="bop-dash-title" style="color:#115E59;">Financing quality</div>
+          <div class="bop-dash-sub">Is it funded by FDI<br>or fragile borrowing?</div>
+        </div>
+      </div>
+      <div class="bop-dash-axis">
+        <span style="color:#065F46;">← More sustainable</span>
+        <span style="color:#94A3B8;">⇆</span>
+        <span style="color:#BE123C;">Less sustainable →</span>
+      </div>
+    </div>
+  `,
+
+  /* C5 · POSSIBLE CONSEQUENCES — main 3-step horizontal flow with
+     two branched side-tiles below the second step. Mirrors the
+     "Exchange rate pressure → Imported inflation → Tighter policy"
+     trunk with branches into "Higher foreign liabilities" and
+     "Greater vulnerability to shocks". */
+  bopConsequencesFlow: `
+    <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
+      <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="bopcf-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+          </marker>
+        </defs>
+        <!-- Trunk -->
+        <g>
+          <rect x="20" y="40" width="200" height="80" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+          <text x="55" y="86" font-size="22">£</text>
+          <text x="120" y="78" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">Exchange rate</text>
+          <text x="120" y="94" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">pressure</text>
+        </g>
+        <line x1="225" y1="80" x2="275" y2="80" stroke="#475569" stroke-width="2" marker-end="url(#bopcf-arr)"/>
+        <g>
+          <rect x="280" y="40" width="200" height="80" rx="12" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+          <text x="315" y="86" font-size="22">🛒</text>
+          <text x="380" y="78" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif" text-anchor="middle">Imported</text>
+          <text x="380" y="94" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif" text-anchor="middle">inflation</text>
+        </g>
+        <line x1="485" y1="80" x2="535" y2="80" stroke="#475569" stroke-width="2" marker-end="url(#bopcf-arr)"/>
+        <g>
+          <rect x="540" y="40" width="200" height="80" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+          <text x="575" y="86" font-size="22">🏛️</text>
+          <text x="640" y="78" font-size="12" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">Tighter policy</text>
+          <text x="640" y="94" font-size="12" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">/ weaker demand</text>
+        </g>
+        <!-- Branches dropping below -->
+        <path d="M 280 110 Q 230 140 230 170" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <path d="M 480 110 Q 540 140 540 170" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <g>
+          <rect x="100" y="170" width="260" height="80" rx="12" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5"/>
+          <text x="135" y="216" font-size="22">🌐</text>
+          <text x="240" y="208" font-size="12" font-weight="800" fill="#9A3412" font-family="Inter,sans-serif" text-anchor="middle">Higher foreign</text>
+          <text x="240" y="224" font-size="12" font-weight="800" fill="#9A3412" font-family="Inter,sans-serif" text-anchor="middle">liabilities</text>
+        </g>
+        <g>
+          <rect x="410" y="170" width="260" height="80" rx="12" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
+          <text x="445" y="216" font-size="22">🛡️</text>
+          <text x="550" y="208" font-size="12" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">Greater vulnerability</text>
+          <text x="550" y="224" font-size="12" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">to shocks</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* C6 · HOW TO WRITE IT — 4-step process flow (Identify → Explain →
+     Link → Judge). Each step is a tall card with a big numbered
+     circle badge in tone, a bold verb, and a short prompt. Arrows
+     between steps. Tone progression: green → blue → purple → orange. */
+  bopHowToWriteIt: `
+    <div style="background:#fff;border-radius:14px;padding:18px 12px;font-family:Inter,sans-serif;">
+      <style>
+        .bop-htw { display:grid; grid-template-columns: 1fr 18px 1fr 18px 1fr 18px 1fr; gap:8px; align-items:stretch; }
+        @media (max-width: 760px) { .bop-htw { grid-template-columns: 1fr; } .bop-htw-arr { display:none; } }
+        .bop-htw-card { border:1.5px solid; border-radius:14px; padding:18px 12px 14px; text-align:center; position:relative; display:flex; flex-direction:column; align-items:center; min-height:170px; }
+        .bop-htw-badge { width:38px; height:38px; border-radius:50%; color:#fff; font-size:16px; font-weight:900; display:inline-flex; align-items:center; justify-content:center; margin-bottom:10px; }
+        .bop-htw-icon { font-size:22px; margin-bottom:8px; }
+        .bop-htw-verb { font-size:14px; font-weight:800; margin-bottom:6px; }
+        .bop-htw-prompt { font-size:11px; color:#475569; line-height:1.45; }
+        .bop-htw-arr { display:flex; align-items:center; justify-content:center; font-size:18px; color:#94A3B8; font-weight:700; }
+      </style>
+      <div class="bop-htw">
+        <div class="bop-htw-card" style="border-color:#86EFAC;background:#F0FDF4;">
+          <div class="bop-htw-badge" style="background:#16A34A;">1</div>
+          <div class="bop-htw-icon">🔍</div>
+          <div class="bop-htw-verb" style="color:#065F46;">Identify</div>
+          <div class="bop-htw-prompt">Current, capital<br>or financial<br>account?</div>
+        </div>
+        <div class="bop-htw-arr">→</div>
+        <div class="bop-htw-card" style="border-color:#BFDBFE;background:#EFF6FF;">
+          <div class="bop-htw-badge" style="background:#2563EB;">2</div>
+          <div class="bop-htw-icon">📋</div>
+          <div class="bop-htw-verb" style="color:#1E3A8A;">Explain</div>
+          <div class="bop-htw-prompt">What changed in<br>exports, imports,<br>income or transfers?</div>
+        </div>
+        <div class="bop-htw-arr">→</div>
+        <div class="bop-htw-card" style="border-color:#C4B5FD;background:#F5F3FF;">
+          <div class="bop-htw-badge" style="background:#7C3AED;">3</div>
+          <div class="bop-htw-icon">🔗</div>
+          <div class="bop-htw-verb" style="color:#5B21B6;">Link</div>
+          <div class="bop-htw-prompt">Connect it to AD,<br>exchange rates,<br>competitiveness or<br>finance.</div>
+        </div>
+        <div class="bop-htw-arr">→</div>
+        <div class="bop-htw-card" style="border-color:#FED7AA;background:#FFF7ED;">
+          <div class="bop-htw-badge" style="background:#F59E0B;">4</div>
+          <div class="bop-htw-icon">⚖️</div>
+          <div class="bop-htw-verb" style="color:#9A3412;">Judge</div>
+          <div class="bop-htw-prompt">Size, persistence,<br>financing quality,<br>time horizon.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
 };

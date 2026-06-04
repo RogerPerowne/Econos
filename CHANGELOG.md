@@ -6,6 +6,52 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.63.0 — 2026-06-04
+
+### Balance of Payments — rebuilt with bespoke hero visuals
+
+Rebuild of the Theme 2 BoP topic to match the ChatGPT mockup designs
+properly. The first cut leaned on generic tile grids; this version
+gives every card its distinctive centrepiece. Six bespoke heroes
+added to `js/icons.js`, each one drawn to match its mockup:
+
+- **C1 `bopThreeAccounts`** — three colour-coded account columns
+  (Current / Capital / Financial) with internal sub-component tiles,
+  three coloured arrows converging on a central "Overall balance = 0"
+  pill, plus the "deficit ⇄ surplus" subtitle.
+- **C2 `bopCurrentAccountEquation`** — visual equation: a purple
+  "Current account balance" pill, "=", then four tone-coded component
+  cards (Goods / Services / Primary / Secondary income) with bold
+  icons, joined by "+" operators. Plus a second hero
+  **`bopUkPattern`** — Goods deficit + Services surplus cards with
+  curved arrows into a "Final current account balance" lozenge.
+- **C3 `bopDriverHub`** — hub-and-spoke SVG: a central balance node
+  with six driver cards (3 left, 3 right) and curved dashed arrows
+  pointing inward. Simple chain embedded below the hub in the same
+  SVG.
+- **C4 `bopMatchingIdentity`** — two tall pillar columns side by side
+  (red "Current account deficit" with 4 component rows; blue
+  "Financial account surplus" with 4 financing rows) with a "Must be
+  financed by →" arrow column between them. Plus
+  **`bopGoodVsWarning`** — green "Good sign" and red "Warning sign"
+  cards each with a 3-step mini-flow chain illustrating the path
+  from inflow to outcome.
+- **C5 `bopSustainabilityDashboard`** — **four semicircle dial
+  gauges** (Size / Persistence / Competitiveness / Financing quality)
+  built with the existing dial engine, with a "More sustainable ←→
+  Less sustainable" axis underneath. Plus **`bopConsequencesFlow`**
+  — a 3-step trunk with two branched side-tiles dropping below.
+- **C6 `bopHowToWriteIt`** — 4-step numbered process flow with
+  tone-coded cards (1 green Identify → 2 blue Explain → 3 purple
+  Link → 4 orange Judge), each with a circle-badge number, an icon,
+  the verb and the prompt.
+
+Cards rewritten to use the heroes as `visualKey` (and `visualKey2`
+for the cards needing a second centrepiece), with the supporting
+tile content trimmed and re-ordered to flow naturally beneath each
+hero. No new chart-engine specs — all SVG/HTML rendered through the
+existing icons-as-strings mechanism + dial engine.
+
 ## 0.62.0 — 2026-06-04
 
 ### New Theme 2 topic — Balance of Payments (intro, 2.1.4)

@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.51.3 — 2026-06-04
+
+### Fiscal Card 2 — EDL static render → standard stepped interactive diagram
+
+First card in the planned conversion of the Section 2.6 policy charts away
+from the static EDL renders (whose auto-placed labels clashed and which
+couldn't step through views) back to the site's standard stepped
+`interactiveDiagram` pattern on the legacy `ECONOS_PPF` engine.
+
+- **`demand-side-policies-fiscal` Card 2 (Expansionary)** now uses the
+  hand-tuned `adShiftInteractive` spec — the same rightward-AD-shift
+  diagram already proven in the Aggregate Supply topic — as a 3-view
+  stepped diagram: *Weak economy → Higher G / lower T → New equilibrium*.
+  Chart left, description right, analysis below; clean AD₁/AD₂, E₁/E₂,
+  P₁/P₂, Y₁/Y₂ labels with no clashes.
+
+The decision (agreed with Roger): EDL is **parked, not deleted** — it's
+the wrong tool for the site's flagship stepped-diagram pattern and its
+auto-layout currently clashes more than hand-placed labels. The remaining
+four EDL charts (fiscal C4, monetary C2/C4, supply C4) follow this same
+conversion. EDL engine stays dormant in the tree for a possible future
+revisit.
+
 ## 0.51.2 — 2026-06-04
 
 ### Sitewide mobile fix — single-panel charts now shrink to fit phones

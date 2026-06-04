@@ -114,21 +114,29 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'Higher G or lower T shifts AD <strong>right</strong> and raises demand.' },
 
-      // EDL hero — first production use. Renders via the buildEdlHeroHtml
-      // hook added in v0.45.1. `ad-shift-right` is in EDL's ad-as family.
-      diagram: {
-        version: 1,
-        type: 'ad-as',
-        intent: 'ad-shift-right',
-        viewport: 'card',
-        mode: 'learn',
-        axes: { x: { label: 'Real GDP' }, y: { label: 'Price level' } },
-        teaching: { takeaway: 'Expansionary fiscal policy shifts AD right — output and employment rise; inflation rises if capacity is tight.' },
-        alt: 'AD/AS diagram showing AD shifting right from AD₁ to AD₂, raising real GDP and the price level along an upward-sloping SRAS.'
+      // Standard stepped interactive diagram (chart left, description right,
+      // analysis below) on the legacy engine — reuses the hand-tuned
+      // adShiftInteractive spec already used in the Aggregate Supply topic.
+      // Replaced the earlier static EDL render (v0.46.0) after its
+      // auto-placed labels clashed and it couldn't step through views.
+      interactiveDiagram: {
+        svgKey: 'adShiftInteractive',
+        label: 'EXPANSIONARY FISCAL POLICY — AD SHIFTS RIGHT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          { label: 'Weak economy', show: [], tone: 'slate',
+            head: 'The starting point — equilibrium at E₁.',
+            body: ['AD and SRAS intersect at E₁, giving price level P₁ and real output Y₁.', 'The economy is below capacity, with spare resources.'] },
+          { label: 'Higher G / lower T', show: ['idl-1'], tone: 'green',
+            head: 'Expansionary fiscal policy shifts AD right to AD₂.',
+            body: ['Higher government spending (G) or lower taxation (T) raises C, I and G directly.', 'The whole AD curve shifts rightward from AD₁ to AD₂.'] },
+          { label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'green',
+            head: 'Output and employment rise — but so does the price level.',
+            body: ['The new equilibrium E₂ sits higher up the SRAS curve.', 'Real output rises (Y₂ > Y₁) and the price level rises (P₂ > P₁).'],
+            analysis: 'With spare capacity, most of the AD increase becomes extra output and jobs with little inflation. Near full capacity (a steep SRAS), the same shift becomes mostly inflation — which is exactly why stating the output-gap context is the A* move.' }
+        ]
       },
-      diagramLabel: 'AD SHIFTS RIGHT',
-      diagramEmoji: '📊',
-      diagramCaption: 'Higher G or lower T moves AD outward; new equilibrium has higher output and a higher price level.',
 
       flowTitle: 'THE TRANSMISSION CHAIN',
       flowEmoji: '🔗',

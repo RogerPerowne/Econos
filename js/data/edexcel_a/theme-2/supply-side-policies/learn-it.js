@@ -276,19 +276,33 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'Some policies mainly shift <strong>SRAS</strong>, others mainly shift <strong>LRAS</strong> – and some can do both.' },
 
-      diagram: {
-        version: 1,
-        type: 'ad-as',
-        intent: 'sras-shift-right',
-        viewport: 'card',
-        mode: 'learn',
-        axes: { x: { label: 'Real GDP' }, y: { label: 'Price level' } },
-        teaching: { takeaway: 'Supply-side reforms shift SRAS right — output rises while the price level falls. The opposite of an AD-side stimulus.' },
-        alt: 'AD/AS diagram showing SRAS shifting right from SRAS₁ to SRAS₂ in response to supply-side reforms — raising real GDP and lowering the price level along a downward-sloping AD.'
+      // Stepped interactive diagram — supply-side reforms shift SRAS right
+      // along a fixed AD. No Classical/Keynesian toggle: both schools agree
+      // that a rightward SRAS shift lifts output and lowers the price level.
+      // The Classical addendum (LRAS shifts too over time) lives in the
+      // copy below, not as a separate perspective.
+      interactiveDiagram: {
+        svgKey: 'srasRightShiftInteractive',
+        label: 'SUPPLY-SIDE REFORM — SRAS SHIFTS RIGHT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
+        views: [
+          {
+            label: 'Starting point', show: [], tone: 'slate',
+            head: 'Economy at E₁ on SRAS₁ and AD.',
+            body: ['AD meets SRAS₁ at E₁, with real output Y₁ and price level P₁.', 'Lower unit costs would push SRAS rightward — a different mechanism from anything that shifts AD.'] },
+          {
+            label: 'Reforms cut unit costs', show: ['idl-1'], tone: 'amber',
+            head: 'Supply-side reforms shift SRAS right to SRAS₂.',
+            body: ['Lower business taxes, cheaper energy, better logistics or lighter regulation cut unit costs across the board.', 'The whole SRAS curve shifts rightward — at every price level firms now supply more output.'] },
+          {
+            label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'green',
+            head: 'Output up, prices DOWN (E₂).',
+            body: ['E₂ sits down and to the right: <strong>Y₂ &gt; Y₁ and P₂ &lt; P₁</strong> — the opposite of a demand-side stimulus.', 'Same AD curve, lower unit costs along it: more goods at lower prices.'],
+            analysis: 'The supply-side win: growth and lower inflation together. Demand-side stimulus trades off price-level rises against output gains; supply-side reform avoids the trade-off — that\'s why both classical and Keynesian economists treat productivity gains as the cleanest source of growth. Over the longer run, deeper reforms (skills, infrastructure, R&amp;D) also shift LRAS right, raising potential output Yf itself.' }
+        ]
       },
-      diagramLabel: 'SRAS SHIFTS RIGHT',
-      diagramEmoji: '📊',
-      diagramCaption: 'Lower unit costs (cheaper energy, lower taxes, less red tape) shift SRAS outward — output up, prices down.',
 
       pairLabel: 'SRAS VS LRAS',
       pairEmoji: '⚖️',

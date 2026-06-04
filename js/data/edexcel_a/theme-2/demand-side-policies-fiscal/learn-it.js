@@ -332,20 +332,56 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'Lower G or higher T shifts AD <strong>left</strong> and cools demand.' },
 
-      // EDL hero — second production card. ad-shift-left intent.
-      diagram: {
-        version: 1,
-        type: 'ad-as',
-        intent: 'ad-shift-left',
-        viewport: 'card',
-        mode: 'learn',
-        axes: { x: { label: 'Real GDP' }, y: { label: 'Price level' } },
-        teaching: { takeaway: 'Contractionary fiscal policy shifts AD left — price pressure eases, but output and jobs may also weaken.' },
-        alt: 'AD/AS diagram showing AD shifting left from AD₁ to AD₂, lowering both real GDP and the price level along an upward-sloping SRAS.'
+      // Standard stepped interactive diagram with Classical/Keynesian toggle —
+      // mirror of fiscal C2. The same AS frameworks; AD shifts LEFT this time,
+      // and the two schools disagree on whether output falls (Keynesian) or
+      // only the price level (Classical).
+      interactiveDiagram: {
+        svgKey: 'adShiftLeftClassicalKeynesian',
+        label: 'CONTRACTIONARY FISCAL POLICY — AD SHIFTS LEFT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+        views: [
+          {
+            label: 'Overheating', show: [],
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — near capacity at E₁.',
+              body: ['AD₁ meets AS on its <strong>steep range</strong>, just below Yf.', 'Output Y₁ is close to full capacity, so a further demand impulse mostly leaks into inflation.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at capacity at E₁.',
+              body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy returns to full capacity.', 'AD₁ meets LRAS at E₁ — output is fixed at Yf, the price level sits at P₁.'] }
+          },
+          {
+            label: 'Lower G / higher T', show: ['idl-1'],
+            keynesian: {
+              tone: 'amber',
+              head: 'Contractionary fiscal policy shifts AD left to AD₂.',
+              body: ['Lower government spending (G) or higher taxation (T) drag C, I and G downward.', 'The whole AD curve shifts leftward from AD₁ to AD₂ — identical in both views.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Contractionary fiscal policy shifts AD left to AD₂.',
+              body: ['Lower G or higher T drag C, I and G downward.', 'The whole AD curve shifts leftward from AD₁ to AD₂ — identical in both views.'] }
+          },
+          {
+            label: 'New equilibrium', show: ['idl-1', 'idl-2'],
+            keynesian: {
+              tone: 'blue',
+              head: 'Output AND prices fall (E₂).',
+              body: ['E₂ sits down and to the left: <strong>Y₂ &lt; Y₁ and P₂ &lt; P₁</strong>.', 'Cooling demand <em>works</em>, but near capacity AS is steep — so the early output loss is small and most of the adjustment is in prices.'],
+              analysis: 'Keynesian verdict: when the economy is at or near capacity, contractionary fiscal policy <strong>can cool inflation with limited output cost</strong>. Push the cooling too far — into the flatter range of AS — and the output cost rises while the price-level gain shrinks.' },
+            classical: {
+              tone: 'purple',
+              head: 'ONLY prices fall (E₂).',
+              body: ['E₂ sits directly below E₁: <strong>output stays at Yf, P₂ &lt; P₁</strong>.', 'Weaker demand against a fixed supply lowers the price level — no output cost in the long run.'],
+              analysis: 'Classical verdict: in the long run the economy is fixed at Yf, so contractionary policy is <strong>purely disinflationary</strong> — it lowers the price level without sacrificing real output. The cost of disinflation lives in the short-run adjustment, not in the long-run model.' }
+          }
+        ]
       },
-      diagramLabel: 'AD SHIFTS LEFT',
-      diagramEmoji: '📊',
-      diagramCaption: 'Lower G or higher T moves AD inward; new equilibrium has lower output and a lower price level.',
 
       flowTitle: 'THE COOL-DOWN CHAIN',
       flowEmoji: '❄️',

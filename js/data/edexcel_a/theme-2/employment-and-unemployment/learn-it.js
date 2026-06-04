@@ -317,7 +317,6 @@ window.ECONOS_TOPIC = {
     {
       id: 'cyclical',
       template: 'ad-interactive',
-      diagramKey: 'adAsRecession',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Cyclical unemployment & derived demand',
       lede: 'Labour is a derived demand – firms hire workers because they expect to sell output. When AD falls, firms need fewer workers.',
@@ -325,23 +324,57 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'When aggregate demand falls, firms need fewer workers.' },
 
-      steps: [
-        {
-          key: 'base',
-          label: 'Base equilibrium',
-          text: 'AD meets AS at full-employment output <strong>Y<sub>FE</sub></strong>. Labour markets clear – unemployment is at the natural rate (frictional + structural + seasonal only). Price level is P₁.'
-        },
-        {
-          key: 'extension',
-          label: 'AD shifts left',
-          text: 'AD shifts <strong>LEFT</strong> – fall in C, I, G or (X−M). Demand for goods falls, so demand for labour falls too: <em>labour is a derived demand</em>. Output drops to Y₁, below Y<sub>FE</sub>. The gap (Y<sub>FE</sub>−Y₁) is the cyclical unemployment.'
-        },
-        {
-          key: 'shift',
-          label: 'Labour demand falls',
-          text: '<strong>Wages are sticky downward</strong> (Keynes) – unions resist cuts, contracts are fixed, workers refuse pay reductions. So the labour market doesn\'t self-correct. Cyclical unemployment <em>persists</em> until AD recovers. Fiscal or monetary stimulus is needed.'
-        }
-      ],
+      // Stepped interactive diagram with Classical/Keynesian toggle. A
+      // recession-driven AD-left shift is exactly the textbook split:
+      // Classical says wages flex and the economy returns to Y_FE;
+      // Keynesian says wages are sticky downward and cyclical
+      // unemployment persists until policy restores AD.
+      interactiveDiagram: {
+        svgKey: 'adShiftLeftClassicalKeynesian',
+        label: 'A RECESSION — AD SHIFTS LEFT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+        views: [
+          {
+            label: 'Full employment', show: [],
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at full employment at E₁.',
+              body: ['AD₁ meets the vertical LRAS at Y<sub>FE</sub>, price level P₁.', 'Labour markets clear — unemployment is at the <strong>natural rate</strong> (frictional + structural only).'] },
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — at capacity at E₁.',
+              body: ['AD₁ meets the reverse-L AS on its steep range at Y<sub>FE</sub> — labour and goods markets clear.', 'Unemployment is at the natural rate.'] }
+          },
+          {
+            label: 'AD falls', show: ['idl-1'],
+            classical: {
+              tone: 'rose',
+              head: 'AD₁ → AD₂: confidence and spending collapse.',
+              body: ['A fall in C, I, G or (X − M) shifts AD left.', 'Demand for goods falls, so demand for labour falls — <em>labour is a derived demand</em>. Output starts to drop.'] },
+            keynesian: {
+              tone: 'rose',
+              head: 'AD₁ → AD₂: confidence and spending collapse.',
+              body: ['A fall in C, I, G or (X − M) shifts AD left.', 'Demand for goods falls, so demand for labour falls — <em>labour is a derived demand</em>.'] }
+          },
+          {
+            label: 'The verdict', show: ['idl-1', 'idl-2'],
+            classical: {
+              tone: 'purple',
+              head: 'Wages flex — output returns to Y<sub>FE</sub>.',
+              body: ['In the Classical view, <strong>wages adjust downward</strong>: lower labour costs let firms re-hire at the new lower price level.', 'Output returns to Y<sub>FE</sub>; cyclical unemployment is a <em>short-run</em> phenomenon.'],
+              analysis: 'Classical verdict: cyclical unemployment exists only while wages are still adjusting. In the long run the economy clears at Y<sub>FE</sub> at a <em>lower</em> price level P₂. Active demand stimulus is unnecessary — and risks just raising the eventual price level. The Classical critique of Keynesian fiscal stimulus rests entirely on this self-correction assumption.' },
+            keynesian: {
+              tone: 'rose',
+              head: 'Wages are sticky — cyclical unemployment persists.',
+              body: ['<strong>Wages are sticky downward</strong>: unions resist cuts, contracts are fixed, workers refuse pay reductions. The labour market doesn\'t self-correct.', 'Output stays at Y₂ &lt; Y<sub>FE</sub>; the gap (Y<sub>FE</sub> − Y₂) is the <strong>cyclical unemployment</strong>. It persists until AD recovers.'],
+              analysis: 'Keynesian verdict: cyclical unemployment is demand-deficient and persistent. The cure is to <strong>restore AD</strong> via fiscal or monetary stimulus — not to wait, and not to retrain workers (that\'s the wrong diagnosis). The 2008 crisis and the slow recovery that followed are the modern case study: wages didn\'t fall enough to clear the labour market, and unemployment stayed elevated for years.' }
+          }
+        ]
+      },
 
       flowTitle: 'THE EMPLOYMENT CHAIN',
       flowEmoji: '🔗',

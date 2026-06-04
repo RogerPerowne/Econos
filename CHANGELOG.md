@@ -6,6 +6,39 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.56.0 — 2026-06-04
+
+### Theme 2 AD/AS sweep — Batch 1: AD-shift reuses + new SRAS-shift-left toggle
+
+Rolled the Classical ↔ Keynesian toggle pattern out to six more Theme-2
+cards, and built a new spec to cover the cost-push family.
+
+**New spec:** `srasShiftLeftClassicalKeynesian` — same cost shock, two
+AS models. Classical: sloping SRAS shifts up-and-left (parallel shift),
+short-run stagflation with LR self-correction noted in V3 analysis copy.
+Keynesian: reverse-L's price *floor* rises (capacity unchanged), no
+self-correction — sticky-wage stagflation persists until policy acts.
+
+**Cards converted (6):**
+
+- *AD-right reuses (existing `adShiftClassicalKeynesian` spec):*
+  - National income & the multiplier C4 — multiplier amplifies an
+    injection into k×ΔJ AD shift; Classical (eaten by prices at Yf) vs
+    Keynesian (delivers real output with spare capacity).
+  - Net trade C7 — net-trade boost as AD-right shift; toggle directly
+    teaches the card's "outcome depends on spare capacity" point.
+- *AD-left reuse (existing `adShiftLeftClassicalKeynesian` spec):*
+  - Employment & unemployment C5 (cyclical) — Classical wage-flex
+    self-correction vs Keynesian sticky-wage persistent unemployment;
+    replaced the legacy `diagramKey: 'adAsRecession'` step block.
+- *SRAS-left (new spec):*
+  - Aggregate supply C4 (SRAS shifts) — replaces the EDL static SRAS
+    shift with the cost-shock toggle.
+  - Causes of inflation C3 (cost-push) — same spec, copy emphasises the
+    policy dilemma that Card 4 of the card flow then expands on.
+  - Trade-cycle shocks C3 (stagflation policy dilemma) — same spec as a
+    recap above the Fight-inflation vs Support-growth rows.
+
 ## 0.55.2 — 2026-06-04
 
 ### Supply-side C4 Classical V2 — SRAS arrow into the open strip

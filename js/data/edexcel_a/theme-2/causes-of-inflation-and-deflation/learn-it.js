@@ -228,31 +228,55 @@ window.ECONOS_TOPIC = {
         text: '<strong>Rising prices with falling output = stagflation risk.</strong>'
       },
 
+      // Stepped interactive diagram with Classical/Keynesian toggle. The
+      // cost shock is the lesson; the two schools differ on what happens
+      // NEXT — Classical sees self-correction over time, Keynesian sees
+      // persistent stagflation requiring a painful policy choice.
       interactiveDiagram: {
-        svgKey: 'adCostPushInteractive',
-        label: 'The AD/AS diagram',
+        svgKey: 'srasShiftLeftClassicalKeynesian',
+        label: 'COST-PUSH INFLATION — SRAS SHIFTS LEFT',
         emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
+        layers: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
+        inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
         views: [
           {
-            label: 'Base equilibrium',
-            tone: 'blue',
-            head: 'Starting point: P₁ and Y₁',
-            body: 'The economy is at E₁ where AD meets SRAS₁. The price level is P₁ and real output is Y₁. AD remains unchanged throughout this sequence.'
+            label: 'Starting point', show: [],
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at potential at E₁.',
+              body: ['AD meets SRAS₁ on the <strong>vertical LRAS</strong> at E₁ — output at potential Yf, price level P₁. AD will stay put across this sequence.', 'The pressure that follows comes from the <em>supply</em> side, not from spending.'] },
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — near capacity at E₁.',
+              body: ['AD meets the reverse-L AS₁ on its <strong>steep range</strong> at E₁, with price level P₁ and output near capacity Yf.', 'AD will stay put; the shock will lift the price floor.'] }
           },
           {
-            label: 'SRAS shifts left',
-            tone: 'amber',
-            head: 'Supply shock – SRAS₁ → SRAS₂',
-            body: 'Higher input costs (energy, wages, import prices) mean it now costs more to produce at every output level. SRAS shifts left to SRAS₂.',
-            analysis: 'The leftward SRAS shift is the signature of cost-push. AD is unchanged – the pressure comes from the supply side alone.'
+            label: 'Supply shock',
+            show: ['c-sras1-dash', 'c-sras2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-cost-arrow'],
+            classical: {
+              tone: 'rose',
+              head: 'SRAS shifts left to SRAS₂.',
+              body: ['Higher energy prices, wage costs, import prices or indirect taxes raise unit costs at every output level.', 'SRAS slides <strong>up-and-left</strong> in a parallel shift — the same output now needs a higher price.'] },
+            keynesian: {
+              tone: 'rose',
+              head: 'The price floor rises (AS₁ → AS₂).',
+              body: ['The reverse-L\'s <strong>price floor</strong> moves up — costs at every output level have gone up.', 'Capacity Yf is unchanged: the vertical wall stays put, but the floor lifts.'] }
           },
           {
-            label: 'Stagflation result',
-            tone: 'amber',
-            head: 'Result: P ↑ and Y ↓',
-            body: 'The new equilibrium E₂ has higher price level P₂ but lower output Y₂. Inflation and falling output occur simultaneously – stagflation.',
-            analysis: 'Both outcomes worsen at once. Raising rates fights inflation but deepens the output fall. Loosening policy helps output but risks embedding inflation.'
+            label: 'Stagflation',
+            show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
+            classical: {
+              tone: 'rose',
+              head: 'P ↑ and Y ↓ at E₂.',
+              body: ['E₂: <strong>P₂ &gt; P₁ AND Y₂ &lt; Yf</strong> — the textbook cost-push outcome with output below potential.', 'Inflation and falling output occur simultaneously.'],
+              analysis: 'Classical verdict: the stagflation is <em>short-run</em>. With Y₂ below Yf, unemployment rises and wage pressure eases — SRAS gradually slides back toward SRAS₁ and the economy returns to Yf at the original P₁. The case against active demand management here is strong: tightening AD speeds the disinflation, loosening AD embeds the higher price level — but the economy gets there either way.' },
+            keynesian: {
+              tone: 'rose',
+              head: 'P ↑ and Y ↓ at E₂.',
+              body: ['E₂ sits up-and-left of E₁: <strong>P₂ &gt; P₁, Y₂ &lt; Y₁</strong> — inflation and a real recession at the same time.', 'There is no smooth self-correction route home.'],
+              analysis: 'Keynesian verdict: with sticky wages and prices, the higher cost floor is <strong>persistent</strong>. This is the cost-push <em>policy dilemma</em>: tighten policy and inflation falls but the output loss deepens (and unemployment rises); loosen policy and output holds up but inflation embeds itself in expectations. Neither lever fixes both. The judgement call usually turns on credibility — letting expectations un-anchor is the costlier mistake.' }
           }
         ]
       },

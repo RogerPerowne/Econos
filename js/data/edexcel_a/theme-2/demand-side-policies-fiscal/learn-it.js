@@ -125,8 +125,8 @@ window.ECONOS_TOPIC = {
         label: 'EXPANSIONARY FISCAL POLICY — AD SHIFTS RIGHT',
         emoji: '📊',
         layers: ['idl-1', 'idl-2'],
-        perspectives: ['keynesian', 'classical'],
-        perspectiveLabels: { keynesian: 'Keynesian view', classical: 'Classical view' },
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
         views: [
           {
             label: 'Weak economy', show: [],

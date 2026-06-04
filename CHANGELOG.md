@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.52.1 — 2026-06-04
+
+### Fiscal Card 2 toggle — polish to 10/10
+
+Four small refinements to the Classical ↔ Keynesian AD/AS chart:
+
+- **Classical first, and default.** The perspective pills now lead with
+  Classical (left, selected on load); Keynesian sits to its right — both in
+  the spec and the card's `perspectives` / `perspectiveLabels` order.
+- **Line titles default above.** Confirmed every curve label (AS, LRAS,
+  AD₁, AD₂) sits in the *above* position.
+- **Equilibrium labels default right.** Flipped the Keynesian E₁ label from
+  left to the right of its dot, matching the standing rule that AS/AD
+  equilibrium labels default right unless they clash.
+- **Original line dashes on shift.** Confirmed AD₁ redraws dashed once the
+  shift view activates (via `inverseLayers`).
+
 ## 0.52.0 — 2026-06-04
 
 ### Fiscal Card 2 — Classical ↔ Keynesian toggle on an elegant Keynesian AS

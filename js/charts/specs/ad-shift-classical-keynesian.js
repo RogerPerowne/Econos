@@ -42,7 +42,7 @@
     className: 'ad-shift-ck-svg',
     layers: ['idl-1', 'idl-2'],
     inverseLayers: ['idl-old-solid'],
-    perspectives: ['keynesian', 'classical'],
+    perspectives: ['classical', 'keynesian'],
     defs:
       '<marker id="adck-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/></marker>',
     axes: {
@@ -93,7 +93,7 @@
       { intersection: { curves: ['AD1', 'keynAS'], near: [0.55, 0.32] },
         tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
-        label: 'E₁', labelDx: -10, labelDy: -4, anchor: 'end',
+        label: 'E₁', labelDx: 10, labelDy: -4, anchor: 'start',
         perspective: 'keynesian' },
       /* ── Keynesian E₂ — output AND prices rise (idl-2) ── */
       { intersection: { curves: ['AD2', 'keynAS'], near: [0.62, 0.47] },

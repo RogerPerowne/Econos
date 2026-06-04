@@ -221,9 +221,59 @@ window.ECONOS_TOPIC = {
       ledeStyle: 'plain',
       tip: { icon: '✓', tone: 'green', text: 'ΔAD = k × ΔJ. The headline injection is just the first step; the multiplier is what the economy actually feels.' },
 
-      visualKey: 'multiplierAdAs',
-      visualLabel: 'A £10bn injection becomes a £k × 10bn AD shift',
-      visualEmoji: '\u{1F4C8}',
+      // Stepped interactive diagram with Classical/Keynesian toggle. The
+      // multiplier amplifies an injection into a k × ΔJ AD shift; the two
+      // schools disagree on whether that AD shift delivers real output
+      // (Keynesian: yes, with spare capacity) or just inflation (Classical:
+      // at Yf the multiplier is eaten by prices). The same mechanism, two
+      // verdicts — exactly what the card's "supply-side limits" caveat
+      // already gestures at.
+      interactiveDiagram: {
+        svgKey: 'adShiftClassicalKeynesian',
+        label: 'THE MULTIPLIER — k × ΔJ AS AN AD SHIFT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+        views: [
+          {
+            label: 'Before the injection', show: [],
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — spare capacity at E₁.',
+              body: ['AD₁ meets the reverse-L AS on its <strong>rising range</strong> below capacity Yf — there are idle resources the multiplier can put to work.', 'This is the setting where the multiplier delivers <em>real</em> output, not just prices.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at potential at E₁.',
+              body: ['AD₁ meets the vertical LRAS at Yf, with price level P₁.', 'The economy is already at full capacity in the long run.'] }
+          },
+          {
+            label: 'k × ΔJ shifts AD right', show: ['idl-1'],
+            keynesian: {
+              tone: 'amber',
+              head: 'AD₁ → AD₂ by k × ΔJ.',
+              body: ['A £10bn injection sets off the spending chain: round 1 spending becomes round 2 income, which becomes round 3 spending… AD shifts right by <strong>k × £10bn</strong>, not £10bn.', 'Identical AD shift in both views.'] },
+            classical: {
+              tone: 'purple',
+              head: 'AD₁ → AD₂ by k × ΔJ.',
+              body: ['The injection raises C, I or G; the multiplier amplifies the AD shift to k × ΔJ.', 'Identical AD shift in both views.'] }
+          },
+          {
+            label: 'The verdict', show: ['idl-1', 'idl-2'],
+            keynesian: {
+              tone: 'green',
+              head: 'Output AND prices rise.',
+              body: ['E₂ sits up-and-right of E₁: <strong>real GDP rises and the price level rises</strong>.', 'Closer to Yf, AS steepens — more of the shift leaks into prices and the marginal multiplier falls.'],
+              analysis: 'Keynesian verdict: with spare capacity the multiplier delivers <strong>real output and jobs</strong>. This is the case for fiscal stimulus and why headline shock effects feel bigger than their headline cost. Realistic UK k ≈ 1.5 (high MPM leaks abroad), not the textbook 5 — but still meaningfully larger than 1.' },
+            classical: {
+              tone: 'purple',
+              head: 'ONLY prices rise.',
+              body: ['E₂ sits <em>directly above</em> E₁: <strong>output stays at Yf, P₂ ≫ P₁</strong>.', 'The multiplier exists, but the AD shift it generates is absorbed by inflation, not output.'],
+              analysis: 'Classical verdict: at full capacity, the multiplier is <strong>eaten by prices</strong>. This is the heart of the monetarist case against active demand management: short-run output gains are illusory; the lasting effect is inflation. To raise real output sustainably you need supply-side policy that shifts LRAS — the multiplier on its own cannot.' }
+          }
+        ]
+      },
 
       pairFirst: true,
       pairLabel: 'Both directions matter',

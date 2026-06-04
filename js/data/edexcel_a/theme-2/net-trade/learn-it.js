@@ -424,11 +424,56 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'Stronger net trade (higher X − M) shifts AD to the right, but the outcome depends on spare capacity.' },
 
-      flowChart: {
-        svgKey: 'adAsTwoOutcomes',
-        label: 'TWO POSSIBLE OUTCOMES',
-        emoji: '⚖️',
-        caption: 'The same AD shift produces a different mix of output and prices depending on where the economy sits on the SRAS curve.'
+      // Stepped interactive diagram with Classical/Keynesian toggle. The
+      // SAME net-trade AD shift produces opposite verdicts: Classical says
+      // at potential, only prices rise; Keynesian says with spare capacity,
+      // real output and jobs rise. The card's lesson — "the outcome depends
+      // on spare capacity / position on SRAS" — IS the toggle.
+      interactiveDiagram: {
+        svgKey: 'adShiftClassicalKeynesian',
+        label: 'A NET-TRADE BOOST — AD SHIFTS RIGHT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+        views: [
+          {
+            label: 'Starting position', show: [],
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — spare capacity at E₁.',
+              body: ['AD₁ meets the reverse-L AS on its <strong>rising range</strong>, below capacity Yf — there are idle resources extra demand can put to work.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at potential at E₁.',
+              body: ['AD₁ meets the vertical LRAS at Yf, with price level P₁ — output is already at full capacity in the long run.'] }
+          },
+          {
+            label: 'Higher X − M', show: ['idl-1'],
+            keynesian: {
+              tone: 'amber',
+              head: 'Net-trade boost shifts AD right.',
+              body: ['Stronger net exports (higher X − M) lift aggregate demand: AD₁ → AD₂.', 'Identical AD shift in both views — same demand impulse, different supply side.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Net-trade boost shifts AD right.',
+              body: ['Stronger net exports (higher X − M) lift aggregate demand: AD₁ → AD₂.', 'Identical AD shift in both views — same demand impulse, different supply side.'] }
+          },
+          {
+            label: 'New equilibrium', show: ['idl-1', 'idl-2'],
+            keynesian: {
+              tone: 'green',
+              head: 'Output AND prices rise.',
+              body: ['E₂ sits up-and-right: <strong>Y₂ &gt; Y₁ and P₂ &gt; P₁</strong>.', 'Closer to Yf, AS steepens — more of the shift leaks into prices.'],
+              analysis: 'Keynesian verdict: a net-trade boost into a slack economy is the cleanest win — real output and employment rise with only modest inflation pressure. This is why an export-led recovery is the textbook example of a soft-landing demand boost.' },
+            classical: {
+              tone: 'purple',
+              head: 'ONLY prices rise.',
+              body: ['E₂ sits <em>directly above</em> E₁: <strong>output stays at Yf, P₂ &gt; P₁</strong>.', 'Extra demand against a fixed long-run supply just bids up the price level.'],
+              analysis: 'Classical verdict: in the long run, output is anchored at Yf, so a net-trade boost is <strong>purely inflationary</strong>. The real exchange rate then adjusts (currency strengthens) and net trade reverses — a sustainable improvement needs supply-side competitiveness, not a demand boost.' }
+          }
+        ]
       },
 
       flowTitle: 'THE CHAIN',

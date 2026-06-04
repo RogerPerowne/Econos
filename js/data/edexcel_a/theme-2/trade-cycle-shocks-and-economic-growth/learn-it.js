@@ -173,9 +173,37 @@ window.ECONOS_TOPIC = {
       ledeStyle: 'plain',
       tip: { icon: '\u{26A0}\u{FE0F}', tone: 'amber', text: 'A stagflation forces a choice between fighting inflation and supporting growth — no policy fixes both.' },
 
-      visualKey: 'supplyShocksTwin',
-      visualLabel: 'The supply-shock framing (a recap)',
-      visualEmoji: '\u{3030}\u{FE0F}',
+      // Stepped interactive diagram with Classical/Keynesian toggle — the
+      // same supply-shock framing as Card 3 of "Causes of inflation",
+      // shown here as a recap before the policy-stance trade-off rows.
+      interactiveDiagram: {
+        svgKey: 'srasShiftLeftClassicalKeynesian',
+        label: 'A SUPPLY SHOCK — THE RECAP',
+        emoji: '📊',
+        layers: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
+        inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+        views: [
+          {
+            label: 'Before the shock', show: [],
+            classical: { tone: 'purple', head: 'Classical view — at potential.', body: ['Output at Yf, price level P₁ on the long-run equilibrium.'] },
+            keynesian: { tone: 'amber', head: 'Keynesian view — near capacity.', body: ['Output near Yf on the steep range of the reverse-L AS.'] }
+          },
+          {
+            label: 'Cost shock',
+            show: ['c-sras1-dash', 'c-sras2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-cost-arrow'],
+            classical: { tone: 'rose', head: 'SRAS shifts left.', body: ['Higher unit costs push SRAS up-and-left in a parallel shift.'] },
+            keynesian: { tone: 'rose', head: 'Price floor rises.', body: ['Higher unit costs lift the price floor; capacity unchanged.'] }
+          },
+          {
+            label: 'Stagflation',
+            show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
+            classical: { tone: 'rose', head: 'P up, Y down.', body: ['E₂: higher P, lower Y. <strong>This is the curve that creates the policy dilemma below.</strong>'], analysis: 'Classical reading: the stagflation self-corrects in the long run as wages adjust. The policy choice is really about how to manage the <em>short-run</em> path.' },
+            keynesian: { tone: 'rose', head: 'P up, Y down.', body: ['E₂: higher P, lower Y. <strong>This is the curve that creates the policy dilemma below.</strong>'], analysis: 'Keynesian reading: sticky wages mean the stagflation persists. Every policy choice below trades higher inflation against lower output — there is no painless option.' }
+          }
+        ]
+      },
 
       versusRows: {
         title: 'Fight inflation vs Support growth',

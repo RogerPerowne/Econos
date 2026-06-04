@@ -482,17 +482,13 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '⚖️', title: 'Both affect the budget balance over the cycle', sub: 'They influence deficits and surpluses in different ways.' }
       ],
 
-      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'A <strong>budget deficit may rise in a recession automatically</strong> even if no new discretionary policy is announced – the stabilisers are doing the work.' },
+      bottomTip: [
+        { icon: 'ℹ️', tone: 'blue', text: 'A <strong>budget deficit may rise in a recession automatically</strong> even if no new discretionary policy is announced – the stabilisers are doing the work.' },
+        { icon: '📜', tone: 'amber', text: '<strong>Friedman\'s rules-vs-discretion critique.</strong> Friedman argued in <em>Capitalism and Freedom</em> (1962) that the Great Depression was worsened by government discretion. Auto-stabilisers fit his case for rules over judgement — they work without anyone deciding to act.' }
+      ],
 
       conclusion: { title: 'Big idea', text: 'Fiscal policy is both a <strong>built-in stabiliser</strong> and a <strong>deliberate policy choice</strong>.' },
-      examEdge: 'Always distinguish <strong>automatic stabilisers</strong> from <strong>discretionary fiscal policy</strong>. In data-response questions, look for whether a change in the deficit reflects the cycle (auto) or a Budget announcement (discretionary).',
-      economistQuote: {
-        portraitKey: 'economistFriedman',
-        tone: 'amber',
-        label: 'Economist insight: Friedman on rules vs discretion',
-        quote: 'The Great Depression, like most other periods of severe unemployment, was produced by government mismanagement rather than by any inherent instability of the private economy.',
-        attribution: 'Milton Friedman, <em>Capitalism and Freedom</em> (1962)'
-      }
+      examEdge: 'Always distinguish <strong>automatic stabilisers</strong> from <strong>discretionary fiscal policy</strong>. In data-response questions, look for whether a change in the deficit reflects the cycle (auto) or a Budget announcement (discretionary).'
     },
 
     /* ====================================================================

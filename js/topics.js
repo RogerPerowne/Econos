@@ -651,24 +651,25 @@ window.ECONOS_TOPICS = [
     }
   },
 
-  /* ---- Parked — to be assigned to later themes ---- */
+  /* ---- Parked under Theme 4 (development & wellbeing) — content TBD ---- */
   {
     id: 'standard-of-living-and-wellbeing',
     name: 'Standard of Living & Wellbeing',
     sub: 'HDI, wellbeing, and beyond GDP',
     color: '#8b5cf6',
     available: { learn: true, link: false, land: false },
-    // Parked: this topic is a placeholder stub. Its intended material
-    // (HDI, six GDP blind spots, wellbeing alternatives) is already on
-    // `measures-of-economic-performance` Card 7. Hidden from every
-    // board's home grid until either repurposed (Easterlin paradox,
-    // ONS wellbeing dashboard, Kahneman experienced wellbeing) or
-    // retired entirely. See docs/THEME_2_REVIEW.md §2.
+    // Parked under Theme 4 (Edexcel A 4.3.1 — measures of development):
+    // moved out of Theme 2 because its core "beyond GDP" material is
+    // already covered by `measures-of-economic-performance` Card 7.
+    // Theme 4 is the natural home for HDI / Easterlin paradox /
+    // ONS wellbeing dashboard / Kahneman experienced wellbeing —
+    // those land alongside development indicators rather than
+    // alongside GDP definitions.
     boards: {
-      edexcel_a: { spec: '2.1.1', included: false },
+      edexcel_a: { spec: '4.3.1', included: false },
       edexcel_b: { spec: null, included: false },
-      aqa:       { spec: '3.2.1.2', included: false },
-      ocr:       { spec: '2.2', included: false }
+      aqa:       { spec: '4.1.2.7', included: false },
+      ocr:       { spec: '4.1', included: false }
     }
   },
 

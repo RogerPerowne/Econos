@@ -97,6 +97,19 @@ window.ECONOS_TOPIC = {
         ]
       },
 
+      comparisonTable: {
+        title: 'PHASE SIGNATURES — A QUICK-REFERENCE RECAP',
+        emoji: '\u{1F4CB}',
+        columns: ['Boom', 'Slowdown', 'Recession', 'Recovery'],
+        columnTones: ['green', 'amber', 'rose', 'blue'],
+        rows: [
+          { label: 'Output (Y)',     values: ['Above trend, rising',         'Above trend, growth slowing',   'Below trend, falling',         'Below trend, rising'] },
+          { label: 'Unemployment',   values: ['At/below NAIRU',              'Stops falling, ticks up',       'Rising sharply',               'Falling slowly'] },
+          { label: 'Inflation',      values: ['Demand-pull pressure',        'Easing but still elevated',     'Falling; deflation risk',      'Below target, picking up'] },
+          { label: 'Leading signal', values: ['Capacity utilisation, wages', 'Hiring slowdown, PMI dipping',  'Business confidence collapse', 'Job vacancies, retail sales'] }
+        ]
+      },
+
       conclusionPosition: 'end',
       conclusion: {
         title: 'Big idea',
@@ -118,6 +131,10 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 5',
       title: 'Diagnose the shock',
       lede: 'Five real-world shocks. For each, ask yourself: <strong>did P and Y move together (demand shock) or in opposite directions (supply shock)?</strong> Then click <em>Make your call</em> to check.',
+      summaryRow: [
+        { tone: 'rose',  icon: '\u{1F4C8}\u{1F4C9}', title: 'P and Y move TOGETHER', text: '→ <strong>DEMAND shock</strong> (AD shifted). Both up = positive; both down = negative.' },
+        { tone: 'amber', icon: '\u{2194}\u{FE0F}',    title: 'P and Y move OPPOSITE', text: '→ <strong>SUPPLY shock</strong> (SRAS shifted). P up Y down = negative; P down Y up = positive.' }
+      ],
       diagramKey: 'demandShocksTwin',
       diagramCaption: 'The diagnostic rule: P and Y together → AD shifted; P and Y opposite → SRAS shifted. Direction tells you positive vs negative.',
       scenarios: {
@@ -295,6 +312,19 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+
+      causesLabel: 'THE SIX DRIVERS OF POTENTIAL GROWTH',
+      causesEmoji: '\u{1F680}',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'green',  icon: '\u{1F465}', head: 'Labour force',          body: 'More working-age adults, higher participation, net inward migration of working-age workers.' },
+        { tone: 'blue',   icon: '\u{1F3ED}', head: 'Capital stock',         body: 'More machinery, infrastructure and digital capital per worker — capital deepening.' },
+        { tone: 'amber',  icon: '\u{1F4C8}', head: 'Productivity',          body: 'Output per worker rises. The UK productivity puzzle (flat since 2008) is the textbook bottleneck.' },
+        { tone: 'purple', icon: '\u{1F393}', head: 'Skills and education',  body: 'Higher human capital — better schools, vocational training, lifelong learning, R&amp;D talent.' },
+        { tone: 'blue',   icon: '\u{1F4A1}', head: 'Technology &amp; infrastructure', body: 'Faster diffusion of new tech; better transport, energy and digital networks.' },
+        { tone: 'green',  icon: '\u{1F30D}', head: 'Trade &amp; export markets', body: 'Access to global demand — export-led growth (S. Korea, Germany, China) scales faster than the domestic market alone allows.' }
+      ],
 
       conclusionPosition: 'end',
       conclusion: {

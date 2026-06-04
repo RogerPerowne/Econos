@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.52.3 — 2026-06-04
+
+### Fiscal Card 2 toggle — all equilibrium labels cleanly right
+
+Every E label (Classical E₁/E₂, Keynesian E₁/E₂) now sits with a clear
+gap to the right of its dot (`labelDx: 14, labelDy: -2`). Previously
+`labelDx: 10` with `labelDy: -4` placed the label hard against the dot
+and slightly above it — reading more as "above-right" than "right".
+Classical E₁ in particular was still below its dot (`labelDy: 12`) after
+v0.52.1; that's now consistent with every other E label.
+
 ## 0.52.2 — 2026-06-04
 
 ### Fiscal Card 2 toggle — fix dashed-on-shift + AD label placement

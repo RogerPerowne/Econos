@@ -6,6 +6,37 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.50.0 — 2026-06-04
+
+### Theme 2.6 — Economist Companion + Misconception Museum
+
+Implements the directly-applicable platform ideas from the morning's
+"how to elevate" review across the three new Section 2.6 topics.
+Wider platform features (Live Wire, AI Examiner, Decision Theatre,
+Worked-Essay Gallery) deferred per Roger's steer.
+
+**Six new economist insight blocks** — showing legitimate disagreement
+and complement across the macro-policy debate. Each uses the existing
+`economistQuote` pattern with full portrait, italic quote and tone-
+coloured attribution.
+
+| Topic | Card | Economist | Quote | Source |
+|---|---|---|---|---|
+| Fiscal | C5 (Auto stabilisers) | **Friedman** | "The Great Depression… was produced by government mismanagement rather than by any inherent instability of the private economy." | Capitalism and Freedom (1962) |
+| Fiscal | C6 (Judging) | **Mazzucato** | "The state has not just fixed market failures — it has actively created and shaped markets…" | Mission Economy (2021) |
+| Monetary | C2 (Expansionary) | **Keynes** | "If, however, we are tempted to assert that money is the drink which stimulates the system to activity, we must remind ourselves that there may be several slips between the cup and the lip." | The General Theory (1936) |
+| Monetary | C6 (Judging) | **Friedman** | "Inflation is the one form of taxation that can be imposed without legislation." | Money Mischief (1992) |
+| Supply-side | C2 (Market-based) | **Hayek** | "The curious task of economics is to demonstrate to men how little they really know about what they imagine they can design." | The Fatal Conceit (1988) |
+| Supply-side | C3 (Interventionist) | **Mazzucato** | "Far from being the inert, lumbering bureaucracy of caricature, the state has often been the lead risk-taker…" | The Entrepreneurial State (2013) |
+
+**Three named misconception traps** ("Misconception Museum" idea) —
+common A-level errors made famous and visible via `tipLate` rose-tone
+callouts.
+
+- **Fiscal C3** — *"k = 1/(1−MPC) gives the actual UK multiplier."* No: ignores three real-world leakages. UK estimates land at k ≈ 1.2–1.7, not 5.
+- **Monetary C1** — *"Bank Rate is what banks charge their customers."* No: Bank Rate is the policy rate; commercial rates include a spread.
+- **Supply-side C1** — *"Supply-side = right-wing politics."* No: market-based AND interventionist; the debate is about mechanism, not whether supply-side matters.
+
 ## 0.49.0 — 2026-06-04
 
 ### Supply-side — UK productivity puzzle DEEPEN card

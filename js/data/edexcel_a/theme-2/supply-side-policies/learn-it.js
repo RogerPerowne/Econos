@@ -92,7 +92,12 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: '<strong>Supply-side policy targets capacity</strong> – not just spending. It works on what the economy <em>can</em> produce, not what it currently demands.' },
 
       conclusion: { title: 'Big idea', text: 'The goal is <strong>non-inflationary growth</strong> – more output because the economy can produce more efficiently.' },
-      examEdge: 'Name the channel – <strong>incentives, skills, competition, infrastructure or flexibility</strong> – before explaining the effect. A* answers also state whether the policy mainly shifts SRAS or LRAS.'
+      examEdge: 'Name the channel – <strong>incentives, skills, competition, infrastructure or flexibility</strong> – before explaining the effect. A* answers also state whether the policy mainly shifts SRAS or LRAS.',
+      tipLate: {
+        icon: '⚠️',
+        tone: 'rose',
+        text: '<strong>Common trap — "Supply-side = right-wing politics."</strong> No. Supply-side has <strong>two families</strong>. <em>Market-based</em> reforms (tax cuts, deregulation, privatisation) lean centre-right. <em>Interventionist</em> reforms (apprenticeship levy, HS2, R&amp;D funding, childcare) lean centre-left. <strong>Both raise productive capacity</strong>; the disagreement is about <em>which mechanism</em> works, not whether supply-side matters. Treating supply-side as a political slogan loses marks – treat it as a toolkit.'
+      }
     },
 
     /* ====================================================================
@@ -171,7 +176,14 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: '<strong>Do not just list a reform</strong> – explain how it changes incentives or competition.' },
 
       conclusion: { title: 'Big idea', text: 'Market-based supply-side policy tries to let <strong>prices, profits and competition</strong> do more of the work.' },
-      examEdge: 'For evaluation, ask whether the market was <em>actually distorted</em> and whether the reform <em>creates better incentives in reality</em>. Cutting corporation tax matters little if firms were already cash-rich – the binding constraint matters.'
+      examEdge: 'For evaluation, ask whether the market was <em>actually distorted</em> and whether the reform <em>creates better incentives in reality</em>. Cutting corporation tax matters little if firms were already cash-rich – the binding constraint matters.',
+      economistQuote: {
+        portraitKey: 'economistHayek',
+        tone: 'amber',
+        label: 'Economist insight: Hayek on the limits of central design',
+        quote: 'The curious task of economics is to demonstrate to men how little they really know about what they imagine they can design.',
+        attribution: 'Friedrich Hayek, <em>The Fatal Conceit</em> (1988)'
+      }
     },
 
     /* ====================================================================
@@ -238,7 +250,14 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'A training scheme is <strong>not valuable just because it is expensive</strong> – the key question is whether productivity rises.' },
 
       conclusion: { title: 'Big idea', text: 'Interventionist policy tries to build the <strong>economy\'s productive foundations</strong> – especially where market incentives alone are too weak.' },
-      examEdge: 'Separate the <strong>spending itself</strong> from the <strong>long-run capacity effect</strong> – explain how the policy raises human capital, mobility or innovation. Naming the externality (e.g. social returns to R&D ≈ 20–30%, private returns ~7–14%) lifts B-band answers to A*.'
+      examEdge: 'Separate the <strong>spending itself</strong> from the <strong>long-run capacity effect</strong> – explain how the policy raises human capital, mobility or innovation. Naming the externality (e.g. social returns to R&D ≈ 20–30%, private returns ~7–14%) lifts B-band answers to A*.',
+      economistQuote: {
+        portraitKey: 'economistMazzucato',
+        tone: 'amber',
+        label: 'Economist insight: Mazzucato on the entrepreneurial state',
+        quote: 'Far from being the inert, lumbering bureaucracy of caricature, the state has often been the lead risk-taker — funding the kind of long-shot innovation that markets, focused on short-run returns, would never bankroll alone.',
+        attribution: 'Mariana Mazzucato, <em>The Entrepreneurial State</em> (2013)'
+      }
     },
 
     /* ====================================================================

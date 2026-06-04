@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.62.0 — 2026-06-04
+
+### Design language: document the token system + first consistency sweep
+
+Pivot to the visual design language (typography / colour / spacing / formatting).
+The token set already exists and is good — the work is **consistent application**.
+
+- **`docs/DESIGN_LANGUAGE.md`** — canonical reference for the existing tokens
+  (colour `--econ-*`, type `--fs-`/`--fw-`/`--lh-`, spacing `--sp-`, radii `--r-`,
+  shadows, layout) plus the "use a token, never a literal" policy and the roadmap.
+- **`npm run lint:tokens`** (`scripts/lint-tokens.mjs`) — a drift reporter:
+  counts raw hex literals that exactly duplicate a defined colour token, per file,
+  so the sweep has a number to drive to zero. `--list` for the per-hex breakdown.
+- **`styles.css` swept** — 77 duplicated hex literals replaced with their tokens
+  (e.g. `#0B1426` → `var(--econ-ink)`). Value-preserving (the `:root` definitions
+  are untouched, so rendering is pixel-identical — verified) and now **0 drift**
+  in the stylesheet. Remaining drift (`js/app.js` ~522, `js/icons.js` ~3013 SVG
+  chart fills) is the next, screenshot-verified, sweep.
+
 ## 0.61.0 — 2026-06-04
 
 ### Removed the semantic diagram engine (EDL / `ECONOS_DIAGRAMS`)

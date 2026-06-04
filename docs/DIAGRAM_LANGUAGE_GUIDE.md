@@ -245,7 +245,7 @@ during migration. **`js/charts/ppf.js` is never modified or deleted.** See
 - **Use `show` tokens**, not bespoke flags.
 - **Use chevron arrows.** `triangle` heads are legacy-only and must be explicit.
 - **No `labelDx`/`labelDy`** in semantic specs unless `allowManualLayout: true`.
-- **Run the gates:** `node scripts/lint-diagrams.mjs` + `npx vitest run tests/unit/diagrams.test.js`, and eyeball `dev/diagram-gallery.html`.
+- **Run the gates:** `node scripts/lint-diagrams.mjs` (now **blocking** — see §16) + `npx vitest run tests/unit/diagrams.test.js`, and eyeball `dev/diagram-gallery.html`.
 - **Add a gallery example** when you add a template or intent.
 
 ---
@@ -382,3 +382,39 @@ An anchor that cannot be solved (unknown derived point, non-crossing curves)
 emits a warning and the annotation is skipped — it never invents a position.
 This is why the hatch can be "draw anything" without surrendering "100%
 accurate": the freeform parts still ride the engine's solved geometry.
+
+---
+
+## 16. The accuracy gate (`scripts/lint-diagrams.mjs` is blocking)
+
+`lint-diagrams.mjs` runs inside `npm run lint`, so CI fails the build on a
+violation. It is the enforcement half of the ~100%-accuracy goal — the engine
+*can* draw correctly; the gate guarantees a *shipped* spec actually did.
+
+Two passes:
+
+1. **Self-corpus.** Every family × intent the language advertises (read from
+   `grammar()`) is rendered at the roomiest viewport. If any one produces a
+   render error, an unresolved anchor, or a **dropped label**, the build goes
+   red. This makes the gate live with zero authored specs on disk and is the
+   regression net: the day a future change starts silently hiding a label or
+   leaving an anchor unsolved for a shipped intent, CI catches it.
+2. **Authored specs** (`*.edl.json` or `window.ECONOS_EDL*`) get the static
+   checks (raw-SVG smell, unknown family/intent/token, duplicate ids, typed
+   equilibrium coordinates, `labelDx/Dy` without `allowManualLayout`) **plus**
+   the same render gate.
+
+These warning classes are **promoted to build-failing errors** (only
+auto-generated alt text and legacy delegation are allowed through):
+
+| failure | meaning |
+| --- | --- |
+| render error | the spec did not compile to SVG |
+| unresolved anchor | `{ point / intersection / onCurve }` did not solve — a guessed position |
+| dropped label | a label could not fit even at `article` — the diagram is silently lossy |
+| raw SVG / marker smell | a `<path>`/`<svg>` leaked into a spec |
+| unknown show token / tone / family / intent | vocabulary the language does not define |
+
+The principle: **a diagram is not "rendered", it is "rendered clean".** Treat a
+yellow warning in dev mode as a red build — that is the difference between
+"usually right" and "can't ship wrong".

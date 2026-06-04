@@ -46,9 +46,19 @@ release — that "migrate" step is deliberately out of scope).
   normalised alternatives kept reachable). The Postgres target shape is left
   open by design.
 
+**Blocking accuracy gate.**
+- `scripts/lint-diagrams.mjs` is now a real CI gate (runs inside `npm run
+  lint`). It renders every advertised family × intent (a live self-corpus, so
+  it bites with zero authored specs on disk) and **fails the build** on a
+  render error, an unresolved annotation anchor, or a dropped label — the
+  enforcement half of "~100% accuracy every time". Authored-spec checks
+  (raw-SVG, unknown vocabulary, typed equilibrium coordinates) are likewise
+  promoted to build-failing errors.
+
 **Docs, tests, gallery.**
 - `docs/DIAGRAM_LANGUAGE_GUIDE.md` gains §13 `registerFamily`, §14 `grammar()`,
-  §15 annotations + anchoring.
+  §15 annotations + anchoring, §16 the accuracy gate. `CLAUDE.md` notes
+  `lint:diagrams` is blocking.
 - `tests/unit/diagrams.test.js`: +9 tests (grammar-as-data, registerFamily
   round-trip, annotation compile + anchoring + validation). 33 pass.
 - `dev/diagram-gallery.html`: new "Annotations (escape hatch)" group incl. an

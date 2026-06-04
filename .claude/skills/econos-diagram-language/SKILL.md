@@ -31,7 +31,13 @@ Never type them yourself.
    template genuinely can't express the idea — then extend the template instead of
    hand-rolling the spec.
 2. **Never hand-author raw `<svg>`** in data files or specs. If you typed `<path`,
-   `<marker` or `d: 'M ...'`, you did it wrong.
+   `<marker` or `d: 'M ...'`, you did it wrong. When the templates don't cover
+   something, use the **`annotations`** escape hatch (`label`/`marker`/`region`/
+   `segment`/`bracket`/`arrow`) — and anchor positions semantically
+   (`{ point: 'E1' }`, `{ intersection: ['D1','S'] }`, `{ onCurve: 'D1', x }`),
+   never raw `{x,y}`, so the addition stays geometry-solved. See guide §15.
+   To add a whole new family, call `ECONOS_DIAGRAMS.registerFamily({...})` (§13);
+   read the legal vocabulary with `ECONOS_DIAGRAMS.grammar()` (§14).
 3. **Never type equilibrium coordinates.** Declare curves by `role` + `elasticity`
    (or just an `intent`) and let the engine intersect them.
 4. **Use `show` tokens**, not invented flags. See the token list in the guide.
@@ -41,7 +47,9 @@ Never type them yourself.
    `allowManualLayout: true`. Trust the collision pass; if a label won't fit, shorten
    it or move it into a `teaching` callout.
 7. **Run the gates and look at it:**
-   - `node scripts/lint-diagrams.mjs`
+   - `node scripts/lint-diagrams.mjs` — **blocking**: renders every family ×
+     intent and fails on a render error, an unresolved anchor, or a dropped
+     label. A dev-mode warning is a red build, not a yellow one (guide §16).
    - `npx vitest run tests/unit/diagrams.test.js`
    - eyeball `dev/diagram-builder.html` (paste the spec) or `dev/diagram-gallery.html`.
 8. **Add a gallery example** whenever you add a template or a new intent.

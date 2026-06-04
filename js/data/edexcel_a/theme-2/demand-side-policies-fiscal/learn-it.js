@@ -137,7 +137,7 @@ window.ECONOS_TOPIC = {
               body: ['AD₁ meets the upward-sloping (reverse-L) AS on its <strong>rising range</strong>, at E₁.', 'Output Y₁ sits <em>below</em> full capacity Yf — there are idle resources to put to work.'] },
             classical: {
               tone: 'purple',
-              head: 'Classical view — already at capacity at E₁.',
+              head: 'Classical view — at capacity at E₁.',
               body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy always returns to full capacity.', 'AD₁ meets LRAS at E₁, with output fixed at Yf and price level P₁.'] }
           },
           {

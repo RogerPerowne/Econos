@@ -52,27 +52,43 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '🏛️', head: 'LRAS',              body: 'Long run aggregate supply. Vertical at productive capacity (Yf). Prices do not change LRAS.' }
       ],
 
+      // Classical ↔ Keynesian toggle. The toggle IS the lesson here:
+      // the two schools disagree about the SHAPE of AS itself.
+      //   Classical: SRAS (sloping) + LRAS (vertical at Yf)
+      //   Keynesian: reverse-L AS — flat floor, bottleneck, vertical at Yf
+      // View 1 shows just the AS curve(s); View 2 adds AD + the
+      // equilibrium point E₁ at the schools' (different) intersections.
       interactiveDiagram: {
-        svgKey: 'srasLrasIntro',
+        svgKey: 'asIntroClassicalKeynesian',
         label: 'THE BASIC DIAGRAM',
         emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
+        layers: ['ad', 'e1'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
         views: [
           {
-            label: 'SRAS',
-            show: ['idl-1'],
-            tone: 'blue',
-            head: 'SRAS slopes upward.',
-            body: ['Higher prices improve profit margins when wages are sticky.', 'Firms increase output in the short run as the price level rises.'],
-            analysis: 'The upward slope reflects sticky costs – wages and supply contracts adjust slowly, so rising prices temporarily boost profit margins and output.'
+            label: 'The AS curve', show: [],
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — two curves, two horizons.',
+              body: ['<strong>SRAS</strong> slopes upward: in the short run, sticky wages mean rising prices boost profit margins so firms supply more.', '<strong>LRAS</strong> is vertical at Yf: in the long run, output is determined by capacity, not the price level.'] },
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — one reverse-L curve.',
+              body: ['A single AS curve with three ranges: a <strong>flat floor</strong> in deep slack (idle resources, unit costs unchanged), a <strong>bottleneck</strong> as the economy approaches capacity, and <strong>vertical</strong> at Yf.', 'Output is demand-constrained until capacity binds.'] }
           },
           {
-            label: 'SRAS + LRAS',
-            show: ['idl-1', 'idl-2'],
-            tone: 'purple',
-            head: 'LRAS is vertical at full-capacity output (Yf).',
-            body: ['In the long run, all costs adjust. Output is determined by productive capacity.', 'The economy returns to Yf regardless of price level changes.'],
-            analysis: 'Where SRAS crosses LRAS marks the long-run equilibrium at P₁ and Yf – the economy\'s maximum sustainable output.'
+            label: 'Add AD: equilibrium', show: ['ad', 'e1'],
+            classical: {
+              tone: 'purple',
+              head: 'Long-run equilibrium at LRAS.',
+              body: ['AD meets the AS framework at E₁ — in the long run, on the <strong>vertical LRAS at Yf</strong>.', 'Whatever AD does, output ends at Yf; the price level adjusts.'],
+              analysis: 'Classical reading: long-run output is anchored to capacity. The only sustainable way to raise Y is to shift LRAS (supply-side policy). Demand-side levers move the price level around, not real output.' },
+            keynesian: {
+              tone: 'amber',
+              head: 'Equilibrium on the rising range.',
+              body: ['AD meets reverse-L AS on its <strong>rising range</strong> at E₁ — output Y₁ sits <em>below</em> capacity Yf.', 'Actual output is constrained by demand, not by supply.'],
+              analysis: 'Keynesian reading: the economy can settle at less than full employment. Boosting AD raises real output (with some inflation as you near capacity); supply-side reform raises potential, but actual output still needs demand to follow.' }
           }
         ]
       },
@@ -355,33 +371,57 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'LRAS moves when the economy\'s capacity changes – not when the price level changes.' },
 
+      // Classical ↔ Keynesian toggle. Same capacity expansion, two
+      // verdicts on whether actual output follows:
+      //   Classical: economy lands at the new Yf₂ at lower P (clean).
+      //   Keynesian: capacity wall slides right but actual output rises
+      //     only along the AS rising range — a fresh output gap opens
+      //     between Y₂ and Yf₂ until demand catches up.
       interactiveDiagram: {
-        svgKey: 'lrasShiftDiagram',
-        label: 'THE GROWTH DIAGRAM',
+        svgKey: 'lrasShiftRightClassicalKeynesian',
+        label: 'CAPACITY EXPANSION — LRAS SHIFTS RIGHT',
         emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
+        layers: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
+        inverseLayers: ['c-lras1-solid', 'k-as1-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
         views: [
           {
-            label: 'Base equilibrium',
-            show: [],
-            tone: 'slate',
-            head: 'Initial long-run equilibrium.',
-            body: ['AD intersects LRAS₁ at E₁.', 'Price level is P₁. Real output is at full capacity Y₁.']
+            label: 'Starting point', show: [],
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at potential at E₁.',
+              body: ['AD meets vertical LRAS₁ at E₁ — output Yf₁, price level P₁.', 'In the long run the economy always sits on LRAS.'] },
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — below capacity at E₁.',
+              body: ['AD meets the reverse-L AS₁ on its <strong>rising range</strong>, at E₁ — output Y₁ sits below capacity Yf₁.', 'Actual output is demand-limited; there is idle capacity.'] }
           },
           {
-            label: 'LRAS shifts right',
-            show: ['idl-1'],
-            tone: 'green',
-            head: 'Productive capacity expands.',
-            body: ['LRAS shifts right to LRAS₂.', 'New full-capacity output is Y₂ – higher than before.']
+            label: 'Capacity rises',
+            show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2', 'k-lr-arrow'],
+            classical: {
+              tone: 'green',
+              head: 'LRAS₁ → LRAS₂.',
+              body: ['Better technology, more capital, higher productivity, a bigger or more-skilled labour force — any genuine capacity gain shifts LRAS rightward.', 'Potential output rises from Yf₁ to Yf₂.'] },
+            keynesian: {
+              tone: 'green',
+              head: 'The capacity wall slides parallel-right.',
+              body: ['The reverse-L\'s vertical capacity wall moves right (AS₁ → AS₂); the price floor stays put.', 'Potential output rises to Yf₂. Whether <em>actual</em> output follows depends on demand.'] }
           },
           {
             label: 'New equilibrium',
-            show: ['idl-1', 'idl-2'],
-            tone: 'green',
-            head: 'Sustainable non-inflationary growth.',
-            body: ['AD intersects LRAS₂ at E₂.', 'Real output rises from Y₁ to Y₂. The price level is stable or slightly lower.'],
-            analysis: 'A rightward LRAS shift is the supply-side ideal – more output without inflation. This contrasts with a demand-led AD shift, which raises output and prices together.'
+            show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
+            classical: {
+              tone: 'purple',
+              head: 'Output up, prices down at E₂.',
+              body: ['AD meets LRAS₂ at E₂: <strong>Y₂ = Yf₂ &gt; Yf₁ AND P₂ &lt; P₁</strong>.', 'Sustainable, non-inflationary growth — the supply-side ideal.'],
+              analysis: 'Classical verdict: this is the prize. Real capacity gains raise long-run output AND lower the price level; the AD shift you don\'t need is the one that just inflates. Demand-side levers can\'t reach this corner — only supply-side reform can.' },
+            keynesian: {
+              tone: 'rose',
+              head: 'Potential rises — output LAGS it.',
+              body: ['E₂ sits on AS₂\'s rising range: actual Y₂ rises and P falls, but <strong>Y₂ &lt; Yf₂</strong>.', 'A fresh output gap (rose arrow): the new capacity goes partly unused until demand catches up.'],
+              analysis: 'Keynesian verdict: capacity expansion helps, but it is not enough on its own. With AD unchanged, real output rises only modestly; <strong>someone has to buy the extra output</strong>. The full benefit of supply-side reform needs demand-side support alongside it.' }
           }
         ]
       },
@@ -492,41 +532,50 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'The same output gain can come from stronger demand or stronger supply – but the price effect is different.' },
 
+      // Two stacked interactive diagrams — both with Classical/Keynesian
+      // toggles. Demand-side stimulus shows the textbook AD-right split
+      // (Classical: only P; Keynesian: Y AND P). Supply-side improvement
+      // shows the LRAS-right split (Classical: clean landing at Yf₂;
+      // Keynesian: potential rises, actual lags).
       interactiveDiagram: [
         {
-          svgKey: 'adShiftInteractive',
-          label: 'DEMAND-SIDE STIMULUS',
+          svgKey: 'adShiftClassicalKeynesian',
+          label: 'DEMAND-SIDE STIMULUS — AD SHIFTS RIGHT',
           emoji: '📈',
           layers: ['idl-1', 'idl-2'],
+          inverseLayers: ['idl-old-solid'],
+          perspectives: ['classical', 'keynesian'],
+          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
-            { label: 'Base', show: [], tone: 'slate',
-              head: 'Initial equilibrium at E₁.',
-              body: ['AD and SRAS intersect at E₁.', 'Price level P₁, real output Y₁.'] },
-            { label: 'AD shifts right', show: ['idl-1'], tone: 'blue',
-              head: 'A demand stimulus shifts AD right to AD₂.',
-              body: ['Government spending, tax cuts or looser monetary policy raise demand.', 'The whole AD curve shifts rightward.'] },
-            { label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'blue',
-              head: 'Output rises – but so does the price level.',
-              body: ['The new equilibrium E₂ is higher on SRAS.', 'Y₂ > Y₁ but P₂ > P₁ – demand-pull inflation.'],
-              analysis: 'Demand stimulus raises output and the price level together. Near full capacity, most of the boost becomes inflationary rather than productive.' }
+            { label: 'Starting point', show: [],
+              classical: { tone: 'purple', head: 'Classical view — at potential.', body: ['AD₁ meets vertical LRAS at Yf — price level P₁.'] },
+              keynesian: { tone: 'amber', head: 'Keynesian view — spare capacity.', body: ['AD₁ meets the rising range of reverse-L AS, below capacity.'] } },
+            { label: 'AD shifts right', show: ['idl-1'],
+              classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['Government spending, tax cuts or looser monetary policy raise demand.'] },
+              keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['Government spending, tax cuts or looser monetary policy raise demand.'] } },
+            { label: 'New equilibrium', show: ['idl-1', 'idl-2'],
+              classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf; P₂ ≫ P₁ — purely inflationary.'], analysis: 'Classical reading: demand stimulus at potential is eaten by inflation. The case for fiscal restraint hinges on this verdict.' },
+              keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['Y₂ &gt; Y₁ and P₂ &gt; P₁; the closer to Yf, the more leaks into prices.'], analysis: 'Keynesian reading: with spare capacity, demand stimulus delivers real output and jobs. Near Yf the trade-off worsens.' } }
           ]
         },
         {
-          svgKey: 'srasRightShiftInteractive',
-          label: 'SUPPLY-SIDE IMPROVEMENT',
+          svgKey: 'lrasShiftRightClassicalKeynesian',
+          label: 'SUPPLY-SIDE IMPROVEMENT — LRAS SHIFTS RIGHT',
           emoji: '⚙️',
-          layers: ['idl-1', 'idl-2'],
+          layers: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
+          inverseLayers: ['c-lras1-solid', 'k-as1-solid'],
+          perspectives: ['classical', 'keynesian'],
+          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
-            { label: 'Base', show: [], tone: 'slate',
-              head: 'Initial equilibrium at E₁.',
-              body: ['AD and SRAS₁ intersect at E₁.', 'Price level P₁, real output Y₁.'] },
-            { label: 'SRAS shifts right', show: ['idl-1'], tone: 'green',
-              head: 'A supply-side improvement shifts SRAS right.',
-              body: ['Higher productivity, lower costs or better technology cut firms\' costs at every price level.', 'SRAS₂ lies to the right of SRAS₁.'] },
-            { label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'green',
-              head: 'Output rises – price level stable or lower.',
-              body: ['E₂ is to the right of and below E₁.', 'Y₂ > Y₁ and P₂ ≤ P₁ – non-inflationary growth.'],
-              analysis: 'Supply-side improvement raises output while keeping inflation in check. This is the key advantage over demand stimulus – especially when the economy is near full capacity.' }
+            { label: 'Starting point', show: [],
+              classical: { tone: 'purple', head: 'At potential at E₁.', body: ['AD meets vertical LRAS₁ at Yf₁.'] },
+              keynesian: { tone: 'amber', head: 'Below capacity at E₁.', body: ['AD meets reverse-L AS₁ on its rising range — Y₁ &lt; Yf₁.'] } },
+            { label: 'Capacity rises', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2', 'k-lr-arrow'],
+              classical: { tone: 'green', head: 'LRAS₁ → LRAS₂.', body: ['Productivity, capital, labour, technology — capacity expands.'] },
+              keynesian: { tone: 'green', head: 'Capacity wall slides right.', body: ['AS₁ → AS₂ is a parallel rightward shift; floor unchanged.'] } },
+            { label: 'New equilibrium', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
+              classical: { tone: 'purple', head: 'Output up, prices down.', body: ['Y rises to Yf₂, P falls — sustainable non-inflationary growth.'], analysis: 'Classical reading: this is the prize — the corner demand-side levers can\'t reach.' },
+              keynesian: { tone: 'rose', head: 'Potential up, output LAGS.', body: ['Actual Y₂ rises but sits BELOW the new potential Yf₂ — fresh output gap.'], analysis: 'Keynesian reading: supply-side reform raises the ceiling, but without demand catching up the new capacity goes partly unused.' } }
           ]
         }
       ],

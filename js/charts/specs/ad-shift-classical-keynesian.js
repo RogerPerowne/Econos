@@ -92,30 +92,33 @@
     ],
 
     points: [
-      /* ── Keynesian E₁ — on the rising range, below capacity ── */
+      /* ── Keynesian E₁ — on the rising range, below capacity.
+            ALL equilibrium labels default cleanly RIGHT of the dot
+            (labelDx:14, labelDy:-2 = clear gap, just slightly above the
+            centre so the text baseline aligns with the dot). ── */
       { intersection: { curves: ['AD1', 'keynAS'], near: [0.55, 0.32] },
         tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
-        label: 'E₁', labelDx: 10, labelDy: -4, anchor: 'start',
+        label: 'E₁', labelDx: 14, labelDy: -2, anchor: 'start',
         perspective: 'keynesian' },
       /* ── Keynesian E₂ — output AND prices rise (idl-2) ── */
       { intersection: { curves: ['AD2', 'keynAS'], near: [0.62, 0.47] },
         tone: 'green', radius: 5.5, hollow: true,
         gridlines: 'green', ticks: { x: 'Y₂', y: 'P₂' },
-        label: 'E₂', labelDx: 10, labelDy: -4, anchor: 'start',
+        label: 'E₂', labelDx: 14, labelDy: -2, anchor: 'start',
         layer: 'idl-2', perspective: 'keynesian' },
 
       /* ── Classical E₁ — at full capacity Yf ── */
       { intersection: { curves: ['AD1', 'lras'], near: [CAP, 0.22] },
         tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { y: 'P₁' },
-        label: 'E₁', labelDx: 10, labelDy: 12, anchor: 'start',
+        label: 'E₁', labelDx: 14, labelDy: -2, anchor: 'start',
         perspective: 'classical' },
       /* ── Classical E₂ — only the price level rises (idl-2) ── */
       { intersection: { curves: ['AD2', 'lras'], near: [CAP, 0.44] },
         tone: 'purple', radius: 5.5, hollow: true,
         gridlines: 'purple', ticks: { y: 'P₂' },
-        label: 'E₂', labelDx: 10, labelDy: -4, anchor: 'start',
+        label: 'E₂', labelDx: 14, labelDy: -2, anchor: 'start',
         layer: 'idl-2', perspective: 'classical' }
     ],
 

@@ -16015,6 +16015,7 @@ window.ECONOS_ICONS = {
         .bop-3a-bullet { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
         .bop-3a-note { font-size:11px; color:#475569; font-style:italic; margin-top:8px; text-align:center; }
         .bop-3a-arrows { display:grid; grid-template-columns:1fr 1fr 1fr; align-items:end; height:32px; margin-bottom:4px; }
+        @media (max-width: 760px) { .bop-3a-arrows { display:none; } }
         .bop-3a-arrow { display:flex; flex-direction:column; align-items:center; }
         .bop-3a-arrow-line { width:2px; height:24px; }
         .bop-3a-arrow-head { width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; }
@@ -16040,7 +16041,7 @@ window.ECONOS_ICONS = {
             <span class="bop-3a-title" style="color:#5B21B6;">Capital account</span>
           </div>
           <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#7C3AED;"></span>Capital transfers</div>
-          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#7C3AED;"></span>Non-produced, non-financial assets (patents, land)</div>
+          <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#7C3AED;"></span>Non-financial assets (patents, land)</div>
           <div class="bop-3a-note">Usually small — under 1% of GDP</div>
         </div>
         <div class="bop-3a-col" style="border-color:#BFDBFE;background:#EFF6FF;">
@@ -16115,53 +16116,78 @@ window.ECONOS_ICONS = {
   /* C2 · UK PATTERN — Goods card and Services card on either side,
      with curved arrows converging on a "Final current account balance"
      lozenge below. Plus a calm "Primary income and transfers can push
-     either way" caveat. */
+     either way" caveat. HTML+SVG hybrid: cards are HTML (wrap & stack
+     on mobile), arrows are inline SVG that swap to a downward "↓" on
+     mobile via the .bop-uk-arrows-mobile fallback. */
   bopUkPattern: `
     <div style="background:#fff;border-radius:14px;padding:18px 16px;font-family:Inter,sans-serif;">
-      <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <defs>
-          <marker id="bopuk-arr-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/>
-          </marker>
-          <marker id="bopuk-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
-          </marker>
-        </defs>
-        <g>
-          <rect x="20" y="20" width="240" height="100" rx="14" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
-          <circle cx="60" cy="56" r="20" fill="#fff" stroke="#FDA4AF" stroke-width="1"/>
-          <text x="60" y="63" font-size="20" text-anchor="middle">🚢</text>
-          <text x="90" y="54" font-size="13" font-weight="800" fill="#BE123C" font-family="Inter,sans-serif">Goods</text>
-          <text x="90" y="74" font-size="11" fill="#9F1239" font-family="Inter,sans-serif">UK goods deficit ~£206bn</text>
-          <text x="90" y="90" font-size="11" fill="#9F1239" font-family="Inter,sans-serif">(2024) — imports often</text>
-          <text x="90" y="106" font-size="11" fill="#9F1239" font-family="Inter,sans-serif">exceed exports.</text>
-        </g>
-        <g>
-          <rect x="440" y="20" width="240" height="100" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="480" cy="56" r="20" fill="#fff" stroke="#86EFAC" stroke-width="1"/>
-          <text x="480" y="63" font-size="20" text-anchor="middle">🧳</text>
-          <text x="510" y="54" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Services</text>
-          <text x="510" y="74" font-size="11" fill="#065F46" font-family="Inter,sans-serif">UK services surplus ~£184bn</text>
-          <text x="510" y="90" font-size="11" fill="#065F46" font-family="Inter,sans-serif">offsets most of the goods</text>
-          <text x="510" y="106" font-size="11" fill="#065F46" font-family="Inter,sans-serif">deficit.</text>
-        </g>
-        <path d="M 140 130 Q 140 200 340 230" fill="none" stroke="#E11D48" stroke-width="2" marker-end="url(#bopuk-arr-rose)"/>
-        <path d="M 560 130 Q 560 200 360 230" fill="none" stroke="#16A34A" stroke-width="2" marker-end="url(#bopuk-arr-green)"/>
-        <rect x="220" y="225" width="260" height="60" rx="30" fill="#fff" stroke="#0B1426" stroke-width="2"/>
-        <text x="290" y="262" font-size="22" text-anchor="middle">⚖️</text>
-        <text x="375" y="261" font-size="13" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif">Final current account balance</text>
-        <text x="350" y="307" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Primary income &amp; transfers can push the final balance either way</text>
-      </svg>
+      <style>
+        .bop-uk-top { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+        .bop-uk-card { border:1.5px solid; border-radius:14px; padding:14px; display:flex; gap:12px; align-items:flex-start; }
+        .bop-uk-icon { width:44px; height:44px; border-radius:50%; background:#fff; border:1.5px solid; display:inline-flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+        .bop-uk-card-title { font-size:14px; font-weight:800; margin-bottom:6px; }
+        .bop-uk-card-body { font-size:12.5px; line-height:1.5; }
+        .bop-uk-arrows { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:start; margin:6px 0 4px; height:60px; position:relative; }
+        .bop-uk-arrows svg { width:100%; height:100%; display:block; }
+        .bop-uk-final { display:flex; align-items:center; justify-content:center; gap:10px; padding:14px 22px; border-radius:30px; background:#fff; border:2px solid #0B1426; font-weight:900; font-size:14px; color:#0B1426; max-width:380px; margin:0 auto; }
+        .bop-uk-final-icon { font-size:22px; }
+        .bop-uk-caveat { text-align:center; margin-top:10px; font-size:11.5px; color:#475569; font-style:italic; }
+        @media (max-width: 760px) {
+          .bop-uk-top { grid-template-columns:1fr; }
+          .bop-uk-arrows { display:flex; justify-content:center; height:auto; padding:6px 0; }
+          .bop-uk-arrows svg { display:none; }
+          .bop-uk-arrows::before { content:'↓'; font-size:28px; color:#475569; font-weight:700; }
+        }
+      </style>
+      <div class="bop-uk-top">
+        <div class="bop-uk-card" style="border-color:#FDA4AF;background:#FFF1F2;">
+          <div class="bop-uk-icon" style="border-color:#FDA4AF;">🚢</div>
+          <div>
+            <div class="bop-uk-card-title" style="color:#BE123C;">Goods</div>
+            <div class="bop-uk-card-body" style="color:#9F1239;">UK goods deficit <strong>~£206bn (2024)</strong> — imports often exceed exports.</div>
+          </div>
+        </div>
+        <div class="bop-uk-card" style="border-color:#86EFAC;background:#F0FDF4;">
+          <div class="bop-uk-icon" style="border-color:#86EFAC;">🧳</div>
+          <div>
+            <div class="bop-uk-card-title" style="color:#065F46;">Services</div>
+            <div class="bop-uk-card-body" style="color:#065F46;">UK services surplus <strong>~£184bn</strong> offsets most of the goods deficit.</div>
+          </div>
+        </div>
+      </div>
+      <div class="bop-uk-arrows">
+        <svg viewBox="0 0 200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="bopuk-arr-rose-v2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/></marker></defs>
+          <path d="M 100 4 Q 100 40 200 56" fill="none" stroke="#E11D48" stroke-width="2.5" marker-end="url(#bopuk-arr-rose-v2)"/>
+        </svg>
+        <svg viewBox="0 0 200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="bopuk-arr-green-v2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker></defs>
+          <path d="M 100 4 Q 100 40 0 56" fill="none" stroke="#16A34A" stroke-width="2.5" marker-end="url(#bopuk-arr-green-v2)"/>
+        </svg>
+      </div>
+      <div class="bop-uk-final"><span class="bop-uk-final-icon">⚖️</span>Final current account balance</div>
+      <div class="bop-uk-caveat">Primary income &amp; transfers can push the final balance either way</div>
     </div>
   `,
 
   /* C3 · DRIVERS OF THE CURRENT ACCOUNT — hub-and-spoke layout with
      a central "Current account balance" balance icon and six driver
      cards (3 left, 3 right) connected by curved arrows pointing
-     inward. Each driver card has its own icon and short caption. */
+     inward. Each driver card has its own icon and short caption.
+     The "simple chain" lives BELOW the SVG as responsive HTML so it
+     stays legible on mobile (where the SVG itself unavoidably shrinks). */
   bopDriverHub: `
     <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
-      <svg viewBox="0 0 760 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <style>
+        .bop-hub-chain { margin-top:14px; padding:14px; background:#FAFCFF; border:1px solid #E2E8F0; border-radius:12px; }
+        .bop-hub-chain-label { font-size:11px; font-weight:800; color:#0B1426; letter-spacing:0.04em; margin-bottom:10px; }
+        .bop-hub-chain-row { display:grid; grid-template-columns:1fr 18px 1fr 18px 1.4fr; gap:6px; align-items:stretch; }
+        @media (max-width: 760px) { .bop-hub-chain-row { grid-template-columns:1fr; } .bop-hub-chain-sep { display:none; } .bop-hub-chain-step { text-align:center; } .bop-hub-chain-step::after { content:'↓'; display:block; color:#94A3B8; font-size:14px; margin-top:4px; } .bop-hub-chain-step:last-child::after { content:''; } }
+        .bop-hub-chain-step { background:#fff; border:1px solid #CBD5E1; border-radius:8px; padding:8px 10px; font-size:12px; font-weight:700; color:#0B1426; display:flex; align-items:center; justify-content:center; text-align:center; }
+        .bop-hub-chain-step.is-rose { background:#FFF1F2; border-color:#FDA4AF; color:#BE123C; font-weight:800; }
+        .bop-hub-chain-sep { display:flex; align-items:center; justify-content:center; color:#94A3B8; font-size:14px; font-weight:700; }
+      </style>
+      <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
           <marker id="bophub-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
@@ -16232,22 +16258,17 @@ window.ECONOS_ICONS = {
           <text x="590" y="398" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">often links to deficits.</text>
         </g>
 
-        <!-- SIMPLE CHAINS BELOW -->
-        <g>
-          <text x="30" y="465" font-size="11" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">A SIMPLE CHAIN</text>
-          <rect x="30" y="478" width="150" height="42" rx="8" fill="#fff" stroke="#CBD5E1"/>
-          <text x="105" y="497" font-size="11" font-weight="700" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">UK demand</text>
-          <text x="105" y="511" font-size="11" font-weight="700" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">rises</text>
-          <text x="195" y="503" font-size="16" fill="#94A3B8" font-family="Inter,sans-serif" text-anchor="middle">→</text>
-          <rect x="210" y="478" width="170" height="42" rx="8" fill="#fff" stroke="#CBD5E1"/>
-          <text x="295" y="497" font-size="11" font-weight="700" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Imports rise</text>
-          <text x="295" y="511" font-size="11" font-weight="700" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">faster</text>
-          <text x="395" y="503" font-size="16" fill="#94A3B8" font-family="Inter,sans-serif" text-anchor="middle">→</text>
-          <rect x="410" y="478" width="320" height="42" rx="8" fill="#FFF1F2" stroke="#FDA4AF"/>
-          <text x="570" y="497" font-size="11" font-weight="800" fill="#BE123C" font-family="Inter,sans-serif" text-anchor="middle">Current account</text>
-          <text x="570" y="511" font-size="11" font-weight="800" fill="#BE123C" font-family="Inter,sans-serif" text-anchor="middle">moves towards deficit</text>
-        </g>
       </svg>
+      <div class="bop-hub-chain">
+        <div class="bop-hub-chain-label">A SIMPLE CHAIN</div>
+        <div class="bop-hub-chain-row">
+          <div class="bop-hub-chain-step">UK demand rises</div>
+          <div class="bop-hub-chain-sep">→</div>
+          <div class="bop-hub-chain-step">Imports rise faster</div>
+          <div class="bop-hub-chain-sep">→</div>
+          <div class="bop-hub-chain-step is-rose">Current account moves towards deficit</div>
+        </div>
+      </div>
     </div>
   `,
 
@@ -16259,7 +16280,7 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:20px 16px;font-family:Inter,sans-serif;">
       <style>
         .bop-mi { display:grid; grid-template-columns: 1fr 96px 1fr; gap:12px; align-items:stretch; }
-        @media (max-width: 760px) { .bop-mi { grid-template-columns: 1fr; } .bop-mi-arrow { flex-direction:column; height:auto; padding:14px 0; } }
+        @media (max-width: 760px) { .bop-mi { grid-template-columns: 1fr; } .bop-mi-arrow { padding:8px 0; } .bop-mi-arrow-inner { flex-direction:row; gap:8px; align-items:center; } .bop-mi-arrow-svg { display:none; } .bop-mi-arrow-inner::after { content:'↓'; font-size:22px; color:#0B1426; font-weight:700; } }
         .bop-mi-pillar { border:1.5px solid; border-radius:14px; padding:0; overflow:hidden; display:flex; flex-direction:column; }
         .bop-mi-head { display:flex; align-items:center; gap:10px; padding:14px 16px; }
         .bop-mi-head-icon { width:34px; height:34px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:16px; }
@@ -16408,52 +16429,50 @@ window.ECONOS_ICONS = {
      two branched side-tiles below the second step. Mirrors the
      "Exchange rate pressure → Imported inflation → Tighter policy"
      trunk with branches into "Higher foreign liabilities" and
-     "Greater vulnerability to shocks". */
+     "Greater vulnerability to shocks". Rebuilt as HTML so it stacks
+     gracefully on mobile (the SVG version became unreadable < 600px). */
   bopConsequencesFlow: `
     <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
-      <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <defs>
-          <marker id="bopcf-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
-          </marker>
-        </defs>
-        <!-- Trunk -->
-        <g>
-          <rect x="20" y="40" width="200" height="80" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
-          <text x="55" y="86" font-size="22">£</text>
-          <text x="120" y="78" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">Exchange rate</text>
-          <text x="120" y="94" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">pressure</text>
-        </g>
-        <line x1="225" y1="80" x2="275" y2="80" stroke="#475569" stroke-width="2" marker-end="url(#bopcf-arr)"/>
-        <g>
-          <rect x="280" y="40" width="200" height="80" rx="12" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
-          <text x="315" y="86" font-size="22">🛒</text>
-          <text x="380" y="78" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif" text-anchor="middle">Imported</text>
-          <text x="380" y="94" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif" text-anchor="middle">inflation</text>
-        </g>
-        <line x1="485" y1="80" x2="535" y2="80" stroke="#475569" stroke-width="2" marker-end="url(#bopcf-arr)"/>
-        <g>
-          <rect x="540" y="40" width="200" height="80" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
-          <text x="575" y="86" font-size="22">🏛️</text>
-          <text x="640" y="78" font-size="12" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">Tighter policy</text>
-          <text x="640" y="94" font-size="12" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">/ weaker demand</text>
-        </g>
-        <!-- Branches dropping below -->
-        <path d="M 280 110 Q 230 140 230 170" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 4"/>
-        <path d="M 480 110 Q 540 140 540 170" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 4"/>
-        <g>
-          <rect x="100" y="170" width="260" height="80" rx="12" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5"/>
-          <text x="135" y="216" font-size="22">🌐</text>
-          <text x="240" y="208" font-size="12" font-weight="800" fill="#9A3412" font-family="Inter,sans-serif" text-anchor="middle">Higher foreign</text>
-          <text x="240" y="224" font-size="12" font-weight="800" fill="#9A3412" font-family="Inter,sans-serif" text-anchor="middle">liabilities</text>
-        </g>
-        <g>
-          <rect x="410" y="170" width="260" height="80" rx="12" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
-          <text x="445" y="216" font-size="22">🛡️</text>
-          <text x="550" y="208" font-size="12" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">Greater vulnerability</text>
-          <text x="550" y="224" font-size="12" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">to shocks</text>
-        </g>
-      </svg>
+      <style>
+        .bop-cf-trunk { display:grid; grid-template-columns:1fr 18px 1fr 18px 1fr; gap:6px; align-items:stretch; margin-bottom:14px; }
+        @media (max-width: 760px) { .bop-cf-trunk { grid-template-columns:1fr; } .bop-cf-sep { display:none; } .bop-cf-step::after { content:'↓'; display:block; color:#94A3B8; font-size:18px; margin-top:8px; } .bop-cf-step:last-child::after { content:''; } }
+        .bop-cf-step { border:1.5px solid; border-radius:12px; padding:14px 12px; display:flex; flex-direction:column; align-items:center; text-align:center; min-height:90px; justify-content:center; gap:6px; }
+        .bop-cf-step-icon { font-size:22px; }
+        .bop-cf-step-title { font-size:12.5px; font-weight:800; line-height:1.3; }
+        .bop-cf-sep { display:flex; align-items:center; justify-content:center; color:#475569; font-size:18px; font-weight:700; }
+        .bop-cf-branches { display:grid; grid-template-columns:1fr 1fr; gap:12px; position:relative; padding-top:18px; }
+        @media (max-width: 760px) { .bop-cf-branches { grid-template-columns:1fr; padding-top:6px; } .bop-cf-branches::before { display:none; } }
+        .bop-cf-branches::before { content:''; position:absolute; top:0; left:25%; right:25%; height:14px; border-left:1.5px dashed #94A3B8; border-right:1.5px dashed #94A3B8; border-bottom:1.5px dashed #94A3B8; border-bottom-left-radius:8px; border-bottom-right-radius:8px; }
+        .bop-cf-branch { border:1.5px solid; border-radius:12px; padding:12px; display:flex; align-items:center; gap:10px; }
+        .bop-cf-branch-icon { font-size:22px; flex-shrink:0; }
+        .bop-cf-branch-title { font-size:12.5px; font-weight:800; line-height:1.3; }
+      </style>
+      <div class="bop-cf-trunk">
+        <div class="bop-cf-step" style="border-color:#BFDBFE;background:#EFF6FF;">
+          <div class="bop-cf-step-icon">£</div>
+          <div class="bop-cf-step-title" style="color:#1E3A8A;">Exchange rate pressure</div>
+        </div>
+        <div class="bop-cf-sep">→</div>
+        <div class="bop-cf-step" style="border-color:#FCD34D;background:#FFFBEB;">
+          <div class="bop-cf-step-icon">🛒</div>
+          <div class="bop-cf-step-title" style="color:#92400E;">Imported inflation</div>
+        </div>
+        <div class="bop-cf-sep">→</div>
+        <div class="bop-cf-step" style="border-color:#C4B5FD;background:#F5F3FF;">
+          <div class="bop-cf-step-icon">🏛️</div>
+          <div class="bop-cf-step-title" style="color:#5B21B6;">Tighter policy / weaker demand</div>
+        </div>
+      </div>
+      <div class="bop-cf-branches">
+        <div class="bop-cf-branch" style="border-color:#FED7AA;background:#FFF7ED;">
+          <div class="bop-cf-branch-icon">🌐</div>
+          <div class="bop-cf-branch-title" style="color:#9A3412;">Higher foreign liabilities</div>
+        </div>
+        <div class="bop-cf-branch" style="border-color:#FDA4AF;background:#FFF1F2;">
+          <div class="bop-cf-branch-icon">🛡️</div>
+          <div class="bop-cf-branch-title" style="color:#9F1239;">Greater vulnerability to shocks</div>
+        </div>
+      </div>
     </div>
   `,
 

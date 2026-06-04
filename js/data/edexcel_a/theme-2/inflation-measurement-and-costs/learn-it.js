@@ -164,9 +164,23 @@ window.ECONOS_TOPIC = {
         text: '<strong>Common trap:</strong> CPI is an average – <em>one</em> price rise does not prove inflation. The general price level across the basket must rise.'
       },
 
+      causesLast: true,
+      causesLabel: 'CPI\'S OWN LIMITATIONS',
+      causesEmoji: '⚠️',
+      causesStyle: 'numbered',
+      causesCols: 3,
+      causes: [
+        { tone: 'rose', icon: '🔄', head: 'Substitution bias',
+          body: 'The basket is updated only annually, so when one item rises sharply consumers switch to cheaper substitutes — CPI overstates real cost rises until weights catch up.' },
+        { tone: 'rose', icon: '🆕', head: 'Quality-change bias',
+          body: 'When a £1,000 laptop becomes twice as powerful for the same price, CPI records "no change" — but the consumer is genuinely better off. The ONS adjusts for some quality change, but not all.' },
+        { tone: 'rose', icon: '🚫', head: 'Exclusions',
+          body: 'CPI excludes mortgage interest and council tax — both large household outgoings. CPIH (added 2017) addresses this by including owner-occupiers\' housing costs.' }
+      ],
+
       examEdge: {
         title: 'Exam edge',
-        text: 'Strong answers explain that CPI is <strong>weighted</strong>, so categories with bigger shares of household spending influence the overall rate more. Note too that CPI <strong>excludes mortgage interest and council tax</strong> – a critical limitation for homeowners with large mortgages.'
+        text: 'Strong answers explain that CPI is <strong>weighted</strong>, so categories with bigger shares of household spending influence the overall rate more. A* answers name the three biases — <strong>substitution bias, quality-change bias and exclusions</strong> (mortgage interest, council tax) — when evaluating whether the headline rate captures the cost of living.'
       }
     },
 

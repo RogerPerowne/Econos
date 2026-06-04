@@ -370,10 +370,12 @@ window.ECONOS_TOPIC = {
       causesCols: 3,
       causes: [
         { tone: 'green', icon: '👥', head: 'Labour supply',       body: 'More people available and willing to work.' },
+        { tone: 'green', icon: '🌐', head: 'Demographics &amp; migration', body: 'Ageing population shrinks the labour force; net inward migration of working-age adults expands it.' },
         { tone: 'green', icon: '🏭', head: 'Capital stock',       body: 'More machinery, tools and infrastructure.' },
         { tone: 'green', icon: '💡', head: 'Technology',          body: 'Innovations improve how resources are used.' },
-        { tone: 'green', icon: '📈', head: 'Productivity',        body: 'More output produced per unit of input.' },
+        { tone: 'green', icon: '📈', head: 'Relative productivity', body: 'Output per worker compared with rivals. The UK lags Germany and the US — closing the gap would shift LRAS right.' },
         { tone: 'green', icon: '🎓', head: 'Education and skills', body: 'A more skilled workforce raises productive capacity.' },
+        { tone: 'green', icon: '⚔️', head: 'Competition policy',  body: 'Stronger rivalry (CMA enforcement, removing entry barriers) pushes firms to cut costs and innovate — raising sustainable capacity.' },
         { tone: 'green', icon: '⚙️', head: 'Deregulation / efficiency', body: 'Lower barriers and red tape improve resource use.' }
       ],
 

@@ -288,6 +288,7 @@ window.ECONOS_TOPIC = {
         label: 'SUPPLY-SIDE POLICY — SHORT RUN VS LONG RUN',
         emoji: '📊',
         layers: [
+          'c-lras1-solid', 'c-lras1-dash',
           'c-sras1-dash', 'c-sras2', 'c-e2', 'c-sr-arrow', 'c-lras2', 'c-lr-arrow', 'c-growth',
           'k-as1-dash', 'k-as2', 'k-as2-dash', 'k-e2', 'k-sr-arrow',
           'k-as3', 'k-e3', 'k-lr-arrow', 'k-gap', 'k-yf2'
@@ -297,7 +298,7 @@ window.ECONOS_TOPIC = {
         perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
         views: [
           {
-            label: 'Starting point', show: [],
+            label: 'Starting point', show: ['c-lras1-solid'],
             classical: {
               tone: 'purple',
               head: 'Classical view — at potential at E₁.',
@@ -309,7 +310,7 @@ window.ECONOS_TOPIC = {
           },
           {
             label: 'Short run: costs fall',
-            show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-sr-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-sr-arrow'],
+            show: ['c-lras1-solid', 'c-sras1-dash', 'c-sras2', 'c-e2', 'c-sr-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-sr-arrow'],
             classical: {
               tone: 'green',
               head: 'Short run — lower costs shift SRAS right to SRAS₂.',
@@ -321,7 +322,7 @@ window.ECONOS_TOPIC = {
           },
           {
             label: 'Long run: capacity rises',
-            show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2-dash', 'k-as3', 'k-e3', 'k-lr-arrow'],
+            show: ['c-lras1-dash', 'c-sras1-dash', 'c-sras2', 'c-e2', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2-dash', 'k-as3', 'k-e3', 'k-lr-arrow'],
             classical: {
               tone: 'purple',
               head: 'Long run — capacity rises: LRAS₁ → LRAS₂.',
@@ -332,7 +333,7 @@ window.ECONOS_TOPIC = {
               body: ['Now the capacity wall itself moves right: AS₂ → AS₃ is a <strong>parallel rightward shift</strong> (the floor stays put, potential rises to Yf₂).', 'Output rises again to E₃ and the price level falls further as the economy moves down AD.'] }
           },
           {
-            label: 'The verdict', show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-lras2', 'c-lr-arrow', 'c-growth', 'k-as1-dash', 'k-as2-dash', 'k-as3', 'k-e3', 'k-lr-arrow', 'k-gap', 'k-yf2'],
+            label: 'The verdict', show: ['c-lras1-dash', 'c-sras1-dash', 'c-sras2', 'c-e2', 'c-lras2', 'c-lr-arrow', 'c-growth', 'k-as1-dash', 'k-as2-dash', 'k-as3', 'k-e3', 'k-lr-arrow', 'k-gap', 'k-yf2'],
             classical: {
               tone: 'green',
               head: 'Verdict — sustainable growth, Yf₁ → Yf₂.',

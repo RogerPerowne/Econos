@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.55.1 — 2026-06-04
+
+### Supply-side C4 Classical view — two polish tweaks
+
+- **LRAS₁ now dashes after the long-run shift.** Split LRAS₁ into a solid
+  variant shown V1–V2 and a dashed variant shown V3–V4, matching the
+  house convention that an original curve goes dashed once shifted.
+- **SRAS short-run arrow is now perpendicular** to the parallel SRAS₁/SRAS₂
+  curves (running from a point on SRAS₁ down-right onto SRAS₂ along the
+  true displacement vector), instead of the earlier generic horizontal
+  arrow.
+
 ## 0.55.0 — 2026-06-04
 
 ### Supply-side C4 — short-run vs long-run, as ONE merged 4-step diagram

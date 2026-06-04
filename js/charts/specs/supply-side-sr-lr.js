@@ -48,6 +48,7 @@
     chartArea: { x: 55, y: 18, width: 380, height: 258 },
     className: 'supply-sr-lr-svg',
     layers: [
+      'c-lras1-solid', 'c-lras1-dash',
       'c-sras1-dash', 'c-sras2', 'c-e2', 'c-sr-arrow', 'c-lras2', 'c-lr-arrow', 'c-growth',
       'k-as1-dash', 'k-as2', 'k-as2-dash', 'k-e2', 'k-sr-arrow',
       'k-as3', 'k-e3', 'k-lr-arrow', 'k-gap', 'k-yf2'
@@ -68,10 +69,17 @@
       { id: 'AD_c', d: 'M 0.18,0.756 L 0.92,0.238',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: -10, anchor: 'end', perspective: 'classical' },
-      // LRAS₁ — vertical at Yf₁, stays SOLID throughout (its shift shown by arrow).
+      // LRAS₁ solid — vertical at Yf₁. Shown V1 + V2 (capacity hasn't moved
+      // yet); replaced by a dashed copy V3+ once LRAS₂ is revealed.
       { id: 'lras1', d: 'M ' + YF1 + ',0.020 L ' + YF1 + ',0.880',
         tone: 'purple', label: 'LRAS₁', strokeWidth: 2.5,
-        labelDx: 6, labelDy: -2, anchor: 'start', perspective: 'classical' },
+        labelDx: 6, labelDy: -2, anchor: 'start',
+        layer: 'c-lras1-solid', perspective: 'classical' },
+      // LRAS₁ dashed — shown V3 + V4 once the long-run shift has fired.
+      { d: 'M ' + YF1 + ',0.020 L ' + YF1 + ',0.880',
+        tone: 'purple', label: 'LRAS₁', strokeWidth: 1.6, dashed: '6 4',
+        labelDx: 6, labelDy: -2, anchor: 'start',
+        layer: 'c-lras1-dash', perspective: 'classical' },
       // LRAS₂ — vertical at Yf₂ (long-run capacity), revealed V3+.
       { id: 'lras2', d: 'M ' + YF2 + ',0.020 L ' + YF2 + ',0.880',
         tone: 'green', label: 'LRAS₂', strokeWidth: 2.5,
@@ -152,8 +160,12 @@
     ],
 
     arrows: [
-      /* Classical SR — SRAS₁ → SRAS₂ (V2), rightward. */
-      { x1: 0.34, y1: 0.345, x2: 0.50, y2: 0.345,
+      /* Classical SR — SRAS₁ → SRAS₂ (V2). PERPENDICULAR to the parallel
+         SRAS curves (slope 0.75 → perpendicular direction (0.6,-0.8) in
+         chart units). Starts on SRAS₁ at (0.50, 0.59), drops perpendicular
+         onto SRAS₂ at (0.639, 0.404) — the true displacement vector of a
+         parallel rightward shift. */
+      { x1: 0.500, y1: 0.590, x2: 0.639, y2: 0.404,
         tone: 'green', strokeWidth: 1.8, markerEnd: 'ssrl-arr-green',
         buffer: 0, layer: 'c-sr-arrow', perspective: 'classical' },
       /* Classical LR — LRAS₁ → LRAS₂ (V3), rightward near top. */

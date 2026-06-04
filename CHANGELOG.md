@@ -6,6 +6,47 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.51.2 — 2026-06-04
+
+### Sitewide mobile fix — single-panel charts now shrink to fit phones
+
+**The bug.** On a 390 px phone, the Demand charts (and many others) rendered
+at **720 px wide — overflowing the viewport by ~2.5×**, so the chart "stayed
+huge" and the card scrolled horizontally. Root cause was in the chart
+engine's `isWide` heuristic (`js/charts/ppf.js`): it tagged *any* chart with
+authored `width >= 700` as "wide", and the mobile CSS rule
+`.econos-chart--wide { min-width: 720px }` then forced those charts to
+720 px on phones, overriding the base `svg { max-width: 100% }`.
+
+The `min-width` exists for a good reason — a genuine multi-panel /
+side-legend chart crushed to 300 px renders 4–5 px text. But a *single-panel*
+chart (one D/S, AD/AS or PPF diagram with a few labels) shrinks to a phone
+perfectly well, so the blanket width threshold was wrong.
+
+**The fix (one engine change, sitewide effect).** Wideness is now
+*structural*, not a width threshold:
+
+```
+isWide = !legendsBelow && (spec.divider || isMulti || hasInSvgLegends)
+```
+
+- **Single-panel charts now shrink responsively** — Demand ×4, Supply ×4,
+  `equilibrium-basic`, `ped-linear-regions`, `shifts-interactive`,
+  `sim-shifts-interactive`, `disequilibrium-interactive`,
+  `actual-vs-potential-growth`, `uk-productivity-puzzle`,
+  `consumption-function`, and more (15 charts in the snapshot set).
+- **Genuinely wide charts stay protected** (keep `min-width` + horizontal
+  scroll): twin-panel / divider charts (`elastic-vs-inelastic-demand`,
+  `elastic-vs-inelastic-supply`, `elasticity-incidence-interactive`,
+  `ad-movement-shift`, `welfare-loss-diagram`, …) — verified by an
+  engine-logic check.
+
+Verified on mobile (Demand + PED charts now fit the card, fully legible) and
+desktop (no change — charts still fill their column). 166 unit tests pass;
+chart-svg-regression snapshots updated (the only delta is the removed
+`econos-chart--wide` class on single-panel charts). `ppf.js` is precached, so
+`CACHE_NAME` bumped to `econos-v335`.
+
 ## 0.51.1 — 2026-06-04
 
 ### Theme 1 — Comparative advantage: Ricardo quote + new "Limitations" card

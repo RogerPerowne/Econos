@@ -2043,9 +2043,20 @@
     // legendsBelow shrinks the SVG to chart-area only — no side legend,
     // no divider — so a chart that USED to be "wide" (900px) is now
     // narrow enough to render natively on a phone. Don't tag it wide.
+    // "Wide" = a chart that genuinely needs horizontal room and would turn
+    // its text to 4-5 px mush if shrunk to a phone — i.e. multi-panel
+    // (side-by-side), a divider-split twin, or an in-SVG side legend. Such
+    // charts get a min-width on mobile and scroll horizontally instead.
+    //
+    // A *single-panel* chart (one D/S, AD/AS or PPF diagram with a handful
+    // of labels) is NOT wide just because its authored width is 700: it
+    // scales down to a phone perfectly well and forcing min-width:720 on it
+    // was exactly the "chart stays huge / overflows on mobile" bug. So the
+    // bare `width >= 700` heuristic is gone — wideness is now structural,
+    // not a width threshold. (Roger, 2026-06: demand/supply/equilibrium
+    // single-panel charts overflowed on mobile.)
     var isWide = !legendsBelow && (spec.divider || isMulti ||
-                  (Array.isArray(spec.legends) && spec.legends.length > 0) ||
-                  width >= 700);
+                  (Array.isArray(spec.legends) && spec.legends.length > 0));
     var wideClass = isWide ? ' econos-chart--wide' : '';
     parts.push('<svg class="' + className + wideClass + '" viewBox="0 -16 ' + width + ' ' + (height + 16) + '" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" role="img" aria-labelledby="econos-chart-title econos-chart-desc">');
     parts.push('<title id="econos-chart-title">' + altMeta.title + '</title>');

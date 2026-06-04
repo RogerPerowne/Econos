@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v332';
+  const CACHE_NAME = 'econos-v333';
 
   /* ────────────────────────────────────────────────────────────
      fetchFresh — a network fetch that bypasses the BROWSER'S OWN
@@ -90,6 +90,7 @@
     '/js/charts/specs/stagflation-phillips.js',
     '/js/charts/specs/inflation-2022-ad-as.js',
     '/js/charts/specs/actual-vs-potential-growth.js',
+    '/js/charts/specs/uk-productivity-puzzle.js',
     '/js/charts/specs/j-curve-interactive.js',
     '/js/charts/specs/subsidy-interactive.js',
     '/js/charts/specs/tax-incidence-interactive.js',

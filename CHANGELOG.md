@@ -6,6 +6,40 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.60.0 — 2026-06-04
+
+### Theme 2 review — Round 3: economist insights expanded, unified amber styling
+
+**New insights (2 added — both prominent female Nobel laureates):**
+
+- **Claudia Goldin** on employment & unemployment C7 (consequences):
+  career interruptions damage future wages, sometimes permanently.
+  Nobel Prize 2023 — perfect fit for the hysteresis card.
+- **Esther Duflo** on impact-of-economic-growth C2 (impact-on-consumers):
+  GDP growth ≠ poverty reduction; what kind of growth matters more than
+  the headline rate. Nobel Prize 2019 — anchors the card's "growth lands
+  differently across the distribution" lesson.
+
+**Final Theme 2 economist roster (9 total, balanced):**
+
+- *Female (5):* Diane Coyle (measures-of-perf), Mariana Mazzucato ×2
+  (fiscal C6, supply-side C3), Claudia Goldin (employment C7) NEW,
+  Esther Duflo (impact-of-growth C2) NEW.
+- *Male (4):* Keynes ×2 (fiscal C2, monetary C2), Friedman (monetary C6),
+  Hayek (supply-side C2). Plus Friedman inline on fiscal C5.
+
+Spread across 6 topics (previously 4). Within the 7–10 target.
+
+**Unified amber styling on every economist insight.** All
+`economistQuote` blocks now render with the same pale amber background
+regardless of any `tone` value on the data. Implemented at all four
+render sites in `app.js` by forcing `PATTERN_TONES.amber` instead of
+honouring `eq.tone`. The `tone` field stays on existing card data for
+backwards compatibility but is ignored at render time. Also normalised
+the three existing non-amber `tone` values on Theme 2 data
+(fiscal/monetary Keynes blocks and the newly-added Goldin block) to
+amber for data hygiene.
+
 ## 0.59.1 — 2026-06-04
 
 ### Theme 2 review — Round 2: remaining 6 orphan cards filled out

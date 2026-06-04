@@ -202,7 +202,7 @@ window.ECONOS_TOPIC = {
       examEdge: 'Trace the chain – <strong>policy change → AD shift → then output, jobs and prices</strong>. State explicitly whether the economy has spare capacity, because that is what determines whether the rise in AD becomes mostly output or mostly inflation.',
       economistQuote: {
         portraitKey: 'economistKeynes',
-        tone: 'blue',
+        tone: 'amber',
         label: 'Economist insight: Keynes on counter-cyclical fiscal policy',
         quote: 'The boom, not the slump, is the right time for austerity at the Treasury.',
         attribution: 'John Maynard Keynes, <em>The Times</em> (1937)'

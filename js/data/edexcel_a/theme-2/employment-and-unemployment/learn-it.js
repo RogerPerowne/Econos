@@ -536,6 +536,14 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'Exam edge',
         text: 'Use <strong>"hysteresis"</strong> to explain why prolonged cyclical unemployment can worsen the supply side of the economy.'
+      },
+
+      economistQuote: {
+        portraitKey: 'economistGoldin',
+        tone: 'amber',
+        label: 'Economist insight: Goldin on the long shadow of unemployment',
+        quote: 'Career interruptions are particularly costly because experience and learning-by-doing are essential to earnings growth. Time out of work damages future wages — sometimes permanently.',
+        attribution: 'Claudia Goldin, <em>Career &amp; Family</em> (2021), Nobel Prize in Economics 2023'
       }
     },
 

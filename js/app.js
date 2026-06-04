@@ -2093,7 +2093,11 @@
     if (c.economistQuote && c.economistQuote.quote) {
       const eq = c.economistQuote;
       const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
-      const t = PATTERN_TONES[eq.tone || 'amber'] || PATTERN_TONES.amber;
+      // Economist-insight blocks always use the pale amber treatment for
+      // visual consistency across the topic — the `tone` field on
+      // `economistQuote` is preserved for backwards compatibility but
+      // ignored at render time. House rule, applied at every render site.
+      const t = PATTERN_TONES.amber;
       content += `
         <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
           <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
@@ -3441,7 +3445,11 @@
       ${(c.economistQuote && c.economistQuote.quote) ? (() => {
         const eq = c.economistQuote;
         const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
-        const t = PATTERN_TONES[eq.tone || 'amber'] || PATTERN_TONES.amber;
+        // Economist-insight blocks always use the pale amber treatment for
+      // visual consistency across the topic — the `tone` field on
+      // `economistQuote` is preserved for backwards compatibility but
+      // ignored at render time. House rule, applied at every render site.
+      const t = PATTERN_TONES.amber;
         return `
           <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
@@ -3729,7 +3737,11 @@
       ${(c.economistQuote && c.economistQuote.quote) ? (() => {
         const eq = c.economistQuote;
         const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
-        const t = PATTERN_TONES[eq.tone || 'amber'] || PATTERN_TONES.amber;
+        // Economist-insight blocks always use the pale amber treatment for
+      // visual consistency across the topic — the `tone` field on
+      // `economistQuote` is preserved for backwards compatibility but
+      // ignored at render time. House rule, applied at every render site.
+      const t = PATTERN_TONES.amber;
         return `
           <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-top:18px;">
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
@@ -5678,7 +5690,11 @@
       ${(c.economistQuote && c.economistQuote.quote) ? (() => {
         const eq = c.economistQuote;
         const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
-        const t = PATTERN_TONES[eq.tone || 'amber'] || PATTERN_TONES.amber;
+        // Economist-insight blocks always use the pale amber treatment for
+      // visual consistency across the topic — the `tone` field on
+      // `economistQuote` is preserved for backwards compatibility but
+      // ignored at render time. House rule, applied at every render site.
+      const t = PATTERN_TONES.amber;
         return `
           <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>

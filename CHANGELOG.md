@@ -6,6 +6,45 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.47.0 — 2026-06-04
+
+### Demand-side Policies: Monetary — 6-card build, second production EDL use
+
+Fills the second of the three Theme 2 placeholder topics flagged in
+`docs/THEME_2_REVIEW.md`. Six cards built from Roger's ChatGPT-pipeline
+mockups. Mirrors the structure of the sister `demand-side-policies-fiscal`
+topic (v0.46.0): same EDL `ad-shift-right` / `ad-shift-left` heroes on
+Cards 2 and 4, same Strengths-and-Limits judgement frame on Card 6.
+
+**Card structure** — pattern variety:
+
+| Card | Title | Pattern | Key visual |
+|---|---|---|---|
+| 1 | Monetary policy – the big picture | Sequential flow chain | 5-step transmission + IR/QE/why-it-matters trio + expansionary↔contractionary pair |
+| 2 | Expansionary monetary policy in action | Decompose-a-diagram | **EDL `ad-shift-right` hero** + 6-step transmission (Bank Rate + QE consolidated) |
+| 3 | The monetary transmission mechanism | Spectrum / regime grid | **5-channel grid** (Consumption / Investment / Wealth / Exchange rate / Confidence) + strong-vs-weak pair |
+| 4 | Cooling inflation – contractionary | Decompose-a-diagram | **EDL `ad-shift-left` hero** + 5-step cool-down chain + gain/cost trade-off |
+| 5 | Beyond Bank Rate – QE and the monetary toolkit | Side-by-side pair | Conventional vs unconventional + 5-step "how QE works" + 5-tile toolkit |
+| 6 | Judging monetary policy | Evidence-then-verdict | Strengths/Limits + 6-question judgement frame + 4-step "how to write it" |
+
+**Card 3 simplification.** The mockup shows a hub-and-spoke "Five
+Channels" radial layout. The five-channel `causes` grid (cols=5, numbered)
+carries the teaching — students see all five channels with their effects
+at once. A custom hub-and-spoke SVG is parked as a follow-up polish if
+Roger wants the radial form.
+
+**EDL stability proof.** Cards 2 and 4 use identical EDL specs to fiscal
+Cards 2/4 (just different `teaching.takeaway` and `alt` text). Same chart
+output: dashed-old / solid-new AD curves, SRAS, E₁/E₂ markers, automatic
+shift arrow. Confirms EDL is reusable across topics without per-card
+geometry work — exactly the v1 design goal.
+
+**Card 2 branching.** The mockup has Bank Rate and QE as parallel branches
+both feeding into "Cheaper borrowing". Consolidated to a single "Lower
+Bank Rate or QE" step so the linear flow stays at 6 wide.
+
+One Theme 2 placeholder topic remains: `supply-side-policies` (2.6.3).
+
 ## 0.46.0 — 2026-06-04
 
 ### Demand-side Policies: Fiscal — 6-card build, first production use of EDL

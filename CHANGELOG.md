@@ -6,6 +6,45 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.45.3 — 2026-06-04
+
+### Theme 2 — additive spec-gap fills (per `docs/THEME_2_REVIEW.md` §5.2)
+
+Closes seven explicit Edexcel A spec gaps without restructuring any card.
+Pattern-conversion recommendations from the review are deliberately deferred
+to a screenshot-verified session — these edits are all additive.
+
+- **`employment-and-unemployment` Card 1**: added a `bottomTip` flagging
+  under-employment as a hidden category within "Employed" (part-timers
+  wanting full-time hours, skilled workers in low-skill jobs). The 3-state
+  framing stays intact; the `examEdge` now points students at it.
+- **`investment` Card 4**: added two named drivers spec 2.2.3 explicitly
+  lists — **Access to credit** (distinct from Interest rates; 2008 GFC
+  context) and **Demand for exports** (global demand pulling export-facing
+  investment). Eight drivers now; layout still clean at `causesCols: 3`.
+- **`consumption` Card 2**: relabelled the consumption function as
+  `C = a + bY_d` with `Y_d` as **disposable income** (gross minus direct
+  tax), explicitly named in the lede and the formula box. Spec 2.2.2
+  rewards naming Yd; the previous "Y" was technically loose.
+- **`aggregate-supply` Card 5**: added the three named LRAS drivers that
+  spec 2.3.3 calls out and were missing — **Demographics & migration**,
+  **Competition policy**, and a renamed **Relative productivity** (was
+  just "Productivity") with body explicitly framing the UK-vs-Germany/US
+  gap. Eight drivers now in a 3-col grid.
+- **`inflation-measurement-and-costs` Card 2**: added a `causesLast`
+  block "CPI's own limitations" naming the three biases — **substitution
+  bias**, **quality-change bias**, **exclusions** (mortgage interest,
+  council tax). Previously buried in the RPI card; now sits where CPI is
+  defined. `examEdge` updated accordingly.
+- **`trade-cycle-shocks-and-economic-growth` Card 4 Stage 3**: extended
+  from five LRAS drivers to six, adding **trade and export markets**, with
+  an analysis nod to South Korea / Germany / China as export-led examples.
+  Closes spec 2.5.1's "importance of trade for export-led growth".
+- **`macroeconomic-objectives-and-trade-offs` Card 1**: renamed "Fiscal
+  sustainability" to **Balanced government budget** (matching spec 2.6.1
+  wording) with explicit deficit/surplus distinction; the inflation tile
+  now mentions CPIH and RPI alongside the headline 2% CPI target.
+
 ## 0.45.2 — 2026-06-04
 
 ### Theme 2 hot-fixes (per `docs/THEME_2_REVIEW.md` §2)

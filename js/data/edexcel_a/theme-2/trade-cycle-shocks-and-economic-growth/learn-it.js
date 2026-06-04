@@ -254,9 +254,9 @@ window.ECONOS_TOPIC = {
           {
             label: '+ What lifts the trend',
             tone: 'green',
-            head: 'Stage 3 — the five drivers',
-            body: 'The trend rises over time because the economy’s productive capacity rises over time. Five drivers: <strong>labour force</strong>, <strong>capital stock</strong>, <strong>productivity</strong>, <strong>skills and education</strong>, <strong>technology and infrastructure</strong>. Each shifts LRAS right.',
-            analysis: 'In AD/AS terms, every driver above is an LRAS shifter. Demand-side policy can lift actual growth temporarily; only supply-side investment lifts potential growth – the trend itself. The UK productivity puzzle (output per worker flat since 2008) is the canonical case of a supply-side challenge.'
+            head: 'Stage 3 — the six drivers',
+            body: 'The trend rises over time because the economy’s productive capacity rises over time. Six drivers: <strong>labour force</strong>, <strong>capital stock</strong>, <strong>productivity</strong>, <strong>skills and education</strong>, <strong>technology and infrastructure</strong>, and <strong>trade and export markets</strong>. Each shifts LRAS right.',
+            analysis: 'In AD/AS terms, every driver above is an LRAS shifter. Demand-side policy can lift actual growth temporarily; only supply-side investment lifts potential growth – the trend itself. The UK productivity puzzle (output per worker flat since 2008) is the canonical case of a supply-side challenge. <strong>Export-led growth</strong> – South Korea, Germany, China – uses access to global demand to scale faster than the domestic market alone allows; spec 2.5.1 explicitly names the importance of trade for growth.'
           },
           {
             label: '+ Hysteresis',

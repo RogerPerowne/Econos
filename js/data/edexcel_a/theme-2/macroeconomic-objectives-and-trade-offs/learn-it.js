@@ -65,11 +65,11 @@ window.ECONOS_TOPIC = {
       causesEmoji: '\u{1F4CB}',
       causesStyle: 'numbered-rows',
       causes: [
-        { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation',      body: 'Low and stable price growth — the BoE\'s 2% CPI symmetric target.' },
+        { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation',      body: 'Low and stable price growth — the BoE\'s <strong>2% CPI symmetric target</strong>. (CPI is the headline rate; <em>CPIH</em> adds owner-occupier housing costs and is the ONS\'s preferred measure for cost of living; <em>RPI</em> is older and overstates.)' },
         { tone: 'blue',   icon: '\u{1F465}', head: 'Unemployment',    body: 'Low joblessness — UK NAIRU around 4–5%.' },
         { tone: 'green',  icon: '\u{1F4C8}', head: 'Growth',          body: 'Real GDP growth of around 2–2.5% per year.' },
         { tone: 'purple', icon: '\u{1F310}', head: 'Balance of payments', body: 'A sustainable current-account position with the rest of the world.' },
-        { tone: 'amber',  icon: '\u{1F3DB}', head: 'Fiscal sustainability', body: 'Government debt on a stable or falling path.' },
+        { tone: 'amber',  icon: '\u{1F3DB}', head: 'Balanced government budget', body: 'Spending matched to tax receipts over the cycle — a <strong>deficit</strong> means borrowing now (debt rises); a <strong>surplus</strong> means net repayment. The objective is debt on a stable or falling path, not zero deficit every year.' },
         { tone: 'green',  icon: '\u{1F343}', head: 'Environment',     body: 'Decarbonisation compatible with net zero by 2050.' },
         { tone: 'slate',  icon: '\u{2696}',  head: 'Income equality', body: 'A falling, or at least stable, Gini coefficient.' }
       ],

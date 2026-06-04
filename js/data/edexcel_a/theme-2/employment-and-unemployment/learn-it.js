@@ -82,9 +82,16 @@ window.ECONOS_TOPIC = {
         text: 'If many people leave the labour force, the unemployment rate can fall even when the jobs picture has not improved. A healthy labour market needs people in work – watch participation <em>and</em> unemployment, not just the headline rate.'
       },
 
+      bottomTip: {
+        icon: '🕵️',
+        tone: 'amber',
+        head: 'The hidden category — under-employment',
+        text: 'Workers can be counted as <strong>Employed</strong> and still be under-employed: part-timers who want full-time hours, or skilled workers in low-skill jobs (e.g. a graduate stacking shelves). The ILO measures it via the time-related under-employment rate. It is a sign of labour-market <em>slack</em> hidden above the official unemployment rate — and the spec explicitly requires you to recognise it.'
+      },
+
       examEdge: {
         title: 'Exam edge',
-        text: 'Always distinguish <strong>unemployed</strong> from <strong>economically inactive</strong>. Use participation-rate evidence when relevant – it gives a fuller picture of the labour market.'
+        text: 'Always distinguish <strong>unemployed</strong> from <strong>economically inactive</strong>. Use participation-rate evidence when relevant – it gives a fuller picture of the labour market. For top marks, also flag <strong>under-employment</strong> as slack within the employed category.'
       }
     },
 

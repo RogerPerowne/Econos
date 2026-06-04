@@ -100,7 +100,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'The Consumption Function',
-      lede: 'Keynes\'s consumption function shows the relationship between total consumption (C) and national income (Y): <strong>C = a + bY</strong>, where consumption has two parts – autonomous consumption and induced consumption.',
+      lede: 'Keynes\'s consumption function shows the relationship between total consumption (C) and <strong>disposable income (Y<sub>d</sub>)</strong> – income left after direct tax: <strong>C = a + bY<sub>d</sub></strong>. Consumption has two parts – autonomous and induced. (For brevity, many textbooks just write Y; the spec rewards naming disposable income explicitly.)',
       ledeStyle: 'plain',
 
       tip: { icon: '✅', tone: 'green', text: 'Even with zero income, households still consume.' },
@@ -125,7 +125,7 @@ window.ECONOS_TOPIC = {
       },
 
       summaryRow: [
-        { tone: 'green', icon: '🧮', title: 'C = a + bY', text: '<em>a</em> = intercept (autonomous consumption). <em>b</em> = marginal propensity to consume.' }
+        { tone: 'green', icon: '🧮', title: 'C = a + bY<sub>d</sub>', text: '<em>a</em> = intercept (autonomous consumption). <em>b</em> = marginal propensity to consume. <em>Y<sub>d</sub></em> = disposable income (gross income minus direct taxes).' }
       ],
 
       causesLast: true,

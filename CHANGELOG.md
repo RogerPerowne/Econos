@@ -6,6 +6,43 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.48.0 — 2026-06-04
+
+### Supply-side Policies — 6-card build, third production EDL use
+
+**Completes the Theme 2.6 macro-policy trio** flagged in
+`docs/THEME_2_REVIEW.md` (fiscal v0.46.0, monetary v0.47.0, supply-side now).
+Six cards built from Roger's ChatGPT-pipeline mockups (2026-06-04).
+
+**Card structure** — pattern variety:
+
+| Card | Title | Pattern | Key visual |
+|---|---|---|---|
+| 1 | Supply-side policy – the big picture | Sequential flow chain | 5-step CORE IDEA + Market-based↔Interventionist pair + Why-it-matters trio |
+| 2 | Market-based supply-side policies | Sequential flow chain | 6 reform tools → 3 mechanisms (flow) → 6 outcomes (flowBottom) + gains/concerns pair |
+| 3 | Interventionist supply-side policies | Spectrum / regime grid | 5-input productivity engine + 5-output flow + 3-tile Why-govt-may-act + 4-tile Limits |
+| 4 | How supply-side policy shifts the economy | Decompose-a-diagram | **EDL `sras-shift-right` hero** + SRAS-vs-LRAS pair + 4-step transmission + supply-vs-demand-side trio |
+| 5 | Strengths, limits and time lags | Side-by-side pair | Strengths vs Limits + Time horizon flow + 4-tile what-determines-success |
+| 6 | The supply-side policy exam toolkit | Evidence-then-verdict | 6-tile bottlenecks + 3-tile common mistakes + 4-step how-to-write-it + 4-tile judgement questions |
+
+**Third production use of EDL — first non-AD intent.** Card 4 uses
+`intent: 'sras-shift-right'` (the supply-side equivalent of fiscal/monetary
+Cards 2/4's `ad-shift-right`). Same engine, different family member —
+proving the EDL `ad-as` registry is reusable beyond just AD shifts. Chart
+output: AD as solid blue, SRAS₁ dashed grey, SRAS₂ solid orange, E₁/E₂
+markers showing the correct supply-side economics (E₂ at higher Q, **lower
+P** — opposite of AD shift). Screenshot-verified in the production shell.
+
+**Card 6 differs in framing** from fiscal/monetary Card 6. Where those
+used Strengths/Limitations + 6-question judgement frame, supply-side
+Card 6 is a **diagnostic toolkit**: identify the bottleneck, name the
+policy, trace the chain, evaluate. Reflects the spec's emphasis on
+correct diagnosis as the critical supply-side skill.
+
+**All three Theme 2 placeholder topics from `docs/THEME_2_REVIEW.md` are
+now built.** Section 2.6 (Macroeconomic objectives and policies) is
+fully covered for the first time.
+
 ## 0.47.0 — 2026-06-04
 
 ### Demand-side Policies: Monetary — 6-card build, second production EDL use

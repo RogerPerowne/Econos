@@ -175,17 +175,17 @@ window.ECONOS_TOPIC = {
       template: 'worked-example',
       stepLabel: 'Learn: Step 3 of 4',
       title: 'Worked Example: Calculating the Multiplier Effect',
-      scenario: 'The UK government announces a <strong>£10bn green infrastructure programme</strong> – new offshore wind farms built using domestic contractors. A macro analyst is asked to estimate the total impact on national income.\n\nGiven: MPS = 0.15 · MRT = 0.25 · MPM = 0.10',
+      scenario: 'The UK government announces a <strong>£10bn green infrastructure programme</strong> – new offshore wind farms built using domestic contractors. A macro analyst is asked to estimate the total impact on national income.\n\nGiven: MPS = 0.15 · MPT = 0.25 · MPM = 0.10',
       steps: [
         {
           label: 'Step 1 – Sum the leakage rates',
-          hint: 'The full multiplier formula uses three leakages. What do MPS, MRT, and MPM each represent, and what is their sum here?',
-          answer: '<strong>MPS</strong> (marginal propensity to save) = 0.15 – fraction of each extra £1 of income that is saved.\n<strong>MRT</strong> (marginal rate of tax) = 0.25 – fraction taken in tax.\n<strong>MPM</strong> (marginal propensity to import) = 0.10 – fraction spent on imports (leaks abroad).\n\n<strong>Total leakage rate = MPS + MRT + MPM = 0.15 + 0.25 + 0.10 = 0.50</strong>\n\nHalf of every additional pound of income leaks out of the domestic circular flow.'
+          hint: 'The full multiplier formula uses three leakages. What do MPS, MPT, and MPM each represent, and what is their sum here?',
+          answer: '<strong>MPS</strong> (marginal propensity to save) = 0.15 – fraction of each extra £1 of income that is saved.\n<strong>MPT</strong> (marginal propensity to tax) = 0.25 – fraction taken in tax.\n<strong>MPM</strong> (marginal propensity to import) = 0.10 – fraction spent on imports (leaks abroad).\n\n<strong>Total leakage rate = MPS + MPT + MPM = 0.15 + 0.25 + 0.10 = 0.50</strong>\n\nHalf of every additional pound of income leaks out of the domestic circular flow.'
         },
         {
           label: 'Step 2 – Calculate the multiplier (k)',
           hint: 'Apply the full leakage formula. What is k = 1 ÷ (total leakage rate)?',
-          answer: '<strong>k = 1 ÷ (MPS + MRT + MPM) = 1 ÷ 0.50 = 2.0</strong>\n\nEvery £1 of government injection will generate £2 of national income in total – £1 direct + £1 from successive re-spending rounds.'
+          answer: '<strong>k = 1 ÷ (MPS + MPT + MPM) = 1 ÷ 0.50 = 2.0</strong>\n\nEvery £1 of government injection will generate £2 of national income in total – £1 direct + £1 from successive re-spending rounds.'
         },
         {
           label: 'Step 3 – Calculate the total change in national income (ΔY)',
@@ -195,7 +195,7 @@ window.ECONOS_TOPIC = {
         {
           label: 'Step 4 – Contrast with the simple (naïve) multiplier',
           hint: 'If a student used only MPS and ignored taxes and imports, what multiplier would they get – and why is it wrong?',
-          answer: '<strong>Simple k = 1 ÷ MPS = 1 ÷ 0.15 = 6.7</strong> → would predict ΔY = <strong>£67bn</strong>.\n\nThat is <em>more than three times</em> the realistic estimate. The simple version ignores that each re-spending round also loses 25p to tax and 10p to imports per £1. Using k = 1/(1−MPC) without accounting for MRT and MPM is a common exam error – and an easy mark lost.'
+          answer: '<strong>Simple k = 1 ÷ MPS = 1 ÷ 0.15 = 6.7</strong> → would predict ΔY = <strong>£67bn</strong>.\n\nThat is <em>more than three times</em> the realistic estimate. The simple version ignores that each re-spending round also loses 25p to tax and 10p to imports per £1. Using k = 1/(1−MPC) without accounting for MPT and MPM is a common exam error – and an easy mark lost.'
         },
         {
           label: 'Step 5 – Evaluate: will the full £20bn materialise?',
@@ -205,7 +205,7 @@ window.ECONOS_TOPIC = {
       ],
       conclusion: {
         label: 'Key result',
-        text: 'k = 2.0 → ΔY = £20bn. The full-leakage multiplier (accounting for MPS, MRT, and MPM) gives a result roughly 3× smaller than the naïve formula. In the UK, realistic multipliers are typically 1.2–1.7 – far below the textbook k = 5 that students sometimes mis-apply.'
+        text: 'k = 2.0 → ΔY = £20bn. The full-leakage multiplier (accounting for MPS, MPT, and MPM) gives a result roughly 3× smaller than the naïve formula. In the UK, realistic multipliers are typically 1.2–1.7 – far below the textbook k = 5 that students sometimes mis-apply.'
       }
     },
 

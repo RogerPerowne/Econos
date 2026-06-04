@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.45.2 — 2026-06-04
+
+### Theme 2 hot-fixes (per `docs/THEME_2_REVIEW.md` §2)
+
+- **MRT → MPT** in `national-income-and-the-multiplier` Card 3 (`scenario`,
+  Steps 1, 2, 4 and conclusion). The card was using "marginal rate of tax"
+  throughout the worked example while its own Card 2 `examEdge` explicitly
+  warns students *"Use MPC, MPS, MPT, MPM — not the older MRT / MRM"*. The
+  contradiction is gone; spec terminology is now consistent across the topic.
+- **Three `topicNum` corrections**:
+  - `standard-of-living-and-wellbeing` `'2.1.2'` → `'2.1.1'`
+  - `inflation-measurement-and-costs` `'2.2.1'` → `'2.1.2'`
+  - `employment-and-unemployment` `'1.3'` → `'2.1.3'`
+- **Off-by-one card-number source comments** in `inflation-measurement-and-costs`
+  (comments said `CARD 4 / 5 / 6` for the topic's cards 5 / 6 / 7).
+- **Parked `standard-of-living-and-wellbeing`** by flipping `included: false`
+  on every board until we decide whether to retire the topic or pivot it to a
+  distinct angle (Easterlin paradox / ONS wellbeing dashboard / Kahneman). Its
+  intended content already lives on `measures-of-economic-performance` Card 7.
+
 ## 0.45.1 — 2026-06-03
 
 ### EDL — wired into the production shells (no visible change)

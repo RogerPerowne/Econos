@@ -162,7 +162,14 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Expansionary fiscal policy is usually most effective when <strong>spare capacity exists</strong>.' },
 
       conclusion: { title: 'Big idea', text: 'Expansionary fiscal policy <strong>fills a demand gap</strong>.' },
-      examEdge: 'Trace the chain – <strong>policy change → AD shift → then output, jobs and prices</strong>. State explicitly whether the economy has spare capacity, because that is what determines whether the rise in AD becomes mostly output or mostly inflation.'
+      examEdge: 'Trace the chain – <strong>policy change → AD shift → then output, jobs and prices</strong>. State explicitly whether the economy has spare capacity, because that is what determines whether the rise in AD becomes mostly output or mostly inflation.',
+      economistQuote: {
+        portraitKey: 'economistKeynes',
+        tone: 'blue',
+        label: 'Economist insight: Keynes on counter-cyclical fiscal policy',
+        quote: 'The boom, not the slump, is the right time for austerity at the Treasury.',
+        attribution: 'John Maynard Keynes, <em>The Times</em> (1937)'
+      }
     },
 
     /* ====================================================================
@@ -373,9 +380,20 @@ window.ECONOS_TOPIC = {
       causes: [
         { tone: 'green',  icon: '🧑‍💼', head: 'Current spending',  body: 'Day-to-day spending on goods and services.' },
         { tone: 'blue',   icon: '🌉',         head: 'Capital spending',  body: 'Investment in infrastructure and long-term assets.' },
-        { tone: 'purple', icon: '💷',         head: 'Income tax',        body: 'Taxes on income and profits of individuals.' },
-        { tone: 'amber',  icon: '🛒',         head: 'Indirect tax',      body: 'Taxes on spending — e.g. VAT, excise duties.' },
-        { tone: 'rose',   icon: '👨‍👩‍👧', head: 'Transfers / benefits', body: 'Payments to households and individuals.' }
+        { tone: 'purple', icon: '💷',         head: 'Income tax (direct)', body: 'A <strong>direct tax</strong> on income and profits — paid by the person who legally owes it. Progressive in the UK.' },
+        { tone: 'amber',  icon: '🛒',         head: 'Indirect tax',      body: 'A tax on <strong>spending</strong> (VAT, excise duties) — collected by sellers, paid by buyers. Often regressive.' },
+        { tone: 'rose',   icon: '👨‍👩‍👧', head: 'Transfers / benefits', body: 'Payments to households (Universal Credit, pensions, child benefit). Do not count in GDP – they redistribute, not produce.' }
+      ],
+
+      causes2Label: 'DEFICIT VS SURPLUS — CYCLICAL VS STRUCTURAL',
+      causes2Emoji: '⚖️',
+      causes2Style: 'tinted-flat',
+      causes2Cols: 4,
+      causes2: [
+        { tone: 'rose',   icon: '📉', head: 'Budget deficit',     body: 'Spending > revenue this year. Government borrows; national debt rises. UK has run a deficit in 18 of the last 20 years.' },
+        { tone: 'green',  icon: '📈', head: 'Budget surplus',     body: 'Revenue > spending this year. Government can repay debt or save. The UK last ran a sustained surplus in 1999–2001.' },
+        { tone: 'amber',  icon: '🔁', head: 'Cyclical deficit',   body: 'The part of the deficit caused by the economy being below trend — auto-stabilisers at work. Disappears in a boom.' },
+        { tone: 'purple', icon: '🏛️', head: 'Structural deficit', body: 'The part that remains even at trend output. A <em>policy choice</em>, not the cycle. The OBR\'s focus when judging fiscal rules.' }
       ],
 
       flowBottomTitle: 'WHY THIS DISTINCTION MATTERS',
@@ -432,6 +450,19 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '📈', head: 'What happens to inflation?',                    body: 'Higher AD can lift prices, especially if the economy is near capacity.' },
         { tone: 'purple', icon: '💷', head: 'What happens to the budget balance and debt?', body: 'Bigger deficits today mean higher debt-servicing costs tomorrow.' },
         { tone: 'purple', icon: '⏰', head: 'Are there time lags or confidence problems?',    body: 'Recognition, decision and impact lags can delay or weaken effects.' }
+      ],
+
+      causes2Label: 'POLICY RESPONSES TO HISTORICAL CRISES',
+      causes2Emoji: '📚',
+      causes2Style: 'tinted-flat',
+      causes2Cols: 3,
+      causes2: [
+        { tone: 'rose',  icon: '🏚️', head: 'Great Depression (1929–39)',
+          body: '<strong>Keynesian reading:</strong> Roosevelt\'s <em>New Deal</em> (1933) injected ~5% of US GDP into public works and relief; output recovered. <strong>Classical / Austrian reading:</strong> recovery was uneven; WWII spending arguably mattered more than peacetime stimulus. The debate still shapes how examiners reward fiscal-policy answers.' },
+        { tone: 'amber', icon: '🏦', head: '2008 GFC – UK vs US responses',
+          body: '<strong>UK (Brown / Darling):</strong> VAT cut 17.5% → 15%, £2.3bn car-scrappage scheme, bank recapitalisation – then sharp pivot to <em>austerity</em> under Cameron / Osborne in 2010. <strong>US (Obama / ARRA, 2009):</strong> $831bn stimulus, larger and longer. The UK\'s smaller, briefer fiscal response is the canonical comparison case.' },
+        { tone: 'green', icon: '😷', head: '2020 COVID-19 furlough',
+          body: '<strong>UK (Sunak):</strong> £70bn Coronavirus Job Retention Scheme – the largest peacetime fiscal intervention in UK history. Defended at the time on Keynesian grounds (preserve incomes, prevent scarring); criticised later for over-stimulating demand into the 2022 inflation surge.' }
       ],
 
       flowBottomTitle: 'HOW TO WRITE IT',

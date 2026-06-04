@@ -6,6 +6,44 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.59.0 — 2026-06-04
+
+### Theme 2 review — Round 1: cleanups + trade-cycle orphan fixes
+
+Acting on the Theme 2 content audit.
+
+**Quick cleanups:**
+
+- **Friedman demoted on fiscal C5.** The full `economistQuote` (portrait
+  + standalone quote block) for Milton Friedman on `automatic-stabilisers-
+  toolkit` is now inline as a second `bottomTip` — his rules-vs-discretion
+  critique still lands but in 50 words rather than a portrait card. This
+  removes the audit's only "economist-insight overload" flag (fiscal
+  topic was carrying 3 full insights; now 2).
+- **`standard-of-living-and-wellbeing` re-parked under Theme 4.** The
+  parked stub was sitting under Theme 2 with `spec: '2.1.1'` and
+  `included: false`. Its core "beyond GDP" material is already covered by
+  `measures-of-economic-performance` Card 7; Theme 4 (Edexcel A 4.3.1,
+  measures of development) is the natural home for HDI / Easterlin /
+  ONS wellbeing dashboard / Kahneman experienced wellbeing.
+- *Mobile chart-label padding tweak deferred.* On closer inspection it
+  needs an engine-level change rather than CSS; will come as a separate
+  piece.
+
+**Trade-cycle orphan fixes (3 cards):**
+
+- **C1 trade-cycle-wave** (was 2 blocks): added a 4-column
+  `comparisonTable` "PHASE SIGNATURES" — quick-reference recap of each
+  phase's Output / Unemployment / Inflation / Leading signal.
+- **C2 demand-vs-supply-shocks** (was 2 blocks): added a
+  2-tile `summaryRow` stating the diagnostic rule explicitly
+  ("P and Y together → demand shock; opposite → supply shock") above the
+  predict-then-reveal scenarios.
+- **C4 actual-vs-potential-growth** (was 2 blocks): added a 6-tile
+  `causes` grid spelling out the six drivers of potential growth (labour
+  force, capital stock, productivity, skills, technology, trade) — these
+  previously only appeared inside one analysis prose panel.
+
 ## 0.58.0 — 2026-06-04
 
 ### Theme 2 AD/AS sweep — Batch 5: Aggregate-demand intro cards now interactive

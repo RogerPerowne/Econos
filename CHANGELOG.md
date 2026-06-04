@@ -22,8 +22,15 @@ The token set already exists and is good — the work is **consistent applicatio
 - **`styles.css` swept** — 77 duplicated hex literals replaced with their tokens
   (e.g. `#0B1426` → `var(--econ-ink)`). Value-preserving (the `:root` definitions
   are untouched, so rendering is pixel-identical — verified) and now **0 drift**
-  in the stylesheet. Remaining drift (`js/app.js` ~522, `js/icons.js` ~3013 SVG
-  chart fills) is the next, screenshot-verified, sweep.
+  in the stylesheet.
+- **`js/app.js` swept** — 215 inline-style hexes in CSS-declaration form
+  (`color:#0B1426` → `color:var(--econ-ink)`) tokenised; drift 522 → 307.
+  Deliberately **only** the `style="…"` CSS form: SVG `fill=`/`stroke=`
+  *attributes* (where `var()` doesn't resolve) and bare JS colour strings are left
+  alone. Verified value-preserving and screenshot-checked on a live card (incl. the
+  interactive AD/AS diagram).
+- Remaining drift (`js/app.js` 307 SVG attributes, `js/icons.js` ~3013 chart fills)
+  needs the `style="fill:…"` refactor — a later, screenshot-verified sweep.
 
 ## 0.61.0 — 2026-06-04
 

@@ -155,7 +155,7 @@
   ];
 
   function genSecLabel(emoji, text) {
-    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 18px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
+    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:var(--econ-ink);margin:24px 0 18px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:var(--econ-border);margin-left:6px;"></div></div>`;
   }
 
   /* Branches: three static layouts share one helper so the data-file
@@ -1120,7 +1120,7 @@
             <span style="font-size:15px;font-weight:800;color:${t.label};line-height:1.25;">${m.title || ''}</span>
           </div>
           <div style="padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;">
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${m.body || ''}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;">${m.body || ''}</div>
             ${m.example !== undefined ? `<div style="font-size:13px;color:#475569;line-height:1.5;margin-top:auto;"><span style="font-weight:800;color:${t.label};">${m.exampleLabel || mg.exampleLabel || 'Example'}:</span> <em>${m.example}</em></div>` : ''}
           </div>
         </div>`;
@@ -1154,7 +1154,7 @@
           </div>
           <div style="padding:18px 16px 20px;text-align:center;flex:1;display:flex;flex-direction:column;">
             <div style="font-size:34px;margin-bottom:8px;line-height:1;">${it.icon || ''}</div>
-            <div style="font-size:16px;font-weight:800;color:#0B1426;margin-bottom:8px;">${it.title}</div>
+            <div style="font-size:16px;font-weight:800;color:var(--econ-ink);margin-bottom:8px;">${it.title}</div>
             <div style="font-size:13px;color:#475569;line-height:1.6;">${it.body}</div>
           </div>
         </div>`;
@@ -1165,7 +1165,7 @@
     html += `
       <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:22px 24px 22px;margin-bottom:22px;">
         <div style="position:relative;padding:0 0 22px;">
-          <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#0B1426;margin-bottom:12px;">
+          <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--econ-ink);margin-bottom:12px;">
             <span>← ${con.leftCap || 'Markets'}</span>
             <span>${con.rightCap || 'Government'} →</span>
           </div>
@@ -1208,7 +1208,7 @@
     const co = fe.coordinator;
     const panel = co.panel ? `<div style="margin-top:12px;border:1px dashed ${ct.border};border-radius:10px;background:#fff;padding:11px 13px;text-align:center;">
         ${co.panel.title ? `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:${ct.label};margin-bottom:7px;">${co.panel.title}</div>` : ''}
-        ${(co.panel.lines || []).map(l => `<div style="font-size:12px;color:#0B1426;line-height:1.7;">${l}</div>`).join('')}
+        ${(co.panel.lines || []).map(l => `<div style="font-size:12px;color:var(--econ-ink);line-height:1.7;">${l}</div>`).join('')}
         ${co.panel.foot ? `<div style="font-size:11.5px;font-style:italic;color:${ct.label};margin-top:7px;">${co.panel.foot}</div>` : ''}
       </div>` : '';
     const coordCard = `<div style="border:2px solid ${ct.border};border-radius:16px;background:${ct.bg};padding:16px 16px 18px;text-align:center;">
@@ -1325,12 +1325,12 @@
           const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
           const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
           const bodyHtml = !v.body ? '' : Array.isArray(v.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:#0B1426;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${v.body}</div>`;
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:var(--econ-ink);line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${v.body}</div>`;
           const analysisHtml = v.analysis ? `
             <div style="margin-top:14px;padding-top:14px;border-top:1px solid ${t.border}60;">
               <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
-              <div style="font-size:13.5px;color:#0B1426;line-height:1.7;">${v.analysis}</div>
+              <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.7;">${v.analysis}</div>
             </div>` : '';
           return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:16px 20px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
             ${v.head ? `<div style="font-weight:800;font-size:15px;color:${t.label};line-height:1.35;margin-bottom:${v.body ? '8px' : '0'};">${v.head}</div>` : ''}
@@ -1358,8 +1358,8 @@
             const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
             const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
             const bodyHtml = Array.isArray(slot.body)
-              ? `<ul style="margin:0;padding:0;list-style:none;font-size:11.5px;color:#0B1426;line-height:1.55;">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
-              : `<div style="font-size:11.5px;color:#0B1426;line-height:1.6;">${slot.body || ''}</div>`;
+              ? `<ul style="margin:0;padding:0;list-style:none;font-size:11.5px;color:var(--econ-ink);line-height:1.55;">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
+              : `<div style="font-size:11.5px;color:var(--econ-ink);line-height:1.6;">${slot.body || ''}</div>`;
             const marker = v.icon
               ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${v.icon}</span>`
               : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
@@ -1390,7 +1390,7 @@
             const isActive = i === 0 && (!persp || persp === initialPersp);
             return `<div data-id-analysis="${i}"${perspAttr} style="display:${isActive ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
               <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
-              <div style="font-size:13.5px;color:#0B1426;line-height:1.7;">${slot.analysis}</div>
+              <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.7;">${slot.analysis}</div>
             </div>`;
           }).join('')
         ).join('') : '';
@@ -1433,8 +1433,8 @@
         const tipHead = (typeof tip === 'object' && tip.head) || null;
         const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
         const bodyHtml = tipHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;">${tipHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.55;">${tipText}</div></div>`
-          : `<div style="font-size:15px;color:#0B1426;line-height:1.55;">${tipText}</div>`;
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;">${tipHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.55;">${tipText}</div></div>`
+          : `<div style="font-size:15px;color:var(--econ-ink);line-height:1.55;">${tipText}</div>`;
         content += `
           <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:14px;">
             ${showIcon ? `<div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div>` : ''}
@@ -1471,7 +1471,7 @@
               ${iconHtml}
               <div style="flex:1;min-width:0;">
                 <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
-                <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+                <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${item.body}</div>
               </div>
             </div>`;
         }
@@ -1481,7 +1481,7 @@
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${item.icon}</div>
             <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         if (c.causesStyle === 'plain-white' && hasIcons) {
@@ -1492,7 +1492,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         if (flat && hasIcons) {
@@ -1503,7 +1503,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         if (hasIcons) {
@@ -1512,7 +1512,7 @@
           const exampleHtml = ex ? `
             <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:10px;border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
               ${ex.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${ex.icon}</div>` : ''}
-              <div style="font-size:12.5px;color:#0B1426;line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${ex.text}</div>
+              <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${ex.text}</div>
             </div>` : '';
           return `
           <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
@@ -1523,7 +1523,7 @@
               <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
               <span style="line-height:1.3;">${headText}</span>
             </div>
-            <div style="padding:13px 14px 14px;font-size:14px;color:#0B1426;line-height:1.65;flex:1;">${item.body}</div>
+            <div style="padding:13px 14px 14px;font-size:14px;color:var(--econ-ink);line-height:1.65;flex:1;">${item.body}</div>
             ${exampleHtml}
           </div>`;
         }
@@ -1542,7 +1542,7 @@
     // Intro/lede – styled as a thought-prompt callout
     if (c.intro) {
       content += `
-        <div style="background:var(--econ-blue-50);border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin-bottom:22px;font-size:15px;color:#0B1426;line-height:1.65;font-style:italic;">
+        <div style="background:var(--econ-blue-50);border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin-bottom:22px;font-size:15px;color:var(--econ-ink);line-height:1.65;font-style:italic;">
           💡 ${c.intro}
         </div>`;
     }
@@ -1563,7 +1563,7 @@
           <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:${pad};text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
             <div style="width:${ring}px;height:${ring}px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:${triple ? 26 : 30}px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);flex-shrink:0;">${side.icon || ''}</div>
             <div style="font-size:${triple ? 15 : 17}px;font-weight:800;color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
-            ${side.value ? `<div style="font-size:22px;font-weight:800;color:#0B1426;margin-bottom:8px;">${side.value}</div>` : ''}
+            ${side.value ? `<div style="font-size:22px;font-weight:800;color:var(--econ-ink);margin-bottom:8px;">${side.value}</div>` : ''}
             ${side.caption ? `<div style="font-size:${triple ? 12.5 : 13.5}px;color:${t.label};line-height:1.5;font-weight:600;">${side.caption}</div>` : ''}
             ${Array.isArray(side.chips) && side.chips.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:13px;">${side.chips.map(ch => `<span style="background:#fff;border:1px solid ${t.border};color:${t.label};font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;box-shadow:0 1px 2px rgba(0,0,0,0.04);">${ch}</span>`).join('')}</div>` : ''}
           </div>
@@ -1573,7 +1573,7 @@
       // better a little larger than the two-letter "VS".
       const badge = (txt) => {
         const fs = (txt && txt.length === 1) ? '20px' : '13px';
-        return `<div class="gen-comparison__op" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:46px;height:46px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:${fs};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${txt}</div></div>`;
+        return `<div class="gen-comparison__op" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:46px;height:46px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:800;font-size:${fs};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${txt}</div></div>`;
       };
       if (cmp.title) {
         content += genSecLabel(cmp.emoji || '⚖️', cmp.title);
@@ -1612,17 +1612,17 @@
               ${col.icon ? `<div style="font-size:20px;line-height:1;">${col.icon}</div>` : ''}
               <div style="font-size:14px;font-weight:800;color:${t.label};letter-spacing:0.02em;">${col.label}</div>
             </div>
-            <ul style="list-style:none;margin:0;padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.6;">
+            <ul style="list-style:none;margin:0;padding:12px 14px;font-size:13px;color:var(--econ-ink);line-height:1.6;">
               ${col.items.map(it => {
                 const ok = it.ok !== false;
                 const mark = ok
-                  ? `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#D1FAE5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✓</span>`
+                  ? `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--econ-green-100);color:var(--econ-green-600);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✓</span>`
                   : `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✕</span>`;
                 return `<li style="display:flex;align-items:flex-start;gap:9px;margin-bottom:7px;">${mark}<span>${it.text}</span></li>`;
               }).join('')}
             </ul>
           </div>`;
-        const separator = !isLast ? `<div class="gen-verdict__sep${sep === '→' ? ' gen-verdict__sep--arrow' : ''}" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:34px;height:34px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:${sep === '→' ? '15px' : '11px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(11,20,38,0.25);">${sep}</div></div>` : '';
+        const separator = !isLast ? `<div class="gen-verdict__sep${sep === '→' ? ' gen-verdict__sep--arrow' : ''}" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:34px;height:34px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:800;font-size:${sep === '→' ? '15px' : '11px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(11,20,38,0.25);">${sep}</div></div>` : '';
         return colHtml + separator;
       }).join('');
       content += `</div>`;
@@ -1662,7 +1662,7 @@
         const svgHtml = I[item.svgKey] || '';
         const bulletsHtml = (item.bullets || []).map(b => {
           const col = dotCol[b.tone || 'slate'] || dotCol.slate;
-          return `<div style="display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#374151;line-height:1.5;margin-bottom:5px;">
+          return `<div style="display:flex;align-items:flex-start;gap:7px;font-size:12px;color:var(--econ-gray-700);line-height:1.5;margin-bottom:5px;">
             <span style="flex-shrink:0;width:7px;height:7px;border-radius:50%;background:${col};margin-top:5px;"></span>
             <span>${b.text}</span>
           </div>`;
@@ -1704,8 +1704,8 @@
               ? `<span style="flex-shrink:0;width:34px;height:34px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${s.icon}</span>`
               : `<span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">${i + 1}</span>`);
           const bodyHtml = Array.isArray(s.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:13px;color:#0B1426;line-height:1.55;">${s.body}</div>`;
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:var(--econ-ink);line-height:1.55;">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${s.body}</div>`;
           const divider = !stepsBoxed && i < dp.steps.length - 1 && !stacked
             ? `border-bottom:1px solid #E7E7EA;padding-bottom:12px;margin-bottom:12px;`
             : '';
@@ -1722,7 +1722,7 @@
           </li>`;
         }).join('')}</ol>`
         : `<ul style="list-style:none;margin:0;padding:0;">${(dp.bullets || []).map(b => `
-          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:12.5px;color:#0B1426;line-height:1.55;">
+          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:12.5px;color:var(--econ-ink);line-height:1.55;">
             <span style="flex-shrink:0;width:7px;height:7px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>
             <span>${b}</span>
           </li>`).join('')}</ul>`;
@@ -1732,7 +1732,7 @@
       // 17px bold heading inside the panel was a one-off style that
       // existed nowhere else; removing it restores coherence and tightens
       // the panel's internal spacing.
-      const headerHtml = dp.intro ? `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;margin-bottom:12px;">${dp.intro}</div>` : '';
+      const headerHtml = dp.intro ? `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;margin-bottom:12px;">${dp.intro}</div>` : '';
       const hasBody = (headerHtml.trim() || notesHtml.trim());
       // Build the panel (section-label + box) into a string so it can
       // either render in place or be deferred via dp.position.
@@ -1779,7 +1779,7 @@
         const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
         const isLast = i === n - 1;
         const statusBadge = step.status === 'fail' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✕</div>` :
-                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
+                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
                             step.status === 'warn' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">!</div>` : '';
         return `
           <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
@@ -1810,32 +1810,32 @@
           ? `<div style="display:grid;grid-template-columns:repeat(${side.scenarios.length},1fr);gap:14px;">${side.scenarios.map(s => {
               const arrow = s.arrow === 'left'
                 ? `<div style="font-size:22px;color:#DC2626;font-weight:800;line-height:1;">←</div>`
-                : `<div style="font-size:22px;color:#059669;font-weight:800;line-height:1;">→</div>`;
+                : `<div style="font-size:22px;color:var(--econ-green-600);font-weight:800;line-height:1;">→</div>`;
               return `
                 <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;">
                   <div style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:36px;line-height:1;">${s.icon || ''}${arrow}</div>
-                  <div style="font-size:13px;color:#0B1426;line-height:1.55;">${s.text || ''}</div>
+                  <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${s.text || ''}</div>
                 </div>`;
             }).join('')}</div>`
           : useChecks
             ? `<ul style="list-style:none;margin:0;padding:0;">${side.checks.map(ch => `
-                <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:13.5px;color:#0B1426;line-height:1.6;">
+                <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:13.5px;color:var(--econ-ink);line-height:1.6;">
                   <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">✓</span>
                   <span><strong style="color:${tone.label};">${ch.term}</strong> – ${ch.body}</span>
                 </li>`).join('')}</ul>`
             : side.text
-              ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
+              ? `<div style="font-size:14px;color:var(--econ-ink);line-height:1.65;">${side.text}</div>`
               : (useRows
                 ? side.rows.map((r, idx) => `
                   <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
                     <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${r.icon || ''}</div>
                     <div style="flex:1;min-width:0;">
                       <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:3px;">${idx + 1}. ${r.title}</div>
-                      <div style="font-size:13px;color:#0B1426;line-height:1.55;">${r.text}</div>
+                      <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${r.text}</div>
                     </div>
                   </div>`).join('')
-                : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
-                    ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
+                : `<ul style="font-size:13px;color:var(--econ-ink);line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+                    ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:var(--econ-ink);">${p}</span></li>`).join('')}
                   </ul>`);
         const numberHtml = (side.number != null)
           ? `<div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${tone.accent};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">${side.number}</div>`
@@ -1949,7 +1949,7 @@
             </div>
             <div style="display:flex;align-items:flex-start;gap:16px;">
               <div style="flex-shrink:0;width:88px;height:88px;border-radius:14px;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:48px;line-height:1;">${p.icon || ''}</div>
-              <div style="flex:1;min-width:0;font-size:14px;color:#0B1426;line-height:1.65;">${p.body}</div>
+              <div style="flex:1;min-width:0;font-size:14px;color:var(--econ-ink);line-height:1.65;">${p.body}</div>
             </div>
           </div>`;
       }).join('');
@@ -2017,7 +2017,7 @@
             </div>
             <div style="display:flex;justify-content:center;align-items:center;height:64px;font-size:42px;line-height:1;margin-bottom:4px;">${item.icon || ''}</div>
             ${renderMiniChart(item, t)}
-            <div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:10px;">${item.body}</div>
+            <div style="font-size:13px;color:var(--econ-ink);line-height:1.6;margin-top:10px;">${item.body}</div>
           </div>`;
       }).join('');
       content += `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:22px;">${tilesHtml}</div>`;
@@ -2036,7 +2036,7 @@
             <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;align-self:flex-start;">${i + 1}</div>
             <div style="font-size:38px;line-height:1;margin-top:-8px;">${tile.icon || ''}</div>
             <div style="font-size:17px;font-weight:800;color:${t.label};">${tile.title}</div>
-            <div style="font-size:13px;color:#0B1426;line-height:1.55;">${tile.body}</div>
+            <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${tile.body}</div>
             ${tile.rule ? `<div style="margin-top:auto;background:#fff;border:1px solid ${t.border};color:${t.label};font-size:11.5px;font-weight:700;border-radius:8px;padding:5px 10px;line-height:1.35;">${tile.rule}</div>` : ''}
           </div>`;
       }).join('');
@@ -2052,7 +2052,7 @@
         const psTitle = (typeof ps === 'object' && ps.title) || 'PRICE';
         const psSub = (typeof ps === 'object' && ps.sub) || 'moves up ↑ / down ↓';
         return `
-          <div style="max-width:300px;margin:4px auto 0;background:#0B1426;color:#fff;border-radius:14px;padding:11px 18px;text-align:center;box-shadow:0 4px 14px rgba(11,20,38,0.22);">
+          <div style="max-width:300px;margin:4px auto 0;background:var(--econ-ink);color:#fff;border-radius:14px;padding:11px 18px;text-align:center;box-shadow:0 4px 14px rgba(11,20,38,0.22);">
             <div style="font-size:15px;font-weight:800;letter-spacing:0.05em;">${psTitle}</div>
             <div style="font-size:11.5px;color:#CBD5E1;margin-top:1px;">${psSub}</div>
           </div>
@@ -2084,7 +2084,7 @@
           <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
           <div>
             <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
-            <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+            <div style="font-size:15.5px;line-height:1.65;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
             <div style="font-size:13px;color:${t.label};font-weight:700;">– ${eq.attribution}</div>
           </div>
         </div>`;
@@ -2101,11 +2101,11 @@
         content += `
           <div style="display:flex;align-items:flex-start;gap:14px;background:${bt.bg};border:1px solid ${bt.border};border-radius:14px;padding:18px 20px;margin-bottom:22px;">
             ${c.bodyIcon ? `<div style="width:40px;height:40px;border-radius:50%;background:${bt.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${c.bodyIcon}</div>` : ''}
-            <div style="font-size:14.5px;color:#0B1426;line-height:1.65;">${c.body}</div>
+            <div style="font-size:14.5px;color:var(--econ-ink);line-height:1.65;">${c.body}</div>
           </div>`;
       } else {
         content += `
-          <div style="font-size:15px;line-height:1.8;color:#0B1426;margin-bottom:22px;padding:18px 20px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;">
+          <div style="font-size:15px;line-height:1.8;color:var(--econ-ink);margin-bottom:22px;padding:18px 20px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;">
             ${c.body}
           </div>`;
       }
@@ -2127,7 +2127,7 @@
       const t = PATTERN_TONES[cw.tone || 'amber'] || PATTERN_TONES.amber;
       if (cw.label) content += genSecLabel(cw.emoji || '🚩', cw.label);
       content += `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:16px 18px;margin-bottom:24px;">`;
-      if (cw.intro) content += `<div style="font-size:13.5px;color:#0B1426;line-height:1.55;margin-bottom:13px;">${cw.intro}</div>`;
+      if (cw.intro) content += `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;margin-bottom:13px;">${cw.intro}</div>`;
       content += `<div style="display:flex;flex-wrap:wrap;gap:9px;">`;
       content += cw.chips.map(ch => `<span style="display:inline-flex;align-items:center;background:#fff;border:1.5px solid ${t.border};color:${t.label};font-weight:800;font-size:14px;padding:7px 15px;border-radius:999px;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${ch}</span>`).join('');
       content += `</div></div>`;
@@ -2151,13 +2151,13 @@
         const inputIcon = (item) => `
           <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;">
             <div style="width:48px;height:48px;border-radius:50%;background:#fff;border:2.5px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;">${item.icon}</div>
-            <div style="font-size:11px;font-weight:700;color:#0B1426;text-align:center;line-height:1.25;max-width:60px;">${item.label}</div>
+            <div style="font-size:11px;font-weight:700;color:var(--econ-ink);text-align:center;line-height:1.25;max-width:60px;">${item.label}</div>
           </div>`;
         // Output icons: rounded squares with soft tinted background
         const outputIcon = (item) => `
           <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;">
             <div style="width:48px;height:48px;border-radius:10px;background:${t.soft};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;">${item.icon}</div>
-            <div style="font-size:11px;font-weight:700;color:#0B1426;text-align:center;line-height:1.25;max-width:60px;">${item.label}</div>
+            <div style="font-size:11px;font-weight:700;color:var(--econ-ink);text-align:center;line-height:1.25;max-width:60px;">${item.label}</div>
           </div>`;
         const connectorText = (text) => `<div style="font-size:13px;font-weight:800;color:${t.label};flex-shrink:0;padding:0 4px;align-self:center;margin-bottom:18px;">${text}</div>`;
         const arrowEl = `<div style="font-size:20px;color:${t.label};font-weight:700;flex-shrink:0;align-self:center;margin-bottom:18px;">→</div>`;
@@ -2168,7 +2168,7 @@
             ${flow.outputs.map((item, i) => `${i > 0 ? connectorText(flow.connector) : ''}${outputIcon(item)}`).join('')}
           </div>`).join('');
         const bulletsHtml = (box.bullets || []).map(b => `
-          <li style="display:flex;gap:8px;font-size:13px;color:#0B1426;line-height:1.6;margin-bottom:5px;">
+          <li style="display:flex;gap:8px;font-size:13px;color:var(--econ-ink);line-height:1.6;margin-bottom:5px;">
             <span style="color:${t.label};flex-shrink:0;margin-top:1px;">•</span><span>${b}</span>
           </li>`).join('');
         return `
@@ -2221,9 +2221,9 @@
       const noun = isDemand ? 'Demand' : 'Supply';
       content += `
         <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-bottom:22px;">
-          <div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;padding:14px 14px 10px;min-width:0;">
+          <div style="background:var(--econ-green-50);border:1px solid #A7F3D0;border-radius:12px;padding:14px 14px 10px;min-width:0;">
             ${rightSvg}
-            <div style="text-align:center;font-size:12px;font-weight:700;color:#059669;margin-top:6px;">${noun} increases (right shift)</div>
+            <div style="text-align:center;font-size:12px;font-weight:700;color:var(--econ-green-600);margin-top:6px;">${noun} increases (right shift)</div>
           </div>
           <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:12px;padding:14px 14px 10px;">
             ${leftSvg}
@@ -2254,9 +2254,9 @@
         const t = PATTERN_TONES[card.tone] || PATTERN_TONES.blue;
         const bulletsHtml = card.bullets && card.bullets.length ? `
           <ul style="list-style:none;padding:0;margin:0 0 14px;display:flex;flex-direction:column;gap:8px;">
-            ${card.bullets.map(b => `<li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#0B1426;line-height:1.5;"><span style="width:7px;height:7px;border-radius:50%;background:${t.accent};margin-top:8px;flex-shrink:0;"></span><span>${b}</span></li>`).join('')}
+            ${card.bullets.map(b => `<li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--econ-ink);line-height:1.5;"><span style="width:7px;height:7px;border-radius:50%;background:${t.accent};margin-top:8px;flex-shrink:0;"></span><span>${b}</span></li>`).join('')}
           </ul>` : '';
-        const bodyHtml = card.body ? `<div style="font-size:14px;color:#0B1426;line-height:1.6;margin-bottom:14px;flex:1;">${card.body}</div>` : '';
+        const bodyHtml = card.body ? `<div style="font-size:14px;color:var(--econ-ink);line-height:1.6;margin-bottom:14px;flex:1;">${card.body}</div>` : '';
         const badgeHtml = card.badge ? `
           <div style="display:flex;align-items:center;gap:10px;background:${t.soft};border-radius:10px;padding:9px 12px;margin-top:auto;">
             <div style="width:26px;height:26px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">${card.badge.icon}</div>
@@ -2355,7 +2355,7 @@
               ${iconHtml}
               <div style="flex:1;min-width:0;">
                 <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
-                <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+                <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${item.body}</div>
               </div>
             </div>`;
         }
@@ -2365,7 +2365,7 @@
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${item.icon}</div>
             <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         if (c.causesStyle === 'plain-white' && hasIcons) {
@@ -2376,7 +2376,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         if (flat && hasIcons) {
@@ -2387,7 +2387,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         if (hasIcons) {
@@ -2396,7 +2396,7 @@
           const exampleHtml = ex ? `
             <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:10px;border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
               ${ex.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${ex.icon}</div>` : ''}
-              <div style="font-size:12.5px;color:#0B1426;line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${ex.text}</div>
+              <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${ex.text}</div>
             </div>` : '';
           return `
           <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
@@ -2407,7 +2407,7 @@
               <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
               <span style="line-height:1.3;">${headText}</span>
             </div>
-            <div style="padding:13px 14px 14px;font-size:14px;color:#0B1426;line-height:1.65;flex:1;">${item.body}</div>
+            <div style="padding:13px 14px 14px;font-size:14px;color:var(--econ-ink);line-height:1.65;flex:1;">${item.body}</div>
             ${exampleHtml}
           </div>`;
         }
@@ -2448,7 +2448,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         return `
@@ -2457,7 +2457,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon || ''}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
       }).join('');
       const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, 1fr)` : gridColumnsFor(c.causes2.length, 180);
@@ -2478,7 +2478,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         return `
@@ -2487,7 +2487,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon || ''}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
       }).join('');
       const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, 1fr)` : gridColumnsFor(c.causes3.length, 180);
@@ -2536,7 +2536,7 @@
         <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;border-top:${i === 0 && headers.length === 0 ? 'none' : '1px solid #E2E8F0'};background:${i % 2 === 0 ? '#fff' : '#FAFBFC'};">
           ${hasIcon ? `<div style="padding:14px 0 14px 16px;font-size:20px;line-height:1.2;display:flex;align-items:center;">${r.icon || ''}</div>` : ''}
           <div style="padding:14px 16px;font-size:14px;font-weight:700;color:${labelCol};display:flex;align-items:center;">${r.label}</div>
-          <div style="padding:14px 16px;font-size:14px;color:#0B1426;line-height:1.55;border-left:1px solid #E2E8F0;display:flex;align-items:center;">${r.value}</div>
+          <div style="padding:14px 16px;font-size:14px;color:var(--econ-ink);line-height:1.55;border-left:1px solid #E2E8F0;display:flex;align-items:center;">${r.value}</div>
         </div>
       `;
       }).join('');
@@ -2629,20 +2629,20 @@
               <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">${s.icon || '👤'}</span>
               <span style="font-size:15px;font-weight:800;color:${t.label};">${s.name || ''}</span>
             </div>
-            ${s.premise ? `<div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${s.premise}</div>` : ''}
-            ${s.reason ? `<div style="font-size:13px;color:#0B1426;line-height:1.55;border-top:1px dashed ${t.border};padding-top:9px;"><strong style="color:${t.label};">Reason:</strong> ${s.reason}</div>` : ''}
+            ${s.premise ? `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${s.premise}</div>` : ''}
+            ${s.reason ? `<div style="font-size:13px;color:var(--econ-ink);line-height:1.55;border-top:1px dashed ${t.border};padding-top:9px;"><strong style="color:${t.label};">Reason:</strong> ${s.reason}</div>` : ''}
           </div>`;
         }
         return `<div style="flex:1;min-width:0;border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:12px 14px;text-align:center;">
           <div style="font-size:14px;font-weight:800;color:${t.label};margin-bottom:3px;line-height:1.25;">${s.label || ''}</div>
-          <div style="font-size:12.5px;color:#0B1426;line-height:1.45;">${s.sub || ''}</div>
+          <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.45;">${s.sub || ''}</div>
         </div>`;
       };
-      const vsBadge = `<div class="versus-list__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,20,38,0.25);">${vl.vs || 'VS'}</div></div>`;
+      const vsBadge = `<div class="versus-list__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:800;font-size:11px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,20,38,0.25);">${vl.vs || 'VS'}</div></div>`;
       content += `<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:26px;">`;
       content += vl.rows.map(row => `
         <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:16px;">
-          ${row.heading ? `<div style="text-align:center;font-size:13px;font-weight:800;color:#2563EB;margin-bottom:12px;letter-spacing:0.01em;">${row.heading}</div>` : ''}
+          ${row.heading ? `<div style="text-align:center;font-size:13px;font-weight:800;color:var(--econ-blue);margin-bottom:12px;letter-spacing:0.01em;">${row.heading}</div>` : ''}
           <div class="versus-list__pair" style="display:flex;align-items:stretch;gap:12px;">${sideHtml(row.left)}${vsBadge}${sideHtml(row.right)}</div>
           ${row.note ? `<div style="text-align:center;font-size:12.5px;color:#475569;line-height:1.5;margin-top:10px;">${row.note}</div>` : ''}
         </div>`).join('');
@@ -2698,7 +2698,7 @@
         const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
         const isLast = i === nb - 1;
         const statusBadge = step.status === 'fail' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✕</div>` :
-                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
+                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
                             step.status === 'warn' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">!</div>` : '';
         return `
           <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
@@ -2724,7 +2724,7 @@
       };
       content += `
       <div style="border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;margin-bottom:28px;">
-        <div style="background:#0B1426;padding:14px 18px;display:flex;align-items:center;gap:10px;">
+        <div style="background:var(--econ-ink);padding:14px 18px;display:flex;align-items:center;gap:10px;">
           <span style="font-size:18px;">🎓</span>
           <div>
             <div style="color:#fff;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;">${c.productExamplesTitle || 'Think like an examiner'}</div>
@@ -2738,11 +2738,11 @@
               return `
               <div class="reveal-cell" style="background:#fff;border-radius:14px;border:1px solid #E2E8F0;padding:16px 15px;box-shadow:0 3px 14px rgba(0,0,0,0.08);">
                 <div style="font-size:28px;margin-bottom:9px;line-height:1;">${p.icon}</div>
-                <div style="font-weight:800;font-size:14px;color:#0B1426;margin-bottom:10px;">${p.product}</div>
+                <div style="font-weight:800;font-size:14px;color:var(--econ-ink);margin-bottom:10px;">${p.product}</div>
                 <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:#475569;font-size:12px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;width:100%;">Predict verdict ↓</button>
                 <div class="reveal-cell__body is-hidden">
                   <div style="display:inline-block;padding:3px 10px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:11px;font-weight:700;margin-bottom:10px;">${p.verdict}</div>
-                  <div style="font-size:13.5px;color:#0B1426;line-height:1.6;padding-top:2px;">${p.reasoning}</div>
+                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.6;padding-top:2px;">${p.reasoning}</div>
                 </div>
               </div>`;
             }).join('')}
@@ -2763,7 +2763,7 @@
           <div style="width:34px;height:34px;border-radius:50%;background:${t.headerBg};color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;">${i + 1}</div>
           <div>
             <div style="font-weight:800;font-size:15px;color:${t.label};margin-bottom:5px;">${head}</div>
-            <div style="font-size:14px;color:#0B1426;line-height:1.65;">${body}</div>
+            <div style="font-size:14px;color:var(--econ-ink);line-height:1.65;">${body}</div>
           </div>
         </div>`;
       }).join('');
@@ -2825,7 +2825,7 @@
       }).join('');
       content += `</div>`;
       if (c.footer) {
-        content += `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
+        content += `<p style="font-size:13px;color:var(--econ-ink);font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
       }
     }
 
@@ -2843,8 +2843,8 @@
         const noteHead = (typeof note === 'object' && note.head) || null;
         const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
         const bodyHtml = noteHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};">${noteHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div></div>`
-          : `<div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div>`;
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div></div>`
+          : `<div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div>`;
         content += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:14px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
       });
     }
@@ -2866,15 +2866,15 @@
               <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">${s.icon || '👤'}</span>
               <span style="font-size:15px;font-weight:800;color:${t.label};">${s.name || ''}</span>
             </div>
-            ${s.premise ? `<div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${s.premise}</div>` : ''}
-            ${s.interpretation ? `<div style="font-size:13.5px;color:#0B1426;line-height:1.55;border-top:1px dashed ${t.border};padding-top:10px;">${s.interpretation}</div>` : ''}
+            ${s.premise ? `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;">${s.premise}</div>` : ''}
+            ${s.interpretation ? `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;border-top:1px dashed ${t.border};padding-top:10px;">${s.interpretation}</div>` : ''}
             <div style="text-align:center;color:${t.accent};font-size:18px;line-height:1;">↓</div>
-            <div style="font-size:14px;font-weight:800;color:#0B1426;line-height:1.4;">${s.conclusion || ''}</div>
+            <div style="font-size:14px;font-weight:800;color:var(--econ-ink);line-height:1.4;">${s.conclusion || ''}</div>
           </div>`;
       };
       // vs-style: same dark "VS" badge the comparison block uses, between
       // the two sides. `.split-decision` stacks to a column on mobile.
-      const vsBadge = `<div class="split-decision__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:46px;height:46px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:13px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${sd.vs || 'VS'}</div></div>`;
+      const vsBadge = `<div class="split-decision__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:46px;height:46px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:800;font-size:13px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${sd.vs || 'VS'}</div></div>`;
       content += `<div class="split-decision" style="display:flex;align-items:stretch;gap:14px;margin-bottom:26px;">${sd.sides.map(cardHtml).join(vsBadge)}</div>`;
     }
 
@@ -2889,11 +2889,11 @@
         const icon = cell.icon || '';
         const itemsHtml = Array.isArray(cell.items) && cell.items.length
           ? `<ul style="margin:6px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;">${
-              cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
+              cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:13px;color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
             }</ul>`
           : '';
         const bodyHtml = cell.text
-          ? `<div style="font-size:13px;color:#0B1426;line-height:1.55;">${cell.text}</div>${itemsHtml}`
+          ? `<div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${cell.text}</div>${itemsHtml}`
           : itemsHtml;
         return `
           <div style="border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:14px 14px 12px;display:flex;flex-direction:column;">
@@ -2916,11 +2916,11 @@
       const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
       if (conText) {
         content += `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:#ECFDF5;border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:14px 18px;margin-bottom:22px;">
-            <div style="width:30px;height:30px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">↔</div>
+          <div style="display:flex;gap:14px;align-items:flex-start;background:var(--econ-green-50);border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:14px 18px;margin-bottom:22px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">↔</div>
             <div style="flex:1;">
-              <div style="font-size:12px;font-weight:800;color:#065F46;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
+              <div style="font-size:12px;font-weight:800;color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
+              <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${conText}</div>
             </div>
           </div>`;
       }
@@ -2933,11 +2933,11 @@
       const noteText  = typeof c.balancedNote === 'object' ? c.balancedNote.text : c.balancedNote;
       if (noteText) {
         content += `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #D97706;border-radius:12px;padding:14px 18px;margin-bottom:22px;">
-            <div style="width:30px;height:30px;border-radius:50%;background:#D97706;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">⚠</div>
+          <div style="display:flex;gap:14px;align-items:flex-start;background:var(--econ-amber-50);border:1px solid #FDE68A;border-left:4px solid #D97706;border-radius:12px;padding:14px 18px;margin-bottom:22px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-amber-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">⚠</div>
             <div style="flex:1;">
               <div style="font-size:12px;font-weight:800;color:#92400E;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${noteTitle}</div>
-              <div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div>
+              <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div>
             </div>
           </div>`;
       }
@@ -2955,8 +2955,8 @@
         const tipHead = (typeof tip === 'object' && tip.head) || null;
         const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
         const bodyHtml = tipHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;">${tipHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.55;">${tipText}</div></div>`
-          : `<div style="font-size:15px;color:#0B1426;line-height:1.55;">${tipText}</div>`;
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;">${tipHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.55;">${tipText}</div></div>`
+          : `<div style="font-size:15px;color:var(--econ-ink);line-height:1.55;">${tipText}</div>`;
         content += `
           <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;">
             <div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div>
@@ -2974,7 +2974,7 @@
           return `
           <div style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}30;">
             <div style="padding:10px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:13px;">${kt.term}</div>
-            <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">${kt.def}</div>
+            <div style="padding:12px 14px;font-size:13px;color:var(--econ-ink);line-height:1.55;">${kt.def}</div>
           </div>`;
         }).join('')}
       </div>`;
@@ -2989,14 +2989,14 @@
         const liIcon  = liData.icon  || '🎯';
         const liItemsHtml = liData.items.map(it => `
           <div style="display:flex;align-items:center;gap:8px;flex:1 1 0;min-width:140px;">
-            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#D1FAE5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">✓</span>
-            <span style="font-size:13px;color:#0B1426;font-weight:600;line-height:1.4;">${it}</span>
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--econ-green-100);color:var(--econ-green-600);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">✓</span>
+            <span style="font-size:13px;color:var(--econ-ink);font-weight:600;line-height:1.4;">${it}</span>
           </div>`).join('');
         content += `
           <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:14px 18px 12px;margin-bottom:22px;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
               <span style="font-size:15px;line-height:1;">${liIcon}</span>
-              <span style="font-size:12px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.08em;">${liTitle}</span>
+              <span style="font-size:12px;font-weight:800;color:var(--econ-green-600);text-transform:uppercase;letter-spacing:0.08em;">${liTitle}</span>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:14px 22px;">${liItemsHtml}</div>
           </div>`;
@@ -3042,8 +3042,8 @@
         const noteHead = (typeof note === 'object' && note.head) || null;
         const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
         const bodyHtml = noteHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};">${noteHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div></div>`
-          : `<div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div>`;
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div></div>`
+          : `<div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div>`;
         noteTopHtml += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
       });
     }
@@ -3435,7 +3435,7 @@
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
             <div>
               <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
-              <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-size:15.5px;line-height:1.65;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
               <div style="font-size:13px;color:${t.label};font-weight:700;">– ${eq.attribution}</div>
             </div>
           </div>`;
@@ -3606,7 +3606,7 @@
       ${c.howItWorks ? `
         <div style="background:#F8FAFC;border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin:18px 0;">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-blue);margin-bottom:8px;">How to read it</div>
-          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+          <div style="font-size:15px;line-height:1.7;color:var(--econ-ink);">${c.howItWorks}</div>
         </div>
       ` : ''}
 
@@ -3648,13 +3648,13 @@
           <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;">
             <div data-we-num="${n}" style="width:32px;height:32px;border-radius:50%;background:${tone.c};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;box-shadow:0 2px 6px ${tone.c}55;">${n}</div>
             <div style="flex:1;min-width:0;">
-              <div style="font-size:14.5px;font-weight:700;color:#0B1426;line-height:1.45;">${heading}</div>
+              <div style="font-size:14.5px;font-weight:700;color:var(--econ-ink);line-height:1.45;">${heading}</div>
               ${hint}
             </div>
             <div data-we-done style="display:none;background:${tone.c};color:#fff;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:800;flex-shrink:0;align-self:flex-start;">✓ Done</div>
           </div>
           <button class="we-step__btn" data-action="we-reveal" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:12.5px;font-weight:800;padding:8px 14px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;">Show working ↓</button>
-          <div class="we-step__answer is-hidden" style="margin-top:12px;padding:12px 14px;background:${tone.soft};border-radius:8px;border-left:4px solid ${tone.c};font-size:13.5px;color:#0B1426;line-height:1.65;">${answer}</div>
+          <div class="we-step__answer is-hidden" style="margin-top:12px;padding:12px 14px;background:${tone.soft};border-radius:8px;border-left:4px solid ${tone.c};font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${answer}</div>
         </div>
       `;
     }).join('<div style="display:flex;justify-content:center;align-items:center;height:18px;"><div style="width:2px;height:100%;background:#CBD5E1;border-radius:2px;"></div></div>');
@@ -3701,7 +3701,7 @@
 
     const scenario = c.scenario ? `
       ${genSecLabel('📋', 'Scenario')}
-      <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.65;color:#0B1426;margin-bottom:18px;">${linebreak(c.scenario)}</div>
+      <div style="background:var(--econ-blue-50);border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.65;color:var(--econ-ink);margin-bottom:18px;">${linebreak(c.scenario)}</div>
     ` : '';
 
     return `
@@ -3727,7 +3727,7 @@
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
             <div>
               <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
-              <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-size:15.5px;line-height:1.65;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
               <div style="font-size:13px;color:${t.label};font-weight:700;">– ${eq.attribution}</div>
             </div>
           </div>`;
@@ -3761,11 +3761,11 @@
           <div style="font-weight:800;font-size:15px;color:${tone.c};letter-spacing:0.01em;flex:1;">${title}</div>
           <div data-solved-badge style="display:none;background:${tone.c};color:#fff;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:800;flex-shrink:0;">✓ Done</div>
         </div>
-        <div style="font-size:14px;color:#0B1426;line-height:1.6;margin-bottom:12px;">${prompt}</div>
-        ${formula ? `<div style="background:${tone.bg};border:1px dashed ${tone.c}50;border-radius:10px;padding:11px 14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:#0B1426;margin-bottom:12px;text-align:center;letter-spacing:0.02em;">${formula}</div>` : ''}
+        <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;margin-bottom:12px;">${prompt}</div>
+        ${formula ? `<div style="background:${tone.bg};border:1px dashed ${tone.c}50;border-radius:10px;padding:11px 14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:var(--econ-ink);margin-bottom:12px;text-align:center;letter-spacing:0.02em;">${formula}</div>` : ''}
         ${preview ? `<div class="ped-step__preview" style="margin-bottom:12px;">${preview}</div>` : ''}
         <button data-action="ped-solve" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:13px;font-weight:800;padding:9px 16px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;transition:all 0.2s ease;">Solve step ${n} ↓</button>
-        <div class="ped-step__answer is-hidden" style="margin-top:14px;padding:14px 16px;background:${tone.soft};border-radius:10px;border-left:4px solid ${tone.c};font-size:14px;color:#0B1426;line-height:1.65;">${reveal}</div>
+        <div class="ped-step__answer is-hidden" style="margin-top:14px;padding:14px 16px;background:${tone.soft};border-radius:10px;border-left:4px solid ${tone.c};font-size:14px;color:var(--econ-ink);line-height:1.65;">${reveal}</div>
       </div>
     `;
 
@@ -3823,7 +3823,7 @@
 
     // Context strip
     const contextStrip = contextLine ? `
-      <div style="margin-top:18px;padding:14px 18px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;border-left:4px solid #0B1426;font-size:14px;color:#0B1426;line-height:1.65;">
+      <div style="margin-top:18px;padding:14px 18px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;border-left:4px solid #0B1426;font-size:14px;color:var(--econ-ink);line-height:1.65;">
         <strong>💡 Why?</strong> ${contextLine}
       </div>
     ` : '';
@@ -3923,12 +3923,12 @@
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
               <div style="border-radius:10px;background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
                 <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
-                <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">${fmtMoney(p1)} <span style="font-size:13px;color:#475569;font-weight:600;">/ ticket</span></div>
+                <div style="font-size:18px;font-weight:800;color:var(--econ-ink);margin-top:4px;">${fmtMoney(p1)} <span style="font-size:13px;color:#475569;font-weight:600;">/ ticket</span></div>
                 <div style="font-size:13px;color:#475569;margin-top:2px;">${q1.toLocaleString()} tickets sold</div>
               </div>
               <div style="border-radius:10px;background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
                 <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
-                <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">${fmtMoney(p2)} <span style="font-size:13px;color:#475569;font-weight:600;">/ ticket</span></div>
+                <div style="font-size:18px;font-weight:800;color:var(--econ-ink);margin-top:4px;">${fmtMoney(p2)} <span style="font-size:13px;color:#475569;font-weight:600;">/ ticket</span></div>
                 <div style="font-size:13px;color:#475569;margin-top:2px;">${q2.toLocaleString()} tickets sold</div>
               </div>
             </div>
@@ -3955,7 +3955,7 @@
         <div>
           <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-bottom:4px;">
             <span style="color:${T1.c};">TR Before · ${fmtMoney(p1)} × ${q1}</span>
-            <span style="color:#0B1426;">${fmtMoney(tr1)}</span>
+            <span style="color:var(--econ-ink);">${fmtMoney(tr1)}</span>
           </div>
           <div style="height:${barH}px;background:#F1F5F9;border-radius:8px;overflow:hidden;">
             <div style="width:${(tr1 / trMax) * 100}%;height:100%;background:linear-gradient(90deg,${T1.c},${T1.c}cc);"></div>
@@ -3964,7 +3964,7 @@
         <div>
           <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-bottom:4px;">
             <span style="color:${T5.c};">TR After · ${fmtMoney(p2)} × ${q2}</span>
-            <span style="color:#0B1426;">${fmtMoney(tr2)}</span>
+            <span style="color:var(--econ-ink);">${fmtMoney(tr2)}</span>
           </div>
           <div style="height:${barH}px;background:#F1F5F9;border-radius:8px;overflow:hidden;">
             <div style="width:${(tr2 / trMax) * 100}%;height:100%;background:linear-gradient(90deg,${T5.c},${T5.c}cc);"></div>
@@ -4002,11 +4002,11 @@
           prompt: 'Plug the two answers into the PED equation – the result is your coefficient.',
           formula: `PED&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T1.c};font-weight:800;">% ΔQ</span>&nbsp;&nbsp;÷&nbsp;&nbsp;<span style="color:${T2.c};font-weight:800;">% ΔP</span>`,
           reveal: `<div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;font-weight:800;">
-            <span style="color:#0B1426;">PED =</span>
+            <span style="color:var(--econ-ink);">PED =</span>
             <span style="background:${T1.soft};color:${T1.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T1.c}50;">${fmtPct(pctQ)}</span>
-            <span style="color:#0B1426;">÷</span>
+            <span style="color:var(--econ-ink);">÷</span>
             <span style="background:${T2.soft};color:${T2.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T2.c}50;">${fmtPct(pctP)}</span>
-            <span style="color:#0B1426;">=</span>
+            <span style="color:var(--econ-ink);">=</span>
             <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:8px;font-size:18px;box-shadow:0 2px 8px ${T3.c}55;">${ped.toFixed(2)}</span>
           </div>
           <div style="margin-top:12px;font-size:13.5px;text-align:center;">The minus sign is expected – but we classify using the <strong>magnitude</strong> |${ped.toFixed(2)}| = ${absPed.toFixed(2)}.</div>`
@@ -4038,7 +4038,7 @@
             <span style="font-size:22px;">✅</span>
             <div>
               <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
-              <div style="font-size:16px;font-weight:800;color:#0B1426;margin-top:2px;">Demand is <span style="color:${T4.c};">price ${verdict.toLowerCase()}</span></div>
+              <div style="font-size:16px;font-weight:800;color:var(--econ-ink);margin-top:2px;">Demand is <span style="color:${T4.c};">price ${verdict.toLowerCase()}</span></div>
               <div style="font-size:13px;color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise caused a ${fmtPct(pctQ)} fall in quantity – a bigger proportional response.</div>
             </div>
           </div>`
@@ -4052,7 +4052,7 @@
             <div style="background:${T5.c};color:#fff;border-radius:10px;padding:8px 14px;font-size:18px;font-weight:800;flex-shrink:0;">${trDelta < 0 ? '−' : '+'}${fmtMoney(Math.abs(trDelta))}</div>
             <div>
               <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">Revenue impact</div>
-              <div style="font-size:14px;color:#0B1426;margin-top:3px;line-height:1.5;">Revenue ${trDelta < 0 ? '<strong>falls</strong>' : '<strong>rises</strong>'} by ${fmtMoney(Math.abs(trDelta))}. The promoter would earn more by keeping the price at ${fmtMoney(p1)}.</div>
+              <div style="font-size:14px;color:var(--econ-ink);margin-top:3px;line-height:1.5;">Revenue ${trDelta < 0 ? '<strong>falls</strong>' : '<strong>rises</strong>'} by ${fmtMoney(Math.abs(trDelta))}. The promoter would earn more by keeping the price at ${fmtMoney(p1)}.</div>
             </div>
           </div>`
         }
@@ -4139,12 +4139,12 @@
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
               <div style="border-radius:10px;background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
                 <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
-                <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">${fmtMoney(p1)} <span style="font-size:13px;color:#475569;font-weight:600;">/ bbl</span></div>
+                <div style="font-size:18px;font-weight:800;color:var(--econ-ink);margin-top:4px;">${fmtMoney(p1)} <span style="font-size:13px;color:#475569;font-weight:600;">/ bbl</span></div>
                 <div style="font-size:13px;color:#475569;margin-top:2px;">${q1}m ${s.qUnit || 'bbl/day'}</div>
               </div>
               <div style="border-radius:10px;background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
                 <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
-                <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">${fmtMoney(p2)} <span style="font-size:13px;color:#475569;font-weight:600;">/ bbl</span></div>
+                <div style="font-size:18px;font-weight:800;color:var(--econ-ink);margin-top:4px;">${fmtMoney(p2)} <span style="font-size:13px;color:#475569;font-weight:600;">/ bbl</span></div>
                 <div style="font-size:13px;color:#475569;margin-top:2px;">${q2}m ${s.qUnit || 'bbl/day'}</div>
               </div>
             </div>
@@ -4223,11 +4223,11 @@
             prompt: 'Divide % ΔQS by % ΔP to get the PES coefficient.',
             formula: `PES&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T2.c};font-weight:800;">% ΔQS</span>&nbsp;&nbsp;÷&nbsp;&nbsp;<span style="color:${T1.c};font-weight:800;">% ΔP</span>`,
             reveal: `<div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;font-weight:800;">
-              <span style="color:#0B1426;">PES =</span>
+              <span style="color:var(--econ-ink);">PES =</span>
               <span style="background:${T2.soft};color:${T2.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T2.c}50;">${fmtPct(pctQS)}</span>
-              <span style="color:#0B1426;">÷</span>
+              <span style="color:var(--econ-ink);">÷</span>
               <span style="background:${T1.soft};color:${T1.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T1.c}50;">${fmtPct(pctP)}</span>
-              <span style="color:#0B1426;">=</span>
+              <span style="color:var(--econ-ink);">=</span>
               <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:8px;font-size:18px;box-shadow:0 2px 8px ${T3.c}55;">${pes.toFixed(2)}</span>
             </div>
             <div style="margin-top:12px;font-size:13.5px;text-align:center;">Supply responded much less proportionally than price – a classic sign of inelastic supply.</div>`
@@ -4259,7 +4259,7 @@
               <span style="font-size:22px;">✅</span>
               <div>
                 <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
-                <div style="font-size:16px;font-weight:800;color:#0B1426;margin-top:2px;">Oil supply is <span style="color:${T4.c};">${verdict.toLowerCase()}</span></div>
+                <div style="font-size:16px;font-weight:800;color:var(--econ-ink);margin-top:2px;">Oil supply is <span style="color:${T4.c};">${verdict.toLowerCase()}</span></div>
                 <div style="font-size:13px;color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise only unlocked ${fmtPct(pctQS)} more supply – a much smaller proportional response.</div>
               </div>
             </div>`
@@ -4269,7 +4269,7 @@
             prompt: 'With inelastic supply, what happens when demand surges? Where does the adjustment fall?',
             formula: `Demand shift → split between <span style="color:${T5.c};font-weight:800;">Price ↑</span> and <span style="color:${T1.c};font-weight:800;">Quantity ↑</span>`,
             reveal: `${impactBars}
-            <div style="background:#fff;border-radius:10px;padding:12px 14px;border:2px solid ${T5.c};font-size:14px;color:#0B1426;line-height:1.65;">
+            <div style="background:#fff;border-radius:10px;padding:12px 14px;border:2px solid ${T5.c};font-size:14px;color:var(--econ-ink);line-height:1.65;">
               <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};margin-bottom:6px;">Policy insight</div>
               With PES = ${pes.toFixed(2)}, a demand surge goes <strong>mostly into higher prices</strong>, not more output. Fixed refineries and long drilling timelines mean short-run supply is near-vertical. <strong>Long-run PES is higher</strong> as new infrastructure is eventually built, moderating prices over time.
             </div>`
@@ -4368,12 +4368,12 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
             <div style="border-radius:10px;background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
               <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
-              <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">Income: <span style="font-size:15px;">${fmtIncome(income1)}</span></div>
+              <div style="font-size:18px;font-weight:800;color:var(--econ-ink);margin-top:4px;">Income: <span style="font-size:15px;">${fmtIncome(income1)}</span></div>
               <div style="font-size:13px;color:#475569;margin-top:2px;">${q1.toLocaleString()} bus trips/day</div>
             </div>
             <div style="border-radius:10px;background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
               <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
-              <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">Income: <span style="font-size:15px;">${fmtIncome(income2)}</span></div>
+              <div style="font-size:18px;font-weight:800;color:var(--econ-ink);margin-top:4px;">Income: <span style="font-size:15px;">${fmtIncome(income2)}</span></div>
               <div style="font-size:13px;color:#475569;margin-top:2px;">${q2.toLocaleString()} bus trips/day</div>
             </div>
           </div>
@@ -4523,12 +4523,12 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
             <div style="border-radius:10px;background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
               <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
-              <div style="font-size:14px;font-weight:800;color:#0B1426;margin-top:4px;">${goodB}: ${cur}${pB1}/cup</div>
+              <div style="font-size:14px;font-weight:800;color:var(--econ-ink);margin-top:4px;">${goodB}: ${cur}${pB1}/cup</div>
               <div style="font-size:13px;color:#475569;margin-top:2px;">${goodA}: ${qA1} cups/day</div>
             </div>
             <div style="border-radius:10px;background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
               <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
-              <div style="font-size:14px;font-weight:800;color:#0B1426;margin-top:4px;">${goodB}: ${cur}${pB2}/cup</div>
+              <div style="font-size:14px;font-weight:800;color:var(--econ-ink);margin-top:4px;">${goodB}: ${cur}${pB2}/cup</div>
               <div style="font-size:13px;color:#475569;margin-top:2px;">${goodA}: ${qA2} cups/day</div>
             </div>
           </div>
@@ -4600,7 +4600,7 @@
       { key: 'ol', label: 'Oligopoly',            color: '#D97706' },
       { key: 'mo', label: 'Monopoly',             color: '#DC2626' }
     ];
-    const header = `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:#0B1426;border-radius:12px 12px 0 0;">
+    const header = `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:var(--econ-ink);border-radius:12px 12px 0 0;">
       <div style="padding:11px 12px;"></div>
       ${COLS.map(col => `<div style="padding:11px 8px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.07em;color:${col.color};border-left:1px solid rgba(255,255,255,0.1);text-align:center;">${col.label}</div>`).join('')}
     </div>`;
@@ -4610,13 +4610,13 @@
           <div style="padding:12px 12px;font-weight:800;font-size:13px;color:#92400E;border-right:1px solid #E7E7EA;">⭐ ${r.label}</div>
           ${COLS.map(col => `<div class="reveal-cell" style="padding:12px 8px;font-size:13px;line-height:1.55;border-left:1px solid #E7E7EA;text-align:center;">
             <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:5px 9px;border-radius:6px;cursor:pointer;">Reveal ↓</button>
-            <div class="reveal-cell__body is-hidden" style="color:#0B1426;">${r[col.key] || '–'}</div>
+            <div class="reveal-cell__body is-hidden" style="color:var(--econ-ink);">${r[col.key] || '–'}</div>
           </div>`).join('')}
         </div>`;
       }
       return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:${i % 2 === 0 ? '#F8FAFC' : '#fff'};border-top:1px solid #E7E7EA;">
-        <div style="padding:12px 12px;font-weight:700;font-size:13px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
-        ${COLS.map(col => `<div style="padding:12px 8px;font-size:13px;color:#0B1426;line-height:1.55;border-left:1px solid #E7E7EA;text-align:center;">${r[col.key] || '–'}</div>`).join('')}
+        <div style="padding:12px 12px;font-weight:700;font-size:13px;color:var(--econ-ink);border-right:1px solid #E7E7EA;">${r.label}</div>
+        ${COLS.map(col => `<div style="padding:12px 8px;font-size:13px;color:var(--econ-ink);line-height:1.55;border-left:1px solid #E7E7EA;text-align:center;">${r[col.key] || '–'}</div>`).join('')}
       </div>`;
     }).join('');
     return `
@@ -4624,7 +4624,7 @@
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
       <div style="overflow-x:auto;border-radius:12px;border:1px solid #E7E7EA;margin-bottom:20px;">${header}${rows}</div>
-      ${c.footer ? `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>` : ''}
+      ${c.footer ? `<p style="font-size:13px;color:var(--econ-ink);font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>` : ''}
       ${renderExamEdge(c.examEdge)}
     `;
   }
@@ -4653,7 +4653,7 @@
             ${p.hint ? `<div style="font-size:12px;color:#64748B;font-style:italic;margin-bottom:12px;">💡 ${p.hint}</div>` : ''}
             <button class="we-step__btn" data-action="we-reveal" style="margin:0;" type="button">Show model paragraph →</button>
             <div class="we-step__answer is-hidden" style="margin-top:10px;">
-              <div style="background:#fff;border-left:4px solid ${s.color};border-radius:0 8px 8px 0;padding:12px 14px;font-size:13px;line-height:1.7;color:#0B1426;">${p.model}</div>
+              <div style="background:#fff;border-left:4px solid ${s.color};border-radius:0 8px 8px 0;padding:12px 14px;font-size:13px;line-height:1.7;color:var(--econ-ink);">${p.model}</div>
             </div>
           </div>
         </div>`;
@@ -4662,7 +4662,7 @@
       <div class="card__step-label">${c.stepLabel || ''}</div>
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      <div style="background:#0B1426;border-radius:12px;padding:16px 20px;margin-bottom:20px;">
+      <div style="background:var(--econ-ink);border-radius:12px;padding:16px 20px;margin-bottom:20px;">
         <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;margin-bottom:8px;">Exam question · ${c.marks || 25} marks${c.timeGuide ? ' · ' + c.timeGuide : ''}</div>
         <div style="font-size:15px;font-weight:600;color:#F1F5F9;line-height:1.5;">${c.question || ''}</div>
       </div>
@@ -4684,7 +4684,7 @@
       ${c.howItWorks ? `
         <div style="background:#F5F3FF;border-left:4px solid #7C3AED;border-radius:10px;padding:14px 18px;margin:18px 0;">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#7C3AED;margin-bottom:8px;">How to read it</div>
-          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+          <div style="font-size:15px;line-height:1.7;color:var(--econ-ink);">${c.howItWorks}</div>
         </div>
       ` : ''}
       ${renderExamEdge(c.examEdge)}
@@ -4698,9 +4698,9 @@
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
       <div class="xed-root" data-xed-mount></div>
       ${c.howItWorks ? `
-        <div style="background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#2563EB;margin-bottom:8px;">How to read it</div>
-          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        <div style="background:var(--econ-blue-50);border-left:4px solid #2563EB;border-radius:10px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-blue);margin-bottom:8px;">How to read it</div>
+          <div style="font-size:15px;line-height:1.7;color:var(--econ-ink);">${c.howItWorks}</div>
         </div>
       ` : ''}
       ${renderExamEdge(c.examEdge)}
@@ -4722,7 +4722,7 @@
       ${c.howItWorks ? `
         <div style="background:#F0FDF4;border-left:4px solid var(--econ-green);border-radius:10px;padding:14px 18px;margin:18px 0;">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-green);margin-bottom:8px;">How to read it</div>
-          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+          <div style="font-size:15px;line-height:1.7;color:var(--econ-ink);">${c.howItWorks}</div>
         </div>
       ` : ''}
 
@@ -4901,14 +4901,14 @@
       const renderSide = (side, fallbackTone) => {
         const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
         const inner = side.text
-          ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
+          ? `<div style="font-size:14px;color:var(--econ-ink);line-height:1.65;">${side.text}</div>`
           : side.rows && side.rows.length
-            ? `<div style="display:flex;flex-direction:column;">${side.rows.map((r, ri) => `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;${ri < side.rows.length - 1 ? `border-bottom:1px solid ${tone.border};` : ''}"><div style="width:34px;height:34px;border-radius:50%;background:${tone.bg};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;flex-shrink:0;">${r.icon || ''}</div><div style="font-size:13.5px;color:#0B1426;line-height:1.45;">${r.text}</div></div>`).join('')}</div>`
+            ? `<div style="display:flex;flex-direction:column;">${side.rows.map((r, ri) => `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;${ri < side.rows.length - 1 ? `border-bottom:1px solid ${tone.border};` : ''}"><div style="width:34px;height:34px;border-radius:50%;background:${tone.bg};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;flex-shrink:0;">${r.icon || ''}</div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.45;">${r.text}</div></div>`).join('')}</div>`
           : side.checks && side.checks.length
-            ? `<div style="display:flex;flex-direction:column;gap:8px;">${side.checks.map(ch => `<div style="font-size:13px;color:#0B1426;line-height:1.5;"><span style="font-weight:700;color:${tone.label};">${ch.term}:</span> ${ch.body}</div>`).join('')}</div>`
-            : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}</ul>`;
+            ? `<div style="display:flex;flex-direction:column;gap:8px;">${side.checks.map(ch => `<div style="font-size:13px;color:var(--econ-ink);line-height:1.5;"><span style="font-weight:700;color:${tone.label};">${ch.term}:</span> ${ch.body}</div>`).join('')}</div>`
+            : `<ul style="font-size:13px;color:var(--econ-ink);line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:var(--econ-ink);">${p}</span></li>`).join('')}</ul>`;
         const exampleHtml = side.example
-          ? `<div style="display:flex;align-items:flex-start;gap:10px;margin-top:14px;background:#fff;border:1px solid ${tone.border};border-radius:10px;padding:11px 13px;"><div style="width:26px;height:26px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;flex-shrink:0;">${side.example.icon || '★'}</div><div style="font-size:12.5px;color:#0B1426;line-height:1.5;"><span style="font-weight:800;color:${tone.label};">${side.example.label || 'Example'}:</span> ${side.example.text}</div></div>`
+          ? `<div style="display:flex;align-items:flex-start;gap:10px;margin-top:14px;background:#fff;border:1px solid ${tone.border};border-radius:10px;padding:11px 13px;"><div style="width:26px;height:26px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;flex-shrink:0;">${side.example.icon || '★'}</div><div style="font-size:12.5px;color:var(--econ-ink);line-height:1.5;"><span style="font-weight:800;color:${tone.label};">${side.example.label || 'Example'}:</span> ${side.example.text}</div></div>`
           : '';
         const iconHtml = side.icon
           ? (side.iconStyle === 'circle'
@@ -4964,9 +4964,9 @@
       <h1 class="card__title">${c.title}</h1>
       ${c.lede ? (c.ledeStyle === 'plain'
         ? `<p style="font-size:15px;color:#1E293B;line-height:1.65;margin:0 0 18px;">${c.lede}</p>`
-        : `<div style="display:flex;align-items:center;gap:14px;background:#EFF6FF;border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:12px;padding:14px 18px;margin-bottom:18px;">
-          <div style="width:34px;height:34px;border-radius:50%;background:#DBEAFE;color:#1E3A8A;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">💡</div>
-          <div style="font-size:15px;color:#0B1426;line-height:1.55;font-style:italic;">${c.lede}</div>
+        : `<div style="display:flex;align-items:center;gap:14px;background:var(--econ-blue-50);border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:12px;padding:14px 18px;margin-bottom:18px;">
+          <div style="width:34px;height:34px;border-radius:50%;background:var(--econ-blue-100);color:#1E3A8A;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">💡</div>
+          <div style="font-size:15px;color:var(--econ-ink);line-height:1.55;font-style:italic;">${c.lede}</div>
         </div>`) : ''}
 
       ${c.tip ? (() => {
@@ -4974,7 +4974,7 @@
         const tipIcon = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.icon) || '💡';
         const tipTone = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.tone) || 'blue';
         const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-        return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${tipText}</div></div>` : '';
+        return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${tipText}</div></div>` : '';
       })() : ''}
 
       ${c.note && c.notePosition === 'top' ? (() => {
@@ -4986,8 +4986,8 @@
           const noteHead = (typeof note === 'object' && note.head) || null;
           const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
           const bodyHtml = noteHead
-            ? `<div style="display:flex;flex-direction:column;gap:4px;min-width:0;"><div style="font-size:14px;font-weight:800;color:${t.label};">${noteHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div></div>`
-            : `<div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div>`;
+            ? `<div style="display:flex;flex-direction:column;gap:4px;min-width:0;"><div style="font-size:14px;font-weight:800;color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div></div>`
+            : `<div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div>`;
           return `<div style="display:flex;align-items:flex-start;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
         }).join('');
       })() : ''}
@@ -5013,7 +5013,7 @@
                 ${iconHtml}
                 <div style="flex:1;min-width:0;">
                   <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
-                  <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${item.body}</div>
                 </div>
               </div>`;
           }).join('');
@@ -5024,7 +5024,7 @@
           const tone = PATTERN_TONES[item.tone || ['green','blue','purple','amber','rose','slate'][i % 6]];
           return `<div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;gap:8px;">
             <div style="display:flex;align-items:center;gap:10px;"><div style="font-size:24px;line-height:1;">${item.icon || ''}</div><div style="font-weight:800;font-size:15px;color:${tone.label};">${item.head}</div></div>
-            <div style="font-size:13px;color:#0B1426;line-height:1.55;">${item.body}</div>
+            <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${item.body}</div>
           </div>`;
         }).join('');
         const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : `repeat(${Math.min(items.length, 3)},1fr)`;
@@ -5059,7 +5059,7 @@
             .dr-reveal-cb:not(:checked) ~ .dr-row .dr-verdict { opacity: 0.18; filter: blur(2px); pointer-events:none; }
             .dr-q { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:9px; border:1.5px solid; font-size:14px; font-weight:800; cursor:pointer; user-select:none; transition: all 0.2s; flex-shrink:0; }
             .dr-q:hover { transform:scale(1.05); }
-            .dr-reveal-cb:checked ~ .dr-row .dr-q { background:#0B1426; color:#fff !important; border-color:#0B1426 !important; }
+            .dr-reveal-cb:checked ~ .dr-row .dr-q { background:var(--econ-ink); color:#fff !important; border-color:var(--econ-ink) !important; }
             .dr-reveal-cb:checked ~ .dr-row .dr-q::after { content:'✓'; font-size:16px; }
             .dr-reveal-cb:checked ~ .dr-row .dr-q-mark { display:none; }
           </style>` : '';
@@ -5081,14 +5081,14 @@
               <div style="display:flex;align-items:flex-start;gap:14px;background:${reveal ? t.bg : '#fff'};border:1px solid ${reveal ? t.border : '#E7E7EA'};border-radius:14px;padding:16px 18px;">
                 <div style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;">${row.label}</div>
                 <div style="flex:1;min-width:0;">
-                  <div style="font-size:14px;color:#0B1426;line-height:1.5;${row.title ? 'font-weight:800;margin-bottom:6px;' : ''}">${row.title || ''}</div>
-                  <div style="font-size:13px;color:#0B1426;line-height:1.55;">${row.case}</div>
+                  <div style="font-size:14px;color:var(--econ-ink);line-height:1.5;${row.title ? 'font-weight:800;margin-bottom:6px;' : ''}">${row.title || ''}</div>
+                  <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${row.case}</div>
                   ${row.prompt || reveal ? `<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;"><div style="font-size:12.5px;color:#64748B;font-style:italic;flex:1;">${row.prompt || 'What is the trade-off?'}</div>${qButton}</div>` : ''}
                 </div>
               </div>
               <div class="dr-verdict" style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;">
                 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="font-size:16px;line-height:1;">${row.verdictIcon || '⚖️'}</span><span style="font-size:12px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.06em;">Verdict</span></div>
-                <div style="font-size:13px;color:#0B1426;line-height:1.55;margin-bottom:12px;">${row.verdict}</div>
+                <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;margin-bottom:12px;">${row.verdict}</div>
                 <div style="display:flex;flex-direction:column;gap:6px;margin-top:auto;">${pills}</div>
               </div>
             </div>`;
@@ -5118,7 +5118,7 @@
               <div style="width:40px;height:40px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${item.icon || '•'}</div>
               <div style="flex:1;">
                 ${item.head ? `<div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:4px;">${item.head}</div>` : ''}
-                <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${item.body}</div>
+                <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;">${item.body}</div>
               </div>
             </div>`;
         }).join('');
@@ -5166,7 +5166,7 @@
         const big = (lf.left || []).map(i => i.letter).join(' ') + ' = ' + (lf.right || []).map(i => i.letter).join(' ');
         return `${title}
           <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:18px 20px;margin-bottom:18px;">
-            <div style="text-align:center;font-size:42px;font-weight:900;letter-spacing:0.12em;color:#0B1426;margin-bottom:18px;font-family:'Fraunces',serif;">${big}</div>
+            <div style="text-align:center;font-size:42px;font-weight:900;letter-spacing:0.12em;color:var(--econ-ink);margin-bottom:18px;font-family:'Fraunces',serif;">${big}</div>
             <div style="display:grid;grid-template-columns:repeat(${(lf.left || []).length + (lf.right || []).length},1fr);gap:10px;">${renderSide(lf.left || [])}${renderSide(lf.right || [])}</div>
             ${lf.caption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin-top:14px;text-align:center;font-style:italic;">${lf.caption}</div>` : ''}
           </div>`;
@@ -5190,7 +5190,7 @@
                 ${iconHtml}
                 <div style="flex:1;min-width:0;">
                   <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;letter-spacing:-0.01em;">${item.head}</div>
-                  <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${item.body}</div>
                 </div>
               </div>`;
           }).join('');
@@ -5227,7 +5227,7 @@
             const exampleHtml = ex ? `
               <div style="margin-top:auto;padding-top:12px;border-top:1px dashed ${tone.border};">
                 <div style="font-size:12px;font-weight:800;color:${tone.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">${ex.label || 'Example'}</div>
-                <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#0B1426;line-height:1.4;">
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--econ-ink);line-height:1.4;">
                   ${ex.icon ? `<span style="font-size:22px;line-height:1;flex-shrink:0;">${ex.icon}</span>` : ''}
                   <span>${ex.text}</span>
                 </div>
@@ -5236,7 +5236,7 @@
             <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px 14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);display:flex;flex-direction:column;">
               <div style="font-weight:800;font-size:18px;color:${tone.label};line-height:1.2;text-align:center;letter-spacing:-0.01em;">${item.head}</div>
               ${svgHtml}
-              <div style="font-size:13.5px;color:#0B1426;line-height:1.55;text-align:center;">${item.body}</div>
+              <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;text-align:center;">${item.body}</div>
               ${exampleHtml}
             </div>`;
           }
@@ -5252,8 +5252,8 @@
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             ${iconHtml}
             ${item.shiftArrows && item.shiftArrows.length
-              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
-              : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body || ''}</div>`}
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              : `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
         const label = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
@@ -5270,7 +5270,7 @@
         const title = kd.title || 'The key distinction';
         const itemsHtml = kd.items.map(it => {
           const swatch = it.color || '#0B1426';
-          return `<li style="display:flex;gap:8px;align-items:baseline;font-size:14px;line-height:1.55;color:#0B1426;margin-bottom:4px;">
+          return `<li style="display:flex;gap:8px;align-items:baseline;font-size:14px;line-height:1.55;color:var(--econ-ink);margin-bottom:4px;">
             <span style="flex-shrink:0;color:${swatch};font-weight:900;font-size:16px;line-height:1;margin-top:2px;">•</span>
             <span><strong style="color:${swatch};">${it.term}</strong> – ${it.text}</span>
           </li>`;
@@ -5293,7 +5293,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:${iconBg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body || ''}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>
           </div>`;
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
@@ -5304,7 +5304,7 @@
         const cn = typeof c.causesNote === 'object' ? c.causesNote : { text: c.causesNote };
         if (!cn.text) return '';
         const t = PATTERN_TONES[cn.tone || 'slate'] || PATTERN_TONES.slate;
-        return `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:10px;padding:11px 16px;margin:-4px 0 22px;font-size:13px;color:#0B1426;line-height:1.55;text-align:center;">${cn.icon ? `<span style="margin-right:8px;">${cn.icon}</span>` : ''}${cn.text}</div>`;
+        return `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:10px;padding:11px 16px;margin:-4px 0 22px;font-size:13px;color:var(--econ-ink);line-height:1.55;text-align:center;">${cn.icon ? `<span style="margin-right:8px;">${cn.icon}</span>` : ''}${cn.text}</div>`;
       })() : ''}
 
       ${c.flow && c.flow.length ? (() => {
@@ -5315,7 +5315,7 @@
           const seps = Array.isArray(c.flowSep) ? c.flowSep : Array(n - 1).fill(c.flowSep);
           const pieces = c.flow.map((step, i) => {
             const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-            const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${step.icon}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:#0B1426;line-height:1.3;">${step.sub}</div>` : ''}</div>`;
+            const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${step.icon}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:var(--econ-ink);line-height:1.3;">${step.sub}</div>` : ''}</div>`;
             const sep = i < n - 1 ? `<div style="display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#64748B;flex-shrink:0;padding:0 2px;">${seps[i] || '+'}</div>` : '';
             return tile + sep;
           }).join('');
@@ -5343,7 +5343,7 @@
         const seps = Array.isArray(c.flow2Sep) ? c.flow2Sep : Array(n - 1).fill(c.flow2Sep || '→');
         const pieces = c.flow2.map((step, i) => {
           const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-          const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${step.icon}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:#0B1426;line-height:1.3;">${step.sub}</div>` : ''}</div>`;
+          const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${step.icon}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:var(--econ-ink);line-height:1.3;">${step.sub}</div>` : ''}</div>`;
           const sep = i < n - 1 ? `<div style="display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#64748B;flex-shrink:0;padding:0 2px;">${seps[i] || '→'}</div>` : '';
           return tile + sep;
         }).join('');
@@ -5369,7 +5369,7 @@
         const cols = Math.min((bg.items || []).length, 6);
         return `${genSecLabel(headerIcon, headerTitle)}
           ${headerSub ? `<div style="font-size:13.5px;color:#475569;line-height:1.55;margin:-8px 0 12px;">${headerSub}</div>` : ''}
-          <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:16px;padding:14px;margin-bottom:18px;">
+          <div style="background:var(--econ-blue-50);border:1px solid #BFDBFE;border-radius:16px;padding:14px;margin-bottom:18px;">
             <div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:8px;">${itemTiles}</div>
           </div>`;
       })() : ''}
@@ -5406,8 +5406,8 @@
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             ${item.shiftArrows && item.shiftArrows.length
-              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
-              : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body || ''}</div>`}
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              : `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
@@ -5424,7 +5424,7 @@
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
@@ -5447,7 +5447,7 @@
           return `
           <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;">
             ${headerHtml}
-            <div style="font-size:12.5px;color:#0B1426;line-height:1.55;">${item.body}</div>
+            <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.55;">${item.body}</div>
           </div>`;
         }).join('');
         const label3 = c.causes3Label === null ? '' : genSecLabel(c.causes3Emoji || '🔗', c.causes3Label || 'More to know');
@@ -5466,7 +5466,7 @@
               <div style="width:38px;height:38px;border-radius:50%;background:#fff;border:1.5px solid ${t.border};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${s.icon || ''}</div>
               <div style="flex:1;min-width:0;">
                 <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:2px;">${s.head}</div>
-                <div style="font-size:12.5px;color:#0B1426;line-height:1.45;">${s.sub}</div>
+                <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.45;">${s.sub}</div>
               </div>
             </div>`;
           return `<div style="display:grid;grid-template-columns:1fr 38px 1fr;gap:10px;align-items:center;">
@@ -5490,7 +5490,7 @@
           const items = (col.items || []).map(it => {
             const ok = it.ok !== false;
             const mark = ok
-              ? `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#D1FAE5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✓</span>`
+              ? `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--econ-green-100);color:var(--econ-green-600);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✓</span>`
               : `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✕</span>`;
             return `<li style="display:flex;align-items:flex-start;gap:9px;margin-bottom:8px;">${mark}<span>${it.text}</span></li>`;
           }).join('');
@@ -5500,7 +5500,7 @@
                 ${col.icon ? `<div style="width:30px;height:30px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;line-height:1;flex-shrink:0;">${col.icon}</div>` : ''}
                 <div style="font-size:15px;font-weight:800;color:${t.label};letter-spacing:0.01em;">${col.label}</div>
               </div>
-              <ul style="list-style:none;margin:0;padding:14px 16px;font-size:13.5px;color:#0B1426;line-height:1.6;">${items}</ul>
+              <ul style="list-style:none;margin:0;padding:14px 16px;font-size:13.5px;color:var(--econ-ink);line-height:1.6;">${items}</ul>
             </div>`;
           const separator = !isLast ? `<div style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:800;font-size:${sep === '→' ? '16px' : '12px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);">${sep}</div></div>` : '';
           return colHtml + separator;
@@ -5515,7 +5515,7 @@
         const cards = c.measureCards.map((m, i) => {
           const tone = PATTERN_TONES[m.tone] || PATTERN_TONES[['green','purple','amber','blue','rose','slate'][i % 6]];
           const pts = (m.points || []).map(p => `
-            <li style="display:flex;gap:8px;font-size:13px;color:#0B1426;line-height:1.5;">
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--econ-ink);line-height:1.5;">
               <span style="color:${tone.label};flex-shrink:0;font-weight:900;margin-top:1px;">•</span>
               <span>${p}</span>
             </li>`).join('');
@@ -5549,7 +5549,7 @@
             return `<div style="padding:10px 10px;font-size:12.5px;color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid #E7E7EA;line-height:1.5;">${val}</div>`;
           }).join('');
           return `<div style="display:grid;grid-template-columns:${ctGrid};background:${bg};border-bottom:1px solid #E7E7EA;">
-            <div style="padding:10px 12px;font-size:12.5px;font-weight:700;color:#0B1426;display:flex;align-items:center;gap:6px;line-height:1.4;">${row.label}</div>
+            <div style="padding:10px 12px;font-size:12.5px;font-weight:700;color:var(--econ-ink);display:flex;align-items:center;gap:6px;line-height:1.4;">${row.label}</div>
             ${cells}
           </div>`;
         }).join('');
@@ -5615,11 +5615,11 @@
           const icon = cell.icon || '';
           const itemsHtml = Array.isArray(cell.items) && cell.items.length
             ? `<ul style="margin:6px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;">${
-                cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
+                cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:13px;color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
               }</ul>`
             : '';
           const bodyHtml = cell.text
-            ? `<div style="font-size:13px;color:#0B1426;line-height:1.55;">${cell.text}</div>${itemsHtml}`
+            ? `<div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${cell.text}</div>${itemsHtml}`
             : itemsHtml;
           return `
             <div style="border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:14px 14px 12px;display:flex;flex-direction:column;">
@@ -5644,8 +5644,8 @@
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             ${item.shiftArrows && item.shiftArrows.length
-              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
-              : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body || ''}</div>`}
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              : `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'In detail');
@@ -5657,11 +5657,11 @@
         const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';
         const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
         return `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:#ECFDF5;border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:12px 16px;margin-bottom:16px;">
-            <div style="width:30px;height:30px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
+          <div style="display:flex;gap:14px;align-items:flex-start;background:var(--econ-green-50);border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:12px 16px;margin-bottom:16px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
             <div style="flex:1;">
-              <div style="font-size:12px;font-weight:800;color:#065F46;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
+              <div style="font-size:12px;font-weight:800;color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
+              <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${conText}</div>
             </div>
           </div>`;
       })() : '')}
@@ -5679,7 +5679,7 @@
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
             <div>
               <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
-              <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-size:15.5px;line-height:1.65;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
               <div style="font-size:13px;color:${t.label};font-weight:700;">– ${eq.attribution}</div>
             </div>
           </div>`;
@@ -5692,14 +5692,14 @@
         const liIcon  = liData.icon  || '🎯';
         const liItemsHtml = liData.items.map(it => `
           <div style="display:flex;align-items:center;gap:8px;flex:1 1 0;min-width:140px;">
-            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#D1FAE5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">✓</span>
-            <span style="font-size:13px;color:#0B1426;font-weight:600;line-height:1.4;">${it}</span>
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--econ-green-100);color:var(--econ-green-600);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">✓</span>
+            <span style="font-size:13px;color:var(--econ-ink);font-weight:600;line-height:1.4;">${it}</span>
           </div>`).join('');
         return `
           <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:12px 16px 10px;margin-bottom:16px;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
               <span style="font-size:15px;line-height:1;">${liIcon}</span>
-              <span style="font-size:12px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.08em;">${liTitle}</span>
+              <span style="font-size:12px;font-weight:800;color:var(--econ-green-600);text-transform:uppercase;letter-spacing:0.08em;">${liTitle}</span>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:14px 22px;">${liItemsHtml}</div>
           </div>`;
@@ -5717,7 +5717,7 @@
           return pill + sepHtml;
         }).join('');
         const noteHtml = fp.note
-          ? `<div style="flex:1;min-width:200px;font-size:13px;color:#0B1426;line-height:1.55;padding-left:8px;">${fp.note}</div>`
+          ? `<div style="flex:1;min-width:200px;font-size:13px;color:var(--econ-ink);line-height:1.55;padding-left:8px;">${fp.note}</div>`
           : '';
         return `${title}<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:14px 16px;margin-bottom:18px;"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;">${termHtml}</div>${noteHtml}</div>`;
       })() : ''}
@@ -5730,7 +5730,7 @@
           const btIcon = (typeof bt === 'object' && bt.icon) || '💡';
           const btTone = (typeof bt === 'object' && bt.tone) || 'amber';
           const t = PATTERN_TONES[btTone] || PATTERN_TONES.amber;
-          return `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:13px 16px;margin-bottom:16px;"><div style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">${btIcon}</div><div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${btText}</div></div>`;
+          return `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:13px 16px;margin-bottom:16px;"><div style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">${btIcon}</div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;">${btText}</div></div>`;
         }).join('');
       })() : ''}
 
@@ -5743,13 +5743,13 @@
           : '';
         const sep = `<div style="display:flex;align-items:center;justify-content:center;color:${t.accent};font-size:22px;font-weight:800;flex-shrink:0;">→</div>`;
         const primaryHtml = nb.primary
-          ? `<div style="display:flex;align-items:center;gap:14px;flex:1.1;min-width:0;">${iconHtml}<div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${nb.primary}</div></div>`
+          ? `<div style="display:flex;align-items:center;gap:14px;flex:1.1;min-width:0;">${iconHtml}<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${nb.primary}</div></div>`
           : '';
         const secondaryHtml = nb.secondary
-          ? `<div style="flex:1;min-width:0;font-size:13.5px;color:#0B1426;line-height:1.5;">${nb.secondary}</div>`
+          ? `<div style="flex:1;min-width:0;font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${nb.secondary}</div>`
           : '';
         const exampleHtml = nb.example
-          ? `<div style="flex:1;min-width:0;background:rgba(255,255,255,0.55);border-radius:10px;padding:10px 12px;border:1px dashed ${t.border};"><div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${nb.exampleLabel || 'Example'}</div><div style="font-size:13px;color:#0B1426;line-height:1.45;">${nb.example}</div></div>`
+          ? `<div style="flex:1;min-width:0;background:rgba(255,255,255,0.55);border-radius:10px;padding:10px 12px;border:1px dashed ${t.border};"><div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${nb.exampleLabel || 'Example'}</div><div style="font-size:13px;color:var(--econ-ink);line-height:1.45;">${nb.example}</div></div>`
           : '';
         return `${title}<div style="display:flex;align-items:stretch;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:14px 16px;margin-bottom:22px;">${primaryHtml}${secondaryHtml ? sep + secondaryHtml : ''}${exampleHtml}</div>`;
       })() : ''}
@@ -5762,7 +5762,7 @@
           <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #E7E7EA;border-radius:12px;padding:12px 16px;">
             <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:${t.soft};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;margin-top:1px;">✓</div>
             <div style="flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;">
-              <span style="font-size:14px;font-weight:800;color:#0B1426;line-height:1.45;">${it.head}</span>
+              <span style="font-size:14px;font-weight:800;color:var(--econ-ink);line-height:1.45;">${it.head}</span>
               ${it.body ? `<span style="font-size:13px;color:#475569;line-height:1.5;flex:1;min-width:160px;">${it.body}</span>` : ''}
             </div>
           </div>`).join('');
@@ -5773,11 +5773,11 @@
         const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Big idea') : 'Big idea';
         const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
         return `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:#ECFDF5;border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:12px 16px;margin-bottom:16px;">
-            <div style="width:30px;height:30px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
+          <div style="display:flex;gap:14px;align-items:flex-start;background:var(--econ-green-50);border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:12px 16px;margin-bottom:16px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
             <div style="flex:1;">
-              <div style="font-size:12px;font-weight:800;color:#065F46;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
+              <div style="font-size:12px;font-weight:800;color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
+              <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${conText}</div>
             </div>
           </div>`;
       })() : ''}
@@ -5791,7 +5791,7 @@
           const tipIcon = (typeof tip === 'object' && tip.icon) || '💡';
           const tipTone = (typeof tip === 'object' && tip.tone) || 'blue';
           const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-          return `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:15px;color:#0B1426;line-height:1.55;">${tipText}</div></div>`;
+          return `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:15px;color:var(--econ-ink);line-height:1.55;">${tipText}</div></div>`;
         }).join('');
       })() : ''}
 
@@ -5888,7 +5888,7 @@
       ${c.stepLabel ? `<div class="card__step-label">${c.stepLabel}</div>` : ''}
       <h1 class="card__title">${c.title}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      ${c.intro ? `<p style="font-size:15px;color:#0B1426;margin-bottom:16px;line-height:1.65;">${c.intro}</p>` : ''}
+      ${c.intro ? `<p style="font-size:15px;color:var(--econ-ink);margin-bottom:16px;line-height:1.65;">${c.intro}</p>` : ''}
 
       <div class="paired-grid">${pairs}</div>
 
@@ -6007,7 +6007,7 @@
     const tipTone = (c.tip && typeof c.tip === 'object' && c.tip.tone) || 'blue';
     const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
     const tipHtml = (c.tip && typeof c.tip === 'object' && c.tip.text)
-      ? '<div style="display:flex;align-items:center;gap:14px;background:' + t.bg + ';border:1px solid ' + t.border + ';border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:' + t.accent + ';color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">' + (c.tip.icon || '💡') + '</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">' + c.tip.text + '</div></div>'
+      ? '<div style="display:flex;align-items:center;gap:14px;background:' + t.bg + ';border:1px solid ' + t.border + ';border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:' + t.accent + ';color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">' + (c.tip.icon || '💡') + '</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">' + c.tip.text + '</div></div>'
       : '';
 
     // Per-stage diagram headings rendered as standard section labels
@@ -6036,7 +6036,7 @@
     if (c.causesLabel && c.causes && c.causes.length) {
       const causesTiles = c.causes.map(function(item, i) {
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
-        return '<div style="border-radius:16px;background:' + tone.bg + ';border:1px solid ' + tone.border + ';padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">' + item.icon + '</div><div style="font-weight:800;font-size:15px;color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13.5px;color:#0B1426;line-height:1.65;">' + item.body + '</div></div>';
+        return '<div style="border-radius:16px;background:' + tone.bg + ';border:1px solid ' + tone.border + ';padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">' + item.icon + '</div><div style="font-weight:800;font-size:15px;color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">' + item.body + '</div></div>';
       }).join('');
       out += genSecLabel(c.causesEmoji || '📋', c.causesLabel);
       out += '<div style="display:grid;grid-template-columns:' + gridColumnsFor(c.causes.length, 155) + ';gap:12px;margin:0 0 28px;">' + causesTiles + '</div>';
@@ -6045,7 +6045,7 @@
     if (c.causes2Label && c.causes2 && c.causes2.length) {
       const causes2Tiles = c.causes2.map(function(item, i) {
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
-        return '<div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:42px;height:42px;border-radius:50%;background:' + tone.bg + ';display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">' + item.icon + '</div><div style="font-weight:800;font-size:15px;color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13.5px;color:#0B1426;line-height:1.65;">' + item.body + '</div></div>';
+        return '<div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:42px;height:42px;border-radius:50%;background:' + tone.bg + ';display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">' + item.icon + '</div><div style="font-weight:800;font-size:15px;color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">' + item.body + '</div></div>';
       }).join('');
       out += genSecLabel(c.causes2Emoji || '⚙️', c.causes2Label);
       out += '<div style="display:grid;grid-template-columns:' + gridColumnsFor(c.causes2.length, 155) + ';gap:12px;margin:0 0 28px;">' + causes2Tiles + '</div>';
@@ -6053,7 +6053,7 @@
 
     if (c.examEdge) {
       const et = PATTERN_TONES['purple'];
-      out += '<div style="background:' + et.bg + ';border:1px solid ' + et.border + ';border-radius:12px;padding:16px 18px;margin-top:10px;"><div style="font-size:12px;font-weight:700;color:' + et.label + ';text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">Exam edge</div><div style="font-size:13.5px;color:#0B1426;line-height:1.65;">' + c.examEdge + '</div></div>';
+      out += '<div style="background:' + et.bg + ';border:1px solid ' + et.border + ';border-radius:12px;padding:16px 18px;margin-top:10px;"><div style="font-size:12px;font-weight:700;color:' + et.label + ';text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">Exam edge</div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">' + c.examEdge + '</div></div>';
     }
 
     return out;

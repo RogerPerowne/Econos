@@ -23,11 +23,19 @@ window.ECONOS_DIAGRAMS = {
   validate(spec),          // → { valid, errors, warnings }
   compile(spec),           // → render plan + diagnostics (no SVG string assembled here)
   debug(spec),             // → { normalisedSpec, validation, derivedGeometry, renderPlan, collisions, hidden, svg }
+  registerFamily(desc),    // add/extend a family from one descriptor (see §13)
+  grammar(),               // → pure-JSON dump of the whole vocabulary (see §14)
+  families,                // the family descriptor map (the source the registry is derived from)
+  annotationTypes,         // the declarative escape-hatch vocabulary (see §15)
   templates,               // family builders, keyed by family name
   layers,                  // the central layer map (see §6)
-  registry,                // allowed families / intents / show tokens / tones / heads / routes
+  registry,                // DERIVED indices: families / intents / show tokens / tones / heads / routes
 };
 ```
+
+> **`registry` is now derived, not authored.** `families`, `intents` and
+> `showTokens` are rebuilt from the §13 family descriptors at load and after
+> every `registerFamily`. Edit a descriptor, not the flat registry.
 
 `render(spec)` returns:
 
@@ -257,3 +265,120 @@ js/diagrams/econos-diagrams.js   →  registry.js, layers.js, themes.js, markers
 ```
 
 When a bundler lands, lift each banner into its own file behind the same global.
+
+---
+
+## 13. Family descriptors & `registerFamily` (extensibility)
+
+The eight built-in families are **not special**. Each is one entry in the
+`FAMILIES` descriptor map (§FAMILIES in the engine), and the flat registry
+(`families`, `intents`, `showTokens`, axis labels) is *derived* from those
+descriptors by `rebuildGrammar()`. Adding a family used to mean edits in four
+places (intent→family map, show-token list, axis map, default-show map); now it
+is a single call.
+
+A descriptor is a plain, serialisable record plus two code hooks:
+
+```js
+ECONOS_DIAGRAMS.registerFamily({
+  family:      'costs',                       // the family id
+  axes:        { x: 'Output (Q)', y: 'Cost / revenue' },
+  intents:     ['profit-maximisation', 'shut-down-point'],
+  showTokens:  ['profit-area', 'loss-area'],  // tokens BEYOND the base set
+  defaultShow: { 'profit-maximisation': ['profit-area'] }, // intent-only defaults
+  normalise:   function (spec) { /* fill family-specific input defaults */ },
+  template:    function (spec) { /* build + return { scene, derived, warnings, alt } */ },
+});
+```
+
+- Everything except `normalise`/`template` is **data** — that is exactly what
+  `grammar()` (§14) dumps, and what a Postgres reference table would hold.
+- `normalise` and `template` are **code** — they stay in the engine, keyed by
+  `family`. This seam is deliberate: the grammar can live in a database while
+  the geometry guarantees stay in JS.
+- After `registerFamily`, the new vocabulary is valid immediately —
+  `validate`, `render`, the linter and `grammar()` all pick it up.
+
+The built-ins register themselves through this same path at load, so there is
+only one code path to reason about.
+
+---
+
+## 14. `grammar()` — the vocabulary as data
+
+```js
+const g = ECONOS_DIAGRAMS.grammar();
+// → { version, families: { market: { intents, axes, showTokens, defaultShow }, … },
+//     showTokens, annotationTypes, arrowKinds, routes, heads, tones, viewports, modes }
+```
+
+`grammar()` returns **pure JSON — no functions**. It round-trips through
+`JSON.stringify`/`parse` unchanged, so it drops straight into a `jsonb` column
+or seeds reference tables (one row per family / intent / token). It is the
+single call to make when exporting the language for storage or tooling. See
+`docs/DIAGRAM_POSTGRES_MODEL.md` for the recommended table/jsonb mapping.
+
+---
+
+## 15. Annotations — the sanctioned no-SVG escape hatch
+
+The house rule is "never hand-author raw `<svg>`". When the templates genuinely
+do not cover something, **add a declarative annotation instead of dropping to a
+`<path>`**. Annotations live in `spec.annotations`, are expressed in data space
+(`x, y` in `0..1`), and compile onto the template's scene — so they flow through
+the same layer model, collision pass and tone palette as first-class elements.
+
+```js
+ECONOS_DIAGRAMS.render({
+  type: 'market', intent: 'market-equilibrium',
+  annotations: [
+    { type: 'label',   at: { x: 0.2, y: 0.85 }, text: 'Excess demand', tone: 'accent' },
+    { type: 'marker',  at: { x: 0.7, y: 0.34 }, label: 'A', tone: 'loss', guides: true },
+    { type: 'region',  points: [{x:0,y:0},{x:.3,y:0},{x:.3,y:.3}], tone: 'gain', label: 'zone' },
+    { type: 'segment', from: { x: 0, y: 0.4 }, to: { x: 0.6, y: 0.4 }, dashed: '4 4' },
+    { type: 'bracket', from: { x: 0.2, y: 0.06 }, to: { x: 0.6, y: 0.06 }, label: 'range' },
+    { type: 'arrow',   from: { x: 0.3, y: 0.7 }, to: { x: 0.5, y: 0.55 }, kind: 'cause-effect' },
+  ],
+});
+```
+
+| type | required | maps to |
+| --- | --- | --- |
+| `label` | `at`, `text` | a collision-managed callout |
+| `marker` | `at` | a point (optional `label`, `guides`) |
+| `region` | `points` (≥3) | a shaded polygon (optional `label`, `opacity`) |
+| `segment` | `from`, `to` | a straight guide (optional `dashed`, `width`) |
+| `bracket` | `from`, `to` | a bracket arrow (optional `label`) |
+| `arrow` | `from`, `to` | a chevron arrow (optional `kind`, `head`, `route`, `label`) |
+
+All take an optional `id` (auto-assigned `ann-<i>` otherwise) and `tone`
+(defaults to `accent`). Unknown types warn and are skipped — they never error,
+and they never emit a raw path. Annotations are pure JSON, so they survive a
+`jsonb` round-trip untouched.
+
+### Anchors — never type a coordinate the engine can solve
+
+Every position (`at`, `from`, `to`, and each region `point`) accepts a
+**semantic anchor**, not just a raw `{x, y}`. This is the accuracy contract: an
+on-curve or equilibrium position must be *solved*, never eyeballed.
+
+| anchor | resolves to |
+| --- | --- |
+| `{ x, y }` | a raw coordinate (allowed, but discouraged for anything geometric) |
+| `{ point: 'E1' }` | a solved point in `derived` — `E1`, `E2`, `social`, `market`, … |
+| `{ intersection: ['D1','S'] }` | the exact crossing of two declared curves |
+| `{ onCurve: 'D1', x: 0.3 }` | the point lying **on** curve `D1` at `x = 0.3` |
+
+```js
+annotations: [
+  { type: 'marker', at: { point: 'E2' }, label: "E₂" },                  // sits on the new equilibrium
+  { type: 'label',  at: { intersection: ['MSC','D'] }, text: 'Social optimum' },
+  { type: 'region', tone: 'loss', label: 'DWL',
+    points: [ { point: 'E1' }, { onCurve: 'D1', x: 0.6 }, { onCurve: 'S', x: 0.6 } ] },
+]
+```
+
+An anchor that cannot be solved (unknown derived point, non-crossing curves)
+emits a warning and the annotation is skipped — it never invents a position.
+This is why the hatch can be "draw anything" without surrendering "100%
+accurate": the freeform parts still ride the engine's solved geometry.

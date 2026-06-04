@@ -257,6 +257,32 @@
           ['Long-run Phillips curve', { type: 'phillips', intent: 'long-run-phillips-curve' }],
           ['Expectations shift', { type: 'phillips', intent: 'expectations-shift' }],
         ]],
+        // The sanctioned no-SVG escape hatch: declarative annotations that
+        // compile onto any family's scene and flow through layers + collision.
+        ['Annotations (escape hatch)', [
+          ['Labelled note + marker', {
+            type: 'market', intent: 'market-equilibrium',
+            annotations: [
+              { type: 'marker', at: { x: 0.72, y: 0.34 }, label: 'A', tone: 'loss' },
+              { type: 'label', at: { x: 0.24, y: 0.86 }, text: 'Excess demand region', tone: 'accent' },
+            ],
+          }],
+          ['Bracket + shaded region', {
+            type: 'market', intent: 'market-equilibrium',
+            annotations: [
+              { type: 'region', points: [{ x: 0, y: 0 }, { x: 0.34, y: 0 }, { x: 0.34, y: 0.34 }, { x: 0, y: 0.34 }], tone: 'gain', label: 'Surplus zone' },
+              { type: 'bracket', from: { x: 0.12, y: 0.06 }, to: { x: 0.56, y: 0.06 }, label: 'Output range', tone: 'ink' },
+            ],
+          }],
+          // Anchored to SOLVED geometry — no typed coordinates.
+          ['Anchored to solved equilibrium', {
+            type: 'market', intent: 'demand-shift-right',
+            annotations: [
+              { type: 'marker', at: { point: 'E2' }, label: 'E₂', tone: 'gain' },
+              { type: 'label', at: { intersection: ['D1', 'S'] }, text: 'Start here', tone: 'ink' },
+            ],
+          }],
+        ]],
       ];
 
       function withState(spec) {

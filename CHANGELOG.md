@@ -8,6 +8,34 @@ bump the patch for bugfix-only sweeps.
 
 ## 0.62.0 — 2026-06-04
 
+## 0.63.0 — 2026-06-04
+
+### Design language: document the token system + first consistency sweep
+
+Pivot to the visual design language (typography / colour / spacing / formatting).
+The token set already exists and is good — the work is **consistent application**.
+
+- **`docs/DESIGN_LANGUAGE.md`** — canonical reference for the existing tokens
+  (colour `--econ-*`, type `--fs-`/`--fw-`/`--lh-`, spacing `--sp-`, radii `--r-`,
+  shadows, layout) plus the "use a token, never a literal" policy and the roadmap.
+- **`npm run lint:tokens`** (`scripts/lint-tokens.mjs`) — a drift reporter:
+  counts raw hex literals that exactly duplicate a defined colour token, per file,
+  so the sweep has a number to drive to zero. `--list` for the per-hex breakdown.
+- **`styles.css` swept** — 77 duplicated hex literals replaced with their tokens
+  (e.g. `#0B1426` → `var(--econ-ink)`). Value-preserving (the `:root` definitions
+  are untouched, so rendering is pixel-identical — verified) and now **0 drift**
+  in the stylesheet.
+- **`js/app.js` swept** — 215 inline-style hexes in CSS-declaration form
+  (`color:#0B1426` → `color:var(--econ-ink)`) tokenised; drift 522 → 307.
+  Deliberately **only** the `style="…"` CSS form: SVG `fill=`/`stroke=`
+  *attributes* (where `var()` doesn't resolve) and bare JS colour strings are left
+  alone. Verified value-preserving and screenshot-checked on a live card (incl. the
+  interactive AD/AS diagram).
+- Remaining drift (`js/app.js` 307 SVG attributes, `js/icons.js` ~3013 chart fills)
+  needs the `style="fill:…"` refactor — a later, screenshot-verified sweep.
+
+## 0.62.0 — 2026-06-04
+
 ### New Theme 2 topic — Balance of Payments (intro, 2.1.4)
 
 Closes the major spec gap from the Theme 2 audit. New topic

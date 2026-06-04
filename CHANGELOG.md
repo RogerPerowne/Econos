@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.53.0 — 2026-06-04
+
+### Interactive diagrams — stable stage height (general fix)
+
+Stepping through any interactive diagram no longer makes the stage jump as
+the per-step description changes length. The description states are now
+stacked into a single grid cell and toggled by **visibility** instead of
+`display`, so the column reserves the height of the tallest step and stays
+put. Applies to every interactive diagram (AD/AS and beyond) with no
+per-card copy tuning — the workaround of trimming headlines to match line
+counts is no longer needed.
+
+Also added a modest stage floor (`min-height: 290px`, overridable per card
+via `interactiveDiagram.stageMinHeight`) for a touch of breathing room and
+consistent height across charts. Both toggle paths (step advance + the
+Classical/Keynesian perspective switch) drive the new visibility model and
+track the active step via `data-id-active-vi` rather than sniffing inline
+`display`.
+
 ## 0.52.4 — 2026-06-04
 
 ### Fiscal Card 2 — steadier staging

@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.57.2 — 2026-06-04
+
+### Theme 2 AD/AS sweep — Batch 4: Output gaps card two-toggle stack
+
+Equilibrium national income C3 (output-gaps) now uses two stacked
+Classical/Keynesian interactive toggles — one per gap type:
+
+1. **Recessionary gap** (AD-left): Classical says gap self-corrects via
+   wage flex back to Y₀ₑ at lower P; Keynesian says sticky wages keep
+   the gap open (the 2008 case study).
+2. **Inflationary gap** (AD-right): Classical says there *is* no real
+   inflationary gap in the long run — only prices rise; Keynesian says
+   overheating is real and needs contractionary policy to close.
+
+The previous static `visualKey: 'eniOutputGapsTwin'` reference is
+removed.
+
+**The 2021-23 inflation surge card** (macro-conflicts C4) is left on its
+existing `inflation2022AdAs` interactive — its 3-stage narrative
+(baseline → simultaneous AD-right + SRAS-left shocks → BoE response) is
+too specific to retrofit cleanly into the perspective-toggle pattern
+without losing the case-study detail. Deferred.
+
 ## 0.57.1 — 2026-06-04
 
 ### Theme 2 AD/AS sweep — Batch 3: Equilibrium card three-toggle stack

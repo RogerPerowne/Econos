@@ -166,10 +166,7 @@ emits the right sitemap.
 ## Conventions enforced by CI
 
 - `npm run lint` must pass (repo lint + ESLint with `--max-warnings=0` +
-  `lint:charts` + `lint:cards` + `lint:diagrams`). `lint:diagrams` is
-  blocking: it renders every EDL family × intent and fails on a render
-  error, an unresolved annotation anchor, or a dropped label (see
-  `docs/DIAGRAM_LANGUAGE_GUIDE.md` §16).
+  `lint:charts` + `lint:cards`).
 - `npm run test:unit` must pass (Vitest, pure-function coverage under `tests/unit/`).
 - `npm run test:e2e` must pass (Playwright suite across desktop + mobile + a11y).
 - `pre-commit` runs the lint + unit tests; `pre-push` runs the e2e suite. Override with `--no-verify` or `ECONOS_SKIP_E2E=1` only when you genuinely know better.

@@ -14,74 +14,9 @@
    Old eq (SRAS×AD₁): (152, 111). New eq (SRAS×AD₂): (178, 97).
    Y₂ > Y₁ ✓, P₂ > P₁ ✓ (lower SVG y = higher visually).
    Shift arrow stays green as a section-theme accent (not a curve). */
-const ENI_MINI_CHART_BOOM = `
-  <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-    <line x1="40" y1="170" x2="305" y2="170" stroke="#94A3B8" stroke-width="1.2"/>
-    <line x1="40" y1="170" x2="40" y2="20" stroke="#94A3B8" stroke-width="1.2"/>
-    <polygon points="305,170 298,167 298,173" fill="#94A3B8"/>
-    <polygon points="40,20 36,27 44,27" fill="#94A3B8"/>
-    <text x="22" y="30" font-size="11" fill="#475569" font-family="Inter,sans-serif">P</text>
-    <text x="298" y="188" font-size="11" fill="#475569" font-family="Inter,sans-serif">Y</text>
-    <line x1="55" y1="165" x2="290" y2="35" stroke="#0B1426" stroke-width="2"/>
-    <text x="294" y="38" font-size="11" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
-    <line x1="50" y1="50" x2="250" y2="170" stroke="#2563EB" stroke-width="2" stroke-dasharray="4 3" opacity="0.55"/>
-    <text x="245" y="158" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">AD₁</text>
-    <line x1="100" y1="50" x2="300" y2="170" stroke="#2563EB" stroke-width="2.2"/>
-    <text x="298" y="160" font-size="10" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD₂</text>
-    <line x1="152" y1="111" x2="152" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="152" y1="111" x2="40" y2="111" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="178" y1="97" x2="178" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="178" y1="97" x2="40" y2="97" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-    <circle cx="152" cy="111" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-    <circle cx="178" cy="97" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-    <text x="22" y="115" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₁</text>
-    <text x="22" y="100" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₂</text>
-    <text x="146" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₁</text>
-    <text x="172" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₂</text>
-    <path d="M155 68 L200 68" stroke="#16A34A" stroke-width="2.2" marker-end="url(#eni-arrow-green-boom)"/>
-    <defs>
-      <marker id="eni-arrow-green-boom" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#16A34A"/></marker>
-    </defs>
-  </svg>`;
-
-/* Mini chart: SRAS shifts left (oil shock).
-   House rules: SRAS always BLACK; shift keeps colour, only old=dashed/new=solid.
-   Plot x:[40,300] y:[20,170].
-   AD BLUE solid downward (50,50)→(290,170) slope +0.5 (unchanged).
-   SRAS₁ BLACK DASHED upward (100,165)→(290,35) slope -0.684.
-   SRAS₂ BLACK SOLID, shifted -50: (50,165)→(240,35) slope -0.684.
-   Old eq (AD×SRAS₁): (176, 113). New eq (AD×SRAS₂): (147, 99).
-   Y₂ < Y₁ ✓, P₂ > P₁ ✓.
-   Shift arrow stays amber as a section-theme accent (not a curve). */
-const ENI_MINI_CHART_OIL = `
-  <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-    <line x1="40" y1="170" x2="305" y2="170" stroke="#94A3B8" stroke-width="1.2"/>
-    <line x1="40" y1="170" x2="40" y2="20" stroke="#94A3B8" stroke-width="1.2"/>
-    <polygon points="305,170 298,167 298,173" fill="#94A3B8"/>
-    <polygon points="40,20 36,27 44,27" fill="#94A3B8"/>
-    <text x="22" y="30" font-size="11" fill="#475569" font-family="Inter,sans-serif">P</text>
-    <text x="298" y="188" font-size="11" fill="#475569" font-family="Inter,sans-serif">Y</text>
-    <line x1="100" y1="165" x2="290" y2="35" stroke="#0B1426" stroke-width="2" stroke-dasharray="4 3" opacity="0.55"/>
-    <text x="292" y="28" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="600" opacity="0.75">SRAS₁</text>
-    <line x1="50" y1="165" x2="240" y2="35" stroke="#0B1426" stroke-width="2.2"/>
-    <text x="244" y="28" font-size="10" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS₂</text>
-    <line x1="50" y1="50" x2="290" y2="170" stroke="#2563EB" stroke-width="2"/>
-    <text x="294" y="178" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700">AD</text>
-    <line x1="176" y1="113" x2="176" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="176" y1="113" x2="40" y2="113" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="147" y1="99" x2="147" y2="170" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="147" y1="99" x2="40" y2="99" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
-    <circle cx="176" cy="113" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-    <circle cx="147" cy="99" r="3.8" fill="#fff" stroke="#2563EB" stroke-width="2"/>
-    <text x="22" y="117" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₁</text>
-    <text x="22" y="103" font-size="10" fill="#475569" font-family="Inter,sans-serif">P₂</text>
-    <text x="141" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₂</text>
-    <text x="170" y="184" font-size="10" fill="#475569" font-family="Inter,sans-serif">Y₁</text>
-    <path d="M195 68 L150 68" stroke="#F59E0B" stroke-width="2.2" marker-end="url(#eni-arrow-amber-oil)"/>
-    <defs>
-      <marker id="eni-arrow-amber-oil" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#F59E0B"/></marker>
-    </defs>
-  </svg>`;
+/* The boom + oil-shock mini-charts that used to live here as inline SVGs
+   have been replaced by the stacked Classical/Keynesian interactive
+   toggle diagrams in Card 2 (see `interactiveDiagram:` array). */
 
 const ENI_STEP_DOT = (tone, icon) => `
   <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#fff;border:1.5px solid ${tone};color:${tone};font-size:14px;line-height:1;">${icon}</span>`;
@@ -207,39 +142,69 @@ window.ECONOS_TOPIC = {
       ledeStyle: 'plain',
       tip: { icon: '✓', tone: 'green', text: 'Equilibrium in AD/AS gives both P* and Y*.' },
 
-      visualKey: 'eniAdAsCore',
-      visualLabel: 'The core diagram',
-      visualEmoji: '⚖️',
-
-      pairFirst: true,
-      pairLabel: 'Two shocks, two outcomes',
-      pairEmoji: '\u{1F53A}',
-      left: {
-        tone: 'green',
-        icon: '\u{2B06}️',
-        iconStyle: 'circle',
-        label: 'AD shifts right – confidence boom',
-        text: `${ENI_MINI_CHART_BOOM}
-          <ul style="margin:10px 0 0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;">
-            <li><strong>P rises</strong></li>
-            <li><strong>Y rises</strong></li>
-            <li><strong>Demand is stronger</strong></li>
-          </ul>
-          <div style="font-size:12.5px;color:#475569;margin-top:6px;">Consumer confidence, spending and investment rise.</div>`
-      },
-      right: {
-        tone: 'amber',
-        icon: '\u{2B07}️',
-        iconStyle: 'circle',
-        label: 'SRAS shifts left – oil shock',
-        text: `${ENI_MINI_CHART_OIL}
-          <ul style="margin:10px 0 0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.55;">
-            <li><strong>P rises</strong></li>
-            <li><strong>Y falls</strong></li>
-            <li><strong>Stagflation risk</strong></li>
-          </ul>
-          <div style="font-size:12.5px;color:#475569;margin-top:6px;">Higher input costs squeeze output and raise prices.</div>`
-      },
+      // Three stacked interactive toggles:
+      //   1. AS intro — define equilibrium with the Classical/Keynesian split
+      //   2. Boom (AD shifts right) — same toggle pattern as fiscal/monetary
+      //   3. Oil shock (SRAS shifts left) — Classical SR / Keynesian floor
+      // The "two shocks, two outcomes" pair below stays in text-only form.
+      interactiveDiagram: [
+        {
+          svgKey: 'asIntroClassicalKeynesian',
+          label: 'EQUILIBRIUM IN AD/AS',
+          emoji: '⚖️',
+          layers: ['ad', 'e1'],
+          perspectives: ['classical', 'keynesian'],
+          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+          views: [
+            { label: 'The AS curve', show: [],
+              classical: { tone: 'purple', head: 'Classical view — two curves.', body: ['SRAS slopes up (sticky-cost short run); LRAS is vertical at potential output Yf.'] },
+              keynesian: { tone: 'amber', head: 'Keynesian view — one reverse-L curve.', body: ['Flat floor (deep slack), rising bottleneck, vertical at Yf.'] } },
+            { label: 'Add AD — equilibrium', show: ['ad', 'e1'],
+              classical: { tone: 'purple', head: 'Equilibrium at the LRAS / SRAS / AD triple intersection.', body: ['E₁ sits on the vertical LRAS at Yf — output is at potential in the long run.'], analysis: 'Classical reading: long-run output is anchored to capacity. Read off P₁ on the y-axis and Yf on the x-axis.' },
+              keynesian: { tone: 'amber', head: 'Equilibrium on the rising range.', body: ['E₁ sits below capacity on AS — actual output Y₁ is demand-constrained.'], analysis: 'Keynesian reading: the economy can settle at less than full employment. Read off P₁ and Y₁.' } }
+          ]
+        },
+        {
+          svgKey: 'adShiftClassicalKeynesian',
+          label: 'CONFIDENCE BOOM — AD SHIFTS RIGHT',
+          emoji: '\u{2B06}\u{FE0F}',
+          layers: ['idl-1', 'idl-2'],
+          inverseLayers: ['idl-old-solid'],
+          perspectives: ['classical', 'keynesian'],
+          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+          views: [
+            { label: 'Starting point', show: [],
+              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets vertical LRAS at Yf.'] },
+              keynesian: { tone: 'amber', head: 'Spare capacity.', body: ['AD₁ meets reverse-L AS on the rising range.'] } },
+            { label: 'Confidence boom', show: ['idl-1'],
+              classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['Consumer confidence, spending and investment rise.'] },
+              keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['Consumer confidence, spending and investment rise.'] } },
+            { label: 'New equilibrium', show: ['idl-1', 'idl-2'],
+              classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf; the boom is purely inflationary.'], analysis: 'Classical reading: in the long run, a confidence boom just inflates the price level.' },
+              keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['Y₂ &gt; Y₁ and P₂ &gt; P₁ — demand is stronger.'], analysis: 'Keynesian reading: with spare capacity, a confidence boom genuinely raises real output.' } }
+          ]
+        },
+        {
+          svgKey: 'srasShiftLeftClassicalKeynesian',
+          label: 'OIL SHOCK — SRAS SHIFTS LEFT',
+          emoji: '\u{2B07}\u{FE0F}',
+          layers: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
+          inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
+          perspectives: ['classical', 'keynesian'],
+          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+          views: [
+            { label: 'Before the shock', show: [],
+              classical: { tone: 'purple', head: 'At potential.', body: ['AD meets SRAS₁ on the vertical LRAS at Yf.'] },
+              keynesian: { tone: 'amber', head: 'Near capacity.', body: ['AD meets the reverse-L AS₁ near the steep range.'] } },
+            { label: 'Oil price spike', show: ['c-sras1-dash', 'c-sras2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-cost-arrow'],
+              classical: { tone: 'rose', head: 'SRAS shifts left.', body: ['Higher input costs lift the SR supply curve up and to the left.'] },
+              keynesian: { tone: 'rose', head: 'The price floor rises.', body: ['Higher input costs lift the reverse-L\'s floor; capacity unchanged.'] } },
+            { label: 'Stagflation', show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
+              classical: { tone: 'rose', head: 'P up, Y down.', body: ['Higher input costs squeeze output and raise prices.'], analysis: 'Classical reading: the stagflation is short-run; wages eventually adjust and SRAS slides back toward Yf at the original price level.' },
+              keynesian: { tone: 'rose', head: 'P up, Y down.', body: ['Higher input costs squeeze output and raise prices.'], analysis: 'Keynesian reading: with sticky wages the higher cost floor persists — the stagflation does not self-correct.' } }
+          ]
+        }
+      ],
 
       flowTitle: 'Read the axes',
       flowEmoji: '\u{1F50D}',

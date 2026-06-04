@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v341';
+  const CACHE_NAME = 'econos-v342';
 
   /* ────────────────────────────────────────────────────────────
      fetchFresh — a network fetch that bypasses the BROWSER'S OWN
@@ -83,6 +83,7 @@
     '/js/charts/specs/ad-shift-interactive.js',
     '/js/charts/specs/ad-shift-classical-keynesian.js',
     '/js/charts/specs/ad-shift-left-classical-keynesian.js',
+    '/js/charts/specs/supply-side-sr-lr.js',
     '/js/charts/specs/sras-right-shift-interactive.js',
     '/js/charts/specs/consumption-function.js',
     '/js/charts/specs/mec-diagram.js',

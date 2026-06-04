@@ -162,10 +162,10 @@
     arrows: [
       /* Classical SR — SRAS₁ → SRAS₂ (V2). PERPENDICULAR to the parallel
          SRAS curves (slope 0.75 → perpendicular direction (0.6,-0.8) in
-         chart units). Starts on SRAS₁ at (0.50, 0.59), drops perpendicular
-         onto SRAS₂ at (0.639, 0.404) — the true displacement vector of a
-         parallel rightward shift. */
-      { x1: 0.500, y1: 0.590, x2: 0.639, y2: 0.404,
+         chart units). Centred on the midline between the two curves at
+         x ≈ 0.65, so both ends sit in the OPEN STRIP between SRAS₁ and
+         SRAS₂ — no contact with either curve, well clear of E₁ and E₂. */
+      { x1: 0.608, y1: 0.612, x2: 0.692, y2: 0.500,
         tone: 'green', strokeWidth: 1.8, markerEnd: 'ssrl-arr-green',
         buffer: 0, layer: 'c-sr-arrow', perspective: 'classical' },
       /* Classical LR — LRAS₁ → LRAS₂ (V3), rightward near top. */

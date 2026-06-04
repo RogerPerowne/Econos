@@ -6,6 +6,47 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.52.0 — 2026-06-04
+
+### Fiscal Card 2 — Classical ↔ Keynesian toggle on an elegant Keynesian AS
+
+The flagship AD/AS diagram now carries a subtle **Classical ↔ Keynesian
+perspective toggle** (pills above the chart). The *same* rightward AD shift,
+two AS models, opposite verdict:
+
+- **Keynesian view** — the textbook **reverse-L AS** (flat spare-capacity
+  range → smooth bottleneck → vertical ceiling at Yf), built natively by the
+  engine's `keynesianAS` shape. The economy starts on the rising range below
+  capacity, so AD₁→AD₂ raises **both** output and the price level — with the
+  output gain shrinking as the economy nears Yf.
+- **Classical view** — a **vertical LRAS at Yf** (the same capacity output
+  where the Keynesian curve goes vertical — the two schools share the long-run
+  ceiling). The economy is always at Yf, so AD₁→AD₂ raises **only** the price
+  level: pure inflation. The per-perspective analysis panel spells out each
+  school's verdict — the heart of the demand-side vs supply-side debate.
+
+**New spec** `ad-shift-classical-keynesian.js` (`adShiftClassicalKeynesian`).
+Engineering notes:
+
+- **Elegant + exact.** The Keynesian AS is the engine's C¹-continuous
+  reverse-L (smooth horizontal tangent at the knee, vertical at the cap).
+  Every equilibrium is solved by the engine via `point.intersection`
+  (line ∩ cubic-Bezier for the Keynesian curve, line ∩ line for the LRAS) —
+  no hand-typed coordinates, so the dots sit exactly on the curves and the
+  `lint:charts` gate verifies zero drift.
+- **Curve labels default ABOVE the line** (per Roger's house rule), then
+  nudged from there.
+- **Shift arrow drawn perpendicular to the parallel AD lines and centred in
+  the gap between them** (per Roger) — the true displacement of a parallel
+  shift, not a generic horizontal arrow.
+
+Wired into all three shells + `sw.js` precache; `CACHE_NAME` → `econos-v336`.
+67 chart specs render clean; 167 unit tests pass.
+
+This is the first of the Section 2.6 EDL-chart conversions; the toggle
+pattern (and the elegant Keynesian curve) is now available to reuse on the
+monetary and supply-side cards.
+
 ## 0.51.3 — 2026-06-04
 
 ### Fiscal Card 2 — EDL static render → standard stepped interactive diagram

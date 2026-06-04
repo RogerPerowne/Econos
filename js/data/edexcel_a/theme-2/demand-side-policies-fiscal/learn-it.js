@@ -114,21 +114,57 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'Higher G or lower T shifts AD <strong>right</strong> and raises demand.' },
 
-      // EDL hero — first production use. Renders via the buildEdlHeroHtml
-      // hook added in v0.45.1. `ad-shift-right` is in EDL's ad-as family.
-      diagram: {
-        version: 1,
-        type: 'ad-as',
-        intent: 'ad-shift-right',
-        viewport: 'card',
-        mode: 'learn',
-        axes: { x: { label: 'Real GDP' }, y: { label: 'Price level' } },
-        teaching: { takeaway: 'Expansionary fiscal policy shifts AD right — output and employment rise; inflation rises if capacity is tight.' },
-        alt: 'AD/AS diagram showing AD shifting right from AD₁ to AD₂, raising real GDP and the price level along an upward-sloping SRAS.'
+      // Standard stepped interactive diagram (chart left, description right,
+      // analysis below) on the legacy engine — with a subtle Classical ↔
+      // Keynesian PERSPECTIVE TOGGLE. The same AD shift, two AS models:
+      // Keynesian (reverse-L AS, output + prices rise) vs Classical
+      // (vertical LRAS at Yf, ONLY prices rise). Replaced the static EDL
+      // render (v0.46.0) whose auto-placed labels clashed.
+      interactiveDiagram: {
+        svgKey: 'adShiftClassicalKeynesian',
+        label: 'EXPANSIONARY FISCAL POLICY — AD SHIFTS RIGHT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        perspectives: ['keynesian', 'classical'],
+        perspectiveLabels: { keynesian: 'Keynesian view', classical: 'Classical view' },
+        views: [
+          {
+            label: 'Weak economy', show: [],
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — spare capacity at E₁.',
+              body: ['AD₁ meets the upward-sloping (reverse-L) AS on its <strong>rising range</strong>, at E₁.', 'Output Y₁ sits <em>below</em> full capacity Yf — there are idle resources to put to work.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — already at capacity at E₁.',
+              body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy always returns to full capacity.', 'AD₁ meets LRAS at E₁, with output fixed at Yf and price level P₁.'] }
+          },
+          {
+            label: 'Higher G / lower T', show: ['idl-1'],
+            keynesian: {
+              tone: 'green',
+              head: 'Expansionary fiscal policy shifts AD right to AD₂.',
+              body: ['Higher government spending (G) or lower taxation (T) raises C, I and G directly.', 'The whole AD curve shifts rightward from AD₁ to AD₂ — identical in both views.'] },
+            classical: {
+              tone: 'green',
+              head: 'Expansionary fiscal policy shifts AD right to AD₂.',
+              body: ['The demand stimulus is exactly the same as in the Keynesian view.', 'AD shifts from AD₁ to AD₂ — but the AS model is what decides the result.'] }
+          },
+          {
+            label: 'New equilibrium', show: ['idl-1', 'idl-2'],
+            keynesian: {
+              tone: 'green',
+              head: 'Output AND prices rise (E₂).',
+              body: ['E₂ sits up and to the right: <strong>Y₂ &gt; Y₁ and P₂ &gt; P₁</strong>.', 'Demand management <em>works</em> — but the output gain shrinks and inflation grows as the economy nears Yf.'],
+              analysis: 'Keynesian verdict: with spare capacity, expansionary fiscal policy delivers real output and jobs (plus some inflation). The closer the economy is to Yf, the steeper AS becomes and the more of the AD shift leaks into prices rather than output.' },
+            classical: {
+              tone: 'rose',
+              head: 'ONLY prices rise (E₂).',
+              body: ['E₂ sits directly above E₁: <strong>output stays at Yf, P₂ ≫ P₁</strong>.', 'The extra demand simply bids up prices against a fixed supply.'],
+              analysis: 'Classical verdict: in the long run the economy is already at capacity, so demand-side stimulus is <strong>purely inflationary</strong> — it cannot raise real output. Only supply-side policy can shift LRAS right and lift Yf. This is the heart of the demand-side vs supply-side debate.' }
+          }
+        ]
       },
-      diagramLabel: 'AD SHIFTS RIGHT',
-      diagramEmoji: '📊',
-      diagramCaption: 'Higher G or lower T moves AD outward; new equilibrium has higher output and a higher price level.',
 
       flowTitle: 'THE TRANSMISSION CHAIN',
       flowEmoji: '🔗',

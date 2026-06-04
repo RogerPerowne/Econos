@@ -12404,6 +12404,7 @@ window.ECONOS_ICONS = {
   lrasShiftDiagram: window.ECONOS_PPF.render(window.ECONOS_LRAS_SHIFT_DIAGRAM_SPEC),
 
   adShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_INTERACTIVE_SPEC),
+  adShiftClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_CLASSICAL_KEYNESIAN_SPEC),
 
   srasRightShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_SRAS_RIGHT_SHIFT_INTERACTIVE_SPEC),
 

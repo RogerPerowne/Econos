@@ -75,15 +75,16 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',  icon: '🔍', head: 'Why the current account gets attention', body: 'It shows whether exports, imports and income flows are strengthening or weakening demand.' }
       ],
 
-      flowTitle: 'WHY ECONOMISTS CARE',
-      flowEmoji: '🎯',
-      flowSep: '→',
-      flow: [
-        { tone: 'blue',   icon: '📈', title: 'Growth and AD',          sub: 'net trade is a component of AD' },
-        { tone: 'amber',  icon: '£',  title: 'Exchange-rate pressure', sub: 'imbalances move the currency' },
-        { tone: 'purple', icon: '🏛️', title: 'Foreign borrowing',      sub: 'deficits are funded by asset sales / borrowing' },
-        { tone: 'green',  icon: '🎯', title: 'Competitiveness signal', sub: 'reveals underlying strengths or weaknesses' }
-      ],
+      whyItMatters: {
+        title: 'WHY ECONOMISTS CARE',
+        emoji: '🎯',
+        items: [
+          { tone: 'blue',   icon: '📈', label: 'Growth and AD',          text: 'Net trade is a component of aggregate demand.' },
+          { tone: 'amber',  icon: '£',  label: 'Exchange-rate pressure', text: 'Imbalances move the currency.' },
+          { tone: 'purple', icon: '🏛️', label: 'Foreign borrowing',      text: 'Deficits are funded by asset sales or borrowing.' },
+          { tone: 'green',  icon: '🎯', label: 'Competitiveness signal', text: 'Reveals underlying strengths or weaknesses.' }
+        ]
+      },
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Do not confuse the <strong>current account</strong> with the <strong>whole balance of payments</strong> — it is one account within the wider set.' },
 

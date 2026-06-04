@@ -6,6 +6,42 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.63.2 — 2026-06-04
+
+### Balance of Payments — structural pass against the source mockups
+
+A careful side-by-side of each card against the high-resolution
+ChatGPT mockups surfaced three places where the wrong block type
+(not just wrong styling) was producing the "dog's breakfast" feel,
+especially on mobile. All three fixed:
+
+- **C1 "Why economists care"** — was an arrowed `flow` chain, which
+  the global mobile rule couldn't reflow cleanly (the dashed
+  connectors cut across the labels and the four steps crushed
+  together). The mockup shows this as a plain four-up tile grid with
+  **no arrows**, so it's now a `whyItMatters` block — clean four-up
+  on desktop, auto-stacking to a single column on phones like every
+  other tile row.
+- **C2 "Final current account balance" lozenge** — the pill was too
+  narrow for its own text at phone width, so the words clipped. Now
+  it wraps cleanly (softer radius, centred multi-line text, full
+  width with a smaller font under 760px).
+- **C3 "A simple chain"** — the mockup has **two** chains (a deficit
+  path *and* a surplus path); only the deficit one was built, and its
+  last tile clipped. Both chains now render — "UK demand rises →
+  imports rise faster → deficit" (rose) and "competitiveness improves
+  → exports strengthen → surplus" (green) — each stacking with
+  down-arrows on mobile.
+
+The two genuinely complex visuals — C3's hub-and-spoke of six drivers
+and C5's four-gauge dashboard — scale down on phones rather than
+reflowing, by design: their supporting panels (the two chains, the
+deficit/surplus pair, the consequences flow) carry the readable
+takeaway at any width.
+
+No content changes beyond the second C3 chain. Cache bumped to
+`econos-v355`.
+
 ## 0.63.1 — 2026-06-04
 
 ### Balance of Payments — mockup pass + mobile-friendliness

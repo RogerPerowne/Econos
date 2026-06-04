@@ -424,6 +424,22 @@ window.ECONOS_TOPICS = [
       ocr:       { spec: '2.3', included: true }
     }
   },
+  {
+    id: 'introduction-to-balance-of-payments',
+    name: 'Balance of Payments',
+    sub: 'The three accounts, the current account, and why it must balance',
+    color: '#0ea5e9',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      // Theme 2 INTRO to BoP (Edexcel A 2.1.4). The deeper Theme 4 build
+      // (J-curve, Marshall-Lerner, exchange-rate adjustment) lives on the
+      // separate `balance-of-payments` topic.
+      edexcel_a: { spec: '2.1.4', included: true },
+      edexcel_b: { spec: null, included: false },
+      aqa:       { spec: '3.2.3.4', included: true },
+      ocr:       { spec: '2.5', included: true }
+    }
+  },
   /* Section 2: Aggregate Demand */
   {
     id: 'aggregate-demand',

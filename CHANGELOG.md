@@ -6,6 +6,46 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.46.0 — 2026-06-04
+
+### Demand-side Policies: Fiscal — 6-card build, first production use of EDL
+
+Fills the first of the three Theme 2 placeholder topics flagged in
+`docs/THEME_2_REVIEW.md`. Six cards built from Roger's ChatGPT-pipeline
+mockups (one per card, 2026-06-04). The previously empty
+`demand-side-policies-fiscal/learn-it.js` (1 KB placeholder stub) is now a
+full ad-interactive build (~17 KB).
+
+**Card structure** — pattern variety across the topic:
+
+| Card | Title | Pattern | Key visual |
+|---|---|---|---|
+| 1 | Fiscal policy – the big picture | Sequential flow chain | 5-step transmission + spending/tax/why-it-matters trio + expansionary↔contractionary pair |
+| 2 | Expansionary fiscal policy in action | Decompose-a-diagram | **EDL `ad-shift-right` hero** + 6-step transmission chain |
+| 3 | The multiplier – one injection, many rounds | Interactive multi-state | **Reuses `multiplierRounds`** (R1=£100m, MPC=0.8 → £500m ceiling) with fiscal-policy view bodies |
+| 4 | Cooling the economy – contractionary | Decompose-a-diagram | **EDL `ad-shift-left` hero** + 5-step cool-down chain + gain/cost trade-off |
+| 5 | Automatic stabilisers and the fiscal toolkit | Side-by-side pair | Auto vs discretionary + 5-tile toolkit + why-distinction-matters flow |
+| 6 | Judging fiscal policy | Evidence-then-verdict | Strengths/Limits + 6-question judgement frame + 4-step "how to write it" |
+
+**First production use of EDL.** Cards 2 and 4 carry a `diagram: { ... }` field
+with EDL semantic specs (`type: 'ad-as'`, `intent: 'ad-shift-right'` /
+`'ad-shift-left'`, `viewport: 'card'`, `mode: 'learn'`, axis labels +
+teaching takeaway + auto-alt). The renderer hook added in v0.45.1 calls
+`window.ECONOS_DIAGRAMS.render(spec)` at render time and injects the SVG
+into the card chrome where `visualKey` would otherwise sit. Both charts
+verified in the production shell: dashed-old / solid-new AD curves, SRAS,
+two equilibria, automatic chevron shift arrow, axis labels.
+
+**No EDL multi-state needed.** Card 3 reuses the existing
+`multiplierRounds` interactive (from `national-income-and-the-multiplier`
+Card 1) rather than building a parallel sequential flow — the geometric
+visual is identical; only the view bodies are rewritten in fiscal-policy
+language so the same diagram teaches the multiplier from two complementary
+angles (mechanism vs fiscal application).
+
+Two Theme 2 placeholder topics remain: `demand-side-policies-monetary`
+(2.6.2 monetary) and `supply-side-policies` (2.6.3).
+
 ## 0.45.3 — 2026-06-04
 
 ### Theme 2 — additive spec-gap fills (per `docs/THEME_2_REVIEW.md` §5.2)

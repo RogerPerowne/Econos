@@ -6,6 +6,14 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.52.4 — 2026-06-04
+
+### Fiscal Card 2 — steadier staging
+
+Trimmed the Classical view-1 headline from "already at capacity at E₁" to
+"at capacity at E₁" so it wraps to the same height as the other steps —
+stops the stage jumping as the user clicks through.
+
 ## 0.52.3 — 2026-06-04
 
 ### Fiscal Card 2 toggle — all equilibrium labels cleanly right

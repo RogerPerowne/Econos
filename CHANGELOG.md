@@ -6,6 +6,36 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.57.1 — 2026-06-04
+
+### Theme 2 AD/AS sweep — Batch 3: Equilibrium card three-toggle stack
+
+Equilibrium national income C2 (ad-as-equilibrium) now hosts THREE
+stacked interactive toggle diagrams replacing the previous static
+`visualKey: 'eniAdAsCore'` and the two hand-rolled inline mini SVGs
+(boom + oil) that lived in the pair block:
+
+1. AS intro — defines equilibrium with the Classical/Keynesian split
+2. Confidence boom — AD shifts right
+3. Oil shock — SRAS shifts left
+
+Removed the unused `ENI_MINI_CHART_BOOM` and `ENI_MINI_CHART_OIL`
+constants now that the interactive diagrams supersede them.
+
+The remaining four Theme-2 cards where Classical/Keynesian toggling does
+NOT add teaching value have been left untouched:
+
+- Aggregate-demand C2 (slope) and C3 (movement vs shift): purely about
+  AD mechanism; no AS context in play.
+- Aggregate-supply C2 (sras-curve): sticky-cost movement — both schools
+  agree on the short-run mechanism this card teaches.
+- Trade-cycle C2 (diagnose): classification template where the lesson is
+  identifying AD/SRAS direction, not the two schools' verdicts.
+
+Two complex cases (equilibrium C3 output-gaps and macro-conflicts C4
+inflation-surge-2021-23) deferred for a follow-up batch — each needs its
+own bespoke spec.
+
 ## 0.57.0 — 2026-06-04
 
 ### Theme 2 AD/AS sweep — Batch 2: AS intro toggle + LRAS-right toggle

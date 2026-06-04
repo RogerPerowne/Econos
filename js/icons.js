@@ -16129,14 +16129,15 @@ window.ECONOS_ICONS = {
         .bop-uk-card-body { font-size:12.5px; line-height:1.5; }
         .bop-uk-arrows { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:start; margin:6px 0 4px; height:60px; position:relative; }
         .bop-uk-arrows svg { width:100%; height:100%; display:block; }
-        .bop-uk-final { display:flex; align-items:center; justify-content:center; gap:10px; padding:14px 22px; border-radius:30px; background:#fff; border:2px solid #0B1426; font-weight:900; font-size:14px; color:#0B1426; max-width:380px; margin:0 auto; }
-        .bop-uk-final-icon { font-size:22px; }
+        .bop-uk-final { display:flex; align-items:center; justify-content:center; gap:10px; padding:14px 24px; border-radius:18px; background:#fff; border:2px solid #0B1426; font-weight:900; font-size:14px; color:#0B1426; max-width:420px; margin:0 auto; text-align:center; line-height:1.3; }
+        .bop-uk-final-icon { font-size:22px; flex-shrink:0; }
         .bop-uk-caveat { text-align:center; margin-top:10px; font-size:11.5px; color:#475569; font-style:italic; }
         @media (max-width: 760px) {
           .bop-uk-top { grid-template-columns:1fr; }
           .bop-uk-arrows { display:flex; justify-content:center; height:auto; padding:6px 0; }
           .bop-uk-arrows svg { display:none; }
           .bop-uk-arrows::before { content:'↓'; font-size:28px; color:#475569; font-weight:700; }
+          .bop-uk-final { max-width:100%; font-size:13px; padding:12px 16px; }
         }
       </style>
       <div class="bop-uk-top">
@@ -16181,10 +16182,12 @@ window.ECONOS_ICONS = {
       <style>
         .bop-hub-chain { margin-top:14px; padding:14px; background:#FAFCFF; border:1px solid #E2E8F0; border-radius:12px; }
         .bop-hub-chain-label { font-size:11px; font-weight:800; color:#0B1426; letter-spacing:0.04em; margin-bottom:10px; }
-        .bop-hub-chain-row { display:grid; grid-template-columns:1fr 18px 1fr 18px 1.4fr; gap:6px; align-items:stretch; }
-        @media (max-width: 760px) { .bop-hub-chain-row { grid-template-columns:1fr; } .bop-hub-chain-sep { display:none; } .bop-hub-chain-step { text-align:center; } .bop-hub-chain-step::after { content:'↓'; display:block; color:#94A3B8; font-size:14px; margin-top:4px; } .bop-hub-chain-step:last-child::after { content:''; } }
-        .bop-hub-chain-step { background:#fff; border:1px solid #CBD5E1; border-radius:8px; padding:8px 10px; font-size:12px; font-weight:700; color:#0B1426; display:flex; align-items:center; justify-content:center; text-align:center; }
+        .bop-hub-chain-row { display:grid; grid-template-columns:1fr 18px 1fr 18px 1.5fr; gap:6px 6px; align-items:stretch; margin-bottom:8px; }
+        .bop-hub-chain-row:last-child { margin-bottom:0; }
+        @media (max-width: 760px) { .bop-hub-chain-row { grid-template-columns:1fr; } .bop-hub-chain-sep { display:none; } .bop-hub-chain-step::after { content:'↓'; display:block; color:#94A3B8; font-size:14px; margin-top:4px; } .bop-hub-chain-step:last-child::after { content:''; } }
+        .bop-hub-chain-step { background:#fff; border:1px solid #CBD5E1; border-radius:8px; padding:9px 10px; font-size:12px; font-weight:700; color:#0B1426; text-align:center; line-height:1.35; display:flex; align-items:center; justify-content:center; }
         .bop-hub-chain-step.is-rose { background:#FFF1F2; border-color:#FDA4AF; color:#BE123C; font-weight:800; }
+        .bop-hub-chain-step.is-green { background:#F0FDF4; border-color:#86EFAC; color:#065F46; font-weight:800; }
         .bop-hub-chain-sep { display:flex; align-items:center; justify-content:center; color:#94A3B8; font-size:14px; font-weight:700; }
       </style>
       <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
@@ -16267,6 +16270,13 @@ window.ECONOS_ICONS = {
           <div class="bop-hub-chain-step">Imports rise faster</div>
           <div class="bop-hub-chain-sep">→</div>
           <div class="bop-hub-chain-step is-rose">Current account moves towards deficit</div>
+        </div>
+        <div class="bop-hub-chain-row">
+          <div class="bop-hub-chain-step">Competitiveness improves</div>
+          <div class="bop-hub-chain-sep">→</div>
+          <div class="bop-hub-chain-step">Exports strengthen</div>
+          <div class="bop-hub-chain-sep">→</div>
+          <div class="bop-hub-chain-step is-green">Current account improves</div>
         </div>
       </div>
     </div>

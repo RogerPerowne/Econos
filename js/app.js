@@ -1384,7 +1384,12 @@
               : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
             const isActive = i === 0 && (!persp || persp === initialPersp);
             const perspAttr = persp ? ` data-id-persp="${persp}"` : '';
-            return `<div data-id-desc="${i}"${perspAttr} style="display:${isActive ? 'flex' : 'none'};align-items:flex-start;gap:12px;">
+            // All step descriptions are stacked into ONE grid cell and
+            // toggled by visibility (not display), so the description column
+            // reserves the height of the TALLEST step and never resizes as
+            // the user clicks through — the stage stays put. `data-id-stacked`
+            // tells the click handlers to flip visibility rather than display.
+            return `<div data-id-desc="${i}"${perspAttr} data-id-stacked="1" style="grid-area:1/1;display:flex;visibility:${isActive ? 'visible' : 'hidden'};align-items:flex-start;gap:12px;">
               ${marker}
               <div style="flex:1;min-width:0;">
                 <div style="font-weight:800;font-size:12.5px;color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${slot.head}</div>
@@ -1413,12 +1418,12 @@
           : '';
         const svgWrapClass = initialPersp ? `chart-${initialPersp}` : '';
         html += `
-          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}'${inverseLayers.length ? ` data-id-inverse='${JSON.stringify(inverseLayers)}'` : ''}${perspectives ? ` data-id-perspectives='${JSON.stringify(perspectives)}'` : ''} style="margin-bottom:26px;">
+          <div data-id-root="${uid}" data-id-active-vi="0" data-id-layers='${JSON.stringify(layers)}'${inverseLayers.length ? ` data-id-inverse='${JSON.stringify(inverseLayers)}'` : ''}${perspectives ? ` data-id-perspectives='${JSON.stringify(perspectives)}'` : ''} style="margin-bottom:26px;">
             ${perspectiveStripHtml}
             <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
-              <div class="id-content-row" style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;">
+              <div class="id-content-row" style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;min-height:${id.stageMinHeight || 290}px;">
                 <div class="${svgWrapClass}" style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
-                <div style="display:flex;flex-direction:column;padding:0 4px;">${descItems}</div>
+                <div style="display:grid;padding:0 4px;">${descItems}</div>
               </div>
             </div>
             <div class="id-step-strip" style="display:grid;grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
@@ -6696,9 +6701,13 @@
           if (m && perspectives.indexOf(m[1]) !== -1) { activePersp = m[1]; break; }
         }
       }
+      idRoot.dataset.idActiveVi = String(vi);
       idRoot.querySelectorAll('[data-id-desc]').forEach(d => {
         const matchesPersp = !d.dataset.idPersp || d.dataset.idPersp === activePersp;
-        d.style.display = (parseInt(d.dataset.idDesc, 10) === vi && matchesPersp) ? 'flex' : 'none';
+        const on = parseInt(d.dataset.idDesc, 10) === vi && matchesPersp;
+        // Stacked descriptions reserve max height — flip visibility, not display.
+        if (d.dataset.idStacked) d.style.visibility = on ? 'visible' : 'hidden';
+        else d.style.display = on ? 'flex' : 'none';
       });
       idRoot.querySelectorAll('[data-id-analysis]').forEach(a => {
         const matchesPersp = !a.dataset.idPersp || a.dataset.idPersp === activePersp;
@@ -6730,16 +6739,14 @@
         const dot = btn.querySelector('[data-id-persp-dot]');
         if (dot) dot.style.background = isActive ? t.accent : '#CBD5E1';
       });
-      // Find the currently-visible description's view index — that's
-      // the active step. Any block currently displayed (regardless of
-      // perspective) is on the active step.
-      let activeVi = 0;
-      const visibleDesc = idRoot.querySelector('[data-id-desc]:not([style*="display: none"]):not([style*="display:none"])');
-      if (visibleDesc) activeVi = parseInt(visibleDesc.dataset.idDesc, 10);
+      // The active step is recorded on the root by id-advance (defaults to 0).
+      const activeVi = parseInt(idRoot.dataset.idActiveVi || '0', 10);
       idRoot.querySelectorAll('[data-id-desc]').forEach(d => {
         const matches = parseInt(d.dataset.idDesc, 10) === activeVi &&
                         (!d.dataset.idPersp || d.dataset.idPersp === newPersp);
-        d.style.display = matches ? 'flex' : 'none';
+        // Stacked descriptions reserve max height — flip visibility, not display.
+        if (d.dataset.idStacked) d.style.visibility = matches ? 'visible' : 'hidden';
+        else d.style.display = matches ? 'flex' : 'none';
       });
       idRoot.querySelectorAll('[data-id-analysis]').forEach(a => {
         const matches = parseInt(a.dataset.idAnalysis, 10) === activeVi &&

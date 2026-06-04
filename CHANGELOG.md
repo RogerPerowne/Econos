@@ -6,6 +6,48 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.51.1 — 2026-06-04
+
+### Theme 1 — Comparative advantage: Ricardo quote + new "Limitations" card
+
+Lifts content from the Trade Room simulation (the "Limitations Courtroom"
+stage) into the Theme 1 `specialisation-and-money` topic as a permanent
+A-level appropriate card. Topic grows from 9 to 10 cards.
+
+**Card 5 (existing — Worked Example: Comparative Advantage)** — added a
+Ricardo `economistQuote` block. Theme 1's first Ricardo voice:
+
+> *"Under a system of perfectly free commerce, each country naturally
+> devotes its capital and labour to such employments as are most
+> beneficial to each. This pursuit of individual advantage is admirably
+> connected with the universal good of the whole."*
+> — David Ricardo, *On the Principles of Political Economy and Taxation* (1817)
+
+Required a small engine enhancement: `renderCardWorkedExample` did not
+previously render `economistQuote` blocks (it was supported on `framing`
+and `ad-interactive` but silently ignored here). Added the same block
+pattern after `examEdge`. Bumped `CACHE_NAME` to `econos-v334`.
+
+**New Card 6 — "When comparative advantage doesn't quite work"** — sits
+between the CA worked example and the barter card. Pattern: 4-tile
+numbered-rows evaluation block + side-by-side "but the core insight
+survives" verdict + bottomTip pointing forward to Theme 4.
+
+The four limits (lifted from the Trade Room's Stage-5 expert-witness
+critiques, A-level-scaled):
+
+1. **Transport costs can swallow the gains** — heavy/perishable goods
+2. **Costs rise as output expands** — Ricardo's constant-returns assumption
+3. **Workers can't switch jobs overnight** — structural unemployment
+4. **Comparative advantage shifts** — South Korea shipbuilding, China textiles → electronics
+
+Verdict pair: trade still pays AND the policy question is real (adjustment
+support, shaping advantage, moderating exposure). The exam edge cites
+Ha-Joon Chang's "kicking away the ladder" critique as the A* lift.
+
+All subsequent stepLabels renumbered "of 9" → "of 10"; topic intro
+metadata updated.
+
 ## 0.51.0 — 2026-06-04
 
 ### EDL foundation — extensible families, a no-SVG escape hatch, grammar-as-data
@@ -63,6 +105,7 @@ release — that "migrate" step is deliberately out of scope).
   round-trip, annotation compile + anchoring + validation). 33 pass.
 - `dev/diagram-gallery.html`: new "Annotations (escape hatch)" group incl. an
   anchored-to-solved-equilibrium example.
+1d29436 (Theme 1 comparative advantage: Ricardo quote + new Limitations of CA card)
 
 ## 0.50.0 — 2026-06-04
 

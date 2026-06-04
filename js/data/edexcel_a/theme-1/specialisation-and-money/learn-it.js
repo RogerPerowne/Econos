@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroSpecialisationMoney',
     summary: 'Specialisation dramatically raises productivity but creates a need for exchange. Barter is too inefficient to support complex trade – money solves this by acting as a medium of exchange, measure of value, store of value, and standard of deferred payment.',
-    doInThis: 'Work through 9 cards: the big picture, Adam Smith’s pin factory and his three gains, the division of labour weighed up, specialising to trade across individuals, firms and countries, comparative advantage and the gains from trade, the barter problem, the four functions of money, what makes good money, and how money and specialisation lift living standards.',
+    doInThis: 'Work through 10 cards: the big picture, Adam Smith’s pin factory and his three gains, the division of labour weighed up, specialising to trade across individuals, firms and countries, comparative advantage and the gains from trade, the barter problem, the four functions of money, what makes good money, and how money and specialisation lift living standards.',
     outcomes: [
       'Explain the division of labour using Adam Smith’s three gains (dexterity, time saved, machinery)',
       'Distinguish the advantages/disadvantages of the division of labour from those of specialising to trade',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Money’s four functions (Edexcel wording): Medium of Exchange, Measure of Value (also called unit of account), Store of Value, and Standard of Deferred Payment.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '9 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '10 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -31,7 +31,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 9',
+      stepLabel: 'Learn: Step 1 of 10',
       title: 'Specialisation & money: the big picture',
       tip: { icon: '💡', tone: 'blue', text: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest – and total output rises sharply.' },
       diagramKey: 'specialisationGainsCompare',
@@ -53,7 +53,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_2',
       template: 'framing',
-      stepLabel: 'Learn: Step 2 of 9',
+      stepLabel: 'Learn: Step 2 of 10',
       title: 'Adam Smith’s Pin Factory',
       tip: { icon: '💡', tone: 'blue', text: 'The division of labour splits one production process into separate tasks, each done by a different worker. Adam Smith showed how powerful this is.' },
       economistQuote: {
@@ -101,7 +101,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_3',
       template: 'framing',
-      stepLabel: 'Learn: Step 3 of 9',
+      stepLabel: 'Learn: Step 3 of 10',
       title: 'The Division of Labour: Gains vs Drawbacks',
       tip: { icon: '💡', tone: 'blue', text: 'Splitting work into specialised tasks raises output – but doing one narrow job all day has real costs for workers and firms.' },
       causes: [
@@ -133,7 +133,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_4',
       template: 'framing',
-      stepLabel: 'Learn: Step 4 of 9',
+      stepLabel: 'Learn: Step 4 of 10',
       title: 'Specialising to Trade',
       tip: { icon: '💡', tone: 'blue', text: 'Beyond the factory floor, whole people, firms and countries specialise – then trade for everything else.' },
       note: {
@@ -190,7 +190,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_comparative_advantage',
       template: 'worked-example',
-      stepLabel: 'Learn: Step 5 of 9',
+      stepLabel: 'Learn: Step 5 of 10',
       title: 'Worked Example: Comparative Advantage',
       scenario: 'Two countries — the <strong>UK</strong> and <strong>China</strong> — can each put a worker on <strong>financial services</strong> or <strong>electronics</strong>. With the same resources, one worker can make:\n\n<strong>UK:</strong> 200 financial services <em>or</em> 100 electronics\n<strong>China:</strong> 100 financial services <em>or</em> 200 electronics\n\nBoth countries can make both goods. Should they specialise — and if so, who makes what?',
       steps: [
@@ -221,16 +221,77 @@ window.ECONOS_TOPIC = {
         }
       ],
       conclusion: 'Comparative advantage = the lowest opportunity cost. Whenever opportunity-cost ratios differ between countries, specialisation plus trade raises total output — here from 150 to 200 units of each good with no extra resources. Specialise by opportunity cost, not by who is absolutely best.',
-      examEdge: 'The classic trap is answering on <em>absolute</em> advantage. Always compute opportunity cost and award comparative advantage to the lower-OC producer. State the terms-of-trade condition (the trade rate must sit between the two opportunity costs) to reach the top band.'
+      examEdge: 'The classic trap is answering on <em>absolute</em> advantage. Always compute opportunity cost and award comparative advantage to the lower-OC producer. State the terms-of-trade condition (the trade rate must sit between the two opportunity costs) to reach the top band.',
+      economistQuote: {
+        portraitKey: 'economistRicardo',
+        tone: 'amber',
+        label: 'Economist insight · Ricardo and the case for trade',
+        quote: 'Under a system of perfectly free commerce, each country naturally devotes its capital and labour to such employments as are most beneficial to each. This pursuit of individual advantage is admirably connected with the universal good of the whole.',
+        attribution: 'David Ricardo, <em>On the Principles of Political Economy and Taxation</em> (1817)'
+      }
     },
 
     /* ================================================================
-       CARD 6 – The Problem with Barter (Sequential flow chain) — spec (d) setup
+       CARD 6 – Limitations of Comparative Advantage (Evidence-then-verdict)
+       Lifts the Stage-5 "Limitations Courtroom" insight from the Trade
+       Room simulation into A-level Theme 1 form: four named limits that
+       qualify Ricardo's case, then a synthesis verdict that keeps the
+       core insight intact. Spec 1.1.5 evaluation lift.
+       ================================================================ */
+    {
+      id: 'specialisation_money_comparative_advantage_limits',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 6 of 10',
+      title: 'When comparative advantage doesn\'t quite work',
+      lede: 'Ricardo\'s case is powerful — but the model rests on four assumptions that the real world routinely breaks. Top exam answers name a limit before they judge.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '⚖️', tone: 'amber', text: 'The case for trade still holds — but pure comparative advantage is a <strong>model</strong>, not a forecast. The world adds friction.' },
+
+      causesLabel: 'FOUR REAL-WORLD LIMITS',
+      causesEmoji: '🚧',
+      causesStyle: 'numbered-rows',
+      causesCols: 1,
+      causes: [
+        { tone: 'amber', icon: '🚢', head: 'Transport costs can swallow the gains',
+          body: 'The model assumes goods move freely. In reality, shipping heavy or perishable goods (concrete, fresh dairy, low-value bulk) can cost <em>more</em> than the comparative-advantage gain itself. This is why trade clusters around high-value, light or digital goods — and why "global value chains" still concentrate regionally.' },
+        { tone: 'blue', icon: '📉', head: 'Costs rise as output expands',
+          body: 'Ricardo assumed <strong>constant returns</strong> — adding workers always adds the same output. In the real world, fully specialising drives up land, labour and resource costs as scarce inputs get bid up. The right amount of specialisation usually sits <em>below</em> the theoretical maximum.' },
+        { tone: 'rose', icon: '👷', head: 'Workers can\'t switch jobs overnight',
+          body: 'A steelworker losing their job to imported steel cannot instantly become a software engineer. The <strong>aggregate gain</strong> from trade can mask painful <strong>structural unemployment</strong> in declining industries — and aggregate gains are politically meaningless if they are very unevenly distributed.' },
+        { tone: 'purple', icon: '🔁', head: 'Comparative advantage shifts over time',
+          body: 'It is not destiny. South Korea built world-leading shipbuilding from almost nothing in 30 years; China shifted from basic textiles in the 1980s to electronics by the 2010s. Targeted investment in skills, technology and infrastructure can <em>change</em> which country has the lowest opportunity cost — a key argument for active industrial policy.' }
+      ],
+
+      pairLabel: 'BUT THE CORE INSIGHT SURVIVES',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'green', icon: '✅', iconStyle: 'circle',
+        label: 'Trade still pays',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.65;">As long as opportunity-cost ratios differ, <em>some</em> gain from specialisation exists. The limits above narrow the gain — they do not eliminate it.</p>'
+      },
+      right: {
+        tone: 'amber', icon: '⚠️', iconStyle: 'circle',
+        label: 'But the policy question is real',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.65;">Governments may need to <em>cushion adjustment</em> (retraining, regional support), <em>shape advantage</em> (R&amp;D, skills, infrastructure), or <em>moderate exposure</em> (avoid over-specialisation in volatile sectors).</p>'
+      },
+
+      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'The same limits return in <strong>Theme 4</strong> when you study trading blocs, exchange-rate effects on trade, and the case for protectionism. Worth the early flag.' },
+
+      conclusion: {
+        title: 'The verdict',
+        text: 'Ricardo\'s model gives the <strong>direction</strong> of trade gains; the four limits give their <strong>magnitude and distribution</strong>. A good A-level answer names a limit before reaching for a judgement.'
+      },
+      examEdge: 'Top answers <strong>do not stop at "trade makes both countries better off"</strong>. They identify a real-world limit — transport costs, rising costs at scale, structural unemployment in losing industries, or shifting comparative advantage — and use it to qualify the case. Naming Ha-Joon Chang\'s "kicking away the ladder" critique, or citing the UK steel industry decline, lifts B-band evaluation to A*.'
+    },
+
+    /* ================================================================
+       CARD 7 – The Problem with Barter (Sequential flow chain) — spec (d) setup
        ================================================================ */
     {
       id: 'specialisation_money_5',
       template: 'framing',
-      stepLabel: 'Learn: Step 6 of 9',
+      stepLabel: 'Learn: Step 7 of 10',
       title: 'The Problem with Barter',
       tip: { icon: '💡', tone: 'blue', text: 'Barter means exchanging goods directly without money. Trade only happens when both people want exactly what the other has – the double coincidence of wants.' },
       diagramKey: 'barterTriangle',
@@ -281,7 +342,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_6',
       template: 'framing',
-      stepLabel: 'Learn: Step 7 of 9',
+      stepLabel: 'Learn: Step 8 of 10',
       title: 'The Four Functions of Money',
       tip: { icon: '💡', tone: 'blue', text: 'Money solves the problems of barter because it performs four key jobs that make exchange possible, practical and efficient.' },
       causes: [
@@ -331,7 +392,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_7',
       template: 'framing',
-      stepLabel: 'Learn: Step 8 of 9',
+      stepLabel: 'Learn: Step 9 of 10',
       title: 'Characteristics of Good Money',
       tip: { icon: '💡', tone: 'blue', text: 'For money to perform its four functions well, it needs certain practical qualities. Score the candidates against them and a winner emerges – which is why every economy converges on something like modern currency.' },
       diagramKey: 'goodMoneyScorecard',
@@ -356,7 +417,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_8',
       template: 'framing',
-      stepLabel: 'Learn: Step 9 of 9',
+      stepLabel: 'Learn: Step 10 of 10',
       title: 'Why Money Holds It All Together',
       tip: { icon: '💡', tone: 'green', text: 'The gains from specialisation are unlocked fully only when money allows smooth exchange. Together they convert higher productivity into wider prosperity.' },
       flow: [

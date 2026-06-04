@@ -8,6 +8,8 @@ bump the patch for bugfix-only sweeps.
 
 ## 0.62.0 — 2026-06-04
 
+## 0.63.0 — 2026-06-04
+
 ### Design language: document the token system + first consistency sweep
 
 Pivot to the visual design language (typography / colour / spacing / formatting).
@@ -31,6 +33,42 @@ The token set already exists and is good — the work is **consistent applicatio
   interactive AD/AS diagram).
 - Remaining drift (`js/app.js` 307 SVG attributes, `js/icons.js` ~3013 chart fills)
   needs the `style="fill:…"` refactor — a later, screenshot-verified sweep.
+
+## 0.62.0 — 2026-06-04
+
+### New Theme 2 topic — Balance of Payments (intro, 2.1.4)
+
+Closes the major spec gap from the Theme 2 audit. New topic
+`introduction-to-balance-of-payments`, registered under Edexcel A
+**2.1.4** (auto-files under theme-2), AQA 3.2.3.4 and OCR 2.5. The
+deeper Theme 4 build (J-curve, Marshall-Lerner, savings–investment
+identity) stays on the separate `balance-of-payments` topic, as the
+HoD requested.
+
+Six Learn-It cards, built from Roger's 54-slide deck + ChatGPT card
+mockups, each a distinct storytelling pattern (no consecutive repeats):
+
+1. **Balance of payments — the big picture** (decompose): the three
+   accounts → balance = 0, how to read it, why economists care.
+2. **Inside the current account** (flow chain): goods + services +
+   primary income + secondary income; the UK pattern (£206bn goods
+   deficit offset by £184bn services surplus, 2024).
+3. **Why current accounts move** (regime grid): six drivers, a simple
+   chain, deficit vs surplus forces, the J-curve common confusion
+   (flagged as Theme 4).
+4. **Who funds a deficit?** (side-by-side pair): the matching identity
+   (current deficit ↔ financial surplus), stable FDI vs volatile hot
+   money, good-sign vs warning-sign.
+5. **When is a deficit a problem?** (evidence-then-verdict): the
+   sustainability dashboard (size / persistence / competitiveness /
+   financing quality, UK ~1.6% of GDP in 2025 vs 6.7% in 2014),
+   consequences, healthy vs worrying, what improves it.
+6. **The balance of payments exam toolkit** (toolkit): what it shows,
+   common mistakes, Identify → Explain → Link → Judge, good judgement
+   questions.
+
+Built entirely from the existing block library — no new chart-engine
+specs. Real UK figures throughout. All six cards screenshot-verified.
 
 ## 0.61.0 — 2026-06-04
 

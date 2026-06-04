@@ -135,19 +135,55 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'Lower rates make borrowing <strong>cheaper</strong> and reduce the reward from saving.' },
 
-      diagram: {
-        version: 1,
-        type: 'ad-as',
-        intent: 'ad-shift-right',
-        viewport: 'card',
-        mode: 'learn',
-        axes: { x: { label: 'Real GDP' }, y: { label: 'Price level' } },
-        teaching: { takeaway: 'Lower Bank Rate (or QE) shifts AD right — output and employment rise; inflation rises if capacity is tight.' },
-        alt: 'AD/AS diagram showing AD shifting right from AD₁ to AD₂ in response to expansionary monetary policy — raising real GDP and the price level along an upward-sloping SRAS.'
+      // Stepped interactive diagram with Classical/Keynesian toggle —
+      // monetary expansion drives the same AD-right shift fiscal C2 uses,
+      // so the SVG spec is reused; only the per-step copy changes.
+      interactiveDiagram: {
+        svgKey: 'adShiftClassicalKeynesian',
+        label: 'EXPANSIONARY MONETARY POLICY — AD SHIFTS RIGHT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+        views: [
+          {
+            label: 'Weak economy', show: [],
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — spare capacity at E₁.',
+              body: ['AD₁ meets AS on its <strong>rising range</strong>, at E₁.', 'Output Y₁ sits <em>below</em> full capacity Yf — there are idle resources monetary stimulus could put to work.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at capacity at E₁.',
+              body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy always returns to full capacity.', 'AD₁ meets LRAS at E₁, with output fixed at Yf and price level P₁.'] }
+          },
+          {
+            label: 'Lower Bank Rate / QE', show: ['idl-1'],
+            keynesian: {
+              tone: 'amber',
+              head: 'Lower rates / QE shift AD right to AD₂.',
+              body: ['Cheaper borrowing raises C and I; a weaker pound lifts net exports.', 'The whole AD curve shifts rightward from AD₁ to AD₂ — identical in both views.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Lower rates / QE shift AD right to AD₂.',
+              body: ['Cheaper borrowing raises C and I; a weaker pound lifts net exports.', 'The whole AD curve shifts rightward from AD₁ to AD₂ — identical in both views.'] }
+          },
+          {
+            label: 'New equilibrium', show: ['idl-1', 'idl-2'],
+            keynesian: {
+              tone: 'green',
+              head: 'Output AND prices rise (E₂).',
+              body: ['E₂ sits up and to the right: <strong>Y₂ &gt; Y₁ and P₂ &gt; P₁</strong>.', 'Monetary stimulus <em>works</em> — but the output gain shrinks and inflation grows as the economy nears Yf.'],
+              analysis: 'Keynesian verdict: with spare capacity, looser monetary policy delivers real output and jobs (plus some inflation). The closer the economy is to Yf, the steeper AS becomes and the more of the AD shift leaks into prices rather than output.' },
+            classical: {
+              tone: 'purple',
+              head: 'ONLY prices rise (E₂).',
+              body: ['E₂ sits directly above E₁: <strong>output stays at Yf, P₂ ≫ P₁</strong>.', 'Extra spending bids up prices against a fixed supply — the rate cut feeds inflation, not output.'],
+              analysis: 'Classical verdict: in the long run the economy is already at capacity, so monetary stimulus is <strong>purely inflationary</strong> — it cannot raise real output. Only supply-side policy can shift LRAS right and lift Yf. This is the heart of the rules-vs-discretion / monetarist case against active demand management.' }
+          }
+        ]
       },
-      diagramLabel: 'AD SHIFTS RIGHT',
-      diagramEmoji: '📊',
-      diagramCaption: 'Lower Bank Rate or QE moves AD outward; new equilibrium has higher output and a higher price level.',
 
       flowTitle: 'THE TRANSMISSION CHAIN',
       flowEmoji: '🔗',
@@ -271,19 +307,55 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'Higher rates <strong>dampen borrowing and spending</strong>, shifting AD left.' },
 
-      diagram: {
-        version: 1,
-        type: 'ad-as',
-        intent: 'ad-shift-left',
-        viewport: 'card',
-        mode: 'learn',
-        axes: { x: { label: 'Real GDP' }, y: { label: 'Price level' } },
-        teaching: { takeaway: 'Contractionary monetary policy shifts AD left — price pressure eases, but output and jobs may weaken too.' },
-        alt: 'AD/AS diagram showing AD shifting left from AD₁ to AD₂ in response to a higher Bank Rate — lowering both real GDP and the price level along an upward-sloping SRAS.'
+      // Stepped interactive diagram with Classical/Keynesian toggle —
+      // monetary tightening drives the same AD-left shift fiscal C4 uses,
+      // so the SVG spec is reused; only the per-step copy changes.
+      interactiveDiagram: {
+        svgKey: 'adShiftLeftClassicalKeynesian',
+        label: 'CONTRACTIONARY MONETARY POLICY — AD SHIFTS LEFT',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+        views: [
+          {
+            label: 'Overheating', show: [],
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — near capacity at E₁.',
+              body: ['AD₁ meets AS on its <strong>steep range</strong>, just below Yf.', 'Demand has run ahead of capacity — extra spending is now leaking mostly into the price level.'] },
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at capacity at E₁.',
+              body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy returns to full capacity.', 'AD₁ meets LRAS at E₁ — output is fixed at Yf, the price level sits at P₁.'] }
+          },
+          {
+            label: 'Higher Bank Rate', show: ['idl-1'],
+            keynesian: {
+              tone: 'amber',
+              head: 'A higher Bank Rate shifts AD left to AD₂.',
+              body: ['Costlier borrowing weakens C and I; a stronger pound drags net exports.', 'The whole AD curve shifts leftward from AD₁ to AD₂ — identical in both views.'] },
+            classical: {
+              tone: 'purple',
+              head: 'A higher Bank Rate shifts AD left to AD₂.',
+              body: ['Costlier borrowing weakens C and I; a stronger pound drags net exports.', 'The whole AD curve shifts leftward from AD₁ to AD₂ — identical in both views.'] }
+          },
+          {
+            label: 'New equilibrium', show: ['idl-1', 'idl-2'],
+            keynesian: {
+              tone: 'blue',
+              head: 'Output AND prices fall (E₂).',
+              body: ['E₂ sits down and to the left: <strong>Y₂ &lt; Y₁ and P₂ &lt; P₁</strong>.', 'Near capacity AS is steep, so the early output cost is small — most of the cooling lands in the price level. Push tightening too far and the output cost grows.'],
+              analysis: 'Keynesian verdict: when inflation is demand-driven and the economy is near capacity, higher rates <strong>cool prices with limited output sacrifice</strong>. Against a supply-side shock (e.g. an energy crisis), the same tightening hurts output without addressing the root cause — judgement calls 2021–23 hinge on this distinction.' },
+            classical: {
+              tone: 'purple',
+              head: 'ONLY prices fall (E₂).',
+              body: ['E₂ sits directly below E₁: <strong>output stays at Yf, P₂ &lt; P₁</strong>.', 'Less spending against a fixed supply lowers the price level — no long-run output cost.'],
+              analysis: 'Classical verdict: in the long run output is anchored at Yf, so contractionary policy is <strong>purely disinflationary</strong>. The cost of disinflation is a short-run adjustment, not a long-run loss — central-bank credibility is what determines how painful that adjustment turns out to be.' }
+          }
+        ]
       },
-      diagramLabel: 'AD SHIFTS LEFT',
-      diagramEmoji: '📊',
-      diagramCaption: 'Higher Bank Rate moves AD inward; new equilibrium has lower output and a lower price level.',
 
       flowTitle: 'THE COOL-DOWN CHAIN',
       flowEmoji: '❄️',

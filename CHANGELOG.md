@@ -6,6 +6,38 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.54.0 — 2026-06-04
+
+### Theme 2.6 — interactive AD/AS diagrams across all three policy topics
+
+Rolled out the Fiscal C2 pattern (stepped 3-view interactive diagram, with a
+Classical ↔ Keynesian perspective toggle where it adds teaching value) to
+the rest of Theme 2.6. Four EDL static-diagram cards converted to standard
+stepped interactive diagrams on the legacy engine:
+
+- **Fiscal C4 — Contractionary fiscal policy.** New spec
+  `adShiftLeftClassicalKeynesian` (mirror of the expansionary right-shift):
+  AD shifts LEFT, both schools share Yf=0.66. Keynesian = output + prices
+  fall; Classical = only prices fall.
+- **Monetary C2 — Expansionary monetary policy.** Reuses
+  `adShiftClassicalKeynesian` (the spec built for fiscal C2 — same demand
+  shift, different transmission mechanism). Per-step copy rewritten for
+  Bank Rate / QE channels.
+- **Monetary C4 — Contractionary monetary policy.** Reuses the new
+  `adShiftLeftClassicalKeynesian`. Per-step copy rewritten — analysis
+  notes the demand-driven vs supply-shock distinction (the 2021–23
+  judgement call).
+- **Supply-side C4 — How supply-side policy shifts the economy.** Uses the
+  existing `srasRightShiftInteractive`. No Classical/Keynesian toggle here
+  — both schools agree a rightward SRAS shift raises output and lowers the
+  price level. Also brought this spec's labels onto the house conventions
+  (equilibrium labels right, curve labels above) — previously E₁ sat on
+  the left.
+
+The toggle is genuinely pedagogical: same AD shift, same AS frameworks,
+opposite verdict — the "demand-side debate" is now visible at a glance on
+both fiscal and monetary topics.
+
 ## 0.53.0 — 2026-06-04
 
 ### Interactive diagrams — stable stage height (general fix)

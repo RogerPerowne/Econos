@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.61.0 — 2026-06-04
+
+### Removed the semantic diagram engine (EDL / `ECONOS_DIAGRAMS`)
+
+The experimental semantic diagram engine is fully removed. It powered zero live
+cards (the Theme 2 AD/AS sweep had already moved every diagram onto the legacy
+interactive renderer), so this is a clean deletion with no content impact. The
+**legacy chart builder (`ECONOS_PPF`, `js/charts/**`) is untouched** and keeps
+drawing every diagram on the site.
+
+Deleted: `js/diagrams/econos-diagrams.js`, `tests/unit/diagrams.test.js`,
+`scripts/lint-diagrams.mjs`, `scripts/convert-legacy-charts.mjs`,
+`dev/diagram-gallery.html`, `dev/diagram-builder.html`, the four
+`docs/DIAGRAM_{LANGUAGE_GUIDE,AUTHORING_RECIPES,MIGRATION_GUIDE,POSTGRES_MODEL}.md`
+docs, and the `econos-diagram-language` skill. Unwired from the three shells, the
+`sw.js` precache (cache bumped to `econos-v351`), `package.json` (`lint:diagrams`
++ `convert:legacy-charts` scripts dropped) and the `buildEdlHeroHtml` hook in
+`js/app.js`. Kept: `docs/diagram-spec.md` + `scripts/audit-diagrams.mjs` (a
+general diagram reference, not part of the engine).
+
 ## 0.60.0 — 2026-06-04
 
 ### Theme 2 review — Round 3: economist insights expanded, unified amber styling

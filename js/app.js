@@ -158,25 +158,6 @@
     return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 18px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
   }
 
-  // EDL hero hook: when a card declares `diagram: {...}` (an Econos Diagram
-  // Language spec — `type`, `intent`, `show`, etc.), render it via
-  // window.ECONOS_DIAGRAMS and produce a visualKey-shaped hero block.
-  // Returns '' when the field is absent or EDL isn't loaded, so existing
-  // cards (none use this field today) are entirely unaffected.
-  function buildEdlHeroHtml(c) {
-    if (!c || !c.diagram || typeof c.diagram !== 'object') return '';
-    if (!window.ECONOS_DIAGRAMS || typeof window.ECONOS_DIAGRAMS.render !== 'function') return '';
-    let result;
-    try { result = window.ECONOS_DIAGRAMS.render(c.diagram); } catch (e) { return ''; }
-    if (!result || !result.svg) return '';
-    const label = c.diagramLabel !== undefined ? c.diagramLabel : (c.diagram.title || '');
-    const emoji = c.diagramEmoji || '📊';
-    const caption = c.diagramCaption || '';
-    return (label ? genSecLabel(emoji, label) : '')
-      + `<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${result.svg}</div>`
-      + (caption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${caption}</div>` : '');
-  }
-
   /* Branches: three static layouts share one helper so the data-file
      `branchesLayout` field stays the only knob. All three render Inter
      throughout — Fraunces is reserved for page titles. */
@@ -3051,7 +3032,6 @@
 
     const ledeHtml = c.lede ? `<p class="card__lede">${c.lede}</p>` : '';
     const visualKeyHtml = c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 20px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : '';
-    const edlHeroHtml = buildEdlHeroHtml(c);
     let noteTopHtml = '';
     if (c.note && c.notePosition === 'top') {
       const notes = Array.isArray(c.note) ? c.note : [c.note];
@@ -3067,7 +3047,7 @@
         noteTopHtml += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
       });
     }
-    return `${stepLabelHtml}<h1 class="card__title">${c.title}</h1>${ledeHtml}${noteTopHtml}${visualKeyHtml}${edlHeroHtml}${content}`;
+    return `${stepLabelHtml}<h1 class="card__title">${c.title}</h1>${ledeHtml}${noteTopHtml}${visualKeyHtml}${content}`;
   }
 
   function renderKeyTakeaway(k) {
@@ -5052,7 +5032,6 @@
       })() : ''}
 
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
-      ${buildEdlHeroHtml(c)}
 
       ${c.tileGrid ? buildTileGridHtml(c.tileGrid) : ''}
 

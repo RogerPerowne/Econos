@@ -100,9 +100,8 @@ window.ECONOS_TOPIC = {
 
     /* ====================================================================
        CARD 2 — Expansionary fiscal policy in action
-       Pattern: Decompose-a-diagram (EDL ad-shift-right hero) +
+       Pattern: Decompose-a-diagram (interactive AD-shift hero) +
        Sequential transmission chain + 3-tile when-used + 3-step why-it-works.
-       FIRST production card using window.ECONOS_DIAGRAMS.
        ==================================================================== */
     {
       id: 'expansionary-fiscal-action',
@@ -118,8 +117,7 @@ window.ECONOS_TOPIC = {
       // analysis below) on the legacy engine — with a subtle Classical ↔
       // Keynesian PERSPECTIVE TOGGLE. The same AD shift, two AS models:
       // Keynesian (reverse-L AS, output + prices rise) vs Classical
-      // (vertical LRAS at Yf, ONLY prices rise). Replaced the static EDL
-      // render (v0.46.0) whose auto-placed labels clashed.
+      // (vertical LRAS at Yf, ONLY prices rise).
       interactiveDiagram: {
         svgKey: 'adShiftClassicalKeynesian',
         label: 'EXPANSIONARY FISCAL POLICY — AD SHIFTS RIGHT',

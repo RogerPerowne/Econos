@@ -45,6 +45,42 @@ if (!EDL) {
 }
 const REG = EDL.registry;
 
+/* ---- the accuracy gate ----
+   These warning classes mean the diagram is wrong or silently lossy, not
+   merely stylistically noisy, so the linter treats them as BLOCKING:
+     - an annotation anchor that did not resolve to solved geometry
+     - a raw SVG / marker smell
+     - an unknown show token / tone / family / intent
+   The two genuinely benign render warnings (auto-generated alt text, legacy
+   delegation) are allowed through. Everything else fails the build. */
+const BENIGN_WARNING = /no alt text|will be generated|legacy ECONOS_PPF/i;
+
+function accuracyWarnings(out) {
+  return (out.warnings || []).filter((w) => !BENIGN_WARNING.test(w));
+}
+
+// Render a spec and record any accuracy failure. Rendered at `article`
+// (the roomiest viewport) so a dropped label means the content cannot fit
+// ANYWHERE — a real defect — not merely that a compact card auto-hid it.
+function renderGate(where, spec) {
+  let out;
+  try {
+    out = EDL.render(Object.assign({}, spec, { viewport: 'article' }));
+  } catch (err) {
+    note(where, 'error', 'render threw: ' + err.message);
+    return null;
+  }
+  (out.errors || []).forEach((e) => note(where, 'error', 'render error: ' + e));
+  accuracyWarnings(out).forEach((w) => note(where, 'error', 'accuracy warning (must be clean to ship): ' + w));
+  (out.hidden || []).forEach((h) =>
+    note(where, 'error', `label "${h.id}" was dropped (${h.reason}) — diagram silently loses information`)
+  );
+  if (verbose && (out.collisionsResolved || []).length) {
+    out.collisionsResolved.forEach((c) => note(where, 'warn', `label "${c.id}" nudged to avoid a collision`));
+  }
+  return out;
+}
+
 /* ---- discover EDL spec files ---- */
 const SCAN_DIRS = ['js/diagrams/specs', 'js/data'];
 const findings = [];
@@ -172,17 +208,25 @@ function lintSpec(file, raw, spec) {
     }
   });
 
-  // it must actually render
-  const out = EDL.render(spec);
-  if (out.errors && out.errors.length) {
-    out.errors.forEach((e) => note(where, 'error', 'render error: ' + e));
-  }
-  if (verbose && out.warnings && out.warnings.length) {
-    out.warnings.forEach((wmsg) => note(where, 'warn', 'render warning: ' + wmsg));
-  }
+  // it must render cleanly: no errors, no accuracy warnings, no dropped labels
+  renderGate(where, spec);
 }
 
-/* ---- run ---- */
+/* ---- self-corpus: every family × intent the language advertises must
+   render clean. This makes the gate LIVE today (rather than "activates when
+   specs land") and is the regression net behind the ~100%-accuracy goal: if
+   the engine ever starts dropping a label or leaving an anchor unsolved for a
+   shipped intent, the build goes red. ---- */
+let corpus = 0;
+const grammar = EDL.grammar();
+Object.keys(grammar.families).forEach((fam) => {
+  grammar.families[fam].intents.forEach((intent) => {
+    corpus++;
+    renderGate(`<corpus> ${fam}/${intent}`, { type: fam, intent });
+  });
+});
+
+/* ---- authored specs discovered on disk ---- */
 let scanned = 0;
 SCAN_DIRS.forEach((dir) => {
   walk(resolve(root, dir)).forEach((file) => {
@@ -196,15 +240,13 @@ SCAN_DIRS.forEach((dir) => {
 const errors = findings.filter((f) => f.level === 'error');
 const warns = findings.filter((f) => f.level === 'warn');
 
-if (!scanned) {
-  console.log('lint-diagrams: no EDL specs found yet (scanned ' + SCAN_DIRS.join(', ') + ').');
-  console.log('  → EDL content is authored inline today; this gate activates as specs land.');
-  process.exit(0);
-}
-
 findings.forEach((f) => {
   const tag = f.level === 'error' ? 'ERROR' : 'warn ';
   console.log(`[${tag}] ${f.file}: ${f.message}`);
 });
-console.log(`\nlint-diagrams: ${scanned} spec(s), ${errors.length} error(s), ${warns.length} warning(s).`);
+console.log(
+  `\nlint-diagrams: ${corpus} advertised intent(s) + ${scanned} authored spec(s), ` +
+    `${errors.length} error(s), ${warns.length} warning(s).`
+);
+if (!errors.length) console.log('lint-diagrams: OK — every advertised intent renders clean.');
 process.exit(errors.length ? 1 : 0);

@@ -283,3 +283,155 @@ describe('legacy ECONOS_PPF compatibility', () => {
     expect(out.warnings.join(' ')).toMatch(/legacy ECONOS_PPF/);
   });
 });
+
+describe('grammar as data (Postgres-seedable vocabulary)', () => {
+  it('grammar() returns the eight families and is pure JSON (no functions)', () => {
+    const g = EDL.grammar();
+    expect(Object.keys(g.families)).toEqual(
+      expect.arrayContaining(['market', 'tax', 'subsidy', 'price-control', 'externality', 'ppf', 'ad-as', 'phillips'])
+    );
+    // round-trips through JSON unchanged → safe in a jsonb column
+    expect(JSON.parse(JSON.stringify(g))).toEqual(g);
+    // no function leaked into the dump
+    expect(JSON.stringify(g)).not.toMatch(/function/);
+  });
+
+  it('the flat registry indices are derived from the family descriptors', () => {
+    const g = EDL.grammar();
+    // every intent in the registry belongs to a family that lists it
+    Object.keys(EDL.registry.intents).forEach((intent) => {
+      const fam = EDL.registry.intents[intent];
+      expect(g.families[fam].intents).toContain(intent);
+    });
+    // family list matches the descriptor map keys
+    expect(EDL.registry.families.slice().sort()).toEqual(Object.keys(g.families).sort());
+  });
+});
+
+describe('extensibility — registerFamily', () => {
+  it('registers a brand-new family with its own intents + tokens and renders it', () => {
+    EDL.registerFamily({
+      family: 'unit-test-fam',
+      axes: { x: 'Output (Q)', y: 'Cost' },
+      intents: ['ut-basic'],
+      showTokens: ['ut-token'],
+      defaultShow: { 'ut-basic': ['ut-token'] },
+      template(spec) {
+        return {
+          scene: {
+            curves: [
+              {
+                id: 'C',
+                def: { type: 'linear', m: -0.5, b: 0.8 },
+                x0: 0,
+                x1: 1,
+                tone: 'demand',
+                label: 'C',
+                labelAt: 'end',
+                width: 2.2,
+              },
+            ],
+            points: [],
+            segments: [],
+            regions: [],
+            arrows: [],
+            ticks: [],
+            callouts: [],
+            axes: { x: { label: spec.axes.x.label }, y: { label: spec.axes.y.label }, showOrigin: true },
+          },
+          derived: {},
+          warnings: [],
+          alt: { summary: 'unit test family' },
+        };
+      },
+    });
+
+    // vocabulary became valid immediately
+    expect(EDL.registry.families).toContain('unit-test-fam');
+    expect(EDL.registry.intents['ut-basic']).toBe('unit-test-fam');
+    expect(EDL.registry.showTokens).toContain('ut-token');
+    expect(EDL.validate({ type: 'unit-test-fam', intent: 'ut-basic', show: ['ut-token'] }).valid).toBe(true);
+
+    // intent-only spec fills the descriptor's default show + renders cleanly
+    const out = EDL.render({ type: 'unit-test-fam', intent: 'ut-basic' });
+    expect(out.errors).toHaveLength(0);
+    expect(out.svg).toContain('<svg');
+    // the descriptor's defaultShow is applied during normalisation
+    expect(EDL.compile({ type: 'unit-test-fam', intent: 'ut-basic' }).normalisedSpec.show).toEqual(['ut-token']);
+  });
+
+  it('throws on a descriptor without a string family id', () => {
+    expect(() => EDL.registerFamily({})).toThrow(/string `family`/);
+  });
+});
+
+describe('annotations — the sanctioned no-SVG escape hatch', () => {
+  it('compiles label / marker / region / bracket annotations into the render plan', () => {
+    const out = EDL.render({
+      version: 1,
+      type: 'market',
+      intent: 'market-equilibrium',
+      annotations: [
+        { type: 'label', at: { x: 0.2, y: 0.85 }, text: 'Note', tone: 'accent' },
+        { type: 'marker', at: { x: 0.7, y: 0.4 }, label: 'A', tone: 'loss' },
+        { type: 'region', points: [{ x: 0, y: 0 }, { x: 0.3, y: 0 }, { x: 0.3, y: 0.3 }], tone: 'gain', label: 'zone' },
+        { type: 'bracket', from: { x: 0.2, y: 0.1 }, to: { x: 0.6, y: 0.1 }, label: 'range' },
+      ],
+    });
+    expect(out.errors).toHaveLength(0);
+    const el = out.renderPlan.elements;
+    expect(el.some((e) => e.kind === 'point' && e.point && e.point.id === 'ann-1')).toBe(true);
+    expect(el.some((e) => e.kind === 'region' && e.region && e.region.id === 'ann-2')).toBe(true);
+    expect(el.some((e) => e.kind === 'arrow' && e.arrow && e.arrow.id === 'ann-3')).toBe(true);
+  });
+
+  it('warns (not errors) on an unknown annotation type, and never emits a raw author path', () => {
+    const out = EDL.render({
+      version: 1,
+      type: 'market',
+      intent: 'market-equilibrium',
+      annotations: [{ type: 'bogus', at: { x: 0.1, y: 0.1 } }],
+    });
+    expect(out.errors).toHaveLength(0);
+    expect(out.warnings.join(' ')).toMatch(/unknown type `bogus`/);
+    // exactly one warning for the bad type — not duplicated by the compiler
+    expect(out.warnings.filter((w) => /unknown type `bogus`/.test(w))).toHaveLength(1);
+  });
+
+  it('rejects a non-array annotations field', () => {
+    const v = EDL.validate({ type: 'market', intent: 'market-equilibrium', annotations: { type: 'label' } });
+    expect(v.valid).toBe(false);
+    expect(v.errors.join(' ')).toMatch(/annotations.*must be an array/);
+  });
+
+  it('anchors annotations to solved geometry instead of typed coordinates', () => {
+    const out = EDL.render({
+      type: 'market',
+      intent: 'market-equilibrium',
+      annotations: [
+        { type: 'marker', at: { point: 'E1' }, label: 'E1' },
+        { type: 'label', at: { intersection: ['D1', 'S'] }, text: 'crossing' },
+        { type: 'marker', at: { onCurve: 'D1', x: 0.3 }, label: 'on D' },
+      ],
+    });
+    expect(out.errors).toHaveLength(0);
+    const E1 = out.derived.E1;
+    const m = out.renderPlan.elements.find((e) => e.kind === 'point' && e.point.id === 'ann-0').point;
+    // marker sits exactly on the engine-solved equilibrium (to display precision)
+    expect(Math.abs(m.x - E1.x)).toBeLessThan(0.011);
+    expect(Math.abs(m.y - E1.y)).toBeLessThan(0.011);
+    // an on-curve marker keeps the requested x and takes its y FROM the curve
+    const onD = out.renderPlan.elements.find((e) => e.kind === 'point' && e.point.id === 'ann-2').point;
+    expect(onD.x).toBe(0.3);
+  });
+
+  it('warns when an anchor cannot be solved (unknown derived point)', () => {
+    const out = EDL.render({
+      type: 'market',
+      intent: 'market-equilibrium',
+      annotations: [{ type: 'marker', at: { point: 'NOPE' }, label: 'x' }],
+    });
+    expect(out.errors).toHaveLength(0);
+    expect(out.warnings.join(' ')).toMatch(/not a solved point/);
+  });
+});

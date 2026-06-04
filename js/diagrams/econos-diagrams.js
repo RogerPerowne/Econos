@@ -65,71 +65,18 @@
      grammar has a single source of truth.
      ========================================================== */
   var REGISTRY = {
-    families: [
-      'market',
-      'tax',
-      'subsidy',
-      'price-control',
-      'externality',
-      'ppf',
-      'ad-as',
-      'phillips',
-    ],
+    // `families`, `intents` (intent -> family) and `showTokens` are all
+    // DERIVED from the §FAMILIES descriptor map by rebuildGrammar(), so a
+    // family's vocabulary lives in exactly one place and adding a family is
+    // a single registerFamily() call rather than an edit in four spots.
+    // These start empty and are filled at load (and on every registerFamily).
+    families: [],
+    intents: {},
 
-    // intent -> family, so render() can accept intent-only specs and
-    // the validator can check an intent belongs to its declared type.
-    intents: {
-      // market
-      'market-equilibrium': 'market',
-      'demand-shift-right': 'market',
-      'demand-shift-left': 'market',
-      'supply-shift-right': 'market',
-      'supply-shift-left': 'market',
-      'simultaneous-demand-and-supply-shift': 'market',
-      // tax
-      'tax-incidence': 'tax',
-      'tax-inelastic-demand': 'tax',
-      'tax-elastic-demand': 'tax',
-      'tax-inelastic-supply': 'tax',
-      'tax-elastic-supply': 'tax',
-      'tax-revenue-and-deadweight-loss': 'tax',
-      // subsidy
-      'subsidy-incidence': 'subsidy',
-      'subsidy-consumer-benefit': 'subsidy',
-      'subsidy-producer-benefit': 'subsidy',
-      'subsidy-cost': 'subsidy',
-      // price-control
-      'maximum-price-shortage': 'price-control',
-      'minimum-price-surplus': 'price-control',
-      // externality
-      'negative-production-externality': 'externality',
-      'positive-consumption-externality': 'externality',
-      'welfare-loss-externality': 'externality',
-      'socially-optimal-output': 'externality',
-      // ppf
-      'ppf-basic': 'ppf',
-      'ppf-efficient-inefficient-unattainable': 'ppf',
-      'ppf-outward-shift': 'ppf',
-      'ppf-inward-shift': 'ppf',
-      'ppf-opportunity-cost': 'ppf',
-      'ppf-specialisation': 'ppf',
-      // ad-as
-      'ad-shift-right': 'ad-as',
-      'ad-shift-left': 'ad-as',
-      'sras-shift-left': 'ad-as',
-      'sras-shift-right': 'ad-as',
-      'classical-lras': 'ad-as',
-      'keynesian-as': 'ad-as',
-      'output-gap': 'ad-as',
-      // phillips
-      'short-run-phillips-curve': 'phillips',
-      'long-run-phillips-curve': 'phillips',
-      'expectations-shift': 'phillips',
-    },
-
-    // Recognised show tokens. Templates ignore tokens that do not
-    // apply; the validator warns on tokens unknown to the language.
-    showTokens: [
+    // Base show tokens understood by the core families. A family may
+    // contribute additional tokens via its descriptor; rebuildGrammar()
+    // unions them into this list. The validator warns on anything unknown.
+    baseShowTokens: [
       'equilibrium',
       'equilibrium-before',
       'equilibrium-after',
@@ -231,6 +178,243 @@
     viewports: ['card', 'stage', 'article', 'full'],
     modes: ['learn', 'exam', 'debug'],
   };
+
+  /* ==========================================================
+     §FAMILIES — one descriptor per diagram family.
+
+     This is the source of truth the REGISTRY indices are derived
+     from. A descriptor is a PLAIN, SERIALISABLE record of the
+     family's vocabulary plus two code hooks:
+
+       {
+         family:      string,           // the family id
+         axes:        { x, y },         // default axis labels
+         intents:     [intentId, ...],  // intents this family owns
+         showTokens:  [token, ...],     // tokens BEYOND the base set
+         defaultShow: { intent: [token,...] },  // intent-only defaults
+         normalise:   fn(spec),         // optional: fill family defaults  (CODE)
+         template:    fn(spec)->built,  // the scene builder              (CODE)
+       }
+
+     The data fields (everything except `normalise`/`template`) are
+     exactly what `grammar()` dumps — the shape you would seed a
+     Postgres reference table from. The two function hooks stay in the
+     engine, keyed by `family`. That seam is what lets the grammar be
+     stored as data without the renderer chasing it into the database.
+
+     Adding a family — including a future `costs` or multi-state
+     family — is one `registerFamily({...})` call. No edits to the
+     validator, normaliser, axis map or default-show map: they all read
+     through here. That is the fix for "EDL only does the eight
+     families": the eight are not special, they are merely the eight
+     that ship registered.
+     ========================================================== */
+  var FAMILIES = {};
+  var FAMILY_AXES = {}; // derived: family -> { x, y } axis labels
+  var TEMPLATES = {}; // derived: family -> scene builder (also set by registerFamily)
+
+  // Declarative annotation vocabulary — the sanctioned escape hatch that
+  // replaces hand-authored <svg>. See applyAnnotations().
+  var ANNOTATION_TYPES = ['label', 'marker', 'bracket', 'region', 'segment', 'arrow'];
+
+  // Rebuild the flat REGISTRY indices (families / intents / showTokens)
+  // and FAMILY_AXES from the FAMILIES descriptors. Called once at load and
+  // again after every registerFamily() so the language stays consistent.
+  function rebuildGrammar() {
+    var families = [];
+    var intents = {};
+    var tokens = REGISTRY.baseShowTokens.slice();
+    Object.keys(FAMILIES).forEach(function (fam) {
+      var d = FAMILIES[fam];
+      families.push(fam);
+      (d.intents || []).forEach(function (it) {
+        intents[it] = fam;
+      });
+      (d.showTokens || []).forEach(function (t) {
+        tokens.push(t);
+      });
+      FAMILY_AXES[fam] = d.axes || { x: 'Quantity', y: 'Price' };
+    });
+    REGISTRY.families = families;
+    REGISTRY.intents = intents;
+    REGISTRY.showTokens = uniq(tokens);
+  }
+
+  // Public extensibility seam. Register (or extend) a family from one
+  // descriptor; new vocabulary becomes valid immediately. Built-in
+  // families are registered the same way below — they are not special.
+  function registerFamily(desc) {
+    if (!desc || typeof desc.family !== 'string') {
+      throw new Error('registerFamily: descriptor needs a string `family`');
+    }
+    if (desc.intents && !Array.isArray(desc.intents)) {
+      throw new Error('registerFamily: `intents` must be an array of intent ids');
+    }
+    FAMILIES[desc.family] = assign(
+      { intents: [], showTokens: [], defaultShow: {}, axes: { x: 'Quantity', y: 'Price' } },
+      FAMILIES[desc.family] || {},
+      desc
+    );
+    if (typeof desc.template === 'function') TEMPLATES[desc.family] = desc.template;
+    rebuildGrammar();
+    return FAMILIES[desc.family];
+  }
+
+  /* ----- Built-in family descriptors (metadata + normalise hooks).
+     Their `template` functions are defined in §TEMPLATES and wired on
+     afterwards (templates reference geometry helpers declared later in
+     the file, so they cannot be attached here). ----- */
+  registerFamily({
+    family: 'market',
+    axes: { x: 'Quantity', y: 'Price' },
+    intents: [
+      'market-equilibrium',
+      'demand-shift-right',
+      'demand-shift-left',
+      'supply-shift-right',
+      'supply-shift-left',
+      'simultaneous-demand-and-supply-shift',
+    ],
+    defaultShow: {
+      'market-equilibrium': ['equilibrium', 'guides'],
+      'demand-shift-right': ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change'],
+      'demand-shift-left': ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change'],
+      'supply-shift-right': ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change'],
+      'supply-shift-left': ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change'],
+      'simultaneous-demand-and-supply-shift': ['equilibrium', 'shift-arrow'],
+    },
+    normalise: function (spec) {
+      if (!spec.curves || !Object.keys(spec.curves).length) {
+        spec.curves = {
+          D1: { role: 'demand', elasticity: 'normal' },
+          S: { role: 'supply', elasticity: 'normal' },
+        };
+      }
+    },
+  });
+
+  registerFamily({
+    family: 'tax',
+    axes: { x: 'Quantity', y: 'Price' },
+    intents: [
+      'tax-incidence',
+      'tax-inelastic-demand',
+      'tax-elastic-demand',
+      'tax-inelastic-supply',
+      'tax-elastic-supply',
+      'tax-revenue-and-deadweight-loss',
+    ],
+    defaultShow: {
+      'tax-incidence': ['tax-wedge', 'consumer-burden', 'producer-burden', 'deadweight-loss'],
+      'tax-inelastic-demand': ['tax-wedge', 'consumer-burden', 'producer-burden'],
+      'tax-elastic-demand': ['tax-wedge', 'consumer-burden', 'producer-burden'],
+      'tax-inelastic-supply': ['tax-wedge', 'consumer-burden', 'producer-burden'],
+      'tax-elastic-supply': ['tax-wedge', 'consumer-burden', 'producer-burden'],
+      'tax-revenue-and-deadweight-loss': ['tax-wedge', 'government-revenue', 'deadweight-loss'],
+    },
+    normalise: function (spec) {
+      spec.demand = spec.demand || {};
+      spec.supply = spec.supply || {};
+      if (spec.intent === 'tax-inelastic-demand') spec.demand.elasticity = spec.demand.elasticity || 'inelastic';
+      if (spec.intent === 'tax-elastic-demand') spec.demand.elasticity = spec.demand.elasticity || 'elastic';
+      if (spec.intent === 'tax-inelastic-supply') spec.supply.elasticity = spec.supply.elasticity || 'inelastic';
+      if (spec.intent === 'tax-elastic-supply') spec.supply.elasticity = spec.supply.elasticity || 'elastic';
+    },
+  });
+
+  registerFamily({
+    family: 'subsidy',
+    axes: { x: 'Quantity', y: 'Price' },
+    intents: ['subsidy-incidence', 'subsidy-consumer-benefit', 'subsidy-producer-benefit', 'subsidy-cost'],
+    defaultShow: {
+      'subsidy-incidence': ['subsidy-wedge', 'consumer-benefit', 'producer-benefit', 'government-cost'],
+      'subsidy-consumer-benefit': ['subsidy-wedge', 'consumer-benefit'],
+      'subsidy-producer-benefit': ['subsidy-wedge', 'producer-benefit'],
+      'subsidy-cost': ['subsidy-wedge', 'government-cost'],
+    },
+  });
+
+  registerFamily({
+    family: 'price-control',
+    axes: { x: 'Quantity', y: 'Price' },
+    intents: ['maximum-price-shortage', 'minimum-price-surplus'],
+    defaultShow: {
+      'maximum-price-shortage': ['price-cap', 'shortage'],
+      'minimum-price-surplus': ['price-floor', 'surplus'],
+    },
+  });
+
+  registerFamily({
+    family: 'externality',
+    axes: { x: 'Quantity', y: 'Price' },
+    intents: [
+      'negative-production-externality',
+      'positive-consumption-externality',
+      'welfare-loss-externality',
+      'socially-optimal-output',
+    ],
+    defaultShow: {
+      'negative-production-externality': ['msc', 'welfare-loss'],
+      'positive-consumption-externality': ['msb', 'welfare-loss'],
+      'welfare-loss-externality': ['welfare-loss'],
+      'socially-optimal-output': ['social-optimum', 'welfare-loss'],
+    },
+  });
+
+  registerFamily({
+    family: 'ppf',
+    axes: { x: 'Consumer goods', y: 'Capital goods' },
+    intents: [
+      'ppf-basic',
+      'ppf-efficient-inefficient-unattainable',
+      'ppf-outward-shift',
+      'ppf-inward-shift',
+      'ppf-opportunity-cost',
+      'ppf-specialisation',
+    ],
+    defaultShow: {
+      'ppf-basic': [],
+      'ppf-efficient-inefficient-unattainable': ['efficient-point', 'inefficient-point', 'unattainable-point'],
+      'ppf-outward-shift': ['frontier-after'],
+      'ppf-inward-shift': ['frontier-after'],
+      'ppf-opportunity-cost': ['opportunity-cost'],
+      'ppf-specialisation': ['opportunity-cost'],
+    },
+  });
+
+  registerFamily({
+    family: 'ad-as',
+    axes: { x: 'Real output (Y)', y: 'Price level (P)' },
+    intents: [
+      'ad-shift-right',
+      'ad-shift-left',
+      'sras-shift-left',
+      'sras-shift-right',
+      'classical-lras',
+      'keynesian-as',
+      'output-gap',
+    ],
+    defaultShow: {
+      'ad-shift-right': ['equilibrium'],
+      'ad-shift-left': ['equilibrium'],
+      'sras-shift-right': ['equilibrium'],
+      'sras-shift-left': ['equilibrium'],
+      'classical-lras': ['lras', 'equilibrium'],
+      'keynesian-as': ['equilibrium'],
+      'output-gap': ['lras', 'output-gap'],
+    },
+  });
+
+  registerFamily({
+    family: 'phillips',
+    axes: { x: 'Unemployment (%)', y: 'Inflation (%)' },
+    intents: ['short-run-phillips-curve', 'long-run-phillips-curve', 'expectations-shift'],
+    defaultShow: {
+      'short-run-phillips-curve': [],
+      'long-run-phillips-curve': ['natural-rate'],
+      'expectations-shift': ['expectations'],
+    },
+  });
 
   /* ==========================================================
      §LAYERS — central draw-order map.
@@ -610,24 +794,14 @@
      Templates never touch pixels. They place economics in data
      space and let the compiler/renderer handle the rest.
      ========================================================== */
-  var TEMPLATES = {};
+  // TEMPLATES and FAMILY_AXES are declared in §FAMILIES (above) and
+  // populated from the family descriptors; the builder functions below
+  // attach themselves onto TEMPLATES, then a wiring pass copies them onto
+  // each FAMILIES descriptor (see "wire built-in templates" below).
 
   // Shared base equilibrium so single-elasticity changes rotate a
   // curve about a stable centre rather than sliding the whole picture.
   var BASE = { x: 0.5, y: 0.52 };
-
-  // Per-family axis labels. Templates inherit these unless the author
-  // overrides axes.x.label / axes.y.label in the spec.
-  var FAMILY_AXES = {
-    market: { x: 'Quantity', y: 'Price' },
-    tax: { x: 'Quantity', y: 'Price' },
-    subsidy: { x: 'Quantity', y: 'Price' },
-    'price-control': { x: 'Quantity', y: 'Price' },
-    externality: { x: 'Quantity', y: 'Price' },
-    ppf: { x: 'Consumer goods', y: 'Capital goods' },
-    'ad-as': { x: 'Real output (Y)', y: 'Price level (P)' },
-    phillips: { x: 'Unemployment (%)', y: 'Inflation (%)' },
-  };
 
   function showHas(show, token) {
     return show.indexOf(token) !== -1;
@@ -1641,71 +1815,206 @@
      intent-only spec renders something correct and complete.
      ========================================================== */
   function applyIntentDefaults(spec) {
-    var intent = spec.intent;
-    var family = spec.type;
-    var defaultShow = {
-      'market-equilibrium': ['equilibrium', 'guides'],
-      'demand-shift-right': ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change'],
-      'demand-shift-left': ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change'],
-      'supply-shift-right': ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change'],
-      'supply-shift-left': ['equilibrium', 'shift-arrow', 'price-change', 'quantity-change'],
-      'simultaneous-demand-and-supply-shift': ['equilibrium', 'shift-arrow'],
-      'tax-incidence': ['tax-wedge', 'consumer-burden', 'producer-burden', 'deadweight-loss'],
-      'tax-inelastic-demand': ['tax-wedge', 'consumer-burden', 'producer-burden'],
-      'tax-elastic-demand': ['tax-wedge', 'consumer-burden', 'producer-burden'],
-      'tax-inelastic-supply': ['tax-wedge', 'consumer-burden', 'producer-burden'],
-      'tax-elastic-supply': ['tax-wedge', 'consumer-burden', 'producer-burden'],
-      'tax-revenue-and-deadweight-loss': ['tax-wedge', 'government-revenue', 'deadweight-loss'],
-      'subsidy-incidence': ['subsidy-wedge', 'consumer-benefit', 'producer-benefit', 'government-cost'],
-      'subsidy-consumer-benefit': ['subsidy-wedge', 'consumer-benefit'],
-      'subsidy-producer-benefit': ['subsidy-wedge', 'producer-benefit'],
-      'subsidy-cost': ['subsidy-wedge', 'government-cost'],
-      'maximum-price-shortage': ['price-cap', 'shortage'],
-      'minimum-price-surplus': ['price-floor', 'surplus'],
-      'negative-production-externality': ['msc', 'welfare-loss'],
-      'positive-consumption-externality': ['msb', 'welfare-loss'],
-      'welfare-loss-externality': ['welfare-loss'],
-      'socially-optimal-output': ['social-optimum', 'welfare-loss'],
-      'ppf-basic': [],
-      'ppf-efficient-inefficient-unattainable': ['efficient-point', 'inefficient-point', 'unattainable-point'],
-      'ppf-outward-shift': ['frontier-after'],
-      'ppf-inward-shift': ['frontier-after'],
-      'ppf-opportunity-cost': ['opportunity-cost'],
-      'ppf-specialisation': ['opportunity-cost'],
-      'ad-shift-right': ['equilibrium'],
-      'ad-shift-left': ['equilibrium'],
-      'sras-shift-right': ['equilibrium'],
-      'sras-shift-left': ['equilibrium'],
-      'classical-lras': ['lras', 'equilibrium'],
-      'keynesian-as': ['equilibrium'],
-      'output-gap': ['lras', 'output-gap'],
-      'short-run-phillips-curve': [],
-      'long-run-phillips-curve': ['natural-rate'],
-      'expectations-shift': ['expectations'],
-    };
+    var desc = FAMILIES[spec.type];
+    if (!desc) return spec;
 
+    // intent-only `show` defaults come straight from the family descriptor.
     if (!spec.show || !spec.show.length) {
-      spec.show = (defaultShow[intent] || []).slice();
+      spec.show = ((desc.defaultShow && desc.defaultShow[spec.intent]) || []).slice();
     }
 
-    // default curve declarations for the market family
-    if (family === 'market' && (!spec.curves || !Object.keys(spec.curves).length)) {
-      spec.curves = {
-        D1: { role: 'demand', elasticity: 'normal' },
-        S: { role: 'supply', elasticity: 'normal' },
-      };
-    }
+    // family-specific input defaults (default curves, elasticity mapping, …)
+    // live in the descriptor's normalise hook, not in branches here.
+    if (typeof desc.normalise === 'function') desc.normalise(spec);
 
-    // map elasticity-flavoured tax/subsidy intents to elasticity inputs
-    if (family === 'tax') {
-      spec.demand = spec.demand || {};
-      spec.supply = spec.supply || {};
-      if (intent === 'tax-inelastic-demand') spec.demand.elasticity = spec.demand.elasticity || 'inelastic';
-      if (intent === 'tax-elastic-demand') spec.demand.elasticity = spec.demand.elasticity || 'elastic';
-      if (intent === 'tax-inelastic-supply') spec.supply.elasticity = spec.supply.elasticity || 'inelastic';
-      if (intent === 'tax-elastic-supply') spec.supply.elasticity = spec.supply.elasticity || 'elastic';
-    }
     return spec;
+  }
+
+  /* ==========================================================
+     §ANNOTATIONS — the sanctioned escape hatch (replaces raw <svg>).
+
+     `spec.annotations` lets an author add an element the templates do
+     not cover WITHOUT hand-authoring SVG. Each annotation is a plain,
+     serialisable record in DATA space (x,y in 0..1) that compiles onto
+     the same Scene the templates build — so it flows through the layer
+     model, the collision pass and the tone palette exactly like a
+     first-class element. No raw paths, no markers, no pixel maths.
+
+     This is the relief valve for "no hand-authored SVG, ever": authors
+     who hit the edge of the templates stay inside the language instead
+     of dropping to `<path>`. Annotations are pure JSON, so they also
+     survive a round-trip through a Postgres `jsonb` column untouched.
+     ========================================================== */
+  // Find a scene curve by id (annotations anchor onto declared curves).
+  function sceneCurveById(scene, id) {
+    for (var i = 0; i < scene.curves.length; i++) {
+      if (scene.curves[i].id === id) return scene.curves[i];
+    }
+    return null;
+  }
+
+  /* Resolve an annotation anchor to a DATA-space point. This is the
+     accuracy lever: an author (human or model) should never type a
+     coordinate that the engine could solve. Accepted shapes:
+
+       { x, y }                       raw coordinate (discouraged, still allowed)
+       { point: 'E1' }                a solved point in `derived` (E1, E2, social…)
+       { intersection: ['D1','S'] }   the exact crossing of two declared curves
+       { onCurve: 'D1', x: 0.3 }      a point lying ON a declared curve at x
+
+     The intersection/onCurve forms mean a label or region can hug the
+     real geometry without the author ever computing a number. */
+  function resolveAnchor(anchor, scene, derived, warnings, i, slot) {
+    if (!anchor || typeof anchor !== 'object') {
+      warnings.push('annotation[' + i + '] `' + slot + '` is missing');
+      return null;
+    }
+    if (anchor.point) {
+      var p = derived && derived[anchor.point];
+      if (p && typeof p.x === 'number' && typeof p.y === 'number') return { x: p.x, y: p.y };
+      warnings.push('annotation[' + i + '] `' + slot + '.point` "' + anchor.point + '" is not a solved point');
+      return null;
+    }
+    if (anchor.intersection && anchor.intersection.length === 2) {
+      var c1 = sceneCurveById(scene, anchor.intersection[0]);
+      var c2 = sceneCurveById(scene, anchor.intersection[1]);
+      if (c1 && c2) {
+        var X = intersect(c1.def, c2.def);
+        if (X) return { x: X.x, y: X.y };
+      }
+      warnings.push('annotation[' + i + '] `' + slot + '.intersection` [' + anchor.intersection + '] did not solve');
+      return null;
+    }
+    if (anchor.onCurve) {
+      var c = sceneCurveById(scene, anchor.onCurve);
+      if (c && typeof anchor.x === 'number') {
+        var y = yAtX(c.def, anchor.x);
+        if (y != null) return { x: anchor.x, y: y };
+      }
+      warnings.push('annotation[' + i + '] `' + slot + '.onCurve` "' + anchor.onCurve + '" needs a numeric x on a known curve');
+      return null;
+    }
+    if (typeof anchor.x === 'number' && typeof anchor.y === 'number') {
+      return { x: anchor.x, y: anchor.y };
+    }
+    warnings.push('annotation[' + i + '] `' + slot + '` could not be resolved');
+    return null;
+  }
+
+  function applyAnnotations(scene, spec, derived, warnings) {
+    var anns = spec.annotations;
+    if (!Array.isArray(anns) || !anns.length) return;
+    anns.forEach(function (a, i) {
+      if (!a || typeof a !== 'object') return;
+      var id = a.id || 'ann-' + i;
+      var tone = a.tone || 'accent';
+      var at = function (slot) {
+        return resolveAnchor(a[slot], scene, derived, warnings, i, slot);
+      };
+      var pt;
+      switch (a.type) {
+        case 'label':
+          pt = at('at');
+          if (!pt) return;
+          addCallout(scene, {
+            id: id,
+            x: pt.x,
+            y: pt.y,
+            text: a.text || '',
+            tone: tone,
+            anchor: a.anchor || 'middle',
+            priority: a.priority != null ? a.priority : 60,
+          });
+          break;
+        case 'marker':
+          pt = at('at');
+          if (!pt) return;
+          addPoint(scene, {
+            id: id,
+            x: pt.x,
+            y: pt.y,
+            label: a.label || '',
+            tone: tone,
+            priority: a.priority != null ? a.priority : 70,
+            gridlines: !!a.guides,
+          });
+          break;
+        case 'region': {
+          if (!Array.isArray(a.points) || a.points.length < 3) {
+            warnings.push('annotation[' + i + '] (region) needs `points` (3+ anchors)');
+            return;
+          }
+          var poly = [];
+          var ok = true;
+          a.points.forEach(function (p, j) {
+            var rp = resolveAnchor(p, scene, derived, warnings, i, 'points[' + j + ']');
+            if (rp) poly.push(rp);
+            else ok = false;
+          });
+          if (!ok || poly.length < 3) return;
+          addRegion(scene, {
+            id: id,
+            polygon: poly,
+            tone: tone,
+            opacity: a.opacity != null ? a.opacity : 0.16,
+            label: a.label,
+          });
+          break;
+        }
+        case 'segment': {
+          var sf = at('from');
+          var stt = at('to');
+          if (!sf || !stt) return;
+          scene.segments.push({
+            id: id,
+            p1: sf,
+            p2: stt,
+            tone: tone,
+            dashed: a.dashed || null,
+            width: a.width || THEME.strokeGuide,
+          });
+          break;
+        }
+        case 'bracket': {
+          var bf = at('from');
+          var bt = at('to');
+          if (!bf || !bt) return;
+          scene.arrows.push({
+            id: id,
+            kind: 'bracket',
+            p1: bf,
+            p2: bt,
+            route: 'bracket',
+            head: 'bracket',
+            tone: tone,
+            label: a.label,
+            layer: 'arrowsFront',
+          });
+          break;
+        }
+        case 'arrow': {
+          var af = at('from');
+          var ato = at('to');
+          if (!af || !ato) return;
+          scene.arrows.push({
+            id: id,
+            kind: a.kind || 'flow',
+            p1: af,
+            p2: ato,
+            route: a.route || 'auto',
+            head: a.head || 'chevron',
+            tone: tone,
+            label: a.label,
+            layer: 'arrowsFront',
+          });
+          break;
+        }
+        default:
+          // unknown type already reported by validate(); skip silently here
+          // so render() does not surface the same warning twice.
+          break;
+      }
+    });
   }
 
   /* ==========================================================
@@ -1758,9 +2067,30 @@
     if (!spec.alt || (!spec.alt.summary && !spec.alt.long)) {
       warnings.push('no alt text supplied - a summary will be generated');
     }
-    // raw SVG smell
+    // declarative annotations (the sanctioned escape hatch)
+    if (spec.annotations != null) {
+      if (!Array.isArray(spec.annotations)) {
+        errors.push('`annotations` must be an array');
+      } else {
+        spec.annotations.forEach(function (a, i) {
+          if (!a || typeof a !== 'object') {
+            warnings.push('annotation[' + i + '] is not an object - ignored');
+            return;
+          }
+          if (ANNOTATION_TYPES.indexOf(a.type) === -1) {
+            warnings.push(
+              'annotation[' + i + '] unknown type `' + a.type + '` (one of: ' + ANNOTATION_TYPES.join(', ') + ')'
+            );
+          }
+          if (a.tone && REGISTRY.tones.indexOf(a.tone) === -1) {
+            warnings.push('annotation[' + i + '] unknown tone `' + a.tone + '`');
+          }
+        });
+      }
+    }
+    // raw SVG smell — annotations are the supported alternative.
     if (typeof spec.svg === 'string' || (spec.raw && /<svg/i.test(JSON.stringify(spec.raw)))) {
-      warnings.push('raw SVG detected in spec - EDL specs should be semantic');
+      warnings.push('raw SVG detected in spec - use `annotations` instead; EDL specs must stay semantic');
     }
     return { valid: errors.length === 0, errors: errors, warnings: warnings };
   }
@@ -1817,6 +2147,12 @@
 
     var built = template(spec);
     warnings = warnings.concat(built.warnings || []);
+
+    // declarative annotations compile onto the template's scene, so they
+    // share the same layer/collision/tone machinery (no raw SVG). Passing
+    // `derived` lets anchors resolve to solved geometry instead of typed
+    // coordinates (the accuracy lever — see resolveAnchor).
+    applyAnnotations(built.scene, spec, built.derived || {}, warnings);
 
     // ensure alt
     if (!spec.alt || (!spec.alt.summary && !spec.alt.long)) {
@@ -2706,6 +3042,53 @@
     };
   }
 
+  /* ----- wire built-in templates onto their descriptors -----
+     The builder functions in §TEMPLATES reference geometry helpers
+     declared later in the file, so they attach to FAMILIES here, once
+     everything is defined. Rendering reads TEMPLATES directly; this pass
+     only keeps the FAMILIES descriptors complete for introspection and
+     for registerFamily() callers that read them back. ----- */
+  Object.keys(TEMPLATES).forEach(function (f) {
+    if (FAMILIES[f] && !FAMILIES[f].template) FAMILIES[f].template = TEMPLATES[f];
+  });
+
+  /* ==========================================================
+     §GRAMMAR — a JSON-serialisable dump of the whole vocabulary.
+
+     This is the single function to call when seeding a database: it
+     returns ONLY data (no functions), structured so it maps cleanly to
+     either reference tables (families, intents, show-tokens) or a single
+     `jsonb` grammar document — whichever Postgres shape is chosen later.
+     The authored spec itself is already plain JSON; together they make
+     the language fully describable as data without losing the engine's
+     guarantees, which stay in code keyed by `family`.
+     ========================================================== */
+  function grammar() {
+    var fams = {};
+    Object.keys(FAMILIES).forEach(function (f) {
+      var d = FAMILIES[f];
+      fams[f] = {
+        family: f,
+        axes: assign({}, d.axes),
+        intents: (d.intents || []).slice(),
+        showTokens: (d.showTokens || []).slice(),
+        defaultShow: clone(d.defaultShow || {}),
+      };
+    });
+    return {
+      version: VERSION,
+      families: fams,
+      showTokens: REGISTRY.showTokens.slice(),
+      annotationTypes: ANNOTATION_TYPES.slice(),
+      arrowKinds: REGISTRY.arrowKinds.slice(),
+      routes: REGISTRY.routes.slice(),
+      heads: REGISTRY.heads.slice(),
+      tones: REGISTRY.tones.slice(),
+      viewports: REGISTRY.viewports.slice(),
+      modes: REGISTRY.modes.slice(),
+    };
+  }
+
   var API = {
     version: VERSION,
     render: render,
@@ -2713,6 +3096,10 @@
     compile: compile,
     debug: debug,
     normalise: normalise,
+    registerFamily: registerFamily,
+    grammar: grammar,
+    families: FAMILIES,
+    annotationTypes: ANNOTATION_TYPES,
     templates: TEMPLATES,
     layers: LAYERS,
     registry: REGISTRY,

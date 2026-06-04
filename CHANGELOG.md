@@ -6,6 +6,64 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.51.0 — 2026-06-04
+
+### EDL foundation — extensible families, a no-SVG escape hatch, grammar-as-data
+
+Groundwork on the Econos Diagram Language (`window.ECONOS_DIAGRAMS`) so it can
+grow to "author any diagram, any way, at ~100% accuracy" without surrendering
+its geometry guarantees — and so the language's *data* can eventually live in
+Postgres. The legacy `ECONOS_PPF` engine and all current Learn It / Link It /
+Land It content are untouched; EDL remains dev-only (no shell wiring this
+release — that "migrate" step is deliberately out of scope).
+
+**Extensible families (the eight are no longer special).**
+- The flat `REGISTRY` (families / intents / show-tokens / axis labels) is now
+  *derived* from a single per-family descriptor map (`§FAMILIES`) via
+  `rebuildGrammar()`. Adding a family was an edit in four places; it is now one
+  `ECONOS_DIAGRAMS.registerFamily({ family, axes, intents, showTokens,
+  defaultShow, normalise, template })` call. The built-ins register through the
+  same path, so there is one code path to reason about.
+
+**Annotations — the sanctioned escape hatch for "any diagram".**
+- New `spec.annotations` block: declarative `label` / `marker` / `region` /
+  `segment` / `bracket` / `arrow` elements that compile onto the template's
+  scene and flow through the layer model, collision pass and tone palette — so
+  authors who hit the edge of the templates stay inside the language instead of
+  hand-authoring `<svg>`.
+- **Semantic anchoring (the accuracy lever).** Every position (`at`, `from`,
+  `to`, region `points`) resolves a semantic anchor — `{ point: 'E1' }`,
+  `{ intersection: ['D1','S'] }`, `{ onCurve: 'D1', x }` — against *solved*
+  geometry, so a freeform annotation never re-introduces a typed coordinate.
+  Unsolvable anchors warn and skip; they never invent a position.
+
+**Grammar as data (Postgres-readiness).**
+- New `ECONOS_DIAGRAMS.grammar()` returns a pure-JSON dump of the whole
+  vocabulary (function-free, round-trips through `jsonb`), plus `families` and
+  `annotationTypes` on the public API.
+- New `docs/DIAGRAM_POSTGRES_MODEL.md` records the data/guarantees seam and a
+  recommended hybrid table+`jsonb` model (with document-store and fully-
+  normalised alternatives kept reachable). The Postgres target shape is left
+  open by design.
+
+**Blocking accuracy gate.**
+- `scripts/lint-diagrams.mjs` is now a real CI gate (runs inside `npm run
+  lint`). It renders every advertised family × intent (a live self-corpus, so
+  it bites with zero authored specs on disk) and **fails the build** on a
+  render error, an unresolved annotation anchor, or a dropped label — the
+  enforcement half of "~100% accuracy every time". Authored-spec checks
+  (raw-SVG, unknown vocabulary, typed equilibrium coordinates) are likewise
+  promoted to build-failing errors.
+
+**Docs, tests, gallery.**
+- `docs/DIAGRAM_LANGUAGE_GUIDE.md` gains §13 `registerFamily`, §14 `grammar()`,
+  §15 annotations + anchoring, §16 the accuracy gate. `CLAUDE.md` notes
+  `lint:diagrams` is blocking.
+- `tests/unit/diagrams.test.js`: +9 tests (grammar-as-data, registerFamily
+  round-trip, annotation compile + anchoring + validation). 33 pass.
+- `dev/diagram-gallery.html`: new "Annotations (escape hatch)" group incl. an
+  anchored-to-solved-equilibrium example.
+
 ## 0.50.0 — 2026-06-04
 
 ### Theme 2.6 — Economist Companion + Misconception Museum

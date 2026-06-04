@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.55.2 — 2026-06-04
+
+### Supply-side C4 Classical V2 — SRAS arrow into the open strip
+
+Moved the perpendicular SR shift arrow up and to the right (midpoint on
+the midline at x ≈ 0.65) so both ends sit cleanly in the open strip
+between SRAS₁ and SRAS₂ — no contact with either curve. Still
+perpendicular to the parallel pair.
+
 ## 0.55.1 — 2026-06-04
 
 ### Supply-side C4 Classical view — two polish tweaks

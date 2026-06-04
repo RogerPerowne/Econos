@@ -6,6 +6,42 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.59.1 — 2026-06-04
+
+### Theme 2 review — Round 2: remaining 6 orphan cards filled out
+
+Macro-conflicts, macro-objectives and measures-of-performance had
+orphans relying entirely on hero SVGs without tile content. Now built
+out:
+
+- **macro-conflicts C1 conflict-lens** (was 3 blocks): 6-tile `causes`
+  grid mapping the 5 classic UK trade-offs (inflation↔unemployment,
+  growth↔inflation, growth↔CA, growth↔budget, equity↔efficiency,
+  growth↔environment) to their mechanisms + named UK case studies.
+- **macro-conflicts C4 inflation-surge-2021-23** (was 3 blocks): added
+  a 3-tile `summaryRow` quantifying CPI 0.7%→11.1%→2%, Bank Rate
+  0.1%→5.25%, and the −0.1%/−0.3% technical recession.
+- **macro-objectives C2 headline-three** (was 2 blocks): added a
+  3-tile `causes` grid giving target / measure / current UK reading
+  for each of the headline three (inflation, unemployment, growth).
+- **macro-objectives C5 structural-trade-offs** (was 2 blocks): added
+  a `comparisonTable` naming the mechanism behind each of the four
+  structural trade-offs (growth↔inflation, growth↔CA, growth↔env,
+  spending↔fiscal-balance).
+- **measures-of-perf C1 macro-dashboard** (was 2 blocks): added a
+  2-column `causes` grid giving target / measure / current UK reading
+  for the four indicators (real GDP, inflation, unemployment, current
+  account).
+- **measures-of-perf C6 growth-causes** (was the topic's worst orphan
+  at **1 block**): added a "Two routes to growth" `pair` (short-run AD
+  vs long-run LRAS), a `causes` grid of 4 demand-side drivers, and a
+  `causes2` grid of 4 supply-side drivers. Card now has 6 blocks and
+  finally carries the lesson on its own without the hero SVG doing
+  all the work.
+
+Total: 6 cards lifted out of orphan status this round; 3 in round 1.
+All 9 orphan flags from the audit now cleared.
+
 ## 0.59.0 — 2026-06-04
 
 ### Theme 2 review — Round 1: cleanups + trade-cycle orphan fixes

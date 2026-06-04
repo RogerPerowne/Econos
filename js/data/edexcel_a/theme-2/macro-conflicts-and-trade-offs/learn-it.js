@@ -62,6 +62,25 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '\u{2696}\u{FE0F}', title: 'The legacy',  sub: 'Who wins, who loses, and for how long?' }
       ],
 
+      causesLabel: 'THE FIVE CLASSIC UK TRADE-OFFS',
+      causesEmoji: '\u{2694}\u{FE0F}',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation vs unemployment',
+          body: 'The Phillips relationship: cooling demand to anchor inflation usually means accepting higher unemployment for a while. <strong>The BoE 2022–23 tightening cycle</strong> is the modern UK case.' },
+        { tone: 'amber',  icon: '\u{1F4C8}', head: 'Growth vs inflation',
+          body: 'Stronger AD lifts real output AND the price level — the closer to capacity, the more leaks into prices. <strong>2021 post-COVID rebound</strong>: 7% growth, then CPI to 11%.' },
+        { tone: 'purple', icon: '\u{1F30D}', head: 'Growth vs current account',
+          body: 'A growing economy sucks in imports faster than exports respond. Persistent UK current-account deficit reflects this — a structural cost of consumption-led growth.' },
+        { tone: 'blue',   icon: '\u{1F4B0}', head: 'Growth vs budget balance',
+          body: 'Stimulus widens the deficit; austerity narrows it but slows growth. <strong>2010–15 UK austerity</strong> chose the latter; debt/GDP still rose because growth fell faster than spending.' },
+        { tone: 'green',  icon: '\u{1F465}', head: 'Equity vs efficiency',
+          body: 'Progressive taxes and welfare reduce inequality but can blunt work incentives. Supply-side liberalisation does the opposite. No technical answer — a values choice.' },
+        { tone: 'rose',   icon: '\u{1F33F}', head: 'Growth vs environment',
+          body: 'Higher GDP usually means higher emissions, resource use and pollution unless growth decouples. <strong>Net-zero by 2050</strong> requires a structural break in the historical correlation.' }
+      ],
+
       conclusionPosition: 'end',
       conclusion: {
         title: 'Big idea',
@@ -248,6 +267,12 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+
+      summaryRow: [
+        { tone: 'rose',  icon: '\u{1F4C8}', title: 'CPI inflation',  text: '<strong>0.7% (Feb 2021) → 11.1% peak (Oct 2022) → back to 2% (May 2024).</strong> The biggest UK inflation spike since the early 1980s.' },
+        { tone: 'amber', icon: '\u{1F4B0}', title: 'Bank Rate',     text: '<strong>0.1% (Dec 2021) → 5.25% peak (Aug 2023).</strong> 14 consecutive hikes — the fastest tightening cycle since the BoE gained independence in 1997.' },
+        { tone: 'blue',  icon: '\u{1F4C9}', title: 'Real GDP',      text: '<strong>−0.1% Q3 / −0.3% Q4 2023 — a technical recession.</strong> Mild, but it landed the inflation-output trade-off squarely on UK households.' }
+      ],
 
       bottomTip: [
         { tone: 'blue', icon: '\u{2696}\u{FE0F}', text: '<strong>Did the policy work?</strong> Yes &mdash; inflation came down sharply. But growth slowed, unemployment ticked up, and the cost to households was higher mortgage payments and weaker activity.' },

@@ -95,6 +95,19 @@ window.ECONOS_TOPIC = {
       visualLabel: 'Meet the headline three',
       visualEmoji: '\u{1F4F0}',
 
+      causesLabel: 'TARGET · MEASURE · CURRENT UK READING',
+      causesEmoji: '\u{1F4CA}',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'rose',  icon: '\u{1F4C8}', head: 'Inflation',
+          body: '<strong>Target:</strong> 2% CPI ±1pp (BoE remit).<br><strong>Measure:</strong> CPI year-on-year (ONS, monthly).<br><strong>Current:</strong> ~2.8% (a touch above target — sticky services component).' },
+        { tone: 'amber', icon: '\u{1F465}', head: 'Unemployment',
+          body: '<strong>Target:</strong> at or below the NAIRU (~4–5% UK estimate).<br><strong>Measure:</strong> ILO rate, 16+, three-month average (ONS).<br><strong>Current:</strong> ~4.3%.' },
+        { tone: 'green', icon: '\u{1F4C8}', head: 'Real GDP growth',
+          body: '<strong>Target:</strong> ~2% per year (long-run UK trend).<br><strong>Measure:</strong> Real GDP, quarterly, annualised (ONS).<br><strong>Current:</strong> ~1.4% — below trend; productivity puzzle dragging.' }
+      ],
+
       bottomTip: { tone: 'blue', icon: '\u{1F4D3}', text: 'These three are the <strong>flow</strong> measures of the economy — they update every quarter, and central banks and Treasury respond to their movement in real time. The next card covers the four <strong>constraint</strong> objectives that operate on longer time horizons.' },
 
       examEdge: 'Cite all three numbers from memory in any policy essay. "Inflation 2.8%, unemployment 5.0%, growth ~1.4%" is the kind of opener that signals real-economy literacy — and lets you reach for the right policy lever.'
@@ -197,6 +210,19 @@ window.ECONOS_TOPIC = {
       visualKey: 'macroTradeoffChains',
       visualLabel: 'Four structural trade-offs',
       visualEmoji: '\u{2696}',
+
+      comparisonTable: {
+        title: 'THE MECHANISM IN EACH CHAIN',
+        emoji: '\u{1F517}',
+        columns: ['Trade-off', 'Mechanism'],
+        columnTones: ['blue', 'amber'],
+        rows: [
+          { label: 'Growth ↔ inflation',           values: ['<strong>Stronger AD raises Y AND P together</strong>',                'The closer to capacity, the steeper SRAS — more of the AD shift leaks into prices rather than output.'] },
+          { label: 'Growth ↔ current account',     values: ['<strong>Higher income sucks in imports</strong>',                     'Marginal propensity to import &gt; marginal propensity to export response. A growing economy widens (X − M) deficit until competitiveness catches up.'] },
+          { label: 'Growth ↔ environment',         values: ['<strong>Output rises with emissions / resource use</strong>',          'Historically Y ∝ CO₂. Decoupling requires structural change (clean tech + efficiency) outpacing output growth — not yet achieved at scale.'] },
+          { label: 'Spending ↔ fiscal balance',    values: ['<strong>More G raises the budget deficit unless T responds</strong>',  'Without offsetting tax rises, the gap widens. Debt-to-GDP rises if real growth doesn\'t exceed real interest rate (r − g rule).'] }
+        ]
+      },
 
       bottomTip: { tone: 'slate', icon: '\u{1F4DD}', text: '<strong>These are theoretical mechanisms, not historical events.</strong> Real-world examples — 1970s stagflation, the 2008 GFC, 2021&ndash;23 inflation, the UK\'s persistent current-account deficit &mdash; live in the sister topic, <em>Macro Conflicts &amp; Trade-offs</em>.' },
 

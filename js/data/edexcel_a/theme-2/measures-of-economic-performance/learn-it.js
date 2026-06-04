@@ -43,6 +43,22 @@ window.ECONOS_TOPIC = {
       visualKey: 'macroDashboardSvg',
       notePosition: 'top',
       note: 'Every government judges economic success against <strong>all four indicators simultaneously</strong>. The difficulty is that they can pull in opposite directions: policies that boost growth can stoke inflation; cutting unemployment can widen the current-account deficit; squeezing inflation can slow growth and raise joblessness. Understanding these tensions is what separates descriptive answers from analytical ones.',
+
+      causesLabel: 'THE FOUR INDICATORS — TARGET, MEASURE, CURRENT UK',
+      causesEmoji: '📊',
+      causesStyle: 'tinted-flat',
+      causesCols: 2,
+      causes: [
+        { tone: 'green', icon: '📈', head: 'Real GDP growth',
+          body: '<strong>Target:</strong> ~2% per year (UK long-run trend).<br><strong>Measure:</strong> Real GDP year-on-year, ONS quarterly release.<br><strong>Current:</strong> ~1.4% — below trend.' },
+        { tone: 'rose',  icon: '📉', head: 'Inflation (CPI)',
+          body: '<strong>Target:</strong> 2% CPI ±1pp (BoE remit).<br><strong>Measure:</strong> CPI year-on-year, ONS monthly.<br><strong>Current:</strong> ~2.8% — sticky services component.' },
+        { tone: 'amber', icon: '👥', head: 'Unemployment',
+          body: '<strong>Target:</strong> at or below the NAIRU (~4–5%).<br><strong>Measure:</strong> ILO rate, 3-month average, ONS.<br><strong>Current:</strong> ~4.3%.' },
+        { tone: 'blue',  icon: '🌍', head: 'Current account / BoP',
+          body: '<strong>Target:</strong> broadly balanced over the cycle.<br><strong>Measure:</strong> Current-account balance as % of GDP, ONS quarterly.<br><strong>Current:</strong> persistent deficit (~3% of GDP).' }
+      ],
+
       examEdge: {
         title: 'Show how the four measures interact',
         text: '<strong>Policy is about balance – there are no free lunches.</strong> Top marks come from explaining the <strong>trade-offs</strong>, not just describing each indicator in isolation. Faster growth can push up inflation. Lower unemployment can worsen the current account. Anti-inflation policy can slow growth.'
@@ -336,7 +352,44 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Causes of economic growth',
       lede: 'Not all increases in output are the same – only supply-side expansion is truly sustainable.',
+      tip: { icon: '✅', tone: 'green', text: 'Two routes to growth: lift AD (short-run only) or shift LRAS right (long-run, sustainable).' },
       visualKey: 'causesOfGrowthSvg',
+
+      pairLabel: 'TWO ROUTES TO GROWTH',
+      pairEmoji: '\u{1F503}',
+      left: {
+        tone: 'blue', icon: '\u{1F4C8}', iconStyle: 'circle',
+        label: 'Short-run growth — AD shifts right',
+        text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">Spending rises, output rises along the existing SRAS. Fast, but bounded by capacity.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Cuts to interest rates or taxes</li><li>Higher government spending</li><li>Consumer confidence boom</li><li>Export-led demand surge</li></ul><div style="margin-top:8px;font-size:12px;color:#475569;"><strong>Risk:</strong> near capacity, more leaks into inflation than output.</div>'
+      },
+      right: {
+        tone: 'green', icon: '\u{1F680}', iconStyle: 'circle',
+        label: 'Long-run growth — LRAS shifts right',
+        text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">Productive capacity rises, the trend itself moves. Slower, but sustainable.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Higher labour productivity</li><li>Capital deepening (infrastructure, machinery)</li><li>Education and skills</li><li>Innovation, R&amp;D, technology</li></ul><div style="margin-top:8px;font-size:12px;color:#475569;"><strong>Reward:</strong> higher output, lower inflation — the supply-side ideal.</div>'
+      },
+
+      causesLabel: 'DEMAND-SIDE DRIVERS — short-run growth (AD shifters)',
+      causesEmoji: '\u{1F4B0}',
+      causesStyle: 'tinted-flat',
+      causesCols: 2,
+      causes: [
+        { tone: 'blue',   icon: '\u{1F6D2}', head: 'Consumer confidence',  body: 'Higher C; spending leads, saving falls.' },
+        { tone: 'blue',   icon: '\u{1F3ED}', head: 'Investment confidence', body: 'Higher I; firms expand capacity for expected demand.' },
+        { tone: 'blue',   icon: '\u{1F3DB}\u{FE0F}', head: 'Fiscal stimulus', body: 'Higher G or lower T; both shift AD right via the multiplier.' },
+        { tone: 'blue',   icon: '\u{1F4B7}', head: 'Looser monetary policy', body: 'Lower rates / QE; cheaper credit lifts C and I, weaker pound lifts (X − M).' }
+      ],
+
+      causes2Label: 'SUPPLY-SIDE DRIVERS — long-run growth (LRAS shifters)',
+      causes2Emoji: '\u{1F680}',
+      causes2Style: 'tinted-flat',
+      causes2Cols: 2,
+      causes2: [
+        { tone: 'green',  icon: '\u{1F465}', head: 'Labour quantity & quality', body: 'Working-age population, participation, migration, skills, education.' },
+        { tone: 'green',  icon: '\u{1F3ED}', head: 'Capital stock',              body: 'Infrastructure, machinery, digital capital. Capital per worker rises = capital deepening.' },
+        { tone: 'green',  icon: '\u{1F4A1}', head: 'Technology & innovation',    body: 'R&amp;D, tech diffusion, productivity per worker. The UK\'s biggest growth lever — and biggest current puzzle.' },
+        { tone: 'green',  icon: '\u{2696}\u{FE0F}', head: 'Institutional quality', body: 'Rule of law, property rights, competition, openness to trade. Often the hidden multiplier behind the others.' }
+      ],
+
       examEdge: {
         title: 'Why supply-side reforms matter most',
         text: 'Short-run demand boosts can <strong>overheat the economy</strong>, raise inflation and increase debt. Supply-side reforms <strong>expand capacity</strong>, lift potential output and support higher living standards <em>without inflationary pressure</em> – the key to <strong>sustainable long-run growth</strong>. A complete essay covers both: <em>"In the short run, lower interest rates stimulate AD… However, sustained non-inflationary growth requires supply-side improvements that shift LRAS outward."</em>'

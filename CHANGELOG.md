@@ -6,6 +6,51 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.49.0 — 2026-06-04
+
+### Supply-side — UK productivity puzzle DEEPEN card
+
+Adds **Card 7** to the supply-side topic — a "DEEPEN: UK CONTEXT" appendix
+page covering the UK productivity puzzle, built from Roger's mockup. Closes
+the last open improvement from the v0.48.1 post-build review.
+
+**New chart engine spec**: `ukProductivityPuzzle`
+(`js/charts/specs/uk-productivity-puzzle.js`) — a trend-vs-actual line
+chart showing UK output per hour 2000–2024 with:
+
+- Pre-crisis trend (1.5%/yr, linear, dashed green) extrapolated to 2024
+- Actual path (solid blue) matching trend until 2008, then flattening
+- Shaded "productivity gap (lost momentum)" polygon between the two lines
+- Financial-crisis vertical marker + inflection dot at 2008
+- X-axis years 2000 → 2024 every 4 years
+- Auto-positioned curve labels via the engine
+
+Wired into all three shells, added to `sw.js` PRECACHE_ASSETS, bumped
+`CACHE_NAME` to `econos-v333`. Chart-svg-regression snapshot updated to
+the new 67-spec manifest.
+
+**Card 7 content**:
+
+- `stepLabel: 'Deepen: UK context'` — distinct from the numbered "Learn:
+  Step X of 6" pattern; flags this as a deeper-dive appendix page
+- `visualKey: 'ukProductivityPuzzle'` hero chart
+- 3-step transmission flow: weak productivity → higher unit costs →
+  slower real wage growth
+- 6-tile "Why it may have happened" causes grid: Low investment, Skills
+  gaps, Poor infrastructure, Weak diffusion, Misallocation / zombie
+  firms, Measurement / sector mix
+- 4-tile "Why it matters" causes2: Real wages, Public finances,
+  Competitiveness, Macro trade-offs
+- "What could help?" Market-based vs Interventionist pair with named UK
+  policies (R&D super-deduction, apprenticeship levy, HS2, UKRI,
+  childcare)
+
+**Why this matters pedagogically**: the UK productivity puzzle is the
+recurring real-world case study Edexcel examiners reward across multiple
+spec points (2.5.1 causes of growth, 2.5.2 output gaps, 2.6.3 supply-side
+policy). This card gives students a single anchor they can reach for in
+any of those essay questions.
+
 ## 0.48.1 — 2026-06-04
 
 ### Section 2.6 — spec-gap fills on the new fiscal + monetary topics

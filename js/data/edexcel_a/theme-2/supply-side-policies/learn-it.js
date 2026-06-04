@@ -276,31 +276,74 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'Some policies mainly shift <strong>SRAS</strong>, others mainly shift <strong>LRAS</strong> – and some can do both.' },
 
-      // Stepped interactive diagram — supply-side reforms shift SRAS right
-      // along a fixed AD. No Classical/Keynesian toggle: both schools agree
-      // that a rightward SRAS shift lifts output and lowers the price level.
-      // The Classical addendum (LRAS shifts too over time) lives in the
-      // copy below, not as a separate perspective.
+      // Merged stepped diagram with a Classical ↔ Keynesian toggle, teaching
+      // supply-side policy on TWO timescales: SHORT run (lower unit costs shift
+      // supply right today) and LONG run (productive capacity / potential
+      // output rises). The schools agree on the short-run cost effect but
+      // disagree on the long run — Classical: capacity rise automatically
+      // raises output; Keynesian: it raises potential, but actual output lags
+      // until demand catches up.
       interactiveDiagram: {
-        svgKey: 'srasRightShiftInteractive',
-        label: 'SUPPLY-SIDE REFORM — SRAS SHIFTS RIGHT',
+        svgKey: 'supplySideSrLr',
+        label: 'SUPPLY-SIDE POLICY — SHORT RUN VS LONG RUN',
         emoji: '📊',
-        layers: ['idl-1', 'idl-2'],
-        inverseLayers: ['idl-old-solid'],
+        layers: [
+          'c-sras1-dash', 'c-sras2', 'c-e2', 'c-sr-arrow', 'c-lras2', 'c-lr-arrow', 'c-growth',
+          'k-as1-dash', 'k-as2', 'k-as2-dash', 'k-e2', 'k-sr-arrow',
+          'k-as3', 'k-e3', 'k-lr-arrow', 'k-gap', 'k-yf2'
+        ],
+        inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
+        perspectives: ['classical', 'keynesian'],
+        perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
         views: [
           {
-            label: 'Starting point', show: [], tone: 'slate',
-            head: 'Economy at E₁ on SRAS₁ and AD.',
-            body: ['AD meets SRAS₁ at E₁, with real output Y₁ and price level P₁.', 'Lower unit costs would push SRAS rightward — a different mechanism from anything that shifts AD.'] },
+            label: 'Starting point', show: [],
+            classical: {
+              tone: 'purple',
+              head: 'Classical view — at potential at E₁.',
+              body: ['AD meets SRAS₁ on the <strong>vertical LRAS₁</strong> at E₁: output is at potential Yf₁, price level P₁.', 'In the long run the economy always sits on LRAS — so the only way to raise output sustainably is to move LRAS.'] },
+            keynesian: {
+              tone: 'amber',
+              head: 'Keynesian view — spare capacity at E₁.',
+              body: ['AD meets the reverse-L AS₁ on its <strong>rising range</strong>, at E₁ — output Y₁ sits below capacity Yf₁.', 'There are idle resources: actual output is limited by demand, not by supply.'] }
+          },
           {
-            label: 'Reforms cut unit costs', show: ['idl-1'], tone: 'amber',
-            head: 'Supply-side reforms shift SRAS right to SRAS₂.',
-            body: ['Lower business taxes, cheaper energy, better logistics or lighter regulation cut unit costs across the board.', 'The whole SRAS curve shifts rightward — at every price level firms now supply more output.'] },
+            label: 'Short run: costs fall',
+            show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-sr-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-sr-arrow'],
+            classical: {
+              tone: 'green',
+              head: 'Short run — lower costs shift SRAS right to SRAS₂.',
+              body: ['Cheaper energy, lower business taxes, lighter regulation cut unit costs <em>today</em>.', 'Output rises and the price level falls (E₂) — but output is now <strong>above potential Yf₁</strong>, so the boost is temporary until capacity catches up.'] },
+            keynesian: {
+              tone: 'cyan',
+              head: 'Short run — lower costs drop the price floor.',
+              body: ['Cheaper inputs lower firms\' unit costs, so the reverse-L\'s <strong>price floor falls</strong> (AS₁ → AS₂ — a downward move).', 'The economy moves to E₂: a <em>modest</em> rise in output and a lower price level — close to capacity, much of the cost cut shows up as lower prices rather than more output.'] }
+          },
           {
-            label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'green',
-            head: 'Output up, prices DOWN (E₂).',
-            body: ['E₂ sits down and to the right: <strong>Y₂ &gt; Y₁ and P₂ &lt; P₁</strong> — the opposite of a demand-side stimulus.', 'Same AD curve, lower unit costs along it: more goods at lower prices.'],
-            analysis: 'The supply-side win: growth and lower inflation together. Demand-side stimulus trades off price-level rises against output gains; supply-side reform avoids the trade-off — that\'s why both classical and Keynesian economists treat productivity gains as the cleanest source of growth. Over the longer run, deeper reforms (skills, infrastructure, R&amp;D) also shift LRAS right, raising potential output Yf itself.' }
+            label: 'Long run: capacity rises',
+            show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2-dash', 'k-as3', 'k-e3', 'k-lr-arrow'],
+            classical: {
+              tone: 'purple',
+              head: 'Long run — capacity rises: LRAS₁ → LRAS₂.',
+              body: ['Deeper reforms (skills, infrastructure, R&amp;D) raise <strong>productive capacity</strong> — potential output moves from Yf₁ to Yf₂.', 'LRAS shifts right to meet E₂: the higher output is now <em>backed by real capacity</em>, not just lower costs.'] },
+            keynesian: {
+              tone: 'green',
+              head: 'Long run — capacity slides parallel-right (AS₃).',
+              body: ['Now the capacity wall itself moves right: AS₂ → AS₃ is a <strong>parallel rightward shift</strong> (the floor stays put, potential rises to Yf₂).', 'Output rises again to E₃ and the price level falls further as the economy moves down AD.'] }
+          },
+          {
+            label: 'The verdict', show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-lras2', 'c-lr-arrow', 'c-growth', 'k-as1-dash', 'k-as2-dash', 'k-as3', 'k-e3', 'k-lr-arrow', 'k-gap', 'k-yf2'],
+            classical: {
+              tone: 'green',
+              head: 'Verdict — sustainable growth, Yf₁ → Yf₂.',
+              body: ['Real output is permanently higher and the price level lower: faster growth <em>with</em> lower inflation.', 'This is supply-side policy\'s prize — and the only way to get it.'],
+              analysis: 'Classical verdict: supply-side policy is the <strong>only</strong> lever that raises long-run output. Cost cuts give a short-run lift; genuine capacity gains shift LRAS right and lock in faster growth with lower inflation. Demand-side policy can only move you <em>along</em> a given LRAS — it can\'t move LRAS itself.' },
+            keynesian: {
+              tone: 'rose',
+              head: 'Verdict — potential rose, but output LAGS it.',
+              body: ['Reform lifted potential to Yf₂ — but with demand unchanged, <strong>actual output Y₃ sits below the new potential</strong>.', 'A fresh output gap opens (rose arrow): the extra capacity goes partly unused until demand rises to meet it.'],
+              analysis: 'Keynesian verdict: supply-side reform helps, but in a demand-constrained economy it raises <em>potential</em> faster than actual output. Building capacity is not enough — <strong>someone has to buy the output</strong>. The full benefit needs demand-side support alongside it; on its own, supply-side policy can leave the economy below its new potential.' }
+          }
         ]
       },
 

@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.55.0 — 2026-06-04
+
+### Supply-side C4 — short-run vs long-run, as ONE merged 4-step diagram
+
+Rebuilt the supply-side AD/AS card around a single 4-view interactive
+diagram (`supplySideSrLr`) with a Classical ↔ Keynesian toggle, so the
+short-run and long-run nature of supply-side policy is taught explicitly:
+
+1. **Starting point**
+2. **Short run — costs fall.** Classical: SRAS shifts right (output above
+   potential, temporary). Keynesian: the reverse-L's price *floor* drops
+   (a downward move — the cost effect).
+3. **Long run — capacity rises.** Classical: LRAS₁→LRAS₂. Keynesian: the
+   capacity wall slides **parallel right** (floor held constant — the
+   capacity effect, not a cost effect).
+4. **The verdict.** Classical: sustainable growth Yf₁→Yf₂. Keynesian:
+   potential rose, but with demand unchanged actual output **lags** the new
+   potential — a fresh output gap that needs demand-side support to close.
+
+Separating the cost move (SR, downward) from the capacity move (LR,
+parallel-right) keeps each shift economically honest. All eight states
+(4 views × 2 perspectives) are engine-solved (line∩line for Classical,
+line∩reverse-L cubic for Keynesian) and screenshot-verified. The diagram
+uses explicit per-view layer `show` arrays so each curve dashes at exactly
+the right step.
+
 ## 0.54.0 — 2026-06-04
 
 ### Theme 2.6 — interactive AD/AS diagrams across all three policy topics

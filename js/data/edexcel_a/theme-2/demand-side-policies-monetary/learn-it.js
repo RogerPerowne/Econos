@@ -79,6 +79,19 @@ window.ECONOS_TOPIC = {
           body: 'Monetary policy helps stabilise growth, employment and inflation when the economy moves off target.' }
       ],
 
+      causes2Label: 'THE BANK OF ENGLAND & THE MPC',
+      causes2Emoji: '🏛️',
+      causes2Style: 'tinted-flat',
+      causes2Cols: 3,
+      causes2: [
+        { tone: 'blue',   icon: '👥', head: '9 members',
+          body: 'The Monetary Policy Committee has <strong>5 internal Bank staff</strong> (Governor, 3 Deputy Governors, Chief Economist) plus <strong>4 external experts</strong> appointed by the Chancellor.' },
+        { tone: 'green',  icon: '📅', head: '8 meetings a year',
+          body: 'Decides Bank Rate and QE by majority vote. Individual votes are <strong>published</strong> – disagreements are visible to markets and shape forward-rate expectations.' },
+        { tone: 'purple', icon: '🎯', head: 'Independent since May 1997',
+          body: 'Gordon Brown granted the BoE operational independence in his first week as Chancellor. The Treasury sets the target (<strong>2% CPI symmetric</strong>); the MPC chooses the instrument settings.' }
+      ],
+
       pairLabel: 'EXPANSIONARY VS CONTRACTIONARY',
       pairEmoji: '⚖️',
       left: {
@@ -406,6 +419,19 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '🏠', head: 'Are households and firms interest-sensitive?',       body: 'Variable-rate mortgages and rate-dependent investment make policy bite faster.' },
         { tone: 'purple', icon: '🏦', head: 'What is happening to confidence and banks?',         body: 'Weak confidence or stressed banks blunt the effect.' },
         { tone: 'purple', icon: '🏷️', head: 'Is the inflation problem demand-pull or cost-push?', body: 'Monetary policy is strongest against demand-pull, weakest against cost-push.' }
+      ],
+
+      causes2Label: 'POLICY RESPONSES TO HISTORICAL CRISES',
+      causes2Emoji: '📚',
+      causes2Style: 'tinted-flat',
+      causes2Cols: 3,
+      causes2: [
+        { tone: 'rose',  icon: '🏚️', head: 'Great Depression (1929–33)',
+          body: '<strong>Monetarist reading (Friedman & Schwartz, 1963):</strong> the Fed let the money supply collapse by a third – a policy failure. <strong>Bernanke at the Fed in 2008</strong>: <em>"We did it. We\'re very sorry. But thanks to you, we won\'t do it again."</em> Bernanke explicitly cited the Depression lesson to justify aggressive QE.' },
+        { tone: 'amber', icon: '🏦', head: '2008 GFC – BoE response',
+          body: 'Bank Rate slashed from <strong>5% → 0.5%</strong> (Oct 2008 – Mar 2009). First QE programme £200bn (Mar 2009), eventually peaking at <strong>£895bn</strong> (Nov 2020). Coordinated with Fed and ECB; even at the zero lower bound, balance-sheet expansion kept transmitting.' },
+        { tone: 'purple', icon: '🔥', head: '2021–23 hiking cycle',
+          body: 'Bank Rate raised <strong>0.1% → 5.25%</strong> across 14 consecutive meetings (Dec 2021 – Aug 2023) to break the post-COVID + energy-shock inflation. Tamed demand-side pressure but couldn\'t fix the cost-push energy shock directly – why CPI took ~24 months to return to target.' }
       ],
 
       flowBottomTitle: 'HOW TO WRITE IT',

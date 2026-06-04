@@ -6,6 +6,49 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.48.1 — 2026-06-04
+
+### Section 2.6 — spec-gap fills on the new fiscal + monetary topics
+
+Spec-coverage and pedagogy improvements identified in the post-build review
+of the v0.46.0 / v0.47.0 / v0.48.0 trio. Supply-side productivity-puzzle
+improvement is deferred pending a dedicated mockup from Roger.
+
+**Fiscal topic** (v0.46.0):
+- **Card 2 (Expansionary)** — added a Keynes `economistQuote` block:
+  *"The boom, not the slump, is the right time for austerity at the Treasury."*
+  (The Times, 1937) with the `economistKeynes` portrait. The one quote in
+  this batch — chosen as the most iconic for counter-cyclical fiscal policy
+  and not used anywhere else in the codebase.
+- **Card 5 (Toolkit)** — enriched Income-tax and Indirect-tax body text to
+  flag the direct/indirect distinction explicitly (spec 2.6.2(e)). Added a
+  4-tile `causes2` block "DEFICIT VS SURPLUS — CYCLICAL VS STRUCTURAL"
+  covering budget deficit/surplus and the cyclical/structural distinction
+  with UK data (spec 2.6.2(d)).
+- **Card 6 (Judging)** — added a 3-tile `causes2` block "POLICY RESPONSES
+  TO HISTORICAL CRISES": Great Depression (Keynesian vs Classical
+  interpretations + New Deal), 2008 GFC (UK Brown/Darling vs US ARRA),
+  2020 furlough scheme. **Closes spec 2.6.2(h)** — the previously-missing
+  "Great Depression and 2008 GFC, different interpretations, US/UK
+  responses" sub-point.
+
+**Monetary topic** (v0.47.0):
+- **Card 1 (Big picture)** — added a 3-tile `causes2` block "THE BANK OF
+  ENGLAND & THE MPC": 9 members (5 internal + 4 external), 8 meetings/year
+  with published votes, BoE operational independence since May 1997 with
+  the 2% CPI symmetric target. **Closes spec 2.6.2(g)** — the previously
+  almost-absent BoE/MPC structure.
+- **Card 6 (Judging)** — added a 3-tile `causes2` block "POLICY RESPONSES
+  TO HISTORICAL CRISES": Great Depression (Friedman & Schwartz / Bernanke
+  *"we won't do it again"*), 2008 GFC (BoE Bank Rate 5% → 0.5%, QE peaking
+  at £895bn), 2021–23 hiking cycle (0.1% → 5.25% across 14 meetings, the
+  cost-push limit). **Closes spec 2.6.2(h)** on the monetary side.
+
+**Supply-side topic** (v0.48.0):
+- **UK productivity puzzle block deferred** pending Roger's mockup. The
+  text-only version would be informationally complete but visually weak;
+  the productivity puzzle deserves a proper visual anchor.
+
 ## 0.48.0 — 2026-06-04
 
 ### Supply-side Policies — 6-card build, third production EDL use

@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.58.0 — 2026-06-04
+
+### Theme 2 AD/AS sweep — Batch 5: Aggregate-demand intro cards now interactive
+
+Two new storytelling specs replace the static `flowChart` visuals on
+the AD intro cards. No school toggle on either — both schools agree on
+the mechanics — but the multi-view interactive structure is the same
+pattern as every other AD/AS card in Theme 2.
+
+**`adSlopeInteractive`** — 4 views walking through why AD slopes down:
+start at A, then layer in the **wealth effect** (Pigou), the **interest-
+rate effect** (Keynes), and **international substitution**, arriving at
+B at lower P, higher Y.
+
+**`adMovementShiftInteractive`** — 3 views contrasting the two
+fundamental distinctions on one set of axes:
+1. Start at A on AD₁.
+2. *Movement along* — P falls, slide diagonally down AD₁ to B.
+3. *Shift of AD* — a non-price determinant change shifts the whole
+   curve to AD₂; new point C at the SAME P as A but on a DIFFERENT
+   curve. The diagnostic rule lands in the V3 analysis.
+
+**Cards converted (2):** Aggregate demand C2 (slope) and C3 (movement
+vs shift), replacing the static `flowChart` visuals.
+
 ## 0.57.2 — 2026-06-04
 
 ### Theme 2 AD/AS sweep — Batch 4: Output gaps card two-toggle stack

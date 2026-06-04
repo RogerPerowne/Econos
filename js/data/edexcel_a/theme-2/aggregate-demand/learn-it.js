@@ -128,11 +128,34 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'AD slopes down for macro reasons – not for the same reason as the demand curve for one product.' },
 
-      flowChart: {
-        svgKey: 'adSlopeDiagram',
-        label: 'THE THREE EFFECTS',
+      // Stepped interactive diagram. Walk through the three channels
+      // that decompose the downward slope of AD: wealth, interest rate,
+      // international substitution. No school toggle here — both schools
+      // accept the three channels as the textbook explanation.
+      interactiveDiagram: {
+        svgKey: 'adSlopeInteractive',
+        label: 'WHY AD SLOPES DOWNWARD',
         emoji: '📈',
-        caption: 'P falls from P₁ to P₂ – total spending (Y) rises from Y₁ to Y₂.'
+        layers: ['v-arrow', 'h-arrow', 'point-b', 'eff-wealth', 'eff-rate', 'eff-intl'],
+        views: [
+          {
+            label: 'Starting point A', show: [], tone: 'slate',
+            head: 'Initial state at A: high price P₁, low output Y₁.',
+            body: ['The AD curve plots total planned spending against the price level.', 'Ask: <em>what happens to Y when P falls?</em>'] },
+          {
+            label: 'Price falls', show: ['v-arrow', 'eff-wealth'], tone: 'green',
+            head: 'P falls — wealth effect kicks in.',
+            body: ['<strong>Pigou\'s wealth effect.</strong> The real value of money balances and cash savings rises when the price level falls, so households feel wealthier and consume more.', 'C rises.'] },
+          {
+            label: '+ Interest-rate effect', show: ['v-arrow', 'eff-wealth', 'eff-rate'], tone: 'green',
+            head: '+ The Keynes interest-rate effect.',
+            body: ['<strong>Lower P</strong> → demand for money falls → interest rates fall → cheaper borrowing.', 'I and the rate-sensitive parts of C rise.'] },
+          {
+            label: '+ International substitution', show: ['v-arrow', 'h-arrow', 'point-b', 'eff-wealth', 'eff-rate', 'eff-intl'], tone: 'green',
+            head: '+ International substitution — arrive at B.',
+            body: ['<strong>Lower P</strong> → UK goods relatively cheaper than foreign goods → exports rise and imports fall.', '(X − M) rises. The three channels together carry the economy along AD from A (P₁, Y₁) to B (P₂, Y₂).'],
+            analysis: 'All three channels run in the same direction whenever P changes. That\'s what gives AD its downward slope. Note these are <em>not</em> the income and substitution effects from microeconomics — those explain individual demand curves, not aggregate demand.' }
+        ]
       },
 
       causesFirst: false,
@@ -193,11 +216,32 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'Price level change = movement. Non-price determinant change = shift.' },
 
-      flowChart: {
-        svgKey: 'adMovementShift',
-        label: 'THE CRUCIAL DISTINCTION',
+      // Stepped interactive diagram. Same axes show both cases in
+      // sequence: a movement along AD₁ (price-level change) followed by
+      // a shift of the curve to AD₂ (component change). The visual
+      // contrast — same curve different point vs different curve — is
+      // the lesson. No school toggle: both schools agree on the
+      // distinction.
+      interactiveDiagram: {
+        svgKey: 'adMovementShiftInteractive',
+        label: 'MOVEMENT VS SHIFT',
         emoji: '⚖️',
-        caption: 'Left: same curve, different point (price level change). Right: whole curve moves (component change).'
+        layers: ['mv-arrow', 'point-b', 'ad2', 'sh-arrow', 'point-c'],
+        views: [
+          {
+            label: 'Starting point A', show: [], tone: 'slate',
+            head: 'Begin at A on AD₁ at price level P₁.',
+            body: ['One AD curve, one point. We\'re about to compare two different ways to leave A.'] },
+          {
+            label: 'Movement along', show: ['mv-arrow', 'point-b'], tone: 'blue',
+            head: 'P falls → MOVEMENT along the same curve.',
+            body: ['A change in the <strong>price level</strong> drives spending down the AD curve from A to B.', 'Same AD₁, different point: <em>quantity demanded</em> changed at the new P.'] },
+          {
+            label: 'Shift of AD', show: ['mv-arrow', 'point-b', 'ad2', 'sh-arrow', 'point-c'], tone: 'purple',
+            head: 'A non-price determinant → SHIFT of the curve.',
+            body: ['Change a component of demand (C, I, G or X − M) and the whole curve moves: AD₁ → AD₂.', 'Point C sits at the <em>same</em> price P₁ as A — but on a <strong>different curve</strong>, with higher output Y₃.'],
+            analysis: '<strong>Diagnostic rule for the exam.</strong> Movement: triggered by a change in P. Shift: triggered by a change in C, I, G or (X − M). Name the type before writing the analysis — examiners reward the diagnosis as much as the consequence.' }
+        ]
       },
 
       comparisonTable: {

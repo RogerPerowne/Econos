@@ -658,11 +658,17 @@ window.ECONOS_TOPICS = [
     sub: 'HDI, wellbeing, and beyond GDP',
     color: '#8b5cf6',
     available: { learn: true, link: false, land: false },
+    // Parked: this topic is a placeholder stub. Its intended material
+    // (HDI, six GDP blind spots, wellbeing alternatives) is already on
+    // `measures-of-economic-performance` Card 7. Hidden from every
+    // board's home grid until either repurposed (Easterlin paradox,
+    // ONS wellbeing dashboard, Kahneman experienced wellbeing) or
+    // retired entirely. See docs/THEME_2_REVIEW.md §2.
     boards: {
-      edexcel_a: { spec: '2.1.1', included: true },
-      edexcel_b: { spec: null, included: true },
-      aqa:       { spec: '3.2.1.2', included: true },
-      ocr:       { spec: '2.2', included: true }
+      edexcel_a: { spec: '2.1.1', included: false },
+      edexcel_b: { spec: null, included: false },
+      aqa:       { spec: '3.2.1.2', included: false },
+      ocr:       { spec: '2.2', included: false }
     }
   },
 

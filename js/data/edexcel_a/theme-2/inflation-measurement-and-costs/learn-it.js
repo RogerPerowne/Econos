@@ -5,7 +5,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'inflation-measurement-and-costs',
-  topicNum: '2.2.1',
+  topicNum: '2.1.2',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   title: 'Inflation: Measurement & Costs',
   estTime: '10-12 minutes',
@@ -310,7 +310,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 4 – Costs of inflation
+       CARD 5 – Costs of inflation
        Five main costs. Winners and losers. The chain of impact.
        ==================================================================== */
     {
@@ -369,7 +369,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 – Fiscal drag and real vs nominal
+       CARD 6 – Fiscal drag and real vs nominal
        The gap between nominal and real. Frozen thresholds = stealth tax rise.
        ==================================================================== */
     {
@@ -447,7 +447,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 6 – Costs of deflation
+       CARD 7 – Costs of deflation
        The deflationary spiral. Why central banks fear it.
        ==================================================================== */
     {

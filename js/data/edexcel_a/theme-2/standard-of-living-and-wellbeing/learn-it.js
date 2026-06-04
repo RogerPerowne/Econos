@@ -8,7 +8,7 @@
 */
 window.ECONOS_TOPIC = {
   id:          "standard-of-living-and-wellbeing",
-  topicNum:    "2.1.2",
+  topicNum:    "2.1.1",
   theme:       "Theme 2 \\xb7 The National and Global Economy",
   title:       "Standard of Living & Wellbeing",
   estTime:     '—',

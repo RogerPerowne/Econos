@@ -136,7 +136,15 @@ window.ECONOS_TOPIC = {
         title: 'Big idea',
         text: 'The same headline 2% growth year delivers a £200 gain to the bottom and a £12,000+ gain to the top. The headline rate without the distribution profile is incomplete evidence.'
       },
-      examEdge: 'In data-response questions, watch for "growth has raised living standards" as a generic claim. The strong rebuttal: cite the bottom-decile real-income figure and the Kuznets-curve framing — growth has raised <em>averages</em>; it has raised <em>median</em> living standards much less.'
+      examEdge: 'In data-response questions, watch for "growth has raised living standards" as a generic claim. The strong rebuttal: cite the bottom-decile real-income figure and the Kuznets-curve framing — growth has raised <em>averages</em>; it has raised <em>median</em> living standards much less.',
+
+      economistQuote: {
+        portraitKey: 'economistDuflo',
+        tone: 'amber',
+        label: 'Economist insight: Duflo on growth that actually reaches the poor',
+        quote: 'GDP growth is not the same as poverty reduction. Whether a growth episode lifts the bottom of the distribution depends on what kind of growth it is — labour-intensive, broadly shared, paired with targeted policy — not on the headline rate alone.',
+        attribution: 'Esther Duflo, <em>Good Economics for Hard Times</em> (with Banerjee, 2019), Nobel Prize in Economics 2019'
+      }
     },
 
     /* ============================================================

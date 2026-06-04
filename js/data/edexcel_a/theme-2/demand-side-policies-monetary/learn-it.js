@@ -220,7 +220,7 @@ window.ECONOS_TOPIC = {
       examEdge: 'Trace the chain – <strong>lower rates → stronger AD → then output, jobs and prices</strong>. Effectiveness depends on confidence and on whether banks are <em>willing to lend</em>. After 2008 the BoE cut rates from 5% to 0.5% and still needed QE because the banking system was repairing balance sheets.',
       economistQuote: {
         portraitKey: 'economistKeynes',
-        tone: 'blue',
+        tone: 'amber',
         label: 'Economist insight: Keynes on the limits of monetary stimulus',
         quote: 'If, however, we are tempted to assert that money is the drink which stimulates the system to activity, we must remind ourselves that there may be several slips between the cup and the lip.',
         attribution: 'John Maynard Keynes, <em>The General Theory of Employment, Interest and Money</em> (1936)'

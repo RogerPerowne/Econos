@@ -6,6 +6,57 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.63.1 — 2026-06-04
+
+### Balance of Payments — mockup pass + mobile-friendliness
+
+Side-by-side comparison against the source mockups plus a mobile-
+friendliness pass on the six bespoke BoP heroes:
+
+- **C1 `bopThreeAccounts`** — fixed the broken arrow row on mobile
+  (three little arrows pointing nowhere when the columns stack); now
+  hidden under 760px so the balance pill sits directly beneath the
+  three account columns. Shortened the "Non-produced, non-financial
+  assets" sub-tile so it stops wrapping in narrow columns.
+- **C2 `bopUkPattern`** — rebuilt from a fixed-size SVG to an HTML
+  cards + responsive-arrow layout. The Goods (red) and Services
+  (green) summary cards now stack vertically on mobile with a single
+  `↓` arrow converging on the final-balance lozenge, instead of two
+  fixed curved spokes drawn into a 700-wide viewBox that became
+  unreadable below ~480px.
+- **C3 `bopDriverHub`** — extracted the "SIMPLE CHAIN" trio
+  (UK demand → Imports → Current account deficit) out of the SVG
+  and into responsive HTML beneath the hub. The chain now wraps to
+  three stacked cards with `↓` separators on mobile; the hub-and-
+  spoke SVG itself stays as one visual but the textual takeaway
+  remains legible at any width.
+- **C4 `bopMatchingIdentity`** — the centre arrow column collapsed
+  awkwardly on mobile (text + horizontal SVG arrow in a vertical
+  stack). Now the SVG is hidden under 760px and replaced with a
+  clean inline `Must be financed by ↓` row separating the red
+  deficit pillar from the blue financing pillar.
+- **C5 `bopConsequencesFlow`** — rebuilt from SVG to HTML+CSS so
+  the three-step trunk (Exchange rate pressure → Imported inflation
+  → Tighter policy) and the two branch tiles (Higher foreign
+  liabilities / Greater vulnerability to shocks) stack cleanly on
+  mobile. On desktop the dashed "branches drop" bracket sits between
+  trunk and branches; on mobile every step / branch becomes its own
+  full-width tile with `↓` separators.
+- **C5 `bopSustainabilityDashboard`** — the 4-dial dashboard already
+  collapses to a 2×2 grid on mobile (130px gauges fit cleanly within
+  a half-width column at typical phone widths).
+- **C6 `bopHowToWriteIt`** — already mobile-clean (arrows hidden
+  below 760px, cards stack 1-up); reviewed and kept as-is.
+
+The hub-and-spoke topology of C3 and the four-gauge layout of C5
+unavoidably shrink on phones — the conceptual integrity of those
+visuals depends on seeing the whole shape at once. Their supporting
+panels (the chain, the consequences flow) now carry the textual
+takeaway in mobile-friendly form so nothing important is lost.
+
+No content changes — purely visual refinement and responsive
+behaviour. Cache bumped to `econos-v354`.
+
 ## 0.63.0 — 2026-06-04
 
 ### Balance of Payments — rebuilt with bespoke hero visuals

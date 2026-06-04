@@ -3715,6 +3715,20 @@
       <div class="we-steps" style="display:flex;flex-direction:column;gap:0;margin-bottom:8px;">${stepNodes}</div>
       ${conclusion}
       ${c.examEdge ? `<div style="margin-top:18px;">${renderExamEdge(c.examEdge)}</div>` : ''}
+      ${(c.economistQuote && c.economistQuote.quote) ? (() => {
+        const eq = c.economistQuote;
+        const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
+        const t = PATTERN_TONES[eq.tone || 'amber'] || PATTERN_TONES.amber;
+        return `
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-top:18px;">
+            <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
+            <div>
+              <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
+              <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-size:13px;color:${t.label};font-weight:700;">– ${eq.attribution}</div>
+            </div>
+          </div>`;
+      })() : ''}
     `;
   }
 

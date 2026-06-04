@@ -267,15 +267,60 @@ window.ECONOS_TOPIC = {
           body: '<svg viewBox="0 0 200 110" style="width:100%;height:auto;max-height:160px;display:block;" xmlns="http://www.w3.org/2000/svg"><path d="M 30 95 A 70 70 0 0 1 170 95" fill="none" stroke="#DBEAFE" stroke-width="16"/><path d="M 30 95 A 70 70 0 0 1 100 25" fill="none" stroke="#2563EB" stroke-width="16"/><line x1="100" y1="95" x2="58" y2="53" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="95" r="6" fill="#0B1426"/></svg><div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:6px;"><strong style="color:#1D4ED8;">Actual output &lt; Potential output</strong><br><br><strong>Consequences:</strong><br>• Unemployment<br>• Disinflation or deflation pressure<br>• Spare capacity exists</div>'
         }
       ],
-      causes3Label: 'Link to AD/AS',
-      causes3Emoji: '🔗',
-      causes3Style: 'plain-white',
-      causes3Cols: 1,
+      // Two stacked interactive diagrams with Classical/Keynesian toggles —
+      // map the PPF view onto the AD/AS framework. Short-run output gaps
+      // close via AD shifts; long-run growth via LRAS shifts. Both schools
+      // appear via the toggle: Classical sees demand stimulus as inflation
+      // only and supply-side reform as the only real grower; Keynesian sees
+      // demand stimulus working in slack times and supply-side gains lagged
+      // by demand.
+      interactiveDiagram: [
+        {
+          svgKey: 'adShiftClassicalKeynesian',
+          label: 'SHORT RUN — AD CLOSES A RECESSIONARY GAP',
+          emoji: '📊',
+          layers: ['idl-1', 'idl-2'],
+          inverseLayers: ['idl-old-solid'],
+          perspectives: ['classical', 'keynesian'],
+          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+          views: [
+            { label: 'Recessionary gap', show: [],
+              classical: { tone: 'purple', head: 'At potential at E₁.', body: ['AD₁ meets LRAS at Yf — Classical sees no gap in the long run.'] },
+              keynesian: { tone: 'amber', head: 'Below potential at E₁.', body: ['AD₁ meets reverse-L AS on the rising range; actual output Y₁ sits below Yf — the recessionary gap.'] } },
+            { label: 'AD stimulus', show: ['idl-1'],
+              classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['Fiscal or monetary stimulus tries to lift demand.'] },
+              keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['Fiscal or monetary stimulus tries to lift demand.'] } },
+            { label: 'New equilibrium', show: ['idl-1', 'idl-2'],
+              classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf — demand stimulus is purely inflationary.'], analysis: 'Classical reading: there is no gap to close in the long run. Demand stimulus just inflates the price level.' },
+              keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['The recessionary gap closes; Y rises toward Yf with some inflation.'], analysis: 'Keynesian reading: demand stimulus genuinely closes the gap — this is the textbook case for active demand management when actual output is below potential.' } }
+          ]
+        },
+        {
+          svgKey: 'lrasShiftRightClassicalKeynesian',
+          label: 'LONG RUN — LRAS RAISES POTENTIAL ITSELF',
+          emoji: '🚀',
+          layers: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
+          inverseLayers: ['c-lras1-solid', 'k-as1-solid'],
+          perspectives: ['classical', 'keynesian'],
+          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
+          views: [
+            { label: 'Starting point', show: [],
+              classical: { tone: 'purple', head: 'At potential at E₁.', body: ['AD meets LRAS₁ at Yf₁.'] },
+              keynesian: { tone: 'amber', head: 'Below potential at E₁.', body: ['AD meets reverse-L AS₁ on the rising range; Y₁ &lt; Yf₁.'] } },
+            { label: 'Capacity rises', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2', 'k-lr-arrow'],
+              classical: { tone: 'green', head: 'LRAS₁ → LRAS₂.', body: ['Productivity, capital, labour, technology — capacity expands.'] },
+              keynesian: { tone: 'green', head: 'Capacity wall slides right.', body: ['AS₁ → AS₂ is a parallel rightward shift; floor unchanged.'] } },
+            { label: 'New equilibrium', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
+              classical: { tone: 'purple', head: 'Output up, prices down.', body: ['Y rises to Yf₂, P falls — sustainable non-inflationary growth.'], analysis: 'Classical reading: this is the prize. Real capacity raises long-run output AND lowers prices; the corner demand-side levers can\'t reach.' },
+              keynesian: { tone: 'rose', head: 'Potential up, output LAGS.', body: ['Actual Y₂ rises but sits BELOW the new potential Yf₂ — fresh output gap.'], analysis: 'Keynesian reading: supply-side reform raises the ceiling, but without demand catching up the new capacity goes partly unused.' } }
+          ]
+        }
+      ],
       examEdge: {
         title: 'Exam vocabulary: be precise with time horizons',
         text: 'Always distinguish between actual and potential output. <strong>Short-run fluctuations</strong> move output relative to the frontier – use <em>"spare capacity"</em> or <em>"output gap."</em> <strong>Long-run growth</strong> means the frontier shifts outward – say <em>"LRAS shifts right"</em> or <em>"productive potential increases."</em> A* phrasing: <em>"A positive output gap arises when actual output exceeds potential, generating inflationary pressure. Eliminating it sustainably requires supply-side policies that expand productive capacity, not demand management alone."</em>'
       },
-      causes3: [
+      _legacyCauses3: [
         {
           tone: 'purple',
           icon: '🔗',

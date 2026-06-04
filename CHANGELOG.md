@@ -6,6 +6,37 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.57.0 — 2026-06-04
+
+### Theme 2 AD/AS sweep — Batch 2: AS intro toggle + LRAS-right toggle
+
+Two new specs and four card conversions.
+
+**New specs:**
+
+- `asIntroClassicalKeynesian` — the introductory AS card now uses the
+  toggle as the *lesson itself*. Classical view: SRAS sloping + LRAS
+  vertical. Keynesian view: reverse-L AS. Two views: AS shape alone,
+  then add AD + the (different) equilibrium points.
+- `lrasShiftRightClassicalKeynesian` — capacity expansion (productivity,
+  capital, labour, technology) with both schools' verdicts. Classical:
+  output lands cleanly at the new Yf₂ at lower P. Keynesian: capacity
+  wall slides parallel-right; with AD unchanged, actual output rises
+  but LAGS the new potential — a fresh output gap appears.
+
+**Cards converted (4):**
+
+- Aggregate supply C1 (what-is-as) → new AS intro spec.
+- Aggregate supply C5 (lras-shifts) → new LRAS-right spec.
+- Aggregate supply C7 (as-in-adas) → two stacked toggles (AD-right reuse
+  + new LRAS-right spec) replacing the previous side-by-side mini
+  diagrams without toggles.
+- Measures of economic performance C5 (actual-vs-potential) → two
+  stacked toggles (AD-right + LRAS-right), replacing the hand-rolled
+  inline mini SVGs in the previous causes3 "Link to AD/AS" panel
+  (the legacy block is parked under `_legacyCauses3:` so the renderer
+  ignores it).
+
 ## 0.56.0 — 2026-06-04
 
 ### Theme 2 AD/AS sweep — Batch 1: AD-shift reuses + new SRAS-shift-left toggle

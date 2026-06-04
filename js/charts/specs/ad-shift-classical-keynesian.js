@@ -70,21 +70,24 @@
       { id: 'AD1',
         d: 'M 0.060,0.790 L 0.845,0.045',
         tone: 'blue', label: 'AD₁', strokeWidth: 2,
-        labelDx: 8, labelDy: -4, anchor: 'start',
+        labelDx: -14, labelDy: -22, anchor: 'start',
         layer: 'idl-old-solid' },
       /* ── AD₁ redrawn dashed (idl-1). Same id NOT reused — this is a
-            visual duplicate; the solver uses the base AD1 path. ── */
+            visual duplicate; the solver uses the base AD1 path. The
+            inverseLayers swap hides the solid copy above once a view
+            activates, so only this dashed one remains. ── */
       { d: 'M 0.060,0.790 L 0.845,0.045',
         tone: 'blue', label: 'AD₁', strokeWidth: 1.6,
-        dashed: '6 4', labelDx: 8, labelDy: -4, anchor: 'start',
+        dashed: '6 4', labelDx: -14, labelDy: -22, anchor: 'start',
         layer: 'idl-1' },
-      /* ── AD₂ solid, shifted right (idl-1). Label anchored at the
-            right-hand end (anchor:'end' keeps it on-stage) and lifted
-            clearly ABOVE the line. ── */
+      /* ── AD₂ solid, shifted right (idl-1). Both AD labels sit clearly
+            ABOVE their line near the right end: AD₁ in the gap between the
+            two parallel lines, AD₂ above its own line (offsets pre-checked
+            against the line geometry, not eyeballed). ── */
       { id: 'AD2',
         d: 'M 0.280,0.801 L 1.000,0.117',
         tone: 'blue', label: 'AD₂', strokeWidth: 2.2,
-        labelDx: -4, labelDy: -13, anchor: 'end',
+        labelDx: -10, labelDy: -38, anchor: 'end',
         layer: 'idl-1' }
     ],
 

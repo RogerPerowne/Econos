@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.52.2 — 2026-06-04
+
+### Fiscal Card 2 toggle — fix dashed-on-shift + AD label placement
+
+The v0.52.1 polish set the right *intent* but two pieces didn't actually
+render:
+
+- **`inverseLayers` was dead in the SPA.** The interactive-diagram click
+  handler only toggled the `layers` array; the engine's `inverseLayers`
+  reveal keyed off `.sv-show-N` classes the SPA never sets, so the original
+  solid AD₁ never hid — the dashed copy just drew on top of it and read as
+  solid. The handler now drives inverse layers directly (shown on the base
+  view, hidden once you step forward), wired through a new `inverseLayers`
+  field on the card's `interactiveDiagram` + a `data-id-inverse` attribute.
+  This is the shared mechanism every shift chart relies on.
+- **AD curve labels sat below their lines.** Repositioned AD₁ (into the gap
+  above its line, below AD₂) and AD₂ (above its own line) with offsets
+  pre-checked against the line geometry, so both titles read clearly above.
+
 ## 0.52.1 — 2026-06-04
 
 ### Fiscal Card 2 toggle — polish to 10/10

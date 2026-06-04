@@ -1281,6 +1281,12 @@
       const baseUid = c.id ? c.id.replace(/[^a-z0-9]/gi, '_') : 'idc';
       const uid = idList.length > 1 ? `${baseUid}_${idIdx}` : baseUid;
       const layers = id.layers || [];
+      // Layers shown by default and hidden once the user steps past the base
+      // view (vi > 0). Mirror of the chart spec's `inverseLayers` — used by
+      // shift charts where the original solid curve must vanish once a dashed
+      // copy is overlaid. The engine's CSS approach keys off `.sv-show-N`
+      // classes the SPA never sets, so the reveal must be driven here too.
+      const inverseLayers = id.inverseLayers || [];
       const views = id.views || [];
       const defaultToneNames = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
       // Perspective toggle (e.g. Classical vs Keynesian). When present,
@@ -1352,7 +1358,7 @@
           </div>`;
         }).join('');
         html += `
-          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
+          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}'${inverseLayers.length ? ` data-id-inverse='${JSON.stringify(inverseLayers)}'` : ''} style="margin-bottom:26px;">
             <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
               <div style="max-width:${id.maxWidth || '640px'};margin:0 auto;">${I[id.svgKey]}</div>
             </div>
@@ -1407,7 +1413,7 @@
           : '';
         const svgWrapClass = initialPersp ? `chart-${initialPersp}` : '';
         html += `
-          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}'${perspectives ? ` data-id-perspectives='${JSON.stringify(perspectives)}'` : ''} style="margin-bottom:26px;">
+          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}'${inverseLayers.length ? ` data-id-inverse='${JSON.stringify(inverseLayers)}'` : ''}${perspectives ? ` data-id-perspectives='${JSON.stringify(perspectives)}'` : ''} style="margin-bottom:26px;">
             ${perspectiveStripHtml}
             <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
               <div class="id-content-row" style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;">
@@ -6629,8 +6635,7 @@
       // toolkit-rendered specs use opacity-based hide rules and don't
       // need this — but legacy theme-1 charts still emit display rules
       // and inline opacity alone can't override `display:none`).
-      layers.forEach((cls, i) => {
-        const visible = explicitShow ? explicitShow.includes(cls) : i < vi;
+      const setLayerVisible = (cls, visible) => {
         idRoot.querySelectorAll('.' + cls).forEach(el => {
           el.style.display = 'block';
           el.style.opacity = visible ? '1' : '0';
@@ -6639,7 +6644,15 @@
             ? 'opacity .35s ease-out'
             : 'opacity .35s ease-out, visibility 0s linear .35s';
         });
+      };
+      layers.forEach((cls, i) => {
+        setLayerVisible(cls, explicitShow ? explicitShow.includes(cls) : i < vi);
       });
+      // Inverse layers: shown on the base view (vi === 0), hidden once the
+      // user steps forward — so a solid "before" curve gives way to its
+      // dashed overlay.
+      const inverseLayers = JSON.parse(idRoot.dataset.idInverse || '[]');
+      inverseLayers.forEach(cls => setLayerVisible(cls, vi === 0));
 
       idRoot.querySelectorAll('[data-id-vi]').forEach(btn => {
         const bvi = parseInt(btn.dataset.idVi, 10);

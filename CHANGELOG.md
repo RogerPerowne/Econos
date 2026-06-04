@@ -6,7 +6,7 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
-## 0.49.0 — 2026-06-04
+## 0.51.0 — 2026-06-04
 
 ### EDL foundation — extensible families, a no-SVG escape hatch, grammar-as-data
 
@@ -63,6 +63,82 @@ release — that "migrate" step is deliberately out of scope).
   round-trip, annotation compile + anchoring + validation). 33 pass.
 - `dev/diagram-gallery.html`: new "Annotations (escape hatch)" group incl. an
   anchored-to-solved-equilibrium example.
+
+## 0.50.0 — 2026-06-04
+
+### Theme 2.6 — Economist Companion + Misconception Museum
+
+Implements the directly-applicable platform ideas from the morning's
+"how to elevate" review across the three new Section 2.6 topics.
+Wider platform features (Live Wire, AI Examiner, Decision Theatre,
+Worked-Essay Gallery) deferred per Roger's steer.
+
+**Six new economist insight blocks** — showing legitimate disagreement
+and complement across the macro-policy debate. Each uses the existing
+`economistQuote` pattern with full portrait, italic quote and tone-
+coloured attribution.
+
+| Topic | Card | Economist | Quote | Source |
+|---|---|---|---|---|
+| Fiscal | C5 (Auto stabilisers) | **Friedman** | "The Great Depression… was produced by government mismanagement rather than by any inherent instability of the private economy." | Capitalism and Freedom (1962) |
+| Fiscal | C6 (Judging) | **Mazzucato** | "The state has not just fixed market failures — it has actively created and shaped markets…" | Mission Economy (2021) |
+| Monetary | C2 (Expansionary) | **Keynes** | "If, however, we are tempted to assert that money is the drink which stimulates the system to activity, we must remind ourselves that there may be several slips between the cup and the lip." | The General Theory (1936) |
+| Monetary | C6 (Judging) | **Friedman** | "Inflation is the one form of taxation that can be imposed without legislation." | Money Mischief (1992) |
+| Supply-side | C2 (Market-based) | **Hayek** | "The curious task of economics is to demonstrate to men how little they really know about what they imagine they can design." | The Fatal Conceit (1988) |
+| Supply-side | C3 (Interventionist) | **Mazzucato** | "Far from being the inert, lumbering bureaucracy of caricature, the state has often been the lead risk-taker…" | The Entrepreneurial State (2013) |
+
+**Three named misconception traps** ("Misconception Museum" idea) —
+common A-level errors made famous and visible via `tipLate` rose-tone
+callouts.
+
+- **Fiscal C3** — *"k = 1/(1−MPC) gives the actual UK multiplier."* No: ignores three real-world leakages. UK estimates land at k ≈ 1.2–1.7, not 5.
+- **Monetary C1** — *"Bank Rate is what banks charge their customers."* No: Bank Rate is the policy rate; commercial rates include a spread.
+- **Supply-side C1** — *"Supply-side = right-wing politics."* No: market-based AND interventionist; the debate is about mechanism, not whether supply-side matters.
+
+## 0.49.0 — 2026-06-04
+
+### Supply-side — UK productivity puzzle DEEPEN card
+
+Adds **Card 7** to the supply-side topic — a "DEEPEN: UK CONTEXT" appendix
+page covering the UK productivity puzzle, built from Roger's mockup. Closes
+the last open improvement from the v0.48.1 post-build review.
+
+**New chart engine spec**: `ukProductivityPuzzle`
+(`js/charts/specs/uk-productivity-puzzle.js`) — a trend-vs-actual line
+chart showing UK output per hour 2000–2024 with:
+
+- Pre-crisis trend (1.5%/yr, linear, dashed green) extrapolated to 2024
+- Actual path (solid blue) matching trend until 2008, then flattening
+- Shaded "productivity gap (lost momentum)" polygon between the two lines
+- Financial-crisis vertical marker + inflection dot at 2008
+- X-axis years 2000 → 2024 every 4 years
+- Auto-positioned curve labels via the engine
+
+Wired into all three shells, added to `sw.js` PRECACHE_ASSETS, bumped
+`CACHE_NAME` to `econos-v333`. Chart-svg-regression snapshot updated to
+the new 67-spec manifest.
+
+**Card 7 content**:
+
+- `stepLabel: 'Deepen: UK context'` — distinct from the numbered "Learn:
+  Step X of 6" pattern; flags this as a deeper-dive appendix page
+- `visualKey: 'ukProductivityPuzzle'` hero chart
+- 3-step transmission flow: weak productivity → higher unit costs →
+  slower real wage growth
+- 6-tile "Why it may have happened" causes grid: Low investment, Skills
+  gaps, Poor infrastructure, Weak diffusion, Misallocation / zombie
+  firms, Measurement / sector mix
+- 4-tile "Why it matters" causes2: Real wages, Public finances,
+  Competitiveness, Macro trade-offs
+- "What could help?" Market-based vs Interventionist pair with named UK
+  policies (R&D super-deduction, apprenticeship levy, HS2, UKRI,
+  childcare)
+
+**Why this matters pedagogically**: the UK productivity puzzle is the
+recurring real-world case study Edexcel examiners reward across multiple
+spec points (2.5.1 causes of growth, 2.5.2 output gaps, 2.6.3 supply-side
+policy). This card gives students a single anchor they can reach for in
+any of those essay questions.
 
 ## 0.48.1 — 2026-06-04
 

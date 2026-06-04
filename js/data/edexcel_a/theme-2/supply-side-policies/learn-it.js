@@ -92,7 +92,12 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: '<strong>Supply-side policy targets capacity</strong> – not just spending. It works on what the economy <em>can</em> produce, not what it currently demands.' },
 
       conclusion: { title: 'Big idea', text: 'The goal is <strong>non-inflationary growth</strong> – more output because the economy can produce more efficiently.' },
-      examEdge: 'Name the channel – <strong>incentives, skills, competition, infrastructure or flexibility</strong> – before explaining the effect. A* answers also state whether the policy mainly shifts SRAS or LRAS.'
+      examEdge: 'Name the channel – <strong>incentives, skills, competition, infrastructure or flexibility</strong> – before explaining the effect. A* answers also state whether the policy mainly shifts SRAS or LRAS.',
+      tipLate: {
+        icon: '⚠️',
+        tone: 'rose',
+        text: '<strong>Common trap — "Supply-side = right-wing politics."</strong> No. Supply-side has <strong>two families</strong>. <em>Market-based</em> reforms (tax cuts, deregulation, privatisation) lean centre-right. <em>Interventionist</em> reforms (apprenticeship levy, HS2, R&amp;D funding, childcare) lean centre-left. <strong>Both raise productive capacity</strong>; the disagreement is about <em>which mechanism</em> works, not whether supply-side matters. Treating supply-side as a political slogan loses marks – treat it as a toolkit.'
+      }
     },
 
     /* ====================================================================
@@ -171,7 +176,14 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: '<strong>Do not just list a reform</strong> – explain how it changes incentives or competition.' },
 
       conclusion: { title: 'Big idea', text: 'Market-based supply-side policy tries to let <strong>prices, profits and competition</strong> do more of the work.' },
-      examEdge: 'For evaluation, ask whether the market was <em>actually distorted</em> and whether the reform <em>creates better incentives in reality</em>. Cutting corporation tax matters little if firms were already cash-rich – the binding constraint matters.'
+      examEdge: 'For evaluation, ask whether the market was <em>actually distorted</em> and whether the reform <em>creates better incentives in reality</em>. Cutting corporation tax matters little if firms were already cash-rich – the binding constraint matters.',
+      economistQuote: {
+        portraitKey: 'economistHayek',
+        tone: 'amber',
+        label: 'Economist insight: Hayek on the limits of central design',
+        quote: 'The curious task of economics is to demonstrate to men how little they really know about what they imagine they can design.',
+        attribution: 'Friedrich Hayek, <em>The Fatal Conceit</em> (1988)'
+      }
     },
 
     /* ====================================================================
@@ -238,7 +250,14 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'A training scheme is <strong>not valuable just because it is expensive</strong> – the key question is whether productivity rises.' },
 
       conclusion: { title: 'Big idea', text: 'Interventionist policy tries to build the <strong>economy\'s productive foundations</strong> – especially where market incentives alone are too weak.' },
-      examEdge: 'Separate the <strong>spending itself</strong> from the <strong>long-run capacity effect</strong> – explain how the policy raises human capital, mobility or innovation. Naming the externality (e.g. social returns to R&D ≈ 20–30%, private returns ~7–14%) lifts B-band answers to A*.'
+      examEdge: 'Separate the <strong>spending itself</strong> from the <strong>long-run capacity effect</strong> – explain how the policy raises human capital, mobility or innovation. Naming the externality (e.g. social returns to R&D ≈ 20–30%, private returns ~7–14%) lifts B-band answers to A*.',
+      economistQuote: {
+        portraitKey: 'economistMazzucato',
+        tone: 'amber',
+        label: 'Economist insight: Mazzucato on the entrepreneurial state',
+        quote: 'Far from being the inert, lumbering bureaucracy of caricature, the state has often been the lead risk-taker — funding the kind of long-shot innovation that markets, focused on short-run returns, would never bankroll alone.',
+        attribution: 'Mariana Mazzucato, <em>The Entrepreneurial State</em> (2013)'
+      }
     },
 
     /* ====================================================================
@@ -428,6 +447,80 @@ window.ECONOS_TOPIC = {
 
       conclusion: { title: 'Big idea', text: 'The best evaluation asks whether the policy raises productive potential in a <strong>meaningful, sustainable way</strong>.' },
       examEdge: 'Top answers <strong>diagnose, trace and judge</strong> – they do not just recite a list of reforms. A four-mark structure: identify the UK bottleneck (e.g. productivity puzzle), name a fitting policy (e.g. apprenticeship levy), trace the channel (skills → output per hour → LRAS), evaluate (time lag, scale, who responds).'
+    },
+
+    /* ====================================================================
+       CARD 7 — DEEPEN: UK CONTEXT — The UK productivity puzzle
+       Pattern: Decompose-a-diagram (chart-engine `ukProductivityPuzzle`
+       hero) + Sequential transmission flow + 6-tile "why it may have
+       happened" causes + 4-tile "why it matters" causes2 + 2-panel
+       "what could help" pair. An appendix / deepen card — not part of
+       the numbered Learn It sequence.
+       ==================================================================== */
+    {
+      id: 'uk-productivity-puzzle',
+      template: 'ad-interactive',
+      stepLabel: 'Deepen: UK context',
+      title: 'The UK productivity puzzle',
+      lede: 'Since the financial crisis, UK output per hour has grown much more slowly than before – and economists still debate why.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '🔒', tone: 'green', text: 'The puzzle is not one bad year – it is a <strong>long period of unusually weak productivity growth</strong>.' },
+
+      visualKey: 'ukProductivityPuzzle',
+      visualLabel: 'THE PUZZLE',
+      visualEmoji: '🧩',
+      visualCaption: 'UK output per hour matched the pre-crisis trend until 2008, then flattened. The shaded gap is the "lost momentum" — productivity that would have happened on the old trajectory but didn\'t.',
+
+      flowTitle: 'WHAT THE PUZZLE MEANS',
+      flowEmoji: '🔗',
+      flow: [
+        { tone: 'purple', icon: '📊', title: 'Weak productivity growth', sub: 'Output per hour barely rises year on year.' },
+        { tone: 'amber',  icon: '💷', title: 'Higher unit costs',         sub: 'Wages must grow more slowly, or firms charge more for less output.' },
+        { tone: 'green',  icon: '👥', title: 'Slower real wage and living-standard growth', sub: 'The biggest UK macro story of the 2010s and 2020s.' }
+      ],
+
+      causesLabel: 'WHY IT MAY HAVE HAPPENED',
+      causesEmoji: '❓',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'green',  icon: '💰', head: 'Low investment',           body: 'Too little capital deepening and technology adoption – UK business investment ~17% of GDP vs ~22% in France/Germany.' },
+        { tone: 'blue',   icon: '🎓', head: 'Skills gaps',              body: 'Human capital improves too slowly – weak vocational training, low post-18 non-graduate progression.' },
+        { tone: 'amber',  icon: '🌉', head: 'Poor infrastructure',      body: 'Transport, energy and planning constraints limit business growth and clustering.' },
+        { tone: 'purple', icon: '🔀', head: 'Weak diffusion',           body: 'Best practice does not spread from frontier firms – a wide and persistent productivity tail.' },
+        { tone: 'rose',   icon: '🧟', head: 'Misallocation / zombie firms', body: 'Resources stuck in low-productivity uses, kept alive by cheap credit during the QE era.' },
+        { tone: 'blue',   icon: '🔍', head: 'Measurement / sector mix', body: 'Services and digital quality are harder to measure – some "puzzle" may be statistical, not real.' }
+      ],
+
+      causes2Label: 'WHY IT MATTERS',
+      causes2Emoji: '🎯',
+      causes2Style: 'tinted-flat',
+      causes2Cols: 4,
+      causes2: [
+        { tone: 'green',  icon: '👥', head: 'Real wages',       body: 'Less room for pay to rise without inflation.' },
+        { tone: 'purple', icon: '🏛️', head: 'Public finances', body: 'Weaker growth limits tax revenue and fiscal space.' },
+        { tone: 'blue',   icon: '🌍', head: 'Competitiveness', body: 'Higher unit costs can hurt exports and market share.' },
+        { tone: 'amber',  icon: '⚖️', head: 'Macro trade-offs', body: 'Demand growth hits the capacity ceiling sooner – inflation pressure earlier in the cycle.' }
+      ],
+
+      pairLabel: 'WHAT COULD HELP?',
+      pairEmoji: '🔧',
+      left: {
+        tone: 'green', icon: '🏛️', iconStyle: 'circle',
+        label: 'Market-based',
+        text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">Sharper incentives, more competition, easier mobility – let markets drive reallocation.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Competition policy + contestable markets</li><li>Tax incentives for investment (R&amp;D super-deduction)</li><li>Labour-market flexibility, easier mobility</li></ul>'
+      },
+      right: {
+        tone: 'purple', icon: '🏗️', iconStyle: 'circle',
+        label: 'Interventionist',
+        text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">Direct public investment in the capabilities markets under-provide.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Skills (apprenticeship levy, FE reform)</li><li>Infrastructure (HS2, Crossrail, digital)</li><li>R&amp;D funding (UKRI, sector deals)</li><li>Childcare and health – participation gains</li></ul>'
+      },
+
+      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Do not treat low productivity as a <strong>slogan</strong> – explain the mechanism: output per hour, unit costs, wages, growth and inflation pressure.' },
+
+      conclusion: { title: 'Big idea', text: 'The productivity puzzle is one of the strongest <strong>real-world arguments for supply-side policy</strong>.' },
+      examEdge: 'Top answers use <strong>UK context</strong> and then judge which supply-side policy best fits the actual bottleneck. Name a candidate cause, name a matching policy, and explain the channel – do not just list reforms.'
     }
 
   ]

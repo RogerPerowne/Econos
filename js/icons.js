@@ -13338,6 +13338,7 @@ window.ECONOS_ICONS = {
      viewBox widened to 720 so right-edge labels fit; arrows drawn as
      inline polygons rather than markers (markers were scaling oddly). */
   actualVsPotentialGrowth: window.ECONOS_PPF.render(window.ECONOS_ACTUAL_VS_POTENTIAL_GROWTH_SPEC),
+  ukProductivityPuzzle: window.ECONOS_PPF.render(window.ECONOS_UK_PRODUCTIVITY_PUZZLE_SPEC),
 
   /* ============================================================
      The Impact of Economic Growth (Theme 2 · 2.5.4)

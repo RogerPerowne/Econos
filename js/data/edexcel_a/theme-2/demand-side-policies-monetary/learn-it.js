@@ -111,7 +111,12 @@ window.ECONOS_TOPIC = {
         title: 'Big idea',
         text: 'Monetary policy is the <strong>central bank\'s demand-management toolkit</strong> – Bank Rate and QE acting on AD.'
       },
-      examEdge: 'Always state whether the policy is <strong>expansionary or contractionary</strong>, then trace the AD effect – output, employment, prices – in that order. Mark schemes reward the chain, not the definition alone.'
+      examEdge: 'Always state whether the policy is <strong>expansionary or contractionary</strong>, then trace the AD effect – output, employment, prices – in that order. Mark schemes reward the chain, not the definition alone.',
+      tipLate: {
+        icon: '⚠️',
+        tone: 'rose',
+        text: '<strong>Common trap — "Bank Rate is what banks charge their customers."</strong> No. Bank Rate is the <em>policy rate</em> at which the BoE lends to commercial banks. Commercial mortgage and loan rates include a <strong>spread above Bank Rate</strong> for risk, cost and profit. A 0.5% rise in Bank Rate may translate to a 0.6–1.0% rise in a mortgage rate depending on funding conditions – or no change at all if banks are flush with deposits.'
+      }
     },
 
     /* ====================================================================
@@ -176,7 +181,14 @@ window.ECONOS_TOPIC = {
       ],
 
       conclusion: { title: 'Big idea', text: 'Expansionary monetary policy <strong>fills a demand gap</strong>.' },
-      examEdge: 'Trace the chain – <strong>lower rates → stronger AD → then output, jobs and prices</strong>. Effectiveness depends on confidence and on whether banks are <em>willing to lend</em>. After 2008 the BoE cut rates from 5% to 0.5% and still needed QE because the banking system was repairing balance sheets.'
+      examEdge: 'Trace the chain – <strong>lower rates → stronger AD → then output, jobs and prices</strong>. Effectiveness depends on confidence and on whether banks are <em>willing to lend</em>. After 2008 the BoE cut rates from 5% to 0.5% and still needed QE because the banking system was repairing balance sheets.',
+      economistQuote: {
+        portraitKey: 'economistKeynes',
+        tone: 'blue',
+        label: 'Economist insight: Keynes on the limits of monetary stimulus',
+        quote: 'If, however, we are tempted to assert that money is the drink which stimulates the system to activity, we must remind ourselves that there may be several slips between the cup and the lip.',
+        attribution: 'John Maynard Keynes, <em>The General Theory of Employment, Interest and Money</em> (1936)'
+      }
     },
 
     /* ====================================================================
@@ -446,7 +458,14 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Monetary policy is usually strongest when inflation is <strong>demand-led</strong> and the <strong>transmission channels are working</strong>.' },
 
       conclusion: { title: 'Big idea', text: 'Monetary policy is <strong>powerful when it fits the problem and the transmission works</strong>.' },
-      examEdge: 'Top answers move beyond definition – they <strong>trace the chain</strong>, then <strong>evaluate using context</strong>. Tie each strength and limitation to the six judgement-frame questions and a UK example (e.g. 2008 BoE QE, 2021–23 hiking cycle, the cost-push energy shock that monetary policy could not fix directly).'
+      examEdge: 'Top answers move beyond definition – they <strong>trace the chain</strong>, then <strong>evaluate using context</strong>. Tie each strength and limitation to the six judgement-frame questions and a UK example (e.g. 2008 BoE QE, 2021–23 hiking cycle, the cost-push energy shock that monetary policy could not fix directly).',
+      economistQuote: {
+        portraitKey: 'economistFriedman',
+        tone: 'amber',
+        label: 'Economist insight: Friedman on inflation as a hidden tax',
+        quote: 'Inflation is the one form of taxation that can be imposed without legislation.',
+        attribution: 'Milton Friedman, <em>Money Mischief</em> (1992)'
+      }
     }
 
   ]

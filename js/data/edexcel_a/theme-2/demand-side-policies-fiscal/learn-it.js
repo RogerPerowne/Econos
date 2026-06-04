@@ -271,7 +271,12 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'The multiplier is usually stronger when <strong>confidence is high</strong> and firms can respond by expanding output.' },
 
       conclusion: { title: 'Big idea', text: 'Fiscal policy can work through <strong>knock-on rounds of spending</strong>.' },
-      examEdge: 'Use the word <strong>multiplier</strong> only when you explain the <em>repeated re-spending process</em>. A typical UK multiplier is 1.2–1.7 once leakages (MPS, MPT, MPM) are accounted for – far below the textbook k = 5.'
+      examEdge: 'Use the word <strong>multiplier</strong> only when you explain the <em>repeated re-spending process</em>. A typical UK multiplier is 1.2–1.7 once leakages (MPS, MPT, MPM) are accounted for – far below the textbook k = 5.',
+      tipLate: {
+        icon: '⚠️',
+        tone: 'rose',
+        text: '<strong>Common trap — "k = 1/(1−MPC) gives the actual UK multiplier."</strong> No. The simple formula ignores <strong>three real-world leakages</strong>: marginal propensity to save (MPS), to tax (MPT) and to import (MPM). The right denominator is <strong>MPW = MPS + MPT + MPM</strong>. UK estimates from the IMF, OBR and BoE typically land at <strong>k ≈ 1.2–1.7</strong> – an order of magnitude lower than the textbook k = 5 trap. Quoting k = 5 in an essay is the single most common multiplier mistake examiners flag.'
+      }
     },
 
     /* ====================================================================
@@ -407,7 +412,14 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'A <strong>budget deficit may rise in a recession automatically</strong> even if no new discretionary policy is announced – the stabilisers are doing the work.' },
 
       conclusion: { title: 'Big idea', text: 'Fiscal policy is both a <strong>built-in stabiliser</strong> and a <strong>deliberate policy choice</strong>.' },
-      examEdge: 'Always distinguish <strong>automatic stabilisers</strong> from <strong>discretionary fiscal policy</strong>. In data-response questions, look for whether a change in the deficit reflects the cycle (auto) or a Budget announcement (discretionary).'
+      examEdge: 'Always distinguish <strong>automatic stabilisers</strong> from <strong>discretionary fiscal policy</strong>. In data-response questions, look for whether a change in the deficit reflects the cycle (auto) or a Budget announcement (discretionary).',
+      economistQuote: {
+        portraitKey: 'economistFriedman',
+        tone: 'amber',
+        label: 'Economist insight: Friedman on rules vs discretion',
+        quote: 'The Great Depression, like most other periods of severe unemployment, was produced by government mismanagement rather than by any inherent instability of the private economy.',
+        attribution: 'Milton Friedman, <em>Capitalism and Freedom</em> (1962)'
+      }
     },
 
     /* ====================================================================
@@ -477,7 +489,14 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'The best judgement depends on <strong>spare capacity, inflation pressure and the government\'s fiscal position</strong>.' },
 
       conclusion: { title: 'Big idea', text: 'Fiscal policy is <strong>powerful when it fits the economic problem</strong>.' },
-      examEdge: 'Top answers move beyond definition – they <strong>trace the chain</strong>, then <strong>evaluate using context</strong>. Tie each strength and limitation to the six judgement-frame questions and a UK example (e.g. 2008 GFC fiscal response, 2020 furlough scheme).'
+      examEdge: 'Top answers move beyond definition – they <strong>trace the chain</strong>, then <strong>evaluate using context</strong>. Tie each strength and limitation to the six judgement-frame questions and a UK example (e.g. 2008 GFC fiscal response, 2020 furlough scheme).',
+      economistQuote: {
+        portraitKey: 'economistMazzucato',
+        tone: 'amber',
+        label: 'Economist insight: Mazzucato on the state as market-shaper',
+        quote: 'The state has not just fixed market failures – it has actively created and shaped markets. Public investment has led, not followed, in fields from semiconductors to clean energy to the internet itself.',
+        attribution: 'Mariana Mazzucato, <em>Mission Economy</em> (2021)'
+      }
     }
 
   ]

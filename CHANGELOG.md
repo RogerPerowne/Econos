@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.66.1 – 2026-06-05
+
+### BoP C1 `bopThreeAccounts` – arrows now flow into the balance pill
+
+The three account columns are wider than the centred "Overall balance = 0"
+pill, so the old straight-down arrows missed it on the left and right. Replaced
+the three separate HTML arrows with one full-width SVG funnel: each line drops,
+kinks inward (two-stage step, matching the mockup), and drops again so all
+three arrowheads point straight down into the pill's top edge. Uniform SVG
+scaling (no `preserveAspectRatio="none"`) keeps the arrowheads crisp; the
+funnel is hidden on mobile where the grid stacks to one column. `sw.js` cache
+bumped v361 → v362.
+
 ## 0.66.0 – 2026-06-05
 
 ### Theme 2 – topic structure aligned to the Edexcel A specification

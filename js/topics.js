@@ -786,7 +786,7 @@ window.ECONOS_TOPICS = [
     name: 'Demergers',
     sub: 'Reasons for demergers; impact on businesses, workers and consumers',
     color: '#fb7185',
-    available: { learn: false, link: false, land: false },
+    available: { learn: true, link: false, land: false },
     boards: {
       edexcel_a: { spec: '3.1.3', included: true },
       edexcel_b: { spec: null, included: true },

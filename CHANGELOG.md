@@ -6,6 +6,54 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.0 – 2026-06-05
+
+### Demergers (3.1.3) – Theme 3 topic 3 shipped
+
+Built the third Theme 3 topic from a fresh set of 5 mock-ups, covering both
+3.1.3 sub-points (reasons for demergers; impact on businesses, workers and
+consumers). Pattern sequence: Decompose / Decompose / Pair / Evidence-then-
+verdict / Sequential flow chain. The C1-C2 decompose repeat is a justified
+exception — they decompose structurally different things (the WHAT of a
+demerger vs the WHY firms choose one) with very different visuals (a
+before/after tree vs a six-spoke hub of motives).
+
+- **Card 1 – The big picture** (Decompose + tile grid + tile grid): new
+  `demergerBeforeAfter` (parent firm with three divisions splits into
+  two focused companies via a spin-off arrow), Why-it-happens 4-tile
+  grid, What-to-remember 3-tile grid.
+- **Card 2 – Why firms demerge** (Decompose + flow + 3-tile compare):
+  new `demergerReasonsHub` (six numbered motivation tiles – sharper
+  focus / unlock value / remove non-core / reduce diseconomies /
+  separate risk / clearer incentives – around a "Demerger" pill,
+  mirroring `firmStaySmallHub`), 4-step logic flow, Don't-confuse-with
+  Merger/Takeover/Demerger trio.
+- **Card 3 – Impact on businesses** (Side-by-side pair + flow + 2-tile
+  mini-pair): Gains-vs-Risks tall pair with four bullets each side,
+  When-it-helps 4-step flow, Short-run vs Long-run mini-pair.
+- **Card 4 – Impact on workers and consumers** (Evidence-then-verdict +
+  flow + 2-tile mini-pair): two stakeholder columns each carrying both
+  benefits and costs sub-panels, How-to-judge 4-step flow, Short-run
+  vs Long-run mini-pair.
+- **Card 5 – The whole story** (Sequential flow chain + tile grid + tile
+  grid + flow): 6-step chain (large firm → problem → demerger →
+  separate firms → stakeholder effects → judgement), Common-evaluation
+  4-tile grid, Common-mistakes 3-tile rose grid, How-to-write-it 4-step
+  procedure.
+
+### Topic registry
+- `demergers` flipped from `available.learn: false` to `true` so the
+  topic appears live on the home grid.
+
+### Visual catalogue
+- Catalogued the 2 new visuals: `demergerBeforeAfter` (decompose archetype)
+  and `demergerReasonsHub` (hub archetype). Both share the existing
+  firm-hub grammar so Theme 3 reads as one visual family.
+
+### Service worker
+- Cache bumped to `econos-v371` so the new icons.js, app.js and topic
+  data are guaranteed fresh on return visits.
+
 ## 0.72.0 – 2026-06-05
 
 ### Business Growth (3.1.2) – Theme 3 topic 2 shipped

@@ -17226,4 +17226,167 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* demergerBeforeAfter – Card 1 of Demergers (3.1.3). Two-panel before/after
+     structural tree: a diversified parent firm with three division leaves
+     becomes (via a spin-off arrow) two focused firms with the divisions
+     reassigned. Pure SVG so the tree branches line up exactly with the
+     division leaves and the spin-off arrow sits cleanly between the panels. */
+  demergerBeforeAfter: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="dba-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+        </defs>
+
+        <!-- Section labels -->
+        <text x="200" y="26" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">Before</text>
+        <text x="620" y="26" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">After</text>
+
+        <!-- ============ BEFORE PANEL ============ -->
+        <!-- Parent business -->
+        <rect x="60" y="44" width="280" height="76" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <circle cx="98" cy="82" r="20" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+        <text x="98" y="89" font-size="22" text-anchor="middle">🏛️</text>
+        <text x="130" y="78" font-size="14" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Parent business</text>
+        <text x="130" y="98" font-size="12" fill="#475569" font-family="Inter,sans-serif">Diversified firm</text>
+
+        <!-- Connecting vertical from parent down -->
+        <line x1="200" y1="120" x2="200" y2="158" stroke="#94A3B8" stroke-width="1.6"/>
+        <!-- Horizontal manifold -->
+        <line x1="100" y1="158" x2="300" y2="158" stroke="#94A3B8" stroke-width="1.6"/>
+        <!-- Drops to each division -->
+        <line x1="100" y1="158" x2="100" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="200" y1="158" x2="200" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="300" y1="158" x2="300" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
+
+        <!-- Division A (Retail, blue) -->
+        <circle cx="100" cy="232" r="30" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="100" y="241" font-size="22" text-anchor="middle">🛒</text>
+        <text x="100" y="288" font-size="12.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="100" y="305" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+
+        <!-- Division B (Manufacturing, green) -->
+        <circle cx="200" cy="232" r="30" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="200" y="241" font-size="22" text-anchor="middle">🏭</text>
+        <text x="200" y="288" font-size="12.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="200" y="305" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+
+        <!-- Division C (Technology, purple) -->
+        <circle cx="300" cy="232" r="30" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
+        <text x="300" y="241" font-size="22" text-anchor="middle">💻</text>
+        <text x="300" y="288" font-size="12.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="300" y="305" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+
+        <!-- ============ SPIN-OFF ARROW ============ -->
+        <line x1="358" y1="180" x2="436" y2="180" stroke="#94A3B8" stroke-width="3.6" marker-end="url(#dba-arr-grey)"/>
+        <text x="397" y="166" font-size="12" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Spin-off</text>
+
+        <!-- ============ AFTER PANEL ============ -->
+        <!-- New company 1 -->
+        <rect x="466" y="44" width="160" height="76" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="500" cy="82" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="500" y="88" font-size="20" text-anchor="middle">🏛️</text>
+        <text x="528" y="76" font-size="12.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">New company 1</text>
+        <text x="528" y="94" font-size="11" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+
+        <!-- Tree NC1 → A + B -->
+        <line x1="546" y1="120" x2="546" y2="158" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="510" y1="158" x2="586" y2="158" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="510" y1="158" x2="510" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="586" y1="158" x2="586" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
+
+        <!-- New company 2 -->
+        <rect x="660" y="44" width="100" height="76" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+        <circle cx="690" cy="82" r="18" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+        <text x="690" y="88" font-size="20" text-anchor="middle">🏛️</text>
+        <text x="710" y="78" font-size="12" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">New co 2</text>
+        <text x="710" y="96" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Focused</text>
+
+        <!-- Tree NC2 → C -->
+        <line x1="710" y1="120" x2="710" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
+
+        <!-- Division A (Retail, blue) -->
+        <circle cx="510" cy="232" r="28" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="510" y="240" font-size="20" text-anchor="middle">🛒</text>
+        <text x="510" y="284" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="510" y="300" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+
+        <!-- Division B (Manufacturing, green) -->
+        <circle cx="586" cy="232" r="28" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="586" y="240" font-size="20" text-anchor="middle">🏭</text>
+        <text x="586" y="284" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="586" y="300" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+
+        <!-- Division C (Technology, purple) -->
+        <circle cx="710" cy="232" r="28" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
+        <text x="710" y="240" font-size="20" text-anchor="middle">💻</text>
+        <text x="710" y="284" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="710" y="300" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+
+        <!-- Footer caption -->
+        <text x="400" y="354" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" font-style="italic">A diversified parent firm splits into two focused businesses, each holding a subset of the original divisions.</text>
+      </svg>
+    </div>
+  `,
+
+  /* demergerReasonsHub – Card 2 of Demergers. Six numbered reason tiles
+     (Sharper focus / Unlock value / Remove non-core / Reduce diseconomies /
+     Separate risk / Clearer incentives) around a central "Demerger" pill.
+     Mirrors the firmStaySmallHub grammar exactly. */
+  demergerReasonsHub: `
+    <div class="dmrhub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .dmrhub .dmr-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:200px; row-gap:14px; position:relative; z-index:1; }
+        .dmrhub .dmr-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .dmrhub .dmr-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .dmrhub .dmr-tile { border-radius:13px; padding:12px 14px; display:flex; gap:11px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .dmrhub .dmr-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .dmrhub .dmr-num { font-size:12.5px; font-weight:800; margin-right:5px; }
+        .dmrhub .dmr-t { font-size:13.5px; font-weight:800; line-height:1.2; display:inline; }
+        .dmrhub .dmr-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){ .dmrhub .dmr-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .dmrhub .dmr-center{ position:static; transform:none; margin:6px auto; } .dmrhub .dmr-center-wrap{ order:99; display:flex; justify-content:center; } .dmrhub .dmr-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;min-height:380px;">
+        <svg class="dmr-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="30" y1="17" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="17" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="28" y1="50" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="72" y1="50" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="30" y1="83" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="83" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+        </svg>
+        <div class="dmr-grid">
+          <div class="dmr-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="dmr-ic">\u{1F3AF}</div>
+            <div><div><span class="dmr-num" style="color:#2563EB;">1.</span><span class="dmr-t" style="color:#1E3A8A;">Sharper focus</span></div><div class="dmr-s">Management can concentrate on core activities.</div></div>
+          </div>
+          <div class="dmr-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="dmr-ic">⚖️</div>
+            <div><div><span class="dmr-num" style="color:#D97706;">4.</span><span class="dmr-t" style="color:#C2410C;">Reduce diseconomies</span></div><div class="dmr-s">Smaller firms can be less bureaucratic and easier to control.</div></div>
+          </div>
+          <div class="dmr-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="dmr-ic">\u{1F4C8}</div>
+            <div><div><span class="dmr-num" style="color:#059669;">2.</span><span class="dmr-t" style="color:#065F46;">Unlock shareholder value</span></div><div class="dmr-s">Investors may value separate businesses more highly.</div></div>
+          </div>
+          <div class="dmr-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="dmr-ic">\u{1F6E1}️</div>
+            <div><div><span class="dmr-num" style="color:#2563EB;">5.</span><span class="dmr-t" style="color:#1E3A8A;">Separate risk</span></div><div class="dmr-s">High-risk and low-risk activities can be managed apart.</div></div>
+          </div>
+          <div class="dmr-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="dmr-ic">⊖</div>
+            <div><div><span class="dmr-num" style="color:#7C3AED;">3.</span><span class="dmr-t" style="color:#5B21B6;">Remove non-core activities</span></div><div class="dmr-s">Weak or poor-fit divisions can be split off.</div></div>
+          </div>
+          <div class="dmr-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="dmr-ic">\u{1F464}</div>
+            <div><div><span class="dmr-num" style="color:#7C3AED;">6.</span><span class="dmr-t" style="color:#5B21B6;">Clearer incentives</span></div><div class="dmr-s">Managers of each new firm can be judged on their own results.</div></div>
+          </div>
+        </div>
+        <div class="dmr-center-wrap"><div class="dmr-center" style="background:#fff;border:2.4px solid #16A34A;border-radius:50%;width:152px;height:152px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+          <div style="font-size:32px;line-height:1;">\u{1F3DB}️</div>
+          <div style="font-size:15px;font-weight:800;color:#065F46;font-family:Fraunces,Georgia,serif;margin-top:6px;text-align:center;line-height:1.2;">Demerger</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
 };

@@ -481,8 +481,8 @@ window.ECONOS_TOPICS = [
     }
   },
   {
-    id: 'government-spending',
-    name: 'Government Spending',
+    id: 'government-expenditure',
+    name: 'Government Expenditure',
     sub: 'Composition, automatic stabilisers, fiscal rules – the only direct lever (~20%)',
     color: '#3b82f6',
     available: { learn: true, link: false, land: false },
@@ -506,11 +506,11 @@ window.ECONOS_TOPICS = [
       ocr:       { spec: '1.2', included: true }
     }
   },
-  /* Section 3: Aggregate Supply */
+  /* Section 3: Aggregate Supply – split per Edexcel A 2.3.1 / 2.3.2 / 2.3.3 */
   {
     id: 'aggregate-supply',
-    name: 'Aggregate Supply',
-    sub: 'SRAS, LRAS and the Classical vs Keynesian debate',
+    name: 'Characteristics of AS',
+    sub: 'The AS curve, movement vs shift, SR vs LR overview',
     color: '#06b6d4',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -520,11 +520,37 @@ window.ECONOS_TOPICS = [
       ocr:       { spec: '1.3', included: true }
     }
   },
+  {
+    id: 'short-run-aggregate-supply',
+    name: 'Short-run AS',
+    sub: 'SRAS curve, factors: raw material/energy costs, exchange rates, tax rates',
+    color: '#0891b2',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '2.3.2', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: '3.2.2.5', included: true },
+      ocr:       { spec: '1.3', included: true }
+    }
+  },
+  {
+    id: 'long-run-aggregate-supply',
+    name: 'Long-run AS',
+    sub: 'Keynesian vs Classical shapes; productivity, skills, regulation, demographics',
+    color: '#0e7490',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '2.3.3', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: '3.2.2.5', included: true },
+      ocr:       { spec: '1.3', included: true }
+    }
+  },
   /* Section 4: National Income */
   {
     id: 'national-income',
     name: 'National Income',
-    sub: 'Circular flow, equilibrium income and national income caveats',
+    sub: 'Circular flow of income, income vs wealth',
     color: '#84cc16',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -532,6 +558,19 @@ window.ECONOS_TOPICS = [
       edexcel_b: { spec: '2.5.2', included: true },
       aqa:       { spec: '3.2.2.1', included: true },
       ocr:       { spec: '1.1', included: true }
+    }
+  },
+  {
+    id: 'injections-and-withdrawals',
+    name: 'Injections & Withdrawals',
+    sub: 'Money entering and leaving the circular flow',
+    color: '#65a30d',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '2.4.2', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
     }
   },
   {
@@ -564,7 +603,7 @@ window.ECONOS_TOPICS = [
   {
     id: 'equilibrium-national-income',
     name: 'Equilibrium National Income',
-    sub: 'J = W, AD/AS, recessionary and inflationary gaps, reading GDP data',
+    sub: 'J = W, AD/AS equilibrium, reading GDP data',
     color: '#0284c7',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -575,13 +614,39 @@ window.ECONOS_TOPICS = [
     }
   },
   {
-    id: 'trade-cycle-shocks-and-economic-growth',
-    name: 'Trade Cycle, Shocks & Economic Growth',
-    sub: 'Booms, recessions, shocks and the trade cycle',
-    color: '#eab308',
+    id: 'causes-of-growth',
+    name: 'Causes of Growth',
+    sub: 'Factors driving growth, actual vs potential, export-led growth',
+    color: '#facc15',
     available: { learn: true, link: false, land: false },
     boards: {
       edexcel_a: { spec: '2.5.1', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: '3.2.3.1', included: true },
+      ocr:       { spec: '2.1', included: true }
+    }
+  },
+  {
+    id: 'output-gaps',
+    name: 'Output Gaps',
+    sub: 'Recessionary and inflationary gaps, actual vs trend output',
+    color: '#fbbf24',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '2.5.2', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: '3.2.3.1', included: true },
+      ocr:       { spec: '1.5', included: true }
+    }
+  },
+  {
+    id: 'trade-business-cycle',
+    name: 'Trade (Business) Cycle',
+    sub: 'Booms, recessions and the wave of the cycle',
+    color: '#eab308',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '2.5.3', included: true },
       edexcel_b: { spec: '2.5.1', included: true },
       aqa:       { spec: '3.2.3.1', included: true },
       ocr:       { spec: '2.1', included: true }

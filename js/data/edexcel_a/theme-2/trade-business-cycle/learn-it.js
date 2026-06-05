@@ -1,37 +1,36 @@
 /* ============================================================
-   ECONOS – Trade Cycle, Shocks & Economic Growth (Theme 2 · 2.5)
-   5 cards · one storytelling pattern per card:
+   ECONOS – Trade (Business) Cycle (Edexcel A 2.5.3)
+   4 cards · one storytelling pattern per card:
      C1 Interactive multi-state diagram (phase-by-phase wave)
      C2 Predict-then-reveal (5 historical shocks to diagnose)
      C3 Comparison table (Fight inflation vs Support growth)
-     C4 Interactive multi-state diagram (trend build-up + hysteresis)
-     C5 Evidence-then-verdict (benefits + costs → growth-quality verdict)
-   Spec: Edexcel A 2.5.1 + 2.5.3 + 2.5.4
-   (2.5.2 output gaps already covered in Equilibrium National Income)
+     C4 Evidence-then-verdict (benefits + costs → growth-quality verdict)
+   Renamed from `trade-cycle-shocks-and-economic-growth` on 2026-06-05
+   to match the spec sub-section title and number. Causes of growth
+   (2.5.1) and output gaps (2.5.2) are now their own topics.
    ============================================================ */
 
 window.ECONOS_TOPIC = {
-  id: 'trade-cycle-shocks-and-economic-growth',
-  topicNum: '5',
+  id: 'trade-business-cycle',
+  topicNum: '2.5.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  title: 'Trade Cycle, Shocks & Economic Growth',
-  estTime: '10-12 minutes',
-  goal: 'Lock in the four phases of the cycle, demand and supply shocks, actual vs potential growth, and the trade-offs of growth.',
+  title: 'Trade (Business) Cycle',
+  estTime: '8 min',
+  goal: 'Read the four phases of the cycle and diagnose demand- and supply-side shocks from price and output.',
 
   intro: {
     heroKey: 'heroGrowth',
-    summary: 'Real GDP rides a wave of short-run booms and recessions around a rising long-run trend. The wave is the trade cycle; the trend is growth. Shocks knock the economy off the trend; supply-side improvements lift the trend itself.',
-    doInThis: 'Click through the four phases of the cycle, diagnose five historical shocks, compare two policy stances in a stagflation, build up the actual-vs-potential picture stage by stage, and weigh the case for growth.',
+    summary: 'Real GDP rides a wave of short-run booms and recessions around a rising long-run trend. The wave is the trade cycle. Shocks knock the economy off trend; how price and output co-move tells you which kind of shock it was.',
+    doInThis: 'Click through the four phases of the cycle, diagnose five historical shocks, compare two policy stances in a stagflation, and weigh the case for growth.',
     outcomes: [
       'Identify the four phases of the trade cycle from data',
       'Diagnose demand-side and supply-side shocks from P and Y',
       'Compare the Fight-inflation and Support-growth stances against a stagflation',
-      'Distinguish actual from potential growth and identify what lifts the trend',
       'Evaluate the benefits, costs and sustainability of growth'
     ],
     tip: 'A* answers separate the wave (cycle) from the trend (growth), and judge shocks by whether P and Y move together or apart.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '5 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '4 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -48,7 +47,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'trade-cycle-wave',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 1 of 5',
+      stepLabel: 'Learn: Step 1 of 4',
       title: 'The trade cycle: the wave',
       lede: 'The trade cycle is the pattern of <strong>short-run fluctuations</strong> in real GDP around a rising long-run trend. Click through each phase to see where the wave sits relative to the trend, and what each phase looks like in the data.',
       ledeStyle: 'plain',
@@ -128,7 +127,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'demand-vs-supply-shocks',
       template: 'diagnose',
-      stepLabel: 'Learn: Step 2 of 5',
+      stepLabel: 'Learn: Step 2 of 4',
       title: 'Diagnose the shock',
       lede: 'Five real-world shocks. For each, ask yourself: <strong>did P and Y move together (demand shock) or in opposite directions (supply shock)?</strong> Then click <em>Make your call</em> to check.',
       summaryRow: [
@@ -184,7 +183,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'stagflation-policy-dilemma',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 5',
+      stepLabel: 'Learn: Step 3 of 4',
       title: 'The stagflation policy dilemma',
       lede: 'In a stagflation – a negative supply shock that pushes inflation up while output falls – every policy choice helps one symptom and worsens the other. Two stances dominate the debate.',
       ledeStyle: 'plain',
@@ -260,82 +259,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 4 – Pattern: Interactive multi-state diagram
-       The two-lines chart with cumulative reveal: actual GDP wave first,
-       then potential trend + Boom/Recession markers, then 5 drivers
-       lifting the trend, then hysteresis bending it back down.
-       ============================================================ */
-    {
-      id: 'actual-vs-potential-growth',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 5',
-      title: 'Actual vs potential growth',
-      lede: 'Build up the picture stage by stage: the wave you already know, the trend underneath it, the levers that lift the trend, and the risk that a deep recession bends the trend down.',
-      ledeStyle: 'plain',
-      tip: { icon: '\u{1F512}', tone: 'green', text: 'Actual growth rides around the trend. Potential growth IS the trend.' },
-
-      interactiveDiagram: {
-        svgKey: 'actualVsPotentialGrowth',
-        wide: true,
-        maxWidth: '100%',
-        label: 'Click through the four stages',
-        emoji: '\u{3030}\u{FE0F}',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Actual GDP only',
-            tone: 'blue',
-            head: 'Stage 1 – the cycle wave',
-            body: 'Real GDP over time. The wave you saw on Card 1 – boom, slowdown, recession, recovery – is the short-run fluctuation. So far there is nothing underneath it to fluctuate <em>around</em>.',
-            analysis: 'On its own, the wave is meaningless. A 3% fall in GDP from a high base is very different from a 3% fall from a stagnant base. We need a reference – something to compare actual GDP against.'
-          },
-          {
-            label: '+ Potential trend',
-            tone: 'green',
-            head: 'Stage 2 – add potential GDP',
-            body: 'The straight green line is <strong>potential GDP</strong> – the level the economy could produce with all factors fully and efficiently employed. The actual wave now has something to fluctuate around.',
-            analysis: 'Booms sit above trend (positive output gap); recessions sit below it (negative output gap). The slope of the trend line is potential growth – the topic of this whole card. The wave is the trade cycle; the trend is growth.'
-          },
-          {
-            label: '+ What lifts the trend',
-            tone: 'green',
-            head: 'Stage 3 – the six drivers',
-            body: 'The trend rises over time because the economy’s productive capacity rises over time. Six drivers: <strong>labour force</strong>, <strong>capital stock</strong>, <strong>productivity</strong>, <strong>skills and education</strong>, <strong>technology and infrastructure</strong>, and <strong>trade and export markets</strong>. Each shifts LRAS right.',
-            analysis: 'In AD/AS terms, every driver above is an LRAS shifter. Demand-side policy can lift actual growth temporarily; only supply-side investment lifts potential growth – the trend itself. The UK productivity puzzle (output per worker flat since 2008) is the canonical case of a supply-side challenge. <strong>Export-led growth</strong> – South Korea, Germany, China – uses access to global demand to scale faster than the domestic market alone allows; spec 2.5.1 explicitly names the importance of trade for growth.'
-          },
-          {
-            label: '+ Hysteresis',
-            tone: 'rose',
-            head: 'Stage 4 – when recessions damage the trend',
-            body: 'A deep or prolonged recession can bend the trend line <strong>down</strong>. The mechanism: long-term unemployment → skills erode → human capital lost → the economy permanently produces less than it could have.',
-            analysis: 'Hysteresis is what makes recessions different from booms in their long-run footprint. A boom does not permanently lift the trend (capacity catches up); a deep recession can permanently lower it. This is one of the strongest arguments for fiscal stimulus in a downturn: not just to soften the wave, but to protect the trend.'
-          }
-        ]
-      },
-
-      causesLabel: 'THE SIX DRIVERS OF POTENTIAL GROWTH',
-      causesEmoji: '\u{1F680}',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
-      causes: [
-        { tone: 'green',  icon: '\u{1F465}', head: 'Labour force',          body: 'More working-age adults, higher participation, net inward migration of working-age workers.' },
-        { tone: 'blue',   icon: '\u{1F3ED}', head: 'Capital stock',         body: 'More machinery, infrastructure and digital capital per worker – capital deepening.' },
-        { tone: 'amber',  icon: '\u{1F4C8}', head: 'Productivity',          body: 'Output per worker rises. The UK productivity puzzle (flat since 2008) is the textbook bottleneck.' },
-        { tone: 'purple', icon: '\u{1F393}', head: 'Skills and education',  body: 'Higher human capital – better schools, vocational training, lifelong learning, R&amp;D talent.' },
-        { tone: 'blue',   icon: '\u{1F4A1}', head: 'Technology &amp; infrastructure', body: 'Faster diffusion of new tech; better transport, energy and digital networks.' },
-        { tone: 'green',  icon: '\u{1F30D}', head: 'Trade &amp; export markets', body: 'Access to global demand – export-led growth (S. Korea, Germany, China) scales faster than the domestic market alone allows.' }
-      ],
-
-      conclusionPosition: 'end',
-      conclusion: {
-        title: 'Big idea',
-        text: 'Short-run growth is movement along the cycle wave. Long-run growth is the rise of the trend itself – driven by supply-side investment, threatened by deep recessions via hysteresis.'
-      },
-      examEdge: 'Policies that lift potential growth shift LRAS right and improve <em>non-inflationary growth</em>. The UK productivity puzzle is the defining supply-side challenge – cite it as the case study for why supply-side reform matters.'
-    },
-
-    /* ============================================================
-       CARD 5 – Pattern: Side-by-side pair (richly populated 5+5 columns)
+       CARD 4 – Pattern: Side-by-side pair (richly populated 5+5 columns)
        + supporting Sustainable-vs-Unsustainable pair + Who-Wins tile grid
        + Evidence-then-verdict conclusion. Restores the original mockup's
        three-block evaluation structure – visually richer than a single
@@ -344,7 +268,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'impact-of-growth',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 5 of 5',
+      stepLabel: 'Learn: Step 4 of 4',
       title: 'The impact of growth',
       lede: 'Economic growth can raise living standards and create opportunities. But its effects depend on <strong>who gains, who loses, and whether growth is sustainable</strong> over the long run.',
       ledeStyle: 'plain',

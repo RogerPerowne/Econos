@@ -5,10 +5,10 @@
    ============================================================ */
 
 window.ECONOS_TOPIC = {
-  id: 'government-spending',
+  id: 'government-expenditure',
   topicNum: '2.4',
   theme: 'Theme 2 · The National and Global Economy',
-  title: 'Government Spending',
+  title: 'Government Expenditure',
   estTime: '10-12 minutes',
   goal: 'Lock in G – the only AD component policymakers control directly – and the conditions that decide whether it works.',
 
@@ -88,12 +88,12 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ── CARD 2 ── Types of Government Spending ──────────────────── */
+    /* ── CARD 2 ── Types of Government Expenditure ──────────────────── */
     {
       id: 'types-of-spending',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
-      title: 'Types of Government Spending',
+      title: 'Types of Government Expenditure',
       lede: 'Not all spending does the same job – some buys output directly, some builds capacity, and some simply redistributes income.',
       ledeStyle: 'plain',
 
@@ -310,12 +310,12 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ── CARD 5 ── Government Spending and the Multiplier ────────── */
+    /* ── CARD 5 ── Government Expenditure and the Multiplier ────────── */
     {
       id: 'spending-multiplier',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 8',
-      title: 'Government Spending and the Multiplier',
+      title: 'Government Expenditure and the Multiplier',
       lede: 'A rise in government spending becomes someone else\'s income – and then gets spent again.',
       ledeStyle: 'plain',
 
@@ -491,12 +491,12 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ── CARD 8 ── Evaluating Government Spending ────────────────── */
+    /* ── CARD 8 ── Evaluating Government Expenditure ────────────────── */
     {
       id: 'evaluating-government-spending',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 8 of 8',
-      title: 'Evaluating Government Spending',
+      title: 'Evaluating Government Expenditure',
       lede: 'Government spending can lift demand and improve welfare – but its effectiveness depends on timing, capacity, and how it is financed.',
       ledeStyle: 'plain',
 

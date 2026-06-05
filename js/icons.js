@@ -12416,6 +12416,7 @@ window.ECONOS_ICONS = {
   srasShiftLeftClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_LEFT_CLASSICAL_KEYNESIAN_SPEC),
   lrasShiftRightClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_LRAS_SHIFT_RIGHT_CLASSICAL_KEYNESIAN_SPEC),
   asIntroClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_AS_INTRO_CLASSICAL_KEYNESIAN_SPEC),
+  asSrToLr: window.ECONOS_PPF.render(window.ECONOS_AS_SR_TO_LR_SPEC),
   adSlopeInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_SLOPE_INTERACTIVE_SPEC),
   adMovementShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_MOVEMENT_SHIFT_INTERACTIVE_SPEC),
 

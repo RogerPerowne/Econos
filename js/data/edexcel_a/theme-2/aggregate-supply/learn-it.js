@@ -1,6 +1,9 @@
 /* ============================================================
    ECONOS – Characteristics of Aggregate Supply (Edexcel A 2.3.1)
-   2 cards · ad-interactive template
+   3 cards · ad-interactive template
+   Maps the spec sub-points: 2.3.1a (the AS curve + Classical/Keynesian
+   shapes), 2.3.1b (movement along vs shift), 2.3.1c (the SRAS↔LRAS
+   relationship / self-correction back to Yf).
    Split from the legacy `aggregate-supply` topic on 2026-06-05 to
    match the spec sub-section structure: 2.3.1 / 2.3.2 / 2.3.3.
    Sub-topics live under `short-run-aggregate-supply` (2.3.2) and
@@ -12,21 +15,21 @@ window.ECONOS_TOPIC = {
   topicNum: '2.3.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   title: 'Characteristics of Aggregate Supply',
-  estTime: '6 min',
-  goal: 'Define aggregate supply and see how it fits the AD/AS model',
+  estTime: '9 min',
+  goal: 'Define aggregate supply, tell a movement from a shift, and relate short-run to long-run AS',
 
   intro: {
     heroKey: 'heroAggSupply',
     summary: 'Aggregate supply (AS) is the total output firms in the economy are willing and able to produce at each price level. It has two time horizons – short-run AS responds to immediate cost conditions, while long-run AS reflects the economy\'s underlying productive capacity. This topic covers the characteristics of AS as a concept; the next two topics dive into SRAS (2.3.2) and LRAS (2.3.3).',
-    doInThis: 'Define aggregate supply, distinguish movement along from shift, and place AS inside the AD/AS model.',
+    doInThis: 'Define aggregate supply and its two shapes, distinguish a movement along the AS curve from a shift of it, and see how short-run AS relates to long-run AS.',
     outcomes: [
-      'Define aggregate supply and distinguish SR from LR',
-      'Distinguish movement along the AS curve from a shift of it',
-      'Locate AS in the AD/AS framework'
+      'Define aggregate supply and distinguish the Classical and Keynesian shapes',
+      'Distinguish a movement along the AS curve from a shift of it',
+      'Explain how short-run AS relates to long-run AS, and the return to Yf'
     ],
     tip: 'Two time horizons, one diagram – keep SR and LR distinct from the start.',
     stages: [
-      { num: 1, name: 'Learn',  sub: '2 cards \xb7 6 min', state: 'current' },
+      { num: 1, name: 'Learn',  sub: '3 cards \xb7 9 min', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply in exam-style questions', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
@@ -38,7 +41,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'what-is-as',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 1 of 2',
+      stepLabel: 'Learn: Card 1 of 3',
       title: 'What is Aggregate Supply?',
       lede: 'Aggregate supply (AS) is the total output firms in the economy are willing and able to produce at each price level.\nAS has two time horizons – SRAS in the short run and LRAS in the long run.',
 
@@ -122,95 +125,137 @@ window.ECONOS_TOPIC = {
       conclusion: { title: 'Big idea', text: 'Short-run changes affect costs and inflation. Long-run changes affect the economy\'s productive capacity.' },
       examEdge: 'Strong essays distinguish movements along SRAS from shifts in SRAS – and they separate short-run supply conditions from long-run capacity.'
     },
-    /* ----- CARD 2 – AS in the AD/AS model ----- */
+    /* ----- CARD 2 – Movement along vs shift (2.3.1b) ----- */
     {
-      id: 'as-in-adas',
+      id: 'as-movement-shift',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 2 of 2',
-      title: 'AS in the AD/AS model',
-      lede: 'Compare supply-side improvements with demand-side stimulus. Both may raise output, but the inflation consequences differ.',
+      stepLabel: 'Learn: Card 2 of 3',
+      title: 'Movement along vs shift',
+      lede: 'A change in the price level moves the economy ALONG the AS curve. A change in a determinant SHIFTS the whole curve. Getting this right is the foundation of every AS answer.',
+      ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'The same output gain can come from stronger demand or stronger supply – but the price effect is different.' },
+      tip: { icon: '✅', tone: 'green', text: 'Price level change → a <strong>movement ALONG</strong> AS. Determinant change → a <strong>SHIFT of</strong> AS.' },
 
-      // Two stacked interactive diagrams – both with Classical/Keynesian
-      // toggles. Demand-side stimulus shows the textbook AD-right split
-      // (Classical: only P; Keynesian: Y AND P). Supply-side improvement
-      // shows the LRAS-right split (Classical: clean landing at Yf₂;
-      // Keynesian: potential rises, actual lags).
-      interactiveDiagram: [
-        {
-          svgKey: 'adShiftClassicalKeynesian',
-          label: 'DEMAND-SIDE STIMULUS – AD SHIFTS RIGHT',
-          emoji: '📈',
-          layers: ['idl-1', 'idl-2'],
-          inverseLayers: ['idl-old-solid'],
-          perspectives: ['classical', 'keynesian'],
-          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
-          views: [
-            { label: 'Starting point', show: [],
-              classical: { tone: 'purple', head: 'Classical view – at potential.', body: ['AD₁ meets vertical LRAS at Yf – price level P₁.'] },
-              keynesian: { tone: 'amber', head: 'Keynesian view – spare capacity.', body: ['AD₁ meets the rising range of reverse-L AS, below capacity.'] } },
-            { label: 'AD shifts right', show: ['idl-1'],
-              classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['Government spending, tax cuts or looser monetary policy raise demand.'] },
-              keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['Government spending, tax cuts or looser monetary policy raise demand.'] } },
-            { label: 'New equilibrium', show: ['idl-1', 'idl-2'],
-              classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf; P₂ ≫ P₁ – purely inflationary.'], analysis: 'Classical reading: demand stimulus at potential is eaten by inflation. The case for fiscal restraint hinges on this verdict.' },
-              keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['Y₂ &gt; Y₁ and P₂ &gt; P₁; the closer to Yf, the more leaks into prices.'], analysis: 'Keynesian reading: with spare capacity, demand stimulus delivers real output and jobs. Near Yf the trade-off worsens.' } }
-          ]
-        },
-        {
-          svgKey: 'lrasShiftRightClassicalKeynesian',
-          label: 'SUPPLY-SIDE IMPROVEMENT – LRAS SHIFTS RIGHT',
-          emoji: '⚙️',
-          layers: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
-          inverseLayers: ['c-lras1-solid', 'k-as1-solid'],
-          perspectives: ['classical', 'keynesian'],
-          perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
-          views: [
-            { label: 'Starting point', show: [],
-              classical: { tone: 'purple', head: 'At potential at E₁.', body: ['AD meets vertical LRAS₁ at Yf₁.'] },
-              keynesian: { tone: 'amber', head: 'Below capacity at E₁.', body: ['AD meets reverse-L AS₁ on its rising range – Y₁ &lt; Yf₁.'] } },
-            { label: 'Capacity rises', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2', 'k-lr-arrow'],
-              classical: { tone: 'green', head: 'LRAS₁ → LRAS₂.', body: ['Productivity, capital, labour, technology – capacity expands.'] },
-              keynesian: { tone: 'green', head: 'Capacity wall slides right.', body: ['AS₁ → AS₂ is a parallel rightward shift; floor unchanged.'] } },
-            { label: 'New equilibrium', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
-              classical: { tone: 'purple', head: 'Output up, prices down.', body: ['Y rises to Yf₂, P falls – sustainable non-inflationary growth.'], analysis: 'Classical reading: this is the prize – the corner demand-side levers can\'t reach.' },
-              keynesian: { tone: 'rose', head: 'Potential up, output LAGS.', body: ['Actual Y₂ rises but sits BELOW the new potential Yf₂ – fresh output gap.'], analysis: 'Keynesian reading: supply-side reform raises the ceiling, but without demand catching up the new capacity goes partly unused.' } }
-          ]
-        }
-      ],
-
-      comparisonTable: {
-        title: 'COMPARE THE OUTCOMES',
-        emoji: '↔️',
-        columns: ['Demand-side stimulus', 'Supply-side improvement'],
-        columnTones: ['blue', 'green'],
-        rows: [
-          { label: '📊 Output',         values: ['Rises (AD shift)',               'Rises (capacity expands)'],             highlights: [false, true] },
-          { label: '💹 Price level',    values: ['Rises (inflationary)',           'Stable or falling'],                    highlights: [false, true] },
-          { label: '📅 Sustainability', values: ['Short-term boost',              'Long-term improvement'],                highlights: [false, true] },
-          { label: '⚠️ Inflation risk', values: ['High near full employment',     'Low – capacity expands with output'],   highlights: [false, true] },
-          { label: '🎯 Best use',       values: ['Recession / weak demand',       'Capacity constrained / high inflation'], highlights: [false, false] }
+      // Uses SRAS as the worked example. srasShiftInteractive shows a
+      // cost-push left shift with the original curve dashing on shift.
+      interactiveDiagram: {
+        svgKey: 'srasShiftInteractive',
+        label: 'A SHIFT OF SRAS',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
+        views: [
+          {
+            label: 'A movement starts here', show: [], tone: 'blue',
+            head: 'On SRAS₁ at E₁.',
+            body: ['AD meets SRAS₁ at E₁. If <strong>AD alone</strong> changes, the economy slides ALONG this fixed curve – a <strong>movement</strong>.', 'The curve itself does not move.'],
+            analysis: 'A movement along SRAS is caused by a change in the price level (driven by AD). Same curve, different point.'
+          },
+          {
+            label: 'A determinant changes', show: ['idl-1'], tone: 'rose',
+            head: 'SRAS₁ → SRAS₂ – the whole curve shifts.',
+            body: ['Now a <strong>determinant</strong> changes – dearer energy, a weaker pound or higher taxes raise costs at every output level.', 'The entire curve moves left to SRAS₂ (the old curve dashes).'],
+            analysis: 'A shift is caused by a change in a determinant, not by the price level. That is the whole distinction.'
+          },
+          {
+            label: 'A new equilibrium', show: ['idl-1', 'idl-2'], tone: 'rose',
+            head: 'A new equilibrium at E₂.',
+            body: ['Output falls and the price level rises (E₂). Output at <em>every</em> price level has changed.'],
+            analysis: 'After a shift, every price level maps to a different output – that is what “the curve moved” means.'
+          }
         ]
       },
 
-      pairLabel: 'WHEN TO USE WHICH',
-      pairEmoji: '🎯',
+      pairLabel: 'TELL THEM APART',
+      pairEmoji: '↔️',
       left: {
-        tone: 'blue', icon: '📉', iconStyle: 'circle',
-        label: 'Weak AD and recession',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Demand management can help. Use fiscal or monetary policy to stimulate demand.</p>'
+        tone: 'blue', icon: '↔️', iconStyle: 'circle',
+        label: 'Movement along AS',
+        points: ['Caused by a change in the price level.', 'The economy stays on the SAME curve.', 'A different point on one fixed AS.']
       },
       right: {
-        tone: 'green', icon: '⚙️', iconStyle: 'circle',
-        label: 'Capacity constraints and inflation pressure',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Supply-side reform is better. Expand productive capacity and remove supply-side bottlenecks.</p>'
+        tone: 'green', icon: '→', iconStyle: 'circle',
+        label: 'Shift of AS',
+        points: ['Caused by a change in a determinant.', 'The WHOLE curve moves left or right.', 'Output changes at every price level.']
       },
 
-      tipLate: { tone: 'blue', icon: 'ℹ️', text: 'Combining both can work best: use demand policy when demand is weak now, but invest in supply-side improvements to raise potential output over time.' },
+      causesLabel: 'WHAT CAUSES A SHIFT',
+      causesEmoji: '⚙️',
+      causesStyle: 'icon-top',
+      causesCols: 3,
+      causes: [
+        { tone: 'amber',  icon: '🛢️', head: 'SRAS determinants', body: 'Raw-material & energy costs, exchange rates, tax rates – the short-run cost factors (2.3.2).' },
+        { tone: 'purple', icon: '🏛️', head: 'LRAS determinants', body: 'Technology, productivity, skills, regulation, demographics, competition – the capacity factors (2.3.3).' },
+        { tone: 'blue',   icon: '↔️', head: 'NOT the price level', body: 'A price-level change is a movement, never a shift. Diagnose this first.' }
+      ],
 
-      conclusion: { title: 'Big idea', text: 'Demand policy changes spending. Supply policy changes capacity. The diagnosis determines the better cure.' },
-      examEdge: 'Top essays compare the inflation impact – AD stimulus is more inflationary than supply-side expansion when the economy is close to full employment.'
+      conclusion: { title: 'Big idea', text: 'A price-level change moves you ALONG AS; a determinant change SHIFTS AS.' },
+      examEdge: 'Before explaining any outcome, state whether the change describes a <strong>movement along</strong> or a <strong>shift of</strong> the AS curve.'
+    },
+
+    /* ----- CARD 3 – From short run to long run (2.3.1c) ----- */
+    {
+      id: 'as-sr-to-lr',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Card 3 of 3',
+      title: 'From short run to long run',
+      lede: 'Short-run AS and long-run AS describe the same economy over different horizons. In the short run output can sit away from capacity; in the long run it is anchored to LRAS at full-capacity output Yf.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '✅', tone: 'green', text: 'SRAS reacts to costs <em>now</em>; LRAS fixes where output settles in the <strong>long run</strong>.' },
+
+      interactiveDiagram: {
+        svgKey: 'asSrToLr',
+        label: 'THE SELF-CORRECTION',
+        emoji: '📊',
+        layers: ['sras1-solid', 'sras1-dash', 'shock', 'shock-dash', 'correct'],
+        views: [
+          {
+            label: 'Long-run equilibrium', show: ['sras1-solid'], tone: 'slate',
+            head: 'On LRAS at Yf.',
+            body: ['AD meets SRAS₁ on the vertical LRAS at E₁ – output is at potential Yf, price level P₁.', 'Here the short run and long run agree.'],
+            analysis: 'When the economy sits on LRAS, SRAS and LRAS give the same output. This is long-run equilibrium.'
+          },
+          {
+            label: 'A shock (short run)', show: ['sras1-dash', 'shock'], tone: 'rose',
+            head: 'A cost shock shifts SRAS left.',
+            body: ['Dearer inputs push SRAS₁ → SRAS₂. The economy moves to E₂: output Y₂ falls <strong>below</strong> potential Yf and the price level rises.', 'A negative output gap (Yf − Y₂) opens.'],
+            analysis: 'In the short run, output can sit away from LRAS. Right now it is SRAS – not LRAS – that fixes output.'
+          },
+          {
+            label: 'Self-correction (long run)', show: ['sras1-solid', 'shock-dash', 'correct'], tone: 'green',
+            head: 'SRAS returns; output back to Yf.',
+            body: ['With output below capacity, spare resources push wages and costs back down, so SRAS shifts back to SRAS₁.', 'The economy returns to E₁ on LRAS at Yf.'],
+            analysis: 'Classical view: the long run anchors output to LRAS at Yf – the short-run deviation self-corrects. Keynesians argue sticky wages make this slow or incomplete, so output can stay below Yf until policy acts.'
+          }
+        ]
+      },
+
+      pairLabel: 'TWO HORIZONS, ONE ECONOMY',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'blue', icon: '⏱️', iconStyle: 'circle',
+        label: 'SRAS – the short run',
+        points: ['Reacts to costs, exchange rates and taxes.', 'Output can deviate from capacity.', 'Sets output right now.']
+      },
+      right: {
+        tone: 'purple', icon: '🌄', iconStyle: 'circle',
+        label: 'LRAS – the long run',
+        points: ['Fixed by productive capacity.', 'Output is anchored at Yf.', 'Where the economy settles over time.']
+      },
+
+      causesLabel: 'HOW THEY RELATE',
+      causesEmoji: '🔗',
+      causesStyle: 'icon-top',
+      causesCols: 3,
+      causes: [
+        { tone: 'rose',  icon: '⚡', head: 'Short run: off the anchor', body: 'A shock moves SRAS, so output sits above or below potential Yf.' },
+        { tone: 'amber', icon: '🔁', head: 'Adjustment: SRAS moves', body: 'The output gap pushes costs up or down, so SRAS shifts back toward Yf.' },
+        { tone: 'green', icon: '🎯', head: 'Long run: back to LRAS', body: 'Output returns to capacity Yf on the vertical LRAS.' }
+      ],
+
+      conclusion: { title: 'Big idea', text: 'SRAS sets output in the short run; LRAS anchors it in the long run. The two are linked by the adjustment back to Yf.' },
+      examEdge: 'Use SRAS for the immediate effect of a shock, then explain how the economy moves back toward LRAS at Yf in the long run (and note the Keynesian doubt about how fast).'
     }
 
   ]

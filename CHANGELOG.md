@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.69.0 – 2026-06-05
+
+### Characteristics of AS (2.3.1) – rebalanced to the spec's three sub-points
+
+The `aggregate-supply` topic now maps 1:1 to spec 2.3.1, replacing the
+off-spec demand-vs-supply policy card (which duplicated the LRAS topic and
+belonged with supply-side policy) with two properly-placed cards:
+
+- **Card 1 – What is Aggregate Supply?** (unchanged) → 2.3.1a: the AS curve
+  + the Classical/Keynesian shapes.
+- **Card 2 – Movement along vs shift** (new) → 2.3.1b: a price-level change
+  moves the economy ALONG AS; a determinant change SHIFTS it. Built on the
+  `srasShiftInteractive` chart (cost-push shift with the original curve
+  dashing), a tell-them-apart pair, and the SRAS vs LRAS determinant split.
+- **Card 3 – From short run to long run** (new) → 2.3.1c: a purpose-built
+  `asSrToLr` self-correction diagram – a cost shock pushes output below Yf
+  in the short run (SRAS₁→SRAS₂, original dashes, perpendicular arrow), then
+  SRAS returns to restore long-run equilibrium on LRAS at Yf. Classical
+  self-correction with the Keynesian caveat noted.
+
+New chart `asSrToLr`: lint-clean (80 specs), layer behaviour verified via
+jsdom (SRAS₁ dashes on the shock view and returns on the long-run view).
+`sw.js` cache bumped to `econos-v367`; spec precached + script-tagged in all
+three shells.
+
 ## 0.68.2 – 2026-06-05
 
 ### AS topics – align factor cards to the spec's named factors

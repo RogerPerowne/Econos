@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.70.1 – 2026-06-05
+
+### Visual catalogue – a reuse index for all charts and diagrams
+
+Added `docs/visual-catalogue.md`: a categorised index of every reusable
+visual — the 80 engine chart specs (by family, flagged interactive / C↔K /
+multi-panel), the ~250 hand-rolled `icons.js` visuals (grouped by archetype:
+hubs, spectrums, flow chains, funnels, scorecards/dashboards, twin
+comparisons, firm/cost/market-structure diagrams, game-theory matrices,
+decompose anatomies, interactive explorers), the dials engine, and the topic
+hero covers. Includes a Theme 3 quick-start mapping each spec topic to the
+visuals it can already reuse. CLAUDE.md now tells future work to consult the
+catalogue before building a visual — most mock-ups are a selection problem,
+not a build problem. Docs-only.
+
 ## 0.70.0 – 2026-06-05
 
 ### Theme 3 topic structure aligned to the Edexcel A spec

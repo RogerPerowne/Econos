@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.68.2 – 2026-06-05
+
+### AS topics – align factor cards to the spec's named factors
+
+Spec-fidelity pass on the Aggregate Supply topics (Edexcel A 2.3):
+
+- **SRAS (2.3.2a):** re-cut the factor cards to the spec's exact three —
+  **raw materials & energy costs, exchange rates, tax rates.** Exchange
+  rates was previously missing entirely; the cards instead listed wages and
+  technology (technology is an *LRAS* factor, which blurred the SR/LR line).
+  Card 4 now presents the three factors in both directions; Card 5 shows the
+  same three as real-world negative supply shocks (energy spike, sterling
+  depreciation, higher business taxes) feeding stagflation.
+- **LRAS (2.3.3b):** re-cut Card 3's grid to the spec's exact six —
+  technological advances, relative productivity, education & skills,
+  government regulations, demographics & migration, competition policy.
+  Dropped the off-spec "capital stock" and "infrastructure" headliners and
+  un-merged education/demographics so revision maps 1:1 to the spec.
+- Fixed leftover **"Card N of 7"** step labels on LRAS cards 1–4 (the lesson
+  is 6 cards since the diagnose card was removed).
+
+Data-only change – no service-worker cache bump required.
+
 ## 0.68.1 – 2026-06-05
 
 ### LRAS polish – dashed-curve fix, arrows, single-view chrome, axis clash

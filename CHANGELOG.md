@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.5 – 2026-06-05
+
+### Theme 3 hubs – narrower coloured boxes + fix the 5-tile bottom
+
+Two tweaks to the shared hub family.
+
+**Narrower coloured boxes (all hubs).** Bumped `column-gap` from 24% to
+28%, which shrinks each side tile from 38% wide → 36% wide — a subtle
+but visible reduction. Dots and curve endpoints moved to 36% / 64% to
+match the new tile inner edges; control points to 44 / 56.
+
+**5-tile hub: fixed-width bottom box.** The bottom "Market share" tile
+was full-width, which meant the centred green dot at `top:85%` landed
+inside the tile rather than at its top edge. Fixed:
+
+- Bottom tile now `width:36%` (centred), matching a side tile.
+- Bottom dot moved from `top:85%` to `top:71%` — sits at the tile's
+  actual top edge given the now-known wrapper height.
+- Bottom SVG path simplified to a straight `M 50 71 L 50 32` line
+  (the centre circle is at `top:32%`).
+
+### Service worker
+- Cache bumped to `econos-v375` (shared `icons.js` changed).
+
 ## 0.73.4 – 2026-06-05
 
 ### Theme 3 hubs – connector dots actually touch the boxes now

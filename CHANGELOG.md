@@ -6,6 +6,35 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.1 – 2026-06-05
+
+### Theme 3 hub visuals – elegance polish
+
+Restyled the shared hub-and-spoke family used across all three Theme 3
+topics to match the reference mock-up more closely. Applied to all six
+hubs: `firmFourLensesHub`, `firmSizeMeasuresHub`, `firmStaySmallHub`,
+`businessGrowthMapHub`, `conglomerateRiskHub`, `demergerReasonsHub`.
+
+- **Smaller centre circle.** Cut the padding around the central pill so
+  the circle hugs its icon + label (icon and font sizes unchanged). The
+  diameter drops from 148–172px to 112–146px depending on label length.
+- **Soft halo, no hard border.** Replaced the heavy 2.4px near-black ring
+  with a thin light border plus a soft concentric halo (layered
+  box-shadow) and a gentle drop shadow — the elegant look from the mock-up.
+- **Curved connectors.** The straight dashed spokes are now smooth
+  horizontal-departure Bézier curves (round line-caps, slightly heavier
+  dashes), reusing the already-validated tile anchor points so geometry
+  stays correct.
+- **Coloured end-point dots.** Each connector now carries a round,
+  colour-matched dot at the tile end, rendered as an HTML element so it
+  stays perfectly circular regardless of the SVG's responsive stretch.
+- The circle remains centred on the midpoint of the gap between the
+  left/right tile columns (the grid is symmetric, so 50% is exact); the
+  tighter circle makes that centring read more clearly.
+
+### Service worker
+- Cache bumped to `econos-v372` (shared `icons.js` changed).
+
 ## 0.73.0 – 2026-06-05
 
 ### Demergers (3.1.3) – Theme 3 topic 3 shipped

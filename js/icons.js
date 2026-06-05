@@ -14085,19 +14085,27 @@ window.ECONOS_ICONS = {
         .fhub-4 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:160px; row-gap:18px; position:relative; z-index:1; }
         .fhub-4 .fh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .fhub-4 .fh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .fhub-4 .fh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .fhub-4 .fh-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
         .fhub-4 .fh-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
         .fhub-4 .fh-ic { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
         .fhub-4 .fh-t { font-size:14px; font-weight:800; line-height:1.2; letter-spacing:0.005em; }
         .fhub-4 .fh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
-        @media (max-width:600px){ .fhub-4 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .fhub-4 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-4 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-4 .fh-conn{ display:none; } }
+        @media (max-width:600px){ .fhub-4 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .fhub-4 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-4 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-4 .fh-conn{ display:none; } .fhub-4 .fh-dots{ display:none; } }
       </style>
       <div style="position:relative;max-width:700px;margin:0 auto;min-height:300px;">
         <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="30" y1="32" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="32" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="30" y1="68" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="68" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <path d="M 33 32 C 41 32, 41 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 32 C 59 32, 59 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 33 68 C 41 68, 41 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 68 C 59 68, 59 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
+        <div class="fh-dots">
+          <div class="fh-dot" style="left:33%;top:32%;background:#34D399;"></div>
+          <div class="fh-dot" style="left:67%;top:32%;background:#FB923C;"></div>
+          <div class="fh-dot" style="left:33%;top:68%;background:#A78BFA;"></div>
+          <div class="fh-dot" style="left:67%;top:68%;background:#60A5FA;"></div>
+        </div>
         <div class="fh-grid">
           <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
             <div class="fh-ic">↗️</div>
@@ -14116,9 +14124,9 @@ window.ECONOS_ICONS = {
             <div><div class="fh-t" style="color:#1E3A8A;">Control</div><div class="fh-s">owners, managers, incentives</div></div>
           </div>
         </div>
-        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:148px;height:148px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:50%;width:112px;height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
           <div style="font-size:30px;line-height:1;">🏛️</div>
-          <div style="font-size:16px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:8px;">The firm</div>
+          <div style="font-size:16px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;">The firm</div>
         </div></div>
       </div>
     </div>
@@ -14134,21 +14142,30 @@ window.ECONOS_ICONS = {
         .fhub-5 .fh-bottom .fh-tile { max-width:360px; }
         .fhub-5 .fh-center { position:absolute; top:42%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .fhub-5 .fh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .fhub-5 .fh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .fhub-5 .fh-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
         .fhub-5 .fh-tile { border-radius:13px; padding:11px 14px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
         .fhub-5 .fh-ic { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); position:relative; }
         .fhub-5 .fh-num { font-size:13px; font-weight:800; margin-right:6px; }
         .fhub-5 .fh-t { font-size:14px; font-weight:800; line-height:1.2; display:inline; }
         .fhub-5 .fh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
-        @media (max-width:600px){ .fhub-5 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .fhub-5 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-5 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-5 .fh-bottom { margin-top:0; } .fhub-5 .fh-bottom .fh-tile{ max-width:none; } .fhub-5 .fh-conn{ display:none; } }
+        @media (max-width:600px){ .fhub-5 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .fhub-5 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-5 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-5 .fh-bottom { margin-top:0; } .fhub-5 .fh-bottom .fh-tile{ max-width:none; } .fhub-5 .fh-conn{ display:none; } .fhub-5 .fh-dots{ display:none; } }
       </style>
       <div style="position:relative;max-width:720px;margin:0 auto;min-height:360px;">
         <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="30" y1="20" x2="50" y2="42" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="20" x2="50" y2="42" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="30" y1="55" x2="50" y2="42" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="55" x2="50" y2="42" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="50" y1="42" x2="50" y2="78" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <path d="M 33 20 C 41 20, 41 42, 50 42" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 20 C 59 20, 59 42, 50 42" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 33 55 C 41 55, 41 42, 50 42" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 55 C 59 55, 59 42, 50 42" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 50 78 C 50 64, 50 56, 50 42" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
+        <div class="fh-dots">
+          <div class="fh-dot" style="left:33%;top:20%;background:#34D399;"></div>
+          <div class="fh-dot" style="left:67%;top:20%;background:#FB923C;"></div>
+          <div class="fh-dot" style="left:33%;top:55%;background:#60A5FA;"></div>
+          <div class="fh-dot" style="left:67%;top:55%;background:#A78BFA;"></div>
+          <div class="fh-dot" style="left:50%;top:78%;background:#34D399;"></div>
+        </div>
         <div class="fh-grid">
           <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
             <div class="fh-ic">👥</div>
@@ -14171,7 +14188,7 @@ window.ECONOS_ICONS = {
             <div><div><span class="fh-num" style="color:#059669;">5</span><span class="fh-t" style="color:#065F46;">Market share</span></div><div class="fh-s">Proportion of total market sales.</div></div>
           </div></div>
         </div>
-        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:148px;height:148px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:50%;width:112px;height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
           <div style="font-size:30px;line-height:1;">🏢</div>
           <div style="font-size:15px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;">Firm size</div>
         </div></div>
@@ -14187,21 +14204,31 @@ window.ECONOS_ICONS = {
         .fhub-6 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:190px; row-gap:14px; position:relative; z-index:1; }
         .fhub-6 .fh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .fhub-6 .fh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .fhub-6 .fh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .fhub-6 .fh-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
         .fhub-6 .fh-tile { border-radius:13px; padding:11px 14px; display:flex; gap:11px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
         .fhub-6 .fh-ic { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
         .fhub-6 .fh-t { font-size:13.5px; font-weight:800; line-height:1.2; }
         .fhub-6 .fh-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:3px; }
-        @media (max-width:600px){ .fhub-6 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .fhub-6 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-6 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-6 .fh-conn{ display:none; } }
+        @media (max-width:600px){ .fhub-6 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .fhub-6 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-6 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-6 .fh-conn{ display:none; } .fhub-6 .fh-dots{ display:none; } }
       </style>
       <div style="position:relative;max-width:720px;margin:0 auto;min-height:360px;">
         <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="30" y1="17" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="17" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="28" y1="50" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="72" y1="50" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="30" y1="83" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="83" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <path d="M 33 17 C 41 17, 41 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 17 C 59 17, 59 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 33 50 L 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 50 L 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 33 83 C 41 83, 41 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 83 C 59 83, 59 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
+        <div class="fh-dots">
+          <div class="fh-dot" style="left:33%;top:17%;background:#34D399;"></div>
+          <div class="fh-dot" style="left:67%;top:17%;background:#FB923C;"></div>
+          <div class="fh-dot" style="left:33%;top:50%;background:#A78BFA;"></div>
+          <div class="fh-dot" style="left:67%;top:50%;background:#60A5FA;"></div>
+          <div class="fh-dot" style="left:33%;top:83%;background:#FB923C;"></div>
+          <div class="fh-dot" style="left:67%;top:83%;background:#34D399;"></div>
+        </div>
         <div class="fh-grid">
           <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
             <div class="fh-ic">🙋</div>
@@ -14228,9 +14255,9 @@ window.ECONOS_ICONS = {
             <div><div class="fh-t" style="color:#065F46;">Local demand</div><div class="fh-s">some markets stay geographically small.</div></div>
           </div>
         </div>
-        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:152px;height:152px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
-          <div style="font-size:32px;line-height:1;">🏪</div>
-          <div style="font-size:13.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;text-align:center;line-height:1.2;">A small firm<br/>may stay small</div>
+        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:50%;width:130px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
+          <div style="font-size:30px;line-height:1;">🏪</div>
+          <div style="font-size:12.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:5px;text-align:center;line-height:1.2;">A small firm<br/>may stay small</div>
         </div></div>
       </div>
     </div>
@@ -16928,19 +16955,27 @@ window.ECONOS_ICONS = {
         .bghub-4 .bgh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:170px; row-gap:18px; position:relative; z-index:1; }
         .bghub-4 .bgh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .bghub-4 .bgh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .bghub-4 .bgh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .bghub-4 .bgh-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
         .bghub-4 .bgh-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
         .bghub-4 .bgh-ic { width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
         .bghub-4 .bgh-t { font-size:14px; font-weight:800; line-height:1.2; letter-spacing:0.005em; }
         .bghub-4 .bgh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
-        @media (max-width:600px){ .bghub-4 .bgh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .bghub-4 .bgh-center{ position:static; transform:none; margin:6px auto; } .bghub-4 .bgh-center-wrap{ order:99; display:flex; justify-content:center; } .bghub-4 .bgh-conn{ display:none; } }
+        @media (max-width:600px){ .bghub-4 .bgh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .bghub-4 .bgh-center{ position:static; transform:none; margin:6px auto; } .bghub-4 .bgh-center-wrap{ order:99; display:flex; justify-content:center; } .bghub-4 .bgh-conn{ display:none; } .bghub-4 .bgh-dots{ display:none; } }
       </style>
       <div style="position:relative;max-width:720px;margin:0 auto;min-height:320px;">
         <svg class="bgh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="30" y1="32" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="32" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="30" y1="68" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="68" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <path d="M 33 32 C 41 32, 41 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 32 C 59 32, 59 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 33 68 C 41 68, 41 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 68 C 59 68, 59 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
+        <div class="bgh-dots">
+          <div class="bgh-dot" style="left:33%;top:32%;background:#34D399;"></div>
+          <div class="bgh-dot" style="left:67%;top:32%;background:#60A5FA;"></div>
+          <div class="bgh-dot" style="left:33%;top:68%;background:#FB923C;"></div>
+          <div class="bgh-dot" style="left:67%;top:68%;background:#A78BFA;"></div>
+        </div>
         <div class="bgh-grid">
           <div class="bgh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
             <div class="bgh-ic">🌱</div>
@@ -16959,7 +16994,7 @@ window.ECONOS_ICONS = {
             <div><div class="bgh-t" style="color:#5B21B6;">Conglomerate integration</div><div class="bgh-s">Merge with a firm in a different market.</div></div>
           </div>
         </div>
-        <div class="bgh-center-wrap"><div class="bgh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:152px;height:152px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+        <div class="bgh-center-wrap"><div class="bgh-center" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:50%;width:124px;height:124px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
           <div style="font-size:30px;line-height:1;">📈</div>
           <div style="font-size:15px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;text-align:center;line-height:1.2;">Business<br/>growth</div>
         </div></div>
@@ -17110,19 +17145,27 @@ window.ECONOS_ICONS = {
         .crhub-4 .crh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:200px; row-gap:18px; position:relative; z-index:1; }
         .crhub-4 .crh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .crhub-4 .crh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .crhub-4 .crh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .crhub-4 .crh-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
         .crhub-4 .crh-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
         .crhub-4 .crh-ic { width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
         .crhub-4 .crh-t { font-size:14px; font-weight:800; line-height:1.2; letter-spacing:0.005em; }
         .crhub-4 .crh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
-        @media (max-width:600px){ .crhub-4 .crh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .crhub-4 .crh-center{ position:static; transform:none; margin:6px auto; } .crhub-4 .crh-center-wrap{ order:99; display:flex; justify-content:center; } .crhub-4 .crh-conn{ display:none; } }
+        @media (max-width:600px){ .crhub-4 .crh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .crhub-4 .crh-center{ position:static; transform:none; margin:6px auto; } .crhub-4 .crh-center-wrap{ order:99; display:flex; justify-content:center; } .crhub-4 .crh-conn{ display:none; } .crhub-4 .crh-dots{ display:none; } }
       </style>
       <div style="position:relative;max-width:740px;margin:0 auto;min-height:320px;">
         <svg class="crh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="28" y1="32" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="72" y1="32" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="28" y1="68" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="72" y1="68" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <path d="M 33 32 C 41 32, 41 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 32 C 59 32, 59 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 33 68 C 41 68, 41 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 68 C 59 68, 59 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
+        <div class="crh-dots">
+          <div class="crh-dot" style="left:33%;top:32%;background:#34D399;"></div>
+          <div class="crh-dot" style="left:67%;top:32%;background:#FB923C;"></div>
+          <div class="crh-dot" style="left:33%;top:68%;background:#A78BFA;"></div>
+          <div class="crh-dot" style="left:67%;top:68%;background:#60A5FA;"></div>
+        </div>
         <div class="crh-grid">
           <div class="crh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
             <div class="crh-ic">🍴</div>
@@ -17141,7 +17184,7 @@ window.ECONOS_ICONS = {
             <div><div class="crh-t" style="color:#1E3A8A;">Technology</div><div class="crh-s">Different industry, different customers.</div></div>
           </div>
         </div>
-        <div class="crh-center-wrap"><div class="crh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:172px;height:172px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+        <div class="crh-center-wrap"><div class="crh-center" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:50%;width:146px;height:146px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
           <div style="font-size:28px;line-height:1;">🏢</div>
           <div style="font-size:14px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;text-align:center;line-height:1.2;">One firm</div>
           <div style="font-size:11px;color:#475569;margin-top:6px;text-align:center;line-height:1.3;">spreading risk across<br/>different activities</div>
@@ -17339,22 +17382,32 @@ window.ECONOS_ICONS = {
         .dmrhub .dmr-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:200px; row-gap:14px; position:relative; z-index:1; }
         .dmrhub .dmr-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .dmrhub .dmr-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .dmrhub .dmr-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .dmrhub .dmr-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
         .dmrhub .dmr-tile { border-radius:13px; padding:12px 14px; display:flex; gap:11px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
         .dmrhub .dmr-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
         .dmrhub .dmr-num { font-size:12.5px; font-weight:800; margin-right:5px; }
         .dmrhub .dmr-t { font-size:13.5px; font-weight:800; line-height:1.2; display:inline; }
         .dmrhub .dmr-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
-        @media (max-width:600px){ .dmrhub .dmr-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .dmrhub .dmr-center{ position:static; transform:none; margin:6px auto; } .dmrhub .dmr-center-wrap{ order:99; display:flex; justify-content:center; } .dmrhub .dmr-conn{ display:none; } }
+        @media (max-width:600px){ .dmrhub .dmr-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .dmrhub .dmr-center{ position:static; transform:none; margin:6px auto; } .dmrhub .dmr-center-wrap{ order:99; display:flex; justify-content:center; } .dmrhub .dmr-conn{ display:none; } .dmrhub .dmr-dots{ display:none; } }
       </style>
       <div style="position:relative;max-width:740px;margin:0 auto;min-height:380px;">
         <svg class="dmr-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="30" y1="17" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="17" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="28" y1="50" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="72" y1="50" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="30" y1="83" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
-          <line x1="70" y1="83" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <path d="M 33 17 C 41 17, 41 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 17 C 59 17, 59 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 33 50 L 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 50 L 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 33 83 C 41 83, 41 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 67 83 C 59 83, 59 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
+        <div class="dmr-dots">
+          <div class="dmr-dot" style="left:33%;top:17%;background:#60A5FA;"></div>
+          <div class="dmr-dot" style="left:67%;top:17%;background:#FB923C;"></div>
+          <div class="dmr-dot" style="left:33%;top:50%;background:#34D399;"></div>
+          <div class="dmr-dot" style="left:67%;top:50%;background:#60A5FA;"></div>
+          <div class="dmr-dot" style="left:33%;top:83%;background:#A78BFA;"></div>
+          <div class="dmr-dot" style="left:67%;top:83%;background:#A78BFA;"></div>
+        </div>
         <div class="dmr-grid">
           <div class="dmr-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
             <div class="dmr-ic">\u{1F3AF}</div>
@@ -17381,7 +17434,7 @@ window.ECONOS_ICONS = {
             <div><div><span class="dmr-num" style="color:#7C3AED;">6.</span><span class="dmr-t" style="color:#5B21B6;">Clearer incentives</span></div><div class="dmr-s">Managers of each new firm can be judged on their own results.</div></div>
           </div>
         </div>
-        <div class="dmr-center-wrap"><div class="dmr-center" style="background:#fff;border:2.4px solid #16A34A;border-radius:50%;width:152px;height:152px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+        <div class="dmr-center-wrap"><div class="dmr-center" style="background:#fff;border:1.5px solid #BBF7D0;border-radius:50%;width:114px;height:114px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 7px rgba(220,252,231,0.6), 0 6px 18px rgba(11,20,38,0.10);">
           <div style="font-size:32px;line-height:1;">\u{1F3DB}️</div>
           <div style="font-size:15px;font-weight:800;color:#065F46;font-family:Fraunces,Georgia,serif;margin-top:6px;text-align:center;line-height:1.2;">Demerger</div>
         </div></div>

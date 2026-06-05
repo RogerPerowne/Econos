@@ -100,6 +100,7 @@ Organised by archetype. Each entry: `key` — what it shows.
 - `firmStaySmallHub` — 6-reason hub around "A small firm may stay small" (3.1.1 C3).
 - `businessGrowthMapHub` — 4-route hub (Organic / Vertical / Horizontal / Conglomerate) around "Business growth" (3.1.2 C1).
 - `conglomerateRiskHub` — 4-industry hub (Food / Travel / Media / Technology) around "One firm spreading risk" (3.1.2 C5).
+- `demergerReasonsHub` — 6 numbered motivation tiles (sharper focus / unlock value / remove non-core / reduce diseconomies / separate risk / clearer incentives) around "Demerger" (3.1.3 C2).
 
 ### 2. Spectrums / gradient bars
 *Use when:* items sit on a continuum (regimes, strengths, time horizons).
@@ -160,7 +161,10 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   3.1.2 C3), `horizontalCombineDiagram` (Firm A + Firm B → Combined firm
   with market-share badges and a 3-benefit annotation column — 3.1.2 C4),
   `growthRoadblockers` (4 numbered constraint tiles separated by traffic
-  barriers, road strip behind — 3.1.2 C6).
+  barriers, road strip behind — 3.1.2 C6),
+  `demergerBeforeAfter` (two-panel structural tree: parent + three
+  divisions → two focused companies with reassigned divisions, spin-off
+  arrow between — 3.1.3 C1).
 
 ### 8. Game theory / payoff matrices
 *Use when:* a 2×2 payoff grid / prisoner's dilemma.

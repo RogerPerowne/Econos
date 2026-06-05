@@ -173,6 +173,13 @@ emits the right sitemap.
 
 ## Charts & diagrams — ALWAYS use the toolkit, never hand-roll SVG
 
+**Before building any visual, consult `docs/visual-catalogue.md`** — a
+categorised index of every reusable chart spec and hand-rolled `icons.js`
+visual (hubs, flows, scorecards, firm/cost diagrams, dials, heroes). When
+matching a mock-up, find the closest existing component there and adjust it;
+most mock-ups are a *selection* problem, not a build problem. Keep the
+catalogue current when you add a visual.
+
 Every diagram goes through the chart engine (`window.ECONOS_PPF.render(spec)`)
 or the dial engine (`window.ECONOS_DIALS.render(...)`). Do not author raw
 `<svg>` in `icons.js` or data files. The whole point of the toolkit is that

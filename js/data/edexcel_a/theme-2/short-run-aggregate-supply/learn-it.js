@@ -291,15 +291,16 @@ window.ECONOS_TOPIC = {
         points: ['Caused by changes in costs, productivity or taxes.', 'The entire SRAS curve moves.', 'Real output at every price level changes.']
       },
 
-      causesLabel: 'COMMON DRIVERS',
+      // The THREE spec-named SRAS factors (Edexcel A 2.3.2a), each shown in
+      // both directions so the shift card maps 1:1 to the spec.
+      causesLabel: 'THE THREE SRAS FACTORS',
       causesEmoji: '⚙️',
       causesStyle: 'icon-top',
-      causesCols: 4,
+      causesCols: 3,
       causes: [
-        { tone: 'blue',   icon: '🏷️', head: 'Input costs', body: 'Higher input costs shift SRAS left; lower input costs shift it right.' },
-        { tone: 'green',  icon: '📈', head: 'Productivity', body: 'Higher productivity shifts SRAS right; lower productivity shifts it left.' },
-        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes & subsidies', body: 'Higher taxes shift SRAS left; subsidies shift it right.' },
-        { tone: 'purple', icon: '⚡', head: 'Supply shocks', body: 'Events like natural disasters or pandemics can shift SRAS left.' }
+        { tone: 'amber', icon: '🛢️', head: 'Raw material & energy costs', body: 'Dearer oil, gas or commodities raise costs at every output level → SRAS left. Cheaper inputs → SRAS right.' },
+        { tone: 'blue',  icon: '💱', head: 'Exchange rates', body: 'A weaker pound makes imported raw materials and components dearer → costs up → SRAS left. A stronger pound → SRAS right.' },
+        { tone: 'purple', icon: '🏛️', head: 'Tax rates', body: 'Higher business or indirect taxes raise the cost of production → SRAS left. Tax cuts or subsidies → SRAS right.' }
       ],
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'A <strong>right shift</strong> means more real output at every price level. A <strong>left shift</strong> means less.' },
@@ -371,15 +372,17 @@ window.ECONOS_TOPIC = {
         ]
       },
 
-      causesLabel: 'WHAT CAN SHIFT SRAS',
-      causesEmoji: '⚙️',
+      // The same three spec factors (2.3.2a), here as real-world NEGATIVE
+      // supply shocks – the stagflation trigger – so the trio is reinforced
+      // in application without re-listing it generically.
+      causesLabel: 'NEGATIVE SUPPLY SHOCKS',
+      causesEmoji: '⚠️',
       causesStyle: 'icon-top',
-      causesCols: 4,
+      causesCols: 3,
       causes: [
-        { tone: 'amber',  icon: '🔥', head: 'Energy & raw-material prices', body: 'Higher input prices raise production costs.' },
-        { tone: 'blue',   icon: '👥', head: 'Wages & labour costs', body: 'Higher wages increase the cost of production.' },
-        { tone: 'purple', icon: '🏛️', head: 'Indirect tax & subsidy changes', body: 'Taxes raise costs; subsidies lower them.' },
-        { tone: 'green',  icon: '🤖', head: 'Technology & productivity', body: 'Better technology lowers costs and raises productive capacity.' }
+        { tone: 'amber',  icon: '🛢️', head: 'Energy & raw-material spike', body: 'An oil or gas price surge (e.g. 2022) lifts costs across the whole economy → SRAS left.' },
+        { tone: 'blue',   icon: '💱', head: 'Sterling depreciation', body: 'A weaker pound makes imported inputs and components dearer → costs up → SRAS left.' },
+        { tone: 'purple', icon: '🏛️', head: 'Higher business taxes', body: 'A rise in indirect or business taxes (VAT, employer NICs) raises the cost of production → SRAS left.' }
       ],
 
       flowTitle: 'WHY STAGFLATION MATTERS',

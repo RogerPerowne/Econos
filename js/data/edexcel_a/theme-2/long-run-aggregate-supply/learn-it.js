@@ -53,7 +53,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'lras-big-picture',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 1 of 7',
+      stepLabel: 'Learn: Card 1 of 6',
       title: 'LRAS – the big picture',
       lede: 'Long-run aggregate supply shows the economy\'s productive capacity – the maximum real output it can sustain when resources are fully employed and productivity is given.',
       ledeStyle: 'plain',
@@ -124,7 +124,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'lras-vertical',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 2 of 7',
+      stepLabel: 'Learn: Card 2 of 6',
       title: 'Why LRAS is vertical',
       lede: 'In the long run, different price levels do not change potential real output. Wages and other costs adjust to the price level, so only the economy\'s productive capacity decides how much it can produce.',
       ledeStyle: 'plain',
@@ -196,7 +196,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'lras-shifts',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 3 of 7',
+      stepLabel: 'Learn: Card 3 of 6',
       title: 'What shifts LRAS?',
       lede: 'LRAS shifts when the economy\'s productive capacity changes – because the quantity or quality of the factors of production changes.',
       ledeStyle: 'plain',
@@ -252,17 +252,19 @@ window.ECONOS_TOPIC = {
         ]
       },
 
-      causesLabel: 'THE GROWTH DRIVERS',
+      // The SIX spec-named LRAS factors (Edexcel A 2.3.3b), each named as
+      // the spec names it so revision maps 1:1.
+      causesLabel: 'THE SIX LRAS FACTORS',
       causesEmoji: '\u{1F680}',
       causesStyle: 'icon-top',
       causesCols: 3,
       causes: [
-        { tone: 'green',  icon: '\u{1F465}', head: 'Labour quantity & quality', body: 'More workers (migration, participation) and better skills raise capacity.' },
-        { tone: 'blue',   icon: '\u{1F3ED}', head: 'Capital stock', body: 'More machines, tools, factories and infrastructure to produce with.' },
-        { tone: 'purple', icon: '\u{1F4BB}', head: 'Technology', body: 'Innovation lets the economy produce more from the same resources.' },
-        { tone: 'amber',  icon: '\u{1F4C8}', head: 'Enterprise & productivity', body: 'Better organisation and management lift output per worker.' },
-        { tone: 'green',  icon: '\u{1F3DB}\u{FE0F}', head: 'Infrastructure & institutions', body: 'Good transport, energy and strong institutions support higher output.' },
-        { tone: 'blue',   icon: '\u{2696}\u{FE0F}', head: 'Competition & regulation', body: 'Stronger rivalry and lighter red tape push firms to use resources better.' }
+        { tone: 'purple', icon: '\u{1F4BB}', head: 'Technological advances', body: 'New technology lets the economy produce more from the same resources.' },
+        { tone: 'amber',  icon: '\u{1F4C8}', head: 'Relative productivity', body: 'Output per worker <em>versus rivals</em>. The UK lagging Germany and the US drags LRAS; closing the gap shifts it right.' },
+        { tone: 'green',  icon: '\u{1F393}', head: 'Education & skills', body: 'A better-trained workforce raises human capital and productive capacity.' },
+        { tone: 'blue',   icon: '\u{1F3DB}\u{FE0F}', head: 'Government regulations', body: 'Lighter, smarter regulation frees resources and cuts business costs; heavy red tape does the reverse.' },
+        { tone: 'green',  icon: '\u{1F310}', head: 'Demographics & migration', body: 'Net inward migration of working-age adults grows the labour force; an ageing population shrinks it.' },
+        { tone: 'blue',   icon: '\u{2696}\u{FE0F}', head: 'Competition policy', body: 'Stronger competition (CMA action, removing entry barriers) pushes firms to cut costs and innovate.' }
       ],
 
       pairLabel: 'RIGHT OR LEFT?',
@@ -298,7 +300,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'lras-growth',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 4 of 7',
+      stepLabel: 'Learn: Card 4 of 6',
       title: 'LRAS and economic growth',
       lede: 'Long-run economic growth is shown by a rightward shift of LRAS – the economy can sustainably produce more real output, today\'s frontier becomes tomorrow\'s.',
       ledeStyle: 'plain',

@@ -14082,7 +14082,7 @@ window.ECONOS_ICONS = {
   firmFourLensesHub: `
     <div class="fhub-4" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .fhub-4 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:142px; row-gap:18px; position:relative; z-index:1; }
+        .fhub-4 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:24%; row-gap:18px; position:relative; z-index:1; }
         .fhub-4 .fh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .fhub-4 .fh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
         .fhub-4 .fh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
@@ -14095,16 +14095,16 @@ window.ECONOS_ICONS = {
       </style>
       <div style="position:relative;max-width:740px;margin:0 auto;">
         <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 34 23 C 42 23, 42 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 23 C 58 23, 58 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 34 77 C 42 77, 42 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 77 C 58 77, 58 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 23 C 46 23, 46 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 23 C 54 23, 54 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 77 C 46 77, 46 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 77 C 54 77, 54 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
         <div class="fh-dots">
-          <div class="fh-dot" style="left:34%;top:23%;background:#34D399;"></div>
-          <div class="fh-dot" style="left:66%;top:23%;background:#FB923C;"></div>
-          <div class="fh-dot" style="left:34%;top:77%;background:#A78BFA;"></div>
-          <div class="fh-dot" style="left:66%;top:77%;background:#60A5FA;"></div>
+          <div class="fh-dot" style="left:38%;top:23%;background:#34D399;"></div>
+          <div class="fh-dot" style="left:62%;top:23%;background:#FB923C;"></div>
+          <div class="fh-dot" style="left:38%;top:77%;background:#A78BFA;"></div>
+          <div class="fh-dot" style="left:62%;top:77%;background:#60A5FA;"></div>
         </div>
         <div class="fh-grid">
           <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
@@ -14137,7 +14137,7 @@ window.ECONOS_ICONS = {
   firmSizeMeasuresHub: `
     <div class="fhub-5" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .fhub-5 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:152px; row-gap:14px; position:relative; z-index:1; }
+        .fhub-5 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:24%; row-gap:14px; position:relative; z-index:1; }
         .fhub-5 .fh-grid > .fh-bottom { grid-column:1 / -1; display:flex; justify-content:center; margin-top:8px; }
         .fhub-5 .fh-bottom .fh-tile { max-width:360px; }
         .fhub-5 .fh-center { position:absolute; top:32%; left:50%; transform:translate(-50%,-50%); z-index:2; }
@@ -14153,17 +14153,17 @@ window.ECONOS_ICONS = {
       </style>
       <div style="position:relative;max-width:740px;margin:0 auto;">
         <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 34 15 C 42 15, 42 32, 50 32" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 15 C 58 15, 58 32, 50 32" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 34 49 C 42 49, 42 32, 50 32" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 49 C 58 49, 58 32, 50 32" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 15 C 46 15, 46 32, 50 32" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 15 C 54 15, 54 32, 50 32" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 49 C 46 49, 46 32, 50 32" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 49 C 54 49, 54 32, 50 32" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
           <path d="M 50 85 C 50 64, 50 48, 50 32" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
         <div class="fh-dots">
-          <div class="fh-dot" style="left:34%;top:15%;background:#34D399;"></div>
-          <div class="fh-dot" style="left:66%;top:15%;background:#FB923C;"></div>
-          <div class="fh-dot" style="left:34%;top:49%;background:#60A5FA;"></div>
-          <div class="fh-dot" style="left:66%;top:49%;background:#A78BFA;"></div>
+          <div class="fh-dot" style="left:38%;top:15%;background:#34D399;"></div>
+          <div class="fh-dot" style="left:62%;top:15%;background:#FB923C;"></div>
+          <div class="fh-dot" style="left:38%;top:49%;background:#60A5FA;"></div>
+          <div class="fh-dot" style="left:62%;top:49%;background:#A78BFA;"></div>
           <div class="fh-dot" style="left:50%;top:85%;background:#34D399;"></div>
         </div>
         <div class="fh-grid">
@@ -14201,7 +14201,7 @@ window.ECONOS_ICONS = {
   firmStaySmallHub: `
     <div class="fhub-6" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .fhub-6 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:172px; row-gap:14px; position:relative; z-index:1; }
+        .fhub-6 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:24%; row-gap:14px; position:relative; z-index:1; }
         .fhub-6 .fh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .fhub-6 .fh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
         .fhub-6 .fh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
@@ -14214,20 +14214,20 @@ window.ECONOS_ICONS = {
       </style>
       <div style="position:relative;max-width:740px;margin:0 auto;">
         <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 34 15 C 42 15, 42 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 15 C 58 15, 58 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 34 50 L 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 50 L 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 34 85 C 42 85, 42 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 85 C 58 85, 58 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 15 C 46 15, 46 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 15 C 54 15, 54 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 50 L 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 50 L 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 85 C 46 85, 46 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 85 C 54 85, 54 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
         <div class="fh-dots">
-          <div class="fh-dot" style="left:34%;top:15%;background:#34D399;"></div>
-          <div class="fh-dot" style="left:66%;top:15%;background:#FB923C;"></div>
-          <div class="fh-dot" style="left:34%;top:50%;background:#A78BFA;"></div>
-          <div class="fh-dot" style="left:66%;top:50%;background:#60A5FA;"></div>
-          <div class="fh-dot" style="left:34%;top:85%;background:#FB923C;"></div>
-          <div class="fh-dot" style="left:66%;top:85%;background:#34D399;"></div>
+          <div class="fh-dot" style="left:38%;top:15%;background:#34D399;"></div>
+          <div class="fh-dot" style="left:62%;top:15%;background:#FB923C;"></div>
+          <div class="fh-dot" style="left:38%;top:50%;background:#A78BFA;"></div>
+          <div class="fh-dot" style="left:62%;top:50%;background:#60A5FA;"></div>
+          <div class="fh-dot" style="left:38%;top:85%;background:#FB923C;"></div>
+          <div class="fh-dot" style="left:62%;top:85%;background:#34D399;"></div>
         </div>
         <div class="fh-grid">
           <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
@@ -16952,7 +16952,7 @@ window.ECONOS_ICONS = {
   businessGrowthMapHub: `
     <div class="bghub-4" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .bghub-4 .bgh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:152px; row-gap:18px; position:relative; z-index:1; }
+        .bghub-4 .bgh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:24%; row-gap:18px; position:relative; z-index:1; }
         .bghub-4 .bgh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .bghub-4 .bgh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
         .bghub-4 .bgh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
@@ -16965,16 +16965,16 @@ window.ECONOS_ICONS = {
       </style>
       <div style="position:relative;max-width:760px;margin:0 auto;">
         <svg class="bgh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 34 23 C 42 23, 42 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 23 C 58 23, 58 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 34 77 C 42 77, 42 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 77 C 58 77, 58 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 23 C 46 23, 46 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 23 C 54 23, 54 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 77 C 46 77, 46 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 77 C 54 77, 54 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
         <div class="bgh-dots">
-          <div class="bgh-dot" style="left:34%;top:23%;background:#34D399;"></div>
-          <div class="bgh-dot" style="left:66%;top:23%;background:#60A5FA;"></div>
-          <div class="bgh-dot" style="left:34%;top:77%;background:#FB923C;"></div>
-          <div class="bgh-dot" style="left:66%;top:77%;background:#A78BFA;"></div>
+          <div class="bgh-dot" style="left:38%;top:23%;background:#34D399;"></div>
+          <div class="bgh-dot" style="left:62%;top:23%;background:#60A5FA;"></div>
+          <div class="bgh-dot" style="left:38%;top:77%;background:#FB923C;"></div>
+          <div class="bgh-dot" style="left:62%;top:77%;background:#A78BFA;"></div>
         </div>
         <div class="bgh-grid">
           <div class="bgh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
@@ -17142,7 +17142,7 @@ window.ECONOS_ICONS = {
   conglomerateRiskHub: `
     <div class="crhub-4" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .crhub-4 .crh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:182px; row-gap:18px; position:relative; z-index:1; }
+        .crhub-4 .crh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:24%; row-gap:18px; position:relative; z-index:1; }
         .crhub-4 .crh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .crhub-4 .crh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
         .crhub-4 .crh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
@@ -17155,16 +17155,16 @@ window.ECONOS_ICONS = {
       </style>
       <div style="position:relative;max-width:760px;margin:0 auto;">
         <svg class="crh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 34 23 C 42 23, 42 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 23 C 58 23, 58 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 34 77 C 42 77, 42 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 77 C 58 77, 58 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 23 C 46 23, 46 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 23 C 54 23, 54 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 77 C 46 77, 46 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 77 C 54 77, 54 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
         <div class="crh-dots">
-          <div class="crh-dot" style="left:34%;top:23%;background:#34D399;"></div>
-          <div class="crh-dot" style="left:66%;top:23%;background:#FB923C;"></div>
-          <div class="crh-dot" style="left:34%;top:77%;background:#A78BFA;"></div>
-          <div class="crh-dot" style="left:66%;top:77%;background:#60A5FA;"></div>
+          <div class="crh-dot" style="left:38%;top:23%;background:#34D399;"></div>
+          <div class="crh-dot" style="left:62%;top:23%;background:#FB923C;"></div>
+          <div class="crh-dot" style="left:38%;top:77%;background:#A78BFA;"></div>
+          <div class="crh-dot" style="left:62%;top:77%;background:#60A5FA;"></div>
         </div>
         <div class="crh-grid">
           <div class="crh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
@@ -17379,7 +17379,7 @@ window.ECONOS_ICONS = {
   demergerReasonsHub: `
     <div class="dmrhub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .dmrhub .dmr-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:182px; row-gap:14px; position:relative; z-index:1; }
+        .dmrhub .dmr-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:24%; row-gap:14px; position:relative; z-index:1; }
         .dmrhub .dmr-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
         .dmrhub .dmr-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
         .dmrhub .dmr-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
@@ -17393,20 +17393,20 @@ window.ECONOS_ICONS = {
       </style>
       <div style="position:relative;max-width:760px;margin:0 auto;">
         <svg class="dmr-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 34 15 C 42 15, 42 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 15 C 58 15, 58 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 34 50 L 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 50 L 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 34 85 C 42 85, 42 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 66 85 C 58 85, 58 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 15 C 46 15, 46 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 15 C 54 15, 54 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 50 L 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 50 L 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 38 85 C 46 85, 46 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 62 85 C 54 85, 54 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
         <div class="dmr-dots">
-          <div class="dmr-dot" style="left:34%;top:15%;background:#60A5FA;"></div>
-          <div class="dmr-dot" style="left:66%;top:15%;background:#FB923C;"></div>
-          <div class="dmr-dot" style="left:34%;top:50%;background:#34D399;"></div>
-          <div class="dmr-dot" style="left:66%;top:50%;background:#60A5FA;"></div>
-          <div class="dmr-dot" style="left:34%;top:85%;background:#A78BFA;"></div>
-          <div class="dmr-dot" style="left:66%;top:85%;background:#A78BFA;"></div>
+          <div class="dmr-dot" style="left:38%;top:15%;background:#60A5FA;"></div>
+          <div class="dmr-dot" style="left:62%;top:15%;background:#FB923C;"></div>
+          <div class="dmr-dot" style="left:38%;top:50%;background:#34D399;"></div>
+          <div class="dmr-dot" style="left:62%;top:50%;background:#60A5FA;"></div>
+          <div class="dmr-dot" style="left:38%;top:85%;background:#A78BFA;"></div>
+          <div class="dmr-dot" style="left:62%;top:85%;background:#A78BFA;"></div>
         </div>
         <div class="dmr-grid">
           <div class="dmr-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">

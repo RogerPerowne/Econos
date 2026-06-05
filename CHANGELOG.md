@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.4 – 2026-06-05
+
+### Theme 3 hubs – connector dots actually touch the boxes now
+
+Bug fix to the previous centring pass. The dots and curve endpoints were
+positioned in percent of the wrapper width while the column-gap was a
+fixed pixel value (142–182px). At realistic wrapper widths the actual
+tile inner edges sit at ~40% / ~60%, not the 34% / 66% the dots were
+anchored to — so the dots ended up floating inside the left-side boxes
+and the right-side curves terminated well short of their tiles.
+
+Root cause: percentage positions only stay aligned with a percentage
+column-gap. Fix: switch every hub's `column-gap` from fixed pixels to
+**24%** uniformly, which puts tile inner edges at exactly 38% / 62% of
+the wrapper regardless of how wide it renders. Then anchor every dot
+and every curve endpoint to 38 / 62, with control points at 46 / 54 so
+the curves still depart and arrive horizontally. The 24% gap also
+gives every hub's centre circle comfortable clearance (the largest
+circle, `conglomerateRiskHub`'s 146px, has 36px clearance on the
+widest layout and stays safe down to the mobile breakpoint).
+
+### Service worker
+- Cache bumped to `econos-v374` (shared `icons.js` changed).
+
 ## 0.73.3 – 2026-06-05
 
 ### Theme 3 hubs – vertical centring + fixed-height tiles

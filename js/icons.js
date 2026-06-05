@@ -16006,23 +16006,25 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
       <style>
         .bop-3a-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-bottom:18px; }
-        @media (max-width: 760px) { .bop-3a-grid { grid-template-columns:1fr; } }
         .bop-3a-col { background:#fff; border:1.5px solid; border-radius:14px; padding:14px 12px; display:flex; flex-direction:column; }
         .bop-3a-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; padding-bottom:10px; border-bottom:1.5px dashed; }
         .bop-3a-iconcirc { width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-size:18px; flex-shrink:0; }
-        .bop-3a-title { font-size:14px; font-weight:800; }
-        .bop-3a-tile { display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px; background:#F8FAFC; margin-bottom:6px; font-size:12px; color:#0B1426; }
+        .bop-3a-title { font-size:14px; font-weight:800; line-height:1.3; }
+        .bop-3a-tile { display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px; background:#F8FAFC; margin-bottom:6px; font-size:12px; color:#0B1426; line-height:1.4; }
         .bop-3a-bullet { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
-        .bop-3a-note { font-size:11px; color:#475569; font-style:italic; margin-top:8px; text-align:center; }
+        .bop-3a-note { font-size:11px; color:#475569; font-style:italic; margin-top:8px; text-align:center; line-height:1.5; }
         .bop-3a-arrows { display:grid; grid-template-columns:1fr 1fr 1fr; align-items:end; height:32px; margin-bottom:4px; }
-        @media (max-width: 760px) { .bop-3a-arrows { display:none; } }
         .bop-3a-arrow { display:flex; flex-direction:column; align-items:center; }
         .bop-3a-arrow-line { width:2px; height:24px; }
         .bop-3a-arrow-head { width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; }
         .bop-3a-balance { display:flex; flex-direction:column; align-items:center; }
-        .bop-3a-pill { display:inline-flex; align-items:center; gap:10px; padding:12px 22px; border-radius:999px; background:#fff; border:2.5px solid #0B1426; font-weight:900; font-size:15px; color:#0B1426; }
+        .bop-3a-pill { display:inline-flex; align-items:center; gap:10px; padding:12px 22px; border-radius:999px; background:#fff; border:2.5px solid #0B1426; font-weight:900; font-size:15px; color:#0B1426; line-height:1.3; }
         .bop-3a-pill-icon { width:28px; height:28px; border-radius:50%; background:#0B1426; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; }
-        .bop-3a-sub { margin-top:10px; padding:8px 16px; background:#EFF6FF; border:1px solid #BFDBFE; border-radius:8px; font-size:12.5px; color:#1E3A8A; font-weight:600; }
+        .bop-3a-sub { margin-top:10px; padding:10px 16px; background:#EFF6FF; border:1px solid #BFDBFE; border-radius:8px; font-size:12.5px; color:#1E3A8A; font-weight:600; line-height:1.55; text-align:center; }
+        @media (max-width: 760px) {
+          .bop-3a-grid { grid-template-columns:1fr; }
+          .bop-3a-arrows { display:none; }
+        }
       </style>
       <div class="bop-3a-grid">
         <div class="bop-3a-col" style="border-color:#86EFAC;background:#F0FDF4;">
@@ -16062,7 +16064,7 @@ window.ECONOS_ICONS = {
       </div>
       <div class="bop-3a-balance">
         <div class="bop-3a-pill"><span class="bop-3a-pill-icon">⚖️</span>Overall balance = 0</div>
-        <div class="bop-3a-sub">🔄 Current account deficit ⇄ Financial account surplus</div>
+        <div class="bop-3a-sub">A current account deficit is financed by a financial account surplus.</div>
       </div>
     </div>
   `,
@@ -16075,14 +16077,18 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:20px 16px;font-family:Inter,sans-serif;">
       <style>
         .bop-eq { display:grid; grid-template-columns: 1.2fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr; gap:8px; align-items:stretch; }
-        @media (max-width: 760px) { .bop-eq { grid-template-columns: 1fr; } .bop-eq-op { display:none; } }
         .bop-eq-lhs { background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:14px; padding:18px 12px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:160px; }
         .bop-eq-lhs-icon { width:56px; height:56px; border-radius:50%; background:#7C3AED; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:10px; }
-        .bop-eq-lhs-title { font-size:14px; font-weight:900; color:#5B21B6; line-height:1.25; }
+        .bop-eq-lhs-title { font-size:14px; font-weight:900; color:#5B21B6; line-height:1.3; }
         .bop-eq-op { display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:900; color:#475569; }
         .bop-eq-card { border:1.5px solid; border-radius:14px; padding:18px 10px 14px; display:flex; flex-direction:column; align-items:center; text-align:center; min-height:160px; }
         .bop-eq-card-icon { width:48px; height:48px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:10px; color:#fff; }
-        .bop-eq-card-title { font-size:13px; font-weight:800; line-height:1.25; }
+        .bop-eq-card-title { font-size:13px; font-weight:800; line-height:1.3; }
+        @media (max-width: 760px) {
+          .bop-eq { grid-template-columns: 1fr; }
+          .bop-eq-op { display:none; }
+          .bop-eq-card, .bop-eq-lhs { min-height:0; padding:14px 12px; }
+        }
       </style>
       <div class="bop-eq">
         <div class="bop-eq-lhs">
@@ -16125,19 +16131,20 @@ window.ECONOS_ICONS = {
         .bop-uk-top { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
         .bop-uk-card { border:1.5px solid; border-radius:14px; padding:14px; display:flex; gap:12px; align-items:flex-start; }
         .bop-uk-icon { width:44px; height:44px; border-radius:50%; background:#fff; border:1.5px solid; display:inline-flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
-        .bop-uk-card-title { font-size:14px; font-weight:800; margin-bottom:6px; }
-        .bop-uk-card-body { font-size:12.5px; line-height:1.5; }
+        .bop-uk-card-title { font-size:14px; font-weight:800; margin-bottom:6px; line-height:1.3; }
+        .bop-uk-card-body { font-size:12.5px; line-height:1.55; }
         .bop-uk-arrows { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:start; margin:6px 0 4px; height:60px; position:relative; }
         .bop-uk-arrows svg { width:100%; height:100%; display:block; }
-        .bop-uk-final { display:flex; align-items:center; justify-content:center; gap:10px; padding:14px 24px; border-radius:18px; background:#fff; border:2px solid #0B1426; font-weight:900; font-size:14px; color:#0B1426; max-width:420px; margin:0 auto; text-align:center; line-height:1.3; }
+        .bop-uk-final { display:flex; align-items:center; justify-content:center; gap:10px; padding:14px 24px; border-radius:18px; background:#fff; border:2px solid #0B1426; font-weight:900; font-size:14px; color:#0B1426; max-width:420px; margin:0 auto; text-align:center; line-height:1.35; }
         .bop-uk-final-icon { font-size:22px; flex-shrink:0; }
-        .bop-uk-caveat { text-align:center; margin-top:10px; font-size:11.5px; color:#475569; font-style:italic; }
+        .bop-uk-caveat { text-align:center; margin-top:12px; padding:0 10px; font-size:11.5px; color:#475569; font-style:italic; line-height:1.6; }
         @media (max-width: 760px) {
           .bop-uk-top { grid-template-columns:1fr; }
           .bop-uk-arrows { display:flex; justify-content:center; height:auto; padding:6px 0; }
           .bop-uk-arrows svg { display:none; }
           .bop-uk-arrows::before { content:'↓'; font-size:28px; color:#475569; font-weight:700; }
-          .bop-uk-final { max-width:100%; font-size:13px; padding:12px 16px; }
+          .bop-uk-final { max-width:100%; font-size:13px; padding:12px 14px; }
+          .bop-uk-caveat { font-size:11px; line-height:1.55; }
         }
       </style>
       <div class="bop-uk-top">
@@ -16184,11 +16191,16 @@ window.ECONOS_ICONS = {
         .bop-hub-chain-label { font-size:11px; font-weight:800; color:#0B1426; letter-spacing:0.04em; margin-bottom:10px; }
         .bop-hub-chain-row { display:grid; grid-template-columns:1fr 18px 1fr 18px 1.5fr; gap:6px 6px; align-items:stretch; margin-bottom:8px; }
         .bop-hub-chain-row:last-child { margin-bottom:0; }
-        @media (max-width: 760px) { .bop-hub-chain-row { grid-template-columns:1fr; } .bop-hub-chain-sep { display:none; } .bop-hub-chain-step::after { content:'↓'; display:block; color:#94A3B8; font-size:14px; margin-top:4px; } .bop-hub-chain-step:last-child::after { content:''; } }
-        .bop-hub-chain-step { background:#fff; border:1px solid #CBD5E1; border-radius:8px; padding:9px 10px; font-size:12px; font-weight:700; color:#0B1426; text-align:center; line-height:1.35; display:flex; align-items:center; justify-content:center; }
+        .bop-hub-chain-step { background:#fff; border:1px solid #CBD5E1; border-radius:8px; padding:9px 10px; font-size:12px; font-weight:700; color:#0B1426; text-align:center; line-height:1.4; display:flex; align-items:center; justify-content:center; }
         .bop-hub-chain-step.is-rose { background:#FFF1F2; border-color:#FDA4AF; color:#BE123C; font-weight:800; }
         .bop-hub-chain-step.is-green { background:#F0FDF4; border-color:#86EFAC; color:#065F46; font-weight:800; }
         .bop-hub-chain-sep { display:flex; align-items:center; justify-content:center; color:#94A3B8; font-size:14px; font-weight:700; }
+        @media (max-width: 760px) {
+          .bop-hub-chain-row { grid-template-columns:1fr; }
+          .bop-hub-chain-sep { display:none; }
+          .bop-hub-chain-step { margin-bottom:6px; }
+          .bop-hub-chain-row:last-child .bop-hub-chain-step:last-child { margin-bottom:0; }
+        }
       </style>
       <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
@@ -16290,16 +16302,23 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:20px 16px;font-family:Inter,sans-serif;">
       <style>
         .bop-mi { display:grid; grid-template-columns: 1fr 96px 1fr; gap:12px; align-items:stretch; }
-        @media (max-width: 760px) { .bop-mi { grid-template-columns: 1fr; } .bop-mi-arrow { padding:8px 0; } .bop-mi-arrow-inner { flex-direction:row; gap:8px; align-items:center; } .bop-mi-arrow-svg { display:none; } .bop-mi-arrow-inner::after { content:'↓'; font-size:22px; color:#0B1426; font-weight:700; } }
         .bop-mi-pillar { border:1.5px solid; border-radius:14px; padding:0; overflow:hidden; display:flex; flex-direction:column; }
         .bop-mi-head { display:flex; align-items:center; gap:10px; padding:14px 16px; }
-        .bop-mi-head-icon { width:34px; height:34px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:16px; }
-        .bop-mi-head-title { font-size:14px; font-weight:800; }
-        .bop-mi-row { display:grid; grid-template-columns: 28px 1fr; gap:8px; padding:10px 16px; border-top:1px solid; align-items:center; font-size:12.5px; color:#0B1426; }
-        .bop-mi-row-icon { display:inline-flex; align-items:center; justify-content:center; font-size:14px; }
+        .bop-mi-head-icon { width:34px; height:34px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+        .bop-mi-head-title { font-size:14px; font-weight:800; line-height:1.3; }
+        .bop-mi-row { display:flex; gap:10px; padding:10px 14px; border-top:1px solid; align-items:flex-start; font-size:12.5px; color:#0B1426; line-height:1.5; }
+        .bop-mi-row-icon { display:inline-flex; align-items:center; justify-content:center; font-size:15px; width:22px; flex-shrink:0; line-height:1.5; }
+        .bop-mi-row-text { flex:1 1 auto; min-width:0; }
         .bop-mi-arrow { display:flex; align-items:center; justify-content:center; }
-        .bop-mi-arrow-inner { display:flex; flex-direction:column; align-items:center; gap:6px; font-size:11px; color:#475569; font-weight:700; text-align:center; }
+        .bop-mi-arrow-inner { display:flex; flex-direction:column; align-items:center; gap:6px; font-size:11px; color:#475569; font-weight:700; text-align:center; line-height:1.4; }
         .bop-mi-arrow-svg { width:60px; height:24px; }
+        .bop-mi-arrow-mobile { display:none; font-size:13px; color:#0B1426; font-weight:700; text-align:center; padding:10px 0; }
+        .bop-mi-arrow-mobile-icon { display:inline-block; margin-left:6px; font-size:18px; vertical-align:middle; }
+        @media (max-width: 760px) {
+          .bop-mi { grid-template-columns: 1fr; }
+          .bop-mi-arrow { display:none; }
+          .bop-mi-arrow-mobile { display:block; }
+        }
       </style>
       <div class="bop-mi">
         <div class="bop-mi-pillar" style="border-color:#FDA4AF;background:#FFF1F2;">
@@ -16307,10 +16326,10 @@ window.ECONOS_ICONS = {
             <span class="bop-mi-head-icon" style="background:#E11D48;">⬇️</span>
             <span class="bop-mi-head-title" style="color:#9F1239;">Current account deficit</span>
           </div>
-          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🚢</span><span>Goods</span></div>
-          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🧳</span><span>Services</span></div>
-          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🏛️</span><span>Income</span></div>
-          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">👥</span><span>Transfers</span></div>
+          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🚢</span><span class="bop-mi-row-text">Goods</span></div>
+          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🧳</span><span class="bop-mi-row-text">Services</span></div>
+          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">🏛️</span><span class="bop-mi-row-text">Income</span></div>
+          <div class="bop-mi-row" style="border-color:#FDA4AF;"><span class="bop-mi-row-icon">👥</span><span class="bop-mi-row-text">Transfers</span></div>
         </div>
         <div class="bop-mi-arrow">
           <div class="bop-mi-arrow-inner">
@@ -16319,15 +16338,16 @@ window.ECONOS_ICONS = {
             <svg class="bop-mi-arrow-svg" viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg"><defs><marker id="bop-mi-am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/></marker></defs><line x1="2" y1="12" x2="56" y2="12" stroke="#0B1426" stroke-width="2.5" marker-end="url(#bop-mi-am)"/></svg>
           </div>
         </div>
+        <div class="bop-mi-arrow-mobile">Must be financed by <span class="bop-mi-arrow-mobile-icon">↓</span></div>
         <div class="bop-mi-pillar" style="border-color:#BFDBFE;background:#EFF6FF;">
           <div class="bop-mi-head" style="background:#DBEAFE;">
             <span class="bop-mi-head-icon" style="background:#2563EB;">⬆️</span>
             <span class="bop-mi-head-title" style="color:#1E3A8A;">Financial account surplus</span>
           </div>
-          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏭</span><span><strong>FDI</strong> — foreign firms build or buy assets</span></div>
-          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">📊</span><span><strong>Portfolio flows</strong> — bonds and shares</span></div>
-          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏦</span><span><strong>Loans / other</strong> — borrowing from abroad</span></div>
-          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🛡️</span><span><strong>Reserve changes</strong> — official reserve use</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏭</span><span class="bop-mi-row-text"><strong>FDI</strong> — foreign firms build or buy assets</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">📊</span><span class="bop-mi-row-text"><strong>Portfolio flows</strong> — bonds and shares</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏦</span><span class="bop-mi-row-text"><strong>Loans / other</strong> — borrowing from abroad</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🛡️</span><span class="bop-mi-row-text"><strong>Reserve changes</strong> — official reserve use</span></div>
         </div>
       </div>
     </div>
@@ -16445,17 +16465,23 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
       <style>
         .bop-cf-trunk { display:grid; grid-template-columns:1fr 18px 1fr 18px 1fr; gap:6px; align-items:stretch; margin-bottom:14px; }
-        @media (max-width: 760px) { .bop-cf-trunk { grid-template-columns:1fr; } .bop-cf-sep { display:none; } .bop-cf-step::after { content:'↓'; display:block; color:#94A3B8; font-size:18px; margin-top:8px; } .bop-cf-step:last-child::after { content:''; } }
         .bop-cf-step { border:1.5px solid; border-radius:12px; padding:14px 12px; display:flex; flex-direction:column; align-items:center; text-align:center; min-height:90px; justify-content:center; gap:6px; }
-        .bop-cf-step-icon { font-size:22px; }
-        .bop-cf-step-title { font-size:12.5px; font-weight:800; line-height:1.3; }
+        .bop-cf-step-icon { font-size:22px; line-height:1; }
+        .bop-cf-step-title { font-size:12.5px; font-weight:800; line-height:1.35; }
         .bop-cf-sep { display:flex; align-items:center; justify-content:center; color:#475569; font-size:18px; font-weight:700; }
         .bop-cf-branches { display:grid; grid-template-columns:1fr 1fr; gap:12px; position:relative; padding-top:18px; }
-        @media (max-width: 760px) { .bop-cf-branches { grid-template-columns:1fr; padding-top:6px; } .bop-cf-branches::before { display:none; } }
         .bop-cf-branches::before { content:''; position:absolute; top:0; left:25%; right:25%; height:14px; border-left:1.5px dashed #94A3B8; border-right:1.5px dashed #94A3B8; border-bottom:1.5px dashed #94A3B8; border-bottom-left-radius:8px; border-bottom-right-radius:8px; }
         .bop-cf-branch { border:1.5px solid; border-radius:12px; padding:12px; display:flex; align-items:center; gap:10px; }
-        .bop-cf-branch-icon { font-size:22px; flex-shrink:0; }
-        .bop-cf-branch-title { font-size:12.5px; font-weight:800; line-height:1.3; }
+        .bop-cf-branch-icon { font-size:22px; flex-shrink:0; line-height:1; }
+        .bop-cf-branch-title { font-size:12.5px; font-weight:800; line-height:1.35; }
+        @media (max-width: 760px) {
+          .bop-cf-trunk { grid-template-columns:1fr; }
+          .bop-cf-sep { display:none; }
+          .bop-cf-step::after { content:'↓'; display:block; color:#94A3B8; font-size:18px; margin-top:8px; line-height:1; }
+          .bop-cf-step:last-child::after { content:''; }
+          .bop-cf-branches { grid-template-columns:1fr; padding-top:6px; }
+          .bop-cf-branches::before { display:none; }
+        }
       </style>
       <div class="bop-cf-trunk">
         <div class="bop-cf-step" style="border-color:#BFDBFE;background:#EFF6FF;">
@@ -16494,13 +16520,17 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:18px 12px;font-family:Inter,sans-serif;">
       <style>
         .bop-htw { display:grid; grid-template-columns: 1fr 18px 1fr 18px 1fr 18px 1fr; gap:8px; align-items:stretch; }
-        @media (max-width: 760px) { .bop-htw { grid-template-columns: 1fr; } .bop-htw-arr { display:none; } }
         .bop-htw-card { border:1.5px solid; border-radius:14px; padding:18px 12px 14px; text-align:center; position:relative; display:flex; flex-direction:column; align-items:center; min-height:170px; }
         .bop-htw-badge { width:38px; height:38px; border-radius:50%; color:#fff; font-size:16px; font-weight:900; display:inline-flex; align-items:center; justify-content:center; margin-bottom:10px; }
-        .bop-htw-icon { font-size:22px; margin-bottom:8px; }
-        .bop-htw-verb { font-size:14px; font-weight:800; margin-bottom:6px; }
-        .bop-htw-prompt { font-size:11px; color:#475569; line-height:1.45; }
+        .bop-htw-icon { font-size:22px; margin-bottom:8px; line-height:1; }
+        .bop-htw-verb { font-size:14px; font-weight:800; margin-bottom:6px; line-height:1.3; }
+        .bop-htw-prompt { font-size:11px; color:#475569; line-height:1.5; }
         .bop-htw-arr { display:flex; align-items:center; justify-content:center; font-size:18px; color:#94A3B8; font-weight:700; }
+        @media (max-width: 760px) {
+          .bop-htw { grid-template-columns: 1fr; }
+          .bop-htw-arr { display:none; }
+          .bop-htw-card { min-height:0; padding:16px 14px 14px; }
+        }
       </style>
       <div class="bop-htw">
         <div class="bop-htw-card" style="border-color:#86EFAC;background:#F0FDF4;">

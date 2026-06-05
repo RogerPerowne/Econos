@@ -1,6 +1,6 @@
 /* ============================================================
    ECONOS – Long-run Aggregate Supply (Edexcel A 2.3.3)
-   7 cards · interactive-first rebuild
+   6 cards · interactive-first rebuild
    Split from the legacy `aggregate-supply` topic on 2026-06-05;
    rebuilt 2026-06-05 around the LRAS curve itself. Supply-side
    POLICY detail lives in its own dedicated `supply-side-policies`
@@ -15,9 +15,8 @@
      2 Sequential flow chain + interactive   (lrasVerticalInteractive · C/K)
      3 Interactive multi-state + driver grid (lrasShiftRightClassicalKeynesian · C/K)
      4 Sequential flow chain + interactive   (lrasShiftDiagram)
-     5 Predict-then-reveal (diagnose)
-     6 Side-by-side pair (static 2-panel synthesis · lrasDemandVsCapacity)
-     7 Evidence-then-verdict (exam toolkit)
+     5 Side-by-side pair (static 2-panel synthesis · lrasDemandVsCapacity)
+     6 Evidence-then-verdict (exam toolkit)
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -25,13 +24,13 @@ window.ECONOS_TOPIC = {
   topicNum: '2.3.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   title: 'Long-run Aggregate Supply',
-  estTime: '15 min',
+  estTime: '13 min',
   goal: 'Read the LRAS curve – its shape, what shifts it, and how it explains long-run growth',
 
   intro: {
     heroKey: 'heroAggSupply',
     summary: 'Long-run aggregate supply (LRAS) reflects the economy\'s productive capacity once costs have fully adjusted. The Classical view draws LRAS vertical at full employment; the Keynesian view draws a reverse-L. LRAS shifts when the supply-side fundamentals improve – productivity, education and skills, technology, capital, demographics and migration. Read it well and you can explain trend growth, the long-run limits of demand-side policy, and where inflation pressure comes from.',
-    doInThis: 'Define LRAS and contrast the Classical and Keynesian shapes, see why it is vertical in the long run, map every capacity factor to a shift, link it to economic growth, and practise the movement-vs-shift exam trap.',
+    doInThis: 'Define LRAS and contrast the Classical and Keynesian shapes, see why it is vertical in the long run, map every capacity factor to a shift, link it to economic growth, and separate a demand change from a capacity change.',
     outcomes: [
       'Distinguish the Classical and Keynesian views of LRAS',
       'Explain why LRAS is vertical in the long run',
@@ -41,7 +40,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'LRAS is about capacity, not costs or current demand. If the change moves the economy\'s long-run productive potential, it shifts LRAS.',
     stages: [
-      { num: 1, name: 'Learn',  sub: '7 cards \xb7 15 min', state: 'current' },
+      { num: 1, name: 'Learn',  sub: '6 cards \xb7 13 min', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply in exam-style questions', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
@@ -147,6 +146,7 @@ window.ECONOS_TOPIC = {
         label: 'SAME OUTPUT – DIFFERENT PRICES',
         emoji: '\u{1F4CA}',
         layers: ['v2'],
+        inverseLayers: ['ad1c-solid', 'ad1k-solid'],
         perspectives: ['classical', 'keynesian'],
         perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
         views: [
@@ -363,68 +363,12 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 – Shift, or no shift? (Predict-then-reveal · diagnose)
-       Drills the two classic exam traps the toolkit later names:
-       movement-vs-shift and SRAS-vs-LRAS.
-       ==================================================================== */
-    {
-      id: 'lras-diagnose',
-      template: 'diagnose',
-      stepLabel: 'Learn: Card 5 of 7',
-      title: 'Shift, or no shift?',
-      lede: 'For each change, decide what actually moves: does <strong>LRAS</strong> shift, does <strong>SRAS</strong> shift, or is it just a movement along AS (or a demand change)? Then click <em>Make your call</em> to check.',
-      summaryRow: [
-        { tone: 'rose',  icon: '\u{1F3F0}', title: 'Changes CAPACITY → LRAS shifts', text: 'More or better factors of production move the long-run frontier left or right.' },
-        { tone: 'amber', icon: '\u{1F525}', title: 'Changes short-run COSTS only → SRAS shifts', text: 'Input-price changes move SRAS, but capacity – and so LRAS – is unchanged.' },
-        { tone: 'blue',  icon: '↔\u{FE0F}', title: 'Changes spending / price level → no AS shift', text: 'A demand change shifts AD; that is a movement ALONG AS, not a shift of it.' }
-      ],
-      diagramKey: 'lrasViewsInteractive',
-      diagramCaption: 'LRAS is the capacity wall; SRAS / the reverse-L responds to costs and demand. Before drawing, ask which one a change actually moves.',
-      scenarios: {
-        title: 'Five changes to diagnose',
-        items: [
-          {
-            tone: 'green',
-            label: '1',
-            text: '<strong>A sustained wave of working-age migration.</strong> Net inward migration of working-age adults raises the size of the labour force over several years; participation rises.',
-            answer: '<strong>LRAS shifts RIGHT.</strong> A bigger labour force means more productive capacity – the long-run frontier moves outward. This is a genuine capacity change, not a movement.'
-          },
-          {
-            tone: 'amber',
-            label: '2',
-            text: '<strong>A spike in world oil and gas prices.</strong> Energy is an input to almost every UK firm; unit costs jump across the economy more or less overnight.',
-            answer: '<strong>SRAS shifts LEFT – LRAS does not move.</strong> Higher input costs raise the short-run cost of production, but the economy\'s underlying capacity is unchanged. The classic SRAS-vs-LRAS distinction.'
-          },
-          {
-            tone: 'green',
-            label: '3',
-            text: '<strong>A decade of strong business investment and R&D.</strong> Firms build new capital, adopt better technology, and the workforce becomes more productive.',
-            answer: '<strong>LRAS shifts RIGHT.</strong> More capital and better technology raise productivity and potential output – the supply-side route to trend growth.'
-          },
-          {
-            tone: 'blue',
-            label: '4',
-            text: '<strong>The Bank of England cuts interest rates and consumer spending jumps.</strong> Households borrow and spend more; aggregate demand rises sharply.',
-            answer: '<strong>Neither AS curve shifts.</strong> Higher spending shifts <strong>AD</strong> right – a movement ALONG AS, not a shift of it. This is the “calling a movement a shift” trap examiners love to set.'
-          },
-          {
-            tone: 'rose',
-            label: '5',
-            text: '<strong>A deep, prolonged recession leaves factories idle and skilled workers unemployed for years (hysteresis).</strong>',
-            answer: '<strong>LRAS can shift LEFT.</strong> If capital is scrapped and skills erode, productive capacity itself falls – a leftward shift, not merely a movement. A demand shock can leave a permanent supply-side scar.'
-          }
-        ]
-      },
-      examEdge: '<strong>Before you draw anything, ask: capacity (LRAS), costs (SRAS), or just spending (AD / a movement)?</strong> Naming the right curve is half the marks – state the diagnosis explicitly.'
-    },
-
-    /* ====================================================================
-       CARD 6 – Demand vs capacity (Side-by-side pair · static synthesis)
+       CARD 5 – Demand vs capacity (Side-by-side pair · static synthesis)
        ==================================================================== */
     {
       id: 'lras-demand-vs-capacity',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 6 of 7',
+      stepLabel: 'Learn: Card 5 of 6',
       title: 'Demand vs capacity',
       lede: 'Demand-side changes and capacity (LRAS) changes have very different long-run effects – one mainly moves the price level, the other changes potential output.',
       ledeStyle: 'plain',
@@ -464,12 +408,12 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 7 – The LRAS exam toolkit (Evidence-then-verdict)
+       CARD 6 – The LRAS exam toolkit (Evidence-then-verdict)
        ==================================================================== */
     {
       id: 'lras-exam-toolkit',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 7 of 7',
+      stepLabel: 'Learn: Card 6 of 6',
       title: 'The LRAS exam toolkit',
       lede: 'LRAS helps explain productive capacity, trend growth, inflation pressure and the long-run limits of demand-side policy. One curve, many exam uses.',
       ledeStyle: 'plain',

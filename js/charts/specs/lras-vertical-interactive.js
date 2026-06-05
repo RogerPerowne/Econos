@@ -118,10 +118,11 @@
     ],
 
     arrows: [
-      /* AD shift arrow (V2) – PERPENDICULAR to the AD lines, drawn in
-         the gap BETWEEN AD₁ and AD₂, low-left of the equilibria so it
-         never clashes with the E / LRAS labels. */
-      { x1: 0.380, y1: 0.470, x2: 0.500, y2: 0.620,
+      /* AD shift arrow (V2) – PERPENDICULAR to the AD lines (slope ≈ +1.4
+         against AD's ≈ −0.72), drawn in the open gap BETWEEN AD₁ and AD₂
+         to the LEFT of the equilibria (which stack on Yf = 0.55), so it
+         never clashes with the E₁/E₂ dots or the LRAS label. */
+      { x1: 0.300, y1: 0.560, x2: 0.400, y2: 0.700,
         tone: 'blue', strokeWidth: 1.8, markerEnd: 'econos-arrow-blue',
         buffer: 0, layer: 'v2' }
     ]

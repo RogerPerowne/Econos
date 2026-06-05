@@ -34,7 +34,9 @@
     return {
       chartArea: { x: 48, y: 42, width: 198, height: 194 },
       title: 'A · Demand rises, LRAS fixed', titleColor: '#047857', titleSize: 12,
-      axes: { x: { label: 'Real output (Y)' }, y: { label: 'Price level (P)' } },
+      /* Short axis labels ('Y' / 'P') so the panel title above the chart
+         has room and never clashes with a long axis caption. */
+      axes: { x: { label: 'Y' }, y: { label: 'P' } },
       curves: [
         { id: 'dvc-lras-a', d: 'M ' + YF + ',0.020 L ' + YF + ',0.960',
           tone: 'purple', label: 'LRAS', strokeWidth: 2.4,
@@ -70,7 +72,9 @@
     return {
       chartArea: { x: 328, y: 42, width: 198, height: 194 },
       title: 'B · LRAS rises, demand fixed', titleColor: '#047857', titleSize: 12,
-      axes: { x: { label: 'Real output (Y)' }, y: { label: 'Price level (P)' } },
+      /* Short axis labels ('Y' / 'P') so the panel title above the chart
+         has room and never clashes with a long axis caption. */
+      axes: { x: { label: 'Y' }, y: { label: 'P' } },
       curves: [
         { id: 'dvc-ad-b', d: 'M 0.06,0.660 L 0.96,0.110',
           tone: 'blue', label: 'AD', strokeWidth: 2,

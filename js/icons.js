@@ -16361,17 +16361,17 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
       <style>
         .bop-gw { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
-        @media (max-width: 760px) { .bop-gw { grid-template-columns: 1fr; } }
-        .bop-gw-card { border:1.5px solid; border-radius:14px; padding:16px 12px; }
+        .bop-gw-card { border:1.5px solid; border-radius:14px; padding:18px 14px 20px; display:flex; flex-direction:column; }
         .bop-gw-head { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
-        .bop-gw-head-icon { width:32px; height:32px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:16px; }
-        .bop-gw-head-title { font-size:14px; font-weight:800; }
-        .bop-gw-sub { font-size:12px; color:#475569; line-height:1.5; margin-bottom:14px; }
-        .bop-gw-chain { display:flex; align-items:stretch; gap:6px; }
-        .bop-gw-step { flex:1; background:#fff; border:1px solid; border-radius:10px; padding:8px 6px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:6px; }
-        .bop-gw-step-icon { font-size:18px; }
-        .bop-gw-step-label { font-size:10.5px; font-weight:700; line-height:1.2; color:#0B1426; }
-        .bop-gw-arrow { display:flex; align-items:center; font-size:14px; color:#94A3B8; font-weight:700; }
+        .bop-gw-head-icon { width:32px; height:32px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+        .bop-gw-head-title { font-size:14px; font-weight:800; line-height:1.3; }
+        .bop-gw-sub { font-size:12px; color:#475569; line-height:1.55; margin-bottom:16px; }
+        .bop-gw-chain { display:flex; align-items:stretch; gap:6px; flex:1; }
+        .bop-gw-step { flex:1; background:#fff; border:1px solid; border-radius:10px; padding:14px 8px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; min-height:104px; }
+        .bop-gw-step-icon { font-size:22px; line-height:1; }
+        .bop-gw-step-label { font-size:11px; font-weight:700; line-height:1.35; color:#0B1426; }
+        .bop-gw-arrow { display:flex; align-items:center; font-size:14px; color:#94A3B8; font-weight:700; flex-shrink:0; }
+        @media (max-width: 760px) { .bop-gw { grid-template-columns: 1fr; } }
       </style>
       <div class="bop-gw">
         <div class="bop-gw-card" style="border-color:#86EFAC;background:#F0FDF4;">

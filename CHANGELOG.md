@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.63.4 — 2026-06-05
+
+### Balance of Payments — C4 good/warning chain breathing room
+
+Per Roger's feedback on the mobile rendering of C4's "Not all
+deficits are bad" section: the three inner white step-tiles
+(Inflow → Investment in capacity → Stronger future growth, and
+its warning-side mirror) looked thin and unbalanced — the icons
+sat at the top, sparse labels left empty whitespace below, and
+the dense multi-line labels overflowed downward.
+
+Fix on `.bop-gw-step`:
+- Padding bumped (8/6 → 14/8) and gap doubled (6 → 10) so the
+  icon + label have proper breathing room.
+- `min-height:104px` so even short-label tiles match the height
+  of the longest neighbour without the chain visually skipping.
+- `justify-content:center` so the icon + label sit in the middle
+  of the tile rather than stacking from the top.
+- Icon font-size bumped 18 → 22px to match the visual weight of
+  the surrounding heroes.
+
+The parent `.bop-gw-card` is now `display:flex; flex-direction:
+column` with a slightly larger bottom padding so the chain row
+inherits any extra vertical space gracefully.
+
+Cache bumped to `econos-v357`.
+
 ## 0.63.3 — 2026-06-05
 
 ### Balance of Payments — real-iPhone mobile fixes

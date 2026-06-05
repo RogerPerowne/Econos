@@ -12402,6 +12402,8 @@ window.ECONOS_ICONS = {
   srasShiftDirections: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_DIRECTIONS_SPEC),
 
   lrasViewsInteractive: window.ECONOS_PPF.render(window.ECONOS_LRAS_VIEWS_INTERACTIVE_SPEC),
+  lrasVerticalInteractive: window.ECONOS_PPF.render(window.ECONOS_LRAS_VERTICAL_INTERACTIVE_SPEC),
+  lrasDemandVsCapacity: window.ECONOS_PPF.render(window.ECONOS_LRAS_DEMAND_VS_CAPACITY_SPEC),
 
   srasShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_INTERACTIVE_SPEC),
 

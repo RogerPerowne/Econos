@@ -6,6 +6,57 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.68.0 – 2026-06-05
+
+### Long-run Aggregate Supply – full 7-card visual lesson (2.3.3)
+
+Rebuilt the `long-run-aggregate-supply` topic from 4 cards (two of which
+duplicated the dedicated `supply-side-policies` topic) into a focused,
+interactive-first 7-card lesson about the LRAS curve itself, from a fresh
+set of mockups. Cards 1–3 carry the Classical/Keynesian toggle the spec
+demands; supply-side policy detail now lives only in its own topic.
+
+- **Card 1 – LRAS, the big picture** (Interactive + decompose): reuses
+  `lrasViewsInteractive` (vertical Classical vs reverse-L Keynesian
+  toggle), plus "what LRAS shows", a break-down-the-name row, and a
+  why-it-matters row.
+- **Card 2 – Why LRAS is vertical** (Flow chain + interactive): new
+  `lrasVerticalInteractive` spec – AD₁ → AD₂ shifts up against the
+  capacity wall. Classical: output pinned at Yf, only P rises. Keynesian:
+  below capacity AD raises Y too ("vertical, but only AT capacity").
+- **Card 3 – What shifts LRAS?** (Interactive multi-state + driver grid):
+  reuses `lrasShiftRightClassicalKeynesian`, plus a six-tile growth-driver
+  grid, a right-vs-left pair, and a "how to think about it" chain.
+- **Card 4 – LRAS and economic growth** (Flow chain + interactive): a
+  today → tomorrow capacity expansion (`lrasShiftDiagram`), the growth
+  chain, and the invest-now-vs-living-standards-later trade-off.
+- **Card 5 – Shift, or no shift?** (Predict-then-reveal): a `diagnose`
+  card drilling the movement-vs-shift and SRAS-vs-LRAS traps across five
+  scenarios (migration, oil spike, investment, rate cut, hysteresis).
+- **Card 6 – Demand vs capacity** (Side-by-side synthesis): new
+  `lrasDemandVsCapacity` two-panel spec – A) more demand on fixed
+  capacity → higher prices, same output; B) more capacity at fixed demand
+  → more output, lower prices.
+- **Card 7 – The LRAS exam toolkit** (Evidence-then-verdict): what LRAS
+  can show, common mistakes with fixes, how-to-write-it chain, useful
+  phrases.
+
+### Chart conventions – shifted-from curves dash, shift arrows go perpendicular
+
+Applied two house rules to every shift diagram authored or touched here,
+and retro-fixed the SRAS "Increase and Decrease" card that violated them:
+
+- **A shifted-from curve always goes dashed.** `srasShiftDirections` now
+  swaps SRAS₁ from solid to dashed the moment an increase/decrease view is
+  shown (solid on a base layer, dashed revealed in the shift views via
+  `inverseLayers`). The new `lrasVerticalInteractive` and
+  `lrasDemandVsCapacity` specs follow the same rule for AD₁ / LRAS₁.
+- **Shift arrows are perpendicular to the curves and sit in the gap
+  between them**, positioned to clear the equilibrium and curve labels.
+
+`sw.js` cache bumped to `econos-v365`; the two new specs are precached and
+script-tagged in all three shells.
+
 ## 0.67.0 – 2026-06-05
 
 ### Short-run Aggregate Supply – full 6-card visual lesson (2.3.2)

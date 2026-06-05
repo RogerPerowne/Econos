@@ -254,7 +254,8 @@ window.ECONOS_TOPIC = {
         svgKey: 'srasShiftDirections',
         label: 'INCREASE AND DECREASE',
         emoji: '📊',
-        layers: ['inc', 'dec'],
+        layers: ['inc', 'dec', 'sras1-dash'],
+        inverseLayers: ['sras1-solid'],
         views: [
           {
             label: 'Start', show: [], tone: 'blue',
@@ -263,13 +264,13 @@ window.ECONOS_TOPIC = {
             analysis: 'SRAS₁ is the reference. A shift moves the whole curve sideways, giving a new equilibrium where it crosses the unchanged AD.'
           },
           {
-            label: 'Increase in SRAS', show: ['inc'], tone: 'green',
+            label: 'Increase in SRAS', show: ['inc', 'sras1-dash'], tone: 'green',
             head: 'SRAS shifts right to SRAS₂.',
             body: ['Lower costs or higher productivity make every output level cheaper to produce.', 'The new equilibrium E₂ sits at a <strong>lower price level</strong> and <strong>higher real output</strong>.'],
             analysis: 'A rightward shift is the good news case: more output at every price level, easing inflation while supporting growth.'
           },
           {
-            label: 'Decrease in SRAS', show: ['dec'], tone: 'rose',
+            label: 'Decrease in SRAS', show: ['dec', 'sras1-dash'], tone: 'rose',
             head: 'SRAS shifts left to SRAS₃.',
             body: ['Higher costs make every output level more expensive to produce.', 'The new equilibrium E₃ sits at a <strong>higher price level</strong> and <strong>lower real output</strong>.'],
             analysis: 'A leftward shift is the supply-shock case: higher prices and lower output together – the seed of stagflation, covered next.'

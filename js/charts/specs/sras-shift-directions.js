@@ -19,7 +19,8 @@
     height: 312,
     chartArea: { x: 56, y: 20, width: 374, height: 264 },
     className: 'sras-shift-directions-svg',
-    layers: ['inc', 'dec'],
+    layers: ['inc', 'dec', 'sras1-dash'],
+    inverseLayers: ['sras1-solid'],
     defs:
       '<marker id="srd-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>' +
       '<marker id="srd-arr-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/></marker>',
@@ -33,10 +34,14 @@
       { id: 'AD', d: 'M 0.080,0.860 L 0.920,0.120',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: 8, anchor: 'end' },
-      // SRAS₁ – reference, always visible
+      // SRAS₁ SOLID – reference (Start view; swapped for dashed once a shift shows)
       { id: 'SRAS1', d: 'M 0.140,0.120 L 0.820,0.880',
         tone: 'slate', label: 'SRAS₁', strokeWidth: 2.2,
-        labelDx: 6, labelDy: -4, anchor: 'start' },
+        labelDx: 6, labelDy: -4, anchor: 'start', layer: 'sras1-solid' },
+      // SRAS₁ DASHED – the shifted-from curve goes dashed (inc/dec views)
+      { d: 'M 0.140,0.120 L 0.820,0.880',
+        tone: 'slate', label: 'SRAS₁', strokeWidth: 1.6, dashed: '6 4',
+        labelDx: 6, labelDy: -4, anchor: 'start', layer: 'sras1-dash' },
       // SRAS₂ – right shift (increase)
       { id: 'SRAS2', d: 'M 0.340,0.120 L 0.980,0.834',
         tone: 'green', label: 'SRAS₂', strokeWidth: 2.4,
@@ -66,11 +71,15 @@
     ],
 
     arrows: [
-      // Increase: right-shift arrow
-      { x1: 0.470, y1: 0.560, x2: 0.620, y2: 0.560,
+      // Increase: PERPENDICULAR shift arrow, in the gap between SRAS₁ and
+      // SRAS₂, pointing down-right toward the new (right) curve. Starts mid-gap,
+      // lands on SRAS₂ – clear of E₁ and the curve labels.
+      { x1: 0.500, y1: 0.430, x2: 0.575, y2: 0.372,
         tone: 'green', strokeWidth: 1.6, markerEnd: 'srd-arr-green', buffer: 0, layer: 'inc' },
-      // Decrease: left-shift arrow
-      { x1: 0.470, y1: 0.560, x2: 0.320, y2: 0.560,
+      // Decrease: PERPENDICULAR shift arrow, in the gap between SRAS₁ and
+      // SRAS₃, pointing up-left toward the new (left) curve. Starts on SRAS₁,
+      // lands near SRAS₃ – left of E₁ so it never overlaps the equilibrium.
+      { x1: 0.440, y1: 0.455, x2: 0.330, y2: 0.555,
         tone: 'rose', strokeWidth: 1.6, markerEnd: 'srd-arr-rose', buffer: 0, layer: 'dec' }
     ]
   };

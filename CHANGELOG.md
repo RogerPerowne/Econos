@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.70.0 – 2026-06-05
+
+### Theme 3 topic structure aligned to the Edexcel A spec
+
+Reworked the Theme 3 registry so every spec sub-section (3.1–3.6) has a
+correctly-numbered, correctly-named home:
+
+- **Added 3.1.1 Sizes & Types of Firms** (placeholder, content to follow) –
+  previously missing; this is the first Theme 3 topic.
+- **Renumbered Business Growth 3.1.1 → 3.1.2** (its content is the
+  organic/integration growth point) and refreshed its sub-line.
+- **Added 3.1.3 Demergers** (placeholder) – previously missing.
+- **Registered Price Discrimination at 3.4.5** – it already had full Learn It
+  + Land It data but was unregistered (invisible on the grid); moved its data
+  from `misc/` into `theme-3/` so the build resolves it.
+- **Added 3.6.2 Impact of Government Intervention** (placeholder) – previously
+  missing.
+
+Kept the Oligopoly 3.4.4 three-way split (Oligopoly / Collusion & Cartels /
+Game Theory) – it's the largest single spec point. New placeholder topics use
+`available.learn: false`, so they appear in the structure but generate no
+routes until their content ships.
+
+Registry/data-move only – no service-worker cache bump required.
+
 ## 0.69.1 – 2026-06-05
 
 ### Current-account driver hub – wider tiles, clearer arrows, larger text

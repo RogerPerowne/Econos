@@ -67,19 +67,6 @@ window.ECONOS_TOPIC = {
       visualLabel: 'THE FOUR LENSES',
       visualEmoji: '\u{1F50D}',
 
-      flowTitle: 'THE STORY WE WILL TELL',
-      flowEmoji: '\u{1F517}',
-      flowSep: '→',
-      flow: [
-        { tone: 'green',  icon: '1', title: 'Measure size',      sub: '' },
-        { tone: 'amber',  icon: '2', title: 'Classify firms',    sub: '' },
-        { tone: 'purple', icon: '3', title: 'Why stay small?',   sub: '' },
-        { tone: 'blue',   icon: '4', title: 'Why grow?',         sub: '' },
-        { tone: 'green',  icon: '5', title: 'Who owns it?',      sub: '' },
-        { tone: 'amber',  icon: '6', title: 'Who controls it?',  sub: '' },
-        { tone: 'purple', icon: '7', title: 'Judge the trade-offs', sub: '' }
-      ],
-
       causesLabel: 'A QUICK ORIENTATION',
       causesEmoji: '\u{1F9ED}',
       causesStyle: 'tinted-flat',

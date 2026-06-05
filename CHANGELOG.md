@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.2 – 2026-06-05
+
+### Theme 3 polish – drop the roadmap blocks from Card 1s
+
+Removed the "what you will learn" / "the story we will tell" step-flow
+roadmaps from the opening card of the Theme 3 topics — `sizes-and-types-
+of-firms` ("THE STORY WE WILL TELL") and `business-growth` ("WHAT YOU
+WILL LEARN"). They were a habit picked up during drafting that isn't
+needed and isn't consistent with how the other topics open. (Demergers
+Card 1 had no such block.) Pure content removal; the intro stage list
+already communicates the lesson roadmap.
+
 ## 0.73.1 – 2026-06-05
 
 ### Theme 3 hub visuals – elegance polish

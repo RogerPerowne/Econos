@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.69.1 – 2026-06-05
+
+### Current-account driver hub – wider tiles, clearer arrows, larger text
+
+Tweaks to the `bopDriverHub` hub-and-spoke SVG from review feedback:
+
+- Widened the six green driver tiles from 226 → 256px so they fill more of
+  the stage (symmetric 14px outer margins, ~22px gap to the hub).
+- Pulled every spoke endpoint back to ~10px clear of the hub rim (the
+  arrowheads previously landed on or inside the black circle).
+- Bumped the tile titles (14.5 → 15.5px), captions (12.5 → 13px) and the
+  hub label (13.5 → 14px) now that the wider tiles have room.
+
+`sw.js` cache bumped to `econos-v368`.
+
 ## 0.69.0 – 2026-06-05
 
 ### Characteristics of AS (2.3.1) – rebalanced to the spec's three sub-points

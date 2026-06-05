@@ -1284,6 +1284,12 @@
       // classes the SPA never sets, so the reveal must be driven here too.
       const inverseLayers = id.inverseLayers || [];
       const views = id.views || [];
+      // A single-view diagram has nothing to step through, so the step
+      // chrome (the numbered marker before the description + the one-button
+      // step strip underneath) is pure noise – suppress both. The
+      // perspective toggle (e.g. Classical/Keynesian) is independent and
+      // still renders.
+      const singleView = views.length === 1;
       const defaultToneNames = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
       // Perspective toggle (e.g. Classical vs Keynesian). When present,
       // each view carries per-perspective `{head, body, analysis}` blocks
@@ -1358,7 +1364,7 @@
             <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
               <div style="max-width:${id.maxWidth || '640px'};margin:0 auto;">${I[id.svgKey]}</div>
             </div>
-            <div class="id-step-strip" style="display:grid;grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
+            <div class="id-step-strip" style="display:${singleView ? 'none' : 'grid'};grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
             ${combinedPanels}
           </div>`;
       } else {
@@ -1377,7 +1383,7 @@
               : `<div style="font-size:11.5px;color:var(--econ-ink);line-height:1.6;">${slot.body || ''}</div>`;
             const marker = v.icon
               ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${renderIcon(v.icon)}</span>`
-              : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
+              : (singleView ? '' : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`);
             const isActive = i === 0 && (!persp || persp === initialPersp);
             const perspAttr = persp ? ` data-id-persp="${persp}"` : '';
             // All step descriptions are stacked into ONE grid cell and
@@ -1422,7 +1428,7 @@
                 <div style="display:grid;padding:0 4px;">${descItems}</div>
               </div>
             </div>
-            <div class="id-step-strip" style="display:grid;grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
+            <div class="id-step-strip" style="display:${singleView ? 'none' : 'grid'};grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
             ${analysisItems}
           </div>`;
       }

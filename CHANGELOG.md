@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.68.1 – 2026-06-05
+
+### LRAS polish – dashed-curve fix, arrows, single-view chrome, axis clash
+
+Follow-up sweep on the new LRAS lesson from review feedback:
+
+- **Fixed the "original line must dash" rule on Card 2.** The
+  `lrasVerticalInteractive` card block was missing `inverseLayers`, so the
+  SPA never hid the solid AD₁ when the shift view opened – AD₁ stayed solid.
+  Added `inverseLayers: ['ad1c-solid','ad1k-solid']` to the card so the
+  solid→dashed swap actually fires (the spec already declared the dashed
+  overlay). The dash convention is driven by the **card's**
+  `interactiveDiagram.inverseLayers`, not the spec's.
+- **Card 2 shift arrow** repositioned to sit in the open gap between AD₁
+  and AD₂, left of the stacked equilibria, perpendicular to the AD lines.
+- **Single-view interactive diagrams drop the step chrome.** When an
+  `interactiveDiagram` has only one view, the renderer no longer shows the
+  redundant numbered marker before the description or the one-button step
+  strip underneath (e.g. LRAS Card 1's Classical/Keynesian toggle). The
+  perspective toggle is unaffected.
+- **Card 5 (demand-vs-capacity) axis labels shortened to `P` / `Y`** so the
+  two-panel titles no longer clash with the long axis captions.
+- **Removed the "Shift, or no shift?" diagnose card** – LRAS is now a tight
+  6-card lesson (was 7).
+
+`sw.js` cache bumped to `econos-v366`.
+
 ## 0.68.0 – 2026-06-05
 
 ### Long-run Aggregate Supply – full 7-card visual lesson (2.3.3)

@@ -5553,35 +5553,38 @@
         return `${label}<div style="display:grid;grid-template-columns:repeat(${colCount},1fr);gap:14px;margin-bottom:20px;">${cards}</div>`;
       })() : ''}
 
-      ${c.comparisonTable ? (() => {
-        const ct = c.comparisonTable;
-        const colTones = (ct.columnTones || []).map(t => PATTERN_TONES[t] || PATTERN_TONES.blue);
-        const colLabel = genSecLabel(ct.emoji || '↔️', ct.title || 'How they compare');
-        const headerCells = ct.columns.map((col, i) => {
-          const t = colTones[i] || PATTERN_TONES.blue;
-          return `<div style="padding:11px 10px;font-size:13px;font-weight:800;color:${t.label};text-align:center;background:${t.bg};border-left:2px solid ${t.border};">${col}</div>`;
-        }).join('');
-        const ctGrid = `140px repeat(${ct.columns.length}, 1fr)`;
-        const bodyRows = (ct.rows || []).map((row, ri) => {
-          const bg = ri % 2 === 0 ? '#fff' : '#F8FAFC';
-          const cells = (row.values || []).map((val, ci) => {
-            const t = colTones[ci] || PATTERN_TONES.blue;
-            const hl = row.highlights && row.highlights[ci];
-            return `<div style="padding:10px 10px;font-size:12.5px;color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid #E7E7EA;line-height:1.5;">${val}</div>`;
+      ${(() => {
+        const renderComparisonTable = (ct) => {
+          const colTones = (ct.columnTones || []).map(t => PATTERN_TONES[t] || PATTERN_TONES.blue);
+          const colLabel = genSecLabel(ct.emoji || '↔️', ct.title || 'How they compare');
+          const headerCells = ct.columns.map((col, i) => {
+            const t = colTones[i] || PATTERN_TONES.blue;
+            return `<div style="padding:11px 10px;font-size:13px;font-weight:800;color:${t.label};text-align:center;background:${t.bg};border-left:2px solid ${t.border};">${col}</div>`;
           }).join('');
-          return `<div style="display:grid;grid-template-columns:${ctGrid};background:${bg};border-bottom:1px solid #E7E7EA;">
-            <div style="padding:10px 12px;font-size:12.5px;font-weight:700;color:var(--econ-ink);display:flex;align-items:center;gap:6px;line-height:1.4;">${row.label}</div>
-            ${cells}
+          const ctGrid = `140px repeat(${ct.columns.length}, 1fr)`;
+          const bodyRows = (ct.rows || []).map((row, ri) => {
+            const bg = ri % 2 === 0 ? '#fff' : '#F8FAFC';
+            const cells = (row.values || []).map((val, ci) => {
+              const t = colTones[ci] || PATTERN_TONES.blue;
+              const hl = row.highlights && row.highlights[ci];
+              return `<div style="padding:10px 10px;font-size:12.5px;color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid #E7E7EA;line-height:1.5;">${val}</div>`;
+            }).join('');
+            return `<div style="display:grid;grid-template-columns:${ctGrid};background:${bg};border-bottom:1px solid #E7E7EA;">
+              <div style="padding:10px 12px;font-size:12.5px;font-weight:700;color:var(--econ-ink);display:flex;align-items:center;gap:6px;line-height:1.4;">${row.label}</div>
+              ${cells}
+            </div>`;
+          }).join('');
+          return `${colLabel}<div style="border-radius:12px;border:1px solid #E7E7EA;overflow:hidden;margin-bottom:20px;">
+            <div style="display:grid;grid-template-columns:${ctGrid};background:#F8FAFC;border-bottom:2px solid #E7E7EA;border-radius:12px 12px 0 0;">
+              <div style="padding:10px 12px;"></div>
+              ${headerCells}
+            </div>
+            ${bodyRows}
           </div>`;
-        }).join('');
-        return `${colLabel}<div style="border-radius:12px;border:1px solid #E7E7EA;overflow:hidden;margin-bottom:20px;">
-          <div style="display:grid;grid-template-columns:${ctGrid};background:#F8FAFC;border-bottom:2px solid #E7E7EA;border-radius:12px 12px 0 0;">
-            <div style="padding:10px 12px;"></div>
-            ${headerCells}
-          </div>
-          ${bodyRows}
-        </div>`;
-      })() : ''}
+        };
+        return (c.comparisonTable ? renderComparisonTable(c.comparisonTable) : '')
+             + (c.comparisonTable2 ? renderComparisonTable(c.comparisonTable2) : '');
+      })()}
 
       ${c.matchTable && c.matchTable.rows && c.matchTable.rows.length ? (() => {
         const mt = c.matchTable;

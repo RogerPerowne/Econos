@@ -98,6 +98,8 @@ Organised by archetype. Each entry: `key` — what it shows.
 - `firmFourLensesHub` — 4-tile lens hub (Size/Type/Objectives/Control) around "The firm" (3.1.1 C1).
 - `firmSizeMeasuresHub` — 5 numbered measure tiles around "Firm size" (3.1.1 C2).
 - `firmStaySmallHub` — 6-reason hub around "A small firm may stay small" (3.1.1 C3).
+- `businessGrowthMapHub` — 4-route hub (Organic / Vertical / Horizontal / Conglomerate) around "Business growth" (3.1.2 C1).
+- `conglomerateRiskHub` — 4-industry hub (Food / Travel / Media / Technology) around "One firm spreading risk" (3.1.2 C5).
 
 ### 2. Spectrums / gradient bars
 *Use when:* items sit on a continuum (regimes, strengths, time horizons).
@@ -152,7 +154,13 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   `revMaxDiagram`, `firmGrowthFlywheel` (circular 5-node growth cycle with
   internal/external growth feeds — 3.1.1 C4),
   `firmOwnershipObjectives` (two-row ownership + objectives decompose with
-  bidirectional arrow + examples strip — 3.1.1 C5).
+  bidirectional arrow + examples strip — 3.1.1 C5),
+  `verticalSupplyChain` (5-stage Raw → Components → Manufacturing →
+  Distribution → Retail frieze with Backward / Forward integration axes —
+  3.1.2 C3), `horizontalCombineDiagram` (Firm A + Firm B → Combined firm
+  with market-share badges and a 3-benefit annotation column — 3.1.2 C4),
+  `growthRoadblockers` (4 numbered constraint tiles separated by traffic
+  barriers, road strip behind — 3.1.2 C6).
 
 ### 8. Game theory / payoff matrices
 *Use when:* a 2×2 payoff grid / prisoner's dilemma.

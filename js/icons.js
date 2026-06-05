@@ -16919,4 +16919,311 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* businessGrowthMapHub – Card 1 of Business Growth (3.1.2). Four growth-route
+     tiles (Organic / Vertical / Horizontal / Conglomerate) around a central
+     "Business growth" pill. Shares the firmFourLensesHub grammar. */
+  businessGrowthMapHub: `
+    <div class="bghub-4" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bghub-4 .bgh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:170px; row-gap:18px; position:relative; z-index:1; }
+        .bghub-4 .bgh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .bghub-4 .bgh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .bghub-4 .bgh-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .bghub-4 .bgh-ic { width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .bghub-4 .bgh-t { font-size:14px; font-weight:800; line-height:1.2; letter-spacing:0.005em; }
+        .bghub-4 .bgh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){ .bghub-4 .bgh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .bghub-4 .bgh-center{ position:static; transform:none; margin:6px auto; } .bghub-4 .bgh-center-wrap{ order:99; display:flex; justify-content:center; } .bghub-4 .bgh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:720px;margin:0 auto;min-height:320px;">
+        <svg class="bgh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="30" y1="32" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="32" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="30" y1="68" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="68" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+        </svg>
+        <div class="bgh-grid">
+          <div class="bgh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="bgh-ic">🌱</div>
+            <div><div class="bgh-t" style="color:#065F46;">Organic growth</div><div class="bgh-s">Internal expansion through own sales, outlets or capacity.</div></div>
+          </div>
+          <div class="bgh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="bgh-ic">↕️</div>
+            <div><div class="bgh-t" style="color:#1E3A8A;">Vertical integration</div><div class="bgh-s">Merge with a supplier or distributor.</div></div>
+          </div>
+          <div class="bgh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="bgh-ic">🏢</div>
+            <div><div class="bgh-t" style="color:#C2410C;">Horizontal integration</div><div class="bgh-s">Merge with or take over a firm at the same stage.</div></div>
+          </div>
+          <div class="bgh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="bgh-ic">🌐</div>
+            <div><div class="bgh-t" style="color:#5B21B6;">Conglomerate integration</div><div class="bgh-s">Merge with a firm in a different market.</div></div>
+          </div>
+        </div>
+        <div class="bgh-center-wrap"><div class="bgh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:152px;height:152px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+          <div style="font-size:30px;line-height:1;">📈</div>
+          <div style="font-size:15px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;text-align:center;line-height:1.2;">Business<br/>growth</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* verticalSupplyChain – Card 3 of Business Growth. A five-stage supply
+     chain (Raw materials → Components → Manufacturing → Distribution →
+     Retail) with the centre stage highlighted as the firm's start position,
+     and two directional axes beneath labelling Backward (green, left) and
+     Forward (purple, right) integration. Pure SVG. */
+  verticalSupplyChain: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="vsc-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/></marker>
+          <marker id="vsc-arr-green-l" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z" fill="#16A34A"/></marker>
+          <marker id="vsc-arr-purple-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
+        </defs>
+
+        <!-- Stage boxes (5 across) -->
+        <!-- 1 Raw materials (green) -->
+        <rect x="20" y="30" width="120" height="120" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <text x="80" y="80" font-size="34" text-anchor="middle">🌿</text>
+        <text x="80" y="115" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Raw</text>
+        <text x="80" y="132" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">materials</text>
+
+        <!-- arrow 1→2 -->
+        <line x1="148" y1="90" x2="172" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+
+        <!-- 2 Components (green) -->
+        <rect x="180" y="30" width="120" height="120" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <text x="240" y="80" font-size="32" text-anchor="middle">⚙️</text>
+        <text x="240" y="123" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Components</text>
+
+        <!-- arrow 2→3 -->
+        <line x1="308" y1="90" x2="332" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+
+        <!-- 3 Manufacturing (highlighted blue – the firm's starting stage) -->
+        <rect x="340" y="22" width="120" height="136" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="400" y="78" font-size="34" text-anchor="middle">🏭</text>
+        <text x="400" y="118" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+        <text x="400" y="142" font-size="10" font-weight="700" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.06em">THE FIRM</text>
+
+        <!-- arrow 3→4 -->
+        <line x1="468" y1="90" x2="492" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+
+        <!-- 4 Distribution (purple) -->
+        <rect x="500" y="30" width="120" height="120" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+        <text x="560" y="80" font-size="32" text-anchor="middle">🚚</text>
+        <text x="560" y="123" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Distribution</text>
+
+        <!-- arrow 4→5 -->
+        <line x1="628" y1="90" x2="652" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+
+        <!-- 5 Retail (purple) -->
+        <rect x="660" y="30" width="86" height="120" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+        <text x="703" y="80" font-size="30" text-anchor="middle">🛍️</text>
+        <text x="703" y="123" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+
+        <!-- Backward integration axis (green, left of firm) -->
+        <line x1="395" y1="200" x2="80" y2="200" stroke="#16A34A" stroke-width="3" marker-end="url(#vsc-arr-green-l)"/>
+        <text x="237" y="230" font-size="14" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Backward integration</text>
+        <text x="237" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">towards inputs</text>
+
+        <!-- Forward integration axis (purple, right of firm) -->
+        <line x1="405" y1="200" x2="710" y2="200" stroke="#7C3AED" stroke-width="3" marker-end="url(#vsc-arr-purple-r)"/>
+        <text x="557" y="230" font-size="14" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif">Forward integration</text>
+        <text x="557" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">towards the customer</text>
+
+        <!-- Centre divider dot -->
+        <circle cx="400" cy="200" r="5" fill="#0B1426"/>
+      </svg>
+    </div>
+  `,
+
+  /* horizontalCombineDiagram – Card 4 of Business Growth. Firm A + Firm B
+     → Combined firm, each tile a small storefront with a market-share badge.
+     Right column lists three quick benefits. Pure SVG so spacing is locked. */
+  horizontalCombineDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="hci-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
+        </defs>
+
+        <!-- Firm A -->
+        <rect x="14" y="34" width="132" height="200" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="80" y="60" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm A</text>
+        <text x="80" y="78" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="80" y="138" font-size="44" text-anchor="middle">🏪</text>
+        <text x="80" y="190" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="80" y="216" font-size="22" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
+
+        <!-- + sign -->
+        <circle cx="172" cy="134" r="16" fill="#fff" stroke="#94A3B8" stroke-width="1.6"/>
+        <text x="172" y="141" font-size="22" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">+</text>
+
+        <!-- Firm B -->
+        <rect x="198" y="34" width="132" height="200" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="264" y="60" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm B</text>
+        <text x="264" y="78" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="264" y="138" font-size="44" text-anchor="middle">🏪</text>
+        <text x="264" y="190" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="264" y="216" font-size="22" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
+
+        <!-- → arrow -->
+        <line x1="350" y1="134" x2="396" y2="134" stroke="#2563EB" stroke-width="2.6" marker-end="url(#hci-arr-blue)"/>
+
+        <!-- Combined firm -->
+        <rect x="406" y="34" width="180" height="200" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="496" y="60" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Combined firm</text>
+        <text x="496" y="78" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="496" y="142" font-size="60" text-anchor="middle">🏬</text>
+        <text x="496" y="190" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="496" y="218" font-size="26" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">20%</text>
+
+        <!-- Right-hand benefits column -->
+        <g font-family="Inter,sans-serif">
+          <circle cx="624" cy="62" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="624" y="68" font-size="16" text-anchor="middle">🥧</text>
+          <text x="650" y="58" font-size="13" font-weight="800" fill="#065F46">Larger market share</text>
+          <text x="650" y="75" font-size="11.5" fill="#475569">Bigger slice of the market.</text>
+
+          <circle cx="624" cy="132" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="624" y="138" font-size="15" text-anchor="middle">👥</text>
+          <text x="650" y="128" font-size="13" font-weight="800" fill="#065F46">Fewer rivals</text>
+          <text x="650" y="145" font-size="11.5" fill="#475569">Less competition in the industry.</text>
+
+          <circle cx="624" cy="202" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="624" y="208" font-size="15" text-anchor="middle">⚙️</text>
+          <text x="650" y="195" font-size="13" font-weight="800" fill="#065F46">Possible economies</text>
+          <text x="650" y="210" font-size="13" font-weight="800" fill="#065F46">of scale</text>
+          <text x="650" y="227" font-size="11.5" fill="#475569">Lower average costs.</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* conglomerateRiskHub – Card 5 of Business Growth. Four unrelated industry
+     tiles (Food / Travel / Media / Technology) around a central "One firm
+     spreading risk across different activities" pill. Mirrors the
+     firmFourLensesHub grammar. */
+  conglomerateRiskHub: `
+    <div class="crhub-4" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .crhub-4 .crh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:200px; row-gap:18px; position:relative; z-index:1; }
+        .crhub-4 .crh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .crhub-4 .crh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .crhub-4 .crh-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .crhub-4 .crh-ic { width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .crhub-4 .crh-t { font-size:14px; font-weight:800; line-height:1.2; letter-spacing:0.005em; }
+        .crhub-4 .crh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){ .crhub-4 .crh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .crhub-4 .crh-center{ position:static; transform:none; margin:6px auto; } .crhub-4 .crh-center-wrap{ order:99; display:flex; justify-content:center; } .crhub-4 .crh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;min-height:320px;">
+        <svg class="crh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="28" y1="32" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="72" y1="32" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="28" y1="68" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="72" y1="68" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+        </svg>
+        <div class="crh-grid">
+          <div class="crh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="crh-ic">🍴</div>
+            <div><div class="crh-t" style="color:#065F46;">Food</div><div class="crh-s">Different industry, different customers.</div></div>
+          </div>
+          <div class="crh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="crh-ic">✈️</div>
+            <div><div class="crh-t" style="color:#C2410C;">Travel</div><div class="crh-s">Different industry, different customers.</div></div>
+          </div>
+          <div class="crh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="crh-ic">▶️</div>
+            <div><div class="crh-t" style="color:#5B21B6;">Media</div><div class="crh-s">Different industry, different customers.</div></div>
+          </div>
+          <div class="crh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="crh-ic">💻</div>
+            <div><div class="crh-t" style="color:#1E3A8A;">Technology</div><div class="crh-s">Different industry, different customers.</div></div>
+          </div>
+        </div>
+        <div class="crh-center-wrap"><div class="crh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:172px;height:172px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+          <div style="font-size:28px;line-height:1;">🏢</div>
+          <div style="font-size:14px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;text-align:center;line-height:1.2;">One firm</div>
+          <div style="font-size:11px;color:#475569;margin-top:6px;text-align:center;line-height:1.3;">spreading risk across<br/>different activities</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* growthRoadblockers – Card 6 of Business Growth. Four numbered constraint
+     tiles separated by road-barrier dividers. Pure SVG so the barriers stay
+     pixel-aligned with the gaps. */
+  growthRoadblockers: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Road strip behind the tiles -->
+        <rect x="0" y="118" width="760" height="46" fill="#94A3B8"/>
+        <line x1="20" y1="141" x2="760" y2="141" stroke="#fff" stroke-width="2.5" stroke-dasharray="22 18"/>
+
+        <!-- Tile 1: Size of the market (green) -->
+        <rect x="14" y="20" width="160" height="240" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="40" cy="46" r="14" fill="#fff" stroke="#16A34A" stroke-width="1.8"/>
+        <text x="40" y="51" font-size="13" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+        <circle cx="94" cy="100" r="24" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="94" y="109" font-size="22" text-anchor="middle">👥</text>
+        <text x="94" y="160" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Size of the market</text>
+        <text x="94" y="200" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Demand may be</text>
+        <text x="94" y="216" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">too limited.</text>
+
+        <!-- Road barrier between 1-2 -->
+        <rect x="184" y="106" width="14" height="68" fill="#fff" stroke="#0B1426" stroke-width="1.4"/>
+        <rect x="184" y="115" width="14" height="10" fill="#F97316"/>
+        <rect x="184" y="135" width="14" height="10" fill="#F97316"/>
+        <rect x="184" y="155" width="14" height="10" fill="#F97316"/>
+        <rect x="186" y="174" width="10" height="58" fill="#64748B"/>
+
+        <!-- Tile 2: Access to finance (blue) -->
+        <rect x="208" y="20" width="160" height="240" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <circle cx="234" cy="46" r="14" fill="#fff" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="234" y="51" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+        <circle cx="288" cy="100" r="24" fill="#fff" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="288" y="108" font-size="22" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">£</text>
+        <text x="288" y="160" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Access to finance</text>
+        <text x="288" y="200" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Firms may struggle</text>
+        <text x="288" y="216" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">to raise funds.</text>
+
+        <!-- Road barrier between 2-3 -->
+        <rect x="378" y="106" width="14" height="68" fill="#fff" stroke="#0B1426" stroke-width="1.4"/>
+        <rect x="378" y="115" width="14" height="10" fill="#F97316"/>
+        <rect x="378" y="135" width="14" height="10" fill="#F97316"/>
+        <rect x="378" y="155" width="14" height="10" fill="#F97316"/>
+        <rect x="380" y="174" width="10" height="58" fill="#64748B"/>
+
+        <!-- Tile 3: Owner objectives (amber) -->
+        <rect x="402" y="20" width="160" height="240" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
+        <circle cx="428" cy="46" r="14" fill="#fff" stroke="#D97706" stroke-width="1.8"/>
+        <text x="428" y="51" font-size="13" font-weight="800" fill="#D97706" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+        <circle cx="482" cy="100" r="24" fill="#fff" stroke="#FDBA74" stroke-width="1.6"/>
+        <text x="482" y="109" font-size="22" text-anchor="middle">👤</text>
+        <text x="482" y="160" font-size="13" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Owner objectives</text>
+        <text x="482" y="194" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Some owners prefer</text>
+        <text x="482" y="210" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">control, quality of life,</text>
+        <text x="482" y="226" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">or lower risk.</text>
+
+        <!-- Road barrier between 3-4 -->
+        <rect x="572" y="106" width="14" height="68" fill="#fff" stroke="#0B1426" stroke-width="1.4"/>
+        <rect x="572" y="115" width="14" height="10" fill="#F97316"/>
+        <rect x="572" y="135" width="14" height="10" fill="#F97316"/>
+        <rect x="572" y="155" width="14" height="10" fill="#F97316"/>
+        <rect x="574" y="174" width="10" height="58" fill="#64748B"/>
+
+        <!-- Tile 4: Regulation (purple) -->
+        <rect x="596" y="20" width="160" height="240" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+        <circle cx="622" cy="46" r="14" fill="#fff" stroke="#7C3AED" stroke-width="1.8"/>
+        <text x="622" y="51" font-size="13" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+        <circle cx="676" cy="100" r="24" fill="#fff" stroke="#C4B5FD" stroke-width="1.6"/>
+        <text x="676" y="109" font-size="22" text-anchor="middle">🏛️</text>
+        <text x="676" y="160" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Regulation</text>
+        <text x="676" y="194" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Competition law,</text>
+        <text x="676" y="210" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">planning rules or</text>
+        <text x="676" y="226" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">licences can limit.</text>
+      </svg>
+    </div>
+  `,
+
 };

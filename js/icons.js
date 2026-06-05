@@ -12397,6 +12397,10 @@ window.ECONOS_ICONS = {
 
   srasCurveStatic: window.ECONOS_PPF.render(window.ECONOS_SRAS_CURVE_STATIC_SPEC),
 
+  srasBigPicture: window.ECONOS_PPF.render(window.ECONOS_SRAS_BIG_PICTURE_SPEC),
+  srasZones: window.ECONOS_PPF.render(window.ECONOS_SRAS_ZONES_SPEC),
+  srasShiftDirections: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_DIRECTIONS_SPEC),
+
   lrasViewsInteractive: window.ECONOS_PPF.render(window.ECONOS_LRAS_VIEWS_INTERACTIVE_SPEC),
 
   srasShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_INTERACTIVE_SPEC),

@@ -6,6 +6,40 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.67.0 – 2026-06-05
+
+### Short-run Aggregate Supply – full 6-card visual lesson (2.3.2)
+
+Rebuilt the `short-run-aggregate-supply` topic from 2 cards to a full
+interactive-first 6-card lesson, from a fresh set of mockups. Every card
+with a curve uses the standard stepped `interactiveDiagram` format (layered
+reveal + side description panel), not a static or full-width chart.
+
+- **Card 1 – SRAS, the big picture** (Decompose): new `srasBigPicture`
+  spec – a convex, steepening SRAS curve reading points A → B → C up the
+  curve (dots declared `on: 'SRAS'`, no hand-typed coordinates), plus
+  break-down-the-name tiles and a "why the short run matters" row.
+- **Card 2 – Why SRAS slopes up** (Flow chain): the price → profit → output
+  causal chain, a movement-along-SRAS interactive, and a Before/After
+  profit-per-unit comparison (£2 → £3).
+- **Card 3 – Spare capacity and bottlenecks** (Decompose): new `srasZones`
+  spec – one curve drawn in two tones (flat green spare-capacity range
+  steepening into an orange bottleneck range), revealing each zone in turn.
+- **Card 4 – Shifts in SRAS** (Interactive multi-state): new
+  `srasShiftDirections` spec – AD held fixed, SRAS swaps right (increase →
+  lower P, higher Y) or left (decrease → higher P, lower Y); equilibria
+  solved by `intersection`.
+- **Card 5 – Costs, shocks and stagflation** (Classical vs Keynesian):
+  reuses the cost-shock → stagflation interactive with the perspective
+  toggle, plus shifters and a "why stagflation matters" chain.
+- **Card 6 – The SRAS exam toolkit** (Evidence-then-verdict): what SRAS can
+  show, common mistakes, a 4-step "how to write it" chain, and useful
+  phrases.
+
+Three new chart specs wired through `icons.js`, all three shells and the
+`sw.js` precache; `lint:charts` clean (77 specs) and the snapshot manifest
+regenerated. `sw.js` cache bumped v363 → v364.
+
 ## 0.66.2 – 2026-06-05
 
 ### BoP C3 `bopDriverHub` – bigger hub diagram, restyled chain

@@ -756,14 +756,40 @@ window.ECONOS_TOPICS = [
 
   /* ---- Theme 3: Business Behaviour and the Labour Market ---- */
   {
+    id: 'sizes-and-types-of-firms',
+    name: 'Sizes & Types of Firms',
+    sub: 'Why firms stay small or grow, divorce of ownership and control, public vs private, profit vs not-for-profit',
+    color: '#f43f5e',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '3.1.1', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
     id: 'business-growth',
     name: 'Business Growth',
-    sub: 'Internal vs external growth, mergers, integration types',
+    sub: 'Organic vs external growth; vertical, horizontal and conglomerate integration; constraints',
     color: '#ef4444',
     available: { learn: true, link: false, land: false },
     boards: {
-      edexcel_a: { spec: '3.1.1', included: true },
+      edexcel_a: { spec: '3.1.2', included: true },
       edexcel_b: { spec: '2.1.1', included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'demergers',
+    name: 'Demergers',
+    sub: 'Reasons for demergers; impact on businesses, workers and consumers',
+    color: '#fb7185',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '3.1.3', included: true },
+      edexcel_b: { spec: null, included: true },
       aqa:       { spec: null, included: true },
       ocr:       { spec: null, included: true }
     }
@@ -925,6 +951,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'price-discrimination',
+    name: 'Price Discrimination',
+    sub: 'Third-degree price discrimination: conditions, the diagram, and costs vs benefits',
+    color: '#e11d48',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '3.4.5', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
     id: 'monopsony',
     name: 'Monopsony',
     sub: 'Single buyer of labour, MCL > W, wage gap, minimum wage',
@@ -999,6 +1038,19 @@ window.ECONOS_TOPICS = [
       edexcel_a: { spec: '3.6.1', included: true },
       edexcel_b: { spec: '4.2.2', included: true },
       aqa:       { spec: '4.1.8.7', included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
+    id: 'impact-of-government-intervention',
+    name: 'Impact of Government Intervention',
+    sub: 'Impact on prices, profit, efficiency, quality and choice; limits — regulatory capture and asymmetric information',
+    color: '#0d9488',
+    available: { learn: false, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '3.6.2', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: null, included: true },
       ocr:       { spec: null, included: true }
     }
   },

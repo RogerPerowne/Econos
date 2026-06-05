@@ -6,6 +6,44 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.3 – 2026-06-05
+
+### Theme 3 hubs – vertical centring + fixed-height tiles
+
+Follow-up to the hub elegance pass. Three fixes across all six hubs:
+
+- **Circle now truly centred vertically.** The relative wrapper carried a
+  `min-height` larger than the actual grid, so the absolutely-positioned
+  centre (at `top:50%` of the oversized wrapper) sat below the real
+  midpoint of the tile rows. Removed the `min-height` so the wrapper
+  equals the grid height and `top:50%` lands on the exact row midpoint.
+  (The 5-tile `firmSizeMeasuresHub` centres on the four quadrant tiles
+  via `top:32%`, the computed quadrant midpoint.)
+- **Connectors enter each tile at its vertical centre.** Moved the
+  connector start points and end-dots from the tiles' inner corners to
+  their mid-height (e.g. 23%/77% for a 2-row hub, 15%/50%/85% for a
+  3-row hub), so each dashed curve meets the box at its centre line.
+- **Fixed-height, slightly wider tiles.** Each tile now has an equal
+  `min-height` and `box-sizing:border-box`, so boxes no longer change
+  height with their wording (which kept the connector-entry points
+  stable). Column gaps trimmed a touch and max-width nudged up so the
+  tiles are a little wider. Tile content is vertically centred.
+
+### Service worker
+- Cache bumped to `econos-v373` (shared `icons.js` changed).
+
+## 0.73.2 – 2026-06-05
+
+### Theme 3 polish – drop the roadmap blocks from Card 1s
+
+Removed the "what you will learn" / "the story we will tell" step-flow
+roadmaps from the opening card of the Theme 3 topics — `sizes-and-types-
+of-firms` ("THE STORY WE WILL TELL") and `business-growth` ("WHAT YOU
+WILL LEARN"). They were a habit picked up during drafting that isn't
+needed and isn't consistent with how the other topics open. (Demergers
+Card 1 had no such block.) Pure content removal; the intro stage list
+already communicates the lesson roadmap.
+
 ## 0.73.1 – 2026-06-05
 
 ### Theme 3 hub visuals – elegance polish

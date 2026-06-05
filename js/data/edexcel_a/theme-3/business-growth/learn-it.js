@@ -72,19 +72,6 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '\u{1F6E1}️', head: 'Survival / power', body: 'Strengthen resilience and bargaining power.' }
       ],
 
-      flowTitle: 'WHAT YOU WILL LEARN',
-      flowEmoji: '\u{1F5FA}️',
-      flowSep: '→',
-      flow: [
-        { tone: 'green',  icon: '1', title: 'Big picture',       sub: '' },
-        { tone: 'amber',  icon: '2', title: 'Organic growth',    sub: '' },
-        { tone: 'purple', icon: '3', title: 'Vertical',          sub: '' },
-        { tone: 'blue',   icon: '4', title: 'Horizontal',        sub: '' },
-        { tone: 'green',  icon: '5', title: 'Conglomerate',      sub: '' },
-        { tone: 'amber',  icon: '6', title: 'Constraints',       sub: '' },
-        { tone: 'purple', icon: '7', title: 'The whole story',   sub: '' }
-      ],
-
       conclusion: { title: 'BIG IDEA', text: 'Growth is not one thing – firms must <strong>choose a route</strong>, weigh the benefits and risks, and judge whether bigger is actually better.' },
       examEdge: 'Strong answers <strong>define the growth method</strong>, explain why a firm chooses it, then evaluate the likely costs, benefits and constraints.'
     },

@@ -6,6 +6,59 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.72.0 – 2026-06-05
+
+### Business Growth (3.1.2) – Theme 3 topic 2 shipped
+
+Built the second Theme 3 topic from a fresh set of 7 mock-ups, covering all
+three 3.1.2 sub-points (organic growth, the three modes of integration, and
+constraints on growth). Pattern variety preserved across the lesson:
+Decompose → Flow → Decompose → Pair → Decompose → Spectrum → Comparison
+table — no two consecutive cards repeat.
+
+- **Card 1 – The big picture** (Decompose + tile grid + flow): new
+  `businessGrowthMapHub` (Organic / Vertical / Horizontal / Conglomerate
+  around "Business growth"), Why-firms-grow strip, 7-step roadmap.
+- **Card 2 – Organic growth** (Sequential flow chain): four-stage retained-
+  profit cycle (Retained profit → Invest → Sales rise → Firm grows), Why
+  firms like it, Drawbacks, Slower-but-safer summary row.
+- **Card 3 – Vertical integration** (Decompose + tile grid + pair): new
+  `verticalSupplyChain` (Raw → Components → Manufacturing → Distribution →
+  Retail with Backward / Forward axes), Why firms do it, The risks,
+  Backward vs Forward examples.
+- **Card 4 – Horizontal integration** (Side-by-side pair / Decompose +
+  tile grid + tile grid): new `horizontalCombineDiagram` (Firm A + Firm B
+  → Combined firm with 10% / 10% / 20% market-share badges), Why it
+  appeals, What could go wrong, When it works best.
+- **Card 5 – Conglomerate integration** (Decompose + tile grid + pair):
+  new `conglomerateRiskHub` (Food / Travel / Media / Technology around
+  "One firm spreading risk"), Why firms try it, The limits, Conglomerate
+  vs Horizontal pair.
+- **Card 6 – Constraints on business growth** (Spectrum / regime grid +
+  tile grid + flow): new `growthRoadblockers` (4 numbered road-blocker
+  tiles separated by traffic barriers), Why small can be rational,
+  Opportunity → Constraint → Choice → Outcome flow.
+- **Card 7 – The whole story** (Comparison table × 2 + flow): how-it-grows
+  and best-for table across the four routes; advantages-vs-disadvantages
+  table across the four routes; How-to-write-it 4-step procedure.
+
+### Renderer
+- Added `comparisonTable2` support so a single card can carry two distinct
+  comparison-table blocks (Card 7 needs both a 4-column route comparison
+  and a 2-column advantages-vs-disadvantages matrix). Refactored the
+  rendering into a small helper that handles either field.
+
+### Visual catalogue
+- Catalogued the 5 new visuals under hubs and firm/cost archetypes:
+  `businessGrowthMapHub`, `verticalSupplyChain`, `horizontalCombineDiagram`,
+  `conglomerateRiskHub`, `growthRoadblockers`. They share the
+  `firmFourLensesHub` / `demandDeterminantsHub` grammar so the Theme 3
+  topic family reads as one visual system.
+
+### Service worker
+- Cache bumped to `econos-v370` so the new icons.js, app.js and topic data
+  are guaranteed fresh on return visits.
+
 ## 0.71.0 – 2026-06-05
 
 ### Sizes & Types of Firms (3.1.1) – first Theme 3 topic shipped

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Calculate It station)
+   ECONOS – Link It engine (Calculate It station)
    Step-by-step worked calculation with answer checking.
    Supports numeric input and MCQ question types.
    ============================================================ */

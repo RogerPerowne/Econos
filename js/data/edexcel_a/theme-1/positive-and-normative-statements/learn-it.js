@@ -154,7 +154,7 @@ window.ECONOS_TOPIC = {
 };
 
 /* ============================================================
-   End-of-Learn-It quiz pool — Positive & Normative Statements.
+   End-of-Learn-It quiz pool – Positive & Normative Statements.
    New quiz for topic 1.1.2 (Edexcel A).
    ============================================================ */
 (function () {

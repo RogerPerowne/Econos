@@ -1,14 +1,14 @@
 /* ============================================================
-   ECONOS — Macro Conflicts & Trade-offs (Theme 2 · 2.6.4)
+   ECONOS – Macro Conflicts & Trade-offs (Theme 2 · 2.6.4)
    6 cards · APPLIED case studies. Built tightly to the ChatGPT
    design mockups. Theory + Phillips-curve mechanics live in the
    sister topic `macroeconomic-objectives-and-trade-offs` (2.6.1).
-     C1 Decompose a diagram       — the conflict lens (5-tile map)
-     C2 Predict-then-reveal       — diagnose the trade-off (3 cases)
-     C3 Sequential flow chain     — 1970s stagflation case
-     C4 Side-by-side pair         — the 2021–23 inflation surge case
-     C5 Side-by-side pair         — the supply-side escape route
-     C6 Evidence-then-verdict     — the A* verdict on any conflict
+     C1 Decompose a diagram       – the conflict lens (5-tile map)
+     C2 Predict-then-reveal       – diagnose the trade-off (3 cases)
+     C3 Sequential flow chain     – 1970s stagflation case
+     C4 Side-by-side pair         – the 2021–23 inflation surge case
+     C5 Side-by-side pair         – the supply-side escape route
+     C6 Evidence-then-verdict     – the A* verdict on any conflict
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -21,7 +21,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroMacroObjectives',
-    summary: 'Macroeconomic objectives often pull in different directions. This topic shows the theory of trade-offs in five real-world cases — 1970s stagflation, 2021–23 inflation, the 2010s current-account deficit, 2010–12 austerity, the net-zero pathway — and the framework for judging any policy that has to make a hard choice.',
+    summary: 'Macroeconomic objectives often pull in different directions. This topic shows the theory of trade-offs in five real-world cases – 1970s stagflation, 2021–23 inflation, the 2010s current-account deficit, 2010–12 austerity, the net-zero pathway – and the framework for judging any policy that has to make a hard choice.',
     doInThis: 'Six cards: the conflict lens (a map of five real UK trade-offs); diagnose three real policy cases; the 1970s stagflation case in depth; the 2021–23 inflation surge in real time; the supply-side escape route; and the four-dimensional A* verdict framework.',
     outcomes: [
       'Map five real UK trade-offs to the objectives they pit against each other',
@@ -31,7 +31,7 @@ window.ECONOS_TOPIC = {
       'Evaluate supply-side policy as the long-run escape route, with realistic caveats',
       'Structure A* essays around: objective advanced × compromised × magnitude × time horizon'
     ],
-    tip: 'The theory — what each objective is, what the Phillips curve says, what each structural trade-off mechanism is — lives in the sister topic, Macroeconomic Objectives. This topic is the case studies.',
+    tip: 'The theory – what each objective is, what the Phillips curve says, what each structural trade-off mechanism is – lives in the sister topic, Macroeconomic Objectives. This topic is the case studies.',
     stages: [
       { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
@@ -41,7 +41,7 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* CARD 1 — The conflict lens (Decompose a diagram). */
+    /* CARD 1 – The conflict lens (Decompose a diagram). */
     {
       id: 'conflict-lens',
       template: 'ad-interactive',
@@ -70,13 +70,13 @@ window.ECONOS_TOPIC = {
         { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation vs unemployment',
           body: 'The Phillips relationship: cooling demand to anchor inflation usually means accepting higher unemployment for a while. <strong>The BoE 2022–23 tightening cycle</strong> is the modern UK case.' },
         { tone: 'amber',  icon: '\u{1F4C8}', head: 'Growth vs inflation',
-          body: 'Stronger AD lifts real output AND the price level — the closer to capacity, the more leaks into prices. <strong>2021 post-COVID rebound</strong>: 7% growth, then CPI to 11%.' },
+          body: 'Stronger AD lifts real output AND the price level – the closer to capacity, the more leaks into prices. <strong>2021 post-COVID rebound</strong>: 7% growth, then CPI to 11%.' },
         { tone: 'purple', icon: '\u{1F30D}', head: 'Growth vs current account',
-          body: 'A growing economy sucks in imports faster than exports respond. Persistent UK current-account deficit reflects this — a structural cost of consumption-led growth.' },
+          body: 'A growing economy sucks in imports faster than exports respond. Persistent UK current-account deficit reflects this – a structural cost of consumption-led growth.' },
         { tone: 'blue',   icon: '\u{1F4B0}', head: 'Growth vs budget balance',
           body: 'Stimulus widens the deficit; austerity narrows it but slows growth. <strong>2010–15 UK austerity</strong> chose the latter; debt/GDP still rose because growth fell faster than spending.' },
         { tone: 'green',  icon: '\u{1F465}', head: 'Equity vs efficiency',
-          body: 'Progressive taxes and welfare reduce inequality but can blunt work incentives. Supply-side liberalisation does the opposite. No technical answer — a values choice.' },
+          body: 'Progressive taxes and welfare reduce inequality but can blunt work incentives. Supply-side liberalisation does the opposite. No technical answer – a values choice.' },
         { tone: 'rose',   icon: '\u{1F33F}', head: 'Growth vs environment',
           body: 'Higher GDP usually means higher emissions, resource use and pollution unless growth decouples. <strong>Net-zero by 2050</strong> requires a structural break in the historical correlation.' }
       ],
@@ -89,7 +89,7 @@ window.ECONOS_TOPIC = {
       examEdge: 'Strong essays identify the conflict before judging the policy.'
     },
 
-    /* CARD 2 — Diagnose the trade-off (Predict-then-reveal). */
+    /* CARD 2 – Diagnose the trade-off (Predict-then-reveal). */
     {
       id: 'diagnose-trade-off',
       template: 'ad-interactive',
@@ -155,7 +155,7 @@ window.ECONOS_TOPIC = {
       examEdge: 'The best answers name the trade-off explicitly, then judge whether the sacrifice was worth it.'
     },
 
-    /* CARD 3 — 1970s stagflation (Sequential flow chain). */
+    /* CARD 3 – 1970s stagflation (Sequential flow chain). */
     {
       id: 'stagflation-1970s',
       template: 'ad-interactive',
@@ -221,7 +221,7 @@ window.ECONOS_TOPIC = {
       examEdge: 'Stagflation is the classic case where the simple Phillips trade-off breaks down.'
     },
 
-    /* CARD 4 — 2021–23 inflation surge (Side-by-side hero with charts). */
+    /* CARD 4 – 2021–23 inflation surge (Side-by-side hero with charts). */
     {
       id: 'inflation-surge-2021-23',
       template: 'ad-interactive',
@@ -270,8 +270,8 @@ window.ECONOS_TOPIC = {
 
       summaryRow: [
         { tone: 'rose',  icon: '\u{1F4C8}', title: 'CPI inflation',  text: '<strong>0.7% (Feb 2021) → 11.1% peak (Oct 2022) → back to 2% (May 2024).</strong> The biggest UK inflation spike since the early 1980s.' },
-        { tone: 'amber', icon: '\u{1F4B0}', title: 'Bank Rate',     text: '<strong>0.1% (Dec 2021) → 5.25% peak (Aug 2023).</strong> 14 consecutive hikes — the fastest tightening cycle since the BoE gained independence in 1997.' },
-        { tone: 'blue',  icon: '\u{1F4C9}', title: 'Real GDP',      text: '<strong>−0.1% Q3 / −0.3% Q4 2023 — a technical recession.</strong> Mild, but it landed the inflation-output trade-off squarely on UK households.' }
+        { tone: 'amber', icon: '\u{1F4B0}', title: 'Bank Rate',     text: '<strong>0.1% (Dec 2021) → 5.25% peak (Aug 2023).</strong> 14 consecutive hikes – the fastest tightening cycle since the BoE gained independence in 1997.' },
+        { tone: 'blue',  icon: '\u{1F4C9}', title: 'Real GDP',      text: '<strong>−0.1% Q3 / −0.3% Q4 2023 – a technical recession.</strong> Mild, but it landed the inflation-output trade-off squarely on UK households.' }
       ],
 
       bottomTip: [
@@ -282,7 +282,7 @@ window.ECONOS_TOPIC = {
       examEdge: 'Strong essays weigh whether the fall in inflation justified the sacrifice in growth and household finances.'
     },
 
-    /* CARD 5 — Supply-side escape route (Side-by-side pair). */
+    /* CARD 5 – Supply-side escape route (Side-by-side pair). */
     {
       id: 'supply-side-escape',
       template: 'ad-interactive',
@@ -343,7 +343,7 @@ window.ECONOS_TOPIC = {
       examEdge: 'A* answers often combine short-run demand management with long-run supply-side reform.'
     },
 
-    /* CARD 6 — The A* verdict (Evidence-then-verdict). */
+    /* CARD 6 – The A* verdict (Evidence-then-verdict). */
     {
       id: 'a-star-verdict',
       template: 'ad-interactive',
@@ -440,18 +440,18 @@ window.ECONOS_TOPIC = {
         opts: [
           'Workers demand higher nominal wages',
           'SRAS shifts left',
-          'A supply shock — OPEC cuts supply and oil prices jump',
+          'A supply shock – OPEC cuts supply and oil prices jump',
           'Inflation expectations rise and the SRPC shifts up'
         ],
         ans:  2,
-        exp:  'The mechanism starts with the supply shock. SRAS then shifts left, causing output to fall and prices to rise — wage demands and the SRPC shift come later in the spiral.'
+        exp:  'The mechanism starts with the supply shock. SRAS then shifts left, causing output to fall and prices to rise – wage demands and the SRPC shift come later in the spiral.'
       },
       {
         type: 'mcq',
         q:    'Why is the demand-side toolkit so limited in a stagflation?',
         opts: [
           'Because monetary policy has no effect during oil shocks',
-          'Because tightening worsens recession while easing worsens inflation — neither lever helps both objectives',
+          'Because tightening worsens recession while easing worsens inflation – neither lever helps both objectives',
           'Because the BoE is not independent',
           'Because central banks cannot raise rates above 5%'
         ],
@@ -503,7 +503,7 @@ window.ECONOS_TOPIC = {
           { a: '2021–23 BoE rate hike',                    b: 'Inflation vs growth and unemployment' },
           { a: 'Fiscal stimulus + persistent CA deficit',  b: 'Growth vs external balance' },
           { a: 'Sub-NAIRU wages 2022',                     b: 'Unemployment vs inflation' },
-          { a: '1970s OPEC oil shock',                     b: 'Stagflation — Phillips curve breakdown' },
+          { a: '1970s OPEC oil shock',                     b: 'Stagflation – Phillips curve breakdown' },
           { a: '2010–12 austerity',                        b: 'Fiscal sustainability vs growth' },
           { a: 'Net-zero pathway today',                   b: 'Growth vs environment' }
         ]

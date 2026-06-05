@@ -1,17 +1,17 @@
 /* ==========================================================================
-   Supply-side Policies — Edexcel A Theme 2.6.3.
+   Supply-side Policies – Edexcel A Theme 2.6.3.
 
    Six-card Learn-It build assembled from Roger's mockup pipeline (six
    ChatGPT mockup images, 2026-06-04). Pedagogy:
-     C1 Sequential flow chain — supply-side overview, two families, outcomes
-     C2 Sequential flow chain — Market-based reforms (6 → 3 → 6 reform chain)
-     C3 Spectrum / regime grid — Interventionist productivity engine
-     C4 Side-by-side pair + EDL SRAS-shift-right hero — how it shifts AS
-     C5 Side-by-side pair — Strengths, limits and time lags
-     C6 Evidence-then-verdict — exam toolkit (diagnose, trace, judge)
+     C1 Sequential flow chain – supply-side overview, two families, outcomes
+     C2 Sequential flow chain – Market-based reforms (6 → 3 → 6 reform chain)
+     C3 Spectrum / regime grid – Interventionist productivity engine
+     C4 Side-by-side pair + EDL SRAS-shift-right hero – how it shifts AS
+     C5 Side-by-side pair – Strengths, limits and time lags
+     C6 Evidence-then-verdict – exam toolkit (diagnose, trace, judge)
 
    Completes the Theme 2.6 macro-policy trio (fiscal v0.46.0, monetary
-   v0.47.0). Third production use of EDL — Card 4's `sras-shift-right`
+   v0.47.0). Third production use of EDL – Card 4's `sras-shift-right`
    intent is the first non-AD shift used on shipped content.
    ========================================================================== */
 window.ECONOS_TOPIC = {
@@ -20,7 +20,7 @@ window.ECONOS_TOPIC = {
   theme:       'Theme 2 · The National and Global Economy',
   title:       'Supply-side Policies',
   estTime:     '~15 min',
-  goal:        'Raise productive capacity and efficiency through market-based and interventionist reforms — and explain why supply-side policy is slower but more sustainable than demand-side stimulus.',
+  goal:        'Raise productive capacity and efficiency through market-based and interventionist reforms – and explain why supply-side policy is slower but more sustainable than demand-side stimulus.',
   intro: {
     summary:  'Supply-side policy is the long-run productive-capacity toolkit. Step through the two families (market-based and interventionist), see how each shifts SRAS or LRAS, weigh the strengths and limits, and finish with the exam toolkit examiners reward.',
     doInThis: 'Walk the supply-side transmission from policy to capacity, distinguish market-based reforms from interventionist investment, see how each shifts SRAS or LRAS on the AD/AS diagram, weigh the time-lag trade-offs, and finish with the diagnose-trace-judge exam toolkit.',
@@ -32,7 +32,7 @@ window.ECONOS_TOPIC = {
       'Evaluate supply-side policy using time horizon, cost and bottleneck-fit',
       'Apply the four-step exam toolkit (identify, name, trace, evaluate)'
     ],
-    tip:      'Supply-side policy targets capacity, not spending. Always name the bottleneck first, then the channel — incentives, skills, competition, infrastructure or flexibility.',
+    tip:      'Supply-side policy targets capacity, not spending. Always name the bottleneck first, then the channel – incentives, skills, competition, infrastructure or flexibility.',
     stages: [
       { num: 1, name: 'Learn it', sub: '6 cards', state: 'current' },
       { num: 2, name: 'Link it',  sub: 'Coming soon', state: 'locked' },
@@ -42,7 +42,7 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ====================================================================
-       CARD 1 — Supply-side policy: the big picture
+       CARD 1 – Supply-side policy: the big picture
        Pattern: Sequential flow chain (policy → productivity → AS shifts →
        outcomes) + Side-by-side pair (two families) + Why-it-matters trio.
        ==================================================================== */
@@ -96,12 +96,12 @@ window.ECONOS_TOPIC = {
       tipLate: {
         icon: '⚠️',
         tone: 'rose',
-        text: '<strong>Common trap — "Supply-side = right-wing politics."</strong> No. Supply-side has <strong>two families</strong>. <em>Market-based</em> reforms (tax cuts, deregulation, privatisation) lean centre-right. <em>Interventionist</em> reforms (apprenticeship levy, HS2, R&amp;D funding, childcare) lean centre-left. <strong>Both raise productive capacity</strong>; the disagreement is about <em>which mechanism</em> works, not whether supply-side matters. Treating supply-side as a political slogan loses marks – treat it as a toolkit.'
+        text: '<strong>Common trap – "Supply-side = right-wing politics."</strong> No. Supply-side has <strong>two families</strong>. <em>Market-based</em> reforms (tax cuts, deregulation, privatisation) lean centre-right. <em>Interventionist</em> reforms (apprenticeship levy, HS2, R&amp;D funding, childcare) lean centre-left. <strong>Both raise productive capacity</strong>; the disagreement is about <em>which mechanism</em> works, not whether supply-side matters. Treating supply-side as a political slogan loses marks – treat it as a toolkit.'
       }
     },
 
     /* ====================================================================
-       CARD 2 — Market-based supply-side policies
+       CARD 2 – Market-based supply-side policies
        Pattern: Sequential flow chain (6 inputs → 3 mechanisms → 6 outcomes)
        + 3-tile when-supporters-like-it + Side-by-side gains-vs-concerns pair.
        The 3-layer reform chain in the mockup is rendered as causes (6 tools)
@@ -187,11 +187,11 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 3 — Interventionist supply-side policies
+       CARD 3 – Interventionist supply-side policies
        Pattern: Spectrum / regime grid (the productivity-engine inputs and
        outputs) + Why-government-may-act trio + 4-tile limits grid.
        Mockup shows hub-and-spoke; rendered here as 5-col input grid + flow
-       to outputs — same teaching content without the radial layout.
+       to outputs – same teaching content without the radial layout.
        ==================================================================== */
     {
       id: 'interventionist-supply-side',
@@ -255,16 +255,16 @@ window.ECONOS_TOPIC = {
         portraitKey: 'economistMazzucato',
         tone: 'amber',
         label: 'Economist insight: Mazzucato on the entrepreneurial state',
-        quote: 'Far from being the inert, lumbering bureaucracy of caricature, the state has often been the lead risk-taker — funding the kind of long-shot innovation that markets, focused on short-run returns, would never bankroll alone.',
+        quote: 'Far from being the inert, lumbering bureaucracy of caricature, the state has often been the lead risk-taker – funding the kind of long-shot innovation that markets, focused on short-run returns, would never bankroll alone.',
         attribution: 'Mariana Mazzucato, <em>The Entrepreneurial State</em> (2013)'
       }
     },
 
     /* ====================================================================
-       CARD 4 — How supply-side policy shifts the economy
+       CARD 4 – How supply-side policy shifts the economy
        Pattern: Decompose-a-diagram (EDL sras-shift-right hero) + Side-by-side
        SRAS-vs-LRAS pair + Sequential transmission chain + Demand-side
-       contrast. Third production use of EDL — first non-AD intent.
+       contrast. Third production use of EDL – first non-AD intent.
        ==================================================================== */
     {
       id: 'supply-side-ad-as',
@@ -280,12 +280,12 @@ window.ECONOS_TOPIC = {
       // supply-side policy on TWO timescales: SHORT run (lower unit costs shift
       // supply right today) and LONG run (productive capacity / potential
       // output rises). The schools agree on the short-run cost effect but
-      // disagree on the long run — Classical: capacity rise automatically
+      // disagree on the long run – Classical: capacity rise automatically
       // raises output; Keynesian: it raises potential, but actual output lags
       // until demand catches up.
       interactiveDiagram: {
         svgKey: 'supplySideSrLr',
-        label: 'SUPPLY-SIDE POLICY — SHORT RUN VS LONG RUN',
+        label: 'SUPPLY-SIDE POLICY – SHORT RUN VS LONG RUN',
         emoji: '📊',
         layers: [
           'c-lras1-solid', 'c-lras1-dash',
@@ -301,49 +301,49 @@ window.ECONOS_TOPIC = {
             label: 'Starting point', show: ['c-lras1-solid'],
             classical: {
               tone: 'purple',
-              head: 'Classical view — at potential at E₁.',
-              body: ['AD meets SRAS₁ on the <strong>vertical LRAS₁</strong> at E₁: output is at potential Yf₁, price level P₁.', 'In the long run the economy always sits on LRAS — so the only way to raise output sustainably is to move LRAS.'] },
+              head: 'Classical view – at potential at E₁.',
+              body: ['AD meets SRAS₁ on the <strong>vertical LRAS₁</strong> at E₁: output is at potential Yf₁, price level P₁.', 'In the long run the economy always sits on LRAS – so the only way to raise output sustainably is to move LRAS.'] },
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — spare capacity at E₁.',
-              body: ['AD meets the reverse-L AS₁ on its <strong>rising range</strong>, at E₁ — output Y₁ sits below capacity Yf₁.', 'There are idle resources: actual output is limited by demand, not by supply.'] }
+              head: 'Keynesian view – spare capacity at E₁.',
+              body: ['AD meets the reverse-L AS₁ on its <strong>rising range</strong>, at E₁ – output Y₁ sits below capacity Yf₁.', 'There are idle resources: actual output is limited by demand, not by supply.'] }
           },
           {
             label: 'Short run: costs fall',
             show: ['c-lras1-solid', 'c-sras1-dash', 'c-sras2', 'c-e2', 'c-sr-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-sr-arrow'],
             classical: {
               tone: 'green',
-              head: 'Short run — lower costs shift SRAS right to SRAS₂.',
-              body: ['Cheaper energy, lower business taxes, lighter regulation cut unit costs <em>today</em>.', 'Output rises and the price level falls (E₂) — but output is now <strong>above potential Yf₁</strong>, so the boost is temporary until capacity catches up.'] },
+              head: 'Short run – lower costs shift SRAS right to SRAS₂.',
+              body: ['Cheaper energy, lower business taxes, lighter regulation cut unit costs <em>today</em>.', 'Output rises and the price level falls (E₂) – but output is now <strong>above potential Yf₁</strong>, so the boost is temporary until capacity catches up.'] },
             keynesian: {
               tone: 'cyan',
-              head: 'Short run — lower costs drop the price floor.',
-              body: ['Cheaper inputs lower firms\' unit costs, so the reverse-L\'s <strong>price floor falls</strong> (AS₁ → AS₂ — a downward move).', 'The economy moves to E₂: a <em>modest</em> rise in output and a lower price level — close to capacity, much of the cost cut shows up as lower prices rather than more output.'] }
+              head: 'Short run – lower costs drop the price floor.',
+              body: ['Cheaper inputs lower firms\' unit costs, so the reverse-L\'s <strong>price floor falls</strong> (AS₁ → AS₂ – a downward move).', 'The economy moves to E₂: a <em>modest</em> rise in output and a lower price level – close to capacity, much of the cost cut shows up as lower prices rather than more output.'] }
           },
           {
             label: 'Long run: capacity rises',
             show: ['c-lras1-dash', 'c-sras1-dash', 'c-sras2', 'c-e2', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2-dash', 'k-as3', 'k-e3', 'k-lr-arrow'],
             classical: {
               tone: 'purple',
-              head: 'Long run — capacity rises: LRAS₁ → LRAS₂.',
-              body: ['Deeper reforms (skills, infrastructure, R&amp;D) raise <strong>productive capacity</strong> — potential output moves from Yf₁ to Yf₂.', 'LRAS shifts right to meet E₂: the higher output is now <em>backed by real capacity</em>, not just lower costs.'] },
+              head: 'Long run – capacity rises: LRAS₁ → LRAS₂.',
+              body: ['Deeper reforms (skills, infrastructure, R&amp;D) raise <strong>productive capacity</strong> – potential output moves from Yf₁ to Yf₂.', 'LRAS shifts right to meet E₂: the higher output is now <em>backed by real capacity</em>, not just lower costs.'] },
             keynesian: {
               tone: 'green',
-              head: 'Long run — capacity slides parallel-right (AS₃).',
+              head: 'Long run – capacity slides parallel-right (AS₃).',
               body: ['Now the capacity wall itself moves right: AS₂ → AS₃ is a <strong>parallel rightward shift</strong> (the floor stays put, potential rises to Yf₂).', 'Output rises again to E₃ and the price level falls further as the economy moves down AD.'] }
           },
           {
             label: 'The verdict', show: ['c-lras1-dash', 'c-sras1-dash', 'c-sras2', 'c-e2', 'c-lras2', 'c-lr-arrow', 'c-growth', 'k-as1-dash', 'k-as2-dash', 'k-as3', 'k-e3', 'k-lr-arrow', 'k-gap', 'k-yf2'],
             classical: {
               tone: 'green',
-              head: 'Verdict — sustainable growth, Yf₁ → Yf₂.',
-              body: ['Real output is permanently higher and the price level lower: faster growth <em>with</em> lower inflation.', 'This is supply-side policy\'s prize — and the only way to get it.'],
-              analysis: 'Classical verdict: supply-side policy is the <strong>only</strong> lever that raises long-run output. Cost cuts give a short-run lift; genuine capacity gains shift LRAS right and lock in faster growth with lower inflation. Demand-side policy can only move you <em>along</em> a given LRAS — it can\'t move LRAS itself.' },
+              head: 'Verdict – sustainable growth, Yf₁ → Yf₂.',
+              body: ['Real output is permanently higher and the price level lower: faster growth <em>with</em> lower inflation.', 'This is supply-side policy\'s prize – and the only way to get it.'],
+              analysis: 'Classical verdict: supply-side policy is the <strong>only</strong> lever that raises long-run output. Cost cuts give a short-run lift; genuine capacity gains shift LRAS right and lock in faster growth with lower inflation. Demand-side policy can only move you <em>along</em> a given LRAS – it can\'t move LRAS itself.' },
             keynesian: {
               tone: 'rose',
-              head: 'Verdict — potential rose, but output LAGS it.',
-              body: ['Reform lifted potential to Yf₂ — but with demand unchanged, <strong>actual output Y₃ sits below the new potential</strong>.', 'A fresh output gap opens (rose arrow): the extra capacity goes partly unused until demand rises to meet it.'],
-              analysis: 'Keynesian verdict: supply-side reform helps, but in a demand-constrained economy it raises <em>potential</em> faster than actual output. Building capacity is not enough — <strong>someone has to buy the output</strong>. The full benefit needs demand-side support alongside it; on its own, supply-side policy can leave the economy below its new potential.' }
+              head: 'Verdict – potential rose, but output LAGS it.',
+              body: ['Reform lifted potential to Yf₂ – but with demand unchanged, <strong>actual output Y₃ sits below the new potential</strong>.', 'A fresh output gap opens (rose arrow): the extra capacity goes partly unused until demand rises to meet it.'],
+              analysis: 'Keynesian verdict: supply-side reform helps, but in a demand-constrained economy it raises <em>potential</em> faster than actual output. Building capacity is not enough – <strong>someone has to buy the output</strong>. The full benefit needs demand-side support alongside it; on its own, supply-side policy can leave the economy below its new potential.' }
           }
         ]
       },
@@ -358,7 +358,7 @@ window.ECONOS_TOPIC = {
       right: {
         tone: 'purple', icon: '🌄', iconStyle: 'circle',
         label: 'LRAS effects (slower, deeper)',
-        text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">LRAS shifts right because <strong>factor quality or quantity rises</strong> — the productive frontier expands.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Skills and education</li><li>Infrastructure investment</li><li>Innovation and R&amp;D</li><li>Higher labour participation</li></ul>'
+        text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">LRAS shifts right because <strong>factor quality or quantity rises</strong> – the productive frontier expands.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Skills and education</li><li>Infrastructure investment</li><li>Innovation and R&amp;D</li><li>Higher labour participation</li></ul>'
       },
 
       flowTitle: 'THE TRANSMISSION CHAIN',
@@ -387,7 +387,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 — Strengths, limits and time lags
+       CARD 5 – Strengths, limits and time lags
        Pattern: Side-by-side pair (strengths vs limits) + Sequential flow
        chain (time horizon) + 4-tile what-determines-success grid.
        ==================================================================== */
@@ -441,8 +441,8 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 6 — The supply-side policy exam toolkit
-       Pattern: Evidence-then-verdict — 6-tile what-it-can-solve grid, 3-tile
+       CARD 6 – The supply-side policy exam toolkit
+       Pattern: Evidence-then-verdict – 6-tile what-it-can-solve grid, 3-tile
        common-mistakes warning, 4-step how-to-write-it flow, 4-tile
        judgement questions. Mirror role of fiscal/monetary Card 6, but
        framed as a diagnostic toolkit rather than strengths-and-limits.
@@ -508,11 +508,11 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 7 — DEEPEN: UK CONTEXT — The UK productivity puzzle
+       CARD 7 – DEEPEN: UK CONTEXT – The UK productivity puzzle
        Pattern: Decompose-a-diagram (chart-engine `ukProductivityPuzzle`
        hero) + Sequential transmission flow + 6-tile "why it may have
        happened" causes + 4-tile "why it matters" causes2 + 2-panel
-       "what could help" pair. An appendix / deepen card — not part of
+       "what could help" pair. An appendix / deepen card – not part of
        the numbered Learn It sequence.
        ==================================================================== */
     {
@@ -528,7 +528,7 @@ window.ECONOS_TOPIC = {
       visualKey: 'ukProductivityPuzzle',
       visualLabel: 'THE PUZZLE',
       visualEmoji: '🧩',
-      visualCaption: 'UK output per hour matched the pre-crisis trend until 2008, then flattened. The shaded gap is the "lost momentum" — productivity that would have happened on the old trajectory but didn\'t.',
+      visualCaption: 'UK output per hour matched the pre-crisis trend until 2008, then flattened. The shaded gap is the "lost momentum" – productivity that would have happened on the old trajectory but didn\'t.',
 
       flowTitle: 'WHAT THE PUZZLE MEANS',
       flowEmoji: '🔗',

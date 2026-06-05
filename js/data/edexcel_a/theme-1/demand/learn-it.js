@@ -41,13 +41,13 @@ window.ECONOS_TOPIC = {
         views: [
           { label: 'The demand curve', tone: 'blue', show: [],
             head: 'The demand curve',
-            body: 'Demand shows how much consumers are willing and able to buy at each price — the whole downward-sloping curve <strong>D</strong>.' },
+            body: 'Demand shows how much consumers are willing and able to buy at each price – the whole downward-sloping curve <strong>D</strong>.' },
           { label: 'A higher price → less', tone: 'amber', show: ['layer-a'],
             head: 'At a higher price (A)',
             body: 'At the higher price of <strong>£10</strong> (point A), quantity demanded is just <strong>20</strong>.' },
           { label: 'A lower price → more', tone: 'green', show: ['layer-b'],
             head: 'At a lower price (B)',
-            body: 'At the lower price of <strong>£6</strong> (point B), quantity demanded rises to <strong>40</strong> — the law of demand.' }
+            body: 'At the lower price of <strong>£6</strong> (point B), quantity demanded rises to <strong>40</strong> – the law of demand.' }
         ]
       },
       causes: [
@@ -88,10 +88,10 @@ window.ECONOS_TOPIC = {
             body: 'At a high price (A, £10 → 20), the good is dear relative to substitutes. As it gets cheaper, consumers <strong>switch towards it</strong>, so quantity demanded rises.' },
           { label: 'Real-income effect', tone: 'amber', show: ['layer-b'],
             head: '② Real-income effect',
-            body: 'A lower price (B, £8 → 30) means each £ stretches further — real purchasing power rises, so consumers can <strong>afford more</strong>.' },
+            body: 'A lower price (B, £8 → 30) means each £ stretches further – real purchasing power rises, so consumers can <strong>afford more</strong>.' },
           { label: 'Diminishing marginal utility', tone: 'purple', show: ['layer-c'],
             head: '③ Diminishing marginal utility',
-            body: 'Each extra unit gives <strong>less satisfaction</strong>, so consumers only buy more (C, £6 → 40) if the price falls — which is exactly the downward slope.' }
+            body: 'Each extra unit gives <strong>less satisfaction</strong>, so consumers only buy more (C, £6 → 40) if the price falls – which is exactly the downward slope.' }
         ]
       },
       causes: [
@@ -110,7 +110,7 @@ window.ECONOS_TOPIC = {
       causes2Label: 'Why it matters',
       causes2Emoji: '💡',
       causes2Style: 'tinted-flat',
-      tipLate: { icon: '⭐', tone: 'purple', head: 'The deepest reason', text: '<strong>Diminishing marginal utility</strong> is the foundational reason demand curves slope down. Each extra unit gives less satisfaction, so consumers only choose to buy more if the price falls. Substitution and real-income effects sit on top of this — DMU is the bedrock that makes the law of demand hold even when no clear substitute or income change is involved.' },
+      tipLate: { icon: '⭐', tone: 'purple', head: 'The deepest reason', text: '<strong>Diminishing marginal utility</strong> is the foundational reason demand curves slope down. Each extra unit gives less satisfaction, so consumers only choose to buy more if the price falls. Substitution and real-income effects sit on top of this – DMU is the bedrock that makes the law of demand hold even when no clear substitute or income change is involved.' },
       examEdge: 'When explaining the slope, name at least one mechanism – the <strong>substitution effect</strong>, the <strong>real-income effect</strong>, or <strong>diminishing marginal utility</strong>. The spec (1.2.2) specifically requires you to link DMU to the demand-curve shape, so this is the safest move. Rare Giffen/Veblen exceptions don’t overturn the basic demand story.'
     },
 
@@ -169,11 +169,11 @@ window.ECONOS_TOPIC = {
             head: 'Starting point',
             body: 'We begin on demand curve <strong>D₁</strong>. At each price, consumers buy the quantity shown by the curve.' },
           { label: 'Shift right (increase)', tone: 'green', show: ['layer-incr'],
-            head: 'Shift right — demand increases',
-            body: 'A favourable non-price change — higher income, stronger tastes, a dearer substitute — shifts demand right to <strong>D₂</strong>. At <em>every</em> price, more is demanded.' },
+            head: 'Shift right – demand increases',
+            body: 'A favourable non-price change – higher income, stronger tastes, a dearer substitute – shifts demand right to <strong>D₂</strong>. At <em>every</em> price, more is demanded.' },
           { label: 'Shift left (decrease)', tone: 'rose', show: ['layer-decr'],
-            head: 'Shift left — demand decreases',
-            body: 'An adverse change — lower income, weaker tastes, a dearer complement — shifts demand left to <strong>D₃</strong>. At <em>every</em> price, less is demanded.' }
+            head: 'Shift left – demand decreases',
+            body: 'An adverse change – lower income, weaker tastes, a dearer complement – shifts demand left to <strong>D₃</strong>. At <em>every</em> price, less is demanded.' }
         ]
       },
       examEdge: 'A shift is <strong>not</strong> the same as a movement along the curve: only the good’s own price moves us along D₁. Always state whether the question describes a movement or a shift before you explain the outcome.'
@@ -226,7 +226,7 @@ window.ECONOS_TOPIC = {
       ],
       flowTitle: 'How to think about it',
       flowEmoji: '🧭',
-      examEdge: 'Use the terms carefully: <strong>normal/inferior</strong> refer to <em>income</em> changes (YED); <strong>substitutes/complements</strong> refer to the <em>relationship between goods</em> (XED). Here the focus is the <strong>mechanism</strong> — income↑ shifts a normal good\'s demand right, an inferior good\'s left; a substitute\'s price rise shifts demand for this good right. The <em>magnitude</em> of the response (how big the shift is) is the elasticity topic next (1.2.3) — don\'t mix the two.'
+      examEdge: 'Use the terms carefully: <strong>normal/inferior</strong> refer to <em>income</em> changes (YED); <strong>substitutes/complements</strong> refer to the <em>relationship between goods</em> (XED). Here the focus is the <strong>mechanism</strong> – income↑ shifts a normal good\'s demand right, an inferior good\'s left; a substitute\'s price rise shifts demand for this good right. The <em>magnitude</em> of the response (how big the shift is) is the elasticity topic next (1.2.3) – don\'t mix the two.'
     },
 
     /* ================================================================
@@ -284,7 +284,7 @@ window.ECONOS_TOPIC = {
         title: 'The big takeaway',
         text: 'If you can separate movements (own-price) from shifts (a named determinant), you can explain almost any demand question clearly – using exact language: quantity demanded, extension, contraction, increase in demand, decrease in demand.'
       },
-      examEdge: 'Top answers use exact language and always state whether the curve moves or we move on the curve before explaining the outcome. The Level 3→4 step: <strong>predict knock-on effects on related markets</strong> — if demand for coffee shifts, what happens to demand for milk (complement) or tea (substitute), and on to derived demand for baristas? Tracing the chain earns evaluation marks.',
+      examEdge: 'Top answers use exact language and always state whether the curve moves or we move on the curve before explaining the outcome. The Level 3→4 step: <strong>predict knock-on effects on related markets</strong> – if demand for coffee shifts, what happens to demand for milk (complement) or tea (substitute), and on to derived demand for baristas? Tracing the chain earns evaluation marks.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]

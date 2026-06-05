@@ -1,5 +1,5 @@
 /* ============================================================
-   Shifts Interactive — engine spec for shiftsInteractive
+   Shifts Interactive – engine spec for shiftsInteractive
    (Price-determination card 3). Layered spec for the
    `interactiveDiagram` block: one curve shifts, the equilibrium moves.
 

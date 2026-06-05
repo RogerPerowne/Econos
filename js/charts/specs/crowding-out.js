@@ -1,6 +1,6 @@
 /* ============================================================
-   Crowding Out — engine spec for crowdingOutInteractive.
-   Government Spending topic — loanable funds market.
+   Crowding Out – engine spec for crowdingOutInteractive.
+   Government Spending topic – loanable funds market.
 
    Three-layer reveal of the crowding-out mechanism:
      base       → S, D₁, E₁ at (Q₁, R₁)
@@ -8,14 +8,14 @@
                   rises to R₂; E₂ at (Q₂, R₂)
      view 2     → Qₚ marker shows where private investment lands
                   on D₁ at the new R₂. Crowded-out shaded band
-                  between Qₚ and Q₁ — the private investment
+                  between Qₚ and Q₁ – the private investment
                   displaced by the government's borrowing.
 
    `inverseLayers: ['idl-old-solid']` swaps D₁ solid for dashed
    when any view becomes active.
 
    Pedagogical note: the SIZE of crowding-out is the Classical
-   vs Keynesian fault line — Classical economists say it's
+   vs Keynesian fault line – Classical economists say it's
    strong (close to 100%), Keynesians say it's weak in recession
    (idle resources mean no upward pressure on r). The diagram
    shows the mechanism; the magnitude debate lives in the card text.
@@ -42,11 +42,11 @@
     },
 
     curves: [
-      // Supply of loanable funds — always visible
+      // Supply of loanable funds – always visible
       { d: 'M 0.070,0.045 L 0.935,0.902',
         tone: 'blue', label: 'S', strokeWidth: 2.5,
         labelDx: 6, labelDy: 4, anchor: 'start' },
-      // Base D₁ solid — hidden once any view becomes active
+      // Base D₁ solid – hidden once any view becomes active
       { d: 'M 0.070,0.902 L 0.935,0.045',
         tone: 'green', label: 'D₁', strokeWidth: 2.5,
         labelDx: 6, labelDy: -4, anchor: 'start',
@@ -86,7 +86,7 @@
         markerEnd: 'econos-arrow-amber', buffer: 0, layer: 'idl-1' }
     ],
 
-    // Layer 2: crowded-out band between Qₚ and Q₁ — visual cue that
+    // Layer 2: crowded-out band between Qₚ and Q₁ – visual cue that
     // private investment fell by Q₁ − Qₚ when r rose.
     boxedLabels: [
       { x: Qp.x, y: 0.030, w: E1.x - Qp.x, h: 0.040,

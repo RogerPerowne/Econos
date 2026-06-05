@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It · Section C renderer (single essay)
+   ECONOS – Land It · Section C renderer (single essay)
    ============================================================ */
 
 (function () {
@@ -286,7 +286,7 @@
         });
       }
 
-      /* continue / finish — save timing + attempted status */
+      /* continue / finish – save timing + attempted status */
       var continueBtn = document.getElementById('js-continue-btn');
       if (continueBtn) {
         continueBtn.addEventListener('click', function () {

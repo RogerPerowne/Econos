@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It intro page renderer
+   ECONOS – Land It intro page renderer
    Configurator: student picks sections A / B / C to build their session.
    Uses partial re-render on pill click (no full page re-render).
    ============================================================ */
@@ -89,7 +89,7 @@
     }
 
     function estTime(marks) {
-      if (marks === 0) { return '—'; }
+      if (marks === 0) { return '–'; }
       var mins = Math.round((marks * 1.2) / 10) * 10;
       if (mins < 60) { return mins + ' min'; }
       var h = Math.floor(mins / 60);

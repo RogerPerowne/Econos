@@ -40,13 +40,13 @@ window.ECONOS_TOPIC = {
         views: [
           { label: 'The supply curve', tone: 'blue', show: [],
             head: 'The supply curve',
-            body: 'Supply shows how much producers are willing and able to sell at each price — the whole upward-sloping curve <strong>S</strong>.' },
+            body: 'Supply shows how much producers are willing and able to sell at each price – the whole upward-sloping curve <strong>S</strong>.' },
           { label: 'A lower price → less', tone: 'amber', show: ['layer-a'],
             head: 'At a lower price (A)',
             body: 'At the lower price of <strong>£6</strong> (point A), quantity supplied is just <strong>20</strong>.' },
           { label: 'A higher price → more', tone: 'green', show: ['layer-b'],
             head: 'At a higher price (B)',
-            body: 'At the higher price of <strong>£10</strong> (point B), quantity supplied rises to <strong>40</strong> — the law of supply.' }
+            body: 'At the higher price of <strong>£10</strong> (point B), quantity supplied rises to <strong>40</strong> – the law of supply.' }
         ]
       },
       causes: [
@@ -82,7 +82,7 @@ window.ECONOS_TOPIC = {
         views: [
           { label: 'Profit incentive', tone: 'green', show: ['layer-a'],
             head: '① Profit incentive',
-            body: 'At a higher price (from A, £6 → 20), each unit sold earns more — a higher price raises potential revenue and profit, so firms want to <strong>sell more</strong>.' },
+            body: 'At a higher price (from A, £6 → 20), each unit sold earns more – a higher price raises potential revenue and profit, so firms want to <strong>sell more</strong>.' },
           { label: 'Rising marginal cost', tone: 'amber', show: ['layer-b'],
             head: '② Rising marginal cost',
             body: 'Extra units (B, £8 → 30) often need overtime, less-efficient inputs or stretched capacity. Firms need a <strong>higher price</strong> to cover this rising marginal cost.' },
@@ -162,11 +162,11 @@ window.ECONOS_TOPIC = {
             head: 'Starting point',
             body: 'We begin on supply curve <strong>S₁</strong>. At each price, producers offer the quantity shown by the curve.' },
           { label: 'Shift right (increase)', tone: 'green', show: ['layer-incr'],
-            head: 'Shift right — supply increases',
-            body: 'A favourable non-price change — lower costs, better technology, a subsidy — shifts supply right to <strong>S₂</strong>. At <em>every</em> price, more is supplied.' },
+            head: 'Shift right – supply increases',
+            body: 'A favourable non-price change – lower costs, better technology, a subsidy – shifts supply right to <strong>S₂</strong>. At <em>every</em> price, more is supplied.' },
           { label: 'Shift left (decrease)', tone: 'rose', show: ['layer-decr'],
-            head: 'Shift left — supply decreases',
-            body: 'An adverse change — higher costs, an indirect tax, a supply shock — shifts supply left to <strong>S₃</strong>. At <em>every</em> price, less is supplied.' }
+            head: 'Shift left – supply decreases',
+            body: 'An adverse change – higher costs, an indirect tax, a supply shock – shifts supply left to <strong>S₃</strong>. At <em>every</em> price, less is supplied.' }
         ]
       },
       examEdge: 'A shift is <strong>not</strong> the same as a movement along the curve: only the good’s own price moves us along S₁. Always state whether the question describes a movement or a shift before you explain the outcome.'
@@ -216,7 +216,7 @@ window.ECONOS_TOPIC = {
       ],
       flowTitle: 'How to think about it',
       flowEmoji: '🧭',
-      examEdge: 'Link the determinant to <strong>unit cost</strong>, then to supply — that causal chain (determinant → cost → supply shift) is what earns the marks. <strong>Timing matters:</strong> the shift logic above describes the long-run direction, but in practice supply responses take time — especially for capital-intensive goods (housing, oil) where the long run may be years. The full short-run vs long-run distinction is the elasticity-of-supply topic next (spec 1.2.5).'
+      examEdge: 'Link the determinant to <strong>unit cost</strong>, then to supply – that causal chain (determinant → cost → supply shift) is what earns the marks. <strong>Timing matters:</strong> the shift logic above describes the long-run direction, but in practice supply responses take time – especially for capital-intensive goods (housing, oil) where the long run may be years. The full short-run vs long-run distinction is the elasticity-of-supply topic next (spec 1.2.5).'
     },
 
     /* ================ CARD 7 – Joint & competing supply (applied extension) ================ */
@@ -257,10 +257,10 @@ window.ECONOS_TOPIC = {
         }
       ],
       howToThink: {
-        left:  { icon: '🧩', tone: 'green',  head: 'Joint supply',    body: 'Produced together — more of one means more of the other.' },
-        right: { icon: '🧩', tone: 'purple', head: 'Competing supply', body: 'Share scarce resources — more of one can mean less of the other.' }
+        left:  { icon: '🧩', tone: 'green',  head: 'Joint supply',    body: 'Produced together – more of one means more of the other.' },
+        right: { icon: '🧩', tone: 'purple', head: 'Competing supply', body: 'Share scarce resources – more of one can mean less of the other.' }
       },
-      examEdge: 'Joint supply is a favourite context question: "Beef demand rises — what happens to leather prices?" Walk the chain: beef price up → beef output rises (extension) → more leather produced as a by-product → leather supply shifts right → leather price falls.'
+      examEdge: 'Joint supply is a favourite context question: "Beef demand rises – what happens to leather prices?" Walk the chain: beef price up → beef output rises (extension) → more leather produced as a by-product → leather supply shifts right → leather price falls.'
     },
 
     /* ================ CARD 8 – The supply exam toolkit ================ */

@@ -15,7 +15,7 @@
      ─────────────────────────────────────────────────────────────
      Learn It URLs carry the card position as a self-describing
      token (e.g. `/learn-it/demand-pull-inflation`). The slug is
-     derived from each card's title via window.ECONOS_CARD_SLUG —
+     derived from each card's title via window.ECONOS_CARD_SLUG –
      the same helper the build-time route generator uses, so the
      URLs round-trip. Computed once on boot. */
   const CARDS = (T && Array.isArray(T.cards)) ? T.cards : [];
@@ -44,7 +44,7 @@
   } catch (e) { /* keep default */ }
 
   /* Push the current view's slug back into the URL via
-     replaceState — no history entry, no flash, bookmarks
+     replaceState – no history entry, no flash, bookmarks
      work. Called after every navigation that changes
      currentView. */
   function syncUrlToView() {
@@ -160,7 +160,7 @@
 
   /* Render a content icon value. A 'sym:<name>' string becomes an inline
      Material Symbol (via window.ECONOS_SYM, see js/icons/material-symbols.js);
-     anything else — an emoji or raw markup — is passed through unchanged. This
+     anything else – an emoji or raw markup – is passed through unchanged. This
      is the one-field way for data authors to drop in a Material Symbol:
        { icon: 'sym:rocket_launch' }     // a Material Symbol
        { icon: '🚀' }                    // an emoji (unchanged)
@@ -175,7 +175,7 @@
 
   /* Branches: three static layouts share one helper so the data-file
      `branchesLayout` field stays the only knob. All three render Inter
-     throughout — Fraunces is reserved for page titles. */
+     throughout – Fraunces is reserved for page titles. */
   function renderBranches(branches, layout, idPrefix) {
     if (!Array.isArray(branches) || !branches.length) return '';
     const items = branches.map((b, i) => ({
@@ -206,7 +206,7 @@
         </div>`).join('');
       return `<div class="branch-quotes" style="margin-bottom:24px;">${tiles}</div>`;
     }
-    // Default 'stack' — open tone-stripe cards, no reveal pill.
+    // Default 'stack' – open tone-stripe cards, no reveal pill.
     const cards = items.map(it => `
       <div class="branch-cal branch-cal--${it.tone}">
         <div class="branch-cal__badge">${it.n}</div>
@@ -1255,7 +1255,7 @@
     // A bare 1fr carries an implicit minmax(auto, 1fr) floor, so a column
     // whose content has a wide min-content size (a long unbreakable word
     // or example string) refuses to shrink and the columns render unequal
-    // — a CSS grid blowout. minmax(0, …) lets every track shrink evenly.
+    // – a CSS grid blowout. minmax(0, …) lets every track shrink evenly.
     if (n === 4) return 'repeat(2, minmax(0, 1fr))';
     if (n === 7 || n === 8) return 'repeat(4, minmax(0, 1fr))';
     if (n === 9) return 'repeat(3, minmax(0, 1fr))';
@@ -1278,7 +1278,7 @@
       const uid = idList.length > 1 ? `${baseUid}_${idIdx}` : baseUid;
       const layers = id.layers || [];
       // Layers shown by default and hidden once the user steps past the base
-      // view (vi > 0). Mirror of the chart spec's `inverseLayers` — used by
+      // view (vi > 0). Mirror of the chart spec's `inverseLayers` – used by
       // shift charts where the original solid curve must vanish once a dashed
       // copy is overlaid. The engine's CSS approach keys off `.sv-show-N`
       // classes the SPA never sets, so the reveal must be driven here too.
@@ -1297,7 +1297,7 @@
         return perspectives && persp && v[persp] ? v[persp] : v;
       }
       if (id.label) html += genSecLabel(id.emoji || '📊', id.label);
-      // Perspective pill strip — renders only when a perspectives array
+      // Perspective pill strip – renders only when a perspectives array
       // is declared. Each button toggles the wrapper's `.chart-<name>`
       // class and re-shows the matching description/analysis block.
       const perspectiveStrip = perspectives ? perspectives.map((p, pi) => {
@@ -1383,7 +1383,7 @@
             // All step descriptions are stacked into ONE grid cell and
             // toggled by visibility (not display), so the description column
             // reserves the height of the TALLEST step and never resizes as
-            // the user clicks through — the stage stays put. `data-id-stacked`
+            // the user clicks through – the stage stays put. `data-id-stacked`
             // tells the click handlers to flip visibility rather than display.
             return `<div data-id-desc="${i}"${perspAttr} data-id-stacked="1" style="grid-area:1/1;display:flex;visibility:${isActive ? 'visible' : 'hidden'};align-items:flex-start;gap:12px;">
               ${marker}
@@ -1473,7 +1473,7 @@
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
         if (c.causesStyle === 'numbered-rows') {
           /* Top-position numbered-rows: same horizontal-row layout as the
-             causesFirst branch (line 4544 area) — numbered circle + icon +
+             causesFirst branch (line 4544 area) – numbered circle + icon +
              title + body, tone-coloured left bar. */
           const cycle = ['green','blue','purple','amber','rose','slate'];
           const tone = pt || PATTERN_TONES[cycle[i % cycle.length]];
@@ -1700,7 +1700,7 @@
     //   Pattern: diagramPanel: { diagramKey, title?, intro?, bullets?:[string], steps?:[{head,body}], tone?, layout?:'side'|'stacked', position?: 'after-causes'|'after-table' }
     //   By default the panel renders HERE (before causes/table). `position`
     //   defers it so a card can match a mockup where the worked example sits
-    //   after the causes tiles and/or the table — mirroring the `position`
+    //   after the causes tiles and/or the table – mirroring the `position`
     //   option comparison already supports.
     let deferredDiagramPanel = '';
     const diagramPanelDeferred = c.diagramPanel && (c.diagramPanel.position === 'after-causes' || c.diagramPanel.position === 'after-table');
@@ -1742,7 +1742,7 @@
             <span>${b}</span>
           </li>`).join('')}</ul>`;
       // diagramPanel title ALWAYS renders as the standard section-label
-      // (icon + uppercase eyebrow + divider rule) ABOVE the panel — the
+      // (icon + uppercase eyebrow + divider rule) ABOVE the panel – the
       // same chrome every other section on the card uses. The old inline
       // 17px bold heading inside the panel was a one-off style that
       // existed nowhere else; removing it restores coherence and tightens
@@ -2090,7 +2090,7 @@
       const eq = c.economistQuote;
       const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
       // Economist-insight blocks always use the pale amber treatment for
-      // visual consistency across the topic — the `tone` field on
+      // visual consistency across the topic – the `tone` field on
       // `economistQuote` is preserved for backwards compatibility but
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
@@ -2127,7 +2127,7 @@
     }
 
     // Optional hero visual rendered right after the body block (rather than
-    // at the top via visualKey) — for cards where a definition/formula
+    // at the top via visualKey) – for cards where a definition/formula
     // should lead and a diagram follows it (e.g. YED "classify" spectrum).
     if (c.bodyVisualKey && I[c.bodyVisualKey]) {
       if (c.bodyVisualLabel) content += genSecLabel(c.bodyVisualEmoji || '📊', c.bodyVisualLabel);
@@ -2357,7 +2357,7 @@
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
         if (c.causesStyle === 'numbered-rows') {
           /* Top-position numbered-rows: same horizontal-row layout as the
-             causesFirst branch (line 4544 area) — numbered circle + icon +
+             causesFirst branch (line 4544 area) – numbered circle + icon +
              title + body, tone-coloured left bar. */
           const cycle = ['green','blue','purple','amber','rose','slate'];
           const tone = pt || PATTERN_TONES[cycle[i % cycle.length]];
@@ -2632,7 +2632,7 @@
     //   Pattern: versusList: { label?, emoji?, vs?, rows: [{ heading?, left, right, note? }] }
     //   Each side is either simple { label, sub, tone } or rich
     //   { name, premise, reason, icon?, tone } (avatar + name + dashed-divider
-    //   "Reason:" line — the "Economist A vs Economist B" treatment).
+    //   "Reason:" line – the "Economist A vs Economist B" treatment).
     if (c.versusList && Array.isArray(c.versusList.rows) && c.versusList.rows.length) {
       const vl = c.versusList;
       if (vl.label) content += genSecLabel(vl.emoji || '⚔️', vl.label);
@@ -2674,16 +2674,16 @@
     // Branches – tone-coded callouts rendered after main content as a
     // "now zoom out" framing block. The `branchesLayout` field picks
     // the visual treatment:
-    //   stack    (default) — vertical list of tone-strip cards. Good
+    //   stack    (default) – vertical list of tone-strip cards. Good
     //                        default when the items are independent.
-    //   quotes             — pull-quote tiles with an oversized tone
+    //   quotes             – pull-quote tiles with an oversized tone
     //                        opening mark. Suits sequential principles
     //                        or aphorisms ("Opportunity cost is...").
-    //   triptych           — N equal-width columns on desktop, stacks
+    //   triptych           – N equal-width columns on desktop, stacks
     //                        on mobile. Best when the items are
     //                        parallel-structure (the three questions,
     //                        the three trade-offs). Reads structurally.
-    // All three render STATICALLY now — the tap-to-reveal pattern was
+    // All three render STATICALLY now – the tap-to-reveal pattern was
     // dropped; content is elegant enough on its own. Body uses Inter
     // throughout per Roger's typography rule (Fraunces reserved for
     // page titles + chart accents).
@@ -2824,7 +2824,7 @@
           </div>`;
         }
         // Optional `tone` + `icon` on a row paint a tone-tinted, icon-led
-        // label cell — used when the row labels are categories worth
+        // label cell – used when the row labels are categories worth
         // colour-coding (e.g. market failures in the gov-intervention
         // matrix). Falls back to the plain label when neither is set.
         const rt = r.tone ? PATTERN_TONES[r.tone] : null;
@@ -3105,7 +3105,7 @@
        Learn / Link / Land 3-stage progress widget. Pass T.intro.stages
        directly so per-topic copy overrides (e.g. "Recap the three causes")
        carry through. On the intro/cover card Learn It should show as
-       'available' — the user hasn't started yet, so neither 'done' nor
+       'available' – the user hasn't started yet, so neither 'done' nor
        'current' is accurate. */
     const introStages = T.intro.stages
       ? T.intro.stages.map((s, i) =>
@@ -3299,7 +3299,7 @@
   function renderCardDiagnose(c) {
     // Render the optional comparison table with the standard .cmp-table
     // component (shared with the generic rows/colA table) so diagnose
-    // tables match every other table site-wide — dark header row, striping,
+    // tables match every other table site-wide – dark header row, striping,
     // and mobile row-stacking via .cmp-table__key. Header[0] is the
     // row-label column; the rest are data columns.
     const tbl = c.table || {};
@@ -3441,7 +3441,7 @@
         const eq = c.economistQuote;
         const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
         // Economist-insight blocks always use the pale amber treatment for
-      // visual consistency across the topic — the `tone` field on
+      // visual consistency across the topic – the `tone` field on
       // `economistQuote` is preserved for backwards compatibility but
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
@@ -3733,7 +3733,7 @@
         const eq = c.economistQuote;
         const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
         // Economist-insight blocks always use the pale amber treatment for
-      // visual consistency across the topic — the `tone` field on
+      // visual consistency across the topic – the `tone` field on
       // `economistQuote` is preserved for backwards compatibility but
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
@@ -4963,7 +4963,7 @@
     if (window.ECONOS_DEV && hasSteps) {
       c.steps.forEach((s) => {
         const len = (s.text || '').replace(/<[^>]+>/g, '').length;
-        if (len > 280) console.warn('[econos:ad-interactive] step "' + s.key + '" body is ' + len + ' chars (>280) — trim to keep stage height stable');
+        if (len > 280) console.warn('[econos:ad-interactive] step "' + s.key + '" body is ' + len + ' chars (>280) – trim to keep stage height stable');
       });
     }
 
@@ -5008,7 +5008,7 @@
       })() : ''}
 
       ${c.causesPosition === 'top' && c.causes && c.causes.length ? (() => {
-        /* Early causes for ad-interactive — when c.causesPosition === 'top',
+        /* Early causes for ad-interactive – when c.causesPosition === 'top',
            render the causes block here (before visualKey) so the topic can
            introduce WHAT each item is before the hero visualises them.
            Supports numbered-rows and numbered styles. */
@@ -5685,7 +5685,7 @@
         const eq = c.economistQuote;
         const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
         // Economist-insight blocks always use the pale amber treatment for
-      // visual consistency across the topic — the `tone` field on
+      // visual consistency across the topic – the `tone` field on
       // `economistQuote` is preserved for backwards compatibility but
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
@@ -6168,12 +6168,12 @@
     // On the last card, compute the next-topic destination and a
     // "Take the quiz" inline trigger when window.ECONOS_QUIZ is
     // present (the quiz pool now lives in learn.js, not at a
-    // standalone /quiz/ URL — see v0.4.0 refactor).
+    // standalone /quiz/ URL – see v0.4.0 refactor).
     let nextTopicId = null, nextTopicName = null;
     const hasQuiz = !!(window.ECONOS_QUIZ && Array.isArray(window.ECONOS_QUIZ.questions)
       && window.ECONOS_QUIZ.questions.length);
     if (isLast) {
-      /* Finishing Learn It always offers "Next topic" — sideways jump
+      /* Finishing Learn It always offers "Next topic" – sideways jump
          to the next learnable topic. Roger's call: the next-stage
          buttons (Link it / Land it) for the SAME topic surfaced as
          "Link it" / "Land it" labels were confusing; learners want a
@@ -6366,7 +6366,7 @@
   }
 
   function handleClick(e) {
-    // Branches are static now — no flap toggle here.
+    // Branches are static now – no flap toggle here.
 
     const target = e.target.closest('[data-action], [data-card-idx]');
     if (!target) return;
@@ -6378,7 +6378,7 @@
     if (action === 'start-session') {
       /* Placeholder topics (non-Edexcel-A boards on topics with no
          real content yet) ship cards: []. Don't try to render
-         card 0 — there isn't one. The user's instruction was
+         card 0 – there isn't one. The user's instruction was
          "nothing loads" when there are no cards. */
       if (!T.cards || !T.cards.length) return;
       currentView = 0;
@@ -6404,7 +6404,7 @@
          loaded as a defer script in learn.html.
 
          Wrap quiz-root inside renderShell() so the sidebar + topbar
-         persist — Roger's brief: "put the left and right menus on
+         persist – Roger's brief: "put the left and right menus on
          the quiz sections the way they are shown for the topic
          sections". The quiz also gets its OWN right-rail with the
          Learn/Link/Land stages widget so the right-hand menu doesn't
@@ -6641,14 +6641,14 @@
       const explicitShow = target.dataset.idShow ? JSON.parse(target.dataset.idShow) : null;
 
       // Use opacity + visibility (not display) so the engine's CSS
-      // transition kicks in — layer reveals cross-fade in/out instead
+      // transition kicks in – layer reveals cross-fade in/out instead
       // of pop-cutting. visibility flips after the fade so hidden
       // layers don't trap pointer events mid-transition.
       //
       // `display: block` is set inline to override any `display:none`
       // baked into a hand-rolled SVG's inline <style> block (the
       // toolkit-rendered specs use opacity-based hide rules and don't
-      // need this — but legacy theme-1 charts still emit display rules
+      // need this – but legacy theme-1 charts still emit display rules
       // and inline opacity alone can't override `display:none`).
       const setLayerVisible = (cls, visible) => {
         idRoot.querySelectorAll('.' + cls).forEach(el => {
@@ -6664,7 +6664,7 @@
         setLayerVisible(cls, explicitShow ? explicitShow.includes(cls) : i < vi);
       });
       // Inverse layers: shown on the base view (vi === 0), hidden once the
-      // user steps forward — so a solid "before" curve gives way to its
+      // user steps forward – so a solid "before" curve gives way to its
       // dashed overlay.
       const inverseLayers = JSON.parse(idRoot.dataset.idInverse || '[]');
       inverseLayers.forEach(cls => setLayerVisible(cls, vi === 0));
@@ -6698,7 +6698,7 @@
       // an SVG element inside the chart (e.g. <g class="chart-axes">),
       // whose className is an SVGAnimatedString rather than a string,
       // so calling .match() on it threw TypeError and killed the whole
-      // handler — descs and analysis never updated. Use getAttribute
+      // handler – descs and analysis never updated. Use getAttribute
       // which returns a plain string for both HTML and SVG elements,
       // and prefer the wrapper div whose class STARTS with "chart-"
       // (the perspective marker) over any nested chart-* class.
@@ -6715,7 +6715,7 @@
       idRoot.querySelectorAll('[data-id-desc]').forEach(d => {
         const matchesPersp = !d.dataset.idPersp || d.dataset.idPersp === activePersp;
         const on = parseInt(d.dataset.idDesc, 10) === vi && matchesPersp;
-        // Stacked descriptions reserve max height — flip visibility, not display.
+        // Stacked descriptions reserve max height – flip visibility, not display.
         if (d.dataset.idStacked) d.style.visibility = on ? 'visible' : 'hidden';
         else d.style.display = on ? 'flex' : 'none';
       });
@@ -6754,7 +6754,7 @@
       idRoot.querySelectorAll('[data-id-desc]').forEach(d => {
         const matches = parseInt(d.dataset.idDesc, 10) === activeVi &&
                         (!d.dataset.idPersp || d.dataset.idPersp === newPersp);
-        // Stacked descriptions reserve max height — flip visibility, not display.
+        // Stacked descriptions reserve max height – flip visibility, not display.
         if (d.dataset.idStacked) d.style.visibility = matches ? 'visible' : 'hidden';
         else d.style.display = matches ? 'flex' : 'none';
       });
@@ -6781,7 +6781,7 @@
 
   render();
   /* Normalise the URL on first paint so a bookmark to `/learn-it`
-     (no sub-route) becomes `/learn-it/intro` — and any URL slug
+     (no sub-route) becomes `/learn-it/intro` – and any URL slug
      we couldn't resolve falls back cleanly to intro. */
   syncUrlToView();
 })();

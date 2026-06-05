@@ -55,7 +55,7 @@ window.ECONOS_TOPIC = {
       // Classical ↔ Keynesian toggle. The toggle IS the lesson here:
       // the two schools disagree about the SHAPE of AS itself.
       //   Classical: SRAS (sloping) + LRAS (vertical at Yf)
-      //   Keynesian: reverse-L AS — flat floor, bottleneck, vertical at Yf
+      //   Keynesian: reverse-L AS – flat floor, bottleneck, vertical at Yf
       // View 1 shows just the AS curve(s); View 2 adds AD + the
       // equilibrium point E₁ at the schools' (different) intersections.
       interactiveDiagram: {
@@ -70,11 +70,11 @@ window.ECONOS_TOPIC = {
             label: 'The AS curve', show: [],
             classical: {
               tone: 'purple',
-              head: 'Classical view — two curves, two horizons.',
+              head: 'Classical view – two curves, two horizons.',
               body: ['<strong>SRAS</strong> slopes upward: in the short run, sticky wages mean rising prices boost profit margins so firms supply more.', '<strong>LRAS</strong> is vertical at Yf: in the long run, output is determined by capacity, not the price level.'] },
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — one reverse-L curve.',
+              head: 'Keynesian view – one reverse-L curve.',
               body: ['A single AS curve with three ranges: a <strong>flat floor</strong> in deep slack (idle resources, unit costs unchanged), a <strong>bottleneck</strong> as the economy approaches capacity, and <strong>vertical</strong> at Yf.', 'Output is demand-constrained until capacity binds.'] }
           },
           {
@@ -82,12 +82,12 @@ window.ECONOS_TOPIC = {
             classical: {
               tone: 'purple',
               head: 'Long-run equilibrium at LRAS.',
-              body: ['AD meets the AS framework at E₁ — in the long run, on the <strong>vertical LRAS at Yf</strong>.', 'Whatever AD does, output ends at Yf; the price level adjusts.'],
+              body: ['AD meets the AS framework at E₁ – in the long run, on the <strong>vertical LRAS at Yf</strong>.', 'Whatever AD does, output ends at Yf; the price level adjusts.'],
               analysis: 'Classical reading: long-run output is anchored to capacity. The only sustainable way to raise Y is to shift LRAS (supply-side policy). Demand-side levers move the price level around, not real output.' },
             keynesian: {
               tone: 'amber',
               head: 'Equilibrium on the rising range.',
-              body: ['AD meets reverse-L AS on its <strong>rising range</strong> at E₁ — output Y₁ sits <em>below</em> capacity Yf.', 'Actual output is constrained by demand, not by supply.'],
+              body: ['AD meets reverse-L AS on its <strong>rising range</strong> at E₁ – output Y₁ sits <em>below</em> capacity Yf.', 'Actual output is constrained by demand, not by supply.'],
               analysis: 'Keynesian reading: the economy can settle at less than full employment. Boosting AD raises real output (with some inflation as you near capacity); supply-side reform raises potential, but actual output still needs demand to follow.' }
           }
         ]
@@ -217,7 +217,7 @@ window.ECONOS_TOPIC = {
             classical: {
               head: 'The classical view holds that LRAS is vertical at Yf.',
               body: ['With full flexibility of wages and prices, markets self-adjust.', 'Therefore, in the long run there is no trade-off between inflation and output.'],
-              analysis: 'Output is determined entirely by capacity. Demand shocks change the price level but not Y in the long run — money is neutral.'
+              analysis: 'Output is determined entirely by capacity. Demand shocks change the price level but not Y in the long run – money is neutral.'
             },
             keynesian: {
               head: 'Keynesians argue LRAS has a flat range, a rising range and a vertical capacity ceiling.',
@@ -275,12 +275,12 @@ window.ECONOS_TOPIC = {
       tip: { icon: '✅', tone: 'green', text: 'SRAS shifts left when costs rise – and right when costs fall or productivity improves.' },
 
       // Stepped interactive diagram with Classical/Keynesian toggle. The
-      // same cost shock seen through two AS models — Classical (sloping
+      // same cost shock seen through two AS models – Classical (sloping
       // SRAS shifts left/up; LR self-correction noted in V3 analysis) vs
       // Keynesian (reverse-L price floor rises; no self-correction).
       interactiveDiagram: {
         svgKey: 'srasShiftLeftClassicalKeynesian',
-        label: 'COST SHOCK — SRAS SHIFTS LEFT',
+        label: 'COST SHOCK – SRAS SHIFTS LEFT',
         emoji: '📊',
         layers: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
         inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
@@ -291,12 +291,12 @@ window.ECONOS_TOPIC = {
             label: 'Base equilibrium', show: [],
             classical: {
               tone: 'purple',
-              head: 'Classical view — at potential at E₁.',
-              body: ['AD meets SRAS₁ on the <strong>vertical LRAS</strong> at E₁ — output at potential Yf, price level P₁.', 'Both labour and goods markets clear in the long run.'] },
+              head: 'Classical view – at potential at E₁.',
+              body: ['AD meets SRAS₁ on the <strong>vertical LRAS</strong> at E₁ – output at potential Yf, price level P₁.', 'Both labour and goods markets clear in the long run.'] },
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — near capacity at E₁.',
-              body: ['AD meets the reverse-L AS₁ on its <strong>steep range</strong> near capacity Yf, at E₁ with price level P₁.', 'The price floor — set by unit costs — sits below P₁.'] }
+              head: 'Keynesian view – near capacity at E₁.',
+              body: ['AD meets the reverse-L AS₁ on its <strong>steep range</strong> near capacity Yf, at E₁ with price level P₁.', 'The price floor – set by unit costs – sits below P₁.'] }
           },
           {
             label: 'Cost shock',
@@ -304,11 +304,11 @@ window.ECONOS_TOPIC = {
             classical: {
               tone: 'rose',
               head: 'SRAS shifts left to SRAS₂.',
-              body: ['Higher unit costs — wages, energy, raw materials, import prices — make every output level more expensive to produce.', 'The whole SRAS curve slides <strong>up-and-left</strong> in a parallel shift to SRAS₂.'] },
+              body: ['Higher unit costs – wages, energy, raw materials, import prices – make every output level more expensive to produce.', 'The whole SRAS curve slides <strong>up-and-left</strong> in a parallel shift to SRAS₂.'] },
             keynesian: {
               tone: 'rose',
               head: 'The price floor rises (AS₁ → AS₂).',
-              body: ['Cost rises lift the reverse-L\'s <strong>price floor</strong> — costs at every output level have gone up.', 'Capacity Yf is unchanged: the vertical wall stays put, but the horizontal floor moves up.'] }
+              body: ['Cost rises lift the reverse-L\'s <strong>price floor</strong> – costs at every output level have gone up.', 'Capacity Yf is unchanged: the vertical wall stays put, but the horizontal floor moves up.'] }
           },
           {
             label: 'Stagflation',
@@ -316,13 +316,13 @@ window.ECONOS_TOPIC = {
             classical: {
               tone: 'rose',
               head: 'Short-run stagflation at E₂.',
-              body: ['New equilibrium E₂: <strong>P₂ &gt; P₁ AND Y₂ &lt; Yf</strong> — higher prices, lower output, the defining feature of a supply shock.', 'A recessionary gap (Yf − Y₂) opens up.'],
-              analysis: 'Classical verdict: the stagflation is a <em>short-run</em> position. Because Y₂ &lt; Yf, unemployment rises and wage pressure eases — SRAS gradually slides back rightward toward SRAS₁, returning the economy to Yf at the original price level P₁. The cost of disinflation is patience, not policy. Anchoring expectations matters because faster wage adjustment = quicker return.' },
+              body: ['New equilibrium E₂: <strong>P₂ &gt; P₁ AND Y₂ &lt; Yf</strong> – higher prices, lower output, the defining feature of a supply shock.', 'A recessionary gap (Yf − Y₂) opens up.'],
+              analysis: 'Classical verdict: the stagflation is a <em>short-run</em> position. Because Y₂ &lt; Yf, unemployment rises and wage pressure eases – SRAS gradually slides back rightward toward SRAS₁, returning the economy to Yf at the original price level P₁. The cost of disinflation is patience, not policy. Anchoring expectations matters because faster wage adjustment = quicker return.' },
             keynesian: {
               tone: 'rose',
               head: 'Stagflation at E₂.',
-              body: ['E₂ sits up-and-left of E₁: <strong>P₂ &gt; P₁, Y₂ &lt; Y₁</strong> — higher prices, lower output simultaneously.', 'Real output is now further below capacity Yf.'],
-              analysis: 'Keynesian verdict: with <strong>sticky wages and prices</strong>, the higher cost floor is persistent. The stagflation does <em>not</em> self-correct — the economy stays at E₂ until policy acts. And the policy is hard: tightening AD fights inflation but deepens the output loss; loosening AD supports output but embeds the higher price level. This is the cost-push policy dilemma.' }
+              body: ['E₂ sits up-and-left of E₁: <strong>P₂ &gt; P₁, Y₂ &lt; Y₁</strong> – higher prices, lower output simultaneously.', 'Real output is now further below capacity Yf.'],
+              analysis: 'Keynesian verdict: with <strong>sticky wages and prices</strong>, the higher cost floor is persistent. The stagflation does <em>not</em> self-correct – the economy stays at E₂ until policy acts. And the policy is hard: tightening AD fights inflation but deepens the output loss; loosening AD supports output but embeds the higher price level. This is the cost-push policy dilemma.' }
           }
         ]
       },
@@ -375,11 +375,11 @@ window.ECONOS_TOPIC = {
       // verdicts on whether actual output follows:
       //   Classical: economy lands at the new Yf₂ at lower P (clean).
       //   Keynesian: capacity wall slides right but actual output rises
-      //     only along the AS rising range — a fresh output gap opens
+      //     only along the AS rising range – a fresh output gap opens
       //     between Y₂ and Yf₂ until demand catches up.
       interactiveDiagram: {
         svgKey: 'lrasShiftRightClassicalKeynesian',
-        label: 'CAPACITY EXPANSION — LRAS SHIFTS RIGHT',
+        label: 'CAPACITY EXPANSION – LRAS SHIFTS RIGHT',
         emoji: '📊',
         layers: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
         inverseLayers: ['c-lras1-solid', 'k-as1-solid'],
@@ -390,12 +390,12 @@ window.ECONOS_TOPIC = {
             label: 'Starting point', show: [],
             classical: {
               tone: 'purple',
-              head: 'Classical view — at potential at E₁.',
-              body: ['AD meets vertical LRAS₁ at E₁ — output Yf₁, price level P₁.', 'In the long run the economy always sits on LRAS.'] },
+              head: 'Classical view – at potential at E₁.',
+              body: ['AD meets vertical LRAS₁ at E₁ – output Yf₁, price level P₁.', 'In the long run the economy always sits on LRAS.'] },
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — below capacity at E₁.',
-              body: ['AD meets the reverse-L AS₁ on its <strong>rising range</strong>, at E₁ — output Y₁ sits below capacity Yf₁.', 'Actual output is demand-limited; there is idle capacity.'] }
+              head: 'Keynesian view – below capacity at E₁.',
+              body: ['AD meets the reverse-L AS₁ on its <strong>rising range</strong>, at E₁ – output Y₁ sits below capacity Yf₁.', 'Actual output is demand-limited; there is idle capacity.'] }
           },
           {
             label: 'Capacity rises',
@@ -403,7 +403,7 @@ window.ECONOS_TOPIC = {
             classical: {
               tone: 'green',
               head: 'LRAS₁ → LRAS₂.',
-              body: ['Better technology, more capital, higher productivity, a bigger or more-skilled labour force — any genuine capacity gain shifts LRAS rightward.', 'Potential output rises from Yf₁ to Yf₂.'] },
+              body: ['Better technology, more capital, higher productivity, a bigger or more-skilled labour force – any genuine capacity gain shifts LRAS rightward.', 'Potential output rises from Yf₁ to Yf₂.'] },
             keynesian: {
               tone: 'green',
               head: 'The capacity wall slides parallel-right.',
@@ -415,11 +415,11 @@ window.ECONOS_TOPIC = {
             classical: {
               tone: 'purple',
               head: 'Output up, prices down at E₂.',
-              body: ['AD meets LRAS₂ at E₂: <strong>Y₂ = Yf₂ &gt; Yf₁ AND P₂ &lt; P₁</strong>.', 'Sustainable, non-inflationary growth — the supply-side ideal.'],
-              analysis: 'Classical verdict: this is the prize. Real capacity gains raise long-run output AND lower the price level; the AD shift you don\'t need is the one that just inflates. Demand-side levers can\'t reach this corner — only supply-side reform can.' },
+              body: ['AD meets LRAS₂ at E₂: <strong>Y₂ = Yf₂ &gt; Yf₁ AND P₂ &lt; P₁</strong>.', 'Sustainable, non-inflationary growth – the supply-side ideal.'],
+              analysis: 'Classical verdict: this is the prize. Real capacity gains raise long-run output AND lower the price level; the AD shift you don\'t need is the one that just inflates. Demand-side levers can\'t reach this corner – only supply-side reform can.' },
             keynesian: {
               tone: 'rose',
-              head: 'Potential rises — output LAGS it.',
+              head: 'Potential rises – output LAGS it.',
               body: ['E₂ sits on AS₂\'s rising range: actual Y₂ rises and P falls, but <strong>Y₂ &lt; Yf₂</strong>.', 'A fresh output gap (rose arrow): the new capacity goes partly unused until demand catches up.'],
               analysis: 'Keynesian verdict: capacity expansion helps, but it is not enough on its own. With AD unchanged, real output rises only modestly; <strong>someone has to buy the extra output</strong>. The full benefit of supply-side reform needs demand-side support alongside it.' }
           }
@@ -436,9 +436,9 @@ window.ECONOS_TOPIC = {
         { tone: 'green', icon: '🌐', head: 'Demographics &amp; migration', body: 'Ageing population shrinks the labour force; net inward migration of working-age adults expands it.' },
         { tone: 'green', icon: '🏭', head: 'Capital stock',       body: 'More machinery, tools and infrastructure.' },
         { tone: 'green', icon: '💡', head: 'Technology',          body: 'Innovations improve how resources are used.' },
-        { tone: 'green', icon: '📈', head: 'Relative productivity', body: 'Output per worker compared with rivals. The UK lags Germany and the US — closing the gap would shift LRAS right.' },
+        { tone: 'green', icon: '📈', head: 'Relative productivity', body: 'Output per worker compared with rivals. The UK lags Germany and the US – closing the gap would shift LRAS right.' },
         { tone: 'green', icon: '🎓', head: 'Education and skills', body: 'A more skilled workforce raises productive capacity.' },
-        { tone: 'green', icon: '⚔️', head: 'Competition policy',  body: 'Stronger rivalry (CMA enforcement, removing entry barriers) pushes firms to cut costs and innovate — raising sustainable capacity.' },
+        { tone: 'green', icon: '⚔️', head: 'Competition policy',  body: 'Stronger rivalry (CMA enforcement, removing entry barriers) pushes firms to cut costs and innovate – raising sustainable capacity.' },
         { tone: 'green', icon: '⚙️', head: 'Deregulation / efficiency', body: 'Lower barriers and red tape improve resource use.' }
       ],
 
@@ -532,7 +532,7 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'The same output gain can come from stronger demand or stronger supply – but the price effect is different.' },
 
-      // Two stacked interactive diagrams — both with Classical/Keynesian
+      // Two stacked interactive diagrams – both with Classical/Keynesian
       // toggles. Demand-side stimulus shows the textbook AD-right split
       // (Classical: only P; Keynesian: Y AND P). Supply-side improvement
       // shows the LRAS-right split (Classical: clean landing at Yf₂;
@@ -540,7 +540,7 @@ window.ECONOS_TOPIC = {
       interactiveDiagram: [
         {
           svgKey: 'adShiftClassicalKeynesian',
-          label: 'DEMAND-SIDE STIMULUS — AD SHIFTS RIGHT',
+          label: 'DEMAND-SIDE STIMULUS – AD SHIFTS RIGHT',
           emoji: '📈',
           layers: ['idl-1', 'idl-2'],
           inverseLayers: ['idl-old-solid'],
@@ -548,19 +548,19 @@ window.ECONOS_TOPIC = {
           perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
             { label: 'Starting point', show: [],
-              classical: { tone: 'purple', head: 'Classical view — at potential.', body: ['AD₁ meets vertical LRAS at Yf — price level P₁.'] },
-              keynesian: { tone: 'amber', head: 'Keynesian view — spare capacity.', body: ['AD₁ meets the rising range of reverse-L AS, below capacity.'] } },
+              classical: { tone: 'purple', head: 'Classical view – at potential.', body: ['AD₁ meets vertical LRAS at Yf – price level P₁.'] },
+              keynesian: { tone: 'amber', head: 'Keynesian view – spare capacity.', body: ['AD₁ meets the rising range of reverse-L AS, below capacity.'] } },
             { label: 'AD shifts right', show: ['idl-1'],
               classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['Government spending, tax cuts or looser monetary policy raise demand.'] },
               keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['Government spending, tax cuts or looser monetary policy raise demand.'] } },
             { label: 'New equilibrium', show: ['idl-1', 'idl-2'],
-              classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf; P₂ ≫ P₁ — purely inflationary.'], analysis: 'Classical reading: demand stimulus at potential is eaten by inflation. The case for fiscal restraint hinges on this verdict.' },
+              classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf; P₂ ≫ P₁ – purely inflationary.'], analysis: 'Classical reading: demand stimulus at potential is eaten by inflation. The case for fiscal restraint hinges on this verdict.' },
               keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['Y₂ &gt; Y₁ and P₂ &gt; P₁; the closer to Yf, the more leaks into prices.'], analysis: 'Keynesian reading: with spare capacity, demand stimulus delivers real output and jobs. Near Yf the trade-off worsens.' } }
           ]
         },
         {
           svgKey: 'lrasShiftRightClassicalKeynesian',
-          label: 'SUPPLY-SIDE IMPROVEMENT — LRAS SHIFTS RIGHT',
+          label: 'SUPPLY-SIDE IMPROVEMENT – LRAS SHIFTS RIGHT',
           emoji: '⚙️',
           layers: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
           inverseLayers: ['c-lras1-solid', 'k-as1-solid'],
@@ -569,13 +569,13 @@ window.ECONOS_TOPIC = {
           views: [
             { label: 'Starting point', show: [],
               classical: { tone: 'purple', head: 'At potential at E₁.', body: ['AD meets vertical LRAS₁ at Yf₁.'] },
-              keynesian: { tone: 'amber', head: 'Below capacity at E₁.', body: ['AD meets reverse-L AS₁ on its rising range — Y₁ &lt; Yf₁.'] } },
+              keynesian: { tone: 'amber', head: 'Below capacity at E₁.', body: ['AD meets reverse-L AS₁ on its rising range – Y₁ &lt; Yf₁.'] } },
             { label: 'Capacity rises', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2', 'k-lr-arrow'],
-              classical: { tone: 'green', head: 'LRAS₁ → LRAS₂.', body: ['Productivity, capital, labour, technology — capacity expands.'] },
+              classical: { tone: 'green', head: 'LRAS₁ → LRAS₂.', body: ['Productivity, capital, labour, technology – capacity expands.'] },
               keynesian: { tone: 'green', head: 'Capacity wall slides right.', body: ['AS₁ → AS₂ is a parallel rightward shift; floor unchanged.'] } },
             { label: 'New equilibrium', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
-              classical: { tone: 'purple', head: 'Output up, prices down.', body: ['Y rises to Yf₂, P falls — sustainable non-inflationary growth.'], analysis: 'Classical reading: this is the prize — the corner demand-side levers can\'t reach.' },
-              keynesian: { tone: 'rose', head: 'Potential up, output LAGS.', body: ['Actual Y₂ rises but sits BELOW the new potential Yf₂ — fresh output gap.'], analysis: 'Keynesian reading: supply-side reform raises the ceiling, but without demand catching up the new capacity goes partly unused.' } }
+              classical: { tone: 'purple', head: 'Output up, prices down.', body: ['Y rises to Yf₂, P falls – sustainable non-inflationary growth.'], analysis: 'Classical reading: this is the prize – the corner demand-side levers can\'t reach.' },
+              keynesian: { tone: 'rose', head: 'Potential up, output LAGS.', body: ['Actual Y₂ rises but sits BELOW the new potential Yf₂ – fresh output gap.'], analysis: 'Keynesian reading: supply-side reform raises the ceiling, but without demand catching up the new capacity goes partly unused.' } }
           ]
         }
       ],

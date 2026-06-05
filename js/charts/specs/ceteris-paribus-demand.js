@@ -1,14 +1,14 @@
 /* ============================================================
-   Ceteris paribus worked example — movement along a demand curve.
+   Ceteris paribus worked example – movement along a demand curve.
    Used by topic 1.1.1 (Economics as a Social Science), card 2
    "Ceteris paribus": holding income/tastes/related prices/population
    constant, a price rise (P1 → P2) causes quantity demanded to fall
-   (Q1 → Q2) — a movement UP the demand curve.
+   (Q1 → Q2) – a movement UP the demand curve.
 
    Chart space (x = quantity, y = price):
      D line   (0.120, 0.860) → (0.880, 0.150)
-     Point B  (Q1, P1) = (0.620, 0.360)  — original, lower-right
-     Point A  (Q2, P2) = (0.300, 0.660)  — after price rise, upper-left
+     Point B  (Q1, P1) = (0.620, 0.360)  – original, lower-right
+     Point A  (Q2, P2) = (0.300, 0.660)  – after price rise, upper-left
    ============================================================ */
 (function () {
   'use strict';
@@ -17,7 +17,7 @@
      the two marked points (via shape:linear through A with the A→B
      slope), so the dots are guaranteed to sit exactly on the curve.
      Earlier this spec hand-placed the points as raw coords that drifted
-     ~0.03 below the line — fixed by construction here.
+     ~0.03 below the line – fixed by construction here.
         slope = (B.y − A.y)/(B.x − A.x) = (0.36 − 0.66)/(0.62 − 0.30)
               = −0.30/0.32 = −0.9375
      B lies on the line: 0.66 + (−0.9375)(0.62 − 0.30) = 0.36 ✓ */

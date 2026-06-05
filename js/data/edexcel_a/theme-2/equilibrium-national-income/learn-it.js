@@ -143,9 +143,9 @@ window.ECONOS_TOPIC = {
       tip: { icon: '✓', tone: 'green', text: 'Equilibrium in AD/AS gives both P* and Y*.' },
 
       // Three stacked interactive toggles:
-      //   1. AS intro — define equilibrium with the Classical/Keynesian split
-      //   2. Boom (AD shifts right) — same toggle pattern as fiscal/monetary
-      //   3. Oil shock (SRAS shifts left) — Classical SR / Keynesian floor
+      //   1. AS intro – define equilibrium with the Classical/Keynesian split
+      //   2. Boom (AD shifts right) – same toggle pattern as fiscal/monetary
+      //   3. Oil shock (SRAS shifts left) – Classical SR / Keynesian floor
       // The "two shocks, two outcomes" pair below stays in text-only form.
       interactiveDiagram: [
         {
@@ -157,16 +157,16 @@ window.ECONOS_TOPIC = {
           perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
             { label: 'The AS curve', show: [],
-              classical: { tone: 'purple', head: 'Classical view — two curves.', body: ['SRAS slopes up (sticky-cost short run); LRAS is vertical at potential output Yf.'] },
-              keynesian: { tone: 'amber', head: 'Keynesian view — one reverse-L curve.', body: ['Flat floor (deep slack), rising bottleneck, vertical at Yf.'] } },
-            { label: 'Add AD — equilibrium', show: ['ad', 'e1'],
-              classical: { tone: 'purple', head: 'Equilibrium at the LRAS / SRAS / AD triple intersection.', body: ['E₁ sits on the vertical LRAS at Yf — output is at potential in the long run.'], analysis: 'Classical reading: long-run output is anchored to capacity. Read off P₁ on the y-axis and Yf on the x-axis.' },
-              keynesian: { tone: 'amber', head: 'Equilibrium on the rising range.', body: ['E₁ sits below capacity on AS — actual output Y₁ is demand-constrained.'], analysis: 'Keynesian reading: the economy can settle at less than full employment. Read off P₁ and Y₁.' } }
+              classical: { tone: 'purple', head: 'Classical view – two curves.', body: ['SRAS slopes up (sticky-cost short run); LRAS is vertical at potential output Yf.'] },
+              keynesian: { tone: 'amber', head: 'Keynesian view – one reverse-L curve.', body: ['Flat floor (deep slack), rising bottleneck, vertical at Yf.'] } },
+            { label: 'Add AD – equilibrium', show: ['ad', 'e1'],
+              classical: { tone: 'purple', head: 'Equilibrium at the LRAS / SRAS / AD triple intersection.', body: ['E₁ sits on the vertical LRAS at Yf – output is at potential in the long run.'], analysis: 'Classical reading: long-run output is anchored to capacity. Read off P₁ on the y-axis and Yf on the x-axis.' },
+              keynesian: { tone: 'amber', head: 'Equilibrium on the rising range.', body: ['E₁ sits below capacity on AS – actual output Y₁ is demand-constrained.'], analysis: 'Keynesian reading: the economy can settle at less than full employment. Read off P₁ and Y₁.' } }
           ]
         },
         {
           svgKey: 'adShiftClassicalKeynesian',
-          label: 'CONFIDENCE BOOM — AD SHIFTS RIGHT',
+          label: 'CONFIDENCE BOOM – AD SHIFTS RIGHT',
           emoji: '\u{2B06}\u{FE0F}',
           layers: ['idl-1', 'idl-2'],
           inverseLayers: ['idl-old-solid'],
@@ -181,12 +181,12 @@ window.ECONOS_TOPIC = {
               keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['Consumer confidence, spending and investment rise.'] } },
             { label: 'New equilibrium', show: ['idl-1', 'idl-2'],
               classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf; the boom is purely inflationary.'], analysis: 'Classical reading: in the long run, a confidence boom just inflates the price level.' },
-              keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['Y₂ &gt; Y₁ and P₂ &gt; P₁ — demand is stronger.'], analysis: 'Keynesian reading: with spare capacity, a confidence boom genuinely raises real output.' } }
+              keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['Y₂ &gt; Y₁ and P₂ &gt; P₁ – demand is stronger.'], analysis: 'Keynesian reading: with spare capacity, a confidence boom genuinely raises real output.' } }
           ]
         },
         {
           svgKey: 'srasShiftLeftClassicalKeynesian',
-          label: 'OIL SHOCK — SRAS SHIFTS LEFT',
+          label: 'OIL SHOCK – SRAS SHIFTS LEFT',
           emoji: '\u{2B07}\u{FE0F}',
           layers: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
           inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
@@ -201,7 +201,7 @@ window.ECONOS_TOPIC = {
               keynesian: { tone: 'rose', head: 'The price floor rises.', body: ['Higher input costs lift the reverse-L\'s floor; capacity unchanged.'] } },
             { label: 'Stagflation', show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
               classical: { tone: 'rose', head: 'P up, Y down.', body: ['Higher input costs squeeze output and raise prices.'], analysis: 'Classical reading: the stagflation is short-run; wages eventually adjust and SRAS slides back toward Yf at the original price level.' },
-              keynesian: { tone: 'rose', head: 'P up, Y down.', body: ['Higher input costs squeeze output and raise prices.'], analysis: 'Keynesian reading: with sticky wages the higher cost floor persists — the stagflation does not self-correct.' } }
+              keynesian: { tone: 'rose', head: 'P up, Y down.', body: ['Higher input costs squeeze output and raise prices.'], analysis: 'Keynesian reading: with sticky wages the higher cost floor persists – the stagflation does not self-correct.' } }
           ]
         }
       ],
@@ -235,7 +235,7 @@ window.ECONOS_TOPIC = {
       ledeStyle: 'plain',
       tip: { icon: '✓', tone: 'green', text: 'A gap shows the distance between current equilibrium and full-employment output Y₀ₑ.' },
 
-      // Two stacked Classical/Keynesian toggles — one per gap type.
+      // Two stacked Classical/Keynesian toggles – one per gap type.
       // The recessionary gap (AD-left) and inflationary gap (AD-right)
       // are exactly where the two schools genuinely disagree: Classical
       // says either gap self-corrects via wage flex; Keynesian says
@@ -243,7 +243,7 @@ window.ECONOS_TOPIC = {
       interactiveDiagram: [
         {
           svgKey: 'adShiftLeftClassicalKeynesian',
-          label: 'RECESSIONARY GAP — AD BELOW POTENTIAL',
+          label: 'RECESSIONARY GAP – AD BELOW POTENTIAL',
           emoji: '\u{1F4C9}',
           layers: ['idl-1', 'idl-2'],
           inverseLayers: ['idl-old-solid'],
@@ -251,19 +251,19 @@ window.ECONOS_TOPIC = {
           perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
             { label: 'At potential (Y₀ₑ)', show: [],
-              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets LRAS at Y₀ₑ — no gap in the long run.'] },
+              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets LRAS at Y₀ₑ – no gap in the long run.'] },
               keynesian: { tone: 'amber', head: 'At capacity.', body: ['AD₁ meets the reverse-L AS at full employment Y₀ₑ.'] } },
             { label: 'AD falls', show: ['idl-1'],
               classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['A negative demand shock (confidence collapse, fiscal tightening, foreign slowdown) shifts AD left.'] },
               keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['A negative demand shock shifts AD left.'] } },
             { label: 'The gap', show: ['idl-1', 'idl-2'],
-              classical: { tone: 'purple', head: 'No real gap in the long run.', body: ['Output returns to Y₀ₑ at a <strong>lower price level P₂</strong>. The short-run dip below Y₀ₑ is closed by <strong>downward wage pressure</strong> from unemployment — costs fall, SRAS slides back, the economy lands on LRAS.'], analysis: 'Classical reading: a recessionary gap is a <em>short-run</em> phenomenon — wages and prices flex, the economy self-corrects. The diagram shows the LR equilibrium; the temporary dip below Y₀ₑ during the adjustment isn\'t shown. No stimulus needed.' },
-              keynesian: { tone: 'rose', head: 'Gap persists.', body: ['Output stays at Y₂ &lt; Y₀ₑ; the recessionary gap is the distance to potential.', '<strong>Sticky wages</strong> stop the self-correction — unemployment can persist for years.'], analysis: 'Keynesian reading: without fiscal or monetary stimulus to restore AD, the recessionary gap stays open. This is the case for active demand management — the textbook example of the 2008 crisis and the slow recovery that followed.' } }
+              classical: { tone: 'purple', head: 'No real gap in the long run.', body: ['Output returns to Y₀ₑ at a <strong>lower price level P₂</strong>. The short-run dip below Y₀ₑ is closed by <strong>downward wage pressure</strong> from unemployment – costs fall, SRAS slides back, the economy lands on LRAS.'], analysis: 'Classical reading: a recessionary gap is a <em>short-run</em> phenomenon – wages and prices flex, the economy self-corrects. The diagram shows the LR equilibrium; the temporary dip below Y₀ₑ during the adjustment isn\'t shown. No stimulus needed.' },
+              keynesian: { tone: 'rose', head: 'Gap persists.', body: ['Output stays at Y₂ &lt; Y₀ₑ; the recessionary gap is the distance to potential.', '<strong>Sticky wages</strong> stop the self-correction – unemployment can persist for years.'], analysis: 'Keynesian reading: without fiscal or monetary stimulus to restore AD, the recessionary gap stays open. This is the case for active demand management – the textbook example of the 2008 crisis and the slow recovery that followed.' } }
           ]
         },
         {
           svgKey: 'adShiftClassicalKeynesian',
-          label: 'INFLATIONARY GAP — AD ABOVE POTENTIAL',
+          label: 'INFLATIONARY GAP – AD ABOVE POTENTIAL',
           emoji: '\u{1F4C8}',
           layers: ['idl-1', 'idl-2'],
           inverseLayers: ['idl-old-solid'],
@@ -271,14 +271,14 @@ window.ECONOS_TOPIC = {
           perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
             { label: 'At potential (Y₀ₑ)', show: [],
-              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets LRAS at Y₀ₑ — no gap in the long run.'] },
+              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets LRAS at Y₀ₑ – no gap in the long run.'] },
               keynesian: { tone: 'amber', head: 'At capacity.', body: ['AD₁ meets the reverse-L AS at Y₀ₑ.'] } },
             { label: 'AD rises', show: ['idl-1'],
               classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['A positive demand shock (loose monetary policy, fiscal expansion, export boom) shifts AD right.'] },
               keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['A positive demand shock shifts AD right.'] } },
             { label: 'The gap', show: ['idl-1', 'idl-2'],
-              classical: { tone: 'purple', head: 'Only prices rise — no real gap.', body: ['On vertical LRAS the AD shift is <strong>purely inflationary</strong>; output cannot exceed Y₀ₑ in the long run.'], analysis: 'Classical reading: there is no sustainable inflationary gap. Demand stimulus past full employment shows up as inflation only — the central case for monetary restraint.' },
-              keynesian: { tone: 'rose', head: 'Output above potential — overheating.', body: ['Output pushes to Y₂ &gt; Y₀ₑ — labour and goods markets are stretched; the gap is inflationary.', 'Without policy restraint, wage demands rise and inflation expectations un-anchor.'], analysis: 'Keynesian reading: an inflationary gap is a real, persistent overheating that needs <strong>contractionary policy</strong> (higher rates, fiscal tightening) to close. Inflation is the cost of running the economy above its sustainable speed limit.' } }
+              classical: { tone: 'purple', head: 'Only prices rise – no real gap.', body: ['On vertical LRAS the AD shift is <strong>purely inflationary</strong>; output cannot exceed Y₀ₑ in the long run.'], analysis: 'Classical reading: there is no sustainable inflationary gap. Demand stimulus past full employment shows up as inflation only – the central case for monetary restraint.' },
+              keynesian: { tone: 'rose', head: 'Output above potential – overheating.', body: ['Output pushes to Y₂ &gt; Y₀ₑ – labour and goods markets are stretched; the gap is inflationary.', 'Without policy restraint, wage demands rise and inflation expectations un-anchor.'], analysis: 'Keynesian reading: an inflationary gap is a real, persistent overheating that needs <strong>contractionary policy</strong> (higher rates, fiscal tightening) to close. Inflation is the cost of running the economy above its sustainable speed limit.' } }
           ]
         }
       ],

@@ -130,7 +130,7 @@ window.ECONOS_TOPIC = {
 
       // Stepped interactive diagram. Walk through the three channels
       // that decompose the downward slope of AD: wealth, interest rate,
-      // international substitution. No school toggle here — both schools
+      // international substitution. No school toggle here – both schools
       // accept the three channels as the textbook explanation.
       interactiveDiagram: {
         svgKey: 'adSlopeInteractive',
@@ -144,7 +144,7 @@ window.ECONOS_TOPIC = {
             body: ['The AD curve plots total planned spending against the price level.', 'Ask: <em>what happens to Y when P falls?</em>'] },
           {
             label: 'Price falls', show: ['v-arrow', 'eff-wealth'], tone: 'green',
-            head: 'P falls — wealth effect kicks in.',
+            head: 'P falls – wealth effect kicks in.',
             body: ['<strong>Pigou\'s wealth effect.</strong> The real value of money balances and cash savings rises when the price level falls, so households feel wealthier and consume more.', 'C rises.'] },
           {
             label: '+ Interest-rate effect', show: ['v-arrow', 'eff-wealth', 'eff-rate'], tone: 'green',
@@ -152,9 +152,9 @@ window.ECONOS_TOPIC = {
             body: ['<strong>Lower P</strong> → demand for money falls → interest rates fall → cheaper borrowing.', 'I and the rate-sensitive parts of C rise.'] },
           {
             label: '+ International substitution', show: ['v-arrow', 'h-arrow', 'point-b', 'eff-wealth', 'eff-rate', 'eff-intl'], tone: 'green',
-            head: '+ International substitution — arrive at B.',
+            head: '+ International substitution – arrive at B.',
             body: ['<strong>Lower P</strong> → UK goods relatively cheaper than foreign goods → exports rise and imports fall.', '(X − M) rises. The three channels together carry the economy along AD from A (P₁, Y₁) to B (P₂, Y₂).'],
-            analysis: 'All three channels run in the same direction whenever P changes. That\'s what gives AD its downward slope. Note these are <em>not</em> the income and substitution effects from microeconomics — those explain individual demand curves, not aggregate demand.' }
+            analysis: 'All three channels run in the same direction whenever P changes. That\'s what gives AD its downward slope. Note these are <em>not</em> the income and substitution effects from microeconomics – those explain individual demand curves, not aggregate demand.' }
         ]
       },
 
@@ -219,7 +219,7 @@ window.ECONOS_TOPIC = {
       // Stepped interactive diagram. Same axes show both cases in
       // sequence: a movement along AD₁ (price-level change) followed by
       // a shift of the curve to AD₂ (component change). The visual
-      // contrast — same curve different point vs different curve — is
+      // contrast – same curve different point vs different curve – is
       // the lesson. No school toggle: both schools agree on the
       // distinction.
       interactiveDiagram: {
@@ -239,8 +239,8 @@ window.ECONOS_TOPIC = {
           {
             label: 'Shift of AD', show: ['mv-arrow', 'point-b', 'ad2', 'sh-arrow', 'point-c'], tone: 'purple',
             head: 'A non-price determinant → SHIFT of the curve.',
-            body: ['Change a component of demand (C, I, G or X − M) and the whole curve moves: AD₁ → AD₂.', 'Point C sits at the <em>same</em> price P₁ as A — but on a <strong>different curve</strong>, with higher output Y₃.'],
-            analysis: '<strong>Diagnostic rule for the exam.</strong> Movement: triggered by a change in P. Shift: triggered by a change in C, I, G or (X − M). Name the type before writing the analysis — examiners reward the diagnosis as much as the consequence.' }
+            body: ['Change a component of demand (C, I, G or X − M) and the whole curve moves: AD₁ → AD₂.', 'Point C sits at the <em>same</em> price P₁ as A – but on a <strong>different curve</strong>, with higher output Y₃.'],
+            analysis: '<strong>Diagnostic rule for the exam.</strong> Movement: triggered by a change in P. Shift: triggered by a change in C, I, G or (X − M). Name the type before writing the analysis – examiners reward the diagnosis as much as the consequence.' }
         ]
       },
 

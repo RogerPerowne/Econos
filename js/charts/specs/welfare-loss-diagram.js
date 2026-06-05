@@ -1,13 +1,13 @@
 /* ============================================================
-   Welfare Loss Diagram — engine spec for welfareLossDiagram.
-   Market-failure topic — card 4 "Welfare loss".
+   Welfare Loss Diagram – engine spec for welfareLossDiagram.
+   Market-failure topic – card 4 "Welfare loss".
 
    The deadweight-loss triangle in TWO contexts:
-     LEFT panel  — Over-production case (negative externality):
+     LEFT panel  – Over-production case (negative externality):
                    market produces Q_m > Q* because it ignores
                    MSC. DWL triangle to the RIGHT of Q*, bounded
                    above by MSC and below by MPB.
-     RIGHT panel — Under-production case (positive externality):
+     RIGHT panel – Under-production case (positive externality):
                    market produces Q_m < Q* because it ignores
                    MSB. DWL triangle to the LEFT of Q*, bounded
                    above by MSB and below by MPC.
@@ -19,13 +19,13 @@
 (function () {
   'use strict';
 
-  /* Equilibria — solved from the shared MPB / MPC / MSC / MSB
+  /* Equilibria – solved from the shared MPB / MPC / MSC / MSB
      curves; identical to those used by privateVsSocialDiagram. */
   var EM      = { x: 0.520, y: 0.480 };  // MPB ∩ MPC (both panels)
   var ES_NEG  = { x: 0.420, y: 0.569 };  // MPB ∩ MSC (left panel)
   var ES_POS  = { x: 0.606, y: 0.556 };  // MPC ∩ MSB (right panel)
 
-  /* DWL triangle apex points — derived from the same curve lines:
+  /* DWL triangle apex points – derived from the same curve lines:
      left  : MSC sampled at Q_m  → (0.520, 0.655)
      right : MSB sampled at Q_m  → (0.520, 0.627) */
   var DWL_TOP_NEG = { x: EM.x, y: 0.655 };
@@ -53,7 +53,7 @@
         ],
 
         curves: [
-          /* All label positions UNSET — auto-placer (v0.41.18) handles
+          /* All label positions UNSET – auto-placer (v0.41.18) handles
            * MPC = S BELOW, MSC ABOVE (opposite-side rule for the
            * parallel pair), MPB = D picks its own slot. */
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
@@ -74,7 +74,7 @@
             label: 'E*', labelDx: -10, labelDy: 0, anchor: 'end' }
         ],
         texts: [
-          /* DWL label at the triangle's CENTROID — vertically centred
+          /* DWL label at the triangle's CENTROID – vertically centred
            * in the shaded region as the user requested. Centroid of
            * [(0.420, 0.569), (0.520, 0.480), (0.520, 0.655)] is
            * (0.487, 0.568). */
@@ -87,7 +87,7 @@
       {
         chartArea: { x: 410, y: 28, width: 280, height: 254 },
         title: 'Too little output (under-production)',
-        titleColor: '#0F172A',  // black/bold — same rule as left panel
+        titleColor: '#0F172A',  // black/bold – same rule as left panel
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
 
         polygons: [
@@ -96,7 +96,7 @@
         ],
 
         curves: [
-          /* All label positions UNSET — auto-placer handles. */
+          /* All label positions UNSET – auto-placer handles. */
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
             tone: 'blue', label: 'MPB', strokeWidth: 2.5 },
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
@@ -105,7 +105,7 @@
             tone: 'green', label: 'MSB', strokeWidth: 2.2, dashed: '6 4' }
         ],
         points: [
-          /* E_m to the LEFT of the dot — E* sits to the right at higher
+          /* E_m to the LEFT of the dot – E* sits to the right at higher
            * Q (Q* > Q_m for under-production), so a right-side E_m
            * would crash into E*. */
           { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },

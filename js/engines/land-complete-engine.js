@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It complete page engine
+   ECONOS – Land It complete page engine
    Reads per-section timings/scores from localStorage and renders
    the session summary.
    ============================================================ */
@@ -88,7 +88,7 @@
           + '<div class="lc-stat-box__label">SECTION A MCQS</div>'
           + '<div class="lc-stat-box__main"><span class="lc-stat-box__big">' + correct + '</span><span class="lc-stat-box__denom">/' + max + '</span></div>'
           + '<div class="lc-stat-box__pct">' + pct + '%</div>'
-          + '<div class="lc-stat-box__msg">' + (pct >= 80 ? 'Excellent recall' : pct >= 60 ? 'Good — review missed ones' : 'Revisit the topic notes') + '</div>'
+          + '<div class="lc-stat-box__msg">' + (pct >= 80 ? 'Excellent recall' : pct >= 60 ? 'Good – review missed ones' : 'Revisit the topic notes') + '</div>'
           + '</div>';
       }
 

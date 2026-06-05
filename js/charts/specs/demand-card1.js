@@ -1,5 +1,5 @@
 /* ============================================================
-   Demand card 1 — INTERACTIVE "big picture" demand curve (icons key:
+   Demand card 1 – INTERACTIVE "big picture" demand curve (icons key:
    demandBigPicture; className dbig-svg). Part of the demand chart
    family rendered via the interactiveDiagram block (chart left,
    description right, step buttons below).

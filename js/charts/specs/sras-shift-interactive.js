@@ -1,6 +1,6 @@
 /* ============================================================
-   SRAS Shift Interactive — engine spec for srasShiftInteractive.
-   Aggregate-supply card 4 "Shifts in SRAS — cost shocks".
+   SRAS Shift Interactive – engine spec for srasShiftInteractive.
+   Aggregate-supply card 4 "Shifts in SRAS – cost shocks".
 
    Demonstrates a leftward SRAS shift (cost-push):
      base    → AD, SRAS₁ solid, E₁ at (Y₁, P₁) with dashed gridlines
@@ -36,7 +36,7 @@
       { d: 'M 0.097,0.894 L 0.931,0.067',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end' },
-      // Base SRAS₁ solid — hidden once any view becomes active
+      // Base SRAS₁ solid – hidden once any view becomes active
       { d: 'M 0.097,0.067 L 0.931,0.894',
         tone: 'slate', label: 'SRAS₁', strokeWidth: 2,
         labelDx: -6, labelDy: -6, anchor: 'end',

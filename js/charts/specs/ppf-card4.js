@@ -1,26 +1,26 @@
 /* ============================================================
-   PPF card 4 — declarative spec for ppfConsumerCapital.
+   PPF card 4 – declarative spec for ppfConsumerCapital.
 
    The "Jamland" story (UK substituted). One country's investment
    trajectory across 4 views.
 
-   View 1 — Country context
+   View 1 – Country context
      Three country dots on shared conceptual PPF₁: UK (~18% invest),
      Germany (~22%), China (~42%).
 
-   View 2 — UK moves A → B along PPF₁
+   View 2 – UK moves A → B along PPF₁
      UK only. A is its current position. Dashed arrow ABOVE PPF₁ and
      dashed projection gridlines from B to the axes show the potential
-     move to B — more capital goods, fewer consumer goods.
+     move to B – more capital goods, fewer consumer goods.
 
-   View 3 — PPF shifts outward; B → C straight up
+   View 3 – PPF shifts outward; B → C straight up
      Years of investment at B has lifted productive capacity. PPF₁ is
      now DASHED, PPF₂ appears as the new SOLID outward frontier. A
-     short vertical arrow from B up to C — same Capital Goods level,
+     short vertical arrow from B up to C – same Capital Goods level,
      but C sits on PPF₂ so consumer goods are higher. The shift gives
      "more for nothing" at the same investment level.
 
-   View 4 — C → D along PPF₂
+   View 4 – C → D along PPF₂
      With the bigger frontier in hand, the country specialises back
      toward consumer-heavy mix. C → D moves leftward along PPF₂.
      The pedagogical pay-off: D has MORE consumer goods AND MORE
@@ -31,7 +31,7 @@
    the right one per view; A→B, B→C and C→D arrows are each in their
    own layer so they appear only in the view that introduces them.
 
-   PPF₁ deliberately does NOT extend to the right edge of the chart —
+   PPF₁ deliberately does NOT extend to the right edge of the chart –
    leaving clear room for PPF₂ to be visibly further outward.
    ============================================================ */
 (function () {
@@ -68,7 +68,7 @@
       '<marker id="ppfcc-pp" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#7C3AED"/></marker>' +
       '<marker id="ppfcc-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>',
 
-    // Always-visible: just the UK dot — no label. The "UK" text appears
+    // Always-visible: just the UK dot – no label. The "UK" text appears
     // only in view 1 (countries layer); the "A" text appears in views
     // 2-4 (a-lbl layer). Splitting the identity from the dot avoids
     // having both "UK" and "A" labels collide on the same position.
@@ -174,7 +174,7 @@
         contentLayer: 'b-c-arrow',
         arrows: [
           // Straight vertical arrow from B (on dashed PPF₁) up to C (on PPF₂).
-          // Same Capital Goods level — more Consumer Goods because the frontier
+          // Same Capital Goods level – more Consumer Goods because the frontier
           // has expanded.
           { x1: B.x, y1: B.y, x2: C.x, y2: C.y,
             tone: 'green', strokeWidth: 2, dashed: '5 3', markerEnd: 'ppfcc-gr' }

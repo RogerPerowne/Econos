@@ -1,5 +1,5 @@
 /* ============================================================
-   AD Shift — Classical vs Keynesian — engine spec for
+   AD Shift – Classical vs Keynesian – engine spec for
    adShiftClassicalKeynesian.
 
    The SAME rightward AD shift, seen through two AS models, via the
@@ -10,17 +10,17 @@
        spare-capacity range, rising bottleneck, vertical at Yf), built
        natively by the engine's `keynesianAS` shape. The economy starts
        on the RISING range, below capacity, so AD₁→AD₂ raises BOTH
-       output and the price level — but output gains shrink as the
+       output and the price level – but output gains shrink as the
        economy approaches the capacity ceiling.
      perspective = 'classical'  → a vertical LRAS at Yf (the SAME
-       capacity output where the Keynesian curve goes vertical — the
+       capacity output where the Keynesian curve goes vertical – the
        two schools share the long-run ceiling). The economy is always
        at Yf, so AD₁→AD₂ raises ONLY the price level: pure inflation.
 
    ELEGANCE / ACCURACY: the Keynesian AS is the engine's C¹-continuous
    reverse-L (one recipe, smooth joins). Every equilibrium is solved by
    the engine via `point.intersection` (line ∩ cubic for the Keynesian
-   curve, line ∩ line for the vertical LRAS) — no hand-typed coordinates,
+   curve, line ∩ line for the vertical LRAS) – no hand-typed coordinates,
    so the dots sit EXACTLY on the curves and the lint gate verifies it.
 
    Stepped reveal (layers idl-1, idl-2):
@@ -33,7 +33,7 @@
 (function () {
   'use strict';
 
-  var CAP = 0.66;   // full-capacity output Yf — shared by both schools
+  var CAP = 0.66;   // full-capacity output Yf – shared by both schools
 
   window.ECONOS_AD_SHIFT_CLASSICAL_KEYNESIAN_SPEC = {
     width: 440,
@@ -65,14 +65,14 @@
         labelDx: 8, labelDy: -2, anchor: 'start',
         perspective: 'classical' },
 
-      /* ── AD₁ solid (base) — hidden once a view activates. Drawn to end
+      /* ── AD₁ solid (base) – hidden once a view activates. Drawn to end
             just above the x-axis so the AD₁ label clears the axis title. ── */
       { id: 'AD1',
         d: 'M 0.060,0.790 L 0.845,0.045',
         tone: 'blue', label: 'AD₁', strokeWidth: 2,
         labelDx: -14, labelDy: -22, anchor: 'start',
         layer: 'idl-old-solid' },
-      /* ── AD₁ redrawn dashed (idl-1). Same id NOT reused — this is a
+      /* ── AD₁ redrawn dashed (idl-1). Same id NOT reused – this is a
             visual duplicate; the solver uses the base AD1 path. The
             inverseLayers swap hides the solid copy above once a view
             activates, so only this dashed one remains. ── */
@@ -92,7 +92,7 @@
     ],
 
     points: [
-      /* ── Keynesian E₁ — on the rising range, below capacity.
+      /* ── Keynesian E₁ – on the rising range, below capacity.
             ALL equilibrium labels default cleanly RIGHT of the dot
             (labelDx:14, labelDy:-2 = clear gap, just slightly above the
             centre so the text baseline aligns with the dot). ── */
@@ -101,20 +101,20 @@
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
         label: 'E₁', labelDx: 14, labelDy: -2, anchor: 'start',
         perspective: 'keynesian' },
-      /* ── Keynesian E₂ — output AND prices rise (idl-2) ── */
+      /* ── Keynesian E₂ – output AND prices rise (idl-2) ── */
       { intersection: { curves: ['AD2', 'keynAS'], near: [0.62, 0.47] },
         tone: 'green', radius: 5.5, hollow: true,
         gridlines: 'green', ticks: { x: 'Y₂', y: 'P₂' },
         label: 'E₂', labelDx: 14, labelDy: -2, anchor: 'start',
         layer: 'idl-2', perspective: 'keynesian' },
 
-      /* ── Classical E₁ — at full capacity Yf ── */
+      /* ── Classical E₁ – at full capacity Yf ── */
       { intersection: { curves: ['AD1', 'lras'], near: [CAP, 0.22] },
         tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { y: 'P₁' },
         label: 'E₁', labelDx: 14, labelDy: -2, anchor: 'start',
         perspective: 'classical' },
-      /* ── Classical E₂ — only the price level rises (idl-2) ── */
+      /* ── Classical E₂ – only the price level rises (idl-2) ── */
       { intersection: { curves: ['AD2', 'lras'], near: [CAP, 0.44] },
         tone: 'purple', radius: 5.5, hollow: true,
         gridlines: 'purple', ticks: { y: 'P₂' },
@@ -132,7 +132,7 @@
       /* Shift arrow (idl-1), shared by both perspectives. Drawn
          PERPENDICULAR to the two parallel AD lines (AD slope ≈ −0.95,
          so the perpendicular points up-and-right ≈ (0.69, 0.73)) and
-         centred in the gap between them — the true displacement of a
+         centred in the gap between them – the true displacement of a
          parallel rightward shift, not a generic horizontal arrow. */
       { x1: 0.464, y1: 0.434, x2: 0.546, y2: 0.521,
         tone: 'blue', strokeWidth: 1.8,

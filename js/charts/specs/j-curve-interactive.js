@@ -1,14 +1,14 @@
 /* ============================================================
-   J-Curve Interactive — engine spec for jCurveInteractive.
-   Net-trade topic — Marshall-Lerner J-curve dynamics after a
+   J-Curve Interactive – engine spec for jCurveInteractive.
+   Net-trade topic – Marshall-Lerner J-curve dynamics after a
    currency devaluation.
 
    3-layer cumulative reveal:
      base    → axes + zero baseline + pre-devaluation flat segment
                 + devaluation event marker (vertical dashed line at t=tD)
-     view 1  → dip into deficit (short-run PED_X + PED_M < 1) —
+     view 1  → dip into deficit (short-run PED_X + PED_M < 1) –
                 CA worsens after devaluation
-     view 2  → recovery extension (medium-run PED_X + PED_M > 1) —
+     view 2  → recovery extension (medium-run PED_X + PED_M > 1) –
                 CA rises through zero into surplus, completing the "J"
      view 3  → ALTERNATIVE history: Marshall-Lerner fails. Dashed
                 purple path stays in deficit forever + formula callout
@@ -22,7 +22,7 @@
   // chartArea 345×258 inside a 440×300 viewBox.
   // SVG y=155 (zero line) → chart-y = 1 - (155-24)/258 = 0.492.
   var ZERO = 0.492;
-  var T_DEV = 0.116;   // SVG x=110 — when devaluation happens
+  var T_DEV = 0.116;   // SVG x=110 – when devaluation happens
 
   window.ECONOS_J_CURVE_INTERACTIVE_SPEC = {
     width: 440,
@@ -42,7 +42,7 @@
       { d: 'M 0,' + ZERO + ' L ' + T_DEV + ',' + ZERO,
         tone: 'slate', strokeWidth: 2.5 },
 
-      /* Devaluation event marker — vertical dashed line at t_D */
+      /* Devaluation event marker – vertical dashed line at t_D */
       { d: 'M ' + T_DEV + ',0.671 L ' + T_DEV + ',0.504',
         tone: 'red', strokeWidth: 1.5, dashed: '4 3' },
 
@@ -51,12 +51,12 @@
         tone: 'red', strokeWidth: 2.8,
         layer: 'idl-1' },
 
-      /* View 2: recovery extension (PED_X + PED_M > 1) — completes the J */
+      /* View 2: recovery extension (PED_X + PED_M > 1) – completes the J */
       { d: 'M 0.377,0.140 C 0.435,0.147 0.557,0.333 0.638,' + ZERO + ' C 0.701,0.628 0.855,0.744 0.971,0.791',
         tone: 'red', strokeWidth: 2.8,
         layer: 'idl-2' },
 
-      /* View 3: Marshall-Lerner fails — dashed purple stays in deficit */
+      /* View 3: Marshall-Lerner fails – dashed purple stays in deficit */
       { d: 'M ' + T_DEV + ',' + ZERO + ' C 0.188,0.415 0.313,0.116 0.383,0.116 C 0.458,0.116 0.667,0.093 0.986,0.101',
         tone: 'purple', strokeWidth: 2.2, dashed: '9 5',
         layer: 'idl-3' }

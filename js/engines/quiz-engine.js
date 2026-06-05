@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Quiz Engine
+   ECONOS – Quiz Engine
    Ported from the Wycombe Abbey multi-format quiz engine.
    12 question types, namespaced under .quiz-*, econos palette.
 
@@ -68,7 +68,7 @@
 
   /* Every array access is guarded: a question whose shape doesn't match
      its declared type (e.g. an `odd_one_out` carrying `opts` instead of
-     `items`) is returned un-shuffled rather than throwing — a single
+     `items`) is returned un-shuffled rather than throwing – a single
      malformed question must never blank the whole quiz. */
   function shuffleQuestion(q) {
     if (!SHUFFLE_CONFIG[q.type]) return q;
@@ -105,14 +105,14 @@
 
   /* ── Boot ── */
   window.bootQuiz = function (questions, topicConfig) {
-    /* Shuffle defensively — drop any question that can't be prepared so a
+    /* Shuffle defensively – drop any question that can't be prepared so a
        bad entry can't take the whole quiz down. */
     Qs = [];
     (questions || []).forEach(function (q) {
       try { Qs.push(shuffleQuestion(q)); } catch (e) { /* skip malformed */ }
     });
     Qs = Qs.map(function (q, i) {
-      /* Quiz pools are inconsistent about the stem field — some use
+      /* Quiz pools are inconsistent about the stem field – some use
          `stem`, some `q`. The renderers read `stem`, so normalise here
          (otherwise the question text renders as "undefined"). */
       if (!q.stem && q.q) q.stem = q.q;
@@ -136,7 +136,7 @@
     return m + 'm ' + (rs < 10 ? '0' : '') + rs + 's';
   }
   function formatAvg(ms, n) {
-    if (!n) return '—';
+    if (!n) return '–';
     return Math.round(ms / n / 1000) + 's';
   }
 
@@ -149,7 +149,7 @@
      nextBtnHTML, watch #quiz-root with a MutationObserver and, every
      time a node is inserted, parse any onclick attribute on it (or its
      descendants), strip it, and re-attach as a proper addEventListener.
-     One place to maintain; covers innerHTML, outerHTML, appendChild —
+     One place to maintain; covers innerHTML, outerHTML, appendChild –
      anything. */
   var INLINE_OBSERVER_BOUND = false;
   /* Every inline-handler attribute the quiz engine emits. Same fix as for
@@ -159,7 +159,7 @@
   function attrToEventName(attr) { return attr.slice(2); }
   function parseHandler(code) {
     /* Match foo(args). The numeric_input render uses oninput="niChanged(this)"
-       and onkeydown="niKey(event)" — `this` / `event` are special tokens. */
+       and onkeydown="niKey(event)" – `this` / `event` are special tokens. */
     var m = code.match(/^([\w$.]+)\(([^)]*)\)\s*;?\s*$/);
     if (!m) return null;
     var fnName = m[1];
@@ -254,7 +254,7 @@
 
   function feedbackHTML(ok, exp) {
     return '<div class="quiz-fb ' + (ok ? 'quiz-fb--ok show' : 'quiz-fb--bad show') + '" id="fb">' +
-      '<div class="quiz-fb__head">' + (ok ? '✓ Correct — well done' : '✗ Not quite — here\'s the analysis') + '</div>' +
+      '<div class="quiz-fb__head">' + (ok ? '✓ Correct – well done' : '✗ Not quite – here\'s the analysis') + '</div>' +
       '<div class="quiz-fb__body">' + exp + '</div></div>';
   }
 
@@ -284,7 +284,7 @@
          elastic_sort, para_fill, rank/chain) pass a fraction:
          `correctItems / totalItems`. 5 of 6 pairs → 0.833.
        - Multi_select uses negative marking: `max(0, (right − wrong)
-         / total_correct)`. Closes the "tick everything" loophole —
+         / total_correct)`. Closes the "tick everything" loophole –
          picking all 6 options when only 3 are correct gives 3−3 = 0.
      `rv.ok` (legacy boolean) stays for back-compat with anything that
      reads it; new code reads `rv.score`. */
@@ -518,7 +518,7 @@
         '<span class="quiz-opt__text">' + o + '</span></button>';
     }).join('');
     var confPanel = '<div class="quiz-conf-panel" id="conf-panel">' +
-      '<div class="quiz-conf-q">Now — how confident were you in that answer?</div>' +
+      '<div class="quiz-conf-q">Now – how confident were you in that answer?</div>' +
       '<div class="quiz-conf-btns">' +
       '<button class="quiz-conf-btn certain" onclick="pickConfLevel(\'certain\')">✓ Very sure</button>' +
       '<button class="quiz-conf-btn unsure"  onclick="pickConfLevel(\'unsure\')">~ Fairly sure</button>' +
@@ -548,10 +548,10 @@
     document.getElementById('cmo' + q.ans).classList.add(ok ? 'correct' : 'reveal');
     if (!ok) document.getElementById('cmo' + S.confChosen).classList.add('wrong');
     var tone = '';
-    if (ok && level === 'certain')      tone = 'Excellent — you knew this one cold.';
-    else if (ok && level === 'unsure')  tone = 'Good instinct — trust it next time.';
-    else if (ok && level === 'guess')   tone = 'Lucky this time — make sure you understand <em>why</em> it is correct.';
-    else if (!ok && level === 'certain')tone = '<strong>Watch out:</strong> you were very confident but this is wrong — a misconception worth fixing.';
+    if (ok && level === 'certain')      tone = 'Excellent – you knew this one cold.';
+    else if (ok && level === 'unsure')  tone = 'Good instinct – trust it next time.';
+    else if (ok && level === 'guess')   tone = 'Lucky this time – make sure you understand <em>why</em> it is correct.';
+    else if (!ok && level === 'certain')tone = '<strong>Watch out:</strong> you were very confident but this is wrong – a misconception worth fixing.';
     else if (!ok && level === 'unsure') tone = 'The uncertainty was well-founded. Study this one carefully.';
     else tone = 'At least you knew you were not sure. Now read the explanation below.';
     var tagText = level === 'certain' ? 'Very sure' : level === 'unsure' ? 'Fairly sure' : 'Guessing';
@@ -621,7 +621,7 @@
     /* Negative marking: each correct pick +1, each wrong pick −1,
        floor at 0, normalize by the number of correct answers. Stops
        learners from ticking every option to guarantee a perfect
-       score — picking all 6 when only 3 are correct gives 3 − 3 = 0. */
+       score – picking all 6 when only 3 are correct gives 3 − 3 = 0. */
     var rightPicks = 0, wrongPicks = 0, allOk = true;
     S.msChecked.forEach(function (checked, i) {
       if (checked !== !!correctSet[i]) allOk = false;
@@ -708,7 +708,7 @@
     var q = Qs[S.qi];
     var allOk = S.rankOrder.every(function (idx, i) { return idx === q.correctOrder[i]; });
     // Partial credit: items in their correct slot. Slot-based (not
-    // Kendall tau) — simpler to explain to a learner ("3 of 5 in the
+    // Kendall tau) – simpler to explain to a learner ("3 of 5 in the
     // right spot"). Single-item rank still works (1/1 or 0/1).
     var inSlot = 0;
     S.rankOrder.forEach(function (idx, i) { if (idx === q.correctOrder[i]) inSlot++; });
@@ -765,7 +765,7 @@
     r(cardWrap(
       qHeader(q) +
       '<div class="quiz-stem">' + (q.stem || '') + '</div>' +
-      '<p class="quiz-instr">Tap a cause, then tap its effect. Match all ' + n + ' pairs — then check your score.</p>' +
+      '<p class="quiz-instr">Tap a cause, then tap its effect. Match all ' + n + ' pairs – then check your score.</p>' +
       '<div class="quiz-ce-grid">' +
         '<div class="quiz-ce-col">' +
           '<div class="quiz-ce-col__head quiz-ce-col__head--cause">Cause</div>' +
@@ -848,21 +848,21 @@
       return;
     }
 
-    // No prior selection — start one
+    // No prior selection – start one
     if (!S.ceSelected) {
       S.ceSelected = { col: col, dispIdx: dispIdx, origIdx: origIdx };
       el.classList.add('ce-sel');
       return;
     }
 
-    // Same item tapped again — deselect
+    // Same item tapped again – deselect
     if (S.ceSelected.col === col && S.ceSelected.dispIdx === dispIdx) {
       el.classList.remove('ce-sel');
       S.ceSelected = null;
       return;
     }
 
-    // Same column — switch selection
+    // Same column – switch selection
     if (S.ceSelected.col === col) {
       var prevId = col === 'c' ? 'cec' + S.ceSelected.dispIdx : 'cee' + S.ceSelected.dispIdx;
       document.getElementById(prevId).classList.remove('ce-sel');
@@ -871,7 +871,7 @@
       return;
     }
 
-    // Different columns — create a link
+    // Different columns – create a link
     var cDispIdx = S.ceSelected.col === 'c' ? S.ceSelected.dispIdx : dispIdx;
     var cOrigIdx = S.ceSelected.col === 'c' ? S.ceSelected.origIdx : origIdx;
     var eDispIdx = S.ceSelected.col === 'e' ? S.ceSelected.dispIdx : dispIdx;
@@ -1029,7 +1029,7 @@
     r(cardWrap(
       qHeader(q) +
       '<div class="quiz-stem">' + q.stem + '</div>' +
-      '<p class="quiz-instr">Tap two tiles that belong together. Pair all ' + q.pairs.length + ' — then check your score.</p>' +
+      '<p class="quiz-instr">Tap two tiles that belong together. Pair all ' + q.pairs.length + ' – then check your score.</p>' +
       '<div class="quiz-mp-grid">' + tileHtml + '</div>' +
       '<div class="quiz-mp-tally" id="mp-tally">0 / ' + q.pairs.length + ' paired</div>' +
       '<button class="quiz-btn quiz-btn--primary quiz-mp-check-btn" id="mp-check" onclick="checkMP()" disabled>Check my answers →</button>' +
@@ -1370,9 +1370,9 @@
     var passed = pct >= 60;
     var elapsed = Date.now() - (S.startedAt || Date.now());
 
-    var verdict = pct >= 80 ? 'Excellent — the full picture is clear.'
+    var verdict = pct >= 80 ? 'Excellent – the full picture is clear.'
                 : pct >= 60 ? "You're on the right track."
-                : pct >= 40 ? 'Solid start — a focused review will lock the rest in.'
+                : pct >= 40 ? 'Solid start – a focused review will lock the rest in.'
                 : 'A quick replay of the cards will move the needle fast.';
 
     // Three-state breakdown so partial credit reads honestly: fully

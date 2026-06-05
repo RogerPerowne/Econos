@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Logger
+   ECONOS – Logger
    ─────────────────────────────────────────────────────────────
    Thin wrapper over console.* with a single runtime flag so we
    can ship a production build with logs off. Defaults to verbose
@@ -40,7 +40,7 @@
     var args = Array.prototype.slice.call(arguments, 1);
     console.warn.apply(console, [fmt(tag)].concat(args));
   }
-  /* Errors always logged — they reflect bugs the user should report. */
+  /* Errors always logged – they reflect bugs the user should report. */
   function error(tag /*, ...args */) {
     if (!window.console) return;
     var args = Array.prototype.slice.call(arguments, 1);

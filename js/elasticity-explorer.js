@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Elasticity Explorer (interactive PED widget)
+   ECONOS – Elasticity Explorer (interactive PED widget)
 
    Drop a <div class="ee-root" data-ee-config='...'></div> into the
    page and call EconosElasticity.init(rootEl).  The widget renders
@@ -62,12 +62,12 @@ window.EconosElasticity = (function () {
 
   /* ---- Preset scenarios (intercept a, slope b, sensible starting points) ---- */
   var PRESETS = [
-    { key: 'insulin',  label: 'Insulin',          a: 19.5, b: 0.005, p1: 8,  p2: 14, note: 'Life-saving good — quantity barely moves with price.' },
+    { key: 'insulin',  label: 'Insulin',          a: 19.5, b: 0.005, p1: 8,  p2: 14, note: 'Life-saving good – quantity barely moves with price.' },
     { key: 'petrolsr', label: 'Petrol (short-run)', a: 18, b: 0.04,  p1: 8,  p2: 12, note: 'Locked-in habits, no alternatives yet → inelastic.' },
     { key: 'petrollr', label: 'Petrol (long-run)',  a: 18, b: 0.08,  p1: 6,  p2: 12, note: 'Time to switch to EVs / public transport → more elastic.' },
     { key: 'cars',     label: 'Family cars',        a: 18, b: 0.10,  p1: 6,  p2: 12, note: 'Many substitutes and large share of income → roughly unit.' },
     { key: 'luxury',   label: 'Designer handbags', a: 18, b: 0.16,  p1: 4,  p2: 10, note: 'Many luxury substitutes, postpone-able → highly elastic.' },
-    { key: 'pcfirm',   label: 'A perfect-comp firm', a: 10.001, b: 0.00001, p1: 9.999, p2: 10, note: 'Faces a horizontal demand curve — any price above market = zero sales.' }
+    { key: 'pcfirm',   label: 'A perfect-comp firm', a: 10.001, b: 0.00001, p1: 9.999, p2: 10, note: 'Faces a horizontal demand curve – any price above market = zero sales.' }
   ];
 
   function presetByKey(k) {
@@ -104,7 +104,7 @@ window.EconosElasticity = (function () {
       +   '</div>'
       +   '<div class="ee-readouts">'
       +     '<div class="ee-formula" data-ee="formula">'
-      +       '<div class="ee-formula__head">PED — midpoint formula</div>'
+      +       '<div class="ee-formula__head">PED – midpoint formula</div>'
       +       '<div class="ee-formula__line ee-formula__line--def">'
       +         'PED = <span class="ee-frac"><span class="ee-num">%ΔQ</span><span class="ee-den">%ΔP</span></span>'
       +       '</div>'
@@ -214,7 +214,7 @@ window.EconosElasticity = (function () {
   }
 
   /* ============================================================
-     Controller — wire up handles, render loop
+     Controller – wire up handles, render loop
      ============================================================ */
   function init(root) {
     if (!root || root.__eeInit) return;
@@ -265,7 +265,7 @@ window.EconosElasticity = (function () {
     }
 
     function setRect(rect, p, q, _q0) {
-      // Rectangle from (0, p) down to (q, 0)  — but using q0 for clarity (here q0=0)
+      // Rectangle from (0, p) down to (q, 0)  – but using q0 for clarity (here q0=0)
       var x = qToX(0);
       var y = pToY(p);
       var w = qToX(q) - qToX(0);
@@ -356,9 +356,9 @@ window.EconosElasticity = (function () {
           verdict = 'Price ' + pricedirection + ' → revenue ' + trWord + '. ';
           if (trWord !== 'unchanged') {
             if ((pricedirection === 'rose' && trWord === 'rose') || (pricedirection === 'fell' && trWord === 'fell')) {
-              verdict += 'Demand is <strong>inelastic</strong> here — quantity moved less than price.';
+              verdict += 'Demand is <strong>inelastic</strong> here – quantity moved less than price.';
             } else {
-              verdict += 'Demand is <strong>elastic</strong> here — quantity moved more than price.';
+              verdict += 'Demand is <strong>elastic</strong> here – quantity moved more than price.';
             }
           } else {
             verdict += 'Demand is <strong>unit elastic</strong> at this point.';

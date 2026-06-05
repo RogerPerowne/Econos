@@ -1,10 +1,10 @@
 /* ============================================================
-   ECONOS — single source of truth for shell stations
+   ECONOS – single source of truth for shell stations
    ─────────────────────────────────────────────────────────────
    Used by:
-     • js/engines/link-router.js  — runtime station catalogue
-     • js/engines/land-router.js  — runtime station catalogue
-     • vite.config.js             — build-time per-topic shell
+     • js/engines/link-router.js  – runtime station catalogue
+     • js/engines/land-router.js  – runtime station catalogue
+     • vite.config.js             – build-time per-topic shell
                                     generator + sitemap
 
    Drift between those three was the highest-risk silent-failure
@@ -14,7 +14,7 @@
    route. Touch this file when you add or rename a station.
 
    Each station's `data` field is the SAME file for every station
-   in the shell — the consolidated link.js or land.js per topic.
+   in the shell – the consolidated link.js or land.js per topic.
    The engine still reads the per-station global (e.g.
    window.ECONOS_LINK_INTRO) populated by the consolidated file's
    inner IIFEs, so the engines need no changes.
@@ -36,7 +36,7 @@
 (function () {
   'use strict';
 
-  /* Card-slug helper — derives a stable URL token from a Learn
+  /* Card-slug helper – derives a stable URL token from a Learn
      It card's title. Mirrored at build time in vite.config.js
      (same algorithm); the runtime + build-time copies must agree
      so links round-trip. */
@@ -101,7 +101,7 @@
      that don't have the data don't need to generate the list
      (they ask for a single card slug, not the set). */
   window.ECONOS_STATION_GENERATORS = {
-    /* `intro` is the cover view, addressed by the BARE shell URL —
+    /* `intro` is the cover view, addressed by the BARE shell URL –
        not enumerated here. Build-time route generation + runtime
        URL building both treat the bare URL as the entry point. */
     learn: function (topicCards) {

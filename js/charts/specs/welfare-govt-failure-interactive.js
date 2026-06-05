@@ -1,5 +1,5 @@
 /* ============================================================
-   Welfare / Government-Failure Interactive — engine spec for
+   Welfare / Government-Failure Interactive – engine spec for
    welfareGovtFailureInteractive. "Choosing the right tool" card
    in Government Intervention in Markets (theme-1).
 
@@ -84,7 +84,7 @@
     ],
 
     arrows: [
-      // MEC bracket — thick vertical purple bar between MPC and MSC
+      // MEC bracket – thick vertical purple bar between MPC and MSC
       // (revealed in idl-1; the "ideal tax" callout in idl-2 points to it).
       { layer: 'idl-1',
         x1: MecBracket.x, y1: MecBracket.yMpc, x2: MecBracket.x, y2: MecBracket.yMsc,
@@ -92,35 +92,35 @@
     ],
 
     polygons: [
-      // DWL₁ (market failure) — rose triangle between E*, MPC@Qm, E₁
+      // DWL₁ (market failure) – rose triangle between E*, MPC@Qm, E₁
       // MPC@Qm = (E1.x, 0.084 + slope·(E1.x − 0.080)) = (0.470, 0.476) = E1 itself,
       // but we need the third vertex on MSC at Q_m: MSC@Qm = (0.470, 0.700)
       { layer: 'idl-1',
         points: [[Eopt.x, Eopt.y], [E1.x, 0.228 + slope * E1.x], [E1.x, E1.y]],
         fill: '#FECACA', opacity: 0.7 },
 
-      // DWL₂ (govt failure) — purple triangle E*, MSC@Q'', E''
+      // DWL₂ (govt failure) – purple triangle E*, MSC@Q'', E''
       { layer: 'idl-3',
         points: [[Eopt.x, Eopt.y], [MscAtQ2.x, MscAtQ2.y], [E2.x, E2.y]],
         fill: '#DDD6FE', opacity: 0.85 }
     ],
 
     points: [
-      // E₁ — free-market equilibrium (always visible)
+      // E₁ – free-market equilibrium (always visible)
       { x: E1.x, y: E1.y, tone: 'slate', radius: 5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Qm', y: 'Pm' },
         label: 'E₁', labelDx: 10, labelDy: -2, anchor: 'start' },
 
-      // E* — social optimum (idl-1)
+      // E* – social optimum (idl-1)
       { layer: 'idl-1',
         x: Eopt.x, y: Eopt.y, tone: 'red', radius: 5, hollow: true,
         gridlines: 'red', ticks: { x: 'Q*', y: 'P*' },
         label: 'E*', labelDx: -8, labelDy: -6, anchor: 'end' },
 
-      // E'' — over-corrected (idl-3). Gridlines but NO ticks: Q'' is within
+      // E'' – over-corrected (idl-3). Gridlines but NO ticks: Q'' is within
       // 0.033 chart-units of Q* (and P'' within 0.034 of P*), so axis ticks
       // collide. The E'' dot label + nearby Q*/P* ticks already pin the
-      // story — Q'' falls just inside Q*. Label sits ABOVE the dot, well
+      // story – Q'' falls just inside Q*. Label sits ABOVE the dot, well
       // clear of DWL₂ which goes down-and-left of the triangle below.
       { layer: 'idl-3',
         x: E2.x, y: E2.y, tone: 'purple', radius: 5, hollow: true,
@@ -133,16 +133,16 @@
       { layer: 'idl-1', x: MecBracket.x + 0.024, y: (MecBracket.yMpc + MecBracket.yMsc) / 2,
         text: 'MEC', tone: 'purple', bold: true, fontSize: 13, anchor: 'start' },
 
-      // "ideal tax" annotation (idl-2) — same vertical position as MEC label,
+      // "ideal tax" annotation (idl-2) – same vertical position as MEC label,
       // sits below in italics
       { layer: 'idl-2', x: MecBracket.x + 0.024, y: (MecBracket.yMpc + MecBracket.yMsc) / 2 - 0.060,
         text: '= ideal tax', tone: 'purple', italic: true, fontSize: 11, anchor: 'start' },
 
-      // DWL₁ label (idl-1) — inside the rose triangle
+      // DWL₁ label (idl-1) – inside the rose triangle
       { layer: 'idl-1', x: (Eopt.x + E1.x + E1.x) / 3 + 0.020, y: (Eopt.y + (0.228 + slope * E1.x) + E1.y) / 3,
         text: 'DWL₁', tone: 'red', bold: true, fontSize: 12, anchor: 'middle' },
 
-      // DWL₂ label (idl-3) — the triangle is too narrow to host the label
+      // DWL₂ label (idl-3) – the triangle is too narrow to host the label
       // inside, so it sits to the LEFT at the triangle's mid-y, in a clear
       // gap between MSC and MSB. E'' label goes UP from the dot, this one
       // goes LEFT, so they never collide.

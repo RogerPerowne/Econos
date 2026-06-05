@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It router (SPA shell for link.html)
+   ECONOS – Link It router (SPA shell for link.html)
    ─────────────────────────────────────────────────────────────
    link.html loads ALL Link engines + this router. The router
    intercepts in-stage navigation (clicks on <a href="/link/<topic>/
@@ -8,7 +8,7 @@
    real page navigation for cross-stage URLs (/learn/<topic>,
    /land/<topic>/<section>, /, …).
 
-   URL form is path-based — station extraction goes through
+   URL form is path-based – station extraction goes through
    TopicLoader.parsePath(), so the router has no URL-parsing
    logic of its own.
    ============================================================ */
@@ -17,7 +17,7 @@
   'use strict';
 
   /* station name → { data file, boot function, engine script, title }
-     Source of truth: js/config/stations.js — the same catalogue the
+     Source of truth: js/config/stations.js – the same catalogue the
      build-time topic-routes plugin reads, so the generated /link/<topic>/
      <station>/ files can never have a station the router doesn't know
      about (or vice versa). */
@@ -192,7 +192,7 @@
   }
 
   /* Boot entry point: called once from link.html. Reads the current
-     station from the URL itself — caller doesn't pass it. */
+     station from the URL itself – caller doesn't pass it. */
   function start() {
     var station = TopicLoader.getStation() || 'intro';
     if (!STATIONS[station]) {

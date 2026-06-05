@@ -1,5 +1,5 @@
 /* ============================================================
-   Models worked example — supply & demand equilibrium.
+   Models worked example – supply & demand equilibrium.
    Used by topic 1.1.1 (Economics as a Social Science), card 1
    "Thinking like an economist": the canonical model an economist
    builds. Demand slopes down, supply slopes up, equilibrium at
@@ -35,7 +35,7 @@
       { x1: E.x, y1: E.y, x2: E.x, y2: 0, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 }
     ],
 
-    /* Equilibrium resolved by the engine's intersection solver — the
+    /* Equilibrium resolved by the engine's intersection solver – the
        explicit x/y must match the D×S crossing or the drift assertion
        warns. (D and S cross at (0.5, 0.505) by construction.) */
     points: [

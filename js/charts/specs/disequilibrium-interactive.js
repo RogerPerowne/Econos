@@ -1,5 +1,5 @@
 /* ============================================================
-   Disequilibrium Interactive — engine spec for disequilibriumInteractive
+   Disequilibrium Interactive – engine spec for disequilibriumInteractive
    (Price-determination card 2). Layered spec for the `interactiveDiagram`
    block (chart left, description right, steps below).
 
@@ -52,18 +52,18 @@
     ],
 
     arrows: [
-      /* base — Pₑ/Qₑ leaders */
+      /* base – Pₑ/Qₑ leaders */
       { layer: 'layer-base', x1: 0, y1: 0.49, x2: 0.52, y2: 0.49, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
       { layer: 'layer-base', x1: 0.52, y1: 0.49, x2: 0.52, y2: 0, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
 
-      /* surplus — P₁ price line, droplines, excess arrow BELOW axis, price pressure */
+      /* surplus – P₁ price line, droplines, excess arrow BELOW axis, price pressure */
       { layer: 'layer-surplus', x1: 0, y1: 0.66, x2: 0.70, y2: 0.66, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
       { layer: 'layer-surplus', x1: 0.34, y1: 0.66, x2: 0.34, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
       { layer: 'layer-surplus', x1: 0.70, y1: 0.66, x2: 0.70, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
       { layer: 'layer-surplus', x1: 0.345, y1: -0.085, x2: 0.695, y2: -0.085, tone: 'amber', strokeWidth: 2.4, markerStart: 'pd-a-start', markerEnd: 'pd-a-end', buffer: 0 },
       { layer: 'layer-surplus', x1: 0.06, y1: 0.63, x2: 0.06, y2: 0.52, tone: 'amber', strokeWidth: 2.4, markerEnd: 'pd-a-end', buffer: 0 },
 
-      /* shortage — P₂ price line, droplines, excess arrow BELOW axis, price pressure */
+      /* shortage – P₂ price line, droplines, excess arrow BELOW axis, price pressure */
       { layer: 'layer-short', x1: 0, y1: 0.32, x2: 0.70, y2: 0.32, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
       { layer: 'layer-short', x1: 0.34, y1: 0.32, x2: 0.34, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
       { layer: 'layer-short', x1: 0.70, y1: 0.32, x2: 0.70, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },

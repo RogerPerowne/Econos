@@ -1,18 +1,18 @@
 /* ==========================================================================
-   Demand-side Policies: Monetary — Edexcel A Theme 2.6.2 (monetary half).
+   Demand-side Policies: Monetary – Edexcel A Theme 2.6.2 (monetary half).
 
    Six-card Learn-It build assembled from Roger's mockup pipeline (six
    ChatGPT mockup images, 2026-06-04). Pedagogy:
-     C1 Sequential flow chain — monetary policy transmission overview
-     C2 Decompose-a-diagram + EDL AD-shift-right hero — expansionary
-     C3 Spectrum / regime grid — the five transmission channels
-     C4 Decompose + EDL AD-shift-left hero — contractionary (mirror of C2)
-     C5 Side-by-side pair — Bank Rate vs QE (conventional vs unconventional)
-     C6 Evidence-then-verdict — strengths/limits + judgement frame
+     C1 Sequential flow chain – monetary policy transmission overview
+     C2 Decompose-a-diagram + EDL AD-shift-right hero – expansionary
+     C3 Spectrum / regime grid – the five transmission channels
+     C4 Decompose + EDL AD-shift-left hero – contractionary (mirror of C2)
+     C5 Side-by-side pair – Bank Rate vs QE (conventional vs unconventional)
+     C6 Evidence-then-verdict – strengths/limits + judgement frame
 
    Mirrors the demand-side-policies-fiscal sister topic in structure, with
    monetary-policy framing throughout. EDL heroes are the second production
-   use after v0.46.0 — same `ad-as` intents (ad-shift-right / ad-shift-left).
+   use after v0.46.0 – same `ad-as` intents (ad-shift-right / ad-shift-left).
    ========================================================================== */
 window.ECONOS_TOPIC = {
   id:          'demand-side-policies-monetary',
@@ -20,7 +20,7 @@ window.ECONOS_TOPIC = {
   theme:       'Theme 2 · The National and Global Economy',
   title:       'Demand-side Policies: Monetary',
   estTime:     '~15 min',
-  goal:        'Use interest rates, QE and the broader monetary toolkit to manage aggregate demand — and explain why the same rate cut can have different effects at different times.',
+  goal:        'Use interest rates, QE and the broader monetary toolkit to manage aggregate demand – and explain why the same rate cut can have different effects at different times.',
   intro: {
     summary:  'Monetary policy is the central bank\'s demand-management toolkit. Step through the transmission chain, the five channels, conventional and unconventional tools, and finish with the strengths-and-limits judgement frame.',
     doInThis: 'Walk the 5-step transmission from rate change to inflation, model both expansionary and contractionary stances, see how rates work through five channels at once, compare Bank Rate to QE, and finish with the judgement frame examiners reward.',
@@ -42,7 +42,7 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ====================================================================
-       CARD 1 — Monetary policy: the big picture
+       CARD 1 – Monetary policy: the big picture
        Pattern: Sequential flow chain (5-step transmission) + 3-tile
        IR/QE/why-it-matters grid + Side-by-side pair.
        ==================================================================== */
@@ -115,12 +115,12 @@ window.ECONOS_TOPIC = {
       tipLate: {
         icon: '⚠️',
         tone: 'rose',
-        text: '<strong>Common trap — "Bank Rate is what banks charge their customers."</strong> No. Bank Rate is the <em>policy rate</em> at which the BoE lends to commercial banks. Commercial mortgage and loan rates include a <strong>spread above Bank Rate</strong> for risk, cost and profit. A 0.5% rise in Bank Rate may translate to a 0.6–1.0% rise in a mortgage rate depending on funding conditions – or no change at all if banks are flush with deposits.'
+        text: '<strong>Common trap – "Bank Rate is what banks charge their customers."</strong> No. Bank Rate is the <em>policy rate</em> at which the BoE lends to commercial banks. Commercial mortgage and loan rates include a <strong>spread above Bank Rate</strong> for risk, cost and profit. A 0.5% rise in Bank Rate may translate to a 0.6–1.0% rise in a mortgage rate depending on funding conditions – or no change at all if banks are flush with deposits.'
       }
     },
 
     /* ====================================================================
-       CARD 2 — Expansionary monetary policy in action
+       CARD 2 – Expansionary monetary policy in action
        Pattern: Decompose-a-diagram (EDL ad-shift-right hero) +
        Sequential transmission chain + 3-tile when-used + 3-step why-it-works.
        Branching Bank Rate / QE step consolidated into one tile.
@@ -135,12 +135,12 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'Lower rates make borrowing <strong>cheaper</strong> and reduce the reward from saving.' },
 
-      // Stepped interactive diagram with Classical/Keynesian toggle —
+      // Stepped interactive diagram with Classical/Keynesian toggle –
       // monetary expansion drives the same AD-right shift fiscal C2 uses,
       // so the SVG spec is reused; only the per-step copy changes.
       interactiveDiagram: {
         svgKey: 'adShiftClassicalKeynesian',
-        label: 'EXPANSIONARY MONETARY POLICY — AD SHIFTS RIGHT',
+        label: 'EXPANSIONARY MONETARY POLICY – AD SHIFTS RIGHT',
         emoji: '📊',
         layers: ['idl-1', 'idl-2'],
         inverseLayers: ['idl-old-solid'],
@@ -151,11 +151,11 @@ window.ECONOS_TOPIC = {
             label: 'Weak economy', show: [],
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — spare capacity at E₁.',
-              body: ['AD₁ meets AS on its <strong>rising range</strong>, at E₁.', 'Output Y₁ sits <em>below</em> full capacity Yf — there are idle resources monetary stimulus could put to work.'] },
+              head: 'Keynesian view – spare capacity at E₁.',
+              body: ['AD₁ meets AS on its <strong>rising range</strong>, at E₁.', 'Output Y₁ sits <em>below</em> full capacity Yf – there are idle resources monetary stimulus could put to work.'] },
             classical: {
               tone: 'purple',
-              head: 'Classical view — at capacity at E₁.',
+              head: 'Classical view – at capacity at E₁.',
               body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy always returns to full capacity.', 'AD₁ meets LRAS at E₁, with output fixed at Yf and price level P₁.'] }
           },
           {
@@ -163,24 +163,24 @@ window.ECONOS_TOPIC = {
             keynesian: {
               tone: 'amber',
               head: 'Lower rates / QE shift AD right to AD₂.',
-              body: ['Cheaper borrowing raises C and I; a weaker pound lifts net exports.', 'The whole AD curve shifts rightward from AD₁ to AD₂ — identical in both views.'] },
+              body: ['Cheaper borrowing raises C and I; a weaker pound lifts net exports.', 'The whole AD curve shifts rightward from AD₁ to AD₂ – identical in both views.'] },
             classical: {
               tone: 'purple',
               head: 'Lower rates / QE shift AD right to AD₂.',
-              body: ['Cheaper borrowing raises C and I; a weaker pound lifts net exports.', 'The whole AD curve shifts rightward from AD₁ to AD₂ — identical in both views.'] }
+              body: ['Cheaper borrowing raises C and I; a weaker pound lifts net exports.', 'The whole AD curve shifts rightward from AD₁ to AD₂ – identical in both views.'] }
           },
           {
             label: 'New equilibrium', show: ['idl-1', 'idl-2'],
             keynesian: {
               tone: 'green',
               head: 'Output AND prices rise (E₂).',
-              body: ['E₂ sits up and to the right: <strong>Y₂ &gt; Y₁ and P₂ &gt; P₁</strong>.', 'Monetary stimulus <em>works</em> — but the output gain shrinks and inflation grows as the economy nears Yf.'],
+              body: ['E₂ sits up and to the right: <strong>Y₂ &gt; Y₁ and P₂ &gt; P₁</strong>.', 'Monetary stimulus <em>works</em> – but the output gain shrinks and inflation grows as the economy nears Yf.'],
               analysis: 'Keynesian verdict: with spare capacity, looser monetary policy delivers real output and jobs (plus some inflation). The closer the economy is to Yf, the steeper AS becomes and the more of the AD shift leaks into prices rather than output.' },
             classical: {
               tone: 'purple',
               head: 'ONLY prices rise (E₂).',
-              body: ['E₂ sits directly above E₁: <strong>output stays at Yf, P₂ ≫ P₁</strong>.', 'Extra spending bids up prices against a fixed supply — the rate cut feeds inflation, not output.'],
-              analysis: 'Classical verdict: in the long run the economy is already at capacity, so monetary stimulus is <strong>purely inflationary</strong> — it cannot raise real output. Only supply-side policy can shift LRAS right and lift Yf. This is the heart of the rules-vs-discretion / monetarist case against active demand management.' }
+              body: ['E₂ sits directly above E₁: <strong>output stays at Yf, P₂ ≫ P₁</strong>.', 'Extra spending bids up prices against a fixed supply – the rate cut feeds inflation, not output.'],
+              analysis: 'Classical verdict: in the long run the economy is already at capacity, so monetary stimulus is <strong>purely inflationary</strong> – it cannot raise real output. Only supply-side policy can shift LRAS right and lift Yf. This is the heart of the rules-vs-discretion / monetarist case against active demand management.' }
           }
         ]
       },
@@ -228,11 +228,11 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 3 — The monetary transmission mechanism
-       Pattern: Spectrum / regime grid — the five channels through which
+       CARD 3 – The monetary transmission mechanism
+       Pattern: Spectrum / regime grid – the five channels through which
        Bank Rate changes work, plus strong-vs-weak conditions pair and a
        "why it matters" flow. (Mockup shows hub-and-spoke; rendered here as
-       a 5-col causes grid — the channels themselves are the lesson.)
+       a 5-col causes grid – the channels themselves are the lesson.)
        ==================================================================== */
     {
       id: 'monetary-transmission-mechanism',
@@ -292,7 +292,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 4 — Cooling inflation: contractionary monetary policy
+       CARD 4 – Cooling inflation: contractionary monetary policy
        Pattern: Decompose-a-diagram (EDL ad-shift-left hero) +
        Sequential cool-down chain + 3-tile when-used + Side-by-side
        gain-vs-cost trade-off. Mirror of Card 2.
@@ -307,12 +307,12 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'Higher rates <strong>dampen borrowing and spending</strong>, shifting AD left.' },
 
-      // Stepped interactive diagram with Classical/Keynesian toggle —
+      // Stepped interactive diagram with Classical/Keynesian toggle –
       // monetary tightening drives the same AD-left shift fiscal C4 uses,
       // so the SVG spec is reused; only the per-step copy changes.
       interactiveDiagram: {
         svgKey: 'adShiftLeftClassicalKeynesian',
-        label: 'CONTRACTIONARY MONETARY POLICY — AD SHIFTS LEFT',
+        label: 'CONTRACTIONARY MONETARY POLICY – AD SHIFTS LEFT',
         emoji: '📊',
         layers: ['idl-1', 'idl-2'],
         inverseLayers: ['idl-old-solid'],
@@ -323,36 +323,36 @@ window.ECONOS_TOPIC = {
             label: 'Overheating', show: [],
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — near capacity at E₁.',
-              body: ['AD₁ meets AS on its <strong>steep range</strong>, just below Yf.', 'Demand has run ahead of capacity — extra spending is now leaking mostly into the price level.'] },
+              head: 'Keynesian view – near capacity at E₁.',
+              body: ['AD₁ meets AS on its <strong>steep range</strong>, just below Yf.', 'Demand has run ahead of capacity – extra spending is now leaking mostly into the price level.'] },
             classical: {
               tone: 'purple',
-              head: 'Classical view — at capacity at E₁.',
-              body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy returns to full capacity.', 'AD₁ meets LRAS at E₁ — output is fixed at Yf, the price level sits at P₁.'] }
+              head: 'Classical view – at capacity at E₁.',
+              body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy returns to full capacity.', 'AD₁ meets LRAS at E₁ – output is fixed at Yf, the price level sits at P₁.'] }
           },
           {
             label: 'Higher Bank Rate', show: ['idl-1'],
             keynesian: {
               tone: 'amber',
               head: 'A higher Bank Rate shifts AD left to AD₂.',
-              body: ['Costlier borrowing weakens C and I; a stronger pound drags net exports.', 'The whole AD curve shifts leftward from AD₁ to AD₂ — identical in both views.'] },
+              body: ['Costlier borrowing weakens C and I; a stronger pound drags net exports.', 'The whole AD curve shifts leftward from AD₁ to AD₂ – identical in both views.'] },
             classical: {
               tone: 'purple',
               head: 'A higher Bank Rate shifts AD left to AD₂.',
-              body: ['Costlier borrowing weakens C and I; a stronger pound drags net exports.', 'The whole AD curve shifts leftward from AD₁ to AD₂ — identical in both views.'] }
+              body: ['Costlier borrowing weakens C and I; a stronger pound drags net exports.', 'The whole AD curve shifts leftward from AD₁ to AD₂ – identical in both views.'] }
           },
           {
             label: 'New equilibrium', show: ['idl-1', 'idl-2'],
             keynesian: {
               tone: 'blue',
               head: 'Output AND prices fall (E₂).',
-              body: ['E₂ sits down and to the left: <strong>Y₂ &lt; Y₁ and P₂ &lt; P₁</strong>.', 'Near capacity AS is steep, so the early output cost is small — most of the cooling lands in the price level. Push tightening too far and the output cost grows.'],
-              analysis: 'Keynesian verdict: when inflation is demand-driven and the economy is near capacity, higher rates <strong>cool prices with limited output sacrifice</strong>. Against a supply-side shock (e.g. an energy crisis), the same tightening hurts output without addressing the root cause — judgement calls 2021–23 hinge on this distinction.' },
+              body: ['E₂ sits down and to the left: <strong>Y₂ &lt; Y₁ and P₂ &lt; P₁</strong>.', 'Near capacity AS is steep, so the early output cost is small – most of the cooling lands in the price level. Push tightening too far and the output cost grows.'],
+              analysis: 'Keynesian verdict: when inflation is demand-driven and the economy is near capacity, higher rates <strong>cool prices with limited output sacrifice</strong>. Against a supply-side shock (e.g. an energy crisis), the same tightening hurts output without addressing the root cause – judgement calls 2021–23 hinge on this distinction.' },
             classical: {
               tone: 'purple',
               head: 'ONLY prices fall (E₂).',
-              body: ['E₂ sits directly below E₁: <strong>output stays at Yf, P₂ &lt; P₁</strong>.', 'Less spending against a fixed supply lowers the price level — no long-run output cost.'],
-              analysis: 'Classical verdict: in the long run output is anchored at Yf, so contractionary policy is <strong>purely disinflationary</strong>. The cost of disinflation is a short-run adjustment, not a long-run loss — central-bank credibility is what determines how painful that adjustment turns out to be.' }
+              body: ['E₂ sits directly below E₁: <strong>output stays at Yf, P₂ &lt; P₁</strong>.', 'Less spending against a fixed supply lowers the price level – no long-run output cost.'],
+              analysis: 'Classical verdict: in the long run output is anchored at Yf, so contractionary policy is <strong>purely disinflationary</strong>. The cost of disinflation is a short-run adjustment, not a long-run loss – central-bank credibility is what determines how painful that adjustment turns out to be.' }
           }
         ]
       },
@@ -397,7 +397,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 — Beyond Bank Rate: QE and the monetary toolkit
+       CARD 5 – Beyond Bank Rate: QE and the monetary toolkit
        Pattern: Side-by-side pair (conventional vs unconventional) +
        Sequential 5-step "how QE works" flow + 5-tile toolkit grid +
        3-step why-distinction-matters flow.
@@ -463,8 +463,8 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 6 — Judging monetary policy
-       Pattern: Evidence-then-verdict — Strengths/Limits pair, 6-question
+       CARD 6 – Judging monetary policy
+       Pattern: Evidence-then-verdict – Strengths/Limits pair, 6-question
        judgement frame, 4-step "how to write it" flow, synthesis verdict.
        Mirror of fiscal Card 6.
        ==================================================================== */

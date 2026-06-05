@@ -1,5 +1,5 @@
 /* ============================================================
-   AD Shift LEFT — Classical vs Keynesian — engine spec for
+   AD Shift LEFT – Classical vs Keynesian – engine spec for
    adShiftLeftClassicalKeynesian.
 
    The MIRROR of ad-shift-classical-keynesian: the same Classical-vs-
@@ -10,7 +10,7 @@
 
      perspective = 'keynesian'  → reverse-L AS. Economy starts on the
        steep range near capacity, so AD₁→AD₂ lowers BOTH output and
-       the price level — but output loss is small at first, then grows
+       the price level – but output loss is small at first, then grows
        as the economy drops down the bottleneck.
      perspective = 'classical'  → vertical LRAS at Yf. Economy always
        at capacity, so AD₁→AD₂ lowers ONLY the price level: pure
@@ -28,7 +28,7 @@
 (function () {
   'use strict';
 
-  var CAP = 0.66;   // full-capacity output Yf — shared by both schools
+  var CAP = 0.66;   // full-capacity output Yf – shared by both schools
 
   window.ECONOS_AD_SHIFT_LEFT_CLASSICAL_KEYNESIAN_SPEC = {
     width: 440,
@@ -60,7 +60,7 @@
         labelDx: 8, labelDy: -2, anchor: 'start',
         perspective: 'classical' },
 
-      /* ── AD₁ solid (base, RIGHT position — the overheated starting
+      /* ── AD₁ solid (base, RIGHT position – the overheated starting
             point). Hidden once a view activates; the dashed copy below
             takes over. AD₂ in the prior expansionary spec lives here. ── */
       { id: 'AD1',
@@ -73,7 +73,7 @@
         tone: 'blue', label: 'AD₁', strokeWidth: 1.6,
         dashed: '6 4', labelDx: -10, labelDy: -38, anchor: 'end',
         layer: 'idl-1' },
-      /* ── AD₂ solid, shifted LEFT (idl-1) — the contracted demand
+      /* ── AD₂ solid, shifted LEFT (idl-1) – the contracted demand
             position. Same coords as AD₁ in the expansionary mirror. ── */
       { id: 'AD2',
         d: 'M 0.060,0.790 L 0.845,0.045',
@@ -83,27 +83,27 @@
     ],
 
     points: [
-      /* ── Keynesian E₁ — starting state, on the STEEP range near
+      /* ── Keynesian E₁ – starting state, on the STEEP range near
             capacity (high P, near Yf). ── */
       { intersection: { curves: ['AD1', 'keynAS'], near: [0.62, 0.47] },
         tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
         label: 'E₁', labelDx: 14, labelDy: -2, anchor: 'start',
         perspective: 'keynesian' },
-      /* ── Keynesian E₂ — output AND prices fall (idl-2) ── */
+      /* ── Keynesian E₂ – output AND prices fall (idl-2) ── */
       { intersection: { curves: ['AD2', 'keynAS'], near: [0.55, 0.32] },
         tone: 'blue', radius: 5.5, hollow: true,
         gridlines: 'blue', ticks: { x: 'Y₂', y: 'P₂' },
         label: 'E₂', labelDx: 14, labelDy: -2, anchor: 'start',
         layer: 'idl-2', perspective: 'keynesian' },
 
-      /* ── Classical E₁ — at full capacity Yf, high P ── */
+      /* ── Classical E₁ – at full capacity Yf, high P ── */
       { intersection: { curves: ['AD1', 'lras'], near: [CAP, 0.44] },
         tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { y: 'P₁' },
         label: 'E₁', labelDx: 14, labelDy: -2, anchor: 'start',
         perspective: 'classical' },
-      /* ── Classical E₂ — only the price level falls (idl-2) ── */
+      /* ── Classical E₂ – only the price level falls (idl-2) ── */
       { intersection: { curves: ['AD2', 'lras'], near: [CAP, 0.22] },
         tone: 'purple', radius: 5.5, hollow: true,
         gridlines: 'purple', ticks: { y: 'P₂' },
@@ -120,7 +120,7 @@
     arrows: [
       /* Leftward perpendicular shift arrow (idl-1), centred in the gap
          between the two parallel AD lines. Mirror of the rightward arrow
-         in the expansionary spec — same magnitude, opposite direction. */
+         in the expansionary spec – same magnitude, opposite direction. */
       { x1: 0.546, y1: 0.521, x2: 0.464, y2: 0.434,
         tone: 'blue', strokeWidth: 1.8,
         markerEnd: 'adckL-arr-blue', buffer: 0, layer: 'idl-1' }

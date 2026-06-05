@@ -1,9 +1,9 @@
 /* ============================================================
-   ECONOS — YED & XED Explorer
+   ECONOS – YED & XED Explorer
 
    Two widgets in one file:
-     window.EconosYed  — Income Elasticity of Demand (Engel curve)
-     window.EconosXed  — Cross-Price Elasticity of Demand
+     window.EconosYed  – Income Elasticity of Demand (Engel curve)
+     window.EconosXed  – Cross-Price Elasticity of Demand
 
    Both use the same SVG layout and CSS classes as elasticity-explorer.js.
    The curve is always linear: Dependent = a + b·Independent.
@@ -212,7 +212,7 @@
         var ya = curveY(r[0]), yb = curveY(r[1]);
         setLine(els.curve, coords.toSvgX(r[0]), coords.toSvgY(ya), coords.toSvgX(r[1]), coords.toSvgY(yb));
 
-        /* Curve label — near the end with higher x */
+        /* Curve label – near the end with higher x */
         var ly = curveY(r[1]);
         els.curveLabel.setAttribute('x', coords.toSvgX(r[1]) + 6);
         els.curveLabel.setAttribute('y', coords.toSvgY(ly) + 4);
@@ -249,7 +249,7 @@
         els.chip.style.setProperty('--ee-chip-color', cls.color);
         els.chipLbl.textContent = cls.label;
 
-        /* Spectrum marker — tanh scale centred on zero for YED/XED */
+        /* Spectrum marker – tanh scale centred on zero for YED/XED */
         var t = 0.5 + 0.5 * Math.tanh((isFinite(v) ? v : (v > 0 ? 5 : -5)) / cfg.specScale);
         els.marker.style.left = (Math.max(0, Math.min(1, t)) * 100) + '%';
 
@@ -341,14 +341,14 @@
   }
 
   /* ==================================================================
-     YED — Income Elasticity of Demand
+     YED – Income Elasticity of Demand
      ================================================================== */
   var YED_PRESETS = [
     { key: 'bus',    label: 'Bus travel',      a: 80,   b: -0.75, x1: 25, x2: 68, note: 'As incomes rise, people switch to cars → bus travel is an inferior good (YED < 0).' },
-    { key: 'bread',  label: 'Basic food',      a: 90,   b: 0.5,   x1: 20, x2: 80, note: 'Food is a necessity — demand rises slowly with income; YED = 0–1.' },
+    { key: 'bread',  label: 'Basic food',      a: 90,   b: 0.5,   x1: 20, x2: 80, note: 'Food is a necessity – demand rises slowly with income; YED = 0–1.' },
     { key: 'origin', label: 'Unit elastic',    a: 0,    b: 2.0,   x1: 20, x2: 80, note: 'Engel curve through the origin → YED = 1 at every point.' },
     { key: 'meals',  label: 'Restaurant meals',a: -20,  b: 2.5,   x1: 20, x2: 68, note: 'Demand rises more than income → luxury good (YED > 1).' },
-    { key: 'hols',   label: 'Foreign holidays',a: -40,  b: 3.5,   x1: 15, x2: 55, note: 'High luxury — surges in booms, collapses in recessions (YED >> 1).' }
+    { key: 'hols',   label: 'Foreign holidays',a: -40,  b: 3.5,   x1: 15, x2: 55, note: 'High luxury – surges in booms, collapses in recessions (YED >> 1).' }
   ];
 
   function classifyYed(v) {
@@ -361,7 +361,7 @@
   var YED_CFG = {
     id: 'yed', xLabel: 'Y', yLabel: 'QD',
     curveColor: '#7C3AED', curveName: 'Engel',
-    formulaHead: 'YED — income elasticity of demand',
+    formulaHead: 'YED – income elasticity of demand',
     formulaLabel: 'YED = <span class="ee-frac"><span class="ee-num">%ΔQD</span><span class="ee-den">%ΔY</span></span>',
     formulaName: 'YED',
     xMax: 100, yMax: 200, defaultIdx: 1,
@@ -389,14 +389,14 @@
   global.EconosYed = makeController(YED_CFG, YED_PRESETS, classifyYed, 'yed-root', '__yedInit');
 
   /* ==================================================================
-     XED — Cross-Price Elasticity of Demand
+     XED – Cross-Price Elasticity of Demand
      ================================================================== */
   var XED_PRESETS = [
-    { key: 'coke',    label: 'Coke / Pepsi',     a: 20,  b: 20,   x1: 2,  x2: 7,  note: 'Strong substitutes — Coke price rise → Pepsi demand surges.' },
-    { key: 'tea',     label: 'Tea / Coffee',      a: 60,  b: 5,    x1: 2,  x2: 14, note: 'Moderate substitutes — some switching, but preference remains.' },
-    { key: 'indep',   label: 'Independent goods', a: 100, b: 0,    x1: 3,  x2: 15, note: 'XED = 0 — goods are unrelated; price of B has no effect on demand for A.' },
-    { key: 'petrol',  label: 'Petrol & car trips',a: 180, b: -10,  x1: 3,  x2: 12, note: 'Complements — costlier petrol → fewer car journeys; XED < 0.' },
-    { key: 'teamilk', label: 'Tea & milk',        a: 160, b: -12,  x1: 2,  x2: 10, note: 'Complements — tea and milk consumed together; rising milk price cuts tea demand.' }
+    { key: 'coke',    label: 'Coke / Pepsi',     a: 20,  b: 20,   x1: 2,  x2: 7,  note: 'Strong substitutes – Coke price rise → Pepsi demand surges.' },
+    { key: 'tea',     label: 'Tea / Coffee',      a: 60,  b: 5,    x1: 2,  x2: 14, note: 'Moderate substitutes – some switching, but preference remains.' },
+    { key: 'indep',   label: 'Independent goods', a: 100, b: 0,    x1: 3,  x2: 15, note: 'XED = 0 – goods are unrelated; price of B has no effect on demand for A.' },
+    { key: 'petrol',  label: 'Petrol & car trips',a: 180, b: -10,  x1: 3,  x2: 12, note: 'Complements – costlier petrol → fewer car journeys; XED < 0.' },
+    { key: 'teamilk', label: 'Tea & milk',        a: 160, b: -12,  x1: 2,  x2: 10, note: 'Complements – tea and milk consumed together; rising milk price cuts tea demand.' }
   ];
 
   function classifyXed(v) {
@@ -410,7 +410,7 @@
   var XED_CFG = {
     id: 'xed', xLabel: 'P_B', yLabel: 'QD_A',
     curveColor: '#2563EB', curveName: 'XD',
-    formulaHead: 'XED — cross-price elasticity of demand',
+    formulaHead: 'XED – cross-price elasticity of demand',
     formulaLabel: 'XED = <span class="ee-frac"><span class="ee-num">%ΔQD_A</span><span class="ee-den">%ΔP_B</span></span>',
     formulaName: 'XED',
     xMax: 20, yMax: 200, defaultIdx: 0,

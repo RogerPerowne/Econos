@@ -1,5 +1,5 @@
 /* ============================================================
-   SRAS + LRAS Intro — engine spec for srasLrasIntro.
+   SRAS + LRAS Intro – engine spec for srasLrasIntro.
    Aggregate-supply card 1 "Aggregate supply: the basic diagram".
 
    Layered for the ad-interactive view-switcher:
@@ -27,12 +27,12 @@
     },
 
     curves: [
-      // Layer 1 — upward-sloping SRAS
+      // Layer 1 – upward-sloping SRAS
       { d: 'M 0.069,0.067 L 0.931,0.894',
         tone: 'blue', label: 'SRAS', strokeWidth: 2.5,
         labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' },
-      // Layer 2 — vertical LRAS at full-capacity output
+      // Layer 2 – vertical LRAS at full-capacity output
       { d: 'M ' + YF + ',0 L ' + YF + ',0.992',
         tone: 'purple', label: 'LRAS', strokeWidth: 2.5,
         labelDx: 0, labelDy: -10, anchor: 'middle',
@@ -40,7 +40,7 @@
     ],
 
     points: [
-      // Layer 2 — equilibrium dot at (Yf, P₁) with dashed P₁ gridline + ticks
+      // Layer 2 – equilibrium dot at (Yf, P₁) with dashed P₁ gridline + ticks
       { x: YF, y: P1, tone: 'purple', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Yf', y: 'P₁' },
         layer: 'idl-2' }

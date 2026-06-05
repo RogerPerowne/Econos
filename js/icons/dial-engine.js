@@ -1,8 +1,8 @@
 /* ============================================================
-   ECONOS — Dial engine.
+   ECONOS – Dial engine.
    Sibling to the chart engine (js/charts/ppf.js). Renders gauges
    (semicircle dials) from a tiny spec, so authors get geometric
-   accuracy for free — the pointer ALWAYS lands on the arc and the
+   accuracy for free – the pointer ALWAYS lands on the arc and the
    target band ALWAYS uses arc-on-radius endpoints.
 
    The previous hand-rolled gauges (macro-cockpit etc.) drifted on
@@ -27,20 +27,20 @@
 
        position(t) = { x: cx − r·cos(π·t),  y: cy − r·sin(π·t) }
 
-     • t=0   → (cx − r, cy)   — left baseline
-     • t=0.5 → (cx,     cy−r) — top
-     • t=1   → (cx + r, cy)   — right baseline
+     • t=0   → (cx − r, cy)   – left baseline
+     • t=0.5 → (cx,     cy−r) – top
+     • t=1   → (cx + r, cy)   – right baseline
 
      Background arc:    position(0) → position(1)
      Target band:       position(t_targetMin) → position(t_targetMax)
-     Pointer endpoint:  position(t_value)     — distance from
+     Pointer endpoint:  position(t_value)     – distance from
                           centre = exactly r, so the tip always
                           lands on the arc.
    ============================================================ */
 (function () {
   'use strict';
 
-  /* Colour palette — mirrors the chart engine's PATTERN_TONES naming
+  /* Colour palette – mirrors the chart engine's PATTERN_TONES naming
      so a `tone: 'rose'` looks identical on a gauge and on a chart. */
   var TONES = {
     rose:    { dark: '#E11D48', light: '#FECDD3' },
@@ -55,7 +55,7 @@
     slate:   { dark: '#475569', light: '#CBD5E1' }
   };
 
-  /* Green target band is intentional — every dial that has a target
+  /* Green target band is intentional – every dial that has a target
      uses the same green so the eye can read "in/out of target zone"
      across all 7 dashboard tiles without re-learning per tile. */
   var TARGET_COLOUR = '#16A34A';
@@ -84,17 +84,17 @@
     var W    = size;
     var cx   = size / 2;
     var r    = size * 0.375;            // ~60 when size is 160 (matches legacy)
-    var pad  = size * 0.09375;          // ~15 for size 160 — matches the
+    var pad  = size * 0.09375;          // ~15 for size 160 – matches the
                                         //   legacy viewBox 160×90 layout so
                                         //   gauges drop in visually identical.
-    var cy   = pad + r;                 // baseline y — ~75 for size 160
+    var cy   = pad + r;                 // baseline y – ~75 for size 160
     var H    = cy + pad;                // mirror top + bottom margins
 
     var min  = spec.min != null ? spec.min : 0;
     var max  = spec.max != null ? spec.max : 100;
     var val  = spec.value != null ? spec.value : min;
 
-    if (max === min) max = min + 1;  // defensive — avoid /0
+    if (max === min) max = min + 1;  // defensive – avoid /0
     var tVal = clamp01((val - min) / (max - min));
 
     var tone = TONES[spec.tone] || TONES.slate;
@@ -111,13 +111,13 @@
                '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + aria +
                '" style="width:100%;height:auto;display:block;">');
 
-    /* Background arc — light tone version of the tile's accent. */
+    /* Background arc – light tone version of the tile's accent. */
     parts.push('<path d="M ' + fmt(pStart.x) + ' ' + fmt(pStart.y) +
                ' A ' + r + ' ' + r + ' 0 0 1 ' + fmt(pEnd.x) + ' ' + fmt(pEnd.y) +
                '" stroke="' + tone.light + '" stroke-width="' + sw +
                '" fill="none" stroke-linecap="round"/>');
 
-    /* Target band (green) — optional. Endpoints derived from the SAME
+    /* Target band (green) – optional. Endpoints derived from the SAME
        parametrisation as the pointer, so they're guaranteed to lie on
        the bg arc. */
     if (Array.isArray(spec.target) && spec.target.length === 2 && spec.target[1] > spec.target[0]) {
@@ -131,7 +131,7 @@
                  '" fill="none" stroke-linecap="round"/>');
     }
 
-    /* Pointer — centre to the value's point on the arc. Length = r
+    /* Pointer – centre to the value's point on the arc. Length = r
        exactly, by construction. */
     var pVal = position(cx, cy, r, tVal);
     parts.push('<line x1="' + cx + '" y1="' + cy +
@@ -155,7 +155,7 @@
     }
     if (spec.type === 'gauge') return renderGauge(spec);
     if (typeof console !== 'undefined' && console.warn) {
-      console.warn('[ECONOS_DIALS] unknown spec.type "' + spec.type + '" — only "gauge" is implemented today.');
+      console.warn('[ECONOS_DIALS] unknown spec.type "' + spec.type + '" – only "gauge" is implemented today.');
     }
     return '<!-- ECONOS_DIALS: unknown type "' + (spec.type || '') + '" -->';
   }

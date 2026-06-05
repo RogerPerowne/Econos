@@ -45,7 +45,7 @@ window.ECONOS_TOPIC = {
       diagramLabel: 'What a rational agent does',
       diagramEmoji: '🧠',
       comparison: {
-        title: 'Who maximises what? — same logic, different objective',
+        title: 'Who maximises what? – same logic, different objective',
         emoji: '👥',
         position: 'after-diagram',
         vs: '≈',
@@ -60,7 +60,7 @@ window.ECONOS_TOPIC = {
       keyTermsLabel: 'Key terms',
       keyTermsEmoji: '📖',
       keyTakeaway: 'Rationality helps economists build clear models of behaviour before testing them against the real world.',
-      examEdge: 'Rationality is a <em>simplifying assumption</em>, not a claim that people are robots — economists build the model first, then test how realistic it is. Behavioural economics (spec 1.2.10) tackles the cases where it breaks down. In essays, state the assumption explicitly before using it, then evaluate.'
+      examEdge: 'Rationality is a <em>simplifying assumption</em>, not a claim that people are robots – economists build the model first, then test how realistic it is. Behavioural economics (spec 1.2.10) tackles the cases where it breaks down. In essays, state the assumption explicitly before using it, then evaluate.'
     },
 
     /* ----- CARD 2 – Consumers maximise utility ----- */
@@ -129,7 +129,7 @@ window.ECONOS_TOPIC = {
 };
 
 /* ============================================================
-   End-of-Learn-It quiz pool — Rational Decision Making (1.2.1).
+   End-of-Learn-It quiz pool – Rational Decision Making (1.2.1).
    ============================================================ */
 (function () {
 

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Predict the Outcome station)
+   ECONOS – Link It engine (Predict the Outcome station)
    Students predict directional changes (↑ ↓ → ?) for a set
    of economic variables following a scenario shock.
    ============================================================ */

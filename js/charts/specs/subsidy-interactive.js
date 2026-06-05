@@ -1,19 +1,19 @@
 /* ============================================================
-   Subsidy Interactive — engine spec for subsidyInteractive.
+   Subsidy Interactive – engine spec for subsidyInteractive.
    CPS topic, indirect-taxes-and-subsidies topic,
    government-intervention-in-markets topic.
 
    Cumulative 3-layer reveal of a subsidy on a supply-and-demand
    diagram:
      base    → D, S, S₁ (subsidised supply, shifted DOWN/right),
-                E₀ at AD ∩ S₀ midpoint, E_c at D ∩ S₁ — labelled
+                E₀ at AD ∩ S₀ midpoint, E_c at D ∩ S₁ – labelled
                 Pc (consumer pays), Pp (producer receives), Qs.
                 Vertical subsidy bracket between Pp and Pc.
-     view 1  → highlight the CONSUMER benefit region — the
+     view 1  → highlight the CONSUMER benefit region – the
                 rectangle from y-axis to Qs between P₀ and Pc.
-     view 2  → adds the PRODUCER benefit region — from y-axis to
+     view 2  → adds the PRODUCER benefit region – from y-axis to
                 Qs between Pp and P₀.
-     view 3  → adds the TOTAL SUBSIDY COST outline — dashed
+     view 3  → adds the TOTAL SUBSIDY COST outline – dashed
                 purple rectangle = £S × Qs.
 
    Geometry preserved from the original hand-rolled SVG so the
@@ -23,9 +23,9 @@
   'use strict';
 
   var E0 = { x: 0.542, y: 0.482 };  // SVG (250, 146)
-  var Ec = { x: 0.644, y: 0.389 };  // SVG (287, 169) — on S₁ at consumer price
+  var Ec = { x: 0.644, y: 0.389 };  // SVG (287, 169) – on S₁ at consumer price
   var Pc = 0.389;                    // consumer price (lower)
-  var Pp = 0.551;                    // producer receives (higher) — was SVG y=129
+  var Pp = 0.551;                    // producer receives (higher) – was SVG y=129
   var Qs = 0.644;                    // subsidised quantity
 
   window.ECONOS_SUBSIDY_INTERACTIVE_SPEC = {
@@ -83,15 +83,15 @@
     ],
 
     boxedLabels: [
-      /* Layer 1: consumer benefit highlight — between P₀ and Pc, x-axis to Qs */
+      /* Layer 1: consumer benefit highlight – between P₀ and Pc, x-axis to Qs */
       { x: 0, y: E0.y, w: Qs, h: E0.y - Pc,
         tone: 'blue', lines: [],
         layer: 'idl-1' },
-      /* Layer 2: producer benefit highlight — between Pp and P₀ */
+      /* Layer 2: producer benefit highlight – between Pp and P₀ */
       { x: 0, y: Pp, w: Qs, h: Pp - E0.y,
         tone: 'green', lines: [],
         layer: 'idl-2' },
-      /* Layer 3: full subsidy cost outline — between Pp and Pc */
+      /* Layer 3: full subsidy cost outline – between Pp and Pc */
       { x: 0, y: Pp, w: Qs, h: Pp - Pc,
         tone: 'purple', lines: [],
         layer: 'idl-3' }

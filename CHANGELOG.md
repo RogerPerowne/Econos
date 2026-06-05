@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.65.0 – 2026-06-05
+
+### Em-dash → en-dash sweep across all user-facing content
+
+The em-dash is widely recognised as an AI writing tell, and Econos
+prose was peppered with them. Swept every em-dash out of user-facing
+source files and replaced with the slightly shorter en-dash – same
+rhythm in the reading, much less of a tell.
+
+Scope:
+- Replaced in 266 files across `js/**`, `articles/**`, and the
+  user-facing root HTML pages (`index.html`, `learn-it.html`,
+  `link-it.html`, `land-it.html`).
+- Skipped: `CHANGELOG.md`, `CLAUDE.md`, `docs/**`, `.claude/skills/**`,
+  `tests/**` (only in code comments), `scripts/**`, configs,
+  `dist/**` (regenerates), `node_modules`. CSS files were also
+  skipped – every em-dash there was inside a `/* ... */` comment
+  not rendered to users.
+- Snapshot tests for chart and dial SVG renders were regenerated
+  via `vitest run -u` (15 em→en swaps in the snapshot file,
+  no other diff – pure character substitution).
+
+Approximately 1,948 em-dashes replaced across the site in total.
+
+Cache bumped to `econos-v360`.
+
 ## 0.64.0 — 2026-06-05
 
 ### Design language: Material Symbols nav icons + a one-line content icon API

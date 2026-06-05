@@ -1,27 +1,27 @@
 /* ============================================================
-   LRAS Views Interactive — engine spec for lrasViewsInteractive.
+   LRAS Views Interactive – engine spec for lrasViewsInteractive.
    Aggregate-supply card 3 "The LRAS curve".
 
    Classical vs Keynesian as a PERSPECTIVE TOGGLE (not a stepped
    view sequence). Default Classical; the pill above the chart
    flips to Keynesian. The two AS shapes cross-fade via the
-   engine's opacity-based perspective CSS — same chart frame,
+   engine's opacity-based perspective CSS – same chart frame,
    two interpretations.
 
      perspective='classical' → vertical LRAS at Yf + equilibrium
                                point at (Yf, P₀)
      perspective='keynesian' → textbook reverse-L:
                                • PERFECTLY horizontal flat range
-                                 (zero slope — common student error)
+                                 (zero slope – common student error)
                                • smooth bottleneck curve
-                               • vertical at Yf — capacity ceiling
+                               • vertical at Yf – capacity ceiling
                                + three region labels
 
    References for the Keynesian shape: tutor2u 2.3.3 LRAS,
-   TutorChase Edexcel notes, IBonomics Keynesian AD–LRAS diagram —
+   TutorChase Edexcel notes, IBonomics Keynesian AD–LRAS diagram –
    all describe the same three-zone "bendy L".
 
-   No layerAliases — articles don't yet embed this chart, and the
+   No layerAliases – articles don't yet embed this chart, and the
    perspective system has no equivalent alias mechanism. Add one
    if/when an article needs it.
    ============================================================ */
@@ -53,9 +53,9 @@
          M  : start at low-Y, low-P (just past the y-axis)
          L  : PERFECTLY horizontal flat range (no slope)
          C  : smooth bottleneck transition (cubic Bezier)
-              — first control point keeps the tangent flat
+              – first control point keeps the tangent flat
                 so the join with the horizontal is smooth
-              — second control point sits on the Yf vertical
+              – second control point sits on the Yf vertical
                 so the join with the capacity ceiling is smooth
          L  : vertical at Yf to the top of the chart            */
       { d: 'M 0.042,0.224 L 0.300,0.224 C 0.450,0.224 ' + YF + ',0.450 ' + YF + ',0.850 L ' + YF + ',0.992',

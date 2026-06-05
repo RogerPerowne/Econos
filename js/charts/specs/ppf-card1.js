@@ -1,12 +1,12 @@
 /* ============================================================
-   PPF card 1 — declarative spec for ppfInteractive.
+   PPF card 1 – declarative spec for ppfInteractive.
 
    Legend reworked (Jun 2026) to match the 1.1.1 chart treatment:
    `legendPosition: 'bottom'` renders each per-view description as a
    crisp HTML block that the `.econos-chart-wrap-below` grid lays out
    to the RIGHT of the chart on desktop and stacked beneath it on
-   mobile. The content is deliberately slim — short plain lines, no
-   colour-key dots, no bold headers — so it reads as a clean caption,
+   mobile. The content is deliberately slim – short plain lines, no
+   colour-key dots, no bold headers – so it reads as a clean caption,
    not a busy legend. The on-chart point/zone/curve labels carry the
    colour coding; this text just explains.
 
@@ -53,9 +53,9 @@
         ],
         legend: {
           sections: [{ body: [
-            '<strong style="color:#2563EB;">A · on the curve</strong> — efficient, no waste.',
-            '<strong style="color:#D97706;">B · inside</strong> — resources lie idle.',
-            '<strong style="color:#DC2626;">C · outside</strong> — not possible with today’s resources.'
+            '<strong style="color:#2563EB;">A · on the curve</strong> – efficient, no waste.',
+            '<strong style="color:#D97706;">B · inside</strong> – resources lie idle.',
+            '<strong style="color:#DC2626;">C · outside</strong> – not possible with today’s resources.'
           ] }]
         }
       },
@@ -109,8 +109,8 @@
         ],
         legend: {
           sections: [{ body: [
-            '<strong style="color:#059669;">PPF₂ · outward</strong> — more capacity (better tech, more resources).',
-            '<strong style="color:#DC2626;">PPF₃ · inward</strong> — lost capacity (war, disaster, depreciation).',
+            '<strong style="color:#059669;">PPF₂ · outward</strong> – more capacity (better tech, more resources).',
+            '<strong style="color:#DC2626;">PPF₃ · inward</strong> – lost capacity (war, disaster, depreciation).',
             'Moving along one curve is reallocation, not growth.'
           ] }]
         }
@@ -129,7 +129,7 @@
         legend: {
           sections: [{ body: [
             'Any point on the curve (like <strong style="color:#7C3AED;">F</strong>) is productively efficient.',
-            'Only <strong style="color:#0891B2;">G</strong> is allocatively efficient — what society wants most.',
+            'Only <strong style="color:#0891B2;">G</strong> is allocatively efficient – what society wants most.',
             '<strong style="color:#64748B;">H · inside</strong> the curve wastes resources.'
           ] }]
         }

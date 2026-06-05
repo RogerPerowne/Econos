@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
             body: 'Demand (D) slopes down; supply (S) slopes up. Together they describe how much is bought and sold at each price.' },
           { label: 'Where they meet: E', tone: 'slate', show: ['layer-e'],
             head: 'Equilibrium E',
-            body: 'Where D and S cross is equilibrium <strong>E</strong> — the market-clearing price <strong>Pₑ</strong> and quantity <strong>Qₑ</strong>.' },
+            body: 'Where D and S cross is equilibrium <strong>E</strong> – the market-clearing price <strong>Pₑ</strong> and quantity <strong>Qₑ</strong>.' },
           { label: 'The market clears', tone: 'green', show: ['layer-e', 'layer-clear'],
             head: 'The market clears',
             body: 'At E, quantity demanded equals quantity supplied (Qd = Qs), so there is <strong>no pressure</strong> for the price to rise or fall.' }
@@ -75,13 +75,13 @@ window.ECONOS_TOPIC = {
         views: [
           { label: 'Market in equilibrium', tone: 'green', show: ['layer-base'],
             head: 'Market in equilibrium',
-            body: 'At <strong>E</strong>, quantity demanded equals quantity supplied. There is no pressure for price to move — the market clears at <strong>Pₑ</strong>, <strong>Qₑ</strong>.' },
+            body: 'At <strong>E</strong>, quantity demanded equals quantity supplied. There is no pressure for price to move – the market clears at <strong>Pₑ</strong>, <strong>Qₑ</strong>.' },
           { label: 'Price too high → surplus', tone: 'amber', show: ['layer-surplus'],
             head: 'Price too high → surplus',
-            body: 'At <strong>P₁</strong> (above Pₑ), quantity supplied (Q₂) exceeds quantity demanded (Q₁) — the gap below the axis is the <strong>surplus</strong>. Unsold stock builds up, so sellers <strong>cut the price</strong>, pushing the market back down to E.' },
+            body: 'At <strong>P₁</strong> (above Pₑ), quantity supplied (Q₂) exceeds quantity demanded (Q₁) – the gap below the axis is the <strong>surplus</strong>. Unsold stock builds up, so sellers <strong>cut the price</strong>, pushing the market back down to E.' },
           { label: 'Price too low → shortage', tone: 'blue', show: ['layer-short'],
             head: 'Price too low → shortage',
-            body: 'At <strong>P₂</strong> (below Pₑ), quantity demanded (Q₁) exceeds quantity supplied (Q₂) — the gap below the axis is the <strong>shortage</strong>. Buyers compete for scarce stock and <strong>bid the price up</strong>, pushing the market back up to E.' }
+            body: 'At <strong>P₂</strong> (below Pₑ), quantity demanded (Q₁) exceeds quantity supplied (Q₂) – the gap below the axis is the <strong>shortage</strong>. Buyers compete for scarce stock and <strong>bid the price up</strong>, pushing the market back up to E.' }
         ]
       },
       causes: [
@@ -119,13 +119,13 @@ window.ECONOS_TOPIC = {
             body: 'A favourable non-price demand factor (higher income, tastes, a dearer substitute) shifts D right. New equilibrium <strong>E₂</strong>: <strong>P rises, Q rises</strong>.' },
           { label: 'Demand decreases', tone: 'purple', show: ['layer-ddec'],
             head: 'Demand decreases (D → D₃)',
-            body: 'An adverse demand factor shifts D left. New equilibrium <strong>E₃</strong>: <strong>P falls, Q falls</strong> — the mirror image.' },
+            body: 'An adverse demand factor shifts D left. New equilibrium <strong>E₃</strong>: <strong>P falls, Q falls</strong> – the mirror image.' },
           { label: 'Supply increases', tone: 'green', show: ['layer-sinc'],
             head: 'Supply increases (S → S₂)',
             body: 'Lower costs, better technology or a subsidy shift S right. New equilibrium <strong>E₂</strong>: <strong>P falls, Q rises</strong>.' },
           { label: 'Supply decreases', tone: 'purple', show: ['layer-sdec'],
             head: 'Supply decreases (S → S₃)',
-            body: 'Higher costs, a tax or a supply shock shift S left. New equilibrium <strong>E₃</strong>: <strong>P rises, Q falls</strong> — a classic supply shock.' }
+            body: 'Higher costs, a tax or a supply shock shift S left. New equilibrium <strong>E₃</strong>: <strong>P rises, Q falls</strong> – a classic supply shock.' }
         ]
       },
       causesEmoji: '↔️',
@@ -158,10 +158,10 @@ window.ECONOS_TOPIC = {
         views: [
           { label: 'Both increase', tone: 'green', show: ['layer-both'],
             head: 'Both increase (D→D₂, S→S₂)',
-            body: 'More is traded at the new equilibrium, so <strong>Q definitely rises</strong>. The effect on <strong>P is ambiguous</strong> — it depends on whether the demand or supply shift is larger (shown ≈ unchanged with equal shifts).' },
+            body: 'More is traded at the new equilibrium, so <strong>Q definitely rises</strong>. The effect on <strong>P is ambiguous</strong> – it depends on whether the demand or supply shift is larger (shown ≈ unchanged with equal shifts).' },
           { label: 'Demand up, supply down', tone: 'purple', show: ['layer-dups'],
             head: 'Demand up, supply down (D→D₂, S→S₃)',
-            body: 'Both shifts push price up, so <strong>P definitely rises</strong>. The effect on <strong>Q is ambiguous</strong> — demand pulls it up, the supply fall pulls it down.' }
+            body: 'Both shifts push price up, so <strong>P definitely rises</strong>. The effect on <strong>Q is ambiguous</strong> – demand pulls it up, the supply fall pulls it down.' }
         ]
       },
       causesEmoji: '🧭',
@@ -169,10 +169,10 @@ window.ECONOS_TOPIC = {
       causesStyle: 'tinted-flat',
       causesCols: 2,
       causes: [
-        { tone: 'green',  icon: '↗️', head: 'D↑ S↑',  body: '<strong>Q rises</strong> for sure (both push Q up). <em>P ambiguous</em> — depends on which shift is bigger.' },
-        { tone: 'amber',  icon: '↗️↘️', head: 'D↑ S↓', body: '<strong>P rises</strong> for sure (both push P up). <em>Q ambiguous</em> — demand pulls it up, supply fall pulls it down.' },
-        { tone: 'blue',   icon: '↘️↗️', head: 'D↓ S↑', body: '<strong>P falls</strong> for sure (both push P down). <em>Q ambiguous</em> — demand pulls it down, supply rise pulls it up.' },
-        { tone: 'rose',   icon: '↘️', head: 'D↓ S↓',  body: '<strong>Q falls</strong> for sure (both push Q down). <em>P ambiguous</em> — depends on which shift is bigger.' }
+        { tone: 'green',  icon: '↗️', head: 'D↑ S↑',  body: '<strong>Q rises</strong> for sure (both push Q up). <em>P ambiguous</em> – depends on which shift is bigger.' },
+        { tone: 'amber',  icon: '↗️↘️', head: 'D↑ S↓', body: '<strong>P rises</strong> for sure (both push P up). <em>Q ambiguous</em> – demand pulls it up, supply fall pulls it down.' },
+        { tone: 'blue',   icon: '↘️↗️', head: 'D↓ S↑', body: '<strong>P falls</strong> for sure (both push P down). <em>Q ambiguous</em> – demand pulls it down, supply rise pulls it up.' },
+        { tone: 'rose',   icon: '↘️', head: 'D↓ S↓',  body: '<strong>Q falls</strong> for sure (both push Q down). <em>P ambiguous</em> – depends on which shift is bigger.' }
       ],
       causes2Emoji: '🌍',
       causes2Label: 'Real-world examples',
@@ -232,7 +232,7 @@ window.ECONOS_TOPIC = {
         { icon: '❓', head: 'Information failures', body: 'Buyers or sellers lack information about prices in other markets – cannot respond to price signals. Markets in remote areas, illiquid asset markets, and monopoly-information markets may not clear.' },
         { icon: '🏛️', head: 'Government intervention', body: 'Minimum prices, maximum prices, subsidies, and taxes all prevent the market from reaching the free-market equilibrium – intentionally or as side effects.' }
       ],
-      examEdge: 'Price controls cause predictable distortions. Rent control (price ceiling): housing shortage; black markets; quality deterioration; no new supply. Minimum wage (price floor above equilibrium): unemployment; firms substitute capital for labour; some workers better off, others lose jobs. <strong>Live UK case:</strong> housing supply has not cleared the market for decades — England builds ~180,000 homes/year while ~300,000 households form, sustaining a chronic shortage and pushing prices ~75% higher in the decade to 2022. Rent controls (often proposed) would deepen the shortage, not solve it. Both rent control and minimum wage are standard exam contexts.'
+      examEdge: 'Price controls cause predictable distortions. Rent control (price ceiling): housing shortage; black markets; quality deterioration; no new supply. Minimum wage (price floor above equilibrium): unemployment; firms substitute capital for labour; some workers better off, others lose jobs. <strong>Live UK case:</strong> housing supply has not cleared the market for decades – England builds ~180,000 homes/year while ~300,000 households form, sustaining a chronic shortage and pushing prices ~75% higher in the decade to 2022. Rent controls (often proposed) would deepen the shortage, not solve it. Both rent control and minimum wage are standard exam contexts.'
     },
     {
       id: 'market_equilibrium_7',

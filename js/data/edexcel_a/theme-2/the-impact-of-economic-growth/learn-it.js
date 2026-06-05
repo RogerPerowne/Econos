@@ -1,12 +1,12 @@
 /* ============================================================
    ECONOS – The Impact of Economic Growth (Theme 2 · 2.5.4)
    6 cards · one storytelling pattern per card:
-     C1 Decompose a diagram     — the growth scorecard hero
-     C2 Spectrum / regime grid  — 5-band income spectrum
-     C3 Sequential flow chain   — firm investment loop
-     C4 Comparison table        — fiscal dividend breakdown
-     C5 Interactive multi-state — 3 sustainability views
-     C6 Evidence-then-verdict   — the four-dimensional verdict
+     C1 Decompose a diagram     – the growth scorecard hero
+     C2 Spectrum / regime grid  – 5-band income spectrum
+     C3 Sequential flow chain   – firm investment loop
+     C4 Comparison table        – fiscal dividend breakdown
+     C5 Interactive multi-state – 3 sustainability views
+     C6 Evidence-then-verdict   – the four-dimensional verdict
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -49,8 +49,8 @@ window.ECONOS_TOPIC = {
       id: 'beyond-gdp',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 6',
-      title: 'Beyond GDP — what growth is, and isn’t',
-      lede: 'Real GDP per capita growth is the <strong>headline rate</strong>. But four other dimensions determine whether the headline translates into actual welfare — and an A* evaluation has to track all five.',
+      title: 'Beyond GDP – what growth is, and isn’t',
+      lede: 'Real GDP per capita growth is the <strong>headline rate</strong>. But four other dimensions determine whether the headline translates into actual welfare – and an A* evaluation has to track all five.',
       ledeStyle: 'plain',
       tip: { icon: '\u{1F4D0}', tone: 'blue', text: 'Growth is necessary but not sufficient. Rate × distribution × composition × sustainability × wellbeing = welfare.' },
 
@@ -63,11 +63,11 @@ window.ECONOS_TOPIC = {
       flowTitle: 'Growth is multi-dimensional',
       flowEmoji: '\u{1F4CA}',
       flow: [
-        { tone: 'blue',   icon: '\u{1F4C8}',         title: 'The headline',          sub: 'Real GDP per capita growth — the single number quoted in the news.' },
-        { tone: 'purple', icon: '\u{2696}\u{FE0F}',  title: 'But who it lands on',   sub: 'Distribution — bottom decile vs top 1%, regional spread, age cohorts.' },
-        { tone: 'amber',  icon: '\u{1F3E5}',         title: 'And what it buys',      sub: 'Composition — health, education and R&amp;D vs arms or fossil fuels.' },
-        { tone: 'green',  icon: '\u{1F343}',         title: 'And whether it lasts',  sub: 'Sustainability — natural capital, carbon budget, financial stability.' },
-        { tone: 'rose',   icon: '\u{1F60A}',         title: 'And how it feels',      sub: 'Wellbeing — life satisfaction, work-life balance, social trust.' }
+        { tone: 'blue',   icon: '\u{1F4C8}',         title: 'The headline',          sub: 'Real GDP per capita growth – the single number quoted in the news.' },
+        { tone: 'purple', icon: '\u{2696}\u{FE0F}',  title: 'But who it lands on',   sub: 'Distribution – bottom decile vs top 1%, regional spread, age cohorts.' },
+        { tone: 'amber',  icon: '\u{1F3E5}',         title: 'And what it buys',      sub: 'Composition – health, education and R&amp;D vs arms or fossil fuels.' },
+        { tone: 'green',  icon: '\u{1F343}',         title: 'And whether it lasts',  sub: 'Sustainability – natural capital, carbon budget, financial stability.' },
+        { tone: 'rose',   icon: '\u{1F60A}',         title: 'And how it feels',      sub: 'Wellbeing – life satisfaction, work-life balance, social trust.' }
       ],
 
       conclusionPosition: 'end',
@@ -85,7 +85,7 @@ window.ECONOS_TOPIC = {
       id: 'impact-on-consumers',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 6',
-      title: 'Impact on consumers — who gains, how much, and why it varies',
+      title: 'Impact on consumers – who gains, how much, and why it varies',
       lede: 'A "2% growth year" is an average. Across the UK income distribution, that average lands very differently on different households. Walk the spectrum from bottom to top.',
       ledeStyle: 'plain',
       tip: { icon: '\u{1F465}', tone: 'green', text: 'Growth raises average real income. Whether it raises YOUR real income depends on where you sit in the distribution.' },
@@ -129,20 +129,20 @@ window.ECONOS_TOPIC = {
         { tone: 'green',  icon: '\u{1F3DB}\u{FE0F}', head: 'Top 1%',  body: 'Capital gains often outpace wages. Owner-occupier housing wealth compounds. UK 2010-19: top-1% share of national income rose from 12% to 14%.' }
       ],
 
-      bottomTip: { tone: 'purple', icon: '\u{1F4C8}', text: '<strong>Kuznets-curve intuition:</strong> in fast-developing economies, inequality typically widens before it narrows. The UK is well past the peak of its Kuznets curve — but that doesn’t mean growth is currently lowering inequality. Distributional outcome depends on the type of growth, not just its rate.' },
+      bottomTip: { tone: 'purple', icon: '\u{1F4C8}', text: '<strong>Kuznets-curve intuition:</strong> in fast-developing economies, inequality typically widens before it narrows. The UK is well past the peak of its Kuznets curve – but that doesn’t mean growth is currently lowering inequality. Distributional outcome depends on the type of growth, not just its rate.' },
 
       conclusionPosition: 'end',
       conclusion: {
         title: 'Big idea',
         text: 'The same headline 2% growth year delivers a £200 gain to the bottom and a £12,000+ gain to the top. The headline rate without the distribution profile is incomplete evidence.'
       },
-      examEdge: 'In data-response questions, watch for "growth has raised living standards" as a generic claim. The strong rebuttal: cite the bottom-decile real-income figure and the Kuznets-curve framing — growth has raised <em>averages</em>; it has raised <em>median</em> living standards much less.',
+      examEdge: 'In data-response questions, watch for "growth has raised living standards" as a generic claim. The strong rebuttal: cite the bottom-decile real-income figure and the Kuznets-curve framing – growth has raised <em>averages</em>; it has raised <em>median</em> living standards much less.',
 
       economistQuote: {
         portraitKey: 'economistDuflo',
         tone: 'amber',
         label: 'Economist insight: Duflo on growth that actually reaches the poor',
-        quote: 'GDP growth is not the same as poverty reduction. Whether a growth episode lifts the bottom of the distribution depends on what kind of growth it is — labour-intensive, broadly shared, paired with targeted policy — not on the headline rate alone.',
+        quote: 'GDP growth is not the same as poverty reduction. Whether a growth episode lifts the bottom of the distribution depends on what kind of growth it is – labour-intensive, broadly shared, paired with targeted policy – not on the headline rate alone.',
         attribution: 'Esther Duflo, <em>Good Economics for Hard Times</em> (with Banerjee, 2019), Nobel Prize in Economics 2019'
       }
     },
@@ -154,10 +154,10 @@ window.ECONOS_TOPIC = {
       id: 'impact-on-firms',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 6',
-      title: 'Impact on firms — the investment feedback loop',
+      title: 'Impact on firms – the investment feedback loop',
       lede: 'Growth feeds itself through the firm sector via a six-step chain. When the chain runs cleanly, growth becomes self-sustaining; when it breaks, growth becomes inflationary.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{1F501}', tone: 'green', text: 'When firms convert revenue gains into productive investment, growth becomes self-reinforcing — that’s the supply-side bonus.' },
+      tip: { icon: '\u{1F501}', tone: 'green', text: 'When firms convert revenue gains into productive investment, growth becomes self-reinforcing – that’s the supply-side bonus.' },
 
       flowTitle: 'The investment feedback loop',
       flowEmoji: '\u{1F3ED}',
@@ -175,7 +175,7 @@ window.ECONOS_TOPIC = {
       causesEmoji: '\u{26A0}\u{FE0F}',
       causesCols: 3,
       causes: [
-        { tone: 'amber', icon: '\u{1F465}', head: 'Labour shortages near full employment', body: 'When unemployment falls below ~4%, wage growth accelerates. Firms struggle to hire — capex plans get delayed. Recent UK case: post-Brexit + post-COVID staff shortages in hospitality and construction.' },
+        { tone: 'amber', icon: '\u{1F465}', head: 'Labour shortages near full employment', body: 'When unemployment falls below ~4%, wage growth accelerates. Firms struggle to hire – capex plans get delayed. Recent UK case: post-Brexit + post-COVID staff shortages in hospitality and construction.' },
         { tone: 'amber', icon: '\u{1F30D}', head: 'Supply-chain bottlenecks',                body: 'A boom that draws in imported inputs faster than they can be supplied creates spot-price spikes. The 2021-22 chip shortage delayed UK car production for over a year.' },
         { tone: 'amber', icon: '\u{1F62C}', head: 'Weak business confidence',                body: 'Even with rising profits, firms hoard cash if they distrust the demand permanence. UK 2016-19: corporate cash balances rose £80bn while business investment was flat.' }
       ],
@@ -185,7 +185,7 @@ window.ECONOS_TOPIC = {
         title: 'Big idea',
         text: 'The investment loop is what turns a one-off demand boost into permanent productive capacity. When it works, growth is non-inflationary; when it breaks, the boost just inflates prices.'
       },
-      examEdge: '<strong>The UK productivity puzzle</strong> is essentially the loop breaking down: post-2008 GDP recovered but investment-per-worker stayed below G7 peers. Cite this when a question asks why UK growth has felt fragile — the chain has been running, but the productivity step has misfired.'
+      examEdge: '<strong>The UK productivity puzzle</strong> is essentially the loop breaking down: post-2008 GDP recovered but investment-per-worker stayed below G7 peers. Cite this when a question asks why UK growth has felt fragile – the chain has been running, but the productivity step has misfired.'
     },
 
     /* ============================================================
@@ -195,10 +195,10 @@ window.ECONOS_TOPIC = {
       id: 'impact-on-government',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 6',
-      title: 'Impact on government — the fiscal dividend',
+      title: 'Impact on government – the fiscal dividend',
       lede: 'A 2% real-GDP growth year creates measurable <strong>fiscal headroom</strong>: tax revenue rises, welfare spending falls, debt-to-GDP shrinks. Walk the channels and the figures.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{1F4B7}', tone: 'green', text: 'Growth is the cheapest fiscal policy there is — it raises revenue and cuts spending simultaneously, without a single tax change.' },
+      tip: { icon: '\u{1F4B7}', tone: 'green', text: 'Growth is the cheapest fiscal policy there is – it raises revenue and cuts spending simultaneously, without a single tax change.' },
 
       versusRows: {
         title: 'Fiscal channels: a 2% growth year, UK scale',
@@ -228,7 +228,7 @@ window.ECONOS_TOPIC = {
           },
           {
             left:  { icon: '\u{1F3E5}', head: 'Net headroom: ~£20bn/yr',    sub: 'Annual net dividend in a typical 2% growth year. Compounds: ~£110bn over 5 years.' },
-            right: { icon: '\u{26A0}\u{FE0F}', head: 'Caveat: spending pressure', sub: 'Public-service demand rises with population and ageing. The £20bn isn’t pure headroom — some is absorbed by NHS and social care.' }
+            right: { icon: '\u{26A0}\u{FE0F}', head: 'Caveat: spending pressure', sub: 'Public-service demand rises with population and ageing. The £20bn isn’t pure headroom – some is absorbed by NHS and social care.' }
           }
         ]
       },
@@ -236,7 +236,7 @@ window.ECONOS_TOPIC = {
       conclusionPosition: 'end',
       conclusion: {
         title: 'Big idea',
-        text: 'Growth delivers roughly £20bn of fiscal headroom per year at UK scale — without legislating a single tax change. Compounded, that’s £100bn+ over a parliament. This is why every chancellor’s first priority is keeping growth alive.'
+        text: 'Growth delivers roughly £20bn of fiscal headroom per year at UK scale – without legislating a single tax change. Compounded, that’s £100bn+ over a parliament. This is why every chancellor’s first priority is keeping growth alive.'
       },
       examEdge: 'A* answers quote the <em>scale</em> of the fiscal dividend explicitly. "Growth helps the budget" is a B-grade claim. "A 2% UK growth year creates roughly £20bn of net fiscal headroom" is A-grade. Numbers convert vague benefits into evaluative weight.'
     },
@@ -249,10 +249,10 @@ window.ECONOS_TOPIC = {
       id: 'sustainability-tradeoff',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 6',
-      title: 'Current vs future generations — the sustainability trade-off',
+      title: 'Current vs future generations – the sustainability trade-off',
       lede: 'Growth that depletes natural capital or builds carbon liabilities is transferring cost from today’s consumers to tomorrow’s. Three lenses on the same uncomfortable truth.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{231B}', tone: 'rose', text: 'If growth borrows from the future to pay the present, it’s not really growth — it’s consumption rebranded.' },
+      tip: { icon: '\u{231B}', tone: 'rose', text: 'If growth borrows from the future to pay the present, it’s not really growth – it’s consumption rebranded.' },
 
       interactiveDiagram: {
         svgKey: 'growthSustainability3View',
@@ -267,24 +267,24 @@ window.ECONOS_TOPIC = {
             tone: 'green',
             show: ['idl-kuznets'],
             head: 'The Environmental Kuznets Curve',
-            body: 'Pollution intensity (per unit of GDP) follows an inverted-U as countries develop. Early industrialisation pushes pollution UP — heavy industry, weak standards. Past a turning point (~$10,000 GDP per capita), citizens demand cleaner air and the curve bends DOWN.',
-            analysis: '<strong>Three live examples:</strong> Niger (left side, low GDP, low intensity); China (near the peak, polluting heavily but with a peak target); UK (right side, post-industrial, carbon intensity falling 30 years). Exam point: growth eventually cleans up only IF institutions force the bend — the curve describes the rich-economy path, it doesn’t guarantee the descent.'
+            body: 'Pollution intensity (per unit of GDP) follows an inverted-U as countries develop. Early industrialisation pushes pollution UP – heavy industry, weak standards. Past a turning point (~$10,000 GDP per capita), citizens demand cleaner air and the curve bends DOWN.',
+            analysis: '<strong>Three live examples:</strong> Niger (left side, low GDP, low intensity); China (near the peak, polluting heavily but with a peak target); UK (right side, post-industrial, carbon intensity falling 30 years). Exam point: growth eventually cleans up only IF institutions force the bend – the curve describes the rich-economy path, it doesn’t guarantee the descent.'
           },
           {
             label: 'Natural capital',
             tone: 'amber',
             show: ['idl-natural'],
-            head: 'GDP vs Green GDP — the depletion gap',
+            head: 'GDP vs Green GDP – the depletion gap',
             body: '<strong>Standard GDP</strong> measures value added but ignores natural-capital depletion. <strong>Green GDP</strong> subtracts the value of resources extracted (timber, fisheries, oil) and pollution costs (cleanup, health impact). The gap between them is the <em>real bill</em> growth is running up.',
-            analysis: 'UK: gap is small — a service economy extracts little. Norway: gap is large — North Sea oil is huge value but huge natural capital consumed. Saudi Arabia: bigger still — most GDP is monetising a finite resource. Exam framing: a resource-extraction economy isn’t really growing sustainably; it’s converting natural capital into financial capital.'
+            analysis: 'UK: gap is small – a service economy extracts little. Norway: gap is large – North Sea oil is huge value but huge natural capital consumed. Saudi Arabia: bigger still – most GDP is monetising a finite resource. Exam framing: a resource-extraction economy isn’t really growing sustainably; it’s converting natural capital into financial capital.'
           },
           {
             label: 'Carbon debt',
             tone: 'rose',
             show: ['idl-carbon'],
-            head: 'Carbon debt — the bill the future inherits',
-            body: 'The IPCC 1.5°C carbon budget is the <em>cumulative</em> CO₂ humanity can emit and still hit the 1.5°C limit. The world is burning through it at ~2% per year. Every tonne above the budget transfers a cost — flood damage, crop failure — to future generations.',
-            analysis: 'The strongest "growth versus future" case. Unlike Kuznets (self-corrects) and natural capital (substitutable), carbon debt compounds for millennia. Strong evaluation: growth that doesn’t decouple from emissions borrows welfare from the unborn. The UK has decoupled (GDP +75% since 1990, emissions −50%); China hasn’t — trajectory matters more than the rate.'
+            head: 'Carbon debt – the bill the future inherits',
+            body: 'The IPCC 1.5°C carbon budget is the <em>cumulative</em> CO₂ humanity can emit and still hit the 1.5°C limit. The world is burning through it at ~2% per year. Every tonne above the budget transfers a cost – flood damage, crop failure – to future generations.',
+            analysis: 'The strongest "growth versus future" case. Unlike Kuznets (self-corrects) and natural capital (substitutable), carbon debt compounds for millennia. Strong evaluation: growth that doesn’t decouple from emissions borrows welfare from the unborn. The UK has decoupled (GDP +75% since 1990, emissions −50%); China hasn’t – trajectory matters more than the rate.'
           }
         ]
       },
@@ -292,9 +292,9 @@ window.ECONOS_TOPIC = {
       conclusionPosition: 'end',
       conclusion: {
         title: 'Big idea',
-        text: 'Sustainability isn’t a side-concern attached to growth — it determines whether the growth was real. Kuznets, natural-capital and carbon-debt all ask the same question: is this growth borrowed from the future?'
+        text: 'Sustainability isn’t a side-concern attached to growth – it determines whether the growth was real. Kuznets, natural-capital and carbon-debt all ask the same question: is this growth borrowed from the future?'
       },
-      examEdge: 'Pair these three frames with the <strong>UK has decoupled GDP from carbon</strong> stat (−50% emissions since 1990 alongside +75% GDP). It demonstrates that growth and environmental performance are not inherently conflicting — but it requires policy choices, not just headline GDP rises.'
+      examEdge: 'Pair these three frames with the <strong>UK has decoupled GDP from carbon</strong> stat (−50% emissions since 1990 alongside +75% GDP). It demonstrates that growth and environmental performance are not inherently conflicting – but it requires policy choices, not just headline GDP rises.'
     },
 
     /* ============================================================
@@ -343,7 +343,7 @@ window.ECONOS_TOPIC = {
       causes2Emoji: '\u{1F3AD}',
       causes2Cols: 2,
       causes2: [
-        { tone: 'green', icon: '\u{1F1F0}\u{1F1F7}', head: 'South Korea, 1965-95: high-quality growth', body: 'Real GDP per capita grew 8% per year for 30 years. Broad-based — middle class swelled, top-decile share fell, education spending tripled. Productivity-led: HE enrolment from 6% to 60%. Limited environmental damage relative to scale. Today: G20 economy with strong wellbeing scores.' },
+        { tone: 'green', icon: '\u{1F1F0}\u{1F1F7}', head: 'South Korea, 1965-95: high-quality growth', body: 'Real GDP per capita grew 8% per year for 30 years. Broad-based – middle class swelled, top-decile share fell, education spending tripled. Productivity-led: HE enrolment from 6% to 60%. Limited environmental damage relative to scale. Today: G20 economy with strong wellbeing scores.' },
         { tone: 'rose',  icon: '\u{26FD}', head: 'Resource-curse economies: low-quality growth',  body: 'Headline GDP growth driven by oil and gas extraction. Examples: Venezuela, Equatorial Guinea, Nigeria. Inequality entrenched, productive base hollowed out, currency volatile, institutions captured by extraction interests. When the resource depletes, growth collapses and welfare reverses. The headline rate was misleading throughout.' }
       ],
 
@@ -361,7 +361,7 @@ window.ECONOS_TOPIC = {
       conclusionPosition: 'end',
       conclusion: {
         title: 'The verdict',
-        text: 'Growth is necessary but not sufficient for welfare. Multiply the rate by its quality, distribution and sustainability — that product is the real welfare gain. <strong>The best growth is broad-based (most households gain), productivity-driven (not debt or extraction), and sustainable (does not borrow from the future).</strong> Anything else is borrowed welfare in disguise.'
+        text: 'Growth is necessary but not sufficient for welfare. Multiply the rate by its quality, distribution and sustainability – that product is the real welfare gain. <strong>The best growth is broad-based (most households gain), productivity-driven (not debt or extraction), and sustainable (does not borrow from the future).</strong> Anything else is borrowed welfare in disguise.'
       },
       examEdge: '<strong>Strong evaluation distinguishes the rate of growth from its quality, distribution and sustainability.</strong> The four-multiplier framework is the structure that lifts B-band answers to A*: state the headline rate, then methodically apply each multiplier with one piece of evidence (numbers, case studies). Use the South Korea / resource-curse pair to anchor "high-quality vs low-quality growth"; use the UK decoupling stat to anchor "rate is not destiny".',
 

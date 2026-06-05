@@ -15,7 +15,7 @@ window.ECONOS_TOPIC = {
       'Identify the key determinants of PED and predict the elasticity of specific goods',
       'Apply PED to total revenue, tax incidence, and firm pricing strategy'
     ],
-    tip: 'PED = % change in QD \xf7 % change in P. Always negative. |PED| > 1 = elastic; |PED| < 1 = inelastic; |PED| = 1 = unit elastic (also called unitary — the term Edexcel uses).',
+    tip: 'PED = % change in QD \xf7 % change in P. Always negative. |PED| > 1 = elastic; |PED| < 1 = inelastic; |PED| = 1 = unit elastic (also called unitary – the term Edexcel uses).',
     stages: [
       { num: 1, name: 'Learn it', sub: '8 concept cards',            state: 'done',      href: TopicLoader.routes.learn()      },
       { num: 2, name: 'Link it',  sub: 'Apply skills with context',  state: 'available', href: TopicLoader.routes.link('intro') },
@@ -326,12 +326,12 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
           body: 'Price and revenue move in the <strong>same</strong> direction. Price ↑ → TR rises; price ↓ → TR falls, because the price effect dominates.'
         }
       ],
-      causes2Label: 'Worked example — same price rise, opposite revenue effects',
+      causes2Label: 'Worked example – same price rise, opposite revenue effects',
       causes2Emoji: '🧮',
       causes2Style: 'tinted-flat',
       causes2: [
-        { tone: 'purple', icon: '🚬', head: 'Inelastic good (cigarettes, PED ≈ −0.4)', body: '<strong>Before:</strong> P = £10, Q = 60 → TR = £600.<br><strong>After +20% price:</strong> P = £12, Q falls 8% to 55 → TR = £660.<br><strong style="color:#7C3AED;">TR rises by £60</strong> — the price effect (+20%) beats the quantity effect (−8%).' },
-        { tone: 'green', icon: '🎟️', head: 'Elastic good (concert tickets, PED ≈ −2.0)', body: '<strong>Before:</strong> P = £10, Q = 60 → TR = £600.<br><strong>After +20% price:</strong> P = £12, Q falls 40% to 36 → TR = £432.<br><strong style="color:#059669;">TR falls by £168</strong> — the quantity effect (−40%) beats the price effect (+20%).' }
+        { tone: 'purple', icon: '🚬', head: 'Inelastic good (cigarettes, PED ≈ −0.4)', body: '<strong>Before:</strong> P = £10, Q = 60 → TR = £600.<br><strong>After +20% price:</strong> P = £12, Q falls 8% to 55 → TR = £660.<br><strong style="color:#7C3AED;">TR rises by £60</strong> – the price effect (+20%) beats the quantity effect (−8%).' },
+        { tone: 'green', icon: '🎟️', head: 'Elastic good (concert tickets, PED ≈ −2.0)', body: '<strong>Before:</strong> P = £10, Q = 60 → TR = £600.<br><strong>After +20% price:</strong> P = £12, Q falls 40% to 36 → TR = £432.<br><strong style="color:#059669;">TR falls by £168</strong> – the quantity effect (−40%) beats the price effect (+20%).' }
       ],
       keyTakeaway: {
         title: 'The shortcut',
@@ -418,7 +418,7 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
       causesCols: 1,
       causes: [
         { tone: 'green',  icon: '📖', head: 'Definition',          body: 'PED measures how responsive quantity demanded is to a change in the good’s own price.' },
-        { tone: 'blue',   icon: '🔢', head: 'Formula',             body: 'PED = % ΔQD ÷ % ΔP. Always negative for normal goods — quote the sign, then use |PED| to classify.' },
+        { tone: 'blue',   icon: '🔢', head: 'Formula',             body: 'PED = % ΔQD ÷ % ΔP. Always negative for normal goods – quote the sign, then use |PED| to classify.' },
         { tone: 'amber',  icon: '⚖️', head: 'Elastic vs inelastic', body: '|PED| &gt; 1 = elastic · |PED| &lt; 1 = inelastic · |PED| = 1 = unit elastic.' },
         { tone: 'purple', icon: '🔍', head: 'Determinants',        body: 'Substitutes, necessity vs luxury, income share, time horizon, habit/addiction, brand loyalty.' },
         { tone: 'rose',   icon: '📈', head: 'Revenue link',        body: 'Elastic demand: price cuts raise total revenue. Inelastic demand: price rises raise total revenue.' }
@@ -447,8 +447,8 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
       flowBottom: [
         { icon: '🔍', tone: 'green',  title: 'Identify', sub: 'Spot the PED in the stem, or the % price and % quantity changes you need to calculate it.' },
         { icon: '🧮', tone: 'amber',  title: 'Calculate', sub: 'Show each % change separately, then divide. Keep the sign and quote one decimal place.' },
-        { icon: '🏷️', tone: 'blue',   title: 'Classify', sub: 'State |PED| against 1 — elastic, inelastic, or unit elastic.' },
-        { icon: '🎯', tone: 'purple', title: 'Apply',    sub: 'Link to a determinant, then the effect on total revenue, tax incidence or pricing — evaluation marks.' }
+        { icon: '🏷️', tone: 'blue',   title: 'Classify', sub: 'State |PED| against 1 – elastic, inelastic, or unit elastic.' },
+        { icon: '🎯', tone: 'purple', title: 'Apply',    sub: 'Link to a determinant, then the effect on total revenue, tax incidence or pricing – evaluation marks.' }
       ],
       keyTakeaway: {
         title: 'How to write it up',

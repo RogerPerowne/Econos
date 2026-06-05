@@ -1,5 +1,5 @@
 /* ============================================================
-   Consumer & Producer Surplus diagram — declarative spec for
+   Consumer & Producer Surplus diagram – declarative spec for
    cpsDiagram. Used by card 1 of the CPS topic.
 
    Static diagram (no step-state interactivity). Shows:
@@ -14,7 +14,7 @@
    MB/MC, since this is the market-exchange intro card.
 
    CS and PS are auto-traced by the engine from the D / S curves and
-   the price line at y = E.y — no hand-computed polygon corners.
+   the price line at y = E.y – no hand-computed polygon corners.
    ============================================================ */
 (function () {
   'use strict';
@@ -37,10 +37,10 @@
     ],
 
     curves: [
-      // Demand — downward (blue)
+      // Demand – downward (blue)
       { id: 'D', d: 'M 0,0.938 L 0.944,0.063',
         tone: 'blue', label: 'D', strokeWidth: 3, labelDx: 8, labelDy: 4 },
-      // Supply — upward (amber/orange)
+      // Supply – upward (amber/orange)
       { id: 'S', d: 'M 0,0.063 L 0.944,0.938',
         tone: 'amber', label: 'S', strokeWidth: 3, labelDx: 8, labelDy: -4 }
     ],
@@ -65,7 +65,7 @@
       { x: 0.150, y: 0.350, text: 'Producer', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
       { x: 0.150, y: 0.305, text: 'surplus',  tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
 
-      // Axis tick labels — italic subscript-style Pₑ, Qₑ
+      // Axis tick labels – italic subscript-style Pₑ, Qₑ
       { x: -0.020, y: E.y,    text: 'Pₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
       { x: E.x,    y: -0.055, text: 'Qₑ', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' }
     ]

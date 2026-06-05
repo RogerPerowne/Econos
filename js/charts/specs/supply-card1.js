@@ -1,5 +1,5 @@
 /* ============================================================
-   Supply card 1 — INTERACTIVE "big picture" supply curve (icons key:
+   Supply card 1 – INTERACTIVE "big picture" supply curve (icons key:
    supplyBigPicture; className sbig-svg). Mirror of demand-card1 with an
    UPWARD-sloping curve. Rendered via the interactiveDiagram block.
 

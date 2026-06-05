@@ -1,5 +1,5 @@
 /* ============================================================
-   Econos — minimal PPF chart engine (v1).
+   Econos – minimal PPF chart engine (v1).
 
    One function: window.ECONOS_PPF.render(spec) -> SVG string.
 
@@ -19,7 +19,7 @@
        The engine clamps any spec value below it.
      - LABEL_INK: all text fills default to near-black. Tones with a 'gray'
        semantic still drive STROKES (dots, lines, dashes) but never label
-       text — labels are always readable, never muted to gray.
+       text – labels are always readable, never muted to gray.
      - ARROW_BUFFER (14px): every arrow (line or path) has its start + end
        pulled inward by ARROW_BUFFER pixels along the tangent at each end.
        Sized to clear a typical point's radius (6–9px) plus the arrowhead
@@ -34,7 +34,7 @@
        Specs place them at x<0 (left of Y-axis), x>1 (right of plot), or
        y<0 (below X-axis). The engine auto-aligns text-anchor based on x
        sign: x<0 → end-anchored, x>1 → start-anchored, else middle.
-     - Perpendicular shift arrows are declarative — specs name a source
+     - Perpendicular shift arrows are declarative – specs name a source
        curve, an anchor parameter t, and a target curve:
          { perpendicular: { from: 'ppf1', t: 0.5, to: 'ppf2' } }
        Engine computes the tangent at t on `from`, rotates 90°, then
@@ -58,7 +58,7 @@
        (inside the curve, toward origin).
      - Smart label placement: when a point has `on:` declared (and
        optionally has arrows touching it via from/to references), the
-       engine picks the label's side automatically — preferring the
+       engine picks the label's side automatically – preferring the
        attainable region and avoiding any arrow's approach direction.
        Authors don't write labelDx/labelDy/anchor. Override remains
        available via explicit labelDx/labelDy/anchor.
@@ -76,11 +76,11 @@
   var MIN_LABEL_SIZE = 12;
   var LABEL_INK = '#0F172A';
   // ARROW_BUFFER bumped from 8 → 14 so the arrowhead clears a typical
-  // point's radius (6–9px) with visible breathing room — no more
+  // point's radius (6–9px) with visible breathing room – no more
   // arrowheads landing inside the target dot.
   var ARROW_BUFFER = 14;
 
-  /* SIZE — single source of truth for chart typography.
+  /* SIZE – single source of truth for chart typography.
      Every text element the engine renders draws from this map; specs
      only set `fontSize:` when they need a deliberate exception (rare).
      Values match the engine's previous hardcoded defaults, so the
@@ -162,9 +162,9 @@
       '<polygon points="' + (xArrowTip + 5) + ',' + bottom + ' ' + (xArrowTip - 7) + ',' + (bottom - 4) + ' ' + (xArrowTip - 7) + ',' + (bottom + 4) + '" fill="#334155"/>',
       // Origin label
       '<text x="' + (area.x - 10) + '" y="' + (bottom + 14) + '" font-size="' + SIZE.axisOrigin + '" fill="' + LABEL_INK + '" text-anchor="middle">O</text>',
-      // Y label — above arrowhead, centred on axis line
+      // Y label – above arrowhead, centred on axis line
       yLabel ? '<text x="' + area.x + '" y="' + (yArrowTip - 10) + '" font-size="' + SIZE.axisLabel + '" font-weight="700" fill="' + LABEL_INK + '" text-anchor="middle">' + yLabel + '</text>' : '',
-      // X label — below axis line, right-aligned to arrowhead tip
+      // X label – below axis line, right-aligned to arrowhead tip
       xLabel ? '<text x="' + (xArrowTip + 5) + '" y="' + (bottom + 18) + '" font-size="' + SIZE.axisLabel + '" font-weight="700" fill="' + LABEL_INK + '" text-anchor="end">' + xLabel + '</text>' : '',
       '</g>'
     ].join('');
@@ -204,9 +204,9 @@
     return pts;
   }
 
-  /* Auto-place a curve label. Evaluates FIVE candidate positions —
+  /* Auto-place a curve label. Evaluates FIVE candidate positions –
      four at the curve's endpoint (LEFT, RIGHT, ABOVE, BELOW) plus
-     CENTER (at the curve's midpoint, offset above the line) — and
+     CENTER (at the curve's midpoint, offset above the line) – and
      picks the one with lowest cost. Cost penalises:
        - curve samples inside the label bbox (label sits on the line)
        - other already-placed label bboxes intersected
@@ -221,13 +221,13 @@
     var ex = endpoint[0], ey = endpoint[1];
     // Asymmetric base offsets. ABOVE labels sit closer to the curve at
     // the endpoint because the curve continues AWAY from the label
-    // (downward in pixel space, away from a label sitting above) — no
+    // (downward in pixel space, away from a label sitting above) – no
     // slope clearance needed. BELOW labels sit further from the curve
     // because the curve continues TOWARD the label (upward in pixel,
-    // toward a label sitting below) — slope clearance required to keep
+    // toward a label sitting below) – slope clearance required to keep
     // the line from crossing through the label box. User feedback:
     // "MSC should go down (closer to curve); MPC should go down (away
-    // from curve)" — both labels move DOWN in absolute terms, which
+    // from curve)" – both labels move DOWN in absolute terms, which
     // means closer for ABOVE and further for BELOW. (v0.41.18.)
     var baseOffsetAbove = curve.labelOffset != null ? curve.labelOffset : 6;
     var baseOffsetBelow = curve.labelOffset != null ? curve.labelOffset : 18;
@@ -241,13 +241,13 @@
     // label, BELOW needs the clearance. For demand-like curves (penult
     // sits above endpoint), walking back goes up-left → curve enters
     // the ABOVE region, ABOVE needs the clearance. (v0.41.18: my first
-    // pass hard-coded "BELOW only" which broke MSB — a demand curve
+    // pass hard-coded "BELOW only" which broke MSB – a demand curve
     // whose ABOVE bbox had the curve passing through it.)
     var penult = samples[Math.max(0, samples.length - 2)];
     var slopeMag = Math.abs((ey - penult[1]) / Math.max(1, ex - penult[0]));
     // Approach distance = full label WIDTH (not halfW). When the
     // candidate overflows the chart we shift it inward, which moves
-    // the bbox's left edge further from the endpoint than halfW —
+    // the bbox's left edge further from the endpoint than halfW –
     // 2*halfW is the worst-case distance and ensures the curve still
     // clears after the shift. (v0.41.18 sub-fix: my first cut used
     // halfW and the shifted MSB bbox still had the curve passing
@@ -276,7 +276,7 @@
       // by less than the label's own width/height. This preserves the
       // intent (label-below the endpoint stays below, just nudged
       // along the overflow axis) instead of disqualifying useful
-      // slots — MPC's BELOW candidate hung over the right edge by
+      // slots – MPC's BELOW candidate hung over the right edge by
       // 4px before the shift was added, losing to a LEFT candidate
       // that wasn't visually anchored to the curve.
       var maxShiftX = box.w, maxShiftY = box.h;
@@ -405,10 +405,10 @@
       }
       var labelAnchorAttr = (autoPlace || curve.anchor) ? ' text-anchor="' + labelAnchor + '"' : '';
       // dominant-baseline=middle so the rendered text vertical CENTER
-      // sits at `ly` — matching the auto-placer's bbox math which
+      // sits at `ly` – matching the auto-placer's bbox math which
       // also assumes y = center. Without this, the text baseline is
       // at ly, making the visual text ~5px higher than the computed
-      // bbox — the "imprecision" the user spotted on equilibrium and
+      // bbox – the "imprecision" the user spotted on equilibrium and
       // curve labels alike. (v0.41.19.)
       labelHtml = '<text x="' + lx + '" y="' + ly + '"' + labelAnchorAttr + ' font-size="' + SIZE.curveLabel + '" font-weight="700" fill="' + t.label + '" dominant-baseline="middle">' + curve.label + '</text>';
       // Track curve label in placedBoxes so dev-mode off-stage and
@@ -422,7 +422,7 @@
         // Only enforce per-panel bounds for MULTI-panel charts (where
         // overflow spills into the adjacent panel). In single-panel
         // charts, curve labels at the right edge of the chartArea are
-        // intentional — they live in the right margin alongside the
+        // intentional – they live in the right margin alongside the
         // axis-end label.
         if (area && ctx.currentPanelIdx != null) cbox.panelArea = area;
         if (ctx.currentPanelIdx != null) cbox.panelIdx = ctx.currentPanelIdx;
@@ -539,7 +539,7 @@
      absolute commands actually used in chart specs: M (move), L (line),
      C (cubic Bezier). Returns null on parse failure.
 
-     The segments share endpoints — segment N's p1/p3 equals segment N+1's
+     The segments share endpoints – segment N's p1/p3 equals segment N+1's
      p0. This makes intersection sampling trivial: just iterate segments.
 
      Used by the intersection solver (`point.intersection: { curves: [...] }`)
@@ -633,11 +633,11 @@
       // Reverse-L shape with three regions:
       //   1. Flat horizontal at y=flatY from x=0.05 to x=kneeX
       //   2. Smooth cubic Bezier bottleneck up to (capacityX, top)
-      //   3. Asymptotic vertical — the bezier ends with vertical
+      //   3. Asymptotic vertical – the bezier ends with vertical
       //      tangent so the curve effectively goes straight up.
       // C¹-continuous at both joins. Control points derived so the
       // bottleneck is gentle near the flat and steep near the top
-      // — the textbook "knee" picture.
+      // – the textbook "knee" picture.
       var flatY = shape.flatY != null ? shape.flatY : 0.15;
       var kneeX = shape.kneeX != null ? shape.kneeX : 0.45;
       var capX  = shape.capacityX != null ? shape.capacityX : 0.65;
@@ -751,7 +751,7 @@
      of [x, y] tuples (usually 0, 1, or 2 points). Handles:
        - line ∩ line   (closed-form)
        - line ∩ cubic  (sample-and-bisect for sign changes)
-       - cubic ∩ cubic (NOT IMPLEMENTED — none of our charts need it yet) */
+       - cubic ∩ cubic (NOT IMPLEMENTED – none of our charts need it yet) */
   function intersectLineLine(a, b) {
     var x1 = a.p0[0], y1 = a.p0[1], x2 = a.p1[0], y2 = a.p1[1];
     var x3 = b.p0[0], y3 = b.p0[1], x4 = b.p1[0], y4 = b.p1[1];
@@ -891,7 +891,7 @@
     });
   }
 
-  /* Arrow rendering — supports four shapes:
+  /* Arrow rendering – supports four shapes:
        { d: '...' }                                   raw path in 0..1 space
        { x1, y1, x2, y2 }                             straight line in 0..1 space
        { from: 'A', to: 'B' }                         line between two referenced points
@@ -968,7 +968,7 @@
   /* Render dashed gridlines (axis → point on both axes) plus optional
      tick labels on each axis. Tick labels are tracked in `ctx` so:
        - Identical labels at the same axis position (within MIN_TICK_GAP)
-         are DEDUPED — the second call is silently skipped. Saves the
+         are DEDUPED – the second call is silently skipped. Saves the
          author from re-declaring `ticks: { x: 'Yf' }` on every point
          that sits at the same vertical line.
        - DIFFERENT labels close together (within MIN_TICK_GAP) log a dev
@@ -998,7 +998,7 @@
       // perspectives (or mutually-exclusive layers) never render at
       // the same time, so a position overlap is fine. Only flag a
       // collision when both ticks could conceivably be visible
-      // together — same perspective + compatible layer.
+      // together – same perspective + compatible layer.
       var persp = pt.perspective || null;
       var layer = pt.layer || null;
       for (var i = 0; i < existing.length; i++) {
@@ -1006,7 +1006,7 @@
         if (Math.abs(prev.pos - pos) < MIN_TICK_GAP) {
           if (prev.perspective && persp && prev.perspective !== persp) continue;
           if (prev.text === text) {
-            return false; // duplicate label — silently skip
+            return false; // duplicate label – silently skip
           }
           var msg = '[ECONOS_PPF] tick collision on ' + axis + '-axis: "' +
             prev.text + '" at ' + prev.pos.toFixed(1) + ' vs "' + text +
@@ -1202,7 +1202,7 @@
       if (clash) { elim(s, 'overlaps label'); continue; }
       return { dx: off.dx, dy: off.dy, anchor: off.anchor, bbox: bbox };
     }
-    // All sides eliminated — return right as fallback (with warning if dev mode).
+    // All sides eliminated – return right as fallback (with warning if dev mode).
     if (typeof window !== 'undefined' && window.ECONOS_DEV) {
       try { console.warn('[ECONOS_PPF] All sides eliminated for label "' + labelText + '" at point ' + (pt.id || '?'), why); } catch (e) {}
     }
@@ -1211,7 +1211,7 @@
     return { dx: fallback.dx, dy: fallback.dy, anchor: fallback.anchor, bbox: fbbox };
   }
 
-  /* Filled polygon — points are a list of [x, y] in 0..1 chart space.
+  /* Filled polygon – points are a list of [x, y] in 0..1 chart space.
      Renders as <polygon> with the tone fill at the given opacity. */
   function renderPolygon(poly, scale) {
     var t = tone(poly.tone || 'green');
@@ -1230,7 +1230,7 @@
      OTHER visible dot in the same layer. If it does, sweep through the
      four diagonal quadrants (upper-right, upper-left, lower-right,
      lower-left) and return the first clean one. The initial position
-     stays preferred when it's already clean — spec-author intent wins.
+     stays preferred when it's already clean – spec-author intent wins.
 
      Layer-aware: two points in mutually-exclusive state layers
      (e.g. layer-shortage vs layer-surplus) never push each other,
@@ -1285,7 +1285,7 @@
     for (var k = 0; k < candidates.length; k++) {
       if (!clashes(candidates[k])) return candidates[k];
     }
-    return fallback;  // every quadrant clashes — give up gracefully
+    return fallback;  // every quadrant clashes – give up gracefully
   }
 
   function renderPoint(pt, scale, ctx, area) {
@@ -1310,7 +1310,7 @@
     var initDy = pt.labelDy != null ? pt.labelDy : auto.dy;
     var initAnchor = pt.anchor || auto.anchor || 'start';
 
-    // Auto label repulsion — pick the (dx, dy, anchor) that puts the
+    // Auto label repulsion – pick the (dx, dy, anchor) that puts the
     // label box clear of every OTHER point's dot in the same layer.
     // The initial position (from spec or smart placement) is preferred;
     // only override if it overlaps a neighbouring dot.
@@ -1329,7 +1329,7 @@
     return '<g class="chart-point">' + circle + symbolHtml + labelHtml + descHtml + '</g>';
   }
 
-  /* Boxed annotation label — rounded rect with one or more lines of
+  /* Boxed annotation label – rounded rect with one or more lines of
      centred text inside. Position is the TOP-LEFT corner in chart space;
      dimensions are also chart-space (engine scales to pixels). Optionally
      draws a dashed connector line from the nearest box edge to a target
@@ -1345,7 +1345,7 @@
      whole chart (so it stays readable). The connector dashed line
      stays with the bg layer so it doesn't crash through other text.
 
-     NO white base — the rect is fully transparent except for the
+     NO white base – the rect is fully transparent except for the
      low-alpha tint. Roger's brief: "shaded panels must be
      transparent so they don't obscure the lines". */
   function renderBoxedLabel(b, scale, area) {
@@ -1422,7 +1422,7 @@
          ]
        }
      ------------------------------------------------------------------ */
-  /* titleStrip — centered "dot + text" header that sits above the
+  /* titleStrip – centered "dot + text" header that sits above the
      chart area. The engine handles positioning so the dot ALWAYS
      lands just before the text's actual left edge, regardless of
      text length. Author shape:
@@ -1464,7 +1464,7 @@
     if (!legend) return '';
     var x = legend.x || 600;
     var y = legend.y || 31;
-    // Width of the legend column — used to centre titles + section
+    // Width of the legend column – used to centre titles + section
     // headers horizontally. Default 280 matches the conventional
     // 900-px-wide multi-panel layout (legend at x=600, chart at
     // x=60-560 with a divider at x=595, leaving ~300px for legend).
@@ -1488,7 +1488,7 @@
     (legend.sections || []).forEach(function (section) {
       if (section.header) {
         var ht = tone(section.header.tone || 'blue');
-        // Section header — centred in the legend column. Letter-spaced
+        // Section header – centred in the legend column. Letter-spaced
         // and uppercased visually by author convention. Centring gives
         // the right column the polished feel of a real legend panel
         // rather than a left-anchored caption strip.
@@ -1505,7 +1505,7 @@
             parts.push('<line x1="' + (x + 20) + '" y1="' + y + '" x2="' + (x + 40) + '" y2="' + y + '" stroke="' + rt.stroke + '" stroke-width="2.5"/>');
           }
           var mainText = row.label || row.text || '';
-          // Row text never gray — coloured if the row carries a tone+line marker, else near-black
+          // Row text never gray – coloured if the row carries a tone+line marker, else near-black
           var mainTone = row.labelTone ? tone(row.labelTone).label : (row.marker === 'line' ? rt.label : LABEL_INK);
           var mainWeight = row.bold || row.marker === 'line' ? '700' : '600';
           parts.push('<text x="' + (x + 42) + '" y="' + (y + 5) + '" font-size="' + SIZE.legendRow + '" font-weight="' + mainWeight + '" fill="' + mainTone + '">' + mainText + '</text>');
@@ -1540,7 +1540,7 @@
     return parts.join('');
   }
 
-  /* HTML mirror of renderLegend — emits the same content as <div>s instead
+  /* HTML mirror of renderLegend – emits the same content as <div>s instead
      of <text>/<circle> nodes, so wide-layout charts can opt to render
      their analysis BELOW the SVG (stacking vertically on phones) rather
      than as a side column that crushes at narrow viewports. The output
@@ -1614,7 +1614,7 @@
     return '<line x1="' + divider.x + '" y1="' + (divider.y1 || 16) + '" x2="' + divider.x + '" y2="' + (divider.y2 || 424) + '" stroke="' + stroke + '" stroke-width="' + sw + '"' + dashAttr + '/>';
   }
 
-  /* Render multiple dividers — spec.dividers takes an array. Used by
+  /* Render multiple dividers – spec.dividers takes an array. Used by
      multi-panel charts that need internal dividers within a panel
      (e.g. panel "(b) Tax incidence" has a vertical divider between
      its inelastic / elastic sub-charts). Each divider entry supports
@@ -1661,12 +1661,12 @@
     var eX = scale.sx(end[0]), eY = scale.sy(end[1]);
     var cornerX = eX, cornerY = sY;  // bottom-right of the right triangle (same y as start)
 
-    // Horizontal arrow (Good B gain) — short buffer so the arrowhead clears the dot
+    // Horizontal arrow (Good B gain) – short buffer so the arrowhead clears the dot
     var gainBuffer = 4;
     var gainStartX = sX + gainBuffer;
     var hPath = 'M ' + gainStartX + ',' + sY + ' L ' + (cornerX - 0) + ',' + cornerY;
 
-    // Vertical arrow (Good A sacrifice) — from the corner up to the end point on PPF
+    // Vertical arrow (Good A sacrifice) – from the corner up to the end point on PPF
     var sacPath = 'M ' + cornerX + ',' + cornerY + ' L ' + eX + ',' + (eY + 0);
 
     // Dashed hypotenuse from start to end
@@ -1687,7 +1687,7 @@
     var badge = '<rect x="' + badgeX + '" y="' + badgeY + '" width="' + badgeW + '" height="' + badgeH + '" rx="4" fill="' + badgeBg + '"/>' +
                 '<text x="' + (badgeX + badgeW/2) + '" y="' + (badgeY + badgeH - 5) + '" font-size="' + MIN_LABEL_SIZE + '" font-weight="700" fill="' + anchorTone.label + '" text-anchor="middle">' + badgeText + '</text>';
 
-    // Internal triangle arrows are short — use a tiny buffer so they
+    // Internal triangle arrows are short – use a tiny buffer so they
     // stay visible. The default ARROW_BUFFER (8px) is for longer arrows
     // between labelled points.
     var triBuf = 2;
@@ -1704,7 +1704,7 @@
   function renderViewContent(view, scale, area, ctx) {
     var parts = [];
     // Shaded backgrounds FIRST (polygons + boxed-label rects) so curves
-    // and labels render on top — the chart never gets obscured by its
+    // and labels render on top – the chart never gets obscured by its
     // own shading. boxedLabel TEXT is appended LAST so it stays
     // readable above the curves.
     (view.polygons || []).forEach(function (p) { parts.push(renderPolygon(p, scale)); });
@@ -1724,7 +1724,7 @@
     (view.zones || []).forEach(function (z) { parts.push(renderZone(z, scale)); });
     (view.texts || []).forEach(function (t) { parts.push(renderText(t, scale, ctx, area)); });
     (view.titleStrips || []).forEach(function (ts) { parts.push(renderTitleStrip(ts, scale, area)); });
-    // BoxedLabel text overlays go last — readable above everything.
+    // BoxedLabel text overlays go last – readable above everything.
     boxedFgs.forEach(function (fg) { parts.push(fg); });
     return parts;
   }
@@ -1732,14 +1732,14 @@
   /* Render a single panel's content into the parts array.
      Used by both the legacy single-chartArea path and the multi-panel
      path (`spec.panels: [...]`). The panel shape is identical to a
-     top-level spec — chartArea, axes, curves, polygons, arrows, points,
-     texts, zones, views, legends — except it never carries its own
+     top-level spec – chartArea, axes, curves, polygons, arrows, points,
+     texts, zones, views, legends – except it never carries its own
      viewBox / width / height / background / divider (those are svg-wide). */
   function renderPanelContent(panel, ctx, parts, clipId) {
     var area = panel.chartArea;
     var scale = makeScale(area, clipId);
 
-    // Optional panel container box — drawn FIRST so chart content sits on top.
+    // Optional panel container box – drawn FIRST so chart content sits on top.
     // Used by macro grids (taxSubsidyFourPanels) that frame each panel with
     // a rounded white card.
     if (panel.box) {
@@ -1757,7 +1757,7 @@
       parts.push(wrapLayer('layer-axes', [renderAxes(area, panel.axes || {})]));
     }
 
-    // Optional panel title — positioned above chartArea by default, or at
+    // Optional panel title – positioned above chartArea by default, or at
     // an absolute SVG y when `panel.titleY` is given.
     if (panel.title) {
       var titleX = panel.titleX != null ? panel.titleX
@@ -1766,7 +1766,7 @@
                  : (area ? area.y - 12 : (panel.box ? panel.box.y + 17 : 12));
       var tt = tone(panel.titleTone || 'slate');
       var titleSize = panel.titleSize || 12;
-      // `panel.titleColor` explicit override — used when the title
+      // `panel.titleColor` explicit override – used when the title
       // should be visually distinct from any curve-label tone (e.g.
       // black title above a panel that has both red and green curves,
       // so the title doesn't look like an extra red label).
@@ -1775,12 +1775,12 @@
     }
 
     // If the panel is a pure container (box + title only, no chartArea),
-    // skip the rest of the per-panel rendering — there's nothing to draw.
+    // skip the rest of the per-panel rendering – there's nothing to draw.
     if (!area) return;
 
     // Items can carry BOTH `layer: 'idl-N'` (narrative reveal) AND
     // `perspective: 'classical'|'keynesian'` (school-of-thought toggle).
-    // Inner-first: perspective wraps first, then layer wraps on top —
+    // Inner-first: perspective wraps first, then layer wraps on top –
     // hiding the layer hides both; hiding the perspective hides only
     // that variant while keeping the layer reveal intact.
     function maybeWrap(shape, rendered) {
@@ -1811,14 +1811,14 @@
       parts.push(maybeWrap(p, renderedDot));
     });
     (panel.texts || []).forEach(function (t) { parts.push(maybeWrap(t, renderText(t, scale, ctx, area))); });
-    // BoxedLabel text overlays last — readable on top of curves/dots.
+    // BoxedLabel text overlays last – readable on top of curves/dots.
     panelBoxedFgs.forEach(function (fg) { parts.push(fg); });
 
     // titleStrips: centered dot + text pair, auto-positioned so the
     // dot always sits just before the text's actual left edge. The
     // old hand-rolled pattern used a fixed-x circle paired with an
     // anchor:middle text; long titles spilled their left edge UNDER
-    // the dot (Roger's screenshot 06-01 — "Supply slopes upward"
+    // the dot (Roger's screenshot 06-01 – "Supply slopes upward"
     // with the red dot overlapping the "S"). Estimating text width
     // from charCount × 0.58 × fontSize lets the engine position
     // the dot reliably across every spec without authoring math.
@@ -1846,8 +1846,8 @@
   }
 
   /* Composable templates. `spec.template: 'ad-as'` (or 'supply-demand',
-     'ppf', 'cost-curves') applies a recipe of defaults — chart area,
-     axis labels, standard marker defs — that the spec can selectively
+     'ppf', 'cost-curves') applies a recipe of defaults – chart area,
+     axis labels, standard marker defs – that the spec can selectively
      override. Author fields ALWAYS win over template fields. Each
      template is a partial spec; missing fields fall through to the
      engine's own defaults. */
@@ -1879,7 +1879,7 @@
     var tmpl = TEMPLATES[spec.template];
     if (!tmpl) return spec;
     // Shallow merge: spec wins on any explicitly-set field. For nested
-    // objects (chartArea, axes), spec also wins as a whole — overriding
+    // objects (chartArea, axes), spec also wins as a whole – overriding
     // any one field of chartArea means setting the whole object.
     var merged = {};
     Object.keys(tmpl).forEach(function (k) { merged[k] = tmpl[k]; });
@@ -1979,7 +1979,7 @@
     // bricking content.
     if (!specInput || typeof specInput !== 'object') {
       if (typeof console !== 'undefined' && console.warn) {
-        console.warn('[ECONOS_PPF] render() called with no spec — likely a missing <script src="…/specs/X.js"> in the shell HTML. Page boots but this chart will be empty.');
+        console.warn('[ECONOS_PPF] render() called with no spec – likely a missing <script src="…/specs/X.js"> in the shell HTML. Page boots but this chart will be empty.');
       }
       return '<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart unavailable"><rect width="400" height="200" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/><text x="200" y="100" font-family="Inter, sans-serif" font-size="13" fill="#92400E" text-anchor="middle" dominant-baseline="middle">Chart spec missing (see console)</text></svg>';
     }
@@ -1989,7 +1989,7 @@
 
     // `legendPosition: 'bottom'` opts a wide-layout chart into stacking
     // its analysis BELOW the SVG (as HTML) instead of beside it (as SVG
-    // at x=600). The chart-area itself doesn't move — we just stop
+    // at x=600). The chart-area itself doesn't move – we just stop
     // emitting the side legend, shrink the SVG to the chart-area's right
     // edge plus a small margin, and drop the dashed vertical divider.
     // The HTML legend is appended after `</svg>` so it lives inside the
@@ -2021,7 +2021,7 @@
     // when `legendPosition: 'bottom'` is on, so the CSS can lay them out
     // side-by-side on desktop and stacked on mobile. Without this wrapper
     // the SVG's `width:100%` rule stretches the chart to the full panel
-    // width on a laptop — the analysis ends up under a giant chart
+    // width on a laptop – the analysis ends up under a giant chart
     // instead of beside it.
     if (legendsBelow) parts.push('<div class="econos-chart-wrap-below">');
     // Auto-generate accessibility metadata. Spec may override either
@@ -2036,15 +2036,15 @@
     // every chart whose chartArea.y < 30.
     //
     // Wide-layout marker: a chart with side legends, a vertical divider,
-    // or multi-panels can't usefully shrink to a 320-px phone — the
+    // or multi-panels can't usefully shrink to a 320-px phone – the
     // legend text would render at 4-5 px. Tag those charts so the CSS
     // can give them a min-width and let the wrapping container's
     // overflow-x: auto scroll horizontally instead of crushing them.
-    // legendsBelow shrinks the SVG to chart-area only — no side legend,
-    // no divider — so a chart that USED to be "wide" (900px) is now
+    // legendsBelow shrinks the SVG to chart-area only – no side legend,
+    // no divider – so a chart that USED to be "wide" (900px) is now
     // narrow enough to render natively on a phone. Don't tag it wide.
     // "Wide" = a chart that genuinely needs horizontal room and would turn
-    // its text to 4-5 px mush if shrunk to a phone — i.e. multi-panel
+    // its text to 4-5 px mush if shrunk to a phone – i.e. multi-panel
     // (side-by-side), a divider-split twin, or an in-SVG side legend. Such
     // charts get a min-width on mobile and scroll horizontally instead.
     //
@@ -2052,7 +2052,7 @@
     // of labels) is NOT wide just because its authored width is 700: it
     // scales down to a phone perfectly well and forcing min-width:720 on it
     // was exactly the "chart stays huge / overflows on mobile" bug. So the
-    // bare `width >= 700` heuristic is gone — wideness is now structural,
+    // bare `width >= 700` heuristic is gone – wideness is now structural,
     // not a width threshold. (Roger, 2026-06: demand/supply/equilibrium
     // single-panel charts overflowed on mobile.)
     var isWide = !legendsBelow && (spec.divider || isMulti ||
@@ -2068,13 +2068,13 @@
     var clips = '';
     if (isMulti) {
       panels.forEach(function (p, i) {
-        // Skip container-only panels (box + title, no chartArea) — they
+        // Skip container-only panels (box + title, no chartArea) – they
         // have no curves to clip.
         if (!p.chartArea) return;
         var a = p.chartArea;
         clips += '<clipPath id="econos-chart-clip-' + i + '"><rect x="' + a.x + '" y="' + a.y + '" width="' + a.width + '" height="' + a.height + '"/></clipPath>';
       });
-      // Legacy fallback clip — uses the first chartArea-bearing panel.
+      // Legacy fallback clip – uses the first chartArea-bearing panel.
       var firstWithArea = panels.find ? panels.find(function (p) { return p.chartArea; })
                                        : (function () { for (var i = 0; i < panels.length; i++) if (panels[i].chartArea) return panels[i]; return null; })();
       if (firstWithArea) {
@@ -2088,7 +2088,7 @@
     // `spec.layers: ['idl-1', 'idl-2']` declares the layers; engine emits:
     //   .idl-N { display: none }                  (hidden by default)
     //   .sv-show-N .idl-1, .sv-show-N .idl-2 {…}  (view N shows layers 1..N)
-    // Items reach the layers via `layer: 'idl-1'` on any primitive — the
+    // Items reach the layers via `layer: 'idl-1'` on any primitive – the
     // existing `maybeWrap` already produces `<g class="idl-N">` wrappers.
     // `spec.inverseLayers: ['idl-old-solid']` are layers that are SHOWN by
     // default and HIDDEN whenever any view is active. Used by shift charts
@@ -2098,7 +2098,7 @@
     // shows ONLY layer N (instead of layers 1..N). Used by side-by-side
     // shape comparisons like Classical-vs-Keynesian LRAS.
     // `spec.layerAliases: { 'idl-1': ['show-classical'], 'idl-2': ['show-keynesian'] }`
-    // adds extra parent classes that reveal a layer — used by the
+    // adds extra parent classes that reveal a layer – used by the
     // static-article engine which swaps `show-<state>` on the wrapper
     // instead of the SPA's `sv-show-N`.
     var layerCss = '';
@@ -2126,7 +2126,7 @@
       var inverseCss = '';
       if (Array.isArray(spec.inverseLayers) && spec.inverseLayers.length) {
         // Inverse layers are shown BY DEFAULT and fade out when any view
-        // activates — opposite direction from idl-N.
+        // activates – opposite direction from idl-N.
         var inverseShow = spec.inverseLayers.map(function (l) { return '.' + l + '{' + fadeIn + '}'; }).join('');
         var inverseHides = spec.layers.map(function (_, i) {
           var n = i + 1;
@@ -2141,7 +2141,7 @@
     // 'classical'` (or 'keynesian'); the engine wraps them in
     // `<g class="perspective-X">` and emits CSS so only the perspective
     // matching the wrapper's `.chart-<name>` class is visible. Items
-    // without a perspective field are shared base content — visible
+    // without a perspective field are shared base content – visible
     // under every perspective. There is no `'both'` value: shared
     // primitives simply omit the field.
     var perspectiveCss = '';
@@ -2162,7 +2162,7 @@
     // exactly the way it toggled the old in-SVG legends. Generated from
     // spec.views (per-view legend) OR spec.legends[] (each legend's
     // `layer: 'layer-legend-<key>'` carries the key). Either authoring
-    // shape works — the engine derives the same `(layer → show-<key>)`
+    // shape works – the engine derives the same `(layer → show-<key>)`
     // pairs and emits one stylesheet.
     var legendBelowCss = '';
     if (legendsBelow) {
@@ -2184,14 +2184,14 @@
           }
         });
       }
-      // Single-legend charts: no toggling — just leave it visible.
+      // Single-legend charts: no toggling – just leave it visible.
       // Multi-legend charts: hide all, then reveal the one matching
       // the parent's `.show-<view-key>` class. We rely on the consumer
       // (app.js's ad-interactive renderer) setting `.show-<firstkey>`
       // on the parent at initial render so the first view is visible
       // out of the box. An "initially shown" rule with equal specificity
       // to the hide-all rule used to keep every legend visible at once
-      // because the cascade order favoured it — see screenshot 06-01.
+      // because the cascade order favoured it – see screenshot 06-01.
       if (pairs.length > 1) {
         var lFadeOut = 'opacity:0;pointer-events:none;transition:opacity .32s ease';
         var lFadeIn  = 'opacity:1;pointer-events:auto;transition:opacity .32s ease';
@@ -2204,12 +2204,12 @@
         legendBelowCss = '<style>' + lHides + lReveals + '</style>';
       }
     }
-    // Built-in arrow markers — emitted in every chart's <defs> so authors
+    // Built-in arrow markers – emitted in every chart's <defs> so authors
     // can write `markerEnd: 'econos-arrow-blue'` instead of hand-rolling
     // their own. ALL markers are designed as RIGHT-POINTING triangles
     // (tip at the +X end of local coords) with `orient="auto"`. The
     // browser auto-rotates each marker to align with the line's tangent
-    // direction at the endpoint — so the SAME marker arrows-up on a
+    // direction at the endpoint – so the SAME marker arrows-up on a
     // vertical line going up, arrows-down on a line going down, and
     // arrows-right on a horizontal line. Per-spec hand-rolled markers
     // that pointed up or down in LOCAL coords have produced HORIZONTAL
@@ -2301,7 +2301,7 @@
       // Geometry assertion: if the spec also gave explicit x/y, verify
       // it agrees with the solver. Drift > INTERSECTION_TOL is the
       // textbook "hand-computed intersection point that slid off the
-      // curve" bug — author should remove the constants or fix them.
+      // curve" bug – author should remove the constants or fix them.
       if (pt.x != null && pt.y != null) {
         var dx = chosen[0] - pt.x, dy = chosen[1] - pt.y;
         var drift = Math.sqrt(dx * dx + dy * dy);
@@ -2320,7 +2320,7 @@
 
     /* Snap a point declared `on: 'curveId'` onto that curve. Computes the
        curve's y at the point's x and overwrites pt.y, so a dot tagged
-       `on:` is GUARANTEED to sit on the line — not just hinted for label
+       `on:` is GUARANTEED to sit on the line – not just hinted for label
        placement. If the author also gave an explicit y that drifts beyond
        ON_CURVE_TOL, warn (same spirit as the intersection drift assertion)
        then snap. Works for both straight `L` segments and `C` cubics via
@@ -2355,13 +2355,13 @@
         return;
       }
       var y = yOnPathAtX(path, pt.x);
-      if (y == null) return; // x outside the curve's domain — leave as authored
+      if (y == null) return; // x outside the curve's domain – leave as authored
       if (pt.y != null) {
         var drift = Math.abs(pt.y - y);
         if (drift > ON_CURVE_TOL) {
           var msg = '[ECONOS_PPF] point on:"' + pt.on + '" at x=' + pt.x.toFixed(3) +
             ' declared y=' + pt.y.toFixed(3) + ' drifts ' + drift.toFixed(4) +
-            ' from the curve (y=' + y.toFixed(3) + ') — snapping onto the curve';
+            ' from the curve (y=' + y.toFixed(3) + ') – snapping onto the curve';
           ctx.devWarnings.push(msg);
           try { console.warn(msg); } catch (e) {}
         }
@@ -2446,7 +2446,7 @@
 
     // Render each panel (multi-panel) or the spec itself (single-panel).
     // Track which panel each placedBox belongs to so the clash detector
-    // can skip cross-panel comparisons — labels in different panels
+    // can skip cross-panel comparisons – labels in different panels
     // can never visually overlap.
     if (isMulti) {
       panels.forEach(function (panel, i) {
@@ -2478,7 +2478,7 @@
 
     parts.push('</svg>');
 
-    // HTML legend block — emitted AFTER </svg> when `legendPosition:
+    // HTML legend block – emitted AFTER </svg> when `legendPosition:
     // 'bottom'`. The wrapper class `econos-chart-legends` is what the
     // CSS targets for layout (single column on phones, two-column on
     // wider screens). Each per-view legend gets its own layer class so
@@ -2494,7 +2494,7 @@
       if (spec.legend && !(spec.views || []).length) {
         htmlParts.push(renderLegendHtml(spec.legend));
       }
-      // Per-view legends — wrapped in their legendLayer class so the
+      // Per-view legends – wrapped in their legendLayer class so the
       // existing `.show-<key>` toggling targets them too.
       (spec.views || []).forEach(function (view) {
         if (!view.legend) return;
@@ -2522,7 +2522,7 @@
           // Skip if perspectives mutually exclusive
           if (a.perspective && b.perspective && a.perspective !== b.perspective) continue;
           // Skip if both have layers that are mutually exclusive (not
-          // a perfect check — engine cumulates by default — but exclusive
+          // a perfect check – engine cumulates by default – but exclusive
           // siblings of `idl-N` rarely co-exist visually)
           if (a.layer && b.layer && a.layer !== b.layer) continue;
           // Skip identical-text duplicates that come from cumulative
@@ -2530,7 +2530,7 @@
           // layer that re-affirms the same coord).
           if (a.text === b.text) continue;
           if (boxesOverlap(a, b) && boxOverlapArea(a, b) >= 30) {
-            // 30 px² threshold — ignores grazing 1-2px touches that
+            // 30 px² threshold – ignores grazing 1-2px touches that
             // aren't visually problematic. Real clashes are tens or
             // hundreds of px² of intersection.
             var msg = '[ECONOS_PPF] label clash: "' + a.text + '" ↔ "' + b.text + '"';
@@ -2545,7 +2545,7 @@
     // those bounds will clip in the browser. Tolerance of 2px to
     // ignore sub-pixel rounding noise.
     //
-    // For labels with `panelArea` set (currently curve labels — see
+    // For labels with `panelArea` set (currently curve labels – see
     // renderCurve), enforce the PANEL'S chartArea bounds as the right
     // edge rather than the SVG viewBox: a label that spills out of its
     // panel into the next panel's territory technically stays inside

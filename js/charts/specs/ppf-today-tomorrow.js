@@ -1,5 +1,5 @@
 /* ============================================================
-   PPF — "today vs tomorrow" (1.1.4 card 6).
+   PPF – "today vs tomorrow" (1.1.4 card 6).
    2×2 small-multiples: Economy A chooses MORE consumer / FEWER
    capital → modest outward shift. Economy B chooses MORE capital
    / FEWER consumer → larger outward shift.
@@ -48,7 +48,7 @@
         { id: id2, d: ppf2D, tone: tone, strokeWidth: 2.6 }
       ],
       arrows: [
-        // buffer:2 — the perpendicular gap from PPF₁ to PPF₂ in these
+        // buffer:2 – the perpendicular gap from PPF₁ to PPF₂ in these
         // small 175×138 panels is only ~22px, so the engine's default
         // 14px end-pull would shrink the visible arrow to nothing.
         { perpendicular: { from: id1, t: t, to: id2 },
@@ -64,10 +64,10 @@
     height: 360,
     divider: { x: 270, y1: 16, y2: 350, stroke: '#E2E8F0', dashed: '4 4' },
     panels: [
-      // Top row — "today" choice: Economy A leans consumer, B leans capital.
+      // Top row – "today" choice: Economy A leans consumer, B leans capital.
       todayChart(  0,   0, 0.60, 'blue'),    // A high on x (consumer-heavy)
       todayChart(270,   0, 0.25, 'amber'),   // B low on x (capital-heavy)
-      // Bottom row — "future": A modest outward shift, B larger shift.
+      // Bottom row – "future": A modest outward shift, B larger shift.
       futureChart(  0, 180, PPF2_MODEST, 'blue',  0.55),
       futureChart(270, 180, PPF2_LARGER, 'amber', 0.55)
     ]

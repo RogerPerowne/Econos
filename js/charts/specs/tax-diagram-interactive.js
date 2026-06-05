@@ -1,5 +1,5 @@
 /* ============================================================
-   Tax Diagram Interactive — engine spec for taxDiagramInteractive.
+   Tax Diagram Interactive – engine spec for taxDiagramInteractive.
    CPS topic card 3 (How Taxes Affect Surplus).
 
    Mirror of subsidy-diagram-interactive: S shifts UP by tax amount,
@@ -8,7 +8,7 @@
    Qt and Qe.
 
    4 progressive-reveal views:
-     V0 Free market         — base D + S + E only
+     V0 Free market         – base D + S + E only
      V1 Tax shifts S up     → idl-1 (S+tax + Pc, Pp, Qt gridlines)
      V2 Surplus & gov rev   → idl-1 + idl-2 (CS / PS / Govt rect)
      V3 Deadweight loss     → idl-1 + idl-2 + idl-3 (DWL triangle)

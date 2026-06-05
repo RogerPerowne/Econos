@@ -1,6 +1,6 @@
 /* ============================================================
-   AD Demand-Pull Interactive — engine spec for adDemandPullInteractive.
-   Causes-of-inflation topic — card 2 "Demand-pull inflation".
+   AD Demand-Pull Interactive – engine spec for adDemandPullInteractive.
+   Causes-of-inflation topic – card 2 "Demand-pull inflation".
 
    3-view AD-shift sequence with a Classical/Keynesian perspective
    toggle so students see the two textbook outcomes side by side
@@ -8,12 +8,12 @@
 
      CLASSICAL perspective (default)
        AS = vertical LRAS at Yf. AD₁ → AD₂ raises only the price
-       level; Y stays at Yf. Pure long-run demand-pull inflation —
+       level; Y stays at Yf. Pure long-run demand-pull inflation –
        the "money is neutral" result.
 
      KEYNESIAN perspective
        AS = sloped SRAS. AD₁ → AD₂ raises P AND Y in the short
-       run. Both rise together — Keynes's short-run "excess demand"
+       run. Both rise together – Keynes's short-run "excess demand"
        story.
 
    3 views (cumulative reveal):
@@ -32,7 +32,7 @@
   var YF = 0.514;
   var P1 = 0.481;                          // AD₁ at Yf
   var CL_E1 = { x: YF, y: P1 };
-  var CL_E2 = { x: YF, y: 0.689 };         // AD₂ at Yf — Y unchanged, P up
+  var CL_E2 = { x: YF, y: 0.689 };         // AD₂ at Yf – Y unchanged, P up
 
   // Keynesian equilibrium: E₁ on AD₁ ∩ SRAS midpoint (same as
   // the AS-topic ad-shift-interactive spec for visual continuity).
@@ -71,7 +71,7 @@
       // Curve trimmed to end AT chart x=1.0 (was 1.153 with auto-clip).
        // The visual is identical thanks to the clip, but the label is
        // now positioned relative to the VISIBLE end of the curve instead
-       // of the off-stage extension — old setup put the label centre
+       // of the off-stage extension – old setup put the label centre
        // ~46px from the line.
       { d: 'M 0.319,0.894 L 1.000,0.218',
         tone: 'green', label: 'AD₂', strokeWidth: 2.5,
@@ -85,7 +85,7 @@
         gridlines: 'slate', ticks: { x: 'Yf', y: 'P₁' },
         label: 'E₁', labelDx: -10, labelDy: -4, anchor: 'end',
         perspective: 'classical' },
-      /* Classical E₂ — directly ABOVE E₁ on vertical LRAS */
+      /* Classical E₂ – directly ABOVE E₁ on vertical LRAS */
       { x: CL_E2.x, y: CL_E2.y, tone: 'green', radius: 5.5, hollow: true,
         gridlines: 'green', ticks: { y: 'P₂' },
         label: 'E₂', labelDx: 10, labelDy: -4, anchor: 'start',
@@ -96,7 +96,7 @@
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
         label: 'E₁', labelDx: -10, labelDy: -4, anchor: 'end',
         perspective: 'keynesian' },
-      /* Keynesian E₂ on AD₂ ∩ SRAS — both P and Y rise */
+      /* Keynesian E₂ on AD₂ ∩ SRAS – both P and Y rise */
       { x: KY_E2.x, y: KY_E2.y, tone: 'green', radius: 5.5, hollow: true,
         gridlines: 'green', ticks: { x: 'Y₂', y: 'P₂' },
         label: 'E₂', labelDx: 10, labelDy: -4, anchor: 'start',
@@ -104,7 +104,7 @@
     ],
 
     arrows: [
-      /* AD shift arrow — shared (same AD₁→AD₂ shift in both perspectives) */
+      /* AD shift arrow – shared (same AD₁→AD₂ shift in both perspectives) */
       { x1: 0.490, y1: 0.835, x2: 0.625, y2: 0.835,
         tone: 'green', strokeWidth: 1.8,
         markerEnd: 'econos-arrow-green', buffer: 0, layer: 'idl-1' }

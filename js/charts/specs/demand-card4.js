@@ -1,5 +1,5 @@
 /* ============================================================
-   Demand card 4 — interactive "shifts in demand" via the standard
+   Demand card 4 – interactive "shifts in demand" via the standard
    `interactiveDiagram` block (svg left + description right, step
    buttons under the row), the same component used on Consumer &
    Producer Surplus card 2 (`cpsBuildInteractive`).
@@ -42,14 +42,14 @@
     },
 
     curves: [
-      /* base — solid blue D₁ (label via explicit text below) */
+      /* base – solid blue D₁ (label via explicit text below) */
       { layer: 'layer-base', d: 'M 0.12,1.046 L 1.00,0.166', tone: 'blue', strokeWidth: 3 },
 
-      /* incr — dashed grey D₁ + solid green D₂ */
+      /* incr – dashed grey D₁ + solid green D₂ */
       { layer: 'layer-incr', d: 'M 0.12,1.046 L 1.00,0.166', tone: 'slate', strokeWidth: 2.4, dashed: '7 5', opacity: 0.55 },
       { layer: 'layer-incr', d: 'M 0.34,1.046 L 1.22,0.166', tone: 'green', strokeWidth: 3 },
 
-      /* decr — dashed grey D₁ + solid red D₃ */
+      /* decr – dashed grey D₁ + solid red D₃ */
       { layer: 'layer-decr', d: 'M 0.12,1.046 L 1.00,0.166', tone: 'slate', strokeWidth: 2.4, dashed: '7 5', opacity: 0.55 },
       { layer: 'layer-decr', d: 'M -0.10,1.046 L 0.78,0.166', tone: 'red', strokeWidth: 3 }
     ],
@@ -62,7 +62,7 @@
     ],
 
     texts: [
-      /* curve labels — explicit, in-bounds, one per state, clear of the line */
+      /* curve labels – explicit, in-bounds, one per state, clear of the line */
       { layer: 'layer-base', x: 0.90, y: 0.40, text: 'D₁', tone: 'blue',  bold: true, fontSize: 15, anchor: 'middle' },
 
       { layer: 'layer-incr', x: 0.95, y: 0.46, text: 'D₂', tone: 'green', bold: true, fontSize: 15, anchor: 'middle' },

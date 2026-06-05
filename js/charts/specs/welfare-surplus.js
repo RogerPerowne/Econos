@@ -1,5 +1,5 @@
 /* ============================================================
-   Welfare Surplus diagram — engine spec for welfareSurplusDiagram.
+   Welfare Surplus diagram – engine spec for welfareSurplusDiagram.
    Used by price-determination card 5 (Allocative Efficiency).
 
    Same structural pattern as cpsDiagram but with MB (marginal
@@ -30,7 +30,7 @@
     },
 
     // CS and PS auto-traced from the MB / MC curves and the price
-    // line at y = E.y. Engine computes the polygon corners — no more
+    // line at y = E.y. Engine computes the polygon corners – no more
     // hand-computed (0, 0.938) and (0, 0.063) intercepts.
     welfareRegions: [
       { type: 'consumer-surplus', curve: 'MB', price: E.y, tone: 'blue', opacity: 0.18 },

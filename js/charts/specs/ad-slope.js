@@ -1,5 +1,5 @@
 /* ============================================================
-   AD Slope Diagram — engine spec for adSlopeDiagram.
+   AD Slope Diagram – engine spec for adSlopeDiagram.
    Aggregate-demand topic, card 2 "Why AD slopes downward".
 
    Static chart: single AD curve from upper-left to lower-right.
@@ -11,8 +11,8 @@
 
    Chart-space positions:
      AD line  (0.139, 0.833) → (0.917, 0.083)
-     E₁      (0.306, 0.667) — upper-left, lower output, higher price
-     E₂      (0.694, 0.292) — lower-right, higher output, lower price
+     E₁      (0.306, 0.667) – upper-left, lower output, higher price
+     E₂      (0.694, 0.292) – lower-right, higher output, lower price
    ============================================================ */
 (function () {
   'use strict';
@@ -48,7 +48,7 @@
       // "P falls" arrow OUTSIDE chart on left of y-axis, pointing DOWN.
       // Pulled further LEFT (chart-x -0.110) and shortened vertically so
       // its top doesn't sit at the same y as P₁ label and its bottom
-      // doesn't sit at the same y as P₂ label — clears the "looks like
+      // doesn't sit at the same y as P₂ label – clears the "looks like
       // it's touching" perception both labels have.
       { x1: -0.110, y1: 0.595, x2: -0.110, y2: 0.380,
         tone: 'rose', strokeWidth: 2, markerEnd: 'ads-arr-red', buffer: 0 },

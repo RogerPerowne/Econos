@@ -1,17 +1,17 @@
 /* ============================================================
-   ECONOS — Shared app shell
+   ECONOS – Shared app shell
    ─────────────────────────────────────────────────────────────
    Sidebar, topbar and full <div class="app"> wrapper as
    reusable HTML strings. Every engine (Learn It cards, Link It
    stations, Land It sections, Quiz station) renders the SAME
-   chrome — so this file is the single source of truth for it.
+   chrome – so this file is the single source of truth for it.
 
    Before this existed, ~1100 lines of identical chrome HTML
    were duplicated across 14 engine files.
 
    Depends on:
-     window.ECONOS_ICONS   — populated by js/icons.js
-     window.TopicLoader    — for any topic-aware URLs (caller
+     window.ECONOS_ICONS   – populated by js/icons.js
+     window.TopicLoader    – for any topic-aware URLs (caller
                              supplies pre-built URLs)
    ============================================================ */
 
@@ -55,8 +55,8 @@
   }
 
   /* ------------------------------------------------------------------
-     Sidebar — identical chrome across every page.
-     opts.activeNav  — which nav item is highlighted; default 'My topics'
+     Sidebar – identical chrome across every page.
+     opts.activeNav  – which nav item is highlighted; default 'My topics'
      ------------------------------------------------------------------ */
   function renderSidebar(opts) {
     opts = opts || {};
@@ -76,7 +76,7 @@
       + '<aside class="sidebar" aria-label="Account and global navigation">'
       +   '<div class="sidebar__brand">'
       +     '<a href="/" class="sidebar__logo-link">'
-      +       '<img src="/assets/logo-full.png" alt="Econos — Learn it. Link it. Land it." class="sidebar__logo-full">'
+      +       '<img src="/assets/logo-full.png" alt="Econos – Learn it. Link it. Land it." class="sidebar__logo-full">'
       +     '</a>'
       +   '</div>'
       +   '<nav class="sidebar__nav" aria-label="Main">'
@@ -107,25 +107,25 @@
   }
 
   /* ------------------------------------------------------------------
-     Topbar — back link, session crumbs, streak + avatar.
+     Topbar – back link, session crumbs, streak + avatar.
 
      opts:
-       backUrl       (required) — destination for the back arrow link
-       backLabel     (optional) — text after the arrow; default empty
-       sessionLabel  (optional) — eyebrow above topic title (e.g. "Session 1 of 3: Learn")
-       topicTitle    (optional) — large title
+       backUrl       (required) – destination for the back arrow link
+       backLabel     (optional) – text after the arrow; default empty
+       sessionLabel  (optional) – eyebrow above topic title (e.g. "Session 1 of 3: Learn")
+       topicTitle    (optional) – large title
      ------------------------------------------------------------------ */
   function renderTopbar(opts) {
     opts = opts || {};
     var I = getIcons();
     var U = getUser();
-    /* Default back label: "Topics" — covers the common case of returning
+    /* Default back label: "Topics" – covers the common case of returning
        to the index from inside a topic. Engines that need different copy
        can pass opts.backLabel explicitly. */
     var labelText = (opts.backLabel === undefined) ? 'Topics' : opts.backLabel;
     var backLabel = labelText ? '<span>' + labelText + '</span>' : '';
     /* Duplicate streak chip removed (was previously rendered here AND in
-       the sidebar). Sidebar wins — it's the prominent gamification card. */
+       the sidebar). Sidebar wins – it's the prominent gamification card. */
     return ''
       + '<div class="topbar" role="region" aria-label="Session header">'
       +   '<a href="' + (opts.backUrl || '/') + '" class="topbar__back" aria-label="Back to ' + (labelText || 'topics') + '">'
@@ -146,10 +146,10 @@
   }
 
   /* ------------------------------------------------------------------
-     Mobile stage strip — three compact pills (Learn / Link / Land) shown
+     Mobile stage strip – three compact pills (Learn / Link / Land) shown
      directly below the topbar on viewports ≤880px, where the right-rail
      (and its desktop stages widget) is hidden. Engines don't call this
-     directly — renderTopbar above always emits it; CSS hides it on
+     directly – renderTopbar above always emits it; CSS hides it on
      desktop. State derivation is shared with renderStages.
      ------------------------------------------------------------------ */
   function renderMobileStages() {
@@ -177,7 +177,7 @@
       var glyph = state === 'done'   ? (I.check || '✓')
                 : state === 'locked' ? (I.lock  || '🔒')
                 : String(s.num);
-      var titleAttr = isLocked ? ' title="Coming soon — not yet available for this topic"' : '';
+      var titleAttr = isLocked ? ' title="Coming soon – not yet available for this topic"' : '';
       var open = clickable
         ? '<a href="' + s.href + '" class="' + cls + '"'
         : '<div class="' + cls + '"' + ariaCurrent + titleAttr;
@@ -191,12 +191,12 @@
   }
 
   /* ------------------------------------------------------------------
-     Full app wrapper — sidebar + .main containing topbar + body.
+     Full app wrapper – sidebar + .main containing topbar + body.
 
      opts:
-       theme    — 'link' | 'land' (omit for Learn It / default green)
-       topbar   — pre-rendered <header> string, or undefined to skip
-       body     — pre-rendered page body string (e.g. '<div class="page">...</div>')
+       theme    – 'link' | 'land' (omit for Learn It / default green)
+       topbar   – pre-rendered <header> string, or undefined to skip
+       body     – pre-rendered page body string (e.g. '<div class="page">...</div>')
      ------------------------------------------------------------------ */
   function renderApp(opts) {
     opts = opts || {};
@@ -217,11 +217,11 @@
      Public API:  Shell.renderStages([statesOverride])
 
      Each engine that owns a .right-rail calls Shell.renderStages()
-     itself — single source of truth for the widget HTML, and no
+     itself – single source of truth for the widget HTML, and no
      MutationObserver fallback in shell.js (used to inject after the
      engine rendered; now engines do it directly).
 
-     statesOverride (optional) — explicit ['done'|'current'|'open', x3]
+     statesOverride (optional) – explicit ['done'|'current'|'open', x3]
      to bypass the URL-derived defaults.
      ────────────────────────────────────────────────────────────── */
   /* Per-topic stage availability is emitted by the build-time
@@ -230,7 +230,7 @@
      We read it once and lock stages that aren't in the set so the
      stages widget never offers a click-through to content that
      doesn't exist yet. Falls open (everything available) when the
-     meta is absent — dev mode, base shells, anywhere generated
+     meta is absent – dev mode, base shells, anywhere generated
      metadata isn't present. */
   function getAvailability() {
     try {
@@ -285,13 +285,13 @@
 
   /* Shell.renderStages([spec], [title])
 
-     spec — one of:
+     spec – one of:
        • omitted        → URL-derived states + canonical labels
        • [string,…]     → state strings (length 3, order Learn/Link/Land)
        • [object,…]     → full stage objects { state, num?, name?, sub?, href? };
                           missing fields fall back to canonical defaults.
 
-     title — optional string rendered as <div class="stages__title">…</div>
+     title – optional string rendered as <div class="stages__title">…</div>
              before the stages (matches the land-section-A/B/C chrome). */
   function renderStages(spec, title) {
     var topic = TopicLoader.getTopic();
@@ -335,7 +335,7 @@
       var isLocked  = state === 'locked';
       var clickable = !isCurrent && !isLocked;
       var ariaCurrent = isCurrent ? ' aria-current="step"' : '';
-      var titleAttr = isLocked ? ' title="Coming soon — not yet available for this topic"' : '';
+      var titleAttr = isLocked ? ' title="Coming soon – not yet available for this topic"' : '';
       var openTag = clickable
         ? '<a href="' + s.href + '" class="' + cls + '"'
         : '<div class="' + cls + '"' + ariaCurrent + titleAttr;
@@ -344,7 +344,7 @@
         : (state === 'locked' ? (I.lock || '🔒') : String(s.num));
       var chip = chipFor(state);
       var chipCls = 'stage__chip' + (chip.modifier ? ' ' + chip.modifier : '');
-      var ariaLabel = ' aria-label="' + s.name + ' — ' + chip.text + '"';
+      var ariaLabel = ' aria-label="' + s.name + ' – ' + chip.text + '"';
       html += openTag + ' data-stage-pos="' + (i + 1) + '"' + ariaLabel + '>'
            +   '<div class="stage__num" aria-hidden="true">' + numContent + '</div>'
            +   '<div class="stage__body">'
@@ -354,7 +354,7 @@
            +   '</div>'
            + (clickable ? '</a>' : '</div>');
     }
-    // Quick-skip "Take the quiz" link below the stages — only when the
+    // Quick-skip "Take the quiz" link below the stages – only when the
     // topic ships a quiz pool (window.ECONOS_QUIZ). Lets the user jump
     // straight to the quiz without walking through the Learn It cards
     // first. The button's data-action is handled by the global click
@@ -376,7 +376,7 @@
   }
 
   /* ------------------------------------------------------------------
-     Skip link — first focusable element on every page so keyboard
+     Skip link – first focusable element on every page so keyboard
      users can jump past the sidebar nav to the main content.
      ------------------------------------------------------------------ */
   function renderSkipLink() {
@@ -390,14 +390,14 @@
   }
 
   /* ------------------------------------------------------------------
-     Account menu — the dropdown the sidebar user-card and the topbar
+     Account menu – the dropdown the sidebar user-card and the topbar
      avatar button both open. Until proper auth lands the only real
      action is "Log out" (clears the localStorage auth flag + bounces
      to /login). Anchored to whichever trigger opened it; closes on
      outside-click, Escape, or selecting an item.
 
      There was previously a chevron (⌄) on both triggers with no
-     handler — looked interactive, did nothing. This wires the
+     handler – looked interactive, did nothing. This wires the
      affordance to something real instead of removing it.
      ------------------------------------------------------------------ */
   var ACCOUNT_MENU_ID = 'econ-account-menu';
@@ -415,7 +415,7 @@
            + '</button>';
     }).join('');
     /* The exam-board picker only makes sense with more than one board.
-       While Edexcel A is the sole active board it's hidden — reappears
+       While Edexcel A is the sole active board it's hidden – reappears
        automatically when another board is reactivated in the registry. */
     var boardGroup = order.length > 1
       ? '<div class="account-menu__group" role="group" aria-label="Exam board">'
@@ -469,7 +469,7 @@
   function bindAccountMenu() {
     /* Capture-phase delegate: handles both the sidebar user-card and
        the topbar avatar (and any future trigger that adds the
-       data-account-trigger attribute). Idempotent — we attach the
+       data-account-trigger attribute). Idempotent – we attach the
        global listeners exactly once. */
     if (document.documentElement.dataset.econAccountMenuBound === '1') return;
     document.documentElement.dataset.econAccountMenuBound = '1';
@@ -501,7 +501,7 @@
              land on the universal learn-it intro and let the user
              go from there. Build the URL manually rather than via
              routes.learn() because routes.learn reads getBoard()
-             which prefers the URL — and the URL still has the OLD
+             which prefers the URL – and the URL still has the OLD
              board until we navigate. */
           try {
             var route = TopicLoader.parsePath && TopicLoader.parsePath(window.location.pathname);
@@ -522,7 +522,7 @@
                 var parts = spec ? String(spec).split('.') : [];
                 theme = parts[1] === '1' ? 'micro' : (spec ? 'macro' : 'misc');
               } else if (newBoard === 'ocr') {
-                /* Mirror of TopicLoader.themeFor for OCR — uses
+                /* Mirror of TopicLoader.themeFor for OCR – uses
                    Edexcel A's theme as the structural source until
                    OCR specs are properly numbered. */
                 var ea = topicEntry && topicEntry.boards && topicEntry.boards.edexcel_a && topicEntry.boards.edexcel_a.spec;
@@ -540,7 +540,7 @@
                 window.location.href = '/' + newBoard + '/' + theme + '/' + route.topic + '/learn-it';
                 return;
               }
-              /* The topic isn't in the new board's spec — send the
+              /* The topic isn't in the new board's spec – send the
                  user home so they can pick a topic that IS available. */
               window.location.href = '/';
               return;

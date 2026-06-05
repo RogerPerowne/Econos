@@ -1,5 +1,5 @@
 /* ============================================================
-   SRAS Right Shift Interactive — engine spec for srasRightShiftInteractive.
+   SRAS Right Shift Interactive – engine spec for srasRightShiftInteractive.
    Aggregate-supply card 7 chart 2 "Supply-side improvement".
 
    A rightward SRAS shift (productivity boost / lower input costs):
@@ -11,7 +11,7 @@
 
    Contrast with chart 1 on the same card (ad-shift-interactive):
    demand stimulus raises P and Y together; supply improvement
-   raises Y while pushing P down. Same chart geometry mirrored —
+   raises Y while pushing P down. Same chart geometry mirrored –
    makes the comparison visually crisp.
 
    `inverseLayers: ['idl-old-solid']` swaps SRAS₁ solid for dashed
@@ -38,14 +38,14 @@
     },
 
     curves: [
-      // Base AD — always visible. Label above-left of the endpoint
+      // Base AD – always visible. Label above-left of the endpoint
       // (labelDy:-10 keeps it clear of the downward-sloping line).
       { d: 'M 0.097,0.894 L 0.931,0.067',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: -10, anchor: 'end' },
-      // Base SRAS₁ solid — hidden once any view becomes active. The label
+      // Base SRAS₁ solid – hidden once any view becomes active. The label
       // sits just above the line's right end. NOTE: at step 2+, the dashed
-      // SRAS₁ and solid SRAS₂ are both visible — their endpoints (0.931 and
+      // SRAS₁ and solid SRAS₂ are both visible – their endpoints (0.931 and
       // 1.000 in x; 0.894 and 0.743 in y) are far enough apart that two
       // labels in the same above-the-line style do NOT clash.
       { d: 'M 0.097,0.067 L 0.931,0.894',
@@ -65,11 +65,11 @@
     ],
 
     points: [
-      // Base E₁ at AD ∩ SRAS₁ — equilibrium label RIGHT of dot.
+      // Base E₁ at AD ∩ SRAS₁ – equilibrium label RIGHT of dot.
       { x: E1.x, y: E1.y, tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
         label: 'E₁', labelDx: 14, labelDy: -2, anchor: 'start' },
-      // Layer 2: E₂ at AD ∩ SRAS₂ — Y rises, P falls. Label RIGHT.
+      // Layer 2: E₂ at AD ∩ SRAS₂ – Y rises, P falls. Label RIGHT.
       { x: E2.x, y: E2.y, tone: 'green', radius: 5.5, hollow: true,
         gridlines: 'green', ticks: { x: 'Y₂', y: 'P₂' },
         label: 'E₂', labelDx: 14, labelDy: -2, anchor: 'start',

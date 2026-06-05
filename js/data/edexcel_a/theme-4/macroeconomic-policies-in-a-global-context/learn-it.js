@@ -1,4 +1,4 @@
-/* PLACEHOLDER — Learn It content not yet rebuilt for this topic.
+/* PLACEHOLDER – Learn It content not yet rebuilt for this topic.
    The cover view (intro) renders normally; clicking Start session
    no-ops because cards is empty. Replaced from the previous content
    on 2026-05-30 to remove pre-mockup-pipeline material that hadn't
@@ -11,10 +11,10 @@ window.ECONOS_TOPIC = {
   topicNum:    "5.4",
   theme:       "Theme 4 \\xb7 A Global Perspective",
   title:       "Macroeconomic Policies in a Global Context",
-  estTime:     '—',
+  estTime:     '–',
   goal:        'Coming soon.',
   intro: {
-    summary:  "Macroeconomic Policies in a Global Context — full Learn It content is in production.",
+    summary:  "Macroeconomic Policies in a Global Context – full Learn It content is in production.",
     doInThis: 'Check back soon. This topic will be rebuilt using the same design system as the topics already shipped on this board.',
     outcomes: [],
     tip:      'Browse a finished topic in the meantime to see the design language this one will follow.',

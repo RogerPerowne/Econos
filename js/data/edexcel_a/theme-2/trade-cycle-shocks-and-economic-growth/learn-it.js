@@ -66,7 +66,7 @@ window.ECONOS_TOPIC = {
             label: 'Boom',
             tone: 'green',
             show: ['phase-boom'],
-            head: 'Boom — output above trend',
+            head: 'Boom – output above trend',
             body: 'Real GDP rises faster than the long-run trend. Unemployment is low, inflation pressure is rising, business confidence is strong, capacity utilisation is high.',
             analysis: '<strong>Investment leads, consumption follows.</strong> Firms invest first when they expect demand to keep rising; household spending lags by months. In a strong boom, watch capacity utilisation and wage growth – they are the leading indicators that the boom is hitting supply limits.'
           },
@@ -74,7 +74,7 @@ window.ECONOS_TOPIC = {
             label: 'Slowdown',
             tone: 'amber',
             show: ['phase-slowdown'],
-            head: 'Slowdown — growth weakens',
+            head: 'Slowdown – growth weakens',
             body: 'GDP still grows but at a falling rate. Spare capacity appears, confidence softens, investment plans get postponed. The first signs of slack show up in the labour market as hiring slows.',
             analysis: 'Policy at this point is a judgement call: tighten now to head off lingering inflation, or hold to let the slowdown cool prices on its own. Central banks usually wait for hard evidence of falling demand before easing.'
           },
@@ -82,7 +82,7 @@ window.ECONOS_TOPIC = {
             label: 'Recession',
             tone: 'rose',
             show: ['phase-recession'],
-            head: 'Recession — output falls below trend',
+            head: 'Recession – output falls below trend',
             body: 'Two consecutive quarters of negative real GDP growth (the technical UK definition). Unemployment rises, inflation pressure eases or reverses, business confidence is weak, household saving rises precautionarily.',
             analysis: '<strong>Policy is asymmetric.</strong> Cooling a boom is easier than reviving a slump – rate cuts work less well when confidence has collapsed and households are paying down debt. The 2008-09 recession showed how slowly demand recovers even with aggressive stimulus.'
           },
@@ -90,7 +90,7 @@ window.ECONOS_TOPIC = {
             label: 'Recovery',
             tone: 'blue',
             show: ['phase-recovery'],
-            head: 'Recovery — output rises back toward trend',
+            head: 'Recovery – output rises back toward trend',
             body: 'Output starts rising again, unemployment begins to fall, confidence returns. The recovery is usually slow at first – firms wait for clear demand signals before hiring – then accelerates as the labour market tightens.',
             analysis: 'Watch the gap between actual and trend GDP. A "jobless recovery" is one where GDP rises but employment lags – the UK saw this between 2010 and 2014. Wage growth in a recovery is a delayed signal: firms hire first, raise wages later.'
           }
@@ -98,7 +98,7 @@ window.ECONOS_TOPIC = {
       },
 
       comparisonTable: {
-        title: 'PHASE SIGNATURES — A QUICK-REFERENCE RECAP',
+        title: 'PHASE SIGNATURES – A QUICK-REFERENCE RECAP',
         emoji: '\u{1F4CB}',
         columns: ['Boom', 'Slowdown', 'Recession', 'Recovery'],
         columnTones: ['green', 'amber', 'rose', 'blue'],
@@ -188,14 +188,14 @@ window.ECONOS_TOPIC = {
       title: 'The stagflation policy dilemma',
       lede: 'In a stagflation – a negative supply shock that pushes inflation up while output falls – every policy choice helps one symptom and worsens the other. Two stances dominate the debate.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{26A0}\u{FE0F}', tone: 'amber', text: 'A stagflation forces a choice between fighting inflation and supporting growth — no policy fixes both.' },
+      tip: { icon: '\u{26A0}\u{FE0F}', tone: 'amber', text: 'A stagflation forces a choice between fighting inflation and supporting growth – no policy fixes both.' },
 
-      // Stepped interactive diagram with Classical/Keynesian toggle — the
+      // Stepped interactive diagram with Classical/Keynesian toggle – the
       // same supply-shock framing as Card 3 of "Causes of inflation",
       // shown here as a recap before the policy-stance trade-off rows.
       interactiveDiagram: {
         svgKey: 'srasShiftLeftClassicalKeynesian',
-        label: 'A SUPPLY SHOCK — THE RECAP',
+        label: 'A SUPPLY SHOCK – THE RECAP',
         emoji: '📊',
         layers: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
         inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
@@ -204,8 +204,8 @@ window.ECONOS_TOPIC = {
         views: [
           {
             label: 'Before the shock', show: [],
-            classical: { tone: 'purple', head: 'Classical view — at potential.', body: ['Output at Yf, price level P₁ on the long-run equilibrium.'] },
-            keynesian: { tone: 'amber', head: 'Keynesian view — near capacity.', body: ['Output near Yf on the steep range of the reverse-L AS.'] }
+            classical: { tone: 'purple', head: 'Classical view – at potential.', body: ['Output at Yf, price level P₁ on the long-run equilibrium.'] },
+            keynesian: { tone: 'amber', head: 'Keynesian view – near capacity.', body: ['Output near Yf on the steep range of the reverse-L AS.'] }
           },
           {
             label: 'Cost shock',
@@ -217,7 +217,7 @@ window.ECONOS_TOPIC = {
             label: 'Stagflation',
             show: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
             classical: { tone: 'rose', head: 'P up, Y down.', body: ['E₂: higher P, lower Y. <strong>This is the curve that creates the policy dilemma below.</strong>'], analysis: 'Classical reading: the stagflation self-corrects in the long run as wages adjust. The policy choice is really about how to manage the <em>short-run</em> path.' },
-            keynesian: { tone: 'rose', head: 'P up, Y down.', body: ['E₂: higher P, lower Y. <strong>This is the curve that creates the policy dilemma below.</strong>'], analysis: 'Keynesian reading: sticky wages mean the stagflation persists. Every policy choice below trades higher inflation against lower output — there is no painless option.' }
+            keynesian: { tone: 'rose', head: 'P up, Y down.', body: ['E₂: higher P, lower Y. <strong>This is the curve that creates the policy dilemma below.</strong>'], analysis: 'Keynesian reading: sticky wages mean the stagflation persists. Every policy choice below trades higher inflation against lower output – there is no painless option.' }
           }
         ]
       },
@@ -285,28 +285,28 @@ window.ECONOS_TOPIC = {
           {
             label: 'Actual GDP only',
             tone: 'blue',
-            head: 'Stage 1 — the cycle wave',
+            head: 'Stage 1 – the cycle wave',
             body: 'Real GDP over time. The wave you saw on Card 1 – boom, slowdown, recession, recovery – is the short-run fluctuation. So far there is nothing underneath it to fluctuate <em>around</em>.',
             analysis: 'On its own, the wave is meaningless. A 3% fall in GDP from a high base is very different from a 3% fall from a stagnant base. We need a reference – something to compare actual GDP against.'
           },
           {
             label: '+ Potential trend',
             tone: 'green',
-            head: 'Stage 2 — add potential GDP',
+            head: 'Stage 2 – add potential GDP',
             body: 'The straight green line is <strong>potential GDP</strong> – the level the economy could produce with all factors fully and efficiently employed. The actual wave now has something to fluctuate around.',
             analysis: 'Booms sit above trend (positive output gap); recessions sit below it (negative output gap). The slope of the trend line is potential growth – the topic of this whole card. The wave is the trade cycle; the trend is growth.'
           },
           {
             label: '+ What lifts the trend',
             tone: 'green',
-            head: 'Stage 3 — the six drivers',
+            head: 'Stage 3 – the six drivers',
             body: 'The trend rises over time because the economy’s productive capacity rises over time. Six drivers: <strong>labour force</strong>, <strong>capital stock</strong>, <strong>productivity</strong>, <strong>skills and education</strong>, <strong>technology and infrastructure</strong>, and <strong>trade and export markets</strong>. Each shifts LRAS right.',
             analysis: 'In AD/AS terms, every driver above is an LRAS shifter. Demand-side policy can lift actual growth temporarily; only supply-side investment lifts potential growth – the trend itself. The UK productivity puzzle (output per worker flat since 2008) is the canonical case of a supply-side challenge. <strong>Export-led growth</strong> – South Korea, Germany, China – uses access to global demand to scale faster than the domestic market alone allows; spec 2.5.1 explicitly names the importance of trade for growth.'
           },
           {
             label: '+ Hysteresis',
             tone: 'rose',
-            head: 'Stage 4 — when recessions damage the trend',
+            head: 'Stage 4 – when recessions damage the trend',
             body: 'A deep or prolonged recession can bend the trend line <strong>down</strong>. The mechanism: long-term unemployment → skills erode → human capital lost → the economy permanently produces less than it could have.',
             analysis: 'Hysteresis is what makes recessions different from booms in their long-run footprint. A boom does not permanently lift the trend (capacity catches up); a deep recession can permanently lower it. This is one of the strongest arguments for fiscal stimulus in a downturn: not just to soften the wave, but to protect the trend.'
           }
@@ -319,11 +319,11 @@ window.ECONOS_TOPIC = {
       causesCols: 3,
       causes: [
         { tone: 'green',  icon: '\u{1F465}', head: 'Labour force',          body: 'More working-age adults, higher participation, net inward migration of working-age workers.' },
-        { tone: 'blue',   icon: '\u{1F3ED}', head: 'Capital stock',         body: 'More machinery, infrastructure and digital capital per worker — capital deepening.' },
+        { tone: 'blue',   icon: '\u{1F3ED}', head: 'Capital stock',         body: 'More machinery, infrastructure and digital capital per worker – capital deepening.' },
         { tone: 'amber',  icon: '\u{1F4C8}', head: 'Productivity',          body: 'Output per worker rises. The UK productivity puzzle (flat since 2008) is the textbook bottleneck.' },
-        { tone: 'purple', icon: '\u{1F393}', head: 'Skills and education',  body: 'Higher human capital — better schools, vocational training, lifelong learning, R&amp;D talent.' },
+        { tone: 'purple', icon: '\u{1F393}', head: 'Skills and education',  body: 'Higher human capital – better schools, vocational training, lifelong learning, R&amp;D talent.' },
         { tone: 'blue',   icon: '\u{1F4A1}', head: 'Technology &amp; infrastructure', body: 'Faster diffusion of new tech; better transport, energy and digital networks.' },
-        { tone: 'green',  icon: '\u{1F30D}', head: 'Trade &amp; export markets', body: 'Access to global demand — export-led growth (S. Korea, Germany, China) scales faster than the domestic market alone allows.' }
+        { tone: 'green',  icon: '\u{1F30D}', head: 'Trade &amp; export markets', body: 'Access to global demand – export-led growth (S. Korea, Germany, China) scales faster than the domestic market alone allows.' }
       ],
 
       conclusionPosition: 'end',
@@ -338,7 +338,7 @@ window.ECONOS_TOPIC = {
        CARD 5 – Pattern: Side-by-side pair (richly populated 5+5 columns)
        + supporting Sustainable-vs-Unsustainable pair + Who-Wins tile grid
        + Evidence-then-verdict conclusion. Restores the original mockup's
-       three-block evaluation structure — visually richer than a single
+       three-block evaluation structure – visually richer than a single
        evidence stack, and faithful to what made the mockup compelling.
        ============================================================ */
     {

@@ -101,26 +101,26 @@ window.ECONOS_TOPIC = {
         {
           key: 'base',
           label: 'Market equilibrium',
-          text: 'Left alone, the market clears where buyers\' private benefit meets the cost of supply. Because that demand counts only the value to the buyer — not the value spilling over to others — this "equilibrium" sits below the quantity society would want.'
+          text: 'Left alone, the market clears where buyers\' private benefit meets the cost of supply. Because that demand counts only the value to the buyer – not the value spilling over to others – this "equilibrium" sits below the quantity society would want.'
         },
         {
           key: 'extension',
           label: 'Add MSB and MEB',
-          text: 'Now bring in the true benefit: MSB sits above MPB by the external benefit at every unit. Buyers still choose on MPB alone, behaving as if that gap doesn\'t exist — and that blind spot is exactly what holds consumption below the social optimum.'
+          text: 'Now bring in the true benefit: MSB sits above MPB by the external benefit at every unit. Buyers still choose on MPB alone, behaving as if that gap doesn\'t exist – and that blind spot is exactly what holds consumption below the social optimum.'
         },
         {
           key: 'shift',
           label: 'Socially optimal output',
-          text: 'Society\'s best point uses the <em>full</em> benefit: where MSB meets MSC, at Q*. It sits to the right of and above the market — more output, higher price. The distance Q* − Qₘ is the under-consumption the externality has caused.'
+          text: 'Society\'s best point uses the <em>full</em> benefit: where MSB meets MSC, at Q*. It sits to the right of and above the market – more output, higher price. The distance Q* − Qₘ is the under-consumption the externality has caused.'
         },
         {
           key: 'efficiency',
           label: 'Welfare gain forgone',
-          text: 'Add up the gain society misses on every unit between Qₘ and Q*, where social benefit beats social cost, and you get the shaded triangle — welfare left on the table. A subsidy equal to the external benefit makes buyers act on the full value, restoring Q*.'
+          text: 'Add up the gain society misses on every unit between Qₘ and Q*, where social benefit beats social cost, and you get the shaded triangle – welfare left on the table. A subsidy equal to the external benefit makes buyers act on the full value, restoring Q*.'
         }
       ],
       tipLate: [
-        { icon: 'ℹ️', tone: 'blue', head: 'Production-side mirror', text: 'For a positive <em>production</em> externality, think MSC <em>below</em> MPC instead. The logic is identical — the market still produces too little.' }
+        { icon: 'ℹ️', tone: 'blue', head: 'Production-side mirror', text: 'For a positive <em>production</em> externality, think MSC <em>below</em> MPC instead. The logic is identical – the market still produces too little.' }
       ],
       examEdge: 'Diagram technique: label all six elements – MSC = MPC, MPB, MSB, Eₘ (Qₘ, Pₘ), E* (Q*, P*), and shade the welfare-gain triangle. Missing any of these loses marks. Draw MSB as a parallel shift above MPB for a constant external benefit.'
     },
@@ -285,7 +285,7 @@ window.ECONOS_TOPIC = {
         { icon: '💷', head: 'Fiscal affordability',          body: 'Can it be funded sustainably, with good value for money?',                    tone: 'purple' },
         { icon: '⚖️', head: 'Equity / access',               body: 'Does it improve fairness and access, not just total welfare?',                tone: 'amber'  }
       ],
-      examEdge: 'Strong answers <strong>compare market failure with government failure</strong> and finish with a conditional judgement: the policy is likely to work best when the external benefit is large, targeting is accurate, costs are manageable, and the design is fair and accessible. <strong>A worked subsidy-vs-direct-provision essay:</strong> "Define the positive externality (MSB > MPB) and draw the diagram (define). Compare a subsidy to consumers — efficient when demand is price-sensitive, preserves consumer choice, lower fiscal cost; risks under-targeting (the subsidy reaches anyone who would have bought anyway) — with direct state provision (NHS, schools): guarantees universal access, ideal where equity matters most; risks paternalism, queues, and higher administrative cost (analyse / evaluate). <strong>Judge:</strong> a subsidy dominates when consumption is price-sensitive and access is broadly equitable (vaccines, solar panels); direct provision dominates when equal access matters morally and demand is inelastic (healthcare, primary education). The criterion is whether the binding constraint is <em>price</em> or <em>access</em>." That structure earns the evaluation marks.',
+      examEdge: 'Strong answers <strong>compare market failure with government failure</strong> and finish with a conditional judgement: the policy is likely to work best when the external benefit is large, targeting is accurate, costs are manageable, and the design is fair and accessible. <strong>A worked subsidy-vs-direct-provision essay:</strong> "Define the positive externality (MSB > MPB) and draw the diagram (define). Compare a subsidy to consumers – efficient when demand is price-sensitive, preserves consumer choice, lower fiscal cost; risks under-targeting (the subsidy reaches anyone who would have bought anyway) – with direct state provision (NHS, schools): guarantees universal access, ideal where equity matters most; risks paternalism, queues, and higher administrative cost (analyse / evaluate). <strong>Judge:</strong> a subsidy dominates when consumption is price-sensitive and access is broadly equitable (vaccines, solar panels); direct provision dominates when equal access matters morally and demand is inelastic (healthcare, primary education). The criterion is whether the binding constraint is <em>price</em> or <em>access</em>." That structure earns the evaluation marks.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

@@ -1,20 +1,20 @@
 /* ============================================================
-   Actual vs Potential Growth — engine spec for actualVsPotentialGrowth.
-   Trade-cycle topic — illustrates the gap between realised GDP and
+   Actual vs Potential Growth – engine spec for actualVsPotentialGrowth.
+   Trade-cycle topic – illustrates the gap between realised GDP and
    the long-run potential trend.
 
    BASE (always visible)
-     • Real GDP wave (actual GDP) over Time — cubic Bezier with two
+     • Real GDP wave (actual GDP) over Time – cubic Bezier with two
        complete peak-trough cycles preserved from the original.
 
-   LAYER 1 (trend) — Potential GDP straight line + boom/recession
+   LAYER 1 (trend) – Potential GDP straight line + boom/recession
      annotation points showing booms sit ABOVE trend, recessions BELOW.
 
-   LAYER 2 (drivers) — 5 dots on the trend line labelled Labour /
+   LAYER 2 (drivers) – 5 dots on the trend line labelled Labour /
      Capital / Productivity / Skills / Tech, illustrating what shifts
      the trend itself over the long run.
 
-   LAYER 3 (hysteresis) — dashed curve bending down from the
+   LAYER 3 (hysteresis) – dashed curve bending down from the
      recession trough showing the trend can permanently shift down.
 
    Layers are cumulative; the card reveals them in sequence.
@@ -36,7 +36,7 @@
     curves: [
       // Base: Actual GDP wave with two peak-trough cycles.
       // Labels shortened from "Actual GDP" / "Potential GDP" to
-      // "Actual" / "Potential" — y-axis label "Real GDP" already
+      // "Actual" / "Potential" – y-axis label "Real GDP" already
       // tells the reader what's plotted. anchor='start' kept so the
       // labels live in the right margin (anchor='end' moved them left
       // INTO the Tech/Capital/etc. growth-driver labels and caused a

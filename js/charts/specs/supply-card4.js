@@ -1,5 +1,5 @@
 /* ============================================================
-   Supply card 4 — INTERACTIVE "shifts in supply" (icons key:
+   Supply card 4 – INTERACTIVE "shifts in supply" (icons key:
    supplyShifts; className sshift-svg). The old producer-surplus diagram
    is retired (producer surplus belongs in 1.2.7). Mirror of
    demand-card4 with an upward curve and the green=increase /
@@ -35,14 +35,14 @@
     },
 
     curves: [
-      /* base — solid blue S₁ */
+      /* base – solid blue S₁ */
       { layer: 'layer-base', d: 'M 0.12,0.286 L 0.88,1.046', tone: 'blue', strokeWidth: 3 },
 
-      /* incr — dashed grey S₁ + solid green S₂ (right) */
+      /* incr – dashed grey S₁ + solid green S₂ (right) */
       { layer: 'layer-incr', d: 'M 0.12,0.286 L 0.88,1.046', tone: 'slate', strokeWidth: 2.4, dashed: '7 5', opacity: 0.55 },
       { layer: 'layer-incr', d: 'M 0.34,0.286 L 1.10,1.046', tone: 'green', strokeWidth: 3 },
 
-      /* decr — dashed grey S₁ + solid red S₃ (left) */
+      /* decr – dashed grey S₁ + solid red S₃ (left) */
       { layer: 'layer-decr', d: 'M 0.12,0.286 L 0.88,1.046', tone: 'slate', strokeWidth: 2.4, dashed: '7 5', opacity: 0.55 },
       { layer: 'layer-decr', d: 'M -0.10,0.286 L 0.66,1.046', tone: 'red', strokeWidth: 3 }
     ],

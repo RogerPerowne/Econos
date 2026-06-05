@@ -273,7 +273,7 @@ window.ECONOS_TOPIC = {
 };
 
 /* ============================================================
-   End-of-Learn-It quiz pool — Economics as a Social Science (1.1.1).
+   End-of-Learn-It quiz pool – Economics as a Social Science (1.1.1).
    Methodology focus: models & assumptions, ceteris paribus,
    economic agents, the rationality assumption, micro vs macro.
    ============================================================ */

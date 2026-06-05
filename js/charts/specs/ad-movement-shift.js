@@ -1,11 +1,11 @@
 /* ============================================================
-   AD Movement vs Shift — engine spec for adMovementShift.
+   AD Movement vs Shift – engine spec for adMovementShift.
    Aggregate-demand card 3 ("Movement along vs shifts of AD").
 
    2-panel comparison (uses the engine's panels: [...] field):
-     LEFT  Movement along AD — single curve, two dots, curved
+     LEFT  Movement along AD – single curve, two dots, curved
            "slide" arrow along the curve (price level changes)
-     RIGHT Shift of AD       — AD₁ dashed grey ref + AD₂ solid
+     RIGHT Shift of AD       – AD₁ dashed grey ref + AD₂ solid
            green shifted right + horizontal "shift right" arrow
 
    Each panel has a header pill (rounded rect with text) above the
@@ -81,7 +81,7 @@
         ],
         texts: [
           // Subhead above the chart (chart-y > 1 is above the chart area)
-          // Subhead — placed at chart-y > 1 (above chart area). Shifted RIGHT
+          // Subhead – placed at chart-y > 1 (above chart area). Shifted RIGHT
 // of the y-axis P label by offsetting x past x=0.
 { x: 0.560, y: 1.090, text: 'price level changes · same curve', tone: 'gray', anchor: 'middle' },
           // Axis tick labels

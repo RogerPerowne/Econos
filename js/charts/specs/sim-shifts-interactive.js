@@ -1,5 +1,5 @@
 /* ============================================================
-   Simultaneous Shifts Interactive — engine spec for
+   Simultaneous Shifts Interactive – engine spec for
    simultaneousShiftsInteractive (Price-determination card 4). Layered
    spec for the `interactiveDiagram` block: BOTH curves shift, so one
    variable is determinate and the other is ambiguous.

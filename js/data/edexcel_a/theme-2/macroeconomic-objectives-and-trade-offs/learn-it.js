@@ -1,14 +1,14 @@
 /* ============================================================
    ECONOS – Macroeconomic Objectives (Theme 2 · 2.6.1)
    6 cards · THEORY ONLY · one storytelling pattern per card:
-     C1 Decompose a diagram     — the cockpit (7 gauges)
-     C2 Spectrum / regime grid  — the headline three (character sheets)
-     C3 Spectrum / regime grid  — the four constraints (compass)
-     C4 Interactive multi-state — Phillips workstation (2 views, theory)
-     C5 Comparison              — flow-chain mechanisms (4 trade-offs)
-     C6 Evidence-then-verdict   — the constraint web + A* framework
+     C1 Decompose a diagram     – the cockpit (7 gauges)
+     C2 Spectrum / regime grid  – the headline three (character sheets)
+     C3 Spectrum / regime grid  – the four constraints (compass)
+     C4 Interactive multi-state – Phillips workstation (2 views, theory)
+     C5 Comparison              – flow-chain mechanisms (4 trade-offs)
+     C6 Evidence-then-verdict   – the constraint web + A* framework
    Stagflation / historical conflicts live in the SISTER topic
-   `macro-conflicts-and-trade-offs` (spec 2.6.4) — DO NOT add
+   `macro-conflicts-and-trade-offs` (spec 2.6.4) – DO NOT add
    case studies here.
    ============================================================ */
 
@@ -22,16 +22,16 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroMacroObjectives',
-    summary: 'Governments pursue a whole scorecard of objectives — stable inflation, low unemployment, sustainable growth, a healthy external balance, sound public finances, environmental sustainability, and greater income equality. They cannot all be maximised at once, and the structural trade-offs between them organise half of every macro essay.',
+    summary: 'Governments pursue a whole scorecard of objectives – stable inflation, low unemployment, sustainable growth, a healthy external balance, sound public finances, environmental sustainability, and greater income equality. They cannot all be maximised at once, and the structural trade-offs between them organise half of every macro essay.',
     doInThis: 'Six cards: the cockpit (all seven objectives at a glance); the headline three (inflation, unemployment, growth); the four supporting constraints (BoP, fiscal, environment, equality); the Phillips curve as the prototypical trade-off; four more structural trade-offs; and the constraint web that ties them all together.',
     outcomes: [
       'Name and explain all seven UK macro objectives with target and measure',
       'Read a UK macro scorecard at a glance',
-      'Apply the Phillips curve — SRPC, vertical LRPC, NAIRU and adaptive expectations',
+      'Apply the Phillips curve – SRPC, vertical LRPC, NAIRU and adaptive expectations',
       'Name the structural mechanism behind each of the five trade-offs',
       'Use the four-dimensional framework (advanced × compromised × magnitude × time horizon) to evaluate any policy'
     ],
-    tip: 'Real-world UK case studies — stagflation, 2008, 2021–23, Thatcher — live in the sister topic, Macro Conflicts & Trade-offs. This topic is the theory.',
+    tip: 'Real-world UK case studies – stagflation, 2008, 2021–23, Thatcher – live in the sister topic, Macro Conflicts & Trade-offs. This topic is the theory.',
     stages: [
       { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
@@ -42,19 +42,19 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ============================================================
-       CARD 1 — Pattern: Decompose a diagram
+       CARD 1 – Pattern: Decompose a diagram
        Hero: macroCockpit. Seven UK macro gauges arranged as a
        pilot's dashboard. The visual IS the lesson: some gauges in
-       target, some not — judge the whole scorecard.
+       target, some not – judge the whole scorecard.
        ============================================================ */
     {
       id: 'macro-cockpit',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 6',
       title: 'The cockpit',
-      lede: 'We judge the UK economy by a whole set of objectives, not just one number. Here is the dashboard — seven gauges, seven targets, the UK\'s current reading on each.',
+      lede: 'We judge the UK economy by a whole set of objectives, not just one number. Here is the dashboard – seven gauges, seven targets, the UK\'s current reading on each.',
       ledeStyle: 'plain',
-      tip: { icon: '\u{1F3AF}', tone: 'green', text: 'Good policy balances the whole scorecard — improving one objective can worsen another. Read the dashboard before you act.' },
+      tip: { icon: '\u{1F3AF}', tone: 'green', text: 'Good policy balances the whole scorecard – improving one objective can worsen another. Read the dashboard before you act.' },
 
       visualKey: 'macroCockpit',
       visualLabel: 'UK macro dashboard',
@@ -65,20 +65,20 @@ window.ECONOS_TOPIC = {
       causesEmoji: '\u{1F4CB}',
       causesStyle: 'numbered-rows',
       causes: [
-        { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation',      body: 'Low and stable price growth — the BoE\'s <strong>2% CPI symmetric target</strong>. (CPI is the headline rate; <em>CPIH</em> adds owner-occupier housing costs and is the ONS\'s preferred measure for cost of living; <em>RPI</em> is older and overstates.)' },
-        { tone: 'blue',   icon: '\u{1F465}', head: 'Unemployment',    body: 'Low joblessness — UK NAIRU around 4–5%.' },
+        { tone: 'rose',   icon: '\u{1F4C9}', head: 'Inflation',      body: 'Low and stable price growth – the BoE\'s <strong>2% CPI symmetric target</strong>. (CPI is the headline rate; <em>CPIH</em> adds owner-occupier housing costs and is the ONS\'s preferred measure for cost of living; <em>RPI</em> is older and overstates.)' },
+        { tone: 'blue',   icon: '\u{1F465}', head: 'Unemployment',    body: 'Low joblessness – UK NAIRU around 4–5%.' },
         { tone: 'green',  icon: '\u{1F4C8}', head: 'Growth',          body: 'Real GDP growth of around 2–2.5% per year.' },
         { tone: 'purple', icon: '\u{1F310}', head: 'Balance of payments', body: 'A sustainable current-account position with the rest of the world.' },
-        { tone: 'amber',  icon: '\u{1F3DB}', head: 'Balanced government budget', body: 'Spending matched to tax receipts over the cycle — a <strong>deficit</strong> means borrowing now (debt rises); a <strong>surplus</strong> means net repayment. The objective is debt on a stable or falling path, not zero deficit every year.' },
+        { tone: 'amber',  icon: '\u{1F3DB}', head: 'Balanced government budget', body: 'Spending matched to tax receipts over the cycle – a <strong>deficit</strong> means borrowing now (debt rises); a <strong>surplus</strong> means net repayment. The objective is debt on a stable or falling path, not zero deficit every year.' },
         { tone: 'green',  icon: '\u{1F343}', head: 'Environment',     body: 'Decarbonisation compatible with net zero by 2050.' },
         { tone: 'slate',  icon: '\u{2696}',  head: 'Income equality', body: 'A falling, or at least stable, Gini coefficient.' }
       ],
 
-      examEdge: 'Strong macro answers cite the whole dashboard — not just growth. Identify which objective the policy advances, which it strains, by how much, and over what time horizon.'
+      examEdge: 'Strong macro answers cite the whole dashboard – not just growth. Identify which objective the policy advances, which it strains, by how much, and over what time horizon.'
     },
 
     /* ============================================================
-       CARD 2 — Pattern: Spectrum / regime grid
+       CARD 2 – Pattern: Spectrum / regime grid
        Hero: macroHeadlineCards. The three quarterly headline
        objectives anthropomorphised as character cards. Theory only.
        ============================================================ */
@@ -101,20 +101,20 @@ window.ECONOS_TOPIC = {
       causesCols: 3,
       causes: [
         { tone: 'rose',  icon: '\u{1F4C8}', head: 'Inflation',
-          body: '<strong>Target:</strong> 2% CPI ±1pp (BoE remit).<br><strong>Measure:</strong> CPI year-on-year (ONS, monthly).<br><strong>Current:</strong> ~2.8% (a touch above target — sticky services component).' },
+          body: '<strong>Target:</strong> 2% CPI ±1pp (BoE remit).<br><strong>Measure:</strong> CPI year-on-year (ONS, monthly).<br><strong>Current:</strong> ~2.8% (a touch above target – sticky services component).' },
         { tone: 'amber', icon: '\u{1F465}', head: 'Unemployment',
           body: '<strong>Target:</strong> at or below the NAIRU (~4–5% UK estimate).<br><strong>Measure:</strong> ILO rate, 16+, three-month average (ONS).<br><strong>Current:</strong> ~4.3%.' },
         { tone: 'green', icon: '\u{1F4C8}', head: 'Real GDP growth',
-          body: '<strong>Target:</strong> ~2% per year (long-run UK trend).<br><strong>Measure:</strong> Real GDP, quarterly, annualised (ONS).<br><strong>Current:</strong> ~1.4% — below trend; productivity puzzle dragging.' }
+          body: '<strong>Target:</strong> ~2% per year (long-run UK trend).<br><strong>Measure:</strong> Real GDP, quarterly, annualised (ONS).<br><strong>Current:</strong> ~1.4% – below trend; productivity puzzle dragging.' }
       ],
 
-      bottomTip: { tone: 'blue', icon: '\u{1F4D3}', text: 'These three are the <strong>flow</strong> measures of the economy — they update every quarter, and central banks and Treasury respond to their movement in real time. The next card covers the four <strong>constraint</strong> objectives that operate on longer time horizons.' },
+      bottomTip: { tone: 'blue', icon: '\u{1F4D3}', text: 'These three are the <strong>flow</strong> measures of the economy – they update every quarter, and central banks and Treasury respond to their movement in real time. The next card covers the four <strong>constraint</strong> objectives that operate on longer time horizons.' },
 
-      examEdge: 'Cite all three numbers from memory in any policy essay. "Inflation 2.8%, unemployment 5.0%, growth ~1.4%" is the kind of opener that signals real-economy literacy — and lets you reach for the right policy lever.'
+      examEdge: 'Cite all three numbers from memory in any policy essay. "Inflation 2.8%, unemployment 5.0%, growth ~1.4%" is the kind of opener that signals real-economy literacy – and lets you reach for the right policy lever.'
     },
 
     /* ============================================================
-       CARD 3 — Pattern: Spectrum / regime grid (visual pivot)
+       CARD 3 – Pattern: Spectrum / regime grid (visual pivot)
        Hero: macroConstraintCompass. Compass rose with the four
        supporting objectives at the cardinals. Two needles outside
        the green safe zone signal constraint violations at a glance.
@@ -124,7 +124,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 6',
       title: 'The four constraints',
-      lede: 'Beyond the headline numbers, four more objectives shape whether growth genuinely improves lives — and whether today\'s outcomes can be sustained. Think of them as boundaries the economy must stay within.',
+      lede: 'Beyond the headline numbers, four more objectives shape whether growth genuinely improves lives – and whether today\'s outcomes can be sustained. Think of them as boundaries the economy must stay within.',
       ledeStyle: 'plain',
       tip: { icon: '\u{1F9ED}', tone: 'green', text: 'These are the objectives examiners reach for when they ask you to evaluate. The "yes growth was 2%, but..." pivot lives here.' },
 
@@ -143,7 +143,7 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'amber', icon: '\u{1F3DB}', head: 'Fiscal sustainability',
-          body: '<strong>Target</strong> debt on a stable or falling path. <strong>Measure</strong> public sector net debt % of GDP. <strong>UK current</strong> 93.8% (Mar 2026). Fiscal headroom is the buffer for the next crisis — rising debt narrows future policy choices.'
+          body: '<strong>Target</strong> debt on a stable or falling path. <strong>Measure</strong> public sector net debt % of GDP. <strong>UK current</strong> 93.8% (Mar 2026). Fiscal headroom is the buffer for the next crisis – rising debt narrows future policy choices.'
         },
         {
           tone: 'green', icon: '\u{1F343}', head: 'Protection of the environment',
@@ -151,7 +151,7 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'slate', icon: '\u{2696}', head: 'Greater income equality',
-          body: '<strong>Target</strong> falling Gini coefficient. <strong>Measure</strong> Gini coefficient (ONS / HBAI). <strong>UK current</strong> Gini ≈ 0.36. Growth that lifts only the top deciles raises the average without raising the median — the headline is misleading.'
+          body: '<strong>Target</strong> falling Gini coefficient. <strong>Measure</strong> Gini coefficient (ONS / HBAI). <strong>UK current</strong> Gini ≈ 0.36. Growth that lifts only the top deciles raises the average without raising the median – the headline is misleading.'
         }
       ],
 
@@ -159,20 +159,20 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 4 — Pattern: Interactive multi-state diagram
+       CARD 4 – Pattern: Interactive multi-state diagram
        Hero: macroPhillipsWorkstation. Phillips curve as a lab
        notebook. Two views (SRPC, LRPC) + a CSS play-pause that
-       auto-cycles the A→B→C path. THEORY ONLY — no 1970s
+       auto-cycles the A→B→C path. THEORY ONLY – no 1970s
        stagflation view (that lives in Topic B).
        ============================================================ */
     {
       id: 'phillips-workstation',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 6',
-      title: 'The Phillips curve — the prototypical trade-off',
+      title: 'The Phillips curve – the prototypical trade-off',
       lede: 'The inflation–unemployment trade-off is the prototypical example of how two objectives can pull against each other. It also illustrates the most important point about every trade-off: <strong>they can break down in the long run.</strong>',
       ledeStyle: 'plain',
-      tip: { icon: '\u{2705}', tone: 'green', text: 'Lower unemployment can come with higher inflation in the short run — but the relationship is unstable once expectations adjust. Press play on the diagram to watch why.' },
+      tip: { icon: '\u{2705}', tone: 'green', text: 'Lower unemployment can come with higher inflation in the short run – but the relationship is unstable once expectations adjust. Press play on the diagram to watch why.' },
 
       visualKey: 'macroPhillipsWorkstation',
       visualLabel: 'Phillips workstation',
@@ -184,16 +184,16 @@ window.ECONOS_TOPIC = {
       causesStyle: 'icon-top',
       causesCols: 3,
       causes: [
-        { tone: 'green', icon: '\u{2696}', head: 'NAIRU', body: 'The unemployment rate consistent with stable inflation — where the long-run Phillips curve is vertical. UK estimate ~4–4.5%.' },
+        { tone: 'green', icon: '\u{2696}', head: 'NAIRU', body: 'The unemployment rate consistent with stable inflation – where the long-run Phillips curve is vertical. UK estimate ~4–4.5%.' },
         { tone: 'amber', icon: '\u{1F4AD}', head: 'Adaptive expectations', body: 'Workers and firms build recent inflation into wage and price setting. That feedback is what shifts the short-run curve up.' },
         { tone: 'rose',  icon: '\u{26A0}', head: 'No long-run trade-off', body: 'Attempts to keep U below the NAIRU produce ever-accelerating inflation, not lower joblessness.' }
       ],
 
-      examEdge: 'Always draw BOTH the SRPC and the vertical LRPC on the same axes; name the NAIRU; explain that adaptive expectations are what shift the SRPC up. The dynamic version of the diagram is what scores marks — a static SRPC alone is a B-grade answer.'
+      examEdge: 'Always draw BOTH the SRPC and the vertical LRPC on the same axes; name the NAIRU; explain that adaptive expectations are what shift the SRPC up. The dynamic version of the diagram is what scores marks – a static SRPC alone is a B-grade answer.'
     },
 
     /* ============================================================
-       CARD 5 — Pattern: Comparison (4 flow-chain tiles)
+       CARD 5 – Pattern: Comparison (4 flow-chain tiles)
        Hero: macroTradeoffChains. Four structural trade-offs visualised
        as 3-step mechanism flow chains. Tap
        left-to-right to read each chain through the mechanism.
@@ -203,7 +203,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 6',
       title: 'Four more structural trade-offs',
-      lede: 'Beyond Phillips, four more pairs of objectives pull against each other in theory. Each is a structural mechanism — a chain that runs from a policy through one objective to the next. Read each chain left-to-right.',
+      lede: 'Beyond Phillips, four more pairs of objectives pull against each other in theory. Each is a structural mechanism – a chain that runs from a policy through one objective to the next. Read each chain left-to-right.',
       ledeStyle: 'plain',
       tip: { icon: '\u{1F501}', tone: 'green', text: 'Every macro trade-off is a chain. A policy raises objective X via some mechanism, and the SAME chain reduces objective Y as a side-effect.' },
 
@@ -217,20 +217,20 @@ window.ECONOS_TOPIC = {
         columns: ['Trade-off', 'Mechanism'],
         columnTones: ['blue', 'amber'],
         rows: [
-          { label: 'Growth ↔ inflation',           values: ['<strong>Stronger AD raises Y AND P together</strong>',                'The closer to capacity, the steeper SRAS — more of the AD shift leaks into prices rather than output.'] },
+          { label: 'Growth ↔ inflation',           values: ['<strong>Stronger AD raises Y AND P together</strong>',                'The closer to capacity, the steeper SRAS – more of the AD shift leaks into prices rather than output.'] },
           { label: 'Growth ↔ current account',     values: ['<strong>Higher income sucks in imports</strong>',                     'Marginal propensity to import &gt; marginal propensity to export response. A growing economy widens (X − M) deficit until competitiveness catches up.'] },
-          { label: 'Growth ↔ environment',         values: ['<strong>Output rises with emissions / resource use</strong>',          'Historically Y ∝ CO₂. Decoupling requires structural change (clean tech + efficiency) outpacing output growth — not yet achieved at scale.'] },
+          { label: 'Growth ↔ environment',         values: ['<strong>Output rises with emissions / resource use</strong>',          'Historically Y ∝ CO₂. Decoupling requires structural change (clean tech + efficiency) outpacing output growth – not yet achieved at scale.'] },
           { label: 'Spending ↔ fiscal balance',    values: ['<strong>More G raises the budget deficit unless T responds</strong>',  'Without offsetting tax rises, the gap widens. Debt-to-GDP rises if real growth doesn\'t exceed real interest rate (r − g rule).'] }
         ]
       },
 
-      bottomTip: { tone: 'slate', icon: '\u{1F4DD}', text: '<strong>These are theoretical mechanisms, not historical events.</strong> Real-world examples — 1970s stagflation, the 2008 GFC, 2021&ndash;23 inflation, the UK\'s persistent current-account deficit &mdash; live in the sister topic, <em>Macro Conflicts &amp; Trade-offs</em>.' },
+      bottomTip: { tone: 'slate', icon: '\u{1F4DD}', text: '<strong>These are theoretical mechanisms, not historical events.</strong> Real-world examples – 1970s stagflation, the 2008 GFC, 2021&ndash;23 inflation, the UK\'s persistent current-account deficit &mdash; live in the sister topic, <em>Macro Conflicts &amp; Trade-offs</em>.' },
 
-      examEdge: 'When evaluating any policy, name <em>which</em> trade-off it activates — Phillips, growth&ndash;inflation, growth&ndash;BoP, growth&ndash;environment, or spending&ndash;fiscal. The named mechanism is what scores the marks; the example just illustrates it.'
+      examEdge: 'When evaluating any policy, name <em>which</em> trade-off it activates – Phillips, growth&ndash;inflation, growth&ndash;BoP, growth&ndash;environment, or spending&ndash;fiscal. The named mechanism is what scores the marks; the example just illustrates it.'
     },
 
     /* ============================================================
-       CARD 6 — Pattern: Evidence-then-verdict
+       CARD 6 – Pattern: Evidence-then-verdict
        Hero: macroConstraintWeb. Radial diagram with 7 nodes and
        5 tension lines (hover-highlight in CSS). Below: the
        4-dimensional A* framework + a theory verdict (no examples).
@@ -240,7 +240,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 6',
       title: 'Why no objective stands alone',
-      lede: 'The objectives don\'t sit in isolation. Every one of them is connected to at least one other through a structural trade-off mechanism. That\'s why we score the whole scorecard, not just one number — and why every macro essay needs a framework, not a verdict.',
+      lede: 'The objectives don\'t sit in isolation. Every one of them is connected to at least one other through a structural trade-off mechanism. That\'s why we score the whole scorecard, not just one number – and why every macro essay needs a framework, not a verdict.',
       ledeStyle: 'plain',
       tip: { icon: '\u{2705}', tone: 'green', text: 'In every macro answer, name the objective being advanced AND the objective being compromised. That pair is the structure of the argument.' },
 
@@ -323,7 +323,7 @@ window.ECONOS_TOPIC = {
           'Nominal Adjusted Interest Rate and Unemployment'
         ],
         ans:  1,
-        exp:  'NAIRU is the Non-Accelerating Inflation Rate of Unemployment — the unemployment rate at which inflation is stable. It corresponds to the vertical long-run Phillips curve.'
+        exp:  'NAIRU is the Non-Accelerating Inflation Rate of Unemployment – the unemployment rate at which inflation is stable. It corresponds to the vertical long-run Phillips curve.'
       },
       {
         type: 'numeric_input',
@@ -351,12 +351,12 @@ window.ECONOS_TOPIC = {
         type: 'cause_effect',
         q:    'Match each policy cause to the trade-off mechanism it activates.',
         pairs: [
-          { cause: 'AD↑ near full capacity',                 effect: 'P↑ — growth–inflation trade-off activated' },
-          { cause: 'Higher domestic income',                 effect: 'Imports↑ — growth–BoP trade-off activated' },
-          { cause: 'Output↑ without decoupling',             effect: 'Emissions↑ — growth–environment trade-off activated' },
-          { cause: 'G↑ without higher taxes',                effect: 'Debt/GDP↑ — spending–fiscal trade-off activated' },
+          { cause: 'AD↑ near full capacity',                 effect: 'P↑ – growth–inflation trade-off activated' },
+          { cause: 'Higher domestic income',                 effect: 'Imports↑ – growth–BoP trade-off activated' },
+          { cause: 'Output↑ without decoupling',             effect: 'Emissions↑ – growth–environment trade-off activated' },
+          { cause: 'G↑ without higher taxes',                effect: 'Debt/GDP↑ – spending–fiscal trade-off activated' },
           { cause: 'U pushed below NAIRU',                   effect: 'Wage demands↑ → SRPC shifts up' },
-          { cause: 'Productivity gains',                     effect: 'LRAS shifts right — multiple objectives advanced' }
+          { cause: 'Productivity gains',                     effect: 'LRAS shifts right – multiple objectives advanced' }
         ]
       },
       {
@@ -364,7 +364,7 @@ window.ECONOS_TOPIC = {
         q:    'Which is the odd one out among the four "supporting" objectives (those that don\'t appear as a quarterly headline number)?',
         opts: ['Balance of payments','Fiscal sustainability','Inflation','Greater income equality'],
         ans:  2,
-        exp:  'Inflation is a headline objective reported in monthly CPI data — it is one of the "headline three". The other three options are all constraint objectives operating on slower time horizons.'
+        exp:  'Inflation is a headline objective reported in monthly CPI data – it is one of the "headline three". The other three options are all constraint objectives operating on slower time horizons.'
       },
       {
         type: 'data_table',

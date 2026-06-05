@@ -105,7 +105,7 @@ window.ECONOS_TOPIC = {
           'Conclude with no private provision'
         ]
       },
-      examEdge: 'If non-payers cannot be excluded, a private firm cannot charge all beneficiaries, so the market under-provides or fails to provide the good altogether. <em>See Card 5 for the deeper diagrammatic reason — society\'s demand for a public good is the <strong>vertical</strong> sum of individual willingness to pay, and no single buyer reveals enough demand to fund the good alone.</em>'
+      examEdge: 'If non-payers cannot be excluded, a private firm cannot charge all beneficiaries, so the market under-provides or fails to provide the good altogether. <em>See Card 5 for the deeper diagrammatic reason – society\'s demand for a public good is the <strong>vertical</strong> sum of individual willingness to pay, and no single buyer reveals enough demand to fund the good alone.</em>'
     },
 
     /* ============================================================
@@ -199,7 +199,7 @@ window.ECONOS_TOPIC = {
       id: 'public_goods_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Adding Up Demand for a Public Good',
-      tip: { icon: '📈', tone: 'blue', text: 'Card 2 showed <em>why</em> no one wants to pay. This card shows the deeper diagrammatic reason markets fail <strong>completely</strong>: because everyone consumes the <em>same</em> unit, society\'s demand is summed <strong>vertically</strong> — and no single buyer ever reveals enough willingness to pay to fund it alone.' },
+      tip: { icon: '📈', tone: 'blue', text: 'Card 2 showed <em>why</em> no one wants to pay. This card shows the deeper diagrammatic reason markets fail <strong>completely</strong>: because everyone consumes the <em>same</em> unit, society\'s demand is summed <strong>vertically</strong> – and no single buyer ever reveals enough willingness to pay to fund it alone.' },
       illustratedGridLabel: 'How demand is added up',
       illustratedGridEmoji: '📈',
       illustratedGridCols: 2,
@@ -319,7 +319,7 @@ window.ECONOS_TOPIC = {
         portraitKey: 'economistMazzucato',
         tone: 'amber',
         label: 'Economist insight · the state as investor',
-        quote: 'There is not a single key technology behind the iPhone — the internet, GPS, touchscreen, even Siri — that was not government-funded.',
+        quote: 'There is not a single key technology behind the iPhone – the internet, GPS, touchscreen, even Siri – that was not government-funded.',
         attribution: 'Mariana Mazzucato, <em>The Entrepreneurial State</em> (2013)'
       },
       flowTitle: 'How to evaluate in an essay',
@@ -327,7 +327,7 @@ window.ECONOS_TOPIC = {
       flow: [
         { tone: 'green',  icon: '🔍', title: '1. Identify the public-good properties',  sub: 'Non-rival AND non-excludable? Name both tests and give the example.' },
         { tone: 'purple', icon: '🔓', title: '2. Explain why markets fail',              sub: 'Free-rider problem → private revenue cannot capture the full social benefit (vertical demand summation, Card 5).' },
-        { tone: 'amber',  icon: '🏛️', title: '3. Weigh free-rider fix vs preference revelation', sub: 'Government provision solves free-riding via taxation — but cannot easily know the optimal quantity, because demand is hidden.' },
+        { tone: 'amber',  icon: '🏛️', title: '3. Weigh free-rider fix vs preference revelation', sub: 'Government provision solves free-riding via taxation – but cannot easily know the optimal quantity, because demand is hidden.' },
         { tone: 'rose',   icon: '⚖️', title: '4. Judge by scale and certainty',         sub: 'Provision dominates where social benefit is large and broadly shared (defence, flood defences); other tools (subsidies, regulation) may suit where demand can be revealed.' }
       ],
       causesStyle: 'tinted-flat',
@@ -335,8 +335,8 @@ window.ECONOS_TOPIC = {
       causesLabel: 'Judgement framework',
       causes: [
         { tone: 'green',  icon: '👥', head: 'Scale of social benefit',         body: 'How large and widely shared is the benefit? The bigger the spillover (e.g. national defence), the stronger the case for state provision.' },
-        { tone: 'purple', icon: '🔍', head: 'Measurability of demand',         body: 'Can the government work out how much people value the good? Hidden preferences make the optimal quantity hard to set — risk of over- or under-provision.' },
-        { tone: 'amber',  icon: '£',  head: 'Opportunity cost of tax funding', body: 'Provision is funded by taxation, so weigh it against the next best use of that money — other public services or leaving it with taxpayers.' },
+        { tone: 'purple', icon: '🔍', head: 'Measurability of demand',         body: 'Can the government work out how much people value the good? Hidden preferences make the optimal quantity hard to set – risk of over- or under-provision.' },
+        { tone: 'amber',  icon: '£',  head: 'Opportunity cost of tax funding', body: 'Provision is funded by taxation, so weigh it against the next best use of that money – other public services or leaving it with taxpayers.' },
         { tone: 'rose',   icon: '🏛️', head: 'Risk of government failure',      body: 'State provision can be inefficient or politically captured. Judge whether the likely government failure is smaller than the market failure it corrects.' }
       ],
       lockIn: {

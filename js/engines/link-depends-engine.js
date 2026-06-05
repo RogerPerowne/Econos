@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (It Depends On station)
+   ECONOS – Link It engine (It Depends On station)
    ============================================================ */
 
 (function () {
@@ -165,7 +165,7 @@
         } else {
           revealHtml = '<div class="depends-ideal depends-ideal--wrong">'
             + '<div class="depends-ideal__label">Not a key factor for this claim</div>'
-            + '<div class="depends-ideal__text">This factor is less decisive here — see the ideal analysis below for the factors that change the conclusion most.</div>'
+            + '<div class="depends-ideal__text">This factor is less decisive here – see the ideal analysis below for the factors that change the conclusion most.</div>'
             + '</div>';
         }
       }

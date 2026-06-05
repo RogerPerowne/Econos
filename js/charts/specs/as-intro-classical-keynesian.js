@@ -1,5 +1,5 @@
 /* ============================================================
-   AS Intro — Classical vs Keynesian — engine spec for
+   AS Intro – Classical vs Keynesian – engine spec for
    asIntroClassicalKeynesian.
 
    The card that INTRODUCES aggregate supply. The toggle IS the
@@ -15,9 +15,9 @@
        curve carrying both ranges.
 
    2 views:
-     V1 — Just the AS curve(s). The lesson of "what does AS look
+     V1 – Just the AS curve(s). The lesson of "what does AS look
           like?" lands without any AD context.
-     V2 — Add AD and the equilibrium point E₁. The two schools'
+     V2 – Add AD and the equilibrium point E₁. The two schools'
           equilibrium definitions emerge.
    ============================================================ */
 (function () {
@@ -39,27 +39,27 @@
 
     curves: [
       /* ══════════════ CLASSICAL ══════════════ */
-      /* SRAS — upward-sloping (always visible in Classical view). */
+      /* SRAS – upward-sloping (always visible in Classical view). */
       { id: 'sras', d: 'M 0.20,0.20 L 0.90,0.85',
         tone: 'slate', label: 'SRAS', strokeWidth: 2,
         labelDx: -6, labelDy: -10, anchor: 'end', perspective: 'classical' },
-      /* LRAS — vertical at Yf (always visible in Classical view). */
+      /* LRAS – vertical at Yf (always visible in Classical view). */
       { id: 'lras', d: 'M ' + YF + ',0.020 L ' + YF + ',0.880',
         tone: 'purple', label: 'LRAS', strokeWidth: 2.5,
         labelDx: 6, labelDy: -2, anchor: 'start', perspective: 'classical' },
-      /* AD — revealed in V2 only. */
+      /* AD – revealed in V2 only. */
       { id: 'AD_c', d: 'M 0.10,0.798 L 0.95,0.118',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: -10, anchor: 'end',
         layer: 'ad', perspective: 'classical' },
 
       /* ══════════════ KEYNESIAN ══════════════ */
-      /* Reverse-L AS — always visible in Keynesian view. */
+      /* Reverse-L AS – always visible in Keynesian view. */
       { id: 'as_k',
         shape: { type: 'keynesianAS', flatY: 0.30, kneeX: 0.34, capacityX: YF, top: 0.92, startX: 0.05 },
         tone: 'amber', label: 'AS', strokeWidth: 2.5,
         labelDx: 8, labelDy: -8, anchor: 'start', perspective: 'keynesian' },
-      /* AD — revealed in V2 only. */
+      /* AD – revealed in V2 only. */
       { id: 'AD_k', d: 'M 0.10,0.798 L 0.95,0.118',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: -10, anchor: 'end',

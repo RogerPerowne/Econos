@@ -1,5 +1,5 @@
 /* ============================================================
-   SRAS Curve Static — engine spec for srasCurveStatic.
+   SRAS Curve Static – engine spec for srasCurveStatic.
    Aggregate-supply card 2 "The SRAS curve".
 
    Layered for the ad-interactive view-switcher:
@@ -33,12 +33,12 @@
     ],
 
     points: [
-      // Layer 1: Point A — dashed gridlines, P₁/Y₁ ticks, label "A"
+      // Layer 1: Point A – dashed gridlines, P₁/Y₁ ticks, label "A"
       { x: A.x, y: A.y, tone: 'blue', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
         label: 'A', labelDx: -12, labelDy: -2, anchor: 'end',
         layer: 'idl-1' },
-      // Layer 2: Point B — same treatment, with movement context
+      // Layer 2: Point B – same treatment, with movement context
       { x: B.x, y: B.y, tone: 'blue', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Y₂', y: 'P₂' },
         label: 'B', labelDx: 12, labelDy: -2, anchor: 'start',

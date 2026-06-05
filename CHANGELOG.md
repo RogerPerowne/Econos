@@ -6,6 +6,68 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.63.3 — 2026-06-05
+
+### Balance of Payments — real-iPhone mobile fixes
+
+Roger sent real-device iPhone screenshots that revealed bugs my
+headless Playwright (which respects @media rules properly) wasn't
+catching. The root cause across multiple heroes was a CSS source-
+order trap: each `<style>` block had its `@media (max-width:760px)`
+rule *before* the base rules it was meant to override, so on a real
+phone the base `display:flex` / `display:grid` won and the mobile
+override was silently ignored. Fixed every hero by moving every
+`@media` block to the END of its `<style>` block:
+
+- **C1 `bopThreeAccounts`** — sub-pill text was overlapping itself
+  when it wrapped to two lines. Replaced the wide "Current account
+  deficit ⇄ Financial account surplus" caption with a single
+  clear sentence ("A current account deficit is financed by a
+  financial account surplus.") plus explicit line-heights on every
+  text element so wrapping works predictably.
+- **C2 `bopCurrentAccountEquation`** — the `+` operator cells were
+  failing to hide on mobile (display:flex defined after the @media
+  display:none). Now correctly hidden so the four component cards
+  stack with implicit `=` from order.
+- **C2 `bopUkPattern`** — added explicit line-height to the
+  "Primary income & transfers…" caveat so it stops collapsing into
+  itself on narrow widths.
+- **C3 `bopDriverHub`** simple-chain — the `→` separators were
+  showing between vertically-stacked chain steps on mobile (same
+  source-order bug). Now correctly hidden; each step gets bottom
+  margin so the rose/green emphasis tile sits cleanly under its
+  predecessors.
+- **C4 `bopMatchingIdentity`** — the worst-affected hero. Three
+  bugs fixed:
+    1. The "Must be financed by" arrow inner was supposed to be
+       `flex-direction:row` on mobile but the base column rule
+       came later in source order and won. Replaced with a
+       separate `.bop-mi-arrow-mobile` element that is `display:none`
+       by default and only shown under 760px — no flex-direction
+       contest at all.
+    2. The icon column of each row was 28px grid track. On real
+       Safari some emoji glyphs overflowed it and visually overlapped
+       the text in column 2. Switched the row layout from grid to
+       flexbox with an explicit 22px icon, `flex-shrink:0`, and a
+       `min-width:0` text column — no more icon/text clashes.
+    3. Added explicit line-height to every text element in the
+       pillars so multi-line items render cleanly.
+- **C5 `bopConsequencesFlow`** — the `→` separators between trunk
+  cards leaked through on mobile (same source-order bug). Now
+  correctly hidden; each stacked card uses its `::after` `↓` as
+  the divider.
+- **C6 `bopHowToWriteIt`** — same hidden bug (the desktop `→`
+  arrows weren't hiding on mobile, just less visibly broken).
+  Pre-emptively fixed for the same reason.
+
+Lesson learned and documented in the new CSS comment in each
+hero: **media queries inside dynamically-injected `<style>`
+blocks must come AFTER the rules they override**, because CSS
+specificity is equal between a media-conditional rule and a
+plain rule with the same selector — the later one wins.
+
+No content removed. Cache bumped to `econos-v356`.
+
 ## 0.63.2 — 2026-06-04
 
 ### Balance of Payments — structural pass against the source mockups

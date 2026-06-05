@@ -71,3 +71,34 @@ into `npm run lint` as a blocking gate to prevent regression.
   brand colour (chart-specific shades stay literal).
 - [ ] **Make `lint:tokens` blocking** once the count is near zero.
 - [ ] Extend the reporter to flag duplicated spacing/radius px literals too.
+
+---
+
+## Icons
+
+Two icon mechanisms, both token-coloured (`fill: currentColor`):
+
+1. **Material Symbols** (Rounded, outlined, weight 400) — `js/icons/material-symbols.js`
+   is a generated registry of inline SVG paths + a helper
+   `window.ECONOS_SYM(name, size)`. The sidebar-nav icons use it; the cover /
+   stage / tick symbols deliberately keep their bespoke hand-drawn artwork.
+2. **Emoji** — still used as expressive card-tile icons in content data; unchanged.
+
+### Using a Material Symbol in content data — one line
+
+Any data `icon` field accepts a `sym:<name>` value; the renderer
+(`renderIcon` in `js/app.js`) turns it into the inline symbol, and passes
+emoji/markup through unchanged:
+
+```js
+{ icon: 'sym:rocket_launch' }   // a Material Symbol
+{ icon: '🚀' }                  // an emoji (unchanged)
+```
+
+### Adding a new symbol
+
+1. Add its Material Symbol name (browse https://fonts.google.com/icons, style
+   **Rounded**) to `MANIFEST` in `scripts/fetch-symbols.mjs`.
+2. Run `npm run fetch:symbols` — it re-downloads the Rounded SVGs and regenerates
+   `js/icons/material-symbols.js`. Offline-first: paths are inlined, no font, no
+   runtime network.

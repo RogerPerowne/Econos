@@ -155,7 +155,22 @@
   ];
 
   function genSecLabel(emoji, text) {
-    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:var(--econ-ink);margin:24px 0 18px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:var(--econ-border);margin-left:6px;"></div></div>`;
+    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:var(--econ-ink);margin:24px 0 18px;">${renderIcon(emoji)} <span>${text}</span><div style="flex:1;height:1px;background:var(--econ-border);margin-left:6px;"></div></div>`;
+  }
+
+  /* Render a content icon value. A 'sym:<name>' string becomes an inline
+     Material Symbol (via window.ECONOS_SYM, see js/icons/material-symbols.js);
+     anything else — an emoji or raw markup — is passed through unchanged. This
+     is the one-field way for data authors to drop in a Material Symbol:
+       { icon: 'sym:rocket_launch' }     // a Material Symbol
+       { icon: '🚀' }                    // an emoji (unchanged)
+     Add a new symbol with `npm run fetch:symbols` after listing it in the
+     manifest in scripts/fetch-symbols.mjs. */
+  function renderIcon(v, size) {
+    if (typeof v === 'string' && v.slice(0, 4) === 'sym:' && typeof window !== 'undefined' && window.ECONOS_SYM) {
+      return window.ECONOS_SYM(v.slice(4), size || 22) || '';
+    }
+    return v || '';
   }
 
   /* Branches: three static layouts share one helper so the data-file
@@ -1089,7 +1104,7 @@
       const t = PATTERN_TONES[it.tone || 'slate'] || PATTERN_TONES.slate;
       return `
         <div style="border-radius:12px;background:${t.bg};border:1.5px solid ${t.border};padding:22px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;">
-          <div style="font-size:34px;line-height:1;">${it.icon || ''}</div>
+          <div style="font-size:34px;line-height:1;">${renderIcon(it.icon)}</div>
           <div style="font-size:14.5px;font-weight:800;color:${t.label};line-height:1.25;">${it.title || ''}</div>
           ${it.sub ? `<div style="font-size:12.5px;color:${t.accent};line-height:1.4;font-weight:600;">${it.sub}</div>` : ''}
         </div>`;
@@ -1116,7 +1131,7 @@
       return `
         <div style="display:flex;flex-direction:column;border:1px solid ${t.border};border-radius:14px;background:#fff;overflow:hidden;">
           <div style="background:${t.bg};border-bottom:1px solid ${t.border};padding:12px 14px;display:flex;align-items:center;gap:10px;">
-            <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${m.icon || ''}</span>
+            <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${renderIcon(m.icon)}</span>
             <span style="font-size:15px;font-weight:800;color:${t.label};line-height:1.25;">${m.title || ''}</span>
           </div>
           <div style="padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;">
@@ -1153,7 +1168,7 @@
             <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.09em;">${it.verdict}</div>
           </div>
           <div style="padding:18px 16px 20px;text-align:center;flex:1;display:flex;flex-direction:column;">
-            <div style="font-size:34px;margin-bottom:8px;line-height:1;">${it.icon || ''}</div>
+            <div style="font-size:34px;margin-bottom:8px;line-height:1;">${renderIcon(it.icon)}</div>
             <div style="font-size:16px;font-weight:800;color:var(--econ-ink);margin-bottom:8px;">${it.title}</div>
             <div style="font-size:13px;color:#475569;line-height:1.6;">${it.body}</div>
           </div>
@@ -1196,7 +1211,7 @@
     const inputCard = (inp) => {
       const t = PATTERN_TONES[inp.tone || 'slate'] || PATTERN_TONES.slate;
       return `<div style="border:1.5px solid ${t.border};border-radius:14px;background:${t.bg};padding:11px 13px;display:flex;align-items:center;gap:11px;">
-        <div style="font-size:25px;line-height:1;flex-shrink:0;">${inp.icon || ''}</div>
+        <div style="font-size:25px;line-height:1;flex-shrink:0;">${renderIcon(inp.icon)}</div>
         <div style="display:flex;flex-direction:column;gap:4px;min-width:0;">
           <div style="font-size:12px;font-weight:900;letter-spacing:0.04em;color:${t.label};">${inp.label || ''}</div>
           ${inp.contributes ? `<div style="font-size:10.5px;color:#64748B;line-height:1.2;">gives ${inp.contributes}</div>` : ''}
@@ -1212,7 +1227,7 @@
         ${co.panel.foot ? `<div style="font-size:11.5px;font-style:italic;color:${ct.label};margin-top:7px;">${co.panel.foot}</div>` : ''}
       </div>` : '';
     const coordCard = `<div style="border:2px solid ${ct.border};border-radius:16px;background:${ct.bg};padding:16px 16px 18px;text-align:center;">
-        <div style="font-size:30px;line-height:1;margin-bottom:6px;">${co.icon || ''}</div>
+        <div style="font-size:30px;line-height:1;margin-bottom:6px;">${renderIcon(co.icon)}</div>
         <div style="font-size:16px;font-weight:900;color:${ct.label};line-height:1.2;">${co.title || ''}</div>
         ${co.tagline ? `<div style="font-size:10px;font-weight:700;letter-spacing:0.05em;color:${ct.accent};margin-top:7px;">${co.tagline}</div>` : ''}
         ${co.reward ? `<div style="margin-top:9px;">${pill(co.reward, ct)}</div>` : ''}
@@ -1361,7 +1376,7 @@
               ? `<ul style="margin:0;padding:0;list-style:none;font-size:11.5px;color:var(--econ-ink);line-height:1.55;">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
               : `<div style="font-size:11.5px;color:var(--econ-ink);line-height:1.6;">${slot.body || ''}</div>`;
             const marker = v.icon
-              ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${v.icon}</span>`
+              ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${renderIcon(v.icon)}</span>`
               : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
             const isActive = i === 0 && (!persp || persp === initialPersp);
             const perspAttr = persp ? ` data-id-persp="${persp}"` : '';
@@ -1463,7 +1478,7 @@
           const cycle = ['green','blue','purple','amber','rose','slate'];
           const tone = pt || PATTERN_TONES[cycle[i % cycle.length]];
           const iconHtml = item.icon
-            ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+            ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`
             : '';
           return `
             <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
@@ -1479,7 +1494,7 @@
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
-            <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${item.icon}</div>
+            <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${renderIcon(item.icon)}</div>
             <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -1489,7 +1504,7 @@
           return `
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -1500,7 +1515,7 @@
           return `
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -1511,13 +1526,13 @@
           const ex = typeof item.example === 'string' ? { text: item.example } : item.example;
           const exampleHtml = ex ? `
             <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:10px;border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
-              ${ex.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${ex.icon}</div>` : ''}
+              ${ex.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${renderIcon(ex.icon)}</div>` : ''}
               <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${ex.text}</div>
             </div>` : '';
           return `
           <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
             <div style="padding:20px 16px 14px;background:${t.bg};text-align:center;">
-              <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;">${item.icon}</div>
+              <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;">${renderIcon(item.icon)}</div>
             </div>
             <div style="padding:11px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;">
               <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
@@ -1561,7 +1576,7 @@
         const pad = triple ? '20px 14px 18px' : '24px 20px 22px';
         return `
           <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:${pad};text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-            <div style="width:${ring}px;height:${ring}px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:${triple ? 26 : 30}px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);flex-shrink:0;">${side.icon || ''}</div>
+            <div style="width:${ring}px;height:${ring}px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:${triple ? 26 : 30}px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(side.icon)}</div>
             <div style="font-size:${triple ? 15 : 17}px;font-weight:800;color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
             ${side.value ? `<div style="font-size:22px;font-weight:800;color:var(--econ-ink);margin-bottom:8px;">${side.value}</div>` : ''}
             ${side.caption ? `<div style="font-size:${triple ? 12.5 : 13.5}px;color:${t.label};line-height:1.5;font-weight:600;">${side.caption}</div>` : ''}
@@ -1609,7 +1624,7 @@
         const colHtml = `
           <div style="flex:1 1 0;min-width:160px;border-radius:14px;background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
             <div style="padding:12px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:8px;">
-              ${col.icon ? `<div style="font-size:20px;line-height:1;">${col.icon}</div>` : ''}
+              ${col.icon ? `<div style="font-size:20px;line-height:1;">${renderIcon(col.icon)}</div>` : ''}
               <div style="font-size:14px;font-weight:800;color:${t.label};letter-spacing:0.02em;">${col.label}</div>
             </div>
             <ul style="list-style:none;margin:0;padding:12px 14px;font-size:13px;color:var(--econ-ink);line-height:1.6;">
@@ -1701,7 +1716,7 @@
           const marker = stepsBoxed
             ? `<span style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);">${s.icon || (i + 1)}</span>`
             : (s.icon
-              ? `<span style="flex-shrink:0;width:34px;height:34px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${s.icon}</span>`
+              ? `<span style="flex-shrink:0;width:34px;height:34px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${renderIcon(s.icon)}</span>`
               : `<span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">${i + 1}</span>`);
           const bodyHtml = Array.isArray(s.body)
             ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:var(--econ-ink);line-height:1.55;">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
@@ -1784,7 +1799,7 @@
         return `
           <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
             <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
-            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}${statusBadge}</div>
+            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${renderIcon(step.icon)}${statusBadge}</div>
             <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
             ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
             ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
@@ -1813,7 +1828,7 @@
                 : `<div style="font-size:22px;color:var(--econ-green-600);font-weight:800;line-height:1;">→</div>`;
               return `
                 <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;">
-                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:36px;line-height:1;">${s.icon || ''}${arrow}</div>
+                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:36px;line-height:1;">${renderIcon(s.icon)}${arrow}</div>
                   <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${s.text || ''}</div>
                 </div>`;
             }).join('')}</div>`
@@ -1828,7 +1843,7 @@
               : (useRows
                 ? side.rows.map((r, idx) => `
                   <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
-                    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${r.icon || ''}</div>
+                    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${renderIcon(r.icon)}</div>
                     <div style="flex:1;min-width:0;">
                       <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:3px;">${idx + 1}. ${r.title}</div>
                       <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${r.text}</div>
@@ -1842,8 +1857,8 @@
           : '';
         const iconHtml = side.icon
           ? (side.iconStyle === 'circle'
-              ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
-              : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
+              ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${renderIcon(side.icon)}</div>`
+              : `<div style="font-size:20px;line-height:1;">${renderIcon(side.icon)}</div>`)
           : '';
         const plain = side.style === 'plain-white';
         const bg = plain ? '#fff' : tone.bg;
@@ -1890,7 +1905,7 @@
           <div style="background:#fff;border:1px solid #E2E8F0;border-bottom:4px solid ${t.accent};border-radius:10px;padding:16px 18px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
               ${(compare || minimal) ? '' : `<div style="width:26px;height:26px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>`}
-              ${p.icon ? `<div style="font-size:20px;line-height:1;flex-shrink:0;">${p.icon}</div>` : ''}
+              ${p.icon ? `<div style="font-size:20px;line-height:1;flex-shrink:0;">${renderIcon(p.icon)}</div>` : ''}
               <div style="font-size:15px;font-weight:800;color:${t.label};letter-spacing:0.01em;">${p.title}</div>
             </div>
             ${p.headline ? `<div style="font-size:14px;font-weight:${minimal ? '500' : '800'};color:#0F172A;line-height:1.5;margin-bottom:8px;">${p.headline}</div>` : ''}
@@ -1948,7 +1963,7 @@
               <div style="font-size:17px;font-weight:800;color:${t.label};line-height:1.3;">${p.title}</div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:16px;">
-              <div style="flex-shrink:0;width:88px;height:88px;border-radius:14px;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:48px;line-height:1;">${p.icon || ''}</div>
+              <div style="flex-shrink:0;width:88px;height:88px;border-radius:14px;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:48px;line-height:1;">${renderIcon(p.icon)}</div>
               <div style="flex:1;min-width:0;font-size:14px;color:var(--econ-ink);line-height:1.65;">${p.body}</div>
             </div>
           </div>`;
@@ -2015,7 +2030,7 @@
               <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">${i + 1}</div>
               <div style="font-size:16px;font-weight:800;color:${t.label};line-height:1.3;">${item.title}</div>
             </div>
-            <div style="display:flex;justify-content:center;align-items:center;height:64px;font-size:42px;line-height:1;margin-bottom:4px;">${item.icon || ''}</div>
+            <div style="display:flex;justify-content:center;align-items:center;height:64px;font-size:42px;line-height:1;margin-bottom:4px;">${renderIcon(item.icon)}</div>
             ${renderMiniChart(item, t)}
             <div style="font-size:13px;color:var(--econ-ink);line-height:1.6;margin-top:10px;">${item.body}</div>
           </div>`;
@@ -2034,7 +2049,7 @@
         return `
           <div style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:18px 16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
             <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;align-self:flex-start;">${i + 1}</div>
-            <div style="font-size:38px;line-height:1;margin-top:-8px;">${tile.icon || ''}</div>
+            <div style="font-size:38px;line-height:1;margin-top:-8px;">${renderIcon(tile.icon)}</div>
             <div style="font-size:17px;font-weight:800;color:${t.label};">${tile.title}</div>
             <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${tile.body}</div>
             ${tile.rule ? `<div style="margin-top:auto;background:#fff;border:1px solid ${t.border};color:${t.label};font-size:11.5px;font-weight:700;border-radius:8px;padding:5px 10px;line-height:1.35;">${tile.rule}</div>` : ''}
@@ -2150,13 +2165,13 @@
         // Input icons: white circle with a colored ring border
         const inputIcon = (item) => `
           <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;">
-            <div style="width:48px;height:48px;border-radius:50%;background:#fff;border:2.5px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;">${item.icon}</div>
+            <div style="width:48px;height:48px;border-radius:50%;background:#fff;border:2.5px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
             <div style="font-size:11px;font-weight:700;color:var(--econ-ink);text-align:center;line-height:1.25;max-width:60px;">${item.label}</div>
           </div>`;
         // Output icons: rounded squares with soft tinted background
         const outputIcon = (item) => `
           <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;">
-            <div style="width:48px;height:48px;border-radius:10px;background:${t.soft};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;">${item.icon}</div>
+            <div style="width:48px;height:48px;border-radius:10px;background:${t.soft};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
             <div style="font-size:11px;font-weight:700;color:var(--econ-ink);text-align:center;line-height:1.25;max-width:60px;">${item.label}</div>
           </div>`;
         const connectorText = (text) => `<div style="font-size:13px;font-weight:800;color:${t.label};flex-shrink:0;padding:0 4px;align-self:center;margin-bottom:18px;">${text}</div>`;
@@ -2267,7 +2282,7 @@
           <div style="position:relative;">
             <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-                <div style="width:44px;height:44px;border-radius:50%;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">${card.icon}</div>
+                <div style="width:44px;height:44px;border-radius:50%;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">${renderIcon(card.icon)}</div>
                 <div style="display:flex;flex-direction:column;line-height:1.2;">
                   <div style="font-size:18px;font-weight:800;color:${t.label};">${card.title}</div>
                   ${card.subtitle ? `<div style="font-size:13px;color:#64748B;margin-top:2px;">${card.subtitle}</div>` : ''}
@@ -2285,7 +2300,7 @@
         const segs = we.summary.map(s => {
           if (s.op) return `<span style="font-size:20px;font-weight:900;color:${PATTERN_TONES.green.accent};padding:0 8px;">${s.op}</span>`;
           const t = PATTERN_TONES[s.tone] || PATTERN_TONES.blue;
-          return `<span style="display:inline-flex;align-items:center;gap:8px;color:${t.label};font-size:15px;font-weight:800;"><span style="font-size:18px;">${s.icon}</span>${s.label}</span>`;
+          return `<span style="display:inline-flex;align-items:center;gap:8px;color:${t.label};font-size:15px;font-weight:800;"><span style="font-size:18px;">${renderIcon(s.icon)}</span>${s.label}</span>`;
         }).join('');
         content += `<div style="display:flex;align-items:center;justify-content:center;gap:6px;background:${PATTERN_TONES.green.bg};border:1px solid ${PATTERN_TONES.green.border};border-radius:14px;padding:14px 20px;margin-bottom:26px;flex-wrap:wrap;">${segs}</div>`;
       }
@@ -2347,7 +2362,7 @@
           const cycle = ['green','blue','purple','amber','rose','slate'];
           const tone = pt || PATTERN_TONES[cycle[i % cycle.length]];
           const iconHtml = item.icon
-            ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+            ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`
             : '';
           return `
             <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
@@ -2363,7 +2378,7 @@
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
-            <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${item.icon}</div>
+            <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${renderIcon(item.icon)}</div>
             <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -2373,7 +2388,7 @@
           return `
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -2384,7 +2399,7 @@
           return `
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -2395,13 +2410,13 @@
           const ex = typeof item.example === 'string' ? { text: item.example } : item.example;
           const exampleHtml = ex ? `
             <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:10px;border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
-              ${ex.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${ex.icon}</div>` : ''}
+              ${ex.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${renderIcon(ex.icon)}</div>` : ''}
               <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${ex.text}</div>
             </div>` : '';
           return `
           <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
             <div style="padding:20px 16px 14px;background:${t.bg};text-align:center;">
-              <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;">${item.icon}</div>
+              <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;">${renderIcon(item.icon)}</div>
             </div>
             <div style="padding:11px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;">
               <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
@@ -2445,7 +2460,7 @@
           return `
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -2454,7 +2469,7 @@
         return `
           <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon || ''}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -2475,7 +2490,7 @@
           return `
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -2484,7 +2499,7 @@
         return `
           <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon || ''}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -2501,7 +2516,7 @@
         const t = PATTERN_TONES[side.tone || 'green'] || PATTERN_TONES.green;
         return `
           <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:24px 20px 22px;text-align:center;">
-            <div style="width:56px;height:56px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);">${side.icon}</div>
+            <div style="width:56px;height:56px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);">${renderIcon(side.icon)}</div>
             <div style="font-size:15px;font-weight:800;color:${t.label};margin-bottom:8px;">${side.head}</div>
             <div style="font-size:13px;color:${t.label};line-height:1.65;font-weight:600;">${side.body}</div>
           </div>`;
@@ -2534,7 +2549,7 @@
         const labelCol = rowTone ? rowTone.label : '#0B1426';
         return `
         <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;border-top:${i === 0 && headers.length === 0 ? 'none' : '1px solid #E2E8F0'};background:${i % 2 === 0 ? '#fff' : '#FAFBFC'};">
-          ${hasIcon ? `<div style="padding:14px 0 14px 16px;font-size:20px;line-height:1.2;display:flex;align-items:center;">${r.icon || ''}</div>` : ''}
+          ${hasIcon ? `<div style="padding:14px 0 14px 16px;font-size:20px;line-height:1.2;display:flex;align-items:center;">${renderIcon(r.icon)}</div>` : ''}
           <div style="padding:14px 16px;font-size:14px;font-weight:700;color:${labelCol};display:flex;align-items:center;">${r.label}</div>
           <div style="padding:14px 16px;font-size:14px;color:var(--econ-ink);line-height:1.55;border-left:1px solid #E2E8F0;display:flex;align-items:center;">${r.value}</div>
         </div>
@@ -2703,7 +2718,7 @@
         return `
           <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
             <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
-            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}${statusBadge}</div>
+            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${renderIcon(step.icon)}${statusBadge}</div>
             <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
             ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
             ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
@@ -2737,7 +2752,7 @@
               const vc = VC[p.verdictTone] || VC.amber;
               return `
               <div class="reveal-cell" style="background:#fff;border-radius:14px;border:1px solid #E2E8F0;padding:16px 15px;box-shadow:0 3px 14px rgba(0,0,0,0.08);">
-                <div style="font-size:28px;margin-bottom:9px;line-height:1;">${p.icon}</div>
+                <div style="font-size:28px;margin-bottom:9px;line-height:1;">${renderIcon(p.icon)}</div>
                 <div style="font-weight:800;font-size:14px;color:var(--econ-ink);margin-bottom:10px;">${p.product}</div>
                 <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:#475569;font-size:12px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;width:100%;">Predict verdict ↓</button>
                 <div class="reveal-cell__body is-hidden">
@@ -2814,7 +2829,7 @@
         // matrix). Falls back to the plain label when neither is set.
         const rt = r.tone ? PATTERN_TONES[r.tone] : null;
         const labelStyle = rt ? ` style="border-left:4px solid ${rt.label};background:${rt.bg};color:${rt.label};font-weight:800;"` : '';
-        const iconHtml = r.icon ? `<span style="font-size:16px;margin-right:7px;">${r.icon}</span>` : '';
+        const iconHtml = r.icon ? `<span style="font-size:16px;margin-right:7px;">${renderIcon(r.icon)}</span>` : '';
         return `
         <div class="cmp-table__row ${i % 2 === 0 ? 'cmp-table__row--even' : 'cmp-table__row--odd'}">
           <div class="cmp-table__label"${labelStyle}>${iconHtml}${r.label}</div>
@@ -3498,7 +3513,7 @@
     const groups = c.groups.map(g => `
       <div class="impact-group impact-group--${g.tone}">
         <div class="impact-group__head">
-          <span class="impact-group__icon">${g.icon}</span>
+          <span class="impact-group__icon">${renderIcon(g.icon)}</span>
           <span class="impact-group__label">${g.label}</span>
         </div>
         <ul class="impact-group__list">
@@ -3550,7 +3565,7 @@
   function renderCardDeflation(c) {
     const mechs = c.mechanisms.map((m) => `
       <div class="def-mech-row">
-        <div class="def-mech-row__icon">${m.icon}</div>
+        <div class="def-mech-row__icon">${renderIcon(m.icon)}</div>
         <div style="flex:1; min-width:0;">
           <div class="def-mech-row__title">${m.title}</div>
           <div class="def-mech-row__text">${m.text}</div>
@@ -3794,7 +3809,7 @@
             <div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;">
               ${i > 0 ? `<div style="position:absolute;top:18px;right:50%;width:100%;height:3px;background:linear-gradient(90deg,${roadmapStops[i-1].tone.c}30,${stop.tone.c}30);border-radius:2px;z-index:0;"></div>` : ''}
               <div data-roadmap-step="${i+1}" style="position:relative;z-index:1;width:36px;height:36px;border-radius:50%;background:#fff;border:2.5px solid ${stop.tone.c};color:${stop.tone.c};display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;box-shadow:0 2px 6px ${stop.tone.c}30;transition:all 0.3s ease;">${i + 1}</div>
-              <div style="font-size:16px;line-height:1;">${stop.icon}</div>
+              <div style="font-size:16px;line-height:1;">${renderIcon(stop.icon)}</div>
               <div style="font-size:11px;font-weight:700;color:${stop.tone.c};text-align:center;line-height:1.3;max-width:90px;">${stop.label}</div>
             </div>
           `).join('')}
@@ -4903,7 +4918,7 @@
         const inner = side.text
           ? `<div style="font-size:14px;color:var(--econ-ink);line-height:1.65;">${side.text}</div>`
           : side.rows && side.rows.length
-            ? `<div style="display:flex;flex-direction:column;">${side.rows.map((r, ri) => `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;${ri < side.rows.length - 1 ? `border-bottom:1px solid ${tone.border};` : ''}"><div style="width:34px;height:34px;border-radius:50%;background:${tone.bg};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;flex-shrink:0;">${r.icon || ''}</div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.45;">${r.text}</div></div>`).join('')}</div>`
+            ? `<div style="display:flex;flex-direction:column;">${side.rows.map((r, ri) => `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;${ri < side.rows.length - 1 ? `border-bottom:1px solid ${tone.border};` : ''}"><div style="width:34px;height:34px;border-radius:50%;background:${tone.bg};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;flex-shrink:0;">${renderIcon(r.icon)}</div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.45;">${r.text}</div></div>`).join('')}</div>`
           : side.checks && side.checks.length
             ? `<div style="display:flex;flex-direction:column;gap:8px;">${side.checks.map(ch => `<div style="font-size:13px;color:var(--econ-ink);line-height:1.5;"><span style="font-weight:700;color:${tone.label};">${ch.term}:</span> ${ch.body}</div>`).join('')}</div>`
             : `<ul style="font-size:13px;color:var(--econ-ink);line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:var(--econ-ink);">${p}</span></li>`).join('')}</ul>`;
@@ -4912,8 +4927,8 @@
           : '';
         const iconHtml = side.icon
           ? (side.iconStyle === 'circle'
-              ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
-              : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
+              ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${renderIcon(side.icon)}</div>`
+              : `<div style="font-size:20px;line-height:1;">${renderIcon(side.icon)}</div>`)
           : '';
         const labelHtml = side.sub
           ? `<div style="min-width:0;"><div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;line-height:1.25;">${side.label}</div><div style="color:${tone.label};font-size:12.5px;opacity:0.85;line-height:1.35;margin-top:2px;">${side.sub}</div></div>`
@@ -5005,7 +5020,7 @@
           const rows = items.map((item, i) => {
             const tone = PATTERN_TONES[item.tone || cycle[i % cycle.length]];
             const iconHtml = item.icon
-              ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon}</div>`
+              ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`
               : '';
             return `
               <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
@@ -5023,7 +5038,7 @@
         const tiles = items.map((item, i) => {
           const tone = PATTERN_TONES[item.tone || ['green','blue','purple','amber','rose','slate'][i % 6]];
           return `<div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:center;gap:10px;"><div style="font-size:24px;line-height:1;">${item.icon || ''}</div><div style="font-weight:800;font-size:15px;color:${tone.label};">${item.head}</div></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div style="font-size:24px;line-height:1;">${renderIcon(item.icon)}</div><div style="font-weight:800;font-size:15px;color:${tone.label};">${item.head}</div></div>
             <div style="font-size:13px;color:var(--econ-ink);line-height:1.55;">${item.body}</div>
           </div>`;
         }).join('');
@@ -5136,7 +5151,7 @@
           const shadow = isResult ? `box-shadow:0 4px 14px ${t.accent}55;` : `box-shadow:0 2px 8px ${t.accent}30;`;
           return `
             <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;min-width:96px;flex:0 1 auto;">
-              <div style="width:62px;height:62px;border-radius:50%;background:${t.bg};border:${ring}px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:28px;line-height:1;margin-bottom:10px;${shadow}">${item.icon || ''}</div>
+              <div style="width:62px;height:62px;border-radius:50%;background:${t.bg};border:${ring}px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:28px;line-height:1;margin-bottom:10px;${shadow}">${renderIcon(item.icon)}</div>
               <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:4px;">${item.title}</div>
               ${item.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.45;max-width:120px;">${item.sub}</div>` : ''}
             </div>`;
@@ -5183,7 +5198,7 @@
             const tone = PATTERN_TONES[item.tone || cycle[i % cycle.length]];
             const iconHtml = item.svgKey && I[item.svgKey]
               ? `<div style="color:${tone.label};line-height:0;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${I[item.svgKey]}</div>`
-              : `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon || ''}</div>`;
+              : `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`;
             return `
               <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
                 <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
@@ -5204,7 +5219,7 @@
             const tone = item.tone ? PATTERN_TONES[item.tone] : (sharedTone || PATTERN_TONES[cycle[i % cycle.length]]);
             const iconHtml = item.svgKey && I[item.svgKey]
               ? `<div style="color:${tone.label};line-height:0;margin:4px 0 14px;display:flex;align-items:center;justify-content:center;height:48px;">${I[item.svgKey]}</div>`
-              : `<div style="font-size:40px;line-height:1;margin:4px 0 14px;height:48px;display:flex;align-items:center;justify-content:center;">${item.icon || ''}</div>`;
+              : `<div style="font-size:40px;line-height:1;margin:4px 0 14px;height:48px;display:flex;align-items:center;justify-content:center;">${renderIcon(item.icon)}</div>`;
             return `
               <div style="position:relative;border-radius:16px;background:#fff;border:1px solid #E7E7EA;padding:38px 14px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
                 <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">${i + 1}</div>
@@ -5222,13 +5237,13 @@
           if (richMode) {
             const svgHtml = item.svgKey && I[item.svgKey]
               ? `<div style="margin:6px 0 10px;line-height:0;">${I[item.svgKey]}</div>`
-              : (item.icon ? `<div style="font-size:38px;line-height:1;text-align:center;margin:6px 0 10px;">${item.icon}</div>` : '');
+              : (item.icon ? `<div style="font-size:38px;line-height:1;text-align:center;margin:6px 0 10px;">${renderIcon(item.icon)}</div>` : '');
             const ex = typeof item.example === 'string' ? { text: item.example } : item.example;
             const exampleHtml = ex ? `
               <div style="margin-top:auto;padding-top:12px;border-top:1px dashed ${tone.border};">
                 <div style="font-size:12px;font-weight:800;color:${tone.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">${ex.label || 'Example'}</div>
                 <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--econ-ink);line-height:1.4;">
-                  ${ex.icon ? `<span style="font-size:22px;line-height:1;flex-shrink:0;">${ex.icon}</span>` : ''}
+                  ${ex.icon ? `<span style="font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(ex.icon)}</span>` : ''}
                   <span>${ex.text}</span>
                 </div>
               </div>` : '';
@@ -5242,10 +5257,10 @@
           }
           const iconTopMode = c.causesStyle === 'icon-top';
           const iconHtml = iconTopMode
-            ? `<div style="font-size:30px;line-height:1;margin-bottom:10px;">${item.icon}</div>
+            ? `<div style="font-size:30px;line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
                <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-                 <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+                 <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
                  <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
                </div>`;
           return `
@@ -5259,7 +5274,7 @@
         const label = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
         const causesCols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : gridColumnsFor(items.length, 155);
         const headerRow = c.causesHeader && c.causesHeader.length
-          ? `<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 8px;">${c.causesHeader.map(h => { const ht = PATTERN_TONES[h.tone] || PATTERN_TONES.blue; return `<div style="background:${ht.accent};border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;line-height:1;">${h.icon || ''}</span><span style="font-size:12px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.08em;">${h.label}</span></div>`; }).join('')}</div>`
+          ? `<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 8px;">${c.causesHeader.map(h => { const ht = PATTERN_TONES[h.tone] || PATTERN_TONES.blue; return `<div style="background:${ht.accent};border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;line-height:1;">${renderIcon(h.icon)}</span><span style="font-size:12px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.08em;">${h.label}</span></div>`; }).join('')}</div>`
           : '';
         return `${label}${headerRow}<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
       })() : ''}
@@ -5290,7 +5305,7 @@
           return `
           <div style="border-radius:16px;background:${bg};border:1px solid ${border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:${iconBg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:${iconBg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>
@@ -5304,7 +5319,7 @@
         const cn = typeof c.causesNote === 'object' ? c.causesNote : { text: c.causesNote };
         if (!cn.text) return '';
         const t = PATTERN_TONES[cn.tone || 'slate'] || PATTERN_TONES.slate;
-        return `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:10px;padding:11px 16px;margin:-4px 0 22px;font-size:13px;color:var(--econ-ink);line-height:1.55;text-align:center;">${cn.icon ? `<span style="margin-right:8px;">${cn.icon}</span>` : ''}${cn.text}</div>`;
+        return `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:10px;padding:11px 16px;margin:-4px 0 22px;font-size:13px;color:var(--econ-ink);line-height:1.55;text-align:center;">${cn.icon ? `<span style="margin-right:8px;">${renderIcon(cn.icon)}</span>` : ''}${cn.text}</div>`;
       })() : ''}
 
       ${c.flow && c.flow.length ? (() => {
@@ -5315,7 +5330,7 @@
           const seps = Array.isArray(c.flowSep) ? c.flowSep : Array(n - 1).fill(c.flowSep);
           const pieces = c.flow.map((step, i) => {
             const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-            const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${step.icon}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:var(--econ-ink);line-height:1.3;">${step.sub}</div>` : ''}</div>`;
+            const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${renderIcon(step.icon)}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:var(--econ-ink);line-height:1.3;">${step.sub}</div>` : ''}</div>`;
             const sep = i < n - 1 ? `<div style="display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#64748B;flex-shrink:0;padding:0 2px;">${seps[i] || '+'}</div>` : '';
             return tile + sep;
           }).join('');
@@ -5327,7 +5342,7 @@
           return `
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
               <div style="position:relative;width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;margin-bottom:10px;z-index:1;">${i + 1}</div>
-              <div style="font-size:22px;line-height:1;margin-bottom:8px;">${step.icon || ''}</div>
+              <div style="font-size:22px;line-height:1;margin-bottom:8px;">${renderIcon(step.icon)}</div>
               <div style="font-size:13.5px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:4px;">${step.title}</div>
               ${step.sub ? `<div style="font-size:12px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
               ${!isLast ? `<div style="position:absolute;top:17px;left:calc(50% + 22px);right:calc(-50% + 22px);height:0;border-top:1.5px dashed #CBD5E1;z-index:0;"></div>` : ''}
@@ -5343,7 +5358,7 @@
         const seps = Array.isArray(c.flow2Sep) ? c.flow2Sep : Array(n - 1).fill(c.flow2Sep || '→');
         const pieces = c.flow2.map((step, i) => {
           const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-          const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${step.icon}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:var(--econ-ink);line-height:1.3;">${step.sub}</div>` : ''}</div>`;
+          const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${renderIcon(step.icon)}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:var(--econ-ink);line-height:1.3;">${step.sub}</div>` : ''}</div>`;
           const sep = i < n - 1 ? `<div style="display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#64748B;flex-shrink:0;padding:0 2px;">${seps[i] || '→'}</div>` : '';
           return tile + sep;
         }).join('');
@@ -5363,7 +5378,7 @@
         const headerSub = header.subtitle || '';
         const itemTiles = (bg.items || []).map(it => `
           <div style="background:#fff;border-radius:12px;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:5px;border:1px solid #DBEAFE;">
-            <span style="font-size:22px;line-height:1;">${it.icon}</span>
+            <span style="font-size:22px;line-height:1;">${renderIcon(it.icon)}</span>
             <span style="font-size:10.5px;font-weight:700;color:#1E3A8A;text-align:center;line-height:1.3;">${it.label}</span>
           </div>`).join('');
         const cols = Math.min((bg.items || []).length, 6);
@@ -5382,7 +5397,7 @@
           const tone = PATTERN_TONES[item.tone] || PATTERN_TONES[['green','blue','amber','purple','rose','slate'][i % 6]];
           return `
             <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-              <div style="font-size:26px;line-height:1;margin-bottom:8px;">${item.icon || ''}</div>
+              <div style="font-size:26px;line-height:1;margin-bottom:8px;">${renderIcon(item.icon)}</div>
               <div style="font-size:12.5px;font-weight:700;color:${tone.label};line-height:1.3;margin-bottom:10px;">${item.label}</div>
               <div style="font-size:38px;font-weight:900;color:${tone.accent};line-height:1;">${item.pct}</div>
             </div>`;
@@ -5402,7 +5417,7 @@
           return `
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             ${item.shiftArrows && item.shiftArrows.length
@@ -5421,7 +5436,7 @@
           return `
           <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
@@ -5438,10 +5453,10 @@
         const tiles3 = items3.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['blue','green','purple','amber','rose','slate'][i % 6]];
           const headerHtml = iconTopMode3
-            ? `<div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;margin-bottom:10px;">${item.icon || ''}</div>
+            ? `<div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
                <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-                 <div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
+                 <div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
                  <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;">${item.head}</div>
                </div>`;
           return `
@@ -5463,7 +5478,7 @@
         const rows = vr.rows.map(row => {
           const renderSide = (s, t, align) => `
             <div style="display:flex;align-items:center;gap:12px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:12px 14px;flex-direction:${align === 'right' ? 'row-reverse' : 'row'};text-align:${align};">
-              <div style="width:38px;height:38px;border-radius:50%;background:#fff;border:1.5px solid ${t.border};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${s.icon || ''}</div>
+              <div style="width:38px;height:38px;border-radius:50%;background:#fff;border:1.5px solid ${t.border};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${renderIcon(s.icon)}</div>
               <div style="flex:1;min-width:0;">
                 <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:2px;">${s.head}</div>
                 <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.45;">${s.sub}</div>
@@ -5497,7 +5512,7 @@
           const colHtml = `
             <div style="flex:1 1 0;min-width:160px;border-radius:14px;background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
               <div style="padding:12px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:10px;">
-                ${col.icon ? `<div style="width:30px;height:30px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;line-height:1;flex-shrink:0;">${col.icon}</div>` : ''}
+                ${col.icon ? `<div style="width:30px;height:30px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;line-height:1;flex-shrink:0;">${renderIcon(col.icon)}</div>` : ''}
                 <div style="font-size:15px;font-weight:800;color:${t.label};letter-spacing:0.01em;">${col.label}</div>
               </div>
               <ul style="list-style:none;margin:0;padding:14px 16px;font-size:13.5px;color:var(--econ-ink);line-height:1.6;">${items}</ul>
@@ -5521,7 +5536,7 @@
             </li>`).join('');
           return `
             <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:20px 18px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-              <div style="width:54px;height:54px;border-radius:50%;background:#fff;border:2px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">${m.icon || ''}</div>
+              <div style="width:54px;height:54px;border-radius:50%;background:#fff;border:2px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">${renderIcon(m.icon)}</div>
               <div style="font-size:26px;font-weight:900;color:${tone.label};letter-spacing:-0.02em;line-height:1;margin-bottom:6px;">${m.acronym}</div>
               <div style="font-size:12px;font-weight:600;color:${tone.label};opacity:0.85;line-height:1.4;margin-bottom:14px;min-height:2.8em;display:flex;align-items:center;justify-content:center;">${m.fullName || ''}</div>
               <div style="width:100%;height:1px;background:${tone.border};margin-bottom:14px;"></div>
@@ -5572,7 +5587,7 @@
             const t = PATTERN_TONES[cell.tone || 'blue'];
             return `
               <div style="display:flex;align-items:flex-start;gap:10px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:11px 13px;min-width:0;">
-                ${cell.icon ? `<div style="font-size:18px;line-height:1;color:${t.label};flex-shrink:0;margin-top:1px;">${cell.icon}</div>` : ''}
+                ${cell.icon ? `<div style="font-size:18px;line-height:1;color:${t.label};flex-shrink:0;margin-top:1px;">${renderIcon(cell.icon)}</div>` : ''}
                 <div style="flex:1;min-width:0;">
                   <div style="font-size:13px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:2px;">${cell.head}</div>
                   ${cell.sub ? `<div style="font-size:12px;color:#475569;line-height:1.45;">${cell.sub}</div>` : ''}
@@ -5599,7 +5614,7 @@
           const tone = PATTERN_TONES[item.tone] || PATTERN_TONES[['green','purple','amber','blue','rose','slate'][i % 6]];
           return `
             <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:6px 4px;">
-              <div style="width:46px;height:46px;border-radius:50%;background:${tone.bg};border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:10px;">${item.icon || ''}</div>
+              <div style="width:46px;height:46px;border-radius:50%;background:${tone.bg};border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
               <div style="font-size:14px;font-weight:800;color:${tone.label};line-height:1.25;margin-bottom:5px;">${item.label}</div>
               <div style="font-size:12.5px;color:#475569;line-height:1.5;">${item.text}</div>
             </div>`;
@@ -5640,7 +5655,7 @@
           return `
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             ${item.shiftArrows && item.shiftArrows.length
@@ -5739,7 +5754,7 @@
         const t = PATTERN_TONES[nb.tone || 'amber'] || PATTERN_TONES.amber;
         const title = nb.label ? genSecLabel(nb.emoji || '💡', nb.label) : '';
         const iconHtml = nb.icon
-          ? `<div style="width:54px;height:54px;border-radius:12px;background:#fff;border:1.5px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:30px;line-height:1;flex-shrink:0;">${nb.icon}</div>`
+          ? `<div style="width:54px;height:54px;border-radius:12px;background:#fff;border:1.5px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:30px;line-height:1;flex-shrink:0;">${renderIcon(nb.icon)}</div>`
           : '';
         const sep = `<div style="display:flex;align-items:center;justify-content:center;color:${t.accent};font-size:22px;font-weight:800;flex-shrink:0;">→</div>`;
         const primaryHtml = nb.primary

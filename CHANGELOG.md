@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.64.0 — 2026-06-05
+
+### Design language: Material Symbols nav icons + a one-line content icon API
+
+- **Sidebar nav icons** (Home, My topics, Progress, Exam practice, Study planner,
+  Messages, Settings) now use **Google Material Symbols** (Rounded, outlined,
+  weight 400). The cover / stage / tick symbols keep their bespoke hand-drawn
+  artwork — only the 7 nav keys changed.
+- **One-line content icon API.** New `js/icons/material-symbols.js` — a generated
+  registry of inline Material Symbol paths + `window.ECONOS_SYM(name, size)`.
+  Any data `icon` field now accepts `sym:<name>` (e.g. `icon: sym:rocket_launch`);
+  the renderer (`renderIcon` in app.js) inlines the symbol and passes emoji
+  through unchanged. Add a symbol: list it in `scripts/fetch-symbols.mjs` and run
+  `npm run fetch:symbols` (offline-first — paths inlined, no font, no runtime
+  network). 64 symbols seeded. Wired into the shells + sw.js (cache `econos-v359`).
+- Verified: nav screenshot-checked (cover symbols unchanged), `ECONOS_SYM` live in
+  the running app, lint + unit tests + build green.
+
+
 ## 0.63.4 — 2026-06-05
 
 ### Balance of Payments — C4 good/warning chain breathing room

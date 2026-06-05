@@ -1,5 +1,37 @@
 # Econos — Claude Code Instructions
 
+## Visual design — standing instructions
+
+These are the user's standing preferences. Apply them by default on every
+session — never ask "should the chart be interactive?" or "should I check
+the catalogue?" — yes, every time.
+
+1. **Design for the best possible user experience.** Use as many tokens as
+   the visual genuinely needs — rich, generous, varied. Token budget is
+   never the constraint; quality of the lesson is. Don't pre-shrink, don't
+   strip detail to save effort, don't reach for the simpler block when the
+   richer one tells the story better.
+2. **Always consult `docs/visual-catalogue.md` before building a visual.**
+   Match the mock-up to an existing high-impact component from the
+   catalogue (hub-and-spoke, spectrum, flow chain, scorecard, twin
+   comparison, firm/cost/market-structure diagram, decompose anatomy,
+   etc.) and adjust it — most mock-ups are a selection problem, not a
+   build problem. Reach for a bespoke build only when nothing in the
+   catalogue fits. Keep the catalogue current when you add a visual.
+3. **Default to interactive charts with the standard styling.** Whenever
+   a diagram can sensibly carry stepped reveal, a perspective toggle
+   (e.g. Classical/Keynesian), or build-out layers, use the
+   `interactiveDiagram` block. The shifted-from curve dashes; shift
+   arrows are perpendicular, between the curves, clear of labels. Static
+   `visualKey` is the fallback for hero/decompose visuals that don't
+   step. Single-view diagrams suppress the redundant step chrome
+   automatically (handled in `app.js`); leave it alone.
+4. **Stay awesome.** Choose patterns that tell the story crisply; vary the
+   storytelling pattern across cards in a topic (see the
+   `econos-card-template` skill — no two consecutive cards repeat the
+   same pattern, Tile grid only when nothing else fits); screenshot-verify
+   when possible; flag honest caveats rather than over-claim.
+
 ## Git workflow
 
 **Default for every push.** Every time you push work to the active development

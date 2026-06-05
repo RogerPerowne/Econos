@@ -6,6 +6,59 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.71.0 – 2026-06-05
+
+### Sizes & Types of Firms (3.1.1) – first Theme 3 topic shipped
+
+Built the first Theme 3 topic from a fresh set of 7 mock-ups. The topic was
+already in the registry as a placeholder (added in 0.70.0); this turns it
+live with a full visually-rich 7-card lesson covering all four 3.1.1
+sub-points (why firms stay small or grow, divorce of ownership and control,
+public vs private, profit vs not-for-profit).
+
+- **Card 1 – The big picture** (Decompose + flow chain + tile grid): new
+  `firmFourLensesHub` (Size/Type/Objectives/Control around "The firm"), the
+  7-step story chain, three orientation tiles.
+- **Card 2 – How do we measure firm size?** (Decompose + tile grid + flow):
+  new `firmSizeMeasuresHub` (5 numbered measures around "Firm size"), why
+  measures differ, when-to-use-each procedure.
+- **Card 3 – Why some firms stay small** (Decompose + pair + tile grid):
+  new `firmStaySmallHub` (6 reasons around "A small firm"), the
+  choice-vs-constraint pair, three "small can still be good" tiles.
+- **Card 4 – Why other firms grow** (Decompose + tile grid + pair): new
+  `firmGrowthFlywheel` – a 5-node circular cycle (higher profit →
+  reinvestment → more capacity → more sales → higher profit) with
+  internal-growth (retained profit) and external-growth (mergers/takeovers)
+  dashed feeds. Four why-grow tiles + the growth trade-off pair.
+- **Card 5 – Who owns the firm – and what is it for?** (Decompose +
+  comparison table): new `firmOwnershipObjectives` carrying both the
+  ownership pair (private vs public) and the objectives pair (for-profit vs
+  not-for-profit, with a bidirectional arrow and an examples strip), plus a
+  Putting-the-two-together comparison table.
+- **Card 6 – Ownership and control – the principal-agent problem** (Flow
+  chain + pair + flow chain): the separation chain (shareholders → board →
+  business decisions), the where-conflict pair (owners may want vs managers
+  may prefer), the four alignment levers.
+- **Card 7 – The whole story** (Evidence-then-verdict): the 7-step chain
+  recap, four common-mistakes rose tiles with fixes, four-step
+  Define→Apply→Explain→Judge writing procedure.
+
+All five new visuals share the `rationalAgentHub` / `demandDeterminantsHub`
+grammar (HTML grid + overlay SVG connectors + a circular centre node) so the
+lesson reads as part of the same visual family. Catalogue updated.
+
+`sw.js` cache bumped to `econos-v369`.
+
+### Standing instructions persisted to CLAUDE.md
+
+Added a "Visual design — standing instructions" section at the top of
+CLAUDE.md capturing four user defaults so they apply on every future
+session: (1) design for the best UX with as many tokens as needed;
+(2) always consult `docs/visual-catalogue.md` before building a visual;
+(3) default to interactive charts with the standard styling (dashed shifted-
+from curves, perpendicular between-curve arrows); (4) vary the storytelling
+pattern across cards and flag honest caveats.
+
 ## 0.70.1 – 2026-06-05
 
 ### Visual catalogue – a reuse index for all charts and diagrams

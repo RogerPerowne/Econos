@@ -14070,6 +14070,346 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
+     ▼ THEME 3 · 3.1.1 SIZES & TYPES OF FIRMS – hand-rolled hub family
+     Shares the rationalAgentHub / demandDeterminantsHub grammar
+     (HTML grid + overlay SVG connectors + a circular centre node)
+     so the lesson feels visually coherent with the rest of the site.
+     ─────────────────────────────────────────────────────────────── */
+
+  /* firmFourLensesHub – Card 1 "Sizes & types of firms – the big picture".
+     Four lens tiles (Size / Type / Objectives / Control) around a central
+     "The firm" pill, each lens tinted in a distinct tone. */
+  firmFourLensesHub: `
+    <div class="fhub-4" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fhub-4 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:160px; row-gap:18px; position:relative; z-index:1; }
+        .fhub-4 .fh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .fhub-4 .fh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .fhub-4 .fh-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .fhub-4 .fh-ic { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .fhub-4 .fh-t { font-size:14px; font-weight:800; line-height:1.2; letter-spacing:0.005em; }
+        .fhub-4 .fh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){ .fhub-4 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .fhub-4 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-4 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-4 .fh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:700px;margin:0 auto;min-height:300px;">
+        <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="30" y1="32" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="32" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="30" y1="68" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="68" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+        </svg>
+        <div class="fh-grid">
+          <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="fh-ic">↗️</div>
+            <div><div class="fh-t" style="color:#065F46;">Size</div><div class="fh-s">employees, sales, output, capital</div></div>
+          </div>
+          <div class="fh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="fh-ic">🏛️</div>
+            <div><div class="fh-t" style="color:#C2410C;">Type</div><div class="fh-s">private, public, not-for-profit</div></div>
+          </div>
+          <div class="fh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="fh-ic">🎯</div>
+            <div><div class="fh-t" style="color:#5B21B6;">Objectives</div><div class="fh-s">profit, service, mission</div></div>
+          </div>
+          <div class="fh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="fh-ic">👥</div>
+            <div><div class="fh-t" style="color:#1E3A8A;">Control</div><div class="fh-s">owners, managers, incentives</div></div>
+          </div>
+        </div>
+        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:148px;height:148px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+          <div style="font-size:30px;line-height:1;">🏛️</div>
+          <div style="font-size:16px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:8px;">The firm</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* firmSizeMeasuresHub – Card 2 "How do we measure firm size?".
+     Five numbered measure tiles around a central "Firm size" pill. */
+  firmSizeMeasuresHub: `
+    <div class="fhub-5" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fhub-5 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:170px; row-gap:14px; position:relative; z-index:1; }
+        .fhub-5 .fh-grid > .fh-bottom { grid-column:1 / -1; display:flex; justify-content:center; margin-top:8px; }
+        .fhub-5 .fh-bottom .fh-tile { max-width:360px; }
+        .fhub-5 .fh-center { position:absolute; top:42%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .fhub-5 .fh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .fhub-5 .fh-tile { border-radius:13px; padding:11px 14px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .fhub-5 .fh-ic { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); position:relative; }
+        .fhub-5 .fh-num { font-size:13px; font-weight:800; margin-right:6px; }
+        .fhub-5 .fh-t { font-size:14px; font-weight:800; line-height:1.2; display:inline; }
+        .fhub-5 .fh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){ .fhub-5 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .fhub-5 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-5 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-5 .fh-bottom { margin-top:0; } .fhub-5 .fh-bottom .fh-tile{ max-width:none; } .fhub-5 .fh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:720px;margin:0 auto;min-height:360px;">
+        <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="30" y1="20" x2="50" y2="42" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="20" x2="50" y2="42" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="30" y1="55" x2="50" y2="42" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="55" x2="50" y2="42" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="50" y1="42" x2="50" y2="78" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+        </svg>
+        <div class="fh-grid">
+          <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="fh-ic">👥</div>
+            <div><div><span class="fh-num" style="color:#059669;">1</span><span class="fh-t" style="color:#065F46;">Employees</span></div><div class="fh-s">Number of workers.</div></div>
+          </div>
+          <div class="fh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="fh-ic">£</div>
+            <div><div><span class="fh-num" style="color:#C2410C;">2</span><span class="fh-t" style="color:#C2410C;">Sales revenue</span></div><div class="fh-s">Money earned from sales.</div></div>
+          </div>
+          <div class="fh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="fh-ic">📦</div>
+            <div><div><span class="fh-num" style="color:#2563EB;">3</span><span class="fh-t" style="color:#1E3A8A;">Output</span></div><div class="fh-s">Quantity or value produced.</div></div>
+          </div>
+          <div class="fh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="fh-ic">🏛️</div>
+            <div><div><span class="fh-num" style="color:#7C3AED;">4</span><span class="fh-t" style="color:#5B21B6;">Capital employed</span></div><div class="fh-s">Value of assets used.</div></div>
+          </div>
+          <div class="fh-bottom"><div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;width:100%;">
+            <div class="fh-ic">🥧</div>
+            <div><div><span class="fh-num" style="color:#059669;">5</span><span class="fh-t" style="color:#065F46;">Market share</span></div><div class="fh-s">Proportion of total market sales.</div></div>
+          </div></div>
+        </div>
+        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:148px;height:148px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+          <div style="font-size:30px;line-height:1;">🏢</div>
+          <div style="font-size:15px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;">Firm size</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* firmStaySmallHub – Card 3 "Why some firms stay small". Six reason tiles
+     (3 left + 3 right) around a central "A small firm" pill. */
+  firmStaySmallHub: `
+    <div class="fhub-6" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fhub-6 .fh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:190px; row-gap:14px; position:relative; z-index:1; }
+        .fhub-6 .fh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .fhub-6 .fh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .fhub-6 .fh-tile { border-radius:13px; padding:11px 14px; display:flex; gap:11px; align-items:flex-start; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .fhub-6 .fh-ic { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .fhub-6 .fh-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .fhub-6 .fh-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:3px; }
+        @media (max-width:600px){ .fhub-6 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .fhub-6 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-6 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-6 .fh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:720px;margin:0 auto;min-height:360px;">
+        <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="30" y1="17" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="17" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="28" y1="50" x2="50" y2="50" stroke="#C4B5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="72" y1="50" x2="50" y2="50" stroke="#93C5FD" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="30" y1="83" x2="50" y2="50" stroke="#FDBA74" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+          <line x1="70" y1="83" x2="50" y2="50" stroke="#86EFAC" stroke-width="0.3" stroke-dasharray="0.9 0.9"/>
+        </svg>
+        <div class="fh-grid">
+          <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="fh-ic">🙋</div>
+            <div><div class="fh-t" style="color:#065F46;">Owner choice</div><div class="fh-s">independence and lifestyle matter.</div></div>
+          </div>
+          <div class="fh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="fh-ic">🎯</div>
+            <div><div class="fh-t" style="color:#C2410C;">Niche market</div><div class="fh-s">demand is limited but specialised.</div></div>
+          </div>
+          <div class="fh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="fh-ic">£</div>
+            <div><div class="fh-t" style="color:#5B21B6;">Finance limits</div><div class="fh-s">growth needs funding.</div></div>
+          </div>
+          <div class="fh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="fh-ic">🛡️</div>
+            <div><div class="fh-t" style="color:#1E3A8A;">Risk aversion</div><div class="fh-s">owners may avoid debt or expansion.</div></div>
+          </div>
+          <div class="fh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="fh-ic">⚙️</div>
+            <div><div class="fh-t" style="color:#C2410C;">Managerial limits</div><div class="fh-s">growth adds complexity.</div></div>
+          </div>
+          <div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="fh-ic">📍</div>
+            <div><div class="fh-t" style="color:#065F46;">Local demand</div><div class="fh-s">some markets stay geographically small.</div></div>
+          </div>
+        </div>
+        <div class="fh-center-wrap"><div class="fh-center" style="background:#fff;border:2.4px solid #0B1426;border-radius:50%;width:152px;height:152px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;box-shadow:0 4px 16px rgba(11,20,38,0.16);">
+          <div style="font-size:32px;line-height:1;">🏪</div>
+          <div style="font-size:13.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:6px;text-align:center;line-height:1.2;">A small firm<br/>may stay small</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* firmGrowthFlywheel – Card 4 "Why other firms grow". A 5-node circular
+     flywheel (higher profit → reinvestment → more capacity → more sales →
+     higher profit) with INTERNAL growth feeding in from the left (retained
+     profit) and EXTERNAL growth feeding in from the right (mergers /
+     takeovers). Pure SVG so the geometry is locked. */
+  firmGrowthFlywheel: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="fw-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
+          <marker id="fw-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>
+          <marker id="fw-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
+          <marker id="fw-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
+        </defs>
+
+        <!-- Centre hub: "The flywheel" -->
+        <circle cx="380" cy="210" r="78" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2.2"/>
+        <text x="380" y="194" font-size="26" text-anchor="middle">🔁</text>
+        <text x="380" y="220" font-size="14" font-weight="800" fill="#0B1426" font-family="Fraunces,Georgia,serif" text-anchor="middle">The flywheel</text>
+        <text x="380" y="244" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Growth builds on</text>
+        <text x="380" y="258" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">itself over time.</text>
+
+        <!-- Five circulating nodes around the hub (clockwise from 12) -->
+        <!-- 1 Higher profit (top, green) -->
+        <circle cx="380" cy="74" r="42" fill="#ECFDF5" stroke="#86EFAC" stroke-width="2"/>
+        <text x="380" y="68" font-size="20" text-anchor="middle">📈</text>
+        <text x="380" y="92" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Higher</text>
+        <text x="380" y="106" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">profit</text>
+        <circle cx="406" cy="48" r="13" fill="#059669"/>
+        <text x="406" y="52" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+
+        <!-- 2 Reinvestment (right, amber) -->
+        <circle cx="510" cy="158" r="42" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+        <text x="510" y="152" font-size="20" text-anchor="middle">£</text>
+        <text x="510" y="176" font-size="11.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Reinvestment</text>
+        <circle cx="536" cy="132" r="13" fill="#D97706"/>
+        <text x="536" y="136" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+
+        <!-- 3 More capacity / better quality (bottom-right, purple) -->
+        <circle cx="492" cy="306" r="44" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
+        <text x="492" y="298" font-size="19" text-anchor="middle">⚙️</text>
+        <text x="492" y="320" font-size="10.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">More capacity</text>
+        <text x="492" y="334" font-size="10.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">or better quality</text>
+        <circle cx="518" cy="280" r="13" fill="#7C3AED"/>
+        <text x="518" y="284" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+
+        <!-- 4 More sales (bottom-left, blue) -->
+        <circle cx="268" cy="306" r="42" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+        <text x="268" y="298" font-size="20" text-anchor="middle">🛒</text>
+        <text x="268" y="324" font-size="11.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">More sales</text>
+        <circle cx="242" cy="280" r="13" fill="#2563EB"/>
+        <text x="242" y="284" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+
+        <!-- 5 Higher profit (top-left, green) -->
+        <circle cx="250" cy="158" r="42" fill="#ECFDF5" stroke="#86EFAC" stroke-width="2"/>
+        <text x="250" y="152" font-size="20" text-anchor="middle">📈</text>
+        <text x="250" y="176" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Higher</text>
+        <text x="250" y="190" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">profit</text>
+        <circle cx="276" cy="132" r="13" fill="#059669"/>
+        <text x="276" y="136" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">5</text>
+
+        <!-- Curved arrows joining the cycle (1→2→3→4→5→1) -->
+        <path d="M 420 90 Q 470 108 488 120" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#fw-arr-green)"/>
+        <path d="M 524 196 Q 522 252 510 268" fill="none" stroke="#D97706" stroke-width="2.2" marker-end="url(#fw-arr-amber)"/>
+        <path d="M 448 320 Q 380 340 312 320" fill="none" stroke="#7C3AED" stroke-width="2.2" marker-end="url(#fw-arr-purple)"/>
+        <path d="M 250 268 Q 238 244 250 200" fill="none" stroke="#2563EB" stroke-width="2.2" marker-end="url(#fw-arr-blue)"/>
+        <path d="M 288 124 Q 320 96 340 84" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#fw-arr-green)"/>
+
+        <!-- Internal growth annotation (left, green dashed feed) -->
+        <g>
+          <rect x="14" y="186" width="156" height="64" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="38" cy="218" r="14" fill="#fff" stroke="#86EFAC"/>
+          <text x="38" y="223" font-size="14" text-anchor="middle">📊</text>
+          <text x="58" y="208" font-size="11.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Internal growth –</text>
+          <text x="58" y="222" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">expand from</text>
+          <text x="58" y="236" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">retained profit.</text>
+          <path d="M 174 218 Q 200 188 246 168" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fw-arr-green)"/>
+        </g>
+
+        <!-- External growth annotation (right, amber dashed feed) -->
+        <g>
+          <rect x="590" y="186" width="156" height="64" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+          <circle cx="614" cy="218" r="14" fill="#fff" stroke="#FDBA74"/>
+          <text x="614" y="223" font-size="14" text-anchor="middle">🏛️</text>
+          <text x="634" y="208" font-size="11.5" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">External growth –</text>
+          <text x="634" y="222" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">mergers or</text>
+          <text x="634" y="236" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">takeovers.</text>
+          <path d="M 586 218 Q 562 188 514 168" fill="none" stroke="#D97706" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fw-arr-amber)"/>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
+     for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
+     around a central question), then the OBJECTIVES pair (for-profit vs
+     not-for-profit with a bidirectional arrow + an examples strip below). */
+  firmOwnershipObjectives: `
+    <div class="fwn" style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fwn .fwn-row { display:grid; grid-template-columns:1fr 120px 1fr; gap:14px; align-items:stretch; margin-bottom:18px; }
+        .fwn .fwn-row:last-of-type { margin-bottom:8px; }
+        .fwn .fwn-tile { border-radius:13px; padding:14px 16px; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .fwn .fwn-head { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+        .fwn .fwn-ic { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .fwn .fwn-t { font-size:15px; font-weight:800; line-height:1.2; }
+        .fwn .fwn-body { font-size:12.5px; color:#0B1426; line-height:1.5; }
+        .fwn .fwn-body em { font-style:italic; color:#475569; display:block; margin-top:6px; }
+        .fwn .fwn-mid { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+        .fwn .fwn-q { font-size:12px; font-weight:700; color:#0B1426; line-height:1.3; }
+        .fwn .fwn-examples { margin-top:6px; }
+        .fwn .fwn-ex-label { text-align:center; font-size:11px; color:#475569; letter-spacing:0.04em; text-transform:uppercase; font-weight:700; margin-bottom:8px; position:relative; }
+        .fwn .fwn-ex-label::before, .fwn .fwn-ex-label::after { content:''; position:absolute; top:50%; width:30%; height:1px; background:#E2E8F0; }
+        .fwn .fwn-ex-label::before { left:0; } .fwn .fwn-ex-label::after { right:0; }
+        .fwn .fwn-ex-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+        .fwn .fwn-ex { border-radius:10px; padding:9px 10px; display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; }
+        @media (max-width:680px){ .fwn .fwn-row { grid-template-columns:1fr; } .fwn .fwn-mid { padding:6px 0; } .fwn .fwn-ex-grid { grid-template-columns:repeat(2,1fr); } }
+      </style>
+
+      <!-- Section 1: OWNERSHIP -->
+      <div class="fwn-row">
+        <div class="fwn-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="fwn-head"><div class="fwn-ic">👤</div><div class="fwn-t" style="color:#065F46;">Private sector</div></div>
+          <div class="fwn-body">Owned by individuals or shareholders.<em>Aims often shaped by market demand and profit.</em></div>
+        </div>
+        <div class="fwn-mid">
+          <div style="font-size:22px;">🏛️</div>
+          <div class="fwn-q" style="margin-top:6px;">Who controls<br/>the firm?</div>
+        </div>
+        <div class="fwn-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="fwn-head"><div class="fwn-ic">🏛️</div><div class="fwn-t" style="color:#1E3A8A;">Public sector</div></div>
+          <div class="fwn-body">Owned or controlled by the state.<em>Often focused on service provision and wider social goals.</em></div>
+        </div>
+      </div>
+
+      <!-- Section 2: OBJECTIVES (with bidirectional arrow) -->
+      <div class="fwn-row">
+        <div class="fwn-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <div class="fwn-head"><div class="fwn-ic">🏆</div><div class="fwn-t" style="color:#5B21B6;">For-profit</div></div>
+          <div class="fwn-body">Aims to earn profit for owners or shareholders.</div>
+        </div>
+        <div class="fwn-mid">
+          <div class="fwn-q" style="margin-bottom:6px;">What is the firm<br/>trying to achieve?</div>
+          <svg width="120" height="28" viewBox="0 0 120 28">
+            <defs>
+              <marker id="fwn-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
+              <marker id="fwn-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>
+              <marker id="fwn-arr-purple-l" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z" fill="#7C3AED"/></marker>
+            </defs>
+            <line x1="20" y1="14" x2="100" y2="14" stroke="#7C3AED" stroke-width="2" marker-start="url(#fwn-arr-purple-l)"/>
+            <line x1="60" y1="14" x2="100" y2="14" stroke="#D97706" stroke-width="2" marker-end="url(#fwn-arr-amber)"/>
+            <circle cx="60" cy="14" r="4" fill="#fff" stroke="#94A3B8" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <div class="fwn-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="fwn-head"><div class="fwn-ic">🤲</div><div class="fwn-t" style="color:#C2410C;">Not-for-profit</div></div>
+          <div class="fwn-body">Any surplus is reinvested into the mission, service or members.</div>
+        </div>
+      </div>
+
+      <!-- Examples row -->
+      <div class="fwn-examples">
+        <div class="fwn-ex-label">Examples</div>
+        <div class="fwn-ex-grid">
+          <div class="fwn-ex" style="background:#F8FAFC;border:1.5px solid #CBD5E1;color:#0B1426;"><span style="font-size:18px;">🏛️</span>Business</div>
+          <div class="fwn-ex" style="background:#FFF7ED;border:1.5px solid #FDBA74;color:#C2410C;"><span style="font-size:18px;">🤲</span>Charity</div>
+          <div class="fwn-ex" style="background:#ECFDF5;border:1.5px solid #86EFAC;color:#065F46;"><span style="font-size:18px;">👥</span>Social club</div>
+          <div class="fwn-ex" style="background:#EFF6FF;border:1.5px solid #93C5FD;color:#1E3A8A;"><span style="font-size:18px;">🛡️</span>Public service</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* ───────────────────────────────────────────────────────────────
      demandDeterminantsHub – Demand Card 5. "Demand" at the centre with
      the six conditions of demand around it (3 left, 3 right). HTML +
      SVG connector layer (growthScorecard pattern). Stacks on mobile.

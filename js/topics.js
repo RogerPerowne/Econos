@@ -760,7 +760,7 @@ window.ECONOS_TOPICS = [
     name: 'Sizes & Types of Firms',
     sub: 'Why firms stay small or grow, divorce of ownership and control, public vs private, profit vs not-for-profit',
     color: '#f43f5e',
-    available: { learn: false, link: false, land: false },
+    available: { learn: true, link: false, land: false },
     boards: {
       edexcel_a: { spec: '3.1.1', included: true },
       edexcel_b: { spec: null, included: true },

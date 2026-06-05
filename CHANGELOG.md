@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.66.2 – 2026-06-05
+
+### BoP C3 `bopDriverHub` – bigger hub diagram, restyled chain
+
+- **Hub-and-spoke diagram** rebuilt larger to fill the staging: wider tiles
+  (200→226px), bigger icons, the centre hub recentred on the middle row and
+  grown (r 78→88), and a tightened viewBox so the whole thing renders bigger.
+  Every font size bumped (titles 12→14.5, captions 10.5→12.5, hub label
+  11.5→13.5) and caption text switched from grey `#475569` to near-black
+  `#0B1426`.
+- **"A simple chain" block** now uses the standard section-title styling
+  (link emoji + uppercase label + horizontal rule, matching `genSecLabel`),
+  the grey container box is removed, and the step tiles get more visual heft:
+  larger padding and font, rounder corners, a soft shadow, and bolder green
+  `→` separators.
+
+`sw.js` cache bumped v362 → v363.
+
 ## 0.66.1 – 2026-06-05
 
 ### BoP C1 `bopThreeAccounts` – arrows now flow into the balance pill

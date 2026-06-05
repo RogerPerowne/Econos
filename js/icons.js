@@ -16192,14 +16192,16 @@ window.ECONOS_ICONS = {
   bopDriverHub: `
     <div style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
       <style>
-        .bop-hub-chain { margin-top:14px; padding:14px; background:#FAFCFF; border:1px solid #E2E8F0; border-radius:12px; }
-        .bop-hub-chain-label { font-size:11px; font-weight:800; color:#0B1426; letter-spacing:0.04em; margin-bottom:10px; }
-        .bop-hub-chain-row { display:grid; grid-template-columns:1fr 18px 1fr 18px 1.5fr; gap:6px 6px; align-items:stretch; margin-bottom:8px; }
+        .bop-hub-chain { margin-top:24px; }
+        .bop-hub-chain-label { display:flex; align-items:center; gap:8px; font-size:11px; font-weight:800; color:#0B1426; letter-spacing:0.09em; text-transform:uppercase; margin:0 0 16px; }
+        .bop-hub-chain-label .bop-hub-chain-emoji { font-size:14px; line-height:1; }
+        .bop-hub-chain-label .bop-hub-chain-rule { flex:1; height:1px; background:#E2E8F0; margin-left:6px; }
+        .bop-hub-chain-row { display:grid; grid-template-columns:1fr 22px 1fr 22px 1.5fr; gap:10px; align-items:stretch; margin-bottom:12px; }
         .bop-hub-chain-row:last-child { margin-bottom:0; }
-        .bop-hub-chain-step { background:#fff; border:1px solid #CBD5E1; border-radius:8px; padding:9px 10px; font-size:12px; font-weight:700; color:#0B1426; text-align:center; line-height:1.4; display:flex; align-items:center; justify-content:center; }
+        .bop-hub-chain-step { background:#fff; border:1.5px solid #E2E8F0; border-radius:12px; padding:14px 16px; font-size:13.5px; font-weight:700; color:#0B1426; text-align:center; line-height:1.45; display:flex; align-items:center; justify-content:center; box-shadow:0 1px 3px rgba(15,23,42,0.06); }
         .bop-hub-chain-step.is-rose { background:#FFF1F2; border-color:#FDA4AF; color:#BE123C; font-weight:800; }
         .bop-hub-chain-step.is-green { background:#F0FDF4; border-color:#86EFAC; color:#065F46; font-weight:800; }
-        .bop-hub-chain-sep { display:flex; align-items:center; justify-content:center; color:#94A3B8; font-size:14px; font-weight:700; }
+        .bop-hub-chain-sep { display:flex; align-items:center; justify-content:center; color:#16A34A; font-size:18px; font-weight:800; }
         @media (max-width: 760px) {
           .bop-hub-chain-row { grid-template-columns:1fr; }
           .bop-hub-chain-sep { display:none; }
@@ -16207,80 +16209,80 @@ window.ECONOS_ICONS = {
           .bop-hub-chain-row:last-child .bop-hub-chain-step:last-child { margin-bottom:0; }
         }
       </style>
-      <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 760 432" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="bophub-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <marker id="bophub-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
           </marker>
         </defs>
-        <!-- curved spokes (each from edge of side card to centre node) -->
-        <path d="M 230 80 Q 320 130 340 240" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
-        <path d="M 230 230 Q 290 250 340 270" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
-        <path d="M 230 380 Q 290 340 340 300" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
-        <path d="M 530 80 Q 440 130 420 240" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
-        <path d="M 530 230 Q 470 250 420 270" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
-        <path d="M 530 380 Q 470 340 420 300" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#bophub-arr)"/>
+        <!-- curved spokes (each from inner edge of side card to hub rim) -->
+        <path d="M 240 72 Q 305 112 320 161" fill="none" stroke="#16A34A" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 240 216 Q 270 216 292 216" fill="none" stroke="#16A34A" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 240 360 Q 305 320 320 271" fill="none" stroke="#16A34A" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 520 72 Q 455 112 440 161" fill="none" stroke="#16A34A" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 520 216 Q 490 216 468 216" fill="none" stroke="#16A34A" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#bophub-arr)"/>
+        <path d="M 520 360 Q 455 320 440 271" fill="none" stroke="#16A34A" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#bophub-arr)"/>
 
         <!-- LEFT TILES -->
         <g>
-          <rect x="30" y="20" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="62" cy="52" r="18" fill="#fff" stroke="#86EFAC"/><text x="62" y="59" font-size="18" text-anchor="middle">🏠</text>
-          <text x="90" y="50" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Domestic income</text>
-          <text x="90" y="64" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ demand</text>
-          <text x="90" y="84" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Stronger home spending</text>
-          <text x="90" y="98" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">often raises imports.</text>
+          <rect x="14" y="14" width="226" height="116" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="21" fill="#fff" stroke="#86EFAC"/><text x="50" y="58" font-size="21" text-anchor="middle">🏠</text>
+          <text x="84" y="48" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Domestic income</text>
+          <text x="84" y="66" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ demand</text>
+          <text x="84" y="92" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">Stronger home spending</text>
+          <text x="84" y="108" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">often raises imports.</text>
         </g>
         <g>
-          <rect x="30" y="170" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="62" cy="202" r="18" fill="#fff" stroke="#86EFAC"/><text x="62" y="209" font-size="18" text-anchor="middle">£</text>
-          <text x="90" y="200" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Exchange rate</text>
-          <text x="90" y="234" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Depreciation can help</text>
-          <text x="90" y="248" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">price competitiveness.</text>
+          <rect x="14" y="158" width="226" height="116" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="50" cy="200" r="21" fill="#fff" stroke="#86EFAC"/><text x="50" y="208" font-size="21" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£</text>
+          <text x="84" y="206" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Exchange rate</text>
+          <text x="84" y="234" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">Depreciation can help</text>
+          <text x="84" y="250" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">price competitiveness.</text>
         </g>
         <g>
-          <rect x="30" y="320" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="62" cy="352" r="18" fill="#fff" stroke="#86EFAC"/><text x="62" y="359" font-size="18" text-anchor="middle">🛢️</text>
-          <text x="90" y="350" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Commodity &amp; energy</text>
-          <text x="90" y="364" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">prices</text>
-          <text x="90" y="384" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Expensive imports can</text>
-          <text x="90" y="398" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">worsen the balance.</text>
+          <rect x="14" y="302" width="226" height="116" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="50" cy="338" r="21" fill="#fff" stroke="#86EFAC"/><text x="50" y="346" font-size="21" text-anchor="middle">🛢️</text>
+          <text x="84" y="336" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Commodity &amp; energy</text>
+          <text x="84" y="354" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">prices</text>
+          <text x="84" y="380" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">Expensive imports can</text>
+          <text x="84" y="396" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">worsen the balance.</text>
         </g>
 
         <!-- CENTRE HUB -->
-        <circle cx="380" cy="270" r="78" fill="#fff" stroke="#0B1426" stroke-width="2.5"/>
-        <text x="380" y="262" font-size="32" text-anchor="middle">⚖️</text>
-        <text x="380" y="294" font-size="11.5" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Current</text>
-        <text x="380" y="308" font-size="11.5" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">account balance</text>
+        <circle cx="380" cy="216" r="88" fill="#fff" stroke="#0B1426" stroke-width="2.5"/>
+        <text x="380" y="206" font-size="38" text-anchor="middle">⚖️</text>
+        <text x="380" y="240" font-size="13.5" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Current</text>
+        <text x="380" y="257" font-size="13.5" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">account balance</text>
 
         <!-- RIGHT TILES -->
         <g>
-          <rect x="530" y="20" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="562" cy="52" r="18" fill="#fff" stroke="#86EFAC"/><text x="562" y="59" font-size="18" text-anchor="middle">🌍</text>
-          <text x="590" y="50" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Foreign income</text>
-          <text x="590" y="64" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ demand</text>
-          <text x="590" y="84" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Stronger trading partners</text>
-          <text x="590" y="98" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">raise export demand.</text>
+          <rect x="520" y="14" width="226" height="116" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="556" cy="50" r="21" fill="#fff" stroke="#86EFAC"/><text x="556" y="58" font-size="21" text-anchor="middle">🌍</text>
+          <text x="590" y="48" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Foreign income</text>
+          <text x="590" y="66" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ demand</text>
+          <text x="590" y="92" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">Stronger trading partners</text>
+          <text x="590" y="108" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">raise export demand.</text>
         </g>
         <g>
-          <rect x="530" y="170" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="562" cy="202" r="18" fill="#fff" stroke="#86EFAC"/><text x="562" y="209" font-size="18" text-anchor="middle">📈</text>
-          <text x="590" y="200" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Competitiveness</text>
-          <text x="590" y="214" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ productivity</text>
-          <text x="590" y="234" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Better quality &amp; lower</text>
-          <text x="590" y="248" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">unit costs help exports.</text>
+          <rect x="520" y="158" width="226" height="116" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="556" cy="200" r="21" fill="#fff" stroke="#86EFAC"/><text x="556" y="208" font-size="21" text-anchor="middle">📈</text>
+          <text x="590" y="206" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Competitiveness</text>
+          <text x="590" y="224" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">/ productivity</text>
+          <text x="590" y="250" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">Better quality &amp; lower</text>
+          <text x="590" y="266" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">unit costs help exports.</text>
         </g>
         <g>
-          <rect x="530" y="320" width="200" height="100" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="562" cy="352" r="18" fill="#fff" stroke="#86EFAC"/><text x="562" y="359" font-size="18" text-anchor="middle">🐷</text>
-          <text x="590" y="350" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Saving vs investment</text>
-          <text x="590" y="370" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Low national saving</text>
-          <text x="590" y="384" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">relative to investment</text>
-          <text x="590" y="398" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">often links to deficits.</text>
+          <rect x="520" y="302" width="226" height="116" rx="14" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="556" cy="338" r="21" fill="#fff" stroke="#86EFAC"/><text x="556" y="346" font-size="21" text-anchor="middle">🐷</text>
+          <text x="590" y="332" font-size="14.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Saving vs investment</text>
+          <text x="590" y="358" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">Low national saving</text>
+          <text x="590" y="374" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">relative to investment</text>
+          <text x="590" y="390" font-size="12.5" fill="#0B1426" font-family="Inter,sans-serif">often links to deficits.</text>
         </g>
 
       </svg>
       <div class="bop-hub-chain">
-        <div class="bop-hub-chain-label">A SIMPLE CHAIN</div>
+        <div class="bop-hub-chain-label"><span class="bop-hub-chain-emoji">🔗</span><span>A simple chain</span><span class="bop-hub-chain-rule"></span></div>
         <div class="bop-hub-chain-row">
           <div class="bop-hub-chain-step">UK demand rises</div>
           <div class="bop-hub-chain-sep">→</div>

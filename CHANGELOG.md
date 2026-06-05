@@ -6,6 +6,86 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.66.0 – 2026-06-05
+
+### Theme 2 – topic structure aligned to the Edexcel A specification
+
+Theme 2's topic grid now mirrors the spec's sub-section structure
+one-to-one. Audit against the canonical Pearson 9EC0 spec (verified
+against `docs/edexcel-a-spec.md`) revealed three places where one
+Econos topic spanned several spec sub-sections, plus a numbering bug
+and a label that didn't match the spec wording. All fixed by
+lift-and-shift: every card moves to the right home, no content
+authored, no content lost.
+
+**Splits**
+
+- `aggregate-supply` (Edexcel A 2.3) → three topics:
+  - **`aggregate-supply`** (2.3.1 *Characteristics of AS*) – 2 cards
+    (overview + AS in the AD/AS model). Title now "Characteristics
+    of Aggregate Supply" to match the spec.
+  - **`short-run-aggregate-supply`** (2.3.2) – 2 cards (SRAS curve +
+    factors that shift SRAS).
+  - **`long-run-aggregate-supply`** (2.3.3) – 4 cards (LRAS curve +
+    shifts in LRAS + supply-side policies + evaluation).
+- `national-income` (Edexcel A 2.4) → two topics:
+  - **`national-income`** (2.4.1) – 2 cards (circular flow + income
+    vs wealth).
+  - **`injections-and-withdrawals`** (2.4.2) – 3 cards (injections +
+    withdrawals + the open-economy equilibrium where J = W).
+- `equilibrium-national-income` (Edexcel A 2.4.3) → two topics:
+  - **`equilibrium-national-income`** (2.4.3) – 3 cards (J=W and 45°
+    views, AD/AS equilibrium, reading GDP data).
+  - **`output-gaps`** (2.5.2) – 1 card (recessionary and inflationary
+    gaps – previously buried at the back of equilibrium income).
+- `trade-cycle-shocks-and-economic-growth` (mis-mapped to 2.5.1) →
+  two topics:
+  - **`trade-business-cycle`** (2.5.3) – 4 cards (the wave, shock
+    diagnosis, the stagflation policy dilemma, the case for growth).
+    Renamed to match the spec sub-section title verbatim.
+  - **`causes-of-growth`** (2.5.1) – 1 card (actual vs potential
+    growth, with hysteresis).
+
+**Renames**
+
+- `government-spending` (Edexcel A 2.2.4) → **`government-expenditure`**.
+  The spec calls it "Government expenditure (G)"; the topic id, URL,
+  display name and chip now all match.
+
+**Numbering fixes**
+
+- `trade-cycle-shocks-and-economic-growth` was mapped to spec 2.5.1
+  but its content covers 2.5.3 (boom, recession, the cycle wave).
+  Now correctly mapped to **2.5.3** as `trade-business-cycle`.
+
+**URL breakage (accepted)**
+
+URLs under the old topic paths (`/aggregate-supply/learn-it/lras-*`,
+`/government-spending/learn-it/*`, `/trade-cycle-shocks-and-economic-
+growth/learn-it/*`, etc.) now 404. These are study URLs, not external
+links – Roger agreed to break them rather than add a redirect layer
+for a one-off restructure.
+
+**Out of scope (deliberately)**
+
+This pass is Theme 2 only. The smaller misalignments in Theme 3
+(`business-growth` mapped to 3.1.1 but covering 3.1.2; missing
+3.1.1 *Sizes of firms*, 3.1.3 *Demergers*) and Theme 4 (no dedicated
+topics for 4.1.3 *Pattern of trade*, 4.1.4 *Terms of trade*) are
+documented but unchanged.
+
+**Verification**
+
+- All 27 Theme 2 data files parse cleanly.
+- `npm run build` succeeds; per-(board, topic) page count rises from
+  682 → 687 to cover the five new topic IDs.
+- All eight changed routes return HTTP 200; cover pages render
+  correctly with the right titles, intros and stage info.
+- ESLint clean; 141 unit tests pass; only pre-existing card-length
+  warnings remain.
+
+Cache bumped to `econos-v361`.
+
 ## 0.65.0 – 2026-06-05
 
 ### Em-dash → en-dash sweep across all user-facing content

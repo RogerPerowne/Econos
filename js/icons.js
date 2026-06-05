@@ -16013,17 +16013,15 @@ window.ECONOS_ICONS = {
         .bop-3a-tile { display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px; background:#F8FAFC; margin-bottom:6px; font-size:12px; color:#0B1426; line-height:1.4; }
         .bop-3a-bullet { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
         .bop-3a-note { font-size:11px; color:#475569; font-style:italic; margin-top:8px; text-align:center; line-height:1.5; }
-        .bop-3a-arrows { display:grid; grid-template-columns:1fr 1fr 1fr; align-items:end; height:32px; margin-bottom:4px; }
-        .bop-3a-arrow { display:flex; flex-direction:column; align-items:center; }
-        .bop-3a-arrow-line { width:2px; height:24px; }
-        .bop-3a-arrow-head { width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; }
+        .bop-3a-funnel { width:100%; margin:0 auto 2px; }
+        .bop-3a-funnel svg { width:100%; height:auto; display:block; }
         .bop-3a-balance { display:flex; flex-direction:column; align-items:center; }
         .bop-3a-pill { display:inline-flex; align-items:center; gap:10px; padding:12px 22px; border-radius:999px; background:#fff; border:2.5px solid #0B1426; font-weight:900; font-size:15px; color:#0B1426; line-height:1.3; }
         .bop-3a-pill-icon { width:28px; height:28px; border-radius:50%; background:#0B1426; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; }
         .bop-3a-sub { margin-top:10px; padding:10px 16px; background:#EFF6FF; border:1px solid #BFDBFE; border-radius:8px; font-size:12.5px; color:#1E3A8A; font-weight:600; line-height:1.55; text-align:center; }
         @media (max-width: 760px) {
           .bop-3a-grid { grid-template-columns:1fr; }
-          .bop-3a-arrows { display:none; }
+          .bop-3a-funnel { display:none; }
         }
       </style>
       <div class="bop-3a-grid">
@@ -16057,10 +16055,17 @@ window.ECONOS_ICONS = {
           <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#2563EB;"></span>Reserve assets</div>
         </div>
       </div>
-      <div class="bop-3a-arrows">
-        <div class="bop-3a-arrow"><div class="bop-3a-arrow-line" style="background:#16A34A;"></div><div class="bop-3a-arrow-head" style="border-top:8px solid #16A34A;"></div></div>
-        <div class="bop-3a-arrow"><div class="bop-3a-arrow-line" style="background:#7C3AED;"></div><div class="bop-3a-arrow-head" style="border-top:8px solid #7C3AED;"></div></div>
-        <div class="bop-3a-arrow"><div class="bop-3a-arrow-line" style="background:#2563EB;"></div><div class="bop-3a-arrow-head" style="border-top:8px solid #2563EB;"></div></div>
+      <div class="bop-3a-funnel">
+        <svg viewBox="0 0 1000 54" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="bop3a-arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="bop3a-arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="bop3a-arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+          <path d="M 167 2 L 167 22 Q 167 28 173 28 L 404 28 Q 410 28 410 34 L 410 50" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" marker-end="url(#bop3a-arr-green)"/>
+          <path d="M 500 2 L 500 50" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" marker-end="url(#bop3a-arr-purple)"/>
+          <path d="M 833 2 L 833 22 Q 833 28 827 28 L 596 28 Q 590 28 590 34 L 590 50" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" marker-end="url(#bop3a-arr-blue)"/>
+        </svg>
       </div>
       <div class="bop-3a-balance">
         <div class="bop-3a-pill"><span class="bop-3a-pill-icon">⚖️</span>Overall balance = 0</div>

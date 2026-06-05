@@ -36,9 +36,9 @@ window.ECONOS_TOPIC = {
         emoji: '📈',
         layout: 'side',
         bullets: [
-          '<strong style="color:#2563EB;">The PPF curve</strong> — the <em>maximum</em> combinations of two goods the economy can produce with its current resources and technology.',
-          '<strong style="color:#475569;">Everything below the curve</strong> is <strong>feasible</strong> — the economy could produce it using existing resources.',
-          '<strong style="color:#475569;">Everything above the curve</strong> is <strong>beyond current resources</strong> — only reachable with more resources or better technology.'
+          '<strong style="color:#2563EB;">The PPF curve</strong> – the <em>maximum</em> combinations of two goods the economy can produce with its current resources and technology.',
+          '<strong style="color:#475569;">Everything below the curve</strong> is <strong>feasible</strong> – the economy could produce it using existing resources.',
+          '<strong style="color:#475569;">Everything above the curve</strong> is <strong>beyond current resources</strong> – only reachable with more resources or better technology.'
         ]
       },
       methodGrid: {
@@ -55,9 +55,9 @@ window.ECONOS_TOPIC = {
         label: 'Assumptions',
         emoji: '📄',
         items: [
-          { tone: 'blue', icon: '👥', title: 'Resources fixed',  sub: 'A given amount of labour, capital, land and enterprise — no change in total resources.' },
-          { tone: 'blue', icon: '⚙️', title: 'Technology fixed', sub: 'Methods of production stay the same — no technological improvement.' },
-          { tone: 'blue', icon: '✅', title: 'Full employment',  sub: 'All resources used fully and efficiently — the economy sits on the frontier.' }
+          { tone: 'blue', icon: '👥', title: 'Resources fixed',  sub: 'A given amount of labour, capital, land and enterprise – no change in total resources.' },
+          { tone: 'blue', icon: '⚙️', title: 'Technology fixed', sub: 'Methods of production stay the same – no technological improvement.' },
+          { tone: 'blue', icon: '✅', title: 'Full employment',  sub: 'All resources used fully and efficiently – the economy sits on the frontier.' }
         ]
       },
       keyTakeaway: 'A PPF is not just a curve – it is a visual summary of scarcity, efficiency and trade-offs.',
@@ -77,21 +77,21 @@ window.ECONOS_TOPIC = {
         emoji: '🎯',
         layout: 'side',
         bullets: [
-          '<strong style="color:#2563EB;">A · Productively efficient</strong> — on the frontier. All resources fully used: no waste, no unemployment.',
-          '<strong style="color:#D97706;">B · Productively inefficient</strong> — inside the frontier. Some resources underused or unemployed (spare capacity).',
-          '<strong style="color:#059669;">C · Unattainable now</strong> — outside the frontier. Achievable only with more resources or better technology.'
+          '<strong style="color:#2563EB;">A · Productively efficient</strong> – on the frontier. All resources fully used: no waste, no unemployment.',
+          '<strong style="color:#D97706;">B · Productively inefficient</strong> – inside the frontier. Some resources underused or unemployed (spare capacity).',
+          '<strong style="color:#059669;">C · Unattainable now</strong> – outside the frontier. Achievable only with more resources or better technology.'
         ]
       },
       methodGrid: {
         label: 'What each region means',
         emoji: '📍',
         items: [
-          { tone: 'amber', icon: '📉', title: 'Recession / spare capacity', body: 'The economy operates <strong>inside</strong> the curve — unemployment or idle resources exist.' },
-          { tone: 'blue',  icon: '👥', title: 'Full employment',            body: 'The economy operates <strong>on</strong> the curve — resources fully used, no spare capacity.' },
+          { tone: 'amber', icon: '📉', title: 'Recession / spare capacity', body: 'The economy operates <strong>inside</strong> the curve – unemployment or idle resources exist.' },
+          { tone: 'blue',  icon: '👥', title: 'Full employment',            body: 'The economy operates <strong>on</strong> the curve – resources fully used, no spare capacity.' },
           { tone: 'green', icon: '📈', title: 'Long-run growth',             body: 'Only pushing the frontier <strong>outward</strong> turns today’s unattainable point into a possible one.' }
         ]
       },
-      note: { icon: 'ℹ️', tone: 'blue', text: 'Moving from inside the curve to the frontier does <strong>not</strong> require economic growth — it requires better use of existing resources.' },
+      note: { icon: 'ℹ️', tone: 'blue', text: 'Moving from inside the curve to the frontier does <strong>not</strong> require economic growth – it requires better use of existing resources.' },
       keyTakeaway: 'The PPF separates what is efficient, what is wasteful, and what is not yet possible.',
       examEdge: 'Always state whether a point is on, inside, or outside the frontier before explaining the economics.'
     },
@@ -129,7 +129,7 @@ window.ECONOS_TOPIC = {
         emoji: '💡',
         items: [
           { tone: 'blue',   icon: '👤',  title: 'Every choice has a cost',                  body: 'You can’t have more of everything. Choosing one option means giving up another.' },
-          { tone: 'amber',  icon: '⚖️',  title: 'Cost is measured in real alternatives',    body: 'Opportunity cost is what you <em>forgo</em> when you make a choice — not just the money price.' },
+          { tone: 'amber',  icon: '⚖️',  title: 'Cost is measured in real alternatives',    body: 'Opportunity cost is what you <em>forgo</em> when you make a choice – not just the money price.' },
           { tone: 'green',  icon: '📈',  title: 'The PPF makes trade-offs visible',          body: 'Moving along the curve shows exactly how one good is exchanged for the other.' }
         ]
       },
@@ -142,7 +142,7 @@ window.ECONOS_TOPIC = {
       id: 'ppf_4',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Why the PPF bows out',
-      lede: 'The same +2 capital goods costs very different amounts of consumer goods depending on where you start. Click through three trades — cheap, even, expensive — to see why the curve bows out.',
+      lede: 'The same +2 capital goods costs very different amounts of consumer goods depending on where you start. Click through three trades – cheap, even, expensive – to see why the curve bows out.',
       tip: { icon: '✅', tone: 'green', text: 'The curve bows out because resources are specialised.' },
       interactiveDiagram: {
         svgKey: 'ppfBowedOutInteractive',
@@ -151,17 +151,17 @@ window.ECONOS_TOPIC = {
         layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           { label: 'Cheap trade', tone: 'green', show: ['idl-1'],
-            head: 'Opportunity Cost (OC) ≈ 1/3 — you gain three times what you give up.',
+            head: 'Opportunity Cost (OC) ≈ 1/3 – you gain three times what you give up.',
             body: 'Near the top of the PPF, moving from 2 to 4 capital goods (+2) costs only about <strong>0.6 consumer goods</strong>. The chord is shallow: the gain dwarfs the sacrifice.',
-            analysis: 'The first resources to switch are workers, land and machinery that weren’t much use in consumer goods anyway. Reallocating them barely dents consumer-goods output — so the sacrifice per extra capital good is small.' },
+            analysis: 'The first resources to switch are workers, land and machinery that weren’t much use in consumer goods anyway. Reallocating them barely dents consumer-goods output – so the sacrifice per extra capital good is small.' },
           { label: 'Even trade', tone: 'blue', show: ['idl-1','idl-2'],
-            head: 'OC = 1 — exactly a 1-for-1 trade.',
+            head: 'OC = 1 – exactly a 1-for-1 trade.',
             body: 'In the middle of the PPF, moving from 6 to 8 capital goods (+2) costs exactly <strong>2 consumer goods</strong>. The chord sits at 45°: you give up what you gain, unit for unit.',
             analysis: 'The easy switches are gone. The resources moving now are about equally productive in both sectors, so the sacrifice matches the gain unit-for-unit.' },
           { label: 'Costly trade', tone: 'rose', show: ['idl-1','idl-2','idl-3'],
-            head: 'OC ≈ 3 — you give up three times what you gain.',
-            body: 'At the far right of the PPF, moving from 8 to ~10 capital goods (+2) costs almost <strong>6 consumer goods</strong> — the curve crashes to the x-axis. The same +2 gain now costs <em>nine times</em> what it did at the cheap end.',
-            analysis: 'The last consumer-good resources to switch are the most specialised — workers and machines that were brilliant at consumer goods. Reallocating them is brutal. <strong>That is increasing opportunity cost.</strong>' }
+            head: 'OC ≈ 3 – you give up three times what you gain.',
+            body: 'At the far right of the PPF, moving from 8 to ~10 capital goods (+2) costs almost <strong>6 consumer goods</strong> – the curve crashes to the x-axis. The same +2 gain now costs <em>nine times</em> what it did at the cheap end.',
+            analysis: 'The last consumer-good resources to switch are the most specialised – workers and machines that were brilliant at consumer goods. Reallocating them is brutal. <strong>That is increasing opportunity cost.</strong>' }
         ]
       },
       methodGrid: {
@@ -189,10 +189,10 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Consumer vs capital goods trade-off',
       lede: 'Every economy chooses where to sit on the consumer–capital goods PPF. The choice today shapes where the PPF will be tomorrow.',
-      tip: { icon: '💡', tone: 'blue', text: 'Sacrifice now can expand future productive capacity — the Jamland story.' },
+      tip: { icon: '💡', tone: 'blue', text: 'Sacrifice now can expand future productive capacity – the Jamland story.' },
       interactiveDiagram: {
         svgKey: 'ppfConsumerCapital',
-        label: 'From "now" to "later" — the investment trade-off',
+        label: 'From "now" to "later" – the investment trade-off',
         emoji: '📈',
         // Every layer the engine emits, in the order it's emitted.
         // Per-view `show` arrays below pick exactly which to display.
@@ -203,16 +203,16 @@ window.ECONOS_TOPIC = {
             tone: 'blue',
             show: ['countries', 'ppf1s'],
             head: 'Where countries actually sit on the PPF',
-            body: 'Every economy chooses a mix of consumer goods (everything households buy today) and capital goods (machines, infrastructure, buildings that boost <strong>future</strong> production). The UK, Germany and China sit at very different points on the same conceptual PPF — driven by their investment ratios.',
-            analysis: 'Investment ratios (Gross Fixed Capital Formation as a % of GDP): UK and USA ~18%, Germany ~22%, China ~42%. Capital-heavy economies sit further to the right on the PPF — less consumption now, but more productive capacity being built. China\'s growth over the past three decades has been <strong>directly dependent</strong> on sustained capital allocation: infrastructure, factories, machinery. The UK\'s comparatively low investment ratio is one structural reason its long-run growth has lagged.'
+            body: 'Every economy chooses a mix of consumer goods (everything households buy today) and capital goods (machines, infrastructure, buildings that boost <strong>future</strong> production). The UK, Germany and China sit at very different points on the same conceptual PPF – driven by their investment ratios.',
+            analysis: 'Investment ratios (Gross Fixed Capital Formation as a % of GDP): UK and USA ~18%, Germany ~22%, China ~42%. Capital-heavy economies sit further to the right on the PPF – less consumption now, but more productive capacity being built. China\'s growth over the past three decades has been <strong>directly dependent</strong> on sustained capital allocation: infrastructure, factories, machinery. The UK\'s comparatively low investment ratio is one structural reason its long-run growth has lagged.'
           },
           {
             label: 'Less jam today',
             tone: 'purple',
             show: ['ppf1s', 'a-lbl', 'b-pos', 'a-b-arrow'],
             head: 'UK moves A → B (along PPF₁)',
-            body: 'The UK\'s current production mix is <strong>A</strong> — heavily weighted toward consumer goods. To boost long-run growth, it can move <em>along</em> PPF₁ to point <strong>B</strong>: produce less consumer goods now, more capital goods.',
-            analysis: 'This is movement <strong>along the existing PPF</strong> — not yet a shift. A → B is a reallocation of existing resources, with a real opportunity cost: lower consumer goods output means lower present living standards. Post-war Germany, Japan, South Korea (1960s–80s) and China (1990s–2010s) all made this choice deliberately — <strong>China averaged ~9.5% real growth p.a. from 1990–2010 against the UK\'s ~2.3%</strong>, the cumulative effect of decades of high investment ratios shifting PPF₂ further and further out. The political challenge: voters resist short-term sacrifices even when long-term gains are large.'
+            body: 'The UK\'s current production mix is <strong>A</strong> – heavily weighted toward consumer goods. To boost long-run growth, it can move <em>along</em> PPF₁ to point <strong>B</strong>: produce less consumer goods now, more capital goods.',
+            analysis: 'This is movement <strong>along the existing PPF</strong> – not yet a shift. A → B is a reallocation of existing resources, with a real opportunity cost: lower consumer goods output means lower present living standards. Post-war Germany, Japan, South Korea (1960s–80s) and China (1990s–2010s) all made this choice deliberately – <strong>China averaged ~9.5% real growth p.a. from 1990–2010 against the UK\'s ~2.3%</strong>, the cumulative effect of decades of high investment ratios shifting PPF₂ further and further out. The political challenge: voters resist short-term sacrifices even when long-term gains are large.'
           },
           {
             label: 'The frontier grows',
@@ -226,19 +226,19 @@ window.ECONOS_TOPIC = {
             label: 'More jam tomorrow',
             tone: 'green',
             show: ['ppf1d', 'a-lbl', 'b-pos', 'ppf2', 'c-pos', 'b-c-arrow', 'd-arrow'],
-            head: 'D — consumer-heavy again, but at higher absolute levels',
-            body: 'With PPF₂ in hand, the country specialises <strong>back</strong> toward consumer goods — moving along PPF₂ from C to D. D is the same kind of allocation A occupied on PPF₁ originally. But because PPF₂ is bigger, D delivers more consumer goods AND more capital goods.',
-            analysis: 'Compare D with A: same "consumer-heavy" mix, but everything is higher in absolute terms. That\'s the long-run pay-off of the A → B → PPF shift → D trajectory. The "Jamland" insight: <strong>more jam tomorrow is possible — but only if you stomach less jam today.</strong> A* moves: name the opportunity cost (consumer goods foregone at B), distinguish movement along the PPF (A→B, C→D) from a shift of the PPF (PPF₁→PPF₂), and link to real countries that made this choice.'
+            head: 'D – consumer-heavy again, but at higher absolute levels',
+            body: 'With PPF₂ in hand, the country specialises <strong>back</strong> toward consumer goods – moving along PPF₂ from C to D. D is the same kind of allocation A occupied on PPF₁ originally. But because PPF₂ is bigger, D delivers more consumer goods AND more capital goods.',
+            analysis: 'Compare D with A: same "consumer-heavy" mix, but everything is higher in absolute terms. That\'s the long-run pay-off of the A → B → PPF shift → D trajectory. The "Jamland" insight: <strong>more jam tomorrow is possible – but only if you stomach less jam today.</strong> A* moves: name the opportunity cost (consumer goods foregone at B), distinguish movement along the PPF (A→B, C→D) from a shift of the PPF (PPF₁→PPF₂), and link to real countries that made this choice.'
           }
         ]
       },
       keyTerms: [
-        { term: 'Investment ratio',  def: 'Gross Fixed Capital Formation as a % of GDP — the share of an economy\'s output devoted to building productive capital (machines, infrastructure) rather than consumed today.' },
-        { term: 'Deferred consumption', def: 'Choosing to consume less now (point B vs A) so that more resources go into capital goods — the opportunity cost paid for long-run growth.' },
+        { term: 'Investment ratio',  def: 'Gross Fixed Capital Formation as a % of GDP – the share of an economy\'s output devoted to building productive capital (machines, infrastructure) rather than consumed today.' },
+        { term: 'Deferred consumption', def: 'Choosing to consume less now (point B vs A) so that more resources go into capital goods – the opportunity cost paid for long-run growth.' },
         { term: 'PPF outward shift', def: 'A long-run increase in productive capacity, driven by capital accumulation, better technology, or labour-force growth. Movement along the PPF (A→B) is not a shift; only PPF₁ → PPF₂ is.' }
       ],
-      keyTakeaway: 'PPFs show that growth often requires a present-day opportunity cost — but the long-run pay-off is more of <em>both</em> goods.',
-      examEdge: 'A* moves: name the OPPORTUNITY COST of investment (consumer goods foregone — point A to point B), distinguish movement along the PPF (A→B) from a shift (PPF₁→PPF₂), and link to real countries. Post-war Germany and Japan made this exact choice; their PPFs shifted dramatically outward over the following decades. The UK\'s lower investment ratio is one structural reason its growth has lagged.'
+      keyTakeaway: 'PPFs show that growth often requires a present-day opportunity cost – but the long-run pay-off is more of <em>both</em> goods.',
+      examEdge: 'A* moves: name the OPPORTUNITY COST of investment (consumer goods foregone – point A to point B), distinguish movement along the PPF (A→B) from a shift (PPF₁→PPF₂), and link to real countries. Post-war Germany and Japan made this exact choice; their PPFs shifted dramatically outward over the following decades. The UK\'s lower investment ratio is one structural reason its growth has lagged.'
     },
 
     {
@@ -246,7 +246,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Shifts in the PPF',
-      lede: 'The whole production possibility frontier shifts when the economy’s productive capacity changes — not when it simply uses existing resources better.',
+      lede: 'The whole production possibility frontier shifts when the economy’s productive capacity changes – not when it simply uses existing resources better.',
       tip: { icon: '✅', tone: 'green', text: 'A shift means the economy can produce more or less than before.' },
       diagramLabel: 'Three kinds of shift',
       diagramEmoji: '📈',
@@ -275,7 +275,7 @@ window.ECONOS_TOPIC = {
       examEdge: 'Differentiate clearly between a movement to the frontier and an outward shift of the frontier.'
     },
 
-    /* ── CARD 7 — The PPF exam toolkit (consolidation) ────────────── */
+    /* ── CARD 7 – The PPF exam toolkit (consolidation) ────────────── */
     {
       id: 'ppf_7',
       template: 'framing',
@@ -309,14 +309,14 @@ window.ECONOS_TOPIC = {
       flowBottomTitle: 'How to write it',
       flowBottomEmoji: '✍️',
       flowBottom: [
-        { icon: '🔍',  title: '1. Identify', sub: 'Pinpoint the location — point A is on, inside or outside the PPF — or the type of change (movement along vs outward/inward shift).', tone: 'blue'   },
+        { icon: '🔍',  title: '1. Identify', sub: 'Pinpoint the location – point A is on, inside or outside the PPF – or the type of change (movement along vs outward/inward shift).', tone: 'blue'   },
         { icon: '💬',  title: '2. State',    sub: 'Say what it means in plain economic terms: efficient, unemployed, unobtainable, growing, declining.',                                tone: 'amber'  },
-        { icon: '🔗',  title: '3. Link',     sub: 'Connect it back to the underlying concept the curve illustrates — scarcity, opportunity cost, productive efficiency, growth.',     tone: 'green'  },
-        { icon: '🏛️', title: '4. Finish',   sub: 'Close with the consequence — what does this mean for output, welfare or the policy choice the question asks about?',                tone: 'purple' }
+        { icon: '🔗',  title: '3. Link',     sub: 'Connect it back to the underlying concept the curve illustrates – scarcity, opportunity cost, productive efficiency, growth.',     tone: 'green'  },
+        { icon: '🏛️', title: '4. Finish',   sub: 'Close with the consequence – what does this mean for output, welfare or the policy choice the question asks about?',                tone: 'purple' }
       ],
       note: { icon: 'ℹ️', tone: 'blue', text: 'PPFs help economists tell the story of <strong>choice now, efficiency today, and growth tomorrow</strong>.' },
-      keyTakeaway: 'If you can read a PPF well, you can explain a surprising amount of economics — the PPF\'s power is its <strong>density</strong>: scarcity, choice, efficiency and growth all in one diagram. No other introductory model packs as much.',
-      examEdge: 'Top answers use the PPF actively — they do not just label the curve, they explain the mechanism.',
+      keyTakeaway: 'If you can read a PPF well, you can explain a surprising amount of economics – the PPF\'s power is its <strong>density</strong>: scarcity, choice, efficiency and growth all in one diagram. No other introductory model packs as much.',
+      examEdge: 'Top answers use the PPF actively – they do not just label the curve, they explain the mechanism.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]

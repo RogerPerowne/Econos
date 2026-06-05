@@ -1,5 +1,5 @@
 /* ============================================================
-   PED along a linear demand curve — engine spec for pedLinearRegions
+   PED along a linear demand curve – engine spec for pedLinearRegions
    (Price-elasticity-of-demand card 4). Layered spec for the
    `interactiveDiagram` block: PED changes as you move down a
    straight-line demand curve.

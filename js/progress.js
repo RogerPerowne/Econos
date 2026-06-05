@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Progress tracking
+   ECONOS – Progress tracking
    ─────────────────────────────────────────────────────────────
    Centralised wrapper over localStorage so engines stop sprinkling
    `localStorage.getItem('econos_link_unlocked')` everywhere with
@@ -28,7 +28,7 @@
 
   var STORAGE_PREFIX = 'econos:';
 
-  /* Storage primitives — never throw. Return undefined on failure. */
+  /* Storage primitives – never throw. Return undefined on failure. */
   function readRaw(key) {
     try { return window.localStorage.getItem(key); }
     catch (e) { return null; }
@@ -59,7 +59,7 @@
      All callers now go through Progress.* so storage is per-topic
      under `econos:<topic>:link_unlocked`. The legacy global key
      (`econos_link_unlocked`) is still READ as a one-time fallback so
-     existing users get migrated on first load — first setLinkUnlocked
+     existing users get migrated on first load – first setLinkUnlocked
      call after that lands the value in the per-topic key. Writes to
      the legacy key were dropped after the engine sweep. */
   function getLinkUnlocked() {
@@ -83,7 +83,7 @@
   }
 
   /* ──────────────────────────────────────────────────────────────
-     Station visit history — used to colour rail dots per-station. */
+     Station visit history – used to colour rail dots per-station. */
   function visitedKey(stage) { return topicKey('visited_' + stage); }
 
   function getVisited(stage) {

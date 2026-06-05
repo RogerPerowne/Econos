@@ -34,10 +34,10 @@ window.ECONOS_TOPIC = {
         emoji: '🛠️',
         vs: 'VS',
         left:  { tone: 'rose',  icon: '🏭', label: 'Pigouvian tax',
-          caption: 'Set at the marginal external cost (MEC). <strong>Shifts supply up</strong> — raises price, cuts an over-produced good back down to Q*.',
+          caption: 'Set at the marginal external cost (MEC). <strong>Shifts supply up</strong> – raises price, cuts an over-produced good back down to Q*.',
           chips: ['Carbon tax', 'Sugar levy', 'Tobacco duty', 'Congestion charge'] },
         right: { tone: 'green', icon: '🎓', label: 'Merit-good subsidy',
-          caption: 'Set at the marginal external benefit (MEB). <strong>Shifts supply down</strong> — lowers price, lifts an under-produced good up to Q*.',
+          caption: 'Set at the marginal external benefit (MEB). <strong>Shifts supply down</strong> – lowers price, lifts an under-produced good up to Q*.',
           chips: ['Vaccinations', 'Education', 'Renewables', 'NHS'] }
       },
       causesLabel: 'Three justification logics',
@@ -152,7 +152,7 @@ window.ECONOS_TOPIC = {
         { icon: '👥', tone: 'amber',  title: 'Analyse who gains and loses', sub: 'Use incidence – cite PED/PES to show burden split. State redistribution effects. Who captures the subsidy?' },
         { icon: '⚖️', tone: 'purple', title: 'Reach a judgement',          sub: 'Use effectiveness–efficiency–equity to conclude. Is the welfare gain larger than the DWL? Is a better tool available? Apply to the specific context.' }
       ],
-      examEdge: '<strong>What this topic covers — and what comes next.</strong> This topic uses the Pigouvian / merit-good lens to justify and evaluate taxes and subsidies as corrective tools. Spec 1.4.1(a) is fully covered here (tax/subsidy diagrams, incidence, evaluation). The four <em>other</em> 1.4.1(b) tools — <strong>tradable pollution permits, state provision of public goods, provision of information, and regulation</strong> — each have their own strengths and limitations, and are covered in detail in the next topic, <em>Government Intervention in Markets</em>.',
+      examEdge: '<strong>What this topic covers – and what comes next.</strong> This topic uses the Pigouvian / merit-good lens to justify and evaluate taxes and subsidies as corrective tools. Spec 1.4.1(a) is fully covered here (tax/subsidy diagrams, incidence, evaluation). The four <em>other</em> 1.4.1(b) tools – <strong>tradable pollution permits, state provision of public goods, provision of information, and regulation</strong> – each have their own strengths and limitations, and are covered in detail in the next topic, <em>Government Intervention in Markets</em>.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

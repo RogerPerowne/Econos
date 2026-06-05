@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It · Section B renderer
+   ECONOS – Land It · Section B renderer
    ============================================================ */
 
 (function () {
@@ -439,7 +439,7 @@
         });
       }
 
-      /* continue / finish — save timing + attempted status */
+      /* continue / finish – save timing + attempted status */
       var continueBtn = document.getElementById('js-continue-btn');
       if (continueBtn) {
         continueBtn.addEventListener('click', function () {

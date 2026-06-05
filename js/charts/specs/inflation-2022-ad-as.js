@@ -1,6 +1,6 @@
 /* ============================================================
-   Inflation 2022 AD-AS — engine spec for inflation2022AdAs.
-   Macro-conflicts topic — card 4 "The 2021–23 inflation surge".
+   Inflation 2022 AD-AS – engine spec for inflation2022AdAs.
+   Macro-conflicts topic – card 4 "The 2021–23 inflation surge".
 
    3-view exclusive-layer AD-AS sequence telling the UK story:
      view 1  → Baseline E₀ on AD₀ ∩ SRAS₀ at LRAS (full capacity)
@@ -12,7 +12,7 @@
                 back down: lower P than E₁, but Y still below Y₀.
 
    LRAS is always visible (light dashed) as the long-run anchor.
-   Mutually exclusive layers — each view is a snapshot in time.
+   Mutually exclusive layers – each view is a snapshot in time.
    ============================================================ */
 (function () {
   'use strict';
@@ -36,7 +36,7 @@
     },
 
     curves: [
-      /* LRAS — always visible as the long-run anchor */
+      /* LRAS – always visible as the long-run anchor */
       { d: 'M ' + YF + ',0 L ' + YF + ',1',
         tone: 'slate', label: 'LRAS', strokeWidth: 1.2, dashed: '5 5',
         opacity: 0.6,

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro page renderer
+   ECONOS – Link It intro page renderer
    Mirrors the Learn It intro shell but lists stations + skills.
    ============================================================ */
 

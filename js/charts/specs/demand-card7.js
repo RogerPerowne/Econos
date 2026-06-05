@@ -1,5 +1,5 @@
 /* ============================================================
-   Demand card 2 — INTERACTIVE "why the demand curve slopes down"
+   Demand card 2 – INTERACTIVE "why the demand curve slopes down"
    (icons key: demandSlopeCurve; className dslope-svg). Rendered via the
    interactiveDiagram block.
 

@@ -115,7 +115,7 @@ window.ECONOS_TOPIC = {
         { term: 'Specific tax',   def: 'A fixed amount per unit (e.g. 57.95p per litre of petrol). Causes a <strong>parallel</strong> upward shift in supply.' },
         { term: 'Ad valorem tax', def: 'A percentage of price (e.g. 20% VAT, tobacco at 16.5% of retail). Causes supply to <strong>pivot</strong> upward – gap widens at higher prices.' }
       ],
-      examEdge: 'Get the shift shape right: a <strong>specific</strong> tax is a <em>parallel</em> shift (constant £T at every quantity); an <strong>ad valorem</strong> tax is a <em>pivot</em> (gap widens with price). Then note the dynamic point — ad valorem revenue scales automatically with inflation, while specific duties erode in real terms unless uprated (why UK alcohol duty freezes quietly cut the real tax for years).'
+      examEdge: 'Get the shift shape right: a <strong>specific</strong> tax is a <em>parallel</em> shift (constant £T at every quantity); an <strong>ad valorem</strong> tax is a <em>pivot</em> (gap widens with price). Then note the dynamic point – ad valorem revenue scales automatically with inflation, while specific duties erode in real terms unless uprated (why UK alcohol duty freezes quietly cut the real tax for years).'
     },
 
     /* ============================================================
@@ -127,7 +127,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_2b',
       stepLabel: 'Learn: Step 3 of 11',
       title: 'Tax incidence – who really pays',
-      tip: { icon: '⚖️', tone: 'green', text: 'The per-unit tax opens a wedge <strong>£T</strong> between the price consumers pay (<strong>Pc</strong>) and the net price producers keep (<strong>Pp</strong>). How that wedge splits — the <strong>incidence</strong> — depends on elasticity: the more <em>inelastic</em> side of the market bears more of the tax.' },
+      tip: { icon: '⚖️', tone: 'green', text: 'The per-unit tax opens a wedge <strong>£T</strong> between the price consumers pay (<strong>Pc</strong>) and the net price producers keep (<strong>Pp</strong>). How that wedge splits – the <strong>incidence</strong> – depends on elasticity: the more <em>inelastic</em> side of the market bears more of the tax.' },
       interactiveDiagram: {
         svgKey: 'taxIncidenceInteractive',
         label: 'Tax incidence – who actually pays?',
@@ -382,13 +382,13 @@ window.ECONOS_TOPIC = {
         right: { tone: 'rose',  icon: '❌', label: 'Weaknesses',
           caption: '<strong>Price volatility</strong> – prices swing with the cycle (EU ETS hit €5). <strong>Carbon leakage</strong> – firms relocate abroad. <strong>Coverage gaps</strong> – the UK ETS excludes farming and most transport.' }
       },
-      causes2Label: 'Tax vs permits — when to choose which',
+      causes2Label: 'Tax vs permits – when to choose which',
       causes2Emoji: '🧭',
       causes2Style: 'tinted-flat',
       causes2Cols: 2,
       causes2: [
-        { tone: 'blue',   icon: '💰', head: 'Pigouvian tax — price-certain', body: '<strong>Fixes the price</strong> of carbon; the quantity adjusts. <strong>Choose when:</strong> the regulator knows the marginal external cost (MEC) reasonably well, and welfare loss is roughly proportional to total emissions. <strong>Risk:</strong> if MEC is mis-set, the wrong quantity of emissions results — which matters less if the harm is roughly linear.' },
-        { tone: 'green',  icon: '📊', head: 'Cap-and-trade — quantity-certain', body: '<strong>Fixes the quantity</strong> of emissions; the price adjusts. <strong>Choose when:</strong> the environmental target is non-negotiable — e.g. legally binding net zero, a planetary tipping point, or a non-substitutable resource. <strong>Risk:</strong> permit prices can swing sharply with the cycle, hurting investment certainty for clean-tech.' }
+        { tone: 'blue',   icon: '💰', head: 'Pigouvian tax – price-certain', body: '<strong>Fixes the price</strong> of carbon; the quantity adjusts. <strong>Choose when:</strong> the regulator knows the marginal external cost (MEC) reasonably well, and welfare loss is roughly proportional to total emissions. <strong>Risk:</strong> if MEC is mis-set, the wrong quantity of emissions results – which matters less if the harm is roughly linear.' },
+        { tone: 'green',  icon: '📊', head: 'Cap-and-trade – quantity-certain', body: '<strong>Fixes the quantity</strong> of emissions; the price adjusts. <strong>Choose when:</strong> the environmental target is non-negotiable – e.g. legally binding net zero, a planetary tipping point, or a non-substitutable resource. <strong>Risk:</strong> permit prices can swing sharply with the cycle, hurting investment certainty for clean-tech.' }
       ],
       keyTerms: [
         { term: 'Cap',                 def: 'The total quantity of emissions allowed across all covered firms in a period. The binding environmental constraint.' },

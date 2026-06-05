@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It Complete page engine
+   ECONOS – Link It Complete page engine
    Reads per-station scores from localStorage and renders the
    results summary card.
    ============================================================ */
@@ -126,7 +126,7 @@
           + '<div class="lc-row">'
           +   '<div class="lc-row__badge" style="background:' + st.color + '">S' + (i + 1) + '</div>'
           +   '<div class="lc-row__name">' + st.label + '</div>'
-          +   '<div class="lc-row__score">' + (stScore != null ? stScore + '/' + st.max : '—') + '</div>'
+          +   '<div class="lc-row__score">' + (stScore != null ? stScore + '/' + st.max : '–') + '</div>'
           +   '<div class="lc-row__fb">' + fbText + '</div>'
           + '</div>';
       }).join('');

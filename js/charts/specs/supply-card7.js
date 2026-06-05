@@ -1,5 +1,5 @@
 /* ============================================================
-   Supply card 2 — INTERACTIVE "why the supply curve slopes up"
+   Supply card 2 – INTERACTIVE "why the supply curve slopes up"
    (icons key: supplySlopeCurve; className sslope-svg). NEW spec file
    (the supply topic previously had only cards 1/2/4). Rendered via the
    interactiveDiagram block.

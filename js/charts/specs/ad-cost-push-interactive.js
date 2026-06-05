@@ -1,10 +1,10 @@
 /* ============================================================
-   AD Cost-Push Interactive — engine spec for adCostPushInteractive.
-   Causes-of-inflation topic — card 3 "Cost-push inflation".
+   AD Cost-Push Interactive – engine spec for adCostPushInteractive.
+   Causes-of-inflation topic – card 3 "Cost-push inflation".
 
    3-view SRAS-leftward shift sequence. AD stays fixed; the
    pressure comes from the supply side (oil shock, wage round,
-   regulation, weak £). The new equilibrium has P↑ and Y↓ —
+   regulation, weak £). The new equilibrium has P↑ and Y↓ –
    the diagnostic tell of cost-push (vs demand-pull's P↑, Y↑).
 
      base    → AD, SRAS₁, E₁ at (Y₁, P₁)
@@ -13,7 +13,7 @@
      view 2  → adds E₂ + dashed P₂/Y₂ gridlines + result chip
 
    No perspective toggle: both Classical and Keynesian schools
-   agree on the cost-push mechanics — a leftward AS shift raises
+   agree on the cost-push mechanics – a leftward AS shift raises
    P and reduces Y. The school-of-thought split is about AD-side
    shocks (see ad-demand-pull-interactive), not supply-side.
 
@@ -43,11 +43,11 @@
     },
 
     curves: [
-      // Base AD — always visible
+      // Base AD – always visible
       { d: 'M 0.097,0.894 L 0.931,0.067',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end' },
-      // Base SRAS₁ solid — hidden once any view becomes active
+      // Base SRAS₁ solid – hidden once any view becomes active
       { d: 'M 0.097,0.067 L 0.931,0.894',
         tone: 'slate', label: 'SRAS₁', strokeWidth: 2,
         labelDx: -6, labelDy: -6, anchor: 'end',

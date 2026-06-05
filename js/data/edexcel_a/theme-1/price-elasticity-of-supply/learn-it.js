@@ -32,7 +32,7 @@ window.ECONOS_TOPIC = {
       id: 'pes_1',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 8',
-      title: 'PES — the big picture',
+      title: 'PES – the big picture',
       lede: 'Elasticity of supply shows how strongly producers respond when price changes.',
       ledeStyle: 'plain',
       tip: { tone: 'green', icon: '🔒', text: '<strong>PES measures the responsiveness of quantity supplied to a change in price.</strong>' },
@@ -51,9 +51,9 @@ window.ECONOS_TOPIC = {
       ],
       note: { tone: 'purple', icon: '🧮', head: 'The formula', text: 'PES = % change in quantity supplied ÷ % change in price. The bigger the number, the more responsive supply is.' },
       notePosition: 'top',
-      bottomTip: { tone: 'blue', icon: 'ℹ️', text: 'Supply is about sellers and production — <strong>not</strong> buyers and demand.' },
+      bottomTip: { tone: 'blue', icon: 'ℹ️', text: 'Supply is about sellers and production – <strong>not</strong> buyers and demand.' },
       conclusion: { title: 'Big idea', text: 'PES tells us whether higher prices mainly trigger more output, or mainly push prices further up.' },
-      examEdge: { title: 'Exam edge', text: 'Always say how much quantity supplied changes <em>relative to</em> price — not just "supply rises".' }
+      examEdge: { title: 'Exam edge', text: 'Always say how much quantity supplied changes <em>relative to</em> price – not just "supply rises".' }
     },
 
     /* ================================================================
@@ -65,7 +65,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Calculating and classifying PES',
-      lede: 'PES is a number — but the sign and size tell a clear story about responsiveness.',
+      lede: 'PES is a number – but the sign and size tell a clear story about responsiveness.',
       ledeStyle: 'plain',
       tip: { tone: 'green', icon: '🔒', text: '<strong>PES = % change in quantity supplied ÷ % change in price.</strong>' },
       visualKey: 'pesCalcClassify',
@@ -79,8 +79,8 @@ window.ECONOS_TOPIC = {
         { tone: 'green', icon: '📈', head: 'High PES', body: 'Output can be scaled up quickly, so quantity does most of the adjusting.' },
         { tone: 'purple', icon: '⚡', head: 'PES and price shocks', body: 'Low PES means demand swings produce bigger price swings.' }
       ],
-      bottomTip: { tone: 'amber', icon: '⚠️', text: 'Use <strong>percentage</strong> changes — not absolute changes.' },
-      conclusion: { title: 'Big idea', text: 'PES is not just a calculation — it is a classification of producer flexibility.' },
+      bottomTip: { tone: 'amber', icon: '⚠️', text: 'Use <strong>percentage</strong> changes – not absolute changes.' },
+      conclusion: { title: 'Big idea', text: 'PES is not just a calculation – it is a classification of producer flexibility.' },
       examEdge: { title: 'Exam edge', text: 'State the value, classify it, then explain what it means for firms.' }
     },
 
@@ -130,10 +130,10 @@ window.ECONOS_TOPIC = {
       causes3Cols: 4,
       causes3Style: 'icon-top',
       causes3: [
-        { tone: 'green', icon: '🐟', head: 'Fresh fish', body: 'Low PES — today\'s catch is fixed.' },
-        { tone: 'amber', icon: '👕', head: 'Clothing', body: 'Higher PES — production can be scaled.' },
-        { tone: 'purple', icon: '🏠', head: 'Housing', body: 'Low PES — planning and construction take time.' },
-        { tone: 'blue', icon: '☁️', head: 'Digital', body: 'Very high PES — extra units are easy to supply.' }
+        { tone: 'green', icon: '🐟', head: 'Fresh fish', body: 'Low PES – today\'s catch is fixed.' },
+        { tone: 'amber', icon: '👕', head: 'Clothing', body: 'Higher PES – production can be scaled.' },
+        { tone: 'purple', icon: '🏠', head: 'Housing', body: 'Low PES – planning and construction take time.' },
+        { tone: 'blue', icon: '☁️', head: 'Digital', body: 'Very high PES – extra units are easy to supply.' }
       ],
       flowTitle: 'Quick rule',
       flowEmoji: '🔗',
@@ -144,8 +144,8 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '📈', title: 'Supply becomes more elastic', sub: '' }
       ],
       bottomTip: { tone: 'blue', icon: 'ℹ️', text: 'The same good can have <strong>different PES in the short run and the long run.</strong>' },
-      conclusion: { title: 'Big idea', text: 'PES is really about constraints — how many barriers stand between a higher price and higher output.' },
-      examEdge: { title: 'Exam edge', text: 'When explaining PES, name the driver — spare capacity, time, stocks, mobility, or production lag.' }
+      conclusion: { title: 'Big idea', text: 'PES is really about constraints – how many barriers stand between a higher price and higher output.' },
+      examEdge: { title: 'Exam edge', text: 'When explaining PES, name the driver – spare capacity, time, stocks, mobility, or production lag.' }
     },
 
     /* ================================================================
@@ -171,24 +171,24 @@ window.ECONOS_TOPIC = {
         { tone: 'amber', icon: '🏭', title: 'Next month', sub: 'Firm adds shifts and restocks.' },
         { tone: 'green', icon: '🏬', title: 'Next year', sub: 'More competitors and capacity appear.' }
       ],
-      bottomTip: { tone: 'blue', icon: '📈', text: 'Same market — <strong>rising PES over time.</strong>' },
+      bottomTip: { tone: 'blue', icon: '📈', text: 'Same market – <strong>rising PES over time.</strong>' },
       causes2Label: 'Worked numerical: same product, two time horizons',
       causes2Emoji: '🧮',
       causes2Style: 'tinted-flat',
       causes2: [
-        { tone: 'purple', icon: '⛽', head: 'Oil supply · Year 1 (short run)', body: 'A 40% price rise prompts an estimated <strong>10% rise</strong> in quantity supplied — existing wells already near capacity. <strong>PES = 10% ÷ 40% = 0.25</strong> (inelastic). Most of the price shock sticks; prices stay high.' },
-        { tone: 'green',  icon: '🛢️', head: 'Oil supply · Year 5 (long run)', body: 'New wells and rigs have been brought online. The same 40% price rise now triggers a <strong>32% rise</strong> in quantity supplied. <strong>PES = 32% ÷ 40% = 0.80</strong> (still inelastic, but ~3× higher than the short run). Prices ease back as supply catches up — which is why oil price shocks moderate over time.' }
+        { tone: 'purple', icon: '⛽', head: 'Oil supply · Year 1 (short run)', body: 'A 40% price rise prompts an estimated <strong>10% rise</strong> in quantity supplied – existing wells already near capacity. <strong>PES = 10% ÷ 40% = 0.25</strong> (inelastic). Most of the price shock sticks; prices stay high.' },
+        { tone: 'green',  icon: '🛢️', head: 'Oil supply · Year 5 (long run)', body: 'New wells and rigs have been brought online. The same 40% price rise now triggers a <strong>32% rise</strong> in quantity supplied. <strong>PES = 32% ÷ 40% = 0.80</strong> (still inelastic, but ~3× higher than the short run). Prices ease back as supply catches up – which is why oil price shocks moderate over time.' }
       ],
       causes3Label: 'Why this matters',
       causes3Emoji: '🎯',
       causes3Cols: 3,
       causes3Style: 'icon-top',
       causes3: [
-        { tone: 'purple', icon: '📈', head: 'Short run', body: 'Low PES means prices can spike when demand jumps — short-run shortages.' },
+        { tone: 'purple', icon: '📈', head: 'Short run', body: 'Low PES means prices can spike when demand jumps – short-run shortages.' },
         { tone: 'amber', icon: '🔄', head: 'Long run', body: 'Higher PES allows output to catch up with demand over time.' },
         { tone: 'green', icon: '❓', head: 'Evaluation', body: 'Always ask: over what time period are we judging supply?' }
       ],
-      conclusion: { title: 'Big idea', text: 'Time is the master variable in PES — flexibility grows as adjustment options multiply.' },
+      conclusion: { title: 'Big idea', text: 'Time is the master variable in PES – flexibility grows as adjustment options multiply.' },
       examEdge: { title: 'Exam edge', text: 'Never discuss PES without saying whether you mean the short run or the long run.' }
     },
 
@@ -200,14 +200,14 @@ window.ECONOS_TOPIC = {
       id: 'pes_6',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 8',
-      title: 'When demand jumps — why PES matters',
+      title: 'When demand jumps – why PES matters',
       lede: 'Elasticity of supply shapes whether a demand increase raises price, quantity, or both.',
       ledeStyle: 'plain',
       tip: { tone: 'green', icon: '🔒', text: '<strong>Low PES means price rises more. High PES means output rises more.</strong>' },
       visualKey: 'elasticVsInelasticSupplyDiagram',
       visualLabel: 'Two market outcomes',
       visualEmoji: '📊',
-      flowTitle: 'Demand rises — two outcomes',
+      flowTitle: 'Demand rises – two outcomes',
       flowEmoji: '📈',
       flowSep: '→',
       flow: [
@@ -227,12 +227,12 @@ window.ECONOS_TOPIC = {
       causes2Emoji: '🏛️',
       causes2Cols: 3,
       causes2: [
-        { tone: 'green', icon: '🏠', head: 'UK housing', body: 'Very low PES: planning limits cap new builds, so when demand rose 2010–22 prices jumped ~75% while quantity barely moved — the shock fell almost entirely on price.' },
-        { tone: 'purple', icon: '🎫', head: 'Concert tickets', body: 'Near-zero PES: a venue\'s capacity is fixed, so extra demand can\'t add seats — it spills into higher prices and resale touts rather than more tickets.' },
-        { tone: 'amber', icon: '👟', head: 'Trainers', body: 'High PES: mass production has spare capacity, so firms scale output up quickly when demand rises — quantity does most of the adjusting and prices stay fairly stable.' }
+        { tone: 'green', icon: '🏠', head: 'UK housing', body: 'Very low PES: planning limits cap new builds, so when demand rose 2010–22 prices jumped ~75% while quantity barely moved – the shock fell almost entirely on price.' },
+        { tone: 'purple', icon: '🎫', head: 'Concert tickets', body: 'Near-zero PES: a venue\'s capacity is fixed, so extra demand can\'t add seats – it spills into higher prices and resale touts rather than more tickets.' },
+        { tone: 'amber', icon: '👟', head: 'Trainers', body: 'High PES: mass production has spare capacity, so firms scale output up quickly when demand rises – quantity does most of the adjusting and prices stay fairly stable.' }
       ],
       bottomTip: { tone: 'blue', icon: 'ℹ️', text: 'PES helps explain why some booms cause inflation while others mainly raise production.' },
-      conclusion: { title: 'Big idea', text: 'Demand shocks do not tell the whole story — supply flexibility determines the market result.' },
+      conclusion: { title: 'Big idea', text: 'Demand shocks do not tell the whole story – supply flexibility determines the market result.' },
       examEdge: { title: 'Exam edge', text: 'In diagram questions, link the steepness of supply to the balance between price and quantity change.' }
     },
 
@@ -272,8 +272,8 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '🔄', head: 'Time', body: 'Can move a market from low PES to higher PES.' }
       ],
       bottomTip: { tone: 'green', icon: '🛠️', head: 'Policy can lift PES', text: '<strong>Supply-side policies aim to raise PES in critical markets.</strong> UK examples: T-Levels and apprenticeship funding raise the long-run elasticity of skilled labour; planning reform aims to raise housing PES (currently the tightest constraint in the UK economy); HS2 and grid investment raise the elasticity of transport and energy supply. Where the binding constraint is regulatory (planning), reform shifts PES faster than where it is physical (oil reserves).' },
-      conclusion: { title: 'Big idea', text: 'PES turns an industry story — capacity, stock, time, and barriers — into a market prediction.' },
-      examEdge: { title: 'Exam edge', text: 'Application marks come from the example — explain why housing, farming, manufacturing or digital supply behaves differently.' }
+      conclusion: { title: 'Big idea', text: 'PES turns an industry story – capacity, stock, time, and barriers – into a market prediction.' },
+      examEdge: { title: 'Exam edge', text: 'Application marks come from the example – explain why housing, farming, manufacturing or digital supply behaves differently.' }
     },
 
     /* ================================================================
@@ -322,7 +322,7 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '⏳', head: 'More time', body: 'Higher PES.' }
       ],
       conclusion: { title: 'Big idea', text: 'PES is the language economists use to describe producer flexibility.' },
-      examEdge: { title: 'Exam edge', text: 'Top answers combine the value of PES with context — capacity, stock, time and the likely market consequence.' },
+      examEdge: { title: 'Exam edge', text: 'Top answers combine the value of PES with context – capacity, stock, time and the likely market consequence.' },
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

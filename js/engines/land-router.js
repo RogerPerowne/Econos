@@ -1,8 +1,8 @@
 /* ============================================================
-   ECONOS — Land It router (SPA shell for land.html)
+   ECONOS – Land It router (SPA shell for land.html)
    ─────────────────────────────────────────────────────────────
    land.html loads ALL Land engines + this router. Mirror of
-   link-router.js — see that file's header for details.
+   link-router.js – see that file's header for details.
    ============================================================ */
 
 (function () {

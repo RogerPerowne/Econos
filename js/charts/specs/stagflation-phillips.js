@@ -1,14 +1,14 @@
 /* ============================================================
-   Stagflation Phillips — engine spec for stagflationPhillipsInteractive.
-   Macro-conflicts topic — card 3 "1970s stagflation".
+   Stagflation Phillips – engine spec for stagflationPhillipsInteractive.
+   Macro-conflicts topic – card 3 "1970s stagflation".
 
    3-view exclusive-layer Phillips story:
      view 1  → SRPC₁ + point A at U_N (original 1958 curve)
      view 2  → Friedman/Phelps long-run: LRPC vertical, SRPC₂ shifted
                 up, points A→B→C arrow chain (A faded, B at U₁<U_N on
-                SRPC₁, C back at U_N but on SRPC₂ — higher π).
+                SRPC₁, C back at U_N but on SRPC₂ – higher π).
      view 3  → 1970s stagflation: SRPC₃ shifted up by supply shock,
-                point S at HIGHER U and HIGHER π — A faded.
+                point S at HIGHER U and HIGHER π – A faded.
 
    Mutually exclusive (`layerMode: 'exclusive'`) because each view
    tells a separate analytical story, not a cumulative build.
@@ -96,7 +96,7 @@
         label: 'C', labelDx: 12, labelDy: -4, anchor: 'start',
         layer: 'idl-2' },
 
-      /* View 3: A faded, S on SRPC₃ — higher U AND higher π */
+      /* View 3: A faded, S on SRPC₃ – higher U AND higher π */
       { x: A.x, y: A.y, tone: 'slate', radius: 5, hollow: true,
         opacity: 0.55,
         label: 'A', labelDx: 12, labelDy: -4, anchor: 'start',
@@ -116,7 +116,7 @@
         tone: 'green', strokeWidth: 1.8,
         markerEnd: 'econos-arrow-green', buffer: 0, layer: 'idl-2' },
 
-      /* View 3: A→S diagonal — both axes worsen */
+      /* View 3: A→S diagonal – both axes worsen */
       { x1: A.x + 0.020, y1: A.y - 0.020, x2: S.x - 0.020, y2: S.y + 0.020,
         tone: 'red', strokeWidth: 2,
         markerEnd: 'econos-arrow-red', buffer: 0, layer: 'idl-3' }

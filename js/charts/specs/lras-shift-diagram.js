@@ -1,8 +1,8 @@
 /* ============================================================
-   LRAS Shift Diagram — engine spec for lrasShiftDiagram.
-   Aggregate-supply card 5 "Shifts in LRAS — capacity expansion".
+   LRAS Shift Diagram – engine spec for lrasShiftDiagram.
+   Aggregate-supply card 5 "Shifts in LRAS – capacity expansion".
 
-   A rightward LRAS shift (capacity growth — better technology,
+   A rightward LRAS shift (capacity growth – better technology,
    higher productivity, more capital, more labour):
      base    → AD, SRAS, LRAS₁ solid, E₁ at the triple intersection
      view 1  → LRAS₁ redrawn DASHED + new LRAS₂ solid further
@@ -15,7 +15,7 @@
 
    Yf₁ is placed at the AD ∩ SRAS midpoint so the original LRAS₁
    intersects all three curves at E₁. Yf₂ is shifted right by ~25%
-   of chart width — capacity-growth visible without compressing
+   of chart width – capacity-growth visible without compressing
    the right edge.
 
    Both Classical and Keynesian schools agree on what rightward
@@ -25,12 +25,12 @@
 (function () {
   'use strict';
 
-  // Geometry — same AD/SRAS family as sras-shift-interactive so
+  // Geometry – same AD/SRAS family as sras-shift-interactive so
   // the AS topic's charts share a visual vocabulary.
-  var Yf1 = 0.514;          // E₁.x — AD ∩ SRAS midpoint
-  var Yf2 = 0.764;          // Yf₁ + 0.25 — clean rightward shift
+  var Yf1 = 0.514;          // E₁.x – AD ∩ SRAS midpoint
+  var Yf2 = 0.764;          // Yf₁ + 0.25 – clean rightward shift
   var E1  = { x: Yf1, y: 0.481 };   // SRAS(Yf₁) = AD(Yf₁)
-  var E2  = { x: Yf2, y: 0.232 };   // AD(Yf₂) — long-run eq on AD
+  var E2  = { x: Yf2, y: 0.232 };   // AD(Yf₂) – long-run eq on AD
 
   window.ECONOS_LRAS_SHIFT_DIAGRAM_SPEC = {
     width: 440,
@@ -47,15 +47,15 @@
     },
 
     curves: [
-      // Base AD — always visible, downward sloping
+      // Base AD – always visible, downward sloping
       { d: 'M 0.097,0.894 L 0.931,0.067',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end' },
-      // Base SRAS — always visible, upward sloping
+      // Base SRAS – always visible, upward sloping
       { d: 'M 0.097,0.067 L 0.931,0.894',
         tone: 'slate', label: 'SRAS', strokeWidth: 2,
         labelDx: -6, labelDy: -6, anchor: 'end' },
-      // Base LRAS₁ solid — hidden once any view becomes active
+      // Base LRAS₁ solid – hidden once any view becomes active
       { d: 'M ' + Yf1 + ',0 L ' + Yf1 + ',1',
         tone: 'green', label: 'LRAS₁', strokeWidth: 2.5,
         labelDx: 0, labelDy: -10, anchor: 'middle',

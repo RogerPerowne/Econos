@@ -1,14 +1,14 @@
 /* ==========================================================================
-   Demand-side Policies: Fiscal — Edexcel A Theme 2.6.2 (fiscal half).
+   Demand-side Policies: Fiscal – Edexcel A Theme 2.6.2 (fiscal half).
 
    Six-card Learn-It build assembled from Roger's mockup pipeline (six
    ChatGPT mockup images, one per card, 2026-06-04). Pedagogy:
-     C1 Sequential flow chain — fiscal policy transmission overview
-     C2 Decompose-a-diagram + EDL AD-shift-right hero — expansionary
-     C3 Interactive multi-state — multiplier round-by-round
-     C4 Decompose + EDL AD-shift-left hero — contractionary (mirror of C2)
-     C5 Side-by-side pair + tile grid — automatic stabilisers + toolkit
-     C6 Evidence-then-verdict — strengths/limits + judgement frame
+     C1 Sequential flow chain – fiscal policy transmission overview
+     C2 Decompose-a-diagram + EDL AD-shift-right hero – expansionary
+     C3 Interactive multi-state – multiplier round-by-round
+     C4 Decompose + EDL AD-shift-left hero – contractionary (mirror of C2)
+     C5 Side-by-side pair + tile grid – automatic stabilisers + toolkit
+     C6 Evidence-then-verdict – strengths/limits + judgement frame
    ========================================================================== */
 window.ECONOS_TOPIC = {
   id:          'demand-side-policies-fiscal',
@@ -16,7 +16,7 @@ window.ECONOS_TOPIC = {
   theme:       'Theme 2 · The National and Global Economy',
   title:       'Demand-side Policies: Fiscal',
   estTime:     '~15 min',
-  goal:        'Use government spending and taxation to manage aggregate demand — without forgetting timing, multipliers and trade-offs.',
+  goal:        'Use government spending and taxation to manage aggregate demand – without forgetting timing, multipliers and trade-offs.',
   intro: {
     summary:  'Fiscal policy is the government\'s demand-management toolkit. Step through the transmission chain, the multiplier, automatic stabilisers and the judgement frame examiners reward.',
     doInThis: 'Walk the 5-step transmission from policy change to inflation and the budget, model both expansionary and contractionary stances, see how the multiplier amplifies the initial injection, and finish with the strengths-and-limits judgement frame.',
@@ -38,7 +38,7 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ====================================================================
-       CARD 1 — Fiscal policy: the big picture
+       CARD 1 – Fiscal policy: the big picture
        Pattern: Sequential flow chain (5-step transmission) + supporting
        3-tile spending/taxation/why-it-matters grid + Side-by-side pair
        for expansionary vs contractionary.
@@ -99,7 +99,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 2 — Expansionary fiscal policy in action
+       CARD 2 – Expansionary fiscal policy in action
        Pattern: Decompose-a-diagram (interactive AD-shift hero) +
        Sequential transmission chain + 3-tile when-used + 3-step why-it-works.
        ==================================================================== */
@@ -114,13 +114,13 @@ window.ECONOS_TOPIC = {
       tip: { icon: '✅', tone: 'green', text: 'Higher G or lower T shifts AD <strong>right</strong> and raises demand.' },
 
       // Standard stepped interactive diagram (chart left, description right,
-      // analysis below) on the legacy engine — with a subtle Classical ↔
+      // analysis below) on the legacy engine – with a subtle Classical ↔
       // Keynesian PERSPECTIVE TOGGLE. The same AD shift, two AS models:
       // Keynesian (reverse-L AS, output + prices rise) vs Classical
       // (vertical LRAS at Yf, ONLY prices rise).
       interactiveDiagram: {
         svgKey: 'adShiftClassicalKeynesian',
-        label: 'EXPANSIONARY FISCAL POLICY — AD SHIFTS RIGHT',
+        label: 'EXPANSIONARY FISCAL POLICY – AD SHIFTS RIGHT',
         emoji: '📊',
         layers: ['idl-1', 'idl-2'],
         inverseLayers: ['idl-old-solid'],
@@ -131,11 +131,11 @@ window.ECONOS_TOPIC = {
             label: 'Weak economy', show: [],
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — spare capacity at E₁.',
-              body: ['AD₁ meets the upward-sloping (reverse-L) AS on its <strong>rising range</strong>, at E₁.', 'Output Y₁ sits <em>below</em> full capacity Yf — there are idle resources to put to work.'] },
+              head: 'Keynesian view – spare capacity at E₁.',
+              body: ['AD₁ meets the upward-sloping (reverse-L) AS on its <strong>rising range</strong>, at E₁.', 'Output Y₁ sits <em>below</em> full capacity Yf – there are idle resources to put to work.'] },
             classical: {
               tone: 'purple',
-              head: 'Classical view — at capacity at E₁.',
+              head: 'Classical view – at capacity at E₁.',
               body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy always returns to full capacity.', 'AD₁ meets LRAS at E₁, with output fixed at Yf and price level P₁.'] }
           },
           {
@@ -143,24 +143,24 @@ window.ECONOS_TOPIC = {
             keynesian: {
               tone: 'green',
               head: 'Expansionary fiscal policy shifts AD right to AD₂.',
-              body: ['Higher government spending (G) or lower taxation (T) raises C, I and G directly.', 'The whole AD curve shifts rightward from AD₁ to AD₂ — identical in both views.'] },
+              body: ['Higher government spending (G) or lower taxation (T) raises C, I and G directly.', 'The whole AD curve shifts rightward from AD₁ to AD₂ – identical in both views.'] },
             classical: {
               tone: 'green',
               head: 'Expansionary fiscal policy shifts AD right to AD₂.',
-              body: ['The demand stimulus is exactly the same as in the Keynesian view.', 'AD shifts from AD₁ to AD₂ — but the AS model is what decides the result.'] }
+              body: ['The demand stimulus is exactly the same as in the Keynesian view.', 'AD shifts from AD₁ to AD₂ – but the AS model is what decides the result.'] }
           },
           {
             label: 'New equilibrium', show: ['idl-1', 'idl-2'],
             keynesian: {
               tone: 'green',
               head: 'Output AND prices rise (E₂).',
-              body: ['E₂ sits up and to the right: <strong>Y₂ &gt; Y₁ and P₂ &gt; P₁</strong>.', 'Demand management <em>works</em> — but the output gain shrinks and inflation grows as the economy nears Yf.'],
+              body: ['E₂ sits up and to the right: <strong>Y₂ &gt; Y₁ and P₂ &gt; P₁</strong>.', 'Demand management <em>works</em> – but the output gain shrinks and inflation grows as the economy nears Yf.'],
               analysis: 'Keynesian verdict: with spare capacity, expansionary fiscal policy delivers real output and jobs (plus some inflation). The closer the economy is to Yf, the steeper AS becomes and the more of the AD shift leaks into prices rather than output.' },
             classical: {
               tone: 'rose',
               head: 'ONLY prices rise (E₂).',
               body: ['E₂ sits directly above E₁: <strong>output stays at Yf, P₂ ≫ P₁</strong>.', 'The extra demand simply bids up prices against a fixed supply.'],
-              analysis: 'Classical verdict: in the long run the economy is already at capacity, so demand-side stimulus is <strong>purely inflationary</strong> — it cannot raise real output. Only supply-side policy can shift LRAS right and lift Yf. This is the heart of the demand-side vs supply-side debate.' }
+              analysis: 'Classical verdict: in the long run the economy is already at capacity, so demand-side stimulus is <strong>purely inflationary</strong> – it cannot raise real output. Only supply-side policy can shift LRAS right and lift Yf. This is the heart of the demand-side vs supply-side debate.' }
           }
         ]
       },
@@ -208,9 +208,9 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 3 — The multiplier: one injection, many rounds
+       CARD 3 – The multiplier: one injection, many rounds
        Pattern: Interactive multi-state (REUSES multiplierRounds interactive
-       from the national-income-and-the-multiplier topic — the same SVG, with
+       from the national-income-and-the-multiplier topic – the same SVG, with
        fiscal-policy framing in the view bodies). Adds larger-vs-smaller pair
        and a "why it matters" flow underneath.
        ==================================================================== */
@@ -246,28 +246,28 @@ window.ECONOS_TOPIC = {
           {
             label: 'R1: £100m',
             tone: 'blue',
-            head: 'Round 1 — the fiscal injection',
+            head: 'Round 1 – the fiscal injection',
             body: 'The government commits £100m of fresh spending – say a transport-infrastructure scheme. That £100m becomes <strong>direct income</strong> for the contractors, workers and suppliers paid by the project.',
             analysis: '<strong>Cumulative income so far: £100m.</strong> Only the initial fiscal injection has hit the economy. AD has shifted right by exactly the amount of the spending – the multiplier hasn\'t kicked in yet.'
           },
           {
             label: '+ R2: £80m',
             tone: 'blue',
-            head: 'Round 2 — spending becomes income',
+            head: 'Round 2 – spending becomes income',
             body: 'Of the £100m, households with MPC = 0.8 re-spend £80m on goods and services. The other £20m leaks to saving, tax and imports. The £80m becomes income for a fresh set of firms and workers.',
             analysis: '<strong>Cumulative income so far: £180m.</strong> AD has now shifted by 1.8× the original injection. The £20m that leaked is gone – it never returns. This is why fiscal multipliers are bigger in <em>closed</em> economies and <em>low-MPS</em> populations.'
           },
           {
             label: '+ R3: £64m',
             tone: 'blue',
-            head: 'Round 3 — the chain narrows',
+            head: 'Round 3 – the chain narrows',
             body: 'Of round 2\'s £80m, MPC = 0.8 → £64m is re-spent and £16m leaks. The pattern is now clear: each round is exactly <strong>MPC × the previous round</strong>.',
             analysis: '<strong>Cumulative income so far: £244m.</strong> Each round contributes a smaller slice because more income has leaked at each prior step. The geometric series: ΔG × (1 + MPC + MPC² + …).'
           },
           {
             label: '+ R4: £51m',
             tone: 'blue',
-            head: 'Round 4 — diminishing returns',
+            head: 'Round 4 – diminishing returns',
             body: 'Round 4 adds £51.2m. Round 5 will add £40.96m. The rounds keep coming forever but each one is 80% of the last – ever-smaller ripples from the original £100m injection.',
             analysis: '<strong>Cumulative income so far: £295.2m.</strong> We\'re past the halfway mark to the ceiling but rounds are getting much smaller. After round 10 each new round contributes less than £15m – the bulk of the multiplier effect lands in the first 5–6 rounds.'
           },
@@ -310,12 +310,12 @@ window.ECONOS_TOPIC = {
       tipLate: {
         icon: '⚠️',
         tone: 'rose',
-        text: '<strong>Common trap — "k = 1/(1−MPC) gives the actual UK multiplier."</strong> No. The simple formula ignores <strong>three real-world leakages</strong>: marginal propensity to save (MPS), to tax (MPT) and to import (MPM). The right denominator is <strong>MPW = MPS + MPT + MPM</strong>. UK estimates from the IMF, OBR and BoE typically land at <strong>k ≈ 1.2–1.7</strong> – an order of magnitude lower than the textbook k = 5 trap. Quoting k = 5 in an essay is the single most common multiplier mistake examiners flag.'
+        text: '<strong>Common trap – "k = 1/(1−MPC) gives the actual UK multiplier."</strong> No. The simple formula ignores <strong>three real-world leakages</strong>: marginal propensity to save (MPS), to tax (MPT) and to import (MPM). The right denominator is <strong>MPW = MPS + MPT + MPM</strong>. UK estimates from the IMF, OBR and BoE typically land at <strong>k ≈ 1.2–1.7</strong> – an order of magnitude lower than the textbook k = 5 trap. Quoting k = 5 in an essay is the single most common multiplier mistake examiners flag.'
       }
     },
 
     /* ====================================================================
-       CARD 4 — Cooling the economy: contractionary fiscal policy
+       CARD 4 – Cooling the economy: contractionary fiscal policy
        Pattern: Decompose-a-diagram (EDL ad-shift-left hero) +
        Sequential cool-down chain + 3-tile when-used + Side-by-side
        gain-vs-cost trade-off. Mirror of Card 2.
@@ -330,13 +330,13 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'Lower G or higher T shifts AD <strong>left</strong> and cools demand.' },
 
-      // Standard stepped interactive diagram with Classical/Keynesian toggle —
+      // Standard stepped interactive diagram with Classical/Keynesian toggle –
       // mirror of fiscal C2. The same AS frameworks; AD shifts LEFT this time,
       // and the two schools disagree on whether output falls (Keynesian) or
       // only the price level (Classical).
       interactiveDiagram: {
         svgKey: 'adShiftLeftClassicalKeynesian',
-        label: 'CONTRACTIONARY FISCAL POLICY — AD SHIFTS LEFT',
+        label: 'CONTRACTIONARY FISCAL POLICY – AD SHIFTS LEFT',
         emoji: '📊',
         layers: ['idl-1', 'idl-2'],
         inverseLayers: ['idl-old-solid'],
@@ -347,36 +347,36 @@ window.ECONOS_TOPIC = {
             label: 'Overheating', show: [],
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — near capacity at E₁.',
+              head: 'Keynesian view – near capacity at E₁.',
               body: ['AD₁ meets AS on its <strong>steep range</strong>, just below Yf.', 'Output Y₁ is close to full capacity, so a further demand impulse mostly leaks into inflation.'] },
             classical: {
               tone: 'purple',
-              head: 'Classical view — at capacity at E₁.',
-              body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy returns to full capacity.', 'AD₁ meets LRAS at E₁ — output is fixed at Yf, the price level sits at P₁.'] }
+              head: 'Classical view – at capacity at E₁.',
+              body: ['Classical economists draw a <strong>vertical LRAS at Yf</strong>: in the long run the economy returns to full capacity.', 'AD₁ meets LRAS at E₁ – output is fixed at Yf, the price level sits at P₁.'] }
           },
           {
             label: 'Lower G / higher T', show: ['idl-1'],
             keynesian: {
               tone: 'amber',
               head: 'Contractionary fiscal policy shifts AD left to AD₂.',
-              body: ['Lower government spending (G) or higher taxation (T) drag C, I and G downward.', 'The whole AD curve shifts leftward from AD₁ to AD₂ — identical in both views.'] },
+              body: ['Lower government spending (G) or higher taxation (T) drag C, I and G downward.', 'The whole AD curve shifts leftward from AD₁ to AD₂ – identical in both views.'] },
             classical: {
               tone: 'purple',
               head: 'Contractionary fiscal policy shifts AD left to AD₂.',
-              body: ['Lower G or higher T drag C, I and G downward.', 'The whole AD curve shifts leftward from AD₁ to AD₂ — identical in both views.'] }
+              body: ['Lower G or higher T drag C, I and G downward.', 'The whole AD curve shifts leftward from AD₁ to AD₂ – identical in both views.'] }
           },
           {
             label: 'New equilibrium', show: ['idl-1', 'idl-2'],
             keynesian: {
               tone: 'blue',
               head: 'Output AND prices fall (E₂).',
-              body: ['E₂ sits down and to the left: <strong>Y₂ &lt; Y₁ and P₂ &lt; P₁</strong>.', 'Cooling demand <em>works</em>, but near capacity AS is steep — so the early output loss is small and most of the adjustment is in prices.'],
-              analysis: 'Keynesian verdict: when the economy is at or near capacity, contractionary fiscal policy <strong>can cool inflation with limited output cost</strong>. Push the cooling too far — into the flatter range of AS — and the output cost rises while the price-level gain shrinks.' },
+              body: ['E₂ sits down and to the left: <strong>Y₂ &lt; Y₁ and P₂ &lt; P₁</strong>.', 'Cooling demand <em>works</em>, but near capacity AS is steep – so the early output loss is small and most of the adjustment is in prices.'],
+              analysis: 'Keynesian verdict: when the economy is at or near capacity, contractionary fiscal policy <strong>can cool inflation with limited output cost</strong>. Push the cooling too far – into the flatter range of AS – and the output cost rises while the price-level gain shrinks.' },
             classical: {
               tone: 'purple',
               head: 'ONLY prices fall (E₂).',
-              body: ['E₂ sits directly below E₁: <strong>output stays at Yf, P₂ &lt; P₁</strong>.', 'Weaker demand against a fixed supply lowers the price level — no output cost in the long run.'],
-              analysis: 'Classical verdict: in the long run the economy is fixed at Yf, so contractionary policy is <strong>purely disinflationary</strong> — it lowers the price level without sacrificing real output. The cost of disinflation lives in the short-run adjustment, not in the long-run model.' }
+              body: ['E₂ sits directly below E₁: <strong>output stays at Yf, P₂ &lt; P₁</strong>.', 'Weaker demand against a fixed supply lowers the price level – no output cost in the long run.'],
+              analysis: 'Classical verdict: in the long run the economy is fixed at Yf, so contractionary policy is <strong>purely disinflationary</strong> – it lowers the price level without sacrificing real output. The cost of disinflation lives in the short-run adjustment, not in the long-run model.' }
           }
         ]
       },
@@ -421,7 +421,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 — Automatic stabilisers and the fiscal toolkit
+       CARD 5 – Automatic stabilisers and the fiscal toolkit
        Pattern: Side-by-side pair (auto vs discretionary) + 5-tile toolkit
        grid + 3-step why-distinction-matters flow.
        ==================================================================== */
@@ -456,19 +456,19 @@ window.ECONOS_TOPIC = {
       causes: [
         { tone: 'green',  icon: '🧑‍💼', head: 'Current spending',  body: 'Day-to-day spending on goods and services.' },
         { tone: 'blue',   icon: '🌉',         head: 'Capital spending',  body: 'Investment in infrastructure and long-term assets.' },
-        { tone: 'purple', icon: '💷',         head: 'Income tax (direct)', body: 'A <strong>direct tax</strong> on income and profits — paid by the person who legally owes it. Progressive in the UK.' },
-        { tone: 'amber',  icon: '🛒',         head: 'Indirect tax',      body: 'A tax on <strong>spending</strong> (VAT, excise duties) — collected by sellers, paid by buyers. Often regressive.' },
+        { tone: 'purple', icon: '💷',         head: 'Income tax (direct)', body: 'A <strong>direct tax</strong> on income and profits – paid by the person who legally owes it. Progressive in the UK.' },
+        { tone: 'amber',  icon: '🛒',         head: 'Indirect tax',      body: 'A tax on <strong>spending</strong> (VAT, excise duties) – collected by sellers, paid by buyers. Often regressive.' },
         { tone: 'rose',   icon: '👨‍👩‍👧', head: 'Transfers / benefits', body: 'Payments to households (Universal Credit, pensions, child benefit). Do not count in GDP – they redistribute, not produce.' }
       ],
 
-      causes2Label: 'DEFICIT VS SURPLUS — CYCLICAL VS STRUCTURAL',
+      causes2Label: 'DEFICIT VS SURPLUS – CYCLICAL VS STRUCTURAL',
       causes2Emoji: '⚖️',
       causes2Style: 'tinted-flat',
       causes2Cols: 4,
       causes2: [
         { tone: 'rose',   icon: '📉', head: 'Budget deficit',     body: 'Spending > revenue this year. Government borrows; national debt rises. UK has run a deficit in 18 of the last 20 years.' },
         { tone: 'green',  icon: '📈', head: 'Budget surplus',     body: 'Revenue > spending this year. Government can repay debt or save. The UK last ran a sustained surplus in 1999–2001.' },
-        { tone: 'amber',  icon: '🔁', head: 'Cyclical deficit',   body: 'The part of the deficit caused by the economy being below trend — auto-stabilisers at work. Disappears in a boom.' },
+        { tone: 'amber',  icon: '🔁', head: 'Cyclical deficit',   body: 'The part of the deficit caused by the economy being below trend – auto-stabilisers at work. Disappears in a boom.' },
         { tone: 'purple', icon: '🏛️', head: 'Structural deficit', body: 'The part that remains even at trend output. A <em>policy choice</em>, not the cycle. The OBR\'s focus when judging fiscal rules.' }
       ],
 
@@ -482,7 +482,7 @@ window.ECONOS_TOPIC = {
 
       bottomTip: [
         { icon: 'ℹ️', tone: 'blue', text: 'A <strong>budget deficit may rise in a recession automatically</strong> even if no new discretionary policy is announced – the stabilisers are doing the work.' },
-        { icon: '📜', tone: 'amber', text: '<strong>Friedman\'s rules-vs-discretion critique.</strong> Friedman argued in <em>Capitalism and Freedom</em> (1962) that the Great Depression was worsened by government discretion. Auto-stabilisers fit his case for rules over judgement — they work without anyone deciding to act.' }
+        { icon: '📜', tone: 'amber', text: '<strong>Friedman\'s rules-vs-discretion critique.</strong> Friedman argued in <em>Capitalism and Freedom</em> (1962) that the Great Depression was worsened by government discretion. Auto-stabilisers fit his case for rules over judgement – they work without anyone deciding to act.' }
       ],
 
       conclusion: { title: 'Big idea', text: 'Fiscal policy is both a <strong>built-in stabiliser</strong> and a <strong>deliberate policy choice</strong>.' },
@@ -490,8 +490,8 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 6 — Judging fiscal policy
-       Pattern: Evidence-then-verdict — Strengths/Limits pair, 6-question
+       CARD 6 – Judging fiscal policy
+       Pattern: Evidence-then-verdict – Strengths/Limits pair, 6-question
        judgement frame, 4-step "how to write it" flow, synthesis verdict.
        ==================================================================== */
     {

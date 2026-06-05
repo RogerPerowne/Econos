@@ -1,5 +1,5 @@
 /* ============================================================
-   PPF card 5 — declarative spec for ppfEfficiencyInteractive.
+   PPF card 5 – declarative spec for ppfEfficiencyInteractive.
    Teaches the distinction between PRODUCTIVE efficiency (any
    point on the PPF) and ALLOCATIVE efficiency (the one point
    that matches consumer preferences, P=MC). Four progressive-
@@ -7,13 +7,13 @@
    system the legacy interactiveDiagram JS in app.js toggles.
 
    View map:
-     0 'Three zones'         — just base PPF + zone labels
+     0 'Three zones'         – just base PPF + zone labels
      1 'Productive ineff.'   → reveals idl-1 (H inside the PPF)
      2 'Productive eff.'     → reveals idl-1 + idl-2 (3 points on curve)
      3 'Allocative eff.'     → reveals idl-1 + idl-2 + idl-3 (G★)
 
    ViewBox is 470×420 (smaller, taller than card 1's 900×440),
-   no in-SVG legend — the head/body/analysis on the right is
+   no in-SVG legend – the head/body/analysis on the right is
    rendered by app.js from the data file's views[] field.
    ============================================================ */
 (function () {
@@ -31,7 +31,7 @@
     curves: [
       { id: 'ppf', d: 'M 0,0.773 C 0.458,0.773 0.917,0.173 0.917,0.013', tone: 'blue', label: 'PPF₁' }
     ],
-    // Zone labels — both reinstated. "Unattainable zone" pinned to the
+    // Zone labels – both reinstated. "Unattainable zone" pinned to the
     // very top-right corner; engine auto-anchors to 'end' for x > 0.7 so
     // the text grows leftward from the position and stays inside the SVG.
     zones: [
@@ -47,7 +47,7 @@
         points: [
           { x: 0.181, y: 0.227, tone: 'rose', label: 'H', desc: '– inside PPF', radius: 8 }
         ]
-        // "resources idle" italic text removed — it sat on top of the
+        // "resources idle" italic text removed – it sat on top of the
         // always-visible "Inefficient zone" zone label. The "– inside PPF"
         // desc on the H point makes the point already.
       },
@@ -75,7 +75,7 @@
         key: 'allocative',
         contentLayer: 'idl-3',
         points: [
-          // G★ — slightly bigger, with a star symbol inside the dot
+          // G★ – slightly bigger, with a star symbol inside the dot
           { x: 0.4, y: 0.64, tone: 'amber', label: 'G★', radius: 9, symbol: '★' }
         ],
         boxedLabels: [
@@ -88,7 +88,7 @@
             connectorTo: { x: 0.42, y: 0.67 } }
         ]
         // "F: productively efficient / but NOT allocatively efficient"
-        // italic notes removed — they sat across the PPF curve. The
+        // italic notes removed – they sat across the PPF curve. The
         // pedagogical point is already in the head/body/analysis text on
         // the right-hand panel; the diagram doesn't need to repeat it.
       }

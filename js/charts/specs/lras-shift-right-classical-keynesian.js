@@ -1,5 +1,5 @@
 /* ============================================================
-   LRAS Shift RIGHT — Classical vs Keynesian — engine spec for
+   LRAS Shift RIGHT – Classical vs Keynesian – engine spec for
    lrasShiftRightClassicalKeynesian.
 
    Pure capacity expansion (productivity gains, capital deepening,
@@ -13,16 +13,16 @@
      perspective = 'classical'  → vertical LRAS at Yf. The economy
        ALWAYS sits on LRAS in the long run, so a rightward shift
        lands actual output exactly at the new Yf₂ with a lower
-       price level — clean, sustainable growth.
+       price level – clean, sustainable growth.
 
      perspective = 'keynesian'  → reverse-L AS. The capacity wall
        slides parallel right (floor unchanged), but with AD
        unchanged actual output only rises along the AS rising
-       range — it does NOT automatically reach the new potential
+       range – it does NOT automatically reach the new potential
        Yf₂. An output gap opens between Y₂ and Yf₂; closing it
        needs demand to catch up.
 
-   No SRAS in the Classical view here — the lesson is purely
+   No SRAS in the Classical view here – the lesson is purely
    long-run. The short-run cost story belongs on the cost-cut /
    supply-side-policy diagrams, not on the generic LRAS card.
 
@@ -54,13 +54,13 @@
     },
 
     curves: [
-      /* ── Shared AD (no perspective tag — visible in both views) ── */
+      /* ── Shared AD (no perspective tag – visible in both views) ── */
       { id: 'AD', d: 'M 0.10,0.798 L 0.95,0.118',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: -10, anchor: 'end' },
 
       /* ══════════════ CLASSICAL ══════════════ */
-      /* LRAS₁ solid (V1) — vertical at Yf₁. */
+      /* LRAS₁ solid (V1) – vertical at Yf₁. */
       { id: 'lras1', d: 'M ' + YF1 + ',0.020 L ' + YF1 + ',0.880',
         tone: 'purple', label: 'LRAS₁', strokeWidth: 2.5,
         labelDx: 6, labelDy: -2, anchor: 'start',
@@ -70,14 +70,14 @@
         tone: 'purple', label: 'LRAS₁', strokeWidth: 1.6, dashed: '6 4',
         labelDx: 6, labelDy: -2, anchor: 'start',
         layer: 'c-lras1-dash', perspective: 'classical' },
-      /* LRAS₂ solid (V2+) — vertical at Yf₂. */
+      /* LRAS₂ solid (V2+) – vertical at Yf₂. */
       { id: 'lras2', d: 'M ' + YF2 + ',0.020 L ' + YF2 + ',0.880',
         tone: 'green', label: 'LRAS₂', strokeWidth: 2.5,
         labelDx: 6, labelDy: -2, anchor: 'start',
         layer: 'c-lras2', perspective: 'classical' },
 
       /* ══════════════ KEYNESIAN ══════════════ */
-      /* AS₁ reverse-L (capacity Yf₁) — V1 only. */
+      /* AS₁ reverse-L (capacity Yf₁) – V1 only. */
       { id: 'as1_k',
         shape: { type: 'keynesianAS', flatY: 0.30, kneeX: 0.30, capacityX: YF1, top: 0.88, startX: 0.05 },
         tone: 'amber', label: 'AS₁', strokeWidth: 2.5,
@@ -88,14 +88,14 @@
         tone: 'amber', label: 'AS₁', strokeWidth: 1.6, dashed: '6 4',
         labelDx: 8, labelDy: -8, anchor: 'start',
         layer: 'k-as1-dash', perspective: 'keynesian' },
-      /* AS₂ reverse-L — PARALLEL right shift (capacity wall slides,
+      /* AS₂ reverse-L – PARALLEL right shift (capacity wall slides,
          floor unchanged). V2+. */
       { id: 'as2_k',
         shape: { type: 'keynesianAS', flatY: 0.30, kneeX: 0.50, capacityX: YF2, top: 0.88, startX: 0.05 },
         tone: 'green', label: 'AS₂', strokeWidth: 2.5,
         labelDx: 8, labelDy: -8, anchor: 'start',
         layer: 'k-as2', perspective: 'keynesian' },
-      /* Yf₂ marker line (V3) — dashed vertical at new potential. */
+      /* Yf₂ marker line (V3) – dashed vertical at new potential. */
       { d: 'M ' + YF2 + ',0.020 L ' + YF2 + ',0.620',
         tone: 'purple', label: 'Yf₂', strokeWidth: 1.6, dashed: '4 4',
         labelDx: 4, labelDy: -2, anchor: 'start',
@@ -127,16 +127,16 @@
     ],
 
     arrows: [
-      /* Classical LR shift (V2) — LRAS₁ → LRAS₂, rightward near top. */
+      /* Classical LR shift (V2) – LRAS₁ → LRAS₂, rightward near top. */
       { x1: YF1 + 0.01, y1: 0.78, x2: YF2 - 0.01, y2: 0.78,
         tone: 'green', strokeWidth: 1.8, markerEnd: 'lrsr-arr-green',
         buffer: 0, layer: 'c-lr-arrow', perspective: 'classical' },
 
-      /* Keynesian LR shift (V2) — capacity slides parallel right. */
+      /* Keynesian LR shift (V2) – capacity slides parallel right. */
       { x1: 0.34, y1: 0.255, x2: 0.52, y2: 0.255,
         tone: 'green', strokeWidth: 1.8, markerEnd: 'lrsr-arr-green',
         buffer: 0, layer: 'k-lr-arrow', perspective: 'keynesian' },
-      /* Keynesian output-gap arrow (V3) — actual Y₂ to potential Yf₂,
+      /* Keynesian output-gap arrow (V3) – actual Y₂ to potential Yf₂,
          placed LOW near the x-axis so it reads as a clean gap. */
       { x1: 0.575, y1: 0.090, x2: YF2 - 0.005, y2: 0.090,
         tone: 'rose', strokeWidth: 1.8, markerEnd: 'lrsr-arr-rose',

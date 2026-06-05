@@ -1,5 +1,5 @@
 /* ============================================================
-   Demand card 3 — INTERACTIVE "movements along the demand curve"
+   Demand card 3 – INTERACTIVE "movements along the demand curve"
    (icons key: demandMovements; className dmove-svg). Rendered via the
    interactiveDiagram block.
 

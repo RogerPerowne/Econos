@@ -1,5 +1,5 @@
 /* ============================================================
-   Elastic vs Inelastic Supply — engine spec for
+   Elastic vs Inelastic Supply – engine spec for
    elasticVsInelasticSupplyDiagram. Price-elasticity-of-supply topic.
 
    Same multi-panel pattern as the PED elastic-vs-inelastic diagram,
@@ -35,13 +35,13 @@
         titleTone: 'blue',
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
-          // S — shallow (rises gently)
+          // S – shallow (rises gently)
           { d: 'M 0,0.207 L 0.943,0.714',
             tone: 'slate', label: 'S', strokeWidth: 2.2, labelDx: 5, labelDy: 0 },
-          // D₁ — gray dashed
+          // D₁ – gray dashed
           { d: 'M 0,0.852 L 0.525,0',
             tone: 'gray', label: 'D₁', strokeWidth: 1.8, dashed: '5 3', labelDx: 5, labelDy: 4 },
-          // D₂ — green solid (shifted right)
+          // D₂ – green solid (shifted right)
           { d: 'M 0.226,0.852 L 0.751,0',
             tone: 'green', label: 'D₂', strokeWidth: 1.8, labelDx: 5, labelDy: 4 }
         ],
@@ -83,7 +83,7 @@
         titleTone: 'amber',
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
-          // S — steep (rises quickly)
+          // S – steep (rises quickly)
           { d: 'M 0.170,0.069 L 0.396,0.797',
             tone: 'slate', label: 'S', strokeWidth: 2.2, labelDx: 5, labelDy: 0 },
           { d: 'M 0,0.852 L 0.525,0',
@@ -125,7 +125,7 @@
         axes: false,
         texts: [
           { x: 0.5, y: 0.5,
-            text: 'Same shock — very different price and quantity responses',
+            text: 'Same shock – very different price and quantity responses',
             tone: 'gray', italic: true, anchor: 'middle' }
         ]
       }

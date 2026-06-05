@@ -1,5 +1,5 @@
 /* ============================================================
-   Market Equilibrium — engine spec for equilibriumBasic
+   Market Equilibrium – engine spec for equilibriumBasic
    (Price-determination card 1). Layered spec for the
    `interactiveDiagram` block.
 

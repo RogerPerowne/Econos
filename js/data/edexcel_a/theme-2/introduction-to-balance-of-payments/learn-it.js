@@ -1,22 +1,22 @@
 /* ============================================================
-   Introduction to Balance of Payments — Edexcel A Theme 2.1.4.
+   Introduction to Balance of Payments – Edexcel A Theme 2.1.4.
 
    Six-card Learn-It rebuilt from Roger's slide deck + ChatGPT card
-   mockups (2026-06-04). Theme 2 INTRO scope — the J-curve, Marshall-
+   mockups (2026-06-04). Theme 2 INTRO scope – the J-curve, Marshall-
    Lerner and the savings–investment identity stay on the deeper
    Theme 4 `balance-of-payments` topic.
 
    Each card is anchored on its OWN bespoke hero visual (see
-   js/icons.js — bop* keys) matching the mockup design exactly:
-     C1 bopThreeAccounts            — 3-column accounts → balance node
-     C2 bopCurrentAccountEquation   — visual equation
-       + bopUkPattern               — UK pattern arrows-to-balance
-     C3 bopDriverHub                — hub-and-spoke 6 drivers
-     C4 bopMatchingIdentity         — two pillar columns + arrow
-       + bopGoodVsWarning           — healthy vs warning mini-flows
-     C5 bopSustainabilityDashboard  — 4 dial gauges (dial engine)
-       + bopConsequencesFlow        — branched consequences flow
-     C6 bopHowToWriteIt             — 4-step numbered process flow
+   js/icons.js – bop* keys) matching the mockup design exactly:
+     C1 bopThreeAccounts            – 3-column accounts → balance node
+     C2 bopCurrentAccountEquation   – visual equation
+       + bopUkPattern               – UK pattern arrows-to-balance
+     C3 bopDriverHub                – hub-and-spoke 6 drivers
+     C4 bopMatchingIdentity         – two pillar columns + arrow
+       + bopGoodVsWarning           – healthy vs warning mini-flows
+     C5 bopSustainabilityDashboard  – 4 dial gauges (dial engine)
+       + bopConsequencesFlow        – branched consequences flow
+     C6 bopHowToWriteIt             – 4-step numbered process flow
    ============================================================ */
 window.ECONOS_TOPIC = {
   id: 'introduction-to-balance-of-payments',
@@ -24,9 +24,9 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Balance of Payments',
   estTime: '~12 min',
-  goal: 'Read the balance of payments like an economist — the three accounts, the current account in detail, what moves it, who funds a deficit, and how to judge whether a deficit actually matters.',
+  goal: 'Read the balance of payments like an economist – the three accounts, the current account in detail, what moves it, who funds a deficit, and how to judge whether a deficit actually matters.',
   intro: {
-    summary: 'The balance of payments records every transaction between the UK and the rest of the world. It is built from three accounts — current, capital and financial — and the whole thing always sums to zero. The current account is the star: it tells you whether a country is living within its means, and a deficit there must be financed by inflows on the financial account.',
+    summary: 'The balance of payments records every transaction between the UK and the rest of the world. It is built from three accounts – current, capital and financial – and the whole thing always sums to zero. The current account is the star: it tells you whether a country is living within its means, and a deficit there must be financed by inflows on the financial account.',
     doInThis: 'Meet the three accounts and why they must balance, break the current account into its four parts, learn what drives it, see who funds a deficit, judge when a deficit is a problem, and finish with the exam toolkit.',
     outcomes: [
       'Define the balance of payments and its three accounts',
@@ -46,7 +46,7 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ====================================================================
-       CARD 1 — Balance of payments: the big picture
+       CARD 1 – Balance of payments: the big picture
        Hero: 3-column accounts with internal tiles converging on the
        central "Overall balance = 0" pill. Plus a "How to read it"
        row (surplus / deficit / why-current-gets-attention) and a
@@ -56,10 +56,10 @@ window.ECONOS_TOPIC = {
       id: 'bop-big-picture',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 6',
-      title: 'Balance of payments — the big picture',
+      title: 'Balance of payments – the big picture',
       lede: 'The balance of payments records a country\'s transactions with the rest of the world over a period of time.',
       ledeStyle: 'plain',
-      tip: { icon: '🔒', tone: 'green', text: 'Every international transaction has two sides — so the balance of payments must <strong>balance overall</strong>.' },
+      tip: { icon: '🔒', tone: 'green', text: 'Every international transaction has two sides – so the balance of payments must <strong>balance overall</strong>.' },
 
       visualKey: 'bopThreeAccounts',
       visualLabel: 'THE THREE ACCOUNTS',
@@ -86,14 +86,14 @@ window.ECONOS_TOPIC = {
         ]
       },
 
-      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Do not confuse the <strong>current account</strong> with the <strong>whole balance of payments</strong> — it is one account within the wider set.' },
+      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Do not confuse the <strong>current account</strong> with the <strong>whole balance of payments</strong> – it is one account within the wider set.' },
 
-      conclusion: { title: 'Big idea', text: 'The key identity is simple — the accounts fit together, even when one part is in deficit.' },
+      conclusion: { title: 'Big idea', text: 'The key identity is simple – the accounts fit together, even when one part is in deficit.' },
       examEdge: 'Strong answers distinguish clearly between the <strong>current, capital and financial accounts</strong> before judging whether a deficit is sustainable.'
     },
 
     /* ====================================================================
-       CARD 2 — Inside the current account
+       CARD 2 – Inside the current account
        Hero: visual equation (balance pill = 4 colored component cards).
        Then: surplus/deficit/balance status row. Then: UK pattern SVG
        (Goods + Services arrows into Final balance lozenge).
@@ -136,15 +136,15 @@ window.ECONOS_TOPIC = {
         ]
       },
 
-      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Do not confuse a deficit in <strong>trade in goods</strong> with a deficit in the <strong>whole current account</strong> — services and income matter too.' },
+      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Do not confuse a deficit in <strong>trade in goods</strong> with a deficit in the <strong>whole current account</strong> – services and income matter too.' },
 
       conclusion: { title: 'Big idea', text: 'The current account is the part of the balance of payments that tells the clearest story about trade, income and demand.' },
-      examEdge: 'Name the component that is changing — <strong>goods, services, primary income or transfers</strong> — before you explain the overall effect.'
+      examEdge: 'Name the component that is changing – <strong>goods, services, primary income or transfers</strong> – before you explain the overall effect.'
     },
 
     /* ====================================================================
-       CARD 3 — Why current accounts move
-       Hero: hub-and-spoke — central "Current account balance" node with
+       CARD 3 – Why current accounts move
+       Hero: hub-and-spoke – central "Current account balance" node with
        6 driver cards arranged 3-left, 3-right with curved arrows pointing
        inward. Simple chain runs below the hub inside the same SVG.
        ==================================================================== */
@@ -174,14 +174,14 @@ window.ECONOS_TOPIC = {
         text: '<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#0B1426;line-height:1.8;"><li>Strong exports</li><li>Competitive firms</li><li>Low costs, high productivity</li><li>High national saving</li></ul>'
       },
 
-      bottomTip: { icon: '🔄', tone: 'blue', text: '<strong>Common confusion:</strong> a depreciation does <em>not</em> automatically improve the current account straight away. Volumes adjust slowly and the import bill may first rise. <em>(The J-curve — covered in Theme 4.)</em>' },
+      bottomTip: { icon: '🔄', tone: 'blue', text: '<strong>Common confusion:</strong> a depreciation does <em>not</em> automatically improve the current account straight away. Volumes adjust slowly and the import bill may first rise. <em>(The J-curve – covered in Theme 4.)</em>' },
 
       conclusion: { title: 'Big idea', text: 'Current account balances move because exports, imports and income flows respond to conditions at home and abroad.' },
-      examEdge: 'Top answers trace a <strong>chain</strong> — for example, stronger UK growth raises imports, which worsens the current account unless exports also rise.'
+      examEdge: 'Top answers trace a <strong>chain</strong> – for example, stronger UK growth raises imports, which worsens the current account unless exports also rise.'
     },
 
     /* ====================================================================
-       CARD 4 — Who funds a deficit?
+       CARD 4 – Who funds a deficit?
        Hero: matching-identity two-pillar SVG (current deficit ↔
        financial surplus, with "Must be financed by →" arrow).
        Then: Good-sign vs Warning-sign mini-flow comparison.
@@ -204,12 +204,12 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'green', icon: '🏛️', iconStyle: 'circle',
         label: 'More stable',
-        text: '<p style="margin:0 0 6px;font-size:13px;color:#0B1426;line-height:1.6;"><strong>FDI</strong> — long-term, direct investment in real assets.</p><p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;"><strong>Long-term investment</strong> — infrastructure, property, equity.</p>'
+        text: '<p style="margin:0 0 6px;font-size:13px;color:#0B1426;line-height:1.6;"><strong>FDI</strong> – long-term, direct investment in real assets.</p><p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;"><strong>Long-term investment</strong> – infrastructure, property, equity.</p>'
       },
       right: {
         tone: 'purple', icon: '⚡', iconStyle: 'circle',
         label: 'More volatile',
-        text: '<p style="margin:0 0 6px;font-size:13px;color:#0B1426;line-height:1.6;"><strong>Short-term portfolio flows</strong> — bonds and shares can move fast.</p><p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;"><strong>Hot money</strong> — seeks quick returns and exits suddenly.</p>'
+        text: '<p style="margin:0 0 6px;font-size:13px;color:#0B1426;line-height:1.6;"><strong>Short-term portfolio flows</strong> – bonds and shares can move fast.</p><p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;"><strong>Hot money</strong> – seeks quick returns and exits suddenly.</p>'
       },
 
       whyItMatters: {
@@ -229,12 +229,12 @@ window.ECONOS_TOPIC = {
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'A deficit is more worrying when it is <strong>persistent, large and financed by short-term or reversible flows</strong>.' },
 
-      conclusion: { title: 'Big idea', text: 'The key question is not just whether there is a deficit — it is how that deficit is being financed.' },
-      examEdge: 'When evaluating a current account deficit, always comment on the <strong>financial account</strong> — FDI is usually more reassuring than hot money.'
+      conclusion: { title: 'Big idea', text: 'The key question is not just whether there is a deficit – it is how that deficit is being financed.' },
+      examEdge: 'When evaluating a current account deficit, always comment on the <strong>financial account</strong> – FDI is usually more reassuring than hot money.'
     },
 
     /* ====================================================================
-       CARD 5 — When is a deficit a problem?
+       CARD 5 – When is a deficit a problem?
        Hero: 4 semicircle dial gauges (size, persistence, competitiveness,
        financing quality) with a sustainable ⇆ less-sustainable axis.
        Then: branched consequences SVG. Then: healthy/worrying pair +
@@ -245,9 +245,9 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 6',
       title: 'When is a deficit a problem?',
-      lede: 'A current account deficit is not automatically harmful — economists judge its size, persistence, causes and financing.',
+      lede: 'A current account deficit is not automatically harmful – economists judge its size, persistence, causes and financing.',
       ledeStyle: 'plain',
-      tip: { icon: '🔒', tone: 'green', text: 'The right judgement is about <strong>sustainability</strong> — not just whether the sign is minus.' },
+      tip: { icon: '🔒', tone: 'green', text: 'The right judgement is about <strong>sustainability</strong> – not just whether the sign is minus.' },
 
       visualKey: 'bopSustainabilityDashboard',
       visualLabel: 'THE SUSTAINABILITY DASHBOARD',
@@ -262,12 +262,12 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'green', icon: '✅', iconStyle: 'circle',
         label: 'Potentially healthy deficit',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Driven by <strong>strong investment, confidence and future growth</strong> — high-quality investment, investor confidence, stronger future output.</p>'
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Driven by <strong>strong investment, confidence and future growth</strong> – high-quality investment, investor confidence, stronger future output.</p>'
       },
       right: {
         tone: 'rose', icon: '⚠️', iconStyle: 'circle',
         label: 'More worrying deficit',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Driven by <strong>weak competitiveness, consumption-led imports and fragile finance</strong> — weak exports, import-fuelled spending, volatile hot money.</p>'
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Driven by <strong>weak competitiveness, consumption-led imports and fragile finance</strong> – weak exports, import-fuelled spending, volatile hot money.</p>'
       },
 
       causesLabel: 'WHAT IMPROVES IT',
@@ -281,14 +281,14 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  icon: '⚖️', head: 'Slower import growth',         body: 'Rebalanced demand: less import pressure, better balance.' }
       ],
 
-      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Do not say "deficit bad" automatically — ask what <strong>caused</strong> it, how <strong>large</strong> it is and how it is <strong>financed</strong>. UK current-account deficit: <strong>~1.6% of GDP in 2025, down from 6.7% in 2014</strong>.' },
+      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Do not say "deficit bad" automatically – ask what <strong>caused</strong> it, how <strong>large</strong> it is and how it is <strong>financed</strong>. UK current-account deficit: <strong>~1.6% of GDP in 2025, down from 6.7% in 2014</strong>.' },
 
       conclusion: { title: 'Big idea', text: 'Current account problems are really competitiveness and sustainability problems showing up in an external account.' },
       examEdge: 'Evaluation should cover <strong>time horizon, financing quality</strong> and whether the deficit reflects weak supply-side performance.'
     },
 
     /* ====================================================================
-       CARD 6 — The balance of payments exam toolkit
+       CARD 6 – The balance of payments exam toolkit
        Hero: 4-step numbered process flow (Identify → Explain → Link →
        Judge) with bold tone-coded cards. Then: what-it-shows tile grid
        (6 tiles), common-mistakes tile grid (3 tiles), good-judgement
@@ -299,12 +299,12 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 6',
       title: 'The balance of payments exam toolkit',
-      lede: 'Strong answers move beyond definition — they diagnose the imbalance, explain the mechanism and judge whether it is sustainable.',
+      lede: 'Strong answers move beyond definition – they diagnose the imbalance, explain the mechanism and judge whether it is sustainable.',
       ledeStyle: 'plain',
       tip: { icon: '✅', tone: 'green', text: 'Good answers <strong>separate the accounts, trace the cause, then evaluate the significance</strong>.' },
 
       visualKey: 'bopHowToWriteIt',
-      visualLabel: 'HOW TO WRITE IT — IDENTIFY → EXPLAIN → LINK → JUDGE',
+      visualLabel: 'HOW TO WRITE IT – IDENTIFY → EXPLAIN → LINK → JUDGE',
       visualEmoji: '✍️',
 
       causesLabel: 'WHAT IT CAN SHOW',
@@ -327,7 +327,7 @@ window.ECONOS_TOPIC = {
       causes2: [
         { tone: 'rose', icon: '❌', head: 'Confusing the accounts',     body: 'Treating the current account as the whole balance of payments.' },
         { tone: 'rose', icon: '❌', head: 'Assuming all deficits are bad', body: 'A deficit can be healthy if it funds productive investment.' },
-        { tone: 'rose', icon: '❌', head: 'Ignoring the financial account', body: 'Forgetting the method of finance — FDI vs hot money.' }
+        { tone: 'rose', icon: '❌', head: 'Ignoring the financial account', body: 'Forgetting the method of finance – FDI vs hot money.' }
       ],
 
       causes3Label: 'GOOD JUDGEMENT QUESTIONS',
@@ -341,10 +341,10 @@ window.ECONOS_TOPIC = {
         { tone: 'blue', icon: '📈', head: 'What does it imply for growth and stability?', body: '' }
       ],
 
-      bottomTip: { icon: 'ℹ️', tone: 'blue', text: '<strong>Remember:</strong> the whole balance of payments must balance overall — what matters is <em>where</em> the imbalance sits and what it tells you.' },
+      bottomTip: { icon: 'ℹ️', tone: 'blue', text: '<strong>Remember:</strong> the whole balance of payments must balance overall – what matters is <em>where</em> the imbalance sits and what it tells you.' },
 
       conclusion: { title: 'Big idea', text: 'The balance of payments is less about accounting trivia and more about understanding trade, finance and competitiveness.' },
-      examEdge: 'Top answers <strong>diagnose, trace and judge</strong> — they do not just define "deficit" and stop.'
+      examEdge: 'Top answers <strong>diagnose, trace and judge</strong> – they do not just define "deficit" and stop.'
     }
   ]
 };

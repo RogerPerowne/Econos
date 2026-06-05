@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Read the Extract station)
+   ECONOS – Link It engine (Read the Extract station)
    Students read a short real-world passage then answer 3
    MCQ questions linking evidence to economic theory.
    ============================================================ */

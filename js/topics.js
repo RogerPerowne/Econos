@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Topic registry
+   ECONOS – Topic registry
    Single source of truth for which topics exist and what
    content is available for each. Used by index.html to render
    the topic cards, and by future tooling to track progress
@@ -13,7 +13,7 @@
    topic from that board's homepage grid (no topic does so yet,
    but the flag is in the schema for the day when boards diverge).
    `spec: null` means the topic isn't an explicit subsection of
-   that spec (it might still be cited indirectly) — the chip
+   that spec (it might still be cited indirectly) – the chip
    simply omits the spec point for that board.
    ============================================================ */
 
@@ -66,7 +66,7 @@ window.ECONOS_TOPICS = [
     color: '#fb923c',
     available: { learn: true, link: true, land: false },
     boards: {
-      /* Edexcel A: factors of production isn't a standalone sub-section —
+      /* Edexcel A: factors of production isn't a standalone sub-section –
          its content now lives inside `the-economic-problem` (1.1.3), so
          this topic is hidden from the Edexcel A grid. Still shown for the
          boards where factors IS a named point. */
@@ -444,7 +444,7 @@ window.ECONOS_TOPICS = [
   {
     id: 'aggregate-demand',
     name: 'Aggregate Demand',
-    sub: 'AD as a system — formula, slope, shifts, multiplier',
+    sub: 'AD as a system – formula, slope, shifts, multiplier',
     color: '#f59e0b',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -457,7 +457,7 @@ window.ECONOS_TOPICS = [
   {
     id: 'consumption',
     name: 'Consumption',
-    sub: 'Determinants, MPC, savings ratio — the biggest AD component (~60%)',
+    sub: 'Determinants, MPC, savings ratio – the biggest AD component (~60%)',
     color: '#22c55e',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -470,7 +470,7 @@ window.ECONOS_TOPICS = [
   {
     id: 'investment',
     name: 'Investment',
-    sub: 'Determinants, accelerator, animal spirits — the volatile engine (~17%)',
+    sub: 'Determinants, accelerator, animal spirits – the volatile engine (~17%)',
     color: '#f97316',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -483,7 +483,7 @@ window.ECONOS_TOPICS = [
   {
     id: 'government-spending',
     name: 'Government Spending',
-    sub: 'Composition, automatic stabilisers, fiscal rules — the only direct lever (~20%)',
+    sub: 'Composition, automatic stabilisers, fiscal rules – the only direct lever (~20%)',
     color: '#3b82f6',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -496,7 +496,7 @@ window.ECONOS_TOPICS = [
   {
     id: 'net-trade',
     name: 'Net Trade (X − M)',
-    sub: 'Exports, imports, Marshall-Lerner, J-curve — the open-economy link (~3%)',
+    sub: 'Exports, imports, Marshall-Lerner, J-curve – the open-economy link (~3%)',
     color: '#a855f7',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -667,18 +667,18 @@ window.ECONOS_TOPICS = [
     }
   },
 
-  /* ---- Parked under Theme 4 (development & wellbeing) — content TBD ---- */
+  /* ---- Parked under Theme 4 (development & wellbeing) – content TBD ---- */
   {
     id: 'standard-of-living-and-wellbeing',
     name: 'Standard of Living & Wellbeing',
     sub: 'HDI, wellbeing, and beyond GDP',
     color: '#8b5cf6',
     available: { learn: true, link: false, land: false },
-    // Parked under Theme 4 (Edexcel A 4.3.1 — measures of development):
+    // Parked under Theme 4 (Edexcel A 4.3.1 – measures of development):
     // moved out of Theme 2 because its core "beyond GDP" material is
     // already covered by `measures-of-economic-performance` Card 7.
     // Theme 4 is the natural home for HDI / Easterlin paradox /
-    // ONS wellbeing dashboard / Kahneman experienced wellbeing —
+    // ONS wellbeing dashboard / Kahneman experienced wellbeing –
     // those land alongside development indicators rather than
     // alongside GDP definitions.
     boards: {
@@ -719,7 +719,7 @@ window.ECONOS_TOPICS = [
   {
     id: 'revenue',
     name: 'Revenue',
-    sub: 'TR, AR, MR — price-taker vs price-maker, revenue maximisation',
+    sub: 'TR, AR, MR – price-taker vs price-maker, revenue maximisation',
     color: '#f59e0b',
     available: { learn: true, link: false, land: false },
     boards: {
@@ -1188,13 +1188,13 @@ window.ECONOS_TOPICS = [
   },
 
   /* ============================================================
-     Edexcel B — business-first strand
+     Edexcel B – business-first strand
      These sub-sections are unique to (or only examined as named
      topics by) the Edexcel B "Economics B" spec (9EB0). They have
      no equivalent named topic in Edexcel A / AQA / OCR (those
      boards fold the same ideas into broader tiles such as
      `globalisation` or `business-growth`), so the spec point is set
-     only for `edexcel_b` and `null` elsewhere — `classifyTopic` in
+     only for `edexcel_b` and `null` elsewhere – `classifyTopic` in
      index.html then surfaces them solely on the Edexcel B grid.
      Cover-card stubs only: `available` is all-false, so the build
      generates no routes and the home grid shows them "coming soon"

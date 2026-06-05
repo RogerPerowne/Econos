@@ -1,14 +1,14 @@
 /* ============================================================
-   Elasticity Incidence Interactive — engine spec for
+   Elasticity Incidence Interactive – engine spec for
    elasticityIncidenceInteractive.
    Indirect-taxes-and-subsidies topic + government-intervention.
 
    Two-panel side-by-side demonstration that the SAME tax on the
    SAME supply curve produces VERY different incidence depending
    on demand elasticity:
-     LEFT panel  — INELASTIC demand (steep D). Consumers absorb
+     LEFT panel  – INELASTIC demand (steep D). Consumers absorb
                    most of the wedge (~87% of the tax).
-     RIGHT panel — ELASTIC demand (shallow D). Producers absorb
+     RIGHT panel – ELASTIC demand (shallow D). Producers absorb
                    most (~64%) because they can't push prices on
                    buyers who can substitute.
 
@@ -26,7 +26,7 @@
 (function () {
   'use strict';
 
-  /* ── Shared rules — same supply and same tax in both panels ── */
+  /* ── Shared rules – same supply and same tax in both panels ── */
 
   function basePanel(chartArea, title, titleTone, demandCurve, eqPoints, burdenRects, eqArrows, summaryText, summaryTone) {
     return {
@@ -38,12 +38,12 @@
       curves: [
         /* Base S (always visible). labelDx/anchor flipped to 'end' so
          * the 8-px-wide "S" tucks LEFT of the curve endpoint and fits
-         * inside both 180-px panels — old labelDx=6/anchor='start'
+         * inside both 180-px panels – old labelDx=6/anchor='start'
          * overflowed each panel by ~9px. */
         { d: 'M 0.083,0.096 L 0.972,0.835',
           tone: 'green', label: 'S', strokeWidth: 2,
           labelDx: -5, labelDy: -8, anchor: 'end' },
-        /* Base S+T (always visible — same tax in both panels) */
+        /* Base S+T (always visible – same tax in both panels) */
         { d: 'M 0.083,0.291 L 0.972,1.030',
           tone: 'blue', label: 'S+T', strokeWidth: 1.8, dashed: '7 4',
           labelDx: -10, labelDy: -6, anchor: 'end' },
@@ -63,7 +63,7 @@
     // viewBox widened 440 → 700 (panels scaled ×1.59) so the chart fills
     // the card like every other chart instead of being blown up by a
     // maxWidth cap. The engine's 13px/12px label tokens then render at
-    // ~12px (scale ≈ 0.9) rather than ~16px — matching the rest of the
+    // ~12px (scale ≈ 0.9) rather than ~16px – matching the rest of the
     // topic. Geometry is normalised inside each panel, so only the
     // panel chartAreas + viewBox dims change; curves/labels follow.
     width: 700,
@@ -119,7 +119,7 @@
         'green',
         /* Shallow D curve (big ΔQ for small ΔP). Endpoint at x=1.0
          * lands AT the right panel edge, so labelDx/anchor flipped to
-         * 'end' to keep the 8-px-wide "D" inside the panel — old
+         * 'end' to keep the 8-px-wide "D" inside the panel – old
          * labelDx=6/anchor='start' overflowed by ~14px. */
         { d: 'M 0.000,0.804 L 1.000,0.283',
           tone: 'blue', label: 'D', strokeWidth: 2,

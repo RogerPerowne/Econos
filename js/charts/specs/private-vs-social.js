@@ -1,14 +1,14 @@
 /* ============================================================
-   Private vs Social Diagram — engine spec for privateVsSocialDiagram.
-   Market-failure topic — card 2 "Private vs social framework".
+   Private vs Social Diagram – engine spec for privateVsSocialDiagram.
+   Market-failure topic – card 2 "Private vs social framework".
 
    Two-panel side-by-side comparison of the two market-failure
    archetypes:
-     LEFT panel  — Negative externality (factory pollution)
+     LEFT panel  – Negative externality (factory pollution)
                    MSC > MPC. Market produces Q_m where MPB = MPC.
                    Social optimum Q* < Q_m where MPB = MSC.
                    → over-production.
-     RIGHT panel — Positive externality (vaccinations)
+     RIGHT panel – Positive externality (vaccinations)
                    MSB > MPB. Market produces Q_m where MPB = MPC.
                    Social optimum Q* > Q_m where MPC = MSB.
                    → under-production.
@@ -16,7 +16,7 @@
    Geometry is SOLVED, not hand-set. Curves carry `id` strings and
    each equilibrium uses `intersection: { curves: [...] }` so the
    engine resolves the y-coord and warns on drift. No DWL shading
-   here — that's card 4's job.
+   here – that's card 4's job.
    ============================================================ */
 (function () {
   'use strict';
@@ -42,15 +42,15 @@
         titleColor: '#0F172A',  // black/bold so the title doesn't read as a curve label
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
-          /* MPB and MPC label positions UNSET — auto-placer evaluates
+          /* MPB and MPC label positions UNSET – auto-placer evaluates
            * 5 candidates and picks the one with no curve clash, no
            * label clash, and a slot that doesn't drift off-stage. */
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
             tone: 'blue', label: 'MPB', strokeWidth: 2.5 },
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC', strokeWidth: 2.5 },
-          /* MSC shifted UP from MPC — pollution adds external cost.
-           * Label position deliberately UNSET — the engine's
+          /* MSC shifted UP from MPC – pollution adds external cost.
+           * Label position deliberately UNSET – the engine's
            * auto-placer (chooseCurveLabelPosition, v0.41.15) evaluates
            * five candidate positions and picks the one that doesn't
            * overlap the curve or other labels. */
@@ -63,7 +63,7 @@
             tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
             label: 'E_m', labelDx: 10, labelDy: 0, anchor: 'start' },
-          /* Social optimum at MPB ∩ MSC — left of Q_m */
+          /* Social optimum at MPB ∩ MSC – left of Q_m */
           { x: ES_NEG.x, y: ES_NEG.y, intersection: { curves: ['MPB', 'MSC'] },
             tone: 'red', radius: 6, hollow: true,
             gridlines: 'red', ticks: { x: 'Q*' },
@@ -80,18 +80,18 @@
       {
         chartArea: { x: 410, y: 28, width: 280, height: 254 },
         title: 'Positive externality',
-        titleColor: '#0F172A',  // black/bold — same rule as left panel
+        titleColor: '#0F172A',  // black/bold – same rule as left panel
         axes: { x: { label: 'Q' }, y: { label: 'P' } },
         curves: [
-          /* MPB and MPC label positions UNSET — auto-placer evaluates
+          /* MPB and MPC label positions UNSET – auto-placer evaluates
            * 5 candidates and picks the one with no curve clash, no
            * label clash, and a slot that doesn't drift off-stage. */
           { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
             tone: 'blue', label: 'MPB', strokeWidth: 2.5 },
           { id: 'MPC', d: 'M 0.069,0.080 L 0.972,0.880',
             tone: 'amber', label: 'MPC', strokeWidth: 2.5 },
-          /* MSB shifted UP from MPB — vaccinations add herd-immunity
-           * benefit. Label position UNSET — auto-placer handles it
+          /* MSB shifted UP from MPB – vaccinations add herd-immunity
+           * benefit. Label position UNSET – auto-placer handles it
            * (without this the manual placement clashed with the
            * auto-placed MPB above). */
           { id: 'MSB', d: 'M 0.215,0.880 L 1.000,0.230',
@@ -99,7 +99,7 @@
         ],
         points: [
           /* Market eq at MPB ∩ MPC. In the POSITIVE-externality panel
-           * E_m label goes to the LEFT of the dot — E* sits to the
+           * E_m label goes to the LEFT of the dot – E* sits to the
            * right (Q* > Q_m for under-production) so a right-side E_m
            * label would crash into E*. User feedback this round:
            * "E_m label should be to the LEFT of the intersection
@@ -108,7 +108,7 @@
             tone: 'blue', radius: 5, hollow: true,
             gridlines: 'slate', ticks: { x: 'Q_m' },
             label: 'E_m', labelDx: -10, labelDy: 0, anchor: 'end' },
-          /* Social optimum at MPC ∩ MSB — right of Q_m */
+          /* Social optimum at MPC ∩ MSB – right of Q_m */
           { x: ES_POS.x, y: ES_POS.y, intersection: { curves: ['MPC', 'MSB'] },
             tone: 'green', radius: 6, hollow: true,
             gridlines: 'green', ticks: { x: 'Q*' },

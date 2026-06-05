@@ -133,23 +133,23 @@ window.ECONOS_TOPIC = {
             tone: 'blue',
             classical: {
               head: 'Starting point on vertical LRAS',
-              body: 'Classical economists hold that in the long run AS is vertical at full-capacity output Yf. The economy starts at E₁ where AD₁ meets LRAS — price level P₁, output Y₁ = Yf.'
+              body: 'Classical economists hold that in the long run AS is vertical at full-capacity output Yf. The economy starts at E₁ where AD₁ meets LRAS – price level P₁, output Y₁ = Yf.'
             },
             keynesian: {
               head: 'Starting point on sloped SRAS',
-              body: 'Keynesians draw AS as upward-sloping in the short run because some costs are sticky. The economy starts at E₁ where AD₁ meets SRAS — price level P₁, output Y₁ below full capacity.'
+              body: 'Keynesians draw AS as upward-sloping in the short run because some costs are sticky. The economy starts at E₁ where AD₁ meets SRAS – price level P₁, output Y₁ below full capacity.'
             }
           },
           {
             label: 'AD shifts right',
             tone: 'green',
             classical: {
-              head: 'Demand shock — AD₁ → AD₂',
+              head: 'Demand shock – AD₁ → AD₂',
               body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₂. The AS curve (vertical LRAS) does not move.',
-              analysis: 'Classical view: only AD has moved. The economy cannot produce above Yf in the long run, so something has to give — that something is the price level.'
+              analysis: 'Classical view: only AD has moved. The economy cannot produce above Yf in the long run, so something has to give – that something is the price level.'
             },
             keynesian: {
-              head: 'Demand shock — AD₁ → AD₂',
+              head: 'Demand shock – AD₁ → AD₂',
               body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₂. Firms face excess demand at the old prices.',
               analysis: 'Keynesian view: in the short run AS slopes up, so firms can BOTH raise prices AND raise output in response. The pressure splits between P and Y.'
             }
@@ -160,12 +160,12 @@ window.ECONOS_TOPIC = {
             classical: {
               head: 'Result: P ↑, Y unchanged',
               body: 'The new equilibrium E₂ sits directly ABOVE E₁ on the vertical LRAS. Price level rises from P₁ to P₂. Output is still Y₁ = Yf.',
-              analysis: 'The Classical "money is neutral" result — AD stimulus produces ONLY inflation in the long run. No real-output gain.'
+              analysis: 'The Classical "money is neutral" result – AD stimulus produces ONLY inflation in the long run. No real-output gain.'
             },
             keynesian: {
               head: 'Result: P ↑ and Y ↑',
               body: 'The new equilibrium E₂ is at higher price level P₂ AND higher output Y₂. Inflation has occurred but the economy is also producing more.',
-              analysis: 'Both P and Y rise — that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
+              analysis: 'Both P and Y rise – that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
             }
           }
         ]
@@ -230,11 +230,11 @@ window.ECONOS_TOPIC = {
 
       // Stepped interactive diagram with Classical/Keynesian toggle. The
       // cost shock is the lesson; the two schools differ on what happens
-      // NEXT — Classical sees self-correction over time, Keynesian sees
+      // NEXT – Classical sees self-correction over time, Keynesian sees
       // persistent stagflation requiring a painful policy choice.
       interactiveDiagram: {
         svgKey: 'srasShiftLeftClassicalKeynesian',
-        label: 'COST-PUSH INFLATION — SRAS SHIFTS LEFT',
+        label: 'COST-PUSH INFLATION – SRAS SHIFTS LEFT',
         emoji: '📊',
         layers: ['c-sras1-dash', 'c-sras2', 'c-e2', 'c-cost-arrow', 'k-as1-dash', 'k-as2', 'k-e2', 'k-cost-arrow'],
         inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
@@ -245,11 +245,11 @@ window.ECONOS_TOPIC = {
             label: 'Starting point', show: [],
             classical: {
               tone: 'purple',
-              head: 'Classical view — at potential at E₁.',
-              body: ['AD meets SRAS₁ on the <strong>vertical LRAS</strong> at E₁ — output at potential Yf, price level P₁. AD will stay put across this sequence.', 'The pressure that follows comes from the <em>supply</em> side, not from spending.'] },
+              head: 'Classical view – at potential at E₁.',
+              body: ['AD meets SRAS₁ on the <strong>vertical LRAS</strong> at E₁ – output at potential Yf, price level P₁. AD will stay put across this sequence.', 'The pressure that follows comes from the <em>supply</em> side, not from spending.'] },
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — near capacity at E₁.',
+              head: 'Keynesian view – near capacity at E₁.',
               body: ['AD meets the reverse-L AS₁ on its <strong>steep range</strong> at E₁, with price level P₁ and output near capacity Yf.', 'AD will stay put; the shock will lift the price floor.'] }
           },
           {
@@ -258,11 +258,11 @@ window.ECONOS_TOPIC = {
             classical: {
               tone: 'rose',
               head: 'SRAS shifts left to SRAS₂.',
-              body: ['Higher energy prices, wage costs, import prices or indirect taxes raise unit costs at every output level.', 'SRAS slides <strong>up-and-left</strong> in a parallel shift — the same output now needs a higher price.'] },
+              body: ['Higher energy prices, wage costs, import prices or indirect taxes raise unit costs at every output level.', 'SRAS slides <strong>up-and-left</strong> in a parallel shift – the same output now needs a higher price.'] },
             keynesian: {
               tone: 'rose',
               head: 'The price floor rises (AS₁ → AS₂).',
-              body: ['The reverse-L\'s <strong>price floor</strong> moves up — costs at every output level have gone up.', 'Capacity Yf is unchanged: the vertical wall stays put, but the floor lifts.'] }
+              body: ['The reverse-L\'s <strong>price floor</strong> moves up – costs at every output level have gone up.', 'Capacity Yf is unchanged: the vertical wall stays put, but the floor lifts.'] }
           },
           {
             label: 'Stagflation',
@@ -270,13 +270,13 @@ window.ECONOS_TOPIC = {
             classical: {
               tone: 'rose',
               head: 'P ↑ and Y ↓ at E₂.',
-              body: ['E₂: <strong>P₂ &gt; P₁ AND Y₂ &lt; Yf</strong> — the textbook cost-push outcome with output below potential.', 'Inflation and falling output occur simultaneously.'],
-              analysis: 'Classical verdict: the stagflation is <em>short-run</em>. With Y₂ below Yf, unemployment rises and wage pressure eases — SRAS gradually slides back toward SRAS₁ and the economy returns to Yf at the original P₁. The case against active demand management here is strong: tightening AD speeds the disinflation, loosening AD embeds the higher price level — but the economy gets there either way.' },
+              body: ['E₂: <strong>P₂ &gt; P₁ AND Y₂ &lt; Yf</strong> – the textbook cost-push outcome with output below potential.', 'Inflation and falling output occur simultaneously.'],
+              analysis: 'Classical verdict: the stagflation is <em>short-run</em>. With Y₂ below Yf, unemployment rises and wage pressure eases – SRAS gradually slides back toward SRAS₁ and the economy returns to Yf at the original P₁. The case against active demand management here is strong: tightening AD speeds the disinflation, loosening AD embeds the higher price level – but the economy gets there either way.' },
             keynesian: {
               tone: 'rose',
               head: 'P ↑ and Y ↓ at E₂.',
-              body: ['E₂ sits up-and-left of E₁: <strong>P₂ &gt; P₁, Y₂ &lt; Y₁</strong> — inflation and a real recession at the same time.', 'There is no smooth self-correction route home.'],
-              analysis: 'Keynesian verdict: with sticky wages and prices, the higher cost floor is <strong>persistent</strong>. This is the cost-push <em>policy dilemma</em>: tighten policy and inflation falls but the output loss deepens (and unemployment rises); loosen policy and output holds up but inflation embeds itself in expectations. Neither lever fixes both. The judgement call usually turns on credibility — letting expectations un-anchor is the costlier mistake.' }
+              body: ['E₂ sits up-and-left of E₁: <strong>P₂ &gt; P₁, Y₂ &lt; Y₁</strong> – inflation and a real recession at the same time.', 'There is no smooth self-correction route home.'],
+              analysis: 'Keynesian verdict: with sticky wages and prices, the higher cost floor is <strong>persistent</strong>. This is the cost-push <em>policy dilemma</em>: tighten policy and inflation falls but the output loss deepens (and unemployment rises); loosen policy and output holds up but inflation embeds itself in expectations. Neither lever fixes both. The judgement call usually turns on credibility – letting expectations un-anchor is the costlier mistake.' }
           }
         ]
       },

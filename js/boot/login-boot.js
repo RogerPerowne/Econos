@@ -1,7 +1,7 @@
 /* Login form handler. Lifted out of login.html's inline <script>
    so script-src can drop 'unsafe-inline'.
 
-   The credential check is intentionally client-side and demo-only —
+   The credential check is intentionally client-side and demo-only –
    /login is a placeholder until a real auth backend lands. The
    localStorage flag is read by js/auth-check.js on every protected
    page. Do not pretend this is real auth; it is not. */

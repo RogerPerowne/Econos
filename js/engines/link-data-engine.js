@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Read the Data station)
+   ECONOS – Link It engine (Read the Data station)
    Students interpret a quantitative data table, then answer
    3 MCQ questions with explanation feedback.
    ============================================================ */

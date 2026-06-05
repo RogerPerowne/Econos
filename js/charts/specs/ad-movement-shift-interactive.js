@@ -1,5 +1,5 @@
 /* ============================================================
-   AD Movement vs Shift Interactive — engine spec for
+   AD Movement vs Shift Interactive – engine spec for
    adMovementShiftInteractive.
 
    The crucial distinction:
@@ -10,12 +10,12 @@
    The diagram walks through both cases on one set of axes:
 
      V1  AD₁ + starting point A
-     V2  MOVEMENT — P falls → output rises along the SAME AD₁ to B
-     V3  SHIFT — back to original P, but a non-price determinant
+     V2  MOVEMENT – P falls → output rises along the SAME AD₁ to B
+     V3  SHIFT – back to original P, but a non-price determinant
          change shifts AD₁ → AD₂. New equilibrium at C is on a
          DIFFERENT curve, at the same price level but higher Y.
 
-   Both schools agree on this distinction — no toggle.
+   Both schools agree on this distinction – no toggle.
    ============================================================ */
 (function () {
   'use strict';
@@ -35,11 +35,11 @@
     },
 
     curves: [
-      // AD₁ — original curve, always visible.
+      // AD₁ – original curve, always visible.
       { id: 'AD1', d: 'M 0.10,0.85 L 0.85,0.15',
         tone: 'blue', label: 'AD₁', strokeWidth: 2.5,
         labelDx: -6, labelDy: -10, anchor: 'end' },
-      // AD₂ — shifted RIGHT (V3+), parallel.
+      // AD₂ – shifted RIGHT (V3+), parallel.
       { id: 'AD2', d: 'M 0.30,0.85 L 1.00,0.197',
         tone: 'purple', label: 'AD₂', strokeWidth: 2.5,
         labelDx: -4, labelDy: -10, anchor: 'end',
@@ -47,18 +47,18 @@
     ],
 
     points: [
-      // Point A — always visible.
+      // Point A – always visible.
       { x: 0.366, y: 0.602,
         tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { y: 'P₁' },
         label: 'A', labelDx: -10, labelDy: -4, anchor: 'end' },
-      // Point B (V2+) — same AD₁, lower P, higher Y.
+      // Point B (V2+) – same AD₁, lower P, higher Y.
       { x: 0.633, y: 0.353,
         tone: 'blue', radius: 5.5, hollow: true,
         gridlines: 'blue', ticks: { x: 'Y₂', y: 'P₂' },
         label: 'B', labelDx: -10, labelDy: -4, anchor: 'end',
         layer: 'point-b' },
-      // Point C (V3+) — same P₁ as A, but on AD₂ — shift.
+      // Point C (V3+) – same P₁ as A, but on AD₂ – shift.
       { x: 0.580, y: 0.602,
         tone: 'purple', radius: 5.5, hollow: true,
         gridlines: 'purple', ticks: { x: 'Y₃' },

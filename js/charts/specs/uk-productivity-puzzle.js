@@ -1,16 +1,16 @@
 /* ============================================================
-   UK Productivity Puzzle — engine spec for ukProductivityPuzzle.
-   Supply-side topic Card 7 (DEEPEN — UK CONTEXT).
+   UK Productivity Puzzle – engine spec for ukProductivityPuzzle.
+   Supply-side topic Card 7 (DEEPEN – UK CONTEXT).
 
    Visual story:
      • X-axis: 2000–2024 (24 years), ticks every 4 years.
      • Y-axis: Output per hour (no absolute scale, conceptual).
      • Pre-crisis trend (1.5%/yr linear, green dashed) extrapolated
-       through 2024 — what productivity "would have done" without
+       through 2024 – what productivity "would have done" without
        the puzzle.
      • Actual path (blue solid) matches trend until 2008, then
-       flattens dramatically — the puzzle.
-     • Shaded gap between trend and actual after 2008 — "lost
+       flattens dramatically – the puzzle.
+     • Shaded gap between trend and actual after 2008 – "lost
        momentum".
      • Financial-crisis marker at 2008.
      • Labels: "Pre-crisis trend" along the dashed line, "Actual
@@ -26,7 +26,7 @@
 
   // Pre-crisis trend: linear 1.5%/yr productivity growth.
   // Anchored so 2000 sits at y=0.20 (lower portion) and 2024 sits
-  // at y=0.92 (upper portion) — visually striking trajectory.
+  // at y=0.92 (upper portion) – visually striking trajectory.
   // Trend y at any x: y = 0.20 + 0.72·x
   var TREND_AT_2008 = 0.20 + 0.72 * X2008; // ≈ 0.44
 
@@ -61,7 +61,7 @@
     ],
 
     polygons: [
-      // Productivity gap (lost momentum) — shaded region between
+      // Productivity gap (lost momentum) – shaded region between
       // actual and trend after 2008. Vertices traced clockwise:
       // (2008, trend=actual) → (2024, trend) → (2024, actual) → back to (2008).
       // Approximated via straight segments since the gap is the

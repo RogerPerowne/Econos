@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Chain station — Open Response)
+   ECONOS – Link It engine (Chain station – Open Response)
    Student writes each step; model answers revealed for self-mark.
    ============================================================ */
 
@@ -49,7 +49,7 @@
       return ''
         + '<div class="link-card">'
         +   '<div class="chain-eyebrow-row">'
-        +     '<div class="link-card__eyebrow"><span class="link-card__eyebrow-dot"></span>Build the Chain — Open Response</div>'
+        +     '<div class="link-card__eyebrow"><span class="link-card__eyebrow-dot"></span>Build the Chain – Open Response</div>'
         +     '<div class="chain-score">'
         +       '<div class="chain-score__label">SCORE</div>'
         +       '<div class="chain-score__val">' + state.score + ' / ' + maxScore + '</div>'
@@ -83,7 +83,7 @@
     function renderOpenChain(C) {
       var slots = [];
 
-      /* Slot 1 — anchor (locked) */
+      /* Slot 1 – anchor (locked) */
       slots.push(
         '<div class="chain-slot chain-slot--anchor">'
         + '<div class="chain-slot__num">1</div>'
@@ -91,7 +91,7 @@
         + '</div>'
       );
 
-      /* Slots 2–4 — open text inputs */
+      /* Slots 2–4 – open text inputs */
       for (var i = 0; i < 3; i++) {
         var slotNum  = i + 2;
         var val      = state.inputs[i];
@@ -153,7 +153,7 @@
         if (j < slots.length - 1) inner += '<div class="chain-arrow">→</div>';
       }
 
-      /* Exam bridge — shown after all self-marks done */
+      /* Exam bridge – shown after all self-marks done */
       var allMarked  = state.selfMarks.every(function (m) { return m !== null; });
       var bridgeHtml = (state.checked && allMarked)
         ? '<div class="link-bridge" style="margin-top:var(--sp-5);">'

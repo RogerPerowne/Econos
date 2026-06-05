@@ -1,5 +1,5 @@
 /* ============================================================
-   PPF — "classify the point" (1.1.4 card 2).
+   PPF – "classify the point" (1.1.4 card 2).
    Redesigned (v0.41.12) to tell a DIFFERENT story than card 1.
    Card 1 defines the frontier (one point, feasible vs infeasible).
    Card 2 classifies the THREE REGIONS using shaded tints and
@@ -47,13 +47,13 @@
       y: { label: 'Capital goods' }
     },
     polygons: [
-      // Underused region — amber wash under the curve.
+      // Underused region – amber wash under the curve.
       { points: UNDERUSED, tone: 'amber', opacity: 0.14 },
-      // Unattainable region — green wash above the curve.
+      // Unattainable region – green wash above the curve.
       { points: UNATTAINABLE, tone: 'green', opacity: 0.14 }
     ],
     curves: [
-      // The frontier itself — blue, just labelled "PPF". The
+      // The frontier itself – blue, just labelled "PPF". The
       // "efficient" classification is carried by the curve's
       // position between the amber and green region shadings, not
       // by a long curve label (which put its centre 76px from
@@ -62,15 +62,15 @@
         label: 'PPF', labelDx: -10, labelDy: -10, anchor: 'end' }
     ],
     points: [
-      // A — on the frontier (snapped via on:'ppf1')
+      // A – on the frontier (snapped via on:'ppf1')
       { x: 0.46, on: 'ppf1', tone: 'blue', label: 'A', anchor: 'start', labelDx: 11, labelDy: -4 },
-      // B — inside (underused region)
+      // B – inside (underused region)
       { x: 0.24, y: 0.28, tone: 'amber', label: 'B', anchor: 'start', labelDx: 11, labelDy: -4 },
-      // C — outside (unattainable region)
+      // C – outside (unattainable region)
       { x: 0.76, y: 0.68, tone: 'green', label: 'C', anchor: 'start', labelDx: 11, labelDy: -4 }
     ],
     texts: [
-      // Region labels — single line each, anchored inside each shaded
+      // Region labels – single line each, anchored inside each shaded
       // zone, away from the A/B/C dots so they read as region tags
       // (not point descriptions).
       { x: 0.18, y: 0.15, text: 'Underused (inside)',     tone: 'amber', fontSize: 12, anchor: 'middle', bold: true },

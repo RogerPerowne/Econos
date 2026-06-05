@@ -1,12 +1,12 @@
 /* ============================================================
-   Price Floor Diagram Interactive — engine spec for
+   Price Floor Diagram Interactive – engine spec for
    priceFloorDiagramInteractive. Govt intervention topic.
 
    Minimum price set ABOVE Pₑ. At Pmin: quantity supplied (Qs)
    exceeds quantity demanded (Qd) → excess supply / surplus.
 
    3 progressive-reveal views:
-     V0 Free market    — base D + S + E only
+     V0 Free market    – base D + S + E only
      V1 Floor Pmin     → idl-1 (Pmin line + Qd/Qs ticks + excess supply bracket)
      V2 Surplus regions → idl-1 + idl-2 (CS smaller, PS quadrilateral)
      V3 DWL            → idl-1 + idl-2 + idl-3 (DWL triangle)

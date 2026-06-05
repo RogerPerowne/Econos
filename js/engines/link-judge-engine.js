@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Make the Judgement station)
+   ECONOS – Link It engine (Make the Judgement station)
    ============================================================ */
 
 (function () {

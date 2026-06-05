@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Context station)
+   ECONOS – Link It engine (Context station)
    Tap-to-select then tap-to-place. No drag dependency.
    ============================================================ */
 
@@ -178,8 +178,8 @@
 
       var pct      = nTotal ? Math.round(nCorrect / Object.keys(S.evidence).length * 100) : 0;
       var verdict;
-      if (pct >= 80)      verdict = 'Strong application — you let the context change the conclusion.';
-      else if (pct >= 50) verdict = 'Some good reads — sharpen which details actually shift the judgement.';
+      if (pct >= 80)      verdict = 'Strong application – you let the context change the conclusion.';
+      else if (pct >= 50) verdict = 'Some good reads – sharpen which details actually shift the judgement.';
       else                verdict = 'Re-read the extract: not every economic-sounding phrase changes the conclusion.';
 
       return ''

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It · Section A renderer
+   ECONOS – Land It · Section A renderer
    ============================================================ */
 
 (function () {
@@ -585,7 +585,7 @@
         });
       }
 
-      /* continue / finish — save timing + score */
+      /* continue / finish – save timing + score */
       var continueBtn = document.getElementById('js-continue-btn');
       if (continueBtn) {
         continueBtn.addEventListener('click', function () {

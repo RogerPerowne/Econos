@@ -1,5 +1,5 @@
 /* ============================================================
-   Allocative Efficiency diagram — engine spec for
+   Allocative Efficiency diagram – engine spec for
    allocativeEfficiencyDiagram. CPS topic card 5.
 
    Structural twin of cpsDiagram / welfareSurplusDiagram, but each
@@ -29,10 +29,10 @@
     },
 
     polygons: [
-      // CS triangle (blue) — above Pₑ, below MB curve
+      // CS triangle (blue) – above Pₑ, below MB curve
       { points: [[0, 0.933], [0, E.y], [E.x, E.y]],
         fill: '#3B82F6', opacity: 0.18 },
-      // PS triangle (amber) — below Pₑ, above MC curve
+      // PS triangle (amber) – below Pₑ, above MC curve
       { points: [[0, 0], [0, E.y], [E.x, E.y]],
         fill: '#F59E0B', opacity: 0.18 }
     ],
@@ -66,7 +66,7 @@
       { x: 0.135, y: 0.280, text: 'Producer', tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
       { x: 0.135, y: 0.230, text: 'surplus',  tone: 'amber', bold: true, fontSize: 12, anchor: 'middle' },
 
-      // Dual curve labels — second label on each curve at the AXIS-meeting end
+      // Dual curve labels – second label on each curve at the AXIS-meeting end
       // MB sits above the chart on the D's upper end (y-axis intercept)
       { x: 0.060, y: 0.948, text: 'MB', tone: 'blue', bold: true, fontSize: 13, anchor: 'start' },
       // MC sits below the chart on the S's lower end (y-axis intercept)

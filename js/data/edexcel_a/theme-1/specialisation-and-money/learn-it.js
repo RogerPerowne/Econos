@@ -48,7 +48,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 2 – Adam Smith's pin factory (Worked example) — spec (a)
+       CARD 2 – Adam Smith's pin factory (Worked example) – spec (a)
        ================================================================ */
     {
       id: 'specialisation_money_2',
@@ -82,7 +82,7 @@ window.ECONOS_TOPIC = {
           }
         ],
         summary: [
-          { icon: '📈', label: '≈ 240× more output per worker — same people, same hours', tone: 'green' }
+          { icon: '📈', label: '≈ 240× more output per worker – same people, same hours', tone: 'green' }
         ]
       },
       causes: [
@@ -96,7 +96,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 3 – Division of labour weighed up (Evidence-then-verdict) — spec (b)
+       CARD 3 – Division of labour weighed up (Evidence-then-verdict) – spec (b)
        ================================================================ */
     {
       id: 'specialisation_money_3',
@@ -128,7 +128,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 4 – Specialising to trade (Side-by-side / level grid) — spec (c)
+       CARD 4 – Specialising to trade (Side-by-side / level grid) – spec (c)
        ================================================================ */
     {
       id: 'specialisation_money_4',
@@ -177,7 +177,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 5 – Comparative Advantage (Worked-example walkthrough) — spec 1.1.5(c)
+       CARD 5 – Comparative Advantage (Worked-example walkthrough) – spec 1.1.5(c)
        Closes the comparative-advantage gap flagged in the Theme 1 audit.
        Numbers chosen so full specialisation cleanly raises BOTH world
        totals by 50; OC ratios 0.5 / 2 mirror exactly. The deeper
@@ -192,12 +192,12 @@ window.ECONOS_TOPIC = {
       template: 'worked-example',
       stepLabel: 'Learn: Step 5 of 10',
       title: 'Worked Example: Comparative Advantage',
-      scenario: 'Two countries — the <strong>UK</strong> and <strong>China</strong> — can each put a worker on <strong>financial services</strong> or <strong>electronics</strong>. With the same resources, one worker can make:\n\n<strong>UK:</strong> 200 financial services <em>or</em> 100 electronics\n<strong>China:</strong> 100 financial services <em>or</em> 200 electronics\n\nBoth countries can make both goods. Should they specialise — and if so, who makes what?',
+      scenario: 'Two countries – the <strong>UK</strong> and <strong>China</strong> – can each put a worker on <strong>financial services</strong> or <strong>electronics</strong>. With the same resources, one worker can make:\n\n<strong>UK:</strong> 200 financial services <em>or</em> 100 electronics\n<strong>China:</strong> 100 financial services <em>or</em> 200 electronics\n\nBoth countries can make both goods. Should they specialise – and if so, who makes what?',
       steps: [
         {
           label: 'Step 1 – Absolute vs comparative advantage',
           hint: 'Who can produce MORE of each good with the same resources? Is that the right question?',
-          answer: '<strong>Absolute advantage</strong> = producing more with the same resources. The UK wins on services (200 &gt; 100); China wins on electronics (200 &gt; 100).\n\nBut absolute advantage is <em>not</em> the basis for trade. David Ricardo\'s insight (1817): what matters is <strong>comparative advantage</strong> — who gives up the least to make each good. That means working in <strong>opportunity cost</strong>, not raw output.'
+          answer: '<strong>Absolute advantage</strong> = producing more with the same resources. The UK wins on services (200 &gt; 100); China wins on electronics (200 &gt; 100).\n\nBut absolute advantage is <em>not</em> the basis for trade. David Ricardo\'s insight (1817): what matters is <strong>comparative advantage</strong> – who gives up the least to make each good. That means working in <strong>opportunity cost</strong>, not raw output.'
         },
         {
           label: 'Step 2 – Work out each country\'s opportunity cost',
@@ -217,10 +217,10 @@ window.ECONOS_TOPIC = {
         {
           label: 'Step 5 – Evaluate: the catch, and Ricardo\'s deeper point',
           hint: 'When does trade NOT make both better off? And does comparative advantage still apply if one country is better at everything?',
-          answer: '<strong>The terms of trade must lie between the two opportunity costs</strong> (here 0.5–2 electronics per service). Outside that band, one country is better off not trading.\n\n<strong>Other limits:</strong> over-specialisation leaves an economy exposed to price swings and structural unemployment if its industry fades; transport costs and trade barriers can wipe out small gains.\n\n<strong>Ricardo\'s deeper point:</strong> comparative advantage applies <em>even when one country is absolutely more productive at everything</em>. The basis for trade is the <strong>difference in opportunity-cost ratios</strong>, not absolute productivity — which is why a highly productive economy like the UK still gains from trading with less productive partners.'
+          answer: '<strong>The terms of trade must lie between the two opportunity costs</strong> (here 0.5–2 electronics per service). Outside that band, one country is better off not trading.\n\n<strong>Other limits:</strong> over-specialisation leaves an economy exposed to price swings and structural unemployment if its industry fades; transport costs and trade barriers can wipe out small gains.\n\n<strong>Ricardo\'s deeper point:</strong> comparative advantage applies <em>even when one country is absolutely more productive at everything</em>. The basis for trade is the <strong>difference in opportunity-cost ratios</strong>, not absolute productivity – which is why a highly productive economy like the UK still gains from trading with less productive partners.'
         }
       ],
-      conclusion: 'Comparative advantage = the lowest opportunity cost. Whenever opportunity-cost ratios differ between countries, specialisation plus trade raises total output — here from 150 to 200 units of each good with no extra resources. Specialise by opportunity cost, not by who is absolutely best.',
+      conclusion: 'Comparative advantage = the lowest opportunity cost. Whenever opportunity-cost ratios differ between countries, specialisation plus trade raises total output – here from 150 to 200 units of each good with no extra resources. Specialise by opportunity cost, not by who is absolutely best.',
       examEdge: 'The classic trap is answering on <em>absolute</em> advantage. Always compute opportunity cost and award comparative advantage to the lower-OC producer. State the terms-of-trade condition (the trade rate must sit between the two opportunity costs) to reach the top band.',
       economistQuote: {
         portraitKey: 'economistRicardo',
@@ -243,10 +243,10 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 10',
       title: 'When comparative advantage doesn\'t quite work',
-      lede: 'Ricardo\'s case is powerful — but the model rests on four assumptions that the real world routinely breaks. Top exam answers name a limit before they judge.',
+      lede: 'Ricardo\'s case is powerful – but the model rests on four assumptions that the real world routinely breaks. Top exam answers name a limit before they judge.',
       ledeStyle: 'plain',
 
-      tip: { icon: '⚖️', tone: 'amber', text: 'The case for trade still holds — but pure comparative advantage is a <strong>model</strong>, not a forecast. The world adds friction.' },
+      tip: { icon: '⚖️', tone: 'amber', text: 'The case for trade still holds – but pure comparative advantage is a <strong>model</strong>, not a forecast. The world adds friction.' },
 
       causesLabel: 'FOUR REAL-WORLD LIMITS',
       causesEmoji: '🚧',
@@ -254,13 +254,13 @@ window.ECONOS_TOPIC = {
       causesCols: 1,
       causes: [
         { tone: 'amber', icon: '🚢', head: 'Transport costs can swallow the gains',
-          body: 'The model assumes goods move freely. In reality, shipping heavy or perishable goods (concrete, fresh dairy, low-value bulk) can cost <em>more</em> than the comparative-advantage gain itself. This is why trade clusters around high-value, light or digital goods — and why "global value chains" still concentrate regionally.' },
+          body: 'The model assumes goods move freely. In reality, shipping heavy or perishable goods (concrete, fresh dairy, low-value bulk) can cost <em>more</em> than the comparative-advantage gain itself. This is why trade clusters around high-value, light or digital goods – and why "global value chains" still concentrate regionally.' },
         { tone: 'blue', icon: '📉', head: 'Costs rise as output expands',
-          body: 'Ricardo assumed <strong>constant returns</strong> — adding workers always adds the same output. In the real world, fully specialising drives up land, labour and resource costs as scarce inputs get bid up. The right amount of specialisation usually sits <em>below</em> the theoretical maximum.' },
+          body: 'Ricardo assumed <strong>constant returns</strong> – adding workers always adds the same output. In the real world, fully specialising drives up land, labour and resource costs as scarce inputs get bid up. The right amount of specialisation usually sits <em>below</em> the theoretical maximum.' },
         { tone: 'rose', icon: '👷', head: 'Workers can\'t switch jobs overnight',
-          body: 'A steelworker losing their job to imported steel cannot instantly become a software engineer. The <strong>aggregate gain</strong> from trade can mask painful <strong>structural unemployment</strong> in declining industries — and aggregate gains are politically meaningless if they are very unevenly distributed.' },
+          body: 'A steelworker losing their job to imported steel cannot instantly become a software engineer. The <strong>aggregate gain</strong> from trade can mask painful <strong>structural unemployment</strong> in declining industries – and aggregate gains are politically meaningless if they are very unevenly distributed.' },
         { tone: 'purple', icon: '🔁', head: 'Comparative advantage shifts over time',
-          body: 'It is not destiny. South Korea built world-leading shipbuilding from almost nothing in 30 years; China shifted from basic textiles in the 1980s to electronics by the 2010s. Targeted investment in skills, technology and infrastructure can <em>change</em> which country has the lowest opportunity cost — a key argument for active industrial policy.' }
+          body: 'It is not destiny. South Korea built world-leading shipbuilding from almost nothing in 30 years; China shifted from basic textiles in the 1980s to electronics by the 2010s. Targeted investment in skills, technology and infrastructure can <em>change</em> which country has the lowest opportunity cost – a key argument for active industrial policy.' }
       ],
 
       pairLabel: 'BUT THE CORE INSIGHT SURVIVES',
@@ -268,7 +268,7 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'green', icon: '✅', iconStyle: 'circle',
         label: 'Trade still pays',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.65;">As long as opportunity-cost ratios differ, <em>some</em> gain from specialisation exists. The limits above narrow the gain — they do not eliminate it.</p>'
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.65;">As long as opportunity-cost ratios differ, <em>some</em> gain from specialisation exists. The limits above narrow the gain – they do not eliminate it.</p>'
       },
       right: {
         tone: 'amber', icon: '⚠️', iconStyle: 'circle',
@@ -282,11 +282,11 @@ window.ECONOS_TOPIC = {
         title: 'The verdict',
         text: 'Ricardo\'s model gives the <strong>direction</strong> of trade gains; the four limits give their <strong>magnitude and distribution</strong>. A good A-level answer names a limit before reaching for a judgement.'
       },
-      examEdge: 'Top answers <strong>do not stop at "trade makes both countries better off"</strong>. They identify a real-world limit — transport costs, rising costs at scale, structural unemployment in losing industries, or shifting comparative advantage — and use it to qualify the case. Naming Ha-Joon Chang\'s "kicking away the ladder" critique, or citing the UK steel industry decline, lifts B-band evaluation to A*.'
+      examEdge: 'Top answers <strong>do not stop at "trade makes both countries better off"</strong>. They identify a real-world limit – transport costs, rising costs at scale, structural unemployment in losing industries, or shifting comparative advantage – and use it to qualify the case. Naming Ha-Joon Chang\'s "kicking away the ladder" critique, or citing the UK steel industry decline, lifts B-band evaluation to A*.'
     },
 
     /* ================================================================
-       CARD 7 – The Problem with Barter (Sequential flow chain) — spec (d) setup
+       CARD 7 – The Problem with Barter (Sequential flow chain) – spec (d) setup
        ================================================================ */
     {
       id: 'specialisation_money_5',
@@ -337,7 +337,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 6 – The Four Functions of Money (Tile grid) — spec (d)
+       CARD 6 – The Four Functions of Money (Tile grid) – spec (d)
        ================================================================ */
     {
       id: 'specialisation_money_6',
@@ -412,7 +412,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 8 – Why money holds it together (Evidence-then-verdict) — synthesis
+       CARD 8 – Why money holds it together (Evidence-then-verdict) – synthesis
        ================================================================ */
     {
       id: 'specialisation_money_8',

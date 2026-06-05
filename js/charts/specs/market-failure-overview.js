@@ -1,23 +1,23 @@
 /* ============================================================
-   Market Failure Overview — engine spec for marketFailureOverview.
-   Market-failure topic — card 1 "Market failure".
+   Market Failure Overview – engine spec for marketFailureOverview.
+   Market-failure topic – card 1 "Market failure".
 
    The visual anchor for the concept. A supply-demand chart with
    MPB (= D), MPC (= S) and dashed MSC (parallel-shift, simulating
    a constant per-unit external cost). Two equilibria:
 
-     E_m  = MPB ∩ MPC  — the free-market equilibrium
-     E*   = MPB ∩ MSC  — the socially optimal point
+     E_m  = MPB ∩ MPC  – the free-market equilibrium
+     E*   = MPB ∩ MSC  – the socially optimal point
 
    Both points are SOLVED by the engine's intersection solver
    (curve ids 'MPB', 'MPC', 'MSC'), so they always sit exactly on
-   the curves — no eyeball drift. The wedge between E_m and E* is
+   the curves – no eyeball drift. The wedge between E_m and E* is
    the deadweight welfare-loss triangle.
    ============================================================ */
 (function () {
   'use strict';
 
-  /* Equilibria (verified by the engine — see point.intersection). */
+  /* Equilibria (verified by the engine – see point.intersection). */
   var EM = { x: 0.520, y: 0.480 };   // MPB ∩ MPC
   var ES = { x: 0.420, y: 0.569 };   // MPB ∩ MSC
 
@@ -34,7 +34,7 @@
       y: { label: 'Price (P)' }
     },
 
-    /* DWL triangle — bounded by MSC (top), MPB (bottom-right) and the
+    /* DWL triangle – bounded by MSC (top), MPB (bottom-right) and the
        vertical at Q_m (right). Visible amber tint with high opacity so
        students can actually see it. */
     polygons: [
@@ -43,7 +43,7 @@
     ],
 
     curves: [
-      /* All label positions UNSET — auto-placer (v0.41.18) handles it.
+      /* All label positions UNSET – auto-placer (v0.41.18) handles it.
        * MPC = S sits BELOW the line, MSC sits ABOVE (opposite-side
        * rule for the parallel pair). MPB = D auto-picks its slot. */
       { id: 'MPB', d: 'M 0.069,0.880 L 0.972,0.080',
@@ -55,12 +55,12 @@
     ],
 
     points: [
-      /* Market equilibrium — solved by the engine at MPB ∩ MPC */
+      /* Market equilibrium – solved by the engine at MPB ∩ MPC */
       { x: EM.x, y: EM.y, intersection: { curves: ['MPB', 'MPC'] },
         tone: 'blue', radius: 6, hollow: true,
         gridlines: 'slate', ticks: { x: 'Q_m' },
         label: 'E_m', labelDx: 10, labelDy: 0, anchor: 'start' },
-      /* Social optimum — solved by the engine at MPB ∩ MSC */
+      /* Social optimum – solved by the engine at MPB ∩ MSC */
       { x: ES.x, y: ES.y, intersection: { curves: ['MPB', 'MSC'] },
         tone: 'green', radius: 7, hollow: true,
         gridlines: 'green', ticks: { x: 'Q*' },
@@ -68,7 +68,7 @@
     ],
 
     texts: [
-      /* DWL at the triangle's CENTROID — vertically centred in the
+      /* DWL at the triangle's CENTROID – vertically centred in the
        * shaded region. Centroid of [(0.420, 0.569), (0.520, 0.480),
        * (0.520, 0.655)] is (0.487, 0.568). */
       { x: 0.487, y: 0.568, text: 'DWL',

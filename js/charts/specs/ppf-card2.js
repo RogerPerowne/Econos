@@ -1,5 +1,5 @@
 /* ============================================================
-   PPF card 4 — ppfBowedOutInteractive: three trades along a
+   PPF card 4 – ppfBowedOutInteractive: three trades along a
    quarter-circle PPF, designed so the chord slopes (OC values)
    triple each time: 1/3 → 1 → 3.
 
@@ -7,18 +7,18 @@
    Bezier approximation to a quarter-arc of the unit circle (the
    magic constant 4(√2−1)/3 ≈ 0.5523). In 0..10 chart units it
    satisfies x² + y² ≈ 100 to four decimals at every sampled
-   point — the standard "smoothly bowed PPF" textbook shape, not
+   point – the standard "smoothly bowed PPF" textbook shape, not
    the flat-then-cliff shape the engine had been producing.
 
    Trade Δx is 2 capital goods. Endpoints land on integer y so the
    sacrifice can be read straight off the chord:
 
-     View 1 — CHEAP    (green) capital 2 → 4, consumer 9.8 → 9.2
-              OC ≈ 1/3 — you gain three times what you give up.
-     View 2 — EVEN     (blue)  capital 6 → 8, consumer 8.0 → 6.0
-              OC = 1   — the 1-for-1 trade, chord at 45°.
-     View 3 — COSTLY   (rose)  capital 8 → 10, consumer 6.0 → 0.0
-              OC = 3   — you give up three times what you gain.
+     View 1 – CHEAP    (green) capital 2 → 4, consumer 9.8 → 9.2
+              OC ≈ 1/3 – you gain three times what you give up.
+     View 2 – EVEN     (blue)  capital 6 → 8, consumer 8.0 → 6.0
+              OC = 1   – the 1-for-1 trade, chord at 45°.
+     View 3 – COSTLY   (rose)  capital 8 → 10, consumer 6.0 → 0.0
+              OC = 3   – you give up three times what you gain.
 
    X-axis tick numerals appear ONLY at the capital values that
    currently matter (2, 4, 6, 8) and reveal progressively as the
@@ -33,7 +33,7 @@
 (function () {
   'use strict';
 
-  // 2 capital goods per trade — large enough that the chord slope reads.
+  // 2 capital goods per trade – large enough that the chord slope reads.
   var DELTA_X = 0.2;
 
   function xTick(x, label) {
@@ -53,7 +53,7 @@
       y: { label: 'Consumer goods' }
     },
     curves: [
-      // Quarter-circle PPF — cubic Bezier approximation. Smoothly bowed,
+      // Quarter-circle PPF – cubic Bezier approximation. Smoothly bowed,
       // x² + y² ≈ 100 everywhere.
       { id: 'ppf', d: 'M 0,1 C 0.5523,1 1,0.5523 1,0', tone: 'blue', label: 'PPF', strokeWidth: 2.5 }
     ],
@@ -61,7 +61,7 @@
     viewDefaultsHidden: true,
     views: [
       {
-        // CHEAP — capital 2 → 4, OC ≈ 1/3.
+        // CHEAP – capital 2 → 4, OC ≈ 1/3.
         // Badge nudged down-right into the consumable region so it doesn't
         // sit on the curve or fall outside the chart.
         key: 'cheap',
@@ -76,7 +76,7 @@
         ]
       },
       {
-        // EVEN — capital 6 → 8, OC = 1 exactly. Chord at 45°.
+        // EVEN – capital 6 → 8, OC = 1 exactly. Chord at 45°.
         // Badge sits below-left of the start, well below the curve at x≈0.65.
         key: 'even',
         contentLayer: 'idl-2',
@@ -90,9 +90,9 @@
         ]
       },
       {
-        // COSTLY — capital 8 → ~10, OC ≈ 3.
+        // COSTLY – capital 8 → ~10, OC ≈ 3.
         // Δx is 0.199 (not 0.2) because findTAtX's bounds check rejects
-        // exact-endpoint targets — start[0] computes to 0.80000194 due
+        // exact-endpoint targets – start[0] computes to 0.80000194 due
         // to binary-search precision. Badge nudged left into the triangle
         // interior so it doesn't sit on the curve.
         key: 'costly',

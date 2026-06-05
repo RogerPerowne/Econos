@@ -1,6 +1,6 @@
 /* ============================================================
-   MEC Diagram — engine spec for mecDiagram.
-   Investment topic — Marginal Efficiency of Capital.
+   MEC Diagram – engine spec for mecDiagram.
+   Investment topic – Marginal Efficiency of Capital.
 
    Classic downward-sloping MEC curve with a single equilibrium
    dot at the market interest rate r, showing the equilibrium
@@ -11,7 +11,7 @@
 
    Both schools agree on the MEC shape (downward-sloping in r);
    the disagreement is about WHAT determines r and how
-   responsive investment is to changes in r — separate topic.
+   responsive investment is to changes in r – separate topic.
    ============================================================ */
 (function () {
   'use strict';

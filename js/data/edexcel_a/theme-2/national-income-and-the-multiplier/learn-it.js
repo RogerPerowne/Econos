@@ -68,28 +68,28 @@ window.ECONOS_TOPIC = {
           {
             label: 'R1: £100m',
             tone: 'blue',
-            head: 'Round 1 — the headline injection',
+            head: 'Round 1 – the headline injection',
             body: 'The government injects £100m into the economy – say a green-infrastructure programme. That money becomes direct income for the businesses, workers, and suppliers paid by the project.',
             analysis: '<strong>Cumulative income so far: £100m.</strong> Only the headline injection has reached the economy. The multiplier hasn’t kicked in yet – this is just £1 of spending creating £1 of income.'
           },
           {
             label: '+ R2: £80m',
             tone: 'blue',
-            head: 'Round 2 — spending becomes income',
+            head: 'Round 2 – spending becomes income',
             body: 'Of that £100m, MPC = 0.8 → £80m gets re-spent on goods and services. The other £20m leaks into saving and never comes back. The £80m becomes income for a fresh set of households.',
             analysis: '<strong>Cumulative income so far: £180m.</strong> The £80m extra appears because <em>spending becomes income</em>. The £20m that leaked is gone for good – it won’t feature in any later round. Already, the economy has felt 1.8× the headline shock.'
           },
           {
             label: '+ R3: £64m',
             tone: 'blue',
-            head: 'Round 3 — the chain narrows',
+            head: 'Round 3 – the chain narrows',
             body: 'Of round 2’s £80m, MPC = 0.8 → £64m is re-spent. The other £16m leaks. The pattern is now clear: each round is exactly <strong>MPC × the previous round</strong>.',
             analysis: '<strong>Cumulative income so far: £244m.</strong> Each round contributes a smaller slice because more income has leaked at each prior step. This is the geometric series in action: ΔJ × (1 + MPC + MPC² + …).'
           },
           {
             label: '+ R4: £51m',
             tone: 'blue',
-            head: 'Round 4 — diminishing returns',
+            head: 'Round 4 – diminishing returns',
             body: 'Round 4 adds £51.2m. Round 5 will add £40.96m. The rounds keep coming forever but each one is 80% of the last.',
             analysis: '<strong>Cumulative income so far: £295.2m.</strong> We’re past the halfway mark to the £500m ceiling but the rounds are getting much smaller now. After round 10 each new round is contributing less than £15m.'
           },
@@ -226,11 +226,11 @@ window.ECONOS_TOPIC = {
       // schools disagree on whether that AD shift delivers real output
       // (Keynesian: yes, with spare capacity) or just inflation (Classical:
       // at Yf the multiplier is eaten by prices). The same mechanism, two
-      // verdicts — exactly what the card's "supply-side limits" caveat
+      // verdicts – exactly what the card's "supply-side limits" caveat
       // already gestures at.
       interactiveDiagram: {
         svgKey: 'adShiftClassicalKeynesian',
-        label: 'THE MULTIPLIER — k × ΔJ AS AN AD SHIFT',
+        label: 'THE MULTIPLIER – k × ΔJ AS AN AD SHIFT',
         emoji: '📊',
         layers: ['idl-1', 'idl-2'],
         inverseLayers: ['idl-old-solid'],
@@ -241,11 +241,11 @@ window.ECONOS_TOPIC = {
             label: 'Before the injection', show: [],
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — spare capacity at E₁.',
-              body: ['AD₁ meets the reverse-L AS on its <strong>rising range</strong> below capacity Yf — there are idle resources the multiplier can put to work.', 'This is the setting where the multiplier delivers <em>real</em> output, not just prices.'] },
+              head: 'Keynesian view – spare capacity at E₁.',
+              body: ['AD₁ meets the reverse-L AS on its <strong>rising range</strong> below capacity Yf – there are idle resources the multiplier can put to work.', 'This is the setting where the multiplier delivers <em>real</em> output, not just prices.'] },
             classical: {
               tone: 'purple',
-              head: 'Classical view — at potential at E₁.',
+              head: 'Classical view – at potential at E₁.',
               body: ['AD₁ meets the vertical LRAS at Yf, with price level P₁.', 'The economy is already at full capacity in the long run.'] }
           },
           {
@@ -264,13 +264,13 @@ window.ECONOS_TOPIC = {
             keynesian: {
               tone: 'green',
               head: 'Output AND prices rise.',
-              body: ['E₂ sits up-and-right of E₁: <strong>real GDP rises and the price level rises</strong>.', 'Closer to Yf, AS steepens — more of the shift leaks into prices and the marginal multiplier falls.'],
-              analysis: 'Keynesian verdict: with spare capacity the multiplier delivers <strong>real output and jobs</strong>. This is the case for fiscal stimulus and why headline shock effects feel bigger than their headline cost. Realistic UK k ≈ 1.5 (high MPM leaks abroad), not the textbook 5 — but still meaningfully larger than 1.' },
+              body: ['E₂ sits up-and-right of E₁: <strong>real GDP rises and the price level rises</strong>.', 'Closer to Yf, AS steepens – more of the shift leaks into prices and the marginal multiplier falls.'],
+              analysis: 'Keynesian verdict: with spare capacity the multiplier delivers <strong>real output and jobs</strong>. This is the case for fiscal stimulus and why headline shock effects feel bigger than their headline cost. Realistic UK k ≈ 1.5 (high MPM leaks abroad), not the textbook 5 – but still meaningfully larger than 1.' },
             classical: {
               tone: 'purple',
               head: 'ONLY prices rise.',
               body: ['E₂ sits <em>directly above</em> E₁: <strong>output stays at Yf, P₂ ≫ P₁</strong>.', 'The multiplier exists, but the AD shift it generates is absorbed by inflation, not output.'],
-              analysis: 'Classical verdict: at full capacity, the multiplier is <strong>eaten by prices</strong>. This is the heart of the monetarist case against active demand management: short-run output gains are illusory; the lasting effect is inflation. To raise real output sustainably you need supply-side policy that shifts LRAS — the multiplier on its own cannot.' }
+              analysis: 'Classical verdict: at full capacity, the multiplier is <strong>eaten by prices</strong>. This is the heart of the monetarist case against active demand management: short-run output gains are illusory; the lasting effect is inflation. To raise real output sustainably you need supply-side policy that shifts LRAS – the multiplier on its own cannot.' }
           }
         ]
       },

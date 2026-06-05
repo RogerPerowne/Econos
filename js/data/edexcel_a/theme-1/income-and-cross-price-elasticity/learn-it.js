@@ -32,7 +32,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_1',
       stepLabel: 'Learn: Step 1 of 10',
-      title: 'YED and XED — the big picture',
+      title: 'YED and XED – the big picture',
       tip: { tone: 'green', icon: '🔒', text: 'YED shows how demand responds to <strong>income</strong>. XED shows how demand responds to <strong>another good’s price</strong>.' },
       intro: 'Demand doesn’t only respond to a good’s own price. It also responds to income and to the prices of related goods.',
       diagramKey: 'yedXedTwoLenses',
@@ -51,7 +51,7 @@ window.ECONOS_TOPIC = {
         title: 'Big idea',
         text: 'PED explains movement <em>along</em> a demand curve. YED and XED help explain <em>shifts</em> in demand.'
       },
-      examEdge: 'Always identify what changed first — income, the good’s own price, or another good’s price. That tells you whether you need YED, PED or XED.'
+      examEdge: 'Always identify what changed first – income, the good’s own price, or another good’s price. That tells you whether you need YED, PED or XED.'
     },
 
     /* ================================================================
@@ -66,7 +66,7 @@ window.ECONOS_TOPIC = {
       intro: 'YED measures how strongly quantity demanded responds when consumer income changes.',
       body: `<div style="border:2px solid #1E3A5F;border-radius:12px;padding:18px 16px;text-align:center;background:#F8FAFC;margin-bottom:6px;">
   <div style="font-size:22px;font-weight:800;color:#2563EB;font-family:Fraunces,Georgia,serif;">YED = %ΔQ<sup>d</sup> ÷ %ΔY</div>
-  <div style="font-size:13px;color:#475569;margin-top:8px;line-height:1.6;">A <strong>positive</strong> YED means a normal good. A <strong>negative</strong> YED means an inferior good. The <strong>sign</strong> classifies the good — get it right first.</div>
+  <div style="font-size:13px;color:#475569;margin-top:8px;line-height:1.6;">A <strong>positive</strong> YED means a normal good. A <strong>negative</strong> YED means an inferior good. The <strong>sign</strong> classifies the good – get it right first.</div>
 </div>`,
       bodyVisualKey: 'yedClassifySpectrum',
       bodyVisualLabel: 'Classify the result',
@@ -103,11 +103,11 @@ window.ECONOS_TOPIC = {
           reasoning: 'YED > 2. Luxury goods have very high income elasticity – demand rises far more than proportionally when incomes grow. The global luxury market collapsed ~30% in the 2008–09 recession.'
         }
       ],
-      examEdge: 'State the sign, the size, and the type of good: "YED = +1.8, so demand rises more than proportionately — this is a luxury good." Never use elastic/inelastic language for YED.'
+      examEdge: 'State the sign, the size, and the type of good: "YED = +1.8, so demand rises more than proportionately – this is a luxury good." Never use elastic/inelastic language for YED.'
     },
 
     /* ================================================================
-       CARD 3 – INTERACTIVE CALCULATION: YED  (KEEP — bespoke template)
+       CARD 3 – INTERACTIVE CALCULATION: YED  (KEEP – bespoke template)
        Bus travel scenario – connected 5-step chain
        ================================================================ */
     {
@@ -150,9 +150,9 @@ window.ECONOS_TOPIC = {
       causesLabel: 'Think like a consumer',
       causesEmoji: '🧑‍🤝‍🧑',
       causes: [
-        { head: 'Student budget is tight', body: 'More bus travel, fewer taxis — inferior goods do the work.' },
-        { head: 'Family income rises', body: 'Supermarket basics rise a little — necessity demand creeps up.' },
-        { head: 'A bonus arrives', body: 'Holidays and restaurant meals jump — luxury demand surges.' }
+        { head: 'Student budget is tight', body: 'More bus travel, fewer taxis – inferior goods do the work.' },
+        { head: 'Family income rises', body: 'Supermarket basics rise a little – necessity demand creeps up.' },
+        { head: 'A bonus arrives', body: 'Holidays and restaurant meals jump – luxury demand surges.' }
       ],
       causes2Label: 'What YED reveals',
       causes2Emoji: '📈',
@@ -165,9 +165,9 @@ window.ECONOS_TOPIC = {
       ],
       keyTakeaway: {
         title: 'Big idea',
-        text: 'YED helps explain why economic growth reshapes the <em>composition</em> of demand — not just its level.'
+        text: 'YED helps explain why economic growth reshapes the <em>composition</em> of demand – not just its level.'
       },
-      examEdge: 'Don’t just say "demand rises" — explain whether the good is inferior, a necessity, or a luxury, and why.'
+      examEdge: 'Don’t just say "demand rises" – explain whether the good is inferior, a necessity, or a luxury, and why.'
     },
 
     /* ================================================================
@@ -223,11 +223,11 @@ window.ECONOS_TOPIC = {
           reasoning: 'XED > 0 – when train fares rise, some commuters switch to buses. Both serve the same journey need. Rail strikes (effectively infinite price rise) consistently boost bus and coach demand.'
         }
       ],
-      examEdge: 'Name both goods clearly, then interpret the sign and size: "XED(tea, coffee) = +0.6 — they are substitutes, but only moderate ones."'
+      examEdge: 'Name both goods clearly, then interpret the sign and size: "XED(tea, coffee) = +0.6 – they are substitutes, but only moderate ones."'
     },
 
     /* ================================================================
-       CARD 6 – INTERACTIVE CALCULATION: XED  (KEEP — bespoke template)
+       CARD 6 – INTERACTIVE CALCULATION: XED  (KEEP – bespoke template)
        Tea & coffee scenario – connected 5-step chain
        ================================================================ */
     {
@@ -279,19 +279,19 @@ window.ECONOS_TOPIC = {
       causes2Label: 'Quick rules',
       causes2Emoji: '⚡',
       causes2: [
-        { tone: 'purple', icon: '➕', head: 'High positive — close rivals', body: 'If the price of A rises and demand for B jumps a lot, XED is high and positive.' },
-        { tone: 'amber',  icon: '➖', head: 'High negative — bought together', body: 'If the price of A rises and demand for B falls a lot, XED is highly negative.' },
-        { tone: 'green',  icon: '≈', head: 'Near zero — little relevance', body: 'Changes in A’s price hardly affect demand for B.' }
+        { tone: 'purple', icon: '➕', head: 'High positive – close rivals', body: 'If the price of A rises and demand for B jumps a lot, XED is high and positive.' },
+        { tone: 'amber',  icon: '➖', head: 'High negative – bought together', body: 'If the price of A rises and demand for B falls a lot, XED is highly negative.' },
+        { tone: 'green',  icon: '≈', head: 'Near zero – little relevance', body: 'Changes in A’s price hardly affect demand for B.' }
       ],
       keyTakeaway: {
         title: 'Big idea',
-        text: 'XED doesn’t just label a relationship — it shows how economically <em>important</em> that relationship is.'
+        text: 'XED doesn’t just label a relationship – it shows how economically <em>important</em> that relationship is.'
       },
       examEdge: 'Interpret both the sign and the magnitude, then link it to consumer choice and firm strategy.'
     },
 
     /* ================================================================
-       CARD 8 – WHAT DETERMINES THE SIZE OF YED AND XED — spec 1.2.3(d)
+       CARD 8 – WHAT DETERMINES THE SIZE OF YED AND XED – spec 1.2.3(d)
        Closes the YED/XED determinants gap from the Theme 1 audit.
        Distinct from C4 (what YED *reveals*) and C7 (how to *interpret*
        XED magnitude): this card lists the *factors that drive* the size
@@ -302,25 +302,25 @@ window.ECONOS_TOPIC = {
       id: 'yed_xed_determinants',
       stepLabel: 'Learn: Step 8 of 10',
       title: 'What determines the size of YED and XED',
-      tip: { tone: 'green', icon: '🔒', text: 'Spec point 1.2.3(d): you must be able to explain the <strong>factors</strong> that make each elasticity large or small — not just calculate it.' },
+      tip: { tone: 'green', icon: '🔒', text: 'Spec point 1.2.3(d): you must be able to explain the <strong>factors</strong> that make each elasticity large or small – not just calculate it.' },
       intro: 'Two goods can both be "normal" or both be "substitutes", yet have very different elasticity sizes. These are the factors that decide how big the number is.',
       causesLabel: 'What makes YED large or small',
       causesEmoji: '💰',
       causes: [
         { tone: 'blue', head: 'Necessity vs luxury', body: 'Luxuries are highly income-sensitive (YED > 1); necessities barely move (0 < YED < 1); inferior goods fall as income rises (YED < 0). <em>UK: restaurant meals swing with the cycle (luxury); bread and milk barely budge (necessity); value own-label rises when budgets are squeezed (inferior).</em>' },
         { tone: 'amber', head: 'Income level &amp; stage of development', body: 'The <em>same</em> good can be a luxury at low income and a necessity at high income. <em>UK: a car was a luxury in the 1950s and a near-necessity today.</em>' },
-        { tone: 'purple', head: 'Time horizon', body: 'Habits re-base slowly, so YED is often larger in the long run — households adjust their whole lifestyle to a new income level, not just one purchase.' }
+        { tone: 'purple', head: 'Time horizon', body: 'Habits re-base slowly, so YED is often larger in the long run – households adjust their whole lifestyle to a new income level, not just one purchase.' }
       ],
       causes2Label: 'What makes XED large or small',
       causes2Emoji: '🔀',
       causes2: [
-        { tone: 'blue', head: 'Closeness of substitutes', body: 'The more two goods serve the same need, the larger the <strong>positive</strong> XED. <em>UK: Netflix lost ~1m UK subscribers in 2022 after price rises, with Disney+ and Amazon Prime gaining — a high positive XED in action. Branded ↔ supermarket own-label show similar switching during cost-of-living squeezes.</em>' },
-        { tone: 'amber', head: 'Strength of complementarity', body: 'The more two goods must be used together, the larger the <strong>negative</strong> XED. <em>UK: petrol and large cars, printers and ink, consoles and games — a price rise in one cuts demand for the other.</em>' },
-        { tone: 'purple', head: 'Brand loyalty &amp; switching costs', body: 'Strong brand attachment or high switching costs <strong>weaken</strong> XED — loyal or locked-in consumers don\'t switch even when a rival changes price. <em>UK: Apple\'s ecosystem lock-in keeps its XED with Android phones lower than the products\' similarity alone would suggest.</em>' }
+        { tone: 'blue', head: 'Closeness of substitutes', body: 'The more two goods serve the same need, the larger the <strong>positive</strong> XED. <em>UK: Netflix lost ~1m UK subscribers in 2022 after price rises, with Disney+ and Amazon Prime gaining – a high positive XED in action. Branded ↔ supermarket own-label show similar switching during cost-of-living squeezes.</em>' },
+        { tone: 'amber', head: 'Strength of complementarity', body: 'The more two goods must be used together, the larger the <strong>negative</strong> XED. <em>UK: petrol and large cars, printers and ink, consoles and games – a price rise in one cuts demand for the other.</em>' },
+        { tone: 'purple', head: 'Brand loyalty &amp; switching costs', body: 'Strong brand attachment or high switching costs <strong>weaken</strong> XED – loyal or locked-in consumers don\'t switch even when a rival changes price. <em>UK: Apple\'s ecosystem lock-in keeps its XED with Android phones lower than the products\' similarity alone would suggest.</em>' }
       ],
       keyTakeaway: {
         title: 'Big idea',
-        text: 'Sign tells you the <em>type</em> of good or relationship; these factors tell you the <em>size</em> of the response — which is what firms and policymakers actually plan around.'
+        text: 'Sign tells you the <em>type</em> of good or relationship; these factors tell you the <em>size</em> of the response – which is what firms and policymakers actually plan around.'
       },
       examEdge: 'A common top-band move: having classified a good or relationship, go one step further and justify <em>why</em> the elasticity is large or small using one of these factors. "Demand is income-elastic because it is a luxury with no necessity component" earns the evaluation mark.'
     },
@@ -348,9 +348,9 @@ window.ECONOS_TOPIC = {
       causes2Emoji: '🧑‍🤝‍🧑',
       causes2Style: 'tinted-flat',
       causes2: [
-        { tone: 'blue',   icon: '🏢', head: 'Firms — planning & pricing', body: 'Fine-tune pricing, choose the product mix, and prepare for demand shifts.' },
-        { tone: 'amber',  icon: '🏛️', head: 'Governments — tax & forecasting', body: 'Predict revenue and behavioural responses to taxes, subsidies and shocks.' },
-        { tone: 'green',  icon: '📈', head: 'Investors — winners & losers', body: 'Identify sectors and firms that gain or lose as the economic cycle turns.' }
+        { tone: 'blue',   icon: '🏢', head: 'Firms – planning & pricing', body: 'Fine-tune pricing, choose the product mix, and prepare for demand shifts.' },
+        { tone: 'amber',  icon: '🏛️', head: 'Governments – tax & forecasting', body: 'Predict revenue and behavioural responses to taxes, subsidies and shocks.' },
+        { tone: 'green',  icon: '📈', head: 'Investors – winners & losers', body: 'Identify sectors and firms that gain or lose as the economic cycle turns.' }
       ],
       causes3Label: 'Short context, big consequences',
       causes3Emoji: '🎯',
@@ -365,7 +365,7 @@ window.ECONOS_TOPIC = {
         title: 'Big idea',
         text: 'Elasticities help economists anticipate <em>who gains, who loses, and why</em>.'
       },
-      examEdge: 'Use context — recession, boom, substitute, complement — to turn a classification into an application.'
+      examEdge: 'Use context – recession, boom, substitute, complement – to turn a classification into an application.'
     },
 
     /* ================================================================
@@ -384,7 +384,7 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',   icon: '🔍', title: 'Identify the change', sub: 'Is the question about income (Y) or the price of another good (Pₓ)?' },
         { tone: 'amber',  icon: '🧮', title: 'Choose the formula',  sub: 'YED = %ΔQ<sup>d</sup> ÷ %ΔY, or XED = %ΔQ<sup>d</sup> ÷ %ΔPₓ.' },
         { tone: 'purple', icon: '⚖️', title: 'Calculate &amp; classify', sub: 'Compute the value, then use the sign and size to decide what it means.' },
-        { tone: 'green',  icon: '🎯', title: 'Apply it',             sub: 'Link the result to inferior/luxury or substitute/complement — and a real outcome.' }
+        { tone: 'green',  icon: '🎯', title: 'Apply it',             sub: 'Link the result to inferior/luxury or substitute/complement – and a real outcome.' }
       ],
       body: `<style>.yx-toolkit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}@media (max-width:560px){.yx-toolkit-grid{grid-template-columns:1fr;}}</style>
 <div style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin:6px 0 12px;">⚠️ Common mistakes</div>
@@ -395,7 +395,7 @@ window.ECONOS_TOPIC = {
   </div>
   <div style="border-radius:12px;border:1px solid #FDA4AF;background:#FFF1F2;padding:14px 16px;">
     <div style="font-weight:800;font-size:14.5px;color:#9F1239;margin-bottom:6px;">⚠️ Forgetting the sign</div>
-    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Ignoring whether the elasticity is positive, negative or zero — the sign is the classification.</div>
+    <div style="font-size:14px;color:#0B1426;line-height:1.6;">Ignoring whether the elasticity is positive, negative or zero – the sign is the classification.</div>
   </div>
   <div style="border-radius:12px;border:1px solid #FDA4AF;background:#FFF1F2;padding:14px 16px;">
     <div style="font-weight:800;font-size:14.5px;color:#9F1239;margin-bottom:6px;">⚠️ Using absolute changes</div>
@@ -417,7 +417,7 @@ window.ECONOS_TOPIC = {
         title: 'Big idea',
         text: 'If you can calculate YED and XED and explain what they imply, you can answer most elasticity questions well.'
       },
-      examEdge: 'Top answers combine the number with context — inferior or luxury, substitute or complement, recession or boom.',
+      examEdge: 'Top answers combine the number with context – inferior or luxury, substitute or complement, recession or boom.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

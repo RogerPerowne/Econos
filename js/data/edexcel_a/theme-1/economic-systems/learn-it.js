@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ================================================================
-       CARD 1 – The big picture (Decompose / spectrum) — spec (a) frame
+       CARD 1 – The big picture (Decompose / spectrum) – spec (a) frame
        ================================================================ */
     {
       id: 'economic_systems_1',
@@ -38,7 +38,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 2 – Smith, Hayek & Marx (Comparison) — spec (a)
+       CARD 2 – Smith, Hayek & Marx (Comparison) – spec (a)
        ================================================================ */
     {
       id: 'economic_systems_2',
@@ -63,7 +63,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 3 – How a free market works (Flow + evidence) — spec (b)
+       CARD 3 – How a free market works (Flow + evidence) – spec (b)
        Deliberately parallel to Card 4 (same frame, opposite mechanism).
        ================================================================ */
     {
@@ -73,7 +73,7 @@ window.ECONOS_TOPIC = {
       title: 'How a free market works',
       tip: { icon: '💡', tone: 'green', text: 'In a free market no one is in charge. The price mechanism coordinates millions of independent decisions – signalling, incentivising and rationing all at once.' },
       diagramKey: 'priceMechanismFlow',
-      diagramLabel: 'Three functions of the price mechanism — how prices coordinate the market',
+      diagramLabel: 'Three functions of the price mechanism – how prices coordinate the market',
       diagramEmoji: '🎯',
       flow: [
         { tone: 'blue',   icon: '🛒', title: 'Consumers want more', sub: 'Demand for a good rises.' },
@@ -110,7 +110,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 4 – How a command economy works (Flow + evidence) — spec (b)
+       CARD 4 – How a command economy works (Flow + evidence) – spec (b)
        Parallel to Card 3: same structure, the opposite mechanism.
        ================================================================ */
     {
@@ -152,7 +152,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 5 – Why economies are mixed (Side-by-side) — spec (c)
+       CARD 5 – Why economies are mixed (Side-by-side) – spec (c)
        ================================================================ */
     {
       id: 'economic_systems_5',
@@ -183,7 +183,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 6 – Comparing the systems (Comparison table) — spec (b)/(c)
+       CARD 6 – Comparing the systems (Comparison table) – spec (b)/(c)
        ================================================================ */
     {
       id: 'economic_systems_6',
@@ -206,7 +206,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 7 – Transition: Russia vs China (Comparison verdict) — eval
+       CARD 7 – Transition: Russia vs China (Comparison verdict) – eval
        ================================================================ */
     {
       id: 'economic_systems_7',
@@ -253,7 +253,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 8 – The whole story (Evidence-then-verdict) — synthesis
+       CARD 8 – The whole story (Evidence-then-verdict) – synthesis
        ================================================================ */
     {
       id: 'economic_systems_8',

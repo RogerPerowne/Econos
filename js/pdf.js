@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — PDF / print deck generator
+   ECONOS – PDF / print deck generator
    Renders all topic cards as a single flowing printable document
    in a new window, then triggers print dialog (→ Save as PDF).
 
@@ -337,22 +337,22 @@ window.EconosPdf = (function () {
 
   function renderFallback() {
     return '<div style="font-size:12px;color:' + C.slate + ';font-style:italic;border-left:5px solid ' + C.rule + ';padding:10px 14px;">' +
-      'Interactive diagram — see the full version in the Econos app.' +
+      'Interactive diagram – see the full version in the Econos app.' +
       '</div>';
   }
 
   function renderElasticityFallback(c) {
     var formula = '<div style="border:2px solid ' + C.navy + ';border-radius:8px;padding:14px 18px;margin-bottom:16px;text-align:center;">' +
-      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + C.navy + ';margin-bottom:8px;">PED — midpoint formula</div>' +
+      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + C.navy + ';margin-bottom:8px;">PED – midpoint formula</div>' +
       '<div style="font-size:22px;font-weight:900;color:' + C.navy + ';font-family:Georgia,serif;">PED = %ΔQ ÷ %ΔP</div>' +
       '<div style="font-size:11px;color:' + C.slate + ';margin-top:6px;font-style:italic;">|PED| &gt; 1 elastic · |PED| &lt; 1 inelastic · |PED| = 1 unit elastic</div>' +
       '</div>';
     var regimes = [
-      { col: C.rose,   label: 'Perfectly inelastic',  shape: 'Vertical demand curve',    eg: 'Insulin in emergency settings',     rule: 'PED = 0 — quantity fixed.' },
-      { col: C.amber,  label: 'Inelastic',            shape: 'Steep demand curve',       eg: 'Petrol short-run, salt',            rule: '|PED| < 1 — Q moves less than P.' },
-      { col: C.blue,   label: 'Unit elastic',         shape: 'Rectangular hyperbola',    eg: 'Mid-point of any linear demand',    rule: '|PED| = 1 — TR unchanged.' },
-      { col: C.green,  label: 'Elastic',              shape: 'Shallow demand curve',     eg: 'Designer handbags, branded soft drinks', rule: '|PED| > 1 — Q moves more than P.' },
-      { col: C.purple, label: 'Perfectly elastic',    shape: 'Horizontal demand curve',  eg: 'A firm in perfect competition',     rule: 'PED = ∞ — any price rise → zero sales.' }
+      { col: C.rose,   label: 'Perfectly inelastic',  shape: 'Vertical demand curve',    eg: 'Insulin in emergency settings',     rule: 'PED = 0 – quantity fixed.' },
+      { col: C.amber,  label: 'Inelastic',            shape: 'Steep demand curve',       eg: 'Petrol short-run, salt',            rule: '|PED| < 1 – Q moves less than P.' },
+      { col: C.blue,   label: 'Unit elastic',         shape: 'Rectangular hyperbola',    eg: 'Mid-point of any linear demand',    rule: '|PED| = 1 – TR unchanged.' },
+      { col: C.green,  label: 'Elastic',              shape: 'Shallow demand curve',     eg: 'Designer handbags, branded soft drinks', rule: '|PED| > 1 – Q moves more than P.' },
+      { col: C.purple, label: 'Perfectly elastic',    shape: 'Horizontal demand curve',  eg: 'A firm in perfect competition',     rule: 'PED = ∞ – any price rise → zero sales.' }
     ];
     var frames = regimes.map(function (r) {
       return '<div style="border-left:5px solid ' + r.col + ';padding:8px 0 8px 14px;margin-bottom:10px;">' +
@@ -363,7 +363,7 @@ window.EconosPdf = (function () {
         '</div></div>';
     }).join('');
     var howIt = c.howItWorks ? calloutBlock({ color: C.blue, label: 'How to read it', icon: '🧭', html: c.howItWorks }) : '';
-    var note = '<div style="font-size:11px;color:' + C.slate + ';font-style:italic;margin-bottom:14px;">Interactive widget in the Econos app — drag two points along the curve to see live PED, classification and the total-revenue rectangles. Static reference below.</div>';
+    var note = '<div style="font-size:11px;color:' + C.slate + ';font-style:italic;margin-bottom:14px;">Interactive widget in the Econos app – drag two points along the curve to see live PED, classification and the total-revenue rectangles. Static reference below.</div>';
     return note + formula + frames + howIt + examEdgeBlock(c.examEdge);
   }
 
@@ -371,21 +371,21 @@ window.EconosPdf = (function () {
     var isYed = which === 'YED';
     var col = isYed ? C.purple : C.blue;
     var formula = '<div style="border:2px solid ' + col + ';border-radius:8px;padding:14px 18px;margin-bottom:16px;text-align:center;">' +
-      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + col + ';margin-bottom:8px;">' + which + ' — midpoint formula</div>' +
+      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + col + ';margin-bottom:8px;">' + which + ' – midpoint formula</div>' +
       '<div style="font-size:20px;font-weight:900;color:' + col + ';font-family:Georgia,serif;">' + (isYed ? 'YED = %ΔQD ÷ %ΔY (Income)' : 'XED = %ΔQD_A ÷ %ΔP_B') + '</div>' +
       '<div style="font-size:11px;color:' + C.slate + ';margin-top:6px;font-style:italic;">' + (isYed
         ? 'YED > 0 = normal good · YED < 0 = inferior · YED > 1 = luxury · 0 < YED < 1 = necessity'
         : 'XED > 0 = substitutes · XED < 0 = complements · XED = 0 = independent goods') + '</div>' +
       '</div>';
     var items = isYed ? [
-      { col: C.rose,   label: 'Inferior good (YED < 0)',       eg: 'Bus travel, value-brand food', note: 'Demand falls as income rises — consumers trade up.' },
+      { col: C.rose,   label: 'Inferior good (YED < 0)',       eg: 'Bus travel, value-brand food', note: 'Demand falls as income rises – consumers trade up.' },
       { col: C.amber,  label: 'Normal necessity (0 < YED < 1)',eg: 'Food, utilities, clothing',     note: 'Demand rises slowly with income; recession-resilient.' },
       { col: C.blue,   label: 'Unit elastic (YED = 1)',         eg: 'Engel curve through origin',   note: '%ΔQD = %ΔY at every point.' },
       { col: C.purple, label: 'Luxury good (YED > 1)',          eg: 'Foreign holidays, designer goods, restaurant meals', note: 'Demand rises faster than income; pro-cyclical.' }
     ] : [
-      { col: C.purple, label: 'Complements (XED < 0)',         eg: 'Petrol & car trips, tea & milk',    note: 'P_B ↑ → QD_A ↓ — goods used together.' },
+      { col: C.purple, label: 'Complements (XED < 0)',         eg: 'Petrol & car trips, tea & milk',    note: 'P_B ↑ → QD_A ↓ – goods used together.' },
       { col: C.slate,  label: 'Independent (XED = 0)',         eg: 'Unrelated goods',                   note: 'P_B has no effect on QD_A.' },
-      { col: C.green,  label: 'Substitutes (XED > 0)',         eg: 'Coke & Pepsi, tea & coffee',        note: 'P_B ↑ → QD_A ↑ — consumers switch from B to A.' }
+      { col: C.green,  label: 'Substitutes (XED > 0)',         eg: 'Coke & Pepsi, tea & coffee',        note: 'P_B ↑ → QD_A ↑ – consumers switch from B to A.' }
     ];
     var list = items.map(function (r) {
       return '<div style="border-left:5px solid ' + r.col + ';padding:8px 0 8px 14px;margin-bottom:10px;">' +
@@ -398,9 +398,9 @@ window.EconosPdf = (function () {
 
   function renderPesExplorerFallback(c) {
     var presets = [
-      { col: C.rose,   label: 'Perfectly inelastic (PES = 0)', shape: 'Vertical supply',   eg: 'Fish already at market; paintings by deceased artist',  note: 'Supply fixed — 100% of demand shift → price change.' },
+      { col: C.rose,   label: 'Perfectly inelastic (PES = 0)', shape: 'Vertical supply',   eg: 'Fish already at market; paintings by deceased artist',  note: 'Supply fixed – 100% of demand shift → price change.' },
       { col: C.amber,  label: 'Inelastic (PES < 1)',           shape: 'Steep supply',       eg: 'Oil (short run), housing, agricultural crops',          note: 'Most demand shift → price; little quantity adjustment.' },
-      { col: C.blue,   label: 'Unit elastic (PES = 1)',        shape: 'Through origin',     eg: 'Theoretical — any linear supply curve through the origin', note: '%ΔQS = %ΔP; demand shift splits equally between P and Q.' },
+      { col: C.blue,   label: 'Unit elastic (PES = 1)',        shape: 'Through origin',     eg: 'Theoretical – any linear supply curve through the origin', note: '%ΔQS = %ΔP; demand shift splits equally between P and Q.' },
       { col: C.green,  label: 'Elastic (PES > 1)',             shape: 'Shallow supply',     eg: 'Manufactured goods, labour in unskilled sectors',        note: 'Most demand shift → quantity; price barely moves.' },
       { col: C.purple, label: 'Perfectly elastic (PES = ∞)',  shape: 'Horizontal supply',  eg: 'Long-run manufactured goods with constant costs',        note: 'All demand shift → quantity; price unchanged.' }
     ];
@@ -413,12 +413,12 @@ window.EconosPdf = (function () {
         '</div></div>';
     }).join('');
     var formula = '<div style="border:2px solid ' + C.green + ';border-radius:8px;padding:14px 18px;margin-bottom:16px;text-align:center;">' +
-      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + C.green + ';margin-bottom:8px;">PES — midpoint formula</div>' +
+      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + C.green + ';margin-bottom:8px;">PES – midpoint formula</div>' +
       '<div style="font-size:22px;font-weight:900;color:' + C.green + ';font-family:Georgia,serif;">PES = %ΔQS ÷ %ΔP</div>' +
       '<div style="font-size:11px;color:' + C.slate + ';margin-top:6px;font-style:italic;">Always positive · PES &gt; 1 elastic · PES &lt; 1 inelastic · PES = 1 unit elastic</div>' +
       '<div style="font-size:11px;color:' + C.slate + ';margin-top:4px;">Geometric rule: through origin → unit elastic · P-axis intercept → inelastic · Q-axis intercept → elastic</div>' +
       '</div>';
-    var note = '<div style="font-size:11px;color:' + C.slate + ';font-style:italic;margin-bottom:14px;">Interactive widget in the Econos app — drag two points along the supply curve to see live PES and the supply response. Static reference below.</div>';
+    var note = '<div style="font-size:11px;color:' + C.slate + ';font-style:italic;margin-bottom:14px;">Interactive widget in the Econos app – drag two points along the supply curve to see live PES and the supply response. Static reference below.</div>';
     return note + formula + regimes + examEdgeBlock(c.examEdge);
   }
 
@@ -458,7 +458,7 @@ window.EconosPdf = (function () {
   }
 
   /* ---- Generic-format renderer (body / causes:{head,body} / steps:{label,text} /
-          rows / left+right:{points} / keyTerms) — matches app.js renderCardGeneric ---- */
+          rows / left+right:{points} / keyTerms) – matches app.js renderCardGeneric ---- */
 
   var TONES = [C.green, C.amber, C.blue, C.purple];
 
@@ -566,7 +566,7 @@ window.EconosPdf = (function () {
       '<div style="font-size:13px;font-weight:600;color:#F1F5F9;line-height:1.5;">' + (c.question || '') + '</div></div>';
     var paras = (c.paragraphs || []).map(function(p) {
       var col = TYPE_COLORS[p.type] || C.slate;
-      var lbl = (TYPE_LABELS[p.type] || p.type) + (p.label ? ' — ' + p.label : '');
+      var lbl = (TYPE_LABELS[p.type] || p.type) + (p.label ? ' – ' + p.label : '');
       return '<div style="border-left:4px solid ' + col + ';padding:10px 0 10px 14px;margin-bottom:12px;page-break-inside:avoid;">' +
         '<div style="font-size:10px;font-weight:800;color:' + col + ';text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">' + lbl + '</div>' +
         '<div style="font-size:11px;color:#64748B;font-style:italic;margin-bottom:6px;">' + p.prompt + '</div>' +
@@ -631,7 +631,7 @@ window.EconosPdf = (function () {
         (tipObj.icon ? tipObj.icon + ' ' : '') + s(tipObj.text) + '</div>';
     }
 
-    /* Causes — rendered before or after the diagram depending on causesFirst */
+    /* Causes – rendered before or after the diagram depending on causesFirst */
     var causesHtml = c.causes && Array.isArray(c.causes) && c.causes.length && c.causes[0] && c.causes[0].head
       ? (c.causesLabel ? secHead(c.causesEmoji || '🔍', c.causesLabel) : secHead('🔗', 'Key mechanisms')) +
         '<div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;">' +
@@ -693,7 +693,7 @@ window.EconosPdf = (function () {
       });
     }
 
-    /* measureCards — toolkit tiles with bullet points */
+    /* measureCards – toolkit tiles with bullet points */
     var measureCardsHtml = '';
     if (c.measureCards && c.measureCards.length) {
       var cols = c.measureCardsCols || Math.min(c.measureCards.length, 4);
@@ -711,7 +711,7 @@ window.EconosPdf = (function () {
         }).join('') + '</div>';
     }
 
-    /* matchTable — cause → goal → response grid */
+    /* matchTable – cause → goal → response grid */
     var matchTableHtml = '';
     if (c.matchTable && c.matchTable.rows && c.matchTable.rows.length) {
       var mt = c.matchTable;
@@ -754,7 +754,7 @@ window.EconosPdf = (function () {
         }).join('') + '</div>';
     }
 
-    /* comparisonTable — labelled rows with N tinted columns */
+    /* comparisonTable – labelled rows with N tinted columns */
     var comparisonHtml = '';
     if (c.comparisonTable && c.comparisonTable.rows && c.comparisonTable.rows.length) {
       var ct = c.comparisonTable;
@@ -779,7 +779,7 @@ window.EconosPdf = (function () {
       ctCols = ctCols; // noop ref
     }
 
-    /* verdict — two-column "vs" panel */
+    /* verdict – two-column "vs" panel */
     var verdictHtml = '';
     if (c.verdict && c.verdict.columns && c.verdict.columns.length) {
       var v = c.verdict;
@@ -798,7 +798,7 @@ window.EconosPdf = (function () {
         }).join('') + '</div>';
     }
 
-    /* summaryRow — small horizontal example cards */
+    /* summaryRow – small horizontal example cards */
     var summaryRowHtml = '';
     if (c.summaryRow && c.summaryRow.length) {
       summaryRowHtml = '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;">' +
@@ -811,7 +811,7 @@ window.EconosPdf = (function () {
         }).join('') + '</div>';
     }
 
-    /* letterFormula — M·V = P·T style framework */
+    /* letterFormula – M·V = P·T style framework */
     var formulaHtml = '';
     if (c.letterFormula && (c.letterFormula.left || c.letterFormula.right)) {
       var lf = c.letterFormula;
@@ -835,7 +835,7 @@ window.EconosPdf = (function () {
         '</div>';
     }
 
-    /* versusRows — winner vs loser side-by-side rows */
+    /* versusRows – winner vs loser side-by-side rows */
     var versusHtml = '';
     if (c.versusRows && c.versusRows.rows && c.versusRows.rows.length) {
       var vr = c.versusRows;
@@ -940,7 +940,7 @@ window.EconosPdf = (function () {
       return '<div style="margin-bottom:32px;">' + header + lede + body + '</div>';
     }).join('');
 
-    /* Cover block — soft grey panel */
+    /* Cover block – soft grey panel */
     var cover = '<div style="background:#F1F5F9;border-radius:10px;padding:28px 32px;margin-bottom:36px;">' +
       '<div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:' + C.slate + ';margin-bottom:10px;">' + s(topic.theme) + '</div>' +
       '<div style="font-size:36px;font-weight:900;line-height:1.05;color:' + C.navy + ';margin-bottom:14px;font-family:Georgia,serif;">' + s(topic.title) + '</div>' +
@@ -969,7 +969,7 @@ window.EconosPdf = (function () {
     return '<!DOCTYPE html>\n<html lang="en">\n<head>\n' +
       '<meta charset="UTF-8">\n' +
       '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-      '<title>' + s(topic.title) + ' — Econos</title>\n' +
+      '<title>' + s(topic.title) + ' – Econos</title>\n' +
       '<style>\n' + css + '\n</style>\n' +
       '</head>\n<body>\n<div class="wrap">\n' +
 

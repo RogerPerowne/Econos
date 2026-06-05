@@ -29,7 +29,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Information gaps: the big picture',
       tip: { icon: '💡', tone: 'blue', text: 'Information gaps are a type of market failure. They occur when one party in a transaction has more or better information than the other. This leads to poor decisions, lower trust, and inefficient outcomes.' },
-      /* Five key areas — parallel categories, NOT a sequence, so rendered
+      /* Five key areas – parallel categories, NOT a sequence, so rendered
          as stacked rows (causesPosition:'top' keeps them above the flow). */
       causesLabel: 'The big picture: five key areas',
       causesEmoji: '🗺️',
@@ -37,7 +37,7 @@ window.ECONOS_TOPIC = {
       causesStyle: 'numbered-rows',
       causesCols: 1,
       causes: [
-        { icon: '⚖️', tone: 'blue',   head: 'Symmetric vs asymmetric information', body: '<strong>Symmetric</strong> — both sides know the same things (the competitive benchmark). <strong>Asymmetric</strong> — one side knows more, the case that creates market failure. (<em>Imperfect</em> information, where both sides lack facts, is a separate idea.)' },
+        { icon: '⚖️', tone: 'blue',   head: 'Symmetric vs asymmetric information', body: '<strong>Symmetric</strong> – both sides know the same things (the competitive benchmark). <strong>Asymmetric</strong> – one side knows more, the case that creates market failure. (<em>Imperfect</em> information, where both sides lack facts, is a separate idea.)' },
         { icon: '🔍', tone: 'amber',  head: 'Adverse selection',                   body: 'An ex-ante information problem – hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
         { icon: '🛡️', tone: 'rose',   head: 'Moral hazard',                        body: 'An ex-post information problem – behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
         { icon: '📢', tone: 'green',  head: 'Private market solutions',            body: 'Firms and individuals use signalling and screening to reveal information or sort good from bad.' },
@@ -53,12 +53,12 @@ window.ECONOS_TOPIC = {
         { icon: '⚠️', tone: 'amber', title: 'Poor decisions / missing trust', sub: 'Wrong choices, higher risk, lower willingness to trade.' },
         { icon: '📉', tone: 'rose',  title: 'Market failure',               sub: 'Inefficient outcomes, reduced welfare, lower trust in markets.' }
       ],
-      causes2Label: 'The two core failures — one cognitive hierarchy',
+      causes2Label: 'The two core failures – one cognitive hierarchy',
       causes2Emoji: '🧭',
       causes2Style: 'tinted-flat',
       causes2: [
-        { icon: '🔍', tone: 'amber', head: 'Adverse selection · BEFORE the contract', body: '<strong>Ex-ante problem:</strong> hidden <em>characteristics</em> of the product or person mean the wrong ones end up in the market. Used cars (lemons), insurance pools (the riskiest most want cover), credit markets (the riskiest borrowers most eager to borrow). <em>Card 2 (Akerlof) — the foundational example.</em>' },
-        { icon: '🛡️', tone: 'rose',  head: 'Moral hazard · AFTER the contract',  body: '<strong>Ex-post problem:</strong> hidden <em>actions</em> change once one side is protected. Insurance reduces care; bailouts reduce risk discipline; full healthcare cover may encourage over-use. <em>Card 4 — the after-contract problem.</em>' }
+        { icon: '🔍', tone: 'amber', head: 'Adverse selection · BEFORE the contract', body: '<strong>Ex-ante problem:</strong> hidden <em>characteristics</em> of the product or person mean the wrong ones end up in the market. Used cars (lemons), insurance pools (the riskiest most want cover), credit markets (the riskiest borrowers most eager to borrow). <em>Card 2 (Akerlof) – the foundational example.</em>' },
+        { icon: '🛡️', tone: 'rose',  head: 'Moral hazard · AFTER the contract',  body: '<strong>Ex-post problem:</strong> hidden <em>actions</em> change once one side is protected. Insurance reduces care; bailouts reduce risk discipline; full healthcare cover may encourage over-use. <em>Card 4 – the after-contract problem.</em>' }
       ],
       causes3Label: 'Why this matters',
       causes3Emoji: '⭐',
@@ -67,36 +67,36 @@ window.ECONOS_TOPIC = {
         { icon: '🏆', tone: 'amber', head: 'Good products can be driven out',    body: 'Bad products survive when information is hidden.' },
         { icon: '🏛️', tone: 'blue',  head: 'Government may need to intervene',  body: 'To correct failures and protect consumers.' }
       ],
-      examEdge: 'Spec language matters here: Edexcel asks for <strong>symmetric vs asymmetric</strong> information specifically. Symmetric is the textbook competitive benchmark; asymmetric is the failure case where one party knows more. Information failure is analytically distinct from externalities and public goods — a market can be perfectly competitive AND produce inefficient outcomes just because information is unequally distributed.'
+      examEdge: 'Spec language matters here: Edexcel asks for <strong>symmetric vs asymmetric</strong> information specifically. Symmetric is the textbook competitive benchmark; asymmetric is the failure case where one party knows more. Information failure is analytically distinct from externalities and public goods – a market can be perfectly competitive AND produce inefficient outcomes just because information is unequally distributed.'
     },
 
     {
       id: 'info_gaps_2',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Akerlof\'s Market for Lemons',
-      tip: { icon: '💡', tone: 'blue', text: 'George Akerlof\'s 1970 paper "The Market for Lemons" — work that won the 2001 Nobel Prize in Economics — showed that asymmetric information can cause an <strong>entire market to unravel</strong>. Sellers of used cars know their car\'s true quality; buyers do not. Buyers can only offer an average price, which is too low for good-quality cars, so high-quality sellers leave. The market shrinks toward <em>lemons</em>.' },
-      flowTitle: 'Adverse selection — how the market unravels (5 stages)',
+      tip: { icon: '💡', tone: 'blue', text: 'George Akerlof\'s 1970 paper "The Market for Lemons" – work that won the 2001 Nobel Prize in Economics – showed that asymmetric information can cause an <strong>entire market to unravel</strong>. Sellers of used cars know their car\'s true quality; buyers do not. Buyers can only offer an average price, which is too low for good-quality cars, so high-quality sellers leave. The market shrinks toward <em>lemons</em>.' },
+      flowTitle: 'Adverse selection – how the market unravels (5 stages)',
       flowEmoji: '🚗',
       flow: [
         { icon: '🚗', tone: 'blue',   title: 'Seller knows quality',                  sub: 'Seller knows whether the car is high quality ("peach") or low quality ("lemon").' },
-        { icon: '❓', tone: 'amber',  title: 'Buyer cannot tell good car from lemon', sub: 'Buyer cannot observe quality — both cars look the same on the forecourt.' },
+        { icon: '❓', tone: 'amber',  title: 'Buyer cannot tell good car from lemon', sub: 'Buyer cannot observe quality – both cars look the same on the forecourt.' },
         { icon: '💰', tone: 'green',  title: 'Buyer offers average price',            sub: 'Buyer rationally offers one average price reflecting the expected mix.' },
         { icon: '🚘', tone: 'rose',   title: 'Good sellers exit market',              sub: 'Average price is below the good car\'s value, so high-quality sellers withdraw.' },
-        { icon: '🚕', tone: 'purple', title: 'Only lemons remain — market shrinks',   sub: 'The pool gets worse, average price falls further, more good sellers exit. The market unravels.' }
+        { icon: '🚕', tone: 'purple', title: 'Only lemons remain – market shrinks',   sub: 'The pool gets worse, average price falls further, more good sellers exit. The market unravels.' }
       ],
       rowsHeader: 'Worked example',
       colA: 'Buyer\'s estimate of value',
       colB: 'Outcome at average price (£5,000)',
       rows: [
-        { label: '🚙 Peach', colA: '£8,000 (high quality). Seller\'s minimum acceptable price: £7,000.', colB: '❌ Seller exits — offer is below their reservation price.' },
-        { label: '🚕 Lemon', colA: '£2,000 (low quality). Seller\'s minimum acceptable price: £1,000.', colB: '✅ Seller stays — profit at £5,000. Only lemons remain.' }
+        { label: '🚙 Peach', colA: '£8,000 (high quality). Seller\'s minimum acceptable price: £7,000.', colB: '❌ Seller exits – offer is below their reservation price.' },
+        { label: '🚕 Lemon', colA: '£2,000 (low quality). Seller\'s minimum acceptable price: £1,000.', colB: '✅ Seller stays – profit at £5,000. Only lemons remain.' }
       ],
-      footer: 'Average price offered = £5,000. Too low for the peach seller (needs £7,000), so only lemons remain. As buyers learn this, the average expected quality falls again — and the spiral continues.',
-      causes2Label: 'Case study — UK motor insurance (FCA, 2022)',
+      footer: 'Average price offered = £5,000. Too low for the peach seller (needs £7,000), so only lemons remain. As buyers learn this, the average expected quality falls again – and the spiral continues.',
+      causes2Label: 'Case study – UK motor insurance (FCA, 2022)',
       causes2Emoji: '☂️',
       causes2: [
         { icon: '🔍', tone: 'amber', head: 'Hidden risk before the contract', body: 'Insurers cannot perfectly observe a driver\'s true risk. Applicants know far more about their own driving history, mileage, and behaviour than the insurer ever will.' },
-        { icon: '⚠️', tone: 'rose',  head: 'The FCA\'s 12% finding',           body: 'The Financial Conduct Authority estimates <strong>12% of UK motor insurance policies</strong> are sold with inaccurate information — not all deliberate, but the effect is the same: the insured pool is riskier than the premium assumes.' },
+        { icon: '⚠️', tone: 'rose',  head: 'The FCA\'s 12% finding',           body: 'The Financial Conduct Authority estimates <strong>12% of UK motor insurance policies</strong> are sold with inaccurate information – not all deliberate, but the effect is the same: the insured pool is riskier than the premium assumes.' },
         { icon: '📉', tone: 'purple',head: 'The lemons spiral, in insurance',  body: 'Riskier drivers are more motivated to insure → premiums rise to cover claims → low-risk drivers find it not worth it → they leave → pool gets riskier → premiums rise again. Same mechanism as Akerlof\'s used cars.' }
       ],
       keyTerms: [
@@ -104,7 +104,7 @@ window.ECONOS_TOPIC = {
         { term: 'Adverse selection', def: 'When asymmetric information about <em>hidden characteristics</em> means the wrong people or products end up in the market (the bad crowd out the good).' },
         { term: 'Market unravelling', def: 'Progressive deterioration: average quality falls → good sellers exit → average quality falls further → eventually the market collapses or shrinks far below its efficient size.' }
       ],
-      examEdge: 'Akerlof\'s lemons is the <strong>foundational example of adverse selection</strong> — a <em>before-contract</em> information failure. The mechanism extends to credit markets (riskiest borrowers most eager to borrow) and pre-2008 mortgage-backed securities (sellers knew default risk; buyers did not). Top answers name the spiral mechanism — not just the example — and contrast adverse selection with moral hazard (the after-contract problem, covered in Card 4).'
+      examEdge: 'Akerlof\'s lemons is the <strong>foundational example of adverse selection</strong> – a <em>before-contract</em> information failure. The mechanism extends to credit markets (riskiest borrowers most eager to borrow) and pre-2008 mortgage-backed securities (sellers knew default risk; buyers did not). Top answers name the spiral mechanism – not just the example – and contrast adverse selection with moral hazard (the after-contract problem, covered in Card 4).'
     },
 
     {

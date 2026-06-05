@@ -1,10 +1,10 @@
 /* ============================================================
-   ECONOS — PES Explorer (interactive Price Elasticity of Supply widget)
+   ECONOS – PES Explorer (interactive Price Elasticity of Supply widget)
 
    Mirror of elasticity-explorer.js but for an upward-sloping supply curve.
    Supply curve parametrised as P = c + d·Q (c can be negative/zero/positive).
 
-   PES (midpoint method) = (%ΔQS) / (%ΔP) — always positive.
+   PES (midpoint method) = (%ΔQS) / (%ΔP) – always positive.
 
    Geometric rule (always tested in exams):
      c > 0  → supply hits P-axis above origin → PES < 1 at every point
@@ -57,12 +57,12 @@ window.EconosPes = (function () {
 
   /* ---- Presets ---- */
   var PRESETS = [
-    { key: 'fish',    label: 'Fresh fish (today)',  c: -160,  d: 2,       q1: 82,  q2: 87,  note: 'Cannot catch more fish today — supply is fixed; PES ≈ 0.05.' },
+    { key: 'fish',    label: 'Fresh fish (today)',  c: -160,  d: 2,       q1: 82,  q2: 87,  note: 'Cannot catch more fish today – supply is fixed; PES ≈ 0.05.' },
     { key: 'housing', label: 'UK housing',          c: -30,   d: 0.25,    q1: 140, q2: 170, note: 'Planning rules and long build times → very inelastic supply.' },
     { key: 'oil',     label: 'Oil (medium run)',    c: -10,   d: 0.15,    q1: 110, q2: 150, note: 'Existing wells limit short-run supply; new drilling takes time.' },
     { key: 'origin',  label: 'Through origin',      c: 0,     d: 0.10,    q1: 50,  q2: 150, note: 'Supply through origin → PES = 1 at every point on the curve.' },
     { key: 'mfg',     label: 'Manufactured goods',  c: 5,     d: 0.075,   q1: 27,  q2: 107, note: 'Easy capacity expansion; new firms can enter → elastic supply.' },
-    { key: 'horiz',   label: 'Perfectly elastic',   c: 9.999, d: 0.00001, q1: 40,  q2: 160, note: 'Horizontal supply — any quantity at the going price; PES = ∞.' }
+    { key: 'horiz',   label: 'Perfectly elastic',   c: 9.999, d: 0.00001, q1: 40,  q2: 160, note: 'Horizontal supply – any quantity at the going price; PES = ∞.' }
   ];
 
   function presetByKey(k) {
@@ -91,7 +91,7 @@ window.EconosPes = (function () {
 
       // Formula panel
       +     '<div class="ee-formula" data-pes="formula">'
-      +       '<div class="ee-formula__head">PES — midpoint formula</div>'
+      +       '<div class="ee-formula__head">PES – midpoint formula</div>'
       +       '<div class="ee-formula__line ee-formula__line--def">'
       +         'PES = <span class="ee-frac"><span class="ee-num">%ΔQS</span><span class="ee-den">%ΔP</span></span>'
       +       '</div>'

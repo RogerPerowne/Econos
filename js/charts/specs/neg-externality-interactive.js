@@ -1,5 +1,5 @@
 /* ============================================================
-   Negative Externality Interactive — engine spec for
+   Negative Externality Interactive – engine spec for
    negExternalityInteractive. Negative-externalities card 2.
    "The most important diagram in market failure" per the lede.
 
@@ -53,7 +53,7 @@
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.084 L 0.860,0.868',
         tone: 'green', label: 'MPC', strokeWidth: 3 },
-      // MSC (blue dashed) — visible in extension/shift/efficiency.
+      // MSC (blue dashed) – visible in extension/shift/efficiency.
       { layer: 'layer-msc',
         d: 'M 0.080,0.308 L 0.860,1.092',
         tone: 'blue', label: 'MSC', strokeWidth: 3, dashed: '9 5' }
@@ -68,7 +68,7 @@
         x1: Em.x, y1: Em.y, x2: Em.x, y2: 0,
         tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
 
-      // MEC indicator — thick vertical purple bar between MPC and MSC.
+      // MEC indicator – thick vertical purple bar between MPC and MSC.
       // The end-cap "tick" lines from the legacy version were dropped
       // because they form 90° corners with the main bar that read as
       // a bent arrow rather than a measurement bracket. The bar plus
@@ -95,18 +95,18 @@
     ],
 
     points: [
-      // Market equilibrium — red hollow (always visible)
+      // Market equilibrium – red hollow (always visible)
       { layer: 'layer-market-eq',
         x: Em.x, y: Em.y, tone: 'red', radius: 6, hollow: true,
         label: 'Eₘ', labelDx: 12, labelDy: -4, anchor: 'start' },
-      // Socially optimal equilibrium — green hollow
+      // Socially optimal equilibrium – green hollow
       { layer: 'layer-optimal',
         x: Eopt.x, y: Eopt.y, tone: 'green', radius: 7, hollow: true,
         label: 'E*', labelDx: 0, labelDy: -16, anchor: 'middle' },
     ],
 
     // titleStrips removed (v0.41.20). Each was a single dot + text
-    // header — a one-entry "legend" in the user's sense: a coloured
+    // header – a one-entry "legend" in the user's sense: a coloured
     // dot referring to one thing, with the text repeating the lede
     // of the card. Per the universal rule, single-entry legends are
     // always redundant and come out. The four headers ("Free market
@@ -149,7 +149,7 @@
           },
           { header: { text: 'THE BLIND SPOT', tone: 'gray' },
             body: [
-              'This price reflects only the firm\'s own cost — the harm done to third parties stays invisible.'
+              'This price reflects only the firm\'s own cost – the harm done to third parties stays invisible.'
             ]
           }
         ]
@@ -168,7 +168,7 @@
           { header: { text: 'THE GAP', tone: 'purple' },
             body: [
               { text: 'Vertical gap = MEC', tone: 'slate', bold: true },
-              'The marginal external cost — pollution, noise, CO₂. Producers don\'t pay it, so they over-produce.'
+              'The marginal external cost – pollution, noise, CO₂. Producers don\'t pay it, so they over-produce.'
             ]
           }
         ]
@@ -200,7 +200,7 @@
         sections: [
           { header: { text: 'DEADWEIGHT WELFARE LOSS', tone: 'red' },
             body: [
-              'The red triangle between Q* and Qₘ — bounded above by MSC, below by MSB.',
+              'The red triangle between Q* and Qₘ – bounded above by MSC, below by MSB.',
               { text: 'Each extra unit: MSC > MSB', tone: 'slate', bold: true }
             ]
           },

@@ -85,8 +85,8 @@ window.ECONOS_TOPIC = {
       bottomTip: {
         icon: '🕵️',
         tone: 'amber',
-        head: 'The hidden category — under-employment',
-        text: 'Workers can be counted as <strong>Employed</strong> and still be under-employed: part-timers who want full-time hours, or skilled workers in low-skill jobs (e.g. a graduate stacking shelves). The ILO measures it via the time-related under-employment rate. It is a sign of labour-market <em>slack</em> hidden above the official unemployment rate — and the spec explicitly requires you to recognise it.'
+        head: 'The hidden category – under-employment',
+        text: 'Workers can be counted as <strong>Employed</strong> and still be under-employed: part-timers who want full-time hours, or skilled workers in low-skill jobs (e.g. a graduate stacking shelves). The ILO measures it via the time-related under-employment rate. It is a sign of labour-market <em>slack</em> hidden above the official unemployment rate – and the spec explicitly requires you to recognise it.'
       },
 
       examEdge: {
@@ -331,7 +331,7 @@ window.ECONOS_TOPIC = {
       // unemployment persists until policy restores AD.
       interactiveDiagram: {
         svgKey: 'adShiftLeftClassicalKeynesian',
-        label: 'A RECESSION — AD SHIFTS LEFT',
+        label: 'A RECESSION – AD SHIFTS LEFT',
         emoji: '📊',
         layers: ['idl-1', 'idl-2'],
         inverseLayers: ['idl-old-solid'],
@@ -342,36 +342,36 @@ window.ECONOS_TOPIC = {
             label: 'Full employment', show: [],
             classical: {
               tone: 'purple',
-              head: 'Classical view — at full employment at E₁.',
-              body: ['AD₁ meets the vertical LRAS at Y<sub>FE</sub>, price level P₁.', 'Labour markets clear — unemployment is at the <strong>natural rate</strong> (frictional + structural only).'] },
+              head: 'Classical view – at full employment at E₁.',
+              body: ['AD₁ meets the vertical LRAS at Y<sub>FE</sub>, price level P₁.', 'Labour markets clear – unemployment is at the <strong>natural rate</strong> (frictional + structural only).'] },
             keynesian: {
               tone: 'amber',
-              head: 'Keynesian view — at capacity at E₁.',
-              body: ['AD₁ meets the reverse-L AS on its steep range at Y<sub>FE</sub> — labour and goods markets clear.', 'Unemployment is at the natural rate.'] }
+              head: 'Keynesian view – at capacity at E₁.',
+              body: ['AD₁ meets the reverse-L AS on its steep range at Y<sub>FE</sub> – labour and goods markets clear.', 'Unemployment is at the natural rate.'] }
           },
           {
             label: 'AD falls', show: ['idl-1'],
             classical: {
               tone: 'rose',
               head: 'AD₁ → AD₂: confidence and spending collapse.',
-              body: ['A fall in C, I, G or (X − M) shifts AD left.', 'Demand for goods falls, so demand for labour falls — <em>labour is a derived demand</em>. Output starts to drop.'] },
+              body: ['A fall in C, I, G or (X − M) shifts AD left.', 'Demand for goods falls, so demand for labour falls – <em>labour is a derived demand</em>. Output starts to drop.'] },
             keynesian: {
               tone: 'rose',
               head: 'AD₁ → AD₂: confidence and spending collapse.',
-              body: ['A fall in C, I, G or (X − M) shifts AD left.', 'Demand for goods falls, so demand for labour falls — <em>labour is a derived demand</em>.'] }
+              body: ['A fall in C, I, G or (X − M) shifts AD left.', 'Demand for goods falls, so demand for labour falls – <em>labour is a derived demand</em>.'] }
           },
           {
             label: 'The verdict', show: ['idl-1', 'idl-2'],
             classical: {
               tone: 'purple',
-              head: 'Wages flex — output returns to Y<sub>FE</sub>.',
+              head: 'Wages flex – output returns to Y<sub>FE</sub>.',
               body: ['In the Classical view, <strong>wages adjust downward</strong>: lower labour costs let firms re-hire at the new lower price level.', 'Output returns to Y<sub>FE</sub>; cyclical unemployment is a <em>short-run</em> phenomenon.'],
-              analysis: 'Classical verdict: cyclical unemployment exists only while wages are still adjusting. In the long run the economy clears at Y<sub>FE</sub> at a <em>lower</em> price level P₂. Active demand stimulus is unnecessary — and risks just raising the eventual price level. The Classical critique of Keynesian fiscal stimulus rests entirely on this self-correction assumption.' },
+              analysis: 'Classical verdict: cyclical unemployment exists only while wages are still adjusting. In the long run the economy clears at Y<sub>FE</sub> at a <em>lower</em> price level P₂. Active demand stimulus is unnecessary – and risks just raising the eventual price level. The Classical critique of Keynesian fiscal stimulus rests entirely on this self-correction assumption.' },
             keynesian: {
               tone: 'rose',
-              head: 'Wages are sticky — cyclical unemployment persists.',
+              head: 'Wages are sticky – cyclical unemployment persists.',
               body: ['<strong>Wages are sticky downward</strong>: unions resist cuts, contracts are fixed, workers refuse pay reductions. The labour market doesn\'t self-correct.', 'Output stays at Y₂ &lt; Y<sub>FE</sub>; the gap (Y<sub>FE</sub> − Y₂) is the <strong>cyclical unemployment</strong>. It persists until AD recovers.'],
-              analysis: 'Keynesian verdict: cyclical unemployment is demand-deficient and persistent. The cure is to <strong>restore AD</strong> via fiscal or monetary stimulus — not to wait, and not to retrain workers (that\'s the wrong diagnosis). The 2008 crisis and the slow recovery that followed are the modern case study: wages didn\'t fall enough to clear the labour market, and unemployment stayed elevated for years.' }
+              analysis: 'Keynesian verdict: cyclical unemployment is demand-deficient and persistent. The cure is to <strong>restore AD</strong> via fiscal or monetary stimulus – not to wait, and not to retrain workers (that\'s the wrong diagnosis). The 2008 crisis and the slow recovery that followed are the modern case study: wages didn\'t fall enough to clear the labour market, and unemployment stayed elevated for years.' }
           }
         ]
       },
@@ -542,7 +542,7 @@ window.ECONOS_TOPIC = {
         portraitKey: 'economistGoldin',
         tone: 'amber',
         label: 'Economist insight: Goldin on the long shadow of unemployment',
-        quote: 'Career interruptions are particularly costly because experience and learning-by-doing are essential to earnings growth. Time out of work damages future wages — sometimes permanently.',
+        quote: 'Career interruptions are particularly costly because experience and learning-by-doing are essential to earnings growth. Time out of work damages future wages – sometimes permanently.',
         attribution: 'Claudia Goldin, <em>Career &amp; Family</em> (2021), Nobel Prize in Economics 2023'
       }
     },

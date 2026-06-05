@@ -1,12 +1,12 @@
 /* ============================================================
-   Price Rationing under Scarcity — engine spec for priceRationingScarcity.
-   The-price-mechanism topic — card on rationing.
+   Price Rationing under Scarcity – engine spec for priceRationingScarcity.
+   The-price-mechanism topic – card on rationing.
 
    Standard supply-demand chart showing a shortage when price is
    held BELOW the equilibrium (the "tickets" scenario from the
    card). At the controlled price P_c:
      • quantity supplied Qs (on S)
-     • quantity demanded Qd (on D) — much higher
+     • quantity demanded Qd (on D) – much higher
      • shortage = Qd − Qs (horizontal gap)
 
    The card's lesson: when supply is fixed and demand exceeds it,
@@ -33,11 +33,11 @@
     },
 
     curves: [
-      /* D — downward sloping (high willingness to pay → low quantity) */
+      /* D – downward sloping (high willingness to pay → low quantity) */
       { d: 'M 0.069,0.900 L 0.972,0.100',
         tone: 'blue', label: 'D', strokeWidth: 2.5,
         labelDx: -6, labelDy: 14, anchor: 'end' },
-      /* S — upward sloping */
+      /* S – upward sloping */
       { d: 'M 0.069,0.100 L 0.972,0.900',
         tone: 'amber', label: 'S', strokeWidth: 2.5,
         labelDx: -6, labelDy: -6, anchor: 'end' }

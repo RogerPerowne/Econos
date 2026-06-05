@@ -1,5 +1,5 @@
 /* ============================================================
-   Positive Externality Interactive — engine spec for
+   Positive Externality Interactive – engine spec for
    posExternalityInteractive. Positive-externalities card.
 
    Mirror image of negExternalityInteractive: MSB sits ABOVE MPB
@@ -54,7 +54,7 @@
       { layer: 'layer-base-curves',
         d: 'M 0.080,0.084 L 0.860,0.868',
         tone: 'green', label: 'MPC = MSC', strokeWidth: 3, labelDx: -8, labelDy: 12, anchor: 'end' },
-      // MSB (blue dashed) — visible in extension/shift/efficiency.
+      // MSB (blue dashed) – visible in extension/shift/efficiency.
       // Curve labelled near its right end inside the chart.
       { layer: 'layer-msb',
         d: 'M 0.080,0.756 L 0.860,0.252',
@@ -70,7 +70,7 @@
         x1: Em.x, y1: Em.y, x2: Em.x, y2: 0,
         tone: 'slate', strokeWidth: 1.5, dashed: '5 4', buffer: 0 },
 
-      // MEB indicator — thick vertical purple bar between MPB and MSB.
+      // MEB indicator – thick vertical purple bar between MPB and MSB.
       // End-cap "ticks" dropped to avoid forming 90° corners that read
       // as a bent arrow.
       { layer: 'layer-meb',
@@ -87,26 +87,26 @@
     ],
 
     polygons: [
-      // Welfare-gain triangle (efficiency only) — vertices: E_market, E*, MSB@Q_m
+      // Welfare-gain triangle (efficiency only) – vertices: E_market, E*, MSB@Q_m
       { layer: 'layer-wfg',
         points: [[Em.x, Em.y], [Eopt.x, Eopt.y], [MsbAtQm.x, MsbAtQm.y]],
         fill: '#DCFCE7', opacity: 0.85 }
     ],
 
     points: [
-      // Market equilibrium — red hollow (always)
+      // Market equilibrium – red hollow (always)
       { layer: 'layer-market-eq',
         x: Em.x, y: Em.y, tone: 'red', radius: 6, hollow: true,
         label: 'Eₘ', labelDx: 12, labelDy: -4, anchor: 'start' },
-      // Socially optimal equilibrium — green hollow
+      // Socially optimal equilibrium – green hollow
       { layer: 'layer-optimal',
         x: Eopt.x, y: Eopt.y, tone: 'green', radius: 7, hollow: true,
         label: 'E*', labelDx: 0, labelDy: -16, anchor: 'middle' },
 
     ],
 
-    // titleStrips removed (v0.41.20) — same rule as neg-externality.
-    // Each header was a single dot + text — a one-entry legend whose
+    // titleStrips removed (v0.41.20) – same rule as neg-externality.
+    // Each header was a single dot + text – a one-entry legend whose
     // text repeated the card lede. Universal rule: single-entry
     // legends are redundant.
 
@@ -123,7 +123,7 @@
       { layer: 'layer-optimal', x: -0.028, y: Eopt.y,    text: 'P*', tone: 'green', bold: true, fontSize: 12, anchor: 'end' },
       { layer: 'layer-optimal', x: Eopt.x,  y: -0.050,   text: 'Q*', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
 
-      // Welfare-gain label inside green triangle — short form ("Gain")
+      // Welfare-gain label inside green triangle – short form ("Gain")
       // because the triangle is small; "Welfare gain" crowded the E* dot.
       { layer: 'layer-wfg', x: (Em.x + Eopt.x + MsbAtQm.x) / 3 + 0.020, y: (Em.y + Eopt.y + MsbAtQm.y) / 3,
         text: 'Gain', tone: 'green', bold: true, anchor: 'middle' }
@@ -147,7 +147,7 @@
           },
           { header: { text: 'THE BLIND SPOT', tone: 'gray' },
             body: [
-              'Buyers value only their own benefit — the benefit spilling over to third parties is invisible.'
+              'Buyers value only their own benefit – the benefit spilling over to third parties is invisible.'
             ]
           }
         ]
@@ -166,7 +166,7 @@
           { header: { text: 'THE GAP', tone: 'purple' },
             body: [
               { text: 'Vertical gap = MEB', tone: 'slate', bold: true },
-              'The marginal external benefit — herd immunity, productivity. Buyers don\'t capture it, so they under-consume.'
+              'The marginal external benefit – herd immunity, productivity. Buyers don\'t capture it, so they under-consume.'
             ]
           }
         ]
@@ -198,7 +198,7 @@
         sections: [
           { header: { text: 'WELFARE GAIN FORGONE', tone: 'green' },
             body: [
-              'The green triangle between Qₘ and Q* — bounded above by MSB, below by MSC.',
+              'The green triangle between Qₘ and Q* – bounded above by MSB, below by MSC.',
               { text: 'Each missing unit: MSB > MSC', tone: 'slate', bold: true }
             ]
           },

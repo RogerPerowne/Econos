@@ -1,13 +1,13 @@
 /* ============================================================
-   PPF card 6 — declarative spec for ppfTradeInteractive.
+   PPF card 6 – declarative spec for ppfTradeInteractive.
    Teaches gains from trade and comparative advantage. A country
    specialises in production at P (on its PPF), trades, and
-   consumes at C — a combination that lies BEYOND the PPF and
+   consumes at C – a combination that lies BEYOND the PPF and
    would be unattainable in autarky.
 
    Two progressive-reveal layers via the legacy interactiveDiagram
    layer system (cumulative reveal, no per-view `show:` arrays):
-     View 1 'Production frontier'  — base only (PPF + zone label)
+     View 1 'Production frontier'  – base only (PPF + zone label)
      View 2 'Specialise at P'      → reveals idl-1 (P on PPF)
      View 3 'Consume at C'         → reveals idl-1 + idl-2
                                      (P, arrow P→C, C beyond curve)
@@ -15,7 +15,7 @@
    Pedagogical contract:
    - P sits ON PPF₁ exactly (verified at t≈0.45)
    - C is positioned in the unattainable region (chart y > PPF y at
-     C's x) so it's visibly OUTSIDE the curve — that's the whole
+     C's x) so it's visibly OUTSIDE the curve – that's the whole
      point of the diagram
    - "production" and "consumption" labels are SHORT italics,
      centred below their dots (clean side, no clash with curve)
@@ -28,7 +28,7 @@
   var PPF_D = 'M 0,0.772 C 0.55,0.772 1.0,0.05 1.0,0';
 
   // P on PPF at t≈0.45 → (0.650, 0.460). On-curve, verified.
-  // C in the unattainable zone — PPF at x=0.79 has y≈0.305;
+  // C in the unattainable zone – PPF at x=0.79 has y≈0.305;
   //   C at y=0.60 is ~0.30 chart-units clear of the curve.
   var P = { x: 0.650, y: 0.460 };
   var C = { x: 0.790, y: 0.600 };

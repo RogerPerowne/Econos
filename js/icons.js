@@ -4721,14 +4721,14 @@ window.ECONOS_ICONS = {
 
   subsidyInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_INTERACTIVE_SPEC),
 
-  /* ── Market-failure topic — gap-fill diagrams ───────────── */
+  /* ── Market-failure topic – gap-fill diagrams ───────────── */
   marketFailureOverview: window.ECONOS_PPF.render(window.ECONOS_MARKET_FAILURE_OVERVIEW_SPEC),
 
   privateVsSocialDiagram: window.ECONOS_PPF.render(window.ECONOS_PRIVATE_VS_SOCIAL_SPEC),
 
   welfareLossDiagram: window.ECONOS_PPF.render(window.ECONOS_WELFARE_LOSS_DIAGRAM_SPEC),
 
-  /* threeRoutesDiagram — 3-tile category map. Hand-rolled because
+  /* threeRoutesDiagram – 3-tile category map. Hand-rolled because
      it's a tile infographic, not a coordinate chart. */
   threeRoutesDiagram: `
     <div class="three-routes" style="background:#fff;border-radius:14px;padding:18px 16px 8px;font-family:Inter,sans-serif;color:#0B1426;">
@@ -4790,7 +4790,7 @@ window.ECONOS_ICONS = {
           </tr>
           <tr>
             <td class="tr-prob" style="color:#B45309;">2. Public goods</td>
-            <td>Free-rider problem — people benefit without paying.</td>
+            <td>Free-rider problem – people benefit without paying.</td>
             <td>Under-provision of the good or service. <span class="tr-badge" style="background:#FFFBEB;color:#B45309;">👥</span></td>
           </tr>
           <tr>
@@ -4803,10 +4803,10 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* ── The-price-mechanism topic — gap-fill diagrams ──────── */
+  /* ── The-price-mechanism topic – gap-fill diagrams ──────── */
   priceRationingScarcity: window.ECONOS_PPF.render(window.ECONOS_PRICE_RATIONING_SCARCITY_SPEC),
 
-  /* priceMechanismFlow — Hayek's three functions in one diagram.
+  /* priceMechanismFlow – Hayek's three functions in one diagram.
      A 3-circle Venn-ish layout where the centre is the price level
      and each circle is one function (signalling / incentives /
      rationing). Hand-rolled because it's a relational diagram, not
@@ -12500,7 +12500,7 @@ window.ECONOS_ICONS = {
   </svg>`,
 
   /* ============================================================
-     National Income — Card 1: two-sector circular flow
+     National Income – Card 1: two-sector circular flow
      Households ↔ Firms with real flows (blue, outer pair) and
      money flows (amber, inner pair). Used as visualKey on the
      foundation card so the rest of the section can refer to it.
@@ -12578,7 +12578,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     National Income — Card 4: full open-economy circular flow
+     National Income – Card 4: full open-economy circular flow
      Government, Households, Firms, Financial Markets, Overseas
      Sector with all six injections (I, G, X) and withdrawals
      (S, T, M) plus the inner factor-payment + consumption loop.
@@ -12587,7 +12587,7 @@ window.ECONOS_ICONS = {
      the SVG (that line lives in `bottomTip` instead).
      ============================================================ */
   /* ============================================================
-     National Income — Card 4: full open-economy circular flow
+     National Income – Card 4: full open-economy circular flow
      Layered SVG for the `interactiveDiagram` template. Base layer
      (always visible) is the closed two-sector economy. Three
      overlay layers add Financial Markets (idl-1), Government
@@ -12760,7 +12760,7 @@ window.ECONOS_ICONS = {
         </div>
         <!-- RIGHT: 45° diagram. 45° line (60,210)→(230,40) [slope -1].
              E line BLUE from (60,140) to (280,48) [slope -0.418].
-             Intersection at (175, 95) — verified on 45° (270-175=95). -->
+             Intersection at (175, 95) – verified on 45° (270-175=95). -->
         <div style="border:1px solid #BFDBFE;border-radius:12px;background:#F8FAFF;padding:14px;">
           <div style="text-align:center;color:#2563EB;font-weight:700;font-size:14px;margin-bottom:8px;">45° diagram</div>
           <svg viewBox="0 0 360 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
@@ -12793,7 +12793,7 @@ window.ECONOS_ICONS = {
         <!-- Plot area x:[60,450] y:[40,240].
              SRAS BLACK upward (90,220)→(430,60) slope SVG -0.471.
              AD BLUE downward (90,70)→(440,230) slope SVG +0.457.
-             Intersection (252, 144) — both equations verified. -->
+             Intersection (252, 144) – both equations verified. -->
         <svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
           <text x="16" y="22" font-size="11" fill="#475569" font-family="Inter,sans-serif">Price level (P)</text>
           <line x1="60" y1="240" x2="450" y2="240" stroke="#0B1426" stroke-width="1.4"/>
@@ -12910,7 +12910,7 @@ window.ECONOS_ICONS = {
      plan; every label position verified against line equations.
      ============================================================ */
 
-  /* Card 1 — round-by-round contributions, MPC=0.8, £100m injection.
+  /* Card 1 – round-by-round contributions, MPC=0.8, £100m injection.
      Layered for the interactiveDiagram block:
        BASE     = axes, ticks, R1 bar + labels, legend swatch for bars
        .idl-1   = R2 bar + labels
@@ -12997,7 +12997,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 2 — where £1 of extra income goes: one stacked horizontal
+  /* Card 2 – where £1 of extra income goes: one stacked horizontal
      bar split MPC 0.6 / MPS 0.1 / MPT 0.2 / MPM 0.1. Bracket above
      the MPC slice = "stays in the loop"; bracket below the three
      leakage slices = "MPW = 0.4". */
@@ -13034,7 +13034,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 4 — multiplier amplifies an AD shift. Plot x[80,580]
+  /* Card 4 – multiplier amplifies an AD shift. Plot x[80,580]
      y[60,320]. House rules: AD blue (AD₁ dashed 55%, AD₂ solid),
      SRAS black, equilibria AD-blue open circles, dashed grey
      leaders to both axes from each equilibrium.
@@ -13054,7 +13054,7 @@ window.ECONOS_ICONS = {
         <!-- SRAS black upward -->
         <line x1="110" y1="290" x2="560" y2="80" stroke="#0B1426" stroke-width="2.2"/>
         <text x="566" y="78" font-size="12" fill="#0B1426" font-family="Inter,sans-serif" font-weight="700">SRAS</text>
-        <!-- AD₁ blue dashed (old). Label moved to y=108 — line at x=138 is at y=119, so text bottom (108) sits 11 above the line. -->
+        <!-- AD₁ blue dashed (old). Label moved to y=108 – line at x=138 is at y=119, so text bottom (108) sits 11 above the line. -->
         <line x1="110" y1="100" x2="430" y2="320" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3" opacity="0.55"/>
         <text x="138" y="108" font-size="11" fill="#2563EB" font-family="Inter,sans-serif" font-weight="700" opacity="0.75">AD₁</text>
         <!-- AD₂ blue solid (new, +150 shift). Same vertical clearance. -->
@@ -13099,12 +13099,12 @@ window.ECONOS_ICONS = {
      Four hero charts.
      ============================================================ */
 
-  /* Card 1 — the wave. 4 phase background bands of equal width 135 each
+  /* Card 1 – the wave. 4 phase background bands of equal width 135 each
      starting at x=60. Long-run trend dashed grey from (60,180) to
      (600,100). Wave: cubic Bezier from (60,165) → boom peak (200,100)
      → slowdown decline → recession trough (440,200) → recovery rise
      to (580,105). */
-  /* Card 1 — Interactive multi-state diagram.
+  /* Card 1 – Interactive multi-state diagram.
      Base = axes + 4 subtle phase bands (always visible at low opacity)
           + smooth 3-segment Bezier wave + trend.
      Layers (explicit show per view): each phase layer adds a
@@ -13135,7 +13135,7 @@ window.ECONOS_ICONS = {
              with trend_y(x) = 180 − 0.14815·(x−60). Period 540, phase
              shifted so the peak sits at x≈146 (mid-boom) and the trough
              at x≈400 (mid-recession). 27 samples at every 20 px joined
-             with line segments + stroke-linejoin="round" — visually
+             with line segments + stroke-linejoin="round" – visually
              indistinguishable from a true smooth sinusoid at this scale. -->
         <path d="M60 138 L80 126 L100 117 L120 111 L140 109 L160 110 L180 113 L200 120 L220 128 L240 138 L260 149 L280 160 L300 170 L320 179 L340 186 L360 190 L380 192 L400 190 L420 184 L440 176 L460 165 L480 152 L500 137 L520 121 L540 104 L560 87 L580 70" stroke="#1E3A8A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         <!-- Phase highlight layers (one revealed per active view) -->
@@ -13159,7 +13159,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 2 — demand shocks twin. Two panels side-by-side.
+  /* Card 2 – demand shocks twin. Two panels side-by-side.
      House rules: AD blue (AD₁ dashed 55% + AD₂ solid), SRAS black,
      equilibrium dots blue. Dashed grey leaders both axes.
      LEFT (positive shock) AD shifts right: E₁ (152,153) → E₂ (178,134)
@@ -13247,8 +13247,8 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 3 — supply shocks twin. House rule: shift keeps colour, only
-     dashed/solid changes — so SRAS₀ dashed BLACK + SRAS₁ solid BLACK.
+  /* Card 3 – supply shocks twin. House rule: shift keeps colour, only
+     dashed/solid changes – so SRAS₀ dashed BLACK + SRAS₁ solid BLACK.
      AD stays blue solid unchanged. Equilibrium dots blue.
      LEFT (negative): SRAS₀ dashed (right) → SRAS₁ solid (left).
      RIGHT (positive): SRAS₀ dashed (left) → SRAS₁ solid (right). */
@@ -13337,7 +13337,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 4 — Interactive multi-state diagram (cumulative reveal).
+  /* Card 4 – Interactive multi-state diagram (cumulative reveal).
      Base = axes + actual GDP wave only.
      Layers (cumulative via i < vi):
        .idl-trend       = potential GDP line + Booms/Recessions markers
@@ -13353,14 +13353,14 @@ window.ECONOS_ICONS = {
      Two hero charts.
      ============================================================ */
 
-  /* Card 1 — Beyond GDP: hub-and-spoke scorecard.
+  /* Card 1 – Beyond GDP: hub-and-spoke scorecard.
      HTML grid for layout, inline SVG for the gauge dials and the
      central connector lines. The four corner tiles carry a full
      dimension story (title + gauge + description + exam note); the
      centre overlay carries the headline measure. Set line-height
      back to 1.5 because the engine wraps visualKey HTML in a
      line-height:0 div. A scoped <style> block handles the mobile
-     fallback — below 560 px the 2x2 grid collapses to a single
+     fallback – below 560 px the 2x2 grid collapses to a single
      column and the centre circle stops floating absolutely. */
   growthScorecard: `
     <div class="growth-scorecard" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
@@ -13464,7 +13464,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     specialisationGainsCompare — Card 1 hook for Specialisation & Money.
+     specialisationGainsCompare – Card 1 hook for Specialisation & Money.
      Two tinted panels (self-sufficiency 20 units → specialisation 300
      units) with the three goods quantified and a connecting arrow.
      HTML+flex hero so the panels stack cleanly on mobile.
@@ -13512,7 +13512,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     barterTriangle — Card 5 hook. Three traders at the corners of a
+     barterTriangle – Card 5 hook. Three traders at the corners of a
      triangle, each with a green Has pill and a blue Wants pill, a
      central "double coincidence of wants" hub, dashed connector lines
      and a red ✗ on every pairwise edge (no pair double-matches).
@@ -13544,7 +13544,7 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="bt-stage">
-        <!-- connector lines (triangle edges) — vertex coords match the
+        <!-- connector lines (triangle edges) – vertex coords match the
              icon-circle centres in the 100×100 viewBox stretched to the
              520×400 stage: Baker (50, 8), Fisher (14, 75), Shoemaker (86, 75). -->
         <svg class="bt-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -13588,7 +13588,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     goodMoneyScorecard — Card 7 hook. Scored comparison matrix: six
+     goodMoneyScorecard – Card 7 hook. Scored comparison matrix: six
      characteristics × three candidate monies, each cell ✓ / ◑ / ✗,
      with a bottom score row counting full passes (Shells 2/6, Gold
      6/6, Paper notes 5/6). HTML grid; label column narrows on mobile.
@@ -13657,7 +13657,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     economicSystemsBigPicture — Economic Systems Card 1. Two-part
+     economicSystemsBigPicture – Economic Systems Card 1. Two-part
      hero: (a) a three-questions hub (What/How/For-whom radiating from
      "every economy") and (b) the market↔state spectrum, three tone
      circles riding a green→blue→rose ribbon. HTML+SVG hybrid
@@ -13761,7 +13761,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     economicThinkersThree — Economic Systems Card 2, spec 1.1.6(a).
+     economicThinkersThree – Economic Systems Card 2, spec 1.1.6(a).
      Smith / Hayek / Marx, tone-coded (green / blue / rose). Icon
      avatars rather than photos (no Marx portrait asset, and a mixed
      photo+icon row reads badly). Stacks on mobile.
@@ -13794,7 +13794,7 @@ window.ECONOS_ICONS = {
           <div class="tk-name" style="color:#1E3A8A;">Friedrich Hayek</div>
           <div class="tk-dates">1899–1992</div>
           <div class="tk-stance" style="color:#2563EB;">Planning can’t know enough</div>
-          <div class="tk-body">Knowledge is <strong>dispersed</strong> across millions of people; no planner can gather it. <strong>Prices</strong> aggregate it automatically — the <strong>knowledge problem</strong> that dooms central planning.</div>
+          <div class="tk-body">Knowledge is <strong>dispersed</strong> across millions of people; no planner can gather it. <strong>Prices</strong> aggregate it automatically – the <strong>knowledge problem</strong> that dooms central planning.</div>
           <div class="tk-quote" style="color:#1E3A8A;border-color:#93C5FD;">“The curious task of economics is to demonstrate how little men really know about what they imagine they can design.”</div>
         </div>
         <div class="tk-card" style="background:#FFF1F2;border:1.5px solid #FDA4AF;">
@@ -13802,7 +13802,7 @@ window.ECONOS_ICONS = {
           <div class="tk-name" style="color:#9F1239;">Karl Marx</div>
           <div class="tk-dates">1818–1883</div>
           <div class="tk-stance" style="color:#BE123C;">Markets exploit labour</div>
-          <div class="tk-body">Private ownership lets capital <strong>exploit workers</strong> and concentrates wealth. The remedy is <strong>common ownership</strong> of the means of production — the case for a command economy.</div>
+          <div class="tk-body">Private ownership lets capital <strong>exploit workers</strong> and concentrates wealth. The remedy is <strong>common ownership</strong> of the means of production – the case for a command economy.</div>
           <div class="tk-quote" style="color:#9F1239;border-color:#FDA4AF;">“From each according to his ability, to each according to his needs.”</div>
         </div>
       </div>
@@ -13810,7 +13810,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     economicSystemsScorecard — Economic Systems Card 6. Trade-off
+     economicSystemsScorecard – Economic Systems Card 6. Trade-off
      matrix: six dimensions × three systems, each cell a level word
      (High/Medium/Low) + a fill bar coloured by the system's tone.
      High=100% · Medium=55% · Low=25%. Topic palette: FM green,
@@ -13865,12 +13865,12 @@ window.ECONOS_ICONS = {
         <div class="es-cell" style="border-bottom:none;"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
         <div class="es-cell" style="border-bottom:none;"><span class="es-lvl">High</span><span class="es-bar"><span class="es-fill" style="width:100%;background:#64748B;"></span></span></div>
       </div>
-      <div style="font-size:11px;color:#94A3B8;text-align:center;margin-top:6px;">Bar length shows how strongly each system delivers that dimension — no system wins on everything.</div>
+      <div style="font-size:11px;color:#94A3B8;text-align:center;margin-top:6px;">Bar length shows how strongly each system delivers that dimension – no system wins on everything.</div>
     </div>
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     economicCommandPlanning — Economic Systems Card 4. Hub-and-spoke:
+     economicCommandPlanning – Economic Systems Card 4. Hub-and-spoke:
      the government sets priorities at the top, the plan fans down to
      four process steps. HTML + an SVG fan connector. Collapses to a
      2-col grid on mobile.
@@ -13890,7 +13890,7 @@ window.ECONOS_ICONS = {
       </style>
       <div class="cp-gov">
         <div class="cp-gov-ic">🏛️</div>
-        <div><div style="font-size:13.5px;font-weight:800;color:#5B21B6;">Government sets priorities</div><div style="font-size:11.5px;color:#475569;line-height:1.35;">It decides society’s goals — then the plan flows down.</div></div>
+        <div><div style="font-size:13.5px;font-weight:800;color:#5B21B6;">Government sets priorities</div><div style="font-size:11.5px;color:#475569;line-height:1.35;">It decides society’s goals – then the plan flows down.</div></div>
       </div>
       <svg class="cp-fan" viewBox="0 0 100 32" preserveAspectRatio="none">
         <path d="M50,0 V9 M12.5,9 H87.5 M12.5,9 V30 M37.5,9 V30 M62.5,9 V30 M87.5,9 V30" stroke="#C4B5FD" stroke-width="0.6" fill="none" stroke-dasharray="1.6 1.2"/>
@@ -13905,7 +13905,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     economicMixedWhoDoesWhat — Economic Systems Card 5. Two panels:
+     economicMixedWhoDoesWhat – Economic Systems Card 5. Two panels:
      what markets allocate vs what government provides/shapes, with a
      ⇄ between. Icon tiles. Stacks on mobile (arrow rotates).
      ─────────────────────────────────────────────────────────────── */
@@ -13948,7 +13948,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     rationalAgentHub — Rational Decision Making Card 1. A brain at the
+     rationalAgentHub – Rational Decision Making Card 1. A brain at the
      centre with the four habits of a rational agent radiating to the
      corners (consistent / goal-seeking / marginal / maximising).
      growthScorecard pattern: 2×2 grid + central overlay + dashed
@@ -14002,7 +14002,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     marginalUtilityCompare — Rational Decision Making Card 2. Two
+     marginalUtilityCompare – Rational Decision Making Card 2. Two
      goods rated on the extra satisfaction from the next £1 (stars),
      with a "shift spending to the higher MU per £" hub between them
      and the equimarginal rule beneath. Stacks on mobile.
@@ -14024,7 +14024,7 @@ window.ECONOS_ICONS = {
       <div class="mu-row">
         <div class="mu-panel" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
           <div class="mu-ic">🎧</div>
-          <div class="mu-name" style="color:#1E3A8A;">Good A — headphones</div>
+          <div class="mu-name" style="color:#1E3A8A;">Good A – headphones</div>
           <div class="mu-cap">Extra satisfaction from the next £1</div>
           <div class="mu-stars" style="color:#2563EB;">★★★★<span style="color:#CBD5E1;">★</span></div>
           <div class="mu-lvl" style="color:#2563EB;">High MU per £</div>
@@ -14036,18 +14036,18 @@ window.ECONOS_ICONS = {
         </div>
         <div class="mu-panel" style="background:#FFFBEB;border:1.5px solid #FCD34D;">
           <div class="mu-ic">☕</div>
-          <div class="mu-name" style="color:#B45309;">Good B — coffee</div>
+          <div class="mu-name" style="color:#B45309;">Good B – coffee</div>
           <div class="mu-cap">Extra satisfaction from the next £1</div>
           <div class="mu-stars" style="color:#D97706;">★★<span style="color:#CBD5E1;">★★★</span></div>
           <div class="mu-lvl" style="color:#B45309;">Lower MU per £</div>
         </div>
       </div>
-      <div style="font-size:11.5px;color:#475569;text-align:center;margin-top:12px;line-height:1.45;">The best point is where the <strong>last £1</strong> spent on each good gives roughly the <strong>same</strong> extra utility — the equimarginal rule.</div>
+      <div style="font-size:11.5px;color:#475569;text-align:center;margin-top:12px;line-height:1.45;">The best point is where the <strong>last £1</strong> spent on each good gives roughly the <strong>same</strong> extra utility – the equimarginal rule.</div>
     </div>
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     profitEquationHero — Rational Decision Making Card 3. The core
+     profitEquationHero – Rational Decision Making Card 3. The core
      identity Profit = Total revenue − Total costs, scales icon beside
      it. Stacks/centres on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14063,7 +14063,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     demandDeterminantsHub — Demand Card 5. "Demand" at the centre with
+     demandDeterminantsHub – Demand Card 5. "Demand" at the centre with
      the six conditions of demand around it (3 left, 3 right). HTML +
      SVG connector layer (growthScorecard pattern). Stacks on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14106,7 +14106,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     demandGoodTypes — Demand Card 6. Income effects (normal / inferior)
+     demandGoodTypes – Demand Card 6. Income effects (normal / inferior)
      and related goods (substitutes / complements), each with a worked
      example and a demand-direction arrow. Two columns → stack on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14157,7 +14157,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     supplyDeterminantsHub — Supply Card 5. "Supply" at the centre with
+     supplyDeterminantsHub – Supply Card 5. "Supply" at the centre with
      the six conditions of supply around it. Mirror of
      demandDeterminantsHub. Stacks on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14200,7 +14200,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     supplyCostFactors — Supply Card 6. Cost-side changes (lower/higher
+     supplyCostFactors – Supply Card 6. Cost-side changes (lower/higher
      costs) and policy & efficiency (technology, tax vs subsidy), each
      with a supply-direction arrow. Mirror of demandGoodTypes.
      ─────────────────────────────────────────────────────────────── */
@@ -14251,7 +14251,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     pedDriversHub — PED Card 5. "PED" at the centre with the six
+     pedDriversHub – PED Card 5. "PED" at the centre with the six
      determinants of elasticity around it. Mirror of
      demandDeterminantsHub. Stacks on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14277,7 +14277,7 @@ window.ECONOS_ICONS = {
           <line x1="70" y1="83" x2="50" y2="50" stroke="#BFDBFE" stroke-width="0.3" stroke-dasharray="1 1"/>
         </svg>
         <div class="ph-grid">
-          <div class="ph-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="ph-ic">🔄</div><div><div class="ph-t" style="color:#1E3A8A;">Close substitutes</div><div class="ph-s">More alternatives make switching easier — the biggest driver.</div></div></div>
+          <div class="ph-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="ph-ic">🔄</div><div><div class="ph-t" style="color:#1E3A8A;">Close substitutes</div><div class="ph-s">More alternatives make switching easier – the biggest driver.</div></div></div>
           <div class="ph-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;"><div class="ph-ic">🛒</div><div><div class="ph-t" style="color:#C2410C;">Necessity or luxury</div><div class="ph-s">Necessities tend to be inelastic; luxuries more elastic.</div></div></div>
           <div class="ph-tile" style="background:#FFFBEB;border:1.5px solid #FCD34D;"><div class="ph-ic">💰</div><div><div class="ph-t" style="color:#B45309;">Share of income</div><div class="ph-s">Expensive items tend to have more elastic demand.</div></div></div>
           <div class="ph-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;"><div class="ph-ic">⏱️</div><div><div class="ph-t" style="color:#5B21B6;">Time to adjust</div><div class="ph-s">Demand usually becomes more elastic over time.</div></div></div>
@@ -14294,7 +14294,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     pedTotalRevenue — PED Card 6. The same 10% price cut on elastic
+     pedTotalRevenue – PED Card 6. The same 10% price cut on elastic
      vs inelastic demand, traced to opposite revenue outcomes, with
      before→after revenue boxes. Stacks on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14339,7 +14339,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     yedXedTwoLenses — Income & cross elasticity Card 1. Two lenses on
+     yedXedTwoLenses – Income & cross elasticity Card 1. Two lenses on
      demand side by side: income changes (YED) vs related-good price
      changes (XED), each with its formula. Stacks on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14381,7 +14381,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     yedIncomeLadder — Income & cross elasticity Card 3. Adapts the
+     yedIncomeLadder – Income & cross elasticity Card 3. Adapts the
      "income ladder" escalator into three clean good-type columns: as
      income rises, inferior demand falls, necessities rise slightly,
      luxuries rise a lot. Stacks on mobile.
@@ -14398,7 +14398,7 @@ window.ECONOS_ICONS = {
         .yx-ladder .yk-eg { display:flex; align-items:center; gap:8px; background:#fff; border-radius:9px; padding:7px 9px; margin-bottom:6px; font-size:11.5px; font-weight:600; box-shadow:0 1px 2px rgba(11,20,38,0.05); }
         @media (max-width:560px){ .yx-ladder .yk-row{ grid-template-columns:1fr; } }
       </style>
-      <div class="yk-banner">↑ Rising income — same rise, very different response</div>
+      <div class="yk-banner">↑ Rising income – same rise, very different response</div>
       <div class="yk-row">
         <div class="yk-col" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
           <div class="yk-big" style="color:#7C3AED;">↓</div>
@@ -14427,7 +14427,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     xedRelationshipHub — Income & cross elasticity Card 5. Good A at
+     xedRelationshipHub – Income & cross elasticity Card 5. Good A at
      the centre; substitutes (positive XED) left, complements
      (negative XED) right, unrelated (≈0) below. Stacks on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14480,7 +14480,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     xedStrengthSpectrum — Income & cross elasticity Card 7. The XED
+     xedStrengthSpectrum – Income & cross elasticity Card 7. The XED
      number line from strong complements (−) through unrelated (0) to
      close substitutes (+), with example pairs and value chips. Scrolls
      horizontally on narrow screens via the diagramKey wrapper.
@@ -14513,11 +14513,11 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     yedClassifySpectrum — Income & Cross-Price Elasticity Card 2.
+     yedClassifySpectrum – Income & Cross-Price Elasticity Card 2.
      Replaces the 2×2 "classify the result" box grid with the same
      number-line spectrum family used for XED: the four income-response
-     regimes laid out left → right by YED value — inferior (falls) →
-     income-neutral (0) → necessity (0–1) → luxury (>1) — each with an
+     regimes laid out left → right by YED value – inferior (falls) →
+     income-neutral (0) → necessity (0–1) → luxury (>1) – each with an
      example, a dot and a value chip over a red → green gradient bar.
      Responsive: cells compress and wrap rather than clip.
      ─────────────────────────────────────────────────────────────── */
@@ -14547,10 +14547,10 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     pesBigPictureCompare — PES Card 1. Twin supply panels: the SAME
+     pesBigPictureCompare – PES Card 1. Twin supply panels: the SAME
      price rise (P₁→P₂) traced onto a steep (inelastic) and a shallow
      (elastic) supply curve, so a small ΔQ vs a large ΔQ is read off
-     directly. No demand curves — this is the price→quantity response,
+     directly. No demand curves – this is the price→quantity response,
      not a demand shift (that lives on Card 6).
      ─────────────────────────────────────────────────────────────── */
   pesBigPictureCompare: `
@@ -14618,7 +14618,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     pesCalcClassify — PES Card 2. Two static worked examples (bottled
+     pesCalcClassify – PES Card 2. Two static worked examples (bottled
      water, inelastic vs T-shirts, elastic) above the five-point PES
      classification spectrum (0 → ∞). Stacks on mobile.
      ─────────────────────────────────────────────────────────────── */
@@ -14670,7 +14670,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     pedClassifySpectrum — PED Card 3 (reading the coefficient). The
+     pedClassifySpectrum – PED Card 3 (reading the coefficient). The
      same five-point classification strip used on PES, relabelled for
      demand: perfectly inelastic (0) → perfectly elastic (∞), with a
      red → purple gradient bar. Renders as a banner above the detailed
@@ -14702,7 +14702,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     pesDriversSpectrum — PES Card 4. The five drivers of supply
+     pesDriversSpectrum – PES Card 4. The five drivers of supply
      elasticity as numbered tiles, sitting over a less-elastic →
      more-elastic gradient bar. Each driver notes which way it pushes
      PES. Stacks to 2-up then 1-up on narrow screens.
@@ -14735,7 +14735,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     pesTimeHorizons — PES Card 5. Three time horizons, each with a
+     pesTimeHorizons – PES Card 5. Three time horizons, each with a
      mini supply curve whose slope flattens as time passes: market
      period (vertical, PES=0) → short run (steep) → long run (shallow).
      Stacks on mobile.
@@ -14752,7 +14752,7 @@ window.ECONOS_ICONS = {
       </style>
       <div class="th-row">
         <div class="th-col" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
-          <div class="th-h" style="color:#5B21B6;"><span class="th-n" style="background:#7C3AED;">1</span>Market period — now</div>
+          <div class="th-h" style="color:#5B21B6;"><span class="th-n" style="background:#7C3AED;">1</span>Market period – now</div>
           <svg viewBox="0 0 150 96" style="width:100%;height:auto;margin-top:8px;">
             <line x1="20" y1="10" x2="20" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
             <line x1="20" y1="80" x2="140" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
@@ -14764,7 +14764,7 @@ window.ECONOS_ICONS = {
           <div class="th-b">Output is basically fixed. Existing stock is all that can be sold.</div>
         </div>
         <div class="th-col" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
-          <div class="th-h" style="color:#C2410C;"><span class="th-n" style="background:#EA580C;">2</span>Short run — weeks/months</div>
+          <div class="th-h" style="color:#C2410C;"><span class="th-n" style="background:#EA580C;">2</span>Short run – weeks/months</div>
           <svg viewBox="0 0 150 96" style="width:100%;height:auto;margin-top:8px;">
             <line x1="20" y1="10" x2="20" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
             <line x1="20" y1="80" x2="140" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
@@ -14776,7 +14776,7 @@ window.ECONOS_ICONS = {
           <div class="th-b">Firms add overtime, use spare capacity, and reorder inputs.</div>
         </div>
         <div class="th-col" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">
-          <div class="th-h" style="color:#065F46;"><span class="th-n" style="background:#059669;">3</span>Long run — months/years</div>
+          <div class="th-h" style="color:#065F46;"><span class="th-n" style="background:#059669;">3</span>Long run – months/years</div>
           <svg viewBox="0 0 150 96" style="width:100%;height:auto;margin-top:8px;">
             <line x1="20" y1="10" x2="20" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
             <line x1="20" y1="80" x2="140" y2="80" stroke="#CBD5E1" stroke-width="1.4"/>
@@ -14792,7 +14792,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ───────────────────────────────────────────────────────────────
-     pesIndustrySpectrum — PES Card 7. Four industries arranged
+     pesIndustrySpectrum – PES Card 7. Four industries arranged
      low → high PES, each with a supply-against-time sparkline whose
      shape mirrors its elasticity: housing/agriculture stay flat then
      step up; manufacturing rises steadily; digital jumps early.
@@ -14868,7 +14868,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 2 — UK income spectrum: same 2% growth year drawn two ways.
+  /* Card 2 – UK income spectrum: same 2% growth year drawn two ways.
      Layer .idl-pounds : £ per year per decile, with a broken Y-axis so
      the bottom four bars (£200..£1,800) are readable alongside the
      Top-1% bar (£12,000+). Break decoration: a white strip + zigzag
@@ -15007,7 +15007,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 5 — Sustainability trade-off, 3 mutually-exclusive views.
+  /* Card 5 – Sustainability trade-off, 3 mutually-exclusive views.
      Each layer (.idl-kuznets / .idl-natural / .idl-carbon) is a
      complete mini-chart shown by explicit `show: ['idl-X']` per view.
      Shared canvas size for clean swap; one chart at a time. */
@@ -15025,7 +15025,7 @@ window.ECONOS_ICONS = {
           <text x="450" y="278" font-size="11" fill="#475569" font-family="Inter,sans-serif">GDP per capita →</text>
           <!-- Inverted-U curve (Kuznets) -->
           <path d="M80 250 C140 240 200 90 320 80 C440 70 520 200 580 250" stroke="#16A34A" stroke-width="2.4" fill="none"/>
-          <!-- Country markers — y-values computed to sit ON the Bezier curve at each x. -->
+          <!-- Country markers – y-values computed to sit ON the Bezier curve at each x. -->
           <circle cx="115" cy="231" r="5" fill="#C2410C"/>
           <text x="115" y="218" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Niger</text>
           <text x="115" y="296" font-size="9" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">low income</text>
@@ -15053,12 +15053,12 @@ window.ECONOS_ICONS = {
           <!-- Green GDP (green, rising slower) -->
           <path d="M80 250 C200 235 350 200 580 150" stroke="#16A34A" stroke-width="2.6" fill="none"/>
           <text x="586" y="154" font-size="11" font-weight="700" fill="#16A34A" font-family="Inter,sans-serif">Green GDP</text>
-          <!-- Gap annotation — sits inside the shaded area at the vertical midpoint
+          <!-- Gap annotation – sits inside the shaded area at the vertical midpoint
                between the two curves (Standard ≈ y140, Green ≈ y193 at x=380). -->
           <text x="380" y="170" font-size="11" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif" text-anchor="middle">Natural-capital depletion</text>
-          <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">GDP vs Green GDP — the depletion gap</text>
+          <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">GDP vs Green GDP – the depletion gap</text>
         </g>
-        <!-- LAYER 3: Carbon debt — cumulative CO₂ over time vs remaining budget -->
+        <!-- LAYER 3: Carbon debt – cumulative CO₂ over time vs remaining budget -->
         <g class="idl-carbon" style="display:none">
           <text x="14" y="22" font-size="10" fill="#475569" font-family="Inter,sans-serif">Cumulative</text>
           <text x="14" y="34" font-size="10" fill="#475569" font-family="Inter,sans-serif">CO₂ (Gt)</text>
@@ -15075,20 +15075,20 @@ window.ECONOS_ICONS = {
           <text x="586" y="64" font-size="11" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">Emissions path</text>
           <!-- Shaded region of debt (above budget line) -->
           <path d="M450 120 C530 80 570 65 580 60 L580 120 Z" fill="#FCA5A5" opacity="0.45"/>
-          <!-- Annotation — wedge is too small to host the label cleanly inside, so
+          <!-- Annotation – wedge is too small to host the label cleanly inside, so
                the label sits in the white area below the budget line with a short
                red arrow pointing up into the shaded wedge. -->
           <line x1="530" y1="140" x2="530" y2="112" stroke="#DC2626" stroke-width="1.4"/>
           <polygon points="530,103 526,113 534,113" fill="#DC2626"/>
           <text x="530" y="156" font-size="11" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif" text-anchor="middle">debt to future</text>
-          <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Carbon debt — the bill the future inherits</text>
+          <text x="320" y="20" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Carbon debt – the bill the future inherits</text>
         </g>
       </svg>
     </div>
   `,
 
   /* ============================================================
-     Macroeconomic Objectives (Theme 2 · 2.6.1) — THEORY topic.
+     Macroeconomic Objectives (Theme 2 · 2.6.1) – THEORY topic.
      Best-of-both hero set: ChatGPT's clarity (cleaner Card 1
      scorecard, horizontal numbered-rows on C2, A→B→C labelled
      Phillips on C4, flow-chain mechanisms on C5, numbered nodes
@@ -15097,12 +15097,12 @@ window.ECONOS_ICONS = {
      Card 4 play-pause animation; Card 6 hoverable tension lines).
      ============================================================ */
 
-  /* Card 1 — THE DASHBOARD.
+  /* Card 1 – THE DASHBOARD.
      Pilot metaphor stripped (kept just "UK MACRO DASHBOARD" as a
      neutral header). Secondary cards 4-7 now stack label/value
      vertically (avoids the "TargetSustainable" run-together and
      "UK current" wrap that the previous inline layout produced).
-     "! ABOVE ZONE" warnings moved out of the title corner — now sit
+     "! ABOVE ZONE" warnings moved out of the title corner – now sit
      as a small inline red badge under the value. Trade-offs preview
      at the bottom uses tone-coloured pills + a grey VS badge in the
      middle (the established pair-renderer pattern), not the ugly
@@ -15181,7 +15181,7 @@ window.ECONOS_ICONS = {
               <div class="mos-sec-val" style="color:#5B21B6;">−2.4%</div>
             </div>
           </div>
-          <!-- 5. Balanced govt budget (amber) — outside zone -->
+          <!-- 5. Balanced govt budget (amber) – outside zone -->
           <div class="mos-card" style="border-color:#FCD34D;">
             <div class="mos-bar" style="background:#F59E0B;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#F59E0B;">5</span><span style="font-size:11px;font-weight:800;color:#B45309;line-height:1.2;">Balanced<br>govt budget</span></div>
@@ -15210,7 +15210,7 @@ window.ECONOS_ICONS = {
               <div class="mos-sec-val" style="color:#115E59;font-size:12px;">Mixed</div>
             </div>
           </div>
-          <!-- 7. Greater income equality (slate) — outside zone -->
+          <!-- 7. Greater income equality (slate) – outside zone -->
           <div class="mos-card" style="border-color:#CBD5E1;">
             <div class="mos-bar" style="background:#475569;"></div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="mos-num" style="background:#475569;">7</span><span style="font-size:11px;font-weight:800;color:#334155;line-height:1.2;">Greater income<br>equality</span></div>
@@ -15263,7 +15263,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 2 — THE HEADLINE THREE (horizontal numbered rows). */
+  /* Card 2 – THE HEADLINE THREE (horizontal numbered rows). */
   macroHeadlineCards: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">
       <style>
@@ -15271,12 +15271,12 @@ window.ECONOS_ICONS = {
            - tone-coloured left bar (4px), then white head section
            - large icon-in-circle on top, name in tone-bold underneath
            - 4 data columns separated by dashed verticals
-           - no tinted "UK current" cell — just a large bold tone-coloured value
+           - no tinted "UK current" cell – just a large bold tone-coloured value
            - airy padding (22px+) and a clean grid of 5 columns */
         /* Single-section head + a 2×2 data grid on the right.
            Two rows of two cells gives each data piece ~2× the horizontal
            space a 5-column layout would, which is what the cramped card
-           body actually needs — the mockup looks airy because its frame
+           body actually needs – the mockup looks airy because its frame
            is wider; the rendered card body sits inside a sidebar layout. */
         .mh-row { display:grid; grid-template-columns: 170px 1fr; align-items:stretch; border-radius:14px; overflow:hidden; border:1px solid; margin-bottom:14px; background:#fff; position:relative; }
         @media (max-width: 720px) { .mh-row { grid-template-columns: 1fr; } }
@@ -15309,7 +15309,7 @@ window.ECONOS_ICONS = {
         <div class="mh-data">
           <div class="mh-cell">
             <div class="mh-cell-label">Target</div>
-            <div class="mh-cell-val">CPI about 2% — symmetric target</div>
+            <div class="mh-cell-val">CPI about 2% – symmetric target</div>
           </div>
           <div class="mh-current-cell mh-cell">
             <div class="mh-current-label">UK current</div>
@@ -15317,7 +15317,7 @@ window.ECONOS_ICONS = {
           </div>
           <div class="mh-cell">
             <div class="mh-cell-label">How we measure it</div>
-            <div class="mh-cell-val">CPI year-on-year — ONS, monthly</div>
+            <div class="mh-cell-val">CPI year-on-year – ONS, monthly</div>
           </div>
           <div class="mh-cell">
             <div class="mh-cell-label">Why it matters</div>
@@ -15337,7 +15337,7 @@ window.ECONOS_ICONS = {
         <div class="mh-data">
           <div class="mh-cell">
             <div class="mh-cell-label">Target</div>
-            <div class="mh-cell-val">About 4–5% — around the NAIRU</div>
+            <div class="mh-cell-val">About 4–5% – around the NAIRU</div>
           </div>
           <div class="mh-current-cell mh-cell">
             <div class="mh-current-label">UK current</div>
@@ -15345,11 +15345,11 @@ window.ECONOS_ICONS = {
           </div>
           <div class="mh-cell">
             <div class="mh-cell-label">How we measure it</div>
-            <div class="mh-cell-val">ILO unemployment rate — ONS, rolling 3-month</div>
+            <div class="mh-cell-val">ILO unemployment rate – ONS, rolling 3-month</div>
           </div>
           <div class="mh-cell">
             <div class="mh-cell-label">Why it matters</div>
-            <div class="mh-cell-val">A labour-market failure is a welfare failure — under-used capacity wastes output.</div>
+            <div class="mh-cell-val">A labour-market failure is a welfare failure – under-used capacity wastes output.</div>
           </div>
         </div>
       </div>
@@ -15373,7 +15373,7 @@ window.ECONOS_ICONS = {
           </div>
           <div class="mh-cell">
             <div class="mh-cell-label">How we measure it</div>
-            <div class="mh-cell-val">Real GDP year-on-year — ONS, quarterly</div>
+            <div class="mh-cell-val">Real GDP year-on-year – ONS, quarterly</div>
           </div>
           <div class="mh-cell">
             <div class="mh-cell-label">Why it matters</div>
@@ -15384,7 +15384,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 3 — THE FOUR CONSTRAINTS (compass rose, kept). */
+  /* Card 3 – THE FOUR CONSTRAINTS (compass rose, kept). */
   macroConstraintCompass: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px 14px;font-family:Inter,sans-serif;">
       <svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
@@ -15444,7 +15444,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 4 — THE PHILLIPS CURVE (clearer A→B→C diagram + PLAY toggle). */
+  /* Card 4 – THE PHILLIPS CURVE (clearer A→B→C diagram + PLAY toggle). */
   macroPhillipsWorkstation: `
     <div class="phil-ws" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px 14px;font-family:Inter,sans-serif;">
       <style>
@@ -15516,9 +15516,9 @@ window.ECONOS_ICONS = {
           </div>
           <div class="friedman-card">
             <h4><span class="badge">i</span>Friedman–Phelps long run</h4>
-            <p>A stimulus can move the economy from <strong>A → B</strong> — lower unemployment and higher inflation.</p>
+            <p>A stimulus can move the economy from <strong>A → B</strong> – lower unemployment and higher inflation.</p>
             <p>But workers and firms <em>adapt their expectations</em>, shifting the SRPC up from SRPC₁ to SRPC₂.</p>
-            <p>The economy ends at <strong>C</strong> — back at U_N but with <strong>permanently higher inflation</strong>.</p>
+            <p>The economy ends at <strong>C</strong> – back at U_N but with <strong>permanently higher inflation</strong>.</p>
           </div>
         </div>
       </div>
@@ -15529,7 +15529,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 5 — FOUR MORE STRUCTURAL TRADE-OFFS (mechanism flow chains). */
+  /* Card 5 – FOUR MORE STRUCTURAL TRADE-OFFS (mechanism flow chains). */
   macroTradeoffChains: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">
       <style>
@@ -15597,7 +15597,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 6 — THE CONSTRAINT WEB (numbered nodes + hoverable tension lines). */
+  /* Card 6 – THE CONSTRAINT WEB (numbered nodes + hoverable tension lines). */
   macroConstraintWeb: `
     <div class="cweb" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;">
       <style>
@@ -15635,17 +15635,17 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     Macro Conflicts & Trade-offs (Theme 2 · 2.6.4) — APPLIED topic.
+     Macro Conflicts & Trade-offs (Theme 2 · 2.6.4) – APPLIED topic.
      Six heroes built tightly to the ChatGPT design mockups:
-     C1 conflictLensMap  — 5-tile radial map
+     C1 conflictLensMap  – 5-tile radial map
      C2 (uses diagnoseRows engine block w/ reveal)
      C3 stagflation5Step + stagflationTimeline + responses
-     C4 inflationSurge2021  — twin shock/response panels with charts
+     C4 inflationSurge2021  – twin shock/response panels with charts
      C5 (uses pair block w/ rows + example)
      C6 (uses causes + causes3 + conclusion)
      ============================================================ */
 
-  /* C1 — THE CONFLICT LENS.
+  /* C1 – THE CONFLICT LENS.
      Five trade-off tiles arranged around a central "WHEN OBJECTIVES
      COLLIDE" lozenge with thin dashed arrows pointing inward. Each
      tile carries the trade-off number, name, and historical UK case
@@ -15727,7 +15727,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C3 · 1970S STAGFLATION — five-step mechanism flow.
+  /* C3 · 1970S STAGFLATION – five-step mechanism flow.
      Five vertical tinted tiles, each with a top numbered badge, a
      circular tone-coloured icon, a bold title, and a short
      descriptive line. Arrows between steps. */
@@ -15782,7 +15782,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C3 · Timeline — three dated case markers with a dashed connecting axis. */
+  /* C3 · Timeline – three dated case markers with a dashed connecting axis. */
   stagflationTimeline: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;">
       <style>
@@ -15835,7 +15835,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C4 · 2021–23 INFLATION SURGE — twin shock/response panels with
+  /* C4 · 2021–23 INFLATION SURGE – twin shock/response panels with
      embedded charts. LEFT (blue) = supply+demand drivers + UK CPI
      line chart peaking at 11.1% Oct 2022; RIGHT (amber) = Bank Rate
      step chart 0.1%→5.25% + three bullet outcomes. */
@@ -15977,28 +15977,28 @@ window.ECONOS_ICONS = {
   /* C3 (Conflicts) · Interactive Phillips curve, 3 views.
      Modern interactiveDiagram-compatible: each layer starts with
      display:none, the engine toggles to display:block per view.
-     V1 — Original 1958 SRPC + equilibrium A
-     V2 — Friedman/Phelps: LRPC + SRPC₂ + A→B→C path
-     V3 — 1970s stagflation: SRPC₃ shifted up, point S high U AND high π */
+     V1 – Original 1958 SRPC + equilibrium A
+     V2 – Friedman/Phelps: LRPC + SRPC₂ + A→B→C path
+     V3 – 1970s stagflation: SRPC₃ shifted up, point S high U AND high π */
   stagflationPhillipsInteractive: window.ECONOS_PPF.render(window.ECONOS_STAGFLATION_PHILLIPS_SPEC),
 
   inflation2022AdAs: window.ECONOS_PPF.render(window.ECONOS_INFLATION_2022_AD_AS_SPEC),
 
   /* C4 (Conflicts) · Interactive AD/AS for the 2021–23 surge.
-     V1 — Pre-shock (2020–21) baseline E0
-     V2 — Both shocks (2021–22): AD shifts right, SRAS shifts left → E1
-     V3 — BoE response (2022–23): AD shifts left → E2 */
+     V1 – Pre-shock (2020–21) baseline E0
+     V2 – Both shocks (2021–22): AD shifts right, SRAS shifts left → E1
+     V3 – BoE response (2022–23): AD shifts left → E2 */
 
   /* ============================================================
-     BALANCE OF PAYMENTS — Theme 2.1.4
+     BALANCE OF PAYMENTS – Theme 2.1.4
      Six bespoke heroes, one per Learn-It card. Each is built to
-     match the ChatGPT mockup's distinctive centrepiece — three-
+     match the ChatGPT mockup's distinctive centrepiece – three-
      accounts → balance node (C1), visual equation (C2), hub-and-
      spoke drivers (C3), matching-identity pillars (C4), gauge
      dashboard (C5), and numbered process flow (C6).
      ============================================================ */
 
-  /* C1 · BoP THE BIG PICTURE — three account columns converging on
+  /* C1 · BoP THE BIG PICTURE – three account columns converging on
      a central "Overall balance = 0" node, with a subtitle reminder
      "Current account deficit → financial account surplus". Each
      column shows its sub-component tiles. Tone-coded per account. */
@@ -16044,7 +16044,7 @@ window.ECONOS_ICONS = {
           </div>
           <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#7C3AED;"></span>Capital transfers</div>
           <div class="bop-3a-tile"><span class="bop-3a-bullet" style="background:#7C3AED;"></span>Non-financial assets (patents, land)</div>
-          <div class="bop-3a-note">Usually small — under 1% of GDP</div>
+          <div class="bop-3a-note">Usually small – under 1% of GDP</div>
         </div>
         <div class="bop-3a-col" style="border-color:#BFDBFE;background:#EFF6FF;">
           <div class="bop-3a-head" style="border-color:#BFDBFE;">
@@ -16069,7 +16069,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C2 · INSIDE THE CURRENT ACCOUNT — visual equation:
+  /* C2 · INSIDE THE CURRENT ACCOUNT – visual equation:
      [Current account balance pill] = [Goods] + [Services] + [Primary income] + [Secondary income]
      Each component is a tall card with a large icon at top, tone-coded.
      Below the equation: a UK pattern visualisation (Goods + Services → Final balance lozenge). */
@@ -16119,7 +16119,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C2 · UK PATTERN — Goods card and Services card on either side,
+  /* C2 · UK PATTERN – Goods card and Services card on either side,
      with curved arrows converging on a "Final current account balance"
      lozenge below. Plus a calm "Primary income and transfers can push
      either way" caveat. HTML+SVG hybrid: cards are HTML (wrap & stack
@@ -16152,7 +16152,7 @@ window.ECONOS_ICONS = {
           <div class="bop-uk-icon" style="border-color:#FDA4AF;">🚢</div>
           <div>
             <div class="bop-uk-card-title" style="color:#BE123C;">Goods</div>
-            <div class="bop-uk-card-body" style="color:#9F1239;">UK goods deficit <strong>~£206bn (2024)</strong> — imports often exceed exports.</div>
+            <div class="bop-uk-card-body" style="color:#9F1239;">UK goods deficit <strong>~£206bn (2024)</strong> – imports often exceed exports.</div>
           </div>
         </div>
         <div class="bop-uk-card" style="border-color:#86EFAC;background:#F0FDF4;">
@@ -16178,7 +16178,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C3 · DRIVERS OF THE CURRENT ACCOUNT — hub-and-spoke layout with
+  /* C3 · DRIVERS OF THE CURRENT ACCOUNT – hub-and-spoke layout with
      a central "Current account balance" balance icon and six driver
      cards (3 left, 3 right) connected by curved arrows pointing
      inward. Each driver card has its own icon and short caption.
@@ -16294,7 +16294,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C4 · MATCHING IDENTITY — two tall pillar columns side by side.
+  /* C4 · MATCHING IDENTITY – two tall pillar columns side by side.
      LEFT (red): "Current account deficit" with 4 component rows.
      RIGHT (blue): "Financial account surplus" with 4 financing rows.
      CENTRE: arrow "Must be financed by →" between them. */
@@ -16344,16 +16344,16 @@ window.ECONOS_ICONS = {
             <span class="bop-mi-head-icon" style="background:#2563EB;">⬆️</span>
             <span class="bop-mi-head-title" style="color:#1E3A8A;">Financial account surplus</span>
           </div>
-          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏭</span><span class="bop-mi-row-text"><strong>FDI</strong> — foreign firms build or buy assets</span></div>
-          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">📊</span><span class="bop-mi-row-text"><strong>Portfolio flows</strong> — bonds and shares</span></div>
-          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏦</span><span class="bop-mi-row-text"><strong>Loans / other</strong> — borrowing from abroad</span></div>
-          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🛡️</span><span class="bop-mi-row-text"><strong>Reserve changes</strong> — official reserve use</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏭</span><span class="bop-mi-row-text"><strong>FDI</strong> – foreign firms build or buy assets</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">📊</span><span class="bop-mi-row-text"><strong>Portfolio flows</strong> – bonds and shares</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🏦</span><span class="bop-mi-row-text"><strong>Loans / other</strong> – borrowing from abroad</span></div>
+          <div class="bop-mi-row" style="border-color:#BFDBFE;"><span class="bop-mi-row-icon">🛡️</span><span class="bop-mi-row-text"><strong>Reserve changes</strong> – official reserve use</span></div>
         </div>
       </div>
     </div>
   `,
 
-  /* C4 · GOOD SIGN VS WARNING SIGN — two cards, each with a 3- or
+  /* C4 · GOOD SIGN VS WARNING SIGN – two cards, each with a 3- or
      4-step mini-flow chain illustrating the path from inflow to
      outcome. Green = healthy investment-led finance; red = fragile
      short-term, vulnerability-led finance. */
@@ -16406,7 +16406,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C5 · SUSTAINABILITY DASHBOARD — four semicircle dials in a row,
+  /* C5 · SUSTAINABILITY DASHBOARD – four semicircle dials in a row,
      each a separate sustainability dimension. Beneath: a "More
      sustainable ←→ Less sustainable" axis. Uses the dial engine
      directly to guarantee geometric correctness. */
@@ -16424,25 +16424,25 @@ window.ECONOS_ICONS = {
       <div class="bop-dash">
         <div class="bop-dash-card">
           <span class="bop-dash-num" style="background:#16A34A;">1</span>
-          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:1.6, min:0, max:8, target:[0,3], tone:'green', ariaLabel:'Size — 1.6% of GDP, sustainable band 0–3%' })}
+          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:1.6, min:0, max:8, target:[0,3], tone:'green', ariaLabel:'Size – 1.6% of GDP, sustainable band 0–3%' })}
           <div class="bop-dash-title" style="color:#065F46;">Size</div>
           <div class="bop-dash-sub">How big is the deficit<br>relative to GDP?</div>
         </div>
         <div class="bop-dash-card">
           <span class="bop-dash-num" style="background:#7C3AED;">2</span>
-          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:6, min:0, max:10, tone:'purple', ariaLabel:'Persistence — has it lasted for years?' })}
+          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:6, min:0, max:10, tone:'purple', ariaLabel:'Persistence – has it lasted for years?' })}
           <div class="bop-dash-title" style="color:#5B21B6;">Persistence</div>
           <div class="bop-dash-sub">Has it lasted<br>for years?</div>
         </div>
         <div class="bop-dash-card">
           <span class="bop-dash-num" style="background:#2563EB;">3</span>
-          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:5.5, min:0, max:10, tone:'blue', ariaLabel:'Competitiveness — does it reflect weak exports and high unit costs?' })}
+          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:5.5, min:0, max:10, tone:'blue', ariaLabel:'Competitiveness – does it reflect weak exports and high unit costs?' })}
           <div class="bop-dash-title" style="color:#1E3A8A;">Competitiveness</div>
           <div class="bop-dash-sub">Does it reflect weak exports<br>and high unit costs?</div>
         </div>
         <div class="bop-dash-card">
           <span class="bop-dash-num" style="background:#0D9488;">4</span>
-          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:3, min:0, max:10, tone:'teal', ariaLabel:'Financing quality — funded by FDI or fragile borrowing?' })}
+          ${window.ECONOS_DIALS.render({ type:'gauge', size:130, value:3, min:0, max:10, tone:'teal', ariaLabel:'Financing quality – funded by FDI or fragile borrowing?' })}
           <div class="bop-dash-title" style="color:#115E59;">Financing quality</div>
           <div class="bop-dash-sub">Is it funded by FDI<br>or fragile borrowing?</div>
         </div>
@@ -16455,7 +16455,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C5 · POSSIBLE CONSEQUENCES — main 3-step horizontal flow with
+  /* C5 · POSSIBLE CONSEQUENCES – main 3-step horizontal flow with
      two branched side-tiles below the second step. Mirrors the
      "Exchange rate pressure → Imported inflation → Tighter policy"
      trunk with branches into "Higher foreign liabilities" and
@@ -16512,7 +16512,7 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* C6 · HOW TO WRITE IT — 4-step process flow (Identify → Explain →
+  /* C6 · HOW TO WRITE IT – 4-step process flow (Identify → Explain →
      Link → Judge). Each step is a tall card with a big numbered
      circle badge in tone, a bold verb, and a short prompt. Arrows
      between steps. Tone progression: green → blue → purple → orange. */

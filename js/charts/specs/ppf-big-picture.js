@@ -1,14 +1,14 @@
 /* ============================================================
-   PPF — "the big picture" (1.1.4 card 1).
+   PPF – "the big picture" (1.1.4 card 1).
    Redesigned (v0.41.12) to tell a DIFFERENT story than card 2.
-   Card 1 defines what a PPF IS — the boundary of feasible
+   Card 1 defines what a PPF IS – the boundary of feasible
    production. Card 2 classifies points by region.
 
    This chart shades the entire region UNDER the curve as
    "feasible" (everything achievable with current resources)
    and the region ABOVE as "infeasible". A single point sits ON
    the curve to anchor the idea of "maximum achievable mix".
-   No A/B/C classification here — that's card 2's job.
+   No A/B/C classification here – that's card 2's job.
 
    Mockup axis convention: Capital goods ↑, Consumer goods →.
    ============================================================ */
@@ -39,7 +39,7 @@
       y: { label: 'Capital goods' }
     },
     polygons: [
-      // Shaded feasible region — everything the economy CAN produce.
+      // Shaded feasible region – everything the economy CAN produce.
       // Light blue tint so the curve still reads on top.
       { points: FEASIBLE, tone: 'blue', opacity: 0.10 }
     ],
@@ -48,13 +48,13 @@
         label: 'PPF', labelDx: -10, labelDy: -10, anchor: 'end' }
     ],
     points: [
-      // A single anchor point on the frontier — drives home that "the
+      // A single anchor point on the frontier – drives home that "the
       // PPF is the maximum achievable mix". No A/B/C classification
       // (card 2's job).
       { x: 0.46, on: 'ppf1', tone: 'blue', label: 'On the frontier', anchor: 'start', labelDx: 12, labelDy: -6 }
     ],
     texts: [
-      // Two region labels — single line each so they don't clash with
+      // Two region labels – single line each so they don't clash with
       // each other or with the point label. "Feasible" sits deep inside
       // the shaded region; "Beyond resources" floats in the un-shaded
       // upper-right where it can't be confused with the curve label.

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Chain station)
+   ECONOS – Link It engine (Chain station)
    Tap-to-place causal chain builder. No drag dependency.
    ============================================================ */
 
@@ -107,7 +107,7 @@
     function renderChain(C) {
       var slots = [];
 
-      /* Slot 1 — anchor (locked, always shown) */
+      /* Slot 1 – anchor (locked, always shown) */
       slots.push(
         '<div class="chain-slot chain-slot--anchor">'
         + '<div class="chain-slot__num">1</div>'

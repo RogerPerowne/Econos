@@ -44,15 +44,15 @@ window.ECONOS_TOPIC = {
       notePosition: 'top',
       note: 'Every government judges economic success against <strong>all four indicators simultaneously</strong>. The difficulty is that they can pull in opposite directions: policies that boost growth can stoke inflation; cutting unemployment can widen the current-account deficit; squeezing inflation can slow growth and raise joblessness. Understanding these tensions is what separates descriptive answers from analytical ones.',
 
-      causesLabel: 'THE FOUR INDICATORS — TARGET, MEASURE, CURRENT UK',
+      causesLabel: 'THE FOUR INDICATORS – TARGET, MEASURE, CURRENT UK',
       causesEmoji: '📊',
       causesStyle: 'tinted-flat',
       causesCols: 2,
       causes: [
         { tone: 'green', icon: '📈', head: 'Real GDP growth',
-          body: '<strong>Target:</strong> ~2% per year (UK long-run trend).<br><strong>Measure:</strong> Real GDP year-on-year, ONS quarterly release.<br><strong>Current:</strong> ~1.4% — below trend.' },
+          body: '<strong>Target:</strong> ~2% per year (UK long-run trend).<br><strong>Measure:</strong> Real GDP year-on-year, ONS quarterly release.<br><strong>Current:</strong> ~1.4% – below trend.' },
         { tone: 'rose',  icon: '📉', head: 'Inflation (CPI)',
-          body: '<strong>Target:</strong> 2% CPI ±1pp (BoE remit).<br><strong>Measure:</strong> CPI year-on-year, ONS monthly.<br><strong>Current:</strong> ~2.8% — sticky services component.' },
+          body: '<strong>Target:</strong> 2% CPI ±1pp (BoE remit).<br><strong>Measure:</strong> CPI year-on-year, ONS monthly.<br><strong>Current:</strong> ~2.8% – sticky services component.' },
         { tone: 'amber', icon: '👥', head: 'Unemployment',
           body: '<strong>Target:</strong> at or below the NAIRU (~4–5%).<br><strong>Measure:</strong> ILO rate, 3-month average, ONS.<br><strong>Current:</strong> ~4.3%.' },
         { tone: 'blue',  icon: '🌍', head: 'Current account / BoP',
@@ -283,7 +283,7 @@ window.ECONOS_TOPIC = {
           body: '<svg viewBox="0 0 200 110" style="width:100%;height:auto;max-height:160px;display:block;" xmlns="http://www.w3.org/2000/svg"><path d="M 30 95 A 70 70 0 0 1 170 95" fill="none" stroke="#DBEAFE" stroke-width="16"/><path d="M 30 95 A 70 70 0 0 1 100 25" fill="none" stroke="#2563EB" stroke-width="16"/><line x1="100" y1="95" x2="58" y2="53" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="95" r="6" fill="#0B1426"/></svg><div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:6px;"><strong style="color:#1D4ED8;">Actual output &lt; Potential output</strong><br><br><strong>Consequences:</strong><br>• Unemployment<br>• Disinflation or deflation pressure<br>• Spare capacity exists</div>'
         }
       ],
-      // Two stacked interactive diagrams with Classical/Keynesian toggles —
+      // Two stacked interactive diagrams with Classical/Keynesian toggles –
       // map the PPF view onto the AD/AS framework. Short-run output gaps
       // close via AD shifts; long-run growth via LRAS shifts. Both schools
       // appear via the toggle: Classical sees demand stimulus as inflation
@@ -293,7 +293,7 @@ window.ECONOS_TOPIC = {
       interactiveDiagram: [
         {
           svgKey: 'adShiftClassicalKeynesian',
-          label: 'SHORT RUN — AD CLOSES A RECESSIONARY GAP',
+          label: 'SHORT RUN – AD CLOSES A RECESSIONARY GAP',
           emoji: '📊',
           layers: ['idl-1', 'idl-2'],
           inverseLayers: ['idl-old-solid'],
@@ -301,19 +301,19 @@ window.ECONOS_TOPIC = {
           perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
             { label: 'Recessionary gap', show: [],
-              classical: { tone: 'purple', head: 'At potential at E₁.', body: ['AD₁ meets LRAS at Yf — Classical sees no gap in the long run.'] },
-              keynesian: { tone: 'amber', head: 'Below potential at E₁.', body: ['AD₁ meets reverse-L AS on the rising range; actual output Y₁ sits below Yf — the recessionary gap.'] } },
+              classical: { tone: 'purple', head: 'At potential at E₁.', body: ['AD₁ meets LRAS at Yf – Classical sees no gap in the long run.'] },
+              keynesian: { tone: 'amber', head: 'Below potential at E₁.', body: ['AD₁ meets reverse-L AS on the rising range; actual output Y₁ sits below Yf – the recessionary gap.'] } },
             { label: 'AD stimulus', show: ['idl-1'],
               classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['Fiscal or monetary stimulus tries to lift demand.'] },
               keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['Fiscal or monetary stimulus tries to lift demand.'] } },
             { label: 'New equilibrium', show: ['idl-1', 'idl-2'],
-              classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf — demand stimulus is purely inflationary.'], analysis: 'Classical reading: there is no gap to close in the long run. Demand stimulus just inflates the price level.' },
-              keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['The recessionary gap closes; Y rises toward Yf with some inflation.'], analysis: 'Keynesian reading: demand stimulus genuinely closes the gap — this is the textbook case for active demand management when actual output is below potential.' } }
+              classical: { tone: 'purple', head: 'ONLY prices rise.', body: ['Output stays at Yf – demand stimulus is purely inflationary.'], analysis: 'Classical reading: there is no gap to close in the long run. Demand stimulus just inflates the price level.' },
+              keynesian: { tone: 'green', head: 'Output AND prices rise.', body: ['The recessionary gap closes; Y rises toward Yf with some inflation.'], analysis: 'Keynesian reading: demand stimulus genuinely closes the gap – this is the textbook case for active demand management when actual output is below potential.' } }
           ]
         },
         {
           svgKey: 'lrasShiftRightClassicalKeynesian',
-          label: 'LONG RUN — LRAS RAISES POTENTIAL ITSELF',
+          label: 'LONG RUN – LRAS RAISES POTENTIAL ITSELF',
           emoji: '🚀',
           layers: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
           inverseLayers: ['c-lras1-solid', 'k-as1-solid'],
@@ -324,11 +324,11 @@ window.ECONOS_TOPIC = {
               classical: { tone: 'purple', head: 'At potential at E₁.', body: ['AD meets LRAS₁ at Yf₁.'] },
               keynesian: { tone: 'amber', head: 'Below potential at E₁.', body: ['AD meets reverse-L AS₁ on the rising range; Y₁ &lt; Yf₁.'] } },
             { label: 'Capacity rises', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'k-as1-dash', 'k-as2', 'k-lr-arrow'],
-              classical: { tone: 'green', head: 'LRAS₁ → LRAS₂.', body: ['Productivity, capital, labour, technology — capacity expands.'] },
+              classical: { tone: 'green', head: 'LRAS₁ → LRAS₂.', body: ['Productivity, capital, labour, technology – capacity expands.'] },
               keynesian: { tone: 'green', head: 'Capacity wall slides right.', body: ['AS₁ → AS₂ is a parallel rightward shift; floor unchanged.'] } },
             { label: 'New equilibrium', show: ['c-lras1-dash', 'c-lras2', 'c-lr-arrow', 'c-e2', 'k-as1-dash', 'k-as2', 'k-lr-arrow', 'k-e2', 'k-yf2', 'k-gap'],
-              classical: { tone: 'purple', head: 'Output up, prices down.', body: ['Y rises to Yf₂, P falls — sustainable non-inflationary growth.'], analysis: 'Classical reading: this is the prize. Real capacity raises long-run output AND lowers prices; the corner demand-side levers can\'t reach.' },
-              keynesian: { tone: 'rose', head: 'Potential up, output LAGS.', body: ['Actual Y₂ rises but sits BELOW the new potential Yf₂ — fresh output gap.'], analysis: 'Keynesian reading: supply-side reform raises the ceiling, but without demand catching up the new capacity goes partly unused.' } }
+              classical: { tone: 'purple', head: 'Output up, prices down.', body: ['Y rises to Yf₂, P falls – sustainable non-inflationary growth.'], analysis: 'Classical reading: this is the prize. Real capacity raises long-run output AND lowers prices; the corner demand-side levers can\'t reach.' },
+              keynesian: { tone: 'rose', head: 'Potential up, output LAGS.', body: ['Actual Y₂ rises but sits BELOW the new potential Yf₂ – fresh output gap.'], analysis: 'Keynesian reading: supply-side reform raises the ceiling, but without demand catching up the new capacity goes partly unused.' } }
           ]
         }
       ],
@@ -359,16 +359,16 @@ window.ECONOS_TOPIC = {
       pairEmoji: '\u{1F503}',
       left: {
         tone: 'blue', icon: '\u{1F4C8}', iconStyle: 'circle',
-        label: 'Short-run growth — AD shifts right',
+        label: 'Short-run growth – AD shifts right',
         text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">Spending rises, output rises along the existing SRAS. Fast, but bounded by capacity.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Cuts to interest rates or taxes</li><li>Higher government spending</li><li>Consumer confidence boom</li><li>Export-led demand surge</li></ul><div style="margin-top:8px;font-size:12px;color:#475569;"><strong>Risk:</strong> near capacity, more leaks into inflation than output.</div>'
       },
       right: {
         tone: 'green', icon: '\u{1F680}', iconStyle: 'circle',
-        label: 'Long-run growth — LRAS shifts right',
-        text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">Productive capacity rises, the trend itself moves. Slower, but sustainable.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Higher labour productivity</li><li>Capital deepening (infrastructure, machinery)</li><li>Education and skills</li><li>Innovation, R&amp;D, technology</li></ul><div style="margin-top:8px;font-size:12px;color:#475569;"><strong>Reward:</strong> higher output, lower inflation — the supply-side ideal.</div>'
+        label: 'Long-run growth – LRAS shifts right',
+        text: '<p style="margin:0 0 8px;font-size:13.5px;color:#0B1426;line-height:1.6;">Productive capacity rises, the trend itself moves. Slower, but sustainable.</p><ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#475569;line-height:1.7;"><li>Higher labour productivity</li><li>Capital deepening (infrastructure, machinery)</li><li>Education and skills</li><li>Innovation, R&amp;D, technology</li></ul><div style="margin-top:8px;font-size:12px;color:#475569;"><strong>Reward:</strong> higher output, lower inflation – the supply-side ideal.</div>'
       },
 
-      causesLabel: 'DEMAND-SIDE DRIVERS — short-run growth (AD shifters)',
+      causesLabel: 'DEMAND-SIDE DRIVERS – short-run growth (AD shifters)',
       causesEmoji: '\u{1F4B0}',
       causesStyle: 'tinted-flat',
       causesCols: 2,
@@ -379,14 +379,14 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',   icon: '\u{1F4B7}', head: 'Looser monetary policy', body: 'Lower rates / QE; cheaper credit lifts C and I, weaker pound lifts (X − M).' }
       ],
 
-      causes2Label: 'SUPPLY-SIDE DRIVERS — long-run growth (LRAS shifters)',
+      causes2Label: 'SUPPLY-SIDE DRIVERS – long-run growth (LRAS shifters)',
       causes2Emoji: '\u{1F680}',
       causes2Style: 'tinted-flat',
       causes2Cols: 2,
       causes2: [
         { tone: 'green',  icon: '\u{1F465}', head: 'Labour quantity & quality', body: 'Working-age population, participation, migration, skills, education.' },
         { tone: 'green',  icon: '\u{1F3ED}', head: 'Capital stock',              body: 'Infrastructure, machinery, digital capital. Capital per worker rises = capital deepening.' },
-        { tone: 'green',  icon: '\u{1F4A1}', head: 'Technology & innovation',    body: 'R&amp;D, tech diffusion, productivity per worker. The UK\'s biggest growth lever — and biggest current puzzle.' },
+        { tone: 'green',  icon: '\u{1F4A1}', head: 'Technology & innovation',    body: 'R&amp;D, tech diffusion, productivity per worker. The UK\'s biggest growth lever – and biggest current puzzle.' },
         { tone: 'green',  icon: '\u{2696}\u{FE0F}', head: 'Institutional quality', body: 'Rule of law, property rights, competition, openness to trade. Often the hidden multiplier behind the others.' }
       ],
 

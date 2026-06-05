@@ -1,10 +1,10 @@
 /* ============================================================
-   Subsidy Diagram Interactive — engine spec for
+   Subsidy Diagram Interactive – engine spec for
    subsidyDiagramInteractive. CPS topic card 4.
 
    4 progressive-reveal views via the legacy interactiveDiagram
    layer system (idl-1 / idl-2 / idl-3 stack cumulatively):
-     V0 Free market         — base D + S + E only
+     V0 Free market         – base D + S + E only
      V1 Subsidy shifts S    → idl-1 (S–subsidy + Pb, Ps, Qs gridlines)
      V2 Surplus & gov cost  → idl-1 + idl-2 (CS / PS / Govt rect)
      V3 Deadweight loss     → idl-1 + idl-2 + idl-3 (DWL triangle)

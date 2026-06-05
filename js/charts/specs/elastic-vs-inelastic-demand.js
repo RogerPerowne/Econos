@@ -1,12 +1,12 @@
 /* ============================================================
-   Elastic vs Inelastic Demand — engine spec for elasticVsInelasticDiagram.
+   Elastic vs Inelastic Demand – engine spec for elasticVsInelasticDiagram.
    Side-by-side comparison used by the Price Elasticity of Demand topic.
    First migration to use the engine's new `panels: [...]` multi-chart
-   support (PR adds this engine field — one SVG, two independent
+   support (PR adds this engine field – one SVG, two independent
    coordinate systems).
 
-   Left panel  shallow D curve → "elastic" — same ΔP gives a LARGE ΔQ
-   Right panel steep   D curve → "inelastic" — same ΔP gives a SMALL ΔQ
+   Left panel  shallow D curve → "elastic" – same ΔP gives a LARGE ΔQ
+   Right panel steep   D curve → "inelastic" – same ΔP gives a SMALL ΔQ
 
    Both panels share matching ΔP arrow size so the eye can compare the
    resulting ΔQ arrows directly. The bottom caption nails the message:
@@ -19,10 +19,10 @@
   var P1_y = 0.406;   // lower price line
   var P2_y = 0.682;   // upper price line
 
-  // Elastic panel — Q values (chart-space within left panel)
+  // Elastic panel – Q values (chart-space within left panel)
   var Q2_el = 0.200, Q1_el = 0.706;
 
-  // Inelastic panel — Q values
+  // Inelastic panel – Q values
   var Q2_in = 0.272, Q1_in = 0.498;
 
   window.ECONOS_PED_ELASTIC_VS_INELASTIC_SPEC = {
@@ -35,7 +35,7 @@
       // marker to the line's tangent direction, so this works on the
       // vertical ΔP arrows too. The previous design pointed UP in local
       // coords and rendered HORIZONTAL after auto-rotation on a
-      // vertical line — same family of bug as dq-up/dq-down.
+      // vertical line – same family of bug as dq-up/dq-down.
       '<marker id="ped-red-end-up" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#DC2626"/></marker>' +
       '<marker id="ped-blue-start" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#2563EB"/></marker>' +
       '<marker id="ped-blue-end" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#2563EB"/></marker>' +

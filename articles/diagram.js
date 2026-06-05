@@ -1,5 +1,5 @@
 /* ============================================================
-   articles/diagram.js — drives the interactive diagrams embedded
+   articles/diagram.js – drives the interactive diagrams embedded
    in static article pages (emitted by the :::econos-diagram
    directive with `interactive`).
 
@@ -13,7 +13,7 @@
    `show-*` class and `.is-active` into the markup, so with JS off
    the diagram still renders one clean state (never the overlap).
 
-   Classic IIFE, no dependencies — matches the rest of the codebase.
+   Classic IIFE, no dependencies – matches the rest of the codebase.
    ============================================================ */
 (function () {
   'use strict';

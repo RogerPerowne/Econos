@@ -69,11 +69,11 @@ window.ECONOS_TOPIC = {
           body: 'Setting an optimal Pigouvian tax requires knowing the exact MEC – which is inherently uncertain. Overestimate the externality and the tax overshoots, creating a fresh deadweight loss; underestimate it and the failure persists. Governments cannot know the optimum any more precisely than the data allows.'
         }
       ],
-      causes2Label: 'The four spec causes — and one strategic pattern to watch',
+      causes2Label: 'The four spec causes – and one strategic pattern to watch',
       causes2Emoji: '🧭',
       causes2Style: 'tinted-flat',
       causes2: [
-        { icon: '🗓️', tone: 'amber', head: 'Political short-termism (evaluation add-on)', body: '<strong>Not one of Edexcel\'s four named causes — but the most reliable evaluation move.</strong> Elected governments face 4–5 year cycles, so policies with costs now and benefits later (infrastructure, climate, pension reform) are systematically under-prioritised, while benefits-now-costs-later policies are over-used. <strong>UK examples:</strong> pension reform repeatedly deferred; net-zero commitments softened ahead of elections; HS2 scope cut after sunk costs were spent; chronic infrastructure under-investment relative to peer economies. Cite this whenever the question is about <em>why</em> the government chose a sub-optimal policy.' }
+        { icon: '🗓️', tone: 'amber', head: 'Political short-termism (evaluation add-on)', body: '<strong>Not one of Edexcel\'s four named causes – but the most reliable evaluation move.</strong> Elected governments face 4–5 year cycles, so policies with costs now and benefits later (infrastructure, climate, pension reform) are systematically under-prioritised, while benefits-now-costs-later policies are over-used. <strong>UK examples:</strong> pension reform repeatedly deferred; net-zero commitments softened ahead of elections; HS2 scope cut after sunk costs were spent; chronic infrastructure under-investment relative to peer economies. Cite this whenever the question is about <em>why</em> the government chose a sub-optimal policy.' }
       ],
       causes3Label: 'Why this matters for evaluation',
       causes3Emoji: '📝',
@@ -167,8 +167,8 @@ window.ECONOS_TOPIC = {
       id: 'govt_failure_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Government failure in practice',
-      tip: { icon: '📌', tone: 'amber', text: 'Abstract causes become clearer through real cases. Four show how information problems, political incentives, and poor contract design produce documented welfare losses — and one (Bank of England independence) shows how institutional design can <em>reduce</em> government failure. Top answers cite both sides.' },
-      causesLabel: 'Five case studies — four failures and one institutional success',
+      tip: { icon: '📌', tone: 'amber', text: 'Abstract causes become clearer through real cases. Four show how information problems, political incentives, and poor contract design produce documented welfare losses – and one (Bank of England independence) shows how institutional design can <em>reduce</em> government failure. Top answers cite both sides.' },
+      causesLabel: 'Five case studies – four failures and one institutional success',
       causesEmoji: '🏗️',
       causesStyle: 'numbered-rows',
       causesCols: 1,
@@ -190,8 +190,8 @@ window.ECONOS_TOPIC = {
           body: '<strong>Failure type:</strong> information failure + poor contract design.<br>Private Finance Initiative: government contracted private firms to build and operate public infrastructure, paying annual charges for 25–30 years. By 2018, PFI obligations totalled £200bn on assets worth £57bn. Firms had better information about long-run costs; government negotiators lacked the expertise to price contracts correctly. Many contracts had to be restructured or nationalised.'
         },
         {
-          icon: '🏦', tone: 'green', head: 'Bank of England independence (1997) — design that works',
-          body: '<strong>Counter-example: institutional design reducing government failure.</strong><br>Before 1997, the Chancellor set interest rates — and was widely accused of cutting rates before elections and raising them after, creating a political business cycle. The 1997 reform handed rate-setting to an independent Bank of England with a clear 2% CPI inflation target. <strong>Result:</strong> CPI averaged ~2.0% over 1997–2007 vs ~6.5% across 1987–96. The reform addressed three causes at once — political short-termism, regulatory capture, and information gaps (transparent MPC minutes). Cite it whenever the question is "can government failure be designed away?"'
+          icon: '🏦', tone: 'green', head: 'Bank of England independence (1997) – design that works',
+          body: '<strong>Counter-example: institutional design reducing government failure.</strong><br>Before 1997, the Chancellor set interest rates – and was widely accused of cutting rates before elections and raising them after, creating a political business cycle. The 1997 reform handed rate-setting to an independent Bank of England with a clear 2% CPI inflation target. <strong>Result:</strong> CPI averaged ~2.0% over 1997–2007 vs ~6.5% across 1987–96. The reform addressed three causes at once – political short-termism, regulatory capture, and information gaps (transparent MPC minutes). Cite it whenever the question is "can government failure be designed away?"'
         }
       ],
       causes2Label: 'Evaluation template',

@@ -1,13 +1,13 @@
 /* ============================================================
-   Tax Types Interactive — engine spec for taxTypesInteractive.
+   Tax Types Interactive – engine spec for taxTypesInteractive.
    Indirect-taxes-and-subsidies + government-intervention-in-markets.
 
    2-layer exclusive comparison of two tax mechanics:
      base    → free-market D, S, E₀ at (Q₀, P₀)
-     view 1  → SPECIFIC tax (e.g. fuel duty £T/litre) — supply
+     view 1  → SPECIFIC tax (e.g. fuel duty £T/litre) – supply
                 curve shifts PARALLEL up by constant £T at every
                 quantity. The wedge between S and S+T is constant.
-     view 2  → AD VALOREM tax (e.g. 20% VAT) — supply curve
+     view 2  → AD VALOREM tax (e.g. 20% VAT) – supply curve
                 PIVOTS up so the wedge widens as price rises.
 
    Mutually exclusive: each view shows ITS tax type only, not both
@@ -33,7 +33,7 @@
     },
 
     curves: [
-      /* Base: D and S — always visible */
+      /* Base: D and S – always visible */
       { d: 'M 0.069,0.903 L 0.972,0.093',
         tone: 'blue', label: 'D', strokeWidth: 2.5,
         labelDx: 6, labelDy: -4, anchor: 'start' },
@@ -41,11 +41,11 @@
         tone: 'green', label: 'S', strokeWidth: 2.5,
         labelDx: 6, labelDy: -4, anchor: 'start' },
 
-      /* View 1 — SPECIFIC tax: parallel shift up by 0.162.
+      /* View 1 – SPECIFIC tax: parallel shift up by 0.162.
        * Label shortened from "S + T (specific)" to "S + T" so it
        * sits inline at the curve end (long form put its CENTRE
        * ~70px from the line). Tone/dash + view title carry the
-       * "specific" disambiguator — the two tax views are layerMode:
+       * "specific" disambiguator – the two tax views are layerMode:
        * 'exclusive' so they never co-display. */
       { d: 'M 0.069,0.255 L 0.944,0.959',
         tone: 'blue', label: 'S + T', strokeWidth: 2.2,
@@ -53,9 +53,9 @@
         labelDx: -10, labelDy: -8, anchor: 'end',
         layer: 'idl-1' },
 
-      /* View 2 — AD VALOREM tax: pivot from origin so the gap
+      /* View 2 – AD VALOREM tax: pivot from origin so the gap
          widens at high prices */
-      /* "S + T% (ad valorem)" → "S + T%" — same shorten-for-inline
+      /* "S + T% (ad valorem)" → "S + T%" – same shorten-for-inline
        * treatment as the specific tax above. The "%" alone signals
        * ad valorem (proportional). */
       { d: 'M 0.069,0.117 L 0.944,1.077',
@@ -80,10 +80,10 @@
 
     boxedLabels: [
       { x: 0.230, y: 0.910, w: 0.460, h: 0.072,
-        tone: 'blue', lines: ['Parallel shift — constant gap'],
+        tone: 'blue', lines: ['Parallel shift – constant gap'],
         layer: 'idl-1' },
       { x: 0.230, y: 0.815, w: 0.460, h: 0.072,
-        tone: 'amber', lines: ['Pivot shift — widening gap'],
+        tone: 'amber', lines: ['Pivot shift – widening gap'],
         layer: 'idl-2' }
     ]
   };

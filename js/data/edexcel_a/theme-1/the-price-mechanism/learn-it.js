@@ -57,7 +57,7 @@ window.ECONOS_TOPIC = {
         { term: 'Dispersed knowledge', def: 'Hayek\'s concept: relevant economic knowledge is distributed across millions of individuals – no central authority can aggregate it as efficiently as prices do.' },
         { term: 'Efficient allocation', def: 'A pattern of resource use where goods flow to their most highly-valued uses and producers respond to genuine consumer demand.' }
       ],
-      examEdge: '<strong>Exam requirement:</strong> spec 1.2.7 mandates that you name and distinguish the three functions — <strong>signalling, incentive, rationing</strong> — separately when explaining how prices allocate resources. Examiners award marks for using the precise terminology; vague phrases like "prices change behaviour" leave marks on the table. Strong answers go further and link each function to the resulting efficient allocation.'
+      examEdge: '<strong>Exam requirement:</strong> spec 1.2.7 mandates that you name and distinguish the three functions – <strong>signalling, incentive, rationing</strong> – separately when explaining how prices allocate resources. Examiners award marks for using the precise terminology; vague phrases like "prices change behaviour" leave marks on the table. Strong answers go further and link each function to the resulting efficient allocation.'
     },
     {
       id: 'price_functions_2',
@@ -135,13 +135,13 @@ window.ECONOS_TOPIC = {
         views: [
           { label: 'Market in equilibrium', tone: 'green', show: ['layer-base'],
             head: 'Market in equilibrium',
-            body: 'At <strong>E</strong>, quantity demanded equals quantity supplied. The market clears at <strong>Pₑ</strong>, <strong>Qₑ</strong> — no shortage, so no rationing pressure.' },
+            body: 'At <strong>E</strong>, quantity demanded equals quantity supplied. The market clears at <strong>Pₑ</strong>, <strong>Qₑ</strong> – no shortage, so no rationing pressure.' },
           { label: 'Price too high → surplus', tone: 'amber', show: ['layer-surplus'],
             head: 'Price too high → surplus',
-            body: 'At <strong>P₁</strong> (above Pₑ), quantity supplied (Q₂) exceeds quantity demanded (Q₁) — the gap is the <strong>surplus</strong>. Unsold stock builds up, so sellers <strong>cut the price</strong> back towards E.' },
+            body: 'At <strong>P₁</strong> (above Pₑ), quantity supplied (Q₂) exceeds quantity demanded (Q₁) – the gap is the <strong>surplus</strong>. Unsold stock builds up, so sellers <strong>cut the price</strong> back towards E.' },
           { label: 'Price too low → shortage', tone: 'blue', show: ['layer-short'],
             head: 'Price too low → shortage rations the good',
-            body: 'At <strong>P₂</strong> (below Pₑ), quantity demanded (Q₁) exceeds quantity supplied (Q₂) — the gap is the <strong>shortage</strong>. Buyers compete for scarce stock and <strong>bid the price up</strong>; the rising price <strong>rations</strong> the good to those willing and able to pay, restoring E.' }
+            body: 'At <strong>P₂</strong> (below Pₑ), quantity demanded (Q₁) exceeds quantity supplied (Q₂) – the gap is the <strong>shortage</strong>. Buyers compete for scarce stock and <strong>bid the price up</strong>; the rising price <strong>rations</strong> the good to those willing and able to pay, restoring E.' }
         ]
       },
       flow: [
@@ -203,9 +203,9 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',  icon: '🕸️', head: 'To related markets', body: 'Price changes ripple to suppliers and complements (substitutes), affecting many linked markets.' }
       ],
       causes2Emoji: '⭐',
-      causes2Label: 'Why this matters — including a live UK cascade',
+      causes2Label: 'Why this matters – including a live UK cascade',
       causes2: [
-        { tone: 'rose',  icon: '⚡', head: 'UK energy crisis (2022–24)', body: 'Russian gas supply cuts pushed wholesale gas prices up ~5× in 12 months. Cascade: gas ↑ → electricity (gas is the marginal generator) ↑ → households cut usage and switched to heat pumps; firms switched away from gas heating; offshore-wind and solar investment accelerated. One price signal coordinated millions of unrelated decisions across linked markets — exactly Hayek\'s vision.' },
+        { tone: 'rose',  icon: '⚡', head: 'UK energy crisis (2022–24)', body: 'Russian gas supply cuts pushed wholesale gas prices up ~5× in 12 months. Cascade: gas ↑ → electricity (gas is the marginal generator) ↑ → households cut usage and switched to heat pumps; firms switched away from gas heating; offshore-wind and solar investment accelerated. One price signal coordinated millions of unrelated decisions across linked markets – exactly Hayek\'s vision.' },
         { tone: 'green', icon: '🚗', head: 'Electric vehicles and lithium', body: 'Higher lithium prices encourage new mining, battery innovation, and substitutes like LFP batteries.' },
         { tone: 'amber', icon: '☕', head: 'Coffee beans',                 body: 'Higher coffee prices lead cafés to adjust prices, consumers to switch brands, and farmers to plant more.' },
         { tone: 'blue',  icon: '✈️', head: 'Holiday destinations',         body: 'Higher prices for popular destinations shift demand to alternatives and change travel patterns.' }
@@ -295,7 +295,7 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '👑', head: 'Market power / monopoly', body: 'A firm can influence price above competitive levels; restriction of output.' },
         { tone: 'slate',  icon: '📍', head: 'Factor immobility',       body: 'Resources cannot move freely to where they are most productive.' },
         { tone: 'rose',   icon: '⚖️',  head: 'Merit and demerit goods', body: 'Markets underprovide merit goods and overprovide demerit goods.' },
-        { tone: 'blue',   icon: '⏳', head: 'Time lags &amp; sticky prices', body: 'Even when the signal is correct, supply may take years to respond (housing: 5–10 yr lag) and wages are <em>sticky downward</em> (workers resist cuts) — so unemployment can persist. A Level 3→4 evaluation point: not every market failure is about <em>what</em> the price says; some are about <em>how fast</em> the response arrives.' }
+        { tone: 'blue',   icon: '⏳', head: 'Time lags &amp; sticky prices', body: 'Even when the signal is correct, supply may take years to respond (housing: 5–10 yr lag) and wages are <em>sticky downward</em> (workers resist cuts) – so unemployment can persist. A Level 3→4 evaluation point: not every market failure is about <em>what</em> the price says; some are about <em>how fast</em> the response arrives.' }
       ],
       causes2Style: 'plain-white',
       causes2Emoji: '🔬',

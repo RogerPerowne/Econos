@@ -1,16 +1,16 @@
 /* ============================================================
-   Consumption Function — engine spec for consumptionFunction.
+   Consumption Function – engine spec for consumptionFunction.
    Consumption card 1 "C = a + bY".
 
    Classic Keynesian consumption function diagram:
      • upward-sloping linear line C = a + bY
-     • y-intercept dot at (0, a) — autonomous consumption
+     • y-intercept dot at (0, a) – autonomous consumption
      • slope triangle near the upper-right showing b = MPC
      • brace + label "a" on the y-axis below the intercept
 
    Not a perspective candidate: both schools agree on the basic
    shape (linear, positive intercept, slope < 1). The Keynesian
-   contribution is the IDEA of an autonomous baseline + MPC —
+   contribution is the IDEA of an autonomous baseline + MPC –
    the diagram is just that idea visualised.
    ============================================================ */
 (function () {
@@ -48,7 +48,7 @@
     ],
 
     // Slope triangle near upper-right showing the b = MPC slope.
-    // Horizontal segment (run) and vertical segment (rise) — engine
+    // Horizontal segment (run) and vertical segment (rise) – engine
     // arrow primitives, no markers because these are just gridlines.
     arrows: [
       { x1: 0.611, y1: 0.592, x2: 0.778, y2: 0.592,

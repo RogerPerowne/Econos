@@ -118,11 +118,11 @@ window.ECONOS_TOPIC = {
 
     {
       /* ================================================================
-         CARD 3 – WEAKNESS AT COMPUTATION — spec 1.2.10(a)
+         CARD 3 – WEAKNESS AT COMPUTATION – spec 1.2.10(a)
          Closes the named spec gap. Edexcel lists three reasons consumers
          act irrationally: influence of others (social norms, C2), habit
          (keyTerm C1 + commitment-device examples C4), and weakness at
-         computation — numeracy errors with money — which had no card.
+         computation – numeracy errors with money – which had no card.
          Predict-then-reveal (diagnose template); UK numeracy traps.
          ================================================================ */
       id: 'behavioural_econ_computation',
@@ -130,47 +130,47 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 3 of 6',
       title: 'Weakness at computation',
       scenariosCols: 2,
-      lede: 'Edexcel names three reasons consumers behave irrationally: <strong>influence of others</strong> (social norms), <strong>habit</strong>, and <strong>weakness at computation</strong> — we are systematically bad at the maths of money. For each case below, predict what most people get wrong, then <em>make your call</em>.',
+      lede: 'Edexcel names three reasons consumers behave irrationally: <strong>influence of others</strong> (social norms), <strong>habit</strong>, and <strong>weakness at computation</strong> – we are systematically bad at the maths of money. For each case below, predict what most people get wrong, then <em>make your call</em>.',
       table: {
         headers: ['Edexcel reason', 'What it means', 'Where it shows up'],
         rows: [
-          ['Influence of others', 'We copy what people around us do', 'Social norms — Card 2'],
-          ['Habit', 'We repeat past choices to avoid re-deciding', 'Defaults &amp; auto-renewal — Cards 4–6'],
+          ['Influence of others', 'We copy what people around us do', 'Social norms – Card 2'],
+          ['Habit', 'We repeat past choices to avoid re-deciding', 'Defaults &amp; auto-renewal – Cards 4–6'],
           ['Weakness at computation', 'We mis-judge the maths of money', 'This card ↓']
         ]
       },
       scenarios: {
-        title: 'Four money traps — predict the error',
+        title: 'Four money traps – predict the error',
         items: [
           {
             tone: 'rose',
             label: '1',
             text: '<strong>Compound interest.</strong> You save £1,000 in an account paying 5% a year and leave it untouched for 30 years. No more deposits. Most people, asked to guess from memory, say somewhere around £2,000–£2,500. What is it actually worth?',
-            answer: '<strong>≈ £4,322</strong> — exponential growth, not the ~£2,500 of "simple" interest most people picture.'
+            answer: '<strong>≈ £4,322</strong> – exponential growth, not the ~£2,500 of "simple" interest most people picture.'
           },
           {
             tone: 'amber',
             label: '2',
-            text: '<strong>"Only 25% a month".</strong> A short-term lender advertises a payday loan at "just 25% interest a month — no nasty surprises". It sounds close to a 25% annual rate. What is the true annual cost (APR)?',
-            answer: '<strong>≈ 1,355% APR</strong> — a monthly rate compounds (1.25¹² − 1). Wonga-era payday loans topped 1,500%.'
+            text: '<strong>"Only 25% a month".</strong> A short-term lender advertises a payday loan at "just 25% interest a month – no nasty surprises". It sounds close to a 25% annual rate. What is the true annual cost (APR)?',
+            answer: '<strong>≈ 1,355% APR</strong> – a monthly rate compounds (1.25¹² − 1). Wonga-era payday loans topped 1,500%.'
           },
           {
             tone: 'blue',
             label: '3',
-            text: '<strong>The £5 that moves you — sometimes.</strong> A shopper will happily drive across town to save £5 on a £15 phone case, but won\'t cross the road to save the same £5 on a £400 sofa. The £5 is identical. Why the inconsistency?',
-            answer: '<strong>The £5 is identical</strong> — but 33% off £15 feels huge and 1.25% off £400 feels trivial. We judge in %, not £.'
+            text: '<strong>The £5 that moves you – sometimes.</strong> A shopper will happily drive across town to save £5 on a £15 phone case, but won\'t cross the road to save the same £5 on a £400 sofa. The £5 is identical. Why the inconsistency?',
+            answer: '<strong>The £5 is identical</strong> – but 33% off £15 feels huge and 1.25% off £400 feels trivial. We judge in %, not £.'
           },
           {
             tone: 'purple',
             label: '4',
-            text: '<strong>The minimum-payment trap.</strong> A £2,000 credit-card balance sits at 20% APR. You pay only the 2% monthly minimum each month and add nothing new. Roughly how long to clear it — and how much interest?',
-            answer: '<strong>≈ 30 years, £4,500 interest</strong> — most of each minimum payment is just interest; people anchor on the small monthly figure.'
+            text: '<strong>The minimum-payment trap.</strong> A £2,000 credit-card balance sits at 20% APR. You pay only the 2% monthly minimum each month and add nothing new. Roughly how long to clear it – and how much interest?',
+            answer: '<strong>≈ 30 years, £4,500 interest</strong> – most of each minimum payment is just interest; people anchor on the small monthly figure.'
           }
         ]
       },
       keyTerms: [
-        { term: 'Weakness at computation', def: 'The tendency to make systematic errors when the maths of a decision is hard — especially compounding, percentages and long time horizons. One of the three Edexcel reasons for irrational behaviour.' },
-        { term: 'Money illusion', def: 'Judging sums in nominal/proportional terms rather than real absolute value — e.g. reacting to a 33% vs 1.25% discount, not the identical £5.' }
+        { term: 'Weakness at computation', def: 'The tendency to make systematic errors when the maths of a decision is hard – especially compounding, percentages and long time horizons. One of the three Edexcel reasons for irrational behaviour.' },
+        { term: 'Money illusion', def: 'Judging sums in nominal/proportional terms rather than real absolute value – e.g. reacting to a 33% vs 1.25% discount, not the identical £5.' }
       ],
       examEdge: 'This is the third of Edexcel\'s named reasons for irrational behaviour (with influence of others and habit). The exam reward is naming it precisely and pairing it with a policy response: APR caps, the credit-card minimum-payment warning, and "total cost of credit" disclosure are all government attempts to correct weakness at computation.'
     },
@@ -223,10 +223,10 @@ window.ECONOS_TOPIC = {
       causesStyle: 'numbered-rows',
       causesCols: 1,
       causes: [
-        { tone: 'amber',  icon: '⏱️', head: 'Present bias', body: 'Over-weighting immediate rewards relative to future ones — beyond any normal time preference.' },
-        { tone: 'blue',   icon: '📉', head: 'Hyperbolic discounting', body: 'The technical name for present bias — we discount the near future far more steeply than the far future.' },
-        { tone: 'green',  icon: '🔁', head: 'Habitual behaviour', body: 'Repeating past choices automatically to avoid the cost of re-deciding — why defaults are sticky. Edexcel\'s second named reason for irrational behaviour (after influence of others, before weakness at computation).' },
-        { tone: 'purple', icon: '🪞', head: 'Internality', body: 'A cost a person imposes on their future self through present-biased decisions — like an externality, but internal to the individual.' },
+        { tone: 'amber',  icon: '⏱️', head: 'Present bias', body: 'Over-weighting immediate rewards relative to future ones – beyond any normal time preference.' },
+        { tone: 'blue',   icon: '📉', head: 'Hyperbolic discounting', body: 'The technical name for present bias – we discount the near future far more steeply than the far future.' },
+        { tone: 'green',  icon: '🔁', head: 'Habitual behaviour', body: 'Repeating past choices automatically to avoid the cost of re-deciding – why defaults are sticky. Edexcel\'s second named reason for irrational behaviour (after influence of others, before weakness at computation).' },
+        { tone: 'purple', icon: '🪞', head: 'Internality', body: 'A cost a person imposes on their future self through present-biased decisions – like an externality, but internal to the individual.' },
         { tone: 'rose',   icon: '🔒', head: 'Commitment device', body: 'A tool that locks in a choice in advance, so the future self cannot abandon the planner\'s preferred path.' }
       ],
       examEdge: '<strong>Internalities are the strongest behavioural justification for paternalism.</strong> A sugar tax, plain tobacco packaging, or pension auto-enrolment can be defended purely on the grounds of protecting people from their own future cost – no externality argument required. This is a powerful evaluation point in any policy essay.'

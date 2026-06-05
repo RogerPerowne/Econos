@@ -1,8 +1,8 @@
 /* ============================================================
-   AD Shift Interactive — engine spec for adShiftInteractive.
+   AD Shift Interactive – engine spec for adShiftInteractive.
    Aggregate-supply card 7 chart 1 "Demand-side stimulus".
 
-   A rightward AD shift on a sloped SRAS — short-run analysis:
+   A rightward AD shift on a sloped SRAS – short-run analysis:
      base    → SRAS, AD₁ solid, E₁ at AD₁ ∩ SRAS midpoint
      view 1  → AD₁ redrawn DASHED + new AD₂ solid further right
                + rightward shift arrow
@@ -19,7 +19,7 @@
 
    Yf₁ (=E₁.x) sits at the AD₁ ∩ SRAS midpoint so the original
    equilibrium is the geometric centre. AD₂ shifts right by 0.222
-   (parallel translate, same slope as AD₁) — E₂ lands cleanly at
+   (parallel translate, same slope as AD₁) – E₂ lands cleanly at
    the right-of-centre AD₂ ∩ SRAS intersection.
    ============================================================ */
 (function () {
@@ -43,11 +43,11 @@
     },
 
     curves: [
-      // Base SRAS — always visible, upward sloping
+      // Base SRAS – always visible, upward sloping
       { d: 'M 0.097,0.067 L 0.931,0.894',
         tone: 'slate', label: 'SRAS', strokeWidth: 2,
         labelDx: -6, labelDy: -6, anchor: 'end' },
-      // Base AD₁ solid — hidden once any view becomes active
+      // Base AD₁ solid – hidden once any view becomes active
       { d: 'M 0.097,0.894 L 0.931,0.067',
         tone: 'blue', label: 'AD₁', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end',
@@ -72,7 +72,7 @@
       { x: E1.x, y: E1.y, tone: 'slate', radius: 5.5, hollow: true,
         gridlines: 'slate', ticks: { x: 'Y₁', y: 'P₁' },
         label: 'E₁', labelDx: -10, labelDy: -4, anchor: 'end' },
-      // Layer 2: E₂ at AD₂ ∩ SRAS — both Y and P rise
+      // Layer 2: E₂ at AD₂ ∩ SRAS – both Y and P rise
       { x: E2.x, y: E2.y, tone: 'blue', radius: 5.5, hollow: true,
         gridlines: 'blue', ticks: { x: 'Y₂', y: 'P₂' },
         label: 'E₂', labelDx: 10, labelDy: -4, anchor: 'start',

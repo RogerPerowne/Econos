@@ -1,6 +1,6 @@
 /* ============================================================
-   PPF card 3 — declarative spec for ppfMovesInteractive.
-   "Four Types of PPF Movement" — teaches the distinction between
+   PPF card 3 – declarative spec for ppfMovesInteractive.
+   "Four Types of PPF Movement" – teaches the distinction between
    movement ALONG the PPF (reallocation), recovery from INSIDE
    the PPF (idle resources reactivated), and SHIFTS of the PPF
    itself (capacity change, outward = growth, inward = supply shock).
@@ -11,7 +11,7 @@
      - outward  → .show-outward  (green, PPF₁ → PPF₂)
      - inward   → .show-inward   (rose,  PPF₁ → PPF₃)
 
-   The shift arrows in views 3/4 are NOT eyeballed lines — they
+   The shift arrows in views 3/4 are NOT eyeballed lines – they
    use the engine's perpendicular ray-cast: anchor on PPF₁,
    normal direction, find intersection with the target curve.
    ============================================================ */

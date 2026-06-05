@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Topic loader & URL routes
+   ECONOS – Topic loader & URL routes
    ─────────────────────────────────────────────────────────────
    Single source of truth for the site's URL contract. The
    public form is path-based and human-readable:
@@ -13,24 +13,24 @@
        /<board>/<theme>/<topic>/land-it/<section>        Land It section
 
    Sub-routes per shell:
-     Learn  — title-derived card slug (e.g.
+     Learn  – title-derived card slug (e.g.
               'demand-pull-inflation'); fallback 'card-<n>'.
               The bare /learn-it URL renders the cover.
-     Link   — context | chain | chain-open | calc | data | extract |
+     Link   – context | chain | chain-open | calc | data | extract |
               predict | diagram | depends | judge | complete.
               The bare /link-it URL renders the intro.
-     Land   — section-a | section-b | section-c | complete.
+     Land   – section-a | section-b | section-c | complete.
               The bare /land-it URL renders the intro.
 
-   `<topic>` is the topic slug — derived from its display title
+   `<topic>` is the topic slug – derived from its display title
    (e.g. "Negative Externalities" → `negative-externalities`).
    The slug IS the directory name under `/js/data/<board>/<theme>/`,
    the registry `id` field in `js/topics.js`, and the URL segment.
-   One string everywhere — no conversion layer.
+   One string everywhere – no conversion layer.
 
    Path parsing happens once in `parsePath()` and is exposed via
    `getTopic`, `getStation`, `getCard`, `getShell`. URL building
-   goes through `routes.<shell>(...)` — these are the canonical
+   goes through `routes.<shell>(...)` – these are the canonical
    builders used by every engine, every shell, every data file.
    Builders share a `makeShellRoute(shellSegment)` factory so
    adding a fourth shell (e.g. `quiz-it`) is one line.
@@ -90,16 +90,16 @@
   function getTopic()    { return getRoute().topic    || DEFAULT_TOPIC; }
   function getStation()  { return getRoute().station  || null; }
   function getShell()    { return getRoute().shell    || null; }
-  /* Friendly alias for Learn-It callers — the sub-route there
+  /* Friendly alias for Learn-It callers – the sub-route there
      is a card slug, not a station. parsePath returns it under
      `station` either way; getCard() reads more naturally on
      learn-it call sites. */
   function getCard()     { return getStation(); }
 
-  /* Canonical session labels — single source of truth so data files
+  /* Canonical session labels – single source of truth so data files
      don't all need to repeat 'Session N of 3: …'. Engines should pass
      `T.sessionLabel || TopicLoader.sessionLabel('link')` when rendering
-     the topbar. Stage is the SHORT form 'learn' | 'link' | 'land' —
+     the topbar. Stage is the SHORT form 'learn' | 'link' | 'land' –
      the same that parsePath returns. Display labels carry the
      full "Learn it / Link it / Land it" branding. */
   var SESSION_LABELS = {
@@ -127,7 +127,7 @@
     return 'edexcel_a';
   }
   function getBoard() {
-    /* Prefer the board pinned in the URL when present — that's
+    /* Prefer the board pinned in the URL when present – that's
        the source of truth for the current page. localStorage is
        only the user's default for navigation away from a URL
        that didn't pin one. */
@@ -156,7 +156,7 @@
     return (b && b.name) || id;
   }
   /* Per-board top-level division label for the active theme slug.
-     Reads ECONOS_BOARD_DIVISIONS — falls back to the bare slug
+     Reads ECONOS_BOARD_DIVISIONS – falls back to the bare slug
      when no entry is registered. Used by the topbar chip and
      topic-grid section headers. */
   function divisionLabelFor(board, themeSlug) {
@@ -165,7 +165,7 @@
   }
 
   /* URL builders. Every internal href, every JS string used as a
-     URL, every router pushState — they all flow through these.
+     URL, every router pushState – they all flow through these.
      Canonical form is /<board>/<theme>/<topic>/<shell>(/<sub>):
        routes.learn('inflation')               → '/aqa/macro/inflation/learn-it'
        routes.learn('demand-pull', 'inflation') → '/aqa/macro/inflation/learn-it/demand-pull'
@@ -186,7 +186,7 @@
      and one line in vite.config.js's writeRoute loop. */
   function makeShellRoute(shellSegment) {
     return function (subOrTopic, topic) {
-      /* allow (sub) or (sub, topic) or () or (topic) — second-arg
+      /* allow (sub) or (sub, topic) or () or (topic) – second-arg
          is ALWAYS the topic. First arg is treated as a sub-route
          when it's a non-empty string AND it's not a known topic
          id. We accept either ordering so existing call sites
@@ -202,20 +202,20 @@
           /* one arg, looks like a topic id */
           t = subOrTopic;
         } else {
-          /* one arg, not a known topic id — treat as sub */
+          /* one arg, not a known topic id – treat as sub */
           sub = subOrTopic;
         }
       } else if (topic !== undefined) {
         /* first arg omitted (null/undefined) but an explicit topic was
-           passed — e.g. routes.learn(null, nextTopicId) from the Link It /
+           passed – e.g. routes.learn(null, nextTopicId) from the Link It /
            Land It completion footers. Honour the topic and emit its bare
            cover. Previously this fell through with t=null, so urlBase()
-           used the CURRENT topic from the URL — sending "Next topic" to
+           used the CURRENT topic from the URL – sending "Next topic" to
            the current topic's Learn It (and 404-ing when getTopic() didn't
            resolve on a completion screen). */
         t = topic;
       }
-      /* 'intro' is the cover view — addressed by the BARE shell URL,
+      /* 'intro' is the cover view – addressed by the BARE shell URL,
          not a distinct sub-route. Collapse the explicit form so
          every caller that passes 'intro' (engines, data files,
          UI links) ends up emitting the same canonical URL. */
@@ -229,7 +229,7 @@
      current board's `boards[<board>].included === false`. That second
      check is essential: e.g. `factors-of-production` is hidden from
      Edexcel A (content folded into `the-economic-problem`), so its
-     route files aren't emitted by the build — a "Next topic" button
+     route files aren't emitted by the build – a "Next topic" button
      pointing at it would 404 for Edexcel A users. Returns null if
      `fromId` is the last reachable topic for this board. */
   function nextLearnableTopicAfter(fromId) {
@@ -255,7 +255,7 @@
     learn: makeShellRoute('learn-it'),
     link:  makeShellRoute('link-it'),
     land:  makeShellRoute('land-it'),
-    /* Legacy compat shim — the /quiz/ standalone shell was retired in
+    /* Legacy compat shim – the /quiz/ standalone shell was retired in
        v0.4.0 but existing learn.js files still reference quizCta
        fields built with this expression. Returns '' so the data file
        parses; the app.js renderer no longer reads quizCta so the
@@ -301,7 +301,7 @@
      AQA / OCR use `micro` / `macro`. Topics with no registry
      entry land in `misc`.
 
-     Each board reads ONLY its own files — no cross-board
+     Each board reads ONLY its own files – no cross-board
      fallback. When a non-Edexcel-A board doesn't yet ship real
      content for a topic, a placeholder learn-it.js (just the
      cover view, empty cards array) is generated at build time
@@ -400,7 +400,7 @@
     getStation:          getStation,
     getCard:             getCard,
     getShell:            getShell,
-    /* URL building — the canonical entry points */
+    /* URL building – the canonical entry points */
     routes:              routes,
     /* Navigation */
     go:                  go,

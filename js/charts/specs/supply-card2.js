@@ -1,5 +1,5 @@
 /* ============================================================
-   Supply card 3 — INTERACTIVE "movements along the supply curve"
+   Supply card 3 – INTERACTIVE "movements along the supply curve"
    (icons key: supplyMovements; className smove-svg). Mirror of
    demand-card2 with an upward curve. Rendered via interactiveDiagram.
 

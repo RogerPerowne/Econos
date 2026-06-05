@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It engine (Diagram Connector)
+   ECONOS – Link It engine (Diagram Connector)
    Three stages: Select → Label → Read & Write
    ============================================================ */
 
@@ -90,7 +90,7 @@
         + '</div>';
     }
 
-    /* ── Diagram SVG — data-driven renderer ──
+    /* ── Diagram SVG – data-driven renderer ──
        DATA.diagram specifies:
          xLabel / yLabel   : axis titles
          lines[]           : { x1,y1,x2,y2, stroke, strokeWidth, label,labelX,labelY,labelFill }
@@ -134,7 +134,7 @@
           + ' fill="' + (ln.labelFill || ln.stroke || '#374151') + '">' + ln.label + '</text>';
       }).join('');
 
-      /* Guide lines + tick labels — shown at stage 2 */
+      /* Guide lines + tick labels – shown at stage 2 */
       var guidesHtml = '';
       if (showDashes) {
         guidesHtml = (D.guides || []).map(function (g) {
@@ -150,7 +150,7 @@
         }).join('');
       }
 
-      /* Shift arrow — shown at stage 2 */
+      /* Shift arrow – shown at stage 2 */
       var shiftArrow = '';
       if (showDashes && D.shiftArrow) {
         var sa = D.shiftArrow;
@@ -203,7 +203,7 @@
         + '</svg>';
     }
 
-    /* HTML overlay drop zones — absolutely positioned over the SVG.
+    /* HTML overlay drop zones – absolutely positioned over the SVG.
        Zone positions come from DATA.label.zones: { id, pctX, pctY, pctW }
        Percentages are relative to the SVG viewBox (560×430). */
     function renderZoneOverlay(zone, content, tone) {
@@ -217,7 +217,7 @@
         + 'top:'    + zone.pctY + '%;'
         + 'width:'  + zone.pctW + '%;'
         + '">'
-        + (content ? content : '<span class="diag-zone__empty">—</span>')
+        + (content ? content : '<span class="diag-zone__empty">–</span>')
         + '</div>';
     }
 
@@ -230,7 +230,7 @@
 
     /* ── Thumbnail SVGs for diagram option cards ── */
 
-    /* Shared thumbnail clip + marker defs — inlined per SVG with unique IDs */
+    /* Shared thumbnail clip + marker defs – inlined per SVG with unique IDs */
     function thumbDefs(clipId, markId, markColour) {
       return '<defs>'
         + '<clipPath id="' + clipId + '"><rect x="21" y="6" width="93" height="78"/></clipPath>'
@@ -246,9 +246,9 @@
     }
 
     function thumbSRASLeft() {
-      /* SRAS₁ (blue solid), SRAS₂ (blue dashed — same curve shifted left), AD (green), LRAS (grey) */
-      /* SRAS₂ starts at x=8 — clips cleanly behind y-axis */
-      /* E₁ = SRAS₁∩AD ≈ (62,39); E₂ = SRAS₂∩AD ≈ (49,29) — algebraically exact */
+      /* SRAS₁ (blue solid), SRAS₂ (blue dashed – same curve shifted left), AD (green), LRAS (grey) */
+      /* SRAS₂ starts at x=8 – clips cleanly behind y-axis */
+      /* E₁ = SRAS₁∩AD ≈ (62,39); E₂ = SRAS₂∩AD ≈ (49,29) – algebraically exact */
       return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-ta', 'arr-ta', '#2563eb')
         + thumbAxes()
@@ -264,7 +264,7 @@
         + '<circle cx="49" cy="29" r="3" fill="#2563eb"/>'
         + '<text x="67" y="50" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
         + '<text x="36" y="26" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
-        /* At y=18: SRAS₁ at x=80, SRAS₂ at x=58 — arrow from 76→62, 4px buffer each side */
+        /* At y=18: SRAS₁ at x=80, SRAS₂ at x=58 – arrow from 76→62, 4px buffer each side */
         + '<line x1="76" y1="18" x2="62" y2="18" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
         + '</svg>';
     }
@@ -279,7 +279,7 @@
           + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
           + '<line x1="45" y1="8"  x2="113" y2="72" stroke="#059669" stroke-width="2"/>'
         + '</g>'
-        /* E₁ = SRAS∩AD₁ ≈ (63,44); E₂ = SRAS∩AD₂ ≈ (73,34) — algebraically exact */
+        /* E₁ = SRAS∩AD₁ ≈ (63,44); E₂ = SRAS∩AD₂ ≈ (73,34) – algebraically exact */
         + '<circle cx="63" cy="44" r="5" fill="white"/>'
         + '<circle cx="63" cy="44" r="3" fill="#2563eb" opacity="0.55"/>'
         + '<circle cx="73" cy="34" r="5" fill="white"/>'
@@ -336,7 +336,7 @@
     }
 
     function thumbADLeft() {
-      /* AD₂ dashed starts at x=5 — would cross y-axis; clipPath handles it */
+      /* AD₂ dashed starts at x=5 – would cross y-axis; clipPath handles it */
       return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-td', 'arr-td', '#059669')
         + thumbAxes()
@@ -346,7 +346,7 @@
           + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
           + '<line x1="5"  y1="8"  x2="75" y2="72" stroke="#059669" stroke-width="2"/>'
         + '</g>'
-        /* E₁ = SRAS∩AD₁ ≈ (63,44); E₂ = SRAS∩AD₂ ≈ (54,53) — algebraically exact */
+        /* E₁ = SRAS∩AD₁ ≈ (63,44); E₂ = SRAS∩AD₂ ≈ (54,53) – algebraically exact */
         + '<circle cx="63" cy="44" r="5" fill="white"/>'
         + '<circle cx="63" cy="44" r="3" fill="#2563eb" opacity="0.55"/>'
         + '<circle cx="54" cy="53" r="5" fill="white"/>'
@@ -363,7 +363,7 @@
        S (blue, upward slope): (35,84)→(100,10).  D (green, downward): (22,10)→(108,78).
        E₁ intersection ≈ (68,46).  Shifted curve is dashed at 0.6 opacity. */
     function thumbSRight() {
-      /* Supply shifts right: P↓, Q↑ — E₂≈(80,56) */
+      /* Supply shifts right: P↓, Q↑ – E₂≈(80,56) */
       return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-sr', 'arr-sr', '#2563eb')
         + thumbAxes()
@@ -384,7 +384,7 @@
     }
 
     function thumbSLeft() {
-      /* Supply shifts left: P↑, Q↓ — E₂≈(57,38) */
+      /* Supply shifts left: P↑, Q↓ – E₂≈(57,38) */
       return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-sl', 'arr-sl', '#2563eb')
         + thumbAxes()
@@ -405,7 +405,7 @@
     }
 
     function thumbDRight() {
-      /* Demand shifts right: P↑, Q↑ — E₂≈(76,37) */
+      /* Demand shifts right: P↑, Q↑ – E₂≈(76,37) */
       return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-dr', 'arr-dr', '#059669')
         + thumbAxes()
@@ -426,7 +426,7 @@
     }
 
     function thumbDLeft() {
-      /* Demand shifts left: P↓, Q↓ — E₂≈(61,55) */
+      /* Demand shifts left: P↓, Q↓ – E₂≈(61,55) */
       return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-dl', 'arr-dl', '#059669')
         + thumbAxes()
@@ -563,8 +563,8 @@
           + '<div class="diag-label-result">'
           +   '<span class="diag-label-result__score">' + nCorrect + ' of ' + nZones + ' correct</span>'
           +   (nCorrect === nZones
-              ? '<span class="diag-label-result__msg diag-label-result__msg--ok">All labels placed correctly — great reading of the diagram.</span>'
-              : '<span class="diag-label-result__msg">Check the highlighted zones — the correct label is shown in the answer key below.</span>')
+              ? '<span class="diag-label-result__msg diag-label-result__msg--ok">All labels placed correctly – great reading of the diagram.</span>'
+              : '<span class="diag-label-result__msg">Check the highlighted zones – the correct label is shown in the answer key below.</span>')
           + '</div>';
       }
 
@@ -789,7 +789,7 @@
         +   '<div class="rail-card">'
         +     '<div class="rail-card__title" style="margin-bottom:var(--sp-2);">Skill focus</div>'
         +     '<div class="link-rail__wgll">'
-        +       '<div class="link-rail__wgll-item"><span class="link-rail__wgll-icon">📐</span><span>Analysis — Read the shift, name the outcomes.</span></div>'
+        +       '<div class="link-rail__wgll-item"><span class="link-rail__wgll-icon">📐</span><span>Analysis – Read the shift, name the outcomes.</span></div>'
         +     '</div>'
         +   '</div>'
         + '</div>';

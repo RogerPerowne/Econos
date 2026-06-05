@@ -1,12 +1,12 @@
 /* ============================================================
-   Price Ceiling Diagram Interactive — engine spec for
+   Price Ceiling Diagram Interactive – engine spec for
    priceCeilingDiagramInteractive. Govt intervention topic.
 
    Maximum price set BELOW Pₑ. At Pmax: quantity supplied (Qs) falls
    short of quantity demanded (Qd) → shortage.
 
    3 progressive-reveal views:
-     V0 Free market    — base D + S + E only
+     V0 Free market    – base D + S + E only
      V1 Ceiling Pmax   → idl-1 (Pmax line + Qs/Qd ticks + shortage bracket)
      V2 Reduced CS+PS  → idl-1 + idl-2 (CS quad above Pmax, PS triangle)
      V3 DWL            → idl-1 + idl-2 + idl-3 (DWL triangle)

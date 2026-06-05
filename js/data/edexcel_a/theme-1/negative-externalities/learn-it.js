@@ -108,22 +108,22 @@ window.ECONOS_TOPIC = {
         {
           key: 'base',
           label: 'Market equilibrium',
-          text: 'Left alone, the market clears where the firm\'s private cost meets buyers\' benefit. Because that price ignores the cost falling on everyone else, this "equilibrium" only <em>looks</em> efficient — the next three moves expose why Qₘ is too high.'
+          text: 'Left alone, the market clears where the firm\'s private cost meets buyers\' benefit. Because that price ignores the cost falling on everyone else, this "equilibrium" only <em>looks</em> efficient – the next three moves expose why Qₘ is too high.'
         },
         {
           key: 'extension',
           label: 'Add MSC and MEC',
-          text: 'Now bring in the true cost: MSC sits above MPC by the external cost at every unit. The firm still decides using MPC alone, behaving as if that gap doesn\'t exist — and that blind spot is exactly what pushes output past the social optimum.'
+          text: 'Now bring in the true cost: MSC sits above MPC by the external cost at every unit. The firm still decides using MPC alone, behaving as if that gap doesn\'t exist – and that blind spot is exactly what pushes output past the social optimum.'
         },
         {
           key: 'shift',
           label: 'Socially optimal output',
-          text: 'Society\'s best point uses the <em>full</em> cost: where MSC meets MSB, at Q*. It sits to the left of and above the market — less output, higher price. The distance Qₘ − Q* is the over-production the externality has added.'
+          text: 'Society\'s best point uses the <em>full</em> cost: where MSC meets MSB, at Q*. It sits to the left of and above the market – less output, higher price. The distance Qₘ − Q* is the over-production the externality has added.'
         },
         {
           key: 'efficiency',
           label: 'Deadweight welfare loss',
-          text: 'Add up the loss on every unit between Q* and Qₘ, where social cost outruns social benefit, and you get the shaded triangle — welfare no one captures. A tax equal to the external cost makes the firm face the full cost, restoring Q*.'
+          text: 'Add up the loss on every unit between Q* and Qₘ, where social cost outruns social benefit, and you get the shaded triangle – welfare no one captures. A tax equal to the external cost makes the firm face the full cost, restoring Q*.'
         }
       ],
       examEdge: 'Diagram technique: label all six elements – D=MSB, MPC, MSC, Eₘ (Qₘ, Pₘ), E* (Q*, P*), and shade the DWL triangle. Missing any of these loses marks. Draw MSC as a parallel shift above MPC for a constant external cost.'
@@ -199,7 +199,7 @@ window.ECONOS_TOPIC = {
       causes: [
         { icon: '💰', head: 'Who pays?',         body: '<strong>Pigouvian tax:</strong> producers (higher costs) and possibly consumers (higher prices). <strong>Cap-and-trade:</strong> producers (cost of permits passed on), and possibly consumers.', tone: 'green' },
         { icon: '🌱', head: 'Who benefits?',     body: '<strong>Both schemes:</strong> third parties and the environment (less pollution); government raises revenue under a tax.', tone: 'blue'  },
-        { icon: '🏭', head: 'Who is worse off?', body: '<strong>Pigouvian tax:</strong> high-polluting firms face higher costs; <em>low-income consumers</em> often bear a disproportionate share of fuel/sugar/tobacco tax (regressive incidence — spend a higher % of income on the taxed good). <strong>Cap-and-trade:</strong> incumbent high-emitters who can\'t innovate fast enough. Innovation lowering abatement costs reduces both burdens.', tone: 'purple' }
+        { icon: '🏭', head: 'Who is worse off?', body: '<strong>Pigouvian tax:</strong> high-polluting firms face higher costs; <em>low-income consumers</em> often bear a disproportionate share of fuel/sugar/tobacco tax (regressive incidence – spend a higher % of income on the taxed good). <strong>Cap-and-trade:</strong> incumbent high-emitters who can\'t innovate fast enough. Innovation lowering abatement costs reduces both burdens.', tone: 'purple' }
       ],
       table: {
         title: 'Impact on economic agents',
@@ -316,7 +316,7 @@ window.ECONOS_TOPIC = {
         text: 'This passage defines the externality problem: A imposes a cost on others, but no one can compel A to pay. Pigou\'s solution was a corrective tax – set equal to the <strong>marginal external cost at Q*</strong> – so firms face the full social cost of their output. This <strong>Pigouvian tax</strong> shifts MPC up to MSC, closing the wedge between private and social optima.'
       },
       conclusion: { title: 'Top-line judgement', text: 'The best policy depends on the <em>external harm</em>, the <em>information available</em> and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more efficient; command-and-control may be preferred when certainty and fairness matter most.' },
-      examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list. <strong>A worked 25-mark structure:</strong> "Define the negative externality and draw MSC above MPC (define). Compare two policies — e.g. a Pigouvian tax (cost-effective if MEC is measurable; risks regressive incidence) vs cap-and-trade (quantity-certain; flexible; better when the environmental target is binding) (analyse). Both face information problems and political resistance (evaluate). For a small, reversible externality with known MEC the tax dominates; for a large, irreversible externality with a hard target (e.g. net zero) permits or regulation dominate (judge)." That sequence — define → analyse → evaluate → judge — anchored to the four criteria is what lifts a Level 3 to a Level 4.',
+      examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list. <strong>A worked 25-mark structure:</strong> "Define the negative externality and draw MSC above MPC (define). Compare two policies – e.g. a Pigouvian tax (cost-effective if MEC is measurable; risks regressive incidence) vs cap-and-trade (quantity-certain; flexible; better when the environmental target is binding) (analyse). Both face information problems and political resistance (evaluate). For a small, reversible externality with known MEC the tax dominates; for a large, irreversible externality with a hard target (e.g. net zero) permits or regulation dominate (judge)." That sequence – define → analyse → evaluate → judge – anchored to the four criteria is what lifts a Level 3 to a Level 4.',
       quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 

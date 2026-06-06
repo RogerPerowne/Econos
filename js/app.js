@@ -2807,19 +2807,20 @@
       </div>`;
     }
 
-    // Steps: [{label, text}] – numbered with cycling tones
+    // Steps: [{label, text}] – numbered sequential cards (tone left-accent).
+    // Styling lives in the universal `.step` CSS component; tone cycles via
+    // TONE_NAMES (green→amber→blue→purple), matching the old TONES order.
     if (c.steps && c.steps.length) {
       content += genSecLabel(c.stepsEmoji || '📋', c.stepsLabel || 'How it works');
       content += c.steps.map((s, i) => {
-        const t = TONES[i % TONES.length];
         const head = s.head || s.label || '';
         const body = s.body || s.text || '';
         return `
-        <div style="display:flex;gap:16px;margin-bottom:18px;padding:16px 18px;background:${t.bg};border-radius:var(--r-lg);border:1px solid ${t.border}40;border-left:5px solid ${t.border};">
-          <div style="width:34px;height:34px;border-radius:50%;background:${t.headerBg};color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-base);font-weight:var(--fw-extrabold);flex-shrink:0;">${i + 1}</div>
+        <div class="step ${TONE_NAMES[i % TONE_NAMES.length]}">
+          <div class="step__num">${i + 1}</div>
           <div>
-            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${t.label};margin-bottom:5px;">${head}</div>
-            <div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${body}</div>
+            <div class="step__head">${head}</div>
+            <div class="step__body">${body}</div>
           </div>
         </div>`;
       }).join('');

@@ -129,6 +129,8 @@ type is one class.
   - `.callout-band` — the conclusion (green) / balanced-note (amber) verdict bands
     (left accent + icon + uppercase label + body; conclusion uses Fraunces via
     `--display`); `renderCalloutBand` helper; note-tier hover.
+  - `.step` — numbered sequential cards with a tone left-accent (tone cycles by
+    index); tile-tier hover.
 
   Tiles carry the tile-tier hover; full-width strips the note-tier; the
   closing-pair callouts deepen their own glow. More box types land one per

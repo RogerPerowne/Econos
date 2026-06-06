@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.85.0 — 2026-06-06
+
+### Universal content boxes (7/n): steps
+
+The `steps` numbered sequential cards move to the `.step` component. Same look
+(tinted bg + 5px tone left-bar + solid number circle), now token-driven with the
+tile-tier hover and a real faint border — the old `${t.border}40` was invalid CSS
+so no full border ever rendered. Tone cycles green→amber→blue→purple via
+`TONE_NAMES` (matching the old `TONES` order); colours exact via `--t-solid`/
+`--t-ink`. Data shapes unchanged.
+
+Before/after screenshot-verified (rest + hover). lint + 147 unit tests + build
+green; cache econos-v394.
+
+
 ## 0.84.0 — 2026-06-06
 
 ### Universal content boxes (6/n): conclusion + balanced-note bands

@@ -109,12 +109,11 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'HOW THE LOGIC WORKS',
       flowEmoji: '\u{1F517}',
-      flowSep: '→',
       flow: [
         { tone: 'blue',   icon: '\u{1F3DB}️', title: 'Complex parent firm',          sub: '' },
-        { tone: 'green',  icon: '\u{1F9E9}', title: 'Activities do not fit well together', sub: '' },
-        { tone: 'purple', icon: 'Y',          title: 'Demerger / spin-off',          sub: '' },
-        { tone: 'green',  icon: '\u{1F3DB}️', title: 'More focused separate businesses', sub: '' }
+        { tone: 'amber',  icon: '\u{1F9E9}', title: 'Activities do not fit well together', sub: '' },
+        { tone: 'purple', icon: '✂️',         title: 'Demerger / spin-off',          sub: '' },
+        { tone: 'green',  icon: '\u{1F3E2}', title: 'More focused separate businesses', sub: '' }
       ],
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'A demerger is often chosen when <strong>the whole business is worth less together than apart</strong>.' },
@@ -289,14 +288,13 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'THE CHAIN',
       flowEmoji: '\u{1F517}',
-      flowSep: '→',
       flow: [
-        { tone: 'green',  icon: '\u{1F3DB}️', title: 'Large or diversified firm',     sub: '' },
-        { tone: 'amber',  icon: '⚠️',         title: 'Problem emerges',               sub: 'weak fit, complexity, or poor performance' },
-        { tone: 'purple', icon: '\u{1F3DB}️', title: 'Demerger / spin-off',           sub: '' },
-        { tone: 'blue',   icon: '\u{1F3E2}', title: 'Separate focused firms',        sub: '' },
-        { tone: 'amber',  icon: '\u{1F465}', title: 'Stakeholder effects',           sub: 'business, workers, consumers' },
-        { tone: 'green',  icon: '⚖️',         title: 'Final judgement',              sub: 'success or failure depends on context' }
+        { tone: 'green',  icon: '\u{1F3DB}️', title: 'Diversified firm',     sub: '' },
+        { tone: 'amber',  icon: '⚠️',         title: 'Problem emerges',      sub: 'weak fit, complexity, poor performance' },
+        { tone: 'purple', icon: '\u{1F3DB}️', title: 'Demerger / spin-off',  sub: '' },
+        { tone: 'blue',   icon: '\u{1F3E2}', title: 'Focused firms',        sub: '' },
+        { tone: 'amber',  icon: '\u{1F465}', title: 'Stakeholder effects', sub: 'business, workers, consumers' },
+        { tone: 'green',  icon: '⚖️',         title: 'Final judgement',     sub: 'success depends on context' }
       ],
 
       causesLabel: 'COMMON EVALUATION POINTS',

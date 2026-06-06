@@ -92,12 +92,11 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'HOW IT WORKS',
       flowEmoji: '\u{1F50D}',
-      flowSep: '→',
       flow: [
-        { tone: 'green',  icon: '£',         title: 'Retained profit',                       sub: 'Keep profits within the business.' },
-        { tone: 'blue',   icon: '\u{1F465}', title: 'Invest in staff, marketing or capacity', sub: 'Use resources to build capability and scale.' },
-        { tone: 'amber',  icon: '\u{1F4C8}', title: 'Sales rise',                             sub: 'Higher output and more customers.' },
-        { tone: 'purple', icon: '\u{1F3E2}', title: 'Firm grows',                             sub: 'Revenue, profits and capacity increase.' }
+        { tone: 'green',  icon: '£',         title: 'Retained profit',     sub: 'Keep profits within the business.' },
+        { tone: 'blue',   icon: '\u{1F465}', title: 'Invest internally',   sub: 'Spend on staff, marketing or capacity.' },
+        { tone: 'amber',  icon: '\u{1F4C8}', title: 'Sales rise',          sub: 'Higher output and more customers.' },
+        { tone: 'purple', icon: '\u{1F3E2}', title: 'Firm grows',          sub: 'Revenue, profits and capacity increase.' }
       ],
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Examples include <strong>opening new branches</strong>, <strong>launching new products</strong>, hiring more staff, or increasing output from existing sites.' },

@@ -137,7 +137,6 @@ window.ECONOS_TOPIC = {
       ],
       flowTitle: 'Quick rule',
       flowEmoji: '🔗',
-      flowSep: '→',
       flow: [
         { tone: 'green', icon: '🏭', title: 'More spare capacity', sub: '' },
         { tone: 'blue', icon: '📊', title: 'Output rises faster', sub: '' },
@@ -165,7 +164,6 @@ window.ECONOS_TOPIC = {
       visualEmoji: '🕐',
       flowTitle: 'Follow one market',
       flowEmoji: '🏪',
-      flowSep: '→',
       flow: [
         { tone: 'purple', icon: '🛒', title: 'Today', sub: 'Price rises, shelves empty quickly.' },
         { tone: 'amber', icon: '🏭', title: 'Next month', sub: 'Firm adds shifts and restocks.' },

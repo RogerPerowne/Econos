@@ -325,15 +325,14 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'THE CHAIN',
       flowEmoji: '\u{1F517}',
-      flowSep: '→',
       flow: [
-        { tone: 'green',  icon: '1', title: 'Measure size',      sub: '' },
-        { tone: 'amber',  icon: '2', title: 'Identify type',     sub: '' },
-        { tone: 'purple', icon: '3', title: 'State objective',   sub: '' },
-        { tone: 'blue',   icon: '4', title: 'Explain stay small or grow', sub: '' },
-        { tone: 'green',  icon: '5', title: 'Who owns it?',      sub: '' },
-        { tone: 'amber',  icon: '6', title: 'Who controls it?',  sub: '' },
-        { tone: 'purple', icon: '7', title: 'Judge the trade-offs', sub: '' }
+        { tone: 'green',  icon: '\u{1F4CF}', title: 'Measure size',      sub: '' },
+        { tone: 'amber',  icon: '\u{1F3F7}\u{FE0F}', title: 'Identify type',     sub: '' },
+        { tone: 'purple', icon: '\u{1F3AF}', title: 'State objective',   sub: '' },
+        { tone: 'blue',   icon: '\u{1F4C8}', title: 'Stay small or grow?', sub: '' },
+        { tone: 'green',  icon: '\u{1F511}', title: 'Who owns it?',      sub: '' },
+        { tone: 'amber',  icon: '\u{1F3DB}\u{FE0F}', title: 'Who controls it?',  sub: '' },
+        { tone: 'purple', icon: '⚖️', title: 'Judge trade-offs', sub: '' }
       ],
 
       causesLabel: 'COMMON MISTAKES',

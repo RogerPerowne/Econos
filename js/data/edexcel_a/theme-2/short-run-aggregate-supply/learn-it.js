@@ -119,7 +119,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'THE CAUSAL CHAIN',
       flowEmoji: '🔗',
-      flowSep: '→',
       flow: [
         { tone: 'blue',   icon: '💷', title: 'Price level rises', sub: 'Overall prices in the economy go up.' },
         { tone: 'blue',   icon: '📈', title: 'Selling prices rise', sub: 'Firms can charge more for output.' },

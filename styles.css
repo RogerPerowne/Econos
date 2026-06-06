@@ -12249,6 +12249,51 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   line-height: var(--lh-snug);
 }
 
+/* ── Steps — numbered sequential cards with a tone left-accent.
+   Replaces the inline list; same look (tinted bg + 5px tone left bar +
+   solid number circle) but token-driven, with a real faint border (the
+   old `${t.border}40` was invalid CSS so it never rendered) and the
+   tile-tier hover. Tone cycles green→amber→blue→purple via TONE_NAMES. ── */
+.step {
+  display: flex;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+  padding: var(--sp-4);
+  background: var(--t-50);
+  border: 1px solid var(--t-100);
+  border-left: 5px solid var(--t-solid);
+  border-radius: var(--r-lg);
+  transition: var(--hover-tr);
+}
+.step:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
+}
+.step__num {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-full);
+  background: var(--t-solid);
+  color: var(--econ-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-extrabold);
+  flex-shrink: 0;
+}
+.step__head {
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-base);
+  color: var(--t-ink);
+  margin-bottom: var(--sp-1);
+}
+.step__body {
+  font-size: var(--fs-base);
+  color: var(--econ-ink);
+  line-height: var(--lh-relaxed);
+}
+
 /* ── Topbar polish — slightly tighter and more elegant ── */
 .topbar {
   background: rgba(255, 255, 255, 0.85);

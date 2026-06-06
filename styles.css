@@ -12333,6 +12333,71 @@ a.stage { box-shadow: var(--shadow-card-rest); }
 }
 .body-box__text { flex: 1; }
 
+/* ── Summary row — up to 3 tone mini-cards (Why it matters / Common trap
+   / Quick example). Replaces the inline grid; token-driven, brand-palette
+   accents, tile-tier hover. ── */
+.summary-row {
+  display: grid;
+  grid-template-columns: var(--sr-cols, repeat(auto-fit, minmax(0, 1fr)));
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+}
+.summary-cell {
+  border-radius: var(--r-lg);
+  background: var(--t-50);
+  border: 1px solid var(--t-100);
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  transition: var(--hover-tr);
+}
+.summary-cell:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
+}
+.summary-cell__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+.summary-cell__icon { font-size: var(--fs-base); line-height: 1; }
+.summary-cell__title {
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-extrabold);
+  color: var(--t-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  line-height: var(--lh-snug);
+}
+.summary-cell__text {
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: var(--lh-normal);
+}
+.summary-cell__list {
+  margin: var(--sp-1) 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.summary-cell__item {
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: var(--lh-normal);
+}
+.summary-cell__bullet {
+  flex-shrink: 0;
+  color: var(--t-ink);
+  font-weight: var(--fw-extrabold);
+  margin-top: 1px;
+}
+
 /* ── Topbar polish — slightly tighter and more elegant ── */
 .topbar {
   background: rgba(255, 255, 255, 0.85);

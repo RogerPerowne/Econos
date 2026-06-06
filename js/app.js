@@ -163,6 +163,23 @@
     return `<div class="tone-callout tone-${tone}">${iconHtml}${bodyHtml}</div>`;
   }
 
+  /* Summary row — up to 3 tone mini-cards (title + text + bullet items).
+     Styling lives in the universal `.summary-row` / `.summary-cell` CSS
+     component (token-driven, tile-tier hover). */
+  function renderSummaryRow(cells) {
+    const cols = Math.min(cells.length, 3);
+    const inner = cells.map((cell) => {
+      const tone = 'tone-' + (cell.tone || 'blue');
+      const icon = cell.icon ? `<span class="summary-cell__icon">${renderIcon(cell.icon)}</span>` : '';
+      const items = Array.isArray(cell.items) && cell.items.length
+        ? `<ul class="summary-cell__list">${cell.items.map((it) => `<li class="summary-cell__item"><span class="summary-cell__bullet">•</span><span>${it}</span></li>`).join('')}</ul>`
+        : '';
+      const text = cell.text ? `<div class="summary-cell__text">${cell.text}</div>` : '';
+      return `<div class="summary-cell ${tone}"><div class="summary-cell__head">${icon}<span class="summary-cell__title">${cell.title || ''}</span></div>${text}${items}</div>`;
+    }).join('');
+    return `<div class="summary-row" style="--sr-cols:repeat(${cols},1fr);">${inner}</div>`;
+  }
+
   /* Callout band — the conclusion / balanced-note verdict bands (left
      accent + icon + uppercase label + body). Styling lives in the
      universal `.callout-band` CSS component. opts =
@@ -2924,29 +2941,7 @@
     //   (e.g. "Why it matters" + "Common trap" + "Quick example").
     //   Pattern: summaryRow: [{ tone, icon, title, text?, items?: [string] }]
     if (c.summaryRow && c.summaryRow.length) {
-      const cols = Math.min(c.summaryRow.length, 3);
-      content += `<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:12px;margin-bottom:20px;">`;
-      content += c.summaryRow.map(cell => {
-        const t = PATTERN_TONES[cell.tone || 'blue'] || PATTERN_TONES.blue;
-        const icon = cell.icon || '';
-        const itemsHtml = Array.isArray(cell.items) && cell.items.length
-          ? `<ul style="margin:6px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;">${
-              cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
-            }</ul>`
-          : '';
-        const bodyHtml = cell.text
-          ? `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${cell.text}</div>${itemsHtml}`
-          : itemsHtml;
-        return `
-          <div style="border-radius:var(--r-lg);background:${t.bg};border:1px solid ${t.border};padding:14px 14px 12px;display:flex;flex-direction:column;">
-            <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px;">
-              ${icon ? `<span style="font-size:var(--fs-base);line-height:1;">${icon}</span>` : ''}
-              <span style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.07em;line-height:var(--lh-snug);">${cell.title || ''}</span>
-            </div>
-            ${bodyHtml}
-          </div>`;
-      }).join('');
-      content += `</div>`;
+      content += renderSummaryRow(c.summaryRow);
     }
 
     // Conclusion – green decisive verdict band. The "given the above, here's the answer".
@@ -5620,30 +5615,7 @@
         return `${genSecLabel(emoji, title)}<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:10px;margin-bottom:20px;">${cells}</div>`;
       })() : ''}
 
-      ${c.summaryRow && c.summaryRow.length ? (() => {
-        const cols = Math.min(c.summaryRow.length, 3);
-        const cells = c.summaryRow.map(cell => {
-          const t = PATTERN_TONES[cell.tone || 'blue'] || PATTERN_TONES.blue;
-          const icon = cell.icon || '';
-          const itemsHtml = Array.isArray(cell.items) && cell.items.length
-            ? `<ul style="margin:6px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;">${
-                cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
-              }</ul>`
-            : '';
-          const bodyHtml = cell.text
-            ? `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${cell.text}</div>${itemsHtml}`
-            : itemsHtml;
-          return `
-            <div style="border-radius:var(--r-lg);background:${t.bg};border:1px solid ${t.border};padding:14px 14px 12px;display:flex;flex-direction:column;">
-              <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px;">
-                ${icon ? `<span style="font-size:var(--fs-base);line-height:1;">${icon}</span>` : ''}
-                <span style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.07em;line-height:var(--lh-snug);">${cell.title || ''}</span>
-              </div>
-              ${bodyHtml}
-            </div>`;
-        }).join('');
-        return `<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:12px;margin-bottom:20px;">${cells}</div>`;
-      })() : ''}
+      ${c.summaryRow && c.summaryRow.length ? renderSummaryRow(c.summaryRow) : ''}
 
       ${c.causesLast && c.causes && c.causes.length ? (() => {
         const items = c.causes;

@@ -147,6 +147,9 @@ type is one class.
     hover; stacks on mobile.
   - `.gen-comparison` — 2–3 tone cards (icon ring + label + value/caption/
     chips) split by an operator badge (`--triple` for A op B = C); tile-tier hover.
+  - `.flow-chain` / `.flow-step` — numbered ring + tone icon circle + title +
+    sub joined by dashed connectors, with ✓/✕/! status badges; no hover
+    (connected diagram); stacks on mobile.
 
   Tiles carry the tile-tier hover; full-width strips the note-tier; the
   closing-pair callouts deepen their own glow. More box types land one per

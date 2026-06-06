@@ -12777,6 +12777,81 @@ a.stage { box-shadow: var(--shadow-card-rest); }
 .gen-comparison--triple .gen-comparison__label { font-size: var(--fs-base); }
 .gen-comparison--triple .gen-comparison__caption { font-size: var(--fs-xs); }
 
+/* ── Flow chain — numbered ring + tone icon circle + title + sub, joined
+   by dashed connectors, with optional ✓/✕/! status badges. Replaces the
+   inline grid; token-driven, brand accents. A connected diagram, so NO
+   hover lift (it would break the connector alignment). The container keeps
+   an inline `grid-template-columns` so the universal mobile reflow stacks
+   it. Connector geometry (top:23px, ±28px) is preserved exactly. ── */
+.flow-chain {
+  display: grid;
+  gap: 0;
+  align-items: start;
+  margin-bottom: var(--sp-6);
+  padding: 18px 6px 6px;
+}
+.flow-step { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 10px; }
+.flow-step__num {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  border: 2px solid var(--t-accent);
+  color: var(--t-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-extrabold);
+  box-shadow: 0 2px 8px color-mix(in oklab, var(--t-accent) 25%, transparent);
+  margin-bottom: 12px;
+  z-index: 1;
+}
+.flow-step__icon {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: var(--r-full);
+  background: var(--t-50);
+  border: 1px solid var(--t-100);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-2xl);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.flow-step__title { font-size: var(--fs-base); font-weight: var(--fw-extrabold); color: var(--t-ink); line-height: var(--lh-snug); margin-bottom: 6px; }
+.flow-step__sub { font-size: var(--fs-sm); color: var(--econ-gray-600); line-height: var(--lh-normal); }
+.flow-step__connector {
+  position: absolute;
+  top: 23px;
+  left: calc(50% + 28px);
+  right: calc(-50% + 28px);
+  height: 0;
+  border-top: 2px dashed var(--econ-gray-300);
+  z-index: 0;
+}
+.flow-step__badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--r-full);
+  color: var(--econ-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-extrabold);
+  box-shadow: 0 1px 4px rgba(11, 20, 38, 0.2);
+}
+.flow-step__badge--pass { background: var(--econ-green-600); }
+.flow-step__badge--fail { background: var(--econ-rose-600); }
+.flow-step__badge--warn { background: var(--econ-amber); }
+
 /* Mobile collapse for the migrated content grids. These set their column
    count via a `--*-cols` custom property (not an inline
    `grid-template-columns`), so the site's universal inline-grid reflow

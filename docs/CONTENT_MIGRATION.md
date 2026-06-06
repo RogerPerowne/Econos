@@ -60,6 +60,7 @@ continues — keep it current):
 | `verdict` | `{ title?, emoji?, layout?:'arrow', columns:[{ label, tone?, icon?, items:[{ text, ok? }] }] }` | `.gen-verdict > .gen-verdict__col.tone-* > __head(__icon?,__label) + __list>__item>__mark--ok\|no; __sep>__badge` |
 | `splitDecision` | `{ label?, emoji?, vs?, sides:[{ name, tone?, icon?, premise?, interpretation?, conclusion }] }` | `.split-decision > .split-decision__card.tone-* (__head(__icon,__name), __premise?, __interp?, __arrow, __conclusion) split by __vs>__badge` |
 | `comparison` | `{ title?, emoji?, vs?, resultJoin?, left, right, result? }` (side = `{ label, tone?, icon?, value?, caption?, chips? }`) | `.gen-comparison[--triple] > .gen-comparison__card.tone-* (__ring,__label,__value?,__caption?,__chips>__chip) split by __op>__badge` |
+| `flow` / `flowBottom` | `[{ title, icon?, sub?, tone?, status?:'pass'\|'fail'\|'warn' }]` | `.flow-chain > .flow-step.tone-* (__num,__icon[+__badge--pass\|fail\|warn],__title,__sub?,__connector)` — no hover (connected diagram) |
 
 (Boxes not yet migrated still render via inline styles in `app.js`; they are being
 moved onto this same `.tone-*` + token system, one per release, until 100% of

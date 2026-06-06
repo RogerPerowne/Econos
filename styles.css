@@ -12035,6 +12035,70 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   line-height: var(--lh-normal);
 }
 
+/* ── Key points / takeaways — flat tiles with a tone bottom-border.
+   Replaces the inline grid in renderCardGeneric; same look but
+   token-driven, brand-palette accents and the tile-tier hover. ── */
+.key-points {
+  display: grid;
+  grid-template-columns: var(--kp-cols, repeat(auto-fit, minmax(0, 1fr)));
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  align-items: stretch;
+}
+.kp-tile {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-bottom: 4px solid var(--t-solid);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-4) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  transition: var(--hover-tr);
+}
+.kp-tile:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
+}
+.kp-tile__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.kp-tile__num {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--r-full);
+  background: var(--t-solid);
+  color: var(--econ-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-extrabold);
+  flex-shrink: 0;
+}
+.kp-tile__icon { font-size: var(--fs-xl); line-height: 1; flex-shrink: 0; }
+.kp-tile__title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-extrabold);
+  color: var(--t-ink);
+  letter-spacing: 0.01em;
+}
+.kp-tile__headline {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-ink);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--sp-2);
+}
+.kp-tile--minimal .kp-tile__headline { font-weight: var(--fw-medium); }
+.kp-tile__body {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-600);
+  line-height: var(--lh-relaxed);
+}
+
 
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(140%) blur(10px);

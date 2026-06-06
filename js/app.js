@@ -1910,18 +1910,22 @@
       const compare = c.keyPointsCompare && n === 2;
       const minimal = c.keyPointsStyle === 'minimal';
       const cols = compare ? '1fr auto 1fr' : `repeat(${c.keyPointsCols || n},1fr)`;
-      content += `<div style="display:grid;grid-template-columns:${cols};gap:14px;margin-bottom:26px;align-items:stretch;">`;
+      // Styling lives in the universal `.key-points` / `.kp-tile` CSS
+      // component (token-driven, tile-tier hover); see styles.css. The
+      // tone bottom-border/number/title now read the canonical brand
+      // palette via `.tone-*` rather than the off-brand PATTERN_TONES.
+      content += `<div class="key-points" style="--kp-cols:${cols};">`;
       const tiles = c.keyPoints.map((p, i) => {
-        const t = PATTERN_TONES[p.tone || kpTones[i % kpTones.length]];
+        const tone = 'tone-' + (p.tone || kpTones[i % kpTones.length]);
         return `
-          <div style="background:#fff;border:1px solid #E2E8F0;border-bottom:4px solid ${t.accent};border-radius:var(--r-md);padding:16px 18px 18px;display:flex;flex-direction:column;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-              ${(compare || minimal) ? '' : `<div style="width:26px;height:26px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);flex-shrink:0;">${i + 1}</div>`}
-              ${p.icon ? `<div style="font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(p.icon)}</div>` : ''}
-              <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};letter-spacing:0.01em;">${p.title}</div>
+          <div class="kp-tile ${tone}${minimal ? ' kp-tile--minimal' : ''}">
+            <div class="kp-tile__head">
+              ${(compare || minimal) ? '' : `<div class="kp-tile__num">${i + 1}</div>`}
+              ${p.icon ? `<div class="kp-tile__icon">${renderIcon(p.icon)}</div>` : ''}
+              <div class="kp-tile__title">${p.title}</div>
             </div>
-            ${p.headline ? `<div style="font-size:var(--fs-base);font-weight:${minimal ? '500' : '800'};color:#0F172A;line-height:var(--lh-normal);margin-bottom:8px;">${p.headline}</div>` : ''}
-            ${p.body ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-relaxed);">${p.body}</div>` : ''}
+            ${p.headline ? `<div class="kp-tile__headline">${p.headline}</div>` : ''}
+            ${p.body ? `<div class="kp-tile__body">${p.body}</div>` : ''}
           </div>`;
       });
       if (compare) {

@@ -115,8 +115,12 @@ type is one class.
   (`green / amber / blue / purple / rose / slate`) to any box and it inherits the
   brand palette via `--t-50 / --t-100 / --t-solid / --t-ink / --t-accent`. One
   source of truth; mirrors the JS `TONES`/`TONE_NAMES` tables but token-only.
-- **Migrated so far:** `.key-terms` / `.kt-tile` (definition tiles with a solid
-  tone header bar; tile-tier hover). More box types land one per release.
+- **Migrated so far:**
+  - `.key-terms` / `.kt-tile` — definition tiles with a solid tone header bar.
+  - `.key-points` / `.kp-tile` — takeaway tiles with a tone bottom-border
+    (`compare` / `minimal` variants supported).
+
+  Both carry the tile-tier hover. More box types land one per release.
 
 Data shapes are unchanged — only the renderer behind each box moves to the class.
 

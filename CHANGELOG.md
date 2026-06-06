@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.79.0 — 2026-06-06
+
+### Universal content boxes (2/n): Key takeaways
+
+The `keyPoints` takeaway tiles (flat tiles with a coloured bottom-border) move to
+the `.key-points` / `.kp-tile` component.
+
+- Same layout, padding rhythm, numbered circle, headline/body weights and the
+  `compare` / `minimal` variants — now token-driven with the tile-tier hover.
+- **Consistency fix:** the accent (bottom-border, number, title) now reads the
+  canonical brand palette via `.tone-*` instead of the off-brand `PATTERN_TONES`
+  (e.g. blue `#3B82F6` → brand `--econ-blue`, purple `#8B5CF6` → brand
+  `--econ-purple`), so these tiles match buttons / links / branch-tiles
+  elsewhere. Green is unchanged (already on-palette). Renderer drops to a
+  one-line class call; data shape unchanged.
+
+Before/after screenshot-verified (incl. the accent shift + hover). lint + 147
+unit tests + build green; cache econos-v388.
+
+
 ## 0.78.0 — 2026-06-06
 
 ### Universal content boxes (1/n): tone system + Key terms

@@ -11978,8 +11978,64 @@ a.stage { box-shadow: var(--shadow-card-rest); }
 .callout { transition: box-shadow 0.22s ease, border-color 0.18s ease; }
 .callout:hover { box-shadow: var(--shadow-lg); }
 
-/* ── Topbar polish — slightly tighter and more elegant ── */
-.topbar {
+/* ════════════════════════════════════════════════════════════
+   DESIGN LANGUAGE — CONTENT BOXES
+   The recurring boxes that appear on most cards (key terms, key
+   takeaways, lock-in, tips, …) were each hand-built with inline
+   styles in app.js and had drifted (hard-coded hex next to tokens,
+   mixed font-weights, wobbly margins). This is the universal,
+   token-only home for them: ONE tone system + one class per box
+   archetype, so styling is guaranteed not re-typed.
+
+   ── Tone system ──────────────────────────────────────────────
+   Add a `tone-<name>` class to any box and it inherits the brand
+   palette via these vars. One source of truth, mirrors the JS
+   TONES table but token-only.
+   ──────────────────────────────────────────────────────────── */
+.tone-green  { --t-50: var(--econ-green-50);  --t-100: var(--econ-green-100);  --t-solid: var(--econ-green);  --t-ink: var(--econ-green-700);  --t-accent: var(--econ-green-600); }
+.tone-amber  { --t-50: var(--econ-amber-50);  --t-100: var(--econ-amber-100);  --t-solid: var(--econ-amber);  --t-ink: var(--econ-amber-700);  --t-accent: var(--econ-amber-600); }
+.tone-blue   { --t-50: var(--econ-blue-50);   --t-100: var(--econ-blue-100);   --t-solid: var(--econ-blue);   --t-ink: var(--econ-blue-700);   --t-accent: var(--econ-blue-600); }
+.tone-purple { --t-50: var(--econ-purple-50); --t-100: var(--econ-purple-100); --t-solid: var(--econ-purple); --t-ink: var(--econ-purple-700); --t-accent: var(--econ-purple-600); }
+.tone-rose   { --t-50: var(--econ-rose-50);   --t-100: var(--econ-rose-100);   --t-solid: var(--econ-rose);   --t-ink: var(--econ-rose-700);   --t-accent: var(--econ-rose-600); }
+.tone-slate  { --t-50: var(--econ-slate-50);  --t-100: var(--econ-slate-100);  --t-solid: var(--econ-slate);  --t-ink: var(--econ-slate);      --t-accent: var(--econ-slate); }
+
+/* ── Key terms — definition tiles with a solid tone header bar.
+   Replaces the inline grid in renderCardGeneric; same look (tinted
+   body, solid header, white bold term) but token-driven + a real
+   faint border (the old `${t.border}30` was invalid CSS so no
+   border ever rendered) + the tile-tier hover. ── */
+.key-terms {
+  display: grid;
+  grid-template-columns: var(--kt-cols, repeat(auto-fit, minmax(180px, 1fr)));
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-7);
+}
+.kt-tile {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--t-50);
+  border: 1px solid var(--t-100);
+  transition: var(--hover-tr);
+}
+.kt-tile:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
+}
+.kt-tile__term {
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--t-solid);
+  color: var(--econ-white);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-sm);
+}
+.kt-tile__def {
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: var(--lh-normal);
+}
+
+
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);

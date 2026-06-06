@@ -154,6 +154,12 @@
     { bg: 'var(--econ-purple-50)', border: 'var(--econ-purple)', label: 'var(--econ-purple-600)', headerBg: 'var(--econ-purple)' }
   ];
 
+  /* Tone CSS-class names, same order as TONES, for the universal
+     `.tone-*` content-box system in styles.css (DESIGN LANGUAGE —
+     CONTENT BOXES). Lets a renderer pick a tone with one class
+     instead of inlining bg/border/header colours. */
+  const TONE_NAMES = ['tone-green', 'tone-amber', 'tone-blue', 'tone-purple'];
+
   function genSecLabel(emoji, text) {
     return `<div style="display:flex;align-items:center;gap:8px;font-weight:var(--fw-extrabold);font-size:var(--fs-2xs);letter-spacing:0.09em;text-transform:uppercase;color:var(--econ-ink);margin:24px 0 18px;">${renderIcon(emoji)} <span>${text}</span><div style="flex:1;height:1px;background:var(--econ-border);margin-left:6px;"></div></div>`;
   }
@@ -2986,18 +2992,18 @@
       });
     }
 
-    // Key terms – coloured tiles, definitions always visible, one row
+    // Key terms – definition tiles with a solid tone header bar.
+    // Styling lives in the universal `.key-terms` / `.kt-tile` CSS
+    // component (token-driven, hover-enabled); see styles.css.
     if (c.keyTerms && c.keyTerms.length) {
       content += genSecLabel(c.keyTermsEmoji || '🔑', c.keyTermsLabel || 'Key terms');
-      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.keyTerms.length, 180)};gap:12px;margin-bottom:28px;">
-        ${c.keyTerms.map((kt, i) => {
-          const t = TONES[i % TONES.length];
-          return `
-          <div style="border-radius:var(--r-lg);overflow:hidden;background:${t.bg};border:1px solid ${t.border}30;">
-            <div style="padding:10px 14px;background:${t.headerBg};color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-sm);">${kt.term}</div>
-            <div style="padding:12px 14px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${kt.def}</div>
-          </div>`;
-        }).join('')}
+      const cols = gridColumnsFor(c.keyTerms.length, 180);
+      content += `<div class="key-terms" style="--kt-cols:${cols};">
+        ${c.keyTerms.map((kt, i) => `
+          <div class="kt-tile ${TONE_NAMES[i % TONE_NAMES.length]}">
+            <div class="kt-tile__term">${kt.term}</div>
+            <div class="kt-tile__def">${kt.def}</div>
+          </div>`).join('')}
       </div>`;
     }
 

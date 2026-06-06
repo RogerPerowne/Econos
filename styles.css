@@ -12203,35 +12203,39 @@ a.stage { box-shadow: var(--shadow-card-rest); }
    Replaces inline renderers; uses --t-accent for the strong elements
    (border-left + icon) so green-600 / amber-600 match the originals
    exactly. `--display` body = Fraunces (conclusion). Note-tier hover. ── */
+/* ── Callout band — the conclusion / balanced-note verdict bands. Shares
+   the exam-edge treatment so the full-width verdict-band family is visually
+   consistent: generous padding, subtle tone gradient, 1.5px border + 4px
+   left accent, 32px icon, bold uppercase label, Inter body. ── */
 .callout-band {
   display: flex;
   gap: var(--sp-4);
   align-items: flex-start;
-  background: var(--t-50);
-  border: 1px solid var(--t-100);
+  background: linear-gradient(135deg, var(--t-50), var(--t-100));
+  border: 1.5px solid var(--t-100);
   border-left: 4px solid var(--t-accent);
   border-radius: var(--r-lg);
-  padding: var(--sp-3) var(--sp-4);
+  padding: var(--sp-5);
   margin-bottom: var(--sp-5);
   transition: box-shadow 0.22s ease, border-color 0.18s ease;
 }
 .callout-band:hover { box-shadow: var(--shadow-lg); }
 .callout-band__icon {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--r-full);
   background: var(--t-accent);
   color: var(--econ-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--fs-base);
+  font-size: var(--fs-md);
   flex-shrink: 0;
 }
 .callout-band__body { flex: 1; }
 .callout-band__label {
   font-size: var(--fs-xs);
-  font-weight: var(--fw-extrabold);
+  font-weight: var(--fw-bold);
   color: var(--t-ink);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -12241,12 +12245,6 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   font-size: var(--fs-base);
   color: var(--econ-ink);
   line-height: var(--lh-relaxed);
-}
-.callout-band__text--display {
-  font-family: var(--font-display);
-  font-variation-settings: var(--fraunces-section);
-  font-size: var(--fs-md);
-  line-height: var(--lh-snug);
 }
 
 /* ── Steps — numbered sequential cards with a tone left-accent.

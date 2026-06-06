@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.90.0 — 2026-06-06
+
+### Verdict-band consistency: conclusion/balanced-note match exam-edge
+
+Fixes a reported inconsistency: the full-width verdict bands had drifted apart —
+the conclusion / balanced-note (`.callout-band`) were smaller (tighter padding,
+30px icon, flat bg, extrabold label) and the conclusion used a serif (Fraunces)
+body, so they didn't match the nicer exam-edge / key-takeaway treatment.
+
+`.callout-band` now shares the exam-edge treatment exactly: generous `--sp-5`
+padding, a subtle tone gradient (`--t-50 → --t-100`), 1.5px border + the 4px
+left accent, a 32px icon, a bold uppercase label, and an **Inter** body (the
+Fraunces `--display` variant is dropped — that was the "wrong font"). The four
+full-width verdict bands (exam-edge / key-takeaway / conclusion / balanced-note)
+are now visually uniform. Data shapes unchanged.
+
+Before/after screenshot-verified (family side-by-side). lint + 147 unit tests +
+build green; cache econos-v399.
+
+
 ## 0.89.0 — 2026-06-06
 
 ### Universal content boxes (11/n): diagram grid

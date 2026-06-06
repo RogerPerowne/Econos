@@ -126,9 +126,11 @@ type is one class.
   - `.tone-callout` — the tip / note / tipLate inline box (round accent icon +
     optional head + text); one `renderToneCallout` helper drives all three;
     note-tier hover.
-  - `.callout-band` — the conclusion (green) / balanced-note (amber) verdict bands
-    (left accent + icon + uppercase label + body; conclusion uses Fraunces via
-    `--display`); `renderCalloutBand` helper; note-tier hover.
+  - `.callout-band` — the conclusion (green) / balanced-note (amber) verdict bands;
+    shares the **exam-edge treatment** (generous padding, subtle tone gradient,
+    1.5px border + 4px left accent, 32px icon, bold label, Inter body) so the
+    full-width verdict-band family (exam-edge / key-takeaway / conclusion /
+    balanced-note) is visually consistent; `renderCalloutBand` helper.
   - `.step` — numbered sequential cards with a tone left-accent (tone cycles by
     index); tile-tier hover.
   - `.body-box` — definition/lead-text box (plain spacious reading variant +

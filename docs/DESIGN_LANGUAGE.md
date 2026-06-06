@@ -123,6 +123,9 @@ type is one class.
     (note-tier hover).
   - `.exam-edge` / `.key-takeaway` — the closing-pair callouts (already
     class-based); each hover deepens its own coloured glow (purple / amber).
+  - `.tone-callout` — the tip / note / tipLate inline box (round accent icon +
+    optional head + text); one `renderToneCallout` helper drives all three;
+    note-tier hover.
 
   Tiles carry the tile-tier hover; full-width strips the note-tier; the
   closing-pair callouts deepen their own glow. More box types land one per

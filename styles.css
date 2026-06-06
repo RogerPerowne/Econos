@@ -12294,6 +12294,45 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   line-height: var(--lh-relaxed);
 }
 
+/* ── Body box — the definition/lead-text box. Plain variant = spacious
+   reading block; --tone variant = tinted with an accent icon. Replaces
+   the inline blocks; token-driven (14.5px → --fs-base, PATTERN accent →
+   brand --t-accent). The plain reading line-height (1.8) is a considered
+   long-form value with no scale token. Note-tier hover. ── */
+.body-box {
+  margin-bottom: var(--sp-5);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  font-size: var(--fs-base);
+  line-height: 1.8;
+  color: var(--econ-ink);
+  transition: box-shadow 0.22s ease, border-color 0.18s ease;
+}
+.body-box:hover { box-shadow: var(--shadow-md); }
+.body-box--tone {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  background: var(--t-50);
+  border-color: var(--t-100);
+  line-height: var(--lh-relaxed);
+}
+.body-box__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-full);
+  background: var(--t-accent);
+  color: var(--econ-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-lg);
+  flex-shrink: 0;
+}
+.body-box__text { flex: 1; }
+
 /* ── Topbar polish — slightly tighter and more elegant ── */
 .topbar {
   background: rgba(255, 255, 255, 0.85);

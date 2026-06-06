@@ -2153,17 +2153,10 @@
     if (c.body) {
       if (c.bodyLabel) content += genSecLabel(c.bodyEmoji || '📝', c.bodyLabel);
       if (c.bodyTone) {
-        const bt = PATTERN_TONES[c.bodyTone] || PATTERN_TONES.blue;
-        content += `
-          <div style="display:flex;align-items:flex-start;gap:14px;background:${bt.bg};border:1px solid ${bt.border};border-radius:var(--r-lg);padding:18px 20px;margin-bottom:22px;">
-            ${c.bodyIcon ? `<div style="width:40px;height:40px;border-radius:50%;background:${bt.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${c.bodyIcon}</div>` : ''}
-            <div style="font-size:14.5px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${c.body}</div>
-          </div>`;
+        const iconHtml = c.bodyIcon ? `<div class="body-box__icon">${renderIcon(c.bodyIcon)}</div>` : '';
+        content += `<div class="body-box body-box--tone tone-${c.bodyTone}">${iconHtml}<div class="body-box__text">${c.body}</div></div>`;
       } else {
-        content += `
-          <div style="font-size:var(--fs-base);line-height:1.8;color:var(--econ-ink);margin-bottom:22px;padding:18px 20px;background:#FAFBFF;border-radius:var(--r-lg);border:1px solid #E7E7EA;">
-            ${c.body}
-          </div>`;
+        content += `<div class="body-box">${c.body}</div>`;
       }
     }
 

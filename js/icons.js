@@ -14263,96 +14263,126 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* firmGrowthFlywheel – Card 4 "Why other firms grow". A 5-node circular
-     flywheel (higher profit → reinvestment → more capacity → more sales →
-     higher profit) with INTERNAL growth feeding in from the left (retained
-     profit) and EXTERNAL growth feeding in from the right (mergers /
-     takeovers). Pure SVG so the geometry is locked. */
+  /* firmGrowthFlywheel – Card 4 "Why other firms grow". A 4-node closed-loop
+     flywheel showing the self-reinforcing cycle of growth (PROFIT →
+     REINVEST → SCALE → MARKET POWER → back to PROFIT) at compass points
+     around a halo-rimmed hub; dashed tone-matched arcs sweep clockwise
+     like spokes turning. Two ROUTES IN occupy the diagonal corner space
+     (Organic top-right, M&A bottom-left) with curved dashed feeder
+     arrows joining the cycle at the matching transitions. Shares the
+     hub family's grammar (soft halo, dashed connectors, numbered
+     badges, tile shadows). */
   firmGrowthFlywheel: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <defs>
-          <marker id="fw-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
-          <marker id="fw-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>
-          <marker id="fw-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
-          <marker id="fw-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
-        </defs>
+    <div class="fwheel" style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fwheel .fw-core { position:relative; aspect-ratio:600/360; width:100%; max-width:600px; margin:0 auto; }
+        .fwheel .fw-arcs { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; overflow:visible; }
+        .fwheel .fw-tile { position:absolute; box-sizing:border-box; border-radius:13px; padding:9px 12px; box-shadow:0 1px 3px rgba(15,23,42,0.04); display:flex; gap:9px; align-items:flex-start; z-index:1; }
+        .fwheel .fw-tile.fw-n, .fwheel .fw-tile.fw-s { width:32%; left:50%; transform:translateX(-50%); }
+        .fwheel .fw-tile.fw-n { top:0; }
+        .fwheel .fw-tile.fw-s { bottom:0; }
+        .fwheel .fw-tile.fw-e, .fwheel .fw-tile.fw-w { width:28%; top:50%; transform:translateY(-50%); }
+        .fwheel .fw-tile.fw-e { right:0; }
+        .fwheel .fw-tile.fw-w { left:0; }
+        .fwheel .fw-num { position:absolute; top:-8px; left:-8px; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); border:2px solid #fff; z-index:2; }
+        .fwheel .fw-ic { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .fwheel .fw-t { font-size:12.5px; font-weight:800; line-height:1.2; }
+        .fwheel .fw-s-text { font-size:11px; color:#475569; line-height:1.4; margin-top:2px; }
 
-        <!-- Centre hub: "The flywheel" -->
-        <circle cx="380" cy="210" r="78" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2.2"/>
-        <text x="380" y="194" font-size="26" text-anchor="middle">🔁</text>
-        <text x="380" y="220" font-size="14" font-weight="800" fill="#0B1426" font-family="Fraunces,Georgia,serif" text-anchor="middle">The flywheel</text>
-        <text x="380" y="244" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Growth builds on</text>
-        <text x="380" y="258" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">itself over time.</text>
+        .fwheel .fw-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:96px; height:96px; border-radius:50%; background:#fff; border:1.5px solid #E2E8F0; box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10); display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:2; padding:6px; }
+        .fwheel .fw-hub-emoji { font-size:24px; line-height:1; }
+        .fwheel .fw-hub-t { font-size:11px; font-weight:800; color:#0B1426; font-family:Fraunces,Georgia,serif; margin-top:4px; text-align:center; line-height:1.15; }
 
-        <!-- Five circulating nodes around the hub (clockwise from 12) -->
-        <!-- 1 Higher profit (top, green) -->
-        <circle cx="380" cy="74" r="42" fill="#ECFDF5" stroke="#86EFAC" stroke-width="2"/>
-        <text x="380" y="68" font-size="20" text-anchor="middle">📈</text>
-        <text x="380" y="92" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Higher</text>
-        <text x="380" y="106" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">profit</text>
-        <circle cx="406" cy="48" r="13" fill="#059669"/>
-        <text x="406" y="52" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+        .fwheel .fw-route { position:absolute; width:28%; padding:9px 11px; border-radius:12px; box-shadow:0 1px 3px rgba(15,23,42,0.04); z-index:1; }
+        .fwheel .fw-route-h { display:flex; align-items:center; gap:8px; }
+        .fwheel .fw-route-ic { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.1); flex-shrink:0; }
+        .fwheel .fw-route-eyebrow { font-size:9px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; line-height:1; margin-bottom:2px; }
+        .fwheel .fw-route-t { font-size:12px; font-weight:800; line-height:1.15; }
+        .fwheel .fw-route-s { font-size:10.5px; color:#334155; line-height:1.4; margin-top:5px; }
+        .fwheel .fw-route.fw-route-tr { top:0; right:0; }
+        .fwheel .fw-route.fw-route-bl { bottom:0; left:0; }
 
-        <!-- 2 Reinvestment (right, amber) -->
-        <circle cx="510" cy="158" r="42" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
-        <text x="510" y="152" font-size="20" text-anchor="middle">£</text>
-        <text x="510" y="176" font-size="11.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Reinvestment</text>
-        <circle cx="536" cy="132" r="13" fill="#D97706"/>
-        <text x="536" y="136" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+        @media (max-width:540px){
+          .fwheel .fw-core { aspect-ratio:auto; padding:6px 0; }
+          .fwheel .fw-arcs { display:none; }
+          .fwheel .fw-tile, .fwheel .fw-route { position:static; transform:none; width:auto; margin-bottom:8px; }
+          .fwheel .fw-tile.fw-n, .fwheel .fw-tile.fw-s, .fwheel .fw-tile.fw-e, .fwheel .fw-tile.fw-w { width:auto; }
+          .fwheel .fw-hub { position:static; transform:none; margin:8px auto; }
+        }
+      </style>
 
-        <!-- 3 More capacity / better quality (bottom-right, purple) -->
-        <circle cx="492" cy="306" r="44" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
-        <text x="492" y="298" font-size="19" text-anchor="middle">⚙️</text>
-        <text x="492" y="320" font-size="10.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">More capacity</text>
-        <text x="492" y="334" font-size="10.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">or better quality</text>
-        <circle cx="518" cy="280" r="13" fill="#7C3AED"/>
-        <text x="518" y="284" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+      <div class="fw-core">
+        <svg class="fw-arcs" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <marker id="fly-arr-green"  viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34D399"/></marker>
+            <marker id="fly-arr-amber"  viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#FB923C"/></marker>
+            <marker id="fly-arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#A78BFA"/></marker>
+            <marker id="fly-arr-blue"   viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#60A5FA"/></marker>
+            <marker id="fly-feed-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>
+            <marker id="fly-feed-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>
+          </defs>
+          <!-- Four cycle arcs: quadrant segments of a circle radius 105 around
+               centre (300, 180). Each spans 50° in the corner between two
+               cardinal tiles, leaving 40° gaps for the tile to sit. Going
+               clockwise: N→E green, E→S amber, S→W purple, W→N blue. -->
+          <path d="M 336 81  A 105 105 0 0 1 399 144" fill="none" stroke="#34D399" stroke-width="1.8" stroke-dasharray="4 3" stroke-linecap="round" marker-end="url(#fly-arr-green)"/>
+          <path d="M 399 216 A 105 105 0 0 1 336 279" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-dasharray="4 3" stroke-linecap="round" marker-end="url(#fly-arr-amber)"/>
+          <path d="M 264 279 A 105 105 0 0 1 201 216" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-dasharray="4 3" stroke-linecap="round" marker-end="url(#fly-arr-purple)"/>
+          <path d="M 201 144 A 105 105 0 0 1 264 81"  fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-dasharray="4 3" stroke-linecap="round" marker-end="url(#fly-arr-blue)"/>
+          <!-- Route feeders: dashed curves from each corner panel into the
+               cycle at the nearest arc midpoint (TR→green-arc, BL→purple-arc). -->
+          <path d="M 446 64 Q 410 80 374 106" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="3 2.5" stroke-linecap="round" marker-end="url(#fly-feed-green)"/>
+          <path d="M 154 296 Q 195 280 226 254" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="3 2.5" stroke-linecap="round" marker-end="url(#fly-feed-amber)"/>
+        </svg>
 
-        <!-- 4 More sales (bottom-left, blue) -->
-        <circle cx="268" cy="306" r="42" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-        <text x="268" y="298" font-size="20" text-anchor="middle">🛒</text>
-        <text x="268" y="324" font-size="11.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">More sales</text>
-        <circle cx="242" cy="280" r="13" fill="#2563EB"/>
-        <text x="242" y="284" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+        <div class="fw-tile fw-n" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <span class="fw-num" style="background:#059669;">1</span>
+          <div class="fw-ic">📈</div>
+          <div><div class="fw-t" style="color:#065F46;">Higher profit</div><div class="fw-s-text">Retained earnings.</div></div>
+        </div>
+        <div class="fw-tile fw-e" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <span class="fw-num" style="background:#D97706;">2</span>
+          <div class="fw-ic">💰</div>
+          <div><div class="fw-t" style="color:#C2410C;">Reinvest</div><div class="fw-s-text">Capacity, R&amp;D, brand.</div></div>
+        </div>
+        <div class="fw-tile fw-s" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <span class="fw-num" style="background:#7C3AED;">3</span>
+          <div class="fw-ic">⚙️</div>
+          <div><div class="fw-t" style="color:#5B21B6;">Scale &amp; lower costs</div><div class="fw-s-text">Economies of scale.</div></div>
+        </div>
+        <div class="fw-tile fw-w" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <span class="fw-num" style="background:#2563EB;">4</span>
+          <div class="fw-ic">👑</div>
+          <div><div class="fw-t" style="color:#1E3A8A;">Market power</div><div class="fw-s-text">Pricing strength.</div></div>
+        </div>
 
-        <!-- 5 Higher profit (top-left, green) -->
-        <circle cx="250" cy="158" r="42" fill="#ECFDF5" stroke="#86EFAC" stroke-width="2"/>
-        <text x="250" y="152" font-size="20" text-anchor="middle">📈</text>
-        <text x="250" y="176" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Higher</text>
-        <text x="250" y="190" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">profit</text>
-        <circle cx="276" cy="132" r="13" fill="#059669"/>
-        <text x="276" y="136" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">5</text>
+        <div class="fw-route fw-route-tr" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="fw-route-h">
+            <div class="fw-route-ic">🌱</div>
+            <div>
+              <div class="fw-route-eyebrow" style="color:#059669;">Route in</div>
+              <div class="fw-route-t" style="color:#065F46;">Organic</div>
+            </div>
+          </div>
+          <div class="fw-route-s">Reinvest retained profit.</div>
+        </div>
 
-        <!-- Curved arrows joining the cycle (1→2→3→4→5→1) -->
-        <path d="M 420 90 Q 470 108 488 120" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#fw-arr-green)"/>
-        <path d="M 524 196 Q 522 252 510 268" fill="none" stroke="#D97706" stroke-width="2.2" marker-end="url(#fw-arr-amber)"/>
-        <path d="M 448 320 Q 380 340 312 320" fill="none" stroke="#7C3AED" stroke-width="2.2" marker-end="url(#fw-arr-purple)"/>
-        <path d="M 250 268 Q 238 244 250 200" fill="none" stroke="#2563EB" stroke-width="2.2" marker-end="url(#fw-arr-blue)"/>
-        <path d="M 288 124 Q 320 96 340 84" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#fw-arr-green)"/>
+        <div class="fw-route fw-route-bl" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="fw-route-h">
+            <div class="fw-route-ic">🤝</div>
+            <div>
+              <div class="fw-route-eyebrow" style="color:#D97706;">Route in</div>
+              <div class="fw-route-t" style="color:#C2410C;">M&amp;A</div>
+            </div>
+          </div>
+          <div class="fw-route-s">Buy or merge for instant scale.</div>
+        </div>
 
-        <!-- Internal growth annotation (left, green dashed feed) -->
-        <g>
-          <rect x="14" y="186" width="156" height="64" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="38" cy="218" r="14" fill="#fff" stroke="#86EFAC"/>
-          <text x="38" y="223" font-size="14" text-anchor="middle">📊</text>
-          <text x="58" y="208" font-size="11.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Internal growth –</text>
-          <text x="58" y="222" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">expand from</text>
-          <text x="58" y="236" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">retained profit.</text>
-          <path d="M 174 218 Q 200 188 246 168" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fw-arr-green)"/>
-        </g>
-
-        <!-- External growth annotation (right, amber dashed feed) -->
-        <g>
-          <rect x="590" y="186" width="156" height="64" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
-          <circle cx="614" cy="218" r="14" fill="#fff" stroke="#FDBA74"/>
-          <text x="614" y="223" font-size="14" text-anchor="middle">🏛️</text>
-          <text x="634" y="208" font-size="11.5" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">External growth –</text>
-          <text x="634" y="222" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">mergers or</text>
-          <text x="634" y="236" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">takeovers.</text>
-          <path d="M 586 218 Q 562 188 514 168" fill="none" stroke="#D97706" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fw-arr-amber)"/>
-        </g>
-      </svg>
+        <div class="fw-hub">
+          <div class="fw-hub-emoji">🔁</div>
+          <div class="fw-hub-t">Growth<br/>flywheel</div>
+        </div>
+      </div>
     </div>
   `,
 

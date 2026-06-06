@@ -6,6 +6,35 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.8 – 2026-06-06
+
+### Growth flywheel – mobile collapse fix + redesign
+
+The v0.73.7 flywheel rendered correctly on desktop but broke on
+mobile: the cardinal tiles got statically stacked but their orphan
+`transform:translateX(-50%)` rules (left over from absolute mode)
+slid each one half its own width off-screen, hiding tile ①. Root
+cause was CSS specificity — the desktop transforms lived on
+`.fwheel .fw-tile.fw-n` (0,3,0) and the mobile reset on the lower
+`.fwheel .fw-tile` (0,2,0) lost the cascade.
+
+Fixes (and improvements while we were in there):
+
+- Match desktop specificity in the media query so transforms,
+  widths, and inset properties actually reset (no `!important`).
+- Restructure mobile layout via flex `order`: hub at top (acts as
+  diagram title), cycle tiles ①→②→③→④ in order, a "↻ CYCLES BACK
+  TO ①" divider hint, then the two ROUTES IN side-by-side at the
+  bottom. Conveys the flywheel concept in a narrow column.
+- Routes wrapped in a `.fw-routes` container — `display:contents`
+  on desktop so it's a transparent grouping, becomes a horizontal
+  flex on mobile.
+- Hub halo softened slightly on mobile (lighter box-shadow).
+- Add `mobile-driver.mjs` to the `run-econos` skill — same flow as
+  the desktop driver but at iPhone 390×844 viewport with isMobile
+  context, so we can verify mobile renders without leaving the
+  container.
+
 ## 0.73.7 – 2026-06-06
 
 ### Growth flywheel – redesigned to fix duplicate node + sharpen the cycle

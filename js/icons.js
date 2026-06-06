@@ -14183,7 +14183,7 @@ window.ECONOS_ICONS = {
             <div class="fh-ic">🏛️</div>
             <div><div><span class="fh-num" style="color:#7C3AED;">4</span><span class="fh-t" style="color:#5B21B6;">Capital employed</span></div><div class="fh-s">Value of assets used.</div></div>
           </div>
-          <div class="fh-bottom"><div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;width:100%;">
+          <div class="fh-bottom"><div class="fh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
             <div class="fh-ic">🥧</div>
             <div><div><span class="fh-num" style="color:#059669;">5</span><span class="fh-t" style="color:#065F46;">Market share</span></div><div class="fh-s">Proportion of total market sales.</div></div>
           </div></div>

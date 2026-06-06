@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.6 – 2026-06-05
+
+### 5-tile hub – bottom tile actually narrows now
+
+Follow-up bug fix. The previous v0.73.5 attempt to narrow the 5-tile
+hub's bottom tile (via a `width:36%` CSS rule) was silently overridden
+by an inline `style="...width:100%;..."` on the tile element. Removed
+the inline override; the cascading rule now takes effect and the
+bottom "Market share" tile renders at 36% wide, centred, matching the
+side tiles exactly. The dot at `top:71%` stays correctly positioned at
+the now-narrower tile's top edge.
+
+### Service worker
+- Cache bumped to `econos-v376` (shared `icons.js` changed).
+
 ## 0.73.5 – 2026-06-05
 
 ### Theme 3 hubs – narrower coloured boxes + fix the 5-tile bottom

@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.88.0 — 2026-06-06
+
+### Universal content boxes (10/n): method grid + mobile-collapse fix
+
+The `methodGrid`/`methodGrid2` cards move to the `.method-grid` / `.method-card`
+component (tone header + body + example; brand-palette accents; tile-tier hover).
+Data shapes unchanged.
+
+**Mobile fix:** the migrated content grids set their column count via a `--*-cols`
+custom property, which the site's universal inline-grid reflow (`[style*="grid-
+template-columns:repeat"]`) doesn't match — so `.key-terms`, `.key-points`,
+`.summary-row` (and now `.method-grid`) stopped collapsing to one column on
+phones. Added an explicit `≤600px → 1fr` rule for the grid family. (Regression
+from the box-migration series; caught via a computed-style mobile check.)
+
+Before/after screenshot-verified (desktop + hover) + mobile collapse confirmed
+(single column at 375px). lint + 147 unit tests + build green; cache econos-v397.
+
+
 ## 0.87.0 — 2026-06-06
 
 ### Universal content boxes (9/n): summary row

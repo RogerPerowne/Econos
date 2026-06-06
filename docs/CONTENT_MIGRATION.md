@@ -51,7 +51,7 @@ continues — keep it current):
 | `tip` / `note` / `tipLate` | string or `{ text, head?, icon?, tone? }` | `.tone-callout.tone-* > .tone-callout__icon + __body(__head?, __text)` |
 | `examEdge` | string or `{ title?, text }` | `.exam-edge > .exam-edge__star + __body(__label,__title?,__text)` |
 | `keyTakeaway` | string or `{ title?, text }` | `.key-takeaway > .key-takeaway__star + __body(__label,__text)` |
-| `conclusion` / `balancedNote` | string or `{ title?, text }` | `.callout-band.tone-{green\|amber} > .callout-band__icon + __body(__label, __text[--display])` |
+| `conclusion` / `balancedNote` | string or `{ title?, text }` | `.callout-band.tone-{green\|amber} > .callout-band__icon + __body(__label, __text)` (exam-edge treatment) |
 | `steps` | `[{ head\|label, body\|text }]` | `.step.tone-* > .step__num + (.step__head, .step__body)` (tone cycles by index) |
 | `body` (+ `bodyTone`, `bodyIcon`) | string (HTML) | `.body-box` (plain) or `.body-box.body-box--tone.tone-* > .body-box__icon? + .body-box__text` |
 | `summaryRow` | `[{ title, tone?, icon?, text?, items?:[string] }]` (≤3) | `.summary-row > .summary-cell.tone-* > .summary-cell__head(__icon?,__title) + __text? + __list>__item>__bullet` |

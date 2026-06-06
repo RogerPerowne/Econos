@@ -186,13 +186,12 @@
      { tone, icon, label, text, display? } — display:true uses the
      Fraunces body (conclusion). */
   function renderCalloutBand(opts) {
-    const textCls = 'callout-band__text' + (opts.display ? ' callout-band__text--display' : '');
     return `
       <div class="callout-band tone-${opts.tone}">
         <div class="callout-band__icon">${opts.icon}</div>
         <div class="callout-band__body">
           <div class="callout-band__label">${opts.label}</div>
-          <div class="${textCls}">${opts.text}</div>
+          <div class="callout-band__text">${opts.text}</div>
         </div>
       </div>`;
   }

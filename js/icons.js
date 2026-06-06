@@ -14149,7 +14149,7 @@ window.ECONOS_ICONS = {
         .fhub-5 .fh-num { font-size:13px; font-weight:800; margin-right:6px; }
         .fhub-5 .fh-t { font-size:14px; font-weight:800; line-height:1.2; display:inline; }
         .fhub-5 .fh-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
-        @media (max-width:600px){ .fhub-5 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .fhub-5 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-5 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-5 .fh-bottom { margin-top:0; } .fhub-5 .fh-bottom .fh-tile{ max-width:none; } .fhub-5 .fh-conn{ display:none; } .fhub-5 .fh-dots{ display:none; } }
+        @media (max-width:600px){ .fhub-5 .fh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:10px; } .fhub-5 .fh-center{ position:static; transform:none; margin:6px auto; } .fhub-5 .fh-center-wrap{ order:99; display:flex; justify-content:center; } .fhub-5 .fh-bottom { margin-top:0; } .fhub-5 .fh-bottom .fh-tile{ width:auto; max-width:none; flex:1; } .fhub-5 .fh-conn{ display:none; } .fhub-5 .fh-dots{ display:none; } }
       </style>
       <div style="position:relative;max-width:740px;margin:0 auto;">
         <svg class="fh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">

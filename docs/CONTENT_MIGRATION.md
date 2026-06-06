@@ -62,9 +62,11 @@ continues — keep it current):
 | `comparison` | `{ title?, emoji?, vs?, resultJoin?, left, right, result? }` (side = `{ label, tone?, icon?, value?, caption?, chips? }`) | `.gen-comparison[--triple] > .gen-comparison__card.tone-* (__ring,__label,__value?,__caption?,__chips>__chip) split by __op>__badge` |
 | `flow` / `flowBottom` | `[{ title, icon?, sub?, tone?, status?:'pass'\|'fail'\|'warn' }]` | `.flow-chain > .flow-step.tone-* (__num,__icon[+__badge--pass\|fail\|warn],__title,__sub?,__connector)` — no hover (connected diagram) |
 
-(Boxes not yet migrated still render via inline styles in `app.js`; they are being
-moved onto this same `.tone-*` + token system, one per release, until 100% of
-boxes are token-driven and the off-brand `PATTERN_TONES` palette is retired.)
+The long-tail inline boxes not in the table above (causes grids, continuum, factor
+engine, interactive diagram, diagram panel, illustrated grid) are **token-driven
+and on-brand** too: their JS `PATTERN_TONES` palette now references the brand
+`--econ-*` tokens (same values as `.tone-*`), so colour is never a hard-coded hex.
+For .NET, treat their `tone` field the same way (semantic name → `econ_tone`).
 
 ## Step 3 — Reproduce the rendering (two options)
 

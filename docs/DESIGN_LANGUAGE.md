@@ -103,6 +103,25 @@ Reusable, token-built UI pieces (`styles.css` + `js/app.js`):
 
 ---
 
+## Content boxes
+
+The recurring boxes that appear on most cards (key terms, key takeaway, lock-in,
+tips, …) are being moved off bespoke inline styles into one universal, token-only
+home in `styles.css` ("DESIGN LANGUAGE — CONTENT BOXES"). Goal: styling is
+*guaranteed, not re-typed* — fix the box once, every card updates; adding a box
+type is one class.
+
+- **Tone system** — add a `tone-<name>` class
+  (`green / amber / blue / purple / rose / slate`) to any box and it inherits the
+  brand palette via `--t-50 / --t-100 / --t-solid / --t-ink / --t-accent`. One
+  source of truth; mirrors the JS `TONES`/`TONE_NAMES` tables but token-only.
+- **Migrated so far:** `.key-terms` / `.kt-tile` (definition tiles with a solid
+  tone header bar; tile-tier hover). More box types land one per release.
+
+Data shapes are unchanged — only the renderer behind each box moves to the class.
+
+---
+
 ## Hover interactions
 
 Modelled on the home-page topic box (`.topic` in `index.css`) — a small

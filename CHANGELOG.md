@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.78.0 — 2026-06-06
+
+### Universal content boxes (1/n): tone system + Key terms
+
+Start of turning the recurring card boxes (key terms, key takeaway, lock-in,
+tips, …) — until now each hand-built with inline styles in `app.js` and drifted
+(hard-coded hex next to tokens, mixed weights, wobbly margins) — into one
+universal, token-only CSS home. One box type per release, each verified against
+the old look.
+
+- **Tone system** — reusable `.tone-{green,amber,blue,purple,rose,slate}`
+  classes expose the brand palette as `--t-50 / -100 / -solid / -ink / -accent`.
+  One source of truth; pick a tone with a single class instead of inlining
+  bg/border/header colours.
+- **Key terms** — now the `.key-terms` / `.kt-tile` component. Same look (tinted
+  body, solid tone header, white bold term) but token-driven, with the tile-tier
+  hover and a real faint border — the old `${t.border}30` produced invalid CSS
+  so no border ever rendered. Renderer drops from ~10 inline-styled lines to a
+  one-line class call; data shape unchanged.
+
+Before/after screenshot-verified (desktop + hover). lint + 147 unit tests +
+build green; cache econos-v387.
+
+
 ## 0.77.0 — 2026-06-06
 
 ### Design language: centralised hover interactions + smartphone polish

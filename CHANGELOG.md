@@ -6,6 +6,64 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.74.0 – 2026-06-06
+
+### Business Objectives – new 7-card topic (Edexcel A 3.2.1)
+
+Ships the full Learn It build for the *Business Objectives* topic
+under Theme 3 (Edexcel A 3.2.1, Edexcel B 1.1.2, AQA 4.1.5.2, OCR
+3.1). Pattern plan signed off before build, each card a distinct
+storytelling idiom — no two consecutive patterns repeat:
+
+1. **The big picture** – Decompose (5-spoke hub: Survival on top,
+   Sales / Profit / Growth / Social-and-ethical in 2x2 around a
+   "Business objectives" hub) + 4-tile WHY OBJECTIVES DIFFER +
+   canonical numbered/dotted 6-step lifecycle flow.
+2. **Survival first** – Sequential flow chain (canonical
+   Sales → Cash inflow → Bills paid → Business survives) +
+   three supporting tile grids.
+3. **Sales, profit and satisficing** – Comparison table with
+   three bespoke mini-visuals side-by-side: a rising bar chart
+   for sales maximisation, the `Profit = revenue − cost` formula
+   for profit maximisation, and a multi-coloured gradient gauge
+   pointing at "Good enough" for satisficing. Don't-mix-them-up
+   caveat strip at the bottom.
+4. **Growth and market share** – Evidence-then-verdict, decorated
+   with a bespoke `marketShareBar` (4-segment stacked bar with an
+   amber brace highlighting Firm A's growing slice). 4-tile
+   trade-offs grid for the verdict half.
+5. **Who decides the objective?** – Side-by-side pair (Owners vs
+   Managers) as the heart, supported by a 6-spoke `whoWantsWhatHub`
+   (Managers / Owners / Workers across the top, Customers / hub /
+   Government in the middle, Communities below) and a canonical
+   3-step Separation → Different incentives → Different objectives
+   causal chain.
+6. **Social, ethical, environmental objectives** – Tile grid (6-tile
+   CSR menu, 2 cols to keep titles readable) + canonical 4-step
+   "WHY FIRMS CHOOSE THESE OBJECTIVES" flow + bespoke
+   `csrTradeOffPair` (orange "Possible costs now" panel ↔ scales
+   icon ↔ green "Possible gains later" panel with dashed tone-
+   matched feeder arrows).
+7. **The whole story** – Evidence-then-verdict synthesis with a
+   bespoke `objectivesJourney` (6-circle lifecycle from Start-up to
+   Wider social goals across the top) + 5-step numbered procedural
+   "THE EXAM CHAIN" + Why-it-fits vs Why-still-qualify pair.
+
+Six new visuals shipped in `js/icons.js`: `businessObjectivesMap`,
+`whoWantsWhatHub`, `threeClassicObjectives`, `marketShareBar`,
+`csrTradeOffPair`, `objectivesJourney`. All adopt the refined hub
+family grammar (halo-rimmed centres, dashed tone-matched connectors,
+end-point dots, tile shadows) where applicable.
+
+Pedagogy note: ships BEFORE 3.3 (revenue, costs and profits), so
+profit-maximisation is explained in plain English ("the biggest gap
+between money in and money out") rather than MR=MC machinery. The
+inline `Profit = revenue − cost` formula tile is the closest the
+topic comes to a formal definition — formal MR/MC and the revenue
+chain are deferred to 3.3 where they belong.
+
+Bump CACHE_NAME to v381.
+
 ## 0.73.8 – 2026-06-06
 
 ### Growth flywheel – mobile collapse fix + redesign

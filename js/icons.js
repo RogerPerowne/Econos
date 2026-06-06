@@ -14422,6 +14422,436 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     BUSINESS OBJECTIVES (Theme 3 · 3.2.1) – six bespoke visuals
+     ============================================================ */
+
+  /* businessObjectivesMap – Card 1 "Business objectives, the big
+     picture". 5-spoke hub: SURVIVAL centred above a 2x2 grid of
+     SALES REVENUE / PROFIT / GROWTH / SOCIAL & ETHICAL AIMS, with
+     the "Business objectives" hub anchored at the centre of the
+     2x2. Same hub-family grammar (halo centre, dashed tone-matched
+     connectors, end-point dots, tile shadows). */
+  businessObjectivesMap: `
+    <div class="bom" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bom .bom-shell { position:relative; max-width:740px; margin:0 auto; }
+        .bom .bom-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .bom .bom-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .bom .bom-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
+        .bom .bom-top { display:flex; justify-content:center; margin-bottom:18px; position:relative; z-index:1; }
+        .bom .bom-top .bom-tile { width:42%; }
+        .bom .bom-grid-wrap { position:relative; }
+        .bom .bom-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:18px; position:relative; z-index:1; }
+        .bom .bom-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:center; min-height:108px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .bom .bom-ic { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .bom .bom-t { font-size:14px; font-weight:800; line-height:1.2; letter-spacing:0.005em; }
+        .bom .bom-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
+        .bom .bom-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; background:#fff; border:1.5px solid #E2E8F0; border-radius:50%; width:118px; height:118px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:6px; box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10); }
+        .bom .bom-center-emoji { font-size:28px; line-height:1; }
+        .bom .bom-center-t { font-size:13px; font-weight:800; color:#0B1426; font-family:Fraunces,Georgia,serif; margin-top:5px; text-align:center; line-height:1.2; }
+        @media (max-width:600px){
+          .bom .bom-top { margin-bottom:10px; } .bom .bom-top .bom-tile { width:auto; }
+          .bom .bom-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .bom .bom-center { position:static; transform:none; margin:10px auto; }
+          .bom .bom-conn, .bom .bom-dots { display:none; }
+        }
+      </style>
+      <div class="bom-shell">
+        <svg class="bom-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <!-- Survival (top) to hub – straight vertical dashed line down -->
+          <path d="M 50 12 L 50 65" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Sales (TL) to hub -->
+          <path d="M 36 48 C 44 48, 44 65, 50 65" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Profit (TR) to hub -->
+          <path d="M 64 48 C 56 48, 56 65, 50 65" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Growth (BL) to hub -->
+          <path d="M 36 82 C 44 82, 44 65, 50 65" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Social (BR) to hub -->
+          <path d="M 64 82 C 56 82, 56 65, 50 65" fill="none" stroke="#5EEAD4" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="bom-dots">
+          <div class="bom-dot" style="left:50%;top:12%;background:#60A5FA;"></div>
+          <div class="bom-dot" style="left:36%;top:48%;background:#FB923C;"></div>
+          <div class="bom-dot" style="left:64%;top:48%;background:#34D399;"></div>
+          <div class="bom-dot" style="left:36%;top:82%;background:#A78BFA;"></div>
+          <div class="bom-dot" style="left:64%;top:82%;background:#2DD4BF;"></div>
+        </div>
+        <div class="bom-top">
+          <div class="bom-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="bom-ic">🛡️</div>
+            <div><div class="bom-t" style="color:#1E3A8A;">Survival</div><div class="bom-s">Staying in business and covering costs.</div></div>
+          </div>
+        </div>
+        <div class="bom-grid-wrap">
+          <div class="bom-grid">
+            <div class="bom-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+              <div class="bom-ic">📈</div>
+              <div><div class="bom-t" style="color:#C2410C;">Sales revenue</div><div class="bom-s">Increasing turnover from sales.</div></div>
+            </div>
+            <div class="bom-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+              <div class="bom-ic">£</div>
+              <div><div class="bom-t" style="color:#065F46;">Profit</div><div class="bom-s">Earning a financial return.</div></div>
+            </div>
+            <div class="bom-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+              <div class="bom-ic">🚀</div>
+              <div><div class="bom-t" style="color:#5B21B6;">Growth</div><div class="bom-s">Expanding size, market share or scale.</div></div>
+            </div>
+            <div class="bom-tile" style="background:#F0FDFA;border:1.5px solid #5EEAD4;">
+              <div class="bom-ic">🌱</div>
+              <div><div class="bom-t" style="color:#0F766E;">Social &amp; ethical aims</div><div class="bom-s">Acting responsibly toward stakeholders and the environment.</div></div>
+            </div>
+          </div>
+          <div class="bom-center">
+            <div class="bom-center-emoji">🎯</div>
+            <div class="bom-center-t">Business<br/>objectives</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* whoWantsWhatHub – Card 5 "Who decides the objective?". 6-spoke
+     hub with stakeholders arranged 3-3 around a central "Business
+     objective" pill: Managers / Owners / Workers on top, Customers
+     / [hub] / Government in the middle, Communities centred below.
+     Dashed tone-matched connectors radiate from each stakeholder
+     to the hub. */
+  whoWantsWhatHub: `
+    <div class="wwh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .wwh .wwh-shell { position:relative; max-width:620px; margin:0 auto; }
+        .wwh .wwh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .wwh .wwh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .wwh .wwh-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
+        .wwh .wwh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); grid-template-rows:auto auto auto; column-gap:14px; row-gap:14px; position:relative; z-index:1; }
+        .wwh .wwh-tile { border-radius:12px; padding:9px 11px; display:flex; gap:8px; align-items:center; min-height:64px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); min-width:0; }
+        .wwh .wwh-ic { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .wwh .wwh-t { font-size:11.5px; font-weight:800; line-height:1.15; }
+        .wwh .wwh-s { font-size:10.5px; color:#475569; line-height:1.4; margin-top:2px; }
+        .wwh .wwh-center-cell { display:flex; align-items:center; justify-content:center; min-height:74px; }
+        .wwh .wwh-center { background:#fff; border:1.5px solid #E2E8F0; border-radius:50%; width:104px; height:104px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:6px; box-shadow:0 0 0 6px rgba(241,245,249,0.65), 0 5px 14px rgba(11,20,38,0.10); position:relative; z-index:2; }
+        .wwh .wwh-center-emoji { font-size:28px; line-height:1; }
+        .wwh .wwh-center-t { font-size:13px; font-weight:800; color:#0B1426; font-family:Fraunces,Georgia,serif; margin-top:5px; text-align:center; line-height:1.2; }
+        .wwh .wwh-r1c1 { grid-column:1; grid-row:1; } .wwh .wwh-r1c2 { grid-column:2; grid-row:1; }
+        .wwh .wwh-r1c3 { grid-column:3; grid-row:1; } .wwh .wwh-r2c1 { grid-column:1; grid-row:2; }
+        .wwh .wwh-r2c2 { grid-column:2; grid-row:2; } .wwh .wwh-r2c3 { grid-column:3; grid-row:2; }
+        .wwh .wwh-r3c2 { grid-column:2; grid-row:3; }
+        @media (max-width:600px){
+          .wwh .wwh-grid { grid-template-columns:1fr; grid-template-rows:none; column-gap:0; row-gap:10px; }
+          .wwh .wwh-r1c1, .wwh .wwh-r1c2, .wwh .wwh-r1c3, .wwh .wwh-r2c1, .wwh .wwh-r2c2, .wwh .wwh-r2c3, .wwh .wwh-r3c2 { grid-column:1; grid-row:auto; }
+          .wwh .wwh-center-cell { order:99; }
+          .wwh .wwh-conn, .wwh .wwh-dots { display:none; }
+        }
+      </style>
+      <div class="wwh-shell">
+        <svg class="wwh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <!-- Top row to hub centre (50, 50) -->
+          <path d="M 17 18 C 25 18, 35 35, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 50 21 L 50 50"             fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 83 18 C 75 18, 65 35, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Middle row to hub -->
+          <path d="M 24 50 L 50 50" fill="none" stroke="#67E8F9" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 76 50 L 50 50" fill="none" stroke="#5EEAD4" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Bottom centre to hub -->
+          <path d="M 50 79 L 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="wwh-dots">
+          <div class="wwh-dot" style="left:17%;top:18%;background:#A78BFA;"></div>
+          <div class="wwh-dot" style="left:50%;top:21%;background:#FB923C;"></div>
+          <div class="wwh-dot" style="left:83%;top:18%;background:#60A5FA;"></div>
+          <div class="wwh-dot" style="left:24%;top:50%;background:#22D3EE;"></div>
+          <div class="wwh-dot" style="left:76%;top:50%;background:#2DD4BF;"></div>
+          <div class="wwh-dot" style="left:50%;top:79%;background:#34D399;"></div>
+        </div>
+        <div class="wwh-grid">
+          <div class="wwh-tile wwh-r1c1" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="wwh-ic">💼</div>
+            <div><div class="wwh-t" style="color:#5B21B6;">Managers</div><div class="wwh-s">growth, sales or stable targets.</div></div>
+          </div>
+          <div class="wwh-tile wwh-r1c2" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="wwh-ic">👥</div>
+            <div><div class="wwh-t" style="color:#C2410C;">Owners</div><div class="wwh-s">profit and long-run value.</div></div>
+          </div>
+          <div class="wwh-tile wwh-r1c3" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="wwh-ic">👷</div>
+            <div><div class="wwh-t" style="color:#1E3A8A;">Workers</div><div class="wwh-s">pay and job security.</div></div>
+          </div>
+          <div class="wwh-tile wwh-r2c1" style="background:#ECFEFF;border:1.5px solid #67E8F9;">
+            <div class="wwh-ic">🛒</div>
+            <div><div class="wwh-t" style="color:#155E75;">Customers</div><div class="wwh-s">value and quality.</div></div>
+          </div>
+          <div class="wwh-center-cell wwh-r2c2">
+            <div class="wwh-center">
+              <div class="wwh-center-emoji">🎯</div>
+              <div class="wwh-center-t">Business<br/>objective</div>
+            </div>
+          </div>
+          <div class="wwh-tile wwh-r2c3" style="background:#F0FDFA;border:1.5px solid #5EEAD4;">
+            <div class="wwh-ic">🏛️</div>
+            <div><div class="wwh-t" style="color:#0F766E;">Government</div><div class="wwh-s">tax, jobs and legal compliance.</div></div>
+          </div>
+          <div class="wwh-tile wwh-r3c2" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="wwh-ic">🌱</div>
+            <div><div class="wwh-t" style="color:#065F46;">Communities</div><div class="wwh-s">environmental and social responsibility.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* threeClassicObjectives – Card 3 "Sales, profit and satisficing".
+     Three side-by-side tiles each with: title, mini-visual (rising
+     bar chart / profit formula / satisficing gauge), and three
+     attribute rows (Focus / Why? / Risk). Hand-rolled SVGs for the
+     mini-visuals so the geometry matches the mockup. */
+  threeClassicObjectives: `
+    <div class="tco" style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .tco .tco-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-width:840px; margin:0 auto; }
+        .tco .tco-card { border-radius:13px; padding:11px 11px 11px; box-shadow:0 1px 3px rgba(15,23,42,0.04); display:flex; flex-direction:column; min-width:0; }
+        .tco .tco-title { font-size:13px; font-weight:800; line-height:1.2; text-align:center; margin-bottom:8px; min-height:32px; display:flex; align-items:center; justify-content:center; }
+        .tco .tco-num { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; font-size:11px; font-weight:800; color:#fff; margin-right:6px; flex-shrink:0; }
+        .tco .tco-vis { background:#fff; border-radius:10px; padding:8px 6px; min-height:96px; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:inset 0 0 0 1px rgba(15,23,42,0.04); margin-bottom:10px; overflow:hidden; }
+        .tco .tco-vis-cap { font-size:10px; color:#475569; margin-top:5px; font-weight:700; }
+        .tco .tco-rows { display:flex; flex-direction:column; gap:5px; }
+        .tco .tco-row { display:flex; gap:6px; align-items:flex-start; font-size:11px; line-height:1.4; }
+        .tco .tco-row-ic { font-size:12px; line-height:1.3; flex-shrink:0; margin-top:1px; }
+        .tco .tco-row strong { font-weight:800; }
+        @media (max-width:720px){ .tco .tco-grid { grid-template-columns:1fr; } }
+      </style>
+      <div class="tco-grid">
+
+        <!-- LEFT: Sales revenue maximisation -->
+        <div class="tco-card" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="tco-title" style="color:#1E3A8A;"><span class="tco-num" style="background:#2563EB;">1</span>Sales revenue<br/>maximisation</div>
+          <div class="tco-vis">
+            <svg viewBox="0 0 160 90" style="width:100%;max-width:170px;height:auto;" preserveAspectRatio="xMidYMid meet">
+              <!-- Rising bars -->
+              <rect x="10"  y="65" width="14" height="20" rx="2" fill="#60A5FA"/>
+              <rect x="32"  y="55" width="14" height="30" rx="2" fill="#60A5FA"/>
+              <rect x="54"  y="44" width="14" height="41" rx="2" fill="#3B82F6"/>
+              <rect x="76"  y="32" width="14" height="53" rx="2" fill="#3B82F6"/>
+              <rect x="98"  y="20" width="14" height="65" rx="2" fill="#2563EB"/>
+              <rect x="120" y="10" width="14" height="75" rx="2" fill="#1D4ED8"/>
+              <!-- Trend arrow -->
+              <path d="M 10 70 L 145 8" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M 137 6 L 148 6 L 145 16 z" fill="#1E3A8A"/>
+            </svg>
+            <div class="tco-vis-cap" style="color:#1E3A8A;">Turnover (£)</div>
+          </div>
+          <div class="tco-rows">
+            <div class="tco-row"><span class="tco-row-ic">🎯</span><div><strong>Focus</strong> – increasing turnover</div></div>
+            <div class="tco-row"><span class="tco-row-ic">❓</span><div><strong>Why?</strong> – market presence, bonuses, status</div></div>
+            <div class="tco-row"><span class="tco-row-ic">⚠️</span><div><strong>Risk</strong> – sales can rise without profit</div></div>
+          </div>
+        </div>
+
+        <!-- MIDDLE: Profit maximisation -->
+        <div class="tco-card" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="tco-title" style="color:#065F46;"><span class="tco-num" style="background:#059669;">2</span>Profit<br/>maximisation</div>
+          <div class="tco-vis">
+            <div style="display:flex;align-items:center;gap:5px;font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:11.5px;font-weight:700;padding:9px 10px;background:#F8FAFC;border:1px dashed #94A3B8;border-radius:8px;flex-wrap:wrap;justify-content:center;">
+              <span style="color:#0B1426;">Profit</span>
+              <span style="color:#64748B;">=</span>
+              <span style="color:#059669;">revenue</span>
+              <span style="color:#DC2626;">−</span>
+              <span style="color:#DC2626;">cost</span>
+            </div>
+            <div class="tco-vis-cap" style="color:#065F46;margin-top:8px;">The classic objective</div>
+          </div>
+          <div class="tco-rows">
+            <div class="tco-row"><span class="tco-row-ic">🎯</span><div><strong>Focus</strong> – highest possible profit</div></div>
+            <div class="tco-row"><span class="tco-row-ic">❓</span><div><strong>Why?</strong> – rewards owners and investors</div></div>
+            <div class="tco-row"><span class="tco-row-ic">⚠️</span><div><strong>Risk</strong> – may conflict with other aims</div></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Profit satisficing -->
+        <div class="tco-card" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="tco-title" style="color:#C2410C;"><span class="tco-num" style="background:#D97706;">3</span>Profit<br/>satisficing</div>
+          <div class="tco-vis">
+            <svg viewBox="0 0 160 95" style="width:100%;max-width:175px;height:auto;" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="tco-dial-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#A78BFA"/>
+                  <stop offset="35%"  stop-color="#60A5FA"/>
+                  <stop offset="65%"  stop-color="#34D399"/>
+                  <stop offset="100%" stop-color="#FB923C"/>
+                </linearGradient>
+              </defs>
+              <!-- Gauge arc -->
+              <path d="M 14 78 A 66 66 0 0 1 146 78" fill="none" stroke="url(#tco-dial-grad)" stroke-width="14" stroke-linecap="round"/>
+              <!-- Tick marks -->
+              <line x1="14"  y1="78" x2="20"  y2="74" stroke="#94A3B8" stroke-width="1"/>
+              <line x1="80"  y1="12" x2="80"  y2="20" stroke="#94A3B8" stroke-width="1"/>
+              <line x1="146" y1="78" x2="140" y2="74" stroke="#94A3B8" stroke-width="1"/>
+              <!-- Needle at "good enough" – ~63% along arc, angle = π·(1-0.63) ≈ 67° from horizontal -->
+              <line x1="80" y1="78" x2="105" y2="17" stroke="#0B1426" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="80" cy="78" r="6" fill="#0B1426"/>
+              <circle cx="80" cy="78" r="2.5" fill="#fff"/>
+            </svg>
+            <div class="tco-vis-cap" style="color:#C2410C;">Good enough</div>
+          </div>
+          <div class="tco-rows">
+            <div class="tco-row"><span class="tco-row-ic">🎯</span><div><strong>Focus</strong> – enough profit, not the absolute maximum</div></div>
+            <div class="tco-row"><span class="tco-row-ic">❓</span><div><strong>Why?</strong> – managers may prefer comfort, stability or growth</div></div>
+            <div class="tco-row"><span class="tco-row-ic">⚠️</span><div><strong>Risk</strong> – owners may want more ambition</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `,
+
+  /* marketShareBar – Card 4 "Growth and market share". Horizontal
+     stacked bar showing four firms' shares of a market, with an
+     amber brace under Firm A's segment labelled "Firm A share
+     grows". Annotated SVG so the brace geometry is locked. */
+  marketShareBar: `
+    <div class="msb" style="background:#fff;border-radius:14px;padding:22px 18px 16px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="max-width:680px;margin:0 auto;">
+        <div style="font-size:13px;font-weight:800;color:#0B1426;text-align:center;letter-spacing:0.04em;margin-bottom:10px;">The market</div>
+        <svg viewBox="0 0 600 130" style="width:100%;height:auto;display:block;" preserveAspectRatio="xMidYMid meet">
+          <!-- Stacked bar (4 segments) -->
+          <rect x="6"   y="20" width="150" height="62" rx="6" fill="#60A5FA"/>
+          <rect x="160" y="20" width="220" height="62" rx="6" fill="#FB923C"/>
+          <rect x="384" y="20" width="130" height="62" rx="6" fill="#34D399"/>
+          <rect x="518" y="20" width="76"  height="62" rx="6" fill="#A78BFA"/>
+          <!-- Firm A label inside its segment -->
+          <text x="270" y="56"  text-anchor="middle" font-size="15" font-weight="800" fill="#fff" font-family="Inter,sans-serif">Firm A</text>
+          <text x="270" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Inter,sans-serif" opacity="0.92">share grows</text>
+          <!-- Brace under Firm A segment: spans x=160 → 380 -->
+          <path d="M 160 92 Q 160 100 168 100 L 266 100 Q 270 100 270 106 Q 270 100 274 100 L 372 100 Q 380 100 380 92"
+                fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
+          <text x="270" y="122" text-anchor="middle" font-size="13" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">A larger slice of the same pie</text>
+        </svg>
+        <div style="display:flex;justify-content:center;gap:14px;margin-top:14px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:#475569;"><span style="width:11px;height:11px;border-radius:3px;background:#60A5FA;"></span>Firm B</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:#C2410C;font-weight:700;"><span style="width:11px;height:11px;border-radius:3px;background:#FB923C;"></span>Firm A</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:#475569;"><span style="width:11px;height:11px;border-radius:3px;background:#34D399;"></span>Firm C</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:#475569;"><span style="width:11px;height:11px;border-radius:3px;background:#A78BFA;"></span>Firm D</span>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* csrTradeOffPair – Card 6 "Social, ethical and environmental
+     objectives". Twin pair flanking a central scales icon: orange
+     "Possible costs now" panel on the left feeds into the scales,
+     green "Possible gains later" panel on the right feeds back out.
+     Reuses the flywheel's halo-rimmed centre grammar. */
+  csrTradeOffPair: `
+    <div class="csrp" style="background:#fff;border-radius:14px;padding:18px 16px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .csrp .csrp-shell { display:grid; grid-template-columns:1fr 138px 1fr; gap:14px; align-items:center; max-width:820px; margin:0 auto; }
+        .csrp .csrp-panel { border-radius:13px; padding:14px 16px; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .csrp .csrp-h { font-size:13.5px; font-weight:800; line-height:1.2; margin-bottom:8px; }
+        .csrp .csrp-list { margin:0; padding:0 0 0 18px; font-size:12.5px; color:#0B1426; line-height:1.7; }
+        .csrp .csrp-centre { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; position:relative; }
+        .csrp .csrp-balance { width:108px; height:108px; border-radius:50%; background:#fff; border:1.5px solid #E2E8F0; display:flex; align-items:center; justify-content:center; font-size:42px; box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10); }
+        .csrp .csrp-cap { font-size:11px; font-weight:700; color:#475569; letter-spacing:0.04em; text-transform:uppercase; }
+        .csrp .csrp-feed { position:absolute; top:50%; transform:translateY(-50%); height:14px; pointer-events:none; }
+        .csrp .csrp-feed.left { right:100%; width:18px; margin-right:-2px; }
+        .csrp .csrp-feed.right { left:100%; width:18px; margin-left:-2px; }
+        @media (max-width:680px){
+          .csrp .csrp-shell { grid-template-columns:1fr; }
+          .csrp .csrp-centre { padding:6px 0; }
+          .csrp .csrp-feed { display:none; }
+        }
+      </style>
+      <div class="csrp-shell">
+        <div class="csrp-panel" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="csrp-h" style="color:#C2410C;">Possible costs now</div>
+          <ul class="csrp-list">
+            <li>Higher short-run cost</li>
+            <li>Slower expansion</li>
+            <li>Tougher supplier choices</li>
+          </ul>
+        </div>
+        <div class="csrp-centre">
+          <svg class="csrp-feed left" viewBox="0 0 18 14"><path d="M 0 7 L 14 7" stroke="#D97706" stroke-width="1.6" stroke-dasharray="2.5 2" fill="none" stroke-linecap="round"/><path d="M 10 3 L 15 7 L 10 11" stroke="#D97706" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="csrp-balance">⚖️</div>
+          <div class="csrp-cap">weighed against</div>
+          <svg class="csrp-feed right" viewBox="0 0 18 14"><path d="M 4 7 L 18 7" stroke="#059669" stroke-width="1.6" stroke-dasharray="2.5 2" fill="none" stroke-linecap="round"/><path d="M 8 3 L 3 7 L 8 11" stroke="#059669" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="csrp-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="csrp-h" style="color:#065F46;">Possible gains later</div>
+          <ul class="csrp-list">
+            <li>Better reputation</li>
+            <li>Customer loyalty</li>
+            <li>Lower long-run risk</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* objectivesJourney – Card 7 "The whole story". 6-step horizontal
+     lifecycle of a typical firm: Start-up → Survival → Stable firm →
+     Profit/sales/growth → Stakeholder pressure → Wider social
+     goals. Each step is a hero-sized icon disc with title and
+     sub-caption; chevron arrows between. Mobile collapses to a
+     stacked vertical flow. */
+  objectivesJourney: `
+    <div class="oj" style="background:#fff;border-radius:14px;padding:20px 14px 18px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .oj .oj-row { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); align-items:start; max-width:900px; margin:0 auto; gap:0; }
+        .oj .oj-step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 4px; position:relative; }
+        .oj .oj-disc { width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); margin-bottom:10px; }
+        .oj .oj-title { font-size:12.5px; font-weight:800; line-height:1.2; margin-bottom:6px; }
+        .oj .oj-sub { font-size:11.5px; color:#475569; line-height:1.45; }
+        .oj .oj-arrow { position:absolute; top:24px; right:-10px; font-size:20px; color:#94A3B8; line-height:1; z-index:2; }
+        .oj .oj-step:last-child .oj-arrow { display:none; }
+        @media (max-width:680px){
+          .oj .oj-row { grid-template-columns:1fr; gap:14px; }
+          .oj .oj-step { flex-direction:row; text-align:left; gap:14px; align-items:flex-start; padding:0; }
+          .oj .oj-disc { margin-bottom:0; }
+          .oj .oj-arrow { position:static; transform:rotate(90deg); margin:0 auto; display:block; }
+          .oj .oj-step:last-child .oj-arrow { display:none; }
+        }
+      </style>
+      <div class="oj-row">
+        <div class="oj-step">
+          <div class="oj-disc" style="background:#EFF6FF;">🚀</div>
+          <div class="oj-title" style="color:#1E3A8A;">Start-up</div>
+          <div class="oj-sub">Idea formed and business begins.</div>
+          <div class="oj-arrow">→</div>
+        </div>
+        <div class="oj-step">
+          <div class="oj-disc" style="background:#FFF7ED;">🛡️</div>
+          <div class="oj-title" style="color:#C2410C;">Survival</div>
+          <div class="oj-sub">Stay alive and cover costs.</div>
+          <div class="oj-arrow">→</div>
+        </div>
+        <div class="oj-step">
+          <div class="oj-disc" style="background:#ECFDF5;">🏢</div>
+          <div class="oj-title" style="color:#065F46;">Stable firm</div>
+          <div class="oj-sub">Operations steady, business established.</div>
+          <div class="oj-arrow">→</div>
+        </div>
+        <div class="oj-step">
+          <div class="oj-disc" style="background:#F5F3FF;">📈</div>
+          <div class="oj-title" style="color:#5B21B6;">Profit / sales / growth</div>
+          <div class="oj-sub">Increase returns, market share or expand.</div>
+          <div class="oj-arrow">→</div>
+        </div>
+        <div class="oj-step">
+          <div class="oj-disc" style="background:#F5F3FF;">👥</div>
+          <div class="oj-title" style="color:#5B21B6;">Stakeholder pressure</div>
+          <div class="oj-sub">Expectations from workers, customers and communities.</div>
+          <div class="oj-arrow">→</div>
+        </div>
+        <div class="oj-step">
+          <div class="oj-disc" style="background:#F0FDFA;">⚖️</div>
+          <div class="oj-title" style="color:#0F766E;">Wider social goals</div>
+          <div class="oj-sub">Consider environment, inequality and long-term impact.</div>
+          <div class="oj-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

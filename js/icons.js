@@ -14308,9 +14308,12 @@ window.ECONOS_ICONS = {
         @media (max-width:540px){
           .fwheel .fw-core { aspect-ratio:auto; padding:0; display:flex; flex-direction:column; gap:8px; max-width:420px; }
           .fwheel .fw-arcs { display:none; }
-          /* Match desktop specificity (0,3,0) so transforms actually reset. */
+          /* Match desktop specificity (0,3,0) so transforms actually reset.
+             Use position:relative (not static) so the .fw-num badges keep
+             each tile as their positioning context — otherwise all four
+             badges fall back to .fw-core and stack at the same (-8,-8). */
           .fwheel .fw-tile.fw-n, .fwheel .fw-tile.fw-e, .fwheel .fw-tile.fw-s, .fwheel .fw-tile.fw-w {
-            position:static; transform:none; width:auto; top:auto; right:auto; bottom:auto; left:auto;
+            position:relative; transform:none; width:auto; top:auto; right:auto; bottom:auto; left:auto;
           }
           .fwheel .fw-route.fw-route-tr, .fwheel .fw-route.fw-route-bl {
             position:static; transform:none; width:auto; top:auto; right:auto; bottom:auto; left:auto;

@@ -34,11 +34,18 @@ Each pattern has: the mental model it creates, the renderer wiring, a canonical 
 
 ### 1. Sequential flow chain
 
-The mental model: *follow the steps in order, each leads to the next*. A horizontal or vertical chain of step tiles, separator arrows, the next step depending on the previous.
+The mental model: *follow the steps in order, each leads to the next*. A horizontal chain of step tiles, the next step depending on the previous.
 
-Renderer wiring: `flow: [{ tone, icon, title, sub }, ...]` with `flowTitle`, `flowEmoji`, `flowSep: '→'`.
+Two visual variants — pick by intent, not by habit:
 
-Canonical example: `js/data/edexcel_a/theme-1/demand/learn-it.js` card 5 (derived demand chain: consumers → cars → steel → labour → wages); `js/data/edexcel_a/theme-2/national-income-and-the-multiplier/learn-it.js` Card 1 (geometric series symbolic flow).
+- **Canonical "numbered + dotted-line" style** (no `flowSep`): each step is a numbered circle (auto-numbered from index), icon below, title, optional sub, with a thin horizontal dashed line connecting them through the top. The numbered circles and dashed line make the sequence read as a TRUE causal mechanism. Use for **causal chains** — X causes Y causes Z, where the chain *is* the lesson. Examples: derived-demand chain, multiplier rounds, accelerator feedback, "Price level rises → selling prices rise → sticky costs → profit rises".
+- **Compact "arrow-chain" style** (`flowSep: '→'` or other separator): tone-tinted rectangular tiles in a row separated by `→` characters. Tighter and lighter. Use for **procedural sequences** — do A then B then C, where the steps are independent actions just performed in order. Examples: "How to write it" / "How to answer" exam toolkit cards.
+
+Renderer wiring: `flow: [{ tone, icon, title, sub }, ...]` with `flowTitle`, `flowEmoji`. Add `flowSep: '→'` ONLY for the procedural variant. Don't add a numeric `icon: '1'` — the canonical style adds the numbered circle automatically; a numeric icon duplicates it. Pick a topical emoji icon instead.
+
+Canonical examples (numbered/dotted): `js/data/edexcel_a/theme-1/demand/learn-it.js` card 5 (derived demand: consumers → cars → steel → labour → wages); `js/data/edexcel_a/theme-2/national-income/learn-it.js` cards 1-2 (circular-flow chains).
+
+Canonical examples (compact): `js/data/edexcel_a/theme-2/long-run-aggregate-supply/learn-it.js` card 6 "How to write it" (4-step procedure).
 
 Use for: causal chains, transmission mechanisms, before-during-after sequences, anything where order matters.
 

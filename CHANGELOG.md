@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.93.0 — 2026-06-06
+
+### Universal content boxes (14/n): comparison — Tier 2 complete
+
+The `comparison` box (2–3 tone cards with a centred icon ring + label + optional
+value/caption/chips, split by an operator badge; `--triple` for A op B = C) moves
+to the `.gen-comparison` component. Same look — brand-palette accents via
+`.tone-*`, off-scale `17/13.5/12.5px` → `--fs-*`; tile-tier hover; existing mobile
+rules retained. Data shapes unchanged. Before/after screenshot-verified. lint +
+147 unit tests + build green; cache econos-v402.
+
+
 ## 0.92.0 — 2026-06-06
 
 ### Universal content boxes (13/n): split decision

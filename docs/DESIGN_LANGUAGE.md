@@ -145,6 +145,8 @@ type is one class.
     tile-tier hover; stacks on mobile.
   - `.split-decision` — two tone side-cards split by a VS badge; tile-tier
     hover; stacks on mobile.
+  - `.gen-comparison` — 2–3 tone cards (icon ring + label + value/caption/
+    chips) split by an operator badge (`--triple` for A op B = C); tile-tier hover.
 
   Tiles carry the tile-tier hover; full-width strips the note-tier; the
   closing-pair callouts deepen their own glow. More box types land one per

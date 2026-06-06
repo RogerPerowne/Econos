@@ -131,6 +131,8 @@ type is one class.
     `--display`); `renderCalloutBand` helper; note-tier hover.
   - `.step` — numbered sequential cards with a tone left-accent (tone cycles by
     index); tile-tier hover.
+  - `.body-box` — definition/lead-text box (plain spacious reading variant +
+    `--tone` accent-icon variant); note-tier hover.
 
   Tiles carry the tile-tier hover; full-width strips the note-tier; the
   closing-pair callouts deepen their own glow. More box types land one per

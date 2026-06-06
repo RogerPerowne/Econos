@@ -53,6 +53,7 @@ continues — keep it current):
 | `keyTakeaway` | string or `{ title?, text }` | `.key-takeaway > .key-takeaway__star + __body(__label,__text)` |
 | `conclusion` / `balancedNote` | string or `{ title?, text }` | `.callout-band.tone-{green\|amber} > .callout-band__icon + __body(__label, __text[--display])` |
 | `steps` | `[{ head\|label, body\|text }]` | `.step.tone-* > .step__num + (.step__head, .step__body)` (tone cycles by index) |
+| `body` (+ `bodyTone`, `bodyIcon`) | string (HTML) | `.body-box` (plain) or `.body-box.body-box--tone.tone-* > .body-box__icon? + .body-box__text` |
 
 (Boxes not yet migrated still render via inline styles in `app.js`; they are being
 moved onto this same `.tone-*` + token system, one per release, until 100% of

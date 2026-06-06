@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.86.0 — 2026-06-06
+
+### Universal content boxes (8/n): body box
+
+The `body` definition/lead-text box (plain + toned variants) moves to the
+`.body-box` component. Same look — plain keeps its spacious `1.8` reading
+line-height; toned keeps its accent icon (now brand `--t-accent`). `14.5px` →
+`--fs-base`, hard-coded `#FAFBFF`/`#E7E7EA`/PATTERN accent → tokens. Note-tier
+hover. Data shapes unchanged.
+
+Before/after screenshot-verified (rest + hover). lint + 147 unit tests + build
+green; cache econos-v395.
+
+
 ## 0.85.0 — 2026-06-06
 
 ### Universal content boxes (7/n): steps

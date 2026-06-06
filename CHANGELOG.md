@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.76.0 — 2026-06-05
+
+### Design language: rationalise the type / radius / line-height scales
+
+Drastic consistency pass — snap every off-scale literal to the nearest scale
+token so the whole site shares one system (this is a small, refining VISUAL
+change, screenshot-verified across card types; the black table header, cover
+symbols and Fraunces usage are preserved):
+- Added the one genuinely-missing step `--fs-2xs: 11px`.
+- **Font size** — 310 (app.js) + 66 (styles.css) off-scale literals snapped to
+  `var(--fs-*)` (e.g. 14px → base 15, aligning with the brand-manual base bump;
+  half-pixels → nearest step).
+- **Border-radius** — 136 + 21 snapped to `var(--r-*)` (cards converge on 14px).
+- **Line-height** — 131 + 34 snapped to `var(--lh-*)`.
+
+Off-scale drift: styles.css 161→41, app.js 567→85. lint + unit tests + build
+green; cache econos-v385.
+
+
 ## 0.75.0 — 2026-06-05
 
 ### Design language: consistency sweep (weights/sizes/line-heights/radii) + brand serif

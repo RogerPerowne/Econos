@@ -51,6 +51,7 @@ continues — keep it current):
 | `tip` / `note` / `tipLate` | string or `{ text, head?, icon?, tone? }` | `.tone-callout.tone-* > .tone-callout__icon + __body(__head?, __text)` |
 | `examEdge` | string or `{ title?, text }` | `.exam-edge > .exam-edge__star + __body(__label,__title?,__text)` |
 | `keyTakeaway` | string or `{ title?, text }` | `.key-takeaway > .key-takeaway__star + __body(__label,__text)` |
+| `conclusion` / `balancedNote` | string or `{ title?, text }` | `.callout-band.tone-{green\|amber} > .callout-band__icon + __body(__label, __text[--display])` |
 
 (Boxes not yet migrated still render via inline styles in `app.js`; they are being
 moved onto this same `.tone-*` + token system, one per release, until 100% of

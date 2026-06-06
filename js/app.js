@@ -163,6 +163,23 @@
     return `<div class="tone-callout tone-${tone}">${iconHtml}${bodyHtml}</div>`;
   }
 
+  /* Callout band — the conclusion / balanced-note verdict bands (left
+     accent + icon + uppercase label + body). Styling lives in the
+     universal `.callout-band` CSS component. opts =
+     { tone, icon, label, text, display? } — display:true uses the
+     Fraunces body (conclusion). */
+  function renderCalloutBand(opts) {
+    const textCls = 'callout-band__text' + (opts.display ? ' callout-band__text--display' : '');
+    return `
+      <div class="callout-band tone-${opts.tone}">
+        <div class="callout-band__icon">${opts.icon}</div>
+        <div class="callout-band__body">
+          <div class="callout-band__label">${opts.label}</div>
+          <div class="${textCls}">${opts.text}</div>
+        </div>
+      </div>`;
+  }
+
 
   /* ============================================================
      GENERIC CARD RENDERER
@@ -2946,14 +2963,7 @@
       const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';
       const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
       if (conText) {
-        content += `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:var(--econ-green-50);border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:var(--r-lg);padding:14px 18px;margin-bottom:22px;">
-            <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-base);flex-shrink:0;">↔</div>
-            <div style="flex:1;">
-              <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:var(--fs-md);color:var(--econ-ink);line-height:var(--lh-snug);">${conText}</div>
-            </div>
-          </div>`;
+        content += renderCalloutBand({ tone: 'green', icon: '↔', label: conTitle, text: conText, display: true });
       }
     }
 
@@ -2963,14 +2973,7 @@
       const noteTitle = typeof c.balancedNote === 'object' ? (c.balancedNote.title || 'A balanced note') : 'A balanced note';
       const noteText  = typeof c.balancedNote === 'object' ? c.balancedNote.text : c.balancedNote;
       if (noteText) {
-        content += `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:var(--econ-amber-50);border:1px solid #FDE68A;border-left:4px solid #D97706;border-radius:var(--r-lg);padding:14px 18px;margin-bottom:22px;">
-            <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-amber-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-base);flex-shrink:0;">⚠</div>
-            <div style="flex:1;">
-              <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:#92400E;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${noteTitle}</div>
-              <div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div>
-            </div>
-          </div>`;
+        content += renderCalloutBand({ tone: 'amber', icon: '⚠', label: noteTitle, text: noteText });
       }
     }
 
@@ -5671,14 +5674,7 @@
       ${c.conclusionPosition === 'end' ? '' : ((c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {
         const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';
         const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
-        return `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:var(--econ-green-50);border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:var(--r-lg);padding:12px 16px;margin-bottom:16px;">
-            <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-base);flex-shrink:0;">★</div>
-            <div style="flex:1;">
-              <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:var(--fs-md);color:var(--econ-ink);line-height:var(--lh-snug);">${conText}</div>
-            </div>
-          </div>`;
+        return renderCalloutBand({ tone: 'green', icon: '★', label: conTitle, text: conText, display: true });
       })() : '')}
 
       ${(c.economistQuote && c.economistQuote.quote) ? (() => {
@@ -5787,14 +5783,7 @@
       ${c.conclusionPosition === 'end' && c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text) ? (() => {
         const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Big idea') : 'Big idea';
         const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
-        return `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:var(--econ-green-50);border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:var(--r-lg);padding:12px 16px;margin-bottom:16px;">
-            <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-base);flex-shrink:0;">★</div>
-            <div style="flex:1;">
-              <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:var(--fs-md);color:var(--econ-ink);line-height:var(--lh-snug);">${conText}</div>
-            </div>
-          </div>`;
+        return renderCalloutBand({ tone: 'green', icon: '★', label: conTitle, text: conText, display: true });
       })() : ''}
 
       ${c.methodGrid ? buildMethodGridHtml(c.methodGrid) : ''}

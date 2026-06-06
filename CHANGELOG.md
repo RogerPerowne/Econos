@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.73.7 – 2026-06-06
+
+### Growth flywheel – redesigned to fix duplicate node + sharpen the cycle
+
+The Card 4 "Why other firms grow" visual previously had 5 nodes with
+"Higher profit" duplicated (nodes 1 and 5), and Internal/External
+growth pinned awkwardly as side annotations. Rebuilt as a true 4-node
+closed-loop flywheel:
+
+- Cardinal tiles around a halo-rimmed centre hub: ① Higher profit →
+  ② Reinvest → ③ Scale & lower costs → ④ Market power → back to ①.
+  Each node maps to a distinct spec concept (profit motive, capital
+  deployment, cost motive / economies of scale, market power motive).
+- Tone-matched dashed arcs sweep clockwise like spokes turning,
+  reusing the hub-family connector grammar (`stroke-dasharray`, soft
+  arrowheads, tile shadows).
+- The two ROUTES IN — 🌱 Organic (retained profit) and 🤝 M&A
+  (mergers / takeovers) — sit in the diagonal corner space (top-right
+  + bottom-left), each joined to the cycle by a curved dashed
+  feeder arrow in its matching tone.
+- Centre hub adopts the same elegant halo (`box-shadow 0 0 0 7px
+  rgba(...), 0 6px 18px rgba(...)`) used across the firm hubs.
+
 ## 0.73.6 – 2026-06-05
 
 ### 5-tile hub – bottom tile actually narrows now

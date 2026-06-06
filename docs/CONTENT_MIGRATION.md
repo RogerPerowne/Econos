@@ -56,6 +56,7 @@ continues — keep it current):
 | `body` (+ `bodyTone`, `bodyIcon`) | string (HTML) | `.body-box` (plain) or `.body-box.body-box--tone.tone-* > .body-box__icon? + .body-box__text` |
 | `summaryRow` | `[{ title, tone?, icon?, text?, items?:[string] }]` (≤3) | `.summary-row > .summary-cell.tone-* > .summary-cell__head(__icon?,__title) + __text? + __list>__item>__bullet` |
 | `methodGrid` / `methodGrid2` | `{ label?, emoji?, exampleLabel?, items:[{ title, icon?, body?, example?, tone? }] }` | `.method-grid > .method-card.tone-* > .method-card__head(__icon,__title) + __body(__text, __example?)` |
+| `diagramGrid` | `[{ svgKey, head, icon?, tone?, bullets:[{ text, tone? }] }]` | `.diagram-grid > .dg-card.tone-* > .dg-card__head(__icon,__title) + __svg + __bullets>.dg-bullet.tone-*>__dot` |
 
 (Boxes not yet migrated still render via inline styles in `app.js`; they are being
 moved onto this same `.tone-*` + token system, one per release, until 100% of

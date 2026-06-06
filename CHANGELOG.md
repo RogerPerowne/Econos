@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.89.0 — 2026-06-06
+
+### Universal content boxes (11/n): diagram grid
+
+The `diagramGrid` cards (tone header + SVG + tone-dot bullets) move to the
+`.diagram-grid` / `.dg-card` component. Same look — accents normalised to the
+brand palette via `.tone-*` (header + per-bullet dots via a nested tone class,
+replacing the off-brand `dotCol` map); tile-tier hover; added to the mobile-
+collapse grid family. Data shapes unchanged.
+
+Before/after screenshot-verified (rest + hover). lint + 147 unit tests + build
+green; cache econos-v398.
+
+
 ## 0.88.0 — 2026-06-06
 
 ### Universal content boxes (10/n): method grid + mobile-collapse fix

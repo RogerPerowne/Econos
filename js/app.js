@@ -1729,26 +1729,22 @@
     //            diagramGridLabel?, diagramGridEmoji?
     if (c.diagramGrid && c.diagramGrid.length) {
       if (c.diagramGridLabel !== null) content += genSecLabel(c.diagramGridEmoji || '📊', c.diagramGridLabel || 'Policy comparison');
-      const dotCol = { blue:'#2563EB', amber:'#D97706', green:'#059669', slate:'#94A3B8', rose:'#E11D48', purple:'#7C3AED' };
-      content += `<div style="display:grid;grid-template-columns:repeat(${Math.min(c.diagramGrid.length, 3)}, minmax(0, 1fr));gap:14px;margin-bottom:26px;">`;
+      // Styling lives in the universal `.diagram-grid` / `.dg-card` CSS
+      // component; per-bullet tone drives its dot via a nested `tone-*` class.
+      const cols = `repeat(${Math.min(c.diagramGrid.length, 3)}, minmax(0, 1fr))`;
+      content += `<div class="diagram-grid" style="--dg-cols:${cols};">`;
       c.diagramGrid.forEach(item => {
-        const t = PATTERN_TONES[item.tone || 'blue'] || PATTERN_TONES.blue;
         const svgHtml = I[item.svgKey] || '';
-        const bulletsHtml = (item.bullets || []).map(b => {
-          const col = dotCol[b.tone || 'slate'] || dotCol.slate;
-          return `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-xs);color:var(--econ-gray-700);line-height:var(--lh-normal);margin-bottom:5px;">
-            <span style="flex-shrink:0;width:7px;height:7px;border-radius:50%;background:${col};margin-top:5px;"></span>
-            <span>${b.text}</span>
-          </div>`;
-        }).join('');
+        const bulletsHtml = (item.bullets || []).map(b =>
+          `<div class="dg-bullet tone-${b.tone || 'slate'}"><span class="dg-bullet__dot"></span><span>${b.text}</span></div>`).join('');
         content += `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid ${t.border};overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
-            <div style="padding:11px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:10px;">
-              <div style="width:36px;height:36px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.1);flex-shrink:0;">${item.icon || '📊'}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${t.label};">${item.head}</div>
+          <div class="dg-card tone-${item.tone || 'blue'}">
+            <div class="dg-card__head">
+              <div class="dg-card__icon">${renderIcon(item.icon || '📊')}</div>
+              <div class="dg-card__title">${item.head}</div>
             </div>
-            <div style="padding:8px 10px 4px;overflow-x:auto;">${svgHtml}</div>
-            <div style="padding:8px 12px 12px;">${bulletsHtml}</div>
+            <div class="dg-card__svg">${svgHtml}</div>
+            <div class="dg-card__bullets">${bulletsHtml}</div>
           </div>`;
       });
       content += `</div>`;

@@ -12398,6 +12398,85 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   margin-top: 1px;
 }
 
+/* ── Method grid — cards with a tone header (icon + title) + body +
+   optional example line. Replaces the inline grid; token-driven,
+   brand-palette accents, tile-tier hover. ── */
+.method-grid {
+  display: grid;
+  grid-template-columns: var(--mg-cols, repeat(auto-fit, minmax(200px, 1fr)));
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+.method-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--t-100);
+  border-radius: var(--r-lg);
+  background: var(--econ-white);
+  overflow: hidden;
+  transition: var(--hover-tr);
+}
+.method-card:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
+}
+.method-card__head {
+  background: var(--t-50);
+  border-bottom: 1px solid var(--t-100);
+  padding: var(--sp-3) var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.method-card__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-full);
+  background: var(--t-accent);
+  color: var(--econ-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-lg);
+  flex-shrink: 0;
+}
+.method-card__title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-extrabold);
+  color: var(--t-ink);
+  line-height: var(--lh-snug);
+}
+.method-card__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex: 1;
+}
+.method-card__text {
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: var(--lh-normal);
+}
+.method-card__example {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-600);
+  line-height: var(--lh-normal);
+  margin-top: auto;
+}
+.method-card__example b { font-weight: var(--fw-extrabold); color: var(--t-ink); }
+
+/* Mobile collapse for the migrated content grids. These set their column
+   count via a `--*-cols` custom property (not an inline
+   `grid-template-columns`), so the site's universal inline-grid reflow
+   doesn't catch them — collapse them to a single column here. */
+@media (max-width: 600px) {
+  .key-terms,
+  .key-points,
+  .summary-row,
+  .method-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Topbar polish — slightly tighter and more elegant ── */
 .topbar {
   background: rgba(255, 255, 255, 0.85);

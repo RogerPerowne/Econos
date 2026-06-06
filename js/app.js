@@ -1187,18 +1187,23 @@
     let html = '';
     if (mg.label) html += genSecLabel(mg.emoji || '🧰', mg.label);
     const n = mg.items.length;
-    html += `<div class="method-grid" style="display:grid;grid-template-columns:${gridColumnsFor(n, 200)};gap:14px;margin-bottom:26px;">`;
+    // Styling lives in the universal `.method-grid` / `.method-card` CSS
+    // component (token-driven, brand-palette accents, tile-tier hover).
+    html += `<div class="method-grid" style="--mg-cols:${gridColumnsFor(n, 200)};">`;
     html += mg.items.map(m => {
-      const t = PATTERN_TONES[m.tone || 'blue'] || PATTERN_TONES.blue;
+      const tone = 'tone-' + (m.tone || 'blue');
+      const example = m.example !== undefined
+        ? `<div class="method-card__example"><b>${m.exampleLabel || mg.exampleLabel || 'Example'}:</b> <em>${m.example}</em></div>`
+        : '';
       return `
-        <div style="display:flex;flex-direction:column;border:1px solid ${t.border};border-radius:var(--r-lg);background:#fff;overflow:hidden;">
-          <div style="background:${t.bg};border-bottom:1px solid ${t.border};padding:12px 14px;display:flex;align-items:center;gap:10px;">
-            <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${renderIcon(m.icon)}</span>
-            <span style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${m.title || ''}</span>
+        <div class="method-card ${tone}">
+          <div class="method-card__head">
+            <span class="method-card__icon">${renderIcon(m.icon)}</span>
+            <span class="method-card__title">${m.title || ''}</span>
           </div>
-          <div style="padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;">
-            <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${m.body || ''}</div>
-            ${m.example !== undefined ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin-top:auto;"><span style="font-weight:var(--fw-extrabold);color:${t.label};">${m.exampleLabel || mg.exampleLabel || 'Example'}:</span> <em>${m.example}</em></div>` : ''}
+          <div class="method-card__body">
+            <div class="method-card__text">${m.body || ''}</div>
+            ${example}
           </div>
         </div>`;
     }).join('');

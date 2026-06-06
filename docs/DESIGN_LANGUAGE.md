@@ -46,18 +46,19 @@ Brand palette, each with tints/shades:
 
 ## Measuring + enforcing consistency
 
-`npm run lint:tokens` reports **token drift** — raw 6-digit hex literals that
-exactly duplicate a defined colour token — per file, with a total to drive down.
-Run `node scripts/lint-tokens.mjs --list` for the per-hex breakdown.
+`npm run lint:tokens` reports drift across **colour, font-weight, font-size,
+line-height and radius**, per file, splitting two kinds:
 
-```
-   0  styles.css (outside :root)   ← swept to tokens
- 522  js/app.js                    ← inline-style sweep, next
-3013  js/icons.js                  ← hand-authored SVG chart fills
-```
+- **dup** — a raw literal that exactly duplicates a token (e.g. `#0B1426`,
+  `font-weight:700`) → should be `var(--…)`. Note: SVG `fill=`/`stroke=`
+  *attribute* colours show here but can't take `var()`, so they stay literal
+  until a `style="fill:…"` refactor.
+- **off** — an off-scale literal with no matching token (e.g. `font-size:14px`,
+  `border-radius:12px`, `line-height:1.65`). This is the rationalisation backlog:
+  snapping these to the scale is a *visual* change, so it needs sign-off first.
 
-It is a **reporter** today (exit 0). Once `js/app.js` is swept it can be wired
-into `npm run lint` as a blocking gate to prevent regression.
+It's a reporter (exit 0); once `dup` is near zero it can be wired into
+`npm run lint` as a blocking gate. Run with `--list` for the colour breakdown.
 
 ## Consistency — what is token-driven now
 
@@ -79,6 +80,25 @@ sign-off). SVG `fill=`/`stroke=` *attribute* colours can not take `var()`, so
 they show as dup but stay literal until refactored to `style="fill:…"`.
 
 ---
+
+## Components
+
+Reusable, token-built UI pieces (`styles.css` + `js/app.js`):
+
+- **Comparison table** (`c.rows` → `.cmp-table`) — the signature table with the
+  **black header bar** (`.cmp-table__head { background: var(--econ-ink) }`, white
+  uppercase `--fw-extrabold` labels), zebra rows, `--econ-border` rules. This is
+  the canonical table look — keep new tabular content on it.
+- **Static table** (`c.table`) — lighter grey-header variant for simple 2-column
+  reference rows.
+- **Tone cards** — green/amber/rose/purple/blue triplets (bg / border / label)
+  drive tiles, callouts, branches and the `economistQuote` band.
+- **Bullets / ticks** — bullets are `•` in a tone colour; ticks use the bespoke
+  `check` glyph in `--econ-green`. (Unifying these into single shared classes is
+  the open structural pass — not yet done.)
+
+> Brand serif (Fraunces) appears on the **economist-quote** text (italic) and the
+> **"Big idea" / conclusion** statement; everything else stays Inter.
 
 ---
 

@@ -1129,14 +1129,14 @@
     html += mg.items.map(m => {
       const t = PATTERN_TONES[m.tone || 'blue'] || PATTERN_TONES.blue;
       return `
-        <div style="display:flex;flex-direction:column;border:1px solid ${t.border};border-radius:14px;background:#fff;overflow:hidden;">
+        <div style="display:flex;flex-direction:column;border:1px solid ${t.border};border-radius:var(--r-lg);background:#fff;overflow:hidden;">
           <div style="background:${t.bg};border-bottom:1px solid ${t.border};padding:12px 14px;display:flex;align-items:center;gap:10px;">
             <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${renderIcon(m.icon)}</span>
             <span style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:1.25;">${m.title || ''}</span>
           </div>
           <div style="padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;">
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;">${m.body || ''}</div>
-            ${m.example !== undefined ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:1.5;margin-top:auto;"><span style="font-weight:var(--fw-extrabold);color:${t.label};">${m.exampleLabel || mg.exampleLabel || 'Example'}:</span> <em>${m.example}</em></div>` : ''}
+            ${m.example !== undefined ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin-top:auto;"><span style="font-weight:var(--fw-extrabold);color:${t.label};">${m.exampleLabel || mg.exampleLabel || 'Example'}:</span> <em>${m.example}</em></div>` : ''}
           </div>
         </div>`;
     }).join('');
@@ -1170,7 +1170,7 @@
           <div style="padding:18px 16px 20px;text-align:center;flex:1;display:flex;flex-direction:column;">
             <div style="font-size:34px;margin-bottom:8px;line-height:1;">${renderIcon(it.icon)}</div>
             <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-bottom:8px;">${it.title}</div>
-            <div style="font-size:var(--fs-sm);color:#475569;line-height:1.6;">${it.body}</div>
+            <div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-relaxed);">${it.body}</div>
           </div>
         </div>`;
     }).join('');
@@ -1178,7 +1178,7 @@
       `<div style="position:absolute;left:${pos};top:0;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:${dotColors[i]};border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.25);"></div>`
     ).join('');
     html += `
-      <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:22px 24px 22px;margin-bottom:22px;">
+      <div style="background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:22px 24px 22px;margin-bottom:22px;">
         <div style="position:relative;padding:0 0 22px;">
           <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:var(--fw-extrabold);letter-spacing:0.1em;text-transform:uppercase;color:var(--econ-ink);margin-bottom:12px;">
             <span>← ${con.leftCap || 'Markets'}</span>
@@ -1207,10 +1207,10 @@
     if (!fe || !Array.isArray(fe.inputs) || !fe.coordinator || !fe.output) return '';
     let html = '';
     if (fe.label) html += genSecLabel(fe.emoji || '🔗', fe.label);
-    const pill = (text, t) => `<span style="display:inline-block;background:#fff;border:1.5px solid ${t.border};color:${t.label};font-size:11px;font-weight:var(--fw-extrabold);padding:3px 12px;border-radius:999px;">${text}</span>`;
+    const pill = (text, t) => `<span style="display:inline-block;background:#fff;border:1.5px solid ${t.border};color:${t.label};font-size:11px;font-weight:var(--fw-extrabold);padding:3px 12px;border-radius:var(--r-full);">${text}</span>`;
     const inputCard = (inp) => {
       const t = PATTERN_TONES[inp.tone || 'slate'] || PATTERN_TONES.slate;
-      return `<div style="border:1.5px solid ${t.border};border-radius:14px;background:${t.bg};padding:11px 13px;display:flex;align-items:center;gap:11px;">
+      return `<div style="border:1.5px solid ${t.border};border-radius:var(--r-lg);background:${t.bg};padding:11px 13px;display:flex;align-items:center;gap:11px;">
         <div style="font-size:25px;line-height:1;flex-shrink:0;">${renderIcon(inp.icon)}</div>
         <div style="display:flex;flex-direction:column;gap:4px;min-width:0;">
           <div style="font-size:var(--fs-xs);font-weight:900;letter-spacing:0.04em;color:${t.label};">${inp.label || ''}</div>
@@ -1234,7 +1234,7 @@
         ${panel}
       </div>`;
     const ot = PATTERN_TONES[fe.output.tone || 'blue'] || PATTERN_TONES.blue;
-    const outputCard = `<div style="border:2px solid ${ot.border};border-radius:14px;background:${ot.bg};padding:20px 14px;text-align:center;">
+    const outputCard = `<div style="border:2px solid ${ot.border};border-radius:var(--r-lg);background:${ot.bg};padding:20px 14px;text-align:center;">
         <div style="font-size:30px;line-height:1;margin-bottom:8px;">${fe.output.icon || ''}</div>
         <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${ot.label};line-height:1.25;">${fe.output.label || ''}</div>
       </div>`;
@@ -1316,7 +1316,7 @@
           data-id-uid="${uid}"
           data-id-persp="${p}"
           data-id-tone="${pToneName}"
-          style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:${isActive ? t.bg : '#fff'};border:1.5px solid ${isActive ? t.accent : '#E7E7EA'};border-radius:999px;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:var(--fw-extrabold);color:${isActive ? t.label : '#475569'};letter-spacing:0.01em;transition:background 0.18s,border-color 0.18s,color 0.18s;">
+          style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:${isActive ? t.bg : '#fff'};border:1.5px solid ${isActive ? t.accent : '#E7E7EA'};border-radius:var(--r-full);cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:var(--fw-extrabold);color:${isActive ? t.label : '#475569'};letter-spacing:0.01em;transition:background 0.18s,border-color 0.18s,color 0.18s;">
           <span data-id-persp-dot style="width:9px;height:9px;border-radius:50%;background:${isActive ? t.accent : '#CBD5E1'};"></span>
           ${perspLabels[p] || (p.charAt(0).toUpperCase() + p.slice(1))}
         </button>`;
@@ -1335,7 +1335,7 @@
           data-id-tone="${toneName}"${showAttr}
           style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:${isActive ? t.bg : '#fff'};border:1px solid ${isActive ? t.border : '#E7E7EA'};border-radius:10px;box-shadow:${isActive ? '0 2px 10px ' + t.accent + '2A' : '0 1px 2px rgba(11,20,38,0.04)'};cursor:pointer;font-family:inherit;text-align:left;transition:background 0.18s,border-color 0.18s,box-shadow 0.18s;">
           <span data-id-circle style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:${isActive ? t.accent : '#E2E8F0'};color:${isActive ? '#fff' : '#475569'};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:900;">${i + 1}</span>
-          <span data-id-label style="flex:1;min-width:0;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:${isActive ? t.label : '#0B1426'};line-height:1.3;">${v.label}</span>
+          <span data-id-label style="flex:1;min-width:0;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:${isActive ? t.label : '#0B1426'};line-height:var(--lh-snug);">${v.label}</span>
         </button>`;
       }).join('');
 
@@ -1346,7 +1346,7 @@
           const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
           const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
           const bodyHtml = !v.body ? '' : Array.isArray(v.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:var(--econ-ink);line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
             : `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${v.body}</div>`;
           const analysisHtml = v.analysis ? `
             <div style="margin-top:14px;padding-top:14px;border-top:1px solid ${t.border}60;">
@@ -1361,7 +1361,7 @@
         }).join('');
         html += `
           <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}'${inverseLayers.length ? ` data-id-inverse='${JSON.stringify(inverseLayers)}'` : ''} style="margin-bottom:26px;">
-            <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
+            <div style="border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
               <div style="max-width:${id.maxWidth || '640px'};margin:0 auto;">${I[id.svgKey]}</div>
             </div>
             <div class="id-step-strip" style="display:${singleView ? 'none' : 'grid'};grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
@@ -1380,7 +1380,7 @@
             const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
             const bodyHtml = Array.isArray(slot.body)
               ? `<ul style="margin:0;padding:0;list-style:none;font-size:11.5px;color:var(--econ-ink);line-height:1.55;">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
-              : `<div style="font-size:11.5px;color:var(--econ-ink);line-height:1.6;">${slot.body || ''}</div>`;
+              : `<div style="font-size:11.5px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${slot.body || ''}</div>`;
             const marker = v.icon
               ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-md);line-height:1;">${renderIcon(v.icon)}</span>`
               : (singleView ? '' : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;">${i + 1}</span>`);
@@ -1422,7 +1422,7 @@
         html += `
           <div data-id-root="${uid}" data-id-active-vi="0" data-id-layers='${JSON.stringify(layers)}'${inverseLayers.length ? ` data-id-inverse='${JSON.stringify(inverseLayers)}'` : ''}${perspectives ? ` data-id-perspectives='${JSON.stringify(perspectives)}'` : ''} style="margin-bottom:26px;">
             ${perspectiveStripHtml}
-            <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
+            <div style="border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
               <div class="id-content-row" style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;min-height:${id.stageMinHeight || 290}px;">
                 <div class="${svgWrapClass}" style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
                 <div style="display:grid;padding:0 4px;">${descItems}</div>
@@ -1454,7 +1454,7 @@
         const tipHead = (typeof tip === 'object' && tip.head) || null;
         const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
         const bodyHtml = tipHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;">${tipHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.55;">${tipText}</div></div>`
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${tipHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.55;">${tipText}</div></div>`
           : `<div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:1.55;">${tipText}</div>`;
         content += `
           <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:14px;">
@@ -1487,31 +1487,31 @@
             ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`
             : '';
           return `
-            <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+            <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:var(--r-lg);padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
               <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);flex-shrink:0;">${i + 1}</div>
               ${iconHtml}
               <div style="flex:1;min-width:0;">
                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
-                <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${item.body}</div>
+                <div style="font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-normal);">${item.body}</div>
               </div>
             </div>`;
         }
         if (c.causesStyle === 'icon-top' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${renderIcon(item.icon)}</div>
-            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:1.3;margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
+            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         if (c.causesStyle === 'plain-white' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -1522,7 +1522,7 @@
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -1542,7 +1542,7 @@
             </div>
             <div style="padding:11px 14px;background:${t.headerBg};color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-sm);display:flex;align-items:center;gap:8px;">
               <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
-              <span style="line-height:1.3;">${headText}</span>
+              <span style="line-height:var(--lh-snug);">${headText}</span>
             </div>
             <div style="padding:13px 14px 14px;font-size:14px;color:var(--econ-ink);line-height:1.65;flex:1;">${item.body}</div>
             ${exampleHtml}
@@ -1552,7 +1552,7 @@
         <div style="border-radius:12px;background:#fff;border:1px solid ${t.border}22;border-left:4px solid ${t.border};padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
             <div style="width:22px;height:22px;border-radius:50%;background:${t.headerBg};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</div>
-            <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${t.label};line-height:1.3;">${item.head}</div>
+            <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${t.label};line-height:var(--lh-snug);">${item.head}</div>
           </div>
           <div style="font-size:13.5px;color:#475569;line-height:1.65;">${item.body}</div>
         </div>`;
@@ -1585,8 +1585,8 @@
             <div style="width:${ring}px;height:${ring}px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:${triple ? 26 : 30}px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(side.icon)}</div>
             <div style="font-size:${triple ? 15 : 17}px;font-weight:var(--fw-extrabold);color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
             ${side.value ? `<div style="font-size:22px;font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-bottom:8px;">${side.value}</div>` : ''}
-            ${side.caption ? `<div style="font-size:${triple ? 12.5 : 13.5}px;color:${t.label};line-height:1.5;font-weight:var(--fw-semi);">${side.caption}</div>` : ''}
-            ${Array.isArray(side.chips) && side.chips.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:13px;">${side.chips.map(ch => `<span style="background:#fff;border:1px solid ${t.border};color:${t.label};font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:4px 11px;border-radius:999px;box-shadow:0 1px 2px rgba(0,0,0,0.04);">${ch}</span>`).join('')}</div>` : ''}
+            ${side.caption ? `<div style="font-size:${triple ? 12.5 : 13.5}px;color:${t.label};line-height:var(--lh-normal);font-weight:var(--fw-semi);">${side.caption}</div>` : ''}
+            ${Array.isArray(side.chips) && side.chips.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:13px;">${side.chips.map(ch => `<span style="background:#fff;border:1px solid ${t.border};color:${t.label};font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:4px 11px;border-radius:var(--r-full);box-shadow:0 1px 2px rgba(0,0,0,0.04);">${ch}</span>`).join('')}</div>` : ''}
           </div>
         `;
       };
@@ -1628,12 +1628,12 @@
         const t = PATTERN_TONES[col.tone || 'slate'] || PATTERN_TONES.slate;
         const isLast = i === v.columns.length - 1;
         const colHtml = `
-          <div style="flex:1 1 0;min-width:160px;border-radius:14px;background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
+          <div style="flex:1 1 0;min-width:160px;border-radius:var(--r-lg);background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
             <div style="padding:12px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:8px;">
               ${col.icon ? `<div style="font-size:var(--fs-xl);line-height:1;">${renderIcon(col.icon)}</div>` : ''}
               <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};letter-spacing:0.02em;">${col.label}</div>
             </div>
-            <ul style="list-style:none;margin:0;padding:12px 14px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.6;">
+            <ul style="list-style:none;margin:0;padding:12px 14px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">
               ${col.items.map(it => {
                 const ok = it.ok !== false;
                 const mark = ok
@@ -1683,13 +1683,13 @@
         const svgHtml = I[item.svgKey] || '';
         const bulletsHtml = (item.bullets || []).map(b => {
           const col = dotCol[b.tone || 'slate'] || dotCol.slate;
-          return `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-xs);color:var(--econ-gray-700);line-height:1.5;margin-bottom:5px;">
+          return `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-xs);color:var(--econ-gray-700);line-height:var(--lh-normal);margin-bottom:5px;">
             <span style="flex-shrink:0;width:7px;height:7px;border-radius:50%;background:${col};margin-top:5px;"></span>
             <span>${b.text}</span>
           </div>`;
         }).join('');
         content += `
-          <div style="border-radius:14px;background:#fff;border:1px solid ${t.border};overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid ${t.border};overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="padding:11px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:10px;">
               <div style="width:36px;height:36px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.1);flex-shrink:0;">${item.icon || '📊'}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${t.label};">${item.head}</div>
@@ -1731,7 +1731,7 @@
             ? `border-bottom:1px solid #E7E7EA;padding-bottom:12px;margin-bottom:12px;`
             : '';
           const liStyle = stepsBoxed
-            ? `display:flex;align-items:flex-start;gap:12px;border-radius:14px;background:${stepTone.bg};border:1px solid ${stepTone.border};padding:16px 16px 14px;`
+            ? `display:flex;align-items:flex-start;gap:12px;border-radius:var(--r-lg);background:${stepTone.bg};border:1px solid ${stepTone.border};padding:16px 16px 14px;`
             : `display:flex;align-items:flex-start;gap:12px;${divider}`;
           return `
           <li style="${liStyle}">
@@ -1766,13 +1766,13 @@
           </div>`;
       } else if (stacked) {
         panelOut += `
-          <div style="margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div style="margin-bottom:26px;border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
             <div style="overflow-x:auto;margin-bottom:18px;">${I[dp.diagramKey]}</div>
             <div>${headerHtml}${notesHtml}</div>
           </div>`;
       } else {
         panelOut += `
-          <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:26px;border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:14px 16px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
             <div style="min-width:0;overflow-x:auto;">${I[dp.diagramKey]}</div>
             <div style="display:flex;flex-direction:column;padding:0 4px;">${headerHtml}${notesHtml}</div>
           </div>`;
@@ -1806,8 +1806,8 @@
           <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
             <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-base);font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
             <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xl);line-height:1;margin-bottom:12px;">${renderIcon(step.icon)}${statusBadge}</div>
-            <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
-            ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
+            <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:6px;">${step.title}</div>
+            ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:var(--lh-normal);">${step.sub}</div>` : ''}
             ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
           </div>
         `;
@@ -1840,7 +1840,7 @@
             }).join('')}</div>`
           : useChecks
             ? `<ul style="list-style:none;margin:0;padding:0;">${side.checks.map(ch => `
-                <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:13.5px;color:var(--econ-ink);line-height:1.6;">
+                <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-relaxed);">
                   <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">✓</span>
                   <span><strong style="color:${tone.label};">${ch.term}</strong> – ${ch.body}</span>
                 </li>`).join('')}</ul>`
@@ -1851,7 +1851,7 @@
                   <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
                     <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${renderIcon(r.icon)}</div>
                     <div style="flex:1;min-width:0;">
-                      <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:3px;">${idx + 1}. ${r.title}</div>
+                      <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${tone.label};line-height:var(--lh-snug);margin-bottom:3px;">${idx + 1}. ${r.title}</div>
                       <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.55;">${r.text}</div>
                     </div>
                   </div>`).join('')
@@ -1871,7 +1871,7 @@
         const border = plain ? '#E7E7EA' : tone.border;
         const headerAlign = side.centeredLabel ? 'center' : 'flex-start';
         return `
-          <div style="border-radius:14px;background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;min-width:0;">
+          <div style="border-radius:var(--r-lg);background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;min-width:0;">
             <div style="display:flex;align-items:center;justify-content:${headerAlign};gap:12px;margin-bottom:14px;">
               ${numberHtml}${iconHtml}
               <div style="color:${tone.label};font-weight:var(--fw-extrabold);font-size:var(--fs-md);letter-spacing:0.01em;">${side.label}</div>
@@ -1914,8 +1914,8 @@
               ${p.icon ? `<div style="font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(p.icon)}</div>` : ''}
               <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};letter-spacing:0.01em;">${p.title}</div>
             </div>
-            ${p.headline ? `<div style="font-size:14px;font-weight:${minimal ? '500' : '800'};color:#0F172A;line-height:1.5;margin-bottom:8px;">${p.headline}</div>` : ''}
-            ${p.body ? `<div style="font-size:13.5px;color:#475569;line-height:1.6;">${p.body}</div>` : ''}
+            ${p.headline ? `<div style="font-size:14px;font-weight:${minimal ? '500' : '800'};color:#0F172A;line-height:var(--lh-normal);margin-bottom:8px;">${p.headline}</div>` : ''}
+            ${p.body ? `<div style="font-size:13.5px;color:#475569;line-height:var(--lh-relaxed);">${p.body}</div>` : ''}
           </div>`;
       });
       if (compare) {
@@ -1946,7 +1946,7 @@
         const fCols = c.keyPointsCols || pills.length;
         const cells = pills.map(p => {
           const t = PATTERN_TONES[p.tone] || PATTERN_TONES.blue;
-          const pill = `<span style="display:flex;align-items:center;justify-content:center;margin:0 14px;padding:10px 18px;border-radius:999px;background:${t.bg};border:2px solid ${t.accent};color:${t.label};font-size:var(--fs-md);font-weight:var(--fw-extrabold);letter-spacing:0.03em;">${p.label}</span>`;
+          const pill = `<span style="display:flex;align-items:center;justify-content:center;margin:0 14px;padding:10px 18px;border-radius:var(--r-full);background:${t.bg};border:2px solid ${t.accent};color:${t.label};font-size:var(--fs-md);font-weight:var(--fw-extrabold);letter-spacing:0.03em;">${p.label}</span>`;
           const op = p.op ? `<span style="position:absolute;right:-7px;top:50%;transform:translate(50%,-50%);font-size:var(--fs-2xl);font-weight:900;color:#94A3B8;z-index:1;line-height:1;">${p.op}</span>` : '';
           return `<div style="position:relative;">${pill}${op}</div>`;
         }).join('');
@@ -1963,13 +1963,13 @@
       const tiles = c.examples.map((p, i) => {
         const t = PATTERN_TONES[p.tone || exTones[i % exTones.length]];
         return `
-          <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+          <div style="background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
               <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;flex-shrink:0;">${startNum + i}</div>
-              <div style="font-size:17px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;">${p.title}</div>
+              <div style="font-size:17px;font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${p.title}</div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:16px;">
-              <div style="flex-shrink:0;width:88px;height:88px;border-radius:14px;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:48px;line-height:1;">${renderIcon(p.icon)}</div>
+              <div style="flex-shrink:0;width:88px;height:88px;border-radius:var(--r-lg);background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:48px;line-height:1;">${renderIcon(p.icon)}</div>
               <div style="flex:1;min-width:0;font-size:14px;color:var(--econ-ink);line-height:1.65;">${p.body}</div>
             </div>
           </div>`;
@@ -2031,14 +2031,14 @@
       const tilesHtml = c.marketGrid.map((item, i) => {
         const t = PATTERN_TONES[item.tone || 'green'] || PATTERN_TONES.green;
         return `
-          <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+          <div style="background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
               <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;flex-shrink:0;">${i + 1}</div>
-              <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;">${item.title}</div>
+              <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${item.title}</div>
             </div>
             <div style="display:flex;justify-content:center;align-items:center;height:64px;font-size:42px;line-height:1;margin-bottom:4px;">${renderIcon(item.icon)}</div>
             ${renderMiniChart(item, t)}
-            <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.6;margin-top:10px;">${item.body}</div>
+            <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);margin-top:10px;">${item.body}</div>
           </div>`;
       }).join('');
       content += `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:22px;">${tilesHtml}</div>`;
@@ -2053,12 +2053,12 @@
       const fwTiles = fw.tiles.map((tile, i) => {
         const t = PATTERN_TONES[tile.tone || 'blue'] || PATTERN_TONES.blue;
         return `
-          <div style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:18px 16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+          <div style="background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:18px 16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
             <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;align-self:flex-start;">${i + 1}</div>
             <div style="font-size:38px;line-height:1;margin-top:-8px;">${renderIcon(tile.icon)}</div>
             <div style="font-size:17px;font-weight:var(--fw-extrabold);color:${t.label};">${tile.title}</div>
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.55;">${tile.body}</div>
-            ${tile.rule ? `<div style="margin-top:auto;background:#fff;border:1px solid ${t.border};color:${t.label};font-size:11.5px;font-weight:var(--fw-bold);border-radius:8px;padding:5px 10px;line-height:1.35;">${tile.rule}</div>` : ''}
+            ${tile.rule ? `<div style="margin-top:auto;background:#fff;border:1px solid ${t.border};color:${t.label};font-size:11.5px;font-weight:var(--fw-bold);border-radius:var(--r-md);padding:5px 10px;line-height:1.35;">${tile.rule}</div>` : ''}
           </div>`;
       }).join('');
       // Optional "price source" header: a dark PRICE box that fans arrows
@@ -2073,7 +2073,7 @@
         const psTitle = (typeof ps === 'object' && ps.title) || 'PRICE';
         const psSub = (typeof ps === 'object' && ps.sub) || 'moves up ↑ / down ↓';
         return `
-          <div style="max-width:300px;margin:4px auto 0;background:var(--econ-ink);color:#fff;border-radius:14px;padding:11px 18px;text-align:center;box-shadow:0 4px 14px rgba(11,20,38,0.22);">
+          <div style="max-width:300px;margin:4px auto 0;background:var(--econ-ink);color:#fff;border-radius:var(--r-lg);padding:11px 18px;text-align:center;box-shadow:0 4px 14px rgba(11,20,38,0.22);">
             <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);letter-spacing:0.05em;">${psTitle}</div>
             <div style="font-size:11.5px;color:#CBD5E1;margin-top:1px;">${psSub}</div>
           </div>
@@ -2101,11 +2101,11 @@
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
       content += `
-        <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
+        <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:var(--r-lg);padding:18px 22px;margin-bottom:22px;">
           <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
           <div>
             <div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
-            <div style="font-size:15.5px;line-height:1.65;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+            <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:18px;line-height:1.5;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
             <div style="font-size:var(--fs-sm);color:${t.label};font-weight:var(--fw-bold);">– ${eq.attribution}</div>
           </div>
         </div>`;
@@ -2120,7 +2120,7 @@
       if (c.bodyTone) {
         const bt = PATTERN_TONES[c.bodyTone] || PATTERN_TONES.blue;
         content += `
-          <div style="display:flex;align-items:flex-start;gap:14px;background:${bt.bg};border:1px solid ${bt.border};border-radius:14px;padding:18px 20px;margin-bottom:22px;">
+          <div style="display:flex;align-items:flex-start;gap:14px;background:${bt.bg};border:1px solid ${bt.border};border-radius:var(--r-lg);padding:18px 20px;margin-bottom:22px;">
             ${c.bodyIcon ? `<div style="width:40px;height:40px;border-radius:50%;background:${bt.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${c.bodyIcon}</div>` : ''}
             <div style="font-size:14.5px;color:var(--econ-ink);line-height:1.65;">${c.body}</div>
           </div>`;
@@ -2147,10 +2147,10 @@
       const cw = c.chipWall;
       const t = PATTERN_TONES[cw.tone || 'amber'] || PATTERN_TONES.amber;
       if (cw.label) content += genSecLabel(cw.emoji || '🚩', cw.label);
-      content += `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:16px 18px;margin-bottom:24px;">`;
+      content += `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:16px 18px;margin-bottom:24px;">`;
       if (cw.intro) content += `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;margin-bottom:13px;">${cw.intro}</div>`;
       content += `<div style="display:flex;flex-wrap:wrap;gap:9px;">`;
-      content += cw.chips.map(ch => `<span style="display:inline-flex;align-items:center;background:#fff;border:1.5px solid ${t.border};color:${t.label};font-weight:var(--fw-extrabold);font-size:14px;padding:7px 15px;border-radius:999px;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${ch}</span>`).join('');
+      content += cw.chips.map(ch => `<span style="display:inline-flex;align-items:center;background:#fff;border:1.5px solid ${t.border};color:${t.label};font-weight:var(--fw-extrabold);font-size:14px;padding:7px 15px;border-radius:var(--r-full);box-shadow:0 1px 3px rgba(0,0,0,0.05);">${ch}</span>`).join('');
       content += `</div></div>`;
     }
 
@@ -2189,7 +2189,7 @@
             ${flow.outputs.map((item, i) => `${i > 0 ? connectorText(flow.connector) : ''}${outputIcon(item)}`).join('')}
           </div>`).join('');
         const bulletsHtml = (box.bullets || []).map(b => `
-          <li style="display:flex;gap:8px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.6;margin-bottom:5px;">
+          <li style="display:flex;gap:8px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);margin-bottom:5px;">
             <span style="color:${t.label};flex-shrink:0;margin-top:1px;">•</span><span>${b}</span>
           </li>`).join('');
         return `
@@ -2264,9 +2264,9 @@
       const we = c.workedExample;
       if (we.label !== null) content += genSecLabel(we.emoji || '🔬', we.label || 'Worked example');
       if (we.heroImage) {
-        content += `<div style="margin-bottom:20px;border-radius:14px;overflow:hidden;"><img src="${we.heroImage}" alt="" style="display:block;width:100%;height:auto;" /></div>`;
+        content += `<div style="margin-bottom:20px;border-radius:var(--r-lg);overflow:hidden;"><img src="${we.heroImage}" alt="" style="display:block;width:100%;height:auto;" /></div>`;
       } else if (we.scene && SCENES[we.scene]) {
-        content += `<div style="margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;">${SCENES[we.scene]}</div>`;
+        content += `<div style="margin-bottom:20px;border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;">${SCENES[we.scene]}</div>`;
       }
       const weCards = we.cards || [];
       const weCols = weCards.length;
@@ -2275,18 +2275,18 @@
         const t = PATTERN_TONES[card.tone] || PATTERN_TONES.blue;
         const bulletsHtml = card.bullets && card.bullets.length ? `
           <ul style="list-style:none;padding:0;margin:0 0 14px;display:flex;flex-direction:column;gap:8px;">
-            ${card.bullets.map(b => `<li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--econ-ink);line-height:1.5;"><span style="width:7px;height:7px;border-radius:50%;background:${t.accent};margin-top:8px;flex-shrink:0;"></span><span>${b}</span></li>`).join('')}
+            ${card.bullets.map(b => `<li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--econ-ink);line-height:var(--lh-normal);"><span style="width:7px;height:7px;border-radius:50%;background:${t.accent};margin-top:8px;flex-shrink:0;"></span><span>${b}</span></li>`).join('')}
           </ul>` : '';
-        const bodyHtml = card.body ? `<div style="font-size:14px;color:var(--econ-ink);line-height:1.6;margin-bottom:14px;flex:1;">${card.body}</div>` : '';
+        const bodyHtml = card.body ? `<div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);margin-bottom:14px;flex:1;">${card.body}</div>` : '';
         const badgeHtml = card.badge ? `
           <div style="display:flex;align-items:center;gap:10px;background:${t.soft};border-radius:10px;padding:9px 12px;margin-top:auto;">
             <div style="width:26px;height:26px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);flex-shrink:0;">${card.badge.icon}</div>
-            <div style="font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;">${card.badge.text}</div>
+            <div style="font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${card.badge.text}</div>
           </div>` : '';
         const opHtml = card.op ? `<div style="position:absolute;top:50%;left:calc(100% + ${weCellGap / 2}px);transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);font-weight:900;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,0.06);">${card.op}</div>` : '';
         return `
           <div style="position:relative;">
-            <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+            <div style="background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:18px 18px 16px;display:flex;flex-direction:column;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
                 <div style="width:44px;height:44px;border-radius:50%;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">${renderIcon(card.icon)}</div>
                 <div style="display:flex;flex-direction:column;line-height:1.2;">
@@ -2308,7 +2308,7 @@
           const t = PATTERN_TONES[s.tone] || PATTERN_TONES.blue;
           return `<span style="display:inline-flex;align-items:center;gap:8px;color:${t.label};font-size:var(--fs-base);font-weight:var(--fw-extrabold);"><span style="font-size:var(--fs-lg);">${renderIcon(s.icon)}</span>${s.label}</span>`;
         }).join('');
-        content += `<div style="display:flex;align-items:center;justify-content:center;gap:6px;background:${PATTERN_TONES.green.bg};border:1px solid ${PATTERN_TONES.green.border};border-radius:14px;padding:14px 20px;margin-bottom:26px;flex-wrap:wrap;">${segs}</div>`;
+        content += `<div style="display:flex;align-items:center;justify-content:center;gap:6px;background:${PATTERN_TONES.green.bg};border:1px solid ${PATTERN_TONES.green.border};border-radius:var(--r-lg);padding:14px 20px;margin-bottom:26px;flex-wrap:wrap;">${segs}</div>`;
       }
     }
 
@@ -2329,17 +2329,17 @@
             ? `<div style="height:${igSceneH}px;overflow:hidden;flex-shrink:0;">${SCENES[item.scene]}</div>`
             : '');
         const thirdPartyHtml = item.thirdParty
-          ? `<div style="display:flex;align-items:center;gap:8px;background:${t.soft};border-radius:8px;padding:8px 10px;margin-top:auto;">
+          ? `<div style="display:flex;align-items:center;gap:8px;background:${t.soft};border-radius:var(--r-md);padding:8px 10px;margin-top:auto;">
                <span style="font-size:var(--fs-md);flex-shrink:0;">👥</span>
                <div style="font-size:12.5px;line-height:1.4;"><span style="font-weight:var(--fw-semi);color:#475569;">${item.thirdPartyLabel || 'Third party harmed'}: </span><span style="font-weight:var(--fw-bold);color:${t.label};">${item.thirdParty}</span></div>
              </div>`
           : '';
         return `
-          <div style="border-radius:14px;border:1px solid #E7E7EA;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+          <div style="border-radius:var(--r-lg);border:1px solid #E7E7EA;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.04);">
             ${sceneHtml}
             <div style="padding:12px 14px 14px;display:flex;flex-direction:column;flex:1;gap:8px;">
-              <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;">${i + 1}. ${item.title}</div>
-              <div style="font-size:var(--fs-sm);color:#334155;line-height:1.6;flex:1;">${item.body}</div>
+              <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${i + 1}. ${item.title}</div>
+              <div style="font-size:var(--fs-sm);color:#334155;line-height:var(--lh-relaxed);flex:1;">${item.body}</div>
               ${thirdPartyHtml}
             </div>
           </div>`;
@@ -2371,31 +2371,31 @@
             ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`
             : '';
           return `
-            <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+            <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:var(--r-lg);padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
               <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);flex-shrink:0;">${i + 1}</div>
               ${iconHtml}
               <div style="flex:1;min-width:0;">
                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
-                <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${item.body}</div>
+                <div style="font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-normal);">${item.body}</div>
               </div>
             </div>`;
         }
         if (c.causesStyle === 'icon-top' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:12px;">${renderIcon(item.icon)}</div>
-            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:1.3;margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
+            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         if (c.causesStyle === 'plain-white' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -2406,7 +2406,7 @@
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -2426,7 +2426,7 @@
             </div>
             <div style="padding:11px 14px;background:${t.headerBg};color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-sm);display:flex;align-items:center;gap:8px;">
               <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
-              <span style="line-height:1.3;">${headText}</span>
+              <span style="line-height:var(--lh-snug);">${headText}</span>
             </div>
             <div style="padding:13px 14px 14px;font-size:14px;color:var(--econ-ink);line-height:1.65;flex:1;">${item.body}</div>
             ${exampleHtml}
@@ -2436,7 +2436,7 @@
         <div style="border-radius:12px;background:#fff;border:1px solid ${t.border}22;border-left:4px solid ${t.border};padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
             <div style="width:22px;height:22px;border-radius:50%;background:${t.headerBg};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</div>
-            <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${t.label};line-height:1.3;">${item.head}</div>
+            <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${t.label};line-height:var(--lh-snug);">${item.head}</div>
           </div>
           <div style="font-size:13.5px;color:#475569;line-height:1.65;">${item.body}</div>
         </div>`;
@@ -2464,19 +2464,19 @@
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
         if (plain2) {
           return `
-          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         return `
-          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -2494,19 +2494,19 @@
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
         if (plain3) {
           return `
-          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
         }
         return `
-          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -2645,12 +2645,12 @@
       const sideHtml = (s) => {
         const t = PATTERN_TONES[s.tone || 'blue'] || PATTERN_TONES.blue;
         if (s.name || s.premise || s.reason) {
-          return `<div style="flex:1;min-width:0;border-radius:14px;background:${t.bg};border:1px solid ${t.border};padding:16px 16px 14px;display:flex;flex-direction:column;gap:9px;">
+          return `<div style="flex:1;min-width:0;border-radius:var(--r-lg);background:${t.bg};border:1px solid ${t.border};padding:16px 16px 14px;display:flex;flex-direction:column;gap:9px;">
             <div style="display:flex;align-items:center;gap:10px;">
               <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-md);flex-shrink:0;">${s.icon || '👤'}</span>
               <span style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};">${s.name || ''}</span>
             </div>
-            ${s.premise ? `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${s.premise}</div>` : ''}
+            ${s.premise ? `<div style="font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-normal);">${s.premise}</div>` : ''}
             ${s.reason ? `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.55;border-top:1px dashed ${t.border};padding-top:9px;"><strong style="color:${t.label};">Reason:</strong> ${s.reason}</div>` : ''}
           </div>`;
         }
@@ -2662,10 +2662,10 @@
       const vsBadge = `<div class="versus-list__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:var(--fw-extrabold);font-size:11px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,20,38,0.25);">${vl.vs || 'VS'}</div></div>`;
       content += `<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:26px;">`;
       content += vl.rows.map(row => `
-        <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:16px;">
+        <div style="border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:16px;">
           ${row.heading ? `<div style="text-align:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:var(--econ-blue);margin-bottom:12px;letter-spacing:0.01em;">${row.heading}</div>` : ''}
           <div class="versus-list__pair" style="display:flex;align-items:stretch;gap:12px;">${sideHtml(row.left)}${vsBadge}${sideHtml(row.right)}</div>
-          ${row.note ? `<div style="text-align:center;font-size:12.5px;color:#475569;line-height:1.5;margin-top:10px;">${row.note}</div>` : ''}
+          ${row.note ? `<div style="text-align:center;font-size:12.5px;color:#475569;line-height:var(--lh-normal);margin-top:10px;">${row.note}</div>` : ''}
         </div>`).join('');
       content += `</div>`;
     }
@@ -2725,8 +2725,8 @@
           <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
             <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-base);font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
             <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xl);line-height:1;margin-bottom:12px;">${renderIcon(step.icon)}${statusBadge}</div>
-            <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
-            ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
+            <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:6px;">${step.title}</div>
+            ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:var(--lh-normal);">${step.sub}</div>` : ''}
             ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
           </div>
         `;
@@ -2744,7 +2744,7 @@
         purple: { color: '#7C3AED', badge: '#EDE9FE' },
       };
       content += `
-      <div style="border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;margin-bottom:28px;">
+      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;margin-bottom:28px;">
         <div style="background:var(--econ-ink);padding:14px 18px;display:flex;align-items:center;gap:10px;">
           <span style="font-size:var(--fs-lg);">🎓</span>
           <div>
@@ -2757,13 +2757,13 @@
             ${c.productExamples.map(p => {
               const vc = VC[p.verdictTone] || VC.amber;
               return `
-              <div class="reveal-cell" style="background:#fff;border-radius:14px;border:1px solid #E2E8F0;padding:16px 15px;box-shadow:0 3px 14px rgba(0,0,0,0.08);">
+              <div class="reveal-cell" style="background:#fff;border-radius:var(--r-lg);border:1px solid #E2E8F0;padding:16px 15px;box-shadow:0 3px 14px rgba(0,0,0,0.08);">
                 <div style="font-size:var(--fs-3xl);margin-bottom:9px;line-height:1;">${renderIcon(p.icon)}</div>
                 <div style="font-weight:var(--fw-extrabold);font-size:14px;color:var(--econ-ink);margin-bottom:10px;">${p.product}</div>
                 <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:#475569;font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:6px 10px;border-radius:6px;cursor:pointer;width:100%;">Predict verdict ↓</button>
                 <div class="reveal-cell__body is-hidden">
-                  <div style="display:inline-block;padding:3px 10px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:11px;font-weight:var(--fw-bold);margin-bottom:10px;">${p.verdict}</div>
-                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.6;padding-top:2px;">${p.reasoning}</div>
+                  <div style="display:inline-block;padding:3px 10px;border-radius:var(--r-2xl);background:${vc.badge};color:${vc.color};font-size:11px;font-weight:var(--fw-bold);margin-bottom:10px;">${p.verdict}</div>
+                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-relaxed);padding-top:2px;">${p.reasoning}</div>
                 </div>
               </div>`;
             }).join('')}
@@ -2864,8 +2864,8 @@
         const noteHead = (typeof note === 'object' && note.head) || null;
         const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
         const bodyHtml = noteHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div></div>`
-          : `<div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div>`;
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div></div>`
+          : `<div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div>`;
         content += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:14px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
       });
     }
@@ -2941,7 +2941,7 @@
             <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">↔</div>
             <div style="flex:1;">
               <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${conText}</div>
+              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:16px;color:var(--econ-ink);line-height:var(--lh-snug);">${conText}</div>
             </div>
           </div>`;
       }
@@ -2958,7 +2958,7 @@
             <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-amber-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-base);flex-shrink:0;">⚠</div>
             <div style="flex:1;">
               <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:#92400E;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${noteTitle}</div>
-              <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div>
+              <div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div>
             </div>
           </div>`;
       }
@@ -2976,7 +2976,7 @@
         const tipHead = (typeof tip === 'object' && tip.head) || null;
         const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
         const bodyHtml = tipHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;">${tipHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.55;">${tipText}</div></div>`
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${tipHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.55;">${tipText}</div></div>`
           : `<div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:1.55;">${tipText}</div>`;
         content += `
           <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;">
@@ -3063,8 +3063,8 @@
         const noteHead = (typeof note === 'object' && note.head) || null;
         const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
         const bodyHtml = noteHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div></div>`
-          : `<div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div>`;
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div></div>`
+          : `<div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div>`;
         noteTopHtml += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
       });
     }
@@ -3452,11 +3452,11 @@
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
         return `
-          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:var(--r-lg);padding:18px 22px;margin-bottom:22px;">
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
             <div>
               <div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
-              <div style="font-size:15.5px;line-height:1.65;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:18px;line-height:1.5;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
               <div style="font-size:var(--fs-sm);color:${t.label};font-weight:var(--fw-bold);">– ${eq.attribution}</div>
             </div>
           </div>`;
@@ -3662,20 +3662,20 @@
       const tone = toneFor(i);
       const n = i + 1;
       const heading = s.prompt || s.label || `Step ${n}`;
-      const hint = s.hint ? `<div style="font-size:12.5px;color:#64748B;font-style:italic;margin-top:4px;line-height:1.5;">💡 ${s.hint}</div>` : '';
+      const hint = s.hint ? `<div style="font-size:12.5px;color:#64748B;font-style:italic;margin-top:4px;line-height:var(--lh-normal);">💡 ${s.hint}</div>` : '';
       const answer = linebreak(s.answer || '');
       return `
-        <div class="we-step" data-we-step="${n}" style="position:relative;border-radius:14px;background:#fff;border:1px solid ${tone.c}25;border-left:5px solid ${tone.c};box-shadow:0 2px 10px rgba(0,0,0,0.05);padding:16px 18px;transition:box-shadow 0.25s ease;">
+        <div class="we-step" data-we-step="${n}" style="position:relative;border-radius:var(--r-lg);background:#fff;border:1px solid ${tone.c}25;border-left:5px solid ${tone.c};box-shadow:0 2px 10px rgba(0,0,0,0.05);padding:16px 18px;transition:box-shadow 0.25s ease;">
           <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;">
             <div data-we-num="${n}" style="width:32px;height:32px;border-radius:50%;background:${tone.c};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;box-shadow:0 2px 6px ${tone.c}55;">${n}</div>
             <div style="flex:1;min-width:0;">
               <div style="font-size:14.5px;font-weight:var(--fw-bold);color:var(--econ-ink);line-height:1.45;">${heading}</div>
               ${hint}
             </div>
-            <div data-we-done style="display:none;background:${tone.c};color:#fff;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:var(--fw-extrabold);flex-shrink:0;align-self:flex-start;">✓ Done</div>
+            <div data-we-done style="display:none;background:${tone.c};color:#fff;border-radius:var(--r-2xl);padding:3px 10px;font-size:11px;font-weight:var(--fw-extrabold);flex-shrink:0;align-self:flex-start;">✓ Done</div>
           </div>
-          <button class="we-step__btn" data-action="we-reveal" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:12.5px;font-weight:var(--fw-extrabold);padding:8px 14px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;">Show working ↓</button>
-          <div class="we-step__answer is-hidden" style="margin-top:12px;padding:12px 14px;background:${tone.soft};border-radius:8px;border-left:4px solid ${tone.c};font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${answer}</div>
+          <button class="we-step__btn" data-action="we-reveal" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:12.5px;font-weight:var(--fw-extrabold);padding:8px 14px;border-radius:var(--r-md);cursor:pointer;width:100%;letter-spacing:0.02em;">Show working ↓</button>
+          <div class="we-step__answer is-hidden" style="margin-top:12px;padding:12px 14px;background:${tone.soft};border-radius:var(--r-md);border-left:4px solid ${tone.c};font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${answer}</div>
         </div>
       `;
     }).join('<div style="display:flex;justify-content:center;align-items:center;height:18px;"><div style="width:2px;height:100%;background:#CBD5E1;border-radius:2px;"></div></div>');
@@ -3703,8 +3703,8 @@
       ? (typeof c.conclusion === 'string' ? { text: c.conclusion } : c.conclusion)
       : null;
     const conclusion = conclObj ? `
-      <div data-we-payoff style="margin-top:18px;position:relative;border-radius:14px;opacity:0.35;filter:blur(1px);transition:opacity 0.5s ease,filter 0.5s ease,box-shadow 0.5s ease;">
-        <div style="border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
+      <div data-we-payoff style="margin-top:18px;position:relative;border-radius:var(--r-lg);opacity:0.35;filter:blur(1px);transition:opacity 0.5s ease,filter 0.5s ease,box-shadow 0.5s ease;">
+        <div style="border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
           <div style="padding:16px 20px;display:flex;align-items:flex-start;gap:14px;">
             <div style="font-size:30px;line-height:1;flex-shrink:0;">🏆</div>
             <div>
@@ -3714,7 +3714,7 @@
             </div>
           </div>
         </div>
-        <div data-we-lock style="position:absolute;inset:0;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(248,250,252,0.55);backdrop-filter:blur(2px);">
+        <div data-we-lock style="position:absolute;inset:0;border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;background:rgba(248,250,252,0.55);backdrop-filter:blur(2px);">
           <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:12px;padding:10px 18px;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:#475569;box-shadow:0 2px 8px rgba(0,0,0,0.08);">🔒 Solve all ${total} steps to unlock</div>
         </div>
       </div>
@@ -3744,11 +3744,11 @@
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
         return `
-          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-top:18px;">
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:var(--r-lg);padding:18px 22px;margin-top:18px;">
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
             <div>
               <div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
-              <div style="font-size:15.5px;line-height:1.65;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:18px;line-height:1.5;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
               <div style="font-size:var(--fs-sm);color:${t.label};font-weight:var(--fw-bold);">– ${eq.attribution}</div>
             </div>
           </div>`;
@@ -3780,12 +3780,12 @@
           <div data-step-num="${n}" style="width:38px;height:38px;border-radius:50%;background:${tone.c};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-md);font-weight:900;flex-shrink:0;box-shadow:0 2px 8px ${tone.c}55;transition:all 0.3s ease;">${n}</div>
           <div style="font-size:22px;line-height:1;">${icon}</div>
           <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.c};letter-spacing:0.01em;flex:1;">${title}</div>
-          <div data-solved-badge style="display:none;background:${tone.c};color:#fff;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:var(--fw-extrabold);flex-shrink:0;">✓ Done</div>
+          <div data-solved-badge style="display:none;background:${tone.c};color:#fff;border-radius:var(--r-2xl);padding:4px 10px;font-size:11px;font-weight:var(--fw-extrabold);flex-shrink:0;">✓ Done</div>
         </div>
-        <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;margin-bottom:12px;">${prompt}</div>
+        <div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);margin-bottom:12px;">${prompt}</div>
         ${formula ? `<div style="background:${tone.bg};border:1px dashed ${tone.c}50;border-radius:10px;padding:11px 14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:var(--econ-ink);margin-bottom:12px;text-align:center;letter-spacing:0.02em;">${formula}</div>` : ''}
         ${preview ? `<div class="ped-step__preview" style="margin-bottom:12px;">${preview}</div>` : ''}
-        <button data-action="ped-solve" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:var(--fs-sm);font-weight:var(--fw-extrabold);padding:9px 16px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;transition:all 0.2s ease;">Solve step ${n} ↓</button>
+        <button data-action="ped-solve" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:var(--fs-sm);font-weight:var(--fw-extrabold);padding:9px 16px;border-radius:var(--r-md);cursor:pointer;width:100%;letter-spacing:0.02em;transition:all 0.2s ease;">Solve step ${n} ↓</button>
         <div class="ped-step__answer is-hidden" style="margin-top:14px;padding:14px 16px;background:${tone.soft};border-radius:10px;border-left:4px solid ${tone.c};font-size:14px;color:var(--econ-ink);line-height:1.65;">${reveal}</div>
       </div>
     `;
@@ -3800,7 +3800,7 @@
 
     // Roadmap
     const roadmap = `
-      <div style="margin:18px 0 14px;padding:18px 14px 14px;background:#FAFBFF;border-radius:14px;border:1px solid #E7E7EA;">
+      <div style="margin:18px 0 14px;padding:18px 14px 14px;background:#FAFBFF;border-radius:var(--r-lg);border:1px solid #E7E7EA;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
           <div style="font-size:11px;font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.09em;color:#475569;">Your 5-step journey</div>
           <div style="display:flex;align-items:center;gap:8px;">
@@ -3816,7 +3816,7 @@
               ${i > 0 ? `<div style="position:absolute;top:18px;right:50%;width:100%;height:3px;background:linear-gradient(90deg,${roadmapStops[i-1].tone.c}30,${stop.tone.c}30);border-radius:2px;z-index:0;"></div>` : ''}
               <div data-roadmap-step="${i+1}" style="position:relative;z-index:1;width:36px;height:36px;border-radius:50%;background:#fff;border:2.5px solid ${stop.tone.c};color:${stop.tone.c};display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;box-shadow:0 2px 6px ${stop.tone.c}30;transition:all 0.3s ease;">${i + 1}</div>
               <div style="font-size:var(--fs-md);line-height:1;">${renderIcon(stop.icon)}</div>
-              <div style="font-size:11px;font-weight:var(--fw-bold);color:${stop.tone.c};text-align:center;line-height:1.3;max-width:90px;">${stop.label}</div>
+              <div style="font-size:11px;font-weight:var(--fw-bold);color:${stop.tone.c};text-align:center;line-height:var(--lh-snug);max-width:90px;">${stop.label}</div>
             </div>
           `).join('')}
         </div>
@@ -3978,7 +3978,7 @@
             <span style="color:${T1.c};">TR Before · ${fmtMoney(p1)} × ${q1}</span>
             <span style="color:var(--econ-ink);">${fmtMoney(tr1)}</span>
           </div>
-          <div style="height:${barH}px;background:#F1F5F9;border-radius:8px;overflow:hidden;">
+          <div style="height:${barH}px;background:#F1F5F9;border-radius:var(--r-md);overflow:hidden;">
             <div style="width:${(tr1 / trMax) * 100}%;height:100%;background:linear-gradient(90deg,${T1.c},${T1.c}cc);"></div>
           </div>
         </div>
@@ -3987,7 +3987,7 @@
             <span style="color:${T5.c};">TR After · ${fmtMoney(p2)} × ${q2}</span>
             <span style="color:var(--econ-ink);">${fmtMoney(tr2)}</span>
           </div>
-          <div style="height:${barH}px;background:#F1F5F9;border-radius:8px;overflow:hidden;">
+          <div style="height:${barH}px;background:#F1F5F9;border-radius:var(--r-md);overflow:hidden;">
             <div style="width:${(tr2 / trMax) * 100}%;height:100%;background:linear-gradient(90deg,${T5.c},${T5.c}cc);"></div>
           </div>
         </div>
@@ -4024,11 +4024,11 @@
           formula: `PED&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T1.c};font-weight:var(--fw-extrabold);">% ΔQ</span>&nbsp;&nbsp;÷&nbsp;&nbsp;<span style="color:${T2.c};font-weight:var(--fw-extrabold);">% ΔP</span>`,
           reveal: `<div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:var(--fs-base);font-weight:var(--fw-extrabold);">
             <span style="color:var(--econ-ink);">PED =</span>
-            <span style="background:${T1.soft};color:${T1.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T1.c}50;">${fmtPct(pctQ)}</span>
+            <span style="background:${T1.soft};color:${T1.c};padding:6px 12px;border-radius:var(--r-md);border:1.5px solid ${T1.c}50;">${fmtPct(pctQ)}</span>
             <span style="color:var(--econ-ink);">÷</span>
-            <span style="background:${T2.soft};color:${T2.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T2.c}50;">${fmtPct(pctP)}</span>
+            <span style="background:${T2.soft};color:${T2.c};padding:6px 12px;border-radius:var(--r-md);border:1.5px solid ${T2.c}50;">${fmtPct(pctP)}</span>
             <span style="color:var(--econ-ink);">=</span>
-            <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:8px;font-size:var(--fs-lg);box-shadow:0 2px 8px ${T3.c}55;">${ped.toFixed(2)}</span>
+            <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:var(--r-md);font-size:var(--fs-lg);box-shadow:0 2px 8px ${T3.c}55;">${ped.toFixed(2)}</span>
           </div>
           <div style="margin-top:12px;font-size:13.5px;text-align:center;">The minus sign is expected – but we classify using the <strong>magnitude</strong> |${ped.toFixed(2)}| = ${absPed.toFixed(2)}.</div>`
         },
@@ -4038,7 +4038,7 @@
           formula: `Compare&nbsp;&nbsp;<span style="color:${T4.c};font-weight:var(--fw-extrabold);">|PED|</span>&nbsp;&nbsp;against&nbsp;&nbsp;<span style="color:${T4.c};font-weight:var(--fw-extrabold);">1</span>`,
           preview: `<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;">
             ${spectrumZones.map(z => `
-              <div style="background:${z.bg};border:1px solid ${z.c}40;border-radius:8px;padding:8px 4px;text-align:center;">
+              <div style="background:${z.bg};border:1px solid ${z.c}40;border-radius:var(--r-md);padding:8px 4px;text-align:center;">
                 <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${z.c};">${z.short}</div>
                 <div style="font-size:10px;font-weight:var(--fw-bold);color:${z.c};margin-top:2px;text-transform:uppercase;letter-spacing:0.03em;">${z.label}</div>
               </div>
@@ -4047,7 +4047,7 @@
           reveal: `<div style="margin-bottom:14px;">
             <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:6px;">
               ${spectrumZones.map((z, i) => `
-                <div style="background:${z.bg};border:${i === verdictIdx ? `2.5px solid ${z.c}` : `1px solid ${z.c}40`};border-radius:8px;padding:8px 4px;text-align:center;position:relative;${i === verdictIdx ? `box-shadow:0 0 0 4px ${z.c}20;` : ''}">
+                <div style="background:${z.bg};border:${i === verdictIdx ? `2.5px solid ${z.c}` : `1px solid ${z.c}40`};border-radius:var(--r-md);padding:8px 4px;text-align:center;position:relative;${i === verdictIdx ? `box-shadow:0 0 0 4px ${z.c}20;` : ''}">
                   <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${z.c};">${z.short}</div>
                   <div style="font-size:10px;font-weight:var(--fw-bold);color:${z.c};margin-top:2px;text-transform:uppercase;letter-spacing:0.03em;">${z.label}</div>
                   ${i === verdictIdx ? `<div style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:${z.c};color:#fff;padding:3px 9px;border-radius:6px;font-size:11px;font-weight:var(--fw-extrabold);box-shadow:0 2px 6px rgba(0,0,0,0.2);white-space:nowrap;">|${ped.toFixed(2)}| = ${absPed.toFixed(2)} ▼</div>` : ''}
@@ -4060,7 +4060,7 @@
             <div>
               <div style="font-size:11px;font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
               <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:2px;">Demand is <span style="color:${T4.c};">price ${verdict.toLowerCase()}</span></div>
-              <div style="font-size:var(--fs-sm);color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise caused a ${fmtPct(pctQ)} fall in quantity – a bigger proportional response.</div>
+              <div style="font-size:var(--fs-sm);color:#475569;margin-top:3px;line-height:var(--lh-normal);">A ${fmtPct(pctP)} price rise caused a ${fmtPct(pctQ)} fall in quantity – a bigger proportional response.</div>
             </div>
           </div>`
         },
@@ -4073,7 +4073,7 @@
             <div style="background:${T5.c};color:#fff;border-radius:10px;padding:8px 14px;font-size:var(--fs-lg);font-weight:var(--fw-extrabold);flex-shrink:0;">${trDelta < 0 ? '−' : '+'}${fmtMoney(Math.abs(trDelta))}</div>
             <div>
               <div style="font-size:11px;font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">Revenue impact</div>
-              <div style="font-size:14px;color:var(--econ-ink);margin-top:3px;line-height:1.5;">Revenue ${trDelta < 0 ? '<strong>falls</strong>' : '<strong>rises</strong>'} by ${fmtMoney(Math.abs(trDelta))}. The promoter would earn more by keeping the price at ${fmtMoney(p1)}.</div>
+              <div style="font-size:14px;color:var(--econ-ink);margin-top:3px;line-height:var(--lh-normal);">Revenue ${trDelta < 0 ? '<strong>falls</strong>' : '<strong>rises</strong>'} by ${fmtMoney(Math.abs(trDelta))}. The promoter would earn more by keeping the price at ${fmtMoney(p1)}.</div>
             </div>
           </div>`
         }
@@ -4192,8 +4192,8 @@
               <span style="color:${T5.c};">Price adjustment (large)</span>
               <span style="color:${T5.c};">80%</span>
             </div>
-            <div style="height:34px;background:#F1F5F9;border-radius:8px;overflow:hidden;">
-              <div style="width:80%;height:100%;background:linear-gradient(90deg,${T5.c},${T5.c}cc);border-radius:8px;display:flex;align-items:center;padding:0 12px;">
+            <div style="height:34px;background:#F1F5F9;border-radius:var(--r-md);overflow:hidden;">
+              <div style="width:80%;height:100%;background:linear-gradient(90deg,${T5.c},${T5.c}cc);border-radius:var(--r-md);display:flex;align-items:center;padding:0 12px;">
                 <span style="color:#fff;font-size:var(--fs-xs);font-weight:var(--fw-extrabold);">↑ price spike</span>
               </div>
             </div>
@@ -4203,8 +4203,8 @@
               <span style="color:${T1.c};">Quantity adjustment (small)</span>
               <span style="color:${T1.c};">20%</span>
             </div>
-            <div style="height:34px;background:#F1F5F9;border-radius:8px;overflow:hidden;">
-              <div style="width:20%;height:100%;background:linear-gradient(90deg,${T1.c},${T1.c}cc);border-radius:8px;"></div>
+            <div style="height:34px;background:#F1F5F9;border-radius:var(--r-md);overflow:hidden;">
+              <div style="width:20%;height:100%;background:linear-gradient(90deg,${T1.c},${T1.c}cc);border-radius:var(--r-md);"></div>
             </div>
           </div>
         </div>
@@ -4245,11 +4245,11 @@
             formula: `PES&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T2.c};font-weight:var(--fw-extrabold);">% ΔQS</span>&nbsp;&nbsp;÷&nbsp;&nbsp;<span style="color:${T1.c};font-weight:var(--fw-extrabold);">% ΔP</span>`,
             reveal: `<div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:var(--fs-base);font-weight:var(--fw-extrabold);">
               <span style="color:var(--econ-ink);">PES =</span>
-              <span style="background:${T2.soft};color:${T2.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T2.c}50;">${fmtPct(pctQS)}</span>
+              <span style="background:${T2.soft};color:${T2.c};padding:6px 12px;border-radius:var(--r-md);border:1.5px solid ${T2.c}50;">${fmtPct(pctQS)}</span>
               <span style="color:var(--econ-ink);">÷</span>
-              <span style="background:${T1.soft};color:${T1.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T1.c}50;">${fmtPct(pctP)}</span>
+              <span style="background:${T1.soft};color:${T1.c};padding:6px 12px;border-radius:var(--r-md);border:1.5px solid ${T1.c}50;">${fmtPct(pctP)}</span>
               <span style="color:var(--econ-ink);">=</span>
-              <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:8px;font-size:var(--fs-lg);box-shadow:0 2px 8px ${T3.c}55;">${pes.toFixed(2)}</span>
+              <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:var(--r-md);font-size:var(--fs-lg);box-shadow:0 2px 8px ${T3.c}55;">${pes.toFixed(2)}</span>
             </div>
             <div style="margin-top:12px;font-size:13.5px;text-align:center;">Supply responded much less proportionally than price – a classic sign of inelastic supply.</div>`
           },
@@ -4259,7 +4259,7 @@
             formula: `Compare&nbsp;&nbsp;<span style="color:${T4.c};font-weight:var(--fw-extrabold);">PES</span>&nbsp;&nbsp;against&nbsp;&nbsp;<span style="color:${T4.c};font-weight:var(--fw-extrabold);">1</span>`,
             preview: `<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;">
               ${spectrumZones.map(z => `
-                <div style="background:${z.bg};border:1px solid ${z.c}40;border-radius:8px;padding:8px 4px;text-align:center;">
+                <div style="background:${z.bg};border:1px solid ${z.c}40;border-radius:var(--r-md);padding:8px 4px;text-align:center;">
                   <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${z.c};">${z.short}</div>
                   <div style="font-size:10px;font-weight:var(--fw-bold);color:${z.c};margin-top:2px;text-transform:uppercase;letter-spacing:0.03em;">${z.label}</div>
                 </div>
@@ -4268,7 +4268,7 @@
             reveal: `<div style="margin-bottom:14px;">
               <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:6px;">
                 ${spectrumZones.map((z, i) => `
-                  <div style="background:${z.bg};border:${i === verdictIdx ? `2.5px solid ${z.c}` : `1px solid ${z.c}40`};border-radius:8px;padding:8px 4px;text-align:center;position:relative;${i === verdictIdx ? `box-shadow:0 0 0 4px ${z.c}20;` : ''}">
+                  <div style="background:${z.bg};border:${i === verdictIdx ? `2.5px solid ${z.c}` : `1px solid ${z.c}40`};border-radius:var(--r-md);padding:8px 4px;text-align:center;position:relative;${i === verdictIdx ? `box-shadow:0 0 0 4px ${z.c}20;` : ''}">
                     <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${z.c};">${z.short}</div>
                     <div style="font-size:10px;font-weight:var(--fw-bold);color:${z.c};margin-top:2px;text-transform:uppercase;letter-spacing:0.03em;">${z.label}</div>
                     ${i === verdictIdx ? `<div style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:${z.c};color:#fff;padding:3px 9px;border-radius:6px;font-size:11px;font-weight:var(--fw-extrabold);box-shadow:0 2px 6px rgba(0,0,0,0.2);white-space:nowrap;">PES = ${pes.toFixed(2)} ▼</div>` : ''}
@@ -4281,7 +4281,7 @@
               <div>
                 <div style="font-size:11px;font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
                 <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:2px;">Oil supply is <span style="color:${T4.c};">${verdict.toLowerCase()}</span></div>
-                <div style="font-size:var(--fs-sm);color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise only unlocked ${fmtPct(pctQS)} more supply – a much smaller proportional response.</div>
+                <div style="font-size:var(--fs-sm);color:#475569;margin-top:3px;line-height:var(--lh-normal);">A ${fmtPct(pctP)} price rise only unlocked ${fmtPct(pctQS)} more supply – a much smaller proportional response.</div>
               </div>
             </div>`
           },
@@ -4341,10 +4341,10 @@
     const spectrum = `
       <div style="margin-top:10px;">
         <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold);color:#475569;margin-bottom:8px;">YED – good type spectrum</div>
-        <div style="display:flex;border-radius:8px;overflow:hidden;border:1px solid #E2E8F0;">
+        <div style="display:flex;border-radius:var(--r-md);overflow:hidden;border:1px solid #E2E8F0;">
           ${yedZones.map((z, i) => `
             <div style="flex:1;padding:8px 4px;background:${i === verdictIdx ? z.color : '#F8FAFC'};text-align:center;border-right:${i < 3 ? '1px solid #E2E8F0' : 'none'};">
-              <div style="font-size:10px;font-weight:var(--fw-extrabold);color:${i === verdictIdx ? '#fff' : '#475569'};line-height:1.3;">${z.label}</div>
+              <div style="font-size:10px;font-weight:var(--fw-extrabold);color:${i === verdictIdx ? '#fff' : '#475569'};line-height:var(--lh-snug);">${z.label}</div>
               <div style="font-size:9px;color:${i === verdictIdx ? 'rgba(255,255,255,0.8)' : '#94A3B8'};margin-top:2px;">${z.sub}</div>
             </div>
           `).join('')}
@@ -4496,10 +4496,10 @@
     const spectrum = `
       <div style="margin-top:10px;">
         <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold);color:#475569;margin-bottom:8px;">XED – relationship spectrum</div>
-        <div style="display:flex;border-radius:8px;overflow:hidden;border:1px solid #E2E8F0;">
+        <div style="display:flex;border-radius:var(--r-md);overflow:hidden;border:1px solid #E2E8F0;">
           ${xedZones.map((z, i) => `
             <div style="flex:1;padding:8px 4px;background:${i === verdictIdx ? z.color : '#F8FAFC'};text-align:center;border-right:${i < 4 ? '1px solid #E2E8F0' : 'none'};">
-              <div style="font-size:10px;font-weight:var(--fw-extrabold);color:${i === verdictIdx ? '#fff' : '#475569'};line-height:1.3;">${z.label}</div>
+              <div style="font-size:10px;font-weight:var(--fw-extrabold);color:${i === verdictIdx ? '#fff' : '#475569'};line-height:var(--lh-snug);">${z.label}</div>
               <div style="font-size:9px;color:${i === verdictIdx ? 'rgba(255,255,255,0.8)' : '#94A3B8'};margin-top:2px;">${z.sub}</div>
             </div>
           `).join('')}
@@ -4685,7 +4685,7 @@
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
       <div style="background:var(--econ-ink);border-radius:12px;padding:16px 20px;margin-bottom:20px;">
         <div style="font-size:10px;font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;margin-bottom:8px;">Exam question · ${c.marks || 25} marks${c.timeGuide ? ' · ' + c.timeGuide : ''}</div>
-        <div style="font-size:var(--fs-base);font-weight:var(--fw-semi);color:#F1F5F9;line-height:1.5;">${c.question || ''}</div>
+        <div style="font-size:var(--fs-base);font-weight:var(--fw-semi);color:#F1F5F9;line-height:var(--lh-normal);">${c.question || ''}</div>
       </div>
       ${paras}
       ${renderExamEdge(c.examEdge)}
@@ -4926,10 +4926,10 @@
           : side.rows && side.rows.length
             ? `<div style="display:flex;flex-direction:column;">${side.rows.map((r, ri) => `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;${ri < side.rows.length - 1 ? `border-bottom:1px solid ${tone.border};` : ''}"><div style="width:34px;height:34px;border-radius:50%;background:${tone.bg};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;flex-shrink:0;">${renderIcon(r.icon)}</div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.45;">${r.text}</div></div>`).join('')}</div>`
           : side.checks && side.checks.length
-            ? `<div style="display:flex;flex-direction:column;gap:8px;">${side.checks.map(ch => `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.5;"><span style="font-weight:var(--fw-bold);color:${tone.label};">${ch.term}:</span> ${ch.body}</div>`).join('')}</div>`
+            ? `<div style="display:flex;flex-direction:column;gap:8px;">${side.checks.map(ch => `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="font-weight:var(--fw-bold);color:${tone.label};">${ch.term}:</span> ${ch.body}</div>`).join('')}</div>`
             : `<ul style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:var(--econ-ink);">${p}</span></li>`).join('')}</ul>`;
         const exampleHtml = side.example
-          ? `<div style="display:flex;align-items:flex-start;gap:10px;margin-top:14px;background:#fff;border:1px solid ${tone.border};border-radius:10px;padding:11px 13px;"><div style="width:26px;height:26px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);line-height:1;flex-shrink:0;">${side.example.icon || '★'}</div><div style="font-size:12.5px;color:var(--econ-ink);line-height:1.5;"><span style="font-weight:var(--fw-extrabold);color:${tone.label};">${side.example.label || 'Example'}:</span> ${side.example.text}</div></div>`
+          ? `<div style="display:flex;align-items:flex-start;gap:10px;margin-top:14px;background:#fff;border:1px solid ${tone.border};border-radius:10px;padding:11px 13px;"><div style="width:26px;height:26px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);line-height:1;flex-shrink:0;">${side.example.icon || '★'}</div><div style="font-size:12.5px;color:var(--econ-ink);line-height:var(--lh-normal);"><span style="font-weight:var(--fw-extrabold);color:${tone.label};">${side.example.label || 'Example'}:</span> ${side.example.text}</div></div>`
           : '';
         const iconHtml = side.icon
           ? (side.iconStyle === 'circle'
@@ -4941,7 +4941,7 @@
           : `<div style="color:${tone.label};font-weight:var(--fw-extrabold);font-size:var(--fs-base);letter-spacing:0.02em;">${side.label}</div>`;
         const headAlign = side.labelCenter ? 'justify-content:center;text-align:center;' : '';
         return `
-          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;min-width:0;">
+          <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;min-width:0;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;${headAlign}">
               ${iconHtml}
               ${labelHtml}
@@ -4995,7 +4995,7 @@
         const tipIcon = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.icon) || '💡';
         const tipTone = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.tone) || 'blue';
         const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-        return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${tipIcon}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${tipText}</div></div>` : '';
+        return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${tipIcon}</div><div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${tipText}</div></div>` : '';
       })() : ''}
 
       ${c.note && c.notePosition === 'top' ? (() => {
@@ -5007,8 +5007,8 @@
           const noteHead = (typeof note === 'object' && note.head) || null;
           const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
           const bodyHtml = noteHead
-            ? `<div style="display:flex;flex-direction:column;gap:4px;min-width:0;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div></div>`
-            : `<div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${noteText}</div>`;
+            ? `<div style="display:flex;flex-direction:column;gap:4px;min-width:0;"><div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};">${noteHead}</div><div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div></div>`
+            : `<div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div>`;
           return `<div style="display:flex;align-items:flex-start;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
         }).join('');
       })() : ''}
@@ -5029,12 +5029,12 @@
               ? `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`
               : '';
             return `
-              <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+              <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:var(--r-lg);padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
                 <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);flex-shrink:0;">${i + 1}</div>
                 ${iconHtml}
                 <div style="flex:1;min-width:0;">
                   <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.25;margin-bottom:3px;">${item.head}</div>
-                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${item.body}</div>
+                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-normal);">${item.body}</div>
                 </div>
               </div>`;
           }).join('');
@@ -5043,7 +5043,7 @@
         /* Fall-through for non-numbered-rows styles: a simple tile grid. */
         const tiles = items.map((item, i) => {
           const tone = PATTERN_TONES[item.tone || ['green','blue','purple','amber','rose','slate'][i % 6]];
-          return `<div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;gap:8px;">
+          return `<div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;gap:8px;">
             <div style="display:flex;align-items:center;gap:10px;"><div style="font-size:var(--fs-2xl);line-height:1;">${renderIcon(item.icon)}</div><div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};">${item.head}</div></div>
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.55;">${item.body}</div>
           </div>`;
@@ -5089,7 +5089,7 @@
           const pills = (row.pills || []).map(p => {
             const pt = PATTERN_TONES[p.tone] || t;
             const arrow = p.dir === 'up' ? '↑' : (p.dir === 'down' ? '↓' : '');
-            return `<span style="display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;background:${pt.bg};border:1px solid ${pt.border};color:${pt.label};font-size:var(--fs-xs);font-weight:var(--fw-extrabold);line-height:1.2;white-space:nowrap;">${p.label}${arrow ? `<span style="font-size:var(--fs-sm);">${arrow}</span>` : ''}</span>`;
+            return `<span style="display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:var(--r-full);background:${pt.bg};border:1px solid ${pt.border};color:${pt.label};font-size:var(--fs-xs);font-weight:var(--fw-extrabold);line-height:1.2;white-space:nowrap;">${p.label}${arrow ? `<span style="font-size:var(--fs-sm);">${arrow}</span>` : ''}</span>`;
           }).join('');
           const drid = `${dridBase}-dr${i}`;
           const cbHtml = reveal ? `<input type="checkbox" id="${drid}" class="dr-reveal-cb">` : '';
@@ -5099,15 +5099,15 @@
           return `
             ${cbHtml}
             <div class="dr-row" style="display:grid;grid-template-columns:1.05fr 1fr;gap:14px;align-items:stretch;margin-bottom:12px;">
-              <div style="display:flex;align-items:flex-start;gap:14px;background:${reveal ? t.bg : '#fff'};border:1px solid ${reveal ? t.border : '#E7E7EA'};border-radius:14px;padding:16px 18px;">
+              <div style="display:flex;align-items:flex-start;gap:14px;background:${reveal ? t.bg : '#fff'};border:1px solid ${reveal ? t.border : '#E7E7EA'};border-radius:var(--r-lg);padding:16px 18px;">
                 <div style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:var(--fw-extrabold);flex-shrink:0;">${row.label}</div>
                 <div style="flex:1;min-width:0;">
-                  <div style="font-size:14px;color:var(--econ-ink);line-height:1.5;${row.title ? 'font-weight:var(--fw-extrabold);margin-bottom:6px;' : ''}">${row.title || ''}</div>
+                  <div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-normal);${row.title ? 'font-weight:var(--fw-extrabold);margin-bottom:6px;' : ''}">${row.title || ''}</div>
                   <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.55;">${row.case}</div>
                   ${row.prompt || reveal ? `<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;"><div style="font-size:12.5px;color:#64748B;font-style:italic;flex:1;">${row.prompt || 'What is the trade-off?'}</div>${qButton}</div>` : ''}
                 </div>
               </div>
-              <div class="dr-verdict" style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;">
+              <div class="dr-verdict" style="background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:16px 18px;display:flex;flex-direction:column;">
                 <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="font-size:var(--fs-md);line-height:1;">${row.verdictIcon || '⚖️'}</span><span style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.06em;">Verdict</span></div>
                 <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.55;margin-bottom:12px;">${row.verdict}</div>
                 <div style="display:flex;flex-direction:column;gap:6px;margin-top:auto;">${pills}</div>
@@ -5135,10 +5135,10 @@
         const tiles = c.diagramCallouts.map(item => {
           const t = PATTERN_TONES[item.tone] || PATTERN_TONES.blue;
           return `
-            <div style="display:flex;align-items:flex-start;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:14px 16px;">
+            <div style="display:flex;align-items:flex-start;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:14px 16px;">
               <div style="width:40px;height:40px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${item.icon || '•'}</div>
               <div style="flex:1;">
-                ${item.head ? `<div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;margin-bottom:4px;">${item.head}</div>` : ''}
+                ${item.head ? `<div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:4px;">${item.head}</div>` : ''}
                 <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.55;">${item.body}</div>
               </div>
             </div>`;
@@ -5158,7 +5158,7 @@
           return `
             <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;min-width:96px;flex:0 1 auto;">
               <div style="width:62px;height:62px;border-radius:50%;background:${t.bg};border:${ring}px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-3xl);line-height:1;margin-bottom:10px;${shadow}">${renderIcon(item.icon)}</div>
-              <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;margin-bottom:4px;">${item.title}</div>
+              <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:4px;">${item.title}</div>
               ${item.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.45;max-width:120px;">${item.sub}</div>` : ''}
             </div>`;
         };
@@ -5206,12 +5206,12 @@
               ? `<div style="color:${tone.label};line-height:0;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${I[item.svgKey]}</div>`
               : `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`;
             return `
-              <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+              <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:var(--r-lg);padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
                 <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);flex-shrink:0;">${i + 1}</div>
                 ${iconHtml}
                 <div style="flex:1;min-width:0;">
                   <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.25;margin-bottom:3px;letter-spacing:-0.01em;">${item.head}</div>
-                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${item.body}</div>
+                  <div style="font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-normal);">${item.body}</div>
                 </div>
               </div>`;
           }).join('');
@@ -5230,7 +5230,7 @@
               <div style="position:relative;border-radius:16px;background:#fff;border:1px solid #E7E7EA;padding:38px 14px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
                 <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:var(--fw-extrabold);">${i + 1}</div>
                 ${iconHtml}
-                <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;margin-bottom:10px;letter-spacing:-0.01em;">${item.head}</div>
+                <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;letter-spacing:-0.01em;">${item.head}</div>
                 <div style="font-size:var(--fs-sm);color:#334155;line-height:1.55;">${item.body}</div>
               </div>`;
           }).join('');
@@ -5264,16 +5264,16 @@
           const iconTopMode = c.causesStyle === 'icon-top';
           const iconHtml = iconTopMode
             ? `<div style="font-size:30px;line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
-               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
                  <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
+                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
                </div>`;
           return `
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             ${iconHtml}
             ${item.shiftArrows && item.shiftArrows.length
-              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:var(--fs-base);color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:var(--fs-base);color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:var(--lh-tight);">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
               : `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
@@ -5312,7 +5312,7 @@
           <div style="border-radius:16px;background:${bg};border:1px solid ${border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${iconBg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>
           </div>`;
@@ -5336,7 +5336,7 @@
           const seps = Array.isArray(c.flowSep) ? c.flowSep : Array(n - 1).fill(c.flowSep);
           const pieces = c.flow.map((step, i) => {
             const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-            const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:var(--fs-xl);line-height:1;margin-bottom:6px;">${renderIcon(step.icon)}</div>` : ''}<div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-ink);line-height:1.3;">${step.sub}</div>` : ''}</div>`;
+            const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:var(--fs-xl);line-height:1;margin-bottom:6px;">${renderIcon(step.icon)}</div>` : ''}<div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-ink);line-height:var(--lh-snug);">${step.sub}</div>` : ''}</div>`;
             const sep = i < n - 1 ? `<div class="econos-flow-sep" style="display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:var(--fw-extrabold);color:#64748B;flex-shrink:0;padding:0 2px;">${seps[i] || '+'}</div>` : '';
             return tile + sep;
           }).join('');
@@ -5349,8 +5349,8 @@
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
               <div style="position:relative;width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;margin-bottom:10px;z-index:1;">${i + 1}</div>
               <div style="font-size:22px;line-height:1;margin-bottom:8px;">${renderIcon(step.icon)}</div>
-              <div style="font-size:13.5px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.3;margin-bottom:4px;">${step.title}</div>
-              ${step.sub ? `<div style="font-size:var(--fs-xs);color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
+              <div style="font-size:13.5px;font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:4px;">${step.title}</div>
+              ${step.sub ? `<div style="font-size:var(--fs-xs);color:#475569;line-height:var(--lh-normal);">${step.sub}</div>` : ''}
               ${!isLast ? `<div style="position:absolute;top:17px;left:calc(50% + 22px);right:calc(-50% + 22px);height:0;border-top:1.5px dashed #CBD5E1;z-index:0;"></div>` : ''}
             </div>`;
         }).join('');
@@ -5364,7 +5364,7 @@
         const seps = Array.isArray(c.flow2Sep) ? c.flow2Sep : Array(n - 1).fill(c.flow2Sep || '→');
         const pieces = c.flow2.map((step, i) => {
           const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-          const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:var(--fs-xl);line-height:1;margin-bottom:6px;">${renderIcon(step.icon)}</div>` : ''}<div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-ink);line-height:1.3;">${step.sub}</div>` : ''}</div>`;
+          const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:var(--fs-xl);line-height:1;margin-bottom:6px;">${renderIcon(step.icon)}</div>` : ''}<div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-ink);line-height:var(--lh-snug);">${step.sub}</div>` : ''}</div>`;
           const sep = i < n - 1 ? `<div class="econos-flow-sep" style="display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:var(--fw-extrabold);color:#64748B;flex-shrink:0;padding:0 2px;">${seps[i] || '→'}</div>` : '';
           return tile + sep;
         }).join('');
@@ -5385,7 +5385,7 @@
         const itemTiles = (bg.items || []).map(it => `
           <div style="background:#fff;border-radius:12px;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:5px;border:1px solid #DBEAFE;">
             <span style="font-size:22px;line-height:1;">${renderIcon(it.icon)}</span>
-            <span style="font-size:10.5px;font-weight:var(--fw-bold);color:#1E3A8A;text-align:center;line-height:1.3;">${it.label}</span>
+            <span style="font-size:10.5px;font-weight:var(--fw-bold);color:#1E3A8A;text-align:center;line-height:var(--lh-snug);">${it.label}</span>
           </div>`).join('');
         const cols = Math.min((bg.items || []).length, 6);
         return `${genSecLabel(headerIcon, headerTitle)}
@@ -5404,7 +5404,7 @@
           return `
             <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
               <div style="font-size:26px;line-height:1;margin-bottom:8px;">${renderIcon(item.icon)}</div>
-              <div style="font-size:12.5px;font-weight:var(--fw-bold);color:${tone.label};line-height:1.3;margin-bottom:10px;">${item.label}</div>
+              <div style="font-size:12.5px;font-weight:var(--fw-bold);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;">${item.label}</div>
               <div style="font-size:38px;font-weight:900;color:${tone.accent};line-height:1;">${item.pct}</div>
             </div>`;
         }).join('');
@@ -5412,7 +5412,7 @@
         return `<div style="margin-bottom:20px;">
           ${genSecLabel('⚖️', swTitle)}
           <div style="display:grid;grid-template-columns:repeat(${swCols},1fr);gap:12px;margin-bottom:12px;">${swTiles}</div>
-          ${note ? `<div style="font-size:12.5px;color:#475569;text-align:center;font-style:italic;line-height:1.5;">${note}</div>` : ''}
+          ${note ? `<div style="font-size:12.5px;color:#475569;text-align:center;font-style:italic;line-height:var(--lh-normal);">${note}</div>` : ''}
         </div>`;
       })() : ''}
 
@@ -5424,10 +5424,10 @@
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             ${item.shiftArrows && item.shiftArrows.length
-              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:var(--fs-base);color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:var(--fs-base);color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:var(--lh-tight);">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
               : `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
@@ -5440,10 +5440,10 @@
         const tiles2 = items2.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body}</div>
           </div>`;
@@ -5459,14 +5459,14 @@
         const tiles3 = items3.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['blue','green','purple','amber','rose','slate'][i % 6]];
           const headerHtml = iconTopMode3
-            ? `<div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
-               <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
+            ? `<div style="width:36px;height:36px;border-radius:var(--r-md);background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
+               <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-                 <div style="width:36px;height:36px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
-                 <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${tone.label};line-height:1.3;">${item.head}</div>
+                 <div style="width:36px;height:36px;border-radius:var(--r-md);background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
+                 <div style="font-weight:var(--fw-extrabold);font-size:14px;color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
                </div>`;
           return `
-          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px;display:flex;flex-direction:column;">
             ${headerHtml}
             <div style="font-size:12.5px;color:var(--econ-ink);line-height:1.55;">${item.body}</div>
           </div>`;
@@ -5516,12 +5516,12 @@
             return `<li style="display:flex;align-items:flex-start;gap:9px;margin-bottom:8px;">${mark}<span>${it.text}</span></li>`;
           }).join('');
           const colHtml = `
-            <div style="flex:1 1 0;min-width:160px;border-radius:14px;background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
+            <div style="flex:1 1 0;min-width:160px;border-radius:var(--r-lg);background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
               <div style="padding:12px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:10px;">
                 ${col.icon ? `<div style="width:30px;height:30px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-base);line-height:1;flex-shrink:0;">${renderIcon(col.icon)}</div>` : ''}
                 <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};letter-spacing:0.01em;">${col.label}</div>
               </div>
-              <ul style="list-style:none;margin:0;padding:14px 16px;font-size:13.5px;color:var(--econ-ink);line-height:1.6;">${items}</ul>
+              <ul style="list-style:none;margin:0;padding:14px 16px;font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-relaxed);">${items}</ul>
             </div>`;
           const separator = !isLast ? `<div style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:var(--fw-extrabold);font-size:${sep === '→' ? '16px' : '12px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);">${sep}</div></div>` : '';
           return colHtml + separator;
@@ -5536,7 +5536,7 @@
         const cards = c.measureCards.map((m, i) => {
           const tone = PATTERN_TONES[m.tone] || PATTERN_TONES[['green','purple','amber','blue','rose','slate'][i % 6]];
           const pts = (m.points || []).map(p => `
-            <li style="display:flex;gap:8px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.5;">
+            <li style="display:flex;gap:8px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">
               <span style="color:${tone.label};flex-shrink:0;font-weight:900;margin-top:1px;">•</span>
               <span>${p}</span>
             </li>`).join('');
@@ -5567,7 +5567,7 @@
             const cells = (row.values || []).map((val, ci) => {
               const t = colTones[ci] || PATTERN_TONES.blue;
               const hl = row.highlights && row.highlights[ci];
-              return `<div style="padding:10px 10px;font-size:12.5px;color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid #E7E7EA;line-height:1.5;">${val}</div>`;
+              return `<div style="padding:10px 10px;font-size:12.5px;color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid #E7E7EA;line-height:var(--lh-normal);">${val}</div>`;
             }).join('');
             return `<div style="display:grid;grid-template-columns:${ctGrid};background:${bg};border-bottom:1px solid #E7E7EA;">
               <div style="padding:10px 12px;font-size:12.5px;font-weight:var(--fw-bold);color:var(--econ-ink);display:flex;align-items:center;gap:6px;line-height:1.4;">${row.label}</div>
@@ -5625,7 +5625,7 @@
             <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:6px 4px;">
               <div style="width:46px;height:46px;border-radius:50%;background:${tone.bg};border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
               <div style="font-size:14px;font-weight:var(--fw-extrabold);color:${tone.label};line-height:1.25;margin-bottom:5px;">${item.label}</div>
-              <div style="font-size:12.5px;color:#475569;line-height:1.5;">${item.text}</div>
+              <div style="font-size:12.5px;color:#475569;line-height:var(--lh-normal);">${item.text}</div>
             </div>`;
         }).join('');
         const n = w.items.length;
@@ -5665,10 +5665,10 @@
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             ${item.shiftArrows && item.shiftArrows.length
-              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:var(--fs-base);color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:var(--fs-base);color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:var(--lh-tight);">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
               : `<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
@@ -5685,7 +5685,7 @@
             <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
             <div style="flex:1;">
               <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${conText}</div>
+              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:16px;color:var(--econ-ink);line-height:var(--lh-snug);">${conText}</div>
             </div>
           </div>`;
       })() : '')}
@@ -5699,11 +5699,11 @@
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
         return `
-          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:var(--r-lg);padding:18px 22px;margin-bottom:22px;">
             <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
             <div>
               <div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
-              <div style="font-size:15.5px;line-height:1.65;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:18px;line-height:1.5;color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
               <div style="font-size:var(--fs-sm);color:${t.label};font-weight:var(--fw-bold);">– ${eq.attribution}</div>
             </div>
           </div>`;
@@ -5736,14 +5736,14 @@
         const termHtml = fp.terms.map((term, i) => {
           const t = PATTERN_TONES[term.tone || 'blue'] || PATTERN_TONES.blue;
           const isLast = i === fp.terms.length - 1;
-          const pill = `<div style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:${t.bg};border:1.5px solid ${t.border};color:${t.label};font-size:var(--fs-sm);font-weight:var(--fw-extrabold);line-height:1.2;letter-spacing:0.01em;white-space:nowrap;">${term.label}</div>`;
+          const pill = `<div style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:var(--r-full);background:${t.bg};border:1.5px solid ${t.border};color:${t.label};font-size:var(--fs-sm);font-weight:var(--fw-extrabold);line-height:1.2;letter-spacing:0.01em;white-space:nowrap;">${term.label}</div>`;
           const sepHtml = !isLast ? `<div style="display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:#64748B;padding:0 4px;">${sep}</div>` : '';
           return pill + sepHtml;
         }).join('');
         const noteHtml = fp.note
           ? `<div style="flex:1;min-width:200px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.55;padding-left:8px;">${fp.note}</div>`
           : '';
-        return `${title}<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:14px 16px;margin-bottom:18px;"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;">${termHtml}</div>${noteHtml}</div>`;
+        return `${title}<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:var(--r-lg);padding:14px 16px;margin-bottom:18px;"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;">${termHtml}</div>${noteHtml}</div>`;
       })() : ''}
 
       ${c.bottomTip ? (() => {
@@ -5767,15 +5767,15 @@
           : '';
         const sep = `<div style="display:flex;align-items:center;justify-content:center;color:${t.accent};font-size:22px;font-weight:var(--fw-extrabold);flex-shrink:0;">→</div>`;
         const primaryHtml = nb.primary
-          ? `<div style="display:flex;align-items:center;gap:14px;flex:1.1;min-width:0;">${iconHtml}<div style="font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${nb.primary}</div></div>`
+          ? `<div style="display:flex;align-items:center;gap:14px;flex:1.1;min-width:0;">${iconHtml}<div style="font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-normal);">${nb.primary}</div></div>`
           : '';
         const secondaryHtml = nb.secondary
-          ? `<div style="flex:1;min-width:0;font-size:13.5px;color:var(--econ-ink);line-height:1.5;">${nb.secondary}</div>`
+          ? `<div style="flex:1;min-width:0;font-size:13.5px;color:var(--econ-ink);line-height:var(--lh-normal);">${nb.secondary}</div>`
           : '';
         const exampleHtml = nb.example
           ? `<div style="flex:1;min-width:0;background:rgba(255,255,255,0.55);border-radius:10px;padding:10px 12px;border:1px dashed ${t.border};"><div style="font-size:11px;font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${nb.exampleLabel || 'Example'}</div><div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.45;">${nb.example}</div></div>`
           : '';
-        return `${title}<div style="display:flex;align-items:stretch;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:14px 16px;margin-bottom:22px;">${primaryHtml}${secondaryHtml ? sep + secondaryHtml : ''}${exampleHtml}</div>`;
+        return `${title}<div style="display:flex;align-items:stretch;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:14px 16px;margin-bottom:22px;">${primaryHtml}${secondaryHtml ? sep + secondaryHtml : ''}${exampleHtml}</div>`;
       })() : ''}
 
       ${c.checkList && c.checkList.items && c.checkList.items.length ? (() => {
@@ -5787,7 +5787,7 @@
             <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:${t.soft};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;margin-top:1px;">✓</div>
             <div style="flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;">
               <span style="font-size:14px;font-weight:var(--fw-extrabold);color:var(--econ-ink);line-height:1.45;">${it.head}</span>
-              ${it.body ? `<span style="font-size:var(--fs-sm);color:#475569;line-height:1.5;flex:1;min-width:160px;">${it.body}</span>` : ''}
+              ${it.body ? `<span style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);flex:1;min-width:160px;">${it.body}</span>` : ''}
             </div>
           </div>`).join('');
         return `${title}<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;">${rows}</div>`;
@@ -5801,7 +5801,7 @@
             <div style="width:30px;height:30px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
             <div style="flex:1;">
               <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-green-800);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
-              <div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">${conText}</div>
+              <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:16px;color:var(--econ-ink);line-height:var(--lh-snug);">${conText}</div>
             </div>
           </div>`;
       })() : ''}
@@ -6031,7 +6031,7 @@
     const tipTone = (c.tip && typeof c.tip === 'object' && c.tip.tone) || 'blue';
     const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
     const tipHtml = (c.tip && typeof c.tip === 'object' && c.tip.text)
-      ? '<div style="display:flex;align-items:center;gap:14px;background:' + t.bg + ';border:1px solid ' + t.border + ';border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:' + t.accent + ';color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">' + (c.tip.icon || '💡') + '</div><div style="font-size:14px;color:var(--econ-ink);line-height:1.6;">' + c.tip.text + '</div></div>'
+      ? '<div style="display:flex;align-items:center;gap:14px;background:' + t.bg + ';border:1px solid ' + t.border + ';border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:' + t.accent + ';color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">' + (c.tip.icon || '💡') + '</div><div style="font-size:14px;color:var(--econ-ink);line-height:var(--lh-relaxed);">' + c.tip.text + '</div></div>'
       : '';
 
     // Per-stage diagram headings rendered as standard section labels
@@ -6060,7 +6060,7 @@
     if (c.causesLabel && c.causes && c.causes.length) {
       const causesTiles = c.causes.map(function(item, i) {
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
-        return '<div style="border-radius:16px;background:' + tone.bg + ';border:1px solid ' + tone.border + ';padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">' + item.icon + '</div><div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">' + item.body + '</div></div>';
+        return '<div style="border-radius:16px;background:' + tone.bg + ';border:1px solid ' + tone.border + ';padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">' + item.icon + '</div><div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:' + tone.label + ';line-height:var(--lh-snug);">' + item.head + '</div></div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">' + item.body + '</div></div>';
       }).join('');
       out += genSecLabel(c.causesEmoji || '📋', c.causesLabel);
       out += '<div style="display:grid;grid-template-columns:' + gridColumnsFor(c.causes.length, 155) + ';gap:12px;margin:0 0 28px;">' + causesTiles + '</div>';
@@ -6069,7 +6069,7 @@
     if (c.causes2Label && c.causes2 && c.causes2.length) {
       const causes2Tiles = c.causes2.map(function(item, i) {
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
-        return '<div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:42px;height:42px;border-radius:50%;background:' + tone.bg + ';display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">' + item.icon + '</div><div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">' + item.body + '</div></div>';
+        return '<div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:42px;height:42px;border-radius:50%;background:' + tone.bg + ';display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">' + item.icon + '</div><div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:' + tone.label + ';line-height:var(--lh-snug);">' + item.head + '</div></div><div style="font-size:13.5px;color:var(--econ-ink);line-height:1.65;">' + item.body + '</div></div>';
       }).join('');
       out += genSecLabel(c.causes2Emoji || '⚙️', c.causes2Label);
       out += '<div style="display:grid;grid-template-columns:' + gridColumnsFor(c.causes2.length, 155) + ';gap:12px;margin:0 0 28px;">' + causes2Tiles + '</div>';

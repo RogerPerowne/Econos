@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.95.0 — 2026-06-06
+
+### Consistency: retire PATTERN_TONES → brand tokens (all remaining inline boxes)
+
+The single highest-leverage consistency change. `PATTERN_TONES` — the off-brand
+hard-coded hex palette that coloured every not-yet-componentised inline box
+(causes grids, continuum, factor engine, interactive diagram, diagram panel,
+illustrated grid, …) — is retired: its values now reference the brand `--econ-*`
+tokens, mirroring the `.tone-*` system (bg=-50, soft/border=-100, label=-700,
+accent=base). So every remaining inline box is now token-driven and on-brand, with
+no separate palette — the same minimal normalisation (blue/purple/rose/slate
+deepen slightly) approved across the box-migration series.
+
+- Fixed the 9 alpha-append spots (`${t.border}30` etc.) → `color-mix()` so the
+  var() values stay valid.
+- **Value-preserving colour sweep:** 131 inline hex literals that exactly match a
+  token → `var(--econ-*)` (zero visual change; SVG `fill=`/`stroke=` attribute
+  colours correctly skipped — they can't take var()).
+
+Screenshot-verified on real topics (factor engine, causes/key-terms/exam-edge on
+government-intervention). lint + 147 unit tests + build green; cache econos-v404.
+
+Remaining backlog (not visual inconsistencies — tracked): hover on the long-tail
+`causes` cards (8+ inline sites × 5 sub-styles — needs per-site classes, deferred
+to avoid regressions); off-scale neutral hex with no token (e.g. `#94A3B8`,
+`#CBD5E1`); `icons.js` SVG-attribute colours (can't take var()).
+
+
 ## 0.94.0 — 2026-06-06
 
 ### Universal content boxes (15/n): flow chain (Tier 3 begins)

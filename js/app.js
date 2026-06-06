@@ -331,13 +331,19 @@
 
   // Shared tone palette used by tip / comparison / flow / table patterns.
   // Keeps colour decisions consistent with the rest of the generic renderer.
+  // Brand-token tone palette. Mirrors the CSS `.tone-*` system
+  // (bg=-50, soft/border=-100, label=-700/--t-ink, accent=base/--t-solid),
+  // so every box driven by PATTERN_TONES is token-driven and on-brand —
+  // no hard-coded hex. Retiring the old off-brand hex palette is what
+  // brings the long-tail inline boxes (causes, continuum, factor engine,
+  // interactive diagram, …) to 100% consistency.
   const PATTERN_TONES = {
-    green:  { bg: '#ECFDF5', soft: '#D1FAE5', border: '#A7F3D0', label: '#059669', accent: '#10B981' },
-    amber:  { bg: '#FFFBEB', soft: '#FEF3C7', border: '#FDE68A', label: '#D97706', accent: '#F59E0B' },
-    blue:   { bg: '#EFF6FF', soft: '#DBEAFE', border: '#BFDBFE', label: '#2563EB', accent: '#3B82F6' },
-    purple: { bg: '#F5F3FF', soft: '#EDE9FE', border: '#DDD6FE', label: '#7C3AED', accent: '#8B5CF6' },
-    rose:   { bg: '#FEF2F2', soft: '#FEE2E2', border: '#FECACA', label: '#DC2626', accent: '#F43F5E' },
-    slate:  { bg: '#F8FAFC', soft: '#F1F5F9', border: '#E2E8F0', label: '#475569', accent: '#64748B' }
+    green:  { bg: 'var(--econ-green-50)',  soft: 'var(--econ-green-100)',  border: 'var(--econ-green-100)',  label: 'var(--econ-green-700)',  accent: 'var(--econ-green)'  },
+    amber:  { bg: 'var(--econ-amber-50)',  soft: 'var(--econ-amber-100)',  border: 'var(--econ-amber-100)',  label: 'var(--econ-amber-700)',  accent: 'var(--econ-amber)'  },
+    blue:   { bg: 'var(--econ-blue-50)',   soft: 'var(--econ-blue-100)',   border: 'var(--econ-blue-100)',   label: 'var(--econ-blue-700)',   accent: 'var(--econ-blue)'   },
+    purple: { bg: 'var(--econ-purple-50)', soft: 'var(--econ-purple-100)', border: 'var(--econ-purple-100)', label: 'var(--econ-purple-700)', accent: 'var(--econ-purple)' },
+    rose:   { bg: 'var(--econ-rose-50)',   soft: 'var(--econ-rose-100)',   border: 'var(--econ-rose-100)',   label: 'var(--econ-rose-700)',   accent: 'var(--econ-rose)'   },
+    slate:  { bg: 'var(--econ-slate-50)',  soft: 'var(--econ-slate-100)',  border: 'var(--econ-slate-100)',  label: 'var(--econ-slate)',      accent: 'var(--econ-slate)'  }
   };
 
   // Inline SVG scene illustrations for the `workedExample` renderer.
@@ -1279,14 +1285,14 @@
     const cards = con.items.map(it => {
       const t = PATTERN_TONES[it.verdictTone] || PATTERN_TONES.slate;
       return `
-        <div style="border:1px solid #E7E7EA;border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+        <div style="border:1px solid var(--econ-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
           <div style="background:${t.bg};padding:9px 12px;border-bottom:1px solid ${t.border};text-align:center;">
             <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.09em;">${it.verdict}</div>
           </div>
           <div style="padding:18px 16px 20px;text-align:center;flex:1;display:flex;flex-direction:column;">
             <div style="font-size:var(--fs-4xl);margin-bottom:8px;line-height:1;">${renderIcon(it.icon)}</div>
             <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-bottom:8px;">${it.title}</div>
-            <div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-relaxed);">${it.body}</div>
+            <div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-relaxed);">${it.body}</div>
           </div>
         </div>`;
     }).join('');
@@ -1294,7 +1300,7 @@
       `<div style="position:absolute;left:${pos};top:0;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:${dotColors[i]};border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.25);"></div>`
     ).join('');
     html += `
-      <div style="background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:22px 24px 22px;margin-bottom:22px;">
+      <div style="background:#fff;border:1px solid var(--econ-border);border-radius:var(--r-lg);padding:22px 24px 22px;margin-bottom:22px;">
         <div style="position:relative;padding:0 0 22px;">
           <div style="display:flex;justify-content:space-between;font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);letter-spacing:0.1em;text-transform:uppercase;color:var(--econ-ink);margin-bottom:12px;">
             <span>← ${con.leftCap || 'Markets'}</span>
@@ -1465,11 +1471,11 @@
             ? `<ul style="margin:0;padding:0 0 0 18px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
             : `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${v.body}</div>`;
           const analysisHtml = v.analysis ? `
-            <div style="margin-top:14px;padding-top:14px;border-top:1px solid ${t.border}60;">
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid color-mix(in oklab, ${t.border} 38%, transparent);">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
               <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.7;">${v.analysis}</div>
             </div>` : '';
-          return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:var(--r-md);padding:16px 20px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
+          return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid var(--econ-border);border-left:4px solid ${t.accent};border-radius:var(--r-md);padding:16px 20px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
             ${v.head ? `<div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${t.label};line-height:1.35;margin-bottom:${v.body ? '8px' : '0'};">${v.head}</div>` : ''}
             ${bodyHtml}
             ${analysisHtml}
@@ -1477,7 +1483,7 @@
         }).join('');
         html += `
           <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}'${inverseLayers.length ? ` data-id-inverse='${JSON.stringify(inverseLayers)}'` : ''} style="margin-bottom:26px;">
-            <div style="border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
+            <div style="border:1px solid var(--econ-border);border-radius:var(--r-lg);background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
               <div style="max-width:${id.maxWidth || '640px'};margin:0 auto;">${I[id.svgKey]}</div>
             </div>
             <div class="id-step-strip" style="display:${singleView ? 'none' : 'grid'};grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
@@ -1525,7 +1531,7 @@
             const perspAttr = persp ? ` data-id-persp="${persp}"` : '';
             if (!slot.analysis) return `<div data-id-analysis="${i}"${perspAttr} style="display:none;"></div>`;
             const isActive = i === 0 && (!persp || persp === initialPersp);
-            return `<div data-id-analysis="${i}"${perspAttr} style="display:${isActive ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:var(--r-md);padding:14px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
+            return `<div data-id-analysis="${i}"${perspAttr} style="display:${isActive ? 'block' : 'none'};background:#fff;border:1px solid var(--econ-border);border-left:4px solid ${t.accent};border-radius:var(--r-md);padding:14px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
               <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.7;">${slot.analysis}</div>
             </div>`;
@@ -1538,7 +1544,7 @@
         html += `
           <div data-id-root="${uid}" data-id-active-vi="0" data-id-layers='${JSON.stringify(layers)}'${inverseLayers.length ? ` data-id-inverse='${JSON.stringify(inverseLayers)}'` : ''}${perspectives ? ` data-id-perspectives='${JSON.stringify(perspectives)}'` : ''} style="margin-bottom:26px;">
             ${perspectiveStripHtml}
-            <div style="border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
+            <div style="border:1px solid var(--econ-border);border-radius:var(--r-lg);background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
               <div class="id-content-row" style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;min-height:${id.stageMinHeight || 290}px;">
                 <div class="${svgWrapClass}" style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
                 <div style="display:grid;padding:0 4px;">${descItems}</div>
@@ -1601,7 +1607,7 @@
         if (c.causesStyle === 'icon-top' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;margin-bottom:12px;">${renderIcon(item.icon)}</div>
             <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${item.body}</div>
@@ -1610,7 +1616,7 @@
         if (c.causesStyle === 'plain-white' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
@@ -1633,12 +1639,12 @@
           const headText = item.head.replace(/^\d+\.\s*/, '');
           const ex = typeof item.example === 'string' ? { text: item.example } : item.example;
           const exampleHtml = ex ? `
-            <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:var(--r-md);border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
+            <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:var(--r-md);border:1px solid color-mix(in oklab, ${t.border} 19%, transparent);display:flex;align-items:flex-start;gap:8px;">
               ${ex.icon ? `<div style="font-size:var(--fs-md);line-height:var(--lh-snug);flex-shrink:0;">${renderIcon(ex.icon)}</div>` : ''}
               <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="font-weight:var(--fw-extrabold);color:${t.label};">Example:</span> ${ex.text}</div>
             </div>` : '';
           return `
-          <div style="border-radius:var(--r-lg);overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);overflow:hidden;background:#fff;border:1px solid color-mix(in oklab, ${t.border} 13%, transparent);box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
             <div style="padding:20px 16px 14px;background:${t.bg};text-align:center;">
               <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xl);line-height:1;">${renderIcon(item.icon)}</div>
             </div>
@@ -1651,12 +1657,12 @@
           </div>`;
         }
         return `
-        <div style="border-radius:var(--r-lg);background:#fff;border:1px solid ${t.border}22;border-left:4px solid ${t.border};padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <div style="border-radius:var(--r-lg);background:#fff;border:1px solid color-mix(in oklab, ${t.border} 14%, transparent);border-left:4px solid ${t.border};padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
             <div style="width:22px;height:22px;border-radius:50%;background:${t.headerBg};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;flex-shrink:0;">${i + 1}</div>
             <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${t.label};line-height:var(--lh-snug);">${item.head}</div>
           </div>
-          <div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-relaxed);">${item.body}</div>
+          <div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-relaxed);">${item.body}</div>
         </div>`;
       }).join('');
       content += `</div>`;
@@ -1731,7 +1737,7 @@
       if (c.diagramLabel) {
         content += genSecLabel(c.diagramEmoji || '📊', c.diagramLabel);
       }
-      content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:var(--r-lg);border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
+      content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:var(--r-lg);border:1px solid var(--econ-border);">${I[c.diagramKey]}</div>`;
     }
 
     // Diagram grid – 3-up row of policy comparison mini-diagrams, each with a
@@ -1788,7 +1794,7 @@
             ? `<ul style="margin:0;padding:0 0 0 18px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
             : `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${s.body}</div>`;
           const divider = !stepsBoxed && i < dp.steps.length - 1 && !stacked
-            ? `border-bottom:1px solid #E7E7EA;padding-bottom:12px;margin-bottom:12px;`
+            ? `border-bottom:1px solid var(--econ-border);padding-bottom:12px;margin-bottom:12px;`
             : '';
           const liStyle = stepsBoxed
             ? `display:flex;align-items:flex-start;gap:12px;border-radius:var(--r-lg);background:${stepTone.bg};border:1px solid ${stepTone.border};padding:16px 16px 14px;`
@@ -1826,13 +1832,13 @@
           </div>`;
       } else if (stacked) {
         panelOut += `
-          <div style="margin-bottom:26px;border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div style="margin-bottom:26px;border:1px solid var(--econ-border);border-radius:var(--r-lg);background:#fff;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
             <div style="overflow-x:auto;margin-bottom:18px;">${I[dp.diagramKey]}</div>
             <div>${headerHtml}${notesHtml}</div>
           </div>`;
       } else {
         panelOut += `
-          <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:26px;border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:14px 16px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:26px;border:1px solid var(--econ-border);border-radius:var(--r-lg);background:#fff;padding:14px 16px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
             <div style="min-width:0;overflow-x:auto;">${I[dp.diagramKey]}</div>
             <div style="display:flex;flex-direction:column;padding:0 4px;">${headerHtml}${notesHtml}</div>
           </div>`;
@@ -1889,7 +1895,7 @@
               ? `<div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${side.text}</div>`
               : (useRows
                 ? side.rows.map((r, idx) => `
-                  <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
+                  <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid color-mix(in oklab, ${tone.border} 25%, transparent);`}">
                     <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${renderIcon(r.icon)}</div>
                     <div style="flex:1;min-width:0;">
                       <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:3px;">${idx + 1}. ${r.title}</div>
@@ -2008,7 +2014,7 @@
       const tiles = c.examples.map((p, i) => {
         const t = PATTERN_TONES[p.tone || exTones[i % exTones.length]];
         return `
-          <div style="background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+          <div style="background:#fff;border:1px solid var(--econ-border);border-radius:var(--r-lg);padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
               <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;flex-shrink:0;">${startNum + i}</div>
               <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${p.title}</div>
@@ -2076,7 +2082,7 @@
       const tilesHtml = c.marketGrid.map((item, i) => {
         const t = PATTERN_TONES[item.tone || 'green'] || PATTERN_TONES.green;
         return `
-          <div style="background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+          <div style="background:#fff;border:1px solid var(--econ-border);border-radius:var(--r-lg);padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
               <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;flex-shrink:0;">${i + 1}</div>
               <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${item.title}</div>
@@ -2126,7 +2132,7 @@
       })() : '';
       const fwDiagram = fw.diagramKey && I[fw.diagramKey] ? I[fw.diagramKey] : '';
       content += `
-        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:var(--r-lg);padding:6px 22px 18px;margin-bottom:22px;">
+        <div style="background:#fff;border:1px solid var(--econ-slate-100);border-radius:var(--r-lg);padding:6px 22px 18px;margin-bottom:22px;">
           ${fw.label ? genSecLabel(fw.labelEmoji || '⭐', fw.label) : ''}
           ${fwSource}
           <div style="display:grid;grid-template-columns:repeat(${fw.tiles.length},1fr);gap:14px;margin-bottom:${fwDiagram ? '14px' : '0'};">${fwTiles}</div>
@@ -2231,7 +2237,7 @@
             <span style="color:${t.label};flex-shrink:0;margin-top:1px;">•</span><span>${b}</span>
           </li>`).join('');
         return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:24px 22px 20px;display:flex;flex-direction:column;min-width:0;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:24px 22px 20px;display:flex;flex-direction:column;min-width:0;">
             <div style="text-align:center;font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:${t.label};margin-bottom:4px;">${box.head}</div>
             ${box.sub ? `<div style="text-align:center;font-size:var(--fs-sm);color:#64748B;font-weight:var(--fw-medium);margin-bottom:18px;">${box.sub}</div>` : ''}
             ${flowsHtml}
@@ -2304,7 +2310,7 @@
       if (we.heroImage) {
         content += `<div style="margin-bottom:20px;border-radius:var(--r-lg);overflow:hidden;"><img src="${we.heroImage}" alt="" style="display:block;width:100%;height:auto;" /></div>`;
       } else if (we.scene && SCENES[we.scene]) {
-        content += `<div style="margin-bottom:20px;border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;">${SCENES[we.scene]}</div>`;
+        content += `<div style="margin-bottom:20px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--econ-slate-100);">${SCENES[we.scene]}</div>`;
       }
       const weCards = we.cards || [];
       const weCols = weCards.length;
@@ -2324,7 +2330,7 @@
         const opHtml = card.op ? `<div style="position:absolute;top:50%;left:calc(100% + ${weCellGap / 2}px);transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);font-weight:900;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,0.06);">${card.op}</div>` : '';
         return `
           <div style="position:relative;">
-            <div style="background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:18px 18px 16px;display:flex;flex-direction:column;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+            <div style="background:#fff;border:1px solid var(--econ-border);border-radius:var(--r-lg);padding:18px 18px 16px;display:flex;flex-direction:column;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
                 <div style="width:44px;height:44px;border-radius:50%;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);flex-shrink:0;">${renderIcon(card.icon)}</div>
                 <div style="display:flex;flex-direction:column;line-height:var(--lh-snug);">
@@ -2369,15 +2375,15 @@
         const thirdPartyHtml = item.thirdParty
           ? `<div style="display:flex;align-items:center;gap:8px;background:${t.soft};border-radius:var(--r-md);padding:8px 10px;margin-top:auto;">
                <span style="font-size:var(--fs-md);flex-shrink:0;">👥</span>
-               <div style="font-size:var(--fs-sm);line-height:1.4;"><span style="font-weight:var(--fw-semi);color:#475569;">${item.thirdPartyLabel || 'Third party harmed'}: </span><span style="font-weight:var(--fw-bold);color:${t.label};">${item.thirdParty}</span></div>
+               <div style="font-size:var(--fs-sm);line-height:1.4;"><span style="font-weight:var(--fw-semi);color:var(--econ-slate);">${item.thirdPartyLabel || 'Third party harmed'}: </span><span style="font-weight:var(--fw-bold);color:${t.label};">${item.thirdParty}</span></div>
              </div>`
           : '';
         return `
-          <div style="border-radius:var(--r-lg);border:1px solid #E7E7EA;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+          <div style="border-radius:var(--r-lg);border:1px solid var(--econ-border);overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.04);">
             ${sceneHtml}
             <div style="padding:12px 14px 14px;display:flex;flex-direction:column;flex:1;gap:8px;">
               <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${i + 1}. ${item.title}</div>
-              <div style="font-size:var(--fs-sm);color:#334155;line-height:var(--lh-relaxed);flex:1;">${item.body}</div>
+              <div style="font-size:var(--fs-sm);color:var(--econ-slate-600);line-height:var(--lh-relaxed);flex:1;">${item.body}</div>
               ${thirdPartyHtml}
             </div>
           </div>`;
@@ -2421,7 +2427,7 @@
         if (c.causesStyle === 'icon-top' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;margin-bottom:12px;">${renderIcon(item.icon)}</div>
             <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${item.body}</div>
@@ -2430,7 +2436,7 @@
         if (c.causesStyle === 'plain-white' && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
@@ -2453,12 +2459,12 @@
           const headText = item.head.replace(/^\d+\.\s*/, '');
           const ex = typeof item.example === 'string' ? { text: item.example } : item.example;
           const exampleHtml = ex ? `
-            <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:var(--r-md);border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
+            <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:var(--r-md);border:1px solid color-mix(in oklab, ${t.border} 19%, transparent);display:flex;align-items:flex-start;gap:8px;">
               ${ex.icon ? `<div style="font-size:var(--fs-md);line-height:var(--lh-snug);flex-shrink:0;">${renderIcon(ex.icon)}</div>` : ''}
               <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="font-weight:var(--fw-extrabold);color:${t.label};">Example:</span> ${ex.text}</div>
             </div>` : '';
           return `
-          <div style="border-radius:var(--r-lg);overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);overflow:hidden;background:#fff;border:1px solid color-mix(in oklab, ${t.border} 13%, transparent);box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
             <div style="padding:20px 16px 14px;background:${t.bg};text-align:center;">
               <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xl);line-height:1;">${renderIcon(item.icon)}</div>
             </div>
@@ -2471,12 +2477,12 @@
           </div>`;
         }
         return `
-        <div style="border-radius:var(--r-lg);background:#fff;border:1px solid ${t.border}22;border-left:4px solid ${t.border};padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <div style="border-radius:var(--r-lg);background:#fff;border:1px solid color-mix(in oklab, ${t.border} 14%, transparent);border-left:4px solid ${t.border};padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
             <div style="width:22px;height:22px;border-radius:50%;background:${t.headerBg};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;flex-shrink:0;">${i + 1}</div>
             <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${t.label};line-height:var(--lh-snug);">${item.head}</div>
           </div>
-          <div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-relaxed);">${item.body}</div>
+          <div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-relaxed);">${item.body}</div>
         </div>`;
       }).join('');
       content += `</div>`;
@@ -2502,7 +2508,7 @@
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
         if (plain2) {
           return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
@@ -2532,7 +2538,7 @@
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
         if (plain3) {
           return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
@@ -2578,13 +2584,13 @@
       if (tbl.title) {
         content += genSecLabel(tbl.emoji || '📋', tbl.title);
       }
-      content += `<div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;margin-bottom:26px;background:#fff;">`;
+      content += `<div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--econ-slate-100);margin-bottom:26px;background:#fff;">`;
       if (headers.length === 2) {
         content += `
-          <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;background:#F8FAFC;border-bottom:1px solid #E2E8F0;">
+          <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;background:#F8FAFC;border-bottom:1px solid var(--econ-slate-100);">
             ${hasIcon ? '<div></div>' : ''}
             <div style="padding:11px 16px;font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:#64748B;">${headers[0]}</div>
-            <div style="padding:11px 16px;font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:#64748B;border-left:1px solid #E2E8F0;">${headers[1]}</div>
+            <div style="padding:11px 16px;font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:#64748B;border-left:1px solid var(--econ-slate-100);">${headers[1]}</div>
           </div>
         `;
       }
@@ -2592,10 +2598,10 @@
         const rowTone = r.tone ? PATTERN_TONES[r.tone] : null;
         const labelCol = rowTone ? rowTone.label : '#0B1426';
         return `
-        <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;border-top:${i === 0 && headers.length === 0 ? 'none' : '1px solid #E2E8F0'};background:${i % 2 === 0 ? '#fff' : '#FAFBFC'};">
+        <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;border-top:${i === 0 && headers.length === 0 ? 'none' : '1px solid var(--econ-slate-100)'};background:${i % 2 === 0 ? '#fff' : '#FAFBFC'};">
           ${hasIcon ? `<div style="padding:14px 0 14px 16px;font-size:var(--fs-xl);line-height:var(--lh-snug);display:flex;align-items:center;">${renderIcon(r.icon)}</div>` : ''}
           <div style="padding:14px 16px;font-size:var(--fs-base);font-weight:var(--fw-bold);color:${labelCol};display:flex;align-items:center;">${r.label}</div>
-          <div style="padding:14px 16px;font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);border-left:1px solid #E2E8F0;display:flex;align-items:center;">${r.value}</div>
+          <div style="padding:14px 16px;font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);border-left:1px solid var(--econ-slate-100);display:flex;align-items:center;">${r.value}</div>
         </div>
       `;
       }).join('');
@@ -2612,7 +2618,7 @@
     if (c.classifyList && Array.isArray(c.classifyList.items) && c.classifyList.items.length) {
       const cl = c.classifyList;
       if (cl.label) content += genSecLabel(cl.emoji || '✏️', cl.label);
-      if (cl.intro) content += `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin:-6px 0 16px;">${cl.intro}</div>`;
+      if (cl.intro) content += `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-6px 0 16px;">${cl.intro}</div>`;
       const opts = cl.options || [
         { id: 'positive',  label: 'Positive',  tone: 'blue'  },
         { id: 'normative', label: 'Normative', tone: 'amber' }
@@ -2700,10 +2706,10 @@
       const vsBadge = `<div class="versus-list__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-2xs);letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,20,38,0.25);">${vl.vs || 'VS'}</div></div>`;
       content += `<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:26px;">`;
       content += vl.rows.map(row => `
-        <div style="border:1px solid #E7E7EA;border-radius:var(--r-lg);background:#fff;padding:16px;">
+        <div style="border:1px solid var(--econ-border);border-radius:var(--r-lg);background:#fff;padding:16px;">
           ${row.heading ? `<div style="text-align:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:var(--econ-blue);margin-bottom:12px;letter-spacing:0.01em;">${row.heading}</div>` : ''}
           <div class="versus-list__pair" style="display:flex;align-items:stretch;gap:12px;">${sideHtml(row.left)}${vsBadge}${sideHtml(row.right)}</div>
-          ${row.note ? `<div style="text-align:center;font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin-top:10px;">${row.note}</div>` : ''}
+          ${row.note ? `<div style="text-align:center;font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin-top:10px;">${row.note}</div>` : ''}
         </div>`).join('');
       content += `</div>`;
     }
@@ -2763,7 +2769,7 @@
         purple: { color: '#7C3AED', badge: '#EDE9FE' },
       };
       content += `
-      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;margin-bottom:28px;">
+      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--econ-slate-100);margin-bottom:28px;">
         <div style="background:var(--econ-ink);padding:14px 18px;display:flex;align-items:center;gap:10px;">
           <span style="font-size:var(--fs-lg);">🎓</span>
           <div>
@@ -2776,10 +2782,10 @@
             ${c.productExamples.map(p => {
               const vc = VC[p.verdictTone] || VC.amber;
               return `
-              <div class="reveal-cell" style="background:#fff;border-radius:var(--r-lg);border:1px solid #E2E8F0;padding:16px 15px;box-shadow:0 3px 14px rgba(0,0,0,0.08);">
+              <div class="reveal-cell" style="background:#fff;border-radius:var(--r-lg);border:1px solid var(--econ-slate-100);padding:16px 15px;box-shadow:0 3px 14px rgba(0,0,0,0.08);">
                 <div style="font-size:var(--fs-3xl);margin-bottom:9px;line-height:1;">${renderIcon(p.icon)}</div>
                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:var(--econ-ink);margin-bottom:10px;">${p.product}</div>
-                <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:#475569;font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:6px 10px;border-radius:var(--r-md);cursor:pointer;width:100%;">Predict verdict ↓</button>
+                <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:var(--econ-slate);font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:6px 10px;border-radius:var(--r-md);cursor:pointer;width:100%;">Predict verdict ↓</button>
                 <div class="reveal-cell__body is-hidden">
                   <div style="display:inline-block;padding:3px 10px;border-radius:var(--r-2xl);background:${vc.badge};color:${vc.color};font-size:var(--fs-2xs);font-weight:var(--fw-bold);margin-bottom:10px;">${p.verdict}</div>
                   <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);padding-top:2px;">${p.reasoning}</div>
@@ -3394,7 +3400,7 @@
       <h1 class="card__title">${c.title}</h1>
       <p class="card__lede">${c.lede}</p>
 
-      ${c.diagramKey && I[c.diagramKey] ? `<div style="overflow-x:auto;margin-bottom:22px;border-radius:var(--r-lg);border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>` : ''}
+      ${c.diagramKey && I[c.diagramKey] ? `<div style="overflow-x:auto;margin-bottom:22px;border-radius:var(--r-lg);border:1px solid var(--econ-border);">${I[c.diagramKey]}</div>` : ''}
       <div class="mech-grid">${tiles}</div>
 
       ${(c.economistQuote && c.economistQuote.quote) ? (() => {
@@ -3636,11 +3642,11 @@
 
     // Roadmap header – N dots + counter
     const roadmap = total > 1 ? `
-      <div style="margin:0 0 16px;padding:14px 16px;background:#FAFBFF;border-radius:var(--r-lg);border:1px solid #E7E7EA;display:flex;align-items:center;justify-content:space-between;gap:14px;">
-        <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.09em;color:#475569;">Your ${total}-step journey</div>
+      <div style="margin:0 0 16px;padding:14px 16px;background:#FAFBFF;border-radius:var(--r-lg);border:1px solid var(--econ-border);display:flex;align-items:center;justify-content:space-between;gap:14px;">
+        <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-slate);">Your ${total}-step journey</div>
         <div style="display:flex;align-items:center;gap:10px;">
           <div style="display:flex;gap:5px;">
-            ${rawSteps.map((_, i) => `<div data-we-dot="${i+1}" style="width:9px;height:9px;border-radius:50%;background:#E2E8F0;transition:background 0.3s ease;"></div>`).join('')}
+            ${rawSteps.map((_, i) => `<div data-we-dot="${i+1}" style="width:9px;height:9px;border-radius:50%;background:var(--econ-slate-100);transition:background 0.3s ease;"></div>`).join('')}
           </div>
           <div data-we-progress style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:#94A3B8;min-width:70px;text-align:right;transition:color 0.3s ease;">0 / ${total} done</div>
         </div>
@@ -3658,7 +3664,7 @@
       : null;
     const conclusion = conclObj ? `
       <div data-we-payoff style="margin-top:18px;position:relative;border-radius:var(--r-lg);opacity:0.35;filter:blur(1px);transition:opacity 0.5s ease,filter 0.5s ease,box-shadow 0.5s ease;">
-        <div style="border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
+        <div style="border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(135deg,var(--econ-ink),var(--econ-slate-700));box-shadow:0 4px 18px rgba(11,20,38,0.18);">
           <div style="padding:16px 20px;display:flex;align-items:flex-start;gap:14px;">
             <div style="font-size:var(--fs-3xl);line-height:1;flex-shrink:0;">🏆</div>
             <div>
@@ -3669,14 +3675,14 @@
           </div>
         </div>
         <div data-we-lock style="position:absolute;inset:0;border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;background:rgba(248,250,252,0.55);backdrop-filter:blur(2px);">
-          <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:var(--r-lg);padding:10px 18px;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:#475569;box-shadow:0 2px 8px rgba(0,0,0,0.08);">🔒 Solve all ${total} steps to unlock</div>
+          <div style="background:#fff;border:1.5px solid var(--econ-slate-100);border-radius:var(--r-lg);padding:10px 18px;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:var(--econ-slate);box-shadow:0 2px 8px rgba(0,0,0,0.08);">🔒 Solve all ${total} steps to unlock</div>
         </div>
       </div>
     ` : '';
 
     const scenario = c.scenario ? `
       ${genSecLabel('📋', 'Scenario')}
-      <div style="background:var(--econ-blue-50);border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:var(--r-lg);padding:14px 18px;font-size:var(--fs-base);line-height:var(--lh-relaxed);color:var(--econ-ink);margin-bottom:18px;">${linebreak(c.scenario)}</div>
+      <div style="background:var(--econ-blue-50);border:1px solid #BFDBFE;border-left:4px solid var(--econ-blue);border-radius:var(--r-lg);padding:14px 18px;font-size:var(--fs-base);line-height:var(--lh-relaxed);color:var(--econ-ink);margin-bottom:18px;">${linebreak(c.scenario)}</div>
     ` : '';
 
     return `
@@ -3754,12 +3760,12 @@
 
     // Roadmap
     const roadmap = `
-      <div style="margin:18px 0 14px;padding:18px 14px 14px;background:#FAFBFF;border-radius:var(--r-lg);border:1px solid #E7E7EA;">
+      <div style="margin:18px 0 14px;padding:18px 14px 14px;background:#FAFBFF;border-radius:var(--r-lg);border:1px solid var(--econ-border);">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-          <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.09em;color:#475569;">Your 5-step journey</div>
+          <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-slate);">Your 5-step journey</div>
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="display:flex;gap:4px;">
-              ${roadmapStops.map((stop, i) => `<div data-progress-dot="${i+1}" style="width:10px;height:10px;border-radius:50%;background:#E2E8F0;transition:background 0.3s ease;"></div>`).join('')}
+              ${roadmapStops.map((stop, i) => `<div data-progress-dot="${i+1}" style="width:10px;height:10px;border-radius:50%;background:var(--econ-slate-100);transition:background 0.3s ease;"></div>`).join('')}
             </div>
             <div data-ped-progress style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:#94A3B8;min-width:70px;text-align:right;transition:color 0.3s ease;">0 / 5 done</div>
           </div>
@@ -3780,7 +3786,7 @@
     // Conclusion block (locked until all steps solved)
     const conclusionBlock = conclusion ? `
       <div data-ped-payoff style="margin-top:18px;position:relative;border-radius:var(--r-lg);opacity:0.35;filter:blur(1px);transition:opacity 0.5s ease,filter 0.5s ease,box-shadow 0.5s ease;">
-        <div style="border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
+        <div style="border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(135deg,var(--econ-ink),var(--econ-slate-700));box-shadow:0 4px 18px rgba(11,20,38,0.18);">
           <div style="padding:18px 22px;display:flex;align-items:flex-start;gap:14px;">
             <div style="font-size:var(--fs-4xl);line-height:1;flex-shrink:0;">🏆</div>
             <div>
@@ -3791,14 +3797,14 @@
           </div>
         </div>
         <div data-ped-lock style="position:absolute;inset:0;border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;background:rgba(248,250,252,0.55);backdrop-filter:blur(2px);">
-          <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:var(--r-lg);padding:10px 18px;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:#475569;box-shadow:0 2px 8px rgba(0,0,0,0.08);">🔒 Solve all 5 steps to unlock</div>
+          <div style="background:#fff;border:1.5px solid var(--econ-slate-100);border-radius:var(--r-lg);padding:10px 18px;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:var(--econ-slate);box-shadow:0 2px 8px rgba(0,0,0,0.08);">🔒 Solve all 5 steps to unlock</div>
         </div>
       </div>
     ` : '';
 
     // Context strip
     const contextStrip = contextLine ? `
-      <div style="margin-top:18px;padding:14px 18px;background:#FAFBFF;border-radius:var(--r-lg);border:1px solid #E7E7EA;border-left:4px solid #0B1426;font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">
+      <div style="margin-top:18px;padding:14px 18px;background:#FAFBFF;border-radius:var(--r-lg);border:1px solid var(--econ-border);border-left:4px solid var(--econ-ink);font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">
         <strong>💡 Why?</strong> ${contextLine}
       </div>
     ` : '';
@@ -3884,8 +3890,8 @@
     `;
 
     const scenarioPanel = `
-      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
-        <div style="background:linear-gradient(135deg,#0B1426,#1E293B);padding:16px 20px;display:flex;align-items:center;gap:12px;">
+      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--econ-slate-100);box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
+        <div style="background:linear-gradient(135deg,var(--econ-ink),var(--econ-slate-700));padding:16px 20px;display:flex;align-items:center;gap:12px;">
           <span style="font-size:var(--fs-2xl);">${s.icon || '📊'}</span>
           <div>
             <div style="color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:0.1em;">The scenario</div>
@@ -3898,13 +3904,13 @@
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
               <div style="border-radius:var(--r-md);background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
                 <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
-                <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${fmtMoney(p1)} <span style="font-size:var(--fs-sm);color:#475569;font-weight:var(--fw-semi);">/ ticket</span></div>
-                <div style="font-size:var(--fs-sm);color:#475569;margin-top:2px;">${q1.toLocaleString()} tickets sold</div>
+                <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${fmtMoney(p1)} <span style="font-size:var(--fs-sm);color:var(--econ-slate);font-weight:var(--fw-semi);">/ ticket</span></div>
+                <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:2px;">${q1.toLocaleString()} tickets sold</div>
               </div>
               <div style="border-radius:var(--r-md);background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
                 <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
-                <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${fmtMoney(p2)} <span style="font-size:var(--fs-sm);color:#475569;font-weight:var(--fw-semi);">/ ticket</span></div>
-                <div style="font-size:var(--fs-sm);color:#475569;margin-top:2px;">${q2.toLocaleString()} tickets sold</div>
+                <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${fmtMoney(p2)} <span style="font-size:var(--fs-sm);color:var(--econ-slate);font-weight:var(--fw-semi);">/ ticket</span></div>
+                <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:2px;">${q2.toLocaleString()} tickets sold</div>
               </div>
             </div>
           </div>
@@ -3932,7 +3938,7 @@
             <span style="color:${T1.c};">TR Before · ${fmtMoney(p1)} × ${q1}</span>
             <span style="color:var(--econ-ink);">${fmtMoney(tr1)}</span>
           </div>
-          <div style="height:${barH}px;background:#F1F5F9;border-radius:var(--r-md);overflow:hidden;">
+          <div style="height:${barH}px;background:var(--econ-slate-50);border-radius:var(--r-md);overflow:hidden;">
             <div style="width:${(tr1 / trMax) * 100}%;height:100%;background:linear-gradient(90deg,${T1.c},${T1.c}cc);"></div>
           </div>
         </div>
@@ -3941,7 +3947,7 @@
             <span style="color:${T5.c};">TR After · ${fmtMoney(p2)} × ${q2}</span>
             <span style="color:var(--econ-ink);">${fmtMoney(tr2)}</span>
           </div>
-          <div style="height:${barH}px;background:#F1F5F9;border-radius:var(--r-md);overflow:hidden;">
+          <div style="height:${barH}px;background:var(--econ-slate-50);border-radius:var(--r-md);overflow:hidden;">
             <div style="width:${(tr2 / trMax) * 100}%;height:100%;background:linear-gradient(90deg,${T5.c},${T5.c}cc);"></div>
           </div>
         </div>
@@ -4014,7 +4020,7 @@
             <div>
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
               <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:2px;">Demand is <span style="color:${T4.c};">price ${verdict.toLowerCase()}</span></div>
-              <div style="font-size:var(--fs-sm);color:#475569;margin-top:3px;line-height:var(--lh-normal);">A ${fmtPct(pctP)} price rise caused a ${fmtPct(pctQ)} fall in quantity – a bigger proportional response.</div>
+              <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:3px;line-height:var(--lh-normal);">A ${fmtPct(pctP)} price rise caused a ${fmtPct(pctQ)} fall in quantity – a bigger proportional response.</div>
             </div>
           </div>`
         },
@@ -4100,8 +4106,8 @@
     `;
 
     const scenarioPanel = `
-      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
-        <div style="background:linear-gradient(135deg,#0B1426,#1E293B);padding:16px 20px;display:flex;align-items:center;gap:12px;">
+      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--econ-slate-100);box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
+        <div style="background:linear-gradient(135deg,var(--econ-ink),var(--econ-slate-700));padding:16px 20px;display:flex;align-items:center;gap:12px;">
           <span style="font-size:var(--fs-2xl);">${s.icon || '📊'}</span>
           <div>
             <div style="color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:0.1em;">The scenario</div>
@@ -4114,13 +4120,13 @@
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
               <div style="border-radius:var(--r-md);background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
                 <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
-                <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${fmtMoney(p1)} <span style="font-size:var(--fs-sm);color:#475569;font-weight:var(--fw-semi);">/ bbl</span></div>
-                <div style="font-size:var(--fs-sm);color:#475569;margin-top:2px;">${q1}m ${s.qUnit || 'bbl/day'}</div>
+                <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${fmtMoney(p1)} <span style="font-size:var(--fs-sm);color:var(--econ-slate);font-weight:var(--fw-semi);">/ bbl</span></div>
+                <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:2px;">${q1}m ${s.qUnit || 'bbl/day'}</div>
               </div>
               <div style="border-radius:var(--r-md);background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
                 <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
-                <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${fmtMoney(p2)} <span style="font-size:var(--fs-sm);color:#475569;font-weight:var(--fw-semi);">/ bbl</span></div>
-                <div style="font-size:var(--fs-sm);color:#475569;margin-top:2px;">${q2}m ${s.qUnit || 'bbl/day'}</div>
+                <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${fmtMoney(p2)} <span style="font-size:var(--fs-sm);color:var(--econ-slate);font-weight:var(--fw-semi);">/ bbl</span></div>
+                <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:2px;">${q2}m ${s.qUnit || 'bbl/day'}</div>
               </div>
             </div>
           </div>
@@ -4139,14 +4145,14 @@
 
     const impactBars = `
       <div style="margin-bottom:14px;">
-        <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">When demand surges – where does the adjustment fall?</div>
+        <div style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-slate);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">When demand surges – where does the adjustment fall?</div>
         <div style="display:flex;flex-direction:column;gap:8px;">
           <div>
             <div style="display:flex;justify-content:space-between;font-size:var(--fs-xs);font-weight:var(--fw-extrabold);margin-bottom:4px;">
               <span style="color:${T5.c};">Price adjustment (large)</span>
               <span style="color:${T5.c};">80%</span>
             </div>
-            <div style="height:34px;background:#F1F5F9;border-radius:var(--r-md);overflow:hidden;">
+            <div style="height:34px;background:var(--econ-slate-50);border-radius:var(--r-md);overflow:hidden;">
               <div style="width:80%;height:100%;background:linear-gradient(90deg,${T5.c},${T5.c}cc);border-radius:var(--r-md);display:flex;align-items:center;padding:0 12px;">
                 <span style="color:#fff;font-size:var(--fs-xs);font-weight:var(--fw-extrabold);">↑ price spike</span>
               </div>
@@ -4157,7 +4163,7 @@
               <span style="color:${T1.c};">Quantity adjustment (small)</span>
               <span style="color:${T1.c};">20%</span>
             </div>
-            <div style="height:34px;background:#F1F5F9;border-radius:var(--r-md);overflow:hidden;">
+            <div style="height:34px;background:var(--econ-slate-50);border-radius:var(--r-md);overflow:hidden;">
               <div style="width:20%;height:100%;background:linear-gradient(90deg,${T1.c},${T1.c}cc);border-radius:var(--r-md);"></div>
             </div>
           </div>
@@ -4235,7 +4241,7 @@
               <div>
                 <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
                 <div style="font-size:var(--fs-md);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:2px;">Oil supply is <span style="color:${T4.c};">${verdict.toLowerCase()}</span></div>
-                <div style="font-size:var(--fs-sm);color:#475569;margin-top:3px;line-height:var(--lh-normal);">A ${fmtPct(pctP)} price rise only unlocked ${fmtPct(pctQS)} more supply – a much smaller proportional response.</div>
+                <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:3px;line-height:var(--lh-normal);">A ${fmtPct(pctP)} price rise only unlocked ${fmtPct(pctQS)} more supply – a much smaller proportional response.</div>
               </div>
             </div>`
           },
@@ -4294,10 +4300,10 @@
     ];
     const spectrum = `
       <div style="margin-top:10px;">
-        <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold);color:#475569;margin-bottom:8px;">YED – good type spectrum</div>
-        <div style="display:flex;border-radius:var(--r-md);overflow:hidden;border:1px solid #E2E8F0;">
+        <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold);color:var(--econ-slate);margin-bottom:8px;">YED – good type spectrum</div>
+        <div style="display:flex;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--econ-slate-100);">
           ${yedZones.map((z, i) => `
-            <div style="flex:1;padding:8px 4px;background:${i === verdictIdx ? z.color : '#F8FAFC'};text-align:center;border-right:${i < 3 ? '1px solid #E2E8F0' : 'none'};">
+            <div style="flex:1;padding:8px 4px;background:${i === verdictIdx ? z.color : '#F8FAFC'};text-align:center;border-right:${i < 3 ? '1px solid var(--econ-slate-100)' : 'none'};">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${i === verdictIdx ? '#fff' : '#475569'};line-height:var(--lh-snug);">${z.label}</div>
               <div style="font-size:9px;color:${i === verdictIdx ? 'rgba(255,255,255,0.8)' : '#94A3B8'};margin-top:2px;">${z.sub}</div>
             </div>
@@ -4330,8 +4336,8 @@
       </svg>`;
 
     const scenarioPanel = `
-      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
-        <div style="background:linear-gradient(135deg,#0B1426,#1E293B);padding:16px 20px;display:flex;align-items:center;gap:12px;">
+      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--econ-slate-100);box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
+        <div style="background:linear-gradient(135deg,var(--econ-ink),var(--econ-slate-700));padding:16px 20px;display:flex;align-items:center;gap:12px;">
           <span style="font-size:var(--fs-2xl);">${s.icon || '🚌'}</span>
           <div>
             <div style="color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:0.1em;">The scenario</div>
@@ -4344,12 +4350,12 @@
             <div style="border-radius:var(--r-md);background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
               <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">Income: <span style="font-size:var(--fs-base);">${fmtIncome(income1)}</span></div>
-              <div style="font-size:var(--fs-sm);color:#475569;margin-top:2px;">${q1.toLocaleString()} bus trips/day</div>
+              <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:2px;">${q1.toLocaleString()} bus trips/day</div>
             </div>
             <div style="border-radius:var(--r-md);background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
               <div style="font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">Income: <span style="font-size:var(--fs-base);">${fmtIncome(income2)}</span></div>
-              <div style="font-size:var(--fs-sm);color:#475569;margin-top:2px;">${q2.toLocaleString()} bus trips/day</div>
+              <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:2px;">${q2.toLocaleString()} bus trips/day</div>
             </div>
           </div>
           <div>${miniChart}</div>
@@ -4449,10 +4455,10 @@
     ];
     const spectrum = `
       <div style="margin-top:10px;">
-        <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold);color:#475569;margin-bottom:8px;">XED – relationship spectrum</div>
-        <div style="display:flex;border-radius:var(--r-md);overflow:hidden;border:1px solid #E2E8F0;">
+        <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold);color:var(--econ-slate);margin-bottom:8px;">XED – relationship spectrum</div>
+        <div style="display:flex;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--econ-slate-100);">
           ${xedZones.map((z, i) => `
-            <div style="flex:1;padding:8px 4px;background:${i === verdictIdx ? z.color : '#F8FAFC'};text-align:center;border-right:${i < 4 ? '1px solid #E2E8F0' : 'none'};">
+            <div style="flex:1;padding:8px 4px;background:${i === verdictIdx ? z.color : '#F8FAFC'};text-align:center;border-right:${i < 4 ? '1px solid var(--econ-slate-100)' : 'none'};">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${i === verdictIdx ? '#fff' : '#475569'};line-height:var(--lh-snug);">${z.label}</div>
               <div style="font-size:9px;color:${i === verdictIdx ? 'rgba(255,255,255,0.8)' : '#94A3B8'};margin-top:2px;">${z.sub}</div>
             </div>
@@ -4485,8 +4491,8 @@
       </svg>`;
 
     const scenarioPanel = `
-      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid #E2E8F0;box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
-        <div style="background:linear-gradient(135deg,#0B1426,#1E293B);padding:16px 20px;display:flex;align-items:center;gap:12px;">
+      <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--econ-slate-100);box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
+        <div style="background:linear-gradient(135deg,var(--econ-ink),var(--econ-slate-700));padding:16px 20px;display:flex;align-items:center;gap:12px;">
           <span style="font-size:var(--fs-2xl);">${s.icon || '☕'}</span>
           <div>
             <div style="color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:0.1em;">The scenario</div>
@@ -4499,12 +4505,12 @@
             <div style="border-radius:var(--r-md);background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
               <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${goodB}: ${cur}${pB1}/cup</div>
-              <div style="font-size:var(--fs-sm);color:#475569;margin-top:2px;">${goodA}: ${qA1} cups/day</div>
+              <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:2px;">${goodA}: ${qA1} cups/day</div>
             </div>
             <div style="border-radius:var(--r-md);background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
               <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-top:4px;">${goodB}: ${cur}${pB2}/cup</div>
-              <div style="font-size:var(--fs-sm);color:#475569;margin-top:2px;">${goodA}: ${qA2} cups/day</div>
+              <div style="font-size:var(--fs-sm);color:var(--econ-slate);margin-top:2px;">${goodA}: ${qA2} cups/day</div>
             </div>
           </div>
           <div>${miniChart}</div>
@@ -4581,24 +4587,24 @@
     </div>`;
     const rows = (c.rows || []).map((r, i) => {
       if (r.reveal) {
-        return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:#FEFCE8;border-top:1px solid #E7E7EA;">
-          <div style="padding:12px 12px;font-weight:var(--fw-extrabold);font-size:var(--fs-sm);color:#92400E;border-right:1px solid #E7E7EA;">⭐ ${r.label}</div>
-          ${COLS.map(col => `<div class="reveal-cell" style="padding:12px 8px;font-size:var(--fs-sm);line-height:var(--lh-normal);border-left:1px solid #E7E7EA;text-align:center;">
-            <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:5px 9px;border-radius:var(--r-md);cursor:pointer;">Reveal ↓</button>
+        return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:#FEFCE8;border-top:1px solid var(--econ-border);">
+          <div style="padding:12px 12px;font-weight:var(--fw-extrabold);font-size:var(--fs-sm);color:#92400E;border-right:1px solid var(--econ-border);">⭐ ${r.label}</div>
+          ${COLS.map(col => `<div class="reveal-cell" style="padding:12px 8px;font-size:var(--fs-sm);line-height:var(--lh-normal);border-left:1px solid var(--econ-border);text-align:center;">
+            <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed var(--econ-amber-600);color:#92400E;font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:5px 9px;border-radius:var(--r-md);cursor:pointer;">Reveal ↓</button>
             <div class="reveal-cell__body is-hidden" style="color:var(--econ-ink);">${r[col.key] || '–'}</div>
           </div>`).join('')}
         </div>`;
       }
-      return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:${i % 2 === 0 ? '#F8FAFC' : '#fff'};border-top:1px solid #E7E7EA;">
-        <div style="padding:12px 12px;font-weight:var(--fw-bold);font-size:var(--fs-sm);color:var(--econ-ink);border-right:1px solid #E7E7EA;">${r.label}</div>
-        ${COLS.map(col => `<div style="padding:12px 8px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);border-left:1px solid #E7E7EA;text-align:center;">${r[col.key] || '–'}</div>`).join('')}
+      return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:${i % 2 === 0 ? '#F8FAFC' : '#fff'};border-top:1px solid var(--econ-border);">
+        <div style="padding:12px 12px;font-weight:var(--fw-bold);font-size:var(--fs-sm);color:var(--econ-ink);border-right:1px solid var(--econ-border);">${r.label}</div>
+        ${COLS.map(col => `<div style="padding:12px 8px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);border-left:1px solid var(--econ-border);text-align:center;">${r[col.key] || '–'}</div>`).join('')}
       </div>`;
     }).join('');
     return `
       <div class="card__step-label">${c.stepLabel || ''}</div>
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      <div style="overflow-x:auto;border-radius:var(--r-lg);border:1px solid #E7E7EA;margin-bottom:20px;">${header}${rows}</div>
+      <div style="overflow-x:auto;border-radius:var(--r-lg);border:1px solid var(--econ-border);margin-bottom:20px;">${header}${rows}</div>
       ${c.footer ? `<p style="font-size:var(--fs-sm);color:var(--econ-ink);font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>` : ''}
       ${renderExamEdge(c.examEdge)}
     `;
@@ -4624,7 +4630,7 @@
             ${p.label ? `<span style="font-size:var(--fs-xs);color:rgba(255,255,255,0.75);">– ${p.label}</span>` : ''}
           </div>
           <div style="padding:14px 16px;">
-            <div style="font-size:var(--fs-sm);color:#334155;line-height:var(--lh-relaxed);margin-bottom:12px;">${p.prompt}</div>
+            <div style="font-size:var(--fs-sm);color:var(--econ-slate-600);line-height:var(--lh-relaxed);margin-bottom:12px;">${p.prompt}</div>
             ${p.hint ? `<div style="font-size:var(--fs-xs);color:#64748B;font-style:italic;margin-bottom:12px;">💡 ${p.hint}</div>` : ''}
             <button class="we-step__btn" data-action="we-reveal" style="margin:0;" type="button">Show model paragraph →</button>
             <div class="we-step__answer is-hidden" style="margin-top:10px;">
@@ -4639,7 +4645,7 @@
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
       <div style="background:var(--econ-ink);border-radius:var(--r-lg);padding:16px 20px;margin-bottom:20px;">
         <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;margin-bottom:8px;">Exam question · ${c.marks || 25} marks${c.timeGuide ? ' · ' + c.timeGuide : ''}</div>
-        <div style="font-size:var(--fs-base);font-weight:var(--fw-semi);color:#F1F5F9;line-height:var(--lh-normal);">${c.question || ''}</div>
+        <div style="font-size:var(--fs-base);font-weight:var(--fw-semi);color:var(--econ-slate-50);line-height:var(--lh-normal);">${c.question || ''}</div>
       </div>
       ${paras}
       ${renderExamEdge(c.examEdge)}
@@ -4673,7 +4679,7 @@
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
       <div class="xed-root" data-xed-mount></div>
       ${c.howItWorks ? `
-        <div style="background:var(--econ-blue-50);border-left:4px solid #2563EB;border-radius:var(--r-md);padding:14px 18px;margin:18px 0;">
+        <div style="background:var(--econ-blue-50);border-left:4px solid var(--econ-blue);border-radius:var(--r-md);padding:14px 18px;margin:18px 0;">
           <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-blue);margin-bottom:8px;">How to read it</div>
           <div style="font-size:var(--fs-base);line-height:1.7;color:var(--econ-ink);">${c.howItWorks}</div>
         </div>
@@ -4938,8 +4944,8 @@
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
       ${c.lede ? (c.ledeStyle === 'plain'
-        ? `<p style="font-size:var(--fs-base);color:#1E293B;line-height:var(--lh-relaxed);margin:0 0 18px;">${c.lede}</p>`
-        : `<div style="display:flex;align-items:center;gap:14px;background:var(--econ-blue-50);border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:var(--r-lg);padding:14px 18px;margin-bottom:18px;">
+        ? `<p style="font-size:var(--fs-base);color:var(--econ-slate-700);line-height:var(--lh-relaxed);margin:0 0 18px;">${c.lede}</p>`
+        : `<div style="display:flex;align-items:center;gap:14px;background:var(--econ-blue-50);border:1px solid #BFDBFE;border-left:4px solid var(--econ-blue);border-radius:var(--r-lg);padding:14px 18px;margin-bottom:18px;">
           <div style="width:34px;height:34px;border-radius:50%;background:var(--econ-blue-100);color:#1E3A8A;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;flex-shrink:0;">💡</div>
           <div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);font-style:italic;">${c.lede}</div>
         </div>`) : ''}
@@ -5006,13 +5012,13 @@
         return `${label}<div style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`;
       })() : ''}
 
-      ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
+      ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
 
       ${c.tileGrid ? buildTileGridHtml(c.tileGrid) : ''}
 
       ${c.factorEngine ? buildFactorEngineHtml(c.factorEngine) : ''}
 
-      ${c.visualKey2 && I[c.visualKey2] ? `${c.visualLabel2 ? genSecLabel(c.visualEmoji2 || '📊', c.visualLabel2) : ''}<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey2]}</div>${c.visualCaption2 ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption2}</div>` : ''}` : ''}
+      ${c.visualKey2 && I[c.visualKey2] ? `${c.visualLabel2 ? genSecLabel(c.visualEmoji2 || '📊', c.visualLabel2) : ''}<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey2]}</div>${c.visualCaption2 ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption2}</div>` : ''}` : ''}
 
       ${buildInteractiveDiagramHtml(c)}
 
@@ -5108,12 +5114,12 @@
         const renderTerm = (item, isResult) => {
           const t = PATTERN_TONES[item.tone] || PATTERN_TONES.blue;
           const ring = isResult ? 3 : 2.5;
-          const shadow = isResult ? `box-shadow:0 4px 14px ${t.accent}55;` : `box-shadow:0 2px 8px ${t.accent}30;`;
+          const shadow = isResult ? `box-shadow:0 4px 14px color-mix(in oklab, ${t.accent} 33%, transparent);` : `box-shadow:0 2px 8px color-mix(in oklab, ${t.accent} 19%, transparent);`;
           return `
             <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;min-width:96px;flex:0 1 auto;">
               <div style="width:62px;height:62px;border-radius:50%;background:${t.bg};border:${ring}px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-3xl);line-height:1;margin-bottom:10px;${shadow}">${renderIcon(item.icon)}</div>
               <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:4px;">${item.title}</div>
-              ${item.sub ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);max-width:120px;">${item.sub}</div>` : ''}
+              ${item.sub ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);max-width:120px;">${item.sub}</div>` : ''}
             </div>`;
         };
         const renderOp = (sym, big) => `<div style="font-size:${big ? 30 : 26}px;font-weight:var(--fw-extrabold);color:#94A3B8;line-height:1;padding:0 2px;align-self:flex-start;margin-top:18px;flex:0 0 auto;">${sym}</div>`;
@@ -5140,10 +5146,10 @@
         }).join('');
         const big = (lf.left || []).map(i => i.letter).join(' ') + ' = ' + (lf.right || []).map(i => i.letter).join(' ');
         return `${title}
-          <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:var(--r-lg);padding:18px 20px;margin-bottom:18px;">
+          <div style="background:#F8FAFC;border:1px solid var(--econ-slate-100);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:18px;">
             <div style="text-align:center;font-size:42px;font-weight:900;letter-spacing:0.12em;color:var(--econ-ink);margin-bottom:18px;font-family:'Fraunces',serif;">${big}</div>
             <div style="display:grid;grid-template-columns:repeat(${(lf.left || []).length + (lf.right || []).length},1fr);gap:10px;">${renderSide(lf.left || [])}${renderSide(lf.right || [])}</div>
-            ${lf.caption ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin-top:14px;text-align:center;font-style:italic;">${lf.caption}</div>` : ''}
+            ${lf.caption ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin-top:14px;text-align:center;font-style:italic;">${lf.caption}</div>` : ''}
           </div>`;
       })() : ''}
 
@@ -5181,11 +5187,11 @@
               ? `<div style="color:${tone.label};line-height:0;margin:4px 0 14px;display:flex;align-items:center;justify-content:center;height:48px;">${I[item.svgKey]}</div>`
               : `<div style="font-size:40px;line-height:1;margin:4px 0 14px;height:48px;display:flex;align-items:center;justify-content:center;">${renderIcon(item.icon)}</div>`;
             return `
-              <div style="position:relative;border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:38px 14px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+              <div style="position:relative;border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:38px 14px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
                 <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:var(--fw-extrabold);">${i + 1}</div>
                 ${iconHtml}
                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;letter-spacing:-0.01em;">${item.head}</div>
-                <div style="font-size:var(--fs-sm);color:#334155;line-height:var(--lh-normal);">${item.body}</div>
+                <div style="font-size:var(--fs-sm);color:var(--econ-slate-600);line-height:var(--lh-normal);">${item.body}</div>
               </div>`;
           }).join('');
           const labelHtml = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'The main costs');
@@ -5304,7 +5310,7 @@
               <div style="position:relative;width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;margin-bottom:10px;z-index:1;">${i + 1}</div>
               <div style="font-size:var(--fs-xl);line-height:1;margin-bottom:8px;">${renderIcon(step.icon)}</div>
               <div style="font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:4px;">${step.title}</div>
-              ${step.sub ? `<div style="font-size:var(--fs-xs);color:#475569;line-height:var(--lh-normal);">${step.sub}</div>` : ''}
+              ${step.sub ? `<div style="font-size:var(--fs-xs);color:var(--econ-slate);line-height:var(--lh-normal);">${step.sub}</div>` : ''}
               ${!isLast ? `<div style="position:absolute;top:17px;left:calc(50% + 22px);right:calc(-50% + 22px);height:0;border-top:1.5px dashed #CBD5E1;z-index:0;"></div>` : ''}
             </div>`;
         }).join('');
@@ -5327,7 +5333,7 @@
 
       ${c.flowChart && c.flowChart.svgKey && I[c.flowChart.svgKey] ? (() => {
         const fc = c.flowChart;
-        return `${fc.label ? genSecLabel(fc.emoji || '📊', fc.label) : ''}<div style="margin:0 0 12px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[fc.svgKey]}</div>${fc.caption ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin:0 0 22px;text-align:center;font-style:italic;">${fc.caption}</div>` : ''}`;
+        return `${fc.label ? genSecLabel(fc.emoji || '📊', fc.label) : ''}<div style="margin:0 0 12px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[fc.svgKey]}</div>${fc.caption ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:0 0 22px;text-align:center;font-style:italic;">${fc.caption}</div>` : ''}`;
       })() : ''}
 
       ${c.basketOfGoods ? (() => {
@@ -5337,13 +5343,13 @@
         const headerTitle = header.title || 'The basket of goods';
         const headerSub = header.subtitle || '';
         const itemTiles = (bg.items || []).map(it => `
-          <div style="background:#fff;border-radius:var(--r-lg);padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:5px;border:1px solid #DBEAFE;">
+          <div style="background:#fff;border-radius:var(--r-lg);padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:5px;border:1px solid var(--econ-blue-100);">
             <span style="font-size:var(--fs-xl);line-height:1;">${renderIcon(it.icon)}</span>
             <span style="font-size:10.5px;font-weight:var(--fw-bold);color:#1E3A8A;text-align:center;line-height:var(--lh-snug);">${it.label}</span>
           </div>`).join('');
         const cols = Math.min((bg.items || []).length, 6);
         return `${genSecLabel(headerIcon, headerTitle)}
-          ${headerSub ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);margin:-8px 0 12px;">${headerSub}</div>` : ''}
+          ${headerSub ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 12px;">${headerSub}</div>` : ''}
           <div style="background:var(--econ-blue-50);border:1px solid #BFDBFE;border-radius:var(--r-lg);padding:14px;margin-bottom:18px;">
             <div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:8px;">${itemTiles}</div>
           </div>`;
@@ -5366,7 +5372,7 @@
         return `<div style="margin-bottom:20px;">
           ${genSecLabel('⚖️', swTitle)}
           <div style="display:grid;grid-template-columns:repeat(${swCols},1fr);gap:12px;margin-bottom:12px;">${swTiles}</div>
-          ${note ? `<div style="font-size:var(--fs-sm);color:#475569;text-align:center;font-style:italic;line-height:var(--lh-normal);">${note}</div>` : ''}
+          ${note ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);text-align:center;font-style:italic;line-height:var(--lh-normal);">${note}</div>` : ''}
         </div>`;
       })() : ''}
 
@@ -5394,7 +5400,7 @@
         const tiles2 = items2.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
@@ -5495,15 +5501,15 @@
             const cells = (row.values || []).map((val, ci) => {
               const t = colTones[ci] || PATTERN_TONES.blue;
               const hl = row.highlights && row.highlights[ci];
-              return `<div style="padding:10px 10px;font-size:var(--fs-sm);color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid #E7E7EA;line-height:var(--lh-normal);">${val}</div>`;
+              return `<div style="padding:10px 10px;font-size:var(--fs-sm);color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid var(--econ-border);line-height:var(--lh-normal);">${val}</div>`;
             }).join('');
-            return `<div style="display:grid;grid-template-columns:${ctGrid};background:${bg};border-bottom:1px solid #E7E7EA;">
+            return `<div style="display:grid;grid-template-columns:${ctGrid};background:${bg};border-bottom:1px solid var(--econ-border);">
               <div style="padding:10px 12px;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--econ-ink);display:flex;align-items:center;gap:6px;line-height:1.4;">${row.label}</div>
               ${cells}
             </div>`;
           }).join('');
-          return `${colLabel}<div style="border-radius:var(--r-lg);border:1px solid #E7E7EA;overflow:hidden;margin-bottom:20px;">
-            <div style="display:grid;grid-template-columns:${ctGrid};background:#F8FAFC;border-bottom:2px solid #E7E7EA;border-radius:var(--r-lg) 12px 0 0;">
+          return `${colLabel}<div style="border-radius:var(--r-lg);border:1px solid var(--econ-border);overflow:hidden;margin-bottom:20px;">
+            <div style="display:grid;grid-template-columns:${ctGrid};background:#F8FAFC;border-bottom:2px solid var(--econ-border);border-radius:var(--r-lg) 12px 0 0;">
               <div style="padding:10px 12px;"></div>
               ${headerCells}
             </div>
@@ -5517,7 +5523,7 @@
       ${c.matchTable && c.matchTable.rows && c.matchTable.rows.length ? (() => {
         const mt = c.matchTable;
         const title = mt.title ? genSecLabel(mt.emoji || '🔗', mt.title) : '';
-        const heads = (mt.columns || []).map(col => `<div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:#475569;text-transform:uppercase;letter-spacing:0.09em;text-align:center;padding:0 4px;">${col}</div>`).join('<div></div>');
+        const heads = (mt.columns || []).map(col => `<div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:var(--econ-slate);text-transform:uppercase;letter-spacing:0.09em;text-align:center;padding:0 4px;">${col}</div>`).join('<div></div>');
         const headerRow = heads ? `<div style="display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;gap:10px;align-items:center;margin-bottom:8px;">${heads}</div>` : '';
         const rows = mt.rows.map(row => {
           const renderCell = cell => {
@@ -5527,7 +5533,7 @@
                 ${cell.icon ? `<div style="font-size:var(--fs-lg);line-height:1;color:${t.label};flex-shrink:0;margin-top:1px;">${renderIcon(cell.icon)}</div>` : ''}
                 <div style="flex:1;min-width:0;">
                   <div style="font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:2px;">${cell.head}</div>
-                  ${cell.sub ? `<div style="font-size:var(--fs-xs);color:#475569;line-height:var(--lh-normal);">${cell.sub}</div>` : ''}
+                  ${cell.sub ? `<div style="font-size:var(--fs-xs);color:var(--econ-slate);line-height:var(--lh-normal);">${cell.sub}</div>` : ''}
                 </div>
               </div>`;
           };
@@ -5553,7 +5559,7 @@
             <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:6px 4px;">
               <div style="width:46px;height:46px;border-radius:50%;background:${tone.bg};border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
               <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${tone.label};line-height:var(--lh-snug);margin-bottom:5px;">${item.label}</div>
-              <div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);">${item.text}</div>
+              <div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);">${item.text}</div>
             </div>`;
         }).join('');
         const n = w.items.length;
@@ -5641,7 +5647,7 @@
         const noteHtml = fp.note
           ? `<div style="flex:1;min-width:200px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);padding-left:8px;">${fp.note}</div>`
           : '';
-        return `${title}<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:var(--r-lg);padding:14px 16px;margin-bottom:18px;"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;">${termHtml}</div>${noteHtml}</div>`;
+        return `${title}<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#F8FAFC;border:1px solid var(--econ-slate-100);border-radius:var(--r-lg);padding:14px 16px;margin-bottom:18px;"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;">${termHtml}</div>${noteHtml}</div>`;
       })() : ''}
 
       ${c.bottomTip ? (() => {
@@ -5681,11 +5687,11 @@
         const t = PATTERN_TONES[cl.tone || 'green'] || PATTERN_TONES.green;
         const title = cl.label ? genSecLabel(cl.emoji || '✅', cl.label) : '';
         const rows = cl.items.map(it => `
-          <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #E7E7EA;border-radius:var(--r-lg);padding:12px 16px;">
+          <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--econ-border);border-radius:var(--r-lg);padding:12px 16px;">
             <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:${t.soft};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;margin-top:1px;">✓</div>
             <div style="flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;">
               <span style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:var(--econ-ink);line-height:var(--lh-normal);">${it.head}</span>
-              ${it.body ? `<span style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);flex:1;min-width:160px;">${it.body}</span>` : ''}
+              ${it.body ? `<span style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);flex:1;min-width:160px;">${it.body}</span>` : ''}
             </div>
           </div>`).join('');
         return `${title}<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;">${rows}</div>`;
@@ -5960,7 +5966,7 @@
     if (c.causes2Label && c.causes2 && c.causes2.length) {
       const causes2Tiles = c.causes2.map(function(item, i) {
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
-        return '<div style="border-radius:var(--r-lg);background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:42px;height:42px;border-radius:50%;background:' + tone.bg + ';display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">' + item.icon + '</div><div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:' + tone.label + ';line-height:var(--lh-snug);">' + item.head + '</div></div><div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">' + item.body + '</div></div>';
+        return '<div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:42px;height:42px;border-radius:50%;background:' + tone.bg + ';display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">' + item.icon + '</div><div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:' + tone.label + ';line-height:var(--lh-snug);">' + item.head + '</div></div><div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">' + item.body + '</div></div>';
       }).join('');
       out += genSecLabel(c.causes2Emoji || '⚙️', c.causes2Label);
       out += '<div style="display:grid;grid-template-columns:' + gridColumnsFor(c.causes2.length, 155) + ';gap:12px;margin:0 0 28px;">' + causes2Tiles + '</div>';

@@ -6,6 +6,36 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.77.0 — 2026-06-06
+
+### Design language: centralised hover interactions + smartphone polish
+
+Hover effects are now a first-class part of the Econos Design Language (EDL),
+modelled on the home-page topic box (`.topic`) the user liked — a small lift
+plus a soft, tone-tinted shadow — applied **selectively** to standalone
+"graphic" boxes, never wholesale.
+
+- **Tokens** — added `--hover-lift` (-2px), `--hover-lift-lg` (-3px) and the
+  canonical `--hover-tr` transition next to the shadow tokens.
+- **Three tiers, each a distinct feel** (one centralised "HOVER INTERACTIONS"
+  block in `styles.css`):
+  - *feature* — `.branch-tri` decision boxes get a -3px lift + a shadow tinted
+    by the box's own `--tone-strong` (closest to the home page).
+  - *tile* — `.mech-tile` / `.impact-card` / `.summary-tile` / `.cause-col` get
+    a -2px lift + the lifted card shadow. This also fixes the older
+    transition-less `.mech-tile:hover` (it used to snap instantly).
+  - *note* — `.callout` warms with a soft shadow bloom, no lift.
+  - Opt-in helpers `.dl-hover-tile` / `.dl-hover-feature` expose the same
+    treatments to any bespoke/inline-styled box.
+  - All hovers disabled under `prefers-reduced-motion` (existing global reset).
+- **Smartphone** — a conservative `≤ 480px` layer tames the two largest type
+  steps at the token level (`--fs-5xl` 44→34, `--fs-4xl` 36→30, so every use
+  scales together) and trims standalone tile/callout padding to `--sp-4`.
+
+Docs updated (`docs/DESIGN_LANGUAGE.md` — hover tiers table + smartphone
+section). lint + unit tests + build green; cache econos-v386.
+
+
 ## 0.76.0 — 2026-06-05
 
 ### Design language: rationalise the type / radius / line-height scales

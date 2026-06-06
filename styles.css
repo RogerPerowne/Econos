@@ -3179,16 +3179,20 @@ img, svg { display: block; max-width: 100%; }
   transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 
-/* Hover-lift on interactive surfaces only (cards, scenarios) */
+/* Hover-lift on interactive surfaces only (cards, scenarios).
+   Lift values + the smooth transition are now the Design Language
+   tokens; the canonical tile-tier hover (with the lifted card shadow)
+   lives in the "DESIGN LANGUAGE — HOVER INTERACTIONS" block below and
+   supersedes the box-shadow here for .mech-tile. */
 .scenario,
 .mech-tile,
 .cards-list__item {
   cursor: pointer;
+  transition: var(--hover-tr);
 }
-.scenario:hover,
-.mech-tile:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+.scenario:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
 }
 
 
@@ -11809,6 +11813,15 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   --shadow-card-rest: 0 1px 2px rgba(11, 20, 38, 0.03), 0 1px 8px rgba(11, 20, 38, 0.025);
   --shadow-card-hover: 0 1px 2px rgba(11, 20, 38, 0.05), 0 14px 32px -10px rgba(11, 20, 38, 0.18);
 
+  /* === HOVER / INTERACTION (Design Language) ===
+     One canonical lift scale + one canonical transition, modelled on
+     the home-page topic box (.topic in index.css). Components opt in
+     via the .dl-hover-* helpers (or the curated selectors) below — the
+     lift is never applied wholesale. */
+  --hover-lift:    -2px;   /* content tiles */
+  --hover-lift-lg: -3px;   /* feature / decision boxes (matches .topic) */
+  --hover-tr: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.18s ease;
+
   /* Dial WONK back to 0 — keeps Fraunces warm without the wild
      swashy descenders that overflow the line-box at large sizes. */
   --fraunces-display: "opsz" 96, "SOFT" 30, "WONK" 0;
@@ -11916,6 +11929,54 @@ a.stage { box-shadow: var(--shadow-card-rest); }
 
 /* Hide the connecting line between stages when they're separate cards */
 .right-rail .stage::after { display: none; }
+
+/* ════════════════════════════════════════════════════════════
+   DESIGN LANGUAGE — HOVER INTERACTIONS
+   One canonical set of lift-on-hover treatments, modelled on the
+   home-page topic box (.topic): a small translate-Y lift plus a
+   soft, tone-tinted shadow. Applied SELECTIVELY to standalone
+   "graphic" boxes — never to body text, nested parts or table rows.
+   Three deliberately distinct tiers:
+     • feature — branch decision boxes (carry a --tone-strong):
+                 bigger lift + tone-tinted shadow (closest to .topic).
+     • tile    — content tiles (mechanism / impact / summary / cause):
+                 gentle lift + the neutral lifted card shadow.
+     • note    — callouts: no lift, just a soft shadow bloom so the
+                 note "warms" without jumping the layout.
+   Reusable .dl-hover-tile / .dl-hover-feature helpers expose the same
+   treatments to any bespoke box (incl. inline-styled boxes in app.js).
+   All transitions are disabled under prefers-reduced-motion globally
+   (see the reset blocks), so these degrade to instant + accessible.
+   ════════════════════════════════════════════════════════════ */
+
+/* — feature tier: branch decision boxes + opt-in helper — */
+.branch-tri,
+.dl-hover-feature { transition: var(--hover-tr); }
+.branch-tri:hover,
+.dl-hover-feature:hover {
+  transform: translateY(var(--hover-lift-lg));
+  box-shadow:
+    0 1px 2px rgba(11, 20, 38, 0.04),
+    0 14px 30px -10px color-mix(in oklab, var(--tone-strong, var(--econ-ink)) 30%, rgba(11, 20, 38, 0.16));
+}
+
+/* — tile tier: standalone content tiles + opt-in helper — */
+.impact-card,
+.summary-tile,
+.cause-col,
+.dl-hover-tile { transition: var(--hover-tr); }
+.mech-tile:hover,            /* supersede the older transition-less rule */
+.impact-card:hover,
+.summary-tile:hover,
+.cause-col:hover,
+.dl-hover-tile:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* — note tier: callouts warm without lifting — */
+.callout { transition: box-shadow 0.22s ease, border-color 0.18s ease; }
+.callout:hover { box-shadow: var(--shadow-lg); }
 
 /* ── Topbar polish — slightly tighter and more elegant ── */
 .topbar {
@@ -13361,4 +13422,31 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   background: var(--econ-rose-50, var(--econ-rose-50));
   color: var(--econ-rose-700, #BE123C);
   cursor: default;
+}
+
+/* ════════════════════════════════════════════════════════════
+   DESIGN LANGUAGE — SMARTPHONE POLISH
+   A conservative small-screen layer on top of the existing reflow
+   (sidebar hides < 900px, inline grids stack < 600px). Two jobs:
+   1. Tame the two largest display type steps on phones so hero
+      headings never overflow a 320–400px viewport. Done at the
+      TOKEN level so every use scales together in one place.
+   2. Trim the generous box padding on standalone tiles / callouts
+      so content isn't squeezed into a sliver on narrow screens.
+   Spacing + colour tokens are left untouched — only the two biggest
+   type steps and a handful of box paddings move, so the change is
+   broad-reach but low-risk.
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  :root {
+    --fs-5xl: 34px;   /* 44 → 34 */
+    --fs-4xl: 30px;   /* 36 → 30 */
+  }
+  .callout,
+  .impact-card,
+  .summary-tile,
+  .cause-col,
+  .mech-tile,
+  .branch-tri { padding: var(--sp-4); }
+  .callout { gap: var(--sp-3); }
 }

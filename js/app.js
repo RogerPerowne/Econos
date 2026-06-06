@@ -3013,23 +3013,24 @@
 
     // Lock-in strip – green-tinted footer with a row of checkmark items.
     //   Pattern: lockIn: { title?, items: [string] }  OR  lockIn: [string]
+    // Styling lives in the universal `.lock-in` CSS component; see styles.css.
     if (c.lockIn) {
       const liData = Array.isArray(c.lockIn) ? { items: c.lockIn } : c.lockIn;
       if (liData.items && liData.items.length) {
         const liTitle = liData.title || 'What you need to lock in';
         const liIcon  = liData.icon  || '🎯';
         const liItemsHtml = liData.items.map(it => `
-          <div style="display:flex;align-items:center;gap:8px;flex:1 1 0;min-width:140px;">
-            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--econ-green-100);color:var(--econ-green-600);display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:900;">✓</span>
-            <span style="font-size:var(--fs-sm);color:var(--econ-ink);font-weight:var(--fw-semi);line-height:1.4;">${it}</span>
+          <div class="lock-in__item">
+            <span class="lock-in__check">✓</span>
+            <span>${it}</span>
           </div>`).join('');
         content += `
-          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--r-lg);padding:14px 18px 12px;margin-bottom:22px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-              <span style="font-size:var(--fs-base);line-height:1;">${liIcon}</span>
-              <span style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:var(--econ-green-600);text-transform:uppercase;letter-spacing:0.08em;">${liTitle}</span>
+          <div class="lock-in">
+            <div class="lock-in__head">
+              <span class="lock-in__icon">${renderIcon(liIcon)}</span>
+              <span class="lock-in__title">${liTitle}</span>
             </div>
-            <div style="display:flex;flex-wrap:wrap;gap:14px 22px;">${liItemsHtml}</div>
+            <div class="lock-in__items">${liItemsHtml}</div>
           </div>`;
       }
     }

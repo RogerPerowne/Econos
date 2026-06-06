@@ -59,18 +59,26 @@ Run `node scripts/lint-tokens.mjs --list` for the per-hex breakdown.
 It is a **reporter** today (exit 0). Once `js/app.js` is swept it can be wired
 into `npm run lint` as a blocking gate to prevent regression.
 
-## Progress / roadmap
+## Consistency — what is token-driven now
 
-- [x] **Audit** — the token set is complete; the issue is application.
-- [x] **`styles.css` swept** — 77 duplicated hexes → tokens (value-preserving;
-  `:root` definitions untouched). 0 drift remaining.
-- [x] **Drift reporter** — `npm run lint:tokens`.
-- [ ] **`js/app.js`** — tokenise inline-style hexes (~522), then add spacing/type
-  literals; verify per card with screenshots.
-- [ ] **`js/icons.js`** — tokenise SVG chart fills (~3013) where they duplicate a
-  brand colour (chart-specific shades stay literal).
-- [ ] **Make `lint:tokens` blocking** once the count is near zero.
-- [ ] Extend the reporter to flag duplicated spacing/radius px literals too.
+Value-preserving sweeps (resolved values identical, screenshot-verified):
+- **Colour** — `styles.css` 0 drift; `app.js` inline-style colours tokenised.
+- **Font weight** (bold/regular) — `var(--fw-*)` across app.js + styles.css.
+- **Font size** — exact-scale literals -> `var(--fs-*)`.
+- **Line-height** — exact-scale -> `var(--lh-*)`.
+- **Border-radius** — exact-scale -> `var(--r-*)`.
+- **Bug fix** — `var(--fraunces-heading)` (undefined) -> `var(--fraunces-section)`.
+
+**Brand serif (Fraunces)** is used occasionally where it adds warmth — economist
+quotes and "Big idea"/conclusion statements — body stays Inter.
+
+`npm run lint:tokens` reports two things per file: **dup** (a raw literal that
+duplicates a token — tokenise it) and **off** (an off-scale literal with no token
+— the rationalisation backlog; snapping to the scale is a visual change so needs
+sign-off). SVG `fill=`/`stroke=` *attribute* colours can not take `var()`, so
+they show as dup but stay literal until refactored to `style="fill:…"`.
+
+---
 
 ---
 

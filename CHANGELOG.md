@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.75.0 — 2026-06-05
+
+### Design language: consistency sweep (weights/sizes/line-heights/radii) + brand serif
+
+Value-preserving token sweeps (resolved values identical — screenshot-verified
+pixel-identical, lint + unit tests + build green):
+- **Font weight** — 284 (app.js) + 50 (styles.css) literals -> `var(--fw-*)`.
+- **Font size** — 293 + 79 exact-scale literals -> `var(--fs-*)`.
+- **Line-height** — 102 + 48 exact-scale -> `var(--lh-*)`.
+- **Border-radius** — 95 + 15 exact-scale -> `var(--r-*)`.
+- **Bug fix** — undefined `var(--fraunces-heading)` -> `var(--fraunces-section)`.
+
+**Brand serif (Fraunces)** now used occasionally where it adds warmth — economist
+quotes (italic) and "Big idea"/conclusion statements; body/tiles stay Inter.
+
+**`npm run lint:tokens`** extended to report drift across colour + weight + size +
+line-height + radius, splitting **dup** (duplicates a token — tokenise) from
+**off** (off-scale literal — rationalisation backlog needing visual sign-off).
+
+
 ## 0.74.0 – 2026-06-06
 
 ### Business Objectives – new 7-card topic (Edexcel A 3.2.1)

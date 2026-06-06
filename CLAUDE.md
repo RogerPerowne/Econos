@@ -63,6 +63,18 @@ git push -u origin <dev-branch> --force
 - Default branch: main
 - Development branch: claude/development
 
+## Content portability (keep migration-ready)
+
+Content (JS data) · render engine (pure `data→HTML` in `app.js`) · styling (`styles.css`
+tokens) are kept cleanly separable so the site can migrate to a Postgres + .NET
+platform without a rewrite. **Content data carries semantic tone names
+(`tone:'blue'`), never colours or raw markup.** When you add/change a content box,
+move it onto the universal `.tone-*` + token components and record its
+data→component contract in `docs/CONTENT_MIGRATION.md`. The export bridge is
+`npm run export:content`; target schema `docs/schema/postgres.sql`; blueprint
+`docs/PLATFORM_BLUEPRINT.md`. We are not building the platform here — only keeping
+it trivially migratable.
+
 ## URL & routing rules
 
 ### The contract (path-based)

@@ -1,0 +1,238 @@
+{
+  "board": "edexcel_a",
+  "theme": "theme-1",
+  "slug": "demand",
+  "topic": {
+    "id": "demand",
+    "topicNum": "2.1",
+    "theme": "Theme 1 · Introduction to Markets and Market Failure",
+    "title": "Demand",
+    "estTime": "8-10 minutes",
+    "goal": "Lock in the demand curve: why it slopes down, movements along it vs shifts of it, the conditions of demand, and the types of good – the foundations of all market analysis.",
+    "intro": {
+      "heroKey": "heroDemand",
+      "summary": "Demand is the quantity of a good consumers are willing and able to buy at each possible price. The demand curve is the most-used diagram in economics – the non-negotiable skill is telling what moves ALONG it (a price change) from what SHIFTS it (a non-price determinant).",
+      "doInThis": "Work through 8 cards: the big picture, why the curve slopes down, movements along the curve, shifts of the curve, what shifts demand, types of good, derived demand, and an exam toolkit.",
+      "outcomes": [
+        "Distinguish a movement along the demand curve from a shift of the demand curve",
+        "Explain why the demand curve slopes down (substitution, real-income, diminishing marginal utility)",
+        "List and apply the conditions of demand that shift the curve",
+        "Classify normal, inferior, substitute and complement goods and predict the shift"
+      ],
+      "tip": "A change in the good’s own price causes a movement ALONG the demand curve. A change in any other determinant (income, tastes, related-goods prices) shifts the WHOLE curve.",
+      "stages": [
+        {
+          "num": 1,
+          "name": "Learn it",
+          "sub": "8 concept cards",
+          "state": "current"
+        },
+        {
+          "num": 2,
+          "name": "Link it",
+          "sub": "Apply skills with the context",
+          "state": "available",
+          "href": ""
+        },
+        {
+          "num": 3,
+          "name": "Land it",
+          "sub": "Exam paper",
+          "state": "locked"
+        }
+      ]
+    },
+    "cards": [
+      {
+        "id": "demand_1",
+        "template": "framing",
+        "stepLabel": "Learn: Step 1 of 8",
+        "title": "Demand: the big picture",
+        "tip": {
+          "icon": "✅",
+          "tone": "green",
+          "text": "Demand means willingness AND ability to pay – not just wanting something. The demand curve shows how much consumers buy at each price."
+        },
+        "interactiveDiagram": {
+          "svgKey": "demandBigPicture",
+          "label": "What the demand curve shows",
+          "emoji": "📊",
+          "layers": [
+            "layer-a",
+            "layer-b"
+          ],
+          "views": [
+            {
+              "label": "The demand curve",
+              "tone": "blue",
+              "show": [],
+              "head": "The demand curve",
+              "body": "Demand shows how much consumers are willing and able to buy at each price – the whole downward-sloping curve <strong>D</strong>."
+            },
+            {
+              "label": "A higher price → less",
+              "tone": "amber",
+              "show": [
+                "layer-a"
+              ],
+              "head": "At a higher price (A)",
+              "body": "At the higher price of <strong>£10</strong> (point A), quantity demanded is just <strong>20</strong>."
+            },
+            {
+              "label": "A lower price → more",
+              "tone": "green",
+              "show": [
+                "layer-b"
+              ],
+              "head": "At a lower price (B)",
+              "body": "At the lower price of <strong>£6</strong> (point B), quantity demanded rises to <strong>40</strong> – the law of demand."
+            }
+          ]
+        },
+        "causes": [
+          {
+            "tone": "blue",
+            "icon": "🙋",
+            "head": "Willingness",
+            "body": "Consumers want the good."
+          },
+          {
+            "tone": "amber",
+            "icon": "👛",
+            "head": "Ability",
+            "body": "They can afford to buy it."
+          },
+          {
+            "tone": "green",
+            "icon": "🏷️",
+            "head": "At each price",
+            "body": "Demand is a relationship across prices, not a single number."
+          }
+        ],
+        "causesLabel": "What demand really means",
+        "causesEmoji": "🛒",
+        "causesStyle": "tinted-flat",
+        "keyTerms": [
+          {
+            "term": "📉 Demand",
+            "def": "The whole relationship between price and quantity demanded."
+          },
+          {
+            "term": "🛒 Quantity demanded",
+            "def": "The amount consumers buy at one particular price."
+          },
+          {
+            "term": "⚖️ Ceteris paribus",
+            "def": "All other influences on demand are held constant."
+          }
+        ],
+        "keyTermsLabel": "Key language",
+        "keyTermsEmoji": "📖",
+        "examEdge": "Use <strong>quantity demanded</strong> for movements along the curve; reserve <strong>demand</strong> for the whole curve or a shift. A price change moves us along the curve; a non-price factor shifts the whole curve."
+      },
+      {
+        "id": "demand_2",
+        "template": "framing",
+        "stepLabel": "Learn: Step 2 of 8",
+        "title": "Why the demand curve slopes down",
+        "tip": {
+          "icon": "✅",
+          "tone": "green",
+          "text": "As price falls consumers usually buy more; as price rises they usually buy less. Lower prices make a good both more attractive and more affordable."
+        },
+        "interactiveDiagram": {
+          "svgKey": "demandSlopeCurve",
+          "label": "Why quantity demanded rises as price falls",
+          "emoji": "📉",
+          "layers": [
+            "layer-a",
+            "layer-b",
+            "layer-c"
+          ],
+          "views": [
+            {
+              "label": "Substitution effect",
+              "tone": "green",
+              "show": [
+                "layer-a"
+              ],
+              "head": "① Substitution effect",
+              "body": "At a high price (A, £10 → 20), the good is dear relative to substitutes. As it gets cheaper, consumers <strong>switch towards it</strong>, so quantity demanded rises."
+            },
+            {
+              "label": "Real-income effect",
+              "tone": "amber",
+              "show": [
+                "layer-b"
+              ],
+              "head": "② Real-income effect",
+              "body": "A lower price (B, £8 → 30) means each £ stretches further – real purchasing power rises, so consumers can <strong>afford more</strong>."
+            },
+            {
+              "label": "Diminishing marginal utility",
+              "tone": "purple",
+              "show": [
+                "layer-c"
+              ],
+              "head": "③ Diminishing marginal utility",
+              "body": "Each extra unit gives <strong>less satisfaction</strong>, so consumers only buy more (C, £6 → 40) if the price falls – which is exactly the downward slope."
+            }
+          ]
+        },
+        "causes": [
+          {
+            "tone": "green",
+            "icon": "🔀",
+            "head": "Substitution effect",
+            "body": "When the good gets cheaper, consumers switch towards it and away from alternatives."
+          },
+          {
+            "tone": "amber",
+            "icon": "👛",
+            "head": "Real-income effect",
+            "body": "A lower price stretches purchasing power, so consumers can afford more."
+          },
+          {
+            "tone": "purple",
+            "icon": "📉",
+            "head": "Diminishing marginal utility",
+            "body": "Extra units are valued less, so consumers only buy more if the price falls."
+          }
+        ],
+        "causesLabel": "Three reasons",
+        "causesEmoji": "📈",
+        "causesStyle": "tinted-flat",
+        "causes2": [
+          {
+            "tone": "blue",
+            "icon": "⬇️",
+            "head": "Lower price",
+            "body": "A movement <strong>down</strong> the curve – quantity demanded extends."
+          },
+          {
+            "tone": "amber",
+            "icon": "⬆️",
+            "head": "Higher price",
+            "body": "A movement <strong>up</strong> the curve – quantity demanded contracts."
+          },
+          {
+            "tone": "purple",
+            "icon": "⚠️",
+            "head": "Usually, not always",
+            "body": "The law of demand holds in most cases; Giffen and Veblen goods are rare exceptions."
+          }
+        ],
+        "causes2Label": "Why it matters",
+        "causes2Emoji": "💡",
+        "causes2Style": "tinted-flat",
+        "tipLate": {
+          "icon": "⭐",
+          "tone": "purple",
+          "head": "The deepest reason",
+          "text": "<strong>Diminishing marginal utility</strong> is the foundational reason demand curves slope down. Each extra unit gives less satisfaction, so consumers only choose to buy more if the price falls. Substitution and real-income effects sit on top of this – DMU is the bedrock that makes the law of demand hold even when no clear substitute or income change is involved."
+        },
+        "examEdge": "When explaining the slope, name at least one mechanism – the <strong>substitution effect</strong>, the <strong>real-income effect</strong>, or <strong>diminishing marginal utility</strong>. The spec (1.2.2) specifically requires you to link DMU to the demand-curve shape, so this is the safest move. Rare Giffen/Veblen exceptions don’t overturn the basic demand story."
+      }
+    ]
+  }
+}

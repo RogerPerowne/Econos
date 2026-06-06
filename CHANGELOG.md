@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.83.0 — 2026-06-06
+
+### Migration-readiness: content export bridge + Postgres/.NET portability docs
+
+Behind-the-scenes only — no visual change. Makes the content system, render engine
+and styling easy to lift to a future Postgres + .NET ed-tech platform (we are NOT
+building the platform, only keeping it trivially migratable).
+
+- **Export bridge** — `npm run export:content` (`scripts/export-content.mjs`)
+  evaluates every topic data file in a sandbox and dumps a backend-agnostic
+  `dist/export/content.json` (101 topics, 415 cards). A trimmed
+  `docs/schema/sample-topic.json` is committed for review.
+- **Target schema** — `docs/schema/postgres.sql`: `topics` + ordered `cards`
+  (box payloads as `jsonb`), a semantic `econ_tone` enum (colour stays in CSS).
+- **Docs for the migrating AI** — `docs/CONTENT_MIGRATION.md` (the three clean
+  layers, the per-box data→component contract table, two ways to reproduce
+  rendering, the "tone is a name, never a colour" rule) and
+  `docs/PLATFORM_BLUEPRINT.md` (target architecture; blueprint only). Pointers
+  added to `CLAUDE.md` + `docs/DESIGN_LANGUAGE.md`.
+
+No cache bump (no cache-first asset changed). lint + 147 unit tests + build green.
+
+
 ## 0.82.1 — 2026-06-06
 
 ### Mobile polish: pair-side bullets + hub centre on top
@@ -38,6 +61,7 @@ flips to `order:-1`. Covers fhub-4/5/6, rat-hub, dem-hub, sup-hub,
 ped-hub, xed-hub, bghub-4, crhub-4, dmrhub, growth-scorecard, wwh.
 
 SW cache bumped to v392.
+
 
 ## 0.82.0 — 2026-06-06
 

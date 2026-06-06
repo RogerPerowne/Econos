@@ -1650,43 +1650,33 @@
     // When position === 'after-diagram', rendering is deferred until after the diagramPanel block below.
     const renderComparison = () => {
       const cmp = c.comparison;
-      // A third "result" side (A op B = C) makes the row 3 cards wide, so the
-      // cards render in a more compact size to keep captions from over-wrapping.
+      // A third "result" side (A op B = C) makes the row 3 cards wide and
+      // switches to the compact `.gen-comparison--triple` sizing.
       const triple = !!cmp.result;
+      // Styling lives in the universal `.gen-comparison` CSS component
+      // (token-driven, tile-tier hover, existing mobile rules).
       const renderSide = (side) => {
-        const t = PATTERN_TONES[side.tone || 'green'] || PATTERN_TONES.green;
-        const ring = triple ? 52 : 64;
-        const pad = triple ? '20px 14px 18px' : '24px 20px 22px';
+        const tone = 'tone-' + (side.tone || 'green');
+        const value = side.value ? `<div class="gen-comparison__value">${side.value}</div>` : '';
+        const caption = side.caption ? `<div class="gen-comparison__caption">${side.caption}</div>` : '';
+        const chips = Array.isArray(side.chips) && side.chips.length
+          ? `<div class="gen-comparison__chips">${side.chips.map(ch => `<span class="gen-comparison__chip">${ch}</span>`).join('')}</div>`
+          : '';
         return `
-          <div style="flex:1;min-width:0;border-radius:var(--r-lg);background:${t.bg};border:1px solid ${t.border};padding:${pad};text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-            <div style="width:${ring}px;height:${ring}px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:${triple ? 26 : 30}px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(side.icon)}</div>
-            <div style="font-size:${triple ? 15 : 17}px;font-weight:var(--fw-extrabold);color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
-            ${side.value ? `<div style="font-size:var(--fs-xl);font-weight:var(--fw-extrabold);color:var(--econ-ink);margin-bottom:8px;">${side.value}</div>` : ''}
-            ${side.caption ? `<div style="font-size:${triple ? 12.5 : 13.5}px;color:${t.label};line-height:var(--lh-normal);font-weight:var(--fw-semi);">${side.caption}</div>` : ''}
-            ${Array.isArray(side.chips) && side.chips.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:13px;">${side.chips.map(ch => `<span style="background:#fff;border:1px solid ${t.border};color:${t.label};font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:4px 11px;border-radius:var(--r-full);box-shadow:0 1px 2px rgba(0,0,0,0.04);">${ch}</span>`).join('')}</div>` : ''}
-          </div>
-        `;
+          <div class="gen-comparison__card ${tone}${side.value ? ' gen-comparison__card--has-value' : ''}">
+            <div class="gen-comparison__ring">${renderIcon(side.icon)}</div>
+            <div class="gen-comparison__label">${side.label}</div>
+            ${value}${caption}${chips}
+          </div>`;
       };
-      // Operator badge between sides. Single-char tokens (+, =, ×) read
-      // better a little larger than the two-letter "VS".
       const badge = (txt) => {
-        const fs = (txt && txt.length === 1) ? '20px' : '13px';
-        return `<div class="gen-comparison__op" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:46px;height:46px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:var(--fw-extrabold);font-size:${fs};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${txt}</div></div>`;
+        const single = (txt && txt.length === 1) ? ' gen-comparison__badge--single' : '';
+        return `<div class="gen-comparison__op"><div class="gen-comparison__badge${single}">${txt}</div></div>`;
       };
       if (cmp.title) {
         content += genSecLabel(cmp.emoji || '⚖️', cmp.title);
       }
-      // The optional third "result" side closes an A op B = C equation
-      // (facts + values = a policy choice); stacks on mobile via the
-      // .gen-comparison--triple modifier.
-      content += `
-        <div class="gen-comparison${triple ? ' gen-comparison--triple' : ''}" style="display:flex;align-items:stretch;gap:14px;margin-bottom:26px;">
-          ${renderSide(cmp.left)}
-          ${badge(cmp.vs || 'VS')}
-          ${renderSide(cmp.right)}
-          ${triple ? badge(cmp.resultJoin || '=') + renderSide(cmp.result) : ''}
-        </div>
-      `;
+      content += `<div class="gen-comparison${triple ? ' gen-comparison--triple' : ''}">${renderSide(cmp.left)}${badge(cmp.vs || 'VS')}${renderSide(cmp.right)}${triple ? badge(cmp.resultJoin || '=') + renderSide(cmp.result) : ''}</div>`;
     };
     if (c.comparison && c.comparison.position !== 'after-diagram' && c.comparison.position !== 'after-causes' && c.comparison.position !== 'after-branches') {
       renderComparison();

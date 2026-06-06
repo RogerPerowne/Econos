@@ -12677,6 +12677,106 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   box-shadow: 0 3px 10px rgba(11, 20, 38, 0.25);
 }
 
+/* ── Comparison — two (or three: A op B = C) tone cards with a centred
+   icon ring, label, optional value/caption/chips, split by an operator
+   badge. Replaces the inline markup; token-driven, brand accents,
+   tile-tier hover. Keeps the `.gen-comparison*` classes for the existing
+   mobile rules. ── */
+.gen-comparison {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+.gen-comparison__card {
+  flex: 1;
+  min-width: 0;
+  border-radius: var(--r-lg);
+  background: var(--t-50);
+  border: 1px solid var(--t-100);
+  padding: var(--sp-6) var(--sp-5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--hover-tr);
+}
+.gen-comparison__card:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
+}
+.gen-comparison__ring {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  margin: 0 auto var(--sp-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(11, 20, 38, 0.08);
+  flex-shrink: 0;
+}
+.gen-comparison__label {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-extrabold);
+  color: var(--t-ink);
+  margin-bottom: var(--sp-2);
+}
+.gen-comparison__card--has-value .gen-comparison__label { margin-bottom: var(--sp-1); }
+.gen-comparison__value {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-ink);
+  margin-bottom: var(--sp-2);
+}
+.gen-comparison__caption {
+  font-size: var(--fs-sm);
+  color: var(--t-ink);
+  line-height: var(--lh-normal);
+  font-weight: var(--fw-semi);
+}
+.gen-comparison__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 13px;
+}
+.gen-comparison__chip {
+  background: var(--econ-white);
+  border: 1px solid var(--t-100);
+  color: var(--t-ink);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  padding: 4px 11px;
+  border-radius: var(--r-full);
+  box-shadow: var(--shadow-sm);
+}
+.gen-comparison__op { display: flex; align-items: center; flex-shrink: 0; }
+.gen-comparison__badge {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--r-full);
+  background: var(--econ-ink);
+  color: var(--econ-white);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(11, 20, 38, 0.25);
+}
+.gen-comparison__badge--single { font-size: var(--fs-xl); letter-spacing: 0; }
+.gen-comparison--triple .gen-comparison__card { padding: var(--sp-5) var(--sp-4); }
+.gen-comparison--triple .gen-comparison__ring { width: 52px; height: 52px; font-size: 26px; }
+.gen-comparison--triple .gen-comparison__label { font-size: var(--fs-base); }
+.gen-comparison--triple .gen-comparison__caption { font-size: var(--fs-xs); }
+
 /* Mobile collapse for the migrated content grids. These set their column
    count via a `--*-cols` custom property (not an inline
    `grid-template-columns`), so the site's universal inline-grid reflow

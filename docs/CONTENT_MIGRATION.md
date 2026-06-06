@@ -54,6 +54,7 @@ continues — keep it current):
 | `conclusion` / `balancedNote` | string or `{ title?, text }` | `.callout-band.tone-{green\|amber} > .callout-band__icon + __body(__label, __text[--display])` |
 | `steps` | `[{ head\|label, body\|text }]` | `.step.tone-* > .step__num + (.step__head, .step__body)` (tone cycles by index) |
 | `body` (+ `bodyTone`, `bodyIcon`) | string (HTML) | `.body-box` (plain) or `.body-box.body-box--tone.tone-* > .body-box__icon? + .body-box__text` |
+| `summaryRow` | `[{ title, tone?, icon?, text?, items?:[string] }]` (≤3) | `.summary-row > .summary-cell.tone-* > .summary-cell__head(__icon?,__title) + __text? + __list>__item>__bullet` |
 
 (Boxes not yet migrated still render via inline styles in `app.js`; they are being
 moved onto this same `.tone-*` + token system, one per release, until 100% of

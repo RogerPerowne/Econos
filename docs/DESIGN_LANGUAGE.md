@@ -133,6 +133,8 @@ type is one class.
     index); tile-tier hover.
   - `.body-box` — definition/lead-text box (plain spacious reading variant +
     `--tone` accent-icon variant); note-tier hover.
+  - `.summary-row` / `.summary-cell` — up to 3 tone mini-cards (title + text +
+    bullet items); tile-tier hover.
 
   Tiles carry the tile-tier hover; full-width strips the note-tier; the
   closing-pair callouts deepen their own glow. More box types land one per

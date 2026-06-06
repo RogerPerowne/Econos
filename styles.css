@@ -12530,6 +12530,87 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   margin-top: 5px;
 }
 
+/* ── Verdict — tone columns of ✓/✕ items separated by a VS/→ badge.
+   Replaces the inline markup; token-driven, brand-palette accents,
+   tile-tier hover. Keeps the `.gen-verdict` class names so the existing
+   mobile stacking rules apply. ── */
+.gen-verdict {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+}
+.gen-verdict__col {
+  flex: 1 1 0;
+  min-width: 160px;
+  border-radius: var(--r-lg);
+  background: var(--econ-white);
+  border: 1.5px solid var(--t-100);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: var(--hover-tr);
+}
+.gen-verdict__col:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover);
+}
+.gen-verdict__head {
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--t-50);
+  border-bottom: 1px solid var(--t-100);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.gen-verdict__icon { font-size: var(--fs-xl); line-height: 1; }
+.gen-verdict__label {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-extrabold);
+  color: var(--t-ink);
+  letter-spacing: 0.02em;
+}
+.gen-verdict__list {
+  list-style: none;
+  margin: 0;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: var(--lh-relaxed);
+}
+.gen-verdict__item { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 7px; }
+.gen-verdict__mark {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--r-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-extrabold);
+}
+.gen-verdict__mark--ok { background: var(--econ-green-100); color: var(--econ-green-600); }
+.gen-verdict__mark--no { background: var(--econ-rose-100); color: var(--econ-rose-600); }
+.gen-verdict__sep { display: flex; align-items: center; flex-shrink: 0; }
+.gen-verdict__badge {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-full);
+  background: var(--econ-ink);
+  color: var(--econ-white);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(11, 20, 38, 0.25);
+}
+.gen-verdict__sep--arrow .gen-verdict__badge { font-size: var(--fs-base); letter-spacing: 0; }
+
 /* Mobile collapse for the migrated content grids. These set their column
    count via a `--*-cols` custom property (not an inline
    `grid-template-columns`), so the site's universal inline-grid reflow

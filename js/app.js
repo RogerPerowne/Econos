@@ -141,6 +141,28 @@
     `;
   }
 
+  /* Tone callout — the universal tip / note / tipLate inline box (a
+     round accent icon + optional head + text). One helper replaces
+     three near-identical inline renderers; styling lives in the
+     `.tone-callout` CSS component (token-driven, brand-palette accents,
+     note-tier hover). `item` is a string or { text, head?, icon?, tone? };
+     opts = { defaultIcon, defaultTone }. Returns '' for empty text. */
+  function renderToneCallout(item, opts) {
+    opts = opts || {};
+    const text = typeof item === 'object' ? item.text : item;
+    if (text == null || text === '') return '';
+    const iconSet = typeof item === 'object' && item.icon !== undefined;
+    const icon = iconSet ? item.icon : (opts.defaultIcon || '💡');
+    const showIcon = icon !== null && icon !== false && icon !== '';
+    const tone = (typeof item === 'object' && item.tone) || opts.defaultTone || 'blue';
+    const head = (typeof item === 'object' && item.head) || null;
+    const iconHtml = showIcon ? `<div class="tone-callout__icon">${renderIcon(icon)}</div>` : '';
+    const bodyHtml = head
+      ? `<div class="tone-callout__body"><div class="tone-callout__head">${head}</div><div class="tone-callout__text">${text}</div></div>`
+      : `<div class="tone-callout__body"><div class="tone-callout__text">${text}</div></div>`;
+    return `<div class="tone-callout tone-${tone}">${iconHtml}${bodyHtml}</div>`;
+  }
+
 
   /* ============================================================
      GENERIC CARD RENDERER
@@ -1452,21 +1474,7 @@
     if (c.tip) {
       const tips = Array.isArray(c.tip) ? c.tip : [c.tip];
       tips.forEach(tip => {
-        const tipText = typeof tip === 'object' ? tip.text : tip;
-        const iconSet = typeof tip === 'object' && tip.icon !== undefined;
-        const tipIcon = iconSet ? tip.icon : '💡';
-        const showIcon = tipIcon !== null && tipIcon !== false && tipIcon !== '';
-        const tipTone = (typeof tip === 'object' && tip.tone) || 'blue';
-        const tipHead = (typeof tip === 'object' && tip.head) || null;
-        const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-        const bodyHtml = tipHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${tipHead}</div><div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);">${tipText}</div></div>`
-          : `<div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);">${tipText}</div>`;
-        content += `
-          <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:14px 18px;margin-bottom:14px;">
-            ${showIcon ? `<div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${tipIcon}</div>` : ''}
-            ${bodyHtml}
-          </div>`;
+        content += renderToneCallout(tip, { defaultIcon: '💡', defaultTone: 'blue' });
       });
       content += `<div style="height:8px;"></div>`;
     }
@@ -2868,15 +2876,7 @@
       const notes = Array.isArray(c.note) ? c.note : [c.note];
       if (c.noteLabel) content += genSecLabel(c.noteEmoji || '💡', c.noteLabel);
       notes.forEach(note => {
-        const noteText = typeof note === 'object' ? note.text : note;
-        const noteIcon = (typeof note === 'object' && note.icon) || 'ℹ️';
-        const noteTone = (typeof note === 'object' && note.tone) || 'blue';
-        const noteHead = (typeof note === 'object' && note.head) || null;
-        const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
-        const bodyHtml = noteHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};">${noteHead}</div><div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div></div>`
-          : `<div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div>`;
-        content += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:14px 18px;margin-bottom:14px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
+        content += renderToneCallout(note, { defaultIcon: 'ℹ️', defaultTone: 'blue' });
       });
     }
 
@@ -2980,19 +2980,7 @@
     if (c.tipLate) {
       const lateTips = Array.isArray(c.tipLate) ? c.tipLate : [c.tipLate];
       lateTips.forEach(tip => {
-        const tipText = typeof tip === 'object' ? tip.text : tip;
-        const tipIcon = (typeof tip === 'object' && tip.icon) || '💡';
-        const tipTone = (typeof tip === 'object' && tip.tone) || 'blue';
-        const tipHead = (typeof tip === 'object' && tip.head) || null;
-        const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-        const bodyHtml = tipHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);">${tipHead}</div><div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);">${tipText}</div></div>`
-          : `<div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);">${tipText}</div>`;
-        content += `
-          <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:14px 18px;margin-bottom:18px;">
-            <div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${tipIcon}</div>
-            ${bodyHtml}
-          </div>`;
+        content += renderToneCallout(tip, { defaultIcon: '💡', defaultTone: 'blue' });
       });
     }
 
@@ -3068,15 +3056,7 @@
     if (c.note && c.notePosition === 'top') {
       const notes = Array.isArray(c.note) ? c.note : [c.note];
       notes.forEach(note => {
-        const noteText = typeof note === 'object' ? note.text : note;
-        const noteIcon = (typeof note === 'object' && note.icon) || 'ℹ️';
-        const noteTone = (typeof note === 'object' && note.tone) || 'blue';
-        const noteHead = (typeof note === 'object' && note.head) || null;
-        const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
-        const bodyHtml = noteHead
-          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};">${noteHead}</div><div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div></div>`
-          : `<div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${noteText}</div>`;
-        noteTopHtml += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
+        noteTopHtml += renderToneCallout(note, { defaultIcon: 'ℹ️', defaultTone: 'blue' });
       });
     }
     return `${stepLabelHtml}<h1 class="card__title">${c.title}</h1>${ledeHtml}${noteTopHtml}${visualKeyHtml}${content}`;

@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.82.0 — 2026-06-06
+
+### Universal content boxes (5/n): tip / note / tipLate → one .tone-callout
+
+The three near-identical inline callout renderers (`tip`, `note`, `tipLate`,
+incl. the `notePosition:'top'` variant) collapse to a single `renderToneCallout`
+helper + the `.tone-callout` component.
+
+- Same look (round accent icon + optional head + text); token-driven with
+  brand-palette accents (icon circle/head shift from off-brand `PATTERN_TONES`
+  to `.tone-*`, matching the rest of the site) and the note-tier hover.
+- Standardises the one inconsistency between them (note used `line-height:1.6`,
+  tip/tipLate `1.5`) onto one value. ~45 lines of duplicated inline markup → one
+  helper; data shapes unchanged.
+
+**Bug fix (regression from 0.77.0):** restored the `.topbar { … }` selector —
+an earlier content-box insertion had eaten the selector line, orphaning the
+topbar's translucent backdrop-blur polish (this was the recurring
+`css-syntax-error` build warning). The topbar's blur/translucency is back.
+
+Before/after screenshot-verified (rest + hover). lint + 147 unit tests + build
+green (warning gone); cache econos-v391.
+
+
 ## 0.81.0 — 2026-06-06
 
 ### Universal content boxes (4/n): closing-pair hover (exam edge + key takeaway)

@@ -12157,7 +12157,49 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   font-weight: var(--fw-extrabold);
 }
 
+/* ── Tone callout — the tip / note / tipLate inline boxes (a round
+   accent icon + optional head + text). Replaces three near-identical
+   inline renderers with one component; token-driven, brand-palette
+   accents, note-tier hover. ── */
+.tone-callout {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  background: var(--t-50);
+  border: 1px solid var(--t-100);
+  border-radius: var(--r-lg);
+  padding: var(--sp-3) var(--sp-4);
+  margin-bottom: var(--sp-3);
+  transition: box-shadow 0.22s ease, border-color 0.18s ease;
+}
+.tone-callout:hover { box-shadow: var(--shadow-lg); }
+.tone-callout__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--r-full);
+  background: var(--t-solid);
+  color: var(--econ-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-lg);
+  flex-shrink: 0;
+}
+.tone-callout__body { display: flex; flex-direction: column; gap: 2px; }
+.tone-callout__head {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-extrabold);
+  color: var(--t-ink);
+  line-height: var(--lh-snug);
+}
+.tone-callout__text {
+  font-size: var(--fs-base);
+  color: var(--econ-ink);
+  line-height: var(--lh-normal);
+}
 
+/* ── Topbar polish — slightly tighter and more elegant ── */
+.topbar {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);

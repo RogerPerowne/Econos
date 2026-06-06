@@ -12864,6 +12864,17 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   .diagram-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Hover for the long-tail card grids that are still inline-styled
+   (causes — all 5 sub-styles & sites — and the illustrated grid). Their
+   container carries `.dl-hover-cards` and the direct-child cards get the
+   tile-tier lift. box-shadow needs `!important` to beat the cards' inline
+   shadows; transform doesn't (no inline transform). ── */
+.dl-hover-cards > * { transition: var(--hover-tr); }
+.dl-hover-cards > *:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-card-hover) !important;
+}
+
 /* ── Topbar polish — slightly tighter and more elegant ── */
 .topbar {
   background: rgba(255, 255, 255, 0.85);

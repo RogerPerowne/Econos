@@ -1581,7 +1581,7 @@
       const flat = c.causesStyle === 'tinted-flat';
       if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
       const colsTop = c.causesCols ? `repeat(${c.causesCols}, minmax(0, 1fr))` : gridColumnsFor(c.causes.length, hasIcons ? 155 : 220);
-      content += `<div style="display:grid;grid-template-columns:${colsTop};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
+      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${colsTop};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
@@ -2388,7 +2388,7 @@
             </div>
           </div>`;
       }).join('');
-      content += `<div style="display:grid;grid-template-columns:repeat(${igCols},1fr);gap:14px;margin-bottom:26px;">${igCells}</div>`;
+      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:repeat(${igCols},1fr);gap:14px;margin-bottom:26px;">${igCells}</div>`;
     }
 
     // Causes: [{head, body, icon?, example?: {icon, text}, tone?}] – coloured tiles.
@@ -2401,7 +2401,7 @@
       const flat = c.causesStyle === 'tinted-flat';
       if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
       const colsMain = c.causesCols ? `repeat(${c.causesCols}, minmax(0, 1fr))` : gridColumnsFor(c.causes.length, hasIcons ? 155 : 220);
-      content += `<div style="display:grid;grid-template-columns:${colsMain};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
+      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${colsMain};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
@@ -2526,7 +2526,7 @@
           </div>`;
       }).join('');
       const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, 1fr)` : gridColumnsFor(c.causes2.length, 180);
-      content += `<div style="display:grid;grid-template-columns:${cols2};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
+      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
     }
 
     // Causes 3 – a third causes-style grid for an additional themed section. Mirrors causes2 exactly.
@@ -2556,7 +2556,7 @@
           </div>`;
       }).join('');
       const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, 1fr)` : gridColumnsFor(c.causes3.length, 180);
-      content += `<div style="display:grid;grid-template-columns:${cols3};gap:12px;margin-bottom:26px;">${tiles3}</div>`;
+      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols3};gap:12px;margin-bottom:26px;">${tiles3}</div>`;
     }
 
     // How to think about it – two tinted panels side by side (centered icon + heading + body).
@@ -5009,7 +5009,7 @@
           </div>`;
         }).join('');
         const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : `repeat(${Math.min(items.length, 3)},1fr)`;
-        return `${label}<div style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`;
+        return `${label}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`;
       })() : ''}
 
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
@@ -5196,7 +5196,7 @@
           }).join('');
           const labelHtml = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'The main costs');
           const numberedCols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : `repeat(${items.length},1fr)`;
-          return `${labelHtml}<div style="display:grid;grid-template-columns:${numberedCols};gap:12px;margin:0 0 22px;">${numberedTiles}</div>`;
+          return `${labelHtml}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${numberedCols};gap:12px;margin:0 0 22px;">${numberedTiles}</div>`;
         }
         const tiles = items.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
@@ -5242,7 +5242,7 @@
         const headerRow = c.causesHeader && c.causesHeader.length
           ? `<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 8px;">${c.causesHeader.map(h => { const ht = PATTERN_TONES[h.tone] || PATTERN_TONES.blue; return `<div style="background:${ht.accent};border-radius:var(--r-md);padding:10px 16px;display:flex;align-items:center;gap:8px;"><span style="font-size:var(--fs-lg);line-height:1;">${renderIcon(h.icon)}</span><span style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:#fff;text-transform:uppercase;letter-spacing:0.08em;">${h.label}</span></div>`; }).join('')}</div>`
           : '';
-        return `${label}${headerRow}<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
+        return `${label}${headerRow}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
       })() : ''}
 
       ${c.keyDistinction && c.keyDistinction.items && c.keyDistinction.items.length ? (() => {
@@ -5278,7 +5278,7 @@
           </div>`;
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
-        return `${label2}<div style="display:grid;grid-template-columns:${cols2};gap:14px;margin:0 0 20px;">${tiles2}</div>`;
+        return `${label2}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:14px;margin:0 0 20px;">${tiles2}</div>`;
       })() : ''}
 
       ${c.causesNote ? (() => {
@@ -5410,7 +5410,7 @@
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
         const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, minmax(0, 1fr))` : gridColumnsFor(items2.length, 155);
-        return `${label2}<div style="display:grid;grid-template-columns:${cols2};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
+        return `${label2}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
       })() : ''}
 
       ${c.causes3 && c.causes3.length ? (() => {
@@ -5433,7 +5433,7 @@
         }).join('');
         const label3 = c.causes3Label === null ? '' : genSecLabel(c.causes3Emoji || '🔗', c.causes3Label || 'More to know');
         const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, minmax(0, 1fr))` : gridColumnsFor(items3.length, 155);
-        return `${label3}<div style="display:grid;grid-template-columns:${cols3};gap:12px;margin:0 0 20px;">${tiles3}</div>`;
+        return `${label3}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols3};gap:12px;margin:0 0 20px;">${tiles3}</div>`;
       })() : ''}
 
       ${c.versusRows && c.versusRows.rows && c.versusRows.rows.length && c.versusRowsFirst !== false ? (() => {
@@ -5585,7 +5585,7 @@
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'In detail');
         const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : gridColumnsFor(items.length, 155);
-        return `${label}<div style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 20px;">${tiles}</div>`;
+        return `${label}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 20px;">${tiles}</div>`;
       })() : ''}
 
       ${c.conclusionPosition === 'end' ? '' : ((c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {

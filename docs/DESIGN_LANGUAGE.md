@@ -151,6 +151,10 @@ type is one class.
     sub joined by dashed connectors, with ✓/✕/! status badges; no hover
     (connected diagram); stacks on mobile.
 
+  - `.dl-hover-cards` — helper on the still-inline card grids (causes — all 5
+    sub-styles & sites — and the illustrated grid); lifts the direct-child cards
+    on hover so every card-like box is consistent.
+
   Tiles carry the tile-tier hover; full-width strips the note-tier; the
   closing-pair callouts deepen their own glow. More box types land one per
   release.

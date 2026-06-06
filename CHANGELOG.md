@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.0 — 2026-06-06
+
+### Hover for the long-tail card grids (causes + illustrated grid)
+
+Closes the last consistency gap: the inline-styled card grids that weren't
+componentised now get the tile-tier hover too. A shared `.dl-hover-cards` class is
+added to every causes container (all 5 sub-styles across all 11 render sites:
+early / main / causes2 / causes3 + the worked-example variants) and the illustrated
+grid; one rule lifts the direct-child cards on hover (`box-shadow !important` to
+beat the cards' inline shadows; transform needs none). Now every card-like box on
+the site lifts consistently on hover. Screenshot-verified on a real causes grid
+(government-intervention). lint + 147 unit tests + build green; cache econos-v405.
+
+
 ## 0.95.0 — 2026-06-06
 
 ### Consistency: retire PATTERN_TONES → brand tokens (all remaining inline boxes)

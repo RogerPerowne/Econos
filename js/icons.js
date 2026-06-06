@@ -14302,12 +14302,41 @@ window.ECONOS_ICONS = {
         .fwheel .fw-route.fw-route-tr { top:0; right:0; }
         .fwheel .fw-route.fw-route-bl { bottom:0; left:0; }
 
+        .fwheel .fw-routes { display:contents; }
+        .fwheel .fw-cycle-back { display:none; }
+
         @media (max-width:540px){
-          .fwheel .fw-core { aspect-ratio:auto; padding:6px 0; }
+          .fwheel .fw-core { aspect-ratio:auto; padding:0; display:flex; flex-direction:column; gap:8px; max-width:420px; }
           .fwheel .fw-arcs { display:none; }
-          .fwheel .fw-tile, .fwheel .fw-route { position:static; transform:none; width:auto; margin-bottom:8px; }
-          .fwheel .fw-tile.fw-n, .fwheel .fw-tile.fw-s, .fwheel .fw-tile.fw-e, .fwheel .fw-tile.fw-w { width:auto; }
-          .fwheel .fw-hub { position:static; transform:none; margin:8px auto; }
+          /* Match desktop specificity (0,3,0) so transforms actually reset. */
+          .fwheel .fw-tile.fw-n, .fwheel .fw-tile.fw-e, .fwheel .fw-tile.fw-s, .fwheel .fw-tile.fw-w {
+            position:static; transform:none; width:auto; top:auto; right:auto; bottom:auto; left:auto;
+          }
+          .fwheel .fw-route.fw-route-tr, .fwheel .fw-route.fw-route-bl {
+            position:static; transform:none; width:auto; top:auto; right:auto; bottom:auto; left:auto;
+          }
+          .fwheel .fw-hub {
+            position:static; transform:none; margin:0 auto 4px; box-shadow:0 0 0 6px rgba(241,245,249,0.65), 0 4px 14px rgba(11,20,38,0.08);
+          }
+          /* Reorder: hub at top → cycle tiles 1-4 → cycles-back hint → routes side-by-side. */
+          .fwheel .fw-hub { order:0; }
+          .fwheel .fw-tile.fw-n { order:1; }
+          .fwheel .fw-tile.fw-e { order:2; }
+          .fwheel .fw-tile.fw-s { order:3; }
+          .fwheel .fw-tile.fw-w { order:4; }
+          .fwheel .fw-cycle-back {
+            display:flex; order:5; align-items:center; justify-content:center; gap:8px;
+            font-size:11.5px; color:#64748B; font-weight:600; letter-spacing:0.04em;
+            padding:6px 0 2px; text-transform:uppercase;
+          }
+          .fwheel .fw-cycle-back::before, .fwheel .fw-cycle-back::after {
+            content:''; flex:1; height:1px; background:#E2E8F0; max-width:60px;
+          }
+          .fwheel .fw-routes {
+            display:flex; gap:8px; order:6; margin-top:2px;
+          }
+          .fwheel .fw-route { flex:1; min-width:0; padding:9px 10px; }
+          .fwheel .fw-route-s { font-size:10.5px; }
         }
       </style>
 
@@ -14356,27 +14385,31 @@ window.ECONOS_ICONS = {
           <div><div class="fw-t" style="color:#1E3A8A;">Market power</div><div class="fw-s-text">Pricing strength.</div></div>
         </div>
 
-        <div class="fw-route fw-route-tr" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
-          <div class="fw-route-h">
-            <div class="fw-route-ic">🌱</div>
-            <div>
-              <div class="fw-route-eyebrow" style="color:#059669;">Route in</div>
-              <div class="fw-route-t" style="color:#065F46;">Organic</div>
+        <div class="fw-routes">
+          <div class="fw-route fw-route-tr" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="fw-route-h">
+              <div class="fw-route-ic">🌱</div>
+              <div>
+                <div class="fw-route-eyebrow" style="color:#059669;">Route in</div>
+                <div class="fw-route-t" style="color:#065F46;">Organic</div>
+              </div>
             </div>
+            <div class="fw-route-s">Reinvest retained profit.</div>
           </div>
-          <div class="fw-route-s">Reinvest retained profit.</div>
+
+          <div class="fw-route fw-route-bl" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="fw-route-h">
+              <div class="fw-route-ic">🤝</div>
+              <div>
+                <div class="fw-route-eyebrow" style="color:#D97706;">Route in</div>
+                <div class="fw-route-t" style="color:#C2410C;">M&amp;A</div>
+              </div>
+            </div>
+            <div class="fw-route-s">Buy or merge for instant scale.</div>
+          </div>
         </div>
 
-        <div class="fw-route fw-route-bl" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
-          <div class="fw-route-h">
-            <div class="fw-route-ic">🤝</div>
-            <div>
-              <div class="fw-route-eyebrow" style="color:#D97706;">Route in</div>
-              <div class="fw-route-t" style="color:#C2410C;">M&amp;A</div>
-            </div>
-          </div>
-          <div class="fw-route-s">Buy or merge for instant scale.</div>
-        </div>
+        <div class="fw-cycle-back" aria-hidden="true">↻ cycles back to ①</div>
 
         <div class="fw-hub">
           <div class="fw-hub-emoji">🔁</div>

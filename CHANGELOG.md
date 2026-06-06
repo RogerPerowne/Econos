@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.81.0 — 2026-06-06
+
+### Universal content boxes (4/n): closing-pair hover (exam edge + key takeaway)
+
+The closing-pair callouts (`.exam-edge`, `.key-takeaway`) were already
+class-based components; this adds the missing hover and tidies their drift.
+
+- **Hover** — each box deepens its OWN coloured glow on hover (purple for exam
+  edge, amber for key takeaway) rather than a generic shadow, so each keeps its
+  identity. The transition was already declared; gradients/backgrounds untouched.
+- **Token cleanup** — the off-scale `margin-bottom: 20px` on both base rules
+  snaps to `var(--sp-5)` (value-preserving, 20px = sp-5).
+
+Before/after screenshot-verified (rest + hover). lint + 147 unit tests + build
+green; cache econos-v390.
+
+
 ## 0.80.0 — 2026-06-06
 
 ### Universal content boxes (3/n): Lock-in strip

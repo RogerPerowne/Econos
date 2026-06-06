@@ -121,9 +121,12 @@ type is one class.
     (`compare` / `minimal` variants supported).
   - `.lock-in` — green success footer strip with a row of ✓ items
     (note-tier hover).
+  - `.exam-edge` / `.key-takeaway` — the closing-pair callouts (already
+    class-based); each hover deepens its own coloured glow (purple / amber).
 
-  Tiles carry the tile-tier hover; full-width strips the note-tier. More box
-  types land one per release.
+  Tiles carry the tile-tier hover; full-width strips the note-tier; the
+  closing-pair callouts deepen their own glow. More box types land one per
+  release.
 
 Data shapes are unchanged — only the renderer behind each box moves to the class.
 

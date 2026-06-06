@@ -71,7 +71,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'Why they are equal',
       flowEmoji: '\u{1F517}',
-      flowSep: '→',
       flow: [
         { tone: 'blue',   icon: '\u{1F3ED}', title: 'Production', sub: 'creates income.' },
         { tone: 'green',  icon: '\u{1F465}', title: 'Income',     sub: 'funds spending.' },
@@ -120,7 +119,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'How they connect',
       flowEmoji: '\u{1F517}',
-      flowSep: '→',
       flow: [
         { tone: 'blue',   icon: '\u{1F464}', title: 'Income earned',          sub: 'e.g. wages, salary, profits' },
         { tone: 'green',  icon: '\u{1F437}', title: 'Saving',                 sub: 'e.g. savings account, house deposit' },

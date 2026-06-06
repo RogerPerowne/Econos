@@ -180,7 +180,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'WHEN OUTPUT GROWTH SPEEDS UP',
       flowEmoji: '💡',
-      flowSep: '→',
       flow: [
         { tone: 'green', icon: '📈', title: 'Output expectations rise', sub: 'Firms expect to sell more in the future.' },
         { tone: 'green', icon: '🏭', title: 'Firms want more capital',  sub: 'They invest to expand production capacity.' },
@@ -189,7 +188,6 @@ window.ECONOS_TOPIC = {
 
       flow2Title: 'WHEN OUTPUT GROWTH SLOWS DOWN',
       flow2Emoji: '⚠️',
-      flow2Sep: '→',
       flow2: [
         { tone: 'rose', icon: '📉', title: 'Output expectations fall', sub: 'Firms expect to sell less in the future.' },
         { tone: 'rose', icon: '🏭', title: 'Firms want less capital',  sub: 'They postpone or cancel expansion.' },

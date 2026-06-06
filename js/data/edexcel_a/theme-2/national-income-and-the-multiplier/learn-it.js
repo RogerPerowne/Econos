@@ -304,7 +304,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'One that amplifies further',
       flowEmoji: '\u{1F680}',
-      flowSep: '→',
       flow: [
         { tone: 'rose',   icon: '\u{1F4C8}', title: 'Y rises',             sub: 'after the multiplier' },
         { tone: 'rose',   icon: '\u{1F3ED}', title: 'Firms invest more',   sub: 'the accelerator' },

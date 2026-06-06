@@ -47,7 +47,6 @@ window.ECONOS_TOPIC = {
          is the flow chain. */
       flowTitle: 'The logic flow',
       flowEmoji: '➡️',
-      flowSep: '→',
       flow: [
         { icon: 'ℹ️', tone: 'blue',  title: 'Information gap',              sub: 'One side has more or better information.' },
         { icon: '⚠️', tone: 'amber', title: 'Poor decisions / missing trust', sub: 'Wrong choices, higher risk, lower willingness to trade.' },

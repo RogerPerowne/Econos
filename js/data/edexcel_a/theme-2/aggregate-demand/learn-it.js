@@ -453,7 +453,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'THE LEAKAGES',
       flowEmoji: '💧',
-      flowSep: '→',
       flow: [
         { icon: '💧', title: 'Initial', sub: '£100',    tone: 'blue'   },
         { icon: '💧', title: 'Round 2', sub: '£60',     tone: 'amber'  },

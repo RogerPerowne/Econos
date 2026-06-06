@@ -161,7 +161,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'The investment feedback loop',
       flowEmoji: '\u{1F3ED}',
-      flowSep: '\u{2192}',
       flow: [
         { tone: 'blue',  icon: '\u{1F4C8}', title: 'AD rises',           sub: 'consumer spending up' },
         { tone: 'blue',  icon: '\u{1F4B7}', title: 'Revenue rises',      sub: 'firms sell more units' },

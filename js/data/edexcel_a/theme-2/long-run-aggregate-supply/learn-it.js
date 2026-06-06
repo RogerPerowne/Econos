@@ -133,7 +133,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'THE CAUSAL CHAIN',
       flowEmoji: '\u{1F517}',
-      flowSep: '→',
       flow: [
         { tone: 'green',  icon: '\u{1F4C8}', title: 'AD rises', sub: 'Higher spending lifts demand.' },
         { tone: 'amber',  icon: '\u{1F3F7}\u{FE0F}', title: 'Price level rises', sub: 'Firms can charge more.' },
@@ -337,7 +336,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'THE GROWTH CHAIN',
       flowEmoji: '\u{1F517}',
-      flowSep: '→',
       flow: [
         { tone: 'blue',   icon: '\u{1F3D7}\u{FE0F}', title: 'Investment', sub: 'Firms and government invest today.' },
         { tone: 'green',  icon: '\u{1F477}', title: 'More capital & better skills', sub: 'Build capital and develop the workforce.' },

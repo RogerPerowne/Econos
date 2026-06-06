@@ -180,6 +180,31 @@
     return `<div class="summary-row" style="--sr-cols:repeat(${cols},1fr);">${inner}</div>`;
   }
 
+  /* Verdict — tone columns of ✓/✕ items separated by a VS/→ badge.
+     Styling lives in the universal `.gen-verdict` CSS component (token-
+     driven, tile-tier hover, existing mobile-stacking rules). */
+  function renderVerdict(v) {
+    const sep = (v.layout === 'arrow') ? '→' : 'VS';
+    let html = '';
+    if (v.title) html += genSecLabel(v.emoji || '⚖️', v.title);
+    html += '<div class="gen-verdict">';
+    html += v.columns.map((col, i) => {
+      const tone = 'tone-' + (col.tone || 'slate');
+      const isLast = i === v.columns.length - 1;
+      const icon = col.icon ? `<div class="gen-verdict__icon">${renderIcon(col.icon)}</div>` : '';
+      const items = col.items.map((it) => {
+        const ok = it.ok !== false;
+        const mark = `<span class="gen-verdict__mark gen-verdict__mark--${ok ? 'ok' : 'no'}">${ok ? '✓' : '✕'}</span>`;
+        return `<li class="gen-verdict__item">${mark}<span>${it.text}</span></li>`;
+      }).join('');
+      const colHtml = `<div class="gen-verdict__col ${tone}"><div class="gen-verdict__head">${icon}<div class="gen-verdict__label">${col.label}</div></div><ul class="gen-verdict__list">${items}</ul></div>`;
+      const separator = !isLast ? `<div class="gen-verdict__sep${sep === '→' ? ' gen-verdict__sep--arrow' : ''}"><div class="gen-verdict__badge">${sep}</div></div>` : '';
+      return colHtml + separator;
+    }).join('');
+    html += '</div>';
+    return html;
+  }
+
   /* Callout band — the conclusion / balanced-note verdict bands (left
      accent + icon + uppercase label + body). Styling lives in the
      universal `.callout-band` CSS component. opts =
@@ -1670,35 +1695,7 @@
     // Verdict comparison – N columns with ✓/✗ item lists, separated by VS or arrow badges.
     // Pattern: { title?, emoji?, layout?: 'vs' | 'arrow', columns: [{tone, label, icon?, items:[{ok:bool,text}]}] }
     if (c.verdict && c.verdict.columns && c.verdict.columns.length >= 2) {
-      const v = c.verdict;
-      const sep = (v.layout === 'arrow') ? '→' : 'VS';
-      if (v.title) {
-        content += genSecLabel(v.emoji || '⚖️', v.title);
-      }
-      content += `<div class="gen-verdict" style="display:flex;align-items:stretch;gap:12px;margin-bottom:26px;flex-wrap:wrap;">`;
-      content += v.columns.map((col, i) => {
-        const t = PATTERN_TONES[col.tone || 'slate'] || PATTERN_TONES.slate;
-        const isLast = i === v.columns.length - 1;
-        const colHtml = `
-          <div style="flex:1 1 0;min-width:160px;border-radius:var(--r-lg);background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
-            <div style="padding:12px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:8px;">
-              ${col.icon ? `<div style="font-size:var(--fs-xl);line-height:1;">${renderIcon(col.icon)}</div>` : ''}
-              <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};letter-spacing:0.02em;">${col.label}</div>
-            </div>
-            <ul style="list-style:none;margin:0;padding:12px 14px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">
-              ${col.items.map(it => {
-                const ok = it.ok !== false;
-                const mark = ok
-                  ? `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--econ-green-100);color:var(--econ-green-600);display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;">✓</span>`
-                  : `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;">✕</span>`;
-                return `<li style="display:flex;align-items:flex-start;gap:9px;margin-bottom:7px;">${mark}<span>${it.text}</span></li>`;
-              }).join('')}
-            </ul>
-          </div>`;
-        const separator = !isLast ? `<div class="gen-verdict__sep${sep === '→' ? ' gen-verdict__sep--arrow' : ''}" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:34px;height:34px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:var(--fw-extrabold);font-size:${sep === '→' ? '15px' : '11px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(11,20,38,0.25);">${sep}</div></div>` : '';
-        return colHtml + separator;
-      }).join('');
-      content += `</div>`;
+      content += renderVerdict(c.verdict);
     }
 
     // Continuum – three-tile spectrum with a gradient connector bar and
@@ -5484,33 +5481,7 @@
 
       ${!c.pairFirst ? pairHtml : ''}
 
-      ${c.verdict && c.verdict.columns && c.verdict.columns.length >= 2 ? (() => {
-        const v = c.verdict;
-        const sep = (v.layout === 'arrow') ? '→' : 'VS';
-        const title = v.title ? genSecLabel(v.emoji || '⚖️', v.title) : '';
-        const cols = v.columns.map((col, i) => {
-          const t = PATTERN_TONES[col.tone || 'slate'] || PATTERN_TONES.slate;
-          const isLast = i === v.columns.length - 1;
-          const items = (col.items || []).map(it => {
-            const ok = it.ok !== false;
-            const mark = ok
-              ? `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--econ-green-100);color:var(--econ-green-600);display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;">✓</span>`
-              : `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;">✕</span>`;
-            return `<li style="display:flex;align-items:flex-start;gap:9px;margin-bottom:8px;">${mark}<span>${it.text}</span></li>`;
-          }).join('');
-          const colHtml = `
-            <div style="flex:1 1 0;min-width:160px;border-radius:var(--r-lg);background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
-              <div style="padding:12px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:10px;">
-                ${col.icon ? `<div style="width:30px;height:30px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-base);line-height:1;flex-shrink:0;">${renderIcon(col.icon)}</div>` : ''}
-                <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};letter-spacing:0.01em;">${col.label}</div>
-              </div>
-              <ul style="list-style:none;margin:0;padding:14px 16px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${items}</ul>
-            </div>`;
-          const separator = !isLast ? `<div style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:var(--fw-extrabold);font-size:${sep === '→' ? '16px' : '12px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);">${sep}</div></div>` : '';
-          return colHtml + separator;
-        }).join('');
-        return `${title}<div style="display:flex;align-items:stretch;gap:12px;margin-bottom:22px;flex-wrap:wrap;">${cols}</div>`;
-      })() : ''}
+      ${c.verdict && c.verdict.columns && c.verdict.columns.length >= 2 ? renderVerdict(c.verdict) : ''}
 
       ${c.measureCards && c.measureCards.length ? (() => {
         const label = c.measureCardsLabel !== undefined

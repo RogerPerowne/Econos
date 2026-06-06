@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.91.0 — 2026-06-06
+
+### Universal content boxes (12/n): verdict
+
+The `verdict` box (tone columns of ✓/✕ items split by a VS/→ badge) moves to the
+`.gen-verdict` component + a `renderVerdict` helper, covering both the generic and
+worked-example sites (the two had drifted — different icon treatment and a slate
+vs ink separator; now unified). Same look — accents to brand `.tone-*`, the ✕ mark
+to `--econ-rose-100/-600` (was hard-coded red), `font-weight:900` → token; tile-
+tier hover; existing mobile-stacking rules retained. Data shapes unchanged.
+
+Before/after screenshot-verified (rest + hover). lint + 147 unit tests + build
+green; cache econos-v400.
+
+
 ## 0.90.0 — 2026-06-06
 
 ### Verdict-band consistency: conclusion/balanced-note match exam-edge

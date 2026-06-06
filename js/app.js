@@ -2914,24 +2914,21 @@
     if (c.splitDecision && Array.isArray(c.splitDecision.sides) && c.splitDecision.sides.length) {
       const sd = c.splitDecision;
       if (sd.label) content += genSecLabel(sd.emoji || '⚖️', sd.label);
-      const cardHtml = (s) => {
-        const t = PATTERN_TONES[s.tone || 'blue'] || PATTERN_TONES.blue;
-        return `
-          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:10px;border:1px solid ${t.border};border-radius:var(--r-lg);background:${t.bg};padding:18px 20px;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <span style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-md);flex-shrink:0;">${s.icon || '👤'}</span>
-              <span style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};">${s.name || ''}</span>
+      // Styling lives in the universal `.split-decision` CSS component
+      // (token-driven, tile-tier hover, existing mobile-stacking rule).
+      const cardHtml = (s) => `
+          <div class="split-decision__card tone-${s.tone || 'blue'}">
+            <div class="split-decision__head">
+              <span class="split-decision__icon">${renderIcon(s.icon || '👤')}</span>
+              <span class="split-decision__name">${s.name || ''}</span>
             </div>
-            ${s.premise ? `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${s.premise}</div>` : ''}
-            ${s.interpretation ? `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);border-top:1px dashed ${t.border};padding-top:10px;">${s.interpretation}</div>` : ''}
-            <div style="text-align:center;color:${t.accent};font-size:var(--fs-lg);line-height:1;">↓</div>
-            <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:var(--econ-ink);line-height:1.4;">${s.conclusion || ''}</div>
+            ${s.premise ? `<div class="split-decision__premise">${s.premise}</div>` : ''}
+            ${s.interpretation ? `<div class="split-decision__interp">${s.interpretation}</div>` : ''}
+            <div class="split-decision__arrow">↓</div>
+            <div class="split-decision__conclusion">${s.conclusion || ''}</div>
           </div>`;
-      };
-      // vs-style: same dark "VS" badge the comparison block uses, between
-      // the two sides. `.split-decision` stacks to a column on mobile.
-      const vsBadge = `<div class="split-decision__vs" style="display:flex;align-items:center;flex-shrink:0;"><div style="width:46px;height:46px;border-radius:50%;background:var(--econ-ink);color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-sm);letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${sd.vs || 'VS'}</div></div>`;
-      content += `<div class="split-decision" style="display:flex;align-items:stretch;gap:14px;margin-bottom:26px;">${sd.sides.map(cardHtml).join(vsBadge)}</div>`;
+      const vsBadge = `<div class="split-decision__vs"><div class="split-decision__badge">${sd.vs || 'VS'}</div></div>`;
+      content += `<div class="split-decision">${sd.sides.map(cardHtml).join(vsBadge)}</div>`;
     }
 
     // Summary row – up to 3 mini-cards side-by-side for contrast/context blocks

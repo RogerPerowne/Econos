@@ -32,6 +32,7 @@ Brand palette, each with tints/shades:
 ### Spacing — `--sp-1…12` (4 / 8 / 12 / 16 / 20 / 24 / 28 / 32 / 40 / 48 px)
 ### Radii — `--r-sm 4` · `md 8` · `lg 14` (cards) · `xl 18` (hero) · `2xl 20` · `full`
 ### Shadows — `--shadow-sm` · `--shadow-md` · `--shadow-lg` (+ ring / card-rest / card-hover)
+### Hover/interaction — `--hover-lift` (-2px) · `--hover-lift-lg` (-3px) · `--hover-tr` (the canonical transition)
 ### Layout — `--sidebar-w` · `--rightbar-w` · `--header-h` · `--app-max-w` · `--page-max-w`
 
 ## The policy
@@ -99,6 +100,37 @@ Reusable, token-built UI pieces (`styles.css` + `js/app.js`):
 
 > Brand serif (Fraunces) appears on the **economist-quote** text (italic) and the
 > **"Big idea" / conclusion** statement; everything else stays Inter.
+
+---
+
+## Hover interactions
+
+Modelled on the home-page topic box (`.topic` in `index.css`) — a small
+`translateY` lift plus a soft, tone-tinted shadow. Centralised in the
+**"DESIGN LANGUAGE — HOVER INTERACTIONS"** block in `styles.css` and applied
+**selectively** (never to body text, nested parts or table rows). Three tiers,
+each a deliberately distinct feel:
+
+| Tier | Applies to | Effect |
+|------|-----------|--------|
+| **feature** | `.branch-tri` (decision boxes, carry `--tone-strong`) · `.dl-hover-feature` | `-3px` lift + tone-tinted shadow — closest to the home page |
+| **tile** | `.mech-tile` · `.impact-card` · `.summary-tile` · `.cause-col` · `.dl-hover-tile` | `-2px` lift + `--shadow-card-hover` (neutral lifted shadow) |
+| **note** | `.callout` | no lift — a soft shadow bloom (`--shadow-lg`) so the note "warms" without jumping |
+
+Tokens: `--hover-lift` / `--hover-lift-lg` (the two lift distances) and
+`--hover-tr` (the canonical `transform`/`box-shadow`/`border-color` transition).
+For a bespoke or inline-styled box, add the opt-in helper class
+`dl-hover-tile` or `dl-hover-feature` rather than re-deriving the effect. All
+transitions are disabled under `prefers-reduced-motion`, so hovers degrade to
+instant + accessible.
+
+## Smartphone
+
+On top of the existing reflow (sidebar hides < 900px, inline grids stack
+< 600px, mobile stage strip), a conservative `≤ 480px` layer tames the two
+largest type steps at the **token** level (`--fs-5xl` 44→34, `--fs-4xl` 36→30,
+so every use scales together) and trims the generous padding on standalone
+tiles/callouts to `--sp-4`. Spacing + colour tokens are untouched.
 
 ---
 

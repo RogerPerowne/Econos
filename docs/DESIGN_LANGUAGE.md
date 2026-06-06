@@ -133,6 +133,16 @@ type is one class.
 
 Data shapes are unchanged — only the renderer behind each box moves to the class.
 
+### Why this also enables migration
+
+Moving every box onto `.tone-*` + tokens (no inline colours) is what keeps the
+three layers — content data / pure render engine / token styling — cleanly
+separable, so the content is easy to lift to a Postgres + .NET backend. The
+data→component contract per box, the export bridge (`npm run export:content`), the
+target schema (`docs/schema/postgres.sql`) and the production blueprint live in
+**`docs/CONTENT_MIGRATION.md`** and **`docs/PLATFORM_BLUEPRINT.md`**. Rule:
+**content data carries semantic tone names, never colours or raw markup.**
+
 ---
 
 ## Hover interactions

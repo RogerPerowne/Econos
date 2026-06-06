@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.94.0 — 2026-06-06
+
+### Universal content boxes (15/n): flow chain (Tier 3 begins)
+
+The `flow` / `flowBottom` step chains (numbered ring + tone icon circle + title +
+sub, joined by dashed connectors, with ✓/✕/! status badges) move to one
+`renderFlow` helper + the `.flow-chain` / `.flow-step` component — the highest-
+reach box (~51 topics). Same look — brand-palette accents via `.tone-*`, hard-coded
+`#CBD5E1` / `#DC2626` / `#F59E0B` / `#475569` → tokens, `font-weight:900` → token,
+connector geometry (top:23px, ±28px) preserved exactly. No hover (it's a connected
+diagram — a lift would break the connectors); the container keeps an inline
+`grid-template-columns` so the universal mobile reflow stacks it. Data shapes
+unchanged. Before/after screenshot-verified. lint + 147 unit tests + build green;
+cache econos-v403.
+
+
 ## 0.93.0 — 2026-06-06
 
 ### Universal content boxes (14/n): comparison — Tier 2 complete

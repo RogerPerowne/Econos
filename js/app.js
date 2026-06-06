@@ -180,6 +180,31 @@
     return `<div class="summary-row" style="--sr-cols:repeat(${cols},1fr);">${inner}</div>`;
   }
 
+  /* Flow chain — numbered ring + tone icon circle + title + sub joined by
+     dashed connectors, with optional ✓/✕/! status badges. Styling lives in
+     the universal `.flow-chain` CSS component; the container keeps an inline
+     grid-template-columns so the universal mobile reflow stacks it. */
+  function renderFlow(steps) {
+    const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
+    const n = steps.length;
+    const inner = steps.map((step, i) => {
+      const tone = 'tone-' + (step.tone || flowTones[i % flowTones.length]);
+      const isLast = i === n - 1;
+      const badge = step.status === 'fail' ? '<div class="flow-step__badge flow-step__badge--fail">✕</div>'
+        : step.status === 'pass' ? '<div class="flow-step__badge flow-step__badge--pass">✓</div>'
+        : step.status === 'warn' ? '<div class="flow-step__badge flow-step__badge--warn">!</div>' : '';
+      return `
+        <div class="flow-step ${tone}">
+          <div class="flow-step__num">${i + 1}</div>
+          <div class="flow-step__icon">${renderIcon(step.icon)}${badge}</div>
+          <div class="flow-step__title">${step.title}</div>
+          ${step.sub ? `<div class="flow-step__sub">${step.sub}</div>` : ''}
+          ${!isLast ? '<div class="flow-step__connector"></div>' : ''}
+        </div>`;
+    }).join('');
+    return `<div class="flow-chain" style="grid-template-columns:repeat(${n},1fr);">${inner}</div>`;
+  }
+
   /* Verdict — tone columns of ✓/✕ items separated by a VS/→ badge.
      Styling lives in the universal `.gen-verdict` CSS component (token-
      driven, tile-tier hover, existing mobile-stacking rules). */
@@ -1828,26 +1853,7 @@
       if (c.flowTitle) {
         content += genSecLabel(c.flowEmoji || '➡️', c.flowTitle);
       }
-      const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
-      const n = c.flow.length;
-      content += `<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:26px;padding:18px 6px 6px;">`;
-      content += c.flow.map((step, i) => {
-        const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-        const isLast = i === n - 1;
-        const statusBadge = step.status === 'fail' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✕</div>` :
-                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
-                            step.status === 'warn' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">!</div>` : '';
-        return `
-          <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
-            <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-base);font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
-            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xl);line-height:1;margin-bottom:12px;">${renderIcon(step.icon)}${statusBadge}</div>
-            <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:6px;">${step.title}</div>
-            ${step.sub ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);">${step.sub}</div>` : ''}
-            ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
-          </div>
-        `;
-      }).join('');
-      content += `</div>`;
+      content += renderFlow(c.flow);
     }
 
     content += buildInteractiveDiagramHtml(c);
@@ -2744,26 +2750,7 @@
       if (c.flowBottomTitle) {
         content += genSecLabel(c.flowBottomEmoji || '➡️', c.flowBottomTitle);
       }
-      const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
-      const nb = c.flowBottom.length;
-      content += `<div style="display:grid;grid-template-columns:repeat(${nb},1fr);gap:0;align-items:start;margin-bottom:26px;padding:18px 6px 6px;">`;
-      content += c.flowBottom.map((step, i) => {
-        const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-        const isLast = i === nb - 1;
-        const statusBadge = step.status === 'fail' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✕</div>` :
-                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:var(--econ-green-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
-                            step.status === 'warn' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">!</div>` : '';
-        return `
-          <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
-            <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-base);font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
-            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-2xl);line-height:1;margin-bottom:12px;">${renderIcon(step.icon)}${statusBadge}</div>
-            <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:6px;">${step.title}</div>
-            ${step.sub ? `<div style="font-size:var(--fs-sm);color:#475569;line-height:var(--lh-normal);">${step.sub}</div>` : ''}
-            ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
-          </div>
-        `;
-      }).join('');
-      content += `</div>`;
+      content += renderFlow(c.flowBottom);
     }
 
     // Product examples – "Think like an examiner" card grid

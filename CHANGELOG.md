@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.84.0 — 2026-06-06
+
+### Universal content boxes (6/n): conclusion + balanced-note bands
+
+The verdict bands (`c.conclusion` green, `c.balancedNote` amber) move to one
+`.callout-band` component + a `renderCalloutBand` helper. Covers all sites: the
+generic renderer and both worked-example conclusion positions.
+
+- Same look — strong elements (left accent bar + icon) use `--t-accent`, so
+  green-600 / amber-600 match the originals exactly; conclusion keeps its Fraunces
+  body (`--display`). Hard-coded `#A7F3D0 / #059669 / #FDE68A / #D97706 / #92400E`
+  → tokens. Note-tier hover. Data shapes unchanged.
+
+Before/after screenshot-verified (rest + hover). lint + 147 unit tests + build
+green; cache econos-v393.
+
+
 ## 0.83.0 — 2026-06-06
 
 ### Migration-readiness: content export bridge + Postgres/.NET portability docs

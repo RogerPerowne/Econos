@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.80.0 — 2026-06-06
+
+### Universal content boxes (3/n): Lock-in strip
+
+The `lockIn` success footer (green strip with a row of ✓ items) moves to the
+`.lock-in` component. Same look, now token-driven — the hard-coded `#F0FDF4` /
+`#BBF7D0` become `--econ-green-50` / `-100`, `font-weight:900` and the off-scale
+`line-height:1.4` snap to tokens. Gets the note-tier hover (a full-width strip
+warms with a soft shadow, no lift). Data shape unchanged. Before/after
+screenshot-verified. lint + 147 unit tests + build green; cache econos-v389.
+
+
 ## 0.79.0 — 2026-06-06
 
 ### Universal content boxes (2/n): Key takeaways

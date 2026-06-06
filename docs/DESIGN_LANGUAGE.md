@@ -119,8 +119,11 @@ type is one class.
   - `.key-terms` / `.kt-tile` — definition tiles with a solid tone header bar.
   - `.key-points` / `.kp-tile` — takeaway tiles with a tone bottom-border
     (`compare` / `minimal` variants supported).
+  - `.lock-in` — green success footer strip with a row of ✓ items
+    (note-tier hover).
 
-  Both carry the tile-tier hover. More box types land one per release.
+  Tiles carry the tile-tier hover; full-width strips the note-tier. More box
+  types land one per release.
 
 Data shapes are unchanged — only the renderer behind each box moves to the class.
 

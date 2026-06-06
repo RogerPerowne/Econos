@@ -12099,6 +12099,64 @@ a.stage { box-shadow: var(--shadow-card-rest); }
   line-height: var(--lh-relaxed);
 }
 
+/* ── Lock-in strip — green success footer with a row of check items.
+   Replaces the inline footer; same look but token-driven (the old
+   #F0FDF4 / #BBF7D0 hexes → green tokens, font-weight:900 → token).
+   Note-tier hover: a full-width strip warms with a soft shadow, no
+   lift. ── */
+.lock-in {
+  background: var(--econ-green-50);
+  border: 1px solid var(--econ-green-100);
+  border-radius: var(--r-lg);
+  padding: var(--sp-3) var(--sp-4);
+  margin-bottom: var(--sp-5);
+  transition: box-shadow 0.22s ease, border-color 0.18s ease;
+}
+.lock-in:hover { box-shadow: var(--shadow-lg); }
+.lock-in__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+.lock-in__icon { font-size: var(--fs-base); line-height: 1; }
+.lock-in__title {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-green-600);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.lock-in__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-5);
+}
+.lock-in__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: 1 1 0;
+  min-width: 140px;
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  font-weight: var(--fw-semi);
+  line-height: var(--lh-snug);
+}
+.lock-in__check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--r-full);
+  background: var(--econ-green-100);
+  color: var(--econ-green-600);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-extrabold);
+}
+
 
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(140%) blur(10px);

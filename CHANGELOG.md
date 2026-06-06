@@ -6,6 +6,39 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.82.1 — 2026-06-06
+
+### Mobile polish: pair-side bullets + hub centre on top
+
+Two site-wide mobile polish passes.
+
+**Pair sides — tone bullets + icon stacks above title.** Every `vs` pair
+block across the site now renders a coloured tone dot before each `<li>`
+in the side body (green dots on a green side, purple on a purple side,
+etc.) — many data files author the side body as raw HTML with a `<ul>`
+of points, and until now those `<li>`s rendered without any visible
+marker. On mobile (≤720px), the side's icon also stacks ABOVE the title
+instead of beside it, so labels like "By constraint" no longer wrap
+awkwardly inside narrow columns. Driven from both pair-renderer call
+sites (`renderCardGeneric` + `renderCardAdInteractive`) so every
+`left`/`right` card benefits without per-card edits — wrappers carry a
+`--pair-tone` CSS var so a single global rule paints the dots.
+
+**Hub diagrams — centre circle on top on mobile.** Every hub-and-spoke
+diagram now puts its central circle ABOVE the surrounding tiles on
+mobile. The centre carries the headline concept ("The firm", "Demand",
+"PED", etc.), so leading with it on mobile makes the visual
+self-explanatory before the user scrolls through the spokes.
+Implemented by adding `flex-direction:column-reverse` to each hub's
+outer wrapper on mobile — the absolute-positioned connectors/dots are
+already display:none on mobile, so the only flex children are the grid
+and the `*-center-wrap`, and reversing them is enough. For the `wwh`
+hub (where the centre cell is INSIDE the grid), the existing `order:99`
+flips to `order:-1`. Covers fhub-4/5/6, rat-hub, dem-hub, sup-hub,
+ped-hub, xed-hub, bghub-4, crhub-4, dmrhub, growth-scorecard, wwh.
+
+SW cache bumped to v392.
+
 ## 0.82.0 — 2026-06-06
 
 ### Universal content boxes (5/n): tip / note / tipLate → one .tone-callout

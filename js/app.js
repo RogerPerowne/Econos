@@ -1885,12 +1885,12 @@
         const border = plain ? '#E7E7EA' : tone.border;
         const headerAlign = side.centeredLabel ? 'center' : 'flex-start';
         return `
-          <div style="border-radius:var(--r-lg);background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;min-width:0;">
-            <div style="display:flex;align-items:center;justify-content:${headerAlign};gap:12px;margin-bottom:14px;">
+          <div class="econ-pair-side" style="--pair-tone:${tone.label};--pair-accent:${tone.accent};border-radius:var(--r-lg);background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;min-width:0;">
+            <div class="econ-pair-side__head" style="display:flex;align-items:center;justify-content:${headerAlign};gap:12px;margin-bottom:14px;">
               ${numberHtml}${iconHtml}
-              <div style="color:${tone.label};font-weight:var(--fw-extrabold);font-size:var(--fs-md);letter-spacing:0.01em;">${side.label}</div>
+              <div class="econ-pair-side__title" style="color:${tone.label};font-weight:var(--fw-extrabold);font-size:var(--fs-md);letter-spacing:0.01em;">${side.label}</div>
             </div>
-            ${inner}
+            <div class="econ-pair-side__body">${inner}</div>
           </div>`;
       };
       let html = '';
@@ -4932,12 +4932,12 @@
           : `<div style="color:${tone.label};font-weight:var(--fw-extrabold);font-size:var(--fs-base);letter-spacing:0.02em;">${side.label}</div>`;
         const headAlign = side.labelCenter ? 'justify-content:center;text-align:center;' : '';
         return `
-          <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;min-width:0;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;${headAlign}">
+          <div class="econ-pair-side" style="--pair-tone:${tone.label};--pair-accent:${tone.accent};border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;min-width:0;">
+            <div class="econ-pair-side__head" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;${headAlign}">
               ${iconHtml}
               ${labelHtml}
             </div>
-            ${inner}
+            <div class="econ-pair-side__body">${inner}</div>
             ${exampleHtml}
           </div>`;
       };

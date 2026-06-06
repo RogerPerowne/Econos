@@ -13677,3 +13677,54 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   .branch-tri { padding: var(--sp-4); }
   .callout { gap: var(--sp-3); }
 }
+
+/* ────────────────────────────────────────────────────────────
+   Pair sides — coloured tone bullets on inline <ul><li> content
+   (lots of data files author the side body as raw HTML with a
+   <ul> of points; without this rule the markers either disappear
+   or fall back to the browser default disc). The bullet picks up
+   the side's tone via the --pair-tone CSS variable set on the
+   wrapper, so green sides get a green dot and so on.
+
+   Also handles the mobile header layout: at ≤720px the icon
+   stacks ABOVE the title so the label gets the full column
+   width and no longer wraps awkwardly ("By" / "constraint").
+   ──────────────────────────────────────────────────────────── */
+.econ-pair-side__body ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 6px 0 0 !important;
+}
+.econ-pair-side__body ul li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 6px;
+}
+.econ-pair-side__body ul li:last-child { margin-bottom: 0; }
+.econ-pair-side__body ul li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pair-tone, #64748B);
+}
+.econ-pair-side__body ol {
+  padding-left: 22px;
+  margin: 6px 0 0;
+}
+.econ-pair-side__body ol li { margin-bottom: 6px; }
+.econ-pair-side__body ol li::marker { color: var(--pair-tone, #64748B); font-weight: 800; }
+
+@media (max-width: 720px) {
+  .econ-pair-side__head {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .econ-pair-side__head[style*="center"] {
+    align-items: center !important;
+  }
+}

@@ -1661,7 +1661,7 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--r-lg);
   padding: var(--sp-5);
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: var(--sp-5);
 }
 
 .exam-edge__star {
@@ -1705,7 +1705,7 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--r-lg);
   padding: var(--sp-5);
   margin-top: var(--sp-5);
-  margin-bottom: 20px;
+  margin-bottom: var(--sp-5);
 }
 .key-takeaway__star {
   /* Same 32px icon as .exam-edge__star — only the amber fill differs. */
@@ -12738,6 +12738,13 @@ body.theme--land .right-rail,
   border-left: 4px solid var(--econ-amber);
   box-shadow: 0 2px 12px rgba(245, 184, 0, 0.08);
 }
+
+/* ── Closing-pair hover — each box deepens its OWN coloured glow
+   (purple for exam-edge, amber for key-takeaway) rather than a generic
+   shadow, keeping its identity. Transition already declared in the
+   "shared paper feel" block; disabled under prefers-reduced-motion. ── */
+.exam-edge:hover    { box-shadow: 0 6px 20px rgba(124, 58, 237, 0.16); }
+.key-takeaway:hover { box-shadow: 0 6px 20px rgba(245, 184, 0, 0.16); }
 
 /* ── Progress bar at top of session — refine ── */
 .progress {

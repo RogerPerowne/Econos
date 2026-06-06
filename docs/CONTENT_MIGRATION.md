@@ -58,6 +58,7 @@ continues — keep it current):
 | `methodGrid` / `methodGrid2` | `{ label?, emoji?, exampleLabel?, items:[{ title, icon?, body?, example?, tone? }] }` | `.method-grid > .method-card.tone-* > .method-card__head(__icon,__title) + __body(__text, __example?)` |
 | `diagramGrid` | `[{ svgKey, head, icon?, tone?, bullets:[{ text, tone? }] }]` | `.diagram-grid > .dg-card.tone-* > .dg-card__head(__icon,__title) + __svg + __bullets>.dg-bullet.tone-*>__dot` |
 | `verdict` | `{ title?, emoji?, layout?:'arrow', columns:[{ label, tone?, icon?, items:[{ text, ok? }] }] }` | `.gen-verdict > .gen-verdict__col.tone-* > __head(__icon?,__label) + __list>__item>__mark--ok\|no; __sep>__badge` |
+| `splitDecision` | `{ label?, emoji?, vs?, sides:[{ name, tone?, icon?, premise?, interpretation?, conclusion }] }` | `.split-decision > .split-decision__card.tone-* (__head(__icon,__name), __premise?, __interp?, __arrow, __conclusion) split by __vs>__badge` |
 
 (Boxes not yet migrated still render via inline styles in `app.js`; they are being
 moved onto this same `.tone-*` + token system, one per release, until 100% of

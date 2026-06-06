@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.92.0 — 2026-06-06
+
+### Universal content boxes (13/n): split decision
+
+The `splitDecision` box (two tone side-cards — icon/name/premise/interpretation/
+↓/conclusion — split by a VS badge) moves to the `.split-decision` component.
+Same look — brand-palette accents via `.tone-*`, off-scale `line-height:1.4`/`10px`
+→ tokens; tile-tier hover; existing mobile-stacking rule retained. Data shapes
+unchanged. Before/after screenshot-verified. lint + 147 unit tests + build green;
+cache econos-v401.
+
+
 ## 0.91.0 — 2026-06-06
 
 ### Universal content boxes (12/n): verdict

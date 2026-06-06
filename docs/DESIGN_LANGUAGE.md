@@ -143,6 +143,8 @@ type is one class.
     tone-dot bullets; tile-tier hover.
   - `.gen-verdict` — tone columns of ✓/✕ items split by a VS/→ badge;
     tile-tier hover; stacks on mobile.
+  - `.split-decision` — two tone side-cards split by a VS badge; tile-tier
+    hover; stacks on mobile.
 
   Tiles carry the tile-tier hover; full-width strips the note-tier; the
   closing-pair callouts deepen their own glow. More box types land one per

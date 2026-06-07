@@ -17585,13 +17585,17 @@ window.ECONOS_ICONS = {
       <div class="vsc-v">
         <svg viewBox="0 0 380 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
           <defs>
-            <marker id="vscv-arr-green-up" viewBox="0 0 10 10" refX="5" refY="1" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 10 L 5 0 L 10 10 z" fill="#16A34A"/></marker>
-            <marker id="vscv-arr-purple-down" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 5 10 L 10 0 z" fill="#7C3AED"/></marker>
+            <!-- Standard right-pointing markers. orient="auto" rotates them
+                 to match each line's direction, so they tip UP on the green
+                 backward arrow (line goes up) and DOWN on the purple forward
+                 arrow (line goes down). -->
+            <marker id="vscv-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
+            <marker id="vscv-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
           </defs>
 
           <!-- LEFT column: vertical axis (x = 60) -->
           <!-- Green up-arrow: from Manufacturing centre (y=270) up to Raw materials (y=30) -->
-          <line x1="60" y1="265" x2="60" y2="40" stroke="#16A34A" stroke-width="3" marker-end="url(#vscv-arr-green-up)"/>
+          <line x1="60" y1="265" x2="60" y2="40" stroke="#16A34A" stroke-width="3" marker-end="url(#vscv-arr-green)"/>
           <text x="32" y="150" font-size="13" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 32 150)">Backward integration</text>
           <text x="86" y="150" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 86 150)">towards inputs</text>
 
@@ -17599,7 +17603,7 @@ window.ECONOS_ICONS = {
           <circle cx="60" cy="275" r="5" fill="#0B1426"/>
 
           <!-- Purple down-arrow: from Manufacturing centre (y=285) down to Retail (y=520) -->
-          <line x1="60" y1="285" x2="60" y2="510" stroke="#7C3AED" stroke-width="3" marker-end="url(#vscv-arr-purple-down)"/>
+          <line x1="60" y1="285" x2="60" y2="510" stroke="#7C3AED" stroke-width="3" marker-end="url(#vscv-arr-purple)"/>
           <text x="32" y="400" font-size="13" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 32 400)">Forward integration</text>
           <text x="86" y="400" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 86 400)">towards the customer</text>
 

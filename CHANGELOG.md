@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.6 — 2026-06-07
+
+### Fix: vertical supply-chain arrows + JS template literal break
+
+Hot-fix to v0.96.5. Two issues:
+
+1. **JS template-literal break.** A code comment inside the new mobile
+   SVG used backticks around `orient="auto"` for emphasis, which
+   prematurely closed the JS template literal hosting the SVG markup.
+   The parser then choked on the next identifier (`orient`), so
+   `icons.js` failed to load and Card 3 (and several other cards
+   relying on `icons.js`) rendered as a blank skeleton. Replaced the
+   backticks with plain text. **This was the root cause of the
+   "desktop bottom-left arrow flipped" report** — the SVG simply
+   wasn't executing.
+2. **Mobile arrowheads.** The two custom vertical-arrow markers in
+   the new mobile layout were pre-drawn pointing up/down AND marked
+   `orient="auto"`, which double-rotated them. Replaced with
+   standard right-pointing markers + `orient="auto"`, which
+   auto-rotate cleanly to match each line's direction (up for the
+   green backward arrow, down for the purple forward arrow).
+
+SW cache bumped to v410.
+
 ## 0.96.5 — 2026-06-07
 
 ### Vertical supply chain: vertical layout on mobile

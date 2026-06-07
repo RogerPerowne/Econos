@@ -155,7 +155,11 @@
     const icon = iconSet ? item.icon : (opts.defaultIcon || '💡');
     const showIcon = icon !== null && icon !== false && icon !== '';
     const tone = (typeof item === 'object' && item.tone) || opts.defaultTone || 'blue';
-    const head = (typeof item === 'object' && item.head) || null;
+    // Head: data-supplied wins; otherwise fall back to the slot's default
+    // (e.g. 'TIP', 'NOTE', 'KEY IDEA'). Pass `head: null` in the data to
+    // explicitly suppress the title for a particular callout.
+    const headSet = typeof item === 'object' && Object.prototype.hasOwnProperty.call(item, 'head');
+    const head = headSet ? item.head : (opts.defaultHead || null);
     const iconHtml = showIcon ? `<div class="tone-callout__icon">${renderIcon(icon)}</div>` : '';
     const bodyHtml = head
       ? `<div class="tone-callout__body"><div class="tone-callout__head">${head}</div><div class="tone-callout__text">${text}</div></div>`
@@ -1568,7 +1572,7 @@
     if (c.tip) {
       const tips = Array.isArray(c.tip) ? c.tip : [c.tip];
       tips.forEach(tip => {
-        content += renderToneCallout(tip, { defaultIcon: '💡', defaultTone: 'blue' });
+        content += renderToneCallout(tip, { defaultIcon: '💡', defaultTone: 'blue', defaultHead: 'TIP' });
       });
       content += `<div style="height:8px;"></div>`;
     }
@@ -2949,7 +2953,7 @@
     if (c.tipLate) {
       const lateTips = Array.isArray(c.tipLate) ? c.tipLate : [c.tipLate];
       lateTips.forEach(tip => {
-        content += renderToneCallout(tip, { defaultIcon: '💡', defaultTone: 'blue' });
+        content += renderToneCallout(tip, { defaultIcon: '💡', defaultTone: 'blue', defaultHead: 'KEY IDEA' });
       });
     }
 
@@ -4950,13 +4954,9 @@
           <div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);font-style:italic;">${c.lede}</div>
         </div>`) : ''}
 
-      ${c.tip ? (() => {
-        const tipText = typeof c.tip === 'object' && !Array.isArray(c.tip) ? c.tip.text : (typeof c.tip === 'string' ? c.tip : '');
-        const tipIcon = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.icon) || '💡';
-        const tipTone = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.tone) || 'blue';
-        const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-        return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${tipIcon}</div><div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${tipText}</div></div>` : '';
-      })() : ''}
+      ${c.tip ? (Array.isArray(c.tip) ? c.tip : [c.tip])
+        .map(tip => renderToneCallout(tip, { defaultIcon: '💡', defaultTone: 'blue', defaultHead: 'TIP' }))
+        .join('') : ''}
 
       ${c.note && c.notePosition === 'top' ? (() => {
         const notes = Array.isArray(c.note) ? c.note : [c.note];
@@ -5650,17 +5650,9 @@
         return `${title}<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#F8FAFC;border:1px solid var(--econ-slate-100);border-radius:var(--r-lg);padding:14px 16px;margin-bottom:18px;"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;">${termHtml}</div>${noteHtml}</div>`;
       })() : ''}
 
-      ${c.bottomTip ? (() => {
-        const tips = Array.isArray(c.bottomTip) ? c.bottomTip : [c.bottomTip];
-        return tips.map(bt => {
-          const btText = typeof bt === 'object' ? bt.text : bt;
-          if (!btText) return '';
-          const btIcon = (typeof bt === 'object' && bt.icon) || '💡';
-          const btTone = (typeof bt === 'object' && bt.tone) || 'amber';
-          const t = PATTERN_TONES[btTone] || PATTERN_TONES.amber;
-          return `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:13px 16px;margin-bottom:16px;"><div style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-md);flex-shrink:0;">${btIcon}</div><div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${btText}</div></div>`;
-        }).join('');
-      })() : ''}
+      ${c.bottomTip ? (Array.isArray(c.bottomTip) ? c.bottomTip : [c.bottomTip])
+        .map(bt => renderToneCallout(bt, { defaultIcon: '💡', defaultTone: 'amber', defaultHead: 'NOTE' }))
+        .join('') : ''}
 
       ${c.nuanceBanner ? (() => {
         const nb = c.nuanceBanner;
@@ -5705,16 +5697,9 @@
 
       ${c.methodGrid ? buildMethodGridHtml(c.methodGrid) : ''}
 
-      ${c.tipLate ? (() => {
-        const lateTips = Array.isArray(c.tipLate) ? c.tipLate : [c.tipLate];
-        return lateTips.map(tip => {
-          const tipText = typeof tip === 'object' ? tip.text : tip;
-          const tipIcon = (typeof tip === 'object' && tip.icon) || '💡';
-          const tipTone = (typeof tip === 'object' && tip.tone) || 'blue';
-          const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-          return `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">${tipIcon}</div><div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-normal);">${tipText}</div></div>`;
-        }).join('');
-      })() : ''}
+      ${c.tipLate ? (Array.isArray(c.tipLate) ? c.tipLate : [c.tipLate])
+        .map(tip => renderToneCallout(tip, { defaultIcon: '💡', defaultTone: 'blue', defaultHead: 'KEY IDEA' }))
+        .join('') : ''}
 
       ${renderExamEdge(c.examEdge)}
     `;
@@ -5925,10 +5910,8 @@
       return '<div class="ad-panel ' + (i === 0 ? 'is-active' : '') + '" data-panel-key="' + s.key + '"><div class="ad-panel__title">' + s.label + '</div><div class="ad-panel__body">' + s.text + '</div></div>';
     }).join('');
 
-    const tipTone = (c.tip && typeof c.tip === 'object' && c.tip.tone) || 'blue';
-    const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-    const tipHtml = (c.tip && typeof c.tip === 'object' && c.tip.text)
-      ? '<div style="display:flex;align-items:center;gap:14px;background:' + t.bg + ';border:1px solid ' + t.border + ';border-radius:var(--r-lg);padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:' + t.accent + ';color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);flex-shrink:0;">' + (c.tip.icon || '💡') + '</div><div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">' + c.tip.text + '</div></div>'
+    const tipHtml = c.tip
+      ? renderToneCallout(c.tip, { defaultIcon: '💡', defaultTone: 'blue', defaultHead: 'TIP' })
       : '';
 
     // Per-stage diagram headings rendered as standard section labels

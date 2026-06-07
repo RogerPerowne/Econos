@@ -6,6 +6,53 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.1 — 2026-06-07
+
+### Tip callouts + Ownership/Objectives diagram polish
+
+Two related batches.
+
+**Tip callouts — unify font + icon layout + add default titles.** The
+`bottomTip` / `tip` / `tipLate` blocks rendered inside the
+`renderCardAdInteractive` path were never migrated to the universal
+`.tone-callout` component during the v0.78.x "tip/note/tipLate → one
+.tone-callout" sweep — they still used the old inline renderer with a
+smaller (34px) coloured circle and no title slot, so they looked
+visibly different from the same fields on other cards (and from the
+closing-pair EXAM EDGE / BIG IDEA callouts). Same for the `c.tip`
+inside the regulatory-capture explorer.
+
+* All three slots in `renderCardAdInteractive` and the explorer
+  renderer now go through `renderToneCallout`, so every callout
+  site-wide picks up the same 38px round accent icon + tone-coloured
+  body + note-tier hover from `.tone-callout`.
+* Each slot now supplies a **default head** when the data doesn't:
+  `tip` → "TIP", `bottomTip` → "NOTE", `tipLate` → "KEY IDEA". So
+  every callout now leads with a bold uppercase tone-coloured label,
+  matching the EXAM EDGE / BIG IDEA closing-pair pattern. Data authors
+  override with `head: 'CUSTOM TITLE'` or opt out with `head: null`.
+* `docs/DESIGN_LANGUAGE.md` updated to document the bottomTip
+  migration and the new default-head behaviour.
+
+**Ownership & Objectives diagram polish.** Card 5 of *Sizes & Types of
+Firms* (`firmOwnershipObjectives`):
+
+* Split the single "OWNERSHIP AND OBJECTIVES" hero header into two
+  in-diagram sections — `OWNERSHIP` stays as the visualLabel above the
+  top row, and a new `🎯 Objectives` section label sits above the
+  for-profit / not-for-profit row. Clearer visual mapping between
+  label and tiles.
+* Bumped the four examples chips (Business / Charity / Social club /
+  Public service) to bigger padding (14px × 16px), a 13.5px font and
+  `min-height: 52px` so they all share a stable height. At narrow
+  mobile (≤460px) the chips drop to a single column with extra
+  padding so each one gets full row width and the longer labels stop
+  wrapping awkwardly. The "EXAMPLES" pill label keeps its original
+  centred-with-rules style so the chips read as visually subordinate
+  to the Objectives row above.
+
+SW cache bumped to v406.
+
 ## 0.96.0 — 2026-06-06
 
 ### Hover for the long-tail card grids (causes + illustrated grid)

@@ -237,7 +237,7 @@ window.ECONOS_TOPIC = {
       tip: { icon: '✅', tone: 'green', text: '<strong>Public vs private</strong> and <strong>profit vs not-for-profit</strong> are different distinctions – one is about ownership, the other about objectives.' },
 
       visualKey: 'firmOwnershipObjectives',
-      visualLabel: 'OWNERSHIP AND OBJECTIVES',
+      visualLabel: 'OWNERSHIP',
       visualEmoji: '\u{1F465}',
 
       comparisonTable: {

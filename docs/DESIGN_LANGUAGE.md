@@ -123,9 +123,14 @@ type is one class.
     (note-tier hover).
   - `.exam-edge` / `.key-takeaway` — the closing-pair callouts (already
     class-based); each hover deepens its own coloured glow (purple / amber).
-  - `.tone-callout` — the tip / note / tipLate inline box (round accent icon +
-    optional head + text); one `renderToneCallout` helper drives all three;
-    note-tier hover.
+  - `.tone-callout` — the tip / bottomTip / tipLate inline box (round accent
+    icon + tone-coloured head + text); one `renderToneCallout` helper drives
+    all four (also used inside `renderCardAdInteractive` and the
+    regulatory-capture explorer); note-tier hover. Each slot supplies a
+    sensible **default head** when the data doesn't specify one, so every
+    callout gets a bold uppercase label like the closing-pair callouts:
+    `tip` → "TIP", `bottomTip` → "NOTE", `tipLate` → "KEY IDEA". Data
+    authors override with `head: 'CUSTOM'` or suppress with `head: null`.
   - `.callout-band` — the conclusion (green) / balanced-note (amber) verdict bands;
     shares the **exam-edge treatment** (generous padding, subtle tone gradient,
     1.5px border + 4px left accent, 32px icon, bold label, Inter body) so the

@@ -6,6 +6,37 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.11 — 2026-06-07
+
+### Comparison tables: mobile-friendly stacked-card layout (site-wide)
+
+The `comparisonTable` block (e.g. *Sizes & Types of Firms* card 5
+"PUTTING THE TWO TOGETHER") was rendered as a fixed 3-column grid
+with a 140 px row-label column on every viewport. On a phone that
+left ~125 px per data column, which squashed real sentences like
+"Public organisations are usually service-led rather than
+profit-maximising" into thin vertical strips with cut-off words.
+
+Restructured the renderer to emit semantic classes
+(`.econ-cmp` / `.econ-cmp__row` / `.econ-cmp__cell` / etc.) carrying
+the per-column tone as CSS custom properties, and added a stylesheet
+(`styles.css` "Comparison table") that:
+
+* **Desktop** — keeps the existing grid layout (row-label column + one
+  fr per data column, tinted column headers, alternating row bg,
+  highlighted cells in tone colour).
+* **Mobile (≤640 px)** — collapses each row into a stacked card: the
+  row label becomes a tinted header strip, then each value cell
+  stacks below with the column name shown as a small tone-coloured
+  uppercase label above it (Private sector / Public sector), and a
+  4 px tone-coloured left border. Cells get full row width to breathe
+  and long sentences read at the normal mobile size.
+
+Applies to all 15 `comparisonTable` instances across the site
+(Theme 2 inflation, consumption, employment, AD, trade cycle … plus
+Theme 3 sizes & types of firms) without per-card edits. SW cache
+bumped to v415.
+
 ## 0.96.10 — 2026-06-07
 
 ### Supply chain: all left-side grey arrows now point LEFT

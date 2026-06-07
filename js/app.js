@@ -5488,29 +5488,39 @@
       })() : ''}
 
       ${(() => {
+        /* Comparison table — desktop renders as a grid (row-label column +
+           one fr per data column). On narrow mobile (<=640px) the structural
+           CSS in styles.css collapses each row into a stacked card with the
+           column name shown inline next to each cell value, so narrow
+           sentences like "Public organisations are usually service-led
+           rather than profit-maximising" get the full row width to breathe.
+           See ".econ-cmp" in styles.css. */
         const renderComparisonTable = (ct) => {
           const colTones = (ct.columnTones || []).map(t => PATTERN_TONES[t] || PATTERN_TONES.blue);
           const colLabel = genSecLabel(ct.emoji || '↔️', ct.title || 'How they compare');
+          const ctGrid = `140px repeat(${ct.columns.length}, 1fr)`;
           const headerCells = ct.columns.map((col, i) => {
             const t = colTones[i] || PATTERN_TONES.blue;
-            return `<div style="padding:11px 10px;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:${t.label};text-align:center;background:${t.bg};border-left:2px solid ${t.border};">${col}</div>`;
+            return `<div class="econ-cmp__col" style="--cmp-tone-label:${t.label};--cmp-tone-bg:${t.bg};--cmp-tone-border:${t.border};">${col}</div>`;
           }).join('');
-          const ctGrid = `140px repeat(${ct.columns.length}, 1fr)`;
           const bodyRows = (ct.rows || []).map((row, ri) => {
-            const bg = ri % 2 === 0 ? '#fff' : '#F8FAFC';
             const cells = (row.values || []).map((val, ci) => {
               const t = colTones[ci] || PATTERN_TONES.blue;
               const hl = row.highlights && row.highlights[ci];
-              return `<div style="padding:10px 10px;font-size:var(--fs-sm);color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid var(--econ-border);line-height:var(--lh-normal);">${val}</div>`;
+              const colName = ct.columns[ci] || '';
+              return `<div class="econ-cmp__cell${hl ? ' is-hl' : ''}" style="--cmp-tone-label:${t.label};--cmp-tone-bg:${t.bg};--cmp-tone-border:${t.border};">
+                <span class="econ-cmp__cell-label">${colName}</span>
+                <span class="econ-cmp__cell-val">${val}</span>
+              </div>`;
             }).join('');
-            return `<div style="display:grid;grid-template-columns:${ctGrid};background:${bg};border-bottom:1px solid var(--econ-border);">
-              <div style="padding:10px 12px;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--econ-ink);display:flex;align-items:center;gap:6px;line-height:1.4;">${row.label}</div>
+            return `<div class="econ-cmp__row${ri % 2 ? ' is-alt' : ''}" style="--cmp-cols:${ctGrid};">
+              <div class="econ-cmp__rowlabel">${row.label}</div>
               ${cells}
             </div>`;
           }).join('');
-          return `${colLabel}<div style="border-radius:var(--r-lg);border:1px solid var(--econ-border);overflow:hidden;margin-bottom:20px;">
-            <div style="display:grid;grid-template-columns:${ctGrid};background:#F8FAFC;border-bottom:2px solid var(--econ-border);border-radius:var(--r-lg) 12px 0 0;">
-              <div style="padding:10px 12px;"></div>
+          return `${colLabel}<div class="econ-cmp">
+            <div class="econ-cmp__header" style="--cmp-cols:${ctGrid};">
+              <div class="econ-cmp__corner"></div>
               ${headerCells}
             </div>
             ${bodyRows}

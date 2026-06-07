@@ -14421,3 +14421,113 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
     margin: 0 auto;
   }
 }
+
+/* ────────────────────────────────────────────────────────────
+   Comparison table (.econ-cmp) — desktop renders as a CSS Grid
+   (one row-label column + one fr per data column). At ≤640px
+   each row collapses into a stacked card: row label as a tinted
+   header strip, then one mini-row per cell showing the column
+   name + the value. So narrow sentences get the full mobile
+   width rather than being squeezed into ~125 px columns.
+
+   Per-column tone is carried on each cell via CSS custom
+   properties (--cmp-tone-label / --cmp-tone-bg / --cmp-tone-border)
+   set inline by the renderer.
+   ──────────────────────────────────────────────────────────── */
+.econ-cmp {
+  border-radius: var(--r-lg);
+  border: 1px solid var(--econ-border);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.econ-cmp__header {
+  display: grid;
+  grid-template-columns: var(--cmp-cols);
+  background: var(--econ-slate-50, #F8FAFC);
+  border-bottom: 2px solid var(--econ-border);
+}
+.econ-cmp__corner { padding: 10px 12px; }
+.econ-cmp__col {
+  padding: 11px 10px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-extrabold);
+  color: var(--cmp-tone-label);
+  text-align: center;
+  background: var(--cmp-tone-bg);
+  border-left: 2px solid var(--cmp-tone-border);
+}
+.econ-cmp__row {
+  display: grid;
+  grid-template-columns: var(--cmp-cols);
+  background: #fff;
+  border-bottom: 1px solid var(--econ-border);
+}
+.econ-cmp__row:last-child { border-bottom: 0; }
+.econ-cmp__row.is-alt { background: var(--econ-slate-50, #F8FAFC); }
+.econ-cmp__rowlabel {
+  padding: 10px 12px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--econ-ink);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.4;
+}
+.econ-cmp__cell {
+  padding: 10px 10px;
+  font-size: var(--fs-sm);
+  color: #334155;
+  text-align: center;
+  border-left: 1px solid var(--econ-border);
+  line-height: var(--lh-normal);
+}
+.econ-cmp__cell.is-hl {
+  color: var(--cmp-tone-label);
+  font-weight: 700;
+}
+/* On desktop the inline column label inside each cell is redundant
+   (header row already shows it) — hide it. */
+.econ-cmp__cell-label { display: none; }
+
+/* Mobile: stacked-card layout. */
+@media (max-width: 640px) {
+  .econ-cmp__header { display: none; }
+  .econ-cmp__row {
+    display: block;
+    border-bottom: 1px solid var(--econ-border);
+  }
+  .econ-cmp__row.is-alt { background: #fff; }
+  .econ-cmp__rowlabel {
+    background: var(--econ-slate-50, #F8FAFC);
+    padding: 10px 14px;
+    font-size: var(--fs-base);
+    border-bottom: 1px solid var(--econ-border);
+  }
+  .econ-cmp__cell {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+    text-align: left;
+    padding: 12px 14px;
+    border-left: 4px solid var(--cmp-tone-border);
+    background: var(--cmp-tone-bg);
+  }
+  .econ-cmp__cell + .econ-cmp__cell {
+    border-top: 1px solid var(--econ-border);
+  }
+  .econ-cmp__cell-label {
+    display: block;
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-extrabold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cmp-tone-label);
+  }
+  .econ-cmp__cell-val { color: var(--econ-ink); }
+  .econ-cmp__cell.is-hl .econ-cmp__cell-val {
+    color: var(--cmp-tone-label);
+    font-weight: 700;
+  }
+}

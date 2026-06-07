@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.18 — 2026-06-07
+
+### Demergers Card 1: redesigned before/after diagram (desktop + mobile)
+
+`demergerBeforeAfter` was cramming Parent + 3 divisions on the left,
+then NCo1 + NCo2 + 3 divisions side-by-side on the right — which
+truncated "New co 2" at the right edge and rendered as a tiny
+illegible thumbnail on mobile. Rebuilt with two layouts:
+
+* **Desktop ≥601px (`.dba-h`)** — Before tree (Parent → 3 divisions
+  in a row) on the left, Spin-off arrow with its label in a white
+  pill in the middle, After panel on the right **stacked
+  vertically**: New company 1 + Div A + Div B on top, New company 2
+  + Div C below. Both new firms now show their full names
+  ("New company 1/2 · Focused business") with no truncation.
+* **Mobile ≤600px (`.dba-v`)** — full vertical flow: Before block
+  (Parent + 3 divs) at the top, ↓ Spin-off arrow ↓, then After
+  with NCo1 + (A + B) and NCo2 + (C) stacked below. Every label
+  legible at iPhone widths.
+
+Cache bump (icons.js change): v418.
+
 ## 0.96.17 — 2026-06-07
 
 ### Business Growth Card 4: redesigned horizontal-integration diagram

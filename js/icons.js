@@ -18002,103 +18002,209 @@ window.ECONOS_ICONS = {
   /* demergerBeforeAfter – Card 1 of Demergers (3.1.3). Two-panel before/after
      structural tree: a diversified parent firm with three division leaves
      becomes (via a spin-off arrow) two focused firms with the divisions
-     reassigned. Pure SVG so the tree branches line up exactly with the
-     division leaves and the spin-off arrow sits cleanly between the panels. */
+     reassigned. Two layouts:
+       - .dba-h (desktop ≥601px): Before tree on the left (parent → 3
+         divisions in a row), spin-off arrow in the middle, After
+         panel on the right STACKED vertically — New company 1 + Div A
+         + Div B in the top half, New company 2 + Div C in the bottom
+         half. Stacking gives each new firm room for its name and tree
+         without truncation.
+       - .dba-v (mobile ≤600px): full vertical flow — Before block on
+         top, ↓ Spin-off ↓, then After with NCo1 + its divs and NCo2
+         + its div stacked below. */
   demergerBeforeAfter: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <style>
+        .dba-v { display:none; }
+        @media (max-width:600px){
+          .dba-h { display:none; }
+          .dba-v { display:block; }
+        }
+      </style>
+      <div class="dba-h">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
           <marker id="dba-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
         </defs>
 
         <!-- Section labels -->
-        <text x="200" y="26" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">Before</text>
-        <text x="620" y="26" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">After</text>
+        <text x="180" y="22" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">Before</text>
+        <text x="620" y="22" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">After</text>
 
-        <!-- ============ BEFORE PANEL ============ -->
+        <!-- ============ BEFORE PANEL (centred vertically) ============ -->
         <!-- Parent business -->
-        <rect x="60" y="44" width="280" height="76" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
-        <circle cx="98" cy="82" r="20" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
-        <text x="98" y="89" font-size="22" text-anchor="middle">🏛️</text>
-        <text x="130" y="78" font-size="14" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Parent business</text>
-        <text x="130" y="98" font-size="12" fill="#475569" font-family="Inter,sans-serif">Diversified firm</text>
+        <rect x="20" y="120" width="320" height="76" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <circle cx="60" cy="158" r="20" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+        <text x="60" y="165" font-size="22" text-anchor="middle">🏛️</text>
+        <text x="94" y="154" font-size="14" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Parent business</text>
+        <text x="94" y="174" font-size="12" fill="#475569" font-family="Inter,sans-serif">Diversified firm</text>
 
-        <!-- Connecting vertical from parent down -->
-        <line x1="200" y1="120" x2="200" y2="158" stroke="#94A3B8" stroke-width="1.6"/>
-        <!-- Horizontal manifold -->
-        <line x1="100" y1="158" x2="300" y2="158" stroke="#94A3B8" stroke-width="1.6"/>
-        <!-- Drops to each division -->
-        <line x1="100" y1="158" x2="100" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
-        <line x1="200" y1="158" x2="200" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
-        <line x1="300" y1="158" x2="300" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
+        <!-- Tree from parent down to 3 divisions -->
+        <line x1="180" y1="196" x2="180" y2="234" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="80" y1="234" x2="280" y2="234" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="80" y1="234" x2="80" y2="272" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="180" y1="234" x2="180" y2="272" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="280" y1="234" x2="280" y2="272" stroke="#94A3B8" stroke-width="1.6"/>
 
         <!-- Division A (Retail, blue) -->
-        <circle cx="100" cy="232" r="30" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
-        <text x="100" y="241" font-size="22" text-anchor="middle">🛒</text>
-        <text x="100" y="288" font-size="12.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
-        <text x="100" y="305" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+        <circle cx="80" cy="304" r="30" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="80" y="313" font-size="22" text-anchor="middle">🛒</text>
+        <text x="80" y="360" font-size="12.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="80" y="377" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
 
         <!-- Division B (Manufacturing, green) -->
-        <circle cx="200" cy="232" r="30" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
-        <text x="200" y="241" font-size="22" text-anchor="middle">🏭</text>
-        <text x="200" y="288" font-size="12.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
-        <text x="200" y="305" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+        <circle cx="180" cy="304" r="30" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="180" y="313" font-size="22" text-anchor="middle">🏭</text>
+        <text x="180" y="360" font-size="12.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="180" y="377" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
 
         <!-- Division C (Technology, purple) -->
-        <circle cx="300" cy="232" r="30" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
-        <text x="300" y="241" font-size="22" text-anchor="middle">💻</text>
-        <text x="300" y="288" font-size="12.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
-        <text x="300" y="305" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+        <circle cx="280" cy="304" r="30" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
+        <text x="280" y="313" font-size="22" text-anchor="middle">💻</text>
+        <text x="280" y="360" font-size="12.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="280" y="377" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
 
-        <!-- ============ SPIN-OFF ARROW ============ -->
-        <line x1="358" y1="180" x2="436" y2="180" stroke="#94A3B8" stroke-width="3.6" marker-end="url(#dba-arr-grey)"/>
-        <text x="397" y="166" font-size="12" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Spin-off</text>
+        <!-- ============ SPIN-OFF ARROW (between panels, vertically centred) ============ -->
+        <!-- Label sits in a small white pill above the arrow so it never
+             clashes with the arrow stroke or surrounding tree lines. -->
+        <rect x="364" y="206" width="68" height="22" rx="11" fill="#fff" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text x="398" y="221" font-size="12" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Spin-off</text>
+        <line x1="358" y1="252" x2="436" y2="252" stroke="#94A3B8" stroke-width="3.6" marker-end="url(#dba-arr-grey)"/>
 
-        <!-- ============ AFTER PANEL ============ -->
-        <!-- New company 1 -->
-        <rect x="466" y="44" width="160" height="76" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
-        <circle cx="500" cy="82" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
-        <text x="500" y="88" font-size="20" text-anchor="middle">🏛️</text>
-        <text x="528" y="76" font-size="12.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">New company 1</text>
-        <text x="528" y="94" font-size="11" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+        <!-- ============ AFTER PANEL (right, stacked vertically) ============ -->
+        <!-- TOP HALF: New company 1 with Div A + Div B -->
+        <rect x="460" y="34" width="320" height="64" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="498" cy="66" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="498" y="73" font-size="20" text-anchor="middle">🏛️</text>
+        <text x="528" y="62" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">New company 1</text>
+        <text x="528" y="82" font-size="11.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
 
         <!-- Tree NC1 → A + B -->
-        <line x1="546" y1="120" x2="546" y2="158" stroke="#94A3B8" stroke-width="1.6"/>
-        <line x1="510" y1="158" x2="586" y2="158" stroke="#94A3B8" stroke-width="1.6"/>
-        <line x1="510" y1="158" x2="510" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
-        <line x1="586" y1="158" x2="586" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
-
-        <!-- New company 2 -->
-        <rect x="660" y="44" width="100" height="76" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
-        <circle cx="690" cy="82" r="18" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
-        <text x="690" y="88" font-size="20" text-anchor="middle">🏛️</text>
-        <text x="710" y="78" font-size="12" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">New co 2</text>
-        <text x="710" y="96" font-size="10.5" fill="#475569" font-family="Inter,sans-serif">Focused</text>
-
-        <!-- Tree NC2 → C -->
-        <line x1="710" y1="120" x2="710" y2="200" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="620" y1="98" x2="620" y2="132" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="540" y1="132" x2="700" y2="132" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="540" y1="132" x2="540" y2="170" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="700" y1="132" x2="700" y2="170" stroke="#94A3B8" stroke-width="1.6"/>
 
         <!-- Division A (Retail, blue) -->
-        <circle cx="510" cy="232" r="28" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
-        <text x="510" y="240" font-size="20" text-anchor="middle">🛒</text>
-        <text x="510" y="284" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
-        <text x="510" y="300" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+        <circle cx="540" cy="198" r="26" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="540" y="207" font-size="20" text-anchor="middle">🛒</text>
+        <text x="540" y="248" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="540" y="264" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
 
         <!-- Division B (Manufacturing, green) -->
-        <circle cx="586" cy="232" r="28" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
-        <text x="586" y="240" font-size="20" text-anchor="middle">🏭</text>
-        <text x="586" y="284" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
-        <text x="586" y="300" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+        <circle cx="700" cy="198" r="26" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="700" y="207" font-size="20" text-anchor="middle">🏭</text>
+        <text x="700" y="248" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="700" y="264" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+
+        <!-- BOTTOM HALF: New company 2 with Div C -->
+        <rect x="460" y="300" width="320" height="64" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+        <circle cx="498" cy="332" r="18" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+        <text x="498" y="339" font-size="20" text-anchor="middle">🏛️</text>
+        <text x="528" y="328" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">New company 2</text>
+        <text x="528" y="348" font-size="11.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+
+        <!-- Tree NC2 → C (single line to single division) -->
+        <line x1="620" y1="364" x2="620" y2="402" stroke="#94A3B8" stroke-width="1.6"/>
 
         <!-- Division C (Technology, purple) -->
-        <circle cx="710" cy="232" r="28" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
-        <text x="710" y="240" font-size="20" text-anchor="middle">💻</text>
-        <text x="710" y="284" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
-        <text x="710" y="300" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
-
-        <!-- Footer caption -->
-        <text x="400" y="354" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" font-style="italic">A diversified parent firm splits into two focused businesses, each holding a subset of the original divisions.</text>
+        <circle cx="620" cy="428" r="26" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
+        <text x="620" y="437" font-size="20" text-anchor="middle">💻</text>
+        <text x="620" y="478" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="620" y="494" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
       </svg>
+      </div>
+
+      <div class="dba-v">
+      <svg viewBox="0 0 360 880" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="dba-arr-grey-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+        </defs>
+
+        <!-- ============ BEFORE block (top) ============ -->
+        <text x="180" y="22" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">Before</text>
+
+        <!-- Parent business -->
+        <rect x="10" y="36" width="340" height="64" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <circle cx="48" cy="68" r="18" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
+        <text x="48" y="75" font-size="20" text-anchor="middle">🏛️</text>
+        <text x="80" y="64" font-size="14" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Parent business</text>
+        <text x="80" y="84" font-size="12" fill="#475569" font-family="Inter,sans-serif">Diversified firm</text>
+
+        <!-- Tree from parent down to 3 divisions -->
+        <line x1="180" y1="100" x2="180" y2="134" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="64" y1="134" x2="296" y2="134" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="64" y1="134" x2="64" y2="166" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="180" y1="134" x2="180" y2="166" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="296" y1="134" x2="296" y2="166" stroke="#94A3B8" stroke-width="1.6"/>
+
+        <!-- Division A -->
+        <circle cx="64" cy="192" r="26" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="64" y="200" font-size="20" text-anchor="middle">🛒</text>
+        <text x="64" y="240" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="64" y="256" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+
+        <!-- Division B -->
+        <circle cx="180" cy="192" r="26" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="180" y="200" font-size="20" text-anchor="middle">🏭</text>
+        <text x="180" y="240" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="180" y="256" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+
+        <!-- Division C -->
+        <circle cx="296" cy="192" r="26" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
+        <text x="296" y="200" font-size="20" text-anchor="middle">💻</text>
+        <text x="296" y="240" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="296" y="256" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+
+        <!-- ============ ↓ Spin-off arrow ============ -->
+        <text x="180" y="296" font-size="13" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Spin-off</text>
+        <line x1="180" y1="306" x2="180" y2="346" stroke="#94A3B8" stroke-width="3.6" marker-end="url(#dba-arr-grey-v)"/>
+
+        <!-- ============ AFTER block (bottom) ============ -->
+        <text x="180" y="378" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">After</text>
+
+        <!-- New company 1 (with Div A + Div B) -->
+        <rect x="10" y="392" width="340" height="60" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="44" cy="422" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="44" y="429" font-size="20" text-anchor="middle">🏛️</text>
+        <text x="76" y="418" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">New company 1</text>
+        <text x="76" y="438" font-size="11.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+
+        <!-- Tree NC1 → A + B -->
+        <line x1="180" y1="452" x2="180" y2="486" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="100" y1="486" x2="260" y2="486" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="100" y1="486" x2="100" y2="516" stroke="#94A3B8" stroke-width="1.6"/>
+        <line x1="260" y1="486" x2="260" y2="516" stroke="#94A3B8" stroke-width="1.6"/>
+
+        <!-- Div A (under NCo1) -->
+        <circle cx="100" cy="542" r="24" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="100" y="550" font-size="18" text-anchor="middle">🛒</text>
+        <text x="100" y="588" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="100" y="604" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+
+        <!-- Div B (under NCo1) -->
+        <circle cx="260" cy="542" r="24" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="260" y="550" font-size="18" text-anchor="middle">🏭</text>
+        <text x="260" y="588" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="260" y="604" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+
+        <!-- New company 2 (with Div C) -->
+        <rect x="10" y="640" width="340" height="60" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+        <circle cx="44" cy="670" r="18" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
+        <text x="44" y="677" font-size="20" text-anchor="middle">🏛️</text>
+        <text x="76" y="666" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">New company 2</text>
+        <text x="76" y="686" font-size="11.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+
+        <!-- Tree NC2 → C (single line) -->
+        <line x1="180" y1="700" x2="180" y2="754" stroke="#94A3B8" stroke-width="1.6"/>
+
+        <!-- Div C (under NCo2) -->
+        <circle cx="180" cy="780" r="24" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
+        <text x="180" y="788" font-size="18" text-anchor="middle">💻</text>
+        <text x="180" y="826" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="180" y="842" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+      </svg>
+      </div>
     </div>
   `,
 

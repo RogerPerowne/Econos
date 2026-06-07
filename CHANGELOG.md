@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.22 — 2026-06-07
+
+### Business Objectives Card 7: arrows-between-rows on mobile
+
+The `objectivesJourney` lifecycle visual (Start-up → Survival → Stable
+firm → Profit/sales/growth → Stakeholder pressure → Wider social
+goals) had broken mobile arrows — the previous CSS set each step to
+`flex-direction: row` so the rotated arrow ended up as a tiny grey
+mark on the FAR RIGHT of each row instead of in the gap between
+rows. Rebuilt the mobile step layout as a 2-column grid with
+explicit grid-template-areas: icon on the left spanning both text
+rows, title + sub stacked on the right, and the arrow getting its
+own full-width row underneath. The arrow now sits centred BETWEEN
+steps and reads as a clear "then" cue, with the last step's arrow
+hidden as before.
+
 ## 0.96.21 — 2026-06-07
 
 ### Business Objectives Card 1: centre-on-top on mobile

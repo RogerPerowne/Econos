@@ -14813,10 +14813,33 @@ window.ECONOS_ICONS = {
         .oj .oj-arrow { position:absolute; top:24px; right:-10px; font-size:20px; color:#94A3B8; line-height:1; z-index:2; }
         .oj .oj-step:last-child .oj-arrow { display:none; }
         @media (max-width:680px){
-          .oj .oj-row { grid-template-columns:1fr; gap:14px; }
-          .oj .oj-step { flex-direction:row; text-align:left; gap:14px; align-items:flex-start; padding:0; }
-          .oj .oj-disc { margin-bottom:0; }
-          .oj .oj-arrow { position:static; transform:rotate(90deg); margin:0 auto; display:block; }
+          /* Mobile: each step is a 2-col grid (icon · text-stack) with
+             the arrow living on its own row underneath so it sits BETWEEN
+             steps (pointing down via rotate) rather than off to the side. */
+          .oj .oj-row { grid-template-columns:1fr; gap:0; max-width:none; }
+          .oj .oj-step {
+            display:grid;
+            grid-template-columns:auto 1fr;
+            grid-template-areas:
+              "disc title"
+              "disc sub"
+              "arrow arrow";
+            column-gap:14px; row-gap:2px;
+            text-align:left; align-items:start; padding:0;
+          }
+          .oj .oj-disc  { grid-area:disc;  margin-bottom:0; align-self:center; }
+          .oj .oj-title { grid-area:title; align-self:end; }
+          .oj .oj-sub   { grid-area:sub;   align-self:start; }
+          .oj .oj-arrow {
+            grid-area:arrow;
+            position:static;
+            transform:rotate(90deg);
+            margin:12px auto;
+            display:block;
+            font-size:22px;
+            line-height:1;
+            color:#94A3B8;
+          }
           .oj .oj-step:last-child .oj-arrow { display:none; }
         }
       </style>

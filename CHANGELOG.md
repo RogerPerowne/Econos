@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.21 — 2026-06-07
+
+### Business Objectives Card 1: centre-on-top on mobile
+
+`businessObjectivesMap` (5-spoke hub: Survival above 2×2 grid with
+"Business objectives" core embedded in the grid) was missing the
+site-wide convention where the hub's central circle moves to the
+top on mobile. Because `.bom-center` is nested inside
+`.bom-grid-wrap` (alongside the 2×2 `.bom-grid`), the standard
+`column-reverse` trick used by the other 13 hubs doesn't reach it
+directly. Fixed by setting `display: contents` on `.bom-grid-wrap`
+on mobile so its children become direct flex children of the
+shell, then ordering: centre (−2) → Survival (−1) → four objective
+tiles (0).
+
 ## 0.96.20 — 2026-06-07
 
 ### Diagnose template: opt-in 1-column rows variant

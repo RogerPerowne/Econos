@@ -14452,9 +14452,17 @@ window.ECONOS_ICONS = {
         .bom .bom-center-emoji { font-size:28px; line-height:1; }
         .bom .bom-center-t { font-size:13px; font-weight:800; color:#0B1426; font-family:Fraunces,Georgia,serif; margin-top:5px; text-align:center; line-height:1.2; }
         @media (max-width:600px){
-          .bom .bom-top { margin-bottom:10px; } .bom .bom-top .bom-tile { width:auto; }
-          .bom .bom-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
-          .bom .bom-center { position:static; transform:none; margin:10px auto; }
+          /* Centre-on-top on mobile (site-wide hub convention).
+             .bom-center is nested inside .bom-grid-wrap, so we use
+             display:contents to flatten the wrapper and let flex
+             ordering on .bom-shell put the centre first, then
+             Survival, then the four objective tiles. */
+          .bom .bom-shell { display:flex; flex-direction:column; }
+          .bom .bom-grid-wrap { display:contents; }
+          .bom .bom-center { order:-2; position:static; transform:none; margin:6px auto 14px; }
+          .bom .bom-top { order:-1; margin-bottom:10px; }
+          .bom .bom-top .bom-tile { width:auto; }
+          .bom .bom-grid { order:0; grid-template-columns:1fr; column-gap:0; row-gap:10px; }
           .bom .bom-conn, .bom .bom-dots { display:none; }
         }
       </style>

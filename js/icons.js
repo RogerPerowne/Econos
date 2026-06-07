@@ -16712,6 +16712,156 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* lracBigPicture – Card 1 of Economies & Diseconomies of Scale.
+     The classic U-shaped LRAC curve with three labelled regions
+     (Economies of scale on the falling left, MES at the bottom,
+     Diseconomies of scale on the rising right) plus three concise
+     region tiles below the chart. Static — the comparison IS the
+     lesson. Dual layout via .lbp-h / .lbp-v toggle. */
+  lracBigPicture: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .lbp-v { display:none; }
+        @media (max-width:680px){
+          .lbp-h { display:none; }
+          .lbp-v { display:block; }
+        }
+      </style>
+      <div class="lbp-h">
+      <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE U-SHAPED STORY</text>
+
+        <!-- Region backgrounds (light tints behind the chart) -->
+        <!-- Economies region: x=80..330 -->
+        <rect x="80" y="46" width="250" height="294" fill="#ECFDF5" opacity="0.55"/>
+        <!-- MES region: x=330..480 -->
+        <rect x="330" y="46" width="150" height="294" fill="#EFF6FF" opacity="0.55"/>
+        <!-- Diseconomies region: x=480..700 -->
+        <rect x="480" y="46" width="220" height="294" fill="#FEE2E2" opacity="0.55"/>
+
+        <!-- Axes -->
+        <line x1="80" y1="46" x2="80" y2="340" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="340" x2="710" y2="340" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="36" y="50" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Average</text>
+        <text x="38" y="64" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">cost</text>
+        <text x="710" y="362" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+
+        <!-- LRAC curve: smooth U through key points -->
+        <!-- Computed earlier:
+             Q=10  c=85  → (142,102)
+             Q=20  c=60  → (204,172)
+             Q=30  c=40  → (266,228)
+             Q=40  c=28  → (328,262)
+             Q=50  c=22  → (390,278)
+             Q=60  c=22  → (452,278)   (MES region)
+             Q=70  c=28  → (514,262)
+             Q=80  c=40  → (576,228)
+             Q=90  c=60  → (638,172) -->
+        <path d="M 142 102 Q 174 132, 204 172 Q 234 204, 266 228 Q 296 248, 328 262 Q 358 274, 390 278 L 452 278 Q 484 274, 514 262 Q 544 248, 576 228 Q 606 204, 638 172" fill="none" stroke="#0B1426" stroke-width="2.6"/>
+        <!-- LRAC label -->
+        <text x="654" y="158" font-size="13" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">LRAC</text>
+
+        <!-- MES marker dot at x=420 (middle of flat region), y=278 -->
+        <circle cx="421" cy="278" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+
+        <!-- Region labels (top of chart, above the curve) -->
+        <text x="205" y="74" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Economies</text>
+        <text x="205" y="90" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">of scale</text>
+        <text x="205" y="346" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif" dy="14">Costs fall as</text>
+        <text x="205" y="346" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif" dy="30">output increases</text>
+
+        <text x="405" y="74" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Minimum</text>
+        <text x="405" y="90" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">efficient scale</text>
+        <text x="405" y="346" font-size="10.5" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif" dy="14">The lowest point on</text>
+        <text x="405" y="346" font-size="10.5" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif" dy="30">the LRAC curve</text>
+
+        <text x="590" y="74" font-size="13" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Diseconomies</text>
+        <text x="590" y="90" font-size="13" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">of scale</text>
+        <text x="590" y="346" font-size="10.5" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif" dy="14">Costs rise as it becomes</text>
+        <text x="590" y="346" font-size="10.5" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif" dy="30">harder to manage</text>
+
+        <!-- Dividing dashed verticals between regions -->
+        <line x1="330" y1="46" x2="330" y2="340" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="480" y1="46" x2="480" y2="340" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+
+        <!-- Caption italic -->
+        <text x="380" y="412" font-size="11.5" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">This curve shows long-run average cost (LRAC).</text>
+
+        <!-- Three small region tiles row -->
+        <g font-family="Inter,sans-serif">
+          <rect x="14" y="426" width="240" height="30" rx="8" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.2"/>
+          <circle cx="34" cy="441" r="10" fill="#16A34A"/>
+          <text x="34" y="445" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">▼</text>
+          <text x="52" y="445" font-size="12" font-weight="800" fill="#065F46">Economies of scale — unit costs fall</text>
+
+          <rect x="262" y="426" width="232" height="30" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.2"/>
+          <circle cx="282" cy="441" r="10" fill="#2563EB"/>
+          <text x="282" y="445" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">●</text>
+          <text x="300" y="445" font-size="12" font-weight="800" fill="#1E3A8A">MES — lowest sustainable AC</text>
+
+          <rect x="502" y="426" width="244" height="30" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.2"/>
+          <circle cx="522" cy="441" r="10" fill="#DC2626"/>
+          <text x="522" y="445" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">▲</text>
+          <text x="540" y="445" font-size="12" font-weight="800" fill="#9F1239">Diseconomies — unit costs rise</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="lbp-v">
+      <svg viewBox="0 0 360 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE U-SHAPED STORY</text>
+
+        <!-- Mobile chart -->
+        <rect x="40" y="40" width="100" height="280" fill="#ECFDF5" opacity="0.55"/>
+        <rect x="140" y="40" width="80"  height="280" fill="#EFF6FF" opacity="0.55"/>
+        <rect x="220" y="40" width="120" height="280" fill="#FEE2E2" opacity="0.55"/>
+        <line x1="40" y1="40" x2="40" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="40" y1="320" x2="346" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="12" y="36" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Average</text>
+        <text x="16" y="48" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">cost</text>
+        <text x="346" y="342" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- U-curve:
+             Map: Q 0..100 → x = 40+Q*3.06; cost 0..100 → y = 320-cost*2.66
+             Scaled key points:
+             Q=10  c=85 → (71, 94)
+             Q=20  c=60 → (101, 161)
+             Q=30  c=40 → (132, 214)
+             Q=40  c=28 → (162, 246)
+             Q=50  c=22 → (193, 262)
+             Q=60  c=22 → (224, 262)
+             Q=70  c=28 → (254, 246)
+             Q=80  c=40 → (285, 214)
+             Q=90  c=60 → (315, 161) -->
+        <path d="M 71 94 Q 86 124, 101 161 Q 116 191, 132 214 Q 147 232, 162 246 Q 178 256, 193 262 L 224 262 Q 240 256, 254 246 Q 270 232, 285 214 Q 300 191, 315 161" fill="none" stroke="#0B1426" stroke-width="2.4"/>
+        <text x="320" y="148" font-size="11" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">LRAC</text>
+        <circle cx="208" cy="262" r="5" fill="#2563EB" stroke="#fff" stroke-width="1.8"/>
+        <line x1="140" y1="40" x2="140" y2="320" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="220" y1="40" x2="220" y2="320" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <!-- Region tiles below -->
+        <g font-family="Inter,sans-serif">
+          <rect x="10" y="350" width="340" height="62" rx="9" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.3"/>
+          <circle cx="30" cy="380" r="11" fill="#16A34A"/>
+          <text x="30" y="384" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">▼</text>
+          <text x="48" y="376" font-size="12.5" font-weight="800" fill="#065F46">Economies of scale</text>
+          <text x="48" y="396" font-size="11.5" fill="#0B1426">Unit costs fall as the firm grows.</text>
+
+          <rect x="10" y="422" width="340" height="62" rx="9" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.3"/>
+          <circle cx="30" cy="452" r="11" fill="#2563EB"/>
+          <text x="30" y="456" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">●</text>
+          <text x="48" y="448" font-size="12.5" font-weight="800" fill="#1E3A8A">Minimum efficient scale (MES)</text>
+          <text x="48" y="468" font-size="11.5" fill="#0B1426">The lowest sustainable average cost.</text>
+
+          <rect x="10" y="494" width="340" height="62" rx="9" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.3"/>
+          <circle cx="30" cy="524" r="11" fill="#DC2626"/>
+          <text x="30" y="528" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">▲</text>
+          <text x="48" y="520" font-size="12.5" font-weight="800" fill="#9F1239">Diseconomies of scale</text>
+          <text x="48" y="540" font-size="11.5" fill="#0B1426">Unit costs rise — managing gets harder.</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

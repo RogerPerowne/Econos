@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.29 — 2026-06-07
+
+### Economies & Diseconomies of Scale: Card 1 of 6 (big picture)
+
+Topic (Edexcel A 3.3.3) was a placeholder stub. Started the
+full 6-card build with Card 1 "The big picture" plus a proper
+topic intro. Cards 2-6 will ship in subsequent versions following
+the ChatGPT mockup brief — two 5-spoke hubs (internal economies
+on Card 2, diseconomies on Card 3), an MES-with-industries chart
+on Card 4, a twin-pair external economies/diseconomies diagram
+on Card 5, and a synthesis flow chain on Card 6.
+
+* New visual `lracBigPicture` (Card 1 hero) — the classic
+  U-shaped LRAC curve plotted as a smooth Bezier with three
+  shaded regions tinted by tone (economies green left, MES blue
+  middle, diseconomies red right). Region labels above the
+  curve and short captions below the x-axis. A MES marker dot
+  sits at the bottom of the curve. Three summary tiles below
+  the chart give the one-line definition of each region.
+* Card 1 blocks: green tip ("the shape is U"), hero chart, WHY
+  COSTS CHANGE 4-step flow chain (Bigger scale → Specialisation
+  → Lower unit cost → But complexity can reverse this), blue
+  bottom-tip, big idea, exam edge.
+* Topic intro rewritten with real summary, outcomes and stages
+  (6 cards · 15 min).
+
+Cache bump (icons.js change): v428.
+
 ## 0.96.28 — 2026-06-07
 
 ### Costs Cards 2-7 complete — full topic done

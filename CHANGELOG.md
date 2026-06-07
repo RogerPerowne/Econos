@@ -6,6 +6,46 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.26 — 2026-06-07
+
+### Revenue topic Cards 3-6 — full topic complete
+
+Shipped the remaining four cards of the Revenue topic in one
+batch, taking it from 1/6 to 6/6 complete.
+
+* **Card 3 — Average revenue** (`averageRevenueInteractive`)
+  Two-view interactive on a linear demand curve (P = 17 - 0.1Q):
+  view A reveals Point A at (£12, 50) with the worked-example
+  panel showing TR = £600, AR = £12; view B reveals Point B at
+  (£10, 70) with TR = £700, AR = £10. The teaching point is the
+  identity AR = P at every point on demand. WHY IT MATTERS uses
+  the flow-chain block with → arrows.
+* **Card 4 — Marginal revenue** (`marginalRevenueInteractive`)
+  Two-view interactive combining a 5-row worked table (output 1-5,
+  price 10→6, TR 10→30, MR 8→6→4→2) with an AR/MR diagram below.
+  View 1 reveals the table + the AR (blue) curve; view 2 overlays
+  the MR (red) curve plus the "MR sits below AR because the price
+  cut applies to ALL units" caption. MR is plotted at the
+  half-integer outputs (1.5/2.5/3.5/4.5) where the discrete MR
+  values actually sit. WHY FIRMS USE MR is a flow chain.
+* **Card 5 — Revenue and price elasticity** (`revenueElasticityTriptych`)
+  Three side-by-side regime panels (Elastic / Unit elastic /
+  Inelastic) each carrying a mini D-curve sketch, the PED rule,
+  the % change rule, and the TR rule. PRICING DECISIONS IN
+  PRACTICE below with three case studies: train tickets (likely
+  elastic), luxury clothing (close to unit elastic), bottled
+  water (inelastic). Static (no reveal) — the comparison IS the
+  lesson; an interactive step-through would slow it down.
+* **Card 6 — The whole revenue story**
+  Synthesis card using only existing engine blocks. A 6-step
+  flow chain (Price decision → PED → Quantity sold → TR → AR →
+  MR), a 3-tile WHEN TO USE EACH MEASURE grid, a 4-tile COMMON
+  MISTAKES grid (rose tone). No new bespoke visual.
+
+All three new bespoke visuals ship with the standard `.h`/`.v`
+dual-layout pattern so they stack cleanly on iPhone widths.
+Cache bump (icons.js change): v425.
+
 ## 0.96.25 — 2026-06-07
 
 ### Revenue Card 2 — polish pass

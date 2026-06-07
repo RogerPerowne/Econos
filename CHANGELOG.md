@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.17 — 2026-06-07
+
+### Business Growth Card 4: redesigned horizontal-integration diagram
+
+`horizontalCombineDiagram` was cramming five elements in one row
+(Firm A · + · Firm B · → · Combined firm · benefit column) which
+truncated the right-hand benefit copy on narrow screens. Rebuilt
+with two layouts:
+
+* **Desktop ≥601px (`.hci-h`)** — Firm A and Firm B are now stacked
+  on the left with the + sign between them, freeing the centre
+  for a wider Combined firm and the right for a benefits column
+  that no longer clips. The "A + B → Combined" equation still
+  reads cleanly, just vertically on the left.
+* **Mobile ≤600px (`.hci-v`)** — full vertical flow: A and B
+  side-by-side at the top (keeps the equation legible), ↓ to
+  Combined firm, ↓ to three benefit cards stacked at full width
+  so the labels never wrap or clip.
+
+Same CSS-media toggle pattern as `verticalSupplyChain` /
+`growthRoadblockers`. Cache bump (icons.js change): v417.
+
 ## 0.96.16 — 2026-06-07
 
 ### Business Growth Card 7: mobile-friendly "Four main constraints" diagram

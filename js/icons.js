@@ -17648,64 +17648,146 @@ window.ECONOS_ICONS = {
 
   /* horizontalCombineDiagram – Card 4 of Business Growth. Firm A + Firm B
      → Combined firm, each tile a small storefront with a market-share badge.
-     Right column lists three quick benefits. Pure SVG so spacing is locked. */
+     Right column lists three quick benefits. Two layouts:
+       - .hci-h (desktop ≥601px): Firm A and Firm B stacked on the LEFT
+         with the + sign between them; arrow → Combined firm in the
+         centre; benefit column on the right. Stacked-left frees room
+         for the benefit copy to fit without truncation.
+       - .hci-v (mobile ≤600px): full vertical flow — A + B side-by-side
+         at the top reads as the equation; ↓ to Combined firm; ↓ to
+         three benefit cards stacked at full width.
+     Pure SVG so spacing is locked. */
   horizontalCombineDiagram: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <style>
+        .hci-v { display:none; }
+        @media (max-width:600px){
+          .hci-h { display:none; }
+          .hci-v { display:block; }
+        }
+      </style>
+      <div class="hci-h">
+      <svg viewBox="0 0 760 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
           <marker id="hci-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
         </defs>
 
-        <!-- Firm A -->
-        <rect x="14" y="34" width="132" height="200" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
-        <text x="80" y="60" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm A</text>
-        <text x="80" y="78" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
-        <text x="80" y="138" font-size="44" text-anchor="middle">🏪</text>
-        <text x="80" y="190" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
-        <text x="80" y="216" font-size="22" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
+        <!-- Firm A (top of left column) -->
+        <rect x="14" y="14" width="140" height="116" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="84" y="38" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm A</text>
+        <text x="84" y="54" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="84" y="90" font-size="30" text-anchor="middle">🏪</text>
+        <text x="84" y="108" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="84" y="124" font-size="16" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
 
-        <!-- + sign -->
-        <circle cx="172" cy="134" r="16" fill="#fff" stroke="#94A3B8" stroke-width="1.6"/>
-        <text x="172" y="141" font-size="22" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">+</text>
+        <!-- + sign between stacked left tiles -->
+        <circle cx="84" cy="146" r="14" fill="#fff" stroke="#94A3B8" stroke-width="1.6"/>
+        <text x="84" y="153" font-size="20" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">+</text>
 
-        <!-- Firm B -->
-        <rect x="198" y="34" width="132" height="200" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
-        <text x="264" y="60" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm B</text>
-        <text x="264" y="78" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
-        <text x="264" y="138" font-size="44" text-anchor="middle">🏪</text>
-        <text x="264" y="190" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
-        <text x="264" y="216" font-size="22" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
+        <!-- Firm B (bottom of left column) -->
+        <rect x="14" y="162" width="140" height="116" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="84" y="186" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm B</text>
+        <text x="84" y="202" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="84" y="238" font-size="30" text-anchor="middle">🏪</text>
+        <text x="84" y="256" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="84" y="272" font-size="16" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
 
-        <!-- → arrow -->
-        <line x1="350" y1="134" x2="396" y2="134" stroke="#2563EB" stroke-width="2.6" marker-end="url(#hci-arr-blue)"/>
+        <!-- → arrow from left column to combined firm -->
+        <line x1="166" y1="146" x2="216" y2="146" stroke="#2563EB" stroke-width="2.6" marker-end="url(#hci-arr-blue)"/>
 
         <!-- Combined firm -->
-        <rect x="406" y="34" width="180" height="200" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
-        <text x="496" y="60" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Combined firm</text>
-        <text x="496" y="78" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
-        <text x="496" y="142" font-size="60" text-anchor="middle">🏬</text>
-        <text x="496" y="190" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
-        <text x="496" y="218" font-size="26" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">20%</text>
+        <rect x="230" y="34" width="190" height="226" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="325" y="62" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Combined firm</text>
+        <text x="325" y="80" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="325" y="160" font-size="60" text-anchor="middle">🏬</text>
+        <text x="325" y="210" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="325" y="240" font-size="26" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">20%</text>
 
-        <!-- Right-hand benefits column -->
+        <!-- Right-hand benefits column (lots of horizontal room now) -->
         <g font-family="Inter,sans-serif">
-          <circle cx="624" cy="62" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
-          <text x="624" y="68" font-size="16" text-anchor="middle">🥧</text>
-          <text x="650" y="58" font-size="13" font-weight="800" fill="#065F46">Larger market share</text>
-          <text x="650" y="75" font-size="11.5" fill="#475569">Bigger slice of the market.</text>
+          <circle cx="456" cy="62" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="456" y="68" font-size="16" text-anchor="middle">🥧</text>
+          <text x="482" y="58" font-size="13" font-weight="800" fill="#065F46">Larger market share</text>
+          <text x="482" y="76" font-size="12" fill="#475569">Bigger slice of the market.</text>
 
-          <circle cx="624" cy="132" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
-          <text x="624" y="138" font-size="15" text-anchor="middle">👥</text>
-          <text x="650" y="128" font-size="13" font-weight="800" fill="#065F46">Fewer rivals</text>
-          <text x="650" y="145" font-size="11.5" fill="#475569">Less competition in the industry.</text>
+          <circle cx="456" cy="146" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="456" y="152" font-size="15" text-anchor="middle">👥</text>
+          <text x="482" y="142" font-size="13" font-weight="800" fill="#065F46">Fewer rivals</text>
+          <text x="482" y="160" font-size="12" fill="#475569">Less competition in the industry.</text>
 
-          <circle cx="624" cy="202" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
-          <text x="624" y="208" font-size="15" text-anchor="middle">⚙️</text>
-          <text x="650" y="195" font-size="13" font-weight="800" fill="#065F46">Possible economies</text>
-          <text x="650" y="210" font-size="13" font-weight="800" fill="#065F46">of scale</text>
-          <text x="650" y="227" font-size="11.5" fill="#475569">Lower average costs.</text>
+          <circle cx="456" cy="230" r="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="456" y="236" font-size="15" text-anchor="middle">⚙️</text>
+          <text x="482" y="226" font-size="13" font-weight="800" fill="#065F46">Possible economies of scale</text>
+          <text x="482" y="244" font-size="12" fill="#475569">Lower average costs.</text>
         </g>
       </svg>
+      </div>
+
+      <div class="hci-v">
+      <svg viewBox="0 0 360 660" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="hci-arr-blue-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
+        </defs>
+
+        <!-- Firm A (top-left tile) -->
+        <rect x="14" y="14" width="140" height="130" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="84" y="38" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm A</text>
+        <text x="84" y="54" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="84" y="90" font-size="30" text-anchor="middle">🏪</text>
+        <text x="84" y="110" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="84" y="128" font-size="16" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
+
+        <!-- + sign between A and B -->
+        <circle cx="180" cy="79" r="14" fill="#fff" stroke="#94A3B8" stroke-width="1.6"/>
+        <text x="180" y="86" font-size="20" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">+</text>
+
+        <!-- Firm B (top-right tile) -->
+        <rect x="206" y="14" width="140" height="130" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="276" y="38" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm B</text>
+        <text x="276" y="54" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="276" y="90" font-size="30" text-anchor="middle">🏪</text>
+        <text x="276" y="110" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="276" y="128" font-size="16" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
+
+        <!-- ↓ arrow from A+B to Combined firm -->
+        <line x1="180" y1="156" x2="180" y2="194" stroke="#2563EB" stroke-width="2.6" marker-end="url(#hci-arr-blue-v)"/>
+
+        <!-- Combined firm -->
+        <rect x="80" y="206" width="200" height="172" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="180" y="232" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Combined firm</text>
+        <text x="180" y="250" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retailer</text>
+        <text x="180" y="312" font-size="50" text-anchor="middle">🏬</text>
+        <text x="180" y="348" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Market share</text>
+        <text x="180" y="372" font-size="22" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">20%</text>
+
+        <!-- ↓ arrow to benefits -->
+        <line x1="180" y1="390" x2="180" y2="426" stroke="#2563EB" stroke-width="2.6" marker-end="url(#hci-arr-blue-v)"/>
+
+        <!-- BENEFITS label -->
+        <text x="180" y="448" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.08em">BENEFITS</text>
+
+        <!-- Benefit 1: Larger market share -->
+        <rect x="14" y="460" width="332" height="56" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+        <circle cx="40" cy="488" r="14" fill="#fff" stroke="#86EFAC" stroke-width="1.4"/>
+        <text x="40" y="494" font-size="14" text-anchor="middle">🥧</text>
+        <text x="64" y="484" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Larger market share</text>
+        <text x="64" y="503" font-size="12" fill="#475569" font-family="Inter,sans-serif">Bigger slice of the market.</text>
+
+        <!-- Benefit 2: Fewer rivals -->
+        <rect x="14" y="526" width="332" height="56" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+        <circle cx="40" cy="554" r="14" fill="#fff" stroke="#86EFAC" stroke-width="1.4"/>
+        <text x="40" y="560" font-size="13" text-anchor="middle">👥</text>
+        <text x="64" y="550" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Fewer rivals</text>
+        <text x="64" y="569" font-size="12" fill="#475569" font-family="Inter,sans-serif">Less competition in the industry.</text>
+
+        <!-- Benefit 3: Possible economies of scale -->
+        <rect x="14" y="592" width="332" height="56" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+        <circle cx="40" cy="620" r="14" fill="#fff" stroke="#86EFAC" stroke-width="1.4"/>
+        <text x="40" y="626" font-size="13" text-anchor="middle">⚙️</text>
+        <text x="64" y="616" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Possible economies of scale</text>
+        <text x="64" y="635" font-size="12" fill="#475569" font-family="Inter,sans-serif">Lower average costs.</text>
+      </svg>
+      </div>
     </div>
   `,
 

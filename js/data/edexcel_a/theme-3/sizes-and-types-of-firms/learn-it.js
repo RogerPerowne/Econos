@@ -280,7 +280,7 @@ window.ECONOS_TOPIC = {
         { tone: 'amber', icon: '\u{1F4CB}', title: 'Business decisions', sub: 'Separation – the owner is not always the decision-maker.' }
       ],
 
-      pairLabel: 'WHERE CONFLICT CAN ARISE',
+      pairLabel: 'OWNERS VS MANAGERS',
       pairEmoji: '⚡',
       left: {
         tone: 'green', icon: '\u{1F3AF}', iconStyle: 'circle',

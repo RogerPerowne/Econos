@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.12 — 2026-06-07
+
+### Principal-agent: Owners vs Managers pair gets the VS badge
+
+The pair block on Card 6 of *Sizes & Types of Firms* was already
+structured as a left/right pair (green Owners / purple Managers), but
+its `pairLabel` was "WHERE CONFLICT CAN ARISE" — descriptive but
+missing the "vs" trigger, so the renderer didn't insert the VS badge
+between the two boxes. Renamed the label to "OWNERS VS MANAGERS" so
+the pair picks up the same vs-badge treatment as the other binary
+comparisons across the site. Tone bullets and mobile icon-stack-above-
+title layout were already in place. Data-only change, no SW bump.
+
 ## 0.96.11 — 2026-06-07
 
 ### Comparison tables: mobile-friendly stacked-card layout (site-wide)

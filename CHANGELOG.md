@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.23 — 2026-06-07
+
+### Revenue topic: Card 1 of 6 (the big picture)
+
+Revenue topic (Edexcel A 3.3.1) was a placeholder stub. Started
+the full build with Card 1 "Revenue – the big picture" plus
+proper topic intro and outcomes. Cards 2–6 stubbed in a comment
+in `learn-it.js`; will ship in subsequent versions following the
+6-mockup brief from ChatGPT.
+
+* New visual `revenueThreeMetrics` (Card 1 hero) — three
+  colour-coded tiles (Total revenue / Average revenue / Marginal
+  revenue), each with a numbered badge, icon disc, title, formula
+  inset and sub-label, plus an amber footer strip reinforcing
+  "all three measure revenue from sales". Dual layout: 3-up on
+  desktop (`.rtm-h`), stacked icon-left-text-right on mobile
+  (`.rtm-v`), same toggle pattern as the other Theme 3 hero
+  visuals built this session.
+* Card 1 content blocks: green tip ("revenue is not profit"),
+  hero visual, 3-tile WHY FIRMS CARE (Pricing · Sales strategy ·
+  Performance), blue bottom-tip clarifying TR/AR/MR each measure
+  a different thing, big idea, exam edge.
+* Topic intro rewritten from placeholder: real summary, do-in-
+  this, four outcomes, exam tip; stages bumped to "6 cards ·
+  14 min".
+
+Cache bump (icons.js change): v422.
+
 ## 0.96.22 — 2026-06-07
 
 ### Business Objectives Card 7: arrows-between-rows on mobile

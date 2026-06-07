@@ -14884,6 +14884,119 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* revenueThreeMetrics – Card 1 of Revenue (3.3.1) "Revenue: the big
+     picture". The three measures (Total revenue · Average revenue ·
+     Marginal revenue) shown as three numbered tiles, each carrying an
+     icon disc, the metric title, and its formula in a white inset
+     panel. A footer caption strip reinforces that all three measure
+     the same underlying thing (revenue from sales).
+     Two layouts toggle on a 600px breakpoint: .rtm-h horizontal
+     3-up on desktop, .rtm-v stacked on mobile (each tile becomes
+     icon-left + title/formula-right so the diagram stays compact
+     vertically and the formulas don't word-wrap). */
+  revenueThreeMetrics: `
+    <div style="background:#fff;border-radius:14px;padding:18px 14px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .rtm-v { display:none; }
+        @media (max-width:600px){
+          .rtm-h { display:none; }
+          .rtm-v { display:block; }
+        }
+      </style>
+      <div class="rtm-h">
+      <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Tile 1: Total revenue (blue) -->
+        <rect x="14" y="14" width="240" height="262" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <circle cx="44" cy="42" r="16" fill="#fff" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="44" y="48" font-size="14" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+        <circle cx="134" cy="92" r="34" fill="#fff" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="134" y="106" font-size="34" text-anchor="middle">💰</text>
+        <text x="134" y="160" font-size="16" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Total revenue</text>
+        <rect x="38" y="184" width="192" height="48" rx="9" fill="#fff" stroke="#BFDBFE" stroke-width="1.4"/>
+        <text x="134" y="207" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">TR = price × quantity sold</text>
+        <text x="134" y="223" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P × Q</text>
+        <text x="134" y="256" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total income from sales</text>
+
+        <!-- Tile 2: Average revenue (amber) -->
+        <rect x="266" y="14" width="240" height="262" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
+        <circle cx="296" cy="42" r="16" fill="#fff" stroke="#D97706" stroke-width="1.8"/>
+        <text x="296" y="48" font-size="14" font-weight="800" fill="#D97706" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+        <circle cx="386" cy="92" r="34" fill="#fff" stroke="#FDBA74" stroke-width="1.8"/>
+        <text x="386" y="106" font-size="34" text-anchor="middle">🏷️</text>
+        <text x="386" y="160" font-size="16" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Average revenue</text>
+        <rect x="290" y="184" width="192" height="62" rx="9" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
+        <text x="386" y="204" font-size="14" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">AR = TR ÷ quantity</text>
+        <text x="386" y="222" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">which simplifies to</text>
+        <text x="386" y="240" font-size="14" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">AR = price</text>
+        <text x="386" y="266" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">revenue per unit sold</text>
+
+        <!-- Tile 3: Marginal revenue (green) -->
+        <rect x="518" y="14" width="228" height="262" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="548" cy="42" r="16" fill="#fff" stroke="#16A34A" stroke-width="1.8"/>
+        <text x="548" y="48" font-size="14" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+        <circle cx="632" cy="92" r="34" fill="#fff" stroke="#86EFAC" stroke-width="1.8"/>
+        <text x="632" y="106" font-size="32" text-anchor="middle">📈</text>
+        <text x="632" y="160" font-size="16" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Marginal revenue</text>
+        <rect x="540" y="184" width="184" height="62" rx="9" fill="#fff" stroke="#BBF7D0" stroke-width="1.4"/>
+        <text x="632" y="204" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">MR = change in TR</text>
+        <text x="632" y="222" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">from selling one</text>
+        <text x="632" y="240" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">more unit</text>
+        <text x="632" y="266" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">ΔTR ÷ ΔQ</text>
+
+        <!-- Footer caption strip -->
+        <rect x="14" y="294" width="732" height="36" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+        <text x="380" y="317" font-size="13" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">All three measure revenue from sales</text>
+      </svg>
+      </div>
+
+      <div class="rtm-v">
+      <svg viewBox="0 0 360 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Tile 1: Total revenue (blue) - y=10-160 -->
+        <rect x="10" y="10" width="340" height="150" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <circle cx="34" cy="34" r="13" fill="#fff" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="34" y="38" font-size="12" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+        <circle cx="72" cy="86" r="28" fill="#fff" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="72" y="96" font-size="26" text-anchor="middle">💰</text>
+        <text x="120" y="60" font-size="15" font-weight="800" fill="#1E3A8A" text-anchor="start" font-family="Inter,sans-serif">Total revenue</text>
+        <rect x="118" y="74" width="222" height="42" rx="8" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
+        <text x="229" y="95" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">TR = price × quantity sold</text>
+        <text x="229" y="108" font-size="10" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P × Q</text>
+        <text x="120" y="140" font-size="11.5" fill="#475569" text-anchor="start" font-family="Inter,sans-serif">total income from sales</text>
+
+        <!-- Tile 2: Average revenue (amber) - y=176-330 -->
+        <rect x="10" y="176" width="340" height="154" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
+        <circle cx="34" cy="200" r="13" fill="#fff" stroke="#D97706" stroke-width="1.8"/>
+        <text x="34" y="204" font-size="12" font-weight="800" fill="#D97706" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+        <circle cx="72" cy="254" r="28" fill="#fff" stroke="#FDBA74" stroke-width="1.6"/>
+        <text x="72" y="264" font-size="26" text-anchor="middle">🏷️</text>
+        <text x="120" y="220" font-size="15" font-weight="800" fill="#C2410C" text-anchor="start" font-family="Inter,sans-serif">Average revenue</text>
+        <rect x="118" y="234" width="222" height="58" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+        <text x="229" y="252" font-size="13" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">AR = TR ÷ quantity</text>
+        <text x="229" y="268" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">which simplifies to</text>
+        <text x="229" y="284" font-size="13" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">AR = price</text>
+        <text x="120" y="312" font-size="11.5" fill="#475569" text-anchor="start" font-family="Inter,sans-serif">revenue per unit sold</text>
+
+        <!-- Tile 3: Marginal revenue (green) - y=346-500 -->
+        <rect x="10" y="346" width="340" height="154" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="34" cy="370" r="13" fill="#fff" stroke="#16A34A" stroke-width="1.8"/>
+        <text x="34" y="374" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+        <circle cx="72" cy="424" r="28" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="72" y="432" font-size="24" text-anchor="middle">📈</text>
+        <text x="120" y="390" font-size="15" font-weight="800" fill="#065F46" text-anchor="start" font-family="Inter,sans-serif">Marginal revenue</text>
+        <rect x="118" y="404" width="222" height="58" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
+        <text x="229" y="426" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">MR = change in TR</text>
+        <text x="229" y="442" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">from selling one more unit</text>
+        <text x="229" y="455" font-size="10" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">ΔTR ÷ ΔQ</text>
+        <text x="120" y="484" font-size="11.5" fill="#475569" text-anchor="start" font-family="Inter,sans-serif">gain from the next unit sold</text>
+
+        <!-- Footer caption strip -->
+        <rect x="10" y="520" width="340" height="44" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+        <text x="180" y="546" font-size="12.5" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">All three measure revenue from sales</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

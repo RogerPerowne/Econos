@@ -15782,6 +15782,73 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* costsHub – Card 1 of Costs (3.3.2) "Costs: the big picture".
+     Four cost-type tiles (Fixed / Variable / Average / Marginal)
+     around a central "Total cost · TC = FC + VC" pill. Mirrors
+     the firmFourLensesHub grammar exactly so the lesson feels
+     visually coherent with the rest of the site. */
+  costsHub: `
+    <div class="cohub-4" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cohub-4 .ch-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:18px; position:relative; z-index:1; }
+        .cohub-4 .ch-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .cohub-4 .ch-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .cohub-4 .ch-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .cohub-4 .ch-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
+        .cohub-4 .ch-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; min-height:124px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .cohub-4 .ch-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .cohub-4 .ch-t { font-size:14px; font-weight:800; line-height:1.2; letter-spacing:0.005em; }
+        .cohub-4 .ch-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        .cohub-4 .ch-f { font-size:11.5px; font-weight:800; line-height:1.3; margin-top:6px; padding:4px 8px; border-radius:6px; background:#fff; display:inline-block; }
+        @media (max-width:600px){
+          .cohub-4 > div { display:flex; flex-direction:column-reverse; }
+          .cohub-4 .ch-grid { grid-template-columns:1fr; column-gap:0; row-gap:12px; }
+          .cohub-4 .ch-center { position:static; transform:none; margin:6px auto; }
+          .cohub-4 .ch-center-wrap { order:99; display:flex; justify-content:center; }
+          .cohub-4 .ch-conn { display:none; }
+          .cohub-4 .ch-dots { display:none; }
+        }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="ch-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 23 C 44 23, 44 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 23 C 56 23, 56 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 77 C 44 77, 44 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 77 C 56 77, 56 50, 50 50" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="ch-dots">
+          <div class="ch-dot" style="left:36%;top:23%;background:#34D399;"></div>
+          <div class="ch-dot" style="left:64%;top:23%;background:#A78BFA;"></div>
+          <div class="ch-dot" style="left:36%;top:77%;background:#FB923C;"></div>
+          <div class="ch-dot" style="left:64%;top:77%;background:#F87171;"></div>
+        </div>
+        <div class="ch-grid">
+          <div class="ch-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="ch-ic">🔒</div>
+            <div><div class="ch-t" style="color:#065F46;">Fixed cost</div><div class="ch-s">Cost that does not change with output in the short run.</div><div class="ch-f" style="color:#065F46;border:1px solid #BBF7D0;">e.g. rent, insurance</div></div>
+          </div>
+          <div class="ch-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="ch-ic">🏷️</div>
+            <div><div class="ch-t" style="color:#5B21B6;">Average cost</div><div class="ch-s">Cost per unit of output.</div><div class="ch-f" style="color:#5B21B6;border:1px solid #DDD6FE;">AC = TC ÷ Q</div></div>
+          </div>
+          <div class="ch-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="ch-ic">📈</div>
+            <div><div class="ch-t" style="color:#C2410C;">Variable cost</div><div class="ch-s">Rises as output rises.</div><div class="ch-f" style="color:#C2410C;border:1px solid #FED7AA;">e.g. materials, hourly labour</div></div>
+          </div>
+          <div class="ch-tile" style="background:#FEE2E2;border:1.5px solid #FCA5A5;">
+            <div class="ch-ic">➕</div>
+            <div><div class="ch-t" style="color:#9F1239;">Marginal cost</div><div class="ch-s">Extra cost from one more unit.</div><div class="ch-f" style="color:#9F1239;border:1px solid #FECACA;">MC = ΔTC ÷ ΔQ</div></div>
+          </div>
+        </div>
+        <div class="ch-center-wrap"><div class="ch-center" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:50%;width:130px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
+          <div style="font-size:28px;line-height:1;">💷</div>
+          <div style="font-size:13px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:4px;text-align:center;line-height:1.2;">Total cost</div>
+          <div style="font-size:11px;color:#475569;margin-top:4px;text-align:center;line-height:1.2;">TC = FC + VC</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

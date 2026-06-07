@@ -6,6 +6,36 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.27 — 2026-06-07
+
+### Costs topic: Card 1 of 7 (the big picture)
+
+Costs topic (Edexcel A 3.3.2) was a placeholder stub. Started
+the full 7-card build with Card 1 "Costs – the big picture"
+plus a proper topic intro. Cards 2-7 are stubbed in a comment
+inside `learn-it.js` and will ship in subsequent versions
+following the 7-mockup brief from ChatGPT — with **Marco's
+Pizzeria** as the featured worked example on Card 3 (the
+average cost family).
+
+* New visual `costsHub` (Card 1 hero) — four cost-type tiles
+  (Fixed cost green · Average cost purple · Variable cost amber
+  · Marginal cost rose) around a central "Total cost · TC = FC + VC"
+  pill. Each tile carries a one-line definition and either a
+  formula (AC = TC ÷ Q, MC = ΔTC ÷ ΔQ) or an example list
+  (rent/insurance, materials/labour) in a white inset chip.
+  Mirrors the firmFourLensesHub grammar exactly so the lesson
+  feels coherent with the rest of the site. Centre moves to top
+  on mobile via the site-wide hub convention.
+* Card 1 blocks: green tip ("TC = FC + VC"), hub, WHY COSTS
+  MATTER flow chain (Pricing → Profit → Decisions), blue
+  bottom-tip ("at least one cost is fixed in the short run"),
+  big idea, exam edge.
+* Topic intro rewritten with real summary, outcomes and stages
+  (7 cards · 16 min).
+
+Cache bump (icons.js change): v426.
+
 ## 0.96.26 — 2026-06-07
 
 ### Revenue topic Cards 3-6 — full topic complete

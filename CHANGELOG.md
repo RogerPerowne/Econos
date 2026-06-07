@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.2 — 2026-06-07
+
+### Examples chips: drop 4-col to fix Public service / shield clash
+
+After bumping the examples chips' padding and font (v0.96.1), the
+4-column desktop layout left only ~166px per chip inside the
+diagram's 740px max-width container — not enough horizontal room
+for the longest label ("Public service") next to the shield icon,
+which produced an overlap where the icon visually clipped through
+the wrapping text. Dropped the desktop grid to **2 columns** always
+so every chip gets ~360px of room. Narrow mobile (≤460px) keeps the
+single-column layout. SW cache bumped to v407.
+
 ## 0.96.1 — 2026-06-07
 
 ### Tip callouts + Ownership/Objectives diagram polish

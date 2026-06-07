@@ -14874,12 +14874,16 @@ window.ECONOS_ICONS = {
         .fwn .fwn-ex-label { text-align:center; font-size:11px; color:#475569; letter-spacing:0.04em; text-transform:uppercase; font-weight:700; margin-bottom:8px; position:relative; }
         .fwn .fwn-ex-label::before, .fwn .fwn-ex-label::after { content:''; position:absolute; top:50%; width:30%; height:1px; background:#E2E8F0; }
         .fwn .fwn-ex-label::before { left:0; } .fwn .fwn-ex-label::after { right:0; }
-        .fwn .fwn-ex-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-        .fwn .fwn-ex { border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:700; min-height:52px; box-sizing:border-box; }
+        /* 2-col chips always — at the diagram's 740px max-width even a
+           4-col layout pinches the longest label ("Public service") into
+           the shield icon. 2-col gives every chip ~360px of room. */
+        .fwn .fwn-ex-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+        .fwn .fwn-ex { border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:700; min-height:52px; box-sizing:border-box; min-width:0; }
+        .fwn .fwn-ex > span { flex-shrink:0; }
         .fwn .fwn-section-label { display:flex; align-items:center; gap:8px; font-weight:800; font-size:11px; letter-spacing:0.09em; text-transform:uppercase; color:#0B1426; margin:6px 0 14px; }
         .fwn .fwn-section-label > span { font-weight:800; }
         .fwn .fwn-section-label > .fwn-section-rule { flex:1; height:1px; background:#E2E8F0; margin-left:6px; }
-        @media (max-width:680px){ .fwn .fwn-row { grid-template-columns:1fr; } .fwn .fwn-mid { padding:6px 0; } .fwn .fwn-ex-grid { grid-template-columns:repeat(2,1fr); } }
+        @media (max-width:680px){ .fwn .fwn-row { grid-template-columns:1fr; } .fwn .fwn-mid { padding:6px 0; } }
         @media (max-width:460px){ .fwn .fwn-ex-grid { grid-template-columns:1fr; } .fwn .fwn-ex { padding:14px 18px; min-height:56px; } }
       </style>
 

@@ -101,25 +101,18 @@ window.ECONOS_TOPIC = {
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Examples include <strong>opening new branches</strong>, <strong>launching new products</strong>, hiring more staff, or increasing output from existing sites.' },
 
-      causesLabel: 'WHY FIRMS LIKE IT',
-      causesEmoji: '\u{1F48E}',
-      causesCols: 4,
-      causes: [
-        { tone: 'green',  icon: '\u{1F6E1}️', head: 'Control',         body: 'Owners keep control over pace and culture.' },
-        { tone: 'blue',   icon: '\u{1F512}',  head: 'Lower risk',      body: 'No need to integrate another firm.' },
-        { tone: 'amber',  icon: '£',         head: 'Cheaper to start', body: 'Can be financed gradually from retained profit.' },
-        { tone: 'green',  icon: '\u{1F465}', head: 'Stronger culture', body: 'Existing systems and brand stay coherent.' }
-      ],
-
-      causes2Label: 'THE DRAWBACKS',
-      causes2Emoji: '⚠️',
-      causes2Cols: 4,
-      causes2: [
-        { tone: 'purple', icon: '⏳',         head: 'Slow',                  body: 'Growth can take time.' },
-        { tone: 'amber',  icon: '\u{1F3DB}️', head: 'Finance limits',  body: 'Expansion depends on internal funds or borrowing.' },
-        { tone: 'blue',   icon: '\u{1F967}', head: 'Market size',           body: 'Demand may not be large enough.' },
-        { tone: 'green',  icon: '♟️',  head: 'Competitive pressure', body: 'Rivals may react before the firm scales up.' }
-      ],
+      pairLabel: 'BENEFITS VS DRAWBACKS',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'green', iconStyle: 'circle', icon: '\u{1F48E}',
+        label: 'Why firms like it',
+        text: '<ul><li><strong>Control.</strong> Owners keep control over pace and culture.</li><li><strong>Lower risk.</strong> No need to integrate another firm.</li><li><strong>Cheaper to start.</strong> Can be financed gradually from retained profit.</li><li><strong>Stronger culture.</strong> Existing systems and brand stay coherent.</li></ul>'
+      },
+      right: {
+        tone: 'purple', iconStyle: 'circle', icon: '⚠️',
+        label: 'The drawbacks',
+        text: '<ul><li><strong>Slow.</strong> Growth can take time.</li><li><strong>Finance limits.</strong> Expansion depends on internal funds or borrowing.</li><li><strong>Market size.</strong> Demand may not be large enough.</li><li><strong>Competitive pressure.</strong> Rivals may react before the firm scales up.</li></ul>'
+      },
 
       summaryRow: { tone: 'blue', icon: '⚖️', text: 'Organic growth = <strong>slower</strong> but often <strong>safer</strong>.' },
 

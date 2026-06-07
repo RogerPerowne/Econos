@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.13 — 2026-06-07
+
+### Organic growth: benefits/drawbacks as a VS pair
+
+Same restructure as Card 3 (vertical integration) applied to Card 2
+(organic growth) of *Business Growth*. Replaced the two stacked
+single-tone tile grids (green "WHY FIRMS LIKE IT" + purple "THE
+DRAWBACKS") with a side-by-side **BENEFITS VS DRAWBACKS** pair —
+green "Why firms like it" on the left, purple "The drawbacks" on the
+right, VS badge between, tone-coloured circle icons that stack above
+the titles on mobile, and tone-coloured bullets on every bullet item.
+Data-only change, no SW bump.
+
 ## 0.96.12 — 2026-06-07
 
 ### Principal-agent: Owners vs Managers pair gets the VS badge

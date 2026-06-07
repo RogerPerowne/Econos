@@ -16862,6 +16862,487 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* internalEconomiesHub – Card 2 of Economies & Diseconomies of Scale.
+     Five internal-economies tiles (Technical / Purchasing / Managerial /
+     Financial / Marketing) around a central "Lower average cost" pill.
+     Mirrors the firmSizeMeasuresHub grammar (2x2 grid + bottom centered)
+     so the lesson feels visually coherent. */
+  internalEconomiesHub: `
+    <div class="iehub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .iehub .ih-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:14px; position:relative; z-index:1; }
+        .iehub .ih-grid > .ih-bottom { grid-column:1 / -1; display:flex; justify-content:center; margin-top:8px; }
+        .iehub .ih-bottom .ih-tile { width:42%; max-width:none; }
+        .iehub .ih-center { position:absolute; top:32%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .iehub .ih-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .iehub .ih-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .iehub .ih-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
+        .iehub .ih-tile { border-radius:13px; padding:12px 14px; display:flex; gap:12px; align-items:flex-start; min-height:96px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .iehub .ih-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .iehub .ih-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .iehub .ih-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){
+          .iehub > div { display:flex; flex-direction:column-reverse; }
+          .iehub .ih-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .iehub .ih-center { position:static; transform:none; margin:6px auto; }
+          .iehub .ih-center-wrap { order:99; display:flex; justify-content:center; }
+          .iehub .ih-bottom { margin-top:0; }
+          .iehub .ih-bottom .ih-tile { width:auto; max-width:none; flex:1; }
+          .iehub .ih-conn { display:none; }
+          .iehub .ih-dots { display:none; }
+        }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="ih-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 15 C 44 15, 44 32, 50 32" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 15 C 56 15, 56 32, 50 32" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 49 C 44 49, 44 32, 50 32" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 49 C 56 49, 56 32, 50 32" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 50 71 L 50 32" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="ih-dots">
+          <div class="ih-dot" style="left:36%;top:15%;background:#60A5FA;"></div>
+          <div class="ih-dot" style="left:64%;top:15%;background:#A78BFA;"></div>
+          <div class="ih-dot" style="left:36%;top:49%;background:#FB923C;"></div>
+          <div class="ih-dot" style="left:64%;top:49%;background:#34D399;"></div>
+          <div class="ih-dot" style="left:50%;top:71%;background:#F87171;"></div>
+        </div>
+        <div class="ih-grid">
+          <div class="ih-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="ih-ic">⚙️</div>
+            <div><div class="ih-t" style="color:#1E3A8A;">Technical economies</div><div class="ih-s">Bigger machines, specialisation, automation.</div></div>
+          </div>
+          <div class="ih-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="ih-ic">👔</div>
+            <div><div class="ih-t" style="color:#5B21B6;">Managerial economies</div><div class="ih-s">Specialist managers run different functions better.</div></div>
+          </div>
+          <div class="ih-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="ih-ic">🛒</div>
+            <div><div class="ih-t" style="color:#C2410C;">Purchasing economies</div><div class="ih-s">Buying in bulk gives bargaining power and lower input costs.</div></div>
+          </div>
+          <div class="ih-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="ih-ic">🏦</div>
+            <div><div class="ih-t" style="color:#065F46;">Financial economies</div><div class="ih-s">Bigger firms borrow cheaper — banks see them as lower risk.</div></div>
+          </div>
+          <div class="ih-bottom"><div class="ih-tile" style="background:#FEE2E2;border:1.5px solid #FCA5A5;">
+            <div class="ih-ic">📢</div>
+            <div><div class="ih-t" style="color:#9F1239;">Marketing economies</div><div class="ih-s">Advertising and branding spread across more output.</div></div>
+          </div></div>
+        </div>
+        <div class="ih-center-wrap"><div class="ih-center" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:50%;width:124px;height:124px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
+          <div style="font-size:28px;line-height:1;">📉</div>
+          <div style="font-size:12.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:4px;text-align:center;line-height:1.2;">Lower</div>
+          <div style="font-size:12.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;text-align:center;line-height:1.2;">average cost</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* diseconomiesHub – Card 3 of Economies & Diseconomies of Scale.
+     Five diseconomies tiles (Coordination / Communication / Motivation /
+     Bureaucracy / Weak control) around a central "A growing organisation"
+     pill. Same fhub-5 grammar. */
+  diseconomiesHub: `
+    <div class="dshub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .dshub .dh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:14px; position:relative; z-index:1; }
+        .dshub .dh-grid > .dh-bottom { grid-column:1 / -1; display:flex; justify-content:center; margin-top:8px; }
+        .dshub .dh-bottom .dh-tile { width:42%; max-width:none; }
+        .dshub .dh-center { position:absolute; top:32%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .dshub .dh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .dshub .dh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
+        .dshub .dh-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
+        .dshub .dh-tile { border-radius:13px; padding:12px 14px; display:flex; gap:12px; align-items:flex-start; min-height:96px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .dshub .dh-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .dshub .dh-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .dshub .dh-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){
+          .dshub > div { display:flex; flex-direction:column-reverse; }
+          .dshub .dh-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .dshub .dh-center { position:static; transform:none; margin:6px auto; }
+          .dshub .dh-center-wrap { order:99; display:flex; justify-content:center; }
+          .dshub .dh-bottom { margin-top:0; }
+          .dshub .dh-bottom .dh-tile { width:auto; max-width:none; flex:1; }
+          .dshub .dh-conn { display:none; }
+          .dshub .dh-dots { display:none; }
+        }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="dh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 15 C 44 15, 44 32, 50 32" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 15 C 56 15, 56 32, 50 32" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 49 C 44 49, 44 32, 50 32" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 49 C 56 49, 56 32, 50 32" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 50 71 L 50 32" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="dh-dots">
+          <div class="dh-dot" style="left:36%;top:15%;background:#F87171;"></div>
+          <div class="dh-dot" style="left:64%;top:15%;background:#FB923C;"></div>
+          <div class="dh-dot" style="left:36%;top:49%;background:#A78BFA;"></div>
+          <div class="dh-dot" style="left:64%;top:49%;background:#60A5FA;"></div>
+          <div class="dh-dot" style="left:50%;top:71%;background:#F87171;"></div>
+        </div>
+        <div class="dh-grid">
+          <div class="dh-tile" style="background:#FEE2E2;border:1.5px solid #FCA5A5;">
+            <div class="dh-ic">🧭</div>
+            <div><div class="dh-t" style="color:#9F1239;">Coordination problems</div><div class="dh-s">Harder to align departments and activities.</div></div>
+          </div>
+          <div class="dh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="dh-ic">📨</div>
+            <div><div class="dh-t" style="color:#C2410C;">Communication failures</div><div class="dh-s">Messages get lost, delayed or misunderstood.</div></div>
+          </div>
+          <div class="dh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="dh-ic">😴</div>
+            <div><div class="dh-t" style="color:#5B21B6;">Motivation issues</div><div class="dh-s">Workers feel less valued and less engaged.</div></div>
+          </div>
+          <div class="dh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="dh-ic">📋</div>
+            <div><div class="dh-t" style="color:#1E3A8A;">Bureaucracy</div><div class="dh-s">More rules, more approvals, slower decisions.</div></div>
+          </div>
+          <div class="dh-bottom"><div class="dh-tile" style="background:#FEE2E2;border:1.5px solid #FCA5A5;">
+            <div class="dh-ic">🛡️</div>
+            <div><div class="dh-t" style="color:#9F1239;">Weak control</div><div class="dh-s">Duplication, mistakes and gaps become more likely.</div></div>
+          </div></div>
+        </div>
+        <div class="dh-center-wrap"><div class="dh-center" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:50%;width:128px;height:128px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
+          <div style="font-size:28px;line-height:1;">🏢</div>
+          <div style="font-size:12px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:4px;text-align:center;line-height:1.2;">A growing</div>
+          <div style="font-size:12px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;text-align:center;line-height:1.2;">organisation</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* mesChart – Card 4 of Economies & Diseconomies of Scale.
+     Same LRAC U-curve as Card 1 but with MES called out explicitly
+     and labelled "lowest sustainable LRAC". Three industry-comparison
+     mini-curves (small MES / medium MES / large MES) sit underneath. */
+  mesChart: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mes-v { display:none; }
+        @media (max-width:680px){
+          .mes-h { display:none; }
+          .mes-v { display:block; }
+        }
+      </style>
+      <div class="mes-h">
+      <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE LRAC CURVE</text>
+
+        <!-- Axes -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="710" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="42" y="50" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Average</text>
+        <text x="48" y="64" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">cost</text>
+        <text x="710" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+
+        <!-- LRAC curve (same shape as Card 1) -->
+        <path d="M 142 102 Q 174 132, 204 172 Q 234 204, 266 228 Q 296 248, 328 262 Q 358 274, 390 278 L 452 278 Q 484 274, 514 262 Q 544 248, 576 228 Q 606 204, 638 172" fill="none" stroke="#0B1426" stroke-width="2.6"/>
+        <text x="654" y="158" font-size="13" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">LRAC</text>
+
+        <!-- MES region highlight: vertical band from x=380 to x=460 -->
+        <rect x="380" y="46" width="80" height="274" fill="#DBEAFE" opacity="0.55"/>
+        <line x1="380" y1="46" x2="380" y2="320" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <line x1="460" y1="46" x2="460" y2="320" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+        <!-- MES marker dot + arrow -->
+        <circle cx="421" cy="278" r="7" fill="#2563EB" stroke="#fff" stroke-width="2.2"/>
+        <line x1="421" y1="280" x2="421" y2="320" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+        <!-- Region labels above curve -->
+        <text x="225" y="76" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Economies</text>
+        <text x="225" y="92" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">of scale</text>
+        <text x="225" y="108" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">as output increases</text>
+
+        <text x="421" y="76" font-size="14" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">MES</text>
+        <text x="421" y="100" font-size="10.5" font-weight="700" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Lowest (or near-lowest)</text>
+        <text x="421" y="115" font-size="10.5" font-weight="700" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">long-run average cost</text>
+
+        <text x="585" y="76" font-size="13" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Diseconomies</text>
+        <text x="585" y="92" font-size="13" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">of scale</text>
+        <text x="585" y="108" font-size="10.5" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">as output increases</text>
+
+        <!-- x-axis tag for MES -->
+        <text x="421" y="338" font-size="10.5" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">Q at MES</text>
+
+        <text x="155" y="338" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Falling costs</text>
+        <text x="155" y="352" font-size="10" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">(as output increases)</text>
+        <text x="600" y="338" font-size="10.5" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Rising costs</text>
+        <text x="600" y="352" font-size="10" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">(as output increases)</text>
+
+        <!-- Industry comparison strip at bottom: 3 small mini-LRACs -->
+        <text x="14" y="394" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">INDUSTRY COMPARISONS</text>
+
+        <g font-family="Inter,sans-serif">
+          <!-- Small MES (local café) -->
+          <rect x="14" y="402" width="240" height="50" rx="9" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.3"/>
+          <!-- Mini chart -->
+          <path d="M 28 442 Q 38 414, 48 412 L 78 412 Q 92 414, 104 442" fill="none" stroke="#065F46" stroke-width="1.5"/>
+          <line x1="48" y1="448" x2="78" y2="448" stroke="#16A34A" stroke-width="2"/>
+          <text x="118" y="424" font-size="12" font-weight="800" fill="#065F46">Small MES</text>
+          <text x="118" y="442" font-size="11" fill="#0B1426">Local café — many small</text>
+          <text x="118" y="453" font-size="11" fill="#0B1426">firms can survive.</text>
+
+          <!-- Medium MES (supermarket) -->
+          <rect x="262" y="402" width="240" height="50" rx="9" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.3"/>
+          <path d="M 276 442 Q 290 414, 308 412 L 340 412 Q 358 414, 372 442" fill="none" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="308" y1="448" x2="340" y2="448" stroke="#D97706" stroke-width="2.5"/>
+          <text x="386" y="424" font-size="12" font-weight="800" fill="#C2410C">Medium MES</text>
+          <text x="386" y="442" font-size="11" fill="#0B1426">Supermarket chain —</text>
+          <text x="386" y="453" font-size="11" fill="#0B1426">few national players.</text>
+
+          <!-- Large MES (steel plant) -->
+          <rect x="510" y="402" width="236" height="50" rx="9" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.3"/>
+          <path d="M 524 442 Q 540 414, 562 412 L 612 412 Q 624 414, 632 442" fill="none" stroke="#9F1239" stroke-width="1.5"/>
+          <line x1="562" y1="448" x2="612" y2="448" stroke="#DC2626" stroke-width="3"/>
+          <text x="650" y="424" font-size="12" font-weight="800" fill="#9F1239">Large MES</text>
+          <text x="650" y="442" font-size="11" fill="#0B1426">Steel plant / rail —</text>
+          <text x="650" y="453" font-size="11" fill="#0B1426">very few big firms.</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="mes-v">
+      <svg viewBox="0 0 360 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Mobile LRAC chart -->
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE LRAC CURVE</text>
+        <line x1="40" y1="40" x2="40" y2="280" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="40" y1="280" x2="346" y2="280" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="12" y="36" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Average</text>
+        <text x="14" y="48" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">cost</text>
+        <text x="346" y="302" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Mobile U-curve through scaled points:
+             Map Q 0..100 → x=40+Q*3.06; cost 0..100 → y=280-cost*2.2
+             Q=10 c=85 → (71, 93)
+             Q=20 c=60 → (101, 148)
+             Q=30 c=40 → (132, 192)
+             Q=40 c=28 → (162, 218)
+             Q=50 c=22 → (193, 232)
+             Q=60 c=22 → (224, 232)
+             Q=70 c=28 → (254, 218)
+             Q=80 c=40 → (285, 192)
+             Q=90 c=60 → (315, 148) -->
+        <rect x="180" y="40" width="60" height="240" fill="#DBEAFE" opacity="0.55"/>
+        <path d="M 71 93 Q 86 121, 101 148 Q 116 170, 132 192 Q 147 206, 162 218 Q 178 226, 193 232 L 224 232 Q 240 226, 254 218 Q 270 206, 285 192 Q 300 170, 315 148" fill="none" stroke="#0B1426" stroke-width="2.4"/>
+        <text x="320" y="138" font-size="11" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">LRAC</text>
+        <circle cx="208" cy="232" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+        <text x="208" y="62" font-size="13" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">MES</text>
+        <text x="208" y="80" font-size="9.5" font-weight="700" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">lowest LRAC</text>
+        <text x="208" y="302" font-size="10" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">Q at MES</text>
+
+        <!-- Industry comparisons stacked -->
+        <text x="180" y="338" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">INDUSTRY COMPARISONS</text>
+        <g font-family="Inter,sans-serif">
+          <rect x="10" y="350" width="340" height="100" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.3"/>
+          <path d="M 30 432 Q 50 380, 70 376 L 110 376 Q 130 382, 150 432" fill="none" stroke="#065F46" stroke-width="1.8"/>
+          <line x1="70" y1="440" x2="110" y2="440" stroke="#16A34A" stroke-width="2.6"/>
+          <text x="180" y="380" font-size="13" font-weight="800" fill="#065F46">Small MES</text>
+          <text x="180" y="402" font-size="11.5" fill="#0B1426">Local café — many small</text>
+          <text x="180" y="418" font-size="11.5" fill="#0B1426">firms can survive.</text>
+
+          <rect x="10" y="460" width="340" height="100" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.3"/>
+          <path d="M 30 542 Q 56 490, 90 486 L 130 486 Q 158 492, 180 542" fill="none" stroke="#C2410C" stroke-width="1.8"/>
+          <line x1="90" y1="550" x2="130" y2="550" stroke="#D97706" stroke-width="3.2"/>
+          <text x="208" y="490" font-size="13" font-weight="800" fill="#C2410C">Medium MES</text>
+          <text x="208" y="512" font-size="11.5" fill="#0B1426">Supermarket chain — a</text>
+          <text x="208" y="528" font-size="11.5" fill="#0B1426">few national players.</text>
+
+          <rect x="10" y="570" width="340" height="100" rx="10" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.3"/>
+          <path d="M 30 652 Q 60 600, 100 596 L 160 596 Q 180 602, 190 652" fill="none" stroke="#9F1239" stroke-width="1.8"/>
+          <line x1="100" y1="660" x2="160" y2="660" stroke="#DC2626" stroke-width="3.6"/>
+          <text x="218" y="600" font-size="13" font-weight="800" fill="#9F1239">Large MES</text>
+          <text x="218" y="622" font-size="11.5" fill="#0B1426">Steel plant / rail —</text>
+          <text x="218" y="638" font-size="11.5" fill="#0B1426">very few big firms.</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* externalEconomies – Card 5 of Economies & Diseconomies of Scale.
+     Twin-pair layout: four EXTERNAL ECONOMIES tiles on the left, the
+     industry cluster in the middle, four EXTERNAL DISECONOMIES tiles
+     on the right. Mirrors the demerger before/after structural pattern
+     but as a static comparison – the contrast IS the lesson. */
+  externalEconomies: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ext-v { display:none; }
+        @media (max-width:760px){
+          .ext-h { display:none; }
+          .ext-v { display:block; }
+        }
+      </style>
+      <div class="ext-h">
+      <svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Title labels -->
+        <text x="160" y="28" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">External economies</text>
+        <text x="600" y="28" font-size="13" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">External diseconomies</text>
+
+        <!-- Centre — the industry cluster -->
+        <rect x="320" y="210" width="120" height="84" rx="14" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+        <text x="380" y="244" font-size="26" text-anchor="middle">🏭</text>
+        <text x="380" y="266" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">The industry</text>
+        <text x="380" y="282" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">cluster</text>
+
+        <!-- LEFT 4 economy tiles -->
+        <g font-family="Inter,sans-serif">
+          <rect x="14" y="50" width="290" height="84" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="42" cy="92" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="42" y="100" font-size="22" text-anchor="middle">👷</text>
+          <text x="76" y="82" font-size="13" font-weight="800" fill="#065F46">Skilled labour pool</text>
+          <text x="76" y="102" font-size="11.5" fill="#0B1426">A larger pool of workers</text>
+          <text x="76" y="118" font-size="11.5" fill="#0B1426">with the right skills.</text>
+
+          <rect x="14" y="144" width="290" height="84" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="42" cy="186" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="42" y="194" font-size="22" text-anchor="middle">🚚</text>
+          <text x="76" y="176" font-size="13" font-weight="800" fill="#065F46">Specialist suppliers</text>
+          <text x="76" y="196" font-size="11.5" fill="#0B1426">Local suppliers nearby</text>
+          <text x="76" y="212" font-size="11.5" fill="#0B1426">lower input costs.</text>
+
+          <rect x="14" y="238" width="290" height="84" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="42" cy="280" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="42" y="288" font-size="22" text-anchor="middle">🛤️</text>
+          <text x="76" y="270" font-size="13" font-weight="800" fill="#065F46">Better infrastructure</text>
+          <text x="76" y="290" font-size="11.5" fill="#0B1426">Shared roads, transport</text>
+          <text x="76" y="306" font-size="11.5" fill="#0B1426">and reliable services.</text>
+
+          <rect x="14" y="332" width="290" height="84" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="42" cy="374" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="42" y="382" font-size="22" text-anchor="middle">💡</text>
+          <text x="76" y="364" font-size="13" font-weight="800" fill="#065F46">Knowledge spillovers</text>
+          <text x="76" y="384" font-size="11.5" fill="#0B1426">Ideas and best-practice</text>
+          <text x="76" y="400" font-size="11.5" fill="#0B1426">spread between firms.</text>
+        </g>
+
+        <!-- Connecting arrows from economies to centre -->
+        <g stroke="#86EFAC" stroke-width="1.6" stroke-dasharray="4 3" fill="none">
+          <line x1="304" y1="92" x2="320" y2="232"/>
+          <line x1="304" y1="186" x2="320" y2="248"/>
+          <line x1="304" y1="280" x2="320" y2="260"/>
+          <line x1="304" y1="374" x2="320" y2="276"/>
+        </g>
+
+        <!-- RIGHT 4 diseconomy tiles -->
+        <g font-family="Inter,sans-serif">
+          <rect x="456" y="50" width="290" height="84" rx="12" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+          <circle cx="484" cy="92" r="22" fill="#fff" stroke="#FCA5A5" stroke-width="1.6"/>
+          <text x="484" y="100" font-size="22" text-anchor="middle">🚗</text>
+          <text x="518" y="82" font-size="13" font-weight="800" fill="#9F1239">Congestion</text>
+          <text x="518" y="102" font-size="11.5" fill="#0B1426">Traffic and crowded</text>
+          <text x="518" y="118" font-size="11.5" fill="#0B1426">transport raise costs.</text>
+
+          <rect x="456" y="144" width="290" height="84" rx="12" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+          <circle cx="484" cy="186" r="22" fill="#fff" stroke="#FCA5A5" stroke-width="1.6"/>
+          <text x="484" y="194" font-size="22" text-anchor="middle">🏠</text>
+          <text x="518" y="176" font-size="13" font-weight="800" fill="#9F1239">Higher rents</text>
+          <text x="518" y="196" font-size="11.5" fill="#0B1426">Property prices rise as</text>
+          <text x="518" y="212" font-size="11.5" fill="#0B1426">demand for space grows.</text>
+
+          <rect x="456" y="238" width="290" height="84" rx="12" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+          <circle cx="484" cy="280" r="22" fill="#fff" stroke="#FCA5A5" stroke-width="1.6"/>
+          <text x="484" y="288" font-size="22" text-anchor="middle">⏳</text>
+          <text x="518" y="270" font-size="13" font-weight="800" fill="#9F1239">Input shortages</text>
+          <text x="518" y="290" font-size="11.5" fill="#0B1426">High demand for the</text>
+          <text x="518" y="306" font-size="11.5" fill="#0B1426">same inputs raises prices.</text>
+
+          <rect x="456" y="332" width="290" height="84" rx="12" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+          <circle cx="484" cy="374" r="22" fill="#fff" stroke="#FCA5A5" stroke-width="1.6"/>
+          <text x="484" y="382" font-size="22" text-anchor="middle">🌫️</text>
+          <text x="518" y="364" font-size="13" font-weight="800" fill="#9F1239">Pollution and pressure</text>
+          <text x="518" y="384" font-size="11.5" fill="#0B1426">Local services strained</text>
+          <text x="518" y="400" font-size="11.5" fill="#0B1426">and clean-up costs rise.</text>
+        </g>
+
+        <!-- Connecting arrows from centre to diseconomies -->
+        <g stroke="#FCA5A5" stroke-width="1.6" stroke-dasharray="4 3" fill="none">
+          <line x1="440" y1="232" x2="456" y2="92"/>
+          <line x1="440" y1="248" x2="456" y2="186"/>
+          <line x1="440" y1="260" x2="456" y2="280"/>
+          <line x1="440" y1="276" x2="456" y2="374"/>
+        </g>
+
+        <!-- Footer caption -->
+        <text x="380" y="448" font-size="11.5" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">External effects come from the wider environment and affect all firms in the area or industry.</text>
+
+        <text x="380" y="494" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">↓ Lower average cost</text>
+        <text x="380" y="514" font-size="13" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">↑ Higher average cost</text>
+      </svg>
+      </div>
+
+      <div class="ext-v">
+      <svg viewBox="0 0 360 1180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Centre cluster -->
+        <rect x="120" y="14" width="120" height="76" rx="14" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+        <text x="180" y="44" font-size="26" text-anchor="middle">🏭</text>
+        <text x="180" y="66" font-size="11.5" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">The industry</text>
+        <text x="180" y="82" font-size="11.5" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">cluster</text>
+
+        <text x="180" y="120" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">↓ EXTERNAL ECONOMIES</text>
+
+        <g font-family="Inter,sans-serif">
+          <rect x="10" y="134" width="340" height="64" rx="11" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+          <circle cx="34" cy="166" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.4"/>
+          <text x="34" y="174" font-size="18" text-anchor="middle">👷</text>
+          <text x="62" y="160" font-size="12.5" font-weight="800" fill="#065F46">Skilled labour pool</text>
+          <text x="62" y="180" font-size="11" fill="#0B1426">Larger pool of workers with right skills.</text>
+
+          <rect x="10" y="206" width="340" height="64" rx="11" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+          <circle cx="34" cy="238" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.4"/>
+          <text x="34" y="246" font-size="18" text-anchor="middle">🚚</text>
+          <text x="62" y="232" font-size="12.5" font-weight="800" fill="#065F46">Specialist suppliers</text>
+          <text x="62" y="252" font-size="11" fill="#0B1426">Local suppliers nearby lower input costs.</text>
+
+          <rect x="10" y="278" width="340" height="64" rx="11" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+          <circle cx="34" cy="310" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.4"/>
+          <text x="34" y="318" font-size="18" text-anchor="middle">🛤️</text>
+          <text x="62" y="304" font-size="12.5" font-weight="800" fill="#065F46">Better infrastructure</text>
+          <text x="62" y="324" font-size="11" fill="#0B1426">Shared roads, transport, reliable utilities.</text>
+
+          <rect x="10" y="350" width="340" height="64" rx="11" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+          <circle cx="34" cy="382" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.4"/>
+          <text x="34" y="390" font-size="18" text-anchor="middle">💡</text>
+          <text x="62" y="376" font-size="12.5" font-weight="800" fill="#065F46">Knowledge spillovers</text>
+          <text x="62" y="396" font-size="11" fill="#0B1426">Ideas and best-practice spread.</text>
+        </g>
+
+        <text x="180" y="448" font-size="12" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">↑ EXTERNAL DISECONOMIES</text>
+
+        <g font-family="Inter,sans-serif">
+          <rect x="10" y="462" width="340" height="64" rx="11" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.4"/>
+          <circle cx="34" cy="494" r="18" fill="#fff" stroke="#FCA5A5" stroke-width="1.4"/>
+          <text x="34" y="502" font-size="18" text-anchor="middle">🚗</text>
+          <text x="62" y="488" font-size="12.5" font-weight="800" fill="#9F1239">Congestion</text>
+          <text x="62" y="508" font-size="11" fill="#0B1426">Traffic and crowded transport raise costs.</text>
+
+          <rect x="10" y="534" width="340" height="64" rx="11" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.4"/>
+          <circle cx="34" cy="566" r="18" fill="#fff" stroke="#FCA5A5" stroke-width="1.4"/>
+          <text x="34" y="574" font-size="18" text-anchor="middle">🏠</text>
+          <text x="62" y="560" font-size="12.5" font-weight="800" fill="#9F1239">Higher rents</text>
+          <text x="62" y="580" font-size="11" fill="#0B1426">Property prices rise with demand for space.</text>
+
+          <rect x="10" y="606" width="340" height="64" rx="11" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.4"/>
+          <circle cx="34" cy="638" r="18" fill="#fff" stroke="#FCA5A5" stroke-width="1.4"/>
+          <text x="34" y="646" font-size="18" text-anchor="middle">⏳</text>
+          <text x="62" y="632" font-size="12.5" font-weight="800" fill="#9F1239">Input shortages</text>
+          <text x="62" y="652" font-size="11" fill="#0B1426">High demand for same inputs raises prices.</text>
+
+          <rect x="10" y="678" width="340" height="64" rx="11" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.4"/>
+          <circle cx="34" cy="710" r="18" fill="#fff" stroke="#FCA5A5" stroke-width="1.4"/>
+          <text x="34" y="718" font-size="18" text-anchor="middle">🌫️</text>
+          <text x="62" y="704" font-size="12.5" font-weight="800" fill="#9F1239">Pollution and pressure</text>
+          <text x="62" y="724" font-size="11" fill="#0B1426">Local services strained, clean-up costs rise.</text>
+        </g>
+
+        <text x="180" y="768" font-size="11" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">External effects come from the wider environment</text>
+        <text x="180" y="784" font-size="11" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">and affect all firms in the area or industry.</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

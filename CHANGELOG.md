@@ -6,6 +6,46 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.30 — 2026-06-07
+
+### Economies & Diseconomies of Scale: Cards 2-6 complete
+
+Shipped the remaining five cards in one batch — topic now 6/6.
+
+* **Card 2 — Why costs fall (5 internal economies)**
+  New `internalEconomiesHub` visual: 5 economy tiles (⚙️ Technical,
+  👔 Managerial, 🛒 Purchasing, 🏦 Financial, 📢 Marketing) around
+  a central "Lower average cost" pill. Same fhub-5 grammar as
+  firmSizeMeasuresHub. HOW THE CHAIN WORKS flow chain + 3
+  real-world examples (supermarket bulk buying / car factory
+  automation / large firm cheaper borrowing).
+* **Card 3 — When size becomes a problem (5 diseconomies)**
+  New `diseconomiesHub` visual: 5 problem tiles (🧭 Coordination,
+  📨 Communication, 😴 Motivation, 📋 Bureaucracy, 🛡️ Weak control)
+  around a central "A growing organisation" pill. THE COST CHAIN
+  flow + HOW TO SPOT IT tile grid.
+* **Card 4 — Minimum efficient scale**
+  New `mesChart` visual: LRAC curve with MES region highlighted
+  in blue, MES marker dot at the bottom, plus three mini industry
+  comparison panels (small MES = café, medium MES = supermarket
+  chain, large MES = steel plant). WHY MES MATTERS flow.
+* **Card 5 — External economies and diseconomies**
+  New `externalEconomies` visual: twin-pair layout with 4 external
+  economy tiles on the left (skilled labour pool, specialist
+  suppliers, infrastructure, knowledge spillovers), central
+  "Industry cluster" box, and 4 diseconomy tiles on the right
+  (congestion, higher rents, input shortages, pollution). Dashed
+  connectors between tiles and the central cluster.
+* **Card 6 — The whole story**
+  Synthesis using only existing engine blocks. 6-step flow chain
+  (Output expands → Internal economies → AC falls → MES → Further
+  growth may create diseconomies → AC rises), 4-tile DON'T FORGET
+  THE LIMITS grid, Why growth can help vs Why limits matter pair.
+  No new visual.
+
+Four bespoke visuals ship with the standard mobile-stacking
+pattern so the hubs and twin-pair work cleanly on iPhone widths.
+
 ## 0.96.29 — 2026-06-07
 
 ### Economies & Diseconomies of Scale: Card 1 of 6 (big picture)

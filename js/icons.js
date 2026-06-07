@@ -17540,13 +17540,14 @@ window.ECONOS_ICONS = {
           <text x="80" y="115" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Raw</text>
           <text x="80" y="132" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">materials</text>
 
-          <line x1="148" y1="90" x2="172" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+          <!-- arrows on the LEFT side of the firm point LEFT (toward upstream) -->
+          <line x1="172" y1="90" x2="148" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
 
           <rect x="180" y="30" width="120" height="120" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
           <text x="240" y="80" font-size="32" text-anchor="middle">⚙️</text>
           <text x="240" y="123" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Components</text>
 
-          <line x1="308" y1="90" x2="332" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+          <line x1="332" y1="90" x2="308" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
 
           <rect x="340" y="22" width="120" height="136" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
           <text x="400" y="78" font-size="34" text-anchor="middle">🏭</text>

@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.10 — 2026-06-07
+
+### Supply chain: all left-side grey arrows now point LEFT
+
+The two grey arrows on the left half of the chain (Components ←
+Manufacturing, Raw materials ← Components) were still pointing right
+in the old value-flow direction, which read as "raw materials feed
+manufacturing." Flipped them both to point LEFT, matching the
+firm's-perspective reading of the diagram: from the firm outward,
+backward integration extends leftward through Components to Raw
+materials. Right-side arrows still point right. SW cache bumped to
+v414.
+
 ## 0.96.9 — 2026-06-07
 
 ### Desktop backward-integration arrow: now actually points left

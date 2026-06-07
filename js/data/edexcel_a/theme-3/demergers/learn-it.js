@@ -1,6 +1,6 @@
 /* ============================================================
    ECONOS – Demergers (Edexcel A 3.1.3)
-   5 cards · interactive-first build
+   6 cards · interactive-first build
    Maps the spec sub-points: 3.1.3a (reasons for demergers),
    3.1.3b (impact on businesses, workers and consumers).
 
@@ -11,7 +11,8 @@
      2 Decompose (6-spoke hub of motives) + flow chain + three-tile pair
      3 Side-by-side pair (Gains vs Risks) + flow + small pair
      4 Evidence-then-verdict (workers + consumers + judge) + pair + small pair
-     5 Sequential flow chain (6-step demerger story) + tile grid + tile grid + flow
+     5 Predict-then-reveal (six real-world demergers to diagnose)
+     6 Sequential flow chain (6-step demerger story) + tile grid + tile grid + flow
 
    Two new visuals share the existing hub grammar:
      - demergerBeforeAfter (pure SVG before/after tree)
@@ -23,7 +24,7 @@ window.ECONOS_TOPIC = {
   topicNum: '3.1.3',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Demergers',
-  estTime: '12 min',
+  estTime: '15 min',
   goal: 'Explain why firms demerge, and judge the impact on businesses, workers and consumers',
 
   intro: {
@@ -38,7 +39,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'A demerger is judged by outcomes, not by the fact of separation. Strong answers always link the split to a real problem it solves.',
     stages: [
-      { num: 1, name: 'Learn',  sub: '5 cards \xb7 12 min', state: 'current' },
+      { num: 1, name: 'Learn',  sub: '6 cards \xb7 15 min', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply in exam-style questions', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
@@ -52,7 +53,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'demergers-big-picture',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 1 of 5',
+      stepLabel: 'Learn: Card 1 of 6',
       title: 'Demergers – the big picture',
       lede: 'A demerger happens when a business splits part of itself into a separate company.',
       ledeStyle: 'plain',
@@ -96,7 +97,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'demergers-why-firms-demerge',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 2 of 5',
+      stepLabel: 'Learn: Card 2 of 6',
       title: 'Why firms demerge',
       lede: 'Businesses usually split because they believe separate firms will be worth more or work better apart than together.',
       ledeStyle: 'plain',
@@ -138,7 +139,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'demergers-impact-on-businesses',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 3 of 5',
+      stepLabel: 'Learn: Card 3 of 6',
       title: 'Impact on businesses',
       lede: 'A demerger can sharpen strategy and performance, but it can also create costs and risks.',
       ledeStyle: 'plain',
@@ -199,7 +200,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'demergers-impact-on-workers-and-consumers',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 4 of 5',
+      stepLabel: 'Learn: Card 4 of 6',
       title: 'Impact on workers and consumers',
       lede: 'Demergers can create winners and losers depending on whether the split improves efficiency, competition, and service.',
       ledeStyle: 'plain',
@@ -273,13 +274,78 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 – The whole story
+       CARD 5 – Diagnose the demerger
+       Pattern: Predict-then-reveal (six real-world demergers).
+       Synthesis card after all four motives + impacts have been
+       introduced — for each real deal, the student predicts the
+       primary reason then clicks for the answer. Mirrors Business
+       Growth's "Diagnose the integration" card grammar exactly.
+       ==================================================================== */
+    {
+      id: 'demergers-diagnose',
+      template: 'diagnose',
+      stepLabel: 'Learn: Card 5 of 6',
+      title: 'Diagnose the demerger',
+      lede: 'Six real-world demergers. For each one, ask yourself: <strong>what problem did the split actually solve?</strong> Then click <em>Make your call</em> to check.',
+      table: {
+        headers: ['Motive', 'How to spot it', 'The give-away'],
+        rows: [
+          ['\u{1F3AF} Sharper focus',   'Two divisions need very different strategies', 'Different R&D cycles, customer types or capital needs.'],
+          ['\u{1F48E} Unlock value',    'Sum-of-parts is worth more than the whole',    'Market re-rates the spin-off; cash returned to shareholders.'],
+          ['✂️ Remove non-core',        'Division sits outside the main mission',       'Different industries, customers or regulators under one roof.']
+        ]
+      },
+      scenarios: {
+        title: 'Six demergers to diagnose',
+        items: [
+          {
+            tone: 'amber',
+            label: '1',
+            text: '<strong>GSK → Haleon (2022).</strong> GSK, one of the world’s largest pharmaceutical companies, spun off its consumer-health arm as a separately listed FTSE 100 firm called <strong>Haleon</strong>. Haleon owns over-the-counter brands like <em>Sensodyne</em>, <em>Panadol</em>, <em>Centrum</em> and <em>Voltaren</em>; GSK kept prescription drugs and vaccines.',
+            answer: '<strong>Sharper focus.</strong> Prescription pharma (10-year drug pipelines, scientific R&D, regulator approval) and consumer healthcare (fast-moving FMCG brands, marketing-led, retail-driven) need completely different strategies, talent and capital cycles. The split lets GSK concentrate on new medicines while Haleon competes on FMCG terms.'
+          },
+          {
+            tone: 'blue',
+            label: '2',
+            text: '<strong>Whitbread → Costa Coffee (2019).</strong> Whitbread, the UK leisure group that owns <strong>Premier Inn</strong> (Britain’s biggest hotel chain, ~800 hotels), sold its <strong>Costa Coffee</strong> chain (~4,000 stores worldwide) to Coca-Cola for £3.9 billion. Whitbread returned £2.5bn of the proceeds directly to shareholders.',
+            answer: '<strong>Unlock shareholder value.</strong> The market was valuing Whitbread’s hotel-plus-coffee combination at less than the sum of its parts. Selling Costa to Coca-Cola at a premium let shareholders capture the value directly, while freeing Whitbread’s management to focus capital on expanding Premier Inn.'
+          },
+          {
+            tone: 'purple',
+            label: '3',
+            text: '<strong>Prudential → M&G (2019).</strong> <strong>Prudential plc</strong>, the historic UK insurance group, demerged its British and European savings and asset-management arm — <strong>M&G</strong> — as a separately listed FTSE 100 firm. The remaining Prudential now focuses on life insurance and savings in Asia and Africa, where the middle class is growing fastest.',
+            answer: '<strong>Remove non-core.</strong> The UK savings business (mature market, heavy domestic regulation, slow growth) and the Asian insurance business (fast-growing emerging-market middle class) needed completely different strategies, capital structures and regulators. Splitting let each compete in its own market without being held back by the other.'
+          },
+          {
+            tone: 'amber',
+            label: '4',
+            text: '<strong>Vodafone → Vantage Towers (2021).</strong> <strong>Vodafone</strong>, the global telecoms operator, spun off the physical mobile-mast infrastructure on which its network runs into a new company — <strong>Vantage Towers</strong> — listed on the Frankfurt stock exchange. Vantage owns the towers; Vodafone (and competitor networks) rent space on them.',
+            answer: '<strong>Remove non-core.</strong> Owning passive mast infrastructure is an infrastructure business — stable, utility-like, valued on long-term cash flows. Running a competitive mobile network has very different economics. Splitting them let the market price the towers correctly as infrastructure and gave Vodafone cash to cut debt.'
+          },
+          {
+            tone: 'blue',
+            label: '5',
+            text: '<strong>eBay → PayPal (2015).</strong> <strong>eBay</strong>, the online marketplace, demerged its payments arm <strong>PayPal</strong> as a separately listed company. PayPal had originally been bought by eBay in 2002 to handle marketplace payments, but had grown into a payments platform used by Uber, Apple Pay partners, banks and millions of online merchants worldwide.',
+            answer: '<strong>Unlock value.</strong> PayPal was growing far faster than eBay and being held back by being tied to it — rival merchants were reluctant to integrate a payments service owned by one of their competitors. Independence let PayPal partner freely with eBay’s rivals; within years it was worth more than eBay itself.'
+          },
+          {
+            tone: 'purple',
+            label: '6',
+            text: '<strong>Daimler → Daimler Truck (2021).</strong> <strong>Daimler</strong>, the German group that owns <strong>Mercedes-Benz</strong> luxury cars, demerged its trucks and buses arm — <strong>Daimler Truck</strong> — as a separately listed Frankfurt firm. The remaining Mercedes-Benz Group focuses on premium passenger cars; Daimler Truck makes heavy lorries, buses and coaches.',
+            answer: '<strong>Sharper focus.</strong> Cars (consumer-led, fashion-driven, premium pricing) and trucks (fleet-buyer-led, total-cost-of-ownership, brutally cyclical) have almost no overlap in customers, cycles or marketing. Splitting let each pursue its own electrification strategy without internal competition for investment.'
+          }
+        ]
+      }
+    },
+
+    /* ====================================================================
+       CARD 6 – The whole story
        Pattern: Sequential flow chain (6-step demerger story) + tile grid + tile grid + flow
        ==================================================================== */
     {
       id: 'demergers-whole-story',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 5 of 5',
+      stepLabel: 'Learn: Card 6 of 6',
       title: 'The whole story',
       lede: 'Strong answers define the demerger, explain why it happened, and then judge the effect on businesses, workers, and consumers.',
       ledeStyle: 'plain',

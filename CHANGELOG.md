@@ -6,6 +6,36 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.19 — 2026-06-07
+
+### Demergers: new "Diagnose the demerger" card (Card 5 of 6)
+
+Demergers were taught in the abstract — six motives + business/worker
+impact + synthesis — without ever naming a real deal. Added a
+`template: 'diagnose'` synthesis card after the impact card and
+before the whole-story wrap. Mirrors Business Growth's "Diagnose the
+integration" pattern: a top rule table summarising the three core
+motive types (sharper focus / unlock value / remove non-core), then
+six real-world demergers as predict-then-reveal scenario cards.
+
+* Top "rule" table — three rows summarising how to spot each
+  motive plus the give-away. Renders via the universal `.cmp-table`
+  styling so it picks up the v0.96.11 mobile stacked-card layout.
+* Six deals chosen for UK A-level resonance, distributed evenly
+  across the three motives:
+  - **Sharper focus**: GSK → Haleon (2022); Daimler → Daimler
+    Truck (2021)
+  - **Unlock value**: Whitbread → Costa Coffee (2019); eBay →
+    PayPal (2015)
+  - **Remove non-core**: Prudential → M&G (2019); Vodafone →
+    Vantage Towers (2021)
+
+Topic expands 5 → 6 cards: header comment, intro estTime
+(12 → 15 min), intro stages "6 cards · 15 min", all stepLabels
+updated, whole-story becomes Card 6.
+
+Data-only change — no cache bump needed (data files network-first).
+
 ## 0.96.18 — 2026-06-07
 
 ### Demergers Card 1: redesigned before/after diagram (desktop + mobile)

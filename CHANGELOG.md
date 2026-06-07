@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.3 — 2026-06-07
+
+### Theme 3 chains: brief descriptions on every step
+
+Spotted that several flow chains in early Theme 3 topics shipped with
+`sub: ''` on every step, so each chain rendered as just a column of
+icons + titles with no explanation of what the step actually means.
+Added a one-line sub to every empty step across five chains:
+
+* *Sizes & Types of Firms* — Card 7 "THE CHAIN" (the exam-toolkit
+  drill): all 7 steps now describe what to do at that step (e.g.
+  "Measure size → Employees, sales, output or assets.").
+* *Demergers* — four chains across cards 1, 2, 4 and 5: the causal
+  logic, the "when does it help" filter, the outcome-judgement
+  diagnostic, and the closing whole-story chain.
+
+Subs follow the existing populated style from `business-growth`:
+short, action-oriented, ends with a full stop. No code or renderer
+changes — pure data fill-in, network-first cache so no SW bump.
+
 ## 0.96.2 — 2026-06-07
 
 ### Examples chips: drop 4-col to fix Public service / shield clash

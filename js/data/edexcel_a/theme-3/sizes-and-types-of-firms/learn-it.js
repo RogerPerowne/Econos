@@ -326,13 +326,13 @@ window.ECONOS_TOPIC = {
       flowTitle: 'THE CHAIN',
       flowEmoji: '\u{1F517}',
       flow: [
-        { tone: 'green',  icon: '\u{1F4CF}', title: 'Measure size',      sub: '' },
-        { tone: 'amber',  icon: '\u{1F3F7}\u{FE0F}', title: 'Identify type',     sub: '' },
-        { tone: 'purple', icon: '\u{1F3AF}', title: 'State objective',   sub: '' },
-        { tone: 'blue',   icon: '\u{1F4C8}', title: 'Stay small or grow?', sub: '' },
-        { tone: 'green',  icon: '\u{1F511}', title: 'Who owns it?',      sub: '' },
-        { tone: 'amber',  icon: '\u{1F3DB}\u{FE0F}', title: 'Who controls it?',  sub: '' },
-        { tone: 'purple', icon: '⚖️', title: 'Judge trade-offs', sub: '' }
+        { tone: 'green',  icon: '\u{1F4CF}', title: 'Measure size',        sub: 'Employees, sales, output or assets.' },
+        { tone: 'amber',  icon: '\u{1F3F7}\u{FE0F}', title: 'Identify type',       sub: 'Private, public or not-for-profit.' },
+        { tone: 'purple', icon: '\u{1F3AF}', title: 'State objective',     sub: 'Profit, service or social mission.' },
+        { tone: 'blue',   icon: '\u{1F4C8}', title: 'Stay small or grow?', sub: 'Choice, niche or barriers to growth?' },
+        { tone: 'green',  icon: '\u{1F511}', title: 'Who owns it?',        sub: 'Individuals, shareholders or the state.' },
+        { tone: 'amber',  icon: '\u{1F3DB}\u{FE0F}', title: 'Who controls it?',    sub: 'Owners or managers — and are they aligned?' },
+        { tone: 'purple', icon: '⚖️', title: 'Judge trade-offs',           sub: 'Weigh size and structure against outcomes.' }
       ],
 
       causesLabel: 'COMMON MISTAKES',

@@ -110,10 +110,10 @@ window.ECONOS_TOPIC = {
       flowTitle: 'HOW THE LOGIC WORKS',
       flowEmoji: '\u{1F517}',
       flow: [
-        { tone: 'blue',   icon: '\u{1F3DB}️', title: 'Complex parent firm',          sub: '' },
-        { tone: 'amber',  icon: '\u{1F9E9}', title: 'Activities do not fit well together', sub: '' },
-        { tone: 'purple', icon: '✂️',         title: 'Demerger / spin-off',          sub: '' },
-        { tone: 'green',  icon: '\u{1F3E2}', title: 'More focused separate businesses', sub: '' }
+        { tone: 'blue',   icon: '\u{1F3DB}️', title: 'Complex parent firm',          sub: 'Many divisions across unrelated markets.' },
+        { tone: 'amber',  icon: '\u{1F9E9}', title: 'Activities do not fit well together', sub: 'Synergies are weak; complexity raises costs.' },
+        { tone: 'purple', icon: '✂️',         title: 'Demerger / spin-off',          sub: 'Split into legally separate businesses.' },
+        { tone: 'green',  icon: '\u{1F3E2}', title: 'More focused separate businesses', sub: 'Each focuses on its own core market.' }
       ],
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'A demerger is often chosen when <strong>the whole business is worth less together than apart</strong>.' },
@@ -172,10 +172,10 @@ window.ECONOS_TOPIC = {
       flowEmoji: '\u{1F4C8}',
       flowSep: '→',
       flow: [
-        { tone: 'green', icon: '\u{1F9E9}', title: 'Non-core division',     sub: '' },
-        { tone: 'green', icon: '⊗',         title: 'Poor strategic fit',    sub: '' },
-        { tone: 'green', icon: '\u{1F465}', title: 'Separate customer base', sub: '' },
-        { tone: 'green', icon: '⭐',         title: 'Strong management team', sub: '' }
+        { tone: 'green', icon: '\u{1F9E9}', title: 'Non-core division',     sub: 'Activity sits outside the firm’s main focus.' },
+        { tone: 'green', icon: '⊗',         title: 'Poor strategic fit',    sub: 'Different customers, skills or supply chains.' },
+        { tone: 'green', icon: '\u{1F465}', title: 'Separate customer base', sub: 'Each unit serves a different market.' },
+        { tone: 'green', icon: '⭐',         title: 'Strong management team', sub: 'Ready to lead the new firm independently.' }
       ],
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Demergers tend to work best when the split <strong>creates clearer focus</strong> without destroying major synergies.' },
@@ -252,10 +252,10 @@ window.ECONOS_TOPIC = {
       flowEmoji: '\u{1F50D}',
       flowSep: '→',
       flow: [
-        { tone: 'blue', icon: '\u{1F4CA}', title: 'Did efficiency rise?',         sub: '' },
-        { tone: 'blue', icon: '£',         title: 'Did costs fall or rise?',     sub: '' },
-        { tone: 'blue', icon: '\u{1F396}️', title: 'Did quality or choice improve?', sub: '' },
-        { tone: 'blue', icon: '\u{1F465}', title: 'Who gained most?',            sub: '' }
+        { tone: 'blue', icon: '\u{1F4CA}', title: 'Did efficiency rise?',         sub: 'Lower unit costs or better productivity?' },
+        { tone: 'blue', icon: '£',         title: 'Did costs fall or rise?',     sub: 'Net of separation and duplication costs.' },
+        { tone: 'blue', icon: '\u{1F396}️', title: 'Did quality or choice improve?', sub: 'For customers and the wider market.' },
+        { tone: 'blue', icon: '\u{1F465}', title: 'Who gained most?',            sub: 'Shareholders, workers or consumers?' }
       ],
 
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Consumers benefit only if the extra focus turns into <strong>better value, quality, or competition</strong>.' },
@@ -289,11 +289,11 @@ window.ECONOS_TOPIC = {
       flowTitle: 'THE CHAIN',
       flowEmoji: '\u{1F517}',
       flow: [
-        { tone: 'green',  icon: '\u{1F3DB}️', title: 'Diversified firm',     sub: '' },
-        { tone: 'amber',  icon: '⚠️',         title: 'Problem emerges',      sub: 'weak fit, complexity, poor performance' },
-        { tone: 'purple', icon: '\u{1F3DB}️', title: 'Demerger / spin-off',  sub: '' },
-        { tone: 'blue',   icon: '\u{1F3E2}', title: 'Focused firms',        sub: '' },
-        { tone: 'amber',  icon: '\u{1F465}', title: 'Stakeholder effects', sub: 'business, workers, consumers' },
+        { tone: 'green',  icon: '\u{1F3DB}️', title: 'Diversified firm',     sub: 'Many divisions under one parent.' },
+        { tone: 'amber',  icon: '⚠️',         title: 'Problem emerges',      sub: 'Weak fit, complexity, poor performance.' },
+        { tone: 'purple', icon: '\u{1F3DB}️', title: 'Demerger / spin-off',  sub: 'Parent splits into focused independent firms.' },
+        { tone: 'blue',   icon: '\u{1F3E2}', title: 'Focused firms',        sub: 'Each pursues its own strategy and market.' },
+        { tone: 'amber',  icon: '\u{1F465}', title: 'Stakeholder effects', sub: 'Business, workers and consumers all affected.' },
         { tone: 'green',  icon: '⚖️',         title: 'Final judgement',     sub: 'success depends on context' }
       ],
 

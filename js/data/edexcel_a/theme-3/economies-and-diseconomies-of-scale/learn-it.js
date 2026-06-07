@@ -15,10 +15,10 @@
 
    New visuals:
      - lracBigPicture          (Card 1 hero)
-     - internalEconomiesHub    (Card 2 hero) [TODO]
-     - diseconomiesHub         (Card 3 hero) [TODO]
-     - mesChart                (Card 4 hero) [TODO]
-     - externalEconomies       (Card 5 hero) [TODO]
+     - internalEconomiesHub    (Card 2 hero, 5-spoke hub)
+     - diseconomiesHub         (Card 3 hero, 5-spoke hub)
+     - mesChart                (Card 4 hero, LRAC + industry compare)
+     - externalEconomies       (Card 5 hero, twin pair)
    ============================================================ */
 
 window.ECONOS_TOPIC = {

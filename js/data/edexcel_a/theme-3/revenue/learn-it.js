@@ -16,11 +16,11 @@
      6 Sequential flow chain (6-step revenue story) + tile grids
 
    New visuals (all pure SVG so spacing is locked):
-     - revenueThreeMetrics      (Card 1 hero)
-     - totalRevenueDiagram      (Card 2 hero) [TODO]
-     - averageRevenueDiagram    (Card 3 hero) [TODO]
-     - marginalRevenueDiagram   (Card 4 hero) [TODO]
-     - revenueElasticityTriptych (Card 5 hero) [TODO]
+     - revenueThreeMetrics       (Card 1 hero)
+     - totalRevenueInteractive   (Card 2 hero, 3-view reveal)
+     - averageRevenueInteractive (Card 3 hero, 2-view reveal)
+     - marginalRevenueInteractive (Card 4 hero, 2-view reveal)
+     - revenueElasticityTriptych (Card 5 hero, static)
    ============================================================ */
 
 window.ECONOS_TOPIC = {

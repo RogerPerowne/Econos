@@ -18103,11 +18103,13 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* allocativeEfficiencyDiagram – Card 3 of Types of Efficiency.
+  /* toeAllocativeDiagram – Card 3 of Types of Efficiency.
      Demand curve (downward) and MC curve (upward) crossing at the
      allocative efficiency point P=MC. Vertical guideline to Q*,
-     horizontal guideline to P*. Right panel carries the insight. */
-  allocativeEfficiencyDiagram: `
+     horizontal guideline to P*. Right panel carries the insight.
+     (Named with toe- prefix to avoid clashing with the chart-engine
+     `allocativeEfficiencyDiagram` used by the Theme 1 CPS topic.) */
+  toeAllocativeDiagram: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
         .aed-v { display:none; }
@@ -18267,7 +18269,7 @@ window.ECONOS_ICONS = {
 
         <!-- Caption beneath both panels -->
         <rect x="14" y="294" width="732" height="22" rx="8" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
-        <text x="380" y="309" font-size="11.5" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">Innovation shifts AC down — it is just a point — it is a process of improvement over time.</text>
+        <text x="380" y="309" font-size="11.5" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">Innovation shifts AC down — dynamic efficiency is a process of improvement over time.</text>
       </svg>
       </div>
 

@@ -23,7 +23,7 @@ window.ECONOS_TOPIC = {
   topicNum: '3.1.2',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Business Growth',
-  estTime: '16 min',
+  estTime: '18 min',
   goal: 'Compare the routes to business growth, weigh their benefits and risks, and explain the constraints',
 
   intro: {

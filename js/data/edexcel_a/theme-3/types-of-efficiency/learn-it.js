@@ -15,7 +15,7 @@
    New visuals:
      - efficiencyFlywheel             (Card 1 hero)
      - productiveEfficiencyDiagram    (Card 2 hero)
-     - allocativeEfficiencyDiagram    (Card 3 hero)
+     - toeAllocativeDiagram           (Card 3 hero)
      - dynamicEfficiencyDiagram       (Card 4 hero)
    ============================================================ */
 
@@ -153,7 +153,7 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F3AF}', tone: 'green', text: '<strong>Allocative efficiency</strong> is about the right output for society — not the lowest cost.' },
 
-      visualKey: 'allocativeEfficiencyDiagram',
+      visualKey: 'toeAllocativeDiagram',
       visualLabel: 'THE DIAGRAM',
       visualEmoji: '\u{1F4CA}',
 
@@ -241,7 +241,7 @@ window.ECONOS_TOPIC = {
         icon: '\u{1F680}',
         iconStyle: 'circle',
         label: 'Long-run gain',
-        text: 'The same outweighs lower costs, better products and stronger future productivity.'
+        text: 'Pays back in lower future costs, better products and stronger long-run productivity.'
       },
 
       bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'A firm with no investment may look efficient today — but its dynamic position is weak.' },
@@ -297,7 +297,7 @@ window.ECONOS_TOPIC = {
       flowSep: '\u{2192}',
       flow: [
         { tone: 'purple', icon: '\u{1F4B0}', title: 'Supernormal profit', sub: 'Large firms can fund investment.' },
-        { tone: 'blue',   icon: '\u{1F331}', title: 'Investment',          sub: 'Some market power = scale matters — context matters.' },
+        { tone: 'blue',   icon: '\u{1F331}', title: 'Investment',          sub: 'Profit funds R&D, new equipment and training.' },
         { tone: 'green',  icon: '\u{1F4A1}', title: 'Innovation',          sub: 'New products, new methods, better quality.' },
         { tone: 'amber',  icon: '\u{1F4C8}', title: 'Possible dynamic gain', sub: 'AC may fall over time and consumers may benefit later.' }
       ],

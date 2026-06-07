@@ -101,6 +101,12 @@ Organised by archetype. Each entry: `key` — what it shows.
 - `businessGrowthMapHub` — 4-route hub (Organic / Vertical / Horizontal / Conglomerate) around "Business growth" (3.1.2 C1).
 - `conglomerateRiskHub` — 4-industry hub (Food / Travel / Media / Technology) around "One firm spreading risk" (3.1.2 C5).
 - `demergerReasonsHub` — 6 numbered motivation tiles (sharper focus / unlock value / remove non-core / reduce diseconomies / separate risk / clearer incentives) around "Demerger" (3.1.3 C2).
+- `businessObjectivesMap` — Survival on top + 4-tile grid (Sales / Profit / Growth / Social aims) with "Business objectives" core (3.1.4 C1).
+- `costsHub` — 4 cost-type tiles (FC green · VC amber · AC purple · MC rose) around "Total cost · TC = FC + VC" (3.3.2 C1).
+- `internalEconomiesHub` — 5 internal economies (Technical / Managerial / Purchasing / Financial / Marketing) around "Lower average cost" (3.3.3 C2).
+- `diseconomiesHub` — 5 diseconomies (Coordination / Communication / Motivation / Bureaucracy / Weak control) around "A growing organisation" (3.3.3 C3).
+- `efficiencyFlywheel` — 3 efficiency types (Productive / Allocative / Dynamic) around central "Efficiency" gauge with a dashed flywheel rotation ring + tiny arrows (3.4.1 C1).
+- `pcMarketHub` — 5 PC assumptions (Many buyers and sellers / Homogeneous product / Perfect information / Free entry and exit / Price takers) around "The market" (3.4.2 C1).
 
 ### 2. Spectrums / gradient bars
 *Use when:* items sit on a continuum (regimes, strengths, time horizons).
@@ -121,6 +127,8 @@ Organised by archetype. Each entry: `key` — what it shows.
 - `bopThreeAccounts` — three account boxes funnelling into the CA pill.
 - `bopCurrentAccountEquation`, `bopMatchingIdentity` — additive identities.
 - `profitEquationHero` — profit = TR − TC hero.
+- `revenueThreeMetrics` — 3-tile decompose of TR / AR / MR with formulas inset (3.3.1 C1).
+- `profitCoreEquation` — interactive 3-bar reveal of Profit = TR − TC (£120k − £95k = £25k) (3.3.4 C1).
 
 ### 5. Scorecards / dashboards / cockpits
 *Use when:* a grid of rated metrics, verdict cards, or a gauge dashboard.
@@ -136,14 +144,28 @@ Organised by archetype. Each entry: `key` — what it shows.
   `yedXedTwoLenses`, `firmLevelPcVsMonopoly`, `twoSystemsDiagram`,
   `adAsTwoOutcomes`, `pesBigPictureCompare`, `specialisationGainsCompare`,
   `marginalUtilityCompare`, `economicMixedWhoDoesWhat`, `eniTwinJW45`.
+- `whereProfitComesFrom` — Revenue side (green) vs Cost side (orange) twin with central "Revenue − cost = profit" calculator pill (3.3.4 C2).
+- `pcPerfectlyElasticDemand` — industry market (D + S) vs individual firm (horizontal AR=MR=D) twin, joined by a dashed connector showing the market price is fed across to the firm (3.4.2 C2).
+- `dynamicEfficiencyDiagram` — twin "before / after innovation" panels showing AC₁ (solid) vs AC₂ (lower, with AC₁ dashed for reference) (3.4.1 C4).
+- `externalEconomies` — 4 external economies (left) vs 4 external diseconomies (right) flanking a central "Industry cluster" (3.3.3 C5).
+- `firmOwnershipObjectives` — Ownership pair (private vs public) above Objectives pair (for-profit vs not-for-profit) with examples strip (3.1.4 C5).
 
 ### 7. Firm / cost / market-structure diagrams (THEME 3 CORE)
 *Use when:* a micro firm diagram with cost/revenue curves, profit areas,
 equilibria. These are the workhorses for Themes 3.3–3.4.
 - **Costs:** `shortRunCostStack` (TC/TFC/TVC), `lracEnvelope` (SRAC→LRAC),
-  `mcLrTangency`.
+  `mcLrTangency`, `fixedVariableTotalChart` (3.3.2 C2 — interactive TFC/TVC/TC reveal, Marco's Pizzeria), `averageCostFamilyChart` (3.3.2 C3 — interactive AFC/AVC/AC reveal), `marginalCostChart` (3.3.2 C4 — interactive table → MC curve with AC/AVC reference), `fullCostDiagram` (3.3.2 C5 — static AFC/AVC/AC/MC composite), `costDataBakery` (3.3.2 C6 — read-a-table procedure + bakery worked example).
+- **Economies of scale:** `lracBigPicture` (3.3.3 C1 — annotated U-shaped LRAC with three regions), `mesChart` (3.3.3 C4 — LRAC with MES region + small/medium/large industry mini-curves).
+- **Revenue:** `totalRevenueInteractive` (3.3.1 C2 — formula panel + worked table + bar chart, 3-view reveal), `averageRevenueInteractive` (3.3.1 C3 — linear demand with A/B point reveal), `marginalRevenueInteractive` (3.3.1 C4 — MR table + AR/MR curves, 2-view reveal), `revenueElasticityTriptych` (3.3.1 C5 — 3-panel elastic/unit/inelastic regime grid).
 - **Profit / shutdown:** `profitsShutdownDiagram`, `revMaxDiagram`,
-  `monopolySupernormalProfit`, `monopolyDwl`.
+  `monopolySupernormalProfit`, `monopolyDwl`,
+  `breakEvenChart` (3.3.4 C3 — interactive TC/TR/break-even reveal with shaded loss + profit regions),
+  `profitMeasures` (3.3.4 C4 — interactive profit-per-unit stacked bar + 20% margin donut chart, Product A vs B compare strip),
+  `pcShortRunProfit` (3.4.2 C3 — PC firm SR with shaded abnormal-profit rectangle),
+  `pcLossDiagram` (3.4.2 C4 — PC firm with AVC + shaded loss rectangle and keep-producing annotation),
+  `pcLongRunDiagram` (3.4.2 C5 — PC firm at LR equilibrium with P=AC at min AC, normal profit only),
+  `pcEfficiencyDiagram` (3.4.2 C6 — same chart with both allocative + productive efficiency callouts).
+- **Efficiency:** `productiveEfficiencyDiagram` (3.4.1 C2 — AC U-curve with MC crossing at min, MC = AC condition), `toeAllocativeDiagram` (3.4.1 C3 — D + MC crossing at P=MC, allocative efficiency point).
 - **Market structures:** `naturalMonopolyDiagram`, `kinkedDemandInteractive`,
   `mesBarrierDiagram`, `limitPricingDiagram`, `networkEffectDiagram`,
   `marketLevelWelfare`, `contestabilityFrames`, `contestabilityDiagram`.
@@ -236,13 +258,16 @@ catalogue covers the *visual* layer that slots into `visualKey` /
 
 | Spec topic | Reusable visuals already in the codebase |
 |---|---|
-| 3.1.1 Sizes & types of firms | `heroFirm`, `businessGrowthDiagram`; hub (`demandDeterminantsHub` as a layout template), twin (`twoSystemsDiagram`) for public-vs-private / profit-vs-not-for-profit |
-| 3.1.2 Business growth | `businessGrowthDiagram`, `heroFirm` |
-| 3.1.3 Demergers | reuse `businessGrowthDiagram` style; flow chain |
-| 3.3.2 Costs | `shortRunCostStack`, `lracEnvelope`, `mcLrTangency`, `heroCostCurves`, `heroShortRunCosts`, `heroLongRunCosts` |
-| 3.3.3 EoS | `lracEnvelope`, `mesBarrierDiagram` |
-| 3.3.4 Profits | `profitsShutdownDiagram`, `revMaxDiagram` |
-| 3.4.1 Efficiency | `marketLevelWelfare`, `firmLevelPcVsMonopoly` |
+| 3.1.1 Sizes & types of firms | `firmFourLensesHub`, `firmSizeMeasuresHub`, `firmStaySmallHub`, `firmOwnershipObjectives` (also 3.1.4 C5) — fully built |
+| 3.1.2 Business growth | `businessGrowthMapHub`, `verticalSupplyChain`, `horizontalCombineDiagram`, `conglomerateRiskHub`, `growthRoadblockers` — fully built |
+| 3.1.3 Demergers | `demergerBeforeAfter`, `demergerReasonsHub` — fully built |
+| 3.1.4 Business objectives | `businessObjectivesMap`, `whoWantsWhatHub`, `objectivesJourney`, `firmOwnershipObjectives` — fully built |
+| 3.3.1 Revenue | `revenueThreeMetrics`, `totalRevenueInteractive`, `averageRevenueInteractive`, `marginalRevenueInteractive`, `revenueElasticityTriptych` — fully built |
+| 3.3.2 Costs | `costsHub`, `fixedVariableTotalChart`, `averageCostFamilyChart`, `marginalCostChart`, `fullCostDiagram`, `costDataBakery` — fully built. Older alternatives: `shortRunCostStack`, `lracEnvelope`, `mcLrTangency`, `heroCostCurves`. |
+| 3.3.3 EoS | `lracBigPicture`, `internalEconomiesHub`, `diseconomiesHub`, `mesChart`, `externalEconomies` — fully built. Older alternatives: `lracEnvelope`, `mesBarrierDiagram`. |
+| 3.3.4 Profits | `profitCoreEquation`, `whereProfitComesFrom`, `breakEvenChart`, `profitMeasures` — fully built. Older alternatives: `profitsShutdownDiagram`, `revMaxDiagram`. |
+| 3.4.1 Efficiency | `efficiencyFlywheel`, `productiveEfficiencyDiagram`, `toeAllocativeDiagram`, `dynamicEfficiencyDiagram` — fully built. Older alternatives: `marketLevelWelfare`, `firmLevelPcVsMonopoly`. |
+| 3.4.2 Perfect competition | `pcMarketHub`, `pcPerfectlyElasticDemand`, `pcShortRunProfit`, `pcLossDiagram`, `pcLongRunDiagram`, `pcEfficiencyDiagram` — fully built |
 | 3.4.4 Oligopoly | `kinkedDemandInteractive`, `cartelJointProfitDiagram`, `cartelPrisonersDilemma`, `prisonersDilemmaInteractive`, `limitPricingDiagram` |
 | 3.4.5 Monopoly / price disc. | `monopolySupernormalProfit`, `monopolyDwl`, `naturalMonopolyDiagram`, `firstDegreePd`, `thirdDegreePd`, `networkEffectDiagram` |
 | 3.4.6 Monopsony | `monopsonyDiagram`, `labourMarketEquilibrium` |

@@ -18,11 +18,11 @@
 
    New visuals:
      - costsHub                 (Card 1 hero)
-     - fixedVariableTotalChart  (Card 2 hero) [TODO]
-     - averageCostFamilyChart   (Card 3 hero, Marco's pizzeria) [TODO]
-     - marginalCostChart        (Card 4 hero) [TODO]
-     - fullCostDiagram          (Card 5 hero) [TODO]
-     - costDataFlow             (Card 6 hero — bakery case) [TODO]
+     - fixedVariableTotalChart  (Card 2 hero, 3-view reveal)
+     - averageCostFamilyChart   (Card 3 hero, Marco's pizzeria, 3-view)
+     - marginalCostChart        (Card 4 hero, 2-view reveal)
+     - fullCostDiagram          (Card 5 hero, static)
+     - costDataBakery           (Card 6 hero — bakery case, static)
    ============================================================ */
 
 window.ECONOS_TOPIC = {

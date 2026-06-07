@@ -6,6 +6,46 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.34 — 2026-06-07
+
+### Overnight audit: clean-up across the recent Theme 3 shipments
+
+Comprehensive sweep of the 10 recent Theme 3 topics looking for
+errors and inconsistencies. Found and fixed:
+
+* **`allocativeEfficiencyDiagram` key clash** (real bug) — the Types
+  of Efficiency Card 3 visual was using a name already taken by the
+  chart-engine spec used in the Theme 1 Consumer & Producer Surplus
+  topic. Because object literals dedupe by key, my hand-rolled SVG
+  was silently overriding the CPS engine spec. Renamed mine to
+  `toeAllocativeDiagram` and updated the card's `visualKey`
+  reference. ESLint `no-dupe-keys` now passes.
+* **Three awkward sentences** rewritten — captions in
+  `dynamicEfficiencyDiagram` ("it is just a point — it is a process
+  of improvement"), Types of Efficiency Card 4 trade-off body ("the
+  same outweighs lower costs"), and Card 5 flow sub ("Some market
+  power = scale matters — context matters").
+* **Business Growth `estTime` inconsistency** — intro said "16 min"
+  while the stage card said "18 min". Bumped estTime to "18 min" to
+  match (the topic grew 7 → 8 cards when the Diagnose card was
+  added, but estTime wasn't refreshed at the time).
+* **Stale `[TODO]` markers** removed from the topic header comments
+  in revenue / costs / EoS topic files — those visuals were shipped
+  in subsequent batches but the planning comments weren't updated.
+* **Visual catalogue refreshed** — added the 28 new visuals built
+  this session to `docs/visual-catalogue.md` under their archetypes
+  (Hub-and-spoke, Twin/side-by-side, Funnels/equations, Firm/cost
+  diagrams) and rewrote the Theme 3 quick-start appendix to reflect
+  which topics are now "fully built".
+
+Audited but found no issues with:
+* All 10 recent topics navigate every card without runtime errors
+* All `visualKey`/`svgKey`/`diagramKey` references resolve to a
+  definition in `icons.js`
+* No mobile horizontal overflows across 37 cards in 6 topics tested
+* All 147 unit tests pass; all 28 e2e tests pass
+* All 80 chart specs render without engine warnings
+
 ## 0.96.33 — 2026-06-07
 
 ### Perfect Competition topic complete (6 cards, 6 bespoke visuals)

@@ -14997,6 +14997,218 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* totalRevenueInteractive – Card 2 of Revenue. Interactive
+     three-scenario reveal: same firm tries three (price, quantity)
+     pairs along a downward-sloping demand schedule. Each click
+     reveals (a) a new row in the worked-examples table and (b) a
+     new bar in the right-hand bar chart. The third reveal also
+     drops in the dashed trend line connecting bar tops and an
+     amber caption explaining why TR can rise even as price falls.
+     Layers: tr-1 / tr-2 / tr-3. Dual layout: full composite SVG
+     on desktop (.tri-h), stacked compact version on mobile
+     (.tri-v) where formula, table and bars sit in three vertical
+     blocks. */
+  totalRevenueInteractive: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .tri-v { display:none; }
+        @media (max-width:680px){
+          .tri-h { display:none; }
+          .tri-v { display:block; }
+        }
+      </style>
+      <div class="tri-h">
+      <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="tri-trend-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/></marker>
+        </defs>
+
+        <!-- LEFT: Formula panel (always visible) -->
+        <rect x="14" y="14" width="240" height="412" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+        <text x="134" y="42" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE FORMULA</text>
+        <line x1="60" y1="56" x2="208" y2="56" stroke="#BFDBFE" stroke-width="1"/>
+        <!-- Big formula: TR = price × quantity sold -->
+        <text x="60" y="146" font-size="56" font-weight="900" fill="#1E3A8A" font-family="Inter,sans-serif">TR</text>
+        <text x="178" y="146" font-size="44" font-weight="700" fill="#475569" font-family="Inter,sans-serif">=</text>
+        <text x="134" y="175" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total revenue</text>
+        <text x="62" y="232" font-size="26" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">price</text>
+        <text x="134" y="252" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">price per unit (£)</text>
+        <text x="190" y="232" font-size="32" font-weight="700" fill="#475569" font-family="Inter,sans-serif">×</text>
+        <text x="50" y="312" font-size="26" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">quantity</text>
+        <text x="84" y="340" font-size="26" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">sold</text>
+        <text x="134" y="364" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">number of units sold</text>
+
+        <!-- RIGHT: Worked examples table -->
+        <rect x="280" y="14" width="466" height="172" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <text x="513" y="34" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">WORKED EXAMPLES</text>
+        <line x1="290" y1="46" x2="736" y2="46" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="335" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Scenario</text>
+        <text x="430" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Price (£)</text>
+        <text x="550" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Quantity sold</text>
+        <text x="690" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Total revenue (TR)</text>
+        <line x1="290" y1="76" x2="736" y2="76" stroke="#CBD5E1" stroke-width="1"/>
+
+        <!-- Row 1 (layer tr-1) -->
+        <g class="tr-1" style="display:none">
+          <rect x="290" y="82" width="446" height="32" rx="6" fill="#EFF6FF"/>
+          <circle cx="335" cy="98" r="11" fill="#2563EB"/>
+          <text x="335" y="103" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+          <text x="430" y="103" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£10</text>
+          <text x="550" y="103" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">100</text>
+          <text x="690" y="103" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">£1,000</text>
+        </g>
+
+        <!-- Row 2 (layer tr-2) -->
+        <g class="tr-2" style="display:none">
+          <rect x="290" y="116" width="446" height="32" rx="6" fill="#FFF7ED"/>
+          <circle cx="335" cy="132" r="11" fill="#D97706"/>
+          <text x="335" y="137" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+          <text x="430" y="137" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£9</text>
+          <text x="550" y="137" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">120</text>
+          <text x="690" y="137" font-size="14" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">£1,080</text>
+        </g>
+
+        <!-- Row 3 (layer tr-3) -->
+        <g class="tr-3" style="display:none">
+          <rect x="290" y="150" width="446" height="32" rx="6" fill="#ECFDF5"/>
+          <circle cx="335" cy="166" r="11" fill="#16A34A"/>
+          <text x="335" y="171" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+          <text x="430" y="171" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£8</text>
+          <text x="550" y="171" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">140</text>
+          <text x="690" y="171" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£1,120</text>
+        </g>
+
+        <!-- BAR CHART (right bottom) -->
+        <text x="280" y="208" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">TR ACROSS SCENARIOS</text>
+        <text x="266" y="225" font-size="10" fill="#64748B" font-family="Inter,sans-serif">£</text>
+        <!-- Y-axis line -->
+        <line x1="290" y1="225" x2="290" y2="380" stroke="#0B1426" stroke-width="1.4"/>
+        <!-- X-axis line -->
+        <line x1="290" y1="380" x2="746" y2="380" stroke="#0B1426" stroke-width="1.4"/>
+        <!-- Axis-break zigzag near base (signals truncated y-axis) -->
+        <path d="M 285 372 L 295 366 L 285 360 L 295 354" fill="none" stroke="#94A3B8" stroke-width="1.2"/>
+
+        <!-- Bar 1 (layer tr-1) - £1,000 - baseline £900, scale (TR-900)/300 * 140 -->
+        <g class="tr-1" style="display:none">
+          <rect x="350" y="333" width="76" height="47" fill="#93C5FD" stroke="#2563EB" stroke-width="1.5"/>
+          <text x="388" y="324" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">£1,000</text>
+          <text x="388" y="400" font-size="11" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">£10 × 100</text>
+        </g>
+
+        <!-- Bar 2 (layer tr-2) - £1,080 - height (1080-900)/300 * 140 = 84 -->
+        <g class="tr-2" style="display:none">
+          <rect x="480" y="296" width="76" height="84" fill="#FDBA74" stroke="#D97706" stroke-width="1.5"/>
+          <text x="518" y="287" font-size="13" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">£1,080</text>
+          <text x="518" y="400" font-size="11" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">£9 × 120</text>
+        </g>
+
+        <!-- Bar 3 (layer tr-3) - £1,120 - height (1120-900)/300 * 140 = 102.7 -->
+        <g class="tr-3" style="display:none">
+          <rect x="610" y="278" width="76" height="102" fill="#86EFAC" stroke="#16A34A" stroke-width="1.5"/>
+          <text x="648" y="269" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£1,120</text>
+          <text x="648" y="400" font-size="11" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">£8 × 140</text>
+        </g>
+
+        <!-- Trend arrow + annotation (layer tr-3 only — appears with all 3 bars) -->
+        <g class="tr-3" style="display:none">
+          <line x1="388" y1="333" x2="640" y2="280" stroke="#0B1426" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#tri-trend-arr)"/>
+        </g>
+
+        <!-- Annotation strip below x-axis labels (layer tr-3) -->
+        <g class="tr-3" style="display:none">
+          <rect x="280" y="411" width="466" height="22" rx="8" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+          <text x="513" y="426" font-size="11.5" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">TR rises even though price falls — quantity rises by enough to compensate.</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="tri-v">
+      <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="tri-trend-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/></marker>
+        </defs>
+
+        <!-- Formula band (always visible) -->
+        <rect x="10" y="10" width="340" height="80" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="180" y="32" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE FORMULA</text>
+        <text x="180" y="66" font-size="20" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">TR = price × quantity sold</text>
+        <text x="180" y="82" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total revenue = price per unit × number of units sold</text>
+
+        <!-- Table -->
+        <rect x="10" y="104" width="340" height="172" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <text x="180" y="124" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">WORKED EXAMPLES</text>
+        <line x1="20" y1="134" x2="340" y2="134" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="60"  y="152" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Scenario</text>
+        <text x="150" y="152" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Price</text>
+        <text x="220" y="152" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Qty</text>
+        <text x="300" y="152" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TR</text>
+        <line x1="20" y1="162" x2="340" y2="162" stroke="#CBD5E1" stroke-width="1"/>
+
+        <g class="tr-1" style="display:none">
+          <rect x="20" y="168" width="320" height="30" rx="6" fill="#EFF6FF"/>
+          <circle cx="60" cy="183" r="10" fill="#2563EB"/>
+          <text x="60" y="188" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+          <text x="150" y="188" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£10</text>
+          <text x="220" y="188" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">100</text>
+          <text x="300" y="188" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">£1,000</text>
+        </g>
+
+        <g class="tr-2" style="display:none">
+          <rect x="20" y="200" width="320" height="30" rx="6" fill="#FFF7ED"/>
+          <circle cx="60" cy="215" r="10" fill="#D97706"/>
+          <text x="60" y="220" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+          <text x="150" y="220" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£9</text>
+          <text x="220" y="220" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">120</text>
+          <text x="300" y="220" font-size="13" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">£1,080</text>
+        </g>
+
+        <g class="tr-3" style="display:none">
+          <rect x="20" y="232" width="320" height="30" rx="6" fill="#ECFDF5"/>
+          <circle cx="60" cy="247" r="10" fill="#16A34A"/>
+          <text x="60" y="252" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+          <text x="150" y="252" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£8</text>
+          <text x="220" y="252" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">140</text>
+          <text x="300" y="252" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£1,120</text>
+        </g>
+
+        <!-- Bar chart -->
+        <text x="20" y="306" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">TR ACROSS SCENARIOS</text>
+        <text x="14" y="324" font-size="9" fill="#64748B" font-family="Inter,sans-serif">£</text>
+        <line x1="30" y1="324" x2="30" y2="500" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="30" y1="500" x2="346" y2="500" stroke="#0B1426" stroke-width="1.4"/>
+        <path d="M 25 492 L 35 486 L 25 480 L 35 474" fill="none" stroke="#94A3B8" stroke-width="1.2"/>
+
+        <!-- Bars: (TR-900)/300 * 160 -->
+        <g class="tr-1" style="display:none">
+          <rect x="68" y="447" width="70" height="53" fill="#93C5FD" stroke="#2563EB" stroke-width="1.5"/>
+          <text x="103" y="437" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">£1,000</text>
+          <text x="103" y="518" font-size="10" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">£10 × 100</text>
+        </g>
+        <g class="tr-2" style="display:none">
+          <rect x="168" y="404" width="70" height="96" fill="#FDBA74" stroke="#D97706" stroke-width="1.5"/>
+          <text x="203" y="394" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">£1,080</text>
+          <text x="203" y="518" font-size="10" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">£9 × 120</text>
+        </g>
+        <g class="tr-3" style="display:none">
+          <rect x="268" y="383" width="70" height="117" fill="#86EFAC" stroke="#16A34A" stroke-width="1.5"/>
+          <text x="303" y="373" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£1,120</text>
+          <text x="303" y="518" font-size="10" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">£8 × 140</text>
+        </g>
+
+        <!-- Trend + annotation (tr-3) -->
+        <g class="tr-3" style="display:none">
+          <line x1="103" y1="447" x2="295" y2="385" stroke="#0B1426" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#tri-trend-arr-v)"/>
+        </g>
+        <g class="tr-3" style="display:none">
+          <rect x="10" y="546" width="340" height="44" rx="9" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+          <text x="180" y="566" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">TR rises even though price falls —</text>
+          <text x="180" y="582" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">quantity rises by enough to compensate.</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

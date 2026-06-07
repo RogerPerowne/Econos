@@ -6,6 +6,39 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.24 — 2026-06-07
+
+### Revenue Card 2 — interactive Total revenue
+
+Card 2 ("Total revenue") shipped as an interactive 3-scenario
+reveal. Hero is a single composite SVG with a formula panel on
+the left and a worked-examples table + bar chart on the right.
+Each click on the step strip reveals (i) a new row in the table
+and (ii) a new bar in the chart, cumulatively. The third click
+also drops in a dashed trend line connecting the bar tops and
+an amber caption: "TR rises even though price falls — quantity
+rises by enough to compensate."
+
+The three scenarios (£10×100=£1,000 → £9×120=£1,080 →
+£8×140=£1,120) come from a downward-sloping demand schedule
+where successive price cuts attract enough extra quantity to
+keep raising TR — the counter-intuitive insight the card has to
+teach. The analysis panel on view 3 flags the link to PED so
+Card 5 has a hook to pull on.
+
+* New visual `totalRevenueInteractive` with `tr-1` / `tr-2` /
+  `tr-3` layer classes for cumulative reveal. Dual layout:
+  composite SVG on desktop (`.tri-h`), vertically stacked
+  formula-band → table → chart on mobile (`.tri-v`).
+* Card data uses the `interactiveDiagram` block with three views,
+  each carrying explicit `show: [...]` arrays so the cumulative
+  reveal stays explicit and easy to reason about.
+* Supporting blocks: green tip, 3-tile WHAT MOVES TR (Price ·
+  Quantity sold · PED/demand response), blue bottom-tip, big
+  idea, exam edge.
+
+Cache bump (icons.js change): v423.
+
 ## 0.96.23 — 2026-06-07
 
 ### Revenue topic: Card 1 of 6 (the big picture)

@@ -17530,7 +17530,7 @@ window.ECONOS_ICONS = {
         <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
           <defs>
             <marker id="vsc-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/></marker>
-            <marker id="vsc-arr-green-l" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z" fill="#16A34A"/></marker>
+            <marker id="vsc-arr-green-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
             <marker id="vsc-arr-purple-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
           </defs>
 
@@ -17565,14 +17565,17 @@ window.ECONOS_ICONS = {
           <text x="703" y="80" font-size="30" text-anchor="middle">🛍️</text>
           <text x="703" y="123" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
 
-          <!-- Direction axes beneath -->
-          <line x1="395" y1="200" x2="80" y2="200" stroke="#16A34A" stroke-width="3" marker-end="url(#vsc-arr-green-l)"/>
+          <!-- Direction axes beneath: both arrows flow INTO/OUT FROM the firm,
+               so the eye reads left-to-right with the firm at the centre.
+               Backward: raw materials → firm (supplier flowing in).
+               Forward: firm → retail (product flowing out). -->
+          <line x1="80" y1="200" x2="395" y2="200" stroke="#16A34A" stroke-width="3" marker-end="url(#vsc-arr-green-r)"/>
           <text x="237" y="230" font-size="14" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Backward integration</text>
-          <text x="237" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">towards inputs</text>
+          <text x="237" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">inputs flow into the firm</text>
 
           <line x1="405" y1="200" x2="710" y2="200" stroke="#7C3AED" stroke-width="3" marker-end="url(#vsc-arr-purple-r)"/>
           <text x="557" y="230" font-size="14" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif">Forward integration</text>
-          <text x="557" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">towards the customer</text>
+          <text x="557" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">firm reaches the customer</text>
 
           <circle cx="400" cy="200" r="5" fill="#0B1426"/>
         </svg>
@@ -17593,19 +17596,22 @@ window.ECONOS_ICONS = {
             <marker id="vscv-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
           </defs>
 
-          <!-- LEFT column: vertical axis (x = 60) -->
-          <!-- Green up-arrow: from Manufacturing centre (y=270) up to Raw materials (y=30) -->
-          <line x1="60" y1="265" x2="60" y2="40" stroke="#16A34A" stroke-width="3" marker-end="url(#vscv-arr-green)"/>
+          <!-- LEFT column: vertical axis (x = 60). Both arrows flow TOWARD
+               the firm in the centre — raw materials feed down into the
+               firm (backward green), the firm pushes down to retail (forward
+               purple). Reads top-to-bottom like the rest of the page. -->
+          <!-- Green down-arrow (backward): from Raw materials (y=40) down to Manufacturing centre (y=255) -->
+          <line x1="60" y1="40" x2="60" y2="255" stroke="#16A34A" stroke-width="3" marker-end="url(#vscv-arr-green)"/>
           <text x="32" y="150" font-size="13" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 32 150)">Backward integration</text>
-          <text x="86" y="150" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 86 150)">towards inputs</text>
+          <text x="86" y="150" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 86 150)">inputs flow into the firm</text>
 
           <!-- Centre divider dot at Manufacturing row centre -->
           <circle cx="60" cy="275" r="5" fill="#0B1426"/>
 
-          <!-- Purple down-arrow: from Manufacturing centre (y=285) down to Retail (y=520) -->
-          <line x1="60" y1="285" x2="60" y2="510" stroke="#7C3AED" stroke-width="3" marker-end="url(#vscv-arr-purple)"/>
+          <!-- Purple down-arrow (forward): from Manufacturing centre (y=295) down to Retail (y=510) -->
+          <line x1="60" y1="295" x2="60" y2="510" stroke="#7C3AED" stroke-width="3" marker-end="url(#vscv-arr-purple)"/>
           <text x="32" y="400" font-size="13" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 32 400)">Forward integration</text>
-          <text x="86" y="400" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 86 400)">towards the customer</text>
+          <text x="86" y="400" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 86 400)">firm reaches the customer</text>
 
           <!-- RIGHT column: 5 stacked boxes (x = 130..360, width 230) -->
           <!-- 1 Raw materials -->

@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.7 — 2026-06-07
+
+### Supply chain arrows: flip to point TOWARD the firm
+
+The backward-integration arrow on both layouts pointed AWAY from the
+firm (firm → raw materials), which read as "the firm pushing into
+suppliers" rather than the more natural "suppliers flowing into the
+firm." Flipped the backward arrow so both arrows flow in the natural
+reading direction:
+
+* **Desktop** — both arrows go left → right. Green backward arrow now
+  runs from Raw materials INTO the firm (arrowhead at the centre dot),
+  then purple forward arrow continues from the firm OUT TO Retail.
+  Reads as one continuous L→R supply-chain flow with the firm in the
+  middle.
+* **Mobile** — both arrows go top → bottom. Green backward arrow runs
+  from Raw materials DOWN to the firm, then purple forward arrow
+  continues DOWN to Retail.
+
+Updated the sub-labels accordingly: "towards inputs" → "inputs flow
+into the firm"; "towards the customer" → "firm reaches the customer".
+SW cache bumped to v411.
+
 ## 0.96.6 — 2026-06-07
 
 ### Fix: vertical supply-chain arrows + JS template literal break

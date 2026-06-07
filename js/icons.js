@@ -18313,6 +18313,543 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* pcMarketHub – Card 1 of Perfect Competition. Five-spoke hub
+     showing the PC assumptions (Many buyers and sellers / Homogeneous
+     product / Perfect information / Free entry and exit / Price-takers)
+     around a central "The market" pill. Same fhub-5 grammar. */
+  pcMarketHub: `
+    <div class="pchub" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pchub .pc-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:14px; position:relative; z-index:1; }
+        .pchub .pc-grid > .pc-bottom { grid-column:1 / -1; display:flex; justify-content:center; margin-top:8px; }
+        .pchub .pc-bottom .pc-tile { width:46%; max-width:none; }
+        .pchub .pc-center { position:absolute; top:32%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .pchub .pc-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .pchub .pc-tile { border-radius:13px; padding:12px 14px; display:flex; gap:12px; align-items:flex-start; min-height:96px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .pchub .pc-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .pchub .pc-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .pchub .pc-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){
+          .pchub > div { display:flex; flex-direction:column-reverse; }
+          .pchub .pc-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .pchub .pc-center { position:static; transform:none; margin:6px auto; }
+          .pchub .pc-center-wrap { order:99; display:flex; justify-content:center; }
+          .pchub .pc-bottom { margin-top:0; }
+          .pchub .pc-bottom .pc-tile { width:auto; max-width:none; flex:1; }
+          .pchub .pc-conn { display:none; }
+        }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="pc-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 15 C 44 15, 44 32, 50 32" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 15 C 56 15, 56 32, 50 32" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 49 C 44 49, 44 32, 50 32" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 49 C 56 49, 56 32, 50 32" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 50 71 L 50 32" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="pc-grid">
+          <div class="pc-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="pc-ic">👥</div>
+            <div><div class="pc-t" style="color:#065F46;">Many buyers and sellers</div><div class="pc-s">Large numbers mean no one can influence the market.</div></div>
+          </div>
+          <div class="pc-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="pc-ic">🛒</div>
+            <div><div class="pc-t" style="color:#C2410C;">Homogeneous product</div><div class="pc-s">Every unit is identical — buyers cannot tell them apart on quality.</div></div>
+          </div>
+          <div class="pc-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="pc-ic">📡</div>
+            <div><div class="pc-t" style="color:#1E3A8A;">Perfect information</div><div class="pc-s">All participants know prices, products and the conditions of the market.</div></div>
+          </div>
+          <div class="pc-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="pc-ic">🚪</div>
+            <div><div class="pc-t" style="color:#5B21B6;">Free entry and exit</div><div class="pc-s">Firms can enter (if profits exist) or exit (if losses are made) without barriers.</div></div>
+          </div>
+          <div class="pc-bottom"><div class="pc-tile" style="background:#FEE2E2;border:1.5px solid #FCA5A5;">
+            <div class="pc-ic">🏷️</div>
+            <div><div class="pc-t" style="color:#9F1239;">Price takers</div><div class="pc-s">Firms simply accept the market price — they cannot influence it.</div></div>
+          </div></div>
+        </div>
+        <div class="pc-center-wrap"><div class="pc-center" style="background:#fff;border:2px solid #E2E8F0;border-radius:50%;width:132px;height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 8px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
+          <div style="font-size:30px;line-height:1;">🏪</div>
+          <div style="font-size:13.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:4px;">The market</div>
+          <div style="font-size:10.5px;color:#475569;margin-top:2px;text-align:center;line-height:1.2;">One product, one market price</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* pcPerfectlyElasticDemand – Card 2 of Perfect Competition.
+     Twin chart: industry-market on the left (downward D and upward S
+     crossing at P*, Q*), individual firm on the right (horizontal line
+     at P* showing AR = MR = D, perfectly elastic at the price set by
+     the market). Dashed connection arrow from industry P* to firm P*. */
+  pcPerfectlyElasticDemand: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pcd-v { display:none; }
+        @media (max-width:680px){
+          .pcd-h { display:none; }
+          .pcd-v { display:block; }
+        }
+      </style>
+      <div class="pcd-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE TWO VIEWS</text>
+
+        <!-- LEFT PANEL: Industry market -->
+        <rect x="14" y="42" width="364" height="280" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+        <text x="196" y="64" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Industry market</text>
+        <!-- Plot: x=72..340, y=84..280 -->
+        <line x1="72" y1="84" x2="72" y2="280" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="72" y1="280" x2="340" y2="280" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="40" y="80" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="44" y="92" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">(P)</text>
+        <text x="340" y="300" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity (Q)</text>
+        <!-- Demand (down): (88, 110) to (320, 250) -->
+        <line x1="88" y1="110" x2="320" y2="250" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="78" y="106" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">Demand (D)</text>
+        <!-- Supply (up): (88, 250) to (320, 110) -->
+        <line x1="88" y1="250" x2="320" y2="110" stroke="#7C3AED" stroke-width="2.4"/>
+        <text x="282" y="106" font-size="11" font-weight="800" fill="#7C3AED" font-family="Inter,sans-serif">Supply (S)</text>
+        <!-- Intersection at midpoint (204, 180) -->
+        <circle cx="204" cy="180" r="5" fill="#0B1426" stroke="#fff" stroke-width="1.8"/>
+        <line x1="204" y1="180" x2="204" y2="280" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <line x1="204" y1="180" x2="72" y2="180" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="66" y="184" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        <text x="204" y="300" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+
+        <!-- RIGHT PANEL: Individual firm -->
+        <rect x="392" y="42" width="354" height="280" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="569" y="64" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Individual firm</text>
+        <!-- Plot: x=450..720, y=84..280 -->
+        <line x1="450" y1="84" x2="450" y2="280" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="450" y1="280" x2="720" y2="280" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="418" y="80" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="422" y="92" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">(£)</text>
+        <text x="720" y="300" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity (q)</text>
+        <!-- Horizontal AR = MR = D line at y=180 (matching P* on left) -->
+        <line x1="450" y1="180" x2="720" y2="180" stroke="#16A34A" stroke-width="2.6"/>
+        <text x="728" y="184" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif" text-anchor="end">AR = MR = D</text>
+        <text x="490" y="200" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">(P* = price set by market)</text>
+        <line x1="450" y1="180" x2="444" y2="180" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="444" y="184" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        <text x="585" y="300" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">q*</text>
+        <line x1="585" y1="180" x2="585" y2="280" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+        <!-- Dashed connector arrow from industry P* to firm P* -->
+        <line x1="346" y1="180" x2="442" y2="180" stroke="#0B1426" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#pcd-arr)"/>
+        <defs>
+          <marker id="pcd-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/>
+          </marker>
+        </defs>
+
+        <!-- Caption beneath -->
+        <text x="196" y="346" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Market demand and supply determine the price (P*).</text>
+        <text x="569" y="346" font-size="11" font-weight="700" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">The firm takes that price as given — sells where MC = MR.</text>
+      </svg>
+      </div>
+
+      <div class="pcd-v">
+      <svg viewBox="0 0 360 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Industry market panel -->
+        <rect x="10" y="14" width="340" height="320" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+        <text x="180" y="36" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Industry market</text>
+        <line x1="50" y1="58" x2="50" y2="310" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="50" y1="310" x2="340" y2="310" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="20" y="54" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="340" y="328" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <line x1="66" y1="86" x2="324" y2="270" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="76" y="82" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">D</text>
+        <line x1="66" y1="270" x2="324" y2="86" stroke="#7C3AED" stroke-width="2.2"/>
+        <text x="306" y="82" font-size="11" font-weight="800" fill="#7C3AED" font-family="Inter,sans-serif">S</text>
+        <circle cx="195" cy="178" r="5" fill="#0B1426" stroke="#fff" stroke-width="1.8"/>
+        <line x1="195" y1="178" x2="195" y2="310" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="195" y1="178" x2="50" y2="178" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="44" y="182" font-size="11" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        <text x="195" y="328" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+
+        <!-- Connector arrow -->
+        <line x1="180" y1="344" x2="180" y2="368" stroke="#0B1426" stroke-width="1.6" marker-end="url(#pcd-arr-v)"/>
+        <defs>
+          <marker id="pcd-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/>
+          </marker>
+        </defs>
+
+        <!-- Individual firm panel -->
+        <rect x="10" y="378" width="340" height="320" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="180" y="400" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Individual firm</text>
+        <line x1="50" y1="422" x2="50" y2="674" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="50" y1="674" x2="340" y2="674" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="20" y="418" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="340" y="692" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <line x1="50" y1="542" x2="340" y2="542" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="316" y="538" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">AR = MR = D</text>
+        <text x="180" y="558" font-size="10" font-weight="700" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">(P* = market price)</text>
+        <line x1="50" y1="542" x2="44" y2="542" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="44" y="546" font-size="11" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* pcShortRunProfit – Card 3 of Perfect Competition. PC firm in
+     SR making abnormal profit. AC U-curve + MC + horizontal AR=MR=P
+     at price ABOVE AC minimum. Q* set where MC=MR. Green abnormal-
+     profit rectangle shaded between AC and AR over 0..Q*. */
+  pcShortRunProfit: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .psp-v { display:none; }
+        @media (max-width:680px){
+          .psp-h { display:none; }
+          .psp-v { display:block; }
+        }
+      </style>
+      <div class="psp-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE PROFIT DIAGRAM</text>
+
+        <!-- Plot: x=80..620 (540 wide), y=46..320 (274 tall)
+             Q 0..6 → x = 80 + Q*90
+             £ 0..30 → y = 320 - £*9.13 -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="42" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost /</text>
+        <text x="42" y="56" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Revenue</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+
+        <!-- Abnormal profit rectangle: between AC and AR over 0..Q*
+             Q*=4 → x=440. AR=19 → y=147. AC at Q=4: 14 → y=192
+             Rectangle: x=80..440, y=147..192, fill green -->
+        <rect x="80" y="147" width="360" height="45" fill="#86EFAC" opacity="0.5" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="260" y="174" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Abnormal profit</text>
+
+        <!-- AC curve through (1,26)(2,17)(3,13)(4,14)(5,18)(6,24)
+             Pixel: (170, 83)(260, 165)(350, 201)(440, 192)(530, 156)(620, 101) -->
+        <path d="M 170 83 Q 215 124, 260 165 Q 305 183, 350 201 Q 395 197, 440 192 Q 485 174, 530 156 Q 575 128, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+
+        <!-- MC curve through (1,6)(2,9)(3,13)(4,19)(5,26)
+             Pixel: (170, 265)(260, 238)(350, 201)(440, 147)(530, 83) -->
+        <path d="M 170 265 Q 215 252, 260 238 Q 305 220, 350 201 Q 395 174, 440 147 Q 485 115, 530 83" fill="none" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="534" y="79" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- AR = MR = P horizontal at y=147 -->
+        <line x1="80" y1="147" x2="620" y2="147" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="151" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR = MR = P</text>
+        <text x="552" y="138" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">(Price)</text>
+
+        <!-- Q* drop line at x=440 -->
+        <circle cx="440" cy="147" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+        <line x1="440" y1="147" x2="440" y2="320" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="440" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+        <text x="448" y="138" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">MC = MR</text>
+
+        <!-- Mark AC at Q* on y-axis -->
+        <line x1="80" y1="192" x2="440" y2="192" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="74" y="196" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">AC at Q*</text>
+
+        <text x="74" y="151" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P</text>
+      </svg>
+      </div>
+
+      <div class="psp-v">
+      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE PROFIT DIAGRAM</text>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="16" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <!-- Q 0..6 → x=48+(Q)*48.7; £ 0..30 → y=320-£*9.47 -->
+        <!-- Profit rect: AC y=180, AR y=140 at Q*=4 (x=243) -->
+        <rect x="48" y="140" width="195" height="40" fill="#86EFAC" opacity="0.5" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="146" y="163" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Abnormal profit</text>
+        <!-- AC: (97,74)(146,159)(195,197)(243,180)(292,150)(340,93) -->
+        <path d="M 97 74 Q 121 116, 146 159 Q 170 178, 195 197 Q 219 188, 243 180 Q 267 165, 292 150 Q 316 122, 340 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <!-- MC: (97,263)(146,235)(195,197)(243,140)(292,74) -->
+        <path d="M 97 263 Q 121 249, 146 235 Q 170 216, 195 197 Q 219 168, 243 140 Q 267 107, 292 74" fill="none" stroke="#DC2626" stroke-width="2"/>
+        <text x="262" y="68" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <line x1="48" y1="140" x2="340" y2="140" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="316" y="136" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">AR=MR=P</text>
+        <circle cx="243" cy="140" r="5" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <line x1="243" y1="140" x2="243" y2="320" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="243" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+        <text x="42" y="144" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P</text>
+        <text x="42" y="184" font-size="10" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">AC*</text>
+        <text x="180" y="365" font-size="10" fill="#475569" text-anchor="middle" font-style="italic" font-family="Inter,sans-serif">MR = MC at Q*  ·  Profit = (P − AC) × Q*</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* pcLossDiagram – Card 4 of Perfect Competition. Same chart as
+     pcShortRunProfit but with price BELOW AC. AVC curve added; loss
+     rectangle shaded red. P still above AVC (keep producing case). */
+  pcLossDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pld-v { display:none; }
+        @media (max-width:680px){
+          .pld-h { display:none; }
+          .pld-v { display:block; }
+        }
+      </style>
+      <div class="pld-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE LOSS DIAGRAM</text>
+
+        <!-- Plot: same scale as profit diagram -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="42" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Costs /</text>
+        <text x="42" y="56" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Revenue</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+
+        <!-- Loss rectangle: between AC and AR over 0..Q*
+             Set P=11 → y=219. Q* where MC=11. From MC line, at Q=2.5 MC≈11 → x=80+2.5*90=305
+             AC at Q=2.5: between 17 and 13 → ~15 → y=320-15*9.13=183
+             Loss rect: x=80..305, y=183..219 (height 36 — loss) -->
+        <rect x="80" y="183" width="225" height="36" fill="#FCA5A5" opacity="0.5" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="192" y="207" font-size="12" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Loss — but still produce</text>
+
+        <!-- AC curve -->
+        <path d="M 170 83 Q 215 124, 260 165 Q 305 183, 350 201 Q 395 197, 440 192 Q 485 174, 530 156 Q 575 128, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+
+        <!-- AVC curve (sits below AC). AVC values: Q=1→10, Q=2→8, Q=3→7.5, Q=4→8.5, Q=5→10.5
+             Pixel: (170, 229)(260, 247)(350, 252)(440, 242)(530, 224) -->
+        <path d="M 170 229 Q 215 238, 260 247 Q 305 250, 350 252 Q 395 247, 440 242 Q 485 234, 530 224" fill="none" stroke="#D97706" stroke-width="2.2" stroke-dasharray="6 3"/>
+        <text x="534" y="220" font-size="13" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">AVC</text>
+
+        <!-- MC curve -->
+        <path d="M 170 265 Q 215 252, 260 238 Q 305 220, 350 201 Q 395 174, 440 147 Q 485 115, 530 83" fill="none" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="534" y="79" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- AR = MR = P horizontal at y=219 (below AC minimum) -->
+        <line x1="80" y1="219" x2="620" y2="219" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="224" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR = MR = P</text>
+
+        <!-- Q* drop line -->
+        <circle cx="305" cy="219" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+        <line x1="305" y1="219" x2="305" y2="320" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="305" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+        <text x="313" y="212" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">MC = MR</text>
+
+        <text x="74" y="223" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P</text>
+        <text x="74" y="187" font-size="10" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">AC at Q*</text>
+
+        <!-- Annotation: P > AVC so keep producing -->
+        <rect x="14" y="280" width="60" height="34" rx="6" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.2"/>
+        <text x="44" y="296" font-size="9" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Loss,</text>
+        <text x="44" y="307" font-size="9" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">but still produce</text>
+      </svg>
+      </div>
+
+      <div class="pld-v">
+      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE LOSS DIAGRAM</text>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="16" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Q 0..6 → x=48+Q*48.7; £ 0..30 → y=320-£*9.47
+             P=11 → y=216; Q*=2.5 → x=170; AC at Q*=15 → y=178 -->
+        <rect x="48" y="178" width="122" height="38" fill="#FCA5A5" opacity="0.5" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="109" y="203" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Loss</text>
+        <!-- AC -->
+        <path d="M 97 74 Q 121 116, 146 159 Q 170 178, 195 197 Q 219 188, 243 180 Q 267 165, 292 150 Q 316 122, 340 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <!-- AVC -->
+        <path d="M 97 225 Q 121 234, 146 243 Q 170 247, 195 248 Q 219 244, 243 240 Q 267 232, 292 222" fill="none" stroke="#D97706" stroke-width="1.8" stroke-dasharray="4 3"/>
+        <text x="298" y="218" font-size="11" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">AVC</text>
+        <!-- MC -->
+        <path d="M 97 263 Q 121 249, 146 235 Q 170 216, 195 197 Q 219 168, 243 140 Q 267 107, 292 74" fill="none" stroke="#DC2626" stroke-width="2"/>
+        <text x="262" y="68" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <line x1="48" y1="216" x2="340" y2="216" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="316" y="212" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">AR=MR=P</text>
+        <circle cx="170" cy="216" r="5" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <line x1="170" y1="216" x2="170" y2="320" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="170" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+        <text x="180" y="365" font-size="10" fill="#475569" text-anchor="middle" font-style="italic" font-family="Inter,sans-serif">P > AVC → keep producing in SR</text>
+      </svg>
+    </div>
+    </div>
+  `,
+
+  /* pcLongRunDiagram – Card 5 of Perfect Competition. Long-run
+     equilibrium: P = MR = AR is at exactly the minimum AC point.
+     MC crosses AC at that minimum too. No profit rectangle — firm
+     earns only normal profit. */
+  pcLongRunDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .plr-v { display:none; }
+        @media (max-width:680px){
+          .plr-h { display:none; }
+          .plr-v { display:block; }
+        }
+      </style>
+      <div class="plr-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE LONG-RUN FIRM</text>
+
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="42" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost /</text>
+        <text x="42" y="56" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+
+        <!-- AC -->
+        <path d="M 170 83 Q 215 124, 260 165 Q 305 183, 350 201 Q 395 197, 440 192 Q 485 174, 530 156 Q 575 128, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+
+        <!-- MC -->
+        <path d="M 170 265 Q 215 252, 260 238 Q 305 220, 350 201 Q 395 174, 440 147 Q 485 115, 530 83" fill="none" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="534" y="79" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- AR=MR=P horizontal at minimum AC (y=201, at Q*=3) -->
+        <line x1="80" y1="201" x2="620" y2="201" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="206" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR = MR = P</text>
+
+        <!-- Equilibrium point at min AC (Q*=3, AC=13) → x=350, y=201 -->
+        <circle cx="350" cy="201" r="7" fill="#16A34A" stroke="#fff" stroke-width="2.4"/>
+        <line x1="350" y1="201" x2="350" y2="320" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="350" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+
+        <text x="74" y="205" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+
+        <!-- Annotation: normal profit only -->
+        <rect x="380" y="84" width="200" height="64" rx="9" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+        <text x="396" y="106" font-size="14" font-family="Inter,sans-serif">✅</text>
+        <text x="420" y="106" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Normal profit only</text>
+        <text x="396" y="124" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">P = AC at min</text>
+        <text x="396" y="140" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">No abnormal profit — entry has eroded it.</text>
+
+        <!-- Productive efficiency marker -->
+        <text x="350" y="218" font-size="10.5" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Productive efficiency</text>
+        <text x="350" y="232" font-size="10" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">P = AC at min AC</text>
+      </svg>
+      </div>
+
+      <div class="plr-v">
+      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE LONG-RUN FIRM</text>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="16" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <!-- Same geometry as Card 3 mobile -->
+        <path d="M 97 74 Q 121 116, 146 159 Q 170 178, 195 197 Q 219 188, 243 180 Q 267 165, 292 150 Q 316 122, 340 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <path d="M 97 263 Q 121 249, 146 235 Q 170 216, 195 197 Q 219 168, 243 140 Q 267 107, 292 74" fill="none" stroke="#DC2626" stroke-width="2"/>
+        <text x="262" y="68" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <line x1="48" y1="197" x2="340" y2="197" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="316" y="193" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">AR=MR=P</text>
+        <circle cx="195" cy="197" r="6" fill="#16A34A" stroke="#fff" stroke-width="2.2"/>
+        <line x1="195" y1="197" x2="195" y2="320" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="195" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+        <text x="42" y="201" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        <text x="180" y="365" font-size="10" font-weight="700" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Normal profit only — entry has eroded abnormal profit.</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* pcEfficiencyDiagram – Card 6 of Perfect Competition. Same LR
+     equilibrium chart but with both efficiency conditions highlighted:
+     allocative (P = MC) and productive (output at min AC) — both
+     achieved at the same point. */
+  pcEfficiencyDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ped6-v { display:none; }
+        @media (max-width:680px){
+          .ped6-h { display:none; }
+          .ped6-v { display:block; }
+        }
+      </style>
+      <div class="ped6-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE EFFICIENCY STORY</text>
+
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="42" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price /</text>
+        <text x="42" y="56" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+
+        <!-- AC -->
+        <path d="M 170 83 Q 215 124, 260 165 Q 305 183, 350 201 Q 395 197, 440 192 Q 485 174, 530 156 Q 575 128, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+
+        <!-- MC -->
+        <path d="M 170 265 Q 215 252, 260 238 Q 305 220, 350 201 Q 395 174, 440 147 Q 485 115, 530 83" fill="none" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="534" y="79" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- AR=MR=P at min AC -->
+        <line x1="80" y1="201" x2="620" y2="201" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="206" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">P = AR = MR</text>
+
+        <!-- Equilibrium point -->
+        <circle cx="350" cy="201" r="9" fill="#fff" stroke="#0B1426" stroke-width="2.6"/>
+        <line x1="350" y1="201" x2="350" y2="320" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="350" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+
+        <text x="74" y="205" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+
+        <!-- Allocative efficiency callout (top) -->
+        <rect x="396" y="80" width="220" height="56" rx="9" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.4"/>
+        <text x="408" y="100" font-size="14" font-family="Inter,sans-serif">🎯</text>
+        <text x="430" y="100" font-size="12" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">Allocative efficiency</text>
+        <text x="408" y="120" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">P = MC at equilibrium</text>
+        <text x="408" y="134" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">Right output for society.</text>
+        <line x1="395" y1="135" x2="356" y2="200" stroke="#FDBA74" stroke-width="1.4"/>
+
+        <!-- Productive efficiency callout (lower) -->
+        <rect x="120" y="240" width="220" height="56" rx="9" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+        <text x="132" y="260" font-size="14" font-family="Inter,sans-serif">⚙️</text>
+        <text x="154" y="260" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Productive efficiency</text>
+        <text x="132" y="280" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">Output at min AC</text>
+        <text x="132" y="294" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">Firms produce at the lowest cost.</text>
+        <line x1="340" y1="240" x2="350" y2="210" stroke="#86EFAC" stroke-width="1.4"/>
+      </svg>
+      </div>
+
+      <div class="ped6-v">
+      <svg viewBox="0 0 360 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE EFFICIENCY STORY</text>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="16" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <path d="M 97 74 Q 121 116, 146 159 Q 170 178, 195 197 Q 219 188, 243 180 Q 267 165, 292 150 Q 316 122, 340 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <path d="M 97 263 Q 121 249, 146 235 Q 170 216, 195 197 Q 219 168, 243 140 Q 267 107, 292 74" fill="none" stroke="#DC2626" stroke-width="2"/>
+        <text x="262" y="68" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <line x1="48" y1="197" x2="340" y2="197" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="316" y="193" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P=AR=MR</text>
+        <circle cx="195" cy="197" r="7" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
+        <line x1="195" y1="197" x2="195" y2="320" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="195" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+        <text x="42" y="201" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        <!-- Two callouts stacked below -->
+        <rect x="10" y="358" width="340" height="58" rx="9" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.3"/>
+        <text x="22" y="380" font-size="14" font-family="Inter,sans-serif">🎯</text>
+        <text x="44" y="380" font-size="12" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">Allocative efficiency: P = MC</text>
+        <text x="22" y="402" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">Right output for society at equilibrium.</text>
+
+        <rect x="10" y="426" width="340" height="58" rx="9" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.3"/>
+        <text x="22" y="448" font-size="14" font-family="Inter,sans-serif">⚙️</text>
+        <text x="44" y="448" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Productive efficiency: output at min AC</text>
+        <text x="22" y="470" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">Firms produce at the lowest possible cost.</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

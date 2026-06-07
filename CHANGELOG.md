@@ -6,6 +6,48 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.33 — 2026-06-07
+
+### Perfect Competition topic complete (6 cards, 6 bespoke visuals)
+
+Built the full topic in one push — Edexcel A 3.4.2.
+
+* **Card 1 — The big picture** — `pcMarketHub`: 5-spoke hub showing
+  the PC assumptions (Many buyers and sellers / Homogeneous
+  product / Perfect information / Free entry and exit / Price
+  takers) around a central "The market" pill. WHY FIRMS ARE
+  PRICE TAKERS 4-step flow + THE CORE IDEA 3-tile grid below.
+* **Card 2 — The perfectly elastic demand curve** — `pcPerfectlyElasticDemand`:
+  twin chart with industry market (D and S crossing at P*, Q*) on
+  the left and individual firm (horizontal AR=MR=D at P*) on the
+  right, joined by a dashed connector arrow showing the market
+  price is fed into the firm.
+* **Card 3 — Profit maximisation in the short run** — `pcShortRunProfit`:
+  AC U-curve + MC curve + horizontal AR=MR=P above min AC,
+  shaded green abnormal-profit rectangle between AR and AC over
+  0..Q*. Three-step procedure flow + WHAT THE DIAGRAM SAYS tile
+  grid.
+* **Card 4 — Losses, shutdown and survival** — `pcLossDiagram`:
+  same chart geometry but with P below AC and an AVC curve
+  added (dashed amber). Shaded red loss rectangle. THE SHUTDOWN
+  RULE pair (Keep producing P≥AVC vs Shut down P<AVC) + HOW TO
+  DECIDE flow.
+* **Card 5 — Long-run equilibrium** — `pcLongRunDiagram`: same
+  chart but with P=MR=AR exactly at the minimum AC point — no
+  shaded profit region. ENTRY AND EXIT 6-step flow tracing the
+  adjustment from abnormal profit through entry → supply
+  increase → price falls → normal profit only.
+* **Card 6 — Efficiency and evaluation** — `pcEfficiencyDiagram`:
+  LR diagram with TWO efficiency callouts — Allocative (P = MC
+  at equilibrium) and Productive (output at min AC). WHY IT IS
+  IMPRESSIVE 3-tile + BUT THERE ARE LIMITS 3-tile + WHY
+  ASSUMPTIONS MATTER vs WHY EVALUATION MATTERS pair.
+
+All 6 visuals ship with the standard `.h`/`.v` mobile dual-layout
+toggle so the charts and hub remain readable on iPhone widths.
+Topic intro rewritten with real summary, 5 outcomes and stages
+(6 cards · 16 min). Cache bump (icons.js change): v432.
+
 ## 0.96.32 — 2026-06-07
 
 ### Types of Efficiency topic complete (6 cards, 4 bespoke visuals)

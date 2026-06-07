@@ -15027,16 +15027,16 @@ window.ECONOS_ICONS = {
         <rect x="14" y="14" width="240" height="412" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
         <text x="134" y="42" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE FORMULA</text>
         <line x1="60" y1="56" x2="208" y2="56" stroke="#BFDBFE" stroke-width="1"/>
-        <!-- Big formula: TR = price × quantity sold -->
-        <text x="60" y="146" font-size="56" font-weight="900" fill="#1E3A8A" font-family="Inter,sans-serif">TR</text>
-        <text x="178" y="146" font-size="44" font-weight="700" fill="#475569" font-family="Inter,sans-serif">=</text>
-        <text x="134" y="175" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total revenue</text>
-        <text x="62" y="232" font-size="26" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">price</text>
-        <text x="134" y="252" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">price per unit (£)</text>
-        <text x="190" y="232" font-size="32" font-weight="700" fill="#475569" font-family="Inter,sans-serif">×</text>
-        <text x="50" y="312" font-size="26" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">quantity</text>
-        <text x="84" y="340" font-size="26" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">sold</text>
-        <text x="134" y="364" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">number of units sold</text>
+        <!-- Compact formula: TR = price × quantity sold -->
+        <text x="86" y="138" font-size="36" font-weight="900" fill="#1E3A8A" font-family="Inter,sans-serif">TR</text>
+        <text x="158" y="138" font-size="26" font-weight="700" fill="#475569" font-family="Inter,sans-serif">=</text>
+        <text x="134" y="160" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total revenue</text>
+        <text x="80" y="222" font-size="20" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">price</text>
+        <text x="134" y="240" font-size="10" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">price per unit (£)</text>
+        <text x="170" y="222" font-size="22" font-weight="700" fill="#475569" font-family="Inter,sans-serif">×</text>
+        <text x="62" y="304" font-size="20" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">quantity</text>
+        <text x="88" y="328" font-size="20" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">sold</text>
+        <text x="134" y="348" font-size="10" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">number of units sold</text>
 
         <!-- RIGHT: Worked examples table -->
         <rect x="280" y="14" width="466" height="172" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
@@ -15048,31 +15048,31 @@ window.ECONOS_ICONS = {
         <text x="690" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Total revenue (TR)</text>
         <line x1="290" y1="76" x2="736" y2="76" stroke="#CBD5E1" stroke-width="1"/>
 
-        <!-- Row 1 (layer tr-1) -->
+        <!-- Row A (layer tr-1) -->
         <g class="tr-1" style="display:none">
           <rect x="290" y="82" width="446" height="32" rx="6" fill="#EFF6FF"/>
           <circle cx="335" cy="98" r="11" fill="#2563EB"/>
-          <text x="335" y="103" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+          <text x="335" y="103" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">A</text>
           <text x="430" y="103" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£10</text>
           <text x="550" y="103" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">100</text>
           <text x="690" y="103" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">£1,000</text>
         </g>
 
-        <!-- Row 2 (layer tr-2) -->
+        <!-- Row B (layer tr-2) -->
         <g class="tr-2" style="display:none">
           <rect x="290" y="116" width="446" height="32" rx="6" fill="#FFF7ED"/>
           <circle cx="335" cy="132" r="11" fill="#D97706"/>
-          <text x="335" y="137" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+          <text x="335" y="137" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">B</text>
           <text x="430" y="137" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£9</text>
           <text x="550" y="137" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">120</text>
           <text x="690" y="137" font-size="14" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">£1,080</text>
         </g>
 
-        <!-- Row 3 (layer tr-3) -->
+        <!-- Row C (layer tr-3) -->
         <g class="tr-3" style="display:none">
           <rect x="290" y="150" width="446" height="32" rx="6" fill="#ECFDF5"/>
           <circle cx="335" cy="166" r="11" fill="#16A34A"/>
-          <text x="335" y="171" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+          <text x="335" y="171" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">C</text>
           <text x="430" y="171" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£8</text>
           <text x="550" y="171" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">140</text>
           <text x="690" y="171" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£1,120</text>
@@ -15123,7 +15123,7 @@ window.ECONOS_ICONS = {
       </div>
 
       <div class="tri-v">
-      <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
           <marker id="tri-trend-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/></marker>
         </defs>
@@ -15147,7 +15147,7 @@ window.ECONOS_ICONS = {
         <g class="tr-1" style="display:none">
           <rect x="20" y="168" width="320" height="30" rx="6" fill="#EFF6FF"/>
           <circle cx="60" cy="183" r="10" fill="#2563EB"/>
-          <text x="60" y="188" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+          <text x="60" y="188" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">A</text>
           <text x="150" y="188" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£10</text>
           <text x="220" y="188" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">100</text>
           <text x="300" y="188" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">£1,000</text>
@@ -15156,7 +15156,7 @@ window.ECONOS_ICONS = {
         <g class="tr-2" style="display:none">
           <rect x="20" y="200" width="320" height="30" rx="6" fill="#FFF7ED"/>
           <circle cx="60" cy="215" r="10" fill="#D97706"/>
-          <text x="60" y="220" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+          <text x="60" y="220" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">B</text>
           <text x="150" y="220" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£9</text>
           <text x="220" y="220" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">120</text>
           <text x="300" y="220" font-size="13" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">£1,080</text>
@@ -15165,7 +15165,7 @@ window.ECONOS_ICONS = {
         <g class="tr-3" style="display:none">
           <rect x="20" y="232" width="320" height="30" rx="6" fill="#ECFDF5"/>
           <circle cx="60" cy="247" r="10" fill="#16A34A"/>
-          <text x="60" y="252" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+          <text x="60" y="252" font-size="11" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">C</text>
           <text x="150" y="252" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£8</text>
           <text x="220" y="252" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">140</text>
           <text x="300" y="252" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£1,120</text>

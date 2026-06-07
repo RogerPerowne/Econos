@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.25 — 2026-06-07
+
+### Revenue Card 2 — polish pass
+
+Four small tweaks based on first review:
+
+* **Step buttons relabelled** — "Scenario A / B / C" instead of
+  the literal "£10 × 100" / "£9 × 120" / "£8 × 140". The full
+  price-quantity pair still appears in the analysis text and on
+  the x-axis labels of the bar chart.
+* **Table row badges** A / B / C — matching the new step labels.
+* **Desktop formula font shrunk** — `TR` dropped 56→36px, `=` 44→26px,
+  `price`/`quantity sold` 26→20px. Equation no longer dominates
+  the left third of the diagram.
+* **Mobile viewBox trimmed** 720→600 px tall — removes the dead
+  white space below the bar chart on the initial (no-reveal)
+  view.
+* **WHAT MOVES TR converted from `causes` to `flow`** — three
+  tiles connected by → arrows showing the causal chain
+  (Price changes → PED decides the response → Net effect on TR)
+  rather than three independent factor boxes.
+
 ## 0.96.24 — 2026-06-07
 
 ### Revenue Card 2 — interactive Total revenue

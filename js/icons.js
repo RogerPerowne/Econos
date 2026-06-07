@@ -17343,6 +17343,583 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* profitCoreEquation – Card 1 of Profits & Losses. Interactive
+     3-view reveal of the core profit identity. View 1 shows the
+     Total revenue bar (£120k); view 2 adds the Total costs bar
+     (£95k) with the minus operator; view 3 reveals the Profit bar
+     (£25k) with the equals sign and an amber "profit's left!"
+     callout strip below. The big equation sits across the top and
+     stays visible throughout. Layers: pce-1, pce-2, pce-3. */
+  profitCoreEquation: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pce-v { display:none; }
+        @media (max-width:680px){
+          .pce-h { display:none; }
+          .pce-v { display:block; }
+        }
+      </style>
+      <div class="pce-h">
+      <svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- ===== TOP: The equation ===== -->
+        <rect x="14" y="14" width="732" height="80" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <text x="380" y="44" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE CORE EQUATION</text>
+        <!-- Big equation as one line -->
+        <text x="380" y="76" font-size="22" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Profit  =  Total revenue  −  Total costs</text>
+
+        <!-- Sub-equation with money values, reveals progressively -->
+        <text x="380" y="116" font-size="14" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.05em">WORKED EXAMPLE</text>
+
+        <!-- ===== 3 BAR LAYOUT =====
+             Bars positioned across the chart, with arithmetic operators between.
+             Plot area: y=160..360 for bars. Max value £120k → bar height 200px.
+             Bar 1 (TR, blue):  x=70..210 (140 wide)
+             Operator '−':       x=240 centre at y=260
+             Bar 2 (TC, amber): x=270..410
+             Operator '=':       x=440 centre at y=260
+             Bar 3 (Profit, gr): x=470..610
+             Right caption strip: x=640..746 -->
+
+        <!-- Axes / baseline -->
+        <line x1="40" y1="360" x2="720" y2="360" stroke="#0B1426" stroke-width="1.4"/>
+
+        <!-- Y guide labels -->
+        <text x="34" y="170" font-size="9" fill="#94A3B8" text-anchor="end" font-family="Inter,sans-serif">£120k</text>
+        <text x="34" y="220" font-size="9" fill="#94A3B8" text-anchor="end" font-family="Inter,sans-serif">£90k</text>
+        <text x="34" y="270" font-size="9" fill="#94A3B8" text-anchor="end" font-family="Inter,sans-serif">£60k</text>
+        <text x="34" y="320" font-size="9" fill="#94A3B8" text-anchor="end" font-family="Inter,sans-serif">£30k</text>
+
+        <!-- Bar 1 — Total revenue (£120k, full height 200) — layer pce-1 -->
+        <g class="pce-1" style="display:none">
+          <rect x="70" y="160" width="140" height="200" fill="#93C5FD" stroke="#2563EB" stroke-width="1.6"/>
+          <text x="140" y="184" font-size="14" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">Total</text>
+          <text x="140" y="202" font-size="14" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">revenue</text>
+          <text x="140" y="232" font-size="20" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">£120,000</text>
+          <text x="140" y="380" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">TR</text>
+        </g>
+
+        <!-- Operator minus + Bar 2 — Total costs (£95k, height ~158) — layer pce-2 -->
+        <g class="pce-2" style="display:none">
+          <text x="240" y="270" font-size="36" font-weight="900" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">−</text>
+          <rect x="270" y="202" width="140" height="158" fill="#FDBA74" stroke="#D97706" stroke-width="1.6"/>
+          <text x="340" y="226" font-size="14" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">Total</text>
+          <text x="340" y="244" font-size="14" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">costs</text>
+          <text x="340" y="278" font-size="20" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">£95,000</text>
+          <text x="340" y="380" font-size="11" font-weight="700" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">TC</text>
+        </g>
+
+        <!-- Operator equals + Bar 3 — Profit (£25k, height ~42) — layer pce-3 -->
+        <g class="pce-3" style="display:none">
+          <text x="440" y="270" font-size="36" font-weight="900" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">=</text>
+          <rect x="470" y="318" width="140" height="42" fill="#86EFAC" stroke="#16A34A" stroke-width="1.6"/>
+          <!-- Label above bar since bar is short -->
+          <text x="540" y="298" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Profit</text>
+          <text x="540" y="346" font-size="18" font-weight="900" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£25,000</text>
+          <text x="540" y="380" font-size="11" font-weight="700" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Π (profit's left!)</text>
+
+          <!-- Amber callout to the right -->
+          <rect x="638" y="280" width="106" height="80" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.4"/>
+          <text x="691" y="308" font-size="22" text-anchor="middle">🎯</text>
+          <text x="691" y="332" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£25,000</text>
+          <text x="691" y="348" font-size="10.5" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">is what's left</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="pce-v">
+      <svg viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Equation panel -->
+        <rect x="10" y="10" width="340" height="78" rx="11" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="180" y="32" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE CORE EQUATION</text>
+        <text x="180" y="56" font-size="14" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Profit = Total revenue</text>
+        <text x="180" y="76" font-size="14" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">          − Total costs</text>
+
+        <text x="180" y="110" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" letter-spacing="0.05em" font-family="Inter,sans-serif">WORKED EXAMPLE — VERTICAL STACK</text>
+
+        <!-- 3 horizontal bars stacked vertically -->
+        <!-- TR bar (full width 320, y=130-180) -->
+        <g class="pce-1" style="display:none">
+          <rect x="20" y="130" width="320" height="48" fill="#93C5FD" stroke="#2563EB" stroke-width="1.6"/>
+          <text x="36" y="160" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">Total revenue</text>
+          <text x="324" y="160" font-size="15" font-weight="900" fill="#fff" text-anchor="end" font-family="Inter,sans-serif">£120,000</text>
+        </g>
+
+        <!-- Minus operator centred between bars -->
+        <g class="pce-2" style="display:none">
+          <text x="180" y="208" font-size="22" font-weight="900" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">−</text>
+          <!-- TC bar (width 253 = 320*79%, y=220-268) -->
+          <rect x="20" y="220" width="253" height="48" fill="#FDBA74" stroke="#D97706" stroke-width="1.6"/>
+          <text x="36" y="250" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">Total costs</text>
+          <text x="259" y="250" font-size="15" font-weight="900" fill="#fff" text-anchor="end" font-family="Inter,sans-serif">£95,000</text>
+        </g>
+
+        <!-- Equals + Profit bar -->
+        <g class="pce-3" style="display:none">
+          <text x="180" y="296" font-size="22" font-weight="900" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">=</text>
+          <!-- Profit bar (width 67 = 320*21%, y=308-356) -->
+          <rect x="20" y="308" width="67" height="48" fill="#86EFAC" stroke="#16A34A" stroke-width="1.6"/>
+          <text x="96" y="338" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Profit</text>
+          <text x="324" y="338" font-size="15" font-weight="900" fill="#065F46" text-anchor="end" font-family="Inter,sans-serif">£25,000</text>
+
+          <!-- Amber callout below -->
+          <rect x="20" y="376" width="320" height="58" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.4"/>
+          <text x="40" y="408" font-size="20" font-family="Inter,sans-serif">🎯</text>
+          <text x="70" y="402" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif">£25,000 of profit is left</text>
+          <text x="70" y="420" font-size="11" fill="#92400E" font-family="Inter,sans-serif">after costs have been deducted.</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* whereProfitComesFrom – Card 2 of Profits & Losses. Twin pair
+     layout: Revenue side (green, left) and Cost side (orange, right)
+     around a centre calculator pill carrying "Revenue − cost = profit".
+     Each side shows its formula and a bullet list of drivers. Static. */
+  whereProfitComesFrom: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .wpc-v { display:none; }
+        @media (max-width:680px){
+          .wpc-h { display:none; }
+          .wpc-v { display:block; }
+        }
+      </style>
+      <div class="wpc-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- LEFT — Revenue side (green) -->
+        <rect x="14" y="14" width="296" height="320" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="46" cy="46" r="16" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
+        <text x="46" y="54" font-size="18" text-anchor="middle">📈</text>
+        <text x="74" y="52" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Revenue side</text>
+        <text x="162" y="86" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">FORMULA</text>
+        <rect x="32" y="96" width="260" height="42" rx="9" fill="#fff" stroke="#BBF7D0" stroke-width="1.4"/>
+        <text x="162" y="123" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Total revenue = price × quantity sold</text>
+        <text x="162" y="166" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">WHAT DRIVES REVENUE UP?</text>
+        <!-- Bullet list -->
+        <g font-family="Inter,sans-serif">
+          <rect x="32" y="180" width="260" height="38" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
+          <circle cx="54" cy="199" r="9" fill="#16A34A"/>
+          <text x="54" y="203" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">↑</text>
+          <text x="74" y="204" font-size="12.5" font-weight="700" fill="#065F46">Higher demand</text>
+
+          <rect x="32" y="224" width="260" height="38" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
+          <circle cx="54" cy="243" r="9" fill="#16A34A"/>
+          <text x="54" y="247" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">↑</text>
+          <text x="74" y="248" font-size="12.5" font-weight="700" fill="#065F46">Higher price</text>
+
+          <rect x="32" y="268" width="260" height="38" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
+          <circle cx="54" cy="287" r="9" fill="#16A34A"/>
+          <text x="54" y="291" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">★</text>
+          <text x="74" y="292" font-size="12.5" font-weight="700" fill="#065F46">Better product mix</text>
+        </g>
+
+        <!-- CENTRE — calculator pill -->
+        <circle cx="380" cy="174" r="62" fill="#fff" stroke="#94A3B8" stroke-width="2"/>
+        <text x="380" y="174" font-size="38" text-anchor="middle">🧮</text>
+        <text x="380" y="208" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Revenue − cost</text>
+        <text x="380" y="224" font-size="14" font-weight="900" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">= profit</text>
+
+        <!-- Dashed connectors -->
+        <line x1="310" y1="174" x2="320" y2="174" stroke="#16A34A" stroke-width="2" stroke-dasharray="4 3"/>
+        <line x1="440" y1="174" x2="450" y2="174" stroke="#D97706" stroke-width="2" stroke-dasharray="4 3"/>
+
+        <!-- RIGHT — Cost side (orange) -->
+        <rect x="450" y="14" width="296" height="320" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
+        <circle cx="482" cy="46" r="16" fill="#fff" stroke="#D97706" stroke-width="1.6"/>
+        <text x="482" y="54" font-size="18" text-anchor="middle">💸</text>
+        <text x="510" y="52" font-size="14" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">Cost side</text>
+        <text x="598" y="86" font-size="11" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">FORMULA</text>
+        <rect x="468" y="96" width="260" height="42" rx="9" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
+        <text x="598" y="123" font-size="13.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Total cost = fixed costs + variable costs</text>
+        <text x="598" y="166" font-size="11" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">WHAT DRIVES COSTS UP?</text>
+        <g font-family="Inter,sans-serif">
+          <rect x="468" y="180" width="260" height="38" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+          <circle cx="490" cy="199" r="9" fill="#D97706"/>
+          <text x="490" y="203" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">👷</text>
+          <text x="510" y="204" font-size="12.5" font-weight="700" fill="#C2410C">Wages</text>
+
+          <rect x="468" y="224" width="260" height="38" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+          <circle cx="490" cy="243" r="9" fill="#D97706"/>
+          <text x="490" y="247" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">📦</text>
+          <text x="510" y="248" font-size="12.5" font-weight="700" fill="#C2410C">Materials</text>
+
+          <rect x="468" y="268" width="260" height="38" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+          <circle cx="490" cy="287" r="9" fill="#D97706"/>
+          <text x="490" y="291" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">⚡</text>
+          <text x="510" y="292" font-size="12.5" font-weight="700" fill="#C2410C">Energy / rent</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="wpc-v">
+      <svg viewBox="0 0 360 760" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Centre pill at top -->
+        <circle cx="180" cy="56" r="50" fill="#fff" stroke="#94A3B8" stroke-width="2"/>
+        <text x="180" y="56" font-size="30" text-anchor="middle">🧮</text>
+        <text x="180" y="86" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Revenue − cost</text>
+        <text x="180" y="102" font-size="13" font-weight="900" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">= profit</text>
+
+        <!-- Revenue side -->
+        <rect x="10" y="124" width="340" height="296" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="40" cy="156" r="15" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
+        <text x="40" y="163" font-size="16" text-anchor="middle">📈</text>
+        <text x="66" y="162" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Revenue side</text>
+        <rect x="22" y="184" width="316" height="40" rx="9" fill="#fff" stroke="#BBF7D0" stroke-width="1.4"/>
+        <text x="180" y="210" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Total revenue = price × quantity</text>
+        <text x="180" y="246" font-size="10.5" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">WHAT DRIVES REVENUE UP?</text>
+        <g font-family="Inter,sans-serif">
+          <rect x="22" y="258" width="316" height="44" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
+          <circle cx="46" cy="280" r="11" fill="#16A34A"/>
+          <text x="46" y="284" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">↑</text>
+          <text x="68" y="286" font-size="13" font-weight="700" fill="#065F46">Higher demand</text>
+          <rect x="22" y="306" width="316" height="44" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
+          <circle cx="46" cy="328" r="11" fill="#16A34A"/>
+          <text x="46" y="332" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">↑</text>
+          <text x="68" y="334" font-size="13" font-weight="700" fill="#065F46">Higher price</text>
+          <rect x="22" y="354" width="316" height="44" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
+          <circle cx="46" cy="376" r="11" fill="#16A34A"/>
+          <text x="46" y="380" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">★</text>
+          <text x="68" y="382" font-size="13" font-weight="700" fill="#065F46">Better product mix</text>
+        </g>
+
+        <!-- Cost side -->
+        <rect x="10" y="436" width="340" height="296" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
+        <circle cx="40" cy="468" r="15" fill="#fff" stroke="#D97706" stroke-width="1.6"/>
+        <text x="40" y="475" font-size="16" text-anchor="middle">💸</text>
+        <text x="66" y="474" font-size="14" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">Cost side</text>
+        <rect x="22" y="496" width="316" height="40" rx="9" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
+        <text x="180" y="522" font-size="12.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Total cost = fixed + variable</text>
+        <text x="180" y="558" font-size="10.5" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">WHAT DRIVES COSTS UP?</text>
+        <g font-family="Inter,sans-serif">
+          <rect x="22" y="570" width="316" height="44" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+          <circle cx="46" cy="592" r="11" fill="#D97706"/>
+          <text x="46" y="596" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">👷</text>
+          <text x="68" y="598" font-size="13" font-weight="700" fill="#C2410C">Wages</text>
+          <rect x="22" y="618" width="316" height="44" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+          <circle cx="46" cy="640" r="11" fill="#D97706"/>
+          <text x="46" y="644" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">📦</text>
+          <text x="68" y="646" font-size="13" font-weight="700" fill="#C2410C">Materials</text>
+          <rect x="22" y="666" width="316" height="44" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+          <circle cx="46" cy="688" r="11" fill="#D97706"/>
+          <text x="46" y="692" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">⚡</text>
+          <text x="68" y="694" font-size="13" font-weight="700" fill="#C2410C">Energy / rent</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* breakEvenChart – Card 3 of Profits & Losses. Interactive 3-view
+     break-even chart. View 1 reveals the TC line (with FC intercept);
+     view 2 adds the TR line (steeper from origin); view 3 shades the
+     loss region red (below break-even), the profit region green
+     (above), and marks the break-even point with a red dot.
+     Numbers: FC=£40k, VC=£1k/unit (TC slope), price=£2k/unit (TR
+     slope). Break-even: TR=TC → 2Q=40+Q → Q=40, TR=TC=£80k. */
+  breakEvenChart: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bec-v { display:none; }
+        @media (max-width:680px){
+          .bec-h { display:none; }
+          .bec-v { display:block; }
+        }
+      </style>
+      <div class="bec-h">
+      <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE CHART — break-even analysis</text>
+
+        <!-- Plot area: x=80..620 (540 wide), y=46..400 (354 tall)
+             X: Output 0..60 → x = 80 + Q*9
+             Y: £k 0..120 → y = 400 - £k*2.95 -->
+        <line x1="80" y1="46" x2="80" y2="400" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="400" x2="630" y2="400" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="42" y="50" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Costs &amp;</text>
+        <text x="42" y="64" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">revenue (£)</text>
+        <text x="630" y="422" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (Q)</text>
+
+        <!-- Y ticks at 20k, 40k, 60k, 80k, 100k, 120k -->
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="74" y="345" text-anchor="end">20k</text>
+          <text x="74" y="290" text-anchor="end">40k</text>
+          <text x="74" y="232" text-anchor="end">60k</text>
+          <text x="74" y="174" text-anchor="end">80k</text>
+          <text x="74" y="117" text-anchor="end">100k</text>
+          <text x="74" y="60"  text-anchor="end">120k</text>
+        </g>
+        <!-- X ticks at 10, 20, 30, 40, 50, 60 -->
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="170" y="418" text-anchor="middle">10</text>
+          <text x="260" y="418" text-anchor="middle">20</text>
+          <text x="350" y="418" text-anchor="middle">30</text>
+          <text x="440" y="418" text-anchor="middle">40</text>
+          <text x="530" y="418" text-anchor="middle">50</text>
+          <text x="620" y="418" text-anchor="middle">60</text>
+        </g>
+
+        <!-- Loss region shading (bec-3) — between TR and TC where Q < 40 -->
+        <g class="bec-3" style="display:none">
+          <path d="M 80 400 L 80 282 L 440 174 L 80 400 Z" fill="#FEE2E2" opacity="0.65"/>
+          <!-- Profit region shading — between TR and TC where Q > 40 -->
+          <path d="M 440 174 L 620 56 L 620 226 L 440 174 Z" fill="#ECFDF5" opacity="0.85"/>
+        </g>
+
+        <!-- TC line (bec-1): from (0, 40k) to (60, 100k) → (80, 282) to (620, 226) -->
+        <g class="bec-1" style="display:none">
+          <line x1="80" y1="282" x2="620" y2="226" stroke="#DC2626" stroke-width="2.6"/>
+          <text x="630" y="222" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">Total cost</text>
+          <!-- FC marker at intercept -->
+          <line x1="76" y1="282" x2="84" y2="282" stroke="#0B1426" stroke-width="1.8"/>
+          <text x="174" y="332" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Fixed cost (£40k)</text>
+          <line x1="80" y1="320" x2="80" y2="400" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="118" y="370" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">→ FC</text>
+        </g>
+
+        <!-- TR line (bec-2): from (0, 0) to (60, 120k) → (80, 400) to (620, 56) -->
+        <g class="bec-2" style="display:none">
+          <line x1="80" y1="400" x2="620" y2="56" stroke="#16A34A" stroke-width="2.6"/>
+          <text x="630" y="58" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">Total revenue</text>
+        </g>
+
+        <!-- Break-even point (bec-3): at Q=40, £80k → (440, 174) -->
+        <g class="bec-3" style="display:none">
+          <line x1="440" y1="174" x2="440" y2="400" stroke="#0B1426" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <line x1="80" y1="174" x2="440" y2="174" stroke="#0B1426" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <circle cx="440" cy="174" r="9" fill="#DC2626" stroke="#fff" stroke-width="2.4"/>
+          <text x="440" y="178" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">⊙</text>
+          <text x="450" y="150" font-size="12.5" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">Break-even</text>
+          <text x="450" y="166" font-size="11" fill="#475569" font-family="Inter,sans-serif">point</text>
+
+          <!-- Region labels -->
+          <text x="240" y="338" font-size="12" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif">Loss</text>
+          <text x="240" y="354" font-size="11" fill="#9F1239" font-family="Inter,sans-serif">region</text>
+          <text x="540" y="140" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Profit</text>
+          <text x="540" y="156" font-size="11" fill="#065F46" font-family="Inter,sans-serif">region</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="bec-v">
+      <svg viewBox="0 0 360 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">BREAK-EVEN ANALYSIS</text>
+        <!-- Plot: x=46..340 (294 wide), y=40..400 (360 tall)
+             X: Q 0..60 → x = 46 + Q*4.9
+             Y: £k 0..120 → y = 400 - £k*3 -->
+        <line x1="46" y1="40" x2="46" y2="400" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="46" y1="400" x2="346" y2="400" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="36" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£k</text>
+        <text x="346" y="422" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="40" y="343" text-anchor="end">20</text>
+          <text x="40" y="283" text-anchor="end">40</text>
+          <text x="40" y="223" text-anchor="end">60</text>
+          <text x="40" y="163" text-anchor="end">80</text>
+          <text x="40" y="103" text-anchor="end">100</text>
+          <text x="40" y="44"  text-anchor="end">120</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="95"  y="414" text-anchor="middle">10</text>
+          <text x="144" y="414" text-anchor="middle">20</text>
+          <text x="193" y="414" text-anchor="middle">30</text>
+          <text x="242" y="414" text-anchor="middle">40</text>
+          <text x="291" y="414" text-anchor="middle">50</text>
+          <text x="340" y="414" text-anchor="middle">60</text>
+        </g>
+
+        <g class="bec-3" style="display:none">
+          <path d="M 46 400 L 46 283 L 242 163 L 46 400 Z" fill="#FEE2E2" opacity="0.65"/>
+          <path d="M 242 163 L 340 44 L 340 222 L 242 163 Z" fill="#ECFDF5" opacity="0.85"/>
+        </g>
+        <g class="bec-1" style="display:none">
+          <line x1="46" y1="283" x2="340" y2="222" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="320" y="216" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end" font-family="Inter,sans-serif">TC</text>
+          <text x="120" y="320" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">FC = £40k</text>
+        </g>
+        <g class="bec-2" style="display:none">
+          <line x1="46" y1="400" x2="340" y2="44" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="320" y="50" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">TR</text>
+        </g>
+        <g class="bec-3" style="display:none">
+          <line x1="242" y1="163" x2="242" y2="400" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <line x1="46" y1="163" x2="242" y2="163" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="242" cy="163" r="7" fill="#DC2626" stroke="#fff" stroke-width="2"/>
+          <text x="146" y="350" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Loss</text>
+          <text x="290" y="120" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Profit</text>
+          <text x="242" y="146" font-size="10.5" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Break-even</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* profitMeasures – Card 4 of Profits & Losses. Interactive 2-view
+     reveal of the two profit measures. View 1 reveals the Profit per
+     unit panel (green) with the formula, a worked example (selling
+     price £20 - cost per unit £16 = £4) and a stacked bar chart. View
+     2 reveals the Profit margin panel (purple) with the formula and a
+     donut chart showing 20%. A 2-product comparison strip sits below. */
+  profitMeasures: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pm-v { display:none; }
+        @media (max-width:680px){
+          .pm-h { display:none; }
+          .pm-v { display:block; }
+        }
+      </style>
+      <div class="pm-h">
+      <svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE TWO MEASURES</text>
+
+        <!-- LEFT: Profit per unit (green) -->
+        <g class="pm-1" style="display:none">
+          <rect x="14" y="44" width="370" height="240" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+          <circle cx="46" cy="78" r="16" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
+          <text x="46" y="86" font-size="18" text-anchor="middle">✅</text>
+          <text x="74" y="84" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Profit per unit</text>
+          <!-- Formula -->
+          <rect x="32" y="106" width="334" height="36" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.4"/>
+          <text x="199" y="129" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Selling price − cost per unit = profit per unit</text>
+          <!-- Stacked bar chart: Cost per unit £16 (bottom) + Profit £4 (top, green); side comparison to selling price £20 -->
+          <!-- Bar 1: Selling price £20, full bar -->
+          <rect x="80" y="170" width="60" height="100" fill="#fff" stroke="#16A34A" stroke-width="1.8"/>
+          <text x="110" y="194" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Selling</text>
+          <text x="110" y="208" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">price</text>
+          <text x="110" y="234" font-size="16" font-weight="900" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£20</text>
+          <!-- Bar 2: Cost £16 + Profit £4 stacked -->
+          <rect x="170" y="190" width="60" height="80" fill="#FCA5A5" stroke="#DC2626" stroke-width="1.6"/>
+          <rect x="170" y="170" width="60" height="20" fill="#86EFAC" stroke="#16A34A" stroke-width="1.6"/>
+          <text x="200" y="184" font-size="10" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£4</text>
+          <text x="200" y="234" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">£16</text>
+          <text x="200" y="280" font-size="10" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">cost + profit</text>
+          <!-- Annotation -->
+          <text x="270" y="200" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">£20 − £16</text>
+          <text x="270" y="216" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">= £4 profit</text>
+          <text x="270" y="232" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">per unit sold</text>
+        </g>
+
+        <!-- RIGHT: Profit margin (purple) -->
+        <g class="pm-2" style="display:none">
+          <rect x="396" y="44" width="350" height="240" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+          <circle cx="428" cy="78" r="16" fill="#fff" stroke="#7C3AED" stroke-width="1.6"/>
+          <text x="428" y="86" font-size="18" text-anchor="middle">📊</text>
+          <text x="456" y="84" font-size="14" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">Profit margin</text>
+          <!-- Formula -->
+          <rect x="414" y="106" width="314" height="36" rx="8" fill="#fff" stroke="#DDD6FE" stroke-width="1.4"/>
+          <text x="571" y="129" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">(Profit ÷ Revenue) × 100</text>
+          <!-- Donut chart for 20%. Centre cx=486, cy=220, r=44.
+               Total circumference at r=44 ≈ 276.5
+               20% of circle = 55.3 dasharray
+               Use stroke-dasharray approach -->
+          <circle cx="486" cy="220" r="44" fill="none" stroke="#EDE9FE" stroke-width="22"/>
+          <circle cx="486" cy="220" r="44" fill="none" stroke="#7C3AED" stroke-width="22"
+                  stroke-dasharray="55.3 276.5" stroke-dashoffset="0"
+                  transform="rotate(-90 486 220)"/>
+          <text x="486" y="218" font-size="22" font-weight="900" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">20%</text>
+          <text x="486" y="236" font-size="10" font-weight="700" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">margin</text>
+          <!-- Worked numbers right of donut -->
+          <text x="566" y="184" font-size="11.5" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Profit</text>
+          <text x="728" y="184" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">£24,000</text>
+          <text x="566" y="206" font-size="11.5" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Revenue</text>
+          <text x="728" y="206" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">£120,000</text>
+          <line x1="556" y1="216" x2="730" y2="216" stroke="#DDD6FE" stroke-width="1"/>
+          <text x="566" y="236" font-size="11.5" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">Margin</text>
+          <text x="728" y="236" font-size="14" font-weight="900" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">20%</text>
+          <text x="566" y="258" font-size="11" fill="#475569" font-family="Inter,sans-serif">£24k ÷ £120k × 100 = 20%</text>
+        </g>
+
+        <!-- BOTTOM: Compare two products -->
+        <text x="14" y="312" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">COMPARE TWO PRODUCTS</text>
+        <g font-family="Inter,sans-serif">
+          <rect x="14" y="326" width="362" height="80" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.4"/>
+          <circle cx="46" cy="366" r="16" fill="#fff" stroke="#2563EB" stroke-width="1.6"/>
+          <text x="46" y="374" font-size="18" text-anchor="middle">🛍️</text>
+          <text x="74" y="350" font-size="13" font-weight="800" fill="#1E3A8A">Product A</text>
+          <text x="74" y="370" font-size="11" fill="#475569">Selling price: <tspan font-weight="800" fill="#0B1426">£20</tspan></text>
+          <text x="74" y="386" font-size="11" fill="#475569">Cost per unit: <tspan font-weight="800" fill="#0B1426">£16</tspan></text>
+          <text x="240" y="370" font-size="11" fill="#475569">Profit per unit: <tspan font-weight="800" fill="#16A34A">£4</tspan></text>
+          <text x="240" y="386" font-size="11" fill="#475569">Profit margin: <tspan font-weight="800" fill="#16A34A">20%</tspan></text>
+
+          <rect x="384" y="326" width="362" height="80" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.4"/>
+          <circle cx="416" cy="366" r="16" fill="#fff" stroke="#7C3AED" stroke-width="1.6"/>
+          <text x="416" y="374" font-size="18" text-anchor="middle">🛍️</text>
+          <text x="444" y="350" font-size="13" font-weight="800" fill="#5B21B6">Product B</text>
+          <text x="444" y="370" font-size="11" fill="#475569">Selling price: <tspan font-weight="800" fill="#0B1426">£10</tspan></text>
+          <text x="444" y="386" font-size="11" fill="#475569">Cost per unit: <tspan font-weight="800" fill="#0B1426">£5</tspan></text>
+          <text x="610" y="370" font-size="11" fill="#475569">Profit per unit: <tspan font-weight="800" fill="#7C3AED">£5</tspan></text>
+          <text x="610" y="386" font-size="11" fill="#475569">Profit margin: <tspan font-weight="800" fill="#7C3AED">50%</tspan></text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="pm-v">
+      <svg viewBox="0 0 360 760" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE TWO MEASURES</text>
+
+        <g class="pm-1" style="display:none">
+          <rect x="10" y="34" width="340" height="200" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+          <circle cx="40" cy="66" r="14" fill="#fff" stroke="#16A34A" stroke-width="1.4"/>
+          <text x="40" y="73" font-size="16" text-anchor="middle">✅</text>
+          <text x="66" y="72" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Profit per unit</text>
+          <rect x="22" y="92" width="316" height="36" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
+          <text x="180" y="115" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Selling price − cost = profit/unit</text>
+          <rect x="60" y="148" width="50" height="70" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
+          <text x="85" y="194" font-size="14" font-weight="900" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£20</text>
+          <text x="85" y="232" font-size="9" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">price</text>
+          <rect x="140" y="162" width="50" height="56" fill="#FCA5A5" stroke="#DC2626" stroke-width="1.4"/>
+          <rect x="140" y="148" width="50" height="14" fill="#86EFAC" stroke="#16A34A" stroke-width="1.4"/>
+          <text x="165" y="160" font-size="9" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">£4</text>
+          <text x="165" y="194" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">£16</text>
+          <text x="165" y="232" font-size="9" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">cost+profit</text>
+          <text x="220" y="180" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">£20 − £16</text>
+          <text x="220" y="196" font-size="11" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">= £4 profit</text>
+        </g>
+
+        <g class="pm-2" style="display:none">
+          <rect x="10" y="248" width="340" height="220" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
+          <circle cx="40" cy="280" r="14" fill="#fff" stroke="#7C3AED" stroke-width="1.4"/>
+          <text x="40" y="287" font-size="16" text-anchor="middle">📊</text>
+          <text x="66" y="286" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">Profit margin</text>
+          <rect x="22" y="306" width="316" height="34" rx="8" fill="#fff" stroke="#DDD6FE" stroke-width="1.2"/>
+          <text x="180" y="328" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">(Profit ÷ Revenue) × 100</text>
+          <!-- Donut -->
+          <circle cx="100" cy="402" r="40" fill="none" stroke="#EDE9FE" stroke-width="20"/>
+          <circle cx="100" cy="402" r="40" fill="none" stroke="#7C3AED" stroke-width="20"
+                  stroke-dasharray="50.3 251.3" stroke-dashoffset="0"
+                  transform="rotate(-90 100 402)"/>
+          <text x="100" y="400" font-size="18" font-weight="900" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">20%</text>
+          <text x="100" y="416" font-size="9" font-weight="700" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">margin</text>
+          <text x="170" y="378" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Profit</text>
+          <text x="338" y="378" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">£24,000</text>
+          <text x="170" y="400" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Revenue</text>
+          <text x="338" y="400" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">£120,000</text>
+          <line x1="160" y1="410" x2="340" y2="410" stroke="#DDD6FE"/>
+          <text x="170" y="432" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">Margin</text>
+          <text x="338" y="432" font-size="13" font-weight="900" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">20%</text>
+        </g>
+
+        <text x="180" y="498" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">COMPARE TWO PRODUCTS</text>
+        <g font-family="Inter,sans-serif">
+          <rect x="10" y="510" width="340" height="106" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.4"/>
+          <circle cx="40" cy="546" r="14" fill="#fff" stroke="#2563EB" stroke-width="1.4"/>
+          <text x="40" y="552" font-size="14" text-anchor="middle">🛍️</text>
+          <text x="66" y="540" font-size="13" font-weight="800" fill="#1E3A8A">Product A</text>
+          <text x="20" y="572" font-size="11" fill="#475569">Selling: <tspan font-weight="800" fill="#0B1426">£20</tspan>  ·  Cost: <tspan font-weight="800" fill="#0B1426">£16</tspan></text>
+          <text x="20" y="594" font-size="11" fill="#475569">Profit/unit: <tspan font-weight="800" fill="#16A34A">£4</tspan>  ·  Margin: <tspan font-weight="800" fill="#16A34A">20%</tspan></text>
+
+          <rect x="10" y="630" width="340" height="106" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.4"/>
+          <circle cx="40" cy="666" r="14" fill="#fff" stroke="#7C3AED" stroke-width="1.4"/>
+          <text x="40" y="672" font-size="14" text-anchor="middle">🛍️</text>
+          <text x="66" y="660" font-size="13" font-weight="800" fill="#5B21B6">Product B</text>
+          <text x="20" y="692" font-size="11" fill="#475569">Selling: <tspan font-weight="800" fill="#0B1426">£10</tspan>  ·  Cost: <tspan font-weight="800" fill="#0B1426">£5</tspan></text>
+          <text x="20" y="714" font-size="11" fill="#475569">Profit/unit: <tspan font-weight="800" fill="#7C3AED">£5</tspan>  ·  Margin: <tspan font-weight="800" fill="#7C3AED">50%</tspan></text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

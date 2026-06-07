@@ -6,6 +6,57 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.31 — 2026-06-07
+
+### Profits & Losses topic complete (6 cards, 4 bespoke visuals)
+
+Built the full topic in one push — Edexcel A 3.3.4. Four new
+bespoke visuals, three of them interactive.
+
+* **Card 1 — Profit and loss: the big picture**
+  New `profitCoreEquation` (interactive). Three-view reveal of
+  the core identity Profit = TR − TC using a worked £120k − £95k
+  = £25k example. Bars sized to scale; amber callout strip on
+  the final reveal. THREE OUTCOMES tile grid (Profit / Break-even
+  / Loss) and WHY IT MATTERS flow chain below.
+* **Card 2 — Where profit comes from**
+  New `whereProfitComesFrom` (static). Twin pair: green Revenue
+  side (formula + Higher demand / Higher price / Better product
+  mix bullets) on the left, orange Cost side (formula + Wages /
+  Materials / Energy bullets) on the right, with a central
+  calculator pill carrying "Revenue − cost = profit". FOUR QUICK
+  SCENARIOS 2×2 grid below.
+* **Card 3 — Profit, loss and break-even**
+  New `breakEvenChart` (interactive). Three-view reveal: TC line
+  (red, intercepts y-axis at £40k fixed cost) → adds TR line
+  (green, from origin, steeper slope £2k/unit) → shades loss
+  region red below break-even, profit region green above, marks
+  the break-even point at Q=40, £80k. Algebra check in the
+  analysis. WHY FIRMS CARE flow chain below.
+* **Card 4 — Profit per unit and profit margin**
+  New `profitMeasures` (interactive). Two-view reveal: green
+  Profit per unit panel (stacked-bar visual showing the £4 gap
+  on a £20 sale) → adds purple Profit margin panel with a donut
+  chart showing 20% and a worked £24k ÷ £120k calculation. A
+  Product A vs Product B comparison strip below shows that
+  Product B (selling for £10, costing £5) has a HIGHER margin
+  (50%) than Product A (£20 sell, £16 cost = 20%) — the headline
+  insight margin teaches.
+* **Card 5 — Why profits rise — and why losses happen**
+  Uses existing engine blocks. 4-tile causes grid (Demand rises
+  / Productivity improves / Costs rise / Price competition) +
+  RESPONSES TO LOSS flow chain (Raise revenue → Cut cost → Review
+  the product mix).
+* **Card 6 — The whole story**
+  Synthesis using only existing engine blocks. 6-step flow chain
+  (Revenue earned → Costs incurred → Profit or loss outcome →
+  Business response → Stakeholder effects → Evaluation), Why
+  profit can be good vs Why loss matters pair, 4-tile COMMON
+  MISTAKES grid.
+
+Topic intro rewritten with real summary, 5 outcomes and stages
+(6 cards · 14 min). Cache bump (icons.js change): v430.
+
 ## 0.96.30 — 2026-06-07
 
 ### Economies & Diseconomies of Scale: Cards 2-6 complete

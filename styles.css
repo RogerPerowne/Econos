@@ -14405,3 +14405,19 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
     align-items: center !important;
   }
 }
+
+/* ── Stack pair sides on narrow mobile so bullet text gets full row
+   width and stops wrapping awkwardly inside half-width columns.
+   The VS badge (when present) becomes a horizontal divider line. */
+@media (max-width: 560px) {
+  .econ-pair-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .econ-pair-grid__vs {
+    height: auto !important;
+  }
+  .econ-pair-grid__vs > div {
+    margin: 0 auto;
+  }
+}

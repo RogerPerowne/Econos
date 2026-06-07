@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.4 — 2026-06-07
+
+### Vertical integration: benefits/risks as a VS pair
+
+Card 3 of *Business Growth* used two stacked single-tone tile grids
+(green "WHY FIRMS DO IT" + purple "THE RISKS") to compare the
+benefits and drawbacks of vertical integration — exactly the shape
+the new pair (vs) styling was designed for. Restructured the card so
+the benefits and risks render as a proper side-by-side **BENEFITS VS
+RISKS** pair, with the VS badge between them, tone-coloured circle
+icons stacking above the titles on mobile, and tone-coloured bullets
+on each bullet item (green dots for benefits, purple for risks). The
+old EXAMPLES pair (Backward vs Forward) is now a small 2-tile
+`causes` row at the bottom of the card, since one card can only host
+one pair block.
+
+Also added a `.econ-pair-grid` class to the pair grid container plus
+a `@media (max-width: 560px)` rule that **stacks the pair vertically
+on narrow mobile**, so bullet text gets the full row width instead
+of being squashed into half-width columns. Applies site-wide to
+every pair block, not just this card.
+
+SW cache bumped to v408.
+
 ## 0.96.3 — 2026-06-07
 
 ### Theme 3 chains: brief descriptions on every step

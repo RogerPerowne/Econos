@@ -1935,7 +1935,7 @@
         html += genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
       }
       html += `
-      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:22px;">
+      <div class="econ-pair-grid" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:22px;">
         ${renderPairedSide(c.left, 'green')}
         ${renderPairedSide(c.right, 'amber')}
       </div>`;
@@ -4917,10 +4917,10 @@
       const label = c.pairLabel === null ? '' : genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
       const hasVs = c.pairLabel && /\bvs\b/i.test(c.pairLabel);
       if (hasVs) {
-        const vsBadge = `<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:36px;height:36px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-2xs);letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);flex-shrink:0;">VS</div></div>`;
-        return `${label}<div style="display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);gap:12px;align-items:stretch;margin-bottom:16px;">${renderSide(c.left, 'green')}${vsBadge}${renderSide(c.right, 'amber')}</div>`;
+        const vsBadge = `<div class="econ-pair-grid__vs" style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:36px;height:36px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-2xs);letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);flex-shrink:0;">VS</div></div>`;
+        return `${label}<div class="econ-pair-grid econ-pair-grid--vs" style="display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);gap:12px;align-items:stretch;margin-bottom:16px;">${renderSide(c.left, 'green')}${vsBadge}${renderSide(c.right, 'amber')}</div>`;
       }
-      return `${label}<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-bottom:16px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
+      return `${label}<div class="econ-pair-grid" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-bottom:16px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
     })() : '';
     const tabs = hasSteps ? c.steps.map((s, i) => `
       <button class="ad-tab ${i === 0 ? 'is-active' : ''}" type="button"

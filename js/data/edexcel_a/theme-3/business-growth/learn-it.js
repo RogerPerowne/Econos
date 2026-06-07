@@ -145,30 +145,27 @@ window.ECONOS_TOPIC = {
       visualLabel: 'THE SUPPLY CHAIN',
       visualEmoji: '\u{1F50D}',
 
-      causesLabel: 'WHY FIRMS DO IT',
-      causesEmoji: '\u{1F48E}',
-      causesCols: 4,
+      pairFirst: true,
+      pairLabel: 'BENEFITS VS RISKS',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'green', iconStyle: 'circle', icon: '\u{1F48E}',
+        label: 'Why firms do it',
+        text: '<ul><li><strong>Security of supply.</strong> Fewer disruptions.</li><li><strong>Quality control.</strong> Better oversight.</li><li><strong>Keep the margin.</strong> Profit captured from another stage.</li><li><strong>Better information.</strong> Closer knowledge of demand or inputs.</li></ul>'
+      },
+      right: {
+        tone: 'purple', iconStyle: 'circle', icon: '⚠️',
+        label: 'The risks',
+        text: '<ul><li><strong>High cost.</strong> Acquisitions can be expensive.</li><li><strong>Managerial complexity.</strong> More stages to run.</li><li><strong>Less flexibility.</strong> Harder to switch supplier or distributor.</li><li><strong>Diseconomies.</strong> Growth can create coordination problems.</li></ul>'
+      },
+
+      causesLabel: 'EXAMPLES',
+      causesEmoji: '\u{1F4D1}',
+      causesCols: 2,
       causes: [
-        { tone: 'green', icon: '\u{1F6E1}️', head: 'Security of supply', body: 'Fewer disruptions.' },
-        { tone: 'green', icon: '\u{1F50D}', head: 'Quality control',    body: 'Better oversight.' },
-        { tone: 'green', icon: '£',         head: 'Keep the margin',    body: 'Profit captured from another stage.' },
-        { tone: 'green', icon: '\u{1F4CA}', head: 'Better information', body: 'Closer knowledge of demand or inputs.' }
+        { tone: 'green',  icon: '←', head: 'Backward', body: 'A car maker buying a parts supplier.' },
+        { tone: 'purple', icon: '→', head: 'Forward',  body: 'A coffee roaster opening retail cafés.' }
       ],
-
-      causes2Label: 'THE RISKS',
-      causes2Emoji: '⚠️',
-      causes2Cols: 4,
-      causes2: [
-        { tone: 'purple', icon: '£',         head: 'High cost',              body: 'Acquisitions can be expensive.' },
-        { tone: 'purple', icon: '\u{1F4CB}', head: 'Managerial complexity',  body: 'More stages to run.' },
-        { tone: 'purple', icon: '↔️',        head: 'Less flexibility',       body: 'Harder to switch supplier or distributor.' },
-        { tone: 'purple', icon: '\u{1F9E9}', head: 'Diseconomies',           body: 'Growth can create coordination problems.' }
-      ],
-
-      pairLabel: 'EXAMPLES',
-      pairEmoji: '\u{1F4D1}',
-      left:  { tone: 'green',  iconStyle: 'circle', icon: '←', label: 'Backward', text: '<strong>Examples:</strong> a car maker buying a parts supplier.' },
-      right: { tone: 'purple', iconStyle: 'circle', icon: '→', label: 'Forward',  text: '<strong>Examples:</strong> a coffee roaster opening retail cafés.' },
 
       conclusion: { title: 'BIG IDEA', text: 'Vertical integration <strong>changes a firm’s position in the supply chain</strong>, aiming to improve control, margins or reliability.' },
       examEdge: 'Always state whether the move is <strong>forward or backward</strong>, then explain the likely advantage and one possible drawback.'

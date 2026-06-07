@@ -6,6 +6,48 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.32 — 2026-06-07
+
+### Types of Efficiency topic complete (6 cards, 4 bespoke visuals)
+
+Built the full topic in one push — Edexcel A 3.4.1.
+
+* **Card 1 — The big picture** — New `efficiencyFlywheel` hub:
+  three efficiency tiles (1 Productive top-left, 2 Allocative
+  top-right, 3 Dynamic bottom-centre) around a central "Efficiency"
+  gauge pill. Subtle dashed flywheel ring + tiny rotation arrows
+  in the SVG connector layer reinforce the flywheel motif. ASK
+  THESE THREE QUESTIONS flow + STATIC vs DYNAMIC pair below.
+* **Card 2 — Productive efficiency** — New `productiveEfficiencyDiagram`:
+  AC U-curve with MC line crossing AC at its minimum. Marker dot
+  at the crossing, dashed guidelines to "minimum AC" on the y-axis
+  and Q* on the x-axis. Right panel carries the rule and condition
+  MC = AC. WHAT IT MEANS tile grid + WHY FIRMS MAY MISS IT flow.
+* **Card 3 — Allocative efficiency** — New `allocativeEfficiencyDiagram`:
+  downward demand curve and upward MC curve crossing at the
+  allocatively efficient point. Marker dot + dashed guidelines to
+  P* and Q*. "Allocative efficiency" callout pointing at the
+  intersection. Right panel carries the rule and condition P = MC.
+  WHAT IT TELLS US tile grid + DON'T CONFUSE WITH PRODUCTIVE
+  EFFICIENCY pair.
+* **Card 4 — Dynamic efficiency** — New `dynamicEfficiencyDiagram`:
+  side-by-side panels. Panel A shows AC₁ (before innovation); panel
+  B shows AC₁ as a dashed reference plus the new lower AC₂ (after
+  innovation), with a green down-arrow showing the shift. Amber
+  caption: "Innovation shifts AC down — a process of improvement
+  over time." HOW IT WORKS flow chain + WHY IT MATTERS tile grid
+  + THE TRADE-OFF pair.
+* **Card 5 — When efficiencies clash** — pair (More competition vs
+  Some market power) + 3-tile WHY MONOPOLY CAN BE INEFFICIENT +
+  4-step BUT WHY SOME PROFIT CAN HELP flow. Uses existing blocks.
+* **Card 6 — The whole story** — 6-step synthesis chain (Market or
+  firm → Efficiency type → Condition → Diagram → Outcome →
+  Judgement), 3-tile COMPARE THE THREE compare, and Why static
+  matters vs Why dynamic matters pair. Uses existing blocks.
+
+Topic intro rewritten with real summary, 4 outcomes and stages
+(6 cards · 15 min). Cache bump (icons.js change): v431.
+
 ## 0.96.31 — 2026-06-07
 
 ### Profits & Losses topic complete (6 cards, 4 bespoke visuals)

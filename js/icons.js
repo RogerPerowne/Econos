@@ -17920,6 +17920,399 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* efficiencyFlywheel – Card 1 of Types of Efficiency. A 3-spoke
+     "flywheel" hub: three efficiency tiles (Productive top-left,
+     Allocative top-right, Dynamic bottom-centre) around a central
+     "Efficiency" gauge. The connector layer adds a subtle dashed
+     rotation ring around the centre — the flywheel motif — with
+     small arrow indicators showing the cyclical direction. Same
+     fhub-style grammar so the lesson feels coherent with other hubs. */
+  efficiencyFlywheel: `
+    <div class="efw" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .efw .ef-shell { position:relative; max-width:740px; margin:0 auto; }
+        .efw .ef-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:30%; row-gap:30px; position:relative; z-index:1; }
+        .efw .ef-grid > .ef-bottom { grid-column:1 / -1; display:flex; justify-content:center; margin-top:16px; }
+        .efw .ef-bottom .ef-tile { width:46%; max-width:none; }
+        .efw .ef-center { position:absolute; top:32%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .efw .ef-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .efw .ef-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; min-height:100px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .efw .ef-num { width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; flex-shrink:0; }
+        .efw .ef-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .efw .ef-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .efw .ef-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){
+          .efw > div { display:flex; flex-direction:column-reverse; }
+          .efw .ef-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .efw .ef-center { position:static; transform:none; margin:6px auto; }
+          .efw .ef-center-wrap { order:99; display:flex; justify-content:center; }
+          .efw .ef-bottom { margin-top:0; }
+          .efw .ef-bottom .ef-tile { width:auto; max-width:none; flex:1; }
+          .efw .ef-conn { display:none; }
+        }
+      </style>
+      <div class="ef-shell">
+        <!-- Flywheel SVG overlay -->
+        <svg class="ef-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <!-- Dashed rotation ring (the flywheel) -->
+          <circle cx="50" cy="32" r="18" fill="none" stroke="#CBD5E1" stroke-width="0.4" stroke-dasharray="1.2 1.5" opacity="0.7"/>
+          <!-- Curved connectors from each tile to centre -->
+          <path d="M 28 18 C 38 22, 44 25, 50 32" fill="none" stroke="#86EFAC" stroke-width="0.55" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 72 18 C 62 22, 56 25, 50 32" fill="none" stroke="#FDBA74" stroke-width="0.55" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 50 72 C 50 60, 50 50, 50 32" fill="none" stroke="#93C5FD" stroke-width="0.55" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Tiny arrows around the ring showing rotational flow -->
+          <path d="M 68 30 L 70 33 L 67 34" fill="none" stroke="#94A3B8" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 32 34 L 30 31 L 33 30" fill="none" stroke="#94A3B8" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 49 50 L 52 49 L 51 46" fill="none" stroke="#94A3B8" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <!-- 3 efficiency tiles -->
+        <div class="ef-grid">
+          <div class="ef-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="ef-ic">⚙️</div>
+            <div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span class="ef-num" style="background:#16A34A;">1</span><span class="ef-t" style="color:#065F46;">Productive efficiency</span></div>
+              <div class="ef-s">Producing at the lowest possible average cost.</div>
+            </div>
+          </div>
+          <div class="ef-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="ef-ic">🎯</div>
+            <div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span class="ef-num" style="background:#D97706;">2</span><span class="ef-t" style="color:#C2410C;">Allocative efficiency</span></div>
+              <div class="ef-s">Producing what consumers value most — where price equals marginal cost.</div>
+            </div>
+          </div>
+          <div class="ef-bottom">
+            <div class="ef-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+              <div class="ef-ic">💡</div>
+              <div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span class="ef-num" style="background:#2563EB;">3</span><span class="ef-t" style="color:#1E3A8A;">Dynamic efficiency</span></div>
+                <div class="ef-s">Improving products and processes over time through investment and innovation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Central efficiency hub -->
+        <div class="ef-center-wrap">
+          <div class="ef-center" style="background:#fff;border:2px solid #E2E8F0;border-radius:50%;width:132px;height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;box-shadow:0 0 0 8px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
+            <div style="font-size:30px;line-height:1;">⏱️</div>
+            <div style="font-size:13.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:4px;">Efficiency</div>
+            <div style="font-size:10.5px;color:#475569;margin-top:2px;text-align:center;line-height:1.2;">Best use of</div>
+            <div style="font-size:10.5px;color:#475569;text-align:center;line-height:1.2;">scarce resources</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* productiveEfficiencyDiagram – Card 2 of Types of Efficiency.
+     AC U-shaped curve with MC crossing AC at its minimum point.
+     Mark the crossing with a dot, drop dashed lines to the axes
+     to label minimum AC and Q*. Right panel carries the insight
+     text. Static. */
+  productiveEfficiencyDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ped-v { display:none; }
+        @media (max-width:680px){
+          .ped-h { display:none; }
+          .ped-v { display:block; }
+        }
+      </style>
+      <div class="ped-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE DIAGRAM</text>
+
+        <!-- LEFT: Chart. Plot area x=70..480 (410 wide), y=46..320 (274 tall) -->
+        <line x1="70" y1="46" x2="70" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="70" y1="320" x2="490" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost /</text>
+        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">revenue</text>
+        <text x="490" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+
+        <!-- AC U-curve through key points
+             Plot: Q 0..6 → x = 70 + Q*68; £/unit 0..30 → y = 320 - £*9.13
+             AC values: Q=1→26, Q=2→17, Q=3→13, Q=4→14, Q=5→18, Q=6→24
+             Pixel: (138, 83), (206, 165), (274, 201), (342, 192), (410, 156), (478, 101) -->
+        <path d="M 138 83 Q 172 124, 206 165 Q 240 183, 274 201 Q 308 197, 342 192 Q 376 174, 410 156 Q 444 128, 478 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="484" y="98" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+
+        <!-- MC line crossing AC at AC's minimum (Q*=3, AC=13 → pixel (274, 201))
+             MC must cut AC from BELOW at its minimum. MC at Q=1 is low, rises steeply.
+             MC: Q=1→6 (y=265), Q=2→9 (y=238), Q=3→13 (y=201), Q=4→19 (y=147), Q=5→26 (y=83) -->
+        <path d="M 138 265 Q 172 252, 206 238 Q 240 220, 274 201 Q 308 174, 342 147 Q 376 115, 410 83" fill="none" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="416" y="78" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- Crossing point (productive efficiency) at (274, 201) -->
+        <circle cx="274" cy="201" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+
+        <!-- Dashed guidelines down to axes -->
+        <line x1="274" y1="201" x2="274" y2="320" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <line x1="274" y1="201" x2="70" y2="201" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+        <!-- Labels on axes -->
+        <text x="64" y="206" font-size="11" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">minimum AC</text>
+        <text x="274" y="340" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+
+        <!-- RIGHT: Insight panel -->
+        <rect x="510" y="46" width="236" height="220" rx="11" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+        <circle cx="540" cy="76" r="16" fill="#fff" stroke="#2563EB" stroke-width="1.6"/>
+        <text x="540" y="84" font-size="18" text-anchor="middle">ℹ️</text>
+        <text x="566" y="82" font-size="13" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Why this point?</text>
+        <text x="524" y="120" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">Productive efficiency</text>
+        <text x="524" y="138" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">occurs where average cost</text>
+        <text x="524" y="156" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">is lowest.</text>
+        <text x="524" y="190" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">MC cuts AC at its</text>
+        <text x="524" y="208" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">minimum.</text>
+        <rect x="524" y="226" width="208" height="32" rx="7" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
+        <text x="628" y="248" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Condition: MC = AC</text>
+      </svg>
+      </div>
+
+      <div class="ped-v">
+      <svg viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE DIAGRAM</text>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="342" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Q 1..6 → x = 48 + (Q-1)*58, £ 0..30 → y = 320 - £*9.47 -->
+        <!-- AC: Q=1→26, Q=2→17, Q=3→13, Q=4→14, Q=5→18, Q=6→24 -->
+        <!-- (48, 74), (106, 159), (164, 197), (222, 188), (280, 150), (338, 93) -->
+        <path d="M 48 74 Q 77 116, 106 159 Q 135 178, 164 197 Q 193 192, 222 188 Q 251 169, 280 150 Q 309 122, 338 93" fill="none" stroke="#5B21B6" stroke-width="2.2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <!-- MC: Q=1→6 (y=263), Q=2→9 (y=235), Q=3→13 (y=197), Q=4→19 (y=140), Q=5→26 (y=74) -->
+        <path d="M 48 263 Q 77 249, 106 235 Q 135 216, 164 197 Q 193 168, 222 140 Q 251 107, 280 74" fill="none" stroke="#DC2626" stroke-width="2.2"/>
+        <text x="262" y="68" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <circle cx="164" cy="197" r="5" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <line x1="164" y1="197" x2="164" y2="320" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <line x1="164" y1="197" x2="48" y2="197" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="42" y="202" font-size="10" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">min AC</text>
+        <text x="164" y="340" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+
+        <rect x="10" y="370" width="340" height="160" rx="11" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+        <circle cx="40" cy="400" r="15" fill="#fff" stroke="#2563EB" stroke-width="1.4"/>
+        <text x="40" y="408" font-size="16" text-anchor="middle">ℹ️</text>
+        <text x="66" y="406" font-size="13" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Why this point?</text>
+        <text x="24" y="440" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">Productive efficiency occurs where</text>
+        <text x="24" y="458" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">average cost is lowest.</text>
+        <text x="24" y="486" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">MC cuts AC at its minimum.</text>
+        <rect x="24" y="498" width="312" height="28" rx="7" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
+        <text x="180" y="517" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Condition: MC = AC</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* allocativeEfficiencyDiagram – Card 3 of Types of Efficiency.
+     Demand curve (downward) and MC curve (upward) crossing at the
+     allocative efficiency point P=MC. Vertical guideline to Q*,
+     horizontal guideline to P*. Right panel carries the insight. */
+  allocativeEfficiencyDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .aed-v { display:none; }
+        @media (max-width:680px){
+          .aed-h { display:none; }
+          .aed-v { display:block; }
+        }
+      </style>
+      <div class="aed-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE DIAGRAM</text>
+
+        <!-- Chart area: x=70..480 (410 wide), y=46..320 (274 tall)
+             Q 0..100 → x = 70 + Q*4.1
+             P 0..30 → y = 320 - P*9.13 -->
+        <line x1="70" y1="46" x2="70" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="70" y1="320" x2="490" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost /</text>
+        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">price</text>
+        <text x="490" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+
+        <!-- D curve (downward): from (10, 26) to (90, 6)
+             (70+41, 320-237=83) (70+369=439, 320-55=265) -->
+        <line x1="111" y1="83" x2="439" y2="265" stroke="#1E3A8A" stroke-width="2.4"/>
+        <text x="445" y="270" font-size="13" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">D = AR</text>
+
+        <!-- MC curve (upward smooth): from (10, 5) to (90, 22)
+             (111, 274), (439, 119) — passes through D at intersection -->
+        <!-- Solving P=MC: D line: P = 28 - 0.25Q. MC line (linear): P = 3 + 0.21Q.
+             28 - 0.25Q = 3 + 0.21Q → 25 = 0.46Q → Q ≈ 54, P ≈ 14.5
+             At Q=54: x = 70+221.4=291, y = 320-132.4=188 -->
+        <line x1="111" y1="274" x2="439" y2="119" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="445" y="119" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- Allocative efficiency point at intersection (291, 188) -->
+        <circle cx="291" cy="188" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+        <line x1="291" y1="188" x2="291" y2="320" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <line x1="291" y1="188" x2="70" y2="188" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="64" y="193" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        <text x="291" y="340" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+
+        <!-- "Allocative efficiency" label at the intersection -->
+        <rect x="200" y="118" width="156" height="28" rx="6" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.2"/>
+        <text x="278" y="138" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">allocative efficiency</text>
+        <line x1="278" y1="146" x2="291" y2="185" stroke="#FDBA74" stroke-width="1.2"/>
+
+        <!-- RIGHT: Insight panel -->
+        <rect x="510" y="46" width="236" height="240" rx="11" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+        <circle cx="540" cy="76" r="16" fill="#fff" stroke="#D97706" stroke-width="1.6"/>
+        <text x="540" y="84" font-size="18" text-anchor="middle">ℹ️</text>
+        <text x="566" y="82" font-size="13" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">Why this point?</text>
+        <text x="524" y="118" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">At this point, the benefit</text>
+        <text x="524" y="136" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">consumers place on the last</text>
+        <text x="524" y="154" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">unit (P on the demand</text>
+        <text x="524" y="172" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">curve) equals the marginal</text>
+        <text x="524" y="190" font-size="12" fill="#0B1426" font-family="Inter,sans-serif">cost of producing it (MC).</text>
+        <text x="524" y="222" font-size="12" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">No more and no less is</text>
+        <text x="524" y="240" font-size="12" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">socially desirable.</text>
+        <rect x="524" y="252" width="208" height="32" rx="7" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+        <text x="628" y="274" font-size="13" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Condition: P = MC</text>
+      </svg>
+      </div>
+
+      <div class="aed-v">
+      <svg viewBox="0 0 360 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE DIAGRAM</text>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="16" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="340" y="342" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <!-- Q 0..100 → x = 48+Q*2.92, P 0..30 → y = 320-P*9.47 -->
+        <!-- D: Q=10→26 (y=74), Q=90→6 (y=263). x: (77, 74) (311, 263) -->
+        <line x1="77" y1="74" x2="311" y2="263" stroke="#1E3A8A" stroke-width="2.2"/>
+        <text x="316" y="266" font-size="11" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">D</text>
+        <!-- MC: Q=10→5 (y=273), Q=90→22 (y=112). x: (77, 273) (311, 112) -->
+        <line x1="77" y1="273" x2="311" y2="112" stroke="#DC2626" stroke-width="2.2"/>
+        <text x="316" y="112" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <!-- Intersection at Q=54, P=14.5 → x=206, y=183 -->
+        <circle cx="206" cy="183" r="5" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <line x1="206" y1="183" x2="206" y2="320" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <line x1="206" y1="183" x2="48" y2="183" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="42" y="188" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        <text x="206" y="340" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+
+        <rect x="10" y="370" width="340" height="180" rx="11" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+        <circle cx="40" cy="400" r="15" fill="#fff" stroke="#D97706" stroke-width="1.4"/>
+        <text x="40" y="408" font-size="16" text-anchor="middle">ℹ️</text>
+        <text x="66" y="406" font-size="13" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">Why this point?</text>
+        <text x="24" y="438" font-size="11.5" fill="#0B1426" font-family="Inter,sans-serif">Benefit consumers place on the</text>
+        <text x="24" y="454" font-size="11.5" fill="#0B1426" font-family="Inter,sans-serif">last unit equals the marginal cost</text>
+        <text x="24" y="470" font-size="11.5" fill="#0B1426" font-family="Inter,sans-serif">of producing it.</text>
+        <text x="24" y="500" font-size="12" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">No more and no less is desirable.</text>
+        <rect x="24" y="514" width="312" height="28" rx="7" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
+        <text x="180" y="533" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Condition: P = MC</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* dynamicEfficiencyDiagram – Card 4 of Types of Efficiency.
+     Two side-by-side panels: A. Before innovation (AC curve) and
+     B. After innovation (AC curve shifted DOWN, dashed shows old).
+     Caption beneath: "Innovation shifts AC down — improvement over
+     time". Static. */
+  dynamicEfficiencyDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ded-v { display:none; }
+        @media (max-width:680px){
+          .ded-h { display:none; }
+          .ded-v { display:block; }
+        }
+      </style>
+      <div class="ded-h">
+      <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">A TIME-BASED DIAGRAM</text>
+
+        <!-- PANEL A: Before innovation -->
+        <rect x="14" y="42" width="364" height="240" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+        <text x="196" y="64" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">A. Before innovation</text>
+        <!-- Mini chart inside panel A: x=70..360, y=86..250 -->
+        <line x1="70" y1="86" x2="70" y2="250" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="70" y1="250" x2="360" y2="250" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="42" y="84" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="360" y="270" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- AC curve (high)
+             Plot: x=70..360 (290 wide); 4 sample points
+             Bowed at (90,120)(160,180)(230,200)(300,160) -->
+        <path d="M 90 120 Q 125 160, 160 180 Q 195 195, 230 200 Q 265 185, 300 160" fill="none" stroke="#1E3A8A" stroke-width="2.4"/>
+        <text x="306" y="155" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">AC₁</text>
+        <!-- Minimum point marker -->
+        <circle cx="230" cy="200" r="4" fill="#1E3A8A"/>
+        <line x1="230" y1="200" x2="230" y2="250" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="70" y1="200" x2="230" y2="200" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="64" y="205" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">AC₁ min</text>
+
+        <!-- PANEL B: After innovation -->
+        <rect x="392" y="42" width="354" height="240" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="569" y="64" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">B. After innovation</text>
+        <line x1="448" y1="86" x2="448" y2="250" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="448" y1="250" x2="730" y2="250" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="420" y="84" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="730" y="270" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Old AC (dashed) shows above -->
+        <path d="M 468 120 Q 502 160, 537 180 Q 572 195, 607 200 Q 642 185, 677 160" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="683" y="155" font-size="11" font-weight="700" fill="#94A3B8" font-family="Inter,sans-serif">AC₁ (old)</text>
+        <!-- New AC (lower) -->
+        <path d="M 468 165 Q 502 200, 537 215 Q 572 225, 607 230 Q 642 218, 677 197" fill="none" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="683" y="192" font-size="12" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AC₂</text>
+        <!-- Downward arrow showing the shift -->
+        <line x1="537" y1="195" x2="537" y2="218" stroke="#16A34A" stroke-width="2" marker-end="url(#ded-arr)"/>
+        <defs>
+          <marker id="ded-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
+          </marker>
+        </defs>
+
+        <!-- Caption beneath both panels -->
+        <rect x="14" y="294" width="732" height="22" rx="8" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+        <text x="380" y="309" font-size="11.5" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">Innovation shifts AC down — it is just a point — it is a process of improvement over time.</text>
+      </svg>
+      </div>
+
+      <div class="ded-v">
+      <svg viewBox="0 0 360 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">A TIME-BASED DIAGRAM</text>
+        <defs>
+          <marker id="ded-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
+          </marker>
+        </defs>
+
+        <!-- Panel A -->
+        <rect x="10" y="36" width="340" height="220" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+        <text x="180" y="58" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">A. Before innovation</text>
+        <line x1="50" y1="78" x2="50" y2="226" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="50" y1="226" x2="340" y2="226" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="22" y="76" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="246" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <path d="M 80 110 Q 122 150, 165 170 Q 207 185, 250 188 Q 290 175, 330 152" fill="none" stroke="#1E3A8A" stroke-width="2.2"/>
+        <text x="306" y="148" font-size="11" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">AC₁</text>
+        <circle cx="250" cy="188" r="4" fill="#1E3A8A"/>
+
+        <!-- Panel B -->
+        <rect x="10" y="270" width="340" height="220" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="180" y="292" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">B. After innovation</text>
+        <line x1="50" y1="312" x2="50" y2="460" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="50" y1="460" x2="340" y2="460" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="22" y="310" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="480" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <path d="M 80 344 Q 122 384, 165 404 Q 207 419, 250 422 Q 290 409, 330 386" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="306" y="382" font-size="10" font-weight="700" fill="#94A3B8" font-family="Inter,sans-serif">AC₁ (old)</text>
+        <path d="M 80 380 Q 122 420, 165 436 Q 207 446, 250 448 Q 290 435, 330 416" fill="none" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="306" y="412" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AC₂</text>
+        <line x1="165" y1="406" x2="165" y2="434" stroke="#16A34A" stroke-width="2" marker-end="url(#ded-arr-v)"/>
+
+        <!-- Caption -->
+        <rect x="10" y="510" width="340" height="60" rx="9" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+        <text x="180" y="534" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">Innovation shifts AC down —</text>
+        <text x="180" y="552" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">a process of improvement over time.</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

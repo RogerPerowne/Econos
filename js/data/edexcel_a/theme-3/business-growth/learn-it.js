@@ -182,25 +182,18 @@ window.ECONOS_TOPIC = {
       visualLabel: 'AT THE SAME STAGE',
       visualEmoji: '\u{1F50D}',
 
-      causesLabel: 'WHY IT APPEALS',
-      causesEmoji: '\u{1F48E}',
-      causesCols: 4,
-      causes: [
-        { tone: 'blue',   icon: '\u{1F967}', head: 'Market share',      body: 'Bigger share of sales.' },
-        { tone: 'amber',  icon: '⚙️',        head: 'Economies of scale', body: 'Lower average costs.' },
-        { tone: 'purple', icon: '\u{1F6E1}️', head: 'Brand power',       body: 'Stronger pricing or advertising position.' },
-        { tone: 'green',  icon: '\u{1F465}', head: 'Fewer competitors', body: 'Rivalry may weaken.' }
-      ],
-
-      causes2Label: 'WHAT COULD GO WRONG',
-      causes2Emoji: '⚠️',
-      causes2Cols: 4,
-      causes2: [
-        { tone: 'rose', icon: '⚖️',         head: 'Competition concerns', body: 'Regulators may intervene.' },
-        { tone: 'rose', icon: '\u{1F465}', head: 'Culture clash',        body: 'Merged firms may not fit well.' },
-        { tone: 'rose', icon: '\u{1F4BC}', head: 'Job overlap',          body: 'Restructuring can be disruptive.' },
-        { tone: 'rose', icon: '£',         head: 'Overpayment',          body: 'Firms may pay too much for the target.' }
-      ],
+      pairLabel: 'APPEAL VS RISKS',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'green', iconStyle: 'circle', icon: '\u{1F48E}',
+        label: 'Why it appeals',
+        text: '<ul><li><strong>Market share.</strong> Bigger share of sales.</li><li><strong>Economies of scale.</strong> Lower average costs.</li><li><strong>Brand power.</strong> Stronger pricing or advertising position.</li><li><strong>Fewer competitors.</strong> Rivalry may weaken.</li></ul>'
+      },
+      right: {
+        tone: 'rose', iconStyle: 'circle', icon: '⚠️',
+        label: 'What could go wrong',
+        text: '<ul><li><strong>Competition concerns.</strong> Regulators may intervene.</li><li><strong>Culture clash.</strong> Merged firms may not fit well.</li><li><strong>Job overlap.</strong> Restructuring can be disruptive.</li><li><strong>Overpayment.</strong> Firms may pay too much for the target.</li></ul>'
+      },
 
       causes3Label: 'WHEN IT WORKS BEST',
       causes3Emoji: '\u{1F3C6}',

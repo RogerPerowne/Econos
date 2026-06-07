@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.16 — 2026-06-07
+
+### Business Growth Card 7: mobile-friendly "Four main constraints" diagram
+
+The `growthRoadblockers` SVG (four numbered constraint tiles with
+road-barrier dividers) was horizontal-only and squashed text to
+illegibility on iPhone-width screens. Added a vertical sibling
+layout that takes over below 600px viewport:
+
+* Vertical road strip runs top-to-bottom through the centre, with
+  the same dashed white centre-line, road-grey background, and
+  white-and-orange cone barriers — just rotated 90° to sit across
+  the road between stacked tiles.
+* Each tile becomes a wide-short card (340×100) with the number
+  badge top-left, icon-circle on the left, and title + body text
+  flowing right of the icon — so all four constraints stay readable
+  at one glance without horizontal squeeze.
+* Toggle is the same `.grb-h` / `.grb-v` CSS-media pattern used by
+  `verticalSupplyChain`, scoped inside the diagram's own `<style>`.
+
+Cache-bump only (no app.js / styles.css changes), but the SVG lives
+in `icons.js` which IS cache-first, so `CACHE_NAME` bumped to v416.
+
 ## 0.96.15 — 2026-06-07
 
 ### Business Growth: new "Diagnose the integration" card (Card 6 of 8)

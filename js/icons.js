@@ -17769,9 +17769,18 @@ window.ECONOS_ICONS = {
 
   /* growthRoadblockers – Card 6 of Business Growth. Four numbered constraint
      tiles separated by road-barrier dividers. Pure SVG so the barriers stay
-     pixel-aligned with the gaps. */
+     pixel-aligned with the gaps. Two layouts: horizontal road (desktop) and
+     vertical road with stacked tiles (mobile ≤600px). */
   growthRoadblockers: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .grb-v { display:none; }
+        @media (max-width:600px){
+          .grb-h { display:none; }
+          .grb-v { display:block; }
+        }
+      </style>
+      <div class="grb-h">
       <svg viewBox="0 0 760 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- Road strip behind the tiles -->
         <rect x="0" y="118" width="760" height="46" fill="#94A3B8"/>
@@ -17840,6 +17849,71 @@ window.ECONOS_ICONS = {
         <text x="676" y="210" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">planning rules or</text>
         <text x="676" y="226" font-size="12" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">licences can limit.</text>
       </svg>
+      </div>
+
+      <div class="grb-v">
+      <svg viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Vertical road strip down centre (visible in gaps between tiles) -->
+        <rect x="146" y="0" width="46" height="540" fill="#94A3B8"/>
+        <line x1="169" y1="10" x2="169" y2="530" stroke="#fff" stroke-width="2.5" stroke-dasharray="22 18"/>
+
+        <!-- Tile 1: Size of the market (green) y=10-110 -->
+        <rect x="10" y="10" width="340" height="100" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="34" cy="32" r="12" fill="#fff" stroke="#16A34A" stroke-width="1.8"/>
+        <text x="34" y="36" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+        <circle cx="72" cy="68" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
+        <text x="72" y="76" font-size="20" text-anchor="middle">👥</text>
+        <text x="110" y="58" font-size="14" font-weight="800" fill="#065F46" text-anchor="start" font-family="Inter,sans-serif">Size of the market</text>
+        <text x="110" y="82" font-size="12.5" fill="#0B1426" text-anchor="start" font-family="Inter,sans-serif">Demand may be too limited.</text>
+
+        <!-- Barrier 1 across road (y centre 130) -->
+        <rect x="146" y="123" width="68" height="14" fill="#fff" stroke="#0B1426" stroke-width="1.4"/>
+        <rect x="161" y="123" width="10" height="14" fill="#F97316"/>
+        <rect x="175" y="123" width="10" height="14" fill="#F97316"/>
+        <rect x="189" y="123" width="10" height="14" fill="#F97316"/>
+
+        <!-- Tile 2: Access to finance (blue) y=150-250 -->
+        <rect x="10" y="150" width="340" height="100" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <circle cx="34" cy="172" r="12" fill="#fff" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="34" y="176" font-size="12" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+        <circle cx="72" cy="208" r="22" fill="#fff" stroke="#93C5FD" stroke-width="1.6"/>
+        <text x="72" y="216" font-size="20" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">£</text>
+        <text x="110" y="198" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="start" font-family="Inter,sans-serif">Access to finance</text>
+        <text x="110" y="222" font-size="12.5" fill="#0B1426" text-anchor="start" font-family="Inter,sans-serif">Firms may struggle to raise funds.</text>
+
+        <!-- Barrier 2 (y centre 270) -->
+        <rect x="146" y="263" width="68" height="14" fill="#fff" stroke="#0B1426" stroke-width="1.4"/>
+        <rect x="161" y="263" width="10" height="14" fill="#F97316"/>
+        <rect x="175" y="263" width="10" height="14" fill="#F97316"/>
+        <rect x="189" y="263" width="10" height="14" fill="#F97316"/>
+
+        <!-- Tile 3: Owner objectives (amber) y=290-390 -->
+        <rect x="10" y="290" width="340" height="100" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
+        <circle cx="34" cy="312" r="12" fill="#fff" stroke="#D97706" stroke-width="1.8"/>
+        <text x="34" y="316" font-size="12" font-weight="800" fill="#D97706" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+        <circle cx="72" cy="348" r="22" fill="#fff" stroke="#FDBA74" stroke-width="1.6"/>
+        <text x="72" y="356" font-size="20" text-anchor="middle">👤</text>
+        <text x="110" y="328" font-size="14" font-weight="800" fill="#C2410C" text-anchor="start" font-family="Inter,sans-serif">Owner objectives</text>
+        <text x="110" y="352" font-size="12" fill="#0B1426" text-anchor="start" font-family="Inter,sans-serif">Some owners prefer control,</text>
+        <text x="110" y="370" font-size="12" fill="#0B1426" text-anchor="start" font-family="Inter,sans-serif">quality of life, or lower risk.</text>
+
+        <!-- Barrier 3 (y centre 410) -->
+        <rect x="146" y="403" width="68" height="14" fill="#fff" stroke="#0B1426" stroke-width="1.4"/>
+        <rect x="161" y="403" width="10" height="14" fill="#F97316"/>
+        <rect x="175" y="403" width="10" height="14" fill="#F97316"/>
+        <rect x="189" y="403" width="10" height="14" fill="#F97316"/>
+
+        <!-- Tile 4: Regulation (purple) y=430-530 -->
+        <rect x="10" y="430" width="340" height="100" rx="14" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+        <circle cx="34" cy="452" r="12" fill="#fff" stroke="#7C3AED" stroke-width="1.8"/>
+        <text x="34" y="456" font-size="12" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+        <circle cx="72" cy="488" r="22" fill="#fff" stroke="#C4B5FD" stroke-width="1.6"/>
+        <text x="72" y="496" font-size="20" text-anchor="middle">🏛️</text>
+        <text x="110" y="468" font-size="14" font-weight="800" fill="#5B21B6" text-anchor="start" font-family="Inter,sans-serif">Regulation</text>
+        <text x="110" y="492" font-size="12" fill="#0B1426" text-anchor="start" font-family="Inter,sans-serif">Competition law, planning</text>
+        <text x="110" y="510" font-size="12" fill="#0B1426" text-anchor="start" font-family="Inter,sans-serif">rules or licences can limit.</text>
+      </svg>
+      </div>
     </div>
   `,
 

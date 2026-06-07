@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.9 — 2026-06-07
+
+### Desktop backward-integration arrow: now actually points left
+
+The original `vsc-arr-green-l` marker had a pre-rotated left-pointing
+triangle path AND `orient="auto"`, which compounded into a
+right-pointing rendering at the marker site — so the green arrow
+ended up looking like it pointed back toward the firm instead of out
+toward Raw materials. Same double-rotation bug as the mobile
+arrowheads in v0.96.6. Replaced with a standard right-pointing
+triangle path; `orient="auto"` now correctly rotates it to point left
+for the leftward backward-integration line. SW cache bumped to v413.
+
 ## 0.96.8 — 2026-06-07
 
 ### Supply chain arrows: revert to firm-as-origin

@@ -295,6 +295,7 @@ window.ECONOS_TOPIC = {
           ['✂️ Remove non-core',        'Division sits outside the main mission',       'Different industries, customers or regulators under one roof.']
         ]
       },
+      scenariosCols: 1,
       scenarios: {
         title: 'Six demergers to diagnose',
         items: [

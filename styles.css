@@ -2366,6 +2366,11 @@ img, svg { display: block; max-width: 100%; }
    than 3 + 1 in the default 3-col grid. Still collapses to 1 column on
    mobile via the ≤900px rule below (later in source, equal specificity). */
 .scenarios__grid--cols2 { grid-template-columns: repeat(2, 1fr); }
+/* Opt-in 1-column variant (set scenariosCols: 1 on a diagnose card).
+   Use for long-form scenarios (real-world case studies with ~300+ chars
+   per scenario) where the 3-col grid squeezes each card too narrow to
+   read comfortably. Each scenario becomes a full-width row. */
+.scenarios__grid--cols1 { grid-template-columns: 1fr; }
 
 .scenario {
   background: var(--econ-white);

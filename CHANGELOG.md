@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.20 — 2026-06-07
+
+### Diagnose template: opt-in 1-column rows variant
+
+Long-form case-study scenarios (the new demergers card runs ~300+
+chars per scenario) read awkwardly in the default 3-column grid —
+the narrow columns force ragged line-breaks and shrink the
+"Make your call" button. Added a `scenariosCols: 1` flag that
+stacks each scenario as a full-width row, giving the prose a
+proper reading width and a wider tap target.
+
+* New `.scenarios__grid--cols1` CSS modifier on `.scenarios__grid`.
+* Renderer extended in `renderCardDiagnose` to map
+  `scenariosCols: 1` to the new class (existing `scenariosCols: 2`
+  branch unchanged).
+* Demergers "Diagnose the demerger" card flipped to
+  `scenariosCols: 1` for the six real-deal case studies.
+
+Existing Business Growth "Diagnose the integration" card is
+unchanged (no flag → still 3 columns).
+
 ## 0.96.19 — 2026-06-07
 
 ### Demergers: new "Diagnose the demerger" card (Card 5 of 6)

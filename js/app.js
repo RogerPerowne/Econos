@@ -3323,7 +3323,7 @@
 
       <div class="scenarios">
         <div class="scenarios__title">${c.scenarios.title}</div>
-        <div class="scenarios__grid${c.scenariosCols === 2 ? ' scenarios__grid--cols2' : ''}">
+        <div class="scenarios__grid${c.scenariosCols === 2 ? ' scenarios__grid--cols2' : c.scenariosCols === 1 ? ' scenarios__grid--cols1' : ''}">
           ${scenarios}
         </div>
       </div>

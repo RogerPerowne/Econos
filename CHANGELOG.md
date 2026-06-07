@@ -6,6 +6,41 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.15 — 2026-06-07
+
+### Business Growth: new "Diagnose the integration" card (Card 6 of 8)
+
+Added a `template: 'diagnose'` synthesis card after the three
+integration-type cards (vertical/horizontal/conglomerate) and before
+the constraints card. Same predict-then-reveal pattern as the
+Theme 2 "Diagnose the shock" card on the trade-business-cycle topic.
+
+* Top "rule" table — three rows showing how to spot each integration
+  type (Vertical / Horizontal / Conglomerate) and the give-away.
+  Renders via the universal `.cmp-table` styling so it picks up the
+  mobile row-stacked layout shipped in v0.96.11.
+* Six real-world deals — Disney + Pixar, Apple Stores, Tata Group,
+  IKEA in Romania, Vodafone + Three UK, Berkshire Hathaway. Each
+  scenario is a short description; the student predicts the
+  integration type and clicks **Make your call** to reveal the answer
+  with reasoning.
+
+Bumped the topic from 7 cards to 8 (updated header comment + intro
+stages "8 cards · 18 min" + all stepLabels). Constraints is now
+Card 7 of 8 and "The whole story" is Card 8 of 8.
+
+## 0.96.14 — 2026-06-07
+
+### Horizontal integration: appeal/risks as a VS pair
+
+Same restructure as organic growth (Card 2) + vertical integration
+(Card 3) now applied to Card 4 (horizontal integration). Replaced
+the two stacked single-tone tile grids ("WHY IT APPEALS" + "WHAT
+COULD GO WRONG") with a side-by-side APPEAL VS RISKS pair — green
+left, rose right, VS badge between, tone bullets. The standalone
+`causes3` "WHEN IT WORKS BEST" block remains as a 3-tile grid below.
+Data-only change.
+
 ## 0.96.13 — 2026-06-07
 
 ### Organic growth: benefits/drawbacks as a VS pair

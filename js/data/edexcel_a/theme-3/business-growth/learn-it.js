@@ -1,6 +1,6 @@
 /* ============================================================
    ECONOS – Business Growth (Edexcel A 3.1.2)
-   7 cards · interactive-first build
+   8 cards · interactive-first build
    Maps the spec sub-points: 3.1.2a (organic growth + reasons),
    3.1.2b (vertical / horizontal / conglomerate integration and
    their advantages and disadvantages), 3.1.2c (constraints on
@@ -9,12 +9,13 @@
 
    Card patterns (no two consecutive repeat):
      1 Decompose (4-route hub) + tile grid + flow chain
-     2 Sequential flow chain + tile grid + tile grid
-     3 Decompose (supply-chain anatomy) + tile grid + side-by-side pair
-     4 Side-by-side pair (decompose hero) + tile grid + tile grid
+     2 Sequential flow chain + side-by-side pair
+     3 Decompose (supply-chain anatomy) + side-by-side pair + tile grid
+     4 Side-by-side pair (decompose hero) + side-by-side pair + tile grid
      5 Decompose (4-industry hub) + tile grid + side-by-side pair
-     6 Spectrum / regime grid (road-blockers) + tile grid + flow chain
-     7 Comparison table + comparison table + flow chain
+     6 Predict-then-reveal (six real integration deals to diagnose)
+     7 Spectrum / regime grid (road-blockers) + tile grid + flow chain
+     8 Comparison table + comparison table + flow chain
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -37,7 +38,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Growth is a choice, not a default. The strongest answers compare the route to the firm’s objectives and the market’s constraints.',
     stages: [
-      { num: 1, name: 'Learn',  sub: '7 cards \xb7 16 min', state: 'current' },
+      { num: 1, name: 'Learn',  sub: '8 cards \xb7 18 min', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply in exam-style questions', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
@@ -51,7 +52,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'business-growth-big-picture',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 1 of 7',
+      stepLabel: 'Learn: Card 1 of 8',
       title: 'Business growth – the big picture',
       lede: 'Firms can grow in different ways, but every growth strategy involves trade-offs.',
       ledeStyle: 'plain',
@@ -83,7 +84,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'business-growth-organic',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 2 of 7',
+      stepLabel: 'Learn: Card 2 of 8',
       title: 'Organic growth',
       lede: 'Organic growth is internal expansion – growing through the firm’s own efforts rather than by merging or taking over another business.',
       ledeStyle: 'plain',
@@ -127,7 +128,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'business-growth-vertical',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 3 of 7',
+      stepLabel: 'Learn: Card 3 of 8',
       title: 'Vertical integration',
       lede: 'Vertical integration happens when a firm grows by merging with or taking over another firm at a different stage of production or distribution.',
       ledeStyle: 'plain',
@@ -171,7 +172,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'business-growth-horizontal',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 4 of 7',
+      stepLabel: 'Learn: Card 4 of 8',
       title: 'Horizontal integration',
       lede: 'Horizontal integration is growth by merging with or taking over another firm at the same stage of production in the same industry.',
       ledeStyle: 'plain',
@@ -216,7 +217,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'business-growth-conglomerate',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 5 of 7',
+      stepLabel: 'Learn: Card 5 of 8',
       title: 'Conglomerate integration',
       lede: 'Conglomerate integration happens when a firm grows by joining with a business in a different industry or market.',
       ledeStyle: 'plain',
@@ -260,12 +261,76 @@ window.ECONOS_TOPIC = {
 
     /* ====================================================================
        CARD 6 – Constraints on business growth
+       Pattern: Predict-then-reveal (diagnose six real-world cases).
+       Synthesis card after all four routes have been introduced — for each
+       deal, the student predicts the integration type then clicks for the
+       answer.
+       ==================================================================== */
+    {
+      id: 'business-growth-diagnose',
+      template: 'diagnose',
+      stepLabel: 'Learn: Card 6 of 8',
+      title: 'Diagnose the integration',
+      lede: 'Six real-world deals. For each one, ask yourself: <strong>are the two firms at the same stage, a different stage of the same chain, or in different industries?</strong> Then click <em>Make your call</em> to check.',
+      table: {
+        headers: ['Type', 'How to spot it', 'The give-away'],
+        rows: [
+          ['↕️ Vertical',     'Same supply chain, different stage', 'Backward = toward suppliers; forward = toward the customer.'],
+          ['\u{1F3E2} Horizontal',   'Same stage, same industry',          'Two competitors at the same level join forces.'],
+          ['\u{1F310} Conglomerate', 'Different industries',                'Unrelated activities sit under one parent.']
+        ]
+      },
+      scenarios: {
+        title: 'Six deals to diagnose',
+        items: [
+          {
+            tone: 'amber',
+            label: '1',
+            text: '<strong>Disney + Pixar (2006).</strong> Disney, the world\'s largest entertainment company, paid $7.4bn to acquire Pixar – the leading computer-animation studio behind <em>Toy Story</em> and <em>Finding Nemo</em>. Both firms made animated feature films for the same global cinema audience.',
+            answer: '<strong>Horizontal integration.</strong> Both Disney and Pixar were at the same stage of the same industry (film production), so this is a same-stage merger. The deal gave Disney scale, a dominant share of family animation and access to Pixar\'s technical talent.'
+          },
+          {
+            tone: 'blue',
+            label: '2',
+            text: '<strong>Apple Stores (from 2001).</strong> Apple, primarily a maker of consumer electronics (iPhones, Macs, iPads), started opening its own branded retail stores worldwide rather than relying only on third-party retailers like Best Buy or Currys to reach customers.',
+            answer: '<strong>Forward vertical integration.</strong> Apple moved <em>down</em> the supply chain – from manufacturing toward the customer-facing retail stage. The aim was greater control over the brand experience, customer data, and the full retail margin that had previously gone to third-party shops.'
+          },
+          {
+            tone: 'purple',
+            label: '3',
+            text: '<strong>Tata Group.</strong> The Indian conglomerate owns Jaguar Land Rover (luxury cars), Tata Steel (one of Europe\'s largest steelmakers), Tata Consultancy Services (global IT services) and Tetley Tea – plus airlines, hotels and chemicals.',
+            answer: '<strong>Conglomerate integration.</strong> Tata\'s businesses operate in completely different industries with little operational overlap. The logic is risk diversification and using one strong group balance sheet to support many unrelated activities.'
+          },
+          {
+            tone: 'blue',
+            label: '4',
+            text: '<strong>IKEA in Romania (2015).</strong> IKEA, the world\'s largest furniture retailer, bought 33,600 hectares of Romanian forest – making it one of Europe\'s biggest private forest owners. The timber is used to make IKEA\'s flat-pack furniture.',
+            answer: '<strong>Backward vertical integration.</strong> IKEA moved <em>up</em> the supply chain – from furniture retail toward the raw-material input (timber). The aim was security of supply, lower long-run cost, and tighter control over sustainability standards.'
+          },
+          {
+            tone: 'amber',
+            label: '5',
+            text: '<strong>Vodafone + Three UK (proposed 2024).</strong> Vodafone (the UK\'s third-largest mobile network) agreed to merge its UK business with Three UK (the fourth-largest), creating a combined operator that would leapfrog BT/EE to become the country\'s biggest mobile carrier by customer count.',
+            answer: '<strong>Horizontal integration.</strong> Both are mobile network operators at the same stage of the same industry. Scale and spectrum efficiency are the upside; the Competition and Markets Authority (CMA) review reflected horizontal-merger concerns about competition between only three remaining UK networks.'
+          },
+          {
+            tone: 'purple',
+            label: '6',
+            text: '<strong>Berkshire Hathaway.</strong> Warren Buffett\'s investment vehicle directly owns insurance giants (GEICO), BNSF Railway, See\'s Candies, Dairy Queen, Duracell batteries, and large minority stakes in Apple, Coca-Cola and American Express – all sitting under one parent company.',
+            answer: '<strong>Conglomerate integration.</strong> Berkshire\'s holdings span insurance, transport, sweets, batteries and technology – with little operational synergy. The integrating logic is capital allocation across unrelated businesses, not value-chain or market-share gains.'
+          }
+        ]
+      }
+    },
+
+    /* ====================================================================
+       CARD 7 – Constraints on business growth (3.1.2c)
        Pattern: Spectrum / regime grid (4 road-blockers) + tile grid + flow chain
        ==================================================================== */
     {
       id: 'business-growth-constraints',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 6 of 7',
+      stepLabel: 'Learn: Card 7 of 8',
       title: 'Constraints on business growth',
       lede: 'Not every firm can grow as much as it wants – real-world limits affect how fast and how far expansion can go.',
       ledeStyle: 'plain',
@@ -309,7 +374,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'business-growth-whole-story',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 7 of 7',
+      stepLabel: 'Learn: Card 8 of 8',
       title: 'The whole story',
       lede: 'There is no single best route to growth – the right strategy depends on the firm’s aims, market and constraints.',
       ledeStyle: 'plain',

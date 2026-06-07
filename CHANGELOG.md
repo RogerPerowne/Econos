@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.8 — 2026-06-07
+
+### Supply chain arrows: revert to firm-as-origin
+
+Reverted v0.96.7's arrow flip. Both arrows now originate at the firm
+(centre dot) and point OUTWARD — backward toward suppliers, forward
+toward customers — which is the correct semantic for a firm
+"reaching backward" or "reaching forward" to integrate. Original
+sub-labels ("towards inputs" / "towards the customer") restored.
+
 ## 0.96.7 — 2026-06-07
 
 ### Supply chain arrows: flip to point TOWARD the firm

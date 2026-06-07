@@ -15849,6 +15849,869 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* fixedVariableTotalChart – Card 2 of Costs. Interactive 3-view
+     reveal of the three short-run cost lines:
+       View 1 (tfc-1): TFC horizontal at £40 (does not move with Q)
+       View 2 (tfc-2): + TVC rising curve through (1,20)(2,35)(3,55)(4,80)
+       View 3 (tfc-3): + TC = TFC + TVC, parallel above TVC starting at £40
+     A 4-row worked table sits to the right with each row revealed at the
+     corresponding view. Layers tfc-1, tfc-2, tfc-3. */
+  fixedVariableTotalChart: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fvt-v { display:none; }
+        @media (max-width:680px){
+          .fvt-h { display:none; }
+          .fvt-v { display:block; }
+        }
+      </style>
+      <div class="fvt-h">
+      <svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- ===== CHART (left) =====
+             Plot: x 80..440 (360 wide), y 40..340 (300 tall)
+             Q 0..5 → x = 80 + Q*72
+             £ 0..130 → y = 340 - £*(300/130) = 340 - £*2.308 -->
+        <line x1="80" y1="40" x2="80" y2="340" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="340" x2="450" y2="340" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="54" y="36" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost (£)</text>
+        <text x="450" y="362" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (Q)</text>
+        <!-- Y ticks at 20, 40, 60, 80, 100, 120 -->
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="74" y="298" text-anchor="end">20</text>
+          <text x="74" y="252" text-anchor="end">40</text>
+          <text x="74" y="206" text-anchor="end">60</text>
+          <text x="74" y="160" text-anchor="end">80</text>
+          <text x="74" y="113" text-anchor="end">100</text>
+          <text x="74" y="67" text-anchor="end">120</text>
+        </g>
+        <!-- X ticks at 1..5 -->
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="152" y="356" text-anchor="middle">1</text>
+          <text x="224" y="356" text-anchor="middle">2</text>
+          <text x="296" y="356" text-anchor="middle">3</text>
+          <text x="368" y="356" text-anchor="middle">4</text>
+          <text x="440" y="356" text-anchor="middle">5</text>
+        </g>
+
+        <!-- TFC line at £40, x=80..440, y=252 -->
+        <g class="tfc-1" style="display:none">
+          <line x1="80" y1="252" x2="440" y2="252" stroke="#16A34A" stroke-width="2.4"/>
+          <text x="448" y="256" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">TFC</text>
+        </g>
+
+        <!-- TVC curve through (0,0)(1,20)(2,35)(3,55)(4,80)(5,110)
+             Points: (80,340) (152,294) (224,259) (296,213) (368,156) (440,86) -->
+        <g class="tfc-2" style="display:none">
+          <polyline points="80,340 152,294 224,259 296,213 368,156 440,86" fill="none" stroke="#C2410C" stroke-width="2.4"/>
+          <text x="448" y="90" font-size="13" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">TVC</text>
+        </g>
+
+        <!-- TC = TFC + TVC: (0,40)(1,60)(2,75)(3,95)(4,120)(5,150)
+             Points: (80,248) (152,202) (224,167) (296,121) (368,64) — and (440, would be 340-150*2.308=-6) → goes off chart
+             Stop at Q=4 where TC=120 within chart. Or extend to Q=5 with y=-6 (off chart).
+             Better: show Q=0..4. Points: (80,248) (152,202) (224,167) (296,121) (368,64) -->
+        <g class="tfc-3" style="display:none">
+          <polyline points="80,248 152,202 224,167 296,121 368,64" fill="none" stroke="#1E3A8A" stroke-width="2.6"/>
+          <text x="376" y="58" font-size="13" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">TC</text>
+        </g>
+
+        <!-- ===== TABLE (right) ===== -->
+        <text x="600" y="36" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">WORKED EXAMPLE</text>
+        <rect x="470" y="46" width="276" height="172" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <!-- Header -->
+        <text x="500" y="72" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Output</text>
+        <text x="572" y="72" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">FC (£)</text>
+        <text x="649" y="72" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">VC (£)</text>
+        <text x="720" y="72" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TC (£)</text>
+        <line x1="478" y1="80" x2="738" y2="80" stroke="#CBD5E1" stroke-width="1"/>
+        <!-- Always: FC col (with tfc-1) -->
+        <g class="tfc-1" style="display:none">
+          <text x="500" y="98"  font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+          <text x="500" y="124" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+          <text x="500" y="150" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+          <text x="500" y="176" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+          <text x="500" y="202" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">5</text>
+          <text x="572" y="98"  font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+          <text x="572" y="124" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+          <text x="572" y="150" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+          <text x="572" y="176" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+          <text x="572" y="202" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+        </g>
+        <!-- VC col (with tfc-2) -->
+        <g class="tfc-2" style="display:none">
+          <text x="649" y="98"  font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">20</text>
+          <text x="649" y="124" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">35</text>
+          <text x="649" y="150" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">55</text>
+          <text x="649" y="176" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">80</text>
+          <text x="649" y="202" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">110</text>
+        </g>
+        <!-- TC col (with tfc-3) -->
+        <g class="tfc-3" style="display:none">
+          <text x="720" y="98"  font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">60</text>
+          <text x="720" y="124" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">75</text>
+          <text x="720" y="150" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">95</text>
+          <text x="720" y="176" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">120</text>
+          <text x="720" y="202" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">150</text>
+        </g>
+
+        <!-- Insight panels (right column below table) -->
+        <g class="tfc-1" style="display:none">
+          <rect x="470" y="234" width="276" height="44" rx="8" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.2"/>
+          <text x="484" y="255" font-size="14" font-family="Inter,sans-serif">🔒</text>
+          <text x="510" y="256" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">FC stays at £40 — Marco pays for</text>
+          <text x="510" y="272" font-size="11.5" fill="#065F46" font-family="Inter,sans-serif">the oven, rent and insurance whatever the output.</text>
+        </g>
+        <g class="tfc-2" style="display:none">
+          <rect x="470" y="284" width="276" height="44" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.2"/>
+          <text x="484" y="305" font-size="14" font-family="Inter,sans-serif">📈</text>
+          <text x="510" y="306" font-size="12" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">VC rises with output — more</text>
+          <text x="510" y="322" font-size="11.5" fill="#C2410C" font-family="Inter,sans-serif">flour, cheese and topping for every extra pizza.</text>
+        </g>
+        <g class="tfc-3" style="display:none">
+          <rect x="470" y="334" width="276" height="44" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.2"/>
+          <text x="484" y="355" font-size="14" font-family="Inter,sans-serif">➕</text>
+          <text x="510" y="356" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">TC = FC + VC — the parallel line</text>
+          <text x="510" y="372" font-size="11.5" fill="#1E3A8A" font-family="Inter,sans-serif">sits £40 above TVC because of the fixed cost.</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="fvt-v">
+      <svg viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Mobile chart on top, table below -->
+        <!-- Plot: x 40..340, y 30..280 -->
+        <line x1="40" y1="30" x2="40" y2="280" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="40" y1="280" x2="346" y2="280" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="26" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost (£)</text>
+        <text x="346" y="302" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="34" y="242" text-anchor="end">20</text>
+          <text x="34" y="203" text-anchor="end">40</text>
+          <text x="34" y="165" text-anchor="end">60</text>
+          <text x="34" y="126" text-anchor="end">80</text>
+          <text x="34" y="88" text-anchor="end">100</text>
+          <text x="34" y="49" text-anchor="end">120</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="100" y="294" text-anchor="middle">1</text>
+          <text x="161" y="294" text-anchor="middle">2</text>
+          <text x="222" y="294" text-anchor="middle">3</text>
+          <text x="283" y="294" text-anchor="middle">4</text>
+          <text x="344" y="294" text-anchor="middle">5</text>
+        </g>
+        <!-- Q 0..5 → x = 40 + Q*61, £ 0..130 → y = 280 - £*(250/130) = 280 - £*1.923 -->
+        <g class="tfc-1" style="display:none">
+          <line x1="40" y1="203" x2="346" y2="203" stroke="#16A34A" stroke-width="2"/>
+          <text x="316" y="197" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">TFC</text>
+        </g>
+        <g class="tfc-2" style="display:none">
+          <polyline points="40,280 100,242 161,213 222,174 283,126 344,68" fill="none" stroke="#C2410C" stroke-width="2"/>
+          <text x="316" y="80" font-size="11" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">TVC</text>
+        </g>
+        <g class="tfc-3" style="display:none">
+          <polyline points="40,203 100,165 161,136 222,97 283,49" fill="none" stroke="#1E3A8A" stroke-width="2.2"/>
+          <text x="266" y="44" font-size="11" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">TC</text>
+        </g>
+
+        <!-- Table -->
+        <rect x="10" y="320" width="340" height="172" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <text x="180" y="340" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">WORKED EXAMPLE</text>
+        <text x="50"  y="362" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Output</text>
+        <text x="140" y="362" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">FC</text>
+        <text x="230" y="362" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">VC</text>
+        <text x="320" y="362" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TC</text>
+        <line x1="20" y1="370" x2="340" y2="370" stroke="#CBD5E1" stroke-width="1"/>
+        <g class="tfc-1" style="display:none">
+          <text x="50" y="388" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+          <text x="50" y="408" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+          <text x="50" y="428" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+          <text x="50" y="448" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+          <text x="50" y="468" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">5</text>
+          <text x="140" y="388" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+          <text x="140" y="408" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+          <text x="140" y="428" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+          <text x="140" y="448" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+          <text x="140" y="468" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">40</text>
+        </g>
+        <g class="tfc-2" style="display:none">
+          <text x="230" y="388" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">20</text>
+          <text x="230" y="408" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">35</text>
+          <text x="230" y="428" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">55</text>
+          <text x="230" y="448" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">80</text>
+          <text x="230" y="468" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">110</text>
+        </g>
+        <g class="tfc-3" style="display:none">
+          <text x="320" y="388" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">60</text>
+          <text x="320" y="408" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">75</text>
+          <text x="320" y="428" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">95</text>
+          <text x="320" y="448" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">120</text>
+          <text x="320" y="468" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">150</text>
+        </g>
+
+        <g class="tfc-3" style="display:none">
+          <rect x="10" y="510" width="340" height="80" rx="9" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+          <text x="22" y="534" font-size="14" font-family="Inter,sans-serif">💡</text>
+          <text x="46" y="535" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif">TC = FC + VC</text>
+          <text x="22" y="558" font-size="11.5" fill="#92400E" font-family="Inter,sans-serif">The TC line is just the TVC line shifted</text>
+          <text x="22" y="574" font-size="11.5" fill="#92400E" font-family="Inter,sans-serif">up by £40 — the fixed-cost gap.</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* averageCostFamilyChart – Card 3 of Costs (Marco's Pizzeria).
+     Three-formula header (AFC / AVC / AC) + interactive curve reveal.
+     Layers: acf-1 (AFC hyperbolic), acf-2 (AVC U-shape),
+     acf-3 (AC U-shape above AVC). Numbers come from Marco's:
+       AFC = 40/Q, AVC values 20/17.5/18.3/20/22, AC = AFC + AVC. */
+  averageCostFamilyChart: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .acf-v { display:none; }
+        @media (max-width:680px){
+          .acf-h { display:none; }
+          .acf-v { display:block; }
+        }
+      </style>
+      <div class="acf-h">
+      <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Three formula tiles at top -->
+        <rect x="14" y="14" width="240" height="64" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+        <text x="134" y="36" font-size="12" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">Average fixed cost</text>
+        <text x="134" y="60" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">AFC = TFC ÷ Q</text>
+
+        <rect x="262" y="14" width="240" height="64" rx="10" fill="#FFE4E6" stroke="#FECACA" stroke-width="1.5"/>
+        <text x="382" y="36" font-size="12" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Average variable cost</text>
+        <text x="382" y="60" font-size="14" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">AVC = TVC ÷ Q</text>
+
+        <rect x="510" y="14" width="240" height="64" rx="10" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5"/>
+        <text x="630" y="36" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Average cost</text>
+        <text x="630" y="60" font-size="14" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">AC = TC ÷ Q (= AFC + AVC)</text>
+
+        <!-- Curves chart -->
+        <text x="14" y="106" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE CURVES — Marco's Pizzeria (FC = £40)</text>
+        <!-- Plot: x 80..720 (640 wide), y 124..400 (276 tall)
+             Q 1..6 → x = 80 + (Q-1)*128
+             £ 0..60 → y = 400 - £*4.6 -->
+        <line x1="80" y1="124" x2="80" y2="400" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="80" y1="400" x2="730" y2="400" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="54" y="120" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£ per unit</text>
+        <text x="730" y="424" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (pizzas/day)</text>
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="74" y="354" text-anchor="end">10</text>
+          <text x="74" y="308" text-anchor="end">20</text>
+          <text x="74" y="262" text-anchor="end">30</text>
+          <text x="74" y="216" text-anchor="end">40</text>
+          <text x="74" y="170" text-anchor="end">50</text>
+          <text x="74" y="124" text-anchor="end">60</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="80" y="416" text-anchor="middle">1</text>
+          <text x="208" y="416" text-anchor="middle">2</text>
+          <text x="336" y="416" text-anchor="middle">3</text>
+          <text x="464" y="416" text-anchor="middle">4</text>
+          <text x="592" y="416" text-anchor="middle">5</text>
+          <text x="720" y="416" text-anchor="middle">6</text>
+        </g>
+
+        <!-- AFC = 40/Q. Points:
+             Q=1, AFC=40 → (80, 400-40*4.6=216)
+             Q=2, AFC=20 → (208, 400-92=308)
+             Q=3, AFC=13.3 → (336, 400-61.3=338.7)
+             Q=4, AFC=10 → (464, 400-46=354)
+             Q=5, AFC=8 → (592, 400-36.8=363.2)
+             Q=6, AFC=6.67 → (720, 400-30.7=369.3) -->
+        <g class="acf-1" style="display:none">
+          <polyline points="80,216 144,256 208,308 272,328 336,339 400,348 464,354 528,359 592,363 656,366 720,369" fill="none" stroke="#D97706" stroke-width="2.4"/>
+          <text x="724" y="372" font-size="13" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">AFC</text>
+        </g>
+
+        <!-- AVC values: Q=1 20, Q=2 17.5, Q=3 18.3, Q=4 20, Q=5 22, Q=6 25
+             Hmm Q=2.5 AVC ≈ 17, AVC min around Q=2-2.5
+             Pixel: Q=1 (80, 400-92=308), Q=2 (208, 400-80.5=319.5), Q=2.5 (272, 400-78=322), Q=3 (336, 400-84=316), Q=4 (464, 400-92=308), Q=5 (592, 400-101=299), Q=6 (720, 400-115=285) -->
+        <g class="acf-2" style="display:none">
+          <polyline points="80,308 144,316 208,319 272,322 336,316 400,313 464,308 528,303 592,299 656,292 720,285" fill="none" stroke="#DC2626" stroke-width="2.4"/>
+          <text x="724" y="288" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">AVC</text>
+        </g>
+
+        <!-- AC = AFC + AVC:
+             Q=1, AC=60 → (80, 400-276=124)
+             Q=2, AC=37.5 → (208, 400-172.5=227.5)
+             Q=2.5, AC=33.3 → (272, 400-153.3=246.7)
+             Q=3, AC=31.6 → (336, 400-145.4=254.6)
+             Q=4, AC=30 → (464, 400-138=262)
+             Q=5, AC=30 → (592, 400-138=262)
+             Q=6, AC=31.7 → (720, 400-145.8=254.2)
+             AC min around Q=4-5 -->
+        <g class="acf-3" style="display:none">
+          <polyline points="80,124 144,186 208,227 272,247 336,255 400,259 464,262 528,262 592,262 656,259 720,254" fill="none" stroke="#5B21B6" stroke-width="2.6"/>
+          <text x="724" y="258" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="acf-v">
+      <svg viewBox="0 0 360 760" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Three formula tiles stacked -->
+        <rect x="10" y="10" width="340" height="56" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+        <text x="180" y="30" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">Average fixed cost</text>
+        <text x="180" y="52" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">AFC = TFC ÷ Q</text>
+        <rect x="10" y="74" width="340" height="56" rx="10" fill="#FFE4E6" stroke="#FECACA" stroke-width="1.5"/>
+        <text x="180" y="94" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Average variable cost</text>
+        <text x="180" y="116" font-size="13" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">AVC = TVC ÷ Q</text>
+        <rect x="10" y="138" width="340" height="56" rx="10" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5"/>
+        <text x="180" y="158" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Average cost</text>
+        <text x="180" y="180" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">AC = TC ÷ Q   (= AFC + AVC)</text>
+
+        <!-- Curves chart -->
+        <text x="10" y="220" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">MARCO'S PIZZERIA (FC = £40)</text>
+        <line x1="40" y1="234" x2="40" y2="700" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="40" y1="700" x2="346" y2="700" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="230" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£/unit</text>
+        <text x="346" y="722" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (pizzas/day)</text>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="34" y="624" text-anchor="end">10</text>
+          <text x="34" y="546" text-anchor="end">20</text>
+          <text x="34" y="468" text-anchor="end">30</text>
+          <text x="34" y="390" text-anchor="end">40</text>
+          <text x="34" y="312" text-anchor="end">50</text>
+          <text x="34" y="234" text-anchor="end">60</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="40" y="714" text-anchor="middle">1</text>
+          <text x="101" y="714" text-anchor="middle">2</text>
+          <text x="162" y="714" text-anchor="middle">3</text>
+          <text x="223" y="714" text-anchor="middle">4</text>
+          <text x="284" y="714" text-anchor="middle">5</text>
+          <text x="345" y="714" text-anchor="middle">6</text>
+        </g>
+        <!-- Mobile: Q 1..6 → x = 40+(Q-1)*61; £ 0..60 → y=700-£*7.78 -->
+        <!-- AFC: Q=1 (40,389), Q=2 (101,545), Q=3 (162,597), Q=4 (223,622), Q=5 (284,638), Q=6 (345,648) -->
+        <g class="acf-1" style="display:none">
+          <polyline points="40,389 70,467 101,545 132,571 162,597 192,610 223,622 253,630 284,638 314,643 345,648" fill="none" stroke="#D97706" stroke-width="2"/>
+          <text x="320" y="654" font-size="11" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">AFC</text>
+        </g>
+        <!-- AVC: Q=1 308 (=400-92 then map) actually need recompute with new scale
+             £ → y mapping: y = 700 - £*(466/60) = 700 - £*7.767
+             AVC 20 → 700-155.3=544.7
+             AVC 17.5 → 700-135.9=564.1 (min ~Q=2.5)
+             AVC 18.3 → 700-142.2=557.8
+             AVC 20 → 545
+             AVC 22 → 700-170.9=529.1
+             AVC 25 → 700-194.2=505.8 -->
+        <g class="acf-2" style="display:none">
+          <polyline points="40,545 70,555 101,564 132,562 162,558 192,552 223,545 253,538 284,529 314,517 345,506" fill="none" stroke="#DC2626" stroke-width="2"/>
+          <text x="320" y="510" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">AVC</text>
+        </g>
+        <!-- AC: Q=1 60→700-466=234, Q=2 37.5→700-291.3=408.7, Q=3 31.7→700-246=454, Q=4 30→700-233=467, Q=5 30→467, Q=6 31.7→454 -->
+        <g class="acf-3" style="display:none">
+          <polyline points="40,234 70,338 101,408 132,439 162,454 192,461 223,467 253,467 284,467 314,461 345,454" fill="none" stroke="#5B21B6" stroke-width="2.2"/>
+          <text x="320" y="461" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* marginalCostChart – Card 4 of Costs. Worked table (TC, ΔTC, MC)
+     reveals first; then the MC U-curve is plotted alongside AC and
+     AVC, crossing each at its minimum. Layers: mc-1 (table + AC/AVC
+     reference), mc-2 (MC curve + insight). */
+  marginalCostChart: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mcc-v { display:none; }
+        @media (max-width:680px){
+          .mcc-h { display:none; }
+          .mcc-v { display:block; }
+        }
+      </style>
+      <div class="mcc-h">
+      <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Top: worked-table -->
+        <rect x="14" y="14" width="430" height="180" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <text x="229" y="34" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">FROM TABLE TO MC</text>
+        <line x1="24" y1="46" x2="434" y2="46" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="60"  y="66" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Output</text>
+        <text x="150" y="66" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TC (£)</text>
+        <text x="280" y="66" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Change in TC (ΔTC)</text>
+        <text x="400" y="66" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">MC (£)</text>
+        <line x1="24" y1="74" x2="434" y2="74" stroke="#CBD5E1" stroke-width="1"/>
+        <g class="mc-1" style="display:none">
+          <text x="60" y="94"  font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+          <text x="60" y="116" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+          <text x="60" y="138" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+          <text x="60" y="160" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+          <text x="60" y="182" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">5</text>
+          <text x="150" y="94"  font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">60</text>
+          <text x="150" y="116" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">75</text>
+          <text x="150" y="138" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">95</text>
+          <text x="150" y="160" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">120</text>
+          <text x="150" y="182" font-size="12" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">150</text>
+          <text x="280" y="116" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">75 − 60 = 15</text>
+          <text x="280" y="138" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">95 − 75 = 20</text>
+          <text x="280" y="160" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">120 − 95 = 25</text>
+          <text x="280" y="182" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">150 − 120 = 30</text>
+          <text x="400" y="94"  font-size="12.5" font-weight="800" fill="#94A3B8" text-anchor="middle" font-family="Inter,sans-serif">—</text>
+          <text x="400" y="116" font-size="12.5" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">15</text>
+          <text x="400" y="138" font-size="12.5" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">20</text>
+          <text x="400" y="160" font-size="12.5" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">25</text>
+          <text x="400" y="182" font-size="12.5" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">30</text>
+        </g>
+
+        <!-- Insight panel right of table -->
+        <g class="mc-1" style="display:none">
+          <rect x="460" y="14" width="286" height="180" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.3"/>
+          <text x="476" y="40" font-size="20" font-family="Inter,sans-serif">📐</text>
+          <text x="508" y="40" font-size="13" font-weight="800" fill="#92400E" font-family="Inter,sans-serif">MC = ΔTC ÷ ΔQ</text>
+          <text x="476" y="66" font-size="12" fill="#92400E" font-family="Inter,sans-serif">Marginal cost is the change in total cost</text>
+          <text x="476" y="82" font-size="12" fill="#92400E" font-family="Inter,sans-serif">from producing one more unit.</text>
+          <text x="476" y="108" font-size="12" fill="#92400E" font-family="Inter,sans-serif">At Marco's, the second pizza costs £15 to</text>
+          <text x="476" y="124" font-size="12" fill="#92400E" font-family="Inter,sans-serif">make; by the fifth it costs £30 — diminishing</text>
+          <text x="476" y="140" font-size="12" fill="#92400E" font-family="Inter,sans-serif">returns kick in as the kitchen fills up.</text>
+          <text x="476" y="170" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif">MC falls early, then rises.</text>
+        </g>
+
+        <!-- Bottom: MC curve diagram -->
+        <text x="14" y="222" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE MC CURVE</text>
+        <!-- Plot: x 80..720, y 240..420 -->
+        <line x1="80" y1="234" x2="80" y2="420" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="80" y1="420" x2="730" y2="420" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="54" y="232" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£/unit</text>
+        <text x="730" y="442" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="74" y="389" text-anchor="end">10</text>
+          <text x="74" y="358" text-anchor="end">20</text>
+          <text x="74" y="327" text-anchor="end">30</text>
+          <text x="74" y="296" text-anchor="end">40</text>
+          <text x="74" y="265" text-anchor="end">50</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="80" y="436" text-anchor="middle">1</text>
+          <text x="210" y="436" text-anchor="middle">2</text>
+          <text x="340" y="436" text-anchor="middle">3</text>
+          <text x="470" y="436" text-anchor="middle">4</text>
+          <text x="600" y="436" text-anchor="middle">5</text>
+          <text x="730" y="436" text-anchor="middle">6</text>
+        </g>
+        <!-- Q 1..6 → x = 80+(Q-1)*130; £ 0..60 → y = 420-£*3.1 -->
+        <!-- AC reference curve (always with mc-1): AC 60/37.5/31.7/30/30/31.7 → y 234/304/322/327/327/322 -->
+        <g class="mc-1" style="display:none">
+          <polyline points="80,234 145,277 210,304 275,316 340,322 405,325 470,327 535,327 600,327 665,325 730,322" fill="none" stroke="#5B21B6" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+          <text x="730" y="316" font-size="11" font-weight="700" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+          <!-- AVC reference: AVC 20/17.5/18.3/20/22/25 → y 358/365/363/358/352/342 -->
+          <polyline points="80,358 145,361 210,365 275,365 340,363 405,361 470,358 535,355 600,352 665,347 730,342" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="4 3" opacity="0.5"/>
+          <text x="730" y="338" font-size="11" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif">AVC</text>
+        </g>
+
+        <!-- MC curve: discrete MC values (between Q=1-2 = 15, etc.). Continuous shape: U.
+             Plot smooth U: starts ~20 at Q=1, dips to ~12 around Q=1.5-2, rises to ~30+ at Q=6
+             Approx points (Q, MC): 1→20, 1.5→13, 2→15, 2.5→17, 3→20, 3.5→23, 4→25, 4.5→28, 5→30, 5.5→34, 6→40
+             Map: y = 420 - MC*3.1
+             (80, 420-62=358), (145, 420-40.3=379.7), (210, 420-46.5=373.5), (275, 420-52.7=367.3), (340, 420-62=358), (405, 420-71.3=348.7), (470, 420-77.5=342.5), (535, 420-86.8=333.2), (600, 420-93=327), (665, 420-105.4=314.6), (730, 420-124=296) -->
+        <g class="mc-2" style="display:none">
+          <polyline points="80,358 145,380 210,373 275,367 340,358 405,349 470,342 535,333 600,327 665,315 730,296" fill="none" stroke="#0B1426" stroke-width="2.4"/>
+          <text x="730" y="290" font-size="13" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">MC</text>
+          <!-- Markers where MC = AVC and MC = AC -->
+          <circle cx="340" cy="358" r="4.5" fill="#fff" stroke="#0B1426" stroke-width="1.8"/>
+          <text x="350" y="380" font-size="10" fill="#475569" font-family="Inter,sans-serif">MC = AVC at AVC min</text>
+          <circle cx="600" cy="327" r="4.5" fill="#fff" stroke="#0B1426" stroke-width="1.8"/>
+          <text x="478" y="316" font-size="10" fill="#475569" font-family="Inter,sans-serif">MC = AC at AC min</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="mcc-v">
+      <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Mobile worked table -->
+        <rect x="10" y="10" width="340" height="200" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <text x="180" y="30" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">FROM TABLE TO MC</text>
+        <line x1="20" y1="42" x2="340" y2="42" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="40"  y="60" font-size="9.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Output</text>
+        <text x="100" y="60" font-size="9.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TC</text>
+        <text x="218" y="60" font-size="9.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Δ TC</text>
+        <text x="320" y="60" font-size="9.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">MC</text>
+        <line x1="20" y1="68" x2="340" y2="68" stroke="#CBD5E1" stroke-width="1"/>
+        <g class="mc-1" style="display:none">
+          <text x="40" y="88"  font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+          <text x="40" y="112" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+          <text x="40" y="136" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+          <text x="40" y="160" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+          <text x="40" y="184" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">5</text>
+          <text x="100" y="88"  font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£60</text>
+          <text x="100" y="112" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£75</text>
+          <text x="100" y="136" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£95</text>
+          <text x="100" y="160" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£120</text>
+          <text x="100" y="184" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£150</text>
+          <text x="218" y="112" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">75−60 = 15</text>
+          <text x="218" y="136" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">95−75 = 20</text>
+          <text x="218" y="160" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">120−95 = 25</text>
+          <text x="218" y="184" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">150−120 = 30</text>
+          <text x="320" y="88"  font-size="12" font-weight="800" fill="#94A3B8" text-anchor="middle" font-family="Inter,sans-serif">—</text>
+          <text x="320" y="112" font-size="12" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">£15</text>
+          <text x="320" y="136" font-size="12" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">£20</text>
+          <text x="320" y="160" font-size="12" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">£25</text>
+          <text x="320" y="184" font-size="12" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">£30</text>
+        </g>
+
+        <g class="mc-1" style="display:none">
+          <rect x="10" y="226" width="340" height="92" rx="9" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+          <text x="22" y="250" font-size="14" font-family="Inter,sans-serif">📐</text>
+          <text x="46" y="251" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif">MC = ΔTC ÷ ΔQ</text>
+          <text x="22" y="274" font-size="11.5" fill="#92400E" font-family="Inter,sans-serif">Marginal cost is the cost of one more</text>
+          <text x="22" y="290" font-size="11.5" fill="#92400E" font-family="Inter,sans-serif">unit. At Marco's it falls early, then rises</text>
+          <text x="22" y="306" font-size="11.5" fill="#92400E" font-family="Inter,sans-serif">as the kitchen fills up.</text>
+        </g>
+
+        <!-- Mobile MC chart -->
+        <text x="10" y="346" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE MC CURVE</text>
+        <line x1="40" y1="354" x2="40" y2="740" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="40" y1="740" x2="346" y2="740" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="350" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£/unit</text>
+        <text x="346" y="762" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="34" y="676" text-anchor="end">10</text>
+          <text x="34" y="612" text-anchor="end">20</text>
+          <text x="34" y="547" text-anchor="end">30</text>
+          <text x="34" y="483" text-anchor="end">40</text>
+          <text x="34" y="419" text-anchor="end">50</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="40" y="754" text-anchor="middle">1</text>
+          <text x="101" y="754" text-anchor="middle">2</text>
+          <text x="162" y="754" text-anchor="middle">3</text>
+          <text x="223" y="754" text-anchor="middle">4</text>
+          <text x="284" y="754" text-anchor="middle">5</text>
+          <text x="345" y="754" text-anchor="middle">6</text>
+        </g>
+        <!-- mobile: Q 1..6 → x=40+(Q-1)*61; £ 0..60 → y=740-£*6.43 -->
+        <g class="mc-1" style="display:none">
+          <!-- AC ref: AC 60/37.5/31.7/30/30/31.7 → y 354/499/536/547/547/536 -->
+          <polyline points="40,354 70,427 101,499 132,517 162,536 192,541 223,547 253,547 284,547 314,541 345,536" fill="none" stroke="#5B21B6" stroke-width="1.8" stroke-dasharray="3 3" opacity="0.6"/>
+          <text x="316" y="530" font-size="10" font-weight="700" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+          <!-- AVC ref: AVC 20/17.5/18.3/20/22/25 → y 612/628/623/612/598/579 -->
+          <polyline points="40,612 70,620 101,628 132,626 162,623 192,617 223,612 253,605 284,598 314,589 345,579" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="3 3" opacity="0.5"/>
+          <text x="316" y="574" font-size="10" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif">AVC</text>
+        </g>
+        <g class="mc-2" style="display:none">
+          <!-- MC smooth: 1→20, 1.5→13, 2→15, 2.5→17, 3→20, 4→25, 5→30, 6→40
+               y = 740 - MC*6.43
+               20→612, 13→657, 15→644, 17→631, 20→612, 25→579, 30→547, 40→483 -->
+          <polyline points="40,612 70,657 101,644 132,631 162,612 192,595 223,579 253,563 284,547 314,515 345,483" fill="none" stroke="#0B1426" stroke-width="2.2"/>
+          <text x="320" y="478" font-size="11" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">MC</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* fullCostDiagram – Card 5 of Costs. Static composite showing all
+     four cost curves together (AFC, AVC, AC, MC) with annotations
+     where MC = AVC (AVC min) and MC = AC (AC min). No reveal — the
+     "everything together" view IS the point of the card. */
+  fullCostDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fcd-v { display:none; }
+        @media (max-width:680px){
+          .fcd-h { display:none; }
+          .fcd-v { display:block; }
+        }
+      </style>
+      <div class="fcd-h">
+      <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="380" y="28" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.06em" font-family="Inter,sans-serif">THE FULL DIAGRAM — Marco's Pizzeria (FC = £40)</text>
+        <!-- Plot: x 80..720, y 50..420 -->
+        <line x1="80" y1="50" x2="80" y2="420" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="80" y1="420" x2="730" y2="420" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="54" y="46" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£/unit</text>
+        <text x="730" y="442" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (pizzas/day)</text>
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="74" y="358" text-anchor="end">10</text>
+          <text x="74" y="296" text-anchor="end">20</text>
+          <text x="74" y="234" text-anchor="end">30</text>
+          <text x="74" y="173" text-anchor="end">40</text>
+          <text x="74" y="111" text-anchor="end">50</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
+          <text x="80" y="436" text-anchor="middle">1</text>
+          <text x="210" y="436" text-anchor="middle">2</text>
+          <text x="340" y="436" text-anchor="middle">3</text>
+          <text x="470" y="436" text-anchor="middle">4</text>
+          <text x="600" y="436" text-anchor="middle">5</text>
+          <text x="730" y="436" text-anchor="middle">6</text>
+        </g>
+
+        <!-- Mapping: Q 1..6 → x = 80+(Q-1)*130; £ 0..60 → y = 420-£*6.17 -->
+        <!-- AFC: 40,20,13.3,10,8,6.7 → 174,297,338,358,371,379 -->
+        <polyline points="80,174 145,236 210,297 275,338 340,338 405,348 470,358 535,365 600,371 665,375 730,379" fill="none" stroke="#D97706" stroke-width="2"/>
+        <text x="734" y="383" font-size="12" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">AFC</text>
+        <!-- AVC: 20,17.5,18.3,20,22,25 → 297,312,307,297,284,266 -->
+        <polyline points="80,297 145,305 210,312 275,310 340,307 405,302 470,297 535,290 600,284 665,275 730,266" fill="none" stroke="#DC2626" stroke-width="2"/>
+        <text x="734" y="270" font-size="12" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">AVC</text>
+        <!-- AC: 60,37.5,31.7,30,30,31.7 → 50,189,225,235,235,225 -->
+        <polyline points="80,50 145,124 210,189 275,213 340,225 405,231 470,235 535,235 600,235 665,231 730,225" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="734" y="229" font-size="12" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <!-- MC: 20,13,15,17,20,25,30,40 → at Q=1→297, 1.5→340, 2→327, 2.5→315, 3→297, 4→266, 5→235, 6→173 -->
+        <polyline points="80,297 145,340 210,327 275,315 340,297 405,281 470,266 535,250 600,235 665,204 730,173" fill="none" stroke="#0B1426" stroke-width="2.6"/>
+        <text x="734" y="168" font-size="12" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">MC</text>
+
+        <!-- Markers + annotations -->
+        <circle cx="340" cy="307" r="5" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <text x="346" y="296" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">MC cuts AVC</text>
+        <text x="346" y="282" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">at the minimum</text>
+        <text x="346" y="268" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">point of AVC.</text>
+
+        <circle cx="600" cy="235" r="5" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+        <text x="468" y="218" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">MC cuts AC</text>
+        <text x="468" y="204" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">at the minimum</text>
+        <text x="468" y="190" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">point of AC.</text>
+      </svg>
+      </div>
+
+      <div class="fcd-v">
+      <svg viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.06em" font-family="Inter,sans-serif">MARCO'S PIZZERIA (FC = £40)</text>
+        <line x1="40" y1="34" x2="40" y2="500" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="40" y1="500" x2="346" y2="500" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="30" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£/unit</text>
+        <text x="346" y="522" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="34" y="422" text-anchor="end">10</text>
+          <text x="34" y="345" text-anchor="end">20</text>
+          <text x="34" y="267" text-anchor="end">30</text>
+          <text x="34" y="190" text-anchor="end">40</text>
+          <text x="34" y="112" text-anchor="end">50</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
+          <text x="40" y="514" text-anchor="middle">1</text>
+          <text x="101" y="514" text-anchor="middle">2</text>
+          <text x="162" y="514" text-anchor="middle">3</text>
+          <text x="223" y="514" text-anchor="middle">4</text>
+          <text x="284" y="514" text-anchor="middle">5</text>
+          <text x="345" y="514" text-anchor="middle">6</text>
+        </g>
+        <!-- Q 1..6 → x = 40+(Q-1)*61; £ 0..60 → y = 500-£*7.78 -->
+        <!-- AFC -->
+        <polyline points="40,189 70,267 101,345 132,396 162,422 192,438 223,449 253,460 284,468 314,474 345,479" fill="none" stroke="#D97706" stroke-width="1.8"/>
+        <text x="324" y="484" font-size="10" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">AFC</text>
+        <!-- AVC -->
+        <polyline points="40,345 70,357 101,365 132,360 162,358 192,353 223,345 253,338 284,329 314,317 345,306" fill="none" stroke="#DC2626" stroke-width="1.8"/>
+        <text x="324" y="302" font-size="10" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">AVC</text>
+        <!-- AC -->
+        <polyline points="40,34 70,143 101,208 132,235 162,254 192,260 223,267 253,267 284,267 314,260 345,254" fill="none" stroke="#5B21B6" stroke-width="2.2"/>
+        <text x="324" y="248" font-size="10" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <!-- MC -->
+        <polyline points="40,345 70,399 101,383 132,368 162,345 192,322 223,306 253,283 284,267 314,228 345,189" fill="none" stroke="#0B1426" stroke-width="2.2"/>
+        <text x="324" y="184" font-size="10" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">MC</text>
+        <!-- Annotations -->
+        <circle cx="162" cy="358" r="4" fill="#fff" stroke="#0B1426" stroke-width="1.6"/>
+        <circle cx="284" cy="267" r="4" fill="#fff" stroke="#0B1426" stroke-width="1.6"/>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* costDataBakery – Card 6 of Costs. A bakery worked-example table
+     showing FC/VC/TC/AC/MC for an output range, with the AC-minimum
+     row highlighted. Sits next to a 4-step "how to read a cost table"
+     procedure that the lesson talks through. Static. */
+  costDataBakery: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cdb-v { display:none; }
+        @media (max-width:680px){
+          .cdb-h { display:none; }
+          .cdb-v { display:block; }
+        }
+      </style>
+      <div class="cdb-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- 4-step procedure across top -->
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">HOW TO READ A COST TABLE</text>
+        <!-- Step boxes -->
+        <g font-family="Inter,sans-serif">
+          <rect x="14" y="40" width="170" height="76" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+          <circle cx="40" cy="64" r="13" fill="#2563EB"/>
+          <text x="40" y="69" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+          <text x="62" y="68" font-size="12" font-weight="800" fill="#1E3A8A">Find fixed cost</text>
+          <text x="26" y="90" font-size="11" fill="#0B1426">Look for the cost that</text>
+          <text x="26" y="104" font-size="11" fill="#0B1426">stays constant.</text>
+
+          <rect x="200" y="40" width="170" height="76" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+          <circle cx="226" cy="64" r="13" fill="#D97706"/>
+          <text x="226" y="69" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+          <text x="248" y="68" font-size="12" font-weight="800" fill="#C2410C">Build TC</text>
+          <text x="212" y="90" font-size="11" fill="#0B1426">Add FC and VC at each</text>
+          <text x="212" y="104" font-size="11" fill="#0B1426">level of output.</text>
+
+          <rect x="386" y="40" width="170" height="76" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="412" cy="64" r="13" fill="#16A34A"/>
+          <text x="412" y="69" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+          <text x="434" y="68" font-size="12" font-weight="800" fill="#065F46">Compute AC and MC</text>
+          <text x="398" y="90" font-size="11" fill="#0B1426">AC = TC ÷ Q. MC is the</text>
+          <text x="398" y="104" font-size="11" fill="#0B1426">change in TC between rows.</text>
+
+          <rect x="572" y="40" width="174" height="76" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+          <circle cx="598" cy="64" r="13" fill="#7C3AED"/>
+          <text x="598" y="69" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+          <text x="620" y="68" font-size="12" font-weight="800" fill="#5B21B6">Interpret</text>
+          <text x="584" y="90" font-size="11" fill="#0B1426">Lowest AC = lowest cost per</text>
+          <text x="584" y="104" font-size="11" fill="#0B1426">unit; MC at that point cuts AC.</text>
+        </g>
+
+        <!-- Mini case: bakery table -->
+        <text x="14" y="148" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">MINI CASE — BAKERY</text>
+        <rect x="14" y="158" width="732" height="186" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <!-- Header -->
+        <g font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#475569">
+          <text x="80"  y="180" text-anchor="middle">Output (loaves)</text>
+          <text x="220" y="180" text-anchor="middle">FC (£)</text>
+          <text x="330" y="180" text-anchor="middle">VC (£)</text>
+          <text x="440" y="180" text-anchor="middle">TC (£)</text>
+          <text x="560" y="180" text-anchor="middle">AC (£)</text>
+          <text x="680" y="180" text-anchor="middle">MC (£)</text>
+        </g>
+        <line x1="22" y1="190" x2="738" y2="190" stroke="#CBD5E1" stroke-width="1"/>
+        <!-- 5 rows: bakery numbers
+             Q | FC | VC | TC  | AC   | MC
+             10| 30 | 25 | 55  | 5.50 | —
+             20| 30 | 42 | 72  | 3.60 | 1.70
+             30| 30 | 55 | 85  | 2.83 | 1.30
+             40| 30 | 75 | 105 | 2.63 | 2.00   ← AC min
+             50| 30 |115 | 145 | 2.90 | 4.00
+             Row 40 is the AC-min row → highlight gold. -->
+        <g font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#0B1426">
+          <text x="80" y="210" text-anchor="middle">10</text>
+          <text x="220" y="210" text-anchor="middle">30</text>
+          <text x="330" y="210" text-anchor="middle">25</text>
+          <text x="440" y="210" text-anchor="middle">55</text>
+          <text x="560" y="210" text-anchor="middle">5.50</text>
+          <text x="680" y="210" font-weight="800" fill="#94A3B8" text-anchor="middle">—</text>
+
+          <text x="80" y="234" text-anchor="middle">20</text>
+          <text x="220" y="234" text-anchor="middle">30</text>
+          <text x="330" y="234" text-anchor="middle">42</text>
+          <text x="440" y="234" text-anchor="middle">72</text>
+          <text x="560" y="234" text-anchor="middle">3.60</text>
+          <text x="680" y="234" font-weight="800" fill="#DC2626" text-anchor="middle">1.70</text>
+
+          <text x="80" y="258" text-anchor="middle">30</text>
+          <text x="220" y="258" text-anchor="middle">30</text>
+          <text x="330" y="258" text-anchor="middle">55</text>
+          <text x="440" y="258" text-anchor="middle">85</text>
+          <text x="560" y="258" text-anchor="middle">2.83</text>
+          <text x="680" y="258" font-weight="800" fill="#DC2626" text-anchor="middle">1.30</text>
+        </g>
+        <!-- Highlight row 40 (AC min) -->
+        <rect x="22" y="270" width="716" height="24" rx="5" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+        <g font-family="Inter,sans-serif" font-size="12.5" font-weight="800" fill="#92400E">
+          <text x="80" y="287" text-anchor="middle">40</text>
+          <text x="220" y="287" text-anchor="middle">30</text>
+          <text x="330" y="287" text-anchor="middle">75</text>
+          <text x="440" y="287" text-anchor="middle">105</text>
+          <text x="560" y="287" text-anchor="middle">2.63 ★</text>
+          <text x="680" y="287" text-anchor="middle">2.00</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#0B1426">
+          <text x="80" y="312" text-anchor="middle">50</text>
+          <text x="220" y="312" text-anchor="middle">30</text>
+          <text x="330" y="312" text-anchor="middle">115</text>
+          <text x="440" y="312" text-anchor="middle">145</text>
+          <text x="560" y="312" text-anchor="middle">2.90</text>
+          <text x="680" y="312" font-weight="800" fill="#DC2626" text-anchor="middle">4.00</text>
+        </g>
+        <text x="380" y="336" font-size="11" fill="#92400E" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">★ The 40-loaf row is where AC is lowest — and MC has just risen to cross AC.</text>
+      </svg>
+      </div>
+
+      <div class="cdb-v">
+      <svg viewBox="0 0 360 880" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- 4-step procedure stacked -->
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.06em" font-family="Inter,sans-serif">HOW TO READ A COST TABLE</text>
+        <g font-family="Inter,sans-serif">
+          <rect x="10" y="34" width="340" height="58" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+          <circle cx="34" cy="63" r="12" fill="#2563EB"/>
+          <text x="34" y="68" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+          <text x="56" y="58" font-size="12" font-weight="800" fill="#1E3A8A">Find fixed cost</text>
+          <text x="56" y="76" font-size="11" fill="#0B1426">Look for the cost that stays constant.</text>
+
+          <rect x="10" y="100" width="340" height="58" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+          <circle cx="34" cy="129" r="12" fill="#D97706"/>
+          <text x="34" y="134" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+          <text x="56" y="124" font-size="12" font-weight="800" fill="#C2410C">Build TC</text>
+          <text x="56" y="142" font-size="11" fill="#0B1426">Add FC and VC at each output level.</text>
+
+          <rect x="10" y="166" width="340" height="58" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+          <circle cx="34" cy="195" r="12" fill="#16A34A"/>
+          <text x="34" y="200" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+          <text x="56" y="190" font-size="12" font-weight="800" fill="#065F46">Compute AC and MC</text>
+          <text x="56" y="208" font-size="11" fill="#0B1426">AC = TC ÷ Q; MC = change in TC.</text>
+
+          <rect x="10" y="232" width="340" height="58" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+          <circle cx="34" cy="261" r="12" fill="#7C3AED"/>
+          <text x="34" y="266" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+          <text x="56" y="256" font-size="12" font-weight="800" fill="#5B21B6">Interpret</text>
+          <text x="56" y="274" font-size="11" fill="#0B1426">Lowest AC = lowest cost per unit.</text>
+        </g>
+
+        <!-- Bakery table (compact) -->
+        <text x="180" y="318" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.06em" font-family="Inter,sans-serif">MINI CASE — BAKERY</text>
+        <rect x="10" y="330" width="340" height="380" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <g font-family="Inter,sans-serif" font-size="10" font-weight="800" fill="#475569">
+          <text x="36"  y="352" text-anchor="middle">Q</text>
+          <text x="86"  y="352" text-anchor="middle">FC</text>
+          <text x="138" y="352" text-anchor="middle">VC</text>
+          <text x="194" y="352" text-anchor="middle">TC</text>
+          <text x="262" y="352" text-anchor="middle">AC</text>
+          <text x="320" y="352" text-anchor="middle">MC</text>
+        </g>
+        <line x1="20" y1="360" x2="340" y2="360" stroke="#CBD5E1" stroke-width="1"/>
+        <g font-family="Inter,sans-serif" font-size="11.5" font-weight="700" fill="#0B1426">
+          <text x="36" y="382" text-anchor="middle">10</text>
+          <text x="86" y="382" text-anchor="middle">30</text>
+          <text x="138" y="382" text-anchor="middle">25</text>
+          <text x="194" y="382" text-anchor="middle">55</text>
+          <text x="262" y="382" text-anchor="middle">5.50</text>
+          <text x="320" y="382" font-weight="800" fill="#94A3B8" text-anchor="middle">—</text>
+          <text x="36" y="408" text-anchor="middle">20</text>
+          <text x="86" y="408" text-anchor="middle">30</text>
+          <text x="138" y="408" text-anchor="middle">42</text>
+          <text x="194" y="408" text-anchor="middle">72</text>
+          <text x="262" y="408" text-anchor="middle">3.60</text>
+          <text x="320" y="408" font-weight="800" fill="#DC2626" text-anchor="middle">1.70</text>
+          <text x="36" y="434" text-anchor="middle">30</text>
+          <text x="86" y="434" text-anchor="middle">30</text>
+          <text x="138" y="434" text-anchor="middle">55</text>
+          <text x="194" y="434" text-anchor="middle">85</text>
+          <text x="262" y="434" text-anchor="middle">2.83</text>
+          <text x="320" y="434" font-weight="800" fill="#DC2626" text-anchor="middle">1.30</text>
+        </g>
+        <rect x="20" y="448" width="320" height="26" rx="5" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+        <g font-family="Inter,sans-serif" font-size="11.5" font-weight="800" fill="#92400E">
+          <text x="36" y="466" text-anchor="middle">40</text>
+          <text x="86" y="466" text-anchor="middle">30</text>
+          <text x="138" y="466" text-anchor="middle">75</text>
+          <text x="194" y="466" text-anchor="middle">105</text>
+          <text x="262" y="466" text-anchor="middle">2.63 ★</text>
+          <text x="320" y="466" text-anchor="middle">2.00</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="11.5" font-weight="700" fill="#0B1426">
+          <text x="36" y="494" text-anchor="middle">50</text>
+          <text x="86" y="494" text-anchor="middle">30</text>
+          <text x="138" y="494" text-anchor="middle">115</text>
+          <text x="194" y="494" text-anchor="middle">145</text>
+          <text x="262" y="494" text-anchor="middle">2.90</text>
+          <text x="320" y="494" font-weight="800" fill="#DC2626" text-anchor="middle">4.00</text>
+        </g>
+        <text x="180" y="528" font-size="10.5" fill="#92400E" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">★ AC is lowest at Q=40 —</text>
+        <text x="180" y="544" font-size="10.5" fill="#92400E" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">MC has just risen to meet AC there.</text>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

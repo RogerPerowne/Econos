@@ -6,6 +6,56 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.28 — 2026-06-07
+
+### Costs Cards 2-7 complete — full topic done
+
+Shipped the remaining six cards of the Costs topic in one batch,
+taking it from 1/7 to 7/7 complete. **Marco's Pizzeria** runs
+as the consistent worked example across Cards 2-5 (FC = £40/day
+for the oven + rent + insurance; TVC and TC built from a small
+table; AC, AVC, MC computed from those numbers; cost curves
+plotted with the textbook U-shapes and MC cutting AVC and AC
+at their minima).
+
+* **Card 2 — Fixed, variable and total cost**
+  Interactive 3-view reveal (`fixedVariableTotalChart`). Step 1
+  drops in the flat green TFC line at £40; step 2 adds the
+  orange TVC curve rising through £20/£35/£55/£80; step 3 adds
+  the blue TC line sitting £40 above TVC. Worked-example table
+  on the right reveals row-by-row to match. Plus three insight
+  panels explaining each reveal.
+* **Card 3 — The average cost family (Marco's Pizzeria)**
+  Three formula tiles (AFC/AVC/AC) at top; interactive 3-curve
+  reveal (`averageCostFamilyChart`). AFC drops smoothly toward
+  zero; AVC is U-shaped (min ~Q=2.5); AC sits above AVC with
+  the gap = AFC (shrinking). Numbers and oven/rent narrative
+  reference Marco's directly.
+* **Card 4 — Marginal cost — the cost of one more**
+  Worked table showing TC, ΔTC, MC; interactive 2-view reveal
+  (`marginalCostChart`). View 1 reveals the table; view 2
+  plots the MC curve alongside dashed AC/AVC reference curves,
+  with markers at MC = AVC (AVC min) and MC = AC (AC min).
+* **Card 5 — How the cost curves fit together**
+  Static composite (`fullCostDiagram`) with all 4 curves (AFC,
+  AVC, AC, MC) plotted together, plus annotations at the two
+  crossing points. 3-step THE LOGIC flow chain and 3-tile
+  THREE PHASES grid below.
+* **Card 6 — Using cost data in decisions**
+  Static visual (`costDataBakery`) with a 4-step procedure
+  (Find FC → Build TC → Compute AC/MC → Interpret) plus a
+  bakery worked-example table where the AC-minimum row is
+  highlighted in gold and marked with ★.
+* **Card 7 — The whole cost story**
+  Synthesis card using only existing engine blocks. 6-step
+  flow chain (Fixed cost → Variable cost → TC → AC → MC →
+  Decisions), 3-tile DON'T FORGET THE DIFFERENCES grid,
+  Core calculations vs Core explanations pair.
+
+Five bespoke visuals ship with the standard `.h`/`.v` dual-
+layout pattern so the cost curves remain readable on iPhone
+widths. Cache bump (icons.js change): v427.
+
 ## 0.96.27 — 2026-06-07
 
 ### Costs topic: Card 1 of 7 (the big picture)

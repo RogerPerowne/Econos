@@ -17511,70 +17511,127 @@ window.ECONOS_ICONS = {
   /* verticalSupplyChain – Card 3 of Business Growth. A five-stage supply
      chain (Raw materials → Components → Manufacturing → Distribution →
      Retail) with the centre stage highlighted as the firm's start position,
-     and two directional axes beneath labelling Backward (green, left) and
-     Forward (purple, right) integration. Pure SVG. */
+     and two directional axes labelling Backward (green) and Forward
+     (purple) integration. Pure SVG, with TWO layouts: a horizontal
+     chain for desktop, and a vertical chain (arrow on left, stacked
+     boxes on right) for narrow mobile. CSS media query swaps them. */
   verticalSupplyChain: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <defs>
-          <marker id="vsc-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/></marker>
-          <marker id="vsc-arr-green-l" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z" fill="#16A34A"/></marker>
-          <marker id="vsc-arr-purple-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
-        </defs>
+      <style>
+        .vsc-v { display:none; }
+        @media (max-width:600px){
+          .vsc-h { display:none; }
+          .vsc-v { display:block; }
+        }
+      </style>
 
-        <!-- Stage boxes (5 across) -->
-        <!-- 1 Raw materials (green) -->
-        <rect x="20" y="30" width="120" height="120" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
-        <text x="80" y="80" font-size="34" text-anchor="middle">🌿</text>
-        <text x="80" y="115" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Raw</text>
-        <text x="80" y="132" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">materials</text>
+      <!-- Horizontal layout (desktop / tablet) -->
+      <div class="vsc-h">
+        <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+          <defs>
+            <marker id="vsc-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/></marker>
+            <marker id="vsc-arr-green-l" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z" fill="#16A34A"/></marker>
+            <marker id="vsc-arr-purple-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
+          </defs>
 
-        <!-- arrow 1→2 -->
-        <line x1="148" y1="90" x2="172" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+          <!-- Stage boxes (5 across) -->
+          <rect x="20" y="30" width="120" height="120" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+          <text x="80" y="80" font-size="34" text-anchor="middle">🌿</text>
+          <text x="80" y="115" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Raw</text>
+          <text x="80" y="132" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">materials</text>
 
-        <!-- 2 Components (green) -->
-        <rect x="180" y="30" width="120" height="120" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
-        <text x="240" y="80" font-size="32" text-anchor="middle">⚙️</text>
-        <text x="240" y="123" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Components</text>
+          <line x1="148" y1="90" x2="172" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
 
-        <!-- arrow 2→3 -->
-        <line x1="308" y1="90" x2="332" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+          <rect x="180" y="30" width="120" height="120" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+          <text x="240" y="80" font-size="32" text-anchor="middle">⚙️</text>
+          <text x="240" y="123" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Components</text>
 
-        <!-- 3 Manufacturing (highlighted blue – the firm's starting stage) -->
-        <rect x="340" y="22" width="120" height="136" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
-        <text x="400" y="78" font-size="34" text-anchor="middle">🏭</text>
-        <text x="400" y="118" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
-        <text x="400" y="142" font-size="10" font-weight="700" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.06em">THE FIRM</text>
+          <line x1="308" y1="90" x2="332" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
 
-        <!-- arrow 3→4 -->
-        <line x1="468" y1="90" x2="492" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+          <rect x="340" y="22" width="120" height="136" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
+          <text x="400" y="78" font-size="34" text-anchor="middle">🏭</text>
+          <text x="400" y="118" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+          <text x="400" y="142" font-size="10" font-weight="700" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.06em">THE FIRM</text>
 
-        <!-- 4 Distribution (purple) -->
-        <rect x="500" y="30" width="120" height="120" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
-        <text x="560" y="80" font-size="32" text-anchor="middle">🚚</text>
-        <text x="560" y="123" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Distribution</text>
+          <line x1="468" y1="90" x2="492" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
 
-        <!-- arrow 4→5 -->
-        <line x1="628" y1="90" x2="652" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
+          <rect x="500" y="30" width="120" height="120" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+          <text x="560" y="80" font-size="32" text-anchor="middle">🚚</text>
+          <text x="560" y="123" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Distribution</text>
 
-        <!-- 5 Retail (purple) -->
-        <rect x="660" y="30" width="86" height="120" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
-        <text x="703" y="80" font-size="30" text-anchor="middle">🛍️</text>
-        <text x="703" y="123" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+          <line x1="628" y1="90" x2="652" y2="90" stroke="#64748B" stroke-width="2" marker-end="url(#vsc-arr-grey)"/>
 
-        <!-- Backward integration axis (green, left of firm) -->
-        <line x1="395" y1="200" x2="80" y2="200" stroke="#16A34A" stroke-width="3" marker-end="url(#vsc-arr-green-l)"/>
-        <text x="237" y="230" font-size="14" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Backward integration</text>
-        <text x="237" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">towards inputs</text>
+          <rect x="660" y="30" width="86" height="120" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+          <text x="703" y="80" font-size="30" text-anchor="middle">🛍️</text>
+          <text x="703" y="123" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
 
-        <!-- Forward integration axis (purple, right of firm) -->
-        <line x1="405" y1="200" x2="710" y2="200" stroke="#7C3AED" stroke-width="3" marker-end="url(#vsc-arr-purple-r)"/>
-        <text x="557" y="230" font-size="14" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif">Forward integration</text>
-        <text x="557" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">towards the customer</text>
+          <!-- Direction axes beneath -->
+          <line x1="395" y1="200" x2="80" y2="200" stroke="#16A34A" stroke-width="3" marker-end="url(#vsc-arr-green-l)"/>
+          <text x="237" y="230" font-size="14" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Backward integration</text>
+          <text x="237" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">towards inputs</text>
 
-        <!-- Centre divider dot -->
-        <circle cx="400" cy="200" r="5" fill="#0B1426"/>
-      </svg>
+          <line x1="405" y1="200" x2="710" y2="200" stroke="#7C3AED" stroke-width="3" marker-end="url(#vsc-arr-purple-r)"/>
+          <text x="557" y="230" font-size="14" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif">Forward integration</text>
+          <text x="557" y="250" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">towards the customer</text>
+
+          <circle cx="400" cy="200" r="5" fill="#0B1426"/>
+        </svg>
+      </div>
+
+      <!-- Vertical layout (mobile ≤600px). Arrow runs down the LEFT,
+           five stacked boxes on the RIGHT. Centre divider sits at the
+           Manufacturing row so backward (green ↑) points up to inputs
+           and forward (purple ↓) points down to the customer. -->
+      <div class="vsc-v">
+        <svg viewBox="0 0 380 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+          <defs>
+            <marker id="vscv-arr-green-up" viewBox="0 0 10 10" refX="5" refY="1" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 10 L 5 0 L 10 10 z" fill="#16A34A"/></marker>
+            <marker id="vscv-arr-purple-down" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 5 10 L 10 0 z" fill="#7C3AED"/></marker>
+          </defs>
+
+          <!-- LEFT column: vertical axis (x = 60) -->
+          <!-- Green up-arrow: from Manufacturing centre (y=270) up to Raw materials (y=30) -->
+          <line x1="60" y1="265" x2="60" y2="40" stroke="#16A34A" stroke-width="3" marker-end="url(#vscv-arr-green-up)"/>
+          <text x="32" y="150" font-size="13" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 32 150)">Backward integration</text>
+          <text x="86" y="150" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 86 150)">towards inputs</text>
+
+          <!-- Centre divider dot at Manufacturing row centre -->
+          <circle cx="60" cy="275" r="5" fill="#0B1426"/>
+
+          <!-- Purple down-arrow: from Manufacturing centre (y=285) down to Retail (y=520) -->
+          <line x1="60" y1="285" x2="60" y2="510" stroke="#7C3AED" stroke-width="3" marker-end="url(#vscv-arr-purple-down)"/>
+          <text x="32" y="400" font-size="13" font-weight="800" fill="#7C3AED" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 32 400)">Forward integration</text>
+          <text x="86" y="400" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif" transform="rotate(-90 86 400)">towards the customer</text>
+
+          <!-- RIGHT column: 5 stacked boxes (x = 130..360, width 230) -->
+          <!-- 1 Raw materials -->
+          <rect x="130" y="20" width="230" height="80" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+          <text x="170" y="68" font-size="30" text-anchor="middle">🌿</text>
+          <text x="270" y="55" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Raw</text>
+          <text x="270" y="74" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">materials</text>
+
+          <!-- 2 Components -->
+          <rect x="130" y="115" width="230" height="80" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+          <text x="170" y="163" font-size="30" text-anchor="middle">⚙️</text>
+          <text x="270" y="161" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Components</text>
+
+          <!-- 3 Manufacturing (highlighted blue – the firm's starting stage) -->
+          <rect x="130" y="220" width="230" height="110" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.4"/>
+          <text x="170" y="283" font-size="32" text-anchor="middle">🏭</text>
+          <text x="270" y="266" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+          <text x="270" y="300" font-size="10" font-weight="700" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.06em">THE FIRM</text>
+
+          <!-- 4 Distribution -->
+          <rect x="130" y="350" width="230" height="80" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+          <text x="170" y="398" font-size="30" text-anchor="middle">🚚</text>
+          <text x="270" y="396" font-size="14" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Distribution</text>
+
+          <!-- 5 Retail -->
+          <rect x="130" y="445" width="230" height="80" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
+          <text x="170" y="493" font-size="28" text-anchor="middle">🛍️</text>
+          <text x="270" y="491" font-size="14" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+        </svg>
+      </div>
     </div>
   `,
 

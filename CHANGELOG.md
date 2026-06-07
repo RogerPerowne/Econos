@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.5 — 2026-06-07
+
+### Vertical supply chain: vertical layout on mobile
+
+The five-stage supply-chain diagram on Card 3 of *Business Growth*
+was authored as a fixed-width 760×300 horizontal SVG, so on a phone
+the whole chain shrank to fit the column width and the stage
+labels became tiny and hard to read. Added a **second SVG** with a
+vertical layout — single arrow running down the LEFT side, five
+stacked boxes on the RIGHT — and a CSS `@media (max-width:600px)`
+toggle that hides the horizontal SVG and shows the vertical one
+on phones.
+
+The vertical layout preserves the same semantics as the horizontal
+one: green up-arrow above the Manufacturing row labelled
+"Backward integration / towards inputs", purple down-arrow below
+labelled "Forward integration / towards the customer", with the
+centre divider dot at the firm's row. Each box gets ~80px of
+height and the full mobile width for its emoji + label, so the
+text reads at normal mobile size instead of being squished. Desktop
+view is unchanged.
+
+SW cache bumped to v409.
+
 ## 0.96.4 — 2026-06-07
 
 ### Vertical integration: benefits/risks as a VS pair

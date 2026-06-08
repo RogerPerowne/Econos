@@ -18852,6 +18852,514 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* mcMarketShape – Card 1 of Monopolistic Competition. A 4-spoke
+     hub (Many firms / Product differentiation / Low barriers / Downward-
+     sloping demand) around a central "Monopolistic competition" pill,
+     plus a small spectrum bar beneath placing MC between PC and
+     Monopoly. */
+  mcMarketShape: `
+    <div class="mch" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mch .mch-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:14px; position:relative; z-index:1; }
+        .mch .mch-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .mch .mch-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .mch .mch-tile { border-radius:13px; padding:12px 14px; display:flex; gap:12px; align-items:flex-start; min-height:88px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .mch .mch-ic { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .mch .mch-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .mch .mch-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        .mch .mch-spec { margin-top:24px; padding-top:16px; border-top:1px solid #E2E8F0; }
+        @media (max-width:600px){
+          .mch > div.mch-shell > div:first-of-type { display:flex; flex-direction:column-reverse; }
+          .mch .mch-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .mch .mch-center { position:static; transform:none; margin:6px auto; }
+          .mch .mch-center-wrap { order:99; display:flex; justify-content:center; }
+          .mch .mch-conn { display:none; }
+        }
+      </style>
+      <div class="mch-shell">
+        <div style="position:relative;max-width:740px;margin:0 auto;">
+          <svg class="mch-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M 36 23 C 44 23, 44 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+            <path d="M 64 23 C 56 23, 56 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+            <path d="M 36 77 C 44 77, 44 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+            <path d="M 64 77 C 56 77, 56 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          </svg>
+          <div class="mch-grid">
+            <div class="mch-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+              <div class="mch-ic">👥</div>
+              <div><div class="mch-t" style="color:#065F46;">Many firms</div><div class="mch-s">Lots of small firms — no one dominates the market.</div></div>
+            </div>
+            <div class="mch-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+              <div class="mch-ic">🎨</div>
+              <div><div class="mch-t" style="color:#C2410C;">Product differentiation</div><div class="mch-s">Firms compete on quality, branding, design and uniqueness.</div></div>
+            </div>
+            <div class="mch-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+              <div class="mch-ic">🚪</div>
+              <div><div class="mch-t" style="color:#1E3A8A;">Low barriers to entry &amp; exit</div><div class="mch-s">New firms can join the market freely if profit exists.</div></div>
+            </div>
+            <div class="mch-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+              <div class="mch-ic">📉</div>
+              <div><div class="mch-t" style="color:#5B21B6;">Downward-sloping demand</div><div class="mch-s">Each firm faces its own demand curve — small price power, big competition.</div></div>
+            </div>
+          </div>
+          <div class="mch-center-wrap"><div class="mch-center" style="background:#fff;border:2px solid #E2E8F0;border-radius:50%;width:142px;height:142px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 8px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
+            <div style="font-size:28px;line-height:1;">🏪</div>
+            <div style="font-size:12.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:4px;text-align:center;line-height:1.2;">Monopolistic</div>
+            <div style="font-size:12.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;text-align:center;line-height:1.2;">competition</div>
+            <div style="font-size:10px;color:#475569;margin-top:3px;text-align:center;line-height:1.2;">Many firms,<br/>differentiated products</div>
+          </div></div>
+        </div>
+
+        <!-- Spectrum bar -->
+        <div class="mch-spec">
+          <div style="font-size:11px;font-weight:800;color:#0B1426;letter-spacing:0.06em;margin-bottom:10px;">WHERE IT SITS</div>
+          <div style="position:relative;height:48px;background:linear-gradient(to right,#ECFDF5 0%,#F5F3FF 50%,#FEE2E2 100%);border-radius:10px;border:1px solid #CBD5E1;">
+            <div style="position:absolute;top:50%;left:6%;transform:translateY(-50%);font-size:11.5px;font-weight:800;color:#065F46;">Perfect competition</div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:12px;font-weight:900;color:#5B21B6;text-align:center;">Monopolistic<br/>competition</div>
+            <div style="position:absolute;top:50%;right:6%;transform:translateY(-50%);font-size:11.5px;font-weight:800;color:#9F1239;">Monopoly</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10.5px;color:#475569;">
+            <span>Many sellers, identical product</span>
+            <span style="font-weight:800;color:#5B21B6;">One seller, unique product</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* mcCharacteristicsHub – Card 2. 5-spoke hub showing the
+     characteristics of monopolistic competition. Same fhub-5 grammar. */
+  mcCharacteristicsHub: `
+    <div class="mcch" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mcch .mh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:14px; position:relative; z-index:1; }
+        .mcch .mh-grid > .mh-bottom { grid-column:1 / -1; display:flex; justify-content:center; margin-top:8px; }
+        .mcch .mh-bottom .mh-tile { width:46%; max-width:none; }
+        .mcch .mh-center { position:absolute; top:32%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .mcch .mh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .mcch .mh-tile { border-radius:13px; padding:12px 14px; display:flex; gap:12px; align-items:flex-start; min-height:96px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .mcch .mh-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .mcch .mh-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .mcch .mh-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){
+          .mcch > div { display:flex; flex-direction:column-reverse; }
+          .mcch .mh-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .mcch .mh-center { position:static; transform:none; margin:6px auto; }
+          .mcch .mh-center-wrap { order:99; display:flex; justify-content:center; }
+          .mcch .mh-bottom { margin-top:0; }
+          .mcch .mh-bottom .mh-tile { width:auto; max-width:none; flex:1; }
+          .mcch .mh-conn { display:none; }
+        }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="mh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 15 C 44 15, 44 32, 50 32" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 15 C 56 15, 56 32, 50 32" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 49 C 44 49, 44 32, 50 32" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 49 C 56 49, 56 32, 50 32" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 50 71 L 50 32" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="mh-grid">
+          <div class="mh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="mh-ic">👥</div>
+            <div><div class="mh-t" style="color:#065F46;">Many firms</div><div class="mh-s">Lots of small firms, not one dominant supplier.</div></div>
+          </div>
+          <div class="mh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="mh-ic">🎨</div>
+            <div><div class="mh-t" style="color:#C2410C;">Differentiated products</div><div class="mh-s">Products are similar but not identical — branding, design, quality.</div></div>
+          </div>
+          <div class="mh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="mh-ic">🚪</div>
+            <div><div class="mh-t" style="color:#1E3A8A;">Low barriers to entry &amp; exit</div><div class="mh-s">New firms can join or leave when profit signals change.</div></div>
+          </div>
+          <div class="mh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="mh-ic">📢</div>
+            <div><div class="mh-t" style="color:#5B21B6;">Heavy non-price competition</div><div class="mh-s">Firms compete on quality, advertising, service and more.</div></div>
+          </div>
+          <div class="mh-bottom"><div class="mh-tile" style="background:#FEE2E2;border:1.5px solid #FCA5A5;">
+            <div class="mh-ic">🏷️</div>
+            <div><div class="mh-t" style="color:#9F1239;">Some price-making power</div><div class="mh-s">Firms can charge a little above cost — but face elastic demand.</div></div>
+          </div></div>
+        </div>
+        <div class="mh-center-wrap"><div class="mh-center" style="background:#fff;border:2px solid #E2E8F0;border-radius:50%;width:132px;height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 8px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
+          <div style="font-size:28px;line-height:1;">🏪</div>
+          <div style="font-size:12px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:4px;text-align:center;line-height:1.2;">Monopolistic</div>
+          <div style="font-size:12px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;text-align:center;line-height:1.2;">competition</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* mcShortRunDiagram – Card 3 Monopolistic Competition. Interactive
+     3-view reveal building up the profit-max procedure on an MC firm
+     diagram. View 1 shows the full chart (AC, MC, AR=demand, MR) and
+     marks the MC=MR intersection with Q* drop line. View 2 adds the
+     horizontal from Q* up to AR (gives P*). View 3 adds the AC at Q*
+     reading and shades the abnormal profit rectangle.
+     Geometry — used consistently across Cards 3, 4, 5:
+       AC(Q) = (Q-5)² · 0.4 + 14   (U-curve, min at Q=5, AC_min=14)
+       MC(Q) = 6 + 1.6Q             (linear, cuts AC at Q=5)
+       AR_SR = 26 − 2Q             (this card; abnormal profit visible)
+       MR_SR = 26 − 4Q
+       Q* (SR) ≈ 3.57; P* ≈ 18.86; AC at Q* ≈ 14.82; profit per unit ≈ 4. */
+  mcShortRunDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mcsr-v { display:none; }
+        @media (max-width:680px){
+          .mcsr-h { display:none; }
+          .mcsr-v { display:block; }
+        }
+      </style>
+      <div class="mcsr-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE FIRM DIAGRAM</text>
+
+        <!-- Profit rectangle (mcsr-3 layer) — from (80, 148) to (273, 185) over 0..Q*=3.57 -->
+        <g class="mcsr-3" style="display:none">
+          <rect x="80" y="148" width="193" height="37" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="176" y="170" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Abnormal profit</text>
+        </g>
+
+        <!-- Axes -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost /</text>
+        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">revenue</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+
+        <!-- AC U-curve. Points (Q, AC):
+             (0,24)(1,20.4)(2,17.6)(3,15.6)(4,14.4)(5,14)(6,14.4)(7,15.6)(8,17.6)(10,24)
+             → (80,101)(134,134)(188,159)(242,178)(296,189)(350,192)(404,189)(458,178)(512,159)(620,101) -->
+        <path d="M 80 101 Q 107 117, 134 134 Q 161 146, 188 159 Q 215 168, 242 178 Q 269 184, 296 189 Q 323 191, 350 192 Q 377 191, 404 189 Q 431 184, 458 178 Q 485 168, 512 159 Q 566 130, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+
+        <!-- MC linear: 6 + 1.6Q. Points (0,6)(10,22) → (80, 265)(620, 119) -->
+        <line x1="80" y1="265" x2="620" y2="119" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="624" y="119" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- AR_SR linear: 26 - 2Q. (0,26) (10,6) → (80, 83) (620, 265) -->
+        <line x1="80" y1="83" x2="620" y2="265" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="270" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR (D)</text>
+
+        <!-- MR_SR linear: 26 - 4Q. (0,26) (6.5,0) → (80, 83) (431, 320) -->
+        <line x1="80" y1="83" x2="431" y2="320" stroke="#D97706" stroke-width="2.4"/>
+        <text x="436" y="316" font-size="13" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">MR</text>
+
+        <!-- Step 1: MC = MR intersection at (Q*=3.57, MR=11.71). Pixel: (273, 213) -->
+        <g class="mcsr-1" style="display:none">
+          <circle cx="273" cy="213" r="7" fill="#fff" stroke="#0B1426" stroke-width="2.6"/>
+          <line x1="273" y1="213" x2="273" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="273" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+          <text x="282" y="206" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">MC = MR</text>
+        </g>
+
+        <!-- Step 2: Horizontal from Q* up to AR (P*) then to y-axis.
+             At Q*=3.57, AR = 18.86 → y=148 -->
+        <g class="mcsr-2" style="display:none">
+          <line x1="273" y1="213" x2="273" y2="148" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <circle cx="273" cy="148" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="273" y1="148" x2="80" y2="148" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="74" y="152" font-size="13" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        </g>
+
+        <!-- Step 3: AC at Q* (Q*=3.57, AC=14.82 → y=185)  -->
+        <g class="mcsr-3" style="display:none">
+          <circle cx="273" cy="185" r="6" fill="#5B21B6" stroke="#fff" stroke-width="2"/>
+          <line x1="273" y1="185" x2="80" y2="185" stroke="#5B21B6" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="74" y="189" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">AC₁</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="mcsr-v">
+      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE FIRM DIAGRAM</text>
+        <!-- Profit rect mobile -->
+        <g class="mcsr-3" style="display:none">
+          <rect x="48" y="138" width="106" height="38" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="101" y="161" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Abnormal profit</text>
+        </g>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Q 0..10 → x = 48+Q*29.2; £ 0..30 → y = 320-£*9.47 -->
+        <!-- AC: (48, 93)(77, 127)(106, 154)(135, 174)(164, 184)(193, 188)(222, 184)(251, 174)(280, 154)(338, 93) -->
+        <path d="M 48 93 Q 63 110, 77 127 Q 92 140, 106 154 Q 121 164, 135 174 Q 150 181, 164 184 Q 179 187, 193 188 Q 208 187, 222 184 Q 237 181, 251 174 Q 280 140, 338 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <!-- MC: (48, 264)(338, 116) -->
+        <line x1="48" y1="264" x2="338" y2="116" stroke="#DC2626" stroke-width="2"/>
+        <text x="318" y="112" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <!-- AR_SR: (48, 74)(338, 263) -->
+        <line x1="48" y1="74" x2="338" y2="263" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="318" y="268" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR</text>
+        <!-- MR_SR: (48, 74)(238, 320) -->
+        <line x1="48" y1="74" x2="238" y2="320" stroke="#D97706" stroke-width="2"/>
+        <text x="240" y="316" font-size="11" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">MR</text>
+        <!-- Step 1: Q*=3.57 → x=152, y=213 (interpolated) -->
+        <g class="mcsr-1" style="display:none">
+          <circle cx="152" cy="213" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="152" y1="213" x2="152" y2="320" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="152" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q*</text>
+        </g>
+        <!-- Step 2: y=138 at Q*=3.57 -->
+        <g class="mcsr-2" style="display:none">
+          <line x1="152" y1="213" x2="152" y2="138" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <circle cx="152" cy="138" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="152" y1="138" x2="48" y2="138" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="42" y="142" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        </g>
+        <!-- Step 3: AC at Q*=3.57 → y=176 -->
+        <g class="mcsr-3" style="display:none">
+          <circle cx="152" cy="176" r="5" fill="#5B21B6" stroke="#fff" stroke-width="2"/>
+          <line x1="152" y1="176" x2="48" y2="176" stroke="#5B21B6" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="42" y="180" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">AC₁</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* mcLongRunDiagram – Card 4. Interactive 3-view: SR baseline (profit
+     visible), entry adjustment (AR shifts left), LR equilibrium
+     (tangent to AC, no profit). Uses mutually-exclusive `show` so each
+     view is a clean scene. Layers: lr-1 (SR), lr-2 (transition),
+     lr-3 (LR). */
+  mcLongRunDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mclr-v { display:none; }
+        @media (max-width:680px){
+          .mclr-h { display:none; }
+          .mclr-v { display:block; }
+        }
+      </style>
+      <div class="mclr-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE LONG-RUN DIAGRAM</text>
+
+        <!-- Axes (always visible) -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price /</text>
+        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">cost</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+
+        <!-- AC (always visible) -->
+        <path d="M 80 101 Q 107 117, 134 134 Q 161 146, 188 159 Q 215 168, 242 178 Q 269 184, 296 189 Q 323 191, 350 192 Q 377 191, 404 189 Q 431 184, 458 178 Q 485 168, 512 159 Q 566 130, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+
+        <!-- MC (always visible) -->
+        <line x1="80" y1="265" x2="620" y2="119" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="624" y="119" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- VIEW 1 (lr-1): SR scene — AR_SR, MR_SR, profit rectangle -->
+        <g class="lr-1" style="display:none">
+          <rect x="80" y="148" width="193" height="37" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="176" y="170" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">SR abnormal profit</text>
+          <line x1="80" y1="83" x2="620" y2="265" stroke="#16A34A" stroke-width="2.4"/>
+          <text x="624" y="270" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR_SR</text>
+          <line x1="80" y1="83" x2="431" y2="320" stroke="#D97706" stroke-width="2"/>
+          <text x="436" y="316" font-size="12" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">MR_SR</text>
+          <circle cx="273" cy="213" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <circle cx="273" cy="148" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="273" y1="148" x2="273" y2="320" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="273" y="338" font-size="13" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Q*_SR</text>
+        </g>
+
+        <!-- VIEW 2 (lr-2): transition — old AR (dashed), new AR shifted left, arrow -->
+        <g class="lr-2" style="display:none">
+          <line x1="80" y1="83" x2="620" y2="265" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="5 3"/>
+          <text x="624" y="270" font-size="11" font-weight="700" fill="#94A3B8" font-family="Inter,sans-serif">AR_SR (was)</text>
+          <line x1="80" y1="138" x2="568" y2="265" stroke="#16A34A" stroke-width="2.4"/>
+          <text x="572" y="270" font-size="12" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR_LR</text>
+          <!-- Big leftward arrow -->
+          <line x1="380" y1="120" x2="240" y2="148" stroke="#0B1426" stroke-width="2.4" marker-end="url(#mclr-arr)"/>
+          <text x="310" y="108" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">New firms enter</text>
+          <text x="310" y="124" font-size="11" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">demand per firm falls</text>
+        </g>
+
+        <!-- VIEW 3 (lr-3): LR equilibrium — tangent at Q=3 -->
+        <g class="lr-3" style="display:none">
+          <!-- AR_LR: 20.4-1.6Q. (0,20.4)(10,4.4) → (80, 134)(620, 280) -->
+          <line x1="80" y1="134" x2="620" y2="280" stroke="#16A34A" stroke-width="2.4"/>
+          <text x="624" y="284" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR_LR</text>
+          <!-- MR_LR: 20.4-3.2Q. (0,20.4)(6.375,0) → (80, 134)(424, 320) -->
+          <line x1="80" y1="134" x2="424" y2="320" stroke="#D97706" stroke-width="2"/>
+          <text x="428" y="316" font-size="12" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">MR_LR</text>
+          <!-- Tangent point at Q=3, P=AC=15.6 → x=242, y=178 -->
+          <circle cx="242" cy="178" r="8" fill="#16A34A" stroke="#fff" stroke-width="2.6"/>
+          <line x1="242" y1="178" x2="242" y2="320" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="242" y="338" font-size="13" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Q*_LR</text>
+          <line x1="242" y1="178" x2="80" y2="178" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="74" y="182" font-size="12" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P=AC</text>
+          <!-- MC = MR_LR at Q=3: MC(3)=10.8 → y=221 -->
+          <circle cx="242" cy="221" r="6" fill="#fff" stroke="#0B1426" stroke-width="2"/>
+          <!-- Annotation -->
+          <rect x="298" y="50" width="220" height="46" rx="9" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+          <text x="312" y="74" font-size="14" font-family="Inter,sans-serif">✅</text>
+          <text x="336" y="74" font-size="12" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Normal profit only</text>
+          <text x="312" y="92" font-size="11" fill="#0B1426" font-family="Inter,sans-serif">AR is tangent to AC — no abnormal profit.</text>
+        </g>
+
+        <defs>
+          <marker id="mclr-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/>
+          </marker>
+        </defs>
+      </svg>
+      </div>
+
+      <div class="mclr-v">
+      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE LONG-RUN DIAGRAM</text>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Q 0..10 → x = 48+Q*29.2; £ 0..30 → y = 320-£*9.47 -->
+        <path d="M 48 93 Q 63 110, 77 127 Q 92 140, 106 154 Q 121 164, 135 174 Q 150 181, 164 184 Q 179 187, 193 188 Q 208 187, 222 184 Q 237 181, 251 174 Q 280 140, 338 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <line x1="48" y1="264" x2="338" y2="116" stroke="#DC2626" stroke-width="2"/>
+        <text x="318" y="112" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <!-- SR (lr-1) -->
+        <g class="lr-1" style="display:none">
+          <rect x="48" y="138" width="106" height="38" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="101" y="161" font-size="10.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">SR profit</text>
+          <line x1="48" y1="74" x2="338" y2="263" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="318" y="268" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR_SR</text>
+          <line x1="48" y1="74" x2="238" y2="320" stroke="#D97706" stroke-width="1.8"/>
+          <text x="240" y="316" font-size="10" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">MR_SR</text>
+        </g>
+        <!-- Transition (lr-2) -->
+        <g class="lr-2" style="display:none">
+          <line x1="48" y1="74" x2="338" y2="263" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <line x1="48" y1="131" x2="306" y2="263" stroke="#16A34A" stroke-width="2.2"/>
+          <line x1="220" y1="100" x2="140" y2="138" stroke="#0B1426" stroke-width="2" marker-end="url(#mclr-arr-v)"/>
+          <text x="180" y="92" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">New firms enter</text>
+        </g>
+        <!-- LR (lr-3) -->
+        <g class="lr-3" style="display:none">
+          <line x1="48" y1="127" x2="338" y2="265" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="318" y="262" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR_LR</text>
+          <line x1="48" y1="127" x2="234" y2="320" stroke="#D97706" stroke-width="1.8"/>
+          <circle cx="135" cy="174" r="7" fill="#16A34A" stroke="#fff" stroke-width="2.2"/>
+          <line x1="135" y1="174" x2="135" y2="320" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <line x1="135" y1="174" x2="48" y2="174" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="135" y="340" font-size="11" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Q*_LR</text>
+          <text x="42" y="178" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P=AC</text>
+        </g>
+        <defs>
+          <marker id="mclr-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/>
+          </marker>
+        </defs>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* mcEfficiencyDiagram – Card 5. The LR equilibrium with excess
+     capacity highlighted. Interactive 2-view: V1 shows LR tangent
+     point and Q*_LR. V2 adds the AC minimum point (Q_min) to the
+     right of Q*_LR, with the gap labelled "excess capacity". */
+  mcEfficiencyDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mce-v { display:none; }
+        @media (max-width:680px){
+          .mce-h { display:none; }
+          .mce-v { display:block; }
+        }
+      </style>
+      <div class="mce-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE LONG-RUN EFFICIENCY DIAGRAM</text>
+
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+
+        <!-- AC always visible -->
+        <path d="M 80 101 Q 107 117, 134 134 Q 161 146, 188 159 Q 215 168, 242 178 Q 269 184, 296 189 Q 323 191, 350 192 Q 377 191, 404 189 Q 431 184, 458 178 Q 485 168, 512 159 Q 566 130, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+
+        <!-- MC always visible -->
+        <line x1="80" y1="265" x2="620" y2="119" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="624" y="119" font-size="13" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+
+        <!-- AR_LR (always visible) -->
+        <line x1="80" y1="134" x2="620" y2="280" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="284" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR</text>
+        <line x1="80" y1="134" x2="424" y2="320" stroke="#D97706" stroke-width="2"/>
+        <text x="428" y="316" font-size="12" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">MR</text>
+
+        <!-- V1: LR tangent point -->
+        <g class="mce-1" style="display:none">
+          <circle cx="242" cy="178" r="8" fill="#16A34A" stroke="#fff" stroke-width="2.6"/>
+          <line x1="242" y1="178" x2="242" y2="320" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <line x1="242" y1="178" x2="80" y2="178" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="242" y="338" font-size="12" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Q*_LR</text>
+          <text x="74" y="182" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">P=AC</text>
+        </g>
+
+        <!-- V2: AC minimum point + excess capacity highlight -->
+        <g class="mce-2" style="display:none">
+          <circle cx="350" cy="192" r="7" fill="#fff" stroke="#5B21B6" stroke-width="2.4"/>
+          <line x1="350" y1="192" x2="350" y2="320" stroke="#5B21B6" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <line x1="350" y1="192" x2="80" y2="192" stroke="#5B21B6" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="350" y="338" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Q_min</text>
+          <text x="74" y="196" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">AC min</text>
+          <!-- Excess capacity bracket -->
+          <line x1="242" y1="305" x2="350" y2="305" stroke="#9F1239" stroke-width="2.4"/>
+          <line x1="242" y1="300" x2="242" y2="310" stroke="#9F1239" stroke-width="2"/>
+          <line x1="350" y1="300" x2="350" y2="310" stroke="#9F1239" stroke-width="2"/>
+          <text x="296" y="294" font-size="12" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Excess capacity</text>
+          <text x="296" y="278" font-size="10" font-weight="700" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Q*_LR &lt; Q_min</text>
+          <!-- Vertical gap between AC at tangent and AC min -->
+          <line x1="62" y1="178" x2="62" y2="192" stroke="#5B21B6" stroke-width="2"/>
+          <text x="56" y="190" font-size="10" font-weight="700" fill="#5B21B6" text-anchor="end" font-family="Inter,sans-serif">AC gap</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="mce-v">
+      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">LR EFFICIENCY DIAGRAM</text>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <path d="M 48 93 Q 63 110, 77 127 Q 92 140, 106 154 Q 121 164, 135 174 Q 150 181, 164 184 Q 179 187, 193 188 Q 208 187, 222 184 Q 237 181, 251 174 Q 280 140, 338 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
+        <line x1="48" y1="264" x2="338" y2="116" stroke="#DC2626" stroke-width="2"/>
+        <text x="318" y="112" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC</text>
+        <line x1="48" y1="127" x2="338" y2="265" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="318" y="262" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">AR</text>
+        <line x1="48" y1="127" x2="234" y2="320" stroke="#D97706" stroke-width="1.8"/>
+        <!-- V1 (mce-1): tangent point -->
+        <g class="mce-1" style="display:none">
+          <circle cx="135" cy="174" r="7" fill="#16A34A" stroke="#fff" stroke-width="2.2"/>
+          <line x1="135" y1="174" x2="135" y2="320" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="135" y="340" font-size="11" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">Q*_LR</text>
+        </g>
+        <!-- V2 (mce-2): excess capacity -->
+        <g class="mce-2" style="display:none">
+          <circle cx="193" cy="188" r="6" fill="#fff" stroke="#5B21B6" stroke-width="2.2"/>
+          <line x1="193" y1="188" x2="193" y2="320" stroke="#5B21B6" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="193" y="340" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Q_min</text>
+          <line x1="135" y1="305" x2="193" y2="305" stroke="#9F1239" stroke-width="2.2"/>
+          <line x1="135" y1="301" x2="135" y2="309" stroke="#9F1239" stroke-width="1.8"/>
+          <line x1="193" y1="301" x2="193" y2="309" stroke="#9F1239" stroke-width="1.8"/>
+          <text x="164" y="296" font-size="10" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Excess capacity</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

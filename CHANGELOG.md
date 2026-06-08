@@ -6,6 +6,54 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.35 — 2026-06-08
+
+### Monopolistic Competition topic complete (6 cards, 5 visuals, 3 interactive)
+
+Built the full topic in one push — Edexcel A 3.4.3. The user
+specifically asked for interactive diagrams "to show students how
+to build and understand monopolistic competition", so Cards 3, 4
+and 5 each step through their diagrams view-by-view rather than
+showing the final state up front.
+
+* **Card 1 — The big picture** — `mcMarketShape`: 4-spoke hub
+  (Many firms · Product differentiation · Low barriers to entry &
+  exit · Downward-sloping demand) around a central "Monopolistic
+  competition" pill, plus an underneath spectrum bar placing MC
+  between Perfect competition and Monopoly.
+* **Card 2 — What makes this market different?** —
+  `mcCharacteristicsHub`: 5-spoke hub (Many firms · Differentiated
+  products · Low barriers · Heavy non-price competition · Some
+  price-making power). Non-price competition flow + WHY DEMAND
+  SLOPES DOWN 3-tile + real-world example tiles.
+* **Card 3 — Short-run profit max** — `mcShortRunDiagram`,
+  interactive 3-view BUILD-UP: View 1 marks MC=MR intersection +
+  drops to Q*. View 2 adds the horizontal up to AR (P*). View 3
+  adds AC at Q* and shades the green abnormal-profit rectangle.
+  Three-step procedure mirrors what students draw on exam paper.
+* **Card 4 — Long-run equilibrium** — `mcLongRunDiagram`,
+  interactive 3-view TRANSITION using mutually-exclusive `show`
+  arrays so each scene is clean: View 1 = SR with shaded profit;
+  View 2 = entry happening (old AR dashed, new AR shifted left,
+  "New firms enter" arrow); View 3 = LR tangent equilibrium at
+  P=AC, MR=MC, normal profit only.
+* **Card 5 — Efficiency and excess capacity** — `mcEfficiencyDiagram`,
+  interactive 2-view: View 1 marks the LR tangent point Q*_LR.
+  View 2 adds the AC minimum point Q_min to the RIGHT of Q*_LR,
+  with a red bracket labelled "Excess capacity" connecting them
+  along the x-axis and a small AC gap labelled on the y-axis.
+  Three judgements (Productive/Allocative inefficiency, Dynamic
+  efficiency) + Why others criticise it tile grid.
+* **Card 6 — The whole story** — Synthesis using existing engine
+  blocks. 6-step chain (Many firms → Differentiated products →
+  Some market power → SR profit possible → Entry erodes profit →
+  LR normal profit with excess capacity), STRENGTHS vs WEAKNESSES
+  pair, WHERE IT FITS 3-col compare (PC vs MC vs Monopoly).
+
+Geometry is consistent across Cards 3-5: AC(Q) = (Q-5)²·0.4 + 14,
+MC = 6 + 1.6Q, AR_SR = 26 − 2Q, AR_LR = 20.4 − 1.6Q (tangent to
+AC at Q=3). Cache bump (icons.js change): v434.
+
 ## 0.96.34 — 2026-06-07
 
 ### Overnight audit: clean-up across the recent Theme 3 shipments

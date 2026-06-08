@@ -19803,6 +19803,112 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     MONOPSONY (3.4.6) — one powerful buyer.
+     ============================================================ */
+
+  /* monopsonyBuyerHub — Card 1. A single powerful buyer sits between
+     many workers (labour-market monopsony) and many suppliers (buying
+     monopsony), with arrows converging inward. Stacks on mobile. */
+  monopsonyBuyerHub: `
+    <div class="mbh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mbh .mbh-row { display:grid; grid-template-columns:1fr 96px 150px 96px 1fr; align-items:center; gap:0; }
+        .mbh .mbh-side { text-align:center; }
+        .mbh .mbh-tag { font-size:10.5px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:8px; }
+        .mbh .mbh-cluster { display:flex; flex-wrap:wrap; gap:4px; justify-content:center; max-width:150px; margin:0 auto; }
+        .mbh .mbh-ppl { font-size:20px; line-height:1; }
+        .mbh .mbh-lbl { font-size:12px; font-weight:700; color:#475569; margin-top:7px; }
+        .mbh .mbh-arrow { text-align:center; color:#94A3B8; font-size:26px; font-weight:800; }
+        .mbh .mbh-center { text-align:center; }
+        .mbh .mbh-c { width:120px; height:120px; border-radius:50%; background:#fff; border:2.6px solid #B91C1C; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto; box-shadow:0 0 0 7px rgba(254,242,242,0.8), 0 6px 18px rgba(11,20,38,0.1); }
+        @media (max-width:600px){ .mbh .mbh-row{ grid-template-columns:1fr; } .mbh .mbh-arrow{ transform:rotate(90deg); margin:8px 0; } .mbh .mbh-center{ margin:8px 0; } }
+      </style>
+      <div class="mbh-row">
+        <div class="mbh-side">
+          <div class="mbh-tag" style="color:#1D4ED8;">Labour-market monopsony</div>
+          <div class="mbh-cluster">
+            <span class="mbh-ppl">🧑‍🏭</span><span class="mbh-ppl">👷</span><span class="mbh-ppl">🧑‍💼</span><span class="mbh-ppl">👩‍🔧</span><span class="mbh-ppl">🧑‍🏭</span><span class="mbh-ppl">👷</span>
+          </div>
+          <div class="mbh-lbl">Many workers</div>
+        </div>
+        <div class="mbh-arrow">→</div>
+        <div class="mbh-center">
+          <div class="mbh-c">
+            <div style="font-size:34px;line-height:1;">🏛️</div>
+            <div style="font-size:12px;font-weight:800;color:#991B1B;text-align:center;margin-top:5px;line-height:1.1;">One powerful<br>buyer</div>
+          </div>
+        </div>
+        <div class="mbh-arrow">←</div>
+        <div class="mbh-side">
+          <div class="mbh-tag" style="color:#C2410C;">Buying monopsony</div>
+          <div class="mbh-cluster">
+            <span class="mbh-ppl">🚜</span><span class="mbh-ppl">🏭</span><span class="mbh-ppl">🧑‍🌾</span><span class="mbh-ppl">🏭</span><span class="mbh-ppl">🚜</span><span class="mbh-ppl">🧑‍🌾</span>
+          </div>
+          <div class="mbh-lbl">Many suppliers</div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:12px;color:#64748B;font-style:italic;margin-top:14px;">One buyer faces many sellers — so the buyer sets the price or wage, below the competitive level.</div>
+    </div>
+  `,
+
+  /* monopsonyDiagram — Card 2 interactive (ms-1..ms-3). Labour-market
+     monopsony. Coordinate system x = 80 + 54·L, y = 320 − 9.125·W.
+       ACL = S = 4 + 1.8L  (80,283)→(620,119)
+       MCL = 4 + 3.6L      (80,283)→(328,132)  [above ACL]
+       MRP = 26 − 2L       (80,83)→(620,265)
+     Monopsony: MCL=MRP at (292,154) → Lm; wage Wm on ACL (292,219).
+     Competitive: MRP=ACL at (393,188) → Wc, Lc (higher both). */
+  monopsonyLabourDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE MONOPSONY DIAGRAM</text>
+        <!-- ms-3 wage gap band (between Wm and Wc on the axis) -->
+        <g class="ms-3" style="display:none">
+          <rect x="80" y="188" width="6" height="31" fill="#FCA5A5" opacity="0.7"/>
+        </g>
+        <!-- Axes -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="36" y="42" font-size="11" font-weight="700" fill="#475569">Wage,</text>
+        <text x="36" y="56" font-size="11" font-weight="700" fill="#475569">cost</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Employment (L)</text>
+        <!-- ACL = S -->
+        <line x1="80" y1="283" x2="620" y2="119" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="116" font-size="13" font-weight="800" fill="#16A34A">ACL = S</text>
+        <!-- MCL -->
+        <line x1="80" y1="283" x2="328" y2="132" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="332" y="128" font-size="13" font-weight="800" fill="#DC2626">MCL</text>
+        <!-- MRP -->
+        <line x1="80" y1="83" x2="620" y2="265" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="624" y="268" font-size="13" font-weight="800" fill="#2563EB">MRP</text>
+        <!-- ms-1: monopsony employment, MCL = MRP -->
+        <g class="ms-1" style="display:none">
+          <circle cx="292" cy="154" r="6.5" fill="#fff" stroke="#0B1426" stroke-width="2.6"/>
+          <text x="300" y="150" font-size="10" font-weight="800" fill="#0B1426">MCL = MRP</text>
+          <line x1="292" y1="154" x2="292" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="292" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">L_m</text>
+        </g>
+        <!-- ms-2: monopsony wage, read down to the supply (ACL) curve -->
+        <g class="ms-2" style="display:none">
+          <line x1="292" y1="154" x2="292" y2="219" stroke="#B91C1C" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <circle cx="292" cy="219" r="6" fill="#B91C1C" stroke="#fff" stroke-width="2"/>
+          <line x1="292" y1="219" x2="80" y2="219" stroke="#B91C1C" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="74" y="223" font-size="12" font-weight="800" fill="#B91C1C" text-anchor="end">W_m</text>
+        </g>
+        <!-- ms-3: competitive benchmark (MRP = ACL) -->
+        <g class="ms-3" style="display:none">
+          <circle cx="393" cy="188" r="6" fill="#15803D" stroke="#fff" stroke-width="2"/>
+          <line x1="393" y1="188" x2="393" y2="320" stroke="#15803D" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="393" y="338" font-size="12" font-weight="800" fill="#15803D" text-anchor="middle">L_c</text>
+          <line x1="393" y1="188" x2="80" y2="188" stroke="#15803D" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="74" y="192" font-size="12" font-weight="800" fill="#15803D" text-anchor="end">W_c</text>
+          <text x="402" y="184" font-size="9.5" font-weight="700" fill="#15803D">competitive</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

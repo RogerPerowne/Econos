@@ -19360,6 +19360,449 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     MONOPOLY (3.4.5) — firm diagrams (hand-rolled, reveal-layer
+     SVGs in the theme-3 firm-theory style, e.g. mcShortRunDiagram).
+     Shared coordinate system (desktop viewBox 760×360):
+       x = 80 + 54·Q   (Q in 0..10)
+       y = 320 − 9.125·£ (£ in 0..30)
+     Curves: AC U-curve, MC = 6 + 1.6Q, AR/D = 26 − 2Q,
+     MR = 26 − 4Q. Monopoly profit-max: MR=MC at Q≈3.57
+     (Pm≈18.86, MC≈11.71, AC≈14.82). Allocative output where
+     MC=AR at Q≈5.56 (P≈14.88).
+     ============================================================ */
+
+  /* monopolyProfitMax — Card 3 interactive (mp-1..mp-4):
+     MR=MC → drop to Qm → up to Pm on AR → AC + supernormal profit. */
+  monopolyProfitMax: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mpm-v { display:none; }
+        @media (max-width:680px){ .mpm-h { display:none; } .mpm-v { display:block; } }
+      </style>
+      <div class="mpm-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE MONOPOLY DIAGRAM</text>
+        <!-- Supernormal profit rectangle (mp-4) -->
+        <g class="mp-4" style="display:none">
+          <rect x="80" y="148" width="193" height="37" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="176" y="171" font-size="12.5" font-weight="800" fill="#065F46" text-anchor="middle">Supernormal profit</text>
+        </g>
+        <!-- Axes -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569">Price,</text>
+        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569">cost</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Output (Q)</text>
+        <!-- AC U-curve -->
+        <path d="M 80 101 Q 107 117, 134 134 Q 161 146, 188 159 Q 215 168, 242 178 Q 269 184, 296 189 Q 323 191, 350 192 Q 377 191, 404 189 Q 431 184, 458 178 Q 485 168, 512 159 Q 566 130, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6">AC</text>
+        <!-- MC -->
+        <line x1="80" y1="265" x2="620" y2="119" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="624" y="119" font-size="13" font-weight="800" fill="#DC2626">MC</text>
+        <!-- AR / D -->
+        <line x1="80" y1="83" x2="620" y2="265" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="270" font-size="13" font-weight="800" fill="#16A34A">AR (D)</text>
+        <!-- MR -->
+        <line x1="80" y1="83" x2="431" y2="320" stroke="#D97706" stroke-width="2.4"/>
+        <text x="436" y="316" font-size="13" font-weight="800" fill="#D97706">MR</text>
+        <!-- mp-1: MR=MC -->
+        <g class="mp-1" style="display:none">
+          <circle cx="273" cy="213" r="7" fill="#fff" stroke="#0B1426" stroke-width="2.6"/>
+          <text x="282" y="208" font-size="10.5" font-weight="800" fill="#0B1426">MR = MC</text>
+        </g>
+        <!-- mp-2: drop to Qm -->
+        <g class="mp-2" style="display:none">
+          <line x1="273" y1="213" x2="273" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="273" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
+        </g>
+        <!-- mp-3: up to Pm on AR -->
+        <g class="mp-3" style="display:none">
+          <line x1="273" y1="213" x2="273" y2="148" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <circle cx="273" cy="148" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="273" y1="148" x2="80" y2="148" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="74" y="152" font-size="13" font-weight="800" fill="#16A34A" text-anchor="end">P_m</text>
+        </g>
+        <!-- mp-4: AC at Qm -->
+        <g class="mp-4" style="display:none">
+          <circle cx="273" cy="185" r="6" fill="#5B21B6" stroke="#fff" stroke-width="2"/>
+          <line x1="273" y1="185" x2="80" y2="185" stroke="#5B21B6" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="74" y="189" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="end">AC₁</text>
+        </g>
+      </svg>
+      </div>
+      <div class="mpm-v">
+      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle">THE MONOPOLY DIAGRAM</text>
+        <g class="mp-4" style="display:none">
+          <rect x="48" y="138" width="104" height="38" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="100" y="161" font-size="10.5" font-weight="800" fill="#065F46" text-anchor="middle">Supernormal profit</text>
+        </g>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end">Output</text>
+        <path d="M 48 93 Q 63 110, 77 127 Q 92 140, 106 154 Q 121 164, 135 174 Q 150 181, 164 184 Q 179 187, 193 188 Q 208 187, 222 184 Q 237 181, 251 174 Q 280 140, 338 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6">AC</text>
+        <line x1="48" y1="264" x2="338" y2="116" stroke="#DC2626" stroke-width="2"/>
+        <text x="318" y="112" font-size="11" font-weight="800" fill="#DC2626">MC</text>
+        <line x1="48" y1="74" x2="338" y2="263" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="316" y="268" font-size="11" font-weight="800" fill="#16A34A">AR</text>
+        <line x1="48" y1="74" x2="238" y2="320" stroke="#D97706" stroke-width="2"/>
+        <text x="240" y="316" font-size="11" font-weight="800" fill="#D97706">MR</text>
+        <g class="mp-1" style="display:none">
+          <circle cx="152" cy="213" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+        </g>
+        <g class="mp-2" style="display:none">
+          <line x1="152" y1="213" x2="152" y2="320" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="152" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
+        </g>
+        <g class="mp-3" style="display:none">
+          <line x1="152" y1="213" x2="152" y2="138" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <circle cx="152" cy="138" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="152" y1="138" x2="48" y2="138" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="42" y="142" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_m</text>
+        </g>
+        <g class="mp-4" style="display:none">
+          <circle cx="152" cy="176" r="5" fill="#5B21B6" stroke="#fff" stroke-width="2"/>
+          <line x1="152" y1="176" x2="48" y2="176" stroke="#5B21B6" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="42" y="180" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="end">AC₁</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* monopolyWelfare — Card 4 interactive (mw-1..mw-3):
+     monopoly outcome (Qm, Pm) → competitive benchmark (Qc where
+     P=MC) → deadweight-loss triangle between them. */
+  monopolyWelfare: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mwf-v { display:none; }
+        @media (max-width:680px){ .mwf-h { display:none; } .mwf-v { display:block; } }
+      </style>
+      <div class="mwf-h">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">MONOPOLY VS THE COMPETITIVE OUTCOME</text>
+        <!-- mw-3: deadweight loss triangle (273,148)-(273,213)-(380,184) -->
+        <g class="mw-3" style="display:none">
+          <polygon points="273,148 273,213 380,184" fill="#FCA5A5" opacity="0.55" stroke="#DC2626" stroke-width="1.4"/>
+          <text x="300" y="240" font-size="12" font-weight="800" fill="#B91C1C">Deadweight</text>
+          <text x="300" y="255" font-size="12" font-weight="800" fill="#B91C1C">loss</text>
+          <line x1="318" y1="232" x2="305" y2="190" stroke="#B91C1C" stroke-width="1" stroke-dasharray="2 2"/>
+        </g>
+        <!-- Axes -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569">Price,</text>
+        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569">cost</text>
+        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Output (Q)</text>
+        <path d="M 80 101 Q 107 117, 134 134 Q 161 146, 188 159 Q 215 168, 242 178 Q 269 184, 296 189 Q 323 191, 350 192 Q 377 191, 404 189 Q 431 184, 458 178 Q 485 168, 512 159 Q 566 130, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6">AC</text>
+        <line x1="80" y1="265" x2="620" y2="119" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="624" y="119" font-size="13" font-weight="800" fill="#DC2626">MC</text>
+        <line x1="80" y1="83" x2="620" y2="265" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="270" font-size="13" font-weight="800" fill="#16A34A">AR (D)</text>
+        <line x1="80" y1="83" x2="431" y2="320" stroke="#D97706" stroke-width="2.4"/>
+        <text x="436" y="316" font-size="13" font-weight="800" fill="#D97706">MR</text>
+        <!-- mw-1: monopoly outcome -->
+        <g class="mw-1" style="display:none">
+          <circle cx="273" cy="213" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
+          <line x1="273" y1="213" x2="273" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="273" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
+          <line x1="273" y1="213" x2="273" y2="148" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="273" cy="148" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="273" y1="148" x2="80" y2="148" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="152" font-size="13" font-weight="800" fill="#16A34A" text-anchor="end">P_m</text>
+        </g>
+        <!-- mw-2: competitive benchmark Qc (MC=AR) at (380,184) -->
+        <g class="mw-2" style="display:none">
+          <circle cx="380" cy="184" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+          <line x1="380" y1="184" x2="380" y2="320" stroke="#2563EB" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="380" y="338" font-size="13" font-weight="800" fill="#1D4ED8" text-anchor="middle">Q_c</text>
+          <line x1="380" y1="184" x2="80" y2="184" stroke="#2563EB" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="188" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="end">P_c</text>
+          <text x="392" y="178" font-size="10" font-weight="700" fill="#1D4ED8">P = MC</text>
+        </g>
+      </svg>
+      </div>
+      <div class="mwf-v">
+      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle">MONOPOLY VS COMPETITION</text>
+        <g class="mw-3" style="display:none">
+          <polygon points="152,138 152,213 209,179" fill="#FCA5A5" opacity="0.55" stroke="#DC2626" stroke-width="1.2"/>
+          <text x="176" y="236" font-size="10.5" font-weight="800" fill="#B91C1C">DWL</text>
+        </g>
+        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569">Cost</text>
+        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end">Output</text>
+        <path d="M 48 93 Q 63 110, 77 127 Q 92 140, 106 154 Q 121 164, 135 174 Q 150 181, 164 184 Q 179 187, 193 188 Q 208 187, 222 184 Q 237 181, 251 174 Q 280 140, 338 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
+        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6">AC</text>
+        <line x1="48" y1="264" x2="338" y2="116" stroke="#DC2626" stroke-width="2"/>
+        <text x="318" y="112" font-size="11" font-weight="800" fill="#DC2626">MC</text>
+        <line x1="48" y1="74" x2="338" y2="263" stroke="#16A34A" stroke-width="2.2"/>
+        <text x="316" y="268" font-size="11" font-weight="800" fill="#16A34A">AR</text>
+        <line x1="48" y1="74" x2="238" y2="320" stroke="#D97706" stroke-width="2"/>
+        <text x="240" y="316" font-size="11" font-weight="800" fill="#D97706">MR</text>
+        <g class="mw-1" style="display:none">
+          <circle cx="152" cy="213" r="5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="152" y1="213" x2="152" y2="320" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="152" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
+          <line x1="152" y1="213" x2="152" y2="138" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="152" cy="138" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="152" y1="138" x2="48" y2="138" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="42" y="142" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_m</text>
+        </g>
+        <g class="mw-2" style="display:none">
+          <circle cx="209" cy="179" r="5" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+          <line x1="209" y1="179" x2="209" y2="320" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="209" y="340" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">Q_c</text>
+          <line x1="209" y1="179" x2="48" y2="179" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="42" y="183" font-size="10" font-weight="800" fill="#1D4ED8" text-anchor="end">P_c</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
+  /* naturalMonopoly — Card 8 interactive (nm-1..nm-3). Falling cost
+     lines (economies of scale over the whole market):
+       D=AR (80,130)→(620,300), MR (80,130)→(380,320),
+       LRAC (80,165)→(620,250), LRMC (80,210)→(620,275).
+     Profit-max MR=MC (236,229); Pm on D (236,179); AC at Qm (236,189).
+     Break-even D=LRAC (301,200); allocative D=LRMC (490,259). */
+  naturalMonopoly: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE NATURAL MONOPOLY DIAGRAM</text>
+        <!-- nm-2 profit rectangle (Pm to AC over 0..Qm) -->
+        <g class="nm-2" style="display:none">
+          <rect x="80" y="179" width="156" height="10" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="4 3"/>
+        </g>
+        <!-- Axes -->
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569">Cost,</text>
+        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569">price</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Output (Q)</text>
+        <!-- LRAC (falling) -->
+        <line x1="80" y1="165" x2="620" y2="250" stroke="#5B21B6" stroke-width="2.4"/>
+        <text x="624" y="248" font-size="13" font-weight="800" fill="#5B21B6">LRAC</text>
+        <!-- LRMC (below LRAC) -->
+        <line x1="80" y1="210" x2="620" y2="275" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="624" y="278" font-size="13" font-weight="800" fill="#DC2626">LRMC</text>
+        <!-- D = AR -->
+        <line x1="80" y1="130" x2="620" y2="300" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="303" font-size="13" font-weight="800" fill="#16A34A">D = AR</text>
+        <!-- MR -->
+        <line x1="80" y1="130" x2="380" y2="320" stroke="#D97706" stroke-width="2.4"/>
+        <text x="384" y="316" font-size="13" font-weight="800" fill="#D97706">MR</text>
+        <!-- nm-1: economies of scale over the whole range -->
+        <g class="nm-1" style="display:none">
+          <line x1="80" y1="165" x2="620" y2="250" stroke="#7C3AED" stroke-width="7" opacity="0.16" stroke-linecap="round"/>
+          <rect x="360" y="92" width="252" height="40" rx="9" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.3"/>
+          <text x="486" y="110" font-size="11.5" font-weight="800" fill="#6D28D9" text-anchor="middle">LRAC falls across the WHOLE market</text>
+          <text x="486" y="125" font-size="10.5" fill="#475569" text-anchor="middle">one firm spreads huge fixed costs widest</text>
+        </g>
+        <!-- nm-2: unregulated profit-max -->
+        <g class="nm-2" style="display:none">
+          <circle cx="236" cy="229" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
+          <text x="244" y="226" font-size="9.5" font-weight="800" fill="#0B1426">MR=MC</text>
+          <line x1="236" y1="229" x2="236" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="236" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">Q₁</text>
+          <line x1="236" y1="229" x2="236" y2="179" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="236" cy="179" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="236" y1="179" x2="80" y2="179" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="183" font-size="12" font-weight="800" fill="#16A34A" text-anchor="end">P₁</text>
+        </g>
+        <!-- nm-3: regulator's options -->
+        <g class="nm-3" style="display:none">
+          <circle cx="301" cy="200" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+          <line x1="301" y1="200" x2="301" y2="320" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="301" y="338" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">Q₂</text>
+          <rect x="312" y="186" width="60" height="17" rx="4" fill="#2563EB"/>
+          <text x="342" y="198" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">P = AC</text>
+          <circle cx="490" cy="259" r="6" fill="#B45309" stroke="#fff" stroke-width="2"/>
+          <line x1="490" y1="259" x2="490" y2="320" stroke="#B45309" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="490" y="338" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle">Q₃</text>
+          <rect x="500" y="250" width="60" height="17" rx="4" fill="#B45309"/>
+          <text x="530" y="262" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">P = MC</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* priceDiscPanels — Card 6 interactive 3-panel diagram (pd-1..pd-3).
+     Combined market sets the common MC level (MR=MC); the firm then
+     equates MR=MC in each sub-market. Inelastic Market A → high price;
+     elastic Market B → low price. MC drawn at the same y (170) in all. */
+  priceDiscPanels: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- equal-MC through-line (from pd-2) -->
+        <g class="pd-2" style="display:none">
+          <line x1="60" y1="170" x2="745" y2="170" stroke="#DC2626" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+        </g>
+
+        <!-- Panel 1: combined market -->
+        <g class="pd-1" style="display:none">
+          <text x="60" y="34" font-size="11.5" font-weight="800" fill="#1D4ED8">1 · Combined market</text>
+          <line x1="60" y1="50" x2="60" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+          <line x1="60" y1="250" x2="258" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+          <text x="258" y="266" font-size="9.5" fill="#475569" text-anchor="end">Q</text>
+          <line x1="60" y1="80" x2="250" y2="230" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="254" y="232" font-size="11" font-weight="800" fill="#16A34A">D</text>
+          <line x1="60" y1="80" x2="170" y2="250" stroke="#D97706" stroke-width="2.2"/>
+          <text x="150" y="246" font-size="11" font-weight="800" fill="#D97706">MR</text>
+          <line x1="60" y1="170" x2="258" y2="170" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="262" y="173" font-size="11" font-weight="800" fill="#DC2626">MC</text>
+          <circle cx="118" cy="170" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="118" y1="170" x2="118" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="118" y="268" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle">MR=MC</text>
+        </g>
+
+        <!-- Panel 2: market A inelastic -->
+        <g class="pd-2" style="display:none">
+          <text x="320" y="34" font-size="11.5" font-weight="800" fill="#B45309">2 · Market A (inelastic)</text>
+          <line x1="320" y1="50" x2="320" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+          <line x1="320" y1="250" x2="500" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+          <text x="500" y="266" font-size="9.5" fill="#475569" text-anchor="end">Q</text>
+          <line x1="320" y1="90" x2="440" y2="255" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="444" y="252" font-size="11" font-weight="800" fill="#16A34A">D_A</text>
+          <line x1="320" y1="90" x2="380" y2="255" stroke="#D97706" stroke-width="2.2"/>
+          <text x="384" y="250" font-size="11" font-weight="800" fill="#D97706">MR_A</text>
+          <line x1="320" y1="170" x2="500" y2="170" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="504" y="173" font-size="11" font-weight="800" fill="#DC2626">MC</text>
+          <circle cx="349" cy="170" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="349" y1="170" x2="349" y2="130" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="349" cy="130" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="349" y1="130" x2="320" y2="130" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="314" y="127" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_A</text>
+          <text x="356" y="120" font-size="9.5" font-weight="800" fill="#065F46">high</text>
+        </g>
+
+        <!-- Panel 3: market B elastic -->
+        <g class="pd-3" style="display:none">
+          <text x="560" y="34" font-size="11.5" font-weight="800" fill="#065F46">3 · Market B (elastic)</text>
+          <line x1="560" y1="50" x2="560" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+          <line x1="560" y1="250" x2="748" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+          <text x="748" y="266" font-size="9.5" fill="#475569" text-anchor="end">Q</text>
+          <line x1="560" y1="150" x2="746" y2="206" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="724" y="196" font-size="11" font-weight="800" fill="#16A34A">D_B</text>
+          <line x1="560" y1="150" x2="650" y2="258" stroke="#D97706" stroke-width="2.2"/>
+          <text x="654" y="254" font-size="11" font-weight="800" fill="#D97706">MR_B</text>
+          <line x1="560" y1="170" x2="748" y2="170" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="752" y="173" font-size="11" font-weight="800" fill="#DC2626">MC</text>
+          <circle cx="577" cy="170" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="577" y1="170" x2="577" y2="155" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="577" cy="155" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="577" y1="155" x2="560" y2="155" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="554" y="152" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_B</text>
+          <text x="584" y="148" font-size="9.5" font-weight="800" fill="#065F46">low</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* monopolyFeaturesHub — Card 1. Six feature tiles (3 left, 3 right)
+     around a central "A monopoly firm" node. Stacks on mobile. */
+  monopolyFeaturesHub: `
+    <div class="mfh" style="line-height:1.5;background:#fff;border-radius:14px;padding:20px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mfh .mfh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:172px; row-gap:14px; position:relative; z-index:1; }
+        .mfh .mfh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .mfh .mfh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .mfh .mfh-tile { border-radius:13px; padding:11px 13px; display:flex; gap:11px; align-items:center; min-height:78px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .mfh .mfh-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .mfh .mfh-t { font-size:13.5px; font-weight:800; line-height:1.18; }
+        .mfh .mfh-s { font-size:11.5px; color:#475569; line-height:1.35; margin-top:3px; }
+        @media (max-width:620px){ .mfh > div { display:flex; flex-direction:column-reverse; } .mfh .mfh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:11px; } .mfh .mfh-center{ position:static; transform:none; } .mfh .mfh-center-wrap{ display:flex; justify-content:center; margin:4px 0 10px; } .mfh .mfh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:760px;margin:0 auto;">
+        <svg class="mfh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 30 17 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 17 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 30 50 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 50 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 30 83 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 83 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+        </svg>
+        <div class="mfh-grid">
+          <div class="mfh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="mfh-ic">👑</div>
+            <div><div class="mfh-t" style="color:#065F46;">One dominant seller</div><div class="mfh-s">Very high market share.</div></div>
+          </div>
+          <div class="mfh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="mfh-ic">🚧</div>
+            <div><div class="mfh-t" style="color:#C2410C;">Strong barriers to entry</div><div class="mfh-s">Rivals struggle to enter.</div></div>
+          </div>
+          <div class="mfh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="mfh-ic">🏷️</div>
+            <div><div class="mfh-t" style="color:#5B21B6;">Price maker</div><div class="mfh-s">Faces a downward-sloping demand curve.</div></div>
+          </div>
+          <div class="mfh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="mfh-ic">🚫</div>
+            <div><div class="mfh-t" style="color:#1E3A8A;">Few close substitutes</div><div class="mfh-s">Consumers have limited choices.</div></div>
+          </div>
+          <div class="mfh-tile" style="background:#FFF1F2;border:1.5px solid #FDA4AF;">
+            <div class="mfh-ic">💰</div>
+            <div><div class="mfh-t" style="color:#9F1239;">Abnormal profit possible</div><div class="mfh-s">Can persist into the long run.</div></div>
+          </div>
+          <div class="mfh-tile" style="background:#F1F5F9;border:1.5px solid #CBD5E1;">
+            <div class="mfh-ic">📉</div>
+            <div><div class="mfh-t" style="color:#334155;">Price above marginal cost</div><div class="mfh-s">Sets P &gt; MC, unlike perfect competition.</div></div>
+          </div>
+        </div>
+        <div class="mfh-center-wrap"><div class="mfh-center" style="background:#fff;border:2.4px solid #94A3B8;border-radius:50%;width:124px;height:124px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-shadow:0 0 0 7px rgba(241,245,249,0.7), 0 6px 18px rgba(11,20,38,0.1);">
+          <div style="font-size:34px;line-height:1;">🏛️</div>
+          <div style="font-size:13.5px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:5px;text-align:center;line-height:1.1;">A monopoly firm</div>
+          <div style="font-size:9.5px;color:#64748B;text-align:center;margin-top:3px;letter-spacing:0.03em;">significant market power</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* priceDiscHub — Card 5. One firm sells the same product to two
+     groups at different prices: students (more elastic → lower price)
+     and adults (less elastic → higher price). */
+  priceDiscHub: `
+    <div class="pdh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pdh .pdh-row { display:grid; grid-template-columns:1fr 132px 1fr; align-items:center; gap:0; }
+        .pdh .pdh-panel { border-radius:14px; padding:16px 14px; text-align:center; }
+        .pdh .pdh-ic { width:54px; height:54px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 8px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
+        .pdh .pdh-name { font-size:14px; font-weight:800; margin-bottom:4px; }
+        .pdh .pdh-price { font-size:30px; font-weight:800; font-family:Fraunces,Georgia,serif; line-height:1; margin:6px 0 4px; }
+        .pdh .pdh-cap { font-size:11.5px; color:#475569; line-height:1.35; }
+        .pdh .pdh-mid { text-align:center; padding:0 6px; }
+        .pdh .pdh-mid-c { width:96px; height:96px; border-radius:50%; background:#fff; border:2.2px solid #94A3B8; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto; box-shadow:0 4px 14px rgba(0,0,0,0.1); }
+        @media (max-width:560px){ .pdh .pdh-row{ grid-template-columns:1fr; } .pdh .pdh-mid{ margin:12px 0; } }
+      </style>
+      <div class="pdh-row">
+        <div class="pdh-panel" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="pdh-ic">🎓</div>
+          <div class="pdh-name" style="color:#1E3A8A;">Students</div>
+          <div class="pdh-price" style="color:#2563EB;">£10</div>
+          <div class="pdh-cap">More elastic demand → lower price</div>
+        </div>
+        <div class="pdh-mid">
+          <div class="pdh-mid-c">
+            <div style="font-size:30px;line-height:1;">🏛️</div>
+            <div style="font-size:11px;font-weight:800;color:#334155;text-align:center;margin-top:4px;line-height:1.15;">One firm<br>same product</div>
+          </div>
+        </div>
+        <div class="pdh-panel" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="pdh-ic">💼</div>
+          <div class="pdh-name" style="color:#C2410C;">Adults</div>
+          <div class="pdh-price" style="color:#EA580C;">£20</div>
+          <div class="pdh-cap">Less elastic demand → higher price</div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

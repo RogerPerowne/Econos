@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.99.0 — 2026-06-08
+
+### Monopoly topic complete (9 cards, 6 bespoke visuals)
+
+- Full interactive-first Learn It deck for **Monopoly (Edexcel A 3.4.5)**,
+  replacing the placeholder stub. Nine cards, no two consecutive patterns
+  repeating: hub intro → barriers → profit-max diagram → welfare/deadweight
+  loss → price discrimination (hub) → price-discrimination diagrams →
+  stakeholder costs/benefits → natural monopoly → synthesis.
+- **Six bespoke visuals** in the theme-3 firm-theory style (hand-rolled
+  reveal-layer SVGs, like `mcShortRunDiagram`):
+  - `monopolyFeaturesHub` — 6-spoke hub of monopoly characteristics.
+  - `monopolyProfitMax` — interactive MC/AC/AR/MR diagram (MR=MC → Qm →
+    Pm → supernormal profit), reusing the proven MC-diagram geometry.
+  - `monopolyWelfare` — the same diagram extended with the competitive
+    benchmark (P=MC) and the deadweight-loss triangle.
+  - `priceDiscHub` — one firm selling to two markets at different prices.
+  - `priceDiscPanels` — three-panel price-discrimination diagram sharing
+    one MC level (combined → inelastic Market A → elastic Market B).
+  - `naturalMonopoly` — falling-LRAC diagram with the three classic points
+    (profit-max, P=AC break-even, P=MC allocative/loss) and a regulation
+    toolkit.
+
 ## 0.98.0 — 2026-06-08
 
 ### Game Theory topic complete (6 cards, 5 bespoke visuals)

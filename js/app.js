@@ -5403,7 +5403,7 @@
           <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${item.body}</div>
           </div>`;

@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.100.0 — 2026-06-08
+
+### Monopsony topic complete (6 cards, 2 bespoke visuals)
+
+- Full interactive-first Learn It deck for **Monopsony (Edexcel A 3.4.6)**,
+  replacing the placeholder stub. Six cards: hub intro → the monopsony
+  diagram → conditions for buyer power → who gains/loses →
+  real-world scenarios → synthesis.
+- **Two bespoke visuals:**
+  - `monopsonyBuyerHub` — one powerful buyer between many workers
+    (labour-market monopsony) and many suppliers (buying monopsony).
+  - `monopsonyLabourDiagram` — interactive ACL/MCL/MRP diagram
+    (`ms-1..3`: MCL above supply → employment at MCL=MRP → wage read
+    down on supply → wage gap vs the competitive market). Built on the
+    shared firm-diagram coordinate system.
+- Renamed to avoid a clash with the pre-existing static `monopsonyDiagram`.
+
 ## 0.99.0 — 2026-06-08
 
 ### Monopoly topic complete (9 cards, 6 bespoke visuals)

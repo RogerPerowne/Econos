@@ -216,6 +216,10 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   regulation points), `priceDiscPanels` (`pd-1..3`: combined-market MC →
   inelastic Market A high price → elastic Market B low price), and the
   hubs `monopolyFeaturesHub` (6 spokes) and `priceDiscHub` (two markets).
+- **Monopsony (3.4.6):** `monopsonyLabourDiagram` (`ms-1..3`: MCL above the
+  labour supply curve → employment at MCL=MRP → wage Wm read down on
+  supply → wage gap vs the competitive Wc/Lc), plus the hub
+  `monopsonyBuyerHub` (one buyer between many workers and many suppliers).
 
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.

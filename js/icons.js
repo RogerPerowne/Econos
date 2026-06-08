@@ -19541,12 +19541,15 @@ window.ECONOS_ICONS = {
 
         <!-- VIEW 3: MC through the gap → price rigidity (kdc-3) -->
         <g class="kdc-3" style="display:none">
-          <!-- MC1 (lower): passes through the gap at x=360 (y≈319, within 266-329) -->
-          <line x1="80" y1="340" x2="620" y2="300" stroke="#DC2626" stroke-width="2.4"/>
-          <text x="624" y="300" font-size="12.5" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC₁</text>
-          <!-- MC2 (higher): also passes through the gap at x=360 (y≈283, within 266-329) -->
-          <line x1="80" y1="300" x2="620" y2="268" stroke="#16A34A" stroke-width="2.4"/>
-          <text x="624" y="268" font-size="12.5" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">MC₂</text>
+          <!-- MC1 (lower) — realistic tick/swoosh (cf. Marco's Pizzeria): falls
+               early, then rises through diminishing returns, cutting the gap at
+               x=360 (y≈318, within 266-329). -->
+          <polyline points="80,322 140,334 200,340 260,333 320,324 360,318 440,302 520,285 620,262" fill="none" stroke="#DC2626" stroke-width="2.4"/>
+          <text x="624" y="262" font-size="12.5" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC₁</text>
+          <!-- MC2 (higher) — same tick shape shifted up; also cuts the gap at
+               x=360 (y≈284, within 266-329). -->
+          <polyline points="80,290 140,302 200,308 260,301 320,290 360,284 440,268 520,251 620,230" fill="none" stroke="#16A34A" stroke-width="2.4"/>
+          <text x="624" y="230" font-size="12.5" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">MC₂</text>
           <!-- Highlight the gap segment -->
           <rect x="354" y="266" width="12" height="63" rx="3" fill="#FCD34D" opacity="0.4"/>
           <!-- Annotation -->
@@ -19593,10 +19596,10 @@ window.ECONOS_ICONS = {
         <!-- VIEW 3 -->
         <g class="kdc-3" style="display:none">
           <rect x="189" y="266" width="10" height="63" rx="3" fill="#FCD34D" opacity="0.4"/>
-          <line x1="44" y1="335" x2="330" y2="300" stroke="#DC2626" stroke-width="2.2"/>
-          <text x="312" y="296" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end" font-family="Inter,sans-serif">MC₁</text>
-          <line x1="44" y1="300" x2="330" y2="270" stroke="#16A34A" stroke-width="2.2"/>
-          <text x="312" y="266" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">MC₂</text>
+          <polyline points="44,320 88,332 124,338 160,330 194,320 250,303 310,285 332,278" fill="none" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="330" y="298" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end" font-family="Inter,sans-serif">MC₁</text>
+          <polyline points="44,288 88,300 124,306 160,298 194,286 250,269 310,251 332,244" fill="none" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="330" y="236" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">MC₂</text>
           <text x="180" y="404" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">MC can shift in the gap → price stays rigid</text>
         </g>
       </svg>

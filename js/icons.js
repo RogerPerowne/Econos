@@ -20097,6 +20097,175 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     SUPPLY OF LABOUR (3.5.2) — labour-supply curves + occupation hub.
+     Wage on y, employment (L) on x. Upward-sloping supply.
+     ============================================================ */
+
+  /* labourSupplyCurve — Card 1 interactive (ls-1..ls-2). Upward S;
+     a higher wage is a movement ALONG the curve (A → B). */
+  labourSupplyCurve: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="ls-a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
+        </defs>
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE LABOUR-SUPPLY DIAGRAM</text>
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="34" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Quantity of labour (L)</text>
+        <!-- S = labour supply (upward) -->
+        <line x1="80" y1="300" x2="620" y2="90" stroke="#16A34A" stroke-width="2.6"/>
+        <text x="556" y="108" font-size="13" font-weight="800" fill="#16A34A">S = labour supply</text>
+        <!-- ls-1: point A at wage W1 -->
+        <g class="ls-1" style="display:none">
+          <line x1="80" y1="240" x2="234" y2="240" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="244" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end">W₁</text>
+          <circle cx="234" cy="240" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <text x="221" y="234" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end">A</text>
+          <line x1="234" y1="240" x2="234" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="234" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">L₁</text>
+        </g>
+        <!-- ls-2: higher wage W2 → point B (movement along) -->
+        <g class="ls-2" style="display:none">
+          <line x1="80" y1="150" x2="466" y2="150" stroke="#15803D" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="154" font-size="12" font-weight="800" fill="#15803D" text-anchor="end">W₂</text>
+          <circle cx="466" cy="150" r="6" fill="#15803D" stroke="#fff" stroke-width="2"/>
+          <text x="478" y="148" font-size="12" font-weight="800" fill="#15803D">B</text>
+          <line x1="466" y1="150" x2="466" y2="320" stroke="#15803D" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="466" y="338" font-size="12" font-weight="800" fill="#15803D" text-anchor="middle">L₂</text>
+          <path d="M 250 232 Q 360 200, 452 158" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#ls-a)"/>
+          <text x="360" y="196" font-size="10.5" font-weight="700" fill="#15803D" text-anchor="middle">higher wage → more supplied</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* labourSupplyShift — Card 2 interactive (lss-1..lss-3). S shifts
+     right (increase) or left (decrease) from non-wage factors. */
+  labourSupplyShift: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="lss-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
+          <marker id="lss-r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>
+        </defs>
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">SHIFTS IN LABOUR SUPPLY</text>
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="34" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Quantity of labour (L)</text>
+        <!-- lss-1: original S -->
+        <g class="lss-1" style="display:none">
+          <line x1="120" y1="300" x2="600" y2="90" stroke="#2563EB" stroke-width="2.6"/>
+          <text x="566" y="104" font-size="12" font-weight="800" fill="#2563EB">S</text>
+        </g>
+        <!-- lss-2: increase → shift right -->
+        <g class="lss-2" style="display:none">
+          <line x1="220" y1="300" x2="640" y2="116" stroke="#16A34A" stroke-width="2.4" stroke-dasharray="7 4"/>
+          <text x="612" y="132" font-size="12" font-weight="800" fill="#16A34A">S₁</text>
+          <line x1="300" y1="180" x2="378" y2="180" stroke="#16A34A" stroke-width="2.5" marker-end="url(#lss-g)"/>
+          <text x="339" y="172" font-size="10.5" font-weight="700" fill="#15803D" text-anchor="middle">increase</text>
+        </g>
+        <!-- lss-3: decrease → shift left -->
+        <g class="lss-3" style="display:none">
+          <line x1="80" y1="266" x2="500" y2="90" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="7 4"/>
+          <text x="476" y="104" font-size="12" font-weight="800" fill="#DC2626">S₂</text>
+          <line x1="300" y1="236" x2="222" y2="236" stroke="#DC2626" stroke-width="2.5" marker-end="url(#lss-r)"/>
+          <text x="261" y="252" font-size="10.5" font-weight="700" fill="#B91C1C" text-anchor="middle">decrease</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* occupationChoiceHub — Card 3. Six factors around a central
+     "One occupation" node. Same hub grammar as monopolyFeaturesHub. */
+  occupationChoiceHub: `
+    <div class="och" style="line-height:1.5;background:#fff;border-radius:14px;padding:20px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .och .och-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:172px; row-gap:14px; position:relative; z-index:1; }
+        .och .och-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .och .och-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .och .och-tile { border-radius:13px; padding:11px 13px; display:flex; gap:11px; align-items:center; min-height:78px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .och .och-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .och .och-t { font-size:13.5px; font-weight:800; line-height:1.18; }
+        .och .och-s { font-size:11.5px; color:#475569; line-height:1.35; margin-top:3px; }
+        @media (max-width:620px){ .och > div { display:flex; flex-direction:column-reverse; } .och .och-grid{ grid-template-columns:1fr; column-gap:0; row-gap:11px; } .och .och-center{ position:static; transform:none; } .och .och-center-wrap{ display:flex; justify-content:center; margin:4px 0 10px; } .och .och-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:760px;margin:0 auto;">
+        <svg class="och-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 30 17 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 17 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 30 50 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 50 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 30 83 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 83 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+        </svg>
+        <div class="och-grid">
+          <div class="och-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="och-ic">💷</div>
+            <div><div class="och-t" style="color:#065F46;">Pay</div><div class="och-s">Wages and overtime.</div></div>
+          </div>
+          <div class="och-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="och-ic">🦺</div>
+            <div><div class="och-t" style="color:#C2410C;">Working conditions</div><div class="och-s">Stress, danger, hours, flexibility.</div></div>
+          </div>
+          <div class="och-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="och-ic">🎁</div>
+            <div><div class="och-t" style="color:#5B21B6;">Non-wage benefits</div><div class="och-s">Pensions, holidays, perks.</div></div>
+          </div>
+          <div class="och-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="och-ic">⭐</div>
+            <div><div class="och-t" style="color:#1E3A8A;">Job satisfaction and status</div><div class="och-s">Enjoyment, prestige, purpose.</div></div>
+          </div>
+          <div class="och-tile" style="background:#FFF1F2;border:1.5px solid #FDA4AF;">
+            <div class="och-ic">🎓</div>
+            <div><div class="och-t" style="color:#9F1239;">Training and qualifications</div><div class="och-s">How long and hard to qualify.</div></div>
+          </div>
+          <div class="och-tile" style="background:#F1F5F9;border:1.5px solid #CBD5E1;">
+            <div class="och-ic">📉</div>
+            <div><div class="och-t" style="color:#334155;">Chance of unemployment</div><div class="och-s">Job security affects attractiveness.</div></div>
+          </div>
+        </div>
+        <div class="och-center-wrap"><div class="och-center" style="background:#fff;border:2.4px solid #15803D;border-radius:50%;width:118px;height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-shadow:0 0 0 7px rgba(240,253,244,0.8), 0 6px 18px rgba(11,20,38,0.1);">
+          <div style="font-size:32px;line-height:1;">🧑‍💼</div>
+          <div style="font-size:13px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:5px;text-align:center;line-height:1.1;">One occupation</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* regionalMobility — Card 5 static. Jobs in one region, workers in
+     another, with a move/commute arrow and barriers in between. */
+  regionalMobility: `
+    <div style="background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="rm-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/></marker>
+        </defs>
+        <!-- Region B: workers here (left) -->
+        <circle cx="135" cy="110" r="64" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+        <text x="135" y="98" text-anchor="middle" font-size="30">🧑‍🤝‍🧑</text>
+        <text x="135" y="128" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E3A8A">Region B</text>
+        <text x="135" y="146" text-anchor="middle" font-size="11" fill="#475569">workers live here</text>
+        <!-- Region A: jobs here (right) -->
+        <circle cx="585" cy="110" r="64" fill="#ECFDF5" stroke="#86EFAC" stroke-width="2"/>
+        <text x="585" y="98" text-anchor="middle" font-size="30">🏢</text>
+        <text x="585" y="128" text-anchor="middle" font-size="12.5" font-weight="800" fill="#065F46">Region A</text>
+        <text x="585" y="146" text-anchor="middle" font-size="11" fill="#475569">jobs are here</text>
+        <!-- move / commute arrow -->
+        <line x1="205" y1="92" x2="515" y2="92" stroke="#2563EB" stroke-width="2.4" stroke-dasharray="6 4" marker-end="url(#rm-arr)"/>
+        <text x="360" y="84" text-anchor="middle" font-size="11.5" font-weight="800" fill="#1D4ED8">move or commute</text>
+        <!-- barrier in the middle -->
+        <rect x="300" y="120" width="120" height="44" rx="9" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.4"/>
+        <text x="360" y="138" text-anchor="middle" font-size="20">🚧</text>
+        <text x="360" y="156" text-anchor="middle" font-size="10" font-weight="700" fill="#C2410C">housing · ties · transport</text>
+        <text x="360" y="196" text-anchor="middle" font-size="11.5" font-style="italic" fill="#64748B">If barriers are high, workers can’t move to the jobs — a labour shortage persists.</text>
+      </svg>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

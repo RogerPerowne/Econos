@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.103.0 — 2026-06-08
+
+### Supply of Labour topic complete (6 cards, 4 bespoke visuals)
+
+- Full interactive-first Learn It deck for **Supply of Labour
+  (Edexcel A 3.5.2)**, replacing the placeholder stub. Six cards: the
+  big picture → shifts in supply → supply to an occupation → occupational
+  mobility → geographical mobility → synthesis.
+- **Four bespoke visuals:**
+  - `labourSupplyCurve` — interactive upward S (`ls-1..2`: the curve →
+    point A at W₁ → a higher wage W₂ is a movement along to B).
+  - `labourSupplyShift` — interactive shift (`lss-1..3`: S → increase
+    right S₁ → decrease left S₂).
+  - `occupationChoiceHub` — six factors around a central "one occupation".
+  - `regionalMobility` — jobs in one region, workers in another, with a
+    move/commute arrow and the barriers between them.
+
 ## 0.102.0 — 2026-06-08
 
 ### Demand for Labour topic complete (6 cards, 3 bespoke visuals)

@@ -20486,6 +20486,64 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     CONTROLLING MARKET POWER (3.6.1) — price cap on a monopoly.
+     Reuses the monopoly coordinate system (x = 80 + 54·Q,
+     y = 320 − 9.125·£). MC = 6 + 1.6Q, AR = 26 − 2Q, MR = 26 − 4Q.
+     Monopoly MR=MC at Q≈3.57 (Pm≈18.86); a price cap at Pc=14
+     raises output to Qc=5 (where the cap meets MC) and lowers price.
+     ============================================================ */
+
+  /* priceCapMonopoly — Card 3 interactive (pcm-1..pcm-2). */
+  priceCapMonopoly: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="pcm-dn" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto"><path d="M0,0 L6,0 L3,8 z" fill="#7C3AED"/></marker>
+          <marker id="pcm-rt" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
+        </defs>
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">A PRICE CAP ON A MONOPOLY</text>
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="36" y="46" font-size="11" font-weight="700" fill="#475569">Price</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Quantity</text>
+        <!-- MC -->
+        <line x1="80" y1="265" x2="620" y2="119" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="624" y="119" font-size="13" font-weight="800" fill="#DC2626">MC</text>
+        <!-- AR / D -->
+        <line x1="80" y1="83" x2="620" y2="265" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="270" font-size="13" font-weight="800" fill="#16A34A">D = AR</text>
+        <!-- MR -->
+        <line x1="80" y1="83" x2="431" y2="320" stroke="#D97706" stroke-width="2.4"/>
+        <text x="436" y="316" font-size="13" font-weight="800" fill="#D97706">MR</text>
+        <!-- pcm-1: unregulated monopoly -->
+        <g class="pcm-1" style="display:none">
+          <circle cx="273" cy="213" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
+          <text x="281" y="208" font-size="9.5" font-weight="800" fill="#0B1426">MR=MC</text>
+          <line x1="273" y1="213" x2="273" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="273" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
+          <line x1="273" y1="213" x2="273" y2="148" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="273" cy="148" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="273" y1="148" x2="80" y2="148" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="152" font-size="12" font-weight="800" fill="#15803D" text-anchor="end">P_m</text>
+        </g>
+        <!-- pcm-2: price cap -->
+        <g class="pcm-2" style="display:none">
+          <line x1="80" y1="192" x2="430" y2="192" stroke="#7C3AED" stroke-width="2.6"/>
+          <text x="74" y="196" font-size="12" font-weight="800" fill="#6D28D9" text-anchor="end">P_c</text>
+          <text x="300" y="184" font-size="10.5" font-weight="800" fill="#6D28D9">price cap</text>
+          <circle cx="350" cy="192" r="6" fill="#7C3AED" stroke="#fff" stroke-width="2"/>
+          <line x1="350" y1="192" x2="350" y2="320" stroke="#7C3AED" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="350" y="338" font-size="12" font-weight="800" fill="#6D28D9" text-anchor="middle">Q_c</text>
+          <line x1="96" y1="156" x2="96" y2="186" stroke="#7C3AED" stroke-width="2.4" marker-end="url(#pcm-dn)"/>
+          <text x="104" y="176" font-size="9.5" font-weight="800" fill="#6D28D9">lower price</text>
+          <line x1="282" y1="306" x2="343" y2="306" stroke="#16A34A" stroke-width="2.4" marker-end="url(#pcm-rt)"/>
+          <text x="312" y="300" font-size="9.5" font-weight="800" fill="#15803D" text-anchor="middle">more output</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

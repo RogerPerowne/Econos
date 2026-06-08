@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.106.0 — 2026-06-08
+
+### Controlling Market Power topic complete (5 cards, 1 bespoke visual)
+
+- New topic **Controlling Market Power (Edexcel A 3.6.1)** added to the
+  registry and built — the second government-intervention sub-topic. Five
+  cards: the big picture (two jobs) → merger control → regulating monopoly
+  price & profit → quality standards & performance targets → synthesis.
+- **One bespoke visual:** `priceCapMonopoly` — interactive price-cap-on-a-
+  monopoly diagram (`pcm-1..2`: the unregulated monopoly outcome → a price
+  cap below Pm that lowers price and raises output to Qc where the cap
+  meets MC). The government-intervention price-control style applied to a
+  monopoly, reusing the monopoly coordinate system.
+
 ## 0.105.0 — 2026-06-08
 
 ### Government Intervention — intro & overview complete (5 cards, 1 bespoke visual)

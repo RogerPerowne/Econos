@@ -219,6 +219,9 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   regulation points), `priceDiscPanels` (`pd-1..3`: combined-market MC →
   inelastic Market A high price → elastic Market B low price), and the
   hubs `monopolyFeaturesHub` (6 spokes) and `priceDiscHub` (two markets).
+- **Controlling Market Power (3.6.1):** `priceCapMonopoly` (interactive
+  price-cap-on-a-monopoly, `pcm-1..2` — monopoly outcome → cap lowers
+  price and raises output; reuses the monopoly coordinate system).
 - **Hubs (6-spoke, monopolyFeaturesHub grammar):** `monopolyFeaturesHub`,
   `occupationChoiceHub` (Supply of Labour), `govStakeholderHub`
   (Government Intervention — six stakeholder groups around the state).

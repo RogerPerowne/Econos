@@ -229,6 +229,10 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
 - **Demand for Labour (3.5.1):** `labourDemandCurve` (interactive MRP =
   D_L curve, `ld-1..2`), `labourDemandShift` (interactive D_L shift,
   `lds-1..3`), `labourShiftVsMovement` (static shift-vs-movement panels).
+- **Supply of Labour (3.5.2):** `labourSupplyCurve` (interactive upward S,
+  `ls-1..2`), `labourSupplyShift` (interactive S shift, `lss-1..3`),
+  `occupationChoiceHub` (6-factor hub), `regionalMobility` (static
+  two-region jobs-vs-workers diagram).
 - **Monopsony (3.4.6):** `monopsonyLabourDiagram` (see §8b).
 
 ### 9. Decompose / labelled anatomy

@@ -19464,6 +19464,242 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* collusionBigPicture – Card 1 of Collusion & Cartels. Three firm tiles
+     (Firm A/B/C) joined by brackets feed into a central HANDSHAKE pill
+     ("Firms coordinate rather than compete"), which then arrows out to the
+     two outcomes: HIGHER PRICES and RESTRICTED OUTPUT. Dual layout:
+     horizontal on desktop (.cbp-h), vertical on mobile (.cbp-v). */
+  collusionBigPicture: `
+    <div class="cbp" style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cbp .cbp-v { display:none; }
+        .cbp .cbp-h { display:grid; grid-template-columns: 1.5fr 60px 1fr 60px 1.4fr; align-items:center; gap:8px; }
+        .cbp .firms { display:flex; flex-direction:column; gap:4px; }
+        .cbp .firms-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+        .cbp .firm-tile { background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:12px; padding:14px 10px; text-align:center; }
+        .cbp .firm-tile .ico { font-size:28px; line-height:1; }
+        .cbp .firm-tile .lab { font-size:13px; font-weight:800; color:#1E3A8A; margin-top:6px; }
+        .cbp .firms-bracket { height:14px; position:relative; }
+        .cbp .firms-bracket::before, .cbp .firms-bracket::after { content:''; position:absolute; top:0; bottom:6px; width:1.5px; background:#1E3A8A; }
+        .cbp .firms-bracket::before { left:16%; }
+        .cbp .firms-bracket::after { right:16%; }
+        .cbp .firms-bracket-line { position:absolute; left:16%; right:16%; bottom:6px; height:1.5px; background:#1E3A8A; }
+        .cbp .arrow-cell { display:flex; align-items:center; justify-content:center; }
+        .cbp .arrow-cell svg { display:block; }
+        .cbp .hub { background:#F5F3FF; border:2px solid #C4B5FD; border-radius:18px; padding:18px 12px; text-align:center; }
+        .cbp .hub .ico { width:62px; height:62px; border-radius:50%; background:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:30px; box-shadow:0 2px 6px rgba(91,33,182,0.15); margin-bottom:8px; }
+        .cbp .hub .t { font-size:14px; font-weight:800; color:#5B21B6; line-height:1.3; }
+        .cbp .hub .s { font-size:11.5px; color:#6B21A8; margin-top:4px; line-height:1.4; }
+        .cbp .outcomes { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .cbp .out-tile { background:#FFF7ED; border:1.5px solid #FDBA74; border-radius:12px; padding:14px 8px; text-align:center; }
+        .cbp .out-tile.no { background:#FEF2F2; border-color:#FCA5A5; }
+        .cbp .out-tile .ico { font-size:26px; line-height:1; }
+        .cbp .out-tile .lab { font-size:12px; font-weight:800; color:#9A3412; margin-top:6px; line-height:1.3; }
+        .cbp .out-tile.no .lab { color:#991B1B; }
+        @media (max-width:760px){
+          .cbp .cbp-h { display:none; }
+          .cbp .cbp-v { display:flex; flex-direction:column; align-items:center; gap:8px; }
+          .cbp .cbp-v .firms-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:100%; }
+          .cbp .cbp-v .firms-bracket { width:100%; }
+          .cbp .cbp-v .arrow-down { font-size:24px; color:#94A3B8; line-height:1; }
+          .cbp .cbp-v .hub { width:80%; max-width:280px; }
+          .cbp .cbp-v .outcomes { display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%; }
+        }
+      </style>
+
+      <div class="cbp-h">
+        <div class="firms">
+          <div class="firms-row">
+            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm A</div></div>
+            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm B</div></div>
+            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm C</div></div>
+          </div>
+          <div class="firms-bracket"><div class="firms-bracket-line"></div></div>
+        </div>
+        <div class="arrow-cell">
+          <svg width="48" height="20" viewBox="0 0 48 20"><defs><marker id="cbp-arr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0B1426"/></marker></defs><line x1="2" y1="10" x2="40" y2="10" stroke="#0B1426" stroke-width="2" marker-end="url(#cbp-arr-r)"/></svg>
+        </div>
+        <div class="hub">
+          <div class="ico">\u{1F91D}</div>
+          <div class="t">Firms coordinate</div>
+          <div class="s">rather than compete</div>
+        </div>
+        <div class="arrow-cell">
+          <svg width="48" height="20" viewBox="0 0 48 20"><line x1="2" y1="10" x2="40" y2="10" stroke="#0B1426" stroke-width="2" marker-end="url(#cbp-arr-r)"/></svg>
+        </div>
+        <div class="outcomes">
+          <div class="out-tile"><div class="ico">\u{1F3F7}\u{FE0F}</div><div class="lab">Higher prices</div></div>
+          <div class="out-tile no"><div class="ico">\u{1F6AB}</div><div class="lab">Restricted output</div></div>
+        </div>
+      </div>
+
+      <div class="cbp-v">
+        <div style="width:100%;">
+          <div class="firms-row">
+            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm A</div></div>
+            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm B</div></div>
+            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm C</div></div>
+          </div>
+          <div class="firms-bracket"><div class="firms-bracket-line"></div></div>
+        </div>
+        <div class="arrow-down">\u{2193}</div>
+        <div class="hub">
+          <div class="ico">\u{1F91D}</div>
+          <div class="t">Firms coordinate</div>
+          <div class="s">rather than compete</div>
+        </div>
+        <div class="arrow-down">\u{2193}</div>
+        <div class="outcomes">
+          <div class="out-tile"><div class="ico">\u{1F3F7}\u{FE0F}</div><div class="lab">Higher prices</div></div>
+          <div class="out-tile no"><div class="ico">\u{1F6AB}</div><div class="lab">Restricted output</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* cartelJointProfitInteractive – Card 2 of Collusion & Cartels. Interactive
+     3-view build of the cartel joint-profit diagram. The mockup shows the
+     cartel restricting output (Q_c < Q_comp) and raising price (P_c > P_comp).
+       Step 1 (cjp-1): D and MR only
+       Step 2 (cjp-2): MC (tick-shaped, matching Costs/oligopoly), the cartel
+                       equilibrium where MR = MC, projection up to D for P_c.
+       Step 3 (cjp-3): competitive reference where MC = D (P_comp/Q_comp);
+                       joint-profit rectangle (0,0)→(Q_c, P_c) shaded.
+     MC tick shape is the standard Nike-swoosh used elsewhere in Theme 3.
+     viewBox 760x420. Q axis: x 80..640. P axis: y 360..40.
+     Numbers (pixel-space): D from (80,100)→(640,340); MR from (80,100)→(360,340).
+     Cartel: Q_c at x=250 → MR(250)≈242 → marker. D(250)≈173 → P_c marker.
+     Comp:  Q_comp at x=440 → MC(440)≈247 (where MC visually meets D). */
+  cartelJointProfitInteractive: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cjp-v { display:none; }
+        @media (max-width:680px){
+          .cjp-h { display:none; }
+          .cjp-v { display:block; }
+        }
+      </style>
+      <div class="cjp-h">
+      <svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE JOINT-PROFIT DIAGRAM</text>
+        <!-- Axes -->
+        <line x1="80" y1="40" x2="80" y2="360" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="360" x2="700" y2="360" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="40" y="36" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="700" y="382" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <text x="74" y="358" font-size="11" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">0</text>
+
+        <!-- VIEW 1: D and MR -->
+        <g class="cjp-1" style="display:none">
+          <!-- D: (80,100) -> (640,340) -->
+          <line x1="80" y1="100" x2="640" y2="340" stroke="#2563EB" stroke-width="2.6"/>
+          <text x="644" y="344" font-size="13" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">D</text>
+          <!-- MR: (80,100) -> (360,340), then dashed continuation -->
+          <line x1="80" y1="100" x2="360" y2="340" stroke="#7C3AED" stroke-width="2.4"/>
+          <text x="320" y="356" font-size="13" font-weight="800" fill="#7C3AED" text-anchor="end" font-family="Inter,sans-serif">MR</text>
+        </g>
+
+        <!-- VIEW 2: + MC (tick) + cartel equilibrium -->
+        <g class="cjp-2" style="display:none">
+          <!-- MC tick: passes EXACTLY through the cartel intersection (250, 246)
+               where MR=MC, and through the competitive intersection (440, 254)
+               where MC=D. Tick shape preserved: dip near x=170, gentle middle,
+               steep final rise from x=440 onwards. -->
+          <path d="M 80,280 C 130,300 160,312 190,308 C 220,303 240,270 250,246 C 320,250 380,251 440,254 C 490,245 530,200 580,140 L 640,60"
+                fill="none" stroke="#16A34A" stroke-width="2.6"/>
+          <text x="644" y="66" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">MC</text>
+
+          <!-- Cartel equilibrium dot (MR = MC) at (250, 246) — exact endpoint of cubic -->
+          <circle cx="250" cy="246" r="5.5" fill="#0B1426" stroke="#fff" stroke-width="2"/>
+          <!-- Vertical projection up to D at x=250 -->
+          <line x1="250" y1="246" x2="250" y2="173" stroke="#94A3B8" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <!-- Dot on D at (250, 173) — P_c -->
+          <circle cx="250" cy="173" r="5.5" fill="#0B1426" stroke="#fff" stroke-width="2"/>
+          <!-- Dashed line: P_c across to y-axis -->
+          <line x1="250" y1="173" x2="80" y2="173" stroke="#94A3B8" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <!-- Dashed line: Q_c down to x-axis -->
+          <line x1="250" y1="173" x2="250" y2="360" stroke="#94A3B8" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <!-- Labels -->
+          <text x="74" y="178" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P</text>
+          <text x="68" y="186" font-size="10" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">c</text>
+          <text x="250" y="380" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q</text>
+          <text x="259" y="384" font-size="10" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">c</text>
+        </g>
+
+        <!-- VIEW 3: + competitive equilibrium + joint profit shaded -->
+        <g class="cjp-3" style="display:none">
+          <!-- Joint-profit rectangle (0,0) -> (Q_c, P_c) — sits BEHIND other marks -->
+          <rect x="80" y="173" width="170" height="187" fill="#86EFAC" opacity="0.28"/>
+          <!-- Competitive equilibrium where MC crosses D — exact endpoint of cubic 3, at (440, 254) -->
+          <circle cx="440" cy="254" r="4.5" fill="#94A3B8" stroke="#fff" stroke-width="1.8"/>
+          <!-- Dashed lines: P_comp left, Q_comp down -->
+          <line x1="440" y1="254" x2="80" y2="254" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+          <line x1="440" y1="254" x2="440" y2="360" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+          <text x="74" y="258" font-size="12" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
+          <text x="68" y="267" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">comp</text>
+          <text x="440" y="380" font-size="12" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Q</text>
+          <text x="450" y="384" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">comp</text>
+          <!-- Joint profit annotation -->
+          <text x="160" y="280" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Joint</text>
+          <text x="160" y="294" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">profit area</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="cjp-v">
+      <svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE JOINT-PROFIT DIAGRAM</text>
+        <line x1="44" y1="36" x2="44" y2="360" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="44" y1="360" x2="346" y2="360" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
+        <text x="346" y="382" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <text x="38" y="358" font-size="10" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">0</text>
+        <!-- Mobile map: x 44..330; D (44,100)->(330,340). MR (44,100)->(187,340). -->
+
+        <!-- VIEW 1 -->
+        <g class="cjp-1" style="display:none">
+          <line x1="44" y1="100" x2="330" y2="340" stroke="#2563EB" stroke-width="2.2"/>
+          <text x="334" y="344" font-size="11" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">D</text>
+          <line x1="44" y1="100" x2="187" y2="340" stroke="#7C3AED" stroke-width="2.2"/>
+          <text x="170" y="356" font-size="11" font-weight="800" fill="#7C3AED" text-anchor="end" font-family="Inter,sans-serif">MR</text>
+        </g>
+
+        <!-- VIEW 2: + MC tick + cartel.
+             Mobile geometry (chart x: 44..330 = 286 px wide):
+               Cartel x = 44 + (250-80)*286/560 = 131. MR(131) = 246. D(131) = 173.
+               Comp x = 44 + (440-80)*286/560 = 228. MC=D at (228, 254). -->
+        <g class="cjp-2" style="display:none">
+          <path d="M 44,280 C 71,300 86,312 100,308 C 115,303 126,270 131,246 C 167,250 198,251 228,254 C 253,245 274,200 299,140 L 330,60"
+                fill="none" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="334" y="66" font-size="11" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">MC</text>
+          <circle cx="131" cy="246" r="4.5" fill="#0B1426" stroke="#fff" stroke-width="1.8"/>
+          <line x1="131" y1="246" x2="131" y2="173" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <circle cx="131" cy="173" r="4.5" fill="#0B1426" stroke="#fff" stroke-width="1.8"/>
+          <line x1="131" y1="173" x2="44" y2="173" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="131" y1="173" x2="131" y2="360" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="38" y="178" font-size="11" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P</text>
+          <text x="34" y="185" font-size="8" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">c</text>
+          <text x="131" y="380" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q</text>
+          <text x="138" y="385" font-size="8" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">c</text>
+        </g>
+
+        <!-- VIEW 3: + competitive + joint profit -->
+        <g class="cjp-3" style="display:none">
+          <rect x="44" y="173" width="87" height="187" fill="#86EFAC" opacity="0.28"/>
+          <circle cx="228" cy="254" r="4" fill="#94A3B8" stroke="#fff" stroke-width="1.6"/>
+          <line x1="228" y1="254" x2="44" y2="254" stroke="#94A3B8" stroke-width="0.9" stroke-dasharray="3 3" opacity="0.7"/>
+          <line x1="228" y1="254" x2="228" y2="360" stroke="#94A3B8" stroke-width="0.9" stroke-dasharray="3 3" opacity="0.7"/>
+          <text x="38" y="258" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
+          <text x="34" y="266" font-size="7" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">comp</text>
+          <text x="228" y="380" font-size="10" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Q</text>
+          <text x="236" y="385" font-size="7" font-weight="700" fill="#475569" font-family="Inter,sans-serif">comp</text>
+          <text x="87" y="285" font-size="10" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Joint profit</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* oligopolyKinkedDemand – Card 3 of Oligopoly. An ACCURATE, interactive
      kinked demand curve, built in 3 reveal views. The mock-up's version
      was geometrically wrong; this one follows the standard textbook

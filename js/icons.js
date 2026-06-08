@@ -20424,6 +20424,68 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     GOVERNMENT INTERVENTION (3.6.1) — stakeholder hub.
+     ============================================================ */
+
+  /* govStakeholderHub — Card 4. Six stakeholder groups around a
+     central "Government intervention" node. Same hub grammar as
+     monopolyFeaturesHub. */
+  govStakeholderHub: `
+    <div class="gsh" style="line-height:1.5;background:#fff;border-radius:14px;padding:20px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .gsh .gsh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:184px; row-gap:14px; position:relative; z-index:1; }
+        .gsh .gsh-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .gsh .gsh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .gsh .gsh-tile { border-radius:13px; padding:11px 13px; display:flex; gap:11px; align-items:center; min-height:74px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .gsh .gsh-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .gsh .gsh-t { font-size:13.5px; font-weight:800; line-height:1.18; }
+        .gsh .gsh-s { font-size:11.5px; color:#475569; line-height:1.35; margin-top:3px; }
+        @media (max-width:620px){ .gsh > div { display:flex; flex-direction:column-reverse; } .gsh .gsh-grid{ grid-template-columns:1fr; column-gap:0; row-gap:11px; } .gsh .gsh-center{ position:static; transform:none; } .gsh .gsh-center-wrap{ display:flex; justify-content:center; margin:4px 0 10px; } .gsh .gsh-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:780px;margin:0 auto;">
+        <svg class="gsh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 30 17 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 17 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 30 50 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 50 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 30 83 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+          <path d="M 70 83 L 50 50" stroke="#CBD5E1" stroke-width="0.3" stroke-dasharray="0.8 0.8"/>
+        </svg>
+        <div class="gsh-grid">
+          <div class="gsh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="gsh-ic">🛒</div>
+            <div><div class="gsh-t" style="color:#065F46;">Consumers</div><div class="gsh-s">Prices, choice and quality.</div></div>
+          </div>
+          <div class="gsh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="gsh-ic">🏭</div>
+            <div><div class="gsh-t" style="color:#1E3A8A;">Rival firms &amp; entrants</div><div class="gsh-s">Fairer access to the market.</div></div>
+          </div>
+          <div class="gsh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="gsh-ic">👷</div>
+            <div><div class="gsh-t" style="color:#C2410C;">Employees</div><div class="gsh-s">Wages and working conditions.</div></div>
+          </div>
+          <div class="gsh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="gsh-ic">🚚</div>
+            <div><div class="gsh-t" style="color:#5B21B6;">Suppliers</div><div class="gsh-s">Fair prices and bargaining power.</div></div>
+          </div>
+          <div class="gsh-tile" style="background:#FFF1F2;border:1.5px solid #FDA4AF;">
+            <div class="gsh-ic">💷</div>
+            <div><div class="gsh-t" style="color:#9F1239;">Taxpayers</div><div class="gsh-s">Cost, revenue and public value.</div></div>
+          </div>
+          <div class="gsh-tile" style="background:#F1F5F9;border:1.5px solid #CBD5E1;">
+            <div class="gsh-ic">🌍</div>
+            <div><div class="gsh-t" style="color:#334155;">Wider economy</div><div class="gsh-s">Efficiency, investment, growth.</div></div>
+          </div>
+        </div>
+        <div class="gsh-center-wrap"><div class="gsh-center" style="background:#fff;border:2.4px solid #0D9488;border-radius:50%;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-shadow:0 0 0 7px rgba(240,253,250,0.85), 0 6px 18px rgba(11,20,38,0.1);">
+          <div style="font-size:30px;line-height:1;">🏛️</div>
+          <div style="font-size:12px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:5px;text-align:center;line-height:1.1;">Government intervention</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

@@ -19909,6 +19909,70 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     CONTESTABLE MARKETS (3.4.7) — hit-and-run timeline.
+     ============================================================ */
+
+  /* hitAndRunCycle — Card 3 interactive (hr-1..hr-5). A 5-stage
+     timeline of hit-and-run entry, revealed step by step, with a
+     closing note that the THREAT alone disciplines the incumbent. */
+  hitAndRunCycle: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="hr-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#94A3B8"/></marker>
+        </defs>
+        <!-- connectors -->
+        <g class="hr-2" style="display:none"><line x1="124" y1="95" x2="239" y2="95" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#hr-arr)"/></g>
+        <g class="hr-3" style="display:none"><line x1="309" y1="95" x2="424" y2="95" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#hr-arr)"/></g>
+        <g class="hr-4" style="display:none"><line x1="494" y1="95" x2="609" y2="95" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#hr-arr)"/></g>
+        <g class="hr-5" style="display:none"><line x1="679" y1="95" x2="786" y2="95" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#hr-arr)"/></g>
+
+        <!-- N1 -->
+        <g class="hr-1" style="display:none">
+          <circle cx="90" cy="95" r="30" fill="#ECFDF5" stroke="#059669" stroke-width="2.5"/>
+          <text x="90" y="105" text-anchor="middle" font-size="25">💰</text>
+          <text x="90" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#047857">Supernormal profit</text>
+          <text x="90" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Incumbent earns high profit</text>
+        </g>
+        <!-- N2 -->
+        <g class="hr-2" style="display:none">
+          <circle cx="275" cy="95" r="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5"/>
+          <text x="275" y="105" text-anchor="middle" font-size="25">👀</text>
+          <text x="275" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#1D4ED8">Entrant spots it</text>
+          <text x="275" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Sees the profit on offer</text>
+        </g>
+        <!-- N3 -->
+        <g class="hr-3" style="display:none">
+          <circle cx="460" cy="95" r="30" fill="#FFFBEB" stroke="#D97706" stroke-width="2.5"/>
+          <text x="460" y="105" text-anchor="middle" font-size="25">🚪</text>
+          <text x="460" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#B45309">Entry</text>
+          <text x="460" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Low sunk costs → easy in</text>
+        </g>
+        <!-- N4 -->
+        <g class="hr-4" style="display:none">
+          <circle cx="645" cy="95" r="30" fill="#FEF2F2" stroke="#DC2626" stroke-width="2.5"/>
+          <text x="645" y="105" text-anchor="middle" font-size="25">📉</text>
+          <text x="645" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#B91C1C">Profits competed away</text>
+          <text x="645" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Prices fall, profit erodes</text>
+        </g>
+        <!-- N5 -->
+        <g class="hr-5" style="display:none">
+          <circle cx="820" cy="95" r="30" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5"/>
+          <text x="820" y="105" text-anchor="middle" font-size="25">🏃</text>
+          <text x="820" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#6D28D9">Hit-and-run exit</text>
+          <text x="820" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Entrant leaves again</text>
+        </g>
+        <!-- closing caption -->
+        <g class="hr-5" style="display:none">
+          <rect x="250" y="198" width="380" height="42" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+          <text x="440" y="216" text-anchor="middle" font-size="12" font-weight="800" fill="#047857">Even the THREAT of entry keeps the incumbent</text>
+          <text x="440" y="232" text-anchor="middle" font-size="11.5" fill="#475569">pricing competitively — no entry needs to actually happen</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

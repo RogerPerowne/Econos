@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.37 — 2026-06-08
+
+### Oligopoly kinked-demand: MC curves now tick-shaped
+
+Redrew MC₁ and MC₂ in the kinked-demand chart (`oligopolyKinkedDemand`,
+Card 3) as realistic "Nike-tick" / swoosh curves — falling early then
+rising through diminishing returns — to match the Marco's Pizzeria MC
+curve in the Costs topic. Previously they were plain straight
+upward-sloping lines, which clashed with the cost-curve shape students
+learn earlier in Theme 3. Both curves still cut the MR gap at Qₖ, so the
+price-rigidity story is unchanged. Desktop + mobile layouts both updated.
+
 ## 0.96.36 — 2026-06-08
 
 ### Oligopoly topic complete (6 cards, 3 bespoke visuals)

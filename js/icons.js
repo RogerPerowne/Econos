@@ -19973,6 +19973,130 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     DEMAND FOR LABOUR (3.5.1) — labour-demand (MRP) curves.
+     Wage on y, employment (L) on x. Adapted from theme-1 demand.
+     ============================================================ */
+
+  /* labourDemandCurve — Card 2 interactive (ld-1..ld-2). Downward
+     MRP = D_L curve; at wage W₁ the firm hires L₁ (MRP = wage). */
+  labourDemandCurve: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE LABOUR-DEMAND DIAGRAM</text>
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="34" y="42" font-size="11" font-weight="700" fill="#475569">Wage,</text>
+        <text x="34" y="56" font-size="11" font-weight="700" fill="#475569">MRP</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Labour employed (L)</text>
+        <!-- D_L = MRP -->
+        <line x1="80" y1="90" x2="620" y2="300" stroke="#2563EB" stroke-width="2.6"/>
+        <text x="556" y="285" font-size="13" font-weight="800" fill="#2563EB">Labour demand = MRP</text>
+        <!-- ld-1: wage W1 → employment L1 -->
+        <g class="ld-1" style="display:none">
+          <line x1="80" y1="180" x2="311" y2="180" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="184" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end">W₁</text>
+          <circle cx="311" cy="180" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+          <line x1="311" y1="180" x2="311" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="311" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">L₁</text>
+        </g>
+        <!-- ld-2: hiring rule callout -->
+        <g class="ld-2" style="display:none">
+          <rect x="356" y="104" width="250" height="40" rx="9" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+          <text x="481" y="122" font-size="12" font-weight="800" fill="#1D4ED8" text-anchor="middle">Hire up to where MRP = wage</text>
+          <text x="481" y="137" font-size="10.5" fill="#475569" text-anchor="middle">each worker must at least cover their wage</text>
+          <line x1="356" y1="150" x2="318" y2="178" stroke="#1D4ED8" stroke-width="1.2" stroke-dasharray="2 2"/>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* labourDemandShift — Card 3 interactive (lds-1..lds-3). At a fixed
+     wage, a rise in product demand shifts D_L right (more hired); a
+     fall shifts it left (fewer hired). */
+  labourDemandShift: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="lds-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
+          <marker id="lds-r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>
+        </defs>
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">SHIFTS IN LABOUR DEMAND</text>
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="34" y="42" font-size="11" font-weight="700" fill="#475569">Wage</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Labour employed (L)</text>
+        <!-- fixed wage line -->
+        <line x1="80" y1="190" x2="600" y2="190" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5 4"/>
+        <text x="74" y="194" font-size="12" font-weight="800" fill="#475569" text-anchor="end">W</text>
+        <!-- lds-1: original D_L -->
+        <g class="lds-1" style="display:none">
+          <line x1="80" y1="100" x2="560" y2="300" stroke="#2563EB" stroke-width="2.6"/>
+          <text x="556" y="290" font-size="12" font-weight="800" fill="#2563EB">D_L</text>
+          <circle cx="296" cy="190" r="5.5" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+          <line x1="296" y1="190" x2="296" y2="320" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="296" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">L₁</text>
+        </g>
+        <!-- lds-2: shift right -->
+        <g class="lds-2" style="display:none">
+          <line x1="180" y1="100" x2="620" y2="283" stroke="#16A34A" stroke-width="2.4" stroke-dasharray="7 4"/>
+          <text x="624" y="283" font-size="12" font-weight="800" fill="#16A34A">D_L₁</text>
+          <line x1="330" y1="150" x2="404" y2="150" stroke="#16A34A" stroke-width="2.5" marker-end="url(#lds-g)"/>
+          <circle cx="396" cy="190" r="5.5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="396" y1="190" x2="396" y2="320" stroke="#16A34A" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="396" y="338" font-size="12" font-weight="800" fill="#15803D" text-anchor="middle">L₂</text>
+        </g>
+        <!-- lds-3: shift left -->
+        <g class="lds-3" style="display:none">
+          <line x1="80" y1="142" x2="460" y2="300" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="7 4"/>
+          <text x="430" y="300" font-size="12" font-weight="800" fill="#DC2626">D_L₂</text>
+          <line x1="270" y1="232" x2="206" y2="232" stroke="#DC2626" stroke-width="2.5" marker-end="url(#lds-r)"/>
+          <circle cx="196" cy="190" r="5.5" fill="#DC2626" stroke="#fff" stroke-width="2"/>
+          <line x1="196" y1="190" x2="196" y2="320" stroke="#DC2626" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="196" y="338" font-size="12" font-weight="800" fill="#B91C1C" text-anchor="middle">L₀</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* labourShiftVsMovement — Card 4 static two-panel comparison.
+     Left: a non-wage factor shifts the whole curve. Right: a wage
+     change is a movement along the curve. */
+  labourShiftVsMovement: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="lsm-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
+          <marker id="lsm-b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/></marker>
+        </defs>
+        <!-- Panel A: shift -->
+        <text x="60" y="30" font-size="12" font-weight="800" fill="#16A34A">Shift in labour demand</text>
+        <line x1="60" y1="50" x2="60" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="60" y1="250" x2="320" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="60" y="268" font-size="9.5" fill="#475569">Wage on y · L on x</text>
+        <line x1="80" y1="80" x2="280" y2="230" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="250" y="228" font-size="10.5" font-weight="800" fill="#2563EB">D</text>
+        <line x1="150" y1="80" x2="350" y2="230" stroke="#16A34A" stroke-width="2.4" stroke-dasharray="6 4"/>
+        <text x="330" y="222" font-size="10.5" font-weight="800" fill="#16A34A">D₁</text>
+        <line x1="150" y1="120" x2="210" y2="120" stroke="#16A34A" stroke-width="2.4" marker-end="url(#lsm-g)"/>
+        <text x="190" y="284" font-size="10.5" fill="#475569" text-anchor="middle">Non-wage factor → whole curve shifts</text>
+        <!-- divider -->
+        <line x1="372" y1="40" x2="372" y2="270" stroke="#E2E8F0" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <!-- Panel B: movement along -->
+        <text x="400" y="30" font-size="12" font-weight="800" fill="#2563EB">Movement along the curve</text>
+        <line x1="400" y1="50" x2="400" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="400" y1="250" x2="680" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="400" y="268" font-size="9.5" fill="#475569">Wage on y · L on x</text>
+        <line x1="420" y1="80" x2="650" y2="235" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="624" y="232" font-size="10.5" font-weight="800" fill="#2563EB">D</text>
+        <circle cx="470" cy="114" r="5" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+        <circle cx="590" cy="195" r="5" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+        <path d="M 478 122 Q 545 150, 582 188" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#lsm-b)"/>
+        <text x="540" y="284" font-size="10.5" fill="#475569" text-anchor="middle">Wage change → move along the curve</text>
+      </svg>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

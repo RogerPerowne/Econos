@@ -204,6 +204,19 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   - `repeatedGameCycle` — interactive tit-for-tat loop (`rgc-*`:
     co-operate → cheat → retaliate → profits fall → loop back).
 
+### 8b. Firm cost-curve diagrams (MC / AC / AR / MR)
+*Use when:* a profit-maximising firm diagram (monopoly, monopolistic
+competition, perfect competition). Hand-rolled reveal-layer SVGs sharing
+the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
+- `mcShortRunDiagram`, `mcLongRunDiagram`, `mcEfficiencyDiagram` (monopolistic competition).
+- **Monopoly (3.4.5):** `monopolyProfitMax` (`mp-1..4`: MR=MC → Qm → Pm →
+  supernormal profit), `monopolyWelfare` (`mw-1..3`: monopoly outcome →
+  competitive P=MC benchmark → deadweight-loss triangle), `naturalMonopoly`
+  (`nm-1..3`: falling LRAC → unregulated profit-max → P=AC / P=MC
+  regulation points), `priceDiscPanels` (`pd-1..3`: combined-market MC →
+  inelastic Market A high price → elastic Market B low price), and the
+  hubs `monopolyFeaturesHub` (6 spokes) and `priceDiscHub` (two markets).
+
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.
 - `landTypesSvg`, `capitalTypesSvg`, `enterpriseCombinationSvg`,

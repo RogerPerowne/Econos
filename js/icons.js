@@ -20266,6 +20266,164 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     WAGE DETERMINATION (3.5.3) — labour-market equilibrium.
+     Wage on y, quantity of labour on x.
+       D_L (80,90)→(620,300), S_L (80,300)→(620,90).
+       Equilibrium (350,195): W*, Q*.
+       At W_high=140: Qd=208, Qs=491 → surplus.
+       At W_low =250: Qs=208, Qd=491 → shortage.
+     ============================================================ */
+
+  /* labourMarketEquilibrium — Cards 1 & 2 interactive (lme-*).
+     Card 1 builds the equilibrium; Card 2 adds the surplus/shortage
+     zones above and below it. */
+  labourMarketEqDiagram: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE LABOUR MARKET</text>
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="34" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Quantity of labour (L)</text>
+        <!-- D_L -->
+        <line x1="80" y1="90" x2="620" y2="300" stroke="#2563EB" stroke-width="2.6"/>
+        <text x="624" y="300" font-size="13" font-weight="800" fill="#2563EB">D_L</text>
+        <!-- S_L -->
+        <line x1="80" y1="300" x2="620" y2="90" stroke="#16A34A" stroke-width="2.6"/>
+        <text x="624" y="92" font-size="13" font-weight="800" fill="#16A34A">S_L</text>
+        <!-- lme-eq -->
+        <g class="lme-eq" style="display:none">
+          <circle cx="350" cy="195" r="6.5" fill="#fff" stroke="#0B1426" stroke-width="2.6"/>
+          <line x1="80" y1="195" x2="350" y2="195" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="199" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end">W*</text>
+          <line x1="350" y1="195" x2="350" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="350" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">Q*</text>
+        </g>
+        <!-- lme-surplus (above equilibrium) -->
+        <g class="lme-surplus" style="display:none">
+          <line x1="80" y1="140" x2="491" y2="140" stroke="#D97706" stroke-width="1.6" stroke-dasharray="5 3"/>
+          <text x="74" y="138" font-size="11.5" font-weight="800" fill="#B45309" text-anchor="end">W↑</text>
+          <circle cx="208" cy="140" r="5" fill="#2563EB" stroke="#fff" stroke-width="1.6"/>
+          <circle cx="491" cy="140" r="5" fill="#16A34A" stroke="#fff" stroke-width="1.6"/>
+          <line x1="208" y1="124" x2="491" y2="124" stroke="#DC2626" stroke-width="2" marker-start="url(#lme-d)" marker-end="url(#lme-d)"/>
+          <text x="350" y="118" font-size="11" font-weight="800" fill="#B91C1C" text-anchor="middle">surplus = unemployment</text>
+        </g>
+        <!-- lme-shortage (below equilibrium) -->
+        <g class="lme-shortage" style="display:none">
+          <line x1="80" y1="250" x2="491" y2="250" stroke="#D97706" stroke-width="1.6" stroke-dasharray="5 3"/>
+          <text x="74" y="254" font-size="11.5" font-weight="800" fill="#B45309" text-anchor="end">W↓</text>
+          <circle cx="208" cy="250" r="5" fill="#16A34A" stroke="#fff" stroke-width="1.6"/>
+          <circle cx="491" cy="250" r="5" fill="#2563EB" stroke="#fff" stroke-width="1.6"/>
+          <line x1="208" y1="266" x2="491" y2="266" stroke="#DC2626" stroke-width="2" marker-start="url(#lme-d)" marker-end="url(#lme-d)"/>
+          <text x="350" y="282" font-size="11" font-weight="800" fill="#B91C1C" text-anchor="middle">shortage of labour</text>
+        </g>
+        <defs>
+          <marker id="lme-d" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/></marker>
+        </defs>
+      </svg>
+    </div>
+  `,
+
+  /* wageFloorCeiling — Card 6 interactive (wf-*). Minimum wage (a floor
+     above equilibrium → unemployment) and maximum wage / pay cap (a
+     ceiling below equilibrium → shortage). Government-intervention style. */
+  wageFloorCeiling: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">WAGE CONTROLS IN THE LABOUR MARKET</text>
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="34" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Quantity of labour (L)</text>
+        <line x1="80" y1="90" x2="620" y2="300" stroke="#2563EB" stroke-width="2.6"/>
+        <text x="624" y="300" font-size="13" font-weight="800" fill="#2563EB">D_L</text>
+        <line x1="80" y1="300" x2="620" y2="90" stroke="#16A34A" stroke-width="2.6"/>
+        <text x="624" y="92" font-size="13" font-weight="800" fill="#16A34A">S_L</text>
+        <!-- wf-eq -->
+        <g class="wf-eq" style="display:none">
+          <circle cx="350" cy="195" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
+          <line x1="80" y1="195" x2="350" y2="195" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <text x="74" y="199" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end">W*</text>
+          <line x1="350" y1="195" x2="350" y2="320" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <text x="350" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">Q*</text>
+        </g>
+        <!-- wf-min: minimum wage (floor) above equilibrium -->
+        <g class="wf-min" style="display:none">
+          <line x1="80" y1="140" x2="620" y2="140" stroke="#7C3AED" stroke-width="2.4"/>
+          <text x="74" y="138" font-size="11.5" font-weight="800" fill="#6D28D9" text-anchor="end">W_min</text>
+          <circle cx="208" cy="140" r="5" fill="#2563EB" stroke="#fff" stroke-width="1.6"/>
+          <circle cx="491" cy="140" r="5" fill="#16A34A" stroke="#fff" stroke-width="1.6"/>
+          <line x1="208" y1="124" x2="491" y2="124" stroke="#DC2626" stroke-width="2" marker-start="url(#wf-d)" marker-end="url(#wf-d)"/>
+          <text x="350" y="118" font-size="11" font-weight="800" fill="#B91C1C" text-anchor="middle">excess supply → unemployment</text>
+          <text x="196" y="156" font-size="9.5" font-weight="700" fill="#1D4ED8" text-anchor="end">Q_d</text>
+          <text x="503" y="156" font-size="9.5" font-weight="700" fill="#15803D">Q_s</text>
+        </g>
+        <!-- wf-max: maximum wage (ceiling) below equilibrium -->
+        <g class="wf-max" style="display:none">
+          <line x1="80" y1="250" x2="620" y2="250" stroke="#7C3AED" stroke-width="2.4"/>
+          <text x="74" y="254" font-size="11.5" font-weight="800" fill="#6D28D9" text-anchor="end">W_max</text>
+          <circle cx="208" cy="250" r="5" fill="#16A34A" stroke="#fff" stroke-width="1.6"/>
+          <circle cx="491" cy="250" r="5" fill="#2563EB" stroke="#fff" stroke-width="1.6"/>
+          <line x1="208" y1="266" x2="491" y2="266" stroke="#DC2626" stroke-width="2" marker-start="url(#wf-d)" marker-end="url(#wf-d)"/>
+          <text x="350" y="282" font-size="11" font-weight="800" fill="#B91C1C" text-anchor="middle">excess demand → shortage</text>
+          <text x="196" y="244" font-size="9.5" font-weight="700" fill="#15803D" text-anchor="end">Q_s</text>
+          <text x="503" y="244" font-size="9.5" font-weight="700" fill="#1D4ED8">Q_d</text>
+        </g>
+        <defs>
+          <marker id="wf-d" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/></marker>
+        </defs>
+      </svg>
+    </div>
+  `,
+
+  /* labourSupplyElasticity — Card 5 static two-panel comparison.
+     Same rightward demand shift; inelastic (steep) supply gives a big
+     wage change, elastic (flat) supply gives a big quantity change. */
+  labourSupplyElasticity: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="lse-v" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#B45309"/></marker>
+          <marker id="lse-h" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#1D4ED8"/></marker>
+        </defs>
+        <!-- Panel A: inelastic (steep) supply -->
+        <text x="60" y="28" font-size="12" font-weight="800" fill="#B45309">Inelastic labour supply</text>
+        <line x1="60" y1="48" x2="60" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="60" y1="250" x2="330" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="330" y="266" font-size="9" fill="#475569" text-anchor="end">L</text>
+        <line x1="130" y1="250" x2="190" y2="70" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="194" y="78" font-size="10.5" font-weight="800" fill="#16A34A">S</text>
+        <line x1="70" y1="120" x2="250" y2="240" stroke="#2563EB" stroke-width="2.2"/>
+        <text x="252" y="240" font-size="10.5" font-weight="800" fill="#2563EB">D</text>
+        <line x1="120" y1="90" x2="300" y2="210" stroke="#60A5FA" stroke-width="2.2" stroke-dasharray="6 4"/>
+        <text x="302" y="210" font-size="10.5" font-weight="800" fill="#2563EB">D₁</text>
+        <circle cx="155" cy="177" r="4.5" fill="#0B1426"/>
+        <circle cx="172" cy="124" r="4.5" fill="#0B1426"/>
+        <line x1="92" y1="177" x2="92" y2="124" stroke="#B45309" stroke-width="2" marker-start="url(#lse-v)" marker-end="url(#lse-v)"/>
+        <text x="86" y="154" font-size="9.5" font-weight="800" fill="#B45309" text-anchor="end">big ΔW</text>
+        <text x="195" y="284" font-size="10.5" fill="#475569" text-anchor="middle">Wage rises a lot, employment barely changes</text>
+        <!-- divider -->
+        <line x1="372" y1="40" x2="372" y2="270" stroke="#E2E8F0" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <!-- Panel B: elastic (flat) supply -->
+        <text x="412" y="28" font-size="12" font-weight="800" fill="#1D4ED8">Elastic labour supply</text>
+        <line x1="412" y1="48" x2="412" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="412" y1="250" x2="700" y2="250" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="700" y="266" font-size="9" fill="#475569" text-anchor="end">L</text>
+        <line x1="440" y1="182" x2="690" y2="150" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="694" y="150" font-size="10.5" font-weight="800" fill="#16A34A">S</text>
+        <line x1="432" y1="100" x2="612" y2="240" stroke="#2563EB" stroke-width="2.2"/>
+        <text x="610" y="240" font-size="10.5" font-weight="800" fill="#2563EB">D</text>
+        <line x1="480" y1="90" x2="700" y2="210" stroke="#60A5FA" stroke-width="2.2" stroke-dasharray="6 4"/>
+        <text x="702" y="210" font-size="10.5" font-weight="800" fill="#2563EB">D₁</text>
+        <circle cx="520" cy="168" r="4.5" fill="#0B1426"/>
+        <circle cx="610" cy="159" r="4.5" fill="#0B1426"/>
+        <line x1="520" y1="262" x2="610" y2="262" stroke="#1D4ED8" stroke-width="2" marker-start="url(#lse-h)" marker-end="url(#lse-h)"/>
+        <text x="565" y="284" font-size="9.5" font-weight="800" fill="#1D4ED8" text-anchor="middle">big ΔL</text>
+      </svg>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

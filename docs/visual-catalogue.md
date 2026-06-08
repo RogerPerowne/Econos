@@ -233,6 +233,11 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   `ls-1..2`), `labourSupplyShift` (interactive S shift, `lss-1..3`),
   `occupationChoiceHub` (6-factor hub), `regionalMobility` (static
   two-region jobs-vs-workers diagram).
+- **Wage Determination (3.5.3):** `labourMarketEqDiagram` (interactive
+  D_L/S_L equilibrium with surplus/shortage zones, `lme-*`),
+  `wageFloorCeiling` (interactive min/max wage controls, `wf-*` — the
+  price-floor/ceiling style applied to wages), `labourSupplyElasticity`
+  (static inelastic-vs-elastic two-panel). Reuses `monopsonyLabourDiagram`.
 - **Monopsony (3.4.6):** `monopsonyLabourDiagram` (see §8b).
 
 ### 9. Decompose / labelled anatomy

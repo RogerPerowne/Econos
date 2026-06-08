@@ -224,6 +224,13 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   supply → wage gap vs the competitive Wc/Lc), plus the hub
   `monopsonyBuyerHub` (one buyer between many workers and many suppliers).
 
+### 8c. Labour-market diagrams
+*Use when:* a labour demand/supply curve (wage on y, employment on x).
+- **Demand for Labour (3.5.1):** `labourDemandCurve` (interactive MRP =
+  D_L curve, `ld-1..2`), `labourDemandShift` (interactive D_L shift,
+  `lds-1..3`), `labourShiftVsMovement` (static shift-vs-movement panels).
+- **Monopsony (3.4.6):** `monopsonyLabourDiagram` (see §8b).
+
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.
 - `landTypesSvg`, `capitalTypesSvg`, `enterpriseCombinationSvg`,

@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.102.0 — 2026-06-08
+
+### Demand for Labour topic complete (6 cards, 3 bespoke visuals)
+
+- Full interactive-first Learn It deck for **Demand for Labour
+  (Edexcel A 3.5.1)**, replacing the placeholder stub. Six cards: the
+  big picture (derived demand) → why labour demand slopes down → derived
+  demand in action → what shifts demand → complements/substitutes →
+  synthesis.
+- **Three bespoke visuals** (labour-demand curves adapted from theme-1
+  demand):
+  - `labourDemandCurve` — interactive MRP = D_L curve (`ld-1..2`: the
+    curve → wage W₁ and employment L₁ → the MRP = wage hiring rule).
+  - `labourDemandShift` — interactive shift (`lds-1..3`: original D_L →
+    shift right when product demand rises → shift left when it falls).
+  - `labourShiftVsMovement` — static two-panel comparison of a shift in
+    the curve vs a movement along it.
+
 ## 0.101.0 — 2026-06-08
 
 ### Contestable Markets topic complete (6 cards, 1 bespoke visual)

@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.98.0 — 2026-06-08
+
+### Game Theory topic complete (6 cards, 5 bespoke visuals)
+
+- Full interactive-first Learn It deck for **Game Theory (Edexcel A
+  3.4.4)**, replacing the placeholder stub. Card patterns: flow-chain
+  intro → matrix anatomy → dominant strategy / prisoner's dilemma →
+  Nash equilibrium → repeated games → evidence-then-verdict synthesis
+  (no two consecutive patterns repeat).
+- **Five bespoke visuals** built around one shared 2×2 price-cutting
+  matrix the student manipulates across Cards 2–4: `gameMatrixSimple`
+  (static taster), `gameMatrixAnatomy`, `gameMatrixDilemma`,
+  `gameMatrixNash` (interactive reveals), plus `repeatedGameCycle` (an
+  interactive tit-for-tat loop on Card 5). A's profit is green and B's
+  blue everywhere so the colour grammar carries across all cards.
+
+### Renderer fix
+
+- The non-`causesFirst` `causes2` tile head was missing
+  `min-width:0; overflow-wrap:break-word`, so long heads could clip at
+  4 columns instead of wrapping (its `causes` sibling already had it).
+  Added — fixes clipping for any topic using a `causes2` grid.
+
 ## 0.97.0 — 2026-06-08
 
 ### Collusion and Cartels topic complete (6 cards, 2 bespoke visuals)

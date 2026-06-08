@@ -191,6 +191,18 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
 ### 8. Game theory / payoff matrices
 *Use when:* a 2×2 payoff grid / prisoner's dilemma.
 - `prisonersDilemmaInteractive`, `cartelPrisonersDilemma`.
+- **Game Theory deck (3.4.4)** — one shared price-cutting matrix (Firm A
+  rows × Firm B cols; payoffs 8,8 / 2,12 / 12,2 / 5,5; A's profit green,
+  B's blue) reused across three cards:
+  - `gameMatrixSimple` — static taster + colour key (Card 1).
+  - `gameMatrixAnatomy` — interactive build-up (`gma-1..4`: players →
+    strategies → payoffs → ordered pair).
+  - `gameMatrixDilemma` — interactive (`gmd-1..3`: column best response →
+    Low dominates → (5,5) outcome).
+  - `gameMatrixNash` — interactive (`gmn-1..3`: each firm's best-response
+    ticks → the cell ticked by both = Nash).
+  - `repeatedGameCycle` — interactive tit-for-tat loop (`rgc-*`:
+    co-operate → cheat → retaliate → profits fall → loop back).
 
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.

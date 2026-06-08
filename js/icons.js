@@ -19843,6 +19843,291 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     GAME THEORY (3.4.4) — payoff-matrix family + tit-for-tat cycle
+     Shared 2×2 price-cutting game: Firm A (rows) × Firm B (cols),
+     strategies High / Low price, payoffs (A's profit, B's profit):
+       (High,High)=8,8   (High,Low)=2,12
+       (Low,High)=12,2   (Low,Low)=5,5
+     A's profit is GREEN, B's profit is BLUE everywhere, so the
+     colour grammar carries across all four cards. Cards 2–4 reuse
+     the identical base grid and differ only in reveal layers, so the
+     student manipulates ONE matrix across three lessons.
+     ============================================================ */
+
+  /* gameMatrixSimple — Card 1 static taster. Base grid + a colour key. */
+  gameMatrixSimple: `
+    <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
+      <rect width="640" height="360" fill="#FFFFFF" rx="14"/>
+      <text x="375" y="34" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em">Firm B</text>
+      <rect x="225" y="56" width="150" height="44" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <rect x="375" y="56" width="150" height="44" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <text x="300" y="83" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1D4ED8">High price</text>
+      <text x="450" y="83" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1D4ED8">Low price</text>
+      <text x="93" y="215" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em" transform="rotate(-90 93 215)">Firm A</text>
+      <rect x="125" y="100" width="100" height="115" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+      <rect x="125" y="215" width="100" height="115" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+      <text x="175" y="153" text-anchor="middle" font-size="13" font-weight="700" fill="#047857">High</text>
+      <text x="175" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#047857">price</text>
+      <text x="175" y="268" text-anchor="middle" font-size="13" font-weight="700" fill="#047857">Low</text>
+      <text x="175" y="285" text-anchor="middle" font-size="13" font-weight="700" fill="#047857">price</text>
+      <rect x="225" y="100" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="375" y="100" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="225" y="215" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="375" y="215" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <text x="300" y="167" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">8</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">8</tspan></text>
+      <text x="450" y="167" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">2</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">12</tspan></text>
+      <text x="300" y="282" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">12</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">2</tspan></text>
+      <text x="450" y="282" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">5</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">5</tspan></text>
+      <circle cx="232" cy="346" r="6" fill="#059669"/>
+      <text x="244" y="350" font-size="12.5" font-weight="700" fill="#047857">Firm A's profit</text>
+      <circle cx="372" cy="346" r="6" fill="#2563EB"/>
+      <text x="384" y="350" font-size="12.5" font-weight="700" fill="#1D4ED8">Firm B's profit</text>
+    </svg>
+  `,
+
+  /* gameMatrixAnatomy — Card 2 interactive. Layers gma-1..gma-4 build the
+     matrix up part by part: Players → Strategies → Payoffs → ordered pair. */
+  gameMatrixAnatomy: `
+    <svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
+      <rect width="720" height="430" fill="#FFFFFF" rx="14"/>
+      <text x="420" y="34" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em">Firm B</text>
+      <rect x="270" y="58" width="150" height="46" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <rect x="420" y="58" width="150" height="46" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <text x="345" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">High price</text>
+      <text x="495" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">Low price</text>
+      <text x="138" y="219" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em" transform="rotate(-90 138 219)">Firm A</text>
+      <rect x="170" y="104" width="100" height="115" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+      <rect x="170" y="219" width="100" height="115" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+      <text x="220" y="156" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">High</text>
+      <text x="220" y="174" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">price</text>
+      <text x="220" y="271" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">Low</text>
+      <text x="220" y="289" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">price</text>
+      <rect x="270" y="104" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="420" y="104" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="270" y="219" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="420" y="219" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <text x="345" y="170" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">8</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">8</tspan></text>
+      <text x="495" y="170" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">2</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">12</tspan></text>
+      <text x="345" y="285" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">12</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">2</tspan></text>
+      <text x="495" y="285" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">5</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">5</tspan></text>
+
+      <!-- gma-1 PLAYERS -->
+      <g class="gma-1" style="display:none">
+        <rect x="372" y="16" width="96" height="26" rx="8" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="116" y="150" width="44" height="138" rx="8" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="600" y="150" width="110" height="60" rx="9" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.4"/>
+        <text x="655" y="174" text-anchor="middle" font-size="11" font-weight="800" fill="#7C3AED" letter-spacing="0.08em">PLAYERS</text>
+        <text x="655" y="194" text-anchor="middle" font-size="11.5" fill="#475569">The two firms</text>
+      </g>
+      <!-- gma-2 STRATEGIES -->
+      <g class="gma-2" style="display:none">
+        <rect x="266" y="54" width="158" height="54" rx="7" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="416" y="54" width="158" height="54" rx="7" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="166" y="100" width="108" height="123" rx="7" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="166" y="215" width="108" height="123" rx="7" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="600" y="222" width="110" height="60" rx="9" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+        <text x="655" y="246" text-anchor="middle" font-size="11" font-weight="800" fill="#059669" letter-spacing="0.06em">STRATEGIES</text>
+        <text x="655" y="266" text-anchor="middle" font-size="11.5" fill="#475569">High or low price</text>
+      </g>
+      <!-- gma-3 PAYOFFS -->
+      <g class="gma-3" style="display:none">
+        <rect x="296" y="146" width="98" height="34" rx="9" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="446" y="146" width="98" height="34" rx="9" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="296" y="261" width="98" height="34" rx="9" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="446" y="261" width="98" height="34" rx="9" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="600" y="294" width="110" height="60" rx="9" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.4"/>
+        <text x="655" y="318" text-anchor="middle" font-size="11" font-weight="800" fill="#B45309" letter-spacing="0.08em">PAYOFFS</text>
+        <text x="655" y="338" text-anchor="middle" font-size="11.5" fill="#475569">Profit in each cell</text>
+      </g>
+      <!-- gma-4 ORDERED PAIR -->
+      <g class="gma-4" style="display:none">
+        <rect x="270" y="104" width="150" height="115" rx="6" fill="none" stroke="#0B1426" stroke-width="2.5"/>
+        <line x1="333" y1="178" x2="316" y2="210" stroke="#059669" stroke-width="2"/>
+        <line x1="357" y1="178" x2="374" y2="210" stroke="#2563EB" stroke-width="2"/>
+        <rect x="170" y="356" width="500" height="56" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.4"/>
+        <text x="420" y="380" text-anchor="middle" font-size="13" font-weight="700"><tspan fill="#334155">Read each cell as ( </tspan><tspan fill="#059669">Firm A's profit</tspan><tspan fill="#334155"> , </tspan><tspan fill="#2563EB">Firm B's profit</tspan><tspan fill="#334155"> )</tspan></text>
+        <text x="420" y="400" text-anchor="middle" font-size="12" fill="#64748B">Top-left ( 8 , 8 ) → both firms earn 8</text>
+      </g>
+    </svg>
+  `,
+
+  /* gameMatrixDilemma — Card 3 interactive. Firm A's reasoning column by
+     column reveals that Low price is a DOMINANT strategy → (5,5). */
+  gameMatrixDilemma: `
+    <svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
+      <defs>
+        <marker id="gmd-grn" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>
+      </defs>
+      <rect width="720" height="430" fill="#FFFFFF" rx="14"/>
+      <text x="420" y="34" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em">Firm B</text>
+      <rect x="270" y="58" width="150" height="46" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <rect x="420" y="58" width="150" height="46" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <text x="345" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">High price</text>
+      <text x="495" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">Low price</text>
+      <text x="138" y="219" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em" transform="rotate(-90 138 219)">Firm A</text>
+      <rect x="170" y="104" width="100" height="115" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+      <rect x="170" y="219" width="100" height="115" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+      <text x="220" y="156" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">High</text>
+      <text x="220" y="174" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">price</text>
+      <text x="220" y="271" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">Low</text>
+      <text x="220" y="289" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">price</text>
+      <rect x="270" y="104" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="420" y="104" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="270" y="219" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="420" y="219" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <text x="345" y="170" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">8</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">8</tspan></text>
+      <text x="495" y="170" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">2</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">12</tspan></text>
+      <text x="345" y="285" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">12</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">2</tspan></text>
+      <text x="495" y="285" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">5</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">5</tspan></text>
+
+      <!-- gmd-1: if B plays High, A compares 8 vs 12 → Low wins (col 1) -->
+      <g class="gmd-1" style="display:none">
+        <rect x="270" y="219" width="150" height="115" rx="6" fill="#ECFDF5" opacity="0.75" stroke="#34D399" stroke-width="1.6"/>
+        <line x1="300" y1="186" x2="300" y2="248" stroke="#059669" stroke-width="3" marker-end="url(#gmd-grn)"/>
+        <circle cx="398" cy="232" r="12" fill="#059669"/>
+        <path d="M392,232 l4,4 l8,-9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="345" y="324" text-anchor="middle" font-size="11.5" font-weight="700" fill="#047857">12 &gt; 8 → cut</text>
+      </g>
+      <!-- gmd-2: if B plays Low, A compares 2 vs 5 → Low wins (col 2) -->
+      <g class="gmd-2" style="display:none">
+        <rect x="420" y="219" width="150" height="115" rx="6" fill="#ECFDF5" opacity="0.75" stroke="#34D399" stroke-width="1.6"/>
+        <line x1="450" y1="186" x2="450" y2="248" stroke="#059669" stroke-width="3" marker-end="url(#gmd-grn)"/>
+        <circle cx="548" cy="232" r="12" fill="#059669"/>
+        <path d="M542,232 l4,4 l8,-9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="495" y="324" text-anchor="middle" font-size="11.5" font-weight="700" fill="#047857">5 &gt; 2 → cut</text>
+      </g>
+      <!-- gmd-3: Low row dominates for A; (Low,Low) is the dilemma outcome -->
+      <g class="gmd-3" style="display:none">
+        <rect x="264" y="215" width="312" height="123" rx="9" fill="none" stroke="#7C3AED" stroke-width="2.4" stroke-dasharray="7 4"/>
+        <rect x="420" y="219" width="150" height="115" rx="6" fill="#F5F3FF" stroke="#7C3AED" stroke-width="4"/>
+        <text x="495" y="285" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">5</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">5</tspan></text>
+        <text x="495" y="324" text-anchor="middle" font-size="11.5" font-weight="700" fill="#047857">5 &gt; 2 → cut</text>
+        <rect x="185" y="356" width="370" height="38" rx="10" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.4"/>
+        <text x="370" y="380" text-anchor="middle" font-size="13" font-weight="800" fill="#6D28D9">Low price dominates for both → outcome (5, 5)</text>
+      </g>
+    </svg>
+  `,
+
+  /* gameMatrixNash — Card 4 interactive. Best-response ticks for each firm;
+     the cell that is a best response for BOTH is the Nash equilibrium. */
+  gameMatrixNash: `
+    <svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
+      <rect width="720" height="430" fill="#FFFFFF" rx="14"/>
+      <text x="420" y="34" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em">Firm B</text>
+      <rect x="270" y="58" width="150" height="46" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <rect x="420" y="58" width="150" height="46" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
+      <text x="345" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">High price</text>
+      <text x="495" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">Low price</text>
+      <text x="138" y="219" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em" transform="rotate(-90 138 219)">Firm A</text>
+      <rect x="170" y="104" width="100" height="115" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+      <rect x="170" y="219" width="100" height="115" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+      <text x="220" y="156" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">High</text>
+      <text x="220" y="174" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">price</text>
+      <text x="220" y="271" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">Low</text>
+      <text x="220" y="289" text-anchor="middle" font-size="13.5" font-weight="700" fill="#047857">price</text>
+      <rect x="270" y="104" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="420" y="104" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="270" y="219" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <rect x="420" y="219" width="150" height="115" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4"/>
+      <text x="345" y="170" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">8</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">8</tspan></text>
+      <text x="495" y="170" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">2</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">12</tspan></text>
+      <text x="345" y="285" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">12</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">2</tspan></text>
+      <text x="495" y="285" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">5</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">5</tspan></text>
+
+      <!-- gmn-1: Firm A best responses (green) — both in the Low row -->
+      <g class="gmn-1" style="display:none">
+        <circle cx="290" cy="239" r="12" fill="#059669"/>
+        <path d="M284,239 l4,4 l8,-9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="440" cy="239" r="12" fill="#059669"/>
+        <path d="M434,239 l4,4 l8,-9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="655" y="150" text-anchor="middle" font-size="11" font-weight="800" fill="#059669" letter-spacing="0.04em">FIRM A</text>
+        <text x="655" y="166" text-anchor="middle" font-size="11.5" fill="#475569">best response</text>
+        <text x="655" y="183" text-anchor="middle" font-size="12.5" font-weight="800" fill="#047857">→ Low price</text>
+      </g>
+      <!-- gmn-2: Firm B best responses (blue) — both in the Low column -->
+      <g class="gmn-2" style="display:none">
+        <circle cx="550" cy="122" r="12" fill="#2563EB"/>
+        <path d="M544,122 l4,4 l8,-9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="550" cy="239" r="12" fill="#2563EB"/>
+        <path d="M544,239 l4,4 l8,-9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="655" y="232" text-anchor="middle" font-size="11" font-weight="800" fill="#2563EB" letter-spacing="0.04em">FIRM B</text>
+        <text x="655" y="248" text-anchor="middle" font-size="11.5" fill="#475569">best response</text>
+        <text x="655" y="265" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1D4ED8">→ Low price</text>
+      </g>
+      <!-- gmn-3: cell ticked by BOTH = Nash equilibrium -->
+      <g class="gmn-3" style="display:none">
+        <rect x="420" y="219" width="150" height="115" rx="6" fill="#F5F3FF" stroke="#7C3AED" stroke-width="4"/>
+        <text x="495" y="282" text-anchor="middle" font-size="23" font-weight="800"><tspan fill="#059669">5</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#2563EB">5</tspan></text>
+        <circle cx="440" cy="239" r="12" fill="#059669"/>
+        <path d="M434,239 l4,4 l8,-9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="550" cy="239" r="12" fill="#2563EB"/>
+        <path d="M544,239 l4,4 l8,-9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="446" y="305" width="98" height="19" rx="5" fill="#7C3AED"/>
+        <text x="495" y="318" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" letter-spacing="0.04em">NASH EQ</text>
+        <rect x="600" y="294" width="112" height="60" rx="9" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.4"/>
+        <text x="656" y="316" text-anchor="middle" font-size="11.5" fill="#475569">Neither firm</text>
+        <text x="656" y="332" text-anchor="middle" font-size="11.5" fill="#475569">gains by</text>
+        <text x="656" y="348" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7C3AED">switching alone</text>
+      </g>
+    </svg>
+  `,
+
+  /* repeatedGameCycle — Card 5 interactive tit-for-tat loop. Layers
+     rgc-1..rgc-4 walk the cycle, then the return arrow + tit-for-tat
+     caption close the loop and explain why co-operation can hold. */
+  repeatedGameCycle: `
+    <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
+      <defs>
+        <marker id="rgc-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#94A3B8"/></marker>
+        <marker id="rgc-loop" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>
+      </defs>
+      <rect width="760" height="320" fill="#FFFFFF" rx="14"/>
+
+      <!-- connectors -->
+      <g class="rgc-2" style="display:none"><line x1="148" y1="110" x2="252" y2="110" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#rgc-arr)"/></g>
+      <g class="rgc-3" style="display:none"><line x1="348" y1="110" x2="452" y2="110" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#rgc-arr)"/></g>
+      <g class="rgc-4" style="display:none"><line x1="548" y1="110" x2="612" y2="110" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#rgc-arr)"/></g>
+
+      <!-- N1 co-operate -->
+      <g class="rgc-1" style="display:none">
+        <circle cx="110" cy="110" r="38" fill="#ECFDF5" stroke="#059669" stroke-width="2.5"/>
+        <text x="110" y="122" text-anchor="middle" font-size="30">🤝</text>
+        <text x="110" y="176" text-anchor="middle" font-size="13" font-weight="800" fill="#047857">Co-operate</text>
+        <text x="110" y="193" text-anchor="middle" font-size="11.5" fill="#475569">Both hold a high price</text>
+      </g>
+      <!-- N2 rival cheats -->
+      <g class="rgc-2b" style="display:none">
+        <circle cx="300" cy="110" r="38" fill="#FFFBEB" stroke="#D97706" stroke-width="2.5"/>
+        <text x="300" y="122" text-anchor="middle" font-size="30">⚡</text>
+        <text x="300" y="176" text-anchor="middle" font-size="13" font-weight="800" fill="#B45309">Rival cheats</text>
+        <text x="300" y="193" text-anchor="middle" font-size="11.5" fill="#475569">Undercuts to grab share</text>
+      </g>
+      <!-- N3 retaliate -->
+      <g class="rgc-3b" style="display:none">
+        <circle cx="500" cy="110" r="38" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5"/>
+        <text x="500" y="122" text-anchor="middle" font-size="30">🛡️</text>
+        <text x="500" y="176" text-anchor="middle" font-size="13" font-weight="800" fill="#6D28D9">You retaliate</text>
+        <text x="500" y="193" text-anchor="middle" font-size="11.5" fill="#475569">Match the cut next round</text>
+      </g>
+      <!-- N4 profits fall -->
+      <g class="rgc-4b" style="display:none">
+        <circle cx="660" cy="110" r="38" fill="#FEF2F2" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="660" y="122" text-anchor="middle" font-size="30">📉</text>
+        <text x="660" y="176" text-anchor="middle" font-size="13" font-weight="800" fill="#B91C1C">Profits fall</text>
+        <text x="660" y="193" text-anchor="middle" font-size="11.5" fill="#475569">for both firms</text>
+      </g>
+
+      <!-- return loop + tit-for-tat caption -->
+      <g class="rgc-loopg" style="display:none">
+        <path d="M660,158 C660,250 110,250 110,156" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#rgc-loop)"/>
+        <rect x="250" y="232" width="260" height="50" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
+        <text x="380" y="254" text-anchor="middle" font-size="12.5" font-weight="800" fill="#047857">Tit-for-tat: cheating no longer pays</text>
+        <text x="380" y="272" text-anchor="middle" font-size="11.5" fill="#475569">so the threat of retaliation supports co-operation</text>
+      </g>
+    </svg>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

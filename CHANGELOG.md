@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.104.0 — 2026-06-08
+
+### Wage Determination topic complete (8 cards, 3 bespoke visuals + 1 reuse)
+
+- Full interactive-first Learn It deck for **Wage Determination
+  (Edexcel A 3.5.3)**, replacing the placeholder stub — the Theme 3
+  labour-market closer. Eight cards: the big picture → competitive
+  equilibrium → monopsony power → real-world issues → elasticities →
+  minimum & maximum wages → public-sector pay & immobility → synthesis.
+- **Three bespoke visuals + one reuse:**
+  - `labourMarketEqDiagram` — interactive D_L/S_L equilibrium (`lme-*`:
+    equilibrium → above-equilibrium surplus → below-equilibrium shortage),
+    used on Cards 1 and 2.
+  - `wageFloorCeiling` — interactive minimum/maximum wage diagram in the
+    government-intervention price-floor/ceiling style (`wf-*`: equilibrium
+    → minimum wage / unemployment → maximum wage / shortage).
+  - `labourSupplyElasticity` — static two-panel inelastic-vs-elastic
+    supply comparison.
+  - Reused `monopsonyLabourDiagram` (from Supply of Labour) on Card 3.
+
 ## 0.103.0 — 2026-06-08
 
 ### Supply of Labour topic complete (6 cards, 4 bespoke visuals)

@@ -6,6 +6,56 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.97.0 — 2026-06-08
+
+### Collusion and Cartels topic complete (6 cards, 2 bespoke visuals)
+
+Built the full Learn It deck for Edexcel A 3.4.4 (the second half of
+the 3.4.4 spec point — Oligopoly was the introduction; this deck
+covers collusion specifically). 6 cards, varied storytelling patterns,
+no two consecutive cards repeat.
+
+**Card pattern plan:**
+
+- **Card 1 — Decompose hub + tile grids** — "the big picture". Bespoke
+  `collusionBigPicture` shows three firms → handshake hub ("Firms
+  coordinate rather than compete") → outcome tiles (Higher prices /
+  Restricted output). Plus a 3-tile collusion-types grid, a 4-tile
+  oligopoly-vulnerability grid, and the canonical 4-step "Agree →
+  Restrict → Raise → Profit" chain.
+- **Card 2 — Decompose a diagram (INTERACTIVE 3-view)** — the cartel
+  joint-profit diagram. New `cartelJointProfitDiagram` builds in 3
+  steps: (1) D and MR, (2) add MC and find the cartel equilibrium
+  where MR = MC, project up to D for P_c, (3) compare with the
+  competitive equilibrium where MC = D and shade the joint-profit
+  rectangle. MC is drawn as a tick / Nike swoosh, matching the
+  shape students see in the Costs topic (Marco's Pizzeria) and the
+  Oligopoly kinked-demand diagram — pedagogical consistency across
+  Theme 3.
+- **Card 3 — Side-by-side pair** — explicit vs tacit collusion as a
+  pair (pairFirst), followed by a 4-tile practices grid (price fixing,
+  output quotas, market sharing, bid rigging) and a 3-step tacit-
+  coordination flow + 3 tell-tale signals.
+- **Card 4 — Evidence-then-verdict** — why firms collude. 4 attractions
+  + Rivalry vs Collusion pair + 3-tile who-wins/who-loses + the
+  bottomTip verdict "collusion helps insiders most".
+- **Card 5 — Sequential flow chain** — why cartels break down. 5-tile
+  instability grid + 5-step cheating-temptation chain + 4-tile why
+  governments care + 4-step regulator response. Two flows working
+  in one card — internal collapse and external enforcement.
+- **Card 6 — Sequential flow (synthesis)** — the whole story. 6-step
+  synthesis chain (Few firms → Collusion → Restrict → Price rises →
+  Joint profit → Instability/law) + 4 evaluation points + 3 common
+  mistakes (all rose, including "treating cartel as competition") +
+  the standard "Define / Explain / Assess / Judge" how-to-write flow.
+
+The card 6 bottomTip points forward to game theory as the natural
+next topic — it formalises the cheat-or-cooperate decision as a
+strategic game.
+
+Minor version bump because this completes the collusion half of
+Edexcel A 3.4.4 — a meaningful pedagogical milestone.
+
 ## 0.96.37 — 2026-06-08
 
 ### Oligopoly kinked-demand: MC curves now tick-shaped

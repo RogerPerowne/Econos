@@ -219,6 +219,9 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   regulation points), `priceDiscPanels` (`pd-1..3`: combined-market MC →
   inelastic Market A high price → elastic Market B low price), and the
   hubs `monopolyFeaturesHub` (6 spokes) and `priceDiscHub` (two markets).
+- **Hubs (6-spoke, monopolyFeaturesHub grammar):** `monopolyFeaturesHub`,
+  `occupationChoiceHub` (Supply of Labour), `govStakeholderHub`
+  (Government Intervention — six stakeholder groups around the state).
 - **Monopsony (3.4.6):** `monopsonyLabourDiagram` (`ms-1..3`: MCL above the
   labour supply curve → employment at MCL=MRP → wage Wm read down on
   supply → wage gap vs the competitive Wc/Lc), plus the hub

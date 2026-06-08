@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.105.0 — 2026-06-08
+
+### Government Intervention — intro & overview complete (5 cards, 1 bespoke visual)
+
+- Full interactive-first Learn It deck for **Government Intervention
+  (Edexcel A 3.6.1)**, replacing the placeholder stub — the first of
+  four government-intervention sub-topics (the overview). Five cards:
+  the big picture → what it fixes → the toolkit → who's protected →
+  synthesis. A conceptual overview (no curve diagrams — those come in
+  the later sub-topics) built from flow chains, mappings, pairs and tiles.
+- **One bespoke visual:** `govStakeholderHub` — six stakeholder groups
+  (consumers, rival firms, employees, suppliers, taxpayers, wider
+  economy) around a central "government intervention" node.
+
 ## 0.104.0 — 2026-06-08
 
 ### Wage Determination topic complete (8 cards, 3 bespoke visuals + 1 reuse)

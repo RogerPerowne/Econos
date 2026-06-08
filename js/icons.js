@@ -19360,6 +19360,250 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
+     (Few large firms / Interdependence / Barriers to entry / Non-price
+     competition) around a central "One market dominated by a few firms"
+     basket pill. Same hub grammar as the other Theme 3 hubs. */
+  oligopolyHub: `
+    <div class="olh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .olh .ol-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:30%; row-gap:18px; position:relative; z-index:1; }
+        .olh .ol-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .olh .ol-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .olh .ol-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; min-height:100px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .olh .ol-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .olh .ol-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .olh .ol-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){
+          .olh > div { display:flex; flex-direction:column-reverse; }
+          .olh .ol-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .olh .ol-center { position:static; transform:none; margin:6px auto; }
+          .olh .ol-center-wrap { order:99; display:flex; justify-content:center; }
+          .olh .ol-conn { display:none; }
+        }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="ol-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 23 C 44 23, 44 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 23 C 56 23, 56 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 77 C 44 77, 44 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 77 C 56 77, 56 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="ol-grid">
+          <div class="ol-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="ol-ic">👥</div>
+            <div><div class="ol-t" style="color:#1E3A8A;">Few large firms</div><div class="ol-s">High concentration — a small number of sellers dominate.</div></div>
+          </div>
+          <div class="ol-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="ol-ic">🔗</div>
+            <div><div class="ol-t" style="color:#5B21B6;">Interdependence</div><div class="ol-s">One firm’s pricing, output or advertising affects the others.</div></div>
+          </div>
+          <div class="ol-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="ol-ic">🔒</div>
+            <div><div class="ol-t" style="color:#C2410C;">Barriers to entry</div><div class="ol-s">New firms face high costs or brand obstacles.</div></div>
+          </div>
+          <div class="ol-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="ol-ic">📢</div>
+            <div><div class="ol-t" style="color:#065F46;">Non-price competition</div><div class="ol-s">Branding, quality and promotion often matter more than price.</div></div>
+          </div>
+        </div>
+        <div class="ol-center-wrap"><div class="ol-center" style="background:#fff;border:2px solid #BFDBFE;border-radius:50%;width:140px;height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;box-shadow:0 0 0 8px rgba(239,246,255,0.7), 0 6px 18px rgba(11,20,38,0.10);">
+          <div style="font-size:30px;line-height:1;">🧺</div>
+          <div style="font-size:13px;font-weight:800;color:#1E3A8A;font-family:Fraunces,Georgia,serif;margin-top:4px;text-align:center;line-height:1.2;">One market</div>
+          <div style="font-size:10.5px;color:#475569;margin-top:3px;text-align:center;line-height:1.25;">dominated by<br/>a few firms</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* oligopolyPriceReactions – Card 2 of Oligopoly. Twin panel: "If one
+     firm cuts price" (rose, rivals match → price war) vs "If one firm
+     raises price" (green, rivals don't follow → loses share). Each
+     panel has a 3-icon mini-flow and two bullet outcomes. Mirrors the
+     mockup's "two common price reactions" block. Static. */
+  oligopolyPriceReactions: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .opr-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+        @media (max-width:600px){ .opr-grid { grid-template-columns:1fr; } }
+        .opr-panel { border-radius:13px; padding:14px 14px 12px; }
+        .opr-row { display:flex; align-items:center; justify-content:space-between; gap:4px; margin:8px 0 12px; }
+        .opr-step { display:flex; flex-direction:column; align-items:center; text-align:center; flex:1; min-width:0; }
+        .opr-disc { width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); margin-bottom:6px; }
+        .opr-cap { font-size:10.5px; font-weight:700; line-height:1.2; color:#475569; }
+        .opr-arrow { font-size:16px; color:#94A3B8; flex-shrink:0; }
+        .opr-li { display:flex; gap:7px; align-items:flex-start; font-size:11.5px; line-height:1.4; margin-top:5px; }
+        .opr-li .d { flex-shrink:0; font-weight:900; }
+      </style>
+      <div class="opr-grid">
+        <div class="opr-panel" style="background:#FEF2F2;border:1.5px solid #FCA5A5;">
+          <div style="text-align:center;font-size:13px;font-weight:800;color:#9F1239;">If one firm <span style="text-decoration:underline;">cuts</span> price</div>
+          <div class="opr-row">
+            <div class="opr-step"><div class="opr-disc">🏢</div><div class="opr-cap">Rivals may match</div></div>
+            <div class="opr-arrow">→</div>
+            <div class="opr-step"><div class="opr-disc">💥</div><div class="opr-cap">Price war risk</div></div>
+            <div class="opr-arrow">→</div>
+            <div class="opr-step"><div class="opr-disc">📉</div><div class="opr-cap">Everyone’s margin falls</div></div>
+          </div>
+          <div class="opr-li" style="color:#9F1239;"><span class="d">•</span><span>Market share may not rise much.</span></div>
+          <div class="opr-li" style="color:#9F1239;"><span class="d">•</span><span>Profits can be squeezed.</span></div>
+        </div>
+        <div class="opr-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div style="text-align:center;font-size:13px;font-weight:800;color:#065F46;">If one firm <span style="text-decoration:underline;">raises</span> price</div>
+          <div class="opr-row">
+            <div class="opr-step"><div class="opr-disc">🏢</div><div class="opr-cap">Rivals may not follow</div></div>
+            <div class="opr-arrow">→</div>
+            <div class="opr-step"><div class="opr-disc">👥</div><div class="opr-cap">Customers switch away</div></div>
+            <div class="opr-arrow">→</div>
+            <div class="opr-step"><div class="opr-disc">📉</div><div class="opr-cap">Sales fall</div></div>
+          </div>
+          <div class="opr-li" style="color:#065F46;"><span class="d">•</span><span>Demand can be very sensitive.</span></div>
+          <div class="opr-li" style="color:#065F46;"><span class="d">•</span><span>The firm may lose share.</span></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* oligopolyKinkedDemand – Card 3 of Oligopoly. An ACCURATE, interactive
+     kinked demand curve, built in 3 reveal views. The mock-up's version
+     was geometrically wrong; this one follows the standard textbook
+     model exactly:
+       • D/AR kinks at the current price — ELASTIC (flatter) above the
+         kink, INELASTIC (steeper) below.
+       • MR has a VERTICAL DISCONTINUITY (gap) directly below the kink,
+         aligned at Qk (because MR has twice the slope of each demand
+         segment, the two MR segments don't meet).
+       • MC can shift ANYWHERE within that gap without changing the
+         profit-max price/output → price rigidity. Two MC curves are
+         shown both cutting the gap → same P*, Q*.
+     Numbers: kink at Q=5, P=10. Upper demand P=14-0.8Q (MR=14-1.6Q→6
+     at kink); lower demand P=18-1.6Q (MR=18-3.2Q→2 at kink). Gap 6→2.
+     Layers: kdc-1 (demand), kdc-2 (MR + gap), kdc-3 (MC + rigidity).
+     Pixel map: viewBox 760x420, x = 80 + Q*56, y = 360 - P*15.7. */
+  oligopolyKinkedDemand: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .okd-v { display:none; }
+        @media (max-width:680px){
+          .okd-h { display:none; }
+          .okd-v { display:block; }
+        }
+      </style>
+      <div class="okd-h">
+      <svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE DIAGRAM</text>
+
+        <!-- Axes -->
+        <line x1="80" y1="40" x2="80" y2="360" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="360" x2="660" y2="360" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="40" y="36" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price,</text>
+        <text x="40" y="50" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">cost</text>
+        <text x="660" y="382" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (Q)</text>
+
+        <!-- VIEW 1: kinked demand curve (kdc-1) -->
+        <g class="kdc-1" style="display:none">
+          <!-- Upper (elastic) segment: (80,140) -> kink (360,203) -->
+          <line x1="80" y1="140" x2="360" y2="203" stroke="#2563EB" stroke-width="2.6"/>
+          <!-- Lower (inelastic) segment: kink (360,203) -> (528,278) -->
+          <line x1="360" y1="203" x2="528" y2="278" stroke="#2563EB" stroke-width="2.6"/>
+          <text x="220" y="150" font-size="13" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">D / AR</text>
+          <!-- Kink marker -->
+          <circle cx="360" cy="203" r="6" fill="#0B1426" stroke="#fff" stroke-width="2"/>
+          <text x="372" y="198" font-size="12.5" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">Kink</text>
+          <!-- P and Q reference lines -->
+          <line x1="360" y1="203" x2="80" y2="203" stroke="#94A3B8" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <line x1="360" y1="203" x2="360" y2="360" stroke="#94A3B8" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="72" y="207" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P</text>
+          <text x="360" y="380" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q</text>
+          <!-- Elastic / inelastic annotations -->
+          <text x="150" y="120" font-size="10.5" font-weight="700" fill="#2563EB" font-family="Inter,sans-serif">Elastic above</text>
+          <text x="150" y="133" font-size="10" fill="#475569" font-family="Inter,sans-serif">(rivals don’t follow a rise)</text>
+          <text x="384" y="242" font-size="10.5" font-weight="700" fill="#2563EB" font-family="Inter,sans-serif">Inelastic below</text>
+          <text x="384" y="255" font-size="10" fill="#475569" font-family="Inter,sans-serif">(rivals match a cut)</text>
+        </g>
+
+        <!-- VIEW 2: MR with vertical gap (kdc-2) -->
+        <g class="kdc-2" style="display:none">
+          <!-- Upper MR: from (80,140) [MR=AR at Q=0] to (360,266) [MR=6 at kink] -->
+          <line x1="80" y1="140" x2="360" y2="266" stroke="#D97706" stroke-width="2.4"/>
+          <!-- Vertical discontinuity (the GAP): x=360 from y=266 (MR upper) to y=329 (MR lower) -->
+          <line x1="360" y1="266" x2="360" y2="329" stroke="#D97706" stroke-width="2.4" stroke-dasharray="5 3"/>
+          <circle cx="360" cy="266" r="4.5" fill="#fff" stroke="#D97706" stroke-width="2"/>
+          <circle cx="360" cy="329" r="4.5" fill="#fff" stroke="#D97706" stroke-width="2"/>
+          <!-- Lower MR: from (360,329) [MR=2 at kink] heading down steeply to (404,360) -->
+          <line x1="360" y1="329" x2="404" y2="360" stroke="#D97706" stroke-width="2.4"/>
+          <text x="408" y="356" font-size="13" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">MR</text>
+          <!-- Gap label -->
+          <text x="430" y="296" font-size="11" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">Gap in MR</text>
+          <text x="430" y="310" font-size="10" fill="#475569" font-family="Inter,sans-serif">(directly below the kink)</text>
+          <line x1="428" y1="298" x2="368" y2="298" stroke="#D97706" stroke-width="1" stroke-dasharray="2 2"/>
+        </g>
+
+        <!-- VIEW 3: MC through the gap → price rigidity (kdc-3) -->
+        <g class="kdc-3" style="display:none">
+          <!-- MC1 (lower): passes through the gap at x=360 (y≈319, within 266-329) -->
+          <line x1="80" y1="340" x2="620" y2="300" stroke="#DC2626" stroke-width="2.4"/>
+          <text x="624" y="300" font-size="12.5" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MC₁</text>
+          <!-- MC2 (higher): also passes through the gap at x=360 (y≈283, within 266-329) -->
+          <line x1="80" y1="300" x2="620" y2="268" stroke="#16A34A" stroke-width="2.4"/>
+          <text x="624" y="268" font-size="12.5" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">MC₂</text>
+          <!-- Highlight the gap segment -->
+          <rect x="354" y="266" width="12" height="63" rx="3" fill="#FCD34D" opacity="0.4"/>
+          <!-- Annotation -->
+          <rect x="412" y="60" width="244" height="74" rx="9" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.4"/>
+          <text x="426" y="84" font-size="14" font-family="Inter,sans-serif">💡</text>
+          <text x="450" y="84" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif">Price stays rigid</text>
+          <text x="426" y="104" font-size="11" fill="#92400E" font-family="Inter,sans-serif">MC can rise from MC₁ to MC₂ —</text>
+          <text x="426" y="119" font-size="11" fill="#92400E" font-family="Inter,sans-serif">as long as it cuts the gap, the firm</text>
+          <text x="426" y="134" font-size="11" fill="#92400E" font-family="Inter,sans-serif">still produces Q at price P.</text>
+        </g>
+      </svg>
+      </div>
+
+      <div class="okd-v">
+      <svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE DIAGRAM</text>
+        <line x1="44" y1="36" x2="44" y2="360" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="44" y1="360" x2="346" y2="360" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">P, cost</text>
+        <text x="346" y="382" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Mobile map: x = 44 + Q*30, y = 360 - P*15.7 (P 0..20). Kink Q=5 → x=194, P=10 → y=203 -->
+        <!-- VIEW 1 -->
+        <g class="kdc-1" style="display:none">
+          <line x1="44" y1="140" x2="194" y2="203" stroke="#2563EB" stroke-width="2.4"/>
+          <line x1="194" y1="203" x2="284" y2="263" stroke="#2563EB" stroke-width="2.4"/>
+          <text x="120" y="150" font-size="11" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">D/AR</text>
+          <circle cx="194" cy="203" r="5" fill="#0B1426" stroke="#fff" stroke-width="1.8"/>
+          <text x="204" y="198" font-size="11" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">Kink</text>
+          <line x1="194" y1="203" x2="44" y2="203" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="194" y1="203" x2="194" y2="360" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="38" y="207" font-size="11" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P</text>
+          <text x="194" y="380" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Q</text>
+        </g>
+        <!-- VIEW 2 -->
+        <g class="kdc-2" style="display:none">
+          <line x1="44" y1="140" x2="194" y2="266" stroke="#D97706" stroke-width="2.2"/>
+          <line x1="194" y1="266" x2="194" y2="329" stroke="#D97706" stroke-width="2.2" stroke-dasharray="5 3"/>
+          <circle cx="194" cy="266" r="4" fill="#fff" stroke="#D97706" stroke-width="1.8"/>
+          <circle cx="194" cy="329" r="4" fill="#fff" stroke="#D97706" stroke-width="1.8"/>
+          <line x1="194" y1="329" x2="218" y2="360" stroke="#D97706" stroke-width="2.2"/>
+          <text x="222" y="352" font-size="11" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">MR</text>
+          <text x="232" y="300" font-size="10" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">Gap</text>
+        </g>
+        <!-- VIEW 3 -->
+        <g class="kdc-3" style="display:none">
+          <rect x="189" y="266" width="10" height="63" rx="3" fill="#FCD34D" opacity="0.4"/>
+          <line x1="44" y1="335" x2="330" y2="300" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="312" y="296" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end" font-family="Inter,sans-serif">MC₁</text>
+          <line x1="44" y1="300" x2="330" y2="270" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="312" y="266" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">MC₂</text>
+          <text x="180" y="404" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">MC can shift in the gap → price stays rigid</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+  `,
+
   /* firmOwnershipObjectives – Card 5 "Who owns the firm – and what is it
      for?". Two stacked rows: the OWNERSHIP pair (private vs public sector
      around a central question), then the OBJECTIVES pair (for-profit vs

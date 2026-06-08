@@ -6,6 +6,46 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.96.36 — 2026-06-08
+
+### Oligopoly topic complete (6 cards, 3 bespoke visuals)
+
+Built the full introduction deck — Edexcel A 3.4.4. This is the
+INTRODUCTION to oligopoly only: collusion & cartels and game
+theory are taught as their own separate topics (Card 6 flags
+this explicitly so students don't conflate them).
+
+* **Card 1 — The big picture** — `oligopolyHub`: 4-feature hub
+  (Few large firms · Interdependence · Barriers to entry ·
+  Non-price competition) around a central "One market dominated
+  by a few firms" basket. Real-example tiles (petrol /
+  supermarkets / mobile networks).
+* **Card 2 — Interdependence** — 5-step reaction-story flow +
+  `oligopolyPriceReactions` twin panel (if one firm CUTS price:
+  rivals match → price war; if one firm RAISES price: rivals
+  don't follow → loses share) + non-price 4-tile grid.
+* **Card 3 — The kinked demand curve** — `oligopolyKinkedDemand`,
+  a fresh **geometrically accurate** interactive 3-view build
+  (the mock-up's version was wrong). View 1 = kinked D/AR
+  (elastic above, inelastic below). View 2 = MR with the
+  vertical discontinuity (gap) aligned directly below the kink.
+  View 3 = MC₁ and MC₂ both passing through the gap →
+  demonstrates price rigidity. Numbers: kink at Q=5, P=10;
+  upper demand P=14−0.8Q (MR→6 at kink); lower demand
+  P=18−1.6Q (MR→2 at kink); gap 6→2.
+* **Card 4 — Non-price competition** — 4-tool grid (advertising
+  / quality / service / innovation) + how-it-works flow +
+  real-world examples + limits pair.
+* **Card 5 — Why oligopolies persist** — 4 barriers grid + how-
+  a-barrier-protects-power flow + what-it-means tiles +
+  evaluation pair.
+* **Card 6 — The whole story** — 6-step synthesis chain +
+  evaluation-points grid + common-mistakes grid (incl. "don't
+  jump straight to collusion — separate topic") + how-to-write
+  4-step flow.
+
+Cache bump (icons.js change): v435.
+
 ## 0.96.35 — 2026-06-08
 
 ### Monopolistic Competition topic complete (6 cards, 5 visuals, 3 interactive)

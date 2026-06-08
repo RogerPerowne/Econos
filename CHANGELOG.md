@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.101.0 — 2026-06-08
+
+### Contestable Markets topic complete (6 cards, 1 bespoke visual)
+
+- Full interactive-first Learn It deck for **Contestable Markets
+  (Edexcel A 3.4.7)**, replacing the placeholder stub. Six cards: the
+  big picture → barriers to entry and exit → sunk costs & hit-and-run →
+  how contestability changes firm behaviour → high vs low contestability
+  → synthesis. A conceptual topic (no curve diagrams) built from flow
+  chains, pairs and tile grids.
+- **One bespoke visual:** `hitAndRunCycle` — an interactive five-stage
+  timeline (`hr-1..5`: supernormal profit → entrant spots it → entry →
+  profits competed away → hit-and-run exit) with a closing note that the
+  threat of entry alone disciplines the incumbent.
+
 ## 0.100.0 — 2026-06-08
 
 ### Monopsony topic complete (6 cards, 2 bespoke visuals)

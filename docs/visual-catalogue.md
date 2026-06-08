@@ -203,6 +203,9 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
     ticks → the cell ticked by both = Nash).
   - `repeatedGameCycle` — interactive tit-for-tat loop (`rgc-*`:
     co-operate → cheat → retaliate → profits fall → loop back).
+  - `hitAndRunCycle` — interactive five-stage hit-and-run timeline
+    (`hr-1..5`, Contestable Markets 3.4.7): supernormal profit → entrant
+    spots it → entry → profits competed away → hit-and-run exit.
 
 ### 8b. Firm cost-curve diagrams (MC / AC / AR / MR)
 *Use when:* a profit-maximising firm diagram (monopoly, monopolistic

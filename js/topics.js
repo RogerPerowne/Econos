@@ -1200,6 +1200,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'what-makes-exchange-rates-move',
+    name: 'What Makes Exchange Rates Move?',
+    sub: 'Demand and supply for a currency, the four big drivers',
+    color: '#0891b2',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.1.8', included: true },
+      edexcel_b: { spec: '3.1.5', included: true },
+      aqa:       { spec: '4.2.6.4', included: true },
+      ocr:       { spec: '4.2', included: true }
+    }
+  },
+  {
     id: 'exchange-rate-intervention',
     name: 'Exchange Rate Intervention',
     sub: 'Currency-market intervention, defending a peg, devaluation',

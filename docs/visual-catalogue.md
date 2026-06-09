@@ -358,6 +358,15 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   with thresholds" picture), and `povertyCausesOutcomes` (a row of cause
   nodes feeding one wider twin-outcome box — reuse for "many levers →
   two bundled results").
+- **What Makes Exchange Rates Move? 4.1.8 set** — `currencyMoveChain` (a
+  numbered mechanism chain where each step carries a green-▲ and amber-▼
+  tag — reuse for any "same chain, two opposite directions" mechanism),
+  `demandForPoundsHub` / `supplyOfPoundsHub` (mirrored centre-and-five-
+  spokes hubs — reuse for "one concept fed by five sources", and pair two
+  for a demand/supply or inflow/outflow mirror), and `exchangeDriversHub`
+  (a 2×2 radial driver hub around a central pressure pill — the
+  `competitivenessHub` grammar retoned). Card 5 reuses the
+  `fxFloatingShifts` two-panel FOREX chart spec.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

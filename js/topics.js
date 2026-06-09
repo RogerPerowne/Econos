@@ -1068,6 +1068,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'protecting-suppliers-and-employees',
+    name: 'Protecting Suppliers and Employees',
+    sub: 'Monopsony power, minimum wage, bargaining support, nationalisation',
+    color: '#0d9488',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '3.6.1', included: true },
+      edexcel_b: { spec: '4.2.2', included: true },
+      aqa:       { spec: '4.1.8.7', included: true },
+      ocr:       { spec: null, included: true }
+    }
+  },
+  {
     id: 'impact-of-government-intervention',
     name: 'Impact of Government Intervention',
     sub: 'Impact on prices, profit, efficiency, quality and choice; limits — regulatory capture and asymmetric information',

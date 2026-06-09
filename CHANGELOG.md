@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.108.0 — 2026-06-09
+
+### Protecting Suppliers and Employees topic complete (6 cards, 1 bespoke visual + 1 reuse)
+
+- New topic **Protecting Suppliers and Employees (Edexcel A 3.6.1)**
+  registered and built — the fourth and final government-intervention
+  sub-topic. Six cards: the big picture (two routes) → monopsony power →
+  the monopsony diagram → restricting monopsony power → nationalisation →
+  synthesis. Card 6 composed in the standard whole-story pattern (its
+  mockup arrived as a duplicate).
+- **One bespoke visual + one reuse:**
+  - `monopsonyMinWage` — interactive minimum-wage-in-a-monopsony diagram
+    (`mmw-1..2`: the monopsony outcome → a minimum wage between Wm and the
+    competitive wage that raises BOTH pay and employment, the result that
+    flips the standard minimum-wage verdict).
+  - Reused `monopsonyLabourDiagram` on the monopsony-diagram card.
+- This completes the four-part Government Intervention series: overview →
+  controlling market power → promoting competition → protecting suppliers
+  and employees.
+
 ## 0.107.0 — 2026-06-08
 
 ### Promoting Competition topic complete (6 cards)

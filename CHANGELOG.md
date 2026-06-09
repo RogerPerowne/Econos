@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.118.0 — 2026-06-09
+
+### Exchange Rate Intervention topic complete (6 cards, new topic)
+
+- **Exchange Rate Intervention (Edexcel A 4.1.8)** built, registered as a
+  new Theme 4 topic (sitting next to Exchange Rates) and flipped live. Six
+  cards: why governments intervene → foreign-currency transactions →
+  using interest rates → defending a fixed rate → competitive devaluation
+  → the whole story.
+- **Three new visuals:** `fxInterventionDiagrams` (two-panel chart —
+  support the £ by buying / weaken it by selling), `fxInterestMagnet` (a
+  dial-engine gauge showing a higher rate as a stronger magnet for
+  capital), and `fxPegDefence` (chart — a peg above equilibrium with
+  excess supply the central bank must buy with reserves).
+- Service worker cache bumped to `econos-v458`.
+
 ## 0.117.0 — 2026-06-09
 
 ### Exchange Rates topic complete (6 cards, 8 visuals incl. 2 hand-drawn illustrations)

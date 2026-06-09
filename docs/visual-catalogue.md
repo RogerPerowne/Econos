@@ -324,6 +324,11 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   `fxTerminologyGrid` (2×2 matrix). Chart specs: `fxMarketDiagram`
   (D£/S£ equilibrium) and `fxFloatingShifts` (2-panel appreciation vs
   depreciation) — reuse for any currency S&D diagram.
+- **Exchange Rate Intervention 4.1.8 set** — `fxInterventionDiagrams`
+  (2-panel: buy £ → demand right / sell £ → supply right), `fxPegDefence`
+  (peg above equilibrium, excess-supply gap the central bank buys) and
+  `fxInterestMagnet` (a dial-engine gauge wrapped as a "capital magnet" —
+  reuse for any "higher X = stronger pull" idea).
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

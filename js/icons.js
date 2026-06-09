@@ -4716,6 +4716,8 @@ window.ECONOS_ICONS = {
   subsidyTradeInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_TRADE_SPEC),
   fxMarketDiagram: window.ECONOS_PPF.render(window.ECONOS_FX_MARKET_SPEC),
   fxFloatingShifts: window.ECONOS_PPF.render(window.ECONOS_FX_FLOATING_SHIFTS_SPEC),
+  fxInterventionDiagrams: window.ECONOS_PPF.render(window.ECONOS_FX_INTERVENTION_SPEC),
+  fxPegDefence: window.ECONOS_PPF.render(window.ECONOS_FX_PEG_DEFENCE_SPEC),
 
   allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),
 
@@ -21786,6 +21788,42 @@ window.ECONOS_ICONS = {
         <div class="fxtg-rl"><div class="ic">🏛️</div><div class="t" style="color:#5B21B6;">Official change</div></div>
         <div class="fxtg-cell" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><span class="fxtg-cic">🏦</span><div><div class="fxtg-ct" style="color:#7C3AED;">Revaluation</div><div class="fxtg-cs">Official rise.</div></div></div>
         <div class="fxtg-cell" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><span class="fxtg-cic">🏦</span><div><div class="fxtg-ct" style="color:#EA580C;">Devaluation</div><div class="fxtg-cs">Official fall.</div></div></div>
+      </div>
+    </div>
+  `,
+
+  /* fxInterestMagnet – Card 3 of Exchange Rate Intervention. A gauge dial
+     showing that a higher interest rate is a stronger "magnet" pulling
+     capital (savers, funds, speculators) toward the currency. Wraps the
+     dial engine. */
+  fxInterestMagnet: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fxim-row{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;max-width:720px;margin:0 auto;}
+        .fxim-src{display:flex;flex-direction:column;gap:8px;}
+        .fxim-chip{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;background:#F5F3FF;border:1.5px solid #DDD6FE;border-radius:999px;padding:6px 12px;color:#5B21B6;}
+        .fxim-gauge{text-align:center;flex:0 0 auto;}
+        .fxim-pull{font-size:22px;color:#7C3AED;}
+        .fxim-tgt{text-align:center;background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:13px;padding:13px 15px;max-width:150px;}
+        @media(max-width:600px){.fxim-pull{transform:rotate(90deg);}}
+      </style>
+      <div class="fxim-row">
+        <div class="fxim-src">
+          <div class="fxim-chip">💰 Savers</div>
+          <div class="fxim-chip">📊 Portfolio funds</div>
+          <div class="fxim-chip">📈 Speculators</div>
+        </div>
+        <div class="fxim-pull">➜</div>
+        <div class="fxim-gauge">
+          ${window.ECONOS_DIALS.render({ type: 'gauge', size: 150, value: 7.6, min: 0, max: 10, tone: 'blue', ariaLabel: 'Higher interest rate means a stronger pull on capital flows' })}
+          <div style="font-size:12.5px;font-weight:800;color:#1E3A8A;margin-top:2px;">HIGHER RATE = STRONGER PULL</div>
+          <div style="font-size:10.5px;color:#64748B;">on capital flows</div>
+        </div>
+        <div class="fxim-pull">➜</div>
+        <div class="fxim-tgt">
+          <div style="font-size:30px;line-height:1;">💷</div>
+          <div style="font-size:12px;font-weight:800;color:#1E3A8A;margin-top:5px;">Currency attracts capital</div>
+        </div>
       </div>
     </div>
   `,

@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.126.0 — 2026-06-09
+
+### Development Factors: External Barriers topic complete (7 cards)
+
+- **Renamed** the placeholder 4.3.2 topic `factors-influencing-growth-and-
+  development` → **`development-factors-external-barriers`** ("Development
+  Factors: External Barriers"), the first of two 4.3.2 topics (the second,
+  "Domestic Capacity", will follow). Data directory renamed to match.
+- **Built the 7-card deck:** the big picture → primary product dependence
+  → commodity price volatility → the foreign-currency gap → capital flight
+  → debt and external fragility → the whole story.
+- **Two new HTML visuals:** `foreignCurrencyGap` (sources of foreign
+  currency fill a tank while uses drain it, leaving a "GAP" below the
+  needed level) and `capitalFlightHub` (the four reasons money flees a
+  country as a 2×2 radial hub around a "Capital flight" core).
+- Service worker cache bumped to `econos-v466`.
+
 ## 0.125.0 — 2026-06-09
 
 ### Measures of Development topic complete (6 cards)

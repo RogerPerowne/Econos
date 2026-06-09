@@ -4721,6 +4721,7 @@ window.ECONOS_ICONS = {
   lorenzCurve: window.ECONOS_PPF.render(window.ECONOS_LORENZ_CURVE_SPEC),
   lorenzCompare: window.ECONOS_PPF.render(window.ECONOS_LORENZ_COMPARE_SPEC),
   giniAreas: window.ECONOS_PPF.render(window.ECONOS_GINI_AREAS_SPEC),
+  bufferStockBands: window.ECONOS_PPF.render(window.ECONOS_BUFFER_STOCK_SPEC),
   kuznetsDevelopment: window.ECONOS_PPF.render(window.ECONOS_KUZNETS_CURVE_SPEC),
 
   allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),

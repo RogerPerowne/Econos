@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.129.0 — 2026-06-09
+
+### Development Strategies: Interventionist topic complete (8 cards)
+
+- **Development Strategies: Interventionist (Edexcel A 4.3.3)** built and
+  flipped live — the second of the three 4.3.3 strategy topics (alongside
+  Market-orientated; Other to follow). Eight cards: the big picture →
+  human capital → protectionism and infant industries → managed exchange
+  rates → infrastructure → joint ventures → buffer stocks → the whole story.
+- **One new chart-engine spec:** `bufferStockBands` (a commodity price
+  oscillating over time between a floor where the agency buys and a
+  ceiling where it sells, with the stability band shaded).
+- The rest of the deck reuses flow chains, tile grids and VS pairs — no
+  new bespoke HTML visuals.
+- Service worker cache bumped to `econos-v469`.
+
 ## 0.128.0 — 2026-06-09
 
 ### Development Strategies: Market-orientated topic complete (7 cards)

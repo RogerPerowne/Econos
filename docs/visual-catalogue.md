@@ -412,6 +412,12 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   pull-factor tiles — the `developmentDashboard` grid with a magnet centre,
   reuse for any "central force attracts X" story). Card 5 reuses the
   `fxMarketDiagram` FOREX demand/supply spec for the floating-rate diagram.
+- **Development Strategies: Interventionist 4.3.3 set** — `bufferStockBands`
+  (a price-vs-time wave clamped between a dashed floor and ceiling with the
+  stability band shaded, through `ECONOS_PPF` — reuse for any "variable
+  held within a target band over time" picture, e.g. inflation targeting,
+  managed-rate corridors). The rest of the deck reuses flow chains, tile
+  grids and VS pairs.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

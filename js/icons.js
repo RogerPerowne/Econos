@@ -20742,6 +20742,130 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* globalisationConnectsHub – Card 1 of Globalisation. A globe at the
+     centre with five numbered spokes radiating out to the things
+     globalisation connects (trade, capital, labour, technology, culture).
+     Radial pentagon layout via percentage absolute positioning inside an
+     aspect-ratio box; dashed SVG spokes fan from each tile to the globe.
+     Collapses to a single column on mobile (spokes hidden). */
+  globalisationConnectsHub: `
+    <div class="gch" style="line-height:1.5;background:#fff;border-radius:14px;padding:20px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .gch .gch-stage { position:relative; max-width:760px; margin:0 auto; aspect-ratio:76/47; }
+        .gch .gch-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .gch .gch-tile { position:absolute; transform:translate(-50%,-50%); width:26%; min-width:150px; box-sizing:border-box; border-radius:13px; padding:11px 12px; box-shadow:0 2px 6px rgba(15,23,42,0.06); z-index:1; }
+        .gch .gch-num { position:absolute; top:-11px; left:-11px; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12.5px; font-weight:800; color:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.18); }
+        .gch .gch-ic { font-size:24px; line-height:1; }
+        .gch .gch-t { font-size:13.5px; font-weight:800; line-height:1.2; margin-top:5px; }
+        .gch .gch-s { font-size:11.5px; color:#475569; line-height:1.35; margin-top:3px; }
+        .gch .gch-globe { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; width:128px; height:128px; border-radius:50%; background:radial-gradient(circle at 38% 32%, #E0F2FE 0%, #BAE6FD 55%, #7DD3FC 100%); border:3px solid #0EA5E9; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 0 0 8px rgba(224,242,254,0.7), 0 8px 22px rgba(2,132,199,0.22); }
+        @media (max-width:640px){
+          .gch .gch-stage { aspect-ratio:auto; }
+          .gch .gch-conn { display:none; }
+          .gch .gch-tile { position:static; transform:none; width:100%; min-width:0; margin:0 0 11px; }
+          .gch .gch-num { position:static; display:inline-flex; margin-right:8px; vertical-align:middle; }
+          .gch .gch-globe { position:static; transform:none; margin:4px auto 14px; }
+        }
+      </style>
+      <div class="gch-stage">
+        <svg class="gch-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 50 14 L 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 85 42 L 50 50" fill="none" stroke="#FCD34D" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 71 86 L 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 29 86 L 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 15 42 L 50 50" fill="none" stroke="#F9A8D4" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+        </svg>
+        <div class="gch-globe">
+          <div style="font-size:42px;line-height:1;">🌐</div>
+          <div style="font-size:11px;font-weight:800;color:#075985;letter-spacing:0.05em;margin-top:3px;">CONNECTED</div>
+        </div>
+        <div class="gch-tile" style="left:50%;top:14%;background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="gch-num" style="background:#2563EB;">1</div>
+          <div class="gch-ic">🚢</div>
+          <div class="gch-t" style="color:#1E3A8A;">Trade in goods &amp; services</div>
+          <div class="gch-s">More crosses borders than ever.</div>
+        </div>
+        <div class="gch-tile" style="left:85%;top:42%;background:#FFFBEB;border:1.5px solid #FCD34D;">
+          <div class="gch-num" style="background:#D97706;">2</div>
+          <div class="gch-ic">💱</div>
+          <div class="gch-t" style="color:#92400E;">Capital flows</div>
+          <div class="gch-s">Investment and finance move freely.</div>
+        </div>
+        <div class="gch-tile" style="left:71%;top:86%;background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="gch-num" style="background:#059669;">3</div>
+          <div class="gch-ic">🧳</div>
+          <div class="gch-t" style="color:#065F46;">Labour &amp; migration</div>
+          <div class="gch-s">People move for work and skills.</div>
+        </div>
+        <div class="gch-tile" style="left:29%;top:86%;background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <div class="gch-num" style="background:#7C3AED;">4</div>
+          <div class="gch-ic">📡</div>
+          <div class="gch-t" style="color:#5B21B6;">Technology &amp; information</div>
+          <div class="gch-s">Ideas and data spread instantly.</div>
+        </div>
+        <div class="gch-tile" style="left:15%;top:42%;background:#FDF2F8;border:1.5px solid #F9A8D4;">
+          <div class="gch-num" style="background:#DB2777;">5</div>
+          <div class="gch-ic">🎬</div>
+          <div class="gch-t" style="color:#9D174D;">Brands &amp; culture</div>
+          <div class="gch-s">Products and culture go global.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* globalSupplyChainMap – Card 3 of Globalisation. A horizontal "one
+     product, many countries" ribbon: five stages (design → components →
+     assembly → shipping → retail), each a node with a location label,
+     connected by arrows over a subtle world gradient. A dashed journey
+     line runs beneath. Flex row; wraps to two rows on narrow screens. */
+  globalSupplyChainMap: `
+    <div class="gsc" style="line-height:1.5;background:linear-gradient(135deg,#F0F9FF 0%,#F5F3FF 100%);border-radius:14px;padding:18px 14px 16px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .gsc-row { display:flex; align-items:stretch; justify-content:center; gap:3px; flex-wrap:wrap; max-width:780px; margin:0 auto; }
+        .gsc-node { flex:1 1 0; min-width:88px; max-width:128px; background:#fff; border-radius:13px; border:1.5px solid #E2E8F0; padding:12px 6px 10px; text-align:center; box-shadow:0 2px 6px rgba(15,23,42,0.06); }
+        .gsc-disc { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; margin:0 auto 6px; }
+        .gsc-stage { font-size:12.5px; font-weight:800; line-height:1.2; }
+        .gsc-loc { display:inline-block; margin-top:6px; font-size:9.5px; font-weight:700; padding:2px 6px; border-radius:999px; background:#F1F5F9; color:#475569; white-space:nowrap; }
+        .gsc-arr { display:flex; align-items:center; font-size:16px; color:#94A3B8; flex:0 0 auto; }
+        @media (max-width:560px){ .gsc-arr { transform:rotate(90deg); } .gsc-node { min-width:140px; } }
+      </style>
+      <div class="gsc-row">
+        <div class="gsc-node">
+          <div class="gsc-disc" style="background:#EFF6FF;">🎨</div>
+          <div class="gsc-stage" style="color:#1E3A8A;">Design</div>
+          <div class="gsc-loc">🇺🇸 USA / UK</div>
+        </div>
+        <div class="gsc-arr">→</div>
+        <div class="gsc-node">
+          <div class="gsc-disc" style="background:#FFFBEB;">🔩</div>
+          <div class="gsc-stage" style="color:#92400E;">Components</div>
+          <div class="gsc-loc">🌏 East Asia</div>
+        </div>
+        <div class="gsc-arr">→</div>
+        <div class="gsc-node">
+          <div class="gsc-disc" style="background:#F5F3FF;">🏭</div>
+          <div class="gsc-stage" style="color:#5B21B6;">Assembly</div>
+          <div class="gsc-loc">🇨🇳 China</div>
+        </div>
+        <div class="gsc-arr">→</div>
+        <div class="gsc-node">
+          <div class="gsc-disc" style="background:#ECFEFF;">🚢</div>
+          <div class="gsc-stage" style="color:#155E75;">Shipping</div>
+          <div class="gsc-loc">🌊 Worldwide</div>
+        </div>
+        <div class="gsc-arr">→</div>
+        <div class="gsc-node">
+          <div class="gsc-disc" style="background:#ECFDF5;">🛍️</div>
+          <div class="gsc-stage" style="color:#065F46;">Retail</div>
+          <div class="gsc-loc">🌍 Everywhere</div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:11.5px;color:#64748B;margin-top:13px;max-width:640px;margin-left:auto;margin-right:auto;">
+        Each stage is located where it adds the most value — the finished product is a <strong>global value chain</strong>.
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

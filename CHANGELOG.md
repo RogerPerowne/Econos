@@ -6,6 +6,31 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.110.0 — 2026-06-09
+
+### Globalisation topic complete — Theme 4 opens (6 cards, 2 bespoke visuals)
+
+- **Globalisation (Edexcel A 4.1.1)** built and flipped live — the first
+  Theme 4 (A Global Perspective) topic. Six cards: the big picture → what
+  drove globalisation → global supply chains and global companies → the
+  gains → the costs and risks → the whole story. Defines globalisation and
+  its characteristics, explains the drivers, traces a global value chain,
+  then weighs the gains (consumers, producers, workers, developing
+  economies) against the costs (inequality, insecurity, tax avoidance,
+  environmental damage, contagion) before a balanced trade-off judgement.
+- **Two bespoke visuals** built to match the mockups closely:
+  - `globalisationConnectsHub` — a globe at the centre with five numbered
+    spokes radiating to what globalisation connects (trade, capital,
+    labour, technology, brands & culture); dashed SVG spokes, pentagon
+    layout, collapses to a single column on mobile.
+  - `globalSupplyChainMap` — a "one product, many countries" ribbon:
+    design → components → assembly → shipping → retail, each stage with a
+    location pill, over a subtle world gradient.
+- **Card patterns** vary across the deck (interactive hub → flow chain →
+  decompose → flow chain → tile grid → evidence-then-verdict), with no two
+  consecutive cards repeating the dominant pattern.
+- Service worker cache bumped to `econos-v450`.
+
 ## 0.109.0 — 2026-06-09
 
 ### Impact of Government Intervention topic complete (6 cards, 3 bespoke visuals)

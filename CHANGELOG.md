@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.134.0 — 2026-06-09
+
+### Site review: distinct cover hero per Theme 4 topic
+
+- The 14 Theme 4 topics built this session all shared the same `heroGlobe`
+  cover illustration. Each now has a distinct, on-theme hero from the
+  existing art library: International Competitiveness → `heroTrade`,
+  Absolute & Relative Poverty → `heroWellbeing`, What Makes Exchange Rates
+  Move? → `heroExchangeRates`, Inequality & Causes of Inequality →
+  `heroInequality`, Measures of Development & Development Strategies: Other →
+  `heroDevelopment`, Domestic Capacity → `heroGrowth`, Market-orientated →
+  `heroSupplyDemand`, Interventionist → `heroIntervention`, Role of
+  Financial Markets → `heroFinancialMarkets`, Market Failure in Finance →
+  `heroMarketFailure`, Role of Central Banks → `heroMonetary` (External
+  Barriers keeps `heroGlobe`). Data-only change; all 14 covers verified.
+
 ## 0.133.0 — 2026-06-09
 
 ### Role of Central Banks topic complete (6 cards)

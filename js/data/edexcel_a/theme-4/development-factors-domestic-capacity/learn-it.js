@@ -21,7 +21,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain how a country builds productive capacity at home — through savings, finance, infrastructure, demography, human capital and institutions — and evaluate which foundation matters most',
 
   intro: {
-    heroKey: 'heroGlobe',
+    heroKey: 'heroGrowth',
     summary: 'While external barriers come from a country\'s place in the world economy, domestic capacity is about what a country builds at home. Development depends on turning people, savings and institutions into productive capacity. This deck works through the foundations. The Harrod-Domar model shows how low income can trap an economy in low saving, low investment and low growth — and how breaking that loop raises capital and productivity. Finance and banking matter because they turn savings into productive investment for firms and farmers. Infrastructure lowers costs and connects markets across the whole economy. Demography can be a burden or a dividend depending on jobs, skills and productivity. Human capital — education and skills — raises productivity and helps an economy absorb technology. And property rights, governance and political stability decide whether people invest, innovate and stay. The thread throughout: development is faster when a country strengthens the foundations that raise productivity.',
     doInThis: 'Map the foundations of productive capacity. Explain the Harrod-Domar savings gap and how to break it. Show how finance turns savings into investment. Explain infrastructure as a system constraint. Weigh demography as burden or dividend. Link human capital and institutions to growth and development.',
     outcomes: [

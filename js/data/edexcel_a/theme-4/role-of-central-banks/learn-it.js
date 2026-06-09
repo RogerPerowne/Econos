@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain the four core functions of a central bank — monetary policy, banker to the government, banker to the banks and regulation — and evaluate how they keep the system stable',
 
   intro: {
-    heroKey: 'heroGlobe',
+    heroKey: 'heroMonetary',
     summary: 'A central bank sits at the heart of the financial system. It is not an ordinary bank that serves the public — it manages the system around the banks, shaping money, credit, confidence and stability. This deck works through its four core functions. Monetary policy uses the policy interest rate (and tools like asset purchases) to influence borrowing, spending, aggregate demand and inflation through the transmission mechanism. As banker to the government it holds accounts, processes payments and manages the national debt. As banker to the banks it provides reserves and routine liquidity, and acts as lender of last resort in a crisis to stop panic spreading. And through regulation it supervises banks, sets capital and liquidity rules and protects financial stability. The thread throughout: the central bank manages the plumbing of the whole economy, which is why its credibility and independence matter so much.',
     doInThis: 'Set out the four core functions of a central bank. Explain how monetary policy works through the transmission mechanism. Explain its role as banker to the government and to the banks. Explain lender of last resort and the liquidity/solvency distinction. Explain banking regulation, then evaluate the trade-offs.',
     outcomes: [

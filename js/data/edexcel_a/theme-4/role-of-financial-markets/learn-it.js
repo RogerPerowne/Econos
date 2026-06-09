@@ -17,7 +17,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain the core functions of financial markets — saving, lending, payments, risk management and raising equity — and why they matter for the wider economy',
 
   intro: {
-    heroKey: 'heroGlobe',
+    heroKey: 'heroFinancialMarkets',
     summary: 'Financial markets move money from those who have it to those who can use it, and they let the wider economy trade, invest, manage risk and grow. This deck works through their core roles. Saving channels spare income into investable funds. Lending and intermediation move money from savers to borrowers who put it to work. Payments systems make exchange quick and safe, enabling specialisation and trade. Forward markets let firms lock in a future price or exchange rate to manage risk. And equity markets let firms raise long-term capital by selling shares. The thread throughout is that markets perform functions — allocating funds, enabling exchange, spreading risk and providing finance — that the rest of the economy depends on, which is also why their failure matters so much.',
     doInThis: 'Set out the core functions of financial markets. Explain how saving becomes investable funds. Show how lending and intermediation work. Explain payments and exchange. Show how forward markets manage risk. Explain how equity markets raise capital, then evaluate why markets matter.',
     outcomes: [

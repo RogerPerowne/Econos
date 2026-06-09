@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.107.0 — 2026-06-08
+
+### Promoting Competition topic complete (6 cards)
+
+- New topic **Promoting Competition (Edexcel A 3.6.1)** registered and
+  built — the third government-intervention sub-topic. Six cards: the
+  big picture (four levers) → deregulation → supporting small business
+  & entry → competitive tendering → privatisation → synthesis. A
+  conceptual topic (flow / pair / tile blocks). Card 6 was composed in
+  the standard whole-story pattern (its mockup arrived as a duplicate).
+
+### Renderer fix — icon-top in the non-first causes branches
+
+- The non-`causesFirst` `causes`/`causes2` branches and the
+  `causesFirst` `causes2` branch ignored `causesStyle/causes2Style:
+  'icon-top'`, rendering icon-left instead. At 4 columns that
+  over-shrank the head and broke long words one-character-per-line.
+  All four causes branches now honour the explicit `icon-top` style
+  (gated, so default icon-left is unchanged) — fixing this topic and
+  aligning every prior topic's icon-top rows.
+
 ## 0.106.0 — 2026-06-08
 
 ### Controlling Market Power topic complete (5 cards, 1 bespoke visual)

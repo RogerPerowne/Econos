@@ -423,6 +423,11 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   aftermath, with five colour-coded phase dots, through `ECONOS_PPF` —
   reuse for any boom-bust / overshoot-and-correct lifecycle). The rest of
   the deck reuses flow chains, tile grids and VS pairs.
+- **Role of Central Banks 4.4.3 set** — `centralBankHub` (the four core
+  central-bank functions as a 2×2 radial hub around a "Central bank" core —
+  the `exchangeDriversHub` / `capacityEngineHub` grammar retoned amber).
+  The rest of the deck reuses the transmission-chain flow, tile grids and
+  VS pairs.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

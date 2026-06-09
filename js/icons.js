@@ -22854,6 +22854,56 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* centralBankHub – Role of Central Banks card 1. The four core
+     functions of a central bank around a central "Central bank" pill.
+     2x2 radial hub. */
+  centralBankHub: `
+    <div class="cbh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cbh .cbh-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:26%;row-gap:18px;position:relative;z-index:1;}
+        .cbh .cbh-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;}
+        .cbh .cbh-conn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+        .cbh .cbh-tile{border-radius:13px;padding:13px 15px;min-height:104px;box-sizing:border-box;box-shadow:0 2px 6px rgba(15,23,42,.05);}
+        .cbh .cbh-h{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
+        .cbh .cbh-ic{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+        .cbh .cbh-t{font-size:13px;font-weight:800;line-height:1.15;}
+        .cbh .cbh-s{font-size:11.5px;color:#475569;line-height:1.35;}
+        .cbh .cbh-circ{width:132px;height:132px;border-radius:50%;background:#FFF7ED;border:2.5px solid #B45309;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 8px rgba(255,247,237,.6),0 6px 18px rgba(180,83,9,.18);}
+        @media(max-width:640px){.cbh .cbh-grid{grid-template-columns:1fr;column-gap:0;row-gap:12px;}.cbh .cbh-center{position:static;transform:none;margin:8px auto;}.cbh .cbh-center-wrap{order:99;display:flex;justify-content:center;}.cbh .cbh-conn{display:none;}}
+      </style>
+      <div style="position:relative;max-width:760px;margin:0 auto;">
+        <svg class="cbh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 24 C 44 24,44 50,50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 24 C 56 24,56 50,50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 76 C 44 76,44 50,50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 76 C 56 76,56 50,50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="cbh-grid">
+          <div class="cbh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;">
+            <div class="cbh-h"><div class="cbh-ic">\u{1F4C8}</div><div class="cbh-t" style="color:#1E3A8A;">Monetary policy</div></div>
+            <div class="cbh-s">Sets policy to influence money, credit and inflation.</div>
+          </div>
+          <div class="cbh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;">
+            <div class="cbh-h"><div class="cbh-ic">\u{1F3DB}️</div><div class="cbh-t" style="color:#5B21B6;">Banker to the government</div></div>
+            <div class="cbh-s">Manages government accounts and debt.</div>
+          </div>
+          <div class="cbh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;">
+            <div class="cbh-h"><div class="cbh-ic">\u{1F3E6}</div><div class="cbh-t" style="color:#065F46;">Banker to the banks</div></div>
+            <div class="cbh-s">Provides liquidity and acts as lender of last resort.</div>
+          </div>
+          <div class="cbh-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;">
+            <div class="cbh-h"><div class="cbh-ic">\u{1F6E1}️</div><div class="cbh-t" style="color:#B91C1C;">Regulation &amp; stability</div></div>
+            <div class="cbh-s">Oversees banks and promotes a safe, sound system.</div>
+          </div>
+        </div>
+        <div class="cbh-center-wrap"><div class="cbh-center"><div class="cbh-circ">
+          <div style="font-size:32px;line-height:1;">\u{1F3DB}️</div>
+          <div style="font-size:12px;font-weight:800;color:#854D0E;margin-top:3px;line-height:1.15;">Central<br>bank</div>
+        </div></div></div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

@@ -20602,6 +20602,146 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     IMPACT OF GOVERNMENT INTERVENTION (3.6.2) — bespoke visuals.
+     ============================================================ */
+
+  /* priceProfitTools — Card 2. Two panels: price regulation (with a
+     Before-monopoly / After-cap mini-table) and profit regulation
+     (a two-step flow). Stacks on mobile. */
+  priceProfitTools: `
+    <div class="ppt" style="background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;line-height:1.4;">
+      <style>
+        .ppt .ppt-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:14px; }
+        .ppt .ppt-panel { border-radius:14px; padding:14px 13px 12px; min-width:0; }
+        .ppt .ppt-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+        .ppt .ppt-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .ppt .ppt-title { font-size:15px; font-weight:800; font-family:Fraunces,Georgia,serif; line-height:1.1; min-width:0; }
+        .ppt .ppt-flow { display:flex; flex-direction:column; align-items:stretch; gap:6px; margin-bottom:12px; }
+        .ppt .ppt-box { background:#fff; border:1.4px solid #E2E8F0; border-radius:10px; padding:9px 11px; min-width:0; }
+        .ppt .ppt-bx-t { font-size:11px; font-weight:800; color:#334155; margin-bottom:5px; }
+        .ppt .ppt-kv { display:flex; justify-content:space-between; align-items:center; gap:6px; font-size:12px; margin:3px 0; }
+        .ppt .ppt-pill { font-weight:800; padding:1px 9px; border-radius:6px; font-size:11px; }
+        .ppt .ppt-arrow { text-align:center; color:#94A3B8; font-size:16px; font-weight:800; line-height:1; }
+        .ppt .ppt-simple { background:#fff; border:1.4px solid #E2E8F0; border-radius:10px; padding:10px 9px; font-size:11.5px; font-weight:700; color:#334155; text-align:center; line-height:1.3; min-width:0; overflow-wrap:break-word; }
+        .ppt .ppt-bul { display:flex; align-items:flex-start; gap:8px; font-size:12px; color:#0B1426; line-height:1.4; margin-top:7px; }
+        .ppt .ppt-chk { flex-shrink:0; font-size:13px; line-height:1.2; }
+        @media (max-width:600px){ .ppt .ppt-grid{ grid-template-columns:1fr; } }
+      </style>
+      <div class="ppt-grid">
+        <div class="ppt-panel" style="background:#EFF6FF;border:1.5px solid #BFDBFE;">
+          <div class="ppt-head"><div class="ppt-ic">🏷️</div><div class="ppt-title" style="color:#1D4ED8;">Price regulation</div></div>
+          <div class="ppt-flow">
+            <div class="ppt-box"><div class="ppt-bx-t">Before <span style="font-weight:600;color:#64748B;">(monopoly)</span></div>
+              <div class="ppt-kv"><span style="color:#475569;">Price</span><span class="ppt-pill" style="background:#FEE2E2;color:#B91C1C;">High</span></div>
+              <div class="ppt-kv"><span style="color:#475569;">Output</span><span class="ppt-pill" style="background:#FEE2E2;color:#B91C1C;">Low</span></div>
+            </div>
+            <div class="ppt-arrow">↓</div>
+            <div class="ppt-box"><div class="ppt-bx-t">After <span style="font-weight:600;color:#64748B;">(price cap)</span></div>
+              <div class="ppt-kv"><span style="color:#475569;">Price</span><span class="ppt-pill" style="background:#DBEAFE;color:#1D4ED8;">Lower</span></div>
+              <div class="ppt-kv"><span style="color:#475569;">Output</span><span class="ppt-pill" style="background:#DCFCE7;color:#15803D;">Higher</span></div>
+            </div>
+          </div>
+          <div class="ppt-bul"><span class="ppt-chk">✅</span>Cuts excessive prices</div>
+          <div class="ppt-bul"><span class="ppt-chk">✅</span>Can expand consumer access</div>
+          <div class="ppt-bul"><span class="ppt-chk">✅</span>May reduce profit margins</div>
+        </div>
+        <div class="ppt-panel" style="background:#FFF7ED;border:1.5px solid #FED7AA;">
+          <div class="ppt-head"><div class="ppt-ic">💷</div><div class="ppt-title" style="color:#C2410C;">Profit regulation</div></div>
+          <div class="ppt-flow">
+            <div class="ppt-simple">Firm earns supernormal profit</div>
+            <div class="ppt-arrow">↓</div>
+            <div class="ppt-simple">Regulator sets profit ceiling / allowed return</div>
+          </div>
+          <div class="ppt-bul"><span class="ppt-chk">🟠</span>Limits supernormal profit</div>
+          <div class="ppt-bul"><span class="ppt-chk">🟠</span>Useful where competition is weak</div>
+          <div class="ppt-bul"><span class="ppt-chk">🟠</span>Too strict can weaken incentives</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* qualityVsCostTension — Card 3. The firm pulled between lower costs
+     (left) and higher quality (right). Stacks on mobile. */
+  qualityVsCostTension: `
+    <div class="qvc" style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;line-height:1.4;">
+      <style>
+        .qvc .qvc-row { display:grid; grid-template-columns:1fr 150px 1fr; align-items:center; gap:0; }
+        .qvc .qvc-side { padding:0 6px; }
+        .qvc .qvc-st { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:800; margin-bottom:5px; }
+        .qvc .qvc-ss { font-size:12px; color:#475569; line-height:1.4; }
+        .qvc .qvc-mid { text-align:center; }
+        .qvc .qvc-firm { width:64px; height:64px; border-radius:50%; background:#EFF6FF; border:2px solid #93C5FD; display:flex; align-items:center; justify-content:center; font-size:30px; margin:0 auto; }
+        .qvc .qvc-scales { display:flex; align-items:center; justify-content:center; gap:8px; font-size:18px; color:#94A3B8; margin-top:6px; }
+        .qvc .qvc-cap { font-size:12px; color:#475569; font-style:italic; text-align:center; line-height:1.45; margin-top:16px; }
+        @media (max-width:560px){ .qvc .qvc-row{ grid-template-columns:1fr; gap:12px; } .qvc .qvc-side{ text-align:center; } .qvc .qvc-mid{ margin:6px 0; } }
+      </style>
+      <div class="qvc-row">
+        <div class="qvc-side" style="text-align:right;">
+          <div class="qvc-st" style="color:#1D4ED8;justify-content:flex-end;">⬇️ lower costs</div>
+          <div class="qvc-ss">Reduce prices and operating costs.</div>
+        </div>
+        <div class="qvc-mid">
+          <div class="qvc-scales"><span>←</span><span>⚖️</span></div>
+          <div class="qvc-firm">🏢</div>
+          <div class="qvc-scales"><span>⚖️</span><span>→</span></div>
+        </div>
+        <div class="qvc-side" style="text-align:left;">
+          <div class="qvc-st" style="color:#15803D;">⬆️ higher quality</div>
+          <div class="qvc-ss">Improve standards and service quality.</div>
+        </div>
+      </div>
+      <div class="qvc-cap">Without regulation, firms may cut quality to save cost. With poor regulation, firms may spend on hitting targets rather than genuine improvement.</div>
+    </div>
+  `,
+
+  /* consumerChoiceHub — Card 4. Four impacts around a central CONSUMERS
+     node. Same 4-spoke hub grammar as firmFourLensesHub. */
+  consumerChoiceHub: `
+    <div class="cch" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cch .cch-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:18px; position:relative; z-index:1; }
+        .cch .cch-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .cch .cch-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .cch .cch-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:center; min-height:104px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .cch .cch-ic { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .cch .cch-t { font-size:14px; font-weight:800; line-height:1.2; }
+        .cch .cch-s { font-size:12px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){ .cch > div { display:flex; flex-direction:column-reverse; } .cch .cch-grid{ grid-template-columns:1fr; column-gap:0; row-gap:12px; } .cch .cch-center{ position:static; transform:none; margin:6px auto; } .cch .cch-center-wrap{ order:99; display:flex; justify-content:center; } .cch .cch-conn{ display:none; } }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="cch-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 23 C 44 23, 44 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 23 C 56 23, 56 50, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 77 C 44 77, 44 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 77 C 56 77, 56 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="cch-grid">
+          <div class="cch-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="cch-ic">👥</div>
+            <div><div class="cch-t" style="color:#065F46;">More firms</div><div class="cch-s">More suppliers can enter the market.</div></div>
+          </div>
+          <div class="cch-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="cch-ic">🛒</div>
+            <div><div class="cch-t" style="color:#1E3A8A;">More products</div><div class="cch-s">Wider range and greater innovation.</div></div>
+          </div>
+          <div class="cch-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="cch-ic">🎧</div>
+            <div><div class="cch-t" style="color:#C2410C;">Better service</div><div class="cch-s">Rivalry drives higher standards and support.</div></div>
+          </div>
+          <div class="cch-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="cch-ic">⚠️</div>
+            <div><div class="cch-t" style="color:#5B21B6;">Risk of duplication</div><div class="cch-s">Too many firms may waste resources or leave gaps.</div></div>
+          </div>
+        </div>
+        <div class="cch-center-wrap"><div class="cch-center" style="background:#fff;border:2.4px solid #2563EB;border-radius:50%;width:116px;height:116px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;box-shadow:0 0 0 7px rgba(239,246,255,0.8), 0 6px 18px rgba(11,20,38,0.1);">
+          <div style="font-size:32px;line-height:1;">👥</div>
+          <div style="font-size:11px;font-weight:800;color:#1E3A8A;text-align:center;margin-top:5px;letter-spacing:0.05em;">CONSUMERS</div>
+        </div></div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

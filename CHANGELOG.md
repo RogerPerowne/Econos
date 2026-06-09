@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.109.0 — 2026-06-09
+
+### Impact of Government Intervention topic complete (6 cards, 3 bespoke visuals)
+
+- **Impact of Government Intervention (Edexcel A 3.6.2)** built and flipped
+  live — the final Theme 3 topic. Six cards: the big picture → prices and
+  profit → efficiency and quality → choice, competition and contestability
+  → why intervention can fail → synthesis. The evaluation companion to the
+  intervention decks (impact on prices/profit/efficiency/quality/choice,
+  plus capture and asymmetric information).
+- **Three bespoke visuals** built to match the mockups closely:
+  - `priceProfitTools` — two-panel tools: price regulation with a
+    Before(monopoly)/After(cap) mini-table, and profit regulation's
+    two-step flow.
+  - `qualityVsCostTension` — the firm pulled between lower costs and
+    higher quality, flanked by scales.
+  - `consumerChoiceHub` — a four-spoke CONSUMERS hub (more firms, more
+    products, better service, risk of duplication).
+- **This completes Theme 3** (Business Behaviour and the Labour Market):
+  firm theory, the labour market, and the full four-part government
+  intervention series plus its impact/evaluation topic.
+
 ## 0.108.0 — 2026-06-09
 
 ### Protecting Suppliers and Employees topic complete (6 cards, 1 bespoke visual + 1 reuse)

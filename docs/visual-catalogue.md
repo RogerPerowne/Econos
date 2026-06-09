@@ -250,6 +250,14 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   `monopsonyLabourDiagram`.
 - **Monopsony (3.4.6):** `monopsonyLabourDiagram` (see §8b).
 
+### 8d. Government-intervention bespoke visuals (3.6)
+- `priceCapMonopoly` (Controlling Market Power), `monopsonyMinWage`
+  (Protecting Suppliers & Employees) — see §8b.
+- `govStakeholderHub`, `consumerChoiceHub` (4-spoke), `priceProfitTools`
+  (two-panel price/profit tools with a before/after table),
+  `qualityVsCostTension` (firm pulled between lower cost and higher
+  quality) — Impact of Government Intervention 3.6.2.
+
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.
 - `landTypesSvg`, `capitalTypesSvg`, `enterpriseCombinationSvg`,

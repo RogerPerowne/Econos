@@ -4711,6 +4711,9 @@ window.ECONOS_ICONS = {
   cpsDiagram: window.ECONOS_PPF.render(window.ECONOS_CPS_DIAGRAM_SPEC),
   cpsBuildInteractive: window.ECONOS_PPF.render(window.ECONOS_CPS_BUILD_SPEC),
   subsidyDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_DIAGRAM_SPEC),
+  tariffDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_TARIFF_DIAGRAM_SPEC),
+  quotaDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_QUOTA_DIAGRAM_SPEC),
+  subsidyTradeInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_TRADE_SPEC),
 
   allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),
 

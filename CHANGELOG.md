@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.123.0 — 2026-06-09
+
+### Inequality topic complete (6 cards)
+
+- **Inequality (Edexcel A 4.2.2)** built and flipped live as a Theme 4
+  Development Economics topic. Six cards: the big picture (income vs
+  wealth) → income vs wealth inequality → the Lorenz curve → reading the
+  Lorenz curve → the Gini coefficient → the whole story.
+- **Three new chart-engine specs** (Lorenz/Gini geometry through
+  `ECONOS_PPF`, not hand-rolled SVG): `lorenzCurve` (the 45° line of
+  equality + a bowed Lorenz cubic), `lorenzCompare` (a two-panel
+  country-vs-country and change-over-time comparison) and `giniAreas`
+  (the Lorenz diagram with the shaded A and B areas behind
+  Gini = A ÷ (A + B), traced as polygons sampled along the same cubic).
+- **Two new HTML visuals:** `flowVsStock` (the income-flow / wealth-stock
+  tap-vs-reservoir metaphor) and `giniScale` (the green→red 0→1 Gini
+  scale with reference markers).
+- Service worker cache bumped to `econos-v463`.
+
 ## 0.122.0 — 2026-06-09
 
 ### What Makes Exchange Rates Move? topic complete (6 cards)

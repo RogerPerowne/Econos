@@ -336,6 +336,15 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   branching transmission mechanism) and `fxMacroChannels` (a 4-row
   label | weaker | vs | stronger comparison grid). Card 6 reuses the
   existing `jCurveInteractive` chart spec.
+- **International Competitiveness 4.1.9 set** — `competitivenessHub` (a
+  four-spoke radial hub orbiting a centre node — reuse for any "one idea
+  fed by four drivers" map), `costChain` (a five-node chain wired with
+  interlocking SVG chain-link connectors — reuse for any "A feeds B feeds
+  C" causal sequence where the links themselves should read as a chain),
+  `competeRace` (a two-panel race with a central VS badge — reuse for any
+  "regime A vs regime B" head-to-head), and `competitivenessGaugeHub` (a
+  driver tile grid wrapped around a live `ECONOS_DIALS` gauge — reuse for
+  any "many inputs → one index readout" composite).
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

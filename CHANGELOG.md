@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.120.0 — 2026-06-09
+
+### International Competitiveness topic complete (7 cards)
+
+- **International Competitiveness (Edexcel A 4.1.9)** built and flipped
+  live as a new Theme 4 topic. Seven cards: the big picture → the two
+  core measures (relative ULC & relative export prices) → cost
+  competitiveness → price vs non-price competitiveness → what shapes
+  competitiveness → why it matters → the whole story.
+- **Four new bespoke visuals:** `competitivenessHub` (a four-spoke radial
+  hub — price, quality, productivity, reputation & innovation orbiting
+  "Competitive firms"), `costChain` (a five-node chain wired with
+  interlocking SVG chain-link connectors from wages through productivity,
+  unit labour costs and export prices to competitiveness), `competeRace`
+  (a commoditised-vs-advanced two-panel race with a VS badge) and
+  `competitivenessGaugeHub` (a driver grid wrapped around a live
+  `ECONOS_DIALS` gauge reading a "COMPETITIVENESS INDEX").
+- Service worker cache bumped to `econos-v460`.
+
 ## 0.119.0 — 2026-06-09
 
 ### Exchange Rate Impacts topic complete (8 cards) + Marshall-Lerner moved out of Theme 2

@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.128.0 — 2026-06-09
+
+### Development Strategies: Market-orientated topic complete (7 cards)
+
+- **Renamed** the placeholder 4.3.3 topic `strategies-influencing-growth-
+  and-development` → **`development-strategies-market-orientated`**
+  ("Development Strategies: Market-orientated"), the first of three 4.3.3
+  topics (Interventionist and Other to follow). Data directory renamed.
+- **Built the 7-card deck:** the big picture → trade liberalisation → FDI
+  promotion → removing government subsidies → floating exchange rates →
+  microfinance and privatisation → the whole story.
+- **One new HTML visual:** `fdiMagnetHub` — a magnet pulling foreign
+  investment in (money emojis being attracted), ringed by the six pull
+  factors (market size, skilled labour, low costs, infrastructure,
+  stability and openness).
+- **Card 5 reuses the existing `fxMarketDiagram` chart-engine spec** for
+  the floating-rate "how a float works" diagram.
+- Service worker cache bumped to `econos-v468`.
+
 ## 0.127.0 — 2026-06-09
 
 ### Development Factors: Domestic Capacity topic complete (7 cards)

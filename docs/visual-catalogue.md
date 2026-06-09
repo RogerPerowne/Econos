@@ -269,6 +269,17 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   shipping → retail), each stage a node with a location pill, over a
   subtle world gradient. Use for any global value-chain / process
   sequence that needs place labels.
+- `absoluteAdvantageTable` — Specialisation & Trade 4.1.2 Card 2. An
+  output table with the winning cell tinted per column + trophy callout
+  pills. The go-to for an "absolute advantage" worked data table.
+- `compAdvDataTable` + `compAdvOppCost` — Specialisation & Trade 4.1.2
+  Card 3. A two-good output table and a pair of opportunity-cost panels.
+  Pattern for any comparative-advantage calculation: pair them across
+  `visualKey` + `visualKey2` so each keeps its own section label.
+- `gainsFromTradePPF` — Specialisation & Trade 4.1.2 Card 4. A linear
+  PPF with production point P and a dashed trade line out to consumption
+  point C beyond the frontier. Hand-computed geometry (P sits exactly on
+  the PPF). Use for any "consume beyond the PPF" gains-from-trade diagram.
 
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.

@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.111.0 — 2026-06-09
+
+### Specialisation and Trade topic complete (7 cards, 4 bespoke visuals)
+
+- **Specialisation and Trade (Edexcel A 4.1.2)** built and flipped live —
+  the trade-theory core of Theme 4. Seven cards: the big picture →
+  absolute advantage → comparative advantage (opportunity cost) → how
+  trade creates gains → the theory's assumptions → where it can fall short
+  → the whole story. Builds the Ricardian model carefully, then evaluates
+  it against its assumptions and real-world limits.
+- **Four bespoke visuals** built to match the mockups closely:
+  - `absoluteAdvantageTable` — a Coffee/Textiles output table with the
+    winning cell tinted in each column, plus two trophy callout pills.
+  - `compAdvDataTable` — the wheat/wine output table for Country A and B.
+  - `compAdvOppCost` — two opportunity-cost panels working the costs out
+    from the data (A green, B blue).
+  - `gainsFromTradePPF` — a linear PPF with production point P after
+    specialising and a dashed trade line out to consumption point C
+    beyond the frontier (geometry hand-computed so P sits exactly on the
+    PPF).
+- Card 3 uses both visual slots (`visualKey` + `visualKey2`) so the data
+  table and the opportunity-cost working each keep their own section label.
+- Service worker cache bumped to `econos-v451`.
+
 ## 0.110.0 — 2026-06-09
 
 ### Globalisation topic complete — Theme 4 opens (6 cards, 2 bespoke visuals)

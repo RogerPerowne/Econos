@@ -20866,6 +20866,116 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* absoluteAdvantageTable – Card 2 of Specialisation & Trade. A small
+     output table (Coffee/Textiles for Alpha/Beta) with the winning cell in
+     each column tinted, plus two trophy callout pills naming each country's
+     absolute advantage. Static HTML table. */
+  absoluteAdvantageTable: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .aat-tbl{width:100%;border-collapse:separate;border-spacing:0;max-width:620px;margin:0 auto;}
+        .aat-tbl th,.aat-tbl td{padding:12px 14px;text-align:center;border-bottom:1px solid #E2E8F0;font-size:14.5px;}
+        .aat-tbl thead th{background:#F8FAFC;font-weight:800;color:#334155;font-size:13.5px;}
+        .aat-tbl th:first-child,.aat-tbl td:first-child{text-align:left;font-weight:700;color:#0B1426;}
+        .aat-cell{display:inline-block;min-width:50px;padding:6px 14px;border-radius:9px;font-weight:800;}
+        .aat-call{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:620px;margin:14px auto 0;}
+        @media(max-width:560px){.aat-call{grid-template-columns:1fr;}}
+        .aat-pill{display:flex;align-items:center;gap:10px;border-radius:11px;padding:11px 15px;font-size:13px;font-weight:700;line-height:1.35;}
+      </style>
+      <table class="aat-tbl">
+        <thead><tr><th>Country</th><th>☕ Coffee</th><th>👕 Textiles</th></tr></thead>
+        <tbody>
+          <tr><td>Alpha</td><td><span class="aat-cell" style="background:#ECFDF5;border:1.5px solid #86EFAC;color:#065F46;">20</span></td><td><span class="aat-cell" style="background:#F8FAFC;border:1.5px solid #E2E8F0;color:#475569;">10</span></td></tr>
+          <tr><td>Beta</td><td><span class="aat-cell" style="background:#F8FAFC;border:1.5px solid #E2E8F0;color:#475569;">12</span></td><td><span class="aat-cell" style="background:#F5F3FF;border:1.5px solid #C4B5FD;color:#5B21B6;">18</span></td></tr>
+        </tbody>
+      </table>
+      <div class="aat-call">
+        <div class="aat-pill" style="background:#ECFDF5;border:1.5px solid #86EFAC;color:#065F46;"><span style="font-size:18px;">🏆</span> Alpha has absolute advantage in coffee.</div>
+        <div class="aat-pill" style="background:#F5F3FF;border:1.5px solid #C4B5FD;color:#5B21B6;"><span style="font-size:18px;">🏆</span> Beta has absolute advantage in textiles.</div>
+      </div>
+    </div>
+  `,
+
+  /* compAdvDataTable – Card 3 of Specialisation & Trade. The wheat/wine
+     output table for Country A and B, with a side note. Static. */
+  compAdvDataTable: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;max-width:680px;margin:0 auto;">
+        <table style="border-collapse:separate;border-spacing:0;">
+          <thead><tr>
+            <th style="padding:12px 20px;background:#F5F3FF;font-size:13.5px;font-weight:800;color:#5B21B6;text-align:left;border-radius:10px 0 0 0;">Country</th>
+            <th style="padding:12px 20px;background:#F5F3FF;font-size:13.5px;font-weight:800;color:#5B21B6;">🌾 Wheat</th>
+            <th style="padding:12px 20px;background:#F5F3FF;font-size:13.5px;font-weight:800;color:#5B21B6;border-radius:0 10px 0 0;">🍷 Wine</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:12px 20px;font-weight:700;border-bottom:1px solid #EBE7F7;">Country A</td><td style="padding:12px 20px;text-align:center;font-weight:800;border-bottom:1px solid #EBE7F7;">12</td><td style="padding:12px 20px;text-align:center;font-weight:800;border-bottom:1px solid #EBE7F7;">6</td></tr>
+            <tr><td style="padding:12px 20px;font-weight:700;">Country B</td><td style="padding:12px 20px;text-align:center;font-weight:800;">8</td><td style="padding:12px 20px;text-align:center;font-weight:800;">8</td></tr>
+          </tbody>
+        </table>
+        <div style="font-size:12.5px;color:#64748B;max-width:150px;line-height:1.5;">Maximum output using the same resources.</div>
+      </div>
+    </div>
+  `,
+
+  /* compAdvOppCost – Card 3 of Specialisation & Trade. Two opportunity-cost
+     panels (Country A green, Country B blue), each with the wheat-cost and
+     wine-cost line worked out from the data table. Static. */
+  compAdvOppCost: `
+    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:6px 4px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .coc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:680px;margin:0 auto;}
+        @media(max-width:560px){.coc-grid{grid-template-columns:1fr;}}
+        .coc-panel{border-radius:13px;padding:15px 18px;}
+        .coc-h{text-align:center;font-size:14.5px;font-weight:800;margin-bottom:10px;}
+        .coc-row{display:flex;align-items:center;gap:11px;padding:8px 0;font-size:13.5px;font-weight:600;}
+        .coc-ic{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;color:#fff;}
+      </style>
+      <div class="coc-grid">
+        <div class="coc-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="coc-h" style="color:#065F46;">Country A</div>
+          <div class="coc-row"><span class="coc-ic" style="background:#059669;">🌾</span>1 wheat costs&nbsp;<strong>0.5 wine</strong></div>
+          <div class="coc-row"><span class="coc-ic" style="background:#059669;">🍷</span>1 wine costs&nbsp;<strong>2 wheat</strong></div>
+        </div>
+        <div class="coc-panel" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+          <div class="coc-h" style="color:#1E3A8A;">Country B</div>
+          <div class="coc-row"><span class="coc-ic" style="background:#2563EB;">🌾</span>1 wheat costs&nbsp;<strong>1 wine</strong></div>
+          <div class="coc-row"><span class="coc-ic" style="background:#2563EB;">🍷</span>1 wine costs&nbsp;<strong>1 wheat</strong></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* gainsFromTradePPF – Card 4 of Specialisation & Trade. A linear PPF
+     (constant opportunity cost), the production point P after specialising
+     in cloth, and a dashed trade line out to consumption point C beyond the
+     frontier. Geometry is hand-computed: PPF (95,110)->(470,385); P sits on
+     it at t=0.82; trade line (95,385)->(530,150). Static SVG. */
+  gainsFromTradePPF: `
+    <div style="background:#fff;border-radius:14px;padding:16px 10px;font-family:Inter,sans-serif;">
+      <svg viewBox="0 0 640 470" width="100%" style="max-width:640px;display:block;margin:0 auto;">
+        <line x1="95" y1="385" x2="95" y2="78" stroke="#0B1426" stroke-width="2.5"/>
+        <line x1="95" y1="385" x2="592" y2="385" stroke="#0B1426" stroke-width="2.5"/>
+        <polygon points="95,66 89,80 101,80" fill="#0B1426"/>
+        <polygon points="604,385 590,379 590,391" fill="#0B1426"/>
+        <text x="74" y="60" font-size="17" font-weight="700" fill="#0B1426">Wine</text>
+        <text x="600" y="378" font-size="17" font-weight="700" fill="#0B1426">Cloth</text>
+        <text x="74" y="404" font-size="14" fill="#475569">0</text>
+        <line x1="95" y1="385" x2="530" y2="150" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <line x1="95" y1="110" x2="470" y2="385" stroke="#0B1426" stroke-width="2.5"/>
+        <text x="150" y="142" font-size="15" font-weight="800" fill="#0B1426">PPF</text>
+        <text x="356" y="196" font-size="15" font-weight="800" fill="#2563EB">Trade line</text>
+        <circle cx="402" cy="336" r="5.5" fill="#0B1426"/>
+        <text x="414" y="332" font-size="16" font-weight="800" fill="#0B1426">P</text>
+        <text x="402" y="409" font-size="12.5" fill="#475569" text-anchor="middle">Production after</text>
+        <text x="402" y="425" font-size="12.5" fill="#475569" text-anchor="middle">specialisation</text>
+        <circle cx="530" cy="150" r="6.5" fill="#2563EB"/>
+        <text x="514" y="144" font-size="16" font-weight="800" fill="#2563EB">C</text>
+        <text x="546" y="148" font-size="12.5" fill="#475569">Consumption</text>
+        <text x="546" y="164" font-size="12.5" fill="#475569">after trade</text>
+      </svg>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

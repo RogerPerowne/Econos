@@ -23,7 +23,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain exchange-rate movements through demand for and supply of a currency, identify the four big drivers, and structure a top-mark cause-to-consequence answer',
 
   intro: {
-    heroKey: 'heroGlobe',
+    heroKey: 'heroExchangeRates',
     summary: 'A floating exchange rate is just a price — the price of one currency in terms of another — so it moves for the same reason any price moves: demand and supply shift. This deck builds the whole story from that one idea. It opens with the core mechanism (a shift in demand or supply makes the pound scarcer or more abundant, the rate appreciates or depreciates, and trade prices change), then pins down exactly who demands sterling (exporters’ customers, inward FDI, portfolio inflows, tourists, speculators) and who supplies it (importers, outward FDI, portfolio outflows, travellers, sellers). It traces the four big macro drivers — inflation, interest rates, growth and trade, and confidence — back through demand and supply, runs a diagram clinic reading the FOREX market as a standard demand-and-supply diagram, and closes on how to structure a cause-to-consequence answer.',
     doInThis: 'Explain why a currency moves through demand and supply. Identify the sources of demand for and supply of a currency. Trace the four big drivers back to demand or supply. Read the FOREX market as a demand-and-supply diagram. Structure a driver → demand/supply → rate → effects answer.',
     outcomes: [

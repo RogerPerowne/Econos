@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.131.0 — 2026-06-09
+
+### Role of Financial Markets topic complete (7 cards)
+
+- **Role of Financial Markets (Edexcel A 4.4.1)** built and flipped live as
+  the first 4.4 financial-sector topic. Seven cards: the big picture (the
+  five roles) → saving → lending and intermediation → payments and exchange
+  → forward markets → equities → the whole story.
+- Built entirely from the existing renderer vocabulary (flow chains, tile
+  grids and VS pairs) — no new bespoke visuals or chart specs. Replaced the
+  placeholder learn-it.
+
 ## 0.130.0 — 2026-06-09
 
 ### Development Strategies: Other topic complete (8 cards)

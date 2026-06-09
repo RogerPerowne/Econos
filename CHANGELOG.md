@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.113.0 — 2026-06-09
+
+### Terms of Trade topic complete (6 cards, 3 bespoke visuals)
+
+- **Terms of Trade (Edexcel A 4.1.4)** built, registered and flipped live —
+  a new Theme 4 topic (added to `js/topics.js`). Six cards: the big picture
+  → how to calculate it → what moves it → when it improves → when it
+  deteriorates → the whole story. Defines and calculates the index, then
+  evaluates the impact of an improvement and a deterioration on purchasing
+  power, competitiveness and the wider economy.
+- **Three bespoke visuals** built to match the mockups closely:
+  - `termsOfTradeFormula` — export-index → "Terms of trade = 110" circle →
+    import-index node.
+  - `totWorkedExamples` — twin calculation panels (improvement, 120, vs
+    deterioration, 90) with working and result badges.
+  - `totTwoStories` — improvement vs deterioration three-step mini-flows.
+- Card 2 introduces THE THREE STEPS via `causesPosition:'top'` so the
+  steps sit above the worked-example visual.
+- Service worker cache bumped to `econos-v453`.
+
 ## 0.112.0 — 2026-06-09
 
 ### Pattern of Trade topic complete (6 cards, 4 bespoke visuals)

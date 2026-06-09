@@ -21162,6 +21162,137 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* termsOfTradeFormula – Card 1 of Terms of Trade. Three nodes: an export
+     price-index box, a central "Terms of trade = 110" circle, and an import
+     price-index box, joined by connectors. Static. */
+  termsOfTradeFormula: `
+    <div style="line-height:1.45;background:#fff;border-radius:14px;padding:20px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .totf-row{display:flex;align-items:center;justify-content:center;gap:0;max-width:680px;margin:0 auto;}
+        .totf-box{flex:1;min-width:0;border-radius:14px;padding:16px 14px;text-align:center;}
+        .totf-ic{font-size:30px;line-height:1;margin-bottom:8px;}
+        .totf-lab{font-size:13px;font-weight:800;line-height:1.2;}
+        .totf-sub{font-size:11px;color:#64748B;margin-top:2px;}
+        .totf-val{font-size:30px;font-weight:900;line-height:1;margin-top:8px;}
+        .totf-conn{width:34px;height:2px;background:#93C5FD;flex-shrink:0;position:relative;}
+        .totf-conn::after{content:'';position:absolute;right:-1px;top:-3px;width:8px;height:8px;border-radius:50%;background:#2563EB;}
+        .totf-centre{flex:0 0 auto;width:148px;height:148px;border-radius:50%;border:2.5px solid #2563EB;background:#EFF6FF;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 -4px;box-shadow:0 4px 16px rgba(37,99,235,0.12);}
+        @media(max-width:600px){.totf-row{flex-direction:column;gap:10px;}.totf-conn{width:2px;height:22px;}.totf-conn::after{right:-3px;top:auto;bottom:-1px;}.totf-centre{margin:0;}}
+      </style>
+      <div class="totf-row">
+        <div class="totf-box" style="background:#EFF6FF;border:1.5px solid #BFDBFE;">
+          <div class="totf-ic">📦</div>
+          <div class="totf-lab" style="color:#1E3A8A;">Export price index</div>
+          <div class="totf-sub">(example)</div>
+          <div class="totf-val" style="color:#2563EB;">110</div>
+        </div>
+        <div class="totf-conn"></div>
+        <div class="totf-centre">
+          <div style="font-size:22px;line-height:1;margin-bottom:3px;">🧮</div>
+          <div style="font-size:13px;font-weight:700;color:#1E3A8A;">Terms of trade =</div>
+          <div style="font-size:38px;font-weight:900;color:#2563EB;line-height:1;margin-top:2px;">110</div>
+        </div>
+        <div class="totf-conn"></div>
+        <div class="totf-box" style="background:#F5F3FF;border:1.5px solid #DDD6FE;">
+          <div class="totf-ic">🚢</div>
+          <div class="totf-lab" style="color:#5B21B6;">Import price index</div>
+          <div class="totf-sub">(example)</div>
+          <div class="totf-val" style="color:#7C3AED;">100</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* totWorkedExamples – Card 2 of Terms of Trade. Two calculation panels:
+     Example A (improvement, 120) and Example B (deterioration, 90), each
+     showing the inputs, the working and a result badge. Static. */
+  totWorkedExamples: `
+    <div style="line-height:1.45;background:#fff;border-radius:14px;padding:12px 8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .twe-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:780px;margin:0 auto;}
+        @media(max-width:600px){.twe-grid{grid-template-columns:1fr;}}
+        .twe-panel{border-radius:14px;padding:16px 18px;position:relative;}
+        .twe-h{font-size:14px;font-weight:800;margin-bottom:12px;}
+        .twe-line{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;max-width:230px;}
+        .twe-div{border-top:1px solid rgba(0,0,0,0.08);margin:10px 0 8px;}
+        .twe-cl{font-size:12.5px;font-weight:700;margin-bottom:6px;}
+        .twe-calc{font-size:13px;line-height:1.7;}
+        .twe-res{display:flex;align-items:center;gap:10px;border-radius:11px;padding:10px 13px;margin-top:12px;background:#fff;}
+        .twe-badge{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex-shrink:0;font-weight:800;}
+        .twe-trend{position:absolute;top:14px;right:14px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:25px;}
+      </style>
+      <div class="twe-grid">
+        <div class="twe-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="twe-trend" style="background:#DCFCE7;">📈</div>
+          <div class="twe-h" style="color:#065F46;">Example A — Improvement</div>
+          <div class="twe-line"><span>Export price index</span><span style="font-weight:800;">= 120</span></div>
+          <div class="twe-line"><span>Import price index</span><span style="font-weight:800;">= 100</span></div>
+          <div class="twe-div"></div>
+          <div class="twe-cl" style="color:#065F46;">Calculation</div>
+          <div class="twe-calc">Terms of trade = 120 ÷ 100 × 100<br>= 1.2 × 100<br><strong style="color:#059669;font-size:15px;">= 120</strong></div>
+          <div class="twe-res" style="border:1.5px solid #86EFAC;">
+            <span class="twe-badge" style="background:#059669;">✓</span>
+            <div><strong>Terms of trade = 120</strong><br><span style="font-size:12px;">This is an <span style="color:#059669;font-weight:700;">improvement</span>.</span></div>
+          </div>
+        </div>
+        <div class="twe-panel" style="background:#FEF2F2;border:1.5px solid #FCA5A5;">
+          <div class="twe-trend" style="background:#FEE2E2;">📉</div>
+          <div class="twe-h" style="color:#9F1239;">Example B — Deterioration</div>
+          <div class="twe-line"><span>Export price index</span><span style="font-weight:800;">= 90</span></div>
+          <div class="twe-line"><span>Import price index</span><span style="font-weight:800;">= 100</span></div>
+          <div class="twe-div"></div>
+          <div class="twe-cl" style="color:#9F1239;">Calculation</div>
+          <div class="twe-calc">Terms of trade = 90 ÷ 100 × 100<br>= 0.9 × 100<br><strong style="color:#DC2626;font-size:15px;">= 90</strong></div>
+          <div class="twe-res" style="border:1.5px solid #FCA5A5;">
+            <span class="twe-badge" style="background:#DC2626;">−</span>
+            <div><strong>Terms of trade = 90</strong><br><span style="font-size:12px;">This is a <span style="color:#DC2626;font-weight:700;">deterioration</span>.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* totTwoStories – Card 3 of Terms of Trade. Twin mini-flows: the
+     improvement story (green) and the deterioration story (rose), each a
+     three-step icon chain. Static. */
+  totTwoStories: `
+    <div style="line-height:1.45;background:#fff;border-radius:14px;padding:12px 8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .tts-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:780px;margin:0 auto;}
+        @media(max-width:600px){.tts-grid{grid-template-columns:1fr;}}
+        .tts-panel{border-radius:14px;padding:15px 14px;}
+        .tts-h{text-align:center;font-size:12.5px;font-weight:800;letter-spacing:0.04em;margin-bottom:12px;}
+        .tts-flow{display:flex;align-items:flex-start;justify-content:center;gap:2px;}
+        .tts-step{flex:1;min-width:0;text-align:center;}
+        .tts-disc{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 7px;}
+        .tts-cap{font-size:11px;font-weight:600;line-height:1.3;color:#334155;}
+        .tts-arr{font-size:18px;flex-shrink:0;padding-top:14px;}
+      </style>
+      <div class="tts-grid">
+        <div class="tts-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="tts-h" style="color:#065F46;">IMPROVEMENT STORY</div>
+          <div class="tts-flow">
+            <div class="tts-step"><div class="tts-disc" style="background:#DCFCE7;">📈</div><div class="tts-cap">Export prices rise or import prices fall</div></div>
+            <div class="tts-arr" style="color:#059669;">→</div>
+            <div class="tts-step"><div class="tts-disc" style="background:#DCFCE7;">⚖️</div><div class="tts-cap">Terms of trade improves</div></div>
+            <div class="tts-arr" style="color:#059669;">→</div>
+            <div class="tts-step"><div class="tts-disc" style="background:#DCFCE7;">🛒</div><div class="tts-cap">Exports buy more imports</div></div>
+          </div>
+        </div>
+        <div class="tts-panel" style="background:#FEF2F2;border:1.5px solid #FCA5A5;">
+          <div class="tts-h" style="color:#9F1239;">DETERIORATION STORY</div>
+          <div class="tts-flow">
+            <div class="tts-step"><div class="tts-disc" style="background:#FEE2E2;">📉</div><div class="tts-cap">Export prices fall or import prices rise</div></div>
+            <div class="tts-arr" style="color:#DC2626;">→</div>
+            <div class="tts-step"><div class="tts-disc" style="background:#FEE2E2;">⚖️</div><div class="tts-cap">Terms of trade worsens</div></div>
+            <div class="tts-arr" style="color:#DC2626;">→</div>
+            <div class="tts-step"><div class="tts-disc" style="background:#FEE2E2;">🛒</div><div class="tts-cap">Exports buy fewer imports</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

@@ -329,6 +329,13 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   (peg above equilibrium, excess-supply gap the central bank buys) and
   `fxInterestMagnet` (a dial-engine gauge wrapped as a "capital magnet" —
   reuse for any "higher X = stronger pull" idea).
+- **Exchange Rate Impacts 4.1.8 set** — `marshallLernerScale` (a balance
+  scale weighing PEDₓ vs PEDₘ against the > 1 threshold — reuse for any
+  "two forces weighed against a threshold" idea), `caChannel` (a one-node
+  fork into two coloured paths converging on an outcome — reuse for any
+  branching transmission mechanism) and `fxMacroChannels` (a 4-row
+  label | weaker | vs | stronger comparison grid). Card 6 reuses the
+  existing `jCurveInteractive` chart spec.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

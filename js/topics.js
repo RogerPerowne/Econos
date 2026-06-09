@@ -1213,6 +1213,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'exchange-rate-impacts',
+    name: 'Exchange Rate Impacts',
+    sub: 'Winners and losers, the current account, J-curve, Marshall-Lerner',
+    color: '#7c3aed',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.1.8', included: true },
+      edexcel_b: { spec: '3.1.5', included: true },
+      aqa:       { spec: '4.2.6.4', included: true },
+      ocr:       { spec: '4.2', included: true }
+    }
+  },
+  {
     id: 'international-competitiveness',
     name: 'International Competitiveness',
     sub: 'Unit labour costs and strategies to improve',

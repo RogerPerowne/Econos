@@ -21828,6 +21828,108 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* marshallLernerScale – Card 5 of Exchange Rate Impacts. A balance scale
+     weighing PED for exports against PED for imports, with the PEDx+PEDm>1
+     threshold. Bespoke SVG + pills + threshold banner. */
+  marshallLernerScale: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="position:relative;max-width:420px;margin:0 auto;">
+        <svg viewBox="0 0 340 184" width="100%">
+          <ellipse cx="170" cy="170" rx="40" ry="7" fill="#1E2A4A"/>
+          <polygon points="150,170 190,170 182,150 158,150" fill="#1E2A4A"/>
+          <rect x="165" y="64" width="10" height="90" fill="#28365C"/>
+          <polygon points="170,50 160,68 180,68" fill="#1E2A4A"/>
+          <line x1="56" y1="80" x2="284" y2="62" stroke="#1E2A4A" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="170" cy="61" r="6" fill="#1E2A4A"/>
+          <line x1="56" y1="80" x2="40" y2="120" stroke="#94A3B8" stroke-width="1.4"/>
+          <line x1="56" y1="80" x2="96" y2="120" stroke="#94A3B8" stroke-width="1.4"/>
+          <path d="M34,120 Q68,150 102,120 Z" fill="#DCFCE7" stroke="#059669" stroke-width="2"/>
+          <line x1="284" y1="62" x2="266" y2="102" stroke="#94A3B8" stroke-width="1.4"/>
+          <line x1="284" y1="62" x2="306" y2="102" stroke="#94A3B8" stroke-width="1.4"/>
+          <path d="M258,102 Q286,132 314,102 Z" fill="#FFEDD5" stroke="#EA580C" stroke-width="2"/>
+          <circle cx="68" cy="104" r="18" fill="#fff" stroke="#86EFAC" stroke-width="2"/><text x="68" y="111" text-anchor="middle" font-size="18">📈</text>
+          <circle cx="286" cy="86" r="18" fill="#fff" stroke="#FDBA74" stroke-width="2"/><text x="286" y="93" text-anchor="middle" font-size="18">🛒</text>
+        </svg>
+        <div style="display:flex;justify-content:space-between;margin:-2px 2px 0;">
+          <span style="background:#ECFDF5;border:1.5px solid #86EFAC;color:#065F46;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:800;">PED for exports</span>
+          <span style="background:#FFF7ED;border:1.5px solid #FDBA74;color:#C2410C;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:800;">PED for imports</span>
+        </div>
+      </div>
+      <div style="margin:16px auto 0;max-width:540px;background:#F0FDF4;border:1.5px dashed #86EFAC;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">★</div>
+        <div style="font-size:13.5px;color:#065F46;font-weight:600;line-height:1.4;">If <strong>PEDₓ + PEDₘ &gt; 1</strong>, depreciation is more likely to improve the current account.</div>
+      </div>
+    </div>
+  `,
+
+  /* caChannel – Card 4 of Exchange Rate Impacts. A depreciation branches
+     into an exports path and an imports path that converge on "current
+     account may improve". Bespoke branching flow. */
+  caChannel: `
+    <div style="line-height:1.3;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cac-wrap{display:flex;align-items:center;gap:9px;max-width:900px;margin:0 auto;}
+        .cac-node{flex:0 0 auto;width:92px;border-radius:14px;padding:12px 6px;text-align:center;}
+        .cac-mid{flex:1;display:flex;flex-direction:column;gap:14px;min-width:0;}
+        .cac-row{display:flex;align-items:center;gap:3px;}
+        .cac-lbl{font-size:10.5px;font-weight:800;flex:0 0 auto;width:48px;}
+        .cac-chip{flex:1;min-width:0;background:#fff;border:1.5px solid;border-radius:9px;padding:7px 4px;text-align:center;font-size:9px;font-weight:700;line-height:1.2;}
+        .cac-arr{flex:0 0 auto;font-size:12px;color:#94A3B8;}
+        @media(max-width:680px){.cac-lbl{display:none;}}
+      </style>
+      <div class="cac-wrap">
+        <div class="cac-node" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <div style="font-size:22px;font-weight:800;color:#5B21B6;">£↓</div><div style="font-size:10.5px;font-weight:800;color:#5B21B6;">Depreciation</div>
+        </div>
+        <div class="cac-mid">
+          <div class="cac-row"><span class="cac-lbl" style="color:#059669;">Exports</span>
+            <div class="cac-chip" style="border-color:#86EFAC;color:#065F46;">Price falls</div><span class="cac-arr">→</span>
+            <div class="cac-chip" style="border-color:#86EFAC;color:#065F46;">More competitive</div><span class="cac-arr">→</span>
+            <div class="cac-chip" style="border-color:#86EFAC;color:#065F46;">Volumes rise</div><span class="cac-arr">→</span>
+            <div class="cac-chip" style="border-color:#86EFAC;color:#065F46;">Revenue rises</div>
+          </div>
+          <div class="cac-row"><span class="cac-lbl" style="color:#C2410C;">Imports</span>
+            <div class="cac-chip" style="border-color:#FDBA74;color:#C2410C;">Price rises</div><span class="cac-arr">→</span>
+            <div class="cac-chip" style="border-color:#FDBA74;color:#C2410C;">Less attractive</div><span class="cac-arr">→</span>
+            <div class="cac-chip" style="border-color:#FDBA74;color:#C2410C;">Volumes fall</div><span class="cac-arr">→</span>
+            <div class="cac-chip" style="border-color:#FDBA74;color:#C2410C;">Spending slows</div>
+          </div>
+        </div>
+        <div class="cac-node" style="background:#EDE9FE;border:1.5px solid #C4B5FD;width:104px;">
+          <div style="font-size:20px;">⚖️</div><div style="font-size:10.5px;font-weight:800;color:#5B21B6;line-height:1.2;">Current account may improve</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:13px;font-size:12.5px;font-weight:700;color:#334155;">Current account = <span style="color:#059669;">exports</span> − <span style="color:#C2410C;">imports</span></div>
+    </div>
+  `,
+
+  /* fxMacroChannels – Card 7 of Exchange Rate Impacts. Four macro channels,
+     each contrasting a weaker vs a stronger currency. */
+  fxMacroChannels: `
+    <div style="line-height:1.3;background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fmc-row{display:grid;grid-template-columns:118px 1fr 26px 1fr;gap:8px;align-items:stretch;margin-bottom:8px;}
+        .fmc-lbl{border-radius:12px;padding:10px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;}
+        .fmc-cell{border-radius:12px;padding:10px 12px;font-size:11.5px;line-height:1.35;}
+        .fmc-vs{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#94A3B8;}
+        @media(max-width:620px){.fmc-row{grid-template-columns:1fr 1fr;}.fmc-vs{display:none;}.fmc-lbl{grid-column:1 / -1;flex-direction:row;gap:8px;}}
+      </style>
+      ${[
+        {n:1,ic:'\u{1F6D2}',name:'Inflation',c:'#7C3AED',w:'Imported inflation <strong>higher</strong>.',s:'Imported inflation <strong>lower</strong>.'},
+        {n:2,ic:'\u{1F4C8}',name:'Growth & jobs',c:'#059669',w:'Net exports may rise, supporting AD and jobs.',s:'Export sectors may slow.'},
+        {n:3,ic:'\u{1F310}',name:'FDI',c:'#2563EB',w:'May attract investment via competitiveness — but confidence matters.',s:'Can signal strength, but may cut cost competitiveness.'},
+        {n:4,ic:'⚖️',name:'Winners & strains',c:'#EA580C',w:'Helps traded sectors but squeezes consumers.',s:'Helps consumers but strains producers.'}
+      ].map(function(r){
+        return '<div class="fmc-row">'+
+          '<div class="fmc-lbl" style="background:#F8FAFC;border:1.5px solid #E2E8F0;"><span style="font-size:18px;">'+r.ic+'</span><span style="font-size:11.5px;font-weight:800;color:'+r.c+';line-height:1.15;">'+r.n+' · '+r.name+'</span></div>'+
+          '<div class="fmc-cell" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><strong style="color:#065F46;">Weaker £ ↓</strong><br>'+r.w+'</div>'+
+          '<div class="fmc-vs">vs</div>'+
+          '<div class="fmc-cell" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><strong style="color:#5B21B6;">Stronger £ ↑</strong><br>'+r.s+'</div>'+
+        '</div>';
+      }).join('')}
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

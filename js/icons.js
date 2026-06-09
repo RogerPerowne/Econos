@@ -21930,6 +21930,144 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* competitivenessHub – Card 1 of International Competitiveness. A
+     "competitive firms" centre with four spokes: price, productivity,
+     quality, reputation & innovation. 2x2 radial hub. */
+  competitivenessHub: `
+    <div class="cph" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cph .cph-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28%;row-gap:18px;position:relative;z-index:1;}
+        .cph .cph-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;}
+        .cph .cph-conn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+        .cph .cph-tile{border-radius:13px;padding:13px 15px;min-height:104px;box-sizing:border-box;box-shadow:0 2px 6px rgba(15,23,42,.05);}
+        .cph .cph-h{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
+        .cph .cph-ic{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+        .cph .cph-t{font-size:13.5px;font-weight:800;line-height:1.15;}
+        .cph .cph-s{font-size:11.5px;color:#475569;line-height:1.35;}
+        .cph .cph-circ{width:124px;height:124px;border-radius:50%;background:#EFF6FF;border:2.5px solid #2563EB;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(239,246,255,.7),0 6px 18px rgba(37,99,235,.15);}
+        @media(max-width:640px){.cph .cph-grid{grid-template-columns:1fr;column-gap:0;row-gap:12px;}.cph .cph-center{position:static;transform:none;margin:8px auto;}.cph .cph-center-wrap{order:99;display:flex;justify-content:center;}.cph .cph-conn{display:none;}}
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="cph-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 24 C 44 24,44 50,50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 24 C 56 24,56 50,50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 76 C 44 76,44 50,50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 76 C 56 76,56 50,50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="cph-grid">
+          <div class="cph-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="cph-h"><div class="cph-ic">\u{1F3F7}️</div><div class="cph-t" style="color:#065F46;">Price</div></div>
+            <div class="cph-s">Can compete on cost.</div>
+          </div>
+          <div class="cph-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="cph-h"><div class="cph-ic">\u{1F6E1}️</div><div class="cph-t" style="color:#1E3A8A;">Quality</div></div>
+            <div class="cph-s">Reliable, well made, trusted.</div>
+          </div>
+          <div class="cph-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="cph-h"><div class="cph-ic">\u{1F4CA}</div><div class="cph-t" style="color:#C2410C;">Productivity</div></div>
+            <div class="cph-s">Efficient output per worker.</div>
+          </div>
+          <div class="cph-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="cph-h"><div class="cph-ic">\u{1F4A1}</div><div class="cph-t" style="color:#5B21B6;">Reputation & innovation</div></div>
+            <div class="cph-s">Brand, design, technology.</div>
+          </div>
+        </div>
+        <div class="cph-center-wrap"><div class="cph-center"><div class="cph-circ">
+          <div style="font-size:34px;line-height:1;">\u{1F465}</div>
+          <div style="font-size:12px;font-weight:800;color:#1E3A8A;text-align:center;margin-top:4px;line-height:1.15;">Competitive<br>firms</div>
+        </div></div></div>
+      </div>
+    </div>
+  `,
+
+  /* costChain – Card 3 of International Competitiveness. Wages →
+     productivity → ULC → export prices → competitiveness, joined by
+     interlocking chain links. */
+  costChain: `
+    <div style="line-height:1.3;background:#fff;border-radius:14px;padding:16px 8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .csc-row{display:flex;align-items:flex-start;justify-content:center;gap:0;flex-wrap:wrap;max-width:820px;margin:0 auto;}
+        .csc-node{flex:1;min-width:120px;max-width:150px;text-align:center;}
+        .csc-disc{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 8px;border:2.5px solid;position:relative;}
+        .csc-num{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;}
+        .csc-t{font-size:12.5px;font-weight:800;line-height:1.15;margin-top:8px;}
+        .csc-s{font-size:10.5px;color:#475569;line-height:1.3;margin-top:4px;}
+        .csc-link{flex:0 0 auto;align-self:flex-start;margin-top:20px;color:#94A3B8;}
+        @media(max-width:640px){.csc-link{transform:rotate(90deg);}}
+      </style>
+      <div class="csc-row">
+        ${[
+          {c:'#059669',bg:'#ECFDF5',ic:'\u{1F465}',t:'Wages & labour costs',s:'Firms pay workers wages and benefits.'},
+          {c:'#EA580C',bg:'#FFF7ED',ic:'\u{1F4CA}',t:'Productivity',s:'Output per worker shows how much is produced.'},
+          {c:'#7C3AED',bg:'#F5F3FF',ic:'⏱️',t:'Unit labour costs',s:'Labour cost per unit of output is what matters.'},
+          {c:'#2563EB',bg:'#EFF6FF',ic:'\u{1F3F7}️',t:'Export prices',s:'ULC drives the prices firms charge abroad.'},
+          {c:'#059669',bg:'#ECFDF5',ic:'\u{1F3C6}',t:'Competitiveness',s:'Lower prices improve demand and market share.'}
+        ].map(function(n,i){
+          var link = i<4 ? '<div class="csc-link"><svg width="26" height="20" viewBox="0 0 26 20"><ellipse cx="9" cy="10" rx="6.5" ry="4.5" fill="none" stroke="#94A3B8" stroke-width="2.2"/><ellipse cx="17" cy="10" rx="6.5" ry="4.5" fill="none" stroke="#CBD5E1" stroke-width="2.2"/></svg></div>' : '';
+          return '<div class="csc-node"><div class="csc-disc" style="background:'+n.bg+';border-color:'+n.c+';">'+n.ic+'<span class="csc-num" style="background:'+n.c+';">'+(i+1)+'</span></div><div class="csc-t" style="color:'+n.c+';">'+n.t+'</div><div class="csc-s">'+n.s+'</div></div>'+link;
+        }).join('')}
+      </div>
+    </div>
+  `,
+
+  /* competeRace – Card 4 of International Competitiveness. Two diverging
+     "lanes": commoditised goods (price wins) vs advanced/branded goods
+     (non-price wins), with a VS badge. */
+  competeRace: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="position:relative;display:flex;gap:14px;max-width:760px;margin:0 auto;">
+        <div style="flex:1;border-radius:14px;padding:15px 16px;background:#ECFDF5;border:1.5px solid #A7F3D0;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:26px;">\u{1F3CE}️</span><div style="font-size:13.5px;font-weight:800;color:#065F46;line-height:1.2;">Commoditised goods — price often matters more</div></div>
+          <div style="border-top:2px dashed #86EFAC;margin:8px 0;"></div>
+          <div style="font-size:11.5px;color:#334155;line-height:1.4;">Goods are similar and easy to compare on price.</div>
+        </div>
+        <div style="flex:0 0 auto;align-self:center;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#64748B;box-shadow:0 2px 8px rgba(0,0,0,.08);">VS</div>
+        <div style="flex:1;border-radius:14px;padding:15px 16px;background:#F5F3FF;border:1.5px solid #DDD6FE;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:26px;">\u{1F3C6}</span><div style="font-size:13.5px;font-weight:800;color:#5B21B6;line-height:1.2;">Advanced or branded goods — non-price strengths matter more</div></div>
+          <div style="border-top:2px dashed #C4B5FD;margin:8px 0;"></div>
+          <div style="font-size:11.5px;color:#334155;line-height:1.4;">Quality, trust and features shape choice.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* competitivenessGaugeHub – Card 5 of International Competitiveness. A
+     Competitiveness-Index gauge ringed by the big drivers (skills on top,
+     three on the left, three on the right). Wraps the dial engine. */
+  competitivenessGaugeHub: `
+    <div style="line-height:1.3;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cgh-grid{display:grid;grid-template-columns:1fr 200px 1fr;gap:10px;align-items:center;max-width:880px;margin:0 auto;}
+        .cgh-col{display:flex;flex-direction:column;gap:10px;}
+        .cgh-tile{border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .cgh-th{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .cgh-ts{font-size:10.5px;color:#475569;line-height:1.3;}
+        .cgh-center{text-align:center;}
+        @media(max-width:680px){.cgh-grid{grid-template-columns:1fr 1fr;}.cgh-center{grid-column:1 / -1;order:-1;}}
+      </style>
+      <div class="cgh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;max-width:320px;margin:0 auto 12px;text-align:center;">
+        <div class="cgh-th" style="color:#5B21B6;">🎓 Skills & education</div>
+        <div class="cgh-ts">A skilled workforce lifts productivity and quality.</div>
+      </div>
+      <div class="cgh-grid">
+        <div class="cgh-col">
+          <div class="cgh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="cgh-th" style="color:#065F46;">🏗️ Investment & capital</div><div class="cgh-ts">More and better capital raises productive capacity.</div></div>
+          <div class="cgh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="cgh-th" style="color:#1E3A8A;">🌉 Infrastructure</div><div class="cgh-ts">Efficient infrastructure cuts costs and delays.</div></div>
+          <div class="cgh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="cgh-th" style="color:#C2410C;">💡 Innovation & technology</div><div class="cgh-ts">New ideas and technology create higher value.</div></div>
+        </div>
+        <div class="cgh-center">
+          ${window.ECONOS_DIALS.render({ type: 'gauge', size: 168, value: 7.2, min: 0, max: 10, target: [6, 8], tone: 'green', ariaLabel: 'Competitiveness index — built by many drivers' })}
+          <div style="font-size:12px;font-weight:800;color:#1E3A8A;letter-spacing:0.04em;margin-top:2px;">COMPETITIVENESS INDEX</div>
+        </div>
+        <div class="cgh-col">
+          <div class="cgh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="cgh-th" style="color:#1E3A8A;">💱 Exchange rate</div><div class="cgh-ts">A competitive exchange rate supports trade.</div></div>
+          <div class="cgh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="cgh-th" style="color:#C2410C;">📄 Taxes, regulation & energy</div><div class="cgh-ts">Lower burdens and energy costs improve margins.</div></div>
+          <div class="cgh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="cgh-th" style="color:#065F46;">👥 Business confidence</div><div class="cgh-ts">Confidence drives risk-taking and investment.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

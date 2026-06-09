@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.133.0 — 2026-06-09
+
+### Role of Central Banks topic complete (6 cards)
+
+- **Role of Central Banks (Edexcel A 4.4.3)** built and flipped live — the
+  third and final 4.4 financial-sector topic. Six cards: the big picture →
+  implementing monetary policy → banker to the government → banker to the
+  banks (lender of last resort) → regulating the banking industry → the
+  whole story.
+- **One new HTML visual:** `centralBankHub` — the four core functions
+  (monetary policy, banker to the government, banker to the banks,
+  regulation) as a 2×2 radial hub around a "Central bank" core.
+- The rest reuses flow chains (the monetary-policy transmission chain), tile
+  grids and VS pairs. Replaced the placeholder; sw cache bumped to
+  `econos-v471`. This completes the 4.4 financial-sector strand.
+
 ## 0.132.0 — 2026-06-09
 
 ### Market Failure in the Financial Sector topic complete (7 cards)

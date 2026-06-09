@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.125.0 — 2026-06-09
+
+### Measures of Development topic complete (6 cards)
+
+- **Measures of Development (Edexcel A 4.3.1)** built and flipped live as a
+  Theme 4 topic. Six cards: the big picture (what development means) → the
+  three HDI dimensions → how HDI is built → HDI strengths and limitations →
+  other indicators (the wider dashboard) → the whole story.
+- **Three new HTML visuals:** `developmentMeaningHub` (a "Development"
+  globe ringed by health, education and living standards),
+  `hdiBuild` (the three dimension indices feeding a geometric mean ∛ into a
+  0–1 HDI score) and `developmentDashboard` (the globe ringed by the wider
+  basket of income, social and quality-of-life indicators).
+- Diagram-light topic (HDI is a composite index, not an S&D diagram), so
+  no chart-engine specs were needed; the rest reuses tile grids and flow
+  chains.
+- Service worker cache bumped to `econos-v465`.
+
 ## 0.124.0 — 2026-06-09
 
 ### Causes of Inequality topic complete (7 cards)

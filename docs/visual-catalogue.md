@@ -383,6 +383,14 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   X" hump relationship). Named `kuznetsDevelopment` because a legacy
   hand-rolled `kuznetsCurve` SVG already exists. The rest of the deck
   reuses flow chains, two-flow cards, icon-top tile grids and VS pairs.
+- **Measures of Development 4.3.1 set** — `developmentMeaningHub` (a
+  globe ringed by three dimension tiles — reuse for "one idea built from
+  three pillars"), `hdiBuild` (input boxes → a formula/operator node → a
+  result badge — reuse for any "components combine into one index/score"
+  story, e.g. composite indicators) and `developmentDashboard` (a globe
+  ringed by six indicator tiles, the `competitivenessGaugeHub` 3-left /
+  centre / 3-right grid retoned — reuse for any "central concept measured
+  by many indicators" dashboard).
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

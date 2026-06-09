@@ -22532,6 +22532,102 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     Measures of Development (Edexcel A 4.3.1) — 3 HTML visuals
+     ============================================================ */
+
+  /* developmentMeaningHub – Card 1. A "Development" globe ringed by the
+     three things development is really about: health, education and
+     living standards. */
+  developmentMeaningHub: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .dmh-top{max-width:300px;margin:0 auto 12px;}
+        .dmh-grid{display:grid;grid-template-columns:1fr 150px 1fr;gap:14px;align-items:center;max-width:760px;margin:0 auto;}
+        .dmh-tile{border-radius:12px;padding:12px 14px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .dmh-h{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:800;line-height:1.15;margin-bottom:3px;}
+        .dmh-ic{width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+        .dmh-s{font-size:11px;color:#475569;line-height:1.35;}
+        .dmh-circ{width:132px;height:132px;border-radius:50%;background:#ECFDF5;border:3px solid #16A34A;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(236,253,245,.6),0 6px 18px rgba(22,163,74,.16);}
+        @media(max-width:660px){.dmh-grid{grid-template-columns:1fr 1fr;}.dmh-cwrap{grid-column:1/-1;order:-1;display:flex;justify-content:center;}}
+      </style>
+      <div class="dmh-top dmh-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;text-align:center;">
+        <div class="dmh-h" style="color:#B91C1C;justify-content:center;"><span class="dmh-ic">❤️</span>Health</div>
+        <div class="dmh-s">People live longer, healthier lives.</div>
+      </div>
+      <div class="dmh-grid">
+        <div class="dmh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;">
+          <div class="dmh-h" style="color:#5B21B6;"><span class="dmh-ic">\u{1F393}</span>Education</div>
+          <div class="dmh-s">Knowledge, skills and opportunity.</div>
+        </div>
+        <div class="dmh-cwrap"><div class="dmh-circ"><div style="font-size:36px;line-height:1;">\u{1F30D}</div><div style="font-size:12.5px;font-weight:800;color:#065F46;margin-top:2px;">Development</div></div></div>
+        <div class="dmh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;">
+          <div class="dmh-h" style="color:#9A3412;"><span class="dmh-ic">\u{1F3E0}</span>Living standards</div>
+          <div class="dmh-s">Higher real incomes and material welfare.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* hdiBuild – Card 3. Three dimension indices feed a geometric mean to
+     produce a single HDI score between 0 and 1. */
+  hdiBuild: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .hdb-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:820px;margin:0 auto;}
+        .hdb-stack{display:flex;flex-direction:column;gap:8px;}
+        .hdb-idx{border-radius:11px;padding:9px 13px;min-width:148px;}
+        .hdb-it{font-size:12px;font-weight:800;line-height:1.15;}
+        .hdb-is{font-size:10.5px;color:#475569;line-height:1.3;}
+        .hdb-op{font-size:24px;font-weight:800;color:#94A3B8;flex:0 0 auto;}
+        .hdb-mean{width:96px;height:96px;border-radius:50%;background:#EFF6FF;border:2.5px solid #2563EB;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;text-align:center;}
+        .hdb-score{width:104px;height:104px;border-radius:50%;background:#FEF9C3;border:2.5px solid #CA8A04;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;text-align:center;box-shadow:0 0 0 7px rgba(254,249,195,.5);}
+        @media(max-width:640px){.hdb-op{transform:rotate(90deg);}}
+      </style>
+      <div class="hdb-row">
+        <div class="hdb-stack">
+          <div class="hdb-idx" style="background:#FEF2F2;border:1.5px solid #FECACA;"><div class="hdb-it" style="color:#B91C1C;">❤️ Health index</div><div class="hdb-is">From life expectancy.</div></div>
+          <div class="hdb-idx" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="hdb-it" style="color:#5B21B6;">\u{1F393} Education index</div><div class="hdb-is">Mean & expected schooling.</div></div>
+          <div class="hdb-idx" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="hdb-it" style="color:#9A3412;">\u{1F4B7} Income index</div><div class="hdb-is">GNI per head (PPP).</div></div>
+        </div>
+        <div class="hdb-op">→</div>
+        <div class="hdb-mean"><div style="font-size:26px;line-height:1;color:#1E3A8A;">∛</div><div style="font-size:10.5px;font-weight:800;color:#1E3A8A;line-height:1.15;margin-top:3px;">Geometric<br>mean</div></div>
+        <div class="hdb-op">=</div>
+        <div class="hdb-score"><div style="font-size:15px;font-weight:900;color:#854D0E;line-height:1;">HDI</div><div style="font-size:11px;font-weight:800;color:#A16207;margin-top:3px;">score 0–1</div></div>
+      </div>
+      <div style="text-align:center;font-size:11px;color:#475569;margin-top:12px;line-height:1.4;">Each dimension is converted into an index (0–1); the three are combined with a <strong>geometric mean</strong> into the final HDI.</div>
+    </div>
+  `,
+
+  /* developmentDashboard – Card 5. A "Development" globe ringed by the
+     wider dashboard of indicators (income, health and quality-of-life). */
+  developmentDashboard: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ddb-grid{display:grid;grid-template-columns:1fr 150px 1fr;gap:10px;align-items:center;max-width:880px;margin:0 auto;}
+        .ddb-col{display:flex;flex-direction:column;gap:10px;}
+        .ddb-tile{border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .ddb-h{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .ddb-s{font-size:10.5px;color:#475569;line-height:1.3;}
+        .ddb-circ{width:130px;height:130px;border-radius:50%;background:#ECFDF5;border:3px solid #16A34A;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 0 8px rgba(236,253,245,.6),0 6px 18px rgba(22,163,74,.16);}
+        @media(max-width:680px){.ddb-grid{grid-template-columns:1fr 1fr;}.ddb-cwrap{grid-column:1/-1;order:-1;}}
+      </style>
+      <div class="ddb-grid">
+        <div class="ddb-col">
+          <div class="ddb-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="ddb-h" style="color:#9A3412;">\u{1F4B7} GDP / GNI per head</div><div class="ddb-s">Average income per person.</div></div>
+          <div class="ddb-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;"><div class="ddb-h" style="color:#B91C1C;">❤️ Life expectancy</div><div class="ddb-s">Health and longevity.</div></div>
+          <div class="ddb-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;"><div class="ddb-h" style="color:#B91C1C;">\u{1F476} Infant mortality</div><div class="ddb-s">Quality of healthcare and conditions.</div></div>
+        </div>
+        <div class="ddb-cwrap"><div class="ddb-circ"><div style="font-size:34px;line-height:1;">\u{1F30D}</div><div style="font-size:12px;font-weight:800;color:#065F46;margin-top:2px;">Development</div></div></div>
+        <div class="ddb-col">
+          <div class="ddb-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="ddb-h" style="color:#5B21B6;">\u{1F4D6} Literacy & schooling</div><div class="ddb-s">Knowledge and human capital.</div></div>
+          <div class="ddb-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="ddb-h" style="color:#1E3A8A;">\u{1F6B0} Clean water & sanitation</div><div class="ddb-s">Basic living conditions.</div></div>
+          <div class="ddb-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="ddb-h" style="color:#065F46;">\u{1F4CA} Multidimensional poverty</div><div class="ddb-s">Overlapping deprivations and distribution.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

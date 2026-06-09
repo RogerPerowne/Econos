@@ -1356,6 +1356,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'development-strategies-other',
+    name: 'Development Strategies: Other',
+    sub: 'Industrialisation, tourism, primary industries, Fairtrade, aid, debt relief, institutions',
+    color: '#ca8a04',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.3.3', included: true },
+      edexcel_b: { spec: '3.6.2', included: true },
+      aqa:       { spec: '4.2.6.5', included: true },
+      ocr:       { spec: '2.2', included: true }
+    }
+  },
+  {
     id: 'role-of-financial-markets',
     name: 'Role of Financial Markets',
     sub: 'Functions: savings, investment, payments, risk management',

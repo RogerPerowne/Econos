@@ -22318,6 +22318,161 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     What Makes Exchange Rates Move? (Edexcel A 4.1.8) — 4 visuals
+     (Card 5 reuses the existing fxFloatingShifts chart spec.)
+     ============================================================ */
+
+  /* currencyMoveChain – Card 1. A five-step mechanism chain; each step
+     carries the appreciation (green ▲) and depreciation (amber ▼) case,
+     so the mirror is read at a glance. */
+  currencyMoveChain: `
+    <div style="line-height:1.3;background:#fff;border-radius:14px;padding:16px 8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cmc-row{display:flex;align-items:flex-start;justify-content:center;gap:2px;flex-wrap:wrap;max-width:980px;margin:0 auto;}
+        .cmc-node{flex:1;min-width:130px;max-width:180px;text-align:center;}
+        .cmc-disc{width:54px;height:54px;border-radius:50%;background:#EFF6FF;border:2.5px solid #2563EB;display:flex;align-items:center;justify-content:center;font-size:23px;margin:0 auto;position:relative;}
+        .cmc-num{position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:21px;height:21px;border-radius:50%;background:#2563EB;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+        .cmc-t{font-size:12px;font-weight:800;line-height:1.18;margin-top:9px;min-height:30px;}
+        .cmc-tag{font-size:10px;line-height:1.25;border-radius:7px;padding:4px 7px;margin-top:5px;text-align:left;}
+        .cmc-arr{flex:0 0 auto;align-self:flex-start;margin-top:16px;color:#94A3B8;font-size:18px;font-weight:700;}
+        @media(max-width:640px){.cmc-arr{transform:rotate(90deg);width:100%;margin:2px 0;}}
+      </style>
+      ${(function(){
+        var nodes=[
+          {ic:'⚖️',t:'Demand or supply shifts',up:'↑ demand or ↓ supply of £',dn:'↑ supply or ↓ demand for £'},
+          {ic:'\u{1F4B7}',t:'The pound becomes…',up:'scarcer',dn:'more abundant'},
+          {ic:'\u{1F4C8}',t:'Exchange rate moves',up:'rate rises — appreciation',dn:'rate falls — depreciation'},
+          {ic:'\u{1F3F7}️',t:'Trade prices change',up:'exports dearer, imports cheaper',dn:'exports cheaper, imports dearer'}
+        ];
+        var html=nodes.map(function(n,i){
+          return '<div class="cmc-node"><div class="cmc-disc">'+n.ic+'<span class="cmc-num">'+(i+1)+'</span></div><div class="cmc-t">'+n.t+'</div>'+
+            '<div class="cmc-tag" style="background:#ECFDF5;border:1px solid #A7F3D0;color:#065F46;">▲ '+n.up+'</div>'+
+            '<div class="cmc-tag" style="background:#FFF7ED;border:1px solid #FED7AA;color:#9A3412;">▼ '+n.dn+'</div></div>'+
+            '<div class="cmc-arr">→</div>';
+        }).join('');
+        html+='<div class="cmc-node"><div class="cmc-disc" style="background:#F5F3FF;border-color:#7C3AED;">\u{1F310}<span class="cmc-num" style="background:#7C3AED;">5</span></div><div class="cmc-t">Wider effects</div><div class="cmc-tag" style="background:#F5F3FF;border:1px solid #DDD6FE;color:#5B21B6;text-align:center;">Trade, inflation, growth and confidence all respond.</div></div>';
+        return '<div class="cmc-row">'+html+'</div>';
+      })()}
+    </div>
+  `,
+
+  /* demandForPoundsHub – Card 2. "Demand for £" centre ringed by the five
+     sources of demand for sterling (FDI on top, exports/tourism left,
+     portfolio/speculation right). */
+  demandForPoundsHub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .dph-top{max-width:280px;margin:0 auto 12px;}
+        .dph-grid{display:grid;grid-template-columns:1fr 160px 1fr;gap:12px;align-items:center;max-width:860px;margin:0 auto;}
+        .dph-col{display:flex;flex-direction:column;gap:10px;}
+        .dph-tile{border-radius:12px;padding:10px 13px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .dph-h{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .dph-s{font-size:10.5px;color:#475569;line-height:1.3;}
+        .dph-center{display:flex;justify-content:center;}
+        .dph-circ{width:138px;height:138px;border-radius:50%;background:#EFF6FF;border:3px solid #2563EB;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(239,246,255,.6),0 6px 18px rgba(37,99,235,.15);}
+        @media(max-width:680px){.dph-grid{grid-template-columns:1fr 1fr;}.dph-center{grid-column:1/-1;order:-1;}}
+      </style>
+      <div class="dph-top dph-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;text-align:center;">
+        <div class="dph-h" style="color:#065F46;">\u{1F3E2} Inward FDI</div><div class="dph-s">Foreign firms invest in UK projects.</div>
+      </div>
+      <div class="dph-grid">
+        <div class="dph-col">
+          <div class="dph-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="dph-h" style="color:#5B21B6;">\u{1F4E6} UK exports</div><div class="dph-s">Overseas customers buy UK goods and services.</div></div>
+          <div class="dph-tile" style="background:#FDF2F8;border:1.5px solid #FBCFE8;"><div class="dph-h" style="color:#9D174D;">✈️ Tourism into the UK</div><div class="dph-s">Visitors exchange currency to spend here.</div></div>
+        </div>
+        <div class="dph-center"><div class="dph-circ"><div style="font-size:34px;line-height:1;">\u{1F4B7}</div><div style="font-size:13px;font-weight:800;color:#1E3A8A;margin-top:3px;">Demand for £</div></div></div>
+        <div class="dph-col">
+          <div class="dph-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="dph-h" style="color:#1E3A8A;">\u{1F4C8} Portfolio inflows</div><div class="dph-s">Overseas investors buy UK shares and bonds.</div></div>
+          <div class="dph-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="dph-h" style="color:#9A3412;">\u{1F4CA} Speculation &amp; rates</div><div class="dph-s">Traders and savers expect better returns.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* supplyOfPoundsHub – Card 3. The mirror of demandForPoundsHub: "Supply
+     of £" centre ringed by the five sources of supply (residents selling
+     sterling for foreign currency). */
+  supplyOfPoundsHub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .sph-top{max-width:280px;margin:0 auto 12px;}
+        .sph-grid{display:grid;grid-template-columns:1fr 160px 1fr;gap:12px;align-items:center;max-width:860px;margin:0 auto;}
+        .sph-col{display:flex;flex-direction:column;gap:10px;}
+        .sph-tile{border-radius:12px;padding:10px 13px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .sph-h{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .sph-s{font-size:10.5px;color:#475569;line-height:1.3;}
+        .sph-center{display:flex;justify-content:center;}
+        .sph-circ{width:138px;height:138px;border-radius:50%;background:#FFF7ED;border:3px solid #EA580C;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(255,247,237,.7),0 6px 18px rgba(234,88,12,.15);}
+        @media(max-width:680px){.sph-grid{grid-template-columns:1fr 1fr;}.sph-center{grid-column:1/-1;order:-1;}}
+      </style>
+      <div class="sph-top sph-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;text-align:center;">
+        <div class="sph-h" style="color:#5B21B6;">✈️ Foreign travel</div><div class="sph-s">UK residents exchange pounds to spend overseas.</div>
+      </div>
+      <div class="sph-grid">
+        <div class="sph-col">
+          <div class="sph-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="sph-h" style="color:#5B21B6;">\u{1F6D2} UK imports</div><div class="sph-s">Households buy foreign goods and services.</div></div>
+          <div class="sph-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="sph-h" style="color:#065F46;">\u{1F3ED} Outward FDI</div><div class="sph-s">UK firms invest in projects abroad.</div></div>
+        </div>
+        <div class="sph-center"><div class="sph-circ"><div style="font-size:34px;line-height:1;">\u{1F4B7}</div><div style="font-size:13px;font-weight:800;color:#9A3412;margin-top:3px;">Supply of £</div></div></div>
+        <div class="sph-col">
+          <div class="sph-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="sph-h" style="color:#1E3A8A;">\u{1F4C9} Portfolio outflows</div><div class="sph-s">UK investors buy foreign shares and bonds.</div></div>
+          <div class="sph-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="sph-h" style="color:#9A3412;">\u{1F4CA} Speculation &amp; lower returns</div><div class="sph-s">Sellers expect the pound to weaken.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* exchangeDriversHub – Card 4. Four macro drivers (inflation, interest
+     rates, growth & trade, confidence) around a central "Exchange-rate
+     pressure" pill. 2x2 radial hub. */
+  exchangeDriversHub: `
+    <div class="edh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .edh .edh-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:26%;row-gap:18px;position:relative;z-index:1;}
+        .edh .edh-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;}
+        .edh .edh-conn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+        .edh .edh-tile{border-radius:13px;padding:13px 15px;min-height:104px;box-sizing:border-box;box-shadow:0 2px 6px rgba(15,23,42,.05);}
+        .edh .edh-h{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
+        .edh .edh-ic{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+        .edh .edh-t{font-size:13.5px;font-weight:800;line-height:1.15;}
+        .edh .edh-s{font-size:11.5px;color:#475569;line-height:1.35;}
+        .edh .edh-circ{width:132px;height:132px;border-radius:50%;background:#FEF9C3;border:2.5px solid #CA8A04;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 8px rgba(254,249,195,.6),0 6px 18px rgba(202,138,4,.18);}
+        @media(max-width:640px){.edh .edh-grid{grid-template-columns:1fr;column-gap:0;row-gap:12px;}.edh .edh-center{position:static;transform:none;margin:8px auto;}.edh .edh-center-wrap{order:99;display:flex;justify-content:center;}.edh .edh-conn{display:none;}}
+      </style>
+      <div style="position:relative;max-width:760px;margin:0 auto;">
+        <svg class="edh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 24 C 44 24,44 50,50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 24 C 56 24,56 50,50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 76 C 44 76,44 50,50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 76 C 56 76,56 50,50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="edh-grid">
+          <div class="edh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;">
+            <div class="edh-h"><div class="edh-ic">\u{1F4C9}</div><div class="edh-t" style="color:#1E3A8A;">Inflation</div></div>
+            <div class="edh-s">Lower inflation aids competitiveness and can raise demand for the currency; higher inflation can weaken it.</div>
+          </div>
+          <div class="edh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="edh-h"><div class="edh-ic">\u{1F3E6}</div><div class="edh-t" style="color:#1E3A8A;">Interest rates</div></div>
+            <div class="edh-s">Higher rates attract saving and portfolio flows; lower rates can pull money out.</div>
+          </div>
+          <div class="edh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="edh-h"><div class="edh-ic">\u{1F310}</div><div class="edh-t" style="color:#5B21B6;">Growth &amp; trade</div></div>
+            <div class="edh-s">Strong exports and productivity can strengthen the currency, though fast growth can raise imports.</div>
+          </div>
+          <div class="edh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="edh-h"><div class="edh-ic">\u{1F4AD}</div><div class="edh-t" style="color:#9A3412;">Confidence</div></div>
+            <div class="edh-s">Trust, news and expectations can attract inflows or trigger sell-offs.</div>
+          </div>
+        </div>
+        <div class="edh-center-wrap"><div class="edh-center"><div class="edh-circ">
+          <div style="font-size:30px;line-height:1;">\u{1F4B7}</div>
+          <div style="font-size:11.5px;font-weight:800;color:#854D0E;margin-top:3px;line-height:1.15;">Exchange-rate<br>pressure</div>
+        </div></div></div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.122.0 — 2026-06-09
+
+### What Makes Exchange Rates Move? topic complete (6 cards)
+
+- **What Makes Exchange Rates Move? (Edexcel A 4.1.8)** built and flipped
+  live as a new Theme 4 topic — the fourth 4.1.8 deck, sitting alongside
+  Exchange Rates, Exchange Rate Intervention and Exchange Rate Impacts.
+  Six cards: why currencies move (the big picture) → demand for a currency
+  → supply of a currency → the four big drivers → diagram clinic
+  (appreciation vs depreciation) → the whole story.
+- **Four new bespoke visuals:** `currencyMoveChain` (a five-step mechanism
+  chain where each step carries the appreciation green-▲ and depreciation
+  amber-▼ case), `demandForPoundsHub` and `supplyOfPoundsHub` (mirrored
+  centre-and-spokes hubs for the sources of demand for and supply of
+  sterling) and `exchangeDriversHub` (the four macro drivers — inflation,
+  interest rates, growth & trade, confidence — as a 2×2 radial hub around
+  an "Exchange-rate pressure" core).
+- **Card 5 reuses the existing `fxFloatingShifts` chart-engine spec** (the
+  twin appreciation/depreciation FOREX demand-and-supply diagrams), so no
+  new chart geometry was authored.
+- Service worker cache bumped to `econos-v462`.
+
 ## 0.121.0 — 2026-06-09
 
 ### Absolute & Relative Poverty topic complete (6 cards)

@@ -1317,6 +1317,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'development-factors-domestic-capacity',
+    name: 'Development Factors: Domestic Capacity',
+    sub: 'Savings gap, finance, infrastructure, demography, human capital, institutions',
+    color: '#0d9488',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.3.2', included: true },
+      edexcel_b: { spec: '3.4', included: true },
+      aqa:       { spec: '4.2.6.5', included: true },
+      ocr:       { spec: '2.2', included: true }
+    }
+  },
+  {
     id: 'strategies-influencing-growth-and-development',
     name: 'Strategies Influencing Growth & Development',
     sub: 'Market-based, interventionist, aid, debt relief',

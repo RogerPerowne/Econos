@@ -305,6 +305,14 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   member↔member nodes with a dashed link to "rest of world", contrasting
   how outside goods route in under an FTA vs a customs union. Use for any
   "two regimes, same actors, different flow" comparison.
+- **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
+  proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
+  SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL
+  triangles along S and D), `quotaDiagramInteractive` (S+quota shift,
+  price→Pq, quota-rent rectangle), `subsidyTradeInteractive` (S₁→S₂ shift,
+  output up, imports displaced). Reuse these (or the tax/subsidy specs) for
+  any tariff / quota / domestic-subsidy welfare analysis — geometry is
+  computed from the line equations so dots sit exactly on curves.
 
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.

@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.115.0 — 2026-06-09
+
+### Restrictions on Free Trade topic complete (7 cards, 3 interactive chart diagrams)
+
+- **Restrictions on Free Trade (Edexcel A 4.1.6)** built and flipped live.
+  Seven cards: the big picture → why governments restrict trade → tariffs
+  → quotas → subsidies and non-tariff barriers → who gains and who loses →
+  the whole story.
+- **Three purpose-built interactive supply-and-demand welfare diagrams**,
+  authored through the chart engine (`ECONOS_PPF`) with stepped reveal and
+  geometry computed exactly from the line equations so every point sits on
+  its curve:
+  - `tariffDiagramInteractive` — world price Pw → tariff price Pt, with a
+    4-step reveal (free trade → tariff → revenue rectangle → the two
+    deadweight-loss triangles lying along S and D).
+  - `quotaDiagramInteractive` — S + quota right-shift, price rises to Pq,
+    fixed-import bracket and quota-rent rectangle (3 steps).
+  - `subsidyTradeInteractive` — S₁ → S₂ shift, output up, price down,
+    imports displaced (3 steps).
+  Each spec is wired into icons.js, all three shells and the service-worker
+  precache, and passes `lint:charts` + the snapshot regression.
+- Service worker cache bumped to `econos-v455`.
+
 ## 0.114.0 — 2026-06-09
 
 ### Trading Blocs and the WTO topic complete (7 cards, 1 bespoke visual)

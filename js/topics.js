@@ -1135,6 +1135,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'terms-of-trade',
+    name: 'Terms of Trade',
+    sub: 'Relative export and import prices, and what they mean',
+    color: '#0d9488',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.1.4', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: '4.3', included: true }
+    }
+  },
+  {
     id: 'trading-blocs-and-wto',
     name: 'Trading Blocs & WTO',
     sub: 'FTAs, customs unions, trade creation and diversion',

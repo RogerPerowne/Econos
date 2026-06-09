@@ -292,6 +292,15 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
 - `exchangeRateCases` — Pattern of Trade 4.1.3 Card 5. Twin appreciate /
   depreciate panels with a currency-direction row and three effect lines.
   Pattern for any two-case currency / direction comparison.
+- `termsOfTradeFormula` — Terms of Trade 4.1.4 Card 1. A three-node
+  "A → result ← B" formula diagram (export index, central index circle,
+  import index). Use for any "two inputs → one index" definition.
+- `totWorkedExamples` — Terms of Trade 4.1.4 Card 2. Twin calculation
+  panels (favourable vs unfavourable result) with working + result badge.
+  The go-to for a "show the working both ways" numerical card.
+- `totTwoStories` — Terms of Trade 4.1.4 Card 3. Twin three-step
+  mini-flows (improvement vs deterioration). Use for any mirrored
+  cause → mechanism → outcome pair.
 
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.

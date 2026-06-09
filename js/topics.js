@@ -1200,6 +1200,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'exchange-rate-intervention',
+    name: 'Exchange Rate Intervention',
+    sub: 'Currency-market intervention, defending a peg, devaluation',
+    color: '#0ea5e9',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.1.8', included: true },
+      edexcel_b: { spec: '3.1.5', included: true },
+      aqa:       { spec: '4.2.6.4', included: true },
+      ocr:       { spec: '4.2', included: true }
+    }
+  },
+  {
     id: 'international-competitiveness',
     name: 'International Competitiveness',
     sub: 'Unit labour costs and strategies to improve',

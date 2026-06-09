@@ -22810,6 +22810,48 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     Development Strategies: Market-orientated (Edexcel A 4.3.3) — 1 visual
+     (Card 5 reuses the existing fxMarketDiagram chart spec.)
+     ============================================================ */
+
+  /* fdiMagnetHub – Card 3. A magnet pulling foreign investment in, ringed
+     by the pull factors that make a country attractive to FDI. */
+  fdiMagnetHub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fmh-grid{display:grid;grid-template-columns:1fr 168px 1fr;gap:10px;align-items:center;max-width:880px;margin:0 auto;}
+        .fmh-col{display:flex;flex-direction:column;gap:10px;}
+        .fmh-tile{border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .fmh-h{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .fmh-s{font-size:10.5px;color:#475569;line-height:1.3;}
+        .fmh-cwrap{display:flex;justify-content:center;}
+        .fmh-circ{width:156px;height:156px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#FEE2E2,#FECACA);border:3px solid #DC2626;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 9px rgba(254,226,226,.55),0 8px 22px rgba(220,38,38,.2);position:relative;}
+        .fmh-coin{position:absolute;font-size:15px;}
+        @media(max-width:680px){.fmh-grid{grid-template-columns:1fr 1fr;}.fmh-cwrap{grid-column:1/-1;order:-1;}}
+      </style>
+      <div class="fmh-grid">
+        <div class="fmh-col">
+          <div class="fmh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="fmh-h" style="color:#1E3A8A;">\u{1F6D2} Market size</div><div class="fmh-s">A large or growing consumer base.</div></div>
+          <div class="fmh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="fmh-h" style="color:#5B21B6;">\u{1F9D1}‍\u{1F3ED} Skilled labour</div><div class="fmh-s">A capable, productive workforce.</div></div>
+          <div class="fmh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="fmh-h" style="color:#065F46;">\u{1F4C9} Low costs</div><div class="fmh-s">Competitive wages and inputs.</div></div>
+        </div>
+        <div class="fmh-cwrap"><div class="fmh-circ">
+          <span class="fmh-coin" style="top:18px;left:24px;">\u{1F4B5}</span>
+          <span class="fmh-coin" style="top:26px;right:22px;">\u{1F4B0}</span>
+          <span class="fmh-coin" style="bottom:24px;left:30px;">\u{1F4B4}</span>
+          <div style="font-size:46px;line-height:1;">\u{1F9F2}</div>
+          <div style="font-size:12.5px;font-weight:800;color:#991B1B;margin-top:2px;line-height:1.15;">Attracts<br>FDI</div>
+        </div></div>
+        <div class="fmh-col">
+          <div class="fmh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="fmh-h" style="color:#9A3412;">\u{1F6E3}️ Good infrastructure</div><div class="fmh-s">Reliable power, transport and digital.</div></div>
+          <div class="fmh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="fmh-h" style="color:#1E3A8A;">⚖️ Stability & rules</div><div class="fmh-s">Secure property rights and low risk.</div></div>
+          <div class="fmh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="fmh-h" style="color:#065F46;">\u{1F310} Open economy</div><div class="fmh-s">Welcoming trade and investment rules.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

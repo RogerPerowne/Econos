@@ -1330,9 +1330,9 @@ window.ECONOS_TOPICS = [
     }
   },
   {
-    id: 'strategies-influencing-growth-and-development',
-    name: 'Strategies Influencing Growth & Development',
-    sub: 'Market-based, interventionist, aid, debt relief',
+    id: 'development-strategies-market-orientated',
+    name: 'Development Strategies: Market-orientated',
+    sub: 'Trade liberalisation, FDI, subsidy removal, floating rates, microfinance, privatisation',
     color: '#84cc16',
     available: { learn: true, link: false, land: false },
     boards: {

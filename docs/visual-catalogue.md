@@ -407,6 +407,11 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   `demographyPyramids` (two stylised population pyramids — wide-base burden
   vs working-age-bulge dividend — built from centred CSS bars, reuse for
   any "two shapes of the same distribution" contrast).
+- **Development Strategies: Market-orientated 4.3.3 set** — `fdiMagnetHub`
+  (a magnet core with money emojis being pulled in, ringed by six
+  pull-factor tiles — the `developmentDashboard` grid with a magnet centre,
+  reuse for any "central force attracts X" story). Card 5 reuses the
+  `fxMarketDiagram` FOREX demand/supply spec for the floating-rate diagram.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

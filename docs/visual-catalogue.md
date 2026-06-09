@@ -244,6 +244,10 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   `wageFloorCeiling` (interactive min/max wage controls, `wf-*` — the
   price-floor/ceiling style applied to wages), `labourSupplyElasticity`
   (static inelastic-vs-elastic two-panel). Reuses `monopsonyLabourDiagram`.
+- **Protecting Suppliers & Employees (3.6.1):** `monopsonyMinWage`
+  (interactive minimum-wage-in-a-monopsony, `mmw-1..2` — a min wage
+  between Wm and Wc raises both pay and employment). Reuses
+  `monopsonyLabourDiagram`.
 - **Monopsony (3.4.6):** `monopsonyLabourDiagram` (see §8b).
 
 ### 9. Decompose / labelled anatomy

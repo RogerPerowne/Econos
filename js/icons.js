@@ -20544,6 +20544,64 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     PROTECTING SUPPLIERS & EMPLOYEES (3.6.1) — minimum wage in a
+     monopsony. Reuses the monopsony coords (x = 80 + 54·L,
+     y = 320 − 9.125·£): ACL=S 4+1.8L, MCL 4+3.6L, MRP 26−2L.
+     Monopsony: MCL=MRP at (292,154), Wm on ACL (292,219). A minimum
+     wage Wmin between Wm and Wc raises BOTH wage and employment —
+     new point on the supply curve at (368,196).
+     ============================================================ */
+
+  /* monopsonyMinWage — Card 4 interactive (mmw-1..mmw-2). */
+  monopsonyMinWage: `
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="mmw-up2" markerWidth="8" markerHeight="8" refX="3" refY="0" orient="auto"><path d="M0,8 L6,8 L3,0 z" fill="#16A34A"/></marker>
+          <marker id="mmw-rt2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
+        </defs>
+        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">A MINIMUM WAGE IN A MONOPSONY</text>
+        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="36" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
+        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Employment (L)</text>
+        <!-- ACL = S -->
+        <line x1="80" y1="283" x2="620" y2="119" stroke="#16A34A" stroke-width="2.4"/>
+        <text x="624" y="116" font-size="13" font-weight="800" fill="#16A34A">ACL = S</text>
+        <!-- MCL -->
+        <line x1="80" y1="283" x2="328" y2="132" stroke="#DC2626" stroke-width="2.4"/>
+        <text x="332" y="128" font-size="13" font-weight="800" fill="#DC2626">MCL</text>
+        <!-- MRP -->
+        <line x1="80" y1="83" x2="620" y2="265" stroke="#2563EB" stroke-width="2.4"/>
+        <text x="624" y="268" font-size="13" font-weight="800" fill="#2563EB">MRP</text>
+        <!-- mmw-1: monopsony outcome -->
+        <g class="mmw-1" style="display:none">
+          <circle cx="292" cy="154" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
+          <line x1="292" y1="154" x2="292" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="292" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">L_m</text>
+          <line x1="292" y1="154" x2="292" y2="219" stroke="#B91C1C" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="292" cy="219" r="6" fill="#B91C1C" stroke="#fff" stroke-width="2"/>
+          <line x1="292" y1="219" x2="80" y2="219" stroke="#B91C1C" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="74" y="223" font-size="12" font-weight="800" fill="#B91C1C" text-anchor="end">W_m</text>
+        </g>
+        <!-- mmw-2: minimum wage -->
+        <g class="mmw-2" style="display:none">
+          <line x1="80" y1="196" x2="400" y2="196" stroke="#7C3AED" stroke-width="2.6"/>
+          <text x="74" y="200" font-size="12" font-weight="800" fill="#6D28D9" text-anchor="end">W_min</text>
+          <text x="300" y="188" font-size="10.5" font-weight="800" fill="#6D28D9">minimum wage</text>
+          <circle cx="368" cy="196" r="6" fill="#7C3AED" stroke="#fff" stroke-width="2"/>
+          <line x1="368" y1="196" x2="368" y2="320" stroke="#7C3AED" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <text x="368" y="338" font-size="12" font-weight="800" fill="#6D28D9" text-anchor="middle">L_min</text>
+          <line x1="96" y1="217" x2="96" y2="200" stroke="#16A34A" stroke-width="2.4" marker-end="url(#mmw-up2)"/>
+          <text x="104" y="212" font-size="9.5" font-weight="800" fill="#15803D">wage ↑</text>
+          <line x1="300" y1="306" x2="361" y2="306" stroke="#16A34A" stroke-width="2.4" marker-end="url(#mmw-rt2)"/>
+          <text x="330" y="300" font-size="9.5" font-weight="800" fill="#15803D" text-anchor="middle">jobs ↑</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

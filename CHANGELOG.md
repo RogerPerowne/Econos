@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.124.0 — 2026-06-09
+
+### Causes of Inequality topic complete (7 cards)
+
+- **Causes of Inequality (Edexcel A 4.2.2)** built and flipped live as a
+  Theme 4 topic — the causes/significance sibling to the measurement-
+  focused Inequality deck. Seven cards: why inequality changes (the big
+  picture) → causes of income inequality within countries → causes of
+  wealth inequality within countries → inequality between countries →
+  economic change and development (Kuznets) → capitalism and inequality →
+  the whole story.
+- **One new chart-engine spec:** `kuznetsDevelopment` (the inverted-U
+  Kuznets hypothesis — inequality rising through early development and
+  take-off, then flattening or falling in a mature economy, with three
+  phase points and a "model, not a law" caveat). Bound as
+  `kuznetsDevelopment` to avoid colliding with the legacy hand-rolled
+  `kuznetsCurve` SVG.
+- The deck otherwise reuses the existing renderer vocabulary (flow chains,
+  two-flow cards, icon-top tile grids and VS pairs) — no new bespoke
+  HTML visuals required.
+- Service worker cache bumped to `econos-v464`.
+
 ## 0.123.0 — 2026-06-09
 
 ### Inequality topic complete (6 cards)

@@ -22068,6 +22068,256 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     Absolute & Relative Poverty (Edexcel A 4.2.1) — 5 visuals
+     ============================================================ */
+
+  /* povertyLineSpectrum – Card 2. An income axis with a dashed poverty
+     line: green "poor" figures to the left, purple "not poor" figures to
+     the right, plus two side notes on absolute vs relative measures. */
+  povertyLineSpectrum: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pls-wrap{display:grid;grid-template-columns:1.55fr 1fr;gap:16px;align-items:stretch;max-width:900px;margin:0 auto;}
+        .pls-diagram{background:#F8FAFC;border:1.5px solid #E2E8F0;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;}
+        .pls-tops{display:flex;justify-content:space-between;align-items:flex-start;font-size:11.5px;font-weight:800;line-height:1.2;margin-bottom:4px;}
+        .pls-side{display:flex;flex-direction:column;gap:10px;justify-content:center;}
+        .pls-note{border-radius:12px;padding:12px 14px;font-size:11.5px;line-height:1.4;color:#334155;}
+        .pls-nh{display:flex;align-items:center;gap:8px;font-weight:800;margin-bottom:3px;font-size:12px;}
+        @media(max-width:680px){.pls-wrap{grid-template-columns:1fr;}}
+      </style>
+      <div class="pls-wrap">
+        <div class="pls-diagram">
+          <div class="pls-tops">
+            <div style="flex:1;text-align:center;color:#059669;">Below the poverty line<br><span style="font-weight:600;color:#64748B;">(poor)</span></div>
+            <div style="flex:0 0 auto;padding:0 4px;text-align:center;color:#0B1426;">Poverty line<br><span style="font-weight:600;color:#64748B;">(threshold)</span></div>
+            <div style="flex:1;text-align:center;color:#7C3AED;">Above the poverty line<br><span style="font-weight:600;color:#64748B;">(not poor)</span></div>
+          </div>
+          <svg viewBox="0 0 360 116" style="width:100%;height:auto;display:block;">
+            <defs>
+              <marker id="pls-l" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M9,0 L0,4.5 L9,9 Z" fill="#94A3B8"/></marker>
+              <marker id="pls-r" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#94A3B8"/></marker>
+            </defs>
+            <line x1="180" y1="4" x2="180" y2="82" stroke="#0B1426" stroke-width="1.6" stroke-dasharray="5 4"/>
+            ${[40,78,116,154].map(function(x){return '<g transform="translate('+x+',46)" fill="#16A34A"><circle cx="0" cy="-13" r="6.5"/><path d="M-8,15 C-8,2 8,2 8,15 Z"/></g>';}).join('')}
+            ${[206,243,280,317,346].map(function(x){return '<g transform="translate('+x+',46)" fill="#7C3AED"><circle cx="0" cy="-13" r="6.5"/><path d="M-8,15 C-8,2 8,2 8,15 Z"/></g>';}).join('')}
+            <line x1="16" y1="98" x2="344" y2="98" stroke="#94A3B8" stroke-width="1.6" marker-start="url(#pls-l)" marker-end="url(#pls-r)"/>
+            <text x="16" y="112" font-size="10" font-weight="700" fill="#64748B">Low</text>
+            <text x="180" y="112" font-size="10.5" font-weight="800" fill="#334155" text-anchor="middle">Income</text>
+            <text x="344" y="112" font-size="10" font-weight="700" fill="#64748B" text-anchor="end">High</text>
+          </svg>
+        </div>
+        <div class="pls-side">
+          <div class="pls-note" style="background:#ECFDF5;border:1.5px solid #A7F3D0;">
+            <div class="pls-nh" style="color:#065F46;">\u{1F310} Absolute measures</div>
+            Use the same threshold across countries, so they help compare living standards internationally.
+          </div>
+          <div class="pls-note" style="background:#F5F3FF;border:1.5px solid #DDD6FE;">
+            <div class="pls-nh" style="color:#5B21B6;">\u{1F465} Relative measures</div>
+            Use each society's income distribution, so they show inequality and are often used within richer countries.
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* povertyMoveDifferently – Card 3. Four growth/shock scenarios with the
+     direction each poverty measure moves, why the two can diverge, and a
+     quick matrix of the four combinations. Down arrow = green (falls),
+     up arrow = red (rises). */
+  povertyMoveDifferently: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pmd-sec{display:flex;align-items:center;gap:8px;margin:20px 0 12px;}
+        .pmd-sec span.l{font-size:14px;}
+        .pmd-sec span.t{font-size:12px;font-weight:800;letter-spacing:0.06em;color:#0B1426;}
+        .pmd-sec span.r{flex:1;height:1px;background:#E2E8F0;}
+        .pmd-scen{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+        .pmd-card{border-radius:14px;padding:14px 13px 12px;position:relative;}
+        .pmd-num{position:absolute;top:12px;left:12px;width:24px;height:24px;border-radius:50%;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+        .pmd-ci{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;margin:6px auto 8px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+        .pmd-ct{font-size:13px;font-weight:800;line-height:1.18;text-align:center;}
+        .pmd-cs{font-size:11px;color:#475569;line-height:1.35;text-align:center;margin-top:5px;min-height:42px;}
+        .pmd-orow{display:flex;align-items:center;gap:8px;background:#fff;border-radius:9px;padding:6px 9px;margin-top:7px;box-shadow:0 1px 2px rgba(0,0,0,.05);}
+        .pmd-mchip{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+        .pmd-olab{font-size:11px;font-weight:700;color:#334155;flex:1;}
+        .pmd-arr{width:23px;height:23px;border-radius:50%;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .pmd-why{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+        .pmd-wtile{border-radius:12px;padding:13px 15px;}
+        .pmd-wh{font-size:12.5px;font-weight:800;line-height:1.2;margin-bottom:4px;}
+        .pmd-ws{font-size:11.5px;color:#475569;line-height:1.4;}
+        .pmd-mtx{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+        .pmd-mcol{border:1.5px solid #E2E8F0;border-radius:12px;overflow:hidden;text-align:center;}
+        .pmd-mhead{font-size:12.5px;font-weight:800;padding:9px 8px;line-height:1.2;}
+        .pmd-micons{display:flex;justify-content:center;gap:18px;padding:12px 0 8px;}
+        .pmd-mcell{display:flex;flex-direction:column;align-items:center;gap:5px;}
+        .pmd-mbig{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;}
+        .pmd-mverd{font-size:12px;font-weight:800;line-height:1.2;padding:0 8px;}
+        .pmd-mbody{font-size:10.8px;color:#475569;line-height:1.35;padding:4px 10px 12px;}
+        @media(max-width:720px){.pmd-scen,.pmd-mtx{grid-template-columns:1fr 1fr;}.pmd-why{grid-template-columns:1fr;}}
+      </style>
+      ${(function(){
+        function arr(dir){var up=dir==='up';return '<span class="pmd-arr" style="background:'+(up?'#DC2626':'#16A34A')+';">'+(up?'↑':'↓')+'</span>';}
+        function orow(dir,kind){var p=kind==='rel';return '<div class="pmd-orow"><span class="pmd-mchip" style="background:'+(p?'#EDE9FE':'#DCFCE7')+';">'+(p?'\u{1F465}':'\u{1F35C}')+'</span><span class="pmd-olab">'+(p?'Relative poverty':'Absolute poverty')+'</span>'+arr(dir)+'</div>';}
+        var scen=[
+          {n:1,bg:'#ECFDF5',bd:'#A7F3D0',c:'#16A34A',tc:'#065F46',ic:'\u{1F4C8}',t:'Strong inclusive growth',s:'Incomes rise for many and gaps narrow.',a:'down',r:'down'},
+          {n:2,bg:'#FFFBEB',bd:'#FDE68A',c:'#D97706',tc:'#B45309',ic:'\u{1F4CA}',t:'Unequal growth',s:'Average incomes rise but gaps widen.',a:'down',r:'up'},
+          {n:3,bg:'#FEF2F2',bd:'#FECACA',c:'#DC2626',tc:'#B91C1C',ic:'⛈️',t:'Recession or inflation shock',s:'Incomes fall or prices jump sharply.',a:'up',r:'up'},
+          {n:4,bg:'#F5F3FF',bd:'#DDD6FE',c:'#7C3AED',tc:'#5B21B6',ic:'\u{1F91D}',t:'Redistribution or stronger welfare',s:'Support and fairer distribution reduce gaps.',a:'down',r:'down'}
+        ];
+        var scenHtml='<div class="pmd-scen">'+scen.map(function(d){return '<div class="pmd-card" style="background:'+d.bg+';border:1.5px solid '+d.bd+';"><div class="pmd-num" style="background:'+d.c+';">'+d.n+'</div><div class="pmd-ci">'+d.ic+'</div><div class="pmd-ct" style="color:'+d.tc+';">'+d.t+'</div><div class="pmd-cs">'+d.s+'</div>'+orow(d.a,'abs')+orow(d.r,'rel')+'</div>';}).join('')+'</div>';
+
+        var why=[
+          {bg:'#EFF6FF',bd:'#BFDBFE',tc:'#1E3A8A',ic:'⚖️',t:'Changing thresholds',s:'Absolute poverty uses a fixed basic-needs threshold that does not move with average incomes.'},
+          {bg:'#F5F3FF',bd:'#DDD6FE',tc:'#5B21B6',ic:'\u{1F465}',t:'Distribution of income',s:'Relative poverty depends on how income is shared – gaps can widen even when the economy grows.'},
+          {bg:'#ECFDF5',bd:'#A7F3D0',tc:'#065F46',ic:'\u{1F6D2}',t:'The role of prices',s:'Rising prices for essentials can push more people over the basic-needs threshold.'}
+        ];
+        var whyHtml='<div class="pmd-sec"><span class="l">\u{1F517}</span><span class="t">WHY THIS HAPPENS</span><span class="r"></span></div><div class="pmd-why">'+why.map(function(d){return '<div class="pmd-wtile" style="background:'+d.bg+';border:1.5px solid '+d.bd+';"><div class="pmd-wh" style="color:'+d.tc+';">'+d.ic+' '+d.t+'</div><div class="pmd-ws">'+d.s+'</div></div>';}).join('')+'</div>';
+
+        function mcell(dir,kind){var up=dir==='up';var p=kind==='rel';return '<div class="pmd-mcell"><span class="pmd-mbig" style="background:'+(p?'#EDE9FE':'#DCFCE7')+';">'+(p?'\u{1F465}':'\u{1F35C}')+'</span><span class="pmd-arr" style="background:'+(up?'#DC2626':'#16A34A')+';">'+(up?'↑':'↓')+'</span></div>';}
+        var mtx=[
+          {hbg:'#ECFDF5',hc:'#065F46',a:'down',r:'down',vc:'#16A34A',v:'Best outcome',b:'Hardship falls and gaps narrow.'},
+          {hbg:'#FEF2F2',hc:'#B91C1C',a:'up',r:'up',vc:'#DC2626',v:'Worst outcome',b:'Hardship rises and gaps widen.'},
+          {hbg:'#FFFBEB',hc:'#B45309',a:'down',r:'up',vc:'#D97706',v:'Growth without inclusion',b:'Hardship falls but inequality stays high or worsens.'},
+          {hbg:'#F5F3FF',hc:'#5B21B6',a:'up',r:'down',vc:'#7C3AED',v:'Fairer sharing, higher costs',b:'Gaps narrow but basic hardship may rise.'}
+        ];
+        var titles=['Both fall','Both rise','Only absolute falls','Only relative falls'];
+        var mtxHtml='<div class="pmd-sec"><span class="l">\u{1F517}</span><span class="t">A QUICK MATRIX</span><span class="r"></span></div><div class="pmd-mtx">'+mtx.map(function(d,i){return '<div class="pmd-mcol"><div class="pmd-mhead" style="background:'+d.hbg+';color:'+d.hc+';">'+titles[i]+'</div><div class="pmd-micons">'+mcell(d.a,'abs')+mcell(d.r,'rel')+'</div><div class="pmd-mverd" style="color:'+d.vc+';">'+d.v+'</div><div class="pmd-mbody">'+d.b+'</div></div>';}).join('')+'</div>';
+
+        return scenHtml+whyHtml+mtxHtml;
+      })()}
+    </div>
+  `,
+
+  /* povertyTrapCycle – Card 4. The classic low-income → poor health →
+     low productivity → low earnings → low income loop, with a dashed
+     return arrow closing the cycle. */
+  povertyTrapCycle: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:18px 14px 8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="position:relative;max-width:760px;margin:0 auto;">
+        <div style="display:flex;align-items:flex-start;justify-content:center;gap:2px;">
+          ${[
+            {ic:'\u{1F4B7}',t:'Low income'},
+            {ic:'\u{1F37D}️',t:'Poor nutrition / ill health'},
+            {ic:'\u{1F4C9}',t:'Low productivity'},
+            {ic:'\u{1F4B7}',t:'Low earnings'},
+            {ic:'\u{1F4B7}',t:'Low income'}
+          ].map(function(n,i){
+            var arrow = i<4 ? '<div style="flex:0 0 auto;align-self:flex-start;margin-top:24px;color:#A78BFA;font-size:22px;font-weight:700;">→</div>' : '';
+            return '<div style="flex:1;min-width:84px;max-width:128px;text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:#F5F3FF;border:2.5px solid #A78BFA;display:flex;align-items:center;justify-content:center;font-size:25px;margin:0 auto;">'+n.ic+'</div><div style="font-size:12px;font-weight:800;color:#5B21B6;line-height:1.2;margin-top:8px;">'+n.t+'</div></div>'+arrow;
+          }).join('')}
+        </div>
+        <svg viewBox="0 0 760 52" style="width:100%;height:52px;display:block;" preserveAspectRatio="none">
+          <defs><marker id="ptc-ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#A78BFA"/></marker></defs>
+          <path d="M 690 2 C 720 46, 60 46, 70 6" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#ptc-ah)"/>
+        </svg>
+        <div style="text-align:center;font-size:11px;color:#7C3AED;font-weight:700;margin-top:2px;">Low income feeds back on itself — the trap repeats.</div>
+      </div>
+    </div>
+  `,
+
+  /* incomeLadder – Card 5. A ladder of households with the median line
+     and the 60%-of-median relative-poverty threshold, beside the main
+     drivers of relative poverty. */
+  incomeLadder: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .inl-wrap{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start;max-width:920px;margin:0 auto;}
+        .inl-diagram{background:#F8FAFC;border:1.5px solid #E2E8F0;border-radius:14px;padding:12px;}
+        .inl-hd{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+        .inl-bdg{width:24px;height:24px;border-radius:50%;background:#7C3AED;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .inl-hl{font-size:12px;font-weight:800;letter-spacing:0.05em;color:#0B1426;}
+        .inl-drivers{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+        .inl-tile{background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:12px;padding:11px 13px;}
+        .inl-th{font-size:12.5px;font-weight:800;color:#1E3A8A;line-height:1.18;margin-bottom:3px;}
+        .inl-ts{font-size:11px;color:#475569;line-height:1.35;}
+        @media(max-width:720px){.inl-wrap{grid-template-columns:1fr;}.inl-diagram{max-width:320px;margin:0 auto;}}
+      </style>
+      <div class="inl-wrap">
+        <div>
+          <div class="inl-hd"><span class="inl-bdg">1</span><span class="inl-hl">THE INCOME LADDER</span></div>
+          <div class="inl-diagram">
+            <svg viewBox="0 0 280 350" style="width:100%;height:auto;display:block;">
+              <defs><marker id="inl-u" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto"><path d="M0,8 L4,0 L8,8 Z" fill="#94A3B8"/></marker><marker id="inl-d" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0,0 L4,8 L8,0 Z" fill="#94A3B8"/></marker></defs>
+              <!-- income axis -->
+              <line x1="20" y1="34" x2="20" y2="320" stroke="#94A3B8" stroke-width="1.5" marker-start="url(#inl-u)" marker-end="url(#inl-d)"/>
+              <text x="14" y="180" font-size="10.5" font-weight="700" fill="#475569" transform="rotate(-90 14 180)" text-anchor="middle">Income (£ per year)</text>
+              <text x="44" y="26" font-size="11" font-weight="800" fill="#065F46">High income</text>
+              <text x="44" y="342" font-size="11" font-weight="800" fill="#5B21B6">Low income</text>
+              <!-- ladder rails + rungs -->
+              <line x1="70" y1="30" x2="70" y2="324" stroke="#334155" stroke-width="3.5"/>
+              <line x1="132" y1="30" x2="132" y2="324" stroke="#334155" stroke-width="3.5"/>
+              ${[44,80,116,152,188,224,260,296].map(function(y){return '<line x1="70" y1="'+y+'" x2="132" y2="'+y+'" stroke="#94A3B8" stroke-width="2.5"/>';}).join('')}
+              <!-- people: green above median, purple below threshold -->
+              ${[[88,62,'#16A34A'],[114,62,'#16A34A'],[88,98,'#16A34A'],[114,98,'#16A34A'],[88,134,'#16A34A'],[114,134,'#16A34A']].map(function(p){return '<g transform="translate('+p[0]+','+p[1]+')" fill="'+p[2]+'"><circle cx="0" cy="-9" r="4.5"/><path d="M-6,10 C-6,1 6,1 6,10 Z"/></g>';}).join('')}
+              ${[[88,242,'#7C3AED'],[114,242,'#7C3AED'],[88,278,'#7C3AED'],[114,278,'#7C3AED'],[88,314,'#7C3AED'],[114,314,'#7C3AED']].map(function(p){return '<g transform="translate('+p[0]+','+p[1]+')" fill="'+p[2]+'"><circle cx="0" cy="-9" r="4.5"/><path d="M-6,10 C-6,1 6,1 6,10 Z"/></g>';}).join('')}
+              <!-- median line -->
+              <line x1="58" y1="170" x2="278" y2="170" stroke="#16A34A" stroke-width="1.8" stroke-dasharray="6 4"/>
+              <text x="140" y="166" font-size="10.5" font-weight="800" fill="#065F46">Median income</text>
+              <text x="140" y="179" font-size="9.5" fill="#16A34A">(the norm)</text>
+              <!-- 60% threshold -->
+              <line x1="58" y1="212" x2="278" y2="212" stroke="#7C3AED" stroke-width="1.8" stroke-dasharray="6 4"/>
+              <text x="140" y="208" font-size="10.5" font-weight="800" fill="#5B21B6">60% of median</text>
+              <text x="140" y="221" font-size="9.5" fill="#7C3AED">Relative poverty line</text>
+            </svg>
+            <div style="font-size:11px;color:#475569;line-height:1.4;margin-top:6px;text-align:center;">Households below the purple line are in <strong style="color:#5B21B6;">relative poverty</strong>.</div>
+          </div>
+        </div>
+        <div>
+          <div class="inl-hd"><span class="inl-bdg">2</span><span class="inl-hl">MAIN DRIVERS</span></div>
+          <div class="inl-drivers">
+            ${[
+              {ic:'\u{1F4CA}',t:'Wage inequality',s:'Pay is more unequal, so the gap between high and low earners widens.'},
+              {ic:'\u{1F4BC}',t:'Unemployment',s:'Joblessness or being out of work keeps incomes very low.'},
+              {ic:'\u{1F3E0}',t:'Housing costs',s:'High or rising rents and house prices cut disposable income.'},
+              {ic:'\u{1F4CD}',t:'Regional gaps',s:'Some places offer higher pay and more opportunities than others.'},
+              {ic:'\u{1F9D1}‍\u{1F3ED}',t:'Low skills / low pay',s:'Lower skills often mean lower productivity and lower wages.'},
+              {ic:'⚖️',t:'Taxes and benefits',s:'The tax-benefit system shapes incomes and widens or narrows gaps.'}
+            ].map(function(d){return '<div class="inl-tile"><div class="inl-th">'+d.ic+' '+d.t+'</div><div class="inl-ts">'+d.s+'</div></div>';}).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* povertyCausesOutcomes – Card 6. Five causal levers feeding into the
+     twin outcomes: absolute poverty (hardship) and relative poverty
+     (inequality and participation). */
+  povertyCausesOutcomes: `
+    <div style="line-height:1.3;background:#fff;border-radius:14px;padding:16px 8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pco-row{display:flex;align-items:stretch;justify-content:center;gap:5px;flex-wrap:wrap;max-width:960px;margin:0 auto;}
+        .pco-node{flex:0 1 128px;min-width:104px;border-radius:12px;padding:11px 9px;text-align:center;}
+        .pco-ci{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:21px;margin:0 auto 6px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+        .pco-t{font-size:12px;font-weight:800;line-height:1.15;}
+        .pco-s{font-size:10px;color:#475569;line-height:1.3;margin-top:3px;}
+        .pco-arr{align-self:center;color:#94A3B8;font-size:18px;font-weight:700;flex:0 0 auto;}
+        .pco-out{flex:1 1 200px;min-width:184px;border:2px solid #6EE7B7;border-radius:12px;padding:11px 12px;background:#F0FDF4;display:flex;flex-direction:column;justify-content:center;gap:8px;}
+        .pco-orow{display:flex;align-items:center;gap:9px;}
+        .pco-oc{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+        .pco-ot{font-size:11.5px;font-weight:800;line-height:1.18;}
+        .pco-os{font-size:10px;color:#475569;line-height:1.25;}
+        @media(max-width:780px){.pco-arr{transform:rotate(90deg);width:100%;}}
+      </style>
+      <div class="pco-row">
+        ${(function(){
+          var nodes=[
+            {bg:'#ECFDF5',bd:'#A7F3D0',tc:'#065F46',ic:'\u{1F4C8}',t:'Stronger growth',s:'Higher incomes and productivity.'},
+            {bg:'#F5F3FF',bd:'#DDD6FE',tc:'#5B21B6',ic:'\u{1F6D2}',t:'Prices and costs',s:'Cost of living rises or falls.'},
+            {bg:'#EFF6FF',bd:'#BFDBFE',tc:'#1E3A8A',ic:'\u{1F464}',t:'Jobs and wages',s:'Employment and wage rates.'},
+            {bg:'#FFFBEB',bd:'#FDE68A',tc:'#B45309',ic:'\u{1F465}',t:'Redistribution',s:'Taxes, transfers and inequality.'},
+            {bg:'#EFF6FF',bd:'#BFDBFE',tc:'#1E3A8A',ic:'\u{1F3E5}',t:'Public services',s:'Health, education, infrastructure.'}
+          ];
+          return nodes.map(function(d){return '<div class="pco-node" style="background:'+d.bg+';border:1.5px solid '+d.bd+';"><div class="pco-ci">'+d.ic+'</div><div class="pco-t" style="color:'+d.tc+';">'+d.t+'</div><div class="pco-s">'+d.s+'</div></div><div class="pco-arr">→</div>';}).join('');
+        })()}
+        <div class="pco-out">
+          <div class="pco-orow"><span class="pco-oc" style="background:#DCFCE7;">\u{1F35C}</span><div><div class="pco-ot" style="color:#065F46;">Absolute poverty</div><div class="pco-os">Hardship improves or worsens.</div></div></div>
+          <div class="pco-orow"><span class="pco-oc" style="background:#EDE9FE;">\u{1F465}</span><div><div class="pco-ot" style="color:#5B21B6;">Relative poverty</div><div class="pco-os">Inequality and participation change.</div></div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.121.0 — 2026-06-09
+
+### Absolute & Relative Poverty topic complete (6 cards)
+
+- **Absolute & Relative Poverty (Edexcel A 4.2.1)** built and flipped live
+  as a new Theme 4 (Development Economics) topic. Six cards: the big
+  picture → how we measure poverty → when the two move differently → what
+  changes absolute poverty → what changes relative poverty → the whole
+  story.
+- **Five new bespoke visuals:** `povertyLineSpectrum` (poor/not-poor
+  households on an income axis split by the poverty line), `povertyMove
+  Differently` (four growth/shock scenarios with the direction each
+  measure moves, a "why" panel and a quick matrix of the four
+  combinations), `povertyTrapCycle` (the low-income → poor health → low
+  productivity → low earnings feedback loop with a dashed return arrow),
+  `incomeLadder` (a household ladder with the median line and the
+  60%-of-median relative-poverty threshold, beside the main drivers) and
+  `povertyCausesOutcomes` (five causal levers feeding the twin outcomes of
+  absolute and relative poverty).
+- Service worker cache bumped to `econos-v461`.
+
 ## 0.120.0 — 2026-06-09
 
 ### International Competitiveness topic complete (7 cards)

@@ -345,6 +345,19 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   "regime A vs regime B" head-to-head), and `competitivenessGaugeHub` (a
   driver tile grid wrapped around a live `ECONOS_DIALS` gauge — reuse for
   any "many inputs → one index readout" composite).
+- **Absolute & Relative Poverty 4.2.1 set** — `povertyLineSpectrum`
+  (figures split left/right of a dashed threshold on an income axis —
+  reuse for any "above vs below a line" population split), `povertyMove
+  Differently` (a scenario grid where each case shows the direction two
+  indicators move via green-↓/red-↑ badges, plus a four-cell outcome
+  matrix — reuse for any "which way does each measure move under
+  scenario X" story), `povertyTrapCycle` (a horizontal node chain closed
+  by a dashed return arrow — reuse for any self-reinforcing feedback
+  loop), `incomeLadder` (a rungs-and-households ladder with two dashed
+  reference lines beside a driver grid — reuse for any "distribution
+  with thresholds" picture), and `povertyCausesOutcomes` (a row of cause
+  nodes feeding one wider twin-outcome box — reuse for "many levers →
+  two bundled results").
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

@@ -4718,6 +4718,9 @@ window.ECONOS_ICONS = {
   fxFloatingShifts: window.ECONOS_PPF.render(window.ECONOS_FX_FLOATING_SHIFTS_SPEC),
   fxInterventionDiagrams: window.ECONOS_PPF.render(window.ECONOS_FX_INTERVENTION_SPEC),
   fxPegDefence: window.ECONOS_PPF.render(window.ECONOS_FX_PEG_DEFENCE_SPEC),
+  lorenzCurve: window.ECONOS_PPF.render(window.ECONOS_LORENZ_CURVE_SPEC),
+  lorenzCompare: window.ECONOS_PPF.render(window.ECONOS_LORENZ_COMPARE_SPEC),
+  giniAreas: window.ECONOS_PPF.render(window.ECONOS_GINI_AREAS_SPEC),
 
   allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),
 
@@ -22469,6 +22472,61 @@ window.ECONOS_ICONS = {
           <div style="font-size:30px;line-height:1;">\u{1F4B7}</div>
           <div style="font-size:11.5px;font-weight:800;color:#854D0E;margin-top:3px;line-height:1.15;">Exchange-rate<br>pressure</div>
         </div></div></div>
+      </div>
+    </div>
+  `,
+
+  /* ============================================================
+     Inequality (Edexcel A 4.2.2) — 2 HTML visuals
+     (Cards 3/4/5 use the lorenzCurve / lorenzCompare / giniAreas
+     chart-engine specs.)
+     ============================================================ */
+
+  /* flowVsStock – Card 2. Income is a flow (a tap filling over time);
+     wealth is a stock (a reservoir that has built up). The metaphor that
+     makes the flow/stock distinction stick. */
+  flowVsStock: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fvs-wrap{display:flex;align-items:stretch;justify-content:center;gap:14px;max-width:760px;margin:0 auto;}
+        .fvs-card{flex:1;border-radius:14px;padding:16px 16px 14px;}
+        .fvs-h{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+        .fvs-ic{width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 1px 4px rgba(0,0,0,.1);flex-shrink:0;}
+        .fvs-t{font-size:14px;font-weight:800;line-height:1.15;}
+        .fvs-tag{font-size:11px;font-weight:700;border-radius:20px;padding:2px 10px;display:inline-block;margin-top:2px;}
+        .fvs-s{font-size:11.5px;color:#334155;line-height:1.4;margin-top:6px;}
+        .fvs-vs{flex:0 0 auto;align-self:center;width:42px;height:42px;border-radius:50%;background:#fff;border:2px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#64748B;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+        @media(max-width:600px){.fvs-wrap{flex-direction:column;}.fvs-vs{transform:rotate(90deg);margin:2px auto;}}
+      </style>
+      <div class="fvs-wrap">
+        <div class="fvs-card" style="background:#EFF6FF;border:1.5px solid #BFDBFE;">
+          <div class="fvs-h"><div class="fvs-ic">\u{1F6B0}</div><div><div class="fvs-t" style="color:#1E3A8A;">Income</div><span class="fvs-tag" style="background:#DBEAFE;color:#1E40AF;">a flow</span></div></div>
+          <div class="fvs-s">Money that comes <strong>in over time</strong> — like water from a running tap. Measured per week, month or year.</div>
+        </div>
+        <div class="fvs-vs">vs</div>
+        <div class="fvs-card" style="background:#ECFDF5;border:1.5px solid #A7F3D0;">
+          <div class="fvs-h"><div class="fvs-ic">\u{1F3DE}️</div><div><div class="fvs-t" style="color:#065F46;">Wealth</div><span class="fvs-tag" style="background:#D1FAE5;color:#065F46;">a stock</span></div></div>
+          <div class="fvs-s">Assets that have <strong>built up</strong> — like water held in a reservoir. Measured at a point in time.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* giniScale – Card 5. The 0→1 Gini scale, green (perfect equality) to
+     red (perfect inequality), with the four reference markers. */
+  giniScale: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:18px 18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="max-width:680px;margin:0 auto;">
+        <div style="font-size:12px;font-weight:800;letter-spacing:0.04em;color:#0B1426;text-align:center;margin-bottom:14px;">Gini scale: 0 (or 0–100)</div>
+        <div style="height:16px;border-radius:9px;background:linear-gradient(90deg,#16A34A,#84CC16,#F59E0B,#EF4444,#B91C1C);box-shadow:inset 0 1px 3px rgba(0,0,0,.15);"></div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          ${[
+            {v:'0',t:'Perfect equality',c:'#15803D'},
+            {v:'Low',t:'Relatively equal',c:'#65A30D'},
+            {v:'High',t:'Relatively unequal',c:'#D97706'},
+            {v:'1',t:'Perfect inequality',c:'#B91C1C'}
+          ].map(function(m,i){var al=i===0?'flex-start':i===3?'flex-end':'center';var ta=i===0?'left':i===3?'right':'center';return '<div style="display:flex;flex-direction:column;align-items:'+al+';flex:1;"><div style="font-size:13px;font-weight:800;color:'+m.c+';">'+m.v+'</div><div style="font-size:10.5px;color:#475569;text-align:'+ta+';line-height:1.25;">'+m.t+'</div></div>';}).join('')}
+        </div>
       </div>
     </div>
   `,

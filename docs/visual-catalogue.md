@@ -367,6 +367,16 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   (a 2×2 radial driver hub around a central pressure pill — the
   `competitivenessHub` grammar retoned). Card 5 reuses the
   `fxFloatingShifts` two-panel FOREX chart spec.
+- **Inequality 4.2.2 set** — chart-engine Lorenz/Gini diagrams (declared
+  via `ECONOS_PPF`, never hand-rolled): `lorenzCurve` (45° equality line +
+  a bowed Lorenz cubic — reuse for any cumulative-share distribution
+  picture), `lorenzCompare` (two-panel comparison — reuse for "A vs B" and
+  "before vs after" on the same axes), `giniAreas` (Lorenz curve with
+  shaded A/B polygons sampled along the cubic — reuse for any
+  ratio-of-areas measure). Plus two HTML visuals: `flowVsStock` (a
+  flow-vs-stock tap/reservoir pair — reuse for any "rate over time vs
+  accumulated level" distinction) and `giniScale` (a green→red 0→1 index
+  bar with markers — reuse for any single-axis severity scale).
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

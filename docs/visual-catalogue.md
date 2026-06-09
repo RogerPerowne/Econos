@@ -315,6 +315,15 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   NOTE: an older orphaned `bopThreeAccounts`/`bopDriverHub`/… set from a
   pre-pipeline attempt still sits lower in `icons.js` — ignore it; the
   live topic uses the `bop*` keys above.
+- **Exchange Rates 4.1.8 set** — `fxLifebuoy` (gold £ on a life-ring;
+  hand-drawn SVG, the floating currency) and `fxAnchor` (£ on a ship's
+  anchor + "TARGET RATE" tag; hand-drawn SVG, the fixed currency) —
+  reusable hero illustrations for floating/fixed metaphors. Plus
+  `fxGlobeHub` (globe + £/$/€ price tag, 4 spokes), `fxIntervention`
+  (central-bank buy/sell), `fxSpectrum` (3-node Floating/Managed/Fixed),
+  `fxTerminologyGrid` (2×2 matrix). Chart specs: `fxMarketDiagram`
+  (D£/S£ equilibrium) and `fxFloatingShifts` (2-panel appreciation vs
+  depreciation) — reuse for any currency S&D diagram.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

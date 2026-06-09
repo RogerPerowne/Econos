@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.117.0 — 2026-06-09
+
+### Exchange Rates topic complete (6 cards, 8 visuals incl. 2 hand-drawn illustrations)
+
+- **Exchange Rates (Edexcel A 4.1.8)** built and flipped live. Six cards:
+  the big picture → the FX market → floating → fixed → managed → the four
+  terms (appreciation/depreciation/revaluation/devaluation).
+- **Two hand-designed SVG illustrations** (by request): `fxLifebuoy` — a
+  gold £ riding a red-and-white life-ring on waves (the floating currency)
+  — and `fxAnchor` — a navy ship's anchor with a £ medallion and a
+  "TARGET RATE" tag in the water (the fixed currency).
+- **Two chart-engine diagrams:** `fxMarketDiagram` (demand for £ vs supply
+  of £ at E*/Q*) and `fxFloatingShifts` — a two-panel appreciation (D→
+  right) vs depreciation (S→ right) comparison with equilibria computed
+  from the line equations.
+- **Four more bespoke visuals:** `fxGlobeHub` (globe carrying a £/$/€ price
+  tag + four spokes), `fxIntervention` (central bank buys £ / sells
+  reserves), `fxSpectrum` (Floating ↔ Managed ↔ Fixed) and
+  `fxTerminologyGrid` (the 2×2 market-vs-official terminology matrix).
+- Service worker cache bumped to `econos-v457`.
+
 ## 0.116.0 — 2026-06-09
 
 ### Balance of Payments topic complete (7 cards, 6 bespoke visuals)

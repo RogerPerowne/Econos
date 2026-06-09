@@ -4714,6 +4714,8 @@ window.ECONOS_ICONS = {
   tariffDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_TARIFF_DIAGRAM_SPEC),
   quotaDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_QUOTA_DIAGRAM_SPEC),
   subsidyTradeInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_TRADE_SPEC),
+  fxMarketDiagram: window.ECONOS_PPF.render(window.ECONOS_FX_MARKET_SPEC),
+  fxFloatingShifts: window.ECONOS_PPF.render(window.ECONOS_FX_FLOATING_SHIFTS_SPEC),
 
   allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),
 
@@ -21600,6 +21602,190 @@ window.ECONOS_ICONS = {
           <div class="bwi-pic" style="background:#FFEDD5;">🏛️</div>
           <div class="bwi-ps">Spend more than they save.</div>
         </div>
+      </div>
+    </div>
+  `,
+
+  /* fxGlobeHub – Card 1 of Exchange Rates. Globe carrying a £/$/€ price
+     tag, with four spokes: trade, tourism, investment, confidence. */
+  fxGlobeHub: `
+    <div class="fxgh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fxgh .fxgh-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:30%;row-gap:18px;position:relative;z-index:1;}
+        .fxgh .fxgh-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;}
+        .fxgh .fxgh-conn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+        .fxgh .fxgh-tile{border-radius:13px;padding:13px 15px;min-height:108px;box-sizing:border-box;box-shadow:0 2px 6px rgba(15,23,42,.05);position:relative;}
+        .fxgh .fxgh-num{position:absolute;top:-10px;left:-10px;width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.18);}
+        .fxgh .fxgh-h{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
+        .fxgh .fxgh-ic{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+        .fxgh .fxgh-t{font-size:13.5px;font-weight:800;line-height:1.15;}
+        .fxgh .fxgh-s{font-size:11.5px;color:#475569;line-height:1.35;}
+        @media(max-width:640px){.fxgh .fxgh-grid{grid-template-columns:1fr;column-gap:0;row-gap:12px;}.fxgh .fxgh-center{position:static;transform:none;margin:8px auto;}.fxgh .fxgh-center-wrap{order:99;display:flex;justify-content:center;}.fxgh .fxgh-conn{display:none;}}
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="fxgh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 24 C 44 24,44 50,50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 24 C 56 24,56 50,50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 76 C 44 76,44 50,50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 76 C 56 76,56 50,50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="fxgh-grid">
+          <div class="fxgh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="fxgh-num" style="background:#2563EB;">1</div>
+            <div class="fxgh-h"><div class="fxgh-ic">🚢</div><div class="fxgh-t" style="color:#1E3A8A;">Trade in goods &amp; services</div></div>
+            <div class="fxgh-s">Imports and exports.</div>
+          </div>
+          <div class="fxgh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="fxgh-num" style="background:#059669;">2</div>
+            <div class="fxgh-h"><div class="fxgh-ic">🌴</div><div class="fxgh-t" style="color:#065F46;">Tourism &amp; travel</div></div>
+            <div class="fxgh-s">Holidays, flights, spending abroad.</div>
+          </div>
+          <div class="fxgh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="fxgh-num" style="background:#7C3AED;">3</div>
+            <div class="fxgh-h"><div class="fxgh-ic">📈</div><div class="fxgh-t" style="color:#5B21B6;">Investment flows</div></div>
+            <div class="fxgh-s">FDI, shares, bonds, borrowing.</div>
+          </div>
+          <div class="fxgh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="fxgh-num" style="background:#D97706;">4</div>
+            <div class="fxgh-h"><div class="fxgh-ic">🧠</div><div class="fxgh-t" style="color:#C2410C;">Confidence &amp; speculation</div></div>
+            <div class="fxgh-s">Expectations about future moves.</div>
+          </div>
+        </div>
+        <div class="fxgh-center-wrap"><div class="fxgh-center">
+          <svg viewBox="0 0 130 130" width="126" height="126">
+            <defs><radialGradient id="fxghGlobe" cx="38%" cy="32%" r="70%"><stop offset="0%" stop-color="#E0F2FE"/><stop offset="55%" stop-color="#BAE6FD"/><stop offset="100%" stop-color="#7DD3FC"/></radialGradient></defs>
+            <circle cx="60" cy="62" r="46" fill="url(#fxghGlobe)" stroke="#1E3A8A" stroke-width="2.5"/>
+            <path d="M14,62 H106 M60,16 V108 M28,38 Q60,52 92,38 M28,86 Q60,72 92,86" fill="none" stroke="#60A5FA" stroke-width="1.4" opacity="0.8"/>
+            <g transform="rotate(16 96 92)">
+              <path d="M84,80 L112,80 L120,94 L96,108 Z" fill="#FDE68A" stroke="#D97706" stroke-width="1.6"/>
+              <circle cx="90" cy="86" r="2.6" fill="none" stroke="#D97706" stroke-width="1.6"/>
+              <text x="104" y="98" text-anchor="middle" font-size="12" font-weight="900" fill="#B45309" font-family="Inter,sans-serif">£$€</text>
+            </g>
+          </svg>
+        </div></div>
+      </div>
+    </div>
+  `,
+
+  /* fxLifebuoy – Card 3 of Exchange Rates. A gold £ riding a red-and-white
+     life-ring on stylised waves: the "floating" currency. Bespoke SVG. */
+  fxLifebuoy: `
+    <div style="background:linear-gradient(180deg,#EFF6FF,#DBEAFE);border-radius:14px;padding:10px;font-family:Inter,sans-serif;">
+      <svg viewBox="0 0 300 210" width="100%" style="max-width:280px;display:block;margin:0 auto;">
+        <defs>
+          <linearGradient id="fxbGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE68A"/><stop offset="50%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#B45309"/></linearGradient>
+          <radialGradient id="fxbWater" cx="50%" cy="38%" r="70%"><stop offset="0%" stop-color="#DBEAFE"/><stop offset="100%" stop-color="#93C5FD"/></radialGradient>
+        </defs>
+        <path d="M0,158 Q40,146 75,158 T150,158 T225,158 T300,158 V210 H0 Z" fill="#93C5FD" opacity="0.55"/>
+        <path d="M0,176 Q45,164 80,176 T160,176 T240,176 T300,176 V210 H0 Z" fill="#60A5FA" opacity="0.5"/>
+        <circle cx="150" cy="108" r="44" fill="none" stroke="#E11D48" stroke-width="26"/>
+        <circle cx="150" cy="108" r="44" fill="none" stroke="#ffffff" stroke-width="26" stroke-dasharray="34.5 34.5" stroke-dashoffset="17.3"/>
+        <circle cx="150" cy="108" r="30" fill="url(#fxbWater)"/>
+        <circle cx="150" cy="108" r="57.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="2 11" opacity="0.7"/>
+        <text x="150" y="129" text-anchor="middle" font-size="60" font-weight="900" fill="url(#fxbGold)" stroke="#92400E" stroke-width="0.8" font-family="Inter,sans-serif">£</text>
+      </svg>
+    </div>
+  `,
+
+  /* fxAnchor – Card 4 of Exchange Rates. A navy ship's anchor with a £
+     medallion and a "TARGET RATE" tag: the "fixed" currency. Bespoke SVG. */
+  fxAnchor: `
+    <div style="background:linear-gradient(180deg,#EFF6FF,#DBEAFE);border-radius:14px;padding:10px;font-family:Inter,sans-serif;">
+      <svg viewBox="0 0 300 232" width="100%" style="max-width:280px;display:block;margin:0 auto;">
+        <path d="M0,176 Q40,164 75,176 T150,176 T225,176 T300,176 V232 H0 Z" fill="#93C5FD" opacity="0.5"/>
+        <path d="M0,194 Q45,182 80,194 T160,194 T240,194 T300,194 V232 H0 Z" fill="#60A5FA" opacity="0.5"/>
+        <g stroke="#1E3A8A" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="150" cy="34" r="13"/>
+          <line x1="150" y1="47" x2="150" y2="170"/>
+          <line x1="115" y1="66" x2="185" y2="66"/>
+          <path d="M150,170 C150,170 104,172 90,118"/>
+          <path d="M150,170 C150,170 196,172 210,118"/>
+        </g>
+        <path d="M90,118 L74,124 L96,140 Z" fill="#1E3A8A"/>
+        <path d="M210,118 L226,124 L204,140 Z" fill="#1E3A8A"/>
+        <circle cx="150" cy="98" r="22" fill="#ffffff" stroke="#1E3A8A" stroke-width="4"/>
+        <text x="150" y="108" text-anchor="middle" font-size="26" font-weight="900" fill="#1E3A8A" font-family="Inter,sans-serif">£</text>
+        <g transform="rotate(-7 150 158)">
+          <rect x="104" y="150" width="92" height="26" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+          <circle cx="113" cy="163" r="3" fill="none" stroke="#D97706" stroke-width="1.5"/>
+          <text x="152" y="167" text-anchor="middle" font-size="11" font-weight="800" fill="#B45309" font-family="Inter,sans-serif">TARGET RATE</text>
+        </g>
+      </svg>
+    </div>
+  `,
+
+  /* fxIntervention – Card 4 of Exchange Rates. The central bank defends the
+     peg by buying its own currency and selling reserves to the market. */
+  fxIntervention: `
+    <div style="line-height:1.4;background:#fff;border:1.5px solid #BFDBFE;border-radius:13px;padding:14px 16px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="font-size:11.5px;font-weight:800;color:#1E3A8A;margin-bottom:10px;">EXAMPLE: UNDER DOWNWARD PRESSURE</div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;">
+        <div style="text-align:center;flex:0 0 auto;"><div style="font-size:30px;">🏛️</div><div style="font-size:11px;font-weight:700;">Central bank</div></div>
+        <div style="flex:1;max-width:180px;">
+          <div style="display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:#059669;justify-content:center;">Buys £ <span style="font-size:15px;">→</span></div>
+          <div style="height:1px;background:#E2E8F0;margin:8px 0;"></div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:#EA580C;justify-content:center;"><span style="font-size:15px;">←</span> Sells reserves</div>
+        </div>
+        <div style="text-align:center;flex:0 0 auto;"><div style="font-size:30px;">👥</div><div style="font-size:11px;font-weight:700;">Market</div></div>
+      </div>
+    </div>
+  `,
+
+  /* fxSpectrum – Card 5 of Exchange Rates. Floating ↔ Managed ↔ Fixed,
+     with the market-led / government-control axis. */
+  fxSpectrum: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="position:relative;max-width:620px;margin:0 auto;">
+        <div style="position:absolute;top:38px;left:14%;right:14%;height:2px;background:#1E3A8A;z-index:0;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
+          <div style="text-align:center;width:30%;">
+            <div style="width:76px;height:76px;border-radius:50%;background:#EFF6FF;border:2px solid #BFDBFE;display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 8px;">〰️</div>
+            <div style="font-size:14px;font-weight:800;color:#1E3A8A;">Floating</div>
+          </div>
+          <div style="text-align:center;width:30%;">
+            <div style="width:84px;height:84px;border-radius:50%;background:#ECFDF5;border:2.5px solid #34D399;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 6px;box-shadow:0 0 0 6px rgba(209,250,229,0.7);">🎯</div>
+            <div style="font-size:15px;font-weight:800;color:#059669;">Managed</div>
+          </div>
+          <div style="text-align:center;width:30%;">
+            <div style="width:76px;height:76px;border-radius:50%;background:#F5F3FF;border:2px solid #C4B5FD;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 8px;">🔒</div>
+            <div style="font-size:14px;font-weight:800;color:#5B21B6;">Fixed</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;font-style:italic;color:#64748B;margin-top:8px;padding:0 6%;">
+          <span>← More market-led</span><span>More government control →</span>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* fxTerminologyGrid – Card 6 of Exchange Rates. 2x2 matrix: market-driven
+     vs official change × currency rises vs falls. */
+  fxTerminologyGrid: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fxtg{display:grid;grid-template-columns:0.8fr 1fr 1fr;gap:10px;max-width:760px;margin:0 auto;}
+        .fxtg-hd{text-align:center;font-size:12.5px;font-weight:800;border-radius:10px;padding:9px;}
+        .fxtg-rl{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border-radius:12px;padding:12px 8px;background:#F8FAFC;border:1.5px solid #E2E8F0;}
+        .fxtg-rl .ic{font-size:22px;margin-bottom:5px;}
+        .fxtg-rl .t{font-size:12.5px;font-weight:800;line-height:1.2;}
+        .fxtg-cell{border-radius:12px;padding:13px 14px;display:flex;align-items:center;gap:11px;}
+        .fxtg-cic{font-size:24px;flex-shrink:0;}
+        .fxtg-ct{font-size:15px;font-weight:800;line-height:1.15;}
+        .fxtg-cs{font-size:11px;color:#475569;margin-top:2px;}
+        @media(max-width:600px){.fxtg{grid-template-columns:1fr 1fr;}.fxtg-rl{grid-column:1 / -1;flex-direction:row;gap:10px;}}
+      </style>
+      <div class="fxtg">
+        <div></div>
+        <div class="fxtg-hd" style="background:#ECFDF5;color:#065F46;">Currency rises</div>
+        <div class="fxtg-hd" style="background:#FFF7ED;color:#C2410C;">Currency falls</div>
+
+        <div class="fxtg-rl"><div class="ic">📈</div><div class="t" style="color:#1E3A8A;">Market-driven</div></div>
+        <div class="fxtg-cell" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><span class="fxtg-cic">📈</span><div><div class="fxtg-ct" style="color:#059669;">Appreciation</div><div class="fxtg-cs">Market-driven rise.</div></div></div>
+        <div class="fxtg-cell" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><span class="fxtg-cic">📉</span><div><div class="fxtg-ct" style="color:#EA580C;">Depreciation</div><div class="fxtg-cs">Market-driven fall.</div></div></div>
+
+        <div class="fxtg-rl"><div class="ic">🏛️</div><div class="t" style="color:#5B21B6;">Official change</div></div>
+        <div class="fxtg-cell" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><span class="fxtg-cic">🏦</span><div><div class="fxtg-ct" style="color:#7C3AED;">Revaluation</div><div class="fxtg-cs">Official rise.</div></div></div>
+        <div class="fxtg-cell" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><span class="fxtg-cic">🏦</span><div><div class="fxtg-ct" style="color:#EA580C;">Devaluation</div><div class="fxtg-cs">Official fall.</div></div></div>
       </div>
     </div>
   `,

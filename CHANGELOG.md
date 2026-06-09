@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.116.0 — 2026-06-09
+
+### Balance of Payments topic complete (7 cards, 6 bespoke visuals)
+
+- **Balance of Payments (Edexcel A 4.1.7)** built and flipped live — the
+  most visual-rich topic yet. Seven cards: the big picture → the three
+  accounts → why current accounts move → who funds a deficit → reducing an
+  imbalance → why global imbalances matter → the whole story.
+- **Six fresh bespoke visuals** built to match the design-led mockups:
+  - `bopGlobeHub` — globe with three account spokes.
+  - `bopBankStatement` — the "international bank statement" (current +
+    capital + financial = ).
+  - `bopDriverDials` — four metallic rotary driver knobs (competitiveness,
+    exchange rate, demand, commodity prices) feeding a deficit/surplus
+    balance.
+  - `bopFinanceMatch` — current-account deficit financed by a
+    financial-account surplus.
+  - `bopPolicySliders` — four policy levers (each a slider) converging on
+    "current account improves".
+  - `bopWorldImbalances` — surplus countries export goods + savings; deficit
+    countries pull in imports + capital, around a central globe.
+- Service worker cache bumped to `econos-v456`.
+
 ## 0.115.0 — 2026-06-09
 
 ### Restrictions on Free Trade topic complete (7 cards, 3 interactive chart diagrams)

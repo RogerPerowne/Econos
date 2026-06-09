@@ -305,6 +305,16 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   member↔member nodes with a dashed link to "rest of world", contrasting
   how outside goods route in under an FTA vs a customs union. Use for any
   "two regimes, same actors, different flow" comparison.
+- **Balance of Payments 4.1.7 bespoke set** — `bopGlobeHub` (globe + 3
+  account spokes), `bopBankStatement` (current + capital + financial = ),
+  `bopDriverDials` (four metallic rotary knobs + deficit/surplus balance —
+  reusable for any "set of dials drive an outcome" card), `bopFinanceMatch`
+  (deficit financed by surplus — two-box identity), `bopPolicySliders`
+  (four labelled sliders converging on an outcome), `bopWorldImbalances`
+  (two country panels feeding a central globe with opposing flow rows).
+  NOTE: an older orphaned `bopThreeAccounts`/`bopDriverHub`/… set from a
+  pre-pipeline attempt still sits lower in `icons.js` — ignore it; the
+  live topic uses the `bop*` keys above.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.119.0 — 2026-06-09
+
+### Exchange Rate Impacts topic complete (8 cards) + Marshall-Lerner moved out of Theme 2
+
+- **Exchange Rate Impacts (Edexcel A 4.1.8)** built, registered as a new
+  Theme 4 topic and flipped live — the fourth and final 4.1.8 split. Eight
+  cards: the big picture → appreciation winners/losers → depreciation
+  winners/losers → the current-account channel → Marshall-Lerner → the
+  J-curve → inflation/growth/jobs/FDI → the whole story.
+- **Three new bespoke visuals:** `marshallLernerScale` (a balance scale
+  weighing PEDₓ vs PEDₘ against the > 1 threshold), `caChannel` (a
+  depreciation branching into export and import paths that converge on
+  "current account may improve") and `fxMacroChannels` (four weaker-vs-
+  stronger currency channels).
+- **Marshall-Lerner / J-curve consolidated into Theme 4:** removed the
+  "Marshall-Lerner and the J-curve" card from the Theme 2 net-trade deck
+  (now 7 cards, intro scrubbed) and reused the existing `jCurveInteractive`
+  chart on the new card 6, so the elasticity/J-curve material lives in one
+  place.
+- Service worker cache bumped to `econos-v459`.
+
 ## 0.118.0 — 2026-06-09
 
 ### Exchange Rate Intervention topic complete (6 cards, new topic)

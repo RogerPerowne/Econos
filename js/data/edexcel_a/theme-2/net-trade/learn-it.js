@@ -13,21 +13,19 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroNetTrade',
-    summary: 'Net trade (X − M) is only ~−3% of UK AD on average – but it can swing sharply with the exchange rate, world income and competitiveness. This topic covers the determinants of X and M, the exchange-rate channel, the Marshall-Lerner condition, the J-curve, and how net trade lands in the AD/AS model.',
-    doInThis: 'Walk through what net trade is, how exports and imports differ, the five drivers of each, the exchange-rate mechanism, the Marshall-Lerner condition and J-curve, the AD/AS outcomes, and the six tests for evaluating net trade as a policy lever.',
+    summary: 'Net trade (X − M) is only ~−3% of UK AD on average – but it can swing sharply with the exchange rate, world income and competitiveness. This topic covers the determinants of X and M, the exchange-rate channel, and how net trade lands in the AD/AS model. (The Marshall-Lerner condition and the J-curve are covered in the Theme 4 exchange-rate topics.)',
+    doInThis: 'Walk through what net trade is, how exports and imports differ, the five drivers of each, the exchange-rate mechanism, the AD/AS outcomes, and the six tests for evaluating net trade as a policy lever.',
     outcomes: [
       'Define net trade and its share of UK AD',
       'Distinguish exports (injection) from imports (leakage)',
       'List the five determinants of exports and imports',
       'Explain the exchange-rate channel in net trade',
-      'State and apply the Marshall-Lerner condition',
-      'Read the J-curve and link it to elasticities',
       'Evaluate net trade outcomes in the AD/AS model',
       'Judge net trade as a policy lever using six tests'
     ],
     tip: 'Net trade is small in level (~3% of AD) but punches above its weight when the exchange rate or world income moves.',
     stages: [
-      { num: 1, name: 'Learn',  sub: '8 cards · 20 min',                  state: 'current' },
+      { num: 1, name: 'Learn',  sub: '7 cards · 18 min',                  state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply in exam-style questions',     state: 'locked' },
       { num: 3, name: 'Land it', sub: 'See your progress and next steps',  state: 'locked' }
     ]
@@ -39,7 +37,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'what-is-net-trade',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 1 of 8',
+      stepLabel: 'Learn: Step 1 of 7',
       title: 'What is Net Trade?',
       lede: 'Net trade is the external sector of aggregate demand – exports add demand, imports leak it away.',
       ledeStyle: 'plain',
@@ -96,7 +94,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'exports-vs-imports',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 2 of 8',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Exports vs Imports',
       lede: 'Exports inject demand – imports leak demand.',
       ledeStyle: 'plain',
@@ -156,7 +154,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'determinants-of-exports',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 8',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'Determinants of Exports',
       lede: 'Exports rise when UK goods become more attractive or world demand becomes stronger.',
       ledeStyle: 'plain',
@@ -220,7 +218,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'determinants-of-imports',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 8',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Determinants of Imports',
       lede: 'Imports rise when households and firms in the UK buy more from abroad.',
       ledeStyle: 'plain',
@@ -274,7 +272,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'exchange-rate-net-trade',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 5 of 8',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Exchange rate and net trade',
       lede: 'A weaker pound tends to boost exports and reduce imports.',
       ledeStyle: 'plain',
@@ -339,85 +337,11 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ── CARD 6 ── Marshall-Lerner and the J-curve ───────────────── */
-    {
-      id: 'marshall-lerner-j-curve',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Step 6 of 8',
-      title: 'Marshall-Lerner and the J-curve',
-      lede: 'Depreciation can hurt before it helps.',
-      ledeStyle: 'plain',
-
-      tip: { icon: '✅', tone: 'green', text: 'A weaker pound improves the trade balance only if demand for exports and imports is sufficiently elastic.' },
-
-      interactiveDiagram: {
-        svgKey: 'jCurveInteractive',
-        layers: ['idl-1', 'idl-2'],
-        label: 'THE J-CURVE',
-        emoji: '📉',
-        views: [
-          {
-            label: 'Depreciation',
-            tone: 'blue',
-            head: 'Prices react, volumes have not',
-            body: 'The pound falls. The trade balance sits at its pre-depreciation level. Prices are about to react – but contracts are fixed and volumes cannot move yet.',
-            analysis: 'The mechanism is about to start. Whether it works depends on elasticities.'
-          },
-          {
-            label: 'Worse first',
-            tone: 'rose',
-            show: ['idl-1'],
-            head: 'Trade balance worsens to the trough',
-            body: [
-              'Existing export/import contracts are set in advance.',
-              'Import prices rise immediately in pound terms.',
-              'Quantities – exports up and imports down – adjust slowly.'
-            ],
-            analysis: 'In the short run the trade balance gets worse even though the mechanism is working as expected.'
-          },
-          {
-            label: 'Recovery',
-            tone: 'green',
-            show: ['idl-1', 'idl-2'],
-            head: 'Volumes respond and balance improves',
-            body: [
-              'Exports become cheaper – foreign demand increases.',
-              'Imports become dearer – domestic demand for imports falls.'
-            ],
-            analysis: 'The recovery only completes if <strong>|PED of exports| + |PED of imports| &gt; 1</strong> (Marshall-Lerner). For services-heavy economies like the UK, lower elasticities can limit the J in practice.'
-          }
-        ]
-      },
-
-      pairLabel: 'WHAT THE CONDITION MEANS',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'green', icon: '✅', iconStyle: 'circle',
-        label: 'If true',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;">Depreciation improves the current account.</p>'
-      },
-      right: {
-        tone: 'rose', icon: '❌', iconStyle: 'circle',
-        label: 'If not',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;">The effect is weak or can fail.</p>'
-      },
-
-      conclusion: {
-        title: 'Big idea',
-        text: 'Time and elasticity both matter – first there can be pain, then gain.'
-      },
-
-      examEdge: {
-        title: 'Exam edge',
-        text: 'Do not say depreciation always works immediately. Use the J-curve and the Marshall-Lerner condition to explain the full story.'
-      }
-    },
-
-    /* ── CARD 7 ── Net trade in the AD/AS model ──────────────────── */
+    /* ── CARD 6 ── Net trade in the AD/AS model ──────────────────── */
     {
       id: 'net-trade-adas',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 7 of 8',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Net trade in the AD/AS model',
       lede: 'A change in X − M shifts aggregate demand.',
       ledeStyle: 'plain',
@@ -499,11 +423,11 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ── CARD 8 ── Evaluating net trade as a policy lever ────────── */
+    /* ── CARD 7 ── Evaluating net trade as a policy lever ────────── */
     {
       id: 'evaluating-net-trade',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 8 of 8',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Evaluating net trade as a policy lever',
       lede: 'Net trade matters – but it is not something the UK can control directly.',
       ledeStyle: 'plain',

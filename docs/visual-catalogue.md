@@ -391,6 +391,13 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   ringed by six indicator tiles, the `competitivenessGaugeHub` 3-left /
   centre / 3-right grid retoned — reuse for any "central concept measured
   by many indicators" dashboard).
+- **Development Factors: External Barriers 4.3.2 set** —
+  `foreignCurrencyGap` (a two-column sources/uses layout around a centre
+  "tank" SVG whose fill sits below a dashed "need" line — reuse for any
+  inflow-vs-outflow shortfall, e.g. savings gap, balance-of-payments
+  pressure) and `capitalFlightHub` (a 2×2 radial driver hub around a
+  central red "Capital flight" core — the `exchangeDriversHub` grammar
+  retoned for a push-factor story).
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

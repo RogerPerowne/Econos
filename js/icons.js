@@ -22628,6 +22628,95 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     Development Factors: External Barriers (Edexcel A 4.3.2) — 2 visuals
+     ============================================================ */
+
+  /* foreignCurrencyGap – Card 4. Sources of foreign currency (inflows)
+     fill a tank; uses (outflows) drain it. When uses exceed sources the
+     tank falls short of the level needed — the foreign-currency gap. */
+  foreignCurrencyGap: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fcg-wrap{display:grid;grid-template-columns:1fr 132px 1fr;gap:14px;align-items:center;max-width:820px;margin:0 auto;}
+        .fcg-col{display:flex;flex-direction:column;gap:7px;}
+        .fcg-ch{font-size:11px;font-weight:800;letter-spacing:0.03em;margin-bottom:2px;text-align:center;}
+        .fcg-pill{display:flex;align-items:center;gap:8px;border-radius:9px;padding:6px 11px;font-size:11.5px;font-weight:700;}
+        @media(max-width:680px){.fcg-wrap{grid-template-columns:1fr;}.fcg-center{order:-1;}}
+      </style>
+      <div class="fcg-wrap">
+        <div class="fcg-col">
+          <div class="fcg-ch" style="color:#065F46;">SOURCES (foreign currency in)</div>
+          ${[['\u{1F4E6}','Exports'],['\u{1F4B8}','Remittances'],['✈️','Tourism'],['\u{1F91D}','Aid'],['\u{1F3D7}️','Inward FDI']].map(function(r){return '<div class="fcg-pill" style="background:#ECFDF5;border:1.5px solid #A7F3D0;color:#065F46;"><span style="font-size:14px;">'+r[0]+'</span>'+r[1]+'</div>';}).join('')}
+        </div>
+        <div class="fcg-center" style="text-align:center;">
+          <svg viewBox="0 0 130 150" style="width:120px;height:auto;display:block;margin:0 auto;">
+            <rect x="34" y="16" width="62" height="120" rx="9" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+            <rect x="36.5" y="84" width="57" height="49.5" rx="6" fill="#BFDBFE"/>
+            <line x1="30" y1="48" x2="100" y2="48" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <text x="105" y="46" font-size="8" fill="#B91C1C" font-weight="700">need</text>
+            <text x="65" y="72" text-anchor="middle" font-size="15" font-weight="800" fill="#B91C1C">GAP</text>
+            <text x="65" y="114" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1E40AF">have</text>
+          </svg>
+          <div style="font-size:11px;font-weight:700;color:#B91C1C;line-height:1.3;margin-top:4px;">Uses &gt; sources<br>= shortfall</div>
+        </div>
+        <div class="fcg-col">
+          <div class="fcg-ch" style="color:#B91C1C;">USES (foreign currency out)</div>
+          ${[['\u{1F6E0}️','Capital goods'],['⛽','Fuel and energy'],['\u{1F48A}','Medicine'],['\u{1F4BB}','Technology']].map(function(r){return '<div class="fcg-pill" style="background:#FEF2F2;border:1.5px solid #FECACA;color:#B91C1C;"><span style="font-size:14px;">'+r[0]+'</span>'+r[1]+'</div>';}).join('')}
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* capitalFlightHub – Card 5. Four reasons money flees a country around a
+     central "Capital flight" pill. 2x2 radial hub. */
+  capitalFlightHub: `
+    <div class="cfh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .cfh .cfh-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:26%;row-gap:18px;position:relative;z-index:1;}
+        .cfh .cfh-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;}
+        .cfh .cfh-conn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+        .cfh .cfh-tile{border-radius:13px;padding:13px 15px;min-height:104px;box-sizing:border-box;box-shadow:0 2px 6px rgba(15,23,42,.05);}
+        .cfh .cfh-h{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
+        .cfh .cfh-ic{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+        .cfh .cfh-t{font-size:13px;font-weight:800;line-height:1.15;}
+        .cfh .cfh-s{font-size:11.5px;color:#475569;line-height:1.35;}
+        .cfh .cfh-circ{width:128px;height:128px;border-radius:50%;background:#FEF2F2;border:2.5px solid #DC2626;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 8px rgba(254,242,242,.6),0 6px 18px rgba(220,38,38,.16);}
+        @media(max-width:640px){.cfh .cfh-grid{grid-template-columns:1fr;column-gap:0;row-gap:12px;}.cfh .cfh-center{position:static;transform:none;margin:8px auto;}.cfh .cfh-center-wrap{order:99;display:flex;justify-content:center;}.cfh .cfh-conn{display:none;}}
+      </style>
+      <div style="position:relative;max-width:760px;margin:0 auto;">
+        <svg class="cfh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 24 C 44 24,44 50,50 50" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 24 C 56 24,56 50,50 50" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 76 C 44 76,44 50,50 50" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 76 C 56 76,56 50,50 50" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="cfh-grid">
+          <div class="cfh-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;">
+            <div class="cfh-h"><div class="cfh-ic">⚠️</div><div class="cfh-t" style="color:#B91C1C;">Political instability</div></div>
+            <div class="cfh-s">Fear of conflict, crackdown or seizure of assets.</div>
+          </div>
+          <div class="cfh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;">
+            <div class="cfh-h"><div class="cfh-ic">\u{1F3DB}️</div><div class="cfh-t" style="color:#9A3412;">Weak property rights</div></div>
+            <div class="cfh-s">Investors fear unfair treatment or loss.</div>
+          </div>
+          <div class="cfh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;">
+            <div class="cfh-h"><div class="cfh-ic">\u{1F4B1}</div><div class="cfh-t" style="color:#5B21B6;">Inflation or currency fears</div></div>
+            <div class="cfh-s">Money loses value or the currency may devalue.</div>
+          </div>
+          <div class="cfh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;">
+            <div class="cfh-h"><div class="cfh-ic">\u{1F4C8}</div><div class="cfh-t" style="color:#1E3A8A;">Better returns abroad</div></div>
+            <div class="cfh-s">Higher profits, safer markets, stronger currencies.</div>
+          </div>
+        </div>
+        <div class="cfh-center-wrap"><div class="cfh-center"><div class="cfh-circ">
+          <div style="font-size:30px;line-height:1;">\u{1F4B8}</div>
+          <div style="font-size:11.5px;font-weight:800;color:#991B1B;margin-top:3px;line-height:1.15;">Capital<br>flight</div>
+        </div></div></div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

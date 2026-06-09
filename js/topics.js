@@ -1304,9 +1304,9 @@ window.ECONOS_TOPICS = [
     }
   },
   {
-    id: 'factors-influencing-growth-and-development',
-    name: 'Factors Influencing Growth & Development',
-    sub: 'Economic, institutional and external drivers',
+    id: 'development-factors-external-barriers',
+    name: 'Development Factors: External Barriers',
+    sub: 'Primary product dependence, commodity volatility, the foreign-currency gap, capital flight, debt',
     color: '#15803d',
     available: { learn: true, link: false, land: false },
     boards: {

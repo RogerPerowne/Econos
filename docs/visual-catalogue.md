@@ -418,6 +418,11 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   held within a target band over time" picture, e.g. inflation targeting,
   managed-rate corridors). The rest of the deck reuses flow chains, tile
   grids and VS pairs.
+- **Market Failure in the Financial Sector 4.4.2 set** — `bubbleCycle` (an
+  asset-price-vs-time curve that rises, peaks at euphoria and crashes to an
+  aftermath, with five colour-coded phase dots, through `ECONOS_PPF` —
+  reuse for any boom-bust / overshoot-and-correct lifecycle). The rest of
+  the deck reuses flow chains, tile grids and VS pairs.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

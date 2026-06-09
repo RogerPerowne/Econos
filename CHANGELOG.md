@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.132.0 — 2026-06-09
+
+### Market Failure in the Financial Sector topic complete (7 cards)
+
+- **Market Failure in the Financial Sector (Edexcel A 4.4.2)** built and
+  flipped live as the second 4.4 financial-sector topic. Seven cards: the
+  big picture → asymmetric information → externalities and contagion →
+  moral hazard → speculation and bubbles → market rigging → the whole
+  story.
+- **One new chart-engine spec:** `bubbleCycle` (an asset price rising
+  through boom and euphoria, then crashing and settling lower, with five
+  labelled phase points).
+- The rest reuses flow chains, tile grids and VS pairs. Replaced the
+  placeholder learn-it; sw cache bumped to `econos-v470`.
+
 ## 0.131.0 — 2026-06-09
 
 ### Role of Financial Markets topic complete (7 cards)

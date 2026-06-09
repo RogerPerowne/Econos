@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.127.0 — 2026-06-09
+
+### Development Factors: Domestic Capacity topic complete (7 cards)
+
+- **Development Factors: Domestic Capacity (Edexcel A 4.3.2)** built and
+  flipped live — the second of the two 4.3.2 topics (alongside External
+  Barriers). Seven cards: the big picture (the capacity engine) →
+  Harrod-Domar and the savings gap → credit, banking and investment →
+  infrastructure as a system constraint → demography (burden or dividend)
+  → education and human capital → property rights and institutions.
+- **Three new HTML visuals:** `capacityEngineHub` (the six foundations of
+  productive capacity ringing a central engine), `savingsGapLoop` (the
+  Harrod-Domar vicious circle — low income → low saving → low investment →
+  low capital → low income, with a dashed return arrow and the g ≈ s/k
+  caption) and `demographyPyramids` (a wide-base "burden" pyramid vs a
+  working-age-bulge "dividend" pyramid).
+- Service worker cache bumped to `econos-v467`.
+
 ## 0.126.0 — 2026-06-09
 
 ### Development Factors: External Barriers topic complete (7 cards)

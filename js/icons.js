@@ -22717,6 +22717,99 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ============================================================
+     Development Factors: Domestic Capacity (Edexcel A 4.3.2) — 3 visuals
+     ============================================================ */
+
+  /* capacityEngineHub – Card 1. The six foundations of productive capacity
+     ringing a central "Productive capacity" engine. */
+  capacityEngineHub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ceh-grid{display:grid;grid-template-columns:1fr 152px 1fr;gap:10px;align-items:center;max-width:880px;margin:0 auto;}
+        .ceh-col{display:flex;flex-direction:column;gap:10px;}
+        .ceh-tile{border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .ceh-h{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .ceh-s{font-size:10.5px;color:#475569;line-height:1.3;}
+        .ceh-circ{width:132px;height:132px;border-radius:50%;background:#ECFDF5;border:3px solid #16A34A;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;text-align:center;box-shadow:0 0 0 8px rgba(236,253,245,.6),0 6px 18px rgba(22,163,74,.16);}
+        @media(max-width:680px){.ceh-grid{grid-template-columns:1fr 1fr;}.ceh-cwrap{grid-column:1/-1;order:-1;}}
+      </style>
+      <div class="ceh-grid">
+        <div class="ceh-col">
+          <div class="ceh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="ceh-h" style="color:#065F46;">\u{1F4B0} Savings & investment</div><div class="ceh-s">Provide the capital to expand.</div></div>
+          <div class="ceh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="ceh-h" style="color:#1E3A8A;">\u{1F3E6} Finance & banking</div><div class="ceh-s">Mobilise savings and channel them to firms.</div></div>
+          <div class="ceh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="ceh-h" style="color:#9A3412;">\u{1F6E3}️ Infrastructure</div><div class="ceh-s">Lowers costs and connects markets.</div></div>
+        </div>
+        <div class="ceh-cwrap"><div class="ceh-circ"><div style="font-size:34px;line-height:1;">⚙️</div><div style="font-size:11.5px;font-weight:800;color:#065F46;margin-top:2px;line-height:1.15;">Productive<br>capacity</div></div></div>
+        <div class="ceh-col">
+          <div class="ceh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="ceh-h" style="color:#5B21B6;">\u{1F465} Demography</div><div class="ceh-s">The size and skills of the workforce.</div></div>
+          <div class="ceh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="ceh-h" style="color:#5B21B6;">\u{1F393} Education & skills</div><div class="ceh-s">Raise productivity and adaptability.</div></div>
+          <div class="ceh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="ceh-h" style="color:#1E3A8A;">⚖️ Institutions & rights</div><div class="ceh-s">Secure rules support investment.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* savingsGapLoop – Card 2. The Harrod-Domar vicious circle: low income →
+     low saving → low investment → low capital & productivity → back to low
+     income, closed by a dashed return arrow. */
+  savingsGapLoop: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:18px 14px 8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <div style="position:relative;max-width:780px;margin:0 auto;">
+        <div style="display:flex;align-items:flex-start;justify-content:center;gap:2px;">
+          ${[
+            {ic:'\u{1F4B7}',t:'Low incomes'},
+            {ic:'\u{1F3E6}',t:'Low savings'},
+            {ic:'\u{1F4C9}',t:'Low investment'},
+            {ic:'\u{1F3ED}',t:'Low capital & productivity'},
+            {ic:'\u{1F4B7}',t:'Back to low incomes'}
+          ].map(function(n,i){
+            var arrow = i<4 ? '<div style="flex:0 0 auto;align-self:flex-start;margin-top:24px;color:#F59E0B;font-size:22px;font-weight:700;">→</div>' : '';
+            return '<div style="flex:1;min-width:86px;max-width:130px;text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:#FFFBEB;border:2.5px solid #F59E0B;display:flex;align-items:center;justify-content:center;font-size:25px;margin:0 auto;">'+n.ic+'</div><div style="font-size:12px;font-weight:800;color:#B45309;line-height:1.2;margin-top:8px;">'+n.t+'</div></div>'+arrow;
+          }).join('')}
+        </div>
+        <svg viewBox="0 0 780 52" style="width:100%;height:52px;display:block;" preserveAspectRatio="none">
+          <defs><marker id="sgl-ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#F59E0B"/></marker></defs>
+          <path d="M 705 2 C 735 46, 60 46, 70 6" fill="none" stroke="#F59E0B" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#sgl-ah)"/>
+        </svg>
+        <div style="text-align:center;font-size:11px;color:#B45309;font-weight:700;margin-top:2px;">Harrod-Domar: growth ≈ savings ratio (s) ÷ capital-output ratio (k) — too little saving traps the loop.</div>
+      </div>
+    </div>
+  `,
+
+  /* demographyPyramids – Card 5. Two stylised population pyramids: a
+     "burden" with a wide young base, and a "dividend" with a bulge of
+     working-age people. */
+  demographyPyramids: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .dpy-wrap{display:flex;align-items:stretch;justify-content:center;gap:14px;max-width:780px;margin:0 auto;}
+        .dpy-card{flex:1;border-radius:14px;padding:14px 14px 12px;}
+        .dpy-t{font-size:13px;font-weight:800;line-height:1.15;text-align:center;}
+        .dpy-sub{font-size:10.5px;color:#475569;line-height:1.3;text-align:center;margin-top:2px;margin-bottom:8px;}
+        .dpy-bar{height:14px;border-radius:3px;margin:3px auto;}
+        .dpy-vs{flex:0 0 auto;align-self:center;width:42px;height:42px;border-radius:50%;background:#fff;border:2px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#64748B;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+        .dpy-leg{font-size:9.5px;color:#64748B;text-align:center;margin-top:6px;line-height:1.3;}
+        @media(max-width:600px){.dpy-wrap{flex-direction:column;}.dpy-vs{transform:rotate(90deg);margin:2px auto;}}
+      </style>
+      <div class="dpy-wrap">
+        <div class="dpy-card" style="background:#FEF2F2;border:1.5px solid #FECACA;">
+          <div class="dpy-t" style="color:#B91C1C;">Demographic burden</div>
+          <div class="dpy-sub">More dependants than workers</div>
+          ${[18,34,52,72,96].map(function(w){return '<div class="dpy-bar" style="width:'+w+'%;background:#F87171;"></div>';}).join('')}
+          <div class="dpy-leg">Wide young base · few workers supporting many</div>
+        </div>
+        <div class="dpy-vs">VS</div>
+        <div class="dpy-card" style="background:#ECFDF5;border:1.5px solid #A7F3D0;">
+          <div class="dpy-t" style="color:#065F46;">Demographic dividend</div>
+          <div class="dpy-sub">A large working-age share</div>
+          ${[24,56,96,84,40].map(function(w){return '<div class="dpy-bar" style="width:'+w+'%;background:#34D399;"></div>';}).join('')}
+          <div class="dpy-leg">Bulge of working-age people · a window of opportunity</div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

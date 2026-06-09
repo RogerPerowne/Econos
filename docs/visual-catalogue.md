@@ -398,6 +398,15 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   pressure) and `capitalFlightHub` (a 2×2 radial driver hub around a
   central red "Capital flight" core — the `exchangeDriversHub` grammar
   retoned for a push-factor story).
+- **Development Factors: Domestic Capacity 4.3.2 set** —
+  `capacityEngineHub` (six foundation tiles around a central engine — the
+  `developmentDashboard` 3-left / centre / 3-right grid with a gear core,
+  reuse for "many inputs power one engine"), `savingsGapLoop` (a five-node
+  vicious circle closed by a dashed return arrow — the `povertyTrapCycle`
+  grammar retoned, reuse for any reinforcing low-level trap) and
+  `demographyPyramids` (two stylised population pyramids — wide-base burden
+  vs working-age-bulge dividend — built from centred CSS bars, reuse for
+  any "two shapes of the same distribution" contrast).
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

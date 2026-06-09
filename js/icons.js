@@ -20976,6 +20976,192 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* patternOfTradeGlobe – Card 1 of Pattern of Trade. The globalisation
+     globe retained, adapted to FOUR spokes: a globe centre with four
+     numbered driver tiles in a 2x2 ring (comparative advantage, emerging
+     economies, trading blocs & deals, exchange rates) and dashed SVG
+     connectors. Collapses to a single column on mobile. */
+  patternOfTradeGlobe: `
+    <div class="potg" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .potg .potg-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:29%;row-gap:18px;position:relative;z-index:1;}
+        .potg .potg-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;}
+        .potg .potg-conn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+        .potg .potg-tile{border-radius:13px;padding:14px 16px;min-height:116px;box-sizing:border-box;box-shadow:0 2px 6px rgba(15,23,42,0.05);position:relative;}
+        .potg .potg-num{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;color:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.18);}
+        .potg .potg-h{display:flex;align-items:center;gap:9px;margin-bottom:6px;}
+        .potg .potg-ic{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.1);}
+        .potg .potg-t{font-size:13.5px;font-weight:800;line-height:1.2;}
+        .potg .potg-s{font-size:12px;color:#475569;line-height:1.4;}
+        .potg .potg-globe{width:124px;height:124px;border-radius:50%;background:radial-gradient(circle at 38% 32%,#E0F2FE 0%,#BAE6FD 55%,#7DD3FC 100%);border:3px solid #0EA5E9;display:flex;align-items:center;justify-content:center;font-size:52px;box-shadow:0 0 0 8px rgba(224,242,254,0.7),0 8px 22px rgba(2,132,199,0.22);}
+        @media(max-width:640px){.potg .potg-grid{grid-template-columns:1fr;column-gap:0;row-gap:12px;}.potg .potg-center{position:static;transform:none;margin:8px auto;}.potg .potg-center-wrap{order:99;display:flex;justify-content:center;}.potg .potg-conn{display:none;}}
+      </style>
+      <div style="position:relative;max-width:760px;margin:0 auto;">
+        <svg class="potg-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 24 C 44 24,44 50,50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 24 C 56 24,56 50,50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 76 C 44 76,44 50,50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 76 C 56 76,56 50,50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="potg-grid">
+          <div class="potg-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="potg-num" style="background:#059669;">1</div>
+            <div class="potg-h"><div class="potg-ic">⚖️</div><div class="potg-t" style="color:#065F46;">Comparative advantage</div></div>
+            <div class="potg-s">Countries specialise where opportunity cost is lower.</div>
+          </div>
+          <div class="potg-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="potg-num" style="background:#D97706;">2</div>
+            <div class="potg-h"><div class="potg-ic">📈</div><div class="potg-t" style="color:#C2410C;">Emerging economies</div></div>
+            <div class="potg-s">New low-cost or fast-growing producers reshape trade flows.</div>
+          </div>
+          <div class="potg-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="potg-num" style="background:#2563EB;">3</div>
+            <div class="potg-h"><div class="potg-ic">🤝</div><div class="potg-t" style="color:#1E3A8A;">Trading blocs &amp; deals</div></div>
+            <div class="potg-s">Fewer trade barriers redirect exports and imports.</div>
+          </div>
+          <div class="potg-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="potg-num" style="background:#7C3AED;">4</div>
+            <div class="potg-h"><div class="potg-ic">💷</div><div class="potg-t" style="color:#5B21B6;">Exchange rates</div></div>
+            <div class="potg-s">Stronger or weaker currencies affect price competitiveness.</div>
+          </div>
+        </div>
+        <div class="potg-center-wrap"><div class="potg-center"><div class="potg-globe">🌐</div></div></div>
+      </div>
+    </div>
+  `,
+
+  /* patternCompAdvLogic – Card 2 of Pattern of Trade. Three connected
+     panels: an opportunity-cost comparison table (wheat/cars for A & B),
+     who has the lower OC, and the resulting trade outcome. Static. */
+  patternCompAdvLogic: `
+    <div style="line-height:1.45;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pcl-grid{display:grid;grid-template-columns:1.25fr 26px 1fr 26px 1fr;gap:6px;align-items:stretch;max-width:780px;margin:0 auto;}
+        @media(max-width:620px){.pcl-grid{grid-template-columns:1fr;gap:10px;}.pcl-arr{transform:rotate(90deg);justify-self:center;}}
+        .pcl-panel{border-radius:13px;padding:13px 14px;}
+        .pcl-hd{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;line-height:1.2;margin-bottom:9px;}
+        .pcl-badge{width:24px;height:24px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;}
+        .pcl-arr{display:flex;align-items:center;justify-content:center;font-size:20px;color:#94A3B8;}
+        .pcl-tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px;}
+        .pcl-tbl th,.pcl-tbl td{padding:6px 8px;text-align:center;}
+        .pcl-tbl th{font-weight:800;color:#5B21B6;background:#F5F3FF;}
+        .pcl-tbl td:first-child,.pcl-tbl th:first-child{text-align:left;font-weight:700;}
+        .pcl-foot{display:flex;justify-content:space-between;gap:8px;margin-top:9px;font-size:10.5px;font-weight:700;}
+        .pcl-row{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;padding:5px 0;}
+        .pcl-ric{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+      </style>
+      <div class="pcl-grid">
+        <div class="pcl-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="pcl-hd" style="color:#065F46;"><span class="pcl-badge" style="background:#059669;">1</span>Opportunity cost comparison</div>
+          <table class="pcl-tbl">
+            <thead><tr><th></th><th>Country A</th><th>Country B</th></tr></thead>
+            <tbody>
+              <tr><td>🌾 Wheat</td><td>10</td><td>4</td></tr>
+              <tr><td>🚗 Cars</td><td>2</td><td>6</td></tr>
+            </tbody>
+          </table>
+          <div class="pcl-foot"><span style="color:#065F46;">A: 1 wheat = 0.2 cars</span><span style="color:#1E3A8A;">B: 1 wheat = 1.5 cars</span></div>
+        </div>
+        <div class="pcl-arr">→</div>
+        <div class="pcl-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="pcl-hd" style="color:#065F46;"><span class="pcl-badge" style="background:#059669;">2</span>Lower opportunity cost</div>
+          <div class="pcl-row"><span class="pcl-ric" style="background:#DCFCE7;">🌾</span>A has lower OC in wheat</div>
+          <div class="pcl-row"><span class="pcl-ric" style="background:#EDE9FE;">🚗</span>B has lower OC in cars</div>
+        </div>
+        <div class="pcl-arr">→</div>
+        <div class="pcl-panel" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="pcl-hd" style="color:#C2410C;"><span class="pcl-badge" style="background:#D97706;">3</span>Trade outcome</div>
+          <div class="pcl-row"><span class="pcl-ric" style="background:#DCFCE7;">🌾</span>A exports wheat</div>
+          <div class="pcl-row"><span class="pcl-ric" style="background:#EDE9FE;">🚗</span>B exports cars</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* tradeThenNow – Card 3 of Pattern of Trade. Twin "what changed" panels:
+     Then (advanced economies radiate trade outward) vs Now (emerging-economy
+     factory nodes feed the world). Stylised SVG flow diagrams. Static. */
+  tradeThenNow: `
+    <div style="line-height:1.45;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .ttn-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:780px;margin:0 auto;align-items:stretch;}
+        @media(max-width:620px){.ttn-grid{grid-template-columns:1fr;}}
+        .ttn-panel{border:1.5px solid #E2E8F0;border-radius:14px;padding:13px 14px;background:#F8FAFC;}
+        .ttn-cap{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:#334155;line-height:1.3;margin-bottom:8px;}
+        .ttn-badge{padding:3px 11px;border-radius:999px;font-size:11.5px;font-weight:800;color:#fff;flex-shrink:0;}
+      </style>
+      <div class="ttn-grid">
+        <div class="ttn-panel">
+          <div class="ttn-cap"><span class="ttn-badge" style="background:#2563EB;">Then</span>Trade flows dominated by advanced economies.</div>
+          <svg viewBox="0 0 300 150" width="100%" style="display:block;">
+            <defs><marker id="ttnBlue" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563EB"/></marker></defs>
+            <line x1="150" y1="75" x2="68" y2="42" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
+            <line x1="150" y1="75" x2="68" y2="110" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
+            <line x1="150" y1="75" x2="240" y2="46" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
+            <line x1="150" y1="75" x2="240" y2="108" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
+            <circle cx="50" cy="36" r="13" fill="#E2E8F0"/><text x="50" y="41" text-anchor="middle" font-size="13">🌍</text>
+            <circle cx="50" cy="116" r="13" fill="#E2E8F0"/><text x="50" y="121" text-anchor="middle" font-size="13">🌍</text>
+            <circle cx="258" cy="40" r="13" fill="#E2E8F0"/><text x="258" y="45" text-anchor="middle" font-size="13">🌍</text>
+            <circle cx="258" cy="114" r="13" fill="#E2E8F0"/><text x="258" y="119" text-anchor="middle" font-size="13">🌍</text>
+            <circle cx="150" cy="75" r="23" fill="#2563EB"/><text x="150" y="83" text-anchor="middle" font-size="21">🏛️</text>
+          </svg>
+        </div>
+        <div class="ttn-panel">
+          <div class="ttn-cap"><span class="ttn-badge" style="background:#EA580C;">Now</span>Emerging economies are major suppliers to the world.</div>
+          <svg viewBox="0 0 300 150" width="100%" style="display:block;">
+            <defs><marker id="ttnOrange" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#EA580C"/></marker></defs>
+            <line x1="95" y1="116" x2="132" y2="90" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
+            <line x1="244" y1="118" x2="176" y2="88" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
+            <line x1="250" y1="52" x2="178" y2="70" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
+            <line x1="120" y1="72" x2="92" y2="72" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
+            <circle cx="70" cy="72" r="20" fill="#2563EB"/><text x="70" y="79" text-anchor="middle" font-size="18">🏛️</text>
+            <circle cx="92" cy="118" r="13" fill="#EA580C"/><text x="92" y="123" text-anchor="middle" font-size="12">🏭</text>
+            <circle cx="250" cy="122" r="13" fill="#EA580C"/><text x="250" y="127" text-anchor="middle" font-size="12">🏭</text>
+            <circle cx="256" cy="48" r="13" fill="#EA580C"/><text x="256" y="53" text-anchor="middle" font-size="12">🏭</text>
+            <circle cx="152" cy="76" r="21" fill="#EA580C"/><text x="152" y="84" text-anchor="middle" font-size="19">🏭</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* exchangeRateCases – Card 5 of Pattern of Trade. Two panels contrasting
+     a currency appreciation (green) and depreciation (amber), each with the
+     £/$ direction and the three knock-on effects on trade. Static. */
+  exchangeRateCases: `
+    <div style="line-height:1.45;background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .erc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:780px;margin:0 auto;}
+        @media(max-width:600px){.erc-grid{grid-template-columns:1fr;}}
+        .erc-panel{border-radius:14px;padding:15px 16px;}
+        .erc-h{text-align:center;font-size:15px;font-weight:800;margin-bottom:3px;}
+        .erc-eg{text-align:center;font-size:12px;color:#64748B;margin-bottom:13px;}
+        .erc-cur{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:14px;}
+        .erc-coin{display:inline-flex;align-items:center;gap:3px;font-size:26px;font-weight:800;}
+        .erc-row{display:flex;align-items:center;gap:11px;font-size:13px;font-weight:600;padding:6px 0;}
+        .erc-ric{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+      </style>
+      <div class="erc-grid">
+        <div class="erc-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="erc-h" style="color:#065F46;">Currency appreciates</div>
+          <div class="erc-eg">e.g. £1 = $1.25 → £1 = $1.40</div>
+          <div class="erc-cur"><span class="erc-coin" style="color:#059669;">£<span style="font-size:17px;">▲</span></span><span style="color:#94A3B8;font-size:20px;">→</span><span class="erc-coin" style="color:#2563EB;">$<span style="font-size:17px;">▼</span></span></div>
+          <div class="erc-row"><span class="erc-ric" style="background:#DCFCE7;">🌐</span>Exports become dearer abroad</div>
+          <div class="erc-row"><span class="erc-ric" style="background:#DCFCE7;">🏠</span>Imports become cheaper at home</div>
+          <div class="erc-row"><span class="erc-ric" style="background:#DCFCE7;">📉</span>Export demand may weaken</div>
+        </div>
+        <div class="erc-panel" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="erc-h" style="color:#C2410C;">Currency depreciates</div>
+          <div class="erc-eg">e.g. £1 = $1.25 → £1 = $1.10</div>
+          <div class="erc-cur"><span class="erc-coin" style="color:#EA580C;">£<span style="font-size:17px;">▼</span></span><span style="color:#94A3B8;font-size:20px;">→</span><span class="erc-coin" style="color:#7C3AED;">$<span style="font-size:17px;">▲</span></span></div>
+          <div class="erc-row"><span class="erc-ric" style="background:#FFEDD5;">🌐</span>Exports become cheaper abroad</div>
+          <div class="erc-row"><span class="erc-ric" style="background:#FFEDD5;">🏠</span>Imports become dearer at home</div>
+          <div class="erc-row"><span class="erc-ric" style="background:#FFEDD5;">📈</span>Export demand may strengthen</div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

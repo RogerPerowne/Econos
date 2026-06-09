@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.112.0 — 2026-06-09
+
+### Pattern of Trade topic complete (6 cards, 4 bespoke visuals)
+
+- **Pattern of Trade (Edexcel A 4.1.3)** built, registered and flipped live
+  — a new Theme 4 topic (added to `js/topics.js`). Six cards: the big
+  picture → comparative advantage shapes trade → emerging economies →
+  trading blocs and bilateral deals → exchange rates → the whole story.
+  Frames the pattern of trade as a combination of four drivers and closes
+  on a single evaluation chain.
+- **Globe hub retained** on Card 1 (by request): the globalisation globe
+  visual adapted to four numbered spokes (`patternOfTradeGlobe`) — the
+  four big drivers ringing a glowing globe with dashed connectors.
+- **Four bespoke visuals** built to match the mockups closely:
+  - `patternOfTradeGlobe` — globe + four drivers hub.
+  - `patternCompAdvLogic` — three-panel comparative-advantage core logic
+    (opportunity-cost table → lower OC → trade outcome).
+  - `tradeThenNow` — twin "what changed" panels (advanced economies
+    radiating out, then emerging-economy factories feeding the world).
+  - `exchangeRateCases` — appreciation vs depreciation, each with the £/$
+    direction and the three knock-on effects on trade.
+- Service worker cache bumped to `econos-v452`.
+
 ## 0.111.0 — 2026-06-09
 
 ### Specialisation and Trade topic complete (7 cards, 4 bespoke visuals)

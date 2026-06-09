@@ -280,6 +280,18 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   PPF with production point P and a dashed trade line out to consumption
   point C beyond the frontier. Hand-computed geometry (P sits exactly on
   the PPF). Use for any "consume beyond the PPF" gains-from-trade diagram.
+- `patternOfTradeGlobe` — Pattern of Trade 4.1.3 Card 1. The globe hub
+  (see `globalisationConnectsHub`) adapted to **four** numbered spokes in
+  a 2×2 ring. The go-to when a hub needs four drivers around a globe.
+- `patternCompAdvLogic` — Pattern of Trade 4.1.3 Card 2. A three-panel
+  worked "core logic" chain (data table → conclusion → outcome) joined by
+  arrows. Pattern for any "table → infer → result" mini-argument.
+- `tradeThenNow` — Pattern of Trade 4.1.3 Card 3. Twin before/after panels
+  with stylised SVG flow diagrams (hub radiating out vs nodes feeding in).
+  Use for any "how the map changed" comparison.
+- `exchangeRateCases` — Pattern of Trade 4.1.3 Card 5. Twin appreciate /
+  depreciate panels with a currency-direction row and three effect lines.
+  Pattern for any two-case currency / direction comparison.
 
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.

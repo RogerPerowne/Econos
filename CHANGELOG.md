@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.114.0 — 2026-06-09
+
+### Trading Blocs and the WTO topic complete (7 cards, 1 bespoke visual)
+
+- **Trading Blocs and the WTO (Edexcel A 4.1.5)** built and flipped live.
+  Seven cards: the big picture → the ladder of integration → FTAs &
+  customs unions → common markets & monetary unions → benefits & costs of
+  RTAs → the WTO and trade liberalisation → the whole story. Built around
+  trade creation vs trade diversion and regional gains vs global efficiency.
+- **Bespoke visual** `ftaVsCustomsFlows` — a two-row trade-flow diagram
+  showing how outside goods can route in via the lower-tariff member in an
+  FTA, but not in a customs union with a common external tariff.
+- The ladder of integration uses the `numbered-rows` causes style (FTA →
+  customs union → common market → monetary union); the WTO card uses
+  `causesPosition:'top'` so "What the WTO does" sits above the
+  liberalisation flow, matching the mockup order exactly.
+- Service worker cache bumped to `econos-v454`.
+
 ## 0.113.0 — 2026-06-09
 
 ### Terms of Trade topic complete (6 cards, 3 bespoke visuals)

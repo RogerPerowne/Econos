@@ -21293,6 +21293,43 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* ftaVsCustomsFlows – Card 3 of Trading Blocs & WTO. Two rows showing how
+     trade flows differ: in a free trade area, outside goods can route in via
+     the lower-tariff member (dashed line to "rest of world"); in a customs
+     union, the common external tariff closes that gap. Static. */
+  ftaVsCustomsFlows: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fcf-row{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;max-width:720px;margin:0 auto;}
+        .fcf-tag{flex:0 0 auto;width:96px;border-radius:10px;padding:10px 8px;text-align:center;font-size:12px;font-weight:800;line-height:1.2;}
+        .fcf-node{flex:1;min-width:0;display:flex;align-items:center;gap:8px;justify-content:center;}
+        .fcf-ic{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+        .fcf-nl{font-size:11.5px;font-weight:600;color:#334155;line-height:1.2;}
+        .fcf-arr{flex:0 0 auto;font-weight:800;}
+        .fcf-cap{text-align:center;font-size:11.5px;font-weight:600;max-width:720px;margin:5px auto 16px;}
+        @media(max-width:600px){.fcf-nl{display:none;}.fcf-tag{width:70px;font-size:11px;}.fcf-node{gap:3px;}}
+      </style>
+      <div class="fcf-row">
+        <div class="fcf-tag" style="background:#EFF6FF;color:#1E3A8A;border:1.5px solid #BFDBFE;">Free trade area</div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#EFF6FF;">🏛️</div><span class="fcf-nl">member<br>country A</span></div>
+        <div class="fcf-arr" style="color:#2563EB;font-size:18px;">↔</div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#EFF6FF;">🏛️</div><span class="fcf-nl">member<br>country B</span></div>
+        <div class="fcf-arr" style="color:#94A3B8;font-size:13px;letter-spacing:-1px;">- -▸</div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#F5F3FF;">🌐</div><span class="fcf-nl">rest of<br>world</span></div>
+      </div>
+      <div class="fcf-cap" style="color:#2563EB;">Outside goods may enter via the lower-tariff member.</div>
+      <div class="fcf-row">
+        <div class="fcf-tag" style="background:#ECFDF5;color:#065F46;border:1.5px solid #86EFAC;">Customs union</div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#ECFDF5;">🏛️</div><span class="fcf-nl">member<br>country A</span></div>
+        <div class="fcf-arr" style="color:#059669;font-size:18px;">↔</div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#ECFDF5;">🏛️</div><span class="fcf-nl">member<br>country B</span></div>
+        <div class="fcf-arr" style="color:#94A3B8;font-size:13px;letter-spacing:-1px;">- -▸</div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#F5F3FF;">🌐</div><span class="fcf-nl">rest of<br>world</span></div>
+      </div>
+      <div class="fcf-cap" style="color:#059669;">A common external tariff removes that problem.</div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

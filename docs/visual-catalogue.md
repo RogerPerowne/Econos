@@ -301,6 +301,10 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
 - `totTwoStories` — Terms of Trade 4.1.4 Card 3. Twin three-step
   mini-flows (improvement vs deterioration). Use for any mirrored
   cause → mechanism → outcome pair.
+- `ftaVsCustomsFlows` — Trading Blocs & WTO 4.1.5 Card 3. Two rows of
+  member↔member nodes with a dashed link to "rest of world", contrasting
+  how outside goods route in under an FTA vs a customs union. Use for any
+  "two regimes, same actors, different flow" comparison.
 
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.

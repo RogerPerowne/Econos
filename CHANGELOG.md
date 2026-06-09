@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.130.0 — 2026-06-09
+
+### Development Strategies: Other topic complete (8 cards)
+
+- **Development Strategies: Other (Edexcel A 4.3.3)** built and flipped
+  live — the third and final 4.3.3 strategy topic (alongside Market-
+  orientated and Interventionist). Eight cards: the big picture →
+  industrialisation and the Lewis model → tourism → primary industries →
+  Fairtrade → aid and debt relief → World Bank, IMF and NGOs → the whole
+  story.
+- Built entirely from the existing renderer vocabulary (flow chains, tile
+  grids and VS pairs) — no new bespoke visuals or chart specs required.
+- This completes the three-way split of 4.3.3 into Market-orientated,
+  Interventionist and Other.
+
 ## 0.129.0 — 2026-06-09
 
 ### Development Strategies: Interventionist topic complete (8 cards)

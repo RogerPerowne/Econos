@@ -1085,7 +1085,7 @@ window.ECONOS_TOPICS = [
     name: 'Impact of Government Intervention',
     sub: 'Impact on prices, profit, efficiency, quality and choice; limits — regulatory capture and asymmetric information',
     color: '#0d9488',
-    available: { learn: false, link: false, land: false },
+    available: { learn: true, link: false, land: false },
     boards: {
       edexcel_a: { spec: '3.6.2', included: true },
       edexcel_b: { spec: null, included: true },

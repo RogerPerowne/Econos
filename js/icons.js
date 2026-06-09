@@ -21333,6 +21333,277 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* bopGlobeHub – Card 1 of Balance of Payments. Globe centre with three
+     spokes: current account (left), capital account (right), financial
+     account (bottom), with a "Balance of payments" caption. Radial layout,
+     dashed connectors, collapses to a column on mobile. */
+  bopGlobeHub: `
+    <div class="bgh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bgh .bgh-stage{position:relative;max-width:720px;margin:0 auto;aspect-ratio:7/5;}
+        .bgh .bgh-conn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+        .bgh .bgh-tile{position:absolute;transform:translate(-50%,-50%);width:32%;min-width:172px;box-sizing:border-box;border-radius:13px;padding:12px 14px;box-shadow:0 2px 6px rgba(15,23,42,.06);z-index:1;}
+        .bgh .bgh-h{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
+        .bgh .bgh-ic{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+        .bgh .bgh-t{font-size:14px;font-weight:800;line-height:1.15;}
+        .bgh .bgh-s{font-size:11.5px;color:#475569;line-height:1.35;}
+        .bgh .bgh-globe{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);z-index:2;width:118px;height:118px;border-radius:50%;background:radial-gradient(circle at 38% 32%,#E0F2FE,#BAE6FD 55%,#7DD3FC);border:3px solid #1E3A8A;display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:0 0 0 8px rgba(224,242,254,.7),0 8px 22px rgba(2,132,199,.2);}
+        .bgh .bgh-cap{position:absolute;top:69%;left:50%;transform:translateX(-50%);z-index:2;font-family:Fraunces,Georgia,serif;font-size:14px;font-weight:800;color:#1E3A8A;text-align:center;white-space:nowrap;}
+        @media(max-width:640px){.bgh .bgh-stage{aspect-ratio:auto;}.bgh .bgh-conn{display:none;}.bgh .bgh-tile{position:static;transform:none;width:100%;min-width:0;margin:0 0 10px;}.bgh .bgh-globe,.bgh .bgh-cap{position:static;transform:none;margin:6px auto;}.bgh .bgh-cap{white-space:normal;}}
+      </style>
+      <div class="bgh-stage">
+        <svg class="bgh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 22 32 L 50 43" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 78 32 L 50 43" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 50 86 L 50 43" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+        </svg>
+        <div class="bgh-globe">🌐</div>
+        <div class="bgh-cap">Balance of payments</div>
+        <div class="bgh-tile" style="left:18%;top:32%;background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="bgh-h"><div class="bgh-ic">🛒</div><div class="bgh-t" style="color:#065F46;">Current account</div></div>
+          <div class="bgh-s">Goods, services, income, transfers.</div>
+        </div>
+        <div class="bgh-tile" style="left:82%;top:32%;background:#FFF7ED;border:1.5px solid #FDBA74;">
+          <div class="bgh-h"><div class="bgh-ic">🏛️</div><div class="bgh-t" style="color:#C2410C;">Capital account</div></div>
+          <div class="bgh-s">Capital transfers, non-produced assets.</div>
+        </div>
+        <div class="bgh-tile" style="left:50%;top:88%;background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <div class="bgh-h"><div class="bgh-ic">📊</div><div class="bgh-t" style="color:#5B21B6;">Financial account</div></div>
+          <div class="bgh-s">FDI, portfolio flows, loans, reserves.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* bopBankStatement – Card 2 of Balance of Payments. The "international
+     bank statement": three account columns (current + capital + financial)
+     joined by + and =, each with its line items. Static. */
+  bopBankStatement: `
+    <div style="line-height:1.45;background:#F8FAFC;border:1.5px solid #E2E8F0;border-radius:16px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bbs-head{text-align:center;font-size:12.5px;font-weight:800;color:#334155;letter-spacing:.04em;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:10px;}
+        .bbs-head::before,.bbs-head::after{content:'';height:0;border-top:1.5px dashed #CBD5E1;flex:1;max-width:120px;}
+        .bbs-row{display:flex;align-items:stretch;justify-content:center;gap:8px;max-width:880px;margin:0 auto;}
+        .bbs-col{flex:1;min-width:0;border-radius:13px;padding:13px 13px 11px;}
+        .bbs-ct{display:flex;align-items:center;gap:9px;margin-bottom:3px;}
+        .bbs-cic{width:34px;height:34px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+        .bbs-tt{font-size:13.5px;font-weight:800;line-height:1.15;}
+        .bbs-sub{font-size:11px;color:#64748B;line-height:1.35;margin-bottom:9px;}
+        .bbs-li{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;padding:5px 0;border-top:1px solid rgba(0,0,0,.06);}
+        .bbs-foot{font-size:10.5px;font-style:italic;line-height:1.35;margin-top:9px;padding-top:8px;border-top:1px solid rgba(0,0,0,.08);}
+        .bbs-op{flex:0 0 auto;display:flex;align-items:center;font-size:22px;font-weight:800;color:#94A3B8;}
+        .bbs-eq{display:flex;justify-content:center;margin-top:10px;}
+        .bbs-eqb{width:34px;height:34px;border-radius:50%;background:#1E3A8A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;}
+        @media(max-width:640px){.bbs-row{flex-direction:column;}.bbs-op{justify-content:center;}}
+      </style>
+      <div class="bbs-head">🏛️ Balance of payments statement</div>
+      <div class="bbs-row">
+        <div class="bbs-col" style="background:#ECFDF5;border:1.5px solid #A7F3D0;">
+          <div class="bbs-ct"><div class="bbs-cic">🛒</div><div class="bbs-tt" style="color:#065F46;">Current account</div></div>
+          <div class="bbs-sub">What we earn and spend in the world</div>
+          <div class="bbs-li">📦 Goods</div>
+          <div class="bbs-li">✈️ Services</div>
+          <div class="bbs-li">💼 Primary income</div>
+          <div class="bbs-li">🎁 Secondary income</div>
+          <div class="bbs-foot" style="color:#065F46;">Mainly from trade and income flows</div>
+        </div>
+        <div class="bbs-op">+</div>
+        <div class="bbs-col" style="background:#FFF7ED;border:1.5px solid #FED7AA;">
+          <div class="bbs-ct"><div class="bbs-cic">🏛️</div><div class="bbs-tt" style="color:#C2410C;">Capital account</div></div>
+          <div class="bbs-sub">Transfers and assets we acquire or give</div>
+          <div class="bbs-li">🔁 Capital transfers</div>
+          <div class="bbs-li">⛰️ Non-produced assets</div>
+          <div class="bbs-foot" style="color:#C2410C;">Usually small compared with the others</div>
+        </div>
+        <div class="bbs-op">+</div>
+        <div class="bbs-col" style="background:#F5F3FF;border:1.5px solid #DDD6FE;">
+          <div class="bbs-ct"><div class="bbs-cic">📊</div><div class="bbs-tt" style="color:#5B21B6;">Financial account</div></div>
+          <div class="bbs-sub">How we invest in and are financed by others</div>
+          <div class="bbs-li">🏭 FDI</div>
+          <div class="bbs-li">📈 Portfolio investment</div>
+          <div class="bbs-li">🏦 Other investment</div>
+          <div class="bbs-li">💰 Reserve changes</div>
+          <div class="bbs-foot" style="color:#5B21B6;">Tracks assets and money movements</div>
+        </div>
+      </div>
+      <div class="bbs-eq"><div class="bbs-eqb">=</div></div>
+    </div>
+  `,
+
+  /* bopDriverDials – Card 3 of Balance of Payments. Four rotary "driver"
+     knobs (competitiveness, exchange rate, domestic demand, commodity
+     prices) with an indicator dot, feeding a central balance between
+     deficit pressure (left) and surplus pressure (right). Static SVG knobs. */
+  bopDriverDials: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bdd-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:780px;margin:0 auto 16px;}
+        @media(max-width:600px){.bdd-row{grid-template-columns:repeat(2,1fr);}}
+        .bdd-cell{text-align:center;}
+        .bdd-t{font-size:12px;font-weight:800;line-height:1.2;margin-bottom:6px;min-height:2.4em;display:flex;align-items:center;justify-content:center;}
+        .bdd-s{font-size:10.5px;color:#475569;line-height:1.35;margin-top:6px;}
+        .bdd-press{display:flex;align-items:center;justify-content:center;gap:12px;max-width:680px;margin:0 auto;flex-wrap:wrap;}
+        .bdd-box{flex:1;min-width:180px;border-radius:13px;padding:12px 14px;display:flex;align-items:center;gap:11px;}
+        .bdd-bic{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+        .bdd-scale{flex:0 0 auto;font-size:30px;}
+      </style>
+      <div class="bdd-row">
+        ${[
+          {t:'Competitiveness & productivity',c:'#059669',ang:-52,s:'Lower costs and higher productivity boost exports.'},
+          {t:'Exchange rate',c:'#EA580C',ang:38,s:'A stronger currency makes exports costlier, imports cheaper.'},
+          {t:'Domestic income & demand',c:'#7C3AED',ang:-90,s:'Stronger demand raises imports relative to exports.'},
+          {t:'Commodity / global demand',c:'#2563EB',ang:30,s:'Higher export prices or global demand lift earnings.'}
+        ].map(function(d,i){
+          var rad=(d.ang)*Math.PI/180; var dx=(50+26*Math.cos(rad)).toFixed(1); var dy=(50+26*Math.sin(rad)).toFixed(1);
+          return '<div class="bdd-cell"><div class="bdd-t" style="color:'+d.c+';">'+(i+1)+' · '+d.t+'</div>'+
+          '<svg viewBox="0 0 100 108" width="100%" style="max-width:104px;">'+
+          '<defs><radialGradient id="bddg'+i+'" cx="38%" cy="32%" r="70%"><stop offset="0%" stop-color="#fff"/><stop offset="55%" stop-color="#E2E8F0"/><stop offset="100%" stop-color="#94A3B8"/></radialGradient></defs>'+
+          '<circle cx="50" cy="50" r="42" fill="none" stroke="'+d.c+'" stroke-width="2.4" stroke-dasharray="1.5 5.2" opacity="0.75"/>'+
+          '<circle cx="50" cy="50" r="31" fill="url(#bddg'+i+')" stroke="#94A3B8" stroke-width="1.5"/>'+
+          '<circle cx="50" cy="50" r="24" fill="none" stroke="#fff" stroke-width="1.2" opacity="0.6"/>'+
+          '<circle cx="'+dx+'" cy="'+dy+'" r="5" fill="'+d.c+'"/>'+
+          '<text x="13" y="103" font-size="13" font-weight="800" fill="#94A3B8">−</text>'+
+          '<text x="80" y="103" font-size="13" font-weight="800" fill="#94A3B8">+</text>'+
+          '</svg>'+
+          '<div class="bdd-s">'+d.s+'</div></div>';
+        }).join('')}
+      </div>
+      <div class="bdd-press">
+        <div class="bdd-box" style="background:#FEF2F2;border:1.5px solid #FCA5A5;">
+          <div class="bdd-bic" style="background:#FEE2E2;">⬇️</div>
+          <div><div style="font-size:13px;font-weight:800;color:#9F1239;">Deficit pressure</div><div style="font-size:11px;color:#475569;line-height:1.35;">More outflows than inflows.</div></div>
+        </div>
+        <div class="bdd-scale">⚖️</div>
+        <div class="bdd-box" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+          <div class="bdd-bic" style="background:#DCFCE7;">⬆️</div>
+          <div><div style="font-size:13px;font-weight:800;color:#065F46;">Surplus pressure</div><div style="font-size:11px;color:#475569;line-height:1.35;">More inflows than outflows.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* bopFinanceMatch – Card 4 of Balance of Payments. Current-account
+     deficit box financed by a financial-account surplus box. Static. */
+  bopFinanceMatch: `
+    <div style="line-height:1.45;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bmi-row{display:flex;align-items:center;justify-content:center;gap:10px;max-width:760px;margin:0 auto;}
+        .bmi-box{flex:1;min-width:0;border-radius:14px;padding:15px 16px;}
+        .bmi-h{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+        .bmi-hic{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
+        .bmi-tt{font-size:14.5px;font-weight:800;line-height:1.15;}
+        .bmi-li{font-size:12.5px;font-weight:600;padding:4px 0;color:#334155;}
+        .bmi-mid{flex:0 0 auto;text-align:center;width:120px;}
+        .bmi-ml{font-size:12px;font-weight:800;color:#5B21B6;line-height:1.25;margin-bottom:6px;}
+        @media(max-width:600px){.bmi-row{flex-direction:column;}.bmi-mid{width:auto;}.bmi-mid svg{transform:rotate(90deg);}}
+      </style>
+      <div class="bmi-row">
+        <div class="bmi-box" style="background:#FEF2F2;border:1.5px solid #FCA5A5;">
+          <div class="bmi-h"><div class="bmi-hic" style="background:#FEE2E2;">🛒</div><div class="bmi-tt" style="color:#9F1239;">Current account deficit</div></div>
+          <div class="bmi-li">• Goods</div>
+          <div class="bmi-li">• Services</div>
+          <div class="bmi-li">• Income</div>
+          <div class="bmi-li">• Transfers</div>
+        </div>
+        <div class="bmi-mid">
+          <div class="bmi-ml">Must be financed by</div>
+          <svg viewBox="0 0 80 24" width="72"><defs><marker id="bmiar" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7C3AED"/></marker></defs><line x1="4" y1="12" x2="70" y2="12" stroke="#7C3AED" stroke-width="3" marker-end="url(#bmiar)"/></svg>
+        </div>
+        <div class="bmi-box" style="background:#F5F3FF;border:1.5px solid #DDD6FE;">
+          <div class="bmi-h"><div class="bmi-hic" style="background:#EDE9FE;">📊</div><div class="bmi-tt" style="color:#5B21B6;">Financial account surplus</div></div>
+          <div class="bmi-li">• FDI</div>
+          <div class="bmi-li">• Portfolio flows</div>
+          <div class="bmi-li">• Loans / other investment</div>
+          <div class="bmi-li">• Reserve changes</div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* bopPolicySliders – Card 5 of Balance of Payments. Four policy levers,
+     each a labelled slider, converging on "current account improves". */
+  bopPolicySliders: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:820px;margin:0 auto 6px;}
+        @media(max-width:680px){.bps-row{grid-template-columns:repeat(2,1fr);}}
+        .bps-card{border-radius:13px;padding:13px 12px;text-align:center;}
+        .bps-ic{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:21px;margin:0 auto 8px;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+        .bps-t{font-size:12.5px;font-weight:800;line-height:1.2;}
+        .bps-s{font-size:10.5px;color:#475569;line-height:1.3;margin:5px 0 11px;}
+        .bps-track{position:relative;height:6px;border-radius:3px;margin:0 6px 6px;}
+        .bps-handle{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid;transform:translate(-50%,-50%);box-shadow:0 1px 4px rgba(0,0,0,.2);}
+        .bps-pm{display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:#94A3B8;margin:0 4px;}
+        .bps-cap{font-size:10.5px;color:#334155;line-height:1.35;margin-top:8px;}
+        .bps-out{display:flex;justify-content:center;margin-top:8px;}
+        .bps-outp{display:inline-flex;align-items:center;gap:10px;background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:13px;padding:11px 18px;max-width:420px;}
+      </style>
+      <div class="bps-row">
+        ${[
+          {n:1,t:'Expenditure switching',c:'#2563EB',bg:'#EFF6FF',br:'#BFDBFE',ic:'💱',pos:62,s:'Depreciation or weaker currency.',cap:'Switch spending towards domestic goods & exports.'},
+          {n:2,t:'Expenditure reducing',c:'#EA580C',bg:'#FFF7ED',br:'#FED7AA',ic:'🏛️',pos:40,s:'Fiscal or monetary tightening.',cap:'Reduce overall demand through policy tightening.'},
+          {n:3,t:'Supply-side competitiveness',c:'#059669',bg:'#ECFDF5',br:'#A7F3D0',ic:'📈',pos:72,s:'Productivity, skills, infrastructure.',cap:'Improve capacity and efficiency to compete.'},
+          {n:4,t:'Import control / protection',c:'#7C3AED',bg:'#F5F3FF',br:'#DDD6FE',ic:'🛡️',pos:55,s:'Tariffs, quotas, non-tariff barriers.',cap:'Restrict imports to support domestic industries.'}
+        ].map(function(d){
+          return '<div class="bps-card" style="background:'+d.bg+';border:1.5px solid '+d.br+';">'+
+          '<div class="bps-ic">'+d.ic+'</div>'+
+          '<div class="bps-t" style="color:'+d.c+';">'+d.n+'. '+d.t+'</div>'+
+          '<div class="bps-s">'+d.s+'</div>'+
+          '<div class="bps-track" style="background:linear-gradient(90deg,#E2E8F0,'+d.c+');"><div class="bps-handle" style="left:'+d.pos+'%;border-color:'+d.c+';"></div></div>'+
+          '<div class="bps-pm"><span>−</span><span>+</span></div>'+
+          '<div class="bps-cap">'+d.cap+'</div></div>';
+        }).join('')}
+      </div>
+      <div class="bps-out"><div class="bps-outp"><span style="font-size:22px;">🌐</span><div style="text-align:left;"><div style="font-size:13px;font-weight:800;color:#1E3A8A;">Current account improves</div><div style="font-size:11px;color:#475569;">Deficit narrows or surplus increases.</div></div></div></div>
+    </div>
+  `,
+
+  /* bopWorldImbalances – Card 6 of Balance of Payments. Surplus countries
+     (export goods + savings) feed the world; deficit countries draw in
+     imports + capital. Globe centre flanked by flow rows and two panels. */
+  bopWorldImbalances: `
+    <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .bwi-grid{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:10px;align-items:center;max-width:880px;margin:0 auto;}
+        .bwi-panel{border-radius:14px;padding:14px 12px;text-align:center;}
+        .bwi-pic{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:23px;margin:8px auto;}
+        .bwi-pt{font-size:13px;font-weight:800;line-height:1.2;}
+        .bwi-ps{font-size:11px;color:#475569;line-height:1.35;margin-top:6px;}
+        .bwi-mid{display:flex;align-items:center;justify-content:center;gap:6px;}
+        .bwi-flows{display:flex;flex-direction:column;gap:14px;flex:1;}
+        .bwi-fl{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;}
+        .bwi-fic{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+        .bwi-globe{flex:0 0 auto;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 38% 32%,#E0F2FE,#BAE6FD 55%,#93C5FD);border:2.5px solid #1E3A8A;}
+        @media(max-width:680px){.bwi-grid{grid-template-columns:1fr;}.bwi-mid{flex-direction:column;}}
+      </style>
+      <div class="bwi-grid">
+        <div class="bwi-panel" style="background:#ECFDF5;border:1.5px solid #A7F3D0;">
+          <div class="bwi-pt" style="color:#065F46;">SURPLUS COUNTRIES</div>
+          <div class="bwi-pic" style="background:#DCFCE7;">🏛️</div>
+          <div class="bwi-ps">Save more than they spend.</div>
+        </div>
+        <div class="bwi-mid">
+          <div class="bwi-flows">
+            <div class="bwi-fl" style="color:#065F46;"><span class="bwi-fic" style="background:#DCFCE7;">🚢</span>Exports <span style="color:#059669;">→</span></div>
+            <div class="bwi-fl" style="color:#065F46;"><span class="bwi-fic" style="background:#DCFCE7;">🐷</span>Savings <span style="color:#059669;">→</span></div>
+            <div class="bwi-fl" style="color:#065F46;"><span class="bwi-fic" style="background:#DCFCE7;">🏦</span>Lending <span style="color:#059669;">→</span></div>
+          </div>
+          <div class="bwi-globe"></div>
+          <div class="bwi-flows" style="text-align:right;">
+            <div class="bwi-fl" style="color:#C2410C;justify-content:flex-end;"><span style="color:#EA580C;">←</span> Imports<span class="bwi-fic" style="background:#FFEDD5;">🛒</span></div>
+            <div class="bwi-fl" style="color:#C2410C;justify-content:flex-end;"><span style="color:#EA580C;">←</span> Borrowing<span class="bwi-fic" style="background:#FFEDD5;">💳</span></div>
+            <div class="bwi-fl" style="color:#C2410C;justify-content:flex-end;"><span style="color:#EA580C;">←</span> Capital in<span class="bwi-fic" style="background:#FFEDD5;">🪙</span></div>
+          </div>
+        </div>
+        <div class="bwi-panel" style="background:#FFF7ED;border:1.5px solid #FED7AA;">
+          <div class="bwi-pt" style="color:#C2410C;">DEFICIT COUNTRIES</div>
+          <div class="bwi-pic" style="background:#FFEDD5;">🏛️</div>
+          <div class="bwi-ps">Spend more than they save.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

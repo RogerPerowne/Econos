@@ -5262,18 +5262,23 @@
       ${c.causesFirst && c.causes2 && c.causes2.length ? (() => {
         const items2 = c.causes2;
         const tintedFlat2 = c.causesStyle === 'tinted-flat';
+        const iconTop2 = c.causes2Style === 'icon-top';
         const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols},minmax(0,1fr))` : gridColumnsFor(items2.length, 155);
         const tiles2 = items2.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           const bg = tintedFlat2 ? tone.bg : '#fff';
           const border = tintedFlat2 ? tone.border : '#E7E7EA';
           const iconBg = tintedFlat2 ? '#fff' : tone.bg;
-          return `
-          <div style="border-radius:var(--r-lg);background:${bg};border:1px solid ${border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+          const headerHtml = iconTop2
+            ? `<div style="font-size:var(--fs-3xl);line-height:1;margin-bottom:8px;">${renderIcon(item.icon)}</div>
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:6px;overflow-wrap:break-word;">${item.head}</div>`
+            : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${iconBg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
-            </div>
+            </div>`;
+          return `
+          <div style="border-radius:var(--r-lg);background:${bg};border:1px solid ${border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+            ${headerHtml}
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${item.body || ''}</div>
           </div>`;
         }).join('');
@@ -5378,14 +5383,19 @@
 
       ${!c.causesFirst && !c.causesLast && c.causesPosition !== 'top' && c.causes && c.causes.length ? (() => {
         const items = c.causes;
+        const iconTop = c.causesStyle === 'icon-top';
         const tiles = items.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
-          return `
-          <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          const headerHtml = iconTop
+            ? `<div style="font-size:var(--fs-3xl);line-height:1;margin-bottom:8px;">${renderIcon(item.icon)}</div>
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:6px;overflow-wrap:break-word;">${item.head}</div>`
+            : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
-            </div>
+            </div>`;
+          return `
+          <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+            ${headerHtml}
             ${item.shiftArrows && item.shiftArrows.length
               ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="flex-shrink:0;font-weight:900;font-size:var(--fs-base);color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:var(--lh-tight);">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
               : `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${item.body || ''}</div>`}
@@ -5397,14 +5407,19 @@
 
       ${!c.causesFirst && c.causes2 && c.causes2.length ? (() => {
         const items2 = c.causes2;
+        const iconTop2 = c.causes2Style === 'icon-top';
         const tiles2 = items2.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
-          return `
-          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+          const headerHtml = iconTop2
+            ? `<div style="font-size:var(--fs-3xl);line-height:1;margin-bottom:8px;">${renderIcon(item.icon)}</div>
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
+            : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
-            </div>
+            </div>`;
+          return `
+          <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
+            ${headerHtml}
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${item.body}</div>
           </div>`;
         }).join('');

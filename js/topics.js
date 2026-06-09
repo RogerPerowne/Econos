@@ -1122,6 +1122,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'pattern-of-trade',
+    name: 'Pattern of Trade',
+    sub: 'What shapes who trades what, and why it changes',
+    color: '#0891b2',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.1.3', included: true },
+      edexcel_b: { spec: null, included: true },
+      aqa:       { spec: null, included: true },
+      ocr:       { spec: '4.3', included: true }
+    }
+  },
+  {
     id: 'trading-blocs-and-wto',
     name: 'Trading Blocs & WTO',
     sub: 'FTAs, customs unions, trade creation and diversion',

@@ -1278,6 +1278,19 @@ window.ECONOS_TOPICS = [
     }
   },
   {
+    id: 'causes-of-inequality',
+    name: 'Causes of Inequality',
+    sub: 'Why inequality changes, between countries, Kuznets, capitalism',
+    color: '#db2777',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.2.2', included: true },
+      edexcel_b: { spec: '3.6.1', included: true },
+      aqa:       { spec: '4.1.7.2', included: true },
+      ocr:       { spec: '2.7', included: true }
+    }
+  },
+  {
     id: 'measures-of-development',
     name: 'Measures of Development',
     sub: 'GDP per capita, HDI, MPI and other indicators',

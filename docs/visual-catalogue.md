@@ -377,6 +377,12 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   flow-vs-stock tap/reservoir pair — reuse for any "rate over time vs
   accumulated level" distinction) and `giniScale` (a green→red 0→1 index
   bar with markers — reuse for any single-axis severity scale).
+- **Causes of Inequality 4.2.2 set** — `kuznetsDevelopment` (the inverted-U
+  Kuznets curve through `ECONOS_PPF`: a two-segment cubic with three phase
+  dots and short along-curve labels — reuse for any "rises then falls with
+  X" hump relationship). Named `kuznetsDevelopment` because a legacy
+  hand-rolled `kuznetsCurve` SVG already exists. The rest of the deck
+  reuses flow chains, two-flow cards, icon-top tile grids and VS pairs.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

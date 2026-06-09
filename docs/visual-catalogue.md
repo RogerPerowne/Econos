@@ -258,6 +258,18 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   `qualityVsCostTension` (firm pulled between lower cost and higher
   quality) — Impact of Government Intervention 3.6.2.
 
+### 8e. Theme 4 (A Global Perspective) bespoke visuals
+- `globalisationConnectsHub` — Globalisation 4.1.1 Card 1. A globe at the
+  centre with **five** numbered spokes (pentagon layout, dashed SVG
+  connectors) for trade / capital / labour / technology / brands &
+  culture. The go-to pattern when a hub needs five rather than four
+  spokes; collapses to a single column on mobile.
+- `globalSupplyChainMap` — Globalisation 4.1.1 Card 3. A horizontal
+  "one product, many countries" ribbon (design → components → assembly →
+  shipping → retail), each stage a node with a location pill, over a
+  subtle world gradient. Use for any global value-chain / process
+  sequence that needs place labels.
+
 ### 9. Decompose / labelled anatomy
 *Use when:* one figure with named parts/regions; the visual IS the content.
 - `landTypesSvg`, `capitalTypesSvg`, `enterpriseCombinationSvg`,

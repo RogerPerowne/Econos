@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.16 — 2026-06-10
+
+### Sitewide minimum font size — kill the truly-tiny labels
+
+- Hand-rolled SVGs (`js/icons.js`): floored every `font-size` literal at 10px
+  — bumped ~670 sub-10 values (5.5–9.5) up to a 10px minimum so no in-diagram
+  text renders microscopic.
+- Engine firm/cost diagrams: these are drawn 740-wide but render into the
+  ~430px left column, so the engine's 13px labels were shrinking to ~7–8px.
+  Reduced the `ECONOS_FIRM` builder coordinate space ~22% (width 740→577 /
+  720→562, height + chartArea scaled to match) — the chart footprint is
+  unchanged but its fixed-px labels now render ~2–3pt larger. Verified Total
+  cost + monopoly read clearly; `lint:charts` clean (no new clashes).
+- `sw.js` → `econos-v513`.
+
 ## 0.155.15 — 2026-06-10
 
 ### Revenue — "THE CHAIN" flow restyled to numbered-dashed flow

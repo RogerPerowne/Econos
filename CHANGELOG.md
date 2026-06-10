@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.6 — 2026-06-10
+
+### Monopsony diagrams migrated to the engine (batch D)
+
+- Migrated `monopsonyLabourDiagram` and `monopsonyMinWage` to `ECONOS_PPF`
+  specs (`monopsony-labour.js`, `monopsony-min-wage.js`). Both fill the stage
+  and keep their reveal layers: MCL = MRP → monopsony wage read down to ACL →
+  competitive benchmark (and the minimum-wage variant showing wage ↑ AND jobs ↑).
+  The MCL=MRP and MRP=ACL points are engine-solved intersections.
+- Wired into the three shells + `sw.js` precache; token-dup ratchet 6281 → 6261.
+- `sw.js` → `econos-v504`. One spec serves all three cards that use the
+  monopsony diagram (Monopsony, Protecting suppliers/employees, Wage determination).
+
 ## 0.155.5 — 2026-06-10
 
 ### Labour-market equilibrium + wage controls migrated to the engine (batch C)

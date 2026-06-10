@@ -15515,9 +15515,9 @@ window.ECONOS_ICONS = {
         <line x1="44" y1="204" x2="230" y2="204" stroke="#0B1426" stroke-width="1.2"/>
         <text x="36" y="80" font-size="9" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
         <text x="234" y="216" font-size="9" fill="#475569" font-family="Inter,sans-serif">Q</text>
-        <!-- Flat (shallow) demand line — elastic curves are FLATTER -->
-        <line x1="54" y1="100" x2="220" y2="195" stroke="#1E3A8A" stroke-width="2"/>
-        <text x="200" y="115" font-size="10" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">D</text>
+        <!-- Flat (shallow) demand line — elastic curves are FLATTER (flatter than the unit-elastic curve in panel 2) -->
+        <line x1="52" y1="108" x2="224" y2="184" stroke="#1E3A8A" stroke-width="2"/>
+        <text x="214" y="170" font-size="10" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">D</text>
         <!-- Rule boxes -->
         <rect x="26" y="220" width="216" height="40" rx="7" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
         <text x="134" y="236" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">KEY RULE</text>
@@ -15592,8 +15592,8 @@ window.ECONOS_ICONS = {
         <line x1="120" y1="198" x2="240" y2="198" stroke="#0B1426" stroke-width="1.2"/>
         <text x="112" y="74" font-size="9" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
         <text x="244" y="210" font-size="9" fill="#475569" font-family="Inter,sans-serif">Q</text>
-        <line x1="130" y1="94" x2="234" y2="189" stroke="#1E3A8A" stroke-width="2"/>
-        <text x="218" y="109" font-size="10" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">D</text>
+        <line x1="128" y1="106" x2="236" y2="182" stroke="#1E3A8A" stroke-width="2"/>
+        <text x="222" y="162" font-size="10" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">D</text>
         <rect x="22" y="214" width="316" height="36" rx="7" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
         <text x="180" y="230" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">KEY RULE</text>
         <text x="180" y="244" font-size="11" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &gt; % Δ P</text>

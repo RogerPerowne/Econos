@@ -8,8 +8,10 @@
 (function () {
   'use strict';
   if (!window.ECONOS_FIRM) return;
+  // Higher FC lifts AC clear of the MR=MC cluster and the AR/MR lines, so the
+  // AC and AR (D) labels no longer collide near the right of the chart.
   window.ECONOS_MONOPOLY_PROFIT_MAX_SPEC = window.ECONOS_FIRM.monopolyProfitMax({
-    fc: 200,
+    fc: 320,
     vc: [10, -0.15, 0.00125],
     qMax: 130,
     yMax: 26,

@@ -18760,99 +18760,12 @@ window.ECONOS_ICONS = {
      solved; demand P=22-0.1Q. Replaces the old hand-rolled SVG. */
   monopolyProfitMax: window.ECONOS_PPF.render(window.ECONOS_MONOPOLY_PROFIT_MAX_SPEC),
 
-  /* monopolyWelfare — Card 4 interactive (mw-1..mw-3):
-     monopoly outcome (Qm, Pm) → competitive benchmark (Qc where
-     P=MC) → deadweight-loss triangle between them. */
-  monopolyWelfare: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <style>
-        .mwf-v { display:none; }
-        @media (max-width:680px){ .mwf-h { display:none; } .mwf-v { display:block; } }
-      </style>
-      <div class="mwf-h">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">MONOPOLY VS THE COMPETITIVE OUTCOME</text>
-        <!-- mw-3: deadweight loss triangle (273,148)-(273,213)-(380,184) -->
-        <g class="mw-3" style="display:none">
-          <polygon points="273,148 273,213 380,184" fill="#FCA5A5" opacity="0.55" stroke="#DC2626" stroke-width="1.4"/>
-          <text x="300" y="240" font-size="12" font-weight="800" fill="#B91C1C">Deadweight</text>
-          <text x="300" y="255" font-size="12" font-weight="800" fill="#B91C1C">loss</text>
-          <line x1="318" y1="232" x2="305" y2="190" stroke="#B91C1C" stroke-width="1" stroke-dasharray="2 2"/>
-        </g>
-        <!-- Axes -->
-        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569">Price,</text>
-        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569">cost</text>
-        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Output (Q)</text>
-        <path d="M 80 101 Q 107 117, 134 134 Q 161 146, 188 159 Q 215 168, 242 178 Q 269 184, 296 189 Q 323 191, 350 192 Q 377 191, 404 189 Q 431 184, 458 178 Q 485 168, 512 159 Q 566 130, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
-        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6">AC</text>
-        <line x1="80" y1="265" x2="620" y2="119" stroke="#DC2626" stroke-width="2.4"/>
-        <text x="624" y="119" font-size="13" font-weight="800" fill="#DC2626">MC</text>
-        <line x1="80" y1="83" x2="620" y2="265" stroke="#16A34A" stroke-width="2.4"/>
-        <text x="624" y="270" font-size="13" font-weight="800" fill="#16A34A">AR (D)</text>
-        <line x1="80" y1="83" x2="431" y2="320" stroke="#D97706" stroke-width="2.4"/>
-        <text x="436" y="316" font-size="13" font-weight="800" fill="#D97706">MR</text>
-        <!-- mw-1: monopoly outcome -->
-        <g class="mw-1" style="display:none">
-          <circle cx="273" cy="213" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
-          <line x1="273" y1="213" x2="273" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <text x="273" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
-          <line x1="273" y1="213" x2="273" y2="148" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <circle cx="273" cy="148" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="273" y1="148" x2="80" y2="148" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="74" y="152" font-size="13" font-weight="800" fill="#16A34A" text-anchor="end">P_m</text>
-        </g>
-        <!-- mw-2: competitive benchmark Qc (MC=AR) at (380,184) -->
-        <g class="mw-2" style="display:none">
-          <circle cx="380" cy="184" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-          <line x1="380" y1="184" x2="380" y2="320" stroke="#2563EB" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <text x="380" y="338" font-size="13" font-weight="800" fill="#1D4ED8" text-anchor="middle">Q_c</text>
-          <line x1="380" y1="184" x2="80" y2="184" stroke="#2563EB" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="74" y="188" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="end">P_c</text>
-          <text x="392" y="178" font-size="10" font-weight="700" fill="#1D4ED8">P = MC</text>
-        </g>
-      </svg>
-      </div>
-      <div class="mwf-v">
-      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle">MONOPOLY VS COMPETITION</text>
-        <g class="mw-3" style="display:none">
-          <polygon points="152,138 152,213 209,179" fill="#FCA5A5" opacity="0.55" stroke="#DC2626" stroke-width="1.2"/>
-          <text x="176" y="236" font-size="10.5" font-weight="800" fill="#B91C1C">DWL</text>
-        </g>
-        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569">Cost</text>
-        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end">Output</text>
-        <path d="M 48 93 Q 63 110, 77 127 Q 92 140, 106 154 Q 121 164, 135 174 Q 150 181, 164 184 Q 179 187, 193 188 Q 208 187, 222 184 Q 237 181, 251 174 Q 280 140, 338 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
-        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6">AC</text>
-        <line x1="48" y1="264" x2="338" y2="116" stroke="#DC2626" stroke-width="2"/>
-        <text x="318" y="112" font-size="11" font-weight="800" fill="#DC2626">MC</text>
-        <line x1="48" y1="74" x2="338" y2="263" stroke="#16A34A" stroke-width="2.2"/>
-        <text x="316" y="268" font-size="11" font-weight="800" fill="#16A34A">AR</text>
-        <line x1="48" y1="74" x2="238" y2="320" stroke="#D97706" stroke-width="2"/>
-        <text x="240" y="316" font-size="11" font-weight="800" fill="#D97706">MR</text>
-        <g class="mw-1" style="display:none">
-          <circle cx="152" cy="213" r="5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
-          <line x1="152" y1="213" x2="152" y2="320" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <text x="152" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
-          <line x1="152" y1="213" x2="152" y2="138" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <circle cx="152" cy="138" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="152" y1="138" x2="48" y2="138" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <text x="42" y="142" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_m</text>
-        </g>
-        <g class="mw-2" style="display:none">
-          <circle cx="209" cy="179" r="5" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-          <line x1="209" y1="179" x2="209" y2="320" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <text x="209" y="340" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">Q_c</text>
-          <line x1="209" y1="179" x2="48" y2="179" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <text x="42" y="183" font-size="10" font-weight="800" fill="#1D4ED8" text-anchor="end">P_c</text>
-        </g>
-      </svg>
-      </div>
-    </div>
-  `,
+  /* monopolyWelfare – Card 4 of Monopoly. Generated by the firm-model
+     builder (window.ECONOS_FIRM.monopolyWelfare): MC/AR/MR base curves with a
+     3-step reveal (mw-1 monopoly outcome Qm/Pm, mw-2 competitive benchmark
+     Qc/Pc at P=MC, mw-3 the deadweight-loss triangle). Both equilibria engine-
+     solved; soft-fill DWL shading. Replaces the old hand-rolled SVG. */
+  monopolyWelfare: window.ECONOS_PPF.render(window.ECONOS_MONOPOLY_WELFARE_SPEC),
 
   /* naturalMonopoly — Card 8 interactive (nm-1..nm-3). Falling cost
      lines (economies of scale over the whole market):

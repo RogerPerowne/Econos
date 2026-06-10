@@ -324,7 +324,6 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'THE CHAIN',
       flowEmoji: '\u{1F517}',
-      flowSep: '\u{2192}',
       flow: [
         { tone: 'blue',   icon: '\u{1F3F7}\u{FE0F}', title: 'Price decision',       sub: 'Firms choose where to set the price.' },
         { tone: 'purple', icon: '\u{1F4C9}',         title: 'PED / demand response', sub: 'Quantity demanded responds; PED governs by how much.' },

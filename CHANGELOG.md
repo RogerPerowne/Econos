@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.2 — 2026-06-10
+
+### Firm diagrams fill the stage (taller aspect)
+
+- After moving the Theme-3 firm charts into the standard left-column layout they
+  were drawn too wide (~1.85:1) and floated in the stage with ~90px of empty
+  space below. Bumped the `ECONOS_FIRM` builder defaults to ≈1.3:1 (height
+  400→570 / 380→555, chartArea height 320→490 / 300→475) so all ~20 firm
+  engine charts (cost curves, total cost, monopoly profit-max/welfare,
+  perfect- & monopolistic-competition, natural monopoly, kinked demand, LRAC,
+  MES, …) now fill the stage. Gap measured down from ~90px to ~4px.
+- Geometry is engine-recomputed, so curves/points/labels reposition correctly;
+  the taller canvas also reads as a more standard textbook 4:3 proportion.
+  `lint:charts` clean (115 specs); snapshot regenerated.
+- `sw.js` → `econos-v500`. (Hand-rolled Theme-3 charts — labour-market,
+  break-even, profit panels, cartel — are rescaled in a follow-up.)
+
 ## 0.155.1 — 2026-06-10
 
 ### Diagram hygiene sweep — remove redundant in-chart titles, fix axis clashes

@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.154.1 — 2026-06-10
+
+### Design-token drift: CI ratchet + styles.css cleanup
+
+- `lint:tokens` gains a `--check` mode (`lint:tokens:check`) that fails the
+  build if the count of raw literals duplicating a design token (`dup`) grows
+  beyond a baseline (`DUP_BASELINE = 6381`). Wired into `npm run lint`, so
+  pre-commit/pre-push now gate new token drift. Off-scale literals stay
+  report-only (snapping them to the scale is a visual change needing sign-off).
+- Tokenised the three genuine `font-weight` literals in `styles.css`
+  (`700 → var(--fw-bold)`, `800 → var(--fw-extrabold)`), taking the file's dup
+  count to 0.
+- Note: the remaining ~6.3k dups are inline-SVG presentation attributes
+  (`fill=`/`stroke=`/`stop-color=`) in `js/icons.js` and `js/app.js`, which
+  can't take a CSS var — those are retired as a side effect of the
+  SVG→chart-engine migration, not a standalone sweep. The ratchet stops the
+  backlog growing in the meantime; lower `DUP_BASELINE` as migration reduces it.
+- `sw.js` → `econos-v495`.
+
 ## 0.154.0 — 2026-06-10
 
 ### Economist-insight quotes across Themes 3 & 4

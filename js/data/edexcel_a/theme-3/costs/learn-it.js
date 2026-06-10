@@ -359,17 +359,9 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F517}', tone: 'green', text: 'From <strong>fixed and variable</strong> costs, we build <strong>total, average and marginal</strong> cost – then decisions.' },
 
-      flowTitle: 'THE CHAIN',
-      flowEmoji: '\u{1F517}',
-      flowSep: '\u{2192}',
-      flow: [
-        { tone: 'green',  icon: '\u{1F510}', title: 'Fixed cost',     sub: 'Does not change with output in the short run.' },
-        { tone: 'amber',  icon: '\u{1F4E6}', title: 'Variable cost',  sub: 'Rises with output (and may accelerate).' },
-        { tone: 'blue',   icon: '\u{2795}',  title: 'Total cost',     sub: 'TC = FC + VC.' },
-        { tone: 'purple', icon: '\u{1F3F7}\u{FE0F}', title: 'Average cost', sub: 'AC = TC ÷ Q  (=  AFC + AVC).' },
-        { tone: 'rose',   icon: '\u{1F4C8}', title: 'Marginal cost',  sub: 'MC = ΔTC ÷ ΔQ – the cost of one more.' },
-        { tone: 'slate',  icon: '\u{1F3AF}', title: 'Decisions',      sub: 'Use the right cost for the right call.' }
-      ],
+      visualKey: 'costsChainFlow',
+      visualLabel: 'THE CHAIN',
+      visualEmoji: '\u{1F517}',
 
       causesLabel: 'DON’T FORGET THE DIFFERENCES',
       causesEmoji: '\u{26A0}\u{FE0F}',

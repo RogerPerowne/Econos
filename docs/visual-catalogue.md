@@ -178,7 +178,7 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   Migration of the remaining legacy hand-rolled curves below onto the generator
   is in progress.
 - **Costs (legacy hand-rolled SVG):** `shortRunCostStack` (TC/TFC/TVC), `lracEnvelope` (SRAC→LRAC),
-  `mcLrTangency`, `fixedVariableTotalChart` (3.3.2 C2 — interactive TFC/TVC/TC reveal, Marco's Pizzeria), `averageCostFamilyChart` (3.3.2 C3 — interactive AFC/AVC/AC reveal), `marginalCostChart` (3.3.2 C4 — interactive table → MC curve with AC/AVC reference), `fullCostDiagram` (3.3.2 C5 — static AFC/AVC/AC/MC composite), `costDataBakery` (3.3.2 C6 — read-a-table procedure + bakery worked example).
+  `mcLrTangency`, `fixedVariableTotalChart` (3.3.2 C2 — interactive TFC/TVC/TC reveal, Marco's Pizzeria), `averageCostFamilyChart` (3.3.2 C3 — interactive AFC/AVC/AC reveal), `marginalCostChart` (3.3.2 C4 — interactive table → MC curve with AC/AVC reference), `fullCostDiagram` (3.3.2 C5 — static AFC/AVC/AC/MC composite), `costDataBakery` (3.3.2 C6 — read-a-table procedure + bakery worked example), `costsChainFlow` (3.3.2 C7 — six-tile horizontal flow chain: Fixed cost → Variable cost → Total cost → Average cost → Marginal cost → Decisions; reuse for any 6-step horizontal cost/concept chain).
 - **Economies of scale:** `lracBigPicture` (3.3.3 C1 — annotated U-shaped LRAC with three regions), `mesChart` (3.3.3 C4 — LRAC with MES region + small/medium/large industry mini-curves).
 - **Revenue:** `totalRevenueInteractive` (3.3.1 C2 — formula panel + worked table + bar chart, 3-view reveal), `averageRevenueInteractive` (3.3.1 C3 — linear demand with A/B point reveal), `marginalRevenueInteractive` (3.3.1 C4 — MR table + AR/MR curves, 2-view reveal), `revenueElasticityTriptych` (3.3.1 C5 — 3-panel elastic/unit/inelastic regime grid).
 - **Profit / shutdown:** `profitsShutdownDiagram`, `revMaxDiagram`,
@@ -574,7 +574,7 @@ catalogue covers the *visual* layer that slots into `visualKey` /
 | 3.1.3 Demergers | `demergerBeforeAfter`, `demergerReasonsHub` — fully built |
 | 3.1.4 Business objectives | `businessObjectivesMap`, `whoWantsWhatHub`, `objectivesJourney`, `firmOwnershipObjectives` — fully built |
 | 3.3.1 Revenue | `revenueThreeMetrics`, `totalRevenueInteractive`, `averageRevenueInteractive`, `marginalRevenueInteractive`, `revenueElasticityTriptych` — fully built |
-| 3.3.2 Costs | `costsHub`, `fixedVariableTotalChart`, `averageCostFamilyChart`, `marginalCostChart`, `fullCostDiagram`, `costDataBakery` — fully built. Older alternatives: `shortRunCostStack`, `lracEnvelope`, `mcLrTangency`, `heroCostCurves`. |
+| 3.3.2 Costs | `costsHub`, `fixedVariableTotalChart`, `averageCostFamilyChart`, `marginalCostChart`, `fullCostDiagram`, `costDataBakery`, `costsChainFlow` — fully built. Older alternatives: `shortRunCostStack`, `lracEnvelope`, `mcLrTangency`, `heroCostCurves`. |
 | 3.3.3 EoS | `lracBigPicture`, `internalEconomiesHub`, `diseconomiesHub`, `mesChart`, `externalEconomies` — fully built. Older alternatives: `lracEnvelope`, `mesBarrierDiagram`. |
 | 3.3.4 Profits | `profitCoreEquation`, `whereProfitComesFrom`, `breakEvenChart`, `profitMeasures` — fully built. Older alternatives: `profitsShutdownDiagram`, `revMaxDiagram`. |
 | 3.4.1 Efficiency | `efficiencyFlywheel`, `productiveEfficiencyDiagram`, `toeAllocativeDiagram`, `dynamicEfficiencyDiagram` — fully built. Older alternatives: `marketLevelWelfare`, `firmLevelPcVsMonopoly`. |

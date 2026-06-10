@@ -323,7 +323,7 @@ window.ECONOS_TOPIC = {
             head: 'View 2 — excess capacity below the AC minimum',
             body: 'Mark the AC minimum (Q_min). The horizontal gap <strong>Q*_LR &lt; Q_min</strong> is "excess capacity" — the firm could lower AC by producing more, but demand falls off too quickly. The y-axis AC gap shows it sits above the lowest sustainable cost.',
             analysis: 'This is what distinguishes MC from PC. In PC, firms produce at the AC minimum (productively efficient). In MC, the firm operates above min AC at all times — the cost of variety. Whether that variety is worth the inefficiency is the central evaluation question.',
-            show: ['mce-2']
+            show: ['mce-1', 'mce-2']
           }
         ]
       },

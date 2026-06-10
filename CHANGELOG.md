@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.148.0 — 2026-06-10
+
+### Chart engine Phase 3 — Monopolistic competition diagrams migrated
+
+Three diagrams migrated, introducing the long-run tangency capability.
+- New `tangentDemand(M, qT)` helper: a demand line tangent to AC at qT, which
+  (because MC = AC + Q·AC′) automatically satisfies MR = MC there — the exact
+  long-run monopolistic-competition equilibrium (P = AC, normal profit).
+- `monopolyProfitMax()` generalised with `groupLayers` + `qLabel`/`pLabel` so
+  its construction can collapse onto a 3-step reveal and relabel Q*/P*.
+- New `monopolisticLongRun()` (exclusive 3-step: SR abnormal profit → entry
+  shifts demand left → LR tangency) and `monopolisticEfficiency()` (LR tangency
+  → excess capacity Q*_LR < Q_min) builders.
+- Specs `mc-short-run.js`, `mc-long-run.js`, `mc-efficiency.js` replace the
+  hand-rolled mcShortRunDiagram / mcLongRunDiagram / mcEfficiencyDiagram.
+  Efficiency card step 2 made cumulative so the excess-capacity gap reads.
+- Verified all three live. `lint:charts` clean (109 specs), 110 snapshot tests;
+  `sw.js` → `econos-v485`.
+
 ## 0.147.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Perfect competition diagrams migrated

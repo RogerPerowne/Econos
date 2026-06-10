@@ -18115,6 +18115,8 @@ window.ECONOS_ICONS = {
           <line x1="349" y1="130" x2="320" y2="130" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
           <text x="314" y="127" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_A</text>
           <text x="356" y="120" font-size="9.5" font-weight="800" fill="#065F46">high</text>
+          <line x1="349" y1="170" x2="349" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="349" y="266" font-size="10" font-weight="800" fill="#B45309" text-anchor="middle">Q_A (few)</text>
         </g>
 
         <!-- Panel 3: market B elastic -->
@@ -18123,18 +18125,20 @@ window.ECONOS_ICONS = {
           <line x1="560" y1="50" x2="560" y2="250" stroke="#0B1426" stroke-width="1.4"/>
           <line x1="560" y1="250" x2="748" y2="250" stroke="#0B1426" stroke-width="1.4"/>
           <text x="748" y="266" font-size="9.5" fill="#475569" text-anchor="end">Q</text>
-          <line x1="560" y1="150" x2="746" y2="206" stroke="#16A34A" stroke-width="2.2"/>
-          <text x="724" y="196" font-size="11" font-weight="800" fill="#16A34A">D_B</text>
-          <line x1="560" y1="150" x2="650" y2="258" stroke="#D97706" stroke-width="2.2"/>
-          <text x="654" y="254" font-size="11" font-weight="800" fill="#D97706">MR_B</text>
+          <line x1="560" y1="142" x2="748" y2="178" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="724" y="172" font-size="11" font-weight="800" fill="#16A34A">D_B</text>
+          <line x1="560" y1="142" x2="748" y2="214" stroke="#D97706" stroke-width="2.2"/>
+          <text x="700" y="211" font-size="11" font-weight="800" fill="#D97706">MR_B</text>
           <line x1="560" y1="170" x2="748" y2="170" stroke="#DC2626" stroke-width="2.2"/>
           <text x="752" y="173" font-size="11" font-weight="800" fill="#DC2626">MC</text>
-          <circle cx="577" cy="170" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
-          <line x1="577" y1="170" x2="577" y2="155" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <circle cx="577" cy="155" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="577" y1="155" x2="560" y2="155" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="554" y="152" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_B</text>
-          <text x="584" y="148" font-size="9.5" font-weight="800" fill="#065F46">low</text>
+          <circle cx="633" cy="170" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="633" y1="170" x2="633" y2="156" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="633" cy="156" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="633" y1="156" x2="560" y2="156" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="554" y="153" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_B</text>
+          <text x="640" y="150" font-size="9.5" font-weight="800" fill="#065F46">low</text>
+          <line x1="633" y1="170" x2="633" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="633" y="266" font-size="10" font-weight="800" fill="#065F46" text-anchor="middle">Q_B (many)</text>
         </g>
       </svg>
     </div>

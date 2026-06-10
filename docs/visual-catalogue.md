@@ -167,6 +167,10 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   price up to AR and shades the supernormal-profit/loss rectangle. Reference
   renders: `marcosProfitMax` (monopolistic competition, `marcos-profit-max.js`)
   and `marcosProfitMaxPC` (perfect competition, `marcos-profit-max-pc.js`).
+  `costCurves` also accepts a `layers` array (parallel to `curves`) to drive a
+  stepped interactiveDiagram reveal — reference render `averageCostFamilyChart`
+  (`average-cost-family.js`, Costs card 3: AFC/AVC/AC, layers acf-1/2/3, same
+  FC=£40 cubic as the total-cost chart).
   `window.ECONOS_FIRM.totalCost({ fc, vc, … })` builds the TFC/TVC/TC
   total-cost diagram (TVC the S-cubic from the origin, TC the same shifted up
   by TFC, gap arrow), layered tfc-1/2/3 for a 3-step reveal — reference render

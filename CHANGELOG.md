@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.142.0 — 2026-06-10
+
+### Chart engine Phase 3 — Average cost family migrated
+
+Second Costs-topic diagram onto the generator, reusing the Phase 1 cost-curve
+builder.
+
+- `costCurves()` gains optional `layers` (parallel to `curves`) so a generated
+  spec can drive a stepped interactiveDiagram reveal.
+- New spec `average-cost-family.js` (`ECONOS_AVG_COST_FAMILY_SPEC`) renders
+  AFC/AVC/AC from the **same cubic as the Total Cost chart** (FC=£40,
+  VC=40Q−7.4Q²+0.6Q³), so the topic is internally consistent: AC sits above
+  AVC by the shrinking AFC gap and AC's minimum lands to the right of AVC's by
+  construction (AFC(4)=£10, AVC(4)=£20, AC(4)=£30; AVC min ≈£17 at Q≈6, AC min
+  ≈£23 at Q≈7). The hand-rolled `averageCostFamilyChart` in `icons.js` is
+  replaced by `ECONOS_PPF.render(...)`; layers acf-1/2/3 keep the 3-step reveal.
+- Card 3's AVC/AC view text updated to the consistent model's numbers.
+- Verified the live reveal; `lint:charts` clean (99 specs), 100 snapshot tests;
+  `sw.js` cache bumped (`econos-v479`).
+
 ## 0.141.2 — 2026-06-10
 
 ### Total cost diagram — stronger S + correct double arrow

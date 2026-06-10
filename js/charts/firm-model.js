@@ -99,7 +99,11 @@
     // so the four right-hand labels never collide.
     var labelDy = { MC: -4, AC: -6, AVC: 8, AFC: 10 };
 
-    var curves = which.map(function (id) {
+    // Optional per-curve reveal layers (parallel to `which`), e.g.
+    // ['acf-1','acf-2','acf-3'] for a stepped AFC→AVC→AC interactiveDiagram.
+    var layers = Array.isArray(opts.layers) ? opts.layers : null;
+
+    var curves = which.map(function (id, idx) {
       var d = samplePath(fnFor[id], qMin, qMax, qAxis, yAxis, n);
       var c = {
         id: id,
@@ -112,6 +116,7 @@
         anchor: 'start'
       };
       if (id === 'AFC') c.dashed = '5 4';
+      if (layers && layers[idx]) c.layer = layers[idx];
       return c;
     }).filter(function (c) { return c.d; });
 
@@ -136,7 +141,7 @@
       });
     }
 
-    return {
+    var spec = {
       width: opts.width || 720,
       height: opts.height || 380,
       chartArea: opts.chartArea || { x: 58, y: 26, width: 628, height: 300 },
@@ -147,6 +152,8 @@
       points: points,
       texts: opts.texts || []
     };
+    if (layers) spec.layers = layers;
+    return spec;
   }
 
   /* Numerically solve MC(Q) = MR(Q) by scanning for the sign change of

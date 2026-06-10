@@ -183,7 +183,7 @@ window.ECONOS_TOPIC = {
             label: 'AVC',
             tone: 'rose',
             head: 'Average variable cost — early efficiency then crowding',
-            body: 'AVC = TVC ÷ Q. The first two pizzas benefit from specialisation (AVC drops from £20 to £17.5). After that the kitchen fills up, dough is wasted and AVC rises (£18 → £20 → £22). The result is a <strong>U-shape</strong>.',
+            body: 'AVC = TVC ÷ Q. Early units gain from specialisation, so AVC falls (from around £33 down toward its £17 minimum near Q=6). As the kitchen fills up and dough is wasted, AVC turns back up — the result is a <strong>U-shape</strong>.',
             analysis: 'The U-shape comes from two opposing forces: early increasing returns (one worker does many things efficiently) versus later diminishing returns (one oven can only bake so much).',
             show: ['acf-1', 'acf-2']
           },
@@ -191,7 +191,7 @@ window.ECONOS_TOPIC = {
             label: 'AC',
             tone: 'purple',
             head: 'Average cost — the headline figure',
-            body: 'AC = TC ÷ Q = AVC + AFC. The purple curve sits ABOVE AVC – the gap is AFC – and shrinks as more pizzas spread the fixed cost. AC at Marco’s reaches £30 around 4-5 pizzas, then rises as diminishing returns dominate.',
+            body: 'AC = TC ÷ Q = AVC + AFC. The AC curve sits ABOVE AVC – the gap is AFC – and that gap shrinks as more pizzas spread the fixed cost. AC is £30 at Q=4 and keeps falling to its minimum (about £23 near Q=7) before diminishing returns push it back up.',
             analysis: 'AC reaches its minimum to the <strong>right</strong> of AVC’s minimum, because as Q rises AFC keeps falling and pulls AC down even after AVC has started rising.',
             show: ['acf-1', 'acf-2', 'acf-3']
           }

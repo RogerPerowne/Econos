@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.145.0 — 2026-06-10
+
+### Chart engine Phase 3 — Monopoly profit-max migrated
+
+- New `window.ECONOS_FIRM.monopolyProfitMax()` builder + spec
+  `monopoly-profit-max.js` replace the hand-rolled `monopolyProfitMax`. The four
+  curves (AC/MC/AR=D/MR) are the always-visible base; a 4-step reveal adds the
+  construction (mp-1 MR=MC, mp-2 drop to Qₘ, mp-3 up to AR for Pₘ, mp-4 AC +
+  supernormal-profit rectangle). MC=MR engine-solved; demand P=22−0.1Q,
+  MR=22−0.2Q (MR at twice the slope). Verified the live step-by-step reveal.
+- `lint:charts` clean (102 specs), 103 snapshot tests; `sw.js` → `econos-v482`.
+
 ## 0.144.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Full cost composite migrated (Costs topic complete)

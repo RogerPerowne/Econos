@@ -14825,7 +14825,7 @@ window.ECONOS_ICONS = {
       <div class="rtm-h">
       <svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="rtm-arr" markerWidth="11" markerHeight="11" refX="5" refY="8" orient="auto"><path d="M0,0 L10,0 L5,9 z" fill="#D97706"/></marker>
+          <marker id="rtm-arr" markerWidth="11" markerHeight="11" refX="9" refY="4.5" orient="auto"><path d="M0,0 L0,9 L10,4.5 z" fill="#D97706"/></marker>
         </defs>
         <!-- Tile 1: Total revenue (blue) -->
         <rect x="14" y="14" width="240" height="270" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
@@ -14879,7 +14879,7 @@ window.ECONOS_ICONS = {
       <div class="rtm-v">
       <svg viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="rtm-arr-v" markerWidth="11" markerHeight="11" refX="5" refY="8" orient="auto"><path d="M0,0 L10,0 L5,9 z" fill="#D97706"/></marker>
+          <marker id="rtm-arr-v" markerWidth="11" markerHeight="11" refX="9" refY="4.5" orient="auto"><path d="M0,0 L0,9 L10,4.5 z" fill="#D97706"/></marker>
         </defs>
         <!-- Tile 1: Total revenue (blue) -->
         <rect x="10" y="10" width="340" height="152" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>

@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.10 — 2026-06-10
+
+### Revenue triptych — fix combining-arrow heads
+
+- The arrowheads on the new combining arrows rendered rotated ~90° because the
+  marker triangle pointed down in local coords while `orient="auto"` aligns the
+  marker x-axis to the path tangent. Switched to a right-pointing marker so the
+  heads orient correctly along each arrow into the footer. `sw.js` → `econos-v508`.
+
 ## 0.155.9 — 2026-06-10
 
 ### Revenue — the-big-picture triptych: bigger fonts + combining arrows

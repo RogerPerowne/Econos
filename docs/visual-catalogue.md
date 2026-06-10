@@ -454,6 +454,13 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   reuse for any "tools around a core" map). Card 3 reuses `debtBathtub`
   (above). The rest of the deck reuses flow chains, side-by-side pairs and
   tile grids.
+- **Limits of Policy in a Global Economy 4.5.4 set** — `policyLimitsHub` (five
+  forces around a central "Policy tools" node — the `policyToolkitHub` grammar,
+  reuse for any "constraints around a core" map) and `transferPricingFlow` (a
+  three-box high-tax → parent → low-tax profit-shifting flow with an
+  internal-price arrow between each and a summary banner — reuse for any
+  cross-border flow / arbitrage / before→intermediary→after story). The rest of
+  the deck reuses flow chains and tile grids.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

@@ -1459,6 +1459,19 @@ window.ECONOS_TOPICS = [
       ocr:       { spec: '3', included: true }
     }
   },
+  {
+    id: 'limits-of-policy-in-a-global-economy',
+    name: 'Limits of Policy in a Global Economy',
+    sub: 'External shocks, multinationals and transfer pricing, uncertainty and lags, and the trade-offs of policy',
+    color: '#4338ca',
+    available: { learn: true, link: false, land: false },
+    boards: {
+      edexcel_a: { spec: '4.5.4', included: true },
+      edexcel_b: { spec: '4.4', included: true },
+      aqa:       { spec: '4.2.6', included: true },
+      ocr:       { spec: '3', included: true }
+    }
+  },
 
   /* ============================================================
      Edexcel B – business-first strand

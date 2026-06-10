@@ -362,30 +362,38 @@
     ].filter(function (c) { return c.d; });
 
     var qm = solveCross(M.mc, mr, qMin, qSamp);
+    // Four construction groups → reveal layers. Default mp-1..mp-4; callers
+    // (e.g. monopolistic competition) can collapse them onto fewer steps by
+    // repeating layer names, e.g. ['mcsr-1','mcsr-1','mcsr-2','mcsr-3'].
+    var L = opts.groupLayers || ['mp-1', 'mp-2', 'mp-3', 'mp-4'];
+    var qLabel = opts.qLabel || 'Qm', pLabel = opts.pLabel || 'Pm';
+    var seen = {}, layerList = [];
+    L.forEach(function (l) { if (!seen[l]) { seen[l] = 1; layerList.push(l); } });
     var polygons = [], points = [], texts = [];
     if (qm != null) {
       var nx = qm / qAxis, pmY = ar(qm) / yAxis, mcmY = M.mc(qm) / yAxis, acmY = M.ac(qm) / yAxis;
-      // mp-1: MR = MC
+      var profit = ar(qm) >= M.ac(qm);
+      // group 0: MR = MC
       points.push({ intersection: { curves: ['MC', 'MR'], near: [nx, mcmY] },
-        tone: 'slate', radius: 4.5, label: 'MR = MC', labelDx: 8, labelDy: 15, anchor: 'start', layer: 'mp-1' });
-      // mp-2: drop to Qm
+        tone: 'slate', radius: 4.5, label: 'MR = MC', labelDx: 8, labelDy: 15, anchor: 'start', layer: L[0] });
+      // group 1: drop to Qm
       curves.push({ id: '_drop', shape: { type: 'vertical', x: nx, from: 0, to: mcmY },
-        tone: 'slate', strokeWidth: 1.3, dashed: '3 3', layer: 'mp-2' });
-      texts.push({ x: nx, y: -0.05, text: 'Qm', tone: 'slate', bold: true, anchor: 'middle', layer: 'mp-2' });
-      // mp-3: up to AR for Pm, across to price axis
+        tone: 'slate', strokeWidth: 1.3, dashed: '3 3', layer: L[1] });
+      texts.push({ x: nx, y: -0.05, text: qLabel, tone: 'slate', bold: true, anchor: 'middle', layer: L[1] });
+      // group 2: up to AR for P*, across to price axis
       curves.push({ id: '_up', shape: { type: 'vertical', x: nx, from: mcmY, to: pmY },
-        tone: 'green', strokeWidth: 1.4, dashed: '4 3', layer: 'mp-3' });
+        tone: 'green', strokeWidth: 1.4, dashed: '4 3', layer: L[2] });
       curves.push({ id: '_pm', shape: { type: 'horizontal', y: pmY, from: 0, to: nx },
-        tone: 'green', strokeWidth: 1.4, dashed: '4 3', layer: 'mp-3' });
-      points.push({ x: nx, on: 'AR', tone: 'green', radius: 4.5, layer: 'mp-3' });
-      texts.push({ x: -0.012, y: pmY, text: 'Pm', tone: 'green', bold: true, anchor: 'end', layer: 'mp-3' });
-      // mp-4: AC at Qm + supernormal profit rectangle
-      polygons.push({ points: [[0, acmY], [nx, acmY], [nx, pmY], [0, pmY]], tone: 'green', opacity: 0.22, layer: 'mp-4' });
+        tone: 'green', strokeWidth: 1.4, dashed: '4 3', layer: L[2] });
+      points.push({ x: nx, on: 'AR', tone: 'green', radius: 4.5, layer: L[2] });
+      texts.push({ x: -0.012, y: pmY, text: pLabel, tone: 'green', bold: true, anchor: 'end', layer: L[2] });
+      // group 3: AC at Qm + supernormal-profit / loss rectangle
+      polygons.push({ points: [[0, acmY], [nx, acmY], [nx, pmY], [0, pmY]], tone: profit ? 'green' : 'rose', opacity: 0.22, layer: L[3] });
       curves.push({ id: '_ac', shape: { type: 'horizontal', y: acmY, from: 0, to: nx },
-        tone: 'purple', strokeWidth: 1.3, dashed: '4 3', layer: 'mp-4' });
-      points.push({ x: nx, on: 'AC', tone: 'purple', radius: 4, layer: 'mp-4' });
-      texts.push({ x: -0.012, y: acmY, text: 'AC', tone: 'purple', bold: true, anchor: 'end', layer: 'mp-4' });
-      texts.push({ x: nx / 2, y: (acmY + pmY) / 2, text: 'Supernormal profit', tone: 'green', bold: true, anchor: 'middle', layer: 'mp-4' });
+        tone: 'purple', strokeWidth: 1.3, dashed: '4 3', layer: L[3] });
+      points.push({ x: nx, on: 'AC', tone: 'purple', radius: 4, layer: L[3] });
+      texts.push({ x: -0.012, y: acmY, text: 'AC', tone: 'purple', bold: true, anchor: 'end', layer: L[3] });
+      texts.push({ x: nx / 2, y: (acmY + pmY) / 2, text: profit ? 'Supernormal profit' : 'Loss', tone: profit ? 'green' : 'rose', bold: true, anchor: 'middle', layer: L[3] });
     }
 
     return {
@@ -393,7 +401,7 @@
       chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
       className: opts.className || 'firm-monopoly-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
-      layers: ['mp-1', 'mp-2', 'mp-3', 'mp-4'],
+      layers: layerList,
       polygons: polygons, curves: curves, points: points, texts: texts
     };
   }
@@ -476,6 +484,154 @@
     samplePath: samplePath,
     solveCross: solveCross
   };
+
+  /* A straight demand line tangent to AC at q=qT. Because MC = AC + Q·AC′,
+     the tangent line automatically satisfies MR = MC at qT — exactly the
+     monopolistic-competition long-run equilibrium (P = AC, normal profit).
+     Returns { ar, mr, a, m } where ar(q)=a+m·q, mr(q)=a+2m·q. */
+  function tangentDemand(M, qT) {
+    var h = 0.05;
+    var m = (M.ac(qT + h) - M.ac(qT - h)) / (2 * h);   // AC′(qT) (negative)
+    var a = M.ac(qT) - m * qT;
+    return {
+      a: a, m: m,
+      ar: function (q) { return a + m * q; },
+      mr: function (q) { return a + 2 * m * q; }
+    };
+  }
+
+  /* Monopolistic competition — long-run equilibrium, as an EXCLUSIVE
+     3-step reveal (each step is a self-contained sub-diagram; MC and AC are
+     the always-on base):
+       lr-1  short-run abnormal profit (SR demand, MC=MR, P>AC)
+       lr-2  entry shifts the firm's demand left (old SR demand dashed, new
+             LR demand solid)
+       lr-3  long-run tangency — AR tangent to AC at Q*_LR, P=AC, normal profit
+     SR demand is linear; the LR demand is the line tangent to AC at qLR. */
+  function monopolisticLongRun(opts) {
+    opts = opts || {};
+    var fc = opts.fc != null ? opts.fc : 320;
+    var vc = opts.vc || [10, -0.15, 0.00125];
+    var qAxis = opts.qMax != null ? opts.qMax : 130;
+    var yAxis = opts.yMax != null ? opts.yMax : 24;
+    var qMin = opts.qMin != null ? opts.qMin : 16;
+    var qSamp = opts.qSampleMax != null ? opts.qSampleMax : qAxis - 2;
+    var n = opts.samples != null ? opts.samples : 60;
+    var dem = opts.srDemand || { a: 20, b: 0.08 };
+    var qLR = opts.qLR != null ? opts.qLR : 60;
+    var M = makeModel(fc, vc);
+    var arSR = function (q) { return dem.a - dem.b * q; };
+    var mrSR = function (q) { return dem.a - 2 * dem.b * q; };
+    var LR = tangentDemand(M, qLR);
+    var cap = qAxis * 0.9;
+
+    // Always-on base.
+    var curves = [
+      { id: 'MC', d: samplePath(M.mc, qMin, qSamp, qAxis, yAxis, n), tone: 'rose', label: 'MC', strokeWidth: 2.8, labelDx: 6, labelDy: -4, anchor: 'start' },
+      { id: 'AC', d: samplePath(M.ac, qMin, qSamp, qAxis, yAxis, n), tone: 'blue', label: 'AC', strokeWidth: 2.2, labelDx: 6, labelDy: -6, anchor: 'start' }
+    ];
+    var polygons = [], points = [], texts = [];
+
+    function vline(x, y0, y1, tone, dash, layer) {
+      return { id: '_v' + curves.length, shape: { type: 'vertical', x: x, from: y0, to: y1 }, tone: tone, strokeWidth: 1.3, dashed: dash, layer: layer };
+    }
+
+    // ── lr-1: short-run abnormal profit ──
+    var arSRend = Math.min(cap, dem.a / dem.b - 1), mrSRend = Math.min(cap, dem.a / (2 * dem.b));
+    curves.push({ id: 'ARsr', d: samplePath(arSR, qMin, arSRend, qAxis, yAxis, 2), tone: 'green', label: 'D (SR)', strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end', layer: 'lr-1' });
+    curves.push({ id: 'MRsr', d: samplePath(mrSR, qMin, mrSRend, qAxis, yAxis, 2), tone: 'amber', label: 'MR', strokeWidth: 2.0, labelDx: -4, labelDy: -8, anchor: 'end', layer: 'lr-1' });
+    var qS = solveCross(M.mc, mrSR, qMin, qSamp);
+    if (qS != null) {
+      var nxs = qS / qAxis, pS = arSR(qS) / yAxis, acS = M.ac(qS) / yAxis;
+      curves.push(vline(nxs, 0, pS, 'slate', '3 3', 'lr-1'));
+      polygons.push({ points: [[0, acS], [nxs, acS], [nxs, pS], [0, pS]], tone: 'green', opacity: 0.22, layer: 'lr-1' });
+      points.push({ x: nxs, on: 'ARsr', tone: 'green', radius: 4.5, layer: 'lr-1' });
+      texts.push({ x: nxs, y: -0.05, text: 'Q₁', tone: 'slate', bold: true, anchor: 'middle', layer: 'lr-1' });
+      texts.push({ x: nxs / 2, y: (acS + pS) / 2, text: 'Profit', tone: 'green', bold: true, anchor: 'middle', layer: 'lr-1' });
+    }
+
+    // ── lr-2: entry shifts demand left ──
+    curves.push({ id: 'ARsr2', d: samplePath(arSR, qMin, arSRend, qAxis, yAxis, 2), tone: 'slate', dashed: '5 4', strokeWidth: 1.8, layer: 'lr-2' });
+    var arLRend = Math.min(cap, -LR.a / LR.m - 1), mrLRend = Math.min(cap, -LR.a / (2 * LR.m));
+    curves.push({ id: 'ARlr2', d: samplePath(LR.ar, qMin, arLRend, qAxis, yAxis, 2), tone: 'green', label: 'D (LR)', strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end', layer: 'lr-2' });
+    curves.push({ id: 'MRlr2', d: samplePath(LR.mr, qMin, mrLRend, qAxis, yAxis, 2), tone: 'amber', strokeWidth: 2.0, layer: 'lr-2' });
+    texts.push({ x: 0.5, y: 0.9, text: 'Entry shifts demand left →', tone: 'slate', bold: true, anchor: 'middle', layer: 'lr-2' });
+
+    // ── lr-3: long-run tangency (P = AC, normal profit) ──
+    curves.push({ id: 'ARlr', d: samplePath(LR.ar, qMin, arLRend, qAxis, yAxis, 2), tone: 'green', label: 'D (LR)', strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end', layer: 'lr-3' });
+    curves.push({ id: 'MRlr', d: samplePath(LR.mr, qMin, mrLRend, qAxis, yAxis, 2), tone: 'amber', label: 'MR', strokeWidth: 2.0, labelDx: -4, labelDy: 10, anchor: 'end', layer: 'lr-3' });
+    var nxl = qLR / qAxis, pL = M.ac(qLR) / yAxis;
+    curves.push(vline(nxl, 0, pL, 'slate', '3 3', 'lr-3'));
+    points.push({ x: nxl, on: 'AC', tone: 'green', radius: 5, label: 'P = AC', labelDx: 9, labelDy: -8, anchor: 'start', layer: 'lr-3' });
+    texts.push({ x: nxl, y: -0.05, text: 'Q*', tone: 'slate', bold: true, anchor: 'middle', layer: 'lr-3' });
+    texts.push({ x: 0.5, y: 0.9, text: 'Normal profit (P = AC)', tone: 'green', bold: true, anchor: 'middle', layer: 'lr-3' });
+
+    return {
+      width: opts.width || 740, height: opts.height || 400,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      className: opts.className || 'firm-mc-longrun-svg', background: '#FFFFFF',
+      axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
+      layers: ['lr-1', 'lr-2', 'lr-3'],
+      polygons: polygons, curves: curves, points: points, texts: texts
+    };
+  }
+
+  /* Monopolistic competition — long-run efficiency / excess capacity, as an
+     exclusive 2-step reveal (MC, AC, LR demand are the base):
+       mce-1  the LR tangency (AR tangent to AC at Q*_LR, P = AC)
+       mce-2  + min-AC output (Q_min) and the excess-capacity gap Q*_LR < Q_min */
+  function monopolisticEfficiency(opts) {
+    opts = opts || {};
+    var fc = opts.fc != null ? opts.fc : 320;
+    var vc = opts.vc || [10, -0.15, 0.00125];
+    var qAxis = opts.qMax != null ? opts.qMax : 130;
+    var yAxis = opts.yMax != null ? opts.yMax : 24;
+    var qMin = opts.qMin != null ? opts.qMin : 16;
+    var qSamp = opts.qSampleMax != null ? opts.qSampleMax : qAxis - 2;
+    var n = opts.samples != null ? opts.samples : 60;
+    var qLR = opts.qLR != null ? opts.qLR : 60;
+    var M = makeModel(fc, vc);
+    var LR = tangentDemand(M, qLR);
+    var cap = qAxis * 0.9;
+    var arLRend = Math.min(cap, -LR.a / LR.m - 1), mrLRend = Math.min(cap, -LR.a / (2 * LR.m));
+    var qMinAC = solveCross(M.mc, M.ac, qMin, qSamp); // min-AC where MC=AC
+
+    var curves = [
+      { id: 'MC', d: samplePath(M.mc, qMin, qSamp, qAxis, yAxis, n), tone: 'rose', label: 'MC', strokeWidth: 2.8, labelDx: 6, labelDy: -4, anchor: 'start' },
+      { id: 'AC', d: samplePath(M.ac, qMin, qSamp, qAxis, yAxis, n), tone: 'blue', label: 'AC', strokeWidth: 2.2, labelDx: 6, labelDy: -6, anchor: 'start' },
+      { id: 'AR', d: samplePath(LR.ar, qMin, arLRend, qAxis, yAxis, 2), tone: 'green', label: 'D (LR)', strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end' },
+      { id: 'MR', d: samplePath(LR.mr, qMin, mrLRend, qAxis, yAxis, 2), tone: 'amber', label: 'MR', strokeWidth: 2.0, labelDx: -4, labelDy: 10, anchor: 'end' }
+    ];
+    var polygons = [], points = [], texts = [];
+    var nxl = qLR / qAxis, pL = M.ac(qLR) / yAxis;
+    // mce-1: tangency
+    curves.push({ id: '_q1', shape: { type: 'vertical', x: nxl, from: 0, to: pL }, tone: 'slate', strokeWidth: 1.3, dashed: '3 3', layer: 'mce-1' });
+    points.push({ x: nxl, on: 'AC', tone: 'green', radius: 5, label: 'P = AC', labelDx: 9, labelDy: -8, anchor: 'start', layer: 'mce-1' });
+    texts.push({ x: nxl, y: -0.05, text: 'Q*', tone: 'slate', bold: true, anchor: 'middle', layer: 'mce-1' });
+    // mce-2: excess capacity to min AC
+    if (qMinAC != null) {
+      var nxm = qMinAC / qAxis, acm = M.ac(qMinAC) / yAxis;
+      curves.push({ id: '_qmin', shape: { type: 'vertical', x: nxm, from: 0, to: acm }, tone: 'blue', strokeWidth: 1.3, dashed: '3 3', layer: 'mce-2' });
+      points.push({ intersection: { curves: ['MC', 'AC'], near: [nxm, acm] }, tone: 'blue', radius: 4.5, label: 'min AC', labelDx: 8, labelDy: -8, anchor: 'start', layer: 'mce-2' });
+      texts.push({ x: nxm, y: -0.05, text: 'Q_min', tone: 'blue', bold: true, anchor: 'middle', layer: 'mce-2' });
+      // excess-capacity bracket near the x-axis
+      polygons.push({ points: [[nxl, 0.04], [nxm, 0.04], [nxm, 0.075], [nxl, 0.075]], tone: 'rose', opacity: 0.3, layer: 'mce-2' });
+      texts.push({ x: (nxl + nxm) / 2, y: 0.12, text: 'Excess capacity', tone: 'rose', bold: true, anchor: 'middle', layer: 'mce-2' });
+    }
+
+    return {
+      width: opts.width || 740, height: opts.height || 400,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      className: opts.className || 'firm-mc-efficiency-svg', background: '#FFFFFF',
+      axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
+      layers: ['mce-1', 'mce-2'],
+      polygons: polygons, curves: curves, points: points, texts: texts
+    };
+  }
+
+  window.ECONOS_FIRM.monopolisticLongRun = monopolisticLongRun;
+  window.ECONOS_FIRM.monopolisticEfficiency = monopolisticEfficiency;
+  window.ECONOS_FIRM.tangentDemand = tangentDemand;
 
   /* Total-cost diagram: TFC (horizontal), TVC (the S-shaped cubic from the
      origin) and TC = TFC + TVC (the same S shifted up by TFC). The vertical

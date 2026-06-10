@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.8 — 2026-06-10
+
+### Cartel + price-cap migrated to the engine — hand-rolled Theme-3 charts done (batch E pt 2)
+
+- Migrated `cartelJointProfitInteractive` and `priceCapMonopoly` to `ECONOS_PPF`
+  specs (`cartel-joint-profit.js`, `price-cap-monopoly.js`). Both fill the stage
+  and keep their reveal layers.
+  - Cartel: the cubic "tick" MC is generated from a cost function via
+    `ECONOS_FIRM` (no more hand-tuned bezier); the cartel output (MR=MC) and
+    competitive benchmark (MC=D) are engine-solved, with the joint-profit area
+    shaded.
+  - Price cap: linear MC/D/MR; the cap below P_m raises output to Q_c (lower
+    price, more output).
+- This completes the hand-rolled Theme-3 → chart-engine migration (labour
+  demand/supply + shifts, labour-market equilibrium, wage floor/ceiling,
+  monopsony + min wage, break-even, cartel, price-cap). Every Theme-3 firm /
+  market diagram now fills the stage and is engine-rendered.
+- Token-dup ratchet 6239 → 6201. `sw.js` → `econos-v506`.
+
 ## 0.155.7 — 2026-06-10
 
 ### Break-even diagram migrated to the engine (batch E, part 1)

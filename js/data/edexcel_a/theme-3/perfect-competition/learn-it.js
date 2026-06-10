@@ -67,6 +67,10 @@ window.ECONOS_TOPIC = {
       visualLabel: 'WHAT IT LOOKS LIKE',
       visualEmoji: '\u{1F3EA}',
 
+      visualKey2: 'marketSpectrumPC',
+      visualLabel2: 'WHERE IT SITS',
+      visualEmoji2: '\u{1F9ED}',
+
       flowTitle: 'WHY FIRMS ARE PRICE TAKERS',
       flowEmoji: '\u{1F50D}',
       flowSep: '\u{2192}',

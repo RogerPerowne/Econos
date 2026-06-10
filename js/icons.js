@@ -4,7 +4,91 @@
        pop-up book aesthetic
    ============================================================ */
 
+/* Shared market-structure spectrum builder. One double-headed axis with
+   the four mainstream structures as stops (Perfect competition →
+   Monopolistic competition → Oligopoly → Monopoly); the `active` stop is
+   lit — bigger green dot, soft green panel behind its labels, green name —
+   so each market-structure topic shows "you are here" on the same map.
+   Used as the second item on Card 1 of all four 3.4.x topics via the four
+   marketSpectrum* keys below. Desktop = horizontal axis; mobile = the same
+   spectrum turned vertical. */
+window.econosMarketSpectrum = (function () {
+  var STOPS = [
+    { id: 'pc',       x: 145, my: 75,  name: ['Perfect competition'],        sub: ['Many sellers,', 'identical product'] },
+    { id: 'mc',       x: 385, my: 170, name: ['Monopolistic', 'competition'], sub: ['Many sellers,', 'differentiated products'] },
+    { id: 'oligopoly', x: 610, my: 265, name: ['Oligopoly'],                  sub: ['A few large firms,', 'interdependent decisions'] },
+    { id: 'monopoly', x: 825, my: 360, name: ['Monopoly'],                    sub: ['One seller,', 'unique product'] }
+  ];
+  var CAPTIONS = {
+    pc:        ['The benchmark end — maximum competition,', 'zero pricing power.'],
+    mc:        ['A middle ground blending competitive rivalry', 'with some market power.'],
+    oligopoly: ['A few big players — strategy and', 'interdependence take over.'],
+    monopoly:  ['The far end — one dominant seller', 'with maximum market power.']
+  };
+  return function (active) {
+    var cap = CAPTIONS[active];
+    // ── Desktop (horizontal) ──
+    var d = '';
+    STOPS.forEach(function (s) {
+      if (s.id === active) {
+        d += '<rect x="' + (s.x - 85) + '" y="40" width="170" height="120" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>';
+      }
+    });
+    d += '<line x1="36" y1="56" x2="924" y2="56" stroke="#94A3B8" stroke-width="1.8"/>';
+    d += '<path d="M 48 50 L 36 56 L 48 62" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+    d += '<path d="M 912 50 L 924 56 L 912 62" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+    STOPS.forEach(function (s) {
+      var on = s.id === active;
+      d += on
+        ? '<circle cx="' + s.x + '" cy="56" r="9.5" fill="#16A34A" stroke="#fff" stroke-width="2.5"/>'
+        : '<circle cx="' + s.x + '" cy="56" r="5.5" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/>';
+      var nameY = s.name.length === 2 ? 94 : 100;
+      s.name.forEach(function (ln, i) {
+        d += '<text x="' + s.x + '" y="' + (nameY + i * 18) + '" font-size="14" font-weight="800" fill="' + (on ? '#16A34A' : '#334155') + '" text-anchor="middle" font-family="Inter,sans-serif">' + ln + '</text>';
+      });
+      s.sub.forEach(function (ln, i) {
+        d += '<text x="' + s.x + '" y="' + (132 + i * 16) + '" font-size="11.5" fill="#64748B" text-anchor="middle" font-family="Inter,sans-serif">' + ln + '</text>';
+      });
+    });
+    d += '<text x="480" y="188" font-size="12.5" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap.join(' ') + '</text>';
+
+    // ── Mobile (vertical) ──
+    var m = '';
+    STOPS.forEach(function (s) {
+      if (s.id === active) {
+        m += '<rect x="60" y="' + (s.my - 27) + '" width="288" height="54" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.3"/>';
+      }
+    });
+    m += '<line x1="44" y1="28" x2="44" y2="396" stroke="#94A3B8" stroke-width="1.8"/>';
+    m += '<path d="M 38 40 L 44 28 L 50 40" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+    m += '<path d="M 38 384 L 44 396 L 50 384" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+    STOPS.forEach(function (s) {
+      var on = s.id === active;
+      m += on
+        ? '<circle cx="44" cy="' + s.my + '" r="8" fill="#16A34A" stroke="#fff" stroke-width="2.2"/>'
+        : '<circle cx="44" cy="' + s.my + '" r="5" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.3"/>';
+      m += '<text x="70" y="' + (s.my - 3) + '" font-size="13" font-weight="800" fill="' + (on ? '#16A34A' : '#334155') + '" font-family="Inter,sans-serif">' + s.name.join(' ') + '</text>';
+      m += '<text x="70" y="' + (s.my + 15) + '" font-size="11" fill="#64748B" font-family="Inter,sans-serif">' + s.sub.join(' ') + '</text>';
+    });
+    m += '<text x="180" y="428" font-size="11" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap[0] + '</text>';
+    m += '<text x="180" y="444" font-size="11" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap[1] + '</text>';
+
+    return '<div style="background:#fff;border-radius:14px;padding:12px 10px;font-family:Inter,sans-serif;color:#0B1426;">'
+      + '<style>.mss-v{display:none;}@media (max-width:680px){.mss-h{display:none;}.mss-v{display:block;}}</style>'
+      + '<div class="mss-h"><svg viewBox="0 0 960 196" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">' + d + '</svg></div>'
+      + '<div class="mss-v"><svg viewBox="0 0 360 456" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">' + m + '</svg></div>'
+      + '</div>';
+  };
+})();
+
 window.ECONOS_ICONS = {
+
+  /* marketSpectrum* – the shared four-stop market-structure spectrum
+     (builder above), one key per "you are here" topic. */
+  marketSpectrumPC: window.econosMarketSpectrum('pc'),
+  marketSpectrumMC: window.econosMarketSpectrum('mc'),
+  marketSpectrumOligopoly: window.econosMarketSpectrum('oligopoly'),
+  marketSpectrumMonopoly: window.econosMarketSpectrum('monopoly'),
 
   /* Sidebar nav */
   home: `<svg viewBox="0 -960 960 960" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M220-180h150v-220q0-12.75 8.63-21.38Q387.25-430 400-430h160q12.75 0 21.38 8.62Q590-412.75 590-400v220h150v-390L480-765 220-570v390Zm-60 0v-390q0-14.25 6.38-27 6.37-12.75 17.62-21l260-195q15.68-12 35.84-12Q500-825 516-813l260 195q11.25 8.25 17.63 21 6.37 12.75 6.37 27v390q0 24.75-17.62 42.37Q764.75-120 740-120H560q-12.75 0-21.37-8.63Q530-137.25 530-150v-220H430v220q0 12.75-8.62 21.37Q412.75-120 400-120H220q-24.75 0-42.37-17.63Q160-155.25 160-180Zm320-293Z"/></svg>`,
@@ -17285,9 +17369,8 @@ window.ECONOS_ICONS = {
 
   /* mcMarketShape – Card 1 of Monopolistic Competition. A 4-spoke
      hub (Many firms / Product differentiation / Low barriers / Downward-
-     sloping demand) around a central "Monopolistic competition" pill,
-     plus a small spectrum bar beneath placing MC between PC and
-     Monopoly. */
+     sloping demand) around a central "Monopolistic competition" pill.
+     The four-stop spectrum now lives in the shared marketSpectrumMC key. */
   mcMarketShape: `
     <div class="mch" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
@@ -17298,7 +17381,6 @@ window.ECONOS_ICONS = {
         .mch .mch-ic { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
         .mch .mch-t { font-size:13.5px; font-weight:800; line-height:1.2; }
         .mch .mch-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
-        .mch .mch-spec { margin-top:24px; padding-top:16px; border-top:1px solid #E2E8F0; }
         @media (max-width:600px){
           .mch > div.mch-shell > div:first-of-type { display:flex; flex-direction:column-reverse; }
           .mch .mch-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
@@ -17341,19 +17423,6 @@ window.ECONOS_ICONS = {
           </div></div>
         </div>
 
-        <!-- Spectrum bar -->
-        <div class="mch-spec">
-          <div style="font-size:11px;font-weight:800;color:#0B1426;letter-spacing:0.06em;margin-bottom:10px;">WHERE IT SITS</div>
-          <div style="position:relative;height:48px;background:linear-gradient(to right,#ECFDF5 0%,#F5F3FF 50%,#FEE2E2 100%);border-radius:10px;border:1px solid #CBD5E1;">
-            <div style="position:absolute;top:50%;left:6%;transform:translateY(-50%);font-size:11.5px;font-weight:800;color:#065F46;">Perfect competition</div>
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:12px;font-weight:900;color:#5B21B6;text-align:center;">Monopolistic<br/>competition</div>
-            <div style="position:absolute;top:50%;right:6%;transform:translateY(-50%);font-size:11.5px;font-weight:800;color:#9F1239;">Monopoly</div>
-          </div>
-          <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10.5px;color:#475569;">
-            <span>Many sellers, identical product</span>
-            <span style="font-weight:800;color:#5B21B6;">One seller, unique product</span>
-          </div>
-        </div>
       </div>
     </div>
   `,

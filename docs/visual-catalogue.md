@@ -110,6 +110,13 @@ Organised by archetype. Each entry: `key` — what it shows.
 
 ### 2. Spectrums / gradient bars
 *Use when:* items sit on a continuum (regimes, strengths, time horizons).
+- `marketSpectrumPC/MC/Oligopoly/Monopoly` — the shared four-stop
+  market-structure spectrum (`ECONOS_MS_SPECTRUM(active)` builder in
+  icons.js): double-headed axis, Perfect competition → Monopolistic
+  competition → Oligopoly → Monopoly, with the topic's own stop lit (green
+  dot + soft panel) and a per-structure caption. Second item on Card 1 of
+  all four 3.4.x topics via `visualKey2`. Vertical variant on mobile.
+  Reuse the builder for any "you are here on a continuum" map.
 - `contestabilitySpectrum`, `policySpectrumDiagram`, `incomeSpectrumChart`,
   `xedStrengthSpectrum`, `yedClassifySpectrum`, `pedClassifySpectrum`,
   `pesDriversSpectrum`, `pesIndustrySpectrum`, `pesTimeHorizons`, `yedIncomeLadder`.

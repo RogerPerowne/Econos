@@ -70,6 +70,10 @@ window.ECONOS_TOPIC = {
       visualLabel: 'WHAT A MONOPOLY IS',
       visualEmoji: '\u{1F9E9}',
 
+      visualKey2: 'marketSpectrumMonopoly',
+      visualLabel2: 'WHERE IT SITS',
+      visualEmoji2: '\u{1F9ED}',
+
       causesFirst: true,
       causesLabel: 'WHY IT MATTERS',
       causesEmoji: '\u{1F4A1}',

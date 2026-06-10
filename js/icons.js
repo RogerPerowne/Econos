@@ -16256,23 +16256,23 @@ window.ECONOS_ICONS = {
         <!-- ════════ CONNECTORS (card ↔ town, dot at each end) ════════ -->
         <g fill="none" stroke-width="2.2">
           <path d="M 284 108 C 316 108 330 112 346 118" stroke="#10B981"/>
-          <path d="M 284 228 C 318 228 334 234 350 241" stroke="#10B981"/>
-          <path d="M 284 348 C 316 348 330 352 346 357" stroke="#10B981"/>
-          <path d="M 284 468 C 318 468 336 460 352 454" stroke="#10B981"/>
+          <path d="M 284 228 C 318 228 334 231 350 235" stroke="#10B981"/>
+          <path d="M 284 348 C 318 348 334 345 346 341" stroke="#10B981"/>
+          <path d="M 284 468 C 318 468 334 463 346 458" stroke="#10B981"/>
           <path d="M 696 108 C 664 108 648 114 632 121" stroke="#F43F5E"/>
-          <path d="M 696 228 C 664 228 648 234 632 241" stroke="#F43F5E"/>
-          <path d="M 696 348 C 664 348 650 353 634 359" stroke="#F43F5E"/>
-          <path d="M 696 468 C 666 468 652 458 636 449" stroke="#F43F5E"/>
+          <path d="M 696 228 C 664 228 648 231 632 235" stroke="#F43F5E"/>
+          <path d="M 696 348 C 664 348 650 345 634 341" stroke="#F43F5E"/>
+          <path d="M 696 468 C 666 468 652 463 636 458" stroke="#F43F5E"/>
         </g>
         <g>
           <circle cx="284" cy="108" r="4" fill="#10B981"/><circle cx="348" cy="119" r="4" fill="#10B981"/>
-          <circle cx="284" cy="228" r="4" fill="#10B981"/><circle cx="352" cy="242" r="4" fill="#10B981"/>
-          <circle cx="284" cy="348" r="4" fill="#10B981"/><circle cx="348" cy="358" r="4" fill="#10B981"/>
-          <circle cx="284" cy="468" r="4" fill="#10B981"/><circle cx="354" cy="453" r="4" fill="#10B981"/>
+          <circle cx="284" cy="228" r="4" fill="#10B981"/><circle cx="352" cy="236" r="4" fill="#10B981"/>
+          <circle cx="284" cy="348" r="4" fill="#10B981"/><circle cx="348" cy="340" r="4" fill="#10B981"/>
+          <circle cx="284" cy="468" r="4" fill="#10B981"/><circle cx="348" cy="457" r="4" fill="#10B981"/>
           <circle cx="696" cy="108" r="4" fill="#F43F5E"/><circle cx="630" cy="122" r="4" fill="#F43F5E"/>
-          <circle cx="696" cy="228" r="4" fill="#F43F5E"/><circle cx="630" cy="242" r="4" fill="#F43F5E"/>
-          <circle cx="696" cy="348" r="4" fill="#F43F5E"/><circle cx="632" cy="360" r="4" fill="#F43F5E"/>
-          <circle cx="696" cy="468" r="4" fill="#F43F5E"/><circle cx="634" cy="447" r="4" fill="#F43F5E"/>
+          <circle cx="696" cy="228" r="4" fill="#F43F5E"/><circle cx="630" cy="236" r="4" fill="#F43F5E"/>
+          <circle cx="696" cy="348" r="4" fill="#F43F5E"/><circle cx="632" cy="340" r="4" fill="#F43F5E"/>
+          <circle cx="696" cy="468" r="4" fill="#F43F5E"/><circle cx="634" cy="457" r="4" fill="#F43F5E"/>
         </g>
 
         <!-- ════════ LEFT — 4 external economies (green) ════════ -->
@@ -16280,33 +16280,33 @@ window.ECONOS_ICONS = {
           <rect x="14" y="56" width="270" height="104" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
           <circle cx="44" cy="108" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
           <text x="44" y="116" font-size="22" text-anchor="middle">👷</text>
-          <text x="78" y="92" font-size="13" font-weight="800" fill="#065F46">Skilled labour pool</text>
-          <text x="78" y="114" font-size="11.5" fill="#0B1426">A larger pool of workers</text>
-          <text x="78" y="130" font-size="11.5" fill="#0B1426">with the right skills.</text>
+          <text x="78" y="92" font-size="14" font-weight="800" fill="#065F46">Skilled labour pool</text>
+          <text x="78" y="114" font-size="12.5" fill="#0B1426">A larger pool of workers</text>
+          <text x="78" y="130" font-size="12.5" fill="#0B1426">with the right skills.</text>
 
           <rect x="14" y="176" width="270" height="104" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
           <circle cx="44" cy="228" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
           <text x="44" y="236" font-size="22" text-anchor="middle">🛒</text>
-          <text x="78" y="210" font-size="13" font-weight="800" fill="#065F46">Specialist suppliers</text>
-          <text x="78" y="230" font-size="11.5" fill="#0B1426">More suppliers nearby lower</text>
-          <text x="78" y="246" font-size="11.5" fill="#0B1426">costs and improve quality</text>
-          <text x="78" y="262" font-size="11.5" fill="#0B1426">and choice.</text>
+          <text x="78" y="210" font-size="14" font-weight="800" fill="#065F46">Specialist suppliers</text>
+          <text x="78" y="230" font-size="12.5" fill="#0B1426">More suppliers nearby lower</text>
+          <text x="78" y="246" font-size="12.5" fill="#0B1426">costs and improve quality</text>
+          <text x="78" y="262" font-size="12.5" fill="#0B1426">and choice.</text>
 
           <rect x="14" y="296" width="270" height="104" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
           <circle cx="44" cy="348" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
           <text x="44" y="356" font-size="22" text-anchor="middle">🛣️</text>
-          <text x="78" y="330" font-size="13" font-weight="800" fill="#065F46">Better infrastructure</text>
-          <text x="78" y="350" font-size="11.5" fill="#0B1426">Shared roads, transport and</text>
-          <text x="78" y="366" font-size="11.5" fill="#0B1426">services reduce costs</text>
-          <text x="78" y="382" font-size="11.5" fill="#0B1426">for everyone.</text>
+          <text x="78" y="330" font-size="14" font-weight="800" fill="#065F46">Better infrastructure</text>
+          <text x="78" y="350" font-size="12.5" fill="#0B1426">Shared roads, transport and</text>
+          <text x="78" y="366" font-size="12.5" fill="#0B1426">services reduce costs</text>
+          <text x="78" y="382" font-size="12.5" fill="#0B1426">for everyone.</text>
 
           <rect x="14" y="416" width="270" height="104" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
           <circle cx="44" cy="468" r="22" fill="#fff" stroke="#86EFAC" stroke-width="1.6"/>
           <text x="44" y="476" font-size="22" text-anchor="middle">💡</text>
-          <text x="78" y="450" font-size="13" font-weight="800" fill="#065F46">Knowledge spillovers</text>
-          <text x="78" y="470" font-size="11.5" fill="#0B1426">Ideas spread between firms,</text>
-          <text x="78" y="486" font-size="11.5" fill="#0B1426">boosting innovation and</text>
-          <text x="78" y="502" font-size="11.5" fill="#0B1426">productivity.</text>
+          <text x="78" y="450" font-size="14" font-weight="800" fill="#065F46">Knowledge spillovers</text>
+          <text x="78" y="470" font-size="12.5" fill="#0B1426">Ideas spread between firms,</text>
+          <text x="78" y="486" font-size="12.5" fill="#0B1426">boosting innovation and</text>
+          <text x="78" y="502" font-size="12.5" fill="#0B1426">productivity.</text>
         </g>
 
         <!-- ════════ RIGHT — 4 external diseconomies (varied tones) ════════ -->
@@ -16314,37 +16314,37 @@ window.ECONOS_ICONS = {
           <rect x="696" y="56" width="270" height="104" rx="14" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
           <circle cx="726" cy="108" r="22" fill="#fff" stroke="#FCA5A5" stroke-width="1.6"/>
           <text x="726" y="116" font-size="22" text-anchor="middle">🚗</text>
-          <text x="760" y="92" font-size="13" font-weight="800" fill="#9F1239">Congestion</text>
-          <text x="760" y="114" font-size="11.5" fill="#0B1426">Traffic and crowded services</text>
-          <text x="760" y="130" font-size="11.5" fill="#0B1426">increase time and costs.</text>
+          <text x="760" y="92" font-size="14" font-weight="800" fill="#9F1239">Congestion</text>
+          <text x="760" y="114" font-size="12.5" fill="#0B1426">Traffic and crowded services</text>
+          <text x="760" y="130" font-size="12.5" fill="#0B1426">increase time and costs.</text>
 
           <rect x="696" y="176" width="270" height="104" rx="14" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
           <circle cx="726" cy="228" r="22" fill="#fff" stroke="#FCA5A5" stroke-width="1.6"/>
           <text x="726" y="236" font-size="22" text-anchor="middle">💷</text>
-          <text x="760" y="212" font-size="13" font-weight="800" fill="#9F1239">Higher wages and rents</text>
-          <text x="760" y="234" font-size="11.5" fill="#0B1426">Greater demand pushes up</text>
-          <text x="760" y="250" font-size="11.5" fill="#0B1426">the cost of labour and land.</text>
+          <text x="760" y="212" font-size="14" font-weight="800" fill="#9F1239">Higher wages and rents</text>
+          <text x="760" y="234" font-size="12.5" fill="#0B1426">Greater demand pushes up</text>
+          <text x="760" y="250" font-size="12.5" fill="#0B1426">the cost of labour and land.</text>
 
           <rect x="696" y="296" width="270" height="104" rx="14" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
           <circle cx="726" cy="348" r="22" fill="#fff" stroke="#FCA5A5" stroke-width="1.6"/>
           <text x="726" y="356" font-size="22" text-anchor="middle">📦</text>
-          <text x="760" y="330" font-size="13" font-weight="800" fill="#9F1239">Input shortages</text>
-          <text x="760" y="350" font-size="11.5" fill="#0B1426">High demand can create</text>
-          <text x="760" y="366" font-size="11.5" fill="#0B1426">bottlenecks and raise</text>
-          <text x="760" y="382" font-size="11.5" fill="#0B1426">input costs.</text>
+          <text x="760" y="330" font-size="14" font-weight="800" fill="#9F1239">Input shortages</text>
+          <text x="760" y="350" font-size="12.5" fill="#0B1426">High demand can create</text>
+          <text x="760" y="366" font-size="12.5" fill="#0B1426">bottlenecks and raise</text>
+          <text x="760" y="382" font-size="12.5" fill="#0B1426">input costs.</text>
 
           <rect x="696" y="416" width="270" height="104" rx="14" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
           <circle cx="726" cy="468" r="22" fill="#fff" stroke="#FCA5A5" stroke-width="1.6"/>
           <text x="726" y="476" font-size="22" text-anchor="middle">🏭</text>
-          <text x="760" y="450" font-size="13" font-weight="800" fill="#9F1239">Pollution and pressure</text>
-          <text x="760" y="470" font-size="11.5" fill="#0B1426">Environmental costs and</text>
-          <text x="760" y="486" font-size="11.5" fill="#0B1426">strained services increase</text>
-          <text x="760" y="502" font-size="11.5" fill="#0B1426">expenses.</text>
+          <text x="760" y="450" font-size="14" font-weight="800" fill="#9F1239">Pollution and pressure</text>
+          <text x="760" y="470" font-size="12.5" fill="#0B1426">Environmental costs and</text>
+          <text x="760" y="486" font-size="12.5" fill="#0B1426">strained services increase</text>
+          <text x="760" y="502" font-size="12.5" fill="#0B1426">expenses.</text>
         </g>
 
         <!-- Footer -->
-        <text x="149" y="552" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">↓ Lower average cost</text>
-        <text x="831" y="552" font-size="13" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">↑ Higher average cost</text>
+        <text x="149" y="552" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">↓ Lower average cost</text>
+        <text x="831" y="552" font-size="14" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">↑ Higher average cost</text>
         <text x="490" y="586" font-size="11.5" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">External effects come from the wider environment and affect all firms in the area or industry.</text>
       </svg>
       </div>

@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.144.0 — 2026-06-10
+
+### Chart engine Phase 3 — Full cost composite migrated (Costs topic complete)
+
+- New spec `full-cost-diagram.js` (`ECONOS_FULL_COST_SPEC`) replaces the
+  hand-rolled `fullCostDiagram`: the complete AFC/AVC/AC/MC composite from the
+  topic's single FC=£40 cubic, with MC cutting AVC and AC at their engine-solved
+  minima. Static (no reveal).
+- With this, **every cost-curve chart in the Costs topic** (Total cost, Average
+  cost family, Marginal cost, Full composite) is now generated from one
+  consistent cost model — no more hand-rolled, eyeballed cost SVGs.
+- `lint:charts` clean (101 specs), 102 snapshot tests; `sw.js` → `econos-v481`.
+
 ## 0.143.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Marginal cost migrated

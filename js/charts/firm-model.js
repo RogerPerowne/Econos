@@ -343,14 +343,17 @@
         layer: 'tfc-3' }
     ];
 
-    // The TFC gap: a double-headed arrow from TVC up to TC at gapQ.
+    // The TFC gap: a double-headed arrow from TVC up to TC at gapQ. Inset
+    // both ends so the arrowHEADS land inside the gap rather than spilling
+    // across the TVC / TC lines.
     var gx = gapQ / qAxis, tvcY = M.vc(gapQ) / yAxis, tcY = tc(gapQ) / yAxis;
+    var inset = (tcY - tvcY) * 0.17;
     var arrows = [{
-      x1: gx, y1: tvcY, x2: gx, y2: tcY, tone: 'red', strokeWidth: 1.8,
+      x1: gx, y1: tvcY + inset, x2: gx, y2: tcY - inset, tone: 'red', strokeWidth: 1.8,
       markerStart: 'econos-arrow-red', markerEnd: 'econos-arrow-red', buffer: 0, layer: 'tfc-3'
     }];
     var texts = [{
-      x: gx - 0.012, y: (tvcY + tcY) / 2, text: 'TFC', tone: 'red', bold: true,
+      x: gx - 0.014, y: (tvcY + tcY) / 2, text: 'TFC', tone: 'red', bold: true,
       anchor: 'end', layer: 'tfc-3'
     }];
 

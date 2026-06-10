@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.7 — 2026-06-10
+
+### Break-even diagram migrated to the engine (batch E, part 1)
+
+- Migrated `breakEvenChart` to an `ECONOS_PPF` spec (`break-even-chart.js`):
+  straight-line TR and TC (TC from the £40k fixed-cost intercept), break-even
+  point solved as the TR∩TC intersection, shaded loss/profit regions, reveal
+  layers `bec-1..3` preserved. Fills the stage and replaces both the old
+  desktop and mobile hand-rolled SVGs with one responsive engine chart.
+- Wired into shells + `sw.js` precache; token-dup ratchet 6261 → 6239.
+- `sw.js` → `econos-v505`.
+
 ## 0.155.6 — 2026-06-10
 
 ### Monopsony diagrams migrated to the engine (batch D)

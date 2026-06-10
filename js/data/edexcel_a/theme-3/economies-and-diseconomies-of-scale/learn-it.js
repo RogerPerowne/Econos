@@ -209,9 +209,20 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F3AF}', tone: 'green', text: 'MES tells us the <strong>most efficient scale</strong> of production – the smallest size at which long-run average cost is minimised.' },
 
-      visualKey: 'mesChart',
-      visualLabel: 'MES ON THE LRAC',
-      visualEmoji: '\u{1F4C9}',
+      interactiveDiagram: {
+        svgKey: 'mesChart',
+        label: 'MES ON THE LRAC',
+        emoji: '\u{1F4C9}',
+        views: [
+          {
+            label: 'Reading MES off the curve',
+            tone: 'blue',
+            head: 'Where the LRAC bottoms out',
+            body: 'The LRAC falls through <strong>economies of scale</strong>, flattens across the minimum efficient scale, then rises as <strong>diseconomies</strong> set in. <strong>Q at MES</strong> is the smallest output that reaches the lowest sustainable cost per unit – the start of that flat-bottomed region.',
+            analysis: 'A <strong>small</strong> MES (cafés, hairdressers) lets many firms compete; a <strong>large</strong> MES (steel, rail, aircraft) means only a few can reach efficient scale, so the industry ends up concentrated. MES is the bridge from cost theory to market structure.'
+          }
+        ]
+      },
 
       flowTitle: 'WHY MES MATTERS',
       flowEmoji: '\u{1F50D}',

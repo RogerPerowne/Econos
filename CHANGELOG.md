@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.154.4 — 2026-06-10
+
+### Revenue — elasticity triptych: flatten the elastic demand line
+
+- Panel 1 (elastic) demand line was nearly the same slope as the panel-2
+  unit-elastic line, so the "more elastic = flatter" contrast didn't read.
+  Flattened it (~0.57 → ~0.44 desktop, ~0.91 → ~0.70 mobile) so it is clearly
+  shallower than the unit-elastic line while staying a clear downward demand
+  line. D labels repositioned to follow the new line.
+- `sw.js` → `econos-v498`.
+
 ## 0.154.3 — 2026-06-10
 
 ### Revenue — Marginal revenue diagram rebuilt

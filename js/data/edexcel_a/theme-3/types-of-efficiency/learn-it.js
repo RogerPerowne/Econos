@@ -345,6 +345,10 @@ window.ECONOS_TOPIC = {
       title: 'When efficiencies clash',
       lede: 'A market structure can look efficient on one measure and weaker on another.',
       ledeStyle: 'plain',
+      // Render the numbered sections in title order: 1 the trade-off (pair),
+      // 2 why monopoly is inefficient (causes), 3 but why some profit helps (flow).
+      pairFirst: true,
+      causesFirst: true,
 
       tip: { icon: '\u{2696}\u{FE0F}', tone: 'green', text: '<strong>Static and dynamic efficiency do not always point to the same market outcome.</strong>' },
 

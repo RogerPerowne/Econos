@@ -330,6 +330,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'The most efficient firm is <strong>not necessarily the biggest</strong> – it is the one that finds the LRAC minimum.' },
 
       conclusion: { title: 'Big idea', text: 'Economies and diseconomies of scale are a full cost story – not a definition list.' },
+      economistQuote: {
+        portraitKey: 'economistMarshall',
+        tone: 'amber',
+        label: 'Economist insight on economies of scale',
+        quote: 'We may divide the economies arising from an increase in the scale of production into two classes — those dependent on the general development of the industry, and those dependent on the resources of the individual firms. We may call the former external economies, and the latter internal economies.',
+        attribution: 'Alfred Marshall, <em>Principles of Economics</em> (1890)'
+      },
       examEdge: 'Top essays define the concept, identify where the firm is on the LRAC, and then judge whether <strong>further growth</strong> is likely to help or hurt unit costs.'
     }
   ]

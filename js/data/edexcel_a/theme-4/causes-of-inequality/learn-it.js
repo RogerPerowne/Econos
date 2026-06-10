@@ -413,6 +413,13 @@ window.ECONOS_TOPIC = {
 
       conclusionPosition: 'end',
       conclusion: { title: 'BIG IDEA', text: 'Inequality analysis is a causal story — name the type, explain the driver, then evaluate the impact in context.' },
+      economistQuote: {
+        portraitKey: 'economistSen',
+        tone: 'amber',
+        label: 'Economist insight on inequality',
+        quote: 'Poverty must be seen as the deprivation of basic capabilities, rather than merely as lowness of incomes.',
+        attribution: 'Amartya Sen, <em>Development as Freedom</em> (1999)'
+      },
       examEdge: { title: 'EXAM EDGE', text: 'Identify the type of inequality, explain the driver, then evaluate the likely impact using context and policy.' }
     }
   ]

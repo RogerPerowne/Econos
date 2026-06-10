@@ -432,6 +432,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Game theory takes this further — it formalises the cheat-or-cooperate decision as a strategic game.' },
 
       conclusion: { title: 'Big idea', text: 'A cartel is best understood as an <strong>oligopoly trying to behave like a monopoly</strong> — but with internal tensions.' },
+      economistQuote: {
+        portraitKey: 'economistAdamSmith',
+        tone: 'amber',
+        label: 'Economist insight on collusion',
+        quote: 'People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public, or in some contrivance to raise prices.',
+        attribution: 'Adam Smith, <em>The Wealth of Nations</em> (1776)'
+      },
       examEdge: 'Use the cartel diagram, mention <strong>interdependence</strong>, then evaluate <strong>stability, consumer welfare and legality</strong>.'
     }
   ]

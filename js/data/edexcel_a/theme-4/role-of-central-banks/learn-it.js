@@ -368,6 +368,13 @@ window.ECONOS_TOPIC = {
 
       conclusionPosition: 'end',
       conclusion: { title: 'BIG IDEA', text: 'Every central-bank function ties back to the same goal — keeping money, credit and confidence stable.' },
+      economistQuote: {
+        portraitKey: 'economistKeynes',
+        tone: 'amber',
+        label: 'Economist insight on money',
+        quote: 'There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency. The process engages all the hidden forces of economic law on the side of destruction, and does it in a manner which not one man in a million is able to diagnose.',
+        attribution: 'John Maynard Keynes, <em>The Economic Consequences of the Peace</em> (1919)'
+      },
       examEdge: { title: 'EXAM EDGE', text: 'Top answers move beyond definition — they explain the mechanism and then judge the likely impact.' }
     }
   ]

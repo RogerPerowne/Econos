@@ -587,6 +587,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'The best judgement weighs efficiency, fairness, recruitment, retention and real-world context together.' },
 
       conclusion: { title: 'Big idea', text: 'Wage determination starts with demand and supply, but power, elasticity and policy decide the real outcome.' },
+      economistQuote: {
+        portraitKey: 'economistPhillips',
+        tone: 'amber',
+        label: 'Economist insight on wages',
+        quote: 'When the demand for labour is high and there are very few unemployed we should expect employers to bid wage rates up quite rapidly, each firm and each industry being continually tempted to offer a little above the prevailing rates to attract the most suitable labour.',
+        attribution: 'A. W. Phillips, <em>Economica</em> (1958)'
+      },
       examEdge: 'Move from the diagram to <strong>context</strong> — market structure, elasticity and policy — for a clear judgement.'
     }
   ]

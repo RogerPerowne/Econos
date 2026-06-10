@@ -403,6 +403,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Use the diagram, explain why buyer power exists, and remember the effects reach beyond the firm.' },
 
       conclusion: { title: 'Big idea', text: 'Monopsony turns buyer power into a question: who gains from lower wages or prices, and at what cost?' },
+      economistQuote: {
+        portraitKey: 'economistMarx',
+        tone: 'amber',
+        label: 'Economist insight on labour and power',
+        quote: 'Capital is dead labour which, vampire-like, lives only by sucking living labour, and lives the more, the more labour it sucks.',
+        attribution: 'Karl Marx, <em>Capital, Volume I</em> (1867)'
+      },
       examEdge: 'Anchor the <strong>diagram and context</strong> to a clear judgement across firms, employees, suppliers and consumers.'
     }
   ]

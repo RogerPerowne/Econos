@@ -441,6 +441,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Perfect contestability — costless entry and exit with no sunk costs — is a theoretical benchmark, not a real market.' },
 
       conclusion: { title: 'Big idea', text: 'Contestability is about the threat of competition — perfect contestability is the limiting case.' },
+      economistQuote: {
+        portraitKey: 'economistHayek',
+        tone: 'amber',
+        label: 'Economist insight on competition',
+        quote: 'Competition is valuable only because, and so far as, its results are unpredictable and on the whole different from those which anyone has, or could have, deliberately aimed at.',
+        attribution: 'Friedrich Hayek, &lsquo;Competition as a Discovery Procedure&rsquo; (1968)'
+      },
       examEdge: 'Move from definition to <strong>barriers and sunk costs</strong>, then finish with firm behaviour and evaluation.'
     }
   ]

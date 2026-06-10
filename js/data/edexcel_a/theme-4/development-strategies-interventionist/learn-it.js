@@ -502,6 +502,13 @@ window.ECONOS_TOPIC = {
 
       conclusionPosition: 'end',
       conclusion: { title: 'BIG IDEA', text: 'Interventionist strategies can solve problems markets miss — but only where the state has the capacity to deliver them well.' },
+      economistQuote: {
+        portraitKey: 'economistMazzucato',
+        tone: 'amber',
+        label: 'Economist insight on the state and development',
+        quote: 'From the internet to the technologies behind the smartphone, the most radical and revolutionary innovations have been backed by an active, entrepreneurial state willing to take the risks that private business so often will not.',
+        attribution: 'Mariana Mazzucato, <em>The Entrepreneurial State</em> (2013)'
+      },
       examEdge: { title: 'EXAM EDGE', text: 'The strongest answers compare strategies, apply them to a country, and judge state capacity against government-failure risks.' }
     }
   ]

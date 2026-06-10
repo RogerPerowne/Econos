@@ -407,6 +407,13 @@ window.ECONOS_TOPIC = {
       ],
 
       conclusion: { title: 'Big idea', text: 'The strongest trade answers combine theory, calculation, diagrams and evaluation.' },
+      economistQuote: {
+        portraitKey: 'economistRicardo',
+        tone: 'amber',
+        label: 'Economist insight on trade',
+        quote: 'Under a system of perfectly free commerce, each country naturally devotes its capital and labour to such employments as are most beneficial to each. This pursuit of individual advantage is admirably connected with the universal good of the whole.',
+        attribution: 'David Ricardo, <em>On the Principles of Political Economy and Taxation</em> (1817)'
+      },
       examEdge: 'Use <strong>comparative advantage</strong> as the core explanation, then balance the advantages of trade against its limitations.'
     }
   ]

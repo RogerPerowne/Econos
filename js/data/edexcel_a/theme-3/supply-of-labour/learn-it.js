@@ -386,6 +386,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Labour supply is strongest where jobs are attractive and labour is mobile.' },
 
       conclusion: { title: 'Big idea', text: 'Supply of labour depends on incentives, barriers and mobility — and immobility is a key source of market failure.' },
+      economistQuote: {
+        portraitKey: 'economistGoldin',
+        tone: 'amber',
+        label: 'Economist insight on the labour market',
+        quote: 'A flexible job almost always comes at a price. Much of what remains of the gender earnings gap is not about what men and women do, but about the premium the labour market pays for long, particular and unpredictable hours.',
+        attribution: 'Claudia Goldin, <em>Career and Family</em> (2021)'
+      },
       examEdge: 'Link <strong>incentives and mobility</strong> to a clear labour-market outcome.'
     }
   ]

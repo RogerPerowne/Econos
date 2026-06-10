@@ -209,32 +209,12 @@
     return `<div class="flow-chain" style="grid-template-columns:repeat(${n},1fr);">${inner}</div>`;
   }
 
-  /* Chain-style flow — used sitewide whenever a flow block's title contains
-     "chain" (THE CHAIN, THE CAUSAL CHAIN, THE TRANSMISSION CHAIN, …).
-     Mirrors the costsChainFlow diagram look: even tone-tinted tiles with the
-     emoji on top, a tone-coloured title and a regular-weight body, joined by
-     drawn SVG arrows. Reuses the .econos-flow-chain/-tile/-sep classes so the
-     existing mobile CSS (vertical stack, separators rotate 90°) applies
-     unchanged. Custom separator glyphs other than "→" are kept as-is so
-     formula chains keep their semantics. */
-  function renderChainFlow(steps, sepList) {
-    const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
-    const n = steps.length;
-    const arrow = '<svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true" style="display:block;"><path d="M1 7h11M8.5 2.5L13 7l-4.5 4.5" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    const seps = Array.isArray(sepList) ? sepList : Array(n - 1).fill(sepList);
-    const pieces = steps.map((step, i) => {
-      const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]] || PATTERN_TONES.blue;
-      const tile = `<div class="econos-flow-tile" style="flex:1 1 0;min-width:0;background:${t.bg};border:1.5px solid ${t.border};border-radius:var(--r-lg);padding:16px 10px 14px;text-align:center;">${step.icon ? `<div style="font-size:var(--fs-3xl);line-height:1;margin-bottom:9px;">${renderIcon(step.icon)}</div>` : ''}<div style="font-size:var(--fs-sm);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:5px;">${step.title}</div>${step.sub ? `<div style="font-size:var(--fs-xs);color:var(--econ-ink);line-height:var(--lh-normal);">${step.sub}</div>` : ''}</div>`;
-      const glyph = seps[i];
-      const sep = i < n - 1 ? `<div class="econos-flow-sep" style="display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0 3px;font-size:var(--fs-lg);font-weight:var(--fw-extrabold);color:#64748B;">${!glyph || glyph === '→' ? arrow : glyph}</div>` : '';
-      return tile + sep;
-    }).join('');
-    return `<div class="econos-flow-chain" style="display:flex;align-items:stretch;flex-wrap:wrap;gap:4px;margin-bottom:18px;">${pieces}</div>`;
-  }
-
-  /* A flow block renders in the chain style when its section title says so. */
+  /* Flow blocks explicitly titled "The Chain" ("THE CHAIN", "The chain: …",
+     "The chain of impact") render through the numbered-circle flow component
+     (renderFlow) sitewide, whatever card template they sit on. Other titles
+     keep their declared style (flowSep pills / numbered default). */
   function isChainTitle(title) {
-    return !!title && /chain/i.test(title);
+    return !!title && /^\s*the chain\b/i.test(title);
   }
 
   /* Verdict — tone columns of ✓/✕ items separated by a VS/→ badge.
@@ -1891,7 +1871,7 @@
       if (c.flowTitle) {
         content += genSecLabel(c.flowEmoji || '➡️', c.flowTitle);
       }
-      content += isChainTitle(c.flowTitle) ? renderChainFlow(c.flow, c.flowSep || '→') : renderFlow(c.flow);
+      content += renderFlow(c.flow);
     }
 
     content += buildInteractiveDiagramHtml(c);
@@ -5326,7 +5306,7 @@
         const n = c.flow.length;
         const title = c.flowTitle ? genSecLabel(c.flowEmoji || '➡️', c.flowTitle) : '';
         if (isChainTitle(c.flowTitle)) {
-          return title + renderChainFlow(c.flow, c.flowSep || '→');
+          return title + renderFlow(c.flow);
         }
         if (c.flowSep) {
           const seps = Array.isArray(c.flowSep) ? c.flowSep : Array(n - 1).fill(c.flowSep);
@@ -5358,7 +5338,7 @@
         const n = c.flow2.length;
         const title = c.flow2Title ? genSecLabel(c.flow2Emoji || '➡️', c.flow2Title) : '';
         if (isChainTitle(c.flow2Title)) {
-          return title + renderChainFlow(c.flow2, c.flow2Sep || '→');
+          return title + renderFlow(c.flow2);
         }
         const seps = Array.isArray(c.flow2Sep) ? c.flow2Sep : Array(n - 1).fill(c.flow2Sep || '→');
         const pieces = c.flow2.map((step, i) => {

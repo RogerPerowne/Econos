@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.137.0 — 2026-06-10
+
+### Macroeconomic Policy in a Global Context topic complete (8 cards)
+
+- **Macroeconomic Policy in a Global Context (Edexcel A 4.5.4)** built and
+  flipped live, replacing the placeholder — the first of the two-way split of
+  4.5.4. Renamed the registry id + data folder from
+  `macroeconomic-policies-in-a-global-context` to
+  `macroeconomic-policy-in-a-global-context`. Eight cards: the big picture (the
+  policy map) → the policy toolkit → reducing deficits and national debt →
+  reducing poverty and inequality → interest rates and the money supply →
+  increasing international competitiveness → responding to external shocks →
+  the whole story. Uses the `heroGlobe` cover hero.
+- New bespoke visual `policyToolkitHub` (`js/icons.js`) — the five macro-policy
+  tools (fiscal, monetary, exchange-rate, supply-side, direct controls) as a
+  radial hub around a central "The economy" node, collapsing to two columns on
+  mobile. Card 3 reuses the `debtBathtub` stock-vs-flow illustration. Both
+  catalogued in `docs/visual-catalogue.md`.
+- `sw.js` cache bumped (`econos-v474`) for the `icons.js` change.
+
 ## 0.136.0 — 2026-06-10
 
 ### Public Sector Finances topic complete (7 cards)

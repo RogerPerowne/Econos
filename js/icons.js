@@ -23099,6 +23099,37 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* policyToolkitHub – Macroeconomic Policy in a Global Context card 1.
+     Five macro-policy tools arranged around a central "The economy"
+     core: fiscal, monetary and exchange-rate policy on the left;
+     supply-side policy and direct controls on the right. Collapses to
+     two columns with the core first on mobile. */
+  policyToolkitHub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .pth-grid{display:grid;grid-template-columns:1fr 168px 1fr;gap:10px;align-items:center;max-width:920px;margin:0 auto;}
+        .pth-col{display:flex;flex-direction:column;gap:10px;}
+        .pth-tile{border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .pth-h{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .pth-s{font-size:10.5px;color:#475569;line-height:1.3;}
+        .pth-circ{width:148px;height:148px;border-radius:50%;background:#EFF6FF;border:3px solid #1D4ED8;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;text-align:center;box-shadow:0 0 0 8px rgba(239,246,255,.6),0 6px 18px rgba(29,78,216,.16);}
+        @media(max-width:700px){.pth-grid{grid-template-columns:1fr 1fr;}.pth-cwrap{grid-column:1/-1;order:-1;}}
+      </style>
+      <div class="pth-grid">
+        <div class="pth-col">
+          <div class="pth-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="pth-h" style="color:#1E40AF;">\u{1F3DB}️ Fiscal policy</div><div class="pth-s">Government spending and taxation.</div></div>
+          <div class="pth-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="pth-h" style="color:#5B21B6;">\u{1F3E6} Monetary policy</div><div class="pth-s">Control of interest rates and the money supply.</div></div>
+          <div class="pth-tile" style="background:#ECFEFF;border:1.5px solid #A5F3FC;"><div class="pth-h" style="color:#0E7490;">\u{1F4B1} Exchange-rate policy</div><div class="pth-s">Managing the value of the domestic currency.</div></div>
+        </div>
+        <div class="pth-cwrap"><div class="pth-circ"><div style="font-size:34px;line-height:1;">\u{1F3DB}️</div><div style="font-size:12.5px;font-weight:800;color:#1E3A8A;margin-top:2px;line-height:1.15;">The economy</div></div></div>
+        <div class="pth-col">
+          <div class="pth-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="pth-h" style="color:#065F46;">\u{1F4C8} Supply-side policy</div><div class="pth-s">Improving productivity and capacity.</div></div>
+          <div class="pth-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;"><div class="pth-h" style="color:#B91C1C;">\u{1F6E1}️ Direct controls</div><div class="pth-s">Rules and caps on prices, quantities or incomes.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

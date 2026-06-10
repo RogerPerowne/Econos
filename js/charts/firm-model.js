@@ -322,10 +322,86 @@
     };
   }
 
+  /* Monopoly profit-maximising diagram, built as a 4-step reveal that
+     matches the classic construction: the four curves (AC, MC, AR=D, MR)
+     are the always-visible base; each step then adds construction marks.
+       mp-1  MR = MC crossing (the output decision)
+       mp-2  drop to Qₘ on the output axis
+       mp-3  up to AR for Pₘ, across to the price axis
+       mp-4  AC at Qₘ + the supernormal-profit rectangle
+     Demand is linear (a − bQ); MR = a − 2bQ. Everything is derived from
+     the cost cubic + demand, with the MC=MR point engine-solved. */
+  function monopolyProfitMax(opts) {
+    opts = opts || {};
+    var fc = opts.fc != null ? opts.fc : 200;
+    var vc = opts.vc || [10, -0.15, 0.00125];
+    var qAxis = opts.qMax != null ? opts.qMax : 130;
+    var yAxis = opts.yMax != null ? opts.yMax : 26;
+    var qMin = opts.qMin != null ? opts.qMin : 16;
+    var qSamp = opts.qSampleMax != null ? opts.qSampleMax : qAxis - 2;
+    var n = opts.samples != null ? opts.samples : 60;
+    var dem = opts.demand || { a: 22, b: 0.1 };
+    var M = makeModel(fc, vc);
+    var ar = function (q) { return dem.a - dem.b * q; };
+    var mr = function (q) { return dem.a - 2 * dem.b * q; };
+    var rightCap = qAxis * 0.9;
+    var arEnd = Math.min(rightCap, dem.a / dem.b - 1);
+    var mrEnd = Math.min(rightCap, dem.a / (2 * dem.b));
+
+    // Always-visible base curves.
+    var curves = [
+      { id: 'AC', d: samplePath(M.ac, qMin, qSamp, qAxis, yAxis, n), tone: 'blue',
+        label: 'AC', strokeWidth: 2.2, labelDx: 6, labelDy: -6, anchor: 'start' },
+      { id: 'MC', d: samplePath(M.mc, qMin, qSamp, qAxis, yAxis, n), tone: 'rose',
+        label: 'MC', strokeWidth: 2.8, labelDx: 6, labelDy: -4, anchor: 'start' },
+      { id: 'AR', d: samplePath(ar, qMin, arEnd, qAxis, yAxis, 2), tone: 'green',
+        label: 'AR (D)', strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end' },
+      { id: 'MR', d: samplePath(mr, qMin, mrEnd, qAxis, yAxis, 2), tone: 'amber',
+        label: 'MR', strokeWidth: 2.2, labelDx: -4, labelDy: -8, anchor: 'end' }
+    ].filter(function (c) { return c.d; });
+
+    var qm = solveCross(M.mc, mr, qMin, qSamp);
+    var polygons = [], points = [], texts = [];
+    if (qm != null) {
+      var nx = qm / qAxis, pmY = ar(qm) / yAxis, mcmY = M.mc(qm) / yAxis, acmY = M.ac(qm) / yAxis;
+      // mp-1: MR = MC
+      points.push({ intersection: { curves: ['MC', 'MR'], near: [nx, mcmY] },
+        tone: 'slate', radius: 4.5, label: 'MR = MC', labelDx: 8, labelDy: 15, anchor: 'start', layer: 'mp-1' });
+      // mp-2: drop to Qm
+      curves.push({ id: '_drop', shape: { type: 'vertical', x: nx, from: 0, to: mcmY },
+        tone: 'slate', strokeWidth: 1.3, dashed: '3 3', layer: 'mp-2' });
+      texts.push({ x: nx, y: -0.05, text: 'Qₘ', tone: 'slate', bold: true, anchor: 'middle', layer: 'mp-2' });
+      // mp-3: up to AR for Pm, across to price axis
+      curves.push({ id: '_up', shape: { type: 'vertical', x: nx, from: mcmY, to: pmY },
+        tone: 'green', strokeWidth: 1.4, dashed: '4 3', layer: 'mp-3' });
+      curves.push({ id: '_pm', shape: { type: 'horizontal', y: pmY, from: 0, to: nx },
+        tone: 'green', strokeWidth: 1.4, dashed: '4 3', layer: 'mp-3' });
+      points.push({ x: nx, on: 'AR', tone: 'green', radius: 4.5, layer: 'mp-3' });
+      texts.push({ x: -0.012, y: pmY, text: 'Pₘ', tone: 'green', bold: true, anchor: 'end', layer: 'mp-3' });
+      // mp-4: AC at Qm + supernormal profit rectangle
+      polygons.push({ points: [[0, acmY], [nx, acmY], [nx, pmY], [0, pmY]], tone: 'green', opacity: 0.22, layer: 'mp-4' });
+      curves.push({ id: '_ac', shape: { type: 'horizontal', y: acmY, from: 0, to: nx },
+        tone: 'purple', strokeWidth: 1.3, dashed: '4 3', layer: 'mp-4' });
+      points.push({ x: nx, on: 'AC', tone: 'purple', radius: 4, layer: 'mp-4' });
+      texts.push({ x: -0.012, y: acmY, text: 'AC', tone: 'purple', bold: true, anchor: 'end', layer: 'mp-4' });
+      texts.push({ x: nx / 2, y: (acmY + pmY) / 2, text: 'Supernormal profit', tone: 'green', bold: true, anchor: 'middle', layer: 'mp-4' });
+    }
+
+    return {
+      width: opts.width || 740, height: opts.height || 400,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      className: opts.className || 'firm-monopoly-svg', background: '#FFFFFF',
+      axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
+      layers: ['mp-1', 'mp-2', 'mp-3', 'mp-4'],
+      polygons: polygons, curves: curves, points: points, texts: texts
+    };
+  }
+
   window.ECONOS_FIRM = {
     costCurves: costCurves,
     costRevenue: costRevenue,
     totalCost: totalCost,
+    monopolyProfitMax: monopolyProfitMax,
     makeModel: makeModel,
     samplePath: samplePath,
     solveCross: solveCross

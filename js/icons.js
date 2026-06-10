@@ -18753,106 +18753,12 @@ window.ECONOS_ICONS = {
      MC=AR at Q≈5.56 (P≈14.88).
      ============================================================ */
 
-  /* monopolyProfitMax — Card 3 interactive (mp-1..mp-4):
-     MR=MC → drop to Qm → up to Pm on AR → AC + supernormal profit. */
-  monopolyProfitMax: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <style>
-        .mpm-v { display:none; }
-        @media (max-width:680px){ .mpm-h { display:none; } .mpm-v { display:block; } }
-      </style>
-      <div class="mpm-h">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE MONOPOLY DIAGRAM</text>
-        <!-- Supernormal profit rectangle (mp-4) -->
-        <g class="mp-4" style="display:none">
-          <rect x="80" y="148" width="193" height="37" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
-          <text x="176" y="171" font-size="12.5" font-weight="800" fill="#065F46" text-anchor="middle">Supernormal profit</text>
-        </g>
-        <!-- Axes -->
-        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="80" y1="320" x2="630" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569">Price,</text>
-        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569">cost</text>
-        <text x="630" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Output (Q)</text>
-        <!-- AC U-curve -->
-        <path d="M 80 101 Q 107 117, 134 134 Q 161 146, 188 159 Q 215 168, 242 178 Q 269 184, 296 189 Q 323 191, 350 192 Q 377 191, 404 189 Q 431 184, 458 178 Q 485 168, 512 159 Q 566 130, 620 101" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
-        <text x="624" y="98" font-size="13" font-weight="800" fill="#5B21B6">AC</text>
-        <!-- MC -->
-        <line x1="80" y1="265" x2="620" y2="119" stroke="#DC2626" stroke-width="2.4"/>
-        <text x="624" y="119" font-size="13" font-weight="800" fill="#DC2626">MC</text>
-        <!-- AR / D -->
-        <line x1="80" y1="83" x2="620" y2="265" stroke="#16A34A" stroke-width="2.4"/>
-        <text x="624" y="270" font-size="13" font-weight="800" fill="#16A34A">AR (D)</text>
-        <!-- MR -->
-        <line x1="80" y1="83" x2="431" y2="320" stroke="#D97706" stroke-width="2.4"/>
-        <text x="436" y="316" font-size="13" font-weight="800" fill="#D97706">MR</text>
-        <!-- mp-1: MR=MC -->
-        <g class="mp-1" style="display:none">
-          <circle cx="273" cy="213" r="7" fill="#fff" stroke="#0B1426" stroke-width="2.6"/>
-          <text x="282" y="208" font-size="10.5" font-weight="800" fill="#0B1426">MR = MC</text>
-        </g>
-        <!-- mp-2: drop to Qm -->
-        <g class="mp-2" style="display:none">
-          <line x1="273" y1="213" x2="273" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <text x="273" y="338" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
-        </g>
-        <!-- mp-3: up to Pm on AR -->
-        <g class="mp-3" style="display:none">
-          <line x1="273" y1="213" x2="273" y2="148" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
-          <circle cx="273" cy="148" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="273" y1="148" x2="80" y2="148" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="4 3"/>
-          <text x="74" y="152" font-size="13" font-weight="800" fill="#16A34A" text-anchor="end">P_m</text>
-        </g>
-        <!-- mp-4: AC at Qm -->
-        <g class="mp-4" style="display:none">
-          <circle cx="273" cy="185" r="6" fill="#5B21B6" stroke="#fff" stroke-width="2"/>
-          <line x1="273" y1="185" x2="80" y2="185" stroke="#5B21B6" stroke-width="1.4" stroke-dasharray="4 3"/>
-          <text x="74" y="189" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="end">AC₁</text>
-        </g>
-      </svg>
-      </div>
-      <div class="mpm-v">
-      <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle">THE MONOPOLY DIAGRAM</text>
-        <g class="mp-4" style="display:none">
-          <rect x="48" y="138" width="104" height="38" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <text x="100" y="161" font-size="10.5" font-weight="800" fill="#065F46" text-anchor="middle">Supernormal profit</text>
-        </g>
-        <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="14" y="32" font-size="9" font-weight="700" fill="#475569">Cost</text>
-        <text x="340" y="340" font-size="9" font-weight="700" fill="#475569" text-anchor="end">Output</text>
-        <path d="M 48 93 Q 63 110, 77 127 Q 92 140, 106 154 Q 121 164, 135 174 Q 150 181, 164 184 Q 179 187, 193 188 Q 208 187, 222 184 Q 237 181, 251 174 Q 280 140, 338 93" fill="none" stroke="#5B21B6" stroke-width="2"/>
-        <text x="318" y="88" font-size="11" font-weight="800" fill="#5B21B6">AC</text>
-        <line x1="48" y1="264" x2="338" y2="116" stroke="#DC2626" stroke-width="2"/>
-        <text x="318" y="112" font-size="11" font-weight="800" fill="#DC2626">MC</text>
-        <line x1="48" y1="74" x2="338" y2="263" stroke="#16A34A" stroke-width="2.2"/>
-        <text x="316" y="268" font-size="11" font-weight="800" fill="#16A34A">AR</text>
-        <line x1="48" y1="74" x2="238" y2="320" stroke="#D97706" stroke-width="2"/>
-        <text x="240" y="316" font-size="11" font-weight="800" fill="#D97706">MR</text>
-        <g class="mp-1" style="display:none">
-          <circle cx="152" cy="213" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
-        </g>
-        <g class="mp-2" style="display:none">
-          <line x1="152" y1="213" x2="152" y2="320" stroke="#0B1426" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <text x="152" y="340" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle">Q_m</text>
-        </g>
-        <g class="mp-3" style="display:none">
-          <line x1="152" y1="213" x2="152" y2="138" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <circle cx="152" cy="138" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="152" y1="138" x2="48" y2="138" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <text x="42" y="142" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_m</text>
-        </g>
-        <g class="mp-4" style="display:none">
-          <circle cx="152" cy="176" r="5" fill="#5B21B6" stroke="#fff" stroke-width="2"/>
-          <line x1="152" y1="176" x2="48" y2="176" stroke="#5B21B6" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <text x="42" y="180" font-size="11" font-weight="800" fill="#5B21B6" text-anchor="end">AC₁</text>
-        </g>
-      </svg>
-      </div>
-    </div>
-  `,
+  /* monopolyProfitMax – Card 3 of Monopoly. Generated by the firm-model
+     builder (window.ECONOS_FIRM.monopolyProfitMax): AC/MC/AR/MR base curves
+     with a 4-step construction reveal (mp-1 MR=MC, mp-2 drop to Qm, mp-3 up
+     to AR for Pm, mp-4 AC + supernormal-profit rectangle). MC=MR engine-
+     solved; demand P=22-0.1Q. Replaces the old hand-rolled SVG. */
+  monopolyProfitMax: window.ECONOS_PPF.render(window.ECONOS_MONOPOLY_PROFIT_MAX_SPEC),
 
   /* monopolyWelfare — Card 4 interactive (mw-1..mw-3):
      monopoly outcome (Qm, Pm) → competitive benchmark (Qc where

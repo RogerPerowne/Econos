@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.4 — 2026-06-10
+
+### Labour-demand & supply SHIFT diagrams migrated to the engine (batch B)
+
+- Migrated `labourDemandShift` and `labourSupplyShift` to `ECONOS_PPF` specs
+  (`labour-demand-shift.js`, `labour-supply-shift.js`). They fill the stage and
+  keep their reveal layers (`lds-1..3`, `lss-1..3`): original curve → rightward
+  shift (rise/increase, green) → leftward shift (fall/decrease, rose), with the
+  fixed-wage line, shift arrows and L₀/L₁/L₂ markers preserved.
+- Wired into the three shells + `sw.js` precache; token-dup ratchet 6331 → 6314.
+- `sw.js` → `econos-v502`.
+
 ## 0.155.3 — 2026-06-10
 
 ### Labour demand & supply diagrams migrated to the chart engine (batch A)

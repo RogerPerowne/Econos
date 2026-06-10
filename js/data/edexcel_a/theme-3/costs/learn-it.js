@@ -230,23 +230,23 @@ window.ECONOS_TOPIC = {
 
       interactiveDiagram: {
         svgKey: 'marginalCostChart',
-        label: 'From a table to the MC curve — Marco’s Pizzeria',
+        label: 'Marginal cost — Marco’s Pizzeria',
         emoji: '\u{1F4C8}',
         wide: true,
         layers: ['mc-1', 'mc-2'],
         views: [
           {
-            label: 'Read the table',
+            label: 'Marginal cost',
             tone: 'amber',
-            head: 'Step 1 — calculate MC from changes in TC',
-            body: 'Each row shows TC for one more pizza. The change in TC between rows is the marginal cost. <strong>MC drops from £20 to £15 then rises £20 → £25 → £30</strong> – a U-shape just like AVC.',
+            head: 'Step 1 — MC is the cost of one more (a U-shape)',
+            body: 'MC = ΔTC ÷ ΔQ. Going from 3 to 4 pizzas raises TC from about £110 to £120, so <strong>MC ≈ £10</strong>. Early units gain from specialisation so MC falls; then diminishing returns set in and MC rises — a U-shape, like AVC.',
             show: ['mc-1']
           },
           {
-            label: 'Plot the MC curve',
+            label: 'Cuts AVC & AC',
             tone: 'rose',
             head: 'Step 2 — MC cuts AVC and AC at their minimum points',
-            body: 'Plotting MC alongside the (dashed) AC and AVC curves shows the textbook relationship: MC falls fastest, crosses AVC at AVC’s minimum, and crosses AC at AC’s minimum.',
+            body: 'Add the (dashed) AVC and AC curves: MC crosses each one <strong>exactly at its lowest point</strong> — not anywhere else.',
             analysis: 'The rule is mechanical: when MC is BELOW the average, the average is being pulled down; when MC is ABOVE, the average is being pulled up; when MC = average, the average is at its turning point – its minimum.',
             show: ['mc-1', 'mc-2']
           }
@@ -262,7 +262,7 @@ window.ECONOS_TOPIC = {
         { tone: 'green', icon: '\u{1F517}', title: 'Link to averages',  sub: 'MC cuts AVC and AC at their minimum points – not anywhere else.' }
       ],
 
-      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Marginal cost is the <strong>change in TC</strong> – it does NOT include fixed cost (which does not change). The fixed-cost row stays at £40 between every pair of outputs.' },
+      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Marginal cost is the <strong>change in TC</strong> – it does NOT include fixed cost. Fixed cost adds the same £40 at every output, so it cancels out in ΔTC.' },
 
       conclusion: { title: 'Big idea', text: 'Marginal cost is the <strong>gain or loss</strong> from one more unit produced. It is the cost the firm should compare against the marginal revenue when deciding whether to scale up or down.' },
       examEdge: 'In a profit question, the rule is MR = MC. That is why marginal cost is the cost measure that drives output decisions.'

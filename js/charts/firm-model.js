@@ -103,6 +103,10 @@
     // ['acf-1','acf-2','acf-3'] for a stepped AFC→AVC→AC interactiveDiagram.
     var layers = Array.isArray(opts.layers) ? opts.layers : null;
 
+    // Optional set of curve ids to render dashed (e.g. ['AVC','AC'] when MC
+    // is the focus and the averages are shown as reference lines).
+    var dashed = Array.isArray(opts.dashedCurves) ? opts.dashedCurves : [];
+
     var curves = which.map(function (id, idx) {
       var d = samplePath(fnFor[id], qMin, qMax, qAxis, yAxis, n);
       var c = {
@@ -115,30 +119,36 @@
         labelDy: labelDy[id] != null ? labelDy[id] : 0,
         anchor: 'start'
       };
-      if (id === 'AFC') c.dashed = '5 4';
+      if (id === 'AFC' || dashed.indexOf(id) !== -1) c.dashed = '5 4';
       if (layers && layers[idx]) c.layer = layers[idx];
       return c;
     }).filter(function (c) { return c.d; });
 
     // Solved crossings: MC cuts AVC at min-AVC, MC cuts AC at min-AC.
-    // `near` hints in chart space steer the solver to the right hit.
+    // `near` hints in chart space steer the solver to the right hit;
+    // crossingsLayer puts the dots on a reveal layer when stepping.
     var points = [];
     var have = {};
     which.forEach(function (id) { have[id] = true; });
+    var cLayer = opts.crossingsLayer || null;
 
     if (opts.markCrossings !== false && have.MC && have.AVC) {
-      points.push({
-        intersection: { curves: ['MC', 'AVC'], near: [0.5, 0.19] },
+      var pAvc = {
+        intersection: { curves: ['MC', 'AVC'], near: opts.nearAVC || [0.5, 0.19] },
         tone: 'amber', radius: 4.5,
         label: 'min AVC', labelDx: -10, labelDy: 6, anchor: 'end'
-      });
+      };
+      if (cLayer) pAvc.layer = cLayer;
+      points.push(pAvc);
     }
     if (opts.markCrossings !== false && have.MC && have.AC) {
-      points.push({
-        intersection: { curves: ['MC', 'AC'], near: [0.63, 0.28] },
+      var pAc = {
+        intersection: { curves: ['MC', 'AC'], near: opts.nearAC || [0.63, 0.28] },
         tone: 'blue', radius: 4.5,
         label: 'min AC', labelDx: 8, labelDy: -10, anchor: 'start'
-      });
+      };
+      if (cLayer) pAc.layer = cLayer;
+      points.push(pAc);
     }
 
     var spec = {

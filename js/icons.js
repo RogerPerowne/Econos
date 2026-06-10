@@ -15888,112 +15888,11 @@ window.ECONOS_ICONS = {
      of the topic. Layers mc-1 (MC) / mc-2 (AVC, AC + crossing dots). */
   marginalCostChart: window.ECONOS_PPF.render(window.ECONOS_MARGINAL_COST_SPEC),
 
-  /* fullCostDiagram – Card 5 of Costs. Static composite showing all
-     four cost curves together (AFC, AVC, AC, MC) with annotations
-     where MC = AVC (AVC min) and MC = AC (AC min). No reveal — the
-     "everything together" view IS the point of the card. */
-  fullCostDiagram: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <style>
-        .fcd-v { display:none; }
-        @media (max-width:680px){
-          .fcd-h { display:none; }
-          .fcd-v { display:block; }
-        }
-      </style>
-      <div class="fcd-h">
-      <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="380" y="28" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.06em" font-family="Inter,sans-serif">THE FULL DIAGRAM — Marco's Pizzeria (FC = £40)</text>
-        <!-- Plot: x 80..720, y 50..420 -->
-        <line x1="80" y1="50" x2="80" y2="420" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="80" y1="420" x2="730" y2="420" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="54" y="46" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£/unit</text>
-        <text x="730" y="442" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (pizzas/day)</text>
-        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="74" y="358" text-anchor="end">10</text>
-          <text x="74" y="296" text-anchor="end">20</text>
-          <text x="74" y="234" text-anchor="end">30</text>
-          <text x="74" y="173" text-anchor="end">40</text>
-          <text x="74" y="111" text-anchor="end">50</text>
-        </g>
-        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="80" y="436" text-anchor="middle">1</text>
-          <text x="210" y="436" text-anchor="middle">2</text>
-          <text x="340" y="436" text-anchor="middle">3</text>
-          <text x="470" y="436" text-anchor="middle">4</text>
-          <text x="600" y="436" text-anchor="middle">5</text>
-          <text x="730" y="436" text-anchor="middle">6</text>
-        </g>
-
-        <!-- Mapping: Q 1..6 → x = 80+(Q-1)*130; £ 0..60 → y = 420-£*6.17 -->
-        <!-- AFC: 40,20,13.3,10,8,6.7 → 174,297,338,358,371,379 -->
-        <polyline points="80,174 145,236 210,297 275,338 340,338 405,348 470,358 535,365 600,371 665,375 730,379" fill="none" stroke="#D97706" stroke-width="2"/>
-        <text x="734" y="383" font-size="12" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">AFC</text>
-        <!-- AVC: 20,17.5,18.3,20,22,25 → 297,312,307,297,284,266 -->
-        <polyline points="80,297 145,305 210,312 275,310 340,307 405,302 470,297 535,290 600,284 665,275 730,266" fill="none" stroke="#DC2626" stroke-width="2"/>
-        <text x="734" y="270" font-size="12" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">AVC</text>
-        <!-- AC: 60,37.5,31.7,30,30,31.7 → 50,189,225,235,235,225 -->
-        <polyline points="80,50 145,124 210,189 275,213 340,225 405,231 470,235 535,235 600,235 665,231 730,225" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
-        <text x="734" y="229" font-size="12" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
-        <!-- MC: 20,13,15,17,20,25,30,40 → at Q=1→297, 1.5→340, 2→327, 2.5→315, 3→297, 4→266, 5→235, 6→173 -->
-        <polyline points="80,297 145,340 210,327 275,315 340,297 405,281 470,266 535,250 600,235 665,204 730,173" fill="none" stroke="#0B1426" stroke-width="2.6"/>
-        <text x="734" y="168" font-size="12" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">MC</text>
-
-        <!-- Markers + annotations -->
-        <circle cx="340" cy="307" r="5" fill="#fff" stroke="#0B1426" stroke-width="2"/>
-        <text x="346" y="296" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">MC cuts AVC</text>
-        <text x="346" y="282" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">at the minimum</text>
-        <text x="346" y="268" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">point of AVC.</text>
-
-        <circle cx="600" cy="235" r="5" fill="#fff" stroke="#0B1426" stroke-width="2"/>
-        <text x="468" y="218" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">MC cuts AC</text>
-        <text x="468" y="204" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">at the minimum</text>
-        <text x="468" y="190" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">point of AC.</text>
-      </svg>
-      </div>
-
-      <div class="fcd-v">
-      <svg viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.06em" font-family="Inter,sans-serif">MARCO'S PIZZERIA (FC = £40)</text>
-        <line x1="40" y1="34" x2="40" y2="500" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="40" y1="500" x2="346" y2="500" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="14" y="30" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">£/unit</text>
-        <text x="346" y="522" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
-        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
-          <text x="34" y="422" text-anchor="end">10</text>
-          <text x="34" y="345" text-anchor="end">20</text>
-          <text x="34" y="267" text-anchor="end">30</text>
-          <text x="34" y="190" text-anchor="end">40</text>
-          <text x="34" y="112" text-anchor="end">50</text>
-        </g>
-        <g font-family="Inter,sans-serif" font-size="8" fill="#475569">
-          <text x="40" y="514" text-anchor="middle">1</text>
-          <text x="101" y="514" text-anchor="middle">2</text>
-          <text x="162" y="514" text-anchor="middle">3</text>
-          <text x="223" y="514" text-anchor="middle">4</text>
-          <text x="284" y="514" text-anchor="middle">5</text>
-          <text x="345" y="514" text-anchor="middle">6</text>
-        </g>
-        <!-- Q 1..6 → x = 40+(Q-1)*61; £ 0..60 → y = 500-£*7.78 -->
-        <!-- AFC -->
-        <polyline points="40,189 70,267 101,345 132,396 162,422 192,438 223,449 253,460 284,468 314,474 345,479" fill="none" stroke="#D97706" stroke-width="1.8"/>
-        <text x="324" y="484" font-size="10" font-weight="800" fill="#D97706" font-family="Inter,sans-serif">AFC</text>
-        <!-- AVC -->
-        <polyline points="40,345 70,357 101,365 132,360 162,358 192,353 223,345 253,338 284,329 314,317 345,306" fill="none" stroke="#DC2626" stroke-width="1.8"/>
-        <text x="324" y="302" font-size="10" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">AVC</text>
-        <!-- AC -->
-        <polyline points="40,34 70,143 101,208 132,235 162,254 192,260 223,267 253,267 284,267 314,260 345,254" fill="none" stroke="#5B21B6" stroke-width="2.2"/>
-        <text x="324" y="248" font-size="10" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">AC</text>
-        <!-- MC -->
-        <polyline points="40,345 70,399 101,383 132,368 162,345 192,322 223,306 253,283 284,267 314,228 345,189" fill="none" stroke="#0B1426" stroke-width="2.2"/>
-        <text x="324" y="184" font-size="10" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">MC</text>
-        <!-- Annotations -->
-        <circle cx="162" cy="358" r="4" fill="#fff" stroke="#0B1426" stroke-width="1.6"/>
-        <circle cx="284" cy="267" r="4" fill="#fff" stroke="#0B1426" stroke-width="1.6"/>
-      </svg>
-      </div>
-    </div>
-  `,
+  /* fullCostDiagram – Card 5 of Costs. Generated by the firm-model
+     cost-function builder (window.ECONOS_FIRM.costCurves): the full AFC/AVC/
+     AC/MC composite from the topic's single FC=40 cubic, with MC cutting AVC
+     and AC at their engine-solved minima. Static (no reveal). */
+  fullCostDiagram: window.ECONOS_PPF.render(window.ECONOS_FULL_COST_SPEC),
 
   /* costDataBakery – Card 6 of Costs. A bakery worked-example table
      showing FC/VC/TC/AC/MC for an output range, with the AC-minimum

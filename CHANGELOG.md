@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.15 — 2026-06-10
+
+### Revenue — "THE CHAIN" flow restyled to numbered-dashed flow
+
+- The whole-revenue-story chain now uses the numbered-circle flow (numbers
+  above, dashed connector line behind) instead of the boxed-tile + arrow
+  style — a one-line data change (removed `flowSep`); the renderer already
+  supports both. Data-only (no SW bump).
+
 ## 0.155.14 — 2026-06-10
 
 ### Elasticity & revenue triptych — bigger fonts, taller panels

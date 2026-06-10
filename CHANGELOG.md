@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.138.0 — 2026-06-10
+
+### Limits of Policy in a Global Economy — the final Theme 4 topic (7 cards)
+
+- **Limits of Policy in a Global Economy (Edexcel A 4.5.4)** built and flipped
+  live — the second of the two-way split of 4.5.4, and the last topic on the
+  index. Seven cards: the big picture (why policy has limits) → responding to
+  external shocks → transfer pricing and tax control → why global companies are
+  hard to control → policy under uncertainty → risks, trade-offs and unintended
+  consequences → the whole story. Uses the `heroIntervention` cover hero
+  (distinct from its `heroGlobe` sibling).
+- Two new bespoke visuals (`js/icons.js`):
+  - `policyLimitsHub` — the five forces that blunt domestic policy (external
+    shocks, global capital flows, imperfect information, multinational firms,
+    risks & trade-offs) as a radial hub around a central "Policy tools" node.
+  - `transferPricingFlow` — a profit-shifting illustration: a multinational
+    sets an internal price so costs are booked in a high-tax country and
+    profit is reported in a low-tax country.
+  Both catalogued in `docs/visual-catalogue.md`.
+- `sw.js` cache bumped (`econos-v475`) for the `icons.js` change.
+
 ## 0.137.0 — 2026-06-10
 
 ### Macroeconomic Policy in a Global Context topic complete (8 cards)

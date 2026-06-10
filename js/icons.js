@@ -23130,6 +23130,82 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* policyLimitsHub – Limits of Policy in a Global Economy card 1.
+     Five forces that blunt domestic policy arranged around a central
+     "Policy tools" core. Collapses to two columns with the core first
+     on mobile. */
+  policyLimitsHub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .plh-grid{display:grid;grid-template-columns:1fr 168px 1fr;gap:10px;align-items:center;max-width:920px;margin:0 auto;}
+        .plh-col{display:flex;flex-direction:column;gap:10px;}
+        .plh-tile{border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .plh-h{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .plh-s{font-size:10.5px;color:#475569;line-height:1.3;}
+        .plh-circ{width:148px;height:148px;border-radius:50%;background:#EEF2FF;border:3px solid #4338CA;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;text-align:center;box-shadow:0 0 0 8px rgba(238,242,255,.6),0 6px 18px rgba(67,56,202,.16);}
+        @media(max-width:700px){.plh-grid{grid-template-columns:1fr 1fr;}.plh-cwrap{grid-column:1/-1;order:-1;}}
+      </style>
+      <div class="plh-grid">
+        <div class="plh-col">
+          <div class="plh-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;"><div class="plh-h" style="color:#B91C1C;">⚡ External shocks</div><div class="plh-s">Crises hit from outside the economy.</div></div>
+          <div class="plh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="plh-h" style="color:#1E40AF;">\u{1F4B8} Global capital flows</div><div class="plh-s">Money moves across borders fast.</div></div>
+          <div class="plh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="plh-h" style="color:#9A3412;">\u{1F575}️ Imperfect information</div><div class="plh-s">Data are delayed and incomplete.</div></div>
+        </div>
+        <div class="plh-cwrap"><div class="plh-circ"><div style="font-size:34px;line-height:1;">\u{1F6E0}️</div><div style="font-size:12.5px;font-weight:800;color:#3730A3;margin-top:2px;line-height:1.15;">Policy tools</div></div></div>
+        <div class="plh-col">
+          <div class="plh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="plh-h" style="color:#5B21B6;">\u{1F3E2} Multinational firms</div><div class="plh-s">Big firms can shift profits and relocate.</div></div>
+          <div class="plh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="plh-h" style="color:#065F46;">⚖️ Risks & trade-offs</div><div class="plh-s">Every fix carries side-effects.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  /* transferPricingFlow – Limits of Policy in a Global Economy card 3.
+     Profit-shifting illustration: a multinational sets an internal price
+     so that costs are booked in the high-tax country and profit is
+     reported in the low-tax country. */
+  transferPricingFlow: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .tpf-row{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:stretch;gap:0;max-width:880px;margin:0 auto;}
+        .tpf-box{border-radius:13px;padding:13px 13px 12px;box-shadow:0 1px 3px rgba(15,23,42,.06);}
+        .tpf-tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-bottom:6px;}
+        .tpf-h{font-size:12.5px;font-weight:800;line-height:1.18;margin-bottom:6px;}
+        .tpf-li{font-size:10.6px;color:#334155;line-height:1.4;display:flex;gap:5px;}
+        .tpf-arr{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#64748B;font-size:9px;font-weight:700;text-align:center;}
+        .tpf-arr svg{display:block;}
+        .tpf-banner{max-width:880px;margin:12px auto 0;background:#FFFBEB;border:1.5px solid #FDE68A;border-radius:12px;padding:9px 14px;font-size:11.5px;font-weight:700;color:#92400E;text-align:center;}
+        @media(max-width:640px){.tpf-row{grid-template-columns:1fr;}.tpf-arr{flex-direction:row;padding:6px 0;transform:rotate(90deg);}}
+      </style>
+      <div class="tpf-row">
+        <div class="tpf-box" style="background:#FEF2F2;border:1.5px solid #FECACA;">
+          <span class="tpf-tag" style="background:#FEE2E2;color:#B91C1C;">High-tax country</span>
+          <div class="tpf-h" style="color:#B91C1C;">Subsidiary A</div>
+          <div class="tpf-li">\u{1F4E5} Costs booked here</div>
+          <div class="tpf-li">\u{2B06}️ Higher costs</div>
+          <div class="tpf-li">\u{2B07}️ Lower reported profit</div>
+        </div>
+        <div class="tpf-arr"><svg width="22" height="14" viewBox="0 0 22 14"><path d="M0 7h17M12 2l6 5-6 5" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>internal<br>price</div>
+        <div class="tpf-box" style="background:#EFF6FF;border:1.5px solid #BFDBFE;">
+          <span class="tpf-tag" style="background:#DBEAFE;color:#1E40AF;">Parent firm</span>
+          <div class="tpf-h" style="color:#1E40AF;">Multinational</div>
+          <div class="tpf-li">\u{1F3F7}️ Sets the internal price</div>
+          <div class="tpf-li">\u{1F504} For goods, services or IP</div>
+          <div class="tpf-li">\u{1F9ED} Decides where profit lands</div>
+        </div>
+        <div class="tpf-arr"><svg width="22" height="14" viewBox="0 0 22 14"><path d="M0 7h17M12 2l6 5-6 5" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>internal<br>price</div>
+        <div class="tpf-box" style="background:#ECFDF5;border:1.5px solid #A7F3D0;">
+          <span class="tpf-tag" style="background:#D1FAE5;color:#065F46;">Low-tax country</span>
+          <div class="tpf-h" style="color:#065F46;">Subsidiary B</div>
+          <div class="tpf-li">\u{1F4E4} Profit reported here</div>
+          <div class="tpf-li">\u{2B07}️ Lower costs</div>
+          <div class="tpf-li">\u{2B06}️ Higher reported profit</div>
+        </div>
+      </div>
+      <div class="tpf-banner">\u{1F4B0} Profit is shifted to where tax is lowest — even if the value was created elsewhere.</div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

@@ -171,7 +171,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'priceCapMonopoly',
         label: 'THE PRICE-CAP STORY — step through it',
         emoji: '\u{1F4C9}',
-        wide: true,
         layers: ['pcm-1', 'pcm-2'],
         views: [
           {

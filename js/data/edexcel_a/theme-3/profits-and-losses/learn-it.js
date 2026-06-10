@@ -68,7 +68,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'profitCoreEquation',
         label: 'THE CORE EQUATION — a worked example',
         emoji: '\u{1F4C8}',
-        wide: true,
         layers: ['pce-1', 'pce-2', 'pce-3'],
         views: [
           {
@@ -176,7 +175,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'breakEvenChart',
         label: 'THE BREAK-EVEN CHART — three reveal steps',
         emoji: '\u{1F4CA}',
-        wide: true,
         layers: ['bec-1', 'bec-2', 'bec-3'],
         views: [
           {
@@ -239,7 +237,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'profitMeasures',
         label: 'Two measures of profitability — step through both',
         emoji: '\u{1F4CA}',
-        wide: true,
         layers: ['pm-1', 'pm-2'],
         views: [
           {

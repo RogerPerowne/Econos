@@ -171,7 +171,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'mcShortRunDiagram',
         label: 'THE FIRM DIAGRAM — step through the build',
         emoji: '\u{1F4CA}',
-        wide: true,
         layers: ['mcsr-1', 'mcsr-2', 'mcsr-3'],
         views: [
           {
@@ -244,7 +243,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'mcLongRunDiagram',
         label: 'THE LONG-RUN DIAGRAM — watch demand shift left',
         emoji: '\u{1F4C9}',
-        wide: true,
         layers: ['lr-1', 'lr-2', 'lr-3'],
         views: [
           {
@@ -307,7 +305,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'mcEfficiencyDiagram',
         label: 'THE LONG-RUN EFFICIENCY DIAGRAM',
         emoji: '\u{1F4CA}',
-        wide: true,
         layers: ['mce-1', 'mce-2'],
         views: [
           {

@@ -106,7 +106,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'fixedVariableTotalChart',
         label: 'THE THREE LINES — Marco’s Pizzeria (FC = £40)',
         emoji: '\u{1F4CA}',
-        wide: true,
         layers: ['tfc-1', 'tfc-2', 'tfc-3'],
         views: [
           {
@@ -169,7 +168,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'averageCostFamilyChart',
         label: 'Three averages, three curves — Marco’s Pizzeria',
         emoji: '\u{1F4C9}',
-        wide: true,
         layers: ['acf-1', 'acf-2', 'acf-3'],
         views: [
           {
@@ -232,7 +230,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'marginalCostChart',
         label: 'Marginal cost — Marco’s Pizzeria',
         emoji: '\u{1F4C8}',
-        wide: true,
         layers: ['mc-1', 'mc-2'],
         views: [
           {

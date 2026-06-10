@@ -177,7 +177,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'monopsonyLabourDiagram',
         label: 'THE DIAGRAM — step through it',
         emoji: '\u{1F4C9}',
-        wide: true,
         layers: ['ms-1', 'ms-2', 'ms-3'],
         views: [
           {
@@ -257,7 +256,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'monopsonyMinWage',
         label: 'A POSSIBLE DIAGRAM EFFECT — step through it',
         emoji: '\u{1F4C8}',
-        wide: true,
         layers: ['mmw-1', 'mmw-2'],
         views: [
           {

@@ -67,7 +67,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'labourMarketEqDiagram',
         label: 'THE CORE MODEL — build it',
         emoji: '\u{1F4C8}',
-        wide: true,
         layers: ['lme-eq', 'lme-surplus', 'lme-shortage'],
         views: [
           {
@@ -134,7 +133,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'labourMarketEqDiagram',
         label: 'THE DIAGRAM — clears at equilibrium',
         emoji: '⚖️',
-        wide: true,
         layers: ['lme-eq', 'lme-surplus', 'lme-shortage'],
         views: [
           {
@@ -207,7 +205,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'monopsonyLabourDiagram',
         label: 'THE MONOPSONY DIAGRAM — step through it',
         emoji: '\u{1F3E2}',
-        wide: true,
         layers: ['ms-1', 'ms-2', 'ms-3'],
         views: [
           {
@@ -414,7 +411,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'wageFloorCeiling',
         label: 'WAGE CONTROLS — step through it',
         emoji: '\u{1F3DB}️',
-        wide: true,
         layers: ['wf-eq', 'wf-min', 'wf-max'],
         views: [
           {

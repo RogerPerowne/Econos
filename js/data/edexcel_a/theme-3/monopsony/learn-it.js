@@ -110,7 +110,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'monopsonyLabourDiagram',
         label: 'THE MONOPSONY DIAGRAM — build it step by step',
         emoji: '\u{1F4C9}',
-        wide: true,
         layers: ['ms-1', 'ms-2', 'ms-3'],
         views: [
           {

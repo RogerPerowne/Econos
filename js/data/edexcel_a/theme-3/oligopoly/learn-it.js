@@ -145,7 +145,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'oligopolyKinkedDemand',
         label: 'THE DIAGRAM — build it in three steps',
         emoji: '\u{1F4C8}',
-        wide: true,
         layers: ['kdc-1', 'kdc-2', 'kdc-3'],
         views: [
           {

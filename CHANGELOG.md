@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.0 — 2026-06-10
+
+### Theme 3 — standard landscape diagram layout (chart left, description right)
+
+- Removed `wide: true` from 24 interactive diagrams across Theme 3 so they use
+  the standard landscape layout: **chart on the left, step description on the
+  right, analysis below** (matching Theme 1/2). Verified the layout stays
+  legible even on the label-dense firm diagrams (monopoly profit-max/welfare,
+  monopolistic-competition, kinked demand, break-even, labour-market).
+- Kept `wide: true` only where the diagram genuinely needs the full width:
+  the three revenue worked-example diagrams (table sits to the right of the
+  chart), `priceDiscPanels` (two markets side-by-side), the game-theory payoff
+  matrices + repeated-game cycle, and `hitAndRunCycle` (a wide 880×250 flow).
+- Data-only change (no engine/SW change).
+
 ## 0.154.4 — 2026-06-10
 
 ### Revenue — elasticity triptych: flatten the elastic demand line

@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.12 — 2026-06-10
+
+### Average revenue — chart shifted left and enlarged
+
+- Moved the demand-curve chart's y-axis from x=70 to x=40 and stretched the
+  plot to 460×320 (was 370×300, ~23% more area), so the chart fills the left
+  half of the stage right up to the worked-example panels. All geometry
+  remapped (Q: x=40+Q·3.5, P: y=350−P·17.7); A/B points, guides, ticks and
+  labels repositioned to match.
+- `sw.js` → `econos-v510`.
+
 ## 0.155.11 — 2026-06-10
 
 ### Total revenue — smarter formula panel

@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.154.0 — 2026-06-10
+
+### Economist-insight quotes across Themes 3 & 4
+
+- Added 16 `economistQuote` blocks (8 per theme) to the final card of selected
+  Theme 3 & 4 topics, matching the Theme 1/2 treatment (amber card + portrait +
+  attributed quote). Sixteen distinct economists are used for variety —
+  including the three portraits never previously featured: **A. W. Phillips**
+  (wage determination), **Karl Marx** (monopsony) and **Amartya Sen** (causes of
+  inequality).
+- Theme 3: Marshall (economies of scale), Adam Smith (collusion), Hayek
+  (contestable markets), Schumpeter (monopoly), Phillips (wage determination),
+  Goldin (supply of labour), Marx (monopsony), Friedman (government
+  intervention).
+- Theme 4: Ricardo (specialisation & trade), Sen (causes of inequality),
+  Mazzucato (interventionist development), Duflo (market-orientated
+  development), Coyle (measures of development), Keynes (central banks),
+  Kahneman (financial-sector market failure), Ostrom (globalisation).
+- Data-only change (no engine/SW change); portraits resolve from
+  `assets/economists/`.
+
 ## 0.153.3 — 2026-06-10
 
 ### Third-degree price discrimination migrated onto the chart engine

@@ -633,6 +633,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'The strongest answers anchor the diagram and the context to a clear evaluation — firms, workers and suppliers all matter.' },
 
       conclusion: { title: 'Big idea', text: 'Monopoly turns market power into a question: do the efficiency gains outweigh the costs to consumers?' },
+      economistQuote: {
+        portraitKey: 'economistSchumpeter',
+        tone: 'amber',
+        label: 'Economist insight on monopoly and innovation',
+        quote: 'The process of industrial mutation incessantly revolutionises the economic structure from within, incessantly destroying the old one, incessantly creating a new one. This process of Creative Destruction is the essential fact about capitalism.',
+        attribution: 'Joseph Schumpeter, <em>Capitalism, Socialism and Democracy</em> (1942)'
+      },
       examEdge: 'Anchor the <strong>diagram and context</strong> to a clear judgement, and remember monopoly affects every stakeholder.'
     }
   ]

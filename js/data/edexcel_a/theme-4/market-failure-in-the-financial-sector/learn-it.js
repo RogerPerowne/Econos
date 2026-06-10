@@ -418,6 +418,13 @@ window.ECONOS_TOPIC = {
 
       conclusionPosition: 'end',
       conclusion: { title: 'BIG IDEA', text: 'Each failure is a different way private finance imposes costs on others — which is what builds the case for regulation.' },
+      economistQuote: {
+        portraitKey: 'economistDanielKahneman',
+        tone: 'amber',
+        label: 'Economist insight on financial markets',
+        quote: 'The illusion that we understand the past fosters overconfidence in our ability to predict the future.',
+        attribution: 'Daniel Kahneman, <em>Thinking, Fast and Slow</em> (2011)'
+      },
       examEdge: { title: 'EXAM EDGE', text: 'Use precise terms, trace the mechanism to a wider social cost, then evaluate the scale and the case for intervention.' }
     }
   ]

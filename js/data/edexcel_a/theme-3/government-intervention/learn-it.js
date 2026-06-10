@@ -309,6 +309,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Government intervention is a toolkit, not a single lever — match the tool to the problem and judge the result.' },
 
       conclusion: { title: 'Big idea', text: 'Intervention is justified when it fixes a real problem and the benefits beat the costs — including the risk of government failure.' },
+      economistQuote: {
+        portraitKey: 'economistFriedman',
+        tone: 'amber',
+        label: 'Economist insight on intervention',
+        quote: 'Nobody spends somebody else&rsquo;s money as carefully as he spends his own. Nobody uses somebody else&rsquo;s resources as carefully as he uses his own.',
+        attribution: 'Milton Friedman, <em>Free to Choose</em> (1980)'
+      },
       examEdge: 'Move from <strong>diagnosis to policy to impact to evaluation</strong>, and give a balanced final verdict.'
     }
   ]

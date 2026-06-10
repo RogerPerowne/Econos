@@ -356,6 +356,13 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: '⚖️', tone: 'green', text: 'Globalisation tends to work best when countries are <strong>competitive</strong>, workers can <strong>adapt</strong>, and governments <strong>manage the side-effects</strong> well.' },
 
       conclusion: { title: 'Big idea', text: 'Globalisation is neither automatically good nor automatically bad — its value depends on how the gains and costs are distributed and managed.' },
+      economistQuote: {
+        portraitKey: 'economistElinorOstrom',
+        tone: 'amber',
+        label: 'Economist insight on shared resources',
+        quote: 'There is no reason to believe that distant officials, however well meaning, can craft better rules than the people on the spot, who have both the local knowledge and the strongest incentive to get the solution right.',
+        attribution: 'Elinor Ostrom, <em>Governing the Commons</em> (1990)'
+      },
       examEdge: 'In essays, do not just describe globalisation — explain the <strong>mechanism</strong> and then weigh the <strong>trade-offs in context</strong>.'
     }
   ]

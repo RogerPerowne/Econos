@@ -299,6 +299,13 @@ window.ECONOS_TOPIC = {
 
       conclusionPosition: 'end',
       conclusion: { title: 'BIG IDEA', text: 'Development is multidimensional — measure it broadly, use HDI carefully, and evaluate with wider indicators.' },
+      economistQuote: {
+        portraitKey: 'economistCoyle',
+        tone: 'amber',
+        label: 'Economist insight on measuring progress',
+        quote: 'GDP is a made-up entity, a deeply abstract idea. It measures market activity, but tells us nothing about whether growth is depleting the natural and social assets on which future prosperity depends.',
+        attribution: 'Diane Coyle, <em>GDP: A Brief but Affectionate History</em> (2014)'
+      },
       examEdge: { title: 'EXAM EDGE', text: 'Top answers explain HDI clearly but never stop there — they compare, interpret and evaluate.' }
     }
   ]

@@ -438,6 +438,13 @@ window.ECONOS_TOPIC = {
 
       conclusionPosition: 'end',
       conclusion: { title: 'BIG IDEA', text: 'Market-oriented strategies can drive development through competition and incentives — but their success is conditional on context.' },
+      economistQuote: {
+        portraitKey: 'economistDuflo',
+        tone: 'amber',
+        label: 'Economist insight on development',
+        quote: 'The poor are no less rational than anyone else — quite the contrary. Precisely because they have so little, we often find them putting much careful thought into their choices.',
+        attribution: 'Esther Duflo &amp; Abhijit Banerjee, <em>Poor Economics</em> (2011)'
+      },
       examEdge: { title: 'EXAM EDGE', text: 'The strongest answers do not just list reforms — they explain the mechanism, apply it to a country, and judge the conditions for success.' }
     }
   ]

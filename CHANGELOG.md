@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.1 — 2026-06-10
+
+### Diagram hygiene sweep — remove redundant in-chart titles, fix axis clashes
+
+- Removed the redundant in-SVG "eyebrow" titles that duplicated the card's own
+  diagram label, across the site: `THE DIAGRAM` (productive- & allocative-
+  efficiency), `THE CHART` (break-even), `THE LABOUR MARKET` / `THE
+  LABOUR-DEMAND DIAGRAM` / `THE LABOUR-SUPPLY DIAGRAM` / `THE MONOPSONY DIAGRAM`,
+  `THE JOINT-PROFIT DIAGRAM` (cartel) and `THE TWO MEASURES` (profit measures) —
+  13 titles across 9 diagrams (desktop + mobile variants). Each viewBox top was
+  cropped so removing the title leaves no gap.
+- Kept genuine in-SVG labels that annotate specific elements or organise a
+  composite (game-theory matrix regions, Lorenz-curve annotations, "MR gap",
+  supply-chain node labels, etc.) — those aren't redundant titles.
+- `breakEvenChart`: fixed the axis-label clashes — the "Costs & revenue (£)"
+  y-title no longer overlaps the "120k" top tick, and "Output (Q)" no longer
+  overlaps the "60" tick.
+- Token-dup ratchet baseline lowered 6367 → 6354 (removed title fills).
+- `sw.js` → `econos-v499`.
+
 ## 0.155.0 — 2026-06-10
 
 ### Theme 3 — standard landscape diagram layout (chart left, description right)

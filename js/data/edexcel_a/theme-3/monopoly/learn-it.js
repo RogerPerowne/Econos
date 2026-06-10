@@ -510,29 +510,36 @@ window.ECONOS_TOPIC = {
         label: 'THE DIAGRAM — falling cost over the whole market',
         emoji: '\u{1F3ED}',
         wide: true,
-        layers: ['nm-1', 'nm-2', 'nm-3'],
+        layers: ['nm-1', 'nm-2', 'nm-3', 'nm-4'],
         views: [
           {
             label: 'Economies of scale',
             tone: 'purple',
             head: 'Step 1 — economies of scale',
-            body: 'LRAC <strong>falls across the whole market</strong>. Splitting demand between several firms would push each up its cost curve, raising unit costs.',
+            body: 'AC <strong>falls across the whole market</strong> and MC sits below it. Splitting demand between several firms would push each up its cost curve, raising unit costs — so one firm is cheapest.',
             show: ['nm-1']
           },
           {
-            label: 'The unregulated outcome',
+            label: 'Unregulated outcome',
             tone: 'green',
             head: 'Step 2 — the unregulated outcome',
-            body: 'Left alone, the firm profit-maximises at <strong>MR = MC</strong>: a high price P₁ and a restricted output Q₁.',
+            body: 'Left alone, the firm profit-maximises at <strong>MR = MC</strong>: a high price P₁ and a restricted output Q₁, earning supernormal profit.',
             show: ['nm-1', 'nm-2']
           },
           {
-            label: 'The regulator’s dilemma',
-            tone: 'blue',
-            head: 'Step 3 — the regulator’s dilemma',
-            body: 'Forcing <strong>P = MC</strong> (Q₃) is allocatively efficient but means a loss — it needs a subsidy. <strong>P = AC</strong> (Q₂) lets the firm break even.',
-            analysis: 'This is the heart of utility regulation: because AC is still falling, marginal-cost pricing cannot also cover average cost. Regulators trade efficiency against viability.',
+            label: 'P = MC (allocative)',
+            tone: 'rose',
+            head: 'Step 3 — force P = MC (allocative efficiency)',
+            body: 'A regulator could force <strong>P = MC</strong> at Q₃ — allocatively efficient. But because AC is still falling, <strong>P &lt; AC here, so the firm makes a loss</strong> and needs a subsidy to survive.',
             show: ['nm-1', 'nm-2', 'nm-3']
+          },
+          {
+            label: 'P = AC (break-even)',
+            tone: 'blue',
+            head: 'Step 4 — average-cost pricing (P = AC)',
+            body: 'Average-cost pricing sets <strong>P = AC</strong> at Q₂ — the firm just breaks even (a fair return), no subsidy needed. Output is higher and price lower than unregulated, but still <strong>P &gt; MC</strong>, so not fully allocatively efficient.',
+            analysis: 'This is the heart of utility regulation: because AC is still falling, marginal-cost pricing cannot also cover average cost. Regulators trade allocative efficiency (P=MC, needs a subsidy) against financial viability (P=AC, breaks even).',
+            show: ['nm-1', 'nm-2', 'nm-3', 'nm-4']
           }
         ]
       },

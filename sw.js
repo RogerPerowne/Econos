@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v486';
+  const CACHE_NAME = 'econos-v487';
 
   /* ────────────────────────────────────────────────────────────
      fetchFresh — a network fetch that bypasses the BROWSER'S OWN
@@ -94,6 +94,7 @@
     '/js/charts/specs/mc-long-run.js',
     '/js/charts/specs/mc-efficiency.js',
     '/js/charts/specs/pc-efficiency.js',
+    '/js/charts/specs/natural-monopoly.js',
     '/js/charts/specs/tax-diagram-interactive.js',
     '/js/charts/specs/price-ceiling-diagram.js',
     '/js/charts/specs/price-floor-diagram.js',

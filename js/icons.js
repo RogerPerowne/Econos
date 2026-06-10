@@ -18062,72 +18062,11 @@ window.ECONOS_ICONS = {
      solved; soft-fill DWL shading. Replaces the old hand-rolled SVG. */
   monopolyWelfare: window.ECONOS_PPF.render(window.ECONOS_MONOPOLY_WELFARE_SPEC),
 
-  /* naturalMonopoly — Card 8 interactive (nm-1..nm-3). Falling cost
-     lines (economies of scale over the whole market):
-       D=AR (80,130)→(620,300), MR (80,130)→(380,320),
-       LRAC (80,165)→(620,250), LRMC (80,210)→(620,275).
-     Profit-max MR=MC (236,229); Pm on D (236,179); AC at Qm (236,189).
-     Break-even D=LRAC (301,200); allocative D=LRMC (490,259). */
-  naturalMonopoly: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE NATURAL MONOPOLY DIAGRAM</text>
-        <!-- nm-2 profit rectangle (Pm to AC over 0..Qm) -->
-        <g class="nm-2" style="display:none">
-          <rect x="80" y="179" width="156" height="10" fill="#86EFAC" opacity="0.55" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="4 3"/>
-        </g>
-        <!-- Axes -->
-        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="38" y="42" font-size="11" font-weight="700" fill="#475569">Cost,</text>
-        <text x="38" y="56" font-size="11" font-weight="700" fill="#475569">price</text>
-        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Output (Q)</text>
-        <!-- LRAC (falling) -->
-        <line x1="80" y1="165" x2="620" y2="250" stroke="#5B21B6" stroke-width="2.4"/>
-        <text x="624" y="248" font-size="13" font-weight="800" fill="#5B21B6">LRAC</text>
-        <!-- LRMC (below LRAC) -->
-        <line x1="80" y1="210" x2="620" y2="275" stroke="#DC2626" stroke-width="2.4"/>
-        <text x="624" y="278" font-size="13" font-weight="800" fill="#DC2626">LRMC</text>
-        <!-- D = AR -->
-        <line x1="80" y1="130" x2="620" y2="300" stroke="#16A34A" stroke-width="2.4"/>
-        <text x="624" y="303" font-size="13" font-weight="800" fill="#16A34A">D = AR</text>
-        <!-- MR -->
-        <line x1="80" y1="130" x2="380" y2="320" stroke="#D97706" stroke-width="2.4"/>
-        <text x="384" y="316" font-size="13" font-weight="800" fill="#D97706">MR</text>
-        <!-- nm-1: economies of scale over the whole range -->
-        <g class="nm-1" style="display:none">
-          <line x1="80" y1="165" x2="620" y2="250" stroke="#7C3AED" stroke-width="7" opacity="0.16" stroke-linecap="round"/>
-          <rect x="360" y="92" width="252" height="40" rx="9" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.3"/>
-          <text x="486" y="110" font-size="11.5" font-weight="800" fill="#6D28D9" text-anchor="middle">LRAC falls across the WHOLE market</text>
-          <text x="486" y="125" font-size="10.5" fill="#475569" text-anchor="middle">one firm spreads huge fixed costs widest</text>
-        </g>
-        <!-- nm-2: unregulated profit-max -->
-        <g class="nm-2" style="display:none">
-          <circle cx="236" cy="229" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
-          <text x="244" y="226" font-size="9.5" font-weight="800" fill="#0B1426">MR=MC</text>
-          <line x1="236" y1="229" x2="236" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <text x="236" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">Q₁</text>
-          <line x1="236" y1="229" x2="236" y2="179" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <circle cx="236" cy="179" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="236" y1="179" x2="80" y2="179" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="74" y="183" font-size="12" font-weight="800" fill="#16A34A" text-anchor="end">P₁</text>
-        </g>
-        <!-- nm-3: regulator's options -->
-        <g class="nm-3" style="display:none">
-          <circle cx="301" cy="200" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-          <line x1="301" y1="200" x2="301" y2="320" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <text x="301" y="338" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">Q₂</text>
-          <rect x="312" y="186" width="60" height="17" rx="4" fill="#2563EB"/>
-          <text x="342" y="198" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">P = AC</text>
-          <circle cx="490" cy="259" r="6" fill="#B45309" stroke="#fff" stroke-width="2"/>
-          <line x1="490" y1="259" x2="490" y2="320" stroke="#B45309" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <text x="490" y="338" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle">Q₃</text>
-          <rect x="500" y="250" width="60" height="17" rx="4" fill="#B45309"/>
-          <text x="530" y="262" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">P = MC</text>
-        </g>
-      </svg>
-    </div>
-  `,
+  /* naturalMonopoly – Monopoly card 8. Generated (firm-model naturalMonopoly):
+     falling AC across the market, flat MC below; 4-step reveal nm-1 economies
+     of scale, nm-2 unregulated MR=MC, nm-3 P=MC (loss/subsidy), nm-4 P=AC
+     break-even. Equilibria engine-solved. Replaces hand-rolled SVG. */
+  naturalMonopoly: window.ECONOS_PPF.render(window.ECONOS_NATURAL_MONOPOLY_SPEC),
 
   /* priceDiscPanels — Card 6 interactive 3-panel diagram (pd-1..pd-3).
      Combined market sets the common MC level (MR=MC); the firm then

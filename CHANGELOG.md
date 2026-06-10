@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.150.0 — 2026-06-10
+
+### Chart engine Phase 3 — Natural monopoly (4-step) migrated
+
+- New `naturalMonopoly()` builder + `solveEq()` helper (for downward-curve
+  crossings like AR=MC, AR=AC). Cost shape: very high FC with a flat low MC, so
+  AC falls across the whole market and MC sits below AC throughout.
+- The card gains a 4th button — the regulator's dilemma is split into its two
+  cases: nm-1 economies of scale → nm-2 unregulated MR=MC (supernormal profit)
+  → nm-3 P=MC allocative pricing (P<AC ⇒ loss/subsidy) → nm-4 P=AC average-cost
+  pricing (break-even). All three pricing outputs engine-solved (Q₁=60, Q₂=84,
+  Q₃=120 at the chosen calibration).
+- Replaces the hand-rolled `naturalMonopoly`. Verified live. `lint:charts` clean
+  (111 specs), 112 snapshot tests; `sw.js` → `econos-v487`.
+
 ## 0.149.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Perfect competition efficiency diagram

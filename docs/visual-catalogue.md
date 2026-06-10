@@ -167,7 +167,12 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   price up to AR and shades the supernormal-profit/loss rectangle. Reference
   renders: `marcosProfitMax` (monopolistic competition, `marcos-profit-max.js`)
   and `marcosProfitMaxPC` (perfect competition, `marcos-profit-max-pc.js`).
-  Migration of the legacy hand-rolled curves below onto the generator is next.
+  `window.ECONOS_FIRM.totalCost({ fc, vc, … })` builds the TFC/TVC/TC
+  total-cost diagram (TVC the S-cubic from the origin, TC the same shifted up
+  by TFC, gap arrow), layered tfc-1/2/3 for a 3-step reveal — reference render
+  `fixedVariableTotalChart` (`total-cost.js`, Costs card 2; FC=£40 calibration).
+  Migration of the remaining legacy hand-rolled curves below onto the generator
+  is in progress.
 - **Costs (legacy hand-rolled SVG):** `shortRunCostStack` (TC/TFC/TVC), `lracEnvelope` (SRAC→LRAC),
   `mcLrTangency`, `fixedVariableTotalChart` (3.3.2 C2 — interactive TFC/TVC/TC reveal, Marco's Pizzeria), `averageCostFamilyChart` (3.3.2 C3 — interactive AFC/AVC/AC reveal), `marginalCostChart` (3.3.2 C4 — interactive table → MC curve with AC/AVC reference), `fullCostDiagram` (3.3.2 C5 — static AFC/AVC/AC/MC composite), `costDataBakery` (3.3.2 C6 — read-a-table procedure + bakery worked example).
 - **Economies of scale:** `lracBigPicture` (3.3.3 C1 — annotated U-shaped LRAC with three regions), `mesChart` (3.3.3 C4 — LRAC with MES region + small/medium/large industry mini-curves).

@@ -14398,7 +14398,7 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   margin: 6px 0 0;
 }
 .econ-pair-side__body ol li { margin-bottom: 6px; }
-.econ-pair-side__body ol li::marker { color: var(--pair-tone, #64748B); font-weight: 800; }
+.econ-pair-side__body ol li::marker { color: var(--pair-tone, #64748B); font-weight: var(--fw-extrabold); }
 
 @media (max-width: 720px) {
   .econ-pair-side__head {
@@ -14489,7 +14489,7 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 }
 .econ-cmp__cell.is-hl {
   color: var(--cmp-tone-label);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 /* On desktop the inline column label inside each cell is redundant
    (header row already shows it) — hide it. */
@@ -14533,6 +14533,6 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   .econ-cmp__cell-val { color: var(--econ-ink); }
   .econ-cmp__cell.is-hl .econ-cmp__cell-val {
     color: var(--cmp-tone-label);
-    font-weight: 700;
+    font-weight: var(--fw-bold);
   }
 }

@@ -19,6 +19,18 @@
 import { readFileSync } from 'node:fs';
 
 const list = process.argv.includes('--list');
+const check = process.argv.includes('--check');
+
+/* Ratchet baseline for --check (CI gate). This is the count of raw literals
+   that EXACTLY duplicate a design token (`dup`). It must never grow: tokenise
+   the new literal, or — if it is an unavoidable inline-SVG presentation
+   attribute (fill=/stroke=/stop-color=, which can't take a CSS var) — leave it
+   and DO NOT raise this number without a note here. When the SVG→engine
+   migration removes literals, lower this to lock the win.
+   Off-scale literals (`off`) are intentionally NOT gated — snapping them to the
+   scale is a visual change that needs sign-off, so they stay report-only. */
+const DUP_BASELINE = 6381;
+
 const css = readFileSync('styles.css', 'utf8');
 
 // ---- parse the :root token block ----
@@ -79,5 +91,28 @@ for (const [label, text] of targets) {
 }
 console.log(`\n  ${String(dup).padStart(4)} ${String(off).padStart(4)}   TOTAL`);
 console.log('\ndup = should be a token (tokenise it). off = off-scale literal (rationalisation backlog — visual change, needs sign-off).');
+
+if (check) {
+  if (dup > DUP_BASELINE) {
+    console.error(
+      `\n✗ token-dup ratchet: ${dup} raw literals duplicate a token, above the ` +
+      `baseline of ${DUP_BASELINE} (+${dup - DUP_BASELINE}).\n` +
+      `  Tokenise the new literal(s) with var(--…). If it is an inline-SVG ` +
+      `attribute that genuinely cannot use a CSS var, migrate the visual to ` +
+      `the chart engine instead of raising DUP_BASELINE in scripts/lint-tokens.mjs.`
+    );
+    process.exit(1);
+  }
+  if (dup < DUP_BASELINE) {
+    console.log(
+      `\n✓ token-dup below baseline (${dup} < ${DUP_BASELINE}). Lower DUP_BASELINE ` +
+      `to ${dup} in scripts/lint-tokens.mjs to lock in the reduction.`
+    );
+  } else {
+    console.log(`\n✓ token-dup at baseline (${dup}). No new drift.`);
+  }
+  process.exit(0);
+}
+
 console.log('Reporter only — exit 0.' + (list ? '' : ' (Use --list for the colour breakdown.)'));
 process.exit(0);

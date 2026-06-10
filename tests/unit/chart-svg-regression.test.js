@@ -36,10 +36,13 @@ const renderedByKey = new Map();
 
 beforeAll(() => {
   const ppfSrc = readFileSync(resolve(root, 'js/charts/ppf.js'), 'utf8');
+  const firmSrc = readFileSync(resolve(root, 'js/charts/firm-model.js'), 'utf8');
   for (const file of specFiles) {
     const w = {};
     /* eslint-disable-next-line no-new-func */
     new Function('window', ppfSrc)(w);
+    /* eslint-disable-next-line no-new-func */
+    new Function('window', firmSrc)(w);
     const specSrc = readFileSync(join(specsDir, file), 'utf8');
     /* eslint-disable-next-line no-new-func */
     new Function('window', specSrc)(w);

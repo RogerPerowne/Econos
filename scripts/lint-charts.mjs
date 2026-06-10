@@ -52,6 +52,9 @@ function isKnown(specKey, message) {
 
 const root = process.cwd();
 const ppfSrc = readFileSync(resolve(root, 'js/charts/ppf.js'), 'utf8');
+// Shared chart libraries that some specs build on (e.g. the firm cost/
+// revenue model builder). Loaded after the engine, before each spec.
+const firmSrc = readFileSync(resolve(root, 'js/charts/firm-model.js'), 'utf8');
 const specsDir = resolve(root, 'js/charts/specs');
 const specFiles = readdirSync(specsDir).filter(f => f.endsWith('.js')).sort();
 
@@ -63,6 +66,9 @@ for (const file of specFiles) {
   // Load engine
   /* eslint-disable-next-line no-new-func */
   new Function('window', ppfSrc)(w);
+  // Load shared chart libraries (firm cost/revenue model builder)
+  /* eslint-disable-next-line no-new-func */
+  new Function('window', firmSrc)(w);
   // Load spec
   const specSrc = readFileSync(join(specsDir, file), 'utf8');
   try {

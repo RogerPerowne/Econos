@@ -4725,6 +4725,7 @@ window.ECONOS_ICONS = {
   bubbleCycle: window.ECONOS_PPF.render(window.ECONOS_BUBBLE_CYCLE_SPEC),
   kuznetsDevelopment: window.ECONOS_PPF.render(window.ECONOS_KUZNETS_CURVE_SPEC),
   outputGapCompare: window.ECONOS_PPF.render(window.ECONOS_OUTPUT_GAP_COMPARE_SPEC),
+  marcosCostCurves: window.ECONOS_PPF.render(window.ECONOS_MARCOS_COST_SPEC),
 
   allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),
 

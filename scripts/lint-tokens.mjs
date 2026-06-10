@@ -29,7 +29,7 @@ const check = process.argv.includes('--check');
    migration removes literals, lower this to lock the win.
    Off-scale literals (`off`) are intentionally NOT gated — snapping them to the
    scale is a visual change that needs sign-off, so they stay report-only. */
-const DUP_BASELINE = 6367;
+const DUP_BASELINE = 6354;
 
 const css = readFileSync('styles.css', 'utf8');
 

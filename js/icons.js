@@ -16574,17 +16574,15 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="bec-h">
-      <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE CHART — break-even analysis</text>
+      <svg viewBox="0 28 760 412" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
 
         <!-- Plot area: x=80..620 (540 wide), y=46..400 (354 tall)
              X: Output 0..60 → x = 80 + Q*9
              Y: £k 0..120 → y = 400 - £k*2.95 -->
         <line x1="80" y1="46" x2="80" y2="400" stroke="#0B1426" stroke-width="1.6"/>
         <line x1="80" y1="400" x2="630" y2="400" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="42" y="50" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Costs &amp;</text>
-        <text x="42" y="64" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">revenue (£)</text>
-        <text x="630" y="422" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (Q)</text>
+        <text x="36" y="42" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Costs &amp; revenue (£)</text>
+        <text x="636" y="435" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (Q)</text>
 
         <!-- Y ticks at 20k, 40k, 60k, 80k, 100k, 120k -->
         <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
@@ -16716,8 +16714,7 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="pm-h">
-      <svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE TWO MEASURES</text>
+      <svg viewBox="0 28 760 392" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
 
         <!-- LEFT: Profit per unit (green) -->
         <g class="pm-1" style="display:none">
@@ -16801,8 +16798,7 @@ window.ECONOS_ICONS = {
       </div>
 
       <div class="pm-v">
-      <svg viewBox="0 0 360 760" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE TWO MEASURES</text>
+      <svg viewBox="0 22 360 738" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
 
         <g class="pm-1" style="display:none">
           <rect x="10" y="34" width="340" height="200" rx="12" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
@@ -16966,8 +16962,7 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="ped-h">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE DIAGRAM</text>
+      <svg viewBox="0 28 760 332" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
 
         <!-- LEFT: Chart. Plot area x=70..480 (410 wide), y=46..320 (274 tall) -->
         <line x1="70" y1="46" x2="70" y2="320" stroke="#0B1426" stroke-width="1.6"/>
@@ -17016,8 +17011,7 @@ window.ECONOS_ICONS = {
       </div>
 
       <div class="ped-v">
-      <svg viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE DIAGRAM</text>
+      <svg viewBox="0 22 360 518" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
         <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
         <text x="14" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Cost</text>
@@ -17066,8 +17060,7 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="aed-h">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE DIAGRAM</text>
+      <svg viewBox="0 28 760 332" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
 
         <!-- Chart area: x=70..480 (410 wide), y=46..320 (274 tall)
              Q 0..100 → x = 70 + Q*4.1
@@ -17121,8 +17114,7 @@ window.ECONOS_ICONS = {
       </div>
 
       <div class="aed-v">
-      <svg viewBox="0 0 360 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE DIAGRAM</text>
+      <svg viewBox="0 22 360 558" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <line x1="48" y1="36" x2="48" y2="320" stroke="#0B1426" stroke-width="1.4"/>
         <line x1="48" y1="320" x2="340" y2="320" stroke="#0B1426" stroke-width="1.4"/>
         <text x="16" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
@@ -17865,8 +17857,7 @@ window.ECONOS_ICONS = {
      Competitive: MRP=ACL at (393,188) → Wc, Lc (higher both). */
   monopsonyLabourDiagram: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE MONOPSONY DIAGRAM</text>
+      <svg viewBox="0 28 760 332" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- ms-3 wage gap band (between Wm and Wc on the axis) -->
         <g class="ms-3" style="display:none">
           <rect x="80" y="188" width="6" height="31" fill="#FCA5A5" opacity="0.7"/>
@@ -17986,8 +17977,7 @@ window.ECONOS_ICONS = {
      MRP = D_L curve; at wage W₁ the firm hires L₁ (MRP = wage). */
   labourDemandCurve: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE LABOUR-DEMAND DIAGRAM</text>
+      <svg viewBox="0 28 760 332" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
         <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
         <text x="34" y="42" font-size="11" font-weight="700" fill="#475569">Wage,</text>
@@ -18110,11 +18100,10 @@ window.ECONOS_ICONS = {
      a higher wage is a movement ALONG the curve (A → B). */
   labourSupplyCurve: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 28 760 332" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
           <marker id="ls-a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
         </defs>
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE LABOUR-SUPPLY DIAGRAM</text>
         <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
         <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
         <text x="34" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
@@ -18284,8 +18273,7 @@ window.ECONOS_ICONS = {
      zones above and below it. */
   labourMarketEqDiagram: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">THE LABOUR MARKET</text>
+      <svg viewBox="0 28 760 332" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
         <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
         <text x="34" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
@@ -21416,8 +21404,7 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="cjp-h">
-      <svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE JOINT-PROFIT DIAGRAM</text>
+      <svg viewBox="0 28 760 392" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- Axes -->
         <line x1="80" y1="40" x2="80" y2="360" stroke="#0B1426" stroke-width="1.6"/>
         <line x1="80" y1="360" x2="700" y2="360" stroke="#0B1426" stroke-width="1.6"/>
@@ -21483,8 +21470,7 @@ window.ECONOS_ICONS = {
       </div>
 
       <div class="cjp-v">
-      <svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <text x="180" y="22" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" text-anchor="middle" font-family="Inter,sans-serif">THE JOINT-PROFIT DIAGRAM</text>
+      <svg viewBox="0 22 360 398" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <line x1="44" y1="36" x2="44" y2="360" stroke="#0B1426" stroke-width="1.4"/>
         <line x1="44" y1="360" x2="346" y2="360" stroke="#0B1426" stroke-width="1.4"/>
         <text x="14" y="32" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>

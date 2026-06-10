@@ -799,6 +799,88 @@
 
   window.ECONOS_FIRM.kinkedDemand = kinkedDemand;
 
+  /* Long-run average cost (LRAC) with optional SRAC envelope and region
+     annotations. LRAC is a U with a flat minimum-efficient-scale plateau:
+       Q < qa        economies of scale (falling)
+       qa ≤ Q ≤ qb   minimum efficient scale (flat at ymin)
+       Q > qb        diseconomies of scale (rising)
+     Each SRAC (opts.srac = [q1,…]) is a parabola TANGENT to LRAC at qi —
+     value and slope matched — so it touches the envelope at qi and lies
+     above it elsewhere, the textbook short-run/long-run relationship. The
+     tangent point is qi; the SRAC's own minimum only coincides with the
+     tangency in the flat MES region (where LRAC′=0). */
+  function lrac(opts) {
+    opts = opts || {};
+    var ymin = opts.ymin != null ? opts.ymin : 10;
+    var qa = opts.qa != null ? opts.qa : 45;
+    var qb = opts.qb != null ? opts.qb : 75;
+    var ka = opts.ka != null ? opts.ka : 0.013;
+    var kb = opts.kb != null ? opts.kb : 0.008;
+    var qAxis = opts.qMax != null ? opts.qMax : 120;
+    var yAxis = opts.yMax != null ? opts.yMax : 30;
+    var qMin = opts.qMin != null ? opts.qMin : 10;
+    var qSamp = opts.qSampleMax != null ? opts.qSampleMax : qAxis - 4;
+    var n = opts.samples != null ? opts.samples : 70;
+    var L = function (q) {
+      if (q < qa) return ymin + ka * (qa - q) * (qa - q);
+      if (q > qb) return ymin + kb * (q - qb) * (q - qb);
+      return ymin;
+    };
+    var Lp = function (q) { return (L(q + 0.1) - L(q - 0.1)) / 0.2; };
+    var cc = opts.sracCurvature != null ? opts.sracCurvature : 0.035;
+    var layer = opts.layer || null;          // optional single reveal layer for SRACs
+    var nx = function (q) { return round(q / qAxis, 4); };
+    var ny = function (p) { return round(p / yAxis, 4); };
+
+    var curves = [], points = [], texts = [], polygons = [];
+
+    // SRAC envelope (drawn first so LRAC sits on top).
+    (opts.srac || []).forEach(function (qi, i) {
+      var li = L(qi), si = Lp(qi);
+      var S = function (q) { return li + si * (q - qi) + 0.5 * cc * (q - qi) * (q - qi); };
+      // sample over a window around qi (where SRAC stays on-stage)
+      var c = { id: 'SRAC' + i, d: samplePath(S, Math.max(qMin, qi - 34), Math.min(qSamp, qi + 34), qAxis, yAxis, 40),
+        tone: 'slate', strokeWidth: 1.6, dashed: '4 3' };
+      if (i === (opts.srac.length - 1)) { c.label = 'SRAC'; c.labelDx = 4; c.labelDy = -6; c.anchor = 'start'; }
+      if (layer) c.layer = layer;
+      if (c.d) curves.push(c);
+      var pt = { x: nx(qi), y: ny(li), tone: 'slate', radius: 3 };
+      if (layer) pt.layer = layer;
+      points.push(pt);
+    });
+
+    // LRAC curve.
+    curves.push({ id: 'LRAC', d: samplePath(L, qMin, qSamp, qAxis, yAxis, n),
+      tone: 'blue', label: 'LRAC', strokeWidth: 2.8, labelDx: 6, labelDy: -6, anchor: 'start' });
+
+    // Region tints + labels.
+    if (opts.regions) {
+      var top = ny(yAxis * 0.98);
+      polygons.push({ points: [[nx(qMin), 0], [nx(qa), 0], [nx(qa), top], [nx(qMin), top]], fill: '#16A34A', opacity: 0.06 });
+      polygons.push({ points: [[nx(qa), 0], [nx(qb), 0], [nx(qb), top], [nx(qa), top]], fill: '#2563EB', opacity: 0.06 });
+      polygons.push({ points: [[nx(qb), 0], [nx(qSamp), 0], [nx(qSamp), top], [nx(qb), top]], fill: '#DC2626', opacity: 0.06 });
+      texts.push({ x: nx((qMin + qa) / 2), y: 0.93, text: 'Economies of scale', tone: 'green', bold: true, anchor: 'middle' });
+      texts.push({ x: nx((qa + qb) / 2), y: 0.93, text: 'MES', tone: 'blue', bold: true, anchor: 'middle' });
+      texts.push({ x: nx((qb + qSamp) / 2), y: 0.93, text: 'Diseconomies', tone: 'rose', bold: true, anchor: 'middle' });
+    }
+    if (opts.mes) {
+      var qm = (qa + qb) / 2;
+      curves.push({ id: '_mes', shape: { type: 'vertical', x: nx(qm), from: 0, to: ny(ymin) }, tone: 'blue', strokeWidth: 1.2, dashed: '3 3' });
+      points.push({ x: nx(qm), y: ny(ymin), tone: 'blue', radius: 4.5, label: 'min LRAC', labelDx: 8, labelDy: 14, anchor: 'start' });
+    }
+
+    return {
+      width: opts.width || 740, height: opts.height || 400,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      className: opts.className || 'firm-lrac-svg', background: '#FFFFFF',
+      axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Average cost (£)' } },
+      polygons: polygons, curves: curves, points: points, texts: texts,
+      layers: opts.layers || undefined
+    };
+  }
+
+  window.ECONOS_FIRM.lrac = lrac;
+
   /* Total-cost diagram: TFC (horizontal), TVC (the S-shaped cubic from the
      origin) and TC = TFC + TVC (the same S shifted up by TFC). The vertical
      gap between TC and TVC is TFC at every output — marked with a double

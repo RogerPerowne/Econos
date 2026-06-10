@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.152.0 — 2026-06-10
+
+### Chart engine Phase 3 — LRAC big picture migrated (+ SRAC-envelope capability)
+
+- New `lrac()` builder: a flat-bottomed U-shaped long-run average cost curve
+  (economies of scale → minimum efficient scale plateau → diseconomies), with
+  region tints/labels and the min-LRAC marker. Replaces the hand-tuned bezier
+  `lracBigPicture`.
+- The builder can also derive the **SRAC envelope**: each short-run AC curve is
+  a parabola TANGENT to LRAC at its tangent point (value + slope matched), so it
+  touches the envelope and lies above it elsewhere — geometry-guaranteed. (Ready
+  to wire into a dedicated SRAC card once placement is agreed.)
+- `lint:charts` clean (113 specs), 114 snapshot tests; `sw.js` → `econos-v490`.
+
 ## 0.151.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Oligopoly kinked demand curve migrated

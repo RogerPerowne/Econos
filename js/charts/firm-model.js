@@ -733,6 +733,72 @@
   window.ECONOS_FIRM.solveEq = solveEq;
   window.ECONOS_FIRM.naturalMonopoly = naturalMonopoly;
 
+  /* Oligopoly kinked demand curve — the fiddly one. Demand kinks at the
+     going price (Pk, Qk): elastic ABOVE the kink (rivals don't follow a price
+     rise) and inelastic BELOW (rivals match a price cut). Each demand segment
+     has its own MR at twice the slope, so MR is DISCONTINUOUS — a vertical gap
+     directly under the kink. MC can sit anywhere in that gap (MC₁→MC₂) and the
+     profit-max price/output don't change → price rigidity.
+       kdc-1  the kinked demand (elastic above / inelastic below) + P*, Q*
+       kdc-2  the two MR segments and the vertical MR gap
+       kdc-3  MC₁ and MC₂ both pass through the gap ⇒ price stays at P*
+     Pure geometry from (Pk, Qk) and the two slopes. */
+  function kinkedDemand(opts) {
+    opts = opts || {};
+    var Pk = opts.Pk != null ? opts.Pk : 10;
+    var Qk = opts.Qk != null ? opts.Qk : 50;
+    var b1 = opts.b1 != null ? opts.b1 : 0.08;   // elastic (shallow) upper slope
+    var b2 = opts.b2 != null ? opts.b2 : 0.15;   // inelastic (steep) lower slope
+    var mc1 = opts.mc1 != null ? opts.mc1 : 3;
+    var mc2 = opts.mc2 != null ? opts.mc2 : 5;
+    var qAxis = opts.qMax != null ? opts.qMax : 100;
+    var yAxis = opts.yMax != null ? opts.yMax : 16;
+    var qMin = opts.qMin != null ? opts.qMin : 8;
+    var nx = function (q) { return round(q / qAxis, 4); };
+    var ny = function (p) { return round(p / yAxis, 4); };
+    var a1 = Pk + b1 * Qk, a2 = Pk + b2 * Qk;
+    var Du = function (q) { return a1 - b1 * q; }, Dl = function (q) { return a2 - b2 * q; };
+    var MRu = function (q) { return a1 - 2 * b1 * q; }, MRl = function (q) { return a2 - 2 * b2 * q; };
+    var mruK = MRu(Qk), mrlK = MRl(Qk);          // top & bottom of the MR gap
+    var mrlZero = a2 / (2 * b2);                  // where lower MR hits the axis
+
+    var curves = [], points = [], texts = [], arrows = [];
+
+    // ── kdc-1: the kinked demand ──
+    curves.push({ id: 'D', d: 'M ' + nx(qMin) + ',' + ny(Du(qMin)) + ' L ' + nx(Qk) + ',' + ny(Pk) + ' L ' + nx(qAxis * 0.95) + ',' + ny(Dl(qAxis * 0.95)),
+      tone: 'green', label: 'D', strokeWidth: 2.6, labelDx: 6, labelDy: 8, anchor: 'start', layer: 'kdc-1' });
+    curves.push({ id: '_qstar', shape: { type: 'vertical', x: nx(Qk), from: 0, to: ny(Pk) }, tone: 'slate', strokeWidth: 1.2, dashed: '3 3', layer: 'kdc-1' });
+    curves.push({ id: '_pstar', shape: { type: 'horizontal', y: ny(Pk), from: 0, to: nx(Qk) }, tone: 'slate', strokeWidth: 1.2, dashed: '3 3', layer: 'kdc-1' });
+    points.push({ x: nx(Qk), y: ny(Pk), tone: 'slate', radius: 5, layer: 'kdc-1' });
+    texts.push({ x: -0.012, y: ny(Pk), text: 'P*', tone: 'slate', bold: true, anchor: 'end', layer: 'kdc-1' });
+    texts.push({ x: nx(Qk), y: -0.05, text: 'Q*', tone: 'slate', bold: true, anchor: 'middle', layer: 'kdc-1' });
+    texts.push({ x: nx(qMin + (Qk - qMin) * 0.45), y: ny(Du(qMin + (Qk - qMin) * 0.45)) + 0.06, text: 'elastic above', tone: 'green', bold: true, anchor: 'middle', layer: 'kdc-1' });
+    texts.push({ x: nx(Qk + (qAxis * 0.95 - Qk) * 0.5), y: ny(Dl(Qk + (qAxis * 0.95 - Qk) * 0.5)) + 0.06, text: 'inelastic below', tone: 'green', bold: true, anchor: 'middle', layer: 'kdc-1' });
+
+    // ── kdc-2: the two MR segments + the vertical gap ──
+    curves.push({ id: 'MRu', d: 'M ' + nx(qMin) + ',' + ny(MRu(qMin)) + ' L ' + nx(Qk) + ',' + ny(mruK), tone: 'amber', label: 'MR', strokeWidth: 2.0, labelDx: -6, labelDy: -8, anchor: 'end', layer: 'kdc-2' });
+    curves.push({ id: 'MRl', d: 'M ' + nx(Qk) + ',' + ny(mrlK) + ' L ' + nx(mrlZero) + ',0', tone: 'amber', strokeWidth: 2.0, layer: 'kdc-2' });
+    curves.push({ id: '_gap', shape: { type: 'vertical', x: nx(Qk), from: ny(mrlK), to: ny(mruK) }, tone: 'rose', strokeWidth: 2.4, dashed: '4 3', layer: 'kdc-2' });
+    texts.push({ x: nx(Qk) + 0.015, y: ny((mruK + mrlK) / 2), text: 'MR gap', tone: 'rose', bold: true, anchor: 'start', layer: 'kdc-2' });
+
+    // ── kdc-3: MC₁ and MC₂ both in the gap → price sticky ──
+    curves.push({ id: 'MC1', shape: { type: 'horizontal', y: ny(mc1), from: 0, to: nx(Qk + 12) }, tone: 'blue', label: 'MC₁', strokeWidth: 2.2, labelDx: 6, labelDy: 4, anchor: 'start', layer: 'kdc-3' });
+    curves.push({ id: 'MC2', shape: { type: 'horizontal', y: ny(mc2), from: 0, to: nx(Qk + 12) }, tone: 'purple', label: 'MC₂', strokeWidth: 2.2, labelDx: 6, labelDy: 4, anchor: 'start', layer: 'kdc-3' });
+    arrows.push({ x1: nx(Qk - 16), y1: ny(mc1), x2: nx(Qk - 16), y2: ny(mc2), tone: 'slate', strokeWidth: 1.8, markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'kdc-3' });
+    texts.push({ x: 0.5, y: 0.93, text: 'MC can rise MC₁ → MC₂ within the gap — price stays at P*', tone: 'blue', bold: true, anchor: 'middle', layer: 'kdc-3' });
+
+    return {
+      width: opts.width || 740, height: opts.height || 400,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      className: opts.className || 'firm-kinked-demand-svg', background: '#FFFFFF',
+      axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
+      layers: ['kdc-1', 'kdc-2', 'kdc-3'],
+      curves: curves, points: points, texts: texts, arrows: arrows
+    };
+  }
+
+  window.ECONOS_FIRM.kinkedDemand = kinkedDemand;
+
   /* Total-cost diagram: TFC (horizontal), TVC (the S-shaped cubic from the
      origin) and TC = TFC + TVC (the same S shifted up by TFC). The vertical
      gap between TC and TVC is TFC at every output — marked with a double

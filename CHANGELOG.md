@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.140.0 — 2026-06-10
+
+### Chart engine: firm diagrams Phase 2 — revenue side + profit-max
+
+Builds on Phase 1's cost-curve generator with the revenue side, so the
+generator now produces the complete short-run firm diagram.
+
+- `window.ECONOS_FIRM.costRevenue({ fc, vc, demand, … })` adds AR/MR to the
+  cost curves and **solves the profit-maximising output where MC=MR**
+  numerically, reads the price up to AR, and shades the supernormal-profit
+  (or loss) rectangle. Two demand regimes, both pure data:
+  - `demand:{ type:'linear', a, b }` → AR = a−bQ, MR = a−2bQ (MR at exactly
+    twice the slope), profit-max with P\* read up to demand.
+  - `demand:{ type:'horizontal', price }` → AR = MR = P (price-taker); MC=MR=P
+    is a single marked point.
+  The crossings are declared as `point.intersection` / `point.on`, so the
+  engine solves/snaps every dot onto its curve.
+- Two proof specs, both screenshot-verified against the reference numbers:
+  - `marcosProfitMax` (`marcos-profit-max.js`) — monopolistic competition:
+    MC=MR at Q≈71, P\*≈£14.85, AC≈£8.46, supernormal profit ≈£457/day.
+  - `marcosProfitMaxPC` (`marcos-profit-max-pc.js`) — perfect competition at
+    P=£12: MC=MR=P at Q≈86, AC≈£8.68, profit ≈£286/day, with min-AC
+    (productive efficiency) correctly to the left of profit-max output.
+- Catalogued in `docs/visual-catalogue.md`; `sw.js` cache bumped (`econos-v477`).
+
+Next phase: migrate the existing hand-rolled Theme 3 firm/cost diagrams onto
+the generator, then layer on the stepped-reveal interactivity.
+
 ## 0.139.0 — 2026-06-10
 
 ### Chart engine: cost-function-driven firm diagrams (Phase 1)

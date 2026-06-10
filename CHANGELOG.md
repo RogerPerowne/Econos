@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.143.0 — 2026-06-10
+
+### Chart engine Phase 3 — Marginal cost migrated
+
+- New spec `marginal-cost.js` (`ECONOS_MARGINAL_COST_SPEC`) replaces the
+  hand-rolled `marginalCostChart`: MC (the Nike tick) with dashed AVC/AC
+  reference, the engine SOLVING the crossings so MC meets AVC and AC exactly
+  at their minima (same FC=£40 cubic as the rest of the topic — MC min ≈£9.6
+  at Q≈4, MC=AVC at Q≈6, MC=AC at Q≈7). Layers mc-1 (MC) / mc-2 (AVC, AC +
+  crossing dots) keep the 2-step reveal.
+- `costCurves()` gains `dashedCurves`, `crossingsLayer` and `nearAVC`/`nearAC`
+  options so reference curves and crossing dots can be styled and layered.
+- Per the agreed convention, Card 4's worked TC→MC table is replaced by the
+  curve diagram with the "MC = ΔTC/ΔQ" calculation kept in the card text.
+- `lint:charts` clean (100 specs), 101 snapshot tests; `sw.js` → `econos-v480`.
+
 ## 0.142.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Average cost family migrated

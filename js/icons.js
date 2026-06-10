@@ -17980,50 +17980,7 @@ window.ECONOS_ICONS = {
   /* labourDemandShift — Card 3 interactive (lds-1..lds-3). At a fixed
      wage, a rise in product demand shifts D_L right (more hired); a
      fall shifts it left (fewer hired). */
-  labourDemandShift: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <defs>
-          <marker id="lds-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
-          <marker id="lds-r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>
-        </defs>
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">SHIFTS IN LABOUR DEMAND</text>
-        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="34" y="42" font-size="11" font-weight="700" fill="#475569">Wage</text>
-        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Labour employed (L)</text>
-        <!-- fixed wage line -->
-        <line x1="80" y1="190" x2="600" y2="190" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5 4"/>
-        <text x="74" y="194" font-size="12" font-weight="800" fill="#475569" text-anchor="end">W</text>
-        <!-- lds-1: original D_L -->
-        <g class="lds-1" style="display:none">
-          <line x1="80" y1="100" x2="560" y2="300" stroke="#2563EB" stroke-width="2.6"/>
-          <text x="556" y="290" font-size="12" font-weight="800" fill="#2563EB">D_L</text>
-          <circle cx="296" cy="190" r="5.5" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-          <line x1="296" y1="190" x2="296" y2="320" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
-          <text x="296" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">L₁</text>
-        </g>
-        <!-- lds-2: shift right -->
-        <g class="lds-2" style="display:none">
-          <line x1="180" y1="100" x2="620" y2="283" stroke="#16A34A" stroke-width="2.4" stroke-dasharray="7 4"/>
-          <text x="624" y="283" font-size="12" font-weight="800" fill="#16A34A">D_L₁</text>
-          <line x1="330" y1="150" x2="404" y2="150" stroke="#16A34A" stroke-width="2.5" marker-end="url(#lds-g)"/>
-          <circle cx="396" cy="190" r="5.5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="396" y1="190" x2="396" y2="320" stroke="#16A34A" stroke-width="1.1" stroke-dasharray="3 3"/>
-          <text x="396" y="338" font-size="12" font-weight="800" fill="#15803D" text-anchor="middle">L₂</text>
-        </g>
-        <!-- lds-3: shift left -->
-        <g class="lds-3" style="display:none">
-          <line x1="80" y1="142" x2="460" y2="300" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="7 4"/>
-          <text x="430" y="300" font-size="12" font-weight="800" fill="#DC2626">D_L₂</text>
-          <line x1="270" y1="232" x2="206" y2="232" stroke="#DC2626" stroke-width="2.5" marker-end="url(#lds-r)"/>
-          <circle cx="196" cy="190" r="5.5" fill="#DC2626" stroke="#fff" stroke-width="2"/>
-          <line x1="196" y1="190" x2="196" y2="320" stroke="#DC2626" stroke-width="1.1" stroke-dasharray="3 3"/>
-          <text x="196" y="338" font-size="12" font-weight="800" fill="#B91C1C" text-anchor="middle">L₀</text>
-        </g>
-      </svg>
-    </div>
-  `,
+  labourDemandShift: window.ECONOS_PPF.render(window.ECONOS_LABOUR_DEMAND_SHIFT_SPEC),
 
   /* labourShiftVsMovement — Card 4 static two-panel comparison.
      Left: a non-wage factor shifts the whole curve. Right: a wage
@@ -18074,40 +18031,7 @@ window.ECONOS_ICONS = {
 
   /* labourSupplyShift — Card 2 interactive (lss-1..lss-3). S shifts
      right (increase) or left (decrease) from non-wage factors. */
-  labourSupplyShift: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <defs>
-          <marker id="lss-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
-          <marker id="lss-r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>
-        </defs>
-        <text x="14" y="28" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em">SHIFTS IN LABOUR SUPPLY</text>
-        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="34" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
-        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Quantity of labour (L)</text>
-        <!-- lss-1: original S -->
-        <g class="lss-1" style="display:none">
-          <line x1="120" y1="300" x2="600" y2="90" stroke="#2563EB" stroke-width="2.6"/>
-          <text x="566" y="104" font-size="12" font-weight="800" fill="#2563EB">S</text>
-        </g>
-        <!-- lss-2: increase → shift right -->
-        <g class="lss-2" style="display:none">
-          <line x1="220" y1="300" x2="640" y2="116" stroke="#16A34A" stroke-width="2.4" stroke-dasharray="7 4"/>
-          <text x="612" y="132" font-size="12" font-weight="800" fill="#16A34A">S₁</text>
-          <line x1="300" y1="180" x2="378" y2="180" stroke="#16A34A" stroke-width="2.5" marker-end="url(#lss-g)"/>
-          <text x="339" y="172" font-size="10.5" font-weight="700" fill="#15803D" text-anchor="middle">increase</text>
-        </g>
-        <!-- lss-3: decrease → shift left -->
-        <g class="lss-3" style="display:none">
-          <line x1="80" y1="266" x2="500" y2="90" stroke="#DC2626" stroke-width="2.4" stroke-dasharray="7 4"/>
-          <text x="476" y="104" font-size="12" font-weight="800" fill="#DC2626">S₂</text>
-          <line x1="300" y1="236" x2="222" y2="236" stroke="#DC2626" stroke-width="2.5" marker-end="url(#lss-r)"/>
-          <text x="261" y="252" font-size="10.5" font-weight="700" fill="#B91C1C" text-anchor="middle">decrease</text>
-        </g>
-      </svg>
-    </div>
-  `,
+  labourSupplyShift: window.ECONOS_PPF.render(window.ECONOS_LABOUR_SUPPLY_SHIFT_SPEC),
 
   /* occupationChoiceHub — Card 3. Six factors around a central
      "One occupation" node. Same hub grammar as monopolyFeaturesHub. */

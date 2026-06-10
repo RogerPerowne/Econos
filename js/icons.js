@@ -17975,35 +17975,7 @@ window.ECONOS_ICONS = {
 
   /* labourDemandCurve — Card 2 interactive (ld-1..ld-2). Downward
      MRP = D_L curve; at wage W₁ the firm hires L₁ (MRP = wage). */
-  labourDemandCurve: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 28 760 332" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="34" y="42" font-size="11" font-weight="700" fill="#475569">Wage,</text>
-        <text x="34" y="56" font-size="11" font-weight="700" fill="#475569">MRP</text>
-        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Labour employed (L)</text>
-        <!-- D_L = MRP -->
-        <line x1="80" y1="90" x2="620" y2="300" stroke="#2563EB" stroke-width="2.6"/>
-        <text x="556" y="285" font-size="13" font-weight="800" fill="#2563EB">Labour demand = MRP</text>
-        <!-- ld-1: wage W1 → employment L1 -->
-        <g class="ld-1" style="display:none">
-          <line x1="80" y1="180" x2="311" y2="180" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="74" y="184" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end">W₁</text>
-          <circle cx="311" cy="180" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-          <line x1="311" y1="180" x2="311" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="311" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">L₁</text>
-        </g>
-        <!-- ld-2: hiring rule callout -->
-        <g class="ld-2" style="display:none">
-          <rect x="356" y="104" width="250" height="40" rx="9" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.4"/>
-          <text x="481" y="122" font-size="12" font-weight="800" fill="#1D4ED8" text-anchor="middle">Hire up to where MRP = wage</text>
-          <text x="481" y="137" font-size="10.5" fill="#475569" text-anchor="middle">each worker must at least cover their wage</text>
-          <line x1="356" y1="150" x2="318" y2="178" stroke="#1D4ED8" stroke-width="1.2" stroke-dasharray="2 2"/>
-        </g>
-      </svg>
-    </div>
-  `,
+  labourDemandCurve: window.ECONOS_PPF.render(window.ECONOS_LABOUR_DEMAND_SPEC),
 
   /* labourDemandShift — Card 3 interactive (lds-1..lds-3). At a fixed
      wage, a rise in product demand shifts D_L right (more hired); a
@@ -18098,42 +18070,7 @@ window.ECONOS_ICONS = {
 
   /* labourSupplyCurve — Card 1 interactive (ls-1..ls-2). Upward S;
      a higher wage is a movement ALONG the curve (A → B). */
-  labourSupplyCurve: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 28 760 332" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <defs>
-          <marker id="ls-a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
-        </defs>
-        <line x1="80" y1="46" x2="80" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="80" y1="320" x2="660" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="34" y="46" font-size="11" font-weight="700" fill="#475569">Wage</text>
-        <text x="660" y="342" font-size="11" font-weight="700" fill="#475569" text-anchor="end">Quantity of labour (L)</text>
-        <!-- S = labour supply (upward) -->
-        <line x1="80" y1="300" x2="620" y2="90" stroke="#16A34A" stroke-width="2.6"/>
-        <text x="556" y="108" font-size="13" font-weight="800" fill="#16A34A">S = labour supply</text>
-        <!-- ls-1: point A at wage W1 -->
-        <g class="ls-1" style="display:none">
-          <line x1="80" y1="240" x2="234" y2="240" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="74" y="244" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end">W₁</text>
-          <circle cx="234" cy="240" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <text x="221" y="234" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end">A</text>
-          <line x1="234" y1="240" x2="234" y2="320" stroke="#0B1426" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="234" y="338" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle">L₁</text>
-        </g>
-        <!-- ls-2: higher wage W2 → point B (movement along) -->
-        <g class="ls-2" style="display:none">
-          <line x1="80" y1="150" x2="466" y2="150" stroke="#15803D" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="74" y="154" font-size="12" font-weight="800" fill="#15803D" text-anchor="end">W₂</text>
-          <circle cx="466" cy="150" r="6" fill="#15803D" stroke="#fff" stroke-width="2"/>
-          <text x="478" y="148" font-size="12" font-weight="800" fill="#15803D">B</text>
-          <line x1="466" y1="150" x2="466" y2="320" stroke="#15803D" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="466" y="338" font-size="12" font-weight="800" fill="#15803D" text-anchor="middle">L₂</text>
-          <path d="M 250 232 Q 360 200, 452 158" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#ls-a)"/>
-          <text x="360" y="196" font-size="10.5" font-weight="700" fill="#15803D" text-anchor="middle">higher wage → more supplied</text>
-        </g>
-      </svg>
-    </div>
-  `,
+  labourSupplyCurve: window.ECONOS_PPF.render(window.ECONOS_LABOUR_SUPPLY_SPEC),
 
   /* labourSupplyShift — Card 2 interactive (lss-1..lss-3). S shifts
      right (increase) or left (decrease) from non-wage factors. */

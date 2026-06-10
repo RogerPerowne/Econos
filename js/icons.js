@@ -4724,6 +4724,7 @@ window.ECONOS_ICONS = {
   bufferStockBands: window.ECONOS_PPF.render(window.ECONOS_BUFFER_STOCK_SPEC),
   bubbleCycle: window.ECONOS_PPF.render(window.ECONOS_BUBBLE_CYCLE_SPEC),
   kuznetsDevelopment: window.ECONOS_PPF.render(window.ECONOS_KUZNETS_CURVE_SPEC),
+  outputGapCompare: window.ECONOS_PPF.render(window.ECONOS_OUTPUT_GAP_COMPARE_SPEC),
 
   allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),
 
@@ -22931,6 +22932,170 @@ window.ECONOS_ICONS = {
           <div class="gbh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="gbh-h" style="color:#065F46;">\u{1F30D} Climate & infrastructure</div><div class="gbh-s">New priorities demand investment.</div></div>
         </div>
       </div>
+    </div>
+  `,
+
+  /* fiscalMapHub – Public Sector Finances card 1. "The map" of the
+     topic: six fiscal concepts as numbered tiles, in a 3×2 grid that
+     collapses to two columns then one on narrow screens. */
+  fiscalMapHub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .fmh-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:880px;margin:0 auto;}
+        .fmh-tile{position:relative;border-radius:13px;padding:14px 13px 12px;box-shadow:0 1px 3px rgba(15,23,42,.06);}
+        .fmh-num{position:absolute;top:-9px;left:13px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;}
+        .fmh-emoji{font-size:22px;line-height:1;margin-bottom:5px;}
+        .fmh-h{font-size:12.5px;font-weight:800;line-height:1.2;margin-bottom:3px;}
+        .fmh-s{font-size:10.8px;color:#475569;line-height:1.32;}
+        @media(max-width:660px){.fmh-grid{grid-template-columns:1fr 1fr;}}
+        @media(max-width:420px){.fmh-grid{grid-template-columns:1fr;}}
+      </style>
+      <div class="fmh-grid">
+        <div class="fmh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="fmh-num" style="background:#16A34A;">1</div><div class="fmh-emoji">\u{1F39A}️</div><div class="fmh-h" style="color:#065F46;">Automatic stabilisers</div><div class="fmh-s">Tax and benefits move with the cycle on their own.</div></div>
+        <div class="fmh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="fmh-num" style="background:#EA580C;">2</div><div class="fmh-emoji">\u{1F3DB}️</div><div class="fmh-h" style="color:#9A3412;">Discretionary policy</div><div class="fmh-s">Deliberate changes to tax or spending decisions.</div></div>
+        <div class="fmh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="fmh-num" style="background:#7C3AED;">3</div><div class="fmh-emoji">\u{1F9FE}</div><div class="fmh-h" style="color:#5B21B6;">Tax revenue & spending</div><div class="fmh-s">The two sides of the government budget.</div></div>
+        <div class="fmh-tile" style="background:#EFF6FF;border:1.5px solid #BFDBFE;"><div class="fmh-num" style="background:#2563EB;">4</div><div class="fmh-emoji">\u{2696}️</div><div class="fmh-h" style="color:#1E40AF;">Fiscal deficit or surplus</div><div class="fmh-s">The annual gap between spending and revenue.</div></div>
+        <div class="fmh-tile" style="background:#EEF2FF;border:1.5px solid #C7D2FE;"><div class="fmh-num" style="background:#4F46E5;">5</div><div class="fmh-emoji">\u{1F3E6}</div><div class="fmh-h" style="color:#3730A3;">Borrowing</div><div class="fmh-s">How a deficit is financed each year.</div></div>
+        <div class="fmh-tile" style="background:#F1F5F9;border:1.5px solid #CBD5E1;"><div class="fmh-num" style="background:#475569;">6</div><div class="fmh-emoji">\u{1F4B0}</div><div class="fmh-h" style="color:#334155;">National debt</div><div class="fmh-s">The stock of past deficits built up over time.</div></div>
+      </div>
+    </div>
+  `,
+
+  /* debtBathtub – Public Sector Finances card 3. Stock-vs-flow
+     illustration: this year's budget is a bath (revenue tap fills,
+     spending tap drains); the leftover gap pipes into the national
+     debt tank — the stock that builds up over the years. */
+  debtBathtub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:8px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A bath labelled this year's budget is filled by a tax-revenue tap and drained by a government-spending tap; the annual deficit pipes into a national debt tank that builds up over time" style="width:100%;height:auto;display:block;">
+        <defs>
+          <linearGradient id="dbt-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7DD3FC"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+          <linearGradient id="dbt-debt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient>
+          <linearGradient id="dbt-tub" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient>
+          <marker id="dbt-arr-g" markerWidth="9" markerHeight="9" refX="4" refY="8" orient="auto"><polygon points="0,0 8,0 4,9" fill="#16A34A"/></marker>
+          <marker id="dbt-arr-o" markerWidth="9" markerHeight="9" refX="4" refY="8" orient="auto"><polygon points="0,0 8,0 4,9" fill="#EA580C"/></marker>
+          <marker id="dbt-arr-p" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><polygon points="0,0 0,8 9,4" fill="#7C3AED"/></marker>
+        </defs>
+
+        <!-- Tax revenue tap (flows in) -->
+        <text x="34" y="34" font-size="12.5" font-weight="800" fill="#15803D">Tax revenue</text>
+        <text x="34" y="50" font-size="11" fill="#16A34A">(flows in)</text>
+        <path d="M 60,58 h 70 v 14 h -22" fill="none" stroke="#16A34A" stroke-width="7" stroke-linecap="round"/>
+        <line x1="108" y1="78" x2="108" y2="120" stroke="#16A34A" stroke-width="5" stroke-dasharray="3 5" marker-end="url(#dbt-arr-g)"/>
+
+        <!-- Government spending tap (drains out) -->
+        <text x="14" y="196" font-size="12.5" font-weight="800" fill="#C2410C">Government</text>
+        <text x="14" y="212" font-size="12.5" font-weight="800" fill="#C2410C">spending</text>
+        <text x="14" y="228" font-size="11" fill="#EA580C">(flows out)</text>
+        <line x1="150" y1="232" x2="150" y2="270" stroke="#EA580C" stroke-width="5" stroke-dasharray="3 5" marker-end="url(#dbt-arr-o)"/>
+
+        <!-- Bathtub -->
+        <rect x="96" y="150" width="210" height="78" rx="30" fill="url(#dbt-tub)" stroke="#94A3B8" stroke-width="2.5"/>
+        <path d="M 108,168 q 0,46 40,46 h 118 q 40,0 40,-46 z" fill="url(#dbt-water)" opacity="0.92"/>
+        <ellipse cx="201" cy="168" rx="93" ry="11" fill="#BAE6FD" opacity="0.85"/>
+        <circle cx="92" cy="232" r="7" fill="#94A3B8"/><circle cx="310" cy="232" r="7" fill="#94A3B8"/>
+        <text x="201" y="200" font-size="13" font-weight="800" fill="#075985" text-anchor="middle">This year's budget</text>
+
+        <!-- Deficit pipe from tub to debt tank -->
+        <text x="330" y="116" font-size="12.5" font-weight="800" fill="#6D28D9" text-anchor="middle">Annual deficit</text>
+        <text x="330" y="132" font-size="11" fill="#7C3AED" text-anchor="middle">(the gap)</text>
+        <path d="M 306,186 h 60 v -40 h 70" fill="none" stroke="#A78BFA" stroke-width="10" stroke-linecap="round"/>
+        <line x1="430" y1="146" x2="472" y2="146" stroke="#7C3AED" stroke-width="5" stroke-dasharray="3 5" marker-end="url(#dbt-arr-p)"/>
+
+        <!-- National debt tank (the stock) -->
+        <ellipse cx="560" cy="262" rx="92" ry="20" fill="#CBD5E1"/>
+        <path d="M 468,150 a 92,20 0 0 0 184,0 v 112 a 92,20 0 0 1 -184,0 z" fill="#EDE9FE" stroke="#A78BFA" stroke-width="2.5"/>
+        <path d="M 468,182 a 92,20 0 0 0 184,0 v 80 a 92,20 0 0 1 -184,0 z" fill="url(#dbt-debt)" opacity="0.92"/>
+        <ellipse cx="560" cy="182" rx="92" ry="20" fill="#C4B5FD" opacity="0.9"/>
+        <ellipse cx="560" cy="150" rx="92" ry="20" fill="none" stroke="#A78BFA" stroke-width="2.5"/>
+        <text x="560" y="232" font-size="14" font-weight="800" fill="#4C1D95" text-anchor="middle">NATIONAL DEBT</text>
+        <text x="560" y="250" font-size="11" fill="#5B21B6" text-anchor="middle">(the stock)</text>
+        <!-- ladder hint -->
+        <line x1="636" y1="158" x2="636" y2="250" stroke="#A78BFA" stroke-width="2"/><line x1="648" y1="158" x2="648" y2="250" stroke="#A78BFA" stroke-width="2"/>
+        <line x1="636" y1="178" x2="648" y2="178" stroke="#A78BFA" stroke-width="2"/><line x1="636" y1="206" x2="648" y2="206" stroke="#A78BFA" stroke-width="2"/><line x1="636" y1="234" x2="648" y2="234" stroke="#A78BFA" stroke-width="2"/>
+
+        <!-- Caption -->
+        <text x="300" y="312" font-size="12.5" font-weight="700" fill="#4338CA" text-anchor="middle">If spending exceeds tax revenue, the gap is the deficit —</text>
+        <text x="300" y="330" font-size="12.5" font-weight="700" fill="#4338CA" text-anchor="middle">and repeated deficits build up the national debt.</text>
+      </svg>
+    </div>
+  `,
+
+  /* deficitPressurePanel – Public Sector Finances card 5. Six gauges
+     (rendered through the dial engine for exact needle geometry) laid
+     out on two rows. Each leans toward WIDENS, with a caption saying
+     what pushes the deficit which way. */
+  deficitPressurePanel: `
+    <div style="line-height:1.3;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .dpp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 16px;max-width:760px;margin:0 auto;}
+        .dpp-cell{text-align:center;}
+        .dpp-dialwrap{position:relative;max-width:150px;margin:0 auto;}
+        .dpp-w{position:absolute;top:2px;left:4px;font-size:9.5px;font-weight:800;color:#DC2626;letter-spacing:.04em;}
+        .dpp-n{position:absolute;top:2px;right:4px;font-size:9.5px;font-weight:800;color:#16A34A;letter-spacing:.04em;}
+        .dpp-ends{display:flex;justify-content:space-between;max-width:130px;margin:-4px auto 0;font-size:13px;font-weight:800;color:#64748B;}
+        .dpp-h{font-size:12px;font-weight:800;line-height:1.18;margin-top:4px;color:#1E293B;}
+        .dpp-s{font-size:10.4px;color:#475569;line-height:1.3;margin-top:2px;}
+        @media(max-width:560px){.dpp-grid{grid-template-columns:1fr 1fr;}}
+      </style>
+      <div class="dpp-grid">
+        ${[
+          ['Recession / growth','Recessions widen; strong growth narrows.'],
+          ['Unemployment','Higher unemployment widens.'],
+          ['Tax policy','Tax cuts widen; tax rises narrow.'],
+          ['Public spending plans','Higher plans widen; restraint narrows.'],
+          ['One-off shocks','Pandemics and crises widen.'],
+          ['Debt-interest costs','Higher rates or debt widen.']
+        ].map(function(d){return '<div class="dpp-cell"><div class="dpp-dialwrap"><span class="dpp-w">WIDENS</span><span class="dpp-n">NARROWS</span>'+window.ECONOS_DIALS.render({type:'gauge',size:150,value:3.4,min:0,max:10,tone:'amber',ariaLabel:d[0]+' — pressure on the deficit'})+'</div><div class="dpp-ends"><span>−</span><span>+</span></div><div class="dpp-h">'+d[0]+'</div><div class="dpp-s">'+d[1]+'</div></div>';}).join('')}
+      </div>
+    </div>
+  `,
+
+  /* debtSnowball – Public Sector Finances card 6. The classic debt
+     snowball: new deficits and interest payments roll onto the ball,
+     so the stock grows over time. */
+  debtSnowball: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:10px;font-family:Inter,sans-serif;color:#0B1426;">
+      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A snowball labelled DEBT grows as new deficits and interest payments roll onto it over time" style="width:100%;height:auto;display:block;">
+        <defs>
+          <radialGradient id="dsb-ball" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#EFF4FB"/><stop offset="1" stop-color="#CBD8EA"/></radialGradient>
+          <marker id="dsb-o" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><polygon points="0,0 0,8 9,4" fill="#EA580C"/></marker>
+          <marker id="dsb-p" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><polygon points="0,0 0,8 9,4" fill="#7C3AED"/></marker>
+          <marker id="dsb-b" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><polygon points="0,0 0,8 9,4" fill="#2563EB"/></marker>
+        </defs>
+
+        <!-- ground sweep -->
+        <path d="M 150,250 Q 420,222 660,236" fill="none" stroke="#E2E8F0" stroke-width="10" stroke-linecap="round"/>
+
+        <!-- motion lines -->
+        <line x1="300" y1="120" x2="360" y2="120" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+        <line x1="290" y1="150" x2="358" y2="150" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+        <line x1="305" y1="180" x2="362" y2="180" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- snowball -->
+        <circle cx="420" cy="150" r="86" fill="url(#dsb-ball)" stroke="#B6C6DD" stroke-width="2"/>
+        <circle cx="392" cy="128" r="9" fill="#FFFFFF" opacity="0.9"/>
+        <circle cx="452" cy="170" r="7" fill="#DCE6F3" opacity="0.9"/>
+        <circle cx="430" cy="120" r="5" fill="#DCE6F3" opacity="0.8"/>
+        <text x="420" y="160" font-size="34" font-weight="900" fill="#1E3A8A" text-anchor="middle" letter-spacing="1">DEBT</text>
+        <!-- little chunks -->
+        <circle cx="510" cy="228" r="6" fill="#EAF0F8"/><circle cx="538" cy="236" r="4" fill="#EAF0F8"/><circle cx="345" cy="232" r="5" fill="#EAF0F8"/>
+
+        <!-- inbound: new deficits (orange) -->
+        <text x="40" y="86" font-size="12.5" font-weight="800" fill="#C2410C">New deficits</text>
+        <text x="40" y="102" font-size="10.6" fill="#7C2D12">Spending beats revenue.</text>
+        <line x1="150" y1="98" x2="318" y2="124" stroke="#EA580C" stroke-width="3.5" marker-end="url(#dsb-o)"/>
+
+        <!-- inbound: interest (purple) -->
+        <text x="40" y="190" font-size="12.5" font-weight="800" fill="#6D28D9">Interest payments</text>
+        <text x="40" y="206" font-size="10.6" fill="#5B21B6">Borrowing costs add on.</text>
+        <line x1="170" y1="196" x2="324" y2="172" stroke="#7C3AED" stroke-width="3.5" marker-end="url(#dsb-p)"/>
+
+        <!-- outbound: debt grows (blue) -->
+        <text x="560" y="120" font-size="12.5" font-weight="800" fill="#1D4ED8">Debt grows</text>
+        <text x="560" y="136" font-size="10.6" fill="#1E3A8A">Bigger over time.</text>
+        <line x1="512" y1="150" x2="556" y2="150" stroke="#2563EB" stroke-width="3.5" marker-end="url(#dsb-b)"/>
+      </svg>
     </div>
   `,
 

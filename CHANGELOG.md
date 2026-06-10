@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.136.0 — 2026-06-10
+
+### Public Sector Finances topic complete (7 cards)
+
+- **Public Sector Finances (Edexcel A 4.5.3)** built and flipped live,
+  replacing the placeholder. Seven cards: the big picture (the fiscal map +
+  three core distinctions) → automatic stabilisers vs discretionary policy →
+  fiscal deficit vs national debt → structural vs cyclical deficits → what
+  makes fiscal deficits change → what makes national debt change → the whole
+  story. Uses the `heroFiscal` cover hero.
+- Rich new visuals built to match the mockup illustrations:
+  - `fiscalMapHub` (`js/icons.js`) — the six fiscal concepts as a numbered
+    3×2 tile map, collapsing to two columns then one on mobile.
+  - `debtBathtub` (`js/icons.js`) — stock-vs-flow illustration: this year's
+    budget is a bath (tax-revenue tap fills, spending tap drains) and the
+    annual deficit pipes into the national-debt tank that builds up over time.
+  - `outputGapCompare` (`js/charts/specs/output-gap-compare.js`) — a two-panel
+    chart-engine diagram contrasting a recession's negative output gap
+    (cyclical deficit) with output at trend yet a budget still in deficit
+    (structural deficit).
+  - `deficitPressurePanel` (`js/icons.js`) — six dial-engine gauges laid out
+    on two rows, each leaning toward WIDENS, showing what pushes the deficit.
+  - `debtSnowball` (`js/icons.js`) — the debt snowball: new deficits and
+    interest payments roll on, so the stock grows over time.
+  All catalogued in `docs/visual-catalogue.md`.
+- `sw.js` cache bumped (`econos-v473`) for the `icons.js` + chart-spec change.
+
 ## 0.135.0 — 2026-06-10
 
 ### Public Expenditure topic complete (7 cards)

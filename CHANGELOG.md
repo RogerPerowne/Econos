@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.154.2 — 2026-06-10
+
+### Revenue — Average revenue diagram fixes
+
+- Desktop: the "Demand" curve label was overrunning into the right-hand
+  worked-example boxes — re-anchored it (end-anchored, below the line's right
+  end) so it sits clear of the Point B panel.
+- Mobile: trimmed the dead space below the second worked-example box (the
+  `.ari-v` SVG viewBox was 60 units taller than its content — 660 → 610), so
+  the diagram no longer leaves a large gap before the next section.
+- Relabelled the x-axis "Quantity sold" → "Quantity" across the revenue
+  diagrams (average-revenue desktop + mobile, and the total-revenue chart).
+- `sw.js` → `econos-v496`.
+
 ## 0.154.1 — 2026-06-10
 
 ### Design-token drift: CI ratchet + styles.css cleanup

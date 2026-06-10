@@ -14963,7 +14963,7 @@ window.ECONOS_ICONS = {
         <line x1="290" y1="46" x2="736" y2="46" stroke="#CBD5E1" stroke-width="1"/>
         <text x="335" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Scenario</text>
         <text x="430" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="550" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Quantity sold</text>
+        <text x="550" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Quantity</text>
         <text x="690" y="66" font-size="11" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Total revenue (TR)</text>
         <line x1="290" y1="76" x2="736" y2="76" stroke="#CBD5E1" stroke-width="1"/>
 
@@ -15153,7 +15153,7 @@ window.ECONOS_ICONS = {
         <line x1="70" y1="40" x2="70" y2="340" stroke="#0B1426" stroke-width="1.6"/>
         <line x1="70" y1="340" x2="450" y2="340" stroke="#0B1426" stroke-width="1.6"/>
         <text x="44" y="36" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="450" y="362" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity sold</text>
+        <text x="450" y="362" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
         <!-- Y ticks at 2,4,...,16 -->
         <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
           <text x="63" y="74" text-anchor="end">16</text>
@@ -15178,7 +15178,7 @@ window.ECONOS_ICONS = {
              At Q=0: P=17 → (70, 340-17*16.667=56)
              At Q=120: P=5 → (70+120*3.083=440, 340-5*16.667=257) -->
         <line x1="70" y1="56" x2="440" y2="257" stroke="#0B1426" stroke-width="2"/>
-        <text x="448" y="263" font-size="13" font-weight="800" fill="#0B1426" font-family="Inter,sans-serif">Demand</text>
+        <text x="438" y="281" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">Demand</text>
 
         <!-- Point A: Q=50, P=12 → (70+50*3.083=224, 340-12*16.667=140) -->
         <g class="ar-1" style="display:none">
@@ -15236,12 +15236,12 @@ window.ECONOS_ICONS = {
       </div>
 
       <div class="ari-v">
-      <svg viewBox="0 0 360 660" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 360 610" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- Chart at top -->
         <line x1="46" y1="20" x2="46" y2="280" stroke="#0B1426" stroke-width="1.4"/>
         <line x1="46" y1="280" x2="340" y2="280" stroke="#0B1426" stroke-width="1.4"/>
         <text x="20" y="16" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="340" y="302" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity sold</text>
+        <text x="340" y="302" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
         <!-- Y ticks compact: 4,8,12,16 -->
         <g font-family="Inter,sans-serif" font-size="9" fill="#475569">
           <text x="40" y="54" text-anchor="end">16</text>

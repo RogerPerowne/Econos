@@ -1447,9 +1447,9 @@ window.ECONOS_TOPICS = [
     }
   },
   {
-    id: 'macroeconomic-policies-in-a-global-context',
-    name: 'Macroeconomic Policies in a Global Context',
-    sub: 'Mundell-Fleming trilemma, spillovers, international coordination',
+    id: 'macroeconomic-policy-in-a-global-context',
+    name: 'Macroeconomic Policy in a Global Context',
+    sub: 'The policy toolkit, deficits and debt, poverty, interest rates, competitiveness and external shocks',
     color: '#1d4ed8',
     available: { learn: true, link: false, land: false },
     boards: {

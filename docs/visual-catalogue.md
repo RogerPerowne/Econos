@@ -448,6 +448,12 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   snowball SVG with inbound/outbound arrows — reuse for any compounding /
   snowball dynamic). The rest of the deck reuses flow chains, side-by-side
   pairs and tile grids.
+- **Macroeconomic Policy in a Global Context 4.5.4 set** — `policyToolkitHub`
+  (the five macro-policy tools as a radial hub around a central "The economy"
+  node — the `govBudgetHub` / `capacityEngineHub` grammar with a 3/2 split,
+  reuse for any "tools around a core" map). Card 3 reuses `debtBathtub`
+  (above). The rest of the deck reuses flow chains, side-by-side pairs and
+  tile grids.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

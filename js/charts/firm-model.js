@@ -293,8 +293,9 @@
         points.push({ x: nx, on: 'AC', tone: 'blue', radius: 4 });
       }
       texts.push({ x: nx, y: -0.055, text: 'Q*', tone: 'slate', bold: true, anchor: 'middle' });
-      if (profit) {
-        texts.push({ x: nx / 2, y: (pStar + acStar) / 2 / yAxis, text: 'Profit', tone: 'green', bold: true, anchor: 'middle' });
+      if (Math.abs(pStar - acStar) > 0.01 * yAxis) {
+        texts.push({ x: nx / 2, y: (pStar + acStar) / 2 / yAxis,
+          text: profit ? 'Profit' : 'Loss', tone: profit ? 'green' : 'rose', bold: true, anchor: 'middle' });
       }
     }
 

@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.147.0 — 2026-06-10
+
+### Chart engine Phase 3 — Perfect competition diagrams migrated
+
+Three price-taker diagrams migrated onto the generator (costRevenue with a
+horizontal AR=MR=P line):
+- `pc-short-run-profit.js` — P above min AC → MC=P at Q*, supernormal-profit
+  rectangle (green).
+- `pc-loss-diagram.js` — P below AC but above min AVC → loss rectangle (red),
+  with AVC shown so the shutdown test (P ≥ AVC ⇒ produce) is visible.
+- `pc-long-run.js` — P = min AC → P=MC=AC, normal profit only (no rectangle).
+- Generator: the profit/loss rectangle now labels "Loss" (rose) as well as
+  "Profit" (green); it is suppressed when P≈AC (normal profit).
+- Replaces the hand-rolled pcShortRunProfit / pcLossDiagram / pcLongRunDiagram.
+  `lint:charts` clean (106 specs), 107 snapshot tests; `sw.js` → `econos-v484`.
+
 ## 0.146.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Monopoly welfare / deadweight loss migrated

@@ -160,8 +160,14 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   tick" provably cuts AVC and AC at their minima (crossings solved by the
   engine via `point.intersection`). Reference render: `marcosCostCurves`
   (`js/charts/specs/marcos-cost-curves.js`, Marco's FC=200 calibration).
-  Use this instead of hand-plotting cost-curve points. Revenue side
-  (AR/MR + MC=MR) and migration of the curves below are planned next.
+  Use this instead of hand-plotting cost-curve points.
+  `window.ECONOS_FIRM.costRevenue({ …, demand })` adds the revenue side:
+  AR/MR (`demand:{type:'linear',a,b}` → MR at twice the slope, or
+  `{type:'horizontal',price}` for a price-taker), **solves MC=MR**, reads the
+  price up to AR and shades the supernormal-profit/loss rectangle. Reference
+  renders: `marcosProfitMax` (monopolistic competition, `marcos-profit-max.js`)
+  and `marcosProfitMaxPC` (perfect competition, `marcos-profit-max-pc.js`).
+  Migration of the legacy hand-rolled curves below onto the generator is next.
 - **Costs (legacy hand-rolled SVG):** `shortRunCostStack` (TC/TFC/TVC), `lracEnvelope` (SRAC→LRAC),
   `mcLrTangency`, `fixedVariableTotalChart` (3.3.2 C2 — interactive TFC/TVC/TC reveal, Marco's Pizzeria), `averageCostFamilyChart` (3.3.2 C3 — interactive AFC/AVC/AC reveal), `marginalCostChart` (3.3.2 C4 — interactive table → MC curve with AC/AVC reference), `fullCostDiagram` (3.3.2 C5 — static AFC/AVC/AC/MC composite), `costDataBakery` (3.3.2 C6 — read-a-table procedure + bakery worked example).
 - **Economies of scale:** `lracBigPicture` (3.3.3 C1 — annotated U-shaped LRAC with three regions), `mesChart` (3.3.3 C4 — LRAC with MES region + small/medium/large industry mini-curves).

@@ -22904,6 +22904,36 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* govBudgetHub – Public Expenditure card 3. Six drivers that push the
+     size and shape of public spending, around a central "Government
+     budget" core. */
+  govBudgetHub: `
+    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .gbh-grid{display:grid;grid-template-columns:1fr 160px 1fr;gap:10px;align-items:center;max-width:900px;margin:0 auto;}
+        .gbh-col{display:flex;flex-direction:column;gap:10px;}
+        .gbh-tile{border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+        .gbh-h{font-size:12px;font-weight:800;line-height:1.15;margin-bottom:2px;}
+        .gbh-s{font-size:10.5px;color:#475569;line-height:1.3;}
+        .gbh-circ{width:140px;height:140px;border-radius:50%;background:#EFF6FF;border:3px solid #0284C7;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;text-align:center;box-shadow:0 0 0 8px rgba(239,246,255,.6),0 6px 18px rgba(2,132,199,.16);}
+        @media(max-width:680px){.gbh-grid{grid-template-columns:1fr 1fr;}.gbh-cwrap{grid-column:1/-1;order:-1;}}
+      </style>
+      <div class="gbh-grid">
+        <div class="gbh-col">
+          <div class="gbh-tile" style="background:#F5F3FF;border:1.5px solid #DDD6FE;"><div class="gbh-h" style="color:#5B21B6;">\u{1F475} Ageing population</div><div class="gbh-s">More spending on pensions and health.</div></div>
+          <div class="gbh-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;"><div class="gbh-h" style="color:#B91C1C;">\u{1F4C9} Recessions</div><div class="gbh-s">Automatic stabilisers raise spending.</div></div>
+          <div class="gbh-tile" style="background:#FFF7ED;border:1.5px solid #FED7AA;"><div class="gbh-h" style="color:#9A3412;">\u{1F6E1}️ Shocks & security</div><div class="gbh-s">Crises and defence push costs up.</div></div>
+        </div>
+        <div class="gbh-cwrap"><div class="gbh-circ"><div style="font-size:32px;line-height:1;">\u{1F3DB}️</div><div style="font-size:12px;font-weight:800;color:#075985;margin-top:2px;line-height:1.15;">Government<br>budget</div></div></div>
+        <div class="gbh-col">
+          <div class="gbh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="gbh-h" style="color:#065F46;">\u{1F4C8} Development stage</div><div class="gbh-s">Richer economies spend differently.</div></div>
+          <div class="gbh-tile" style="background:#FEF2F2;border:1.5px solid #FECACA;"><div class="gbh-h" style="color:#B91C1C;">\u{1F4B8} Debt interest</div><div class="gbh-s">High debt means costly repayments.</div></div>
+          <div class="gbh-tile" style="background:#ECFDF5;border:1.5px solid #A7F3D0;"><div class="gbh-h" style="color:#065F46;">\u{1F30D} Climate & infrastructure</div><div class="gbh-s">New priorities demand investment.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* oligopolyHub – Card 1 of Oligopoly. Four core-feature tiles
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"

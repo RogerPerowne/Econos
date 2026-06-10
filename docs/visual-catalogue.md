@@ -428,6 +428,13 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   the `exchangeDriversHub` / `capacityEngineHub` grammar retoned amber).
   The rest of the deck reuses the transmission-chain flow, tile grids and
   VS pairs.
+- **Public Expenditure 4.5.1 set** — `govBudgetHub` (six drivers of
+  public-spending change — ageing population, recessions, shocks & security,
+  development stage, debt interest, climate & infrastructure — as a
+  three-column radial hub around a central "Government budget" node, collapsing
+  to two columns with the core ordered first on mobile; the
+  `exchangeDriversHub` / `capacityEngineHub` grammar retoned blue). The rest of
+  the deck reuses flow chains, tile grids and VS pairs.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

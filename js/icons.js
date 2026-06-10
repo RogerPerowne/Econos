@@ -16613,10 +16613,15 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* whereProfitComesFrom – Card 2 of Profits & Losses. Twin pair
-     layout: Revenue side (green, left) and Cost side (orange, right)
-     around a centre calculator pill carrying "Revenue − cost = profit".
-     Each side shows its formula and a bullet list of drivers. Static. */
+  /* whereProfitComesFrom – Card 2 of Profits & Losses. Twin pair layout:
+     Revenue side (green, left) and Cost side (amber, right) feeding a
+     central profit ring. The ring is a PROPORTIONAL donut tied to Card 1's
+     worked example — the amber arc is the cost share of revenue
+     (£95k/£120k ≈ 79%), the green arc the profit share (£25k ≈ 21%) — so
+     the centre carries the lesson, not just the equation. Money-in /
+     money-out arrows feed the ring; two verdict chips underneath state the
+     gap logic. Each side shows its formula and three drivers with
+     explanatory sub-lines. Static. */
   whereProfitComesFrom: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
@@ -16627,125 +16632,182 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="wpc-h">
-      <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- LEFT — Revenue side (green) -->
-        <rect x="14" y="14" width="296" height="320" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
-        <circle cx="46" cy="46" r="16" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
-        <text x="46" y="54" font-size="18" text-anchor="middle">📈</text>
-        <text x="74" y="52" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Revenue side</text>
-        <text x="162" y="86" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">FORMULA</text>
-        <rect x="32" y="96" width="260" height="42" rx="9" fill="#fff" stroke="#BBF7D0" stroke-width="1.4"/>
-        <text x="162" y="123" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Total revenue = price × quantity sold</text>
-        <text x="162" y="166" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">WHAT DRIVES REVENUE UP?</text>
-        <!-- Bullet list -->
+      <svg viewBox="0 0 980 470" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <filter id="wpcShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0B1426" flood-opacity="0.12"/>
+          </filter>
+          <marker id="wpc-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
+          </marker>
+          <marker id="wpc-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+          </marker>
+        </defs>
+
+        <!-- ════════ LEFT — Revenue side ════════ -->
+        <rect x="20" y="24" width="360" height="384" rx="18" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="62" cy="72" r="20" fill="#fff" stroke="#16A34A" stroke-width="1.8"/>
+        <text x="62" y="79" font-size="18" text-anchor="middle">📈</text>
+        <text x="92" y="78" font-size="17" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Revenue side</text>
+
+        <text x="200" y="116" font-size="11" font-weight="800" letter-spacing="0.1em" fill="#047857" text-anchor="middle" font-family="Inter,sans-serif">FORMULA</text>
+        <rect x="44" y="126" width="312" height="44" rx="10" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+        <text x="200" y="153" font-size="14" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Total revenue = price × quantity sold</text>
+
+        <text x="200" y="196" font-size="11" font-weight="800" letter-spacing="0.1em" fill="#047857" text-anchor="middle" font-family="Inter,sans-serif">WHAT DRIVES REVENUE UP?</text>
         <g font-family="Inter,sans-serif">
-          <rect x="32" y="180" width="260" height="38" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
-          <circle cx="54" cy="199" r="9" fill="#16A34A"/>
-          <text x="54" y="203" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">↑</text>
-          <text x="74" y="204" font-size="12.5" font-weight="700" fill="#065F46">Higher demand</text>
+          <rect x="44" y="208" width="312" height="50" rx="11" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+          <circle cx="70" cy="233" r="15" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
+          <text x="70" y="238" font-size="14" text-anchor="middle">📈</text>
+          <text x="94" y="229" font-size="13.5" font-weight="800" fill="#065F46">Higher demand</text>
+          <text x="94" y="247" font-size="11.5" fill="#475569">More units sold at the same price.</text>
 
-          <rect x="32" y="224" width="260" height="38" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
-          <circle cx="54" cy="243" r="9" fill="#16A34A"/>
-          <text x="54" y="247" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">↑</text>
-          <text x="74" y="248" font-size="12.5" font-weight="700" fill="#065F46">Higher price</text>
+          <rect x="44" y="268" width="312" height="50" rx="11" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+          <circle cx="70" cy="293" r="15" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
+          <text x="70" y="298" font-size="14" text-anchor="middle">🏷️</text>
+          <text x="94" y="289" font-size="13.5" font-weight="800" fill="#065F46">Higher price</text>
+          <text x="94" y="307" font-size="11.5" fill="#475569">More revenue per unit — if demand holds.</text>
 
-          <rect x="32" y="268" width="260" height="38" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
-          <circle cx="54" cy="287" r="9" fill="#16A34A"/>
-          <text x="54" y="291" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">★</text>
-          <text x="74" y="292" font-size="12.5" font-weight="700" fill="#065F46">Better product mix</text>
+          <rect x="44" y="328" width="312" height="50" rx="11" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+          <circle cx="70" cy="353" r="15" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
+          <text x="70" y="358" font-size="14" text-anchor="middle">🧺</text>
+          <text x="94" y="349" font-size="13.5" font-weight="800" fill="#065F46">Better product mix</text>
+          <text x="94" y="367" font-size="11.5" fill="#475569">Sell more of what earns the most.</text>
         </g>
 
-        <!-- CENTRE — calculator pill -->
-        <circle cx="380" cy="174" r="62" fill="#fff" stroke="#94A3B8" stroke-width="2"/>
-        <text x="380" y="174" font-size="38" text-anchor="middle">🧮</text>
-        <text x="380" y="208" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Revenue − cost</text>
-        <text x="380" y="224" font-size="14" font-weight="900" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">= profit</text>
+        <!-- ════════ RIGHT — Cost side ════════ -->
+        <rect x="600" y="24" width="360" height="384" rx="18" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
+        <circle cx="642" cy="72" r="20" fill="#fff" stroke="#F59E0B" stroke-width="1.8"/>
+        <text x="642" y="79" font-size="18" text-anchor="middle">💸</text>
+        <text x="672" y="78" font-size="17" font-weight="800" fill="#9A3412" font-family="Inter,sans-serif">Cost side</text>
 
-        <!-- Dashed connectors -->
-        <line x1="310" y1="174" x2="320" y2="174" stroke="#16A34A" stroke-width="2" stroke-dasharray="4 3"/>
-        <line x1="440" y1="174" x2="450" y2="174" stroke="#D97706" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="780" y="116" font-size="11" font-weight="800" letter-spacing="0.1em" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">FORMULA</text>
+        <rect x="624" y="126" width="312" height="44" rx="10" fill="#fff" stroke="#FED7AA" stroke-width="1.5"/>
+        <text x="780" y="153" font-size="14" font-weight="800" fill="#9A3412" text-anchor="middle" font-family="Inter,sans-serif">Total cost = fixed costs + variable costs</text>
 
-        <!-- RIGHT — Cost side (orange) -->
-        <rect x="450" y="14" width="296" height="320" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
-        <circle cx="482" cy="46" r="16" fill="#fff" stroke="#D97706" stroke-width="1.6"/>
-        <text x="482" y="54" font-size="18" text-anchor="middle">💸</text>
-        <text x="510" y="52" font-size="14" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">Cost side</text>
-        <text x="598" y="86" font-size="11" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">FORMULA</text>
-        <rect x="468" y="96" width="260" height="42" rx="9" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
-        <text x="598" y="123" font-size="13.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Total cost = fixed costs + variable costs</text>
-        <text x="598" y="166" font-size="11" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">WHAT DRIVES COSTS UP?</text>
+        <text x="780" y="196" font-size="11" font-weight="800" letter-spacing="0.1em" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">WHAT DRIVES COSTS UP?</text>
         <g font-family="Inter,sans-serif">
-          <rect x="468" y="180" width="260" height="38" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
-          <circle cx="490" cy="199" r="9" fill="#D97706"/>
-          <text x="490" y="203" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">👷</text>
-          <text x="510" y="204" font-size="12.5" font-weight="700" fill="#C2410C">Wages</text>
+          <rect x="624" y="208" width="312" height="50" rx="11" fill="#fff" stroke="#FED7AA" stroke-width="1.5"/>
+          <circle cx="650" cy="233" r="15" fill="#fff" stroke="#F59E0B" stroke-width="1.6"/>
+          <text x="650" y="238" font-size="14" text-anchor="middle">👷</text>
+          <text x="674" y="229" font-size="13.5" font-weight="800" fill="#9A3412">Wages</text>
+          <text x="674" y="247" font-size="11.5" fill="#475569">Usually the biggest bill a firm pays.</text>
 
-          <rect x="468" y="224" width="260" height="38" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
-          <circle cx="490" cy="243" r="9" fill="#D97706"/>
-          <text x="490" y="247" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">📦</text>
-          <text x="510" y="248" font-size="12.5" font-weight="700" fill="#C2410C">Materials</text>
+          <rect x="624" y="268" width="312" height="50" rx="11" fill="#fff" stroke="#FED7AA" stroke-width="1.5"/>
+          <circle cx="650" cy="293" r="15" fill="#fff" stroke="#F59E0B" stroke-width="1.6"/>
+          <text x="650" y="298" font-size="14" text-anchor="middle">🧱</text>
+          <text x="674" y="289" font-size="13.5" font-weight="800" fill="#9A3412">Materials</text>
+          <text x="674" y="307" font-size="11.5" fill="#475569">Input costs rise as output grows.</text>
 
-          <rect x="468" y="268" width="260" height="38" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
-          <circle cx="490" cy="287" r="9" fill="#D97706"/>
-          <text x="490" y="291" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">⚡</text>
-          <text x="510" y="292" font-size="12.5" font-weight="700" fill="#C2410C">Energy / rent</text>
+          <rect x="624" y="328" width="312" height="50" rx="11" fill="#fff" stroke="#FED7AA" stroke-width="1.5"/>
+          <circle cx="650" cy="353" r="15" fill="#fff" stroke="#F59E0B" stroke-width="1.6"/>
+          <text x="650" y="358" font-size="14" text-anchor="middle">⚡</text>
+          <text x="674" y="349" font-size="13.5" font-weight="800" fill="#9A3412">Energy and rent</text>
+          <text x="674" y="367" font-size="11.5" fill="#475569">Overheads that bite every month.</text>
         </g>
+
+        <!-- ════════ CENTRE — the profit ring ════════ -->
+        <line x1="384" y1="216" x2="400" y2="216" stroke="#16A34A" stroke-width="3" marker-end="url(#wpc-in)"/>
+        <line x1="596" y1="216" x2="580" y2="216" stroke="#F59E0B" stroke-width="3" marker-end="url(#wpc-out)"/>
+
+        <circle cx="490" cy="216" r="82" fill="#fff" stroke="#E2E8F0" stroke-width="1.5" filter="url(#wpcShadow)"/>
+        <!-- Proportional ring: amber = cost share of revenue (£95k/£120k ≈ 79%),
+             green = profit share (£25k ≈ 21%) -->
+        <path d="M 490 146 A 70 70 0 0 1 557.61 197.88" fill="none" stroke="#16A34A" stroke-width="10" stroke-linecap="round"/>
+        <path d="M 557.61 197.88 A 70 70 0 1 1 490 146" fill="none" stroke="#F59E0B" stroke-width="10" stroke-linecap="round"/>
+
+        <text x="490" y="186" font-size="20" text-anchor="middle">🧮</text>
+        <text x="490" y="212" font-size="13" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Revenue − cost</text>
+        <text x="490" y="233" font-size="16" font-weight="900" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">= profit</text>
+        <text x="490" y="254" font-size="10.5" fill="#64748B" text-anchor="middle" font-family="Inter,sans-serif">£120k in · £95k out</text>
+        <text x="490" y="270" font-size="11" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">£25k left</text>
+
+        <!-- Verdict chips -->
+        <rect x="390" y="318" width="200" height="34" rx="17" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="490" y="339" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Revenue ↑ → gap widens</text>
+        <rect x="390" y="360" width="200" height="34" rx="17" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+        <text x="490" y="381" font-size="12" font-weight="800" fill="#9A3412" text-anchor="middle" font-family="Inter,sans-serif">Costs ↑ → gap narrows</text>
+
+        <!-- Footer caption -->
+        <text x="490" y="446" font-size="12" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">Profit is the gap between the two sides — push revenue up, hold costs down, and the gap widens.</text>
       </svg>
       </div>
 
       <div class="wpc-v">
-      <svg viewBox="0 0 360 760" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- Centre pill at top -->
-        <circle cx="180" cy="56" r="50" fill="#fff" stroke="#94A3B8" stroke-width="2"/>
-        <text x="180" y="56" font-size="30" text-anchor="middle">🧮</text>
-        <text x="180" y="86" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Revenue − cost</text>
-        <text x="180" y="102" font-size="13" font-weight="900" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">= profit</text>
-
+      <svg viewBox="0 0 360 1044" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- Revenue side -->
-        <rect x="10" y="124" width="340" height="296" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
-        <circle cx="40" cy="156" r="15" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
-        <text x="40" y="163" font-size="16" text-anchor="middle">📈</text>
-        <text x="66" y="162" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Revenue side</text>
-        <rect x="22" y="184" width="316" height="40" rx="9" fill="#fff" stroke="#BBF7D0" stroke-width="1.4"/>
-        <text x="180" y="210" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Total revenue = price × quantity</text>
-        <text x="180" y="246" font-size="10.5" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">WHAT DRIVES REVENUE UP?</text>
+        <rect x="10" y="10" width="340" height="350" rx="16" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+        <circle cx="38" cy="42" r="16" fill="#fff" stroke="#16A34A" stroke-width="1.6"/>
+        <text x="38" y="48" font-size="15" text-anchor="middle">📈</text>
+        <text x="64" y="48" font-size="15" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Revenue side</text>
+        <text x="180" y="84" font-size="10.5" font-weight="800" letter-spacing="0.1em" fill="#047857" text-anchor="middle" font-family="Inter,sans-serif">FORMULA</text>
+        <rect x="28" y="94" width="304" height="40" rx="9" fill="#fff" stroke="#A7F3D0" stroke-width="1.4"/>
+        <text x="180" y="119" font-size="12.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Total revenue = price × quantity sold</text>
+        <text x="180" y="160" font-size="10.5" font-weight="800" letter-spacing="0.1em" fill="#047857" text-anchor="middle" font-family="Inter,sans-serif">WHAT DRIVES REVENUE UP?</text>
         <g font-family="Inter,sans-serif">
-          <rect x="22" y="258" width="316" height="44" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
-          <circle cx="46" cy="280" r="11" fill="#16A34A"/>
-          <text x="46" y="284" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">↑</text>
-          <text x="68" y="286" font-size="13" font-weight="700" fill="#065F46">Higher demand</text>
-          <rect x="22" y="306" width="316" height="44" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
-          <circle cx="46" cy="328" r="11" fill="#16A34A"/>
-          <text x="46" y="332" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">↑</text>
-          <text x="68" y="334" font-size="13" font-weight="700" fill="#065F46">Higher price</text>
-          <rect x="22" y="354" width="316" height="44" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
-          <circle cx="46" cy="376" r="11" fill="#16A34A"/>
-          <text x="46" y="380" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">★</text>
-          <text x="68" y="382" font-size="13" font-weight="700" fill="#065F46">Better product mix</text>
+          <rect x="28" y="172" width="304" height="48" rx="10" fill="#fff" stroke="#A7F3D0" stroke-width="1.4"/>
+          <circle cx="52" cy="196" r="13" fill="#fff" stroke="#16A34A" stroke-width="1.5"/>
+          <text x="52" y="201" font-size="12.5" text-anchor="middle">📈</text>
+          <text x="74" y="192" font-size="12.5" font-weight="800" fill="#065F46">Higher demand</text>
+          <text x="74" y="209" font-size="11" fill="#475569">More units sold at the same price.</text>
+          <rect x="28" y="228" width="304" height="48" rx="10" fill="#fff" stroke="#A7F3D0" stroke-width="1.4"/>
+          <circle cx="52" cy="252" r="13" fill="#fff" stroke="#16A34A" stroke-width="1.5"/>
+          <text x="52" y="257" font-size="12.5" text-anchor="middle">🏷️</text>
+          <text x="74" y="248" font-size="12.5" font-weight="800" fill="#065F46">Higher price</text>
+          <text x="74" y="265" font-size="11" fill="#475569">More revenue per unit — if demand holds.</text>
+          <rect x="28" y="284" width="304" height="48" rx="10" fill="#fff" stroke="#A7F3D0" stroke-width="1.4"/>
+          <circle cx="52" cy="308" r="13" fill="#fff" stroke="#16A34A" stroke-width="1.5"/>
+          <text x="52" y="313" font-size="12.5" text-anchor="middle">🧺</text>
+          <text x="74" y="304" font-size="12.5" font-weight="800" fill="#065F46">Better product mix</text>
+          <text x="74" y="321" font-size="11" fill="#475569">Sell more of what earns the most.</text>
         </g>
+
+        <!-- Profit ring -->
+        <circle cx="180" cy="447" r="75" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
+        <path d="M 180 383 A 64 64 0 0 1 241.82 430.43" fill="none" stroke="#16A34A" stroke-width="9" stroke-linecap="round"/>
+        <path d="M 241.82 430.43 A 64 64 0 1 1 180 383" fill="none" stroke="#F59E0B" stroke-width="9" stroke-linecap="round"/>
+        <text x="180" y="424" font-size="18" text-anchor="middle">🧮</text>
+        <text x="180" y="447" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Revenue − cost</text>
+        <text x="180" y="466" font-size="14.5" font-weight="900" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">= profit</text>
+        <text x="180" y="484" font-size="10" fill="#64748B" text-anchor="middle" font-family="Inter,sans-serif">£120k in · £95k out</text>
+        <text x="180" y="540" font-size="11.5" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">£25k left = profit</text>
 
         <!-- Cost side -->
-        <rect x="10" y="436" width="340" height="296" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
-        <circle cx="40" cy="468" r="15" fill="#fff" stroke="#D97706" stroke-width="1.6"/>
-        <text x="40" y="475" font-size="16" text-anchor="middle">💸</text>
-        <text x="66" y="474" font-size="14" font-weight="800" fill="#C2410C" font-family="Inter,sans-serif">Cost side</text>
-        <rect x="22" y="496" width="316" height="40" rx="9" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
-        <text x="180" y="522" font-size="12.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Total cost = fixed + variable</text>
-        <text x="180" y="558" font-size="10.5" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">WHAT DRIVES COSTS UP?</text>
+        <rect x="10" y="556" width="340" height="350" rx="16" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.6"/>
+        <circle cx="38" cy="588" r="16" fill="#fff" stroke="#F59E0B" stroke-width="1.6"/>
+        <text x="38" y="594" font-size="15" text-anchor="middle">💸</text>
+        <text x="64" y="594" font-size="15" font-weight="800" fill="#9A3412" font-family="Inter,sans-serif">Cost side</text>
+        <text x="180" y="630" font-size="10.5" font-weight="800" letter-spacing="0.1em" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">FORMULA</text>
+        <rect x="28" y="640" width="304" height="40" rx="9" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
+        <text x="180" y="665" font-size="12.5" font-weight="800" fill="#9A3412" text-anchor="middle" font-family="Inter,sans-serif">Total cost = fixed costs + variable costs</text>
+        <text x="180" y="706" font-size="10.5" font-weight="800" letter-spacing="0.1em" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">WHAT DRIVES COSTS UP?</text>
         <g font-family="Inter,sans-serif">
-          <rect x="22" y="570" width="316" height="44" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
-          <circle cx="46" cy="592" r="11" fill="#D97706"/>
-          <text x="46" y="596" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">👷</text>
-          <text x="68" y="598" font-size="13" font-weight="700" fill="#C2410C">Wages</text>
-          <rect x="22" y="618" width="316" height="44" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
-          <circle cx="46" cy="640" r="11" fill="#D97706"/>
-          <text x="46" y="644" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">📦</text>
-          <text x="68" y="646" font-size="13" font-weight="700" fill="#C2410C">Materials</text>
-          <rect x="22" y="666" width="316" height="44" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
-          <circle cx="46" cy="688" r="11" fill="#D97706"/>
-          <text x="46" y="692" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">⚡</text>
-          <text x="68" y="694" font-size="13" font-weight="700" fill="#C2410C">Energy / rent</text>
+          <rect x="28" y="718" width="304" height="48" rx="10" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
+          <circle cx="52" cy="742" r="13" fill="#fff" stroke="#F59E0B" stroke-width="1.5"/>
+          <text x="52" y="747" font-size="12.5" text-anchor="middle">👷</text>
+          <text x="74" y="738" font-size="12.5" font-weight="800" fill="#9A3412">Wages</text>
+          <text x="74" y="755" font-size="11" fill="#475569">Usually the biggest bill a firm pays.</text>
+          <rect x="28" y="774" width="304" height="48" rx="10" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
+          <circle cx="52" cy="798" r="13" fill="#fff" stroke="#F59E0B" stroke-width="1.5"/>
+          <text x="52" y="803" font-size="12.5" text-anchor="middle">🧱</text>
+          <text x="74" y="794" font-size="12.5" font-weight="800" fill="#9A3412">Materials</text>
+          <text x="74" y="811" font-size="11" fill="#475569">Input costs rise as output grows.</text>
+          <rect x="28" y="830" width="304" height="48" rx="10" fill="#fff" stroke="#FED7AA" stroke-width="1.4"/>
+          <circle cx="52" cy="854" r="13" fill="#fff" stroke="#F59E0B" stroke-width="1.5"/>
+          <text x="52" y="859" font-size="12.5" text-anchor="middle">⚡</text>
+          <text x="74" y="850" font-size="12.5" font-weight="800" fill="#9A3412">Energy and rent</text>
+          <text x="74" y="867" font-size="11" fill="#475569">Overheads that bite every month.</text>
         </g>
+
+        <!-- Verdict chips -->
+        <rect x="30" y="922" width="300" height="34" rx="17" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="180" y="943" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Revenue ↑ → gap widens</text>
+        <rect x="30" y="964" width="300" height="34" rx="17" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+        <text x="180" y="985" font-size="12" font-weight="800" fill="#9A3412" text-anchor="middle" font-family="Inter,sans-serif">Costs ↑ → gap narrows</text>
+
+        <text x="180" y="1014" font-size="11" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">Profit is the gap between the two sides —</text>
+        <text x="180" y="1030" font-size="11" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">push revenue up, hold costs down.</text>
       </svg>
       </div>
     </div>

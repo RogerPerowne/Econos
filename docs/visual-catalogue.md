@@ -152,7 +152,7 @@ Organised by archetype. Each entry: `key` — what it shows.
   `yedXedTwoLenses`, `firmLevelPcVsMonopoly`, `twoSystemsDiagram`,
   `adAsTwoOutcomes`, `pesBigPictureCompare`, `specialisationGainsCompare`,
   `marginalUtilityCompare`, `economicMixedWhoDoesWhat`, `eniTwinJW45`.
-- `whereProfitComesFrom` — Revenue side (green) vs Cost side (orange) twin with central "Revenue − cost = profit" calculator pill (3.3.4 C2).
+- `whereProfitComesFrom` — Revenue side (green) vs Cost side (amber) twin feeding a central PROPORTIONAL profit donut (amber arc = cost share of revenue, green arc = profit share, tied to the topic's £120k/£95k/£25k worked example), with money-in/money-out arrows and two verdict chips (3.3.4 C2). Reuse the proportional-ring centre for any "two sides feed one ratio" comparison.
 - `pcPerfectlyElasticDemand` — industry market (D + S) vs individual firm (horizontal AR=MR=D) twin, joined by a dashed connector showing the market price is fed across to the firm (3.4.2 C2).
 - `dynamicEfficiencyDiagram` — twin "before / after innovation" panels showing AC₁ (solid) vs AC₂ (lower, with AC₁ dashed for reference) (3.4.1 C4).
 - `externalEconomies` — 4 external economies (left, green) vs 4 external diseconomies (right, rose) flanking an illustrated industry-cluster town scene (winding roads, indigo buildings, smoking factories, trees, truck, people), each card wired to the scene by a curved connector with end dots (3.3.3 C5). Reuse the town illustration for any "the local area / cluster" centrepiece.

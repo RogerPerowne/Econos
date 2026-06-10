@@ -37,8 +37,9 @@ const check = process.argv.includes('--check');
    externalEconomies redesign: the illustrated industry-cluster town scene +
    tone-matched card/connector fills are hand-rolled SVG card art, not a chart
    (same rationale as the v0.155.9 raise); lowered to 6231 (v0.155.21) when the
-   costsChainFlow SVG was retired in favour of the renderer chain-style flow. */
-const DUP_BASELINE = 6231;
+   costsChainFlow SVG was retired in favour of the renderer chain-style flow;
+   lowered to 6228 (v0.155.24) with the whereProfitComesFrom rebuild. */
+const DUP_BASELINE = 6228;
 
 const css = readFileSync('styles.css', 'utf8');
 

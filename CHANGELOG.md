@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.153.3 — 2026-06-10
+
+### Third-degree price discrimination migrated onto the chart engine
+
+- Replaced the hand-rolled `thirdDegreePd` SVG with a new
+  `ECONOS_FIRM.priceDiscrimination()` builder, so the two-market diagram is
+  now engine-guaranteed instead of eyeballed — future tweaks (re-calibrating
+  elasticities, prices, MC) are one parameter change, not a manual SVG redraw.
+- Both markets render on ONE shared (Q, £) scale; each market's MR=MC is
+  solved by the engine (`intersection`) and the price dot is snapped `on:`
+  demand. The elastic market shows a flat demand → lower price, larger
+  quantity; the inelastic market a steep demand → higher price, smaller
+  quantity.
+- Fixed a cross-panel id-collision class of bug discovered during the
+  migration: the engine resolves `on:`/`intersection:` curve ids GLOBALLY, so
+  shared ids made one panel's dots snap onto the other panel's curves. Curve
+  ids are now suffixed per market (`AR_A`, `MR_B`, …). Documented in the
+  builder and the visual catalogue.
+- New spec `js/charts/specs/price-discrimination.js` wired into the three
+  shells + `sw.js` precache; `sw.js` → `econos-v494`.
+
 ## 0.153.2 — 2026-06-10
 
 ### Themes 3 & 4 formatting sweep — third-degree price-discrimination geometry fixed

@@ -8127,35 +8127,31 @@ window.ECONOS_ICONS = {
       <!-- Panel title -->
       <text x="237" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Market A – Elastic Demand (e.g. students / exports)</text>
 
-      <!-- Demand A: relatively flat (elastic), from (50,60) to (420,300) -->
-      <line x1="50" y1="60" x2="420" y2="300" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
-      <text x="422" y="302" font-size="10" font-weight="700" fill="#2563EB">D_A</text>
+      <!-- Demand A: FLAT (elastic), (50,170) → (420,320). slope=150/370=0.405 -->
+      <line x1="50" y1="170" x2="420" y2="320" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="422" y="322" font-size="10" font-weight="700" fill="#2563EB">D_A</text>
 
-      <!-- MR_A: same intercept (50,60), twice slope → reaches zero at x=50+(420-50)/2=235 -->
-      <!-- MR_A from (50,60) to (235,300) ... extended down -->
-      <line x1="50" y1="60" x2="235" y2="310" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
-      <text x="237" y="310" font-size="10" font-weight="700" fill="#64748B">MR_A</text>
+      <!-- MR_A: same intercept (50,170), double slope (0.811) → foot on x-axis at x=297 -->
+      <line x1="50" y1="170" x2="297" y2="370" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="300" y="360" font-size="10" font-weight="700" fill="#64748B">MR_A</text>
 
-      <!-- MC: horizontal at y=220 -->
-      <line x1="50" y1="220" x2="420" y2="220" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5 3"/>
-      <text x="424" y="224" font-size="10" font-weight="700" fill="#DC2626">MC</text>
+      <!-- MC: common level y=300 (same in both panels) -->
+      <line x1="50" y1="300" x2="420" y2="300" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <text x="424" y="304" font-size="10" font-weight="700" fill="#DC2626">MC</text>
 
-      <!-- Q_A where MR_A = MC: MR_A line: y=60+250*(x-50)/185 approx -->
-      <!-- MR_A: from (50,60) to (235,310): slope=(310-60)/(235-50)=250/185=1.351 -->
-      <!-- at y=220: 220=60+1.351*(x-50) → 160=1.351*(x-50) → x-50=118.4 → x=168 -->
-      <!-- P_A on D_A at x=168: D_A slope=(300-60)/(420-50)=240/370=0.649 -->
-      <!-- y=60+0.649*(168-50)=60+76.6=137 -->
+      <!-- Q_A where MR_A = MC: 300=170+0.811(x-50) → x=210 -->
+      <!-- P_A on D_A at x=210: 170+0.405(210-50)=235 → LOW price, LARGE quantity -->
 
       <!-- Amber revenue rectangle Q_A x P_A -->
-      <rect x="50" y="137" width="118" height="233" fill="#FEF3C7" opacity="0.6"/>
-      <text x="109" y="270" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Revenue</text>
-      <text x="109" y="282" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Q_A \xd7 P_A</text>
+      <rect x="50" y="235" width="160" height="135" fill="#FEF3C7" opacity="0.6"/>
+      <text x="130" y="305" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Revenue</text>
+      <text x="130" y="318" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Q_A \xd7 P_A</text>
 
       <!-- Dashed lines Q_A, P_A -->
-      <line x1="168" y1="137" x2="168" y2="370" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
-      <line x1="50" y1="137" x2="168" y2="137" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
-      <text x="40" y="141" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_A</text>
-      <text x="168" y="388" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Q_A</text>
+      <line x1="210" y1="235" x2="210" y2="370" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <line x1="50" y1="235" x2="210" y2="235" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <text x="40" y="239" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_A</text>
+      <text x="210" y="388" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Q_A</text>
 
       <!-- ===== RIGHT PANEL: Market B – Inelastic ===== -->
       <!-- Y axis -->
@@ -8171,38 +8167,35 @@ window.ECONOS_ICONS = {
       <!-- Panel title -->
       <text x="665" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Market B – Inelastic Demand (e.g. domestic / business)</text>
 
-      <!-- Demand B: steeper (inelastic), from (470,50) to (850,330) -->
-      <line x1="470" y1="50" x2="850" y2="330" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
-      <text x="852" y="332" font-size="10" font-weight="700" fill="#2563EB">D_B</text>
+      <!-- Demand B: STEEP (inelastic), (470,50) → (800,360). slope=310/330=0.939 -->
+      <line x1="470" y1="50" x2="800" y2="360" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="802" y="362" font-size="10" font-weight="700" fill="#2563EB">D_B</text>
 
-      <!-- MR_B: same intercept (470,50), twice slope → x midpoint = 470+(850-470)/2 = 660 -->
-      <line x1="470" y1="50" x2="660" y2="330" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
-      <text x="662" y="332" font-size="10" font-weight="700" fill="#64748B">MR_B</text>
+      <!-- MR_B: same intercept (470,50), double slope (1.879) → foot on x-axis at x=640 -->
+      <line x1="470" y1="50" x2="640" y2="370" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="645" y="360" font-size="10" font-weight="700" fill="#64748B">MR_B</text>
 
-      <!-- MC: same level y=220 -->
-      <line x1="470" y1="220" x2="855" y2="220" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5 3"/>
-      <text x="857" y="224" font-size="10" font-weight="700" fill="#DC2626">MC</text>
+      <!-- MC: common level y=300 (same as panel A) -->
+      <line x1="470" y1="300" x2="850" y2="300" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <text x="854" y="304" font-size="10" font-weight="700" fill="#DC2626">MC</text>
 
-      <!-- Q_B where MR_B = MC -->
-      <!-- MR_B: from (470,50) to (660,330): slope=280/190=1.474 -->
-      <!-- at y=220: 220=50+1.474*(x-470) → 170=1.474*(x-470) → x-470=115.3 → x=585 -->
-      <!-- P_B on D_B at x=585: slope=(330-50)/(850-470)=280/380=0.737 -->
-      <!-- y=50+0.737*(585-470)=50+84.7=135 -->
+      <!-- Q_B where MR_B = MC: 300=50+1.879(x-470) → x=603 -->
+      <!-- P_B on D_B at x=603: 50+0.939(603-470)=175 → HIGH price, SMALL quantity -->
 
       <!-- Amber revenue rectangle Q_B x P_B -->
-      <rect x="470" y="135" width="115" height="235" fill="#FEF3C7" opacity="0.6"/>
-      <text x="527" y="265" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Revenue</text>
-      <text x="527" y="277" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Q_B \xd7 P_B</text>
+      <rect x="470" y="175" width="133" height="195" fill="#FEF3C7" opacity="0.6"/>
+      <text x="536" y="288" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Revenue</text>
+      <text x="536" y="301" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Q_B \xd7 P_B</text>
 
       <!-- Dashed lines Q_B, P_B -->
-      <line x1="585" y1="135" x2="585" y2="370" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
-      <line x1="470" y1="135" x2="585" y2="135" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
-      <text x="460" y="139" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_B</text>
-      <text x="585" y="388" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Q_B</text>
+      <line x1="603" y1="175" x2="603" y2="370" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <line x1="470" y1="175" x2="603" y2="175" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <text x="460" y="179" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_B</text>
+      <text x="603" y="388" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Q_B</text>
 
       <!-- Shared annotation -->
-      <rect x="200" y="393" width="500" height="22" fill="#FEF3C7" rx="6" opacity="0.9"/>
-      <text x="450" y="408" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">P_B &gt; P_A – higher price in the less elastic market (MR_A = MR_B = MC)</text>
+      <rect x="170" y="393" width="560" height="22" fill="#FEF3C7" rx="6" opacity="0.9"/>
+      <text x="450" y="408" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">P_B &gt; P_A and Q_A &gt; Q_B — inelastic buyers pay more for fewer units (MR_A = MR_B = MC)</text>
     </svg>
   `,
 

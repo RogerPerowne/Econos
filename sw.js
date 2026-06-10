@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v505';
+  const CACHE_NAME = 'econos-v506';
 
   /* ────────────────────────────────────────────────────────────
      fetchFresh — a network fetch that bypasses the BROWSER'S OWN
@@ -97,6 +97,8 @@
     '/js/charts/specs/monopsony-labour.js',
     '/js/charts/specs/monopsony-min-wage.js',
     '/js/charts/specs/break-even-chart.js',
+    '/js/charts/specs/cartel-joint-profit.js',
+    '/js/charts/specs/price-cap-monopoly.js',
     '/js/charts/specs/pc-short-run-profit.js',
     '/js/charts/specs/pc-loss-diagram.js',
     '/js/charts/specs/pc-long-run.js',

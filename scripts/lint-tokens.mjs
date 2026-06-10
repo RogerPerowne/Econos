@@ -36,8 +36,9 @@ const check = process.argv.includes('--check');
    chart — the fills can't take a CSS var); raised to 6255 (v0.155.20) for the
    externalEconomies redesign: the illustrated industry-cluster town scene +
    tone-matched card/connector fills are hand-rolled SVG card art, not a chart
-   (same rationale as the v0.155.9 raise). */
-const DUP_BASELINE = 6255;
+   (same rationale as the v0.155.9 raise); lowered to 6231 (v0.155.21) when the
+   costsChainFlow SVG was retired in favour of the renderer chain-style flow. */
+const DUP_BASELINE = 6231;
 
 const css = readFileSync('styles.css', 'utf8');
 

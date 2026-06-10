@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.149.0 — 2026-06-10
+
+### Chart engine Phase 3 — Perfect competition efficiency diagram
+
+- New spec `pc-efficiency.js` replaces the hand-rolled `pcEfficiencyDiagram`:
+  the long-run equilibrium where P = MC = min AC, so the firm is both
+  allocatively (P=MC) and productively (min AC) efficient. Price is set
+  exactly to min AC via the exposed makeModel/solveCross helpers.
+- `lint:charts` clean (110 specs), 111 snapshot tests; `sw.js` → `econos-v486`.
+- (pcPerfectlyElasticDemand left as-is for now — it's a straight-line market+firm
+  S&D linkage, not a wobbly cost curve.)
+
 ## 0.148.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Monopolistic competition diagrams migrated

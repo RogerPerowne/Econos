@@ -139,29 +139,44 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{2705}', tone: 'green', text: 'The output rule is always <strong>MC = MR</strong>. Profit or loss is read at that output.' },
 
-      visualKey: 'pcShortRunProfit',
-      visualLabel: 'THE PROFIT DIAGRAM',
-      visualEmoji: '\u{1F4C9}',
-
-      flowTitle: 'THREE STEPS',
-      flowEmoji: '\u{1F3AF}',
-      flowSep: '\u{2192}',
-      flow: [
-        { tone: 'green', icon: '\u{1F50D}', title: 'Step 1 — find Q*', sub: 'Produce where MC = MR.' },
-        { tone: 'blue',  icon: '\u{1F441}\u{FE0F}', title: 'Step 2 — read P and AC at Q*', sub: 'Read price from AR line; cost from AC curve.' },
-        { tone: 'amber', icon: '\u{1F4B0}', title: 'Step 3 — calculate profit', sub: 'Profit/unit = (P − AC). Multiply by Q* for total.' }
-      ],
-
-      causesLabel: 'WHAT THE DIAGRAM SAYS',
-      causesEmoji: '\u{1F4D6}',
-      causesStyle: 'icon-top',
-      causesCols: 4,
-      causes: [
-        { tone: 'green', icon: '\u{1F4C8}', head: 'Price is a horizontal line', body: 'AR = MR = P, and the firm sells as much as it wants at that price.' },
-        { tone: 'blue',  icon: '\u{1F4CA}', head: 'Firm adjusts output',        body: 'Produce where MC = MR to maximise profit.' },
-        { tone: 'amber', icon: '\u{1F4B0}', head: 'If P > AC: abnormal profit', body: 'Profit rectangle appears between AR and AC.' },
-        { tone: 'rose',  icon: '\u{1F4C9}', head: 'If P < AC: a loss',          body: 'AC sits above AR — short-run loss.' }
-      ],
+      interactiveDiagram: {
+        svgKey: 'pcShortRunProfit',
+        label: 'THE PROFIT DIAGRAM — build it in four steps',
+        emoji: '\u{1F4C9}',
+        layers: ['pcsr-1', 'pcsr-2', 'pcsr-3', 'pcsr-4'],
+        views: [
+          {
+            label: 'The cost curves',
+            tone: 'blue',
+            head: 'Step 1 — the firm’s costs',
+            body: 'Start with the firm’s <strong>MC</strong> and <strong>AC</strong> curves. MC cuts AC at the bottom of the U — the lowest cost per unit.',
+            show: ['pcsr-1']
+          },
+          {
+            label: 'The market price',
+            tone: 'green',
+            head: 'Step 2 — the price is given',
+            body: 'The market sets the price, so the firm faces a <strong>horizontal AR = MR = P</strong> line. Here it sits <strong>above</strong> the AC curve.',
+            show: ['pcsr-1', 'pcsr-2']
+          },
+          {
+            label: 'Choose output',
+            tone: 'amber',
+            head: 'Step 3 — produce where MC = MR',
+            body: 'The firm picks the output <strong>Q*</strong> where <strong>MC = MR = P</strong>. The dashed guides drop to Q* on the axis.',
+            analysis: 'A price-taker’s MR is the flat price line, so MC = MR sits exactly where the rising MC curve meets the price. That is the single profit-maximising output.',
+            show: ['pcsr-1', 'pcsr-2', 'pcsr-3']
+          },
+          {
+            label: 'Read the profit',
+            tone: 'green',
+            head: 'Step 4 — the abnormal-profit rectangle',
+            body: 'At Q*, price is above average cost, so the firm earns <strong>abnormal profit</strong> — the green rectangle, height (P − AC) × width Q*.',
+            analysis: 'Profit per unit is the vertical gap between AR and AC at Q*; multiply by the quantity Q* to get the total. If the price line sat <em>below</em> AC instead, this rectangle would be a loss (Card 4).',
+            show: ['pcsr-1', 'pcsr-2', 'pcsr-3', 'pcsr-4']
+          }
+        ]
+      },
 
       bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Short-run profit lives between AR and AC at output Q*. Multiply by Q* to get the rectangle.' },
 
@@ -182,36 +197,44 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{26A0}\u{FE0F}', tone: 'green', text: 'Produce in the short run if <strong>P ≥ AVC</strong>. Shut down if <strong>P &lt; AVC</strong>.' },
 
-      visualKey: 'pcLossDiagram',
-      visualLabel: 'THE LOSS DIAGRAM',
-      visualEmoji: '\u{1F4C9}',
-
-      pairLabel: 'THE SHUTDOWN RULE',
-      pairEmoji: '\u{1F6E1}\u{FE0F}',
-      left: {
-        tone: 'green',
-        icon: '\u{2705}',
-        iconStyle: 'circle',
-        label: 'Keep producing — P ≥ AVC',
-        text: 'Price covers variable cost and contributes toward fixed cost. <em>Better to lose less than to shut down entirely.</em>'
+      interactiveDiagram: {
+        svgKey: 'pcLossDiagram',
+        label: 'THE LOSS DIAGRAM — build it in four steps',
+        emoji: '\u{1F4C9}',
+        layers: ['pcl-1', 'pcl-2', 'pcl-3', 'pcl-4'],
+        views: [
+          {
+            label: 'The cost curves',
+            tone: 'blue',
+            head: 'Step 1 — MC, AVC and AC',
+            body: 'This time draw <strong>three</strong> cost curves: MC, AVC and AC. The gap between AC and AVC is average fixed cost — the part that is sunk in the short run.',
+            show: ['pcl-1']
+          },
+          {
+            label: 'A low price',
+            tone: 'amber',
+            head: 'Step 2 — the price falls below AC',
+            body: 'The market price line <strong>AR = MR = P</strong> now sits <strong>below AC</strong> but still <strong>above AVC</strong> — the firm cannot cover total cost.',
+            show: ['pcl-1', 'pcl-2']
+          },
+          {
+            label: 'Choose output',
+            tone: 'slate',
+            head: 'Step 3 — still produce where MC = MR',
+            body: 'The output rule does not change: the firm makes the loss <em>smallest</em> by producing where <strong>MC = MR</strong> at Q*.',
+            analysis: 'Even when losing money, MC = MR is the loss-minimising output — any other quantity loses more. The decision is whether to produce at all, not where.',
+            show: ['pcl-1', 'pcl-2', 'pcl-3']
+          },
+          {
+            label: 'Keep going or shut?',
+            tone: 'rose',
+            head: 'Step 4 — the loss, and the shutdown test',
+            body: 'The red rectangle is the loss. Because <strong>P ≥ AVC</strong>, revenue still covers variable cost and chips into fixed cost — so the firm <strong>keeps producing</strong> in the short run.',
+            analysis: 'The shutdown point is where P = AVC at its minimum. If the price line dropped <em>below</em> AVC, producing would lose more than the fixed costs alone, so the firm would shut down and lose only its fixed cost. Fixed costs are sunk — that is why a loss-maker can rationally carry on.',
+            show: ['pcl-1', 'pcl-2', 'pcl-3', 'pcl-4']
+          }
+        ]
       },
-      right: {
-        tone: 'rose',
-        icon: '\u{26D4}',
-        iconStyle: 'circle',
-        label: 'Shut down — P < AVC',
-        text: 'Price cannot even cover variable cost. <em>Stop producing in the short run to limit losses to fixed cost only.</em>'
-      },
-
-      flowTitle: 'HOW TO DECIDE',
-      flowEmoji: '\u{1F4DD}',
-      flowSep: '\u{2192}',
-      flow: [
-        { tone: 'blue',  icon: '\u{1F4CA}', title: '1. Compare P with AVC', sub: 'Read AVC at the firm’s output level.' },
-        { tone: 'amber', icon: '\u{1F914}', title: '2. Decide',             sub: 'If P ≥ AVC, produce. If P < AVC, shut down.' },
-        { tone: 'green', icon: '\u{1F501}', title: '3. Keep monitoring',    sub: 'As market conditions change, the decision may flip.' },
-        { tone: 'rose',  icon: '\u{1F6AA}', title: '4. Exit in the long run', sub: 'If losses persist, the firm leaves the industry.' }
-      ],
 
       bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Fixed costs are sunk in the short run — that is why a loss-making firm may still keep going if P ≥ AVC.' },
 
@@ -232,21 +255,37 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{2696}\u{FE0F}', tone: 'green', text: '<strong>LR equilibrium: MC = MR = AR = AC at minimum AC.</strong> Firms earn normal profit only.' },
 
-      flowTitle: 'ENTRY AND EXIT',
-      flowEmoji: '\u{1F501}',
-      flowSep: '\u{2192}',
-      flow: [
-        { tone: 'green',  icon: '\u{1F4B0}', title: 'Abnormal profit',         sub: 'P > AC for existing firms.' },
-        { tone: 'blue',   icon: '\u{2795}',  title: 'New firms enter',         sub: 'Attracted by the abnormal profit.' },
-        { tone: 'amber',  icon: '\u{1F4C8}', title: 'Industry supply rises',   sub: 'Supply shifts right.' },
-        { tone: 'rose',   icon: '\u{1F4C9}', title: 'Market price falls',      sub: 'Until abnormal profit is competed away.' },
-        { tone: 'purple', icon: '\u{2796}',  title: 'Firms exit (if loss)',    sub: 'When P < AC; supply contracts; price recovers.' },
-        { tone: 'slate',  icon: '\u{2696}\u{FE0F}', title: 'Normal profit only',     sub: 'P = AC at min AC. Free entry and exit has done its work.' }
-      ],
-
-      visualKey: 'pcLongRunDiagram',
-      visualLabel: 'THE LONG-RUN FIRM',
-      visualEmoji: '\u{1F4CA}',
+      interactiveDiagram: {
+        svgKey: 'pcLongRunDiagram',
+        label: 'THE LONG-RUN FIRM — build it in three steps',
+        emoji: '\u{1F4CA}',
+        layers: ['pclr-1', 'pclr-2', 'pclr-3'],
+        views: [
+          {
+            label: 'The cost curves',
+            tone: 'blue',
+            head: 'Step 1 — the firm’s costs',
+            body: 'Again start with <strong>MC</strong> and <strong>AC</strong>. The lowest point of AC — where MC cuts it — is the most efficient scale of production.',
+            show: ['pclr-1']
+          },
+          {
+            label: 'Price at min AC',
+            tone: 'amber',
+            head: 'Step 2 — entry and exit move the price',
+            body: 'Abnormal profit pulls <strong>new firms in</strong>, raising industry supply and pushing the price <strong>down</strong>; losses drive firms <strong>out</strong>, lifting it back up. The price settles exactly at <strong>minimum AC</strong>.',
+            analysis: 'Free entry and exit is the engine: it cannot stop while any abnormal profit or loss remains, so it only rests when the price line is tangent to the very bottom of AC.',
+            show: ['pclr-1', 'pclr-2']
+          },
+          {
+            label: 'Normal profit only',
+            tone: 'slate',
+            head: 'Step 3 — the long-run equilibrium',
+            body: 'At Q*, <strong>MC = MR = AR = AC at minimum AC</strong>. There is <strong>no profit rectangle</strong> — the firm earns <strong>normal profit only</strong>: just enough to stay in the industry.',
+            analysis: 'Every condition lines up at one point: the output rule (MC = MR), the price (AR), and the lowest cost per unit (min AC) all coincide. That is what makes perfect competition the efficiency benchmark — the subject of the next card.',
+            show: ['pclr-1', 'pclr-2', 'pclr-3']
+          }
+        ]
+      },
 
       causesLabel: 'WHY IT IS IMPRESSIVE',
       causesEmoji: '\u{1F31F}',
@@ -278,9 +317,36 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{2705}', tone: 'green', text: 'In long-run perfect competition, firms can be <strong>both</strong> productively and allocatively efficient.' },
 
-      visualKey: 'pcEfficiencyDiagram',
-      visualLabel: 'THE EFFICIENCY STORY',
-      visualEmoji: '\u{1F3AF}',
+      interactiveDiagram: {
+        svgKey: 'pcEfficiencyDiagram',
+        label: 'THE EFFICIENCY STORY — build it in three steps',
+        emoji: '\u{1F3AF}',
+        layers: ['pcef-1', 'pcef-2', 'pcef-3'],
+        views: [
+          {
+            label: 'The cost curves',
+            tone: 'blue',
+            head: 'Step 1 — MC and AC',
+            body: 'The same long-run firm: <strong>MC</strong> and <strong>AC</strong>, with MC cutting AC at its minimum.',
+            show: ['pcef-1']
+          },
+          {
+            label: 'The market price',
+            tone: 'green',
+            head: 'Step 2 — price at minimum AC',
+            body: 'Free entry and exit has driven the price down to <strong>AR = MR = P</strong> sitting exactly at the bottom of AC.',
+            show: ['pcef-1', 'pcef-2']
+          },
+          {
+            label: 'Both efficiencies',
+            tone: 'amber',
+            head: 'Step 3 — productive AND allocative',
+            body: 'At Q*, <strong>P = MC = min AC</strong> — one point that satisfies <strong>both</strong> efficiency tests at once.',
+            analysis: 'Productive efficiency: output is at the lowest point of AC, so resources are used at least cost. Allocative efficiency: price equals marginal cost, so the value of the last unit to consumers equals what it costs society to make. Perfect competition delivers both — which is exactly why it is the benchmark.',
+            show: ['pcef-1', 'pcef-2', 'pcef-3']
+          }
+        ]
+      },
 
       causesLabel: 'WHY IT IS IMPRESSIVE',
       causesEmoji: '\u{1F31F}',

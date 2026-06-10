@@ -17200,17 +17200,21 @@ window.ECONOS_ICONS = {
         <text x="418" y="80" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
         <text x="422" y="92" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">(£)</text>
         <text x="720" y="300" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity (q)</text>
-        <!-- Horizontal AR = MR = D line at y=180 (matching P* on left) -->
-        <line x1="450" y1="180" x2="720" y2="180" stroke="#16A34A" stroke-width="2.6"/>
-        <text x="728" y="184" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif" text-anchor="end">AR = MR = D</text>
-        <text x="490" y="200" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">(P* = price set by market)</text>
+        <!-- Horizontal AR = MR = D line at y=180 (matching P* on left).
+             Label sits ABOVE the line (y=168) so the green line never strikes
+             through the text. -->
+        <line x1="450" y1="180" x2="712" y2="180" stroke="#16A34A" stroke-width="2.6"/>
+        <text x="708" y="168" font-size="13" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif" text-anchor="end">AR = MR = D</text>
+        <text x="490" y="202" font-size="11" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">(P* = price set by market)</text>
         <line x1="450" y1="180" x2="444" y2="180" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="444" y="184" font-size="12" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P*</text>
+        <text x="444" y="172" font-size="12" font-weight="800" fill="#0B1426" text-anchor="start" font-family="Inter,sans-serif">P*</text>
         <text x="585" y="300" font-size="12" font-weight="800" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">q*</text>
         <line x1="585" y1="180" x2="585" y2="280" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 3"/>
 
-        <!-- Dashed connector arrow from industry P* to firm P* -->
-        <line x1="346" y1="180" x2="442" y2="180" stroke="#0B1426" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#pcd-arr)"/>
+        <!-- Dashed connector arrow sitting in the gutter between the panels —
+             the market price feeding across to the firm. Stops short of the
+             firm axis (x=450) and its P* tick so nothing clashes. -->
+        <line x1="356" y1="180" x2="408" y2="180" stroke="#0B1426" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#pcd-arr)"/>
         <defs>
           <marker id="pcd-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/>
@@ -17258,8 +17262,8 @@ window.ECONOS_ICONS = {
         <text x="20" y="418" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price</text>
         <text x="340" y="692" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
         <line x1="50" y1="542" x2="340" y2="542" stroke="#16A34A" stroke-width="2.4"/>
-        <text x="316" y="538" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">AR = MR = D</text>
-        <text x="180" y="558" font-size="10" font-weight="700" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">(P* = market price)</text>
+        <text x="338" y="528" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">AR = MR = D</text>
+        <text x="195" y="560" font-size="10" font-weight="700" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">(P* = market price)</text>
         <line x1="50" y1="542" x2="44" y2="542" stroke="#0B1426" stroke-width="1.4"/>
         <text x="44" y="546" font-size="11" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">P*</text>
       </svg>

@@ -633,6 +633,106 @@
   window.ECONOS_FIRM.monopolisticEfficiency = monopolisticEfficiency;
   window.ECONOS_FIRM.tangentDemand = tangentDemand;
 
+  /* Solve fA(q) = fB(q) by scanning for the LAST sign change of (fA−fB).
+     Used for downward-curve crossings (AR=MC, AR=AC) where the rising-branch
+     solveCross assumption doesn't hold. */
+  function solveEq(fA, fB, qMin, qMax) {
+    var steps = 3000, prevQ = qMin, prevD = fA(qMin) - fB(qMin), best = null;
+    for (var i = 1; i <= steps; i++) {
+      var q = qMin + (qMax - qMin) * (i / steps);
+      var d = fA(q) - fB(q);
+      if ((prevD <= 0 && d > 0) || (prevD >= 0 && d < 0)) {
+        best = prevQ + (q - prevQ) * Math.abs(prevD) / (Math.abs(prevD) + Math.abs(d));
+      }
+      prevQ = q; prevD = d;
+    }
+    return best;
+  }
+
+  /* Natural monopoly — falling AC across the whole market (very high fixed
+     cost, low ~flat MC below AC throughout). A 4-step reveal tells the full
+     regulation story:
+       nm-1  economies of scale (AC falls across the market; MC < AC)
+       nm-2  unregulated profit-max (MR=MC → Q₁, P₁, supernormal profit)
+       nm-3  allocatively-efficient price P=MC (Q₃) — but P < AC ⇒ loss/subsidy
+       nm-4  average-cost pricing P=AC (Q₂) — the firm breaks even
+     Cost model: FC large, VC≈linear so MC is ~flat and AC = FC/Q + MC keeps
+     falling. Demand linear (a − bQ). */
+  function naturalMonopoly(opts) {
+    opts = opts || {};
+    var fc = opts.fc != null ? opts.fc : 300;
+    var vc = opts.vc || [3, 0, 0];
+    var qAxis = opts.qMax != null ? opts.qMax : 135;
+    var yAxis = opts.yMax != null ? opts.yMax : 16;
+    var qMin = opts.qMin != null ? opts.qMin : 30;
+    var qSamp = opts.qSampleMax != null ? opts.qSampleMax : qAxis - 4;
+    var n = opts.samples != null ? opts.samples : 60;
+    var dem = opts.demand || { a: 15, b: 0.1 };
+    var M = makeModel(fc, vc);
+    var ar = function (q) { return dem.a - dem.b * q; };
+    var mr = function (q) { return dem.a - 2 * dem.b * q; };
+    var cap = qAxis * 0.92;
+    var arEnd = Math.min(cap, dem.a / dem.b - 1), mrEnd = Math.min(cap, dem.a / (2 * dem.b));
+
+    var curves = [
+      { id: 'AC', d: samplePath(M.ac, qMin, qSamp, qAxis, yAxis, n), tone: 'blue', label: 'AC', strokeWidth: 2.4, labelDx: 6, labelDy: -6, anchor: 'start' },
+      { id: 'MC', d: samplePath(M.mc, qMin, qSamp, qAxis, yAxis, n), tone: 'rose', label: 'MC', strokeWidth: 2.6, labelDx: 6, labelDy: -6, anchor: 'start' },
+      { id: 'AR', d: samplePath(ar, qMin, arEnd, qAxis, yAxis, 2), tone: 'green', label: 'D', strokeWidth: 2.4, labelDx: 6, labelDy: -8, anchor: 'start' },
+      { id: 'MR', d: samplePath(mr, qMin, mrEnd, qAxis, yAxis, 2), tone: 'amber', label: 'MR', strokeWidth: 2.0, labelDx: -4, labelDy: -8, anchor: 'end' }
+    ];
+    var polygons = [], points = [], texts = [];
+    var nyx = function (q) { return q / qAxis; };
+
+    // nm-1: economies of scale annotation
+    texts.push({ x: 0.42, y: 0.9, text: 'Economies of scale: AC falls across the whole market', tone: 'purple', bold: true, anchor: 'middle', layer: 'nm-1' });
+
+    // nm-2: unregulated MR = MC → Q₁, P₁, profit
+    var q1 = solveCross(M.mc, mr, qMin, qSamp);
+    if (q1 != null) {
+      var x1 = nyx(q1), p1 = ar(q1) / yAxis, mc1 = M.mc(q1) / yAxis, ac1 = M.ac(q1) / yAxis;
+      points.push({ intersection: { curves: ['MC', 'MR'], near: [x1, mc1] }, tone: 'slate', radius: 4, layer: 'nm-2' });
+      curves.push({ id: '_d1', shape: { type: 'vertical', x: x1, from: 0, to: p1 }, tone: 'slate', strokeWidth: 1.2, dashed: '3 3', layer: 'nm-2' });
+      polygons.push({ points: [[0, ac1], [x1, ac1], [x1, p1], [0, p1]], tone: 'green', opacity: 0.20, layer: 'nm-2' });
+      points.push({ x: x1, on: 'AR', tone: 'green', radius: 4.5, layer: 'nm-2' });
+      texts.push({ x: -0.012, y: p1, text: 'P₁', tone: 'green', bold: true, anchor: 'end', layer: 'nm-2' });
+      texts.push({ x: x1, y: -0.05, text: 'Q₁', tone: 'slate', bold: true, anchor: 'middle', layer: 'nm-2' });
+      texts.push({ x: x1 / 2, y: (ac1 + p1) / 2, text: 'Profit', tone: 'green', bold: true, anchor: 'middle', layer: 'nm-2' });
+    }
+
+    // nm-3: allocatively efficient P = MC → Q₃ (loss/subsidy)
+    var q3 = solveEq(ar, M.mc, qMin, qSamp);
+    if (q3 != null) {
+      var x3 = nyx(q3), p3 = M.mc(q3) / yAxis, ac3 = M.ac(q3) / yAxis;
+      curves.push({ id: '_d3', shape: { type: 'vertical', x: x3, from: 0, to: ac3 }, tone: 'rose', strokeWidth: 1.2, dashed: '3 3', layer: 'nm-3' });
+      curves.push({ id: '_loss3', shape: { type: 'vertical', x: x3, from: p3, to: ac3 }, tone: 'rose', strokeWidth: 5, layer: 'nm-3' });
+      points.push({ x: x3, on: 'MC', tone: 'rose', radius: 4.5, label: 'P = MC', labelDx: -8, labelDy: 14, anchor: 'end', layer: 'nm-3' });
+      texts.push({ x: x3, y: -0.05, text: 'Q₃', tone: 'rose', bold: true, anchor: 'middle', layer: 'nm-3' });
+      texts.push({ x: x3 - 0.015, y: (p3 + ac3) / 2, text: 'loss', tone: 'rose', bold: true, anchor: 'end', layer: 'nm-3' });
+    }
+
+    // nm-4: average-cost pricing P = AC → Q₂ (break even)
+    var q2 = solveEq(ar, M.ac, qMin, qSamp);
+    if (q2 != null) {
+      var x2 = nyx(q2), p2 = M.ac(q2) / yAxis;
+      curves.push({ id: '_d2', shape: { type: 'vertical', x: x2, from: 0, to: p2 }, tone: 'blue', strokeWidth: 1.2, dashed: '3 3', layer: 'nm-4' });
+      points.push({ x: x2, on: 'AC', tone: 'blue', radius: 4.5, label: 'P = AC', labelDx: 8, labelDy: -8, anchor: 'start', layer: 'nm-4' });
+      texts.push({ x: x2, y: -0.05, text: 'Q₂', tone: 'blue', bold: true, anchor: 'middle', layer: 'nm-4' });
+      texts.push({ x: 0.5, y: 0.82, text: 'P = AC: break-even (fair return)', tone: 'blue', bold: true, anchor: 'middle', layer: 'nm-4' });
+    }
+
+    return {
+      width: opts.width || 740, height: opts.height || 400,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      className: opts.className || 'firm-natmonopoly-svg', background: '#FFFFFF',
+      axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
+      layers: ['nm-1', 'nm-2', 'nm-3', 'nm-4'],
+      polygons: polygons, curves: curves, points: points, texts: texts
+    };
+  }
+
+  window.ECONOS_FIRM.solveEq = solveEq;
+  window.ECONOS_FIRM.naturalMonopoly = naturalMonopoly;
+
   /* Total-cost diagram: TFC (horizontal), TVC (the S-shaped cubic from the
      origin) and TC = TFC + TVC (the same S shifted up by TFC). The vertical
      gap between TC and TVC is TFC at every output — marked with a double

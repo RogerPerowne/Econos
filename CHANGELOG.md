@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.135.0 — 2026-06-10
+
+### Public Expenditure topic complete (7 cards)
+
+- **Public Expenditure (Edexcel A 4.5.1)** built and flipped live, replacing
+  the placeholder. Seven cards: the big picture (capital / current / transfer
+  spending + the core trade-off) → the three types of public spending → why
+  public expenditure changes → productivity & growth → living standards &
+  equality → taxation, borrowing & crowding out → the whole story. Uses the
+  `heroGovSpending` cover hero.
+- New bespoke visual `govBudgetHub` (`js/icons.js`) — a radial hub placing six
+  drivers of public-spending change (ageing population, recessions, shocks &
+  security, development stage, debt interest, climate & infrastructure) around
+  a central "Government budget" node, collapsing to a two-column layout on
+  mobile. Catalogued in `docs/visual-catalogue.md`.
+- `sw.js` cache bumped (`econos-v472`) for the `icons.js` change.
+
 ## 0.134.0 — 2026-06-09
 
 ### Site review: distinct cover hero per Theme 4 topic

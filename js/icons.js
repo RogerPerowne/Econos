@@ -15945,6 +15945,87 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* costsChainFlow – Card 7 of Costs (3.3.2) "The whole cost story".
+     Six-tile horizontal flow chain: Fixed cost → Variable cost → Total cost →
+     Average cost → Marginal cost → Decisions. Replaces the default engine
+     flow block so the chain renders as a properly styled SVG diagram.
+     Colours mirror the data-file tones (green/amber/blue/purple/rose/slate). */
+  costsChainFlow: `
+    <svg viewBox="0 0 920 184" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <defs>
+        <marker id="cfc-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/>
+        </marker>
+      </defs>
+      <rect width="920" height="184" fill="#FFFFFF" rx="12"/>
+
+      <!-- TILE 1 – Fixed cost (green) -->
+      <g>
+        <rect x="48" y="12" width="124" height="160" rx="12" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.5"/>
+        <text x="110" y="56" font-size="28" text-anchor="middle">🔒</text>
+        <text x="110" y="82" font-size="12.5" font-weight="800" fill="#065F46" text-anchor="middle">Fixed cost</text>
+        <text x="110" y="107" font-size="11" fill="#374151" text-anchor="middle">Does not change</text>
+        <text x="110" y="122" font-size="11" fill="#374151" text-anchor="middle">with output in</text>
+        <text x="110" y="137" font-size="11" fill="#374151" text-anchor="middle">the short run.</text>
+      </g>
+      <line x1="173" y1="92" x2="185" y2="92" stroke="#64748B" stroke-width="2" marker-end="url(#cfc-arrow)"/>
+
+      <!-- TILE 2 – Variable cost (amber) -->
+      <g>
+        <rect x="188" y="12" width="124" height="160" rx="12" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+        <text x="250" y="56" font-size="28" text-anchor="middle">📦</text>
+        <text x="250" y="82" font-size="12.5" font-weight="800" fill="#92400E" text-anchor="middle">Variable cost</text>
+        <text x="250" y="107" font-size="11" fill="#374151" text-anchor="middle">Rises with output</text>
+        <text x="250" y="122" font-size="11" fill="#374151" text-anchor="middle">(and may</text>
+        <text x="250" y="137" font-size="11" fill="#374151" text-anchor="middle">accelerate).</text>
+      </g>
+      <line x1="313" y1="92" x2="325" y2="92" stroke="#64748B" stroke-width="2" marker-end="url(#cfc-arrow)"/>
+
+      <!-- TILE 3 – Total cost (blue) -->
+      <g>
+        <rect x="328" y="12" width="124" height="160" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+        <text x="390" y="56" font-size="28" text-anchor="middle">➕</text>
+        <text x="390" y="82" font-size="12.5" font-weight="800" fill="#1E3A8A" text-anchor="middle">Total cost</text>
+        <text x="390" y="107" font-size="11" fill="#374151" text-anchor="middle">TC = FC + VC.</text>
+        <text x="390" y="122" font-size="11" fill="#374151" text-anchor="middle">Both parts add up</text>
+        <text x="390" y="137" font-size="11" fill="#374151" text-anchor="middle">to the full bill.</text>
+      </g>
+      <line x1="453" y1="92" x2="465" y2="92" stroke="#64748B" stroke-width="2" marker-end="url(#cfc-arrow)"/>
+
+      <!-- TILE 4 – Average cost (purple) -->
+      <g>
+        <rect x="468" y="12" width="124" height="160" rx="12" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+        <text x="530" y="56" font-size="28" text-anchor="middle">🏷️</text>
+        <text x="530" y="82" font-size="12.5" font-weight="800" fill="#4C1D95" text-anchor="middle">Average cost</text>
+        <text x="530" y="107" font-size="11" fill="#374151" text-anchor="middle">AC = TC ÷ Q</text>
+        <text x="530" y="122" font-size="11" fill="#374151" text-anchor="middle">(= AFC + AVC).</text>
+        <text x="530" y="137" font-size="11" fill="#374151" text-anchor="middle">Cost per unit.</text>
+      </g>
+      <line x1="593" y1="92" x2="605" y2="92" stroke="#64748B" stroke-width="2" marker-end="url(#cfc-arrow)"/>
+
+      <!-- TILE 5 – Marginal cost (rose) -->
+      <g>
+        <rect x="608" y="12" width="124" height="160" rx="12" fill="#FFE4E6" stroke="#FDA4AF" stroke-width="1.5"/>
+        <text x="670" y="56" font-size="28" text-anchor="middle">📈</text>
+        <text x="670" y="82" font-size="12.5" font-weight="800" fill="#9F1239" text-anchor="middle">Marginal cost</text>
+        <text x="670" y="107" font-size="11" fill="#374151" text-anchor="middle">MC = ΔTC ÷ ΔQ</text>
+        <text x="670" y="122" font-size="11" fill="#374151" text-anchor="middle">– the cost of</text>
+        <text x="670" y="137" font-size="11" fill="#374151" text-anchor="middle">one more.</text>
+      </g>
+      <line x1="733" y1="92" x2="745" y2="92" stroke="#64748B" stroke-width="2" marker-end="url(#cfc-arrow)"/>
+
+      <!-- TILE 6 – Decisions (slate) -->
+      <g>
+        <rect x="748" y="12" width="124" height="160" rx="12" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="810" y="56" font-size="28" text-anchor="middle">🎯</text>
+        <text x="810" y="82" font-size="12.5" font-weight="800" fill="#334155" text-anchor="middle">Decisions</text>
+        <text x="810" y="107" font-size="11" fill="#374151" text-anchor="middle">Use the right</text>
+        <text x="810" y="122" font-size="11" fill="#374151" text-anchor="middle">cost for the</text>
+        <text x="810" y="137" font-size="11" fill="#374151" text-anchor="middle">right call.</text>
+      </g>
+    </svg>
+  `,
+
   /* lracBigPicture – Economies of scale card 1. Generated (firm-model lrac):
      flat-bottomed U-shaped LRAC with three region tints (economies of scale,
      MES, diseconomies) and the min-LRAC marker. Replaces hand-tuned bezier. */

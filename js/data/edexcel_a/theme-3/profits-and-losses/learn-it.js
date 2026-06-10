@@ -239,6 +239,8 @@ window.ECONOS_TOPIC = {
         svgKey: 'profitMeasures',
         label: 'Two measures of profitability — step through both',
         emoji: '\u{1F4CA}',
+        wide: true,
+        maxWidth: '700px',
         layers: ['pm-1', 'pm-2'],
         views: [
           {

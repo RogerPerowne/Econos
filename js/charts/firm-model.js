@@ -943,4 +943,96 @@
   }
 
   window.ECONOS_FIRM.totalCost = totalCost;
+
+  /* Third-degree price discrimination — two side-by-side markets that share a
+     common MC. Each market has a linear demand AR = a − bQ and MR = a − 2bQ;
+     the firm sets MR = MC in each, so the LESS elastic (steeper) market ends
+     up with the HIGHER price and the SMALLER quantity, while the MORE elastic
+     (flatter) market gets the LOWER price and the LARGER quantity. Both panels
+     share one (qMax, yMax) scale so Q_A > Q_B and P_B > P_A read directly off
+     the comparison. Geometry is engine-resolved: the MR=MC dot is an
+     `intersection`, the price dot is snapped `on` AR — no eyeballed
+     coordinates. The pricing quantity Q=(a−mc)/2b and price P=a−bQ are exact
+     for straight lines, used only as solver `near` hints and guide endpoints. */
+  function priceDiscrimination(opts) {
+    opts = opts || {};
+    var qAxis = opts.qMax != null ? opts.qMax : 100;
+    var yAxis = opts.yMax != null ? opts.yMax : 20;
+    var mc = opts.mc != null ? opts.mc : 6;
+    var qMin = opts.qMin != null ? opts.qMin : 0;
+    var markets = opts.markets || [
+      { a: 13, b: 0.07, title: 'Elastic: students / leisure', titleTone: 'blue', sub: 'A' },
+      { a: 19, b: 0.17, title: 'Inelastic: business / domestic', titleTone: 'amber', sub: 'B' }
+    ];
+    var nx = function (q) { return round(q / qAxis, 4); };
+    var ny = function (p) { return round(p / yAxis, 4); };
+    var cap = qAxis * 0.95;
+
+    function buildPanel(area, m) {
+      var ar = function (q) { return m.a - m.b * q; };
+      var mr = function (q) { return m.a - 2 * m.b * q; };
+      var Q = (m.a - mc) / (2 * m.b);     // MR = MC (exact for a straight line)
+      var P = ar(Q);                      // price read up to demand
+      var s = m.sub;
+      var arEnd = Math.min(cap, m.a / m.b - 1);
+      var mrEnd = Math.min(cap, m.a / (2 * m.b));
+
+      // Curve ids are suffixed per market because the engine resolves
+      // `on:` / `intersection:` references by id GLOBALLY across panels —
+      // shared ids would make panel A's dots snap onto panel B's curves.
+      var arId = 'AR' + s, mrId = 'MR' + s, mcId = 'MC' + s;
+      var curves = [
+        { id: arId, d: samplePath(ar, qMin, arEnd, qAxis, yAxis, 2), tone: 'blue',
+          label: 'D_' + s, strokeWidth: 2.6, labelDx: -4, labelDy: -8, anchor: 'end' },
+        { id: mrId, d: samplePath(mr, qMin, mrEnd, qAxis, yAxis, 2), tone: 'slate',
+          label: 'MR_' + s, strokeWidth: 1.9, labelDx: -2, labelDy: -8, anchor: 'end' },
+        { id: mcId, d: samplePath(function () { return mc; }, qMin, cap, qAxis, yAxis, 2),
+          tone: 'rose', strokeWidth: 2.0, dashed: '5 3' }
+      ];
+      var polygons = [
+        { points: [[0, 0], [nx(Q), 0], [nx(Q), ny(P)], [0, ny(P)]], tone: 'amber', opacity: 0.16 }
+      ];
+      var points = [
+        { x: nx(Q), intersection: { curves: [mrId, mcId], near: [nx(Q), ny(mc)] }, tone: 'slate', radius: 4 },
+        { x: nx(Q), on: arId, tone: 'green', radius: 4.5 }
+      ];
+      // Dashed guides to the price/quantity axes (arrows w/ no marker, like
+      // the elastic-vs-inelastic comparison panels).
+      var arrows = [
+        { x1: nx(Q), y1: 0, x2: nx(Q), y2: ny(P), tone: 'slate', strokeWidth: 1.2, dashed: '4 3', buffer: 0 },
+        { x1: 0, y1: ny(P), x2: nx(Q), y2: ny(P), tone: 'slate', strokeWidth: 1.2, dashed: '4 3', buffer: 0 }
+      ];
+      var texts = [
+        { x: -0.014, y: ny(P), text: 'P_' + s, tone: 'slate', bold: true, anchor: 'end' },
+        { x: nx(Q), y: -0.06, text: 'Q_' + s, tone: 'slate', bold: true, anchor: 'middle' },
+        { x: nx(Q) / 2, y: ny(P) / 2, text: 'Revenue', tone: 'amber', bold: true, anchor: 'middle' },
+        { x: 0.86, y: ny(mc) - 0.055, text: 'MC', tone: 'rose', bold: true, anchor: 'middle' }
+      ];
+      return {
+        chartArea: area, title: m.title, titleTone: m.titleTone,
+        axes: { x: { label: 'Q' }, y: { label: '£' } },
+        curves: curves, polygons: polygons, points: points, arrows: arrows, texts: texts
+      };
+    }
+
+    var w = opts.width || 720, h = opts.height || 360;
+    return {
+      width: w, height: h, className: opts.className || 'firm-price-disc-svg', background: '#FFFFFF',
+      divider: { x: 360, y1: 24, y2: 286 },
+      panels: [
+        buildPanel(opts.areaA || { x: 54, y: 30, width: 280, height: 252 }, markets[0]),
+        buildPanel(opts.areaB || { x: 412, y: 30, width: 280, height: 252 }, markets[1]),
+        {
+          chartArea: { x: 0, y: 300, width: w, height: 22 }, axes: false,
+          texts: [{
+            x: 0.5, y: 0.5,
+            text: opts.caption || 'P_B > P_A and Q_A > Q_B — inelastic buyers pay more for fewer units (MR_A = MR_B = MC)',
+            tone: 'gray', italic: true, anchor: 'middle'
+          }]
+        }
+      ]
+    };
+  }
+
+  window.ECONOS_FIRM.priceDiscrimination = priceDiscrimination;
 })();

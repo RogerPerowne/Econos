@@ -243,6 +243,15 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   regulation points), `priceDiscPanels` (`pd-1..3`: combined-market MC →
   inelastic Market A high price → elastic Market B low price), and the
   hubs `monopolyFeaturesHub` (6 spokes) and `priceDiscHub` (two markets).
+- **Third-degree price discrimination (3.4.5):** `thirdDegreePd` is built by
+  `ECONOS_FIRM.priceDiscrimination({ markets:[{a,b,…},{a,b,…}], mc, qMax, yMax })`
+  — a two-panel chart on ONE shared (Q, £) scale so the asymmetry reads
+  directly: the elastic market (flat demand) gets the lower price + larger
+  quantity, the inelastic market (steep demand) the higher price + smaller
+  quantity. MR=MC is engine-`intersection`-solved per market and the price
+  dot is snapped `on:` demand. Curve ids are suffixed per market (`AR_A`,
+  `MR_B`, …) because the engine resolves `on:`/`intersection:` ids globally
+  across panels. Spec: `js/charts/specs/price-discrimination.js`.
 - **Controlling Market Power (3.6.1):** `priceCapMonopoly` (interactive
   price-cap-on-a-monopoly, `pcm-1..2` — monopoly outcome → cap lowers
   price and raises output; reuses the monopoly coordinate system).

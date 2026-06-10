@@ -8,6 +8,6 @@
     ymin: 10, qa: 45, qb: 75, ka: 0.013, kb: 0.008,
     qMax: 120, yMax: 30, qMin: 10, regions: true, mes: true,
     srac: [25, 60, 95], sracCurvature: 0.035, layer: 'els-2', layers: ['els-2'],
-    axes: { x: { label: 'Output (Q)' }, y: { label: 'Average cost (£)' } }
+    axes: { x: { label: 'Output (Q)' }, y: { label: 'Cost (£)' } }
   });
 })();

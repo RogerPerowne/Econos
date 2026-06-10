@@ -370,14 +370,14 @@
       // mp-2: drop to Qm
       curves.push({ id: '_drop', shape: { type: 'vertical', x: nx, from: 0, to: mcmY },
         tone: 'slate', strokeWidth: 1.3, dashed: '3 3', layer: 'mp-2' });
-      texts.push({ x: nx, y: -0.05, text: 'Qₘ', tone: 'slate', bold: true, anchor: 'middle', layer: 'mp-2' });
+      texts.push({ x: nx, y: -0.05, text: 'Qm', tone: 'slate', bold: true, anchor: 'middle', layer: 'mp-2' });
       // mp-3: up to AR for Pm, across to price axis
       curves.push({ id: '_up', shape: { type: 'vertical', x: nx, from: mcmY, to: pmY },
         tone: 'green', strokeWidth: 1.4, dashed: '4 3', layer: 'mp-3' });
       curves.push({ id: '_pm', shape: { type: 'horizontal', y: pmY, from: 0, to: nx },
         tone: 'green', strokeWidth: 1.4, dashed: '4 3', layer: 'mp-3' });
       points.push({ x: nx, on: 'AR', tone: 'green', radius: 4.5, layer: 'mp-3' });
-      texts.push({ x: -0.012, y: pmY, text: 'Pₘ', tone: 'green', bold: true, anchor: 'end', layer: 'mp-3' });
+      texts.push({ x: -0.012, y: pmY, text: 'Pm', tone: 'green', bold: true, anchor: 'end', layer: 'mp-3' });
       // mp-4: AC at Qm + supernormal profit rectangle
       polygons.push({ points: [[0, acmY], [nx, acmY], [nx, pmY], [0, pmY]], tone: 'green', opacity: 0.22, layer: 'mp-4' });
       curves.push({ id: '_ac', shape: { type: 'horizontal', y: acmY, from: 0, to: nx },
@@ -397,11 +397,80 @@
     };
   }
 
+  /* Monopoly welfare / deadweight-loss diagram, as a 3-step reveal:
+       mw-1  the monopoly outcome (Qₘ, Pₘ — output restricted, P > MC)
+       mw-2  the competitive benchmark (Qc, Pc where P = MC)
+       mw-3  the deadweight-loss triangle between Qₘ and Qc
+     Base curves MC, AR (=D), MR (AC is dropped — the welfare story is
+     MC vs demand, so the diagram stays clean). The DWL triangle uses the
+     soft-fill + centroid-label shading style from the externality specs.
+     Both equilibria are engine-solved (MC=MR for Qₘ, MC=AR for Qc). */
+  function monopolyWelfare(opts) {
+    opts = opts || {};
+    var fc = opts.fc != null ? opts.fc : 320;
+    var vc = opts.vc || [10, -0.15, 0.00125];
+    var qAxis = opts.qMax != null ? opts.qMax : 130;
+    var yAxis = opts.yMax != null ? opts.yMax : 26;
+    var qMin = opts.qMin != null ? opts.qMin : 16;
+    var qSamp = opts.qSampleMax != null ? opts.qSampleMax : qAxis - 2;
+    var n = opts.samples != null ? opts.samples : 60;
+    var dem = opts.demand || { a: 22, b: 0.1 };
+    var M = makeModel(fc, vc);
+    var ar = function (q) { return dem.a - dem.b * q; };
+    var mr = function (q) { return dem.a - 2 * dem.b * q; };
+    var rightCap = qAxis * 0.9;
+    var arEnd = Math.min(rightCap, dem.a / dem.b - 1);
+    var mrEnd = Math.min(rightCap, dem.a / (2 * dem.b));
+
+    var curves = [
+      { id: 'MC', d: samplePath(M.mc, qMin, qSamp, qAxis, yAxis, n), tone: 'rose',
+        label: 'MC', strokeWidth: 2.8, labelDx: 6, labelDy: -4, anchor: 'start' },
+      { id: 'AR', d: samplePath(ar, qMin, arEnd, qAxis, yAxis, 2), tone: 'green',
+        label: 'AR (D)', strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end' },
+      { id: 'MR', d: samplePath(mr, qMin, mrEnd, qAxis, yAxis, 2), tone: 'amber',
+        label: 'MR', strokeWidth: 2.2, labelDx: -4, labelDy: -8, anchor: 'end' }
+    ].filter(function (c) { return c.d; });
+
+    var qm = solveCross(M.mc, mr, qMin, qSamp);
+    var qc = solveCross(M.mc, ar, qMin, qSamp);
+    var polygons = [], points = [], texts = [];
+    if (qm != null && qc != null) {
+      var nxm = qm / qAxis, pmY = ar(qm) / yAxis, mcmY = M.mc(qm) / yAxis;
+      var nxc = qc / qAxis, pcY = ar(qc) / yAxis;
+      // mw-1: monopoly outcome
+      curves.push({ id: '_qm', shape: { type: 'vertical', x: nxm, from: 0, to: pmY },
+        tone: 'slate', strokeWidth: 1.3, dashed: '3 3', layer: 'mw-1' });
+      points.push({ x: nxm, on: 'AR', tone: 'green', radius: 5, layer: 'mw-1' });
+      texts.push({ x: nxm, y: -0.05, text: 'Qm', tone: 'slate', bold: true, anchor: 'middle', layer: 'mw-1' });
+      texts.push({ x: -0.012, y: pmY, text: 'Pm', tone: 'green', bold: true, anchor: 'end', layer: 'mw-1' });
+      // mw-2: competitive benchmark (P = MC)
+      curves.push({ id: '_qc', shape: { type: 'vertical', x: nxc, from: 0, to: pcY },
+        tone: 'blue', strokeWidth: 1.3, dashed: '3 3', layer: 'mw-2' });
+      points.push({ intersection: { curves: ['MC', 'AR'], near: [nxc, pcY] },
+        tone: 'blue', radius: 5, label: 'P = MC', labelDx: 9, labelDy: -6, anchor: 'start', layer: 'mw-2' });
+      texts.push({ x: nxc, y: -0.05, text: 'Qc', tone: 'blue', bold: true, anchor: 'middle', layer: 'mw-2' });
+      texts.push({ x: -0.012, y: pcY, text: 'Pc', tone: 'blue', bold: true, anchor: 'end', layer: 'mw-2' });
+      // mw-3: deadweight-loss triangle (Qm,Pm) – (Qm,MC@Qm) – (Qc,Pc)
+      polygons.push({ points: [[nxm, pmY], [nxm, mcmY], [nxc, pcY]], fill: '#FCA5A5', opacity: 0.55, layer: 'mw-3' });
+      texts.push({ x: (nxm + nxm + nxc) / 3 + 0.02, y: (pmY + mcmY + pcY) / 3, text: 'DWL', tone: 'red', bold: true, anchor: 'middle', layer: 'mw-3' });
+    }
+
+    return {
+      width: opts.width || 740, height: opts.height || 400,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      className: opts.className || 'firm-monopoly-welfare-svg', background: '#FFFFFF',
+      axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
+      layers: ['mw-1', 'mw-2', 'mw-3'],
+      polygons: polygons, curves: curves, points: points, texts: texts
+    };
+  }
+
   window.ECONOS_FIRM = {
     costCurves: costCurves,
     costRevenue: costRevenue,
     totalCost: totalCost,
     monopolyProfitMax: monopolyProfitMax,
+    monopolyWelfare: monopolyWelfare,
     makeModel: makeModel,
     samplePath: samplePath,
     solveCross: solveCross

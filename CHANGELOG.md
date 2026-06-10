@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.146.0 — 2026-06-10
+
+### Chart engine Phase 3 — Monopoly welfare / deadweight loss migrated
+
+- New `window.ECONOS_FIRM.monopolyWelfare()` builder + spec `monopoly-welfare.js`
+  replace the hand-rolled `monopolyWelfare`. Base curves MC, AR(=D), MR; a 3-step
+  reveal builds the welfare case: mw-1 monopoly outcome (Qm, Pm) → mw-2 competitive
+  benchmark (Qc, Pc at P=MC) → mw-3 the deadweight-loss triangle. Both equilibria
+  engine-solved (MC=MR for Qm, MC=AR for Qc); DWL uses the soft-fill + centroid-
+  label shading style from the externality specs. AC is omitted here to keep the
+  welfare diagram focused on MC vs demand.
+- Standardised the monopoly point labels to plain Qm/Pm/Qc/Pc across both monopoly
+  diagrams (was a mix of subscript and underscore).
+- Verified the live 3-step reveal. `lint:charts` clean (103 specs), 104 snapshot
+  tests; `sw.js` → `econos-v483`.
+
 ## 0.145.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Monopoly profit-max migrated

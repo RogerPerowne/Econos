@@ -12,12 +12,14 @@
   var spec = window.ECONOS_FIRM.costRevenue({
     fc: FC, vc: VC, qMax: qAxis, yMax: yAxis, qMin: qMin, samples: 60,
     curves: ['MC', 'AC'], demand: { type: 'horizontal', price: pStar },
+    revealLayers: ['pcef-1', 'pcef-2', 'pcef-3'],
     axes: { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } }
   });
-  // Annotate the efficiency point (P = MC = min AC).
+  // Annotate the efficiency point (P = MC = min AC) — revealed with the
+  // decision stage (pcef-3).
   spec.texts.push({
     x: qStar / qAxis - 0.02, y: pStar / yAxis + 0.16,
-    text: 'P = MC = min AC', tone: 'blue', bold: true, anchor: 'middle'
+    text: 'P = MC = min AC', tone: 'blue', bold: true, anchor: 'middle', layer: 'pcef-3'
   });
   window.ECONOS_PC_EFFICIENCY_SPEC = spec;
 })();

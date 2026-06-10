@@ -176,6 +176,11 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   price up to AR and shades the supernormal-profit/loss rectangle. Reference
   renders: `marcosProfitMax` (monopolistic competition, `marcos-profit-max.js`)
   and `marcosProfitMaxPC` (perfect competition, `marcos-profit-max-pc.js`).
+  Pass `revealLayers: [costs, revenue, decision, rectangle]` (3 or 4 ids) to
+  stage it as a multi-step interactiveDiagram — cost curves → AR=MR=P line →
+  MC=MR decision (guides + Q*) → profit/loss rectangle. Reference renders:
+  the four Perfect Competition specs (`pc-short-run-profit/-loss-diagram/
+  -long-run/-efficiency.js`, 3.4.2 cards 3–6).
   `costCurves` also accepts a `layers` array (parallel to `curves`) to drive a
   stepped interactiveDiagram reveal — reference render `averageCostFamilyChart`
   (`average-cost-family.js`, Costs card 3: AFC/AVC/AC, layers acf-1/2/3, same
@@ -194,10 +199,10 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   `monopolySupernormalProfit`, `monopolyDwl`,
   `breakEvenChart` (3.3.4 C3 — interactive TC/TR/break-even reveal with shaded loss + profit regions),
   `profitMeasures` (3.3.4 C4 — interactive profit-per-unit stacked bar + 20% margin donut chart, Product A vs B compare strip),
-  `pcShortRunProfit` (3.4.2 C3 — PC firm SR with shaded abnormal-profit rectangle),
-  `pcLossDiagram` (3.4.2 C4 — PC firm with AVC + shaded loss rectangle and keep-producing annotation),
-  `pcLongRunDiagram` (3.4.2 C5 — PC firm at LR equilibrium with P=AC at min AC, normal profit only),
-  `pcEfficiencyDiagram` (3.4.2 C6 — same chart with both allocative + productive efficiency callouts).
+  `pcShortRunProfit` (3.4.2 C3 — staged interactiveDiagram, 4 steps: costs → AR=MR=P → MC=MR at Q* → abnormal-profit rectangle),
+  `pcLossDiagram` (3.4.2 C4 — staged, 4 steps with MC/AVC/AC: costs → low price → MC=MR → loss rectangle + shutdown test),
+  `pcLongRunDiagram` (3.4.2 C5 — staged, 3 steps: costs → entry/exit drives price to min AC → normal profit only),
+  `pcEfficiencyDiagram` (3.4.2 C6 — staged, 3 steps: costs → price at min AC → P=MC=min AC, both efficiencies). All four use `costRevenue` `revealLayers`.
 - **Efficiency (engine specs, staged):** `productiveEfficiencyDiagram` (3.4.1 C2 — cost-function-driven AC + MC, engine-solved MC = AC minimum, layers pe-1/2/3, `productive-efficiency.js`), `toeAllocativeDiagram` (3.4.1 C3 — D (= MB) vs MC with the engine-solved P = MC point, layers ta-1/2/3, `toe-allocative.js`), `dynamicEfficiencyDiagram` (3.4.1 C4 — AC₁ shifts down to AC₂ after innovation, standard dashed-original shift styling with inverse layer, layers de-1/2, `dynamic-efficiency.js`). All three step through an interactiveDiagram with text on the right.
 - **Market structures:** `naturalMonopolyDiagram`, `kinkedDemandInteractive`,
   `mesBarrierDiagram`, `limitPricingDiagram`, `networkEffectDiagram`,

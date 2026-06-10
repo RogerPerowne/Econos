@@ -8,6 +8,7 @@
   window.ECONOS_PC_LOSS_SPEC = window.ECONOS_FIRM.costRevenue({
     fc: 200, vc: [10, -0.15, 0.00125], qMax: 130, yMax: 20, qMin: 22, samples: 60,
     curves: ['MC', 'AVC', 'AC'], demand: { type: 'horizontal', price: 7 },
+    revealLayers: ['pcl-1', 'pcl-2', 'pcl-3', 'pcl-4'],
     axes: { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } }
   });
 })();

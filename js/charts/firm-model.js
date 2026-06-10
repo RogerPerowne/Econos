@@ -202,6 +202,12 @@
     var which = opts.curves || ['MC', 'AC'];
     var dem = opts.demand || { type: 'linear', a: 22, b: 0.1 };
 
+    // Optional 4-stage reveal layers for an interactiveDiagram:
+    //   [0] cost curves · [1] AR/MR revenue line(s) · [2] the MC=MR decision
+    //   (dashed guides + points + Q* label) · [3] the profit/loss rectangle.
+    // When omitted the diagram renders as a single static state (unchanged).
+    var rl = Array.isArray(opts.revealLayers) ? opts.revealLayers : null;
+
     var M = makeModel(fc, vc);
     var fnFor = { MC: M.mc, AVC: M.avc, AC: M.ac, AFC: M.afc };
 
@@ -222,6 +228,7 @@
         label: CURVE_LABEL[id] || id, strokeWidth: id === 'MC' ? 2.8 : 2.2,
         labelDx: 6, labelDy: labelDy[id] != null ? labelDy[id] : 0, anchor: 'start'
       };
+      if (rl) c.layer = rl[0];
       return c;
     }).filter(function (c) { return c.d; });
 
@@ -233,12 +240,14 @@
     curves.push({
       id: 'AR', d: samplePath(ar, qMin, arEnd, qAxis, yAxis, 2),
       tone: 'green', label: horizontal ? 'AR = MR = P' : 'AR (D)',
-      strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end'
+      strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end',
+      layer: rl ? rl[1] : undefined
     });
     if (!horizontal) {
       curves.push({
         id: 'MR', d: samplePath(mr, qMin, mrEnd, qAxis, yAxis, 2),
-        tone: 'purple', label: 'MR', strokeWidth: 2.2, labelDx: -4, labelDy: -8, anchor: 'end'
+        tone: 'purple', label: 'MR', strokeWidth: 2.2, labelDx: -4, labelDy: -8, anchor: 'end',
+        layer: rl ? rl[1] : undefined
       });
     }
     curves = curves.filter(function (c) { return c.d; });
@@ -257,44 +266,50 @@
       // would clip; use thin slate dashed shapes registered without labels).
       curves.unshift({
         id: '_qline', shape: { type: 'vertical', x: nx, from: 0, to: Math.max(pStar, acStar) / yAxis },
-        tone: 'slate', strokeWidth: 1.2, dashed: '4 4'
+        tone: 'slate', strokeWidth: 1.2, dashed: '4 4', layer: rl ? rl[2] : undefined
       });
       curves.unshift({
         id: '_pline', shape: { type: 'horizontal', y: pStar / yAxis, from: 0, to: nx },
-        tone: 'slate', strokeWidth: 1.2, dashed: '4 4'
+        tone: 'slate', strokeWidth: 1.2, dashed: '4 4', layer: rl ? rl[2] : undefined
       });
 
       // Supernormal-profit (or loss) rectangle between P* and AC* over 0..Q*.
       polygons.push({
         points: [[0, acStar / yAxis], [nx, acStar / yAxis], [nx, pStar / yAxis], [0, pStar / yAxis]],
-        tone: profit ? 'green' : 'rose', opacity: 0.22
+        tone: profit ? 'green' : 'rose', opacity: 0.22, layer: rl ? rl[3] : undefined
       });
 
       // Key marked points — engine SOLVES / SNAPS each onto its curve.
       // Price-taker: AR=MR=P, so MC=MR and P* are the SAME point (one dot).
       // Downward demand: MC=MR sits below the price read up to AR (two dots).
       if (horizontal) {
+        // No verbose point label in the price-taker case — the AR line is
+        // already labelled "AR = MR = P" and a second "MC=MR=P" beside the
+        // dot collides with it. The dot + Q* tick + the card copy carry it.
         points.push({
           intersection: { curves: ['MC', 'AR'], near: [nx, pStar / yAxis] },
-          tone: 'green', radius: 4.5, label: 'MC=MR=P', labelDx: 8, labelDy: -8, anchor: 'start'
+          tone: 'green', radius: 4.5,
+          layer: rl ? rl[2] : undefined
         });
       } else {
         points.push({
           intersection: { curves: ['MC', 'MR'], near: [nx, mcStar / yAxis] },
-          tone: 'slate', radius: 4.5, label: 'MC=MR', labelDx: 7, labelDy: 16, anchor: 'start'
+          tone: 'slate', radius: 4.5, label: 'MC=MR', labelDx: 7, labelDy: 16, anchor: 'start',
+          layer: rl ? rl[2] : undefined
         });
         points.push({
           x: nx, on: 'AR', tone: 'green', radius: 4.5,
-          label: 'P*', labelDx: 8, labelDy: -8, anchor: 'start'
+          label: 'P*', labelDx: 8, labelDy: -8, anchor: 'start', layer: rl ? rl[2] : undefined
         });
       }
       if (have.AC) {
-        points.push({ x: nx, on: 'AC', tone: 'blue', radius: 4 });
+        points.push({ x: nx, on: 'AC', tone: 'blue', radius: 4, layer: rl ? rl[2] : undefined });
       }
-      texts.push({ x: nx, y: -0.055, text: 'Q*', tone: 'slate', bold: true, anchor: 'middle' });
+      texts.push({ x: nx, y: -0.055, text: 'Q*', tone: 'slate', bold: true, anchor: 'middle', layer: rl ? rl[2] : undefined });
       if (Math.abs(pStar - acStar) > 0.01 * yAxis) {
         texts.push({ x: nx / 2, y: (pStar + acStar) / 2 / yAxis,
-          text: profit ? 'Profit' : 'Loss', tone: profit ? 'green' : 'rose', bold: true, anchor: 'middle' });
+          text: profit ? 'Profit' : 'Loss', tone: profit ? 'green' : 'rose', bold: true, anchor: 'middle',
+          layer: rl ? rl[3] : undefined });
       }
     }
 
@@ -304,11 +319,12 @@
     if (opts.markMinAC === true && have.MC && have.AC) {
       points.push({
         intersection: { curves: ['MC', 'AC'], near: [0.45, 0.45] },
-        tone: 'blue', radius: 3.5, label: 'min AC', labelDx: -8, labelDy: 16, anchor: 'end'
+        tone: 'blue', radius: 3.5, label: 'min AC', labelDx: -8, labelDy: 16, anchor: 'end',
+        layer: rl ? rl[2] : undefined
       });
     }
 
-    return {
+    var spec = {
       width: opts.width || 577,
       height: opts.height || 444,
       chartArea: opts.chartArea || { x: 45, y: 20, width: 505, height: 382 },
@@ -320,6 +336,8 @@
       points: points,
       texts: texts
     };
+    if (rl) spec.layers = rl;
+    return spec;
   }
 
   /* Monopoly profit-maximising diagram, built as a 4-step reveal that

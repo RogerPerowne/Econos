@@ -7,6 +7,7 @@
   window.ECONOS_PC_SR_PROFIT_SPEC = window.ECONOS_FIRM.costRevenue({
     fc: 200, vc: [10, -0.15, 0.00125], qMax: 130, yMax: 20, qMin: 22, samples: 60,
     curves: ['MC', 'AC'], demand: { type: 'horizontal', price: 12 },
+    revealLayers: ['pcsr-1', 'pcsr-2', 'pcsr-3', 'pcsr-4'],
     axes: { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } }
   });
 })();

@@ -65,7 +65,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'labourSupplyCurve',
         label: 'THE DIAGRAM — read it step by step',
         emoji: '\u{1F4C8}',
-        wide: true,
         layers: ['ls-1', 'ls-2'],
         views: [
           {
@@ -129,7 +128,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'labourSupplyShift',
         label: 'INCREASE AND DECREASE — step through it',
         emoji: '\u{1F4CA}',
-        wide: true,
         layers: ['lss-1', 'lss-2', 'lss-3'],
         views: [
           {

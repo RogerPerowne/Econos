@@ -114,7 +114,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'labourDemandCurve',
         label: 'THE DIAGRAM — read it step by step',
         emoji: '\u{1F4C9}',
-        wide: true,
         layers: ['ld-1', 'ld-2'],
         views: [
           {
@@ -185,7 +184,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'labourDemandShift',
         label: 'SHIFTS IN LABOUR DEMAND — step through it',
         emoji: '\u{1F4CA}',
-        wide: true,
         layers: ['lds-1', 'lds-2', 'lds-3'],
         views: [
           {

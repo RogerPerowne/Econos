@@ -127,7 +127,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'cartelJointProfitInteractive',
         label: 'THE JOINT-PROFIT DIAGRAM — build it in three steps',
         emoji: '\u{1F4C8}',
-        wide: true,
         layers: ['cjp-1', 'cjp-2', 'cjp-3'],
         views: [
           {

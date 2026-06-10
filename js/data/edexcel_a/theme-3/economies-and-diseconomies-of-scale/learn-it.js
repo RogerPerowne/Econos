@@ -70,7 +70,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'lracBigPicture',
         label: 'THE LRAC CURVE — long-run average cost',
         emoji: '\u{1F4C9}',
-        wide: true,
         layers: ['els-2'],
         views: [
           {

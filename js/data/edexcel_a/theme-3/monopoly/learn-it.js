@@ -170,7 +170,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'monopolyProfitMax',
         label: 'THE CORE DIAGRAM — build it step by step',
         emoji: '\u{1F4C8}',
-        wide: true,
         layers: ['mp-1', 'mp-2', 'mp-3', 'mp-4'],
         views: [
           {
@@ -240,7 +239,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'monopolyWelfare',
         label: 'THE WELFARE DIAGRAM — monopoly vs competition',
         emoji: '⚖️',
-        wide: true,
         layers: ['mw-1', 'mw-2', 'mw-3'],
         views: [
           {
@@ -509,7 +507,6 @@ window.ECONOS_TOPIC = {
         svgKey: 'naturalMonopoly',
         label: 'THE DIAGRAM — falling cost over the whole market',
         emoji: '\u{1F3ED}',
-        wide: true,
         layers: ['nm-1', 'nm-2', 'nm-3', 'nm-4'],
         views: [
           {

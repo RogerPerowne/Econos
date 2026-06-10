@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v503';
+  const CACHE_NAME = 'econos-v504';
 
   /* ────────────────────────────────────────────────────────────
      fetchFresh — a network fetch that bypasses the BROWSER'S OWN
@@ -94,6 +94,8 @@
     '/js/charts/specs/labour-supply-shift.js',
     '/js/charts/specs/labour-market-eq.js',
     '/js/charts/specs/wage-floor-ceiling.js',
+    '/js/charts/specs/monopsony-labour.js',
+    '/js/charts/specs/monopsony-min-wage.js',
     '/js/charts/specs/pc-short-run-profit.js',
     '/js/charts/specs/pc-loss-diagram.js',
     '/js/charts/specs/pc-long-run.js',

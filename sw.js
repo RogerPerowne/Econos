@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v475';
+  const CACHE_NAME = 'econos-v476';
 
   /* ────────────────────────────────────────────────────────────
      fetchFresh — a network fetch that bypasses the BROWSER'S OWN
@@ -33,6 +33,7 @@
     '/assets/logo-wordmark-mark.png',
     '/site.webmanifest',
     '/js/charts/ppf.js',
+    '/js/charts/firm-model.js',
     '/js/charts/specs/ppf-card1.js',
     '/js/charts/specs/ppf-big-picture.js',
     '/js/charts/specs/ppf-classify.js',
@@ -77,6 +78,7 @@
     '/js/charts/specs/bubble-cycle.js',
     '/js/charts/specs/kuznets-curve.js',
     '/js/charts/specs/output-gap-compare.js',
+    '/js/charts/specs/marcos-cost-curves.js',
     '/js/charts/specs/tax-diagram-interactive.js',
     '/js/charts/specs/price-ceiling-diagram.js',
     '/js/charts/specs/price-floor-diagram.js',

@@ -153,7 +153,16 @@ Organised by archetype. Each entry: `key` — what it shows.
 ### 7. Firm / cost / market-structure diagrams (THEME 3 CORE)
 *Use when:* a micro firm diagram with cost/revenue curves, profit areas,
 equilibria. These are the workhorses for Themes 3.3–3.4.
-- **Costs:** `shortRunCostStack` (TC/TFC/TVC), `lracEnvelope` (SRAC→LRAC),
+- **Cost-function-driven generator (preferred for new firm diagrams):**
+  `window.ECONOS_FIRM.costCurves({ fc, vc:[b1,b2,b3], qMax, yMax, … })`
+  (`js/charts/firm-model.js`) returns a pure-data `ECONOS_PPF` spec that
+  **derives** MC/AVC/AC/AFC from one cubic cost function, so the MC "Nike
+  tick" provably cuts AVC and AC at their minima (crossings solved by the
+  engine via `point.intersection`). Reference render: `marcosCostCurves`
+  (`js/charts/specs/marcos-cost-curves.js`, Marco's FC=200 calibration).
+  Use this instead of hand-plotting cost-curve points. Revenue side
+  (AR/MR + MC=MR) and migration of the curves below are planned next.
+- **Costs (legacy hand-rolled SVG):** `shortRunCostStack` (TC/TFC/TVC), `lracEnvelope` (SRAC→LRAC),
   `mcLrTangency`, `fixedVariableTotalChart` (3.3.2 C2 — interactive TFC/TVC/TC reveal, Marco's Pizzeria), `averageCostFamilyChart` (3.3.2 C3 — interactive AFC/AVC/AC reveal), `marginalCostChart` (3.3.2 C4 — interactive table → MC curve with AC/AVC reference), `fullCostDiagram` (3.3.2 C5 — static AFC/AVC/AC/MC composite), `costDataBakery` (3.3.2 C6 — read-a-table procedure + bakery worked example).
 - **Economies of scale:** `lracBigPicture` (3.3.3 C1 — annotated U-shaped LRAC with three regions), `mesChart` (3.3.3 C4 — LRAC with MES region + small/medium/large industry mini-curves).
 - **Revenue:** `totalRevenueInteractive` (3.3.1 C2 — formula panel + worked table + bar chart, 3-view reveal), `averageRevenueInteractive` (3.3.1 C3 — linear demand with A/B point reveal), `marginalRevenueInteractive` (3.3.1 C4 — MR table + AR/MR curves, 2-view reveal), `revenueElasticityTriptych` (3.3.1 C5 — 3-panel elastic/unit/inelastic regime grid).

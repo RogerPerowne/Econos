@@ -6,6 +6,37 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.139.0 — 2026-06-10
+
+### Chart engine: cost-function-driven firm diagrams (Phase 1)
+
+The first phase of a major chart-engine upgrade, learnt from the standalone
+**Marco's Pizzeria** lesson (now preserved at `docs/reference/`). The accuracy
+problem with hand-plotted cost curves is that MC drifts off the minima of AVC
+and AC. The fix: declare the economics **once** as a cubic cost function and
+**derive** every curve from it.
+
+- New shared chart library `js/charts/firm-model.js` (`window.ECONOS_FIRM`).
+  `costCurves({ fc, vc:[b1,b2,b3], … })` returns a pure-data `ECONOS_PPF`
+  spec in which MC = the exact derivative of total cost, so the **MC "Nike
+  tick" provably cuts AVC and AC at their minima**. The crossings are handed
+  to the engine as `point.intersection`, so the engine *solves* them from the
+  sampled curves rather than trusting typed-in coordinates. Specs stay pure
+  data (coefficients + axis extents) — no JS embedded — keeping them portable.
+- Proof spec `js/charts/specs/marcos-cost-curves.js` (`marcosCostCurves`):
+  Marco's calibration (FC=200, VC=10Q−0.15Q²+0.00125Q³) renders MC/AVC/AC/AFC
+  with the engine solving min-AVC at Q=60/£5.50 and min-AC at Q≈74/£8.45 —
+  matching the model exactly. Screenshot-verified.
+- The chart CI harnesses (`scripts/lint-charts.mjs`,
+  `tests/unit/chart-svg-regression.test.js`) now load `firm-model.js` as a
+  shared library alongside `ppf.js`, so cost-function-driven specs are linted
+  and snapshot-tested like any other.
+- Catalogued in `docs/visual-catalogue.md`; `sw.js` cache bumped (`econos-v476`).
+
+Next phases (not in this release): the revenue side (AR/MR + MC=MR profit-max,
+shut-down and revenue-max points) and migrating the existing Theme 3 firm/cost
+diagrams onto the generator.
+
 ## 0.138.0 — 2026-06-10
 
 ### Limits of Policy in a Global Economy — the final Theme 4 topic (7 cards)

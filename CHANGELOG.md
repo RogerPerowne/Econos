@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.151.0 — 2026-06-10
+
+### Chart engine Phase 3 — Oligopoly kinked demand curve migrated
+
+The trickiest firm diagram, now generated. New `kinkedDemand()` builder:
+- Demand kinks at the going price (Pk, Qk): elastic above (rivals don't follow
+  a rise), inelastic below (rivals match a cut).
+- Each demand segment has its own MR at twice the slope, so MR is
+  DISCONTINUOUS — a vertical gap directly under the kink (the engine draws the
+  two MR segments and the gap explicitly).
+- MC₁ and MC₂ both pass through the gap, with an arrow MC₁→MC₂, demonstrating
+  price rigidity: MC can move within the gap and P*/Q* don't change.
+- 3-step reveal kdc-1 (kinked D) → kdc-2 (MR + gap) → kdc-3 (MC in the gap).
+  Replaces hand-rolled `oligopolyKinkedDemand`. Verified live.
+- `lint:charts` clean (112 specs), 113 snapshot tests; `sw.js` → `econos-v489`.
+
 ## 0.150.1 — 2026-06-10
 
 ### Price discrimination — fix the quantity relationship

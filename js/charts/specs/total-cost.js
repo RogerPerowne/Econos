@@ -6,19 +6,21 @@
    and the vertical gap between them is TFC at every output.
 
    Costs-topic calibration (preserves the card's quoted numbers):
-     FC = £40 ;  VC = 25Q − 1.875Q² + 0.15625Q³
+     FC = £40 ;  VC = 30Q − 4.1Q² + 0.4Q³
      → TVC(4) = £80,  TC(4) = £120  (and AC(4) = £30)
-   Layered tfc-1 (TFC) / tfc-2 (TVC) / tfc-3 (TC) for the 3-step reveal.
+   The stronger cubic gives a pronounced S — TVC rises, eases through the
+   middle (increasing returns) then climbs steeply (diminishing returns) —
+   matching the reference. Layered tfc-1/2/3 for the 3-step reveal.
    ============================================================ */
 (function () {
   'use strict';
   if (!window.ECONOS_FIRM) return;
   window.ECONOS_TOTAL_COST_SPEC = window.ECONOS_FIRM.totalCost({
     fc: 40,
-    vc: [25, -1.875, 0.15625],
+    vc: [30, -4.1, 0.4],
     qMax: 9,
     qSampleMax: 8,
-    yMax: 220,
+    yMax: 240,
     gapAtQ: 4.5,
     axes: { x: { label: 'Output (pizzas/day)' }, y: { label: 'Costs (£/day)' } }
   });

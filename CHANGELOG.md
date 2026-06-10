@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.141.1 — 2026-06-10
+
+### Total cost diagram — shape + arrow polish
+
+Refinements to the migrated Total Cost chart from Roger's live-card review:
+
+- Stronger cubic (`VC = 30Q − 4.1Q² + 0.4Q³`, FC unchanged) so TVC and TC show
+  a **pronounced S** — rise, ease through the middle (increasing returns), then
+  climb steeply (diminishing returns) — matching the reference. The card's
+  quoted anchors are preserved (TVC=£80, TC=£120, AC=£30 at Q=4).
+- The TFC gap arrow is now **inset** at both ends so the arrowheads sit inside
+  the gap between TVC and TC rather than spilling across the lines.
+
 ## 0.141.0 — 2026-06-10
 
 ### Chart engine: firm diagrams Phase 3 (begins) — Total cost migrated

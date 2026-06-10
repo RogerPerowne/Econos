@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.9 — 2026-06-10
+
+### Revenue — the-big-picture triptych: bigger fonts + combining arrows
+
+- Enlarged the fonts on the TR / AR / MR triptych (`revenueThreeMetrics`):
+  tile titles 16→18, formulas to 15, captions/footer up; widened the formula
+  insets so nothing word-wraps or overflows. Taller viewBox gives breathing room.
+- Added combining arrows from the three measure tiles down into the
+  "All three measure revenue from sales" footer (three converging arrows on
+  desktop, one on mobile) to show they all roll up to the same thing.
+- token-dup ratchet raised 6201→6207 (6 inline-SVG fills from the new arrows +
+  enlarged tiles — hand-rolled card art, documented in lint-tokens.mjs).
+- `sw.js` → `econos-v507`.
+
 ## 0.155.8 — 2026-06-10
 
 ### Cartel + price-cap migrated to the engine — hand-rolled Theme-3 charts done (batch E pt 2)

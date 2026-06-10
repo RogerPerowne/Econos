@@ -147,7 +147,7 @@ Organised by archetype. Each entry: `key` — what it shows.
 - `whereProfitComesFrom` — Revenue side (green) vs Cost side (orange) twin with central "Revenue − cost = profit" calculator pill (3.3.4 C2).
 - `pcPerfectlyElasticDemand` — industry market (D + S) vs individual firm (horizontal AR=MR=D) twin, joined by a dashed connector showing the market price is fed across to the firm (3.4.2 C2).
 - `dynamicEfficiencyDiagram` — twin "before / after innovation" panels showing AC₁ (solid) vs AC₂ (lower, with AC₁ dashed for reference) (3.4.1 C4).
-- `externalEconomies` — 4 external economies (left) vs 4 external diseconomies (right) flanking a central "Industry cluster" (3.3.3 C5).
+- `externalEconomies` — 4 external economies (left, green) vs 4 external diseconomies (right, rose) flanking an illustrated industry-cluster town scene (winding roads, indigo buildings, smoking factories, trees, truck, people), each card wired to the scene by a curved connector with end dots (3.3.3 C5). Reuse the town illustration for any "the local area / cluster" centrepiece.
 - `firmOwnershipObjectives` — Ownership pair (private vs public) above Objectives pair (for-profit vs not-for-profit) with examples strip (3.1.4 C5).
 
 ### 7. Firm / cost / market-structure diagrams (THEME 3 CORE)

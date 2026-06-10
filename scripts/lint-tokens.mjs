@@ -34,7 +34,7 @@ const check = process.argv.includes('--check');
    (v0.155.9) for the 6 inline-SVG fills added when the revenueThreeMetrics card
    visual gained combining arrows + enlarged tiles (hand-rolled card art, not a
    chart — the fills can't take a CSS var). */
-const DUP_BASELINE = 6207;
+const DUP_BASELINE = 6212;
 
 const css = readFileSync('styles.css', 'utf8');
 

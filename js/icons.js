@@ -15160,94 +15160,75 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="ari-h">
-      <svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- ===== LEFT: Demand curve chart ===== -->
-        <!-- Plot area: x=40-460, y=30-350 -->
-        <!-- Q: 0..120 → x = 40 + Q*3.5
-             P: 0..18  → y = 350 - P*17.7 -->
-        <!-- Axes -->
-        <line x1="40" y1="30" x2="40" y2="350" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="40" y1="350" x2="466" y2="350" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="14" y="24" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="466" y="372" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
-        <!-- Y ticks at 2,4,...,16 -->
-        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="33" y="71" text-anchor="end">16</text>
-          <text x="33" y="106" text-anchor="end">14</text>
-          <text x="33" y="142" text-anchor="end">12</text>
-          <text x="33" y="177" text-anchor="end">10</text>
-          <text x="33" y="212" text-anchor="end">8</text>
-          <text x="33" y="248" text-anchor="end">6</text>
-          <text x="33" y="283" text-anchor="end">4</text>
-          <text x="33" y="319" text-anchor="end">2</text>
-        </g>
-        <!-- X ticks at 20,40,...,100 -->
-        <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="110" y="366" text-anchor="middle">20</text>
-          <text x="180" y="366" text-anchor="middle">40</text>
-          <text x="250" y="366" text-anchor="middle">60</text>
-          <text x="320" y="366" text-anchor="middle">80</text>
-          <text x="390" y="366" text-anchor="middle">100</text>
-        </g>
+      <svg viewBox="0 0 760 466" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- PANEL 1: Elastic demand -->
+        <rect x="14" y="14" width="240" height="438" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
+        <circle cx="42" cy="46" r="16" fill="#2563EB"/>
+        <text x="42" y="52" font-size="15" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
+        <text x="134" y="52" font-size="17" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Elastic demand</text>
+        <text x="134" y="73" font-size="13" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">PED &gt; 1</text>
+        <line x1="44" y1="96" x2="44" y2="236" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="44" y1="236" x2="230" y2="236" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="36" y="92" font-size="10" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
+        <text x="234" y="250" font-size="10" fill="#475569" font-family="Inter,sans-serif">Q</text>
+        <line x1="52" y1="124" x2="224" y2="213" stroke="#1E3A8A" stroke-width="2.2"/>
+        <text x="214" y="202" font-size="12" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">D</text>
+        <rect x="26" y="256" width="216" height="56" rx="8" fill="#fff" stroke="#BFDBFE" stroke-width="1.3"/>
+        <text x="134" y="278" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">KEY RULE</text>
+        <text x="134" y="301" font-size="14" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &gt; % Δ P</text>
+        <rect x="26" y="322" width="216" height="122" rx="8" fill="#fff" stroke="#BFDBFE" stroke-width="1.3"/>
+        <text x="134" y="344" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">TOTAL REVENUE</text>
+        <text x="134" y="369" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR ↑</text>
+        <text x="134" y="389" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↑ → TR ↓</text>
+        <line x1="46" y1="404" x2="222" y2="404" stroke="#E2E8F0" stroke-width="1"/>
+        <text x="134" y="424" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P and TR move in</text>
+        <text x="134" y="441" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">opposite directions.</text>
 
-        <!-- Demand curve: P = 17 - 0.1Q
-             At Q=0: P=17 → (40, 350-17*17.7=49)
-             At Q=120: P=5 → (40+120*3.5=460, 350-5*17.7=262) -->
-        <line x1="40" y1="49" x2="460" y2="262" stroke="#0B1426" stroke-width="2"/>
-        <text x="454" y="292" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">Demand</text>
+        <!-- PANEL 2: Unit elastic demand -->
+        <rect x="262" y="14" width="240" height="438" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
+        <circle cx="290" cy="46" r="16" fill="#D97706"/>
+        <text x="290" y="52" font-size="15" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+        <text x="382" y="52" font-size="17" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Unit elastic demand</text>
+        <text x="382" y="73" font-size="13" fill="#D97706" text-anchor="middle" font-family="Inter,sans-serif">PED = 1</text>
+        <line x1="292" y1="96" x2="292" y2="236" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="292" y1="236" x2="478" y2="236" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="284" y="92" font-size="10" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
+        <text x="482" y="250" font-size="10" fill="#475569" font-family="Inter,sans-serif">Q</text>
+        <path d="M 302 105 Q 360 150 420 190 Q 450 213 470 225" fill="none" stroke="#C2410C" stroke-width="2.2"/>
+        <text x="452" y="128" font-size="12" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif">D</text>
+        <rect x="274" y="256" width="216" height="56" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.3"/>
+        <text x="382" y="278" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">KEY RULE</text>
+        <text x="382" y="301" font-size="14" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q = % Δ P</text>
+        <rect x="274" y="322" width="216" height="122" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.3"/>
+        <text x="382" y="344" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">TOTAL REVENUE</text>
+        <text x="382" y="369" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR unchanged</text>
+        <text x="382" y="389" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↑ → TR unchanged</text>
+        <line x1="294" y1="404" x2="470" y2="404" stroke="#E2E8F0" stroke-width="1"/>
+        <text x="382" y="424" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">% changes match —</text>
+        <text x="382" y="441" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TR is broadly unchanged.</text>
 
-        <!-- Point A: Q=50, P=12 → (40+50*3.5=215, 350-12*17.7=138) -->
-        <g class="ar-1" style="display:none">
-          <line x1="215" y1="138" x2="215" y2="350" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <line x1="215" y1="138" x2="40" y2="138" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <circle cx="215" cy="138" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-          <text x="225" y="133" font-size="14" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">A</text>
-        </g>
-
-        <!-- Point B: Q=70, P=10 → (40+70*3.5=285, 350-10*17.7=173) -->
-        <g class="ar-2" style="display:none">
-          <line x1="285" y1="173" x2="285" y2="350" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <line x1="285" y1="173" x2="40" y2="173" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <circle cx="285" cy="173" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <text x="295" y="168" font-size="14" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">B</text>
-        </g>
-
-        <!-- ===== RIGHT: Worked example panels ===== -->
-        <text x="600" y="36" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">WORKED EXAMPLE</text>
-
-        <!-- Point A panel (layer ar-1) -->
-        <g class="ar-1" style="display:none">
-          <rect x="470" y="50" width="280" height="140" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
-          <circle cx="496" cy="78" r="14" fill="#2563EB"/>
-          <text x="496" y="83" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">A</text>
-          <text x="522" y="82" font-size="14" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Point A</text>
-          <text x="486" y="110" font-size="12" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
-          <text x="734" y="110" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">£12</text>
-          <text x="486" y="130" font-size="12" fill="#475569" font-family="Inter,sans-serif">Quantity</text>
-          <text x="734" y="130" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">50</text>
-          <text x="486" y="150" font-size="12" fill="#475569" font-family="Inter,sans-serif">Total revenue (TR)</text>
-          <text x="734" y="150" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">£600</text>
-          <line x1="482" y1="160" x2="738" y2="160" stroke="#BFDBFE" stroke-width="1"/>
-          <text x="486" y="178" font-size="12" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">Average revenue (AR)</text>
-          <text x="734" y="178" font-size="14" font-weight="800" fill="#1E3A8A" text-anchor="end" font-family="Inter,sans-serif">£12</text>
-        </g>
-
-        <!-- Point B panel (layer ar-2) -->
-        <g class="ar-2" style="display:none">
-          <rect x="470" y="206" width="280" height="140" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
-          <circle cx="496" cy="234" r="14" fill="#16A34A"/>
-          <text x="496" y="239" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">B</text>
-          <text x="522" y="238" font-size="14" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">Point B</text>
-          <text x="486" y="266" font-size="12" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
-          <text x="734" y="266" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">£10</text>
-          <text x="486" y="286" font-size="12" fill="#475569" font-family="Inter,sans-serif">Quantity</text>
-          <text x="734" y="286" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">70</text>
-          <text x="486" y="306" font-size="12" fill="#475569" font-family="Inter,sans-serif">Total revenue (TR)</text>
-          <text x="734" y="306" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">£700</text>
-          <line x1="482" y1="316" x2="738" y2="316" stroke="#BBF7D0" stroke-width="1"/>
-          <text x="486" y="334" font-size="12" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">Average revenue (AR)</text>
-          <text x="734" y="334" font-size="14" font-weight="800" fill="#065F46" text-anchor="end" font-family="Inter,sans-serif">£10</text>
-        </g>
+        <!-- PANEL 3: Inelastic demand -->
+        <rect x="510" y="14" width="240" height="438" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
+        <circle cx="538" cy="46" r="16" fill="#16A34A"/>
+        <text x="538" y="52" font-size="15" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
+        <text x="630" y="52" font-size="17" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Inelastic demand</text>
+        <text x="630" y="73" font-size="13" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">PED &lt; 1</text>
+        <line x1="540" y1="96" x2="540" y2="236" stroke="#0B1426" stroke-width="1.2"/>
+        <line x1="540" y1="236" x2="726" y2="236" stroke="#0B1426" stroke-width="1.2"/>
+        <text x="532" y="92" font-size="10" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
+        <text x="730" y="250" font-size="10" fill="#475569" font-family="Inter,sans-serif">Q</text>
+        <line x1="612" y1="105" x2="660" y2="231" stroke="#065F46" stroke-width="2.2"/>
+        <text x="668" y="128" font-size="12" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">D</text>
+        <rect x="522" y="256" width="216" height="56" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.3"/>
+        <text x="630" y="278" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">KEY RULE</text>
+        <text x="630" y="301" font-size="14" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &lt; % Δ P</text>
+        <rect x="522" y="322" width="216" height="122" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.3"/>
+        <text x="630" y="344" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">TOTAL REVENUE</text>
+        <text x="630" y="369" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR ↓</text>
+        <text x="630" y="389" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↑ → TR ↑</text>
+        <line x1="542" y1="404" x2="718" y2="404" stroke="#E2E8F0" stroke-width="1"/>
+        <text x="630" y="424" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P and TR move in</text>
+        <text x="630" y="441" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">the same direction.</text>
       </svg>
       </div>
 
@@ -15604,8 +15585,8 @@ window.ECONOS_ICONS = {
         <rect x="10" y="10" width="340" height="350" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
         <circle cx="40" cy="38" r="13" fill="#2563EB"/>
         <text x="40" y="43" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
-        <text x="180" y="40" font-size="15" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Elastic demand</text>
-        <text x="180" y="58" font-size="12" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">PED &gt; 1</text>
+        <text x="180" y="40" font-size="16.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Elastic demand</text>
+        <text x="180" y="58" font-size="13" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">PED &gt; 1</text>
         <line x1="120" y1="78" x2="120" y2="198" stroke="#0B1426" stroke-width="1.2"/>
         <line x1="120" y1="198" x2="240" y2="198" stroke="#0B1426" stroke-width="1.2"/>
         <text x="112" y="74" font-size="9" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
@@ -15613,21 +15594,21 @@ window.ECONOS_ICONS = {
         <line x1="128" y1="106" x2="236" y2="182" stroke="#1E3A8A" stroke-width="2"/>
         <text x="222" y="162" font-size="10" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">D</text>
         <rect x="22" y="214" width="316" height="36" rx="7" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
-        <text x="180" y="230" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">KEY RULE</text>
-        <text x="180" y="244" font-size="11" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &gt; % Δ P</text>
+        <text x="180" y="230" font-size="11.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">KEY RULE</text>
+        <text x="180" y="244" font-size="13" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &gt; % Δ P</text>
         <rect x="22" y="258" width="316" height="92" rx="7" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
-        <text x="180" y="274" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">TOTAL REVENUE</text>
-        <text x="180" y="294" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR ↑    /    Price ↑ → TR ↓</text>
+        <text x="180" y="274" font-size="11.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">TOTAL REVENUE</text>
+        <text x="180" y="294" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR ↑    /    Price ↑ → TR ↓</text>
         <line x1="42" y1="308" x2="318" y2="308" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="180" y="328" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P and TR move in opposite</text>
-        <text x="180" y="342" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">directions.</text>
+        <text x="180" y="328" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P and TR move in opposite</text>
+        <text x="180" y="342" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">directions.</text>
 
         <!-- Panel 2 (Unit elastic) y=370-720 -->
         <rect x="10" y="370" width="340" height="350" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
         <circle cx="40" cy="398" r="13" fill="#D97706"/>
         <text x="40" y="403" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
-        <text x="180" y="400" font-size="15" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Unit elastic demand</text>
-        <text x="180" y="418" font-size="12" fill="#D97706" text-anchor="middle" font-family="Inter,sans-serif">PED = 1</text>
+        <text x="180" y="400" font-size="16.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Unit elastic demand</text>
+        <text x="180" y="418" font-size="13" fill="#D97706" text-anchor="middle" font-family="Inter,sans-serif">PED = 1</text>
         <line x1="120" y1="438" x2="120" y2="558" stroke="#0B1426" stroke-width="1.2"/>
         <line x1="120" y1="558" x2="240" y2="558" stroke="#0B1426" stroke-width="1.2"/>
         <text x="112" y="434" font-size="9" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
@@ -15635,21 +15616,21 @@ window.ECONOS_ICONS = {
         <path d="M 130 446 Q 168 478, 200 514 Q 218 535, 232 550" fill="none" stroke="#C2410C" stroke-width="2"/>
         <text x="218" y="463" font-size="10" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif">D</text>
         <rect x="22" y="574" width="316" height="36" rx="7" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
-        <text x="180" y="590" font-size="10" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">KEY RULE</text>
-        <text x="180" y="604" font-size="11" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q = % Δ P</text>
+        <text x="180" y="590" font-size="11.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">KEY RULE</text>
+        <text x="180" y="604" font-size="13" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q = % Δ P</text>
         <rect x="22" y="618" width="316" height="92" rx="7" fill="#fff" stroke="#FED7AA" stroke-width="1.2"/>
-        <text x="180" y="634" font-size="10" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">TOTAL REVENUE</text>
-        <text x="180" y="654" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ or ↑ → TR unchanged</text>
+        <text x="180" y="634" font-size="11.5" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">TOTAL REVENUE</text>
+        <text x="180" y="654" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ or ↑ → TR unchanged</text>
         <line x1="42" y1="668" x2="318" y2="668" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="180" y="688" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">% changes match —</text>
-        <text x="180" y="702" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TR is broadly unchanged.</text>
+        <text x="180" y="688" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">% changes match —</text>
+        <text x="180" y="702" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TR is broadly unchanged.</text>
 
         <!-- Panel 3 (Inelastic) y=730-1080 -->
         <rect x="10" y="730" width="340" height="350" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
         <circle cx="40" cy="758" r="13" fill="#16A34A"/>
         <text x="40" y="763" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
-        <text x="180" y="760" font-size="15" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Inelastic demand</text>
-        <text x="180" y="778" font-size="12" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">PED &lt; 1</text>
+        <text x="180" y="760" font-size="16.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Inelastic demand</text>
+        <text x="180" y="778" font-size="13" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">PED &lt; 1</text>
         <line x1="120" y1="798" x2="120" y2="918" stroke="#0B1426" stroke-width="1.2"/>
         <line x1="120" y1="918" x2="240" y2="918" stroke="#0B1426" stroke-width="1.2"/>
         <text x="112" y="794" font-size="9" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
@@ -15657,14 +15638,14 @@ window.ECONOS_ICONS = {
         <line x1="170" y1="806" x2="206" y2="914" stroke="#065F46" stroke-width="2"/>
         <text x="216" y="829" font-size="10" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">D</text>
         <rect x="22" y="934" width="316" height="36" rx="7" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
-        <text x="180" y="950" font-size="10" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">KEY RULE</text>
-        <text x="180" y="964" font-size="11" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &lt; % Δ P</text>
+        <text x="180" y="950" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">KEY RULE</text>
+        <text x="180" y="964" font-size="13" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &lt; % Δ P</text>
         <rect x="22" y="978" width="316" height="92" rx="7" fill="#fff" stroke="#BBF7D0" stroke-width="1.2"/>
-        <text x="180" y="994" font-size="10" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">TOTAL REVENUE</text>
-        <text x="180" y="1014" font-size="11.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR ↓    /    Price ↑ → TR ↑</text>
+        <text x="180" y="994" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">TOTAL REVENUE</text>
+        <text x="180" y="1014" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR ↓    /    Price ↑ → TR ↑</text>
         <line x1="42" y1="1028" x2="318" y2="1028" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="180" y="1048" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P and TR move in the</text>
-        <text x="180" y="1062" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">same direction.</text>
+        <text x="180" y="1048" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P and TR move in the</text>
+        <text x="180" y="1062" font-size="12" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">same direction.</text>
       </svg>
       </div>
     </div>

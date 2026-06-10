@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.14 — 2026-06-10
+
+### Elasticity & revenue triptych — bigger fonts, taller panels
+
+- Scaled up the PED elasticity triptych (`revenueElasticityTriptych`, Revenue
+  card 5): panel titles 14→17, PED 11.5→13, KEY RULE/TOTAL REVENUE headers
+  10→12, formulas 10.5→14, TR rules 11→13.5, captions 10.5→12.5. Panels grew
+  360→438 tall (viewBox 380→466) with bigger mini-charts so nothing is cramped.
+  Mobile fonts bumped to match.
+- token-dup ratchet 6207→6212 (per-panel accent fills — hand-rolled card art).
+- `sw.js` → `econos-v512`.
+
 ## 0.155.13 — 2026-06-10
 
 ### Marginal revenue — replot exactly, shift chart left and enlarge

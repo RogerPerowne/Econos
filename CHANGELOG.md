@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.3 — 2026-06-10
+
+### Labour demand & supply diagrams migrated to the chart engine (batch A)
+
+- Migrated `labourDemandCurve` and `labourSupplyCurve` from hand-rolled SVGs to
+  `ECONOS_PPF` specs (`labour-demand-curve.js`, `labour-supply-curve.js`). They
+  now fill the stage like the firm charts, the geometry is engine-resolved
+  (points snapped `on:` the curve), and they keep the same reveal layers
+  (`ld-1/ld-2`, `ls-1/ls-2`). First batch of the hand-rolled Theme-3 → engine
+  migration that also clears their token-dup debt (ratchet 6354 → 6331).
+- Wired into the three shells + `sw.js` precache; `sw.js` → `econos-v501`.
+- Remaining hand-rolled charts to migrate (next batches): labour demand/supply
+  SHIFTS, labour-market equilibrium, wage floor/ceiling, monopsony (+ min wage),
+  break-even, cartel joint-profit, price-cap monopoly.
+
 ## 0.155.2 — 2026-06-10
 
 ### Firm diagrams fill the stage (taller aspect)

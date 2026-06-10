@@ -110,9 +110,37 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{2699}\u{FE0F}', tone: 'green', text: '<strong>Productive efficiency is about cost minimisation</strong> — not simply producing more.' },
 
-      visualKey: 'productiveEfficiencyDiagram',
-      visualLabel: 'THE DIAGRAM',
-      visualEmoji: '\u{1F4C9}',
+      interactiveDiagram: {
+        svgKey: 'productiveEfficiencyDiagram',
+        label: 'THE DIAGRAM — build it in three steps',
+        emoji: '\u{1F4C9}',
+        layers: ['pe-1', 'pe-2', 'pe-3'],
+        views: [
+          {
+            label: 'The AC curve',
+            tone: 'blue',
+            head: 'Step 1 — average cost is U-shaped',
+            body: 'The AC curve shows <strong>cost per unit</strong> at each output. It falls early as fixed costs spread, bottoms out, then rises as capacity crowds. The lowest point is the target.',
+            show: ['pe-1']
+          },
+          {
+            label: 'Add MC',
+            tone: 'rose',
+            head: 'Step 2 — MC cuts AC at its minimum',
+            body: 'The marginal cost curve crosses AC <strong>exactly at its lowest point</strong> — never anywhere else.',
+            analysis: 'When the next unit costs less than the average, it pulls the average down; when it costs more, it pushes the average up. So MC must cross AC precisely at the bottom of the U.',
+            show: ['pe-1', 'pe-2']
+          },
+          {
+            label: 'The efficient point',
+            tone: 'green',
+            head: 'Step 3 — productive efficiency at Q*',
+            body: 'At <strong>Q*</strong> the firm produces at the <strong>lowest possible average cost</strong>. The condition to quote: <strong>MC = AC</strong>.',
+            analysis: 'At any other output the same units cost more to make — resources are being wasted. X-inefficiency is different again: operating <strong>above</strong> the AC curve altogether through slack.',
+            show: ['pe-1', 'pe-2', 'pe-3']
+          }
+        ]
+      },
 
       causesLabel: 'WHAT IT MEANS',
       causesEmoji: '\u{1F4DD}',
@@ -153,9 +181,36 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F3AF}', tone: 'green', text: '<strong>Allocative efficiency</strong> is about the right output for society — not the lowest cost.' },
 
-      visualKey: 'toeAllocativeDiagram',
-      visualLabel: 'THE DIAGRAM',
-      visualEmoji: '\u{1F4CA}',
+      interactiveDiagram: {
+        svgKey: 'toeAllocativeDiagram',
+        label: 'THE DIAGRAM — build it in three steps',
+        emoji: '\u{1F4CA}',
+        layers: ['ta-1', 'ta-2', 'ta-3'],
+        views: [
+          {
+            label: 'Demand = value',
+            tone: 'blue',
+            head: 'Step 1 — demand shows what buyers value',
+            body: 'The demand curve is the <strong>marginal benefit</strong> line — what consumers will pay for one more unit. Reading down the curve, each extra unit is valued a little less.',
+            show: ['ta-1']
+          },
+          {
+            label: 'MC = cost',
+            tone: 'rose',
+            head: 'Step 2 — MC shows what it costs society',
+            body: 'The marginal cost curve shows what one more unit <strong>costs society to produce</strong>. It rises as output expands and resources get scarcer.',
+            show: ['ta-1', 'ta-2']
+          },
+          {
+            label: 'Where P = MC',
+            tone: 'green',
+            head: 'Step 3 — allocative efficiency at Q*',
+            body: 'At <strong>Q*</strong> the value of the last unit exactly equals its cost: <strong>P = MC</strong>. Society gets the right amount of this good.',
+            analysis: 'Below Q* the next unit is worth more than it costs — society wants more produced. Beyond Q* units cost more than they are worth — those resources should go elsewhere. Only at P = MC is the mix right.',
+            show: ['ta-1', 'ta-2', 'ta-3']
+          }
+        ]
+      },
 
       causesLabel: 'WHAT IT TELLS US',
       causesEmoji: '\u{1F4D6}',
@@ -213,9 +268,37 @@ window.ECONOS_TOPIC = {
         { tone: 'amber', icon: '\u{1F4C8}', title: 'Higher future profits', sub: 'Lower costs or greater consumer value over time.' }
       ],
 
-      visualKey: 'dynamicEfficiencyDiagram',
-      visualLabel: 'THE TIME-BASED DIAGRAM',
-      visualEmoji: '\u{1F4C9}',
+      interactiveDiagram: {
+        svgKey: 'dynamicEfficiencyDiagram',
+        label: 'THE TIME-BASED DIAGRAM — costs fall over time',
+        emoji: '\u{1F4C9}',
+        layers: ['de-1', 'de-2'],
+        inverseLayers: ['de-old-solid'],
+        views: [
+          {
+            label: 'Costs today',
+            tone: 'blue',
+            head: 'Step 1 — the firm’s costs today',
+            body: 'AC₁ shows cost per unit <strong>today</strong>. Static efficiency is judged on this curve alone — it says nothing about whether the firm is improving.',
+            show: []
+          },
+          {
+            label: 'Innovation',
+            tone: 'green',
+            head: 'Step 2 — innovation shifts the whole curve down',
+            body: 'Investment in R&D, training and new methods shifts the curve down to <strong>AC₂</strong> — cheaper at <strong>every</strong> output, not just one point.',
+            show: ['de-1']
+          },
+          {
+            label: 'The dynamic gain',
+            tone: 'amber',
+            head: 'Step 3 — same output, lower cost',
+            body: 'At the same output <strong>Q̄</strong> the firm now produces each unit more cheaply — that vertical drop is the <strong>dynamic-efficiency gain</strong>, paid for by yesterday’s investment.',
+            analysis: 'This is why dynamic efficiency is judged <strong>over time</strong>: the sacrifice (investment spending today) and the payoff (a lower cost curve tomorrow) sit in different periods.',
+            show: ['de-1', 'de-2']
+          }
+        ]
+      },
 
       causesLabel: 'WHY IT MATTERS',
       causesEmoji: '\u{1F50D}',

@@ -38,8 +38,10 @@ const check = process.argv.includes('--check');
    tone-matched card/connector fills are hand-rolled SVG card art, not a chart
    (same rationale as the v0.155.9 raise); lowered to 6231 (v0.155.21) when the
    costsChainFlow SVG was retired in favour of the renderer chain-style flow;
-   lowered to 6228 (v0.155.24) with the whereProfitComesFrom rebuild. */
-const DUP_BASELINE = 6228;
+   lowered to 6228 (v0.155.24) with the whereProfitComesFrom rebuild; lowered to
+   6165 (v0.155.26) when the three Types of Efficiency diagrams migrated from
+   hand-rolled SVG to engine specs. */
+const DUP_BASELINE = 6165;
 
 const css = readFileSync('styles.css', 'utf8');
 

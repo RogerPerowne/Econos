@@ -154,7 +154,7 @@ Organised by archetype. Each entry: `key` — what it shows.
   `marginalUtilityCompare`, `economicMixedWhoDoesWhat`, `eniTwinJW45`.
 - `whereProfitComesFrom` — Revenue side (green) vs Cost side (amber) twin feeding a central PROPORTIONAL profit donut (amber arc = cost share of revenue, green arc = profit share, tied to the topic's £120k/£95k/£25k worked example), with money-in/money-out arrows and two verdict chips (3.3.4 C2). Reuse the proportional-ring centre for any "two sides feed one ratio" comparison.
 - `pcPerfectlyElasticDemand` — industry market (D + S) vs individual firm (horizontal AR=MR=D) twin, joined by a dashed connector showing the market price is fed across to the firm (3.4.2 C2).
-- `dynamicEfficiencyDiagram` — twin "before / after innovation" panels showing AC₁ (solid) vs AC₂ (lower, with AC₁ dashed for reference) (3.4.1 C4).
+- `dynamicEfficiencyDiagram` — now an engine spec (see §7 Efficiency): a single staged AC₁ → AC₂ shift diagram, no longer twin panels (3.4.1 C4).
 - `externalEconomies` — 4 external economies (left, green) vs 4 external diseconomies (right, rose) flanking an illustrated industry-cluster town scene (winding roads, indigo buildings, smoking factories, trees, truck, people), each card wired to the scene by a curved connector with end dots (3.3.3 C5). Reuse the town illustration for any "the local area / cluster" centrepiece.
 - `firmOwnershipObjectives` — Ownership pair (private vs public) above Objectives pair (for-profit vs not-for-profit) with examples strip (3.1.4 C5).
 
@@ -197,7 +197,7 @@ equilibria. These are the workhorses for Themes 3.3–3.4.
   `pcLossDiagram` (3.4.2 C4 — PC firm with AVC + shaded loss rectangle and keep-producing annotation),
   `pcLongRunDiagram` (3.4.2 C5 — PC firm at LR equilibrium with P=AC at min AC, normal profit only),
   `pcEfficiencyDiagram` (3.4.2 C6 — same chart with both allocative + productive efficiency callouts).
-- **Efficiency:** `productiveEfficiencyDiagram` (3.4.1 C2 — AC U-curve with MC crossing at min, MC = AC condition), `toeAllocativeDiagram` (3.4.1 C3 — D + MC crossing at P=MC, allocative efficiency point).
+- **Efficiency (engine specs, staged):** `productiveEfficiencyDiagram` (3.4.1 C2 — cost-function-driven AC + MC, engine-solved MC = AC minimum, layers pe-1/2/3, `productive-efficiency.js`), `toeAllocativeDiagram` (3.4.1 C3 — D (= MB) vs MC with the engine-solved P = MC point, layers ta-1/2/3, `toe-allocative.js`), `dynamicEfficiencyDiagram` (3.4.1 C4 — AC₁ shifts down to AC₂ after innovation, standard dashed-original shift styling with inverse layer, layers de-1/2, `dynamic-efficiency.js`). All three step through an interactiveDiagram with text on the right.
 - **Market structures:** `naturalMonopolyDiagram`, `kinkedDemandInteractive`,
   `mesBarrierDiagram`, `limitPricingDiagram`, `networkEffectDiagram`,
   `marketLevelWelfare`, `contestabilityFrames`, `contestabilityDiagram`.
@@ -585,7 +585,7 @@ catalogue covers the *visual* layer that slots into `visualKey` /
 | 3.3.2 Costs | `costsHub`, `fixedVariableTotalChart`, `averageCostFamilyChart`, `marginalCostChart`, `fullCostDiagram`, `costDataBakery` — fully built. Older alternatives: `shortRunCostStack`, `lracEnvelope`, `mcLrTangency`, `heroCostCurves`. |
 | 3.3.3 EoS | `lracBigPicture`, `internalEconomiesHub`, `diseconomiesHub`, `mesChart`, `externalEconomies` — fully built. Older alternatives: `lracEnvelope`, `mesBarrierDiagram`. |
 | 3.3.4 Profits | `profitCoreEquation`, `whereProfitComesFrom`, `breakEvenChart`, `profitMeasures` — fully built. Older alternatives: `profitsShutdownDiagram`, `revMaxDiagram`. |
-| 3.4.1 Efficiency | `efficiencyFlywheel`, `productiveEfficiencyDiagram`, `toeAllocativeDiagram`, `dynamicEfficiencyDiagram` — fully built. Older alternatives: `marketLevelWelfare`, `firmLevelPcVsMonopoly`. |
+| 3.4.1 Efficiency | `efficiencyFlywheel` (hub), plus staged engine specs `productiveEfficiencyDiagram`, `toeAllocativeDiagram`, `dynamicEfficiencyDiagram` — fully built. Older alternatives: `marketLevelWelfare`, `firmLevelPcVsMonopoly`. |
 | 3.4.2 Perfect competition | `pcMarketHub`, `pcPerfectlyElasticDemand`, `pcShortRunProfit`, `pcLossDiagram`, `pcLongRunDiagram`, `pcEfficiencyDiagram` — fully built |
 | 3.4.4 Oligopoly | `kinkedDemandInteractive`, `cartelJointProfitDiagram`, `cartelPrisonersDilemma`, `prisonersDilemmaInteractive`, `limitPricingDiagram` |
 | 3.4.5 Monopoly / price disc. | `monopolySupernormalProfit`, `monopolyDwl`, `naturalMonopolyDiagram`, `firstDegreePd`, `thirdDegreePd`, `networkEffectDiagram` |

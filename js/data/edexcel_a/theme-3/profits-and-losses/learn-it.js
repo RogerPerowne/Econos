@@ -68,6 +68,8 @@ window.ECONOS_TOPIC = {
         svgKey: 'profitCoreEquation',
         label: 'THE CORE EQUATION — a worked example',
         emoji: '\u{1F4C8}',
+        wide: true,
+        maxWidth: '720px',
         layers: ['pce-1', 'pce-2', 'pce-3'],
         views: [
           {

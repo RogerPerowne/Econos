@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.153.2 — 2026-06-10
+
+### Themes 3 & 4 formatting sweep — third-degree price-discrimination geometry fixed
+
+- Exhaustive per-card visual pass of every Theme 3 + Theme 4 Learn It deck at
+  desktop (1180px) and mobile (390px). Confirmed: zero real horizontal overflow
+  (`document.scrollWidth === clientWidth` on every card — the earlier "overflow"
+  signal was off-stage hidden reveal states, not visible breakage), zero console
+  errors, all 114 chart specs clean, staging-length budget clean for Themes 3/4.
+- **Fixed `thirdDegreePd`** (Price Discrimination → third-degree card). The
+  two-market diagram claimed "P_B > P_A" but drew the prices 2px apart and the
+  quantities essentially equal — contradicting the real-world story it teaches.
+  Re-derived the geometry so the elastic market A has a genuinely flat demand,
+  a low price and a large quantity, while the inelastic market B has a steep
+  demand, a clearly higher price and a smaller quantity (many leisure/student
+  buyers, few business buyers). MC is a common level across both panels; each
+  price is read off its demand at the Q where MR=MC. Annotation updated to
+  "P_B > P_A and Q_A > Q_B — inelastic buyers pay more for fewer units".
+- `sw.js` → `econos-v493`.
+
 ## 0.153.1 — 2026-06-10
 
 ### Economies of scale — mesChart migrated; firm-diagram sweep complete

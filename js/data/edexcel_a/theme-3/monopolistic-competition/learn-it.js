@@ -68,6 +68,10 @@ window.ECONOS_TOPIC = {
       visualLabel: 'THE MARKET SHAPE',
       visualEmoji: '\u{1F3EA}',
 
+      visualKey2: 'marketSpectrumMC',
+      visualLabel2: 'WHERE IT SITS',
+      visualEmoji2: '\u{1F9ED}',
+
       flowTitle: 'THE CHAIN',
       flowEmoji: '\u{1F517}',
       flowSep: '\u{2192}',

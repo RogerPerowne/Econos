@@ -65,6 +65,10 @@ window.ECONOS_TOPIC = {
       visualLabel: 'THE CORE FEATURES',
       visualEmoji: '\u{1F9E9}',
 
+      visualKey2: 'marketSpectrumOligopoly',
+      visualLabel2: 'WHERE IT SITS',
+      visualEmoji2: '\u{1F9ED}',
+
       causesLabel: 'WHAT THIS LOOKS LIKE',
       causesEmoji: '\u{1F3EA}',
       causesStyle: 'icon-top',

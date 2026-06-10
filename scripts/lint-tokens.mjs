@@ -28,8 +28,13 @@ const check = process.argv.includes('--check');
    and DO NOT raise this number without a note here. When the SVG→engine
    migration removes literals, lower this to lock the win.
    Off-scale literals (`off`) are intentionally NOT gated — snapping them to the
-   scale is a visual change that needs sign-off, so they stay report-only. */
-const DUP_BASELINE = 6201;
+   scale is a visual change that needs sign-off, so they stay report-only.
+
+   Baseline history: …→6201 after the Theme-3 chart migration; raised to 6207
+   (v0.155.9) for the 6 inline-SVG fills added when the revenueThreeMetrics card
+   visual gained combining arrows + enlarged tiles (hand-rolled card art, not a
+   chart — the fills can't take a CSS var). */
+const DUP_BASELINE = 6207;
 
 const css = readFileSync('styles.css', 'utf8');
 

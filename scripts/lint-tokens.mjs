@@ -33,8 +33,11 @@ const check = process.argv.includes('--check');
    Baseline history: …→6201 after the Theme-3 chart migration; raised to 6207
    (v0.155.9) for the 6 inline-SVG fills added when the revenueThreeMetrics card
    visual gained combining arrows + enlarged tiles (hand-rolled card art, not a
-   chart — the fills can't take a CSS var). */
-const DUP_BASELINE = 6212;
+   chart — the fills can't take a CSS var); raised to 6255 (v0.155.20) for the
+   externalEconomies redesign: the illustrated industry-cluster town scene +
+   tone-matched card/connector fills are hand-rolled SVG card art, not a chart
+   (same rationale as the v0.155.9 raise). */
+const DUP_BASELINE = 6255;
 
 const css = readFileSync('styles.css', 'utf8');
 

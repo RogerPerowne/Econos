@@ -117,13 +117,14 @@ Organised by archetype. Each entry: `key` — what it shows.
 ### 3. Flow chains / process diagrams
 *Use when:* a sequence of stages connected by arrows (transmission mechanism).
 
-> **Chain-titled flow blocks render in the chain style automatically.** Any
-> `flow`/`flow2` block whose `flowTitle` contains "chain" (THE CHAIN, THE
-> CAUSAL CHAIN, THE TRANSMISSION CHAIN, …) is rendered by `renderChainFlow`
-> in `app.js`: even tone-tinted tiles (emoji on top, tone title,
-> regular-weight body) joined by drawn SVG arrows, stacking vertically on
-> mobile. No bespoke SVG needed for a standard chain — just title the flow
-> block accordingly.
+> **"The Chain" flow blocks render as the numbered-circle stepper
+> automatically.** Any `flow`/`flow2` block whose title is explicitly
+> "The Chain" ("THE CHAIN", "The chain: …", "The chain of impact") routes
+> through `renderFlow` in `app.js` — numbered tone rings joined by dashed
+> connectors, icon chip, title and sub — on every card template. Variant
+> titles (THE CAUSAL CHAIN, THE TRANSMISSION CHAIN, …) keep their declared
+> style. No bespoke SVG needed for a synthesis chain — just title the flow
+> block "THE CHAIN".
 - `priceMechanismFlow`, `derivedDemandFlow`, `autoStabilisersFlow`,
   `govMultiplierChain`, `crowdingOutLoanableFunds`, `investmentFeedbackLoop`,
   `multiplierRipple`, `nationalIncomeFlow`, `nationalIncomeOpenEconomy`,

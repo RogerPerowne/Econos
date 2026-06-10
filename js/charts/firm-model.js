@@ -153,8 +153,8 @@
 
     var spec = {
       width: opts.width || 720,
-      height: opts.height || 380,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 628, height: 300 },
+      height: opts.height || 555,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 628, height: 475 },
       className: opts.className || 'firm-cost-curves-svg',
       background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: '£ per unit' } },
@@ -311,8 +311,8 @@
 
     return {
       width: opts.width || 740,
-      height: opts.height || 400,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      height: opts.height || 570,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 490 },
       className: opts.className || 'firm-cost-revenue-svg',
       background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: '£ per unit' } },
@@ -397,8 +397,8 @@
     }
 
     return {
-      width: opts.width || 740, height: opts.height || 400,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      width: opts.width || 740, height: opts.height || 570,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 490 },
       className: opts.className || 'firm-monopoly-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
       layers: layerList,
@@ -465,8 +465,8 @@
     }
 
     return {
-      width: opts.width || 740, height: opts.height || 400,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      width: opts.width || 740, height: opts.height || 570,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 490 },
       className: opts.className || 'firm-monopoly-welfare-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
       layers: ['mw-1', 'mw-2', 'mw-3'],
@@ -567,8 +567,8 @@
     texts.push({ x: 0.5, y: 0.9, text: 'Normal profit (P = AC)', tone: 'green', bold: true, anchor: 'middle', layer: 'lr-3' });
 
     return {
-      width: opts.width || 740, height: opts.height || 400,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      width: opts.width || 740, height: opts.height || 570,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 490 },
       className: opts.className || 'firm-mc-longrun-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
       layers: ['lr-1', 'lr-2', 'lr-3'],
@@ -620,8 +620,8 @@
     }
 
     return {
-      width: opts.width || 740, height: opts.height || 400,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      width: opts.width || 740, height: opts.height || 570,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 490 },
       className: opts.className || 'firm-mc-efficiency-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
       layers: ['mce-1', 'mce-2'],
@@ -721,8 +721,8 @@
     }
 
     return {
-      width: opts.width || 740, height: opts.height || 400,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      width: opts.width || 740, height: opts.height || 570,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 490 },
       className: opts.className || 'firm-natmonopoly-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
       layers: ['nm-1', 'nm-2', 'nm-3', 'nm-4'],
@@ -788,8 +788,8 @@
     texts.push({ x: 0.5, y: 0.93, text: 'MC can rise MC₁ → MC₂ within the gap — price stays at P*', tone: 'blue', bold: true, anchor: 'middle', layer: 'kdc-3' });
 
     return {
-      width: opts.width || 740, height: opts.height || 400,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      width: opts.width || 740, height: opts.height || 570,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 490 },
       className: opts.className || 'firm-kinked-demand-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
       layers: ['kdc-1', 'kdc-2', 'kdc-3'],
@@ -870,8 +870,8 @@
     }
 
     return {
-      width: opts.width || 740, height: opts.height || 400,
-      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 320 },
+      width: opts.width || 740, height: opts.height || 570,
+      chartArea: opts.chartArea || { x: 58, y: 26, width: 648, height: 490 },
       className: opts.className || 'firm-lrac-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Average cost (£)' } },
       polygons: polygons, curves: curves, points: points, texts: texts,
@@ -930,8 +930,8 @@
 
     return {
       width: opts.width || 720,
-      height: opts.height || 380,
-      chartArea: opts.chartArea || { x: 56, y: 24, width: 632, height: 300 },
+      height: opts.height || 555,
+      chartArea: opts.chartArea || { x: 56, y: 24, width: 632, height: 475 },
       className: opts.className || 'firm-total-cost-svg',
       background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output' }, y: { label: 'Costs (£)' } },

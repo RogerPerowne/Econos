@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.141.2 — 2026-06-10
+
+### Total cost diagram — stronger S + correct double arrow
+
+- Stronger cubic again (`VC = 40Q − 7.4Q² + 0.6Q³`, FC unchanged, anchors
+  TVC=£80/TC=£120/AC=£30 at Q=4 preserved) for a pronounced textbook S —
+  TVC/TC rise, clearly flatten through the increasing-returns middle, then
+  climb steeply.
+- Fixed the TFC gap arrow: it's now drawn as two arrows from the gap midpoint
+  outward, each with a single `markerEnd`, so **both heads orient correctly**
+  (up to TC, down to TVC). The previous shared `markerStart` oriented forward
+  and flipped the lower head.
+
 ## 0.141.1 — 2026-06-10
 
 ### Total cost diagram — shape + arrow polish

@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.5 — 2026-06-10
+
+### Labour-market equilibrium + wage controls migrated to the engine (batch C)
+
+- Migrated `labourMarketEqDiagram` and `wageFloorCeiling` to `ECONOS_PPF` specs
+  (`labour-market-eq.js`, `wage-floor-ceiling.js`). They fill the stage and keep
+  their reveal layers: equilibrium (E solved as the D_L∩S_L intersection) →
+  surplus/min-wage (above W*: Qs>Qd, double-arrow + "unemployment") →
+  shortage/max-wage (below W*: Qd>Qs). Quantities are snapped `on:` the curves.
+- Wired into the three shells + `sw.js` precache; token-dup ratchet 6314 → 6281.
+- `sw.js` → `econos-v503`.
+
 ## 0.155.4 — 2026-06-10
 
 ### Labour-demand & supply SHIFT diagrams migrated to the engine (batch B)

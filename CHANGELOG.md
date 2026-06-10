@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.11 — 2026-06-10
+
+### Total revenue — smarter formula panel
+
+- Rebuilt the "THE FORMULA" panel on the Total revenue card
+  (`totalRevenueInteractive`): the loosely-stacked TR / price / quantity-sold
+  texts are now three clean white equation chips with the = and × operators
+  centred between them. Micro-fonts eliminated — sub-labels 10→12.5px, panel
+  header 11→13px; mobile band sub-line 10.5→11.5px.
+- `sw.js` → `econos-v509`.
+
 ## 0.155.10 — 2026-06-10
 
 ### Revenue triptych — fix combining-arrow heads

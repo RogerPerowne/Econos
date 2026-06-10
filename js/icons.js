@@ -14958,18 +14958,20 @@ window.ECONOS_ICONS = {
 
         <!-- LEFT: Formula panel (always visible) -->
         <rect x="14" y="14" width="240" height="412" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-        <text x="134" y="42" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE FORMULA</text>
-        <line x1="60" y1="56" x2="208" y2="56" stroke="#BFDBFE" stroke-width="1"/>
-        <!-- Compact formula: TR = price × quantity sold -->
-        <text x="86" y="138" font-size="36" font-weight="900" fill="#1E3A8A" font-family="Inter,sans-serif">TR</text>
-        <text x="158" y="138" font-size="26" font-weight="700" fill="#475569" font-family="Inter,sans-serif">=</text>
-        <text x="134" y="160" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total revenue</text>
-        <text x="80" y="222" font-size="20" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">price</text>
-        <text x="134" y="240" font-size="10" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">price per unit (£)</text>
-        <text x="170" y="222" font-size="22" font-weight="700" fill="#475569" font-family="Inter,sans-serif">×</text>
-        <text x="62" y="304" font-size="20" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">quantity</text>
-        <text x="88" y="328" font-size="20" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">sold</text>
-        <text x="134" y="348" font-size="10" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">number of units sold</text>
+        <text x="134" y="44" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE FORMULA</text>
+        <line x1="54" y1="58" x2="214" y2="58" stroke="#BFDBFE" stroke-width="1"/>
+        <!-- Stacked equation chips: TR = price × quantity sold -->
+        <rect x="34" y="76" width="200" height="74" rx="10" fill="#fff" stroke="#BFDBFE" stroke-width="1.5"/>
+        <text x="134" y="113" font-size="30" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">TR</text>
+        <text x="134" y="138" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total revenue</text>
+        <text x="134" y="186" font-size="26" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">=</text>
+        <rect x="34" y="204" width="200" height="74" rx="10" fill="#fff" stroke="#BFDBFE" stroke-width="1.5"/>
+        <text x="134" y="240" font-size="24" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">price</text>
+        <text x="134" y="265" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">price per unit (£)</text>
+        <text x="134" y="314" font-size="26" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">×</text>
+        <rect x="34" y="332" width="200" height="74" rx="10" fill="#fff" stroke="#BFDBFE" stroke-width="1.5"/>
+        <text x="134" y="368" font-size="22" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">quantity sold</text>
+        <text x="134" y="393" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">number of units sold</text>
 
         <!-- RIGHT: Worked examples table -->
         <rect x="280" y="14" width="466" height="172" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
@@ -15063,9 +15065,9 @@ window.ECONOS_ICONS = {
 
         <!-- Formula band (always visible) -->
         <rect x="10" y="10" width="340" height="80" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
-        <text x="180" y="32" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE FORMULA</text>
+        <text x="180" y="32" font-size="11.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE FORMULA</text>
         <text x="180" y="66" font-size="20" font-weight="900" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">TR = price × quantity sold</text>
-        <text x="180" y="82" font-size="10.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total revenue = price per unit × number of units sold</text>
+        <text x="180" y="82" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">total revenue = price per unit × number of units sold</text>
 
         <!-- Table -->
         <rect x="10" y="104" width="340" height="172" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>

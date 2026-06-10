@@ -15162,54 +15162,54 @@ window.ECONOS_ICONS = {
       <div class="ari-h">
       <svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- ===== LEFT: Demand curve chart ===== -->
-        <!-- Plot area: x=70-440, y=40-340 -->
-        <!-- Q: 0..120 → x = 70 + Q*3.083
-             P: 0..18  → y = 340 - P*16.667 -->
+        <!-- Plot area: x=40-460, y=30-350 -->
+        <!-- Q: 0..120 → x = 40 + Q*3.5
+             P: 0..18  → y = 350 - P*17.7 -->
         <!-- Axes -->
-        <line x1="70" y1="40" x2="70" y2="340" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="70" y1="340" x2="450" y2="340" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="44" y="36" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="450" y="362" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <line x1="40" y1="30" x2="40" y2="350" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="40" y1="350" x2="466" y2="350" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="14" y="24" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
+        <text x="466" y="372" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
         <!-- Y ticks at 2,4,...,16 -->
         <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="63" y="74" text-anchor="end">16</text>
-          <text x="63" y="107" text-anchor="end">14</text>
-          <text x="63" y="143" text-anchor="end">12</text>
-          <text x="63" y="177" text-anchor="end">10</text>
-          <text x="63" y="210" text-anchor="end">8</text>
-          <text x="63" y="244" text-anchor="end">6</text>
-          <text x="63" y="277" text-anchor="end">4</text>
-          <text x="63" y="310" text-anchor="end">2</text>
+          <text x="33" y="71" text-anchor="end">16</text>
+          <text x="33" y="106" text-anchor="end">14</text>
+          <text x="33" y="142" text-anchor="end">12</text>
+          <text x="33" y="177" text-anchor="end">10</text>
+          <text x="33" y="212" text-anchor="end">8</text>
+          <text x="33" y="248" text-anchor="end">6</text>
+          <text x="33" y="283" text-anchor="end">4</text>
+          <text x="33" y="319" text-anchor="end">2</text>
         </g>
         <!-- X ticks at 20,40,...,100 -->
         <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="132" y="356" text-anchor="middle">20</text>
-          <text x="193" y="356" text-anchor="middle">40</text>
-          <text x="255" y="356" text-anchor="middle">60</text>
-          <text x="316" y="356" text-anchor="middle">80</text>
-          <text x="378" y="356" text-anchor="middle">100</text>
+          <text x="110" y="366" text-anchor="middle">20</text>
+          <text x="180" y="366" text-anchor="middle">40</text>
+          <text x="250" y="366" text-anchor="middle">60</text>
+          <text x="320" y="366" text-anchor="middle">80</text>
+          <text x="390" y="366" text-anchor="middle">100</text>
         </g>
 
         <!-- Demand curve: P = 17 - 0.1Q
-             At Q=0: P=17 → (70, 340-17*16.667=56)
-             At Q=120: P=5 → (70+120*3.083=440, 340-5*16.667=257) -->
-        <line x1="70" y1="56" x2="440" y2="257" stroke="#0B1426" stroke-width="2"/>
-        <text x="438" y="281" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">Demand</text>
+             At Q=0: P=17 → (40, 350-17*17.7=49)
+             At Q=120: P=5 → (40+120*3.5=460, 350-5*17.7=262) -->
+        <line x1="40" y1="49" x2="460" y2="262" stroke="#0B1426" stroke-width="2"/>
+        <text x="454" y="292" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">Demand</text>
 
-        <!-- Point A: Q=50, P=12 → (70+50*3.083=224, 340-12*16.667=140) -->
+        <!-- Point A: Q=50, P=12 → (40+50*3.5=215, 350-12*17.7=138) -->
         <g class="ar-1" style="display:none">
-          <line x1="224" y1="140" x2="224" y2="340" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <line x1="224" y1="140" x2="70" y2="140" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <circle cx="224" cy="140" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-          <text x="234" y="135" font-size="14" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">A</text>
+          <line x1="215" y1="138" x2="215" y2="350" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <line x1="215" y1="138" x2="40" y2="138" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="215" cy="138" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+          <text x="225" y="133" font-size="14" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">A</text>
         </g>
 
-        <!-- Point B: Q=70, P=10 → (70+70*3.083=286, 340-10*16.667=173) -->
+        <!-- Point B: Q=70, P=10 → (40+70*3.5=285, 350-10*17.7=173) -->
         <g class="ar-2" style="display:none">
-          <line x1="286" y1="173" x2="286" y2="340" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <line x1="286" y1="173" x2="70" y2="173" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
-          <circle cx="286" cy="173" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <text x="296" y="168" font-size="14" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">B</text>
+          <line x1="285" y1="173" x2="285" y2="350" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <line x1="285" y1="173" x2="40" y2="173" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="285" cy="173" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <text x="295" y="168" font-size="14" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">B</text>
         </g>
 
         <!-- ===== RIGHT: Worked example panels ===== -->

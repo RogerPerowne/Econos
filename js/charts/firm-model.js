@@ -308,8 +308,65 @@
   window.ECONOS_FIRM = {
     costCurves: costCurves,
     costRevenue: costRevenue,
+    totalCost: totalCost,
     makeModel: makeModel,
     samplePath: samplePath,
     solveCross: solveCross
   };
+
+  /* Total-cost diagram: TFC (horizontal), TVC (the S-shaped cubic from the
+     origin) and TC = TFC + TVC (the same S shifted up by TFC). The vertical
+     gap between TC and TVC is TFC at every output — marked with a double
+     arrow. Layered (tfc-1/2/3) so an interactiveDiagram can reveal TFC →
+     +TVC → +TC. Total (not per-unit) £ on the y-axis. */
+  function totalCost(opts) {
+    opts = opts || {};
+    var fc = opts.fc != null ? opts.fc : 40;
+    var vc = opts.vc || [25, -1.875, 0.15625];
+    var qAxis = opts.qMax != null ? opts.qMax : 9;
+    var qMax = opts.qSampleMax != null ? opts.qSampleMax : 8;
+    var n = opts.samples != null ? opts.samples : 60;
+    var M = makeModel(fc, vc);
+    var tc = function (q) { return fc + M.vc(q); };
+    var yAxis = opts.yMax != null ? opts.yMax : Math.ceil((tc(qMax) * 1.1) / 20) * 20;
+    var gapQ = opts.gapAtQ != null ? opts.gapAtQ : qMax * 0.55;
+
+    var curves = [
+      { id: 'TFC', shape: { type: 'horizontal', y: fc / yAxis, from: 0, to: qMax / qAxis },
+        tone: 'green', label: 'TFC', strokeWidth: 2.2, labelDx: 6, labelDy: 0, anchor: 'start',
+        layer: 'tfc-1' },
+      { id: 'TVC', d: samplePath(M.vc, 0, qMax, qAxis, yAxis, n),
+        tone: 'amber', label: 'TVC', strokeWidth: 2.6, labelDx: 6, labelDy: 4, anchor: 'start',
+        layer: 'tfc-2' },
+      { id: 'TC', d: samplePath(tc, 0, qMax, qAxis, yAxis, n),
+        tone: 'blue', label: 'TC', strokeWidth: 2.6, labelDx: 6, labelDy: -4, anchor: 'start',
+        layer: 'tfc-3' }
+    ];
+
+    // The TFC gap: a double-headed arrow from TVC up to TC at gapQ.
+    var gx = gapQ / qAxis, tvcY = M.vc(gapQ) / yAxis, tcY = tc(gapQ) / yAxis;
+    var arrows = [{
+      x1: gx, y1: tvcY, x2: gx, y2: tcY, tone: 'red', strokeWidth: 1.8,
+      markerStart: 'econos-arrow-red', markerEnd: 'econos-arrow-red', buffer: 0, layer: 'tfc-3'
+    }];
+    var texts = [{
+      x: gx - 0.012, y: (tvcY + tcY) / 2, text: 'TFC', tone: 'red', bold: true,
+      anchor: 'end', layer: 'tfc-3'
+    }];
+
+    return {
+      width: opts.width || 720,
+      height: opts.height || 380,
+      chartArea: opts.chartArea || { x: 56, y: 24, width: 632, height: 300 },
+      className: opts.className || 'firm-total-cost-svg',
+      background: '#FFFFFF',
+      axes: opts.axes || { x: { label: 'Output' }, y: { label: 'Costs (£)' } },
+      layers: ['tfc-1', 'tfc-2', 'tfc-3'],
+      curves: curves,
+      arrows: arrows,
+      texts: texts
+    };
+  }
+
+  window.ECONOS_FIRM.totalCost = totalCost;
 })();

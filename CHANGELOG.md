@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.141.0 — 2026-06-10
+
+### Chart engine: firm diagrams Phase 3 (begins) — Total cost migrated
+
+First live migration of a Theme 3 diagram onto the cost-function generator,
+replacing a hand-rolled SVG that rendered as wobbly, hand-tuned bezier curves.
+
+- New `window.ECONOS_FIRM.totalCost({ fc, vc, … })` builds the TFC / TVC / TC
+  total-cost diagram: TVC is the S-shaped cubic from the origin, TC = TFC + TVC
+  (the same curve shifted up by TFC), and the constant TFC gap is marked with a
+  double arrow. Curves are layered (`tfc-1`/`tfc-2`/`tfc-3`) so the existing
+  3-step interactiveDiagram reveal works unchanged.
+- New spec `total-cost.js` (`ECONOS_TOTAL_COST_SPEC`) calibrated for the Costs
+  topic (FC=£40, VC=25Q−1.875Q²+0.15625Q³) so it **preserves the card's quoted
+  numbers** — TVC=£80 and TC=£120 at Q=4. The old hand-rolled
+  `fixedVariableTotalChart` in `icons.js` is replaced by
+  `ECONOS_PPF.render(ECONOS_TOTAL_COST_SPEC)`; the card data is untouched.
+- Verified end-to-end on the live card: stepping reveals TFC → +TVC → +TC with
+  smooth, correctly-shaped curves. `lint:charts` clean (98 specs), 98 snapshot
+  tests; `sw.js` cache bumped (`econos-v478`).
+
+Still to migrate in Phase 3: the average-cost family, marginal cost, the full
+cost composite, and the perfect-competition / monopoly market-structure charts.
+
 ## 0.140.0 — 2026-06-10
 
 ### Chart engine: firm diagrams Phase 2 — revenue side + profit-max

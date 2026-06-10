@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.153.0 — 2026-06-10
+
+### Economies of scale — SRAC envelope added to the big-picture card
+
+The big-picture LRAC diagram is now a 2-step interactive: step 1 the U-shaped
+LRAC with the three regions (economies of scale / MES / diseconomies); step 2
+reveals the SRAC envelope — three short-run AC curves, each tangent to the
+LRAC, with the MES plant tangent at its own minimum. Card 1 of Economies of
+Scale converted from a static visual to an interactiveDiagram (layer els-2 for
+the SRACs). `sw.js` → `econos-v491`.
+
 ## 0.152.0 — 2026-06-10
 
 ### Chart engine Phase 3 — LRAC big picture migrated (+ SRAC-envelope capability)

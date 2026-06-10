@@ -66,9 +66,30 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F4B7}', tone: 'green', text: '<strong>Average cost</strong> often falls with scale before diseconomies can push it back up. The shape is U.' },
 
-      visualKey: 'lracBigPicture',
-      visualLabel: 'THE LRAC CURVE — long-run average cost',
-      visualEmoji: '\u{1F4C9}',
+      interactiveDiagram: {
+        svgKey: 'lracBigPicture',
+        label: 'THE LRAC CURVE — long-run average cost',
+        emoji: '\u{1F4C9}',
+        wide: true,
+        layers: ['els-2'],
+        views: [
+          {
+            label: 'The LRAC U-shape',
+            tone: 'blue',
+            head: 'Step 1 — the long-run average cost curve',
+            body: 'Average cost falls through <strong>economies of scale</strong>, flattens across the <strong>minimum efficient scale</strong> (the lowest-cost output range), then rises as <strong>diseconomies of scale</strong> set in — the U-shape.',
+            show: []
+          },
+          {
+            label: 'The SRAC envelope',
+            tone: 'green',
+            head: 'Step 2 — each plant size has its own SRAC',
+            body: 'In the short run the firm is stuck with one plant size, giving a single <strong>SRAC</strong> curve. The LRAC is the <strong>envelope</strong> of all the SRACs — each just touches (is tangent to) the LRAC. Only the plant at <strong>MES</strong> is tangent at its own minimum.',
+            analysis: 'On the falling part of LRAC a firm runs a plant below its own SRAC minimum; on the rising part, above it. Producing at minimum SRAC and minimum LRAC together happens only at the minimum efficient scale.',
+            show: ['els-2']
+          }
+        ]
+      },
 
       flowTitle: 'WHY COSTS CHANGE',
       flowEmoji: '\u{1F50D}',

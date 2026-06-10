@@ -119,7 +119,7 @@
         labelDy: labelDy[id] != null ? labelDy[id] : 0,
         anchor: 'start'
       };
-      if (id === 'AFC' || dashed.indexOf(id) !== -1) c.dashed = '5 4';
+      if (dashed.indexOf(id) !== -1) c.dashed = '5 4';
       if (layers && layers[idx]) c.layer = layers[idx];
       return c;
     }).filter(function (c) { return c.d; });
@@ -222,7 +222,6 @@
         label: CURVE_LABEL[id] || id, strokeWidth: id === 'MC' ? 2.8 : 2.2,
         labelDx: 6, labelDy: labelDy[id] != null ? labelDy[id] : 0, anchor: 'start'
       };
-      if (id === 'AFC') c.dashed = '5 4';
       return c;
     }).filter(function (c) { return c.d; });
 

@@ -435,6 +435,19 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   to two columns with the core ordered first on mobile; the
   `exchangeDriversHub` / `capacityEngineHub` grammar retoned blue). The rest of
   the deck reuses flow chains, tile grids and VS pairs.
+- **Public Sector Finances 4.5.3 set** — five bespoke pieces:
+  `fiscalMapHub` (six fiscal concepts as a numbered 3×2 tile map — reuse for
+  any "map the territory" overview); `debtBathtub` (a stock-vs-flow SVG: a
+  bath filled by a revenue tap and drained by a spending tap, the annual
+  deficit piping into a debt tank — reuse for any stock/flow or
+  inflows/outflows story); `outputGapCompare` (a two-panel `ECONOS_PPF`
+  time-series contrasting a recession's negative output gap against output at
+  trend — reuse for any potential-vs-actual / gap diagram); `deficitPressurePanel`
+  (six `ECONOS_DIALS` gauges on two rows with WIDENS/NARROWS framing — reuse
+  for any "what pushes this up or down" driver panel); `debtSnowball` (a
+  snowball SVG with inbound/outbound arrows — reuse for any compounding /
+  snowball dynamic). The rest of the deck reuses flow chains, side-by-side
+  pairs and tile grids.
 - **Chart-engine S&D welfare diagrams (Restrictions on Free Trade 4.1.6)** —
   proper `ECONOS_PPF` specs with stepped `idl-N` reveal, not hand-rolled
   SVG. `tariffDiagramInteractive` (Pw→Pt, revenue rectangle, two DWL

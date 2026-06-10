@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.154.3 — 2026-06-10
+
+### Revenue — Marginal revenue diagram rebuilt
+
+- Restructured the landscape layout to the standard pattern: the AR/MR chart
+  now sits on the LEFT with the worked-example table to its RIGHT (was stacked
+  table-above-chart). The card's body/analysis carry the explanation below.
+- Removed the two in-SVG insight boxes (the amber "MR falls…" and rose "Why MR
+  sits below AR") — that content is already in the step description/analysis.
+- Removed the "THE DIAGRAM" label that sat above the chart and clashed with the
+  Price axis title.
+- Cleaned the axis titles so "Price (£)" and "Output" no longer clash with the
+  axes, and relabelled "Output (units)" → "Output".
+- Mobile keeps the table-above-chart stack (boxes/title removed, chart tightened
+  up, `viewBox` trimmed so there's no trailing gap).
+- `sw.js` → `econos-v497`.
+
 ## 0.154.2 — 2026-06-10
 
 ### Revenue — Average revenue diagram fixes

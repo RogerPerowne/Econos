@@ -15332,123 +15332,87 @@ window.ECONOS_ICONS = {
           .mri-v { display:block; }
         }
       </style>
+
+      <!-- ===================== DESKTOP: chart LEFT, table RIGHT ===================== -->
       <div class="mri-h">
-      <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- ===== TOP: Worked example table ===== -->
-        <rect x="14" y="14" width="340" height="220" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
-        <text x="184" y="34" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">WORKED EXAMPLE</text>
-        <line x1="24" y1="46" x2="344" y2="46" stroke="#CBD5E1" stroke-width="1"/>
-        <!-- Header -->
-        <text x="52"  y="66" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Output</text>
-        <text x="120" y="66" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="208" y="66" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Total rev (£)</text>
-        <text x="306" y="66" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">MR (£)</text>
-        <line x1="24" y1="74" x2="344" y2="74" stroke="#CBD5E1" stroke-width="1"/>
-        <!-- 5 data rows (mr-1) -->
-        <g class="mr-1" style="display:none">
-          <text x="52"  y="96" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">1</text>
-          <text x="120" y="96" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">10</text>
-          <text x="208" y="96" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">10</text>
-          <text x="306" y="96" font-size="13" font-weight="700" fill="#94A3B8" text-anchor="middle" font-family="Inter,sans-serif">—</text>
-          <text x="52"  y="124" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">2</text>
-          <text x="120" y="124" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">9</text>
-          <text x="208" y="124" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">18</text>
-          <text x="306" y="124" font-size="13" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">8</text>
-          <text x="52"  y="152" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">3</text>
-          <text x="120" y="152" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">8</text>
-          <text x="208" y="152" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">24</text>
-          <text x="306" y="152" font-size="13" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">6</text>
-          <text x="52"  y="180" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">4</text>
-          <text x="120" y="180" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">7</text>
-          <text x="208" y="180" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">28</text>
-          <text x="306" y="180" font-size="13" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">4</text>
-          <text x="52"  y="208" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">5</text>
-          <text x="120" y="208" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">6</text>
-          <text x="208" y="208" font-size="13" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">30</text>
-          <text x="306" y="208" font-size="13" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">2</text>
-        </g>
-
-        <!-- Insight panel right of table (mr-1) -->
-        <g class="mr-1" style="display:none">
-          <rect x="370" y="14" width="376" height="100" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.3"/>
-          <text x="386" y="40" font-size="20" font-family="Inter,sans-serif">💡</text>
-          <text x="418" y="40" font-size="13" font-weight="800" fill="#92400E" font-family="Inter,sans-serif">MR falls as output rises</text>
-          <text x="386" y="64" font-size="12" fill="#92400E" font-family="Inter,sans-serif">Each new unit adds less to total revenue because</text>
-          <text x="386" y="80" font-size="12" fill="#92400E" font-family="Inter,sans-serif">the firm has to accept a lower price. The last unit</text>
-          <text x="386" y="96" font-size="12" fill="#92400E" font-family="Inter,sans-serif">sold (output 5) adds just £2 to total revenue.</text>
-        </g>
-
-        <!-- Caption appears with mr-2 -->
-        <g class="mr-2" style="display:none">
-          <rect x="370" y="124" width="376" height="110" rx="10" fill="#FFE4E6" stroke="#FB7185" stroke-width="1.3"/>
-          <text x="386" y="150" font-size="20" font-family="Inter,sans-serif">📐</text>
-          <text x="418" y="150" font-size="13" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif">Why MR sits below AR</text>
-          <text x="386" y="174" font-size="12" fill="#9F1239" font-family="Inter,sans-serif">Under imperfect competition, the firm must cut</text>
-          <text x="386" y="190" font-size="12" fill="#9F1239" font-family="Inter,sans-serif">price to sell more. Because the lower price applies</text>
-          <text x="386" y="206" font-size="12" fill="#9F1239" font-family="Inter,sans-serif">to <tspan font-weight="800">all</tspan> units sold (not just the extra one), MR</text>
-          <text x="386" y="222" font-size="12" fill="#9F1239" font-family="Inter,sans-serif">drops faster than AR — twice as fast on a linear D.</text>
-        </g>
-
-        <!-- ===== BOTTOM: AR / MR diagram ===== -->
-        <!-- Plot area: x=80-720, y=260-420
-             Output 0..6 → x = 80 + Output*106.67
-             Price 0..12 → y = 420 - Price*13.33 -->
-        <text x="14" y="256" font-size="11" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE DIAGRAM</text>
-        <line x1="80" y1="244" x2="80" y2="420" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="80" y1="420" x2="730" y2="420" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="54" y="256" font-size="10" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="730" y="442" font-size="10" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output (units)</text>
-        <!-- Y ticks 2,4,...,12 -->
+      <svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Plot: x 70..440 (Q 0..6), y 40..330 (P 0..12). x=70+Q*61.667 ; y=330-P*24.1667 -->
+        <line x1="70" y1="40" x2="70" y2="330" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="70" y1="330" x2="450" y2="330" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="70" y="30" font-size="11" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Price (£)</text>
+        <text x="450" y="360" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
         <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="74" y="289" text-anchor="end">10</text>
-          <text x="74" y="316" text-anchor="end">8</text>
-          <text x="74" y="342" text-anchor="end">6</text>
-          <text x="74" y="369" text-anchor="end">4</text>
-          <text x="74" y="396" text-anchor="end">2</text>
+          <text x="63" y="92"  text-anchor="end">10</text>
+          <text x="63" y="141" text-anchor="end">8</text>
+          <text x="63" y="189" text-anchor="end">6</text>
+          <text x="63" y="237" text-anchor="end">4</text>
+          <text x="63" y="286" text-anchor="end">2</text>
         </g>
-        <!-- X ticks 1..6 -->
         <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="187" y="436" text-anchor="middle">1</text>
-          <text x="293" y="436" text-anchor="middle">2</text>
-          <text x="400" y="436" text-anchor="middle">3</text>
-          <text x="507" y="436" text-anchor="middle">4</text>
-          <text x="613" y="436" text-anchor="middle">5</text>
-          <text x="720" y="436" text-anchor="middle">6</text>
+          <text x="132" y="346" text-anchor="middle">1</text>
+          <text x="193" y="346" text-anchor="middle">2</text>
+          <text x="255" y="346" text-anchor="middle">3</text>
+          <text x="317" y="346" text-anchor="middle">4</text>
+          <text x="378" y="346" text-anchor="middle">5</text>
+          <text x="440" y="346" text-anchor="middle">6</text>
         </g>
-
-        <!-- AR line: P = 11 - Q.
-             (0,11) → (80, 420-11*13.33=273.3)
-             (6,5)  → (80+6*106.67=720, 420-5*13.33=353.3) -->
+        <!-- AR line: P = 11 - Q -->
         <g class="mr-1" style="display:none">
-          <line x1="80" y1="273" x2="720" y2="353" stroke="#1E3A8A" stroke-width="2.2"/>
-          <text x="724" y="358" font-size="12" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">AR (D)</text>
-          <!-- Data dots at output 1..5 -->
-          <circle cx="187" cy="287" r="3.5" fill="#1E3A8A"/>
-          <circle cx="293" cy="300" r="3.5" fill="#1E3A8A"/>
-          <circle cx="400" cy="313" r="3.5" fill="#1E3A8A"/>
-          <circle cx="507" cy="327" r="3.5" fill="#1E3A8A"/>
-          <circle cx="613" cy="340" r="3.5" fill="#1E3A8A"/>
+          <line x1="70" y1="64" x2="440" y2="209" stroke="#1E3A8A" stroke-width="2.2"/>
+          <text x="436" y="197" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="end" font-family="Inter,sans-serif">AR (D)</text>
+          <circle cx="132" cy="88"  r="3.5" fill="#1E3A8A"/>
+          <circle cx="193" cy="113" r="3.5" fill="#1E3A8A"/>
+          <circle cx="255" cy="137" r="3.5" fill="#1E3A8A"/>
+          <circle cx="317" cy="161" r="3.5" fill="#1E3A8A"/>
+          <circle cx="378" cy="185" r="3.5" fill="#1E3A8A"/>
+        </g>
+        <!-- MR line: MR = 11 - 2Q, hits axis at Q=5.5 -->
+        <g class="mr-2" style="display:none">
+          <line x1="70" y1="64" x2="409" y2="330" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="415" y="320" font-size="12" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MR</text>
+          <circle cx="163" cy="137" r="3.5" fill="#DC2626"/>
+          <circle cx="224" cy="185" r="3.5" fill="#DC2626"/>
+          <circle cx="286" cy="233" r="3.5" fill="#DC2626"/>
+          <circle cx="347" cy="282" r="3.5" fill="#DC2626"/>
         </g>
 
-        <!-- MR line: MR = 11 - 2Q.
-             (0,11) → (80, 273.3)
-             (5.5,0) → (80+5.5*106.67=666.7, 420)
-             Beyond Q=5.5 the line would dip below the x-axis. -->
-        <g class="mr-2" style="display:none">
-          <line x1="80" y1="273" x2="667" y2="420" stroke="#DC2626" stroke-width="2.2"/>
-          <text x="675" y="416" font-size="12" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MR</text>
-          <!-- Data dots at output 1.5, 2.5, 3.5, 4.5 - MR = 8, 6, 4, 2 -->
-          <circle cx="240" cy="313" r="3.5" fill="#DC2626"/>
-          <circle cx="347" cy="340" r="3.5" fill="#DC2626"/>
-          <circle cx="453" cy="367" r="3.5" fill="#DC2626"/>
-          <circle cx="560" cy="393" r="3.5" fill="#DC2626"/>
+        <!-- Worked-example table (right) -->
+        <rect x="470" y="46" width="280" height="284" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
+        <text x="610" y="68" font-size="11" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">WORKED EXAMPLE</text>
+        <line x1="482" y1="80" x2="738" y2="80" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="510" y="102" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Output</text>
+        <text x="580" y="102" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Price (£)</text>
+        <text x="650" y="102" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TR (£)</text>
+        <text x="712" y="102" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">MR (£)</text>
+        <line x1="482" y1="110" x2="738" y2="110" stroke="#CBD5E1" stroke-width="1"/>
+        <g class="mr-1" style="display:none" font-family="Inter,sans-serif" font-size="13" font-weight="700">
+          <text x="510" y="145" fill="#0B1426" text-anchor="middle">1</text>
+          <text x="580" y="145" fill="#0B1426" text-anchor="middle">10</text>
+          <text x="650" y="145" fill="#0B1426" text-anchor="middle">10</text>
+          <text x="712" y="145" fill="#94A3B8" text-anchor="middle">—</text>
+          <text x="510" y="183" fill="#0B1426" text-anchor="middle">2</text>
+          <text x="580" y="183" fill="#0B1426" text-anchor="middle">9</text>
+          <text x="650" y="183" fill="#0B1426" text-anchor="middle">18</text>
+          <text x="712" y="183" fill="#DC2626" font-weight="800" text-anchor="middle">8</text>
+          <text x="510" y="221" fill="#0B1426" text-anchor="middle">3</text>
+          <text x="580" y="221" fill="#0B1426" text-anchor="middle">8</text>
+          <text x="650" y="221" fill="#0B1426" text-anchor="middle">24</text>
+          <text x="712" y="221" fill="#DC2626" font-weight="800" text-anchor="middle">6</text>
+          <text x="510" y="259" fill="#0B1426" text-anchor="middle">4</text>
+          <text x="580" y="259" fill="#0B1426" text-anchor="middle">7</text>
+          <text x="650" y="259" fill="#0B1426" text-anchor="middle">28</text>
+          <text x="712" y="259" fill="#DC2626" font-weight="800" text-anchor="middle">4</text>
+          <text x="510" y="297" fill="#0B1426" text-anchor="middle">5</text>
+          <text x="580" y="297" fill="#0B1426" text-anchor="middle">6</text>
+          <text x="650" y="297" fill="#0B1426" text-anchor="middle">30</text>
+          <text x="712" y="297" fill="#DC2626" font-weight="800" text-anchor="middle">2</text>
         </g>
       </svg>
       </div>
 
+      <!-- ===================== MOBILE: table TOP, chart BELOW ===================== -->
       <div class="mri-v">
-      <svg viewBox="0 0 360 760" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- Table (compact 4-col) -->
+      <svg viewBox="0 0 360 558" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <rect x="10" y="10" width="340" height="220" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.4"/>
         <text x="180" y="30" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">WORKED EXAMPLE</text>
         <line x1="20" y1="42" x2="340" y2="42" stroke="#CBD5E1" stroke-width="1"/>
@@ -15457,78 +15421,65 @@ window.ECONOS_ICONS = {
         <text x="222" y="60" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TR</text>
         <text x="304" y="60" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">MR</text>
         <line x1="20" y1="68" x2="340" y2="68" stroke="#CBD5E1" stroke-width="1"/>
-        <g class="mr-1" style="display:none">
-          <text x="56"  y="90" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">1</text>
-          <text x="138" y="90" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£10</text>
-          <text x="222" y="90" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£10</text>
-          <text x="304" y="90" font-size="12.5" font-weight="700" fill="#94A3B8" text-anchor="middle" font-family="Inter,sans-serif">—</text>
-          <text x="56"  y="118" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">2</text>
-          <text x="138" y="118" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£9</text>
-          <text x="222" y="118" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£18</text>
-          <text x="304" y="118" font-size="12.5" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">£8</text>
-          <text x="56"  y="146" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">3</text>
-          <text x="138" y="146" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£8</text>
-          <text x="222" y="146" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£24</text>
-          <text x="304" y="146" font-size="12.5" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">£6</text>
-          <text x="56"  y="174" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">4</text>
-          <text x="138" y="174" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£7</text>
-          <text x="222" y="174" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£28</text>
-          <text x="304" y="174" font-size="12.5" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">£4</text>
-          <text x="56"  y="202" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">5</text>
-          <text x="138" y="202" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£6</text>
-          <text x="222" y="202" font-size="12.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">£30</text>
-          <text x="304" y="202" font-size="12.5" font-weight="800" fill="#DC2626" text-anchor="middle" font-family="Inter,sans-serif">£2</text>
+        <g class="mr-1" style="display:none" font-family="Inter,sans-serif" font-size="12.5" font-weight="700">
+          <text x="56"  y="90"  fill="#0B1426" text-anchor="middle">1</text>
+          <text x="138" y="90"  fill="#0B1426" text-anchor="middle">£10</text>
+          <text x="222" y="90"  fill="#0B1426" text-anchor="middle">£10</text>
+          <text x="304" y="90"  fill="#94A3B8" text-anchor="middle">—</text>
+          <text x="56"  y="118" fill="#0B1426" text-anchor="middle">2</text>
+          <text x="138" y="118" fill="#0B1426" text-anchor="middle">£9</text>
+          <text x="222" y="118" fill="#0B1426" text-anchor="middle">£18</text>
+          <text x="304" y="118" fill="#DC2626" font-weight="800" text-anchor="middle">£8</text>
+          <text x="56"  y="146" fill="#0B1426" text-anchor="middle">3</text>
+          <text x="138" y="146" fill="#0B1426" text-anchor="middle">£8</text>
+          <text x="222" y="146" fill="#0B1426" text-anchor="middle">£24</text>
+          <text x="304" y="146" fill="#DC2626" font-weight="800" text-anchor="middle">£6</text>
+          <text x="56"  y="174" fill="#0B1426" text-anchor="middle">4</text>
+          <text x="138" y="174" fill="#0B1426" text-anchor="middle">£7</text>
+          <text x="222" y="174" fill="#0B1426" text-anchor="middle">£28</text>
+          <text x="304" y="174" fill="#DC2626" font-weight="800" text-anchor="middle">£4</text>
+          <text x="56"  y="202" fill="#0B1426" text-anchor="middle">5</text>
+          <text x="138" y="202" fill="#0B1426" text-anchor="middle">£6</text>
+          <text x="222" y="202" fill="#0B1426" text-anchor="middle">£30</text>
+          <text x="304" y="202" fill="#DC2626" font-weight="800" text-anchor="middle">£2</text>
         </g>
 
-        <g class="mr-1" style="display:none">
-          <rect x="10" y="246" width="340" height="78" rx="10" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.3"/>
-          <text x="22" y="268" font-size="14" font-family="Inter,sans-serif">💡</text>
-          <text x="46" y="269" font-size="12" font-weight="800" fill="#92400E" font-family="Inter,sans-serif">MR falls as output rises</text>
-          <text x="22" y="290" font-size="11.5" fill="#92400E" font-family="Inter,sans-serif">Each new unit adds less to TR — the firm</text>
-          <text x="22" y="306" font-size="11.5" fill="#92400E" font-family="Inter,sans-serif">must accept a lower price to sell more.</text>
-        </g>
-
-        <g class="mr-2" style="display:none">
-          <rect x="10" y="336" width="340" height="78" rx="10" fill="#FFE4E6" stroke="#FB7185" stroke-width="1.3"/>
-          <text x="22" y="358" font-size="14" font-family="Inter,sans-serif">📐</text>
-          <text x="46" y="359" font-size="12" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif">MR sits below AR</text>
-          <text x="22" y="380" font-size="11.5" fill="#9F1239" font-family="Inter,sans-serif">The price cut applies to <tspan font-weight="800">all</tspan> units sold,</text>
-          <text x="22" y="396" font-size="11.5" fill="#9F1239" font-family="Inter,sans-serif">so MR falls twice as fast as AR.</text>
-        </g>
-
-        <!-- Mobile diagram -->
-        <text x="10" y="438" font-size="10" font-weight="800" fill="#0B1426" letter-spacing="0.06em" font-family="Inter,sans-serif">THE DIAGRAM</text>
-        <!-- Plot area: x=46..340, y=460..720
-             Output 0..6 → x = 46 + Output*49
-             Price 0..12 → y = 720 - Price*21.67 -->
-        <line x1="46" y1="440" x2="46" y2="720" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="46" y1="720" x2="346" y2="720" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="20" y="452" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="346" y="742" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Chart: x 46..340 (Q 0..6), y 262..520 (P 0..12). x=46+Q*49 ; y=520-P*20.833 -->
+        <line x1="46" y1="262" x2="46" y2="520" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="46" y1="520" x2="346" y2="520" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="22" y="256" font-size="9" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
+        <text x="346" y="548" font-size="9" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
         <g font-family="Inter,sans-serif" font-size="9" fill="#475569">
-          <text x="40" y="503" text-anchor="end">10</text>
-          <text x="40" y="546" text-anchor="end">8</text>
-          <text x="40" y="589" text-anchor="end">6</text>
-          <text x="40" y="633" text-anchor="end">4</text>
-          <text x="40" y="676" text-anchor="end">2</text>
+          <text x="40" y="315" text-anchor="end">10</text>
+          <text x="40" y="357" text-anchor="end">8</text>
+          <text x="40" y="399" text-anchor="end">6</text>
+          <text x="40" y="440" text-anchor="end">4</text>
+          <text x="40" y="482" text-anchor="end">2</text>
         </g>
         <g font-family="Inter,sans-serif" font-size="9" fill="#475569">
-          <text x="95" y="734" text-anchor="middle">1</text>
-          <text x="144" y="734" text-anchor="middle">2</text>
-          <text x="193" y="734" text-anchor="middle">3</text>
-          <text x="242" y="734" text-anchor="middle">4</text>
-          <text x="291" y="734" text-anchor="middle">5</text>
-          <text x="340" y="734" text-anchor="middle">6</text>
+          <text x="95"  y="536" text-anchor="middle">1</text>
+          <text x="144" y="536" text-anchor="middle">2</text>
+          <text x="193" y="536" text-anchor="middle">3</text>
+          <text x="242" y="536" text-anchor="middle">4</text>
+          <text x="291" y="536" text-anchor="middle">5</text>
+          <text x="340" y="536" text-anchor="middle">6</text>
         </g>
-        <!-- AR line: P=11-Q, (0,11)→(46, 720-11*21.67=481.6), (6,5)→(340, 720-5*21.67=611.7) -->
         <g class="mr-1" style="display:none">
-          <line x1="46" y1="482" x2="340" y2="612" stroke="#1E3A8A" stroke-width="2"/>
-          <text x="316" y="624" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="end" font-family="Inter,sans-serif">AR (D)</text>
+          <line x1="46" y1="291" x2="340" y2="416" stroke="#1E3A8A" stroke-width="2"/>
+          <text x="338" y="406" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="end" font-family="Inter,sans-serif">AR (D)</text>
+          <circle cx="95"  cy="312" r="3" fill="#1E3A8A"/>
+          <circle cx="144" cy="333" r="3" fill="#1E3A8A"/>
+          <circle cx="193" cy="353" r="3" fill="#1E3A8A"/>
+          <circle cx="242" cy="374" r="3" fill="#1E3A8A"/>
+          <circle cx="291" cy="395" r="3" fill="#1E3A8A"/>
         </g>
-        <!-- MR line: MR=11-2Q, (0,11)→(46, 482), (5.5,0)→(46+5.5*49=315.5, 720) -->
         <g class="mr-2" style="display:none">
-          <line x1="46" y1="482" x2="316" y2="720" stroke="#DC2626" stroke-width="2"/>
-          <text x="316" y="708" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end" font-family="Inter,sans-serif">MR</text>
+          <line x1="46" y1="291" x2="316" y2="520" stroke="#DC2626" stroke-width="2"/>
+          <text x="322" y="510" font-size="11" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MR</text>
+          <circle cx="120" cy="353" r="3" fill="#DC2626"/>
+          <circle cx="169" cy="395" r="3" fill="#DC2626"/>
+          <circle cx="218" cy="437" r="3" fill="#DC2626"/>
+          <circle cx="267" cy="478" r="3" fill="#DC2626"/>
         </g>
       </svg>
       </div>

@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.150.1 — 2026-06-10
+
+### Price discrimination — fix the quantity relationship
+
+Per review: the elastic, lower-price market must serve the LARGER quantity
+(few business travellers at a high fare; many leisure travellers at a low one).
+The hand-rolled `priceDiscPanels` had this backwards. Rewrote Market B
+(elastic) with a shallow demand whose MR=MC lands at a much larger output, and
+added explicit "Q_A (few)" / "Q_B (many)" axis labels so the contrast is clear.
+
 ## 0.150.0 — 2026-06-10
 
 ### Chart engine Phase 3 — Natural monopoly (4-step) migrated

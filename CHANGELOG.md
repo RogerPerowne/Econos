@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.155.13 — 2026-06-10
+
+### Marginal revenue — replot exactly, shift chart left and enlarge
+
+- Replotted the AR/MR chart on an exact mapping (x = 40 + Q·70,
+  y = 350 − P·26.667): the AR dots now sit precisely on the integer outputs at
+  10/9/8/7/6 and the MR dots on the half-unit midpoints at 8/6/4/2, with MR
+  meeting the axis exactly at Q = 5.5 — the previous coords carried small
+  rounding drift.
+- Fixed the "AR (D)" label sitting on the line (now below the line end) and
+  nudged "MR" clear; dropped the redundant 6 tick that clashed with the
+  Output label.
+- Axis moved from x=70 to x=40 and the plot stretched to 420×320 — the chart
+  fills the left half up to the worked-example table.
+- `sw.js` → `econos-v511`.
+
 ## 0.155.12 — 2026-06-10
 
 ### Average revenue — chart shifted left and enlarged

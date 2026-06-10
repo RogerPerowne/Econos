@@ -15352,44 +15352,46 @@ window.ECONOS_ICONS = {
       <!-- ===================== DESKTOP: chart LEFT, table RIGHT ===================== -->
       <div class="mri-h">
       <svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- Plot: x 70..440 (Q 0..6), y 40..330 (P 0..12). x=70+Q*61.667 ; y=330-P*24.1667 -->
-        <line x1="70" y1="40" x2="70" y2="330" stroke="#0B1426" stroke-width="1.6"/>
-        <line x1="70" y1="330" x2="450" y2="330" stroke="#0B1426" stroke-width="1.6"/>
-        <text x="70" y="30" font-size="11" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Price (£)</text>
-        <text x="450" y="360" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
+        <!-- Plot: x 40..460 (Q 0..6), y 30..350 (P 0..12).
+             Exact mapping: x = 40 + Q*70 ; y = 350 - P*26.667
+             AR: P = 11 - Q (dots at integer outputs 1..5)
+             MR: MR = 11 - 2Q (dots at the half-unit midpoints, axis at Q=5.5) -->
+        <line x1="40" y1="30" x2="40" y2="350" stroke="#0B1426" stroke-width="1.6"/>
+        <line x1="40" y1="350" x2="466" y2="350" stroke="#0B1426" stroke-width="1.6"/>
+        <text x="14" y="24" font-size="11" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
+        <text x="466" y="372" font-size="11" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Output</text>
         <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="63" y="92"  text-anchor="end">10</text>
-          <text x="63" y="141" text-anchor="end">8</text>
-          <text x="63" y="189" text-anchor="end">6</text>
-          <text x="63" y="237" text-anchor="end">4</text>
-          <text x="63" y="286" text-anchor="end">2</text>
+          <text x="33" y="87"  text-anchor="end">10</text>
+          <text x="33" y="141" text-anchor="end">8</text>
+          <text x="33" y="194" text-anchor="end">6</text>
+          <text x="33" y="247" text-anchor="end">4</text>
+          <text x="33" y="301" text-anchor="end">2</text>
         </g>
         <g font-family="Inter,sans-serif" font-size="10" fill="#475569">
-          <text x="132" y="346" text-anchor="middle">1</text>
-          <text x="193" y="346" text-anchor="middle">2</text>
-          <text x="255" y="346" text-anchor="middle">3</text>
-          <text x="317" y="346" text-anchor="middle">4</text>
-          <text x="378" y="346" text-anchor="middle">5</text>
-          <text x="440" y="346" text-anchor="middle">6</text>
+          <text x="110" y="366" text-anchor="middle">1</text>
+          <text x="180" y="366" text-anchor="middle">2</text>
+          <text x="250" y="366" text-anchor="middle">3</text>
+          <text x="320" y="366" text-anchor="middle">4</text>
+          <text x="390" y="366" text-anchor="middle">5</text>
         </g>
-        <!-- AR line: P = 11 - Q -->
+        <!-- AR line: P = 11 - Q → (0,11)=(40,57) to (6,5)=(460,217) -->
         <g class="mr-1" style="display:none">
-          <line x1="70" y1="64" x2="440" y2="209" stroke="#1E3A8A" stroke-width="2.2"/>
-          <text x="436" y="197" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="end" font-family="Inter,sans-serif">AR (D)</text>
-          <circle cx="132" cy="88"  r="3.5" fill="#1E3A8A"/>
-          <circle cx="193" cy="113" r="3.5" fill="#1E3A8A"/>
-          <circle cx="255" cy="137" r="3.5" fill="#1E3A8A"/>
-          <circle cx="317" cy="161" r="3.5" fill="#1E3A8A"/>
-          <circle cx="378" cy="185" r="3.5" fill="#1E3A8A"/>
+          <line x1="40" y1="57" x2="460" y2="217" stroke="#1E3A8A" stroke-width="2.2"/>
+          <text x="456" y="241" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="end" font-family="Inter,sans-serif">AR (D)</text>
+          <circle cx="110" cy="83"  r="3.5" fill="#1E3A8A"/>
+          <circle cx="180" cy="110" r="3.5" fill="#1E3A8A"/>
+          <circle cx="250" cy="137" r="3.5" fill="#1E3A8A"/>
+          <circle cx="320" cy="163" r="3.5" fill="#1E3A8A"/>
+          <circle cx="390" cy="190" r="3.5" fill="#1E3A8A"/>
         </g>
-        <!-- MR line: MR = 11 - 2Q, hits axis at Q=5.5 -->
+        <!-- MR line: MR = 11 - 2Q → (0,11)=(40,57) to (5.5,0)=(425,350) -->
         <g class="mr-2" style="display:none">
-          <line x1="70" y1="64" x2="409" y2="330" stroke="#DC2626" stroke-width="2.2"/>
-          <text x="415" y="320" font-size="12" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MR</text>
-          <circle cx="163" cy="137" r="3.5" fill="#DC2626"/>
-          <circle cx="224" cy="185" r="3.5" fill="#DC2626"/>
-          <circle cx="286" cy="233" r="3.5" fill="#DC2626"/>
-          <circle cx="347" cy="282" r="3.5" fill="#DC2626"/>
+          <line x1="40" y1="57" x2="425" y2="350" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="431" y="334" font-size="12" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif">MR</text>
+          <circle cx="145" cy="137" r="3.5" fill="#DC2626"/>
+          <circle cx="215" cy="190" r="3.5" fill="#DC2626"/>
+          <circle cx="285" cy="243" r="3.5" fill="#DC2626"/>
+          <circle cx="355" cy="297" r="3.5" fill="#DC2626"/>
         </g>
 
         <!-- Worked-example table (right) -->

@@ -2868,6 +2868,19 @@ img, svg { display: block; max-width: 100%; }
   .split-decision { flex-direction: column !important; }
   /* versusList "A vs B" pairs stack the same way on phones. */
   .versus-list__pair { flex-direction: column !important; }
+  /* versusRows comparison tables: the 1fr/38px/1fr grid is far too tight on a
+     phone (icons + text in ~150px columns wrap into illegible slivers). Drop
+     the decorative icons, stack the two boxes full-width with the "vs" badge
+     between, and centre each box so they read balanced. */
+  .versus-rows__grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .versus-rows__icon { display: none !important; }
+  .versus-rows__side {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 4px !important;
+    padding: 14px 18px !important;
+  }
+  .versus-rows__vs { transform: none !important; }
   /* Three-element comparison (A + B = C) is too tight side-by-side on a
      phone — stack the cards with the operator badges sitting between. */
   .gen-comparison--triple { flex-direction: column !important; }

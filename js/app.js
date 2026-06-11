@@ -5550,16 +5550,16 @@
         const title = vr.title ? genSecLabel(vr.emoji || '⚖️', vr.title) : '';
         const rows = vr.rows.map(row => {
           const renderSide = (s, t, align) => `
-            <div style="display:flex;align-items:center;gap:12px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:12px 14px;flex-direction:${align === 'right' ? 'row-reverse' : 'row'};text-align:${align};">
-              <div style="width:38px;height:38px;border-radius:50%;background:#fff;border:1.5px solid ${t.border};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;flex-shrink:0;">${renderIcon(s.icon)}</div>
+            <div class="versus-rows__side" style="display:flex;align-items:center;gap:12px;background:${t.bg};border:1px solid ${t.border};border-radius:var(--r-lg);padding:12px 14px;flex-direction:${align === 'right' ? 'row-reverse' : 'row'};text-align:${align};">
+              <div class="versus-rows__icon" style="width:38px;height:38px;border-radius:50%;background:#fff;border:1.5px solid ${t.border};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;flex-shrink:0;">${renderIcon(s.icon)}</div>
               <div style="flex:1;min-width:0;">
                 <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:2px;">${s.head}</div>
                 <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${s.sub}</div>
               </div>
             </div>`;
-          return `<div style="display:grid;grid-template-columns:1fr 38px 1fr;gap:10px;align-items:center;">
+          return `<div class="versus-rows__grid" style="display:grid;grid-template-columns:1fr 38px 1fr;gap:10px;align-items:center;">
             ${renderSide(row.left, lt, 'left')}
-            <div style="display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:#64748B;letter-spacing:0.12em;">vs</div>
+            <div class="versus-rows__vs" style="display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:#64748B;letter-spacing:0.12em;">vs</div>
             ${renderSide(row.right, rt, 'right')}
           </div>`;
         }).join('');

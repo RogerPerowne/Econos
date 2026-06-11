@@ -125,6 +125,7 @@ window.ECONOS_TOPIC = {
         label: 'The AD/AS diagram',
         emoji: '📊',
         layers: ['idl-1', 'idl-2'],
+        inverseLayers: ['idl-old-solid'],
         perspectives: ['classical', 'keynesian'],
         perspectiveLabels: { classical: 'Classical', keynesian: 'Keynesian' },
         views: [

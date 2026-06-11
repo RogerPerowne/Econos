@@ -47,7 +47,7 @@
         layer: 'idl-1' },
       // Layer 1: new SRAS₂ solid red, shifted left
       { d: 'M 0.097,0.244 L 0.875,1.016',
-        tone: 'rose', label: 'SRAS₂', strokeWidth: 2.2,
+        tone: 'slate', label: 'SRAS₂', strokeWidth: 2.2,
         labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' }
     ],
@@ -67,8 +67,8 @@
     arrows: [
       // Layer 1: left-shift arrow showing SRAS moving left
       { x1: 0.583, y1: 0.579, x2: 0.492, y2: 0.579,
-        tone: 'rose', strokeWidth: 1.5,
-        markerEnd: 'econos-arrow-red', buffer: 0, layer: 'idl-1' }
+        tone: 'slate', strokeWidth: 1.5,
+        markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'idl-1' }
     ],
 
     boxedLabels: [

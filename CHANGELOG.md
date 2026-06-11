@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.170.2 — 2026-06-11
+
+### Shift-styling sweep, part 2 — theme-1/2 same-line colours
+
+- Completed the shift convention across themes 1–2: a shifted curve now
+  keeps its identity colour everywhere (AD stays blue, SRAS slate, LRAS
+  purple, Keynesian AS amber, SRPC blue, PPF blue, loanable-funds D
+  green). The dashing rule was already in place on these charts; only
+  the highlight recolour of the NEW line was normalised. Annotation
+  accents (equilibrium dots, verdict arrows, chips, captions like
+  "output gap") keep their semantic colours. Affected specs:
+  `ad-demand-pull-interactive`, `ad-cost-push-interactive`,
+  `ad-movement-shift(-interactive)`, `as-sr-to-lr`, `crowding-out`,
+  `inflation-2022-ad-as`, `lras-demand-vs-capacity`,
+  `lras-shift-right/sras-shift-left-classical-keynesian`,
+  `lras-vertical-interactive`, `ppf-card3`, `ppf-card4`,
+  `sras-right-shift/sras-shift(-directions)-interactive`,
+  `stagflation-phillips`, `supply-side-sr-lr`.
+- **Bug fix (pre-existing, #1153):** the `adDemandPullInteractive` and
+  `adCostPushInteractive` icon bindings were accidentally swallowed by a
+  block comment in `icons.js`, so the demand-pull Card hero diagram never
+  rendered. Bindings restored; demand-pull also gained the missing
+  dashed-AD₁ ghost (`idl-old-solid` inverse layer) and both charts'
+  shift arrows were re-seated INTO the gap between the curves (they sat
+  outside it).
+
 ## 0.170.1 — 2026-06-11
 
 ### Shift-styling sweep — original dashed, new solid, same colour

@@ -63,7 +63,7 @@
         layer: 'v2', perspective: 'classical' },
       /* AD₂ SOLID – shifted up/right (V2). */
       { id: 'ad2_c', d: AD2,
-        tone: 'green', label: 'AD₂', strokeWidth: 2,
+        tone: 'blue', label: 'AD₂', strokeWidth: 2,
         labelDx: -4, labelDy: 12, anchor: 'end',
         layer: 'v2', perspective: 'classical' },
 
@@ -88,7 +88,7 @@
         layer: 'v2', perspective: 'keynesian' },
       /* AD₂ SOLID – shifted up/right (V2). */
       { id: 'ad2_k', d: AD2,
-        tone: 'green', label: 'AD₂', strokeWidth: 2,
+        tone: 'blue', label: 'AD₂', strokeWidth: 2,
         labelDx: -4, labelDy: 12, anchor: 'end',
         layer: 'v2', perspective: 'keynesian' }
     ],

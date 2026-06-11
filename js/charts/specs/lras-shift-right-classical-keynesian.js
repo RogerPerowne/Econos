@@ -68,9 +68,9 @@
         tone: 'purple', label: 'LRAS₁', strokeWidth: 1.6, dashed: '6 4',
         labelDx: 6, labelDy: -2, anchor: 'start',
         layer: 'c-lras1-dash', perspective: 'classical' },
-      /* LRAS₂ solid (V2+) – vertical at Yf₂. */
+      /* LRAS₂ solid (V2+) – vertical at Yf₂. Same line → same colour. */
       { id: 'lras2', d: 'M ' + YF2 + ',0.020 L ' + YF2 + ',0.880',
-        tone: 'green', label: 'LRAS₂', strokeWidth: 2.5,
+        tone: 'purple', label: 'LRAS₂', strokeWidth: 2.5,
         labelDx: 6, labelDy: -2, anchor: 'start',
         layer: 'c-lras2', perspective: 'classical' },
 
@@ -90,7 +90,7 @@
          floor unchanged). V2+. */
       { id: 'as2_k',
         shape: { type: 'keynesianAS', flatY: 0.30, kneeX: 0.50, capacityX: YF2, top: 0.88, startX: 0.05 },
-        tone: 'green', label: 'AS₂', strokeWidth: 2.5,
+        tone: 'amber', label: 'AS₂', strokeWidth: 2.5,
         labelDx: 8, labelDy: -8, anchor: 'start',
         layer: 'k-as2', perspective: 'keynesian' },
       /* Yf₂ marker line (V3) – dashed vertical at new potential. */
@@ -127,12 +127,12 @@
     arrows: [
       /* Classical LR shift (V2) – LRAS₁ → LRAS₂, rightward near top. */
       { x1: YF1 + 0.01, y1: 0.78, x2: YF2 - 0.01, y2: 0.78,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
+        tone: 'purple', strokeWidth: 1.8, markerEnd: 'econos-arrow-purple',
         buffer: 0, layer: 'c-lr-arrow', perspective: 'classical' },
 
       /* Keynesian LR shift (V2) – capacity slides parallel right. */
       { x1: 0.34, y1: 0.255, x2: 0.52, y2: 0.255,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
+        tone: 'amber', strokeWidth: 1.8, markerEnd: 'econos-arrow-amber',
         buffer: 0, layer: 'k-lr-arrow', perspective: 'keynesian' },
       /* Keynesian output-gap arrow (V3) – actual Y₂ to potential Yf₂,
          placed LOW near the x-axis so it reads as a clean gap. */

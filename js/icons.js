@@ -587,14 +587,13 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     DEMAND-PULL INTERACTIVE – 3-step build for interactiveDiagram block.
-     Base (always visible): axes, SRAS, AD₁ (blue), E₁.
-     Layer dpl-1: AD₂ (green) + shift arrow.
-     Layer dpl-2: E₂ dot + P₂/Y₂/E₂ labels + result chip.
-     Geometry matches adAsDemandPull (viewBox 0 0 480 280, E₁=195,149, E₂=227,128).
+     DEMAND-PULL / COST-PUSH INTERACTIVE – 3-step builds for the
+     interactiveDiagram block (engine specs). NOTE: these two keys
+     were accidentally swallowed by this block comment in #1153 —
+     keep the bindings OUTSIDE the comment.
+     ============================================================ */
   adDemandPullInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_DEMAND_PULL_INTERACTIVE_SPEC); }),
   adCostPushInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_COST_PUSH_INTERACTIVE_SPEC); }),
-     ============================================================ */
 
   /* ============================================================
      COST-PUSH INTERACTIVE – 3-step build for interactiveDiagram block.

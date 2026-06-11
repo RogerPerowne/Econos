@@ -79,7 +79,7 @@
         layer: 'c-lras1-dash', perspective: 'classical' },
       // LRAS₂ – vertical at Yf₂ (long-run capacity), revealed V3+.
       { id: 'lras2', d: 'M ' + YF2 + ',0.020 L ' + YF2 + ',0.880',
-        tone: 'green', label: 'LRAS₂', strokeWidth: 2.5,
+        tone: 'purple', label: 'LRAS₂', strokeWidth: 2.5,
         labelDx: 6, labelDy: -2, anchor: 'start', layer: 'c-lras2', perspective: 'classical' },
       // SRAS₁ solid – base view only (inverseLayers).
       { id: 'sras1_c', d: 'M 0.26,0.41 L 0.70,0.74',
@@ -91,7 +91,7 @@
         labelDx: 6, labelDy: -10, anchor: 'start', layer: 'c-sras1-dash', perspective: 'classical' },
       // SRAS₂ – shifted right (V2+).
       { id: 'sras2_c', d: 'M 0.46,0.27 L 0.90,0.60',
-        tone: 'green', label: 'SRAS₂', strokeWidth: 2.2,
+        tone: 'slate', label: 'SRAS₂', strokeWidth: 2.2,
         labelDx: 6, labelDy: -10, anchor: 'start', layer: 'c-sras2', perspective: 'classical' },
 
       /* ══════════════ KEYNESIAN ══════════════ */
@@ -111,16 +111,16 @@
       // unchanged (Yf₁). A downward move. Solid in V2 only, dashed in V3+.
       { id: 'as2_k',
         shape: { type: 'keynesianAS', flatY: 0.18, kneeX: 0.30, capacityX: YF1, top: 0.88, startX: 0.05 },
-        tone: 'cyan', label: 'AS₂', strokeWidth: 2.2,
+        tone: 'amber', label: 'AS₂', strokeWidth: 2.2,
         labelDx: -6, labelDy: -8, anchor: 'end', layer: 'k-as2', perspective: 'keynesian' },
       { shape: { type: 'keynesianAS', flatY: 0.18, kneeX: 0.30, capacityX: YF1, top: 0.88, startX: 0.05 },
-        tone: 'cyan', label: 'AS₂', strokeWidth: 1.5, dashed: '6 4',
+        tone: 'amber', label: 'AS₂', strokeWidth: 1.5, dashed: '6 4',
         labelDx: -6, labelDy: -8, anchor: 'end', layer: 'k-as2-dash', perspective: 'keynesian' },
       // AS₃ – LONG RUN capacity gain: PARALLEL right of AS₂ (floor stays
       // 0.22, capacity Yf₁→Yf₂). Solid V3+.
       { id: 'as3_k',
         shape: { type: 'keynesianAS', flatY: 0.18, kneeX: 0.50, capacityX: YF2, top: 0.88, startX: 0.05 },
-        tone: 'green', label: 'AS₃', strokeWidth: 2.5,
+        tone: 'amber', label: 'AS₃', strokeWidth: 2.5,
         labelDx: 8, labelDy: -8, anchor: 'start', layer: 'k-as3', perspective: 'keynesian' },
       // Yf₂ potential line (V4) – dashed vertical marking the new capacity.
       { d: 'M ' + YF2 + ',0.020 L ' + YF2 + ',0.620',
@@ -163,7 +163,7 @@
          x ≈ 0.65, so both ends sit in the OPEN STRIP between SRAS₁ and
          SRAS₂ – no contact with either curve, well clear of E₁ and E₂. */
       { x1: 0.49, y1: 0.583, x2: 0.629, y2: 0.397,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
+        tone: 'slate', strokeWidth: 1.8, markerEnd: 'econos-arrow-slate',
         buffer: 4, layer: 'c-sr-arrow', perspective: 'classical' },
       /* Classical LR – LRAS₁ → LRAS₂ (V3), rightward near top. */
       { x1: YF1 + 0.01, y1: 0.80, x2: YF2 - 0.01, y2: 0.80,
@@ -176,11 +176,11 @@
 
       /* Keynesian SR – price floor DROPS (V2), a DOWNWARD arrow (0.34→0.18). */
       { x1: 0.175, y1: 0.330, x2: 0.175, y2: 0.205,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
+        tone: 'amber', strokeWidth: 1.8, markerEnd: 'econos-arrow-amber',
         buffer: 0, layer: 'k-sr-arrow', perspective: 'keynesian' },
       /* Keynesian LR – capacity slides PARALLEL right (V3). */
       { x1: 0.34, y1: 0.255, x2: 0.52, y2: 0.255,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
+        tone: 'amber', strokeWidth: 1.8, markerEnd: 'econos-arrow-amber',
         buffer: 0, layer: 'k-lr-arrow', perspective: 'keynesian' },
       /* Keynesian verdict – output gap Y₃ → Yf₂ (V4), low near axis. */
       { x1: 0.575, y1: 0.090, x2: YF2 - 0.005, y2: 0.090,

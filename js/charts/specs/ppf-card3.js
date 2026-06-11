@@ -35,10 +35,13 @@
     curves: [
       { id: 'ppf1', d: 'M 0,0.643 C 0.36,0.643 0.65,0.229 0.65,0.014',
         tone: 'blue', label: 'PPF₁', layer: 'layer-ppf1' },
+      // Shifted PPFs keep the line's identity colour (PPF₁ fades to 30%
+      // via .show-outward/.show-inward CSS, so the pair stays legible);
+      // the green/rose shift arrows + legends carry the direction accent.
       { id: 'ppf2', d: 'M 0,0.814 C 0.44,0.814 0.8,0.257 0.8,0.014',
-        tone: 'green', label: 'PPF₂', layer: 'layer-ppf2' },
+        tone: 'blue', label: 'PPF₂', layer: 'layer-ppf2' },
       { id: 'ppf3', d: 'M 0,0.457 C 0.23,0.457 0.48,0.143 0.48,0.014',
-        tone: 'rose', label: 'PPF₃', layer: 'layer-ppf3' }
+        tone: 'blue', label: 'PPF₃', layer: 'layer-ppf3' }
     ],
 
     views: [

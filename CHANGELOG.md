@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.160.0 — 2026-06-11
+
+### Oligopoly — tightened + two spec gaps closed
+
+- **De-duplication**: card 2's "NOT JUST ABOUT PRICE" tiles (verbatim preview
+  of card 4) removed; card 3's "WHY PRICES MAY STICK" tiles (restating its own
+  interactive) removed; card 5's "WHAT THIS MEANS FOR THE MARKET" tiles and
+  evaluation pair removed — evaluation now lives only on card 6. Card 1's
+  bottomTip (restating the spectrum visual) removed. Cards 4/5 are no longer
+  structural twins.
+- **Spec 3.4.4(b) — concentration ratios** were tested in the topic's Land It
+  (CR4 calculation) but never taught: card 1 gains a worked CR block
+  (definition · UK groceries CR4 ≈ 64% · how to read it, with the
+  one-firm-dominance caveat).
+- **Spec 3.4.4(f) — price competition** (price wars, predatory pricing, limit
+  pricing) was covered nowhere: card 4 rebuilt as "How oligopolists compete —
+  price and non-price" — three price weapons up top, the pivot chain
+  (why firms turn to non-price), the four non-price tools with real-world
+  examples folded into each tile (also kills the Supermarkets dupe with
+  card 1). Card 4's URL slug changes with its title.
+- Data-only change (network-first), no sw bump.
+
 ## 0.159.2 — 2026-06-11
 
 ### Lint: curve-label completeness gate

@@ -41,7 +41,7 @@
     polygons: [
       // Shaded feasible region – everything the economy CAN produce.
       // Light blue tint so the curve still reads on top.
-      { points: FEASIBLE, tone: 'blue', opacity: 0.10 }
+      { points: FEASIBLE, tone: 'blue', opacity: 0.35 }
     ],
     curves: [
       { id: 'ppf1', d: 'M 0,0.92 C 0.42,0.92 0.92,0.42 0.92,0.04', tone: 'blue', strokeWidth: 3,

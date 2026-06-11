@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.159.0 — 2026-06-11
+
+### Diagram shading + label legibility sweep
+
+- **Root cause**: polygon shading was doubly diluted — the engine fills with the
+  tone at 0.2 alpha *and* multiplies by the polygon `opacity`, so an
+  `opacity: 0.22` rendered at ~0.044 effective alpha (nearly invisible).
+  Audited every polygon site-wide and computed effective alpha.
+- **Firm diagrams (firm-model.js)**: darkened all profit / loss / revenue /
+  excess-capacity rectangles to ~0.6 (eff ≈0.12, matching the Perfect
+  Competition reference) — monopoly profit-max (incl. MC card 3), monopolistic
+  long-run SR profit, monopolistic excess-capacity bracket, natural-monopoly
+  profit, price-discrimination revenue.
+- **Cost + profit points always flagged on the y-axis**: added the missing
+  cost flag (`C₁`) opposite the price flag (`P₁`) wherever a profit/loss
+  rectangle meets the axis (monopolistic long-run SR, natural monopoly);
+  monopoly profit-max already carried both.
+- **Missing line labels**: the monopolistic long-run "entry shifts demand left"
+  step left the amber MR and the dashed old-demand lines unlabelled — now
+  labelled `MR` and `D (SR)` (with `D (LR)` on the new curve), so every line is
+  identified on every step. (Axis titles were already present.)
+- **Spec-level economic regions** bumped to readable levels: break-even
+  profit/loss zones, cartel joint-profit area, Gini areas A & B, buffer-stock
+  price band, monopsony loss sliver, PPF feasible region + PPF classify
+  under-used/unattainable washes.
+- Chart-lint clean across all 130 specs; snapshots refreshed; screenshot-verified
+  the firm diagrams + PPF. `sw.js` cache `econos-v536` → `econos-v537`.
+
 ## 0.158.1 — 2026-06-11
 
 ### Monopolistic Competition card 1 — richer examples

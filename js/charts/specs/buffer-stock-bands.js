@@ -20,7 +20,7 @@
     },
     polygons: [
       /* the stability band between floor and ceiling */
-      { points: [[0, 0.32], [1, 0.32], [1, 0.68], [0, 0.68]], tone: 'green', opacity: 0.12 }
+      { points: [[0, 0.32], [1, 0.32], [1, 0.68], [0, 0.68]], tone: 'green', opacity: 0.45 }
     ],
     curves: [
       { d: 'M 0,0.68 L 1,0.68', tone: 'blue', dashed: '5 4', strokeWidth: 1.8 },

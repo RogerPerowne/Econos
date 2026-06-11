@@ -36,7 +36,7 @@
     layers: ['cjp-1', 'cjp-2', 'cjp-3'],
     axes: { x: { label: 'Quantity' }, y: { label: 'Price' } },
     polygons: [
-      { layer: 'cjp-3', points: [[0, 0], [nx(qc), 0], [nx(qc), ny(Pc)], [0, ny(Pc)]], tone: 'green', opacity: 0.22 }
+      { layer: 'cjp-3', points: [[0, 0], [nx(qc), 0], [nx(qc), ny(Pc)], [0, ny(Pc)]], tone: 'green', opacity: 0.6 }
     ],
     curves: [
       { id: 'D', d: F.samplePath(ar, qMin, arEnd, qAxis, yAxis, 2), tone: 'blue', label: 'D', strokeWidth: 2.6, labelDx: 6, labelDy: 8, anchor: 'start', layer: 'cjp-1' },

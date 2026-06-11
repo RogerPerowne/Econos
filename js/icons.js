@@ -17388,7 +17388,7 @@ window.ECONOS_ICONS = {
       </div>
 
       <div class="pce-v">
-      <svg viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 0 360 444" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- Equation panel -->
         <rect x="10" y="10" width="340" height="78" rx="11" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
         <text x="180" y="32" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">THE CORE EQUATION</text>

@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.169.1 — 2026-06-11
+
+### profitCoreEquation — trim mobile white space
+
+- The mobile (vertical-stack) variant of the Profits & Losses Card 1
+  worked-example diagram had a `viewBox` height of 600 but its content
+  ended at y≈434, leaving a large empty band below the amber "£25,000 of
+  profit is left" callout. Tightened the mobile `viewBox` to `0 0 360 444`
+  so the chart box ends just under the callout — no content clipped.
+
 ## 0.169.0 — 2026-06-11
 
 ### Phillips curve — rebuilt as a stepped interactive diagram

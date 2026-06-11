@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.158.1 — 2026-06-11
+
+### Monopolistic Competition card 1 — richer examples
+
+- The examples strip grew from five bare high-street icons to six tiles with
+  named brands/detail under each, and broadened beyond the high street:
+  Coffee shops (Costa, Pret, indies), Clothing brands (Zara, Uniqlo, vintage
+  resellers), Gyms & fitness (PureGym, F45, yoga studios), Estate agents
+  (Foxtons, Purplebricks, the family firm), Craft breweries (BrewDog, Tiny
+  Rebel, micros) and Marketing agencies as a B2B example. 3×2 grid. Data-only
+  change (network-first), no sw bump.
+
 ## 0.158.0 — 2026-06-11
 
 ### Monopolistic Competition — cards 1 & 2 de-duplicated

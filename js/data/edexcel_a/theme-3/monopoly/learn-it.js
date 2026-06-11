@@ -18,9 +18,9 @@
      - monopolyFeaturesHub  (Card 1 hub)
      - monopolyProfitMax    (Card 3 interactive, mp-1..mp-4)
      - monopolyWelfare      (Card 4 interactive, mw-1..mw-3)
-     - priceDiscHub         (Card 5 hub)
-     - priceDiscPanels      (Card 6 interactive 3-panel, pd-1..pd-3)
-     - naturalMonopoly      (Card 8 interactive, nm-1..nm-3)
+     - naturalMonopoly      (Card 6 interactive, nm-1..nm-3)
+     (priceDiscHub / priceDiscPanels moved with the PD cards to the
+      price-discrimination topic in v0.164.0)
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -28,24 +28,23 @@ window.ECONOS_TOPIC = {
   topicNum: '3.4.5',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Monopoly',
-  estTime: '22 min',
-  goal: 'Define monopoly and the sources of monopoly power, build and read the monopoly diagram, analyse price discrimination and natural monopoly, and evaluate the costs and benefits',
+  estTime: '18 min',
+  goal: 'Define monopoly and the sources of monopoly power, build and read the monopoly diagram, analyse natural monopoly, and evaluate the costs and benefits',
 
   intro: {
     heroKey: 'heroMonopoly',
-    summary: 'A monopoly is a market dominated by a single seller protected by strong barriers to entry. Because rivals cannot easily challenge it, the firm is a price maker: it chooses output where MC = MR and reads its price up on the demand curve. This deck builds the monopoly diagram, uses it to judge output and welfare, then explores two important extensions — price discrimination and natural monopoly — before weighing the costs and benefits for every stakeholder.',
-    doInThis: 'Define monopoly and explain where monopoly power comes from. Build the monopoly diagram and use it to find price, output and profit, then to identify the deadweight loss. Explain third-degree price discrimination and natural monopoly with their diagrams. Finally, evaluate monopoly using efficiency and context — without assuming it is always bad.',
+    summary: 'A monopoly is a market dominated by a single seller protected by strong barriers to entry. Because rivals cannot easily challenge it, the firm is a price maker: it chooses output where MC = MR and reads its price up on the demand curve. This deck builds the monopoly diagram, uses it to judge output and welfare, then explores natural monopoly before weighing the costs and benefits for every stakeholder. (Price discrimination now has its own topic.)',
+    doInThis: 'Define monopoly and explain where monopoly power comes from. Build the monopoly diagram and use it to find price, output and profit, then to identify the deadweight loss. Explain natural monopoly and its diagram. Finally, evaluate monopoly using efficiency and context — without assuming it is always bad.',
     outcomes: [
       'Define monopoly and identify the sources of monopoly power',
       'Build the monopoly diagram and find price, output and profit',
       'Analyse output, welfare and the deadweight loss',
-      'Explain third-degree price discrimination and its diagrams',
       'Explain natural monopoly and the case for regulation',
       'Evaluate the costs and benefits of monopoly in context'
     ],
     tip: 'The phrase to reach for is price maker — a monopolist sets price because no rival can easily challenge it.',
     stages: [
-      { num: 1, name: 'Learn',  sub: '9 cards \xb7 22 min', state: 'current' },
+      { num: 1, name: 'Learn',  sub: '7 cards \xb7 18 min', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Apply in exam-style questions', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
@@ -59,7 +58,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mon-big-picture',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 1 of 9',
+      stepLabel: 'Learn: Card 1 of 7',
       title: 'Monopoly — the big picture',
       lede: 'A monopoly is a market dominated by a single seller with strong barriers to entry and significant market power.',
       ledeStyle: 'plain',
@@ -109,7 +108,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mon-power-sources',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 2 of 9',
+      stepLabel: 'Learn: Card 2 of 7',
       title: 'Where monopoly power comes from',
       lede: 'Monopoly power usually rests on barriers to entry that protect the incumbent from competition.',
       ledeStyle: 'plain',
@@ -163,7 +162,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mon-profit-max',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 3 of 9',
+      stepLabel: 'Learn: Card 3 of 7',
       title: 'Profit maximising equilibrium',
       lede: 'A monopoly maximises profit where marginal cost equals marginal revenue, then charges the price consumers will pay on the demand curve.',
       ledeStyle: 'plain',
@@ -232,7 +231,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mon-welfare',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 4 of 9',
+      stepLabel: 'Learn: Card 4 of 7',
       title: 'Monopoly, output and welfare',
       lede: 'A monopoly may restrict output and raise price, creating inefficiency — but it may also fund innovation and reap scale economies.',
       ledeStyle: 'plain',
@@ -305,154 +304,13 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 – Third degree price discrimination
-       Pattern: Hub (one firm → two markets) + conditions + who-gains pair
-       ==================================================================== */
-    {
-      id: 'mon-price-discrimination',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Card 5 of 9',
-      title: 'Third degree price discrimination',
-      lede: 'A monopolist can charge different prices to different groups when their demand elasticities differ.',
-      ledeStyle: 'plain',
-
-      tip: { icon: '\u{1F512}', tone: 'green', text: 'Charge a <strong>higher price where demand is less elastic</strong> and a lower price where demand is more elastic.' },
-
-      visualKey: 'priceDiscHub',
-      visualLabel: 'THE CORE IDEA',
-      visualEmoji: '\u{1F3AF}',
-      visualCaption: 'The same product, sold to two groups at different prices — because their demand differs.',
-
-      causesFirst: true,
-      causesLabel: 'THE FOUR CONDITIONS',
-      causesEmoji: '✅',
-      causesStyle: 'icon-top',
-      causesCols: 4,
-      causes: [
-        { tone: 'purple', icon: '\u{1F3F7}️', head: 'Market power',    body: 'The firm must be a price maker.' },
-        { tone: 'blue',   icon: '✂️', head: 'Separable markets', body: 'Groups must be identifiable and kept apart.' },
-        { tone: 'amber',  icon: '\u{1F4CA}', head: 'Different elasticities', body: 'Demand must differ between the groups.' },
-        { tone: 'rose',   icon: '\u{1F6AB}', head: 'Prevent resale',   body: 'No arbitrage — cheap buyers can’t resell to others.' }
-      ],
-
-      causes2Label: 'COMMON EXAMPLES',
-      causes2Emoji: '\u{1F30D}',
-      causes2Style: 'icon-top',
-      causes2Cols: 4,
-      causes2: [
-        { tone: 'green',  icon: '\u{1F686}', head: 'Rail tickets',   body: 'Peak vs off-peak fares.' },
-        { tone: 'blue',   icon: '\u{1F3AC}', head: 'Cinema tickets', body: 'Student, adult and senior prices.' },
-        { tone: 'purple', icon: '✈️', head: 'Airline seats', body: 'Higher fares at busy times.' },
-        { tone: 'amber',  icon: '\u{1F393}', head: 'Student deals',  body: 'Discounts on software and travel.' }
-      ],
-
-      pairLabel: 'Consumers vs the firm',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'blue',
-        icon: '\u{1F465}',
-        iconStyle: 'circle',
-        label: 'Consumers',
-        points: ['Some groups pay less than a single price', 'But others pay more', 'Access can widen for low-value users']
-      },
-      right: {
-        tone: 'green',
-        icon: '\u{1F3E2}',
-        iconStyle: 'circle',
-        label: 'The firm',
-        points: ['Captures more consumer surplus as profit', 'Higher total revenue', 'Profit can fund investment']
-      },
-
-      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'Some consumers may be better off — so whether price discrimination is “unfair” is a value judgement, not a fact.' },
-
-      conclusion: { title: 'Big idea', text: 'Price discrimination splits one market into several to capture more consumer surplus as profit.' },
-      examEdge: 'State the <strong>conditions first</strong>, then explain how the firm sets a higher price in the less elastic market.'
-    },
-
-    /* ====================================================================
-       CARD 6 – Third degree price discrimination — diagrams
-       Pattern: Interactive 3-panel diagram (priceDiscPanels, pd-1..pd-3)
-       ==================================================================== */
-    {
-      id: 'mon-price-discrimination-diagrams',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Card 6 of 9',
-      title: 'Price discrimination — the diagrams',
-      lede: 'The monopolist allocates output across markets so that marginal revenue is equalised, then charges each market its own price.',
-      ledeStyle: 'plain',
-
-      tip: { icon: '\u{1F512}', tone: 'green', text: 'The more <strong>inelastic</strong> market ends up with the higher price.' },
-
-      interactiveDiagram: {
-        svgKey: 'priceDiscPanels',
-        label: 'THE DIAGRAM STORY — two markets, then the kinked total',
-        emoji: '\u{1F4CA}',
-        wide: true,
-        maxWidth: '760px',
-        layers: ['pd-1', 'pd-2', 'pd-3'],
-        views: [
-          {
-            label: 'Market A — inelastic',
-            tone: 'amber',
-            head: 'Panel 1 — the inelastic market',
-            body: 'Start with one group. In Market A, set <strong>MR_A = MC</strong>. The steep (inelastic) demand gives a <strong>high price, P_A</strong> on few units.',
-            show: ['pd-1']
-          },
-          {
-            label: 'Market B — elastic',
-            tone: 'green',
-            head: 'Panel 2 — the elastic market',
-            body: 'Same product, same <strong>MC</strong> (the dashed red line carries it across). In Market B the flat (elastic) demand gives a <strong>low price, P_B</strong> on many units — so P_A &gt; P_B.',
-            show: ['pd-1', 'pd-2']
-          },
-          {
-            label: 'The combined market',
-            tone: 'blue',
-            head: 'Panel 3 — add them up: the kinked total',
-            body: 'The combined demand is the <strong>horizontal sum</strong> of A and B — so it <strong>kinks</strong> at the price where Market B’s buyers enter. The summed MR kinks at the same price, and total output sits where <strong>summed MR = MC</strong>: Q_total = Q_A + Q_B.',
-            analysis: 'The same product carries the same MC, yet the price differs purely because elasticity differs — the firm charges more to the group least able to walk away. The kink is the visual proof that the total market is just the two groups stacked sideways.',
-            show: ['pd-1', 'pd-2', 'pd-3']
-          }
-        ]
-      },
-
-      causesFirst: true,
-      causesLabel: 'HOW TO READ IT',
-      causesEmoji: '\u{1F3AF}',
-      causesStyle: 'icon-top',
-      causesCols: 4,
-      causes: [
-        { tone: 'blue',   icon: '✂️', head: 'Split the markets', body: 'Draw a panel for each group of buyers.' },
-        { tone: 'purple', icon: '\u{1F4CC}', head: 'Equalise MR = MC', body: 'The same MC level applies in every market.' },
-        { tone: 'amber',  icon: '\u{1F4C8}', head: 'Read each price',  body: 'Go up to each market’s own AR for its price.' },
-        { tone: 'green',  icon: '\u{2795}', head: 'Add them up', body: 'The combined demand is the horizontal sum — kinked where the second group enters.' }
-      ],
-
-      causes3Label: 'WHAT IT IMPLIES',
-      causes3Emoji: '\u{1F4A1}',
-      causes3Style: 'icon-top',
-      causes3Cols: 4,
-      causes3: [
-        { tone: 'rose',   icon: '\u{1F4C8}', head: 'Inelastic pays more', body: 'Less able to switch → charged a premium.' },
-        { tone: 'green',  icon: '\u{1F4C9}', head: 'Elastic pays less',   body: 'Price-sensitive buyers get a lower price.' },
-        { tone: 'blue',   icon: '\u{1F465}', head: 'Wider access',        body: 'Low-value users may still be served.' },
-        { tone: 'amber',  icon: '\u{1F4B0}', head: 'Higher total profit', body: 'Captures more of the consumer surplus.' }
-      ],
-
-      bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'The markets must be kept separate — if cheap buyers could resell to expensive ones, the strategy collapses.' },
-
-      conclusion: { title: 'Big idea', text: 'Same product, same MC — but different elasticities give different prices.' },
-      examEdge: 'Draw separate market panels sharing <strong>one MC level</strong>, and show each price coming from that market’s own demand.'
-    },
-
-    /* ====================================================================
-       CARD 7 – Costs and benefits of monopoly
+       CARD 5 – Costs and benefits of monopoly
        Pattern: Evidence-then-verdict (4 stakeholder lenses + SR vs LR)
        ==================================================================== */
     {
       id: 'mon-costs-benefits',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 7 of 9',
+      stepLabel: 'Learn: Card 5 of 7',
       title: 'Costs and benefits of monopoly',
       lede: 'Monopoly affects firms, workers and suppliers as well as consumers — and who gains or loses depends on how market power is used.',
       ledeStyle: 'plain',
@@ -494,13 +352,13 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 8 – Natural monopoly
+       CARD 6 – Natural monopoly
        Pattern: Interactive diagram (naturalMonopoly, nm-1..nm-3)
        ==================================================================== */
     {
       id: 'mon-natural-monopoly',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 8 of 9',
+      stepLabel: 'Learn: Card 6 of 7',
       title: 'Natural monopoly',
       lede: 'A natural monopoly exists when one firm can supply the whole market at a lower average cost than several smaller rivals could.',
       ledeStyle: 'plain',
@@ -575,13 +433,13 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 9 – The whole monopoly story
+       CARD 7 – The whole monopoly story
        Pattern: Evidence-then-verdict (synthesis + how-to-write)
        ==================================================================== */
     {
       id: 'mon-whole-story',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Card 9 of 9',
+      stepLabel: 'Learn: Card 7 of 7',
       title: 'The whole monopoly story',
       lede: 'Strong monopoly answers define the market, explain the source of power, analyse the diagram, and then judge the impact on different groups.',
       ledeStyle: 'plain',

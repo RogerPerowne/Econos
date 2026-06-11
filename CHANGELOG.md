@@ -6,6 +6,32 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.164.0 — 2026-06-11
+
+### Price Discrimination — rebuilt; Monopoly slimmed to 7 cards
+
+- The PD topic was a legacy-era deck (framing/diagnose/paired templates,
+  wall-of-text bodies, stale 3.11 numbering) while the GOOD PD content
+  lived inside Monopoly. Restructured:
+  - Monopoly cards 5–6 (conditions hub + the kinked 3-panel interactive)
+    MOVED to the PD topic as its cards 1–2.
+  - NEW card 3 "Costs, benefits and the welfare verdict" — best-of the
+    legacy welfare + for/against cards: the output-effect hinge, the
+    pharma / rail-cross-subsidy / captive-market cases, for/against pair.
+    Covers spec 3.4.5(d) costs/benefits, previously untaught in the
+    modern decks.
+  - NEW card 4 "The digital frontier" — the legacy digital-economy card
+    rebuilt (personalised/dynamic pricing, perfect arbitrage prevention,
+    the CMA policy question as an evaluation pair).
+  - NEW card 5 "Stretch: the three degrees" — legacy cards 1–3 compressed
+    to one beyond-spec comparison card (sorting mechanism framing;
+    efficiency ≠ fairness bottomTip).
+  - Legacy cards deleted; the 10-question quiz pool preserved; dead
+    quizCta dropped; topicNum 3.11 → 3.4.5.
+- Monopoly: 9 → 7 cards, renumbered; intro/outcomes/goal trimmed of PD;
+  registry subtitle updated. priceDiscHub/priceDiscPanels visuals move
+  with their cards (no SVG changes). Data-only (network-first).
+
 ## 0.163.0 — 2026-06-11
 
 ### Output Gaps — arrow fix + classical SRAS mechanism

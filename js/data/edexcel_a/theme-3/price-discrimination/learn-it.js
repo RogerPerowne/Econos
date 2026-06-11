@@ -1,151 +1,348 @@
+/* ============================================================
+   ECONOS – Price Discrimination (Edexcel A 3.4.5d)
+   5 cards · rebuilt v0.164.0. Cards 1–2 moved here from the
+   Monopoly deck (which now ends the monopoly story at 7 cards);
+   cards 3–5 are the "best of" the legacy PD deck, rebuilt onto
+   the modern ad-interactive template (the old framing/diagnose/
+   paired cards are deleted; the quiz pool below is preserved).
+
+   Card patterns:
+     1 Hub-and-spoke (conditions) + examples + pair
+     2 Interactive 3-panel diagram (priceDiscPanels, kinked total)
+     3 Spectrum (welfare verdict hinge) + pair (for/against)
+     4 Tile grid (digital frontier) + evaluation
+     5 Comparison table (the three degrees — stretch, beyond spec)
+   ============================================================ */
+
 window.ECONOS_TOPIC = {
   id: 'price-discrimination',
-  topicNum: '3.11',
+  topicNum: '3.4.5',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Price Discrimination',
-  estTime: '9-11 minutes',
-  goal: 'Lock in the three degrees of price discrimination, the conditions required, the welfare effects, and how to evaluate whether it is good or bad for consumers.',
+  estTime: '14 min',
+  goal: 'State the conditions for third-degree price discrimination, build the multi-market diagram, and evaluate the costs and benefits for consumers and firms',
   intro: {
     heroKey: 'heroMarketPower',
-    summary: 'Price discrimination occurs when a firm charges different prices for the same good to different consumers or groups, not justified by cost differences. It transfers consumer surplus to producers and can simultaneously increase output – creating complex welfare effects.',
-    doInThis: 'Work through 7 cards covering the definition and conditions, first-degree (perfect), second-degree (quantity/versioning), third-degree (group), welfare analysis, real-world examples, and evaluation.',
+    summary: 'Price discrimination is charging different prices for the same product where the difference is not justified by costs. This deck covers the exam core — third-degree discrimination: the four conditions, the multi-market diagram with its kinked combined demand, and the welfare verdict that hinges on whether output expands or surplus is merely transferred. Two extension cards cover the digital-economy frontier and the full three-degrees framework.',
+    doInThis: 'State the four conditions. Build the two-market diagram and read the prices off each market’s own demand. Run the welfare argument both ways — access widened vs surplus extracted — and apply it to rail and pharmaceutical pricing. Then look at how data and algorithms are changing the game.',
     outcomes: [
-      'State the three conditions necessary for price discrimination',
-      'Distinguish the three degrees of price discrimination with examples',
-      'Analyse the welfare effects of third-degree price discrimination',
-      'Evaluate whether price discrimination is beneficial or harmful overall'
+      'State the conditions required for third-degree price discrimination',
+      'Build the multi-market diagram and explain the kinked combined demand',
+      'Explain why the inelastic group pays the higher price',
+      'Evaluate the costs and benefits using the output-effect hinge',
+      'Discuss how digital pricing is changing price discrimination'
     ],
-    tip: 'Price discrimination requires: market power (price-setter), ability to segment markets (identify groups with different PED), and prevention of arbitrage (resale between groups). Without all three, discrimination fails.',
+    tip: 'The key phrase is "not justified by cost differences" — peak rail fares are price discrimination; first-class fares mostly are not.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '5 cards \xb7 14 min', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
   cards: [
+    /* ====================================================================
+       CARD 1 – Third-degree price discrimination — the big picture
+       (moved from Monopoly card 5)
+       Pattern: Hub-and-spoke (conditions) + examples + pair
+       ==================================================================== */
     {
-      id: 'price_discrimination_1',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 8',
-      title: 'Price discrimination: the big picture',
-      lede: 'Same good, different prices. A way for firms with market power to capture surplus that single pricing leaves on the table.',
-      branches: [
-        { tone: 'blue',   label: 'Three conditions',        sub: 'Market power, ability to segment buyers by willingness to pay, and prevention of arbitrage. All three must hold.' },
-        { tone: 'green',  label: 'Three degrees',           sub: 'First (perfect, charge each consumer\'s max), second (by quantity or version), third (by group: students, peak/off-peak).' },
-        { tone: 'purple', label: 'Surplus transfer',        sub: 'Consumer surplus shifts to producer. Some consumers gain access at lower prices; others pay more than before.' },
-        { tone: 'amber',  label: 'Welfare: ambiguous',      sub: 'Output may rise (reducing DWL) but distribution worsens. Whether this is "good" depends on whose welfare you weight.' }
+      id: 'pd-big-picture',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Card 1 of 5',
+      title: 'Third-degree price discrimination — the big picture',
+      lede: 'A firm with market power can charge different prices to different groups when their demand elasticities differ.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '\u{1F512}', tone: 'green', text: 'Charge a <strong>higher price where demand is less elastic</strong> and a lower price where demand is more elastic.' },
+
+      visualKey: 'priceDiscHub',
+      visualLabel: 'THE CORE IDEA',
+      visualEmoji: '\u{1F3AF}',
+      visualCaption: 'The same product, sold to two groups at different prices — because their demand differs.',
+
+      causesFirst: true,
+      causesLabel: 'THE FOUR CONDITIONS',
+      causesEmoji: '✅',
+      causesStyle: 'icon-top',
+      causesCols: 4,
+      causes: [
+        { tone: 'purple', icon: '\u{1F3F7}\u{FE0F}', head: 'Market power',    body: 'The firm must be a price maker.' },
+        { tone: 'blue',   icon: '✂\u{FE0F}', head: 'Separable markets', body: 'Groups must be identifiable and kept apart.' },
+        { tone: 'amber',  icon: '\u{1F4CA}', head: 'Different elasticities', body: 'Demand must differ between the groups.' },
+        { tone: 'rose',   icon: '\u{1F6AB}', head: 'Prevent resale',   body: 'No arbitrage — cheap buyers can’t resell to others.' }
       ],
-      body: '<strong>Price discrimination</strong> occurs when a firm charges different prices to different consumers (or consumer groups) for the same good or service, where the price difference is NOT justified by cost differences.<br><br>Key insight: a standard monopolist charges one price and loses potential profit from consumers willing to pay more (consumer surplus above the price) and from consumers who would buy at a lower price. Price discrimination allows the firm to capture more of the consumer surplus as producer surplus.<br><br><strong>Three conditions required:</strong><br>1. <strong>Market power</strong> – must be a price-setter, not a price-taker<br>2. <strong>Market segmentation</strong> – must identify groups with different willingness to pay (different PED)<br>3. <strong>Prevention of arbitrage</strong> – must prevent resale between segments (or discrimination collapses)',
-      keyTerms: [
-        { term: 'Price discrimination', def: 'Charging different prices to different consumers for the same good, where differences are not cost-based.' },
-        { term: 'Consumer surplus', def: 'Difference between what consumers are willing to pay and what they actually pay – price discrimination transfers this to the producer.' },
-        { term: 'Arbitrage', def: 'Buying in the cheap market and reselling in the expensive market – firms must prevent this for discrimination to work.' }
+
+      causes2Label: 'COMMON EXAMPLES',
+      causes2Emoji: '\u{1F30D}',
+      causes2Style: 'icon-top',
+      causes2Cols: 4,
+      causes2: [
+        { tone: 'green',  icon: '\u{1F686}', head: 'Rail tickets',   body: 'Peak vs off-peak fares.' },
+        { tone: 'blue',   icon: '\u{1F3AC}', head: 'Cinema tickets', body: 'Student, adult and senior prices.' },
+        { tone: 'purple', icon: '✈\u{FE0F}', head: 'Airline seats', body: 'Higher fares at busy times.' },
+        { tone: 'amber',  icon: '\u{1F393}', head: 'Student deals',  body: 'Discounts on software and travel.' }
       ],
-      examEdge: 'The key phrase is "not justified by cost differences." Charging more for first-class rail travel that costs more to operate is NOT price discrimination – it reflects higher costs. Charging more for the same train ticket on peak services IS price discrimination – the marginal cost of carrying one more passenger is near zero regardless of time. Always check: is the price difference cost-based or demand-based?'
-    },
-    {
-      id: 'price_discrimination_2',
-      template: 'framing',
-      diagramKey: 'firstDegreePd',
-      title: 'First-Degree Price Discrimination',
-      body: '<strong>First-degree (perfect) price discrimination:</strong> the firm charges every consumer exactly their maximum willingness to pay (their reservation price). Every unit sold at a different price equal to the marginal benefit to that consumer.<br><br><strong>Welfare effects:</strong><br>• Producer captures <em>all</em> consumer surplus – zero consumer surplus remains<br>• BUT: output is higher than standard monopoly – firm produces up to Q<sub>c</sub> (the competitive output), because it is profitable to sell even the last unit at a price just above MC<br>• Result: no deadweight welfare loss (output is allocatively efficient) but all welfare goes to the producer<br>• Allocatively efficient (P = MC for last unit) but distributionally very unequal<br><br><strong>Real-world approximations:</strong> haggling markets, salary negotiations, some professional services (lawyer fees), personalised pricing algorithms.',
-      keyTerms: [
-        { term: 'First-degree discrimination', def: 'Every consumer charged their exact maximum willingness to pay – zero consumer surplus.' },
-        { term: 'Reservation price', def: 'The maximum a consumer is willing to pay for a unit – first-degree discrimination extracts this entirely.' },
-        { term: 'Personalised pricing', def: 'Digital economy version of first-degree discrimination – using data and algorithms to set individual prices.' }
-      ],
-      examEdge: 'First-degree discrimination is "allocatively efficient" in the sense that there is no deadweight loss – all mutually beneficial trades occur. But "efficient" here does not mean "good for consumers." All surplus goes to the producer – it is the maximum possible wealth transfer from consumers to producers. This is a crucial distinction: efficiency and equity are completely different criteria.'
-    },
-    {
-      id: 'price_discrimination_3',
-      template: 'framing',
-      title: 'Second-Degree Price Discrimination',
-      body: '<strong>Second-degree price discrimination:</strong> the firm charges different prices based on quantity purchased or product version, not directly on consumer identity. All consumers face the same price schedule – they self-select into categories.<br><br><strong>Forms:</strong><br>• <strong>Block pricing:</strong> higher price for first units, lower for additional units (e.g., energy tariffs: first 100 kWh at 30p, next 200 at 20p)<br>• <strong>Quantity discounts:</strong> bulk buyers pay lower unit prices (supermarket multipack deals)<br>• <strong>Versioning / product differentiation:</strong> basic vs premium product versions at different prices (software: basic vs pro; airline: economy vs business)<br><br>Second-degree discrimination exploits the fact that high-volume buyers have higher price sensitivity – offering them lower unit prices extracts more revenue than a flat price. The firm does not need to identify individual consumers – the pricing schedule does the sorting.',
-      keyTerms: [
-        { term: 'Second-degree discrimination', def: 'Different prices by quantity or version – consumers self-select rather than being directly identified.' },
-        { term: 'Block pricing', def: 'Different prices for different quantities of the same good – unit price falls with volume.' },
-        { term: 'Versioning', def: 'Offering different product versions (basic/premium) at different prices to segment consumers by willingness to pay.' }
-      ],
-      examEdge: 'Versioning (premium vs economy products) is technically second-degree discrimination only if the cost difference is small relative to the price gap. Airlines: business class seat costs marginally more to provide than economy, but charges 3–4x the price – the premium far exceeds the cost difference, so this is price discrimination. Contrast with genuine product differentiation where higher price fully reflects higher cost.'
-    },
-    {
-      id: 'price_discrimination_4',
-      template: 'framing',
-      diagramKey: 'thirdDegreePd',
-      title: 'Third-Degree Price Discrimination',
-      body: '<strong>Third-degree price discrimination:</strong> the firm charges different prices to identifiable groups of consumers who have different price elasticities of demand. The most common and most examinable form.<br><br><strong>Pricing rule:</strong> charge higher price to the group with lower PED (less price-sensitive) and lower price to the group with higher PED (more price-sensitive). Profit-maximising condition: MR<sub>A</sub> = MR<sub>B</sub> = MC.<br><br><strong>Classic examples:</strong><br>• Rail: peak (inelastic business travellers) vs off-peak (elastic leisure travellers)<br>• Cinema: adult vs student/senior tickets<br>• Pharmaceuticals: same drug priced higher in USA (inelastic, insured) vs India (elastic, price-sensitive)<br>• International price discrimination: textbooks cheaper in developing markets<br>• Age-based pricing: gym memberships, insurance',
-      keyTerms: [
-        { term: 'Third-degree discrimination', def: 'Identifiable consumer groups charged different prices based on their different price elasticities of demand.' },
-        { term: 'MRₐ = MRₙ = MC', def: 'Profit-maximising condition: equalise marginal revenue across all market segments, set equal to marginal cost.' },
-        { term: 'Elasticity-based pricing', def: 'Lower PED group → higher price; higher PED group → lower price. The firm extracts more surplus from less elastic demand.' }
-      ],
-      examEdge: 'The MR = MR = MC rule is the key analytical framework. In a two-segment market: draw two demand curves (steep for inelastic, flat for elastic); draw corresponding MR curves; find where each MR = MC. The inelastic segment gets higher price, elastic segment gets lower price. Total output is higher than single-price monopoly, and revenue is higher. This diagram approach is essential for the highest-mark answers.'
-    },
-    {
-      id: 'price_discrimination_5',
-      template: 'diagnose',
-      title: 'Welfare Effects: Third-Degree Discrimination',
-      intro: 'Third-degree discrimination has ambiguous welfare effects – analysis depends on whether the discriminating firm serves both segments or only the high-price segment.',
-      rows: [
-        { label: 'Scenario', colA: 'Discrimination enables entry to new segment', colB: 'Discrimination replaces single-price monopoly' },
-        { label: 'Output effect', colA: 'Total output INCREASES – firm now serves the elastic (low-price) group that it would not serve under a single monopoly price. Additional consumer surplus created.', colB: 'Total output change is ambiguous – depends on demand elasticities. May increase, decrease, or remain the same relative to single-price monopoly.' },
-        { label: 'Welfare verdict', colA: 'Likely welfare-improving: consumers in the new segment gain surplus they would not otherwise have. High-price consumers lose some surplus but net effect is positive.', colB: 'Likely welfare-reducing for consumers: consumer surplus redistributed to producer; some consumer groups pay higher prices than under single pricing. Efficiency unclear.' }
-      ],
-      footer: 'The welfare verdict on price discrimination hinges on the output effect. If discrimination increases output (new segments served), it can improve welfare. If it merely redistributes surplus from consumers to producers without increasing output, it reduces consumer welfare.',
-      examEdge: 'Pharmaceutical price discrimination is the key real-world case. Selling the same drug at high prices in the USA and low prices in India: the US consumer pays more (welfare loss for them), but if the Indian price covers MC, Indian consumers gain access to drugs they would otherwise not afford. Net welfare effect: likely positive globally – this is why international price discrimination in pharmaceuticals is often defended on access grounds.'
-    },
-    {
-      id: 'price_discrimination_6',
-      template: 'paired',
-      title: 'Price Discrimination: For and Against',
+
+      pairLabel: 'Consumers vs the firm',
+      pairEmoji: '⚖\u{FE0F}',
       left: {
-        label: 'Arguments in favour',
+        tone: 'blue',
+        icon: '\u{1F465}',
+        iconStyle: 'circle',
+        label: 'Consumers',
+        points: ['Some groups pay less than a single price', 'But others pay more', 'Access can widen for low-value users']
+      },
+      right: {
+        tone: 'green',
+        icon: '\u{1F3E2}',
+        iconStyle: 'circle',
+        label: 'The firm',
+        points: ['Captures more consumer surplus as profit', 'Higher total revenue', 'Profit can fund investment']
+      },
+
+      bottomTip: { icon: 'ℹ\u{FE0F}', tone: 'blue', text: 'The price difference must not be cost-based: peak rail fares (same train, near-zero extra cost) are price discrimination; first-class fares mostly reflect real cost differences.' },
+
+      conclusion: { title: 'Big idea', text: 'Price discrimination splits one market into several to capture more consumer surplus as profit.' },
+      examEdge: 'State the <strong>conditions first</strong>, then explain how the firm sets a higher price in the less elastic market.'
+    },
+
+    /* ====================================================================
+       CARD 2 – Price discrimination — the diagrams
+       (moved from Monopoly card 6)
+       Pattern: Interactive 3-panel diagram (priceDiscPanels, pd-1..pd-3)
+       ==================================================================== */
+    {
+      id: 'pd-diagrams',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Card 2 of 5',
+      title: 'Price discrimination — the diagrams',
+      lede: 'The firm allocates output across markets so that marginal revenue is equalised, then charges each market its own price.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '\u{1F512}', tone: 'green', text: 'The more <strong>inelastic</strong> market ends up with the higher price.' },
+
+      interactiveDiagram: {
+        svgKey: 'priceDiscPanels',
+        label: 'THE DIAGRAM STORY — two markets, then the kinked total',
+        emoji: '\u{1F4CA}',
+        wide: true,
+        maxWidth: '760px',
+        layers: ['pd-1', 'pd-2', 'pd-3'],
+        views: [
+          {
+            label: 'Market A — inelastic',
+            tone: 'amber',
+            head: 'Panel 1 — the inelastic market',
+            body: 'Start with one group. In Market A, set <strong>MR_A = MC</strong>. The steep (inelastic) demand gives a <strong>high price, P_A</strong> on few units.',
+            show: ['pd-1']
+          },
+          {
+            label: 'Market B — elastic',
+            tone: 'green',
+            head: 'Panel 2 — the elastic market',
+            body: 'Same product, same <strong>MC</strong> (the dashed red line carries it across). In Market B the flat (elastic) demand gives a <strong>low price, P_B</strong> on many units — so P_A &gt; P_B.',
+            show: ['pd-1', 'pd-2']
+          },
+          {
+            label: 'The combined market',
+            tone: 'blue',
+            head: 'Panel 3 — add them up: the kinked total',
+            body: 'The combined demand is the <strong>horizontal sum</strong> of A and B — so it <strong>kinks</strong> at the price where Market B’s buyers enter. The summed MR kinks at the same price, and total output sits where <strong>summed MR = MC</strong>: Q_total = Q_A + Q_B.',
+            analysis: 'The same product carries the same MC, yet the price differs purely because elasticity differs — the firm charges more to the group least able to walk away. The kink is the visual proof that the total market is just the two groups stacked sideways.',
+            show: ['pd-1', 'pd-2', 'pd-3']
+          }
+        ]
+      },
+
+      causesFirst: true,
+      causesLabel: 'HOW TO READ IT',
+      causesEmoji: '\u{1F3AF}',
+      causesStyle: 'icon-top',
+      causesCols: 4,
+      causes: [
+        { tone: 'blue',   icon: '✂\u{FE0F}', head: 'Split the markets', body: 'Draw a panel for each group of buyers.' },
+        { tone: 'purple', icon: '\u{1F4CC}', head: 'Equalise MR = MC', body: 'The same MC level applies in every market.' },
+        { tone: 'amber',  icon: '\u{1F4C8}', head: 'Read each price',  body: 'Go up to each market’s own AR for its price.' },
+        { tone: 'green',  icon: '➕', head: 'Add them up', body: 'The combined demand is the horizontal sum — kinked where the second group enters.' }
+      ],
+
+      causes3Label: 'WHAT IT IMPLIES',
+      causes3Emoji: '\u{1F4A1}',
+      causes3Style: 'icon-top',
+      causes3Cols: 4,
+      causes3: [
+        { tone: 'rose',   icon: '\u{1F4C8}', head: 'Inelastic pays more', body: 'Less able to switch → charged a premium.' },
+        { tone: 'green',  icon: '\u{1F4C9}', head: 'Elastic pays less',   body: 'Price-sensitive buyers get a lower price.' },
+        { tone: 'blue',   icon: '\u{1F465}', head: 'Wider access',        body: 'Low-value users may still be served.' },
+        { tone: 'amber',  icon: '\u{1F4B0}', head: 'Higher total profit', body: 'Captures more of the consumer surplus.' }
+      ],
+
+      bottomTip: { icon: 'ℹ\u{FE0F}', tone: 'blue', text: 'The markets must be kept separate — if cheap buyers could resell to expensive ones, the strategy collapses.' },
+
+      conclusion: { title: 'Big idea', text: 'Same product, same MC — but different elasticities give different prices.' },
+      examEdge: 'Draw separate market panels sharing <strong>one MC level</strong>, and show each price coming from that market’s own demand.'
+    },
+
+    /* ====================================================================
+       CARD 3 – Costs, benefits and the welfare verdict
+       ("best of" the legacy welfare + for/against cards)
+       Pattern: The output-effect hinge + for/against pair
+       ==================================================================== */
+    {
+      id: 'pd-welfare',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Card 3 of 5',
+      title: 'Costs, benefits and the welfare verdict',
+      lede: 'Is price discrimination good or bad? The honest answer is: it depends on one thing — whether total output expands, or surplus is merely transferred.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '⚖\u{FE0F}', tone: 'amber', text: 'The whole evaluation hinges on the <strong>output effect</strong>. Find it first; everything else follows.' },
+
+      causesPosition: 'top',
+      causesLabel: 'THE HINGE — what happens to output?',
+      causesEmoji: '\u{1F4CF}',
+      causesStyle: 'icon-top',
+      causesCols: 2,
+      causes: [
+        { tone: 'green', icon: '\u{1F513}', head: 'Output expands → likely welfare gain', body: 'Discrimination lets the firm serve a group it would not serve at one price — new consumers gain access to the product (and surplus) they would otherwise not have.' },
+        { tone: 'rose',  icon: '\u{1F501}', head: 'Pure transfer → consumers lose', body: 'If output barely changes, discrimination just converts consumer surplus into producer profit — some groups simply pay more for the same thing.' }
+      ],
+
+      flowTitle: 'TWO CASES THAT DECIDE EXAM ANSWERS',
+      flowEmoji: '\u{1F30D}',
+      flowSep: '→',
+      flow: [
+        { tone: 'green',  icon: '\u{1F48A}', title: 'Pharmaceuticals', sub: 'High US prices fund R&D; low prices in poorer countries widen access. Output (and access) expands — defensible.' },
+        { tone: 'blue',   icon: '\u{1F686}', title: 'Rail cross-subsidy', sub: 'Peak business fares subsidise off-peak and rural services that would otherwise close.' },
+        { tone: 'rose',   icon: '\u{1F3AB}', title: 'Captive-market pricing', sub: 'Higher prices for buyers who cannot switch, with no new access created — pure extraction.' }
+      ],
+
+      pairLabel: 'FOR AND AGAINST',
+      pairEmoji: '⚖\u{FE0F}',
+      left: {
+        tone: 'green',
+        icon: '✅',
+        iconStyle: 'circle',
+        label: 'In favour',
         points: [
-          'Can increase total output – serves market segments that single-price monopoly would exclude',
-          'Cross-subsidy: high prices from inelastic consumers subsidise access for elastic (poorer) consumers',
-          'Pharmaceutical example: funds R&D via high prices in rich markets; enables access in poor markets',
-          'May enable firms to cover high fixed costs that justify production at all (natural monopoly case)',
-          'Rail pricing: peak fares fund off-peak/rural services that would otherwise be unviable'
+          'Can serve segments a single price would exclude',
+          'Cross-subsidy: inelastic buyers fund access for elastic (often poorer) buyers',
+          'Extra profit can fund R&D or cover high fixed costs'
         ]
       },
       right: {
-        label: 'Arguments against',
+        tone: 'rose',
+        icon: '⚠\u{FE0F}',
+        iconStyle: 'circle',
+        label: 'Against',
         points: [
-          'Transfers consumer surplus to producers – income redistribution away from consumers',
-          'Requires market power – only possible when competition is already restricted',
-          'Consumer groups with inelastic demand (often lower-income, less mobile) pay highest prices',
-          'Requires costly segmentation and enforcement – resources wasted on discrimination machinery',
-          'Dynamic concern: high prices in protected markets reduce pressure to cut costs or innovate'
+          'Transfers consumer surplus to producers',
+          'Inelastic groups (often less mobile or lower-income) pay the most',
+          'Requires market power — and may blunt the pressure to cut costs'
         ]
       },
-      examEdge: 'The strongest argument FOR price discrimination is the cross-subsidy case: rail operators use peak business fares (inelastic demand, higher price) to subsidise off-peak rural services (elastic demand, lower price). Without peak pricing, rural routes would close. This shows that the welfare effect depends entirely on how the discriminatory profit is used – evaluating price discrimination requires knowing what the firm does with the extra profit.'
-    },
-    {
-      id: 'price_discrimination_7',
-      template: 'framing',
-      title: 'Digital Economy and Price Discrimination',
-      body: 'Digital technology has dramatically expanded firms\' ability to price discriminate:<br><br>• <strong>Data collection:</strong> browsing history, purchase history, location data allow near-perfect identification of willingness to pay – approaching first-degree discrimination<br>• <strong>Dynamic pricing:</strong> airlines, hotels, ride-sharing adjust prices in real-time based on demand (Uber surge pricing) and individual data<br>• <strong>Personalised offers:</strong> Amazon, streaming services show different prices or promotions to different users<br>• <strong>Arbitrage prevention:</strong> digital goods (software, streaming) cannot be resold – perfect arbitrage prevention<br><br>Policy concern: consumers may be unaware they are being individually priced. EU GDPR and CMA focus on data-driven pricing as a potential consumer harm. The CMA has opened investigations into personalised pricing practices.',
-      keyTerms: [
-        { term: 'Dynamic pricing', def: 'Real-time price adjustment based on current demand conditions and individual user data – digital form of price discrimination.' },
-        { term: 'Personalised pricing', def: 'Individual-level pricing based on collected data about willingness to pay – approximates first-degree discrimination.' },
-        { term: 'Algorithmic pricing', def: 'Automated price-setting using machine learning – enables discrimination at scale without human intervention.' }
-      ],
-      examEdge: 'Digital price discrimination is the contemporary frontier of competition policy. The CMA and EU are grappling with whether algorithmic pricing is a new form of predatory or discriminatory behaviour. Key issue: is personalised pricing a normal commercial response to different consumer preferences, or is it exploitative extraction of data-revealed willingness to pay? The policy response is still evolving – this uncertainty is itself an exam-worthy evaluation point.',
-      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
-    }
 
+      bottomTip: { icon: 'ℹ\u{FE0F}', tone: 'blue', text: 'The verdict also depends on what the firm <strong>does with the profit</strong> — funding R&D and rural routes reads very differently from funding dividends.' },
+
+      conclusion: { title: 'Big idea', text: 'Price discrimination is neither good nor bad by definition — the output effect, and the use of the profit, decide the verdict case by case.' },
+      examEdge: 'Structure the evaluation around the hinge: "if discrimination expands output/access (pharma, rail), welfare can rise; if it merely transfers surplus, consumers lose." One named case on each side earns the evaluation marks.'
+    },
+
+    /* ====================================================================
+       CARD 4 – The digital frontier
+       (rebuilt from the legacy digital-economy card)
+       Pattern: Tile grid (digital tools) + policy pair
+       ==================================================================== */
+    {
+      id: 'pd-digital',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Card 4 of 5',
+      title: 'The digital frontier — pricing by algorithm',
+      lede: 'Data and algorithms are pushing price discrimination towards its theoretical limit: a different price for every customer.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '\u{1F916}', tone: 'green', text: 'Digital goods solve the hardest condition automatically: streams and software <strong>cannot be resold</strong>, so arbitrage prevention is perfect.' },
+
+      causesLabel: 'THE DIGITAL TOOLKIT',
+      causesEmoji: '\u{1F4BB}',
+      causesStyle: 'icon-top',
+      causesCols: 2,
+      causes: [
+        { tone: 'purple', icon: '\u{1F4CA}', head: 'Personalised pricing', body: 'Browsing, purchase and location data reveal individual willingness to pay — approaching a different price per person.' },
+        { tone: 'amber',  icon: '⚡', head: 'Dynamic pricing', body: 'Airlines, hotels and ride-hailing reprice in real time as demand shifts — surge pricing is elasticity-reading at speed.' },
+        { tone: 'blue',   icon: '\u{1F3AF}', head: 'Personalised offers', body: 'Different users see different promotions and bundles for the same product.' },
+        { tone: 'green',  icon: '\u{1F512}', head: 'Perfect arbitrage prevention', body: 'Digital goods are tied to accounts — the resale condition holds by construction.' }
+      ],
+
+      pairLabel: 'THE POLICY QUESTION',
+      pairEmoji: '\u{1F3DB}\u{FE0F}',
+      left: {
+        tone: 'blue',
+        icon: '\u{1F4BC}',
+        iconStyle: 'circle',
+        label: 'Normal commerce?',
+        points: [
+          'Matching price to willingness to pay is what markets do',
+          'Surge pricing rations scarce supply to those who value it most',
+          'Discounts reach price-sensitive buyers who would otherwise not buy'
+        ]
+      },
+      right: {
+        tone: 'rose',
+        icon: '\u{1F50D}',
+        iconStyle: 'circle',
+        label: 'Or exploitation?',
+        points: [
+          'Consumers may not know they are being individually priced',
+          'Data asymmetry: the firm knows your maximum; you don’t know the going rate',
+          'The CMA and EU are investigating personalised pricing as a consumer harm'
+        ]
+      },
+
+      bottomTip: { icon: 'ℹ\u{FE0F}', tone: 'blue', text: 'This is first-degree discrimination escaping the textbook: charging each consumer their own maximum used to be impossible — data is making it operational.' },
+
+      conclusion: { title: 'Big idea', text: 'Technology is converting the most extreme textbook case into everyday practice — and competition policy has not yet decided what to do about it.' },
+      examEdge: 'A contemporary example (surge pricing, personalised offers) plus the unresolved policy question is a ready-made evaluation paragraph — the regulatory uncertainty is itself a point.'
+    },
+
+    /* ====================================================================
+       CARD 5 – Stretch: the three degrees
+       (compressed from the legacy first/second/third-degree cards)
+       Pattern: Comparison tiles — beyond Edexcel A spec, kept as stretch
+       ==================================================================== */
+    {
+      id: 'pd-three-degrees',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Card 5 of 5',
+      title: 'Stretch: the three degrees of price discrimination',
+      lede: 'The exam focuses on third-degree — but economists distinguish three forms, by how the firm sorts its buyers. Useful context, and a favourite of interviewers.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '\u{1F4DA}', tone: 'blue', text: 'Beyond the Edexcel A spec — read for depth, not for the exam checklist.' },
+
+      causesLabel: 'THE THREE DEGREES — sorted by how buyers are sorted',
+      causesEmoji: '\u{1F522}',
+      causesStyle: 'icon-top',
+      causesCols: 3,
+      causes: [
+        { tone: 'purple', icon: '1⃣', head: 'First degree — by individual', body: 'Every buyer pays their personal maximum. All consumer surplus captured; no deadweight loss — but every penny of it goes to the firm. Think haggling, auctions, algorithmic pricing.' },
+        { tone: 'blue',   icon: '2⃣', head: 'Second degree — by quantity or version', body: 'One price schedule; buyers self-select. Block tariffs, bulk discounts, basic-vs-premium versions. The firm never needs to identify anyone.' },
+        { tone: 'green',  icon: '3⃣', head: 'Third degree — by group', body: 'Identifiable groups with different elasticities pay different prices: students, peak/off-peak, country pricing. The exam case — cards 1–3.' }
+      ],
+
+      bottomTip: { icon: '\u{1F4A1}', tone: 'amber', text: 'First-degree is <strong>allocatively efficient</strong> (every mutually beneficial trade happens) yet maximally unequal — the cleanest proof that efficiency and fairness are different questions.' },
+
+      conclusion: { title: 'Big idea', text: 'The three degrees differ by sorting mechanism: per person, per quantity, per group. The economics — extract surplus by matching price to willingness to pay — is the same.' },
+      examEdge: 'If a question mentions versioning or bulk discounts, you can name second-degree discrimination for precision — but the analytical framework examiners reward is the third-degree diagram.'
+    }
   ]
 };
 
 /* ============================================================
-   End-of-Learn-It quiz pool · folded in at v0.4.0
-   These questions used to live at /quiz/<topic>/<set> as a
-   standalone shell. They now ride along with the Learn It data
-   under the same window.ECONOS_QUIZ global. The /quiz/ URL
-   contract is gone; the quiz is the natural finisher to the
-   Learn It journey, so the data lives next to learn cards.
+   End-of-Learn-It quiz pool · folded in at v0.4.0, preserved
+   through the v0.164.0 rebuild. Rides along with the Learn It
+   data under the same window.ECONOS_QUIZ global.
    ============================================================ */
-/* ---- quiz-main.js (quiz pool, preserved from former /quiz/ shell) ---- */
 (function () {
 
   window.ECONOS_QUIZ = {
@@ -278,4 +475,3 @@ window.ECONOS_TOPIC = {
   };
 
 })();
-

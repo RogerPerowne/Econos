@@ -72,16 +72,17 @@ window.ECONOS_TOPIC = {
       visualLabel2: 'WHERE IT SITS',
       visualEmoji2: '\u{1F9ED}',
 
-      causesLabel: 'EXAMPLES',
+      causesLabel: 'EXAMPLES — products, services and even B2B',
       causesEmoji: '\u{1F4DA}',
       causesStyle: 'icon-top',
-      causesCols: 5,
+      causesCols: 3,
       causes: [
-        { tone: 'amber',  icon: '\u{2615}', head: 'Coffee shops',      body: '' },
-        { tone: 'blue',   icon: '\u{1F487}', head: 'Hairdressers',     body: '' },
-        { tone: 'green',  icon: '\u{1F35D}', head: 'Restaurants',      body: '' },
-        { tone: 'purple', icon: '\u{1F457}', head: 'Clothing brands',  body: '' },
-        { tone: 'rose',   icon: '\u{1F35F}', head: 'Takeaways',        body: '' }
+        { tone: 'amber',  icon: '\u{2615}',  head: 'Coffee shops',       body: 'Costa, Pret, your local indie — same caffeine, very different vibe.' },
+        { tone: 'purple', icon: '\u{1F457}', head: 'Clothing brands',    body: 'Zara, Uniqlo, vintage resellers — style and identity, not just fabric.' },
+        { tone: 'blue',   icon: '\u{1F4AA}', head: 'Gyms & fitness',     body: 'PureGym, F45, local yoga studios — price, kit and community all differ.' },
+        { tone: 'green',  icon: '\u{1F3E0}', head: 'Estate agents',      body: 'Foxtons, Purplebricks, the family firm — fees, service and reach vary.' },
+        { tone: 'rose',   icon: '\u{1F37A}', head: 'Craft breweries',    body: 'BrewDog, Tiny Rebel, hundreds of micros — branding is half the pint.' },
+        { tone: 'slate',  icon: '\u{1F4BC}', head: 'Marketing agencies (B2B)', body: 'Thousands compete for the same clients on creativity, niche and results.' }
       ],
 
       bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Monopolistic competition is <strong>not perfectly competitive</strong> — product differentiation gives each firm some price-making power.' },

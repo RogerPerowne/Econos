@@ -46,13 +46,18 @@
         gridlines: 'slate', ticks: { x: 'Q̄' } }
     ],
     arrows: [
-      // Two downward shift arrows between the curves
-      { layer: 'de-1', x1: 0.24, y1: 0.50, x2: 0.24, y2: 0.32,
+      // Two downward shift arrows that sit cleanly BETWEEN the curves.
+      // Endpoints are seated ~0.03 inside each curve at their x (AC₁.y and
+      // AC₂.y solved from the cubics): x=0.24 → AC₁ 0.585 / AC₂ 0.345;
+      // x=0.76 → AC₁ 0.600 / AC₂ 0.360. Raw coords that ignored the actual
+      // curve geometry let the heads overshoot past AC₂ — hence "not between
+      // the lines". buffer:0 because the inset is already baked into y1/y2.
+      { layer: 'de-1', x1: 0.24, y1: 0.555, x2: 0.24, y2: 0.375,
         tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green', buffer: 0 },
-      { layer: 'de-1', x1: 0.76, y1: 0.52, x2: 0.76, y2: 0.34,
+      { layer: 'de-1', x1: 0.76, y1: 0.570, x2: 0.76, y2: 0.390,
         tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green', buffer: 0 },
-      // The same-output cost saving at Q̄
-      { layer: 'de-2', x1: 0.50, y1: 0.41, x2: 0.50, y2: 0.23,
+      // The same-output cost saving at Q̄ (AC₁ 0.430 / AC₂ 0.190 at x=0.50).
+      { layer: 'de-2', x1: 0.50, y1: 0.400, x2: 0.50, y2: 0.220,
         tone: 'amber', strokeWidth: 2, markerEnd: 'econos-arrow-amber', buffer: 0 }
     ],
     boxedLabels: [

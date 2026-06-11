@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.168.2 — 2026-06-11
+
+### Dynamic-efficiency shift arrows — seated between the curves
+
+- The two downward green shift arrows on the Types of Efficiency
+  "Dynamic efficiency" card overshot AC₂ and started below AC₁, so they
+  read as detached from the curves rather than spanning the gap. Their raw
+  y-coordinates ignored the actual cubic geometry. Re-seated all three
+  arrows (the two `de-1` green shifts and the `de-2` amber same-output
+  gain) ~0.03 inside each curve at the solved AC₁/AC₂ heights, so every
+  head and tail now sits cleanly between the lines.
+
 ## 0.168.1 — 2026-06-11
 
 ### versusRows comparison tables — mobile layout

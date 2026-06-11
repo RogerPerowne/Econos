@@ -20,6 +20,7 @@
     qMin: 18,
     samples: 60,
     curves: ['MC', 'AC'],
+    axisTicks: { p: 'P*', c: 'C*' },
     demand: { type: 'linear', a: 22, b: 0.1 },
     axes: { x: { label: 'Output (pizzas/day)' }, y: { label: '£ per unit' } }
   });

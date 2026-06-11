@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.162.0 — 2026-06-11
+
+### Ragged tile grids auto-switch to "fancy rows" — sitewide
+
+- A tile grid that wraps to a second row and leaves it ragged (the classic:
+  5 tiles in 3 columns → 3+2) reads as a mistake. New `fancyRowsIfRagged`
+  helper in app.js: when item-count > columns and doesn't divide evenly, the
+  block renders as full-width numbered rows (the established numbered-rows
+  style — tone bar, numbered circle, icon, head/body) instead of a grid.
+- Wired into all 11 causes/causes2/causes3 grid emission sites across both
+  card templates. Even grids, single rows and auto-fill grids are untouched
+  (the helper returns null and the caller keeps its grid).
+- Verified on the collusion "WHY COLLUSION IS UNSTABLE" 5-tile block (now
+  rows) with the adjacent even 4-tile grid unchanged. `sw.js` cache
+  `econos-v544` → `econos-v545`.
+
 ## 0.161.3 — 2026-06-11
 
 ### Cartel diagram — shaded REVENUE corrected to true joint profit

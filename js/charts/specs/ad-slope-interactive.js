@@ -25,10 +25,7 @@
     chartArea: { x: 55, y: 18, width: 360, height: 254 },
     className: 'ad-slope-interactive-svg',
     layers: ['v-arrow', 'h-arrow', 'point-b', 'eff-wealth', 'eff-rate', 'eff-intl'],
-    defs:
-      '<marker id="ads-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/></marker>' +
-      '<marker id="ads-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>' +
-      '<marker id="ads-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -58,11 +55,11 @@
     arrows: [
       // Vertical arrow – P falls (V2+)
       { x1: 0.286, y1: 0.62, x2: 0.286, y2: 0.32,
-        tone: 'blue', strokeWidth: 1.6, markerEnd: 'ads-arr-blue',
+        tone: 'blue', strokeWidth: 1.6, markerEnd: 'econos-arrow-blue',
         buffer: 0, layer: 'v-arrow' },
       // Horizontal arrow – Y rises along AD (V4)
       { x1: 0.316, y1: 0.275, x2: 0.684, y2: 0.275,
-        tone: 'green', strokeWidth: 1.6, markerEnd: 'ads-arr-green',
+        tone: 'green', strokeWidth: 1.6, markerEnd: 'econos-arrow-green',
         buffer: 0, layer: 'h-arrow' }
     ],
 

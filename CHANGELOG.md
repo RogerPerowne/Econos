@@ -6,6 +6,30 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.167.0 — 2026-06-11
+
+### Canonical chevron arrowheads — one arrow style sitewide
+
+- Restyled the engine's built-in markers (`econos-arrow-<tone>`) from filled
+  triangles to OPEN CHEVRONS (›), and added a mirrored `-back` twin per tone
+  for the start of double-headed arrows. Both `orient="auto"`, fixed 13px via
+  `markerUnits="userSpaceOnUse"` so every head is identical regardless of line
+  weight.
+- Migrated all 31 chart specs that hand-rolled their own markers (~250 markers
+  in 8 sizes and 8+ shapes) onto the two canonical chevrons — by mapping each
+  bespoke marker to a tone via its colour, rewriting markerEnd/markerStart, and
+  deleting the dead marker defs. Result: one arrowhead style across every chart
+  diagram; the size/shape "arrow zoo" is gone.
+- labour-supply-shift: its pass-1 perpendicular arrows silently failed for
+  LAYERED curves (the solver registry only resolves layer-active curves at
+  render), so they were re-hand-placed as true-perpendicular arrows — confirming
+  the perpendicular solver should not be used for layered/perspective curves.
+- Verified: chart-lint clean (130 specs), 134 snapshots refreshed, single +
+  double-headed arrows screenshot-checked. `sw.js` cache v555 → v556.
+- Remaining: hand-rolled inline markers in icons.js (self-contained icon SVGs
+  that can't reference the engine markers) — a separate follow-up; many are
+  flow connectors or in unused icons.
+
 ## 0.166.0 — 2026-06-11
 
 ### Arrow sweep pass 2b — hand-rolled icons.js arrows (sweep complete)

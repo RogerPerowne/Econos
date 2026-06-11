@@ -26,9 +26,7 @@
     className: 'sshift-svg',
     layers: ['layer-base', 'layer-incr', 'layer-decr'],
     layerMode: 'exclusive',
-    defs:
-      '<marker id="ss-green-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>' +
-      '<marker id="ss-red-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>',
+
     axes: {
       x: { label: 'Quantity supplied' },
       y: { label: 'Price' }
@@ -49,9 +47,9 @@
 
     arrows: [
       { layer: 'layer-incr', x1: s1x + 0.03, y1: yMid, x2: s2x - 0.02, y2: yMid,
-        tone: 'green', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'ss-green-end', buffer: 0 },
+        tone: 'green', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'econos-arrow-green', buffer: 0 },
       { layer: 'layer-decr', x1: s1x - 0.03, y1: yMid, x2: s3x + 0.02, y2: yMid,
-        tone: 'red', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'ss-red-end', buffer: 0 }
+        tone: 'red', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'econos-arrow-red', buffer: 0 }
     ],
 
     texts: [

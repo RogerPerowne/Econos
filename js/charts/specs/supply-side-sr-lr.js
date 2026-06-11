@@ -55,10 +55,7 @@
     ],
     inverseLayers: ['c-sras1-solid', 'k-as1-solid'],
     perspectives: ['classical', 'keynesian'],
-    defs:
-      '<marker id="ssrl-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>' +
-      '<marker id="ssrl-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>' +
-      '<marker id="ssrl-arr-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -166,28 +163,28 @@
          x ≈ 0.65, so both ends sit in the OPEN STRIP between SRAS₁ and
          SRAS₂ – no contact with either curve, well clear of E₁ and E₂. */
       { x1: 0.49, y1: 0.583, x2: 0.629, y2: 0.397,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'ssrl-arr-green',
+        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
         buffer: 4, layer: 'c-sr-arrow', perspective: 'classical' },
       /* Classical LR – LRAS₁ → LRAS₂ (V3), rightward near top. */
       { x1: YF1 + 0.01, y1: 0.80, x2: YF2 - 0.01, y2: 0.80,
-        tone: 'purple', strokeWidth: 1.8, markerEnd: 'ssrl-arr-purple',
+        tone: 'purple', strokeWidth: 1.8, markerEnd: 'econos-arrow-purple',
         buffer: 0, layer: 'c-lr-arrow', perspective: 'classical' },
       /* Classical verdict – sustainable-growth bracket Yf₁ → Yf₂ (V4). */
       { x1: YF1 + 0.005, y1: 0.075, x2: YF2 - 0.005, y2: 0.075,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'ssrl-arr-green',
+        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
         buffer: 0, layer: 'c-growth', perspective: 'classical' },
 
       /* Keynesian SR – price floor DROPS (V2), a DOWNWARD arrow (0.34→0.18). */
       { x1: 0.175, y1: 0.330, x2: 0.175, y2: 0.205,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'ssrl-arr-green',
+        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
         buffer: 0, layer: 'k-sr-arrow', perspective: 'keynesian' },
       /* Keynesian LR – capacity slides PARALLEL right (V3). */
       { x1: 0.34, y1: 0.255, x2: 0.52, y2: 0.255,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'ssrl-arr-green',
+        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
         buffer: 0, layer: 'k-lr-arrow', perspective: 'keynesian' },
       /* Keynesian verdict – output gap Y₃ → Yf₂ (V4), low near axis. */
       { x1: 0.575, y1: 0.090, x2: YF2 - 0.005, y2: 0.090,
-        tone: 'rose', strokeWidth: 1.8, markerEnd: 'ssrl-arr-rose',
+        tone: 'rose', strokeWidth: 1.8, markerEnd: 'econos-arrow-rose',
         buffer: 0, layer: 'k-gap', perspective: 'keynesian' }
     ],
 

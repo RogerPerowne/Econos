@@ -35,8 +35,7 @@
     className: 'ad-shift-interactive-svg',
     layers: ['idl-1', 'idl-2'],
     inverseLayers: ['idl-old-solid'],
-    defs:
-      '<marker id="ads-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -83,7 +82,7 @@
       // Layer 1: rightward AD shift arrow, mid-upper area
       { x1: 0.490, y1: 0.835, x2: 0.625, y2: 0.835,
         tone: 'blue', strokeWidth: 1.8,
-        markerEnd: 'ads-arr-blue', buffer: 0, layer: 'idl-1' }
+        markerEnd: 'econos-arrow-blue', buffer: 0, layer: 'idl-1' }
     ]
   };
 })();

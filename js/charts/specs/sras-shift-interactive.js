@@ -24,8 +24,7 @@
     className: 'sras-shift-interactive-svg',
     layers: ['idl-1', 'idl-2'],
     inverseLayers: ['idl-old-solid'],
-    defs:
-      '<marker id="srs-arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -69,7 +68,7 @@
       // Layer 1: left-shift arrow showing SRAS moving left
       { x1: 0.583, y1: 0.579, x2: 0.492, y2: 0.579,
         tone: 'rose', strokeWidth: 1.5,
-        markerEnd: 'srs-arr-red', buffer: 0, layer: 'idl-1' }
+        markerEnd: 'econos-arrow-red', buffer: 0, layer: 'idl-1' }
     ],
 
     boxedLabels: [

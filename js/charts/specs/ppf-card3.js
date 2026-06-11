@@ -28,13 +28,7 @@
       x: { label: 'Capital Goods' },
       y: { label: 'Consumer Goods' }
     },
-    defs:
-      '<marker id="ppfmv-along-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7C3AED"/></marker>' +
-      '<marker id="ppfmv-rec-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>' +
-      '<marker id="ppfmv-out-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>' +
-      '<marker id="ppfmv-out-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#059669"/></marker>' +
-      '<marker id="ppfmv-in-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>' +
-      '<marker id="ppfmv-in-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/></marker>',
+
 
     // Always-visible PPF₁ + the two shifted curves (each in its own layer
     // so .show-outward and .show-inward can fade them independently).
@@ -59,7 +53,7 @@
         ],
         // Movement-along arrow: quadratic bow slightly above PPF₁ from D to E
         arrows: [
-          { d: 'M 0.30,0.549 Q 0.45,0.55 0.578,0.246', tone: 'purple', strokeWidth: 2, dashed: '6 3', markerEnd: 'ppfmv-along-end' }
+          { d: 'M 0.30,0.549 Q 0.45,0.55 0.578,0.246', tone: 'purple', strokeWidth: 2, dashed: '6 3', markerEnd: 'econos-arrow-purple' }
         ],
         texts: [
           { x: -0.03, y: 0.398, text: '−ΔC', tone: 'purple', bold: true },
@@ -107,7 +101,7 @@
         ],
         // Recovery arrow: from X inside the PPF moving toward PPF₁
         arrows: [
-          { x1: 0.29, y1: 0.257, x2: 0.436, y2: 0.394, tone: 'amber', strokeWidth: 2.5, dashed: '7 4', markerEnd: 'ppfmv-rec-end' }
+          { x1: 0.29, y1: 0.257, x2: 0.436, y2: 0.394, tone: 'amber', strokeWidth: 2.5, dashed: '7 4', markerEnd: 'econos-arrow-amber' }
         ],
         zones: [
           { x: 0.12, y: 0.08, text: 'Inefficient zone', tone: 'amber' }
@@ -153,7 +147,7 @@
           // True perpendicular: anchor PPF₁ at t=0.5, ray to PPF₂
           { perpendicular: { from: 'ppf1', t: 0.5, to: 'ppf2' },
             tone: 'green', strokeWidth: 3, lineCap: 'round',
-            markerStart: 'ppfmv-out-start', markerEnd: 'ppfmv-out-end' }
+            markerStart: 'econos-arrow-green-back', markerEnd: 'econos-arrow-green' }
         ],
         legend: {
           x: 600,
@@ -197,7 +191,7 @@
           // True perpendicular: anchor PPF₁ at t=0.42, ray inward to PPF₃
           { perpendicular: { from: 'ppf1', t: 0.42, to: 'ppf3' },
             tone: 'rose', strokeWidth: 3, lineCap: 'round',
-            markerStart: 'ppfmv-in-start', markerEnd: 'ppfmv-in-end' }
+            markerStart: 'econos-arrow-red-back', markerEnd: 'econos-arrow-red' }
         ],
         legend: {
           x: 600,

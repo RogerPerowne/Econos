@@ -25,9 +25,7 @@
     className: 'dmove-svg',
     layers: ['layer-contract', 'layer-extend'],
     layerMode: 'exclusive',
-    defs:
-      '<marker id="dm-red-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>' +
-      '<marker id="dm-green-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>',
+
     axes: {
       x: { label: 'Quantity demanded' },
       y: { label: 'Price (£)' }
@@ -50,12 +48,12 @@
       { x1: B.x, y1: B.y, x2: B.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
       /* contraction B → A */
       { layer: 'layer-contract', x1: B.x + o, y1: B.y + o, x2: A.x + o, y2: A.y + o,
-        tone: 'red', strokeWidth: 2.6, markerEnd: 'dm-red-end', buffer: 0.02 },
+        tone: 'red', strokeWidth: 2.6, markerEnd: 'econos-arrow-red', buffer: 0.02 },
       { layer: 'layer-contract', x1: 0, y1: A.y, x2: A.x, y2: A.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
       { layer: 'layer-contract', x1: A.x, y1: A.y, x2: A.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
       /* extension B → C */
       { layer: 'layer-extend', x1: B.x + o, y1: B.y + o, x2: C.x + o, y2: C.y + o,
-        tone: 'green', strokeWidth: 2.6, markerEnd: 'dm-green-end', buffer: 0.02 },
+        tone: 'green', strokeWidth: 2.6, markerEnd: 'econos-arrow-green', buffer: 0.02 },
       { layer: 'layer-extend', x1: 0, y1: C.y, x2: C.x, y2: C.y, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 },
       { layer: 'layer-extend', x1: C.x, y1: C.y, x2: C.x, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '3 3', buffer: 0 }
     ],

@@ -30,8 +30,7 @@
     className: 'sras-right-shift-interactive-svg',
     layers: ['idl-1', 'idl-2'],
     inverseLayers: ['idl-old-solid'],
-    defs:
-      '<marker id="srs-arr-green-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -80,7 +79,7 @@
       // Layer 1: rightward SRAS shift arrow
       { x1: 0.300, y1: 0.224, x2: 0.430, y2: 0.224,
         tone: 'green', strokeWidth: 1.8,
-        markerEnd: 'srs-arr-green-r', buffer: 0, layer: 'idl-1' }
+        markerEnd: 'econos-arrow-green', buffer: 0, layer: 'idl-1' }
     ]
   };
 })();

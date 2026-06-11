@@ -28,11 +28,7 @@
     className: 'pd-diseq-svg',
     layers: ['layer-base', 'layer-surplus', 'layer-short'],
     layerMode: 'exclusive',
-    defs:
-      '<marker id="pd-a-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#B45309"/></marker>' +
-      '<marker id="pd-a-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#B45309"/></marker>' +
-      '<marker id="pd-b-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1E3A8A"/></marker>' +
-      '<marker id="pd-b-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#1E3A8A"/></marker>',
+
     axes: {
       x: { label: 'Quantity' },
       y: { label: 'Price' }
@@ -60,15 +56,15 @@
       { layer: 'layer-surplus', x1: 0, y1: 0.66, x2: 0.70, y2: 0.66, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
       { layer: 'layer-surplus', x1: 0.34, y1: 0.66, x2: 0.34, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
       { layer: 'layer-surplus', x1: 0.70, y1: 0.66, x2: 0.70, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
-      { layer: 'layer-surplus', x1: 0.345, y1: -0.085, x2: 0.695, y2: -0.085, tone: 'amber', strokeWidth: 2.4, markerStart: 'pd-a-start', markerEnd: 'pd-a-end', buffer: 0 },
-      { layer: 'layer-surplus', x1: 0.06, y1: 0.63, x2: 0.06, y2: 0.52, tone: 'amber', strokeWidth: 2.4, markerEnd: 'pd-a-end', buffer: 0 },
+      { layer: 'layer-surplus', x1: 0.345, y1: -0.085, x2: 0.695, y2: -0.085, tone: 'amber', strokeWidth: 2.4, markerStart: 'econos-arrow-amber-back', markerEnd: 'econos-arrow-amber', buffer: 0 },
+      { layer: 'layer-surplus', x1: 0.06, y1: 0.63, x2: 0.06, y2: 0.52, tone: 'amber', strokeWidth: 2.4, markerEnd: 'econos-arrow-amber', buffer: 0 },
 
       /* shortage – P₂ price line, droplines, excess arrow BELOW axis, price pressure */
       { layer: 'layer-short', x1: 0, y1: 0.32, x2: 0.70, y2: 0.32, tone: 'slate', strokeWidth: 1.4, dashed: '5 4', buffer: 0 },
       { layer: 'layer-short', x1: 0.34, y1: 0.32, x2: 0.34, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
       { layer: 'layer-short', x1: 0.70, y1: 0.32, x2: 0.70, y2: -0.085, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
-      { layer: 'layer-short', x1: 0.345, y1: -0.085, x2: 0.695, y2: -0.085, tone: 'blue', strokeWidth: 2.4, markerStart: 'pd-b-start', markerEnd: 'pd-b-end', buffer: 0 },
-      { layer: 'layer-short', x1: 0.06, y1: 0.35, x2: 0.06, y2: 0.46, tone: 'blue', strokeWidth: 2.4, markerEnd: 'pd-b-end', buffer: 0 }
+      { layer: 'layer-short', x1: 0.345, y1: -0.085, x2: 0.695, y2: -0.085, tone: 'blue', strokeWidth: 2.4, markerStart: 'econos-arrow-blue-back', markerEnd: 'econos-arrow-blue', buffer: 0 },
+      { layer: 'layer-short', x1: 0.06, y1: 0.35, x2: 0.06, y2: 0.46, tone: 'blue', strokeWidth: 2.4, markerEnd: 'econos-arrow-blue', buffer: 0 }
     ],
 
     texts: [

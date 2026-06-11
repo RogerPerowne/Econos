@@ -16,9 +16,7 @@
     height: 300,
     className: 'fx-intervention-svg',
     background: '#FFFFFF',
-    defs:
-      '<marker id="fxiv-green" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#059669"/></marker>' +
-      '<marker id="fxiv-orange" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#EA580C"/></marker>',
+
     divider: { x: 340, y1: 20, y2: 250 },
 
     panels: [
@@ -35,7 +33,7 @@
         arrows: [
           { x1: 0, y1: 0.388, x2: 0.361, y2: 0.388, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           { x1: 0, y1: 0.500, x2: 0.479, y2: 0.500, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
-          { x1: 0.385, y1: 0.40, x2: 0.545, y2: 0.40, tone: 'green', strokeWidth: 2, markerEnd: 'fxiv-green', buffer: 3 }
+          { x1: 0.385, y1: 0.40, x2: 0.545, y2: 0.40, tone: 'green', strokeWidth: 2, markerEnd: 'econos-arrow-green', buffer: 3 }
         ],
         points: [
           { x: 0.361, y: 0.388, tone: 'slate', radius: 4.5 },
@@ -59,7 +57,7 @@
         arrows: [
           { x1: 0, y1: 0.535, x2: 0.461, y2: 0.535, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           { x1: 0, y1: 0.422, x2: 0.587, y2: 0.422, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
-          { x1: 0.30, y1: 0.30, x2: 0.46, y2: 0.30, tone: 'amber', strokeWidth: 2, markerEnd: 'fxiv-orange', buffer: 0 }
+          { x1: 0.30, y1: 0.30, x2: 0.46, y2: 0.30, tone: 'amber', strokeWidth: 2, markerEnd: 'econos-arrow-amber', buffer: 0 }
         ],
         points: [
           { x: 0.461, y: 0.535, tone: 'slate', radius: 4.5 },

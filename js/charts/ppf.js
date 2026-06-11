@@ -2215,6 +2215,13 @@
     // that pointed up or down in LOCAL coords have produced HORIZONTAL
     // arrowheads on vertical lines (the auto-rotation rotates them into
     // the wrong axis). Use these built-ins instead.
+    // Canonical arrowheads — an OPEN CHEVRON (›), one style sitewide. Two
+    // variants per tone: `econos-arrow-<tone>` (forward, tip at +X, for
+    // markerEnd) and `econos-arrow-<tone>-back` (mirrored, for markerStart on
+    // double-headed arrows). Both `orient="auto"` so the browser rotates them
+    // to the line tangent; `markerUnits="userSpaceOnUse"` keeps every head a
+    // fixed 13px regardless of line weight, so arrowheads match across the
+    // whole site. Authors should use these and NOT hand-roll markers.
     var builtInArrows = [
       ['blue',  '#2563EB'],
       ['amber', '#D97706'],
@@ -2224,7 +2231,9 @@
       ['rose',  '#E11D48'],
       ['purple','#7C3AED']
     ].map(function (pair) {
-      return '<marker id="econos-arrow-' + pair[0] + '" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="' + pair[1] + '"/></marker>';
+      var fwd  = '<marker id="econos-arrow-' + pair[0] + '" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="9.5" refY="6" markerWidth="13" markerHeight="13" orient="auto"><path d="M 3.5 2 L 9.5 6 L 3.5 10" fill="none" stroke="' + pair[1] + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>';
+      var back = '<marker id="econos-arrow-' + pair[0] + '-back" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="2.5" refY="6" markerWidth="13" markerHeight="13" orient="auto"><path d="M 8.5 2 L 2.5 6 L 8.5 10" fill="none" stroke="' + pair[1] + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>';
+      return fwd + back;
     }).join('');
     parts.push('<defs>' + clips + layerCss + perspectiveCss + legendBelowCss + builtInArrows + (spec.defs || '') + '</defs>');
 

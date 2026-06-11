@@ -20,11 +20,7 @@
     height: 300,
     className: 'pes-compare-svg',
     background: '#FFFFFF',
-    defs:
-      '<marker id="pes-red-end-up" markerWidth="6" markerHeight="6" refX="3" refY="0" orient="auto"><polygon points="0,6 6,6 3,0" fill="#DC2626"/></marker>' +
-      '<marker id="pes-blue-start" markerWidth="6" markerHeight="6" refX="1.5" refY="3" orient="auto"><polygon points="6,0 6,6 0,3" fill="#2563EB"/></marker>' +
-      '<marker id="pes-blue-end" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto"><polygon points="0,0 0,6 6,3" fill="#2563EB"/></marker>' +
-      '<marker id="pes-green-end" markerWidth="6" markerHeight="6" refX="4" refY="2.5" orient="auto"><path d="M0,0 L0,5 L6,2.5 z" fill="#059669"/></marker>',
+
     divider: { x: 330, y1: 22, y2: 268 },
 
     panels: [
@@ -54,14 +50,14 @@
           { x1: 0.468, y1: 0.461, x2: 0.468, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           // Green D shift arrow (small horizontal at the height of E₁/E₂)
           { x1: 0.408, y1: 0.207, x2: 0.615, y2: 0.207,
-            tone: 'green', strokeWidth: 1.5, markerEnd: 'pes-green-end', buffer: 0 },
+            tone: 'green', strokeWidth: 1.5, markerEnd: 'econos-arrow-green', buffer: 0 },
           // Red ΔP arrow OUTSIDE chart on left (small for elastic)
           { x1: -0.045, y1: 0.369, x2: -0.045, y2: 0.461,
-            tone: 'red', strokeWidth: 2, markerEnd: 'pes-red-end-up', buffer: 0 },
+            tone: 'red', strokeWidth: 2, markerEnd: 'econos-arrow-red', buffer: 0 },
           // Blue ΔQ arrow at bottom (LARGE span for elastic)
           { x1: 0.298, y1: -0.124, x2: 0.468, y2: -0.124,
             tone: 'blue', strokeWidth: 2.2,
-            markerStart: 'pes-blue-start', markerEnd: 'pes-blue-end', buffer: 0 }
+            markerStart: 'econos-arrow-blue-back', markerEnd: 'econos-arrow-blue', buffer: 0 }
         ],
         points: [
           { x: 0.298, y: 0.369, tone: 'slate', radius: 4 },
@@ -97,14 +93,14 @@
           { x1: 0, y1: 0.650, x2: 0.351, y2: 0.650, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           { x1: 0.351, y1: 0.650, x2: 0.351, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           { x1: 0.408, y1: 0.207, x2: 0.615, y2: 0.207,
-            tone: 'green', strokeWidth: 1.5, markerEnd: 'pes-green-end', buffer: 0 },
+            tone: 'green', strokeWidth: 1.5, markerEnd: 'econos-arrow-green', buffer: 0 },
           // SAME-position red ΔP arrow but LARGE span (mirrors elastic's small)
           { x1: -0.045, y1: 0.406, x2: -0.045, y2: 0.650,
-            tone: 'red', strokeWidth: 2, markerEnd: 'pes-red-end-up', buffer: 0 },
+            tone: 'red', strokeWidth: 2, markerEnd: 'econos-arrow-red', buffer: 0 },
           // SMALL ΔQ
           { x1: 0.275, y1: -0.124, x2: 0.351, y2: -0.124,
             tone: 'blue', strokeWidth: 2.2,
-            markerStart: 'pes-blue-start', markerEnd: 'pes-blue-end', buffer: 0 }
+            markerStart: 'econos-arrow-blue-back', markerEnd: 'econos-arrow-blue', buffer: 0 }
         ],
         points: [
           { x: 0.275, y: 0.406, tone: 'slate', radius: 4 },

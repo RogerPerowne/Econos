@@ -25,9 +25,7 @@
     height: 320,
     chartArea: { x: 70, y: 40, width: 360, height: 240 },
     className: 'ad-slope-svg',
-    defs:
-      '<marker id="ads-arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/></marker>' +
-      '<marker id="ads-arr-grn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#15803D"/></marker>',
+
     axes: {
       x: { label: 'Y' },
       y: { label: 'P' }
@@ -51,10 +49,10 @@
       // doesn't sit at the same y as P₂ label – clears the "looks like
       // it's touching" perception both labels have.
       { x1: -0.110, y1: 0.595, x2: -0.110, y2: 0.380,
-        tone: 'rose', strokeWidth: 2, markerEnd: 'ads-arr-red', buffer: 0 },
+        tone: 'rose', strokeWidth: 2, markerEnd: 'econos-arrow-rose', buffer: 0 },
       // "Output rises" arrow BELOW chart, pointing RIGHT
       { x1: 0.347, y1: -0.075, x2: 0.653, y2: -0.075,
-        tone: 'green', strokeWidth: 2, markerEnd: 'ads-arr-grn', buffer: 0 }
+        tone: 'green', strokeWidth: 2, markerEnd: 'econos-arrow-green', buffer: 0 }
     ],
 
     points: [

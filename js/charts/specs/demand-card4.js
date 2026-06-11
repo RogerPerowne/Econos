@@ -33,9 +33,7 @@
     className: 'dshift-svg',
     layers: ['layer-base', 'layer-incr', 'layer-decr'],
     layerMode: 'exclusive', // only the active view's layer shows
-    defs:
-      '<marker id="ds-green-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>' +
-      '<marker id="ds-red-end" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>',
+
     axes: {
       x: { label: 'Quantity demanded' },
       y: { label: 'Price' }
@@ -56,9 +54,9 @@
 
     arrows: [
       { layer: 'layer-incr', x1: d1x + 0.03, y1: yMid, x2: d2x - 0.02, y2: yMid,
-        tone: 'green', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'ds-green-end', buffer: 0 },
+        tone: 'green', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'econos-arrow-green', buffer: 0 },
       { layer: 'layer-decr', x1: d1x - 0.03, y1: yMid, x2: d3x + 0.02, y2: yMid,
-        tone: 'red', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'ds-red-end', buffer: 0 }
+        tone: 'red', strokeWidth: 2.6, dashed: '6 4', markerEnd: 'econos-arrow-red', buffer: 0 }
     ],
 
     texts: [

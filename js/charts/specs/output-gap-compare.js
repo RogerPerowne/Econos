@@ -26,9 +26,7 @@
     height: 300,
     className: 'output-gap-compare-svg',
     background: '#FFFFFF',
-    defs:
-      '<marker id="ogc-gap-up" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#DC2626"/></marker>' +
-      '<marker id="ogc-gap-down" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#DC2626"/></marker>',
+
     divider: { x: 340, y1: 24, y2: 268 },
 
     panels: [
@@ -49,7 +47,7 @@
           // Negative output gap: vertical double arrow between actual and trend.
           { x1: 0.62, y1: 0.455, x2: 0.62, y2: 0.624,
             tone: 'red', strokeWidth: 1.8,
-            markerStart: 'ogc-gap-down', markerEnd: 'ogc-gap-up', buffer: 0 }
+            markerStart: 'econos-arrow-red-back', markerEnd: 'econos-arrow-red', buffer: 0 }
         ],
         texts: [
           { x: 0.63, y: 0.36, text: 'Negative gap', tone: 'red', bold: true, anchor: 'middle' }

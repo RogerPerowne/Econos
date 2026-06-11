@@ -43,8 +43,7 @@
     layers: ['idl-1', 'idl-2'],
     inverseLayers: ['idl-old-solid'],
     perspectives: ['classical', 'keynesian'],
-    defs:
-      '<marker id="adck-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -136,7 +135,7 @@
          parallel rightward shift, not a generic horizontal arrow. */
       { x1: 0.464, y1: 0.434, x2: 0.546, y2: 0.521,
         tone: 'blue', strokeWidth: 1.8,
-        markerEnd: 'adck-arr-blue', buffer: 0, layer: 'idl-1' }
+        markerEnd: 'econos-arrow-blue', buffer: 0, layer: 'idl-1' }
     ]
   };
 })();

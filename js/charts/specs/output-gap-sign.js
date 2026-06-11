@@ -22,11 +22,7 @@
     height: 300,
     className: 'output-gap-sign-svg',
     background: '#FFFFFF',
-    defs:
-      '<marker id="ogs-red-up" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#DC2626"/></marker>' +
-      '<marker id="ogs-red-down" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#DC2626"/></marker>' +
-      '<marker id="ogs-amber-up" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#D97706"/></marker>' +
-      '<marker id="ogs-amber-down" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#D97706"/></marker>',
+
     divider: { x: 340, y1: 24, y2: 268 },
 
     panels: [
@@ -46,7 +42,7 @@
         arrows: [
           { x1: 0.62, y1: 0.455, x2: 0.62, y2: 0.624,
             tone: 'red', strokeWidth: 1.8,
-            markerStart: 'ogs-red-down', markerEnd: 'ogs-red-up', buffer: 0 }
+            markerStart: 'econos-arrow-red-back', markerEnd: 'econos-arrow-red', buffer: 0 }
         ],
         texts: [
           { x: 0.63, y: 0.36, text: 'Spare capacity', tone: 'red', bold: true, anchor: 'middle' }
@@ -69,7 +65,7 @@
         arrows: [
           { x1: 0.62, y1: 0.640, x2: 0.62, y2: 0.728,
             tone: 'amber', strokeWidth: 1.8,
-            markerStart: 'ogs-amber-down', markerEnd: 'ogs-amber-up', buffer: 0 }
+            markerStart: 'econos-arrow-amber-back', markerEnd: 'econos-arrow-amber', buffer: 0 }
         ],
         texts: [
           { x: 0.60, y: 0.50, text: 'Overheating', tone: 'amber', bold: true, anchor: 'middle' }

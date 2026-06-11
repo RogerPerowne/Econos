@@ -47,9 +47,7 @@
     width: 640,
     height: 280,
     className: 'ad-movement-shift-svg',
-    defs:
-      '<marker id="mvs-grey-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>' +
-      '<marker id="mvs-green-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/></marker>',
+
     // Vertical divider down the middle separating the two panels
     divider: { x: 320, y1: 20, y2: 260, stroke: '#E2E8F0', dashed: '4 4' },
 
@@ -73,7 +71,7 @@
           { x1: 0.688, y1: 0.267, x2: 0.688, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '2 2', buffer: 0 },
           // Curved "slide" arrow along the AD curve (quadratic Bézier)
           { d: 'M 0.333,0.600 Q 0.479,0.433 0.625,0.300',
-            tone: 'slate', strokeWidth: 2.2, markerEnd: 'mvs-grey-end', buffer: 0 }
+            tone: 'slate', strokeWidth: 2.2, markerEnd: 'econos-arrow-slate', buffer: 0 }
         ],
         points: [
           { x: 0.271, y: 0.667, tone: 'blue', radius: 5, hollow: true },
@@ -118,7 +116,7 @@
         arrows: [
           // Horizontal "shift right" arrow in the clear lower-middle space
           { x1: 0.417, y1: 0.300, x2: 0.625, y2: 0.300,
-            tone: 'green', strokeWidth: 2.4, markerEnd: 'mvs-green-end', buffer: 0 }
+            tone: 'green', strokeWidth: 2.4, markerEnd: 'econos-arrow-green', buffer: 0 }
         ],
         texts: [
           { x: 0.500, y: 1.090, text: 'whole curve moves · C/I/G/X−M change', tone: 'gray', anchor: 'middle' },

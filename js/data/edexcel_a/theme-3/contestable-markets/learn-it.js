@@ -172,7 +172,7 @@ window.ECONOS_TOPIC = {
         layers: ['hr-1', 'hr-2', 'hr-3', 'hr-4', 'hr-5'],
         views: [
           {
-            label: 'Supernormal profit',
+            label: 'High profits',
             tone: 'green',
             head: 'Step 1 — profit on offer',
             body: 'An incumbent is earning <strong>supernormal profit</strong> in the market.',

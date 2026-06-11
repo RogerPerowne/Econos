@@ -18599,42 +18599,42 @@ window.ECONOS_ICONS = {
         <g class="hr-1" style="display:none">
           <circle cx="90" cy="95" r="30" fill="#ECFDF5" stroke="#059669" stroke-width="2.5"/>
           <text x="90" y="105" text-anchor="middle" font-size="25">💰</text>
-          <text x="90" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#047857">Supernormal profit</text>
-          <text x="90" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Incumbent earns high profit</text>
+          <text x="90" y="152" text-anchor="middle" font-size="14" font-weight="800" fill="#047857">Supernormal profit</text>
+          <text x="90" y="168" text-anchor="middle" font-size="12.5" fill="#475569">Incumbent earns high profit</text>
         </g>
         <!-- N2 -->
         <g class="hr-2" style="display:none">
           <circle cx="275" cy="95" r="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5"/>
           <text x="275" y="105" text-anchor="middle" font-size="25">👀</text>
-          <text x="275" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#1D4ED8">Entrant spots it</text>
-          <text x="275" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Sees the profit on offer</text>
+          <text x="275" y="152" text-anchor="middle" font-size="14" font-weight="800" fill="#1D4ED8">Entrant spots it</text>
+          <text x="275" y="168" text-anchor="middle" font-size="12.5" fill="#475569">Sees the profit on offer</text>
         </g>
         <!-- N3 -->
         <g class="hr-3" style="display:none">
           <circle cx="460" cy="95" r="30" fill="#FFFBEB" stroke="#D97706" stroke-width="2.5"/>
           <text x="460" y="105" text-anchor="middle" font-size="25">🚪</text>
-          <text x="460" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#B45309">Entry</text>
-          <text x="460" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Low sunk costs → easy in</text>
+          <text x="460" y="152" text-anchor="middle" font-size="14" font-weight="800" fill="#B45309">Entry</text>
+          <text x="460" y="168" text-anchor="middle" font-size="12.5" fill="#475569">Low sunk costs → easy in</text>
         </g>
         <!-- N4 -->
         <g class="hr-4" style="display:none">
           <circle cx="645" cy="95" r="30" fill="#FEF2F2" stroke="#DC2626" stroke-width="2.5"/>
           <text x="645" y="105" text-anchor="middle" font-size="25">📉</text>
-          <text x="645" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#B91C1C">Profits competed away</text>
-          <text x="645" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Prices fall, profit erodes</text>
+          <text x="645" y="152" text-anchor="middle" font-size="14" font-weight="800" fill="#B91C1C">Profits competed away</text>
+          <text x="645" y="168" text-anchor="middle" font-size="12.5" fill="#475569">Prices fall, profit erodes</text>
         </g>
         <!-- N5 -->
         <g class="hr-5" style="display:none">
           <circle cx="820" cy="95" r="30" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5"/>
           <text x="820" y="105" text-anchor="middle" font-size="25">🏃</text>
-          <text x="820" y="152" text-anchor="middle" font-size="12" font-weight="800" fill="#6D28D9">Hit-and-run exit</text>
-          <text x="820" y="168" text-anchor="middle" font-size="10.5" fill="#475569">Entrant leaves again</text>
+          <text x="820" y="152" text-anchor="middle" font-size="14" font-weight="800" fill="#6D28D9">Hit-and-run exit</text>
+          <text x="820" y="168" text-anchor="middle" font-size="12.5" fill="#475569">Entrant leaves again</text>
         </g>
         <!-- closing caption -->
         <g class="hr-5" style="display:none">
           <rect x="250" y="198" width="380" height="42" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
-          <text x="440" y="216" text-anchor="middle" font-size="12" font-weight="800" fill="#047857">Even the THREAT of entry keeps the incumbent</text>
-          <text x="440" y="232" text-anchor="middle" font-size="11.5" fill="#475569">pricing competitively — no entry needs to actually happen</text>
+          <text x="440" y="216" text-anchor="middle" font-size="14" font-weight="800" fill="#047857">Even the THREAT of entry keeps the incumbent</text>
+          <text x="440" y="232" text-anchor="middle" font-size="12.5" fill="#475569">pricing competitively — no entry needs to actually happen</text>
         </g>
       </svg>
     </div>

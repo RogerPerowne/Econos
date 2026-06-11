@@ -305,17 +305,10 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F512}', tone: 'green', text: 'To apply monopsony, identify the <strong>market, the powerful buyer, and why sellers have weak alternatives</strong>.' },
 
-      causesFirst: true,
-      causesLabel: 'FOUR MARKET SCENARIOS',
-      causesEmoji: '\u{1F30D}',
-      causesStyle: 'icon-top',
-      causesCols: 4,
-      causes: [
-        { tone: 'blue',   icon: '\u{1F3D8}️', head: 'Local employer', body: 'A town’s main employer can hold wages down where workers can’t easily move.' },
-        { tone: 'green',  icon: '\u{1F6D2}', head: 'Supermarket and farmers', body: 'A large retailer pressures many small suppliers on price.' },
-        { tone: 'amber',  icon: '\u{1F3ED}', head: 'Large processor', body: 'A big processor buys from many small producers at terms it sets.' },
-        { tone: 'purple', icon: '\u{1F4F1}', head: 'Public or platform buyer', body: 'A dominant employer or platform sets the terms of work.' }
-      ],
+      visualKey: 'monopsonyScenarios',
+      visualLabel: 'FOUR MARKET SCENARIOS',
+      visualEmoji: '\u{1F30D}',
+      visualCaption: 'Four versions of the same structure: many weak sellers, one powerful buyer.',
 
       flowTitle: 'HOW TO SPOT IT',
       flowEmoji: '\u{1F50E}',

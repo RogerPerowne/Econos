@@ -21694,6 +21694,112 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
+  /* monopsonyScenarios — Monopsony card 5. Four story columns from the
+     review mock-up: Local employer (blue) · Supermarket & farmers (amber)
+     · Large processor (purple) · Public/platform buyer (green). Each
+     column: circular icon badge, blurb, a mini sellers→buyer scene
+     (dashed arrow), and a DRIVERS bullet list. 4→2→1 column responsive. */
+  monopsonyScenarios: `
+    <div class="mps-sc" style="line-height:1.5;background:#fff;border-radius:14px;padding:6px 2px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .mps-sc .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+        @media (max-width:920px){ .mps-sc .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+        @media (max-width:520px){ .mps-sc .grid { grid-template-columns:1fr; } }
+        .mps-sc .col { border-radius:14px; padding:16px 14px 14px; border:1.5px solid; display:flex; flex-direction:column; align-items:center; text-align:center; }
+        .mps-sc .badge { width:64px; height:64px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(11,20,38,0.10); margin-bottom:10px; }
+        .mps-sc .t { font-size:14.5px; font-weight:800; line-height:1.25; margin-bottom:6px; }
+        .mps-sc .b { font-size:12px; color:#334155; line-height:1.45; min-height:52px; }
+        .mps-sc .scene { margin:8px 0 10px; }
+        .mps-sc .dl { font-size:10.5px; font-weight:800; letter-spacing:0.08em; margin:2px 0 8px; }
+        .mps-sc ul { list-style:none; margin:0; padding:0; width:100%; text-align:left; }
+        .mps-sc li { font-size:11.5px; color:#0B1426; display:flex; gap:7px; align-items:flex-start; margin-bottom:5px; }
+        .mps-sc li::before { content:''; width:7px; height:7px; border-radius:50%; flex-shrink:0; margin-top:4px; background:var(--mps-tone); }
+      </style>
+      <div class="grid">
+
+        <div class="col" style="--mps-tone:#1D4ED8;background:#F8FAFF;border-color:#BFDBFE;">
+          <div class="badge"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="6" y="5" width="14" height="24" rx="1.5" fill="#1D4ED8"/><rect x="9" y="9" width="3" height="3" fill="#DBEAFE"/><rect x="14" y="9" width="3" height="3" fill="#DBEAFE"/><rect x="9" y="14" width="3" height="3" fill="#DBEAFE"/><rect x="14" y="14" width="3" height="3" fill="#DBEAFE"/><rect x="9" y="19" width="3" height="3" fill="#DBEAFE"/><rect x="14" y="19" width="3" height="3" fill="#DBEAFE"/><rect x="22" y="13" width="8" height="16" rx="1" fill="#60A5FA"/><rect x="24" y="16" width="4" height="2.5" fill="#DBEAFE"/><rect x="24" y="20" width="4" height="2.5" fill="#DBEAFE"/></svg></div>
+          <div class="t" style="color:#1D4ED8;">Local employer</div>
+          <div class="b">A major employer in a small town can have labour-market power.</div>
+          <svg class="scene" width="150" height="46" viewBox="0 0 150 46">
+            <circle cx="28" cy="23" r="20" fill="#EFF6FF"/>
+            <g fill="#1D4ED8"><circle cx="21" cy="17" r="4"/><path d="M 14 30 C 14 22 28 22 28 30 Z"/><circle cx="33" cy="19" r="4"/><path d="M 26 32 C 26 24 40 24 40 32 Z"/></g>
+            <line x1="55" y1="23" x2="92" y2="23" stroke="#1D4ED8" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <path d="M 92 19 L 99 23 L 92 27 Z" fill="#1D4ED8"/>
+            <circle cx="122" cy="23" r="20" fill="#EFF6FF"/>
+            <path d="M 112 23 L 122 14 L 132 23 V 33 H 112 Z" fill="#1D4ED8"/><rect x="119" y="26" width="6" height="7" fill="#DBEAFE"/>
+          </svg>
+          <div class="dl" style="color:#1D4ED8;">DRIVERS</div>
+          <ul>
+            <li>Few alternative jobs</li>
+            <li>Relocation cost</li>
+            <li>Wage-setting power</li>
+          </ul>
+        </div>
+
+        <div class="col" style="--mps-tone:#D97706;background:#FFFBF5;border-color:#FDE68A;">
+          <div class="badge"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M 5 7 H 9 L 12 21 H 26 L 29 11 H 11" fill="none" stroke="#D97706" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="14" cy="27" r="2.6" fill="#D97706"/><circle cx="24" cy="27" r="2.6" fill="#D97706"/></svg></div>
+          <div class="t" style="color:#D97706;">Supermarket and farmers</div>
+          <div class="b">A large retailer can pressure small suppliers on price.</div>
+          <svg class="scene" width="150" height="46" viewBox="0 0 150 46">
+            <circle cx="28" cy="23" r="20" fill="#FFFBEB"/>
+            <g fill="#D97706"><circle cx="19" cy="16" r="3.6"/><path d="M 13 28 C 13 21 25 21 25 28 Z"/><circle cx="30" cy="18" r="3.6"/><path d="M 24 30 C 24 23 36 23 36 30 Z"/></g>
+            <path d="M 38 32 C 38 26 41 24 41 24 C 41 24 44 26 44 32" fill="none" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round"/><path d="M 41 24 L 41 34" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="55" y1="23" x2="92" y2="23" stroke="#D97706" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <path d="M 92 19 L 99 23 L 92 27 Z" fill="#D97706"/>
+            <circle cx="122" cy="23" r="20" fill="#FFFBEB"/>
+            <path d="M 110 18 L 134 18 L 132 13 L 112 13 Z" fill="#D97706"/><rect x="112" y="18" width="20" height="14" rx="1" fill="#F59E0B"/><rect x="116" y="21" width="5" height="5" fill="#FFFBEB"/><rect x="124" y="21" width="5" height="11" fill="#B45309"/>
+          </svg>
+          <div class="dl" style="color:#D97706;">DRIVERS</div>
+          <ul>
+            <li>Many fragmented farmers</li>
+            <li>Perishable produce</li>
+            <li>Dependence on one buyer</li>
+          </ul>
+        </div>
+
+        <div class="col" style="--mps-tone:#6D28D9;background:#FCFAFF;border-color:#DDD6FE;">
+          <div class="badge"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M 6 28 V 14 L 13 19 V 14 L 20 19 V 14 L 27 19 V 28 Z" fill="#6D28D9"/><rect x="8" y="6" width="3.6" height="8" fill="#6D28D9"/><rect x="10" y="22" width="4" height="3" fill="#EDE9FE"/><rect x="17" y="22" width="4" height="3" fill="#EDE9FE"/></svg></div>
+          <div class="t" style="color:#6D28D9;">Large processor / manufacturer</div>
+          <div class="b">A big processor can dominate the purchase of raw inputs.</div>
+          <svg class="scene" width="150" height="46" viewBox="0 0 150 46">
+            <circle cx="28" cy="23" r="20" fill="#F5F3FF"/>
+            <g fill="#6D28D9"><rect x="14" y="14" width="9" height="8" rx="1"/><rect x="26" y="12" width="9" height="10" rx="1"/><rect x="18" y="26" width="9" height="8" rx="1"/><rect x="30" y="26" width="8" height="8" rx="1"/></g>
+            <line x1="55" y1="23" x2="92" y2="23" stroke="#6D28D9" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <path d="M 92 19 L 99 23 L 92 27 Z" fill="#6D28D9"/>
+            <circle cx="122" cy="23" r="20" fill="#F5F3FF"/>
+            <path d="M 110 32 V 20 L 116 24 V 20 L 122 24 V 20 L 128 24 V 32 Z" fill="#6D28D9"/><rect x="112" y="13" width="3" height="8" fill="#6D28D9"/>
+          </svg>
+          <div class="dl" style="color:#6D28D9;">DRIVERS</div>
+          <ul>
+            <li>Scale advantage</li>
+            <li>Limited rival buyers</li>
+            <li>Small supplier base</li>
+          </ul>
+        </div>
+
+        <div class="col" style="--mps-tone:#047857;background:#F7FDF9;border-color:#A7F3D0;">
+          <div class="badge"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M 17 5 L 30 12 H 4 Z" fill="#047857"/><rect x="6" y="13" width="3.6" height="11" fill="#047857"/><rect x="12" y="13" width="3.6" height="11" fill="#047857"/><rect x="18.4" y="13" width="3.6" height="11" fill="#047857"/><rect x="24.4" y="13" width="3.6" height="11" fill="#047857"/><rect x="4" y="25" width="26" height="4" rx="1" fill="#047857"/></svg></div>
+          <div class="t" style="color:#047857;">Public or platform buyer</div>
+          <div class="b">A dominant recruiter or platform can influence pay or contract terms.</div>
+          <svg class="scene" width="150" height="46" viewBox="0 0 150 46">
+            <circle cx="28" cy="23" r="20" fill="#ECFDF5"/>
+            <g fill="#047857"><circle cx="21" cy="17" r="4"/><path d="M 14 30 C 14 22 28 22 28 30 Z"/><circle cx="33" cy="19" r="4"/><path d="M 26 32 C 26 24 40 24 40 32 Z"/></g>
+            <line x1="55" y1="23" x2="92" y2="23" stroke="#047857" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <path d="M 92 19 L 99 23 L 92 27 Z" fill="#047857"/>
+            <circle cx="122" cy="23" r="20" fill="#ECFDF5"/>
+            <rect x="110" y="14" width="24" height="15" rx="2" fill="#047857"/><rect x="113" y="17" width="18" height="9" rx="1" fill="#D1FAE5"/><rect x="118" y="30" width="8" height="2.5" rx="1" fill="#047857"/>
+          </svg>
+          <div class="dl" style="color:#047857;">DRIVERS</div>
+          <ul>
+            <li>Few alternatives</li>
+            <li>Switching costs</li>
+            <li>Buyer bargaining strength</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>`,
   /* collusionBigPicture – Card 1 of Collusion & Cartels. "Two futures of
      the same market": centre scene = three rival firm buildings converging on
      a back-room table (handshake, dashed behind-closed-doors ring); left fan

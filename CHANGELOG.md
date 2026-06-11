@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.164.3 — 2026-06-11
+
+### Monopsony card 5 — four-story-column scenarios (mock-up rebuild)
+
+- "Monopsony in the real world" had a flat 4-tile grid; rebuilt as the
+  mock-up's story columns (`monopsonyScenarios`): each tone-coded column
+  carries a circular icon badge, blurb, a mini sellers→buyer scene with a
+  dashed arrow, and a DRIVERS bullet list — Local employer (blue) ·
+  Supermarket & farmers (amber) · Large processor (purple) · Public or
+  platform buyer (green). 4→2→1 column responsive; mobile verified.
+- DUP_BASELINE 6844 → 6903 (hand-rolled glyph/scene fills); `sw.js`
+  cache `econos-v550` → `econos-v551`.
+
 ## 0.164.2 — 2026-06-11
 
 ### Hit-and-run flow legibility + sitewide "Vs" styling for tile pairs

@@ -49,8 +49,10 @@ const check = process.argv.includes('--check');
    when the market-structure spectrum labels switched from grey to black ink
    (#0B1426 SVG attribute fills, cannot take a CSS var); lowered to 6790
    (v0.158.0) when mcCharacteristicsHub was retired — Monopolistic Competition
-   card 2 now uses the engine twin-demand spec instead of hand-rolled SVG. */
-const DUP_BASELINE = 6790;
+   card 2 now uses the engine twin-demand spec instead of hand-rolled SVG;
+   raised to 6828 (v0.160.2) for the collusionBigPicture scene rebuild
+   (two-futures illustration — hand-rolled SVG art fills). */
+const DUP_BASELINE = 6828;
 
 const css = readFileSync('styles.css', 'utf8');
 

@@ -21615,98 +21615,213 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* collusionBigPicture – Card 1 of Collusion & Cartels. Three firm tiles
-     (Firm A/B/C) joined by brackets feed into a central HANDSHAKE pill
-     ("Firms coordinate rather than compete"), which then arrows out to the
-     two outcomes: HIGHER PRICES and RESTRICTED OUTPUT. Dual layout:
-     horizontal on desktop (.cbp-h), vertical on mobile (.cbp-v). */
+  /* collusionBigPicture – Card 1 of Collusion & Cartels. "Two futures of
+     the same market": centre scene = three rival firm buildings converging on
+     a back-room table (handshake, dashed behind-closed-doors ring); left fan
+     (dashed, faded) = the competitive future they give up (green cards);
+     right fan (solid) = the future the handshake picks (rose cards). Desktop
+     SVG scene + stacked mobile variant. */
   collusionBigPicture: `
-    <div class="cbp" style="background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;line-height:1.55;">
       <style>
-        .cbp .cbp-v { display:none; }
-        .cbp .cbp-h { display:grid; grid-template-columns: 1.5fr 60px 1fr 60px 1.4fr; align-items:center; gap:8px; }
-        .cbp .firms { display:flex; flex-direction:column; gap:4px; }
-        .cbp .firms-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-        .cbp .firm-tile { background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:12px; padding:14px 10px; text-align:center; }
-        .cbp .firm-tile .ico { font-size:28px; line-height:1; }
-        .cbp .firm-tile .lab { font-size:13px; font-weight:800; color:#1E3A8A; margin-top:6px; }
-        .cbp .firms-bracket { height:14px; position:relative; }
-        .cbp .firms-bracket::before, .cbp .firms-bracket::after { content:''; position:absolute; top:0; bottom:6px; width:1.5px; background:#1E3A8A; }
-        .cbp .firms-bracket::before { left:16%; }
-        .cbp .firms-bracket::after { right:16%; }
-        .cbp .firms-bracket-line { position:absolute; left:16%; right:16%; bottom:6px; height:1.5px; background:#1E3A8A; }
-        .cbp .arrow-cell { display:flex; align-items:center; justify-content:center; }
-        .cbp .arrow-cell svg { display:block; }
-        .cbp .hub { background:#F5F3FF; border:2px solid #C4B5FD; border-radius:18px; padding:18px 12px; text-align:center; }
-        .cbp .hub .ico { width:62px; height:62px; border-radius:50%; background:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:30px; box-shadow:0 2px 6px rgba(91,33,182,0.15); margin-bottom:8px; }
-        .cbp .hub .t { font-size:14px; font-weight:800; color:#5B21B6; line-height:1.3; }
-        .cbp .hub .s { font-size:11.5px; color:#6B21A8; margin-top:4px; line-height:1.4; }
-        .cbp .outcomes { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-        .cbp .out-tile { background:#FFF7ED; border:1.5px solid #FDBA74; border-radius:12px; padding:14px 8px; text-align:center; }
-        .cbp .out-tile.no { background:#FEF2F2; border-color:#FCA5A5; }
-        .cbp .out-tile .ico { font-size:26px; line-height:1; }
-        .cbp .out-tile .lab { font-size:12px; font-weight:800; color:#9A3412; margin-top:6px; line-height:1.3; }
-        .cbp .out-tile.no .lab { color:#991B1B; }
+        .clb-v { display:none; }
         @media (max-width:760px){
-          .cbp .cbp-h { display:none; }
-          .cbp .cbp-v { display:flex; flex-direction:column; align-items:center; gap:8px; }
-          .cbp .cbp-v .firms-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:100%; }
-          .cbp .cbp-v .firms-bracket { width:100%; }
-          .cbp .cbp-v .arrow-down { font-size:24px; color:#94A3B8; line-height:1; }
-          .cbp .cbp-v .hub { width:80%; max-width:280px; }
-          .cbp .cbp-v .outcomes { display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%; }
+          .clb-h { display:none; }
+          .clb-v { display:block; }
         }
       </style>
+      <div class="clb-h">
+      <svg viewBox="0 0 980 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <radialGradient id="clb-glow" cx="50%" cy="46%" r="60%">
+            <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.40"/>
+            <stop offset="65%" stop-color="#C4B5FD" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="clb-ground" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#EDE9FE"/>
+            <stop offset="100%" stop-color="#F8FAFC"/>
+          </linearGradient>
+          <linearGradient id="clb-table" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#A78BFA"/>
+            <stop offset="100%" stop-color="#7C3AED"/>
+          </linearGradient>
+          <filter id="clb-soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1E1B4B" flood-opacity="0.18"/>
+          </filter>
+        </defs>
 
-      <div class="cbp-h">
-        <div class="firms">
-          <div class="firms-row">
-            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm A</div></div>
-            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm B</div></div>
-            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm C</div></div>
-          </div>
-          <div class="firms-bracket"><div class="firms-bracket-line"></div></div>
-        </div>
-        <div class="arrow-cell">
-          <svg width="48" height="20" viewBox="0 0 48 20"><defs><marker id="cbp-arr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0B1426"/></marker></defs><line x1="2" y1="10" x2="40" y2="10" stroke="#0B1426" stroke-width="2" marker-end="url(#cbp-arr-r)"/></svg>
-        </div>
-        <div class="hub">
-          <div class="ico">\u{1F91D}</div>
-          <div class="t">Firms coordinate</div>
-          <div class="s">rather than compete</div>
-        </div>
-        <div class="arrow-cell">
-          <svg width="48" height="20" viewBox="0 0 48 20"><line x1="2" y1="10" x2="40" y2="10" stroke="#0B1426" stroke-width="2" marker-end="url(#cbp-arr-r)"/></svg>
-        </div>
-        <div class="outcomes">
-          <div class="out-tile"><div class="ico">\u{1F3F7}\u{FE0F}</div><div class="lab">Higher prices</div></div>
-          <div class="out-tile no"><div class="ico">\u{1F6AB}</div><div class="lab">Restricted output</div></div>
-        </div>
+        <!-- Column headers -->
+        <text x="150" y="30" font-size="14.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">If they compete…</text>
+        <text x="830" y="30" font-size="14.5" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">If they collude…</text>
+
+        <!-- ════════ CENTRE SCENE ════════ -->
+        <circle cx="490" cy="265" r="215" fill="url(#clb-glow)"/>
+        <ellipse cx="490" cy="318" rx="195" ry="40" fill="url(#clb-ground)"/>
+
+        <!-- Firm A (left building, mid blue) -->
+        <g filter="url(#clb-soft)">
+          <rect x="352" y="148" width="64" height="120" rx="3" fill="#4D6DB5"/>
+          <rect x="349" y="142" width="70" height="8" rx="3" fill="#2C4377"/>
+          <rect x="361" y="160" width="11" height="10" fill="#DCE6F7"/><rect x="378" y="160" width="11" height="10" fill="#DCE6F7"/><rect x="395" y="160" width="11" height="10" fill="#DCE6F7"/>
+          <rect x="361" y="178" width="11" height="10" fill="#DCE6F7"/><rect x="378" y="178" width="11" height="10" fill="#DCE6F7"/><rect x="395" y="178" width="11" height="10" fill="#DCE6F7"/>
+          <rect x="361" y="196" width="11" height="10" fill="#DCE6F7"/><rect x="378" y="196" width="11" height="10" fill="#DCE6F7"/><rect x="395" y="196" width="11" height="10" fill="#DCE6F7"/>
+          <rect x="361" y="214" width="11" height="10" fill="#DCE6F7"/><rect x="378" y="214" width="11" height="10" fill="#DCE6F7"/><rect x="395" y="214" width="11" height="10" fill="#DCE6F7"/>
+          <rect x="376" y="244" width="16" height="24" rx="1.5" fill="#2C4377"/>
+        </g>
+        <text x="384" y="288" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm A</text>
+
+        <!-- Firm B (centre building, tallest, indigo) -->
+        <g filter="url(#clb-soft)">
+          <rect x="455" y="108" width="70" height="160" rx="3" fill="#6E89C9"/>
+          <rect x="452" y="102" width="76" height="8" rx="3" fill="#2C4377"/>
+          <rect x="465" y="122" width="12" height="11" fill="#E8EEF9"/><rect x="484" y="122" width="12" height="11" fill="#E8EEF9"/><rect x="503" y="122" width="12" height="11" fill="#E8EEF9"/>
+          <rect x="465" y="141" width="12" height="11" fill="#E8EEF9"/><rect x="484" y="141" width="12" height="11" fill="#E8EEF9"/><rect x="503" y="141" width="12" height="11" fill="#E8EEF9"/>
+          <rect x="465" y="160" width="12" height="11" fill="#E8EEF9"/><rect x="484" y="160" width="12" height="11" fill="#E8EEF9"/><rect x="503" y="160" width="12" height="11" fill="#E8EEF9"/>
+          <rect x="465" y="179" width="12" height="11" fill="#E8EEF9"/><rect x="484" y="179" width="12" height="11" fill="#E8EEF9"/><rect x="503" y="179" width="12" height="11" fill="#E8EEF9"/>
+          <rect x="465" y="198" width="12" height="11" fill="#E8EEF9"/><rect x="484" y="198" width="12" height="11" fill="#E8EEF9"/><rect x="503" y="198" width="12" height="11" fill="#E8EEF9"/>
+          <rect x="482" y="240" width="16" height="28" rx="1.5" fill="#2C4377"/>
+        </g>
+        <text x="490" y="288" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm B</text>
+
+        <!-- Firm C (right building, dark accents) -->
+        <g filter="url(#clb-soft)">
+          <rect x="564" y="158" width="62" height="110" rx="3" fill="#5878BE"/>
+          <rect x="561" y="152" width="68" height="8" rx="3" fill="#2C4377"/>
+          <rect x="573" y="170" width="11" height="10" fill="#DCE6F7"/><rect x="590" y="170" width="11" height="10" fill="#DCE6F7"/><rect x="607" y="170" width="11" height="10" fill="#DCE6F7"/>
+          <rect x="573" y="188" width="11" height="10" fill="#DCE6F7"/><rect x="590" y="188" width="11" height="10" fill="#DCE6F7"/><rect x="607" y="188" width="11" height="10" fill="#DCE6F7"/>
+          <rect x="573" y="206" width="11" height="10" fill="#DCE6F7"/><rect x="590" y="206" width="11" height="10" fill="#DCE6F7"/><rect x="607" y="206" width="11" height="10" fill="#DCE6F7"/>
+          <rect x="586" y="244" width="16" height="24" rx="1.5" fill="#2C4377"/>
+        </g>
+        <text x="595" y="288" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm C</text>
+
+        <!-- Converging paths from each firm down to the table -->
+        <g stroke="#A78BFA" stroke-width="2" stroke-dasharray="4 4" fill="none" stroke-linecap="round">
+          <path d="M 384 296 C 390 340 420 372 452 392"/>
+          <path d="M 490 296 L 490 376"/>
+          <path d="M 595 296 C 590 340 560 372 528 392"/>
+        </g>
+
+        <!-- The back-room ring -->
+        <ellipse cx="490" cy="442" rx="148" ry="74" fill="#F5F3FF" opacity="0.6"/>
+        <ellipse cx="490" cy="442" rx="148" ry="74" fill="none" stroke="#7C3AED" stroke-width="1.6" stroke-dasharray="7 6"/>
+        <text x="490" y="540" font-size="12.5" font-style="italic" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">behind closed doors</text>
+
+        <!-- Round table + three figures + handshake -->
+        <ellipse cx="490" cy="452" rx="84" ry="28" fill="url(#clb-table)" filter="url(#clb-soft)"/>
+        <ellipse cx="490" cy="446" rx="84" ry="26" fill="#EDE9FE"/>
+        <!-- figures: heads + shoulders in each firm's colour -->
+        <g>
+          <circle cx="408" cy="416" r="9" fill="#4D6DB5"/><path d="M 394 438 C 394 425 422 425 422 438 Z" fill="#4D6DB5"/>
+          <circle cx="490" cy="402" r="9" fill="#6E89C9"/><path d="M 476 424 C 476 411 504 411 504 424 Z" fill="#6E89C9"/>
+          <circle cx="572" cy="416" r="9" fill="#5878BE"/><path d="M 558 438 C 558 425 586 425 586 438 Z" fill="#5878BE"/>
+        </g>
+        <circle cx="490" cy="447" r="22" fill="#fff" filter="url(#clb-soft)"/>
+        <text x="490" y="455" font-size="22" text-anchor="middle">🤝</text>
+
+        <!-- ════════ LEFT FAN (dashed + faded — the future given up) ════════ -->
+        <g stroke="#86EFAC" stroke-width="2" stroke-dasharray="5 5" fill="none" stroke-linecap="round" opacity="0.8">
+          <path d="M 354 412 C 318 380 296 320 282 168"/>
+          <path d="M 346 432 C 308 420 290 380 278 312"/>
+          <path d="M 344 452 C 312 458 296 452 280 446"/>
+        </g>
+        <!-- ════════ RIGHT FAN (solid — the future chosen) ════════ -->
+        <g stroke="#FB7185" stroke-width="2.4" fill="none" stroke-linecap="round">
+          <path d="M 626 412 C 662 380 684 320 698 168"/>
+          <path d="M 634 432 C 672 420 690 380 702 312"/>
+          <path d="M 636 452 C 668 458 684 452 700 446"/>
+        </g>
+
+        <!-- LEFT cards (green, the competitive future) -->
+        <g font-family="Inter,sans-serif">
+          <rect x="30" y="118" width="250" height="88" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+          <text x="52" y="154" font-size="20">💷</text>
+          <text x="84" y="150" font-size="14" font-weight="800" fill="#065F46">Prices pushed down</text>
+          <text x="84" y="172" font-size="12.5" fill="#0B1426">Rivalry drives price toward</text>
+          <text x="84" y="189" font-size="12.5" fill="#0B1426">cost — deals for customers.</text>
+
+          <rect x="30" y="262" width="250" height="88" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+          <text x="52" y="298" font-size="20">📦</text>
+          <text x="84" y="294" font-size="14" font-weight="800" fill="#065F46">Output expands</text>
+          <text x="84" y="316" font-size="12.5" fill="#0B1426">Firms fight to serve every</text>
+          <text x="84" y="333" font-size="12.5" fill="#0B1426">customer they can win.</text>
+
+          <rect x="30" y="406" width="250" height="88" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>
+          <text x="52" y="442" font-size="20">😀</text>
+          <text x="84" y="438" font-size="14" font-weight="800" fill="#065F46">Consumers win</text>
+          <text x="84" y="460" font-size="12.5" fill="#0B1426">Lower prices, more choice,</text>
+          <text x="84" y="477" font-size="12.5" fill="#0B1426">better service.</text>
+        </g>
+
+        <!-- RIGHT cards (rose, the collusive future) -->
+        <g font-family="Inter,sans-serif">
+          <rect x="700" y="118" width="250" height="88" rx="14" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.4"/>
+          <text x="722" y="154" font-size="20">🏷️</text>
+          <text x="754" y="150" font-size="14" font-weight="800" fill="#9F1239">Higher prices</text>
+          <text x="754" y="172" font-size="12.5" fill="#0B1426">Set together, the way a</text>
+          <text x="754" y="189" font-size="12.5" fill="#0B1426">monopolist would.</text>
+
+          <rect x="700" y="262" width="250" height="88" rx="14" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.4"/>
+          <text x="722" y="298" font-size="20">🚫</text>
+          <text x="754" y="294" font-size="14" font-weight="800" fill="#9F1239">Restricted output</text>
+          <text x="754" y="316" font-size="12.5" fill="#0B1426">Quantity is limited on purpose</text>
+          <text x="754" y="333" font-size="12.5" fill="#0B1426">to keep the price up.</text>
+
+          <rect x="700" y="406" width="250" height="88" rx="14" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.4"/>
+          <text x="722" y="442" font-size="20">💰</text>
+          <text x="754" y="438" font-size="14" font-weight="800" fill="#9F1239">Supernormal joint profit</text>
+          <text x="754" y="460" font-size="12.5" fill="#0B1426">The monopoly-style prize,</text>
+          <text x="754" y="477" font-size="12.5" fill="#0B1426">split between the members.</text>
+        </g>
+
+        <!-- Bottom caption -->
+        <text x="490" y="585" font-size="13.5" font-style="italic" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Same firms, same market — the handshake decides which future happens. That is why collusion is illegal.</text>
+      </svg>
       </div>
 
-      <div class="cbp-v">
-        <div style="width:100%;">
-          <div class="firms-row">
-            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm A</div></div>
-            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm B</div></div>
-            <div class="firm-tile"><div class="ico">\u{1F3E2}</div><div class="lab">Firm C</div></div>
-          </div>
-          <div class="firms-bracket"><div class="firms-bracket-line"></div></div>
-        </div>
-        <div class="arrow-down">\u{2193}</div>
-        <div class="hub">
-          <div class="ico">\u{1F91D}</div>
-          <div class="t">Firms coordinate</div>
-          <div class="s">rather than compete</div>
-        </div>
-        <div class="arrow-down">\u{2193}</div>
-        <div class="outcomes">
-          <div class="out-tile"><div class="ico">\u{1F3F7}\u{FE0F}</div><div class="lab">Higher prices</div></div>
-          <div class="out-tile no"><div class="ico">\u{1F6AB}</div><div class="lab">Restricted output</div></div>
+      <!-- ── Mobile (stacked) ── -->
+      <div class="clb-v">
+        <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+          <defs>
+            <radialGradient id="clb-glow-m" cx="50%" cy="46%" r="60%">
+              <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.40"/>
+              <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="180" cy="125" r="115" fill="url(#clb-glow-m)"/>
+          <ellipse cx="180" cy="150" rx="120" ry="22" fill="#EDE9FE"/>
+          <g>
+            <rect x="98" y="64" width="42" height="80" rx="2" fill="#4D6DB5"/><rect x="96" y="60" width="46" height="6" rx="2" fill="#2C4377"/>
+            <rect x="105" y="74" width="8" height="7" fill="#DCE6F7"/><rect x="117" y="74" width="8" height="7" fill="#DCE6F7"/><rect x="129" y="74" width="8" height="7" fill="#DCE6F7"/>
+            <rect x="105" y="86" width="8" height="7" fill="#DCE6F7"/><rect x="117" y="86" width="8" height="7" fill="#DCE6F7"/><rect x="129" y="86" width="8" height="7" fill="#DCE6F7"/>
+            <rect x="159" y="38" width="46" height="106" rx="2" fill="#6E89C9"/><rect x="157" y="34" width="50" height="6" rx="2" fill="#2C4377"/>
+            <rect x="166" y="48" width="9" height="8" fill="#E8EEF9"/><rect x="179" y="48" width="9" height="8" fill="#E8EEF9"/><rect x="192" y="48" width="9" height="8" fill="#E8EEF9"/>
+            <rect x="166" y="61" width="9" height="8" fill="#E8EEF9"/><rect x="179" y="61" width="9" height="8" fill="#E8EEF9"/><rect x="192" y="61" width="9" height="8" fill="#E8EEF9"/>
+            <rect x="224" y="70" width="40" height="74" rx="2" fill="#5878BE"/><rect x="222" y="66" width="44" height="6" rx="2" fill="#2C4377"/>
+            <rect x="231" y="80" width="8" height="7" fill="#DCE6F7"/><rect x="243" y="80" width="8" height="7" fill="#DCE6F7"/>
+          </g>
+          <text x="119" y="160" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm A</text>
+          <text x="182" y="160" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm B</text>
+          <text x="244" y="160" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Firm C</text>
+          <ellipse cx="180" cy="212" rx="92" ry="34" fill="none" stroke="#7C3AED" stroke-width="1.4" stroke-dasharray="6 5"/>
+          <ellipse cx="180" cy="214" rx="52" ry="16" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.2"/>
+          <circle cx="180" cy="212" r="15" fill="#fff"/>
+          <text x="180" y="218" font-size="15" text-anchor="middle">🤝</text>
+          <text x="180" y="262" font-size="11" font-style="italic" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">behind closed doors</text>
+        </svg>
+        <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px;">
+          <div style="font-size:13px;font-weight:800;color:#065F46;">If they compete…</div>
+          <div style="background:#ECFDF5;border:1.4px solid #86EFAC;border-radius:12px;padding:10px 12px;font-size:12.5px;"><strong style="color:#065F46;">💷 Prices pushed down</strong> — rivalry drives price toward cost.</div>
+          <div style="background:#ECFDF5;border:1.4px solid #86EFAC;border-radius:12px;padding:10px 12px;font-size:12.5px;"><strong style="color:#065F46;">📦 Output expands</strong> — firms fight to serve every customer.</div>
+          <div style="background:#ECFDF5;border:1.4px solid #86EFAC;border-radius:12px;padding:10px 12px;font-size:12.5px;"><strong style="color:#065F46;">😀 Consumers win</strong> — lower prices, more choice.</div>
+          <div style="font-size:13px;font-weight:800;color:#9F1239;margin-top:4px;">If they collude…</div>
+          <div style="background:#FFF1F2;border:1.4px solid #FDA4AF;border-radius:12px;padding:10px 12px;font-size:12.5px;"><strong style="color:#9F1239;">🏷️ Higher prices</strong> — set together, the way a monopolist would.</div>
+          <div style="background:#FFF1F2;border:1.4px solid #FDA4AF;border-radius:12px;padding:10px 12px;font-size:12.5px;"><strong style="color:#9F1239;">🚫 Restricted output</strong> — quantity limited to keep the price up.</div>
+          <div style="background:#FFF1F2;border:1.4px solid #FDA4AF;border-radius:12px;padding:10px 12px;font-size:12.5px;"><strong style="color:#9F1239;">💰 Supernormal joint profit</strong> — the monopoly prize, split between members.</div>
+          <div style="font-size:11.5px;font-style:italic;color:#0B1426;text-align:center;margin-top:2px;">The handshake decides which future happens — that is why collusion is illegal.</div>
         </div>
       </div>
-    </div>
-  `,
+    </div>`,
 
   /* cartelJointProfitInteractive – Card 2 of Collusion & Cartels. Interactive
      3-view build of the cartel joint-profit diagram. The mockup shows the

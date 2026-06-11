@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.160.2 — 2026-06-11
+
+### Collusion card 1 — "two futures of the same market" scene
+
+- `collusionBigPicture` rebuilt from a flat tile strip (which also had a
+  Firm/A label collision) into an illustrated scene in the externalEconomies
+  style: three rival firm buildings (glow + gradient ground + drop shadows)
+  converge on a back-room table — three figures, handshake, dashed
+  "behind closed doors" ring. Left fan (dashed, faded) leads to the
+  competitive future given up (green: prices down · output expands ·
+  consumers win); right fan (solid) to the future the handshake picks
+  (rose: higher prices · restricted output · supernormal joint profit).
+  Caption lands the point: the handshake decides which future happens —
+  that is why collusion is illegal.
+- Mobile variant: stacked scene + green/rose card columns. Fixed an
+  inherited `line-height:0` from the visual wrapper that collapsed the
+  mobile card text.
+- DUP_BASELINE 6790 → 6828 (hand-rolled SVG fills); `sw.js` cache
+  `econos-v539` → `econos-v540`.
+
 ## 0.160.1 — 2026-06-11
 
 ### Kinked demand curve — swoosh MCs + decluttered later views

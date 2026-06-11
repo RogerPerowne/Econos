@@ -434,7 +434,7 @@
       points.push({ x: nx, on: 'AR', tone: 'green', radius: 4.5, layer: L[2] });
       texts.push({ x: -0.012, y: pmY, text: pLabel, tone: 'green', bold: true, anchor: 'end', layer: L[2] });
       // group 3: AC at Qm + supernormal-profit / loss rectangle
-      polygons.push({ points: [[0, acmY], [nx, acmY], [nx, pmY], [0, pmY]], tone: profit ? 'green' : 'rose', opacity: 0.22, layer: L[3] });
+      polygons.push({ points: [[0, acmY], [nx, acmY], [nx, pmY], [0, pmY]], tone: profit ? 'green' : 'rose', opacity: 0.6, layer: L[3] });
       curves.push({ id: '_ac', shape: { type: 'horizontal', y: acmY, from: 0, to: nx },
         tone: 'purple', strokeWidth: 1.3, dashed: '4 3', layer: L[3] });
       points.push({ x: nx, on: 'AC', tone: 'purple', radius: 4, layer: L[3] });
@@ -590,18 +590,21 @@
     if (qS != null) {
       var nxs = qS / qAxis, pS = arSR(qS) / yAxis, acS = M.ac(qS) / yAxis;
       curves.push(vline(nxs, 0, pS, 'slate', '3 3', 'lr-1'));
-      polygons.push({ points: [[0, acS], [nxs, acS], [nxs, pS], [0, pS]], tone: 'green', opacity: 0.22, layer: 'lr-1' });
+      polygons.push({ points: [[0, acS], [nxs, acS], [nxs, pS], [0, pS]], tone: 'green', opacity: 0.6, layer: 'lr-1' });
       points.push({ x: nxs, on: 'ARsr', tone: 'green', radius: 4.5, layer: 'lr-1' });
       texts.push({ x: nxs, y: -0.05, text: 'Q₁', tone: 'slate', bold: true, anchor: 'middle', layer: 'lr-1' });
+      // cost + profit (price) points flagged on the y-axis
+      texts.push({ x: -0.012, y: pS, text: 'P₁', tone: 'green', bold: true, anchor: 'end', layer: 'lr-1' });
+      texts.push({ x: -0.012, y: acS, text: 'C₁', tone: 'blue', bold: true, anchor: 'end', layer: 'lr-1' });
       texts.push({ x: nxs / 2, y: (acS + pS) / 2, text: 'Profit', tone: 'green', bold: true, anchor: 'middle', layer: 'lr-1' });
     }
 
     // ── lr-2: entry shifts demand left ──
-    curves.push({ id: 'ARsr2', d: samplePath(arSR, qMin, arSRend, qAxis, yAxis, 2), tone: 'slate', dashed: '5 4', strokeWidth: 1.8, layer: 'lr-2' });
+    curves.push({ id: 'ARsr2', d: samplePath(arSR, qMin, arSRend, qAxis, yAxis, 2), tone: 'slate', dashed: '5 4', strokeWidth: 1.8, label: 'D (SR)', labelDx: -4, labelDy: -8, anchor: 'end', layer: 'lr-2' });
     var arLRend = Math.min(cap, -LR.a / LR.m - 1), mrLRend = Math.min(cap, -LR.a / (2 * LR.m));
-    curves.push({ id: 'ARlr2', d: samplePath(LR.ar, qMin, arLRend, qAxis, yAxis, 2), tone: 'green', label: 'D (LR)', strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end', layer: 'lr-2' });
-    curves.push({ id: 'MRlr2', d: samplePath(LR.mr, qMin, mrLRend, qAxis, yAxis, 2), tone: 'amber', strokeWidth: 2.0, layer: 'lr-2' });
-    texts.push({ x: 0.5, y: 0.9, text: 'Entry shifts demand left →', tone: 'slate', bold: true, anchor: 'middle', layer: 'lr-2' });
+    curves.push({ id: 'ARlr2', d: samplePath(LR.ar, qMin, arLRend, qAxis, yAxis, 2), tone: 'green', label: 'D (LR)', strokeWidth: 2.4, labelDx: -4, labelDy: 12, anchor: 'end', layer: 'lr-2' });
+    curves.push({ id: 'MRlr2', d: samplePath(LR.mr, qMin, mrLRend, qAxis, yAxis, 2), tone: 'amber', label: 'MR', strokeWidth: 2.0, labelDx: -4, labelDy: 10, anchor: 'end', layer: 'lr-2' });
+    texts.push({ x: 0.5, y: 0.95, text: 'Entry shifts demand left →', tone: 'slate', bold: true, anchor: 'middle', layer: 'lr-2' });
 
     // ── lr-3: long-run tangency (P = AC, normal profit) ──
     curves.push({ id: 'ARlr', d: samplePath(LR.ar, qMin, arLRend, qAxis, yAxis, 2), tone: 'green', label: 'D (LR)', strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end', layer: 'lr-3' });
@@ -661,7 +664,7 @@
       points.push({ intersection: { curves: ['MC', 'AC'], near: [nxm, acm] }, tone: 'blue', radius: 4.5, label: 'min AC', labelDx: 8, labelDy: -8, anchor: 'start', layer: 'mce-2' });
       texts.push({ x: nxm, y: -0.05, text: 'Q_min', tone: 'blue', bold: true, anchor: 'middle', layer: 'mce-2' });
       // excess-capacity bracket near the x-axis
-      polygons.push({ points: [[nxl, 0.04], [nxm, 0.04], [nxm, 0.075], [nxl, 0.075]], tone: 'rose', opacity: 0.3, layer: 'mce-2' });
+      polygons.push({ points: [[nxl, 0.04], [nxm, 0.04], [nxm, 0.075], [nxl, 0.075]], tone: 'rose', opacity: 0.6, layer: 'mce-2' });
       texts.push({ x: (nxl + nxm) / 2, y: 0.12, text: 'Excess capacity', tone: 'rose', bold: true, anchor: 'middle', layer: 'mce-2' });
     }
 
@@ -738,9 +741,10 @@
       var x1 = nyx(q1), p1 = ar(q1) / yAxis, mc1 = M.mc(q1) / yAxis, ac1 = M.ac(q1) / yAxis;
       points.push({ intersection: { curves: ['MC', 'MR'], near: [x1, mc1] }, tone: 'slate', radius: 4, layer: 'nm-2' });
       curves.push({ id: '_d1', shape: { type: 'vertical', x: x1, from: 0, to: p1 }, tone: 'slate', strokeWidth: 1.2, dashed: '3 3', layer: 'nm-2' });
-      polygons.push({ points: [[0, ac1], [x1, ac1], [x1, p1], [0, p1]], tone: 'green', opacity: 0.20, layer: 'nm-2' });
+      polygons.push({ points: [[0, ac1], [x1, ac1], [x1, p1], [0, p1]], tone: 'green', opacity: 0.6, layer: 'nm-2' });
       points.push({ x: x1, on: 'AR', tone: 'green', radius: 4.5, layer: 'nm-2' });
       texts.push({ x: -0.012, y: p1, text: 'P₁', tone: 'green', bold: true, anchor: 'end', layer: 'nm-2' });
+      texts.push({ x: -0.012, y: ac1, text: 'C₁', tone: 'blue', bold: true, anchor: 'end', layer: 'nm-2' });
       texts.push({ x: x1, y: -0.05, text: 'Q₁', tone: 'slate', bold: true, anchor: 'middle', layer: 'nm-2' });
       texts.push({ x: x1 / 2, y: (ac1 + p1) / 2, text: 'Profit', tone: 'green', bold: true, anchor: 'middle', layer: 'nm-2' });
     }
@@ -1036,7 +1040,7 @@
           tone: 'rose', strokeWidth: 2.0, dashed: '5 3' }
       ];
       var polygons = [
-        { points: [[0, 0], [nx(Q), 0], [nx(Q), ny(P)], [0, ny(P)]], tone: 'amber', opacity: 0.16 }
+        { points: [[0, 0], [nx(Q), 0], [nx(Q), ny(P)], [0, ny(P)]], tone: 'amber', opacity: 0.5 }
       ];
       var points = [
         { x: nx(Q), intersection: { curves: [mrId, mcId], near: [nx(Q), ny(mc)] }, tone: 'slate', radius: 4 },

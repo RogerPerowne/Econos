@@ -48,9 +48,9 @@
     },
     polygons: [
       // Underused region – amber wash under the curve.
-      { points: UNDERUSED, tone: 'amber', opacity: 0.14 },
+      { points: UNDERUSED, tone: 'amber', opacity: 0.45 },
       // Unattainable region – green wash above the curve.
-      { points: UNATTAINABLE, tone: 'green', opacity: 0.14 }
+      { points: UNATTAINABLE, tone: 'green', opacity: 0.45 }
     ],
     curves: [
       // The frontier itself – blue, just labelled "PPF". The

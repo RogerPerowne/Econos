@@ -24,9 +24,9 @@
     },
     polygons: [
       /* Area A — the lens between the equality line and the Lorenz curve */
-      { points: [[0, 0], [0.25, 0.25], [0.5, 0.5], [0.75, 0.75], [1, 1], [0.823, 0.522], [0.594, 0.226], [0.318, 0.068]], tone: 'blue', opacity: 0.22 },
+      { points: [[0, 0], [0.25, 0.25], [0.5, 0.5], [0.75, 0.75], [1, 1], [0.823, 0.522], [0.594, 0.226], [0.318, 0.068]], tone: 'blue', opacity: 0.5 },
       /* Area B — beneath the Lorenz curve down to the x-axis */
-      { points: [[0, 0], [0.318, 0.068], [0.594, 0.226], [0.823, 0.522], [1, 1], [1, 0]], tone: 'green', opacity: 0.16 }
+      { points: [[0, 0], [0.318, 0.068], [0.594, 0.226], [0.823, 0.522], [1, 1], [1, 0]], tone: 'green', opacity: 0.5 }
     ],
     curves: [
       { d: 'M 0,0 L 1,1', tone: 'slate', strokeWidth: 2, dashed: '5 4' },

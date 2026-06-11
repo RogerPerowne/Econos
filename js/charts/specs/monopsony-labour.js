@@ -25,7 +25,7 @@
       { id: 'MRP', d: 'M 0,0.865 L 0.931,0.201', tone: 'blue', label: 'MRP', strokeWidth: 2.4, labelDx: 6, labelDy: 10, anchor: 'start' }
     ],
     polygons: [
-      { layer: 'ms-3', points: [[0, 0.369], [0.014, 0.369], [0.014, 0.482], [0, 0.482]], tone: 'rose', opacity: 0.6 }
+      { layer: 'ms-3', points: [[0, 0.369], [0.014, 0.369], [0.014, 0.482], [0, 0.482]], tone: 'rose', opacity: 0.72 }
     ],
     points: [
       { layer: 'ms-1', intersection: { curves: ['MCL', 'MRP'], near: [0.366, 0.606] }, tone: 'slate', radius: 6.5, hollow: true },

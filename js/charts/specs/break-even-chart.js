@@ -22,8 +22,8 @@
     layers: ['bec-1', 'bec-2', 'bec-3'],
     axes: { x: { label: 'Output (Q)' }, y: { label: 'Costs & revenue (£)' } },
     polygons: [
-      { layer: 'bec-3', points: [[0, 0], [0, 0.308], [BE.x, BE.y]], tone: 'rose', opacity: 0.35 },
-      { layer: 'bec-3', points: [[BE.x, BE.y], [0.923, 0.923], [0.923, 0.769]], tone: 'green', opacity: 0.5 }
+      { layer: 'bec-3', points: [[0, 0], [0, 0.308], [BE.x, BE.y]], tone: 'rose', opacity: 0.6 },
+      { layer: 'bec-3', points: [[BE.x, BE.y], [0.923, 0.923], [0.923, 0.769]], tone: 'green', opacity: 0.6 }
     ],
     curves: [
       { id: 'TC', d: 'M 0,0.308 L 0.923,0.769', tone: 'rose', label: 'Total cost', strokeWidth: 2.6, labelDx: 6, labelDy: -2, anchor: 'start', layer: 'bec-1' },

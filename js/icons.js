@@ -18294,73 +18294,13 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* mcCharacteristicsHub – Card 2. 5-spoke hub showing the
-     characteristics of monopolistic competition. Same fhub-5 grammar. */
-  mcCharacteristicsHub: `
-    <div class="mcch" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
-      <style>
-        .mcch .mh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28%; row-gap:14px; position:relative; z-index:1; }
-        .mcch .mh-grid > .mh-bottom { grid-column:1 / -1; display:flex; justify-content:center; margin-top:8px; }
-        .mcch .mh-bottom .mh-tile { width:46%; max-width:none; }
-        .mcch .mh-center { position:absolute; top:32%; left:50%; transform:translate(-50%,-50%); z-index:2; }
-        .mcch .mh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
-        .mcch .mh-tile { border-radius:13px; padding:12px 14px; display:flex; gap:12px; align-items:flex-start; min-height:96px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
-        .mcch .mh-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
-        .mcch .mh-t { font-size:13.5px; font-weight:800; line-height:1.2; }
-        .mcch .mh-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
-        @media (max-width:600px){
-          .mcch > div { display:flex; flex-direction:column-reverse; }
-          .mcch .mh-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
-          .mcch .mh-center { position:static; transform:none; margin:6px auto; }
-          .mcch .mh-center-wrap { order:99; display:flex; justify-content:center; }
-          .mcch .mh-bottom { margin-top:0; }
-          .mcch .mh-bottom .mh-tile { width:auto; max-width:none; flex:1; }
-          .mcch .mh-conn { display:none; }
-        }
-      </style>
-      <div style="position:relative;max-width:740px;margin:0 auto;">
-        <svg class="mh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 36 15 C 44 15, 44 32, 50 32" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 64 15 C 56 15, 56 32, 50 32" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 36 49 C 44 49, 44 32, 50 32" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 64 49 C 56 49, 56 32, 50 32" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 50 71 L 50 32" fill="none" stroke="#FCA5A5" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-        </svg>
-        <div class="mh-grid">
-          <div class="mh-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
-            <div class="mh-ic">👥</div>
-            <div><div class="mh-t" style="color:#065F46;">Many firms</div><div class="mh-s">Lots of small firms, not one dominant supplier.</div></div>
-          </div>
-          <div class="mh-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
-            <div class="mh-ic">🎨</div>
-            <div><div class="mh-t" style="color:#C2410C;">Differentiated products</div><div class="mh-s">Products are similar but not identical — branding, design, quality.</div></div>
-          </div>
-          <div class="mh-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
-            <div class="mh-ic">🚪</div>
-            <div><div class="mh-t" style="color:#1E3A8A;">Low barriers to entry &amp; exit</div><div class="mh-s">New firms can join or leave when profit signals change.</div></div>
-          </div>
-          <div class="mh-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
-            <div class="mh-ic">📢</div>
-            <div><div class="mh-t" style="color:#5B21B6;">Heavy non-price competition</div><div class="mh-s">Firms compete on quality, advertising, service and more.</div></div>
-          </div>
-          <div class="mh-bottom"><div class="mh-tile" style="background:#FEE2E2;border:1.5px solid #FCA5A5;">
-            <div class="mh-ic">🏷️</div>
-            <div><div class="mh-t" style="color:#9F1239;">Some price-making power</div><div class="mh-s">Firms can charge a little above cost — but face elastic demand.</div></div>
-          </div></div>
-        </div>
-        <div class="mh-center-wrap"><div class="mh-center" style="background:#fff;border:2px solid #E2E8F0;border-radius:50%;width:132px;height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;box-shadow:0 0 0 8px rgba(241,245,249,0.65), 0 6px 18px rgba(11,20,38,0.10);">
-          <div style="font-size:28px;line-height:1;">🏪</div>
-          <div style="font-size:12px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;margin-top:4px;text-align:center;line-height:1.2;">Monopolistic</div>
-          <div style="font-size:12px;font-weight:800;color:#0B1426;font-family:Fraunces,Georgia,serif;text-align:center;line-height:1.2;">competition</div>
-        </div></div>
-      </div>
-    </div>
-  `,
 
   /* mcShortRunDiagram – MC short-run profit max (generated, firm-model monopolyProfitMax, 3-step) */
   mcShortRunDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_SHORT_RUN_SPEC); }),
   /* mcLongRunDiagram – MC long-run tangency (generated, firm-model monopolisticLongRun, exclusive 3-step) */
   mcLongRunDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_LONG_RUN_SPEC); }),
+  /* mcDemandComparison – Card 2: price taker (PC) vs price maker (MC) twin demand panels (engine spec) */
+  mcDemandComparison: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_DEMAND_COMPARISON_SPEC); }),
   /* mcEfficiencyDiagram – MC excess capacity (generated, firm-model monopolisticEfficiency, 2-step) */
   mcEfficiencyDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_EFFICIENCY_SPEC); }),
   /* ============================================================

@@ -7,8 +7,8 @@
    judgement.
 
    Card patterns:
-     1 Hub-and-spoke (4 characteristics) + spectrum bar
-     2 Hub-and-spoke (5 characteristics in detail)
+     1 Hub-and-spoke (characteristics) + spectrum bar + examples
+     2 Twin-comparison diagram + flow chain (differentiation → demand)
      3 Decompose (interactive 3-view SR profit-max build-up)
      4 Decompose (interactive 3-view SR→entry→LR transition)
      5 Decompose (interactive 2-view LR + excess capacity reveal)
@@ -16,7 +16,7 @@
 
    New visuals (all hand-rolled):
      - mcMarketShape         (Card 1 hero: 4-hub + spectrum)
-     - mcCharacteristicsHub  (Card 2 hero: 5-spoke hub)
+     - mcDemandComparison    (Card 2 hero: engine twin demand panels)
      - mcShortRunDiagram     (Card 3 hero: interactive 3-view)
      - mcLongRunDiagram      (Card 4 hero: interactive 3-view)
      - mcEfficiencyDiagram   (Card 5 hero: interactive 2-view)
@@ -72,17 +72,6 @@ window.ECONOS_TOPIC = {
       visualLabel2: 'WHERE IT SITS',
       visualEmoji2: '\u{1F9ED}',
 
-      flowTitle: 'THE CHAIN',
-      flowEmoji: '\u{1F517}',
-      flowSep: '\u{2192}',
-      flow: [
-        { tone: 'green', icon: '\u{1F465}', title: 'Many firms',          sub: 'In the market.' },
-        { tone: 'amber', icon: '\u{1F3A8}', title: 'Products differ',      sub: 'Branding, style, quality.' },
-        { tone: 'blue',  icon: '\u{1F60A}', title: 'Consumers have preferences', sub: 'Some loyalty to brands.' },
-        { tone: 'purple', icon: '\u{1F4C9}', title: 'Each firm has some pricing power', sub: 'Downward-sloping demand.' },
-        { tone: 'rose',  icon: '\u{1F4E2}', title: 'Firms compete on quality and advertising', sub: 'Non-price competition matters.' }
-      ],
-
       causesLabel: 'EXAMPLES',
       causesEmoji: '\u{1F4DA}',
       causesStyle: 'icon-top',
@@ -102,59 +91,50 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 2 – What makes this market different?
-       Pattern: Hub-and-spoke (5 characteristics)
+       CARD 2 – Differentiation → the firm's demand curve
+       Pattern: Sequential flow chain + twin-comparison diagram
+       (the mechanism card: how differentiation tilts the demand curve)
        ==================================================================== */
     {
       id: 'mc-characteristics',
       template: 'ad-interactive',
       stepLabel: 'Learn: Card 2 of 6',
-      title: 'What makes this market different?',
-      lede: 'Monopolistic competition mixes competitive rivalry with product differentiation and non-price competition.',
+      title: 'Differentiation → the firm’s demand curve',
+      lede: 'Differentiation is the engine of this market: it is what turns a price taker into a (mild) price maker. Here is the mechanism, step by step.',
       ledeStyle: 'plain',
 
-      tip: { icon: '\u{1F3F7}\u{FE0F}', tone: 'green', text: 'Many small differences create <strong>some market power</strong> for every firm — but never as much as a monopoly.' },
+      tip: { icon: '\u{1F3F7}\u{FE0F}', tone: 'green', text: 'Many small differences create <strong>some market power</strong> for every firm — but close substitutes keep that power small.' },
 
-      visualKey: 'mcCharacteristicsHub',
-      visualLabel: 'THE CHARACTERISTICS',
-      visualEmoji: '\u{1F50D}',
+      visualKey: 'mcDemandComparison',
+      visualLabel: 'TWO DEMAND CURVES — price taker vs price maker',
+      visualEmoji: '\u{1F4C9}',
+      visualCaption: 'The same firm in two market structures: identical products force a flat demand curve; differentiation tilts it downward — but only gently.',
 
-      flowTitle: 'NON-PRICE COMPETITION',
-      flowEmoji: '\u{1F4E2}',
+      flowTitle: 'THE CHAIN',
+      flowEmoji: '\u{1F517}',
       flowSep: '\u{2192}',
       flow: [
-        { tone: 'blue',   icon: '\u{1F4E3}', title: 'Advertising', sub: 'Promotes the brand and lifts demand.' },
-        { tone: 'purple', icon: '\u{1F451}', title: 'Branding',    sub: 'Build a strong identity in consumers’ minds.' },
-        { tone: 'amber',  icon: '\u{1F4E6}', title: 'Packaging',   sub: 'Design and look attract attention on the shelf.' },
-        { tone: 'green',  icon: '\u{1F3EA}', title: 'Service',     sub: 'Friendly staff or fast delivery raises loyalty.' }
+        { tone: 'amber',  icon: '\u{1F3A8}', title: 'Firms differentiate', sub: 'Branding, style, quality, service.' },
+        { tone: 'blue',   icon: '\u{1F60A}', title: 'Consumers form preferences', sub: 'Some loyalty to a favourite brand.' },
+        { tone: 'purple', icon: '\u{1F4B7}', title: 'Some price-making power', sub: 'Raise price a little — only some customers leave.' },
+        { tone: 'green',  icon: '\u{1F4C9}', title: 'Downward-sloping demand', sub: 'Relatively elastic: substitutes are close.' }
       ],
 
-      causesLabel: 'WHY DEMAND SLOPES DOWN',
-      causesEmoji: '\u{1F4C9}',
+      causesLabel: 'THE DIFFERENTIATION TOOLKIT — non-price competition',
+      causesEmoji: '\u{1F4E2}',
       causesStyle: 'icon-top',
-      causesCols: 3,
+      causesCols: 2,
       causes: [
-        { tone: 'green', icon: '\u{1F3AF}', head: 'Product preferences',  body: 'Each firm’s product is slightly different — consumers prefer certain brands or styles.' },
-        { tone: 'amber', icon: '\u{1F465}', head: 'Customer loyalty',     body: 'Customers won’t switch instantly when prices change, so the firm has some pricing room.' },
-        { tone: 'blue',  icon: '\u{1F4C9}', head: 'Differentiation creates a niche', body: 'To sell more, firms must lower the price; raise it, and some customers leave.' }
+        { tone: 'blue',   icon: '\u{1F4E3}', head: 'Advertising', body: 'Promotes the brand and lifts demand.' },
+        { tone: 'purple', icon: '\u{1F451}', head: 'Branding',    body: 'Builds a strong identity in consumers’ minds.' },
+        { tone: 'amber',  icon: '\u{1F4E6}', head: 'Packaging',   body: 'Design and look attract attention on the shelf.' },
+        { tone: 'green',  icon: '\u{1F3EA}', head: 'Service',     body: 'Friendly staff or fast delivery raises loyalty.' }
       ],
 
-      causes2Label: 'REAL-WORLD EXAMPLES',
-      causes2Emoji: '\u{1F30D}',
-      causes2Style: 'icon-top',
-      causes2Cols: 5,
-      causes2: [
-        { tone: 'amber',  icon: '\u{2615}', head: 'Cafés',             body: '' },
-        { tone: 'blue',   icon: '\u{1F4AA}', head: 'Gyms',              body: '' },
-        { tone: 'green',  icon: '\u{1F35D}', head: 'Local restaurants', body: '' },
-        { tone: 'purple', icon: '\u{1F487}', head: 'Hair salons',       body: '' },
-        { tone: 'rose',   icon: '\u{1F457}', head: 'Clothes shops',     body: '' }
-      ],
+      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'The slope is the whole story: <strong>downward enough to choose a price, flat enough that rivals are never far away</strong>. Every diagram in the next three cards starts from this curve.' },
 
-      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Firms are <strong>numerous, but products are not identical</strong>, so each seller faces its own demand analysis.' },
-
-      conclusion: { title: 'Big idea', text: 'In other words, the characteristics produce a downward-sloping demand curve for each firm.' },
-      examEdge: 'Use real examples in answers to bring monopolistic competition to life.'
+      conclusion: { title: 'Big idea', text: 'Differentiation gives each firm its own downward-sloping — but relatively elastic — demand curve. That curve is what the rest of the topic is built on.' },
+      examEdge: 'In the exam, justify the curve before you draw it: one sentence on differentiation → preferences → price-making power earns the analysis marks that a bare diagram does not.'
     },
 
     /* ====================================================================

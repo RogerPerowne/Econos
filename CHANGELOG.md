@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.158.0 — 2026-06-11
+
+### Monopolistic Competition — cards 1 & 2 de-duplicated
+
+- The five characteristics appeared three times across the first two cards
+  (card 1 hub + card 1 chain + card 2 hub), the hub visual twice, and the
+  examples strip twice — and both cards were hub-and-spoke back-to-back.
+- Card 1 ("the big picture") now owns identity: hub (characteristics, once),
+  spectrum, examples. The redundant "THE CHAIN" restating the hub spokes is
+  gone.
+- Card 2 retitled "Differentiation → the firm's demand curve" and rebuilt as
+  the mechanism card: a NEW engine twin-comparison chart (PC's flat AR=MR=D
+  beside MC's downward-sloping, relatively elastic AR — `mcDemandComparison`,
+  spec `mc-demand-comparison.js`), one merged causal chain (differentiate →
+  preferences → price-making power → downward demand, numbered stepper), and
+  the non-price-competition toolkit. Duplicate hub + second examples strip
+  removed; conclusion/examEdge sharpened to hand off to the diagram cards.
+- Patterns now alternate (hub → flow+twin → decompose). The orphaned
+  `mcCharacteristicsHub` SVG was deleted; DUP_BASELINE lowered 6807 → 6790.
+- New spec wired into all three shells + sw precache; `sw.js` cache
+  `econos-v535` → `econos-v536`. Card 2's URL slug changes with its title
+  (old per-card links fall back to the topic cover).
+
 ## 0.157.2 — 2026-06-11
 
 ### Market-structure spectrum — bigger, blacker labels

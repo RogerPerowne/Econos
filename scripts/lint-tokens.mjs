@@ -47,8 +47,10 @@ const check = process.argv.includes('--check');
    covers; lowered to 6800 (v0.155.36) when 16 quirky legacy heroes were redrawn
    (hand-rolled SVG art, fills cannot take a CSS var); raised to 6807 (v0.157.2)
    when the market-structure spectrum labels switched from grey to black ink
-   (#0B1426 SVG attribute fills, cannot take a CSS var). */
-const DUP_BASELINE = 6807;
+   (#0B1426 SVG attribute fills, cannot take a CSS var); lowered to 6790
+   (v0.158.0) when mcCharacteristicsHub was retired — Monopolistic Competition
+   card 2 now uses the engine twin-demand spec instead of hand-rolled SVG. */
+const DUP_BASELINE = 6790;
 
 const css = readFileSync('styles.css', 'utf8');
 

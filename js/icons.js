@@ -18333,81 +18333,92 @@ window.ECONOS_ICONS = {
      of scale, nm-2 unregulated MR=MC, nm-3 P=MC (loss/subsidy), nm-4 P=AC
      break-even. Equilibria engine-solved. Replaces hand-rolled SVG. */
   naturalMonopoly: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_NATURAL_MONOPOLY_SPEC); }),
-  /* priceDiscPanels — Card 6 interactive 3-panel diagram (pd-1..pd-3).
-     Combined market sets the common MC level (MR=MC); the firm then
-     equates MR=MC in each sub-market. Inelastic Market A → high price;
-     elastic Market B → low price. MC drawn at the same y (170) in all. */
+  /* priceDiscPanels — Monopoly card 6 interactive 3-panel diagram
+     (pd-1..pd-3). Build order: the two sub-markets FIRST (A inelastic →
+     B elastic), the combined market LAST — its demand and MR are the
+     horizontal SUM of the sub-markets, so both are KINKED at the price
+     (£13) where Market B's buyers enter. All geometry computed from
+     P_A=19−0.17Q, P_B=13−0.07Q, MC=6: P_A*=12.5 @ Q 38, P_B*=9.5 @ Q 50,
+     total Q*=88 where summed MR=MC. y = 250−10P; MC at y=190. */
   priceDiscPanels: `
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
       <svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- equal-MC through-line (from pd-2) -->
+        <!-- equal-MC through-lines (appear as panels join) -->
         <g class="pd-2" style="display:none">
-          <line x1="60" y1="170" x2="745" y2="170" stroke="#DC2626" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+          <line x1="60" y1="190" x2="500" y2="190" stroke="#DC2626" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+        </g>
+        <g class="pd-3" style="display:none">
+          <line x1="500" y1="190" x2="745" y2="190" stroke="#DC2626" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
         </g>
 
-        <!-- Panel 1: combined market -->
+        <!-- Panel 1: Market A (inelastic) -->
         <g class="pd-1" style="display:none">
-          <text x="60" y="34" font-size="11.5" font-weight="800" fill="#1D4ED8">1 · Combined market</text>
+          <text x="60" y="34" font-size="11.5" font-weight="800" fill="#B45309">1 · Market A (inelastic)</text>
           <line x1="60" y1="50" x2="60" y2="250" stroke="#0B1426" stroke-width="1.4"/>
           <line x1="60" y1="250" x2="258" y2="250" stroke="#0B1426" stroke-width="1.4"/>
           <text x="258" y="266" font-size="10" fill="#475569" text-anchor="end">Q</text>
-          <line x1="60" y1="80" x2="250" y2="230" stroke="#16A34A" stroke-width="2.2"/>
-          <text x="254" y="232" font-size="11" font-weight="800" fill="#16A34A">D</text>
-          <line x1="60" y1="80" x2="170" y2="250" stroke="#D97706" stroke-width="2.2"/>
-          <text x="150" y="246" font-size="11" font-weight="800" fill="#D97706">MR</text>
-          <line x1="60" y1="170" x2="258" y2="170" stroke="#DC2626" stroke-width="2.2"/>
-          <text x="262" y="173" font-size="11" font-weight="800" fill="#DC2626">MC</text>
-          <circle cx="118" cy="170" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
-          <line x1="118" y1="170" x2="118" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
-          <text x="118" y="268" font-size="10" font-weight="800" fill="#0B1426" text-anchor="middle">MR=MC</text>
+          <line x1="60" y1="60" x2="218" y2="172" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="224" y="170" font-size="11" font-weight="800" fill="#16A34A">D_A</text>
+          <line x1="60" y1="60" x2="190" y2="244" stroke="#D97706" stroke-width="2.2"/>
+          <text x="196" y="240" font-size="11" font-weight="800" fill="#D97706">MR_A</text>
+          <line x1="60" y1="190" x2="252" y2="190" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="246" y="184" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end">MC</text>
+          <circle cx="152" cy="190" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="152" y1="190" x2="152" y2="125" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="152" cy="125" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="152" y1="125" x2="60" y2="125" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="54" y="122" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_A</text>
+          <text x="160" y="116" font-size="10" font-weight="800" fill="#065F46">high</text>
+          <line x1="152" y1="190" x2="152" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="152" y="266" font-size="10" font-weight="800" fill="#B45309" text-anchor="middle">Q_A (few)</text>
         </g>
 
-        <!-- Panel 2: market A inelastic -->
+        <!-- Panel 2: Market B (elastic) -->
         <g class="pd-2" style="display:none">
-          <text x="320" y="34" font-size="11.5" font-weight="800" fill="#B45309">2 · Market A (inelastic)</text>
+          <text x="320" y="34" font-size="11.5" font-weight="800" fill="#065F46">2 · Market B (elastic)</text>
           <line x1="320" y1="50" x2="320" y2="250" stroke="#0B1426" stroke-width="1.4"/>
           <line x1="320" y1="250" x2="500" y2="250" stroke="#0B1426" stroke-width="1.4"/>
           <text x="500" y="266" font-size="10" fill="#475569" text-anchor="end">Q</text>
-          <line x1="320" y1="90" x2="440" y2="255" stroke="#16A34A" stroke-width="2.2"/>
-          <text x="444" y="252" font-size="11" font-weight="800" fill="#16A34A">D_A</text>
-          <line x1="320" y1="90" x2="380" y2="255" stroke="#D97706" stroke-width="2.2"/>
-          <text x="384" y="250" font-size="11" font-weight="800" fill="#D97706">MR_A</text>
-          <line x1="320" y1="170" x2="500" y2="170" stroke="#DC2626" stroke-width="2.2"/>
-          <text x="504" y="173" font-size="11" font-weight="800" fill="#DC2626">MC</text>
-          <circle cx="349" cy="170" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
-          <line x1="349" y1="170" x2="349" y2="130" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <circle cx="349" cy="130" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="349" y1="130" x2="320" y2="130" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="314" y="127" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_A</text>
-          <text x="356" y="120" font-size="10" font-weight="800" fill="#065F46">high</text>
-          <line x1="349" y1="170" x2="349" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
-          <text x="349" y="266" font-size="10" font-weight="800" fill="#B45309" text-anchor="middle">Q_A (few)</text>
+          <line x1="320" y1="120" x2="494" y2="171" stroke="#16A34A" stroke-width="2.2"/>
+          <text x="472" y="160" font-size="11" font-weight="800" fill="#16A34A">D_B</text>
+          <line x1="320" y1="120" x2="478" y2="212" stroke="#D97706" stroke-width="2.2"/>
+          <text x="452" y="216" font-size="11" font-weight="800" fill="#D97706">MR_B</text>
+          <line x1="320" y1="190" x2="496" y2="190" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="490" y="184" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end">MC</text>
+          <circle cx="440" cy="190" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="440" y1="190" x2="440" y2="155" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <circle cx="440" cy="155" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <line x1="440" y1="155" x2="320" y2="155" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="314" y="152" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_B</text>
+          <text x="448" y="146" font-size="10" font-weight="800" fill="#065F46">low</text>
+          <line x1="440" y1="190" x2="440" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="440" y="266" font-size="10" font-weight="800" fill="#065F46" text-anchor="middle">Q_B (many)</text>
         </g>
 
-        <!-- Panel 3: market B elastic -->
+        <!-- Panel 3: Combined market — KINKED D and MR (horizontal sum) -->
         <g class="pd-3" style="display:none">
-          <text x="560" y="34" font-size="11.5" font-weight="800" fill="#065F46">3 · Market B (elastic)</text>
+          <text x="560" y="34" font-size="11.5" font-weight="800" fill="#1D4ED8">3 · Combined market (A + B)</text>
           <line x1="560" y1="50" x2="560" y2="250" stroke="#0B1426" stroke-width="1.4"/>
           <line x1="560" y1="250" x2="748" y2="250" stroke="#0B1426" stroke-width="1.4"/>
           <text x="748" y="266" font-size="10" fill="#475569" text-anchor="end">Q</text>
-          <line x1="560" y1="142" x2="748" y2="178" stroke="#16A34A" stroke-width="2.2"/>
-          <text x="724" y="172" font-size="11" font-weight="800" fill="#16A34A">D_B</text>
-          <line x1="560" y1="142" x2="748" y2="214" stroke="#D97706" stroke-width="2.2"/>
-          <text x="700" y="211" font-size="11" font-weight="800" fill="#D97706">MR_B</text>
-          <line x1="560" y1="170" x2="748" y2="170" stroke="#DC2626" stroke-width="2.2"/>
-          <text x="752" y="173" font-size="11" font-weight="800" fill="#DC2626">MC</text>
-          <circle cx="633" cy="170" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
-          <line x1="633" y1="170" x2="633" y2="156" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <circle cx="633" cy="156" r="5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
-          <line x1="633" y1="156" x2="560" y2="156" stroke="#16A34A" stroke-width="1.3" stroke-dasharray="4 3"/>
-          <text x="554" y="153" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end">P_B</text>
-          <text x="640" y="150" font-size="10" font-weight="800" fill="#065F46">low</text>
-          <line x1="633" y1="170" x2="633" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
-          <text x="633" y="266" font-size="10" font-weight="800" fill="#065F46" text-anchor="middle">Q_B (many)</text>
+          <!-- D: steep A-only segment, then kink at (Q35.3, P13) where B's buyers enter -->
+          <path d="M 560,60 L 627,120 L 740,148" fill="none" stroke="#16A34A" stroke-width="2.2" stroke-linejoin="round"/>
+          <text x="744" y="144" font-size="11" font-weight="800" fill="#16A34A">D</text>
+          <!-- MR: summed MR, kinked at the same price (Q17.6, P13) -->
+          <path d="M 560,60 L 593,120 L 740,194" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linejoin="round"/>
+          <text x="682" y="214" font-size="11" font-weight="800" fill="#D97706">MR</text>
+          <line x1="560" y1="190" x2="744" y2="190" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="738" y="184" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end">MC</text>
+          <!-- kink marker on D -->
+          <circle cx="627" cy="120" r="3.5" fill="#fff" stroke="#16A34A" stroke-width="1.8"/>
+          <text x="633" y="112" font-size="9.5" font-weight="700" fill="#475569">kink: B enters</text>
+          <!-- total output: summed MR = MC -->
+          <circle cx="728" cy="190" r="5.5" fill="#fff" stroke="#0B1426" stroke-width="2.2"/>
+          <line x1="728" y1="190" x2="728" y2="250" stroke="#0B1426" stroke-width="1.1" stroke-dasharray="3 3"/>
+          <text x="700" y="266" font-size="10" font-weight="800" fill="#1D4ED8" text-anchor="middle">Q_total = Q_A + Q_B</text>
         </g>
       </svg>
-    </div>
-  `,
+    </div>`,
 
   /* monopolyFeaturesHub — Card 1. Six feature tiles (3 left, 3 right)
      around a central "A monopoly firm" node. Stacks on mobile. */

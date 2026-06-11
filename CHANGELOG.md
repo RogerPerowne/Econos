@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.162.3 — 2026-06-11
+
+### Price-discrimination 3-panel build — parts first, kinked total last
+
+- Monopoly card 6 (`priceDiscPanels`) rebuilt: the reveal now starts with the
+  two sub-markets (A inelastic → B elastic) and ends with the combined
+  market — whose demand and MR are the horizontal SUM of the sub-markets,
+  so both are correctly KINKED at the price (£13) where Market B's buyers
+  enter, with a "kink: B enters" marker and total output at summed MR = MC
+  (Q_total = Q_A + Q_B). All geometry computed from P_A=19−0.17Q,
+  P_B=13−0.07Q, MC=6.
+- Label clashes resolved: MC labels anchored inside each panel above the
+  line (the old right-edge MC/D_B collision is gone); combined-panel MR
+  label clear of the Q_total dropline.
+- Card views and "HOW TO READ IT" tiles reordered/rewritten to match the
+  parts-first story ("Add them up — the combined demand is the horizontal
+  sum, kinked where the second group enters").
+- `sw.js` cache `econos-v547` → `econos-v548`.
+
 ## 0.162.2 — 2026-06-11
 
 ### Game Theory — review pass

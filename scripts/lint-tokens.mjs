@@ -53,8 +53,10 @@ const check = process.argv.includes('--check');
    raised to 6828 (v0.160.2) for the collusionBigPicture scene rebuild
    (two-futures illustration — hand-rolled SVG art fills); raised to 6844
    (v0.161.0) for the growthDriversHub six-spoke hub (Causes of Growth
-   card 2 — hand-rolled hub tile/border fills, house hub anatomy). */
-const DUP_BASELINE = 6844;
+   card 2 — hand-rolled hub tile/border fills, house hub anatomy); raised
+   to 6903 (v0.164.3) for the monopsonyScenarios four-story-column visual
+   (mock-up rebuild — hand-rolled SVG glyph/scene fills). */
+const DUP_BASELINE = 6903;
 
 const css = readFileSync('styles.css', 'utf8');
 

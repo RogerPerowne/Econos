@@ -23,10 +23,10 @@
     className: 'output-gap-sign-svg',
     background: '#FFFFFF',
     defs:
-      '<marker id="ogs-red-up" markerWidth="8" markerHeight="8" refX="4" refY="1" orient="auto"><polygon points="0,7 8,7 4,0" fill="#DC2626"/></marker>' +
-      '<marker id="ogs-red-down" markerWidth="8" markerHeight="8" refX="4" refY="7" orient="auto"><polygon points="0,1 8,1 4,8" fill="#DC2626"/></marker>' +
-      '<marker id="ogs-amber-up" markerWidth="8" markerHeight="8" refX="4" refY="1" orient="auto"><polygon points="0,7 8,7 4,0" fill="#D97706"/></marker>' +
-      '<marker id="ogs-amber-down" markerWidth="8" markerHeight="8" refX="4" refY="7" orient="auto"><polygon points="0,1 8,1 4,8" fill="#D97706"/></marker>',
+      '<marker id="ogs-red-up" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#DC2626"/></marker>' +
+      '<marker id="ogs-red-down" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#DC2626"/></marker>' +
+      '<marker id="ogs-amber-up" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#D97706"/></marker>' +
+      '<marker id="ogs-amber-down" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#D97706"/></marker>',
     divider: { x: 340, y1: 24, y2: 268 },
 
     panels: [

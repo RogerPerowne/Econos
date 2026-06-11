@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.168.3 — 2026-06-11
+
+### mcDemandComparison twin panels — stack on mobile
+
+- The "price taker vs price maker" twin-demand chart on Monopolistic
+  Competition Card 2 is a wide multi-panel SVG. On a phone it was tagged
+  `econos-chart--wide` (min-width to keep text legible) but the visualKey
+  wrapper's `overflow:hidden` clipped it, so the right-hand monopolistic
+  panel never showed. Added single-panel `ECONOS_MC_DEMAND_PC_SPEC` /
+  `ECONOS_MC_DEMAND_MC_SPEC` variants and a responsive wrapper (same
+  `.mss`-style media toggle the market spectrum uses): desktop keeps the
+  side-by-side twin; mobile renders the two panels stacked one above the
+  other, full-width and legible, with the shared caption below.
+
 ## 0.168.2 — 2026-06-11
 
 ### Dynamic-efficiency shift arrows — seated between the curves

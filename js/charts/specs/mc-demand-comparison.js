@@ -73,4 +73,47 @@
       }
     ]
   };
+
+  /* ─── Stacked-on-mobile variants ───────────────────────────────
+     The twin panels above sit side-by-side in one 660-wide SVG. On a
+     phone that SVG is tagged `econos-chart--wide`, so it clips rather
+     than shrink its text to mush — and the visualKey wrapper's
+     overflow:hidden meant the right (monopolistic) panel was cut off
+     entirely. So we also ship each panel as its own SINGLE-panel chart
+     (not multi-panel → not "wide" → scales to the viewport natively)
+     and stack them vertically on mobile. Same curves, same P_y, so the
+     three renders read identically; only the layout differs. */
+  window.ECONOS_MC_DEMAND_PC_SPEC = {
+    width: 380, height: 232,
+    chartArea: { x: 46, y: 24, width: 300, height: 184 },
+    className: 'mc-demand-pc-svg',
+    background: '#FFFFFF',
+    axes: { x: { label: 'Q' }, y: { label: 'P' } },
+    curves: [
+      { id: 'AR', d: 'M 0.06,' + P_y + ' L 0.94,' + P_y,
+        tone: 'green', label: 'AR = MR = D', strokeWidth: 2.5,
+        labelDx: -6, labelDy: -10, anchor: 'end' }
+    ],
+    texts: [
+      { x: -0.060, y: P_y, text: 'P', tone: 'green', bold: true, anchor: 'end' },
+      { x: 0.5, y: 0.16, text: 'Identical products → price taker', tone: 'slate', italic: true, anchor: 'middle' }
+    ]
+  };
+
+  window.ECONOS_MC_DEMAND_MC_SPEC = {
+    width: 380, height: 232,
+    chartArea: { x: 46, y: 24, width: 300, height: 184 },
+    className: 'mc-demand-mc-svg',
+    background: '#FFFFFF',
+    axes: { x: { label: 'Q' }, y: { label: 'P' } },
+    curves: [
+      { id: 'AR', d: 'M 0.06,0.80 L 0.94,0.24',
+        tone: 'blue', label: 'AR (D)', strokeWidth: 2.5,
+        labelDx: -8, labelDy: -10, anchor: 'end' }
+    ],
+    texts: [
+      { x: 0.5, y: 0.16, text: 'Differentiated → some pricing power', tone: 'slate', italic: true, anchor: 'middle' },
+      { x: 0.5, y: 0.04, text: 'Shallow: close substitutes', tone: 'slate', italic: true, anchor: 'middle' }
+    ]
+  };
 })();

@@ -2980,6 +2980,22 @@ img, svg { display: block; max-width: 100%; }
   .ad-interactive__diagram { overflow-x: auto !important; }
 }
 
+/* mcDemandComparison — responsive twin demand panels. Desktop shows the
+   wide side-by-side SVG; mobile (≤680px) swaps in two single-panel charts
+   stacked vertically so the right panel is never clipped. Same toggle idea
+   as the market-spectrum `.mss-h`/`.mss-v` pair. */
+.mcd-responsive { background: var(--econ-white); border-radius: var(--r-lg); }
+.mcd-stack { display: none; padding: 4px 6px 8px; }
+.mcd-stack__head { font-size: var(--fs-base); font-weight: var(--fw-extrabold); text-align: center; margin: 2px 0 4px; line-height: var(--lh-tight); }
+.mcd-stack__head--pc { color: var(--econ-green-600); }
+.mcd-stack__head--mc { color: var(--econ-blue); }
+.mcd-stack__gap { height: 10px; }
+.mcd-stack__caption { font-size: var(--fs-sm); color: var(--econ-slate); font-style: italic; text-align: center; line-height: var(--lh-normal); margin: 8px 4px 2px; }
+@media (max-width: 680px) {
+  .mcd-wide { display: none; }
+  .mcd-stack { display: block; }
+}
+
 /* Legend-below mode — charts that opt into `spec.legendPosition: 'bottom'`
    render the SVG without an inline side legend, then emit the analysis
    as HTML in this container. The HTML re-flows naturally so the same

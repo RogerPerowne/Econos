@@ -18152,8 +18152,25 @@ window.ECONOS_ICONS = {
   mcShortRunDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_SHORT_RUN_SPEC); }),
   /* mcLongRunDiagram – MC long-run tangency (generated, firm-model monopolisticLongRun, exclusive 3-step) */
   mcLongRunDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_LONG_RUN_SPEC); }),
-  /* mcDemandComparison – Card 2: price taker (PC) vs price maker (MC) twin demand panels (engine spec) */
-  mcDemandComparison: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_DEMAND_COMPARISON_SPEC); }),
+  /* mcDemandComparison – Card 2: price taker (PC) vs price maker (MC) twin demand panels.
+     Desktop = the side-by-side twin (one wide SVG). Mobile = the two panels
+     rendered as standalone single-panel charts stacked one above the other,
+     toggled by the same `.mss-h`/`.mss-v`-style media query the market
+     spectrum uses, so the right panel is never clipped on a phone. */
+  mcDemandComparison: window.__econosLazy(function () {
+    var wide = window.ECONOS_PPF.render(window.ECONOS_MC_DEMAND_COMPARISON_SPEC);
+    var pc = window.ECONOS_PPF.render(window.ECONOS_MC_DEMAND_PC_SPEC);
+    var mc = window.ECONOS_PPF.render(window.ECONOS_MC_DEMAND_MC_SPEC);
+    return '<div class="mcd-responsive">'
+      + '<div class="mcd-wide">' + wide + '</div>'
+      + '<div class="mcd-stack">'
+      +   '<div class="mcd-stack__head mcd-stack__head--pc">Perfect competition</div>' + pc
+      +   '<div class="mcd-stack__gap"></div>'
+      +   '<div class="mcd-stack__head mcd-stack__head--mc">Monopolistic competition</div>' + mc
+      +   '<div class="mcd-stack__caption">Differentiation tilts the demand curve — the firm gains some price-making power, but never much</div>'
+      + '</div>'
+      + '</div>';
+  }),
   /* mcEfficiencyDiagram – MC excess capacity (generated, firm-model monopolisticEfficiency, 2-step) */
   mcEfficiencyDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_EFFICIENCY_SPEC); }),
   /* ============================================================

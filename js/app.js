@@ -157,6 +157,59 @@
     `;
   }
 
+  /* Numbered-rows layout — a vertical list of tone-barred rows, each with a
+     numbered circle (1, 2, 3…), an optional icon, and head + body. Shared by
+     causes / causes2 / causes3 so the `numbered-rows` style renders the SAME
+     everywhere. Previously only the primary `causes` slot implemented it, so
+     a numbered-rows causes2/causes3 fell through to the icon-circle layout
+     and — with no icon in the data — drew an empty badge (the "blank circle"
+     bug). The icon column is only emitted when an icon/svgKey is present, so
+     icon-less rows read as a clean number + text. `labelHtml` is pre-built by
+     the caller (or '' when the caller already appended the section label). */
+  function renderNumberedRows(items, labelHtml) {
+    const cycle = ['green', 'blue', 'purple', 'amber', 'rose', 'slate'];
+    const rows = (items || []).map((item, i) => {
+      const tone = PATTERN_TONES[item.tone || cycle[i % cycle.length]] || PATTERN_TONES.blue;
+      const iconHtml = item.svgKey && I[item.svgKey]
+        ? `<div style="color:${tone.label};line-height:0;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${I[item.svgKey]}</div>`
+        : (item.icon ? `<div style="font-size:var(--fs-3xl);line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>` : '');
+      return `
+        <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:var(--r-lg);padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+          <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);flex-shrink:0;">${i + 1}</div>
+          ${iconHtml}
+          <div style="flex:1;min-width:0;">
+            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:3px;letter-spacing:-0.01em;">${item.head}</div>
+            <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${item.body || ''}</div>
+          </div>
+        </div>`;
+    }).join('');
+    return `${labelHtml || ''}<div style="display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 22px;">${rows}</div>`;
+  }
+
+  /* Numbered-tiles layout — a column grid of cards, each with a number badge
+     pinned top-centre, optional icon, head + body. The grid sibling of
+     `renderNumberedRows`, shared so the `numbered` style renders the same on
+     causes / causes2 / causes3 (causes2/causes3 used to fall through to the
+     icon-circle tile and draw an empty badge). Icon row only emitted when an
+     icon/svgKey is present. */
+  function renderNumberedTiles(items, labelHtml, cols) {
+    const cycle = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
+    const tiles = (items || []).map((item, i) => {
+      const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[cycle[i % cycle.length]];
+      const iconHtml = item.svgKey && I[item.svgKey]
+        ? `<div style="color:${tone.label};line-height:0;margin:4px 0 14px;display:flex;align-items:center;justify-content:center;height:48px;">${I[item.svgKey]}</div>`
+        : (item.icon ? `<div style="font-size:40px;line-height:1;margin:4px 0 14px;height:48px;display:flex;align-items:center;justify-content:center;">${renderIcon(item.icon)}</div>` : '');
+      return `
+        <div style="position:relative;border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:38px 14px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:var(--fw-extrabold);">${i + 1}</div>
+          ${iconHtml}
+          <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;letter-spacing:-0.01em;">${item.head}</div>
+          <div style="font-size:var(--fs-sm);color:var(--econ-slate-600);line-height:var(--lh-normal);">${item.body || ''}</div>
+        </div>`;
+    }).join('');
+    return `${labelHtml || ''}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`;
+  }
+
   /* Tone callout — the universal tip / note / tipLate inline box (a
      round accent icon + optional head + text). One helper replaces
      three near-identical inline renderers; styling lives in the
@@ -2615,6 +2668,7 @@
     //   Pattern: causes2: [{tone,icon,head,body}], causes2Label?, causes2Emoji?, causes2Style? ('plain-white' | default)
     if (c.causes2 && Array.isArray(c.causes2) && c.causes2.length && typeof c.causes2[0].head !== 'undefined') {
       if (c.causes2Label !== null) content += genSecLabel(c.causes2Emoji || '🔗', c.causes2Label || 'More to know');
+      if (c.causes2Style === 'numbered-rows') { content += renderNumberedRows(c.causes2, ''); } else if (c.causes2Style === 'numbered') { content += renderNumberedTiles(c.causes2, '', c.causes2Cols ? `repeat(${c.causes2Cols},minmax(0,1fr))` : `repeat(${c.causes2.length},1fr)`); } else {
       const plain2 = c.causes2Style === 'plain-white';
       const tiles2 = c.causes2.map((item, i) => {
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
@@ -2639,12 +2693,14 @@
       }).join('');
       const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, 1fr)` : gridColumnsFor(c.causes2.length, 180);
       content += fancyRowsIfRagged(c.causes2, cols2) || `<div class="dl-hover-cards" style="${isVsPair(c.causes2, c.causes2Label) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols2};gap:${isVsPair(c.causes2, c.causes2Label) ? VS_PAIR_GAP : '12px'};margin-bottom:26px;">${tiles2}${isVsPair(c.causes2, c.causes2Label) ? vsPairOverlay() : ''}</div>`;
+      }
     }
 
     // Causes 3 – a third causes-style grid for an additional themed section. Mirrors causes2 exactly.
     //   Pattern: causes3: [{tone,icon,head,body}], causes3Label?, causes3Emoji?, causes3Style? ('plain-white' | default), causes3Cols?
     if (c.causes3 && Array.isArray(c.causes3) && c.causes3.length && typeof c.causes3[0].head !== 'undefined') {
       if (c.causes3Label !== null) content += genSecLabel(c.causes3Emoji || '🔗', c.causes3Label || 'More to know');
+      if (c.causes3Style === 'numbered-rows') { content += renderNumberedRows(c.causes3, ''); } else if (c.causes3Style === 'numbered') { content += renderNumberedTiles(c.causes3, '', c.causes3Cols ? `repeat(${c.causes3Cols},minmax(0,1fr))` : `repeat(${c.causes3.length},1fr)`); } else {
       const plain3 = c.causes3Style === 'plain-white';
       const tiles3 = c.causes3.map((item, i) => {
         const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
@@ -2669,6 +2725,7 @@
       }).join('');
       const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, 1fr)` : gridColumnsFor(c.causes3.length, 180);
       content += fancyRowsIfRagged(c.causes3, cols3) || `<div class="dl-hover-cards" style="${isVsPair(c.causes3, c.causes3Label) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols3};gap:${isVsPair(c.causes3, c.causes3Label) ? VS_PAIR_GAP : '12px'};margin-bottom:26px;">${tiles3}${isVsPair(c.causes3, c.causes3Label) ? vsPairOverlay() : ''}</div>`;
+      }
     }
 
     // How to think about it – two tinted panels side by side (centered icon + heading + body).
@@ -5369,6 +5426,8 @@
 
       ${c.causesFirst && c.causes2 && c.causes2.length ? (() => {
         const items2 = c.causes2;
+        if (c.causes2Style === 'numbered-rows') return renderNumberedRows(items2, genSecLabel(c.causes2Emoji || '📋', c.causes2Label || 'More to know'));
+        if (c.causes2Style === 'numbered') return renderNumberedTiles(items2, genSecLabel(c.causes2Emoji || '📋', c.causes2Label || 'More to know'), c.causes2Cols ? `repeat(${c.causes2Cols},minmax(0,1fr))` : `repeat(${items2.length},1fr)`);
         const tintedFlat2 = c.causesStyle === 'tinted-flat';
         const iconTop2 = c.causes2Style === 'icon-top';
         const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols},minmax(0,1fr))` : gridColumnsFor(items2.length, 155);
@@ -5521,6 +5580,8 @@
 
       ${!c.causesFirst && c.causes2 && c.causes2.length ? (() => {
         const items2 = c.causes2;
+        if (c.causes2Style === 'numbered-rows') return renderNumberedRows(items2, genSecLabel(c.causes2Emoji || '📋', c.causes2Label || 'More to know'));
+        if (c.causes2Style === 'numbered') return renderNumberedTiles(items2, genSecLabel(c.causes2Emoji || '📋', c.causes2Label || 'More to know'), c.causes2Cols ? `repeat(${c.causes2Cols},minmax(0,1fr))` : `repeat(${items2.length},1fr)`);
         const iconTop2 = c.causes2Style === 'icon-top';
         const tiles2 = items2.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
@@ -5544,6 +5605,8 @@
 
       ${c.causes3 && c.causes3.length ? (() => {
         const items3 = c.causes3;
+        if (c.causes3Style === 'numbered-rows') return renderNumberedRows(items3, genSecLabel(c.causes3Emoji || '📋', c.causes3Label || 'More to know'));
+        if (c.causes3Style === 'numbered') return renderNumberedTiles(items3, genSecLabel(c.causes3Emoji || '📋', c.causes3Label || 'More to know'), c.causes3Cols ? `repeat(${c.causes3Cols},minmax(0,1fr))` : `repeat(${items3.length},1fr)`);
         const iconTopMode3 = c.causes3Style === 'icon-top';
         const tiles3 = items3.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['blue','green','purple','amber','rose','slate'][i % 6]];

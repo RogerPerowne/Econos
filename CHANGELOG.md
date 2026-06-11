@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.170.5 — 2026-06-11
+
+### Fix blank icon badges on numbered causes2 / causes3 blocks
+
+- The `numbered` and `numbered-rows` cause styles were only implemented
+  for the primary `causes` slot. A `causes2`/`causes3` block using either
+  style fell through to the icon-circle tile layout and — since those
+  items carry no icon — rendered an **empty badge** (blank circle/square
+  before each heading). Seen on Public Sector Finances ("STRUCTURAL
+  DEFICIT", "HOW TO EVALUATE") and Limits of Policy ("HOW TO WRITE IT").
+- Extracted two shared helpers — `renderNumberedRows` (vertical numbered
+  list) and `renderNumberedTiles` (numbered card grid) — and wired them
+  into all five cause render sites (`causes`/`causes2`/`causes3` across
+  the generic and ad-interactive templates), so both styles now render a
+  proper number badge everywhere. The icon column is only emitted when an
+  icon is actually present, so icon-less rows read as a clean number +
+  text. No data-file changes.
+
 ## 0.170.4 — 2026-06-11
 
 ### Exam-edge boxes — drop the duplicated "EXAM EDGE" heading

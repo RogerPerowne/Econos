@@ -1926,8 +1926,8 @@
                       <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${r.text}</div>
                     </div>
                   </div>`).join('')
-                : `<ul style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
-                    ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:var(--econ-ink);">${p}</span></li>`).join('')}
+                : `<ul style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);margin:0;">
+                    ${(side.points || []).map(p => `<li style="margin-bottom:8px;color:${tone.label};"><span style="color:var(--econ-ink);">${p}</span></li>`).join('')}
                   </ul>`);
         const numberHtml = (side.number != null)
           ? `<div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${tone.accent};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;flex-shrink:0;">${side.number}</div>`
@@ -4911,7 +4911,7 @@
             ? `<div style="display:flex;flex-direction:column;">${side.rows.map((r, ri) => `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;${ri < side.rows.length - 1 ? `border-bottom:1px solid ${tone.border};` : ''}"><div style="width:34px;height:34px;border-radius:50%;background:${tone.bg};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;flex-shrink:0;">${renderIcon(r.icon)}</div><div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${r.text}</div></div>`).join('')}</div>`
           : side.checks && side.checks.length
             ? `<div style="display:flex;flex-direction:column;gap:8px;">${side.checks.map(ch => `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="font-weight:var(--fw-bold);color:${tone.label};">${ch.term}:</span> ${ch.body}</div>`).join('')}</div>`
-            : `<ul style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:var(--econ-ink);">${p}</span></li>`).join('')}</ul>`;
+            : `<ul style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);margin:0;">${(side.points || []).map(p => `<li style="margin-bottom:8px;color:${tone.label};"><span style="color:var(--econ-ink);">${p}</span></li>`).join('')}</ul>`;
         const exampleHtml = side.example
           ? `<div style="display:flex;align-items:flex-start;gap:10px;margin-top:14px;background:#fff;border:1px solid ${tone.border};border-radius:var(--r-md);padding:11px 13px;"><div style="width:26px;height:26px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);line-height:1;flex-shrink:0;">${side.example.icon || '★'}</div><div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="font-weight:var(--fw-extrabold);color:${tone.label};">${side.example.label || 'Example'}:</span> ${side.example.text}</div></div>`
           : '';

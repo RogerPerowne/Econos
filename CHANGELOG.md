@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.161.1 — 2026-06-11
+
+### Pair-box bullets — dot-on-text overlap fixed sitewide
+
+- The pair component's CSS (`.econ-pair-side__body ul`) suppresses native
+  list markers (`!important`) and draws its own tone-coloured dot via
+  `li::before` at left:2px, expecting the stylesheet's `li { padding-left:
+  16px }`. But the `points: []` builder in app.js emitted
+  `<li style="padding-left:4px">` — inline beats stylesheet — so the dot
+  painted on top of the first character in every points-array pair box,
+  sitewide.
+- Removed the clashing inline li padding (and the dead inline ul
+  padding/list-style the component CSS overrides anyway) from both builder
+  templates. Raw-HTML-authored pair lists were unaffected; regression-checked
+  both paths. `sw.js` cache `econos-v541` → `econos-v542`.
+
 ## 0.161.0 — 2026-06-11
 
 ### Causes of Growth — expanded from 1 card to 3

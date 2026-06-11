@@ -92,7 +92,7 @@ window.ECONOS_TOPIC = {
       // sticky wages keep the gap persistent until policy acts.
       interactiveDiagram: [
         {
-          svgKey: 'adShiftLeftClassicalKeynesian',
+          svgKey: 'ogRecessCK',
           label: 'RECESSIONARY GAP – AD BELOW POTENTIAL',
           emoji: '\u{1F4C9}',
           layers: ['idl-1', 'idl-2'],
@@ -100,19 +100,19 @@ window.ECONOS_TOPIC = {
           perspectives: ['classical', 'keynesian'],
           perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
-            { label: 'At potential (Y₀ₑ)', show: [],
-              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets LRAS at Y₀ₑ – no gap in the long run.'] },
-              keynesian: { tone: 'amber', head: 'At capacity.', body: ['AD₁ meets the reverse-L AS at full employment Y₀ₑ.'] } },
-            { label: 'AD falls', show: ['idl-1'],
-              classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['A negative demand shock (confidence collapse, fiscal tightening, foreign slowdown) shifts AD left.'] },
+            { label: 'At potential (Yf)', show: [],
+              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets LRAS at Yf — SRAS₁ passes through the same point E₁.'] },
+              keynesian: { tone: 'amber', head: 'At capacity.', body: ['AD₁ meets the reverse-L AS at full employment Yf.'] } },
+            { label: 'AD falls — the gap opens', show: ['idl-1'],
+              classical: { tone: 'rose', head: 'Short run: down SRAS₁ to E₂.', body: ['A negative demand shock shifts AD left. In the short run the economy slides down <strong>SRAS₁</strong> to E₂: output falls to <strong>Y₂ &lt; Yf</strong> — a recessionary gap opens <em>even in the classical world</em>.'] },
               keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['A negative demand shock shifts AD left.'] } },
-            { label: 'The gap', show: ['idl-1', 'idl-2'],
-              classical: { tone: 'purple', head: 'No real gap in the long run.', body: ['Output returns to Y₀ₑ at a <strong>lower price level P₂</strong>. The short-run dip below Y₀ₑ is closed by <strong>downward wage pressure</strong> from unemployment – costs fall, SRAS slides back, the economy lands on LRAS.'], analysis: 'Classical reading: a recessionary gap is a <em>short-run</em> phenomenon – wages and prices flex, the economy self-corrects. The diagram shows the LR equilibrium; the temporary dip below Y₀ₑ during the adjustment isn\'t shown. No stimulus needed.' },
-              keynesian: { tone: 'rose', head: 'Gap persists.', body: ['Output stays at Y₂ &lt; Y₀ₑ; the recessionary gap is the distance to potential.', '<strong>Sticky wages</strong> stop the self-correction – unemployment can persist for years.'], analysis: 'Keynesian reading: without fiscal or monetary stimulus to restore AD, the recessionary gap stays open. This is the case for active demand management – the textbook example of the 2008 crisis and the slow recovery that followed.' } }
+            { label: 'What happens to the gap', show: ['idl-1', 'idl-2'],
+              classical: { tone: 'purple', head: 'Long run: the gap closes itself.', body: ['Unemployment puts <strong>downward pressure on wages</strong>; costs fall, so <strong>SRAS₁ shifts to SRAS₂</strong>. The economy lands at E₃ — back on LRAS at Yf, at a lower price level <strong>P₃</strong>.'], analysis: 'Classical reading: the recessionary gap is real but <em>temporary</em> — wage flexibility closes it without help. The dispute with Keynes is not whether the gap exists; it is whether wages actually fall fast enough. No stimulus needed.' },
+              keynesian: { tone: 'rose', head: 'Gap persists.', body: ['Output stays at Y₂ &lt; Yf; the recessionary gap is the distance to potential.', '<strong>Sticky wages</strong> stop the self-correction – unemployment can persist for years.'], analysis: 'Keynesian reading: without fiscal or monetary stimulus to restore AD, the recessionary gap stays open. This is the case for active demand management – the textbook example of the 2008 crisis and the slow recovery that followed.' } }
           ]
         },
         {
-          svgKey: 'adShiftClassicalKeynesian',
+          svgKey: 'ogInflatCK',
           label: 'INFLATIONARY GAP – AD ABOVE POTENTIAL',
           emoji: '\u{1F4C8}',
           layers: ['idl-1', 'idl-2'],
@@ -120,15 +120,15 @@ window.ECONOS_TOPIC = {
           perspectives: ['classical', 'keynesian'],
           perspectiveLabels: { classical: 'Classical view', keynesian: 'Keynesian view' },
           views: [
-            { label: 'At potential (Y₀ₑ)', show: [],
-              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets LRAS at Y₀ₑ – no gap in the long run.'] },
-              keynesian: { tone: 'amber', head: 'At capacity.', body: ['AD₁ meets the reverse-L AS at Y₀ₑ.'] } },
-            { label: 'AD rises', show: ['idl-1'],
-              classical: { tone: 'purple', head: 'AD₁ → AD₂.', body: ['A positive demand shock (loose monetary policy, fiscal expansion, export boom) shifts AD right.'] },
+            { label: 'At potential (Yf)', show: [],
+              classical: { tone: 'purple', head: 'At potential.', body: ['AD₁ meets LRAS at Yf — SRAS₁ passes through the same point E₁.'] },
+              keynesian: { tone: 'amber', head: 'At capacity.', body: ['AD₁ meets the reverse-L AS at Yf.'] } },
+            { label: 'AD rises — the gap opens', show: ['idl-1'],
+              classical: { tone: 'rose', head: 'Short run: up SRAS₁ to E₂.', body: ['A positive demand shock shifts AD right. In the short run the economy rides up <strong>SRAS₁</strong> to E₂: output pushes to <strong>Y₂ &gt; Yf</strong> — an inflationary gap, with overtime, re-hired capacity and stretched supply chains doing the impossible-on-paper.'] },
               keynesian: { tone: 'amber', head: 'AD₁ → AD₂.', body: ['A positive demand shock shifts AD right.'] } },
-            { label: 'The gap', show: ['idl-1', 'idl-2'],
-              classical: { tone: 'purple', head: 'Only prices rise – no real gap.', body: ['On vertical LRAS the AD shift is <strong>purely inflationary</strong>; output cannot exceed Y₀ₑ in the long run.'], analysis: 'Classical reading: there is no sustainable inflationary gap. Demand stimulus past full employment shows up as inflation only – the central case for monetary restraint.' },
-              keynesian: { tone: 'rose', head: 'Output above potential – overheating.', body: ['Output pushes to Y₂ &gt; Y₀ₑ – labour and goods markets are stretched; the gap is inflationary.', 'Without policy restraint, wage demands rise and inflation expectations un-anchor.'], analysis: 'Keynesian reading: an inflationary gap is a real, persistent overheating that needs <strong>contractionary policy</strong> (higher rates, fiscal tightening) to close. Inflation is the cost of running the economy above its sustainable speed limit.' } }
+            { label: 'What happens to the gap', show: ['idl-1', 'idl-2'],
+              classical: { tone: 'purple', head: 'Long run: wages bid the gap away.', body: ['Tight labour markets <strong>bid wages up</strong>; costs rise, so <strong>SRAS₁ shifts to SRAS₂</strong>. The economy lands at E₃ — back on LRAS at Yf, at a higher price level <strong>P₃</strong>.'], analysis: 'Classical reading: the boom above Yf cannot last — it burns itself out as wages catch up, leaving only inflation behind. That is the central case for monetary restraint: stimulus past full employment buys a temporary gap at a permanent price-level cost.' },
+              keynesian: { tone: 'rose', head: 'Output above potential – overheating.', body: ['Output pushes to Y₂ &gt; Yf – labour and goods markets are stretched; the gap is inflationary.', 'Without policy restraint, wage demands rise and inflation expectations un-anchor.'], analysis: 'Keynesian reading: an inflationary gap is a real, persistent overheating that needs <strong>contractionary policy</strong> (higher rates, fiscal tightening) to close. Inflation is the cost of running the economy above its sustainable speed limit.' } }
           ]
         }
       ],

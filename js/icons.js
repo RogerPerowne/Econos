@@ -4403,6 +4403,8 @@ window.ECONOS_ICONS = {
   kuznetsDevelopment: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_KUZNETS_CURVE_SPEC); }),
   outputGapCompare: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_OUTPUT_GAP_COMPARE_SPEC); }),
   outputGapSign: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_OUTPUT_GAP_SIGN_SPEC); }),
+  ogRecessCK: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_OG_RECESS_CK_SPEC); }),
+  ogInflatCK: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_OG_INFLAT_CK_SPEC); }),
   marcosCostCurves: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MARCOS_COST_SPEC); }),
   marcosProfitMax: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MARCOS_PROFIT_MAX_SPEC); }),
   marcosProfitMaxPC: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MARCOS_PROFIT_MAX_PC_SPEC); }),

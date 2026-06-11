@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.163.0 — 2026-06-11
+
+### Output Gaps — arrow fix + classical SRAS mechanism
+
+- **Gap arrows**: output-gap-sign (and the older output-gap-compare, which had
+  the same latent bug) used up/down-pointing markers WITH orient="auto" — the
+  double rotation rendered sideways triangles mid-line. Switched to the ped
+  convention (right/left-pointing shapes + auto-orient); clean double-headed
+  arrows now.
+- **Classical mode made sensible**: the card's AD/AS interactives showed only
+  vertical LRAS in classical mode, so output never moved and no gap could
+  appear. Forked the two shared specs into output-gap-recess-ck /
+  output-gap-inflat-ck (the 7 other consumer topics keep the parent specs'
+  pure-LRAS story) and gave the classical perspective the full SRAS
+  mechanism: E₁ on LRAS∩SRAS₁ → AD shifts, SHORT-RUN E₂ on SRAS₁ (the gap
+  appears, Y₂ vs Yf) → wages adjust, SRAS₁→SRAS₂ (shift arrow), E₃ back on
+  LRAS at P₃. Card copy rewritten so the classical story is "the gap is real
+  but temporary — the dispute with Keynes is whether wages adjust fast
+  enough", and Y₀ₑ/Yf notation unified to Yf.
+- Inflationary fork: Y₂ label placed above the axis (the tick position
+  collided with the axis title). New specs wired into shells + sw precache;
+  snapshots 134. `sw.js` cache `econos-v548` → `econos-v549`.
+
 ## 0.162.3 — 2026-06-11
 
 ### Price-discrimination 3-panel build — parts first, kinked total last

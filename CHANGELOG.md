@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.170.4 — 2026-06-11
+
+### Exam-edge boxes — drop the duplicated "EXAM EDGE" heading
+
+- The exam-edge box renders a small "Exam edge" eyebrow plus an optional
+  custom title heading. 117 data files set `examEdge.title: 'EXAM EDGE'`,
+  which failed the case-sensitive `!== 'Exam edge'` suppression and
+  rendered a second, large "EXAM EDGE" heading that just repeated the
+  eyebrow. Made the suppression case-insensitive (`title.trim()
+  .toLowerCase() !== 'exam edge'`) in both render paths, so the duplicate
+  heading disappears site-wide while genuine custom titles still show. No
+  data-file changes.
+
 ## 0.170.3 — 2026-06-11
 
 ### Economist-insight boxes — stack on mobile

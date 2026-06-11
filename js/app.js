@@ -141,12 +141,16 @@
     const title = typeof e === 'object' ? (e.title || 'Exam edge') : 'Exam edge';
     const text  = typeof e === 'object' ? e.text : e;
     if (!text) return '';
+    // Only render a separate heading when it's a GENUINE custom title.
+    // A title that's just "Exam edge" (in any case, e.g. the very common
+    // 'EXAM EDGE') duplicates the eyebrow label, so suppress it.
+    const hasCustomTitle = title.trim().toLowerCase() !== 'exam edge';
     return `
       <div class="exam-edge">
         <div class="exam-edge__star">⭐</div>
         <div class="exam-edge__body">
           <div class="exam-edge__label">Exam edge</div>
-          ${title !== 'Exam edge' ? `<div class="exam-edge__title">${title}</div>` : ''}
+          ${hasCustomTitle ? `<div class="exam-edge__title">${title}</div>` : ''}
           <div class="exam-edge__text">${text}</div>
         </div>
       </div>
@@ -3118,7 +3122,7 @@
             <div class="exam-edge__star">⭐</div>
             <div class="exam-edge__body">
               <div class="exam-edge__label">Exam edge</div>
-              ${edgeTitle !== 'Exam edge' ? `<div class="exam-edge__title">${edgeTitle}</div>` : ''}
+              ${edgeTitle.trim().toLowerCase() !== 'exam edge' ? `<div class="exam-edge__title">${edgeTitle}</div>` : ''}
               <div class="exam-edge__text" style="margin-top:8px;">${edgeText}</div>
             </div>
           </div>`;

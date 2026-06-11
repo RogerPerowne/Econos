@@ -165,9 +165,9 @@
          chart units). Centred on the midline between the two curves at
          x ≈ 0.65, so both ends sit in the OPEN STRIP between SRAS₁ and
          SRAS₂ – no contact with either curve, well clear of E₁ and E₂. */
-      { x1: 0.608, y1: 0.612, x2: 0.692, y2: 0.500,
+      { perpendicular: { from: 'sras1_c', t: 0.55, to: 'sras2_c' },
         tone: 'green', strokeWidth: 1.8, markerEnd: 'ssrl-arr-green',
-        buffer: 0, layer: 'c-sr-arrow', perspective: 'classical' },
+        buffer: 4, layer: 'c-sr-arrow', perspective: 'classical' },
       /* Classical LR – LRAS₁ → LRAS₂ (V3), rightward near top. */
       { x1: YF1 + 0.01, y1: 0.80, x2: YF2 - 0.01, y2: 0.80,
         tone: 'purple', strokeWidth: 1.8, markerEnd: 'ssrl-arr-purple',

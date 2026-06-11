@@ -126,9 +126,9 @@
       /* Classical cost arrow (V2) – perpendicular to the parallel SRAS
          curves, pointing UP-LEFT (the direction of the shift). Centred
          in the open strip between SRAS₁ and SRAS₂, well clear of E₁/E₂. */
-      { x1: 0.582, y1: 0.290, x2: 0.498, y2: 0.402,
+      { x1: 0.435, y1: 0.281, x2: 0.363, y2: 0.377,
         tone: 'rose', strokeWidth: 1.8, markerEnd: 'srasL-arr-rose',
-        buffer: 0, layer: 'c-cost-arrow', perspective: 'classical' },
+        buffer: 4, layer: 'c-cost-arrow', perspective: 'classical' },
       /* Keynesian cost arrow (V2) – price floor rises, a short UPWARD
          arrow in the floor region. */
       { x1: 0.175, y1: 0.295, x2: 0.175, y2: 0.405,

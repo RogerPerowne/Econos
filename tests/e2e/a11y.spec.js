@@ -86,3 +86,43 @@ test('Land It intro is accessible', async ({ page }) => {
   await page.waitForLoadState('networkidle');
   await assertAxeClean(page, '/edexcel_a/theme-2/causes-of-inflation-and-deflation/land-it/intro');
 });
+
+/* Hand-rolled art SVGs carry no native accessible name, so app.js wraps each
+   content visual in a role="img" + aria-label container (and engine charts
+   keep their own role="img" + aria-labelledby). The topic-cover hero is
+   decorative — the <h1> already names the topic — so it's aria-hidden.
+   These tests lock that contract in. */
+test('topic-cover hero is marked decorative', async ({ page }) => {
+  await login(page);
+  await page.goto('/edexcel_a/theme-3/perfect-competition/learn-it');
+  await page.waitForSelector('#main-content', { state: 'attached' });
+  await page.waitForLoadState('networkidle');
+  const hero = page.locator('.illust-bars').first();
+  await expect(hero).toHaveAttribute('aria-hidden', 'true');
+});
+
+test('content visuals expose an accessible name', async ({ page }) => {
+  await login(page);
+  // Card 1 carries two hand-rolled visuals (market hub + market spectrum).
+  await page.goto('/edexcel_a/theme-3/perfect-competition/learn-it/perfect-competition-the-big-picture');
+  await page.waitForSelector('#main-content', { state: 'attached' });
+  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(500);
+  // Every role="img" inside the content area must have a non-empty name
+  // (aria-label for hand-rolled wrappers, aria-labelledby for engine charts).
+  const unnamed = await page.$$eval('#main-content [role="img"]', (els) =>
+    els
+      .filter((el) => {
+        const label = (el.getAttribute('aria-label') || '').trim();
+        const ref = el.getAttribute('aria-labelledby');
+        return !label && !ref;
+      })
+      .map((el) => el.outerHTML.slice(0, 80))
+  );
+  expect(unnamed, `role="img" elements with no accessible name: ${JSON.stringify(unnamed)}`).toEqual([]);
+  // And the two hand-rolled wrappers are actually present + labelled.
+  const names = await page.$$eval('#main-content [role="img"][aria-label]', (els) =>
+    els.map((el) => el.getAttribute('aria-label').trim()).filter(Boolean)
+  );
+  expect(names.length).toBeGreaterThanOrEqual(2);
+});

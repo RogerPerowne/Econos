@@ -85,7 +85,7 @@ window.ECONOS_TOPIC = {
       causes2Label: 'WHY OLIGOPOLIES ARE VULNERABLE',
       causes2Emoji: '\u{1F3AF}',
       causes2Style: 'icon-top',
-      causes2Cols: 4,
+      causes2Cols: 2,
       causes2: [
         { tone: 'blue',   icon: '\u{1F465}', head: 'Few firms',          body: 'A small number of firms means each one matters.' },
         { tone: 'blue',   icon: '\u{1F6E1}\u{FE0F}', head: 'High barriers', body: 'Barriers to entry make outside competition weak.' },

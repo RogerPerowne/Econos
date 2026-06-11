@@ -41,7 +41,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 1',
       title: 'Actual vs potential growth',
-      lede: 'Build up the picture stage by stage: the wave you already know, the trend underneath it, the levers that lift the trend, and the risk that a deep recession bends the trend down.',
+      lede: 'Build up the picture stage by stage: the short-run wave, the trend underneath it, the levers that lift the trend, and the risk that a deep recession bends the trend down.',
       ledeStyle: 'plain',
       tip: { icon: '\u{1F512}', tone: 'green', text: 'Actual growth rides around the trend. Potential growth IS the trend.' },
 
@@ -57,7 +57,7 @@ window.ECONOS_TOPIC = {
             label: 'Actual GDP only',
             tone: 'blue',
             head: 'Stage 1 – the cycle wave',
-            body: 'Real GDP over time. The wave you saw on Card 1 – boom, slowdown, recession, recovery – is the short-run fluctuation. So far there is nothing underneath it to fluctuate <em>around</em>.',
+            body: 'Real GDP over time. The wave — boom, slowdown, recession, recovery — is the short-run fluctuation (covered in full in the Trade &amp; Business Cycle topic). So far there is nothing underneath it to fluctuate <em>around</em>.',
             analysis: 'On its own, the wave is meaningless. A 3% fall in GDP from a high base is very different from a 3% fall from a stagnant base. We need a reference – something to compare actual GDP against.'
           },
           {

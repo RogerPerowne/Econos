@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.165.2 — 2026-06-11
+
+### Arrow sweep pass 2a — fx specs + engine-spec sign-off
+
+- fx-floating-shifts / fx-intervention-diagrams: the green demand-shift arrow
+  over-shot past D₂ (started in the D₁→D₂ gap but ended beyond D₂); reseated
+  fully inside the wedge, clear of both curves.
+- Verified the last three detector flags are merged-frame false positives —
+  clean in their real single-perspective/step views (lras-shift-right,
+  supply-side LRAS, inflation-2022 AD shifts) — and documented them in the
+  detector's allowlist with reasons. Engine-spec arrow sweep now reports
+  0 to-triage.
+- `sw.js` cache econos-v553 → econos-v554. (icons.js hand-rolled arrows are
+  pass 2b.)
+
 ## 0.165.1 — 2026-06-11
 
 ### Fix regression from 0.165.0 — supply-side SRAS arrow

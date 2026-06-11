@@ -44,8 +44,9 @@ const check = process.argv.includes('--check');
    Theme-3 hero covers, and to 6417 (v0.155.32) for the 19 new Theme-4 hero
    covers; raised to 6717 (v0.155.33) when all 39 Theme-3/4 covers were enriched
    with gradient/glow defs, and to 6889 (v0.155.34) for the 25 enriched Theme-1/2
-   covers (hand-rolled SVG art, fills cannot take a CSS var). */
-const DUP_BASELINE = 6889;
+   covers; lowered to 6800 (v0.155.36) when 16 quirky legacy heroes were redrawn
+   (hand-rolled SVG art, fills cannot take a CSS var). */
+const DUP_BASELINE = 6800;
 
 const css = readFileSync('styles.css', 'utf8');
 

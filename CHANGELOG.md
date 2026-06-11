@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.161.0 — 2026-06-11
+
+### Causes of Growth — expanded from 1 card to 3
+
+- Card 1 (actual vs potential) keeps the 4-stage interactive; its stage-3
+  analysis and the six-drivers tile block were trimmed out (over budget and
+  now redundant).
+- NEW card 2 "What lifts the trend — the six drivers": six-spoke
+  `growthDriversHub` (house hub anatomy — 2-col grid, central "Potential
+  growth / every spoke shifts LRAS right" chip, dashed connector overlay,
+  mobile stack) + THE CHAIN stepper (driver → capacity → LRAS right → trend).
+- NEW card 3 "Export-led growth — trade as the growth engine" (spec 2.5.1
+  names trade explicitly): five-step chain, three country cases (South Korea ·
+  Germany · China), and a why-it-works / the-risks evaluation pair.
+- Patterns: interactive → hub+chain → flow+cases+pair (no consecutive
+  repeats). estTime 6 → 12 min; intro stages updated. DUP_BASELINE
+  6828 → 6844 (hub fills); `sw.js` cache `econos-v540` → `econos-v541`.
+
 ## 0.160.3 — 2026-06-11
 
 ### Causes of Growth — stale cross-references from the topic split

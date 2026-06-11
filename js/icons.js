@@ -21515,6 +21515,71 @@ window.ECONOS_ICONS = {
      (Few large firms / Interdependence / Barriers to entry / Non-price
      competition) around a central "One market dominated by a few firms"
      basket pill. Same hub grammar as the other Theme 3 hubs. */
+  /* growthDriversHub – Causes of Growth card 2. Six-spoke hub: the six
+     supply-side drivers of potential growth around a central "Potential
+     growth (LRAS →)" chip. Same anatomy as oligopolyHub (2-col grid +
+     absolute centre + dashed connector overlay; stacks on mobile). */
+  growthDriversHub: `
+    <div class="gdh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
+      <style>
+        .gdh .gd-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:30%; row-gap:16px; position:relative; z-index:1; }
+        .gdh .gd-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; }
+        .gdh .gd-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+        .gdh .gd-tile { border-radius:13px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; min-height:96px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); }
+        .gdh .gd-ic { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .gdh .gd-t { font-size:13.5px; font-weight:800; line-height:1.2; }
+        .gdh .gd-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:4px; }
+        @media (max-width:600px){
+          .gdh > div { display:flex; flex-direction:column-reverse; }
+          .gdh .gd-grid { grid-template-columns:1fr; column-gap:0; row-gap:10px; }
+          .gdh .gd-center { position:static; transform:none; margin:6px auto; }
+          .gdh .gd-center-wrap { order:99; display:flex; justify-content:center; }
+          .gdh .gd-conn { display:none; }
+        }
+      </style>
+      <div style="position:relative;max-width:740px;margin:0 auto;">
+        <svg class="gd-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 36 14 C 46 14, 46 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 14 C 54 14, 54 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 50 L 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 50 L 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 36 86 C 46 86, 46 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 64 86 C 54 86, 54 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="gd-grid">
+          <div class="gd-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="gd-ic">👥</div>
+            <div><div class="gd-t" style="color:#065F46;">Labour force</div><div class="gd-s">More working-age adults, higher participation, net inward migration of workers.</div></div>
+          </div>
+          <div class="gd-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="gd-ic">🏭</div>
+            <div><div class="gd-t" style="color:#1E3A8A;">Capital stock</div><div class="gd-s">More machinery, infrastructure and digital capital per worker — capital deepening.</div></div>
+          </div>
+          <div class="gd-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="gd-ic">📈</div>
+            <div><div class="gd-t" style="color:#C2410C;">Productivity</div><div class="gd-s">Output per worker rises — the UK productivity puzzle is the textbook bottleneck.</div></div>
+          </div>
+          <div class="gd-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+            <div class="gd-ic">🎓</div>
+            <div><div class="gd-t" style="color:#5B21B6;">Skills &amp; education</div><div class="gd-s">Higher human capital — schools, vocational training, lifelong learning, R&amp;D talent.</div></div>
+          </div>
+          <div class="gd-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="gd-ic">💡</div>
+            <div><div class="gd-t" style="color:#1E3A8A;">Technology &amp; infrastructure</div><div class="gd-s">Faster diffusion of new tech; better transport, energy and digital networks.</div></div>
+          </div>
+          <div class="gd-tile" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="gd-ic">🌍</div>
+            <div><div class="gd-t" style="color:#065F46;">Trade &amp; export markets</div><div class="gd-s">Access to global demand — export-led growth scales beyond the home market.</div></div>
+          </div>
+        </div>
+        <div class="gd-center-wrap"><div class="gd-center" style="background:#fff;border:2px solid #86EFAC;border-radius:50%;width:142px;height:142px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;box-shadow:0 0 0 8px rgba(236,253,245,0.75), 0 6px 18px rgba(11,20,38,0.10);">
+          <div style="font-size:30px;line-height:1;">📈</div>
+          <div style="font-size:13px;font-weight:800;color:#065F46;font-family:Fraunces,Georgia,serif;margin-top:4px;text-align:center;line-height:1.2;">Potential growth</div>
+          <div style="font-size:10.5px;color:#475569;margin-top:3px;text-align:center;line-height:1.25;">every spoke<br/>shifts LRAS right</div>
+        </div></div>
+      </div>
+    </div>
+  `,
   oligopolyHub: `
     <div class="olh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>

@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.170.0 — 2026-06-11
+
+### Pros/cons charts — one canonical green-tick / red-cross badge
+
+- Every positives-vs-negatives chart (pros vs cons, benefits vs
+  drawbacks) now uses a single icon style: a green disc with a white
+  tick for a positive, a rose disc with a white cross for a negative.
+  `renderIcon` maps the familiar author glyphs (✅ ✔ ☑ 🟢 👍 →
+  positive; ❌ ✖ ✗ 🔴 👎 → negative) to the shared badge, sized 1em so
+  it drops into any existing icon slot. Applies retroactively across the
+  whole site with no data-file changes. Tips/notes opt out
+  (`renderIcon(icon, null, {plain:true})`) — a green tip is not a
+  pros/cons chart. Badge fills use `--econ-green-600` / `--econ-rose` /
+  `--econ-white` tokens (no new token drift).
+
 ## 0.169.1 — 2026-06-11
 
 ### profitCoreEquation — trim mobile white space

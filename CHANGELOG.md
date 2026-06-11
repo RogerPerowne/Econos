@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.156.0 — 2026-06-11
+
+### Performance — lazy chart rendering in `js/icons.js`
+
+- Every page load previously built `window.ECONOS_ICONS` by eagerly calling
+  `ECONOS_PPF.render()` / `ECONOS_DIALS.render()` for ~130 chart entries —
+  geometry-solving and string-building every diagram on the site even though a
+  given card shows only one or two. Because each route is its own page load,
+  that cost was paid on every navigation.
+- Wrapped the 133 top-level chart/spectrum entries in a memoised lazy getter
+  (`window.__econosLazy` sentinel + a getter-installer IIFE at the end of the
+  file). A chart is now geometry-solved on first access and cached thereafter,
+  so a page renders only the diagrams it actually displays. Measured: load-time
+  renders dropped from ~148 to 15 (the 15 remaining are dials embedded inside
+  larger art strings, intentionally left eager).
+- No content, URL, key-reference or service-worker-strategy changes — icon keys
+  are still read as `ECONOS_ICONS[key]`; the getters are transparent to every
+  consumer. Verified in-browser: lazy keys return valid SVG and memoise.
+- Hand-rolled hero/scene art (~1.9 MB of the file) is unchanged; this is a
+  CPU/boot-time win, not a download-size cut. Splitting the art bundle per route
+  to reduce bytes is tracked as a larger follow-up.
+- `sw.js` cache bumped `econos-v531` → `econos-v532`.
+
 ## 0.155.16 — 2026-06-10
 
 ### Sitewide minimum font size — kill the truly-tiny labels

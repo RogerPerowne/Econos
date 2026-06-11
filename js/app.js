@@ -10,6 +10,18 @@
   const root = document.getElementById('app-root');
   let currentView = 'intro'; // 'intro' | 0..(cards.length-1)
 
+  /* a11y for hand-rolled art SVGs. Engine charts already emit role="img" +
+     <title>/<desc>, so leave those alone — returns ''. For a hand-rolled
+     visual it returns a role="img" + aria-label attribute string for the
+     wrapper, which also collapses the SVG's inner <text> nodes out of the
+     accessibility tree (giving one clean name instead of a jumble). */
+  function visualA11y(svg, label) {
+    if (!svg || /role="img"/.test(svg)) return '';
+    const safe = String(label || 'Diagram')
+      .replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    return ` role="img" aria-label="${safe}"`;
+  }
+
   /* ──────────────────────────────────────────────────────────────
      Card-slug ↔ index mapping.
      ─────────────────────────────────────────────────────────────
@@ -3032,7 +3044,7 @@
     // Quiz CTA – celebration-style signpost
 
     const ledeHtml = c.lede ? `<p class="card__lede">${c.lede}</p>` : '';
-    const visualKeyHtml = c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 20px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : '';
+    const visualKeyHtml = c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div${visualA11y(I[c.visualKey], c.visualLabel || c.title)} style="margin:0 0 20px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : '';
     let noteTopHtml = '';
     if (c.note && c.notePosition === 'top') {
       const notes = Array.isArray(c.note) ? c.note : [c.note];
@@ -3103,7 +3115,7 @@
                 <h1 class="card__title card__title--lg">${T.title}</h1>
                 <p class="card__lede">${T.intro.summary}</p>
               </div>
-              ${T.intro.heroKey && I[T.intro.heroKey] ? `<div class="illust-bars">${I[T.intro.heroKey]}</div>` : ''}
+              ${T.intro.heroKey && I[T.intro.heroKey] ? `<div class="illust-bars" aria-hidden="true">${I[T.intro.heroKey]}</div>` : ''}
             </div>
 
             <div class="do-box">
@@ -4795,7 +4807,7 @@
       <div class="card__step-label">${c.stepLabel || ''}</div>
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      ${c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
+      ${c.visualKey && I[c.visualKey] ? `<div${visualA11y(I[c.visualKey], c.visualLabel || c.title)} style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
       <div class="pff-grid">${frames}</div>
       ${renderExamEdge(c.examEdge)}
     `;
@@ -4876,7 +4888,7 @@
       <div class="card__step-label">${c.stepLabel || ''}</div>
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      ${c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
+      ${c.visualKey && I[c.visualKey] ? `<div${visualA11y(I[c.visualKey], c.visualLabel || c.title)} style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
       <div class="pff-grid">${frames}</div>
       ${renderExamEdge(c.examEdge)}
     `;
@@ -5020,13 +5032,13 @@
         return `${label}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`;
       })() : ''}
 
-      ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
+      ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div${visualA11y(I[c.visualKey], c.visualLabel || c.visualCaption || c.title)} style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
 
       ${c.tileGrid ? buildTileGridHtml(c.tileGrid) : ''}
 
       ${c.factorEngine ? buildFactorEngineHtml(c.factorEngine) : ''}
 
-      ${c.visualKey2 && I[c.visualKey2] ? `${c.visualLabel2 ? genSecLabel(c.visualEmoji2 || '📊', c.visualLabel2) : ''}<div style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey2]}</div>${c.visualCaption2 ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption2}</div>` : ''}` : ''}
+      ${c.visualKey2 && I[c.visualKey2] ? `${c.visualLabel2 ? genSecLabel(c.visualEmoji2 || '📊', c.visualLabel2) : ''}<div${visualA11y(I[c.visualKey2], c.visualLabel2 || c.visualCaption2 || c.title)} style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey2]}</div>${c.visualCaption2 ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption2}</div>` : ''}` : ''}
 
       ${buildInteractiveDiagramHtml(c)}
 

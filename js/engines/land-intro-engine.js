@@ -264,7 +264,7 @@
         +       '<h1 class="card__title card__title--lg">' + T.topic + '</h1>'
         +       '<p class="card__lede">You\'ve learned the content and trained the skills. Now tackle real exam questions and apply everything under time pressure.</p>'
         +     '</div>'
-        +     '<div class="illust-bars">' + hero + '</div>'
+        +     '<div class="illust-bars" aria-hidden="true">' + hero + '</div>'
         +   '</div>'
         + '</div>'
 

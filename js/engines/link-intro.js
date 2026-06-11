@@ -44,7 +44,7 @@
         +           '<h1 class="card__title card__title--lg">' + T.topic + '</h1>'
         +           '<p class="card__lede">' + T.intro.summary + '</p>'
         +         '</div>'
-        +         '<div class="illust-bars">' + hero + '</div>'
+        +         '<div class="illust-bars" aria-hidden="true">' + hero + '</div>'
         +       '</div>'
 
         +       '<div class="do-box">'

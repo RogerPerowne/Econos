@@ -6,6 +6,35 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.157.0 — 2026-06-11
+
+### Accessibility — name the hand-rolled art SVGs
+
+- Engine-rendered charts already ship `role="img"` + `<title>`/`<desc>` (locked
+  by `chart-alt-text` unit test), but the ~367 hand-rolled SVGs in `js/icons.js`
+  (hubs, flow chains, scorecards, comparisons, scenes, heroes) reached the page
+  as raw markup with no accessible name — a screen reader got either nothing or
+  a jumble of floating `<text>` fragments.
+- Added a `visualA11y()` helper in `js/app.js` that wraps each injected content
+  visual in `role="img"` + `aria-label` (sourced from the visual's existing
+  `visualLabel`/`visualLabel2`, falling back to the caption or card title).
+  `role="img"` also collapses the SVG's inner nodes out of the accessibility
+  tree, so each diagram presents one clean name. Applied at all six visual
+  injection sites (learn card, alt card layouts, `visualKey2`).
+- The helper is engine-chart-aware: if the SVG already contains `role="img"`
+  (an engine chart), it returns no wrapper, so the chart keeps its richer
+  auto-derived `aria-labelledby` description instead of being clobbered.
+- Topic-cover heroes are decorative (the `<h1>` names the topic), so the
+  `.illust-bars` hero container is now `aria-hidden="true"` — in `app.js` and in
+  the Link It / Land It intro engines.
+- Extended `tests/e2e/a11y.spec.js`: the topic cover hero must be decorative, and
+  every `role="img"` in the content area must expose a non-empty accessible
+  name. The four existing axe sweeps still pass (no new violations introduced).
+- Not in scope: per-diagram long descriptions for complex visuals — short names
+  give parity with the visible label, and each diagram sits beside prose that
+  conveys the same content, so the visual isn't the sole information carrier.
+- `sw.js` cache bumped `econos-v532` → `econos-v533`.
+
 ## 0.156.0 — 2026-06-11
 
 ### Performance — lazy chart rendering in `js/icons.js`

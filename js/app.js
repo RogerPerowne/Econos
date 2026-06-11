@@ -1442,6 +1442,19 @@
     return `<div style="display:grid;gap:10px;margin:0 0 22px;">${rows}</div>`;
   }
 
+  /* "Vs" styling for 2-tile grids: when a tile pair's section label contains
+     "vs" (LOW VS HIGH SUNK COSTS, NOMINAL VS REAL …), the two tiles get the
+     circular VS badge centred between them — same chrome as the pair/versus
+     components. The badge is an overlay on the (relative) grid, so no tile
+     restructuring is needed; the gap widens to clear it. */
+  function isVsPair(items, labelText) {
+    return (items || []).length === 2 && !!labelText && /\bvs\b/i.test(String(labelText));
+  }
+  const VS_PAIR_GAP = '52px';
+  function vsPairOverlay() {
+    return '<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-2xs);letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);z-index:1;">VS</div>';
+  }
+
   // Shared helper: renders an interactiveDiagram block (SVG left + desc right +
   // step buttons + analysis panel). Used by both renderCardGeneric and
   // renderCardAdInteractive so either template can host interactive diagrams.
@@ -1640,7 +1653,8 @@
       const colsTop = c.causesCols ? `repeat(${c.causesCols}, minmax(0, 1fr))` : gridColumnsFor(c.causes.length, hasIcons ? 155 : 220);
       const fancy_colsTop = fancyRowsIfRagged(c.causes, colsTop);
       if (fancy_colsTop) { content += fancy_colsTop; } else {
-      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${colsTop};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
+      const vsP_colsTop = isVsPair(c.causes, c.causesLabel);
+      content += `<div class="dl-hover-cards" style="${vsP_colsTop ? 'position:relative;' : ''}display:grid;grid-template-columns:${colsTop};gap:${vsP_colsTop ? VS_PAIR_GAP : (hasIcons ? '12px' : '16px')};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
@@ -1724,6 +1738,7 @@
           <div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-relaxed);">${item.body}</div>
         </div>`;
       }).join('');
+      if (vsP_colsTop) content += vsPairOverlay();
       content += `</div>`;
       }
     }
@@ -1989,6 +2004,16 @@
       let html = '';
       if (c.pairLabel !== null) {
         html += genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
+      }
+      // "Vs" styling: any pair whose label contains "vs" gets the circular
+      // VS badge between the sides (same rule as the generic template).
+      if (c.pairLabel && /\bvs\b/i.test(c.pairLabel)) {
+        const vsBadge = `<div class="econ-pair-grid__vs" style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:36px;height:36px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:var(--fw-extrabold);font-size:var(--fs-2xs);letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);flex-shrink:0;">VS</div></div>`;
+        html += `
+      <div class="econ-pair-grid econ-pair-grid--vs" style="display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);gap:12px;align-items:stretch;margin-bottom:22px;">
+        ${renderPairedSide(c.left, 'green')}${vsBadge}${renderPairedSide(c.right, 'amber')}
+      </div>`;
+        return html;
       }
       html += `
       <div class="econ-pair-grid" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:22px;">
@@ -2463,7 +2488,8 @@
       const colsMain = c.causesCols ? `repeat(${c.causesCols}, minmax(0, 1fr))` : gridColumnsFor(c.causes.length, hasIcons ? 155 : 220);
       const fancy_colsMain = fancyRowsIfRagged(c.causes, colsMain);
       if (fancy_colsMain) { content += fancy_colsMain; } else {
-      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${colsMain};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
+      const vsP_colsMain = isVsPair(c.causes, c.causesLabel);
+      content += `<div class="dl-hover-cards" style="${vsP_colsMain ? 'position:relative;' : ''}display:grid;grid-template-columns:${colsMain};gap:${vsP_colsMain ? VS_PAIR_GAP : (hasIcons ? '12px' : '16px')};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
@@ -2547,6 +2573,7 @@
           <div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-relaxed);">${item.body}</div>
         </div>`;
       }).join('');
+      if (vsP_colsMain) content += vsPairOverlay();
       content += `</div>`;
       }
     }
@@ -2589,7 +2616,7 @@
           </div>`;
       }).join('');
       const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, 1fr)` : gridColumnsFor(c.causes2.length, 180);
-      content += fancyRowsIfRagged(c.causes2, cols2) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
+      content += fancyRowsIfRagged(c.causes2, cols2) || `<div class="dl-hover-cards" style="${isVsPair(c.causes2, c.causes2Label) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols2};gap:${isVsPair(c.causes2, c.causes2Label) ? VS_PAIR_GAP : '12px'};margin-bottom:26px;">${tiles2}${isVsPair(c.causes2, c.causes2Label) ? vsPairOverlay() : ''}</div>`;
     }
 
     // Causes 3 – a third causes-style grid for an additional themed section. Mirrors causes2 exactly.
@@ -2619,7 +2646,7 @@
           </div>`;
       }).join('');
       const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, 1fr)` : gridColumnsFor(c.causes3.length, 180);
-      content += fancyRowsIfRagged(c.causes3, cols3) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols3};gap:12px;margin-bottom:26px;">${tiles3}</div>`;
+      content += fancyRowsIfRagged(c.causes3, cols3) || `<div class="dl-hover-cards" style="${isVsPair(c.causes3, c.causes3Label) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols3};gap:${isVsPair(c.causes3, c.causes3Label) ? VS_PAIR_GAP : '12px'};margin-bottom:26px;">${tiles3}${isVsPair(c.causes3, c.causes3Label) ? vsPairOverlay() : ''}</div>`;
     }
 
     // How to think about it – two tinted panels side by side (centered icon + heading + body).
@@ -5068,7 +5095,7 @@
           </div>`;
         }).join('');
         const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : `repeat(${Math.min(items.length, 3)},1fr)`;
-        return `${label}${fancyRowsIfRagged(items, cols) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`}`;
+        return `${label}${fancyRowsIfRagged(items, cols) || `<div class="dl-hover-cards" style="${isVsPair(items, c.causesLabel) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols};gap:${isVsPair(items, c.causesLabel) ? VS_PAIR_GAP : '12px'};margin:0 0 22px;">${tiles}${isVsPair(items, c.causesLabel) ? vsPairOverlay() : ''}</div>`}`;
       })() : ''}
 
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div${visualA11y(I[c.visualKey], c.visualLabel || c.visualCaption || c.title)} style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
@@ -5342,7 +5369,7 @@
           </div>`;
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
-        return `${label2}${fancyRowsIfRagged(items2, cols2) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:14px;margin:0 0 20px;">${tiles2}</div>`}`;
+        return `${label2}${fancyRowsIfRagged(items2, cols2) || `<div class="dl-hover-cards" style="${isVsPair(items2, c.causes2Label) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols2};gap:${isVsPair(items2, c.causes2Label) ? VS_PAIR_GAP : '14px'};margin:0 0 20px;">${tiles2}${isVsPair(items2, c.causes2Label) ? vsPairOverlay() : ''}</div>`}`;
       })() : ''}
 
       ${c.causesNote ? (() => {
@@ -5467,7 +5494,7 @@
           </div>`;
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
-        return `${label}${fancyRowsIfRagged(items, gridColumnsFor(items.length, 155)) || `<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:0 0 20px;">${tiles}</div>`}`;
+        return `${label}${fancyRowsIfRagged(items, gridColumnsFor(items.length, 155)) || `<div style="${isVsPair(items, c.causesLabel) ? 'position:relative;' : ''}display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:${isVsPair(items, c.causesLabel) ? VS_PAIR_GAP : '12px'};margin:0 0 20px;">${tiles}${isVsPair(items, c.causesLabel) ? vsPairOverlay() : ''}</div>`}`;
       })() : ''}
 
       ${!c.causesFirst && c.causes2 && c.causes2.length ? (() => {
@@ -5490,7 +5517,7 @@
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
         const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, minmax(0, 1fr))` : gridColumnsFor(items2.length, 155);
-        return `${label2}${fancyRowsIfRagged(items2, cols2) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:12px;margin:0 0 20px;">${tiles2}</div>`}`;
+        return `${label2}${fancyRowsIfRagged(items2, cols2) || `<div class="dl-hover-cards" style="${isVsPair(items2, c.causes2Label) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols2};gap:${isVsPair(items2, c.causes2Label) ? VS_PAIR_GAP : '12px'};margin:0 0 20px;">${tiles2}${isVsPair(items2, c.causes2Label) ? vsPairOverlay() : ''}</div>`}`;
       })() : ''}
 
       ${c.causes3 && c.causes3.length ? (() => {
@@ -5513,7 +5540,7 @@
         }).join('');
         const label3 = c.causes3Label === null ? '' : genSecLabel(c.causes3Emoji || '🔗', c.causes3Label || 'More to know');
         const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, minmax(0, 1fr))` : gridColumnsFor(items3.length, 155);
-        return `${label3}${fancyRowsIfRagged(items3, cols3) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols3};gap:12px;margin:0 0 20px;">${tiles3}</div>`}`;
+        return `${label3}${fancyRowsIfRagged(items3, cols3) || `<div class="dl-hover-cards" style="${isVsPair(items3, c.causes3Label) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols3};gap:${isVsPair(items3, c.causes3Label) ? VS_PAIR_GAP : '12px'};margin:0 0 20px;">${tiles3}${isVsPair(items3, c.causes3Label) ? vsPairOverlay() : ''}</div>`}`;
       })() : ''}
 
       ${c.versusRows && c.versusRows.rows && c.versusRows.rows.length && c.versusRowsFirst !== false ? (() => {
@@ -5675,7 +5702,7 @@
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'In detail');
         const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : gridColumnsFor(items.length, 155);
-        return `${label}${fancyRowsIfRagged(items, cols) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 20px;">${tiles}</div>`}`;
+        return `${label}${fancyRowsIfRagged(items, cols) || `<div class="dl-hover-cards" style="${isVsPair(items, c.causesLabel) ? 'position:relative;' : ''}display:grid;grid-template-columns:${cols};gap:${isVsPair(items, c.causesLabel) ? VS_PAIR_GAP : '12px'};margin:0 0 20px;">${tiles}${isVsPair(items, c.causesLabel) ? vsPairOverlay() : ''}</div>`}`;
       })() : ''}
 
       ${c.conclusionPosition === 'end' ? '' : ((c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {

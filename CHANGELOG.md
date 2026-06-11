@@ -6,6 +6,24 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.164.2 — 2026-06-11
+
+### Hit-and-run flow legibility + sitewide "Vs" styling for tile pairs
+
+- Contestability hit-and-run cycle: node fonts bumped (titles 12 → 14,
+  subs 10.5/11.5 → 12.5); step-1 button renamed "Supernormal profit" →
+  "High profits" to stop the button-strip overflow (the diagram node keeps
+  the full term).
+- NEW sitewide rule: a 2-tile grid whose section label contains "vs"
+  (LOW VS HIGH SUNK COSTS, NOMINAL VS REAL GDP, SHORT RUN VS LONG RUN …)
+  now renders with the circular VS badge centred between the tiles —
+  matching the established pair/versus chrome. Implemented as an overlay
+  in all 10 tile-grid emission sites (predicate: exactly 2 items + \bvs\b
+  in the label); 17 existing blocks pick it up automatically. The
+  ad-interactive pair renderer also gained the same auto-VS rule the
+  generic template already had.
+- `sw.js` cache `econos-v549` → `econos-v550`.
+
 ## 0.164.1 — 2026-06-11
 
 ### Economist portraits — marx.png background corrected

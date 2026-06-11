@@ -81,15 +81,20 @@ window.econosMarketSpectrum = (function () {
   };
 })();
 
+/* Lazy-render scaffolding: chart entries below are wrapped in a thunk and
+   only geometry-solved + rendered on first access (memoised thereafter), so a
+   page renders the handful of diagrams it shows rather than all ~130 on load.
+   The getters are installed by the IIFE at the end of this file. */
+window.__econosLazy = function (fn) { return { __econosThunk: fn }; };
+
 window.ECONOS_ICONS = {
 
   /* marketSpectrum* – the shared four-stop market-structure spectrum
      (builder above), one key per "you are here" topic. */
-  marketSpectrumPC: window.econosMarketSpectrum('pc'),
-  marketSpectrumMC: window.econosMarketSpectrum('mc'),
-  marketSpectrumOligopoly: window.econosMarketSpectrum('oligopoly'),
-  marketSpectrumMonopoly: window.econosMarketSpectrum('monopoly'),
-
+  marketSpectrumPC: window.__econosLazy(function () { return window.econosMarketSpectrum('pc'); }),
+  marketSpectrumMC: window.__econosLazy(function () { return window.econosMarketSpectrum('mc'); }),
+  marketSpectrumOligopoly: window.__econosLazy(function () { return window.econosMarketSpectrum('oligopoly'); }),
+  marketSpectrumMonopoly: window.__econosLazy(function () { return window.econosMarketSpectrum('monopoly'); }),
   /* Sidebar nav */
   home: `<svg viewBox="0 -960 960 960" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M220-180h150v-220q0-12.75 8.63-21.38Q387.25-430 400-430h160q12.75 0 21.38 8.62Q590-412.75 590-400v220h150v-390L480-765 220-570v390Zm-60 0v-390q0-14.25 6.38-27 6.37-12.75 17.62-21l260-195q15.68-12 35.84-12Q500-825 516-813l260 195q11.25 8.25 17.63 21 6.37 12.75 6.37 27v390q0 24.75-17.62 42.37Q764.75-120 740-120H560q-12.75 0-21.37-8.63Q530-137.25 530-150v-220H430v220q0 12.75-8.62 21.37Q412.75-120 400-120H220q-24.75 0-42.37-17.63Q160-155.25 160-180Zm320-293Z"/></svg>`,
   topics: `<svg viewBox="0 -960 960 960" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M248-300q53.57 0 104.28 12.5Q403-275 452-250v-427q-45-30-97.62-46.5Q301.76-740 248-740q-38 0-74.5 9.5T100-707v434q31-14 70.5-20.5T248-300Zm264 50q50-25 98-37.5T712-300q38 0 78.5 6t69.5 16v-429q-34-17-71.82-25-37.82-8-76.18-8-54 0-104.5 16.5T512-677v427Zm-44.5 77.5Q461-174 456-178q-47-29-99.85-45-52.84-16-108.15-16-36.54 0-71.77 9T106-208q-23.1 11-44.55-3Q40-225 40-251v-463q0-15 7-27.5T68-761q42-20 87.39-29.5 45.4-9.5 92.61-9.5 63 0 122.5 17T482-731q51-35 109.5-52T712-800q46.87 0 91.93 9.5Q849-781 891-761q14 7 21.5 19.5T920-714v463q0 27.89-22.5 42.45Q875-194 853-208q-34-14-69.23-22.5Q748.54-239 712-239q-54.27 0-106.14 16Q554-207 508-178q-5 4-11.5 5.5T482-171q-8 0-14.5-1.5ZM276-489Zm284-119q0-5.52 4.02-11.34 4.03-5.82 8.98-7.66 30-11 61.34-17 31.33-6 65.91-6 21.61 0 42.68 2.5T784-640q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-610 700-610q-29 0-56 5.5T591-588q-14 5-22.5-.5T560-608Zm0 220q0-5.81 4.02-11.94 4.03-6.12 8.98-8.06 30-11 61.34-16.5 31.33-5.5 65.91-5.5 21.61 0 42.68 2.5T784-420q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-390 700-390q-29 0-56 5t-53 16q-14 5-22.5 0t-8.5-19Zm0-110q0-5.52 4.02-11.34 4.03-5.82 8.98-7.66 30-11 61.34-17 31.33-6 65.91-6 21.61 0 42.68 2.5T784-530q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-500 700-500q-29 0-56 5.5T591-478q-14 5-22.5-.5T560-498Z"/></svg>`,
@@ -597,9 +602,8 @@ window.ECONOS_ICONS = {
      Layer dpl-1: AD₂ (green) + shift arrow.
      Layer dpl-2: E₂ dot + P₂/Y₂/E₂ labels + result chip.
      Geometry matches adAsDemandPull (viewBox 0 0 480 280, E₁=195,149, E₂=227,128).
-  adDemandPullInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_DEMAND_PULL_INTERACTIVE_SPEC),
-
-  adCostPushInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_COST_PUSH_INTERACTIVE_SPEC),
+  adDemandPullInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_DEMAND_PULL_INTERACTIVE_SPEC); }),
+  adCostPushInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_COST_PUSH_INTERACTIVE_SPEC); }),
      ============================================================ */
 
   /* ============================================================
@@ -903,11 +907,9 @@ window.ECONOS_ICONS = {
   `,
 
   /* AD slope – three effects (static, used on AD Card 2) */
-  adSlopeDiagram: window.ECONOS_PPF.render(window.ECONOS_AD_SLOPE_SPEC),
-
+  adSlopeDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_SLOPE_SPEC); }),
   /* Consumption function – C = a + bY line graph (Consumption Card 2) */
-  consumptionFunction: window.ECONOS_PPF.render(window.ECONOS_CONSUMPTION_FUNCTION_SPEC),
-
+  consumptionFunction: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_CONSUMPTION_FUNCTION_SPEC); }),
   /* Investment & Multiplier feedback loop (Investment Card 6) */
   investmentFeedbackLoop: `
     <svg viewBox="0 0 900 280" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -992,8 +994,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* MEC and Investment Decisions diagram (Investment Card 5) */
-  mecDiagram: window.ECONOS_PPF.render(window.ECONOS_MEC_DIAGRAM_SPEC),
-
+  mecDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MEC_DIAGRAM_SPEC); }),
   /* Government Spending Multiplier – 5-tile injection chain + formula box (Gov Spending Card 5) */
   govMultiplierChain: `
     <svg viewBox="0 0 900 236" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -1235,8 +1236,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  crowdingOutInteractive: window.ECONOS_PPF.render(window.ECONOS_CROWDING_OUT_SPEC),
-
+  crowdingOutInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_CROWDING_OUT_SPEC); }),
   autoStabilisersInteractive: `
     <svg viewBox="0 0 420 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -1326,8 +1326,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  adMovementShift: window.ECONOS_PPF.render(window.ECONOS_AD_MOVEMENT_SHIFT_SPEC),
-
+  adMovementShift: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_MOVEMENT_SHIFT_SPEC); }),
   /* === AD interactive – base/extension/shift via CSS layers === */
   adInteractive: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
@@ -1613,14 +1612,10 @@ window.ECONOS_ICONS = {
     <text x="420" y="177" font-size="10" fill="#DC2626" text-anchor="start" font-style="italic">of A</text>
   </svg>`,
 
-  ppfBowedOutInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD2_SPEC),
-
-  ppfMovesInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD3_SPEC),
-
-  ppfConsumerCapital: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD4_SPEC),
-
-  ppfEfficiencyInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD5_SPEC),
-
+  ppfBowedOutInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_CARD2_SPEC); }),
+  ppfMovesInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_CARD3_SPEC); }),
+  ppfConsumerCapital: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_CARD4_SPEC); }),
+  ppfEfficiencyInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_CARD5_SPEC); }),
   ppfTrade: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
     <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
     <defs>
@@ -1657,31 +1652,22 @@ window.ECONOS_ICONS = {
     <text x="320" y="155" font-size="10" fill="#64748B" text-anchor="middle">unattainable</text>
   </svg>`,
 
-  ppfTradeInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD6_SPEC),
-  ppfInteractive: window.ECONOS_PPF.render(window.ECONOS_PPF_CARD1_SPEC),
-
-  demandMovements: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD2_SPEC),
-
-  supplyMovements: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD2_SPEC),
-
-  welfareSurplusDiagram: window.ECONOS_PPF.render(window.ECONOS_WELFARE_SURPLUS_SPEC),
-
-  equilibriumBasic: window.ECONOS_PPF.render(window.ECONOS_EQUILIBRIUM_BASIC_SPEC),
-
-  ppfBigPicture:       window.ECONOS_PPF.render(window.ECONOS_PPF_BIGPIC_SPEC),
-  ppfClassify:         window.ECONOS_PPF.render(window.ECONOS_PPF_CLASSIFY_SPEC),
-  ppfOppCost:          window.ECONOS_PPF.render(window.ECONOS_PPF_OPPCOST_SPEC),
-  ppfShiftsTrio:       window.ECONOS_PPF.render(window.ECONOS_PPF_SHIFTS_TRIO_SPEC),
-  ppfTodayTomorrow:    window.ECONOS_PPF.render(window.ECONOS_PPF_TODAY_TOMORROW_SPEC),
-  modelsSupplyDemand:  window.ECONOS_PPF.render(window.ECONOS_MODELS_SD_SPEC),
-  ceterisParibusDemand: window.ECONOS_PPF.render(window.ECONOS_CETERIS_DEMAND_SPEC),
-
-  simultaneousShiftsInteractive: window.ECONOS_PPF.render(window.ECONOS_SIM_SHIFTS_SPEC),
-
-  shiftsInteractive: window.ECONOS_PPF.render(window.ECONOS_SHIFTS_SPEC),
-
-  disequilibriumInteractive: window.ECONOS_PPF.render(window.ECONOS_DISEQUILIBRIUM_SPEC),
-
+  ppfTradeInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_CARD6_SPEC); }),
+  ppfInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_CARD1_SPEC); }),
+  demandMovements: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD2_SPEC); }),
+  supplyMovements: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD2_SPEC); }),
+  welfareSurplusDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_WELFARE_SURPLUS_SPEC); }),
+  equilibriumBasic: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_EQUILIBRIUM_BASIC_SPEC); }),
+  ppfBigPicture: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_BIGPIC_SPEC); }),
+  ppfClassify: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_CLASSIFY_SPEC); }),
+  ppfOppCost: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_OPPCOST_SPEC); }),
+  ppfShiftsTrio: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_SHIFTS_TRIO_SPEC); }),
+  ppfTodayTomorrow: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PPF_TODAY_TOMORROW_SPEC); }),
+  modelsSupplyDemand: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MODELS_SD_SPEC); }),
+  ceterisParibusDemand: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_CETERIS_DEMAND_SPEC); }),
+  simultaneousShiftsInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SIM_SHIFTS_SPEC); }),
+  shiftsInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SHIFTS_SPEC); }),
+  disequilibriumInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_DISEQUILIBRIUM_SPEC); }),
   marketInteractive: `
     <svg class="market-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -2203,9 +2189,8 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  negExternalityInteractive: window.ECONOS_PPF.render(window.ECONOS_NEG_EXTERNALITY_SPEC),
-  welfareGovtFailureInteractive: window.ECONOS_PPF.render(window.ECONOS_WELFARE_GOVT_FAILURE_SPEC),
-
+  negExternalityInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_NEG_EXTERNALITY_SPEC); }),
+  welfareGovtFailureInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_WELFARE_GOVT_FAILURE_SPEC); }),
   priceControlsInteractive: `
     <svg class="pc-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -2546,8 +2531,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  jCurveInteractive: window.ECONOS_PPF.render(window.ECONOS_J_CURVE_INTERACTIVE_SPEC),
-
+  jCurveInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_J_CURVE_INTERACTIVE_SPEC); }),
   prisonersDilemmaInteractive: `
     <svg class="pd-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -4211,8 +4195,8 @@ window.ECONOS_ICONS = {
       <circle cx="200" cy="100" r="6"  fill="#3B82F6"/>
     </svg>
   `,
-  demandShifts: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD4_SPEC),
-  supplyShifts: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD4_SPEC),
+  demandShifts: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD4_SPEC); }),
+  supplyShifts: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD4_SPEC); }),
   cpsSvg: `
     <svg class="cps-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -4401,43 +4385,35 @@ window.ECONOS_ICONS = {
       <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
-  cpsDiagram: window.ECONOS_PPF.render(window.ECONOS_CPS_DIAGRAM_SPEC),
-  cpsBuildInteractive: window.ECONOS_PPF.render(window.ECONOS_CPS_BUILD_SPEC),
-  subsidyDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_DIAGRAM_SPEC),
-  tariffDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_TARIFF_DIAGRAM_SPEC),
-  quotaDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_QUOTA_DIAGRAM_SPEC),
-  subsidyTradeInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_TRADE_SPEC),
-  fxMarketDiagram: window.ECONOS_PPF.render(window.ECONOS_FX_MARKET_SPEC),
-  fxFloatingShifts: window.ECONOS_PPF.render(window.ECONOS_FX_FLOATING_SHIFTS_SPEC),
-  fxInterventionDiagrams: window.ECONOS_PPF.render(window.ECONOS_FX_INTERVENTION_SPEC),
-  fxPegDefence: window.ECONOS_PPF.render(window.ECONOS_FX_PEG_DEFENCE_SPEC),
-  lorenzCurve: window.ECONOS_PPF.render(window.ECONOS_LORENZ_CURVE_SPEC),
-  lorenzCompare: window.ECONOS_PPF.render(window.ECONOS_LORENZ_COMPARE_SPEC),
-  giniAreas: window.ECONOS_PPF.render(window.ECONOS_GINI_AREAS_SPEC),
-  bufferStockBands: window.ECONOS_PPF.render(window.ECONOS_BUFFER_STOCK_SPEC),
-  bubbleCycle: window.ECONOS_PPF.render(window.ECONOS_BUBBLE_CYCLE_SPEC),
-  kuznetsDevelopment: window.ECONOS_PPF.render(window.ECONOS_KUZNETS_CURVE_SPEC),
-  outputGapCompare: window.ECONOS_PPF.render(window.ECONOS_OUTPUT_GAP_COMPARE_SPEC),
-  marcosCostCurves: window.ECONOS_PPF.render(window.ECONOS_MARCOS_COST_SPEC),
-  marcosProfitMax: window.ECONOS_PPF.render(window.ECONOS_MARCOS_PROFIT_MAX_SPEC),
-  marcosProfitMaxPC: window.ECONOS_PPF.render(window.ECONOS_MARCOS_PROFIT_MAX_PC_SPEC),
-
-  allocativeEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC),
-
+  cpsDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_CPS_DIAGRAM_SPEC); }),
+  cpsBuildInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_CPS_BUILD_SPEC); }),
+  subsidyDiagramInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_DIAGRAM_SPEC); }),
+  tariffDiagramInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TARIFF_DIAGRAM_SPEC); }),
+  quotaDiagramInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_QUOTA_DIAGRAM_SPEC); }),
+  subsidyTradeInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_TRADE_SPEC); }),
+  fxMarketDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_FX_MARKET_SPEC); }),
+  fxFloatingShifts: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_FX_FLOATING_SHIFTS_SPEC); }),
+  fxInterventionDiagrams: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_FX_INTERVENTION_SPEC); }),
+  fxPegDefence: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_FX_PEG_DEFENCE_SPEC); }),
+  lorenzCurve: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LORENZ_CURVE_SPEC); }),
+  lorenzCompare: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LORENZ_COMPARE_SPEC); }),
+  giniAreas: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_GINI_AREAS_SPEC); }),
+  bufferStockBands: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_BUFFER_STOCK_SPEC); }),
+  bubbleCycle: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_BUBBLE_CYCLE_SPEC); }),
+  kuznetsDevelopment: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_KUZNETS_CURVE_SPEC); }),
+  outputGapCompare: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_OUTPUT_GAP_COMPARE_SPEC); }),
+  marcosCostCurves: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MARCOS_COST_SPEC); }),
+  marcosProfitMax: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MARCOS_PROFIT_MAX_SPEC); }),
+  marcosProfitMaxPC: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MARCOS_PROFIT_MAX_PC_SPEC); }),
+  allocativeEfficiencyDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_ALLOCATIVE_EFFICIENCY_SPEC); }),
   /* ── Interactive diagrams for Indirect Taxes & Subsidies topic ── */
-  taxTypesInteractive: window.ECONOS_PPF.render(window.ECONOS_TAX_TYPES_INTERACTIVE_SPEC),
-
-  taxIncidenceInteractive: window.ECONOS_PPF.render(window.ECONOS_TAX_INCIDENCE_INTERACTIVE_SPEC),
-
-  subsidyInteractive: window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_INTERACTIVE_SPEC),
-
+  taxTypesInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TAX_TYPES_INTERACTIVE_SPEC); }),
+  taxIncidenceInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TAX_INCIDENCE_INTERACTIVE_SPEC); }),
+  subsidyInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SUBSIDY_INTERACTIVE_SPEC); }),
   /* ── Market-failure topic – gap-fill diagrams ───────────── */
-  marketFailureOverview: window.ECONOS_PPF.render(window.ECONOS_MARKET_FAILURE_OVERVIEW_SPEC),
-
-  privateVsSocialDiagram: window.ECONOS_PPF.render(window.ECONOS_PRIVATE_VS_SOCIAL_SPEC),
-
-  welfareLossDiagram: window.ECONOS_PPF.render(window.ECONOS_WELFARE_LOSS_DIAGRAM_SPEC),
-
+  marketFailureOverview: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MARKET_FAILURE_OVERVIEW_SPEC); }),
+  privateVsSocialDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PRIVATE_VS_SOCIAL_SPEC); }),
+  welfareLossDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_WELFARE_LOSS_DIAGRAM_SPEC); }),
   /* threeRoutesDiagram – 3-tile category map. Hand-rolled because
      it's a tile infographic, not a coordinate chart. */
   threeRoutesDiagram: `
@@ -4514,8 +4490,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ── The-price-mechanism topic – gap-fill diagrams ──────── */
-  priceRationingScarcity: window.ECONOS_PPF.render(window.ECONOS_PRICE_RATIONING_SCARCITY_SPEC),
-
+  priceRationingScarcity: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PRICE_RATIONING_SCARCITY_SPEC); }),
   /* priceMechanismFlow – Hayek's three functions in one diagram.
      A 3-circle Venn-ish layout where the centre is the price level
      and each circle is one function (signalling / incentives /
@@ -4567,8 +4542,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  elasticityIncidenceInteractive: window.ECONOS_PPF.render(window.ECONOS_ELASTICITY_INCIDENCE_SPEC),
-
+  elasticityIncidenceInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_ELASTICITY_INCIDENCE_SPEC); }),
   taxSubsidyElasticityStatic: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
@@ -4833,12 +4807,9 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  priceCeilingDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_PRICE_CEILING_SPEC),
-
-  priceFloorDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_PRICE_FLOOR_SPEC),
-
-  taxDiagramInteractive: window.ECONOS_PPF.render(window.ECONOS_TAX_DIAGRAM_SPEC),
-
+  priceCeilingDiagramInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PRICE_CEILING_SPEC); }),
+  priceFloorDiagramInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PRICE_FLOOR_SPEC); }),
+  taxDiagramInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TAX_DIAGRAM_SPEC); }),
   taxSurplusDiagram: `
     <svg viewBox="0 0 470 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- ===== shaded regions ===== -->
@@ -9115,8 +9086,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  thirdDegreePd: window.ECONOS_PPF.render(window.ECONOS_PRICE_DISC_SPEC),
-
+  thirdDegreePd: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PRICE_DISC_SPEC); }),
   /* ============================================================
      MES BARRIER DIAGRAM – Scale Economies as Entry Barrier
      viewBox 760 x 440
@@ -10177,8 +10147,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  posExternalityInteractive: window.ECONOS_PPF.render(window.ECONOS_POS_EXTERNALITY_SPEC),
-
+  posExternalityInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_POS_EXTERNALITY_SPEC); }),
   lemonMarketDiagram: `
     <svg viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="100%" height="100%" fill="#FFFFFF" rx="12"/>
@@ -12220,17 +12189,13 @@ window.ECONOS_ICONS = {
      Left: shallow (elastic) demand curve – large ΔQD for same ΔP
      Right: steep (inelastic) demand curve – small ΔQD for same ΔP
      ============================================================ */
-  elasticVsInelasticDiagram: window.ECONOS_PPF.render(window.ECONOS_PED_ELASTIC_VS_INELASTIC_SPEC),
-  pedLinearRegions: window.ECONOS_PPF.render(window.ECONOS_PED_LINEAR_REGIONS_SPEC),
-
-  elasticVsInelasticSupplyDiagram: window.ECONOS_PPF.render(window.ECONOS_PES_ELASTIC_VS_INELASTIC_SPEC),
-
-  demandBigPicture: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD1_SPEC),
-  demandSlopeCurve: window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD7_SPEC),
-
-  supplyBigPicture: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD1_SPEC),
-  supplySlopeCurve: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD7_SPEC),
-
+  elasticVsInelasticDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PED_ELASTIC_VS_INELASTIC_SPEC); }),
+  pedLinearRegions: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PED_LINEAR_REGIONS_SPEC); }),
+  elasticVsInelasticSupplyDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PES_ELASTIC_VS_INELASTIC_SPEC); }),
+  demandBigPicture: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD1_SPEC); }),
+  demandSlopeCurve: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_DEMAND_CARD7_SPEC); }),
+  supplyBigPicture: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD1_SPEC); }),
+  supplySlopeCurve: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SUPPLY_CARD7_SPEC); }),
   demandShiftMini: `
     <svg viewBox="0 0 900 320" width="900" height="320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="900" height="320" fill="#FFFFFF" rx="12"/>
@@ -13321,35 +13286,27 @@ window.ECONOS_ICONS = {
     <circle cx="32" cy="22" r="2" fill="currentColor"/>
   </svg>`,
 
-  srasLrasIntro: window.ECONOS_PPF.render(window.ECONOS_SRAS_LRAS_INTRO_SPEC),
-
-  srasCurveStatic: window.ECONOS_PPF.render(window.ECONOS_SRAS_CURVE_STATIC_SPEC),
-
-  srasBigPicture: window.ECONOS_PPF.render(window.ECONOS_SRAS_BIG_PICTURE_SPEC),
-  srasZones: window.ECONOS_PPF.render(window.ECONOS_SRAS_ZONES_SPEC),
-  srasShiftDirections: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_DIRECTIONS_SPEC),
-
-  lrasViewsInteractive: window.ECONOS_PPF.render(window.ECONOS_LRAS_VIEWS_INTERACTIVE_SPEC),
-  lrasVerticalInteractive: window.ECONOS_PPF.render(window.ECONOS_LRAS_VERTICAL_INTERACTIVE_SPEC),
-  lrasDemandVsCapacity: window.ECONOS_PPF.render(window.ECONOS_LRAS_DEMAND_VS_CAPACITY_SPEC),
-
-  srasShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_INTERACTIVE_SPEC),
-
-  lrasShiftDiagram: window.ECONOS_PPF.render(window.ECONOS_LRAS_SHIFT_DIAGRAM_SPEC),
-
-  adShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_INTERACTIVE_SPEC),
-  adShiftClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_CLASSICAL_KEYNESIAN_SPEC),
-  adShiftLeftClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_LEFT_CLASSICAL_KEYNESIAN_SPEC),
-  supplySideSrLr: window.ECONOS_PPF.render(window.ECONOS_SUPPLY_SIDE_SR_LR_SPEC),
-  srasShiftLeftClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_LEFT_CLASSICAL_KEYNESIAN_SPEC),
-  lrasShiftRightClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_LRAS_SHIFT_RIGHT_CLASSICAL_KEYNESIAN_SPEC),
-  asIntroClassicalKeynesian: window.ECONOS_PPF.render(window.ECONOS_AS_INTRO_CLASSICAL_KEYNESIAN_SPEC),
-  asSrToLr: window.ECONOS_PPF.render(window.ECONOS_AS_SR_TO_LR_SPEC),
-  adSlopeInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_SLOPE_INTERACTIVE_SPEC),
-  adMovementShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_AD_MOVEMENT_SHIFT_INTERACTIVE_SPEC),
-
-  srasRightShiftInteractive: window.ECONOS_PPF.render(window.ECONOS_SRAS_RIGHT_SHIFT_INTERACTIVE_SPEC),
-
+  srasLrasIntro: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SRAS_LRAS_INTRO_SPEC); }),
+  srasCurveStatic: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SRAS_CURVE_STATIC_SPEC); }),
+  srasBigPicture: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SRAS_BIG_PICTURE_SPEC); }),
+  srasZones: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SRAS_ZONES_SPEC); }),
+  srasShiftDirections: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_DIRECTIONS_SPEC); }),
+  lrasViewsInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LRAS_VIEWS_INTERACTIVE_SPEC); }),
+  lrasVerticalInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LRAS_VERTICAL_INTERACTIVE_SPEC); }),
+  lrasDemandVsCapacity: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LRAS_DEMAND_VS_CAPACITY_SPEC); }),
+  srasShiftInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_INTERACTIVE_SPEC); }),
+  lrasShiftDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LRAS_SHIFT_DIAGRAM_SPEC); }),
+  adShiftInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_INTERACTIVE_SPEC); }),
+  adShiftClassicalKeynesian: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_CLASSICAL_KEYNESIAN_SPEC); }),
+  adShiftLeftClassicalKeynesian: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_SHIFT_LEFT_CLASSICAL_KEYNESIAN_SPEC); }),
+  supplySideSrLr: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SUPPLY_SIDE_SR_LR_SPEC); }),
+  srasShiftLeftClassicalKeynesian: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SRAS_SHIFT_LEFT_CLASSICAL_KEYNESIAN_SPEC); }),
+  lrasShiftRightClassicalKeynesian: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LRAS_SHIFT_RIGHT_CLASSICAL_KEYNESIAN_SPEC); }),
+  asIntroClassicalKeynesian: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AS_INTRO_CLASSICAL_KEYNESIAN_SPEC); }),
+  asSrToLr: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AS_SR_TO_LR_SPEC); }),
+  adSlopeInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_SLOPE_INTERACTIVE_SPEC); }),
+  adMovementShiftInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AD_MOVEMENT_SHIFT_INTERACTIVE_SPEC); }),
+  srasRightShiftInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_SRAS_RIGHT_SHIFT_INTERACTIVE_SPEC); }),
   adVsSupplySideDiagram: `<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
     <!-- Left panel: Demand-side stimulus -->
     <rect x="4" y="4" width="348" height="312" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5" rx="12"/>
@@ -14280,9 +14237,8 @@ window.ECONOS_ICONS = {
        .idl-hysteresis  = trend-bends-down arrow at the recession trough
      viewBox widened to 720 so right-edge labels fit; arrows drawn as
      inline polygons rather than markers (markers were scaling oddly). */
-  actualVsPotentialGrowth: window.ECONOS_PPF.render(window.ECONOS_ACTUAL_VS_POTENTIAL_GROWTH_SPEC),
-  ukProductivityPuzzle: window.ECONOS_PPF.render(window.ECONOS_UK_PRODUCTIVITY_PUZZLE_SPEC),
-
+  actualVsPotentialGrowth: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_ACTUAL_VS_POTENTIAL_GROWTH_SPEC); }),
+  ukProductivityPuzzle: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_UK_PRODUCTIVITY_PUZZLE_SPEC); }),
   /* ============================================================
      The Impact of Economic Growth (Theme 2 · 2.5.4)
      Two hero charts.
@@ -16732,29 +16688,25 @@ window.ECONOS_ICONS = {
      derived from one cubic, so the curves are smooth and TC = TFC + TVC by
      construction. Layers tfc-1 (TFC) / tfc-2 (TVC) / tfc-3 (TC) drive the
      interactiveDiagram's 3-step reveal. Replaces the old hand-rolled SVG. */
-  fixedVariableTotalChart: window.ECONOS_PPF.render(window.ECONOS_TOTAL_COST_SPEC),
-
+  fixedVariableTotalChart: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TOTAL_COST_SPEC); }),
   /* averageCostFamilyChart – Card 3 of Costs. Generated by the firm-model
      cost-function builder (window.ECONOS_FIRM.costCurves): AFC/AVC/AC are all
      derived from the same cubic as the Total Cost chart, so AC sits above AVC
      by the shrinking AFC gap and AC's minimum lands to the right of AVC's by
      construction. Layers acf-1 (AFC) / acf-2 (AVC) / acf-3 (AC) drive the
      interactiveDiagram's 3-step reveal. Replaces the old hand-rolled SVG. */
-  averageCostFamilyChart: window.ECONOS_PPF.render(window.ECONOS_AVG_COST_FAMILY_SPEC),
-
+  averageCostFamilyChart: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_AVG_COST_FAMILY_SPEC); }),
   /* marginalCostChart – Card 4 of Costs. Generated by the firm-model
      cost-function builder (window.ECONOS_FIRM.costCurves): MC (the Nike tick)
      with the dashed AVC/AC reference, and the engine SOLVES the crossings so
      MC meets AVC and AC exactly at their minima. Same FC=40 cubic as the rest
      of the topic. Layers mc-1 (MC) / mc-2 (AVC, AC + crossing dots). */
-  marginalCostChart: window.ECONOS_PPF.render(window.ECONOS_MARGINAL_COST_SPEC),
-
+  marginalCostChart: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MARGINAL_COST_SPEC); }),
   /* fullCostDiagram – Card 5 of Costs. Generated by the firm-model
      cost-function builder (window.ECONOS_FIRM.costCurves): the full AFC/AVC/
      AC/MC composite from the topic's single FC=40 cubic, with MC cutting AVC
      and AC at their engine-solved minima. Static (no reveal). */
-  fullCostDiagram: window.ECONOS_PPF.render(window.ECONOS_FULL_COST_SPEC),
-
+  fullCostDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_FULL_COST_SPEC); }),
   /* costDataBakery – Card 6 of Costs. A bakery worked-example table
      showing FC/VC/TC/AC/MC for an output range, with the AC-minimum
      row highlighted. Sits next to a 4-step "how to read a cost table"
@@ -16957,8 +16909,7 @@ window.ECONOS_ICONS = {
   /* lracBigPicture – Economies of scale card 1. Generated (firm-model lrac):
      flat-bottomed U-shaped LRAC with three region tints (economies of scale,
      MES, diseconomies) and the min-LRAC marker. Replaces hand-tuned bezier. */
-  lracBigPicture: window.ECONOS_PPF.render(window.ECONOS_LRAC_BIG_PICTURE_SPEC),
-
+  lracBigPicture: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LRAC_BIG_PICTURE_SPEC); }),
   /* internalEconomiesHub – Card 2 of Economies & Diseconomies of Scale.
      Five internal-economies tiles (Technical / Purchasing / Managerial /
      Financial / Marketing) around a central "Lower average cost" pill.
@@ -17113,8 +17064,7 @@ window.ECONOS_ICONS = {
   /* mesChart – Economies of scale card 4. Generated (firm-model lrac):
      the LRAC U with economies/MES/diseconomies regions and the MES output
      marked. Replaces the hand-tuned bezier (+ mobile variant). */
-  mesChart: window.ECONOS_PPF.render(window.ECONOS_MES_CHART_SPEC),
-
+  mesChart: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MES_CHART_SPEC); }),
   /* externalEconomies – Card 5 of Economies & Diseconomies of Scale.
      Twin-pair layout around an illustrated industry-cluster town: four
      EXTERNAL ECONOMIES cards on the left (green), four EXTERNAL
@@ -17829,8 +17779,7 @@ window.ECONOS_ICONS = {
      (above), and marks the break-even point with a red dot.
      Numbers: FC=£40k, VC=£1k/unit (TC slope), price=£2k/unit (TR
      slope). Break-even: TR=TC → 2Q=40+Q → Q=40, TR=TC=£80k. */
-  breakEvenChart: window.ECONOS_PPF.render(window.ECONOS_BREAK_EVEN_SPEC),
-
+  breakEvenChart: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_BREAK_EVEN_SPEC); }),
   /* profitMeasures – Card 4 of Profits & Losses. Interactive 2-view
      reveal of the two profit measures. View 1 reveals the Profit per
      unit panel (green) with the formula, a worked example (selling
@@ -18083,18 +18032,15 @@ window.ECONOS_ICONS = {
   /* productiveEfficiencyDiagram – Card 2 of Types of Efficiency. Engine
      spec (cost-function-driven): AC + MC with the engine-solved MC = AC
      minimum point, staged pe-1/2/3. */
-  productiveEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_PRODUCTIVE_EFFICIENCY_SPEC),
-
+  productiveEfficiencyDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PRODUCTIVE_EFFICIENCY_SPEC); }),
   /* toeAllocativeDiagram – Card 3 of Types of Efficiency. Engine spec:
      D (= MB) against MC with the engine-solved P = MC point, staged
      ta-1/2/3. */
-  toeAllocativeDiagram: window.ECONOS_PPF.render(window.ECONOS_TOE_ALLOCATIVE_SPEC),
-
+  toeAllocativeDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TOE_ALLOCATIVE_SPEC); }),
   /* dynamicEfficiencyDiagram – Card 4 of Types of Efficiency. Engine spec:
      AC₁ shifts down to AC₂ after innovation (standard dashed-original shift
      styling), staged de-1/2 with inverse de-old-solid. */
-  dynamicEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_DYNAMIC_EFFICIENCY_SPEC),
-
+  dynamicEfficiencyDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_DYNAMIC_EFFICIENCY_SPEC); }),
   /* pcMarketHub – Card 1 of Perfect Competition. Five-spoke hub
      showing the PC assumptions (Many buyers and sellers / Homogeneous
      product / Perfect information / Free entry and exit / Price-takers)
@@ -18281,17 +18227,13 @@ window.ECONOS_ICONS = {
   `,
 
   /* pcShortRunProfit – PC short-run supernormal profit (generated, firm-model costRevenue, price-taker) */
-  pcShortRunProfit: window.ECONOS_PPF.render(window.ECONOS_PC_SR_PROFIT_SPEC),
-
+  pcShortRunProfit: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PC_SR_PROFIT_SPEC); }),
   /* pcLossDiagram – PC short-run loss with AVC shutdown test (generated, firm-model costRevenue) */
-  pcLossDiagram: window.ECONOS_PPF.render(window.ECONOS_PC_LOSS_SPEC),
-
+  pcLossDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PC_LOSS_SPEC); }),
   /* pcLongRunDiagram – PC long-run normal profit, P=MC=min AC (generated, firm-model costRevenue) */
-  pcLongRunDiagram: window.ECONOS_PPF.render(window.ECONOS_PC_LONG_RUN_SPEC),
-
+  pcLongRunDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PC_LONG_RUN_SPEC); }),
   /* pcEfficiencyDiagram – PC long-run efficiency, P=MC=min AC (generated, firm-model costRevenue) */
-  pcEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_PC_EFFICIENCY_SPEC),
-
+  pcEfficiencyDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PC_EFFICIENCY_SPEC); }),
   /* mcMarketShape – Card 1 of Monopolistic Competition. A 4-spoke
      hub (Many firms / Product differentiation / Low barriers / Downward-
      sloping demand) around a central "Monopolistic competition" pill.
@@ -18416,14 +18358,11 @@ window.ECONOS_ICONS = {
   `,
 
   /* mcShortRunDiagram – MC short-run profit max (generated, firm-model monopolyProfitMax, 3-step) */
-  mcShortRunDiagram: window.ECONOS_PPF.render(window.ECONOS_MC_SHORT_RUN_SPEC),
-
+  mcShortRunDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_SHORT_RUN_SPEC); }),
   /* mcLongRunDiagram – MC long-run tangency (generated, firm-model monopolisticLongRun, exclusive 3-step) */
-  mcLongRunDiagram: window.ECONOS_PPF.render(window.ECONOS_MC_LONG_RUN_SPEC),
-
+  mcLongRunDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_LONG_RUN_SPEC); }),
   /* mcEfficiencyDiagram – MC excess capacity (generated, firm-model monopolisticEfficiency, 2-step) */
-  mcEfficiencyDiagram: window.ECONOS_PPF.render(window.ECONOS_MC_EFFICIENCY_SPEC),
-
+  mcEfficiencyDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MC_EFFICIENCY_SPEC); }),
   /* ============================================================
      MONOPOLY (3.4.5) — firm diagrams (hand-rolled, reveal-layer
      SVGs in the theme-3 firm-theory style, e.g. mcShortRunDiagram).
@@ -18441,21 +18380,18 @@ window.ECONOS_ICONS = {
      with a 4-step construction reveal (mp-1 MR=MC, mp-2 drop to Qm, mp-3 up
      to AR for Pm, mp-4 AC + supernormal-profit rectangle). MC=MR engine-
      solved; demand P=22-0.1Q. Replaces the old hand-rolled SVG. */
-  monopolyProfitMax: window.ECONOS_PPF.render(window.ECONOS_MONOPOLY_PROFIT_MAX_SPEC),
-
+  monopolyProfitMax: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MONOPOLY_PROFIT_MAX_SPEC); }),
   /* monopolyWelfare – Card 4 of Monopoly. Generated by the firm-model
      builder (window.ECONOS_FIRM.monopolyWelfare): MC/AR/MR base curves with a
      3-step reveal (mw-1 monopoly outcome Qm/Pm, mw-2 competitive benchmark
      Qc/Pc at P=MC, mw-3 the deadweight-loss triangle). Both equilibria engine-
      solved; soft-fill DWL shading. Replaces the old hand-rolled SVG. */
-  monopolyWelfare: window.ECONOS_PPF.render(window.ECONOS_MONOPOLY_WELFARE_SPEC),
-
+  monopolyWelfare: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MONOPOLY_WELFARE_SPEC); }),
   /* naturalMonopoly – Monopoly card 8. Generated (firm-model naturalMonopoly):
      falling AC across the market, flat MC below; 4-step reveal nm-1 economies
      of scale, nm-2 unregulated MR=MC, nm-3 P=MC (loss/subsidy), nm-4 P=AC
      break-even. Equilibria engine-solved. Replaces hand-rolled SVG. */
-  naturalMonopoly: window.ECONOS_PPF.render(window.ECONOS_NATURAL_MONOPOLY_SPEC),
-
+  naturalMonopoly: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_NATURAL_MONOPOLY_SPEC); }),
   /* priceDiscPanels — Card 6 interactive 3-panel diagram (pd-1..pd-3).
      Combined market sets the common MC level (MR=MC); the firm then
      equates MR=MC in each sub-market. Inelastic Market A → high price;
@@ -18685,8 +18621,7 @@ window.ECONOS_ICONS = {
        MRP = 26 − 2L       (80,83)→(620,265)
      Monopsony: MCL=MRP at (292,154) → Lm; wage Wm on ACL (292,219).
      Competitive: MRP=ACL at (393,188) → Wc, Lc (higher both). */
-  monopsonyLabourDiagram: window.ECONOS_PPF.render(window.ECONOS_MONOPSONY_LABOUR_SPEC),
-
+  monopsonyLabourDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MONOPSONY_LABOUR_SPEC); }),
   /* ============================================================
      CONTESTABLE MARKETS (3.4.7) — hit-and-run timeline.
      ============================================================ */
@@ -18758,13 +18693,11 @@ window.ECONOS_ICONS = {
 
   /* labourDemandCurve — Card 2 interactive (ld-1..ld-2). Downward
      MRP = D_L curve; at wage W₁ the firm hires L₁ (MRP = wage). */
-  labourDemandCurve: window.ECONOS_PPF.render(window.ECONOS_LABOUR_DEMAND_SPEC),
-
+  labourDemandCurve: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LABOUR_DEMAND_SPEC); }),
   /* labourDemandShift — Card 3 interactive (lds-1..lds-3). At a fixed
      wage, a rise in product demand shifts D_L right (more hired); a
      fall shifts it left (fewer hired). */
-  labourDemandShift: window.ECONOS_PPF.render(window.ECONOS_LABOUR_DEMAND_SHIFT_SPEC),
-
+  labourDemandShift: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LABOUR_DEMAND_SHIFT_SPEC); }),
   /* labourShiftVsMovement — Card 4 static two-panel comparison.
      Left: a non-wage factor shifts the whole curve. Right: a wage
      change is a movement along the curve. */
@@ -18810,12 +18743,10 @@ window.ECONOS_ICONS = {
 
   /* labourSupplyCurve — Card 1 interactive (ls-1..ls-2). Upward S;
      a higher wage is a movement ALONG the curve (A → B). */
-  labourSupplyCurve: window.ECONOS_PPF.render(window.ECONOS_LABOUR_SUPPLY_SPEC),
-
+  labourSupplyCurve: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LABOUR_SUPPLY_SPEC); }),
   /* labourSupplyShift — Card 2 interactive (lss-1..lss-3). S shifts
      right (increase) or left (decrease) from non-wage factors. */
-  labourSupplyShift: window.ECONOS_PPF.render(window.ECONOS_LABOUR_SUPPLY_SHIFT_SPEC),
-
+  labourSupplyShift: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LABOUR_SUPPLY_SHIFT_SPEC); }),
   /* occupationChoiceHub — Card 3. Six factors around a central
      "One occupation" node. Same hub grammar as monopolyFeaturesHub. */
   occupationChoiceHub: `
@@ -18915,13 +18846,11 @@ window.ECONOS_ICONS = {
   /* labourMarketEquilibrium — Cards 1 & 2 interactive (lme-*).
      Card 1 builds the equilibrium; Card 2 adds the surplus/shortage
      zones above and below it. */
-  labourMarketEqDiagram: window.ECONOS_PPF.render(window.ECONOS_LABOUR_MARKET_EQ_SPEC),
-
+  labourMarketEqDiagram: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LABOUR_MARKET_EQ_SPEC); }),
   /* wageFloorCeiling — Card 6 interactive (wf-*). Minimum wage (a floor
      above equilibrium → unemployment) and maximum wage / pay cap (a
      ceiling below equilibrium → shortage). Government-intervention style. */
-  wageFloorCeiling: window.ECONOS_PPF.render(window.ECONOS_WAGE_FLOOR_CEILING_SPEC),
-
+  wageFloorCeiling: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_WAGE_FLOOR_CEILING_SPEC); }),
   /* labourSupplyElasticity — Card 5 static two-panel comparison.
      Same rightward demand shift; inelastic (steep) supply gives a big
      wage change, elastic (flat) supply gives a big quantity change. */
@@ -19040,8 +18969,7 @@ window.ECONOS_ICONS = {
      ============================================================ */
 
   /* priceCapMonopoly — Card 3 interactive (pcm-1..pcm-2). */
-  priceCapMonopoly: window.ECONOS_PPF.render(window.ECONOS_PRICE_CAP_MONOPOLY_SPEC),
-
+  priceCapMonopoly: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_PRICE_CAP_MONOPOLY_SPEC); }),
   /* ============================================================
      PROTECTING SUPPLIERS & EMPLOYEES (3.6.1) — minimum wage in a
      monopsony. Reuses the monopsony coords (x = 80 + 54·L,
@@ -19052,8 +18980,7 @@ window.ECONOS_ICONS = {
      ============================================================ */
 
   /* monopsonyMinWage — Card 4 interactive (mmw-1..mmw-2). */
-  monopsonyMinWage: window.ECONOS_PPF.render(window.ECONOS_MONOPSONY_MIN_WAGE_SPEC),
-
+  monopsonyMinWage: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MONOPSONY_MIN_WAGE_SPEC); }),
   /* ============================================================
      IMPACT OF GOVERNMENT INTERVENTION (3.6.2) — bespoke visuals.
      ============================================================ */
@@ -21854,8 +21781,7 @@ window.ECONOS_ICONS = {
      Numbers (pixel-space): D from (80,100)→(640,340); MR from (80,100)→(360,340).
      Cartel: Q_c at x=250 → MR(250)≈242 → marker. D(250)≈173 → P_c marker.
      Comp:  Q_comp at x=440 → MC(440)≈247 (where MC visually meets D). */
-  cartelJointProfitInteractive: window.ECONOS_PPF.render(window.ECONOS_CARTEL_JOINT_PROFIT_SPEC),
-
+  cartelJointProfitInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_CARTEL_JOINT_PROFIT_SPEC); }),
   /* oligopolyKinkedDemand – Card 3 of Oligopoly. An ACCURATE, interactive
      kinked demand curve, built in 3 reveal views. The mock-up's version
      was geometrically wrong; this one follows the standard textbook
@@ -21876,8 +21802,7 @@ window.ECONOS_ICONS = {
      kinkedDemand): elastic-above / inelastic-below demand, the discontinuous
      MR with a vertical gap under the kink, and MC1/MC2 both passing through
      the gap so price is sticky. 3-step reveal kdc-1/2/3. */
-  oligopolyKinkedDemand: window.ECONOS_PPF.render(window.ECONOS_KINKED_DEMAND_SPEC),
-
+  oligopolyKinkedDemand: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_KINKED_DEMAND_SPEC); }),
   /* ============================================================
      GAME THEORY (3.4.4) — payoff-matrix family + tit-for-tat cycle
      Shared 2×2 price-cutting game: Firm A (rows) × Firm B (cols),
@@ -24170,10 +24095,8 @@ window.ECONOS_ICONS = {
      V1 – Original 1958 SRPC + equilibrium A
      V2 – Friedman/Phelps: LRPC + SRPC₂ + A→B→C path
      V3 – 1970s stagflation: SRPC₃ shifted up, point S high U AND high π */
-  stagflationPhillipsInteractive: window.ECONOS_PPF.render(window.ECONOS_STAGFLATION_PHILLIPS_SPEC),
-
-  inflation2022AdAs: window.ECONOS_PPF.render(window.ECONOS_INFLATION_2022_AD_AS_SPEC),
-
+  stagflationPhillipsInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_STAGFLATION_PHILLIPS_SPEC); }),
+  inflation2022AdAs: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_INFLATION_2022_AD_AS_SPEC); }),
   /* C4 (Conflicts) · Interactive AD/AS for the 2021–23 surge.
      V1 – Pre-shock (2020–21) baseline E0
      V2 – Both shocks (2021–22): AD shifts right, SRAS shifts left → E1
@@ -25589,3 +25512,19 @@ window.ECONOS_ICONS = {
   `,
 
 };
+
+/* __econos_install_lazy: convert lazy sentinels into memoised getters. */
+(function __econos_install_lazy() {
+  var I = window.ECONOS_ICONS;
+  if (!I) return;
+  Object.keys(I).forEach(function (k) {
+    var v = I[k];
+    if (v && typeof v === 'object' && typeof v.__econosThunk === 'function') {
+      var thunk = v.__econosThunk, cached, done = false;
+      Object.defineProperty(I, k, {
+        configurable: true, enumerable: true,
+        get: function () { if (!done) { cached = thunk(); done = true; } return cached; }
+      });
+    }
+  });
+})();

@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.160.1 — 2026-06-11
+
+### Kinked demand curve — swoosh MCs + decluttered later views
+
+- MC₁/MC₂ were flat horizontal lines; now drawn as the standard
+  falling-then-rising MC swoosh (parabolas calibrated to pass exactly through
+  the declared mc1/mc2 values at the kink output, so both still cut the MR gap
+  where the model requires).
+- The "elastic above / inelastic below" teaching labels moved to their own
+  reveal layer (kdc-1x): shown on the intro view, dropped on the MR-gap and
+  MC views where they had become clutter.
+- `sw.js` cache `econos-v538` → `econos-v539`.
+
 ## 0.160.0 — 2026-06-11
 
 ### Oligopoly — tightened + two spec gaps closed

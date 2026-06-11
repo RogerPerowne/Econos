@@ -148,14 +148,14 @@ window.ECONOS_TOPIC = {
         svgKey: 'oligopolyKinkedDemand',
         label: 'THE DIAGRAM — build it in three steps',
         emoji: '\u{1F4C8}',
-        layers: ['kdc-1', 'kdc-2', 'kdc-3'],
+        layers: ['kdc-1', 'kdc-1x', 'kdc-2', 'kdc-3'],
         views: [
           {
             label: 'The kinked demand',
             tone: 'blue',
             head: 'Step 1 — a demand curve with a kink',
             body: 'At the current price the demand curve bends. <strong>Above the kink it is elastic</strong> (raise price and rivals don’t follow, so you lose lots of customers). <strong>Below the kink it is inelastic</strong> (cut price and rivals match, so you gain few extra customers).',
-            show: ['kdc-1']
+            show: ['kdc-1', 'kdc-1x']
           },
           {
             label: 'The gap in MR',

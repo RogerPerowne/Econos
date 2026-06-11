@@ -172,7 +172,7 @@
     // explicitly suppress the title for a particular callout.
     const headSet = typeof item === 'object' && Object.prototype.hasOwnProperty.call(item, 'head');
     const head = headSet ? item.head : (opts.defaultHead || null);
-    const iconHtml = showIcon ? `<div class="tone-callout__icon">${renderIcon(icon)}</div>` : '';
+    const iconHtml = showIcon ? `<div class="tone-callout__icon">${renderIcon(icon, null, { plain: true })}</div>` : '';
     const bodyHtml = head
       ? `<div class="tone-callout__body"><div class="tone-callout__head">${head}</div><div class="tone-callout__text">${text}</div></div>`
       : `<div class="tone-callout__body"><div class="tone-callout__text">${text}</div></div>`;
@@ -301,9 +301,27 @@
        { icon: '🚀' }                    // an emoji (unchanged)
      Add a new symbol with `npm run fetch:symbols` after listing it in the
      manifest in scripts/fetch-symbols.mjs. */
-  function renderIcon(v, size) {
+  /* Canonical pros/cons badge — ONE sitewide style so every
+     positives-vs-negatives chart reads the same: a green disc with a
+     white tick for a positive, a rose disc with a white cross for a
+     negative. Authors keep using the familiar ✅ / 🟢 / 👍 (and
+     ❌ / 🔴 / 👎) glyphs; renderIcon swaps in the badge. Sized 1em so it
+     drops into any icon slot at the host font-size, exactly like the
+     emoji it replaces. Tips/notes opt out via `{plain:true}` — a green
+     tip is not a pros/cons chart. */
+  const PROS_CONS_POS = '<svg viewBox="0 0 24 24" width="1em" height="1em" role="img" aria-label="Positive" style="display:block;"><circle cx="12" cy="12" r="11" fill="var(--econ-green-600)"/><path d="M6.6 12.5 L10.4 16.2 L17.4 8.6" fill="none" stroke="var(--econ-white)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const PROS_CONS_NEG = '<svg viewBox="0 0 24 24" width="1em" height="1em" role="img" aria-label="Negative" style="display:block;"><circle cx="12" cy="12" r="11" fill="var(--econ-rose)"/><path d="M8.2 8.2 L15.8 15.8 M15.8 8.2 L8.2 15.8" fill="none" stroke="var(--econ-white)" stroke-width="2.6" stroke-linecap="round"/></svg>';
+  const PROS_GLYPHS = new Set(['✅', '✔', '☑', '\u{1F7E2}', '\u{1F44D}']);
+  const CONS_GLYPHS = new Set(['❌', '✖', '✗', '\u{1F534}', '\u{1F44E}']);
+
+  function renderIcon(v, size, opts) {
     if (typeof v === 'string' && v.slice(0, 4) === 'sym:' && typeof window !== 'undefined' && window.ECONOS_SYM) {
       return window.ECONOS_SYM(v.slice(4), size || 22) || '';
+    }
+    if (typeof v === 'string' && !(opts && opts.plain)) {
+      const g = v.replace(/️/g, '');
+      if (PROS_GLYPHS.has(g)) return PROS_CONS_POS;
+      if (CONS_GLYPHS.has(g)) return PROS_CONS_NEG;
     }
     return v || '';
   }

@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.157.2 — 2026-06-11
+
+### Market-structure spectrum — bigger, blacker labels
+
+- The shared `econosMarketSpectrum` builder (the "WHERE IT SITS" four-stop
+  spectrum on card 1 of all four market-structure topics) had small grey
+  labels. Bumped every font (desktop names 14→17, sub-labels 11.5→14, caption
+  12.5→14.5; mobile names 13→15.5, sub/caption 11→13) and switched the
+  previously-grey text — inactive stop names, sub-labels and the caption — to
+  black (`#0B1426`). The green "you are here" highlight (active stop name +
+  panel) is preserved.
+- Grew the active highlight panel and desktop viewBox to fit the larger text.
+  One builder change covers PC / MC / Oligopoly / Monopoly. `sw.js` cache
+  `econos-v534` → `econos-v535`.
+
 ## 0.157.1 — 2026-06-11
 
 ### Perfect Competition — staged-diagram polish (cards 3–6)

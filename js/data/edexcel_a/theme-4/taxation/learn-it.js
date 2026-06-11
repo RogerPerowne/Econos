@@ -14,6 +14,7 @@ window.ECONOS_TOPIC = {
   estTime:     '–',
   goal:        'Coming soon.',
   intro: {
+    heroKey: 'heroTaxation',
     summary:  "Taxation – full Learn It content is in production.",
     doInThis: 'Check back soon. This topic will be rebuilt using the same design system as the topics already shipped on this board.',
     outcomes: [],

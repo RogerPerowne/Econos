@@ -21,7 +21,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain why and how governments intervene in currency markets — through direct transactions, interest rates and defending a peg — and evaluate competitive devaluation and its risks',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroFxIntervention',
     summary: 'Governments do not always leave the exchange rate to the market. This deck explains why they intervene — for competitiveness, to control imported inflation, to defend a peg, to maintain confidence or to smooth volatility — and the tools they use: direct foreign-currency transactions, interest rates, reserves and occasionally capital controls. It builds the supply-and-demand diagrams for supporting and weakening a currency, shows how interest rates act as a magnet for capital, walks through the pressure of defending a fixed rate, and finishes with the contested strategy of competitive devaluation and the retaliation risk of a currency war.',
     doInThis: 'Set out why governments intervene and the tools available. Show how buying or selling the currency shifts demand or supply. Explain how interest rates pull capital and move the rate. Walk through how a peg is defended and why pegs break. Evaluate competitive devaluation, its winners and losers, and the risk of currency wars.',
     outcomes: [

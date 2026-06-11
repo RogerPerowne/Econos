@@ -41,9 +41,11 @@ const check = process.argv.includes('--check');
    lowered to 6228 (v0.155.24) with the whereProfitComesFrom rebuild; lowered to
    6165 (v0.155.26) when the three Types of Efficiency diagrams migrated from
    hand-rolled SVG to engine specs; raised to 6352 (v0.155.31) for the 20 new
-   Theme-3 hero covers (hand-rolled flat-illustration SVG art, fills cannot take
-   a CSS var — same rationale as the town/revenueThreeMetrics raises). */
-const DUP_BASELINE = 6352;
+   Theme-3 hero covers, and to 6417 (v0.155.32) for the 19 new Theme-4 hero
+   covers; raised to 6717 (v0.155.33) when all 39 Theme-3/4 covers were enriched
+   with gradient/glow defs for visual richness (hand-rolled SVG art, fills cannot
+   take a CSS var — same rationale as the town/revenueThreeMetrics raises). */
+const DUP_BASELINE = 6717;
 
 const css = readFileSync('styles.css', 'utf8');
 

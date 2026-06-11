@@ -21,7 +21,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain the external barriers to growth and development — primary product dependence, commodity volatility, the foreign-currency gap, capital flight and debt — and evaluate how far they can be escaped',
 
   intro: {
-    heroKey: 'heroGlobe',
+    heroKey: 'heroExternalBarriers',
     summary: 'Some of the biggest barriers to development come from a country\'s position in the world economy. This deck works through the major external constraints. Primary product dependence leaves an economy exposed to volatile world prices and stuck with low value added. Commodity price volatility turns that dependence into unstable export earnings, budgets and investment. The foreign-currency gap means a country cannot earn enough hard currency to pay for the imported machinery, fuel and technology development needs. Capital flight drains savings and confidence when people fear instability. And debt — especially in foreign currency — can fund take-off, or trap a country when servicing it overwhelms the economy. The deck closes by linking these barriers together and asking which constraint binds hardest, and whether a country can escape it.',
     doInThis: 'Explain primary product dependence and its risks. Show how commodity price volatility destabilises development. Distinguish the foreign-currency gap from the savings gap. Explain capital flight and how to reduce it. Weigh useful borrowing against the debt trap. Link the barriers together and evaluate which binds hardest.',
     outcomes: [

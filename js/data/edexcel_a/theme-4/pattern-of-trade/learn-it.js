@@ -31,7 +31,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain the factors that shape the pattern of trade — comparative advantage, emerging economies, trading blocs and bilateral agreements, and exchange-rate changes — and why trade flows change over time',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroPatternOfTrade',
     summary: 'The pattern of trade is about who trades what with whom — and, crucially, why those flows change over time. A strong answer never relies on one factor. This deck works through the four big drivers: comparative advantage (the underlying theory), the rise of emerging economies (which redraws global production), trading blocs and bilateral deals (which change the barriers firms face), and exchange rates (which shift price competitiveness). Each driver is built with its own diagram, and the deck closes by combining them into a single evaluation chain so you can explain an observed trade pattern and then judge which forces matter most in context.',
     doInThis: 'Map the four big drivers of trade patterns around the globe. Use comparative advantage to explain the direction of trade. Show how emerging economies reshape global production, how trade agreements redirect flows (trade creation vs diversion), and how exchange-rate moves change competitiveness. Finish by combining the drivers into a balanced whole-story judgement.',
     outcomes: [

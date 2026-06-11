@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
   goal: 'Classify public spending, explain why it changes, and evaluate its effects on growth, living standards, equality and the tax burden',
 
   intro: {
-    heroKey: 'heroGovSpending',
+    heroKey: 'heroFiscalPolicy',
     summary: 'Public expenditure is government spending — but what the state spends on, and how much, shapes growth, services, equality and the tax burden. This deck starts by splitting spending into three types: capital expenditure (long-term investment in roads, schools and hospitals), current expenditure (day-to-day running costs like wages and medicines), and transfer payments (income redistributed without a good or service in return, such as pensions and benefits). It then explains why spending changes — ageing populations, the development stage, recessions and automatic stabilisers, debt-interest costs and global shocks — and weighs the size and composition of the budget. The second half evaluates the effects: how productive spending can raise growth, how spending and transfers affect living standards and equality, and how spending must be financed through tax or borrowing, with the risk of crowding out. It closes on how to structure a balanced answer.',
     doInThis: 'Classify spending as capital, current or a transfer payment. Explain why public expenditure changes. Weigh the size and composition of the budget. Link productive spending to growth, and spending and transfers to equality. Explain how spending is financed and the risk of crowding out, then evaluate.',
     outcomes: [

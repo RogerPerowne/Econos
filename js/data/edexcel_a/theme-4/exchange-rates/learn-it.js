@@ -26,7 +26,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain how exchange rates are determined in the FX market, distinguish floating, fixed and managed systems, and use the appreciation/depreciation/revaluation/devaluation vocabulary correctly',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroExchangeRatesT4',
     summary: 'An exchange rate is the price of one currency in terms of another — and like any price, it is set where demand meets supply. This deck builds the foreign-exchange market diagram (demand for pounds from exports and inward flows; supply of pounds from imports and outward flows), then contrasts the three systems: a floating rate set entirely by the market, a fixed rate the central bank must defend with reserves and interest rates, and a managed rate that sits in between. It finishes by nailing the vocabulary students mix up most — appreciation and depreciation are market moves; revaluation and devaluation are official policy changes.',
     doInThis: 'Define an exchange rate and what drives currency demand and supply. Read the FX market diagram and find the equilibrium rate. Explain how a floating rate appreciates or depreciates, and how a fixed rate is defended. Place managed rates on the spectrum between floating and fixed. Finally, use appreciation, depreciation, revaluation and devaluation precisely.',
     outcomes: [

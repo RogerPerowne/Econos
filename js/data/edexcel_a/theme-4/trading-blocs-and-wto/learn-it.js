@@ -30,7 +30,7 @@ window.ECONOS_TOPIC = {
   goal: 'Classify the main types of trading bloc, analyse their costs and benefits through trade creation and diversion, explain the role of the WTO, and evaluate regional integration against wider global welfare',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroTradingBlocs',
     summary: 'This topic has two layers. Trading blocs are regional: countries form a group and give each other preferential access, climbing a ladder of integration from a free trade area, through a customs union and common market, to a monetary union — each rung deeper, each rung costing more policy independence. The WTO is global: a rules-based system that tries to keep the wider trading system open, predictable and fair. The analytical heart is trade creation versus trade diversion — whether a bloc shifts demand to lower-cost producers (raising welfare) or to higher-cost members behind a common tariff (lowering it). The deck closes by weighing regional gains against global efficiency.',
     doInThis: 'Classify the four main types of bloc and what each stage adds. Compare FTAs and customs unions and show how trade flows change. Explain common markets and monetary unions and the conditions a currency union needs. Weigh the benefits and costs of regional agreements through trade creation and diversion. Explain the role and limits of the WTO. Finish with a balanced judgement of regionalism versus the multilateral system.',
     outcomes: [

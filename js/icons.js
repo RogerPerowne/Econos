@@ -5855,365 +5855,1151 @@ window.ECONOS_ICONS = {
   heroBusinessGrowth: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="bg-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="bg-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="bg-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="bg-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="bg-t0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#DCFCE7"/></linearGradient><linearGradient id="bg-t1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCFCE7"/><stop offset="100%" stop-color="#BBF7D0"/></linearGradient><linearGradient id="bg-t2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6EE7B7"/><stop offset="100%" stop-color="#34D399"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DCFCE7" opacity="0.7"/>
-      <g filter="url(#h-soft)"><rect x="40" y="250" width="44" height="56" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/><rect x="48.0" y="262" width="10" height="13" fill="#86EFAC"/><rect x="57.0" y="262" width="10" height="13" fill="#86EFAC"/><rect x="66.0" y="262" width="10" height="13" fill="#86EFAC" opacity="0.55"/><rect x="55" y="284" width="14" height="22" fill="#16A34A"/></g>
-   <g filter="url(#h-soft)"><rect x="96" y="198" width="48" height="108" fill="#BBF7D0" stroke="#16A34A" stroke-width="2"/><rect x="104.0" y="210" width="10" height="13" fill="#ECFDF5"/><rect x="115.0" y="210" width="10" height="13" fill="#ECFDF5"/><rect x="126.0" y="210" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="104.0" y="229" width="10" height="13" fill="#ECFDF5"/><rect x="115.0" y="229" width="10" height="13" fill="#ECFDF5"/><rect x="126.0" y="229" width="10" height="13" fill="#ECFDF5"/><rect x="104.0" y="248" width="10" height="13" fill="#ECFDF5"/><rect x="115.0" y="248" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="126.0" y="248" width="10" height="13" fill="#ECFDF5"/><rect x="104.0" y="267" width="10" height="13" fill="#ECFDF5"/><rect x="115.0" y="267" width="10" height="13" fill="#ECFDF5"/><rect x="126.0" y="267" width="10" height="13" fill="#ECFDF5"/><rect x="113" y="284" width="14" height="22" fill="#16A34A"/></g>
-   <g filter="url(#h-sh)"><rect x="156" y="132" width="56" height="174" fill="#34D399" stroke="#047857" stroke-width="2"/><rect x="164.0" y="144" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="144" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="144" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="164.0" y="163" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="163" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="163" width="10" height="13" fill="#ECFDF5"/><rect x="164.0" y="182" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="182" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="194.0" y="182" width="10" height="13" fill="#ECFDF5"/><rect x="164.0" y="201" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="201" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="201" width="10" height="13" fill="#ECFDF5"/><rect x="164.0" y="220" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="179.0" y="220" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="220" width="10" height="13" fill="#ECFDF5"/><rect x="164.0" y="239" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="239" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="239" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="177" y="284" width="14" height="22" fill="#047857"/></g>
-   <line x1="238" y1="250" x2="238" y2="100" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 229 109 L 238 100 L 247 109" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <circle cx="140" cy="172" r="150" fill="url(#bg-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#bg-grd)"/>
+      <g fill="#BBF7D0" opacity="0.5">
+     <rect x="22" y="196" width="26" height="86"/><rect x="54" y="172" width="20" height="110"/>
+     <rect x="210" y="182" width="22" height="100"/><rect x="236" y="204" width="24" height="78"/></g>
+   <g filter="url(#bg-soft)"><rect x="40" y="250" width="44" height="56" fill="url(#bg-t0)" stroke="#16A34A" stroke-width="2"/><rect x="40" y="250" width="4" height="56" fill="#FFFFFF" opacity="0.22"/><rect x="48.0" y="262" width="10" height="13" rx="1" fill="#86EFAC"/><rect x="48.0" y="262" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="57.0" y="262" width="10" height="13" rx="1" fill="#86EFAC"/><rect x="57.0" y="262" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="66.0" y="262" width="10" height="13" rx="1" fill="#86EFAC" opacity="0.5"/><rect x="55" y="284" width="14" height="22" rx="1.5" fill="#16A34A"/><rect x="55" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <g filter="url(#bg-soft)"><rect x="96" y="198" width="48" height="108" fill="url(#bg-t1)" stroke="#16A34A" stroke-width="2"/><rect x="96" y="198" width="4" height="108" fill="#FFFFFF" opacity="0.22"/><rect x="104.0" y="210" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="104.0" y="210" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="115.0" y="210" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="115.0" y="210" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="126.0" y="210" width="10" height="13" rx="1" fill="#ECFDF5" opacity="0.5"/><rect x="104.0" y="229" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="104.0" y="229" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="115.0" y="229" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="115.0" y="229" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="126.0" y="229" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="126.0" y="229" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="248" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="104.0" y="248" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="115.0" y="248" width="10" height="13" rx="1" fill="#ECFDF5" opacity="0.5"/><rect x="126.0" y="248" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="126.0" y="248" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="267" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="104.0" y="267" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="115.0" y="267" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="115.0" y="267" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="126.0" y="267" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="126.0" y="267" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="113" y="284" width="14" height="22" rx="1.5" fill="#16A34A"/><rect x="113" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <g filter="url(#bg-sh)"><rect x="156" y="132" width="56" height="174" fill="url(#bg-t2)" stroke="#047857" stroke-width="2"/><rect x="156" y="132" width="4" height="174" fill="#FFFFFF" opacity="0.22"/><rect x="164.0" y="144" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="164.0" y="144" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="179.0" y="144" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="179.0" y="144" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="194.0" y="144" width="10" height="13" rx="1" fill="#ECFDF5" opacity="0.5"/><rect x="164.0" y="163" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="164.0" y="163" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="179.0" y="163" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="179.0" y="163" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="194.0" y="163" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="194.0" y="163" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="164.0" y="182" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="164.0" y="182" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="179.0" y="182" width="10" height="13" rx="1" fill="#ECFDF5" opacity="0.5"/><rect x="194.0" y="182" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="194.0" y="182" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="164.0" y="201" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="164.0" y="201" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="179.0" y="201" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="179.0" y="201" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="194.0" y="201" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="194.0" y="201" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="164.0" y="220" width="10" height="13" rx="1" fill="#ECFDF5" opacity="0.5"/><rect x="179.0" y="220" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="179.0" y="220" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="194.0" y="220" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="194.0" y="220" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="164.0" y="239" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="164.0" y="239" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="179.0" y="239" width="10" height="13" rx="1" fill="#ECFDF5"/><rect x="179.0" y="239" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="194.0" y="239" width="10" height="13" rx="1" fill="#ECFDF5" opacity="0.5"/><rect x="177" y="284" width="14" height="22" rx="1.5" fill="#047857"/><rect x="177" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <line x1="240" y1="250" x2="240" y2="98" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 231 107 L 240 98 L 249 107" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroBusinessObjectives: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="bo-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="bo-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="bo-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="bo-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FEF3C7" opacity="0.7"/>
-      <g filter="url(#h-sh)">
+      <circle cx="140" cy="172" r="150" fill="url(#bo-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#bo-grd)"/>
+      <g filter="url(#bo-sh)">
      <circle cx="132" cy="186" r="86" fill="#FFFFFF" stroke="#D97706" stroke-width="3"/>
-     <circle cx="132" cy="186" r="64" fill="#FDE68A"/>
+     <circle cx="132" cy="186" r="64" fill="#FDE68A"/><circle cx="132" cy="186" r="63" fill="none" stroke="#FBBF24" stroke-width="1.5" opacity="0.6"/>
      <circle cx="132" cy="186" r="42" fill="#FFFFFF"/>
-     <circle cx="132" cy="186" r="20" fill="#F59E0B"/>
+     <circle cx="132" cy="186" r="20" fill="#F59E0B"/><circle cx="124" cy="178" r="6" fill="#FFFFFF" opacity="0.4"/>
      <circle cx="132" cy="186" r="7" fill="#B45309"/>
    </g>
    <line x1="232" y1="96" x2="140" y2="180" stroke="#92400E" stroke-width="5" stroke-linecap="round"/>
-   <path d="M 232 96 L 214 100 L 220 114 Z" fill="#92400E"/>
+   <path d="M 232 96 L 213 99 L 220 115 Z" fill="#B45309"/>
+   <path d="M 232 96 l -10 -7 l -2 12 z" fill="#DC2626"/>
    <circle cx="138" cy="182" r="5" fill="#B45309"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroCartels: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="ca-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ca-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ca-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FDA4AF" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FDA4AF" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FDA4AF" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ca-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFE4E6" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FFE4E6" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="ca-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FECDD3"/><stop offset="100%" stop-color="#FECACA"/></linearGradient><linearGradient id="ca-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FB7185"/><stop offset="100%" stop-color="#E11D48"/></linearGradient><linearGradient id="ca-k2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FECDD3"/><stop offset="100%" stop-color="#FECACA"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FFE4E6" opacity="0.7"/>
-      <g filter="url(#h-soft)">
-     <rect x="60" y="200" width="48" height="92" rx="6" fill="#FECDD3" stroke="#BE123C" stroke-width="2"/>
+      <circle cx="140" cy="172" r="150" fill="url(#ca-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ca-grd)"/>
+      <g filter="url(#ca-soft)">
+     <rect x="60" y="200" width="48" height="92" rx="6" fill="url(#ca-k0)" stroke="#BE123C" stroke-width="2"/><rect x="60" y="200" width="48" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="60" y1="246" x2="108" y2="246" stroke="#BE123C" stroke-width="1.3" opacity="0.7"/><line x1="84" y1="200" x2="84" y2="292" stroke="#BE123C" stroke-width="1.3" opacity="0.7"/>
      <ellipse cx="84" cy="200" rx="24" ry="7" fill="#FFF1F2" stroke="#BE123C" stroke-width="2"/>
-     <line x1="60" y1="228" x2="108" y2="228" stroke="#BE123C" stroke-width="1.6"/>
-     <line x1="60" y1="262" x2="108" y2="262" stroke="#BE123C" stroke-width="1.6"/>
-   </g><g filter="url(#h-soft)">
-     <rect x="124" y="200" width="48" height="92" rx="6" fill="#FB7185" stroke="#BE123C" stroke-width="2"/>
+   </g><g filter="url(#ca-soft)">
+     <rect x="124" y="200" width="48" height="92" rx="6" fill="url(#ca-k1)" stroke="#BE123C" stroke-width="2"/><rect x="124" y="200" width="48" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="124" y1="246" x2="172" y2="246" stroke="#BE123C" stroke-width="1.3" opacity="0.7"/><line x1="148" y1="200" x2="148" y2="292" stroke="#BE123C" stroke-width="1.3" opacity="0.7"/>
      <ellipse cx="148" cy="200" rx="24" ry="7" fill="#FFF1F2" stroke="#BE123C" stroke-width="2"/>
-     <line x1="124" y1="228" x2="172" y2="228" stroke="#BE123C" stroke-width="1.6"/>
-     <line x1="124" y1="262" x2="172" y2="262" stroke="#BE123C" stroke-width="1.6"/>
-   </g><g filter="url(#h-soft)">
-     <rect x="188" y="200" width="48" height="92" rx="6" fill="#FECDD3" stroke="#BE123C" stroke-width="2"/>
+   </g><g filter="url(#ca-soft)">
+     <rect x="188" y="200" width="48" height="92" rx="6" fill="url(#ca-k2)" stroke="#BE123C" stroke-width="2"/><rect x="188" y="200" width="48" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="188" y1="246" x2="236" y2="246" stroke="#BE123C" stroke-width="1.3" opacity="0.7"/><line x1="212" y1="200" x2="212" y2="292" stroke="#BE123C" stroke-width="1.3" opacity="0.7"/>
      <ellipse cx="212" cy="200" rx="24" ry="7" fill="#FFF1F2" stroke="#BE123C" stroke-width="2"/>
-     <line x1="188" y1="228" x2="236" y2="228" stroke="#BE123C" stroke-width="1.6"/>
-     <line x1="188" y1="262" x2="236" y2="262" stroke="#BE123C" stroke-width="1.6"/>
    </g>
-   <path d="M 96 180 C 120 150 160 150 184 180" fill="none" stroke="#9F1239" stroke-width="2.4" stroke-dasharray="5 4"/>
-   <circle cx="140" cy="158" r="13" fill="#9F1239"/>
-   <path d="M 134 158 l 4 4 l 8 -9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+   <path d="M 96 178 C 120 148 160 148 184 178" fill="none" stroke="#9F1239" stroke-width="2.4" stroke-dasharray="5 4"/>
+   <g filter="url(#ca-soft)"><circle cx="140" cy="156" r="14" fill="#9F1239"/><circle cx="135" cy="151" r="4" fill="#fff" opacity="0.35"/>
+   <path d="M 134 156 l 4 4 l 8 -9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroContestable: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="co-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="co-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="co-door" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#93C5FD"/><stop offset="55%" stop-color="#BFDBFE"/><stop offset="100%" stop-color="#DBEAFE"/></linearGradient><radialGradient id="co-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="co-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
-      <g filter="url(#h-sh)">
-     <rect x="92" y="120" width="96" height="172" rx="4" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2.5"/>
-     <rect x="108" y="138" width="64" height="154" fill="#BFDBFE"/>
-     <rect x="108" y="138" width="32" height="154" fill="#93C5FD"/>
-     <circle cx="134" cy="218" r="4" fill="#1E3A8A"/>
+      <circle cx="140" cy="172" r="150" fill="url(#co-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#co-grd)"/>
+      <g fill="#BFDBFE" opacity="0.5">
+     <rect x="22" y="196" width="26" height="86"/><rect x="54" y="172" width="20" height="110"/>
+     <rect x="210" y="182" width="22" height="100"/><rect x="236" y="204" width="24" height="78"/></g>
+   <g filter="url(#co-sh)">
+     <rect x="92" y="120" width="96" height="172" rx="5" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2.5"/>
+     <rect x="108" y="138" width="64" height="154" fill="url(#co-door)"/>
+     <circle cx="160" cy="218" r="4" fill="#1E3A8A"/>
    </g>
-   <line x1="30" y1="206" x2="92" y2="206" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/>
+   <line x1="28" y1="206" x2="92" y2="206" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/>
    <path d="M 84 198 L 96 206 L 84 214" fill="none" stroke="#2563EB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-   <line x1="250" y1="240" x2="188" y2="240" stroke="#60A5FA" stroke-width="6" stroke-linecap="round"/>
-   <path d="M 246 232 L 258 240 L 246 248" fill="none" stroke="#60A5FA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+   <line x1="252" y1="244" x2="188" y2="244" stroke="#60A5FA" stroke-width="6" stroke-linecap="round"/>
+   <path d="M 248 236 L 260 244 L 248 252" fill="none" stroke="#60A5FA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroControlPower: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="cp-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="cp-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="cp-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="cp-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="cp-t0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DDD6FE"/><stop offset="100%" stop-color="#C4B5FD"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#F5F3FF" opacity="0.7"/>
-      <g filter="url(#h-soft)"><rect x="96" y="176" width="70" height="130" fill="#C4B5FD" stroke="#6D28D9" stroke-width="2"/><rect x="104.0" y="188" width="10" height="13" fill="#F5F3FF"/><rect x="126.0" y="188" width="10" height="13" fill="#F5F3FF"/><rect x="148.0" y="188" width="10" height="13" fill="#F5F3FF" opacity="0.55"/><rect x="104.0" y="207" width="10" height="13" fill="#F5F3FF"/><rect x="126.0" y="207" width="10" height="13" fill="#F5F3FF"/><rect x="148.0" y="207" width="10" height="13" fill="#F5F3FF"/><rect x="104.0" y="226" width="10" height="13" fill="#F5F3FF"/><rect x="126.0" y="226" width="10" height="13" fill="#F5F3FF" opacity="0.55"/><rect x="148.0" y="226" width="10" height="13" fill="#F5F3FF"/><rect x="104.0" y="245" width="10" height="13" fill="#F5F3FF"/><rect x="126.0" y="245" width="10" height="13" fill="#F5F3FF"/><rect x="148.0" y="245" width="10" height="13" fill="#F5F3FF"/><rect x="104.0" y="264" width="10" height="13" fill="#F5F3FF" opacity="0.55"/><rect x="126.0" y="264" width="10" height="13" fill="#F5F3FF"/><rect x="148.0" y="264" width="10" height="13" fill="#F5F3FF"/><rect x="124" y="284" width="14" height="22" fill="#6D28D9"/></g>
-   <g filter="url(#h-sh)" transform="rotate(-24 196 150)">
-     <rect x="150" y="138" width="74" height="26" rx="6" fill="#7C3AED" stroke="#5B21B6" stroke-width="2"/>
-     <rect x="180" y="120" width="14" height="62" rx="4" fill="#8B5CF6" stroke="#5B21B6" stroke-width="2"/>
+      <circle cx="140" cy="172" r="150" fill="url(#cp-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#cp-grd)"/>
+      <g filter="url(#cp-soft)"><rect x="96" y="176" width="70" height="130" fill="url(#cp-t0)" stroke="#6D28D9" stroke-width="2"/><rect x="96" y="176" width="4" height="130" fill="#FFFFFF" opacity="0.22"/><rect x="104.0" y="188" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="104.0" y="188" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="126.0" y="188" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="126.0" y="188" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="148.0" y="188" width="10" height="13" rx="1" fill="#F5F3FF" opacity="0.5"/><rect x="104.0" y="207" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="104.0" y="207" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="126.0" y="207" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="126.0" y="207" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="148.0" y="207" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="148.0" y="207" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="226" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="104.0" y="226" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="126.0" y="226" width="10" height="13" rx="1" fill="#F5F3FF" opacity="0.5"/><rect x="148.0" y="226" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="148.0" y="226" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="245" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="104.0" y="245" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="126.0" y="245" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="126.0" y="245" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="148.0" y="245" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="148.0" y="245" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="264" width="10" height="13" rx="1" fill="#F5F3FF" opacity="0.5"/><rect x="126.0" y="264" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="126.0" y="264" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="148.0" y="264" width="10" height="13" rx="1" fill="#F5F3FF"/><rect x="148.0" y="264" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="124" y="284" width="14" height="22" rx="1.5" fill="#6D28D9"/><rect x="124" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <g filter="url(#cp-sh)" transform="rotate(-24 196 150)">
+     <rect x="150" y="136" width="74" height="28" rx="7" fill="#8B5CF6" stroke="#5B21B6" stroke-width="2"/>
+     <rect x="150" y="136" width="74" height="6" rx="3" fill="#FFFFFF" opacity="0.25"/>
+     <rect x="180" y="118" width="14" height="64" rx="5" fill="#A78BFA" stroke="#5B21B6" stroke-width="2"/>
    </g>
-   <rect x="120" y="300" width="120" height="10" rx="3" fill="#7C3AED"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+   <rect x="118" y="300" width="124" height="10" rx="3" fill="#7C3AED"/><rect x="118" y="300" width="124" height="3" rx="1.5" fill="#FFFFFF" opacity="0.3"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroDemandLabour: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="dl-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="dl-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="dl-hat" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FCD34D"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient><radialGradient id="dl-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="dl-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="dl-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
-      <g filter="url(#h-sh)">
-     <path d="M 78 196 C 78 150 162 150 162 196 Z" fill="#F59E0B" stroke="#B45309" stroke-width="2.5"/>
+      <circle cx="140" cy="172" r="150" fill="url(#dl-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#dl-grd)"/>
+      <g filter="url(#dl-sh)">
+     <path d="M 78 196 C 78 150 162 150 162 196 Z" fill="url(#dl-hat)" stroke="#B45309" stroke-width="2.5"/>
      <rect x="70" y="194" width="100" height="14" rx="5" fill="#FBBF24" stroke="#B45309" stroke-width="2.5"/>
-     <rect x="114" y="150" width="12" height="46" fill="#FCD34D"/>
+     <rect x="114" y="150" width="12" height="46" rx="2" fill="#FCD34D"/>
+     <path d="M 88 188 C 92 168 110 160 120 160" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.4" stroke-linecap="round"/>
    </g>
-   <g filter="url(#h-soft)">
-     <rect x="150" y="226" width="86" height="64" rx="8" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+   <g filter="url(#dl-soft)"><rect x="150" y="226" width="86" height="64" rx="8" fill="url(#dl-k0)" stroke="#1E40AF" stroke-width="2"/><rect x="150" y="226" width="86" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="150" y1="258" x2="236" y2="258" stroke="#1E40AF" stroke-width="1.3" opacity="0.7"/><line x1="193" y1="226" x2="193" y2="290" stroke="#1E40AF" stroke-width="1.3" opacity="0.7"/>
      <rect x="176" y="216" width="34" height="14" rx="4" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
-     <rect x="150" y="250" width="86" height="6" fill="#1E40AF"/>
-     <rect x="184" y="244" width="18" height="6" rx="2" fill="#BFDBFE"/>
-   </g>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+     <rect x="184" y="250" width="18" height="6" rx="2" fill="#BFDBFE"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroDemergers: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="dm-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="dm-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="dm-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#CBD5E1" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="dm-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F1F5F9" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#F1F5F9" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="dm-t0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E2E8F0"/><stop offset="100%" stop-color="#CBD5E1"/></linearGradient><linearGradient id="dm-t1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F1F5F9"/><stop offset="100%" stop-color="#E2E8F0"/></linearGradient><linearGradient id="dm-t2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#CBD5E1"/><stop offset="100%" stop-color="#94A3B8"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#F1F5F9" opacity="0.7"/>
-      <g filter="url(#h-soft)"><rect x="40" y="196" width="60" height="110" fill="#CBD5E1" stroke="#475569" stroke-width="2"/><rect x="48.0" y="208" width="10" height="13" fill="#F8FAFC"/><rect x="65.0" y="208" width="10" height="13" fill="#F8FAFC"/><rect x="82.0" y="208" width="10" height="13" fill="#F8FAFC" opacity="0.55"/><rect x="48.0" y="227" width="10" height="13" fill="#F8FAFC"/><rect x="65.0" y="227" width="10" height="13" fill="#F8FAFC"/><rect x="82.0" y="227" width="10" height="13" fill="#F8FAFC"/><rect x="48.0" y="246" width="10" height="13" fill="#F8FAFC"/><rect x="65.0" y="246" width="10" height="13" fill="#F8FAFC" opacity="0.55"/><rect x="82.0" y="246" width="10" height="13" fill="#F8FAFC"/><rect x="48.0" y="265" width="10" height="13" fill="#F8FAFC"/><rect x="65.0" y="265" width="10" height="13" fill="#F8FAFC"/><rect x="82.0" y="265" width="10" height="13" fill="#F8FAFC"/><rect x="63" y="284" width="14" height="22" fill="#475569"/></g>
-   <g filter="url(#h-soft)"><rect x="180" y="210" width="56" height="96" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/><rect x="188.0" y="222" width="10" height="13" fill="#F8FAFC"/><rect x="203.0" y="222" width="10" height="13" fill="#F8FAFC"/><rect x="218.0" y="222" width="10" height="13" fill="#F8FAFC" opacity="0.55"/><rect x="188.0" y="241" width="10" height="13" fill="#F8FAFC"/><rect x="203.0" y="241" width="10" height="13" fill="#F8FAFC"/><rect x="218.0" y="241" width="10" height="13" fill="#F8FAFC"/><rect x="188.0" y="260" width="10" height="13" fill="#F8FAFC"/><rect x="203.0" y="260" width="10" height="13" fill="#F8FAFC" opacity="0.55"/><rect x="218.0" y="260" width="10" height="13" fill="#F8FAFC"/><rect x="201" y="284" width="14" height="22" fill="#64748B"/></g>
-   <g filter="url(#h-sh)"><rect x="116" y="150" width="48" height="90" fill="#94A3B8" stroke="#334155" stroke-width="2"/><rect x="124.0" y="162" width="10" height="13" fill="#F1F5F9"/><rect x="135.0" y="162" width="10" height="13" fill="#F1F5F9"/><rect x="146.0" y="162" width="10" height="13" fill="#F1F5F9" opacity="0.55"/><rect x="124.0" y="181" width="10" height="13" fill="#F1F5F9"/><rect x="135.0" y="181" width="10" height="13" fill="#F1F5F9"/><rect x="146.0" y="181" width="10" height="13" fill="#F1F5F9"/><rect x="124.0" y="200" width="10" height="13" fill="#F1F5F9"/><rect x="135.0" y="200" width="10" height="13" fill="#F1F5F9" opacity="0.55"/><rect x="146.0" y="200" width="10" height="13" fill="#F1F5F9"/><rect x="133" y="218" width="14" height="22" fill="#334155"/></g>
+      <circle cx="140" cy="172" r="150" fill="url(#dm-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#dm-grd)"/>
+      <g filter="url(#dm-soft)"><rect x="40" y="196" width="60" height="110" fill="url(#dm-t0)" stroke="#475569" stroke-width="2"/><rect x="40" y="196" width="4" height="110" fill="#FFFFFF" opacity="0.22"/><rect x="48.0" y="208" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="48.0" y="208" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="65.0" y="208" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="65.0" y="208" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="82.0" y="208" width="10" height="13" rx="1" fill="#F8FAFC" opacity="0.5"/><rect x="48.0" y="227" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="48.0" y="227" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="65.0" y="227" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="65.0" y="227" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="82.0" y="227" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="82.0" y="227" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="48.0" y="246" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="48.0" y="246" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="65.0" y="246" width="10" height="13" rx="1" fill="#F8FAFC" opacity="0.5"/><rect x="82.0" y="246" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="82.0" y="246" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="48.0" y="265" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="48.0" y="265" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="65.0" y="265" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="65.0" y="265" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="82.0" y="265" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="82.0" y="265" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="63" y="284" width="14" height="22" rx="1.5" fill="#475569"/><rect x="63" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <g filter="url(#dm-soft)"><rect x="180" y="210" width="56" height="96" fill="url(#dm-t1)" stroke="#64748B" stroke-width="2"/><rect x="180" y="210" width="4" height="96" fill="#FFFFFF" opacity="0.22"/><rect x="188.0" y="222" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="188.0" y="222" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="203.0" y="222" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="203.0" y="222" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="218.0" y="222" width="10" height="13" rx="1" fill="#F8FAFC" opacity="0.5"/><rect x="188.0" y="241" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="188.0" y="241" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="203.0" y="241" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="203.0" y="241" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="218.0" y="241" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="218.0" y="241" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="188.0" y="260" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="188.0" y="260" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="203.0" y="260" width="10" height="13" rx="1" fill="#F8FAFC" opacity="0.5"/><rect x="218.0" y="260" width="10" height="13" rx="1" fill="#F8FAFC"/><rect x="218.0" y="260" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="201" y="284" width="14" height="22" rx="1.5" fill="#64748B"/><rect x="201" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <g filter="url(#dm-sh)"><rect x="116" y="150" width="48" height="90" fill="url(#dm-t2)" stroke="#334155" stroke-width="2"/><rect x="116" y="150" width="4" height="90" fill="#FFFFFF" opacity="0.22"/><rect x="124.0" y="162" width="10" height="13" rx="1" fill="#F1F5F9"/><rect x="124.0" y="162" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="162" width="10" height="13" rx="1" fill="#F1F5F9"/><rect x="135.0" y="162" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="146.0" y="162" width="10" height="13" rx="1" fill="#F1F5F9" opacity="0.5"/><rect x="124.0" y="181" width="10" height="13" rx="1" fill="#F1F5F9"/><rect x="124.0" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="181" width="10" height="13" rx="1" fill="#F1F5F9"/><rect x="135.0" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="146.0" y="181" width="10" height="13" rx="1" fill="#F1F5F9"/><rect x="146.0" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="124.0" y="200" width="10" height="13" rx="1" fill="#F1F5F9"/><rect x="124.0" y="200" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="200" width="10" height="13" rx="1" fill="#F1F5F9" opacity="0.5"/><rect x="146.0" y="200" width="10" height="13" rx="1" fill="#F1F5F9"/><rect x="146.0" y="200" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="133" y="218" width="14" height="22" rx="1.5" fill="#334155"/><rect x="133" y="218" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
    <path d="M 132 248 C 120 270 104 280 92 286" fill="none" stroke="#475569" stroke-width="3" stroke-dasharray="5 4"/>
    <path d="M 96 280 L 90 288 L 100 290" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
    <path d="M 150 248 C 162 270 182 280 196 286" fill="none" stroke="#475569" stroke-width="3" stroke-dasharray="5 4"/>
    <path d="M 192 280 L 198 288 L 188 290" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroGovIntervention: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="gi-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="gi-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="gi-roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#14B8A6"/><stop offset="100%" stop-color="#0F766E"/></linearGradient><radialGradient id="gi-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#5EEAD4" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="gi-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#CCFBF1" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#CCFBF1" opacity="0.7"/>
-      <g filter="url(#h-sh)">
-     <polygon points="60,140 220,140 140,98" fill="#0F766E" stroke="#115E59" stroke-width="2"/>
+      <circle cx="140" cy="172" r="150" fill="url(#gi-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#gi-grd)"/>
+      <g filter="url(#gi-sh)">
+     <polygon points="60,140 220,140 140,96" fill="url(#gi-roof)" stroke="#115E59" stroke-width="2"/>
+     <polygon points="60,140 220,140 140,96" fill="#FFFFFF" opacity="0.0"/>
      <rect x="60" y="140" width="160" height="12" fill="#14B8A6" stroke="#115E59" stroke-width="2"/>
-     <rect x="72" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="104" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="136" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="168" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="200" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/>
+     <rect x="72" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="72" y="152" width="4" height="120" fill="#FFFFFF" opacity="0.3"/><rect x="104" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="104" y="152" width="4" height="120" fill="#FFFFFF" opacity="0.3"/><rect x="136" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="136" y="152" width="4" height="120" fill="#FFFFFF" opacity="0.3"/><rect x="168" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="168" y="152" width="4" height="120" fill="#FFFFFF" opacity="0.3"/><rect x="200" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="200" y="152" width="4" height="120" fill="#FFFFFF" opacity="0.3"/>
      <rect x="52" y="272" width="176" height="16" rx="2" fill="#0F766E" stroke="#115E59" stroke-width="2"/>
+     <rect x="52" y="272" width="176" height="4" fill="#FFFFFF" opacity="0.2"/>
    </g>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroGovImpact: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="gm-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="gm-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="gm-pan" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient><radialGradient id="gm-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="gm-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FEF3C7" opacity="0.7"/>
-      <g filter="url(#h-sh)">
-     <rect x="134" y="120" width="12" height="150" rx="3" fill="#B45309"/>
+      <circle cx="140" cy="172" r="150" fill="url(#gm-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#gm-grd)"/>
+      <g filter="url(#gm-sh)">
+     <rect x="134" y="120" width="12" height="150" rx="3" fill="#B45309"/><rect x="134" y="120" width="4" height="150" fill="#FFFFFF" opacity="0.2"/>
      <rect x="96" y="270" width="88" height="14" rx="4" fill="#92400E"/>
      <line x1="64" y1="138" x2="216" y2="138" stroke="#92400E" stroke-width="5" stroke-linecap="round"/>
      <circle cx="140" cy="132" r="9" fill="#F59E0B" stroke="#92400E" stroke-width="2"/>
-     <path d="M 44 138 L 84 138 L 70 184 Z" fill="#FDE68A" stroke="#B45309" stroke-width="2"/>
-     <path d="M 196 138 L 236 138 L 222 178 Z" fill="#FCD34D" stroke="#B45309" stroke-width="2"/>
+     <path d="M 44 138 L 84 138 L 70 184 Z" fill="url(#gm-pan)" stroke="#B45309" stroke-width="2"/>
+     <path d="M 196 138 L 236 138 L 222 178 Z" fill="url(#gm-pan)" stroke="#B45309" stroke-width="2"/>
      <line x1="64" y1="138" x2="64" y2="152" stroke="#92400E" stroke-width="1.6"/>
      <line x1="216" y1="138" x2="216" y2="152" stroke="#92400E" stroke-width="1.6"/>
    </g>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroMonopolisticComp: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="mc-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="mc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="mc-s0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient><linearGradient id="mc-s1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient><linearGradient id="mc-s2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient><linearGradient id="mc-s3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient><radialGradient id="mc-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="mc-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#F5F3FF" opacity="0.7"/>
-      <g filter="url(#h-soft)"><rect x="38" y="232" width="38" height="60" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.6"/><rect x="35" y="220" width="44" height="14" rx="2" fill="#C4B5FD"/><rect x="44" y="242" width="26" height="14" fill="#7C3AED" opacity="0.35"/><rect x="51" y="272" width="12" height="20" fill="#7C3AED"/></g>
-   <g filter="url(#h-soft)"><rect x="96" y="232" width="38" height="60" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/><rect x="93" y="220" width="44" height="14" rx="2" fill="#93C5FD"/><rect x="102" y="242" width="26" height="14" fill="#2563EB" opacity="0.35"/><rect x="109" y="272" width="12" height="20" fill="#2563EB"/></g>
-   <g filter="url(#h-soft)"><rect x="154" y="232" width="38" height="60" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.6"/><rect x="151" y="220" width="44" height="14" rx="2" fill="#86EFAC"/><rect x="160" y="242" width="26" height="14" fill="#16A34A" opacity="0.35"/><rect x="167" y="272" width="12" height="20" fill="#16A34A"/></g>
-   <g filter="url(#h-soft)"><rect x="212" y="232" width="38" height="60" fill="#FFFFFF" stroke="#D97706" stroke-width="1.6"/><rect x="209" y="220" width="44" height="14" rx="2" fill="#FCD34D"/><rect x="218" y="242" width="26" height="14" fill="#D97706" opacity="0.35"/><rect x="225" y="272" width="12" height="20" fill="#D97706"/></g>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <circle cx="140" cy="172" r="150" fill="url(#mc-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#mc-grd)"/>
+      <g filter="url(#mc-soft)">
+     <rect x="38" y="232" width="38" height="60" fill="url(#mc-s0)" stroke="#7C3AED" stroke-width="1.6"/>
+     <rect x="35" y="220" width="44" height="14" rx="2" fill="#C4B5FD"/><rect x="35" y="220" width="44" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/>
+     <rect x="44" y="242" width="26" height="16" rx="2" fill="#7C3AED" opacity="0.35"/>
+     <rect x="51" y="272" width="12" height="20" fill="#7C3AED"/></g><g filter="url(#mc-soft)">
+     <rect x="96" y="232" width="38" height="60" fill="url(#mc-s1)" stroke="#2563EB" stroke-width="1.6"/>
+     <rect x="93" y="220" width="44" height="14" rx="2" fill="#93C5FD"/><rect x="93" y="220" width="44" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/>
+     <rect x="102" y="242" width="26" height="16" rx="2" fill="#2563EB" opacity="0.35"/>
+     <rect x="109" y="272" width="12" height="20" fill="#2563EB"/></g><g filter="url(#mc-soft)">
+     <rect x="154" y="232" width="38" height="60" fill="url(#mc-s2)" stroke="#16A34A" stroke-width="1.6"/>
+     <rect x="151" y="220" width="44" height="14" rx="2" fill="#86EFAC"/><rect x="151" y="220" width="44" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/>
+     <rect x="160" y="242" width="26" height="16" rx="2" fill="#16A34A" opacity="0.35"/>
+     <rect x="167" y="272" width="12" height="20" fill="#16A34A"/></g><g filter="url(#mc-soft)">
+     <rect x="212" y="232" width="38" height="60" fill="url(#mc-s3)" stroke="#D97706" stroke-width="1.6"/>
+     <rect x="209" y="220" width="44" height="14" rx="2" fill="#FCD34D"/><rect x="209" y="220" width="44" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/>
+     <rect x="218" y="242" width="26" height="16" rx="2" fill="#D97706" opacity="0.35"/>
+     <rect x="225" y="272" width="12" height="20" fill="#D97706"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroMonopoly: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="mo-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="mo-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="mo-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FDA4AF" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FDA4AF" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FDA4AF" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="mo-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFE4E6" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FFE4E6" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="mo-t0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FB7185"/><stop offset="100%" stop-color="#E11D48"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FFE4E6" opacity="0.7"/>
-      <g filter="url(#h-sh)">
+      <circle cx="140" cy="172" r="150" fill="url(#mo-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#mo-grd)"/>
+      <g fill="#FECDD3" opacity="0.5">
+     <rect x="22" y="196" width="26" height="86"/><rect x="54" y="172" width="20" height="110"/>
+     <rect x="210" y="182" width="22" height="100"/><rect x="236" y="204" width="24" height="78"/></g>
+   <g filter="url(#mo-sh)">
      <polygon points="96,118 184,118 170,96 166,112 158,96 154,112 146,96 142,112 134,96 130,112 122,96 118,112 110,96 106,112" fill="#FBBF24"/>
-     <rect x="96" y="118" width="88" height="188" fill="#F43F5E" stroke="#9F1239" stroke-width="2"/><rect x="104.0" y="130" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="130" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="130" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="166.0" y="130" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="149" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="149" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="149" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="149" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="104.0" y="168" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="168" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="168" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="168" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="187" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="124.7" y="187" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="187" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="187" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="206" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="206" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="145.3" y="206" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="206" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="225" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="225" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="225" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="166.0" y="225" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="244" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="244" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="244" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="244" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="133" y="284" width="14" height="22" fill="#9F1239"/>
+     <rect x="96" y="118" width="88" height="188" fill="url(#mo-t0)" stroke="#9F1239" stroke-width="2"/><rect x="96" y="118" width="4" height="188" fill="#FFFFFF" opacity="0.22"/><rect x="104.0" y="130" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="104.0" y="130" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="124.7" y="130" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="124.7" y="130" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="145.3" y="130" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="166.0" y="130" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="166.0" y="130" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="149" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="104.0" y="149" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="124.7" y="149" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="124.7" y="149" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="145.3" y="149" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="145.3" y="149" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="166.0" y="149" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="104.0" y="168" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="104.0" y="168" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="124.7" y="168" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="124.7" y="168" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="145.3" y="168" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="145.3" y="168" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="166.0" y="168" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="166.0" y="168" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="187" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="124.7" y="187" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="124.7" y="187" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="145.3" y="187" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="145.3" y="187" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="166.0" y="187" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="166.0" y="187" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="206" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="104.0" y="206" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="124.7" y="206" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="145.3" y="206" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="145.3" y="206" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="166.0" y="206" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="166.0" y="206" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="225" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="104.0" y="225" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="124.7" y="225" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="124.7" y="225" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="145.3" y="225" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="166.0" y="225" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="166.0" y="225" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="104.0" y="244" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="104.0" y="244" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="124.7" y="244" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="124.7" y="244" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="145.3" y="244" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="145.3" y="244" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="166.0" y="244" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="133" y="284" width="14" height="22" rx="1.5" fill="#9F1239"/><rect x="133" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/>
    </g>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroMonopsony: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="ms-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ms-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ms-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#A5B4FC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#A5B4FC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#A5B4FC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ms-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#E0E7FF" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#E0E7FF" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="ms-t0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A5B4FC"/><stop offset="100%" stop-color="#818CF8"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#E0E7FF" opacity="0.7"/>
-      <g filter="url(#h-sh)"><rect x="98" y="150" width="84" height="156" fill="#818CF8" stroke="#3730A3" stroke-width="2"/><rect x="106.0" y="162" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="162" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="162" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="164.0" y="162" width="10" height="13" fill="#EEF2FF"/><rect x="106.0" y="181" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="181" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="181" width="10" height="13" fill="#EEF2FF"/><rect x="164.0" y="181" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="106.0" y="200" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="200" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="200" width="10" height="13" fill="#EEF2FF"/><rect x="164.0" y="200" width="10" height="13" fill="#EEF2FF"/><rect x="106.0" y="219" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="125.3" y="219" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="219" width="10" height="13" fill="#EEF2FF"/><rect x="164.0" y="219" width="10" height="13" fill="#EEF2FF"/><rect x="106.0" y="238" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="238" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="144.7" y="238" width="10" height="13" fill="#EEF2FF"/><rect x="164.0" y="238" width="10" height="13" fill="#EEF2FF"/><rect x="106.0" y="257" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="257" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="257" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="164.0" y="257" width="10" height="13" fill="#EEF2FF"/><rect x="133" y="284" width="14" height="22" fill="#3730A3"/></g>
-   <circle cx="44" cy="232" r="5.1" fill="#6366F1"/><rect x="38.9" y="236.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/><circle cx="44" cy="262" r="5.1" fill="#6366F1"/><rect x="38.9" y="266.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/><circle cx="44" cy="292" r="5.1" fill="#6366F1"/><rect x="38.9" y="296.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/>
-   <path d="M 60 238 C 80 238 84 228 94 224" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/><path d="M 60 268 C 80 268 84 228 94 246" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/><path d="M 60 298 C 80 298 84 228 94 268" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/>
+      <circle cx="140" cy="172" r="150" fill="url(#ms-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ms-grd)"/>
+      <g filter="url(#ms-sh)"><rect x="98" y="150" width="84" height="156" fill="url(#ms-t0)" stroke="#3730A3" stroke-width="2"/><rect x="98" y="150" width="4" height="156" fill="#FFFFFF" opacity="0.22"/><rect x="106.0" y="162" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="106.0" y="162" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="125.3" y="162" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="125.3" y="162" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="144.7" y="162" width="10" height="13" rx="1" fill="#EEF2FF" opacity="0.5"/><rect x="164.0" y="162" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="164.0" y="162" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="106.0" y="181" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="106.0" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="125.3" y="181" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="125.3" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="144.7" y="181" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="144.7" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="164.0" y="181" width="10" height="13" rx="1" fill="#EEF2FF" opacity="0.5"/><rect x="106.0" y="200" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="106.0" y="200" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="125.3" y="200" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="125.3" y="200" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="144.7" y="200" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="144.7" y="200" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="164.0" y="200" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="164.0" y="200" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="106.0" y="219" width="10" height="13" rx="1" fill="#EEF2FF" opacity="0.5"/><rect x="125.3" y="219" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="125.3" y="219" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="144.7" y="219" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="144.7" y="219" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="164.0" y="219" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="164.0" y="219" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="106.0" y="238" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="106.0" y="238" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="125.3" y="238" width="10" height="13" rx="1" fill="#EEF2FF" opacity="0.5"/><rect x="144.7" y="238" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="144.7" y="238" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="164.0" y="238" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="164.0" y="238" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="106.0" y="257" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="106.0" y="257" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="125.3" y="257" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="125.3" y="257" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="144.7" y="257" width="10" height="13" rx="1" fill="#EEF2FF" opacity="0.5"/><rect x="164.0" y="257" width="10" height="13" rx="1" fill="#EEF2FF"/><rect x="164.0" y="257" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="133" y="284" width="14" height="22" rx="1.5" fill="#3730A3"/><rect x="133" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <circle cx="44" cy="232" r="5.1" fill="#6366F1"/><circle cx="42.64" cy="230.64" r="1.7" fill="#FFFFFF" opacity="0.35"/><rect x="38.9" y="236.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/><circle cx="44" cy="262" r="5.1" fill="#6366F1"/><circle cx="42.64" cy="260.64" r="1.7" fill="#FFFFFF" opacity="0.35"/><rect x="38.9" y="266.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/><circle cx="44" cy="292" r="5.1" fill="#6366F1"/><circle cx="42.64" cy="290.64" r="1.7" fill="#FFFFFF" opacity="0.35"/><rect x="38.9" y="296.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/>
+   <path d="M 60 238 C 80 238 84 230 94 224" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/><path d="M 60 268 C 80 268 84 230 94 246" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/><path d="M 60 298 C 80 298 84 230 94 268" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/>
    <circle cx="92" cy="226" r="3" fill="#4F46E5"/><circle cx="94" cy="248" r="3" fill="#4F46E5"/><circle cx="92" cy="270" r="3" fill="#4F46E5"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroOligopoly: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="ol-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ol-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ol-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ol-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="ol-t0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#93C5FD"/><stop offset="100%" stop-color="#60A5FA"/></linearGradient><linearGradient id="ol-t1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient><linearGradient id="ol-t2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#93C5FD"/><stop offset="100%" stop-color="#60A5FA"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
-      <g filter="url(#h-soft)"><rect x="44" y="168" width="56" height="138" fill="#60A5FA" stroke="#1E40AF" stroke-width="2"/><rect x="52.0" y="180" width="10" height="13" fill="#EFF6FF"/><rect x="67.0" y="180" width="10" height="13" fill="#EFF6FF"/><rect x="82.0" y="180" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="52.0" y="199" width="10" height="13" fill="#EFF6FF"/><rect x="67.0" y="199" width="10" height="13" fill="#EFF6FF"/><rect x="82.0" y="199" width="10" height="13" fill="#EFF6FF"/><rect x="52.0" y="218" width="10" height="13" fill="#EFF6FF"/><rect x="67.0" y="218" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="82.0" y="218" width="10" height="13" fill="#EFF6FF"/><rect x="52.0" y="237" width="10" height="13" fill="#EFF6FF"/><rect x="67.0" y="237" width="10" height="13" fill="#EFF6FF"/><rect x="82.0" y="237" width="10" height="13" fill="#EFF6FF"/><rect x="52.0" y="256" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="67.0" y="256" width="10" height="13" fill="#EFF6FF"/><rect x="82.0" y="256" width="10" height="13" fill="#EFF6FF"/><rect x="65" y="284" width="14" height="22" fill="#1E40AF"/></g>
-   <g filter="url(#h-sh)"><rect x="110" y="140" width="60" height="166" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2"/><rect x="118.0" y="152" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="152" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="152" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="118.0" y="171" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="171" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="171" width="10" height="13" fill="#EFF6FF"/><rect x="118.0" y="190" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="190" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="152.0" y="190" width="10" height="13" fill="#EFF6FF"/><rect x="118.0" y="209" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="209" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="209" width="10" height="13" fill="#EFF6FF"/><rect x="118.0" y="228" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="135.0" y="228" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="228" width="10" height="13" fill="#EFF6FF"/><rect x="118.0" y="247" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="247" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="247" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="133" y="284" width="14" height="22" fill="#1E3A8A"/></g>
-   <g filter="url(#h-soft)"><rect x="180" y="180" width="56" height="126" fill="#60A5FA" stroke="#1E40AF" stroke-width="2"/><rect x="188.0" y="192" width="10" height="13" fill="#EFF6FF"/><rect x="203.0" y="192" width="10" height="13" fill="#EFF6FF"/><rect x="218.0" y="192" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="188.0" y="211" width="10" height="13" fill="#EFF6FF"/><rect x="203.0" y="211" width="10" height="13" fill="#EFF6FF"/><rect x="218.0" y="211" width="10" height="13" fill="#EFF6FF"/><rect x="188.0" y="230" width="10" height="13" fill="#EFF6FF"/><rect x="203.0" y="230" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="218.0" y="230" width="10" height="13" fill="#EFF6FF"/><rect x="188.0" y="249" width="10" height="13" fill="#EFF6FF"/><rect x="203.0" y="249" width="10" height="13" fill="#EFF6FF"/><rect x="218.0" y="249" width="10" height="13" fill="#EFF6FF"/><rect x="188.0" y="268" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="203.0" y="268" width="10" height="13" fill="#EFF6FF"/><rect x="218.0" y="268" width="10" height="13" fill="#EFF6FF"/><rect x="201" y="284" width="14" height="22" fill="#1E40AF"/></g>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <circle cx="140" cy="172" r="150" fill="url(#ol-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ol-grd)"/>
+      <g fill="#BFDBFE" opacity="0.5">
+     <rect x="22" y="196" width="26" height="86"/><rect x="54" y="172" width="20" height="110"/>
+     <rect x="210" y="182" width="22" height="100"/><rect x="236" y="204" width="24" height="78"/></g>
+   <g filter="url(#ol-soft)"><rect x="44" y="168" width="56" height="138" fill="url(#ol-t0)" stroke="#1E40AF" stroke-width="2"/><rect x="44" y="168" width="4" height="138" fill="#FFFFFF" opacity="0.22"/><rect x="52.0" y="180" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="52.0" y="180" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="67.0" y="180" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="67.0" y="180" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="82.0" y="180" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="52.0" y="199" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="52.0" y="199" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="67.0" y="199" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="67.0" y="199" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="82.0" y="199" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="82.0" y="199" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="52.0" y="218" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="52.0" y="218" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="67.0" y="218" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="82.0" y="218" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="82.0" y="218" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="52.0" y="237" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="52.0" y="237" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="67.0" y="237" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="67.0" y="237" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="82.0" y="237" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="82.0" y="237" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="52.0" y="256" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="67.0" y="256" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="67.0" y="256" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="82.0" y="256" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="82.0" y="256" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="65" y="284" width="14" height="22" rx="1.5" fill="#1E40AF"/><rect x="65" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <g filter="url(#ol-sh)"><rect x="110" y="140" width="60" height="166" fill="url(#ol-t1)" stroke="#1E3A8A" stroke-width="2"/><rect x="110" y="140" width="4" height="166" fill="#FFFFFF" opacity="0.22"/><rect x="118.0" y="152" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="118.0" y="152" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="152" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="135.0" y="152" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="152.0" y="152" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="118.0" y="171" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="118.0" y="171" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="171" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="135.0" y="171" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="152.0" y="171" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="152.0" y="171" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="118.0" y="190" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="118.0" y="190" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="190" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="152.0" y="190" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="152.0" y="190" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="118.0" y="209" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="118.0" y="209" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="209" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="135.0" y="209" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="152.0" y="209" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="152.0" y="209" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="118.0" y="228" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="135.0" y="228" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="135.0" y="228" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="152.0" y="228" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="152.0" y="228" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="118.0" y="247" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="118.0" y="247" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="247" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="135.0" y="247" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="152.0" y="247" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="133" y="284" width="14" height="22" rx="1.5" fill="#1E3A8A"/><rect x="133" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+   <g filter="url(#ol-soft)"><rect x="180" y="180" width="56" height="126" fill="url(#ol-t2)" stroke="#1E40AF" stroke-width="2"/><rect x="180" y="180" width="4" height="126" fill="#FFFFFF" opacity="0.22"/><rect x="188.0" y="192" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="188.0" y="192" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="203.0" y="192" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="203.0" y="192" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="218.0" y="192" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="188.0" y="211" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="188.0" y="211" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="203.0" y="211" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="203.0" y="211" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="218.0" y="211" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="218.0" y="211" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="188.0" y="230" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="188.0" y="230" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="203.0" y="230" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="218.0" y="230" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="218.0" y="230" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="188.0" y="249" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="188.0" y="249" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="203.0" y="249" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="203.0" y="249" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="218.0" y="249" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="218.0" y="249" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="188.0" y="268" width="10" height="13" rx="1" fill="#EFF6FF" opacity="0.5"/><rect x="203.0" y="268" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="203.0" y="268" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="218.0" y="268" width="10" height="13" rx="1" fill="#EFF6FF"/><rect x="218.0" y="268" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="201" y="284" width="14" height="22" rx="1.5" fill="#1E40AF"/><rect x="201" y="284" width="14" height="4" fill="#FFFFFF" opacity="0.18"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroPerfectComp: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="pf-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pf-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="pf-awn" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BBF7D0"/><stop offset="100%" stop-color="#86EFAC"/></linearGradient><radialGradient id="pf-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="pf-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DCFCE7" opacity="0.7"/>
-      <g filter="url(#h-soft)">
+      <circle cx="140" cy="172" r="150" fill="url(#pf-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pf-grd)"/>
+      <g filter="url(#pf-soft)">
      <rect x="32" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-     <rect x="29" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
-     <rect x="45" y="270" width="12" height="22" fill="#16A34A"/>
-   </g><g filter="url(#h-soft)">
+     <rect x="29" y="222" width="46" height="13" rx="2" fill="url(#pf-awn)"/>
+     <rect x="38" y="244" width="26" height="14" rx="2" fill="#86EFAC" opacity="0.4"/>
+     <rect x="45" y="270" width="12" height="22" fill="#16A34A"/></g><g filter="url(#pf-soft)">
      <rect x="82" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-     <rect x="79" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
-     <rect x="95" y="270" width="12" height="22" fill="#16A34A"/>
-   </g><g filter="url(#h-soft)">
+     <rect x="79" y="222" width="46" height="13" rx="2" fill="url(#pf-awn)"/>
+     <rect x="88" y="244" width="26" height="14" rx="2" fill="#86EFAC" opacity="0.4"/>
+     <rect x="95" y="270" width="12" height="22" fill="#16A34A"/></g><g filter="url(#pf-soft)">
      <rect x="132" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-     <rect x="129" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
-     <rect x="145" y="270" width="12" height="22" fill="#16A34A"/>
-   </g><g filter="url(#h-soft)">
+     <rect x="129" y="222" width="46" height="13" rx="2" fill="url(#pf-awn)"/>
+     <rect x="138" y="244" width="26" height="14" rx="2" fill="#86EFAC" opacity="0.4"/>
+     <rect x="145" y="270" width="12" height="22" fill="#16A34A"/></g><g filter="url(#pf-soft)">
      <rect x="182" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-     <rect x="179" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
-     <rect x="195" y="270" width="12" height="22" fill="#16A34A"/>
-   </g><g filter="url(#h-soft)">
+     <rect x="179" y="222" width="46" height="13" rx="2" fill="url(#pf-awn)"/>
+     <rect x="188" y="244" width="26" height="14" rx="2" fill="#86EFAC" opacity="0.4"/>
+     <rect x="195" y="270" width="12" height="22" fill="#16A34A"/></g><g filter="url(#pf-soft)">
      <rect x="232" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-     <rect x="229" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
-     <rect x="245" y="270" width="12" height="22" fill="#16A34A"/>
-   </g>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+     <rect x="229" y="222" width="46" height="13" rx="2" fill="url(#pf-awn)"/>
+     <rect x="238" y="244" width="26" height="14" rx="2" fill="#86EFAC" opacity="0.4"/>
+     <rect x="245" y="270" width="12" height="22" fill="#16A34A"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroProfitsLosses: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="pl-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pl-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="pl-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="pl-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ECFDF5" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#ECFDF5" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="pl-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BBF7D0"/><stop offset="100%" stop-color="#86EFAC"/></linearGradient><linearGradient id="pl-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FECDD3"/><stop offset="100%" stop-color="#FDA4AF"/></linearGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#ECFDF5" opacity="0.7"/>
-      <g filter="url(#h-soft)"><rect x="60" y="170" width="44" height="122" rx="6" fill="#86EFAC" stroke="#16A34A" stroke-width="2"/></g>
+      <circle cx="140" cy="172" r="150" fill="url(#pl-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pl-grd)"/>
+      <g filter="url(#pl-soft)"><rect x="60" y="170" width="44" height="122" rx="6" fill="url(#pl-k0)" stroke="#16A34A" stroke-width="2"/><rect x="60" y="170" width="44" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/></g>
    <line x1="82" y1="168" x2="82" y2="112" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 73 121 L 82 112 L 91 121" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-   <g filter="url(#h-soft)"><rect x="176" y="214" width="44" height="78" rx="6" fill="#FECDD3" stroke="#BE123C" stroke-width="2"/></g>
+   <g filter="url(#pl-soft)"><rect x="176" y="214" width="44" height="78" rx="6" fill="url(#pl-k1)" stroke="#BE123C" stroke-width="2"/><rect x="176" y="214" width="44" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/></g>
    <line x1="198" y1="216" x2="198" y2="266" stroke="#BE123C" stroke-width="6" stroke-linecap="round"/>
    <path d="M 189 257 L 198 268 L 207 257" fill="none" stroke="#BE123C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-   <text x="140" y="210" font-size="64" font-weight="800" fill="#047857" text-anchor="middle" font-family="Fraunces, Georgia, serif">£</text>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+   <text x="140" y="208" font-size="62" font-weight="800" fill="#047857" text-anchor="middle" font-family="Fraunces, Georgia, serif">£</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroPromoteComp: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="pm-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pm-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="pm-w" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#22C55E"/><stop offset="100%" stop-color="#16A34A"/></linearGradient><radialGradient id="pm-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="pm-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DCFCE7" opacity="0.7"/>
-      <g filter="url(#h-sh)">
-     <rect x="96" y="170" width="70" height="46" rx="23" fill="#16A34A" stroke="#065F46" stroke-width="2.5"/>
+      <circle cx="140" cy="172" r="150" fill="url(#pm-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pm-grd)"/>
+      <g filter="url(#pm-sh)">
+     <rect x="96" y="170" width="70" height="46" rx="23" fill="url(#pm-w)" stroke="#065F46" stroke-width="2.5"/>
      <circle cx="166" cy="193" r="23" fill="#22C55E" stroke="#065F46" stroke-width="2.5"/>
      <circle cx="166" cy="193" r="9" fill="#ECFDF5"/>
      <rect x="104" y="158" width="26" height="14" rx="4" fill="#16A34A" stroke="#065F46" stroke-width="2"/>
+     <ellipse cx="116" cy="182" rx="14" ry="6" fill="#FFFFFF" opacity="0.3"/>
    </g>
    <line x1="60" y1="262" x2="60" y2="292" stroke="#16A34A" stroke-width="3"/><path d="M 60 262 L 82 270 L 60 278 Z" fill="#86EFAC" stroke="#16A34A" stroke-width="1.5"/><line x1="140" y1="262" x2="140" y2="292" stroke="#16A34A" stroke-width="3"/><path d="M 140 262 L 162 270 L 140 278 Z" fill="#86EFAC" stroke="#16A34A" stroke-width="1.5"/><line x1="220" y1="262" x2="220" y2="292" stroke="#16A34A" stroke-width="3"/><path d="M 220 262 L 242 270 L 220 278 Z" fill="#86EFAC" stroke="#16A34A" stroke-width="1.5"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroProtect: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="pr-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="pr-sh2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FCD34D"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient><radialGradient id="pr-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="pr-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FEF3C7" opacity="0.7"/>
-      <g filter="url(#h-sh)">
-     <path d="M 140 110 L 200 132 C 200 196 174 224 140 240 C 106 224 80 196 80 132 Z" fill="#FBBF24" stroke="#B45309" stroke-width="2.5"/>
+      <circle cx="140" cy="172" r="150" fill="url(#pr-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pr-grd)"/>
+      <g filter="url(#pr-sh)">
+     <path d="M 140 110 L 200 132 C 200 196 174 224 140 240 C 106 224 80 196 80 132 Z" fill="url(#pr-sh2)" stroke="#B45309" stroke-width="2.5"/>
+     <path d="M 140 110 L 140 240 C 106 224 80 196 80 132 Z" fill="#FFFFFF" opacity="0.12"/>
      <path d="M 124 168 l 11 12 l 22 -26" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
    </g>
-   <circle cx="108" cy="262" r="6" fill="#D97706"/><rect x="102" y="267" width="12" height="18" rx="6" fill="#D97706"/><circle cx="140" cy="268" r="6.6000000000000005" fill="#B45309"/><rect x="133.4" y="273.5" width="13.200000000000001" height="19.8" rx="6.6000000000000005" fill="#B45309"/><circle cx="172" cy="262" r="6" fill="#D97706"/><rect x="166" y="267" width="12" height="18" rx="6" fill="#D97706"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+   <circle cx="108" cy="262" r="6" fill="#D97706"/><circle cx="106.4" cy="260.4" r="2" fill="#FFFFFF" opacity="0.35"/><rect x="102" y="267" width="12" height="18" rx="6" fill="#D97706"/><circle cx="140" cy="268" r="6.6000000000000005" fill="#B45309"/><circle cx="138.24" cy="266.24" r="2.2" fill="#FFFFFF" opacity="0.35"/><rect x="133.4" y="273.5" width="13.200000000000001" height="19.8" rx="6.6000000000000005" fill="#B45309"/><circle cx="172" cy="262" r="6" fill="#D97706"/><circle cx="170.4" cy="260.4" r="2" fill="#FFFFFF" opacity="0.35"/><rect x="166" y="267" width="12" height="18" rx="6" fill="#D97706"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroRevenue: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="rv-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="rv-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="rv-til" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#22C55E"/><stop offset="100%" stop-color="#16A34A"/></linearGradient><radialGradient id="rv-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="rv-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/>
+        </linearGradient>
+        <radialGradient id="rv-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="rv-c1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FEF3C7"/><stop offset="100%" stop-color="#FCD34D"/></radialGradient><radialGradient id="rv-c2" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient>
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DCFCE7" opacity="0.7"/>
-      <g filter="url(#h-sh)">
-     <rect x="80" y="206" width="120" height="86" rx="8" fill="#16A34A" stroke="#065F46" stroke-width="2.5"/>
+      <circle cx="140" cy="172" r="150" fill="url(#rv-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#rv-grd)"/>
+      <g filter="url(#rv-sh)">
+     <rect x="80" y="206" width="120" height="86" rx="8" fill="url(#rv-til)" stroke="#065F46" stroke-width="2.5"/>
      <rect x="96" y="170" width="78" height="42" rx="6" fill="#86EFAC" stroke="#065F46" stroke-width="2.5"/>
      <rect x="104" y="180" width="62" height="22" rx="3" fill="#ECFDF5"/>
-     <rect x="92" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/>
-     <rect x="120" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/>
-     <rect x="148" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/>
+     <rect x="92" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/><rect x="120" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/><rect x="148" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/>
      <rect x="176" y="224" width="16" height="40" rx="2" fill="#22C55E"/>
    </g>
-   <ellipse cx="214" cy="250" rx="16" ry="9.92" fill="#FBBF24" stroke="#B45309" stroke-width="1.5"/><ellipse cx="214" cy="238" rx="16" ry="9.92" fill="#FCD34D" stroke="#B45309" stroke-width="1.5"/><ellipse cx="214" cy="226" rx="16" ry="9.92" fill="#FBBF24" stroke="#B45309" stroke-width="1.5"/>
-   <text x="214" y="232" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+   <g filter="url(#rv-soft)"><ellipse cx="214" cy="250" rx="16" ry="10.24" fill="url(#rv-c0)" stroke="#B45309" stroke-width="1.5"/><ellipse cx="208.56" cy="246.48" rx="4.8" ry="2.56" fill="#FFFFFF" opacity="0.4"/><text x="214" y="253.84" font-size="13.12" font-weight="800" fill="#B45309" text-anchor="middle" font-family="Inter,sans-serif">£</text><ellipse cx="214" cy="238" rx="16" ry="10.24" fill="url(#rv-c1)" stroke="#B45309" stroke-width="1.5"/><ellipse cx="208.56" cy="234.48" rx="4.8" ry="2.56" fill="#FFFFFF" opacity="0.4"/><text x="214" y="241.84" font-size="13.12" font-weight="800" fill="#B45309" text-anchor="middle" font-family="Inter,sans-serif">£</text><ellipse cx="214" cy="226" rx="16" ry="10.24" fill="url(#rv-c2)" stroke="#B45309" stroke-width="1.5"/><ellipse cx="208.56" cy="222.48" rx="4.8" ry="2.56" fill="#FFFFFF" opacity="0.4"/><text x="214" y="229.84" font-size="13.12" font-weight="800" fill="#B45309" text-anchor="middle" font-family="Inter,sans-serif">£</text></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroSupplyLabour: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="sl-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="sl-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="sl-cl" cx="40%" cy="35%" r="70%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#DBEAFE"/></radialGradient><radialGradient id="sl-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="sl-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
-      <circle cx="78" cy="250" r="7.5" fill="#2563EB"/><rect x="70.5" y="256.25" width="15" height="22.5" rx="7.5" fill="#2563EB"/><circle cx="112" cy="244" r="8.399999999999999" fill="#3B82F6"/><rect x="103.6" y="251" width="16.799999999999997" height="25.2" rx="8.399999999999999" fill="#3B82F6"/><circle cx="150" cy="250" r="7.5" fill="#2563EB"/><rect x="142.5" y="256.25" width="15" height="22.5" rx="7.5" fill="#2563EB"/>
-   <g filter="url(#h-sh)">
-     <circle cx="206" cy="176" r="40" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="3"/>
+      <circle cx="140" cy="172" r="150" fill="url(#sl-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#sl-grd)"/>
+      <circle cx="78" cy="250" r="7.5" fill="#2563EB"/><circle cx="76" cy="248" r="2.5" fill="#FFFFFF" opacity="0.35"/><rect x="70.5" y="256.25" width="15" height="22.5" rx="7.5" fill="#2563EB"/><circle cx="112" cy="244" r="8.399999999999999" fill="#3B82F6"/><circle cx="109.76" cy="241.76" r="2.8" fill="#FFFFFF" opacity="0.35"/><rect x="103.6" y="251" width="16.799999999999997" height="25.2" rx="8.399999999999999" fill="#3B82F6"/><circle cx="150" cy="250" r="7.5" fill="#2563EB"/><circle cx="148" cy="248" r="2.5" fill="#FFFFFF" opacity="0.35"/><rect x="142.5" y="256.25" width="15" height="22.5" rx="7.5" fill="#2563EB"/>
+   <g filter="url(#sl-sh)">
+     <circle cx="206" cy="176" r="40" fill="url(#sl-cl)" stroke="#1D4ED8" stroke-width="3"/>
+     <circle cx="206" cy="176" r="40" fill="#FFFFFF" opacity="0.0"/>
+     <ellipse cx="194" cy="164" rx="12" ry="7" fill="#FFFFFF" opacity="0.5"/>
      <line x1="206" y1="176" x2="206" y2="150" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
      <line x1="206" y1="176" x2="226" y2="186" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
      <circle cx="206" cy="176" r="4" fill="#1E3A8A"/>
    </g>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
   heroEfficiency: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <filter id="ef-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ef-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ef-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ef-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        
       </defs>
-      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
-      <g filter="url(#h-sh)">
+      <circle cx="140" cy="172" r="150" fill="url(#ef-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ef-grd)"/>
+      <g filter="url(#ef-sh)">
      <path d="M 60 244 A 80 80 0 0 1 220 244" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="3"/>
-     <path d="M 60 244 A 80 80 0 0 1 86 185" fill="none" stroke="#F43F5E" stroke-width="10"/>
-     <path d="M 86 185 A 80 80 0 0 1 140 164" fill="none" stroke="#FBBF24" stroke-width="10"/>
-     <path d="M 140 164 A 80 80 0 0 1 220 244" fill="none" stroke="#22C55E" stroke-width="10"/>
+     <path d="M 60 244 A 80 80 0 0 1 86 185" fill="none" stroke="#F43F5E" stroke-width="11" stroke-linecap="round"/>
+     <path d="M 86 185 A 80 80 0 0 1 140 164" fill="none" stroke="#FBBF24" stroke-width="11"/>
+     <path d="M 140 164 A 80 80 0 0 1 220 244" fill="none" stroke="#22C55E" stroke-width="11" stroke-linecap="round"/>
      <line x1="140" y1="244" x2="184" y2="196" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
-     <circle cx="140" cy="244" r="9" fill="#1E3A8A"/>
+     <circle cx="140" cy="244" r="10" fill="#1E3A8A"/><circle cx="137" cy="241" r="3" fill="#fff" opacity="0.4"/>
    </g>
-   <rect x="116" y="258" width="48" height="14" rx="4" fill="#1D4ED8"/>
-      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+   <rect x="114" y="258" width="52" height="14" rx="4" fill="#1D4ED8"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroBalanceOfPayments: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="bp-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="bp-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="bp-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="bp-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="bp-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BBF7D0"/><stop offset="100%" stop-color="#86EFAC"/></linearGradient><linearGradient id="bp-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FECDD3"/><stop offset="100%" stop-color="#FDA4AF"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#bp-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#bp-grd)"/>
+      <g filter="url(#bp-sh)">
+     <rect x="134" y="120" width="12" height="150" rx="3" fill="#1E40AF"/><rect x="134" y="120" width="4" height="150" fill="#FFFFFF" opacity="0.2"/>
+     <rect x="92" y="270" width="96" height="14" rx="4" fill="#1E3A8A"/>
+     <line x1="58" y1="140" x2="222" y2="140" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+     <circle cx="140" cy="133" r="9" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2"/>
+     <line x1="58" y1="140" x2="58" y2="168" stroke="#1E3A8A" stroke-width="1.5"/><line x1="222" y1="140" x2="222" y2="168" stroke="#1E3A8A" stroke-width="1.5"/>
+     <rect x="40" y="168" width="36" height="30" rx="3" fill="url(#bp-k0)" stroke="#16A34A" stroke-width="2"/><rect x="40" y="168" width="36" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="40" y1="183" x2="76" y2="183" stroke="#16A34A" stroke-width="1.3" opacity="0.7"/><line x1="58" y1="168" x2="58" y2="198" stroke="#16A34A" stroke-width="1.3" opacity="0.7"/>
+     <rect x="204" y="168" width="36" height="30" rx="3" fill="url(#bp-k1)" stroke="#BE123C" stroke-width="2"/><rect x="204" y="168" width="36" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="204" y1="183" x2="240" y2="183" stroke="#BE123C" stroke-width="1.3" opacity="0.7"/><line x1="222" y1="168" x2="222" y2="198" stroke="#BE123C" stroke-width="1.3" opacity="0.7"/>
+   </g>
+   <text x="58" y="216" font-size="11" font-weight="800" fill="#16A34A" text-anchor="middle">OUT</text>
+   <text x="222" y="216" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">IN</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroCausesInequality: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ci-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ci-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ci-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FDA4AF" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FDA4AF" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FDA4AF" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ci-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFE4E6" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FFE4E6" stop-opacity="0.35"/>
+        </linearGradient>
+        <radialGradient id="ci-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FECDD3"/><stop offset="100%" stop-color="#FCA5A5"/></radialGradient><radialGradient id="ci-c1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FECDD3"/><stop offset="100%" stop-color="#FCA5A5"/></radialGradient><radialGradient id="ci-c2" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="ci-c3" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="ci-c4" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="ci-c5" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ci-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ci-grd)"/>
+      <circle cx="70" cy="268" r="6" fill="#FB7185"/><circle cx="68.4" cy="266.4" r="2" fill="#FFFFFF" opacity="0.35"/><rect x="64" y="273" width="12" height="18" rx="6" fill="#FB7185"/><circle cx="112" cy="250" r="8.399999999999999" fill="#F43F5E"/><circle cx="109.76" cy="247.76" r="2.8" fill="#FFFFFF" opacity="0.35"/><rect x="103.6" y="257" width="16.799999999999997" height="25.2" rx="8.399999999999999" fill="#F43F5E"/><circle cx="166" cy="232" r="11.399999999999999" fill="#BE123C"/><circle cx="162.96" cy="228.96" r="3.8" fill="#FFFFFF" opacity="0.35"/><rect x="154.6" y="241.5" width="22.799999999999997" height="34.199999999999996" rx="11.399999999999999" fill="#BE123C"/>
+   <g filter="url(#ci-soft)">
+     <ellipse cx="214" cy="286" rx="15" ry="9.6" fill="url(#ci-c0)" stroke="#9F1239" stroke-width="1.5"/><ellipse cx="208.9" cy="282.7" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.4"/><text x="214" y="289.6" font-size="12.299999999999999" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">£</text><ellipse cx="214" cy="273" rx="15" ry="9.6" fill="url(#ci-c1)" stroke="#9F1239" stroke-width="1.5"/><ellipse cx="208.9" cy="269.7" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.4"/><text x="214" y="276.6" font-size="12.299999999999999" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">£</text>
+     <ellipse cx="244" cy="286" rx="15" ry="9.6" fill="url(#ci-c2)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="238.9" cy="282.7" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.4"/><text x="244" y="289.6" font-size="12.299999999999999" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text><ellipse cx="244" cy="273" rx="15" ry="9.6" fill="url(#ci-c3)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="238.9" cy="269.7" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.4"/><text x="244" y="276.6" font-size="12.299999999999999" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text><ellipse cx="244" cy="260" rx="15" ry="9.6" fill="url(#ci-c4)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="238.9" cy="256.7" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.4"/><text x="244" y="263.6" font-size="12.299999999999999" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text><ellipse cx="244" cy="247" rx="15" ry="9.6" fill="url(#ci-c5)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="238.9" cy="243.7" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.4"/><text x="244" y="250.6" font-size="12.299999999999999" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text>
+   </g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroDomesticCapacity: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="dc-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="dc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="dc-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="dc-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="dc-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FCD34D"/></linearGradient><linearGradient id="dc-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF3C7"/><stop offset="100%" stop-color="#FDE68A"/></linearGradient><linearGradient id="dc-k2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FCD34D"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#dc-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#dc-grd)"/>
+      <g filter="url(#dc-soft)"><rect x="64" y="248" width="48" height="46" rx="3" fill="url(#dc-k0)" stroke="#B45309" stroke-width="2"/><rect x="64" y="248" width="48" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="64" y1="271" x2="112" y2="271" stroke="#B45309" stroke-width="1.3" opacity="0.7"/><line x1="88" y1="248" x2="88" y2="294" stroke="#B45309" stroke-width="1.3" opacity="0.7"/><rect x="70" y="204" width="48" height="44" rx="3" fill="url(#dc-k1)" stroke="#B45309" stroke-width="2"/><rect x="70" y="204" width="48" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="70" y1="226" x2="118" y2="226" stroke="#B45309" stroke-width="1.3" opacity="0.7"/><line x1="94" y1="204" x2="94" y2="248" stroke="#B45309" stroke-width="1.3" opacity="0.7"/></g>
+   <g filter="url(#dc-sh)">
+     <rect x="170" y="96" width="12" height="198" fill="#D97706" stroke="#92400E" stroke-width="2"/><rect x="170" y="96" width="4" height="198" fill="#FFFFFF" opacity="0.2"/>
+     <rect x="96" y="96" width="92" height="12" fill="#F59E0B" stroke="#92400E" stroke-width="2"/>
+     <line x1="110" y1="108" x2="110" y2="150" stroke="#92400E" stroke-width="2.5"/>
+     <rect x="98" y="150" width="24" height="22" rx="3" fill="url(#dc-k2)" stroke="#92400E" stroke-width="2"/><rect x="98" y="150" width="24" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="98" y1="161" x2="122" y2="161" stroke="#92400E" stroke-width="1.3" opacity="0.7"/><line x1="110" y1="150" x2="110" y2="172" stroke="#92400E" stroke-width="1.3" opacity="0.7"/>
+   </g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroExternalBarriers: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="eb-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="eb-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="eb-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FDA4AF" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FDA4AF" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FDA4AF" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="eb-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFE4E6" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FFE4E6" stop-opacity="0.35"/>
+        </linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#eb-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#eb-grd)"/>
+      <line x1="20" y1="292" x2="260" y2="292" stroke="#CBD5E1" stroke-width="4"/>
+   <g filter="url(#eb-soft)">
+     <rect x="38" y="244" width="64" height="10" rx="3" fill="#FDA4AF" stroke="#BE123C" stroke-width="1.8"/>
+     <rect x="38" y="244" width="64" height="3" rx="1.5" fill="#FFFFFF" opacity="0.3"/>
+     <line x1="44" y1="248" x2="44" y2="292" stroke="#BE123C" stroke-width="3"/>
+     <line x1="96" y1="248" x2="96" y2="292" stroke="#BE123C" stroke-width="3"/></g><g filter="url(#eb-soft)">
+     <rect x="108" y="238" width="64" height="10" rx="3" fill="#FB7185" stroke="#BE123C" stroke-width="1.8"/>
+     <rect x="108" y="238" width="64" height="3" rx="1.5" fill="#FFFFFF" opacity="0.3"/>
+     <line x1="114" y1="242" x2="114" y2="292" stroke="#BE123C" stroke-width="3"/>
+     <line x1="166" y1="242" x2="166" y2="292" stroke="#BE123C" stroke-width="3"/></g><g filter="url(#eb-soft)">
+     <rect x="178" y="232" width="64" height="10" rx="3" fill="#FDA4AF" stroke="#BE123C" stroke-width="1.8"/>
+     <rect x="178" y="232" width="64" height="3" rx="1.5" fill="#FFFFFF" opacity="0.3"/>
+     <line x1="184" y1="236" x2="184" y2="292" stroke="#BE123C" stroke-width="3"/>
+     <line x1="236" y1="236" x2="236" y2="292" stroke="#BE123C" stroke-width="3"/></g>
+   <line x1="34" y1="178" x2="70" y2="178" stroke="#9F1239" stroke-width="5" stroke-linecap="round"/>
+   <path d="M 62 170 L 74 178 L 62 186" fill="none" stroke="#9F1239" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroInterventionist: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="iv-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="iv-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="iv-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient><radialGradient id="iv-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="iv-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="iv-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DDD6FE"/><stop offset="100%" stop-color="#C4B5FD"/></linearGradient><linearGradient id="iv-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EDE9FE"/><stop offset="100%" stop-color="#DDD6FE"/></linearGradient><linearGradient id="iv-k2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#iv-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#iv-grd)"/>
+      <g filter="url(#iv-soft)"><rect x="86" y="250" width="46" height="44" rx="3" fill="url(#iv-k0)" stroke="#5B21B6" stroke-width="2"/><rect x="86" y="250" width="46" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="86" y1="272" x2="132" y2="272" stroke="#5B21B6" stroke-width="1.3" opacity="0.7"/><line x1="109" y1="250" x2="109" y2="294" stroke="#5B21B6" stroke-width="1.3" opacity="0.7"/><rect x="150" y="250" width="46" height="44" rx="3" fill="url(#iv-k1)" stroke="#6D28D9" stroke-width="2"/><rect x="150" y="250" width="46" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="150" y1="272" x2="196" y2="272" stroke="#6D28D9" stroke-width="1.3" opacity="0.7"/><line x1="173" y1="250" x2="173" y2="294" stroke="#6D28D9" stroke-width="1.3" opacity="0.7"/></g>
+   <g filter="url(#iv-sh)">
+     <rect x="120" y="150" width="42" height="58" rx="10" fill="url(#iv-h)" stroke="#5B21B6" stroke-width="2"/>
+     <rect x="124" y="120" width="9" height="46" rx="4" fill="#A78BFA"/><rect x="135" y="112" width="9" height="54" rx="4" fill="#A78BFA"/><rect x="146" y="118" width="9" height="48" rx="4" fill="#A78BFA"/>
+     <rect x="112" y="150" width="14" height="30" rx="6" fill="#A78BFA"/>
+     <rect x="120" y="208" width="42" height="40" rx="3" fill="url(#iv-k2)" stroke="#4C1D95" stroke-width="2"/><rect x="120" y="208" width="42" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="120" y1="228" x2="162" y2="228" stroke="#4C1D95" stroke-width="1.3" opacity="0.7"/><line x1="141" y1="208" x2="141" y2="248" stroke="#4C1D95" stroke-width="1.3" opacity="0.7"/>
+   </g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroMarketOrientated: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="mr-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="mr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="mr-pot" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDBA74"/><stop offset="100%" stop-color="#EA580C"/></linearGradient><radialGradient id="mr-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="mr-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/>
+        </linearGradient>
+        <radialGradient id="mr-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="mr-c1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FEF3C7"/><stop offset="100%" stop-color="#FCD34D"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#mr-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#mr-grd)"/>
+      <g filter="url(#mr-sh)">
+     <path d="M 110 292 L 122 232 L 158 232 L 170 292 Z" fill="url(#mr-pot)" stroke="#B45309" stroke-width="2"/>
+     <rect x="106" y="226" width="68" height="12" rx="3" fill="#FCD34D" stroke="#B45309" stroke-width="2"/>
+   </g>
+   <line x1="140" y1="232" x2="140" y2="150" stroke="#16A34A" stroke-width="5" stroke-linecap="round"/>
+   <path d="M 140 186 C 110 186 100 158 100 140 C 130 140 142 166 140 186" fill="#22C55E"/>
+   <path d="M 140 172 C 170 172 182 146 184 128 C 154 128 140 152 140 172" fill="#4ADE80"/>
+   <path d="M 140 186 C 118 184 108 164 104 146" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4"/>
+   <g filter="url(#mr-soft)"><ellipse cx="212" cy="280" rx="15" ry="9.6" fill="url(#mr-c0)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="206.9" cy="276.7" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.4"/><text x="212" y="283.6" font-size="12.299999999999999" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text><ellipse cx="212" cy="267" rx="15" ry="9.6" fill="url(#mr-c1)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="206.9" cy="263.7" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.4"/><text x="212" y="270.6" font-size="12.299999999999999" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text></g><line x1="212" y1="250" x2="212" y2="210" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 203 219 L 212 210 L 221 219" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroDevStrategies: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ds-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ds-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="ds-box" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#2563EB"/></linearGradient><radialGradient id="ds-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ds-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ds-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ds-grd)"/>
+      <g filter="url(#ds-sh)">
+     <rect x="74" y="206" width="132" height="86" rx="8" fill="url(#ds-box)" stroke="#1E40AF" stroke-width="2.5"/>
+     <rect x="74" y="226" width="132" height="66" fill="#60A5FA"/>
+     <rect x="74" y="226" width="132" height="5" fill="#FFFFFF" opacity="0.25"/>
+     <path d="M 110 206 L 110 188 Q 110 180 118 180 L 162 180 Q 170 180 170 188 L 170 206" fill="none" stroke="#1E40AF" stroke-width="3"/>
+     <rect x="126" y="196" width="28" height="20" rx="4" fill="#1E3A8A"/>
+   </g>
+   <rect x="96" y="172" width="10" height="44" rx="3" fill="#94A3B8" transform="rotate(-18 101 194)"/>
+   <circle cx="182" cy="186" r="13" fill="none" stroke="#1E3A8A" stroke-width="6"/><rect x="188" y="196" width="8" height="26" rx="3" fill="#1E3A8A" transform="rotate(-40 192 209)"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroFxImpacts: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="fi-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="fi-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="fi-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#5EEAD4" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="fi-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#CCFBF1" stop-opacity="0.35"/>
+        </linearGradient>
+        <radialGradient id="fi-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#2DD4BF"/><stop offset="100%" stop-color="#0D9488"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#fi-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#fi-grd)"/>
+      <circle cx="140" cy="190" r="92" fill="none" stroke="#5EEAD4" stroke-width="3" opacity="0.45"/>
+   <circle cx="140" cy="190" r="70" fill="none" stroke="#2DD4BF" stroke-width="3" opacity="0.65"/>
+   <g filter="url(#fi-sh)"><ellipse cx="140" cy="190" rx="48" ry="30.72" fill="url(#fi-c0)" stroke="#0F766E" stroke-width="1.5"/><ellipse cx="123.68" cy="179.44" rx="14.399999999999999" ry="7.68" fill="#FFFFFF" opacity="0.4"/><text x="140" y="201.52" font-size="39.36" font-weight="800" fill="#0F766E" text-anchor="middle" font-family="Inter,sans-serif">£</text></g>
+   <g transform="translate(220,150)"><line x1="0" y1="28" x2="0" y2="-8" stroke="#0D9488" stroke-width="6" stroke-linecap="round"/><path d="M -9 1 L 0 -8 L 9 1" fill="none" stroke="#0D9488" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+   <g transform="translate(58,232) rotate(180)"><line x1="0" y1="0" x2="0" y2="-36" stroke="#0F766E" stroke-width="6" stroke-linecap="round"/><path d="M -9 -27 L 0 -36 L 9 -27" fill="none" stroke="#0F766E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroFxIntervention: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="fx-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="fx-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="fx-pan" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A5B4FC"/><stop offset="100%" stop-color="#818CF8"/></linearGradient><radialGradient id="fx-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#A5B4FC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#A5B4FC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#A5B4FC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="fx-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#E0E7FF" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#E0E7FF" stop-opacity="0.35"/>
+        </linearGradient>
+        <radialGradient id="fx-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#A5B4FC"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#fx-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#fx-grd)"/>
+      <g filter="url(#fx-soft)"><ellipse cx="140" cy="150" rx="30" ry="19.2" fill="url(#fx-c0)" stroke="#312E81" stroke-width="1.5"/><ellipse cx="129.8" cy="143.4" rx="9" ry="4.8" fill="#FFFFFF" opacity="0.4"/><text x="140" y="157.2" font-size="24.599999999999998" font-weight="800" fill="#312E81" text-anchor="middle" font-family="Inter,sans-serif">£</text></g>
+   <g filter="url(#fx-sh)">
+     <rect x="78" y="206" width="124" height="86" rx="10" fill="url(#fx-pan)" stroke="#3730A3" stroke-width="2.5"/>
+     <circle cx="116" cy="248" r="22" fill="#EEF2FF" stroke="#3730A3" stroke-width="2"/>
+     <line x1="116" y1="248" x2="116" y2="232" stroke="#3730A3" stroke-width="4" stroke-linecap="round"/>
+     <line x1="164" y1="270" x2="164" y2="226" stroke="#3730A3" stroke-width="6" stroke-linecap="round"/>
+     <circle cx="164" cy="222" r="9" fill="#4F46E5"/>
+   </g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroExchangeRatesT4: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="er-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="er-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="er-beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient><radialGradient id="er-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="er-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        <radialGradient id="er-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="er-c1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#BBF7D0"/><stop offset="100%" stop-color="#86EFAC"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#er-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#er-grd)"/>
+      <g filter="url(#er-sh)">
+     <polygon points="140,210 122,262 158,262" fill="#1E40AF"/>
+     <rect x="56" y="196" width="168" height="12" rx="6" fill="url(#er-beam)" stroke="#1E3A8A" stroke-width="2" transform="rotate(-9 140 202)"/>
+   </g>
+   <g filter="url(#er-soft)"><ellipse cx="74" cy="168" rx="26" ry="16.64" fill="url(#er-c0)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="65.16" cy="162.28" rx="7.8" ry="4.16" fill="#FFFFFF" opacity="0.4"/><text x="74" y="174.24" font-size="21.32" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text></g>
+   <g filter="url(#er-soft)"><ellipse cx="208" cy="224" rx="26" ry="16.64" fill="url(#er-c1)" stroke="#065F46" stroke-width="1.5"/><ellipse cx="199.16" cy="218.28" rx="7.8" ry="4.16" fill="#FFFFFF" opacity="0.4"/><text x="208" y="230.24" font-size="21.32" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">$</text></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroGlobalisation: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="gl-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="gl-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="gl-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="gl-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        <radialGradient id="gl-g0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#DBEAFE"/><stop offset="100%" stop-color="#60A5FA"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#gl-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#gl-grd)"/>
+      <ellipse cx="140" cy="196" rx="104" ry="66" fill="none" stroke="#93C5FD" stroke-width="2" stroke-dasharray="4 5" transform="rotate(-20 140 196)"/>
+   <g filter="url(#gl-sh)"><circle cx="140" cy="196" r="64" fill="url(#gl-g0)" stroke="#1E40AF" stroke-width="2.5"/><ellipse cx="140" cy="196" rx="64" ry="26.88" fill="none" stroke="#1E40AF" stroke-width="1.2" opacity="0.5"/><line x1="76" y1="196" x2="204" y2="196" stroke="#1E40AF" stroke-width="1.2" opacity="0.5"/><path d="M 108 160.8 q 19.2 12.8 6.4 32 q -12.8 12.8 9.6 25.6" fill="#22C55E" opacity="0.92"/><circle cx="165.6" cy="208.8" r="14.08" fill="#22C55E" opacity="0.92"/><ellipse cx="116.96000000000001" cy="170.4" rx="16.64" ry="10.24" fill="#FFFFFF" opacity="0.28"/></g>
+   <line x1="44" y1="150" x2="140" y2="196" stroke="#60A5FA" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="44" cy="150" r="8" fill="#2563EB" stroke="#fff" stroke-width="2"/><circle cx="42" cy="148" r="2.4" fill="#fff" opacity="0.5"/><line x1="238" y1="168" x2="140" y2="196" stroke="#60A5FA" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="238" cy="168" r="8" fill="#2563EB" stroke="#fff" stroke-width="2"/><circle cx="236" cy="166" r="2.4" fill="#fff" opacity="0.5"/><line x1="60" y1="252" x2="140" y2="196" stroke="#60A5FA" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="60" cy="252" r="8" fill="#2563EB" stroke="#fff" stroke-width="2"/><circle cx="58" cy="250" r="2.4" fill="#fff" opacity="0.5"/><line x1="228" y1="244" x2="140" y2="196" stroke="#60A5FA" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="228" cy="244" r="8" fill="#2563EB" stroke="#fff" stroke-width="2"/><circle cx="226" cy="242" r="2.4" fill="#fff" opacity="0.5"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPolicyLimits: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="pz-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pz-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="pz-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#CBD5E1" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#CBD5E1" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="pz-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F1F5F9" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#F1F5F9" stop-opacity="0.35"/>
+        </linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#pz-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pz-grd)"/>
+      <g filter="url(#pz-soft)">
+     <rect x="185" y="168" width="30" height="22" rx="2" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/><rect x="185" y="168" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="219" y="168" width="30" height="22" rx="2" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.4"/><rect x="219" y="168" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="253" y="168" width="30" height="22" rx="2" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/><rect x="253" y="168" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="168" y="194" width="30" height="22" rx="2" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.4"/><rect x="168" y="194" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="202" y="194" width="30" height="22" rx="2" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/><rect x="202" y="194" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="236" y="194" width="30" height="22" rx="2" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.4"/><rect x="236" y="194" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="185" y="220" width="30" height="22" rx="2" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/><rect x="185" y="220" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="219" y="220" width="30" height="22" rx="2" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.4"/><rect x="219" y="220" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="253" y="220" width="30" height="22" rx="2" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/><rect x="253" y="220" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="168" y="246" width="30" height="22" rx="2" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.4"/><rect x="168" y="246" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="202" y="246" width="30" height="22" rx="2" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/><rect x="202" y="246" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="236" y="246" width="30" height="22" rx="2" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.4"/><rect x="236" y="246" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="185" y="272" width="30" height="22" rx="2" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/><rect x="185" y="272" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="219" y="272" width="30" height="22" rx="2" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.4"/><rect x="219" y="272" width="30" height="3" fill="#FFFFFF" opacity="0.4"/><rect x="253" y="272" width="30" height="22" rx="2" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/><rect x="253" y="272" width="30" height="3" fill="#FFFFFF" opacity="0.4"/>
+   </g>
+   <g filter="url(#pz-sh)" transform="rotate(18 120 200)">
+     <rect x="40" y="262" width="120" height="16" rx="6" fill="#475569" stroke="#334155" stroke-width="2"/>
+     <rect x="40" y="262" width="120" height="4" rx="2" fill="#FFFFFF" opacity="0.2"/>
+     <circle cx="46" cy="270" r="14" fill="#64748B" stroke="#334155" stroke-width="2"/>
+   </g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroFinancialFailure: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ff-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ff-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="ff-roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F43F5E"/><stop offset="100%" stop-color="#9F1239"/></linearGradient><radialGradient id="ff-warn" cx="40%" cy="35%" r="70%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="ff-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FDA4AF" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FDA4AF" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FDA4AF" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ff-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFE4E6" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FFE4E6" stop-opacity="0.35"/>
+        </linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ff-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ff-grd)"/>
+      <g filter="url(#ff-sh)">
+     <polygon points="64,150 216,150 140,108" fill="url(#ff-roof)" stroke="#881337" stroke-width="2"/>
+     <rect x="64" y="150" width="152" height="12" fill="#F43F5E" stroke="#881337" stroke-width="2"/>
+     <rect x="76" y="162" width="14" height="108" fill="#FDA4AF" stroke="#BE123C" stroke-width="1.6"/><rect x="76" y="162" width="4" height="108" fill="#FFFFFF" opacity="0.3"/><rect x="108" y="162" width="14" height="108" fill="#FDA4AF" stroke="#BE123C" stroke-width="1.6"/><rect x="108" y="162" width="4" height="108" fill="#FFFFFF" opacity="0.3"/><rect x="140" y="162" width="14" height="108" fill="#FDA4AF" stroke="#BE123C" stroke-width="1.6"/><rect x="140" y="162" width="4" height="108" fill="#FFFFFF" opacity="0.3"/><rect x="172" y="162" width="14" height="108" fill="#FDA4AF" stroke="#BE123C" stroke-width="1.6"/><rect x="172" y="162" width="4" height="108" fill="#FFFFFF" opacity="0.3"/><rect x="204" y="162" width="14" height="108" fill="#FDA4AF" stroke="#BE123C" stroke-width="1.6"/><rect x="204" y="162" width="4" height="108" fill="#FFFFFF" opacity="0.3"/>
+     <rect x="56" y="270" width="168" height="16" rx="2" fill="#9F1239" stroke="#881337" stroke-width="2"/>
+     <path d="M 140 162 l -10 36 l 12 0 l -8 40" fill="none" stroke="#FFE4E6" stroke-width="4" stroke-linecap="round"/>
+   </g>
+   <g filter="url(#ff-soft)"><circle cx="216" cy="130" r="22" fill="url(#ff-warn)" stroke="#92400E" stroke-width="2"/><rect x="213" y="118" width="6" height="14" rx="3" fill="#92400E"/><circle cx="216" cy="140" r="3.2" fill="#92400E"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPatternOfTrade: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="pt-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pt-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="pt-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="pt-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#pt-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pt-grd)"/>
+      <g filter="url(#pt-soft)" fill="#86EFAC" stroke="#16A34A" stroke-width="1.6">
+     <path d="M 44 150 q 26 -12 50 0 q 16 18 -6 30 q -34 8 -44 -10 z"/>
+     <path d="M 150 138 q 40 -10 60 8 q 10 22 -18 30 q -44 6 -42 -20 z"/>
+     <path d="M 92 232 q 30 -8 52 6 q 8 20 -20 26 q -36 2 -32 -18 z"/>
+   </g>
+   <g fill="#FFFFFF" opacity="0.25"><path d="M 44 150 q 26 -12 50 0 q -20 6 -50 0 z"/><path d="M 150 138 q 40 -10 60 8 q -28 4 -60 -8 z"/></g>
+   <path d="M 78 168 C 130 120 180 150 188 168" fill="none" stroke="#1D4ED8" stroke-width="2.4" stroke-dasharray="5 4"/>
+   <path d="M 120 224 C 150 200 168 188 184 172" fill="none" stroke="#1D4ED8" stroke-width="2.4" stroke-dasharray="5 4"/>
+   <g transform="translate(186,166) rotate(40)"><path d="M 0 -10 L 4 0 L 14 2 L 4 4 L 2 14 L 0 4 L -10 2 L 0 0 Z" fill="#1E3A8A"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroTradeRestrictions: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="tr-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="tr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="tr-bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FB7185"/><stop offset="100%" stop-color="#E11D48"/></linearGradient><radialGradient id="tr-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="tr-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="tr-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FCD34D"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#tr-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#tr-grd)"/>
+      <g filter="url(#tr-soft)"><rect x="40" y="232" width="64" height="56" rx="3" fill="url(#tr-k0)" stroke="#B45309" stroke-width="2"/><rect x="40" y="232" width="64" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><line x1="40" y1="260" x2="104" y2="260" stroke="#B45309" stroke-width="1.3" opacity="0.7"/><line x1="72" y1="232" x2="72" y2="288" stroke="#B45309" stroke-width="1.3" opacity="0.7"/><text x="72" y="266" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle">£</text></g>
+   <g filter="url(#tr-sh)">
+     <rect x="150" y="150" width="14" height="140" fill="#BE123C" stroke="#881337" stroke-width="2"/>
+     <rect x="150" y="196" width="104" height="14" rx="4" fill="url(#tr-bar)" stroke="#881337" stroke-width="2"/>
+     <line x1="166" y1="196" x2="176" y2="210" stroke="#FFF1F2" stroke-width="2.5"/><line x1="192" y1="196" x2="202" y2="210" stroke="#FFF1F2" stroke-width="2.5"/><line x1="218" y1="196" x2="228" y2="210" stroke="#FFF1F2" stroke-width="2.5"/><line x1="244" y1="196" x2="254" y2="210" stroke="#FFF1F2" stroke-width="2.5"/>
+     <circle cx="157" cy="146" r="8" fill="#FB7185" stroke="#881337" stroke-width="2"/>
+   </g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroSpecialisationTrade: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="st-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="st-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="st-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="st-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/>
+        </linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#st-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#st-grd)"/>
+      <g filter="url(#st-soft)">
+     <circle cx="58" cy="176" r="5" fill="#86EFAC"/><rect x="40" y="200" width="56" height="62" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/><rect x="40" y="200" width="4" height="62" fill="#86EFAC" opacity="0.5"/><rect x="34" y="190" width="68" height="12" fill="#86EFAC" stroke="#16A34A" stroke-width="2"/>
+     <rect x="184" y="200" width="56" height="62" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="2"/><rect x="184" y="200" width="4" height="62" fill="#BAE6FD" opacity="0.6"/><rect x="178" y="190" width="68" height="12" fill="#BAE6FD" stroke="#0EA5E9" stroke-width="2"/>
+   </g>
+   <path d="M 104 214 C 130 200 150 200 176 214" fill="none" stroke="#16A34A" stroke-width="3" stroke-dasharray="5 4"/>
+   <path d="M 170 208 L 180 214 L 170 220" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+   <path d="M 176 244 C 150 258 130 258 104 244" fill="none" stroke="#0EA5E9" stroke-width="3" stroke-dasharray="5 4"/>
+   <path d="M 110 238 L 100 244 L 110 250" fill="none" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroTaxation: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="tx-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="tx-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="tx-roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#14B8A6"/><stop offset="100%" stop-color="#0F766E"/></linearGradient><radialGradient id="tx-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#5EEAD4" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="tx-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#CCFBF1" stop-opacity="0.35"/>
+        </linearGradient>
+        <radialGradient id="tx-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="tx-c1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FEF3C7"/><stop offset="100%" stop-color="#FCD34D"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#tx-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#tx-grd)"/>
+      <g filter="url(#tx-soft)">
+     <polygon points="70,168 186,168 128,132" fill="url(#tx-roof)" stroke="#115E59" stroke-width="2"/>
+     <rect x="70" y="168" width="116" height="10" fill="#14B8A6" stroke="#115E59" stroke-width="2"/>
+     <rect x="80" y="178" width="12" height="86" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.5"/><rect x="80" y="178" width="4" height="86" fill="#FFFFFF" opacity="0.3"/><rect x="110" y="178" width="12" height="86" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.5"/><rect x="110" y="178" width="4" height="86" fill="#FFFFFF" opacity="0.3"/><rect x="140" y="178" width="12" height="86" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.5"/><rect x="140" y="178" width="4" height="86" fill="#FFFFFF" opacity="0.3"/><rect x="170" y="178" width="12" height="86" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.5"/><rect x="170" y="178" width="4" height="86" fill="#FFFFFF" opacity="0.3"/>
+     <rect x="62" y="264" width="132" height="14" rx="2" fill="#0F766E" stroke="#115E59" stroke-width="2"/>
+   </g>
+   <path d="M 150 240 C 180 240 196 252 206 258" fill="none" stroke="#0D9488" stroke-width="2.4" stroke-dasharray="4 3"/>
+   <g filter="url(#tx-sh)"><ellipse cx="214" cy="268" rx="18" ry="11.52" fill="url(#tx-c0)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="207.88" cy="264.04" rx="5.3999999999999995" ry="2.88" fill="#FFFFFF" opacity="0.4"/><text x="214" y="272.32" font-size="14.76" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">%</text><ellipse cx="214" cy="248" rx="18" ry="11.52" fill="url(#tx-c1)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="207.88" cy="244.04" rx="5.3999999999999995" ry="2.88" fill="#FFFFFF" opacity="0.4"/><text x="214" y="252.32" font-size="14.76" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">%</text></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroTermsOfTrade: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="tt-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="tt-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="tt-x" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EDE9FE"/><stop offset="100%" stop-color="#DDD6FE"/></linearGradient><linearGradient id="tt-m" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5F3FF"/><stop offset="100%" stop-color="#EDE9FE"/></linearGradient><radialGradient id="tt-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="tt-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/>
+        </linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#tt-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#tt-grd)"/>
+      <g filter="url(#tt-sh)">
+     <rect x="64" y="138" width="152" height="116" rx="14" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2.5"/>
+     <rect x="86" y="160" width="108" height="26" rx="6" fill="url(#tt-x)"/>
+     <line x1="86" y1="196" x2="194" y2="196" stroke="#5B21B6" stroke-width="4" stroke-linecap="round"/>
+     <rect x="86" y="206" width="108" height="26" rx="6" fill="url(#tt-m)"/>
+     <text x="140" y="179" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle">Export index</text>
+     <text x="140" y="225" font-size="13" font-weight="800" fill="#6D28D9" text-anchor="middle">Import index</text>
+   </g>
+   <text x="140" y="288" font-size="13" font-weight="800" fill="#5B21B6" text-anchor="middle">× 100</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroTradingBlocs: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="tb-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="tb-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="tb-c" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#2563EB"/></radialGradient><radialGradient id="tb-glow" cx="50%" cy="42%" r="58%">
+          <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="tb-grd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+        </linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#tb-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#tb-grd)"/>
+      <circle cx="140" cy="196" r="80" fill="none" stroke="#93C5FD" stroke-width="2" stroke-dasharray="3 4"/>
+   <g filter="url(#tb-sh)"><circle cx="140" cy="196" r="34" fill="url(#tb-c)" stroke="#1E3A8A" stroke-width="2"/><ellipse cx="130" cy="186" rx="12" ry="7" fill="#FFFFFF" opacity="0.25"/><text x="140" y="201" font-size="15" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">WTO</text></g>
+   <path d="M 140.0 104.0 l 3.5 8 l 8.5 0 l -7 5.5 l 2.7 8.2 l -7.7 -5 l -7.7 5 l 2.7 -8.2 l -7 -5.5 l 8.5 0 z" fill="#FBBF24" stroke="#B45309" stroke-width="1.2"/><path d="M 209.3 144.0 l 3.5 8 l 8.5 0 l -7 5.5 l 2.7 8.2 l -7.7 -5 l -7.7 5 l 2.7 -8.2 l -7 -5.5 l 8.5 0 z" fill="#FBBF24" stroke="#B45309" stroke-width="1.2"/><path d="M 209.3 224.0 l 3.5 8 l 8.5 0 l -7 5.5 l 2.7 8.2 l -7.7 -5 l -7.7 5 l 2.7 -8.2 l -7 -5.5 l 8.5 0 z" fill="#FBBF24" stroke="#B45309" stroke-width="1.2"/><path d="M 140.0 264.0 l 3.5 8 l 8.5 0 l -7 5.5 l 2.7 8.2 l -7.7 -5 l -7.7 5 l 2.7 -8.2 l -7 -5.5 l 8.5 0 z" fill="#FBBF24" stroke="#B45309" stroke-width="1.2"/><path d="M 70.7 224.0 l 3.5 8 l 8.5 0 l -7 5.5 l 2.7 8.2 l -7.7 -5 l -7.7 5 l 2.7 -8.2 l -7 -5.5 l 8.5 0 z" fill="#FBBF24" stroke="#B45309" stroke-width="1.2"/><path d="M 70.7 144.0 l 3.5 8 l 8.5 0 l -7 5.5 l 2.7 8.2 l -7.7 -5 l -7.7 5 l 2.7 -8.2 l -7 -5.5 l 8.5 0 z" fill="#FBBF24" stroke="#B45309" stroke-width="1.2"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
 

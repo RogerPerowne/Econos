@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain the main ways financial markets fail — asymmetric information, externalities, moral hazard, speculation and market rigging — and evaluate their wider impact',
 
   intro: {
-    heroKey: 'heroMarketFailure',
+    heroKey: 'heroFinancialFailure',
     summary: 'Financial markets do vital jobs — moving savings to borrowers, enabling exchange and managing risk — but they are unusually prone to market failure. Asymmetric information means one side of a deal knows more than the other, which can lead to adverse selection and credit rationing. Externalities mean one institution’s failure can spread panic and losses across the whole economy. Moral hazard means the expectation of a rescue encourages reckless risk-taking, especially when firms are too big to fail. Speculation can tip into bubbles that inflate and then crash. And market rigging — manipulating benchmarks, prices or information — destroys the honest price signals markets rely on. The deck works through each failure, then closes on how to structure an answer that traces the mechanism to its wider social cost and the case for intervention.',
     doInThis: 'Map where financial market failure comes from. Explain asymmetric information and adverse selection. Explain externalities and contagion. Explain moral hazard and too-big-to-fail. Analyse speculation and bubbles. Explain market rigging, then evaluate the case for intervention.',
     outcomes: [

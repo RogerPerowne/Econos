@@ -24,7 +24,7 @@
       chartArea: { x: originX + 38, y: originY + 22, width: 175, height: 138 },
       axes: { x: { label: 'Consumer goods' }, y: { label: 'Capital goods' } },
       curves: [
-        { id: ppfId, d: PPF1, tone: tone, strokeWidth: 2.6 }
+        { id: ppfId, d: PPF1, tone: tone, strokeWidth: 2.6, label: 'PPF', labelDx: -8, labelDy: -8, anchor: 'end' }
       ],
       points: [
         { x: dotX, on: ppfId, tone: tone, radius: 6 }
@@ -44,8 +44,8 @@
       chartArea: { x: originX + 38, y: originY + 22, width: 175, height: 138 },
       axes: { x: { label: 'Consumer goods' }, y: { label: 'Capital goods' } },
       curves: [
-        { id: id1, d: PPF1,  tone: tone, strokeWidth: 2,   dashed: '5 4', opacity: 0.55 },
-        { id: id2, d: ppf2D, tone: tone, strokeWidth: 2.6 }
+        { id: id1, d: PPF1,  tone: tone, strokeWidth: 2,   dashed: '5 4', opacity: 0.55, label: 'PPF₁', labelDx: -6, labelDy: 12, anchor: 'end' },
+        { id: id2, d: ppf2D, tone: tone, strokeWidth: 2.6, label: 'PPF₂', labelDx: -8, labelDy: -8, anchor: 'end' }
       ],
       arrows: [
         // buffer:2 – the perpendicular gap from PPF₁ to PPF₂ in these

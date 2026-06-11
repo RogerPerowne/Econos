@@ -25,7 +25,7 @@
     curves: [
       { id: 'ppf1',
         d: 'M 0,1 C 0.4,1 0.95,0.45 0.95,0',
-        tone: 'blue', strokeWidth: 3, layer: 'layer-ppf-base' }
+        tone: 'blue', strokeWidth: 3, label: 'PPF', labelDx: -10, labelDy: -10, anchor: 'end', layer: 'layer-ppf-base' }
     ],
     // Each point's y is snapped onto ppf1 at its x by the engine –
     // guarantees A/B/C sit ON the curve, no floating dots. The x

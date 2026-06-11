@@ -39,8 +39,7 @@
     className: 'lras-shift-diagram-svg',
     layers: ['idl-1', 'idl-2'],
     inverseLayers: ['idl-old-solid'],
-    defs:
-      '<marker id="lrs-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -89,11 +88,11 @@
       // Layer 1: rightward shift arrow near the top of the chart
       { x1: Yf1 + 0.020, y1: 0.929, x2: Yf2 - 0.020, y2: 0.929,
         tone: 'green', strokeWidth: 1.8,
-        markerEnd: 'lrs-arr-green', buffer: 0, layer: 'idl-1' },
+        markerEnd: 'econos-arrow-green', buffer: 0, layer: 'idl-1' },
       // Layer 2: growth arrow along the x-axis
       { x1: Yf1 + 0.020, y1: -0.039, x2: Yf2 - 0.020, y2: -0.039,
         tone: 'green', strokeWidth: 1.5,
-        markerEnd: 'lrs-arr-green', buffer: 0, layer: 'idl-2' }
+        markerEnd: 'econos-arrow-green', buffer: 0, layer: 'idl-2' }
     ]
   };
 })();

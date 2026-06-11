@@ -64,9 +64,7 @@
       x: { label: 'Capital Goods' },
       y: { label: 'Consumer Goods' }
     },
-    defs:
-      '<marker id="ppfcc-pp" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#7C3AED"/></marker>' +
-      '<marker id="ppfcc-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>',
+
 
     // Always-visible: just the UK dot – no label. The "UK" text appears
     // only in view 1 (countries layer); the "A" text appears in views
@@ -143,7 +141,7 @@
           // Uses engine default ARROW_BUFFER (14) so the arrowhead
           // clears both A and B dots.
           { d: 'M ' + A.x + ',' + A.y + ' Q 0.39,0.85 ' + B.x + ',' + B.y,
-            tone: 'purple', strokeWidth: 2, dashed: '6 3', markerEnd: 'ppfcc-pp' },
+            tone: 'purple', strokeWidth: 2, dashed: '6 3', markerEnd: 'econos-arrow-purple' },
           // Dashed projection gridlines from B to both axes (potential-position visual)
           { x1: 0, y1: B.y, x2: B.x, y2: B.y, tone: 'gray', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           { x1: B.x, y1: 0, x2: B.x, y2: B.y, tone: 'gray', strokeWidth: 1, dashed: '4 3', buffer: 0 }
@@ -177,7 +175,7 @@
           // Same Capital Goods level – more Consumer Goods because the frontier
           // has expanded.
           { x1: B.x, y1: B.y, x2: C.x, y2: C.y,
-            tone: 'green', strokeWidth: 2, dashed: '5 3', markerEnd: 'ppfcc-gr' }
+            tone: 'green', strokeWidth: 2, dashed: '5 3', markerEnd: 'econos-arrow-green' }
         ]
       },
 
@@ -198,7 +196,7 @@
           // Movement-along-PPF₂ arrow from C to D. Bows slightly above PPF₂
           // (same convention as the A→B arrow on PPF₁ in view 2).
           { d: 'M ' + C.x + ',' + C.y + ' Q 0.43,0.85 ' + D.x + ',' + D.y,
-            tone: 'green', strokeWidth: 2, dashed: '5 3', markerEnd: 'ppfcc-gr' }
+            tone: 'green', strokeWidth: 2, dashed: '5 3', markerEnd: 'econos-arrow-green' }
         ]
       }
     ]

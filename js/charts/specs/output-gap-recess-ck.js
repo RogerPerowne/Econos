@@ -29,9 +29,7 @@
     layers: ['idl-1', 'idl-2'],
     inverseLayers: ['idl-old-solid'],
     perspectives: ['classical', 'keynesian'],
-    defs:
-      '<marker id="ogrck-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/></marker>' +
-      '<marker id="ogrck-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -127,11 +125,11 @@
       /* AD leftward shift arrow (idl-1) */
       { x1: 0.546, y1: 0.521, x2: 0.464, y2: 0.434,
         tone: 'blue', strokeWidth: 1.8,
-        markerEnd: 'ogrck-arr-blue', buffer: 0, layer: 'idl-1' },
+        markerEnd: 'econos-arrow-blue', buffer: 0, layer: 'idl-1' },
       /* SRAS downward shift arrow (idl-2, classical) — wages fall */
       { x1: 0.880, y1: 0.545, x2: 0.880, y2: 0.395,
         tone: 'amber', strokeWidth: 1.8,
-        markerEnd: 'ogrck-arr-amber', buffer: 0,
+        markerEnd: 'econos-arrow-amber', buffer: 0,
         layer: 'idl-2', perspective: 'classical' }
     ]
   };

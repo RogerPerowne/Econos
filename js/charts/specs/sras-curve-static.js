@@ -20,8 +20,7 @@
     chartArea: { x: 55, y: 18, width: 360, height: 254 },
     className: 'sras-curve-static-svg',
     layers: ['idl-1', 'idl-2'],
-    defs:
-      '<marker id="srs-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -49,7 +48,7 @@
       // Movement arrow from near A to near B, dashed blue, layer 2
       { x1: 0.394, y1: 0.394, x2: 0.600, y2: 0.583,
         tone: 'blue', strokeWidth: 1.5, dashed: '3 2',
-        markerEnd: 'srs-arr-blue', buffer: 0, layer: 'idl-2' }
+        markerEnd: 'econos-arrow-blue', buffer: 0, layer: 'idl-2' }
     ]
   };
 })();

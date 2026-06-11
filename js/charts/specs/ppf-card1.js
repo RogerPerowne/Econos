@@ -27,12 +27,7 @@
       x: { label: 'Capital Goods' },
       y: { label: 'Consumer Goods' }
     },
-    defs:
-      '<marker id="ppf-occ-end" viewBox="0 0 8 6" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>' +
-      '<marker id="ppf-shift-out-end" viewBox="0 0 8 6" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>' +
-      '<marker id="ppf-shift-out-start" viewBox="0 0 8 6" markerWidth="6" markerHeight="6" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#059669"/></marker>' +
-      '<marker id="ppf-shift-in-end" viewBox="0 0 8 6" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>' +
-      '<marker id="ppf-shift-in-start" viewBox="0 0 8 6" markerWidth="6" markerHeight="6" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/></marker>',
+
     curves: [
       { id: 'ppf1', d: 'M 0,0.643 C 0.36,0.643 0.65,0.229 0.65,0.014', tone: 'blue', label: 'PPF₁', layer: 'layer-ppf-base' }
     ],
@@ -70,7 +65,7 @@
           { x: 0.600, y: 0.203, tone: 'amber', label: 'E', gridlines: true, ticks: { x: 'K₂', y: 'C₂' } }
         ],
         arrows: [
-          { d: 'M 0.274,0.566 Q 0.5,0.66 0.584,0.211', tone: 'amber', strokeWidth: 1.6, dashed: '6 3', markerEnd: 'ppf-occ-end' }
+          { d: 'M 0.274,0.566 Q 0.5,0.66 0.584,0.211', tone: 'amber', strokeWidth: 1.6, dashed: '6 3', markerEnd: 'econos-arrow-amber' }
         ],
         texts: [
           { x: -0.03, y: 0.389, text: '−ΔC', tone: 'amber', bold: true },
@@ -98,10 +93,10 @@
         arrows: [
           { perpendicular: { from: 'ppf1', t: 0.55, to: 'ppf2' },
             tone: 'green', strokeWidth: 1.8, lineCap: 'round',
-            markerStart: 'ppf-shift-out-start', markerEnd: 'ppf-shift-out-end' },
+            markerStart: 'econos-arrow-green-back', markerEnd: 'econos-arrow-green' },
           { perpendicular: { from: 'ppf1', t: 0.35, to: 'ppf3' },
             tone: 'rose', strokeWidth: 1.8, lineCap: 'round',
-            markerStart: 'ppf-shift-in-start', markerEnd: 'ppf-shift-in-end' }
+            markerStart: 'econos-arrow-red-back', markerEnd: 'econos-arrow-red' }
         ],
         texts: [
           { x: 0.62, y: 0.66, text: 'Outward', tone: 'green', bold: true },

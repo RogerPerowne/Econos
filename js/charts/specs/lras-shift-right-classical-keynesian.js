@@ -45,9 +45,7 @@
     ],
     inverseLayers: ['c-lras1-solid', 'k-as1-solid'],
     perspectives: ['classical', 'keynesian'],
-    defs:
-      '<marker id="lrsr-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>' +
-      '<marker id="lrsr-arr-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -129,17 +127,17 @@
     arrows: [
       /* Classical LR shift (V2) – LRAS₁ → LRAS₂, rightward near top. */
       { x1: YF1 + 0.01, y1: 0.78, x2: YF2 - 0.01, y2: 0.78,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'lrsr-arr-green',
+        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
         buffer: 0, layer: 'c-lr-arrow', perspective: 'classical' },
 
       /* Keynesian LR shift (V2) – capacity slides parallel right. */
       { x1: 0.34, y1: 0.255, x2: 0.52, y2: 0.255,
-        tone: 'green', strokeWidth: 1.8, markerEnd: 'lrsr-arr-green',
+        tone: 'green', strokeWidth: 1.8, markerEnd: 'econos-arrow-green',
         buffer: 0, layer: 'k-lr-arrow', perspective: 'keynesian' },
       /* Keynesian output-gap arrow (V3) – actual Y₂ to potential Yf₂,
          placed LOW near the x-axis so it reads as a clean gap. */
       { x1: 0.575, y1: 0.090, x2: YF2 - 0.005, y2: 0.090,
-        tone: 'rose', strokeWidth: 1.8, markerEnd: 'lrsr-arr-rose',
+        tone: 'rose', strokeWidth: 1.8, markerEnd: 'econos-arrow-rose',
         buffer: 0, layer: 'k-gap', perspective: 'keynesian' }
     ],
 

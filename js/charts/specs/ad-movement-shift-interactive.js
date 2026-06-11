@@ -26,9 +26,7 @@
     chartArea: { x: 55, y: 18, width: 360, height: 254 },
     className: 'ad-movement-shift-svg',
     layers: ['mv-arrow', 'point-b', 'ad2', 'sh-arrow', 'point-c'],
-    defs:
-      '<marker id="adms-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/></marker>' +
-      '<marker id="adms-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>',
+
     axes: {
       x: { label: 'Real output (Y)' },
       y: { label: 'Price level (P)' }
@@ -69,11 +67,11 @@
     arrows: [
       // Movement arrow (V2): A → B along AD₁ (diagonal).
       { x1: 0.395, y1: 0.575, x2: 0.605, y2: 0.380,
-        tone: 'blue', strokeWidth: 1.6, markerEnd: 'adms-arr-blue',
+        tone: 'blue', strokeWidth: 1.6, markerEnd: 'econos-arrow-blue',
         buffer: 0, layer: 'mv-arrow' },
       // Shift arrow (V3): A → C horizontally, showing curve has shifted right.
       { x1: 0.395, y1: 0.602, x2: 0.550, y2: 0.602,
-        tone: 'purple', strokeWidth: 1.6, markerEnd: 'adms-arr-purple',
+        tone: 'purple', strokeWidth: 1.6, markerEnd: 'econos-arrow-purple',
         buffer: 0, layer: 'sh-arrow' }
     ],
 

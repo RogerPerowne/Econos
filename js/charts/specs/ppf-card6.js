@@ -42,8 +42,7 @@
       x: { label: 'Good B' },
       y: { label: 'Good A' }
     },
-    defs:
-      '<marker id="ppftr-gr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>',
+
     curves: [
       { id: 'ppf', d: PPF_D, tone: 'blue', label: 'PPF', strokeWidth: 2.5 }
     ],
@@ -81,7 +80,7 @@
           // default ARROW_BUFFER (14) keeps the arrowhead clear of
           // both dots without manual tuning.
           { x1: P.x, y1: P.y, x2: C.x, y2: C.y,
-            tone: 'green', strokeWidth: 1.8, dashed: '5 3', markerEnd: 'ppftr-gr' }
+            tone: 'green', strokeWidth: 1.8, dashed: '5 3', markerEnd: 'econos-arrow-green' }
         ],
         texts: [
           // "consumption" small italic RIGHT of C, with enough offset to

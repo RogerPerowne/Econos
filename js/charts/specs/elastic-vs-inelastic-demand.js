@@ -36,11 +36,8 @@
       // vertical ΔP arrows too. The previous design pointed UP in local
       // coords and rendered HORIZONTAL after auto-rotation on a
       // vertical line – same family of bug as dq-up/dq-down.
-      '<marker id="ped-red-end-up" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#DC2626"/></marker>' +
-      '<marker id="ped-blue-start" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#2563EB"/></marker>' +
-      '<marker id="ped-blue-end" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#2563EB"/></marker>' +
-      '<marker id="ped-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><polygon points="8,0 8,8 0,4" fill="#D97706"/></marker>' +
-      '<marker id="ped-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0,0 0,8 8,4" fill="#D97706"/></marker>',
+      '' +
+      '',
     divider: { x: 330, y1: 22, y2: 275 },
 
     panels: [
@@ -63,11 +60,11 @@
           { x1: Q1_el, y1: P1_y, x2: Q1_el, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           // Red ΔP arrow OUTSIDE chart on left (vertical, points up)
           { x1: -0.049, y1: P1_y, x2: -0.049, y2: P2_y,
-            tone: 'red', strokeWidth: 2, markerEnd: 'ped-red-end-up', buffer: 0 },
+            tone: 'red', strokeWidth: 2, markerEnd: 'econos-arrow-red', buffer: 0 },
           // Blue ΔQD arrow at bottom (double-headed, large span)
           { x1: Q2_el, y1: 0.055, x2: Q1_el, y2: 0.055,
             tone: 'blue', strokeWidth: 2.5,
-            markerStart: 'ped-blue-start', markerEnd: 'ped-blue-end', buffer: 0 }
+            markerStart: 'econos-arrow-blue-back', markerEnd: 'econos-arrow-blue', buffer: 0 }
         ],
         texts: [
           { x: -0.071, y: P2_y,  text: 'P₂', tone: 'slate', bold: true,  anchor: 'end' },
@@ -97,11 +94,11 @@
           { x1: Q1_in, y1: P1_y, x2: Q1_in, y2: 0, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           // SAME size ΔP arrow as the elastic panel (visual comparison)
           { x1: -0.049, y1: P1_y, x2: -0.049, y2: P2_y,
-            tone: 'red', strokeWidth: 2, markerEnd: 'ped-red-end-up', buffer: 0 },
+            tone: 'red', strokeWidth: 2, markerEnd: 'econos-arrow-red', buffer: 0 },
           // Amber ΔQD arrow at bottom (double-headed, SMALL span)
           { x1: Q2_in, y1: 0.055, x2: Q1_in, y2: 0.055,
             tone: 'amber', strokeWidth: 2.5,
-            markerStart: 'ped-amber-start', markerEnd: 'ped-amber-end', buffer: 0 }
+            markerStart: 'econos-arrow-amber-back', markerEnd: 'econos-arrow-amber', buffer: 0 }
         ],
         texts: [
           { x: -0.071, y: P2_y,  text: 'P₂', tone: 'slate', bold: true,  anchor: 'end' },

@@ -2962,6 +2962,32 @@ img, svg { display: block; max-width: 100%; }
   }
 }
 
+/* Economist-insight quote box. Desktop: portrait left, quote right.
+   Layout lives here (not inline) so the mobile media query can restack
+   it — portrait on TOP, quote full-width below — without fighting inline
+   specificity. Tone colours stay inline (always amber, by house rule). */
+.economist-quote {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 20px;
+  align-items: center;
+  border-radius: var(--r-lg);
+  padding: 18px 22px;
+}
+.economist-quote__portrait {
+  width: 130px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (max-width: 720px) {
+  /* Stack: image on top (centred), text takes the full width beneath. */
+  .economist-quote { grid-template-columns: 1fr; gap: 14px; }
+  .economist-quote__portrait { justify-self: center; width: 108px; height: 132px; }
+}
+
 /* Wide-layout charts (multi-panel, side-legend, or width ≥ 700) get a
    min-width so they don't shrink to unreadable text on mobile. The
    wrapping container has overflow-x:auto so the user can pan

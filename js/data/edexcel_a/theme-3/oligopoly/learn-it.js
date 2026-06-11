@@ -28,7 +28,7 @@ window.ECONOS_TOPIC = {
   goal: 'Define oligopoly and interdependence, build and read the kinked demand curve, and judge price rigidity, non-price competition and the persistence of oligopoly',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroOligopoly',
     summary: 'An oligopoly is a market dominated by a few large firms whose decisions are closely linked. The defining idea is interdependence — each firm must think about how rivals will react before it acts. That strategic tension explains two classic results: price rigidity (modelled by the kinked demand curve) and heavy non-price competition (branding, quality, service, innovation). Barriers to entry let oligopolies persist over time. This deck is the introduction to oligopoly — collusion & cartels and game theory are studied as their own separate topics.',
     doInThis: 'Define oligopoly and explain interdependence. Build the kinked demand curve step by step and use it to explain price rigidity. Identify the main forms of non-price competition and the barriers that let oligopolies persist. Evaluate the outcomes for firms and consumers — without assuming they are always good or bad.',
     outcomes: [

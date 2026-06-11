@@ -5851,6 +5851,372 @@ window.ECONOS_ICONS = {
       <ellipse cx="148" cy="310" rx="110" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
+
+  heroBusinessGrowth: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DCFCE7" opacity="0.7"/>
+      <g filter="url(#h-soft)"><rect x="40" y="250" width="44" height="56" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/><rect x="48.0" y="262" width="10" height="13" fill="#86EFAC"/><rect x="57.0" y="262" width="10" height="13" fill="#86EFAC"/><rect x="66.0" y="262" width="10" height="13" fill="#86EFAC" opacity="0.55"/><rect x="55" y="284" width="14" height="22" fill="#16A34A"/></g>
+   <g filter="url(#h-soft)"><rect x="96" y="198" width="48" height="108" fill="#BBF7D0" stroke="#16A34A" stroke-width="2"/><rect x="104.0" y="210" width="10" height="13" fill="#ECFDF5"/><rect x="115.0" y="210" width="10" height="13" fill="#ECFDF5"/><rect x="126.0" y="210" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="104.0" y="229" width="10" height="13" fill="#ECFDF5"/><rect x="115.0" y="229" width="10" height="13" fill="#ECFDF5"/><rect x="126.0" y="229" width="10" height="13" fill="#ECFDF5"/><rect x="104.0" y="248" width="10" height="13" fill="#ECFDF5"/><rect x="115.0" y="248" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="126.0" y="248" width="10" height="13" fill="#ECFDF5"/><rect x="104.0" y="267" width="10" height="13" fill="#ECFDF5"/><rect x="115.0" y="267" width="10" height="13" fill="#ECFDF5"/><rect x="126.0" y="267" width="10" height="13" fill="#ECFDF5"/><rect x="113" y="284" width="14" height="22" fill="#16A34A"/></g>
+   <g filter="url(#h-sh)"><rect x="156" y="132" width="56" height="174" fill="#34D399" stroke="#047857" stroke-width="2"/><rect x="164.0" y="144" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="144" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="144" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="164.0" y="163" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="163" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="163" width="10" height="13" fill="#ECFDF5"/><rect x="164.0" y="182" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="182" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="194.0" y="182" width="10" height="13" fill="#ECFDF5"/><rect x="164.0" y="201" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="201" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="201" width="10" height="13" fill="#ECFDF5"/><rect x="164.0" y="220" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="179.0" y="220" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="220" width="10" height="13" fill="#ECFDF5"/><rect x="164.0" y="239" width="10" height="13" fill="#ECFDF5"/><rect x="179.0" y="239" width="10" height="13" fill="#ECFDF5"/><rect x="194.0" y="239" width="10" height="13" fill="#ECFDF5" opacity="0.55"/><rect x="177" y="284" width="14" height="22" fill="#047857"/></g>
+   <line x1="238" y1="250" x2="238" y2="100" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 229 109 L 238 100 L 247 109" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroBusinessObjectives: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FEF3C7" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <circle cx="132" cy="186" r="86" fill="#FFFFFF" stroke="#D97706" stroke-width="3"/>
+     <circle cx="132" cy="186" r="64" fill="#FDE68A"/>
+     <circle cx="132" cy="186" r="42" fill="#FFFFFF"/>
+     <circle cx="132" cy="186" r="20" fill="#F59E0B"/>
+     <circle cx="132" cy="186" r="7" fill="#B45309"/>
+   </g>
+   <line x1="232" y1="96" x2="140" y2="180" stroke="#92400E" stroke-width="5" stroke-linecap="round"/>
+   <path d="M 232 96 L 214 100 L 220 114 Z" fill="#92400E"/>
+   <circle cx="138" cy="182" r="5" fill="#B45309"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroCartels: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FFE4E6" opacity="0.7"/>
+      <g filter="url(#h-soft)">
+     <rect x="60" y="200" width="48" height="92" rx="6" fill="#FECDD3" stroke="#BE123C" stroke-width="2"/>
+     <ellipse cx="84" cy="200" rx="24" ry="7" fill="#FFF1F2" stroke="#BE123C" stroke-width="2"/>
+     <line x1="60" y1="228" x2="108" y2="228" stroke="#BE123C" stroke-width="1.6"/>
+     <line x1="60" y1="262" x2="108" y2="262" stroke="#BE123C" stroke-width="1.6"/>
+   </g><g filter="url(#h-soft)">
+     <rect x="124" y="200" width="48" height="92" rx="6" fill="#FB7185" stroke="#BE123C" stroke-width="2"/>
+     <ellipse cx="148" cy="200" rx="24" ry="7" fill="#FFF1F2" stroke="#BE123C" stroke-width="2"/>
+     <line x1="124" y1="228" x2="172" y2="228" stroke="#BE123C" stroke-width="1.6"/>
+     <line x1="124" y1="262" x2="172" y2="262" stroke="#BE123C" stroke-width="1.6"/>
+   </g><g filter="url(#h-soft)">
+     <rect x="188" y="200" width="48" height="92" rx="6" fill="#FECDD3" stroke="#BE123C" stroke-width="2"/>
+     <ellipse cx="212" cy="200" rx="24" ry="7" fill="#FFF1F2" stroke="#BE123C" stroke-width="2"/>
+     <line x1="188" y1="228" x2="236" y2="228" stroke="#BE123C" stroke-width="1.6"/>
+     <line x1="188" y1="262" x2="236" y2="262" stroke="#BE123C" stroke-width="1.6"/>
+   </g>
+   <path d="M 96 180 C 120 150 160 150 184 180" fill="none" stroke="#9F1239" stroke-width="2.4" stroke-dasharray="5 4"/>
+   <circle cx="140" cy="158" r="13" fill="#9F1239"/>
+   <path d="M 134 158 l 4 4 l 8 -9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroContestable: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <rect x="92" y="120" width="96" height="172" rx="4" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2.5"/>
+     <rect x="108" y="138" width="64" height="154" fill="#BFDBFE"/>
+     <rect x="108" y="138" width="32" height="154" fill="#93C5FD"/>
+     <circle cx="134" cy="218" r="4" fill="#1E3A8A"/>
+   </g>
+   <line x1="30" y1="206" x2="92" y2="206" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/>
+   <path d="M 84 198 L 96 206 L 84 214" fill="none" stroke="#2563EB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+   <line x1="250" y1="240" x2="188" y2="240" stroke="#60A5FA" stroke-width="6" stroke-linecap="round"/>
+   <path d="M 246 232 L 258 240 L 246 248" fill="none" stroke="#60A5FA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroControlPower: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#F5F3FF" opacity="0.7"/>
+      <g filter="url(#h-soft)"><rect x="96" y="176" width="70" height="130" fill="#C4B5FD" stroke="#6D28D9" stroke-width="2"/><rect x="104.0" y="188" width="10" height="13" fill="#F5F3FF"/><rect x="126.0" y="188" width="10" height="13" fill="#F5F3FF"/><rect x="148.0" y="188" width="10" height="13" fill="#F5F3FF" opacity="0.55"/><rect x="104.0" y="207" width="10" height="13" fill="#F5F3FF"/><rect x="126.0" y="207" width="10" height="13" fill="#F5F3FF"/><rect x="148.0" y="207" width="10" height="13" fill="#F5F3FF"/><rect x="104.0" y="226" width="10" height="13" fill="#F5F3FF"/><rect x="126.0" y="226" width="10" height="13" fill="#F5F3FF" opacity="0.55"/><rect x="148.0" y="226" width="10" height="13" fill="#F5F3FF"/><rect x="104.0" y="245" width="10" height="13" fill="#F5F3FF"/><rect x="126.0" y="245" width="10" height="13" fill="#F5F3FF"/><rect x="148.0" y="245" width="10" height="13" fill="#F5F3FF"/><rect x="104.0" y="264" width="10" height="13" fill="#F5F3FF" opacity="0.55"/><rect x="126.0" y="264" width="10" height="13" fill="#F5F3FF"/><rect x="148.0" y="264" width="10" height="13" fill="#F5F3FF"/><rect x="124" y="284" width="14" height="22" fill="#6D28D9"/></g>
+   <g filter="url(#h-sh)" transform="rotate(-24 196 150)">
+     <rect x="150" y="138" width="74" height="26" rx="6" fill="#7C3AED" stroke="#5B21B6" stroke-width="2"/>
+     <rect x="180" y="120" width="14" height="62" rx="4" fill="#8B5CF6" stroke="#5B21B6" stroke-width="2"/>
+   </g>
+   <rect x="120" y="300" width="120" height="10" rx="3" fill="#7C3AED"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroDemandLabour: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <path d="M 78 196 C 78 150 162 150 162 196 Z" fill="#F59E0B" stroke="#B45309" stroke-width="2.5"/>
+     <rect x="70" y="194" width="100" height="14" rx="5" fill="#FBBF24" stroke="#B45309" stroke-width="2.5"/>
+     <rect x="114" y="150" width="12" height="46" fill="#FCD34D"/>
+   </g>
+   <g filter="url(#h-soft)">
+     <rect x="150" y="226" width="86" height="64" rx="8" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+     <rect x="176" y="216" width="34" height="14" rx="4" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+     <rect x="150" y="250" width="86" height="6" fill="#1E40AF"/>
+     <rect x="184" y="244" width="18" height="6" rx="2" fill="#BFDBFE"/>
+   </g>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroDemergers: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#F1F5F9" opacity="0.7"/>
+      <g filter="url(#h-soft)"><rect x="40" y="196" width="60" height="110" fill="#CBD5E1" stroke="#475569" stroke-width="2"/><rect x="48.0" y="208" width="10" height="13" fill="#F8FAFC"/><rect x="65.0" y="208" width="10" height="13" fill="#F8FAFC"/><rect x="82.0" y="208" width="10" height="13" fill="#F8FAFC" opacity="0.55"/><rect x="48.0" y="227" width="10" height="13" fill="#F8FAFC"/><rect x="65.0" y="227" width="10" height="13" fill="#F8FAFC"/><rect x="82.0" y="227" width="10" height="13" fill="#F8FAFC"/><rect x="48.0" y="246" width="10" height="13" fill="#F8FAFC"/><rect x="65.0" y="246" width="10" height="13" fill="#F8FAFC" opacity="0.55"/><rect x="82.0" y="246" width="10" height="13" fill="#F8FAFC"/><rect x="48.0" y="265" width="10" height="13" fill="#F8FAFC"/><rect x="65.0" y="265" width="10" height="13" fill="#F8FAFC"/><rect x="82.0" y="265" width="10" height="13" fill="#F8FAFC"/><rect x="63" y="284" width="14" height="22" fill="#475569"/></g>
+   <g filter="url(#h-soft)"><rect x="180" y="210" width="56" height="96" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/><rect x="188.0" y="222" width="10" height="13" fill="#F8FAFC"/><rect x="203.0" y="222" width="10" height="13" fill="#F8FAFC"/><rect x="218.0" y="222" width="10" height="13" fill="#F8FAFC" opacity="0.55"/><rect x="188.0" y="241" width="10" height="13" fill="#F8FAFC"/><rect x="203.0" y="241" width="10" height="13" fill="#F8FAFC"/><rect x="218.0" y="241" width="10" height="13" fill="#F8FAFC"/><rect x="188.0" y="260" width="10" height="13" fill="#F8FAFC"/><rect x="203.0" y="260" width="10" height="13" fill="#F8FAFC" opacity="0.55"/><rect x="218.0" y="260" width="10" height="13" fill="#F8FAFC"/><rect x="201" y="284" width="14" height="22" fill="#64748B"/></g>
+   <g filter="url(#h-sh)"><rect x="116" y="150" width="48" height="90" fill="#94A3B8" stroke="#334155" stroke-width="2"/><rect x="124.0" y="162" width="10" height="13" fill="#F1F5F9"/><rect x="135.0" y="162" width="10" height="13" fill="#F1F5F9"/><rect x="146.0" y="162" width="10" height="13" fill="#F1F5F9" opacity="0.55"/><rect x="124.0" y="181" width="10" height="13" fill="#F1F5F9"/><rect x="135.0" y="181" width="10" height="13" fill="#F1F5F9"/><rect x="146.0" y="181" width="10" height="13" fill="#F1F5F9"/><rect x="124.0" y="200" width="10" height="13" fill="#F1F5F9"/><rect x="135.0" y="200" width="10" height="13" fill="#F1F5F9" opacity="0.55"/><rect x="146.0" y="200" width="10" height="13" fill="#F1F5F9"/><rect x="133" y="218" width="14" height="22" fill="#334155"/></g>
+   <path d="M 132 248 C 120 270 104 280 92 286" fill="none" stroke="#475569" stroke-width="3" stroke-dasharray="5 4"/>
+   <path d="M 96 280 L 90 288 L 100 290" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+   <path d="M 150 248 C 162 270 182 280 196 286" fill="none" stroke="#475569" stroke-width="3" stroke-dasharray="5 4"/>
+   <path d="M 192 280 L 198 288 L 188 290" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroGovIntervention: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#CCFBF1" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <polygon points="60,140 220,140 140,98" fill="#0F766E" stroke="#115E59" stroke-width="2"/>
+     <rect x="60" y="140" width="160" height="12" fill="#14B8A6" stroke="#115E59" stroke-width="2"/>
+     <rect x="72" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="104" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="136" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="168" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/><rect x="200" y="152" width="16" height="120" fill="#5EEAD4" stroke="#0F766E" stroke-width="1.6"/>
+     <rect x="52" y="272" width="176" height="16" rx="2" fill="#0F766E" stroke="#115E59" stroke-width="2"/>
+   </g>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroGovImpact: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FEF3C7" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <rect x="134" y="120" width="12" height="150" rx="3" fill="#B45309"/>
+     <rect x="96" y="270" width="88" height="14" rx="4" fill="#92400E"/>
+     <line x1="64" y1="138" x2="216" y2="138" stroke="#92400E" stroke-width="5" stroke-linecap="round"/>
+     <circle cx="140" cy="132" r="9" fill="#F59E0B" stroke="#92400E" stroke-width="2"/>
+     <path d="M 44 138 L 84 138 L 70 184 Z" fill="#FDE68A" stroke="#B45309" stroke-width="2"/>
+     <path d="M 196 138 L 236 138 L 222 178 Z" fill="#FCD34D" stroke="#B45309" stroke-width="2"/>
+     <line x1="64" y1="138" x2="64" y2="152" stroke="#92400E" stroke-width="1.6"/>
+     <line x1="216" y1="138" x2="216" y2="152" stroke="#92400E" stroke-width="1.6"/>
+   </g>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroMonopolisticComp: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#F5F3FF" opacity="0.7"/>
+      <g filter="url(#h-soft)"><rect x="38" y="232" width="38" height="60" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.6"/><rect x="35" y="220" width="44" height="14" rx="2" fill="#C4B5FD"/><rect x="44" y="242" width="26" height="14" fill="#7C3AED" opacity="0.35"/><rect x="51" y="272" width="12" height="20" fill="#7C3AED"/></g>
+   <g filter="url(#h-soft)"><rect x="96" y="232" width="38" height="60" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/><rect x="93" y="220" width="44" height="14" rx="2" fill="#93C5FD"/><rect x="102" y="242" width="26" height="14" fill="#2563EB" opacity="0.35"/><rect x="109" y="272" width="12" height="20" fill="#2563EB"/></g>
+   <g filter="url(#h-soft)"><rect x="154" y="232" width="38" height="60" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.6"/><rect x="151" y="220" width="44" height="14" rx="2" fill="#86EFAC"/><rect x="160" y="242" width="26" height="14" fill="#16A34A" opacity="0.35"/><rect x="167" y="272" width="12" height="20" fill="#16A34A"/></g>
+   <g filter="url(#h-soft)"><rect x="212" y="232" width="38" height="60" fill="#FFFFFF" stroke="#D97706" stroke-width="1.6"/><rect x="209" y="220" width="44" height="14" rx="2" fill="#FCD34D"/><rect x="218" y="242" width="26" height="14" fill="#D97706" opacity="0.35"/><rect x="225" y="272" width="12" height="20" fill="#D97706"/></g>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroMonopoly: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FFE4E6" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <polygon points="96,118 184,118 170,96 166,112 158,96 154,112 146,96 142,112 134,96 130,112 122,96 118,112 110,96 106,112" fill="#FBBF24"/>
+     <rect x="96" y="118" width="88" height="188" fill="#F43F5E" stroke="#9F1239" stroke-width="2"/><rect x="104.0" y="130" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="130" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="130" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="166.0" y="130" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="149" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="149" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="149" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="149" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="104.0" y="168" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="168" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="168" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="168" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="187" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="124.7" y="187" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="187" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="187" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="206" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="206" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="145.3" y="206" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="206" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="225" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="225" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="225" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="166.0" y="225" width="10" height="13" fill="#FFE4E6"/><rect x="104.0" y="244" width="10" height="13" fill="#FFE4E6"/><rect x="124.7" y="244" width="10" height="13" fill="#FFE4E6"/><rect x="145.3" y="244" width="10" height="13" fill="#FFE4E6"/><rect x="166.0" y="244" width="10" height="13" fill="#FFE4E6" opacity="0.55"/><rect x="133" y="284" width="14" height="22" fill="#9F1239"/>
+   </g>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroMonopsony: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#E0E7FF" opacity="0.7"/>
+      <g filter="url(#h-sh)"><rect x="98" y="150" width="84" height="156" fill="#818CF8" stroke="#3730A3" stroke-width="2"/><rect x="106.0" y="162" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="162" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="162" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="164.0" y="162" width="10" height="13" fill="#EEF2FF"/><rect x="106.0" y="181" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="181" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="181" width="10" height="13" fill="#EEF2FF"/><rect x="164.0" y="181" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="106.0" y="200" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="200" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="200" width="10" height="13" fill="#EEF2FF"/><rect x="164.0" y="200" width="10" height="13" fill="#EEF2FF"/><rect x="106.0" y="219" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="125.3" y="219" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="219" width="10" height="13" fill="#EEF2FF"/><rect x="164.0" y="219" width="10" height="13" fill="#EEF2FF"/><rect x="106.0" y="238" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="238" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="144.7" y="238" width="10" height="13" fill="#EEF2FF"/><rect x="164.0" y="238" width="10" height="13" fill="#EEF2FF"/><rect x="106.0" y="257" width="10" height="13" fill="#EEF2FF"/><rect x="125.3" y="257" width="10" height="13" fill="#EEF2FF"/><rect x="144.7" y="257" width="10" height="13" fill="#EEF2FF" opacity="0.55"/><rect x="164.0" y="257" width="10" height="13" fill="#EEF2FF"/><rect x="133" y="284" width="14" height="22" fill="#3730A3"/></g>
+   <circle cx="44" cy="232" r="5.1" fill="#6366F1"/><rect x="38.9" y="236.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/><circle cx="44" cy="262" r="5.1" fill="#6366F1"/><rect x="38.9" y="266.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/><circle cx="44" cy="292" r="5.1" fill="#6366F1"/><rect x="38.9" y="296.25" width="10.2" height="15.299999999999999" rx="5.1" fill="#6366F1"/>
+   <path d="M 60 238 C 80 238 84 228 94 224" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/><path d="M 60 268 C 80 268 84 228 94 246" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/><path d="M 60 298 C 80 298 84 228 94 268" fill="none" stroke="#4F46E5" stroke-width="2.4" stroke-dasharray="4 3"/>
+   <circle cx="92" cy="226" r="3" fill="#4F46E5"/><circle cx="94" cy="248" r="3" fill="#4F46E5"/><circle cx="92" cy="270" r="3" fill="#4F46E5"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroOligopoly: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
+      <g filter="url(#h-soft)"><rect x="44" y="168" width="56" height="138" fill="#60A5FA" stroke="#1E40AF" stroke-width="2"/><rect x="52.0" y="180" width="10" height="13" fill="#EFF6FF"/><rect x="67.0" y="180" width="10" height="13" fill="#EFF6FF"/><rect x="82.0" y="180" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="52.0" y="199" width="10" height="13" fill="#EFF6FF"/><rect x="67.0" y="199" width="10" height="13" fill="#EFF6FF"/><rect x="82.0" y="199" width="10" height="13" fill="#EFF6FF"/><rect x="52.0" y="218" width="10" height="13" fill="#EFF6FF"/><rect x="67.0" y="218" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="82.0" y="218" width="10" height="13" fill="#EFF6FF"/><rect x="52.0" y="237" width="10" height="13" fill="#EFF6FF"/><rect x="67.0" y="237" width="10" height="13" fill="#EFF6FF"/><rect x="82.0" y="237" width="10" height="13" fill="#EFF6FF"/><rect x="52.0" y="256" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="67.0" y="256" width="10" height="13" fill="#EFF6FF"/><rect x="82.0" y="256" width="10" height="13" fill="#EFF6FF"/><rect x="65" y="284" width="14" height="22" fill="#1E40AF"/></g>
+   <g filter="url(#h-sh)"><rect x="110" y="140" width="60" height="166" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2"/><rect x="118.0" y="152" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="152" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="152" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="118.0" y="171" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="171" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="171" width="10" height="13" fill="#EFF6FF"/><rect x="118.0" y="190" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="190" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="152.0" y="190" width="10" height="13" fill="#EFF6FF"/><rect x="118.0" y="209" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="209" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="209" width="10" height="13" fill="#EFF6FF"/><rect x="118.0" y="228" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="135.0" y="228" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="228" width="10" height="13" fill="#EFF6FF"/><rect x="118.0" y="247" width="10" height="13" fill="#EFF6FF"/><rect x="135.0" y="247" width="10" height="13" fill="#EFF6FF"/><rect x="152.0" y="247" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="133" y="284" width="14" height="22" fill="#1E3A8A"/></g>
+   <g filter="url(#h-soft)"><rect x="180" y="180" width="56" height="126" fill="#60A5FA" stroke="#1E40AF" stroke-width="2"/><rect x="188.0" y="192" width="10" height="13" fill="#EFF6FF"/><rect x="203.0" y="192" width="10" height="13" fill="#EFF6FF"/><rect x="218.0" y="192" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="188.0" y="211" width="10" height="13" fill="#EFF6FF"/><rect x="203.0" y="211" width="10" height="13" fill="#EFF6FF"/><rect x="218.0" y="211" width="10" height="13" fill="#EFF6FF"/><rect x="188.0" y="230" width="10" height="13" fill="#EFF6FF"/><rect x="203.0" y="230" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="218.0" y="230" width="10" height="13" fill="#EFF6FF"/><rect x="188.0" y="249" width="10" height="13" fill="#EFF6FF"/><rect x="203.0" y="249" width="10" height="13" fill="#EFF6FF"/><rect x="218.0" y="249" width="10" height="13" fill="#EFF6FF"/><rect x="188.0" y="268" width="10" height="13" fill="#EFF6FF" opacity="0.55"/><rect x="203.0" y="268" width="10" height="13" fill="#EFF6FF"/><rect x="218.0" y="268" width="10" height="13" fill="#EFF6FF"/><rect x="201" y="284" width="14" height="22" fill="#1E40AF"/></g>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPerfectComp: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DCFCE7" opacity="0.7"/>
+      <g filter="url(#h-soft)">
+     <rect x="32" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+     <rect x="29" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
+     <rect x="45" y="270" width="12" height="22" fill="#16A34A"/>
+   </g><g filter="url(#h-soft)">
+     <rect x="82" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+     <rect x="79" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
+     <rect x="95" y="270" width="12" height="22" fill="#16A34A"/>
+   </g><g filter="url(#h-soft)">
+     <rect x="132" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+     <rect x="129" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
+     <rect x="145" y="270" width="12" height="22" fill="#16A34A"/>
+   </g><g filter="url(#h-soft)">
+     <rect x="182" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+     <rect x="179" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
+     <rect x="195" y="270" width="12" height="22" fill="#16A34A"/>
+   </g><g filter="url(#h-soft)">
+     <rect x="232" y="234" width="40" height="58" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+     <rect x="229" y="222" width="46" height="13" rx="2" fill="#86EFAC"/>
+     <rect x="245" y="270" width="12" height="22" fill="#16A34A"/>
+   </g>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroProfitsLosses: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#ECFDF5" opacity="0.7"/>
+      <g filter="url(#h-soft)"><rect x="60" y="170" width="44" height="122" rx="6" fill="#86EFAC" stroke="#16A34A" stroke-width="2"/></g>
+   <line x1="82" y1="168" x2="82" y2="112" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 73 121 L 82 112 L 91 121" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+   <g filter="url(#h-soft)"><rect x="176" y="214" width="44" height="78" rx="6" fill="#FECDD3" stroke="#BE123C" stroke-width="2"/></g>
+   <line x1="198" y1="216" x2="198" y2="266" stroke="#BE123C" stroke-width="6" stroke-linecap="round"/>
+   <path d="M 189 257 L 198 268 L 207 257" fill="none" stroke="#BE123C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+   <text x="140" y="210" font-size="64" font-weight="800" fill="#047857" text-anchor="middle" font-family="Fraunces, Georgia, serif">£</text>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPromoteComp: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DCFCE7" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <rect x="96" y="170" width="70" height="46" rx="23" fill="#16A34A" stroke="#065F46" stroke-width="2.5"/>
+     <circle cx="166" cy="193" r="23" fill="#22C55E" stroke="#065F46" stroke-width="2.5"/>
+     <circle cx="166" cy="193" r="9" fill="#ECFDF5"/>
+     <rect x="104" y="158" width="26" height="14" rx="4" fill="#16A34A" stroke="#065F46" stroke-width="2"/>
+   </g>
+   <line x1="60" y1="262" x2="60" y2="292" stroke="#16A34A" stroke-width="3"/><path d="M 60 262 L 82 270 L 60 278 Z" fill="#86EFAC" stroke="#16A34A" stroke-width="1.5"/><line x1="140" y1="262" x2="140" y2="292" stroke="#16A34A" stroke-width="3"/><path d="M 140 262 L 162 270 L 140 278 Z" fill="#86EFAC" stroke="#16A34A" stroke-width="1.5"/><line x1="220" y1="262" x2="220" y2="292" stroke="#16A34A" stroke-width="3"/><path d="M 220 262 L 242 270 L 220 278 Z" fill="#86EFAC" stroke="#16A34A" stroke-width="1.5"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroProtect: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#FEF3C7" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <path d="M 140 110 L 200 132 C 200 196 174 224 140 240 C 106 224 80 196 80 132 Z" fill="#FBBF24" stroke="#B45309" stroke-width="2.5"/>
+     <path d="M 124 168 l 11 12 l 22 -26" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+   </g>
+   <circle cx="108" cy="262" r="6" fill="#D97706"/><rect x="102" y="267" width="12" height="18" rx="6" fill="#D97706"/><circle cx="140" cy="268" r="6.6000000000000005" fill="#B45309"/><rect x="133.4" y="273.5" width="13.200000000000001" height="19.8" rx="6.6000000000000005" fill="#B45309"/><circle cx="172" cy="262" r="6" fill="#D97706"/><rect x="166" y="267" width="12" height="18" rx="6" fill="#D97706"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroRevenue: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DCFCE7" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <rect x="80" y="206" width="120" height="86" rx="8" fill="#16A34A" stroke="#065F46" stroke-width="2.5"/>
+     <rect x="96" y="170" width="78" height="42" rx="6" fill="#86EFAC" stroke="#065F46" stroke-width="2.5"/>
+     <rect x="104" y="180" width="62" height="22" rx="3" fill="#ECFDF5"/>
+     <rect x="92" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/>
+     <rect x="120" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/>
+     <rect x="148" y="224" width="22" height="16" rx="2" fill="#BBF7D0"/>
+     <rect x="176" y="224" width="16" height="40" rx="2" fill="#22C55E"/>
+   </g>
+   <ellipse cx="214" cy="250" rx="16" ry="9.92" fill="#FBBF24" stroke="#B45309" stroke-width="1.5"/><ellipse cx="214" cy="238" rx="16" ry="9.92" fill="#FCD34D" stroke="#B45309" stroke-width="1.5"/><ellipse cx="214" cy="226" rx="16" ry="9.92" fill="#FBBF24" stroke="#B45309" stroke-width="1.5"/>
+   <text x="214" y="232" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroSupplyLabour: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
+      <circle cx="78" cy="250" r="7.5" fill="#2563EB"/><rect x="70.5" y="256.25" width="15" height="22.5" rx="7.5" fill="#2563EB"/><circle cx="112" cy="244" r="8.399999999999999" fill="#3B82F6"/><rect x="103.6" y="251" width="16.799999999999997" height="25.2" rx="8.399999999999999" fill="#3B82F6"/><circle cx="150" cy="250" r="7.5" fill="#2563EB"/><rect x="142.5" y="256.25" width="15" height="22.5" rx="7.5" fill="#2563EB"/>
+   <g filter="url(#h-sh)">
+     <circle cx="206" cy="176" r="40" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="3"/>
+     <line x1="206" y1="176" x2="206" y2="150" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+     <line x1="206" y1="176" x2="226" y2="186" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+     <circle cx="206" cy="176" r="4" fill="#1E3A8A"/>
+   </g>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroEfficiency: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="h-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+      <ellipse cx="140" cy="306" rx="118" ry="9" fill="#DBEAFE" opacity="0.7"/>
+      <g filter="url(#h-sh)">
+     <path d="M 60 244 A 80 80 0 0 1 220 244" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="3"/>
+     <path d="M 60 244 A 80 80 0 0 1 86 185" fill="none" stroke="#F43F5E" stroke-width="10"/>
+     <path d="M 86 185 A 80 80 0 0 1 140 164" fill="none" stroke="#FBBF24" stroke-width="10"/>
+     <path d="M 140 164 A 80 80 0 0 1 220 244" fill="none" stroke="#22C55E" stroke-width="10"/>
+     <line x1="140" y1="244" x2="184" y2="196" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+     <circle cx="140" cy="244" r="9" fill="#1E3A8A"/>
+   </g>
+   <rect x="116" y="258" width="48" height="14" rx="4" fill="#1D4ED8"/>
+      <ellipse cx="140" cy="313" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+
   heroCostCurves: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

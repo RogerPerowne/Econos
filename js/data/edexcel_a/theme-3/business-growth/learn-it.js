@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
   goal: 'Compare the routes to business growth, weigh their benefits and risks, and explain the constraints',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroBusinessGrowth',
     summary: 'Firms grow in different ways – internally through their own resources, or externally by merging with or acquiring other firms. Each route changes a firm’s costs, market position and risk. Some firms can’t (or won’t) grow at all, held back by limited demand, scarce finance, owner preferences or regulation. This topic gives you the four growth routes, the trade-offs they involve, and the constraints that shape every real-world decision.',
     doInThis: 'Define organic growth, distinguish vertical / horizontal / conglomerate integration, weigh the benefits and risks of each, and explain the four main constraints on business growth.',
     outcomes: [

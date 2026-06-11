@@ -34,7 +34,7 @@ window.ECONOS_TOPIC = {
   goal: 'Understand the cost types a firm faces, calculate average and marginal cost, and read what the shape of each cost curve means',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroCostCurves',
     summary: 'A firm cannot judge profit without judging cost. The toolkit splits into five measures: fixed cost (does not change with output), variable cost (rises with output), total cost (the sum of both), average cost (cost per unit) and marginal cost (the extra cost of one more unit). Each one is calculated from a small table, plotted on a chart, and used to take a real business decision – set a price, accept an order, expand or scale back. The shapes of the curves matter: AC and AVC are U-shaped because early efficiency gives way to diminishing returns, and MC cuts both at their minimum points.',
     doInThis: 'Define each cost type and calculate it from a worked table. Plot the cost curves and read off the relationships between them. Use the cost data to take real-world decisions – price-setting, accepting an order, expanding production.',
     outcomes: [

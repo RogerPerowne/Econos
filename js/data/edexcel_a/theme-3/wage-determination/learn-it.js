@@ -29,7 +29,7 @@ window.ECONOS_TOPIC = {
   goal: 'Build the labour-market equilibrium, analyse monopsony and wage controls, and evaluate how market power, elasticity and policy shape wages and employment',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroLabour',
     summary: 'Wages are prices in the labour market. In a competitive market they are set where the demand for labour meets the supply of labour. But real labour markets are shaped by market power (monopsony employers and trade unions), by elasticity, and by government policy such as minimum wages. This deck builds the equilibrium model, adds the monopsony and wage-control diagrams, and shows how elasticity and policy decide the real wage and employment outcomes.',
     doInThis: 'Build the competitive labour-market equilibrium and explain surpluses and shortages. Analyse monopsony wage-setting power and compare it with the competitive benchmark. Use elasticity to judge how far wages or employment respond. Analyse minimum and maximum wages, public-sector pay and immobility — then evaluate the outcomes in context.',
     outcomes: [

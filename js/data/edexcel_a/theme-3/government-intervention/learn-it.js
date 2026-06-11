@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
   goal: 'Understand why and how governments intervene in market structures — diagnosing the problem, matching a policy tool, and judging the effects on every stakeholder',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroGovIntervention',
     summary: 'Governments intervene in markets when market power or weak competition produces worse outcomes — higher prices, restricted output, weaker efficiency or unequal power. This overview deck sets up the whole approach: why governments intervene, what problems they are trying to fix, the toolkit they can reach for, who each policy protects, and how to judge whether the benefits outweigh the risks. The later sub-topics drill into competition policy, regulation and the diagrams in detail.',
     doInThis: 'Explain why governments intervene and the harms they respond to. Identify the main market-structure problems and match each to a policy tool. Map who is protected — consumers, rivals, employees, suppliers and taxpayers — and weigh the trade-offs. Finally, judge intervention against the risk of government failure.',
     outcomes: [

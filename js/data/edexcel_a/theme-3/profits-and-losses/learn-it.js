@@ -29,7 +29,7 @@ window.ECONOS_TOPIC = {
   goal: 'Calculate profit and loss, explain break-even and the link between profit per unit and profit margin, and judge what drives profits and losses up or down',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroProfitsLosses',
     summary: 'Profit is what remains after a firm pays its costs from total revenue. The exam toolkit splits into a small number of measures: the core profit equation (Profit = Total revenue − Total costs), break-even (where revenue just covers cost), profit per unit (selling price − cost per unit) and profit margin (profit as a % of revenue). The Theme 3 task is to recognise the cause of any change in profit — a price move, a cost rise, a productivity gain or a competition squeeze — and to chain that back to the business response.',
     doInThis: 'Calculate profit using TR − TC. Sketch and label a break-even chart and read the profit/loss regions from it. Distinguish profit per unit from profit margin, and compare two products using both. Diagnose the cause of any change in profit and propose a sensible business response.',
     outcomes: [

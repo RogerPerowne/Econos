@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.162.2 — 2026-06-11
+
+### Game Theory — review pass
+
+- Card 5 tit-for-tat cycle: the dashed return loop sliced through the
+  "Co-operate" and "Profits fall" labels. Rerouted: it now leaves below the
+  label blocks, dips beneath the tit-for-tat pill (canvas 320 → 340 tall),
+  and arrows back up into Co-operate — no crossings.
+- Review verdict: the deck is strong — the 2×2 matrix (8,8 / 2,12 / 12,2 /
+  5,5) is reused with identical numbers across cards 1–4 (verified), legend
+  colours correct, synthesis card solid. One sharpening: card 5's examEdge
+  now names the third evaluation lever — retaliation as a <strong>credible
+  threat</strong> — alongside one-shot-vs-repeated and monitoring.
+- `sw.js` cache `econos-v546` → `econos-v547` (icons.js changed).
+
 ## 0.162.1 — 2026-06-11
 
 ### Output Gaps — expanded from 1 card to 3

@@ -18828,7 +18828,7 @@ window.ECONOS_ICONS = {
         <text x="302" y="210" font-size="10.5" font-weight="800" fill="#2563EB">D₁</text>
         <circle cx="155" cy="177" r="4.5" fill="#0B1426"/>
         <circle cx="172" cy="124" r="4.5" fill="#0B1426"/>
-        <line x1="92" y1="177" x2="92" y2="124" stroke="#B45309" stroke-width="2" marker-start="url(#lse-v)" marker-end="url(#lse-v)"/>
+        <line x1="74" y1="177" x2="74" y2="124" stroke="#B45309" stroke-width="2" marker-start="url(#lse-v)" marker-end="url(#lse-v)"/>
         <text x="86" y="154" font-size="10" font-weight="800" fill="#B45309" text-anchor="end">big ΔW</text>
         <text x="195" y="284" font-size="10.5" fill="#475569" text-anchor="middle">Wage rises a lot, employment barely changes</text>
         <!-- divider -->

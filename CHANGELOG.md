@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.166.0 — 2026-06-11
+
+### Arrow sweep pass 2b — hand-rolled icons.js arrows (sweep complete)
+
+- New `scripts/audit-arrows-icons.mjs`: the same marker-vs-curve crossing
+  finder, run over the literal SVG strings in icons.js (straight-line arrows).
+- Result: of 180 hand-rolled arrows, only 5 icons flagged — and 4 of them
+  (adInteractive, phillipsInteractive, adAsTwoOutcomes, adAsMonetary) are
+  UNUSED by any topic, so they never render; the flagged arrows there are
+  also legitimate trajectory (Phillips A→B→C) or multi-state merge artefacts.
+- The one live fix: `labourSupplyElasticity`'s "big ΔW" measurement bracket
+  overlapped the demand curve at x92 (D passes through there); moved it to
+  x74, in the clear strip between the price axis and D. Verified.
+- **Arrow sweep now complete**: engine specs (5 genuine fixes) + hand-rolled
+  icons (1 fix). `sw.js` cache econos-v554 → econos-v555.
+
 ## 0.165.2 — 2026-06-11
 
 ### Arrow sweep pass 2a — fx specs + engine-spec sign-off

@@ -825,8 +825,11 @@
     points.push({ x: nx(Qk), y: ny(Pk), tone: 'slate', radius: 5, layer: 'kdc-1' });
     texts.push({ x: -0.012, y: ny(Pk), text: 'P*', tone: 'slate', bold: true, anchor: 'end', layer: 'kdc-1' });
     texts.push({ x: nx(Qk), y: -0.05, text: 'Q*', tone: 'slate', bold: true, anchor: 'middle', layer: 'kdc-1' });
-    texts.push({ x: nx(qMin + (Qk - qMin) * 0.45), y: ny(Du(qMin + (Qk - qMin) * 0.45)) + 0.06, text: 'elastic above', tone: 'green', bold: true, anchor: 'middle', layer: 'kdc-1' });
-    texts.push({ x: nx(Qk + (qAxis * 0.95 - Qk) * 0.5), y: ny(Dl(Qk + (qAxis * 0.95 - Qk) * 0.5)) + 0.06, text: 'inelastic below', tone: 'green', bold: true, anchor: 'middle', layer: 'kdc-1' });
+    // The elasticity teaching labels live on their OWN layer (kdc-1x) so the
+    // intro view can show them while the later MR-gap / MC views drop them —
+    // by then they're clutter over the MR construction.
+    texts.push({ x: nx(qMin + (Qk - qMin) * 0.45), y: ny(Du(qMin + (Qk - qMin) * 0.45)) + 0.06, text: 'elastic above', tone: 'green', bold: true, anchor: 'middle', layer: 'kdc-1x' });
+    texts.push({ x: nx(Qk + (qAxis * 0.95 - Qk) * 0.5), y: ny(Dl(Qk + (qAxis * 0.95 - Qk) * 0.5)) + 0.06, text: 'inelastic below', tone: 'green', bold: true, anchor: 'middle', layer: 'kdc-1x' });
 
     // ── kdc-2: the two MR segments + the vertical gap ──
     curves.push({ id: 'MRu', d: 'M ' + nx(qMin) + ',' + ny(MRu(qMin)) + ' L ' + nx(Qk) + ',' + ny(mruK), tone: 'amber', label: 'MR', strokeWidth: 2.0, labelDx: -6, labelDy: -8, anchor: 'end', layer: 'kdc-2' });
@@ -835,9 +838,19 @@
     texts.push({ x: nx(Qk) + 0.015, y: ny((mruK + mrlK) / 2), text: 'MR gap', tone: 'rose', bold: true, anchor: 'start', layer: 'kdc-2' });
 
     // ── kdc-3: MC₁ and MC₂ both in the gap → price sticky ──
-    curves.push({ id: 'MC1', shape: { type: 'horizontal', y: ny(mc1), from: 0, to: nx(Qk + 12) }, tone: 'blue', label: 'MC₁', strokeWidth: 2.2, labelDx: 6, labelDy: 4, anchor: 'start', layer: 'kdc-3' });
-    curves.push({ id: 'MC2', shape: { type: 'horizontal', y: ny(mc2), from: 0, to: nx(Qk + 12) }, tone: 'purple', label: 'MC₂', strokeWidth: 2.2, labelDx: 6, labelDy: 4, anchor: 'start', layer: 'kdc-3' });
-    arrows.push({ x1: nx(Qk - 16), y1: ny(mc1), x2: nx(Qk - 16), y2: ny(mc2), tone: 'slate', strokeWidth: 1.8, markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'kdc-3' });
+    // Drawn as the standard swoosh (falls, bottoms out ~1/3 across, rises) —
+    // parabolas calibrated to pass EXACTLY through mc1/mc2 at the kink output
+    // Qk, so both curves cut the MR gap where the model needs them to.
+    var qv = Qk * 0.56;                                   // MC minimum position
+    var mcEnd = Qk + 14;                                  // right end of MC draw range
+    var k1 = (mc1 - mc1 * 0.55) / Math.pow(Qk - qv, 2);   // through (Qk, mc1), min 0.55·mc1
+    var k2 = (mc2 - mc2 * 0.68) / Math.pow(Qk - qv, 2);   // through (Qk, mc2), min 0.68·mc2
+    var mc1f = function (q) { return mc1 * 0.55 + k1 * Math.pow(q - qv, 2); };
+    var mc2f = function (q) { return mc2 * 0.68 + k2 * Math.pow(q - qv, 2); };
+    curves.push({ id: 'MC1', d: samplePath(mc1f, qMin, mcEnd, qAxis, yAxis, 40), tone: 'blue', label: 'MC₁', strokeWidth: 2.2, labelDx: 6, labelDy: 4, anchor: 'start', layer: 'kdc-3' });
+    curves.push({ id: 'MC2', d: samplePath(mc2f, qMin, mcEnd, qAxis, yAxis, 40), tone: 'purple', label: 'MC₂', strokeWidth: 2.2, labelDx: 6, labelDy: -6, anchor: 'start', layer: 'kdc-3' });
+    var qArrow = Qk - 16;
+    arrows.push({ x1: nx(qArrow), y1: ny(mc1f(qArrow)), x2: nx(qArrow), y2: ny(mc2f(qArrow)), tone: 'slate', strokeWidth: 1.8, markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'kdc-3' });
     texts.push({ x: 0.5, y: 0.93, text: 'MC can rise MC₁ → MC₂ within the gap — price stays at P*', tone: 'blue', bold: true, anchor: 'middle', layer: 'kdc-3' });
 
     return {
@@ -845,7 +858,7 @@
       chartArea: opts.chartArea || { x: 45, y: 20, width: 505, height: 382 },
       className: opts.className || 'firm-kinked-demand-svg', background: '#FFFFFF',
       axes: opts.axes || { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } },
-      layers: ['kdc-1', 'kdc-2', 'kdc-3'],
+      layers: ['kdc-1', 'kdc-1x', 'kdc-2', 'kdc-3'],
       curves: curves, points: points, texts: texts, arrows: arrows
     };
   }

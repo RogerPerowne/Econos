@@ -940,7 +940,7 @@ window.ECONOS_TOPICS = [
   {
     id: 'monopoly',
     name: 'Monopoly',
-    sub: 'Sources of power, profit maximisation, barriers, price discrimination',
+    sub: 'Sources of power, profit maximisation, welfare, natural monopoly',
     color: '#dc2626',
     available: { learn: true, link: false, land: false },
     boards: {

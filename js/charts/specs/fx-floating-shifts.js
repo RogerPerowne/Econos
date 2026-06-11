@@ -28,8 +28,8 @@
         axes: { x: { label: 'Quantity of £' }, y: { label: 'Rate' } },
         curves: [
           { d: 'M 0.06,0.10 L 0.92,0.92', tone: 'blue', label: 'S', strokeWidth: 2.5, labelDx: 6, labelDy: -4 },
-          { d: 'M 0.04,0.74 L 0.66,0.06', tone: 'green', label: 'D₁', strokeWidth: 2.5, labelDx: -2, labelDy: -8 },
-          { d: 'M 0.26,0.74 L 0.88,0.06', tone: 'green', dashed: '6 4', strokeWidth: 2.3, label: 'D₂', labelDx: 8, labelDy: -6 }
+          { d: 'M 0.04,0.74 L 0.66,0.06', tone: 'green', dashed: '6 4', opacity: 0.7, label: 'D₁', strokeWidth: 2.3, labelDx: -2, labelDy: -8 },
+          { d: 'M 0.26,0.74 L 0.88,0.06', tone: 'green', strokeWidth: 2.6, label: 'D₂', labelDx: 8, labelDy: -6 }
         ],
         arrows: [
           { x1: 0, y1: 0.388, x2: 0.361, y2: 0.388, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
@@ -54,8 +54,8 @@
         axes: { x: { label: 'Quantity of £' }, y: { label: 'Rate' } },
         curves: [
           { d: 'M 0.08,0.88 L 0.92,0.12', tone: 'blue', label: 'D', strokeWidth: 2.5, labelDx: 6, labelDy: 10 },
-          { d: 'M 0.10,0.10 L 0.78,0.92', tone: 'amber', label: 'S₁', strokeWidth: 2.5, labelDx: -2, labelDy: -8 },
-          { d: 'M 0.32,0.10 L 0.94,0.848', tone: 'amber', dashed: '6 4', strokeWidth: 2.3, label: 'S₂', labelDx: -12, labelDy: 4 }
+          { d: 'M 0.10,0.10 L 0.78,0.92', tone: 'amber', dashed: '6 4', opacity: 0.7, label: 'S₁', strokeWidth: 2.3, labelDx: -2, labelDy: -8 },
+          { d: 'M 0.32,0.10 L 0.94,0.848', tone: 'amber', strokeWidth: 2.6, label: 'S₂', labelDx: -12, labelDy: 4 }
         ],
         arrows: [
           { x1: 0, y1: 0.535, x2: 0.461, y2: 0.535, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },

@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.170.1 — 2026-06-11
+
+### Shift-styling sweep — original dashed, new solid, same colour
+
+- Enforced the sitewide shift convention on theme-3/4 charts that had
+  drifted from it: when a curve shifts, the **original** goes solid →
+  dashed (faded), the **new** curve is drawn **solid**, and the curve
+  keeps its identity colour (demand stays demand-blue, supply stays
+  supply-colour — no recolour of the same line). Shift arrows sit
+  between the two curves.
+    - `labourDemandShift` (Demand for Labour C3) — was: new curves dashed
+      AND recoloured green/rose, arrow floating top-right. Now: all
+      demand-blue, original dashed / new solid, arrow seated between the
+      curves. Views made exclusive so each shift state reads cleanly.
+    - `labourSupplyShift` (Supply of Labour C3) — same fix; all
+      supply-blue, original dashed / new solid, arrows kept between the
+      curves. Views made exclusive.
+    - `fxFloatingShifts` / `fxInterventionDiagrams` (theme-4) — the new
+      curve (D₂ / S₂) was dashed and the original (D₁ / S₁) solid; swapped
+      so the original is dashed and the new solid (colours already
+      consistent within each line).
+
 ## 0.170.0 — 2026-06-11
 
 ### Pros/cons charts — one canonical green-tick / red-cross badge

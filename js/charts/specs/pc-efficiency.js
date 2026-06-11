@@ -13,6 +13,7 @@
     fc: FC, vc: VC, qMax: qAxis, yMax: yAxis, qMin: qMin, samples: 60,
     curves: ['MC', 'AC'], demand: { type: 'horizontal', price: pStar },
     revealLayers: ['pcef-1', 'pcef-2', 'pcef-3'],
+    axisTicks: { p: 'P*' },
     axes: { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } }
   });
   // Annotate the efficiency point (P = MC = min AC) — revealed with the

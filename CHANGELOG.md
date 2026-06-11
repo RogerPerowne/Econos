@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.157.1 — 2026-06-11
+
+### Perfect Competition — staged-diagram polish (cards 3–6)
+
+- `costRevenue` (firm-model.js) gained five opt-in presentation options, all
+  defaulting to existing behaviour: `acDotLayer` (which reveal stage shows the
+  AC dot), `profitOpacity`, `profitLabelX`, `axisTicks: {p, c}` (P*/C* y-axis
+  labels — P* with the price guide, C* with the cost stage plus its own dashed
+  guide across to Q*), and `arLabelDx` (dodge curve crossings).
+- Card 3 (short-run profit): AC dot + C* now arrive with the rectangle stage
+  (step 4) instead of step 3; profit shading 3× darker; the Profit label moved
+  left of where AC dives through the rectangle; AR = MR = P shifted left clear
+  of the rising AC crossing; P* on the y-axis from step 3.
+- Card 4 (loss/shutdown): same treatment — P*/C* axis reads, AC dot + C* with
+  the rectangle stage, darker loss shading.
+- Cards 5 & 6 (long-run, efficiency): P* y-axis label with the dashed price
+  guide on the final step.
+- Chart snapshots updated for exactly the four PC specs; `lint:charts` clean
+  across all 129 specs. `sw.js` cache `econos-v533` → `econos-v534`.
+
 ## 0.157.0 — 2026-06-11
 
 ### Accessibility — name the hand-rolled art SVGs

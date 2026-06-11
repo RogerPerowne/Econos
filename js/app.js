@@ -1633,7 +1633,7 @@
           return `
           <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;margin-bottom:12px;">${renderIcon(item.icon)}</div>
-            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
+            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${item.body}</div>
           </div>`;
         }
@@ -2453,7 +2453,7 @@
           return `
           <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
             <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;margin-bottom:12px;">${renderIcon(item.icon)}</div>
-            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;overflow-wrap:break-word;">${item.head}</div>
+            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:10px;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>
             <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${item.body}</div>
           </div>`;
         }
@@ -5244,10 +5244,10 @@
           const iconTopMode = c.causesStyle === 'icon-top';
           const iconHtml = iconTopMode
             ? `<div style="font-size:var(--fs-3xl);line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
-               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
                  <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
+                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>
                </div>`;
           return `
           <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
@@ -5291,10 +5291,10 @@
           const iconBg = tintedFlat2 ? '#fff' : tone.bg;
           const headerHtml = iconTop2
             ? `<div style="font-size:var(--fs-3xl);line-height:1;margin-bottom:8px;">${renderIcon(item.icon)}</div>
-               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:6px;overflow-wrap:break-word;">${item.head}</div>`
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:6px;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${iconBg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>
             </div>`;
           return `
           <div style="border-radius:var(--r-lg);background:${bg};border:1px solid ${border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
@@ -5414,10 +5414,10 @@
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           const headerHtml = iconTop
             ? `<div style="font-size:var(--fs-3xl);line-height:1;margin-bottom:8px;">${renderIcon(item.icon)}</div>
-               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:6px;overflow-wrap:break-word;">${item.head}</div>`
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:6px;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>
             </div>`;
           return `
           <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
@@ -5438,10 +5438,10 @@
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           const headerHtml = iconTop2
             ? `<div style="font-size:var(--fs-3xl);line-height:1;margin-bottom:8px;">${renderIcon(item.icon)}</div>
-               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-md);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>
             </div>`;
           return `
           <div style="border-radius:var(--r-lg);background:#fff;border:1px solid var(--econ-border);padding:20px 20px 18px;display:flex;flex-direction:column;">
@@ -5461,7 +5461,7 @@
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['blue','green','purple','amber','rose','slate'][i % 6]];
           const headerHtml = iconTopMode3
             ? `<div style="width:36px;height:36px;border-radius:var(--r-md);background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;margin-bottom:10px;">${renderIcon(item.icon)}</div>
-               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
+               <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);margin-bottom:8px;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>`
             : `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
                  <div style="width:36px;height:36px;border-radius:var(--r-md);background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-lg);line-height:1;flex-shrink:0;">${renderIcon(item.icon)}</div>
                  <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);">${item.head}</div>
@@ -5627,7 +5627,7 @@
           <div style="border-radius:var(--r-lg);background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xl);line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${renderIcon(item.icon)}</div>
-              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;">${item.head}</div>
+              <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);min-width:0;overflow-wrap:break-word;hyphens:auto;">${item.head}</div>
             </div>
             ${item.shiftArrows && item.shiftArrows.length
               ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);"><span style="flex-shrink:0;font-weight:900;font-size:var(--fs-base);color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:var(--lh-tight);">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`

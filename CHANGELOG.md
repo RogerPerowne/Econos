@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.161.2 — 2026-06-11
+
+### Tile-head word overflow ("Interdepend ence")
+
+- Collusion card 1's "WHY OLIGOPOLIES ARE VULNERABLE" grid: 4 columns were too
+  narrow for its long headers — now 2×2.
+- Sitewide guard: an audit found ~30 other 4-col tile blocks with 13+-char
+  words (Interdependence, Privatisation, Competitiveness, Nationalisation…).
+  The head templates used `overflow-wrap:break-word`, which splits long words
+  with NO hyphen — that is the "Interdepend ence" artefact. Added
+  `hyphens:auto` beside every break-word in app.js (12 sites; shells declare
+  lang="en-GB" so the hyphenator is active): a word that must break now breaks
+  with a hyphen at a dictionary point instead of an arbitrary bare split.
+- `sw.js` cache `econos-v542` → `econos-v543`.
+
 ## 0.161.1 — 2026-06-11
 
 ### Pair-box bullets — dot-on-text overlap fixed sitewide

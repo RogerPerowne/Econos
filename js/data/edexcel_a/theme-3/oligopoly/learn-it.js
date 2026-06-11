@@ -6,12 +6,14 @@
    of them (and Card 6 flags that collusion is a related topic).
 
    Card patterns:
-     1 Hub-and-spoke (4 core features) + tile grid (real examples)
+     1 Hub-and-spoke (4 core features) + examples + concentration-ratio worked block
      2 Sequential flow (reaction story) + twin (two price reactions)
      3 Decompose (interactive 3-view kinked demand curve — ACCURATE)
-     4 Tile grid (4 non-price tools) + flow + examples + pair
-     5 Tile grid (4 barriers) + flow + tile grid + pair
+     4 Tile grid (3 price weapons) + flow (the pivot) + tile grid (4 non-price tools) + pair
+     5 Tile grid (4 barriers) + flow (how a barrier protects)
      6 Sequential flow (synthesis) + tile grids + how-to-write
+   Evaluation lives ONLY on card 6; spec 3.4.4(b) CR on card 1,
+   (f) price competition + (g) non-price on card 4.
 
    New visuals:
      - oligopolyHub             (Card 1 hero: 4-feature hub)
@@ -79,10 +81,18 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '\u{1F4F1}', head: 'Mobile networks', body: 'Network strength and bundling matter as much as price.' }
       ],
 
-      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Oligopoly sits between monopolistic competition and monopoly — there is competition, but not many competitors.' },
+      causes2Label: 'MEASURING IT — the n-firm concentration ratio',
+      causes2Emoji: '\u{1F9EE}',
+      causes2Style: 'icon-top',
+      causes2Cols: 3,
+      causes2: [
+        { tone: 'blue',  icon: '\u{1F4D0}', head: 'What it is', body: 'CR<sub>n</sub> = the combined market share of the n largest firms. CR4 adds up the top four.' },
+        { tone: 'amber', icon: '\u{1F6D2}', head: 'Worked example', body: 'UK groceries: 27.3% + 15.1% + 12.6% + 8.7% = <strong>CR4 ≈ 64%</strong>.' },
+        { tone: 'green', icon: '\u{1F50E}', head: 'Reading it', body: 'A CR4 above ~60% suggests oligopoly. Caveat: it hides whether one firm dominates the rest.' }
+      ],
 
       conclusion: { title: 'Big idea', text: 'Oligopoly is really the story of a few powerful firms competing while constantly watching one another.' },
-      examEdge: 'Define oligopoly, then use the phrase <strong>interdependence</strong> and support it with one or two clear features.'
+      examEdge: 'Define oligopoly, calculate the concentration ratio if data is given, then use the phrase <strong>interdependence</strong> supported by one or two clear features.'
     },
 
     /* ====================================================================
@@ -114,18 +124,7 @@ window.ECONOS_TOPIC = {
       visualLabel: 'TWO COMMON PRICE REACTIONS',
       visualEmoji: '\u{2696}\u{FE0F}',
 
-      causesLabel: 'NOT JUST ABOUT PRICE',
-      causesEmoji: '\u{1F4E2}',
-      causesStyle: 'icon-top',
-      causesCols: 4,
-      causes: [
-        { tone: 'blue',   icon: '\u{1F4E3}', head: 'Advertising',    body: 'Builds brand awareness and customer loyalty.' },
-        { tone: 'purple', icon: '\u{1F396}\u{FE0F}', head: 'Product quality', body: 'Differentiates the offer and reduces rivalry.' },
-        { tone: 'amber',  icon: '\u{1F3A7}', head: 'Service',        body: 'Gives consumers reasons to stay and return.' },
-        { tone: 'green',  icon: '\u{1F4A1}', head: 'Innovation',     body: 'Can change the competitive game.' }
-      ],
-
-      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Interdependence helps explain why oligopolists often avoid simple price cutting and look for smarter ways to compete.' },
+      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Interdependence helps explain why oligopolists often avoid simple price cutting and look for smarter ways to compete — Card 4 shows the alternatives.' },
 
       conclusion: { title: 'Big idea', text: 'Oligopoly is strategic competition — every move is made with rivals in mind.' },
       examEdge: 'Use the word <strong>interdependence</strong>, then explain how a firm’s decision depends on the likely response of rivals.'
@@ -177,16 +176,6 @@ window.ECONOS_TOPIC = {
         ]
       },
 
-      causesLabel: 'WHY PRICES MAY STICK',
-      causesEmoji: '\u{2753}',
-      causesStyle: 'icon-top',
-      causesCols: 3,
-      causes: [
-        { tone: 'blue',  icon: '\u{1F4C8}', head: 'Price rise', body: 'Demand is very elastic — sales may fall sharply if rivals don’t follow.' },
-        { tone: 'purple', icon: '\u{1F4C9}', head: 'Price cut',  body: 'Demand is more inelastic — rivals copy, so quantity rises little.' },
-        { tone: 'green', icon: '\u{2696}\u{FE0F}', head: 'Result',    body: 'The firm may leave its price unchanged because changing it is risky.' }
-      ],
-
       bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'The kinked demand curve is a <strong>model</strong> — it helps explain one possible oligopoly outcome, not every market.' },
 
       conclusion: { title: 'Big idea', text: 'Interdependence can make price changes unattractive, so prices may remain stable.' },
@@ -194,48 +183,51 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 4 – Non-price competition
-       Pattern: Tile grid (4 tools) + flow + examples + pair
+       CARD 4 – How oligopolists compete — price and non-price
+       Pattern: Tile grid (price weapons, top) + flow (the pivot) +
+                tile grid (non-price tools, examples folded in) + pair
+       Covers spec 3.4.4(f) price competition + (g) non-price competition.
        ==================================================================== */
     {
       id: 'oli-non-price',
       template: 'ad-interactive',
       stepLabel: 'Learn: Card 4 of 6',
-      title: 'Non-price competition',
-      lede: 'Because price wars are risky, oligopolists often compete through differentiation rather than constant price cutting.',
+      title: 'How oligopolists compete — price and non-price',
+      lede: 'Oligopolists have two families of weapons: aggressive price competition — risky, sometimes illegal — and differentiation that wins customers without cutting price.',
       ledeStyle: 'plain',
 
-      tip: { icon: '\u{1F512}', tone: 'green', text: 'Non-price competition aims to <strong>win customers without simply lowering price</strong>.' },
+      tip: { icon: '\u{1F512}', tone: 'green', text: 'Price weapons fight over the <strong>same customers at lower margins</strong>; non-price competition tries to make the comparison irrelevant.' },
 
-      causesLabel: 'THE FOUR MAIN TOOLS',
-      causesEmoji: '\u{1F4E2}',
+      causesPosition: 'top',
+      causesLabel: 'PRICE COMPETITION — the three weapons',
+      causesEmoji: '\u{2694}\u{FE0F}',
       causesStyle: 'icon-top',
-      causesCols: 2,
+      causesCols: 3,
       causes: [
-        { tone: 'green',  icon: '\u{1F4E3}', head: 'Advertising and branding', body: 'Builds awareness and loyalty.' },
-        { tone: 'blue',   icon: '\u{1F396}\u{FE0F}', head: 'Quality and design', body: 'Makes the product more appealing.' },
-        { tone: 'amber',  icon: '\u{1F3A7}', head: 'Customer service',      body: 'Improves the buying experience.' },
-        { tone: 'purple', icon: '\u{1F4A1}', head: 'Innovation',            body: 'Creates new features or better performance.' }
+        { tone: 'amber', icon: '\u{1F525}', head: 'Price wars',        body: 'Rivals repeatedly undercut each other. Consumers win short-term; margins are destroyed for everyone.' },
+        { tone: 'rose',  icon: '\u{1F988}', head: 'Predatory pricing', body: 'Price below average variable cost to force a rival out, then raise it. Illegal under competition law.' },
+        { tone: 'blue',  icon: '\u{1F6A7}', head: 'Limit pricing',     body: 'Price low enough that entry looks unprofitable to outsiders — sacrifices profit today to deter entrants.' }
       ],
 
-      flowTitle: 'HOW IT WORKS',
+      flowTitle: 'WHY FIRMS PIVOT TO NON-PRICE',
       flowEmoji: '\u{1F517}',
       flowSep: '\u{2192}',
       flow: [
-        { tone: 'green',  icon: '\u{1F3F7}\u{FE0F}', title: 'Differentiate the product', sub: 'Make the offer distinct.' },
-        { tone: 'blue',   icon: '\u{1F465}', title: 'Consumers become less price-sensitive', sub: 'They value the brand.' },
-        { tone: 'purple', icon: '\u{2764}\u{FE0F}', title: 'Brand loyalty rises', sub: 'Customers come back.' },
-        { tone: 'green',  icon: '\u{1F4C8}', title: 'Firm gains some market power', sub: 'Demand becomes less elastic.' }
+        { tone: 'amber',  icon: '\u{2694}\u{FE0F}', title: 'Price weapons are risky', sub: 'Rivals retaliate; predation is illegal.' },
+        { tone: 'green',  icon: '\u{1F3F7}\u{FE0F}', title: 'So differentiate instead', sub: 'Make the offer distinct.' },
+        { tone: 'purple', icon: '\u{2764}\u{FE0F}', title: 'Loyalty rises', sub: 'Consumers become less price-sensitive.' },
+        { tone: 'blue',   icon: '\u{1F4C8}', title: 'Margins are protected', sub: 'Demand becomes less elastic.' }
       ],
 
-      causes2Label: 'REAL-WORLD EXAMPLES',
-      causes2Emoji: '\u{1F30D}',
+      causes2Label: 'THE FOUR NON-PRICE TOOLS',
+      causes2Emoji: '\u{1F4E2}',
       causes2Style: 'icon-top',
-      causes2Cols: 3,
+      causes2Cols: 2,
       causes2: [
-        { tone: 'green',  icon: '\u{1F6D2}', head: 'Supermarkets', body: 'Loyalty cards, ranges, store experience.' },
-        { tone: 'blue',   icon: '\u{1F4F1}', head: 'Smartphones',  body: 'Design, ecosystems, branding.' },
-        { tone: 'purple', icon: '\u{2708}\u{FE0F}', head: 'Airlines', body: 'Service, routes, rewards.' }
+        { tone: 'green',  icon: '\u{1F4E3}', head: 'Advertising and branding', body: 'Builds awareness and loyalty — supermarket loyalty schemes, soft-drink brand wars.' },
+        { tone: 'blue',   icon: '\u{1F396}\u{FE0F}', head: 'Quality and design', body: 'Makes the product more appealing — smartphone design and ecosystems.' },
+        { tone: 'amber',  icon: '\u{1F3A7}', head: 'Customer service',      body: 'Improves the buying experience — airline routes, rewards and cabin service.' },
+        { tone: 'purple', icon: '\u{1F4A1}', head: 'Innovation',            body: 'Creates new features or better performance — can change the competitive game.' }
       ],
 
       pairLabel: 'THE LIMITS',
@@ -255,10 +247,10 @@ window.ECONOS_TOPIC = {
         text: '<ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#0B1426;line-height:1.7;"><li>Advertising can be costly.</li><li>Differentiation may be copied.</li></ul>'
       },
 
-      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Non-price competition is still competition — firms are trying to shift demand towards their own products.' },
+      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'Both families are competition — the choice between them is itself a strategic decision made with rivals in mind.' },
 
-      conclusion: { title: 'Big idea', text: 'In oligopoly, firms often compete hard — just not always through price.' },
-      examEdge: 'In questions on oligopoly, mention branding, quality, service or innovation as alternatives to price competition.'
+      conclusion: { title: 'Big idea', text: 'In oligopoly, firms often compete hard — just not always through price. When they do use price, it is a weapon: wars, predation or entry deterrence.' },
+      examEdge: 'Name the price weapon precisely — <strong>predatory</strong> pricing drives rivals out (and is illegal); <strong>limit</strong> pricing deters entrants. Then offer non-price competition as the safer alternative.'
     },
 
     /* ====================================================================
@@ -296,34 +288,7 @@ window.ECONOS_TOPIC = {
         { tone: 'green',  icon: '\u{1F4B0}', title: 'Pricing power or profits protected', sub: 'Market power persists.' }
       ],
 
-      causes2Label: 'WHAT THIS MEANS FOR THE MARKET',
-      causes2Emoji: '\u{1F3EA}',
-      causes2Style: 'icon-top',
-      causes2Cols: 3,
-      causes2: [
-        { tone: 'green', icon: '\u{1F967}', head: 'Concentration stays high', body: 'A few firms remain dominant.' },
-        { tone: 'blue',  icon: '\u{1F6AA}', head: 'Contestability is weaker', body: 'The entry threat is limited.' },
-        { tone: 'purple', icon: '\u{1F440}', head: 'Interdependence remains strong', body: 'The same firms keep watching one another.' }
-      ],
-
-      pairLabel: 'A QUICK EVALUATION',
-      pairEmoji: '\u{2696}\u{FE0F}',
-      left: {
-        tone: 'green',
-        icon: '\u{2705}',
-        iconStyle: 'circle',
-        label: 'Possible strengths',
-        text: '<ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#0B1426;line-height:1.7;"><li>Large firms may exploit scale.</li><li>R&D can be funded from strong profits.</li></ul>'
-      },
-      right: {
-        tone: 'rose',
-        icon: '\u{274C}',
-        iconStyle: 'circle',
-        label: 'Possible weaknesses',
-        text: '<ul style="margin:0;padding:0 0 0 18px;font-size:12.5px;color:#0B1426;line-height:1.7;"><li>Less pressure from entry.</li><li>Consumers may face higher prices or less choice.</li></ul>'
-      },
-
-      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'High concentration does not automatically mean collusion — but it does make strategic interaction more important.' },
+      bottomTip: { icon: '\u{2139}\u{FE0F}', tone: 'blue', text: 'High concentration does not automatically mean collusion — but it does make strategic interaction more important. The verdict on whether all this is good or bad comes in Card 6.' },
 
       conclusion: { title: 'Big idea', text: 'Oligopoly persists when entry is difficult and the market keeps tilting towards the established firms.' },
       examEdge: 'If asked why oligopoly exists, explain the barrier and then link it to few firms and market power.'

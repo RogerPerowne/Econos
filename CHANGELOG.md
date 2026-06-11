@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.160.3 — 2026-06-11
+
+### Causes of Growth — stale cross-references from the topic split
+
+- The single-card topic (deliberately split out of
+  trade-cycle-shocks-and-economic-growth in v0.155.x, PR #1115) still said
+  "The wave you saw on Card 1" — a card that now lives in the
+  Trade & Business Cycle topic — and "the wave you already know", which
+  assumes a topic that comes later in spec order (2.5.3 > 2.5.1). Both
+  rewritten; swept the other seven split topics for similar orphans (none).
+  Data-only.
+
 ## 0.160.2 — 2026-06-11
 
 ### Collusion card 1 — "two futures of the same market" scene

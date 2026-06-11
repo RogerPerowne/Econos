@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.170.3 — 2026-06-11
+
+### Economist-insight boxes — stack on mobile
+
+- The economist-insight quote box (portrait left, quote right) squashed
+  the quote into a narrow column on phones. Moved its layout out of the
+  inline grid into a `.economist-quote` CSS component so a `≤720px` media
+  query can restack it: portrait centred on TOP, quote full-width below.
+  Desktop is unchanged. Applies to all four render sites; tone colours
+  stay inline (always amber by house rule).
+
 ## 0.170.2 — 2026-06-11
 
 ### Shift-styling sweep, part 2 — theme-1/2 same-line colours

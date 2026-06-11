@@ -2255,8 +2255,8 @@
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
       content += `
-        <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:var(--r-lg);padding:18px 22px;margin-bottom:22px;">
-          <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
+        <div class="economist-quote" style="background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};margin-bottom:22px;">
+          <div class="economist-quote__portrait">${portrait}</div>
           <div>
             <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
             <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:var(--fs-lg);line-height:var(--lh-normal);color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
@@ -3520,8 +3520,8 @@
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
         return `
-          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:var(--r-lg);padding:18px 22px;margin-bottom:22px;">
-            <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
+          <div class="economist-quote" style="background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};margin-bottom:22px;">
+            <div class="economist-quote__portrait">${portrait}</div>
             <div>
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
               <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:var(--fs-lg);line-height:var(--lh-normal);color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
@@ -3812,8 +3812,8 @@
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
         return `
-          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:var(--r-lg);padding:18px 22px;margin-top:18px;">
-            <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
+          <div class="economist-quote" style="background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};margin-top:18px;">
+            <div class="economist-quote__portrait">${portrait}</div>
             <div>
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
               <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:var(--fs-lg);line-height:var(--lh-normal);color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
@@ -5738,8 +5738,8 @@
       // ignored at render time. House rule, applied at every render site.
       const t = PATTERN_TONES.amber;
         return `
-          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:var(--r-lg);padding:18px 22px;margin-bottom:22px;">
-            <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
+          <div class="economist-quote" style="background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};margin-bottom:22px;">
+            <div class="economist-quote__portrait">${portrait}</div>
             <div>
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
               <div style="font-family:var(--font-display);font-variation-settings:var(--fraunces-section);font-size:var(--fs-lg);line-height:var(--lh-normal);color:var(--econ-ink);font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>

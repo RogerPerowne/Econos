@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.159.2 — 2026-06-11
+
+### Lint: curve-label completeness gate
+
+- Added a chart-lint rule (`scripts/lint-charts.mjs`) that fails the build if a
+  solid, plotted economic curve carries no identification. It skips
+  construction guides (shape-only / `_`-prefixed ids) and dashed "before"/ghost
+  curves, and treats a curve as identified if it has `curve.label`, a sibling
+  layer-copy with the same id is labelled, OR a free `texts` entry sits near its
+  path (paths densified so a label beside a straight line's midpoint counts).
+- Fixed the genuine omissions it surfaced: `ppf-opp-cost` and the
+  `ppf-today-tomorrow` small-multiples now label their PPF curves
+  (`PPF` / `PPF₁` / `PPF₂`), matching the other PPF specs.
+- Four reviewed-and-intentional cases are documented in `KNOWN_ISSUES` (reported
+  but non-blocking): the J-curve steady-state baseline reference line, the
+  Lorenz line-of-equality in both panels, and the SRAS green spare-capacity
+  segment (the same curve as the labelled orange segment).
+- Self-tested: the gate exits 1 on a newly-introduced unlabelled curve.
+  `sw.js` cache `econos-v537` → `econos-v538`.
+
 ## 0.159.1 — 2026-06-11
 
 ### Shading default + axis-tick completeness

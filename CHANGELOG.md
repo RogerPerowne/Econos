@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.159.1 — 2026-06-11
+
+### Shading default + axis-tick completeness
+
+- `costRevenue`'s default rectangle opacity raised 0.22 → 0.6 with an
+  explanatory comment, so any future consumer gets readable shading without
+  knowing about the engine's 0.2-alpha fill dilution.
+- The two remaining `costRevenue` specs without P*/C* y-axis flags
+  (marcos-profit-max, marcos-profit-max-pc — currently unreferenced by any
+  topic) gained `axisTicks`, making the "cost + profit always flagged on the
+  y-axis" rule hold for every firm diagram in the repo.
+
 ## 0.159.0 — 2026-06-11
 
 ### Diagram shading + label legibility sweep

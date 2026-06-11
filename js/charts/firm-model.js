@@ -218,7 +218,10 @@
     //                   (rl[3]) plus a dashed guide at AC* across to Q*
     //   arLabelDx     – override the AR label dx (dodge curve crossings)
     var acDotLayer = opts.acDotLayer != null ? opts.acDotLayer : 2;
-    var profitOpacity = opts.profitOpacity != null ? opts.profitOpacity : 0.22;
+    // Default darkened 0.22 → 0.6 (v0.159.1): the engine fills polygons with a
+    // 0.2-alpha tone tint TIMES this opacity, so 0.22 rendered ~0.044 — too
+    // faint to read. 0.6 ≈ 0.12 effective, the site-wide readable level.
+    var profitOpacity = opts.profitOpacity != null ? opts.profitOpacity : 0.6;
     var ticks = opts.axisTicks || null;
 
     var M = makeModel(fc, vc);

@@ -36,7 +36,7 @@
         arrows: [
           { x1: 0, y1: 0.388, x2: 0.361, y2: 0.388, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
           { x1: 0, y1: 0.500, x2: 0.479, y2: 0.500, tone: 'slate', strokeWidth: 1, dashed: '4 3', buffer: 0 },
-          { x1: 0.50, y1: 0.40, x2: 0.66, y2: 0.40, tone: 'green', strokeWidth: 2, markerEnd: 'fxsh-green', buffer: 0 }
+          { x1: 0.385, y1: 0.40, x2: 0.545, y2: 0.40, tone: 'green', strokeWidth: 2, markerEnd: 'fxsh-green', buffer: 3 }
         ],
         points: [
           { x: 0.361, y: 0.388, tone: 'slate', radius: 4.5 },

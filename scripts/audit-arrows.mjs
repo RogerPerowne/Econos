@@ -27,6 +27,11 @@ import { join, resolve } from 'node:path';
 const TRAJECTORY_OK = {
   ECONOS_STAGFLATION_PHILLIPS_SPEC: 'A→B→C adjustment path crosses SRPCs by design',
   ECONOS_LABOUR_SUPPLY_SPEC: 'movement-along-the-curve arrow lies on the supply curve by design',
+  // Verified clean in each real single-perspective/step view; flagged only
+  // because this detector merges all reveal layers + both schools into one frame.
+  ECONOS_LRAS_SHIFT_RIGHT_CLASSICAL_KEYNESIAN_SPEC: 'horizontal LRAS shift arrow sits in the gap; merged-frame false positive',
+  ECONOS_SUPPLY_SIDE_SR_LR_SPEC: 'SR arrow traces E1->E2 along AD; LRAS flag is cross-perspective merge',
+  ECONOS_INFLATION_2022_AD_AS_SPEC: 'AD shift arrows sit clear in each step; merged-frame false positive',
 };
 
 const root = process.cwd();

@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.165.0 — 2026-06-11
+
+### Arrow sweep (pass 1) — shift arrows clashing with curves
+
+- New `scripts/audit-arrows.mjs`: renders every spec, classifies
+  marker-bearing strokes as arrows and markerless strokes as curves, and
+  flags any arrow whose INTERIOR crosses a curve (endpoints anchoring on a
+  curve are fine). A TRAJECTORY_OK allowlist excludes intentional
+  movement/adjustment arrows (Phillips A→B→C path; labour-supply
+  movement-along-the-curve) so the report stays signal-rich.
+- Fixed three genuine shift-arrow clashes by converting to the engine's
+  `perpendicular:{from,to}` solver (which sits between the curves and can't
+  clash by construction), verified per reveal-step in-app:
+  - labour-supply-shift: the increase/decrease arrows crossed the S curve →
+    now cast S→S₁ and S→S₂.
+  - supply-side-sr-lr: the classical SRAS arrow over-shot BOTH SRAS lines →
+    now casts sras1_c→sras2_c.
+  - cost-push (sras-shift-left): the solver degenerates on the narrow
+    parallel-SRAS gap, so a hand-placed true-perpendicular arrow sits in the
+    open strip instead.
+- Two flagged crossings verified as false positives (clean in their real
+  single-perspective view; the detector merges all layers + both
+  Classical/Keynesian perspectives): lras-shift-right, supply-side LRAS.
+- fx-floating / fx-intervention / inflation-2022 read acceptably in-app and
+  lack curve ids; folded into pass 2 with the hand-rolled icons.js arrows.
+- Snapshots refreshed; `sw.js` cache `econos-v551` → `econos-v552`.
+
 ## 0.164.3 — 2026-06-11
 
 ### Monopsony card 5 — four-story-column scenarios (mock-up rebuild)

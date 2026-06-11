@@ -22,8 +22,8 @@
       { id: 'S2', d: 'M 0,0.197 L 0.724,0.839', tone: 'rose', dashed: '7 4', label: 'S₂', strokeWidth: 2.4, labelDx: 6, labelDy: -4, anchor: 'start', layer: 'lss-3' }
     ],
     arrows: [
-      { layer: 'lss-2', x1: 0.379, y1: 0.511, x2: 0.514, y2: 0.511, tone: 'green', strokeWidth: 2.2, markerEnd: 'econos-arrow-green', buffer: 0 },
-      { layer: 'lss-3', x1: 0.379, y1: 0.307, x2: 0.245, y2: 0.307, tone: 'rose', strokeWidth: 2.2, markerEnd: 'econos-arrow-rose', buffer: 0 }
+      { perpendicular: { from: 'S', t: 0.55, to: 'S1' }, tone: 'green', strokeWidth: 2.2, markerEnd: 'econos-arrow-green', buffer: 5, layer: 'lss-2' },
+      { perpendicular: { from: 'S', t: 0.32, to: 'S2' }, tone: 'rose', strokeWidth: 2.2, markerEnd: 'econos-arrow-rose', buffer: 5, layer: 'lss-3' }
     ],
     texts: [
       { layer: 'lss-2', x: 0.447, y: 0.575, text: 'increase', tone: 'green', bold: true, anchor: 'middle', fontSize: 11 },

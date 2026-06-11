@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.165.1 — 2026-06-11
+
+### Fix regression from 0.165.0 — supply-side SRAS arrow
+
+- The 0.165.0 conversion of the supply-side classical SRAS arrow to the
+  perpendicular solver failed silently ("source curve sras1_c not found" —
+  the solver's curve registry doesn't include perspective-scoped curves),
+  leaving the arrow MISSING. Restored as a hand-placed true-perpendicular
+  arrow tracing E₁→E₂ between SRAS₁ and SRAS₂. Snapshots refreshed; sw
+  cache econos-v552 → econos-v553.
+- Note for future conversions: `perpendicular:{from,to}` only resolves
+  curves in the global registry — curves carrying a `perspective` must use
+  hand-placed coordinates (as cost-push already does).
+
 ## 0.165.0 — 2026-06-11
 
 ### Arrow sweep (pass 1) — shift arrows clashing with curves

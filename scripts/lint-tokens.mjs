@@ -45,8 +45,10 @@ const check = process.argv.includes('--check');
    covers; raised to 6717 (v0.155.33) when all 39 Theme-3/4 covers were enriched
    with gradient/glow defs, and to 6889 (v0.155.34) for the 25 enriched Theme-1/2
    covers; lowered to 6800 (v0.155.36) when 16 quirky legacy heroes were redrawn
-   (hand-rolled SVG art, fills cannot take a CSS var). */
-const DUP_BASELINE = 6800;
+   (hand-rolled SVG art, fills cannot take a CSS var); raised to 6807 (v0.157.2)
+   when the market-structure spectrum labels switched from grey to black ink
+   (#0B1426 SVG attribute fills, cannot take a CSS var). */
+const DUP_BASELINE = 6807;
 
 const css = readFileSync('styles.css', 'utf8');
 

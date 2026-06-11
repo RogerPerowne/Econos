@@ -31,7 +31,7 @@ window.econosMarketSpectrum = (function () {
     var d = '';
     STOPS.forEach(function (s) {
       if (s.id === active) {
-        d += '<rect x="' + (s.x - 85) + '" y="40" width="170" height="120" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>';
+        d += '<rect x="' + (s.x - 88) + '" y="38" width="176" height="134" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.4"/>';
       }
     });
     d += '<line x1="36" y1="56" x2="924" y2="56" stroke="#94A3B8" stroke-width="1.8"/>';
@@ -42,15 +42,15 @@ window.econosMarketSpectrum = (function () {
       d += on
         ? '<circle cx="' + s.x + '" cy="56" r="9.5" fill="#16A34A" stroke="#fff" stroke-width="2.5"/>'
         : '<circle cx="' + s.x + '" cy="56" r="5.5" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.4"/>';
-      var nameY = s.name.length === 2 ? 94 : 100;
+      var nameY = s.name.length === 2 ? 92 : 100;
       s.name.forEach(function (ln, i) {
-        d += '<text x="' + s.x + '" y="' + (nameY + i * 18) + '" font-size="14" font-weight="800" fill="' + (on ? '#16A34A' : '#334155') + '" text-anchor="middle" font-family="Inter,sans-serif">' + ln + '</text>';
+        d += '<text x="' + s.x + '" y="' + (nameY + i * 20) + '" font-size="17" font-weight="800" fill="' + (on ? '#16A34A' : '#0B1426') + '" text-anchor="middle" font-family="Inter,sans-serif">' + ln + '</text>';
       });
       s.sub.forEach(function (ln, i) {
-        d += '<text x="' + s.x + '" y="' + (132 + i * 16) + '" font-size="11.5" fill="#64748B" text-anchor="middle" font-family="Inter,sans-serif">' + ln + '</text>';
+        d += '<text x="' + s.x + '" y="' + (138 + i * 18) + '" font-size="14" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">' + ln + '</text>';
       });
     });
-    d += '<text x="480" y="188" font-size="12.5" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap.join(' ') + '</text>';
+    d += '<text x="480" y="196" font-size="14.5" fill="#0B1426" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap.join(' ') + '</text>';
 
     // ── Mobile (vertical) ──
     var m = '';
@@ -67,15 +67,15 @@ window.econosMarketSpectrum = (function () {
       m += on
         ? '<circle cx="44" cy="' + s.my + '" r="8" fill="#16A34A" stroke="#fff" stroke-width="2.2"/>'
         : '<circle cx="44" cy="' + s.my + '" r="5" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.3"/>';
-      m += '<text x="70" y="' + (s.my - 3) + '" font-size="13" font-weight="800" fill="' + (on ? '#16A34A' : '#334155') + '" font-family="Inter,sans-serif">' + s.name.join(' ') + '</text>';
-      m += '<text x="70" y="' + (s.my + 15) + '" font-size="11" fill="#64748B" font-family="Inter,sans-serif">' + s.sub.join(' ') + '</text>';
+      m += '<text x="70" y="' + (s.my - 4) + '" font-size="15.5" font-weight="800" fill="' + (on ? '#16A34A' : '#0B1426') + '" font-family="Inter,sans-serif">' + s.name.join(' ') + '</text>';
+      m += '<text x="70" y="' + (s.my + 15) + '" font-size="13" fill="#0B1426" font-family="Inter,sans-serif">' + s.sub.join(' ') + '</text>';
     });
-    m += '<text x="180" y="428" font-size="11" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap[0] + '</text>';
-    m += '<text x="180" y="444" font-size="11" fill="#475569" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap[1] + '</text>';
+    m += '<text x="180" y="428" font-size="13" fill="#0B1426" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap[0] + '</text>';
+    m += '<text x="180" y="446" font-size="13" fill="#0B1426" font-style="italic" text-anchor="middle" font-family="Inter,sans-serif">' + cap[1] + '</text>';
 
     return '<div style="background:#fff;border-radius:14px;padding:12px 10px;font-family:Inter,sans-serif;color:#0B1426;">'
       + '<style>.mss-v{display:none;}@media (max-width:680px){.mss-h{display:none;}.mss-v{display:block;}}</style>'
-      + '<div class="mss-h"><svg viewBox="0 0 960 196" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">' + d + '</svg></div>'
+      + '<div class="mss-h"><svg viewBox="0 0 960 208" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">' + d + '</svg></div>'
       + '<div class="mss-v"><svg viewBox="0 0 360 456" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">' + m + '</svg></div>'
       + '</div>';
   };

@@ -142,7 +142,7 @@ window.ECONOS_TOPIC = {
             tone: 'green',
             head: 'An increase in supply',
             body: 'More attractive non-wage factors raise supply — the curve shifts <strong>right to S₁</strong>: more workers at every wage.',
-            show: ['lss-1', 'lss-2']
+            show: ['lss-2']
           },
           {
             label: 'Decrease → shift left',
@@ -150,7 +150,7 @@ window.ECONOS_TOPIC = {
             head: 'A decrease in supply',
             body: 'Worse conditions or harder entry cut supply — the curve shifts <strong>left to S₂</strong>: fewer workers at every wage.',
             analysis: 'At every wage, more or fewer workers are willing and able to work — that is a shift, not a movement.',
-            show: ['lss-1', 'lss-2', 'lss-3']
+            show: ['lss-3']
           }
         ]
       },

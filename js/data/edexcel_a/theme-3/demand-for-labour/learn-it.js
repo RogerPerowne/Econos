@@ -198,7 +198,7 @@ window.ECONOS_TOPIC = {
             tone: 'green',
             head: 'Product demand rises',
             body: 'If product demand rises, the whole curve shifts right to <strong>D_L₁</strong> — at the same wage, employment rises to <strong>L₂</strong>.',
-            show: ['lds-1', 'lds-2']
+            show: ['lds-2']
           },
           {
             label: 'Demand falls → shift left',
@@ -206,7 +206,7 @@ window.ECONOS_TOPIC = {
             head: 'Product demand falls',
             body: 'If product demand falls, the curve shifts left to <strong>D_L₂</strong> — employment falls to <strong>L₀</strong>.',
             analysis: 'The whole curve moves with the product market — this is exactly what "derived demand" means in a diagram.',
-            show: ['lds-1', 'lds-2', 'lds-3']
+            show: ['lds-3']
           }
         ]
       },

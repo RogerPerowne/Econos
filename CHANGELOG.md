@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.168.1 — 2026-06-11
+
+### versusRows comparison tables — mobile layout
+
+- On phones the `versusRows` "A vs B" tables kept their 1fr/38px/1fr grid, so
+  the two boxes (icon + text) were squeezed into ~150px columns and the text
+  wrapped into illegible slivers. Mobile (≤720px) now: drops the decorative
+  icons, stacks the two boxes full-width with the "vs" badge centred between,
+  and centres each box so they read balanced. Desktop is unchanged (icons +
+  side-by-side preserved). Applies to every versusRows table sitewide.
+- `sw.js` cache v557 → v558.
+
 ## 0.168.0 — 2026-06-11
 
 ### Chevron arrowheads — icons.js hand-rolled markers (sweep complete)

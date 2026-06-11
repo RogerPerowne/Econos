@@ -45,6 +45,7 @@
     chartArea: { x: 55, y: 18, width: 360, height: 254 },
     className: 'ad-demand-pull-interactive-svg',
     layers: ['idl-1', 'idl-2'],
+    inverseLayers: ['idl-old-solid'],
     perspectives: ['classical', 'keynesian'],
     axes: {
       x: { label: 'Real output (Y)' },
@@ -63,18 +64,24 @@
         labelDx: -6, labelDy: -6, anchor: 'end',
         perspective: 'keynesian' },
 
-      /* ── Base AD₁ ─ shared across perspectives ────────────── */
+      /* ── Base AD₁ solid – hidden once the shift begins ─────── */
       { d: 'M 0.097,0.894 L 0.931,0.067',
         tone: 'blue', label: 'AD₁', strokeWidth: 2,
-        labelDx: -6, labelDy: 6, anchor: 'end' },
-      /* ── Layer 1: AD₂ shifted right ───────────────────────── */
+        labelDx: -6, labelDy: 6, anchor: 'end',
+        layer: 'idl-old-solid' },
+      /* ── Layer 1: AD₁ redrawn dashed (shifted-from) ────────── */
+      { d: 'M 0.097,0.894 L 0.931,0.067',
+        tone: 'blue', label: 'AD₁', strokeWidth: 1.6,
+        dashed: '6 4', labelDx: -6, labelDy: 6, anchor: 'end',
+        layer: 'idl-1' },
+      /* ── Layer 1: AD₂ shifted right — same line, same colour ─ */
       // Curve trimmed to end AT chart x=1.0 (was 1.153 with auto-clip).
        // The visual is identical thanks to the clip, but the label is
        // now positioned relative to the VISIBLE end of the curve instead
        // of the off-stage extension – old setup put the label centre
        // ~46px from the line.
       { d: 'M 0.319,0.894 L 1.000,0.218',
-        tone: 'green', label: 'AD₂', strokeWidth: 2.5,
+        tone: 'blue', label: 'AD₂', strokeWidth: 2.5,
         labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' }
     ],
@@ -105,9 +112,11 @@
 
     arrows: [
       /* AD shift arrow – shared (same AD₁→AD₂ shift in both perspectives) */
-      { x1: 0.490, y1: 0.835, x2: 0.625, y2: 0.835,
-        tone: 'green', strokeWidth: 1.8,
-        markerEnd: 'econos-arrow-green', buffer: 0, layer: 'idl-1' }
+      // Seated in the gap between AD₁ (x≈0.156 at y=0.835) and AD₂
+      // (x≈0.378) — the old 0.490→0.625 span sat to the RIGHT of AD₂.
+      { x1: 0.190, y1: 0.835, x2: 0.330, y2: 0.835,
+        tone: 'blue', strokeWidth: 1.8,
+        markerEnd: 'econos-arrow-blue', buffer: 0, layer: 'idl-1' }
     ],
 
     /* Result chips embed the per-perspective outcome inside the chart. */

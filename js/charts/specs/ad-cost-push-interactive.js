@@ -57,9 +57,9 @@
         tone: 'slate', label: 'SRAS₁', strokeWidth: 1.6,
         dashed: '6 4', labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' },
-      // Layer 1: SRAS₂ shifted left (cost shock)
+      // Layer 1: SRAS₂ shifted left (cost shock) — same line, same colour
       { d: 'M -0.125,0.067 L 0.709,0.894',
-        tone: 'amber', label: 'SRAS₂', strokeWidth: 2.5,
+        tone: 'slate', label: 'SRAS₂', strokeWidth: 2.5,
         labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-1' }
     ],
@@ -75,10 +75,12 @@
     ],
 
     arrows: [
-      // Layer 1: leftward SRAS shift arrow
-      { x1: 0.430, y1: 0.224, x2: 0.300, y2: 0.224,
-        tone: 'amber', strokeWidth: 1.8,
-        markerEnd: 'econos-arrow-amber', buffer: 0, layer: 'idl-1' }
+      // Layer 1: leftward SRAS shift arrow — seated in the gap between
+      // SRAS₁ (x≈0.255 at y=0.224) and SRAS₂ (x≈0.033); the old
+      // 0.430→0.300 span sat to the RIGHT of SRAS₁.
+      { x1: 0.235, y1: 0.224, x2: 0.080, y2: 0.224,
+        tone: 'slate', strokeWidth: 1.8,
+        markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'idl-1' }
     ],
 
     boxedLabels: [

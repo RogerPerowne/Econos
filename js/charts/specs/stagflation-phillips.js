@@ -70,7 +70,7 @@
         layer: 'idl-3' },
       // SRPC₃ shifted up by supply shock (64 SVG px / 260 = 0.246)
       { d: 'M 0.056,1.092 L 0.889,0.400',
-        tone: 'red', label: 'SRPC₃', strokeWidth: 2.6,
+        tone: 'blue', label: 'SRPC₃', strokeWidth: 2.6,
         labelDx: 6, labelDy: 4, anchor: 'start',
         layer: 'idl-3' }
     ],

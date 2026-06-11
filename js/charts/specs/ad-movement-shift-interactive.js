@@ -37,9 +37,11 @@
       { id: 'AD1', d: 'M 0.10,0.85 L 0.85,0.15',
         tone: 'blue', label: 'AD₁', strokeWidth: 2.5,
         labelDx: -6, labelDy: -10, anchor: 'end' },
-      // AD₂ – shifted RIGHT (V3+), parallel.
+      // AD₂ – shifted RIGHT (V3+), parallel. Same AD line → same colour;
+      // the purple shift ANNOTATIONS (arrow, caption, point C) keep their
+      // accent so movement-vs-shift stays visually distinct.
       { id: 'AD2', d: 'M 0.30,0.85 L 1.00,0.197',
-        tone: 'purple', label: 'AD₂', strokeWidth: 2.5,
+        tone: 'blue', label: 'AD₂', strokeWidth: 2.5,
         labelDx: -4, labelDy: -10, anchor: 'end',
         layer: 'ad2' }
     ],

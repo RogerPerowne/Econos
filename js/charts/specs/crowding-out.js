@@ -57,8 +57,9 @@
         dashed: '6 4', labelDx: 6, labelDy: -4, anchor: 'start',
         layer: 'idl-1' },
       // Layer 1: D₂ shifted right (government borrowing on top of private)
+      // — same demand-for-funds line, same colour.
       { d: 'M 0.196,0.902 L 0.978,0.142',
-        tone: 'amber', label: 'D₂', strokeWidth: 2.5,
+        tone: 'green', label: 'D₂', strokeWidth: 2.5,
         labelDx: 6, labelDy: -4, anchor: 'start',
         layer: 'idl-1' }
     ],
@@ -82,8 +83,8 @@
     arrows: [
       // Layer 1: rightward D-shift arrow (built-in marker)
       { x1: 0.434, y1: 0.293, x2: 0.560, y2: 0.293,
-        tone: 'amber', strokeWidth: 1.8,
-        markerEnd: 'econos-arrow-amber', buffer: 0, layer: 'idl-1' }
+        tone: 'green', strokeWidth: 1.8,
+        markerEnd: 'econos-arrow-green', buffer: 0, layer: 'idl-1' }
     ],
 
     // Layer 2: crowded-out band between Qₚ and Q₁ – visual cue that

@@ -55,11 +55,11 @@
       // SRAS₁ DASHED – the shifted-from curve in the shock view (V2).
       { d: SRAS1, tone: 'slate', label: 'SRAS₁', strokeWidth: 1.6, dashed: '6 4',
         labelDx: 6, labelDy: -4, anchor: 'start', layer: 'sras1-dash' },
-      // SRAS₂ SOLID – the cost-shock curve (V2).
-      { id: 'SRAS2', d: SRAS2, tone: 'rose', label: 'SRAS₂', strokeWidth: 2.4,
+      // SRAS₂ SOLID – the cost-shock curve (V2). Same SRAS line → same colour.
+      { id: 'SRAS2', d: SRAS2, tone: 'slate', label: 'SRAS₂', strokeWidth: 2.4,
         labelDx: -6, labelDy: -4, anchor: 'end', layer: 'shock' },
       // SRAS₂ DASHED – the shifted-from curve as it corrects back (V3).
-      { d: SRAS2, tone: 'rose', label: 'SRAS₂', strokeWidth: 1.6, dashed: '6 4',
+      { d: SRAS2, tone: 'slate', label: 'SRAS₂', strokeWidth: 1.6, dashed: '6 4',
         labelDx: -6, labelDy: -4, anchor: 'end', layer: 'shock-dash' }
     ],
 
@@ -79,7 +79,7 @@
     arrows: [
       // V2 shock – perpendicular to SRAS, in the gap, pointing up-left to SRAS₂.
       { x1: 0.420, y1: 0.362, x2: 0.320, y2: 0.470,
-        tone: 'rose', strokeWidth: 1.7, markerEnd: 'econos-arrow-rose',
+        tone: 'slate', strokeWidth: 1.7, markerEnd: 'econos-arrow-slate',
         buffer: 0, layer: 'shock' },
       // V2 output gap – along the x-axis from Y₂ back to Yf.
       { x1: 0.430, y1: 0.055, x2: YF - 0.005, y2: 0.055,
@@ -87,7 +87,7 @@
         buffer: 0, layer: 'shock' },
       // V3 self-correction – perpendicular, pointing down-right back to SRAS₁.
       { x1: 0.320, y1: 0.470, x2: 0.420, y2: 0.362,
-        tone: 'green', strokeWidth: 1.7, markerEnd: 'econos-arrow-green',
+        tone: 'slate', strokeWidth: 1.7, markerEnd: 'econos-arrow-slate',
         buffer: 0, layer: 'correct' }
     ],
 
@@ -96,7 +96,7 @@
       { x: 0.475, y: 0.120, text: 'output gap', tone: 'slate', bold: true,
         fontSize: 10.5, anchor: 'middle', layer: 'shock' },
       // V3 self-correction caption.
-      { x: 0.250, y: 0.430, text: 'SRAS returns', tone: 'green', bold: true,
+      { x: 0.250, y: 0.430, text: 'SRAS returns', tone: 'slate', bold: true,
         fontSize: 10.5, anchor: 'middle', layer: 'correct' }
     ]
   };

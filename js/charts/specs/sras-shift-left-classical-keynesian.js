@@ -69,7 +69,7 @@
       /* SRAS₂ solid (V2+) – parallel-left shift: same slope 0.75,
          displaced +0.15 in y (= 0.20 leftward). */
       { id: 'sras2', d: 'M 0.100,0.180 L 0.800,0.705',
-        tone: 'rose', label: 'SRAS₂', strokeWidth: 2.2,
+        tone: 'slate', label: 'SRAS₂', strokeWidth: 2.2,
         labelDx: -6, labelDy: -10, anchor: 'end',
         layer: 'c-sras2', perspective: 'classical' },
 
@@ -89,7 +89,7 @@
          unchanged. The "cost shock" reading of Keynesian AS. */
       { id: 'as2_k',
         shape: { type: 'keynesianAS', flatY: 0.50, kneeX: 0.34, capacityX: YF, top: 0.95, startX: 0.05 },
-        tone: 'rose', label: 'AS₂', strokeWidth: 2.5,
+        tone: 'amber', label: 'AS₂', strokeWidth: 2.5,
         labelDx: -6, labelDy: -8, anchor: 'end',
         layer: 'k-as2', perspective: 'keynesian' }
     ],
@@ -127,12 +127,12 @@
          curves, pointing UP-LEFT (the direction of the shift). Centred
          in the open strip between SRAS₁ and SRAS₂, well clear of E₁/E₂. */
       { x1: 0.435, y1: 0.281, x2: 0.363, y2: 0.377,
-        tone: 'rose', strokeWidth: 1.8, markerEnd: 'srasL-arr-rose',
+        tone: 'slate', strokeWidth: 1.8, markerEnd: 'econos-arrow-slate',
         buffer: 4, layer: 'c-cost-arrow', perspective: 'classical' },
       /* Keynesian cost arrow (V2) – price floor rises, a short UPWARD
          arrow in the floor region. */
       { x1: 0.175, y1: 0.295, x2: 0.175, y2: 0.405,
-        tone: 'rose', strokeWidth: 1.8, markerEnd: 'srasL-arr-rose',
+        tone: 'amber', strokeWidth: 1.8, markerEnd: 'econos-arrow-amber',
         buffer: 0, layer: 'k-cost-arrow', perspective: 'keynesian' }
     ],
 

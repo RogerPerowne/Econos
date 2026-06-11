@@ -70,9 +70,9 @@
         tone: 'blue', label: 'AD₁', strokeWidth: 2.6,
         labelDx: -6, labelDy: 14, anchor: 'end',
         layer: 'idl-2' },
-      // SRAS₁ shifted left
+      // SRAS₁ shifted left — same SRAS line, same colour
       { d: 'M 0.000,0.212 L 0.704,0.942',
-        tone: 'red', label: 'SRAS₁', strokeWidth: 2.6,
+        tone: 'slate', label: 'SRAS₁', strokeWidth: 2.6,
         labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-2' },
 
@@ -89,7 +89,7 @@
         layer: 'idl-3' },
       // SRAS₁ still in place (supply shock persists short-run)
       { d: 'M 0.000,0.212 L 0.704,0.942',
-        tone: 'red', label: 'SRAS₁', strokeWidth: 2.4,
+        tone: 'slate', label: 'SRAS₁', strokeWidth: 2.4,
         labelDx: -6, labelDy: -6, anchor: 'end',
         layer: 'idl-3' },
       // AD₂ shifted left (BoE tightens)
@@ -137,8 +137,8 @@
         tone: 'blue', strokeWidth: 1.8,
         markerEnd: 'econos-arrow-blue', buffer: 0, layer: 'idl-2' },
       { x1: 0.296, y1: 0.808, x2: 0.213, y2: 0.769,
-        tone: 'red', strokeWidth: 1.8,
-        markerEnd: 'econos-arrow-red', buffer: 0, layer: 'idl-2' },
+        tone: 'slate', strokeWidth: 1.8,
+        markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'idl-2' },
 
       /* View 3: leftward AD shift (BoE tightens) */
       { x1: 0.556, y1: 0.423, x2: 0.481, y2: 0.404,

@@ -153,7 +153,7 @@
         key: 'ppf2',
         contentLayer: 'ppf2',
         curves: [
-          { id: 'ppf2', d: PPF2_D, tone: 'green', label: 'PPF₂', strokeWidth: 2.5, labelDy: -22 }
+          { id: 'ppf2', d: PPF2_D, tone: 'blue', label: 'PPF₂', strokeWidth: 2.5, labelDy: -22 }
         ]
       },
 

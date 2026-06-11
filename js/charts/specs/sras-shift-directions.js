@@ -42,11 +42,11 @@
         labelDx: 6, labelDy: -4, anchor: 'start', layer: 'sras1-dash' },
       // SRAS₂ – right shift (increase)
       { id: 'SRAS2', d: 'M 0.340,0.120 L 0.980,0.834',
-        tone: 'green', label: 'SRAS₂', strokeWidth: 2.4,
+        tone: 'slate', label: 'SRAS₂', strokeWidth: 2.4,
         labelDx: -6, labelDy: 12, anchor: 'end', layer: 'inc' },
       // SRAS₃ – left shift (decrease)
       { id: 'SRAS3', d: 'M 0.000,0.230 L 0.660,0.967',
-        tone: 'rose', label: 'SRAS₃', strokeWidth: 2.4,
+        tone: 'slate', label: 'SRAS₃', strokeWidth: 2.4,
         labelDx: -6, labelDy: -4, anchor: 'end', layer: 'dec' }
     ],
 
@@ -73,12 +73,12 @@
       // SRAS₂, pointing down-right toward the new (right) curve. Starts mid-gap,
       // lands on SRAS₂ – clear of E₁ and the curve labels.
       { x1: 0.500, y1: 0.430, x2: 0.575, y2: 0.372,
-        tone: 'green', strokeWidth: 1.6, markerEnd: 'econos-arrow-green', buffer: 0, layer: 'inc' },
+        tone: 'slate', strokeWidth: 1.6, markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'inc' },
       // Decrease: PERPENDICULAR shift arrow, in the gap between SRAS₁ and
       // SRAS₃, pointing up-left toward the new (left) curve. Starts on SRAS₁,
       // lands near SRAS₃ – left of E₁ so it never overlaps the equilibrium.
       { x1: 0.440, y1: 0.455, x2: 0.330, y2: 0.555,
-        tone: 'rose', strokeWidth: 1.6, markerEnd: 'econos-arrow-rose', buffer: 0, layer: 'dec' }
+        tone: 'slate', strokeWidth: 1.6, markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'dec' }
     ]
   };
 })();

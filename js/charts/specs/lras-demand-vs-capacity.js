@@ -46,7 +46,7 @@
           tone: 'blue', label: 'AD₁', strokeWidth: 1.6, dashed: '6 4',
           labelDx: -3, labelDy: 12, anchor: 'end' },
         { id: 'dvc-ad-a2', d: 'M 0.18,0.880 L 1.02,0.330',
-          tone: 'green', label: 'AD₂', strokeWidth: 2,
+          tone: 'blue', label: 'AD₂', strokeWidth: 2,
           labelDx: -3, labelDy: 12, anchor: 'end' }
       ],
       points: [
@@ -80,10 +80,10 @@
           tone: 'blue', label: 'AD', strokeWidth: 2,
           labelDx: -3, labelDy: 12, anchor: 'end' },
         { id: 'dvc-lras-b1', d: 'M ' + YF1 + ',0.020 L ' + YF1 + ',0.960',
-          tone: 'slate', label: 'LRAS₁', strokeWidth: 1.8, dashed: '6 4',
+          tone: 'purple', dashed: '6 4', opacity: 0.7, label: 'LRAS₁', strokeWidth: 1.8,
           labelDx: 0, labelDy: -10, anchor: 'middle' },
         { id: 'dvc-lras-b2', d: 'M ' + YF2 + ',0.020 L ' + YF2 + ',0.960',
-          tone: 'green', label: 'LRAS₂', strokeWidth: 2.4,
+          tone: 'purple', label: 'LRAS₂', strokeWidth: 2.4,
           labelDx: 0, labelDy: -10, anchor: 'middle' }
       ],
       points: [
@@ -99,7 +99,7 @@
            the gap between LRAS₁ and LRAS₂ at mid-height – above the E points,
            below the LRAS labels at the top. */
         { x1: YF1 + 0.03, y1: 0.620, x2: YF2 - 0.03, y2: 0.620,
-          tone: 'green', strokeWidth: 1.7, markerEnd: 'econos-arrow-green', buffer: 0 }
+          tone: 'purple', strokeWidth: 1.7, markerEnd: 'econos-arrow-purple', buffer: 0 }
       ]
     };
   }

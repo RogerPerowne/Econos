@@ -58,7 +58,7 @@
         layer: 'idl-1' },
       // Layer 1: SRAS₂ shifted right. Label above-left of its endpoint.
       { d: 'M 0.319,0.067 L 1.000,0.743',
-        tone: 'green', label: 'SRAS₂', strokeWidth: 2.2,
+        tone: 'slate', label: 'SRAS₂', strokeWidth: 2.2,
         labelDx: -6, labelDy: -10, anchor: 'end',
         layer: 'idl-1' }
     ],
@@ -78,8 +78,8 @@
     arrows: [
       // Layer 1: rightward SRAS shift arrow
       { x1: 0.300, y1: 0.224, x2: 0.430, y2: 0.224,
-        tone: 'green', strokeWidth: 1.8,
-        markerEnd: 'econos-arrow-green', buffer: 0, layer: 'idl-1' }
+        tone: 'slate', strokeWidth: 1.8,
+        markerEnd: 'econos-arrow-slate', buffer: 0, layer: 'idl-1' }
     ]
   };
 })();

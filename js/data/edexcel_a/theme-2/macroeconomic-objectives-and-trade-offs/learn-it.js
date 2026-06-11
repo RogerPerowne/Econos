@@ -160,10 +160,10 @@ window.ECONOS_TOPIC = {
 
     /* ============================================================
        CARD 4 – Pattern: Interactive multi-state diagram
-       Hero: macroPhillipsWorkstation. Phillips curve as a lab
-       notebook. Two views (SRPC, LRPC) + a CSS play-pause that
-       auto-cycles the A→B→C path. THEORY ONLY – no 1970s
-       stagflation view (that lives in Topic B).
+       Hero: macroPhillipsInteractive. The Friedman–Phelps A→B→C
+       story as a 4-view stepped engine diagram (buttons build the
+       story; description right, analysis below). THEORY ONLY – no
+       1970s stagflation view (that lives in Topic B).
        ============================================================ */
     {
       id: 'phillips-workstation',
@@ -172,11 +172,40 @@ window.ECONOS_TOPIC = {
       title: 'The Phillips curve – the prototypical trade-off',
       lede: 'The inflation–unemployment trade-off is the prototypical example of how two objectives can pull against each other. It also illustrates the most important point about every trade-off: <strong>they can break down in the long run.</strong>',
       ledeStyle: 'plain',
-      tip: { icon: '\u{2705}', tone: 'green', text: 'Lower unemployment can come with higher inflation in the short run – but the relationship is unstable once expectations adjust. Press play on the diagram to watch why.' },
+      tip: { icon: '\u{2705}', tone: 'green', text: 'Lower unemployment can come with higher inflation in the short run – but the relationship is unstable once expectations adjust. Step through the diagram to watch why.' },
 
-      visualKey: 'macroPhillipsWorkstation',
-      visualLabel: 'Phillips workstation',
-      visualEmoji: '\u{1F52C}',
+      interactiveDiagram: {
+        svgKey: 'macroPhillipsInteractive',
+        label: 'THE PHILLIPS CURVE — BUILD THE STORY',
+        emoji: '\u{1F52C}',
+        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
+        views: [
+          {
+            label: 'The short-run trade-off', show: ['idl-1'], tone: 'blue',
+            head: 'A — at the natural rate.',
+            body: ['The short-run Phillips curve (SRPC₁) shows the classic trade-off: <strong>lower unemployment comes with higher inflation</strong>.', 'Start at A — unemployment sits at the NAIRU (U_N) with stable inflation π₁.'],
+            analysis: 'Read SRPC₁ as a <strong>menu</strong>: each point is a different short-run combination of unemployment and inflation. A sits at the natural rate of unemployment.'
+          },
+          {
+            label: 'Stimulus: A → B', show: ['idl-2'], tone: 'amber',
+            head: 'B — lower U, but higher π.',
+            body: ['A demand stimulus (looser fiscal or monetary policy) pushes unemployment below the NAIRU to U₁.', 'The economy slides <strong>down</strong> SRPC₁ from A to B — lower unemployment, paid for with higher inflation.'],
+            analysis: 'This is a <strong>movement along</strong> the short-run curve. In the short run the trade-off looks real — you appear to buy lower unemployment with a little more inflation.'
+          },
+          {
+            label: 'Expectations adjust', show: ['idl-3'], tone: 'purple',
+            head: 'SRPC shifts up to SRPC₂.',
+            body: ['Workers and firms notice the higher inflation and build it into wage and price demands — <strong>adaptive expectations</strong>.', 'That cost pressure shifts the whole short-run curve up from SRPC₁ to SRPC₂, and the economy drifts B → C.'],
+            analysis: 'The key step is a <strong>shift</strong>, not a movement. Higher expected inflation lifts the entire curve, so the old short-run menu is gone — the same low unemployment now demands even higher inflation.'
+          },
+          {
+            label: 'No long-run trade-off', show: ['idl-4'], tone: 'rose',
+            head: 'C — back at U_N, π permanently higher.',
+            body: ['Unemployment ends back at the NAIRU (U_N) — exactly where it started — but inflation is <strong>permanently higher</strong> at π₂.', 'The long-run Phillips curve (LRPC) is <strong>vertical</strong> at the NAIRU: there is no lasting trade-off.'],
+            analysis: 'Holding unemployment below the NAIRU just ratchets inflation up. In the long run output and unemployment return to their natural levels — only inflation is left higher. The A→C move is purely vertical.'
+          }
+        ]
+      },
 
       causesFirst: true,
       causesLabel: 'Three things you need to know',

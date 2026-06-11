@@ -23667,89 +23667,10 @@ window.ECONOS_ICONS = {
   `,
 
   /* Card 4 – THE PHILLIPS CURVE (clearer A→B→C diagram + PLAY toggle). */
-  macroPhillipsWorkstation: `
-    <div class="phil-ws" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px 14px;font-family:Inter,sans-serif;">
-      <style>
-        .phil-ws .ws-grid { display:grid; grid-template-columns: 1.55fr 1fr; gap:16px; align-items:stretch; }
-        @media (max-width: 720px) { .phil-ws .ws-grid { grid-template-columns: 1fr; } }
-        .phil-ws .ws-canvas { background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:14px 10px 6px; position:relative; }
-        .phil-ws .ws-canvas .corner-tag { position:absolute; top:10px; right:14px; font-size:10px; font-weight:800; letter-spacing:0.1em; color:#94A3B8; font-family:'Inter Mono',monospace; }
-        .phil-ws .friedman-card { background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:12px; padding:18px 18px 16px; }
-        .phil-ws .friedman-card h4 { font-size:14px; font-weight:800; color:#5B21B6; margin:0 0 12px; display:flex; align-items:center; gap:8px; }
-        .phil-ws .friedman-card h4 .badge { width:28px; height:28px; border-radius:50%; background:#8B5CF6; color:#fff; font-size:14px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
-        .phil-ws .friedman-card p { font-size:13px; color:#0B1426; line-height:1.5; margin:0 0 10px; }
-        .phil-ws-play:checked ~ .ws-row .friedman-anim { animation: phil-walk 5s ease-in-out infinite; }
-        @keyframes phil-walk { 0%, 15% { opacity:0; } 30% { opacity:1; } 70% { opacity:1; } 85%, 100% { opacity:0; } }
-        .phil-ws-play-label { display:inline-flex; align-items:center; gap:6px; cursor:pointer; user-select:none; padding:8px 14px; border:1px solid #CBD5E1; border-radius:8px; font-size:11px; font-weight:700; color:#475569; background:#fff; transition: all 0.2s; }
-        .phil-ws-play-label:hover { border-color:#94A3B8; }
-        .phil-ws-play:checked ~ .ws-controls .phil-ws-play-label { background:#16A34A; color:#fff; border-color:#16A34A; }
-      </style>
-      <input type="checkbox" id="phil-ws-play" class="phil-ws-play" style="position:absolute;opacity:0;pointer-events:none;"/>
-      <div class="ws-row" style="display:contents;">
-        <div class="ws-grid">
-          <div class="ws-canvas">
-            <div class="corner-tag">LAB v.1958+1968</div>
-            <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-              <defs>
-                <pattern id="grid-phil" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E2E8F0" stroke-width="0.6"/>
-                </pattern>
-              </defs>
-              <rect x="40" y="20" width="400" height="300" fill="url(#grid-phil)"/>
-              <line x1="40" y1="320" x2="450" y2="320" stroke="#0B1426" stroke-width="1.6"/>
-              <line x1="40" y1="320" x2="40" y2="14" stroke="#0B1426" stroke-width="1.6"/>
-              <polygon points="450,320 442,316 442,324" fill="#0B1426"/>
-              <polygon points="40,14 36,22 44,22" fill="#0B1426"/>
-              <text x="22" y="20" font-size="11" font-weight="700" fill="#0B1426">π</text>
-              <text x="6" y="32" font-size="10" fill="#64748B">infl. %</text>
-              <text x="454" y="324" font-size="11" font-weight="700" fill="#0B1426">U</text>
-              <text x="416" y="338" font-size="10" fill="#64748B">unemp. %</text>
-              <line x1="240" y1="20" x2="240" y2="320" stroke="#7E22CE" stroke-width="2.4" stroke-dasharray="6 4"/>
-              <text x="248" y="36" font-size="11" font-weight="800" fill="#7E22CE">LRPC</text>
-              <text x="248" y="50" font-size="10" fill="#7E22CE">vertical at NAIRU</text>
-              <line x1="80" y1="240" x2="420" y2="100" stroke="#2563EB" stroke-width="2.6" stroke-linecap="round"/>
-              <text x="420" y="118" font-size="11" font-weight="800" fill="#2563EB">SRPC₁</text>
-              <text x="420" y="132" font-size="10" fill="#2563EB" font-style="italic">(initial)</text>
-              <line x1="80" y1="180" x2="420" y2="40" stroke="#2563EB" stroke-width="2.4" stroke-dasharray="6 4" stroke-linecap="round"/>
-              <text x="424" y="46" font-size="11" font-weight="800" fill="#2563EB">SRPC₂</text>
-              <text x="324" y="34" font-size="10" fill="#2563EB" font-style="italic">(after expectations adjust)</text>
-              <g class="friedman-anim">
-                <line x1="40" y1="191" x2="240" y2="191" stroke="#64748B" stroke-width="1" stroke-dasharray="3 3"/>
-                <circle cx="240" cy="191" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
-                <text x="252" y="186" font-size="13" font-weight="800" fill="#0B1426">A</text>
-                <text x="34" y="195" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">π_A</text>
-              </g>
-              <g class="friedman-anim">
-                <line x1="40" y1="158" x2="160" y2="158" stroke="#64748B" stroke-width="1" stroke-dasharray="3 3"/>
-                <line x1="160" y1="158" x2="160" y2="320" stroke="#64748B" stroke-width="1" stroke-dasharray="3 3"/>
-                <circle cx="160" cy="158" r="6" fill="#fff" stroke="#0B1426" stroke-width="2.4"/>
-                <text x="146" y="150" font-size="13" font-weight="800" fill="#0B1426" text-anchor="end">B</text>
-                <text x="34" y="162" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">π_B</text>
-                <text x="160" y="336" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">U</text>
-              </g>
-              <g class="friedman-anim">
-                <line x1="40" y1="122" x2="240" y2="122" stroke="#64748B" stroke-width="1" stroke-dasharray="3 3"/>
-                <circle cx="240" cy="122" r="6" fill="#fff" stroke="#7E22CE" stroke-width="2.4"/>
-                <text x="252" y="118" font-size="13" font-weight="800" fill="#7E22CE">C</text>
-                <text x="34" y="126" font-size="11" font-weight="700" fill="#7E22CE" text-anchor="end">π_C</text>
-              </g>
-              <text x="240" y="336" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">U_N</text>
-            </svg>
-          </div>
-          <div class="friedman-card">
-            <h4><span class="badge">i</span>Friedman–Phelps long run</h4>
-            <p>A stimulus can move the economy from <strong>A → B</strong> – lower unemployment and higher inflation.</p>
-            <p>But workers and firms <em>adapt their expectations</em>, shifting the SRPC up from SRPC₁ to SRPC₂.</p>
-            <p>The economy ends at <strong>C</strong> – back at U_N but with <strong>permanently higher inflation</strong>.</p>
-          </div>
-        </div>
-      </div>
-      <div class="ws-controls" style="display:flex;align-items:center;gap:10px;margin-top:14px;justify-content:center;">
-        <label class="phil-ws-play-label" for="phil-ws-play"><span style="font-size:11px;">▶</span> play A → B → C</label>
-        <span style="font-size:11px;color:#94A3B8;font-style:italic;">Watch the path fade in and out as expectations adjust.</span>
-      </div>
-    </div>
-  `,
+  /* macroPhillipsInteractive – Card 4: the Friedman–Phelps A→B→C story
+     as a 4-view stepped interactiveDiagram (engine spec). Replaces the
+     old hand-rolled CSS-animation "workstation". */
+  macroPhillipsInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MACRO_PHILLIPS_SPEC); }),
 
   /* Card 5 – FOUR MORE STRUCTURAL TRADE-OFFS (mechanism flow chains). */
   macroTradeoffChains: `

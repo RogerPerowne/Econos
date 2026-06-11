@@ -55,8 +55,10 @@ const check = process.argv.includes('--check');
    (v0.161.0) for the growthDriversHub six-spoke hub (Causes of Growth
    card 2 — hand-rolled hub tile/border fills, house hub anatomy); raised
    to 6903 (v0.164.3) for the monopsonyScenarios four-story-column visual
-   (mock-up rebuild — hand-rolled SVG glyph/scene fills). */
-const DUP_BASELINE = 6903;
+   (mock-up rebuild — hand-rolled SVG glyph/scene fills); lowered to 6870
+   (v0.169.0) when the hand-rolled macroPhillipsWorkstation SVG was
+   replaced by the macroPhillipsInteractive engine spec. */
+const DUP_BASELINE = 6870;
 
 const css = readFileSync('styles.css', 'utf8');
 

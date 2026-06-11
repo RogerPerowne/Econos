@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.169.0 — 2026-06-11
+
+### Phillips curve — rebuilt as a stepped interactive diagram
+
+- The Macroeconomic Objectives Card 4 "Phillips workstation" was a
+  hand-rolled SVG with a CSS play-pause animation that auto-cycled the
+  A→B→C path — cramped, hard to read, and off-spec for our interactive
+  pattern. Replaced it wholesale with `macroPhillipsInteractive`, a new
+  four-view `ECONOS_PPF` engine spec (`js/charts/specs/macro-phillips.js`)
+  driven by the `interactiveDiagram` block: buttons build the story, the
+  description sits to the right and the analysis below.
+    - **The short-run trade-off** — SRPC₁ + point A at the NAIRU.
+    - **Stimulus: A → B** — a demand boost slides the economy down SRPC₁
+      (lower U, higher π — a movement along).
+    - **Expectations adjust** — adaptive expectations shift the curve up
+      to SRPC₂; the LRPC is vertical at the NAIRU (a shift, not a move).
+    - **No long-run trade-off** — U returns to the NAIRU but inflation is
+      permanently higher (A→C purely vertical).
+- All points sit exactly on their lines; chart-lint reports 0 new
+  findings. Removing the hand-rolled SVG also cut 33 raw colour/size
+  literals, so the token-dup baseline drops 6903 → 6870.
+
 ## 0.168.3 — 2026-06-11
 
 ### mcDemandComparison twin panels — stack on mobile

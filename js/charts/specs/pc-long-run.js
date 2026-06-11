@@ -12,6 +12,7 @@
     fc: FC, vc: VC, qMax: qAxis, yMax: yAxis, qMin: qMin, samples: 60,
     curves: ['MC', 'AC'], demand: { type: 'horizontal', price: pStar },
     revealLayers: ['pclr-1', 'pclr-2', 'pclr-3'],
+    axisTicks: { p: 'P*' },
     axes: { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } }
   });
 })();

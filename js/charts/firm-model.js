@@ -208,6 +208,19 @@
     // When omitted the diagram renders as a single static state (unchanged).
     var rl = Array.isArray(opts.revealLayers) ? opts.revealLayers : null;
 
+    // Opt-in presentation overrides (defaults preserve existing diagrams):
+    //   acDotLayer    – rl index for the AC dot (default 2; PC cards use 3 so
+    //                   the cost-at-Q* dot arrives with the rectangle stage)
+    //   profitOpacity – rectangle fill opacity (default 0.22)
+    //   profitLabelX  – chart-units x for the Profit/Loss text (default Q*/2)
+    //   axisTicks     – { p:'P*', c:'C*' } y-axis labels; p appears with the
+    //                   price guide (rl[2]), c with the rectangle stage
+    //                   (rl[3]) plus a dashed guide at AC* across to Q*
+    //   arLabelDx     – override the AR label dx (dodge curve crossings)
+    var acDotLayer = opts.acDotLayer != null ? opts.acDotLayer : 2;
+    var profitOpacity = opts.profitOpacity != null ? opts.profitOpacity : 0.22;
+    var ticks = opts.axisTicks || null;
+
     var M = makeModel(fc, vc);
     var fnFor = { MC: M.mc, AVC: M.avc, AC: M.ac, AFC: M.afc };
 
@@ -240,7 +253,8 @@
     curves.push({
       id: 'AR', d: samplePath(ar, qMin, arEnd, qAxis, yAxis, 2),
       tone: 'green', label: horizontal ? 'AR = MR = P' : 'AR (D)',
-      strokeWidth: 2.4, labelDx: -4, labelDy: -8, anchor: 'end',
+      strokeWidth: 2.4, labelDx: opts.arLabelDx != null ? opts.arLabelDx : -4,
+      labelDy: -8, anchor: 'end',
       layer: rl ? rl[1] : undefined
     });
     if (!horizontal) {
@@ -276,7 +290,7 @@
       // Supernormal-profit (or loss) rectangle between P* and AC* over 0..Q*.
       polygons.push({
         points: [[0, acStar / yAxis], [nx, acStar / yAxis], [nx, pStar / yAxis], [0, pStar / yAxis]],
-        tone: profit ? 'green' : 'rose', opacity: 0.22, layer: rl ? rl[3] : undefined
+        tone: profit ? 'green' : 'rose', opacity: profitOpacity, layer: rl ? rl[3] : undefined
       });
 
       // Key marked points — engine SOLVES / SNAPS each onto its curve.
@@ -303,13 +317,28 @@
         });
       }
       if (have.AC) {
-        points.push({ x: nx, on: 'AC', tone: 'blue', radius: 4, layer: rl ? rl[2] : undefined });
+        points.push({ x: nx, on: 'AC', tone: 'blue', radius: 4, layer: rl ? rl[acDotLayer] : undefined });
       }
       texts.push({ x: nx, y: -0.055, text: 'Q*', tone: 'slate', bold: true, anchor: 'middle', layer: rl ? rl[2] : undefined });
       if (Math.abs(pStar - acStar) > 0.01 * yAxis) {
-        texts.push({ x: nx / 2, y: (pStar + acStar) / 2 / yAxis,
+        texts.push({ x: opts.profitLabelX != null ? opts.profitLabelX : nx / 2,
+          y: (pStar + acStar) / 2 / yAxis,
           text: profit ? 'Profit' : 'Loss', tone: profit ? 'green' : 'rose', bold: true, anchor: 'middle',
           layer: rl ? rl[3] : undefined });
+      }
+      // y-axis tick labels: P* with the price guide, C* with the cost stage
+      // (plus its own dashed guide across to Q*, mirroring the price one).
+      if (ticks && ticks.p) {
+        texts.push({ x: -0.012, y: pStar / yAxis, text: ticks.p, tone: 'green',
+          bold: true, anchor: 'end', layer: rl ? rl[2] : undefined });
+      }
+      if (ticks && ticks.c && have.AC) {
+        curves.unshift({
+          id: '_cline', shape: { type: 'horizontal', y: acStar / yAxis, from: 0, to: nx },
+          tone: 'blue', strokeWidth: 1.2, dashed: '4 4', layer: rl ? rl[acDotLayer] : undefined
+        });
+        texts.push({ x: -0.012, y: acStar / yAxis, text: ticks.c, tone: 'blue',
+          bold: true, anchor: 'end', layer: rl ? rl[acDotLayer] : undefined });
       }
     }
 

@@ -9,6 +9,9 @@
     fc: 200, vc: [10, -0.15, 0.00125], qMax: 130, yMax: 20, qMin: 22, samples: 60,
     curves: ['MC', 'AVC', 'AC'], demand: { type: 'horizontal', price: 7 },
     revealLayers: ['pcl-1', 'pcl-2', 'pcl-3', 'pcl-4'],
+    // Same treatment as the profit diagram: AC dot + C* with the rectangle
+    // stage, darker loss shading, P*/C* read off the y-axis.
+    acDotLayer: 3, profitOpacity: 0.7, axisTicks: { p: 'P*', c: 'C*' },
     axes: { x: { label: 'Output (Q)' }, y: { label: 'Price / cost (£)' } }
   });
 })();

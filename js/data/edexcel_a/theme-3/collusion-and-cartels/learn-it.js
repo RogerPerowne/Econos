@@ -140,7 +140,7 @@ window.ECONOS_TOPIC = {
             label: 'Cartel output and price',
             tone: 'amber',
             head: 'Step 2 — set output where MR = MC',
-            body: 'Treating the cartel as one big monopolist, total output is set where <strong>MR = MC</strong>. That gives the cartel quantity <strong>Q₌</strong>; projecting up to the demand curve gives the cartel price <strong>P₌</strong>.',
+            body: 'Treating the cartel as one big monopolist, total output is set where <strong>MR = MC</strong>. That gives the cartel quantity <strong>Q₌</strong>; projecting up to the demand curve gives the cartel price <strong>P₌</strong>. The <strong>AC curve</strong> shows the cost side we will need for profit.',
             analysis: 'Notice that MR cuts MC well to the left of where MC would cross demand under competition. That is exactly how the cartel raises price — by holding back output.',
             show: ['cjp-1', 'cjp-2']
           },
@@ -148,8 +148,8 @@ window.ECONOS_TOPIC = {
             label: 'Why it pays',
             tone: 'green',
             head: 'Step 3 — compare with competition',
-            body: 'Under competition firms would produce where <strong>MC = D</strong> at <strong>Q_comp / P_comp</strong>. The cartel deliberately moves output left and price up, capturing a larger <strong>joint profit area</strong> for its members.',
-            analysis: 'Q₌ is less than Q_comp; P₌ is greater than P_comp. The shaded area is the cartel’s extra reward for restricting output — and the source of consumer harm.',
+            body: 'Joint profit is <strong>(P − AC) × Q</strong> — the shaded band between average cost and the cartel price. Under competition firms would produce where <strong>MC = D</strong> at <strong>Q_comp / P_comp</strong>, squeezing that margin.',
+            analysis: 'Restricting output widens the profit margin (P − AC) on every unit sold. That band — not total revenue — is the cartel’s prize, and the source of consumer harm.',
             show: ['cjp-1', 'cjp-2', 'cjp-3']
           }
         ]

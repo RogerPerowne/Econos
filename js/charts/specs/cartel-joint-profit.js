@@ -10,8 +10,10 @@
 
    States (cumulative show: ['cjp-*']):
      cjp-1  market demand D and MR
-     cjp-2  MC → the cartel restricts output to Q_c (MR = MC), price P_c
-     cjp-3  competitive benchmark (MC = D) + the joint-profit area
+     cjp-2  MC + AC → the cartel restricts output to Q_c (MR = MC), price P_c
+     cjp-3  competitive benchmark (MC = D) + the TRUE joint-profit band
+            (P_c − AC) × Q_c — between AC and P_c, NOT the P×Q revenue
+            block (which a previous version shaded by mistake).
    ============================================================ */
 (function () {
   'use strict';
@@ -27,7 +29,7 @@
   var qc = F.solveCross(M.mc, mr, qMin, qSamp);   // cartel output: MR = MC
   var qk = F.solveEq(M.mc, ar, qMin, qSamp);      // competitive: MC = D
   var arEnd = Math.min(qAxis * 0.93, a / b - 1), mrEnd = Math.min(qAxis * 0.93, a / (2 * b));
-  var Pc = ar(qc), mcC = M.mc(qc), Pk = ar(qk);
+  var Pc = ar(qc), mcC = M.mc(qc), Pk = ar(qk), ACc = M.ac(qc);
 
   window.ECONOS_CARTEL_JOINT_PROFIT_SPEC = {
     width: 740, height: 570,
@@ -36,16 +38,21 @@
     layers: ['cjp-1', 'cjp-2', 'cjp-3'],
     axes: { x: { label: 'Quantity' }, y: { label: 'Price' } },
     polygons: [
-      { layer: 'cjp-3', points: [[0, 0], [nx(qc), 0], [nx(qc), ny(Pc)], [0, ny(Pc)]], tone: 'green', opacity: 0.6 }
+      // TRUE joint profit = (P_c − AC) × Q_c — the band between average cost
+      // and the cartel price, not the full P×Q revenue block.
+      { layer: 'cjp-3', points: [[0, ny(ACc)], [nx(qc), ny(ACc)], [nx(qc), ny(Pc)], [0, ny(Pc)]], tone: 'green', opacity: 0.6 }
     ],
     curves: [
       { id: 'D', d: F.samplePath(ar, qMin, arEnd, qAxis, yAxis, 2), tone: 'blue', label: 'D', strokeWidth: 2.6, labelDx: 6, labelDy: 8, anchor: 'start', layer: 'cjp-1' },
       { id: 'MR', d: F.samplePath(mr, qMin, mrEnd, qAxis, yAxis, 2), tone: 'purple', label: 'MR', strokeWidth: 2.2, labelDx: -4, labelDy: 12, anchor: 'end', layer: 'cjp-1' },
-      { id: 'MC', d: F.samplePath(M.mc, qMin, qSamp, qAxis, yAxis, 60), tone: 'green', label: 'MC', strokeWidth: 2.6, labelDx: 6, labelDy: -4, anchor: 'start', layer: 'cjp-2' }
+      { id: 'MC', d: F.samplePath(M.mc, qMin, qSamp, qAxis, yAxis, 60), tone: 'green', label: 'MC', strokeWidth: 2.6, labelDx: 6, labelDy: -4, anchor: 'start', layer: 'cjp-2' },
+      { id: 'AC', d: F.samplePath(M.ac, qMin, qSamp, qAxis, yAxis, 60), tone: 'rose', label: 'AC', strokeWidth: 2.2, labelDx: 6, labelDy: 12, anchor: 'start', layer: 'cjp-2' },
+      { id: '_acline', shape: { type: 'horizontal', y: ny(ACc), from: 0, to: nx(qc) }, tone: 'rose', strokeWidth: 1.1, dashed: '3 3', layer: 'cjp-3' }
     ],
     points: [
       { layer: 'cjp-2', intersection: { curves: ['MR', 'MC'], near: [nx(qc), ny(mcC)] }, tone: 'slate', radius: 5.5 },
       { layer: 'cjp-2', x: nx(qc), on: 'D', tone: 'slate', radius: 5.5 },
+      { layer: 'cjp-3', x: nx(qc), on: 'AC', tone: 'rose', radius: 4.5 },
       { layer: 'cjp-3', intersection: { curves: ['MC', 'D'], near: [nx(qk), ny(Pk)] }, tone: 'slate', radius: 4.5 }
     ],
     arrows: [
@@ -58,9 +65,10 @@
     texts: [
       { layer: 'cjp-2', x: -0.02, y: ny(Pc), text: 'P_c', tone: 'slate', bold: true, anchor: 'end', fontSize: 12 },
       { layer: 'cjp-2', x: nx(qc), y: -0.06, text: 'Q_c', tone: 'slate', bold: true, anchor: 'middle', fontSize: 12 },
+      { layer: 'cjp-3', x: -0.02, y: ny(ACc), text: 'C_c', tone: 'rose', bold: true, anchor: 'end', fontSize: 11 },
       { layer: 'cjp-3', x: -0.02, y: ny(Pk), text: 'P_comp', tone: 'slate', bold: true, anchor: 'end', fontSize: 10.5 },
       { layer: 'cjp-3', x: nx(qk), y: -0.06, text: 'Q_comp', tone: 'slate', bold: true, anchor: 'middle', fontSize: 10.5 },
-      { layer: 'cjp-3', x: nx(qc) / 2, y: ny(Pc) / 2, text: 'Joint profit', tone: 'green', bold: true, anchor: 'middle', fontSize: 11 }
+      { layer: 'cjp-3', x: 0.155, y: ny((Pc + ACc) / 2), text: 'Joint profit', tone: 'green', bold: true, anchor: 'middle', fontSize: 11 }
     ]
   };
 })();

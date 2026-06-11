@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.161.3 — 2026-06-11
+
+### Cartel diagram — shaded REVENUE corrected to true joint profit
+
+- The cartel joint-profit spec shaded the full P_c × Q_c block — that is
+  total revenue, not profit, dramatically overstating the cartel's prize.
+  Added the AC curve (same engine cost model), the AC dot at Q_c, a C_c
+  y-axis tick + dashed guide, and re-shaded the TRUE band:
+  (P_c − AC) × Q_c between average cost and the cartel price.
+- Card copy updated in step: step 2 introduces the AC curve; step 3 now
+  teaches joint profit = (P − AC) × Q and frames competition as squeezing
+  the margin. Chart snapshots refreshed; `sw.js` cache
+  `econos-v543` → `econos-v544`.
+
 ## 0.161.2 — 2026-06-11
 
 ### Tile-head word overflow ("Interdepend ence")

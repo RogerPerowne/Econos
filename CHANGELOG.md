@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.164.1 — 2026-06-11
+
+### Economist portraits — marx.png background corrected
+
+- Audited all 17 portrait assets: every one carries the quote-card cream
+  (#FFFBEB) background except marx.png, which had a peach (≈#FCEFDA)
+  background and an off-set resolution (1122×1402 vs the set's 600×750) —
+  visibly miscoloured inside the quote card. Flood-filled the background
+  to the house cream from the borders (portrait art untouched) and resized
+  to 600×750 to match the set. Asset-only change.
+
 ## 0.164.0 — 2026-06-11
 
 ### Price Discrimination — rebuilt; Monopoly slimmed to 7 cards

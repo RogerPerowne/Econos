@@ -385,32 +385,32 @@ window.ECONOS_TOPIC = {
 
       interactiveDiagram: {
         svgKey: 'priceDiscPanels',
-        label: 'THE DIAGRAM STORY — three panels, one MC',
+        label: 'THE DIAGRAM STORY — two markets, then the kinked total',
         emoji: '\u{1F4CA}',
         wide: true,
         maxWidth: '760px',
         layers: ['pd-1', 'pd-2', 'pd-3'],
         views: [
           {
-            label: 'The combined market',
-            tone: 'blue',
-            head: 'Panel 1 — the combined market',
-            body: 'Across all buyers, the firm sets total <strong>MR = MC</strong>. That fixes the marginal cost level it will charge in every sub-market.',
-            show: ['pd-1']
-          },
-          {
             label: 'Market A — inelastic',
             tone: 'amber',
-            head: 'Panel 2 — the inelastic market',
-            body: 'In Market A, set <strong>MR_A = MC</strong>. The steep (inelastic) demand gives a <strong>high price, P_A</strong>.',
-            show: ['pd-1', 'pd-2']
+            head: 'Panel 1 — the inelastic market',
+            body: 'Start with one group. In Market A, set <strong>MR_A = MC</strong>. The steep (inelastic) demand gives a <strong>high price, P_A</strong> on few units.',
+            show: ['pd-1']
           },
           {
             label: 'Market B — elastic',
             tone: 'green',
-            head: 'Panel 3 — the elastic market',
-            body: 'In Market B, set <strong>MR_B = MC</strong>. The flat (elastic) demand gives a <strong>low price, P_B</strong> — so P_A &gt; P_B.',
-            analysis: 'The same product carries the same MC, yet the price differs purely because elasticity differs. The firm charges more to the group least able to walk away.',
+            head: 'Panel 2 — the elastic market',
+            body: 'Same product, same <strong>MC</strong> (the dashed red line carries it across). In Market B the flat (elastic) demand gives a <strong>low price, P_B</strong> on many units — so P_A &gt; P_B.',
+            show: ['pd-1', 'pd-2']
+          },
+          {
+            label: 'The combined market',
+            tone: 'blue',
+            head: 'Panel 3 — add them up: the kinked total',
+            body: 'The combined demand is the <strong>horizontal sum</strong> of A and B — so it <strong>kinks</strong> at the price where Market B’s buyers enter. The summed MR kinks at the same price, and total output sits where <strong>summed MR = MC</strong>: Q_total = Q_A + Q_B.',
+            analysis: 'The same product carries the same MC, yet the price differs purely because elasticity differs — the firm charges more to the group least able to walk away. The kink is the visual proof that the total market is just the two groups stacked sideways.',
             show: ['pd-1', 'pd-2', 'pd-3']
           }
         ]
@@ -422,10 +422,10 @@ window.ECONOS_TOPIC = {
       causesStyle: 'icon-top',
       causesCols: 4,
       causes: [
-        { tone: 'blue',   icon: '✂️', head: 'Split the markets', body: 'Draw a panel for each group plus the total.' },
+        { tone: 'blue',   icon: '✂️', head: 'Split the markets', body: 'Draw a panel for each group of buyers.' },
         { tone: 'purple', icon: '\u{1F4CC}', head: 'Equalise MR = MC', body: 'The same MC level applies in every market.' },
         { tone: 'amber',  icon: '\u{1F4C8}', head: 'Read each price',  body: 'Go up to each market’s own AR for its price.' },
-        { tone: 'green',  icon: '⚖️', head: 'Compare prices', body: 'The inelastic market pays more than the elastic one.' }
+        { tone: 'green',  icon: '\u{2795}', head: 'Add them up', body: 'The combined demand is the horizontal sum — kinked where the second group enters.' }
       ],
 
       causes3Label: 'WHAT IT IMPLIES',

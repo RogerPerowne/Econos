@@ -470,7 +470,7 @@ window.ECONOS_TOPIC = {
       bottomTip: { icon: 'ℹ️', tone: 'blue', text: 'The core idea: repeated contact → fear of retaliation → less cheating → more stable co-operation. This is why some oligopolies avoid constant price wars.' },
 
       conclusion: { title: 'Big idea', text: 'The future can discipline the present — repeated interaction changes incentives.' },
-      examEdge: 'In evaluation, mention whether firms can monitor each other and whether the game is one-shot or repeated.'
+      examEdge: 'In evaluation, ask three things: is the game <strong>one-shot or repeated</strong>, can firms <strong>monitor</strong> each other, and is retaliation a <strong>credible threat</strong>? Credibility is what makes tit-for-tat bite.'
     },
 
     /* ====================================================================

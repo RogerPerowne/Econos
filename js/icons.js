@@ -22158,12 +22158,12 @@ window.ECONOS_ICONS = {
      rgc-1..rgc-4 walk the cycle, then the return arrow + tit-for-tat
      caption close the loop and explain why co-operation can hold. */
   repeatedGameCycle: `
-    <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
+    <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
       <defs>
         <marker id="rgc-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#94A3B8"/></marker>
         <marker id="rgc-loop" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>
       </defs>
-      <rect width="760" height="320" fill="#FFFFFF" rx="14"/>
+      <rect width="760" height="340" fill="#FFFFFF" rx="14"/>
 
       <!-- connectors -->
       <g class="rgc-2" style="display:none"><line x1="148" y1="110" x2="252" y2="110" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#rgc-arr)"/></g>
@@ -22201,7 +22201,7 @@ window.ECONOS_ICONS = {
 
       <!-- return loop + tit-for-tat caption -->
       <g class="rgc-loopg" style="display:none">
-        <path d="M660,158 C660,250 110,250 110,156" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#rgc-loop)"/>
+        <path d="M660,205 C660,322 110,322 110,209" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#rgc-loop)"/>
         <rect x="250" y="232" width="260" height="50" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.4"/>
         <text x="380" y="254" text-anchor="middle" font-size="12.5" font-weight="800" fill="#047857">Tit-for-tat: cheating no longer pays</text>
         <text x="380" y="272" text-anchor="middle" font-size="11.5" fill="#475569">so the threat of retaliation supports co-operation</text>

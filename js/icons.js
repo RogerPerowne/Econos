@@ -432,15 +432,9 @@ window.ECONOS_ICONS = {
         <pattern id="branch-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
           <circle cx="2" cy="2" r="1" fill="#E2E8F0"/>
         </pattern>
-        <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
-        <marker id="arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
-        </marker>
-        <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
-        </marker>
+        <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         <radialGradient id="dest-glow" cx="0.5" cy="0.5" r="0.7">
           <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18"/>
           <stop offset="70%" stop-color="#3B82F6" stop-opacity="0"/>
@@ -482,9 +476,7 @@ window.ECONOS_ICONS = {
   adAsDemandPull: `
     <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="ad-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
+        <marker id="ad-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- chart axes – chart area: x ∈ [55, 380], y ∈ [40, 235] -->
@@ -544,9 +536,7 @@ window.ECONOS_ICONS = {
   adAsCostPush: `
     <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="sras-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
-        </marker>
+        <marker id="sras-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- chart axes -->
@@ -770,9 +760,7 @@ window.ECONOS_ICONS = {
   multiplierChart: `
     <svg viewBox="0 0 480 220" width="480" height="220" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="mult-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
-        </marker>
+        <marker id="mult-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- Eyebrow -->
@@ -841,9 +829,7 @@ window.ECONOS_ICONS = {
   multiplierRipple: `
     <svg viewBox="0 0 900 185" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="mr-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
-        </marker>
+        <marker id="mr-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- ROUND 1 – blue · £10bn -->
@@ -914,12 +900,8 @@ window.ECONOS_ICONS = {
   investmentFeedbackLoop: `
     <svg viewBox="0 0 900 280" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="ifl-step" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/>
-        </marker>
-        <marker id="ifl-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#047857"/>
-        </marker>
+        <marker id="ifl-step" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="ifl-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- 5 step tiles, each 140 wide x 130 tall, 25px gap -->
@@ -999,9 +981,7 @@ window.ECONOS_ICONS = {
   govMultiplierChain: `
     <svg viewBox="0 0 900 236" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="gmc-step" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/>
-        </marker>
+        <marker id="gmc-step" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- 5 tiles, 158w x 212h, x positions: 14,192,370,548,728 (gap 20) -->
@@ -1085,12 +1065,8 @@ window.ECONOS_ICONS = {
   crowdingOutLoanableFunds: `
     <svg viewBox="0 0 520 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="cofg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0F172A"/>
-        </marker>
-        <marker id="cofg-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F97316"/>
-        </marker>
+        <marker id="cofg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="cofg-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- Title -->
@@ -1240,12 +1216,8 @@ window.ECONOS_ICONS = {
   autoStabilisersInteractive: `
     <svg viewBox="0 0 420 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="asi-down-rose" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 0 L 5 10 z" fill="#F43F5E"/>
-        </marker>
-        <marker id="asi-down-green" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 0 L 5 10 z" fill="#10B981"/>
-        </marker>
+        <marker id="asi-down-rose" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 5 10 L 10 0" fill="none" stroke="#F43F5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="asi-down-green" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 5 10 L 10 0" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- idl-1: In a recession (rose) -->
@@ -1331,18 +1303,10 @@ window.ECONOS_ICONS = {
   adInteractive: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
       <defs>
-        <marker id="adv2-mv-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 10 0 L 0 5 L 10 10 z" fill="#F59E0B"/>
-        </marker>
-        <marker id="adv2-mv-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
-        </marker>
-        <marker id="adv2-sh-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 10 0 L 0 5 L 10 10 z" fill="#10B981"/>
-        </marker>
-        <marker id="adv2-sh-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
+        <marker id="adv2-mv-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="adv2-mv-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="adv2-sh-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="adv2-sh-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- ===== TITLE STRIP at the top ===== -->
@@ -1520,8 +1484,8 @@ window.ECONOS_ICONS = {
     <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
     <defs>
       <marker id="ppfoc-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
-      <marker id="ppfoc-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
-      <marker id="ppfoc-gn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
+      <marker id="ppfoc-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M 0 0 L 7 3.5 L 0 7" fill="none" stroke="#DC2626" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="ppfoc-gn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M 0 0 L 7 3.5 L 0 7" fill="none" stroke="#059669" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
     </defs>
     <!-- Axes -->
     <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfoc-ax)"/>
@@ -1570,8 +1534,8 @@ window.ECONOS_ICONS = {
     <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
     <defs>
       <marker id="ppfbo-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
-      <marker id="ppfbo-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
-      <marker id="ppfbo-gn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
+      <marker id="ppfbo-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M 0 0 L 7 3.5 L 0 7" fill="none" stroke="#DC2626" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="ppfbo-gn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M 0 0 L 7 3.5 L 0 7" fill="none" stroke="#059669" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
     </defs>
     <!-- Axes -->
     <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfbo-ax)"/>
@@ -1620,7 +1584,7 @@ window.ECONOS_ICONS = {
     <rect width="440" height="300" fill="#FFFFFF" rx="10"/>
     <defs>
       <marker id="ppftr-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
-      <marker id="ppftr-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
+      <marker id="ppftr-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M 0 0 L 7 3.5 L 0 7" fill="none" stroke="#059669" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
     </defs>
     <!-- Axes -->
     <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppftr-ax)"/>
@@ -1671,15 +1635,9 @@ window.ECONOS_ICONS = {
   marketInteractive: `
     <svg class="market-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="mk-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
-        </marker>
-        <marker id="mk-green-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
-          <path d="M8,0 L8,6 L0,3 z" fill="#059669"/>
-        </marker>
-        <marker id="mk-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
-        </marker>
+        <marker id="mk-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="mk-green-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M 8 0 L 0 3 L 8 6" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="mk-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
         <clipPath id="mk-chart-clip">
           <rect x="60" y="43" width="502" height="357"/>
         </clipPath>
@@ -1836,15 +1794,9 @@ window.ECONOS_ICONS = {
   phillipsInteractive: `
     <svg class="phillips-svg" viewBox="-34 0 934 440" width="934" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="ph-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
-        </marker>
-        <marker id="ph-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
-        </marker>
-        <marker id="ph-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
-        </marker>
+        <marker id="ph-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="ph-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="ph-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
         <clipPath id="ph-chart-clip">
           <rect x="60" y="43" width="502" height="357"/>
         </clipPath>
@@ -2197,12 +2149,8 @@ window.ECONOS_ICONS = {
         <clipPath id="pc-chart-clip">
           <rect x="60" y="43" width="502" height="357"/>
         </clipPath>
-        <marker id="pc-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
-        </marker>
-        <marker id="pc-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
-          <path d="M8,0 L8,6 L0,3 z" fill="#D97706"/>
-        </marker>
+        <marker id="pc-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="pc-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M 8 0 L 0 3 L 8 6" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- Background -->
@@ -2352,9 +2300,7 @@ window.ECONOS_ICONS = {
   netTradeMechanism: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <defs>
-        <marker id="ntm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
-        </marker>
+        <marker id="ntm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- BASE: sterling circle (always visible) -->
@@ -2425,12 +2371,8 @@ window.ECONOS_ICONS = {
         <marker id="ats-ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
         </marker>
-        <marker id="ats-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
-        </marker>
-        <marker id="ats-shift-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F97316"/>
-        </marker>
+        <marker id="ats-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="ats-shift-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- LEFT PANEL: Recession / spare capacity -->
@@ -2535,15 +2477,9 @@ window.ECONOS_ICONS = {
   prisonersDilemmaInteractive: `
     <svg class="pd-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="pd-blue-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/>
-        </marker>
-        <marker id="pd-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
-        </marker>
-        <marker id="pd-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
-        </marker>
+        <marker id="pd-blue-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="pd-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="pd-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- Background -->
@@ -2825,15 +2761,9 @@ window.ECONOS_ICONS = {
         <pattern id="lab-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
           <circle cx="2" cy="2" r="1" fill="#E2E8F0"/>
         </pattern>
-        <marker id="lab-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
-        <marker id="lab-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
-        </marker>
-        <marker id="lab-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
-        </marker>
+        <marker id="lab-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="lab-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="lab-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         <radialGradient id="lab-src-glow" cx="0.5" cy="0.5" r="0.7">
           <stop offset="0%" stop-color="#92400E" stop-opacity="0.18"/>
           <stop offset="70%" stop-color="#92400E" stop-opacity="0"/>
@@ -2858,15 +2788,9 @@ window.ECONOS_ICONS = {
   adAsRecession: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
       <defs>
-        <marker id="recv2-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
-        <marker id="recv2-gap-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 10 0 L 0 5 L 10 10 z" fill="#E11D48"/>
-        </marker>
-        <marker id="recv2-gap-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/>
-        </marker>
+        <marker id="recv2-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="recv2-gap-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="recv2-gap-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- ===== TOP TITLE STRIP ===== -->
@@ -3044,9 +2968,7 @@ window.ECONOS_ICONS = {
   bopJCurveInteractive: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
       <defs>
-        <marker id="jc-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
+        <marker id="jc-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- ===== TOP TITLE STRIP ===== -->
@@ -3243,21 +3165,11 @@ window.ECONOS_ICONS = {
         <pattern id="mp-fr-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
           <circle cx="2" cy="2" r="1" fill="#E2E8F0"/>
         </pattern>
-        <marker id="mp-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
-        <marker id="mp-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
-        </marker>
-        <marker id="mp-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
-        </marker>
-        <marker id="mp-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#7E22CE"/>
-        </marker>
-        <marker id="mp-arr-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/>
-        </marker>
+        <marker id="mp-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="mp-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="mp-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="mp-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#7E22CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="mp-arr-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <rect x="0" y="0" width="300" height="280" fill="url(#mp-fr-dots)" opacity="0.45"/>
@@ -3299,12 +3211,8 @@ window.ECONOS_ICONS = {
   adAsMonetary: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
       <defs>
-        <marker id="mpv2-shift-down" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/>
-        </marker>
-        <marker id="mpv2-shift-up" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
+        <marker id="mpv2-shift-down" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="mpv2-shift-up" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- ===== TOP TITLE STRIP ===== -->
@@ -3537,9 +3445,7 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hg-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hg-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-        <marker id="hg-arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#15803D"/>
-        </marker>
+        <marker id="hg-arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       <radialGradient id="herogrowth-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.5"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.1"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient></defs>
       <circle cx="140" cy="170" r="150" fill="url(#herogrowth-glow)"/>
 
@@ -4982,9 +4888,7 @@ window.ECONOS_ICONS = {
   heroPrice: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="hpr-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M0,0 L10,5 L0,10 z" fill="#0B1426"/>
-        </marker>
+        <marker id="hpr-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#0B1426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       <radialGradient id="heroprice-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient></defs>
       <circle cx="140" cy="170" r="150" fill="url(#heroprice-glow)"/>
 
@@ -6377,7 +6281,7 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="eq-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
         <filter id="eq-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
-        <marker id="eq-a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#16A34A"/></marker><marker id="eq-a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#F59E0B"/></marker><radialGradient id="eq-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
+        <marker id="eq-a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="eq-a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker><radialGradient id="eq-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
         <linearGradient id="eq-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/><stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/></linearGradient>
         <linearGradient id="eq-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BFDBFE"/><stop offset="100%" stop-color="#93C5FD"/></linearGradient><linearGradient id="eq-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BFDBFE"/><stop offset="100%" stop-color="#93C5FD"/></linearGradient>
       </defs>
@@ -6397,7 +6301,7 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="ij-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
         <filter id="ij-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
-        <linearGradient id="ij-tank" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EFF6FF"/><stop offset="100%" stop-color="#DBEAFE"/></linearGradient><marker id="ij-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#16A34A"/></marker><marker id="ij-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#F43F5E"/></marker><radialGradient id="ij-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient>
+        <linearGradient id="ij-tank" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EFF6FF"/><stop offset="100%" stop-color="#DBEAFE"/></linearGradient><marker id="ij-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ij-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F43F5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker><radialGradient id="ij-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient>
         <linearGradient id="ij-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/><stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/></linearGradient>
         
       </defs>
@@ -7997,12 +7901,8 @@ window.ECONOS_ICONS = {
         <clipPath id="kink-chart-clip">
           <rect x="60" y="43" width="502" height="357"/>
         </clipPath>
-        <marker id="kink-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
-        </marker>
-        <marker id="kink-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
-          <path d="M8,0 L8,6 L0,3 z" fill="#D97706"/>
-        </marker>
+        <marker id="kink-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="kink-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M 8 0 L 0 3 L 8 6" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- Background -->
@@ -12023,33 +11923,19 @@ window.ECONOS_ICONS = {
 
     <!-- ── Arrow marker definitions ── -->
     <defs>
-      <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/>
-      </marker>
-      <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
-      </marker>
-      <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
-      </marker>
+      <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
     </defs>
 
   </svg>`,
 
   businessGrowthDiagram: `<svg viewBox="0 0 660 440" font-family="Inter, sans-serif" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <marker id="arrowGrey" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L8,3 z" fill="#334155"/>
-      </marker>
-      <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/>
-      </marker>
-      <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
-      </marker>
-      <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
-      </marker>
+      <marker id="arrowGrey" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#334155" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
     </defs>
 
     <!-- Background -->
@@ -12273,12 +12159,8 @@ window.ECONOS_ICONS = {
       </g>
 
       <defs>
-        <marker id="arr-green-mini" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
-        <marker id="arr-red-mini" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
-        </marker>
+        <marker id="arr-green-mini" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="arr-red-mini" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
     </svg>
   `,
@@ -12350,12 +12232,8 @@ window.ECONOS_ICONS = {
       </g>
 
       <defs>
-        <marker id="arr-flow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
-        <marker id="arr-flow-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
-        </marker>
+        <marker id="arr-flow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="arr-flow-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
     </svg>
   `,
@@ -12432,15 +12310,9 @@ window.ECONOS_ICONS = {
       </g>
 
       <defs>
-        <marker id="arr-shift-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
-        </marker>
-        <marker id="arr-shift-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
-        </marker>
-        <marker id="arr-shift-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
-        </marker>
+        <marker id="arr-shift-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="arr-shift-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="arr-shift-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
     </svg>
   `,
@@ -12841,12 +12713,8 @@ window.ECONOS_ICONS = {
           <feComponentTransfer><feFuncA type="linear" slope="0.15"/></feComponentTransfer>
           <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
-        <marker id="ec-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
-        </marker>
-        <marker id="ec-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/>
-        </marker>
+        <marker id="ec-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="ec-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- Column headers -->
@@ -12943,12 +12811,8 @@ window.ECONOS_ICONS = {
   regulatoryCaptureSvg: `
     <svg viewBox="0 0 640 196" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="rc-fwd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
-        </marker>
-        <marker id="rc-back" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
-        </marker>
+        <marker id="rc-fwd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="rc-back" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- Forward arrows (public mandate + oversight) -->
@@ -12994,9 +12858,7 @@ window.ECONOS_ICONS = {
   macroDashboardSvg: `
     <svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="md-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
-        </marker>
+        <marker id="md-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- ===== SECTION 1: THE MACRO DASHBOARD ===== -->
@@ -13109,12 +12971,8 @@ window.ECONOS_ICONS = {
   causesOfGrowthSvg: `
     <svg viewBox="0 0 640 632" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="cg-blu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/>
-        </marker>
-        <marker id="cg-gry" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
-        </marker>
+        <marker id="cg-blu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="cg-gry" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- ══ SHORT-RUN DEMAND SECTION ══ -->
@@ -13403,8 +13261,8 @@ window.ECONOS_ICONS = {
   nationalIncomeFlow: `
     <svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" font-family="Inter,system-ui,sans-serif" style="display:block;width:100%;height:auto;">
       <defs>
-        <marker id="nif-blue" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#2563EB"/></marker>
-        <marker id="nif-amber" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#D97706"/></marker>
+        <marker id="nif-blue" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M 0 0 L 11 5.5 L 0 11" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="nif-amber" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M 0 0 L 11 5.5 L 0 11" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         <filter id="nif-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.08"/></filter>
       </defs>
 
@@ -13497,10 +13355,10 @@ window.ECONOS_ICONS = {
            labels breathing room above. -->
       <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;" viewBox="0 0 1088 520" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <defs>
-          <marker id="nio-arrow-blue"   markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#2F66D0"/></marker>
-          <marker id="nio-arrow-purple" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#7C3AED"/></marker>
-          <marker id="nio-arrow-green"  markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#16975F"/></marker>
-          <marker id="nio-arrow-amber"  markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#F59E2E"/></marker>
+          <marker id="nio-arrow-blue"   markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 12 6 L 0 12" fill="none" stroke="#2F66D0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="nio-arrow-purple" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 12 6 L 0 12" fill="none" stroke="#7C3AED" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="nio-arrow-green"  markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 12 6 L 0 12" fill="none" stroke="#16975F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="nio-arrow-amber"  markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 12 6 L 0 12" fill="none" stroke="#F59E2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- BASE arrows: Factor payments + Consumption (Y shifted +60) -->
@@ -13746,8 +13604,8 @@ window.ECONOS_ICONS = {
             <text x="219" y="196" font-size="11" fill="#16A34A" font-family="Inter,sans-serif" font-weight="700">Y<tspan font-size="10" dy="3">FE</tspan></text>
             <text x="270" y="214" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
             <defs>
-              <marker id="eni-arrow-green-l" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><path d="M8 0 L0 4 L8 8 Z" fill="#16A34A"/></marker>
-              <marker id="eni-arrow-green-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#16A34A"/></marker>
+              <marker id="eni-arrow-green-l" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><path d="M 8 0 L 0 4 L 8 8" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+              <marker id="eni-arrow-green-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M 0 0 L 8 4 L 0 8" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
             </defs>
           </svg>
           <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:#0B1426;">
@@ -13784,8 +13642,8 @@ window.ECONOS_ICONS = {
             <text x="214" y="196" font-size="11" fill="#475569" font-family="Inter,sans-serif" font-weight="700">Y</text>
             <text x="270" y="214" font-size="10" fill="#475569" font-family="Inter,sans-serif">Real output (Y)</text>
             <defs>
-              <marker id="eni-arrow-amber-l" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><path d="M8 0 L0 4 L8 8 Z" fill="#F59E0B"/></marker>
-              <marker id="eni-arrow-amber-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#F59E0B"/></marker>
+              <marker id="eni-arrow-amber-l" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto"><path d="M 8 0 L 0 4 L 8 8" fill="none" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+              <marker id="eni-arrow-amber-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M 0 0 L 8 4 L 0 8" fill="none" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
             </defs>
           </svg>
           <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:#0B1426;">
@@ -13981,8 +13839,8 @@ window.ECONOS_ICONS = {
         <path d="M275 396 L364 396" stroke="#16A34A" stroke-width="2.4" marker-end="url(#mult-arr-big)"/>
         <text x="319" y="414" font-size="11" fill="#16A34A" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">ΔY = k × ΔJ</text>
         <defs>
-          <marker id="mult-arr-small" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#475569"/></marker>
-          <marker id="mult-arr-big" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#16A34A"/></marker>
+          <marker id="mult-arr-small" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M 0 0 L 7 3.5 L 0 7" fill="none" stroke="#475569" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="mult-arr-big" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M 0 0 L 9 4.5 L 0 9" fill="none" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
       </svg>
       <div style="font-size:12px;color:#475569;text-align:center;margin-top:6px;line-height:1.55;">The grey arrow is the headline injection. The green arrow is the AD shift the economy actually feels, <strong>k times bigger</strong>.</div>
@@ -14135,8 +13993,8 @@ window.ECONOS_ICONS = {
       </div>
       <svg width="0" height="0" style="position:absolute;">
         <defs>
-          <marker id="tc-arr-green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#16A34A"/></marker>
-          <marker id="tc-arr-amber" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#F59E0B"/></marker>
+          <marker id="tc-arr-green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M 0 0 L 8 4 L 0 8" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="tc-arr-amber" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M 0 0 L 8 4 L 0 8" fill="none" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
       </svg>
     </div>
@@ -14185,7 +14043,7 @@ window.ECONOS_ICONS = {
             <!-- Shift arrow (leftward) -->
             <path d="M195 50 L155 50" stroke="#F59E0B" stroke-width="2" marker-end="url(#tcg-arr-amber-l)"/>
             <defs>
-              <marker id="tcg-arr-amber-l" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#F59E0B"/></marker>
+              <marker id="tcg-arr-amber-l" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M 0 0 L 8 4 L 0 8" fill="none" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
             </defs>
           </svg>
           <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#C2410C;border:1px solid #F7D19A;border-radius:8px;padding:6px 14px;background:#fff;font-weight:700;">Stagflation</span></div>
@@ -14223,7 +14081,7 @@ window.ECONOS_ICONS = {
             <!-- Shift arrow (rightward) -->
             <path d="M150 50 L195 50" stroke="#16A34A" stroke-width="2" marker-end="url(#tcg-arr-green-r)"/>
             <defs>
-              <marker id="tcg-arr-green-r" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#16A34A"/></marker>
+              <marker id="tcg-arr-green-r" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M 0 0 L 8 4 L 0 8" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
             </defs>
           </svg>
           <div style="margin-top:10px;text-align:center;"><span style="display:inline-block;font-size:12px;color:#065F46;border:1px solid #A6E0C4;border-radius:8px;padding:6px 14px;background:#fff;font-weight:700;">Favourable supply shock</span></div>
@@ -15234,12 +15092,12 @@ window.ECONOS_ICONS = {
       <div class="fw-core">
         <svg class="fw-arcs" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid meet">
           <defs>
-            <marker id="fly-arr-green"  viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34D399"/></marker>
-            <marker id="fly-arr-amber"  viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#FB923C"/></marker>
-            <marker id="fly-arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#A78BFA"/></marker>
-            <marker id="fly-arr-blue"   viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#60A5FA"/></marker>
-            <marker id="fly-feed-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>
-            <marker id="fly-feed-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>
+            <marker id="fly-arr-green"  viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="fly-arr-amber"  viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#FB923C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="fly-arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#A78BFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="fly-arr-blue"   viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="fly-feed-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="fly-feed-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
           </defs>
           <!-- Four cycle arcs: quadrant segments of a circle radius 105 around
                centre (300, 180). Each spans 50° in the corner between two
@@ -15793,7 +15651,7 @@ window.ECONOS_ICONS = {
       <div class="rtm-h">
       <svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="rtm-arr" markerWidth="11" markerHeight="11" refX="9" refY="4.5" orient="auto"><path d="M0,0 L0,9 L10,4.5 z" fill="#D97706"/></marker>
+          <marker id="rtm-arr" markerWidth="11" markerHeight="11" refX="9" refY="4.5" orient="auto"><path d="M 0 0 L 10 4.5 L 0 9" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
         <!-- Tile 1: Total revenue (blue) -->
         <rect x="14" y="14" width="240" height="270" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
@@ -15847,7 +15705,7 @@ window.ECONOS_ICONS = {
       <div class="rtm-v">
       <svg viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="rtm-arr-v" markerWidth="11" markerHeight="11" refX="9" refY="4.5" orient="auto"><path d="M0,0 L0,9 L10,4.5 z" fill="#D97706"/></marker>
+          <marker id="rtm-arr-v" markerWidth="11" markerHeight="11" refX="9" refY="4.5" orient="auto"><path d="M 0 0 L 10 4.5 L 0 9" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
         <!-- Tile 1: Total revenue (blue) -->
         <rect x="10" y="10" width="340" height="152" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
@@ -15921,7 +15779,7 @@ window.ECONOS_ICONS = {
       <div class="tri-h">
       <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="tri-trend-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/></marker>
+          <marker id="tri-trend-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#0B1426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- LEFT: Formula panel (always visible) -->
@@ -16028,7 +15886,7 @@ window.ECONOS_ICONS = {
       <div class="tri-v">
       <svg viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="tri-trend-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/></marker>
+          <marker id="tri-trend-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#0B1426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- Formula band (always visible) -->
@@ -17599,12 +17457,8 @@ window.ECONOS_ICONS = {
           <filter id="wpcShadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0B1426" flood-opacity="0.12"/>
           </filter>
-          <marker id="wpc-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
-          </marker>
-          <marker id="wpc-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
-          </marker>
+          <marker id="wpc-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="wpc-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- ════════ LEFT — Revenue side ════════ -->
@@ -18174,9 +18028,7 @@ window.ECONOS_ICONS = {
              firm axis (x=450) and its P* tick so nothing clashes. -->
         <line x1="356" y1="180" x2="408" y2="180" stroke="#0B1426" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#pcd-arr)"/>
         <defs>
-          <marker id="pcd-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/>
-          </marker>
+          <marker id="pcd-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#0B1426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- Caption beneath -->
@@ -18207,9 +18059,7 @@ window.ECONOS_ICONS = {
         <!-- Connector arrow -->
         <line x1="180" y1="344" x2="180" y2="368" stroke="#0B1426" stroke-width="1.6" marker-end="url(#pcd-arr-v)"/>
         <defs>
-          <marker id="pcd-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/>
-          </marker>
+          <marker id="pcd-arr-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#0B1426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- Individual firm panel -->
@@ -18587,7 +18437,7 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
       <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="hr-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#94A3B8"/></marker>
+          <marker id="hr-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
         <!-- connectors -->
         <g class="hr-2" style="display:none"><line x1="124" y1="95" x2="239" y2="95" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#hr-arr)"/></g>
@@ -18659,8 +18509,8 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
       <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="lsm-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16A34A"/></marker>
-          <marker id="lsm-b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/></marker>
+          <marker id="lsm-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="lsm-b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
         <!-- Panel A: shift -->
         <text x="60" y="30" font-size="12" font-weight="800" fill="#16A34A">Shift in labour demand</text>
@@ -18764,7 +18614,7 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="rm-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/></marker>
+          <marker id="rm-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
         <!-- Region B: workers here (left) -->
         <circle cx="135" cy="110" r="64" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
@@ -18812,8 +18662,8 @@ window.ECONOS_ICONS = {
     <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
       <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="lse-v" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#B45309"/></marker>
-          <marker id="lse-h" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#1D4ED8"/></marker>
+          <marker id="lse-v" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M 8 0 L 0 3 L 8 6" fill="none" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="lse-h" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M 8 0 L 0 3 L 8 6" fill="none" stroke="#1D4ED8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
         <!-- Panel A: inelastic (steep) supply -->
         <text x="60" y="28" font-size="12" font-weight="800" fill="#B45309">Inelastic labour supply</text>
@@ -19427,7 +19277,7 @@ window.ECONOS_ICONS = {
         <div class="ttn-panel">
           <div class="ttn-cap"><span class="ttn-badge" style="background:#2563EB;">Then</span>Trade flows dominated by advanced economies.</div>
           <svg viewBox="0 0 300 150" width="100%" style="display:block;">
-            <defs><marker id="ttnBlue" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563EB"/></marker></defs>
+            <defs><marker id="ttnBlue" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M 0 0 L 6 3 L 0 6" fill="none" stroke="#2563EB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
             <line x1="150" y1="75" x2="68" y2="42" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
             <line x1="150" y1="75" x2="68" y2="110" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
             <line x1="150" y1="75" x2="240" y2="46" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
@@ -19442,7 +19292,7 @@ window.ECONOS_ICONS = {
         <div class="ttn-panel">
           <div class="ttn-cap"><span class="ttn-badge" style="background:#EA580C;">Now</span>Emerging economies are major suppliers to the world.</div>
           <svg viewBox="0 0 300 150" width="100%" style="display:block;">
-            <defs><marker id="ttnOrange" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#EA580C"/></marker></defs>
+            <defs><marker id="ttnOrange" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M 0 0 L 6 3 L 0 6" fill="none" stroke="#EA580C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
             <line x1="95" y1="116" x2="132" y2="90" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
             <line x1="244" y1="118" x2="176" y2="88" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
             <line x1="250" y1="52" x2="178" y2="70" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
@@ -19837,7 +19687,7 @@ window.ECONOS_ICONS = {
         </div>
         <div class="bmi-mid">
           <div class="bmi-ml">Must be financed by</div>
-          <svg viewBox="0 0 80 24" width="72"><defs><marker id="bmiar" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7C3AED"/></marker></defs><line x1="4" y1="12" x2="70" y2="12" stroke="#7C3AED" stroke-width="3" marker-end="url(#bmiar)"/></svg>
+          <svg viewBox="0 0 80 24" width="72"><defs><marker id="bmiar" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M 0 0 L 6 3 L 0 6" fill="none" stroke="#7C3AED" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><line x1="4" y1="12" x2="70" y2="12" stroke="#7C3AED" stroke-width="3" marker-end="url(#bmiar)"/></svg>
         </div>
         <div class="bmi-box" style="background:#F5F3FF;border:1.5px solid #DDD6FE;">
           <div class="bmi-h"><div class="bmi-hic" style="background:#EDE9FE;">📊</div><div class="bmi-tt" style="color:#5B21B6;">Financial account surplus</div></div>
@@ -20421,8 +20271,8 @@ window.ECONOS_ICONS = {
           </div>
           <svg viewBox="0 0 360 116" style="width:100%;height:auto;display:block;">
             <defs>
-              <marker id="pls-l" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M9,0 L0,4.5 L9,9 Z" fill="#94A3B8"/></marker>
-              <marker id="pls-r" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#94A3B8"/></marker>
+              <marker id="pls-l" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M 9 0 L 0 4.5 L 9 9" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+              <marker id="pls-r" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto"><path d="M 0 0 L 9 4.5 L 0 9" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
             </defs>
             <line x1="180" y1="4" x2="180" y2="82" stroke="#0B1426" stroke-width="1.6" stroke-dasharray="5 4"/>
             ${[40,78,116,154].map(function(x){return '<g transform="translate('+x+',46)" fill="#16A34A"><circle cx="0" cy="-13" r="6.5"/><path d="M-8,15 C-8,2 8,2 8,15 Z"/></g>';}).join('')}
@@ -20534,7 +20384,7 @@ window.ECONOS_ICONS = {
           }).join('')}
         </div>
         <svg viewBox="0 0 760 52" style="width:100%;height:52px;display:block;" preserveAspectRatio="none">
-          <defs><marker id="ptc-ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#A78BFA"/></marker></defs>
+          <defs><marker id="ptc-ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M 0 0 L 9 4.5 L 0 9" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
           <path d="M 690 2 C 720 46, 60 46, 70 6" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#ptc-ah)"/>
         </svg>
         <div style="text-align:center;font-size:11px;color:#7C3AED;font-weight:700;margin-top:2px;">Low income feeds back on itself — the trap repeats.</div>
@@ -20564,7 +20414,7 @@ window.ECONOS_ICONS = {
           <div class="inl-hd"><span class="inl-bdg">1</span><span class="inl-hl">THE INCOME LADDER</span></div>
           <div class="inl-diagram">
             <svg viewBox="0 0 280 350" style="width:100%;height:auto;display:block;">
-              <defs><marker id="inl-u" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto"><path d="M0,8 L4,0 L8,8 Z" fill="#94A3B8"/></marker><marker id="inl-d" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0,0 L4,8 L8,0 Z" fill="#94A3B8"/></marker></defs>
+              <defs><marker id="inl-u" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto"><path d="M 0 8 L 4 0 L 8 8" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="inl-d" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M 0 0 L 4 8 L 8 0" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
               <!-- income axis -->
               <line x1="20" y1="34" x2="20" y2="320" stroke="#94A3B8" stroke-width="1.5" marker-start="url(#inl-u)" marker-end="url(#inl-d)"/>
               <text x="14" y="180" font-size="10.5" font-weight="700" fill="#475569" transform="rotate(-90 14 180)" text-anchor="middle">Income (£ per year)</text>
@@ -21091,7 +20941,7 @@ window.ECONOS_ICONS = {
           }).join('')}
         </div>
         <svg viewBox="0 0 780 52" style="width:100%;height:52px;display:block;" preserveAspectRatio="none">
-          <defs><marker id="sgl-ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#F59E0B"/></marker></defs>
+          <defs><marker id="sgl-ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M 0 0 L 9 4.5 L 0 9" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
           <path d="M 705 2 C 735 46, 60 46, 70 6" fill="none" stroke="#F59E0B" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#sgl-ah)"/>
         </svg>
         <div style="text-align:center;font-size:11px;color:#B45309;font-weight:700;margin-top:2px;">Harrod-Domar: growth ≈ savings ratio (s) ÷ capital-output ratio (k) — too little saving traps the loop.</div>
@@ -21291,9 +21141,9 @@ window.ECONOS_ICONS = {
           <linearGradient id="dbt-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7DD3FC"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
           <linearGradient id="dbt-debt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient>
           <linearGradient id="dbt-tub" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient>
-          <marker id="dbt-arr-g" markerWidth="9" markerHeight="9" refX="4" refY="8" orient="auto"><polygon points="0,0 8,0 4,9" fill="#16A34A"/></marker>
-          <marker id="dbt-arr-o" markerWidth="9" markerHeight="9" refX="4" refY="8" orient="auto"><polygon points="0,0 8,0 4,9" fill="#EA580C"/></marker>
-          <marker id="dbt-arr-p" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><polygon points="0,0 0,8 9,4" fill="#7C3AED"/></marker>
+          <marker id="dbt-arr-g" markerWidth="9" markerHeight="9" refX="4" refY="8" orient="auto"><path d="M 0 0 L 4 9 L 8 0" fill="none" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="dbt-arr-o" markerWidth="9" markerHeight="9" refX="4" refY="8" orient="auto"><path d="M 0 0 L 4 9 L 8 0" fill="none" stroke="#EA580C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="dbt-arr-p" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M 0 0 L 9 4 L 0 8" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- Tax revenue tap (flows in) -->
@@ -21378,9 +21228,9 @@ window.ECONOS_ICONS = {
       <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A snowball labelled DEBT grows as new deficits and interest payments roll onto it over time" style="width:100%;height:auto;display:block;">
         <defs>
           <radialGradient id="dsb-ball" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#EFF4FB"/><stop offset="1" stop-color="#CBD8EA"/></radialGradient>
-          <marker id="dsb-o" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><polygon points="0,0 0,8 9,4" fill="#EA580C"/></marker>
-          <marker id="dsb-p" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><polygon points="0,0 0,8 9,4" fill="#7C3AED"/></marker>
-          <marker id="dsb-b" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><polygon points="0,0 0,8 9,4" fill="#2563EB"/></marker>
+          <marker id="dsb-o" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M 0 0 L 9 4 L 0 8" fill="none" stroke="#EA580C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="dsb-p" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M 0 0 L 9 4 L 0 8" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="dsb-b" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M 0 0 L 9 4 L 0 8" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- ground sweep -->
@@ -22157,7 +22007,7 @@ window.ECONOS_ICONS = {
   gameMatrixDilemma: `
     <svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
       <defs>
-        <marker id="gmd-grn" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>
+        <marker id="gmd-grn" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
       <rect width="720" height="430" fill="#FFFFFF" rx="14"/>
       <text x="420" y="34" text-anchor="middle" font-size="15" font-weight="800" fill="#1E293B" letter-spacing="0.04em">Firm B</text>
@@ -22279,8 +22129,8 @@ window.ECONOS_ICONS = {
   repeatedGameCycle: `
     <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">
       <defs>
-        <marker id="rgc-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#94A3B8"/></marker>
-        <marker id="rgc-loop" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>
+        <marker id="rgc-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="rgc-loop" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
       <rect width="760" height="340" fill="#FFFFFF" rx="14"/>
 
@@ -22389,9 +22239,9 @@ window.ECONOS_ICONS = {
           <div class="fwn-q" style="margin-bottom:6px;">What is the firm<br/>trying to achieve?</div>
           <svg width="120" height="28" viewBox="0 0 120 28">
             <defs>
-              <marker id="fwn-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
-              <marker id="fwn-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker>
-              <marker id="fwn-arr-purple-l" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z" fill="#7C3AED"/></marker>
+              <marker id="fwn-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+              <marker id="fwn-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+              <marker id="fwn-arr-purple-l" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 10 0 L 0 5 L 10 10" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
             </defs>
             <line x1="20" y1="14" x2="100" y2="14" stroke="#7C3AED" stroke-width="2" marker-start="url(#fwn-arr-purple-l)"/>
             <line x1="60" y1="14" x2="100" y2="14" stroke="#D97706" stroke-width="2" marker-end="url(#fwn-arr-amber)"/>
@@ -24010,9 +23860,7 @@ window.ECONOS_ICONS = {
       <svg viewBox="0 0 720 620" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- Dashed arrows from each tile pointing to the centre -->
         <defs>
-          <marker id="cl-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
-          </marker>
+          <marker id="cl-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
         <line x1="360" y1="160" x2="360" y2="260" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#cl-arr)"/>
         <line x1="170" y1="220" x2="290" y2="290" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#cl-arr)"/>
@@ -24523,11 +24371,11 @@ window.ECONOS_ICONS = {
       </div>
       <div class="bop-uk-arrows">
         <svg viewBox="0 0 200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><marker id="bopuk-arr-rose-v2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/></marker></defs>
+          <defs><marker id="bopuk-arr-rose-v2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
           <path d="M 100 4 Q 100 40 200 56" fill="none" stroke="#E11D48" stroke-width="2.5" marker-end="url(#bopuk-arr-rose-v2)"/>
         </svg>
         <svg viewBox="0 0 200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><marker id="bopuk-arr-green-v2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker></defs>
+          <defs><marker id="bopuk-arr-green-v2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
           <path d="M 100 4 Q 100 40 0 56" fill="none" stroke="#16A34A" stroke-width="2.5" marker-end="url(#bopuk-arr-green-v2)"/>
         </svg>
       </div>
@@ -24564,9 +24412,7 @@ window.ECONOS_ICONS = {
       </style>
       <svg viewBox="0 0 760 432" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="bophub-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
-          </marker>
+          <marker id="bophub-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
         <!-- curved spokes: from each tile's inner edge to ~10px SHORT of the
              hub rim (r=88) so the arrowhead never clashes with the circle -->
@@ -24696,7 +24542,7 @@ window.ECONOS_ICONS = {
           <div class="bop-mi-arrow-inner">
             <span>Must be</span>
             <span>financed by</span>
-            <svg class="bop-mi-arrow-svg" viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg"><defs><marker id="bop-mi-am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1426"/></marker></defs><line x1="2" y1="12" x2="56" y2="12" stroke="#0B1426" stroke-width="2.5" marker-end="url(#bop-mi-am)"/></svg>
+            <svg class="bop-mi-arrow-svg" viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg"><defs><marker id="bop-mi-am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#0B1426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><line x1="2" y1="12" x2="56" y2="12" stroke="#0B1426" stroke-width="2.5" marker-end="url(#bop-mi-am)"/></svg>
           </div>
         </div>
         <div class="bop-mi-arrow-mobile">Must be financed by <span class="bop-mi-arrow-mobile-icon">↓</span></div>
@@ -25002,9 +24848,9 @@ window.ECONOS_ICONS = {
       <div class="vsc-h">
         <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
           <defs>
-            <marker id="vsc-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/></marker>
-            <marker id="vsc-arr-green-l" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
-            <marker id="vsc-arr-purple-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
+            <marker id="vsc-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="vsc-arr-green-l" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="vsc-arr-purple-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
           </defs>
 
           <!-- Stage boxes (5 across) -->
@@ -25066,8 +24912,8 @@ window.ECONOS_ICONS = {
                  to match each line's direction, so they tip UP on the green
                  backward arrow (line goes up) and DOWN on the purple forward
                  arrow (line goes down). -->
-            <marker id="vscv-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
-            <marker id="vscv-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
+            <marker id="vscv-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="vscv-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
           </defs>
 
           <!-- LEFT column: vertical axis (x = 60). Both arrows ORIGINATE
@@ -25142,7 +24988,7 @@ window.ECONOS_ICONS = {
       <div class="hci-h">
       <svg viewBox="0 0 760 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="hci-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
+          <marker id="hci-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- Firm A (top of left column) -->
@@ -25199,7 +25045,7 @@ window.ECONOS_ICONS = {
       <div class="hci-v">
       <svg viewBox="0 0 360 660" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="hci-arr-blue-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
+          <marker id="hci-arr-blue-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- Firm A (top-left tile) -->
@@ -25497,7 +25343,7 @@ window.ECONOS_ICONS = {
       <div class="dba-h">
       <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="dba-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+          <marker id="dba-arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- Section labels -->
@@ -25591,7 +25437,7 @@ window.ECONOS_ICONS = {
       <div class="dba-v">
       <svg viewBox="0 0 360 880" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <defs>
-          <marker id="dba-arr-grey-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+          <marker id="dba-arr-grey-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
         <!-- ============ BEFORE block (top) ============ -->

@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.168.0 — 2026-06-11
+
+### Chevron arrowheads — icons.js hand-rolled markers (sweep complete)
+
+- Converted 151 of icons.js's 160 inline markers from filled triangles to open
+  chevrons, matching the chart-engine restyle. Each triangle was rewritten as a
+  chevron through its OWN three vertices (base → apex → base, stroke not fill),
+  so direction, tip position and refX alignment are preserved exactly — no
+  arrows move or flip.
+- The 9 left as filled triangles are correct: 3 are axis arrowheads (`*-ax`,
+  which match the engine's own filled axis arrows) and 6 are non-triangular
+  (curved loop/feedback markers).
+- One-off migration committed as `scripts/chevronize-icons.mjs` for the record.
+- **Arrowhead sweep now fully complete**: every chart arrow (engine specs +
+  hand-rolled icons) is one consistent open chevron. `sw.js` cache v556 → v557.
+
 ## 0.167.0 — 2026-06-11
 
 ### Canonical chevron arrowheads — one arrow style sitewide

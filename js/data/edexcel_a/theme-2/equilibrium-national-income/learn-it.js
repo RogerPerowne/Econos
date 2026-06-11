@@ -42,7 +42,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in the J=W and 45° views of equilibrium, the AD/AS view, and the five filters for reading national-income data.',
 
   intro: {
-    heroKey: 'heroMultiplier',
+    heroKey: 'heroEquilibriumIncome',
     summary: 'Equilibrium national income is where the economy settles when planned spending equals output – the same point can be shown by injections meeting withdrawals, by E crossing the 45° line, or by AD meeting SRAS. Output gaps (the distance from full-employment output) are covered on the dedicated `output-gaps` topic (2.5.2).',
     doInThis: 'Work through equilibrium on the J=W and 45° views, on AD/AS, then read GDP data with five welfare filters.',
     outcomes: [

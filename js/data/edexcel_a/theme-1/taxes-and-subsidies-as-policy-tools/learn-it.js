@@ -6,7 +6,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Move from the mechanics of indirect taxes and subsidies to the policy question: when are they justified, how do real UK schemes perform, and how do you evaluate them in a 25-mark essay?',
   intro: {
-    heroKey: 'heroIntervention',
+    heroKey: 'heroPolicyTools',
     summary: 'A tax or subsidy in an otherwise efficient market destroys welfare. The case for either rests on a market failure they correct – a negative externality (tax) or a positive externality / merit good (subsidy). Whether the policy works depends on elasticity, the size of the externality, and unintended consequences.',
     doInThis: 'Work through 3 cards covering the justification logic (Pigouvian taxes, merit-good subsidies), five UK case studies (sugar levy, fuel duty, tobacco, CAP, Contracts for Difference), and the three-axis evaluation framework you need for 25-mark essays. <strong>Mechanics and incidence are covered in topic 2.9 – Indirect Taxes & Subsidies.</strong>',
     outcomes: [

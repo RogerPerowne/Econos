@@ -43,9 +43,9 @@ const check = process.argv.includes('--check');
    hand-rolled SVG to engine specs; raised to 6352 (v0.155.31) for the 20 new
    Theme-3 hero covers, and to 6417 (v0.155.32) for the 19 new Theme-4 hero
    covers; raised to 6717 (v0.155.33) when all 39 Theme-3/4 covers were enriched
-   with gradient/glow defs for visual richness (hand-rolled SVG art, fills cannot
-   take a CSS var — same rationale as the town/revenueThreeMetrics raises). */
-const DUP_BASELINE = 6717;
+   with gradient/glow defs, and to 6889 (v0.155.34) for the 25 enriched Theme-1/2
+   covers (hand-rolled SVG art, fills cannot take a CSS var). */
+const DUP_BASELINE = 6889;
 
 const css = readFileSync('styles.css', 'utf8');
 

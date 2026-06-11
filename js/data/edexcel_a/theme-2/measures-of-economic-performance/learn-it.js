@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   goal: 'Master the four macro indicators, the three GDP approaches, real vs nominal, GNI/PPP, output gaps, and the limits of GDP as a welfare measure.',
 
   intro: {
-    heroKey: 'heroGrowth',
+    heroKey: 'heroPerformance',
     summary: 'GDP is the headline number every policymaker watches. But knowing its limits – and when to switch to GNI, real values, PPP or wellbeing measures – is what separates A* answers.',
     doInThis: 'Explore the four headline indicators, the three GDP measurement approaches, real vs nominal, GNI and PPP, the actual-vs-potential output framework, causes of growth, the limits of GDP, and how to read growth data in exams.',
     outcomes: [

@@ -20,7 +20,7 @@ window.ECONOS_TOPIC = {
   goal: 'See the macro trade-offs play out in five real UK cases, and build the four-dimensional A* framework for evaluating any policy conflict.',
 
   intro: {
-    heroKey: 'heroMacroObjectives',
+    heroKey: 'heroMacroConflicts',
     summary: 'Macroeconomic objectives often pull in different directions. This topic shows the theory of trade-offs in five real-world cases – 1970s stagflation, 2021–23 inflation, the 2010s current-account deficit, 2010–12 austerity, the net-zero pathway – and the framework for judging any policy that has to make a hard choice.',
     doInThis: 'Six cards: the conflict lens (a map of five real UK trade-offs); diagnose three real policy cases; the 1970s stagflation case in depth; the 2021–23 inflation surge in real time; the supply-side escape route; and the four-dimensional A* verdict framework.',
     outcomes: [

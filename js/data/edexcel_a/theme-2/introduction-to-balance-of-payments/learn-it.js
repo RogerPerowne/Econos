@@ -26,7 +26,8 @@ window.ECONOS_TOPIC = {
   estTime: '~12 min',
   goal: 'Read the balance of payments like an economist – the three accounts, the current account in detail, what moves it, who funds a deficit, and how to judge whether a deficit actually matters.',
   intro: {
-    summary: 'The balance of payments records every transaction between the UK and the rest of the world. It is built from three accounts – current, capital and financial – and the whole thing always sums to zero. The current account is the star: it tells you whether a country is living within its means, and a deficit there must be financed by inflows on the financial account.',
+
+    heroKey: 'heroIntroBoP',summary: 'The balance of payments records every transaction between the UK and the rest of the world. It is built from three accounts – current, capital and financial – and the whole thing always sums to zero. The current account is the star: it tells you whether a country is living within its means, and a deficit there must be financed by inflows on the financial account.',
     doInThis: 'Meet the three accounts and why they must balance, break the current account into its four parts, learn what drives it, see who funds a deficit, judge when a deficit is a problem, and finish with the exam toolkit.',
     outcomes: [
       'Define the balance of payments and its three accounts',

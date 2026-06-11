@@ -7003,6 +7003,452 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  heroEquilibriumIncome: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="eq-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="eq-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <marker id="eq-a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#16A34A"/></marker><marker id="eq-a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#F59E0B"/></marker><radialGradient id="eq-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="eq-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/><stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="eq-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BFDBFE"/><stop offset="100%" stop-color="#93C5FD"/></linearGradient><linearGradient id="eq-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BFDBFE"/><stop offset="100%" stop-color="#93C5FD"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#eq-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#eq-grd)"/>
+      <g filter="url(#eq-soft)"><rect x="40" y="168" width="72" height="60" rx="10" fill="url(#eq-k0)" stroke="#1E40AF" stroke-width="2"/><rect x="40" y="168" width="72" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><text x="76" y="204" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle">House-</text><text x="76" y="218" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle">holds</text></g>
+   <g filter="url(#eq-soft)"><rect x="168" y="168" width="72" height="60" rx="10" fill="url(#eq-k1)" stroke="#1E40AF" stroke-width="2"/><rect x="168" y="168" width="72" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/><text x="204" y="204" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle">Firms</text></g>
+   <path d="M 112 184 C 140 168 140 168 168 184" fill="none" stroke="#16A34A" stroke-width="3.5" marker-end="url(#eq-a1)"/>
+   <path d="M 168 212 C 140 228 140 228 112 212" fill="none" stroke="#F59E0B" stroke-width="3.5" marker-end="url(#eq-a2)"/>
+   <text x="140" y="158" font-size="10.5" fill="#16A34A" font-weight="700" text-anchor="middle">spending</text>
+   <text x="140" y="246" font-size="10.5" fill="#B45309" font-weight="700" text-anchor="middle">income</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroInjections: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ij-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ij-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="ij-tank" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EFF6FF"/><stop offset="100%" stop-color="#DBEAFE"/></linearGradient><marker id="ij-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#16A34A"/></marker><marker id="ij-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#F43F5E"/></marker><radialGradient id="ij-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient>
+        <linearGradient id="ij-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/><stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/></linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ij-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ij-grd)"/>
+      <g filter="url(#ij-sh)"><rect x="96" y="170" width="88" height="120" rx="10" fill="url(#ij-tank)" stroke="#1E40AF" stroke-width="2.5"/><rect x="96" y="220" width="88" height="70" rx="0" fill="#60A5FA" opacity="0.55"/><ellipse cx="140" cy="220" rx="44" ry="6" fill="#3B82F6" opacity="0.6"/></g>
+   <path d="M 40 150 L 110 150 L 110 178" fill="none" stroke="#16A34A" stroke-width="7" stroke-linecap="round" marker-end="url(#ij-in)"/>
+   <text x="58" y="142" font-size="10.5" fill="#16A34A" font-weight="800">injections</text>
+   <path d="M 184 250 L 236 250" fill="none" stroke="#F43F5E" stroke-width="7" stroke-linecap="round" marker-end="url(#ij-out)"/>
+   <text x="206" y="242" font-size="10.5" fill="#BE123C" font-weight="800" text-anchor="middle">withdrawals</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroNationalIncome: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ni-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ni-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ni-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="ni-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/><stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/></linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ni-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ni-grd)"/>
+      <g filter="url(#ni-sh)">
+     <path d="M 140 196 L 140 116 A 80 80 0 0 1 216 222 Z" fill="#3B82F6"/>
+     <path d="M 140 196 L 216 222 A 80 80 0 0 1 92 264 Z" fill="#60A5FA"/>
+     <path d="M 140 196 L 92 264 A 80 80 0 0 1 88 140 Z" fill="#93C5FD"/>
+     <path d="M 140 196 L 88 140 A 80 80 0 0 1 140 116 Z" fill="#BFDBFE"/>
+     <circle cx="140" cy="196" r="80" fill="none" stroke="#1E40AF" stroke-width="2.5"/>
+     <circle cx="140" cy="196" r="30" fill="#FFFFFF" stroke="#1E40AF" stroke-width="2"/>
+     <text x="140" y="201" font-size="16" font-weight="800" fill="#1E3A8A" text-anchor="middle">£</text>
+   </g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroOutputGaps: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="og-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="og-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="og-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="og-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/><stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="og-cc0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#og-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#og-grd)"/>
+      <rect x="46" y="132" width="188" height="130" rx="12" fill="url(#og-cc0)" stroke="#6D28D9" stroke-width="2.5"/><line x1="64" y1="148" x2="64" y2="244" stroke="#94A3B8" stroke-width="2"/><line x1="64" y1="244" x2="218" y2="244" stroke="#94A3B8" stroke-width="2"/><line x1="64" y1="240" x2="216" y2="160" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6 4"/>
+     <path d="M 64 248 Q 100 196 120 214 T 168 184 T 216 150" fill="none" stroke="#7C3AED" stroke-width="3"/>
+     <path d="M 96 224 L 108 214 L 100 230 Z" fill="#22C55E" opacity="0.6"/>
+     <path d="M 150 178 L 162 188 L 156 172 Z" fill="#F43F5E" opacity="0.6"/>
+     <text x="208" y="150" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="end">actual</text>
+     <text x="208" y="172" font-size="10" font-weight="700" fill="#64748B" text-anchor="end">trend</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPerformance: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="pp-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pp-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="pp-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="pp-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/><stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/></linearGradient>
+        <radialGradient id="pp-d0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#22C55E"/><stop offset="100%" stop-color="#16A34A"/></radialGradient><radialGradient id="pp-d1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FBBF24"/><stop offset="100%" stop-color="#D97706"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#pp-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pp-grd)"/>
+      <g filter="url(#pp-sh)"><rect x="50" y="140" width="180" height="120" rx="12" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2.5"/></g>
+   <path d="M 68 210 A 30 30 0 0 1 128 210" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/><path d="M 68 210 A 30 30 0 0 1 128 210" fill="none" stroke="url(#pp-d0)" stroke-width="7"/><line x1="98" y1="210" x2="110.9" y2="192.2" stroke="#334155" stroke-width="3.5" stroke-linecap="round"/><circle cx="98" cy="210" r="6" fill="#334155"/>
+   <path d="M 152 210 A 30 30 0 0 1 212 210" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/><path d="M 152 210 A 30 30 0 0 1 212 210" fill="none" stroke="url(#pp-d1)" stroke-width="7"/><line x1="182" y1="210" x2="175.2" y2="189.1" stroke="#334155" stroke-width="3.5" stroke-linecap="round"/><circle cx="182" cy="210" r="6" fill="#334155"/>
+   <rect x="74" y="232" width="48" height="8" rx="4" fill="#86EFAC"/><rect x="158" y="232" width="48" height="8" rx="4" fill="#FDE68A"/>
+   <text x="140" y="162" font-size="10.5" font-weight="800" fill="#1E3A8A" text-anchor="middle">DASHBOARD</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroGrowthImpact: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="gw-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="gw-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="gw-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient>
+        <linearGradient id="gw-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/><stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="gw-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86EFAC"/><stop offset="100%" stop-color="#22C55E"/></linearGradient><linearGradient id="gw-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86EFAC"/><stop offset="100%" stop-color="#22C55E"/></linearGradient><linearGradient id="gw-k2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86EFAC"/><stop offset="100%" stop-color="#22C55E"/></linearGradient><linearGradient id="gw-k3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86EFAC"/><stop offset="100%" stop-color="#22C55E"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#gw-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#gw-grd)"/>
+      <g filter="url(#gw-soft)"><rect x="70" y="250" width="24" height="44" rx="3" fill="url(#gw-k0)" stroke="#16A34A" stroke-width="2"/><rect x="100" y="220" width="24" height="74" rx="3" fill="url(#gw-k1)" stroke="#16A34A" stroke-width="2"/><rect x="130" y="190" width="24" height="104" rx="3" fill="url(#gw-k2)" stroke="#16A34A" stroke-width="2"/><rect x="160" y="160" width="24" height="134" rx="3" fill="url(#gw-k3)" stroke="#16A34A" stroke-width="2"/></g>
+   <line x1="210" y1="252" x2="210" y2="132" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 201 141 L 210 132 L 219 141" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+   <circle cx="232" cy="120" r="14" fill="#4ADE80"/><path d="M 232 120 q 10 -10 18 -4 q -4 12 -18 4" fill="#16A34A"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroInflationCauses: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="if-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="if-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="if-bal" cx="40%" cy="32%" r="72%"><stop offset="0%" stop-color="#FB7185"/><stop offset="100%" stop-color="#E11D48"/></radialGradient><radialGradient id="if-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDA4AF" stop-opacity="0.55"/><stop offset="70%" stop-color="#FDA4AF" stop-opacity="0.12"/><stop offset="100%" stop-color="#FDA4AF" stop-opacity="0"/></radialGradient>
+        <linearGradient id="if-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFE4E6" stop-opacity="0.85"/><stop offset="100%" stop-color="#FFE4E6" stop-opacity="0.35"/></linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#if-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#if-grd)"/>
+      <g filter="url(#if-sh)"><ellipse cx="140" cy="178" rx="58" ry="66" fill="url(#if-bal)" stroke="#BE123C" stroke-width="2.5"/><ellipse cx="120" cy="156" rx="16" ry="20" fill="#FFFFFF" opacity="0.3"/><path d="M 140 244 l -7 10 l 14 0 z" fill="#BE123C"/><line x1="140" y1="254" x2="140" y2="290" stroke="#9F1239" stroke-width="2" stroke-dasharray="4 3"/><text x="140" y="190" font-size="34" font-weight="800" fill="#FFFFFF" text-anchor="middle" font-family="Fraunces,Georgia,serif">£</text></g>
+   <line x1="220" y1="220" x2="220" y2="140" stroke="#BE123C" stroke-width="6" stroke-linecap="round"/><path d="M 211 149 L 220 140 L 229 149" fill="none" stroke="#BE123C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroLRAS: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="lr-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="lr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="lr-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/><stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/><stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/></radialGradient>
+        <linearGradient id="lr-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/><stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="lr-cc0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#lr-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#lr-grd)"/>
+      <rect x="54" y="128" width="172" height="140" rx="12" fill="url(#lr-cc0)" stroke="#B45309" stroke-width="2.5"/><line x1="72" y1="144" x2="72" y2="250" stroke="#94A3B8" stroke-width="2"/><line x1="72" y1="250" x2="210" y2="250" stroke="#94A3B8" stroke-width="2"/><line x1="140" y1="148" x2="140" y2="246" stroke="#D97706" stroke-width="5" stroke-linecap="round"/>
+     <text x="150" y="158" font-size="13" font-weight="800" fill="#B45309">LRAS</text>
+     <text x="140" y="262" font-size="9.5" fill="#92400E" text-anchor="middle">full capacity</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroSRAS: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="sr-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="sr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="sr-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/><stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/><stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/></radialGradient>
+        <linearGradient id="sr-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/><stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="sr-cc0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#sr-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#sr-grd)"/>
+      <rect x="54" y="128" width="172" height="140" rx="12" fill="url(#sr-cc0)" stroke="#B45309" stroke-width="2.5"/><line x1="72" y1="144" x2="72" y2="250" stroke="#94A3B8" stroke-width="2"/><line x1="72" y1="250" x2="210" y2="250" stroke="#94A3B8" stroke-width="2"/><path d="M 74 244 C 120 240 150 210 206 150" fill="none" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+     <text x="208" y="150" font-size="13" font-weight="800" fill="#B45309" text-anchor="end">SRAS</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroMacroConflicts: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="cf-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="cf-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="cf-beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FCD34D"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient><radialGradient id="cf-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/><stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/><stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/></radialGradient>
+        <linearGradient id="cf-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/><stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/></linearGradient>
+        <radialGradient id="cf-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="cf-c1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FECDD3"/><stop offset="100%" stop-color="#FB7185"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#cf-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#cf-grd)"/>
+      <g filter="url(#cf-sh)"><polygon points="140,214 122,266 158,266" fill="#92400E"/><rect x="52" y="198" width="176" height="13" rx="6" fill="url(#cf-beam)" stroke="#92400E" stroke-width="2" transform="rotate(7 140 205)"/></g>
+   <g filter="url(#cf-soft)"><ellipse cx="70" cy="176" rx="24" ry="15.36" fill="url(#cf-c0)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="61.84" cy="170.72" rx="7.199999999999999" ry="3.84" fill="#FFFFFF" opacity="0.4"/><text x="70" y="181.76" font-size="19.68" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">↑</text></g>
+   <g filter="url(#cf-soft)"><ellipse cx="212" cy="230" rx="24" ry="15.36" fill="url(#cf-c1)" stroke="#9F1239" stroke-width="1.5"/><ellipse cx="203.84" cy="224.72" rx="7.199999999999999" ry="3.84" fill="#FFFFFF" opacity="0.4"/><text x="212" y="235.76" font-size="19.68" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">↓</text></g>
+   <text x="70" y="142" font-size="9.5" fill="#B45309" font-weight="700" text-anchor="middle">growth</text>
+   <text x="212" y="270" font-size="9.5" fill="#9F1239" font-weight="700" text-anchor="middle">inflation</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroFiscalDS: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="fd-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="fd-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="fd-roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#1E40AF"/></linearGradient><radialGradient id="fd-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="fd-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/><stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/></linearGradient>
+        <radialGradient id="fd-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="fd-c1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FEF3C7"/><stop offset="100%" stop-color="#FCD34D"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#fd-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#fd-grd)"/>
+      <g filter="url(#fd-sh)"><polygon points="74,166 186,166 130,132" fill="url(#fd-roof)" stroke="#1E3A8A" stroke-width="2"/><rect x="74" y="166" width="116" height="10" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2"/><rect x="84" y="176" width="12" height="84" fill="#93C5FD" stroke="#1E40AF" stroke-width="1.5"/><rect x="84" y="176" width="4" height="84" fill="#FFFFFF" opacity="0.3"/><rect x="114" y="176" width="12" height="84" fill="#93C5FD" stroke="#1E40AF" stroke-width="1.5"/><rect x="114" y="176" width="4" height="84" fill="#FFFFFF" opacity="0.3"/><rect x="144" y="176" width="12" height="84" fill="#93C5FD" stroke="#1E40AF" stroke-width="1.5"/><rect x="144" y="176" width="4" height="84" fill="#FFFFFF" opacity="0.3"/><rect x="174" y="176" width="12" height="84" fill="#93C5FD" stroke="#1E40AF" stroke-width="1.5"/><rect x="174" y="176" width="4" height="84" fill="#FFFFFF" opacity="0.3"/><rect x="66" y="260" width="132" height="14" rx="2" fill="#1E3A8A"/></g>
+   <g filter="url(#fd-soft)"><ellipse cx="214" cy="262" rx="17" ry="10.88" fill="url(#fd-c0)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="208.22" cy="258.26" rx="5.1" ry="2.72" fill="#FFFFFF" opacity="0.4"/><text x="214" y="266.08" font-size="13.94" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text><ellipse cx="214" cy="244" rx="17" ry="10.88" fill="url(#fd-c1)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="208.22" cy="240.26" rx="5.1" ry="2.72" fill="#FFFFFF" opacity="0.4"/><text x="214" y="248.08" font-size="13.94" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text></g><line x1="214" y1="226" x2="214" y2="190" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 205 199 L 214 190 L 223 199" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroMonetaryDS: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="mn-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="mn-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="mn-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="mn-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/><stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/></linearGradient>
+        <radialGradient id="mn-d0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#7C3AED"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#mn-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#mn-grd)"/>
+      <g filter="url(#mn-soft)"><polygon points="70,160 150,160 110,130" fill="#7C3AED" stroke="#5B21B6" stroke-width="2"/><rect x="70" y="160" width="80" height="10" fill="#8B5CF6" stroke="#5B21B6" stroke-width="2"/><rect x="78" y="170" width="12" height="76" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1.5"/><rect x="100" y="170" width="12" height="76" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1.5"/><rect x="122" y="170" width="12" height="76" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1.5"/><rect x="64" y="246" width="92" height="12" rx="2" fill="#5B21B6"/></g>
+   <g filter="url(#mn-sh)"><path d="M 160 224 A 36 36 0 0 1 232 224" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/><path d="M 160 224 A 36 36 0 0 1 232 224" fill="none" stroke="url(#mn-d0)" stroke-width="7"/><line x1="196" y1="224" x2="200.4" y2="196.3" stroke="#334155" stroke-width="3.5" stroke-linecap="round"/><circle cx="196" cy="224" r="6" fill="#334155"/><text x="196" y="246" font-size="15" font-weight="800" fill="#5B21B6" text-anchor="middle">%</text></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroIntroBoP: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ib-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ib-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ib-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="ib-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/><stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/></linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ib-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ib-grd)"/>
+      <g filter="url(#ib-sh)"><rect x="78" y="138" width="124" height="148" rx="10" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2.5"/><rect x="116" y="130" width="48" height="16" rx="5" fill="#1E40AF"/>
+     <rect x="94" y="168" width="60" height="9" rx="3" fill="#BFDBFE"/><rect x="94" y="190" width="80" height="9" rx="3" fill="#BFDBFE"/><rect x="94" y="212" width="50" height="9" rx="3" fill="#BFDBFE"/>
+     <circle cx="180" cy="172" r="10" fill="#16A34A"/><text x="180" y="177" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">+</text>
+     <circle cx="180" cy="216" r="10" fill="#F43F5E"/><rect x="175" y="214" width="10" height="4" rx="2" fill="#fff"/>
+     <rect x="94" y="244" width="108" height="12" rx="4" fill="#DBEAFE"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroWellbeingT2: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="wb-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="wb-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="wb-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF3C7"/><stop offset="100%" stop-color="#FDE68A"/></linearGradient><radialGradient id="wb-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/><stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/><stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/></radialGradient>
+        <linearGradient id="wb-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/><stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/></linearGradient>
+        <radialGradient id="wb-s0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#F59E0B"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#wb-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#wb-grd)"/>
+      <line x1="232.0" y1="138.0" x2="242.0" y2="138.0" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="224.4" y1="156.4" x2="231.5" y2="163.5" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="206.0" y1="164.0" x2="206.0" y2="174.0" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="187.6" y1="156.4" x2="180.5" y2="163.5" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="180.0" y1="138.0" x2="170.0" y2="138.0" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="187.6" y1="119.6" x2="180.5" y2="112.5" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="206.0" y1="112.0" x2="206.0" y2="102.0" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="224.4" y1="119.6" x2="231.5" y2="112.5" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><circle cx="206" cy="138" r="22" fill="url(#wb-s0)"/>
+   <g filter="url(#wb-sh)"><polygon points="86,196 178,196 132,154" fill="#FB7185" stroke="#9F1239" stroke-width="2"/><rect x="92" y="196" width="80" height="74" fill="url(#wb-h)" stroke="#92400E" stroke-width="2"/><rect x="124" y="232" width="20" height="38" fill="#B45309"/>
+     <circle cx="112" cy="216" r="9" fill="#FCD34D" stroke="#B45309" stroke-width="1.5"/><circle cx="152" cy="216" r="9" fill="#FCD34D" stroke="#B45309" stroke-width="1.5"/></g>
+   <path d="M 110 250 q 22 18 44 0" fill="none" stroke="#16A34A" stroke-width="3.5" stroke-linecap="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroSupplySide: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ss-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ss-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ss-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient>
+        <linearGradient id="ss-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/><stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/></linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ss-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ss-grd)"/>
+      <g filter="url(#ss-sh)"><rect x="114.0" y="156.0" width="8" height="12" rx="2" fill="#22C55E" transform="rotate(0 118 196)"/><rect x="114.0" y="156.0" width="8" height="12" rx="2" fill="#22C55E" transform="rotate(45 118 196)"/><rect x="114.0" y="156.0" width="8" height="12" rx="2" fill="#22C55E" transform="rotate(90 118 196)"/><rect x="114.0" y="156.0" width="8" height="12" rx="2" fill="#22C55E" transform="rotate(135 118 196)"/><rect x="114.0" y="156.0" width="8" height="12" rx="2" fill="#22C55E" transform="rotate(180 118 196)"/><rect x="114.0" y="156.0" width="8" height="12" rx="2" fill="#22C55E" transform="rotate(225 118 196)"/><rect x="114.0" y="156.0" width="8" height="12" rx="2" fill="#22C55E" transform="rotate(270 118 196)"/><rect x="114.0" y="156.0" width="8" height="12" rx="2" fill="#22C55E" transform="rotate(315 118 196)"/><circle cx="118" cy="196" r="34" fill="#22C55E" stroke="#15803D" stroke-width="2"/><circle cx="118" cy="196" r="13.600000000000001" fill="#FFFFFF"/><rect x="174.0" y="202.0" width="8" height="12" rx="2" fill="#4ADE80" transform="rotate(0 178 232)"/><rect x="174.0" y="202.0" width="8" height="12" rx="2" fill="#4ADE80" transform="rotate(45 178 232)"/><rect x="174.0" y="202.0" width="8" height="12" rx="2" fill="#4ADE80" transform="rotate(90 178 232)"/><rect x="174.0" y="202.0" width="8" height="12" rx="2" fill="#4ADE80" transform="rotate(135 178 232)"/><rect x="174.0" y="202.0" width="8" height="12" rx="2" fill="#4ADE80" transform="rotate(180 178 232)"/><rect x="174.0" y="202.0" width="8" height="12" rx="2" fill="#4ADE80" transform="rotate(225 178 232)"/><rect x="174.0" y="202.0" width="8" height="12" rx="2" fill="#4ADE80" transform="rotate(270 178 232)"/><rect x="174.0" y="202.0" width="8" height="12" rx="2" fill="#4ADE80" transform="rotate(315 178 232)"/><circle cx="178" cy="232" r="24" fill="#4ADE80" stroke="#16A34A" stroke-width="2"/><circle cx="178" cy="232" r="9.600000000000001" fill="#FFFFFF"/></g><line x1="224" y1="200" x2="224" y2="130" stroke="#059669" stroke-width="6" stroke-linecap="round"/><path d="M 215 139 L 224 130 L 233 139" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroFactors: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="fp-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="fp-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="fp-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient>
+        <linearGradient id="fp-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/><stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="fp-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86EFAC"/><stop offset="100%" stop-color="#86EFAC"/></linearGradient><linearGradient id="fp-k1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BFDBFE"/><stop offset="100%" stop-color="#BFDBFE"/></linearGradient><linearGradient id="fp-k2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FDE68A"/></linearGradient><linearGradient id="fp-k3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DDD6FE"/><stop offset="100%" stop-color="#DDD6FE"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#fp-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#fp-grd)"/>
+      <g filter="url(#fp-soft)"><rect x="64" y="156" width="76" height="64" rx="10" fill="url(#fp-k0)" stroke="#16A34A" stroke-width="2"/><rect x="64" y="156" width="76" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/></g><g filter="url(#fp-soft)"><rect x="156" y="156" width="76" height="64" rx="10" fill="url(#fp-k1)" stroke="#1E40AF" stroke-width="2"/><rect x="156" y="156" width="76" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/></g><g filter="url(#fp-soft)"><rect x="64" y="236" width="76" height="64" rx="10" fill="url(#fp-k2)" stroke="#B45309" stroke-width="2"/><rect x="64" y="236" width="76" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/></g><g filter="url(#fp-soft)"><rect x="156" y="236" width="76" height="64" rx="10" fill="url(#fp-k3)" stroke="#6D28D9" stroke-width="2"/><rect x="156" y="236" width="76" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/></g>
+   <text x="102" y="194" font-size="11" font-weight="800" fill="#15803D" text-anchor="middle">Land</text>
+   <text x="194" y="194" font-size="11" font-weight="800" fill="#1E3A8A" text-anchor="middle">Labour</text>
+   <text x="102" y="274" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle">Capital</text>
+   <text x="194" y="274" font-size="11" font-weight="800" fill="#6D28D9" text-anchor="middle">Enterprise</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPositiveNormative: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="pn-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pn-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="pn-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="pn-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/><stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/></linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#pn-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pn-grd)"/>
+      <g filter="url(#pn-sh)"><rect x="40" y="150" width="120" height="74" rx="14" fill="#3B82F6"/><path d="M 64 224 l 0 22 l 22 -22 z" fill="#3B82F6"/><path d="M 62 180 l 12 12 l 24 -26" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+   <g filter="url(#pn-sh)"><rect x="138" y="196" width="106" height="68" rx="14" fill="#FBBF24"/><path d="M 220 264 l 0 20 l -20 -20 z" fill="#FBBF24"/><text x="191" y="240" font-size="30" font-weight="800" fill="#fff" text-anchor="middle" font-family="Fraunces,Georgia,serif">?</text></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroRational: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="rt-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="rt-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="rt-head" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#C4B5FD"/><stop offset="100%" stop-color="#A78BFA"/></radialGradient><radialGradient id="rt-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="rt-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/><stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/></linearGradient>
+        
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#rt-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#rt-grd)"/>
+      <g filter="url(#rt-sh)"><circle cx="140" cy="188" r="62" fill="url(#rt-head)" stroke="#5B21B6" stroke-width="2.5"/><ellipse cx="118" cy="166" rx="16" ry="11" fill="#FFFFFF" opacity="0.28"/></g>
+   <g filter="url(#rt-soft)"><rect x="134" y="176" width="12" height="40" rx="2" fill="#5B21B6"/><line x1="112" y1="184" x2="168" y2="184" stroke="#5B21B6" stroke-width="3" stroke-linecap="round"/>
+     <path d="M 98 184 L 126 184 L 112 206 Z" fill="#DDD6FE" stroke="#6D28D9" stroke-width="1.6"/><path d="M 154 184 L 182 184 L 168 206 Z" fill="#C4B5FD" stroke="#6D28D9" stroke-width="1.6"/>
+     <circle cx="140" cy="172" r="6" fill="#7C3AED"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroEconomicProblem: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ep-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ep-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ep-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FCD34D" stop-opacity="0.55"/><stop offset="70%" stop-color="#FCD34D" stop-opacity="0.12"/><stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/></radialGradient>
+        <linearGradient id="ep-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.85"/><stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.35"/></linearGradient>
+        <radialGradient id="ep-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ep-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ep-grd)"/>
+      <g filter="url(#ep-sh)"><ellipse cx="140" cy="168" rx="40" ry="25.6" fill="url(#ep-c0)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="126.4" cy="159.2" rx="12" ry="6.4" fill="#FFFFFF" opacity="0.4"/><text x="140" y="177.6" font-size="32.8" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">£</text></g>
+   <text x="140" y="124" font-size="10.5" fill="#92400E" font-weight="800" text-anchor="middle">scarce resources</text>
+   <circle cx="60" cy="268" r="6" fill="#D97706"/><circle cx="58.4" cy="266.4" r="2" fill="#FFFFFF" opacity="0.35"/><rect x="54" y="273" width="12" height="18" rx="6" fill="#D97706"/><line x1="60" y1="254" x2="140" y2="196" stroke="#B45309" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/><circle cx="100" cy="262" r="6" fill="#D97706"/><circle cx="98.4" cy="260.4" r="2" fill="#FFFFFF" opacity="0.35"/><rect x="94" y="267" width="12" height="18" rx="6" fill="#D97706"/><line x1="100" y1="248" x2="140" y2="196" stroke="#B45309" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/><circle cx="140" cy="268" r="6" fill="#D97706"/><circle cx="138.4" cy="266.4" r="2" fill="#FFFFFF" opacity="0.35"/><rect x="134" y="273" width="12" height="18" rx="6" fill="#D97706"/><line x1="140" y1="254" x2="140" y2="196" stroke="#B45309" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/><circle cx="180" cy="262" r="6" fill="#D97706"/><circle cx="178.4" cy="260.4" r="2" fill="#FFFFFF" opacity="0.35"/><rect x="174" y="267" width="12" height="18" rx="6" fill="#D97706"/><line x1="180" y1="248" x2="140" y2="196" stroke="#B45309" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/><circle cx="220" cy="268" r="6" fill="#D97706"/><circle cx="218.4" cy="266.4" r="2" fill="#FFFFFF" opacity="0.35"/><rect x="214" y="273" width="12" height="18" rx="6" fill="#D97706"/><line x1="220" y1="254" x2="140" y2="196" stroke="#B45309" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/>
+   <text x="140" y="294" font-size="10.5" fill="#B45309" font-weight="800" text-anchor="middle">unlimited wants</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroGovFailure: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="gf-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="gf-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="gf-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDA4AF" stop-opacity="0.55"/><stop offset="70%" stop-color="#FDA4AF" stop-opacity="0.12"/><stop offset="100%" stop-color="#FDA4AF" stop-opacity="0"/></radialGradient>
+        <linearGradient id="gf-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFE4E6" stop-opacity="0.85"/><stop offset="100%" stop-color="#FFE4E6" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="gf-t0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDA4AF"/><stop offset="100%" stop-color="#FB7185"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#gf-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#gf-grd)"/>
+      <g filter="url(#gf-sh)"><rect x="102" y="150" width="76" height="140" fill="url(#gf-t0)" stroke="#9F1239" stroke-width="2"/><rect x="102" y="150" width="4" height="140" fill="#FFFFFF" opacity="0.22"/><rect x="110.0" y="162" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="110.0" y="162" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="162" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="135.0" y="162" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="160.0" y="162" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="110.0" y="181" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="110.0" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="181" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="135.0" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="160.0" y="181" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="160.0" y="181" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="110.0" y="200" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="110.0" y="200" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="200" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="160.0" y="200" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="160.0" y="200" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="110.0" y="219" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="110.0" y="219" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="135.0" y="219" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="135.0" y="219" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="160.0" y="219" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="160.0" y="219" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="110.0" y="238" width="10" height="13" rx="1" fill="#FFE4E6" opacity="0.5"/><rect x="135.0" y="238" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="135.0" y="238" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="160.0" y="238" width="10" height="13" rx="1" fill="#FFE4E6"/><rect x="160.0" y="238" width="10" height="4" rx="1" fill="#FFFFFF" opacity="0.4"/><rect x="133" y="268" width="14" height="22" rx="1.5" fill="#9F1239"/><path d="M 140 150 l -8 30 l 10 0 l -8 34 l 12 -28 l -10 0 z" fill="#FFE4E6" stroke="#BE123C" stroke-width="1.5"/></g>
+   <g transform="translate(214,210) rotate(180)"><line x1="0" y1="0" x2="0" y2="-70" stroke="#BE123C" stroke-width="6" stroke-linecap="round"/><path d="M -9 -61 L 0 -70 L 9 -61" fill="none" stroke="#BE123C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPolicyTools: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="pt-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pt-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <linearGradient id="pt-box" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#16A34A"/><stop offset="100%" stop-color="#15803D"/></linearGradient><radialGradient id="pt-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient>
+        <linearGradient id="pt-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/><stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/></linearGradient>
+        <radialGradient id="pt-c0" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="100%" stop-color="#FBBF24"/></radialGradient><radialGradient id="pt-c1" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#FECDD3"/><stop offset="100%" stop-color="#FB7185"/></radialGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#pt-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pt-grd)"/>
+      <g filter="url(#pt-sh)"><rect x="74" y="200" width="132" height="80" rx="8" fill="url(#pt-box)" stroke="#065F46" stroke-width="2.5"/><rect x="74" y="218" width="132" height="62" fill="#22C55E"/><rect x="74" y="218" width="132" height="5" fill="#FFFFFF" opacity="0.25"/><path d="M 108 200 L 108 184 Q 108 178 116 178 L 164 178 Q 172 178 172 184 L 172 200" fill="none" stroke="#065F46" stroke-width="3"/></g>
+   <g filter="url(#pt-soft)"><ellipse cx="108" cy="188" rx="16" ry="10.24" fill="url(#pt-c0)" stroke="#92400E" stroke-width="1.5"/><ellipse cx="102.56" cy="184.48" rx="4.8" ry="2.56" fill="#FFFFFF" opacity="0.4"/><text x="108" y="191.84" font-size="13.12" font-weight="800" fill="#92400E" text-anchor="middle" font-family="Inter,sans-serif">+</text><ellipse cx="172" cy="188" rx="16" ry="10.24" fill="url(#pt-c1)" stroke="#9F1239" stroke-width="1.5"/><ellipse cx="166.56" cy="184.48" rx="4.8" ry="2.56" fill="#FFFFFF" opacity="0.4"/><text x="172" y="191.84" font-size="13.12" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">−</text></g>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroIncomeXED: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ix-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ix-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ix-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="ix-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.85"/><stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="ix-cc0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ix-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ix-grd)"/>
+      <rect x="54" y="130" width="172" height="140" rx="12" fill="url(#ix-cc0)" stroke="#1D4ED8" stroke-width="2.5"/><line x1="72" y1="146" x2="72" y2="252" stroke="#94A3B8" stroke-width="2"/><line x1="72" y1="252" x2="210" y2="252" stroke="#94A3B8" stroke-width="2"/><path d="M 74 250 C 120 230 150 180 206 150" fill="none" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+     <path d="M 74 160 C 120 180 150 230 206 250" fill="none" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/>
+     <text x="204" y="148" font-size="11" font-weight="800" fill="#2563EB" text-anchor="end">YED</text>
+     <text x="204" y="262" font-size="11" font-weight="800" fill="#B45309" text-anchor="end">XED</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPES: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="pe-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pe-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="pe-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.55"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.12"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient>
+        <linearGradient id="pe-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCFCE7" stop-opacity="0.85"/><stop offset="100%" stop-color="#DCFCE7" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="pe-cc0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#pe-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pe-grd)"/>
+      <rect x="54" y="130" width="172" height="140" rx="12" fill="url(#pe-cc0)" stroke="#15803D" stroke-width="2.5"/><line x1="72" y1="146" x2="72" y2="252" stroke="#94A3B8" stroke-width="2"/><line x1="72" y1="252" x2="210" y2="252" stroke="#94A3B8" stroke-width="2"/><path d="M 72 248 C 120 244 150 200 210 150" fill="none" stroke="#16A34A" stroke-width="4" stroke-linecap="round"/>
+     <path d="M 96 250 q 6 -10 12 0 t 12 0 t 12 0 t 12 0" fill="none" stroke="#22C55E" stroke-width="2.5" opacity="0.7"/>
+     <text x="210" y="150" font-size="12" font-weight="800" fill="#15803D" text-anchor="end">S</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroPriceControls: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="pc-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="pc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="pc-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="pc-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/><stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="pc-cc0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F8FAFC"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#pc-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#pc-grd)"/>
+      <rect x="50" y="130" width="180" height="140" rx="12" fill="url(#pc-cc0)" stroke="#6D28D9" stroke-width="2.5"/><line x1="68" y1="146" x2="68" y2="252" stroke="#94A3B8" stroke-width="2"/><line x1="68" y1="252" x2="214" y2="252" stroke="#94A3B8" stroke-width="2"/><path d="M 70 160 L 214 250" stroke="#16A34A" stroke-width="3"/>
+     <path d="M 70 250 L 214 160" stroke="#7C3AED" stroke-width="3"/>
+     <line x1="64" y1="188" x2="220" y2="188" stroke="#F43F5E" stroke-width="3.5" stroke-dasharray="7 4"/>
+     <text x="216" y="184" font-size="9.5" font-weight="800" fill="#BE123C" text-anchor="end">price cap</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+  heroInfoGaps: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="ig-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="ig-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+        <radialGradient id="ig-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.12"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient>
+        <linearGradient id="ig-grd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5F3FF" stop-opacity="0.85"/><stop offset="100%" stop-color="#F5F3FF" stop-opacity="0.35"/></linearGradient>
+        <linearGradient id="ig-k0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86EFAC"/><stop offset="100%" stop-color="#22C55E"/></linearGradient>
+      </defs>
+      <circle cx="140" cy="172" r="150" fill="url(#ig-glow)"/>
+      <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#ig-grd)"/>
+      <circle cx="86" cy="232" r="10.2" fill="#7C3AED"/><circle cx="83.28" cy="229.28" r="3.4" fill="#FFFFFF" opacity="0.35"/><rect x="75.8" y="240.5" width="20.4" height="30.599999999999998" rx="10.2" fill="#7C3AED"/><circle cx="86" cy="196" r="16" fill="#FFFFFF" stroke="#5B21B6" stroke-width="2"/><path d="M 80 191 q 6 -8 12 0 q 0 6 -6 8 l 0 4" fill="none" stroke="#5B21B6" stroke-width="2.4" stroke-linecap="round"/><circle cx="86" cy="208" r="1.8" fill="#5B21B6"/>
+   <circle cx="196" cy="232" r="10.2" fill="#16A34A"/><circle cx="193.28" cy="229.28" r="3.4" fill="#FFFFFF" opacity="0.35"/><rect x="185.8" y="240.5" width="20.4" height="30.599999999999998" rx="10.2" fill="#16A34A"/><g filter="url(#ig-soft)"><rect x="176" y="250" width="40" height="34" rx="3" fill="url(#ig-k0)" stroke="#15803D" stroke-width="2"/><rect x="176" y="250" width="40" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/></g>
+   <path d="M 112 214 C 140 206 156 206 178 214" fill="none" stroke="#94A3B8" stroke-width="2.4" stroke-dasharray="4 3"/>
+   <text x="86" y="276" font-size="9.5" fill="#5B21B6" font-weight="700" text-anchor="middle">uninformed</text>
+   <text x="196" y="300" font-size="9.5" fill="#15803D" font-weight="700" text-anchor="middle">knows more</text>
+      <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
+    </svg>
+  `,
+
   heroCostCurves: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

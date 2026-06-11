@@ -6,7 +6,7 @@ window.ECONOS_TOPIC = {
   estTime: '8-10 minutes',
   goal: 'Lock in consumer surplus, producer surplus, and total welfare – and understand how they change when markets are interfered with through taxes, subsidies, or price controls.',
   intro: {
-    heroKey: 'heroSupplyDemand',
+    heroKey: 'heroCPS',
     summary: 'Consumer surplus is the benefit buyers receive above what they pay; producer surplus is the benefit sellers receive above their minimum. Together they measure total welfare – the gains from trade. Any policy that shifts price or quantity redistributes or destroys part of this surplus.',
     doInThis: 'Work through 8 cards covering the definitions and diagrams for both surplus measures, how to calculate them, the three-step exam method, what happens to surplus under taxes and subsidies, and how surplus connects to allocative efficiency and market failure.',
     outcomes: [

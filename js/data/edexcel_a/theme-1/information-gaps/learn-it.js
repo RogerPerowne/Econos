@@ -6,7 +6,7 @@ window.ECONOS_TOPIC = {
   estTime: '9-11 minutes',
   goal: 'Lock in asymmetric information, adverse selection, moral hazard, and how information failures cause market outcomes to diverge from optimal.',
   intro: {
-    heroKey: 'heroBehavioural',
+    heroKey: 'heroInfoGaps',
     summary: 'Perfect information is an assumption of competitive markets. When buyers and sellers have different information, markets can unravel entirely (Akerlof\'s market for lemons), produce moral hazard, or systematically underprovide valuable goods.',
     doInThis: 'Work through 7 cards covering symmetric vs asymmetric information, Akerlof\'s lemons, adverse selection, moral hazard, signalling, government responses, and information failure in healthcare.',
     outcomes: [

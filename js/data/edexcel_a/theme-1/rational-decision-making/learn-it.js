@@ -16,7 +16,7 @@ window.ECONOS_TOPIC = {
   estTime: '5-7 minutes',
   goal: 'Understand the assumptions economists make about how agents choose: consumers maximise utility, firms maximise profit.',
   intro: {
-    heroKey: 'heroScarcity',
+    heroKey: 'heroRational',
     summary: 'Before studying how markets work, we set out the behaviour the models assume. Standard economic theory treats decision-makers as rational: consumers act to maximise their utility (satisfaction), and firms act to maximise their profit. These two assumptions underpin almost every demand and supply diagram you will meet.',
     doInThis: 'Work through three cards: what "rational" means, how consumers maximise utility, and how firms maximise profit – plus where these assumptions break down.',
     outcomes: [

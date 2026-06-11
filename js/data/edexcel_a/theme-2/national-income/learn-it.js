@@ -15,7 +15,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in the circular flow of income and the income-vs-wealth distinction.',
 
   intro: {
-    heroKey: 'heroMultiplier',
+    heroKey: 'heroNationalIncome',
     summary: 'National income is the total flow of income produced in an economy over a period. The circular flow shows how that income moves between households and firms – the foundation for every macro question that follows. This topic covers the basic flow and the income-vs-wealth distinction; injections and withdrawals (2.4.2) are their own topic.',
     doInThis: 'Draw the two-sector circular flow, then distinguish income (a flow) from wealth (a stock).',
     outcomes: [

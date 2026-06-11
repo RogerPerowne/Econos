@@ -6,7 +6,7 @@ window.ECONOS_TOPIC = {
   estTime: '15-18 minutes',
   goal: 'Master the seven Edexcel intervention tools – indirect taxes, subsidies, maximum and minimum prices, tradable pollution permits, state provision, information provision and regulation – and learn to pick the right tool for the right market failure.',
   intro: {
-    heroKey: 'heroPrice',
+    heroKey: 'heroPriceControls',
     summary: 'Governments intervene when markets fail. The spec lists seven tools that split into two families: price-changing interventions (taxes, subsidies, max/min prices) that work through the price mechanism, and other tools (permits, state provision, information, regulation) that work directly on quantities, access or behaviour.',
     doInThis: 'Work through 11 cards: an overview map, the price-changing tools with interactive welfare diagrams (indirect tax types, tax incidence, subsidies, price ceilings and floors), four "other" tools with case studies, and a synthesis card that matches each market failure to its best-fit policy.',
     outcomes: [

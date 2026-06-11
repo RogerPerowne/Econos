@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   goal: 'Distinguish recessionary and inflationary output gaps and the policy response each calls for.',
 
   intro: {
-    heroKey: 'heroMultiplier',
+    heroKey: 'heroOutputGaps',
     summary: 'Equilibrium is not always at full employment. When actual output falls below full-employment potential, the economy has a recessionary (negative) gap. When it overshoots, it has an inflationary (positive) gap. The size and sign of the gap shape the case for demand-side stimulus or restraint.',
     doInThis: 'Diagnose each kind of output gap on AD/AS, name the causes, and match the appropriate policy response.',
     outcomes: [

@@ -6,7 +6,7 @@ window.ECONOS_TOPIC = {
   estTime: '5-7 minutes',
   goal: 'Distinguish positive (testable) from normative (value-laden) statements, and see how value judgements shape economic policy.',
   intro: {
-    heroKey: 'heroScarcity',
+    heroKey: 'heroPositiveNormative',
     summary: 'Economists try to keep two kinds of claim apart: statements of fact that can be tested against evidence, and statements of value about what ought to happen. Mixing them up is one of the most common ways exam answers lose marks – and one of the main reasons economists who agree on the facts still disagree on policy.',
     doInThis: 'Work through three cards: the positive/normative distinction, the role value judgements play in policy, and how to spot the distinction in practice.',
     outcomes: [

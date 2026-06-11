@@ -22,7 +22,8 @@ window.ECONOS_TOPIC = {
   estTime:     '~15 min',
   goal:        'Raise productive capacity and efficiency through market-based and interventionist reforms – and explain why supply-side policy is slower but more sustainable than demand-side stimulus.',
   intro: {
-    summary:  'Supply-side policy is the long-run productive-capacity toolkit. Step through the two families (market-based and interventionist), see how each shifts SRAS or LRAS, weigh the strengths and limits, and finish with the exam toolkit examiners reward.',
+
+    heroKey: 'heroSupplySide',summary:  'Supply-side policy is the long-run productive-capacity toolkit. Step through the two families (market-based and interventionist), see how each shifts SRAS or LRAS, weigh the strengths and limits, and finish with the exam toolkit examiners reward.',
     doInThis: 'Walk the supply-side transmission from policy to capacity, distinguish market-based reforms from interventionist investment, see how each shifts SRAS or LRAS on the AD/AS diagram, weigh the time-lag trade-offs, and finish with the diagnose-trace-judge exam toolkit.',
     outcomes: [
       'Distinguish supply-side from demand-side policy',

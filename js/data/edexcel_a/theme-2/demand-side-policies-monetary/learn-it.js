@@ -22,7 +22,8 @@ window.ECONOS_TOPIC = {
   estTime:     '~15 min',
   goal:        'Use interest rates, QE and the broader monetary toolkit to manage aggregate demand – and explain why the same rate cut can have different effects at different times.',
   intro: {
-    summary:  'Monetary policy is the central bank\'s demand-management toolkit. Step through the transmission chain, the five channels, conventional and unconventional tools, and finish with the strengths-and-limits judgement frame.',
+
+    heroKey: 'heroMonetaryDS',summary:  'Monetary policy is the central bank\'s demand-management toolkit. Step through the transmission chain, the five channels, conventional and unconventional tools, and finish with the strengths-and-limits judgement frame.',
     doInThis: 'Walk the 5-step transmission from rate change to inflation, model both expansionary and contractionary stances, see how rates work through five channels at once, compare Bank Rate to QE, and finish with the judgement frame examiners reward.',
     outcomes: [
       'Explain how Bank Rate and QE shift AD',

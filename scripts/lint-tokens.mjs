@@ -51,8 +51,10 @@ const check = process.argv.includes('--check');
    (v0.158.0) when mcCharacteristicsHub was retired — Monopolistic Competition
    card 2 now uses the engine twin-demand spec instead of hand-rolled SVG;
    raised to 6828 (v0.160.2) for the collusionBigPicture scene rebuild
-   (two-futures illustration — hand-rolled SVG art fills). */
-const DUP_BASELINE = 6828;
+   (two-futures illustration — hand-rolled SVG art fills); raised to 6844
+   (v0.161.0) for the growthDriversHub six-spoke hub (Causes of Growth
+   card 2 — hand-rolled hub tile/border fills, house hub anatomy). */
+const DUP_BASELINE = 6844;
 
 const css = readFileSync('styles.css', 'utf8');
 

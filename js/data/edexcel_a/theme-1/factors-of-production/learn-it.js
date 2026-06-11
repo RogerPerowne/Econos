@@ -15,7 +15,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in the four factors, their rewards, factor mobility, and how to evaluate the role of each in an economy.',
 
   intro: {
-    heroKey: 'heroScarcity',
+    heroKey: 'heroFactors',
     summary: 'Every economy combines four inputs – land, labour, capital and enterprise – to produce goods and services. Each has a distinct character and earns a distinct reward. The quality and mobility of these factors shapes how much an economy can produce and how quickly it can adapt.',
     doInThis: 'Explore the four factors, their rewards (rent, wages, interest, profit), the distinction between quantity and quality, factor mobility, and the evaluation points that separate strong exam answers.',
     outcomes: [

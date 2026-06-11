@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
   goal: 'Move beyond GDP-as-headline: judge growth by who gains, how firms feed it back, what it does for public finances, whether it lasts, and ultimately by the four-dimensional A* framework.',
 
   intro: {
-    heroKey: 'heroGrowth',
+    heroKey: 'heroGrowthImpact',
     summary: 'Growth is more than a single GDP number. Its real effect depends on who gets the gains, how firms convert them into investment, what it does for the public finances, and whether it can be sustained without bankrupting the future.',
     doInThis: 'Six cards: a beyond-GDP scorecard, an income-spectrum of consumer impact, the firm investment feedback loop, the fiscal dividend in numbers, three sustainability lenses, and the four-dimensional A* verdict.',
     outcomes: [

@@ -6,7 +6,7 @@ window.ECONOS_TOPIC = {
   estTime: '12–14 minutes',
   goal: 'Understand YED and XED – their formulas, signs, magnitudes, and how they classify goods, reveal market relationships, and drive business and policy decisions.',
   intro: {
-    heroKey: 'heroElasticity',
+    heroKey: 'heroIncomeXED',
     summary: 'YED measures how demand responds to income changes; XED measures how demand for one good responds to the price of another. Together they classify goods (normal, inferior, luxury, necessity) and reveal whether two products are substitutes, complements, or unrelated.',
     doInThis: 'Work through 10 cards: the big picture, income elasticity, a YED worked example, how income reshapes spending, cross-price elasticity, an XED worked example, the strength of XED relationships, what determines the size of YED and XED, real-world uses, and an exam-ready toolkit.',
     outcomes: [

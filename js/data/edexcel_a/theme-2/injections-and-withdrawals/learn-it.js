@@ -15,7 +15,7 @@ window.ECONOS_TOPIC = {
   goal: 'Identify the three injections and three withdrawals, and trace how they move income through the circular flow.',
 
   intro: {
-    heroKey: 'heroMultiplier',
+    heroKey: 'heroInjections',
     summary: 'Injections push income into the circular flow – investment, government spending and exports. Withdrawals pull income out – savings, taxation and imports. The economy settles where injections balance withdrawals (J = W). This topic builds on the circular flow foundation (2.4.1) and feeds into equilibrium national income (2.4.3).',
     doInThis: 'Work through the three injections, the three withdrawals, and finish on the full open-economy flow where the two balance.',
     outcomes: [

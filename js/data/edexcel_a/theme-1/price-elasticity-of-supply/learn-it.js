@@ -6,7 +6,7 @@ window.ECONOS_TOPIC = {
   estTime: '8–10 minutes',
   goal: 'Understand what PES measures, how to calculate it, how to read the coefficient, what determines it, and how it shapes prices, policy, and real markets.',
   intro: {
-    heroKey: 'heroElasticity',
+    heroKey: 'heroPES',
     summary: 'PES measures how responsive quantity supplied is to a price change. When demand shifts, PES determines the split between price and quantity adjustment. Inelastic supply means most of the pressure goes into higher prices; elastic supply means output adjusts instead.',
     doInThis: 'Work through 8 cards covering what PES is, calculating and classifying it, a step-by-step worked calculation, the five drivers of supply elasticity, how time changes everything, why PES matters when demand jumps, PES across real industries, and an exam-ready toolkit.',
     outcomes: [

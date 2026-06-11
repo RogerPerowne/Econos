@@ -14,7 +14,8 @@ window.ECONOS_TOPIC = {
   estTime:     '–',
   goal:        'Coming soon.',
   intro: {
-    summary:  "Standard of Living & Wellbeing – full Learn It content is in production.",
+
+    heroKey: 'heroWellbeingT2',summary:  "Standard of Living & Wellbeing – full Learn It content is in production.",
     doInThis: 'Check back soon. This topic will be rebuilt using the same design system as the topics already shipped on this board.',
     outcomes: [],
     tip:      'Browse a finished topic in the meantime to see the design language this one will follow.',

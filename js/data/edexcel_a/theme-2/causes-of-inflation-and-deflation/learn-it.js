@@ -12,7 +12,7 @@ window.ECONOS_TOPIC = {
   goal: 'Diagnose inflation by cause – demand-pull, cost-push or monetary – and match the right policy to each.',
 
   intro: {
-    heroKey: 'heroAggSupply',
+    heroKey: 'heroInflationCauses',
     summary: "Inflation does not have a single cause. Demand-pull comes from too much spending. Cost-push comes from squeezed supply. Monetary and expectations-driven inflation comes from loose money and lost credibility. The same headline figure can require opposite policy responses depending on its origin – diagnosis is everything.",
     doInThis: 'Eight cards: the three causes, demand-pull and cost-push in detail, how to spot the difference, money and expectations, winners and losers, the dangers of deflation, and the policy toolkit.',
     outcomes: [

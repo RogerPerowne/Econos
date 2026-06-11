@@ -18,7 +18,8 @@ window.ECONOS_TOPIC = {
   estTime:     '~15 min',
   goal:        'Use government spending and taxation to manage aggregate demand – without forgetting timing, multipliers and trade-offs.',
   intro: {
-    summary:  'Fiscal policy is the government\'s demand-management toolkit. Step through the transmission chain, the multiplier, automatic stabilisers and the judgement frame examiners reward.',
+
+    heroKey: 'heroFiscalDS',summary:  'Fiscal policy is the government\'s demand-management toolkit. Step through the transmission chain, the multiplier, automatic stabilisers and the judgement frame examiners reward.',
     doInThis: 'Walk the 5-step transmission from policy change to inflation and the budget, model both expansionary and contractionary stances, see how the multiplier amplifies the initial injection, and finish with the strengths-and-limits judgement frame.',
     outcomes: [
       'Explain how G and T changes shift AD',

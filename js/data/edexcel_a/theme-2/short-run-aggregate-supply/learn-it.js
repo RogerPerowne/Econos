@@ -22,7 +22,7 @@ window.ECONOS_TOPIC = {
   goal: 'Read the SRAS curve, explain its slope, and map every cost driver to a left or right shift.',
 
   intro: {
-    heroKey: 'heroAggSupply',
+    heroKey: 'heroSRAS',
     summary: 'Short-run aggregate supply (SRAS) shows the total output firms are willing to produce at each price level while some costs are still sticky. It slopes upward, flattens where there is spare capacity and steepens near full capacity, and it shifts whenever costs or productivity change at every price level.',
     doInThis: 'Read the curve point by point, explain why it slopes up, separate a movement from a shift, and trace a cost shock through to stagflation.',
     outcomes: [

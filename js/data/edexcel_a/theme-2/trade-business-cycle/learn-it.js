@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
   goal: 'Read the four phases of the cycle and diagnose demand- and supply-side shocks from price and output.',
 
   intro: {
-    heroKey: 'heroGrowth',
+    heroKey: 'heroTradeCycle',
     summary: 'Real GDP rides a wave of short-run booms and recessions around a rising long-run trend. The wave is the trade cycle. Shocks knock the economy off trend; how price and output co-move tells you which kind of shock it was.',
     doInThis: 'Click through the four phases of the cycle, diagnose five historical shocks, compare two policy stances in a stagflation, and weigh the case for growth.',
     outcomes: [

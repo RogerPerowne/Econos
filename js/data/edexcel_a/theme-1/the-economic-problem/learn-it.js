@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in scarcity, opportunity cost and the three economic questions, then the four factors of production, their rewards and mobility.',
 
   intro: {
-    heroKey: 'heroScarcity',
+    heroKey: 'heroEconomicProblem',
     summary: 'Economics begins with one unavoidable fact: wants are unlimited but resources are finite. That scarcity forces every choice to carry an opportunity cost, and forces every society to answer three questions – what, how, and for whom to produce. The resources being allocated are the four factors of production: land, labour, capital and enterprise.',
     doInThis: 'Work through scarcity, renewable vs non-renewable resources, opportunity cost and the three economic questions, then the four factors of production – their rewards, the quantity/quality distinction, factor mobility, and the evaluation points that lift exam answers.',
     outcomes: [

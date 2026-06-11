@@ -29,7 +29,7 @@ window.ECONOS_TOPIC = {
   goal: 'Evaluate the impact of government intervention on prices, profit, efficiency, quality and choice — and judge its limits, including regulatory capture and asymmetric information',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroGovImpact',
     summary: 'Government intervention is judged by its impact. A good answer traces how a policy changes prices, profit, efficiency, quality and choice — then weighs those gains against the costs and the risk of government failure. This deck works through each impact dimension with diagrams and worked tensions, then turns to the limits of intervention: regulatory capture, asymmetric information and unintended consequences. The recurring question is whether the policy improves outcomes more than it creates new problems.',
     doInThis: 'Set out the five outcomes intervention is judged by. Use diagrams to analyse the impact on prices and profit, efficiency and quality, and choice and competition. Explain why intervention can fail — capture, information gaps and unintended consequences. Finally, build a balanced evaluation that compares intervention with the realistic market alternative.',
     outcomes: [

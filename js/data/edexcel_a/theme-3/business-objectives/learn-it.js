@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
   goal: 'Identify a firm’s objective and explain how it shapes the firm’s behaviour',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroBusinessObjectives',
     summary: 'Not every firm is trying to do the same thing. Some are scrambling to survive, some are squeezing for every last pound of profit, others care more about size, market share, or doing the right thing. The objective a firm chooses depends on its age, its owners, its market and the pressures it faces – and the objective then drives almost every decision it makes about prices, costs, growth and risk. This topic gives you the menu of objectives, the reasons firms choose between them, and the language to spot a firm’s real objective in an exam case.',
     doInThis: 'Map the main business objectives, explain why a firm’s objective depends on its context, distinguish profit, sales, growth and ethical aims, and analyse who inside the firm pushes for which.',
     outcomes: [

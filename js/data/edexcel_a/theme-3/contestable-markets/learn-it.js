@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
   goal: 'Define contestability and the role of barriers and sunk costs, explain hit-and-run competition, and evaluate how the threat of entry shapes firm behaviour',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroContestable',
     summary: 'A market is contestable when firms already in it behave competitively because new firms could enter at any time. What matters is not the number of firms but the threat of entry — and that threat depends on barriers to entry and exit, and especially on sunk costs. This deck explains what makes a market contestable, how hit-and-run competition works, and how the threat of entry disciplines incumbents even when no one actually enters.',
     doInThis: 'Define contestability and distinguish it from the number of firms. Explain barriers to entry and exit and the central role of sunk costs. Walk through hit-and-run competition and how the threat of entry changes firm behaviour. Finally, judge how contestable a market is and evaluate the usefulness of the theory.',
     outcomes: [

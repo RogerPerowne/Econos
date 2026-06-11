@@ -32,7 +32,7 @@ window.ECONOS_TOPIC = {
   goal: 'Calculate and interpret total, average and marginal revenue, and link revenue to price elasticity of demand',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroRevenue',
     summary: 'Revenue is the money a firm receives from selling its output – different from profit because costs have not yet been taken off. The core story has three measures: total revenue (TR), average revenue (AR) and marginal revenue (MR). They sit together cleanly: TR is income from all sales, AR is income per unit, and MR is the income from the next unit sold. Price elasticity of demand decides whether a price change raises or lowers TR – the link the exam keeps testing.',
     doInThis: 'Define total, average and marginal revenue and calculate each from a small table. Show why AR equals price on a linear demand curve, and why MR falls twice as fast. Link revenue to PED so you can predict whether a price rise helps or hurts the firm.',
     outcomes: [

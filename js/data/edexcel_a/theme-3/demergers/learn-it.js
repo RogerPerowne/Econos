@@ -28,7 +28,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain why firms demerge, and judge the impact on businesses, workers and consumers',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroDemergers',
     summary: 'A demerger is the opposite of growth by merger – it splits a diversified firm into two or more focused businesses. Firms demerge to sharpen strategy, unlock shareholder value, remove non-core divisions, reduce diseconomies of scale, separate risk and clarify incentives. The verdict is rarely simple: a split can help businesses but disrupt workers and consumers, and the short-run pain often differs from the long-run gain.',
     doInThis: 'Define a demerger and contrast it with a merger or takeover. Explain the six main reasons firms demerge. Weigh the business gains against the risks, and judge the impact on workers and consumers in the short and long run.',
     outcomes: [

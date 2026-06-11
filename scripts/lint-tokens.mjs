@@ -40,8 +40,10 @@ const check = process.argv.includes('--check');
    costsChainFlow SVG was retired in favour of the renderer chain-style flow;
    lowered to 6228 (v0.155.24) with the whereProfitComesFrom rebuild; lowered to
    6165 (v0.155.26) when the three Types of Efficiency diagrams migrated from
-   hand-rolled SVG to engine specs. */
-const DUP_BASELINE = 6165;
+   hand-rolled SVG to engine specs; raised to 6352 (v0.155.31) for the 20 new
+   Theme-3 hero covers (hand-rolled flat-illustration SVG art, fills cannot take
+   a CSS var — same rationale as the town/revenueThreeMetrics raises). */
+const DUP_BASELINE = 6352;
 
 const css = readFileSync('styles.css', 'utf8');
 

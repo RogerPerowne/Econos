@@ -567,6 +567,18 @@ heroCostCurves, heroMarketPower, heroGameTheory, heroLabour, heroGlobe,
 heroExchangeRates, heroInequality, heroBehavioural, heroIntervention, heroTrade,
 heroMarketFailure`.
 
+**Theme-3 per-topic covers (v0.155.31)** — built via the shared `cover()`
+scaffold (280×360 canvas, shadow filters, pastel ground + floor shadow) so
+every 3.x topic intro is unique: `heroBusinessGrowth, heroBusinessObjectives,
+heroCartels, heroContestable, heroControlPower, heroDemandLabour, heroDemergers,
+heroGovIntervention, heroGovImpact, heroMonopolisticComp, heroMonopoly,
+heroMonopsony, heroOligopoly, heroPerfectComp, heroProfitsLosses,
+heroPromoteComp, heroProtect, heroRevenue, heroSupplyLabour, heroEfficiency`.
+
+> **Uniqueness sweep in progress.** Theme 3 intros are now all-unique (this
+> batch). Themes 1, 2 and 4 still share some heroes (e.g. `heroScarcity`×5,
+> `heroMultiplier`×5, `heroGrowth`×5) — to be split in later batches.
+
 > Theme 3 already has `heroFirm`, `heroCostCurves`, `heroMarketPower`,
 > `heroGameTheory`, `heroLabour`, `heroIntervention`.
 

@@ -28,7 +28,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain how governments protect workers and suppliers from monopsony power — through minimum wages, bargaining support and nationalisation — and evaluate the trade-offs',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroProtect',
     summary: 'When one firm has too much buying power over labour or inputs, workers and suppliers can be squeezed — lower wages, lower prices and weak bargaining power. Governments can respond in two ways: restrict the monopsony power (minimum wages, support for bargaining, competition policy, fair-dealing rules) or change ownership through nationalisation. This deck uses the monopsony diagram to show how a minimum wage can raise both pay and employment, then weighs the case for and against each tool.',
     doInThis: 'Explain monopsony buyer power and who it harms. Build the monopsony diagram and use it to find the wage and employment level. Show how a minimum wage in a monopsony can raise both pay and jobs. Explain nationalisation and when it is used. Finally, evaluate each tool against efficiency, fairness and the risk of government failure.',
     outcomes: [

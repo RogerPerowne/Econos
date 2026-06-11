@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain how governments control market power — merger control, price and profit regulation, and quality standards — and evaluate the trade-offs',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroControlPower',
     summary: 'When firms gain too much market power, governments can act in two ways: stop it getting worse by controlling mergers, or regulate the power that already exists through price caps, profit limits and quality standards. This deck works through each tool — merger control, price and profit regulation, and quality and performance targets — using the price-cap diagram to show how regulation can lower prices and raise output, before weighing the trade-offs against the risk of government failure.',
     doInThis: 'Set out the two jobs of controlling market power. Explain how merger control works and when a merger is blocked. Use the price-cap diagram to show how regulating a monopoly can lower price and raise output. Explain quality standards and performance targets, then judge whether each intervention improves outcomes overall.',
     outcomes: [

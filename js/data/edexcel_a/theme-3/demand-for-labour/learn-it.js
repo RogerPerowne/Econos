@@ -26,7 +26,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain labour as a derived demand, build the marginal-revenue-product labour-demand curve, and analyse the factors that shift demand for labour',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroDemandLabour',
     summary: 'Firms do not want workers for their own sake — they want the output workers help to produce. Demand for labour is therefore a derived demand: it flows from demand for goods and services. This deck builds the labour-demand curve as the marginal revenue product (MRP) curve, shows why it slopes down and shifts, and explains how product demand, productivity and technology change how many workers firms want to hire.',
     doInThis: 'Define labour as a derived demand and trace the chain from product demand to labour demand. Build the MRP curve and explain why it slopes down. Show how a change in product demand shifts the whole curve, and distinguish a shift from a movement. Finally, analyse complements and substitutes, and judge the effect on different labour markets.',
     outcomes: [

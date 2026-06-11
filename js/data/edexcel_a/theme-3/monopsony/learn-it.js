@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
   goal: 'Define monopsony and buyer power, build and read the monopsony labour-market diagram, explain when buyer power exists, and evaluate who gains and who loses',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroMonopsony',
     summary: 'A monopsony is a market with a single dominant buyer. Just as a monopoly is one seller, a monopsony is one buyer — most often a firm that is the main employer of labour, or a large purchaser buying from many small suppliers. Because sellers have few alternatives, the buyer can push the wage or price below the competitive level and buy a smaller quantity. This deck builds the monopsony diagram, explains when buyer power arises, and weighs the effects on firms, workers, suppliers and consumers.',
     doInThis: 'Define monopsony and explain buyer power. Build the labour-market monopsony diagram and use it to find the wage and employment level, comparing them to a competitive market. Explain the conditions that create buyer power and spot it in the real world. Finally, evaluate who gains and who loses, and how a minimum wage can change the result.',
     outcomes: [

@@ -31,7 +31,7 @@ window.ECONOS_TOPIC = {
   goal: 'Apply the monopolistic-competition model: identify the five characteristics, find SR profit max and LR equilibrium, and judge efficiency and excess capacity',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroMonopolisticComp',
     summary: 'Monopolistic competition is a market with many firms, differentiated products and low barriers to entry. Each firm faces a downward-sloping (rather than perfectly elastic) demand curve thanks to product differentiation — so it has some price-making power. In the short run, profit-maximising firms can earn abnormal profit; in the long run, low entry barriers let new firms in, demand-per-firm shifts left, and the result is a tangency equilibrium where price equals average cost (normal profit only). Output sits below the AC minimum, giving "excess capacity" — a trade-off for the variety and choice that differentiation delivers.',
     doInThis: 'Name the five characteristics of monopolistic competition. Build the firm diagram step by step using MR = MC and draw the SR profit (or loss) rectangle. Show how entry shifts AR left to a tangency with AC in the long run, and explain what "excess capacity" means. Judge the efficiency trade-offs against perfect competition.',
     outcomes: [

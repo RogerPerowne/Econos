@@ -26,7 +26,7 @@ window.ECONOS_TOPIC = {
   goal: 'Explain how governments promote competition — deregulation, support for small firms, competitive tendering and privatisation — and evaluate whether more competition improves outcomes',
 
   intro: {
-    heroKey: 'heroFirm',
+    heroKey: 'heroPromoteComp',
     summary: 'Instead of regulating powerful firms directly, governments can make markets more competitive — making it easier for new firms to enter, survive and challenge incumbents. This deck works through the main levers: deregulation, support for small business, competitive tendering and privatisation. Each can lower prices, raise quality and spur innovation — but only if barriers really fall and the market is genuinely contestable. The deck closes by judging when promoting competition actually improves outcomes.',
     doInThis: 'Set out the four levers governments use to promote competition. Explain deregulation and the support given to small firms and new entrants. Analyse competitive tendering and privatisation, including their risks. Finally, judge whether more competition genuinely improves prices, quality, choice and innovation — or whether some markets need regulation instead.',
     outcomes: [

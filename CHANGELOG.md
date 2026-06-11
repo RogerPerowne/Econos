@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.162.1 — 2026-06-11
+
+### Output Gaps — expanded from 1 card to 3
+
+- Another one-carder from the #1115 spec-alignment split (its file header
+  still carried the old equilibrium-national-income title — fixed). The
+  spec audit found 2.5.2(b) measurement difficulty taught nowhere, and the
+  actual-vs-trend definition only implicit.
+- NEW card 1 "What an output gap is — actual vs trend": new engine twin
+  chart `output-gap-sign.js` (negative gap / positive gap panels, shared
+  trend geometry, gap arrows, spare-capacity vs overheating labels) + THE
+  CHAIN (trend rises → actual fluctuates → gap opens → sign names the
+  problem) + a rates-vs-levels tip (growth rates vs the gap as a level).
+- Card 2 (existing dual Classical/Keynesian AD/AS interactives) unchanged,
+  renumbered.
+- NEW card 3 "Why output gaps are hard to measure": the three measurement
+  problems (potential unobservable · GDP revisions · OBR/Bank/OECD
+  disagreement) + the policy stakes pair (overestimate → inflation;
+  underestimate → idle capacity and hysteresis) + dashboard bottomTip.
+- estTime 5 → 12 min; outcomes extended. New spec wired into shells + sw
+  precache; snapshots refreshed (132). `sw.js` cache
+  `econos-v545` → `econos-v546`.
+
 ## 0.162.0 — 2026-06-11
 
 ### Ragged tile grids auto-switch to "fancy rows" — sitewide

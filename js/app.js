@@ -1409,6 +1409,39 @@
     return `repeat(auto-fill, minmax(${minPx}px, 1fr))`;
   }
 
+  /* "Fancy rows" auto-switch. A tile grid that wraps to a second row and
+     leaves it ragged (the classic: 5 tiles in 3 columns → 3+2) reads as a
+     mistake. When that happens, render the items as full-width numbered
+     rows (the numbered-rows style: tone bar + numbered circle + icon +
+     head/body) instead of a grid. Returns the rows HTML, or null when the
+     grid is even / single-row / column count unknown (auto-fill) — the
+     caller then keeps its grid. */
+  function fancyRowsIfRagged(items, colsSpec) {
+    const n = (items || []).length;
+    let cols = null;
+    if (typeof colsSpec === 'number') cols = colsSpec;
+    else if (typeof colsSpec === 'string') { const m = colsSpec.match(/repeat\((\d+)/); if (m) cols = +m[1]; }
+    if (!cols || cols < 2 || n <= cols || n % cols === 0) return null;
+    const cycle = ['green', 'blue', 'purple', 'amber', 'rose', 'slate'];
+    const rows = items.map((item, i) => {
+      const tone = (item.tone && PATTERN_TONES[item.tone]) || PATTERN_TONES[cycle[i % cycle.length]];
+      const iconHtml = item.icon
+        ? `<div style="font-size:var(--fs-3xl);line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${renderIcon(item.icon)}</div>`
+        : '';
+      const body = item.body || item.sub || '';
+      return `
+        <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:var(--r-lg);padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+          <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:var(--fw-extrabold);flex-shrink:0;">${i + 1}</div>
+          ${iconHtml}
+          <div style="flex:1;min-width:0;">
+            <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${tone.label};line-height:var(--lh-snug);${body ? 'margin-bottom:3px;' : ''}">${item.head}</div>
+            ${body ? `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${body}</div>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+    return `<div style="display:grid;gap:10px;margin:0 0 22px;">${rows}</div>`;
+  }
+
   // Shared helper: renders an interactiveDiagram block (SVG left + desc right +
   // step buttons + analysis panel). Used by both renderCardGeneric and
   // renderCardAdInteractive so either template can host interactive diagrams.
@@ -1605,6 +1638,8 @@
       const flat = c.causesStyle === 'tinted-flat';
       if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
       const colsTop = c.causesCols ? `repeat(${c.causesCols}, minmax(0, 1fr))` : gridColumnsFor(c.causes.length, hasIcons ? 155 : 220);
+      const fancy_colsTop = fancyRowsIfRagged(c.causes, colsTop);
+      if (fancy_colsTop) { content += fancy_colsTop; } else {
       content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${colsTop};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
@@ -1690,6 +1725,7 @@
         </div>`;
       }).join('');
       content += `</div>`;
+      }
     }
 
     // Intro/lede – styled as a thought-prompt callout
@@ -2425,6 +2461,8 @@
       const flat = c.causesStyle === 'tinted-flat';
       if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
       const colsMain = c.causesCols ? `repeat(${c.causesCols}, minmax(0, 1fr))` : gridColumnsFor(c.causes.length, hasIcons ? 155 : 220);
+      const fancy_colsMain = fancyRowsIfRagged(c.causes, colsMain);
+      if (fancy_colsMain) { content += fancy_colsMain; } else {
       content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${colsMain};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
@@ -2510,6 +2548,7 @@
         </div>`;
       }).join('');
       content += `</div>`;
+      }
     }
 
     // After-causes comparison – rendered here when c.comparison.position === 'after-causes'.
@@ -2550,7 +2589,7 @@
           </div>`;
       }).join('');
       const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, 1fr)` : gridColumnsFor(c.causes2.length, 180);
-      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
+      content += fancyRowsIfRagged(c.causes2, cols2) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
     }
 
     // Causes 3 – a third causes-style grid for an additional themed section. Mirrors causes2 exactly.
@@ -2580,7 +2619,7 @@
           </div>`;
       }).join('');
       const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, 1fr)` : gridColumnsFor(c.causes3.length, 180);
-      content += `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols3};gap:12px;margin-bottom:26px;">${tiles3}</div>`;
+      content += fancyRowsIfRagged(c.causes3, cols3) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols3};gap:12px;margin-bottom:26px;">${tiles3}</div>`;
     }
 
     // How to think about it – two tinted panels side by side (centered icon + heading + body).
@@ -5029,7 +5068,7 @@
           </div>`;
         }).join('');
         const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : `repeat(${Math.min(items.length, 3)},1fr)`;
-        return `${label}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`;
+        return `${label}${fancyRowsIfRagged(items, cols) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 22px;">${tiles}</div>`}`;
       })() : ''}
 
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div${visualA11y(I[c.visualKey], c.visualLabel || c.visualCaption || c.title)} style="margin:0 0 18px;border-radius:var(--r-lg);overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
@@ -5303,7 +5342,7 @@
           </div>`;
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
-        return `${label2}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:14px;margin:0 0 20px;">${tiles2}</div>`;
+        return `${label2}${fancyRowsIfRagged(items2, cols2) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:14px;margin:0 0 20px;">${tiles2}</div>`}`;
       })() : ''}
 
       ${c.causesNote ? (() => {
@@ -5428,7 +5467,7 @@
           </div>`;
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
-        return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:0 0 20px;">${tiles}</div>`;
+        return `${label}${fancyRowsIfRagged(items, gridColumnsFor(items.length, 155)) || `<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:0 0 20px;">${tiles}</div>`}`;
       })() : ''}
 
       ${!c.causesFirst && c.causes2 && c.causes2.length ? (() => {
@@ -5451,7 +5490,7 @@
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
         const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, minmax(0, 1fr))` : gridColumnsFor(items2.length, 155);
-        return `${label2}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
+        return `${label2}${fancyRowsIfRagged(items2, cols2) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols2};gap:12px;margin:0 0 20px;">${tiles2}</div>`}`;
       })() : ''}
 
       ${c.causes3 && c.causes3.length ? (() => {
@@ -5474,7 +5513,7 @@
         }).join('');
         const label3 = c.causes3Label === null ? '' : genSecLabel(c.causes3Emoji || '🔗', c.causes3Label || 'More to know');
         const cols3 = c.causes3Cols ? `repeat(${c.causes3Cols}, minmax(0, 1fr))` : gridColumnsFor(items3.length, 155);
-        return `${label3}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols3};gap:12px;margin:0 0 20px;">${tiles3}</div>`;
+        return `${label3}${fancyRowsIfRagged(items3, cols3) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols3};gap:12px;margin:0 0 20px;">${tiles3}</div>`}`;
       })() : ''}
 
       ${c.versusRows && c.versusRows.rows && c.versusRows.rows.length && c.versusRowsFirst !== false ? (() => {
@@ -5636,7 +5675,7 @@
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'In detail');
         const cols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : gridColumnsFor(items.length, 155);
-        return `${label}<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 20px;">${tiles}</div>`;
+        return `${label}${fancyRowsIfRagged(items, cols) || `<div class="dl-hover-cards" style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 20px;">${tiles}</div>`}`;
       })() : ''}
 
       ${c.conclusionPosition === 'end' ? '' : ((c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {

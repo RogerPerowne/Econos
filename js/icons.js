@@ -254,7 +254,8 @@ window.ECONOS_ICONS = {
         <filter id="hb-soft" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/>
         </filter>
-      </defs>
+      <radialGradient id="herobars-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#BFDBFE" stop-opacity="0.5"/><stop offset="70%" stop-color="#BFDBFE" stop-opacity="0.1"/><stop offset="100%" stop-color="#BFDBFE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herobars-glow)"/>
 
       <!-- 3 ascending price tags (each: tag body, hole, tied string to basket below) -->
       <!-- tag 1: £1.20 – lowest, smallest, pale -->
@@ -310,7 +311,8 @@ window.ECONOS_ICONS = {
         <filter id="hc-shadow" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
         </filter>
-      </defs>
+      <radialGradient id="heroconsumption-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FBCFE8" stop-opacity="0.5"/><stop offset="70%" stop-color="#FBCFE8" stop-opacity="0.1"/><stop offset="100%" stop-color="#FBCFE8" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroconsumption-glow)"/>
       <g filter="url(#hc-shadow)"><circle cx="105" cy="68" r="16" fill="#FCD34D" stroke="#92400E" stroke-width="1.8"/><text x="105" y="74" font-size="16" font-weight="800" fill="#92400E" text-anchor="middle">£</text></g>
       <g filter="url(#hc-shadow)"><circle cx="170" cy="82" r="14" fill="#FCD34D" stroke="#92400E" stroke-width="1.5"/><text x="170" y="87" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text></g>
       <g filter="url(#hc-shadow)"><circle cx="138" cy="42" r="11" fill="#FCD34D" stroke="#92400E" stroke-width="1.3"/><text x="138" y="47" font-size="12" font-weight="800" fill="#92400E" text-anchor="middle">£</text></g>
@@ -337,7 +339,8 @@ window.ECONOS_ICONS = {
         <filter id="hi-shadow" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
         </filter>
-      </defs>
+      <radialGradient id="heroinvestment-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A7F3D0" stop-opacity="0.5"/><stop offset="70%" stop-color="#A7F3D0" stop-opacity="0.1"/><stop offset="100%" stop-color="#A7F3D0" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroinvestment-glow)"/>
       <g opacity="0.32">
         <line x1="50" y1="80" x2="50" y2="225" stroke="#94A3B8" stroke-width="2"/>
         <line x1="50" y1="225" x2="230" y2="225" stroke="#94A3B8" stroke-width="2"/>
@@ -368,7 +371,8 @@ window.ECONOS_ICONS = {
         <filter id="hg-shadow" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
         </filter>
-      </defs>
+      <radialGradient id="herogovspending-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#BFDBFE" stop-opacity="0.5"/><stop offset="70%" stop-color="#BFDBFE" stop-opacity="0.1"/><stop offset="100%" stop-color="#BFDBFE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herogovspending-glow)"/>
       <g opacity="0.5" stroke="#FCD34D" stroke-width="3.5" stroke-linecap="round">
         <line x1="140" y1="40" x2="140" y2="22"/>
         <line x1="180" y1="52" x2="194" y2="38"/>
@@ -2818,7 +2822,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="had-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="had-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroad-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#BFDBFE" stop-opacity="0.5"/><stop offset="70%" stop-color="#BFDBFE" stop-opacity="0.1"/><stop offset="100%" stop-color="#BFDBFE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroad-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="320" rx="115" ry="11" fill="#FEF3C7" opacity="0.7"/>
@@ -3298,7 +3303,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hmon-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hmon-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heromonetary-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#DDD6FE" stop-opacity="0.5"/><stop offset="70%" stop-color="#DDD6FE" stop-opacity="0.1"/><stop offset="100%" stop-color="#DDD6FE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heromonetary-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="305" rx="105" ry="9" fill="#DBEAFE" opacity="0.7"/>
@@ -3569,7 +3575,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="has-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="has-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroaggsupply-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDE68A" stop-opacity="0.5"/><stop offset="70%" stop-color="#FDE68A" stop-opacity="0.1"/><stop offset="100%" stop-color="#FDE68A" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroaggsupply-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="295" rx="115" ry="10" fill="#DBEAFE" opacity="0.7"/>
@@ -3625,7 +3632,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hfis-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hfis-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herofiscal-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#BFDBFE" stop-opacity="0.5"/><stop offset="70%" stop-color="#BFDBFE" stop-opacity="0.1"/><stop offset="100%" stop-color="#BFDBFE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herofiscal-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="295" rx="105" ry="9" fill="#FEF3C7" opacity="0.8"/>
@@ -3683,7 +3691,8 @@ window.ECONOS_ICONS = {
         <marker id="hg-arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#15803D"/>
         </marker>
-      </defs>
+      <radialGradient id="herogrowth-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.5"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.1"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herogrowth-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="295" rx="105" ry="9" fill="#DCFCE7" opacity="0.8"/>
@@ -3720,7 +3729,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hm-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hm-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heromultiplier-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A5B4FC" stop-opacity="0.5"/><stop offset="70%" stop-color="#A5B4FC" stop-opacity="0.1"/><stop offset="100%" stop-color="#A5B4FC" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heromultiplier-glow)"/>
 
       <!-- ripple rings centred on the £ coin -->
       <g fill="none" stroke="#3B82F6">
@@ -3778,7 +3788,8 @@ window.ECONOS_ICONS = {
           <stop offset="50%" stop-color="#EF4444"/>
           <stop offset="100%" stop-color="#22C55E"/>
         </linearGradient>
-      </defs>
+      <radialGradient id="herotradecycle-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDBA74" stop-opacity="0.5"/><stop offset="70%" stop-color="#FDBA74" stop-opacity="0.1"/><stop offset="100%" stop-color="#FDBA74" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herotradecycle-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="295" rx="105" ry="9" fill="#FEF3C7" opacity="0.6"/>
@@ -3825,7 +3836,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hfp-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hfp-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herofiscalpolicy-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#BFDBFE" stop-opacity="0.5"/><stop offset="70%" stop-color="#BFDBFE" stop-opacity="0.1"/><stop offset="100%" stop-color="#BFDBFE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herofiscalpolicy-glow)"/>
 
       <!-- government building (treasury / parliament style) -->
       <g filter="url(#hfp-shadow)">
@@ -3880,7 +3892,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hfm-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hfm-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herofinancialmarkets-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A7F3D0" stop-opacity="0.5"/><stop offset="70%" stop-color="#A7F3D0" stop-opacity="0.1"/><stop offset="100%" stop-color="#A7F3D0" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herofinancialmarkets-glow)"/>
 
       <!-- pastel pad behind whole arrangement -->
       <ellipse cx="140" cy="285" rx="100" ry="8" fill="#EEF2FF" opacity="0.7"/>
@@ -3939,7 +3952,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hdev-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hdev-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herodevelopment-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#99F6E4" stop-opacity="0.5"/><stop offset="70%" stop-color="#99F6E4" stop-opacity="0.1"/><stop offset="100%" stop-color="#99F6E4" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herodevelopment-glow)"/>
 
       <!-- pastel ground pad -->
       <ellipse cx="140" cy="290" rx="100" ry="8" fill="#CCFBF1" opacity="0.7"/>
@@ -3999,7 +4013,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hmo-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hmo-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heromacroobjectives-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDE68A" stop-opacity="0.5"/><stop offset="70%" stop-color="#FDE68A" stop-opacity="0.1"/><stop offset="100%" stop-color="#FDE68A" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heromacroobjectives-glow)"/>
 
       <!-- bullseye target rings -->
       <g filter="url(#hmo-soft)">
@@ -4060,7 +4075,8 @@ window.ECONOS_ICONS = {
           <stop offset="0%" stop-color="#FBBF24"/>
           <stop offset="100%" stop-color="#F59E0B"/>
         </radialGradient>
-      </defs>
+      <radialGradient id="herowellbeing-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FBCFE8" stop-opacity="0.5"/><stop offset="70%" stop-color="#FBCFE8" stop-opacity="0.1"/><stop offset="100%" stop-color="#FBCFE8" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herowellbeing-glow)"/>
 
       <!-- sun behind house -->
       <circle cx="200" cy="105" r="32" fill="url(#hwb-sun)" filter="url(#hwb-soft)"/>
@@ -4107,7 +4123,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hsrc-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hsrc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroshortruncosts-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDBA74" stop-opacity="0.5"/><stop offset="70%" stop-color="#FDBA74" stop-opacity="0.1"/><stop offset="100%" stop-color="#FDBA74" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroshortruncosts-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="290" rx="100" ry="9" fill="#D1FAE5" opacity="0.7"/>
@@ -4156,7 +4173,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hlrc-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hlrc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herolongruncosts-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herolongruncosts-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="295" rx="115" ry="10" fill="#DBEAFE" opacity="0.7"/>
@@ -4216,7 +4234,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hpe-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hpe-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroposexternalities-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A7F3D0" stop-opacity="0.5"/><stop offset="70%" stop-color="#A7F3D0" stop-opacity="0.1"/><stop offset="100%" stop-color="#A7F3D0" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroposexternalities-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="295" rx="105" ry="9" fill="#DCFCE7" opacity="0.8"/>
@@ -4268,7 +4287,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hpg-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hpg-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heropublicgoods-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#BFDBFE" stop-opacity="0.5"/><stop offset="70%" stop-color="#BFDBFE" stop-opacity="0.1"/><stop offset="100%" stop-color="#BFDBFE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heropublicgoods-glow)"/>
 
       <!-- pastel water/sea pad -->
       <ellipse cx="140" cy="290" rx="115" ry="14" fill="#DBEAFE" opacity="0.7"/>
@@ -4333,7 +4353,8 @@ window.ECONOS_ICONS = {
         <filter id="hd-soft" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
         </filter>
-      </defs>
+      <radialGradient id="herodemand-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herodemand-glow)"/>
 
       <!-- product bubbles arranged around the upper half -->
       <!-- bubble 1: pink lipstick (far left) -->
@@ -4418,7 +4439,8 @@ window.ECONOS_ICONS = {
         <filter id="hs-soft" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
         </filter>
-      </defs>
+      <radialGradient id="herosupply-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.5"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.1"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herosupply-glow)"/>
 
       <!-- sun decorative -->
       <circle cx="220" cy="80" r="10" fill="#F87171" opacity="0.85"/>
@@ -4502,7 +4524,8 @@ window.ECONOS_ICONS = {
         <filter id="hsd-soft" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
         </filter>
-      </defs>
+      <radialGradient id="herosupplydemand-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A5B4FC" stop-opacity="0.5"/><stop offset="70%" stop-color="#A5B4FC" stop-opacity="0.1"/><stop offset="100%" stop-color="#A5B4FC" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herosupplydemand-glow)"/>
 
       <!-- pastel pad behind whole scale -->
       <ellipse cx="140" cy="320" rx="90" ry="6" fill="#0F172A" opacity="0.07"/>
@@ -4741,7 +4764,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hcps-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hcps-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herocps-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#99F6E4" stop-opacity="0.5"/><stop offset="70%" stop-color="#99F6E4" stop-opacity="0.1"/><stop offset="100%" stop-color="#99F6E4" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herocps-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="295" rx="115" ry="10" fill="#F0FDF4" opacity="0.9"/>
@@ -5316,7 +5340,8 @@ window.ECONOS_ICONS = {
         <filter id="he-soft" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
         </filter>
-      </defs>
+      <radialGradient id="heroelasticity-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroelasticity-glow)"/>
 
       <!-- spring/coil running horizontally connecting basket to price tag -->
       <path d="M 105 200 Q 110 188 120 200 Q 130 212 140 200 Q 150 188 160 200 Q 170 212 180 200 Q 190 188 200 200"
@@ -5369,7 +5394,8 @@ window.ECONOS_ICONS = {
         <filter id="hp-soft" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/>
         </filter>
-      </defs>
+      <radialGradient id="heroppf-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#BFDBFE" stop-opacity="0.5"/><stop offset="70%" stop-color="#BFDBFE" stop-opacity="0.1"/><stop offset="100%" stop-color="#BFDBFE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroppf-glow)"/>
 
       <!-- soft pastel pad behind left option (consumer goods – pink shopping bag) -->
       <ellipse cx="80" cy="245" rx="58" ry="14" fill="#FCE7E9" opacity="0.7"/>
@@ -5432,7 +5458,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hsc-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hsc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroscarcity-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDE68A" stop-opacity="0.5"/><stop offset="70%" stop-color="#FDE68A" stop-opacity="0.1"/><stop offset="100%" stop-color="#FDE68A" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroscarcity-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="305" rx="80" ry="6" fill="#FEF3C7" opacity="0.7"/>
@@ -5484,7 +5511,8 @@ window.ECONOS_ICONS = {
         <marker id="hpr-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="#0B1426"/>
         </marker>
-      </defs>
+      <radialGradient id="heroprice-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroprice-glow)"/>
 
       <!-- signal waves above the tag -->
       <g fill="none" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round">
@@ -5553,7 +5581,8 @@ window.ECONOS_ICONS = {
         <marker id="hsm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="#0B1426"/>
         </marker>
-      </defs>
+      <radialGradient id="herospecialisationmoney-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDE68A" stop-opacity="0.5"/><stop offset="70%" stop-color="#FDE68A" stop-opacity="0.1"/><stop offset="100%" stop-color="#FDE68A" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herospecialisationmoney-glow)"/>
 
       <!-- signal waves above -->
       <g fill="none" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round">
@@ -5659,7 +5688,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hes-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hes-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroeconomicsystems-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A5B4FC" stop-opacity="0.5"/><stop offset="70%" stop-color="#A5B4FC" stop-opacity="0.1"/><stop offset="100%" stop-color="#A5B4FC" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroeconomicsystems-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="305" rx="115" ry="9" fill="#F1F5F9" opacity="0.8"/>
@@ -5724,7 +5754,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hex-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hex-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroexternalities-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FCA5A5" stop-opacity="0.5"/><stop offset="70%" stop-color="#FCA5A5" stop-opacity="0.1"/><stop offset="100%" stop-color="#FCA5A5" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroexternalities-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="305" rx="115" ry="9" fill="#FEE2E2" opacity="0.5"/>
@@ -5776,7 +5807,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hf-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hf-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herofirm-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herofirm-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="305" rx="100" ry="9" fill="#DBEAFE" opacity="0.7"/>
@@ -7454,7 +7486,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hcc-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hcc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herocostcurves-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FDBA74" stop-opacity="0.5"/><stop offset="70%" stop-color="#FDBA74" stop-opacity="0.1"/><stop offset="100%" stop-color="#FDBA74" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herocostcurves-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="305" rx="100" ry="9" fill="#DBEAFE" opacity="0.7"/>
@@ -7526,7 +7559,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hmp-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hmp-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heromarketpower-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heromarketpower-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="305" rx="115" ry="9" fill="#F5F3FF" opacity="0.7"/>
@@ -7607,7 +7641,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hgt-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hgt-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herogametheory-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A5B4FC" stop-opacity="0.5"/><stop offset="70%" stop-color="#A5B4FC" stop-opacity="0.1"/><stop offset="100%" stop-color="#A5B4FC" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herogametheory-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="295" rx="100" ry="9" fill="#FEF3C7" opacity="0.7"/>
@@ -7662,7 +7697,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hl-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hl-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herolabour-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#93C5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#93C5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herolabour-glow)"/>
 
       <!-- pastel ground -->
       <ellipse cx="140" cy="305" rx="115" ry="10" fill="#FEF3C7" opacity="0.7"/>
@@ -7720,7 +7756,8 @@ window.ECONOS_ICONS = {
           <stop offset="100%" stop-color="#1E40AF"/>
         </radialGradient>
         <clipPath id="hgl-clip"><circle cx="140" cy="195" r="90"/></clipPath>
-      </defs>
+      <radialGradient id="heroglobe-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#86EFAC" stop-opacity="0.5"/><stop offset="70%" stop-color="#86EFAC" stop-opacity="0.1"/><stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroglobe-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="305" rx="100" ry="10" fill="#DBEAFE" opacity="0.7"/>
@@ -7765,7 +7802,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hxr-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hxr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroexchangerates-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A7F3D0" stop-opacity="0.5"/><stop offset="70%" stop-color="#A7F3D0" stop-opacity="0.1"/><stop offset="100%" stop-color="#A7F3D0" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroexchangerates-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="300" rx="115" ry="10" fill="#DCFCE7" opacity="0.7"/>
@@ -7803,7 +7841,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hin-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hin-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heroinequality-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FBCFE8" stop-opacity="0.5"/><stop offset="70%" stop-color="#FBCFE8" stop-opacity="0.1"/><stop offset="100%" stop-color="#FBCFE8" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heroinequality-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="305" rx="115" ry="10" fill="#FEF3C7" opacity="0.6"/>
@@ -7861,7 +7900,8 @@ window.ECONOS_ICONS = {
           <stop offset="0%" stop-color="#A78BFA"/>
           <stop offset="100%" stop-color="#7D23CB"/>
         </linearGradient>
-      </defs>
+      <radialGradient id="herobehavioural-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.5"/><stop offset="70%" stop-color="#C4B5FD" stop-opacity="0.1"/><stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herobehavioural-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="305" rx="105" ry="9" fill="#F5F3FF" opacity="0.7"/>
@@ -7916,7 +7956,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hint-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hint-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herointervention-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#BFDBFE" stop-opacity="0.5"/><stop offset="70%" stop-color="#BFDBFE" stop-opacity="0.1"/><stop offset="100%" stop-color="#BFDBFE" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herointervention-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="305" rx="100" ry="9" fill="#FEF3C7" opacity="0.7"/>
@@ -7956,7 +7997,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="htr-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="htr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="herotrade-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#A7F3D0" stop-opacity="0.5"/><stop offset="70%" stop-color="#A7F3D0" stop-opacity="0.1"/><stop offset="100%" stop-color="#A7F3D0" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#herotrade-glow)"/>
 
       <!-- water/sea pad -->
       <ellipse cx="140" cy="295" rx="120" ry="14" fill="#DBEAFE" opacity="0.85"/>
@@ -8016,7 +8058,8 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hmf-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hmf-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
-      </defs>
+      <radialGradient id="heromarketfailure-glow" cx="50%" cy="42%" r="58%"><stop offset="0%" stop-color="#FCA5A5" stop-opacity="0.5"/><stop offset="70%" stop-color="#FCA5A5" stop-opacity="0.1"/><stop offset="100%" stop-color="#FCA5A5" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="140" cy="170" r="150" fill="url(#heromarketfailure-glow)"/>
 
       <!-- pastel pad -->
       <ellipse cx="140" cy="305" rx="100" ry="9" fill="#FEE2E2" opacity="0.6"/>

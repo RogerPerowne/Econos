@@ -72,9 +72,17 @@ opportunity-cost triangles, inward/outward shifts, capital-vs-consumer choice.
   `lras-vertical-interactive` [i][CK], `lras-shift-diagram` [i],
   `lras-shift-right-classical-keynesian` [i][CK], `lras-demand-vs-capacity` [mp],
   `supply-side-sr-lr` [i][CK].
-- **Other macro:** `stagflation-phillips` [i], `inflation-2022-ad-as` [i],
+- **Other macro:** `stagflation-phillips` [i], `macro-phillips` [i],
+  `inflation-2022-ad-as` [i],
   `crowding-out` [i], `consumption-function`, `actual-vs-potential-growth` [i],
   `uk-productivity-puzzle`, `j-curve-interactive` [i].
+  - `macro-phillips` (`macroPhillipsInteractive`) — the Friedman–Phelps
+    A→B→C story as a 4-view stepped `interactiveDiagram` (Macro
+    Objectives C4): short-run trade-off → stimulus down SRPC₁ → adaptive
+    expectations shift SRPC up + vertical LRPC → no long-run trade-off
+    (A→C vertical). Theory-only twin of `stagflation-phillips` (which
+    adds the 1970s supply-shock view). Reuse the exclusive-layer
+    one-snapshot-per-view build for any "movement-then-shift" story.
 
 > **Note for Theme 3:** the firm/cost/market-structure *curve* diagrams
 > (cost stacks, LRAC, shutdown, monopoly, monopsony, price discrimination)
@@ -151,7 +159,7 @@ Organised by archetype. Each entry: `key` — what it shows.
 - `growthScorecard`, `economicSystemsScorecard`, `goodMoneyScorecard`,
   `growthSustainability3View`, `macroCockpit`, `macroHeadlineCards`,
   `macroDashboardSvg`, `bopSustainabilityDashboard` (uses dials),
-  `macroConstraintCompass`, `macroPhillipsWorkstation`, `macroConstraintWeb`,
+  `macroConstraintCompass`, `macroConstraintWeb`,
   `conflictLensMap`, `bopGoodVsWarning`, `bopHowToWriteIt`.
 
 ### 6. Twin / side-by-side comparisons

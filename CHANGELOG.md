@@ -6,6 +6,14 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.8 — 2026-06-12
+
+### Review set 2 (batch 9) — Kuznets curve as a multi-button interactive
+
+- **Causes of Inequality "economic change and development" (`kuznetsDevelopment`/`kuznets-curve` spec):** converted the static Kuznets curve into a 3-step
+  interactive (Inequality rises · Take-off peak · May flatten or fall). The
+  stage points now sit exactly on the curve (`on:`) and reveal step by step.
+
 ## 0.172.7 — 2026-06-12
 
 ### Review set 2 (batch 8) — world-map hub enrichments

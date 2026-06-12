@@ -255,10 +255,32 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F512}', tone: 'green', text: 'Development often creates <strong>winners and losers</strong> — inequality may rise before it later stabilises or falls.' },
 
-      visualKey: 'kuznetsDevelopment',
-      visualLabel: 'THE DEVELOPMENT STORY',
-      visualEmoji: '\u{1F517}',
-      visualCaption: 'The Kuznets hypothesis: inequality may rise in early development, then flatten or fall in a mature economy. A useful model, not a law.',
+      interactiveDiagram: {
+        svgKey: 'kuznetsDevelopment',
+        label: 'THE DEVELOPMENT STORY',
+        emoji: '\u{1F517}',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Inequality rises', show: ['idl-1'], tone: 'green',
+            head: 'Early development: inequality rises.',
+            body: 'As an economy industrialises, some sectors and regions grow first. Early gains are uneven, so <strong>inequality climbs</strong> up the left of the curve.',
+            analysis: 'Structural change — urbanisation, a skills premium, capital owners gaining first — pulls incomes apart in the early stages.'
+          },
+          {
+            label: 'Take-off peak', show: ['idl-1', 'idl-2'], tone: 'rose',
+            head: 'Take-off peak: inequality is highest.',
+            body: 'Through the industrial take-off the gap between the modern and traditional economy is at its <strong>widest</strong> — inequality peaks.',
+            analysis: 'This is the top of the inverted-U: rapid growth, but the least evenly shared.'
+          },
+          {
+            label: 'May flatten or fall', show: ['idl-1', 'idl-2', 'idl-3'], tone: 'blue',
+            head: 'Mature economy: inequality may flatten or fall.',
+            body: 'In a mature economy, wider education, redistribution and a larger welfare state can <strong>narrow the gap</strong> again — the right of the curve.',
+            analysis: 'Kuznets is a <strong>hypothesis, not a law</strong>: many advanced economies have seen inequality widen again, so treat the downturn as possible, not guaranteed.'
+          }
+        ]
+      },
 
       causesLabel: 'WHY GROWTH CAN RAISE INEQUALITY',
       causesEmoji: '\u{1F517}',

@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.7 — 2026-06-12
+
+### Review set 2 (batch 8) — world-map hub enrichments
+
+- **Pattern of Trade "then/now" (`tradeThenNow`):** added a faint world-map
+  backdrop behind both panels and curved the hub spokes, matching the mockup.
+- **Balance of Payments "world picture" (`bopWorldImbalances`):** the central
+  globe now carries stylised continents + a lat/long grid instead of a plain
+  blue circle.
+- **Exchange Rates "the big picture" (`fxGlobeHub`):** same world-map treatment
+  on the central £$€ globe.
+
 ## 0.172.6 — 2026-06-12
 
 ### Review set 2 (batch 7) — debt snowball illustration

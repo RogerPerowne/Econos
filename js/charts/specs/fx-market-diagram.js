@@ -17,22 +17,23 @@
     chartArea: { x: 70, y: 40, width: 330, height: 268 },
     className: 'fx-market-svg',
     background: '#FFFFFF',
+    layers: ['idl-1', 'idl-2', 'idl-3'],
     axes: { x: { label: 'Quantity of £' }, y: { label: 'Exchange rate of £' } },
     curves: [
-      { d: 'M 0,0.95 L 0.95,0.05', tone: 'blue',  label: 'D £', strokeWidth: 2.8, labelDx: 6, labelDy: 12 },
-      { d: 'M 0.05,0.05 L 0.95,0.95', tone: 'green', label: 'S £', strokeWidth: 2.8, labelDx: 6, labelDy: -6 }
+      { d: 'M 0,0.95 L 0.95,0.05', tone: 'blue',  label: 'D £', strokeWidth: 2.8, labelDx: 6, labelDy: 12, layer: 'idl-1' },
+      { d: 'M 0.05,0.05 L 0.95,0.95', tone: 'green', label: 'S £', strokeWidth: 2.8, labelDx: 6, labelDy: -6, layer: 'idl-2' }
     ],
     arrows: [
-      { x1: 0, y1: E.y, x2: E.x, y2: E.y, tone: 'slate', strokeWidth: 1.3, dashed: '5 3', buffer: 0 },
-      { x1: E.x, y1: E.y, x2: E.x, y2: 0, tone: 'slate', strokeWidth: 1.3, dashed: '5 3', buffer: 0 }
+      { x1: 0, y1: E.y, x2: E.x, y2: E.y, tone: 'slate', strokeWidth: 1.3, dashed: '5 3', buffer: 0, layer: 'idl-3' },
+      { x1: E.x, y1: E.y, x2: E.x, y2: 0, tone: 'slate', strokeWidth: 1.3, dashed: '5 3', buffer: 0, layer: 'idl-3' }
     ],
     points: [
-      { x: E.x, y: E.y, tone: 'slate', radius: 5.5 }
+      { x: E.x, y: E.y, tone: 'slate', radius: 5.5, layer: 'idl-3' }
     ],
     texts: [
-      { x: E.x + 0.03, y: E.y + 0.055, text: 'E', tone: 'slate', bold: true, fontSize: 14, anchor: 'start' },
-      { x: -0.02, y: E.y, text: 'E*', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end' },
-      { x: E.x, y: -0.06, text: 'Q*', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle' }
+      { x: E.x + 0.03, y: E.y + 0.055, text: 'E', tone: 'slate', bold: true, fontSize: 14, anchor: 'start', layer: 'idl-3' },
+      { x: -0.02, y: E.y, text: 'E*', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'end', layer: 'idl-3' },
+      { x: E.x, y: -0.06, text: 'Q*', tone: 'slate', bold: true, italic: true, fontSize: 13, anchor: 'middle', layer: 'idl-3' }
     ]
   };
 })();

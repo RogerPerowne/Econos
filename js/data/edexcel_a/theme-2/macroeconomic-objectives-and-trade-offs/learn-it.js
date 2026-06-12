@@ -261,9 +261,10 @@ window.ECONOS_TOPIC = {
 
     /* ============================================================
        CARD 6 – Pattern: Evidence-then-verdict
-       Hero: macroConstraintWeb. Radial diagram with 7 nodes and
-       5 tension lines (hover-highlight in CSS). Below: the
-       4-dimensional A* framework + a theory verdict (no examples).
+       Hero: macroConstraintWeb. Seven objectives on a ring with five
+       named, colour-coded double-headed trade-off arrows (Phillips,
+       External, Green, Fairness, Austerity). Below: the four-dimensional
+       A* framework as pastel cards + a theory verdict (no examples).
        ============================================================ */
     {
       id: 'constraint-web',

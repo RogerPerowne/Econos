@@ -23990,39 +23990,52 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 6 – THE CONSTRAINT WEB (numbered nodes + hoverable tension lines). */
+  /* Card 6 – THE STRUCTURAL MAP. Seven objectives evenly spaced on a
+     ring; five named structural trade-offs drawn as clear, colour-coded
+     double-headed arrows between the objectives they pull against (each
+     labelled in a pill). Below, the four-dimensional judgement framework
+     as pastel cards. Rebuilt from the busy "constraint web" so the
+     trade-offs read at a glance. */
   macroConstraintWeb: `
     <div class="cweb" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;">
       <style>
-        .cweb .web-link { stroke:#94A3B8; stroke-width:1.6; stroke-dasharray:5 4; fill:none; transition: stroke 0.2s, stroke-width 0.2s; cursor:pointer; }
-        .cweb .web-link:hover { stroke:#E11D48; stroke-width:3; stroke-dasharray:0; }
-        .cweb .web-node-num { font-size:10px; font-weight:900; fill:#fff; }
-        .cweb .framework-tile { background:#fff; border:1.5px solid; border-radius:12px; padding:12px 14px; text-align:center; }
+        .cweb .cweb-arrow { transition: opacity 0.18s; }
+        .cweb .cweb-arrow:hover { opacity:1; }
+        .cweb:hover .cweb-arrow { opacity:0.32; }
+        .cweb .cweb-arrow:hover { opacity:1; }
+        .cweb .fw-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:14px; }
+        .cweb .fw-tile { border-radius:12px; padding:13px 13px 12px; border:1.5px solid; }
+        .cweb .fw-ic { width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px; background:#fff; margin-bottom:8px; }
+        .cweb .fw-t { font-size:12.5px; font-weight:800; line-height:1.2; margin-bottom:5px; }
+        .cweb .fw-b { font-size:11.5px; color:#475569; line-height:1.35; }
+        @media (max-width:560px){ .cweb .fw-grid { grid-template-columns:1fr 1fr; } }
       </style>
-      <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <circle cx="360" cy="230" r="58" fill="#0B1426"/>
-        <text x="360" y="223" font-size="10" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="0.12em">WELFARE</text>
-        <text x="360" y="240" font-size="11" font-weight="900" fill="#fff" text-anchor="middle">net output</text>
-        <text x="360" y="254" font-size="10" font-style="italic" fill="#94A3B8" text-anchor="middle">net of trade-offs</text>
-        <g class="web-node"><circle cx="360" cy="60" r="36" fill="#FFF1F2" stroke="#E11D48" stroke-width="2.6"/><circle cx="380" cy="42" r="11" fill="#E11D48"/><text x="380" y="46" class="web-node-num" text-anchor="middle">1</text><text x="360" y="55" font-size="16" font-family="Inter,sans-serif" text-anchor="middle">📊</text><text x="360" y="78" font-size="10" font-weight="800" fill="#9F1239" font-family="Inter,sans-serif" text-anchor="middle">Inflation</text></g>
-        <g class="web-node"><circle cx="493" cy="124" r="36" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.6"/><circle cx="513" cy="106" r="11" fill="#2563EB"/><text x="513" y="110" class="web-node-num" text-anchor="middle">2</text><text x="493" y="119" font-size="16" font-family="Inter,sans-serif" text-anchor="middle">👥</text><text x="493" y="142" font-size="10" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif" text-anchor="middle">Unemp.</text></g>
-        <g class="web-node"><circle cx="526" cy="268" r="36" fill="#F0FDF4" stroke="#16A34A" stroke-width="2.6"/><circle cx="546" cy="250" r="11" fill="#16A34A"/><text x="546" y="254" class="web-node-num" text-anchor="middle">3</text><text x="526" y="263" font-size="16" font-family="Inter,sans-serif" text-anchor="middle">📈</text><text x="526" y="286" font-size="10" font-weight="800" fill="#065F46" font-family="Inter,sans-serif" text-anchor="middle">Growth</text></g>
-        <g class="web-node"><circle cx="434" cy="383" r="36" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2.6"/><circle cx="454" cy="365" r="11" fill="#8B5CF6"/><text x="454" y="369" class="web-node-num" text-anchor="middle">4</text><text x="434" y="378" font-size="16" font-family="Inter,sans-serif" text-anchor="middle">🌐</text><text x="434" y="401" font-size="10" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">BoP</text></g>
-        <g class="web-node"><circle cx="286" cy="383" r="36" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.6"/><circle cx="266" cy="365" r="11" fill="#F59E0B"/><text x="266" y="369" class="web-node-num" text-anchor="middle">5</text><text x="286" y="378" font-size="16" font-family="Inter,sans-serif" text-anchor="middle">🏛️</text><text x="286" y="401" font-size="10" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">Fiscal</text></g>
-        <g class="web-node"><circle cx="194" cy="268" r="36" fill="#F0FDFA" stroke="#0D9488" stroke-width="2.6"/><circle cx="174" cy="250" r="11" fill="#0D9488"/><text x="174" y="254" class="web-node-num" text-anchor="middle">6</text><text x="194" y="263" font-size="16" font-family="Inter,sans-serif" text-anchor="middle">🌿</text><text x="194" y="286" font-size="10" font-weight="800" fill="#115E59" font-family="Inter,sans-serif" text-anchor="middle">Environment</text></g>
-        <g class="web-node"><circle cx="227" cy="124" r="36" fill="#F1F5F9" stroke="#475569" stroke-width="2.6"/><circle cx="207" cy="106" r="11" fill="#475569"/><text x="207" y="110" class="web-node-num" text-anchor="middle">7</text><text x="227" y="119" font-size="16" font-family="Inter,sans-serif" text-anchor="middle">⚖️</text><text x="227" y="142" font-size="10" font-weight="800" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle">Equality</text></g>
-        <line class="web-link" x1="360" y1="96" x2="493" y2="100"/>
-        <line class="web-link" x1="526" y1="232" x2="375" y2="86"/>
-        <line class="web-link" x1="526" y1="304" x2="448" y2="350"/>
-        <line class="web-link" x1="492" y1="268" x2="228" y2="268"/>
-        <line class="web-link" x1="304" y1="354" x2="510" y2="290"/>
-        <text x="360" y="448" font-size="11" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Five named structural trade-offs link the seven objectives. <tspan font-style="italic" fill="#94A3B8">Hover a line to highlight.</tspan></text>
+      <svg viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <circle cx="360" cy="250" r="180" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+
+        <!-- ===== Five named trade-off arrows (double-headed) ===== -->
+        <g class="cweb-arrow"><line x1="406.9" y1="92.6" x2="453.9" y2="115.2" stroke="#E11D48" stroke-width="2.4" stroke-linecap="round"/><path d="M 399.6 89.1 L 410.5 89.6 L 406.8 97.2 Z" fill="#E11D48"/><path d="M 461.1 118.7 L 450.3 118.1 L 453.9 110.6 Z" fill="#E11D48"/><rect x="397.0" y="94.9" width="66.8" height="18" rx="9" fill="#fff" stroke="#E11D48" stroke-width="1.2"/><text x="430.4" y="107.4" font-size="10.5" font-weight="800" fill="#E11D48" font-family="Inter,sans-serif" text-anchor="middle">Phillips</text></g>
+        <g class="cweb-arrow"><line x1="503.1" y1="330.7" x2="470.5" y2="371.5" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/><path d="M 508.1 324.5 L 505.1 334.9 L 498.5 329.7 Z" fill="#2563EB"/><path d="M 465.5 377.8 L 468.5 367.3 L 475.1 372.6 Z" fill="#2563EB"/><rect x="453.4" y="342.1" width="66.8" height="18" rx="9" fill="#fff" stroke="#2563EB" stroke-width="1.2"/><text x="486.8" y="354.6" font-size="10.5" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif" text-anchor="middle">External</text></g>
+        <g class="cweb-arrow"><line x1="483.5" y1="290.1" x2="236.5" y2="290.1" stroke="#0D9488" stroke-width="2.4" stroke-linecap="round"/><path d="M 491.5 290.1 L 481.5 294.3 L 481.5 285.9 Z" fill="#0D9488"/><path d="M 228.5 290.1 L 238.5 285.9 L 238.5 294.3 Z" fill="#0D9488"/><rect x="336.5" y="281.1" width="47.0" height="18" rx="9" fill="#fff" stroke="#0D9488" stroke-width="1.2"/><text x="360.0" y="293.6" font-size="10.5" font-weight="800" fill="#0D9488" font-family="Inter,sans-serif" text-anchor="middle">Green</text></g>
+        <g class="cweb-arrow"><line x1="266.1" y1="160.3" x2="488.6" y2="267.5" stroke="#475569" stroke-width="2.4" stroke-linecap="round"/><path d="M 258.9 156.9 L 269.7 157.4 L 266.1 165.0 Z" fill="#475569"/><path d="M 495.8 271.0 L 485.0 270.4 L 488.7 262.8 Z" fill="#475569"/><rect x="344.0" y="204.9" width="66.8" height="18" rx="9" fill="#fff" stroke="#475569" stroke-width="1.2"/><text x="377.4" y="217.4" font-size="10.5" font-weight="800" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Fairness</text></g>
+        <g class="cweb-arrow"><line x1="328.8" y1="389.6" x2="488.6" y2="312.6" stroke="#F59E0B" stroke-width="2.4" stroke-linecap="round"/><path d="M 321.5 393.1 L 328.7 385.0 L 332.4 392.5 Z" fill="#F59E0B"/><path d="M 495.8 309.1 L 488.7 317.3 L 485.0 309.7 Z" fill="#F59E0B"/><rect x="356.0" y="338.0" width="73.4" height="18" rx="9" fill="#fff" stroke="#F59E0B" stroke-width="1.2"/><text x="392.7" y="350.5" font-size="10.5" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">Austerity</text></g>
+
+        <!-- ===== Seven objective nodes on the ring ===== -->
+        <g><circle cx="360.0" cy="70.0" r="38" fill="#FFF1F2" stroke="#E11D48" stroke-width="2.6"/><circle cx="384.0" cy="46.0" r="11" fill="#E11D48"/><text x="384.0" y="50.0" font-size="10" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text><text x="360.0" y="67.0" font-size="17" text-anchor="middle" font-family="Inter,sans-serif">📊</text><text x="360.0" y="90.0" font-size="10" font-weight="800" fill="#9F1239" text-anchor="middle" font-family="Inter,sans-serif">Inflation</text></g>
+        <g><circle cx="500.7" cy="137.8" r="38" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.6"/><circle cx="524.7" cy="113.8" r="11" fill="#2563EB"/><text x="524.7" y="117.8" font-size="10" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text><text x="500.7" y="134.8" font-size="17" text-anchor="middle" font-family="Inter,sans-serif">👥</text><text x="500.7" y="157.8" font-size="10" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Unemp.</text></g>
+        <g><circle cx="535.5" cy="290.1" r="38" fill="#F0FDF4" stroke="#16A34A" stroke-width="2.6"/><circle cx="559.5" cy="266.1" r="11" fill="#16A34A"/><text x="559.5" y="270.1" font-size="10" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text><text x="535.5" y="287.1" font-size="17" text-anchor="middle" font-family="Inter,sans-serif">📈</text><text x="535.5" y="310.1" font-size="10" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Growth</text></g>
+        <g><circle cx="438.1" cy="412.2" r="38" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2.6"/><circle cx="462.1" cy="388.2" r="11" fill="#8B5CF6"/><text x="462.1" y="392.2" font-size="10" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">4</text><text x="438.1" y="409.2" font-size="17" text-anchor="middle" font-family="Inter,sans-serif">🌐</text><text x="438.1" y="432.2" font-size="10" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">BoP</text></g>
+        <g><circle cx="281.9" cy="412.2" r="38" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.6"/><circle cx="305.9" cy="388.2" r="11" fill="#F59E0B"/><text x="305.9" y="392.2" font-size="10" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">5</text><text x="281.9" y="409.2" font-size="17" text-anchor="middle" font-family="Inter,sans-serif">🏛️</text><text x="281.9" y="432.2" font-size="10" font-weight="800" fill="#B45309" text-anchor="middle" font-family="Inter,sans-serif">Fiscal</text></g>
+        <g><circle cx="184.5" cy="290.1" r="38" fill="#F0FDFA" stroke="#0D9488" stroke-width="2.6"/><circle cx="208.5" cy="266.1" r="11" fill="#0D9488"/><text x="208.5" y="270.1" font-size="10" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">6</text><text x="184.5" y="287.1" font-size="17" text-anchor="middle" font-family="Inter,sans-serif">🌿</text><text x="184.5" y="310.1" font-size="10" font-weight="800" fill="#115E59" text-anchor="middle" font-family="Inter,sans-serif">Environment</text></g>
+        <g><circle cx="219.3" cy="137.8" r="38" fill="#F1F5F9" stroke="#475569" stroke-width="2.6"/><circle cx="243.3" cy="113.8" r="11" fill="#475569"/><text x="243.3" y="117.8" font-size="10" font-weight="900" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">7</text><text x="219.3" y="134.8" font-size="17" text-anchor="middle" font-family="Inter,sans-serif">⚖️</text><text x="219.3" y="157.8" font-size="10" font-weight="800" fill="#334155" text-anchor="middle" font-family="Inter,sans-serif">Equality</text></g>
+
+        <text x="360" y="486" font-size="11.5" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle">Five named structural trade-offs link the seven objectives.</text>
       </svg>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;">
-        <div class="framework-tile" style="border-color:#FECDD3;"><div style="font-size:10px;font-weight:800;color:#9F1239;letter-spacing:0.1em;margin-bottom:4px;">1 · ADVANCED</div><div style="font-size:12px;color:#0B1426;font-weight:700;line-height:1.3;">Which goal does<br>the policy help?</div></div>
-        <div class="framework-tile" style="border-color:#BFDBFE;"><div style="font-size:10px;font-weight:800;color:#1E3A8A;letter-spacing:0.1em;margin-bottom:4px;">2 · COMPROMISED</div><div style="font-size:12px;color:#0B1426;font-weight:700;line-height:1.3;">Which goal does<br>it strain?</div></div>
-        <div class="framework-tile" style="border-color:#86EFAC;"><div style="font-size:10px;font-weight:800;color:#065F46;letter-spacing:0.1em;margin-bottom:4px;">3 · MAGNITUDE</div><div style="font-size:12px;color:#0B1426;font-weight:700;line-height:1.3;">How large is<br>each effect?</div></div>
-        <div class="framework-tile" style="border-color:#FCD34D;"><div style="font-size:10px;font-weight:800;color:#B45309;letter-spacing:0.1em;margin-bottom:4px;">4 · TIME HORIZON</div><div style="font-size:12px;color:#0B1426;font-weight:700;line-height:1.3;">Short-run cost,<br>long-run gain?</div></div>
+      <div class="fw-grid">
+        <div class="fw-tile" style="background:#EFF6FF;border-color:#BFDBFE;"><div class="fw-ic">🎯</div><div class="fw-t" style="color:#1E3A8A;">Objective advanced</div><div class="fw-b">Which goal does the policy help?</div></div>
+        <div class="fw-tile" style="background:#FFF7ED;border-color:#FED7AA;"><div class="fw-ic">⚠️</div><div class="fw-t" style="color:#C2410C;">Objective compromised</div><div class="fw-b">Which goal does it strain?</div></div>
+        <div class="fw-tile" style="background:#F5F3FF;border-color:#DDD6FE;"><div class="fw-ic">📊</div><div class="fw-t" style="color:#5B21B6;">Magnitude</div><div class="fw-b">How large is each effect?</div></div>
+        <div class="fw-tile" style="background:#F0FDFA;border-color:#99F6E4;"><div class="fw-ic">⏱️</div><div class="fw-t" style="color:#115E59;">Time horizon</div><div class="fw-b">Short-run cost, long-run gain?</div></div>
       </div>
     </div>
   `,

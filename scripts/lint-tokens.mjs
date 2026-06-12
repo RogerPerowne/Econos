@@ -64,8 +64,10 @@ const check = process.argv.includes('--check');
    var() colours; lowered to 6846 (v0.171.9) on the debtBathtub rebuild;
    lowered to 6845 (v0.171.12) on the threeClassicObjectives equation
    restructure; lowered to 6835 (v0.171.13) when the macro constraint
-   compass was rebuilt as a token-based guardrails dashboard. */
-const DUP_BASELINE = 6835;
+   compass was rebuilt as a token-based guardrails dashboard;
+   lowered to 6827 (v0.171.14) on the structural-map rebuild +
+   net-trade fancy-rows pass. */
+const DUP_BASELINE = 6827;
 
 const css = readFileSync('styles.css', 'utf8');
 

@@ -47,13 +47,16 @@ window.ECONOS_TOPIC = {
       causesFirst: true,
       causesLabel: 'THE FOUR ENGINES OF AD',
       causesEmoji: '🏛️',
-      causesStyle: 'tinted-flat',
-      causesCols: 4,
+      causesStyle: 'numbered',
       causes: [
-        { tone: 'blue',   icon: 'C',  head: 'Consumption',         body: '<div style="text-align:center;font-size:13px;color:#475569;">≈ 60% of AD</div>' },
-        { tone: 'amber',  icon: 'I',  head: 'Investment',          body: '<div style="text-align:center;font-size:13px;color:#475569;">≈ 17% of AD</div>' },
-        { tone: 'purple', icon: 'G',  head: 'Government spending', body: '<div style="text-align:center;font-size:13px;color:#475569;">≈ 20% of AD</div>' },
-        { tone: 'green',  icon: '🌍', head: '(X − M)',             body: '<div style="text-align:center;font-size:13px;color:#475569;">≈ −3% of AD · Net trade</div>' }
+        { tone: 'blue',   icon: '🛒', head: 'Consumption (C)',
+          body: '<div style="font-size:28px;font-weight:800;color:#1E40AF;text-align:center;margin:6px 0;">≈ 60%</div>Household spending – the biggest engine.' },
+        { tone: 'amber',  icon: '🏭', head: 'Investment (I)',
+          body: '<div style="font-size:28px;font-weight:800;color:#B45309;text-align:center;margin:6px 0;">≈ 17%</div>Firms spending on capital and R&amp;D.' },
+        { tone: 'purple', icon: '🏛️', head: 'Government (G)',
+          body: '<div style="font-size:28px;font-weight:800;color:#6D28D9;text-align:center;margin:6px 0;">≈ 20%</div>Public spending on goods and services.' },
+        { tone: 'green',  icon: '🚢', head: 'Net exports (X − M)',
+          body: '<div style="font-size:28px;font-weight:800;color:#047857;text-align:center;margin:6px 0;">≈ −3%</div>Exports minus imports – often negative for the UK.' }
       ],
 
       pairLabel: 'THE TWO SIDES OF NET TRADE',
@@ -164,8 +167,7 @@ window.ECONOS_TOPIC = {
       causesFirst: true,
       causesLabel: 'FIVE DRIVERS',
       causesEmoji: '📊',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
+      causesStyle: 'numbered-rows',
       causes: [
         { tone: 'blue', icon: '£', head: 'Real exchange rate',
           body: '<div style="font-size:13px;color:#475569;line-height:1.5;">A weaker sterling makes UK exports cheaper abroad.</div>' +
@@ -228,14 +230,23 @@ window.ECONOS_TOPIC = {
       causesFirst: true,
       causesLabel: 'FIVE DRIVERS',
       causesEmoji: '⚙️',
-      causesStyle: 'tinted-flat',
-      causesCols: 3,
+      causesStyle: 'numbered-rows',
       causes: [
-        { tone: 'blue',   icon: '£',  head: 'Real exchange rate',     body: '<div style="font-size:13px;color:#475569;line-height:1.5;">A stronger sterling makes imports cheaper.</div>' },
-        { tone: 'amber',  icon: '📈', head: 'Domestic income',        body: '<div style="font-size:13px;color:#475569;line-height:1.5;">When UK incomes rise, import demand often rises.</div>' },
-        { tone: 'purple', icon: '🏷️', head: 'Relative prices',         body: '<div style="font-size:13px;color:#475569;line-height:1.5;">If foreign goods are cheaper than domestic alternatives, imports rise.</div>' },
-        { tone: 'green',  icon: '🛍️', head: 'Non-price factors',      body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Quality, design, variety and delivery can pull in imports.</div>' },
-        { tone: 'rose',   icon: '🛡️', head: 'Tariffs and quotas',      body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Barriers can reduce imports.</div>' }
+        { tone: 'blue',   icon: '£',  head: 'Real exchange rate',
+          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">A stronger sterling makes imports cheaper.</div>' +
+                '<div style="margin-top:8px;background:#DBEAFE;border:1px solid #93C5FD;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#1D4ED8;">↑ Raises imports</div>' },
+        { tone: 'amber',  icon: '📈', head: 'Domestic income',
+          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">When UK incomes rise, import demand often rises.</div>' +
+                '<div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">↑ Raises imports</div>' },
+        { tone: 'purple', icon: '🏷️', head: 'Relative prices',
+          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">If foreign goods are cheaper than domestic alternatives, imports rise.</div>' +
+                '<div style="margin-top:8px;background:#EDE9FE;border:1px solid #C4B5FD;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#6D28D9;">↑ Raises imports</div>' },
+        { tone: 'green',  icon: '🛍️', head: 'Non-price factors',
+          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Quality, design, variety and delivery can pull in imports.</div>' +
+                '<div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">↑ Raises imports</div>' },
+        { tone: 'rose',   icon: '🛡️', head: 'Tariffs and quotas',
+          body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Barriers can reduce imports.</div>' +
+                '<div style="margin-top:8px;background:#FFF1F2;border:1px solid #FDA4AF;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#BE123C;">↓ Lowers imports</div>' }
       ],
 
       flowTitle: 'THE IMPORT CHAIN',

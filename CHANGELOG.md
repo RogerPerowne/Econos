@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.12 — 2026-06-12
+
+### Review set 2 — FX market diagram as a multi-button interactive
+
+- Turned the foreign-exchange market diagram into a stepped interactive on
+  both cards that use it: "The foreign exchange market" (Exchange rates) and
+  "Floating exchange rate systems" (Market-orientated strategies). Three
+  buttons reveal demand for £ → supply of £ → the equilibrium rate E*/Q*,
+  each with its own explanation and an analysis note on the final step.
+- Added `idl-1/2/3` layers to `fx-market-diagram.js` so the demand curve,
+  supply curve and equilibrium furniture (point, dashed guides, E*/Q*
+  labels) reveal one step at a time.
+
 ## 0.172.11 — 2026-06-12
 
 ### Lorenz & Gini axis labels fit

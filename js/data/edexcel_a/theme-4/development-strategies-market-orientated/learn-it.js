@@ -278,10 +278,36 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F512}', tone: 'green', text: 'A floating currency can act as an <strong>automatic stabiliser</strong> — but volatility can create new problems.' },
 
-      visualKey: 'fxMarketDiagram',
-      visualLabel: 'HOW A FLOAT WORKS',
-      visualEmoji: '\u{1F517}',
-      visualCaption: 'Like a buoy, the currency floats up or down with market forces — demand for and supply of the currency set the rate.',
+      interactiveDiagram: {
+        svgKey: 'fxMarketDiagram',
+        label: 'HOW A FLOAT WORKS',
+        emoji: '\u{1F517}',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Demand for £',
+            tone: 'blue',
+            show: ['idl-1'],
+            head: 'Buyers of the currency',
+            body: 'Demand for the currency comes from exports, inward investment and tourism. It falls as the rate rises — a dearer currency buys less interest.'
+          },
+          {
+            label: 'Supply of £',
+            tone: 'green',
+            show: ['idl-1', 'idl-2'],
+            head: 'Sellers of the currency',
+            body: 'Supply comes from imports, outward investment and travel abroad. It rises as the rate climbs — a stronger currency makes foreign spending cheaper.'
+          },
+          {
+            label: 'Free float',
+            tone: 'slate',
+            show: ['idl-1', 'idl-2', 'idl-3'],
+            head: 'The rate floats to E*',
+            body: 'With no central-bank intervention, the rate settles wherever demand meets supply — E* and Q*. Like a buoy, it rides up and down with market forces.',
+            analysis: 'When trade or capital flows shift either curve, the float moves the rate automatically — no reserves spent, no peg to defend.'
+          }
+        ]
+      },
 
       flowTitle: 'AUTOMATIC ADJUSTMENT',
       flowEmoji: '\u{1F517}',

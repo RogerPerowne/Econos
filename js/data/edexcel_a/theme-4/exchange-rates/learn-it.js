@@ -114,10 +114,36 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F512}', tone: 'green', text: 'Exports and inward flows create <strong>demand</strong> for pounds. Imports and outward flows create <strong>supply</strong>.' },
 
-      visualKey: 'fxMarketDiagram',
-      visualLabel: 'THE MARKET DIAGRAM',
-      visualEmoji: '\u{1F3DB}️',
-      visualCaption: 'Demand for £ falls as the rate rises; supply of £ rises as the rate rises. They meet at E*.',
+      interactiveDiagram: {
+        svgKey: 'fxMarketDiagram',
+        label: 'THE MARKET DIAGRAM',
+        emoji: '\u{1F3DB}️',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Demand for £',
+            tone: 'blue',
+            show: ['idl-1'],
+            head: 'Demand for pounds slopes down',
+            body: 'As the exchange rate rises, UK exports and assets look dearer to foreigners, so they want fewer pounds. A higher rate means less demand for £.'
+          },
+          {
+            label: 'Supply of £',
+            tone: 'green',
+            show: ['idl-1', 'idl-2'],
+            head: 'Supply of pounds slopes up',
+            body: 'As the rate rises, foreign goods and assets look cheaper to UK buyers, so more pounds are supplied to buy them. A higher rate means more supply of £.'
+          },
+          {
+            label: 'Equilibrium rate',
+            tone: 'slate',
+            show: ['idl-1', 'idl-2', 'idl-3'],
+            head: 'The market clears at E*',
+            body: 'Where demand for £ meets supply of £, the market settles on the equilibrium exchange rate E* and quantity Q*.',
+            analysis: 'Any move away from E* is self-correcting: above it there is excess supply of £ pushing the rate down; below it, excess demand pulls it up.'
+          }
+        ]
+      },
 
       causesFirst: true,
       causesLabel: 'WHERE DEMAND FOR £ COMES FROM',

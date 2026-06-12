@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.10 — 2026-06-12
+
+### Review set 2 (batch 11) — Lorenz & Gini as multi-button interactives
+
+- **Inequality "the Lorenz curve" (`lorenzCurve`):** 3-step interactive — line
+  of equality → Lorenz curve → reading the bow.
+- **Inequality "the Gini coefficient" (`giniAreas`):** 3-step interactive —
+  curve vs line → shade area A → add area B and the A ÷ (A+B) ratio.
+
 ## 0.172.9 — 2026-06-12
 
 ### Review set 2 (batch 10) — bubble cycle as a multi-button interactive

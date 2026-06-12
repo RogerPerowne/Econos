@@ -61,8 +61,8 @@ const check = process.argv.includes('--check');
    (v0.171.1) when the priceMechanismFlow + economicSystemsBigPicture
    hubs moved onto the econosCycleHub builder; lowered to 6848 (v0.171.6)
    when demandGoodTypes was rebuilt to the symmetric mockup layout with
-   var() colours. */
-const DUP_BASELINE = 6848;
+   var() colours; lowered to 6846 (v0.171.9) on the debtBathtub rebuild. */
+const DUP_BASELINE = 6846;
 
 const css = readFileSync('styles.css', 'utf8');
 

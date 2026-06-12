@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v575';
+  const CACHE_NAME = 'econos-v576';
 
   /* ────────────────────────────────────────────────────────────
      fetchFresh — a network fetch that bypasses the BROWSER'S OWN

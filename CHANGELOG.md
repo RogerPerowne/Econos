@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.0 — 2026-06-12
+
+### New topic: Taxation (Edexcel A 4.5.2) — 8 cards, interactive-first
+
+- Replaced the Taxation placeholder with a full 8-card Learn It build
+  from the mockup set: the big picture (why governments tax + the
+  direct-vs-indirect pair + transmission chain), progressive vs
+  proportional vs regressive, how direct and indirect taxes work (twin
+  chains + comparison table), incentives to work/save/invest, the Laffer
+  curve, distribution/output/employment, prices/trade/FDI, and the whole
+  story.
+- Three new `ECONOS_PPF` engine interactives, all stepped
+  `interactiveDiagram` blocks:
+    - `taxBurdenTypesInteractive` — average tax rate vs income; three
+      exclusive views (progressive rising / proportional flat /
+      regressive falling) with earner markers on each line.
+    - `lafferCurveInteractive` — the Laffer parabola as an exact cubic;
+      rising side → peak t* → falling side, including the t₁/t₂
+      same-revenue pairing.
+    - `taxRedistributionLorenz` — the mockup's before/after bar pair
+      upgraded to a proper Lorenz curve toggle: before tax → after tax &
+      transfers, following the house shift convention (original dashed,
+      same colour, arrow between the curves, cubic-solved positions).
+- All chart geometry solved numerically (points on curves, arrow seats,
+  label clearances); chart-lint 0 new findings; card copy within the
+  staging length budgets.
+
 ## 0.170.5 — 2026-06-11
 
 ### Fix blank icon badges on numbered causes2 / causes3 blocks

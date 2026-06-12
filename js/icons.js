@@ -23671,6 +23671,14 @@ window.ECONOS_ICONS = {
      old hand-rolled CSS-animation "workstation". */
   macroPhillipsInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MACRO_PHILLIPS_SPEC); }),
 
+  /* Taxation 4.5.2 — three engine interactives:
+     taxBurdenTypesInteractive  (C2: progressive/proportional/regressive, 3 exclusive views)
+     lafferCurveInteractive     (C5: rising side → peak → falling side)
+     taxRedistributionLorenz    (C6: Lorenz before tax → after tax & transfers) */
+  taxBurdenTypesInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TAX_BURDEN_TYPES_SPEC); }),
+  lafferCurveInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LAFFER_CURVE_SPEC); }),
+  taxRedistributionLorenz: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TAX_REDISTRIBUTION_LORENZ_SPEC); }),
+
   /* Card 5 – FOUR MORE STRUCTURAL TRADE-OFFS (mechanism flow chains). */
   macroTradeoffChains: `
     <div style="line-height:1.5;background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;">

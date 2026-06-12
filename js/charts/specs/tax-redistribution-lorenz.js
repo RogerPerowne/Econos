@@ -24,8 +24,8 @@
 
   window.ECONOS_TAX_REDISTRIBUTION_LORENZ_SPEC = {
     width: 640,
-    height: 360,
-    chartArea: { x: 72, y: 26, width: 528, height: 280 },
+    height: 470,
+    chartArea: { x: 72, y: 26, width: 528, height: 390 },
     className: 'tax-redistribution-lorenz-svg',
     background: '#FFFFFF',
     layers: ['trl-1', 'trl-2'],

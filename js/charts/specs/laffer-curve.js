@@ -25,8 +25,8 @@
 
   window.ECONOS_LAFFER_CURVE_SPEC = {
     width: 640,
-    height: 340,
-    chartArea: { x: 64, y: 24, width: 536, height: 256 },
+    height: 460,
+    chartArea: { x: 64, y: 24, width: 536, height: 376 },
     className: 'laffer-curve-svg',
     background: '#FFFFFF',
     layers: ['lcv-1', 'lcv-2', 'lcv-3'],

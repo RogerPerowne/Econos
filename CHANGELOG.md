@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.2 — 2026-06-12
+
+### Taxation interactives — taller charts to fill the stage
+
+- The three Taxation engine interactives (`tax-burden-types`,
+  `laffer-curve`, `tax-redistribution-lorenz`) were wide-and-flat
+  (640×~340) so they rendered short inside the interactiveDiagram stage,
+  leaving white space. Deepened each chart area by ~120px (640×450–470)
+  — geometry is normalised so nothing re-seats — and the diagrams now
+  fill the staging height.
+
 ## 0.171.1 — 2026-06-12
 
 ### Elegant ring-hub rebuild — price mechanism + three questions

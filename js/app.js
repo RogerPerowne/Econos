@@ -1265,16 +1265,23 @@
   <!-- Axis labels -->
   <text x="10" y="22" font-size="9" font-weight="700" fill="#1F2937">Price ($)</text>
   <text x="282" y="196" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">Quantity</text>
-  <!-- Demand line - downward slope -->
-  <line x1="64" y1="48" x2="244" y2="172" stroke="#7C3AED" stroke-width="2.5"/>
+  <!-- Two individual demand curves; at price P each is read off horizontally.
+       D1: (60,50)->(150,176) meets y=94 at x=91.4; D2: (120,50)->(252,176)
+       meets y=94 at x=166.1 — both points sit ON their own curve. -->
+  <line x1="60" y1="50" x2="150" y2="176" stroke="#7C3AED" stroke-width="2.2"/>
+  <text x="150" y="170" font-size="9" font-weight="700" fill="#7C3AED">D₁</text>
+  <line x1="120" y1="50" x2="252" y2="176" stroke="var(--econ-blue)" stroke-width="2.2"/>
+  <text x="256" y="172" font-size="9" font-weight="700" fill="var(--econ-blue)">D₂</text>
   <!-- Price P dashed -->
-  <line x1="44" y1="94" x2="188" y2="94" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="44" y1="94" x2="190" y2="94" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
   <text x="38" y="98" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">P</text>
-  <!-- Q1, Q2 markers -->
-  <line x1="124" y1="94" x2="124" y2="176" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="176" y1="94" x2="176" y2="176" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="124" y="192" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₁</text>
-  <text x="176" y="192" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₂</text>
+  <!-- On-curve points + drop lines to Q1, Q2 -->
+  <line x1="91" y1="94" x2="91" y2="176" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="166" y1="94" x2="166" y2="176" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <circle cx="91" cy="94" r="3.2" fill="#7C3AED"/>
+  <circle cx="166" cy="94" r="3.2" fill="var(--econ-blue)"/>
+  <text x="91" y="192" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₁</text>
+  <text x="166" y="192" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₂</text>
 </svg>`,
 
     publicDemandMini: `

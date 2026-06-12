@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.18 — 2026-06-12
+
+### Review batch 4 — tax 4-panel spacing + public-goods demand summation
+
+- **`taxSubsidyFourPanels` (taxes & subsidies exam-technique card):** each
+  panel's title sat right on top of the chart, so the top curve labels
+  (S, S+tax, MSC…) collided with it. Gave every panel a taller body and
+  pushed the chart 16px below the title, clearing the clash (PDF item 12).
+- **`privateDemandMini` (public-goods "adding up demand" card):** the scene
+  marked Q₁ and Q₂ at one price but drew a single demand curve, so the
+  second point floated off it. Now shows two individual demand curves with
+  the price line read off each — both intersection points sit on a curve,
+  which also makes the horizontal-summation lesson explicit (PDF item 11).
+
 ## 0.171.17 — 2026-06-12
 
 ### Review batch 3 — LRAS growth diagram drops SRAS on the final view

@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.7 — 2026-06-12
+
+### Demand & Supply — drop duplicated step numbers in interactive heads
+
+- The "Why the demand curve slopes down" and "Why the supply curve
+  slopes up" interactives prefixed each view's heading with a circled
+  number (① Substitution effect…), duplicating the numbered marker the
+  interactiveDiagram renderer already draws. Stripped the prefixes (3
+  views in each topic); site swept — no other data file carries them.
+
 ## 0.171.6 — 2026-06-12
 
 ### Demand & rational-choice visual fixes

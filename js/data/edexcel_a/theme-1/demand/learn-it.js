@@ -84,13 +84,13 @@ window.ECONOS_TOPIC = {
         layers: ['layer-a', 'layer-b', 'layer-c'],
         views: [
           { label: 'Substitution effect', tone: 'green', show: ['layer-a'],
-            head: '① Substitution effect',
+            head: 'Substitution effect',
             body: 'At a high price (A, £10 → 20), the good is dear relative to substitutes. As it gets cheaper, consumers <strong>switch towards it</strong>, so quantity demanded rises.' },
           { label: 'Real-income effect', tone: 'amber', show: ['layer-b'],
-            head: '② Real-income effect',
+            head: 'Real-income effect',
             body: 'A lower price (B, £8 → 30) means each £ stretches further – real purchasing power rises, so consumers can <strong>afford more</strong>.' },
           { label: 'Diminishing marginal utility', tone: 'purple', show: ['layer-c'],
-            head: '③ Diminishing marginal utility',
+            head: 'Diminishing marginal utility',
             body: 'Each extra unit gives <strong>less satisfaction</strong>, so consumers only buy more (C, £6 → 40) if the price falls – which is exactly the downward slope.' }
         ]
       },

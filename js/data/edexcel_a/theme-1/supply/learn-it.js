@@ -81,13 +81,13 @@ window.ECONOS_TOPIC = {
         layers: ['layer-a', 'layer-b', 'layer-c'],
         views: [
           { label: 'Profit incentive', tone: 'green', show: ['layer-a'],
-            head: '① Profit incentive',
+            head: 'Profit incentive',
             body: 'At a higher price (from A, £6 → 20), each unit sold earns more – a higher price raises potential revenue and profit, so firms want to <strong>sell more</strong>.' },
           { label: 'Rising marginal cost', tone: 'amber', show: ['layer-b'],
-            head: '② Rising marginal cost',
+            head: 'Rising marginal cost',
             body: 'Extra units (B, £8 → 30) often need overtime, less-efficient inputs or stretched capacity. Firms need a <strong>higher price</strong> to cover this rising marginal cost.' },
           { label: 'Higher-cost producers join', tone: 'purple', show: ['layer-c'],
-            head: '③ Higher-cost producers join in',
+            head: 'Higher-cost producers join in',
             body: 'At low prices some firms or units aren’t worth running. Higher prices (C, £10 → 40) bring <strong>higher-cost producers</strong> into the market.' }
         ]
       },

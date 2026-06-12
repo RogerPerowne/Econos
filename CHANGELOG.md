@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.16 — 2026-06-12
+
+### Review batch 2 — SRAS cost-shock base equilibrium (classical view)
+
+- **`srasShiftLeftClassicalKeynesian` (used by the SR-AS cost-shock card,
+  the Trade & Business Cycle "supply shock recap", causes-of-inflation, etc.):**
+  in the classical view the base equilibrium E₁ sat at AD∩LRAS but floated off
+  SRAS₁. Lifted AD so AD∩LRAS now coincides with SRAS₁ at Yf — the base is a
+  proper three-way concurrency at a higher price level, exactly as a classical
+  "at potential" diagram should read. Re-seated the classical cost shock and
+  the Keynesian AS₂ floor so both stagflation views keep clear E₁/E₂ tick
+  separation; chart-lint clean, snapshot updated. Fixes PDF items 3 and 8.
+
 ## 0.171.15 — 2026-06-12
 
 ### Review batch 1 — confusions card, diagnose rows, J=W badge, income chart

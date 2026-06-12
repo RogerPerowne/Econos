@@ -59,8 +59,10 @@ const check = process.argv.includes('--check');
    (v0.169.0) when the hand-rolled macroPhillipsWorkstation SVG was
    replaced by the macroPhillipsInteractive engine spec; lowered to 6862
    (v0.171.1) when the priceMechanismFlow + economicSystemsBigPicture
-   hubs moved onto the econosCycleHub builder. */
-const DUP_BASELINE = 6862;
+   hubs moved onto the econosCycleHub builder; lowered to 6848 (v0.171.6)
+   when demandGoodTypes was rebuilt to the symmetric mockup layout with
+   var() colours. */
+const DUP_BASELINE = 6848;
 
 const css = readFileSync('styles.css', 'utf8');
 

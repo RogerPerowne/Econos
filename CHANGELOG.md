@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.11 — 2026-06-12
+
+### 2021–23 inflation surge AD/AS — one shift per view + fixes
+
+- The Macro-Conflicts "trade-off in AD/AS" interactive crammed both
+  2021–22 shocks into a single view (four curves, two arrows, two
+  equilibria) with real geometry errors: both shift arrows sat OUTSIDE
+  their curve gaps, and the AD curve-end labels piled onto the x-axis
+  caption. Rebuilt as four views — Baseline · Demand rebound (AD₀→AD₁,
+  new boom point E′) · Energy shock (SRAS₀→SRAS₁, stagflation point E₁)
+  · BoE response (AD₁→AD₂, E₂) — one shift per frame, house dashing.
+- Equilibria are now engine-solved `intersection` points (never typed),
+  arrows are seated in the gaps from the line equations, and curve names
+  moved to hand-placed texts at the clean upper ends.
+- Chart deepened 640×340 → 640×460 to fill the stage.
+
 ## 0.171.10 — 2026-06-12
 
 ### Stagflation Phillips curve — split the Friedman/Phelps step + taller chart

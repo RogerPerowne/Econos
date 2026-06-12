@@ -246,7 +246,7 @@ window.ECONOS_TOPIC = {
         svgKey: 'inflation2022AdAs',
         label: 'The trade-off in AD/AS',
         emoji: '\u{2696}\u{FE0F}',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
+        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
         layerMode: 'exclusive',
         views: [
           {
@@ -258,17 +258,25 @@ window.ECONOS_TOPIC = {
             analysis: 'The post-COVID baseline was unusually benign: AD recovering, supply normalising, inflation expectations anchored to 2%.'
           },
           {
-            label: 'Both shocks · 2021–22',
-            tone: 'rose',
+            label: 'Demand rebound · 2021',
+            tone: 'amber',
             show: ['idl-2'],
-            head: 'AD↑ and SRAS↓ at once',
-            body: 'A powerful demand rebound shifted <strong>AD right</strong>. Energy prices and the Ukraine shock shifted <strong>SRAS left</strong>. The new equilibrium <strong>E₁</strong> sat at lower Y₁ with sharply higher P₁ &mdash; the textbook supply+demand inflation shock.',
+            head: 'AD shifts right',
+            body: 'Reopening spending, savings built up in lockdown and stimulus shifted <strong>AD right</strong> to AD₁. The economy moved to <strong>E′</strong>: output pushed up to capacity, prices already rising to P′.',
+            analysis: 'This is the demand-pull half of the story. On its own it looks like a classic boom — strong growth with some inflation. The supply side is about to make it much worse.'
+          },
+          {
+            label: 'Energy shock · 2022',
+            tone: 'rose',
+            show: ['idl-3'],
+            head: 'SRAS shifts left',
+            body: 'Energy prices and the Ukraine shock shifted <strong>SRAS left</strong> to SRAS₁. The new equilibrium <strong>E₁</strong> sat at lower Y₁ with sharply higher P₁ &mdash; the textbook supply+demand inflation shock.',
             analysis: 'This is why Phillips struggles here: Phillips only models movement <em>along</em> a curve. The 2021–22 episode was the curve itself shifting, driven by supply. AD/AS handles both shocks cleanly.'
           },
           {
             label: 'BoE response · 2022–23',
             tone: 'green',
-            show: ['idl-3'],
+            show: ['idl-4'],
             head: 'Tighter policy pulls AD back',
             body: 'The Bank of England raised Bank Rate from 0.1% to 5.25%. <strong>AD shifted left</strong> to AD₂. The new equilibrium <strong>E₂</strong> sat at even lower output Y₂ but with falling prices P₂ &mdash; inflation cooled, but at a real cost.',
             analysis: 'This is the trade-off in action: monetary tightening can bring inflation down, but it does so by pulling AD left into a still-weakened supply side. Lower P, lower Y &mdash; the squeeze on households.'

@@ -6,6 +6,36 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.13 — 2026-06-12
+
+### Revenue, Costs, PES and Macro Objectives — visual fixes
+
+- **AR and the demand curve (`averageRevenueInteractive`):** the desktop
+  SVG had been overwritten at some point with a stray copy of the
+  elasticity triptych (whose "Unit elastic demand" title clashed with
+  its number badge) — and because the triptych had no `ar-1`/`ar-2`
+  layers, the Point A / Point B step buttons did nothing on desktop.
+  Rebuilt the desktop layout as the intended wide demand-curve chart
+  (P = 17 − 0.1Q, points A and B verified on the line) with per-point
+  worked-example panels wired to the reveal layers. The real triptych
+  (`revenueElasticityTriptych`, no badge clash) is untouched.
+- **Costs hero (`heroCostCurves`):** MC crossed AC ~17px above the
+  green minimum dot. Re-seated the MC bezier numerically so it passes
+  through the AC minimum (solved at (140.3, 217.6)) and moved the dot
+  onto the true minimum.
+- **PES five drivers (`pesDriversSpectrum`):** mobile (≤640px) now
+  renders as a vertical layout — five stacked driver tiles with the
+  less-elastic → more-elastic gradient scale running down the right
+  edge (rotated end labels); the horizontal bar variant stays on
+  desktop.
+- **Four supporting objectives (`macroConstraintCompass`):** replaced
+  the compass-rose diagram (needles/zones hard to read) with a
+  guardrails dashboard — four status tiles, each with the headline UK
+  stat, a track whose green band is the safe zone, a marker for the
+  UK's position, and a verdict chip (✓ in zone / ! outside / ~ mixed).
+  Same data, the constraint story now reads at a glance. Token-based
+  colours throughout (DUP baseline ratcheted 6845 → 6835).
+
 ## 0.171.12 — 2026-06-12
 
 ### Business Objectives / Business Growth — formatting batch

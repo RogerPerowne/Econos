@@ -115,9 +115,10 @@ window.ECONOS_TOPIC = {
 
     /* ============================================================
        CARD 3 – Pattern: Spectrum / regime grid (visual pivot)
-       Hero: macroConstraintCompass. Compass rose with the four
-       supporting objectives at the cardinals. Two needles outside
-       the green safe zone signal constraint violations at a glance.
+       Hero: macroConstraintCompass. Guardrails dashboard — four
+       status tiles, each with the headline UK stat, a track whose
+       green band is the safe zone, a marker for the UK's position,
+       and a verdict chip (in zone / outside / mixed).
        ============================================================ */
     {
       id: 'four-constraints',

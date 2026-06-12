@@ -13,7 +13,7 @@
   window.ECONOS_LORENZ_CURVE_SPEC = {
     width: 560,
     height: 360,
-    chartArea: { x: 72, y: 28, width: 428, height: 286 },
+    chartArea: { x: 96, y: 28, width: 432, height: 286 },
     className: 'lorenz-curve-svg',
     layers: ['idl-1', 'idl-2', 'idl-3'],
     axes: {

@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.8 — 2026-06-12
+
+### Interactive diagrams — bigger text, sitewide
+
+- Bumped every text size in the `interactiveDiagram` block one tier
+  (all 51+ host cards at once, via the shared builder):
+  description body 11px → 13px (the main offender), description heading
+  13px → 15px, analysis body 13px → 15px (both standard and wide
+  layouts), and step-button labels 13px → 15px. The "Analysis" eyebrow
+  stays small (uppercase chrome).
+
 ## 0.171.7 — 2026-06-12
 
 ### Demand & Supply — drop duplicated step numbers in interactive heads

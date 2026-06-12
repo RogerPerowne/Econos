@@ -1602,7 +1602,7 @@
           data-id-tone="${toneName}"${showAttr}
           style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:${isActive ? t.bg : '#fff'};border:1px solid ${isActive ? t.border : '#E7E7EA'};border-radius:var(--r-md);box-shadow:${isActive ? '0 2px 10px ' + t.accent + '2A' : '0 1px 2px rgba(11,20,38,0.04)'};cursor:pointer;font-family:inherit;text-align:left;transition:background 0.18s,border-color 0.18s,box-shadow 0.18s;">
           <span data-id-circle style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:${isActive ? t.accent : '#E2E8F0'};color:${isActive ? '#fff' : '#475569'};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:900;">${i + 1}</span>
-          <span data-id-label style="flex:1;min-width:0;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:${isActive ? t.label : '#0B1426'};line-height:var(--lh-snug);">${v.label}</span>
+          <span data-id-label style="flex:1;min-width:0;font-size:var(--fs-base);font-weight:var(--fw-bold);color:${isActive ? t.label : '#0B1426'};line-height:var(--lh-snug);">${v.label}</span>
         </button>`;
       }).join('');
 
@@ -1613,12 +1613,12 @@
           const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
           const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
           const bodyHtml = !v.body ? '' : Array.isArray(v.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${v.body}</div>`;
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:var(--lh-relaxed);">${v.body}</div>`;
           const analysisHtml = v.analysis ? `
             <div style="margin-top:14px;padding-top:14px;border-top:1px solid color-mix(in oklab, ${t.border} 38%, transparent);">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
-              <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.7;">${v.analysis}</div>
+              <div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:1.7;">${v.analysis}</div>
             </div>` : '';
           return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid var(--econ-border);border-left:4px solid ${t.accent};border-radius:var(--r-md);padding:16px 20px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
             ${v.head ? `<div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${t.label};line-height:1.35;margin-bottom:${v.body ? '8px' : '0'};">${v.head}</div>` : ''}
@@ -1646,8 +1646,8 @@
             const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
             const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
             const bodyHtml = Array.isArray(slot.body)
-              ? `<ul style="margin:0;padding:0;list-style:none;font-size:var(--fs-2xs);color:var(--econ-ink);line-height:var(--lh-normal);">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
-              : `<div style="font-size:var(--fs-2xs);color:var(--econ-ink);line-height:var(--lh-relaxed);">${slot.body || ''}</div>`;
+              ? `<ul style="margin:0;padding:0;list-style:none;font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${slot.body.map(b => `<li style="margin-bottom:6px;">${b}</li>`).join('')}</ul>`
+              : `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${slot.body || ''}</div>`;
             const marker = v.icon
               ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-md);line-height:1;">${renderIcon(v.icon)}</span>`
               : (singleView ? '' : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;">${i + 1}</span>`);
@@ -1661,7 +1661,7 @@
             return `<div data-id-desc="${i}"${perspAttr} data-id-stacked="1" style="grid-area:1/1;display:flex;visibility:${isActive ? 'visible' : 'hidden'};align-items:flex-start;gap:12px;">
               ${marker}
               <div style="flex:1;min-width:0;">
-                <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-sm);color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${slot.head}</div>
+                <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${slot.head}</div>
                 ${bodyHtml}
               </div>
             </div>`;
@@ -1678,7 +1678,7 @@
             const isActive = i === 0 && (!persp || persp === initialPersp);
             return `<div data-id-analysis="${i}"${perspAttr} style="display:${isActive ? 'block' : 'none'};background:#fff;border:1px solid var(--econ-border);border-left:4px solid ${t.accent};border-radius:var(--r-md);padding:14px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
               <div style="font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
-              <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:1.7;">${slot.analysis}</div>
+              <div style="font-size:var(--fs-base);color:var(--econ-ink);line-height:1.7;">${slot.analysis}</div>
             </div>`;
           }).join('')
         ).join('') : '';

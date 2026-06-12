@@ -46,8 +46,8 @@
 
   window.ECONOS_MACRO_PHILLIPS_SPEC = {
     width: 640,
-    height: 340,
-    chartArea: { x: 60, y: 20, width: 540, height: 260 },
+    height: 470,
+    chartArea: { x: 60, y: 24, width: 540, height: 390 },
     className: 'macro-phillips-svg',
     layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
     layerMode: 'exclusive',

@@ -6,6 +6,29 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.14 — 2026-06-12
+
+### Phillips chart height, structural-map rebuild, Net Trade tidy-up
+
+- **Phillips curve (`macro-phillips` spec):** grew the chart to fill the
+  stage — height 340 → 470, chartArea height 260 → 390 — so the A→B→C
+  interactive no longer floats in a short band. Snapshot updated.
+- **Constraint web → structural map (`macroConstraintWeb`):** rebuilt
+  the busy hub into a clean ring of the seven objectives with five
+  named, colour-coded **double-headed trade-off arrows** (Phillips,
+  External, Green, Fairness, Austerity), each labelled in a pill, so the
+  trade-offs read at a glance. Dropped the central "welfare" hub. The
+  four-dimensional judgement framework below is now pastel icon cards
+  (Objective advanced / compromised · Magnitude · Time horizon).
+- **Net Trade "four engines of AD" (`what-is-net-trade`):** replaced the
+  cramped 4-column block (mismatched C/I/G letter badges + a globe, with
+  mid-word wrapping like "Consu mption") with the consistent
+  emoji-icon + big-percentage treatment used in the Aggregate Demand
+  topic.
+- **Net Trade "five drivers" (Determinants of Exports & Imports):** both
+  ragged 3+2 tile grids are now fancy numbered rows, each with a
+  direction chip (↑ raises / ↓ lowers), removing the unbalanced layout.
+
 ## 0.171.13 — 2026-06-12
 
 ### Revenue, Costs, PES and Macro Objectives — visual fixes

@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.5 — 2026-06-12
+
+### Taxation C7 — FDI magnet hub, 2×2 dashboard, mockup order
+
+- FDI FLOWS upgraded from a flat 4-tile grid (+ separate caution note)
+  to a new `taxFdiMagnetHub` visual: a green horseshoe magnet over a
+  faint globe "pulling" four factor cards, with the rose "tax is only
+  one factor" caution panel built in. Stacks on mobile. Colours via CSS
+  vars (token baseline held).
+- THE BIG MACRO DASHBOARD → 2×2 (was a squished 4-across).
+- Section order corrected to the mockup: the magnet hub renders via the
+  `flowChart` slot (after the TRADE BALANCE flow), giving
+  PRICE LEVEL → TRADE BALANCE → FDI FLOWS → DASHBOARD. Previously
+  `causesFirst` pushed the FDI grid above the trade-balance flow.
+
 ## 0.171.4 — 2026-06-12
 
 ### Taxation C4 — balance lever visual + section order

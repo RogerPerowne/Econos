@@ -511,22 +511,22 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '⚖️', title: 'Trade balance', sub: 'Net effect on exports minus imports.' }
       ],
 
-      causes2Label: 'FDI FLOWS — what attracts investment',
-      causes2Emoji: '\u{1F9F2}',
-      causes2Style: 'icon-top',
-      causes2Cols: 4,
-      causes2: [
-        { tone: 'blue',  icon: '\u{1F4B7}', head: 'Corporate tax rate', body: 'Lower, stable rates can attract FDI.' },
-        { tone: 'blue',  icon: '\u{1F3DB}️', head: 'Political & economic stability', body: 'Predictability reduces risk for investors.' },
-        { tone: 'blue',  icon: '\u{1F3D7}️', head: 'Infrastructure & institutions', body: 'Good infrastructure and strong institutions draw investment.' },
-        { tone: 'blue',  icon: '\u{1F4C8}', head: 'Market size & growth', body: 'Large, growing markets offer bigger opportunities for investors.' }
-      ],
-      causesNote: { tone: 'rose', icon: '⚠️', text: '<strong>Tax is only one factor.</strong> Investors also consider political risk, skills, regulation, infrastructure, market access and many other factors.' },
+      /* FDI flows renders as the elegant magnet-and-map hub via the
+         flowChart slot — which sits AFTER `flow` (TRADE BALANCE), giving
+         the mockup's order: PRICE → TRADE → FDI → DASHBOARD. The
+         "tax is only one factor" caution is baked into the visual. */
+      flowChart: {
+        svgKey: 'taxFdiMagnetHub',
+        label: 'FDI FLOWS — what attracts investment',
+        emoji: '\u{1F4CD}'
+      },
 
+      /* Dashboard stays in the causes3 slot (renders AFTER flowChart) and
+         goes 2×2 (cols 2, 4 items → clean 2×2, no ragged-row promotion). */
       causes3Label: 'THE BIG MACRO DASHBOARD',
       causes3Emoji: '\u{1F39B}️',
       causes3Style: 'icon-top',
-      causes3Cols: 4,
+      causes3Cols: 2,
       causes3: [
         { tone: 'purple', icon: '\u{1F4C8}', head: 'Inflation', body: 'Indirect taxes can raise prices and push up inflation. <strong>Pressure ↑</strong>' },
         { tone: 'blue',   icon: '\u{1F3C6}', head: 'Competitiveness', body: 'Lower taxes on production or labour can boost price competitiveness. <strong>Strength ↑</strong>' },

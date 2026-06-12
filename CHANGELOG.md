@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.19 — 2026-06-12
+
+### Review batch 5 — net-trade AD/AS classical view gains an SRAS
+
+- **`adShiftClassicalKeynesian` (net-trade "AD/AS model" card):** the classical
+  view had only a vertical LRAS, so a net-trade AD boost read as "only prices
+  rise". Added an upward-sloping SRAS through the Yf base equilibrium; the boost
+  now pushes the short-run equilibrium right of Yf (a small inflationary output
+  gap) — some growth AND inflation, aligning with the Keynesian story. Updated
+  the card's classical copy (base + new-equilibrium views) and noted the
+  long-run return to Yf. Snapshot updated; chart-lint clean. Fixes PDF item 2.
+
 ## 0.171.18 — 2026-06-12
 
 ### Review batch 4 — tax 4-panel spacing + public-goods demand summation

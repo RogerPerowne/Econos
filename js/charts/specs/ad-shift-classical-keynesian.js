@@ -63,6 +63,16 @@
         tone: 'purple', label: 'LRAS', strokeWidth: 2.5,
         labelDx: 8, labelDy: -2, anchor: 'start',
         perspective: 'classical' },
+      /* ── Classical SRAS – upward sloping, through E₁ at Yf so the base
+            is a proper SRAS∩LRAS∩AD₁ concurrency. The net-trade boost can
+            then push the short-run equilibrium RIGHT of Yf (a small
+            inflationary output gap), not just straight up. Slope ≈0.6;
+            passes through (Yf 0.66, P₁ 0.221). ── */
+      { id: 'sras_c',
+        d: 'M 0.459,0.020 L 1.000,0.561',
+        tone: 'slate', label: 'SRAS', strokeWidth: 2,
+        labelDx: -6, labelDy: -8, anchor: 'end',
+        perspective: 'classical' },
 
       /* ── AD₁ solid (base) – hidden once a view activates. Drawn to end
             just above the x-axis so the AD₁ label clears the axis title. ── */
@@ -113,10 +123,11 @@
         gridlines: 'slate', ticks: { y: 'P₁' },
         label: 'E₁', labelDx: 14, labelDy: -2, anchor: 'start',
         perspective: 'classical' },
-      /* ── Classical E₂ – only the price level rises (idl-2) ── */
-      { intersection: { curves: ['AD2', 'lras'], near: [CAP, 0.44] },
-        tone: 'purple', radius: 5.5, hollow: true,
-        gridlines: 'purple', ticks: { y: 'P₂' },
+      /* ── Classical E₂ – short-run: output rises above Yf AND prices
+            rise (AD₂ ∩ SRAS), a small inflationary output gap (idl-2) ── */
+      { intersection: { curves: ['AD2', 'sras_c'], near: [0.77, 0.33] },
+        tone: 'green', radius: 5.5, hollow: true,
+        gridlines: 'green', ticks: { y: 'P₂' },
         label: 'E₂', labelDx: 14, labelDy: -2, anchor: 'start',
         layer: 'idl-2', perspective: 'classical' }
     ],

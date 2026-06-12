@@ -19222,36 +19222,12 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* gainsFromTradePPF – Card 4 of Specialisation & Trade. A linear PPF
-     (constant opportunity cost), the production point P after specialising
-     in cloth, and a dashed trade line out to consumption point C beyond the
-     frontier. Geometry is hand-computed: PPF (95,110)->(470,385); P sits on
-     it at t=0.82; trade line (95,385)->(530,150). Static SVG. */
-  gainsFromTradePPF: `
-    <div style="background:#fff;border-radius:14px;padding:16px 10px;font-family:Inter,sans-serif;">
-      <svg viewBox="0 0 640 470" width="100%" style="max-width:640px;display:block;margin:0 auto;">
-        <line x1="95" y1="385" x2="95" y2="78" stroke="#0B1426" stroke-width="2.5"/>
-        <line x1="95" y1="385" x2="592" y2="385" stroke="#0B1426" stroke-width="2.5"/>
-        <polygon points="95,66 89,80 101,80" fill="#0B1426"/>
-        <polygon points="604,385 590,379 590,391" fill="#0B1426"/>
-        <text x="74" y="60" font-size="17" font-weight="700" fill="#0B1426">Wine</text>
-        <text x="600" y="378" font-size="17" font-weight="700" fill="#0B1426">Cloth</text>
-        <text x="74" y="404" font-size="14" fill="#475569">0</text>
-        <line x1="95" y1="385" x2="530" y2="150" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="7 5"/>
-        <line x1="95" y1="110" x2="470" y2="385" stroke="#0B1426" stroke-width="2.5"/>
-        <text x="150" y="142" font-size="15" font-weight="800" fill="#0B1426">PPF</text>
-        <text x="356" y="196" font-size="15" font-weight="800" fill="#2563EB">Trade line</text>
-        <circle cx="402" cy="336" r="5.5" fill="#0B1426"/>
-        <text x="414" y="332" font-size="16" font-weight="800" fill="#0B1426">P</text>
-        <text x="402" y="409" font-size="12.5" fill="#475569" text-anchor="middle">Production after</text>
-        <text x="402" y="425" font-size="12.5" fill="#475569" text-anchor="middle">specialisation</text>
-        <circle cx="530" cy="150" r="6.5" fill="#2563EB"/>
-        <text x="514" y="144" font-size="16" font-weight="800" fill="#2563EB">C</text>
-        <text x="546" y="148" font-size="12.5" fill="#475569">Consumption</text>
-        <text x="546" y="164" font-size="12.5" fill="#475569">after trade</text>
-      </svg>
-    </div>
-  `,
+  /* gainsFromTradePPF – Card 4 of Specialisation & Trade. The gains-from-
+     trade story on a linear (constant opportunity cost) PPF, rendered by the
+     chart engine as a four-step interactive (own PPF + no-trade point A →
+     specialise to P → trade line from P → consume at C beyond the PPF). Spec:
+     js/charts/specs/comparative-advantage-trade.js. */
+  gainsFromTradePPF: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_CA_TRADE_SPEC); }),
 
   /* patternOfTradeGlobe – Card 1 of Pattern of Trade. The globalisation
      globe retained, adapted to FOUR spokes: a globe centre with four

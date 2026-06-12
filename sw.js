@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const CACHE_NAME = 'econos-v602';
+  const CACHE_NAME = 'econos-v603';
 
   /* ────────────────────────────────────────────────────────────
      fetchFresh — a network fetch that bypasses the BROWSER'S OWN
@@ -68,6 +68,7 @@
     '/js/charts/specs/quota-diagram-interactive.js',
     '/js/charts/specs/subsidy-trade-interactive.js',
     '/js/charts/specs/fx-market-diagram.js',
+    '/js/charts/specs/comparative-advantage-trade.js',
     '/js/charts/specs/fx-floating-shifts.js',
     '/js/charts/specs/fx-intervention-diagrams.js',
     '/js/charts/specs/fx-peg-defence.js',

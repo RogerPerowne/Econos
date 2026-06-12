@@ -220,10 +220,43 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F512}', tone: 'green', text: 'With trade, a country can <strong>consume beyond its own production possibility frontier</strong>.' },
 
-      visualKey: 'gainsFromTradePPF',
-      visualLabel: 'THE DIAGRAM',
-      visualEmoji: '\u{1F517}',
-      visualCaption: 'After specialising at P, the country trades along the trade line to consume at C — beyond its own PPF.',
+      interactiveDiagram: {
+        svgKey: 'gainsFromTradePPF',
+        label: 'THE DIAGRAM',
+        emoji: '\u{1F517}',
+        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
+        views: [
+          {
+            label: 'Your own PPF',
+            tone: 'amber',
+            show: ['idl-1'],
+            head: 'Without trade you are stuck on the PPF',
+            body: 'The PPF shows every wine–cloth combination the country can make with its own resources. Alone, it must produce and consume on the frontier — say at point A.'
+          },
+          {
+            label: 'Specialise',
+            tone: 'green',
+            show: ['idl-1', 'idl-2'],
+            head: 'Shift all resources into cloth',
+            body: 'The country has a comparative advantage in cloth, so it specialises completely — production moves to P, the cloth-axis intercept.'
+          },
+          {
+            label: 'Trade line',
+            tone: 'blue',
+            show: ['idl-1', 'idl-2', 'idl-3'],
+            head: 'Swap cloth for wine at world prices',
+            body: 'Starting from P, the country trades cloth for wine at the world terms of trade. That trade line is steeper than the PPF, so it lies beyond the frontier.'
+          },
+          {
+            label: 'Gains from trade',
+            tone: 'purple',
+            show: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
+            head: 'Consume beyond the PPF at C',
+            body: 'By trading along the line, the country reaches consumption point C — more cloth AND more wine than the no-trade point A.',
+            analysis: 'Trade does not add domestic resources; it lets the country specialise where its opportunity cost is lowest and swap the surplus, so consumption sits outside its own production frontier. That outward jump is the gain from trade.'
+          }
+        ]
+      },
 
       flowTitle: 'THE GAINS CHAIN',
       flowEmoji: '\u{1F517}',

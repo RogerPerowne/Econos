@@ -363,10 +363,13 @@ the geometry `x = 80 + 54·Q`, `y = 320 − 9.125·£` (desktop 760×360).
   Card 3. A two-good output table and a pair of opportunity-cost panels.
   Pattern for any comparative-advantage calculation: pair them across
   `visualKey` + `visualKey2` so each keeps its own section label.
-- `gainsFromTradePPF` — Specialisation & Trade 4.1.2 Card 4. A linear
-  PPF with production point P and a dashed trade line out to consumption
-  point C beyond the frontier. Hand-computed geometry (P sits exactly on
-  the PPF). Use for any "consume beyond the PPF" gains-from-trade diagram.
+- `gainsFromTradePPF` — Specialisation & Trade 4.1.2 Card 4. The gains-
+  from-trade story on a linear PPF, rendered by the chart engine as a
+  four-step interactive (spec `comparative-advantage-trade.js`,
+  `ECONOS_CA_TRADE_SPEC`): own PPF + no-trade point A → specialise to P
+  (cloth-axis intercept) → trade line drawn *from P* at world terms of
+  trade → consume at C beyond the frontier (more of both goods than A).
+  Use for any "consume beyond the PPF" gains-from-trade diagram.
 - `patternOfTradeGlobe` — Pattern of Trade 4.1.3 Card 1. The globe hub
   (see `globalisationConnectsHub`) adapted to **four** numbered spokes in
   a 2×2 ring. The go-to when a hub needs four drivers around a globe.

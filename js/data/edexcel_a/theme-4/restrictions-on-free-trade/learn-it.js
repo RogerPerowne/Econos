@@ -354,8 +354,7 @@ window.ECONOS_TOPIC = {
       causesFirst: true,
       causesLabel: 'STAKEHOLDER SCORECARD',
       causesEmoji: '\u{1F465}',
-      causesStyle: 'icon-top',
-      causesCols: 3,
+      causesStyle: 'numbered-rows',
       causes: [
         { tone: 'green',  icon: '\u{1F6D2}', head: 'Consumers', body: '• Higher prices<br>• Less choice<br>• Lower real incomes' },
         { tone: 'blue',   icon: '\u{1F3ED}', head: 'Domestic producers', body: '• Higher sales<br>• Higher profits<br>• Less foreign pressure' },

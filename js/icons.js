@@ -20380,7 +20380,7 @@ window.ECONOS_ICONS = {
         .pmd-sec span.l{font-size:14px;}
         .pmd-sec span.t{font-size:12px;font-weight:800;letter-spacing:0.06em;color:#0B1426;}
         .pmd-sec span.r{flex:1;height:1px;background:#E2E8F0;}
-        .pmd-scen{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+        .pmd-scen{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
         .pmd-card{border-radius:14px;padding:14px 13px 12px;position:relative;}
         .pmd-num{position:absolute;top:12px;left:12px;width:24px;height:24px;border-radius:50%;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;}
         .pmd-ci{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;margin:6px auto 8px;box-shadow:0 1px 4px rgba(0,0,0,.08);}

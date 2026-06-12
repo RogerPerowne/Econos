@@ -376,7 +376,7 @@ window.ECONOS_TOPIC = {
       causesPosition: 'top',
       causesLabel: 'WHAT THE WTO DOES',
       causesEmoji: '\u{1F310}',
-      causesCols: 4,
+      causesCols: 2,
       causes: [
         { tone: 'green',  icon: '⚖️', head: 'Sets rules', body: 'A common framework for global trade.' },
         { tone: 'amber',  icon: '\u{1F465}', head: 'Negotiates', body: 'A forum for reducing barriers.' },

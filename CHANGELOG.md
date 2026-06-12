@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.1 — 2026-06-12
+
+### Review set 2 (batch 2) — feedback-loop & axis arrowheads
+
+- **Poverty trap (`povertyTrapCycle`) & savings-gap loop (`savingsGapLoop`):**
+  the dashed feedback loop's arrowhead was a stroke chevron distorted into a
+  flat caret by the diagram's non-uniform (`preserveAspectRatio="none"`)
+  scaling. Replaced with an explicit upward-pointing filled triangle that
+  rises cleanly into the first node.
+- **Savings-gap loop:** dropped the redundant 5th "Back to low incomes" node
+  (the loop already returns to "Low incomes").
+- **Income ladder (`incomeLadder`):** the vertical income-axis arrowheads were
+  rotated 90° the wrong way by `orient="auto"`; replaced with explicit up/down
+  triangles.
+
 ## 0.172.0 — 2026-06-12
 
 ### Review set 2 (batch 1) — card layout fixes

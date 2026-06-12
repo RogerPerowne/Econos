@@ -63,8 +63,9 @@ const check = process.argv.includes('--check');
    when demandGoodTypes was rebuilt to the symmetric mockup layout with
    var() colours; lowered to 6846 (v0.171.9) on the debtBathtub rebuild;
    lowered to 6845 (v0.171.12) on the threeClassicObjectives equation
-   restructure. */
-const DUP_BASELINE = 6845;
+   restructure; lowered to 6835 (v0.171.13) when the macro constraint
+   compass was rebuilt as a token-based guardrails dashboard. */
+const DUP_BASELINE = 6835;
 
 const css = readFileSync('styles.css', 'utf8');
 

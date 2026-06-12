@@ -6821,10 +6821,12 @@ window.ECONOS_ICONS = {
       <circle cx="140" cy="172" r="150" fill="url(#xcc-glow)"/>
       <ellipse cx="140" cy="304" rx="120" ry="11" fill="url(#xcc-grd)"/>
       <g filter="url(#xcc-sh)"><rect x="46" y="124" width="188" height="146" rx="12" fill="url(#xcc-cc0)" stroke="#9A3412" stroke-width="2.5"/></g><line x1="64" y1="140" x2="64" y2="252" stroke="#94A3B8" stroke-width="2"/><line x1="64" y1="252" x2="218" y2="252" stroke="#94A3B8" stroke-width="2"/><path d="M 72 156 C 104 236 168 236 210 168" fill="none" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
-     <path d="M 88 232 C 122 224 150 196 178 142" fill="none" stroke="#F43F5E" stroke-width="3.5" stroke-linecap="round"/>
+     <!-- MC seated through the AC minimum: AC min solved at (140.3, 217.6);
+          this cubic passes (140.2, 217.1) at t≈0.53 — visually exact. -->
+     <path d="M 88 232 C 124 238 154 223 178 142" fill="none" stroke="#F43F5E" stroke-width="3.5" stroke-linecap="round"/>
      <text x="206" y="162" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="end">AC</text>
      <text x="182" y="142" font-size="11" font-weight="800" fill="#BE123C">MC</text>
-     <circle cx="139" cy="216" r="5.5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+     <circle cx="140.3" cy="217.6" r="5.5" fill="#16A34A" stroke="#fff" stroke-width="2"/>
       <ellipse cx="140" cy="312" rx="112" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
@@ -16046,75 +16048,61 @@ window.ECONOS_ICONS = {
         }
       </style>
       <div class="ari-h">
-      <svg viewBox="0 0 760 466" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- PANEL 1: Elastic demand -->
-        <rect x="14" y="14" width="240" height="438" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
-        <circle cx="42" cy="46" r="16" fill="#2563EB"/>
-        <text x="42" y="52" font-size="15" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">1</text>
-        <text x="134" y="52" font-size="17" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Elastic demand</text>
-        <text x="134" y="73" font-size="13" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">PED &gt; 1</text>
-        <line x1="44" y1="96" x2="44" y2="236" stroke="#0B1426" stroke-width="1.2"/>
-        <line x1="44" y1="236" x2="230" y2="236" stroke="#0B1426" stroke-width="1.2"/>
-        <text x="36" y="92" font-size="10" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
-        <text x="234" y="250" font-size="10" fill="#475569" font-family="Inter,sans-serif">Q</text>
-        <line x1="52" y1="124" x2="224" y2="213" stroke="#1E3A8A" stroke-width="2.2"/>
-        <text x="214" y="202" font-size="12" font-weight="700" fill="#1E3A8A" font-family="Inter,sans-serif">D</text>
-        <rect x="26" y="256" width="216" height="56" rx="8" fill="#fff" stroke="#BFDBFE" stroke-width="1.3"/>
-        <text x="134" y="278" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">KEY RULE</text>
-        <text x="134" y="301" font-size="14" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &gt; % Δ P</text>
-        <rect x="26" y="322" width="216" height="122" rx="8" fill="#fff" stroke="#BFDBFE" stroke-width="1.3"/>
-        <text x="134" y="344" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">TOTAL REVENUE</text>
-        <text x="134" y="369" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR ↑</text>
-        <text x="134" y="389" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↑ → TR ↓</text>
-        <line x1="46" y1="404" x2="222" y2="404" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="134" y="424" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P and TR move in</text>
-        <text x="134" y="441" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">opposite directions.</text>
+      <svg viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- Axes. Scales: Q 0..120 → x 64..470 (3.3833/Q); P 0..18 → y 356..26 (18.333/P).
+             Demand P = 17 − 0.1Q: (0,17)→(64,44.3); (120,5)→(470,264.3).
+             A (Q50,P12)→(233.2,136); B (Q70,P10)→(300.8,172.7) — both verified on the line. -->
+        <line x1="64" y1="26" x2="64" y2="356" stroke="#0B1426" stroke-width="1.4"/>
+        <line x1="64" y1="356" x2="470" y2="356" stroke="#0B1426" stroke-width="1.4"/>
+        <text x="20" y="20" font-size="12" font-weight="700" fill="#475569" font-family="Inter,sans-serif">Price (£)</text>
+        <text x="470" y="386" font-size="12" font-weight="700" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">Quantity</text>
+        <g font-family="Inter,sans-serif" font-size="11" fill="#475569">
+          <text x="56" y="66.7" text-anchor="end">16</text>
+          <text x="56" y="140" text-anchor="end">12</text>
+          <text x="56" y="213.3" text-anchor="end">8</text>
+          <text x="56" y="286.7" text-anchor="end">4</text>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="11" fill="#475569">
+          <text x="131.7" y="372" text-anchor="middle">20</text>
+          <text x="199.3" y="372" text-anchor="middle">40</text>
+          <text x="267" y="372" text-anchor="middle">60</text>
+          <text x="334.7" y="372" text-anchor="middle">80</text>
+          <text x="402.3" y="372" text-anchor="middle">100</text>
+        </g>
+        <line x1="64" y1="44.3" x2="470" y2="264.3" stroke="#0B1426" stroke-width="2"/>
+        <text x="468" y="290" font-size="12.5" font-weight="800" fill="#0B1426" text-anchor="end" font-family="Inter,sans-serif">D = AR</text>
 
-        <!-- PANEL 2: Unit elastic demand -->
-        <rect x="262" y="14" width="240" height="438" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.8"/>
-        <circle cx="290" cy="46" r="16" fill="#D97706"/>
-        <text x="290" y="52" font-size="15" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">2</text>
-        <text x="382" y="52" font-size="17" font-weight="800" fill="#C2410C" text-anchor="middle" font-family="Inter,sans-serif">Unit elastic demand</text>
-        <text x="382" y="73" font-size="13" fill="#D97706" text-anchor="middle" font-family="Inter,sans-serif">PED = 1</text>
-        <line x1="292" y1="96" x2="292" y2="236" stroke="#0B1426" stroke-width="1.2"/>
-        <line x1="292" y1="236" x2="478" y2="236" stroke="#0B1426" stroke-width="1.2"/>
-        <text x="284" y="92" font-size="10" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
-        <text x="482" y="250" font-size="10" fill="#475569" font-family="Inter,sans-serif">Q</text>
-        <path d="M 302 105 Q 360 150 420 190 Q 450 213 470 225" fill="none" stroke="#C2410C" stroke-width="2.2"/>
-        <text x="452" y="128" font-size="12" font-weight="700" fill="#C2410C" font-family="Inter,sans-serif">D</text>
-        <rect x="274" y="256" width="216" height="56" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.3"/>
-        <text x="382" y="278" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">KEY RULE</text>
-        <text x="382" y="301" font-size="14" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q = % Δ P</text>
-        <rect x="274" y="322" width="216" height="122" rx="8" fill="#fff" stroke="#FED7AA" stroke-width="1.3"/>
-        <text x="382" y="344" font-size="12" font-weight="800" fill="#C2410C" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">TOTAL REVENUE</text>
-        <text x="382" y="369" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR unchanged</text>
-        <text x="382" y="389" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↑ → TR unchanged</text>
-        <line x1="294" y1="404" x2="470" y2="404" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="382" y="424" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">% changes match —</text>
-        <text x="382" y="441" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">TR is broadly unchanged.</text>
+        <!-- Point A (Q=50, P=£12) -->
+        <g class="ar-1" style="display:none">
+          <line x1="233.2" y1="136" x2="233.2" y2="356" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="233.2" y1="136" x2="64" y2="136" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="233.2" cy="136" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+          <text x="243" y="130" font-size="14" font-weight="800" fill="#2563EB" font-family="Inter,sans-serif">A</text>
+          <text x="56" y="128" font-size="11" font-weight="800" fill="#2563EB" text-anchor="end" font-family="Inter,sans-serif">£12</text>
+          <text x="233.2" y="372" font-size="11" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif">50</text>
+          <rect x="510" y="42" width="236" height="152" rx="11" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
+          <text x="628" y="68" font-size="11.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">POINT A</text>
+          <text x="628" y="94" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price £12 · Quantity 50</text>
+          <text x="628" y="120" font-size="13" fill="#334155" text-anchor="middle" font-family="Inter,sans-serif">TR = £12 × 50 = £600</text>
+          <text x="628" y="146" font-size="13" fill="#334155" text-anchor="middle" font-family="Inter,sans-serif">AR = £600 ÷ 50 = £12</text>
+          <text x="628" y="174" font-size="13" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">AR = price ✓</text>
+        </g>
 
-        <!-- PANEL 3: Inelastic demand -->
-        <rect x="510" y="14" width="240" height="438" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
-        <circle cx="538" cy="46" r="16" fill="#16A34A"/>
-        <text x="538" y="52" font-size="15" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">3</text>
-        <text x="630" y="52" font-size="17" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Inelastic demand</text>
-        <text x="630" y="73" font-size="13" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">PED &lt; 1</text>
-        <line x1="540" y1="96" x2="540" y2="236" stroke="#0B1426" stroke-width="1.2"/>
-        <line x1="540" y1="236" x2="726" y2="236" stroke="#0B1426" stroke-width="1.2"/>
-        <text x="532" y="92" font-size="10" fill="#475569" text-anchor="end" font-family="Inter,sans-serif">P</text>
-        <text x="730" y="250" font-size="10" fill="#475569" font-family="Inter,sans-serif">Q</text>
-        <line x1="612" y1="105" x2="660" y2="231" stroke="#065F46" stroke-width="2.2"/>
-        <text x="668" y="128" font-size="12" font-weight="700" fill="#065F46" font-family="Inter,sans-serif">D</text>
-        <rect x="522" y="256" width="216" height="56" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.3"/>
-        <text x="630" y="278" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">KEY RULE</text>
-        <text x="630" y="301" font-size="14" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">% Δ Q &lt; % Δ P</text>
-        <rect x="522" y="322" width="216" height="122" rx="8" fill="#fff" stroke="#BBF7D0" stroke-width="1.3"/>
-        <text x="630" y="344" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.04em" font-family="Inter,sans-serif">TOTAL REVENUE</text>
-        <text x="630" y="369" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↓ → TR ↓</text>
-        <text x="630" y="389" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price ↑ → TR ↑</text>
-        <line x1="542" y1="404" x2="718" y2="404" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="630" y="424" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">P and TR move in</text>
-        <text x="630" y="441" font-size="12.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">the same direction.</text>
+        <!-- Point B (Q=70, P=£10) -->
+        <g class="ar-2" style="display:none">
+          <line x1="300.8" y1="172.7" x2="300.8" y2="356" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="300.8" y1="172.7" x2="64" y2="172.7" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="300.8" cy="172.7" r="6" fill="#16A34A" stroke="#fff" stroke-width="2"/>
+          <text x="310" y="166" font-size="14" font-weight="800" fill="#16A34A" font-family="Inter,sans-serif">B</text>
+          <text x="56" y="164" font-size="11" font-weight="800" fill="#16A34A" text-anchor="end" font-family="Inter,sans-serif">£10</text>
+          <text x="300.8" y="372" font-size="11" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">70</text>
+          <rect x="510" y="216" width="236" height="152" rx="11" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
+          <text x="628" y="242" font-size="11.5" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.08em" font-family="Inter,sans-serif">POINT B</text>
+          <text x="628" y="268" font-size="13.5" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Inter,sans-serif">Price £10 · Quantity 70</text>
+          <text x="628" y="294" font-size="13" fill="#334155" text-anchor="middle" font-family="Inter,sans-serif">TR = £10 × 70 = £700</text>
+          <text x="628" y="320" font-size="13" fill="#334155" text-anchor="middle" font-family="Inter,sans-serif">AR = £700 ÷ 70 = £10</text>
+          <text x="628" y="348" font-size="13" font-weight="800" fill="#16A34A" text-anchor="middle" font-family="Inter,sans-serif">AR = price ✓</text>
+        </g>
       </svg>
       </div>
 
@@ -23066,15 +23054,25 @@ window.ECONOS_ICONS = {
         .pes-dr .dr-push { font-size:10px; font-weight:800; margin-top:6px; border-radius:6px; padding:2px 0; }
         .pes-dr .dr-bar { height:9px; border-radius:5px; margin:14px 4px 4px; background:linear-gradient(90deg,#DC2626 0%,#D97706 30%,#CA8A04 50%,#34D399 72%,#059669 100%); }
         .pes-dr .dr-ends { display:flex; justify-content:space-between; font-size:11px; font-weight:800; margin:0 4px; }
-        @media (max-width:640px){ .pes-dr .dr-row{ grid-template-columns:repeat(2,1fr); } }
-        @media (max-width:380px){ .pes-dr .dr-row{ grid-template-columns:1fr; } }
+        .pes-dr .dr-rail { display:none; }
+        @media (max-width:640px){
+          .pes-dr .dr-wrap { display:flex; gap:12px; align-items:stretch; }
+          .pes-dr .dr-row { grid-template-columns:1fr; flex:1; }
+          .pes-dr .dr-rail { display:flex; flex-direction:column; align-items:center; gap:8px; width:36px; flex-shrink:0; padding:4px 0; }
+          .pes-dr .dr-vbar { width:9px; flex:1; border-radius:5px; background:linear-gradient(180deg,#DC2626 0%,#D97706 30%,#CA8A04 50%,#34D399 72%,#059669 100%); }
+          .pes-dr .dr-rl { writing-mode:vertical-rl; font-size:10.5px; font-weight:800; letter-spacing:0.02em; }
+          .pes-dr .dr-bar, .pes-dr .dr-ends { display:none; }
+        }
       </style>
+      <div class="dr-wrap">
       <div class="dr-row">
         <div class="dr-tile" style="background:#ECFDF5;border:1.5px solid #6EE7B7;"><div class="dr-num" style="background:#059669;">1</div><div class="dr-ic">🏭</div><div class="dr-t" style="color:#065F46;">Spare capacity</div><div class="dr-b">Unused labour or machinery makes expansion easier.</div><div class="dr-push" style="background:#D1FAE5;color:#065F46;">↑ raises PES</div></div>
         <div class="dr-tile" style="background:#FFF7ED;border:1.5px solid #FDBA74;"><div class="dr-num" style="background:#EA580C;">2</div><div class="dr-ic">📦</div><div class="dr-t" style="color:#C2410C;">Stocks</div><div class="dr-b">Firms can sell from inventories immediately.</div><div class="dr-push" style="background:#FFEDD5;color:#C2410C;">↑ raises PES</div></div>
         <div class="dr-tile" style="background:#F5F3FF;border:1.5px solid #C4B5FD;"><div class="dr-num" style="background:#7C3AED;">3</div><div class="dr-ic">⏱️</div><div class="dr-t" style="color:#5B21B6;">Time</div><div class="dr-b">More time gives firms more chance to adjust.</div><div class="dr-push" style="background:#EDE9FE;color:#5B21B6;">↑ raises PES</div></div>
         <div class="dr-tile" style="background:#EFF6FF;border:1.5px solid #93C5FD;"><div class="dr-num" style="background:#2563EB;">4</div><div class="dr-ic">🔄</div><div class="dr-t" style="color:#1E3A8A;">Factor mobility</div><div class="dr-b">Inputs that move easily make supply more elastic.</div><div class="dr-push" style="background:#DBEAFE;color:#1E3A8A;">↑ raises PES</div></div>
         <div class="dr-tile" style="background:#FFF1F2;border:1.5px solid #FDA4AF;"><div class="dr-num" style="background:#DC2626;">5</div><div class="dr-ic">🏗️</div><div class="dr-t" style="color:#9F1239;">Production lag</div><div class="dr-b">Long build or growth times make supply less elastic.</div><div class="dr-push" style="background:#FFE4E6;color:#9F1239;">↓ lowers PES</div></div>
+      </div>
+      <div class="dr-rail" aria-hidden="true"><span class="dr-rl" style="color:#DC2626;">Less elastic</span><div class="dr-vbar"></div><span class="dr-rl" style="color:#059669;">More elastic</span></div>
       </div>
       <div class="dr-bar"></div>
       <div class="dr-ends"><span style="color:#DC2626;">← Less elastic</span><span style="color:#059669;">More elastic →</span></div>
@@ -23731,63 +23729,72 @@ window.ECONOS_ICONS = {
     </div>
   `,
 
-  /* Card 3 – THE FOUR CONSTRAINTS (compass rose, kept). */
+  /* Card 3 – THE FOUR CONSTRAINTS. Guardrails dashboard (replaces the
+     old compass rose, which buried the in-zone/out-of-zone story in
+     needle geometry). Four status tiles — one per supporting
+     objective — each with the headline UK stat, a horizontal
+     guardrail track whose green band is the safe zone and whose
+     marker is the UK's current position, and a verdict chip. The
+     constraint idea ("boundaries the economy must stay within")
+     reads directly off whether each marker sits inside its band. */
   macroConstraintCompass: `
-    <div style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px 14px;font-family:Inter,sans-serif;">
-      <svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <circle cx="360" cy="240" r="200" fill="none" stroke="#E2E8F0" stroke-width="1.4" stroke-dasharray="3 4"/>
-        <circle cx="360" cy="240" r="160" fill="none" stroke="#E2E8F0" stroke-width="1.4"/>
-        <path d="M 360 240 L 360 80 A 160 160 0 0 1 502.78 161.04 Z" fill="#DCFCE7" opacity="0.35"/>
-        <path d="M 360 240 L 502.78 161.04 A 160 160 0 0 1 502.78 318.96 Z" fill="#DCFCE7" opacity="0.35"/>
-        <path d="M 360 240 L 502.78 318.96 A 160 160 0 0 1 360 400 Z" fill="#DCFCE7" opacity="0.35"/>
-        <path d="M 360 240 L 360 400 A 160 160 0 0 1 217.22 318.96 Z" fill="#DCFCE7" opacity="0.35"/>
-        <line x1="360" y1="40" x2="360" y2="440" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 4"/>
-        <line x1="160" y1="240" x2="560" y2="240" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 4"/>
-        <circle cx="360" cy="240" r="48" fill="#fff" stroke="#0B1426" stroke-width="2"/>
-        <text x="360" y="232" font-size="10" font-weight="800" fill="#475569" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">UK</text>
-        <text x="360" y="250" font-size="11" font-weight="900" fill="#0B1426" font-family="Inter,sans-serif" text-anchor="middle">Q1 2026</text>
-        <g>
-          <path d="M 339 100 A 21 21 0 0 1 381 100" stroke="#22C55E" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <circle cx="360" cy="100" r="3" fill="#fff" stroke="#8B5CF6" stroke-width="2"/>
-          <line x1="360" y1="240" x2="360" y2="120" stroke="#8B5CF6" stroke-width="2.6" stroke-linecap="round"/>
-          <polygon points="360,108 354,124 366,124" fill="#8B5CF6"/>
-          <rect x="280" y="40" width="160" height="48" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
-          <text x="360" y="58" font-size="10" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">BALANCE OF PAYMENTS</text>
-          <text x="360" y="74" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif" text-anchor="middle">CA &minus;2.4% &middot; in zone</text>
-        </g>
-        <g>
-          <path d="M 500 219 A 21 21 0 0 1 500 261" stroke="#22C55E" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <circle cx="500" cy="240" r="3" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
-          <line x1="360" y1="240" x2="540" y2="240" stroke="#F59E0B" stroke-width="2.6" stroke-linecap="round"/>
-          <polygon points="540,240 524,234 524,246" fill="#F59E0B"/>
-          <rect x="565" y="216" width="138" height="48" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
-          <text x="634" y="234" font-size="10" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">FISCAL SUSTAINABILITY</text>
-          <text x="634" y="250" font-size="13" font-weight="800" fill="#B45309" font-family="Inter,sans-serif" text-anchor="middle">93.8% debt</text>
-          <text x="634" y="262" font-size="10" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif" text-anchor="middle">! outside zone</text>
-        </g>
-        <g>
-          <path d="M 339 380 A 21 21 0 0 1 381 380" stroke="#22C55E" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <circle cx="360" cy="380" r="3" fill="#fff" stroke="#0D9488" stroke-width="2"/>
-          <line x1="360" y1="240" x2="360" y2="360" stroke="#0D9488" stroke-width="2.6" stroke-linecap="round"/>
-          <polygon points="360,372 354,356 366,356" fill="#0D9488"/>
-          <rect x="280" y="392" width="160" height="48" rx="10" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.5"/>
-          <text x="360" y="410" font-size="10" font-weight="800" fill="#115E59" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">ENVIRONMENT</text>
-          <text x="360" y="426" font-size="13" font-weight="800" fill="#115E59" font-family="Inter,sans-serif" text-anchor="middle">net-zero progress mixed</text>
-        </g>
-        <g>
-          <path d="M 220 219 A 21 21 0 0 1 220 261" stroke="#22C55E" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <circle cx="220" cy="240" r="3" fill="#fff" stroke="#475569" stroke-width="2"/>
-          <line x1="360" y1="240" x2="180" y2="240" stroke="#475569" stroke-width="2.6" stroke-linecap="round"/>
-          <polygon points="180,240 196,234 196,246" fill="#475569"/>
-          <rect x="18" y="216" width="138" height="48" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
-          <text x="87" y="234" font-size="10" font-weight="800" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.1em">INCOME EQUALITY</text>
-          <text x="87" y="250" font-size="13" font-weight="800" fill="#334155" font-family="Inter,sans-serif" text-anchor="middle">Gini 0.36</text>
-          <text x="87" y="262" font-size="10" font-weight="800" fill="#DC2626" font-family="Inter,sans-serif" text-anchor="middle">! outside zone</text>
-        </g>
-        <rect x="180" y="448" width="14" height="14" rx="3" fill="#DCFCE7" stroke="#22C55E" stroke-width="1"/>
-        <text x="200" y="459" font-size="11" fill="#475569" font-family="Inter,sans-serif">safe zone</text>
-        <text x="280" y="459" font-size="11" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif">!  needle outside zone = constraint violation</text>
-      </svg>
+    <div class="mcc" style="line-height:1.5;background:var(--econ-white);border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:var(--econ-ink);">
+      <style>
+        .mcc .mcc-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:780px; margin:0 auto; }
+        .mcc .mcc-tile { border-radius:13px; padding:13px 15px 12px; border:1.5px solid; min-width:0; }
+        .mcc .mcc-head { display:flex; align-items:center; gap:9px; }
+        .mcc .mcc-ic { width:32px; height:32px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:17px; background:var(--econ-white); flex-shrink:0; }
+        .mcc .mcc-name { font-size:var(--fs-2xs); font-weight:var(--fw-extrabold); letter-spacing:0.07em; line-height:1.25; }
+        .mcc .mcc-stat { font-size:18px; font-weight:var(--fw-extrabold); margin:7px 0 0; }
+        .mcc .mcc-stat .mcc-when { font-size:var(--fs-2xs); font-weight:var(--fw-semi); color:var(--econ-slate); margin-left:6px; }
+        .mcc .mcc-track { position:relative; height:10px; border-radius:5px; background:var(--econ-gray-100); margin:12px 0 5px; }
+        .mcc .mcc-zone { position:absolute; top:0; bottom:0; background:#DCFCE7; border:1px solid #86EFAC; border-radius:5px; box-sizing:border-box; }
+        .mcc .mcc-pin { position:absolute; top:-4px; width:4px; height:18px; border-radius:2px; box-shadow:0 0 0 1.5px var(--econ-white); }
+        .mcc .mcc-scale { display:flex; justify-content:space-between; font-size:10px; color:var(--econ-slate); }
+        .mcc .mcc-chip { display:inline-flex; align-items:center; gap:5px; font-size:var(--fs-2xs); font-weight:var(--fw-extrabold); border-radius:999px; padding:3px 10px; margin-top:9px; }
+        .mcc .mcc-legend { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; font-size:var(--fs-2xs); color:var(--econ-slate); margin-top:12px; }
+        .mcc .mcc-legend strong { font-weight:var(--fw-extrabold); }
+        @media (max-width:560px){ .mcc .mcc-grid { grid-template-columns:1fr; } }
+      </style>
+      <div class="mcc-grid">
+
+        <!-- 1. Balance of payments — IN zone -->
+        <div class="mcc-tile" style="background:var(--econ-purple-50);border-color:#C4B5FD;">
+          <div class="mcc-head"><div class="mcc-ic">🌐</div><div class="mcc-name" style="color:var(--econ-purple-700);">BALANCE OF PAYMENTS</div></div>
+          <div class="mcc-stat" style="color:var(--econ-purple-700);">CA −2.4% of GDP<span class="mcc-when">Q4 2025</span></div>
+          <div class="mcc-track"><div class="mcc-zone" style="left:37%;width:51%;"></div><div class="mcc-pin" style="left:45%;background:var(--econ-green);"></div></div>
+          <div class="mcc-scale"><span>−6%</span><span>+2%</span></div>
+          <div class="mcc-chip" style="background:var(--econ-green-100);color:var(--econ-green-800);">✓ in zone — deficit financeable</div>
+        </div>
+
+        <!-- 2. Fiscal sustainability — OUTSIDE zone -->
+        <div class="mcc-tile" style="background:var(--econ-amber-50);border-color:#FCD34D;">
+          <div class="mcc-head"><div class="mcc-ic">🏛️</div><div class="mcc-name" style="color:var(--econ-amber-700);">FISCAL SUSTAINABILITY</div></div>
+          <div class="mcc-stat" style="color:var(--econ-amber-700);">93.8% debt / GDP<span class="mcc-when">Mar 2026</span></div>
+          <div class="mcc-track"><div class="mcc-zone" style="left:0;width:50%;"></div><div class="mcc-pin" style="left:67%;background:var(--econ-rose);"></div></div>
+          <div class="mcc-scale"><span>40%</span><span>120%</span></div>
+          <div class="mcc-chip" style="background:var(--econ-rose-100);color:var(--econ-rose-700);">! outside zone — headroom shrinking</div>
+        </div>
+
+        <!-- 3. Environment — MIXED -->
+        <div class="mcc-tile" style="background:#F0FDFA;border-color:#5EEAD4;">
+          <div class="mcc-head"><div class="mcc-ic">🍃</div><div class="mcc-name" style="color:#115E59;">ENVIRONMENT</div></div>
+          <div class="mcc-stat" style="color:#115E59;">Net zero 2050<span class="mcc-when">budget gap</span></div>
+          <div class="mcc-track"><div class="mcc-zone" style="left:62%;width:38%;"></div><div class="mcc-pin" style="left:48%;background:var(--econ-amber);"></div></div>
+          <div class="mcc-scale"><span>off track</span><span>on track</span></div>
+          <div class="mcc-chip" style="background:var(--econ-amber-100);color:var(--econ-amber-700);">~ mixed — progress uneven</div>
+        </div>
+
+        <!-- 4. Income equality — OUTSIDE zone -->
+        <div class="mcc-tile" style="background:var(--econ-slate-50);border-color:#CBD5E1;">
+          <div class="mcc-head"><div class="mcc-ic">⚖️</div><div class="mcc-name" style="color:var(--econ-slate-700);">INCOME EQUALITY</div></div>
+          <div class="mcc-stat" style="color:var(--econ-slate-700);">Gini 0.36<span class="mcc-when">latest HBAI</span></div>
+          <div class="mcc-track"><div class="mcc-zone" style="left:0;width:35%;"></div><div class="mcc-pin" style="left:55%;background:var(--econ-rose);"></div></div>
+          <div class="mcc-scale"><span>0.25</span><span>0.45</span></div>
+          <div class="mcc-chip" style="background:var(--econ-rose-100);color:var(--econ-rose-700);">! outside zone — inequality elevated</div>
+        </div>
+      </div>
+      <div class="mcc-legend"><span><strong style="color:var(--econ-green-700);">green band</strong> = safe zone for each constraint</span><span><strong>marker</strong> = where the UK sits, Q1 2026</span></div>
     </div>
   `,
 

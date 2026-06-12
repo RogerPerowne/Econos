@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.9 — 2026-06-12
+
+### Public Sector Finances — richer debt bathtub illustration
+
+- Rebuilt `debtBathtub` ("The core picture") to match the mockup: a
+  clawfoot bath ("this year's budget") with green tax-revenue and orange
+  spending taps pouring curved streams, the annual-deficit / new-borrowing
+  arc spilling into a laddered national-debt tank, and — new — a green
+  "surpluses repay debt" return flow draining the tank. Two note chips
+  ("repeated deficits add to debt" / "surpluses can reduce debt") sit
+  below and stack on mobile. The surplus return flow also makes the
+  metaphor read both ways (deficits fill, surpluses drain). Illustration
+  fills stay hex (gradient stops); text uses tokens — DUP_BASELINE 6848 →
+  6846.
+
 ## 0.171.8 — 2026-06-12
 
 ### Interactive diagrams — bigger text, sitewide

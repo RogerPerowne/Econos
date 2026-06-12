@@ -21207,62 +21207,104 @@ window.ECONOS_ICONS = {
   `,
 
   /* debtBathtub – Public Sector Finances card 3. Stock-vs-flow
-     illustration: this year's budget is a bath (revenue tap fills,
-     spending tap drains); the leftover gap pipes into the national
-     debt tank — the stock that builds up over the years. */
+     illustration inspired by the mockup: this year's budget is a
+     clawfoot bath (green revenue tap fills it, orange spending tap
+     drains it); the annual deficit / new borrowing arcs over into the
+     national-debt tank — the stock that builds up — while budget
+     surpluses drain back out and pay debt down. Two note chips below
+     carry the "deficits add / surpluses reduce" logic and stack on
+     mobile. Illustration fills stay hex (gradient stops); text uses
+     tokens. */
   debtBathtub: `
-    <div style="line-height:1.35;background:#fff;border-radius:14px;padding:8px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A bath labelled this year's budget is filled by a tax-revenue tap and drained by a government-spending tap; the annual deficit pipes into a national debt tank that builds up over time" style="width:100%;height:auto;display:block;">
+    <div class="dbt" style="line-height:1.4;background:var(--econ-white);border-radius:var(--r-lg);padding:10px 8px 6px;font-family:Inter,sans-serif;color:var(--econ-ink);">
+      <style>
+        .dbt .dbt-notes { display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:680px; margin:2px auto 4px; }
+        .dbt .dbt-note { display:flex; align-items:flex-start; gap:9px; border-radius:12px; padding:11px 13px; }
+        .dbt .dbt-note__ic { font-size:17px; line-height:1; flex-shrink:0; }
+        .dbt .dbt-note__t { font-size:var(--fs-xs); font-weight:var(--fw-extrabold); line-height:1.2; margin-bottom:3px; }
+        .dbt .dbt-note__b { font-size:var(--fs-2xs); color:var(--econ-slate); line-height:1.4; }
+        @media (max-width:560px){ .dbt .dbt-notes { grid-template-columns:1fr; } }
+      </style>
+      <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A clawfoot bath labelled this year's budget is filled by a green tax-revenue tap and drained by an orange government-spending tap; the annual deficit (new borrowing) arcs into a national-debt tank that builds up, while surpluses drain back out to repay debt" style="width:100%;height:auto;display:block;">
         <defs>
           <linearGradient id="dbt-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7DD3FC"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
           <linearGradient id="dbt-debt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient>
-          <linearGradient id="dbt-tub" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient>
-          <marker id="dbt-arr-g" markerWidth="9" markerHeight="9" refX="4" refY="8" orient="auto"><path d="M 0 0 L 4 9 L 8 0" fill="none" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
-          <marker id="dbt-arr-o" markerWidth="9" markerHeight="9" refX="4" refY="8" orient="auto"><path d="M 0 0 L 4 9 L 8 0" fill="none" stroke="#EA580C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
-          <marker id="dbt-arr-p" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M 0 0 L 9 4 L 0 8" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <linearGradient id="dbt-tub" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E8EDF3"/></linearGradient>
         </defs>
 
-        <!-- Tax revenue tap (flows in) -->
-        <text x="34" y="34" font-size="12.5" font-weight="800" fill="#15803D">Tax revenue</text>
-        <text x="34" y="50" font-size="11" fill="#16A34A">(flows in)</text>
-        <path d="M 60,58 h 70 v 14 h -22" fill="none" stroke="#16A34A" stroke-width="7" stroke-linecap="round"/>
-        <line x1="108" y1="78" x2="108" y2="120" stroke="#16A34A" stroke-width="5" stroke-dasharray="3 5" marker-end="url(#dbt-arr-g)"/>
+        <!-- ===== Tax revenue tap (fills the bath) ===== -->
+        <text x="34" y="40" font-size="13" font-weight="800" fill="#15803D">Tax revenue</text>
+        <text x="34" y="56" font-size="11" fill="#16A34A">(flow in)</text>
+        <g stroke="#94A3B8" stroke-width="6" stroke-linecap="round" fill="none">
+          <path d="M 70,70 v 16"/>
+          <path d="M 70,70 h 34 v 12"/>
+        </g>
+        <circle cx="70" cy="66" r="6" fill="#CBD5E1"/>
+        <!-- green stream into the tub -->
+        <path d="M 104,90 q 4,40 26,70" fill="none" stroke="#22C55E" stroke-width="7" stroke-linecap="round"/>
 
-        <!-- Government spending tap (drains out) -->
-        <text x="14" y="196" font-size="12.5" font-weight="800" fill="#C2410C">Government</text>
-        <text x="14" y="212" font-size="12.5" font-weight="800" fill="#C2410C">spending</text>
-        <text x="14" y="228" font-size="11" fill="#EA580C">(flows out)</text>
-        <line x1="150" y1="232" x2="150" y2="270" stroke="#EA580C" stroke-width="5" stroke-dasharray="3 5" marker-end="url(#dbt-arr-o)"/>
+        <!-- ===== Government spending tap (drains the bath) ===== -->
+        <text x="20" y="232" font-size="13" font-weight="800" fill="#C2410C">Government</text>
+        <text x="20" y="248" font-size="13" font-weight="800" fill="#C2410C">spending</text>
+        <text x="20" y="264" font-size="11" fill="#EA580C">(flow out)</text>
+        <g stroke="#94A3B8" stroke-width="6" stroke-linecap="round" fill="none">
+          <path d="M 96,206 h 18"/>
+          <path d="M 96,200 v 14"/>
+        </g>
+        <!-- orange stream draining away -->
+        <path d="M 110,212 q -2,30 -22,56" fill="none" stroke="#F97316" stroke-width="7" stroke-linecap="round"/>
 
-        <!-- Bathtub -->
-        <rect x="96" y="150" width="210" height="78" rx="30" fill="url(#dbt-tub)" stroke="#94A3B8" stroke-width="2.5"/>
-        <path d="M 108,168 q 0,46 40,46 h 118 q 40,0 40,-46 z" fill="url(#dbt-water)" opacity="0.92"/>
-        <ellipse cx="201" cy="168" rx="93" ry="11" fill="#BAE6FD" opacity="0.85"/>
-        <circle cx="92" cy="232" r="7" fill="#94A3B8"/><circle cx="310" cy="232" r="7" fill="#94A3B8"/>
-        <text x="201" y="200" font-size="13" font-weight="800" fill="#075985" text-anchor="middle">This year's budget</text>
+        <!-- ===== Clawfoot bath: This year's budget ===== -->
+        <!-- basin -->
+        <path d="M 150,150 q 0,72 50,72 h 110 q 50,0 50,-72 z" fill="url(#dbt-tub)" stroke="#94A3B8" stroke-width="3"/>
+        <!-- water + surface -->
+        <path d="M 162,162 q 4,52 44,52 h 98 q 40,0 44,-52 z" fill="url(#dbt-water)" opacity="0.92"/>
+        <ellipse cx="255" cy="160" rx="93" ry="12" fill="#BAE6FD"/>
+        <!-- rim -->
+        <ellipse cx="255" cy="150" rx="105" ry="14" fill="none" stroke="#94A3B8" stroke-width="3"/>
+        <!-- clawfeet -->
+        <path d="M 178,222 q -8,14 4,20 q 10,-2 8,-20 z" fill="#CBD5E1"/>
+        <path d="M 322,222 q 8,14 -4,20 q -10,-2 -8,-20 z" fill="#CBD5E1"/>
+        <text x="255" y="196" font-size="13" font-weight="800" fill="#075985" text-anchor="middle">This year's budget</text>
 
-        <!-- Deficit pipe from tub to debt tank -->
-        <text x="330" y="116" font-size="12.5" font-weight="800" fill="#6D28D9" text-anchor="middle">Annual deficit</text>
-        <text x="330" y="132" font-size="11" fill="#7C3AED" text-anchor="middle">(the gap)</text>
-        <path d="M 306,186 h 60 v -40 h 70" fill="none" stroke="#A78BFA" stroke-width="10" stroke-linecap="round"/>
-        <line x1="430" y1="146" x2="472" y2="146" stroke="#7C3AED" stroke-width="5" stroke-dasharray="3 5" marker-end="url(#dbt-arr-p)"/>
+        <!-- ===== Annual deficit / new borrowing: arc into the tank ===== -->
+        <text x="430" y="44" font-size="13" font-weight="800" fill="#6D28D9" text-anchor="middle">Annual deficit · new borrowing</text>
+        <text x="430" y="60" font-size="11" fill="#7C3AED" text-anchor="middle">the gap covers the shortfall</text>
+        <path d="M 360,150 C 430,150 430,96 500,96 L 560,96 L 560,116" fill="none" stroke="#A78BFA" stroke-width="11" stroke-linecap="round"/>
+        <path d="M 549,118 L 560,132 L 571,118" fill="none" stroke="#7C3AED" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 
-        <!-- National debt tank (the stock) -->
-        <ellipse cx="560" cy="262" rx="92" ry="20" fill="#CBD5E1"/>
-        <path d="M 468,150 a 92,20 0 0 0 184,0 v 112 a 92,20 0 0 1 -184,0 z" fill="#EDE9FE" stroke="#A78BFA" stroke-width="2.5"/>
-        <path d="M 468,182 a 92,20 0 0 0 184,0 v 80 a 92,20 0 0 1 -184,0 z" fill="url(#dbt-debt)" opacity="0.92"/>
-        <ellipse cx="560" cy="182" rx="92" ry="20" fill="#C4B5FD" opacity="0.9"/>
-        <ellipse cx="560" cy="150" rx="92" ry="20" fill="none" stroke="#A78BFA" stroke-width="2.5"/>
-        <text x="560" y="232" font-size="14" font-weight="800" fill="#4C1D95" text-anchor="middle">NATIONAL DEBT</text>
-        <text x="560" y="250" font-size="11" fill="#5B21B6" text-anchor="middle">(the stock)</text>
-        <!-- ladder hint -->
-        <line x1="636" y1="158" x2="636" y2="250" stroke="#A78BFA" stroke-width="2"/><line x1="648" y1="158" x2="648" y2="250" stroke="#A78BFA" stroke-width="2"/>
-        <line x1="636" y1="178" x2="648" y2="178" stroke="#A78BFA" stroke-width="2"/><line x1="636" y1="206" x2="648" y2="206" stroke="#A78BFA" stroke-width="2"/><line x1="636" y1="234" x2="648" y2="234" stroke="#A78BFA" stroke-width="2"/>
+        <!-- ===== National debt tank (the stock) ===== -->
+        <ellipse cx="600" cy="288" rx="86" ry="18" fill="#CBD5E1"/>
+        <path d="M 514,140 a 86,18 0 0 0 172,0 v 148 a 86,18 0 0 1 -172,0 z" fill="#EDE9FE" stroke="#A78BFA" stroke-width="3"/>
+        <path d="M 514,176 a 86,18 0 0 0 172,0 v 112 a 86,18 0 0 1 -172,0 z" fill="url(#dbt-debt)" opacity="0.92"/>
+        <ellipse cx="600" cy="176" rx="86" ry="18" fill="#C4B5FD" opacity="0.9"/>
+        <ellipse cx="600" cy="140" rx="86" ry="18" fill="none" stroke="#A78BFA" stroke-width="3"/>
+        <text x="600" y="244" font-size="14" font-weight="800" fill="#4C1D95" text-anchor="middle">NATIONAL DEBT</text>
+        <text x="600" y="262" font-size="11" fill="#5B21B6" text-anchor="middle">(the stock)</text>
+        <!-- ladder -->
+        <g stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round">
+          <path d="M 670,150 v 110"/><path d="M 682,150 v 110"/>
+          <path d="M 670,176 h 12"/><path d="M 670,204 h 12"/><path d="M 670,232 h 12"/>
+        </g>
 
-        <!-- Caption -->
-        <text x="300" y="312" font-size="12.5" font-weight="700" fill="#4338CA" text-anchor="middle">If spending exceeds tax revenue, the gap is the deficit —</text>
-        <text x="300" y="330" font-size="12.5" font-weight="700" fill="#4338CA" text-anchor="middle">and repeated deficits build up the national debt.</text>
+        <!-- ===== Surplus return flow: drains debt down ===== -->
+        <path d="M 514,272 C 472,288 452,292 430,292" fill="none" stroke="#22C55E" stroke-width="7" stroke-linecap="round"/>
+        <path d="M 434,283 L 421,292 L 434,301" fill="none" stroke="#16A34A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="478" y="314" font-size="11" font-weight="700" fill="#15803D" text-anchor="middle">Surpluses repay debt</text>
       </svg>
+
+      <div class="dbt-notes">
+        <div class="dbt-note" style="background:#F5F3FF;border:1px solid #C4B5FD;">
+          <span class="dbt-note__ic">📈</span>
+          <div><div class="dbt-note__t" style="color:var(--econ-purple);">Repeated deficits add to debt</div>
+          <div class="dbt-note__b">Over time, new borrowing builds up the stock.</div></div>
+        </div>
+        <div class="dbt-note" style="background:var(--econ-green-50);border:1px solid #A7F3D0;">
+          <span class="dbt-note__ic">📉</span>
+          <div><div class="dbt-note__t" style="color:var(--econ-green-700);">Surpluses can reduce debt</div>
+          <div class="dbt-note__b">If revenue exceeds spending, the government can repay debt.</div></div>
+        </div>
+      </div>
     </div>
   `,
 

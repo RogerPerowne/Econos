@@ -13505,6 +13505,12 @@ window.ECONOS_ICONS = {
       <div style="position:absolute;z-index:3;left:50%;top:26%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Factor payments<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">(wages, rent, interest, profit)</span></div>
       <div style="position:absolute;z-index:3;left:50%;top:88%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Consumption expenditure (C)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">on goods and services</span></div>
 
+      <!-- ====== LAYER 4: J = W macro-balance badge (centre; view 5 only) ====== -->
+      <div class="idl-4" style="display:none;position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--econ-rose);color:var(--econ-white);border-radius:var(--r-full);padding:clamp(6px,1cqw,12px) clamp(14px,2.2cqw,24px);box-shadow:0 10px 28px rgba(225,29,72,0.38);text-align:center;border:2px solid var(--econ-white);">
+        <div style="font-size:clamp(15px,2.5cqw,30px);font-weight:var(--fw-extrabold);letter-spacing:.04em;line-height:1;">J = W</div>
+        <div style="font-size:clamp(8px,1.05cqw,12px);font-weight:var(--fw-semi);opacity:.92;margin-top:3px;white-space:nowrap;">injections = withdrawals</div>
+      </div>
+
       <!-- ====== LAYER 1: Financial Markets (y=7+60=67 → 12.88%; h=73/520=14.04%) ====== -->
       <div class="idl-1" style="display:none">
         <section style="position:absolute;z-index:2;left:37.776%;top:5%;width:24.632%;height:14.038%;border-radius:12px;border:1.5px solid #CBB8FA;background:rgba(245,240,255,0.84);color:#7C3AED;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);">
@@ -23225,7 +23231,7 @@ window.ECONOS_ICONS = {
      numbered tiles share a colour grammar. */
   incomeSpectrumChart: `
     <div style="background:#fff;border-radius:14px;padding:14px;">
-      <svg viewBox="0 16 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 2 720 372" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
 
         <!-- LAYER 1: £ per year per decile (broken Y-axis) -->
         <g class="idl-pounds" style="display:none">

@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.9 — 2026-06-12
+
+### Review set 2 (batch 10) — bubble cycle as a multi-button interactive
+
+- **Financial-sector market failure "speculation and market bubbles"
+  (`bubbleCycle`):** converted the static bubble curve into a 5-step interactive
+  (Early rise · Boom · Euphoria · Crash · Aftermath). The stage dots now sit
+  exactly on the curve (`on:`) and reveal step by step.
+
 ## 0.172.8 — 2026-06-12
 
 ### Review set 2 (batch 9) — Kuznets curve as a multi-button interactive

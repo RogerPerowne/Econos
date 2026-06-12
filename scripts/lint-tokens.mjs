@@ -66,8 +66,9 @@ const check = process.argv.includes('--check');
    restructure; lowered to 6835 (v0.171.13) when the macro constraint
    compass was rebuilt as a token-based guardrails dashboard;
    lowered to 6827 (v0.171.14) on the structural-map rebuild +
-   net-trade fancy-rows pass. */
-const DUP_BASELINE = 6827;
+   net-trade fancy-rows pass; lowered to 6815 (v0.171.21) on the
+   netTradeMechanism wide rebuild. */
+const DUP_BASELINE = 6815;
 
 const css = readFileSync('styles.css', 'utf8');
 

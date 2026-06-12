@@ -6,6 +6,19 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.21 — 2026-06-12
+
+### Review batch 7 — net-trade depreciation mechanism rebuilt wide
+
+- **`netTradeMechanism` (net-trade "exchange rate and net trade" card):** the
+  cramped 440-wide stepped flow was hard to read. Rebuilt it as a clean,
+  generously-spaced 800-wide four-stage flow — £ Sterling falls → price effects
+  (exports cheaper / imports dearer) → volume responses → a prominent
+  "Net trade (X − M) improves" node — and set `wide: true` so it fills the
+  stage. Grey connectors, identity-coloured branches, all three reveal steps
+  verified. Token-dup baseline ratcheted 6827 → 6815. Fixes PDF item 1 (the
+  last of the 12-item review set).
+
 ## 0.171.20 — 2026-06-12
 
 ### Review batch 6 — simultaneous-shifts diagram house-rules pass

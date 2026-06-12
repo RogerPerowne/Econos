@@ -293,6 +293,7 @@ window.ECONOS_TOPIC = {
       interactiveDiagram: {
         svgKey: 'netTradeMechanism',
         layers: ['idl-1', 'idl-2', 'idl-3'],
+        wide: true,
         label: 'THE MECHANISM',
         emoji: '⚙️',
         views: [

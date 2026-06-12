@@ -2410,69 +2410,62 @@ window.ECONOS_ICONS = {
   `,
 
   netTradeMechanism: `
-    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <svg viewBox="0 0 800 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <defs>
-        <marker id="ntm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="ntm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
       </defs>
 
       <!-- BASE: sterling circle (always visible) -->
       <g class="idl-base">
-        <rect width="440" height="300" fill="#FFFFFF" rx="8"/>
-        <circle cx="58" cy="150" r="36" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
-        <text x="58" y="148" font-size="22" font-weight="900" fill="#6D28D9" text-anchor="middle">£</text>
-        <text x="58" y="166" font-size="10" font-weight="700" fill="#6D28D9" text-anchor="middle">Sterling</text>
-        <text x="58" y="178" font-size="10" font-weight="700" fill="#6D28D9" text-anchor="middle">falls</text>
+        <rect width="800" height="300" fill="#FFFFFF" rx="8"/>
+        <circle cx="68" cy="150" r="46" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.8"/>
+        <text x="68" y="146" font-size="28" font-weight="900" fill="#6D28D9" text-anchor="middle">£</text>
+        <text x="68" y="168" font-size="11.5" font-weight="800" fill="#6D28D9" text-anchor="middle">Sterling</text>
+        <text x="68" y="182" font-size="11.5" font-weight="800" fill="#6D28D9" text-anchor="middle">falls</text>
       </g>
 
-      <!-- idl-1: Sterling depreciates – first wave of price effects -->
+      <!-- idl-1: price effects -->
       <g class="idl-1" style="display:none">
-        <line x1="98" y1="135" x2="135" y2="100" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
-        <line x1="98" y1="165" x2="135" y2="200" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
+        <line x1="116" y1="126" x2="152" y2="92" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#ntm-arrow)"/>
+        <line x1="116" y1="174" x2="152" y2="208" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#ntm-arrow)"/>
 
-        <!-- Top tile: Exports cheaper abroad -->
-        <rect x="140" y="68" width="148" height="64" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="1.3"/>
-        <text x="214" y="86" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">Exports cheaper</text>
-        <text x="214" y="100" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">abroad</text>
-        <text x="214" y="118" font-size="10" fill="#475569" text-anchor="middle">UK goods cost less in</text>
-        <text x="214" y="128" font-size="10" fill="#475569" text-anchor="middle">foreign currencies.</text>
+        <rect x="158" y="42" width="212" height="84" rx="10" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.6"/>
+        <text x="264" y="68" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">Exports cheaper abroad</text>
+        <text x="264" y="92" font-size="11" fill="#475569" text-anchor="middle">UK goods cost less in</text>
+        <text x="264" y="107" font-size="11" fill="#475569" text-anchor="middle">foreign currencies.</text>
 
-        <!-- Bottom tile: Imports dearer at home -->
-        <rect x="140" y="168" width="148" height="64" rx="8" fill="#FFF1F2" stroke="#F43F5E" stroke-width="1.3"/>
-        <text x="214" y="186" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">Imports dearer</text>
-        <text x="214" y="200" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">at home</text>
-        <text x="214" y="218" font-size="10" fill="#475569" text-anchor="middle">Foreign goods cost</text>
-        <text x="214" y="228" font-size="10" fill="#475569" text-anchor="middle">more in pounds.</text>
+        <rect x="158" y="174" width="212" height="84" rx="10" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.6"/>
+        <text x="264" y="200" font-size="13" font-weight="800" fill="#BE123C" text-anchor="middle">Imports dearer at home</text>
+        <text x="264" y="224" font-size="11" fill="#475569" text-anchor="middle">Foreign goods cost</text>
+        <text x="264" y="239" font-size="11" fill="#475569" text-anchor="middle">more in pounds.</text>
       </g>
 
-      <!-- idl-2: Volume responses -->
+      <!-- idl-2: volume responses -->
       <g class="idl-2" style="display:none">
-        <line x1="290" y1="100" x2="325" y2="100" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
-        <line x1="290" y1="200" x2="325" y2="200" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
+        <line x1="372" y1="84" x2="406" y2="84" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#ntm-arrow)"/>
+        <line x1="372" y1="216" x2="406" y2="216" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#ntm-arrow)"/>
 
-        <rect x="328" y="68" width="100" height="64" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="1.3"/>
-        <text x="378" y="86" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">Export volumes</text>
-        <text x="378" y="100" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">rise</text>
-        <text x="378" y="118" font-size="10" fill="#475569" text-anchor="middle">Foreign buyers</text>
-        <text x="378" y="128" font-size="10" fill="#475569" text-anchor="middle">demand more.</text>
+        <rect x="412" y="42" width="186" height="84" rx="10" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.6"/>
+        <text x="505" y="68" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">Export volumes rise</text>
+        <text x="505" y="92" font-size="11" fill="#475569" text-anchor="middle">Foreign buyers</text>
+        <text x="505" y="107" font-size="11" fill="#475569" text-anchor="middle">demand more.</text>
 
-        <rect x="328" y="168" width="100" height="64" rx="8" fill="#FFF1F2" stroke="#F43F5E" stroke-width="1.3"/>
-        <text x="378" y="186" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">Import volumes</text>
-        <text x="378" y="200" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">fall</text>
-        <text x="378" y="218" font-size="10" fill="#475569" text-anchor="middle">UK buyers switch</text>
-        <text x="378" y="228" font-size="10" fill="#475569" text-anchor="middle">to home goods.</text>
+        <rect x="412" y="174" width="186" height="84" rx="10" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.6"/>
+        <text x="505" y="200" font-size="13" font-weight="800" fill="#BE123C" text-anchor="middle">Import volumes fall</text>
+        <text x="505" y="224" font-size="11" fill="#475569" text-anchor="middle">UK buyers switch</text>
+        <text x="505" y="239" font-size="11" fill="#475569" text-anchor="middle">to home goods.</text>
       </g>
 
-      <!-- idl-3: Net trade improves -->
+      <!-- idl-3: net trade improves -->
       <g class="idl-3" style="display:none">
-        <line x1="378" y1="140" x2="378" y2="155" stroke="#2563EB" stroke-width="1.5"/>
-        <line x1="378" y1="155" x2="378" y2="155" stroke="#2563EB" stroke-width="1.5"/>
-        <path d="M 378 140 L 378 155 M 378 168 L 378 165" stroke="#2563EB" stroke-width="1.5"/>
+        <line x1="600" y1="86" x2="640" y2="132" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#ntm-arrow)"/>
+        <line x1="600" y1="214" x2="640" y2="168" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#ntm-arrow)"/>
 
-        <rect x="118" y="248" width="280" height="44" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
-        <text x="258" y="266" font-size="12" font-weight="900" fill="#1D4ED8" text-anchor="middle">Net trade (X − M) improves</text>
-        <text x="258" y="282" font-size="10" fill="#1E40AF" text-anchor="middle">X rises and M falls, so X − M increases.</text>
-        <line x1="214" y1="240" x2="252" y2="248" stroke="#2563EB" stroke-width="1.4" marker-end="url(#ntm-arrow)"/>
-        <line x1="378" y1="240" x2="276" y2="248" stroke="#2563EB" stroke-width="1.4" marker-end="url(#ntm-arrow)"/>
+        <rect x="646" y="92" width="140" height="116" rx="12" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="716" y="122" font-size="14" font-weight="900" fill="#1D4ED8" text-anchor="middle">Net trade</text>
+        <text x="716" y="142" font-size="14" font-weight="900" fill="#1D4ED8" text-anchor="middle">(X − M)</text>
+        <text x="716" y="162" font-size="14" font-weight="900" fill="#1D4ED8" text-anchor="middle">improves</text>
+        <text x="716" y="188" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">X ↑ · <tspan fill="#BE123C">M ↓</tspan></text>
       </g>
     </svg>
   `,

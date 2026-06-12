@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.10 — 2026-06-12
+
+### Stagflation Phillips curve — split the Friedman/Phelps step + taller chart
+
+- The Macro-Conflicts Phillips interactive's middle view crammed the
+  whole A→B→C story into one step. Split into two buttons: "Stimulus:
+  A → B" (a movement ALONG the still-solid SRPC₁, amber) and
+  "Expectations adjust: B → C" (the shift to SRPC₂ + vertical LRPC,
+  with A and B faded for the path memory) — four views total.
+- Chart deepened 640×340 → 640×460 to fill the interactiveDiagram
+  stage; coords are normalised so nothing re-seats.
+
 ## 0.171.9 — 2026-06-12
 
 ### Public Sector Finances — richer debt bathtub illustration

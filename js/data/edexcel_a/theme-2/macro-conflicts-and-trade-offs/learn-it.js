@@ -173,7 +173,7 @@ window.ECONOS_TOPIC = {
         svgKey: 'stagflationPhillipsInteractive',
         label: 'On the Phillips curve',
         emoji: '\u{1F4C9}',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
+        layers: ['idl-1', 'idl-2a', 'idl-2b', 'idl-3'],
         layerMode: 'exclusive',
         views: [
           {
@@ -185,11 +185,19 @@ window.ECONOS_TOPIC = {
             analysis: 'In the 1958 world, demand stimulus could buy lower unemployment by accepting higher inflation. Policymakers thought they had a stable menu of choices to pick from.'
           },
           {
-            label: 'Friedman / Phelps long run',
+            label: 'Stimulus: A → B',
+            tone: 'amber',
+            show: ['idl-2a'],
+            head: 'Buying lower unemployment',
+            body: 'A demand stimulus pushes unemployment below U_N to <strong>B</strong> — a <strong>movement along</strong> SRPC₁. Unemployment falls to U₁; the price is higher inflation π₁.',
+            analysis: 'So far the 1958 menu works exactly as advertised: lower unemployment in exchange for a little more inflation. The trouble starts when workers notice.'
+          },
+          {
+            label: 'Expectations adjust: B → C',
             tone: 'purple',
-            show: ['idl-2'],
+            show: ['idl-2b'],
             head: 'No long-run trade-off',
-            body: 'Push unemployment below U_N to <strong>B</strong> and workers eventually demand wages to compensate for inflation. The SRPC shifts up to SRPC₂; the economy lands at <strong>C</strong> &mdash; back at U_N but with permanently higher inflation.',
+            body: 'Workers build the higher inflation into their wage demands, so the whole curve <strong>shifts up</strong> to SRPC₂. The economy drifts to <strong>C</strong> &mdash; back at U_N but with permanently higher inflation.',
             analysis: 'The long-run Phillips curve is vertical at the NAIRU. Adaptive expectations do the work: any attempt to exploit the short-run trade-off only ratchets up inflation.'
           },
           {

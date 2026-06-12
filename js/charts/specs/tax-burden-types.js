@@ -26,8 +26,8 @@
 
   window.ECONOS_TAX_BURDEN_TYPES_SPEC = {
     width: 640,
-    height: 330,
-    chartArea: { x: 64, y: 26, width: 536, height: 244 },
+    height: 450,
+    chartArea: { x: 64, y: 26, width: 536, height: 364 },
     className: 'tax-burden-types-svg',
     background: '#FFFFFF',
     layers: ['tbt-1', 'tbt-2', 'tbt-3'],

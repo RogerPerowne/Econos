@@ -242,7 +242,7 @@ window.ECONOS_TOPIC = {
 
       causes2Label: 'THE LIMITS',
       causes2Emoji: '⚠️',
-      causes2Cols: 4,
+      causes2Cols: 2,
       causes2: [
         { tone: 'rose', icon: '\u{1F9E9}',  head: 'Little synergy',    body: 'Businesses may not fit together.' },
         { tone: 'rose', icon: '\u{1F464}', head: 'Lack of expertise', body: 'Managers may know one market better than another.' },

@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.3 — 2026-06-12
+
+### Taxation — layout tweaks
+
+- "WHY GOVERNMENTS TAX" (C1): 4-across tiles → a 2×2 grid, so the titles
+  ("Manage the macroeconomy") no longer hyphenate mid-word.
+- All four 5-item grids ("FIRMS AND ENTERPRISE", "WHAT CHANGES THE SIZE
+  OF THE EFFECT", "EVALUATION", "EVALUATION CHECKLIST") switched from five
+  squished columns to the fancy numbered full-width rows
+  (`fancyRowsIfRagged`, cols 3 → ragged → rows).
+
 ## 0.171.2 — 2026-06-12
 
 ### Taxation interactives — taller charts to fill the stage

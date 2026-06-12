@@ -260,10 +260,29 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F512}', tone: 'green', text: 'Rising prices can attract more buyers, which can <strong>inflate a bubble further</strong> before a crash.' },
 
-      visualKey: 'bubbleCycle',
-      visualLabel: 'THE BUBBLE CYCLE',
-      visualEmoji: '\u{1F517}',
-      visualCaption: 'Belief fuels a rising boom, euphoria detaches price from value, then sentiment flips and the price crashes before settling lower.',
+      interactiveDiagram: {
+        svgKey: 'bubbleCycle',
+        label: 'THE BUBBLE CYCLE',
+        emoji: '\u{1F517}',
+        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4', 'idl-5'],
+        views: [
+          { label: 'Early rise', show: ['idl-1'], tone: 'green',
+            head: 'Early rise.', body: 'A genuine improvement in fundamentals lifts the asset price. Early buyers make money and others start to notice.',
+            analysis: 'At this stage the price still roughly tracks underlying value.' },
+          { label: 'Boom', show: ['idl-1', 'idl-2'], tone: 'blue',
+            head: 'Boom.', body: 'Rising prices attract more buyers — <strong>herding</strong> and cheap credit (leverage) accelerate the climb.',
+            analysis: 'The rise becomes self-fuelling: people buy because prices are rising, not because of value.' },
+          { label: 'Euphoria', show: ['idl-1', 'idl-2', 'idl-3'], tone: 'amber',
+            head: 'Euphoria — price detaches from value.', body: 'Optimism peaks; price is now far above any reasonable fundamental. "This time is different."',
+            analysis: 'This is the top of the bubble — maximum risk, dressed up as maximum confidence.' },
+          { label: 'Crash', show: ['idl-1', 'idl-2', 'idl-3', 'idl-4'], tone: 'rose',
+            head: 'Crash.', body: 'Sentiment flips. A trigger sparks selling; leverage forces more selling, and the price <strong>collapses</strong>.',
+            analysis: 'The same herding that inflated the bubble now amplifies the fall.' },
+          { label: 'Aftermath', show: ['idl-1', 'idl-2', 'idl-3', 'idl-4', 'idl-5'], tone: 'slate',
+            head: 'Aftermath.', body: 'The price settles — often below where it started — leaving losses, damaged balance sheets and lost confidence.',
+            analysis: 'The real-economy cost (failed firms, lost wealth, frozen credit) is why bubbles are a market failure worth preventing.' }
+        ]
+      },
 
       causesLabel: 'WHAT DRIVES BUBBLES',
       causesEmoji: '\u{1F517}',

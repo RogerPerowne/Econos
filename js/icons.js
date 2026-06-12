@@ -12428,13 +12428,14 @@ window.ECONOS_ICONS = {
   economistPhillips:       '<img src="/assets/economists/phillips.png"   alt="William Phillips"  style="max-width:100%;max-height:100%;object-fit:contain;">',
 
   taxSubsidyFourPanels: `
-    <svg viewBox="0 0 590 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="590" height="460" fill="#FFFFFF" rx="12"/>
+    <svg viewBox="0 0 590 492" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="590" height="492" fill="#FFFFFF" rx="12"/>
 
       <!-- ── PANEL (a): Indirect tax – S shifts up ─────────────────────────── -->
       <g transform="translate(6,6)">
-        <rect width="285" height="220" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+        <rect width="285" height="236" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
         <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( a )  Indirect tax – S shifts left/up</text>
+        <g transform="translate(0,16)">
         <!-- Y axis -->
         <line x1="44" y1="26" x2="44" y2="187" stroke="#64748B" stroke-width="1.5"/>
         <polygon points="44,22 40,30 48,30" fill="#64748B"/>
@@ -12481,12 +12482,14 @@ window.ECONOS_ICONS = {
         <text x="155" y="200" font-size="10" fill="#475569" text-anchor="middle" font-family="Georgia,serif">Q<tspan font-size="10" dy="2">e</tspan></text>
         <!-- Revenue label -->
         <text x="86" y="108" font-size="10" fill="#065F46" text-anchor="middle">Revenue</text>
+        </g>
       </g>
 
       <!-- ── PANEL (b): Tax incidence – burden by elasticity ───────────────── -->
       <g transform="translate(299,6)">
-        <rect width="285" height="220" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+        <rect width="285" height="236" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
         <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( b )  Tax incidence – burden by elasticity</text>
+        <g transform="translate(0,16)">
         <!-- Divider -->
         <line x1="148" y1="26" x2="148" y2="212" stroke="#E2E8F0" stroke-width="1"/>
         <!-- Left sub: Inelastic D → consumers bear more -->
@@ -12559,12 +12562,14 @@ window.ECONOS_ICONS = {
           <text x="76" y="125" font-size="10" fill="#DC2626">Large</text>
           <text x="76" y="134" font-size="10" fill="#DC2626">producer</text>
         </g>
+        </g>
       </g>
 
       <!-- ── PANEL (c): Subsidy – S shifts right/down ──────────────────────── -->
-      <g transform="translate(6,234)">
-        <rect width="285" height="220" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+      <g transform="translate(6,250)">
+        <rect width="285" height="236" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
         <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( c )  Subsidy – S shifts right/down</text>
+        <g transform="translate(0,16)">
         <!-- Y axis -->
         <line x1="44" y1="26" x2="44" y2="187" stroke="#64748B" stroke-width="1.5"/>
         <polygon points="44,22 40,30 48,30" fill="#64748B"/>
@@ -12611,12 +12616,14 @@ window.ECONOS_ICONS = {
         <text x="181" y="200" font-size="10" fill="#475569" text-anchor="middle" font-family="Georgia,serif">Q<tspan font-size="10" dy="2">s</tspan></text>
         <!-- Cost label -->
         <text x="112" y="108" font-size="10" fill="#065F46" text-anchor="middle">Gov. cost</text>
+        </g>
       </g>
 
       <!-- ── PANEL (d): Pigouvian correction – MPC to MSC ─────────────────── -->
-      <g transform="translate(299,234)">
-        <rect width="285" height="220" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+      <g transform="translate(299,250)">
+        <rect width="285" height="236" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
         <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( d )  Pigouvian correction – MPC to MSC</text>
+        <g transform="translate(0,16)">
         <!-- Y axis -->
         <line x1="44" y1="26" x2="44" y2="187" stroke="#64748B" stroke-width="1.5"/>
         <polygon points="44,22 40,30 48,30" fill="#64748B"/>
@@ -12671,6 +12678,7 @@ window.ECONOS_ICONS = {
             <path d="M 0 0 L 5 10 L 10 0" fill="none" stroke="#7C3AED" stroke-width="2"/>
           </marker>
         </defs>
+        </g>
       </g>
     </svg>
   `,

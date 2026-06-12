@@ -220,11 +220,35 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '\u{1F6E1}️', title: 'Peg defended', sub: 'Rate held at target.' }
       ],
 
-      flowChart: {
+      interactiveDiagram: {
         svgKey: 'fxPegDefence',
         label: 'THE PRESSURE DIAGRAM',
         emoji: '\u{1F4CA}',
-        caption: 'If the target sits above equilibrium, supply of £ exceeds demand — the central bank buys £ (selling reserves) to absorb the excess.'
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Free market',
+            tone: 'slate',
+            show: ['idl-1'],
+            head: 'Where the market would settle',
+            body: 'Left alone, demand for £ meets supply of £ at the free-market equilibrium rate E*.'
+          },
+          {
+            label: 'Set the target',
+            tone: 'purple',
+            show: ['idl-1', 'idl-2'],
+            head: 'The peg is fixed above E*',
+            body: 'The authorities announce a target rate above the free-market level — the currency is now held stronger than the market alone would set it.'
+          },
+          {
+            label: 'Defend the peg',
+            tone: 'rose',
+            show: ['idl-1', 'idl-2', 'idl-3'],
+            head: 'Excess supply must be absorbed',
+            body: 'At the target, supply of £ exceeds demand. The central bank buys up the surplus pounds — selling foreign-currency reserves — to hold the rate.',
+            analysis: 'The wider the gap, the more reserves it burns each period. A peg this far above equilibrium is only as durable as the reserve stockpile behind it.'
+          }
+        ]
       },
 
       causesLabel: 'WHY PEGS BREAK',

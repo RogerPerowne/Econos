@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.13 — 2026-06-12
+
+### Review set 2 — FX peg-defence diagram as a multi-button interactive
+
+- Turned "THE PRESSURE DIAGRAM" on the *Defending a fixed exchange rate*
+  card into a stepped interactive: free-market equilibrium E* → set the
+  target above E* → defend the peg (excess supply absorbed by the central
+  bank), with an analysis note on the reserve cost on the final step.
+- Added `idl-1/2/3` layers to `fx-peg-defence.js` (equilibrium furniture,
+  the target line, then the excess-supply gap and intervention labels).
+
 ## 0.172.12 — 2026-06-12
 
 ### Review set 2 — FX market diagram as a multi-button interactive

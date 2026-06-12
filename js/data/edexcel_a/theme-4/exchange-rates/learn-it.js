@@ -176,7 +176,6 @@ window.ECONOS_TOPIC = {
       visualKey: 'fxLifebuoy',
       visualLabel: 'HOW A FLOATING RATE WORKS',
       visualEmoji: '\u{1F310}',
-      visualCaption: 'The currency’s value is set by the market — no fixed target is defended, so the rate rises or falls with demand and supply.',
 
       visualKey2: 'fxFloatingShifts',
       visualLabel2: 'TWO MARKET SHIFTS',
@@ -222,7 +221,6 @@ window.ECONOS_TOPIC = {
       visualKey: 'fxAnchor',
       visualLabel: 'HOW THE PEG WORKS',
       visualEmoji: '\u{1F310}',
-      visualCaption: 'The authorities announce a target exchange rate and keep the currency close to that value.',
 
       flowTitle: 'THE PEG MECHANISM',
       flowEmoji: '\u{1F517}',

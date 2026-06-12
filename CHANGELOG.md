@@ -6,6 +6,17 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.5 — 2026-06-12
+
+### Review set 2 (batch 6) — floating & peg hero illustrations
+
+- **Exchange Rates "how a floating rate works" (`fxLifebuoy`) and "how the peg
+  works" (`fxAnchor`):** enriched both hero scenes (sky/sun/clouds + layered
+  sea + foam for the buoy; underwater light-rays + chain + seabed + bubbles for
+  the anchor) and moved them into a two-column layout — illustration on the left,
+  explanation on the right — matching the mockups. Stacks on mobile; the
+  now-duplicate `visualCaption` removed from both cards.
+
 ## 0.172.4 — 2026-06-12
 
 ### Review set 2 (batch 5) — labour elasticity rebuild, policy connectors, causes flow

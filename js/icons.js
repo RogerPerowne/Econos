@@ -19949,47 +19949,110 @@ window.ECONOS_ICONS = {
   /* fxLifebuoy – Card 3 of Exchange Rates. A gold £ riding a red-and-white
      life-ring on stylised waves: the "floating" currency. Bespoke SVG. */
   fxLifebuoy: `
-    <div style="background:linear-gradient(180deg,#EFF6FF,#DBEAFE);border-radius:14px;padding:10px;font-family:Inter,sans-serif;">
-      <svg viewBox="0 0 300 210" width="100%" style="max-width:280px;display:block;margin:0 auto;">
-        <defs>
-          <linearGradient id="fxbGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE68A"/><stop offset="50%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#B45309"/></linearGradient>
-          <radialGradient id="fxbWater" cx="50%" cy="38%" r="70%"><stop offset="0%" stop-color="#DBEAFE"/><stop offset="100%" stop-color="#93C5FD"/></radialGradient>
-        </defs>
-        <path d="M0,158 Q40,146 75,158 T150,158 T225,158 T300,158 V210 H0 Z" fill="#93C5FD" opacity="0.55"/>
-        <path d="M0,176 Q45,164 80,176 T160,176 T240,176 T300,176 V210 H0 Z" fill="#60A5FA" opacity="0.5"/>
-        <circle cx="150" cy="108" r="44" fill="none" stroke="#E11D48" stroke-width="26"/>
-        <circle cx="150" cy="108" r="44" fill="none" stroke="#ffffff" stroke-width="26" stroke-dasharray="34.5 34.5" stroke-dashoffset="17.3"/>
-        <circle cx="150" cy="108" r="30" fill="url(#fxbWater)"/>
-        <circle cx="150" cy="108" r="57.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="2 11" opacity="0.7"/>
-        <text x="150" y="129" text-anchor="middle" font-size="60" font-weight="900" fill="url(#fxbGold)" stroke="#92400E" stroke-width="0.8" font-family="Inter,sans-serif">£</text>
-      </svg>
+    <div class="fxh" style="background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;color:var(--econ-ink);">
+      <style>
+        .fxh .fxh-wrap{display:flex;align-items:center;gap:20px;max-width:760px;margin:0 auto;}
+        .fxh .fxh-art{flex:0 0 46%;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(15,23,42,.08);}
+        .fxh .fxh-text{flex:1;min-width:0;}
+        .fxh .fxh-h{font-size:14px;font-weight:var(--fw-extrabold);color:#1E3A8A;margin-bottom:8px;}
+        .fxh .fxh-p{font-size:var(--fs-sm);color:var(--econ-slate-600);line-height:1.55;}
+        @media(max-width:560px){.fxh .fxh-wrap{flex-direction:column;}.fxh .fxh-art{flex:none;width:100%;max-width:300px;}}
+      </style>
+      <div class="fxh-wrap">
+        <div class="fxh-art">
+          <svg viewBox="0 0 300 220" width="100%" style="display:block;">
+            <defs>
+              <linearGradient id="fxbSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EAF3FF"/><stop offset="100%" stop-color="#CFE4FF"/></linearGradient>
+              <linearGradient id="fxbSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7FB3F2"/><stop offset="100%" stop-color="#3B82C4"/></linearGradient>
+              <linearGradient id="fxbGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE68A"/><stop offset="50%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#B45309"/></linearGradient>
+              <radialGradient id="fxbSun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF7D6"/><stop offset="100%" stop-color="#FFE8A3" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="300" height="150" fill="url(#fxbSky)"/>
+            <circle cx="244" cy="46" r="48" fill="url(#fxbSun)"/>
+            <circle cx="244" cy="46" r="19" fill="#FFE08A"/>
+            <ellipse cx="68" cy="42" rx="34" ry="11" fill="#fff" opacity="0.78"/>
+            <ellipse cx="98" cy="36" rx="22" ry="9" fill="#fff" opacity="0.7"/>
+            <rect y="138" width="300" height="82" fill="url(#fxbSea)"/>
+            <path d="M0,138 Q40,128 75,138 T150,138 T225,138 T300,138 V160 H0 Z" fill="#9CC6F5" opacity="0.6"/>
+            <path d="M0,156 Q45,146 80,156 T160,156 T240,156 T300,156 V180 H0 Z" fill="#6FA8E6" opacity="0.6"/>
+            <path d="M0,176 Q50,166 90,176 T180,176 T300,176 V210 H0 Z" fill="#4E8BD0" opacity="0.6"/>
+            <path d="M22,150 q10,-5 20,0 M118,168 q10,-5 20,0 M210,150 q10,-5 20,0" stroke="#fff" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round"/>
+            <g transform="rotate(-6 150 120)">
+              <ellipse cx="150" cy="150" rx="50" ry="9" fill="#1E3A8A" opacity="0.15"/>
+              <circle cx="150" cy="116" r="40" fill="none" stroke="#E11D48" stroke-width="22"/>
+              <circle cx="150" cy="116" r="40" fill="none" stroke="#ffffff" stroke-width="22" stroke-dasharray="31.4 31.4" stroke-dashoffset="15.7"/>
+              <circle cx="150" cy="116" r="28" fill="#CFE6FF"/>
+              <text x="150" y="133" text-anchor="middle" font-size="42" font-weight="900" fill="url(#fxbGold)" stroke="#92400E" stroke-width="0.6" font-family="Inter,sans-serif">£</text>
+            </g>
+          </svg>
+        </div>
+        <div class="fxh-text">
+          <div class="fxh-h">A market-set rate</div>
+          <div class="fxh-p">In a floating system the currency's value is <strong>set by the market</strong>. No fixed target is defended — like a buoy, the rate simply <strong>rises and falls</strong> with the demand for and supply of the currency.</div>
+        </div>
+      </div>
     </div>
   `,
 
   /* fxAnchor – Card 4 of Exchange Rates. A navy ship's anchor with a £
      medallion and a "TARGET RATE" tag: the "fixed" currency. Bespoke SVG. */
   fxAnchor: `
-    <div style="background:linear-gradient(180deg,#EFF6FF,#DBEAFE);border-radius:14px;padding:10px;font-family:Inter,sans-serif;">
-      <svg viewBox="0 0 300 232" width="100%" style="max-width:280px;display:block;margin:0 auto;">
-        <path d="M0,176 Q40,164 75,176 T150,176 T225,176 T300,176 V232 H0 Z" fill="#93C5FD" opacity="0.5"/>
-        <path d="M0,194 Q45,182 80,194 T160,194 T240,194 T300,194 V232 H0 Z" fill="#60A5FA" opacity="0.5"/>
-        <g stroke="#1E3A8A" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="150" cy="34" r="13"/>
-          <line x1="150" y1="47" x2="150" y2="170"/>
-          <line x1="115" y1="66" x2="185" y2="66"/>
-          <path d="M150,170 C150,170 104,172 90,118"/>
-          <path d="M150,170 C150,170 196,172 210,118"/>
-        </g>
-        <path d="M90,118 L74,124 L96,140 Z" fill="#1E3A8A"/>
-        <path d="M210,118 L226,124 L204,140 Z" fill="#1E3A8A"/>
-        <circle cx="150" cy="98" r="22" fill="#ffffff" stroke="#1E3A8A" stroke-width="4"/>
-        <text x="150" y="108" text-anchor="middle" font-size="26" font-weight="900" fill="#1E3A8A" font-family="Inter,sans-serif">£</text>
-        <g transform="rotate(-7 150 158)">
-          <rect x="104" y="150" width="92" height="26" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-          <circle cx="113" cy="163" r="3" fill="none" stroke="#D97706" stroke-width="1.5"/>
-          <text x="152" y="167" text-anchor="middle" font-size="11" font-weight="800" fill="#B45309" font-family="Inter,sans-serif">TARGET RATE</text>
-        </g>
-      </svg>
+    <div class="fxh" style="background:#fff;border-radius:14px;padding:14px;font-family:Inter,sans-serif;color:var(--econ-ink);">
+      <style>
+        .fxh .fxh-wrap{display:flex;align-items:center;gap:20px;max-width:760px;margin:0 auto;}
+        .fxh .fxh-art{flex:0 0 46%;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(15,23,42,.08);}
+        .fxh .fxh-text{flex:1;min-width:0;}
+        .fxh .fxh-h{font-size:14px;font-weight:var(--fw-extrabold);color:#1E3A8A;margin-bottom:8px;}
+        .fxh .fxh-p{font-size:var(--fs-sm);color:var(--econ-slate-600);line-height:1.55;}
+        @media(max-width:560px){.fxh .fxh-wrap{flex-direction:column;}.fxh .fxh-art{flex:none;width:100%;max-width:300px;}}
+      </style>
+      <div class="fxh-wrap">
+        <div class="fxh-art">
+          <svg viewBox="0 0 300 240" width="100%" style="display:block;">
+            <defs>
+              <linearGradient id="fxaSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#BFE0FF"/><stop offset="100%" stop-color="#2F6FB0"/></linearGradient>
+            </defs>
+            <rect width="300" height="240" fill="url(#fxaSea)"/>
+            <path d="M0,16 Q40,7 75,16 T150,16 T225,16 T300,16 V0 H0 Z" fill="#EAF3FF" opacity="0.85"/>
+            <path d="M0,30 Q45,22 80,30 T160,30 T300,30 V14 H0 Z" fill="#DBEAFE" opacity="0.6"/>
+            <!-- light rays -->
+            <path d="M120,16 L80,210 L110,210 Z" fill="#EAF3FF" opacity="0.10"/>
+            <path d="M180,16 L220,210 L190,210 Z" fill="#EAF3FF" opacity="0.10"/>
+            <!-- chain from surface to anchor ring -->
+            <g stroke="#9DB8D6" stroke-width="3.2" fill="none" opacity="0.8">
+              <path d="M150,16 q7,9 0,18 q-7,9 0,18 q7,9 0,18"/>
+            </g>
+            <!-- seabed -->
+            <path d="M0,212 Q60,198 150,208 T300,208 V240 H0 Z" fill="#E8D9A8"/>
+            <ellipse cx="150" cy="216" rx="64" ry="10" fill="#1E3A8A" opacity="0.12"/>
+            <!-- anchor -->
+            <g stroke="#1E3A8A" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="150" cy="74" r="12"/>
+              <line x1="150" y1="86" x2="150" y2="198"/>
+              <line x1="117" y1="104" x2="183" y2="104"/>
+              <path d="M150,198 C150,198 106,200 92,150"/>
+              <path d="M150,198 C150,198 194,200 208,150"/>
+            </g>
+            <path d="M92,150 L76,156 L98,172 Z" fill="#1E3A8A"/>
+            <path d="M208,150 L224,156 L202,172 Z" fill="#1E3A8A"/>
+            <circle cx="150" cy="132" r="21" fill="#ffffff" stroke="#1E3A8A" stroke-width="4"/>
+            <text x="150" y="141" text-anchor="middle" font-size="25" font-weight="900" fill="#1E3A8A" font-family="Inter,sans-serif">£</text>
+            <g transform="rotate(-7 150 186)">
+              <rect x="104" y="178" width="92" height="26" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+              <circle cx="113" cy="191" r="3" fill="none" stroke="#D97706" stroke-width="1.5"/>
+              <text x="152" y="195" text-anchor="middle" font-size="11" font-weight="800" fill="#B45309" font-family="Inter,sans-serif">TARGET RATE</text>
+            </g>
+            <!-- bubbles -->
+            <circle cx="206" cy="120" r="3" fill="#fff" opacity="0.6"/>
+            <circle cx="214" cy="104" r="2.2" fill="#fff" opacity="0.5"/>
+            <circle cx="210" cy="90" r="1.6" fill="#fff" opacity="0.45"/>
+          </svg>
+        </div>
+        <div class="fxh-text">
+          <div class="fxh-h">A defended target</div>
+          <div class="fxh-p">The authorities <strong>announce a target rate</strong> and keep the currency anchored close to it — buying or selling reserves to hold the value steady, like an anchor holding a ship in place.</div>
+        </div>
+      </div>
     </div>
   `,
 

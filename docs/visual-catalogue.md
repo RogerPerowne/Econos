@@ -113,6 +113,14 @@ Organised by archetype. Each entry: `key` — what it shows.
 ### 1. Hub-and-spoke / radial hubs
 *Use when:* a central concept with 4–6 driver/factor cards arranged around it
 (the "circular diagram" look).
+- **`econosCycleHub(cfg)` builder** (top of icons.js) — the elegant
+  ring-hub family: faint ring, centre disc, three satellite circles with
+  corner badges, dashed connectors (`mode:'cycle'` = arcs with chevrons
+  both ways; `mode:'spokes'` = radial dashes), side labels, computed
+  geometry. Desktop SVG + stacked mobile variant built in. Used by
+  `priceMechanismFlow` (S/I/R around PRICE) and the three-questions hub
+  inside `economicSystemsBigPicture`. Reach for this FIRST for any
+  "centre + 3 satellites" diagram.
 - `bopDriverHub` — central balance + 6 driver tiles, dashed spokes (current account).
 - `demandDeterminantsHub` — HTML grid hub, central node + determinant cards.
 - `supplyDeterminantsHub` — supply-side determinant hub.

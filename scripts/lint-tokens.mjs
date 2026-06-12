@@ -57,8 +57,10 @@ const check = process.argv.includes('--check');
    to 6903 (v0.164.3) for the monopsonyScenarios four-story-column visual
    (mock-up rebuild — hand-rolled SVG glyph/scene fills); lowered to 6870
    (v0.169.0) when the hand-rolled macroPhillipsWorkstation SVG was
-   replaced by the macroPhillipsInteractive engine spec. */
-const DUP_BASELINE = 6870;
+   replaced by the macroPhillipsInteractive engine spec; lowered to 6862
+   (v0.171.1) when the priceMechanismFlow + economicSystemsBigPicture
+   hubs moved onto the econosCycleHub builder. */
+const DUP_BASELINE = 6862;
 
 const css = readFileSync('styles.css', 'utf8');
 

@@ -81,6 +81,119 @@ window.econosMarketSpectrum = (function () {
   };
 })();
 
+/* econosCycleHub – the elegant ring-hub builder (mockup family: faint
+   ring, satellite circles with corner badges, dashed connectors, side
+   labels). Geometry is computed, never eyeballed. Used by the three-
+   questions hub and the price-mechanism hub; reuse for any "centre +
+   3 satellites" relational diagram.
+
+   cfg = {
+     center: { icon, title, sub?, big? },     // big: bolder centre disc
+     nodes:  [{ badge, bg, border, ink, icon, title, lines:[..], italic? }],
+     mode:   'cycle' | 'spokes'               // arc chevrons vs radial dashes
+   }
+   Desktop = one wide SVG (scales). Mobile (≤640px) = centre chip +
+   stacked rows, same content. */
+window.econosCycleHub = (function () {
+  var CX = 360, CY = 186, R = 122;
+  var ANG = [-90, 30, 150];                    // top, lower-right, lower-left
+  function pt(deg, r) {
+    var a = deg * Math.PI / 180;
+    return [CX + r * Math.cos(a), CY + r * Math.sin(a)];
+  }
+  function f(n) { return n.toFixed(1); }
+  function chevron(deg, r, flip) {
+    // open chevron whose tip sits ON the ring at `deg`, pointing along the
+    // (clockwise) tangent; flip reverses it for the start of an arc.
+    var a = deg * Math.PI / 180;
+    var tx = -Math.sin(a) * (flip ? -1 : 1), ty = Math.cos(a) * (flip ? -1 : 1);
+    var px = -ty, py = tx;
+    var tip = pt(deg, r);
+    var b1 = [tip[0] - 8 * tx + 4.5 * px, tip[1] - 8 * ty + 4.5 * py];
+    var b2 = [tip[0] - 8 * tx - 4.5 * px, tip[1] - 8 * ty - 4.5 * py];
+    return '<path d="M ' + f(b1[0]) + ',' + f(b1[1]) + ' L ' + f(tip[0]) + ',' + f(tip[1]) + ' L ' + f(b2[0]) + ',' + f(b2[1]) + '" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+  }
+  function arc(a1, a2) {
+    var p1 = pt(a1, R), p2 = pt(a2, R);
+    return '<path d="M ' + f(p1[0]) + ',' + f(p1[1]) + ' A ' + R + ' ' + R + ' 0 0 1 ' + f(p2[0]) + ',' + f(p2[1]) + '" fill="none" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="2 6" stroke-linecap="round"/>';
+  }
+  return function (cfg) {
+    var d = '';
+    // Faint full ring behind everything.
+    d += '<circle cx="' + CX + '" cy="' + CY + '" r="' + R + '" fill="none" stroke="#EEF1F5" stroke-width="2"/>';
+    if (cfg.mode === 'cycle') {
+      // Three dashed arcs with chevrons at BOTH ends (the cycle reads in
+      // both directions, as in the mockup). Trim 24° clear of each node.
+      for (var i = 0; i < 3; i++) {
+        var a1 = ANG[i] + 24, a2 = ANG[(i + 1) % 3] + (i === 2 ? 360 : 0) - 24;
+        d += arc(a1, a2) + chevron(a2, R) + chevron(a1, R, true);
+      }
+    } else {
+      // Radial dashed spokes from the centre disc to each node.
+      for (var j = 0; j < 3; j++) {
+        var po = pt(ANG[j], 62), pi2 = pt(ANG[j], R - 30);
+        d += '<line x1="' + f(po[0]) + '" y1="' + f(po[1]) + '" x2="' + f(pi2[0]) + '" y2="' + f(pi2[1]) + '" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="2 6" stroke-linecap="round"/>';
+      }
+    }
+    // Centre disc.
+    var c = cfg.center;
+    d += '<circle cx="' + CX + '" cy="' + CY + '" r="56" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>';
+    if (c.title && c.icon) {
+      d += '<text x="' + CX + '" y="' + (CY - 8) + '" font-size="30" text-anchor="middle">' + c.icon + '</text>';
+      d += '<text x="' + CX + '" y="' + (CY + 22) + '" font-size="12" font-weight="800" fill="#334155" text-anchor="middle">' + c.title + '</text>';
+    } else {
+      d += '<text x="' + CX + '" y="' + (CY - 2) + '" font-size="15" font-weight="900" fill="#0B1426" text-anchor="middle" letter-spacing="0.06em">' + (c.bigTitle || '') + '</text>';
+      d += '<text x="' + CX + '" y="' + (CY + 18) + '" font-size="10.5" fill="#64748B" text-anchor="middle">' + (c.sub || '') + '</text>';
+    }
+    // Satellite nodes + side labels. Top node text sits to the RIGHT,
+    // lower-right node text to the RIGHT, lower-left node text to the LEFT.
+    var side = [1, 1, -1];
+    cfg.nodes.forEach(function (n, i) {
+      var p = pt(ANG[i], R);
+      d += '<circle cx="' + f(p[0]) + '" cy="' + f(p[1]) + '" r="27" fill="#FFFFFF" stroke="' + n.border + '" stroke-width="2"/>';
+      d += '<circle cx="' + f(p[0]) + '" cy="' + f(p[1]) + '" r="22" fill="' + n.bg + '"/>';
+      d += '<text x="' + f(p[0]) + '" y="' + f(p[1] + 7) + '" font-size="20" text-anchor="middle">' + n.icon + '</text>';
+      // Corner badge (number or letter), top-right of the node.
+      d += '<circle cx="' + f(p[0] + 20) + '" cy="' + f(p[1] - 20) + '" r="10" fill="' + n.ink + '" stroke="#FFFFFF" stroke-width="2"/>';
+      d += '<text x="' + f(p[0] + 20) + '" y="' + f(p[1] - 16) + '" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">' + n.badge + '</text>';
+      // Side text block.
+      var tx = p[0] + side[i] * 40, anchor = side[i] === 1 ? 'start' : 'end';
+      var ty = p[1] - 10;
+      d += '<text x="' + f(tx) + '" y="' + f(ty) + '" font-size="14" font-weight="800" fill="' + n.ink + '" text-anchor="' + anchor + '">' + n.title + '</text>';
+      (n.lines || []).forEach(function (ln, li) {
+        d += '<text x="' + f(tx) + '" y="' + f(ty + 17 + li * 15) + '" font-size="11.5" fill="#475569" text-anchor="' + anchor + '">' + ln + '</text>';
+      });
+      if (n.italic) {
+        d += '<text x="' + f(tx) + '" y="' + f(ty + 17 + (n.lines || []).length * 15) + '" font-size="10.5" font-style="italic" fill="' + n.ink + '" text-anchor="' + anchor + '">' + n.italic + '</text>';
+      }
+    });
+
+    // ── Mobile (stacked) ──
+    var m = '';
+    var cc = cfg.center;
+    m += '<div style="text-align:center;margin-bottom:14px;">'
+       + '<div style="width:72px;height:72px;border-radius:50%;background:#F8FAFC;border:2px solid #E2E8F0;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;">'
+       + (cc.icon ? '<span style="font-size:26px;line-height:1;">' + cc.icon + '</span>' : '<span style="font-size:13px;font-weight:900;color:#0B1426;letter-spacing:0.05em;">' + (cc.bigTitle || '') + '</span>')
+       + '</div>'
+       + '<div style="font-size:12px;font-weight:800;color:#334155;margin-top:6px;">' + (cc.title || cc.sub || '') + '</div>'
+       + '</div>';
+    cfg.nodes.forEach(function (n) {
+      m += '<div style="display:flex;align-items:center;gap:12px;background:' + n.bg + ';border:1.5px solid ' + n.border + ';border-radius:12px;padding:11px 14px;margin-bottom:9px;">'
+         + '<div style="position:relative;flex-shrink:0;width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid ' + n.border + ';display:flex;align-items:center;justify-content:center;font-size:20px;">' + n.icon
+         + '<span style="position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;background:' + n.ink + ';color:#fff;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;border:2px solid #fff;">' + n.badge + '</span></div>'
+         + '<div style="min-width:0;"><div style="font-size:13px;font-weight:800;color:' + n.ink + ';line-height:1.25;">' + n.title + '</div>'
+         + '<div style="font-size:11.5px;color:#475569;line-height:1.35;">' + (n.lines || []).join(' ') + (n.italic ? ' <em style="color:' + n.ink + ';">' + n.italic + '</em>' : '') + '</div></div>'
+         + '</div>';
+    });
+
+    return '<div style="background:#fff;border-radius:14px;padding:10px 8px;font-family:Inter,sans-serif;color:#0B1426;line-height:1.4;">'
+      + '<style>.ech-v{display:none;}@media (max-width:640px){.ech-h{display:none;}.ech-v{display:block;}}</style>'
+      + '<div class="ech-h"><svg viewBox="0 16 720 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" style="width:100%;height:auto;display:block;">' + d + '</svg></div>'
+      + '<div class="ech-v" style="padding:4px 2px;">' + m + '</div>'
+      + '</div>';
+  };
+})();
+
 /* Lazy-render scaffolding: chart entries below are wrapped in a thunk and
    only geometry-solved + rendered on first access (memoised thereafter), so a
    page renders the handful of diagrams it shows rather than all ~130 on load.
@@ -4404,51 +4517,26 @@ window.ECONOS_ICONS = {
      and each circle is one function (signalling / incentives /
      rationing). Hand-rolled because it's a relational diagram, not
      a coordinate chart. */
-  priceMechanismFlow: `
-    <svg viewBox="0 0 720 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="720" height="320" fill="#FFFFFF" rx="12"/>
-
-      <!-- Central price node -->
-      <circle cx="360" cy="180" r="48" fill="#0B1426" stroke="#475569" stroke-width="2"/>
-      <text x="360" y="174" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">PRICE</text>
-      <text x="360" y="192" font-size="10" fill="#CBD5E1" text-anchor="middle">moves up / down</text>
-
-      <!-- Signalling (top-left) -->
-      <g>
-        <line x1="320" y1="150" x2="180" y2="105" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <rect x="40" y="65" width="220" height="80" rx="12" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.5"/>
-        <circle cx="74" cy="95" r="16" fill="#059669"/>
-        <text x="74" y="100" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">S</text>
-        <text x="150" y="92" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle">Signalling</text>
-        <text x="150" y="110" font-size="11" fill="#1F2937" text-anchor="middle">Prices tell buyers and sellers</text>
-        <text x="150" y="124" font-size="11" fill="#1F2937" text-anchor="middle">what is scarce or abundant</text>
-        <text x="150" y="138" font-size="10" font-style="italic" fill="#047857" text-anchor="middle">↑P = scarcer · ↓P = abundant</text>
-      </g>
-
-      <!-- Incentives (top-right) -->
-      <g>
-        <line x1="400" y1="150" x2="540" y2="105" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <rect x="460" y="65" width="220" height="80" rx="12" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-        <circle cx="494" cy="95" r="16" fill="#D97706"/>
-        <text x="494" y="100" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">I</text>
-        <text x="570" y="92" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle">Incentives</text>
-        <text x="570" y="110" font-size="11" fill="#1F2937" text-anchor="middle">Prices motivate firms to enter</text>
-        <text x="570" y="124" font-size="11" fill="#1F2937" text-anchor="middle">profitable markets and exit</text>
-        <text x="570" y="138" font-size="10" font-style="italic" fill="#B45309" text-anchor="middle">↑P → produce more · ↓P → less</text>
-      </g>
-
-      <!-- Rationing (bottom) -->
-      <g>
-        <line x1="360" y1="228" x2="360" y2="245" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <rect x="250" y="245" width="220" height="60" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
-        <circle cx="282" cy="275" r="16" fill="#2563EB"/>
-        <text x="282" y="280" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">R</text>
-        <text x="380" y="270" font-size="13" font-weight="800" fill="#1E3A8A" text-anchor="middle">Rationing</text>
-        <text x="380" y="288" font-size="11" fill="#1F2937" text-anchor="middle">Prices decide who gets what</text>
-        <text x="380" y="300" font-size="10" font-style="italic" fill="#1E40AF" text-anchor="middle">scarce goods → willing & able</text>
-      </g>
-    </svg>
-  `,
+  priceMechanismFlow: window.__econosLazy(function () {
+    return window.econosCycleHub({
+      mode: 'spokes',
+      center: { bigTitle: 'PRICE', sub: 'moves up / down' },
+      nodes: [
+        { badge: 'S', bg: '#ECFDF5', border: '#6EE7B7', ink: '#065F46', icon: '\u{1F4E1}',
+          title: 'Signalling',
+          lines: ['Prices tell buyers and sellers', 'what is scarce or abundant.'],
+          italic: '↑P = scarcer · ↓P = abundant' },
+        { badge: 'I', bg: '#FEF3C7', border: '#FDE68A', ink: '#92400E', icon: '\u{1F9F2}',
+          title: 'Incentives',
+          lines: ['Prices motivate firms to enter', 'profitable markets and exit.'],
+          italic: '↑P → produce more · ↓P → less' },
+        { badge: 'R', bg: '#DBEAFE', border: '#93C5FD', ink: '#1E3A8A', icon: '⚖️',
+          title: 'Rationing',
+          lines: ['Prices decide who gets what.'],
+          italic: 'scarce goods → willing & able' }
+      ]
+    });
+  }),
 
   elasticityIncidenceInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_ELASTICITY_INCIDENCE_SPEC); }),
   taxSubsidyElasticityStatic: `
@@ -14417,7 +14505,7 @@ window.ECONOS_ICONS = {
      nodes, stacks on mobile. Topic palette: FM green, mixed blue,
      command rose.
      ─────────────────────────────────────────────────────────────── */
-  economicSystemsBigPicture: `
+  economicSystemsBigPicture: window.__econosLazy(function () { return `
     <div class="es-big" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 14px 18px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
         /* Section header styling matches genSecLabel: emoji + uppercase
@@ -14431,16 +14519,6 @@ window.ECONOS_ICONS = {
         }
         .es-big .eb-cap__rule { flex:1; height:1px; background:#E7E7EA; margin-left:6px; }
         .es-big .eb-divider { height:1px; background:#E7E7EA; margin:22px 0 0; }
-        .es-big .eb-hub { position:relative; max-width:430px; height:290px; margin:0 auto 8px; }
-        .es-big .eb-node { position:absolute; width:116px; text-align:center; }
-        .es-big .eb-top { top:0; left:50%; transform:translateX(-50%); }
-        .es-big .eb-left { bottom:0; left:0; }
-        .es-big .eb-right { bottom:0; right:0; }
-        .es-big .eb-center { position:absolute; top:55%; left:50%; transform:translate(-50%,-50%); width:104px; text-align:center; }
-        .es-big .eb-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
-        .es-big .eb-circ { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:25px; margin:0 auto 5px; }
-        .es-big .eb-ql { font-size:12.5px; font-weight:800; line-height:1.2; }
-        .es-big .eb-qs { font-size:11px; color:#64748B; line-height:1.3; }
         .es-big .eb-ribbon { position:relative; max-width:520px; margin:6px auto 0; padding-top:6px; }
         .es-big .eb-bar { height:12px; border-radius:6px; background:linear-gradient(90deg,#34D399,#60A5FA,#FB7185); margin:34px 24px 0; box-shadow:0 1px 4px rgba(0,0,0,0.08); }
         .es-big .eb-sys-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:-46px; position:relative; }
@@ -14448,10 +14526,6 @@ window.ECONOS_ICONS = {
         .es-big .eb-sys-c { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 6px; box-shadow:0 2px 8px rgba(0,0,0,0.14); }
         .es-big .eb-axis { display:flex; justify-content:space-between; font-size:11.5px; font-weight:700; margin:8px 6px 0; }
         @media (max-width:560px){
-          .es-big .eb-hub{ height:auto; display:flex; flex-direction:column; gap:10px; align-items:center; }
-          .es-big .eb-node,.es-big .eb-center,.es-big .eb-top,.es-big .eb-left,.es-big .eb-right{ position:static; transform:none; width:100%; }
-          .es-big .eb-conn{ display:none; }
-          .es-big .eb-center{ order:-1; }
           .es-big .eb-bar{ display:none; }
           .es-big .eb-sys-row{ grid-template-columns:1fr; margin-top:8px; gap:12px; }
           .es-big .eb-axis{ display:none; }
@@ -14459,32 +14533,18 @@ window.ECONOS_ICONS = {
       </style>
 
       <div class="eb-cap">❓ <span>The three questions every economy answers</span><div class="eb-cap__rule"></div></div>
-      <div class="eb-hub">
-        <svg class="eb-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="50" y1="20" x2="50" y2="42" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
-          <line x1="44" y1="62" x2="14" y2="70" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
-          <line x1="56" y1="62" x2="86" y2="70" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1.6 1.3"/>
-        </svg>
-        <div class="eb-node eb-top">
-          <div class="eb-circ" style="background:#EFF6FF;border:1.5px solid #93C5FD;">🛒</div>
-          <div class="eb-ql" style="color:#1E3A8A;">What to produce?</div>
-          <div class="eb-qs">Which goods and services.</div>
-        </div>
-        <div class="eb-node eb-left">
-          <div class="eb-circ" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">👥</div>
-          <div class="eb-ql" style="color:#5B21B6;">For whom?</div>
-          <div class="eb-qs">How output is shared.</div>
-        </div>
-        <div class="eb-node eb-right">
-          <div class="eb-circ" style="background:#ECFDF5;border:1.5px solid #6EE7B7;">🏭</div>
-          <div class="eb-ql" style="color:#065F46;">How to produce?</div>
-          <div class="eb-qs">Which methods and resources.</div>
-        </div>
-        <div class="eb-center">
-          <div class="eb-circ" style="width:74px;height:74px;font-size:32px;background:#F1F5F9;border:2px solid #CBD5E1;">🏙️</div>
-          <div style="font-size:11.5px;font-weight:800;color:#334155;">Every economy</div>
-        </div>
-      </div>
+      ${window.econosCycleHub({
+        mode: 'cycle',
+        center: { icon: '🏙️', title: 'Every economy' },
+        nodes: [
+          { badge: '1', bg: '#EFF6FF', border: '#93C5FD', ink: '#1E3A8A', icon: '🛒',
+            title: 'What to produce?', lines: ['Which goods and services', 'are made.'] },
+          { badge: '2', bg: '#ECFDF5', border: '#6EE7B7', ink: '#065F46', icon: '🏭',
+            title: 'How to produce?', lines: ['Which resources and', 'methods are used.'] },
+          { badge: '3', bg: '#F5F3FF', border: '#C4B5FD', ink: '#5B21B6', icon: '👥',
+            title: 'For whom?', lines: ['How output and income', 'are distributed.'] }
+        ]
+      })}
 
       <div class="eb-divider"></div>
       <div class="eb-cap">🎚️ <span>The market ↔ state spectrum</span><div class="eb-cap__rule"></div></div>
@@ -14510,7 +14570,7 @@ window.ECONOS_ICONS = {
       </div>
       <div class="eb-axis"><span style="color:#059669;">← More market freedom</span><span style="color:#E11D48;">More state control →</span></div>
     </div>
-  `,
+  `; }),
 
   /* ───────────────────────────────────────────────────────────────
      economicThinkersThree – Economic Systems Card 2, spec 1.1.6(a).
@@ -23101,7 +23161,7 @@ window.ECONOS_ICONS = {
      numbered tiles share a colour grammar. */
   incomeSpectrumChart: `
     <div style="background:#fff;border-radius:14px;padding:14px;">
-      <svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <svg viewBox="0 16 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
 
         <!-- LAYER 1: £ per year per decile (broken Y-axis) -->
         <g class="idl-pounds" style="display:none">

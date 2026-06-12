@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.1 — 2026-06-12
+
+### Elegant ring-hub rebuild — price mechanism + three questions
+
+- New `econosCycleHub` builder (icons.js): the mockup-family ring hub —
+  faint ring, centre disc, satellite circles with corner badges, dashed
+  connectors (cycle arcs with chevrons, or radial spokes), side labels —
+  with all geometry computed, plus a built-in stacked mobile variant
+  (centre chip + tinted numbered rows at ≤640px).
+- `priceMechanismFlow` (Economic Systems C3) — the dark-blob PRICE hub
+  with boxed satellites replaced by the ring hub in spokes mode: PRICE
+  centre disc, S/I/R badged satellites (📡 signalling, 🧲 incentives,
+  ⚖️ rationing) with side text.
+- The three-questions hub inside `economicSystemsBigPicture` (Economic
+  Systems C1) — the Y-shaped emoji hub replaced by the ring hub in cycle
+  mode: numbered 1/2/3 satellites cycling around "Every economy", exactly
+  per the mockup. The market↔state ribbon half is unchanged.
+- Retiring the two hand-rolled hubs cut 8 raw colour literals;
+  DUP_BASELINE ratcheted 6870 → 6862.
+
 ## 0.171.0 — 2026-06-12
 
 ### New topic: Taxation (Edexcel A 4.5.2) — 8 cards, interactive-first

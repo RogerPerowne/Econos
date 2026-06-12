@@ -23731,6 +23731,66 @@ window.ECONOS_ICONS = {
      old hand-rolled CSS-animation "workstation". */
   macroPhillipsInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_MACRO_PHILLIPS_SPEC); }),
 
+  /* taxFdiMagnetHub – Taxation C7 "FDI flows". A green horseshoe magnet over
+     a faint world-map backdrop "pulls" four factor cards, with a rose
+     "tax is only one factor" caution panel. HTML+SVG hybrid so text
+     reflows and it stacks on mobile. Colours via CSS vars (token ratchet
+     stays clean). Inspired by the mockup. */
+  taxFdiMagnetHub: `
+    <div class="fdi-hub" style="background:var(--econ-blue-50);border-radius:var(--r-lg);padding:18px 16px;font-family:Inter,sans-serif;color:var(--econ-ink);line-height:1.4;position:relative;overflow:hidden;">
+      <style>
+        .fdi-hub .fdi-grid { display:grid; grid-template-columns:0.95fr 1.25fr 0.85fr; gap:16px; align-items:center; position:relative; z-index:1; }
+        .fdi-hub .fdi-mag { text-align:center; }
+        .fdi-hub .fdi-intro { font-size:var(--fs-xs); color:var(--econ-ink); line-height:1.45; margin-top:8px; }
+        .fdi-hub .fdi-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .fdi-hub .fdi-card { background:var(--econ-white); border:1px solid var(--econ-green-100); border-radius:11px; padding:11px 13px; box-shadow:0 1px 4px rgba(11,20,38,0.06); }
+        .fdi-hub .fdi-ct { font-size:var(--fs-xs); font-weight:var(--fw-extrabold); color:var(--econ-green-700); line-height:1.2; margin-bottom:4px; }
+        .fdi-hub .fdi-cs { font-size:var(--fs-2xs); color:var(--econ-slate); line-height:1.35; }
+        .fdi-hub .fdi-warn { background:var(--econ-rose-50); border:1px solid #FECDD3; border-radius:12px; padding:14px 15px; }
+        .fdi-hub .fdi-warn__h { display:flex; align-items:center; gap:7px; font-size:var(--fs-xs); font-weight:var(--fw-extrabold); color:var(--econ-rose); margin-bottom:6px; }
+        .fdi-hub .fdi-warn__b { font-size:var(--fs-2xs); color:var(--econ-ink); line-height:1.45; }
+        .fdi-hub .fdi-globe { position:absolute; inset:0; width:100%; height:100%; opacity:0.5; pointer-events:none; z-index:0; }
+        @media (max-width:700px){
+          .fdi-hub .fdi-grid { grid-template-columns:1fr; gap:14px; }
+          .fdi-hub .fdi-globe { display:none; }
+        }
+        @media (max-width:420px){ .fdi-hub .fdi-cards { grid-template-columns:1fr; } }
+      </style>
+      <svg class="fdi-globe" viewBox="0 0 100 60" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle cx="50" cy="30" r="26" fill="none" stroke="var(--econ-green)" stroke-width="0.4" opacity="0.5"/>
+        <ellipse cx="50" cy="30" rx="26" ry="10" fill="none" stroke="var(--econ-green)" stroke-width="0.4" opacity="0.5"/>
+        <ellipse cx="50" cy="30" rx="11" ry="26" fill="none" stroke="var(--econ-green)" stroke-width="0.4" opacity="0.5"/>
+        <line x1="24" y1="30" x2="76" y2="30" stroke="var(--econ-green)" stroke-width="0.4" opacity="0.5"/>
+        <line x1="50" y1="4" x2="50" y2="56" stroke="var(--econ-green)" stroke-width="0.4" opacity="0.5"/>
+      </svg>
+      <div class="fdi-grid">
+        <div class="fdi-mag">
+          <svg viewBox="0 0 130 132" width="120" height="122" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;">
+            <!-- horseshoe magnet: green U, opening up toward the cards -->
+            <path d="M 34,40 L 34,80 A 31 31 0 0 0 96,80 L 96,40" fill="none" style="stroke:var(--econ-green-600);" stroke-width="22"/>
+            <!-- silver pole caps -->
+            <rect x="21" y="26" width="26" height="16" rx="3" style="fill:var(--econ-gray-400);"/>
+            <rect x="83" y="26" width="26" height="16" rx="3" style="fill:var(--econ-gray-400);"/>
+            <!-- attraction sparks rising from the poles -->
+            <path d="M 36,22 L 31,12 L 39,12 L 34,2" fill="none" style="stroke:var(--econ-green);" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 94,22 L 89,12 L 97,12 L 92,2" fill="none" style="stroke:var(--econ-green);" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="fdi-intro">Countries compete to attract investment. Key tax and non-tax factors act like <strong>magnets</strong> for FDI.</div>
+        </div>
+        <div class="fdi-cards">
+          <div class="fdi-card"><div class="fdi-ct">\u{1F4B7} Corporate tax rate</div><div class="fdi-cs">Lower, stable rates can attract FDI.</div></div>
+          <div class="fdi-card"><div class="fdi-ct">\u{1F3DB}️ Political &amp; economic stability</div><div class="fdi-cs">Predictability reduces risk for investors.</div></div>
+          <div class="fdi-card"><div class="fdi-ct">\u{1F3D7}️ Infrastructure &amp; institutions</div><div class="fdi-cs">Good infrastructure and strong institutions draw investment.</div></div>
+          <div class="fdi-card"><div class="fdi-ct">\u{1F4C8} Market size &amp; growth</div><div class="fdi-cs">Large, growing markets offer bigger opportunities.</div></div>
+        </div>
+        <div class="fdi-warn">
+          <div class="fdi-warn__h">⚠️ Tax is only one factor</div>
+          <div class="fdi-warn__b">Investors also consider political risk, skills, regulation, infrastructure, market access and many other factors.</div>
+        </div>
+      </div>
+    </div>
+  `,
+
   /* Taxation 4.5.2 — three engine interactives:
      taxBurdenTypesInteractive  (C2: progressive/proportional/regressive, 3 exclusive views)
      lafferCurveInteractive     (C5: rising side → peak → falling side)

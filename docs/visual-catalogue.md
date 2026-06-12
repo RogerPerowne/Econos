@@ -83,6 +83,22 @@ opportunity-cost triangles, inward/outward shifts, capital-vs-consumer choice.
     (A→C vertical). Theory-only twin of `stagflation-phillips` (which
     adds the 1970s supply-shock view). Reuse the exclusive-layer
     one-snapshot-per-view build for any "movement-then-shift" story.
+- **Taxation (4.5.2):** three exclusive-view stepped interactives.
+  - `tax-burden-types` (`taxBurdenTypesInteractive`) — average tax rate vs
+    income, one frame, three views: progressive (rising, green) /
+    proportional (flat, blue) / regressive (falling, purple), with
+    low/middle/high-earner dots on each line (Taxation C2). Reuse for any
+    "three slopes, three regimes" definition chart.
+  - `laffer-curve` (`lafferCurveInteractive`) — the Laffer parabola as an
+    exact cubic (control points (1/3, 4h/3)), three views: rising side →
+    peak t* → falling side, with the t₁/t₂ same-revenue pairing (Taxation
+    C5).
+  - `tax-redistribution-lorenz` (`taxRedistributionLorenz`) — Lorenz frame
+    with the before-tax curve shifting to the after-tax-&-transfers curve
+    (house shift styling: original dashed, same purple; arrow between
+    curves, cubic-solved) (Taxation C6). Labels are SHORT on purpose — in
+    a fan of curves converging at (1,1) long horizontal labels can't avoid
+    crossing something.
 
 > **Note for Theme 3:** the firm/cost/market-structure *curve* diagrams
 > (cost stacks, LRAC, shutdown, monopoly, monopsony, price discrimination)

@@ -14844,7 +14844,7 @@ window.ECONOS_ICONS = {
         <div class="mu-mid">
           <div class="mu-mid-c">💷</div>
           <div style="font-size:11px;font-weight:700;color:#334155;line-height:1.3;">Shift spending to the higher MU per £</div>
-          <div class="mu-arrow" style="font-size:20px;color:#2563EB;margin-top:4px;display:inline-block;">→</div>
+          <div class="mu-arrow" style="font-size:20px;color:#2563EB;margin-top:4px;display:inline-block;">←</div>
         </div>
         <div class="mu-panel" style="background:#FFFBEB;border:1.5px solid #FCD34D;">
           <div class="mu-ic">☕</div>
@@ -22392,45 +22392,68 @@ window.ECONOS_ICONS = {
      example and a demand-direction arrow. Two columns → stack on mobile.
      ─────────────────────────────────────────────────────────────── */
   demandGoodTypes: `
-    <div class="good-types" style="line-height:1.5;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
+    <div class="good-types" style="line-height:1.5;background:var(--econ-white);border-radius:var(--r-lg);padding:16px 12px;font-family:Inter,sans-serif;color:var(--econ-ink);">
       <style>
-        .good-types .gt-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-        .good-types .gt-col { border-radius:14px; padding:12px; }
-        .good-types .gt-h { font-size:13.5px; font-weight:800; text-align:center; margin-bottom:9px; }
-        .good-types .gt-card { background:#fff; border-radius:12px; padding:11px 12px; margin-bottom:9px; }
+        .good-types .gt-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+        .good-types .gt-col { border-radius:var(--r-lg); padding:14px 12px; background:var(--econ-white); border:1px solid var(--econ-border); }
+        .good-types .gt-h { font-size:14px; font-weight:800; text-align:center; }
+        .good-types .gt-hsub { font-size:11px; color:var(--econ-slate); text-align:center; line-height:1.4; margin:4px 8px 12px; }
+        .good-types .gt-card { border-radius:12px; padding:13px 12px 14px; margin-bottom:10px; }
         .good-types .gt-card:last-child { margin-bottom:0; }
-        .good-types .gt-top { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
-        .good-types .gt-badge { width:22px; height:22px; border-radius:50%; color:#fff; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-        .good-types .gt-name { font-size:13px; font-weight:800; }
-        .good-types .gt-body { font-size:11.5px; color:#475569; line-height:1.4; }
-        .good-types .gt-eg { display:flex; align-items:center; gap:8px; margin-top:7px; font-size:12px; font-weight:700; }
+        .good-types .gt-top { display:flex; align-items:center; justify-content:center; gap:8px; }
+        .good-types .gt-badge { width:23px; height:23px; border-radius:50%; color:var(--econ-white); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .good-types .gt-name { font-size:14px; font-weight:800; }
+        .good-types .gt-body { font-size:11.5px; color:var(--econ-slate); line-height:1.4; text-align:center; margin:3px 6px 11px; }
+        .good-types .gt-eg { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:6px; }
+        .good-types .gt-good { text-align:center; min-width:0; }
+        .good-types .gt-ic { width:46px; height:46px; border-radius:50%; background:var(--econ-white); display:flex; align-items:center; justify-content:center; font-size:23px; margin:0 auto 5px; box-shadow:0 1px 5px rgba(11,20,38,0.10); }
+        .good-types .gt-lbl { font-size:11px; font-weight:700; color:var(--econ-ink); line-height:1.25; }
+        .good-types .gt-arrow { font-size:30px; font-weight:900; line-height:1; flex-shrink:0; }
         @media (max-width:560px){ .good-types .gt-row{ grid-template-columns:1fr; } }
       </style>
       <div class="gt-row">
-        <div class="gt-col" style="background:#F8FAFC;border:1px solid #E2E8F0;">
-          <div class="gt-h" style="color:#1E3A8A;">Income effects</div>
-          <div class="gt-card" style="border:1.5px solid #93C5FD;">
-            <div class="gt-top"><span class="gt-badge" style="background:#2563EB;">A</span><span class="gt-name" style="color:#1E3A8A;">Normal goods</span></div>
-            <div class="gt-body">Income rises → demand rises.</div>
-            <div class="gt-eg" style="color:#1E3A8A;"><span>🍽️ Restaurant meals</span><span style="color:#059669;">▲</span></div>
+        <div class="gt-col">
+          <div class="gt-h" style="color:var(--econ-blue);">Income effects</div>
+          <div class="gt-hsub">Changes in income affect demand differently depending on the type of good.</div>
+          <div class="gt-card" style="background:var(--econ-blue-50);border:1px solid #BFDBFE;">
+            <div class="gt-top"><span class="gt-badge" style="background:var(--econ-blue);">A</span><span class="gt-name" style="color:var(--econ-blue);">Normal goods</span></div>
+            <div class="gt-body">Income rises, demand rises.</div>
+            <div class="gt-eg">
+              <div class="gt-good"><div class="gt-ic">🍽️</div><div class="gt-lbl">Restaurant meals</div></div>
+              <div class="gt-arrow" style="color:var(--econ-blue);">↑</div>
+              <div class="gt-good"><div class="gt-ic">🚆</div><div class="gt-lbl">Train travel</div></div>
+            </div>
           </div>
-          <div class="gt-card" style="border:1.5px solid #FCD34D;">
-            <div class="gt-top"><span class="gt-badge" style="background:#D97706;">B</span><span class="gt-name" style="color:#B45309;">Inferior goods</span></div>
-            <div class="gt-body">Income rises → demand falls.</div>
-            <div class="gt-eg" style="color:#B45309;"><span>🍜 Instant noodles</span><span style="color:#DC2626;">▼</span></div>
+          <div class="gt-card" style="background:var(--econ-amber-50);border:1px solid #FDE68A;">
+            <div class="gt-top"><span class="gt-badge" style="background:var(--econ-amber-600);">B</span><span class="gt-name" style="color:var(--econ-amber-700);">Inferior goods</span></div>
+            <div class="gt-body">Income rises, demand falls.</div>
+            <div class="gt-eg">
+              <div class="gt-good"><div class="gt-ic">🍜</div><div class="gt-lbl">Instant noodles</div></div>
+              <div class="gt-arrow" style="color:var(--econ-amber-600);">↓</div>
+              <div class="gt-good"><div class="gt-ic">🚌</div><div class="gt-lbl">Basic bus travel</div></div>
+            </div>
           </div>
         </div>
-        <div class="gt-col" style="background:#F8FAFC;border:1px solid #E2E8F0;">
-          <div class="gt-h" style="color:#065F46;">Related goods</div>
-          <div class="gt-card" style="border:1.5px solid #6EE7B7;">
-            <div class="gt-top"><span class="gt-badge" style="background:#059669;">C</span><span class="gt-name" style="color:#065F46;">Substitutes</span></div>
-            <div class="gt-body">Price of tea rises → demand for coffee rises.</div>
-            <div class="gt-eg" style="color:#065F46;"><span>☕ Coffee</span><span style="color:#059669;">▲</span></div>
+        <div class="gt-col">
+          <div class="gt-h" style="color:var(--econ-green-700);">Related goods</div>
+          <div class="gt-hsub">Prices of other goods affect demand depending on how they are related.</div>
+          <div class="gt-card" style="background:var(--econ-green-50);border:1px solid #A7F3D0;">
+            <div class="gt-top"><span class="gt-badge" style="background:var(--econ-green-600);">C</span><span class="gt-name" style="color:var(--econ-green-700);">Substitutes</span></div>
+            <div class="gt-body">If the price of tea rises, demand for coffee rises.</div>
+            <div class="gt-eg">
+              <div class="gt-good"><div class="gt-ic">🍵</div><div class="gt-lbl">Tea</div></div>
+              <div class="gt-arrow" style="color:var(--econ-green-600);">↑</div>
+              <div class="gt-good"><div class="gt-ic">☕</div><div class="gt-lbl">Coffee</div></div>
+            </div>
           </div>
-          <div class="gt-card" style="border:1.5px solid #C4B5FD;">
-            <div class="gt-top"><span class="gt-badge" style="background:#7C3AED;">D</span><span class="gt-name" style="color:#5B21B6;">Complements</span></div>
-            <div class="gt-body">Price of printers rises → demand for ink falls.</div>
-            <div class="gt-eg" style="color:#5B21B6;"><span>🖨️ Ink</span><span style="color:#DC2626;">▼</span></div>
+          <div class="gt-card" style="background:#F5F3FF;border:1px solid #C4B5FD;">
+            <div class="gt-top"><span class="gt-badge" style="background:var(--econ-purple);">D</span><span class="gt-name" style="color:var(--econ-purple);">Complements</span></div>
+            <div class="gt-body">If the price of printers rises, demand for ink falls.</div>
+            <div class="gt-eg">
+              <div class="gt-good"><div class="gt-ic">🖨️</div><div class="gt-lbl">Printer</div></div>
+              <div class="gt-arrow" style="color:var(--econ-purple);">↓</div>
+              <div class="gt-good"><div class="gt-ic">🖋️</div><div class="gt-lbl">Ink</div></div>
+            </div>
           </div>
         </div>
       </div>

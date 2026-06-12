@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.6 — 2026-06-12
+
+### Demand & rational-choice visual fixes
+
+- **`marginalUtilityCompare`** (Rational decision making C-utility): the
+  "shift spending to the higher MU per £" arrow pointed at the LOWER-MU
+  good. Flipped → it now points toward the higher-MU good (left on
+  desktop, up on mobile via the 90° rotate).
+- **`demandGoodTypes`** (Demand "Normal, inferior, substitutes &
+  complements"): rebuilt to match the mockup — centred headings with a
+  column subtitle and a symmetric two-example layout per card (icon →
+  big tone arrow → icon: meals↑train, noodles↓bus, tea↑coffee,
+  printer↓ink). Colours moved to design tokens, dropping 14 raw literals
+  (DUP_BASELINE 6862 → 6848).
+
 ## 0.171.5 — 2026-06-12
 
 ### Taxation C7 — FDI magnet hub, 2×2 dashboard, mockup order

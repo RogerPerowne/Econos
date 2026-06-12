@@ -19564,22 +19564,22 @@ window.ECONOS_ICONS = {
       </style>
       <div class="fcf-row">
         <div class="fcf-tag" style="background:#EFF6FF;color:#1E3A8A;border:1.5px solid #BFDBFE;">Free trade area</div>
-        <div class="fcf-node"><div class="fcf-ic" style="background:#EFF6FF;">🏛️</div><span class="fcf-nl">member<br>country A</span></div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#EFF6FF;">🏛️</div><span class="fcf-nl">member A<br><strong style="color:#2563EB;">low tariff</strong></span></div>
         <div class="fcf-arr" style="color:#2563EB;font-size:18px;">↔</div>
-        <div class="fcf-node"><div class="fcf-ic" style="background:#EFF6FF;">🏛️</div><span class="fcf-nl">member<br>country B</span></div>
-        <div class="fcf-arr" style="color:#94A3B8;font-size:13px;letter-spacing:-1px;">- -▸</div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#EFF6FF;">🏛️</div><span class="fcf-nl">member B<br>high tariff</span></div>
+        <div class="fcf-arr"><svg width="48" height="24" viewBox="0 0 48 24" aria-hidden="true"><line x1="46" y1="12" x2="12" y2="12" stroke="#DC2626" stroke-width="2.2" stroke-dasharray="5 3"/><polygon points="4,12 13,7 13,17" fill="#DC2626"/></svg></div>
         <div class="fcf-node"><div class="fcf-ic" style="background:#F5F3FF;">🌐</div><span class="fcf-nl">rest of<br>world</span></div>
       </div>
-      <div class="fcf-cap" style="color:#2563EB;">Outside goods may enter via the lower-tariff member.</div>
+      <div class="fcf-cap" style="color:#DC2626;">Outside goods slip in through member A's lower tariff, then move freely to member B.</div>
       <div class="fcf-row">
         <div class="fcf-tag" style="background:#ECFDF5;color:#065F46;border:1.5px solid #86EFAC;">Customs union</div>
-        <div class="fcf-node"><div class="fcf-ic" style="background:#ECFDF5;">🏛️</div><span class="fcf-nl">member<br>country A</span></div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#ECFDF5;">🏛️</div><span class="fcf-nl">member A<br><strong style="color:#059669;">common tariff</strong></span></div>
         <div class="fcf-arr" style="color:#059669;font-size:18px;">↔</div>
-        <div class="fcf-node"><div class="fcf-ic" style="background:#ECFDF5;">🏛️</div><span class="fcf-nl">member<br>country B</span></div>
-        <div class="fcf-arr" style="color:#94A3B8;font-size:13px;letter-spacing:-1px;">- -▸</div>
+        <div class="fcf-node"><div class="fcf-ic" style="background:#ECFDF5;">🏛️</div><span class="fcf-nl">member B<br><strong style="color:#059669;">common tariff</strong></span></div>
+        <div class="fcf-arr"><svg width="48" height="26" viewBox="0 0 48 26" aria-hidden="true"><line x1="46" y1="13" x2="24" y2="13" stroke="#94A3B8" stroke-width="2.2" stroke-dasharray="5 3"/><rect x="16" y="2" width="6" height="22" rx="2" fill="#059669"/><text x="13" y="9" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="800">✕</text></svg></div>
         <div class="fcf-node"><div class="fcf-ic" style="background:#F5F3FF;">🌐</div><span class="fcf-nl">rest of<br>world</span></div>
       </div>
-      <div class="fcf-cap" style="color:#059669;">A common external tariff removes that problem.</div>
+      <div class="fcf-cap" style="color:#059669;">One common external tariff on all members blocks that back door.</div>
     </div>
   `,
 
@@ -20067,9 +20067,9 @@ window.ECONOS_ICONS = {
         </div>
         <div class="fxim-pull">➜</div>
         <div class="fxim-gauge">
-          ${window.ECONOS_DIALS.render({ type: 'gauge', size: 150, value: 7.6, min: 0, max: 10, tone: 'blue', ariaLabel: 'Higher interest rate means a stronger pull on capital flows' })}
-          <div style="font-size:12.5px;font-weight:800;color:#1E3A8A;margin-top:2px;">HIGHER RATE = STRONGER PULL</div>
-          <div style="font-size:10.5px;color:#64748B;">on capital flows</div>
+          ${window.ECONOS_DIALS.render({ type: 'gauge', size: 92, value: 7.6, min: 0, max: 10, tone: 'blue', ariaLabel: 'Higher interest rate means a stronger pull on capital flows' })}
+          <div style="font-size:var(--fs-2xs);font-weight:800;color:#1E3A8A;margin-top:2px;line-height:1.2;">HIGHER RATE =<br>STRONGER PULL</div>
+          <div style="font-size:10px;color:#64748B;">on capital flows</div>
         </div>
         <div class="fxim-pull">➜</div>
         <div class="fxim-tgt">

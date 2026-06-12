@@ -6,6 +6,14 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.11 — 2026-06-12
+
+### Lorenz & Gini axis labels fit
+
+- Shortened the Gini axis labels to the "Cumulative % of income / population"
+  form (matching the Lorenz card) and nudged both plots right so the y-axis
+  label no longer clips at the left edge.
+
 ## 0.172.10 — 2026-06-12
 
 ### Review set 2 (batch 11) — Lorenz & Gini as multi-button interactives

@@ -14,14 +14,14 @@
   'use strict';
 
   window.ECONOS_GINI_AREAS_SPEC = {
-    width: 540,
+    width: 560,
     height: 360,
-    chartArea: { x: 64, y: 28, width: 440, height: 286 },
+    chartArea: { x: 96, y: 28, width: 432, height: 286 },
     className: 'gini-areas-svg',
     layers: ['idl-1', 'idl-2', 'idl-3'],
     axes: {
-      x: { label: 'Cumulative share of population' },
-      y: { label: 'Cumulative share of income' }
+      x: { label: 'Cumulative % of population' },
+      y: { label: 'Cumulative % of income' }
     },
     polygons: [
       /* Area A — the lens between the equality line and the Lorenz curve */

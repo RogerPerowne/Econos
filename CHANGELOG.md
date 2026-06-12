@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.15 — 2026-06-12
+
+### Review batch 1 — confusions card, diagnose rows, J=W badge, income chart
+
+- **National Income "common confusions" (`checkList` renderer):** redesigned
+  the awkward head-then-centred-body rows into clean tone-tinted cards (tick
+  badge, bold head, body beneath, left-aligned). Only one card uses the
+  component, so the change is self-contained.
+- **Trade & Business Cycle "five shocks to diagnose":** the predict-then-reveal
+  tiles now stack as full-width rows (`scenariosCols: 1`) instead of a ragged
+  grid.
+- **Injections & Withdrawals circular flow (`nationalIncomeOpenEconomy`):** the
+  final "J = W — macro balance" view now shows a red **J = W** badge in the
+  centre of the diagram (new `idl-4` layer, gated to view 5 only).
+- **Impact of Economic Growth income chart (`incomeSpectrumChart`):** the
+  viewBox was too short, clipping the title at the top and the decile labels /
+  annotations at the bottom. Expanded it to include all content, which also
+  makes the stage render taller.
+
 ## 0.171.14 — 2026-06-12
 
 ### Phillips chart height, structural-map rebuild, Net Trade tidy-up

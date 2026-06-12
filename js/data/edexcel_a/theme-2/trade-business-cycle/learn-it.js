@@ -171,6 +171,7 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+      scenariosCols: 1,
       examEdge: '<strong>Before naming a shock, diagnose direction:</strong> P and Y together → demand shock; opposite → supply shock. Then sign each (positive or negative). State this diagnostic explicitly in your answer – examiners reward the systematic identification, not just the conclusion.'
     },
 

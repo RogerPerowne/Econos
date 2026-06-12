@@ -5881,11 +5881,11 @@
         const t = PATTERN_TONES[cl.tone || 'green'] || PATTERN_TONES.green;
         const title = cl.label ? genSecLabel(cl.emoji || '✅', cl.label) : '';
         const rows = cl.items.map(it => `
-          <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--econ-border);border-radius:var(--r-lg);padding:12px 16px;">
-            <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:${t.soft};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;margin-top:1px;">✓</div>
-            <div style="flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;">
-              <span style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:var(--econ-ink);line-height:var(--lh-normal);">${it.head}</span>
-              ${it.body ? `<span style="font-size:var(--fs-sm);color:var(--econ-slate);line-height:var(--lh-normal);flex:1;min-width:160px;">${it.body}</span>` : ''}
+          <div style="display:flex;align-items:flex-start;gap:13px;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.label};border-radius:var(--r-lg);padding:13px 16px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+            <div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:${t.label};color:var(--econ-white);display:inline-flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:900;margin-top:1px;">✓</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:var(--fs-base);font-weight:var(--fw-extrabold);color:${t.label};line-height:var(--lh-snug);margin-bottom:3px;">${it.head}</div>
+              ${it.body ? `<div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-normal);">${it.body}</div>` : ''}
             </div>
           </div>`).join('');
         return `${title}<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;">${rows}</div>`;

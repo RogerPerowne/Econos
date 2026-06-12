@@ -183,7 +183,7 @@ window.ECONOS_TOPIC = {
         maxWidth: '100%',
         label: 'The full model',
         emoji: '\u{1F501}',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
+        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
         views: [
           {
             label: 'Two-sector economy',

@@ -20456,8 +20456,11 @@ window.ECONOS_ICONS = {
           }).join('')}
         </div>
         <svg viewBox="0 0 760 52" style="width:100%;height:52px;display:block;" preserveAspectRatio="none">
-          <defs><marker id="ptc-ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M 0 0 L 9 4.5 L 0 9" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-          <path d="M 690 2 C 720 46, 60 46, 70 6" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#ptc-ah)"/>
+          <!-- Feedback loop. Arrowhead is an explicit upward triangle (not a
+               marker) so the non-uniform viewBox scaling can't distort it into
+               a flat caret; the curve rises vertically into the first node. -->
+          <path d="M 690 6 C 725 48, 55 48, 70 20" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-dasharray="7 5"/>
+          <polygon points="62,19 70,4 78,19" fill="#A78BFA"/>
         </svg>
         <div style="text-align:center;font-size:11px;color:#7C3AED;font-weight:700;margin-top:2px;">Low income feeds back on itself — the trap repeats.</div>
       </div>
@@ -20486,9 +20489,11 @@ window.ECONOS_ICONS = {
           <div class="inl-hd"><span class="inl-bdg">1</span><span class="inl-hl">THE INCOME LADDER</span></div>
           <div class="inl-diagram">
             <svg viewBox="0 0 280 350" style="width:100%;height:auto;display:block;">
-              <defs><marker id="inl-u" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto"><path d="M 0 8 L 4 0 L 8 8" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="inl-d" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M 0 0 L 4 8 L 8 0" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-              <!-- income axis -->
-              <line x1="20" y1="34" x2="20" y2="320" stroke="#94A3B8" stroke-width="1.5" marker-start="url(#inl-u)" marker-end="url(#inl-d)"/>
+              <!-- income axis with explicit up/down arrowheads (vertical
+                   triangles, marker-free so they can't rotate the wrong way) -->
+              <line x1="20" y1="36" x2="20" y2="318" stroke="#94A3B8" stroke-width="1.5"/>
+              <polygon points="14,40 20,28 26,40" fill="#94A3B8"/>
+              <polygon points="14,314 20,326 26,314" fill="#94A3B8"/>
               <text x="14" y="180" font-size="10.5" font-weight="700" fill="#475569" transform="rotate(-90 14 180)" text-anchor="middle">Income (£ per year)</text>
               <text x="44" y="26" font-size="11" font-weight="800" fill="#065F46">High income</text>
               <text x="44" y="342" font-size="11" font-weight="800" fill="#5B21B6">Low income</text>
@@ -21005,16 +21010,17 @@ window.ECONOS_ICONS = {
             {ic:'\u{1F4B7}',t:'Low incomes'},
             {ic:'\u{1F3E6}',t:'Low savings'},
             {ic:'\u{1F4C9}',t:'Low investment'},
-            {ic:'\u{1F3ED}',t:'Low capital & productivity'},
-            {ic:'\u{1F4B7}',t:'Back to low incomes'}
+            {ic:'\u{1F3ED}',t:'Low capital & productivity'}
           ].map(function(n,i){
-            var arrow = i<4 ? '<div style="flex:0 0 auto;align-self:flex-start;margin-top:24px;color:#F59E0B;font-size:22px;font-weight:700;">→</div>' : '';
-            return '<div style="flex:1;min-width:86px;max-width:130px;text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:#FFFBEB;border:2.5px solid #F59E0B;display:flex;align-items:center;justify-content:center;font-size:25px;margin:0 auto;">'+n.ic+'</div><div style="font-size:12px;font-weight:800;color:#B45309;line-height:1.2;margin-top:8px;">'+n.t+'</div></div>'+arrow;
+            var arrow = i<3 ? '<div style="flex:0 0 auto;align-self:flex-start;margin-top:24px;color:#F59E0B;font-size:22px;font-weight:700;">→</div>' : '';
+            return '<div style="flex:1;min-width:86px;max-width:150px;text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:#FFFBEB;border:2.5px solid #F59E0B;display:flex;align-items:center;justify-content:center;font-size:25px;margin:0 auto;">'+n.ic+'</div><div style="font-size:12px;font-weight:800;color:#B45309;line-height:1.2;margin-top:8px;">'+n.t+'</div></div>'+arrow;
           }).join('')}
         </div>
         <svg viewBox="0 0 780 52" style="width:100%;height:52px;display:block;" preserveAspectRatio="none">
-          <defs><marker id="sgl-ah" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M 0 0 L 9 4.5 L 0 9" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-          <path d="M 705 2 C 735 46, 60 46, 70 6" fill="none" stroke="#F59E0B" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#sgl-ah)"/>
+          <!-- Feedback loop back to the first node; explicit upward triangle
+               arrowhead (marker-free) so non-uniform scaling can't flatten it. -->
+          <path d="M 650 6 C 690 48, 80 48, 95 20" fill="none" stroke="#F59E0B" stroke-width="2.4" stroke-dasharray="7 5"/>
+          <polygon points="87,19 95,4 103,19" fill="#F59E0B"/>
         </svg>
         <div style="text-align:center;font-size:11px;color:#B45309;font-weight:700;margin-top:2px;">Harrod-Domar: growth ≈ savings ratio (s) ÷ capital-output ratio (k) — too little saving traps the loop.</div>
       </div>

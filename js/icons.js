@@ -19372,10 +19372,11 @@ window.ECONOS_ICONS = {
           <div class="ttn-cap"><span class="ttn-badge" style="background:#2563EB;">Then</span>Trade flows dominated by advanced economies.</div>
           <svg viewBox="0 0 300 150" width="100%" style="display:block;">
             <defs><marker id="ttnBlue" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M 0 0 L 6 3 L 0 6" fill="none" stroke="#2563EB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-            <line x1="150" y1="75" x2="68" y2="42" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
-            <line x1="150" y1="75" x2="68" y2="110" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
-            <line x1="150" y1="75" x2="240" y2="46" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
-            <line x1="150" y1="75" x2="240" y2="108" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
+            <g fill="#CBD5E1" opacity="0.4"><path d="M34,40 c-6,5 -7,14 -3,22 c-5,4 -6,12 -2,18 c4,5 3,14 7,20 c3,4 9,2 9,-4 c2,-8 -3,-15 1,-23 c4,-9 11,-15 8,-24 c-3,-10 -20,-14 -27,-9 Z"/><path d="M120,34 c8,-3 17,2 17,9 c6,2 8,10 3,15 c4,8 0,18 -6,25 c-5,8 -5,18 -11,23 c-6,3 -12,-4 -10,-12 c-3,-10 4,-17 0,-27 c-4,-11 -7,-21 -1,-28 Z"/><path d="M175,38 c12,-4 26,-1 30,8 c6,6 3,16 -5,20 c-6,6 -16,6 -22,2 c-8,-4 -13,-12 -11,-21 c1,-6 5,-8 8,-9 Z"/><ellipse cx="262" cy="118" rx="14" ry="9"/></g>
+            <path d="M150,75 Q100,55 68,42" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
+            <path d="M150,75 Q100,95 68,110" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
+            <path d="M150,75 Q196,52 240,46" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
+            <path d="M150,75 Q196,98 240,108" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#ttnBlue)"/>
             <circle cx="50" cy="36" r="13" fill="#E2E8F0"/><text x="50" y="41" text-anchor="middle" font-size="13">🌍</text>
             <circle cx="50" cy="116" r="13" fill="#E2E8F0"/><text x="50" y="121" text-anchor="middle" font-size="13">🌍</text>
             <circle cx="258" cy="40" r="13" fill="#E2E8F0"/><text x="258" y="45" text-anchor="middle" font-size="13">🌍</text>
@@ -19387,9 +19388,10 @@ window.ECONOS_ICONS = {
           <div class="ttn-cap"><span class="ttn-badge" style="background:#EA580C;">Now</span>Emerging economies are major suppliers to the world.</div>
           <svg viewBox="0 0 300 150" width="100%" style="display:block;">
             <defs><marker id="ttnOrange" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M 0 0 L 6 3 L 0 6" fill="none" stroke="#EA580C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-            <line x1="95" y1="116" x2="132" y2="90" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
-            <line x1="244" y1="118" x2="176" y2="88" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
-            <line x1="250" y1="52" x2="178" y2="70" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
+            <g fill="#CBD5E1" opacity="0.4"><path d="M34,40 c-6,5 -7,14 -3,22 c-5,4 -6,12 -2,18 c4,5 3,14 7,20 c3,4 9,2 9,-4 c2,-8 -3,-15 1,-23 c4,-9 11,-15 8,-24 c-3,-10 -20,-14 -27,-9 Z"/><path d="M120,34 c8,-3 17,2 17,9 c6,2 8,10 3,15 c4,8 0,18 -6,25 c-5,8 -5,18 -11,23 c-6,3 -12,-4 -10,-12 c-3,-10 4,-17 0,-27 c-4,-11 -7,-21 -1,-28 Z"/><path d="M175,38 c12,-4 26,-1 30,8 c6,6 3,16 -5,20 c-6,6 -16,6 -22,2 c-8,-4 -13,-12 -11,-21 c1,-6 5,-8 8,-9 Z"/><ellipse cx="262" cy="118" rx="14" ry="9"/></g>
+            <path d="M95,116 Q106,98 132,90" fill="none" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
+            <path d="M244,118 Q200,98 176,88" fill="none" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
+            <path d="M250,52 Q210,56 178,70" fill="none" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
             <line x1="120" y1="72" x2="92" y2="72" stroke="#EA580C" stroke-width="2" marker-end="url(#ttnOrange)"/>
             <circle cx="70" cy="72" r="20" fill="#2563EB"/><text x="70" y="79" text-anchor="middle" font-size="18">🏛️</text>
             <circle cx="92" cy="118" r="13" fill="#EA580C"/><text x="92" y="123" text-anchor="middle" font-size="12">🏭</text>
@@ -19854,7 +19856,8 @@ window.ECONOS_ICONS = {
         .bwi-flows{display:flex;flex-direction:column;gap:14px;flex:1;}
         .bwi-fl{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;}
         .bwi-fic{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
-        .bwi-globe{flex:0 0 auto;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 38% 32%,#E0F2FE,#BAE6FD 55%,#93C5FD);border:2.5px solid #1E3A8A;}
+        .bwi-globe{flex:0 0 auto;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 38% 32%,#E0F2FE,#BAE6FD 55%,#93C5FD);border:2.5px solid #1E3A8A;overflow:hidden;position:relative;}
+        .bwi-globe svg{position:absolute;inset:0;width:100%;height:100%;}
         @media(max-width:680px){.bwi-grid{grid-template-columns:1fr;}.bwi-mid{flex-direction:column;}}
       </style>
       <div class="bwi-grid">
@@ -19869,7 +19872,7 @@ window.ECONOS_ICONS = {
             <div class="bwi-fl" style="color:#065F46;"><span class="bwi-fic" style="background:#DCFCE7;">🐷</span>Savings <span style="color:#059669;">→</span></div>
             <div class="bwi-fl" style="color:#065F46;"><span class="bwi-fic" style="background:#DCFCE7;">🏦</span>Lending <span style="color:#059669;">→</span></div>
           </div>
-          <div class="bwi-globe"></div>
+          <div class="bwi-globe"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="#1E3A8A" opacity="0.3"><path d="M24,26 c-5,3 -6,9 -3,13 c-4,2 -5,7 -2,10 c3,3 2,9 5,13 c2,3 6,2 7,-2 c2,-5 -2,-9 0,-14 c2,-6 7,-9 6,-15 c-1,-6 -13,-9 -20,-5 Z"/><path d="M50,24 c6,-2 12,1 12,6 c4,1 6,6 3,9 c2,5 0,11 -4,15 c-3,5 -3,12 -7,15 c-4,2 -8,-2 -7,-7 c-1,-6 2,-11 0,-17 c-2,-7 -5,-13 -1,-18 Z"/><path d="M66,26 c8,-3 17,-1 19,5 c4,4 2,11 -3,13 c-4,4 -10,4 -14,2 c-5,-3 -8,-8 -7,-14 c0,-4 3,-5 5,-6 Z"/><ellipse cx="78" cy="70" rx="9" ry="6"/></g><g stroke="#1E3A8A" stroke-width="0.7" fill="none" opacity="0.22"><circle cx="48" cy="48" r="44"/><ellipse cx="48" cy="48" rx="20" ry="44"/><line x1="4" y1="48" x2="92" y2="48"/></g></svg></div>
           <div class="bwi-flows" style="text-align:right;">
             <div class="bwi-fl" style="color:#C2410C;justify-content:flex-end;"><span style="color:#EA580C;">←</span> Imports<span class="bwi-fic" style="background:#FFEDD5;">🛒</span></div>
             <div class="bwi-fl" style="color:#C2410C;justify-content:flex-end;"><span style="color:#EA580C;">←</span> Borrowing<span class="bwi-fic" style="background:#FFEDD5;">💳</span></div>
@@ -19934,6 +19937,13 @@ window.ECONOS_ICONS = {
           <svg viewBox="0 0 130 130" width="126" height="126">
             <defs><radialGradient id="fxghGlobe" cx="38%" cy="32%" r="70%"><stop offset="0%" stop-color="#E0F2FE"/><stop offset="55%" stop-color="#BAE6FD"/><stop offset="100%" stop-color="#7DD3FC"/></radialGradient></defs>
             <circle cx="60" cy="62" r="46" fill="url(#fxghGlobe)" stroke="#1E3A8A" stroke-width="2.5"/>
+            <clipPath id="fxghClip"><circle cx="60" cy="62" r="46"/></clipPath>
+            <g clip-path="url(#fxghClip)" fill="#1E3A8A" opacity="0.26">
+              <path d="M30,34 c-6,4 -7,11 -3,16 c-5,3 -6,9 -2,13 c4,4 3,11 6,16 c3,4 8,2 8,-3 c2,-6 -2,-11 1,-17 c3,-7 9,-11 7,-18 c-2,-8 -16,-11 -24,-7 Z"/>
+              <path d="M60,30 c7,-3 15,1 15,7 c5,2 7,8 3,12 c3,6 0,14 -5,19 c-4,6 -4,15 -9,19 c-5,2 -10,-3 -8,-9 c-2,-8 3,-14 0,-22 c-3,-9 -7,-16 -1,-22 Z"/>
+              <path d="M78,34 c10,-3 21,-1 24,6 c5,5 2,13 -4,16 c-5,5 -13,5 -18,2 c-6,-3 -10,-10 -9,-17 c1,-5 4,-6 7,-7 Z"/>
+              <ellipse cx="94" cy="92" rx="11" ry="7"/>
+            </g>
             <path d="M14,62 H106 M60,16 V108 M28,38 Q60,52 92,38 M28,86 Q60,72 92,86" fill="none" stroke="#60A5FA" stroke-width="1.4" opacity="0.8"/>
             <g transform="rotate(16 96 92)">
               <path d="M84,80 L112,80 L120,94 L96,108 Z" fill="#FDE68A" stroke="#D97706" stroke-width="1.6"/>

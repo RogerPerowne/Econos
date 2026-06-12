@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.0 — 2026-06-12
+
+### Review set 2 (batch 1) — card layout fixes
+
+- **Wage Determination "why demand elasticity matters":** 4-across → 2×2
+  (`causesCols: 4 → 2`).
+- **Trading Blocs & WTO "what the WTO does":** 4-across → 2×2.
+- **Restrictions on Free Trade "stakeholder scorecard":** ragged 5-card grid →
+  fancy numbered rows.
+- **Absolute & Relative Poverty "four scenarios" (`povertyMoveDifferently`):**
+  the 4 scenario cards were clipping at 4-across → 2×2.
+
 ## 0.171.21 — 2026-06-12
 
 ### Review batch 7 — net-trade depreciation mechanism rebuilt wide

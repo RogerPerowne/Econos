@@ -358,7 +358,7 @@ window.ECONOS_TOPIC = {
       causesLabel: 'WHY DEMAND ELASTICITY MATTERS',
       causesEmoji: '\u{1F4C9}',
       causesStyle: 'icon-top',
-      causesCols: 4,
+      causesCols: 2,
       causes: [
         { tone: 'blue',   icon: '\u{1F916}', head: 'Substitutability', body: 'Easy to swap capital for labour → elastic demand.' },
         { tone: 'amber',  icon: '\u{1F4B7}', head: 'Share of costs', body: 'Labour a big share of costs → elastic demand.' },

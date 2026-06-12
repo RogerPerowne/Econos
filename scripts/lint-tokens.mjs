@@ -68,7 +68,7 @@ const check = process.argv.includes('--check');
    lowered to 6827 (v0.171.14) on the structural-map rebuild +
    net-trade fancy-rows pass; lowered to 6815 (v0.171.21) on the
    netTradeMechanism wide rebuild. */
-const DUP_BASELINE = 6790;
+const DUP_BASELINE = 6775;
 
 const css = readFileSync('styles.css', 'utf8');
 

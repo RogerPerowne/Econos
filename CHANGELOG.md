@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.14 — 2026-06-12
+
+### Review set 2 — gains-from-trade diagram rebuilt from scratch
+
+- Replaced the hand-rolled static `gainsFromTradePPF` SVG with a new
+  engine spec (`comparative-advantage-trade.js`, `ECONOS_CA_TRADE_SPEC`)
+  rendered as a four-step interactive on the *How trade creates gains*
+  card: own PPF + no-trade point A → specialise to P (cloth-axis
+  intercept) → trade line drawn *from P* at world terms of trade →
+  consume at C beyond the frontier, with more of both goods than A.
+- This fixes an economic inaccuracy in the old drawing, where the trade
+  line ran from the origin rather than from the specialisation point. The
+  trade line now correctly pivots from P with the slope of the world
+  terms of trade, and C sits outside the PPF and dominates A — the
+  textbook "consume beyond your own PPF" gain. Geometry is engine-solved
+  (A on the PPF, C on the trade line), not eyeballed.
+
 ## 0.172.13 — 2026-06-12
 
 ### Review set 2 — FX peg-defence diagram as a multi-button interactive

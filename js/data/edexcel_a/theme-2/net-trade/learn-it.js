@@ -382,7 +382,7 @@ window.ECONOS_TOPIC = {
             classical: {
               tone: 'purple',
               head: 'Classical view – at potential at E₁.',
-              body: ['AD₁ meets the vertical LRAS at Yf, with price level P₁ – output is already at full capacity in the long run.'] }
+              body: ['AD₁, SRAS and the vertical LRAS all meet at Yf, price level P₁ – the economy starts at full-capacity equilibrium.'] }
           },
           {
             label: 'Higher X − M', show: ['idl-1'],
@@ -403,10 +403,10 @@ window.ECONOS_TOPIC = {
               body: ['E₂ sits up-and-right: <strong>Y₂ &gt; Y₁ and P₂ &gt; P₁</strong>.', 'Closer to Yf, AS steepens – more of the shift leaks into prices.'],
               analysis: 'Keynesian verdict: a net-trade boost into a slack economy is the cleanest win – real output and employment rise with only modest inflation pressure. This is why an export-led recovery is the textbook example of a soft-landing demand boost.' },
             classical: {
-              tone: 'purple',
-              head: 'ONLY prices rise.',
-              body: ['E₂ sits <em>directly above</em> E₁: <strong>output stays at Yf, P₂ &gt; P₁</strong>.', 'Extra demand against a fixed long-run supply just bids up the price level.'],
-              analysis: 'Classical verdict: in the long run, output is anchored at Yf, so a net-trade boost is <strong>purely inflationary</strong>. The real exchange rate then adjusts (currency strengthens) and net trade reverses – a sustainable improvement needs supply-side competitiveness, not a demand boost.' }
+              tone: 'green',
+              head: 'Short-run growth, then inflation.',
+              body: ['Along SRAS, E₂ sits up-and-right: <strong>Y₂ &gt; Yf and P₂ &gt; P₁</strong> – a small inflationary output gap.', 'Output can run above Yf briefly, but the gap is paid for in rising prices.'],
+              analysis: 'Classical verdict: the net-trade boost buys some short-run growth, but with output above Yf, wages and costs rise – SRAS drifts back left and the economy returns to Yf at an even higher price level. The long-run anchor is still capacity; a sustainable gain needs supply-side competitiveness, not a demand boost.' }
           }
         ]
       },

@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.20 — 2026-06-12
+
+### Review batch 6 — simultaneous-shifts diagram house-rules pass
+
+- **`simultaneousShiftsInteractive` (price-determination "simultaneous shifts"
+  card):** the shifted curves were recoloured (green/purple) and the originals
+  stayed solid, breaking the sitewide convention. Now the shifted curves keep
+  their identity colours (D blue, S amber) and the originals render dashed
+  (shifted-from), in both the "both increase" and "demand up / supply down"
+  views. Moved every equilibrium label (E, E₂) above its intersection to avoid
+  clashes. Snapshot updated; chart-lint clean. Fixes PDF item 10.
+
 ## 0.171.19 — 2026-06-12
 
 ### Review batch 5 — net-trade AD/AS classical view gains an SRAS

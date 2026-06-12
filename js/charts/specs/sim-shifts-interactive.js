@@ -30,22 +30,26 @@
     },
 
     curves: [
-      { d: 'M 0.10,0.886 L 0.94,0.091', tone: 'blue',  label: 'D', strokeWidth: 3, labelDx: 8, labelDy: -4 },
-      { d: 'M 0.10,0.091 L 0.94,0.886', tone: 'amber', label: 'S', strokeWidth: 3, labelDx: 8, labelDy: -4 },
+      /* Originals — both views are shifts, so the originals read as the
+         "shifted-from" curves: dashed, keeping their identity colours
+         (D blue, S amber). The new curves below stay the SAME colour,
+         solid (house convention: no recolouring on a shift). */
+      { d: 'M 0.10,0.886 L 0.94,0.091', tone: 'blue',  label: 'D', strokeWidth: 2.4, dashed: '6 4', labelDx: 8, labelDy: -4 },
+      { d: 'M 0.10,0.091 L 0.94,0.886', tone: 'amber', label: 'S', strokeWidth: 2.4, dashed: '6 4', labelDx: 8, labelDy: -4 },
 
-      /* both increase */
-      { layer: 'layer-both', d: 'M 0.28,0.886 L 1.12,0.091', tone: 'green', strokeWidth: 2.6 },
-      { layer: 'layer-both', d: 'M 0.28,0.091 L 1.12,0.886', tone: 'green', strokeWidth: 2.6 },
+      /* both increase — D₂ solid blue, S₂ solid amber */
+      { layer: 'layer-both', d: 'M 0.28,0.886 L 1.12,0.091', tone: 'blue',  strokeWidth: 3 },
+      { layer: 'layer-both', d: 'M 0.28,0.091 L 1.12,0.886', tone: 'amber', strokeWidth: 3 },
 
-      /* demand up, supply down */
-      { layer: 'layer-dups', d: 'M 0.28,0.886 L 1.12,0.091', tone: 'green',  strokeWidth: 2.6 },
-      { layer: 'layer-dups', d: 'M -0.08,0.091 L 0.76,0.886', tone: 'purple', strokeWidth: 2.6 }
+      /* demand up, supply down — D₂ solid blue, S₃ solid amber */
+      { layer: 'layer-dups', d: 'M 0.28,0.886 L 1.12,0.091', tone: 'blue',  strokeWidth: 3 },
+      { layer: 'layer-dups', d: 'M -0.08,0.091 L 0.76,0.886', tone: 'amber', strokeWidth: 3 }
     ],
 
     points: [
-      { x: 0.52, y: 0.49, tone: 'slate', radius: 6, label: 'E', labelDx: -14, labelDy: -9, anchor: 'end' },
-      { layer: 'layer-both', x: 0.70, y: 0.488, tone: 'green', radius: 6, hollow: true },
-      { layer: 'layer-dups', x: 0.522, y: 0.658, tone: 'purple', radius: 6, hollow: true }
+      { x: 0.52, y: 0.49, tone: 'slate', radius: 6, label: 'E', labelDx: 0, labelDy: -13, anchor: 'middle' },
+      { layer: 'layer-both', x: 0.70, y: 0.488, tone: 'slate', radius: 6, hollow: true },
+      { layer: 'layer-dups', x: 0.522, y: 0.658, tone: 'slate', radius: 6, hollow: true }
     ],
 
     arrows: [
@@ -56,14 +60,14 @@
     ],
 
     texts: [
-      { layer: 'layer-both', x: 0.95, y: 0.36, text: 'D₂', tone: 'green', bold: true, fontSize: 13, anchor: 'middle' },
-      { layer: 'layer-both', x: 0.95, y: 0.66, text: 'S₂', tone: 'green', bold: true, fontSize: 13, anchor: 'middle' },
-      { layer: 'layer-both', x: 0.73, y: 0.52, text: 'E₂', tone: 'green', bold: true, fontSize: 13, anchor: 'start' },
+      { layer: 'layer-both', x: 0.95, y: 0.36, text: 'D₂', tone: 'blue',  bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-both', x: 0.95, y: 0.66, text: 'S₂', tone: 'amber', bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-both', x: 0.70, y: 0.58, text: 'E₂', tone: 'slate', bold: true, fontSize: 13, anchor: 'middle' },
       { layer: 'layer-both', x: 0.40, y: -0.155, text: 'Q rises · P ambiguous', tone: 'green', bold: true, fontSize: 12, anchor: 'middle' },
 
-      { layer: 'layer-dups', x: 0.95, y: 0.36, text: 'D₂', tone: 'green',  bold: true, fontSize: 13, anchor: 'middle' },
-      { layer: 'layer-dups', x: 0.46, y: 0.74, text: 'S₃', tone: 'purple', bold: true, fontSize: 13, anchor: 'middle' },
-      { layer: 'layer-dups', x: 0.545, y: 0.69, text: 'E₂', tone: 'purple', bold: true, fontSize: 13, anchor: 'start' },
+      { layer: 'layer-dups', x: 0.95, y: 0.36, text: 'D₂', tone: 'blue',  bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-dups', x: 0.40, y: 0.74, text: 'S₃', tone: 'amber', bold: true, fontSize: 13, anchor: 'middle' },
+      { layer: 'layer-dups', x: 0.60, y: 0.70, text: 'E₂', tone: 'slate', bold: true, fontSize: 13, anchor: 'start' },
       { layer: 'layer-dups', x: 0.40, y: -0.155, text: 'P rises · Q ambiguous', tone: 'purple', bold: true, fontSize: 12, anchor: 'middle' }
     ]
   };

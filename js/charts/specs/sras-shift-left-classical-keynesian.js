@@ -46,7 +46,10 @@
 
     curves: [
       /* ── Shared AD (no perspective tag – visible in both views) ── */
-      { id: 'AD', d: 'M 0.100,0.798 L 0.950,0.118',
+      /* AD lifted so AD ∩ LRAS coincides with SRAS₁ at Yf (base
+         equilibrium now sits ON SRAS₁ at a higher price). Slope −0.8;
+         passes through (Yf 0.66, 0.45). */
+      { id: 'AD', d: 'M 0.100,0.898 L 0.950,0.218',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: -10, anchor: 'end' },
 
@@ -68,9 +71,9 @@
         layer: 'c-sras1-dash', perspective: 'classical' },
       /* SRAS₂ solid (V2+) – parallel-left shift: same slope 0.75,
          displaced +0.15 in y (= 0.20 leftward). */
-      { id: 'sras2', d: 'M 0.100,0.180 L 0.800,0.705',
+      { id: 'sras2', d: 'M 0.100,0.243 L 0.800,0.768',
         tone: 'slate', label: 'SRAS₂', strokeWidth: 2.2,
-        labelDx: -6, labelDy: -10, anchor: 'end',
+        labelDx: 2, labelDy: 14, anchor: 'start',
         layer: 'c-sras2', perspective: 'classical' },
 
       /* ══════════════ KEYNESIAN ══════════════ */
@@ -88,7 +91,7 @@
       /* AS₂ reverse-L – price FLOOR rises (0.30 → 0.42), capacity
          unchanged. The "cost shock" reading of Keynesian AS. */
       { id: 'as2_k',
-        shape: { type: 'keynesianAS', flatY: 0.50, kneeX: 0.34, capacityX: YF, top: 0.95, startX: 0.05 },
+        shape: { type: 'keynesianAS', flatY: 0.56, kneeX: 0.34, capacityX: YF, top: 0.95, startX: 0.05 },
         tone: 'amber', label: 'AS₂', strokeWidth: 2.5,
         labelDx: -6, labelDy: -8, anchor: 'end',
         layer: 'k-as2', perspective: 'keynesian' }

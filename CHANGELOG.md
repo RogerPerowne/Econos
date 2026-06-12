@@ -6,6 +6,16 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.17 — 2026-06-12
+
+### Review batch 3 — LRAS growth diagram drops SRAS on the final view
+
+- **`lrasShiftDiagram` (LRAS & economic growth card):** on the "Tomorrow"
+  view the new equilibrium E₂ sits on AD∩LRAS₂ but the old SRAS line floated
+  off it. Moved SRAS onto its own layer shown in Today / Capacity-grows only,
+  so the final view reads as a clean AD + LRAS-shift growth picture (PDF item
+  4). Snapshot updated; chart-lint clean.
+
 ## 0.171.16 — 2026-06-12
 
 ### Review batch 2 — SRAS cost-shock base equilibrium (classical view)

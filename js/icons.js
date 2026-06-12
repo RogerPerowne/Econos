@@ -18731,46 +18731,68 @@ window.ECONOS_ICONS = {
      Same rightward demand shift; inelastic (steep) supply gives a big
      wage change, elastic (flat) supply gives a big quantity change. */
   labourSupplyElasticity: `
-    <div style="background:#fff;border-radius:14px;padding:14px 12px;font-family:Inter,sans-serif;color:#0B1426;">
-      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <defs>
-          <marker id="lse-v" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M 8 0 L 0 3 L 8 6" fill="none" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
-          <marker id="lse-h" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M 8 0 L 0 3 L 8 6" fill="none" stroke="#1D4ED8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
-        </defs>
-        <!-- Panel A: inelastic (steep) supply -->
-        <text x="60" y="28" font-size="12" font-weight="800" fill="#B45309">Inelastic labour supply</text>
-        <line x1="60" y1="48" x2="60" y2="250" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="60" y1="250" x2="330" y2="250" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="330" y="266" font-size="10" fill="#475569" text-anchor="end">L</text>
-        <line x1="130" y1="250" x2="190" y2="70" stroke="#16A34A" stroke-width="2.4"/>
-        <text x="194" y="78" font-size="10.5" font-weight="800" fill="#16A34A">S</text>
-        <line x1="70" y1="120" x2="250" y2="240" stroke="#2563EB" stroke-width="2.2"/>
-        <text x="252" y="240" font-size="10.5" font-weight="800" fill="#2563EB">D</text>
-        <line x1="120" y1="90" x2="300" y2="210" stroke="#60A5FA" stroke-width="2.2" stroke-dasharray="6 4"/>
-        <text x="302" y="210" font-size="10.5" font-weight="800" fill="#2563EB">D₁</text>
-        <circle cx="155" cy="177" r="4.5" fill="#0B1426"/>
-        <circle cx="172" cy="124" r="4.5" fill="#0B1426"/>
-        <line x1="74" y1="177" x2="74" y2="124" stroke="#B45309" stroke-width="2" marker-start="url(#lse-v)" marker-end="url(#lse-v)"/>
-        <text x="86" y="154" font-size="10" font-weight="800" fill="#B45309" text-anchor="end">big ΔW</text>
-        <text x="195" y="284" font-size="10.5" fill="#475569" text-anchor="middle">Wage rises a lot, employment barely changes</text>
-        <!-- divider -->
-        <line x1="372" y1="40" x2="372" y2="270" stroke="#E2E8F0" stroke-width="1.2" stroke-dasharray="4 4"/>
-        <!-- Panel B: elastic (flat) supply -->
-        <text x="412" y="28" font-size="12" font-weight="800" fill="#1D4ED8">Elastic labour supply</text>
-        <line x1="412" y1="48" x2="412" y2="250" stroke="#0B1426" stroke-width="1.4"/>
-        <line x1="412" y1="250" x2="700" y2="250" stroke="#0B1426" stroke-width="1.4"/>
-        <text x="700" y="266" font-size="10" fill="#475569" text-anchor="end">L</text>
-        <line x1="440" y1="182" x2="690" y2="150" stroke="#16A34A" stroke-width="2.4"/>
-        <text x="694" y="150" font-size="10.5" font-weight="800" fill="#16A34A">S</text>
-        <line x1="432" y1="100" x2="612" y2="240" stroke="#2563EB" stroke-width="2.2"/>
-        <text x="610" y="240" font-size="10.5" font-weight="800" fill="#2563EB">D</text>
-        <line x1="480" y1="90" x2="700" y2="210" stroke="#60A5FA" stroke-width="2.2" stroke-dasharray="6 4"/>
-        <text x="702" y="210" font-size="10.5" font-weight="800" fill="#2563EB">D₁</text>
-        <circle cx="520" cy="168" r="4.5" fill="#0B1426"/>
-        <circle cx="610" cy="159" r="4.5" fill="#0B1426"/>
-        <line x1="520" y1="262" x2="610" y2="262" stroke="#1D4ED8" stroke-width="2" marker-start="url(#lse-h)" marker-end="url(#lse-h)"/>
-        <text x="565" y="284" font-size="10" font-weight="800" fill="#1D4ED8" text-anchor="middle">big ΔL</text>
-      </svg>
+    <div class="lse" style="background:#fff;border-radius:14px;padding:14px 10px;font-family:Inter,sans-serif;color:var(--econ-ink);">
+      <style>
+        .lse .lse-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin:0 auto;}
+        .lse .lse-panel{border:1.5px solid var(--econ-slate-100);border-radius:12px;padding:8px 6px 4px;}
+        .lse .lse-cap{text-align:center;font-size:11px;color:var(--econ-slate);line-height:1.35;margin-top:2px;}
+        @media(max-width:600px){.lse .lse-grid{grid-template-columns:1fr;}}
+      </style>
+      <div class="lse-grid">
+        <div class="lse-panel">
+          <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <defs><marker id="lse-vw" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M 1 4.5 L 8 1.5 L 8 7.5 Z" fill="var(--econ-amber-700)"/></marker></defs>
+            <!-- axes -->
+            <text x="40" y="34" font-size="11" font-weight="800" fill="var(--econ-amber-700)">Inelastic labour supply</text>
+            <line x1="44" y1="46" x2="44" y2="260" stroke="var(--econ-ink)" stroke-width="1.4"/>
+            <line x1="44" y1="260" x2="322" y2="260" stroke="var(--econ-ink)" stroke-width="1.4"/>
+            <text x="30" y="56" font-size="11" font-weight="700" fill="var(--econ-slate)">W</text>
+            <text x="322" y="276" font-size="11" font-weight="700" fill="var(--econ-slate)" text-anchor="end">L</text>
+            <!-- demand shift D0 -> D1 (same blue, original dashed) -->
+            <line x1="60" y1="100" x2="250" y2="240" stroke="var(--econ-blue)" stroke-width="1.8" stroke-dasharray="6 4"/>
+            <text x="254" y="244" font-size="10.5" font-weight="800" fill="var(--econ-blue)">D₀</text>
+            <line x1="60" y1="35" x2="250" y2="175" stroke="var(--econ-blue)" stroke-width="2.2"/>
+            <text x="254" y="176" font-size="10.5" font-weight="800" fill="var(--econ-blue)">D₁</text>
+            <!-- steep (inelastic) supply -->
+            <line x1="130" y1="250" x2="155" y2="55" stroke="#16A34A" stroke-width="2.4"/>
+            <text x="159" y="58" font-size="10.5" font-weight="800" fill="#16A34A">S</text>
+            <!-- equilibria on the curves -->
+            <line x1="44" y1="160" x2="141.5" y2="160" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="44" y1="101" x2="149" y2="101" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="141.5" cy="160" r="4.5" fill="var(--econ-ink)"/>
+            <circle cx="149" cy="101" r="4.5" fill="var(--econ-ink)"/>
+            <!-- big ΔW bracket -->
+            <line x1="72" y1="158" x2="72" y2="103" stroke="var(--econ-amber-700)" stroke-width="2" marker-start="url(#lse-vw)" marker-end="url(#lse-vw)"/>
+            <text x="80" y="134" font-size="10" font-weight="800" fill="var(--econ-amber-700)">big ΔW</text>
+          </svg>
+          <div class="lse-cap">Wage rises a lot,<br>employment barely changes.</div>
+        </div>
+        <div class="lse-panel">
+          <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <defs><marker id="lse-hl" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M 1 4.5 L 8 1.5 L 8 7.5 Z" fill="var(--econ-blue-700)"/></marker></defs>
+            <text x="40" y="34" font-size="11" font-weight="800" fill="var(--econ-blue-700)">Elastic labour supply</text>
+            <line x1="44" y1="46" x2="44" y2="260" stroke="var(--econ-ink)" stroke-width="1.4"/>
+            <line x1="44" y1="260" x2="322" y2="260" stroke="var(--econ-ink)" stroke-width="1.4"/>
+            <text x="30" y="56" font-size="11" font-weight="700" fill="var(--econ-slate)">W</text>
+            <text x="322" y="276" font-size="11" font-weight="700" fill="var(--econ-slate)" text-anchor="end">L</text>
+            <line x1="70" y1="90" x2="245" y2="245" stroke="var(--econ-blue)" stroke-width="1.8" stroke-dasharray="6 4"/>
+            <text x="249" y="247" font-size="10.5" font-weight="800" fill="var(--econ-blue)">D₀</text>
+            <line x1="70" y1="35" x2="245" y2="190" stroke="var(--econ-blue)" stroke-width="2.2"/>
+            <text x="249" y="190" font-size="10.5" font-weight="800" fill="var(--econ-blue)">D₁</text>
+            <!-- shallow (elastic) supply -->
+            <line x1="75" y1="180" x2="300" y2="150" stroke="#16A34A" stroke-width="2.4"/>
+            <text x="304" y="150" font-size="10.5" font-weight="800" fill="#16A34A">S</text>
+            <line x1="159" y1="169" x2="159" y2="260" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="213" y1="162" x2="213" y2="260" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="159" cy="169" r="4.5" fill="var(--econ-ink)"/>
+            <circle cx="213" cy="162" r="4.5" fill="var(--econ-ink)"/>
+            <!-- big ΔL bracket -->
+            <line x1="161" y1="274" x2="211" y2="274" stroke="var(--econ-blue-700)" stroke-width="2" marker-start="url(#lse-hl)" marker-end="url(#lse-hl)"/>
+            <text x="186" y="290" font-size="10" font-weight="800" fill="var(--econ-blue-700)" text-anchor="middle">big ΔL</text>
+          </svg>
+          <div class="lse-cap">Employment rises a lot,<br>wage barely changes.</div>
+        </div>
+      </div>
     </div>
   `,
 
@@ -19810,6 +19832,9 @@ window.ECONOS_ICONS = {
           '<div class="bps-cap">'+d.cap+'</div></div>';
         }).join('')}
       </div>
+      <svg viewBox="0 0 100 26" preserveAspectRatio="none" width="100%" height="26" style="display:block;max-width:820px;margin:0 auto;" aria-hidden="true">
+        <path d="M 12.5 0 V 12 M 37.5 0 V 12 M 62.5 0 V 12 M 87.5 0 V 12 M 12.5 12 H 87.5 M 50 12 V 26" fill="none" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 3" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+      </svg>
       <div class="bps-out"><div class="bps-outp"><span style="font-size:22px;">🌐</span><div style="text-align:left;"><div style="font-size:13px;font-weight:800;color:#1E3A8A;">Current account improves</div><div style="font-size:11px;color:#475569;">Deficit narrows or surplus increases.</div></div></div></div>
     </div>
   `,
@@ -20543,18 +20568,18 @@ window.ECONOS_ICONS = {
   povertyCausesOutcomes: `
     <div style="line-height:1.3;background:#fff;border-radius:14px;padding:16px 8px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .pco-row{display:flex;align-items:stretch;justify-content:center;gap:5px;flex-wrap:wrap;max-width:960px;margin:0 auto;}
-        .pco-node{flex:0 1 128px;min-width:104px;border-radius:12px;padding:11px 9px;text-align:center;}
+        .pco-row{display:flex;align-items:stretch;justify-content:center;gap:5px;max-width:960px;margin:0 auto;}
+        .pco-node{flex:1 1 0;min-width:0;border-radius:12px;padding:11px 7px;text-align:center;}
         .pco-ci{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:21px;margin:0 auto 6px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
         .pco-t{font-size:12px;font-weight:800;line-height:1.15;}
         .pco-s{font-size:10px;color:#475569;line-height:1.3;margin-top:3px;}
         .pco-arr{align-self:center;color:#94A3B8;font-size:18px;font-weight:700;flex:0 0 auto;}
-        .pco-out{flex:1 1 200px;min-width:184px;border:2px solid #6EE7B7;border-radius:12px;padding:11px 12px;background:#F0FDF4;display:flex;flex-direction:column;justify-content:center;gap:8px;}
+        .pco-out{flex:1.5 1 0;min-width:0;border:2px solid #6EE7B7;border-radius:12px;padding:11px 12px;background:#F0FDF4;display:flex;flex-direction:column;justify-content:center;gap:8px;}
         .pco-orow{display:flex;align-items:center;gap:9px;}
         .pco-oc{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
         .pco-ot{font-size:11.5px;font-weight:800;line-height:1.18;}
         .pco-os{font-size:10px;color:#475569;line-height:1.25;}
-        @media(max-width:780px){.pco-arr{transform:rotate(90deg);width:100%;}}
+        @media(max-width:680px){.pco-row{flex-direction:column;}.pco-node,.pco-out{flex:none;width:100%;}.pco-arr{transform:rotate(90deg);align-self:center;}}
       </style>
       <div class="pco-row">
         ${(function(){

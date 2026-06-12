@@ -6,6 +6,34 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.4 — 2026-06-12
+
+### Review set 2 (batch 5) — labour elasticity rebuild, policy connectors, causes flow
+
+- **Wage Determination "two elasticity stories" (`labourSupplyElasticity`):**
+  rebuilt both panels with accurate geometry — the equilibrium dots now sit
+  exactly on the S∩D₀ and S∩D₁ intersections, with clean ΔW / ΔL brackets and
+  house-rule dashing (original demand dashed). Now two responsive panels that
+  stack on mobile. Tokenised its palette (DUP baseline 6815 → 6793).
+- **Balance of Payments "policy toolkit" (`bopPolicySliders`):** added fan
+  connectors from the four policy cards down to the "current account improves"
+  outcome box, matching the mockup.
+- **Absolute & Relative Poverty "causes to outcomes" (`povertyCausesOutcomes`):**
+  the cards now shrink to fit a single clean row and stack on mobile, instead
+  of wrapping awkwardly.
+
+## 0.172.3 — 2026-06-12
+
+### Review set 2 (batch 4) — price-cap P=MC, FTA-vs-CU, dial resize
+
+- **Price-cap monopoly (`price-cap-monopoly`):** raised the cap to the MC=D
+  crossing so it sits at P=MC (allocative efficiency).
+- **FTA vs customs union (`ftaVsCustomsFlows`):** the two rows now differ —
+  the FTA shows outside goods slipping in via the lower-tariff member; the
+  customs union shows a common external tariff blocking that route.
+- **Interest-rate magnet (`fxInterestMagnet`):** shrank the gauge so the flow
+  fits a single row.
+
 ## 0.172.2 — 2026-06-12
 
 ### Review set 2 (batch 3) — whitespace, alignment & overflow

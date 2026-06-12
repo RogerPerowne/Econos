@@ -165,9 +165,26 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F512}', tone: 'green', text: 'The further the curve lies below the 45° line, the <strong>greater the inequality</strong>.' },
 
-      visualKey: 'lorenzCurve',
-      visualLabel: 'THE DIAGRAM',
-      visualEmoji: '\u{1F517}',
+      interactiveDiagram: {
+        svgKey: 'lorenzCurve',
+        label: 'THE DIAGRAM',
+        emoji: '\u{1F517}',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          { label: 'Line of equality', show: ['idl-1'], tone: 'slate',
+            head: 'The line of equality (45°).',
+            body: 'If income were shared perfectly evenly, the poorest 20% would have 20% of income, the poorest 50% would have 50%, and so on — a straight 45° line.',
+            analysis: 'This diagonal is the benchmark: perfect equality.' },
+          { label: 'Lorenz curve', show: ['idl-1', 'idl-2'], tone: 'purple',
+            head: 'The Lorenz curve bows below.',
+            body: 'In reality the poorest share of the population holds a smaller share of income, so the actual distribution <strong>sags below</strong> the 45° line.',
+            analysis: 'Each point reads "the poorest X% of people receive Y% of income".' },
+          { label: 'Reading the bow', show: ['idl-1', 'idl-2', 'idl-3'], tone: 'green',
+            head: 'The bigger the bow, the more unequal.',
+            body: 'The further the curve sags from the line, the more unequal the distribution. A curve <strong>closer to the line</strong> means a more equal society.',
+            analysis: 'This gap is exactly what the Gini coefficient measures — covered next.' }
+        ]
+      },
 
       flowTitle: 'HOW TO BUILD IT',
       flowEmoji: '\u{1F517}',
@@ -240,10 +257,26 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '\u{1F512}', tone: 'green', text: 'Gini = area between the line of equality and the Lorenz curve, divided by the <strong>total area below the line</strong>.' },
 
-      visualKey: 'giniAreas',
-      visualLabel: 'FROM CURVE TO NUMBER',
-      visualEmoji: '\u{1F517}',
-      visualCaption: 'Gini = A ÷ (A + B). The bigger area A is relative to the whole triangle, the more unequal the distribution.',
+      interactiveDiagram: {
+        svgKey: 'giniAreas',
+        label: 'FROM CURVE TO NUMBER',
+        emoji: '\u{1F517}',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          { label: 'Curve vs line', show: ['idl-1'], tone: 'slate',
+            head: 'Start with the Lorenz curve and the 45° line.',
+            body: 'The gap between the line of equality and the Lorenz curve captures how unequal the distribution is.',
+            analysis: 'The Gini turns that gap into one number between 0 (perfect equality) and 1 (one person has everything).' },
+          { label: 'Area A — the gap', show: ['idl-1', 'idl-2'], tone: 'blue',
+            head: 'Area A: between the line and the curve.',
+            body: 'Shade the lens between the 45° line and the Lorenz curve. <strong>Bigger A = more unequal.</strong>',
+            analysis: 'A is the "inequality" area — it grows as the curve sags further from the line.' },
+          { label: 'A ÷ (A + B)', show: ['idl-1', 'idl-2', 'idl-3'], tone: 'green',
+            head: 'Gini = A ÷ (A + B).',
+            body: 'Area B is everything below the Lorenz curve. The Gini coefficient is A divided by the whole triangle (A + B).',
+            analysis: 'So the Gini is the share of the triangle taken up by the gap — a clean 0–1 measure of inequality.' }
+        ]
+      },
 
       flowChart: { svgKey: 'giniScale', label: 'HOW TO READ IT', emoji: '\u{1F517}' },
 

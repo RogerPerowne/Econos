@@ -275,7 +275,7 @@
           ${!isLast ? '<div class="flow-step__connector"></div>' : ''}
         </div>`;
     }).join('');
-    return `<div class="flow-chain" style="grid-template-columns:repeat(${n},1fr);">${inner}</div>`;
+    return `<div class="flow-chain" style="grid-template-columns:repeat(${n},minmax(0,1fr));">${inner}</div>`;
   }
 
   /* Flow blocks explicitly titled "The Chain" ("THE CHAIN", "The chain: …",

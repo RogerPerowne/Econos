@@ -310,17 +310,17 @@ window.ECONOS_TOPIC = {
         svgKey: 'lrasShiftDiagram',
         label: 'TODAY → TOMORROW',
         emoji: '\u{1F4CA}',
-        layers: ['idl-1', 'idl-2'],
+        layers: ['sras', 'idl-1', 'idl-2'],
         inverseLayers: ['idl-old-solid'],
         views: [
           {
-            label: 'Today', show: [], tone: 'blue',
+            label: 'Today', show: ['sras'], tone: 'blue',
             head: 'Today\'s capacity at E₁.',
             body: ['AD meets LRAS₁ at E₁ – output Y₁ at price level P₁.', 'This is the economy\'s current productive frontier.'],
             analysis: 'Read LRAS₁ as the wall today\'s output cannot sustainably pass.'
           },
           {
-            label: 'Capacity grows', show: ['idl-1'], tone: 'green',
+            label: 'Capacity grows', show: ['sras', 'idl-1'], tone: 'green',
             head: 'LRAS₁ → LRAS₂.',
             body: ['Investment, a more skilled workforce and better technology raise potential output.', 'The whole capacity wall slides rightward to LRAS₂.'],
             analysis: 'This rightward shift IS long-run growth – an increase in productive potential, not just more spending.'

@@ -37,7 +37,7 @@
     height: 305,
     chartArea: { x: 55, y: 18, width: 360, height: 254 },
     className: 'lras-shift-diagram-svg',
-    layers: ['idl-1', 'idl-2'],
+    layers: ['sras', 'idl-1', 'idl-2'],
     inverseLayers: ['idl-old-solid'],
 
     axes: {
@@ -50,10 +50,12 @@
       { d: 'M 0.097,0.894 L 0.931,0.067',
         tone: 'blue', label: 'AD', strokeWidth: 2,
         labelDx: -6, labelDy: 6, anchor: 'end' },
-      // Base SRAS – always visible, upward sloping
+      // SRAS – shown in Today/Capacity-grows; dropped on the Tomorrow
+      // view so the long-run growth story reads as a clean AD + LRAS
+      // shift (E₂ sits on AD ∩ LRAS₂, no stray SRAS to float off).
       { d: 'M 0.097,0.067 L 0.931,0.894',
         tone: 'slate', label: 'SRAS', strokeWidth: 2,
-        labelDx: -6, labelDy: -6, anchor: 'end' },
+        labelDx: -6, labelDy: -6, anchor: 'end', layer: 'sras' },
       // Base LRAS₁ solid – hidden once any view becomes active
       { d: 'M ' + Yf1 + ',0 L ' + Yf1 + ',1',
         tone: 'green', label: 'LRAS₁', strokeWidth: 2.5,

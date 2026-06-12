@@ -15272,8 +15272,9 @@ window.ECONOS_ICONS = {
       </style>
       <div class="bom-shell">
         <svg class="bom-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <!-- Survival (top) to hub – straight vertical dashed line down -->
-          <path d="M 50 12 L 50 65" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Survival (top) to hub – starts BELOW the Survival box (was
+               12%, which sat inside the box) down to the hub. -->
+          <path d="M 50 24 L 50 65" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
           <!-- Sales (TL) to hub -->
           <path d="M 36 48 C 44 48, 44 65, 50 65" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
           <!-- Profit (TR) to hub -->
@@ -15284,7 +15285,7 @@ window.ECONOS_ICONS = {
           <path d="M 64 82 C 56 82, 56 65, 50 65" fill="none" stroke="#5EEAD4" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
         <div class="bom-dots">
-          <div class="bom-dot" style="left:50%;top:12%;background:#60A5FA;"></div>
+          <div class="bom-dot" style="left:50%;top:24%;background:#60A5FA;"></div>
           <div class="bom-dot" style="left:36%;top:48%;background:#FB923C;"></div>
           <div class="bom-dot" style="left:64%;top:48%;background:#34D399;"></div>
           <div class="bom-dot" style="left:36%;top:82%;background:#A78BFA;"></div>
@@ -15333,80 +15334,82 @@ window.ECONOS_ICONS = {
   whoWantsWhatHub: `
     <div class="wwh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .wwh .wwh-shell { position:relative; max-width:620px; margin:0 auto; }
+        .wwh .wwh-shell { position:relative; max-width:660px; margin:0 auto; }
         .wwh .wwh-conn { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
         .wwh .wwh-dots { position:absolute; inset:0; pointer-events:none; z-index:3; }
         .wwh .wwh-dot { position:absolute; transform:translate(-50%,-50%); width:11px; height:11px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(11,20,38,0.18); }
-        .wwh .wwh-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); grid-template-rows:auto auto auto; column-gap:14px; row-gap:14px; position:relative; z-index:1; }
-        .wwh .wwh-tile { border-radius:12px; padding:9px 11px; display:flex; gap:8px; align-items:center; min-height:64px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); min-width:0; }
-        .wwh .wwh-ic { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
-        .wwh .wwh-t { font-size:11.5px; font-weight:800; line-height:1.15; }
-        .wwh .wwh-s { font-size:10.5px; color:#475569; line-height:1.4; margin-top:2px; }
-        .wwh .wwh-center-cell { display:flex; align-items:center; justify-content:center; min-height:74px; }
-        .wwh .wwh-center { background:#fff; border:1.5px solid #E2E8F0; border-radius:50%; width:104px; height:104px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:6px; box-shadow:0 0 0 6px rgba(241,245,249,0.65), 0 5px 14px rgba(11,20,38,0.10); position:relative; z-index:2; }
-        .wwh .wwh-center-emoji { font-size:28px; line-height:1; }
-        .wwh .wwh-center-t { font-size:13px; font-weight:800; color:#0B1426; font-family:Fraunces,Georgia,serif; margin-top:5px; text-align:center; line-height:1.2; }
-        .wwh .wwh-r1c1 { grid-column:1; grid-row:1; } .wwh .wwh-r1c2 { grid-column:2; grid-row:1; }
-        .wwh .wwh-r1c3 { grid-column:3; grid-row:1; } .wwh .wwh-r2c1 { grid-column:1; grid-row:2; }
-        .wwh .wwh-r2c2 { grid-column:2; grid-row:2; } .wwh .wwh-r2c3 { grid-column:3; grid-row:2; }
-        .wwh .wwh-r3c2 { grid-column:2; grid-row:3; }
+        /* 3 left tiles · hub · 3 right tiles — a clean two-sided fan. */
+        .wwh .wwh-grid { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); grid-template-rows:auto auto auto; column-gap:9%; row-gap:16px; position:relative; z-index:1; align-items:center; }
+        .wwh .wwh-tile { border-radius:12px; padding:11px 13px; display:flex; gap:9px; align-items:center; min-height:70px; box-sizing:border-box; box-shadow:0 1px 3px rgba(15,23,42,0.04); min-width:0; }
+        .wwh .wwh-ic { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+        .wwh .wwh-t { font-size:13px; font-weight:800; line-height:1.15; }
+        .wwh .wwh-s { font-size:11.5px; color:#475569; line-height:1.4; margin-top:2px; }
+        .wwh .wwh-center-cell { grid-column:2; grid-row:1 / span 3; display:flex; align-items:center; justify-content:center; }
+        .wwh .wwh-center { background:#fff; border:1.5px solid #E2E8F0; border-radius:50%; width:118px; height:118px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:6px; box-shadow:0 0 0 7px rgba(241,245,249,0.65), 0 5px 14px rgba(11,20,38,0.10); position:relative; z-index:2; }
+        .wwh .wwh-center-emoji { font-size:30px; line-height:1; }
+        .wwh .wwh-center-t { font-size:14px; font-weight:800; color:#0B1426; font-family:Fraunces,Georgia,serif; margin-top:5px; text-align:center; line-height:1.2; }
+        /* left column rows 1-3, right column rows 1-3 */
+        .wwh .wwh-l1 { grid-column:1; grid-row:1; } .wwh .wwh-l2 { grid-column:1; grid-row:2; } .wwh .wwh-l3 { grid-column:1; grid-row:3; }
+        .wwh .wwh-r1 { grid-column:3; grid-row:1; } .wwh .wwh-r2 { grid-column:3; grid-row:2; } .wwh .wwh-r3 { grid-column:3; grid-row:3; }
         @media (max-width:600px){
           .wwh .wwh-grid { grid-template-columns:1fr; grid-template-rows:none; column-gap:0; row-gap:10px; }
-          .wwh .wwh-r1c1, .wwh .wwh-r1c2, .wwh .wwh-r1c3, .wwh .wwh-r2c1, .wwh .wwh-r2c2, .wwh .wwh-r2c3, .wwh .wwh-r3c2 { grid-column:1; grid-row:auto; }
-          .wwh .wwh-center-cell { order:-1; }
+          .wwh .wwh-l1,.wwh .wwh-l2,.wwh .wwh-l3,.wwh .wwh-r1,.wwh .wwh-r2,.wwh .wwh-r3 { grid-column:1; grid-row:auto; }
+          .wwh .wwh-center-cell { grid-column:1; grid-row:auto; order:-1; }
           .wwh .wwh-conn, .wwh .wwh-dots { display:none; }
         }
       </style>
       <div class="wwh-shell">
         <svg class="wwh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <!-- Top row to hub centre (50, 50) -->
-          <path d="M 17 18 C 25 18, 35 35, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 50 21 L 50 50"             fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 83 18 C 75 18, 65 35, 50 50" fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <!-- Middle row to hub -->
-          <path d="M 24 50 L 50 50" fill="none" stroke="#67E8F9" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <path d="M 76 50 L 50 50" fill="none" stroke="#5EEAD4" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
-          <!-- Bottom centre to hub -->
-          <path d="M 50 79 L 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Left fan: each left tile's inner edge (x≈34) to hub (50,50) -->
+          <path d="M 34 16 C 42 16, 44 50, 50 50" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 34 50 L 50 50"               fill="none" stroke="#67E8F9" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 34 84 C 42 84, 44 50, 50 50" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <!-- Right fan: each right tile's inner edge (x≈66) to hub -->
+          <path d="M 66 16 C 58 16, 56 50, 50 50" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 66 50 L 50 50"               fill="none" stroke="#93C5FD" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
+          <path d="M 66 84 C 58 84, 56 50, 50 50" fill="none" stroke="#5EEAD4" stroke-width="0.5" stroke-dasharray="1.5 1.2" stroke-linecap="round"/>
         </svg>
         <div class="wwh-dots">
-          <div class="wwh-dot" style="left:17%;top:18%;background:#A78BFA;"></div>
-          <div class="wwh-dot" style="left:50%;top:21%;background:#FB923C;"></div>
-          <div class="wwh-dot" style="left:83%;top:18%;background:#60A5FA;"></div>
-          <div class="wwh-dot" style="left:24%;top:50%;background:#22D3EE;"></div>
-          <div class="wwh-dot" style="left:76%;top:50%;background:#2DD4BF;"></div>
-          <div class="wwh-dot" style="left:50%;top:79%;background:#34D399;"></div>
+          <div class="wwh-dot" style="left:34%;top:16%;background:#A78BFA;"></div>
+          <div class="wwh-dot" style="left:34%;top:50%;background:#22D3EE;"></div>
+          <div class="wwh-dot" style="left:34%;top:84%;background:#34D399;"></div>
+          <div class="wwh-dot" style="left:66%;top:16%;background:#FB923C;"></div>
+          <div class="wwh-dot" style="left:66%;top:50%;background:#60A5FA;"></div>
+          <div class="wwh-dot" style="left:66%;top:84%;background:#2DD4BF;"></div>
         </div>
         <div class="wwh-grid">
-          <div class="wwh-tile wwh-r1c1" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
+          <!-- LEFT column -->
+          <div class="wwh-tile wwh-l1" style="background:#F5F3FF;border:1.5px solid #C4B5FD;">
             <div class="wwh-ic">💼</div>
             <div><div class="wwh-t" style="color:#5B21B6;">Managers</div><div class="wwh-s">growth, sales or stable targets.</div></div>
           </div>
-          <div class="wwh-tile wwh-r1c2" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
-            <div class="wwh-ic">👥</div>
-            <div><div class="wwh-t" style="color:#C2410C;">Owners</div><div class="wwh-s">profit and long-run value.</div></div>
-          </div>
-          <div class="wwh-tile wwh-r1c3" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
-            <div class="wwh-ic">👷</div>
-            <div><div class="wwh-t" style="color:#1E3A8A;">Workers</div><div class="wwh-s">pay and job security.</div></div>
-          </div>
-          <div class="wwh-tile wwh-r2c1" style="background:#ECFEFF;border:1.5px solid #67E8F9;">
+          <div class="wwh-tile wwh-l2" style="background:#ECFEFF;border:1.5px solid #67E8F9;">
             <div class="wwh-ic">🛒</div>
             <div><div class="wwh-t" style="color:#155E75;">Customers</div><div class="wwh-s">value and quality.</div></div>
           </div>
-          <div class="wwh-center-cell wwh-r2c2">
+          <div class="wwh-tile wwh-l3" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
+            <div class="wwh-ic">🌱</div>
+            <div><div class="wwh-t" style="color:#065F46;">Communities</div><div class="wwh-s">environmental and social responsibility.</div></div>
+          </div>
+          <!-- HUB -->
+          <div class="wwh-center-cell">
             <div class="wwh-center">
               <div class="wwh-center-emoji">🎯</div>
               <div class="wwh-center-t">Business<br/>objective</div>
             </div>
           </div>
-          <div class="wwh-tile wwh-r2c3" style="background:#F0FDFA;border:1.5px solid #5EEAD4;">
+          <!-- RIGHT column -->
+          <div class="wwh-tile wwh-r1" style="background:#FFF7ED;border:1.5px solid #FDBA74;">
+            <div class="wwh-ic">👥</div>
+            <div><div class="wwh-t" style="color:#C2410C;">Owners</div><div class="wwh-s">profit and long-run value.</div></div>
+          </div>
+          <div class="wwh-tile wwh-r2" style="background:#EFF6FF;border:1.5px solid #93C5FD;">
+            <div class="wwh-ic">👷</div>
+            <div><div class="wwh-t" style="color:#1E3A8A;">Workers</div><div class="wwh-s">pay and job security.</div></div>
+          </div>
+          <div class="wwh-tile wwh-r3" style="background:#F0FDFA;border:1.5px solid #5EEAD4;">
             <div class="wwh-ic">🏛️</div>
             <div><div class="wwh-t" style="color:#0F766E;">Government</div><div class="wwh-s">tax, jobs and legal compliance.</div></div>
-          </div>
-          <div class="wwh-tile wwh-r3c2" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
-            <div class="wwh-ic">🌱</div>
-            <div><div class="wwh-t" style="color:#065F46;">Communities</div><div class="wwh-s">environmental and social responsibility.</div></div>
           </div>
         </div>
       </div>
@@ -15464,12 +15467,10 @@ window.ECONOS_ICONS = {
         <div class="tco-card" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
           <div class="tco-title" style="color:#065F46;"><span class="tco-num" style="background:#059669;">2</span>Profit<br/>maximisation</div>
           <div class="tco-vis">
-            <div style="display:flex;align-items:center;gap:5px;font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:11.5px;font-weight:700;padding:9px 10px;background:#F8FAFC;border:1px dashed #94A3B8;border-radius:8px;flex-wrap:wrap;justify-content:center;">
+            <div style="font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:13px;font-weight:800;padding:9px 10px;background:#F8FAFC;border:1px dashed #94A3B8;border-radius:8px;display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1.25;">
               <span style="color:#0B1426;">Profit</span>
-              <span style="color:#64748B;">=</span>
-              <span style="color:#059669;">revenue</span>
-              <span style="color:#DC2626;">−</span>
-              <span style="color:#DC2626;">cost</span>
+              <span style="color:#64748B;font-size:11px;">=</span>
+              <span style="white-space:nowrap;"><span style="color:#059669;">Revenue</span> <span style="color:#64748B;">−</span> <span style="color:#DC2626;">Cost</span></span>
             </div>
             <div class="tco-vis-cap" style="color:#065F46;margin-top:8px;">The classic objective</div>
           </div>
@@ -25527,16 +25528,16 @@ window.ECONOS_ICONS = {
         </defs>
 
         <!-- Section labels -->
-        <text x="180" y="22" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">Before</text>
-        <text x="620" y="22" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">After</text>
+        <text x="180" y="22" font-size="16" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">Before</text>
+        <text x="620" y="22" font-size="16" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">After</text>
 
         <!-- ============ BEFORE PANEL (centred vertically) ============ -->
         <!-- Parent business -->
         <rect x="20" y="120" width="320" height="76" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
         <circle cx="60" cy="158" r="20" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
         <text x="60" y="165" font-size="22" text-anchor="middle">🏛️</text>
-        <text x="94" y="154" font-size="14" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Parent business</text>
-        <text x="94" y="174" font-size="12" fill="#475569" font-family="Inter,sans-serif">Diversified firm</text>
+        <text x="94" y="153" font-size="17" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Parent business</text>
+        <text x="94" y="175" font-size="14" fill="#475569" font-family="Inter,sans-serif">Diversified firm</text>
 
         <!-- Tree from parent down to 3 divisions -->
         <line x1="180" y1="196" x2="180" y2="234" stroke="#94A3B8" stroke-width="1.6"/>
@@ -25548,26 +25549,26 @@ window.ECONOS_ICONS = {
         <!-- Division A (Retail, blue) -->
         <circle cx="80" cy="304" r="30" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
         <text x="80" y="313" font-size="22" text-anchor="middle">🛒</text>
-        <text x="80" y="360" font-size="12.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
-        <text x="80" y="377" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+        <text x="80" y="361" font-size="15" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="80" y="379" font-size="13.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
 
         <!-- Division B (Manufacturing, green) -->
         <circle cx="180" cy="304" r="30" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
         <text x="180" y="313" font-size="22" text-anchor="middle">🏭</text>
-        <text x="180" y="360" font-size="12.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
-        <text x="180" y="377" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+        <text x="180" y="361" font-size="15" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="180" y="379" font-size="13.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
 
         <!-- Division C (Technology, purple) -->
         <circle cx="280" cy="304" r="30" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
         <text x="280" y="313" font-size="22" text-anchor="middle">💻</text>
-        <text x="280" y="360" font-size="12.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
-        <text x="280" y="377" font-size="11.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+        <text x="280" y="361" font-size="15" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="280" y="379" font-size="13.5" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
 
         <!-- ============ SPIN-OFF ARROW (between panels, vertically centred) ============ -->
         <!-- Label sits in a small white pill above the arrow so it never
              clashes with the arrow stroke or surrounding tree lines. -->
-        <rect x="364" y="206" width="68" height="22" rx="11" fill="#fff" stroke="#CBD5E1" stroke-width="1.2"/>
-        <text x="398" y="221" font-size="12" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Spin-off</text>
+        <rect x="360" y="204" width="76" height="24" rx="12" fill="#fff" stroke="#CBD5E1" stroke-width="1.2"/>
+        <text x="398" y="221" font-size="14" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Spin-off</text>
         <line x1="358" y1="252" x2="436" y2="252" stroke="#94A3B8" stroke-width="3.6" marker-end="url(#dba-arr-grey)"/>
 
         <!-- ============ AFTER PANEL (right, stacked vertically) ============ -->
@@ -25575,8 +25576,8 @@ window.ECONOS_ICONS = {
         <rect x="460" y="34" width="320" height="64" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
         <circle cx="498" cy="66" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
         <text x="498" y="73" font-size="20" text-anchor="middle">🏛️</text>
-        <text x="528" y="62" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">New company 1</text>
-        <text x="528" y="82" font-size="11.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+        <text x="528" y="61" font-size="15.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">New company 1</text>
+        <text x="528" y="83" font-size="13.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
 
         <!-- Tree NC1 → A + B -->
         <line x1="620" y1="98" x2="620" y2="132" stroke="#94A3B8" stroke-width="1.6"/>
@@ -25587,21 +25588,21 @@ window.ECONOS_ICONS = {
         <!-- Division A (Retail, blue) -->
         <circle cx="540" cy="198" r="26" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
         <text x="540" y="207" font-size="20" text-anchor="middle">🛒</text>
-        <text x="540" y="248" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
-        <text x="540" y="264" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+        <text x="540" y="249" font-size="14.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="540" y="266" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
 
         <!-- Division B (Manufacturing, green) -->
         <circle cx="700" cy="198" r="26" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
         <text x="700" y="207" font-size="20" text-anchor="middle">🏭</text>
-        <text x="700" y="248" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
-        <text x="700" y="264" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+        <text x="700" y="249" font-size="14.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="700" y="266" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
 
         <!-- BOTTOM HALF: New company 2 with Div C -->
         <rect x="460" y="300" width="320" height="64" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
         <circle cx="498" cy="332" r="18" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
         <text x="498" y="339" font-size="20" text-anchor="middle">🏛️</text>
-        <text x="528" y="328" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">New company 2</text>
-        <text x="528" y="348" font-size="11.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+        <text x="528" y="327" font-size="15.5" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">New company 2</text>
+        <text x="528" y="349" font-size="13.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
 
         <!-- Tree NC2 → C (single line to single division) -->
         <line x1="620" y1="364" x2="620" y2="402" stroke="#94A3B8" stroke-width="1.6"/>
@@ -25609,8 +25610,8 @@ window.ECONOS_ICONS = {
         <!-- Division C (Technology, purple) -->
         <circle cx="620" cy="428" r="26" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
         <text x="620" y="437" font-size="20" text-anchor="middle">💻</text>
-        <text x="620" y="478" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
-        <text x="620" y="494" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+        <text x="620" y="479" font-size="14.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="620" y="496" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
       </svg>
       </div>
 
@@ -25621,14 +25622,14 @@ window.ECONOS_ICONS = {
         </defs>
 
         <!-- ============ BEFORE block (top) ============ -->
-        <text x="180" y="22" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">Before</text>
+        <text x="180" y="22" font-size="16" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">Before</text>
 
         <!-- Parent business -->
         <rect x="10" y="36" width="340" height="64" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.8"/>
         <circle cx="48" cy="68" r="18" fill="#fff" stroke="#93C5FD" stroke-width="1.5"/>
         <text x="48" y="75" font-size="20" text-anchor="middle">🏛️</text>
-        <text x="80" y="64" font-size="14" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Parent business</text>
-        <text x="80" y="84" font-size="12" fill="#475569" font-family="Inter,sans-serif">Diversified firm</text>
+        <text x="80" y="63" font-size="17" font-weight="800" fill="#1E3A8A" font-family="Inter,sans-serif">Parent business</text>
+        <text x="80" y="85" font-size="14" fill="#475569" font-family="Inter,sans-serif">Diversified firm</text>
 
         <!-- Tree from parent down to 3 divisions -->
         <line x1="180" y1="100" x2="180" y2="134" stroke="#94A3B8" stroke-width="1.6"/>
@@ -25640,34 +25641,34 @@ window.ECONOS_ICONS = {
         <!-- Division A -->
         <circle cx="64" cy="192" r="26" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
         <text x="64" y="200" font-size="20" text-anchor="middle">🛒</text>
-        <text x="64" y="240" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
-        <text x="64" y="256" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+        <text x="64" y="241" font-size="14.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="64" y="258" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
 
         <!-- Division B -->
         <circle cx="180" cy="192" r="26" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
         <text x="180" y="200" font-size="20" text-anchor="middle">🏭</text>
-        <text x="180" y="240" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
-        <text x="180" y="256" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+        <text x="180" y="241" font-size="14.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="180" y="258" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
 
         <!-- Division C -->
         <circle cx="296" cy="192" r="26" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
         <text x="296" y="200" font-size="20" text-anchor="middle">💻</text>
-        <text x="296" y="240" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
-        <text x="296" y="256" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+        <text x="296" y="241" font-size="14.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="296" y="258" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
 
         <!-- ============ ↓ Spin-off arrow ============ -->
-        <text x="180" y="296" font-size="13" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Spin-off</text>
+        <text x="180" y="296" font-size="15" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Spin-off</text>
         <line x1="180" y1="306" x2="180" y2="346" stroke="#94A3B8" stroke-width="3.6" marker-end="url(#dba-arr-grey-v)"/>
 
         <!-- ============ AFTER block (bottom) ============ -->
-        <text x="180" y="378" font-size="13" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">After</text>
+        <text x="180" y="378" font-size="16" font-weight="800" fill="#2563EB" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="0.04em">After</text>
 
         <!-- New company 1 (with Div A + Div B) -->
         <rect x="10" y="392" width="340" height="60" rx="10" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.8"/>
         <circle cx="44" cy="422" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
         <text x="44" y="429" font-size="20" text-anchor="middle">🏛️</text>
-        <text x="76" y="418" font-size="13" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">New company 1</text>
-        <text x="76" y="438" font-size="11.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+        <text x="76" y="417" font-size="15.5" font-weight="800" fill="#065F46" font-family="Inter,sans-serif">New company 1</text>
+        <text x="76" y="439" font-size="13.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
 
         <!-- Tree NC1 → A + B -->
         <line x1="180" y1="452" x2="180" y2="486" stroke="#94A3B8" stroke-width="1.6"/>
@@ -25678,21 +25679,21 @@ window.ECONOS_ICONS = {
         <!-- Div A (under NCo1) -->
         <circle cx="100" cy="542" r="24" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.6"/>
         <text x="100" y="550" font-size="18" text-anchor="middle">🛒</text>
-        <text x="100" y="588" font-size="12" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
-        <text x="100" y="604" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
+        <text x="100" y="589" font-size="14.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" font-family="Inter,sans-serif">Division A</text>
+        <text x="100" y="606" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Retail</text>
 
         <!-- Div B (under NCo1) -->
         <circle cx="260" cy="542" r="24" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.6"/>
         <text x="260" y="550" font-size="18" text-anchor="middle">🏭</text>
-        <text x="260" y="588" font-size="12" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
-        <text x="260" y="604" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
+        <text x="260" y="589" font-size="14.5" font-weight="800" fill="#065F46" text-anchor="middle" font-family="Inter,sans-serif">Division B</text>
+        <text x="260" y="606" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Manufacturing</text>
 
         <!-- New company 2 (with Div C) -->
         <rect x="10" y="640" width="340" height="60" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.8"/>
         <circle cx="44" cy="670" r="18" fill="#fff" stroke="#C4B5FD" stroke-width="1.5"/>
         <text x="44" y="677" font-size="20" text-anchor="middle">🏛️</text>
-        <text x="76" y="666" font-size="13" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">New company 2</text>
-        <text x="76" y="686" font-size="11.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
+        <text x="76" y="665" font-size="15.5" font-weight="800" fill="#5B21B6" font-family="Inter,sans-serif">New company 2</text>
+        <text x="76" y="687" font-size="13.5" fill="#475569" font-family="Inter,sans-serif">Focused business</text>
 
         <!-- Tree NC2 → C (single line) -->
         <line x1="180" y1="700" x2="180" y2="754" stroke="#94A3B8" stroke-width="1.6"/>
@@ -25700,8 +25701,8 @@ window.ECONOS_ICONS = {
         <!-- Div C (under NCo2) -->
         <circle cx="180" cy="780" r="24" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.6"/>
         <text x="180" y="788" font-size="18" text-anchor="middle">💻</text>
-        <text x="180" y="826" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
-        <text x="180" y="842" font-size="11" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
+        <text x="180" y="827" font-size="14.5" font-weight="800" fill="#5B21B6" text-anchor="middle" font-family="Inter,sans-serif">Division C</text>
+        <text x="180" y="844" font-size="13" fill="#475569" text-anchor="middle" font-family="Inter,sans-serif">Technology</text>
       </svg>
       </div>
     </div>

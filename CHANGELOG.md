@@ -6,6 +6,33 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.12 — 2026-06-12
+
+### Business Objectives / Business Growth — formatting batch
+
+- **THE LIMITS (Conglomerate integration card):** the four-item limits
+  block (Little synergy · Lack of expertise · Complexity · Unclear
+  focus) now lays out as a clean 2×2 grid instead of a single 4-wide
+  row (`causes2Cols: 4 → 2`).
+- **Demerger before/after tree (`demergerBeforeAfter`):** bumped every
+  text label ~2–3px throughout both the desktop and mobile layouts
+  (section labels, firm names, division labels and captions) for
+  legibility; emoji glyphs left at their existing size and box
+  geometry re-checked so nothing overflows.
+- **Five main objectives hub (`businessObjectivesMap`):** the Survival
+  (top) dashed connector started inside the Survival box and clashed
+  with it — its origin now sits below the box (path + dot moved from
+  12% to 24%).
+- **Profit-maximisation equation (`threeClassicObjectives`):** the
+  single-line "Profit = Revenue − Cost" overflowed and was clipped in
+  the narrow card column. Restructured as a centred stacked equation
+  (Profit / = / Revenue − Cost) that fits cleanly while keeping the
+  colour coding.
+- **Stakeholder hub (`whoWantsWhatHub`):** rebuilt to a 3-left / hub /
+  3-right fan (Managers · Customers · Communities on the left; Owners ·
+  Workers · Government on the right) with curved connectors that no
+  longer cross or clash, plus a single-column mobile stack.
+
 ## 0.171.11 — 2026-06-12
 
 ### 2021–23 inflation surge AD/AS — one shift per view + fixes

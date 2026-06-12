@@ -6,6 +6,27 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.2 — 2026-06-12
+
+### Review set 2 (batch 3) — whitespace, alignment & overflow
+
+- **Pattern of Trade "the chain" (`renderFlow`):** the 6-step flow chain
+  overflowed the stage; flow columns now use `minmax(0,1fr)` so long titles
+  wrap instead of pushing the last step off-screen (fixes all long chains).
+- **Terms of Trade worked examples (`totWorkedExamples`):** the trend icon
+  (📈/📉) was absolutely positioned and crashed over the "= 120 / = 90" value;
+  moved it inline into the header.
+- **Balance of Payments hub (`bopGlobeHub`):** trimmed the large empty band
+  above the diagram (shifted the composition up, shorter stage).
+- **BoP statement (`bopBankStatement`):** the dangling "=" now reads
+  "= 0 overall" with a one-line explanation that the accounts sum to zero.
+- **BoP driver dials (`bopDriverDials`):** dials now centre under their text
+  (`display:block;margin:0 auto`).
+- **BoP matching identity (`bopFinanceMatch`):** the "must be financed by"
+  arrow is now vertically centred between the two boxes.
+- **Marshall-Lerner scale (`marshallLernerScale`):** cropped the empty top of
+  the viewBox to remove the whitespace above the scale.
+
 ## 0.172.1 — 2026-06-12
 
 ### Review set 2 (batch 2) — feedback-loop & axis arrowheads

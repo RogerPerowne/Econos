@@ -19467,19 +19467,18 @@ window.ECONOS_ICONS = {
         .twe-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:780px;margin:0 auto;}
         @media(max-width:600px){.twe-grid{grid-template-columns:1fr;}}
         .twe-panel{border-radius:14px;padding:16px 18px;position:relative;}
-        .twe-h{font-size:14px;font-weight:800;margin-bottom:12px;}
+        .twe-h{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;font-weight:800;margin-bottom:12px;}
         .twe-line{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;max-width:230px;}
         .twe-div{border-top:1px solid rgba(0,0,0,0.08);margin:10px 0 8px;}
         .twe-cl{font-size:12.5px;font-weight:700;margin-bottom:6px;}
         .twe-calc{font-size:13px;line-height:1.7;}
         .twe-res{display:flex;align-items:center;gap:10px;border-radius:11px;padding:10px 13px;margin-top:12px;background:#fff;}
         .twe-badge{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex-shrink:0;font-weight:800;}
-        .twe-trend{position:absolute;top:14px;right:14px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:25px;}
+        .twe-trend{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
       </style>
       <div class="twe-grid">
         <div class="twe-panel" style="background:#ECFDF5;border:1.5px solid #86EFAC;">
-          <div class="twe-trend" style="background:#DCFCE7;">📈</div>
-          <div class="twe-h" style="color:#065F46;">Example A — Improvement</div>
+          <div class="twe-h" style="color:#065F46;"><span>Example A — Improvement</span><span class="twe-trend" style="background:#DCFCE7;">📈</span></div>
           <div class="twe-line"><span>Export price index</span><span style="font-weight:800;">= 120</span></div>
           <div class="twe-line"><span>Import price index</span><span style="font-weight:800;">= 100</span></div>
           <div class="twe-div"></div>
@@ -19491,8 +19490,7 @@ window.ECONOS_ICONS = {
           </div>
         </div>
         <div class="twe-panel" style="background:#FEF2F2;border:1.5px solid #FCA5A5;">
-          <div class="twe-trend" style="background:#FEE2E2;">📉</div>
-          <div class="twe-h" style="color:#9F1239;">Example B — Deterioration</div>
+          <div class="twe-h" style="color:#9F1239;"><span>Example B — Deterioration</span><span class="twe-trend" style="background:#FEE2E2;">📉</span></div>
           <div class="twe-line"><span>Export price index</span><span style="font-weight:800;">= 90</span></div>
           <div class="twe-line"><span>Import price index</span><span style="font-weight:800;">= 100</span></div>
           <div class="twe-div"></div>
@@ -19592,7 +19590,7 @@ window.ECONOS_ICONS = {
   bopGlobeHub: `
     <div class="bgh" style="line-height:1.5;background:#fff;border-radius:14px;padding:18px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .bgh .bgh-stage{position:relative;max-width:720px;margin:0 auto;aspect-ratio:7/5;}
+        .bgh .bgh-stage{position:relative;max-width:720px;margin:0 auto;aspect-ratio:8/5;}
         .bgh .bgh-conn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
         .bgh .bgh-tile{position:absolute;transform:translate(-50%,-50%);width:32%;min-width:172px;box-sizing:border-box;border-radius:13px;padding:12px 14px;box-shadow:0 2px 6px rgba(15,23,42,.06);z-index:1;}
         .bgh .bgh-h{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
@@ -19605,17 +19603,17 @@ window.ECONOS_ICONS = {
       </style>
       <div class="bgh-stage">
         <svg class="bgh-conn" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 22 32 L 50 43" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
-          <path d="M 78 32 L 50 43" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
-          <path d="M 50 86 L 50 43" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 22 24 L 50 44" fill="none" stroke="#86EFAC" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 78 24 L 50 44" fill="none" stroke="#FDBA74" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
+          <path d="M 50 84 L 50 44" fill="none" stroke="#C4B5FD" stroke-width="0.5" stroke-dasharray="1.6 1.3" stroke-linecap="round"/>
         </svg>
-        <div class="bgh-globe">🌐</div>
-        <div class="bgh-cap">Balance of payments</div>
-        <div class="bgh-tile" style="left:18%;top:32%;background:#ECFDF5;border:1.5px solid #86EFAC;">
+        <div class="bgh-globe" style="top:44%;">🌐</div>
+        <div class="bgh-cap" style="top:68%;">Balance of payments</div>
+        <div class="bgh-tile" style="left:18%;top:24%;background:#ECFDF5;border:1.5px solid #86EFAC;">
           <div class="bgh-h"><div class="bgh-ic">🛒</div><div class="bgh-t" style="color:#065F46;">Current account</div></div>
           <div class="bgh-s">Goods, services, income, transfers.</div>
         </div>
-        <div class="bgh-tile" style="left:82%;top:32%;background:#FFF7ED;border:1.5px solid #FDBA74;">
+        <div class="bgh-tile" style="left:82%;top:24%;background:#FFF7ED;border:1.5px solid #FDBA74;">
           <div class="bgh-h"><div class="bgh-ic">🏛️</div><div class="bgh-t" style="color:#C2410C;">Capital account</div></div>
           <div class="bgh-s">Capital transfers, non-produced assets.</div>
         </div>
@@ -19678,7 +19676,13 @@ window.ECONOS_ICONS = {
           <div class="bbs-foot" style="color:#5B21B6;">Tracks assets and money movements</div>
         </div>
       </div>
-      <div class="bbs-eq"><div class="bbs-eqb">=</div></div>
+      <div class="bbs-eq" style="flex-direction:column;gap:7px;margin-top:12px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="bbs-eqb">=</div>
+          <div style="font-size:14px;font-weight:var(--fw-extrabold);color:var(--econ-blue-700);">0 overall</div>
+        </div>
+        <div style="font-size:var(--fs-2xs);color:var(--econ-slate);text-align:center;max-width:420px;line-height:1.45;">The three accounts always sum to zero — a current-account deficit is financed by a matching financial-account surplus.</div>
+      </div>
     </div>
   `,
 
@@ -19708,7 +19712,7 @@ window.ECONOS_ICONS = {
         ].map(function(d,i){
           var rad=(d.ang)*Math.PI/180; var dx=(50+26*Math.cos(rad)).toFixed(1); var dy=(50+26*Math.sin(rad)).toFixed(1);
           return '<div class="bdd-cell"><div class="bdd-t" style="color:'+d.c+';">'+(i+1)+' · '+d.t+'</div>'+
-          '<svg viewBox="0 0 100 108" width="100%" style="max-width:104px;">'+
+          '<svg viewBox="0 0 100 108" width="100%" style="max-width:104px;display:block;margin:0 auto;">'+
           '<defs><radialGradient id="bddg'+i+'" cx="38%" cy="32%" r="70%"><stop offset="0%" stop-color="#fff"/><stop offset="55%" stop-color="#E2E8F0"/><stop offset="100%" stop-color="#94A3B8"/></radialGradient></defs>'+
           '<circle cx="50" cy="50" r="42" fill="none" stroke="'+d.c+'" stroke-width="2.4" stroke-dasharray="1.5 5.2" opacity="0.75"/>'+
           '<circle cx="50" cy="50" r="31" fill="url(#bddg'+i+')" stroke="#94A3B8" stroke-width="1.5"/>'+
@@ -19739,13 +19743,13 @@ window.ECONOS_ICONS = {
   bopFinanceMatch: `
     <div style="line-height:1.45;background:#fff;border-radius:14px;padding:16px 12px;font-family:Inter,sans-serif;color:#0B1426;">
       <style>
-        .bmi-row{display:flex;align-items:center;justify-content:center;gap:10px;max-width:760px;margin:0 auto;}
+        .bmi-row{display:flex;align-items:stretch;justify-content:center;gap:10px;max-width:760px;margin:0 auto;}
         .bmi-box{flex:1;min-width:0;border-radius:14px;padding:15px 16px;}
         .bmi-h{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
         .bmi-hic{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
         .bmi-tt{font-size:14.5px;font-weight:800;line-height:1.15;}
         .bmi-li{font-size:12.5px;font-weight:600;padding:4px 0;color:#334155;}
-        .bmi-mid{flex:0 0 auto;text-align:center;width:120px;}
+        .bmi-mid{flex:0 0 auto;text-align:center;width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
         .bmi-ml{font-size:12px;font-weight:800;color:#5B21B6;line-height:1.25;margin-bottom:6px;}
         @media(max-width:600px){.bmi-row{flex-direction:column;}.bmi-mid{width:auto;}.bmi-mid svg{transform:rotate(90deg);}}
       </style>
@@ -20082,7 +20086,7 @@ window.ECONOS_ICONS = {
   marshallLernerScale: `
     <div style="line-height:1.4;background:#fff;border-radius:14px;padding:16px 14px;font-family:Inter,sans-serif;color:#0B1426;">
       <div style="position:relative;max-width:420px;margin:0 auto;">
-        <svg viewBox="0 0 340 184" width="100%">
+        <svg viewBox="0 44 340 140" width="100%">
           <ellipse cx="170" cy="170" rx="40" ry="7" fill="#1E2A4A"/>
           <polygon points="150,170 190,170 182,150 158,150" fill="#1E2A4A"/>
           <rect x="165" y="64" width="10" height="90" fill="#28365C"/>

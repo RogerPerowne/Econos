@@ -282,13 +282,16 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '\u{1F4C8}', head: 'Investment', body: 'Weaker incentives can lead to less capital investment.' }
       ],
 
-      summaryRowLabel: 'A BALANCE TO STRIKE',
-      summaryRow: [
-        { tone: 'blue',   icon: '\u{1F465}', title: 'Equity', text: 'Fairer outcomes and lower inequality.' },
-        { tone: 'green',  icon: '⚙️', title: 'Efficiency', text: 'Strong incentives to work, invest and innovate.' },
-        { tone: 'purple', icon: '\u{1F3DB}️', title: 'Public-service funding', text: 'Resources for health, education and infrastructure.' }
-      ],
-      causesNote: { tone: 'slate', icon: '⚖️', text: 'Policy makers adjust the mix to balance equity, efficiency and the funding of public services.' },
+      /* The balance lever renders via the flowChart slot, which sits
+         between causes2 (FIRMS AND ENTERPRISE) and causes3 (WHAT CHANGES
+         THE SIZE OF THE EFFECT) — matching the mockup's section order —
+         and carries its own genSecLabel title + caption. */
+      flowChart: {
+        svgKey: 'taxBalanceLever',
+        label: 'A BALANCE TO STRIKE',
+        emoji: '⚖️',
+        caption: 'Policy makers adjust the mix to balance equity, efficiency and the funding of public services.'
+      },
 
       causes3Label: 'WHAT CHANGES THE SIZE OF THE EFFECT',
       causes3Emoji: '\u{1F39A}️',

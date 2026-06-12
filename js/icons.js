@@ -23736,6 +23736,56 @@ window.ECONOS_ICONS = {
      lafferCurveInteractive     (C5: rising side → peak → falling side)
      taxRedistributionLorenz    (C6: Lorenz before tax → after tax & transfers) */
   taxBurdenTypesInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TAX_BURDEN_TYPES_SPEC); }),
+  /* taxBalanceLever – Taxation C4 "A balance to strike". A flat-design
+     policy lever: semicircular dial split into three tone segments
+     (equity blue · efficiency green · funding purple), a lever resting
+     between them, and the three labelled blocks below. Colours via CSS
+     vars (inline SVG style attrs) so the token ratchet stays clean.
+     Arc geometry computed: p(θ)=(180+92cosθ, 128−92sinθ). */
+  taxBalanceLever: `
+    <div class="tbl-wrap" style="background:var(--econ-white);border-radius:var(--r-lg);padding:14px 12px 6px;font-family:Inter,sans-serif;color:var(--econ-ink);line-height:1.4;">
+      <style>
+        .tbl-wrap .tbl-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; max-width:760px; margin:2px auto 0; }
+        .tbl-wrap .tbl-cell { display:flex; align-items:flex-start; gap:10px; border-radius:12px; padding:12px 14px; }
+        .tbl-wrap .tbl-ic { width:40px; height:40px; border-radius:50%; background:var(--econ-white); display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0; box-shadow:0 1px 4px rgba(11,20,38,0.10); }
+        .tbl-wrap .tbl-t { font-size:var(--fs-xs); font-weight:var(--fw-extrabold); letter-spacing:0.06em; text-transform:uppercase; line-height:1.25; margin-bottom:3px; }
+        .tbl-wrap .tbl-s { font-size:var(--fs-2xs); color:var(--econ-slate); line-height:1.35; }
+        @media (max-width:640px){ .tbl-wrap .tbl-row { grid-template-columns:1fr; } }
+      </style>
+      <svg viewBox="60 18 240 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;max-width:380px;height:auto;margin:0 auto;" font-family="Inter,sans-serif">
+        <!-- dial track (faint full arc behind the segments) -->
+        <path d="M 88.1,124.8 A 92 92 0 0 1 271.9,124.8" fill="none" style="stroke:var(--econ-border);" stroke-width="22" stroke-linecap="round"/>
+        <!-- three tone segments: equity / efficiency / funding -->
+        <path d="M 88.4,121.6 A 92 92 0 0 1 131.2,50.0" fill="none" style="stroke:var(--econ-blue);" stroke-width="16" stroke-linecap="round"/>
+        <path d="M 136.8,46.8 A 92 92 0 0 1 223.2,46.8" fill="none" style="stroke:var(--econ-green-600);" stroke-width="16" stroke-linecap="round"/>
+        <path d="M 228.8,50.0 A 92 92 0 0 1 271.6,121.6" fill="none" style="stroke:var(--econ-purple);" stroke-width="16" stroke-linecap="round"/>
+        <!-- lever: stick + knob, resting in the efficiency zone -->
+        <line x1="180" y1="126" x2="169.9" y2="68.9" style="stroke:var(--econ-ink);" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="168.5" cy="61.0" r="11" style="fill:var(--econ-ink);"/>
+        <circle cx="165.0" cy="57.5" r="3.2" fill="var(--econ-white)" opacity="0.35"/>
+        <!-- pivot base -->
+        <rect x="146" y="118" width="68" height="16" rx="8" style="fill:var(--econ-border);"/>
+        <circle cx="180" cy="126" r="7" style="fill:var(--econ-ink);"/>
+      </svg>
+      <div class="tbl-row">
+        <div class="tbl-cell" style="background:var(--econ-blue-50);">
+          <div class="tbl-ic">\u{1F465}</div>
+          <div><div class="tbl-t" style="color:var(--econ-blue);">Equity</div>
+          <div class="tbl-s">Fairer outcomes and lower inequality.</div></div>
+        </div>
+        <div class="tbl-cell" style="background:var(--econ-green-50);">
+          <div class="tbl-ic">⚙️</div>
+          <div><div class="tbl-t" style="color:var(--econ-green-600);">Efficiency</div>
+          <div class="tbl-s">Strong incentives to work, invest and innovate.</div></div>
+        </div>
+        <div class="tbl-cell" style="background:#F5F3FF;">
+          <div class="tbl-ic">\u{1F3DB}️</div>
+          <div><div class="tbl-t" style="color:var(--econ-purple);">Public-service funding</div>
+          <div class="tbl-s">Resources for health, education and infrastructure.</div></div>
+        </div>
+      </div>
+    </div>
+  `,
   lafferCurveInteractive: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_LAFFER_CURVE_SPEC); }),
   taxRedistributionLorenz: window.__econosLazy(function () { return window.ECONOS_PPF.render(window.ECONOS_TAX_REDISTRIBUTION_LORENZ_SPEC); }),
 

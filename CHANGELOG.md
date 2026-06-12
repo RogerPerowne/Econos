@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.171.4 — 2026-06-12
+
+### Taxation C4 — balance lever visual + section order
+
+- "A BALANCE TO STRIKE" upgraded from three flat tone cards (which also
+  rendered without a section title) to a new `taxBalanceLever` visual:
+  a flat-design policy dial split into equity (blue) / efficiency
+  (green) / funding (purple) segments with a lever resting between
+  them, the three labelled blocks beneath, and the caption below.
+  Colours via CSS vars (token ratchet stays at baseline); blocks stack
+  on mobile.
+- Rendered through the `flowChart` slot, which sits between FIRMS AND
+  ENTERPRISE and WHAT CHANGES THE SIZE OF THE EFFECT — restoring the
+  mockup's section order (the old `summaryRow` slot rendered after the
+  evaluation grid, and without a label).
+
 ## 0.171.3 — 2026-06-12
 
 ### Taxation — layout tweaks

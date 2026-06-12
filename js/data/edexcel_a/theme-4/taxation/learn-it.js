@@ -60,7 +60,7 @@ window.ECONOS_TOPIC = {
       causesLabel: 'WHY GOVERNMENTS TAX',
       causesEmoji: '\u{1F3DB}️',
       causesStyle: 'icon-top',
-      causesCols: 4,
+      causesCols: 2,
       causes: [
         { tone: 'green', icon: '\u{1F3E5}', head: 'Fund public services', body: 'Provide health, education, defence and infrastructure.' },
         { tone: 'green', icon: '\u{1F465}', head: 'Redistribute income', body: 'Reduce inequality through transfers and taxes.' },
@@ -273,7 +273,7 @@ window.ECONOS_TOPIC = {
       causes2Label: 'FIRMS AND ENTERPRISE',
       causes2Emoji: '\u{1F3E2}',
       causes2Style: 'icon-top',
-      causes2Cols: 5,
+      causes2Cols: 3,
       causes2: [
         { tone: 'purple', icon: '\u{1F3E2}', head: 'Corporation tax', body: 'Higher rates reduce after-tax returns to firms.' },
         { tone: 'purple', icon: '\u{1F437}', head: 'Retained profits', body: 'Lower profits mean fewer funds to reinvest and grow.' },
@@ -293,7 +293,7 @@ window.ECONOS_TOPIC = {
       causes3Label: 'WHAT CHANGES THE SIZE OF THE EFFECT',
       causes3Emoji: '\u{1F39A}️',
       causes3Style: 'icon-top',
-      causes3Cols: 5,
+      causes3Cols: 3,
       causes3: [
         { tone: 'amber', icon: '\u{1F4CF}', head: 'Elasticity of labour supply', body: 'If supply is inelastic, effects are smaller; if elastic, bigger.' },
         { tone: 'amber', icon: '\u{1F500}', head: 'Alternatives', body: 'More ways to earn or invest elsewhere increase responses.' },
@@ -462,7 +462,7 @@ window.ECONOS_TOPIC = {
       causes3Label: 'EVALUATION',
       causes3Emoji: '❓',
       causes3Style: 'icon-top',
-      causes3Cols: 5,
+      causes3Cols: 3,
       causes3: [
         { tone: 'amber', icon: '\u{1F39A}️', head: 'Spare capacity', body: 'If spare capacity exists, tax cuts can lift output more.' },
         { tone: 'amber', icon: '⚖️', head: 'Which tax changes?', body: 'Cuts in income tax vs corporation tax vs indirect taxes have different effects.' },
@@ -585,7 +585,7 @@ window.ECONOS_TOPIC = {
       causes3Label: 'EVALUATION CHECKLIST',
       causes3Emoji: '\u{1F9ED}',
       causes3Style: 'icon-top',
-      causes3Cols: 5,
+      causes3Cols: 3,
       causes3: [
         { tone: 'amber', icon: '\u{1F4C8}', head: 'Elasticity', body: 'How responsive are people and firms to the tax?' },
         { tone: 'amber', icon: '\u{1F552}', head: 'Time period', body: 'Are the effects short run, long run, or both?' },

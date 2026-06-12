@@ -6,6 +6,15 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.6 — 2026-06-12
+
+### Review set 2 (batch 7) — debt snowball illustration
+
+- **Public Sector Finances "the debt snowball" (`debtSnowball`):** enriched the
+  scene — the DEBT ball now rolls down a snowy slope with a snow trail and
+  sparkles, reinforcing the snowball metaphor (new deficits + interest roll on,
+  debt grows).
+
 ## 0.172.5 — 2026-06-12
 
 ### Review set 2 (batch 6) — floating & peg hero illustrations

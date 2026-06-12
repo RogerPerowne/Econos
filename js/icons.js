@@ -21440,13 +21440,17 @@ window.ECONOS_ICONS = {
       <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A snowball labelled DEBT grows as new deficits and interest payments roll onto it over time" style="width:100%;height:auto;display:block;">
         <defs>
           <radialGradient id="dsb-ball" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#EFF4FB"/><stop offset="1" stop-color="#CBD8EA"/></radialGradient>
+          <linearGradient id="dsb-slope" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F9FF"/><stop offset="1" stop-color="#DCE8F7"/></linearGradient>
           <marker id="dsb-o" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M 0 0 L 9 4 L 0 8" fill="none" stroke="#EA580C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
           <marker id="dsb-p" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M 0 0 L 9 4 L 0 8" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
           <marker id="dsb-b" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M 0 0 L 9 4 L 0 8" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
         </defs>
 
-        <!-- ground sweep -->
-        <path d="M 150,250 Q 420,222 660,236" fill="none" stroke="#E2E8F0" stroke-width="10" stroke-linecap="round"/>
+        <!-- snowy slope the ball rolls down -->
+        <path d="M 60,196 Q 300,206 470,250 T 720,288 L 720,300 L 60,300 Z" fill="url(#dsb-slope)"/>
+        <path d="M 60,196 Q 300,206 470,250 T 720,288" fill="none" stroke="#C3D6EE" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- snow trail behind the ball -->
+        <circle cx="306" cy="232" r="6" fill="#EAF0F8"/><circle cx="276" cy="240" r="4.5" fill="#EAF0F8"/><circle cx="250" cy="246" r="3.5" fill="#EAF0F8"/><circle cx="228" cy="250" r="2.5" fill="#EAF0F8"/>
 
         <!-- motion lines -->
         <line x1="300" y1="120" x2="360" y2="120" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
@@ -21459,8 +21463,9 @@ window.ECONOS_ICONS = {
         <circle cx="452" cy="170" r="7" fill="#DCE6F3" opacity="0.9"/>
         <circle cx="430" cy="120" r="5" fill="#DCE6F3" opacity="0.8"/>
         <text x="420" y="160" font-size="34" font-weight="900" fill="#1E3A8A" text-anchor="middle" letter-spacing="1">DEBT</text>
-        <!-- little chunks -->
+        <!-- little chunks + sparkles -->
         <circle cx="510" cy="228" r="6" fill="#EAF0F8"/><circle cx="538" cy="236" r="4" fill="#EAF0F8"/><circle cx="345" cy="232" r="5" fill="#EAF0F8"/>
+        <g fill="#fff" opacity="0.92"><path d="M388,84 l2.4,5 5,2.4 -5,2.4 -2.4,5 -2.4,-5 -5,-2.4 5,-2.4 Z"/><path d="M486,104 l1.8,3.8 3.8,1.8 -3.8,1.8 -1.8,3.8 -1.8,-3.8 -3.8,-1.8 3.8,-1.8 Z"/><circle cx="358" cy="206" r="2.4"/><circle cx="476" cy="206" r="2"/></g>
 
         <!-- inbound: new deficits (orange) -->
         <text x="40" y="86" font-size="12.5" font-weight="800" fill="#C2410C">New deficits</text>

@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.174.5 — 2026-06-16
+
+### Perf: WebP hero images
+
+- Converted the three hero photos to WebP and serve them via `<picture>`
+  with the PNG kept as a fallback. Savings are dramatic because they were
+  oversized PNGs:
+  - `home-hero` (home page, highest traffic): **1.37 MB → 50 KB**
+  - `vaccination-hero`: 996 KB → 38 KB
+  - `steel-hero`: 175 KB → 11 KB
+- Home page uses `<picture>` with `display:contents` so the `<img>` lays
+  out exactly as before; the topic `heroImage` renderer now derives the
+  `.webp` sibling automatically and falls back to the PNG. Verified the
+  browser fetches the WebP and the layout is unchanged.
+
 ## 0.174.4 — 2026-06-16
 
 ### Test coverage: card-render integrity net

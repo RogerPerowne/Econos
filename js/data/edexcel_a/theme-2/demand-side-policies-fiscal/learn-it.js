@@ -273,7 +273,7 @@ window.ECONOS_TOPIC = {
             analysis: '<strong>Cumulative income so far: £295.2m.</strong> We\'re past the halfway mark to the ceiling but rounds are getting much smaller. After round 10 each new round contributes less than £15m – the bulk of the multiplier effect lands in the first 5–6 rounds.'
           },
           {
-            label: '+ R5 onward → £500m',
+            label: '+ R5 →: £500m',
             tone: 'rose',
             head: 'The full multiplier effect',
             body: 'The series converges. <strong>Total impact of the £100m fiscal injection: £500m of national income.</strong> The fiscal multiplier here is k = 1/(1−0.8) = 5 – but with real-world leakages (MPS, MPT, MPM) the UK multiplier is typically 1.2–1.7.',

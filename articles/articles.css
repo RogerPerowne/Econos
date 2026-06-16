@@ -517,7 +517,15 @@ a:hover { text-decoration: underline; }
 .at-a-glance__cta:hover { background: var(--green-100); text-decoration: none; }
 
 /* ─── CONTENT SECTIONS ────────────────────────────────────── */
-.section { margin: 56px 0; }
+/* The header panel above stays full 2-col; the body below is a
+   LEFT-ALIGNED reading column — prose capped to a comfortable
+   measure (≈70 chars), diagrams breaking out wider to the right
+   so they stay legible. Everything is flush-left, not centred. */
+.section { margin: 52px 0; }
+.section > * { max-width: 720px; margin-left: 0; margin-right: 0; }
+.section > .article-interactive,
+.section > .article-diagram,
+.section > .diagram-block { max-width: 960px; }
 .section__eyebrow {
   display: flex; align-items: center; gap: 10px;
   margin-bottom: 14px;
@@ -639,6 +647,104 @@ a:hover { text-decoration: underline; }
   margin-top: 14px;
 }
 .diagram-block svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+/* The two fixed AD–AS diagrams put their commentary to the RIGHT
+   of the chart (matching the interactive diagram's layout). The
+   2-col split only applies when a caption is present; rich
+   self-contained figures (no caption) stay single-column. */
+@media (min-width: 780px) {
+  .diagram-block.article-diagram:has(.diagram-block__caption) {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .diagram-block.article-diagram:has(.diagram-block__caption) svg { margin: 0; }
+}
+.diagram-block.article-diagram .diagram-block__caption {
+  margin: 14px 0 0;
+  text-align: left;
+  font-style: normal;
+  font-size: 15.5px;
+  line-height: 1.62;
+  color: var(--ink-soft);
+}
+@media (min-width: 780px) {
+  .diagram-block.article-diagram:has(.diagram-block__caption) .diagram-block__caption {
+    margin: 0;
+  }
+}
+
+/* Callout — tinted aside used for "exam move" style notes. The
+   directive emits <aside class="callout callout--note">. */
+.callout {
+  max-width: 720px;
+  margin: 24px 0;
+  padding: 16px 20px;
+  background: var(--blue-50);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.callout p { margin: 0; }
+.callout p + p { margin-top: 10px; }
+.callout strong { font-weight: 700; }
+
+/* Card grid — turns a flat bullet wall into scannable cards.
+   Authored as raw HTML in article markdown (markdown-it html:true). */
+.a-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 720px;
+  margin: 24px 0;
+}
+.a-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.a-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 5px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.a-card p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+@media (max-width: 560px) { .a-cards { grid-template-columns: 1fr; } }
+
+/* Inline product nudge — the "shop window" funnel inside the body. */
+.a-nudge {
+  max-width: 720px;
+  margin: 28px 0;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: linear-gradient(135deg, var(--green-50), var(--blue-50));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.a-nudge__text { font-size: 15.5px; line-height: 1.5; color: var(--ink); }
+.a-nudge__text strong { font-weight: 700; }
+.a-nudge__cta {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--ink); color: var(--white);
+  font-weight: 600; font-size: 14.5px;
+  padding: 10px 16px; border-radius: 10px;
+  white-space: nowrap;
+}
+.a-nudge__cta:hover { background: var(--blue); text-decoration: none; }
+@media (max-width: 560px) { .a-nudge { flex-direction: column; align-items: flex-start; } }
 @media (max-width: 560px) { .diagram-block { padding: 14px; } }
 .diagram-block__caption {
   font-size: 14px;

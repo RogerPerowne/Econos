@@ -83,6 +83,7 @@ Because the basket is weighted, the headline rate reflects what households actua
 Demand-pull inflation is "too much money chasing too few goods." When **aggregate demand (AD)** rises faster than the economy can expand supply, the extra spending bids prices up:
 
 :::econos-diagram svgKey="adAsDemandPull" caption="Demand-pull inflation: a rise in any component of AD (C, I, G or X−M) shifts AD right along an upward-sloping AS, lifting real output and the price level from P₁ to P₂."
+:::
 
 Typical triggers are a consumer-spending boom, a surge in investment, higher government spending, a tax cut, or rapid credit growth. The common thread: the pressure starts on the **demand** side.
 
@@ -95,6 +96,7 @@ Typical triggers are a consumer-spending boom, a surge in investment, higher gov
 Cost-push inflation comes from the **supply** side: the costs of production rise, so firms raise prices to protect their margins — even when demand is flat. On a diagram, short-run aggregate supply shifts *left*, raising the price level while output falls:
 
 :::econos-diagram svgKey="adAsCostPush" caption="Cost-push inflation: higher production costs shift SRAS left, so the price level rises from P₁ to P₂ while real output contracts."
+:::
 
 Classic drivers include:
 
@@ -115,12 +117,25 @@ Classic drivers include:
 
 ## The costs of inflation
 
-A little inflation is healthy — the target is 2%, not 0%. It is **high or volatile** inflation that does damage:
+A little inflation is healthy — the target is 2%, not 0%. It is **high or volatile** inflation that does the damage:
 
-- **Erodes real incomes** if wages lag behind prices, hitting low-income households hardest.
-- **Creates uncertainty**, so firms delay investment and the economy's long-run growth suffers.
-- **Hurts savers and lenders** while quietly benefiting borrowers, redistributing wealth arbitrarily.
-- **Worsens competitiveness** if domestic prices rise faster than those of trading partners.
+<div class="a-cards">
+  <div class="a-card"><h4>📉 Real incomes fall</h4><p>If wages lag behind prices, purchasing power drops — and low-income households are hit hardest.</p></div>
+  <div class="a-card"><h4>🌫️ Uncertainty</h4><p>Volatile prices make firms hold back on investment, weakening long-run growth.</p></div>
+  <div class="a-card"><h4>💷 Savers vs borrowers</h4><p>Inflation erodes the real value of savings and of debt — redistributing wealth arbitrarily.</p></div>
+  <div class="a-card"><h4>🌍 Competitiveness</h4><p>If UK prices rise faster than rivals', exports lose their edge abroad.</p></div>
+</div>
+
+:::
+
+:::section eyebrow="A real example" color="pink" icon="spark"
+
+## The 2022 inflation surge
+
+The UK's 2021–23 episode is the textbook case brought to life: a collision of demand-side and supply-side pressures pushed CPI to a **41-year high of 11.1%**, and the Bank of England answered with its fastest run of rate rises in decades.
+
+:::econos-diagram svgKey="inflationSurge2021"
+:::
 
 :::
 
@@ -131,8 +146,11 @@ A little inflation is healthy — the target is 2%, not 0%. It is **high or vola
 The Bank of England has a mandate to keep CPI inflation at **2%**. Its main lever is **Bank Rate**, set each month by the Monetary Policy Committee. Step through the two cases:
 
 :::econos-diagram svgKey="adAsMonetary" interactive="true" caption="Inflation above target → raise Bank Rate to pull AD left and cool prices. Inflation too low with rates near zero → quantitative easing shifts AD right."
+:::
 
 When inflation is **too high**, the MPC raises Bank Rate: borrowing becomes dearer, saving more attractive, and the pound tends to strengthen — together cooling aggregate demand. When inflation is **too low**, it cuts rates, or uses **quantitative easing** if rates are already near zero.
+
+<div class="a-nudge"><div class="a-nudge__text"><strong>That diagram is interactive — and it is one of dozens in the Econos inflation topic.</strong> Step through demand-pull, cost-push and the policy response, then lock it in with exam-style questions.</div><a class="a-nudge__cta" href="/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it">Explore the topic →</a></div>
 
 :::econ-insight portraitKey="economistFriedman" tone="amber" label="Economist insight" attribution="Milton Friedman"
 

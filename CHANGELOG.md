@@ -6,6 +6,26 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.175.1 — 2026-06-16
+
+### Article layout — elegance + structure pass (inflation exemplar)
+
+- **Left-aligned reading column.** The body was rendering full-width
+  (~1116px) below the nice 2-col header; prose is now a comfortable
+  left-aligned ~720px measure, with diagrams breaking out wider to the
+  right so they stay legible.
+- **Fixed diagrams get commentary on the right.** The static demand-pull
+  and cost-push AD–AS diagrams now use a 2-col layout (chart left,
+  commentary right), matching the interactive diagram's feel.
+- **Better data structure.** The "costs of inflation" bullet wall is now a
+  2×2 card grid; `:::callout` is styled; added a styled inline product
+  "nudge" (the shop-window funnel into the topic).
+- **Showcase visual.** Featured the topic's real-data **2022 inflation
+  surge** panel (CPI to 11.1% + the Bank Rate response) — the kind of
+  visual that sells the product without giving the lesson away.
+- Fixed a Markdown fencing bug: the `:::econos-diagram` containers weren't
+  closed, so they swallowed following prose and mis-nested the sections.
+
 ## 0.175.0 — 2026-06-16
 
 ### Articles: pipeline unblocked + first article live (with interactive charts)

@@ -175,38 +175,39 @@ window.ECONOS_TOPIC = {
       template: 'worked-example',
       stepLabel: 'Learn: Step 3 of 4',
       title: 'Worked Example: Calculating the Multiplier Effect',
-      scenario: 'The UK government announces a <strong>£10bn green infrastructure programme</strong> – new offshore wind farms built using domestic contractors. A macro analyst is asked to estimate the total impact on national income.\n\nGiven: MPS = 0.15 · MPT = 0.25 · MPM = 0.10',
+      scenario: 'The government launches a <strong>£10bn green infrastructure programme</strong> — new offshore wind farms, built by UK contractors. How much will national income <strong>actually</strong> rise?<br><br>Three things leak out of every extra £1 earned:<ul style="margin:8px 0 0;padding-left:20px;"><li><strong>Saved</strong> (MPS) = 0.15</li><li><strong>Taxed</strong> (MPT) = 0.25</li><li><strong>Imported</strong> (MPM) = 0.10</li></ul>',
       steps: [
         {
-          label: 'Step 1 – Sum the leakage rates',
-          hint: 'The full multiplier formula uses three leakages. What do MPS, MPT, and MPM each represent, and what is their sum here?',
-          answer: '<strong>MPS</strong> (marginal propensity to save) = 0.15 – fraction of each extra £1 of income that is saved.\n<strong>MPT</strong> (marginal propensity to tax) = 0.25 – fraction taken in tax.\n<strong>MPM</strong> (marginal propensity to import) = 0.10 – fraction spent on imports (leaks abroad).\n\n<strong>Total leakage rate = MPS + MPT + MPM = 0.15 + 0.25 + 0.10 = 0.50</strong>\n\nHalf of every additional pound of income leaks out of the domestic circular flow.'
+          label: 'Step 1 – Add up the leakages',
+          hint: 'Each extra £1 of income partly leaks away — saved, taxed, or spent on imports. What fraction leaks in total?',
+          answer: 'Add the three leakage rates:<ul style="margin:6px 0 8px;padding-left:20px;"><li><strong>0.15</strong> saved</li><li><strong>0.25</strong> taxed</li><li><strong>0.10</strong> imported</li></ul><strong>Total leakage = 0.50.</strong><br>So half of every extra pound leaks straight out of the UK spending cycle.'
         },
         {
-          label: 'Step 2 – Calculate the multiplier (k)',
-          hint: 'Apply the full leakage formula. What is k = 1 ÷ (total leakage rate)?',
-          answer: '<strong>k = 1 ÷ (MPS + MPT + MPM) = 1 ÷ 0.50 = 2.0</strong>\n\nEvery £1 of government injection will generate £2 of national income in total – £1 direct + £1 from successive re-spending rounds.'
+          label: 'Step 2 – Find the multiplier (k)',
+          hint: 'The multiplier is 1 ÷ (total leakage). Plug in 0.50.',
+          answer: '<strong>k = 1 ÷ 0.50 = 2.</strong><br>Every £1 the government spends ends up creating £2 of national income — £1 directly, plus £1 as that money gets re-spent round after round.'
         },
         {
-          label: 'Step 3 – Calculate the total change in national income (ΔY)',
-          hint: 'Multiply the initial injection by k. What is the total income effect of the £10bn programme?',
-          answer: '<strong>ΔY = k × ΔG = 2.0 × £10bn = £20bn</strong>\n\nThe £10bn injection raises national income by £20bn. Of this, £10bn is the direct effect; the remaining £10bn is the multiplied effect as income is re-spent round after round until all £20bn has leaked out.'
+          label: 'Step 3 – Scale it up to the £10bn',
+          hint: 'Total change in income = k × the injection. What does the £10bn become?',
+          answer: '<strong>ΔY = k × ΔG = 2 × £10bn = £20bn.</strong><br>The programme lifts national income by £20bn:<ul style="margin:6px 0 0;padding-left:20px;"><li>£10bn — the direct spending</li><li>£10bn — the knock-on re-spending</li></ul>'
         },
         {
-          label: 'Step 4 – Contrast with the simple (naïve) multiplier',
-          hint: 'If a student used only MPS and ignored taxes and imports, what multiplier would they get – and why is it wrong?',
-          answer: '<strong>Simple k = 1 ÷ MPS = 1 ÷ 0.15 = 6.7</strong> → would predict ΔY = <strong>£67bn</strong>.\n\nThat is <em>more than three times</em> the realistic estimate. The simple version ignores that each re-spending round also loses 25p to tax and 10p to imports per £1. Using k = 1/(1−MPC) without accounting for MPT and MPM is a common exam error – and an easy mark lost.'
+          label: 'Step 4 – Spot the common mistake',
+          hint: 'What if a student only used MPS and forgot tax and imports?',
+          answer: 'Savings only: <strong>k = 1 ÷ 0.15 ≈ 6.7</strong>, predicting a <strong>£67bn</strong> boost.<br>That\'s <em>over three times too big</em> — it forgets each round also loses 25p to tax and 10p to imports. <strong>Always use all three leakages.</strong>'
         },
         {
-          label: 'Step 5 – Evaluate: will the full £20bn materialise?',
-          hint: 'Even with a correct multiplier, what real-world factors could mean the actual income gain is less (or more) than £20bn?',
-          answer: '<strong>Factors that could reduce the effect below £20bn:</strong>\n• <em>Spare capacity limit:</em> if the economy is near full employment, extra demand becomes inflation, not extra output – the real multiplier falls toward zero.\n• <em>Crowding out:</em> if the programme is debt-financed, higher borrowing may raise interest rates → private investment falls → partially offsets G.\n• <em>Confidence:</em> if households expect future tax rises to repay the debt, they may save the extra income rather than spend it.\n• <em>Time lags:</em> the full chain takes 18–24 months – the economy may have recovered before the effect plays through.\n\n<strong>Examiner\'s note:</strong> stating a specific k value (e.g. k = 2) and then evaluating the real-world limits is a 4–5 mark structure in Paper 2 data-response questions.'
+          label: 'Step 5 – Will the full £20bn really happen?',
+          hint: 'Even with the right multiplier, what real-world factors could shrink — or boost — the effect?',
+          answer: 'Rarely in full. Watch for:<ul style="margin:6px 0 0;padding-left:20px;"><li><strong>No spare capacity</strong> — near full employment, extra demand becomes inflation, not output.</li><li><strong>Crowding out</strong> — if it\'s debt-financed, higher interest rates can squeeze private investment.</li><li><strong>Low confidence</strong> — households expecting future tax rises may save, not spend.</li><li><strong>Time lags</strong> — the full chain takes 18–24 months to play out.</li></ul>'
         }
       ],
       conclusion: {
         label: 'Key result',
-        text: 'k = 2.0 → ΔY = £20bn. The full-leakage multiplier (accounting for MPS, MPT, and MPM) gives a result roughly 3× smaller than the naïve formula. In the UK, realistic multipliers are typically 1.2–1.7 – far below the textbook k = 5 that students sometimes mis-apply.'
-      }
+        text: 'k = 2, so the £10bn injection becomes <strong>£20bn</strong> of national income. Using all three leakages gives an answer about 3× smaller than the savings-only shortcut — and real UK multipliers (1.2–1.7) are smaller still.'
+      },
+      examEdge: 'State a specific multiplier (e.g. k = 2), then evaluate the real-world limits. That "number, then judgement" structure is worth 4–5 marks in Paper 2 data response.'
     },
 
     /* ============================================================

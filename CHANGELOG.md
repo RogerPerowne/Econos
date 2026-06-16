@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.16 — 2026-06-12
+
+### Worked-example cards — clearer, more engaging copy
+
+- Rewrote the worked-example steps so they read like a person walking you
+  through it, not a computer read-out: lead with the answer, then a tight
+  bulleted explanation. Affects the multiplier, comparative-advantage and
+  CPI cards.
+- Root cause fixed: when a step's `answer` contains HTML, the renderer
+  leaves `\n` newlines alone (they collapse to spaces), so the old
+  `\n`-and-`•` lists rendered as run-on blocks. Switched those to real
+  `<ul><li>` bullets and `<br>` line breaks, which render reliably.
+- Multiplier card also gains a dedicated exam-edge note (the examiner tip
+  was previously buried inside step 5).
+
 ## 0.172.15 — 2026-06-12
 
 ### Multiplier chain — final step label

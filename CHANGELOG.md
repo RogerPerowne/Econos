@@ -13,9 +13,11 @@ bump the patch for bugfix-only sweeps.
 - Converted the three hero photos to WebP and serve them via `<picture>`
   with the PNG kept as a fallback. Savings are dramatic because they were
   oversized PNGs:
-  - `home-hero` (home page, highest traffic): **1.37 MB → 50 KB**
-  - `vaccination-hero`: 996 KB → 38 KB
-  - `steel-hero`: 175 KB → 11 KB
+  - `home-hero` (home page, highest traffic): **1.37 MB → 77 KB**
+  - `vaccination-hero`: 996 KB → 53 KB
+  - `steel-hero`: 175 KB → 15 KB
+  Encoded at high WebP quality (q90–93) so there's visible-quality
+  headroom — verified indistinguishable from the PNG at display size.
 - Home page uses `<picture>` with `display:contents` so the `<img>` lays
   out exactly as before; the topic `heroImage` renderer now derives the
   `.webp` sibling automatically and falls back to the PNG. Verified the

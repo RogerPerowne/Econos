@@ -183,6 +183,13 @@
   transition: opacity 0.32s ease;
 }
 .show-extension .ad-svg .layer-legend-base { opacity: 0; }
+
+/* The per-state title strip at the top of these diagrams is redundant in
+   articles — the step panel beside the diagram already names the state —
+   so hide it everywhere. */
+.ad-svg .layer-legend-base,
+.ad-svg .layer-legend-extension,
+.ad-svg .layer-legend-shift { display: none; }
 .show-extension .ad-svg .layer-legend-extension { opacity: 1; }
 .show-extension .ad-svg .layer-extension { opacity: 1; }
 .show-shift .ad-svg .layer-curve-solid > line { stroke: #94A3B8; stroke-dasharray: 6 4; transition: stroke 0.32s ease; }

@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.175.3 — 2026-06-16
+
+### Article interactive diagrams: in-app layout + site-wide legend strip
+
+- **Interactive diagrams now match the in-app look**: chart on the left,
+  the active step's commentary to the right, step buttons spanning below
+  (was stacked, commentary underneath). Consistent with the static
+  diagrams' chart-left/commentary-right layout.
+- **Stripped the redundant top "title strip" legend site-wide.** A scoped
+  `svg > .layer-legend-{base,extension,shift}` rule (direct children of
+  the SVG root) hides the per-state titles in both the article CSS and
+  `styles.css`, while leaving the chart engine's genuine legends
+  (`.econos-chart-legends`, nested) untouched. In practice these
+  title-strip diagrams are article-only today; the SPA rule is a guard so
+  the policy holds everywhere.
+
 ## 0.175.2 — 2026-06-16
 
 ### Article diagram polish (inflation)

@@ -4342,6 +4342,16 @@ img, svg { display: block; max-width: 100%; }
   transition: opacity 0.32s ease;
 }
 
+/* Strip the redundant per-state TITLE STRIP at the top of the hand-rolled
+   multi-state diagrams, site-wide. These are descriptive titles (the step
+   tab / card title already names the state), so they're noise. They sit as
+   DIRECT children of the <svg> root; the chart engine's genuine legends are
+   wrapped in .econos-chart-legends, so the `svg >` child combinator leaves
+   those untouched. */
+svg > .layer-legend-base,
+svg > .layer-legend-extension,
+svg > .layer-legend-shift { display: none; }
+
 /* Hidden by default */
 .ad-svg .layer-curve-dashed,
 .ad-svg .layer-extension,

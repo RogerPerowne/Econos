@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.174.1 — 2026-06-16
+
+### Build: minify the classic scripts (perf)
+
+- Added a build-time esbuild minify pass over the verbatim-copied classic
+  scripts in `dist/js` (a new `econos-minify-classic-js` Vite plugin).
+  These are loaded as plain `<script src>` and so were never touched by
+  Vite's normal minify. Dev is unaffected (it serves the sources); only
+  production `/dist` shrinks.
+- Over-the-wire savings, every page load: `app.js` ~92 KB → ~64 KB gzip
+  (−31%), `icons.js` ~348 KB → ~316 KB gzip (−9%; it's mostly SVG/HTML
+  string contents, which a code-minifier can't compress — the larger
+  icons.js win needs the topic-split lazy-load, a separate follow-up).
+  ~60 KB saved per visit total. Verified by the full e2e suite, which
+  runs against this minified preview build.
+
 ## 0.174.0 — 2026-06-16
 
 ### Every card now opens with a brief intro

@@ -33,6 +33,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 10',
       title: 'Specialisation & money: the big picture',
+      lede: 'Nobody is good at everything - so we each focus on one thing, trade for the rest, and money is what makes that swap effortless.',
+      ledeStyle: 'plain',
       tip: { icon: '💡', tone: 'blue', text: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest – and total output rises sharply.' },
       diagramKey: 'specialisationGainsCompare',
       diagramLabel: 'Self-sufficiency vs specialisation',
@@ -55,6 +57,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 2 of 10',
       title: 'Adam Smith’s Pin Factory',
+      lede: 'One worker makes 20 pins a day. Split the job across a team and the same people make 48,000 - the single most famous number in economics.',
+      ledeStyle: 'plain',
       tip: { icon: '💡', tone: 'blue', text: 'The division of labour splits one production process into separate tasks, each done by a different worker. Adam Smith showed how powerful this is.' },
       economistQuote: {
         portraitKey: 'economistAdamSmith',
@@ -103,6 +107,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 3 of 10',
       title: 'The Division of Labour: Gains vs Drawbacks',
+      lede: 'Splitting work into tiny tasks supercharges output - but doing the exact same thing all day, every day, has a human cost too.',
+      ledeStyle: 'plain',
       tip: { icon: '💡', tone: 'blue', text: 'Splitting work into specialised tasks raises output – but doing one narrow job all day has real costs for workers and firms.' },
       causes: [
         { tone: 'green', icon: '📈', head: 'Higher productivity', body: 'More output per worker from skill, speed and specialised tools.' },
@@ -135,6 +141,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 4 of 10',
       title: 'Specialising to Trade',
+      lede: 'The same logic that powers a factory scales up to whole countries: focus on what you do best, then trade for everything else.',
+      ledeStyle: 'plain',
       tip: { icon: '💡', tone: 'blue', text: 'Beyond the factory floor, whole people, firms and countries specialise – then trade for everything else.' },
       note: {
         tone: 'blue', icon: '🔎', head: 'Two different ideas – don’t mix them up',
@@ -293,6 +301,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 7 of 10',
       title: 'The Problem with Barter',
+      lede: 'Without money, a trade only happens when both people want exactly what the other has - a coincidence so rare it strangles a growing economy.',
+      ledeStyle: 'plain',
       tip: { icon: '💡', tone: 'blue', text: 'Barter means exchanging goods directly without money. Trade only happens when both people want exactly what the other has – the double coincidence of wants.' },
       diagramKey: 'barterTriangle',
       diagramLabel: 'The double coincidence of wants',
@@ -344,6 +354,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 8 of 10',
       title: 'The Four Functions of Money',
+      lede: 'Money isn\'t one job but four - and once you see them, you can spot exactly which one inflation attacks first.',
+      ledeStyle: 'plain',
       tip: { icon: '💡', tone: 'blue', text: 'Money solves the problems of barter because it performs four key jobs that make exchange possible, practical and efficient.' },
       causes: [
         {
@@ -394,6 +406,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 9 of 10',
       title: 'Characteristics of Good Money',
+      lede: 'Why not use cows or seashells as cash? Score the candidates against six tests and you discover why every economy ends up with something like banknotes.',
+      ledeStyle: 'plain',
       tip: { icon: '💡', tone: 'blue', text: 'For money to perform its four functions well, it needs certain practical qualities. Score the candidates against them and a winner emerges – which is why every economy converges on something like modern currency.' },
       diagramKey: 'goodMoneyScorecard',
       diagramLabel: 'Which makes the best money?',
@@ -419,6 +433,8 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 10 of 10',
       title: 'Why Money Holds It All Together',
+      lede: 'Specialisation, exchange and money form one chain - and it only lifts living standards while every link, especially stable money, holds.',
+      ledeStyle: 'plain',
       tip: { icon: '💡', tone: 'green', text: 'The gains from specialisation are unlocked fully only when money allows smooth exchange. Together they convert higher productivity into wider prosperity.' },
       flow: [
         { tone: 'blue',   icon: '🛠️', title: 'Specialisation',         sub: 'People focus on what they do best.' },

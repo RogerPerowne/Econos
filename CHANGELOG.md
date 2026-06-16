@@ -6,6 +6,22 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.174.0 — 2026-06-16
+
+### Every card now opens with a brief intro
+
+- Added a one-line `lede` to ~163 cards that previously jumped straight
+  from the title into content (almost all Theme 1, built before the lede
+  convention, plus five micro topics). Each is a hook-first sentence
+  specific to the card — e.g. the Network Effects card now opens "When a
+  product gets better the more people use it, the leader runs away with
+  the market…". Worked-example cards were left as-is (their scenario is the
+  intro); PED cards already use the equivalent `intro:` field.
+- Defensive renderer fix: every `card__lede` render site is now guarded, so
+  a card with no lede can never print the literal word "undefined" (no card
+  did today, but the framing/cause/mechanisms/paired renderers were
+  unguarded).
+
 ## 0.173.1 — 2026-06-16
 
 ### Site-review quick wins

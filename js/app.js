@@ -3335,7 +3335,7 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       <div class="framing-row">
         ${renderBranches(c.branches, c.branchesLayout || 'stack', 'branch')}
@@ -3366,7 +3366,7 @@
     const headerLede = `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
     `;
 
     const diagramFull = diagram ? `
@@ -3489,7 +3489,7 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       ${topSection}
 
@@ -3519,7 +3519,7 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       <div class="classical-box">
         <div class="classical-box__head">
@@ -3574,7 +3574,7 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       ${c.diagramKey && I[c.diagramKey] ? `<div style="overflow-x:auto;margin-bottom:22px;border-radius:var(--r-lg);border:1px solid var(--econ-border);">${I[c.diagramKey]}</div>` : ''}
       <div class="mech-grid">${tiles}</div>
@@ -3627,7 +3627,7 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       <div class="classical-box">
         <div class="classical-box__head">
@@ -3670,7 +3670,7 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       <div class="impact-groups">${groups}</div>
 
@@ -3724,7 +3724,7 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       <div style="margin-bottom: var(--sp-3); display: flex; align-items: center; gap: var(--sp-2);">
         <span style="display: inline-block; width: 4px; height: 18px; background: var(--econ-rose); border-radius:var(--r-sm);"></span>
@@ -5942,7 +5942,7 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       <div class="tc-flow">
         <div class="tc-action">

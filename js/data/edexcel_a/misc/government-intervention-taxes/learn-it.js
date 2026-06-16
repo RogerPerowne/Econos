@@ -50,6 +50,7 @@ window.ECONOS_TOPIC = {
       template: 'mechanisms',
       diagramKey: 'taxDiagram',
       title: 'The Tax Diagram: Full Analysis',
+      lede: 'One diagram, four areas: tax revenue, consumer burden, producer burden and deadweight loss. Nail it and most tax questions fall apart.',
       intro: 'Mastering this diagram is essential – it appears in many different exam contexts.',
       steps: [
         { label: '📍 Start with equilibrium', text: 'Draw original S and D. Equilibrium at (P1, Q1). Mark consumer surplus (CS) triangle above P1 below D. Mark producer surplus (PS) triangle above S below P1.' },
@@ -63,6 +64,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_tax_3',
       template: 'framing',
       title: 'Pigouvian Taxes: Correcting Externalities',
+      lede: 'Set the tax equal to the harm a good does to others and the market polices itself – elegant in theory, devilish to measure.',
       body: 'A <strong>Pigouvian tax</strong> (named after economist A.C. Pigou) is set equal to the marginal external cost (MEC) at the socially optimal output. It internalises the externality – making the private cost equal to the social cost.<br><br><strong>Effect:</strong> the tax shifts MPC up to MSC. The new market equilibrium is at the socially optimal output Q*, where MSC = MSB. The deadweight welfare loss from the externality is eliminated.<br><br><strong>Perfect Pigouvian tax:</strong> tax per unit = MEC at Q*. In practice, MEC is very difficult to measure accurately – estimates for the social cost of carbon vary from $50 to $200/tonne CO2.',
       keyTerms: [
         { term: 'Pigouvian tax', def: 'A tax equal to the marginal external cost – designed to internalise a negative externality and restore allocative efficiency.' },
@@ -75,6 +77,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_tax_4',
       template: 'cause',
       title: 'Real-World Tax Examples',
+      lede: 'Fuel duty, the sugar levy, tobacco tax and landfill tax show how a well-aimed tax can reshape what firms make and what we buy.',
       causesStyle: 'tinted-flat',
       causesEmoji: '🏛️',
       causesLabel: 'Four key UK indirect taxes',
@@ -91,6 +94,7 @@ window.ECONOS_TOPIC = {
       template: 'diagnose',
       diagramKey: 'taxIncidenceDiagram',
       title: 'Tax Incidence: Who Really Pays?',
+      lede: 'The government may collect the tax from sellers, but the real burden lands on whichever side can least afford to walk away.',
       intro: 'The legal incidence (who pays the tax) differs from the economic incidence (who bears the burden).',
       rows: [
         { label: 'Scenario', colA: 'Inelastic demand, elastic supply (cigarettes)', colB: 'Elastic demand, inelastic supply (luxury goods)' },
@@ -104,6 +108,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_tax_6',
       template: 'framing',
       title: 'Evaluation: Taxation to Correct Externalities',
+      lede: 'Taxes preserve choice and raise revenue – but they hit the poor hardest and rely on a number nobody can pin down exactly.',
       verdict: {
         leftLabel: '✅ Case FOR taxation',
         rightLabel: '❌ Case AGAINST (limitations)',
@@ -121,6 +126,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_tax_7',
       template: 'framing',
       title: 'Tax vs Other Policy Tools',
+      lede: 'Tax, regulate or subsidise the alternative? Each hits the same target through a different lever – with very different costs and winners.',
       body: 'Taxation is one of several tools for government intervention. Comparing it with alternatives is essential for evaluation:<br><br><strong>Tax vs regulation:</strong> tax allows flexibility (firms choose how much to reduce); regulation sets a firm standard. Tax raises revenue; regulation does not. Tax works through price; regulation works through quantity constraint. Both can achieve the same environmental target, but tax does so at lower total cost (abatement where cheapest).<br><br><strong>Tax vs subsidy:</strong> tax reduces the externality-generating activity; subsidy promotes the alternative (e.g. solar panels). Both can move market toward social optimum. Tax raises revenue; subsidy costs revenue. Tax punishes the polluter; subsidy rewards the clean alternative.',
       keyTerms: [
         { term: 'Incentive-based instruments', def: 'Policies (taxes, tradeable permits) that use price signals to achieve environmental goals – more efficient than command-and-control.' },

@@ -50,6 +50,7 @@ window.ECONOS_TOPIC = {
       template: 'mechanisms',
       diagramKey: 'subsidyDiagram',
       title: 'The Subsidy Diagram',
+      lede: 'Flip the tax diagram on its head: supply swings right, price drops, quantity climbs – and the taxpayer foots the bill.',
       intro: 'The subsidy diagram is the mirror image of the tax diagram – master both for maximum flexibility in exams.',
       steps: [
         { label: '📍 Original equilibrium', text: 'S and D intersect at (P1, Q1). CS above P1 below D; PS above S below P1.' },
@@ -63,6 +64,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_subsidies_3',
       template: 'framing',
       title: 'Correcting Positive Externalities with Subsidies',
+      lede: 'When a good does the world more good than buyers realise, the market makes too little – a subsidy pays people to do more of it.',
       body: 'Where a positive externality exists (MSB > MPB), the market under-produces relative to the social optimum. A subsidy can correct this by increasing production to the socially optimal level Q*.<br><br><strong>Optimal subsidy:</strong> set equal to the marginal external benefit (MEB) at Q*. This effectively shifts MPB up to equal MSB (or MPC down to equal MSC for a production subsidy).<br><br><strong>Examples:</strong> solar panel installation subsidy (UK Feed-in Tariff – corrects underproduction of renewable energy); childcare subsidy (corrects under-provision of childcare that enables female workforce participation); R&D tax credits (corrects underinvestment in research with positive knowledge spillovers).',
       keyTerms: [
         { term: 'Optimal subsidy', def: 'Subsidy equal to the marginal external benefit at the socially optimal output – the exact correction needed.' },
@@ -75,6 +77,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_subsidies_4',
       template: 'cause',
       title: 'Real-World Subsidy Examples',
+      lede: 'Farm payments, EV grants, wind-power contracts and the furlough scheme – four very different reasons the state writes the cheque.',
       causesStyle: 'tinted-flat',
       causesEmoji: '💰',
       causesLabel: 'Four major UK subsidy contexts',
@@ -90,6 +93,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_subsidies_5',
       template: 'framing',
       title: 'Evaluation: Benefits vs Limitations of Subsidies',
+      lede: 'Subsidies can fix market failure and back young industries – but they cost taxpayers, distort markets, and almost never go away.',
       verdict: {
         leftLabel: '✅ Case FOR subsidies',
         rightLabel: '❌ Case AGAINST / Limitations',
@@ -108,6 +112,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_subsidies_6',
       template: 'diagnose',
       title: 'Who Benefits from a Subsidy?',
+      lede: 'Aim a subsidy at consumers and producers might pocket it instead – elasticity, not intention, decides where the money lands.',
       intro: 'The distribution of subsidy benefit between consumers and producers depends on price elasticities – the same logic as tax incidence.',
       rows: [
         { label: 'Scenario', colA: 'Elastic supply, inelastic demand (food staples)', colB: 'Inelastic supply, elastic demand (luxury market)' },
@@ -121,6 +126,7 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_subsidies_7',
       template: 'framing',
       title: 'Subsidies vs Alternative Policies',
+      lede: 'Reward good behaviour, mandate it, or provide it directly? Subsidies are just one way to hit a target – and not always the cheapest.',
       body: '<strong>Subsidy vs regulation:</strong> Subsidies work through incentives (reward the good behaviour); regulation mandates the outcome (penalises non-compliance). Subsidies preserve choice; regulation removes it. Subsidies cost the taxpayer; regulation may not. Subsidies for EVs vs regulation banning petrol cars – both can achieve emissions targets but through different mechanisms with different distributional effects.<br><br><strong>Subsidy vs public provision:</strong> Subsidy supports private providers; public provision replaces them. NHS provides healthcare directly (public provision); childcare voucher subsidises private nurseries. Public provision may be more equitable (universal access); subsidy maintains market diversity and competition.',
       keyTerms: [
         { term: 'Green incentive', def: 'Subsidy or tax break for environmentally beneficial behaviour – positive reinforcement rather than negative (tax) approach.' },

@@ -47,6 +47,7 @@ window.ECONOS_TOPIC = {
       id: 'profit_cost_changes_2',
       template: 'mechanisms',
       title: 'Effect of a Cost Increase',
+      lede: 'Wages spike, oil jumps, raw materials get pricier – MC shifts up, output falls, and price rises. Trace exactly how far it ripples.',
       intro: 'A rise in variable costs (e.g., raw material prices, wage costs) shifts the MC curve upward. Trace through the effects.',
       steps: [
         { label: 'MC shifts up', text: 'A rise in variable cost per unit shifts MC upward at every output level. The new MC curve is above the original.' },
@@ -60,6 +61,7 @@ window.ECONOS_TOPIC = {
       id: 'profit_cost_changes_3',
       template: 'mechanisms',
       title: 'Effect of a Demand Increase',
+      lede: 'When customers flood in, both output and price climb together – the most profit-friendly shift a firm can hope for.',
       intro: 'A rise in demand for the firm\'s product shifts both AR and MR rightward/upward. Trace through the effects on output, price, and profit.',
       steps: [
         { label: 'Demand rises: AR and MR shift right', text: 'An increase in demand (consumer incomes rise, tastes change, rival exits) shifts the demand (AR) curve right. MR shifts right by the same horizontal distance.' },
@@ -73,6 +75,7 @@ window.ECONOS_TOPIC = {
       id: 'profit_cost_changes_4',
       template: 'framing',
       title: 'Tax Incidence: Per-Unit vs Lump-Sum',
+      lede: 'One tax changes price and output; the other just quietly drains profit. The difference is whether it touches MC.',
       body: 'Taxes are a key application of cost change analysis. Two types with very different effects:<br><br><strong>Per-unit (specific) tax:</strong> e.g., £x per unit sold (excise duties on alcohol, tobacco, petrol). This is a variable cost – shifts MC upward by the tax rate. New Q* is lower; P rises but by less than the full tax. Tax is split between producer (lower profit per unit) and consumer (higher price). Split depends on PED: inelastic demand → more passed to consumer; elastic demand → more borne by producer.<br><br><strong>Lump-sum tax:</strong> e.g., corporation tax, fixed annual licence fee. This is a fixed cost – shifts AC but NOT MC. New Q* and P are unchanged. Producer bears the entire tax through lower profit. Cannot be passed to consumers.<br><br>Conclusion: per-unit taxes are the primary price-influencing tool; lump-sum taxes are pure profit extractions.',
       keyTerms: [
         { term: 'Per-unit tax', def: 'Tax per unit produced or sold – shifts MC up. Raises price and reduces quantity. Shared between producer and consumer.' },
@@ -85,6 +88,7 @@ window.ECONOS_TOPIC = {
       id: 'profit_cost_changes_5',
       template: 'framing',
       title: 'Cost Reduction and Innovation',
+      lede: 'Innovate to cut MC and you can undercut rivals, expand output, or pocket fatter margins – the first-mover\'s reward.',
       body: 'A fall in variable costs (e.g., through process innovation, improved productivity, cheaper inputs) shifts MC downward. Effects:<br><br>• MC shifts down → new intersection with MR at higher Q**<br>• Price falls slightly (competitive markets) or partially (monopoly/oligopoly)<br>• Profit increases – lower AC improves the profit margin at each output level<br><br><strong>Dynamic efficiency through cost reduction:</strong> firms invest in R&D to achieve process innovations that lower MC. This gives a first-mover cost advantage – incumbent with lower costs can undercut new entrants or earn higher profit at the same price.<br><br><strong>Productive efficiency distinction:</strong> cost reduction moves AC downward (a genuine improvement in productive efficiency). Moving along the AC curve to its minimum is also productive efficiency – these are different routes to lower unit cost.',
       keyTerms: [
         { term: 'Process innovation', def: 'Reducing the cost of producing existing products – shifts MC and AC downward at every output level.' },
@@ -97,6 +101,7 @@ window.ECONOS_TOPIC = {
       id: 'profit_cost_changes_6',
       template: 'diagnose',
       title: 'Comparing Effects Across Market Structures',
+      lede: 'The same cost shock hits a price-taking farmer and a protected monopolist very differently – structure decides the outcome.',
       intro: 'The same cost or demand change has different effects depending on market structure.',
       rows: [
         { label: 'Change', colA: 'Cost increase (MC rises)', colB: 'Demand increase (AR/MR shifts right)' },
@@ -110,6 +115,7 @@ window.ECONOS_TOPIC = {
       id: 'profit_cost_changes_7',
       template: 'paired',
       title: 'Evaluation: How Firms Respond to Cost Changes',
+      lede: 'Pass the cost on or eat it yourself? The choice hinges on elasticity, market power and how much share you\'re willing to risk.',
       left: {
         label: 'Pass on to consumers (price rise)',
         points: [

@@ -29,6 +29,7 @@ window.ECONOS_TOPIC = {
       id: 'behavioural_econ_1',
       stepLabel: 'Learn: Step 1 of 6',
       title: 'Why people aren\'t rational',
+      lede: 'Economics assumes you weigh every option coolly. Your brain mostly runs on fast, automatic shortcuts – and they fail in predictable ways.',
       tip: { icon: '🧠', tone: 'amber', text: 'Kahneman\'s two-systems framework underpins all of behavioural economics. <strong>System 1</strong> is fast, automatic and biased. <strong>System 2</strong> is slow, deliberate and rarely engaged. Almost every bias in this topic happens when System 1 takes over a job that needed System 2.' },
       diagramKey: 'whyNotRationalDiagram',
       diagramLabel: 'Rational vs real',
@@ -60,6 +61,7 @@ window.ECONOS_TOPIC = {
       id: 'behavioural_econ_2',
       stepLabel: 'Learn: Step 2 of 6',
       title: 'The four biases – try them on yourself',
+      lede: 'Anchoring, loss aversion, availability and social norms aren\'t other people\'s mistakes – click through and watch yourself fall for each one.',
       tip: { icon: '🎯', tone: 'rose', text: 'These four biases aren\'t quirks – they\'re predictable shortcuts. Click through each one, and read the <em>mini-test</em> at the bottom of every panel. If you would have fallen for it, you\'ve felt the bias in action.' },
       interactiveDiagram: {
         svgKey: 'biasGalleryInteractive',
@@ -179,6 +181,7 @@ window.ECONOS_TOPIC = {
       id: 'behavioural_econ_3',
       stepLabel: 'Learn: Step 4 of 6',
       title: 'Bounded self-control – we know but we don\'t do',
+      lede: 'You know you should save, revise and eat well – yet the version of you living right now keeps winning. Here\'s why, and how to outsmart it.',
       tip: { icon: '⏳', tone: 'amber', text: 'We genuinely want to act in our long-term interest – but in the moment the present self wins. This is <strong>not laziness</strong>. It is a structural feature of how humans weigh time. It is also why pension under-saving remained a problem for decades despite tax relief and employer matches.' },
       interactiveDiagram: {
         svgKey: 'boundedSelfControlInteractive',
@@ -236,6 +239,7 @@ window.ECONOS_TOPIC = {
       id: 'behavioural_econ_4',
       stepLabel: 'Learn: Step 5 of 6',
       title: 'Nudges that worked – Britain\'s behavioural revolution',
+      lede: 'Flip one default and pension saving jumps from 55% to 87%. Britain\'s nudge unit reshapes behaviour with wording tweaks that cost almost nothing.',
       tip: { icon: '🇬🇧', tone: 'blue', text: 'Britain runs the world\'s most active behavioural government. The <strong>Behavioural Insights Team</strong> (BIT, founded 2010 under the Cameron government) has delivered measurable policy wins at near-zero cost. Four UK case studies below – each illustrating the framework in action.' },
       flowTitle: 'The BIT framework – small tweaks, big effects',
       flow: [
@@ -305,6 +309,7 @@ window.ECONOS_TOPIC = {
       id: 'behavioural_econ_5',
       stepLabel: 'Learn: Step 6 of 6',
       title: 'When nudges work, and when they don\'t',
+      lede: 'A nudge can\'t fix everything – knowing whether the binding constraint is bias, price or harm tells you whether to nudge, tax or ban.',
       tip: { icon: '⚖️', tone: 'slate', text: 'Nudges <strong>complement</strong> traditional policy – they do not replace taxes or regulation. The art is knowing which lever fits which market failure. For a carbon price or sugar tax, behavioural insight <em>supports</em> the tax; it does not substitute for it.' },
       continuum: {
         title: 'The policy spectrum – choosing the right lever',

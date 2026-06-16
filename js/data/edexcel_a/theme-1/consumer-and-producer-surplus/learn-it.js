@@ -27,6 +27,7 @@ window.ECONOS_TOPIC = {
       id: 'consumer_producer_surplus_1',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Consumer & producer surplus: the big picture',
+      lede: 'Every trade leaves both sides better off – surplus is the hidden bonus buyers and sellers pocket, and together it measures a market\'s whole gain.',
       tip: {
         icon: '📊',
         tone: 'blue',
@@ -77,6 +78,7 @@ window.ECONOS_TOPIC = {
       id: 'consumer_producer_surplus_2',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Building the Surplus Diagram',
+      lede: 'Draw it in the right order and the two surplus triangles fall straight out – here\'s the four-step build that examiners want to see.',
       tip: {
         icon: '💡',
         tone: 'amber',
@@ -151,6 +153,7 @@ window.ECONOS_TOPIC = {
       id: 'consumer_producer_surplus_method',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'The surplus exam method',
+      lede: 'One three-step routine cracks almost every "evaluate this policy" question – lock it in and taxes, subsidies, and price controls all become the same move.',
       tip: { icon: '🎯', tone: 'green', text: 'Almost every Edexcel A "evaluate the welfare effect of <policy>" question yields to a single three-step routine. Lock it in now and the tax, subsidy, ceiling and floor cards become applications of one method.' },
       flowTitle: 'The three-step method',
       flowEmoji: '📐',
@@ -176,6 +179,7 @@ window.ECONOS_TOPIC = {
       id: 'consumer_producer_surplus_3',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'How Taxes Affect Surplus',
+      lede: 'A tax drives a wedge between what buyers pay and sellers keep – some surplus goes to the government, but some is destroyed forever.',
       tip: {
         icon: '💡',
         tone: 'blue',
@@ -230,6 +234,7 @@ window.ECONOS_TOPIC = {
       id: 'consumer_producer_surplus_4',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'How Subsidies Affect Surplus',
+      lede: 'A subsidy is a tax run in reverse – buyers and sellers both gain, but the taxpayer bill outruns the gain and overproduction still wastes welfare.',
       tip: {
         icon: '💡',
         tone: 'green',
@@ -284,6 +289,7 @@ window.ECONOS_TOPIC = {
       id: 'consumer_producer_surplus_5',
       stepLabel: 'Learn: Step 7 of 8',
       title: 'Surplus and Allocative Efficiency',
+      lede: 'There\'s exactly one output level that squeezes out every possible gain from trade – where marginal benefit meets marginal cost, and total surplus peaks.',
       tip: {
         icon: '💡',
         tone: 'blue',
@@ -320,6 +326,7 @@ window.ECONOS_TOPIC = {
       id: 'consumer_producer_surplus_6',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Surplus in the Real World',
+      lede: 'Rent controls, Help to Buy, tariffs, the minimum wage – the same surplus toolkit lets you judge who wins, who loses, and what gets wasted.',
       tip: {
         icon: '📊',
         tone: 'blue',

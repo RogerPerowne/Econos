@@ -132,6 +132,7 @@ window.ECONOS_TOPIC = {
       id: 'mvc_5',
       template: 'framing',
       title: 'When Market Power Isn\'t All Bad',
+      lede: 'Sometimes one big firm beats many small ones – lower costs, deeper R&D, or the constant threat of entry can all make market power work for consumers.',
       body: 'The DWL diagram assumes monopoly is unambiguously worse. Three counter-arguments push back:<br><br><strong>1. Natural monopoly cost advantage.</strong> If LRAC is still falling at the scale of market demand, a single firm produces at lower AC than several smaller competitors would. Breaking it up raises costs. Examples: water distribution, electricity grid, gas pipelines, rail track. Policy response: regulate (RPI-X price cap, access regulation), don\'t break up.<br><br><strong>2. Schumpeterian dynamic efficiency.</strong> Supernormal monopoly profit funds R&D. Competitive firms earn only normal profit and cannot afford ambitious research. Patents – a temporary legal monopoly – are the standard incentive for innovation. Aghion et al. find an <em>inverted-U</em>: innovation peaks at intermediate concentration, not at the extremes.<br><br><strong>3. Contestability.</strong> A single firm in a contestable market behaves competitively. Number of firms is the wrong metric; entry conditions are the right metric.',
       keyTerms: [
         { term: 'Natural monopoly', def: 'A market where one firm can serve demand at lower AC than multiple firms – LRAC still falling at minimum efficient scale relative to demand size.' },
@@ -144,6 +145,7 @@ window.ECONOS_TOPIC = {
       id: 'mvc_6',
       template: 'cause',
       title: 'Where Real Markets Sit',
+      lede: 'From Big Tech to budget airlines, real markets rarely match the textbook – what matters is how easily a rival could enter, not how many firms you can count today.',
       causes: [
         { head: 'Big Tech – high barriers, market power', body: 'Google search (92% share), Meta (Facebook + Instagram + WhatsApp), Apple (App Store control), Amazon (marketplace + own products). <strong>High barriers</strong>: network effects (more users → better service → more users), data accumulation, switching costs. Entry by new search engines or social networks consistently fails. CMA Digital Markets Unit (2021) targets these specifically with conduct codes.' },
         { head: 'Airlines – contestable on routes', body: 'Aircraft are <strong>mobile capital</strong> – low route-specific sunk costs. Even a monopoly route is contestable: rivals can redeploy aircraft when profits attract them. Ryanair and easyJet entering legacy carrier routes systematically eroded margins. Outcome: prices closer to AC than route-level concentration suggests.' },
@@ -156,6 +158,7 @@ window.ECONOS_TOPIC = {
       id: 'mvc_7',
       template: 'paired',
       title: 'Modern Competition Policy: Targeting Barriers, Not Structure',
+      lede: 'Modern regulators have stopped asking "how many firms?" and started asking "how hard is it to enter?" – attacking the barriers that protect incumbents.',
       left: {
         label: 'The contestability-based approach works',
         points: [

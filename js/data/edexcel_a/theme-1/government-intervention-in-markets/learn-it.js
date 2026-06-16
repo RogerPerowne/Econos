@@ -32,6 +32,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_1',
       stepLabel: 'Learn: Step 1 of 11',
       title: 'The big picture: why governments intervene',
+      lede: 'Markets sometimes break - and when they do, the government has a toolkit. The trick is naming the problem before reaching for a tool.',
       tip: { icon: '🎯', tone: 'blue', text: 'Markets sometimes fail. When they do, governments have a toolkit of interventions – but no single tool fits every problem. <strong>Name the failure first, then choose the tool.</strong>' },
       causesPosition: 'top',
       causesStyle: 'tinted-flat',
@@ -79,6 +80,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_2',
       stepLabel: 'Learn: Step 2 of 11',
       title: 'Indirect taxation – specific vs ad valorem',
+      lede: 'Fuel duty and VAT are both taxes on spending - but one shifts supply in a straight line and the other pivots it. The shape changes everything.',
       tip: { icon: '💷', tone: 'green', text: 'An <strong>indirect tax</strong> is a tax on spending, paid by the producer but usually passed (at least partly) to the consumer. A <strong>specific tax</strong> shifts supply up by a fixed amount per unit; an <strong>ad valorem tax</strong> pivots supply because it is a percentage of price.' },
       interactiveDiagram: {
         svgKey: 'taxTypesInteractive',
@@ -127,6 +129,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_2b',
       stepLabel: 'Learn: Step 3 of 11',
       title: 'Tax incidence – who really pays',
+      lede: 'A tax is levied on the seller, but you can end up footing most of the bill - and elasticity decides exactly how the burden splits.',
       tip: { icon: '⚖️', tone: 'green', text: 'The per-unit tax opens a wedge <strong>£T</strong> between the price consumers pay (<strong>Pc</strong>) and the net price producers keep (<strong>Pp</strong>). How that wedge splits – the <strong>incidence</strong> – depends on elasticity: the more <em>inelastic</em> side of the market bears more of the tax.' },
       interactiveDiagram: {
         svgKey: 'taxIncidenceInteractive',
@@ -177,6 +180,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_3',
       stepLabel: 'Learn: Step 4 of 11',
       title: 'Subsidies',
+      lede: 'A subsidy is a tax run in reverse: government tops up supply so prices fall and quantity rises - but someone still has to pay for it.',
       tip: { icon: '🎁', tone: 'purple', text: 'A <strong>subsidy</strong> is a payment from government to producers (or consumers) that lowers the cost of supply. Supply shifts <em>right</em>, price falls, quantity rises. It is the mirror image of an indirect tax.' },
       interactiveDiagram: {
         svgKey: 'subsidyInteractive',
@@ -237,6 +241,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_4',
       stepLabel: 'Learn: Step 5 of 11',
       title: 'Maximum prices (price ceilings)',
+      lede: 'Cap the price below where the market clears and you protect buyers on paper - but create shortages, queues and black markets in practice.',
       tip: { icon: '🧢', tone: 'amber', text: 'A price ceiling is binding only when set <strong>below</strong> equilibrium. It creates a shortage, redistributes surplus from sellers to lucky buyers, and destroys welfare through the DWL triangle.' },
       interactiveDiagram: {
         svgKey: 'priceCeilingDiagramInteractive',
@@ -290,6 +295,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_5',
       stepLabel: 'Learn: Step 6 of 11',
       title: 'Minimum prices (price floors)',
+      lede: 'Set a price above the market level - a minimum wage, a drink-price floor - and you lift sellers, but leave a surplus nobody wants to buy.',
       tip: { icon: '🪜', tone: 'green', text: 'A price floor is binding only when set <strong>above</strong> equilibrium. It creates a surplus, redistributes surplus from buyers to sellers (often), and destroys welfare through the DWL triangle.' },
       interactiveDiagram: {
         svgKey: 'priceFloorDiagramInteractive',
@@ -355,6 +361,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_6',
       stepLabel: 'Learn: Step 7 of 11',
       title: 'Tradable pollution permits (cap-and-trade)',
+      lede: 'Put a hard cap on emissions, hand out permits, then let firms trade them - the market itself finds the cheapest way to cut carbon.',
       tip: { icon: '🏭', tone: 'blue', text: 'Government <strong>sets a cap</strong> on total emissions and issues permits equal to the cap. Firms must hold a permit for every tonne they emit. They can <strong>trade</strong> permits – creating a market price for pollution.' },
       workedExample: {
         scene: 'capAndTrade',
@@ -406,6 +413,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_7',
       stepLabel: 'Learn: Step 8 of 11',
       title: 'State provision of public goods',
+      lede: 'Nobody will pay for defence or street lighting if they can free-ride on everyone else - so the market never builds it, and the state steps in.',
       tip: { icon: '🏛️', tone: 'purple', text: '<strong>Public goods</strong> are non-rival (one person\'s use doesn\'t reduce another\'s) and non-excludable (no one can be prevented from using them). The free-rider problem means the private sector under-provides – so the state steps in and funds provision via taxation.' },
       workedExample: { scene: 'publicGoods', label: null, cards: [] },
       causes: [
@@ -443,6 +451,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_8',
       stepLabel: 'Learn: Step 9 of 11',
       title: 'Provision of information',
+      lede: 'Sometimes people make bad choices simply because they don\'t know the full cost - so calorie counts and health warnings nudge demand without touching prices.',
       tip: { icon: 'ℹ️', tone: 'blue', text: 'Information failures and asymmetric information lead consumers to misjudge benefits and costs – over-consuming demerit goods, under-consuming merit goods. <strong>Better information shifts demand toward the social optimum</strong> without distorting prices.' },
       illustratedGrid: [
         { tone: 'green',  title: '🥗 Calorie labelling',      body: 'Since April 2022, large UK restaurants must display calorie counts on menus. Aims to shift consumption away from very-high-calorie items by closing the information gap on demerit consumption.' },
@@ -476,6 +485,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_9',
       stepLabel: 'Learn: Step 10 of 11',
       title: 'Regulation',
+      lede: 'When harm is severe or irreversible, you don\'t tax it - you ban it. Regulation skips the price mechanism and just sets the rules.',
       tip: { icon: '🛡️', tone: 'rose', text: '<strong>Regulation</strong> sets rules, standards or outright bans on behaviour. It is <em>command-and-control</em>: no reliance on price signals, just legal compliance. Best when harm is severe or irreversible and price-based tools are too slow or uncertain.' },
       diagramPanel: { diagramKey: 'policySpectrumDiagram', title: 'Where regulation sits on the policy spectrum', titleAbove: true, titleEmoji: '🛡️', layout: 'stacked', bare: true },
       causesStyle: 'tinted-flat',
@@ -511,6 +521,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_10',
       stepLabel: 'Learn: Step 11 of 11',
       title: 'Choosing the right tool + evaluation',
+      lede: 'Every tool fixes one failure but risks creating another - even the perfect cure can overshoot. Matching tool to problem is where the marks live.',
       tip: { icon: '🎯', tone: 'amber', text: '<strong>Match the tool to the failure.</strong> Externalities → price-based tools or permits. Public goods → state provision. Information gaps → labels and rules. Market power → regulation or price caps. Every tool risks government failure – the question is whether the gain outweighs the new distortion.' },
       interactiveDiagram: {
         svgKey: 'welfareGovtFailureInteractive',

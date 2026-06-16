@@ -218,7 +218,7 @@ window.ECONOS_TOPIC = {
         {
           prompt: 'Step 5 – Interpret: why is inflation 9.8% when food prices rose 20%?',
           hint: 'Think about the role of weights. What happens if Recreation had a 0.60 weight instead of 0.25?',
-          answer: 'Food rose 20% but has only a 0.40 weight – its contribution is capped. Transport rose 5% and Recreation rose 0%. The weighted average (9.8%) is pulled below food\'s 20% rise because other categories rose less. <strong>Key exam point:</strong> if Recreation had a 0.60 weight with food at 0.15, CPI would be far lower – weights are crucial. This is why the ONS updates the basket annually as spending patterns change.'
+          answer: 'Because <strong>weights matter more than the headline price rise</strong>:<ul style="margin:6px 0 8px;padding-left:20px;"><li>Food jumped 20% — but it\'s only 40% of spending, so its impact is capped.</li><li>Transport (35%) rose just 5%; recreation (25%) didn\'t move.</li></ul>The weighted average (9.8%) sits well below food\'s 20%. Flip the weights — recreation 0.60, food 0.15 — and CPI would be far lower. That\'s why the ONS re-weights the basket every year.'
         }
       ],
       conclusion: 'CPI (2024) = 109.8 → Inflation rate = <strong>9.8%</strong>. The weighting system means overall inflation reflects the full range of household spending, not just the categories with the largest price rises. Food\'s 20% rise is diluted because transport (35% weight) rose only 5% and recreation (25% weight) didn\'t rise at all.',

@@ -192,35 +192,35 @@ window.ECONOS_TOPIC = {
       template: 'worked-example',
       stepLabel: 'Learn: Step 5 of 10',
       title: 'Worked Example: Comparative Advantage',
-      scenario: 'Two countries – the <strong>UK</strong> and <strong>China</strong> – can each put a worker on <strong>financial services</strong> or <strong>electronics</strong>. With the same resources, one worker can make:\n\n<strong>UK:</strong> 200 financial services <em>or</em> 100 electronics\n<strong>China:</strong> 100 financial services <em>or</em> 200 electronics\n\nBoth countries can make both goods. Should they specialise – and if so, who makes what?',
+      scenario: 'Two countries — the <strong>UK</strong> and <strong>China</strong> — can each put one worker on <strong>financial services</strong> or <strong>electronics</strong>. With the same resources, one worker makes:<ul style="margin:8px 0 0;padding-left:20px;"><li><strong>UK:</strong> 200 services <em>or</em> 100 electronics</li><li><strong>China:</strong> 100 services <em>or</em> 200 electronics</li></ul><br>Both can make both. Should they specialise — and who makes what?',
       steps: [
         {
           label: 'Step 1 – Absolute vs comparative advantage',
-          hint: 'Who can produce MORE of each good with the same resources? Is that the right question?',
-          answer: '<strong>Absolute advantage</strong> = producing more with the same resources. The UK wins on services (200 &gt; 100); China wins on electronics (200 &gt; 100).\n\nBut absolute advantage is <em>not</em> the basis for trade. David Ricardo\'s insight (1817): what matters is <strong>comparative advantage</strong> – who gives up the least to make each good. That means working in <strong>opportunity cost</strong>, not raw output.'
+          hint: 'Who can make MORE of each good with the same resources? Is that even the right question?',
+          answer: '<strong>Absolute advantage</strong> = making more with the same resources. The UK wins on services (200 vs 100); China wins on electronics (200 vs 100).<br><br>But that\'s <em>not</em> what decides trade. Ricardo\'s insight (1817): what matters is <strong>comparative advantage</strong> — who gives up the <em>least</em> to make each good. So we compare <strong>opportunity costs</strong>, not raw output.'
         },
         {
-          label: 'Step 2 – Work out each country\'s opportunity cost',
-          hint: 'For each country: to make 1 more unit of one good, how many units of the other must it give up?',
-          answer: '<strong>UK</strong> (200 services = 100 electronics, so the worker\'s time trades at 2 : 1):\n• 1 electronics costs <strong>2 services</strong>\n• 1 service costs <strong>0.5 electronics</strong>\n\n<strong>China</strong> (100 services = 200 electronics):\n• 1 electronics costs <strong>0.5 services</strong>\n• 1 service costs <strong>2 electronics</strong>'
+          label: 'Step 2 – Work out each opportunity cost',
+          hint: 'To make 1 more of one good, how much of the other must each country give up?',
+          answer: '<strong>UK</strong> (200 services = 100 electronics):<ul style="margin:4px 0 8px;padding-left:20px;"><li>1 electronics costs <strong>2 services</strong></li><li>1 service costs <strong>0.5 electronics</strong></li></ul><strong>China</strong> (100 services = 200 electronics):<ul style="margin:4px 0 0;padding-left:20px;"><li>1 electronics costs <strong>0.5 services</strong></li><li>1 service costs <strong>2 electronics</strong></li></ul>'
         },
         {
-          label: 'Step 3 – Identify comparative advantage (lowest opportunity cost)',
-          hint: 'For each good, which country gives up less of the other good to make it?',
-          answer: '<strong>Financial services:</strong> the UK gives up 0.5 electronics; China gives up 2 electronics. → <strong>The UK has the comparative advantage in services.</strong>\n\n<strong>Electronics:</strong> China gives up 0.5 services; the UK gives up 2 services. → <strong>China has the comparative advantage in electronics.</strong>\n\nEach country should specialise where its opportunity cost is lowest.'
+          label: 'Step 3 – Who has the comparative advantage?',
+          hint: 'For each good, which country gives up less of the other to make it?',
+          answer: 'Pick the <strong>lower</strong> opportunity cost for each good:<ul style="margin:6px 0 0;padding-left:20px;"><li><strong>Services:</strong> UK gives up 0.5 electronics vs China\'s 2 → <strong>UK wins</strong>.</li><li><strong>Electronics:</strong> China gives up 0.5 services vs UK\'s 2 → <strong>China wins</strong>.</li></ul><br>Each should specialise where its opportunity cost is lowest.'
         },
         {
           label: 'Step 4 – Specialise and trade: the gains',
-          hint: 'Take 2 workers per country. Compare total world output before trade (each splits 50/50) with after full specialisation.',
-          answer: '<strong>Before trade</strong> (each country splits 2 workers 50/50):\n• UK: 100 services + 50 electronics · China: 50 services + 100 electronics\n• <strong>World total: 150 services + 150 electronics</strong>\n\n<strong>After full specialisation</strong> (UK → services, China → electronics):\n• UK: 200 services · China: 200 electronics\n• <strong>World total: 200 services + 200 electronics</strong>\n\nSame resources, <strong>+50 of each good</strong>. Trading at any rate between 0.5 and 2 electronics per service shares the gain so <em>both</em> countries consume beyond what they could produce alone.'
+          hint: 'Give each country 2 workers. Compare total world output before trade (split 50/50) with after full specialisation.',
+          answer: '<strong>Before trade</strong> (workers split 50/50):<ul style="margin:4px 0 8px;padding-left:20px;"><li>UK: 100 services + 50 electronics</li><li>China: 50 services + 100 electronics</li><li><strong>World: 150 + 150</strong></li></ul><strong>After specialising</strong> (UK → services, China → electronics):<ul style="margin:4px 0 8px;padding-left:20px;"><li>UK: 200 services</li><li>China: 200 electronics</li><li><strong>World: 200 + 200</strong></li></ul><strong>Same resources, +50 of each good.</strong> Trade at any rate between 0.5 and 2 electronics per service and <em>both</em> consume more than they could make alone.'
         },
         {
-          label: 'Step 5 – Evaluate: the catch, and Ricardo\'s deeper point',
-          hint: 'When does trade NOT make both better off? And does comparative advantage still apply if one country is better at everything?',
-          answer: '<strong>The terms of trade must lie between the two opportunity costs</strong> (here 0.5–2 electronics per service). Outside that band, one country is better off not trading.\n\n<strong>Other limits:</strong> over-specialisation leaves an economy exposed to price swings and structural unemployment if its industry fades; transport costs and trade barriers can wipe out small gains.\n\n<strong>Ricardo\'s deeper point:</strong> comparative advantage applies <em>even when one country is absolutely more productive at everything</em>. The basis for trade is the <strong>difference in opportunity-cost ratios</strong>, not absolute productivity – which is why a highly productive economy like the UK still gains from trading with less productive partners.'
+          label: 'Step 5 – The catch, and Ricardo\'s deeper point',
+          hint: 'When does trade NOT help both sides? And does the theory still hold if one country is better at everything?',
+          answer: '<strong>The catch:</strong> the trade rate must sit between the two opportunity costs (0.5–2 electronics per service). Outside that band, one country would rather not trade.<br><br><strong>Other limits:</strong><ul style="margin:4px 0 8px;padding-left:20px;"><li>Over-specialising leaves you exposed if your industry fades.</li><li>Transport costs and trade barriers can wipe out small gains.</li></ul><strong>The deeper point:</strong> this works <em>even when one country is better at everything</em> — trade rests on <strong>differences in opportunity cost</strong>, not absolute productivity.'
         }
       ],
-      conclusion: 'Comparative advantage = the lowest opportunity cost. Whenever opportunity-cost ratios differ between countries, specialisation plus trade raises total output – here from 150 to 200 units of each good with no extra resources. Specialise by opportunity cost, not by who is absolutely best.',
+      conclusion: 'Comparative advantage = the lowest opportunity cost. Whenever opportunity-cost ratios differ, specialising and trading raises total output — here from 150 to 200 of each good with no extra resources. Specialise by opportunity cost, not by who\'s absolutely best.',
       examEdge: 'The classic trap is answering on <em>absolute</em> advantage. Always compute opportunity cost and award comparative advantage to the lower-OC producer. State the terms-of-trade condition (the trade rate must sit between the two opportunity costs) to reach the top band.',
       economistQuote: {
         portraitKey: 'economistRicardo',

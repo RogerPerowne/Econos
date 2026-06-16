@@ -6,6 +6,28 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.175.0 — 2026-06-16
+
+### Articles: pipeline unblocked + first article live (with interactive charts)
+
+- **Fixed the article diagram loader.** `loadIconsLib()` evaluated
+  `icons.js` in a bare sandbox, so its eager `ECONOS_PPF.render(...)` calls
+  threw and `ECONOS_ICONS` came back empty — meaning `:::econos-diagram`
+  rendered nothing. It now loads the chart engine, shared libs, every spec,
+  the dial engine and icon symbols (the shells' script order) into one
+  sandbox before `icons.js`, and resolves lazy thunks. 601 icons now
+  resolve, so articles can embed the SPA's real interactive diagrams.
+- **First article shipped:** `what-is-inflation-a-level-economics` — a
+  full, SEO-structured explainer with two **interactive** chart-engine
+  diagrams (AD shifts; the Bank of England's rate/QE response), a Friedman
+  economist-insight, board spec pills, at-a-glance facts, FAQ (with
+  FAQPage JSON-LD) and a funnel into the inflation topic. Screenshot- and
+  step-verified; in the sitemap, hub search-index and RSS feed.
+- **Corrected the SEO queue.** `SEO_PRIORITY.md` had ~71 items falsely
+  marked `[L]` (live) while zero articles actually existed. Reset to `[ ]`;
+  only articles with a real source + confirmed build are `[L]` (currently
+  the one above).
+
 ## 0.174.5 — 2026-06-16
 
 ### Perf: WebP hero images

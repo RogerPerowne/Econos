@@ -126,3 +126,35 @@ test('content visuals expose an accessible name', async ({ page }) => {
   );
   expect(names.length).toBeGreaterThanOrEqual(2);
 });
+
+/* Content + post-interaction states. The tests above only cover the
+   covers/intros; these scan a content-heavy Learn card AND the revealed /
+   stepped states of the interactive widgets — where muted-grey caption
+   text and inactive-pill contrast actually live, and where a code-minifier
+   or inline style can quietly drop a colour below AA. */
+test('Worked-example card is accessible with every step revealed', async ({ page }) => {
+  await login(page);
+  await page.goto('/edexcel_a/theme-2/national-income-and-the-multiplier/learn-it/worked-example-calculating-the-multiplier-effect');
+  await page.waitForSelector('#main-content .we-step', { state: 'attached', timeout: 10_000 });
+  await page.waitForLoadState('networkidle');
+  // Reveal every step so the answer panels (and unlocked conclusion) are scanned.
+  const buttons = page.locator('[data-action="we-reveal"]');
+  const n = await buttons.count();
+  for (let i = 0; i < n; i++) await buttons.nth(i).click();
+  await page.waitForTimeout(300);
+  await assertAxeClean(page, 'multiplier worked-example (all steps revealed)');
+});
+
+test('Interactive-diagram card is accessible when stepped through', async ({ page }) => {
+  await login(page);
+  await page.goto('/edexcel_a/theme-2/national-income-and-the-multiplier/learn-it/the-multiplier-in-action');
+  await page.waitForSelector('#main-content [data-id-root]', { state: 'attached', timeout: 10_000 });
+  await page.waitForLoadState('networkidle');
+  // Advance every step so later views, the active step pill and the
+  // analysis panels are all in the DOM when axe runs.
+  const steps = page.locator('[data-action="id-advance"]');
+  const n = await steps.count();
+  for (let i = 0; i < n; i++) { await steps.nth(i).click(); await page.waitForTimeout(120); }
+  await page.waitForTimeout(200);
+  await assertAxeClean(page, 'multiplier interactive-diagram (stepped)');
+});

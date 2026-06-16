@@ -114,7 +114,7 @@
     }
     return `
       <div class="topbar" role="region" aria-label="Session header">
-        <a href="#" class="topbar__back" data-action="back-to-intro">
+        <a href="#" class="topbar__back" data-action="back-to-intro" aria-label="Back to topic overview">
           ${I.arrowLeft}
         </a>
         <div class="topbar__crumbs">
@@ -3808,7 +3808,7 @@
               <div style="font-size:14.5px;font-weight:var(--fw-bold);color:var(--econ-ink);line-height:var(--lh-normal);">${heading}</div>
               ${hint}
             </div>
-            <div data-we-done style="display:none;background:${tone.c};color:#fff;border-radius:var(--r-2xl);padding:3px 10px;font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);flex-shrink:0;align-self:flex-start;">✓ Done</div>
+            <div data-we-done style="display:none;background:var(--econ-green-50);color:var(--econ-green-800);border-radius:var(--r-2xl);padding:3px 10px;font-size:var(--fs-2xs);font-weight:var(--fw-extrabold);flex-shrink:0;align-self:flex-start;">✓ Done</div>
           </div>
           <button class="we-step__btn" data-action="we-reveal" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:var(--fs-sm);font-weight:var(--fw-extrabold);padding:8px 14px;border-radius:var(--r-md);cursor:pointer;width:100%;letter-spacing:0.02em;">Show working ↓</button>
           <div class="we-step__answer is-hidden" style="margin-top:12px;padding:12px 14px;background:${tone.soft};border-radius:var(--r-md);border-left:4px solid ${tone.c};font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);">${answer}</div>
@@ -3824,7 +3824,7 @@
           <div style="display:flex;gap:5px;">
             ${rawSteps.map((_, i) => `<div data-we-dot="${i+1}" style="width:9px;height:9px;border-radius:50%;background:var(--econ-slate-100);transition:background 0.3s ease;"></div>`).join('')}
           </div>
-          <div data-we-progress style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:#94A3B8;min-width:70px;text-align:right;transition:color 0.3s ease;">0 / ${total} done</div>
+          <div data-we-progress style="font-size:var(--fs-xs);font-weight:var(--fw-extrabold);color:#475569;min-width:70px;text-align:right;transition:color 0.3s ease;">0 / ${total} done</div>
         </div>
       </div>
     ` : '';
@@ -6646,7 +6646,7 @@
         const counter = root.querySelector('[data-we-progress]');
         if (counter) {
           counter.textContent = `${solved} / ${totalSteps} done`;
-          counter.style.color = solved === totalSteps ? '#059669' : '#475569';
+          counter.style.color = solved === totalSteps ? '#047857' : '#475569';
         }
         // Unlock conclusion when all steps solved
         if (solved === totalSteps) {

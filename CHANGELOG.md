@@ -6,6 +6,14 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.172.15 — 2026-06-12
+
+### Multiplier chain — final step label
+
+- Shortened the final step label on the multiplier geometric-series chain
+  from "+ R5 onward → £500m" to "+ R5 →: £500m" (on both the multiplier
+  and fiscal-policy cards, which share the chain).
+
 ## 0.172.14 — 2026-06-12
 
 ### Review set 2 — gains-from-trade diagram rebuilt from scratch

@@ -94,7 +94,7 @@ window.ECONOS_TOPIC = {
             analysis: '<strong>Cumulative income so far: £295.2m.</strong> We’re past the halfway mark to the £500m ceiling but the rounds are getting much smaller now. After round 10 each new round is contributing less than £15m.'
           },
           {
-            label: '+ R5 onward → £500m',
+            label: '+ R5 →: £500m',
             tone: 'rose',
             head: 'The full geometric sum',
             body: 'Round 5 adds £41m. Round 6 adds £33m. Round 7 adds £26m. The series continues for ever, but the total converges – it doesn’t grow without limit.',

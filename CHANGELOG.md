@@ -6,6 +6,21 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.174.4 — 2026-06-16
+
+### Test coverage: card-render integrity net
+
+- New `tests/e2e/card-render.spec.js` covers the complex card renderers
+  that previously had none — the four elasticity calculators, the
+  worked-example chain, the stepped interactive-diagram, and a
+  framing/keyTerms card. Rather than brittle full-HTML snapshots (which
+  would break on every copy edit), it asserts behavioural invariants that
+  survive content edits but catch real breakage: no template placeholder
+  leaks into the rendered text (`undefined` / `NaN` / `[object Object]` —
+  the bug class behind the framing missing-lede and `\n`-in-HTML fixes)
+  and no page/console errors through every revealed/stepped state. Runs
+  against the minified preview build, so it also guards minify regressions.
+
 ## 0.174.3 — 2026-06-16
 
 ### Tooling: guard the service-worker precache against spec drift

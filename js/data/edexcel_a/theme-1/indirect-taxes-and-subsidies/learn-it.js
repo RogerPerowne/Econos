@@ -27,6 +27,7 @@ window.ECONOS_TOPIC = {
       id: 'indirect_taxes_subsidies_1',
       stepLabel: 'Learn: Step 1 of 4',
       title: 'How an indirect tax works',
+      lede: 'Tax a good and the whole supply curve lifts – but a flat penny-per-unit duty and a percentage like VAT push it up in very different shapes.',
       tip: { icon: '💡', tone: 'amber', text: 'An indirect tax is collected by sellers but borne by whoever is less elastic. Two forms – specific (fixed £ per unit) and ad valorem (% of price) – shift supply in different ways.' },
       interactiveDiagram: {
         svgKey: 'taxTypesInteractive',
@@ -69,6 +70,7 @@ window.ECONOS_TOPIC = {
       id: 'indirect_taxes_subsidies_2',
       stepLabel: 'Learn: Step 2 of 4',
       title: 'Tax incidence: who actually pays?',
+      lede: 'The shop hands the tax to HMRC, but that\'s not who really pays it – the burden quietly splits between buyers and sellers behind the scenes.',
       tip: { icon: '⚖️', tone: 'rose', text: '<strong>Legal incidence</strong> (who hands over the cash) ≠ <strong>economic incidence</strong> (who bears the burden). Step through the diagram to see the consumer share, the producer share, and the resulting tax revenue.' },
       interactiveDiagram: {
         svgKey: 'taxIncidenceInteractive',
@@ -116,6 +118,7 @@ window.ECONOS_TOPIC = {
       id: 'indirect_taxes_subsidies_3',
       stepLabel: 'Learn: Step 3 of 4',
       title: 'How a subsidy works',
+      lede: 'Flip a tax upside down and you get a subsidy – government cash that pushes supply down, cuts the price buyers pay and lifts what sellers keep.',
       tip: { icon: '💡', tone: 'green', text: 'A subsidy is the mirror image of a tax – a government payment that shifts supply <em>down</em>, lowering the consumer price and raising the producer net price. Step through to see the consumer share, the producer share, and the cost to government.' },
       interactiveDiagram: {
         svgKey: 'subsidyInteractive',
@@ -163,6 +166,7 @@ window.ECONOS_TOPIC = {
       id: 'indirect_taxes_subsidies_4',
       stepLabel: 'Learn: Step 4 of 4',
       title: 'Elasticity and who pays',
+      lede: 'The same tax hits two markets completely differently – whoever can\'t walk away from the price ends up carrying the bill.',
       tip: { icon: '⚖️', tone: 'blue', text: 'The same tax or subsidy falls differently on different markets. One rule governs both: <strong>the less elastic side carries more of the burden (tax) or captures more of the benefit (subsidy).</strong>' },
       interactiveDiagram: {
         svgKey: 'elasticityIncidenceInteractive',

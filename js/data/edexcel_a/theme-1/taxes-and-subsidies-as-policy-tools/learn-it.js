@@ -28,6 +28,7 @@ window.ECONOS_TOPIC = {
       id: 'taxes_subsidies_policy_1',
       stepLabel: 'Learn: Step 1 of 3',
       title: 'When are taxes and subsidies justified?',
+      lede: 'A tax or subsidy thrown at a healthy market just burns welfare – the only real justification is a market failure that needs fixing.',
       tip: { icon: '⚖️', tone: 'blue', text: 'Taxes discourage socially harmful behaviour. Subsidies encourage socially beneficial behaviour. Both are tools for correcting a market failure – not instruments for raising revenue in an otherwise efficient market.' },
       comparison: {
         title: 'Two corrective tools, opposite directions',
@@ -70,6 +71,7 @@ window.ECONOS_TOPIC = {
       id: 'taxes_subsidies_policy_2',
       stepLabel: 'Learn: Step 2 of 3',
       title: 'Four UK case studies – what actually happens',
+      lede: 'The sugar levy, tobacco duty, EU farm subsidies and offshore wind show what really happens when textbook policy collides with the real world.',
       tip: { icon: '🌍', tone: 'amber', text: 'Real policy outcomes depend on three questions: Does it change behaviour (effectiveness)? Is the welfare gain worth the cost (efficiency)? Who gains and who loses (equity)? Two taxes and two subsidies show theory meeting reality.' },
       causesLabel: 'Two taxes · two subsidies',
       causesEmoji: '📋',
@@ -120,6 +122,7 @@ window.ECONOS_TOPIC = {
       id: 'taxes_subsidies_policy_3',
       stepLabel: 'Learn: Step 3 of 3',
       title: 'Exam technique: drawing, analysis, evaluation',
+      lede: 'Get the diagram right, dodge the classic mistakes, and judge on effectiveness, efficiency and equity – the moves that turn knowledge into marks.',
       tip: { icon: '✍️', tone: 'blue', text: 'This card turns your content knowledge into high-mark exam performance. Master the four diagrams below and the three-axis evaluation structure to handle any tax/subsidy question.' },
       diagramPanel: {
         diagramKey: 'taxSubsidyFourPanels',

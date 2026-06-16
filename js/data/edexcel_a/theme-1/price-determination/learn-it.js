@@ -27,6 +27,7 @@ window.ECONOS_TOPIC = {
       id: 'market_equilibrium_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Market equilibrium: the big picture',
+      lede: 'One price makes everyone\'s plans line up: where the demand and supply curves cross, the market clears with nothing left over.',
       tip: { icon: '💡', tone: 'blue', text: 'When the plans of buyers and sellers match, the market settles at an equilibrium price and quantity – where the demand and supply curves cross.' },
       interactiveDiagram: {
         svgKey: 'equilibriumBasic',
@@ -107,6 +108,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Analysing Shifts: Demand and Supply',
+      lede: 'Move a whole curve and the equilibrium jumps to a new price and quantity — just don\'t confuse a shift with a slide along the curve.',
       tip: { icon: '💡', tone: 'blue', text: 'Any shift in demand or supply moves the equilibrium to a new price and quantity. (A change in the good’s own price is a movement along the curve, not a shift.)' },
       interactiveDiagram: {
         svgKey: 'shiftsInteractive',
@@ -149,6 +151,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Simultaneous Shifts',
+      lede: 'When demand and supply both move at once, one answer is certain and the other is genuinely up for grabs — depending on which shift wins.',
       tip: { icon: '💡', tone: 'blue', text: 'When demand and supply both shift, one variable is determinate and the other is ambiguous – it depends on the relative size of the two shifts.' },
       interactiveDiagram: {
         svgKey: 'simultaneousShiftsInteractive',
@@ -189,6 +192,7 @@ window.ECONOS_TOPIC = {
       id: 'market_equilibrium_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Allocative Efficiency of Market Equilibrium',
+      lede: 'At equilibrium the last unit\'s benefit exactly matches its cost — which is why a competitive market can squeeze out the most welfare possible.',
       tip: { icon: '💡', tone: 'blue', text: 'In a competitive market, equilibrium allocates output to the consumers who value it most and the producers who can supply it at the lowest cost.' },
       diagramPanel: {
         diagramKey: 'welfareSurplusDiagram',
@@ -222,6 +226,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'When Markets Fail to Reach Equilibrium',
+      lede: 'Sometimes the price simply won\'t budge to where it needs to be — controls, sticky wages and shocks can leave a market stuck off-balance.',
       tip: { icon: '💡', tone: 'blue', text: 'Real markets do not always clear smoothly – controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
@@ -238,6 +243,7 @@ window.ECONOS_TOPIC = {
       id: 'market_equilibrium_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Equilibrium in Different Market Contexts',
+      lede: 'Housing, wages, oil, tickets — the same supply-and-demand logic runs everywhere, but how fast it plays out changes the whole story.',
       tip: { icon: '💡', tone: 'blue', text: 'The same demand-and-supply logic applies across many markets, but the speed of adjustment and the wider effects can differ.' },
       marketGrid: [
         {

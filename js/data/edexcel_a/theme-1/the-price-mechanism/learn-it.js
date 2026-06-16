@@ -27,6 +27,7 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Functions of the price mechanism: the big picture',
+      lede: 'No one runs the economy — yet shelves get stocked and resources flow where they\'re needed. Three jobs prices do quietly explain how.',
       tip: { icon: '💡', tone: 'blue', text: '<em>In a market economy, resources are scarce but wants are unlimited.</em><br><strong>How do prices help decide what gets produced, how much, and who gets it?</strong><br>The price mechanism performs three core functions that keep the economy coordinated and efficient.' },
       framework: {
         label: 'The Price Mechanism: 3 Core Functions',
@@ -63,6 +64,7 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_2',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Prices as incentives',
+      lede: 'A rising price isn\'t just information — it\'s a nudge with money attached, pulling producers in and pushing consumers away.',
       tip: {
         icon: '💡',
         tone: 'blue',
@@ -122,6 +124,7 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_3',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Prices as a rationing device',
+      lede: 'A higher price won\'t create more concert seats — but it decides who gets them, sharing out what\'s scarce without a queue.',
       tip: {
         icon: '💡',
         tone: 'blue',
@@ -180,6 +183,7 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_4',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'How price signals transmit through markets',
+      lede: 'One bad harvest can ripple from a wheat field all the way to your sandwich — price signals jump from market to linked market.',
       tip: {
         icon: '💡',
         tone: 'blue',
@@ -221,6 +225,7 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Entrepreneurship and the price mechanism',
+      lede: 'Where high prices flag unmet demand, entrepreneurs are the people who spot the gap, take the risk, and chase the profit.',
       tip: {
         icon: '💡',
         tone: 'blue',
@@ -279,6 +284,7 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'When the price mechanism fails',
+      lede: 'Prices usually coordinate brilliantly — but when they miss hidden costs or benefits, the market sends everyone the wrong signal.',
       tip: {
         icon: '💡',
         tone: 'blue',
@@ -316,6 +322,7 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Price mechanism vs government allocation',
+      lede: 'Markets or the state? Neither wins every time — the smart answer weighs efficiency against fairness, case by case.',
       tip: {
         icon: '💡',
         tone: 'blue',

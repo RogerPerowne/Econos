@@ -411,6 +411,7 @@ A <strong>shallow</strong> demand curve means consumers respond strongly to pric
       id: 'ped_9',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'PED exam toolkit',
+      lede: 'Everything you need to nail a PED question in one place — the facts, the traps to dodge, and the four moves that bag full marks.',
       causesLabel: '5 core facts',
       causesEmoji: 'ℹ️',
       causesPosition: 'top',

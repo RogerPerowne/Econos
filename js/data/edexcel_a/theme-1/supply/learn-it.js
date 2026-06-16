@@ -31,6 +31,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Supply: the big picture',
+      lede: 'The supply curve isn\'t just a line going up – it maps how much firms will actually sell at every price, and why.',
       tip: { icon: '✅', tone: 'green', text: 'Supply means willingness AND ability to offer output for sale – not just making something. The supply curve shows how much producers sell at each price.' },
       interactiveDiagram: {
         svgKey: 'supplyBigPicture',
@@ -73,6 +74,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Why the supply curve slopes up',
+      lede: 'Higher prices pull out more output for three concrete reasons – profit, rising costs, and pricier producers finally finding it worth their while.',
       tip: { icon: '✅', tone: 'green', text: 'As price rises producers usually sell more; as price falls they usually sell less. Higher prices make extra output more worthwhile.' },
       interactiveDiagram: {
         svgKey: 'supplySlopeCurve',
@@ -116,6 +118,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Movements along the supply curve',
+      lede: 'Change the good\'s own price and you slide along the same curve – an extension up, a contraction down. The curve never moves.',
       tip: { icon: '✅', tone: 'green', text: 'A change in the good’s own price causes a movement along the SAME supply curve – never a shift.' },
       interactiveDiagram: {
         svgKey: 'supplyMovements',
@@ -151,6 +154,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Shifts in supply',
+      lede: 'When something other than price changes, the whole curve jumps sideways – more or less supplied at every single price.',
       tip: { icon: '✅', tone: 'green', text: 'When a non-price factor changes, the WHOLE supply curve shifts – more or less is supplied at every price. Step through an increase and a decrease.' },
       interactiveDiagram: {
         svgKey: 'supplyShifts',
@@ -178,6 +182,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'What shifts supply',
+      lede: 'From a war-driven gas shock to a bad coffee harvest – the non-price forces that move the whole curve left or right.',
       tip: { icon: '✅', tone: 'green', text: 'Think of shifts as supply drivers OUTSIDE the good’s own price – the conditions of supply.' },
       diagramKey: 'supplyDeterminantsHub',
       diagramLabel: 'The supply drivers',
@@ -204,6 +209,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Costs, productivity, tax & subsidy',
+      lede: 'Most things that shift supply boil down to one number: unit cost. Lower it and supply grows; raise it and supply shrinks.',
       tip: { icon: '✅', tone: 'green', text: 'Many supply changes work through one mechanism – the producer’s unit cost. Lower unit cost tends to raise supply; higher unit cost tends to reduce it.' },
       diagramKey: 'supplyCostFactors',
       diagramLabel: 'Two key relationships',
@@ -225,6 +231,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 7 of 8',
       title: 'Joint & competing supply',
+      lede: 'Make beef and you also make leather; grow wheat and you can\'t grow rapeseed on the same field – one supply choice ripples into another market.',
       tip: { icon: '💡', tone: 'blue', text: 'Some products are supplied together, while others compete for the same scarce resources – so one supply decision can ripple into another market.' },
       conceptBoxes: [
         {
@@ -269,6 +276,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'The supply exam toolkit',
+      lede: 'Almost every supply question hinges on one call: movement or shift? Get that right and the marks follow.',
       tip: { icon: '✅', tone: 'green', text: 'Most supply questions come down to one distinction: movement or shift? Separate price changes from non-price changes and the logic becomes much clearer.' },
       flow: [
         { tone: 'blue',   icon: '🔍', title: 'Identify the change', sub: 'What has actually happened?' },

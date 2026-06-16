@@ -27,6 +27,7 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'The costs trilogy',
+      lede: 'When a factory pollutes, someone pays who never agreed to – splitting the cost the firm sees from the cost society actually bears.',
       tip: [
         {
           icon: '🏭',
@@ -132,6 +133,7 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_3',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Real-world examples',
+      lede: 'Steel plants, flights, smoking, sugary drinks – every textbook externality has a real third party who never gets a say in the deal.',
       tip: { icon: 'ℹ️', tone: 'green', text: '<strong>Strong exam answers improve when you name the third party harmed.</strong> Here are the most commonly examined externalities and who bears the cost.' },
       illustratedGridLabel: 'Production externalities',
       illustratedGridEmoji: '🏭',
@@ -177,6 +179,7 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_4',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Market-based interventions',
+      lede: 'Make polluters pay the cost they\'ve been dumping on everyone else – using taxes and tradeable permits to bend the market back to the right output.',
       tip: { icon: '🎯', tone: 'green', text: '<strong>Aim:</strong> to <em>internalise</em> the externality by making firms face the external cost.' },
       keyPointsLabel: 'Two market-based tools',
       keyPointsEmoji: '💸',
@@ -219,6 +222,7 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Command-and-control interventions',
+      lede: 'Sometimes you don\'t price the harm – you ban it outright. Rules, standards and limits hit the problem directly when getting it wrong isn\'t an option.',
       tip: { icon: '⚖️', tone: 'green', text: '<strong>Regulation</strong> does not primarily work through the price signal – it sets <strong>rules, standards, restrictions or bans</strong> to change behaviour or protect people and the environment.' },
       causesLabel: 'Common command-and-control interventions',
       causesEmoji: '📋',
@@ -262,6 +266,7 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Evaluation: why intervention can fail',
+      lede: 'Fixing market failure can backfire – the cure for one problem can quietly create a government failure of its own.',
       tip: { icon: '⚖️', tone: 'green', text: 'Interventions aim to correct market failure, but correcting externalities can itself create <strong>government failure</strong>. Below are key reasons why intervention may be ineffective, inefficient or have unintended consequences.' },
       flowTitle: 'Five reasons intervention can fail',
       flowEmoji: '⚠️',
@@ -286,6 +291,7 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Exam edge & economist insight',
+      lede: 'The phrases, the framework and the 100-year-old idea behind every Pigouvian tax – the moves that turn a Level 3 answer into a Level 4.',
       tip: { icon: null, tone: 'green', head: 'Exam edge – best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The size of the welfare loss depends on the <em>price elasticity of demand and supply</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;A Pigouvian tax is <em>theoretically efficient</em> but <em>practically difficult to calibrate</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Market-based policies are more <em>cost-effective</em>; <em>command-and-control gives greater certainty</em>.&rdquo;</span></div></div>' },
       flow: [
         { tone: 'blue',   icon: '📘', title: 'Define & explain',            sub: 'Define the externality (type and cause) and explain the negative production externality diagram with MSC above MPC.' },

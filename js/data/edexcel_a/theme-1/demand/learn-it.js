@@ -32,6 +32,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Demand: the big picture',
+      lede: 'The most-drawn diagram in economics, decoded – demand is willingness backed by money, mapped across every price.',
       tip: { icon: '✅', tone: 'green', text: 'Demand means willingness AND ability to pay – not just wanting something. The demand curve shows how much consumers buy at each price.' },
       interactiveDiagram: {
         svgKey: 'demandBigPicture',
@@ -76,6 +77,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Why the demand curve slopes down',
+      lede: 'Cheaper goods get bought more for three reasons – you switch towards them, your money stretches further, and each extra unit thrills you less.',
       tip: { icon: '✅', tone: 'green', text: 'As price falls consumers usually buy more; as price rises they usually buy less. Lower prices make a good both more attractive and more affordable.' },
       interactiveDiagram: {
         svgKey: 'demandSlopeCurve',
@@ -122,6 +124,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Movements along the demand curve',
+      lede: 'Change the good\'s own price and you glide along the same curve – never knock it sideways. Get the language exactly right.',
       tip: { icon: '✅', tone: 'green', text: 'A change in the good’s own price causes a movement along the SAME demand curve – never a shift.' },
       interactiveDiagram: {
         svgKey: 'demandMovements',
@@ -158,6 +161,7 @@ window.ECONOS_TOPIC = {
       id: 'demand_4',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Shifts in demand',
+      lede: 'When anything but price changes, the entire curve slides – more or less wanted at every price on the board.',
       tip: { icon: '✅', tone: 'green', text: 'When a non-price factor changes, the WHOLE demand curve shifts – more or less is demanded at every price. Step through an increase and a decrease.' },
       interactiveDiagram: {
         svgKey: 'demandShifts',
@@ -187,6 +191,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'What shifts demand',
+      lede: 'Hot weather, green trends, a bigger population – the off-price forces that drag the whole demand curve left or right.',
       tip: { icon: '✅', tone: 'green', text: 'Think of shifts as demand drivers OUTSIDE the good’s own price – the conditions of demand.' },
       diagramKey: 'demandDeterminantsHub',
       diagramLabel: 'The demand drivers',
@@ -214,6 +219,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Normal, inferior, substitutes & complements',
+      lede: 'Before you can predict which way demand moves, you have to pin down what kind of good you\'re dealing with.',
       tip: { icon: '✅', tone: 'green', text: 'To predict the shift correctly, you often need to classify the good first – is it normal or inferior, a substitute or a complement?' },
       diagramKey: 'demandGoodTypes',
       diagramLabel: 'Two key relationships',
@@ -237,6 +243,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 7 of 8',
       title: 'Derived Demand',
+      lede: 'Nobody wants steel or factory workers for their own sake – they\'re wanted because we want cars, which is how recessions snowball.',
       tip: { icon: '💡', tone: 'blue', text: 'Some demand is derived: it exists only because of demand for something else. If demand for cars falls in a recession, derived demand for car workers, steel and components falls too – making recessions self-reinforcing.' },
       flow: [
         { icon: '🛍️', title: 'Consumers demand cars',   sub: 'Rising incomes → demand for vehicles grows.',                       tone: 'green'  },
@@ -263,6 +270,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'The demand exam toolkit',
+      lede: 'Nearly every demand question turns on a single question: movement or shift? Master that and the rest is detail.',
       tip: { icon: '✅', tone: 'green', text: 'Most demand questions come down to one distinction: movement or shift? Separate price changes from non-price changes and the logic becomes much clearer.' },
       flow: [
         { tone: 'blue',   icon: '🔍', title: 'Identify the change', sub: 'What has actually happened?' },

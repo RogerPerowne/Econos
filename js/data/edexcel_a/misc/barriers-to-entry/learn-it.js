@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       diagramKey: 'mesBarrierDiagram',
       title: 'Structural (Innocent) Barriers to Entry',
+      lede: 'Some walls aren\'t built on purpose – scale, sunk costs and control of key inputs keep rivals out just by how the industry works.',
       causes: [
         { head: 'Economies of scale', body: 'Incumbents produce at large scale → low AC. Entrants start small → high AC. Entrant cannot match incumbent prices without making a loss until it reaches scale – by which time it may have failed. Natural monopoly is the extreme case.' },
         { head: 'High sunk costs', body: 'Sunk costs are irrecoverable if the firm exits. A firm considering entry faces the risk: if unsuccessful, sunk costs are lost. This risk asymmetry (incumbent has already paid; entrant must commit anew) deters entry. Examples: aircraft R&D, brand building, specialist equipment.' },
@@ -61,6 +62,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       diagramKey: 'limitPricingDiagram',
       title: 'Strategic (Deliberate) Barriers to Entry',
+      lede: 'Other walls are built on purpose – predatory pricing, limit pricing and shelf-hogging are incumbents engineering rivals out.',
       causes: [
         { head: 'Predatory pricing', body: 'Incumbent prices below cost to drive out or deter new entrants, then raises price once threat is eliminated. Illegal under competition law but difficult to prove intent. Example: alleged predatory pricing by Standard Oil (1900s). Modern concern: Amazon Marketplace pricing.' },
         { head: 'Limit pricing', body: 'Set price just below the level at which an entrant could make a profit – not necessarily below incumbent\'s own cost. Legitimate but deliberate deterrence. Sacrifices some short-run profit to maintain long-run market position.' },
@@ -73,6 +75,7 @@ window.ECONOS_TOPIC = {
       id: 'barriers_entry_4',
       template: 'cause',
       title: 'Legal and Regulatory Barriers',
+      lede: 'Sometimes the state itself builds the wall – patents, copyright, licences and red tape can lock a market tighter than any cost advantage.',
       causes: [
         { head: 'Patents', body: '20-year exclusive right to exploit an invention. Creates a legal monopoly as reward for innovation. Pharmaceutical patents: firms spend £1-2bn developing a drug; patent allows 10+ years of monopoly pricing to recover costs before generics enter.' },
         { head: 'Copyright', body: 'Protects creative works (books, software, music, film) for author\'s life + 70 years. Creates monopoly over specific expression. Enables Disney to sustain revenue from 80-year-old characters.' },
@@ -86,6 +89,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       diagramKey: 'networkEffectDiagram',
       title: 'Network Effects as Entry Barriers',
+      lede: 'When a product gets better the more people use it, the leader runs away with the market – and rivals face an impossible chicken-and-egg.',
       body: 'A <strong>network effect</strong> occurs when the value of a product increases as more people use it. Network effects create powerful entry barriers because:<ul style="margin:8px 0;padding-left:20px;"><li>An entrant starts with zero users – its product is less valuable than the incumbent\'s</li><li>New users join the incumbent (higher value), not the entrant (lower value)</li><li>The incumbent\'s network advantage compounds over time</li><li>Result: "winner-take-all" markets dominated by the first platform to reach critical mass</li></ul><strong>Examples:</strong> WhatsApp (switching means losing contacts), LinkedIn (professional network → high switching costs), Windows (software ecosystem). Network effects explain why tech monopolies are more durable than traditional ones – rivals face an almost insurmountable chicken-and-egg problem.',
       keyTerms: [
         { term: 'Network effect', def: 'Value of the product or service increases with the number of users – creates self-reinforcing incumbency advantage.' },
@@ -98,6 +102,7 @@ window.ECONOS_TOPIC = {
       id: 'barriers_entry_6',
       template: 'diagnose',
       title: 'Barriers by Industry: Examples',
+      lede: 'Building a passenger jet takes £20bn and a decade; becoming a taxi takes a licence and a car. Barrier height decides market structure.',
       intro: 'Barrier height varies dramatically across industries – this determines market structure.',
       rows: [
         { label: 'Industry', colA: 'Commercial aviation (aircraft manufacturing)', colB: 'Taxi services' },
@@ -111,6 +116,7 @@ window.ECONOS_TOPIC = {
       id: 'barriers_entry_7',
       template: 'paired',
       title: 'Evaluation: Barriers and Competition Policy',
+      lede: 'Not every barrier is villainous – some reward risk and fund innovation. The trick is knowing which to defend and which to tear down.',
       left: {
         label: 'Why some barriers are justified',
         points: [

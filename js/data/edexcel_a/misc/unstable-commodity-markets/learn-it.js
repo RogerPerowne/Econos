@@ -50,6 +50,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       diagramKey: 'cobwebModel',
       title: 'The Cobweb Model',
+      lede: 'Farmers plant on last year\'s price, so a glut breeds a shortage breeds a glut – boom-and-bust baked into the harvest cycle.',
       body: 'The <strong>cobweb model</strong> explains cyclical price and quantity oscillations in agricultural markets arising from production lags.<br><br><strong>Mechanism:</strong><br>1. Good harvest → low price this year.<br>2. Farmers plan next year\'s planting based on this year\'s (low) price → reduce acreage.<br>3. Bad supply next year → high price.<br>4. High price → farmers plant lots next year.<br>5. Large harvest → low price again. Cycle repeats.<br><br><strong>Convergent cobweb:</strong> if supply is more elastic than demand, oscillations shrink over time – market tends toward equilibrium. <strong>Divergent cobweb:</strong> if demand is more inelastic than supply is elastic, oscillations grow – market becomes increasingly unstable.',
       keyTerms: [
         { term: 'Cobweb model', def: 'A model of price/quantity cycles in markets with production lags – farmers base planting decisions on last period\'s price.' },
@@ -62,6 +63,7 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_3',
       template: 'cause',
       title: 'Consequences of Price Volatility',
+      lede: 'Wild prices wreck farmer incomes, push food out of reach for the poorest, and can topple whole economies built on one export.',
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
       causesLabel: 'Who gets hurt by volatile commodity prices',
@@ -77,6 +79,7 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_4',
       template: 'mechanisms',
       title: 'Buffer Stock Schemes',
+      lede: 'Buy the glut, store it, sell it back in the famine – the state turns trader to keep prices inside a band. At least, that\'s the plan.',
       intro: 'A buffer stock scheme is a government or international authority intervention to stabilise commodity prices within a target band.',
       steps: [
         { label: '📦 Abundant year', text: 'Good harvest → price falls below floor. Authority buys surplus at the floor price → removes excess supply → price supported at floor. Stock accumulated in reserve.' },
@@ -90,6 +93,7 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_5',
       template: 'cause',
       title: 'Limitations of Buffer Stock Schemes',
+      lede: 'Storage bills, the wrong target price, running out of cash or stock – why most buffer schemes, like the Tin Council, eventually collapse.',
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
       causesLabel: 'Why buffer stocks fail in practice',
@@ -105,6 +109,7 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_6',
       template: 'framing',
       title: 'Buffer Stocks vs Alternatives',
+      lede: 'Why hoard physical stock when futures, sovereign wealth funds, diversification and better crops can smooth prices without the warehouse?',
       verdict: {
         leftLabel: '📦 Buffer stock schemes',
         rightLabel: '🔄 Alternative approaches',
@@ -122,6 +127,7 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_7',
       template: 'framing',
       title: 'Commodity Markets in a Globalised World',
+      lede: 'Today OPEC manages supply at the wellhead and hedge funds trade futures by the billion – domestic price levers have never been weaker.',
       body: '<strong>OPEC and oil markets:</strong> the oil cartel manages supply to stabilise (or raise) oil prices. OPEC+ production cuts in 2020 (after COVID demand collapse) and 2022-23 demonstrate supply management at global scale. Unlike buffer stocks, OPEC restricts supply (withholds production) rather than storing it – different mechanism, same price stabilisation goal.<br><br><strong>Financialisation of commodity markets:</strong> since 2000s, financial investors (hedge funds, pension funds) trade commodity futures alongside physical traders. This has increased price co-movement with financial markets and potentially increased volatility – commodity prices rose in 2022 partly due to financial flows, not just supply disruption.',
       keyTerms: [
         { term: 'OPEC', def: 'Organisation of Petroleum Exporting Countries – cartel controlling ~40% of world oil supply, managing production to influence prices.' },

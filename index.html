@@ -113,8 +113,12 @@
       <!-- Right column: illustration + floating card -->
       <div class="hp-hero__right">
 
-        <!-- Hero photo: student studying -->
-        <img class="hp-hero__illustration" src="/assets/home-hero.png" alt="A student studying economics at a desk" width="520" height="400" />
+        <!-- Hero photo: student studying. WebP with PNG fallback;
+             display:contents keeps the <img> laying out exactly as before. -->
+        <picture style="display:contents;">
+          <source srcset="/assets/home-hero.webp" type="image/webp" />
+          <img class="hp-hero__illustration" src="/assets/home-hero.png" alt="A student studying economics at a desk" width="520" height="400" />
+        </picture>
 
         <!-- Floating progress card -->
         <div class="hp-progress-card" aria-label="Progress summary">

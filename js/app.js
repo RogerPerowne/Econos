@@ -2475,7 +2475,8 @@
       const we = c.workedExample;
       if (we.label !== null) content += genSecLabel(we.emoji || '🔬', we.label || 'Worked example');
       if (we.heroImage) {
-        content += `<div style="margin-bottom:20px;border-radius:var(--r-lg);overflow:hidden;"><img src="${we.heroImage}" alt="" style="display:block;width:100%;height:auto;" /></div>`;
+        const webp = we.heroImage.replace(/\.png$/, '.webp');
+        content += `<div style="margin-bottom:20px;border-radius:var(--r-lg);overflow:hidden;"><picture><source srcset="${webp}" type="image/webp" /><img src="${we.heroImage}" alt="" style="display:block;width:100%;height:auto;" /></picture></div>`;
       } else if (we.scene && SCENES[we.scene]) {
         content += `<div style="margin-bottom:20px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--econ-slate-100);">${SCENES[we.scene]}</div>`;
       }
@@ -2535,7 +2536,7 @@
       const igCells = c.illustratedGrid.map((item, i) => {
         const t = PATTERN_TONES[item.tone] || PATTERN_TONES.green;
         const sceneHtml = item.heroImage
-          ? `<div style="height:${igSceneH}px;overflow:hidden;flex-shrink:0;"><img src="${item.heroImage}" alt="" style="display:block;width:100%;height:${igSceneH}px;object-fit:cover;" /></div>`
+          ? `<div style="height:${igSceneH}px;overflow:hidden;flex-shrink:0;"><picture><source srcset="${item.heroImage.replace(/\.png$/, '.webp')}" type="image/webp" /><img src="${item.heroImage}" alt="" style="display:block;width:100%;height:${igSceneH}px;object-fit:cover;" /></picture></div>`
           : (item.scene && SCENES[item.scene]
             ? `<div style="height:${igSceneH}px;overflow:hidden;flex-shrink:0;">${SCENES[item.scene]}</div>`
             : '');

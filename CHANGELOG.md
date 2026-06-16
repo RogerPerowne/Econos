@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.173.1 — 2026-06-16
+
+### Site-review quick wins
+
+- Fixed three more cards with the "computer read-out" `\n`-in-HTML bug
+  (newlines collapsing to run-on text): aggregate-supply lede,
+  unstable-commodity-markets body, and barriers-to-entry body (now a
+  proper bullet list).
+- Worked-example scenario boxes now scroll horizontally if they contain a
+  wide table (`overflow-x:auto`), so the CPI/SRAS tables no longer force
+  whole-page horizontal scroll on narrow phones.
+- Bumped two "reveal" buttons to a ≥44px tap target (the surplus predict
+  cell and the market-structures reveal cell).
+
 ## 0.173.0 — 2026-06-16
 
 ### Topic intros — more concise, bullets on their own lines

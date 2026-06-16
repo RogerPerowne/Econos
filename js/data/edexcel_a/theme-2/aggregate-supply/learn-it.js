@@ -43,7 +43,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Card 1 of 3',
       title: 'What is Aggregate Supply?',
-      lede: 'Aggregate supply (AS) is the total output firms in the economy are willing and able to produce at each price level.\nAS has two time horizons – SRAS in the short run and LRAS in the long run.',
+      lede: 'Aggregate supply (AS) is the total output firms in the economy are willing and able to produce at each price level. It has two time horizons – SRAS in the short run and LRAS in the long run.',
 
       tip: { icon: '✅', tone: 'green', text: 'AS is about economy-wide output, not the supply of one product.' },
 

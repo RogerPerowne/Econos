@@ -2961,7 +2961,7 @@
               <div class="reveal-cell" style="background:#fff;border-radius:var(--r-lg);border:1px solid var(--econ-slate-100);padding:16px 15px;box-shadow:0 3px 14px rgba(0,0,0,0.08);">
                 <div style="font-size:var(--fs-3xl);margin-bottom:9px;line-height:1;">${renderIcon(p.icon)}</div>
                 <div style="font-weight:var(--fw-extrabold);font-size:var(--fs-base);color:var(--econ-ink);margin-bottom:10px;">${p.product}</div>
-                <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:var(--econ-slate);font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:6px 10px;border-radius:var(--r-md);cursor:pointer;width:100%;">Predict verdict ↓</button>
+                <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:var(--econ-slate);font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:11px 10px;min-height:44px;border-radius:var(--r-md);cursor:pointer;width:100%;">Predict verdict ↓</button>
                 <div class="reveal-cell__body is-hidden">
                   <div style="display:inline-block;padding:3px 10px;border-radius:var(--r-2xl);background:${vc.badge};color:${vc.color};font-size:var(--fs-2xs);font-weight:var(--fw-bold);margin-bottom:10px;">${p.verdict}</div>
                   <div style="font-size:var(--fs-sm);color:var(--econ-ink);line-height:var(--lh-relaxed);padding-top:2px;">${p.reasoning}</div>
@@ -3858,7 +3858,7 @@
 
     const scenario = c.scenario ? `
       ${genSecLabel('📋', 'Scenario')}
-      <div style="background:var(--econ-blue-50);border:1px solid #BFDBFE;border-left:4px solid var(--econ-blue);border-radius:var(--r-lg);padding:14px 18px;font-size:var(--fs-base);line-height:var(--lh-relaxed);color:var(--econ-ink);margin-bottom:18px;">${linebreak(c.scenario)}</div>
+      <div style="background:var(--econ-blue-50);border:1px solid #BFDBFE;border-left:4px solid var(--econ-blue);border-radius:var(--r-lg);padding:14px 18px;font-size:var(--fs-base);line-height:var(--lh-relaxed);color:var(--econ-ink);margin-bottom:18px;overflow-x:auto;">${linebreak(c.scenario)}</div>
     ` : '';
 
     return `
@@ -4766,7 +4766,7 @@
         return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:#FEFCE8;border-top:1px solid var(--econ-border);">
           <div style="padding:12px 12px;font-weight:var(--fw-extrabold);font-size:var(--fs-sm);color:#92400E;border-right:1px solid var(--econ-border);">⭐ ${r.label}</div>
           ${COLS.map(col => `<div class="reveal-cell" style="padding:12px 8px;font-size:var(--fs-sm);line-height:var(--lh-normal);border-left:1px solid var(--econ-border);text-align:center;">
-            <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed var(--econ-amber-600);color:#92400E;font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:5px 9px;border-radius:var(--r-md);cursor:pointer;">Reveal ↓</button>
+            <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed var(--econ-amber-600);color:#92400E;font-size:var(--fs-xs);font-weight:var(--fw-bold);padding:11px 9px;min-height:44px;border-radius:var(--r-md);cursor:pointer;">Reveal ↓</button>
             <div class="reveal-cell__body is-hidden" style="color:var(--econ-ink);">${r[col.key] || '–'}</div>
           </div>`).join('')}
         </div>`;

@@ -125,6 +125,13 @@ check_spec_scripts_loaded() {
         fail=1
       fi
     done
+    # The same spec must also be precached by the service worker, or
+    # offline / cache-first users get a blank chart after the SW takes
+    # over. This is the manual step easiest to forget when adding a spec.
+    if ! grep -q "/js/charts/specs/${stem}.js" sw.js; then
+      echo "lint: sw.js PRECACHE_ASSETS missing '/js/charts/specs/${stem}.js' (declares $var) — offline users won't get the chart"
+      fail=1
+    fi
   done
 }
 

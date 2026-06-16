@@ -572,7 +572,7 @@ img, svg { display: block; max-width: 100%; }
   width: 12px;
   display: inline-flex;
   justify-content: center;
-  color: var(--econ-gray-400);
+  color: var(--econ-gray-500);
 }
 .account-menu__board.is-active .account-menu__board-indicator { color: var(--econ-blue); }
 .account-menu__divider {
@@ -6438,7 +6438,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .quiz-results__score-denom {
   font-size:var(--fs-4xl);
-  color: var(--econ-gray-400);
+  color: var(--econ-gray-500);
   font-weight: var(--fw-normal);
 }
 .quiz-results__verdict {
@@ -6581,7 +6581,7 @@ img, svg { display: block; max-width: 100%; }
 .quiz-stat__value--small { font-size: 32px; }
 .quiz-stat__denom {
   font-size:var(--fs-3xl);
-  color: var(--econ-gray-400);
+  color: var(--econ-gray-500);
   font-weight: var(--fw-normal);
 }
 .quiz-stat__sub {
@@ -6828,7 +6828,7 @@ img, svg { display: block; max-width: 100%; }
 .quiz-rvrow__chev {
   flex-shrink: 0;
   font-size: var(--fs-sm);
-  color: var(--econ-gray-400);
+  color: var(--econ-gray-500);
   transition: transform 0.18s ease;
 }
 .quiz-rvrow[open] .quiz-rvrow__chev {
@@ -7590,7 +7590,7 @@ a.stage:hover .stage__name { color: var(--econ-blue-700); }
   color: var(--econ-gray-500);
 }
 .stage.is-locked .stage__name { color: var(--econ-gray-500); }
-.stage.is-locked .stage__sub  { color: var(--econ-gray-400); }
+.stage.is-locked .stage__sub  { color: var(--econ-gray-500); }
 
 .stage__chip--available {
   background: var(--econ-blue-50);
@@ -7975,7 +7975,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .chain-arrow__label {
   font-size:var(--fs-2xs);
   font-style: italic;
-  color: var(--econ-gray-400);
+  color: var(--econ-gray-500);
   line-height: 1;
   letter-spacing: 0.02em;
 }
@@ -8674,7 +8674,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 }
 .diag-zone.is-correct { border-color: var(--econ-green); background: var(--econ-green-50); color: var(--econ-green-700); }
 .diag-zone.is-wrong   { border-color: var(--econ-rose);  background: #FEF2F2; color: var(--econ-rose); }
-.diag-zone__empty { color: var(--econ-gray-300); font-style: italic; }
+.diag-zone__empty { color: var(--econ-gray-500); font-style: italic; }
 .diag-zone__icon  { font-style: normal; }
 
 /* Available label chips */
@@ -13229,11 +13229,11 @@ a.stage:hover .stage__name { background-size: 100% 1.5px; }
    The CURRENT stage's colour drives this list because every item
    here is "within" the current stage.
    ============================================================ */
-.right-rail { --rail-c: var(--econ-green); }
+.right-rail { --rail-c: var(--econ-green); --rail-text: var(--econ-green-700); }
 body.theme--link .right-rail,
-.theme--link .right-rail   { --rail-c: var(--econ-amber); }
+.theme--link .right-rail   { --rail-c: var(--econ-amber); --rail-text: var(--econ-amber-700); }
 body.theme--land .right-rail,
-.theme--land .right-rail   { --rail-c: var(--econ-rose); }
+.theme--land .right-rail   { --rail-c: var(--econ-rose); --rail-text: var(--econ-rose-700); }
 
 .cards-list__item.is-current {
   background: color-mix(in oklab, var(--rail-c) 8%, var(--econ-white));
@@ -13243,7 +13243,7 @@ body.theme--land .right-rail,
   color: var(--rail-c);
 }
 .cards-list__item.is-current .cards-list__name {
-  color: var(--rail-c);
+  color: var(--rail-text);
   font-weight: var(--fw-semi);
 }
 .cards-list__item.is-done .cards-list__num {

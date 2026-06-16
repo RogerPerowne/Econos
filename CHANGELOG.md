@@ -6,6 +6,25 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.174.2 — 2026-06-16
+
+### Accessibility pass — contrast + interaction-state coverage
+
+- Extended the axe e2e suite to scan a content-heavy Learn card and the
+  *revealed* worked-example and *stepped* interactive-diagram states — not
+  just the covers. This caught real violations the intro-only tests missed.
+- Fixes:
+  - The card-view back arrow (`.topbar__back`) was an icon-only link with
+    no accessible name — added an `aria-label`.
+  - Current card name in the right-rail used the mid theme colour
+    (`--rail-c`, ~2.5:1 on white) — now uses a dark per-theme `--rail-text`
+    (green/amber/rose-700) that clears AA.
+  - Worked-example progress counter, "✓ Done" badge and several muted-grey
+    captions (chain-arrow labels, quiz denominators, locked-stage
+    subtitles, diagnose placeholder, board indicator, expand chevron) were
+    below AA — bumped to AA-passing tokens/shades.
+- All 8 a11y tests pass against the minified production build.
+
 ## 0.174.1 — 2026-06-16
 
 ### Build: minify the classic scripts (perf)

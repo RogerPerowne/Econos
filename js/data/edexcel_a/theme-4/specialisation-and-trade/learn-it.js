@@ -35,8 +35,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroSpecialisationTrade',
-    summary: 'Specialisation and trade is the theoretical heart of international economics. The big idea is comparative advantage: a country gains by specialising in the goods it sacrifices least to produce — the goods with the lowest opportunity cost — and then trading for the rest. This deck builds the theory carefully: first the difference between absolute advantage (who produces more) and comparative advantage (who gives up less), then the opportunity-cost calculation that decides who should specialise, then the gains-from-trade PPF diagram that shows a country consuming beyond its own frontier. It finishes by stress-testing the model — its assumptions and its real-world limits — so you can evaluate, not just describe.',
-    doInThis: 'Distinguish absolute from comparative advantage. Calculate opportunity cost from an output table and identify who should specialise. Use a PPF diagram to show how trade lets a country consume beyond its frontier. Set out the assumptions the theory relies on, then the limits — transport costs, dynamic advantage, over-specialisation and uneven gains. Finish with a balanced judgement of trade as a trade-off.',
+    summary: 'The big idea is comparative advantage: a country gains by specialising in the goods it sacrifices least to produce — those with the lowest opportunity cost — and trading for the rest. We build the theory from absolute versus comparative advantage to the gains-from-trade PPF, then stress-test its assumptions and real-world limits.',
+    doInThis: 'Calculate opportunity cost to decide who should specialise, use a PPF to show consumption beyond the frontier, then weigh the model’s assumptions and limits in a balanced judgement of trade.',
     outcomes: [
       'Explain the core idea of specialisation and trade',
       'Distinguish absolute from comparative advantage',

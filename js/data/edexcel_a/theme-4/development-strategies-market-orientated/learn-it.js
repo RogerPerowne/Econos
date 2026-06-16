@@ -21,8 +21,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroMarketOrientated',
-    summary: 'Market-orientated development strategies try to raise growth by improving incentives and letting markets — prices, competition, openness and private ownership — guide investment and production. This deck works through the main tools. Trade liberalisation opens markets and exposes firms to competition. FDI promotion attracts foreign capital, technology and jobs. Removing subsidies cuts distortions and saves public money, at the cost of painful short-run adjustment. Floating exchange rates let the currency adjust automatically to shocks. Microfinance widens access to credit, and privatisation transfers assets from the state to the private sector. The thread throughout is that these reforms work through incentives — so their success depends on whether the economy can actually respond, which means institutions, infrastructure and competition matter as much as the policy itself.',
-    doInThis: 'Set out the market-led story and toolkit. Explain trade liberalisation and its trade-offs. Show why FDI flows in and how it helps or harms. Weigh the gains and pains of removing subsidies. Explain floating exchange rates as an automatic stabiliser. Judge microfinance and privatisation, and evaluate when market reforms work.',
+    summary: 'Market-orientated strategies raise growth by improving incentives and letting markets — prices, competition, openness and private ownership — guide investment and production. They all work through incentives, so success depends on whether the economy can actually respond.',
+    doInThis: 'Work through the market-led toolkit — trade liberalisation, FDI, subsidy removal, floating rates, microfinance and privatisation — weighing the trade-offs and judging when market reforms actually work.',
     outcomes: [
       'Explain the market-led development story',
       'Evaluate trade liberalisation',

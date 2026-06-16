@@ -25,8 +25,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroFiscal',
-    summary: 'Governments use fiscal policy to influence the economy — but deficits and debt tell different parts of the story. A fiscal deficit is a flow: the gap between spending and revenue in a single year. National debt is a stock: the total built up from past deficits, minus any surpluses. This deck maps the territory — automatic stabilisers and discretionary policy, the budget balance, borrowing and the national debt — then draws the crucial distinctions. It separates the deficit (a flow) from the debt (a stock) with a stock-and-flow picture, splits the total deficit into a cyclical part (caused by the economic cycle) and a structural part (built into the budget even at full employment), and shows what moves the deficit and the debt over time. It closes by judging when borrowing helps the economy and when it becomes a problem — and how to weigh the two in an answer.',
-    doInThis: 'Separate flows (the annual deficit) from stocks (the national debt). Distinguish automatic stabilisers from discretionary policy, and cyclical from structural deficits. Explain what makes the deficit and the debt change. Judge whether borrowing is useful, manageable or risky, and evaluate.',
+    summary: 'Deficits and debt tell different parts of the fiscal story: a deficit is a flow — the gap between spending and revenue in a year — while national debt is the stock built up from past deficits. Getting that distinction right is the key to judging when borrowing helps and when it harms.',
+    doInThis: 'Separate the annual deficit (a flow) from the national debt (a stock), and cyclical from structural borrowing. Explain what moves each, then judge whether borrowing is useful, manageable or risky.',
     outcomes: [
       'Separate the deficit (a flow) from the debt (a stock)',
       'Distinguish automatic stabilisers and discretionary policy',

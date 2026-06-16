@@ -23,8 +23,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroTrade',
-    summary: 'A country is internationally competitive when its firms can sell successfully at home and abroad — and that depends on far more than being cheap. This deck defines competitiveness, then pins it down with the two measures the spec rewards: relative unit labour costs and relative export prices. It separates cost (price) competitiveness from non-price competitiveness — quality, branding, innovation and reliability — and shows what shapes both: skills, investment, infrastructure, innovation, the exchange rate, business costs and confidence. Productivity is the master variable that runs through it all. The deck closes on why competitiveness matters for exports, jobs, the current account, growth and investment, and how to evaluate it.',
-    doInThis: 'Define competitiveness and the two ways to compete. Measure it with relative unit labour costs and relative export prices. Explain cost competitiveness and the exchange-rate pass-through. Distinguish price from non-price competitiveness. Map the drivers that build competitiveness, then evaluate why it matters for the wider economy.',
+    summary: 'A country is internationally competitive when its firms sell successfully at home and abroad — and that takes more than being cheap. We measure it with relative unit labour costs and export prices, separate price from non-price competitiveness, and trace why productivity sits at the heart of it all.',
+    doInThis: 'Measure competitiveness with relative unit labour costs and export prices, distinguish price from non-price competitiveness, then map the drivers and evaluate why it matters for the wider economy.',
     outcomes: [
       'Define international competitiveness',
       'Use relative unit labour costs and relative export prices',

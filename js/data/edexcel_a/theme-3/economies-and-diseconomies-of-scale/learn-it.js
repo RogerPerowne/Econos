@@ -31,8 +31,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroLongRunCosts',
-    summary: 'When a firm grows, its long-run average cost (LRAC) usually falls at first – the result of internal economies of scale like bulk buying, specialisation and cheaper finance. Beyond a certain output (the minimum efficient scale), costs flatten out and then start rising as the firm runs into diseconomies of scale: communication failures, bureaucracy, motivation issues. External economies (skilled labour pools, infrastructure, supplier clusters) and external diseconomies (congestion, higher rents, pollution) come from the firm’s surroundings rather than its own choices. Together they explain the shape of the LRAC curve – the single most important diagram in this part of the spec.',
-    doInThis: 'Sketch and label a U-shaped LRAC curve with its three regions (economies, MES, diseconomies). Name the five internal economies and five diseconomies, and give a real-world example of each. Distinguish internal from external effects, and use the LRAC framework to judge whether growth would lower or raise unit costs in a given context.',
+    summary: 'As a firm grows, average cost falls on internal economies of scale, flattens at minimum efficient scale, then rises as diseconomies bite. Add the external effects from a firm\'s surroundings and you have the story behind the LRAC curve – the key diagram in this part of the spec.',
+    doInThis: 'Sketch a U-shaped LRAC curve and label its three regions. Name the internal economies and diseconomies with real examples, then use the framework to judge whether growth would raise or lower unit costs in context.',
     outcomes: [
       'Sketch the LRAC curve and label the three regions',
       'Name and explain five internal economies of scale',

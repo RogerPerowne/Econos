@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.173.0 — 2026-06-16
+
+### Topic intros — more concise, bullets on their own lines
+
+- Tightened the topic-introduction `summary` on every topic where it had
+  grown into a multi-sentence wall (49 topics across Themes 3 and 4, plus
+  LRAS). Each is now 2 sentences, hook-first, with the "this deck works
+  through…/the deck closes by…" meta-commentary cut. Over-long `doInThis`
+  blurbs were trimmed to a single action sentence too. Meaning, economics
+  and inline emphasis preserved.
+- The "What you'll do in this session" outcome list now renders one
+  outcome per line instead of wrapping into two columns — much easier to
+  scan. (`.do-box__checks` switched from a wrapping row to a column.)
+
 ## 0.172.16 — 2026-06-12
 
 ### Worked-example cards — clearer, more engaging copy

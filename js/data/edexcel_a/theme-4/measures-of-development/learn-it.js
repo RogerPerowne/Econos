@@ -22,8 +22,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroDevelopment',
-    summary: 'Development is broader than output — it is about whether people live longer, healthier, better-educated lives with higher material living standards, not just how much an economy produces. This deck defines development as multidimensional, then builds the Human Development Index (HDI), which combines three dimensions — health (life expectancy), education (mean and expected years of schooling) and living standards (GNI per capita, PPP-adjusted) — by converting each into an index from 0 to 1 and combining them with a geometric mean. It weighs HDI honestly: broader and more comparable than GDP alone, but blind to inequality, the environment, freedom and data quality. It then widens out to the full development dashboard — income, social and quality-of-life indicators — and closes on how to write a balanced, well-evidenced answer.',
-    doInThis: 'Define development as more than output. Set out the three HDI dimensions and how each is measured. Build HDI from its indices using a geometric mean and read the 0–1 score. Evaluate HDI\'s strengths and limitations. Use a wider dashboard of indicators, and structure a balanced answer.',
+    summary: 'Development is broader than output — it is about people living longer, healthier, better-educated lives, not just how much an economy produces. The Human Development Index captures health, education and living standards in one 0–1 score, but a wider dashboard of indicators is needed to see the whole picture.',
+    doInThis: 'Build HDI from its three dimensions and read the 0–1 score, then weigh its strengths and limits and bring in a wider dashboard of indicators to structure a balanced answer.',
     outcomes: [
       'Define development as multidimensional',
       'Name the three HDI dimensions',

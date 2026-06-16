@@ -36,8 +36,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroCartels',
-    summary: 'Collusion happens when rival firms coordinate rather than compete. A cartel is a group of firms acting together to raise their joint profit — usually by restricting output and pushing price above the competitive level. The defining tension is that the same agreement that benefits the cartel internally creates strong incentives for each member to cheat, and almost always falls foul of competition law. This deck builds the diagram, separates explicit from tacit collusion, and ends with a clear synthesis of when (and why) cartels collapse.',
-    doInThis: 'Define collusion and identify the main forms a cartel can take. Build the joint-profit diagram and read it cleanly. Separate explicit cartels from tacit coordination. Explain why firms collude — and why each firm is tempted to cheat. Evaluate the consequences for firms, consumers and the wider economy, then judge how regulators respond.',
+    summary: 'Collusion is rivals coordinating rather than competing, and a cartel restricts output to push price toward the monopoly level. The catch: the very agreement that boosts joint profit tempts each member to cheat — and almost always breaks competition law, which is why cartels collapse.',
+    doInThis: 'Build and read the joint-profit diagram, and separate explicit cartels from tacit coordination. Explain why firms collude yet are tempted to cheat, then evaluate the consequences for firms, consumers and regulators.',
     outcomes: [
       'Define collusion, cartel, explicit and tacit collusion',
       'Build and interpret the cartel joint-profit diagram (Q_c, P_c)',

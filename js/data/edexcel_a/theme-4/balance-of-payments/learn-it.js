@@ -25,8 +25,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroBalanceOfPayments',
-    summary: 'The balance of payments is a country’s international scorecard — a record of every transaction between residents and the rest of the world, split into the current, capital and financial accounts. This deck treats it like an international bank statement, then turns to the economics: why a current account moves into deficit or surplus (competitiveness, the exchange rate, domestic demand and commodity prices), how a deficit must be financed by a financial-account surplus, and whether that financing is reassuring FDI or fragile hot money. It then works through the policies to correct an imbalance — expenditure switching, expenditure reducing, supply-side and protection — and closes on why persistent global imbalances matter for exchange rates, debt and world demand.',
-    doInThis: 'Define the balance of payments and distinguish the three accounts. Explain why current accounts move into deficit or surplus. Show how a deficit is financed and judge the quality of that finance. Evaluate the policies that can correct an imbalance and their trade-offs. Assess why persistent global imbalances matter, then build a balanced whole-story judgement.',
+    summary: 'The balance of payments is a country’s international scorecard — every transaction with the rest of the world, split into current, capital and financial accounts. Why deficits and surpluses arise, how they are financed, and which policies can correct them are what turn that statement into economics.',
+    doInThis: 'Distinguish the three accounts, explain why current accounts swing into deficit or surplus and how deficits are financed, then evaluate the policies that correct an imbalance and why global imbalances matter.',
     outcomes: [
       'Define the balance of payments and its accounts',
       'Distinguish the current, capital and financial accounts',

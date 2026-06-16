@@ -23,8 +23,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroFxImpacts',
-    summary: 'A change in the exchange rate sends shockwaves through the economy. This deck traces the mechanism: a currency move changes relative prices, prices change the demand for exports and imports, and — if quantities respond enough — the current account, inflation, growth and investment all shift. It works through the winners and losers of an appreciation and a depreciation, builds the current-account transmission channel, and then adds the two great qualifiers: the Marshall-Lerner condition (the effect only works if PEDx + PEDm > 1) and the J-curve (the current account can worsen before it improves). It closes on the wider macro effects and a full chain-plus-evaluation structure.',
-    doInThis: 'Map the shockwave chain from a currency move to the wider economy. Work through the winners and losers of an appreciation and a depreciation. Build the current-account channel and identify what can break it. Apply the Marshall-Lerner condition and read the J-curve. Evaluate the effects on inflation, growth, jobs and investment, then judge it all in context.',
+    summary: 'A change in the exchange rate sends shockwaves through the economy: it shifts relative prices, the demand for exports and imports, and — if quantities respond enough — the current account, inflation, growth and investment. The two great qualifiers are the Marshall-Lerner condition (PEDx + PEDm > 1) and the J-curve.',
+    doInThis: 'Work through the winners and losers of an appreciation and depreciation, build the current-account channel, apply the Marshall-Lerner condition and J-curve, then evaluate the wider macro effects in context.',
     outcomes: [
       'Map how an exchange-rate change ripples through the economy',
       'Identify the winners and losers of appreciation and depreciation',

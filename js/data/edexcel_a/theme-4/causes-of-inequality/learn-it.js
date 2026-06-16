@@ -20,8 +20,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroCausesInequality',
-    summary: 'Inequality is not fixed — it shifts when market rewards, asset ownership and redistribution change who earns income and who builds wealth. This deck explains the causes. Within countries, income inequality moves with labour-market drivers (skills, wage gaps, unemployment, bargaining power), structural forces (technology, trade, family structure) and how far the state redistributes; wealth inequality is driven by ownership, inheritance and the compounding of returns, which is why it is usually larger and more persistent. Between countries, differences in productivity, institutions, infrastructure and history shape what people can produce and earn. The deck then sets out the Kuznets hypothesis — inequality may rise in early development before flattening or falling — and weighs how capitalism can raise living standards while also concentrating income and wealth, before closing on how to structure a cause-to-consequence answer.',
-    doInThis: 'Explain why inequality changes through market rewards, assets and redistribution. Separate the causes of income and wealth inequality within countries. Explain inequality between countries. Use the Kuznets curve to link development and inequality. Judge how capitalism affects inequality, and structure a top-mark answer.',
+    summary: 'Inequality is not fixed — it shifts when market rewards, asset ownership and redistribution change who earns income and who builds wealth. The causes differ for income and wealth, and within versus between countries, with capitalism and the Kuznets curve shaping the bigger picture.',
+    doInThis: 'Separate the causes of income and wealth inequality, within and between countries. Use the Kuznets curve to link development and inequality, judge how capitalism affects it, and structure a cause-to-consequence answer.',
     outcomes: [
       'Explain why inequality changes',
       'Identify the causes of income inequality',

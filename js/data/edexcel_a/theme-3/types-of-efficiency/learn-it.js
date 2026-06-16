@@ -29,8 +29,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroEfficiency',
-    summary: 'Efficiency is about using resources well. The exam toolkit splits into three types: productive (lowest cost), allocative (right output for society) and dynamic (improvement over time). Each has a precise condition that can be read off a diagram — MC = AC for productive, P = MC for allocative, AC shifting DOWN over time for dynamic. The Theme 3 task is to apply these tests to different market structures, judge the trade-offs and explain why no real market is perfectly efficient on every measure at once.',
-    doInThis: 'Define each efficiency type and identify the diagram condition that signals it. Distinguish static (productive + allocative) from dynamic efficiency, and judge the trade-offs between them. Explain why monopoly is often allocatively inefficient but may deliver dynamic efficiency through reinvested supernormal profit.',
+    summary: 'Efficiency comes in three flavours — productive (lowest cost, MC = AC), allocative (right output for society, P = MC) and dynamic (AC falling over time) — each readable off a diagram. The challenge is judging the trade-offs, because no real market is efficient on every measure at once.',
+    doInThis: 'Identify the diagram condition for each efficiency type, distinguish static from dynamic, and judge the trade-offs — including why monopoly is often allocatively inefficient yet may deliver dynamic efficiency through reinvested profit.',
     outcomes: [
       'Define productive, allocative and dynamic efficiency',
       'Identify the diagram condition for each (MC = AC, P = MC, AC shifts down)',

@@ -23,8 +23,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroPolicyLimits',
-    summary: 'Governments have powerful policy tools — but in an open economy their impact is constrained by shocks, mobile capital, multinational firms, imperfect information and trade-offs. This deck explains why even well-chosen policy can fall short. It looks at responding to external shocks (and why the damage can linger), at how multinationals shift profits through transfer pricing and why global companies are so hard to tax and regulate, at policy under uncertainty (delayed data and the recognition, decision, implementation and effect lags), and at the risks, trade-offs and unintended consequences every policy carries. It closes on how to evaluate policy honestly in a global context — recognising that the strongest policy is not always the best, only the one whose benefits outweigh its costs here and now.',
-    doInThis: 'Explain why domestic policy has limits in an open economy. Evaluate responses to external shocks. Explain transfer pricing and why multinationals are hard to control. Account for uncertainty and time lags. Weigh the trade-offs and unintended consequences of policy, and evaluate effectiveness in context.',
+    summary: 'Governments have powerful policy tools, but in an open economy their impact is blunted by external shocks, mobile capital, profit-shifting multinationals, time lags and imperfect information. The strongest policy is not always the best — only the one whose benefits outweigh its costs here and now.',
+    doInThis: 'See why domestic policy has limits in an open economy — external shocks, transfer pricing, uncertainty and time lags — then weigh the trade-offs and judge policy effectiveness in context.',
     outcomes: [
       'Explain why policy is constrained in an open economy',
       'Evaluate responses to external shocks',

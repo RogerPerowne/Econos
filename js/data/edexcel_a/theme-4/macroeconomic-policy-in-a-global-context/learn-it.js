@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroGlobe',
-    summary: 'Governments use a policy toolkit to influence growth, inflation, unemployment, trade, inequality and stability — but every tool also creates trade-offs, and in an open economy its effects spill across borders. This deck maps the five tools (fiscal, monetary, exchange-rate, supply-side and direct controls) and shows which works best for which problem and through which transmission channel. It then evaluates the big policy missions: reducing fiscal deficits and the national debt, reducing poverty and inequality, changing interest rates and the money supply, raising international competitiveness, and responding to external shocks. It closes on how to structure a balanced, context-driven evaluation — because a tool that works in theory may not work here, now and at this scale.',
+    summary: 'Governments use five policy tools — fiscal, monetary, exchange-rate, supply-side and direct controls — to influence growth, inflation, trade, inequality and stability, but every tool brings trade-offs and effects that spill across borders. The skill is matching the right tool to each mission and judging it in context.',
     doInThis: 'Map the five policy tools and their transmission channels. Match tools to objectives. Evaluate measures to cut deficits and debt, reduce poverty and inequality, change interest rates, raise competitiveness and respond to shocks. Weigh the trade-offs in a global context.',
     outcomes: [
       'Map the five macro-policy tools',

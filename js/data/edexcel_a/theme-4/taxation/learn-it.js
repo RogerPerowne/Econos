@@ -25,8 +25,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroTaxation',
-    summary: 'Taxation does two jobs at once: it raises the revenue that funds the state, and it changes incentives across the whole economy. This deck starts with why governments tax and the two big tax families — direct taxes on income and profits, indirect taxes on spending. It then classifies taxes by how the burden changes with income (progressive, proportional, regressive), traces the household and firm transmission chains, and examines the effect on incentives to work, save and invest. The Laffer curve links the tax rate to the tax base and shows why revenue does not rise forever. The deck closes with the macro effects — income distribution, real output and employment, the price level, the trade balance and FDI flows — and a whole-story framework for weighing them in an answer.',
-    doInThis: 'Eight cards: why governments tax and the two tax families; progressive vs proportional vs regressive (interactive); how direct and indirect taxes work; incentives to work, save and invest; tax revenues and the Laffer curve (interactive); distribution, real output and employment (interactive); prices, the trade balance and FDI flows; and the whole story.',
+    summary: 'Taxation does two jobs at once — it raises the revenue that funds the state and it changes incentives across the whole economy. From direct versus indirect taxes and the progressive–regressive spectrum to the Laffer curve and the macro effects on output, prices and trade, every tax is a balancing act.',
+    doInThis: 'Classify taxes as progressive, proportional or regressive, see how direct and indirect taxes shape incentives, read the Laffer curve, then trace the macro effects on distribution, output, prices and trade.',
     outcomes: [
       'Distinguish direct and indirect taxes and give examples',
       'Classify taxes as progressive, proportional or regressive',

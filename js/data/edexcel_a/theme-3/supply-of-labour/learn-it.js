@@ -28,8 +28,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroSupplyLabour',
-    summary: 'The supply of labour shows how many workers are willing and able to work in a job at different wage rates. Higher wages usually attract more workers, but non-wage factors — conditions, benefits, training and location — shape the whole curve. This deck builds the labour-supply curve, separates shifts from movements, explores what makes one occupation easier to staff than another, and explains why occupational and geographical immobility can cause labour-market failure.',
-    doInThis: 'Define labour supply and build the supply curve. Distinguish a movement along the curve (a wage change) from a shift (a non-wage change). Explain what shapes supply to a particular occupation, and analyse occupational and geographical mobility. Finally, judge how immobility leads to shortages, wage pressure and market failure.',
+    summary: 'The supply of labour shows how many workers are willing and able to work at different wage rates. Higher pay usually attracts more workers, but non-wage factors — conditions, benefits, training and location — shape the whole curve and explain why some occupations are far harder to staff.',
+    doInThis: 'Build the supply curve and distinguish a movement (wage change) from a shift (non-wage change), then analyse occupational and geographical mobility and judge how immobility leads to shortages, wage pressure and market failure.',
     outcomes: [
       'Define the supply of labour and build the supply curve',
       'Distinguish a movement along the curve from a shift',

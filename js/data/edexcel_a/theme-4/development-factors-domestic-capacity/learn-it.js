@@ -22,8 +22,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroDomesticCapacity',
-    summary: 'While external barriers come from a country\'s place in the world economy, domestic capacity is about what a country builds at home. Development depends on turning people, savings and institutions into productive capacity. This deck works through the foundations. The Harrod-Domar model shows how low income can trap an economy in low saving, low investment and low growth — and how breaking that loop raises capital and productivity. Finance and banking matter because they turn savings into productive investment for firms and farmers. Infrastructure lowers costs and connects markets across the whole economy. Demography can be a burden or a dividend depending on jobs, skills and productivity. Human capital — education and skills — raises productivity and helps an economy absorb technology. And property rights, governance and political stability decide whether people invest, innovate and stay. The thread throughout: development is faster when a country strengthens the foundations that raise productivity.',
-    doInThis: 'Map the foundations of productive capacity. Explain the Harrod-Domar savings gap and how to break it. Show how finance turns savings into investment. Explain infrastructure as a system constraint. Weigh demography as burden or dividend. Link human capital and institutions to growth and development.',
+    summary: 'Development depends on what a country builds at home — turning savings, finance, infrastructure, people and institutions into productive capacity. Each foundation raises productivity, investment or incentives, and the country that strengthens them grows faster.',
+    doInThis: 'Map the foundations of productive capacity and explain the Harrod-Domar savings gap. Link finance, infrastructure, demography, human capital and institutions to growth — then judge which matters most.',
     outcomes: [
       'Map the foundations of productive capacity',
       'Explain the Harrod-Domar savings gap',

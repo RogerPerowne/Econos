@@ -27,8 +27,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroExchangeRatesT4',
-    summary: 'An exchange rate is the price of one currency in terms of another — and like any price, it is set where demand meets supply. This deck builds the foreign-exchange market diagram (demand for pounds from exports and inward flows; supply of pounds from imports and outward flows), then contrasts the three systems: a floating rate set entirely by the market, a fixed rate the central bank must defend with reserves and interest rates, and a managed rate that sits in between. It finishes by nailing the vocabulary students mix up most — appreciation and depreciation are market moves; revaluation and devaluation are official policy changes.',
-    doInThis: 'Define an exchange rate and what drives currency demand and supply. Read the FX market diagram and find the equilibrium rate. Explain how a floating rate appreciates or depreciates, and how a fixed rate is defended. Place managed rates on the spectrum between floating and fixed. Finally, use appreciation, depreciation, revaluation and devaluation precisely.',
+    summary: 'An exchange rate is the price of one currency in terms of another, set where demand meets supply in the FX market. We contrast the three systems — floating, fixed and managed — and nail the vocabulary students mix up most: appreciation and depreciation are market moves; revaluation and devaluation are official policy changes.',
+    doInThis: 'Read the FX market diagram to find the equilibrium rate, explain how floating rates move and fixed rates are defended, place managed rates on the spectrum, then use appreciation, depreciation, revaluation and devaluation precisely.',
     outcomes: [
       'Define an exchange rate and what it connects',
       'Read the foreign-exchange market diagram',

@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroDevStrategies',
-    summary: 'Beyond the market-led and interventionist toolkits, countries can pursue development through a range of other strategies — each tackling a different constraint. Industrialisation, captured by the Lewis model, moves surplus labour from low-productivity agriculture into higher-productivity industry and reinvests the profits. Tourism brings foreign exchange, jobs and multiplier effects. Primary industries can be a springboard or a trap. Fairtrade tries to improve the terms on which producers sell. Aid and debt relief fund development and free up fiscal space, while the World Bank, IMF and NGOs provide finance, expertise and support. None guarantees development on its own — the skill is matching the strategy to the bottleneck it is trying to solve, then judging the context and how the gains are shared.',
+    summary: 'Beyond market-led and interventionist toolkits, countries can pursue development through industrialisation, tourism, primary industries, Fairtrade, aid and debt relief, and the work of the World Bank, IMF and NGOs. None guarantees development alone — the skill is matching each strategy to the bottleneck it is meant to solve.',
     doInThis: 'Map the other strategies to the constraints they fix. Explain the Lewis model of industrialisation. Weigh tourism and primary industries. Judge Fairtrade. Evaluate aid and debt relief. Compare the roles of the World Bank, IMF and NGOs, then match strategy to problem.',
     outcomes: [
       'Match strategies to development constraints',

@@ -20,8 +20,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroInterventionist',
-    summary: 'Interventionist development strategies have the government guide development directly rather than leaving outcomes to markets — building capabilities, protecting key sectors, stabilising prices and shaping structural change. This deck works through the toolkit. Human capital investment raises the productivity of people through education, training and health. Protectionism shields infant industries while they learn and scale. Managed exchange rates balance market signals with policy control. Infrastructure provision lowers costs across the whole economy. Joint ventures and FDI rules bring in foreign capability while building domestic capacity. And buffer stocks try to smooth volatile commodity prices. The recurring tension is the core trade-off: intervention can correct market failures and build capacity, but it also risks government failure — corruption, capture, misallocation and fiscal cost — so state capacity and targeting decide whether it works.',
-    doInThis: 'Set out the interventionist toolkit and the core trade-off. Explain human-capital investment and protectionism. Weigh managed exchange rates and infrastructure provision. Judge joint ventures and buffer stocks. Evaluate when state-led strategies succeed or fail.',
+    summary: 'Interventionist strategies have the government guide development directly — building human capital, protecting infant industries, managing rates, providing infrastructure, and smoothing prices with buffer stocks. The core trade-off: intervention can correct market failures but also risks government failure, so state capacity decides whether it works.',
+    doInThis: 'Work through the interventionist toolkit and the core trade-off — from human-capital investment and protectionism to managed rates, infrastructure, joint ventures and buffer stocks — then evaluate when state-led strategies succeed or fail.',
     outcomes: [
       'Explain the interventionist toolkit',
       'Analyse human-capital investment',

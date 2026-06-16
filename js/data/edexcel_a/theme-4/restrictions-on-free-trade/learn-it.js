@@ -32,8 +32,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroTradeRestrictions',
-    summary: 'Free trade raises total welfare, yet governments routinely restrict it. This topic explains why — infant industries, jobs, dumping, strategic sectors, the balance of payments and revenue — and then works through the four tools of protection on proper diagrams. A tariff is a tax on imports that raises price, lifts domestic output, cuts imports and earns revenue, but creates a deadweight welfare loss. A quota fixes the quantity of imports so the price adjusts upward and licence-holders earn rents. A subsidy shifts domestic supply right, raising output and displacing imports at the taxpayer’s expense. Non-tariff barriers protect quietly through rules and paperwork. The deck closes by mapping the winners and losers and building a balanced judgement.',
-    doInThis: 'Set out the four tools of protection and who they affect. Explain the main reasons governments restrict trade. Analyse a tariff, a quota and a subsidy on supply-and-demand diagrams, reading off price, output, imports, revenue and welfare loss. Identify non-tariff barriers. Map the winners and losers, then build a balanced evaluation of protectionism as a trade-off.',
+    summary: 'Free trade raises total welfare, yet governments routinely restrict it — to protect infant industries, jobs, strategic sectors, revenue and the balance of payments. Tariffs, quotas, subsidies and quiet non-tariff barriers each create winners and losers, and the verdict depends on weighing them.',
+    doInThis: 'Analyse a tariff, quota and subsidy on supply-and-demand diagrams — reading off price, output, imports, revenue and welfare loss — spot non-tariff barriers, then map the winners and losers into a balanced verdict.',
     outcomes: [
       'Identify the four tools of protection',
       'Explain why governments restrict trade',

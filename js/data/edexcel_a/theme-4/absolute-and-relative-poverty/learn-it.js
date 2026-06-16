@@ -24,8 +24,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroWellbeing',
-    summary: 'Poverty has two faces. Absolute poverty is about basic survival — not having enough to meet basic needs such as food, shelter, clean water and healthcare, measured against a fixed basic-needs threshold. Relative poverty is about inequality and social exclusion — having far less than the normal living standard in your society, measured against a society-relative threshold such as 60% of median income. This deck pins down the distinction and the benchmarks, shows how poverty is measured (headcount, poverty gap, multidimensional measures), and explains when the two measures move together or split apart. It then traces what changes absolute poverty (growth, jobs, prices, shocks and the poverty trap) and what changes relative poverty (inequality, housing, the tax-benefit system), before closing on how to write a top-mark answer.',
-    doInThis: 'Define absolute and relative poverty against the right benchmark. Name the common measures precisely. Explain when the two move together or apart. Trace the causes that change absolute poverty, including the poverty trap. Map the drivers of relative poverty. Evaluate which poverty problem and which policy matter most in context.',
+    summary: 'Poverty has two faces: absolute poverty is about basic survival against a fixed needs threshold, while relative poverty is about inequality and exclusion against a society-relative benchmark like 60% of median income. The two can move together or split apart, and each is driven — and fixed — differently.',
+    doInThis: 'Define both kinds of poverty against the right benchmark and measures, trace what drives each — including the poverty trap — then judge which problem and which policy matter most in context.',
     outcomes: [
       'Distinguish absolute from relative poverty',
       'Name and read the common poverty measures',

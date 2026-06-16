@@ -32,8 +32,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroPerfectComp',
-    summary: 'Perfect competition is the textbook benchmark for market efficiency. Five assumptions (many buyers and sellers, identical product, perfect information, free entry and exit, price-takers) deliver a powerful prediction: the firm faces a perfectly elastic demand curve at the market price. In the short run, firms can make abnormal profits or losses; in the long run, free entry and exit drives the market back to normal profit only — and at that point the firm is both productively and allocatively efficient. Real markets rarely meet all the assumptions, but the model gives us the yardstick to judge them against.',
-    doInThis: 'State the five PC assumptions and show why the firm is a price taker. Distinguish the industry demand-supply diagram from the firm’s horizontal demand. Find profit-maximising output using MC = MR, identify abnormal profit / loss / shutdown regions, and trace the long-run adjustment back to normal profit. Explain why PC delivers both static efficiencies — and judge the limits of using it as a benchmark.',
+    summary: 'Perfect competition is the textbook benchmark for efficiency: five tough assumptions make every firm a price-taker facing perfectly elastic demand. Short-run profits or losses are competed away as firms enter and exit, leaving a long-run equilibrium at normal profit that is both productively and allocatively efficient.',
+    doInThis: 'Draw the industry and firm diagrams side by side, find profit-maximising output with MC = MR, and identify abnormal profit, loss and shutdown. Trace the long-run adjustment to normal profit and judge the limits of the model as a benchmark.',
     outcomes: [
       'List the five assumptions of perfect competition',
       'Show why each firm faces a perfectly elastic (horizontal) demand curve',

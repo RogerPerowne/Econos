@@ -32,8 +32,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroMonopolisticComp',
-    summary: 'Monopolistic competition is a market with many firms, differentiated products and low barriers to entry. Each firm faces a downward-sloping (rather than perfectly elastic) demand curve thanks to product differentiation — so it has some price-making power. In the short run, profit-maximising firms can earn abnormal profit; in the long run, low entry barriers let new firms in, demand-per-firm shifts left, and the result is a tangency equilibrium where price equals average cost (normal profit only). Output sits below the AC minimum, giving "excess capacity" — a trade-off for the variety and choice that differentiation delivers.',
-    doInThis: 'Name the five characteristics of monopolistic competition. Build the firm diagram step by step using MR = MC and draw the SR profit (or loss) rectangle. Show how entry shifts AR left to a tangency with AC in the long run, and explain what "excess capacity" means. Judge the efficiency trade-offs against perfect competition.',
+    summary: 'Many firms, differentiated products and easy entry give each firm a little price-making power and a downward-sloping demand curve. Short-run abnormal profit is competed away as new entrants arrive, leaving a long-run tangency at normal profit — and the excess capacity that variety costs us.',
+    doInThis: 'Build the firm diagram using MR = MC and draw the short-run profit rectangle. Show how entry shifts AR left to a long-run tangency, explain excess capacity, and judge the efficiency trade-offs against perfect competition.',
     outcomes: [
       'List the five characteristics of monopolistic competition',
       'Show why each firm faces a downward-sloping demand curve',

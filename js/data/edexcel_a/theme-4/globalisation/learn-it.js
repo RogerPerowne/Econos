@@ -30,8 +30,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroGlobalisation',
-    summary: 'Globalisation is the growing integration of the world’s economies — through trade, capital flows, migration, technology and culture — so that what happens in one country increasingly affects the others. This deck starts with what globalisation actually connects, then explains the forces that drove it: cheaper transport, the internet, freer trade, multinationals and the rise of emerging economies. It traces how a single product now crosses many countries, then turns to the heart of the topic — the gains for consumers, firms and developing countries set against the costs of inequality, insecurity, tax avoidance and environmental damage. The recurring exam skill is to explain the mechanism and then weigh the trade-offs in context.',
-    doInThis: 'Map what globalisation connects and who feels the effects. Explain the factors that drove it and how they chain together. Trace a global supply chain and the trade-offs of producing across borders. Set out the gains for consumers, producers, workers and developing economies, then the costs and risks — including the environment. Finish with a balanced judgement of globalisation as a trade-off.',
+    summary: 'Globalisation is the growing integration of the world’s economies through trade, capital, migration and technology, so what happens in one country increasingly affects the rest. We trace the forces that drove it and weigh the gains for consumers, firms and developing countries against the costs of inequality, insecurity and environmental damage.',
+    doInThis: 'Explain the factors driving globalisation and trace a global supply chain, then weigh the gains for consumers, producers, workers and developing economies against the costs and risks in a balanced judgement.',
     outcomes: [
       'Define globalisation and its core characteristics',
       'Explain the factors that have driven globalisation',

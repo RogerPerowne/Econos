@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroBusinessObjectives',
-    summary: 'Not every firm is trying to do the same thing. Some are scrambling to survive, some are squeezing for every last pound of profit, others care more about size, market share, or doing the right thing. The objective a firm chooses depends on its age, its owners, its market and the pressures it faces – and the objective then drives almost every decision it makes about prices, costs, growth and risk. This topic gives you the menu of objectives, the reasons firms choose between them, and the language to spot a firm’s real objective in an exam case.',
+    summary: 'Not every firm is chasing the same thing — survival, maximum profit, size, market share or ethics. Which objective a firm picks depends on its age, owners, market and pressures, and that choice then drives almost every decision it makes about prices, costs, growth and risk.',
     doInThis: 'Map the main business objectives, explain why a firm’s objective depends on its context, distinguish profit, sales, growth and ethical aims, and analyse who inside the firm pushes for which.',
     outcomes: [
       'List the main objectives a firm can pursue and explain why they differ',

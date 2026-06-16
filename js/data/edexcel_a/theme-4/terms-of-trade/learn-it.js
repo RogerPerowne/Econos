@@ -30,8 +30,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroTermsOfTrade',
-    summary: 'Terms of trade measures the price of a country’s exports relative to the price of its imports. It is an index — when it rises, each unit of exports buys more imports; when it falls, exports buy fewer. This deck defines the concept, shows how to calculate and interpret the index, then explains what moves it (export demand and quality, relative inflation and productivity, exchange rates and world commodity prices). The heart of the topic is evaluation: an improvement boosts purchasing power but can dent export competitiveness, while a deterioration hurts purchasing power but can sharpen competitiveness. The deck closes by combining definition, calculation, cause and impact into a single judgement.',
-    doInThis: 'Define terms of trade and quote the formula. Calculate the index and read whether it is an improvement or a deterioration. Explain what moves export prices relative to import prices. Evaluate the impact of an improvement and of a deterioration on purchasing power, competitiveness and the wider economy. Finish with a balanced whole-story judgement.',
+    summary: 'Terms of trade is an index of export prices relative to import prices — when it rises, each unit of exports buys more imports. We calculate and interpret it, explain what moves it, then weigh how an improvement or deterioration trades off purchasing power against export competitiveness.',
+    doInThis: 'Calculate the index and read whether it is an improvement or deterioration, explain what moves export prices relative to import prices, then evaluate the impact on purchasing power and competitiveness in a balanced judgement.',
     outcomes: [
       'Define terms of trade and what it measures',
       'Calculate and interpret the terms of trade index',

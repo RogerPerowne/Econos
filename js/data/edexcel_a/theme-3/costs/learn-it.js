@@ -35,7 +35,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroCostCurves',
-    summary: 'A firm cannot judge profit without judging cost. The toolkit splits into five measures: fixed cost (does not change with output), variable cost (rises with output), total cost (the sum of both), average cost (cost per unit) and marginal cost (the extra cost of one more unit). Each one is calculated from a small table, plotted on a chart, and used to take a real business decision – set a price, accept an order, expand or scale back. The shapes of the curves matter: AC and AVC are U-shaped because early efficiency gives way to diminishing returns, and MC cuts both at their minimum points.',
+    summary: 'A firm cannot judge profit without judging cost. Five measures – fixed, variable, total, average and marginal cost – let you read the curves, where AC and AVC are U-shaped and MC cuts both at their minimum, and turn the numbers into real decisions on pricing, orders and expansion.',
     doInThis: 'Define each cost type and calculate it from a worked table. Plot the cost curves and read off the relationships between them. Use the cost data to take real-world decisions – price-setting, accepting an order, expanding production.',
     outcomes: [
       'Distinguish fixed, variable and total cost from a worked example',

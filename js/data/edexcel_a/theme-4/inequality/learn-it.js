@@ -25,8 +25,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroInequality',
-    summary: 'Inequality is about how unevenly economic resources are shared. The first job is to separate what people earn (income — a flow that arrives over time: wages, profits, rent, benefits) from what people own (wealth — a stock that builds up: property, savings, shares, pensions). Wealth is usually far more unequal and more persistent than income, because it is inherited, compounds through asset price growth and saving capacity, and attracts capital gains. The deck then builds the two standard tools: the Lorenz curve — a picture of the whole distribution against the 45° line of equality — and the Gini coefficient, which turns that picture into one number between 0 (perfect equality) and 1 (perfect inequality). It shows how to read a curve, compare countries and track change over time, and closes on what each measure does best and what it misses.',
-    doInThis: 'Separate income from wealth and explain why wealth is more unequal. Build and read a Lorenz curve. Compare Lorenz curves across countries and over time. Turn the curve into a Gini coefficient and read the 0→1 scale. Judge what the Lorenz curve and Gini do well and what they miss.',
+    summary: 'Inequality is about how unevenly economic resources are shared — and the first job is to separate what people earn (income, a flow) from what people own (wealth, a stock that is usually far more unequal). Two standard tools, the Lorenz curve and the Gini coefficient, turn the distribution into a picture and a number.',
+    doInThis: 'Separate income from wealth and explain why wealth is more unequal. Build, read and compare Lorenz curves, turn one into a Gini coefficient, and judge what each measure does well and misses.',
     outcomes: [
       'Distinguish income from wealth inequality',
       'Explain why wealth is more unequal',

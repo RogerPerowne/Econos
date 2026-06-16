@@ -29,7 +29,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroLRAS',
-    summary: 'Long-run aggregate supply (LRAS) reflects the economy\'s productive capacity once costs have fully adjusted. The Classical view draws LRAS vertical at full employment; the Keynesian view draws a reverse-L. LRAS shifts when the supply-side fundamentals improve – productivity, education and skills, technology, capital, demographics and migration. Read it well and you can explain trend growth, the long-run limits of demand-side policy, and where inflation pressure comes from.',
+    summary: 'Long-run aggregate supply (LRAS) is the economy\'s productive capacity once costs have fully adjusted — vertical at full employment in the Classical view, a reverse-L in the Keynesian view. It shifts with the supply-side fundamentals: productivity, skills, technology, capital, demographics and migration.',
     doInThis: 'Define LRAS and contrast the Classical and Keynesian shapes, see why it is vertical in the long run, map every capacity factor to a shift, link it to economic growth, and separate a demand change from a capacity change.',
     outcomes: [
       'Distinguish the Classical and Keynesian views of LRAS',

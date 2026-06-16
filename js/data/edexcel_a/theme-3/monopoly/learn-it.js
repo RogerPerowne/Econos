@@ -33,8 +33,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroMonopoly',
-    summary: 'A monopoly is a market dominated by a single seller protected by strong barriers to entry. Because rivals cannot easily challenge it, the firm is a price maker: it chooses output where MC = MR and reads its price up on the demand curve. This deck builds the monopoly diagram, uses it to judge output and welfare, then explores natural monopoly before weighing the costs and benefits for every stakeholder. (Price discrimination now has its own topic.)',
-    doInThis: 'Define monopoly and explain where monopoly power comes from. Build the monopoly diagram and use it to find price, output and profit, then to identify the deadweight loss. Explain natural monopoly and its diagram. Finally, evaluate monopoly using efficiency and context — without assuming it is always bad.',
+    summary: 'A monopoly is a single seller shielded by strong barriers to entry. With no real challengers, the firm is a price maker — it sets output where MC = MR and reads its price up the demand curve, raising sharp questions about output, welfare and the special case of natural monopoly.',
+    doInThis: 'Build the monopoly diagram to find price, output, profit and deadweight loss, explain the natural-monopoly case, and evaluate monopoly using efficiency and context — without assuming it is always bad.',
     outcomes: [
       'Define monopoly and identify the sources of monopoly power',
       'Build the monopoly diagram and find price, output and profit',

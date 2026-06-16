@@ -18,11 +18,17 @@ bump the patch for bugfix-only sweeps.
   sandbox before `icons.js`, and resolves lazy thunks. 601 icons now
   resolve, so articles can embed the SPA's real interactive diagrams.
 - **First article shipped:** `what-is-inflation-a-level-economics` — a
-  full, SEO-structured explainer with two **interactive** chart-engine
-  diagrams (AD shifts; the Bank of England's rate/QE response), a Friedman
+  full, SEO-structured explainer with three chart-engine AD–AS diagrams
+  (clean static demand-pull and cost-push, plus an **interactive** stepper
+  for the Bank of England's rate-hike / QE response), a Friedman
   economist-insight, board spec pills, at-a-glance facts, FAQ (with
   FAQPage JSON-LD) and a funnel into the inflation topic. Screenshot- and
   step-verified; in the sitemap, hub search-index and RSS feed.
+- Diagram-choice note: the AD-only `adInteractive` diagram renders a
+  confusing three-curve "shift" state with no intersection when stepped in
+  an article, so the cause sections use the self-contained static AD–AS
+  diagrams (`adAsDemandPull` / `adAsCostPush`) and the interactive stepper
+  is reserved for the AD–AS policy diagram, which renders cleanly.
 - **Corrected the SEO queue.** `SEO_PRIORITY.md` had ~71 items falsely
   marked `[L]` (live) while zero articles actually existed. Reset to `[ ]`;
   only articles with a real source + confirmed build are `[L]` (currently

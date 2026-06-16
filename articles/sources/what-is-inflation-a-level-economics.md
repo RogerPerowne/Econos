@@ -80,9 +80,9 @@ Because the basket is weighted, the headline rate reflects what households actua
 
 ## Demand-pull inflation
 
-Demand-pull inflation is "too much money chasing too few goods." When **aggregate demand (AD)** rises faster than the economy can expand supply, the extra spending bids prices up. Step through how an AD shift feeds into the price level:
+Demand-pull inflation is "too much money chasing too few goods." When **aggregate demand (AD)** rises faster than the economy can expand supply, the extra spending bids prices up:
 
-:::econos-diagram svgKey="adInteractive" interactive="true" caption="Aggregate demand slopes down for three reasons; a rise in any component (C, I, G or net exports) shifts the whole curve right — and against an upward-sloping AS, that pulls the price level up."
+:::econos-diagram svgKey="adAsDemandPull" caption="Demand-pull inflation: a rise in any component of AD (C, I, G or X−M) shifts AD right along an upward-sloping AS, lifting real output and the price level from P₁ to P₂."
 
 Typical triggers are a consumer-spending boom, a surge in investment, higher government spending, a tax cut, or rapid credit growth. The common thread: the pressure starts on the **demand** side.
 
@@ -92,7 +92,9 @@ Typical triggers are a consumer-spending boom, a surge in investment, higher gov
 
 ## Cost-push inflation
 
-Cost-push inflation comes from the **supply** side: the costs of production rise, so firms raise prices to protect their margins — even when demand is flat. On a diagram, short-run aggregate supply shifts *left*, raising the price level while output falls.
+Cost-push inflation comes from the **supply** side: the costs of production rise, so firms raise prices to protect their margins — even when demand is flat. On a diagram, short-run aggregate supply shifts *left*, raising the price level while output falls:
+
+:::econos-diagram svgKey="adAsCostPush" caption="Cost-push inflation: higher production costs shift SRAS left, so the price level rises from P₁ to P₂ while real output contracts."
 
 Classic drivers include:
 

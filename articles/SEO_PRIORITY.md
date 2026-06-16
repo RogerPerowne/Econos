@@ -26,6 +26,11 @@ nice-to-have. They are the moat.
 
 Status legend: `[ ]` not started, `[~]` drafted, `[R]` with Roger, `[L]` live.
 
+> **2026-06-16 — markers reset to reality.** The list had ~71 items marked
+> `[L]` (live), but no article sources existed and the build emitted zero
+> articles. All markers were reset to `[ ]`; only items with a real source
+> in `articles/sources/` (and confirmed in the build) are marked `[L]`.
+
 ---
 
 ## Tranche 1 - macro "what is X" definitions (highest revision-peak volume)
@@ -40,64 +45,64 @@ in Google when a panicking sixth former types it the night before Paper 2.
   - Friction angle: students confuse inflation, deflation, disinflation, and falling inflation rates. Lead on this.
   - UK example: ONS CPI series, BoE 2% target, 2022-23 inflation spike causes.
 
-- [L] **GDP explained - what it measures and what it misses**
+- [ ] **GDP explained - what it measures and what it misses**
   - Keyword: "what is gdp a level economics"
   - SPA topic: `national_income`, `growth_measure`, `sol_wellbeing`
   - Friction angle: GDP vs GNI vs real vs nominal. Limitations as welfare measure.
   - UK example: ONS quarterly GDP release; comparison with HDI / ONS wellbeing dashboard.
 
-- [L] **Aggregate demand (AD) explained with diagram**
+- [ ] **Aggregate demand (AD) explained with diagram**
   - Keyword: "what is aggregate demand a level"
   - SPA topic: `ad`
   - Friction angle: confusion between movement along AD and shifts in AD.
   - Diagram: AD curve, shift vs movement, components C+I+G+(X-M).
 
-- [L] **SRAS vs LRAS - the aggregate supply diagram, properly**
+- [ ] **SRAS vs LRAS - the aggregate supply diagram, properly**
   - Keyword: "what is sras a level economics"
   - SPA topic: `agg_supply`
   - Friction angle: Keynesian LRAS (kinked) vs Classical LRAS (vertical) - students draw the wrong one for the wrong essay.
   - Diagram: both LRAS shapes side by side, with prose on when each is appropriate.
 
-- [L] **The multiplier effect explained - with worked numbers**
+- [ ] **The multiplier effect explained - with worked numbers**
   - Keyword: "multiplier effect a level economics"
   - SPA topic: `multiplier`
   - Friction angle: students quote the formula but cannot apply it to an injection. Worked example with MPC/MPS/MPT/MPM.
 
-- [L] **Fiscal policy - tools, limits, and when it works**
+- [ ] **Fiscal policy - tools, limits, and when it works**
   - Keyword: "what is fiscal policy a level economics"
   - SPA topic: `fiscal_policy`, `taxation`, `government_spending`
   - Friction angle: expansionary vs contractionary, automatic stabilisers vs discretionary.
   - UK example: 2020 furlough scheme as discretionary fiscal expansion.
 
-- [L] **Monetary policy and the Bank of England's MPC**
+- [ ] **Monetary policy and the Bank of England's MPC**
   - Keyword: "monetary policy a level economics"
   - SPA topic: `monetary`, `central_banks`
   - Friction angle: interest rate transmission mechanism - the full chain, not just "rates up, spending down".
   - UK example: BoE Bank Rate path 2021-2024.
 
-- [L] **Unemployment - types, measures, and why the figures disagree**
+- [ ] **Unemployment - types, measures, and why the figures disagree**
   - Keyword: "types of unemployment a level economics"
   - SPA topic: `unemployment`
   - Friction angle: claimant count vs ILO; structural vs cyclical vs frictional.
   - UK example: ONS Labour Market Statistics release.
 
-- [L] **Economic growth - causes, measurement, and limits**
+- [ ] **Economic growth - causes, measurement, and limits**
   - Keyword: "what is economic growth a level economics"
   - SPA topic: `growth_measure`, `factors_growth_development`
   - Friction angle: actual vs potential, short-run vs long-run, growth vs development.
 
-- [L] **The balance of payments explained**
+- [ ] **The balance of payments explained**
   - Keyword: "balance of payments a level economics"
   - SPA topic: `balance_of_payments`, `bop_t2`
   - Friction angle: current account vs capital account vs financial account - students mash all three.
   - UK example: UK persistent current account deficit, services surplus.
 
-- [L] **The Phillips curve - short run, long run, and the 1970s break**
+- [ ] **The Phillips curve - short run, long run, and the 1970s break**
   - Keyword: "phillips curve a level economics"
   - SPA topic: `unemployment`, `inflation`
   - Friction angle: SRPC vs LRPC; expectations-augmented; NAIRU.
 
-- [L] **Demand-pull vs cost-push inflation**
+- [ ] **Demand-pull vs cost-push inflation**
   - Keyword: "demand pull vs cost push inflation"
   - SPA topic: `inflation`
   - Friction angle: students label every inflation episode "demand-pull" by default. Walk through both AD-shift and SRAS-shift cases.
@@ -109,40 +114,40 @@ in Google when a panicking sixth former types it the night before Paper 2.
 
 The micro equivalents. Year 12s especially search these in autumn term.
 
-- [L] **Monopoly explained - diagram, profit max, deadweight loss**
+- [ ] **Monopoly explained - diagram, profit max, deadweight loss**
   - Keyword: "monopoly a level economics"
   - SPA topic: `monopoly`
   - Friction angle: students draw MR = MC but forget to read price off AR. The "where does the price come from?" question.
   - Differentiation: Schumpeterian defence, CMA 25% threshold.
 
-- [L] **Perfect competition - the model and why it's a benchmark**
+- [ ] **Perfect competition - the model and why it's a benchmark**
   - Keyword: "perfect competition a level economics"
   - SPA topic: `perfect_competition`
   - Friction angle: confusion between short-run (supernormal profit possible) and long-run (normal profit only).
 
-- [L] **Oligopoly, the kinked demand curve, and game theory basics**
+- [ ] **Oligopoly, the kinked demand curve, and game theory basics**
   - Keyword: "oligopoly a level economics"
   - SPA topic: `oligopoly`, `game_theory`, `collusion_cartels`
   - Friction angle: students recite "interdependence" without showing the price rigidity it implies.
   - UK example: UK supermarket pricing; the Big Four energy retailers pre-Octopus.
 
-- [L] **Price elasticity of demand (PED) - how to use it, not just calculate it**
+- [ ] **Price elasticity of demand (PED) - how to use it, not just calculate it**
   - Keyword: "price elasticity of demand a level"
   - SPA topic: `ped`
   - Friction angle: PED -> total revenue logic; the sign convention; perfect elasticity edge cases.
   - UK example: SDIL incidence analysis.
 
-- [L] **YED and XED - income and cross elasticity**
+- [ ] **YED and XED - income and cross elasticity**
   - Keyword: "income elasticity of demand a level"
   - SPA topic: `yed_xed`
   - Friction angle: positive vs negative YED interpretation; necessities vs luxuries vs inferior goods.
 
-- [L] **Market failure - the four big causes**
+- [ ] **Market failure - the four big causes**
   - Keyword: "market failure a level economics"
   - SPA topic: `market_failure`
   - Friction angle: students treat "market failure" as a vague label. Pin it to specific causes (externalities, public goods, asymmetric info, market power).
 
-- [L] **Externalities - positive, negative, and the policy fix**
+- [ ] **Externalities - positive, negative, and the policy fix**
   (joint overview at `externalities-a-level-economics`, plus
   dedicated `negative-externalities-` and `positive-externalities-` posts.)
   - Keyword: "externalities a level economics"
@@ -150,28 +155,28 @@ The micro equivalents. Year 12s especially search these in autumn term.
   - Friction angle: MSC = MPC + MEC; identifying the welfare loss triangle on the diagram.
   - UK example: SDIL, EU ETS, vaccination subsidies.
 
-- [L] **Public goods - non-rival, non-excludable, and the free-rider problem**
+- [ ] **Public goods - non-rival, non-excludable, and the free-rider problem**
   - Keyword: "public goods a level economics"
   - SPA topic: `public_goods`
   - Friction angle: students conflate "public sector" with "public good". Defence vs the NHS distinction.
 
-- [L] **Asymmetric information and the Akerlof lemons model**
+- [ ] **Asymmetric information and the Akerlof lemons model**
   - Keyword: "asymmetric information a level economics"
   - SPA topic: `info_gaps`, `financial_market_failure`
   - Friction angle: adverse selection vs moral hazard - students collapse them.
   - UK example: used cars; insurance markets; 2008 sub-prime as adverse-selection-at-scale.
 
-- [L] **The price mechanism - rationing, signalling, incentives**
+- [ ] **The price mechanism - rationing, signalling, incentives**
   - Keyword: "price mechanism a level economics"
   - SPA topic: `price_functions`
   - Friction angle: students name the three functions but cannot trace them through a concrete market shock.
 
-- [L] **Consumer and producer surplus, and how policy shifts them**
+- [ ] **Consumer and producer surplus, and how policy shifts them**
   - Keyword: "consumer surplus producer surplus a level"
   - SPA topic: `consumer_producer_surplus`
   - Friction angle: identifying surplus areas before/after a tax, subsidy, max/min price.
 
-- [L] **Behavioural economics - nudges, biases, and Thaler in plain English**
+- [ ] **Behavioural economics - nudges, biases, and Thaler in plain English**
   - Keyword: "behavioural economics a level"
   - SPA topic: `behavioural_econ`
   - Friction angle: students list biases without using them to explain why a standard rational-agent prediction fails.
@@ -185,18 +190,18 @@ Students literally type "monopoly diagram" or "AD AS diagram" - then click the
 top image result. These pages need a clean SVG hero (commission via the
 `econos-visual-diagram` skill) plus prose that walks the diagram step-by-step.
 
-- [L] Monopoly profit-maximisation diagram explained
-- [L] AD-AS diagram explained
-- [L] Externalities diagram (negative production)
-- [L] Externalities diagram (positive consumption)
-- [L] Price elasticity of demand diagrams
-- [L] Long-run vs short-run cost curves
-- [L] Perfect competition - short run vs long run
-- [L] Indirect tax incidence diagram
-- [L] Maximum and minimum price diagrams
-- [L] Production possibility frontier (PPF) and opportunity cost
-- [L] Game theory payoff matrix (Prisoner's Dilemma applied to oligopoly)
-- [L] Phillips curve - SRPC, LRPC, and the shift
+- [ ] Monopoly profit-maximisation diagram explained
+- [ ] AD-AS diagram explained
+- [ ] Externalities diagram (negative production)
+- [ ] Externalities diagram (positive consumption)
+- [ ] Price elasticity of demand diagrams
+- [ ] Long-run vs short-run cost curves
+- [ ] Perfect competition - short run vs long run
+- [ ] Indirect tax incidence diagram
+- [ ] Maximum and minimum price diagrams
+- [ ] Production possibility frontier (PPF) and opportunity cost
+- [ ] Game theory payoff matrix (Prisoner's Dilemma applied to oligopoly)
+- [ ] Phillips curve - SRPC, LRPC, and the shift
 
 ---
 
@@ -205,16 +210,16 @@ top image result. These pages need a clean SVG hero (commission via the
 These pages compete head-on with Tutor2u and SaveMyExams. Win by giving the
 exact moves examiners reward, with worked extracts from real past papers.
 
-- [L] How to answer a 25-mark question (Edexcel A) - KAA + EV structure
-- [L] How to write a Level 4 evaluation paragraph
-- [L] Chains of analysis - what examiners mean and how to build one
-- [L] The 15-mark essay - tighter scope, same structure
-- [L] Paper 1 (Markets and how they work) - common mistakes
-- [L] Paper 2 (The UK economy) - common mistakes
-- [L] Paper 3 (Microeconomics and macroeconomics) - common mistakes
-- [L] Data response questions - how to use the extract properly
-- [L] Drawing diagrams under time pressure - the 90-second monopoly diagram
-- [L] What "evaluate" actually means in Edexcel mark schemes
+- [ ] How to answer a 25-mark question (Edexcel A) - KAA + EV structure
+- [ ] How to write a Level 4 evaluation paragraph
+- [ ] Chains of analysis - what examiners mean and how to build one
+- [ ] The 15-mark essay - tighter scope, same structure
+- [ ] Paper 1 (Markets and how they work) - common mistakes
+- [ ] Paper 2 (The UK economy) - common mistakes
+- [ ] Paper 3 (Microeconomics and macroeconomics) - common mistakes
+- [ ] Data response questions - how to use the extract properly
+- [ ] Drawing diagrams under time pressure - the 90-second monopoly diagram
+- [ ] What "evaluate" actually means in Edexcel mark schemes
 
 ---
 
@@ -224,18 +229,18 @@ Each of these doubles as a worked example reusable inside other articles, and
 ranks for its own long-tail search ("sugar tax economics a level", "Scottish
 minimum unit pricing economics").
 
-- [L] The Sugar Drinks Industry Levy (SDIL) - a worked indirect tax case
-- [L] Scotland's minimum unit pricing for alcohol - a minimum price case study
-- [L] The 2021 Uber Supreme Court ruling - labour market regulation
-- [L] EU Emissions Trading System (EU ETS) - tradable permits in practice
-- [L] UK national minimum wage - Card-Krueger meets the real labour market
-- [L] Bank of England rate decisions 2022-2024 - monetary policy in real time
-- [L] Thames Water - regulatory capture, natural monopoly, and Stigler
-- [L] HS2 - cost-benefit analysis and the political economy of large projects
-- [L] Octopus Energy and the Big Six - contestable markets in action
-- [L] The 2008 financial crisis as an asymmetric information story
-- [L] Ostrom and the commons - case studies in self-governance
-- [L] Brexit and the UK current account - structural shifts in trade
+- [ ] The Sugar Drinks Industry Levy (SDIL) - a worked indirect tax case
+- [ ] Scotland's minimum unit pricing for alcohol - a minimum price case study
+- [ ] The 2021 Uber Supreme Court ruling - labour market regulation
+- [ ] EU Emissions Trading System (EU ETS) - tradable permits in practice
+- [ ] UK national minimum wage - Card-Krueger meets the real labour market
+- [ ] Bank of England rate decisions 2022-2024 - monetary policy in real time
+- [ ] Thames Water - regulatory capture, natural monopoly, and Stigler
+- [ ] HS2 - cost-benefit analysis and the political economy of large projects
+- [ ] Octopus Energy and the Big Six - contestable markets in action
+- [ ] The 2008 financial crisis as an asymmetric information story
+- [ ] Ostrom and the commons - case studies in self-governance
+- [ ] Brexit and the UK current account - structural shifts in trade
 
 ---
 
@@ -244,18 +249,18 @@ minimum unit pricing economics").
 These rank fast because Google rewards exact-question matching. Each page is
 short (600-900 words), one misconception per page, one diagram if needed.
 
-- [L] Why is MR less than AR for a monopoly?
-- [L] Difference between SRAS and LRAS
-- [L] Difference between Keynesian and Classical LRAS
-- [L] Difference between inflation, deflation, and disinflation
-- [L] Difference between movement along and shift of a demand curve
-- [L] Why does monopoly cause market failure?
-- [L] Why is the long-run aggregate supply curve vertical (Classical view)?
-- [L] Difference between fiscal and monetary policy
-- [L] Difference between economic growth and economic development
-- [L] Why doesn't perfect competition exist in reality? (and why we still teach it)
-- [L] Difference between absolute and comparative advantage
-- [L] Difference between progressive, proportional, and regressive taxes
+- [ ] Why is MR less than AR for a monopoly?
+- [ ] Difference between SRAS and LRAS
+- [ ] Difference between Keynesian and Classical LRAS
+- [ ] Difference between inflation, deflation, and disinflation
+- [ ] Difference between movement along and shift of a demand curve
+- [ ] Why does monopoly cause market failure?
+- [ ] Why is the long-run aggregate supply curve vertical (Classical view)?
+- [ ] Difference between fiscal and monetary policy
+- [ ] Difference between economic growth and economic development
+- [ ] Why doesn't perfect competition exist in reality? (and why we still teach it)
+- [ ] Difference between absolute and comparative advantage
+- [ ] Difference between progressive, proportional, and regressive taxes
 
 ---
 

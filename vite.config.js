@@ -136,12 +136,44 @@ const BOARD_CFG = loadBoardDivisions();
    can now opt into the same diagrams via :::econos-diagram { svgKey="…" }.
    Done once at build / server-start. */
 function loadIconsLib() {
+  /* icons.js builds ECONOS_ICONS by calling the chart engine
+     (ECONOS_PPF.render) and dial engine eagerly for many keys, so it can
+     only be evaluated once those globals exist. Mirror the shells'
+     <script> order into ONE shared window sandbox: engine → shared chart
+     libs → every spec → dial engine → icon symbols → icons.js. Without
+     this the eager render calls throw and ECONOS_ICONS comes back empty,
+     which is why :::econos-diagram used to render nothing. */
+  const sandbox = {};
+  const run = (rel) => {
+    try {
+      const src = readFileSync(resolve(ROOT, rel), 'utf8');
+      // eslint-disable-next-line no-new-func
+      (new Function('window', src))(sandbox);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.warn(`[article-routes] icons dep ${rel} failed: ${e.message}`);
+    }
+  };
   try {
-    const src = readFileSync(resolve(ROOT, 'js/icons.js'), 'utf8');
-    const sandbox = { window: {} };
-    // eslint-disable-next-line no-new-func
-    (new Function('window', src))(sandbox.window);
-    return sandbox.window.ECONOS_ICONS || {};
+    run('js/charts/ppf.js');
+    run('js/charts/firm-model.js');
+    for (const f of readdirSync(resolve(ROOT, 'js/charts/specs'))) {
+      if (f.endsWith('.js')) run(`js/charts/specs/${f}`);
+    }
+    run('js/icons/dial-engine.js');
+    run('js/icons/material-symbols.js');
+    run('js/icons.js');
+    const lib = sandbox.ECONOS_ICONS || {};
+    /* Resolve any lazy `__econosLazy` thunks into their SVG strings so a
+       lazily-bound svgKey doesn't render as "[object Object]". */
+    for (const k of Object.keys(lib)) {
+      const v = lib[k];
+      if (v && typeof v === 'object' && typeof v.__econosThunk === 'function') {
+        try { lib[k] = v.__econosThunk(); } catch (e) { lib[k] = ''; }
+      }
+    }
+    if (!Object.keys(lib).length) console.warn('[article-routes] ECONOS_ICONS came back empty');
+    return lib;
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn('[article-routes] could not load js/icons.js:', e.message);

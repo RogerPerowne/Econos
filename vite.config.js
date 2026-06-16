@@ -21,7 +21,7 @@
      npm run preview   → http://localhost:4173 against /dist
    ============================================================ */
 
-import { defineConfig } from 'vite';
+import { defineConfig, transformWithEsbuild } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { readdirSync, statSync, readFileSync, writeFileSync, mkdirSync, existsSync, cpSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
@@ -1633,7 +1633,45 @@ export default defineConfig({
         { src: 'sw.js',                      dest: '.' },
         { src: '.well-known/**/*',           dest: '.well-known' }
       ]
-    })
+    }),
+
+    /* Minify the verbatim-copied classic scripts in dist/js. They're
+       loaded as plain <script src> (not bundled), so Vite's normal
+       minify pass never touches them — icons.js alone is ~2.1 MB of
+       hand-written SVG/HTML strings. We esbuild-minify each copied .js
+       in place after the static copy completes. Dev is unaffected (it
+       serves the sources); only the production /dist output shrinks.
+       The e2e suite runs against this preview build, so any minify
+       breakage is caught before merge. */
+    {
+      name: 'econos-minify-classic-js',
+      apply: 'build',
+      async closeBundle() {
+        const jsDir = resolve(ROOT, 'dist/js');
+        if (!existsSync(jsDir)) return;
+        const files = readdirSync(jsDir, { recursive: true })
+          .map(f => join(jsDir, f.toString()))
+          .filter(f => f.endsWith('.js') && statSync(f).isFile());
+        let before = 0, after = 0, skipped = 0;
+        for (const file of files) {
+          const code = readFileSync(file, 'utf8');
+          before += Buffer.byteLength(code);
+          try {
+            const res = await transformWithEsbuild(code, file, {
+              minify: true, sourcemap: false, target: 'es2017', loader: 'js'
+            });
+            writeFileSync(file, res.code);
+            after += Buffer.byteLength(res.code);
+          } catch (err) {
+            skipped++;
+            after += Buffer.byteLength(code);
+            console.warn(`[econos-minify] skipped ${file}: ${err.message}`);
+          }
+        }
+        const mb = n => (n / 1048576).toFixed(2);
+        console.log(`[econos-minify] ${files.length} classic scripts: ${mb(before)} MB → ${mb(after)} MB${skipped ? ` (${skipped} skipped)` : ''}`);
+      }
+    }
   ],
 
   build: {

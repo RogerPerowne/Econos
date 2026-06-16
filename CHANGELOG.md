@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.175.2 — 2026-06-16
+
+### Article diagram polish (inflation)
+
+- **Removed the redundant top "legend" title** from the article diagrams
+  (e.g. "Rate hike → AD shifts LEFT → inflation falls") — the step panel
+  beside the diagram already names the state. Hidden via `articles/diagram.css`
+  (`.layer-legend-*`), so it covers every article diagram. (The in-app SPA
+  diagrams still show it — happy to strip there too on request.)
+- **Fixed the AD curves crashing out of the top-left** on the `adAsMonetary`
+  diagram: AD₁/AD₂/AD₃ started above the plot top (y=48) and AD₂ began left
+  of the P-axis. Clamped all three to start at y=70 inside the plot, slopes
+  and E₁/E₂/E₃ intersections unchanged. Benefits the SPA card too.
+
 ## 0.175.1 — 2026-06-16
 
 ### Article layout — elegance + structure pass (inflation exemplar)

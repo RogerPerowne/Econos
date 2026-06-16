@@ -3355,9 +3355,10 @@ window.ECONOS_ICONS = {
         <text x="560" y="100" font-size="16" font-weight="700" fill="#E11D48">SRAS</text>
       </g>
 
-      <!-- AD₁ – slope 0.5, from (180, 48) to (580, 248), passes through (430, 173) -->
+      <!-- AD₁ – slope 0.5, from (224, 70) to (580, 248), passes through (430, 173).
+           Start clamped to y=70 so it sits inside the plot (was y=48, above top). -->
       <g class="layer-curve-solid">
-        <line x1="180" y1="48" x2="580" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+        <line x1="224" y1="70" x2="580" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
         <text x="588" y="252" font-size="15" font-weight="700" fill="#334155">AD<tspan font-size="12" baseline-shift="sub">1</tspan></text>
       </g>
 
@@ -3371,9 +3372,10 @@ window.ECONOS_ICONS = {
 
       <!-- EXTENSION (rate hike) – AD shifts LEFT -->
       <g class="layer-extension">
-        <!-- AD₂ shifted left by 130: from (50, 48) to (450, 248) -->
-        <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4"/>
-        <text x="88" y="64" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
+        <!-- AD₂ shifted left: clamped start (94, 70) so it stays right of the
+             P-axis and inside the plot (was (50, 48), crashing out top-left). -->
+        <line x1="94" y1="70" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4"/>
+        <text x="98" y="62" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
 
         <!-- Red shift arrow -->
         <path d="M 350 155 L 280 155" stroke="#E11D48" stroke-width="3" stroke-linecap="round" marker-end="url(#mpv2-shift-down)"/>
@@ -3398,9 +3400,9 @@ window.ECONOS_ICONS = {
            y = 0.5*488.6 - 107 = 137.3
            So E₃ at (489, 137). Y₃ = 489 > Y_FE = 430 → slight overheat (realistic for QE). -->
       <g class="layer-shift">
-        <!-- AD₃ shifted right, capped at chart right edge -->
-        <line x1="310" y1="48" x2="580" y2="183" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4"/>
-        <text x="296" y="50" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">3</tspan></text>
+        <!-- AD₃ shifted right: clamped start (354, 70), capped at chart right edge. -->
+        <line x1="354" y1="70" x2="580" y2="183" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4"/>
+        <text x="350" y="62" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">3</tspan></text>
 
         <!-- Green shift arrow -->
         <path d="M 270 240 L 340 240" stroke="#10B981" stroke-width="3" stroke-linecap="round" marker-end="url(#mpv2-shift-up)"/>

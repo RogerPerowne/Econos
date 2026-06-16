@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.174.3 — 2026-06-16
+
+### Tooling: guard the service-worker precache against spec drift
+
+- Extended `check_spec_scripts_loaded` (repo lint) to also assert every
+  chart spec referenced by `icons.js` is listed in `sw.js`
+  PRECACHE_ASSETS, not just script-tagged in the shells. Previously only
+  the shell `<script>` tags were guarded, so a spec could ship missing
+  from the precache and break the chart for offline / cache-first users —
+  the exact manual step easiest to forget when adding a spec. Verified
+  with a negative test (removing a precache line now fails the lint).
+
 ## 0.174.2 — 2026-06-16
 
 ### Accessibility pass — contrast + interaction-state coverage
